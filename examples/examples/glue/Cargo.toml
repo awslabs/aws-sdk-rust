@@ -19,8 +19,8 @@ secrecy = "0.8.0"
 futures = "0.3.25"
 tracing-bunyan-formatter = "0.3.4"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
-aws-sdk-glue= { version = "0.34.0", path = "../../../sdk/glue" }
-aws-sdk-s3= { version = "0.34.0", path = "../../../sdk/s3" }
+aws-sdk-glue= { version = "0.35.0", path = "../../../sdk/glue" }
+aws-sdk-s3= { version = "0.35.0", path = "../../../sdk/s3" }
 aws-http= { version = "0.56.1", path = "../../../sdk/aws-http" }
 aws-smithy-client= { version = "0.56.1", path = "../../../sdk/aws-smithy-client", features = ["client-hyper", "rustls", "rt-tokio"] }
 aws-smithy-http= { version = "0.56.1", path = "../../../sdk/aws-smithy-http", features = ["rt-tokio"] }

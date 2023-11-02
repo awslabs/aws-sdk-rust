@@ -24,8 +24,10 @@ impl GetPersonalizedRankingInput {
         self.campaign_arn.as_deref()
     }
     /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
-    pub fn input_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.input_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_list.is_none()`.
+    pub fn input_list(&self) -> &[::std::string::String] {
+        self.input_list.as_deref().unwrap_or_default()
     }
     /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
@@ -66,6 +68,7 @@ pub struct GetPersonalizedRankingInputBuilder {
 }
 impl GetPersonalizedRankingInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
+    /// This field is required.
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +103,7 @@ impl GetPersonalizedRankingInputBuilder {
         &self.input_list
     }
     /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

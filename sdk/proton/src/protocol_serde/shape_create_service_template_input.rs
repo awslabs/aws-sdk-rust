@@ -3,32 +3,32 @@ pub fn ser_create_service_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_service_template::CreateServiceTemplateInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.display_name {
-        object.key("displayName").string(var_2.as_str());
+    if let Some(var_1) = &input.display_name {
+        object.key("displayName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.encryption_key {
-        object.key("encryptionKey").string(var_4.as_str());
+    if let Some(var_3) = &input.encryption_key {
+        object.key("encryptionKey").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.pipeline_provisioning {
-        object.key("pipelineProvisioning").string(var_5.as_str());
+    if let Some(var_4) = &input.pipeline_provisioning {
+        object.key("pipelineProvisioning").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }

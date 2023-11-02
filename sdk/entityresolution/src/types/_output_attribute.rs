@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputAttribute {
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Enables the ability to hash the column values in the output.</p>
     pub hashed: ::std::option::Option<bool>,
 }
 impl OutputAttribute {
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Enables the ability to hash the column values in the output.</p>
     pub fn hashed(&self) -> ::std::option::Option<bool> {
@@ -35,6 +36,7 @@ pub struct OutputAttributeBuilder {
 }
 impl OutputAttributeBuilder {
     /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl OutputAttributeBuilder {
         &self.hashed
     }
     /// Consumes the builder and constructs a [`OutputAttribute`](crate::types::OutputAttribute).
-    pub fn build(self) -> crate::types::OutputAttribute {
-        crate::types::OutputAttribute {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OutputAttributeBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputAttribute, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputAttribute {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building OutputAttribute",
+                )
+            })?,
             hashed: self.hashed,
-        }
+        })
     }
 }

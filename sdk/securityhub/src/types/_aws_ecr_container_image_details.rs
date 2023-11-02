@@ -46,8 +46,10 @@ impl AwsEcrContainerImageDetails {
         self.image_digest.as_deref()
     }
     /// <p>The list of tags that are associated with the image.</p>
-    pub fn image_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
+    pub fn image_tags(&self) -> &[::std::string::String] {
+        self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>

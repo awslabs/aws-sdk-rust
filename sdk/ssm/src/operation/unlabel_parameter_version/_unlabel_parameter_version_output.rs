@@ -11,12 +11,16 @@ pub struct UnlabelParameterVersionOutput {
 }
 impl UnlabelParameterVersionOutput {
     /// <p>A list of all labels deleted from the parameter.</p>
-    pub fn removed_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.removed_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.removed_labels.is_none()`.
+    pub fn removed_labels(&self) -> &[::std::string::String] {
+        self.removed_labels.as_deref().unwrap_or_default()
     }
     /// <p>The labels that aren't attached to the given parameter version.</p>
-    pub fn invalid_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.invalid_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_labels.is_none()`.
+    pub fn invalid_labels(&self) -> &[::std::string::String] {
+        self.invalid_labels.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UnlabelParameterVersionOutput {

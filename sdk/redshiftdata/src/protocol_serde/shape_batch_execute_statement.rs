@@ -51,11 +51,10 @@ pub fn de_batch_execute_statement_http_error(
                 )
                 .map_err(crate::operation::batch_execute_statement::BatchExecuteStatementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::batch_execute_statement_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_execute_statement::BatchExecuteStatementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::batch_execute_statement::BatchExecuteStatementError::ValidationException({

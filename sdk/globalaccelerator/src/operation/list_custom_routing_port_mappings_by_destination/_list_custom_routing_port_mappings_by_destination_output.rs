@@ -11,8 +11,10 @@ pub struct ListCustomRoutingPortMappingsByDestinationOutput {
 }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn destination_port_mappings(&self) -> ::std::option::Option<&[crate::types::DestinationPortMapping]> {
-        self.destination_port_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_port_mappings.is_none()`.
+    pub fn destination_port_mappings(&self) -> &[crate::types::DestinationPortMapping] {
+        self.destination_port_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

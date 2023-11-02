@@ -11,8 +11,10 @@ pub struct DescribeGlobalNetworksOutput {
 }
 impl DescribeGlobalNetworksOutput {
     /// <p>Information about the global networks.</p>
-    pub fn global_networks(&self) -> ::std::option::Option<&[crate::types::GlobalNetwork]> {
-        self.global_networks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_networks.is_none()`.
+    pub fn global_networks(&self) -> &[crate::types::GlobalNetwork] {
+        self.global_networks.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

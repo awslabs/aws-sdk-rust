@@ -34,12 +34,16 @@ impl UpdateAppInput {
         self.role_name.as_deref()
     }
     /// <p>The server groups in the application to update.</p>
-    pub fn server_groups(&self) -> ::std::option::Option<&[crate::types::ServerGroup]> {
-        self.server_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_groups.is_none()`.
+    pub fn server_groups(&self) -> &[crate::types::ServerGroup] {
+        self.server_groups.as_deref().unwrap_or_default()
     }
     /// <p>The tags to associate with the application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAppInput {

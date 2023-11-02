@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecommendationTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
+    pub recommendation_template_arn: ::std::string::String,
     /// <p>Status of the action.</p>
-    pub status: ::std::option::Option<crate::types::RecommendationTemplateStatus>,
+    pub status: crate::types::RecommendationTemplateStatus,
     _request_id: Option<String>,
 }
 impl DeleteRecommendationTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn recommendation_template_arn(&self) -> ::std::option::Option<&str> {
-        self.recommendation_template_arn.as_deref()
+    pub fn recommendation_template_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.recommendation_template_arn.deref()
     }
     /// <p>Status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationTemplateStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::RecommendationTemplateStatus {
+        &self.status
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteRecommendationTemplateOutput {
@@ -41,6 +42,7 @@ pub struct DeleteRecommendationTemplateOutputBuilder {
 }
 impl DeleteRecommendationTemplateOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
+    /// This field is required.
     pub fn recommendation_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl DeleteRecommendationTemplateOutputBuilder {
         &self.recommendation_template_arn
     }
     /// <p>Status of the action.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RecommendationTemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,29 @@ impl DeleteRecommendationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteRecommendationTemplateOutput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput).
-    pub fn build(self) -> crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput {
-        crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput {
-            recommendation_template_arn: self.recommendation_template_arn,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recommendation_template_arn`](crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateOutputBuilder::recommendation_template_arn)
+    /// - [`status`](crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput {
+            recommendation_template_arn: self.recommendation_template_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recommendation_template_arn",
+                    "recommendation_template_arn was not specified but it is required when building DeleteRecommendationTemplateOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DeleteRecommendationTemplateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

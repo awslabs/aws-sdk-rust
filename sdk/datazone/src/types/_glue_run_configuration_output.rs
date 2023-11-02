@@ -11,7 +11,7 @@ pub struct GlueRunConfigurationOutput {
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source. </p>
     pub data_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
+    pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
 }
 impl GlueRunConfigurationOutput {
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source. </p>
@@ -27,8 +27,9 @@ impl GlueRunConfigurationOutput {
         self.data_access_role.as_deref()
     }
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn relational_filter_configurations(&self) -> ::std::option::Option<&[crate::types::RelationalFilterConfiguration]> {
-        self.relational_filter_configurations.as_deref()
+    pub fn relational_filter_configurations(&self) -> &[crate::types::RelationalFilterConfiguration] {
+        use std::ops::Deref;
+        self.relational_filter_configurations.deref()
     }
 }
 impl GlueRunConfigurationOutput {
@@ -114,12 +115,19 @@ impl GlueRunConfigurationOutputBuilder {
         &self.relational_filter_configurations
     }
     /// Consumes the builder and constructs a [`GlueRunConfigurationOutput`](crate::types::GlueRunConfigurationOutput).
-    pub fn build(self) -> crate::types::GlueRunConfigurationOutput {
-        crate::types::GlueRunConfigurationOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`relational_filter_configurations`](crate::types::builders::GlueRunConfigurationOutputBuilder::relational_filter_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueRunConfigurationOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlueRunConfigurationOutput {
             account_id: self.account_id,
             region: self.region,
             data_access_role: self.data_access_role,
-            relational_filter_configurations: self.relational_filter_configurations,
-        }
+            relational_filter_configurations: self.relational_filter_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "relational_filter_configurations",
+                    "relational_filter_configurations was not specified but it is required when building GlueRunConfigurationOutput",
+                )
+            })?,
+        })
     }
 }

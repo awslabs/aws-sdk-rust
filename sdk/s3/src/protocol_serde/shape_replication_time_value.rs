@@ -13,6 +13,7 @@ pub fn ser_replication_time_value(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_replication_time_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReplicationTimeValue, ::aws_smithy_xml::decode::XmlDecodeError> {

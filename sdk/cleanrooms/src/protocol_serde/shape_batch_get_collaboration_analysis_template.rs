@@ -72,11 +72,10 @@ pub fn de_batch_get_collaboration_analysis_template_http_error(
                             crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -139,7 +138,9 @@ pub fn de_batch_get_collaboration_analysis_template_http_response(
         )
         .map_err(crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_get_collaboration_analysis_template_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateError::unhandled)?
     })
 }
 

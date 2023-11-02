@@ -12,8 +12,10 @@ pub struct InvalidContactFlowModuleException {
 }
 impl InvalidContactFlowModuleException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn problems(&self) -> ::std::option::Option<&[crate::types::ProblemDetail]> {
-        self.problems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.problems.is_none()`.
+    pub fn problems(&self) -> &[crate::types::ProblemDetail] {
+        self.problems.as_deref().unwrap_or_default()
     }
 }
 impl InvalidContactFlowModuleException {

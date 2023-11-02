@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionEntities {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionEntity>>,
 }
 impl EncryptionEntities {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EncryptionEntity]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::EncryptionEntity] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl EncryptionEntities {
@@ -35,6 +37,7 @@ pub struct EncryptionEntitiesBuilder {
 }
 impl EncryptionEntitiesBuilder {
     /// <p>Number of field pattern items in a field-level encryption content type-profile mapping.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl EncryptionEntitiesBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`EncryptionEntities`](crate::types::EncryptionEntities).
-    pub fn build(self) -> crate::types::EncryptionEntities {
-        crate::types::EncryptionEntities {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::EncryptionEntitiesBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionEntities, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionEntities {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building EncryptionEntities",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

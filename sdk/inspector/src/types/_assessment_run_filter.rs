@@ -25,16 +25,20 @@ impl AssessmentRunFilter {
         self.name_pattern.as_deref()
     }
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::AssessmentRunState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::AssessmentRunState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn duration_range(&self) -> ::std::option::Option<&crate::types::DurationRange> {
         self.duration_range.as_ref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn rules_package_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rules_package_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules_package_arns.is_none()`.
+    pub fn rules_package_arns(&self) -> &[::std::string::String] {
+        self.rules_package_arns.as_deref().unwrap_or_default()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
     pub fn start_time_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {

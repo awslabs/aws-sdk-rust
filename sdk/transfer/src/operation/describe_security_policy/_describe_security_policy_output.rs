@@ -34,6 +34,7 @@ pub struct DescribeSecurityPolicyOutputBuilder {
 }
 impl DescribeSecurityPolicyOutputBuilder {
     /// <p>An array containing the properties of the security policy.</p>
+    /// This field is required.
     pub fn security_policy(mut self, input: crate::types::DescribedSecurityPolicy) -> Self {
         self.security_policy = ::std::option::Option::Some(input);
         self

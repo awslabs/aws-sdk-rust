@@ -15,8 +15,10 @@ impl AddFlowVpcInterfacesInput {
         self.flow_arn.as_deref()
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn vpc_interfaces(&self) -> ::std::option::Option<&[crate::types::VpcInterfaceRequest]> {
-        self.vpc_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_interfaces.is_none()`.
+    pub fn vpc_interfaces(&self) -> &[crate::types::VpcInterfaceRequest] {
+        self.vpc_interfaces.as_deref().unwrap_or_default()
     }
 }
 impl AddFlowVpcInterfacesInput {
@@ -35,6 +37,7 @@ pub struct AddFlowVpcInterfacesInputBuilder {
 }
 impl AddFlowVpcInterfacesInputBuilder {
     /// The flow that you want to mutate.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self

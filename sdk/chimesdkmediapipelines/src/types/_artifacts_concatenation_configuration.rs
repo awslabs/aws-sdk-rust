@@ -70,6 +70,7 @@ pub struct ArtifactsConcatenationConfigurationBuilder {
 }
 impl ArtifactsConcatenationConfigurationBuilder {
     /// <p>The configuration for the audio artifacts concatenation.</p>
+    /// This field is required.
     pub fn audio(mut self, input: crate::types::AudioConcatenationConfiguration) -> Self {
         self.audio = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl ArtifactsConcatenationConfigurationBuilder {
         &self.audio
     }
     /// <p>The configuration for the video artifacts concatenation.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::VideoConcatenationConfiguration) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl ArtifactsConcatenationConfigurationBuilder {
         &self.video
     }
     /// <p>The configuration for the content artifacts concatenation.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::ContentConcatenationConfiguration) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl ArtifactsConcatenationConfigurationBuilder {
         &self.content
     }
     /// <p>The configuration for the data channel artifacts concatenation.</p>
+    /// This field is required.
     pub fn data_channel(mut self, input: crate::types::DataChannelConcatenationConfiguration) -> Self {
         self.data_channel = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl ArtifactsConcatenationConfigurationBuilder {
         &self.data_channel
     }
     /// <p>The configuration for the transcription messages artifacts concatenation.</p>
+    /// This field is required.
     pub fn transcription_messages(mut self, input: crate::types::TranscriptionMessagesConcatenationConfiguration) -> Self {
         self.transcription_messages = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl ArtifactsConcatenationConfigurationBuilder {
         &self.transcription_messages
     }
     /// <p>The configuration for the meeting events artifacts concatenation.</p>
+    /// This field is required.
     pub fn meeting_events(mut self, input: crate::types::MeetingEventsConcatenationConfiguration) -> Self {
         self.meeting_events = ::std::option::Option::Some(input);
         self
@@ -154,6 +160,7 @@ impl ArtifactsConcatenationConfigurationBuilder {
         &self.meeting_events
     }
     /// <p>The configuration for the composited video artifacts concatenation.</p>
+    /// This field is required.
     pub fn composited_video(mut self, input: crate::types::CompositedVideoConcatenationConfiguration) -> Self {
         self.composited_video = ::std::option::Option::Some(input);
         self

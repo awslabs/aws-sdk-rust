@@ -11,8 +11,10 @@ pub struct ListMailDomainsOutput {
 }
 impl ListMailDomainsOutput {
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
-    pub fn mail_domains(&self) -> ::std::option::Option<&[crate::types::MailDomainSummary]> {
-        self.mail_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mail_domains.is_none()`.
+    pub fn mail_domains(&self) -> &[crate::types::MailDomainSummary] {
+        self.mail_domains.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -7,7 +7,7 @@ pub struct HttpEndpointConfiguration {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The access key required for Kinesis Firehose to authenticate with the HTTP endpoint selected as the destination.</p>
@@ -17,8 +17,9 @@ impl HttpEndpointConfiguration {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -57,6 +58,7 @@ impl HttpEndpointConfigurationBuilder {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -103,12 +105,19 @@ impl HttpEndpointConfigurationBuilder {
         &self.access_key
     }
     /// Consumes the builder and constructs a [`HttpEndpointConfiguration`](crate::types::HttpEndpointConfiguration).
-    pub fn build(self) -> crate::types::HttpEndpointConfiguration {
-        crate::types::HttpEndpointConfiguration {
-            url: self.url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`url`](crate::types::builders::HttpEndpointConfigurationBuilder::url)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpEndpointConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpEndpointConfiguration {
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building HttpEndpointConfiguration",
+                )
+            })?,
             name: self.name,
             access_key: self.access_key,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for HttpEndpointConfigurationBuilder {

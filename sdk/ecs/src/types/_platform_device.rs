@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformDevice {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::PlatformDeviceType>,
+    pub r#type: crate::types::PlatformDeviceType,
 }
 impl PlatformDevice {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PlatformDeviceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PlatformDeviceType {
+        &self.r#type
     }
 }
 impl PlatformDevice {
@@ -35,6 +36,7 @@ pub struct PlatformDeviceBuilder {
 }
 impl PlatformDeviceBuilder {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl PlatformDeviceBuilder {
         &self.id
     }
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PlatformDeviceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl PlatformDeviceBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`PlatformDevice`](crate::types::PlatformDevice).
-    pub fn build(self) -> crate::types::PlatformDevice {
-        crate::types::PlatformDevice {
-            id: self.id,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::PlatformDeviceBuilder::id)
+    /// - [`r#type`](crate::types::builders::PlatformDeviceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PlatformDevice, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PlatformDevice {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building PlatformDevice",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building PlatformDevice",
+                )
+            })?,
+        })
     }
 }

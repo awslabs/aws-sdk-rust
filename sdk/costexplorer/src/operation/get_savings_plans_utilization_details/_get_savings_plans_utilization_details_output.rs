@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsOutput {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-    pub savings_plans_utilization_details: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
+    pub savings_plans_utilization_details: ::std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>,
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     pub total: ::std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
     /// <p>The time period of the request. </p>
@@ -15,8 +15,9 @@ pub struct GetSavingsPlansUtilizationDetailsOutput {
 }
 impl GetSavingsPlansUtilizationDetailsOutput {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-    pub fn savings_plans_utilization_details(&self) -> ::std::option::Option<&[crate::types::SavingsPlansUtilizationDetail]> {
-        self.savings_plans_utilization_details.as_deref()
+    pub fn savings_plans_utilization_details(&self) -> &[crate::types::SavingsPlansUtilizationDetail] {
+        use std::ops::Deref;
+        self.savings_plans_utilization_details.deref()
     }
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     pub fn total(&self) -> ::std::option::Option<&crate::types::SavingsPlansUtilizationAggregates> {
@@ -92,6 +93,7 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
         &self.total
     }
     /// <p>The time period of the request. </p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -129,13 +131,29 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationDetailsOutput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput).
-    pub fn build(self) -> crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput {
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput {
-            savings_plans_utilization_details: self.savings_plans_utilization_details,
-            total: self.total,
-            time_period: self.time_period,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`savings_plans_utilization_details`](crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsOutputBuilder::savings_plans_utilization_details)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput {
+                savings_plans_utilization_details: self.savings_plans_utilization_details
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("savings_plans_utilization_details", "savings_plans_utilization_details was not specified but it is required when building GetSavingsPlansUtilizationDetailsOutput")
+                    )?
+                ,
+                total: self.total
+                ,
+                time_period: self.time_period
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

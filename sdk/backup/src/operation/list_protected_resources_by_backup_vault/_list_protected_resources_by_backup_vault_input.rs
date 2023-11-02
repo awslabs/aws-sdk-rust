@@ -48,6 +48,7 @@ pub struct ListProtectedResourcesByBackupVaultInputBuilder {
 }
 impl ListProtectedResourcesByBackupVaultInputBuilder {
     /// <p>This is the list of protected resources by backup vault within the vault(s) you specify by name.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self

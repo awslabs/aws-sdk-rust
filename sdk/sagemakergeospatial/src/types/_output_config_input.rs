@@ -28,6 +28,7 @@ pub struct OutputConfigInputBuilder {
 }
 impl OutputConfigInputBuilder {
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
+    /// This field is required.
     pub fn s3_data(mut self, input: crate::types::ExportS3DataInput) -> Self {
         self.s3_data = ::std::option::Option::Some(input);
         self

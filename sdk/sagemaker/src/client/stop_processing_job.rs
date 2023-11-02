@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopProcessingJob`](crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`processing_job_name(impl Into<String>)`](crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::set_processing_job_name): <p>The name of the processing job to stop.</p>
+    ///   - [`processing_job_name(impl Into<String>)`](crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder::set_processing_job_name):<br>required: **true**<br><p>The name of the processing job to stop.</p><br>
     /// - On success, responds with [`StopProcessingJobOutput`](crate::operation::stop_processing_job::StopProcessingJobOutput)
     /// - On failure, responds with [`SdkError<StopProcessingJobError>`](crate::operation::stop_processing_job::StopProcessingJobError)
     pub fn stop_processing_job(&self) -> crate::operation::stop_processing_job::builders::StopProcessingJobFluentBuilder {

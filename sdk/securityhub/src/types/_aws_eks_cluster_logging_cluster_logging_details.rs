@@ -29,8 +29,10 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
     /// <li> <p> <code>controllerManager</code> </p> </li>
     /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
 }
 impl AwsEksClusterLoggingClusterLoggingDetails {

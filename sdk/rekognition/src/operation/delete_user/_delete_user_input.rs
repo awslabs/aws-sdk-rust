@@ -41,6 +41,7 @@ pub struct DeleteUserInputBuilder {
 }
 impl DeleteUserInputBuilder {
     /// <p>The ID of an existing collection from which the UserID needs to be deleted. </p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteUserInputBuilder {
         &self.collection_id
     }
     /// <p>ID for the UserID to be deleted. </p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

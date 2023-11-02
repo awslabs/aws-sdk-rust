@@ -22,8 +22,10 @@ impl AutoImportPolicy {
     /// <li> <p> <code>DELETED</code> - Amazon FSx automatically deletes files on the file system as corresponding files are deleted in the data repository.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::EventType] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl AutoImportPolicy {

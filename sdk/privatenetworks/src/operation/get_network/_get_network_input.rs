@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub network_arn: ::std::option::Option<::std::string::String>,
+    pub network_arn: ::std::string::String,
 }
 impl GetNetworkInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> ::std::option::Option<&str> {
-        self.network_arn.as_deref()
+    pub fn network_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_arn.deref()
     }
 }
 impl GetNetworkInput {
@@ -27,6 +28,7 @@ pub struct GetNetworkInputBuilder {
 }
 impl GetNetworkInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    /// This field is required.
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,16 @@ impl GetNetworkInputBuilder {
         &self.network_arn
     }
     /// Consumes the builder and constructs a [`GetNetworkInput`](crate::operation::get_network::GetNetworkInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_arn`](crate::operation::get_network::builders::GetNetworkInputBuilder::network_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_network::GetNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_network::GetNetworkInput {
-            network_arn: self.network_arn,
+            network_arn: self.network_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_arn",
+                    "network_arn was not specified but it is required when building GetNetworkInput",
+                )
+            })?,
         })
     }
 }

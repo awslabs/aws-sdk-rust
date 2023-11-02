@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotFilter {
     /// <p>The name of the field to filter the list of bots.</p>
-    pub name: ::std::option::Option<crate::types::BotFilterName>,
+    pub name: crate::types::BotFilterName,
     /// <p>The value to use for filtering the list of bots.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
-    pub operator: ::std::option::Option<crate::types::BotFilterOperator>,
+    pub operator: crate::types::BotFilterOperator,
 }
 impl BotFilter {
     /// <p>The name of the field to filter the list of bots.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::BotFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::BotFilterName {
+        &self.name
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::BotFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::BotFilterOperator {
+        &self.operator
     }
 }
 impl BotFilter {
@@ -42,6 +43,7 @@ pub struct BotFilterBuilder {
 }
 impl BotFilterBuilder {
     /// <p>The name of the field to filter the list of bots.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::BotFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl BotFilterBuilder {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::BotFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl BotFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`BotFilter`](crate::types::BotFilter).
-    pub fn build(self) -> crate::types::BotFilter {
-        crate::types::BotFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::BotFilterBuilder::name)
+    /// - [`values`](crate::types::builders::BotFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::BotFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::BotFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BotFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building BotFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building BotFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building BotFilter",
+                )
+            })?,
+        })
     }
 }

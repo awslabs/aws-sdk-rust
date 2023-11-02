@@ -31,6 +31,7 @@ pub fn ser_step_adjustment(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_step_adjustment(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StepAdjustment, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -86,5 +87,5 @@ pub fn de_step_adjustment(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::step_adjustment_correct_errors(builder).build())
 }

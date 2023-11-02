@@ -28,8 +28,10 @@ impl DescribeClientVpnConnectionsInput {
     /// <li> <p> <code>connection-id</code> - The ID of the connection.</p> </li>
     /// <li> <p> <code>username</code> - For Active Directory client authentication, the user name of the client who established the client connection.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ pub struct DescribeClientVpnConnectionsInputBuilder {
 }
 impl DescribeClientVpnConnectionsInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self

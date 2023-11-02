@@ -14,8 +14,10 @@ impl UpdateResourceProfileDetectionsInput {
         self.resource_arn.as_deref()
     }
     /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
-    pub fn suppress_data_identifiers(&self) -> ::std::option::Option<&[crate::types::SuppressDataIdentifier]> {
-        self.suppress_data_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppress_data_identifiers.is_none()`.
+    pub fn suppress_data_identifiers(&self) -> &[crate::types::SuppressDataIdentifier] {
+        self.suppress_data_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl UpdateResourceProfileDetectionsInput {
@@ -34,6 +36,7 @@ pub struct UpdateResourceProfileDetectionsInputBuilder {
 }
 impl UpdateResourceProfileDetectionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

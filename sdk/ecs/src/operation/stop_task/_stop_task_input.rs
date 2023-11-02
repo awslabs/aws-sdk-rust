@@ -55,6 +55,7 @@ impl StopTaskInputBuilder {
         &self.cluster
     }
     /// <p>The task ID of the task to stop.</p>
+    /// This field is required.
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task = ::std::option::Option::Some(input.into());
         self

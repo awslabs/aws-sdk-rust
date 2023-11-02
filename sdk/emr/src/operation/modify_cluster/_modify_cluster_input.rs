@@ -34,6 +34,7 @@ pub struct ModifyClusterInputBuilder {
 }
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

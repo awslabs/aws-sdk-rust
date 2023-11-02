@@ -19,8 +19,10 @@ pub struct ValidateTemplateOutput {
 }
 impl ValidateTemplateOutput {
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::TemplateParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::TemplateParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The description found within the template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -28,16 +30,20 @@ impl ValidateTemplateOutput {
     }
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub fn capabilities_reason(&self) -> ::std::option::Option<&str> {
         self.capabilities_reason.as_deref()
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn declared_transforms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.declared_transforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.declared_transforms.is_none()`.
+    pub fn declared_transforms(&self) -> &[::std::string::String] {
+        self.declared_transforms.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ValidateTemplateOutput {

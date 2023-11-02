@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelScheduleInput {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The duration in minutes of the channel schedule.</p>
     pub duration_minutes: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
@@ -17,8 +17,9 @@ pub struct GetChannelScheduleInput {
 }
 impl GetChannelScheduleInput {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The duration in minutes of the channel schedule.</p>
     pub fn duration_minutes(&self) -> ::std::option::Option<&str> {
@@ -54,6 +55,7 @@ pub struct GetChannelScheduleInputBuilder {
 }
 impl GetChannelScheduleInputBuilder {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -119,11 +121,18 @@ impl GetChannelScheduleInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_name`](crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder::channel_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_channel_schedule::GetChannelScheduleInput {
-            channel_name: self.channel_name,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building GetChannelScheduleInput",
+                )
+            })?,
             duration_minutes: self.duration_minutes,
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,

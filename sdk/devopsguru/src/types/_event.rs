@@ -51,8 +51,10 @@ impl Event {
         self.event_class.as_ref()
     }
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::EventResource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::EventResource] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl Event {

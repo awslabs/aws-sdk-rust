@@ -34,6 +34,7 @@ pub struct GetBucketLoggingInputBuilder {
 }
 impl GetBucketLoggingInputBuilder {
     /// <p>The bucket name for which to get the logging information.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

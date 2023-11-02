@@ -9,8 +9,10 @@ pub struct HistogramAggregatedFieldWells {
 }
 impl HistogramAggregatedFieldWells {
     /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl HistogramAggregatedFieldWells {

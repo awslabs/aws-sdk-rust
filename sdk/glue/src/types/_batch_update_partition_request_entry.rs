@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionRequestEntry {
     /// <p>A list of values defining the partitions.</p>
-    pub partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub partition_value_list: ::std::vec::Vec<::std::string::String>,
     /// <p>The structure used to update a partition.</p>
     pub partition_input: ::std::option::Option<crate::types::PartitionInput>,
 }
 impl BatchUpdatePartitionRequestEntry {
     /// <p>A list of values defining the partitions.</p>
-    pub fn partition_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_value_list.as_deref()
+    pub fn partition_value_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.partition_value_list.deref()
     }
     /// <p>The structure used to update a partition.</p>
     pub fn partition_input(&self) -> ::std::option::Option<&crate::types::PartitionInput> {
@@ -55,6 +56,7 @@ impl BatchUpdatePartitionRequestEntryBuilder {
         &self.partition_value_list
     }
     /// <p>The structure used to update a partition.</p>
+    /// This field is required.
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
         self.partition_input = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl BatchUpdatePartitionRequestEntryBuilder {
         &self.partition_input
     }
     /// Consumes the builder and constructs a [`BatchUpdatePartitionRequestEntry`](crate::types::BatchUpdatePartitionRequestEntry).
-    pub fn build(self) -> crate::types::BatchUpdatePartitionRequestEntry {
-        crate::types::BatchUpdatePartitionRequestEntry {
-            partition_value_list: self.partition_value_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`partition_value_list`](crate::types::builders::BatchUpdatePartitionRequestEntryBuilder::partition_value_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdatePartitionRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchUpdatePartitionRequestEntry {
+            partition_value_list: self.partition_value_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "partition_value_list",
+                    "partition_value_list was not specified but it is required when building BatchUpdatePartitionRequestEntry",
+                )
+            })?,
             partition_input: self.partition_input,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ValidateMatchmakingRuleSet`](crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_set_body(impl Into<String>)`](crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder::rule_set_body) / [`set_rule_set_body(Option<String>)`](crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder::set_rule_set_body): <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
+    ///   - [`rule_set_body(impl Into<String>)`](crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder::rule_set_body) / [`set_rule_set_body(Option<String>)`](crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetFluentBuilder::set_rule_set_body):<br>required: **true**<br><p>A collection of matchmaking rules to validate, formatted as a JSON string.</p><br>
     /// - On success, responds with [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput) with field(s):
     ///   - [`valid(Option<bool>)`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput::valid): <p>A response indicating whether the rule set is valid.</p>
     /// - On failure, responds with [`SdkError<ValidateMatchmakingRuleSetError>`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError)

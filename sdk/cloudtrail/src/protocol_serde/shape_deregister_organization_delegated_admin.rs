@@ -32,8 +32,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AccountNotRegisteredException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::AccountNotRegisteredException({
@@ -48,8 +48,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CloudTrailAccessNotEnabledException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::CloudTrailAccessNotEnabledException({
@@ -64,8 +64,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ConflictException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::ConflictException({
@@ -80,8 +80,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InsufficientDependencyServiceAccessPermissionException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::InsufficientDependencyServiceAccessPermissionException({
@@ -96,8 +96,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::InvalidParameterException({
@@ -112,8 +112,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotOrganizationManagementAccountException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::NotOrganizationManagementAccountException({
@@ -128,8 +128,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OperationNotPermittedException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::OperationNotPermittedException({
@@ -144,8 +144,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationNotInAllFeaturesModeException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::OrganizationNotInAllFeaturesModeException({
@@ -160,8 +160,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationsNotInUseException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::OrganizationsNotInUseException({
@@ -176,8 +176,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedOperationException" => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::UnsupportedOperationException({
@@ -192,8 +192,8 @@ pub fn de_deregister_organization_delegated_admin_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError::generic(generic)

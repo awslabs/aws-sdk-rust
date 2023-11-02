@@ -34,8 +34,10 @@ impl CreateVpcEndpointConnectionNotificationInput {
         self.connection_notification_arn.as_deref()
     }
     /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connection_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_events.is_none()`.
+    pub fn connection_events(&self) -> &[::std::string::String] {
+        self.connection_events.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -104,6 +106,7 @@ impl CreateVpcEndpointConnectionNotificationInputBuilder {
         &self.vpc_endpoint_id
     }
     /// <p>The ARN of the SNS topic for the notifications.</p>
+    /// This field is required.
     pub fn connection_notification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_notification_arn = ::std::option::Option::Some(input.into());
         self

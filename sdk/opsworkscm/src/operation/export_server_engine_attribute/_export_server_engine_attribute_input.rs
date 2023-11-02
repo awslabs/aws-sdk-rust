@@ -32,8 +32,10 @@ impl ExportServerEngineAttributeInput {
     /// <li> <p> <b>NodeEnvironment</b> In Chef, a node environment (for example, development, staging, or one-box). In Puppet, this parameter is ignored.</p> </li>
     /// <li> <p> <b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p> </li>
     /// </ul>
-    pub fn input_attributes(&self) -> ::std::option::Option<&[crate::types::EngineAttribute]> {
-        self.input_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_attributes.is_none()`.
+    pub fn input_attributes(&self) -> &[crate::types::EngineAttribute] {
+        self.input_attributes.as_deref().unwrap_or_default()
     }
 }
 impl ExportServerEngineAttributeInput {
@@ -53,6 +55,7 @@ pub struct ExportServerEngineAttributeInputBuilder {
 }
 impl ExportServerEngineAttributeInputBuilder {
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
+    /// This field is required.
     pub fn export_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +70,7 @@ impl ExportServerEngineAttributeInputBuilder {
         &self.export_attribute_name
     }
     /// <p>The name of the server from which you are exporting the attribute.</p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self

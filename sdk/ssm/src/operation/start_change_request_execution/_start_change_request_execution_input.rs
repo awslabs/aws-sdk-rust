@@ -74,16 +74,20 @@ impl StartChangeRequestExecutionInput {
     /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn runbooks(&self) -> ::std::option::Option<&[crate::types::Runbook]> {
-        self.runbooks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runbooks.is_none()`.
+    pub fn runbooks(&self) -> &[crate::types::Runbook] {
+        self.runbooks.as_deref().unwrap_or_default()
     }
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
     /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
     pub fn scheduled_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -139,6 +143,7 @@ impl StartChangeRequestExecutionInputBuilder {
         &self.scheduled_time
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
+    /// This field is required.
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self

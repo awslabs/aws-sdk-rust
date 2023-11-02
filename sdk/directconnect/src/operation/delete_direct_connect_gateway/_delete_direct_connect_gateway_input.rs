@@ -27,6 +27,7 @@ pub struct DeleteDirectConnectGatewayInputBuilder {
 }
 impl DeleteDirectConnectGatewayInputBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self

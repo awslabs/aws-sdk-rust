@@ -15,8 +15,10 @@ impl ListNetworkAnalyzerConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of network analyzer configurations.</p>
-    pub fn network_analyzer_configuration_list(&self) -> ::std::option::Option<&[crate::types::NetworkAnalyzerConfigurations]> {
-        self.network_analyzer_configuration_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_analyzer_configuration_list.is_none()`.
+    pub fn network_analyzer_configuration_list(&self) -> &[crate::types::NetworkAnalyzerConfigurations] {
+        self.network_analyzer_configuration_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListNetworkAnalyzerConfigurationsOutput {

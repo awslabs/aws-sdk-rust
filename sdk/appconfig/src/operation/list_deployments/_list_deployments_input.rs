@@ -48,6 +48,7 @@ pub struct ListDeploymentsInputBuilder {
 }
 impl ListDeploymentsInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListDeploymentsInputBuilder {
         &self.application_id
     }
     /// <p>The environment ID.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self

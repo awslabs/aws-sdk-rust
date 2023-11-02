@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageGenerationConfiguration {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
-    pub status: ::std::option::Option<crate::types::ConfigurationStatus>,
+    pub status: crate::types::ConfigurationStatus,
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub image_selector_type: ::std::option::Option<crate::types::ImageSelectorType>,
+    pub image_selector_type: crate::types::ImageSelectorType,
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
     pub destination_config: ::std::option::Option<crate::types::ImageGenerationDestinationConfig>,
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
-    pub sampling_interval: ::std::option::Option<i32>,
+    pub sampling_interval: i32,
     /// <p>The accepted image format.</p>
-    pub format: ::std::option::Option<crate::types::Format>,
+    pub format: crate::types::Format,
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     pub format_config: ::std::option::Option<::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>>,
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
@@ -23,24 +23,24 @@ pub struct ImageGenerationConfiguration {
 }
 impl ImageGenerationConfiguration {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ConfigurationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ConfigurationStatus {
+        &self.status
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn image_selector_type(&self) -> ::std::option::Option<&crate::types::ImageSelectorType> {
-        self.image_selector_type.as_ref()
+    pub fn image_selector_type(&self) -> &crate::types::ImageSelectorType {
+        &self.image_selector_type
     }
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
     pub fn destination_config(&self) -> ::std::option::Option<&crate::types::ImageGenerationDestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
-    pub fn sampling_interval(&self) -> ::std::option::Option<i32> {
+    pub fn sampling_interval(&self) -> i32 {
         self.sampling_interval
     }
     /// <p>The accepted image format.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::Format {
+        &self.format
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
     pub fn format_config(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>> {
@@ -77,6 +77,7 @@ pub struct ImageGenerationConfigurationBuilder {
 }
 impl ImageGenerationConfigurationBuilder {
     /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl ImageGenerationConfigurationBuilder {
         &self.status
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+    /// This field is required.
     pub fn image_selector_type(mut self, input: crate::types::ImageSelectorType) -> Self {
         self.image_selector_type = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl ImageGenerationConfigurationBuilder {
         &self.image_selector_type
     }
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
+    /// This field is required.
     pub fn destination_config(mut self, input: crate::types::ImageGenerationDestinationConfig) -> Self {
         self.destination_config = ::std::option::Option::Some(input);
         self
@@ -119,6 +122,7 @@ impl ImageGenerationConfigurationBuilder {
         &self.destination_config
     }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    /// This field is required.
     pub fn sampling_interval(mut self, input: i32) -> Self {
         self.sampling_interval = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl ImageGenerationConfigurationBuilder {
         &self.sampling_interval
     }
     /// <p>The accepted image format.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -198,16 +203,41 @@ impl ImageGenerationConfigurationBuilder {
         &self.height_pixels
     }
     /// Consumes the builder and constructs a [`ImageGenerationConfiguration`](crate::types::ImageGenerationConfiguration).
-    pub fn build(self) -> crate::types::ImageGenerationConfiguration {
-        crate::types::ImageGenerationConfiguration {
-            status: self.status,
-            image_selector_type: self.image_selector_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ImageGenerationConfigurationBuilder::status)
+    /// - [`image_selector_type`](crate::types::builders::ImageGenerationConfigurationBuilder::image_selector_type)
+    /// - [`sampling_interval`](crate::types::builders::ImageGenerationConfigurationBuilder::sampling_interval)
+    /// - [`format`](crate::types::builders::ImageGenerationConfigurationBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageGenerationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageGenerationConfiguration {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ImageGenerationConfiguration",
+                )
+            })?,
+            image_selector_type: self.image_selector_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "image_selector_type",
+                    "image_selector_type was not specified but it is required when building ImageGenerationConfiguration",
+                )
+            })?,
             destination_config: self.destination_config,
-            sampling_interval: self.sampling_interval,
-            format: self.format,
+            sampling_interval: self.sampling_interval.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sampling_interval",
+                    "sampling_interval was not specified but it is required when building ImageGenerationConfiguration",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building ImageGenerationConfiguration",
+                )
+            })?,
             format_config: self.format_config,
             width_pixels: self.width_pixels,
             height_pixels: self.height_pixels,
-        }
+        })
     }
 }

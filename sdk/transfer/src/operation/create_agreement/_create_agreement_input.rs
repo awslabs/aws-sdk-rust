@@ -62,8 +62,10 @@ impl CreateAgreementInput {
         self.status.as_ref()
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAgreementInput {
@@ -102,6 +104,7 @@ impl CreateAgreementInputBuilder {
         &self.description
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl CreateAgreementInputBuilder {
         &self.server_id
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
+    /// This field is required.
     pub fn local_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +134,7 @@ impl CreateAgreementInputBuilder {
         &self.local_profile_id
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
+    /// This field is required.
     pub fn partner_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +150,7 @@ impl CreateAgreementInputBuilder {
     }
     /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+    /// This field is required.
     pub fn base_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_directory = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +172,7 @@ impl CreateAgreementInputBuilder {
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     /// <p> <b>For SFTP connectors</b> </p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
+    /// This field is required.
     pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_role = ::std::option::Option::Some(input.into());
         self

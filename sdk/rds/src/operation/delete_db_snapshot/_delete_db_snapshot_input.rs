@@ -31,6 +31,7 @@ pub struct DeleteDbSnapshotInputBuilder {
 impl DeleteDbSnapshotInputBuilder {
     /// <p>The DB snapshot identifier.</p>
     /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
+    /// This field is required.
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self

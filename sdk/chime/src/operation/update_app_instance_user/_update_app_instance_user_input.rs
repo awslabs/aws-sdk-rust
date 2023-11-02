@@ -50,6 +50,7 @@ pub struct UpdateAppInstanceUserInputBuilder {
 }
 impl UpdateAppInstanceUserInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl UpdateAppInstanceUserInputBuilder {
         &self.app_instance_user_arn
     }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

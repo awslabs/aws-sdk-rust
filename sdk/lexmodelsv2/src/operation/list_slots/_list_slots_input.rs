@@ -42,8 +42,10 @@ impl ListSlotsInput {
         self.sort_by.as_ref()
     }
     /// <p>Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SlotFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SlotFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -76,6 +78,7 @@ pub struct ListSlotsInputBuilder {
 }
 impl ListSlotsInputBuilder {
     /// <p>The identifier of the bot that contains the slot.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl ListSlotsInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot that contains the slot.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl ListSlotsInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl ListSlotsInputBuilder {
         &self.locale_id
     }
     /// <p>The unique identifier of the intent that contains the slot.</p>
+    /// This field is required.
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
         self

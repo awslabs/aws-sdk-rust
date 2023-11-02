@@ -55,6 +55,7 @@ pub fn ser_stack_set_operation_preferences(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_operation_preferences(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StackSetOperationPreferences, ::aws_smithy_xml::decode::XmlDecodeError> {

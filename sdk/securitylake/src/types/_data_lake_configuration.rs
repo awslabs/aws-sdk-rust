@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakeConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::DataLakeEncryptionConfiguration>,
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
@@ -15,8 +15,9 @@ pub struct DataLakeConfiguration {
 }
 impl DataLakeConfiguration {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::DataLakeEncryptionConfiguration> {
@@ -49,6 +50,7 @@ pub struct DataLakeConfigurationBuilder {
 }
 impl DataLakeConfigurationBuilder {
     /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl DataLakeConfigurationBuilder {
         &self.replication_configuration
     }
     /// Consumes the builder and constructs a [`DataLakeConfiguration`](crate::types::DataLakeConfiguration).
-    pub fn build(self) -> crate::types::DataLakeConfiguration {
-        crate::types::DataLakeConfiguration {
-            region: self.region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region`](crate::types::builders::DataLakeConfigurationBuilder::region)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataLakeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataLakeConfiguration {
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building DataLakeConfiguration",
+                )
+            })?,
             encryption_configuration: self.encryption_configuration,
             lifecycle_configuration: self.lifecycle_configuration,
             replication_configuration: self.replication_configuration,
-        }
+        })
     }
 }

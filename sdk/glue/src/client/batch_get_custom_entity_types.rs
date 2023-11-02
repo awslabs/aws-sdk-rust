@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetCustomEntityTypes`](crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder::set_names): <p>A list of names of the custom patterns that you want to retrieve.</p>
+    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesFluentBuilder::set_names):<br>required: **true**<br><p>A list of names of the custom patterns that you want to retrieve.</p><br>
     /// - On success, responds with [`BatchGetCustomEntityTypesOutput`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput) with field(s):
     ///   - [`custom_entity_types(Option<Vec<CustomEntityType>>)`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput::custom_entity_types): <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
     ///   - [`custom_entity_types_not_found(Option<Vec<String>>)`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput::custom_entity_types_not_found): <p>A list of the names of custom patterns that were not found.</p>

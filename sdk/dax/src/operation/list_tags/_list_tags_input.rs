@@ -34,6 +34,7 @@ pub struct ListTagsInputBuilder {
 }
 impl ListTagsInputBuilder {
     /// <p>The name of the DAX resource to which the tags belong.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self

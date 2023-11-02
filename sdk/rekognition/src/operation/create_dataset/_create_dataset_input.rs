@@ -55,6 +55,7 @@ impl CreateDatasetInputBuilder {
         &self.dataset_source
     }
     /// <p> The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to create a test dataset. </p>
+    /// This field is required.
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
         self.dataset_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreateDatasetInputBuilder {
         &self.dataset_type
     }
     /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self

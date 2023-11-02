@@ -64,6 +64,7 @@ pub struct CreateAssessmentReportInputBuilder {
 }
 impl CreateAssessmentReportInputBuilder {
     /// <p> The name of the new assessment report. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl CreateAssessmentReportInputBuilder {
         &self.description
     }
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self

@@ -17,8 +17,10 @@ pub struct DescribeEndpointsInput {
 impl DescribeEndpointsInput {
     /// <p>Filters applied to the endpoints.</p>
     /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>

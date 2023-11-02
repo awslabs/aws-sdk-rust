@@ -20,8 +20,10 @@ impl ModifyHapgInput {
         self.label.as_deref()
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn partition_serial_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_serial_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_serial_list.is_none()`.
+    pub fn partition_serial_list(&self) -> &[::std::string::String] {
+        self.partition_serial_list.as_deref().unwrap_or_default()
     }
 }
 impl ModifyHapgInput {
@@ -41,6 +43,7 @@ pub struct ModifyHapgInputBuilder {
 }
 impl ModifyHapgInputBuilder {
     /// <p>The ARN of the high-availability partition group to modify.</p>
+    /// This field is required.
     pub fn hapg_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hapg_arn = ::std::option::Option::Some(input.into());
         self

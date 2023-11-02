@@ -92,14 +92,14 @@ impl UpdateNamespaceFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::update_namespace::UpdateNamespaceOutput,
             crate::operation::update_namespace::UpdateNamespaceError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_namespace::UpdateNamespaceError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -125,19 +125,19 @@ impl UpdateNamespaceFluentBuilder {
         self.inner.get_namespace_name()
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_user_password(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_user_password()
     }

@@ -30,6 +30,7 @@ pub struct DescribeRobotInputBuilder {
 }
 impl DescribeRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    /// This field is required.
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
         self

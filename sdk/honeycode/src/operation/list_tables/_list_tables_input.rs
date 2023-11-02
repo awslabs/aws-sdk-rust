@@ -46,6 +46,7 @@ pub struct ListTablesInputBuilder {
 impl ListTablesInputBuilder {
     /// <p>The ID of the workbook whose tables are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self

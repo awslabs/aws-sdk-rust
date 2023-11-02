@@ -28,11 +28,10 @@ pub fn de_list_read_set_activation_jobs_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::InternalServerException({
@@ -43,11 +42,10 @@ pub fn de_list_read_set_activation_jobs_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "RequestTimeoutException" => crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::RequestTimeoutException({
@@ -58,11 +56,10 @@ pub fn de_list_read_set_activation_jobs_http_error(
                 output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::request_timeout_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::ResourceNotFoundException({
@@ -73,11 +70,10 @@ pub fn de_list_read_set_activation_jobs_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::ThrottlingException({
@@ -88,11 +84,10 @@ pub fn de_list_read_set_activation_jobs_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::ValidationException({
@@ -103,11 +98,10 @@ pub fn de_list_read_set_activation_jobs_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError::generic(generic),

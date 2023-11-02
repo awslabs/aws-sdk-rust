@@ -42,6 +42,7 @@ pub struct SavingsPlansUtilizationAggregatesBuilder {
 }
 impl SavingsPlansUtilizationAggregatesBuilder {
     /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads that are Savings Plans eligible.</p>
+    /// This field is required.
     pub fn utilization(mut self, input: crate::types::SavingsPlansUtilization) -> Self {
         self.utilization = ::std::option::Option::Some(input);
         self

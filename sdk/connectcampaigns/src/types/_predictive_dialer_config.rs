@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
-    pub bandwidth_allocation: ::std::option::Option<f64>,
+    pub bandwidth_allocation: f64,
     /// Allocates dialing capacity for this campaign between multiple active campaigns
     pub dialing_capacity: ::std::option::Option<f64>,
 }
 impl PredictiveDialerConfig {
     /// The bandwidth allocation of a queue resource.
-    pub fn bandwidth_allocation(&self) -> ::std::option::Option<f64> {
+    pub fn bandwidth_allocation(&self) -> f64 {
         self.bandwidth_allocation
     }
     /// Allocates dialing capacity for this campaign between multiple active campaigns
@@ -35,6 +35,7 @@ pub struct PredictiveDialerConfigBuilder {
 }
 impl PredictiveDialerConfigBuilder {
     /// The bandwidth allocation of a queue resource.
+    /// This field is required.
     pub fn bandwidth_allocation(mut self, input: f64) -> Self {
         self.bandwidth_allocation = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl PredictiveDialerConfigBuilder {
         &self.dialing_capacity
     }
     /// Consumes the builder and constructs a [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
-    pub fn build(self) -> crate::types::PredictiveDialerConfig {
-        crate::types::PredictiveDialerConfig {
-            bandwidth_allocation: self.bandwidth_allocation,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bandwidth_allocation`](crate::types::builders::PredictiveDialerConfigBuilder::bandwidth_allocation)
+    pub fn build(self) -> ::std::result::Result<crate::types::PredictiveDialerConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PredictiveDialerConfig {
+            bandwidth_allocation: self.bandwidth_allocation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bandwidth_allocation",
+                    "bandwidth_allocation was not specified but it is required when building PredictiveDialerConfig",
+                )
+            })?,
             dialing_capacity: self.dialing_capacity,
-        }
+        })
     }
 }

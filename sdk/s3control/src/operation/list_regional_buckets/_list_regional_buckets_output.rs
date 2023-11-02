@@ -11,8 +11,10 @@ pub struct ListRegionalBucketsOutput {
 }
 impl ListRegionalBucketsOutput {
     /// <p></p>
-    pub fn regional_bucket_list(&self) -> ::std::option::Option<&[crate::types::RegionalBucket]> {
-        self.regional_bucket_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regional_bucket_list.is_none()`.
+    pub fn regional_bucket_list(&self) -> &[crate::types::RegionalBucket] {
+        self.regional_bucket_list.as_deref().unwrap_or_default()
     }
     /// <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

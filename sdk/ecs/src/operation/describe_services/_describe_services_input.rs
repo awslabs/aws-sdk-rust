@@ -16,12 +16,16 @@ impl DescribeServicesInput {
         self.cluster.as_deref()
     }
     /// <p>A list of services to describe. You may specify up to 10 services to describe in a single operation.</p>
-    pub fn services(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[::std::string::String] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>Determines whether you want to see the resource tags for the service. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::ServiceField]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[crate::types::ServiceField] {
+        self.include.as_deref().unwrap_or_default()
     }
 }
 impl DescribeServicesInput {

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
-    pub start_date: ::std::option::Option<::std::string::String>,
+    pub start_date: ::std::string::String,
     /// <p>The last date an anomaly was observed. </p>
     pub end_date: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
-    pub fn start_date(&self) -> ::std::option::Option<&str> {
-        self.start_date.as_deref()
+    pub fn start_date(&self) -> &str {
+        use std::ops::Deref;
+        self.start_date.deref()
     }
     /// <p>The last date an anomaly was observed. </p>
     pub fn end_date(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AnomalyDateIntervalBuilder {
 }
 impl AnomalyDateIntervalBuilder {
     /// <p>The first date an anomaly was observed. </p>
+    /// This field is required.
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AnomalyDateIntervalBuilder {
         &self.end_date
     }
     /// Consumes the builder and constructs a [`AnomalyDateInterval`](crate::types::AnomalyDateInterval).
-    pub fn build(self) -> crate::types::AnomalyDateInterval {
-        crate::types::AnomalyDateInterval {
-            start_date: self.start_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_date`](crate::types::builders::AnomalyDateIntervalBuilder::start_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyDateInterval, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnomalyDateInterval {
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building AnomalyDateInterval",
+                )
+            })?,
             end_date: self.end_date,
-        }
+        })
     }
 }

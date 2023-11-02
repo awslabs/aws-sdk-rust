@@ -70,6 +70,7 @@ pub struct CreateAttendeeInputBuilder {
 }
 impl CreateAttendeeInputBuilder {
     /// <p>The unique ID of the meeting.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl CreateAttendeeInputBuilder {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
+    /// This field is required.
     pub fn external_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_user_id = ::std::option::Option::Some(input.into());
         self

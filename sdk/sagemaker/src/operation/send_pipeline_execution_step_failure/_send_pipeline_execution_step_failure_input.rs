@@ -41,6 +41,7 @@ pub struct SendPipelineExecutionStepFailureInputBuilder {
 }
 impl SendPipelineExecutionStepFailureInputBuilder {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    /// This field is required.
     pub fn callback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.callback_token = ::std::option::Option::Some(input.into());
         self

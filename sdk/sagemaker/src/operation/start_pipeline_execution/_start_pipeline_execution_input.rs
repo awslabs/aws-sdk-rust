@@ -28,8 +28,10 @@ impl StartPipelineExecutionInput {
         self.pipeline_execution_display_name.as_deref()
     }
     /// <p>Contains a list of pipeline parameters. This list can be empty. </p>
-    pub fn pipeline_parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.pipeline_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_parameters.is_none()`.
+    pub fn pipeline_parameters(&self) -> &[crate::types::Parameter] {
+        self.pipeline_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The description of the pipeline execution.</p>
     pub fn pipeline_execution_description(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct StartPipelineExecutionInputBuilder {
 }
 impl StartPipelineExecutionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +134,7 @@ impl StartPipelineExecutionInputBuilder {
         &self.pipeline_execution_description
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

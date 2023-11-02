@@ -34,6 +34,7 @@ pub struct UpdateGroupInputBuilder {
 }
 impl UpdateGroupInputBuilder {
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self

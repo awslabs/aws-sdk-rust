@@ -13,9 +13,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Notification {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
-    pub notification_type: ::std::option::Option<crate::types::NotificationType>,
+    pub notification_type: crate::types::NotificationType,
     /// <p>The comparison that's used for this notification.</p>
-    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: crate::types::ComparisonOperator,
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
     pub threshold: f64,
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
@@ -25,12 +25,12 @@ pub struct Notification {
 }
 impl Notification {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
-    pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
-        self.notification_type.as_ref()
+    pub fn notification_type(&self) -> &crate::types::NotificationType {
+        &self.notification_type
     }
     /// <p>The comparison that's used for this notification.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
-        self.comparison_operator.as_ref()
+    pub fn comparison_operator(&self) -> &crate::types::ComparisonOperator {
+        &self.comparison_operator
     }
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
     pub fn threshold(&self) -> f64 {
@@ -64,6 +64,7 @@ pub struct NotificationBuilder {
 }
 impl NotificationBuilder {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
+    /// This field is required.
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.notification_type = ::std::option::Option::Some(input);
         self
@@ -78,6 +79,7 @@ impl NotificationBuilder {
         &self.notification_type
     }
     /// <p>The comparison that's used for this notification.</p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
@@ -92,6 +94,7 @@ impl NotificationBuilder {
         &self.comparison_operator
     }
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
+    /// This field is required.
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = ::std::option::Option::Some(input);
         self
@@ -134,13 +137,26 @@ impl NotificationBuilder {
         &self.notification_state
     }
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).
-    pub fn build(self) -> crate::types::Notification {
-        crate::types::Notification {
-            notification_type: self.notification_type,
-            comparison_operator: self.comparison_operator,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`notification_type`](crate::types::builders::NotificationBuilder::notification_type)
+    /// - [`comparison_operator`](crate::types::builders::NotificationBuilder::comparison_operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::Notification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Notification {
+            notification_type: self.notification_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "notification_type",
+                    "notification_type was not specified but it is required when building Notification",
+                )
+            })?,
+            comparison_operator: self.comparison_operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "comparison_operator",
+                    "comparison_operator was not specified but it is required when building Notification",
+                )
+            })?,
             threshold: self.threshold.unwrap_or_default(),
             threshold_type: self.threshold_type,
             notification_state: self.notification_state,
-        }
+        })
     }
 }

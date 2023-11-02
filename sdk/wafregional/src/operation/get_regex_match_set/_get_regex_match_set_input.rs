@@ -27,6 +27,7 @@ pub struct GetRegexMatchSetInputBuilder {
 }
 impl GetRegexMatchSetInputBuilder {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    /// This field is required.
     pub fn regex_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_match_set_id = ::std::option::Option::Some(input.into());
         self

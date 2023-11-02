@@ -27,6 +27,7 @@ pub struct UpdateSamplingRuleInputBuilder {
 }
 impl UpdateSamplingRuleInputBuilder {
     /// <p>The rule and fields to change.</p>
+    /// This field is required.
     pub fn sampling_rule_update(mut self, input: crate::types::SamplingRuleUpdate) -> Self {
         self.sampling_rule_update = ::std::option::Option::Some(input);
         self

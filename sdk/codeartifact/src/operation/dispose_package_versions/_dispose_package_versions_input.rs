@@ -60,8 +60,10 @@ impl DisposePackageVersionsInput {
         self.package.as_deref()
     }
     /// <p> The versions of the package you want to dispose. </p>
-    pub fn versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[::std::string::String] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p> The revisions of the package versions you want to dispose. </p>
     pub fn version_revisions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -95,6 +97,7 @@ pub struct DisposePackageVersionsInputBuilder {
 }
 impl DisposePackageVersionsInputBuilder {
     /// <p> The name of the domain that contains the repository you want to dispose. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +126,7 @@ impl DisposePackageVersionsInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that contains the package versions you want to dispose. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +141,7 @@ impl DisposePackageVersionsInputBuilder {
         &self.repository
     }
     /// <p> A format that specifies the type of package versions you want to dispose. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -183,6 +188,7 @@ impl DisposePackageVersionsInputBuilder {
         &self.namespace
     }
     /// <p> The name of the package with the versions you want to dispose. </p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self

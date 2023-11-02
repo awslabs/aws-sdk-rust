@@ -27,6 +27,7 @@ pub struct EnableOrganizationAdminAccountInputBuilder {
 }
 impl EnableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    /// This field is required.
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self

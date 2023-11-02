@@ -176,6 +176,7 @@ impl GetReservationPurchaseRecommendationInputBuilder {
         &self.account_id
     }
     /// <p>The specific service that you want recommendations for.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self

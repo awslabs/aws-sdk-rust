@@ -27,6 +27,7 @@ pub struct StopMeetingTranscriptionInputBuilder {
 }
 impl StopMeetingTranscriptionInputBuilder {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self

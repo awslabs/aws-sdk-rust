@@ -12,8 +12,14 @@
 /// ```text
 /// # let componenttype = unimplemented!();
 /// match componenttype {
+///     ComponentType::Abap => { /* ... */ },
+///     ComponentType::Ascs => { /* ... */ },
+///     ComponentType::Dialog => { /* ... */ },
+///     ComponentType::Ers => { /* ... */ },
 ///     ComponentType::Hana => { /* ... */ },
 ///     ComponentType::HanaNode => { /* ... */ },
+///     ComponentType::Wd => { /* ... */ },
+///     ComponentType::Webdisp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,17 +48,35 @@
 )]
 pub enum ComponentType {
     #[allow(missing_docs)] // documentation missing in model
+    Abap,
+    #[allow(missing_docs)] // documentation missing in model
+    Ascs,
+    #[allow(missing_docs)] // documentation missing in model
+    Dialog,
+    #[allow(missing_docs)] // documentation missing in model
+    Ers,
+    #[allow(missing_docs)] // documentation missing in model
     Hana,
     #[allow(missing_docs)] // documentation missing in model
     HanaNode,
+    #[allow(missing_docs)] // documentation missing in model
+    Wd,
+    #[allow(missing_docs)] // documentation missing in model
+    Webdisp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
 impl ::std::convert::From<&str> for ComponentType {
     fn from(s: &str) -> Self {
         match s {
+            "ABAP" => ComponentType::Abap,
+            "ASCS" => ComponentType::Ascs,
+            "DIALOG" => ComponentType::Dialog,
+            "ERS" => ComponentType::Ers,
             "HANA" => ComponentType::Hana,
             "HANA_NODE" => ComponentType::HanaNode,
+            "WD" => ComponentType::Wd,
+            "WEBDISP" => ComponentType::Webdisp,
             other => ComponentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -68,14 +92,20 @@ impl ComponentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ComponentType::Abap => "ABAP",
+            ComponentType::Ascs => "ASCS",
+            ComponentType::Dialog => "DIALOG",
+            ComponentType::Ers => "ERS",
             ComponentType::Hana => "HANA",
             ComponentType::HanaNode => "HANA_NODE",
+            ComponentType::Wd => "WD",
+            ComponentType::Webdisp => "WEBDISP",
             ComponentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HANA", "HANA_NODE"]
+        &["ABAP", "ASCS", "DIALOG", "ERS", "HANA", "HANA_NODE", "WD", "WEBDISP"]
     }
 }
 impl ::std::convert::AsRef<str> for ComponentType {

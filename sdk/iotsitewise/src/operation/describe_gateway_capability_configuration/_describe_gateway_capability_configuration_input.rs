@@ -34,6 +34,7 @@ pub struct DescribeGatewayCapabilityConfigurationInputBuilder {
 }
 impl DescribeGatewayCapabilityConfigurationInputBuilder {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
         &self.gateway_id
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    /// This field is required.
     pub fn capability_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capability_namespace = ::std::option::Option::Some(input.into());
         self

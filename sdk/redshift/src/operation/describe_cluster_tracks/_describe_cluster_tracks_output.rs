@@ -11,8 +11,10 @@ pub struct DescribeClusterTracksOutput {
 }
 impl DescribeClusterTracksOutput {
     /// <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
-    pub fn maintenance_tracks(&self) -> ::std::option::Option<&[crate::types::MaintenanceTrack]> {
-        self.maintenance_tracks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_tracks.is_none()`.
+    pub fn maintenance_tracks(&self) -> &[crate::types::MaintenanceTrack] {
+        self.maintenance_tracks.as_deref().unwrap_or_default()
     }
     /// <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

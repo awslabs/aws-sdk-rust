@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
-    pub slot_type_id: ::std::option::Option<::std::string::String>,
+    pub slot_type_id: ::std::string::String,
 }
 impl SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
-    pub fn slot_type_id(&self) -> ::std::option::Option<&str> {
-        self.slot_type_id.as_deref()
+    pub fn slot_type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.slot_type_id.deref()
     }
 }
 impl SubSlotTypeComposition {
@@ -35,6 +37,7 @@ pub struct SubSlotTypeCompositionBuilder {
 }
 impl SubSlotTypeCompositionBuilder {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SubSlotTypeCompositionBuilder {
         &self.name
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
+    /// This field is required.
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SubSlotTypeCompositionBuilder {
         &self.slot_type_id
     }
     /// Consumes the builder and constructs a [`SubSlotTypeComposition`](crate::types::SubSlotTypeComposition).
-    pub fn build(self) -> crate::types::SubSlotTypeComposition {
-        crate::types::SubSlotTypeComposition {
-            name: self.name,
-            slot_type_id: self.slot_type_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SubSlotTypeCompositionBuilder::name)
+    /// - [`slot_type_id`](crate::types::builders::SubSlotTypeCompositionBuilder::slot_type_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubSlotTypeComposition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubSlotTypeComposition {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SubSlotTypeComposition",
+                )
+            })?,
+            slot_type_id: self.slot_type_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "slot_type_id",
+                    "slot_type_id was not specified but it is required when building SubSlotTypeComposition",
+                )
+            })?,
+        })
     }
 }

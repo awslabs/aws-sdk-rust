@@ -34,6 +34,7 @@ pub struct CreateDirectoryInputBuilder {
 }
 impl CreateDirectoryInputBuilder {
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateDirectoryInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self

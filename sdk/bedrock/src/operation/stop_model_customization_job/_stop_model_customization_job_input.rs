@@ -27,6 +27,7 @@ pub struct StopModelCustomizationJobInputBuilder {
 }
 impl StopModelCustomizationJobInputBuilder {
     /// <p>Job identifier of the job to stop.</p>
+    /// This field is required.
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_identifier = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTest`](crate::operation::get_test::builders::GetTestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_test::builders::GetTestFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_test::builders::GetTestFluentBuilder::set_arn): <p>The test's ARN.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_test::builders::GetTestFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_test::builders::GetTestFluentBuilder::set_arn):<br>required: **true**<br><p>The test's ARN.</p><br>
     /// - On success, responds with [`GetTestOutput`](crate::operation::get_test::GetTestOutput) with field(s):
     ///   - [`test(Option<Test>)`](crate::operation::get_test::GetTestOutput::test): <p>A test condition that is evaluated.</p>
     /// - On failure, responds with [`SdkError<GetTestError>`](crate::operation::get_test::GetTestError)

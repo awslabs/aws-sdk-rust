@@ -19,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.56.1"
-aws-sdk-mediatailor = "0.34.0"
+aws-sdk-mediatailor = "0.35.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -27,6 +27,7 @@ pub struct CreateKeyGroupInputBuilder {
 }
 impl CreateKeyGroupInputBuilder {
     /// <p>A key group configuration.</p>
+    /// This field is required.
     pub fn key_group_config(mut self, input: crate::types::KeyGroupConfig) -> Self {
         self.key_group_config = ::std::option::Option::Some(input);
         self

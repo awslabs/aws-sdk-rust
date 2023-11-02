@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignInConfig {
     /// <p>Information about traffic distributions.</p>
-    pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::SignInDistribution>>,
+    pub distributions: ::std::vec::Vec<crate::types::SignInDistribution>,
 }
 impl SignInConfig {
     /// <p>Information about traffic distributions.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::SignInDistribution]> {
-        self.distributions.as_deref()
+    pub fn distributions(&self) -> &[crate::types::SignInDistribution] {
+        use std::ops::Deref;
+        self.distributions.deref()
     }
 }
 impl SignInConfig {
@@ -48,9 +49,16 @@ impl SignInConfigBuilder {
         &self.distributions
     }
     /// Consumes the builder and constructs a [`SignInConfig`](crate::types::SignInConfig).
-    pub fn build(self) -> crate::types::SignInConfig {
-        crate::types::SignInConfig {
-            distributions: self.distributions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`distributions`](crate::types::builders::SignInConfigBuilder::distributions)
+    pub fn build(self) -> ::std::result::Result<crate::types::SignInConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SignInConfig {
+            distributions: self.distributions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "distributions",
+                    "distributions was not specified but it is required when building SignInConfig",
+                )
+            })?,
+        })
     }
 }

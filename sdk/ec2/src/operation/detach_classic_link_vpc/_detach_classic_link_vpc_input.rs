@@ -55,6 +55,7 @@ impl DetachClassicLinkVpcInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the instance to unlink from the VPC.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DetachClassicLinkVpcInputBuilder {
         &self.instance_id
     }
     /// <p>The ID of the VPC to which the instance is linked.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

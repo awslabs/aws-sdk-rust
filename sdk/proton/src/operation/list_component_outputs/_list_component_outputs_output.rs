@@ -6,7 +6,7 @@ pub struct ListComponentOutputsOutput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub outputs: ::std::vec::Vec<crate::types::Output>,
     _request_id: Option<String>,
 }
 impl ListComponentOutputsOutput {
@@ -15,8 +15,9 @@ impl ListComponentOutputsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        use std::ops::Deref;
+        self.outputs.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListComponentOutputsOutput {
@@ -84,11 +85,21 @@ impl ListComponentOutputsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListComponentOutputsOutput`](crate::operation::list_component_outputs::ListComponentOutputsOutput).
-    pub fn build(self) -> crate::operation::list_component_outputs::ListComponentOutputsOutput {
-        crate::operation::list_component_outputs::ListComponentOutputsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`outputs`](crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder::outputs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_component_outputs::ListComponentOutputsOutput {
             next_token: self.next_token,
-            outputs: self.outputs,
+            outputs: self.outputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "outputs",
+                    "outputs was not specified but it is required when building ListComponentOutputsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

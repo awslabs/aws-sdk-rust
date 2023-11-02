@@ -131,12 +131,16 @@ impl IpamPool {
         self.allocation_default_netmask_length
     }
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    pub fn allocation_resource_tags(&self) -> ::std::option::Option<&[crate::types::IpamResourceTag]> {
-        self.allocation_resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_resource_tags.is_none()`.
+    pub fn allocation_resource_tags(&self) -> &[crate::types::IpamResourceTag] {
+        self.allocation_resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Limits which service in Amazon Web Services that the pool can be used in. "ec2", for example, allows users to use space for Elastic IP addresses and VPCs.</p>
     pub fn aws_service(&self) -> ::std::option::Option<&crate::types::IpamPoolAwsService> {

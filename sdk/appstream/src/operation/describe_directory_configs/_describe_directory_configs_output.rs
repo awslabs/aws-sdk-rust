@@ -11,8 +11,10 @@ pub struct DescribeDirectoryConfigsOutput {
 }
 impl DescribeDirectoryConfigsOutput {
     /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
-    pub fn directory_configs(&self) -> ::std::option::Option<&[crate::types::DirectoryConfig]> {
-        self.directory_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_configs.is_none()`.
+    pub fn directory_configs(&self) -> &[crate::types::DirectoryConfig] {
+        self.directory_configs.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

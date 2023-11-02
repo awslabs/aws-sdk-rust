@@ -41,6 +41,7 @@ pub struct ListSchemaExtensionsInputBuilder {
 }
 impl ListSchemaExtensionsInputBuilder {
     /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

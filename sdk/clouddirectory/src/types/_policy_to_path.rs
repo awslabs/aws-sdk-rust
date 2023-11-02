@@ -15,8 +15,10 @@ impl PolicyToPath {
         self.path.as_deref()
     }
     /// <p>List of policy objects.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::PolicyAttachment]> {
-        self.policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
+    pub fn policies(&self) -> &[crate::types::PolicyAttachment] {
+        self.policies.as_deref().unwrap_or_default()
     }
 }
 impl PolicyToPath {

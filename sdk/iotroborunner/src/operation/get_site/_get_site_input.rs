@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSiteInput {
     /// Site ARN.
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetSiteInput {
     /// Site ARN.
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetSiteInput {
@@ -27,6 +28,7 @@ pub struct GetSiteInputBuilder {
 }
 impl GetSiteInputBuilder {
     /// Site ARN.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl GetSiteInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSiteInput`](crate::operation::get_site::GetSiteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_site::builders::GetSiteInputBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_site::GetSiteInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_site::GetSiteInput { id: self.id })
+        ::std::result::Result::Ok(crate::operation::get_site::GetSiteInput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetSiteInput",
+                )
+            })?,
+        })
     }
 }

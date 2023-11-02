@@ -34,6 +34,7 @@ pub struct PutVoiceConnectorTerminationInputBuilder {
 }
 impl PutVoiceConnectorTerminationInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutVoiceConnectorTerminationInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The termination settings to be updated.</p>
+    /// This field is required.
     pub fn termination(mut self, input: crate::types::Termination) -> Self {
         self.termination = ::std::option::Option::Some(input);
         self

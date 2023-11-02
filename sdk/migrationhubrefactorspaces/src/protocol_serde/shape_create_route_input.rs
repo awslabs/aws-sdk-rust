@@ -12,27 +12,27 @@ pub fn ser_create_route_input(
         crate::protocol_serde::shape_default_route_input::ser_default_route_input(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.route_type {
-        object.key("RouteType").string(var_4.as_str());
+    {
+        object.key("RouteType").string(input.route_type.as_str());
     }
-    if let Some(var_5) = &input.service_identifier {
-        object.key("ServiceIdentifier").string(var_5.as_str());
+    {
+        object.key("ServiceIdentifier").string(input.service_identifier.as_str());
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_4) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_5 = object.key("Tags").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_7.finish();
+        object_5.finish();
     }
-    if let Some(var_10) = &input.uri_path_route {
+    if let Some(var_8) = &input.uri_path_route {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("UriPathRoute").start_object();
-        crate::protocol_serde::shape_uri_path_route_input::ser_uri_path_route_input(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_9 = object.key("UriPathRoute").start_object();
+        crate::protocol_serde::shape_uri_path_route_input::ser_uri_path_route_input(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

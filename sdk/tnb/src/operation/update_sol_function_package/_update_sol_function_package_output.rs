@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSolFunctionPackageOutput {
     /// <p>Operational state of the function package.</p>
-    pub operational_state: ::std::option::Option<crate::types::OperationalState>,
+    pub operational_state: crate::types::OperationalState,
     _request_id: Option<String>,
 }
 impl UpdateSolFunctionPackageOutput {
     /// <p>Operational state of the function package.</p>
-    pub fn operational_state(&self) -> ::std::option::Option<&crate::types::OperationalState> {
-        self.operational_state.as_ref()
+    pub fn operational_state(&self) -> &crate::types::OperationalState {
+        &self.operational_state
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateSolFunctionPackageOutput {
@@ -34,6 +34,7 @@ pub struct UpdateSolFunctionPackageOutputBuilder {
 }
 impl UpdateSolFunctionPackageOutputBuilder {
     /// <p>Operational state of the function package.</p>
+    /// This field is required.
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
         self.operational_state = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,22 @@ impl UpdateSolFunctionPackageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput).
-    pub fn build(self) -> crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
-        crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
-            operational_state: self.operational_state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operational_state`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder::operational_state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
+            operational_state: self.operational_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operational_state",
+                    "operational_state was not specified but it is required when building UpdateSolFunctionPackageOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

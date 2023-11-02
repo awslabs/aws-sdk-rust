@@ -10,8 +10,10 @@ pub struct RequestSpotInstancesOutput {
 }
 impl RequestSpotInstancesOutput {
     /// <p>The Spot Instance requests.</p>
-    pub fn spot_instance_requests(&self) -> ::std::option::Option<&[crate::types::SpotInstanceRequest]> {
-        self.spot_instance_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_instance_requests.is_none()`.
+    pub fn spot_instance_requests(&self) -> &[crate::types::SpotInstanceRequest] {
+        self.spot_instance_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RequestSpotInstancesOutput {

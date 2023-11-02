@@ -25,11 +25,10 @@ pub fn de_search_cases_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::search_cases::SearchCasesError::InternalServerException({
@@ -45,11 +44,10 @@ pub fn de_search_cases_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::search_cases::SearchCasesError::ResourceNotFoundException({
@@ -60,11 +58,10 @@ pub fn de_search_cases_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::search_cases::SearchCasesError::ThrottlingException({
@@ -75,11 +72,10 @@ pub fn de_search_cases_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::search_cases::SearchCasesError::ValidationException({
@@ -90,11 +86,10 @@ pub fn de_search_cases_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::search_cases::SearchCasesError::generic(generic),
@@ -113,7 +108,9 @@ pub fn de_search_cases_http_response(
         output = crate::protocol_serde::shape_search_cases::de_search_cases(_response_body, output)
             .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::search_cases_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::search_cases::SearchCasesError::unhandled)?
     })
 }
 

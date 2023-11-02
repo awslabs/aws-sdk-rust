@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::room_skill_parameter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,11 +52,11 @@ pub fn ser_room_skill_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoomSkillParameter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.parameter_key {
-        object.key("ParameterKey").string(var_1.as_str());
+    {
+        object.key("ParameterKey").string(input.parameter_key.as_str());
     }
-    if let Some(var_2) = &input.parameter_value {
-        object.key("ParameterValue").string(var_2.as_str());
+    {
+        object.key("ParameterValue").string(input.parameter_value.as_str());
     }
     Ok(())
 }

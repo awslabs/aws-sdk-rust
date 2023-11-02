@@ -11,8 +11,10 @@ pub struct ListDeploymentsOutput {
 }
 impl ListDeploymentsOutput {
     /// <p>A list that summarizes each deployment.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::Deployment]> {
-        self.deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments.is_none()`.
+    pub fn deployments(&self) -> &[crate::types::Deployment] {
+        self.deployments.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

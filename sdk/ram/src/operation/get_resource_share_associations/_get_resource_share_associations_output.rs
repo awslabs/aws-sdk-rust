@@ -11,8 +11,10 @@ pub struct GetResourceShareAssociationsOutput {
 }
 impl GetResourceShareAssociationsOutput {
     /// <p>An array of objects that contain the details about the associations.</p>
-    pub fn resource_share_associations(&self) -> ::std::option::Option<&[crate::types::ResourceShareAssociation]> {
-        self.resource_share_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_associations.is_none()`.
+    pub fn resource_share_associations(&self) -> &[crate::types::ResourceShareAssociation] {
+        self.resource_share_associations.as_deref().unwrap_or_default()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -28,6 +28,7 @@ pub struct DeleteWebhookInputBuilder {
 }
 impl DeleteWebhookInputBuilder {
     /// <p> The unique ID for a webhook. </p>
+    /// This field is required.
     pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webhook_id = ::std::option::Option::Some(input.into());
         self

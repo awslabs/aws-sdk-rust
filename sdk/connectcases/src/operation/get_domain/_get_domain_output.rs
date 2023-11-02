@@ -4,39 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    pub domain_arn: ::std::option::Option<::std::string::String>,
+    pub domain_arn: ::std::string::String,
     /// <p>The name of the Cases domain.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The timestamp when the Cases domain was created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The status of the Cases domain.</p>
-    pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
+    pub domain_status: crate::types::DomainStatus,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    pub fn domain_arn(&self) -> ::std::option::Option<&str> {
-        self.domain_arn.as_deref()
+    pub fn domain_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_arn.deref()
     }
     /// <p>The name of the Cases domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The timestamp when the Cases domain was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The status of the Cases domain.</p>
-    pub fn domain_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
-        self.domain_status.as_ref()
+    pub fn domain_status(&self) -> &crate::types::DomainStatus {
+        &self.domain_status
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
@@ -69,6 +72,7 @@ pub struct GetDomainOutputBuilder {
 }
 impl GetDomainOutputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl GetDomainOutputBuilder {
         &self.domain_id
     }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
+    /// This field is required.
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl GetDomainOutputBuilder {
         &self.domain_arn
     }
     /// <p>The name of the Cases domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl GetDomainOutputBuilder {
         &self.name
     }
     /// <p>The timestamp when the Cases domain was created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -125,6 +132,7 @@ impl GetDomainOutputBuilder {
         &self.created_time
     }
     /// <p>The status of the Cases domain.</p>
+    /// This field is required.
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.domain_status = ::std::option::Option::Some(input);
         self
@@ -173,15 +181,46 @@ impl GetDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput).
-    pub fn build(self) -> crate::operation::get_domain::GetDomainOutput {
-        crate::operation::get_domain::GetDomainOutput {
-            domain_id: self.domain_id,
-            domain_arn: self.domain_arn,
-            name: self.name,
-            created_time: self.created_time,
-            domain_status: self.domain_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::get_domain::builders::GetDomainOutputBuilder::domain_id)
+    /// - [`domain_arn`](crate::operation::get_domain::builders::GetDomainOutputBuilder::domain_arn)
+    /// - [`name`](crate::operation::get_domain::builders::GetDomainOutputBuilder::name)
+    /// - [`created_time`](crate::operation::get_domain::builders::GetDomainOutputBuilder::created_time)
+    /// - [`domain_status`](crate::operation::get_domain::builders::GetDomainOutputBuilder::domain_status)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
+            domain_arn: self.domain_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_arn",
+                    "domain_arn was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
+            domain_status: self.domain_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_status",
+                    "domain_status was not specified but it is required when building GetDomainOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

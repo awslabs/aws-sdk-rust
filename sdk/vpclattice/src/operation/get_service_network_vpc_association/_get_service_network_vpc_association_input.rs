@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
+    pub service_network_vpc_association_identifier: ::std::string::String,
 }
 impl GetServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_vpc_association_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_network_vpc_association_identifier.as_deref()
+    pub fn service_network_vpc_association_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_network_vpc_association_identifier.deref()
     }
 }
 impl GetServiceNetworkVpcAssociationInput {
@@ -27,6 +28,7 @@ pub struct GetServiceNetworkVpcAssociationInputBuilder {
 }
 impl GetServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// This field is required.
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl GetServiceNetworkVpcAssociationInputBuilder {
         &self.service_network_vpc_association_identifier
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkVpcAssociationInput`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_network_vpc_association_identifier`](crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationInputBuilder::service_network_vpc_association_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,8 +53,12 @@ impl GetServiceNetworkVpcAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationInput {
-                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier,
-            },
+                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("service_network_vpc_association_identifier", "service_network_vpc_association_identifier was not specified but it is required when building GetServiceNetworkVpcAssociationInput")
+                    )?
+                ,
+            }
         )
     }
 }

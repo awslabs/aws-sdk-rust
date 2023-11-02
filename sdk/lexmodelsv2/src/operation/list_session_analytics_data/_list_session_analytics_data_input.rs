@@ -37,8 +37,10 @@ impl ListSessionAnalyticsDataInput {
         self.sort_by.as_ref()
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::AnalyticsSessionFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::AnalyticsSessionFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -71,6 +73,7 @@ pub struct ListSessionAnalyticsDataInputBuilder {
 }
 impl ListSessionAnalyticsDataInputBuilder {
     /// <p>The identifier for the bot for which you want to retrieve session analytics.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl ListSessionAnalyticsDataInputBuilder {
         &self.bot_id
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see session analytics.</p>
+    /// This field is required.
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
         self
@@ -99,6 +103,7 @@ impl ListSessionAnalyticsDataInputBuilder {
         &self.start_date_time
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see session analytics.</p>
+    /// This field is required.
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct DescribeFhirDatastoreOutputBuilder {
 }
 impl DescribeFhirDatastoreOutputBuilder {
     /// <p>All properties associated with a data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>
+    /// This field is required.
     pub fn datastore_properties(mut self, input: crate::types::DatastoreProperties) -> Self {
         self.datastore_properties = ::std::option::Option::Some(input);
         self

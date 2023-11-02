@@ -28,6 +28,7 @@ pub struct SelectedStepBuilder {
 }
 impl SelectedStepBuilder {
     /// <p>The name of the pipeline step.</p>
+    /// This field is required.
     pub fn step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_name = ::std::option::Option::Some(input.into());
         self

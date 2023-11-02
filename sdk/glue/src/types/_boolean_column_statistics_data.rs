@@ -42,6 +42,7 @@ pub struct BooleanColumnStatisticsDataBuilder {
 }
 impl BooleanColumnStatisticsDataBuilder {
     /// <p>The number of true values in the column.</p>
+    /// This field is required.
     pub fn number_of_trues(mut self, input: i64) -> Self {
         self.number_of_trues = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl BooleanColumnStatisticsDataBuilder {
         &self.number_of_trues
     }
     /// <p>The number of false values in the column.</p>
+    /// This field is required.
     pub fn number_of_falses(mut self, input: i64) -> Self {
         self.number_of_falses = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl BooleanColumnStatisticsDataBuilder {
         &self.number_of_falses
     }
     /// <p>The number of null values in the column.</p>
+    /// This field is required.
     pub fn number_of_nulls(mut self, input: i64) -> Self {
         self.number_of_nulls = ::std::option::Option::Some(input);
         self

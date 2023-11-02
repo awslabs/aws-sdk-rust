@@ -34,6 +34,7 @@ pub struct DeleteAutoSnapshotInputBuilder {
 }
 impl DeleteAutoSnapshotInputBuilder {
     /// <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAutoSnapshotInputBuilder {
         &self.resource_name
     }
     /// <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
+    /// This field is required.
     pub fn date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date = ::std::option::Option::Some(input.into());
         self

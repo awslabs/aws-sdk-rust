@@ -9,8 +9,10 @@ pub struct DescribeSchedulingPoliciesInput {
 }
 impl DescribeSchedulingPoliciesInput {
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
+    pub fn arns(&self) -> &[::std::string::String] {
+        self.arns.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSchedulingPoliciesInput {

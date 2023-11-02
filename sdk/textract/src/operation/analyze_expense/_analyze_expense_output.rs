@@ -15,8 +15,10 @@ impl AnalyzeExpenseOutput {
         self.document_metadata.as_ref()
     }
     /// <p>The expenses detected by Amazon Textract.</p>
-    pub fn expense_documents(&self) -> ::std::option::Option<&[crate::types::ExpenseDocument]> {
-        self.expense_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expense_documents.is_none()`.
+    pub fn expense_documents(&self) -> &[crate::types::ExpenseDocument] {
+        self.expense_documents.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AnalyzeExpenseOutput {

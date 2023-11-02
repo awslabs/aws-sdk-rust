@@ -69,6 +69,7 @@ impl ListWorkflowExecutionsInputBuilder {
         &self.next_token
     }
     /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
+    /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self

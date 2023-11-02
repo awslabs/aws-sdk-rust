@@ -34,6 +34,7 @@ pub struct DeleteEntitlementInputBuilder {
 }
 impl DeleteEntitlementInputBuilder {
     /// <p>The name of the entitlement.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEntitlementInputBuilder {
         &self.name
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self

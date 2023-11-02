@@ -21,8 +21,10 @@ impl UpdateListenerInput {
         self.listener_arn.as_deref()
     }
     /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
-    pub fn port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
+    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
+        self.port_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The updated protocol for the connections from clients to the accelerator.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
@@ -54,6 +56,7 @@ pub struct UpdateListenerInputBuilder {
 }
 impl UpdateListenerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self

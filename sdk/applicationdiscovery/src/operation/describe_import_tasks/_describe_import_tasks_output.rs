@@ -15,8 +15,10 @@ impl DescribeImportTasksOutput {
         self.next_token.as_deref()
     }
     /// <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::ImportTask]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::ImportTask] {
+        self.tasks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeImportTasksOutput {

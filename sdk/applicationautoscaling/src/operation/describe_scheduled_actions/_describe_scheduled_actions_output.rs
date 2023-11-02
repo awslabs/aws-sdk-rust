@@ -11,8 +11,10 @@ pub struct DescribeScheduledActionsOutput {
 }
 impl DescribeScheduledActionsOutput {
     /// <p>Information about the scheduled actions.</p>
-    pub fn scheduled_actions(&self) -> ::std::option::Option<&[crate::types::ScheduledAction]> {
-        self.scheduled_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_actions.is_none()`.
+    pub fn scheduled_actions(&self) -> &[crate::types::ScheduledAction] {
+        self.scheduled_actions.as_deref().unwrap_or_default()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

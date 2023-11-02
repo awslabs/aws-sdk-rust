@@ -68,6 +68,7 @@ pub struct ModifyVpnTunnelOptionsInputBuilder {
 }
 impl ModifyVpnTunnelOptionsInputBuilder {
     /// <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
+    /// This field is required.
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +83,7 @@ impl ModifyVpnTunnelOptionsInputBuilder {
         &self.vpn_connection_id
     }
     /// <p>The external IP address of the VPN tunnel.</p>
+    /// This field is required.
     pub fn vpn_tunnel_outside_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_tunnel_outside_ip_address = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +98,7 @@ impl ModifyVpnTunnelOptionsInputBuilder {
         &self.vpn_tunnel_outside_ip_address
     }
     /// <p>The tunnel options to modify.</p>
+    /// This field is required.
     pub fn tunnel_options(mut self, input: crate::types::ModifyVpnTunnelOptionsSpecification) -> Self {
         self.tunnel_options = ::std::option::Option::Some(input);
         self

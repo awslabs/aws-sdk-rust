@@ -48,6 +48,7 @@ impl DeleteManagedPrefixListInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
+    /// This field is required.
     pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self

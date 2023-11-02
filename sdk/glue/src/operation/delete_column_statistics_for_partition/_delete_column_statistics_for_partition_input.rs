@@ -28,8 +28,10 @@ impl DeleteColumnStatisticsForPartitionInput {
         self.table_name.as_deref()
     }
     /// <p>A list of partition values identifying the partition.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
+    pub fn partition_values(&self) -> &[::std::string::String] {
+        self.partition_values.as_deref().unwrap_or_default()
     }
     /// <p>Name of the column.</p>
     pub fn column_name(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partitions' table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +121,7 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
         &self.partition_values
     }
     /// <p>Name of the column.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self

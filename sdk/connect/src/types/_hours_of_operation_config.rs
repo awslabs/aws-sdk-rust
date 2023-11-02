@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
-    pub day: ::std::option::Option<crate::types::HoursOfOperationDays>,
+    pub day: crate::types::HoursOfOperationDays,
     /// <p>The start time that your contact center opens.</p>
     pub start_time: ::std::option::Option<crate::types::HoursOfOperationTimeSlice>,
     /// <p>The end time that your contact center closes.</p>
@@ -13,8 +13,8 @@ pub struct HoursOfOperationConfig {
 }
 impl HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
-    pub fn day(&self) -> ::std::option::Option<&crate::types::HoursOfOperationDays> {
-        self.day.as_ref()
+    pub fn day(&self) -> &crate::types::HoursOfOperationDays {
+        &self.day
     }
     /// <p>The start time that your contact center opens.</p>
     pub fn start_time(&self) -> ::std::option::Option<&crate::types::HoursOfOperationTimeSlice> {
@@ -42,6 +42,7 @@ pub struct HoursOfOperationConfigBuilder {
 }
 impl HoursOfOperationConfigBuilder {
     /// <p>The day that the hours of operation applies to.</p>
+    /// This field is required.
     pub fn day(mut self, input: crate::types::HoursOfOperationDays) -> Self {
         self.day = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl HoursOfOperationConfigBuilder {
         &self.day
     }
     /// <p>The start time that your contact center opens.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: crate::types::HoursOfOperationTimeSlice) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl HoursOfOperationConfigBuilder {
         &self.start_time
     }
     /// <p>The end time that your contact center closes.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: crate::types::HoursOfOperationTimeSlice) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl HoursOfOperationConfigBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`HoursOfOperationConfig`](crate::types::HoursOfOperationConfig).
-    pub fn build(self) -> crate::types::HoursOfOperationConfig {
-        crate::types::HoursOfOperationConfig {
-            day: self.day,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`day`](crate::types::builders::HoursOfOperationConfigBuilder::day)
+    pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HoursOfOperationConfig {
+            day: self.day.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "day",
+                    "day was not specified but it is required when building HoursOfOperationConfig",
+                )
+            })?,
             start_time: self.start_time,
             end_time: self.end_time,
-        }
+        })
     }
 }

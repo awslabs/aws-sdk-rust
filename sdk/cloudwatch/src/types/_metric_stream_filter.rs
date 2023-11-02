@@ -22,8 +22,10 @@ impl MetricStreamFilter {
     /// <p>The names of the metrics to either include or exclude from the metric stream. </p>
     /// <p>If you omit this parameter, all metrics in the namespace are included or excluded, depending on whether this filter is specified as an exclude filter or an include filter.</p>
     /// <p>Each metric name can contain only ASCII printable characters (ASCII range 32 through 126). Each metric name must contain at least one non-whitespace character.</p>
-    pub fn metric_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_names.is_none()`.
+    pub fn metric_names(&self) -> &[::std::string::String] {
+        self.metric_names.as_deref().unwrap_or_default()
     }
 }
 impl MetricStreamFilter {

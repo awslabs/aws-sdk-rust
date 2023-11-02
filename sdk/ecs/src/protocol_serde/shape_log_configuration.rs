@@ -3,30 +3,30 @@ pub fn ser_log_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.log_driver {
-        object.key("logDriver").string(var_1.as_str());
+    {
+        object.key("logDriver").string(input.log_driver.as_str());
     }
-    if let Some(var_2) = &input.options {
+    if let Some(var_1) = &input.options {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("options").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("options").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
-    if let Some(var_6) = &input.secret_options {
-        let mut array_7 = object.key("secretOptions").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.secret_options {
+        let mut array_6 = object.key("secretOptions").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_secret::ser_secret(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_secret::ser_secret(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::log_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

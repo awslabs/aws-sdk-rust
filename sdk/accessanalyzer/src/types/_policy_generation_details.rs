@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub principal_arn: ::std::option::Option<::std::string::String>,
+    pub principal_arn: ::std::string::String,
 }
 impl PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
-        self.principal_arn.as_deref()
+    pub fn principal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.principal_arn.deref()
     }
 }
 impl PolicyGenerationDetails {
@@ -28,6 +29,7 @@ pub struct PolicyGenerationDetailsBuilder {
 }
 impl PolicyGenerationDetailsBuilder {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    /// This field is required.
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl PolicyGenerationDetailsBuilder {
         &self.principal_arn
     }
     /// Consumes the builder and constructs a [`PolicyGenerationDetails`](crate::types::PolicyGenerationDetails).
-    pub fn build(self) -> crate::types::PolicyGenerationDetails {
-        crate::types::PolicyGenerationDetails {
-            principal_arn: self.principal_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`principal_arn`](crate::types::builders::PolicyGenerationDetailsBuilder::principal_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyGenerationDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PolicyGenerationDetails {
+            principal_arn: self.principal_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "principal_arn",
+                    "principal_arn was not specified but it is required when building PolicyGenerationDetails",
+                )
+            })?,
+        })
     }
 }

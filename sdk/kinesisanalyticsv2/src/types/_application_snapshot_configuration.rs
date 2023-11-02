@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
-    pub snapshots_enabled: ::std::option::Option<bool>,
+    pub snapshots_enabled: bool,
 }
 impl ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn snapshots_enabled(&self) -> ::std::option::Option<bool> {
+    pub fn snapshots_enabled(&self) -> bool {
         self.snapshots_enabled
     }
 }
@@ -28,6 +28,7 @@ pub struct ApplicationSnapshotConfigurationBuilder {
 }
 impl ApplicationSnapshotConfigurationBuilder {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// This field is required.
     pub fn snapshots_enabled(mut self, input: bool) -> Self {
         self.snapshots_enabled = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl ApplicationSnapshotConfigurationBuilder {
         &self.snapshots_enabled
     }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfiguration`](crate::types::ApplicationSnapshotConfiguration).
-    pub fn build(self) -> crate::types::ApplicationSnapshotConfiguration {
-        crate::types::ApplicationSnapshotConfiguration {
-            snapshots_enabled: self.snapshots_enabled,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`snapshots_enabled`](crate::types::builders::ApplicationSnapshotConfigurationBuilder::snapshots_enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSnapshotConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationSnapshotConfiguration {
+            snapshots_enabled: self.snapshots_enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshots_enabled",
+                    "snapshots_enabled was not specified but it is required when building ApplicationSnapshotConfiguration",
+                )
+            })?,
+        })
     }
 }

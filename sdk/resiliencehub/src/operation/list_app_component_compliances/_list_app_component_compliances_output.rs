@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppComponentCompliancesOutput {
     /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
-    pub component_compliances: ::std::option::Option<::std::vec::Vec<crate::types::AppComponentCompliance>>,
+    pub component_compliances: ::std::vec::Vec<crate::types::AppComponentCompliance>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppComponentCompliancesOutput {
     /// <p>The compliances for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, compliances, costs, resiliency scores, outage scores, and more.</p>
-    pub fn component_compliances(&self) -> ::std::option::Option<&[crate::types::AppComponentCompliance]> {
-        self.component_compliances.as_deref()
+    pub fn component_compliances(&self) -> &[crate::types::AppComponentCompliance] {
+        use std::ops::Deref;
+        self.component_compliances.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAppComponentCompliancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppComponentCompliancesOutput`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput).
-    pub fn build(self) -> crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput {
-        crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput {
-            component_compliances: self.component_compliances,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_compliances`](crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesOutputBuilder::component_compliances)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput {
+            component_compliances: self.component_compliances.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "component_compliances",
+                    "component_compliances was not specified but it is required when building ListAppComponentCompliancesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

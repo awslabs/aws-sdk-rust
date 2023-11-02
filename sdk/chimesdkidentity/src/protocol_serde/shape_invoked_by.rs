@@ -3,11 +3,11 @@ pub fn ser_invoked_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InvokedBy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.standard_messages {
-        object.key("StandardMessages").string(var_1.as_str());
+    {
+        object.key("StandardMessages").string(input.standard_messages.as_str());
     }
-    if let Some(var_2) = &input.targeted_messages {
-        object.key("TargetedMessages").string(var_2.as_str());
+    {
+        object.key("TargetedMessages").string(input.targeted_messages.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::invoked_by_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

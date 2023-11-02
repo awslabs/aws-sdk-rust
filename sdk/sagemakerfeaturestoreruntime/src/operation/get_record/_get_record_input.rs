@@ -22,8 +22,10 @@ impl GetRecordInput {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn feature_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.feature_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_names.is_none()`.
+    pub fn feature_names(&self) -> &[::std::string::String] {
+        self.feature_names.as_deref().unwrap_or_default()
     }
     /// <p>Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>GetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null, <code>GetRecord</code> will return null.</p>
     pub fn expiration_time_response(&self) -> ::std::option::Option<&crate::types::ExpirationTimeResponse> {
@@ -48,6 +50,7 @@ pub struct GetRecordInputBuilder {
 }
 impl GetRecordInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl GetRecordInputBuilder {
         &self.feature_group_name
     }
     /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. </p>
+    /// This field is required.
     pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self

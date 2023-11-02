@@ -34,6 +34,7 @@ pub struct UpdateApplicationOutputBuilder {
 }
 impl UpdateApplicationOutputBuilder {
     /// <p>Information about the updated application.</p>
+    /// This field is required.
     pub fn application(mut self, input: crate::types::Application) -> Self {
         self.application = ::std::option::Option::Some(input);
         self

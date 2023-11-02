@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSequenceStoreOutput {
     /// <p>The store's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The store's ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The store's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The store's description.</p>
@@ -14,19 +14,21 @@ pub struct CreateSequenceStoreOutput {
     /// <p>The store's SSE settings.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>When the store was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
     pub fallback_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSequenceStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The store's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The store's name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,8 +43,8 @@ impl CreateSequenceStoreOutput {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
     pub fn fallback_location(&self) -> ::std::option::Option<&str> {
@@ -76,6 +78,7 @@ pub struct CreateSequenceStoreOutputBuilder {
 }
 impl CreateSequenceStoreOutputBuilder {
     /// <p>The store's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateSequenceStoreOutputBuilder {
         &self.id
     }
     /// <p>The store's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl CreateSequenceStoreOutputBuilder {
         &self.sse_config
     }
     /// <p>When the store was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -183,16 +188,38 @@ impl CreateSequenceStoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSequenceStoreOutput`](crate::operation::create_sequence_store::CreateSequenceStoreOutput).
-    pub fn build(self) -> crate::operation::create_sequence_store::CreateSequenceStoreOutput {
-        crate::operation::create_sequence_store::CreateSequenceStoreOutput {
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder::id)
+    /// - [`arn`](crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder::arn)
+    /// - [`creation_time`](crate::operation::create_sequence_store::builders::CreateSequenceStoreOutputBuilder::creation_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_sequence_store::CreateSequenceStoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_sequence_store::CreateSequenceStoreOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateSequenceStoreOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateSequenceStoreOutput",
+                )
+            })?,
             name: self.name,
             description: self.description,
             sse_config: self.sse_config,
-            creation_time: self.creation_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building CreateSequenceStoreOutput",
+                )
+            })?,
             fallback_location: self.fallback_location,
             _request_id: self._request_id,
-        }
+        })
     }
 }

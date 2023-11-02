@@ -28,6 +28,7 @@ pub struct JobConfigurationBuilder {
 }
 impl JobConfigurationBuilder {
     /// <p>The file format of the data in Amazon S3.</p>
+    /// This field is required.
     pub fn file_format(mut self, input: crate::types::FileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
         self

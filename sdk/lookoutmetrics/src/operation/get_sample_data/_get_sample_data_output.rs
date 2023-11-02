@@ -11,12 +11,16 @@ pub struct GetSampleDataOutput {
 }
 impl GetSampleDataOutput {
     /// <p>A list of header labels for the records.</p>
-    pub fn header_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.header_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.header_values.is_none()`.
+    pub fn header_values(&self) -> &[::std::string::String] {
+        self.header_values.as_deref().unwrap_or_default()
     }
     /// <p>A list of records.</p>
-    pub fn sample_rows(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.sample_rows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_rows.is_none()`.
+    pub fn sample_rows(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.sample_rows.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSampleDataOutput {

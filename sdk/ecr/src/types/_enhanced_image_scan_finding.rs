@@ -65,8 +65,10 @@ impl EnhancedImageScanFinding {
         self.remediation.as_ref()
     }
     /// <p>Contains information on the resources involved in a finding.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::Resource] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Inspector score given to the finding.</p>
     pub fn score(&self) -> f64 {

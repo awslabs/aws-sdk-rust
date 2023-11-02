@@ -63,8 +63,10 @@ impl MqttHeaders {
         self.message_expiry.as_deref()
     }
     /// <p>An array of key-value pairs that you define in the MQTT5 header.</p>
-    pub fn user_properties(&self) -> ::std::option::Option<&[crate::types::UserProperty]> {
-        self.user_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_properties.is_none()`.
+    pub fn user_properties(&self) -> &[crate::types::UserProperty] {
+        self.user_properties.as_deref().unwrap_or_default()
     }
 }
 impl MqttHeaders {

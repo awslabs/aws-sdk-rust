@@ -35,8 +35,10 @@ impl DescribeVpcEndpointServicesInput {
         self.dry_run
     }
     /// <p>The service names.</p>
-    pub fn service_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_names.is_none()`.
+    pub fn service_names(&self) -> &[::std::string::String] {
+        self.service_names.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -53,8 +55,10 @@ impl DescribeVpcEndpointServicesInput {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. The request returns a token that you can specify in a subsequent call to get the next set of results.</p>
     /// <p>Constraint: If the value is greater than 1,000, we return only 1,000 items.</p>

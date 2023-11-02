@@ -31,8 +31,10 @@ impl UpdateDimensionOutput {
         self.r#type.as_ref()
     }
     /// <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
-    pub fn string_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_values.is_none()`.
+    pub fn string_values(&self) -> &[::std::string::String] {
+        self.string_values.as_deref().unwrap_or_default()
     }
     /// <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -15,8 +15,10 @@ impl ListWorkerConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of worker configuration descriptions.</p>
-    pub fn worker_configurations(&self) -> ::std::option::Option<&[crate::types::WorkerConfigurationSummary]> {
-        self.worker_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worker_configurations.is_none()`.
+    pub fn worker_configurations(&self) -> &[crate::types::WorkerConfigurationSummary] {
+        self.worker_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWorkerConfigurationsOutput {

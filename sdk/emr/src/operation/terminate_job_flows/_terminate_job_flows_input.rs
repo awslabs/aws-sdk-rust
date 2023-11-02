@@ -9,8 +9,10 @@ pub struct TerminateJobFlowsInput {
 }
 impl TerminateJobFlowsInput {
     /// <p>A list of job flows to be shut down.</p>
-    pub fn job_flow_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_flow_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
+    pub fn job_flow_ids(&self) -> &[::std::string::String] {
+        self.job_flow_ids.as_deref().unwrap_or_default()
     }
 }
 impl TerminateJobFlowsInput {

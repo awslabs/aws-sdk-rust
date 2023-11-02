@@ -17,12 +17,16 @@ impl NetworkInsightsAccessScopeContent {
         self.network_insights_access_scope_id.as_deref()
     }
     /// <p>The paths to match.</p>
-    pub fn match_paths(&self) -> ::std::option::Option<&[crate::types::AccessScopePath]> {
-        self.match_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_paths.is_none()`.
+    pub fn match_paths(&self) -> &[crate::types::AccessScopePath] {
+        self.match_paths.as_deref().unwrap_or_default()
     }
     /// <p>The paths to exclude.</p>
-    pub fn exclude_paths(&self) -> ::std::option::Option<&[crate::types::AccessScopePath]> {
-        self.exclude_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_paths.is_none()`.
+    pub fn exclude_paths(&self) -> &[crate::types::AccessScopePath] {
+        self.exclude_paths.as_deref().unwrap_or_default()
     }
 }
 impl NetworkInsightsAccessScopeContent {

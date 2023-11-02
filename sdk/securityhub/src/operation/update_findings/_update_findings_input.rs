@@ -41,6 +41,7 @@ pub struct UpdateFindingsInputBuilder {
 }
 impl UpdateFindingsInputBuilder {
     /// <p>A collection of attributes that specify which findings you want to update.</p>
+    /// This field is required.
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self

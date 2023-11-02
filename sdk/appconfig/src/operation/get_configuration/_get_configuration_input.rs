@@ -63,6 +63,7 @@ pub struct GetConfigurationInputBuilder {
 }
 impl GetConfigurationInputBuilder {
     /// <p>The application to get. Specify either the application name or the application ID.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl GetConfigurationInputBuilder {
         &self.application
     }
     /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
+    /// This field is required.
     pub fn environment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl GetConfigurationInputBuilder {
         &self.environment
     }
     /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl GetConfigurationInputBuilder {
         &self.configuration
     }
     /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self

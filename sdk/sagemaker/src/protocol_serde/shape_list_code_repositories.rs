@@ -31,7 +31,7 @@ pub fn de_list_code_repositories_http_response(
         output = crate::protocol_serde::shape_list_code_repositories::de_list_code_repositories(_response_body, output)
             .map_err(crate::operation::list_code_repositories::ListCodeRepositoriesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_code_repositories_output_correct_errors(output).build()
     })
 }
 

@@ -30,6 +30,7 @@ pub struct DeleteAccountAliasInputBuilder {
 impl DeleteAccountAliasInputBuilder {
     /// <p>The name of the account alias to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+    /// This field is required.
     pub fn account_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_alias = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct GetIngestionOutputBuilder {
 }
 impl GetIngestionOutputBuilder {
     /// <p>Contains information about an ingestion.</p>
+    /// This field is required.
     pub fn ingestion(mut self, input: crate::types::Ingestion) -> Self {
         self.ingestion = ::std::option::Option::Some(input);
         self

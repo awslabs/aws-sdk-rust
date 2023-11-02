@@ -27,6 +27,7 @@ pub struct AssociateServiceRoleToAccountInputBuilder {
 }
 impl AssociateServiceRoleToAccountInputBuilder {
     /// The ARN of the service role you wish to associate with your account.
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubscriptionStateOutput {
     /// <p>The status of the subscription.</p>
-    pub subscription_state: ::std::option::Option<crate::types::SubscriptionState>,
+    pub subscription_state: crate::types::SubscriptionState,
     _request_id: Option<String>,
 }
 impl GetSubscriptionStateOutput {
     /// <p>The status of the subscription.</p>
-    pub fn subscription_state(&self) -> ::std::option::Option<&crate::types::SubscriptionState> {
-        self.subscription_state.as_ref()
+    pub fn subscription_state(&self) -> &crate::types::SubscriptionState {
+        &self.subscription_state
     }
 }
 impl ::aws_http::request_id::RequestId for GetSubscriptionStateOutput {
@@ -34,6 +34,7 @@ pub struct GetSubscriptionStateOutputBuilder {
 }
 impl GetSubscriptionStateOutputBuilder {
     /// <p>The status of the subscription.</p>
+    /// This field is required.
     pub fn subscription_state(mut self, input: crate::types::SubscriptionState) -> Self {
         self.subscription_state = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,20 @@ impl GetSubscriptionStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput).
-    pub fn build(self) -> crate::operation::get_subscription_state::GetSubscriptionStateOutput {
-        crate::operation::get_subscription_state::GetSubscriptionStateOutput {
-            subscription_state: self.subscription_state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subscription_state`](crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder::subscription_state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_subscription_state::GetSubscriptionStateOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_subscription_state::GetSubscriptionStateOutput {
+            subscription_state: self.subscription_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subscription_state",
+                    "subscription_state was not specified but it is required when building GetSubscriptionStateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

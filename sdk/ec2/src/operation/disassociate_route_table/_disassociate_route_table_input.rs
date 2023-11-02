@@ -34,6 +34,7 @@ pub struct DisassociateRouteTableInputBuilder {
 }
 impl DisassociateRouteTableInputBuilder {
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self

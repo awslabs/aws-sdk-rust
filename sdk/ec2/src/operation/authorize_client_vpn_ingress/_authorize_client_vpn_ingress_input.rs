@@ -69,6 +69,7 @@ pub struct AuthorizeClientVpnIngressInputBuilder {
 }
 impl AuthorizeClientVpnIngressInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
         &self.client_vpn_endpoint_id
     }
     /// <p>The IPv4 address range, in CIDR notation, of the network for which access is being authorized.</p>
+    /// This field is required.
     pub fn target_network_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_network_cidr = ::std::option::Option::Some(input.into());
         self

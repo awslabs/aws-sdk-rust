@@ -34,6 +34,7 @@ pub struct CreateAppBlockBuilderStreamingUrlInputBuilder {
 }
 impl CreateAppBlockBuilderStreamingUrlInputBuilder {
     /// <p>The name of the app block builder.</p>
+    /// This field is required.
     pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_builder_name = ::std::option::Option::Some(input.into());
         self

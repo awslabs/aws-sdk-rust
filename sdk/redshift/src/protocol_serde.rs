@@ -183,6 +183,10 @@ pub(crate) mod shape_delete_partner;
 
 pub(crate) mod shape_delete_partner_input;
 
+pub(crate) mod shape_delete_resource_policy;
+
+pub(crate) mod shape_delete_resource_policy_input;
+
 pub(crate) mod shape_delete_scheduled_action;
 
 pub(crate) mod shape_delete_scheduled_action_input;
@@ -295,6 +299,10 @@ pub(crate) mod shape_describe_hsm_configurations;
 
 pub(crate) mod shape_describe_hsm_configurations_input;
 
+pub(crate) mod shape_describe_inbound_integrations;
+
+pub(crate) mod shape_describe_inbound_integrations_input;
+
 pub(crate) mod shape_describe_logging_status;
 
 pub(crate) mod shape_describe_logging_status_input;
@@ -391,6 +399,10 @@ pub(crate) mod shape_get_reserved_node_exchange_offerings;
 
 pub(crate) mod shape_get_reserved_node_exchange_offerings_input;
 
+pub(crate) mod shape_get_resource_policy;
+
+pub(crate) mod shape_get_resource_policy_input;
+
 pub(crate) mod shape_modify_aqua_configuration;
 
 pub(crate) mod shape_modify_aqua_configuration_input;
@@ -466,6 +478,10 @@ pub(crate) mod shape_pause_cluster_input;
 pub(crate) mod shape_purchase_reserved_node_offering;
 
 pub(crate) mod shape_purchase_reserved_node_offering_input;
+
+pub(crate) mod shape_put_resource_policy;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_reboot_cluster;
 
@@ -571,6 +587,8 @@ pub(crate) mod shape_cluster_subnet_group_quota_exceeded_fault;
 
 pub(crate) mod shape_cluster_subnet_quota_exceeded_fault;
 
+pub(crate) mod shape_conflict_policy_update_fault;
+
 pub(crate) mod shape_copy_to_region_disabled_fault;
 
 pub(crate) mod shape_custom_cname_association_fault;
@@ -619,6 +637,8 @@ pub(crate) mod shape_insufficient_cluster_capacity_fault;
 
 pub(crate) mod shape_insufficient_s3_bucket_policy_fault;
 
+pub(crate) mod shape_integration_not_found_fault;
+
 pub(crate) mod shape_invalid_authentication_profile_request_fault;
 
 pub(crate) mod shape_invalid_authorization_state_fault;
@@ -651,6 +671,8 @@ pub(crate) mod shape_invalid_hsm_configuration_state_fault;
 
 pub(crate) mod shape_invalid_namespace_fault;
 
+pub(crate) mod shape_invalid_policy_fault;
+
 pub(crate) mod shape_invalid_reserved_node_state_fault;
 
 pub(crate) mod shape_invalid_restore_fault;
@@ -678,6 +700,8 @@ pub(crate) mod shape_invalid_tag_fault;
 pub(crate) mod shape_invalid_usage_limit_fault;
 
 pub(crate) mod shape_invalid_vpc_network_state_fault;
+
+pub(crate) mod shape_ipv6_cidr_block_not_found_fault;
 
 pub(crate) mod shape_limit_exceeded_fault;
 
@@ -849,6 +873,8 @@ pub(crate) mod shape_import_tables_in_progress;
 
 pub(crate) mod shape_import_tables_not_started;
 
+pub(crate) mod shape_inbound_integration_list;
+
 pub(crate) mod shape_log_type_list;
 
 pub(crate) mod shape_node_configuration_option_list;
@@ -874,6 +900,8 @@ pub(crate) mod shape_reserved_node_list;
 pub(crate) mod shape_reserved_node_offering_list;
 
 pub(crate) mod shape_resize_cluster_message;
+
+pub(crate) mod shape_resource_policy;
 
 pub(crate) mod shape_resume_cluster_message;
 
@@ -965,6 +993,8 @@ pub(crate) mod shape_event_categories_map;
 
 pub(crate) mod shape_hsm_status;
 
+pub(crate) mod shape_inbound_integration;
+
 pub(crate) mod shape_ip_range_list;
 
 pub(crate) mod shape_maintenance_track;
@@ -1009,6 +1039,8 @@ pub(crate) mod shape_tagged_resource;
 
 pub(crate) mod shape_usage_limit;
 
+pub(crate) mod shape_value_string_list;
+
 pub(crate) mod shape_vpc_security_group_membership;
 
 pub(crate) mod shape_account_with_restore_access;
@@ -1035,6 +1067,8 @@ pub(crate) mod shape_eligible_tracks_to_update_list;
 
 pub(crate) mod shape_event_info_map_list;
 
+pub(crate) mod shape_integration_error_list;
+
 pub(crate) mod shape_ip_range;
 
 pub(crate) mod shape_network_interface;
@@ -1056,6 +1090,8 @@ pub(crate) mod shape_certificate_association;
 pub(crate) mod shape_cluster_parameter_status_list;
 
 pub(crate) mod shape_event_info_map;
+
+pub(crate) mod shape_integration_error;
 
 pub(crate) mod shape_revision_target;
 

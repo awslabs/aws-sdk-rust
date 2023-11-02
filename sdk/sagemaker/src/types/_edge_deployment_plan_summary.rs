@@ -77,6 +77,7 @@ pub struct EdgeDeploymentPlanSummaryBuilder {
 }
 impl EdgeDeploymentPlanSummaryBuilder {
     /// <p>The ARN of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
         &self.edge_deployment_plan_arn
     }
     /// <p>The name of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
         &self.edge_deployment_plan_name
     }
     /// <p>The name of the device fleet used for the deployment. </p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
         &self.device_fleet_name
     }
     /// <p>The number of edge devices with the successful deployment.</p>
+    /// This field is required.
     pub fn edge_deployment_success(mut self, input: i32) -> Self {
         self.edge_deployment_success = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
         &self.edge_deployment_success
     }
     /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
+    /// This field is required.
     pub fn edge_deployment_pending(mut self, input: i32) -> Self {
         self.edge_deployment_pending = ::std::option::Option::Some(input);
         self
@@ -147,6 +152,7 @@ impl EdgeDeploymentPlanSummaryBuilder {
         &self.edge_deployment_pending
     }
     /// <p>The number of edge devices that failed the deployment.</p>
+    /// This field is required.
     pub fn edge_deployment_failed(mut self, input: i32) -> Self {
         self.edge_deployment_failed = ::std::option::Option::Some(input);
         self

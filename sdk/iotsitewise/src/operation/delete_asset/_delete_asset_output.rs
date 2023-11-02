@@ -34,6 +34,7 @@ pub struct DeleteAssetOutputBuilder {
 }
 impl DeleteAssetOutputBuilder {
     /// <p>The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation) and any error message.</p>
+    /// This field is required.
     pub fn asset_status(mut self, input: crate::types::AssetStatus) -> Self {
         self.asset_status = ::std::option::Option::Some(input);
         self

@@ -157,6 +157,7 @@ pub struct ListFindingsInputBuilder {
 }
 impl ListFindingsInputBuilder {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self

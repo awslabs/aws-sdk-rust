@@ -9,14 +9,16 @@ pub fn ser_byte_match_tuple(
         crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.target_string {
-        object.key("TargetString").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+    {
+        object
+            .key("TargetString")
+            .string_unchecked(&::aws_smithy_types::base64::encode(&input.target_string));
     }
-    if let Some(var_4) = &input.text_transformation {
-        object.key("TextTransformation").string(var_4.as_str());
+    {
+        object.key("TextTransformation").string(input.text_transformation.as_str());
     }
-    if let Some(var_5) = &input.positional_constraint {
-        object.key("PositionalConstraint").string(var_5.as_str());
+    {
+        object.key("PositionalConstraint").string(input.positional_constraint.as_str());
     }
     Ok(())
 }
@@ -66,7 +68,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::byte_match_tuple_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

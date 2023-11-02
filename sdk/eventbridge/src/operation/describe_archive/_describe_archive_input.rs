@@ -27,6 +27,7 @@ pub struct DescribeArchiveInputBuilder {
 }
 impl DescribeArchiveInputBuilder {
     /// <p>The name of the archive to retrieve.</p>
+    /// This field is required.
     pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_name = ::std::option::Option::Some(input.into());
         self

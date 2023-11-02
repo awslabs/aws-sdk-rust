@@ -25,8 +25,10 @@ impl JsonMatchPattern {
     /// <p>You must specify either this setting or the <code>All</code> setting, but not both.</p> <note>
     /// <p>Don't use this option to include all paths. Instead, use the <code>All</code> setting. </p>
     /// </note>
-    pub fn included_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.included_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_paths.is_none()`.
+    pub fn included_paths(&self) -> &[::std::string::String] {
+        self.included_paths.as_deref().unwrap_or_default()
     }
 }
 impl JsonMatchPattern {

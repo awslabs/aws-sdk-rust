@@ -6,8 +6,8 @@ pub fn ser_describe_job_log_items_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.job_id {
-        object.key("jobID").string(var_2.as_str());
+    {
+        object.key("jobID").string(input.job_id.as_str());
     }
     if input.max_results != 0 {
         object.key("maxResults").number(
@@ -15,8 +15,8 @@ pub fn ser_describe_job_log_items_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("nextToken").string(var_3.as_str());
+    if let Some(var_2) = &input.next_token {
+        object.key("nextToken").string(var_2.as_str());
     }
     Ok(())
 }

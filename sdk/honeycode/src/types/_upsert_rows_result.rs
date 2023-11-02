@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpsertRowsResult {
     /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
-    pub row_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub row_ids: ::std::vec::Vec<::std::string::String>,
     /// <p> The result of the upsert action. </p>
-    pub upsert_action: ::std::option::Option<crate::types::UpsertAction>,
+    pub upsert_action: crate::types::UpsertAction,
 }
 impl UpsertRowsResult {
     /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
-    pub fn row_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.row_ids.as_deref()
+    pub fn row_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.row_ids.deref()
     }
     /// <p> The result of the upsert action. </p>
-    pub fn upsert_action(&self) -> ::std::option::Option<&crate::types::UpsertAction> {
-        self.upsert_action.as_ref()
+    pub fn upsert_action(&self) -> &crate::types::UpsertAction {
+        &self.upsert_action
     }
 }
 impl UpsertRowsResult {
@@ -55,6 +56,7 @@ impl UpsertRowsResultBuilder {
         &self.row_ids
     }
     /// <p> The result of the upsert action. </p>
+    /// This field is required.
     pub fn upsert_action(mut self, input: crate::types::UpsertAction) -> Self {
         self.upsert_action = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl UpsertRowsResultBuilder {
         &self.upsert_action
     }
     /// Consumes the builder and constructs a [`UpsertRowsResult`](crate::types::UpsertRowsResult).
-    pub fn build(self) -> crate::types::UpsertRowsResult {
-        crate::types::UpsertRowsResult {
-            row_ids: self.row_ids,
-            upsert_action: self.upsert_action,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`row_ids`](crate::types::builders::UpsertRowsResultBuilder::row_ids)
+    /// - [`upsert_action`](crate::types::builders::UpsertRowsResultBuilder::upsert_action)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpsertRowsResult, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpsertRowsResult {
+            row_ids: self.row_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "row_ids",
+                    "row_ids was not specified but it is required when building UpsertRowsResult",
+                )
+            })?,
+            upsert_action: self.upsert_action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upsert_action",
+                    "upsert_action was not specified but it is required when building UpsertRowsResult",
+                )
+            })?,
+        })
     }
 }

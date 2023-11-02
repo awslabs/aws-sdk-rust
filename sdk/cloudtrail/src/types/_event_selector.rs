@@ -35,12 +35,16 @@ impl EventSelector {
     }
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
-    pub fn data_resources(&self) -> ::std::option::Option<&[crate::types::DataResource]> {
-        self.data_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_resources.is_none()`.
+    pub fn data_resources(&self) -> &[crate::types::DataResource] {
+        self.data_resources.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in Regions that support the event source.</p>
-    pub fn exclude_management_event_sources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_management_event_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_management_event_sources.is_none()`.
+    pub fn exclude_management_event_sources(&self) -> &[::std::string::String] {
+        self.exclude_management_event_sources.as_deref().unwrap_or_default()
     }
 }
 impl EventSelector {

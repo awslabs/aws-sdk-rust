@@ -9,8 +9,10 @@ pub struct StartDataCollectionByAgentIdsOutput {
 }
 impl StartDataCollectionByAgentIdsOutput {
     /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
-    pub fn agents_configuration_status(&self) -> ::std::option::Option<&[crate::types::AgentConfigurationStatus]> {
-        self.agents_configuration_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agents_configuration_status.is_none()`.
+    pub fn agents_configuration_status(&self) -> &[crate::types::AgentConfigurationStatus] {
+        self.agents_configuration_status.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for StartDataCollectionByAgentIdsOutput {

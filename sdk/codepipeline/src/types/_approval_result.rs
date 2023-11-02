@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApprovalResult {
     /// <p>The summary of the current status of the approval request.</p>
-    pub summary: ::std::option::Option<::std::string::String>,
+    pub summary: ::std::string::String,
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    pub status: ::std::option::Option<crate::types::ApprovalStatus>,
+    pub status: crate::types::ApprovalStatus,
 }
 impl ApprovalResult {
     /// <p>The summary of the current status of the approval request.</p>
-    pub fn summary(&self) -> ::std::option::Option<&str> {
-        self.summary.as_deref()
+    pub fn summary(&self) -> &str {
+        use std::ops::Deref;
+        self.summary.deref()
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApprovalStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ApprovalStatus {
+        &self.status
     }
 }
 impl ApprovalResult {
@@ -35,6 +36,7 @@ pub struct ApprovalResultBuilder {
 }
 impl ApprovalResultBuilder {
     /// <p>The summary of the current status of the approval request.</p>
+    /// This field is required.
     pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.summary = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ApprovalResultBuilder {
         &self.summary
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ApprovalStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ApprovalResultBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ApprovalResult`](crate::types::ApprovalResult).
-    pub fn build(self) -> crate::types::ApprovalResult {
-        crate::types::ApprovalResult {
-            summary: self.summary,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`summary`](crate::types::builders::ApprovalResultBuilder::summary)
+    /// - [`status`](crate::types::builders::ApprovalResultBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApprovalResult, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApprovalResult {
+            summary: self.summary.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "summary",
+                    "summary was not specified but it is required when building ApprovalResult",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ApprovalResult",
+                )
+            })?,
+        })
     }
 }

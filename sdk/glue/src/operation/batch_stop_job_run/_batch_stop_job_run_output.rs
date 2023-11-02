@@ -11,12 +11,16 @@ pub struct BatchStopJobRunOutput {
 }
 impl BatchStopJobRunOutput {
     /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
-    pub fn successful_submissions(&self) -> ::std::option::Option<&[crate::types::BatchStopJobRunSuccessfulSubmission]> {
-        self.successful_submissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_submissions.is_none()`.
+    pub fn successful_submissions(&self) -> &[crate::types::BatchStopJobRunSuccessfulSubmission] {
+        self.successful_submissions.as_deref().unwrap_or_default()
     }
     /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchStopJobRunError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchStopJobRunError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchStopJobRunOutput {

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkflowOutput {
     /// <p>A unique identifier for the workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateWorkflowOutput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateWorkflowOutput {
@@ -34,6 +35,7 @@ pub struct CreateWorkflowOutputBuilder {
 }
 impl CreateWorkflowOutputBuilder {
     /// <p>A unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateWorkflowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateWorkflowOutput`](crate::operation::create_workflow::CreateWorkflowOutput).
-    pub fn build(self) -> crate::operation::create_workflow::CreateWorkflowOutput {
-        crate::operation::create_workflow::CreateWorkflowOutput {
-            workflow_id: self.workflow_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::create_workflow::builders::CreateWorkflowOutputBuilder::workflow_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowOutput {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building CreateWorkflowOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

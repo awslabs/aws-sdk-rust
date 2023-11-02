@@ -85,12 +85,16 @@ impl DataLakeSource {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn event_classes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_classes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_classes.is_none()`.
+    pub fn event_classes(&self) -> &[::std::string::String] {
+        self.event_classes.as_deref().unwrap_or_default()
     }
     /// <p>The log status for the Security Lake account.</p>
-    pub fn source_statuses(&self) -> ::std::option::Option<&[crate::types::DataLakeSourceStatus]> {
-        self.source_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_statuses.is_none()`.
+    pub fn source_statuses(&self) -> &[crate::types::DataLakeSourceStatus] {
+        self.source_statuses.as_deref().unwrap_or_default()
     }
 }
 impl DataLakeSource {

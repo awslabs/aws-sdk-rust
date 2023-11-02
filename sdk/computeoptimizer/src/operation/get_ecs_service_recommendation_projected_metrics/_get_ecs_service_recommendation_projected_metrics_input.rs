@@ -63,6 +63,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
     /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +82,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
         &self.service_arn
     }
     /// <p> The statistic of the projected metrics. </p>
+    /// This field is required.
     pub fn stat(mut self, input: crate::types::MetricStatistic) -> Self {
         self.stat = ::std::option::Option::Some(input);
         self
@@ -95,6 +97,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
         &self.stat
     }
     /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -109,6 +112,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
         &self.period
     }
     /// <p> The timestamp of the first projected metrics data point to return. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -123,6 +127,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInputBuilder {
         &self.start_time
     }
     /// <p> The timestamp of the last projected metrics data point to return. </p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

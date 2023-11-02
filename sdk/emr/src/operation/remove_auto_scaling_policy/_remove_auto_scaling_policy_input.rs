@@ -34,6 +34,7 @@ pub struct RemoveAutoScalingPolicyInputBuilder {
 }
 impl RemoveAutoScalingPolicyInputBuilder {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveAutoScalingPolicyInputBuilder {
         &self.cluster_id
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    /// This field is required.
     pub fn instance_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_id = ::std::option::Option::Some(input.into());
         self

@@ -43,6 +43,7 @@ pub struct UpdateMlModelInputBuilder {
 }
 impl UpdateMlModelInputBuilder {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self

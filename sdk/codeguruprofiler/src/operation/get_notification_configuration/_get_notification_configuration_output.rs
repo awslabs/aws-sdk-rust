@@ -35,6 +35,7 @@ pub struct GetNotificationConfigurationOutputBuilder {
 }
 impl GetNotificationConfigurationOutputBuilder {
     /// <p>The current notification configuration for this profiling group.</p>
+    /// This field is required.
     pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DeleteOrganizationConformancePackInputBuilder {
 }
 impl DeleteOrganizationConformancePackInputBuilder {
     /// <p>The name of organization conformance pack that you want to delete.</p>
+    /// This field is required.
     pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self

@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+pub mod dns;
+
 pub mod endpoint;
 
 /// Smithy identity used by auth and signing.
@@ -20,7 +22,6 @@ pub mod runtime_plugin;
 
 pub mod auth;
 
-/// Smithy connectors and related code.
-pub mod connectors;
+pub mod http;
 
 pub mod ser_de;

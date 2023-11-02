@@ -15,8 +15,10 @@ impl Container {
         self.region.as_deref()
     }
     /// <p>A list of URIs for containers created in the context Region.</p>
-    pub fn image_uris(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_uris.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_uris.is_none()`.
+    pub fn image_uris(&self) -> &[::std::string::String] {
+        self.image_uris.as_deref().unwrap_or_default()
     }
 }
 impl Container {

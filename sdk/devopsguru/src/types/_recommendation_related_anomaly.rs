@@ -13,12 +13,16 @@ pub struct RecommendationRelatedAnomaly {
 }
 impl RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalyResource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::RecommendationRelatedAnomalyResource] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
-    pub fn source_details(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalySourceDetail]> {
-        self.source_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_details.is_none()`.
+    pub fn source_details(&self) -> &[crate::types::RecommendationRelatedAnomalySourceDetail] {
+        self.source_details.as_deref().unwrap_or_default()
     }
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
     pub fn anomaly_id(&self) -> ::std::option::Option<&str> {

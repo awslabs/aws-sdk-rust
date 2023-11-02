@@ -14,8 +14,10 @@ impl ResetNotificationSettingsInput {
         self.trust_anchor_id.as_deref()
     }
     /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
-    pub fn notification_setting_keys(&self) -> ::std::option::Option<&[crate::types::NotificationSettingKey]> {
-        self.notification_setting_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_setting_keys.is_none()`.
+    pub fn notification_setting_keys(&self) -> &[crate::types::NotificationSettingKey] {
+        self.notification_setting_keys.as_deref().unwrap_or_default()
     }
 }
 impl ResetNotificationSettingsInput {
@@ -34,6 +36,7 @@ pub struct ResetNotificationSettingsInputBuilder {
 }
 impl ResetNotificationSettingsInputBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
+    /// This field is required.
     pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_id = ::std::option::Option::Some(input.into());
         self

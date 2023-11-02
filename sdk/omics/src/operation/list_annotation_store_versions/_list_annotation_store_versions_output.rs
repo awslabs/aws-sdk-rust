@@ -11,8 +11,10 @@ pub struct ListAnnotationStoreVersionsOutput {
 }
 impl ListAnnotationStoreVersionsOutput {
     /// <p> Lists all versions of an annotation store. </p>
-    pub fn annotation_store_versions(&self) -> ::std::option::Option<&[crate::types::AnnotationStoreVersionItem]> {
-        self.annotation_store_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.annotation_store_versions.is_none()`.
+    pub fn annotation_store_versions(&self) -> &[crate::types::AnnotationStoreVersionItem] {
+        self.annotation_store_versions.as_deref().unwrap_or_default()
     }
     /// <p> Specifies the pagination token from a previous request to retrieve the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

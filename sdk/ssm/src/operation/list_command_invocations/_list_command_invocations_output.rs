@@ -11,8 +11,10 @@ pub struct ListCommandInvocationsOutput {
 }
 impl ListCommandInvocationsOutput {
     /// <p>(Optional) A list of all invocations. </p>
-    pub fn command_invocations(&self) -> ::std::option::Option<&[crate::types::CommandInvocation]> {
-        self.command_invocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_invocations.is_none()`.
+    pub fn command_invocations(&self) -> &[crate::types::CommandInvocation] {
+        self.command_invocations.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

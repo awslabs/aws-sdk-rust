@@ -34,6 +34,7 @@ pub struct CreateTestGridUrlInputBuilder {
 }
 impl CreateTestGridUrlInputBuilder {
     /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateTestGridUrlInputBuilder {
         &self.project_arn
     }
     /// <p>Lifetime, in seconds, of the URL.</p>
+    /// This field is required.
     pub fn expires_in_seconds(mut self, input: i32) -> Self {
         self.expires_in_seconds = ::std::option::Option::Some(input);
         self

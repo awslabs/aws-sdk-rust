@@ -12,8 +12,10 @@ pub struct ListConfigurationSetsOutput {
 }
 impl ListConfigurationSetsOutput {
     /// <p>A list of configuration sets.</p>
-    pub fn configuration_sets(&self) -> ::std::option::Option<&[crate::types::ConfigurationSet]> {
-        self.configuration_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_sets.is_none()`.
+    pub fn configuration_sets(&self) -> &[crate::types::ConfigurationSet] {
+        self.configuration_sets.as_deref().unwrap_or_default()
     }
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

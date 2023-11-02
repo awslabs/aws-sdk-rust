@@ -31,20 +31,26 @@ impl CreateFlowInput {
         self.availability_zone.as_deref()
     }
     /// The entitlements that you want to grant on a flow.
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::GrantEntitlementRequest]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::GrantEntitlementRequest] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    pub fn media_streams(&self) -> ::std::option::Option<&[crate::types::AddMediaStreamRequest]> {
-        self.media_streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_streams.is_none()`.
+    pub fn media_streams(&self) -> &[crate::types::AddMediaStreamRequest] {
+        self.media_streams.as_deref().unwrap_or_default()
     }
     /// The name of the flow.
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The outputs that you want to add to this flow.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::AddOutputRequest]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::AddOutputRequest] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// The settings for the source of the flow.
     pub fn source(&self) -> ::std::option::Option<&crate::types::SetSourceRequest> {
@@ -55,12 +61,16 @@ impl CreateFlowInput {
         self.source_failover_config.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::SetSourceRequest]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::SetSourceRequest] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// The VPC interfaces you want on the flow.
-    pub fn vpc_interfaces(&self) -> ::std::option::Option<&[crate::types::VpcInterfaceRequest]> {
-        self.vpc_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_interfaces.is_none()`.
+    pub fn vpc_interfaces(&self) -> &[crate::types::VpcInterfaceRequest] {
+        self.vpc_interfaces.as_deref().unwrap_or_default()
     }
     /// Create maintenance setting for a flow
     pub fn maintenance(&self) -> ::std::option::Option<&crate::types::AddMaintenance> {
@@ -145,6 +155,7 @@ impl CreateFlowInputBuilder {
         &self.media_streams
     }
     /// The name of the flow.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

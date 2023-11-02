@@ -55,6 +55,7 @@ pub struct CreateWorkflowInputBuilder {
 }
 impl CreateWorkflowInputBuilder {
     /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

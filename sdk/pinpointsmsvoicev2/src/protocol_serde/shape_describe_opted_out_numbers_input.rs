@@ -3,37 +3,37 @@ pub fn ser_describe_opted_out_numbers_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.opt_out_list_name {
-        object.key("OptOutListName").string(var_1.as_str());
+    {
+        object.key("OptOutListName").string(input.opt_out_list_name.as_str());
     }
-    if let Some(var_2) = &input.opted_out_numbers {
-        let mut array_3 = object.key("OptedOutNumbers").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.opted_out_numbers {
+        let mut array_2 = object.key("OptedOutNumbers").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.filters {
-        let mut array_6 = object.key("Filters").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.filters {
+        let mut array_5 = object.key("Filters").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_opted_out_filter::ser_opted_out_filter(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_opted_out_filter::ser_opted_out_filter(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.next_token {
-        object.key("NextToken").string(var_9.as_str());
+    if let Some(var_8) = &input.next_token {
+        object.key("NextToken").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.max_results {
+    if let Some(var_9) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
     Ok(())

@@ -28,6 +28,7 @@ pub struct ProtectedQueryResultConfigurationBuilder {
 }
 impl ProtectedQueryResultConfigurationBuilder {
     /// <p>Configuration for protected query results.</p>
+    /// This field is required.
     pub fn output_configuration(mut self, input: crate::types::ProtectedQueryOutputConfiguration) -> Self {
         self.output_configuration = ::std::option::Option::Some(input);
         self

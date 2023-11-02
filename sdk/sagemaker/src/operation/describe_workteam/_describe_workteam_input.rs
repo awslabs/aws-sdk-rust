@@ -27,6 +27,7 @@ pub struct DescribeWorkteamInputBuilder {
 }
 impl DescribeWorkteamInputBuilder {
     /// <p>The name of the work team to return a description of.</p>
+    /// This field is required.
     pub fn workteam_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_name = ::std::option::Option::Some(input.into());
         self

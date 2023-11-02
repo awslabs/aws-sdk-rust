@@ -27,6 +27,7 @@ pub struct GetRelationalDatabaseInputBuilder {
 }
 impl GetRelationalDatabaseInputBuilder {
     /// <p>The name of the database that you are looking up.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self

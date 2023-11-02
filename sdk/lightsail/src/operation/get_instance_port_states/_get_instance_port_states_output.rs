@@ -9,8 +9,10 @@ pub struct GetInstancePortStatesOutput {
 }
 impl GetInstancePortStatesOutput {
     /// <p>An array of objects that describe the firewall port states for the specified instance.</p>
-    pub fn port_states(&self) -> ::std::option::Option<&[crate::types::InstancePortState]> {
-        self.port_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_states.is_none()`.
+    pub fn port_states(&self) -> &[crate::types::InstancePortState] {
+        self.port_states.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInstancePortStatesOutput {

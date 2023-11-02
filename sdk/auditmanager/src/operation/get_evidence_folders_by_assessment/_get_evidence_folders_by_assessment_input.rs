@@ -41,6 +41,7 @@ pub struct GetEvidenceFoldersByAssessmentInputBuilder {
 }
 impl GetEvidenceFoldersByAssessmentInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct DeleteConferenceProviderInputBuilder {
 }
 impl DeleteConferenceProviderInputBuilder {
     /// <p>The ARN of the conference provider.</p>
+    /// This field is required.
     pub fn conference_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conference_provider_arn = ::std::option::Option::Some(input.into());
         self

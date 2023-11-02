@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSink`](crate::operation::get_sink::builders::GetSinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::set_identifier): <p>The ARN of the sink to retrieve information for.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_sink::builders::GetSinkFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN of the sink to retrieve information for.</p><br>
     /// - On success, responds with [`GetSinkOutput`](crate::operation::get_sink::GetSinkOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_sink::GetSinkOutput::arn): <p>The ARN of the sink.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_sink::GetSinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackageImportJobsOutput {
     /// <p>A list of package import jobs.</p>
-    pub package_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>>,
+    pub package_import_jobs: ::std::vec::Vec<crate::types::PackageImportJob>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPackageImportJobsOutput {
     /// <p>A list of package import jobs.</p>
-    pub fn package_import_jobs(&self) -> ::std::option::Option<&[crate::types::PackageImportJob]> {
-        self.package_import_jobs.as_deref()
+    pub fn package_import_jobs(&self) -> &[crate::types::PackageImportJob] {
+        use std::ops::Deref;
+        self.package_import_jobs.deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListPackageImportJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPackageImportJobsOutput`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput).
-    pub fn build(self) -> crate::operation::list_package_import_jobs::ListPackageImportJobsOutput {
-        crate::operation::list_package_import_jobs::ListPackageImportJobsOutput {
-            package_import_jobs: self.package_import_jobs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_import_jobs`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder::package_import_jobs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_package_import_jobs::ListPackageImportJobsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_package_import_jobs::ListPackageImportJobsOutput {
+            package_import_jobs: self.package_import_jobs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_import_jobs",
+                    "package_import_jobs was not specified but it is required when building ListPackageImportJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

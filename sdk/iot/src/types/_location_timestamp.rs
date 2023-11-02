@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationTimestamp {
     /// <p>An expression that returns a long epoch time value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
     pub unit: ::std::option::Option<::std::string::String>,
 }
 impl LocationTimestamp {
     /// <p>An expression that returns a long epoch time value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The precision of the timestamp value that results from the expression described in <code>value</code>.</p>
     /// <p>Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code> | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
@@ -37,6 +38,7 @@ pub struct LocationTimestampBuilder {
 }
 impl LocationTimestampBuilder {
     /// <p>An expression that returns a long epoch time value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -68,10 +70,17 @@ impl LocationTimestampBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`LocationTimestamp`](crate::types::LocationTimestamp).
-    pub fn build(self) -> crate::types::LocationTimestamp {
-        crate::types::LocationTimestamp {
-            value: self.value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::LocationTimestampBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::LocationTimestamp, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LocationTimestamp {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building LocationTimestamp",
+                )
+            })?,
             unit: self.unit,
-        }
+        })
     }
 }

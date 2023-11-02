@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetDataQualityResult`](crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`result_ids(impl Into<String>)`](crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder::result_ids) / [`set_result_ids(Option<Vec<String>>)`](crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder::set_result_ids): <p>A list of unique result IDs for the data quality results.</p>
+    ///   - [`result_ids(impl Into<String>)`](crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder::result_ids) / [`set_result_ids(Option<Vec<String>>)`](crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder::set_result_ids):<br>required: **true**<br><p>A list of unique result IDs for the data quality results.</p><br>
     /// - On success, responds with [`BatchGetDataQualityResultOutput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput) with field(s):
-    ///   - [`results(Option<Vec<DataQualityResult>>)`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput::results): <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
+    ///   - [`results(Vec<DataQualityResult>)`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput::results): <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
     ///   - [`results_not_found(Option<Vec<String>>)`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput::results_not_found): <p>A list of result IDs for which results were not found.</p>
     /// - On failure, responds with [`SdkError<BatchGetDataQualityResultError>`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError)
     pub fn batch_get_data_quality_result(&self) -> crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultFluentBuilder {

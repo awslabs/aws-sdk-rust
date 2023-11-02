@@ -35,6 +35,7 @@ pub struct StopDeploymentInputBuilder {
 }
 impl StopDeploymentInputBuilder {
     /// <p> The unique ID of a deployment. </p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self

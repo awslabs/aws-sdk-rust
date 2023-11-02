@@ -52,8 +52,10 @@ impl CreatePipelineInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of tags to apply to the created pipeline.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
     pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
@@ -83,6 +85,7 @@ pub struct CreatePipelineInputBuilder {
 }
 impl CreatePipelineInputBuilder {
     /// <p>The name of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +156,7 @@ impl CreatePipelineInputBuilder {
         &self.pipeline_description
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +171,7 @@ impl CreatePipelineInputBuilder {
         &self.client_request_token
     }
     /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

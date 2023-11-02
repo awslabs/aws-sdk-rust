@@ -23,6 +23,7 @@ pub fn ser_metric_stream_filter(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_metric_stream_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MetricStreamFilter, ::aws_smithy_xml::decode::XmlDecodeError> {

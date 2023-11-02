@@ -9,8 +9,10 @@ pub struct VariableImportanceMetrics {
 }
 impl VariableImportanceMetrics {
     /// <p>List of variable metrics.</p>
-    pub fn log_odds_metrics(&self) -> ::std::option::Option<&[crate::types::LogOddsMetric]> {
-        self.log_odds_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_odds_metrics.is_none()`.
+    pub fn log_odds_metrics(&self) -> &[crate::types::LogOddsMetric] {
+        self.log_odds_metrics.as_deref().unwrap_or_default()
     }
 }
 impl VariableImportanceMetrics {

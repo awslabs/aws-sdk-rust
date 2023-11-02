@@ -7,7 +7,7 @@ pub struct AuthInfo {
     /// <p>The type of action for which the principal is being authorized.</p>
     pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources: ::std::vec::Vec<::std::string::String>,
 }
 impl AuthInfo {
     /// <p>The type of action for which the principal is being authorized.</p>
@@ -15,8 +15,9 @@ impl AuthInfo {
         self.action_type.as_ref()
     }
     /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    pub fn resources(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.resources.deref()
     }
 }
 impl AuthInfo {
@@ -69,10 +70,17 @@ impl AuthInfoBuilder {
         &self.resources
     }
     /// Consumes the builder and constructs a [`AuthInfo`](crate::types::AuthInfo).
-    pub fn build(self) -> crate::types::AuthInfo {
-        crate::types::AuthInfo {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resources`](crate::types::builders::AuthInfoBuilder::resources)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuthInfo {
             action_type: self.action_type,
-            resources: self.resources,
-        }
+            resources: self.resources.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resources",
+                    "resources was not specified but it is required when building AuthInfo",
+                )
+            })?,
+        })
     }
 }

@@ -42,6 +42,7 @@ pub struct S3DestinationBuilder {
 }
 impl S3DestinationBuilder {
     /// The name of an S3 bucket within which harvested content will be exported
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl S3DestinationBuilder {
         &self.bucket_name
     }
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
+    /// This field is required.
     pub fn manifest_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_key = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl S3DestinationBuilder {
         &self.manifest_key
     }
     /// The IAM role used to write to the specified S3 bucket
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

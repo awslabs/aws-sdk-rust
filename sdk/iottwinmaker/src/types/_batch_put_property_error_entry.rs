@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutPropertyErrorEntry {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchPutPropertyError>,
 }
 impl BatchPutPropertyErrorEntry {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchPutPropertyError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchPutPropertyError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl BatchPutPropertyErrorEntry {
@@ -48,7 +49,16 @@ impl BatchPutPropertyErrorEntryBuilder {
         &self.errors
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
-    pub fn build(self) -> crate::types::BatchPutPropertyErrorEntry {
-        crate::types::BatchPutPropertyErrorEntry { errors: self.errors }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::types::builders::BatchPutPropertyErrorEntryBuilder::errors)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutPropertyErrorEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchPutPropertyErrorEntry {
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchPutPropertyErrorEntry",
+                )
+            })?,
+        })
     }
 }

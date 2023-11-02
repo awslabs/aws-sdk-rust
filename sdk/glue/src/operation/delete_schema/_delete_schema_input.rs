@@ -27,6 +27,7 @@ pub struct DeleteSchemaInputBuilder {
 }
 impl DeleteSchemaInputBuilder {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self

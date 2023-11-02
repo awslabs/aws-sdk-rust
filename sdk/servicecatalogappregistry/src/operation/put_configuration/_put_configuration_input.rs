@@ -27,6 +27,7 @@ pub struct PutConfigurationInputBuilder {
 }
 impl PutConfigurationInputBuilder {
     /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::AppRegistryConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

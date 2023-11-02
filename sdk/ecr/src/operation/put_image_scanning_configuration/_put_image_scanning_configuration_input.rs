@@ -55,6 +55,7 @@ impl PutImageScanningConfigurationInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutImageScanningConfigurationInputBuilder {
         &self.repository_name
     }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
+    /// This field is required.
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self

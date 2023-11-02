@@ -16,8 +16,10 @@ impl UpdateOpenIdConnectProviderThumbprintInput {
         self.open_id_connect_provider_arn.as_deref()
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn thumbprint_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.thumbprint_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thumbprint_list.is_none()`.
+    pub fn thumbprint_list(&self) -> &[::std::string::String] {
+        self.thumbprint_list.as_deref().unwrap_or_default()
     }
 }
 impl UpdateOpenIdConnectProviderThumbprintInput {
@@ -37,6 +39,7 @@ pub struct UpdateOpenIdConnectProviderThumbprintInputBuilder {
 impl UpdateOpenIdConnectProviderThumbprintInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = ::std::option::Option::Some(input.into());
         self

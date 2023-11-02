@@ -9,8 +9,10 @@ pub struct DescribeScalingProcessTypesOutput {
 }
 impl DescribeScalingProcessTypesOutput {
     /// <p>The names of the process types.</p>
-    pub fn processes(&self) -> ::std::option::Option<&[crate::types::ProcessType]> {
-        self.processes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processes.is_none()`.
+    pub fn processes(&self) -> &[crate::types::ProcessType] {
+        self.processes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeScalingProcessTypesOutput {

@@ -3,11 +3,11 @@ pub fn ser_put_metadata_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_metadata::PutMetadataInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.channel_arn {
-        object.key("channelArn").string(var_1.as_str());
+    {
+        object.key("channelArn").string(input.channel_arn.as_str());
     }
-    if let Some(var_2) = &input.metadata {
-        object.key("metadata").string(var_2.as_str());
+    {
+        object.key("metadata").string(input.metadata.as_str());
     }
     Ok(())
 }

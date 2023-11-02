@@ -34,6 +34,7 @@ pub struct UpdateMeshOutputBuilder {
 }
 impl UpdateMeshOutputBuilder {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
+    /// This field is required.
     pub fn mesh(mut self, input: crate::types::MeshData) -> Self {
         self.mesh = ::std::option::Option::Some(input);
         self

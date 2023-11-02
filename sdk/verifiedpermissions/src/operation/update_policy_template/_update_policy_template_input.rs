@@ -80,6 +80,7 @@ pub struct UpdatePolicyTemplateInputBuilder {
 }
 impl UpdatePolicyTemplateInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl UpdatePolicyTemplateInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
+    /// This field is required.
     pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +135,7 @@ impl UpdatePolicyTemplateInputBuilder {
     /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
     /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self

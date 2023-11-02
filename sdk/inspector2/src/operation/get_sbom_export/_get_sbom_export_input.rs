@@ -27,6 +27,7 @@ pub struct GetSbomExportInputBuilder {
 }
 impl GetSbomExportInputBuilder {
     /// <p>The report ID of the SBOM export to get details for.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self

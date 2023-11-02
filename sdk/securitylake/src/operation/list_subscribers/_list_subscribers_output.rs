@@ -11,8 +11,10 @@ pub struct ListSubscribersOutput {
 }
 impl ListSubscribersOutput {
     /// <p>The subscribers available for the specified Security Lake account ID.</p>
-    pub fn subscribers(&self) -> ::std::option::Option<&[crate::types::SubscriberResource]> {
-        self.subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
+    pub fn subscribers(&self) -> &[crate::types::SubscriberResource] {
+        self.subscribers.as_deref().unwrap_or_default()
     }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

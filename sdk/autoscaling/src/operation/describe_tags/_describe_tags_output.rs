@@ -11,8 +11,10 @@ pub struct DescribeTagsOutput {
 }
 impl DescribeTagsOutput {
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagDescription]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagDescription] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -34,6 +34,7 @@ pub struct RemoveAttributesOutputBuilder {
 }
 impl RemoveAttributesOutputBuilder {
     /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
+    /// This field is required.
     pub fn attributes_resource(mut self, input: crate::types::AttributesResource) -> Self {
         self.attributes_resource = ::std::option::Option::Some(input);
         self

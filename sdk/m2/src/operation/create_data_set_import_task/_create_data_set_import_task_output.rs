@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSetImportTaskOutput {
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
-    pub task_id: ::std::option::Option<::std::string::String>,
+    pub task_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateDataSetImportTaskOutput {
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
-        self.task_id.as_deref()
+    pub fn task_id(&self) -> &str {
+        use std::ops::Deref;
+        self.task_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateDataSetImportTaskOutput {
@@ -34,6 +35,7 @@ pub struct CreateDataSetImportTaskOutputBuilder {
 }
 impl CreateDataSetImportTaskOutputBuilder {
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateDataSetImportTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput).
-    pub fn build(self) -> crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
-        crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
-            task_id: self.task_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_id`](crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder::task_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
+            task_id: self.task_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_id",
+                    "task_id was not specified but it is required when building CreateDataSetImportTaskOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

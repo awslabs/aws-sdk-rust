@@ -41,8 +41,10 @@ impl Route {
         self.api_key_required
     }
     /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    pub fn authorization_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.authorization_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorization_scopes.is_none()`.
+    pub fn authorization_scopes(&self) -> &[::std::string::String] {
+        self.authorization_scopes.as_deref().unwrap_or_default()
     }
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
     pub fn authorization_type(&self) -> ::std::option::Option<&crate::types::AuthorizationType> {
@@ -284,6 +286,7 @@ impl RouteBuilder {
         &self.route_id
     }
     /// <p>The route key for the route.</p>
+    /// This field is required.
     pub fn route_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_key = ::std::option::Option::Some(input.into());
         self

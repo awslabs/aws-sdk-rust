@@ -7,6 +7,8 @@ pub struct ListApplicationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The filter of name, value, and operator.</p>
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListApplicationsInput {
     /// <p>The token for the next page of results.</p>
@@ -16,6 +18,12 @@ impl ListApplicationsInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The filter of name, value, and operator.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListApplicationsInput {
@@ -31,6 +39,7 @@ impl ListApplicationsInput {
 pub struct ListApplicationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl ListApplicationsInputBuilder {
     /// <p>The token for the next page of results.</p>
@@ -61,6 +70,26 @@ impl ListApplicationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// Appends an item to `filters`.
+    ///
+    /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+    ///
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn filters(mut self, input: crate::types::Filter) -> Self {
+        let mut v = self.filters.unwrap_or_default();
+        v.push(input);
+        self.filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input;
+        self
+    }
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
@@ -68,6 +97,7 @@ impl ListApplicationsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            filters: self.filters,
         })
     }
 }

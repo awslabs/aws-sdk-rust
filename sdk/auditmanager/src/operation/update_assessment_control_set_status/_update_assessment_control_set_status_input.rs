@@ -58,6 +58,7 @@ pub struct UpdateAssessmentControlSetStatusInputBuilder {
 }
 impl UpdateAssessmentControlSetStatusInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the control set. </p>
+    /// This field is required.
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         &self.control_set_id
     }
     /// <p> The status of the control set that's being updated. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ControlSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -100,6 +103,7 @@ impl UpdateAssessmentControlSetStatusInputBuilder {
         &self.status
     }
     /// <p> The comment that's related to the status update. </p>
+    /// This field is required.
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct DeleteUsageLimitInputBuilder {
 }
 impl DeleteUsageLimitInputBuilder {
     /// <p>The identifier of the usage limit to delete.</p>
+    /// This field is required.
     pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self

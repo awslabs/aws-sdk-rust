@@ -41,6 +41,7 @@ pub struct AssociateWebsiteCertificateAuthorityInputBuilder {
 }
 impl AssociateWebsiteCertificateAuthorityInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
         &self.fleet_arn
     }
     /// <p>The root certificate of the CA.</p>
+    /// This field is required.
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
         self

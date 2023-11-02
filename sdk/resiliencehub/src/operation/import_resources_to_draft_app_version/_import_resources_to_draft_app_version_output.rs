@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionOutput {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub app_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub app_arn: ::std::string::String,
     /// <p>The version of the application.</p>
-    pub app_version: ::std::option::Option<::std::string::String>,
+    pub app_version: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
     pub source_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Status of the action.</p>
-    pub status: ::std::option::Option<crate::types::ResourceImportStatusType>,
+    pub status: crate::types::ResourceImportStatusType,
     /// <p> A list of terraform file s3 URLs you have imported. </p>
     pub terraform_sources: ::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>>,
     /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you have imported.</p>
@@ -18,29 +18,37 @@ pub struct ImportResourcesToDraftAppVersionOutput {
     _request_id: Option<String>,
 }
 impl ImportResourcesToDraftAppVersionOutput {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
-        self.app_arn.as_deref()
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn app_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.app_arn.deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
-        self.app_version.as_deref()
+    pub fn app_version(&self) -> &str {
+        use std::ops::Deref;
+        self.app_version.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources you have imported.</p>
-    pub fn source_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_arns.is_none()`.
+    pub fn source_arns(&self) -> &[::std::string::String] {
+        self.source_arns.as_deref().unwrap_or_default()
     }
     /// <p>Status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceImportStatusType> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ResourceImportStatusType {
+        &self.status
     }
     /// <p> A list of terraform file s3 URLs you have imported. </p>
-    pub fn terraform_sources(&self) -> ::std::option::Option<&[crate::types::TerraformSource]> {
-        self.terraform_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terraform_sources.is_none()`.
+    pub fn terraform_sources(&self) -> &[crate::types::TerraformSource] {
+        self.terraform_sources.as_deref().unwrap_or_default()
     }
     /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you have imported.</p>
-    pub fn eks_sources(&self) -> ::std::option::Option<&[crate::types::EksSource]> {
-        self.eks_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eks_sources.is_none()`.
+    pub fn eks_sources(&self) -> &[crate::types::EksSource] {
+        self.eks_sources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ImportResourcesToDraftAppVersionOutput {
@@ -68,21 +76,23 @@ pub struct ImportResourcesToDraftAppVersionOutputBuilder {
     _request_id: Option<String>,
 }
 impl ImportResourcesToDraftAppVersionOutputBuilder {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    /// This field is required.
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
     /// <p>The version of the application.</p>
+    /// This field is required.
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +127,7 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         &self.source_arns
     }
     /// <p>Status of the action.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ResourceImportStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -180,15 +191,41 @@ impl ImportResourcesToDraftAppVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportResourcesToDraftAppVersionOutput`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput).
-    pub fn build(self) -> crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput {
-        crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput {
-            app_arn: self.app_arn,
-            app_version: self.app_version,
-            source_arns: self.source_arns,
-            status: self.status,
-            terraform_sources: self.terraform_sources,
-            eks_sources: self.eks_sources,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_arn`](crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder::app_arn)
+    /// - [`app_version`](crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder::app_version)
+    /// - [`status`](crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput {
+                app_arn: self.app_arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_arn",
+                        "app_arn was not specified but it is required when building ImportResourcesToDraftAppVersionOutput",
+                    )
+                })?,
+                app_version: self.app_version.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_version",
+                        "app_version was not specified but it is required when building ImportResourcesToDraftAppVersionOutput",
+                    )
+                })?,
+                source_arns: self.source_arns,
+                status: self.status.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "status",
+                        "status was not specified but it is required when building ImportResourcesToDraftAppVersionOutput",
+                    )
+                })?,
+                terraform_sources: self.terraform_sources,
+                eks_sources: self.eks_sources,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

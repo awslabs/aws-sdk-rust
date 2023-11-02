@@ -28,6 +28,7 @@ pub struct DeleteVpcLinkInputBuilder {
 }
 impl DeleteVpcLinkInputBuilder {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
+    /// This field is required.
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_link_id = ::std::option::Option::Some(input.into());
         self

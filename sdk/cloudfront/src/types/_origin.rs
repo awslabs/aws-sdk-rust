@@ -19,10 +19,10 @@
 pub struct Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_path: ::std::option::Option<::std::string::String>,
@@ -50,13 +50,15 @@ pub struct Origin {
 impl Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -123,6 +125,7 @@ pub struct OriginBuilder {
 impl OriginBuilder {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +143,7 @@ impl OriginBuilder {
     }
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -289,10 +293,20 @@ impl OriginBuilder {
         &self.origin_access_control_id
     }
     /// Consumes the builder and constructs a [`Origin`](crate::types::Origin).
-    pub fn build(self) -> crate::types::Origin {
-        crate::types::Origin {
-            id: self.id,
-            domain_name: self.domain_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::OriginBuilder::id)
+    /// - [`domain_name`](crate::types::builders::OriginBuilder::domain_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Origin, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Origin {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Origin")
+            })?,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building Origin",
+                )
+            })?,
             origin_path: self.origin_path,
             custom_headers: self.custom_headers,
             s3_origin_config: self.s3_origin_config,
@@ -301,6 +315,6 @@ impl OriginBuilder {
             connection_timeout: self.connection_timeout,
             origin_shield: self.origin_shield,
             origin_access_control_id: self.origin_access_control_id,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterCrossAccountAccessRole`](crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`role_arn(impl Into<String>)`](crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder::set_role_arn): <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    ///   - [`role_arn(impl Into<String>)`](crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleFluentBuilder::set_role_arn):<br>required: **true**<br><p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p><br>
     /// - On success, responds with [`RegisterCrossAccountAccessRoleOutput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput)
     /// - On failure, responds with [`SdkError<RegisterCrossAccountAccessRoleError>`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError)
     pub fn register_cross_account_access_role(

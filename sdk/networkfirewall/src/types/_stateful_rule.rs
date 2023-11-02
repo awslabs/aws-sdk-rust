@@ -11,11 +11,11 @@ pub struct StatefulRule {
     /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
     /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
     /// </ul>
-    pub action: ::std::option::Option<crate::types::StatefulAction>,
+    pub action: crate::types::StatefulAction,
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows. </p>
     pub header: ::std::option::Option<crate::types::Header>,
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-    pub rule_options: ::std::option::Option<::std::vec::Vec<crate::types::RuleOption>>,
+    pub rule_options: ::std::vec::Vec<crate::types::RuleOption>,
 }
 impl StatefulRule {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria. For all actions, Network Firewall performs the specified action and discontinues stateful inspection of the traffic flow. </p>
@@ -25,16 +25,17 @@ impl StatefulRule {
     /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
     /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::StatefulAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::StatefulAction {
+        &self.action
     }
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows. </p>
     pub fn header(&self) -> ::std::option::Option<&crate::types::Header> {
         self.header.as_ref()
     }
     /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
-    pub fn rule_options(&self) -> ::std::option::Option<&[crate::types::RuleOption]> {
-        self.rule_options.as_deref()
+    pub fn rule_options(&self) -> &[crate::types::RuleOption] {
+        use std::ops::Deref;
+        self.rule_options.deref()
     }
 }
 impl StatefulRule {
@@ -60,6 +61,7 @@ impl StatefulRuleBuilder {
     /// <li> <p> <b>DROP</b> - Blocks the packets from going to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> </li>
     /// <li> <p> <b>ALERT</b> - Permits the packets to go to the intended destination and sends an alert log message, if alert logging is configured in the <code>Firewall</code> <code>LoggingConfiguration</code>. </p> <p>You can use this action to test a rule that you intend to use to drop traffic. You can enable the rule with <code>ALERT</code> action, verify in the logs that the rule is filtering as you want, then change the action to <code>DROP</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::StatefulAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -86,6 +88,7 @@ impl StatefulRuleBuilder {
         &self.action
     }
     /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows. </p>
+    /// This field is required.
     pub fn header(mut self, input: crate::types::Header) -> Self {
         self.header = ::std::option::Option::Some(input);
         self
@@ -120,11 +123,24 @@ impl StatefulRuleBuilder {
         &self.rule_options
     }
     /// Consumes the builder and constructs a [`StatefulRule`](crate::types::StatefulRule).
-    pub fn build(self) -> crate::types::StatefulRule {
-        crate::types::StatefulRule {
-            action: self.action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::StatefulRuleBuilder::action)
+    /// - [`rule_options`](crate::types::builders::StatefulRuleBuilder::rule_options)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatefulRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatefulRule {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building StatefulRule",
+                )
+            })?,
             header: self.header,
-            rule_options: self.rule_options,
-        }
+            rule_options: self.rule_options.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_options",
+                    "rule_options was not specified but it is required when building StatefulRule",
+                )
+            })?,
+        })
     }
 }

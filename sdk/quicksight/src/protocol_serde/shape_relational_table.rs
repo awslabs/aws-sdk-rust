@@ -3,29 +3,29 @@ pub fn ser_relational_table(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelationalTable,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_source_arn {
-        object.key("DataSourceArn").string(var_1.as_str());
+    {
+        object.key("DataSourceArn").string(input.data_source_arn.as_str());
     }
-    if let Some(var_2) = &input.catalog {
-        object.key("Catalog").string(var_2.as_str());
+    if let Some(var_1) = &input.catalog {
+        object.key("Catalog").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.schema {
-        object.key("Schema").string(var_3.as_str());
+    if let Some(var_2) = &input.schema {
+        object.key("Schema").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_5) = &input.input_columns {
-        let mut array_6 = object.key("InputColumns").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_3 = object.key("InputColumns").start_array();
+        for item_4 in &input.input_columns {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_input_column::ser_input_column(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_input_column::ser_input_column(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_6.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -86,7 +86,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::relational_table_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

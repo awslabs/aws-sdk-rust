@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchQuantumTasksOutput {
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-    pub quantum_tasks: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>>,
+    pub quantum_tasks: ::std::vec::Vec<crate::types::QuantumTaskSummary>,
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchQuantumTasksOutput {
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-    pub fn quantum_tasks(&self) -> ::std::option::Option<&[crate::types::QuantumTaskSummary]> {
-        self.quantum_tasks.as_deref()
+    pub fn quantum_tasks(&self) -> &[crate::types::QuantumTaskSummary] {
+        use std::ops::Deref;
+        self.quantum_tasks.deref()
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl SearchQuantumTasksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchQuantumTasksOutput`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput).
-    pub fn build(self) -> crate::operation::search_quantum_tasks::SearchQuantumTasksOutput {
-        crate::operation::search_quantum_tasks::SearchQuantumTasksOutput {
-            quantum_tasks: self.quantum_tasks,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantum_tasks`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder::quantum_tasks)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_quantum_tasks::SearchQuantumTasksOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_quantum_tasks::SearchQuantumTasksOutput {
+            quantum_tasks: self.quantum_tasks.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantum_tasks",
+                    "quantum_tasks was not specified but it is required when building SearchQuantumTasksOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

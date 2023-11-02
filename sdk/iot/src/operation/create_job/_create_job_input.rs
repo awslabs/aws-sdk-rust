@@ -55,8 +55,10 @@ impl CreateJobInput {
         self.job_id.as_deref()
     }
     /// <p>A list of things and thing groups to which the job should be sent.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p>
     /// <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p>
@@ -95,8 +97,10 @@ impl CreateJobInput {
         self.timeout_config.as_ref()
     }
     /// <p>Metadata which can be used to manage the job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
@@ -126,8 +130,10 @@ impl CreateJobInput {
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_package_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_package_versions.is_none()`.
+    pub fn destination_package_versions(&self) -> &[::std::string::String] {
+        self.destination_package_versions.as_deref().unwrap_or_default()
     }
 }
 impl CreateJobInput {
@@ -161,6 +167,7 @@ pub struct CreateJobInputBuilder {
 }
 impl CreateJobInputBuilder {
     /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

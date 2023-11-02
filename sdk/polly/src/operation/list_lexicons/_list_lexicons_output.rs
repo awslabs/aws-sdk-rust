@@ -11,8 +11,10 @@ pub struct ListLexiconsOutput {
 }
 impl ListLexiconsOutput {
     /// <p>A list of lexicon names and attributes.</p>
-    pub fn lexicons(&self) -> ::std::option::Option<&[crate::types::LexiconDescription]> {
-        self.lexicons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lexicons.is_none()`.
+    pub fn lexicons(&self) -> &[crate::types::LexiconDescription] {
+        self.lexicons.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

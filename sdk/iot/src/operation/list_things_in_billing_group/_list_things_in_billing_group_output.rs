@@ -11,8 +11,10 @@ pub struct ListThingsInBillingGroupOutput {
 }
 impl ListThingsInBillingGroupOutput {
     /// <p>A list of things in the billing group.</p>
-    pub fn things(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.things.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.things.is_none()`.
+    pub fn things(&self) -> &[::std::string::String] {
+        self.things.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FormInput {
     /// <p>The name of the metadata form.</p>
-    pub form_name: ::std::option::Option<::std::string::String>,
+    pub form_name: ::std::string::String,
     /// <p>The ID of the metadata form type.</p>
     pub type_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the metadata form type.</p>
@@ -15,8 +15,9 @@ pub struct FormInput {
 }
 impl FormInput {
     /// <p>The name of the metadata form.</p>
-    pub fn form_name(&self) -> ::std::option::Option<&str> {
-        self.form_name.as_deref()
+    pub fn form_name(&self) -> &str {
+        use std::ops::Deref;
+        self.form_name.deref()
     }
     /// <p>The ID of the metadata form type.</p>
     pub fn type_identifier(&self) -> ::std::option::Option<&str> {
@@ -59,6 +60,7 @@ pub struct FormInputBuilder {
 }
 impl FormInputBuilder {
     /// <p>The name of the metadata form.</p>
+    /// This field is required.
     pub fn form_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.form_name = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +117,20 @@ impl FormInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`FormInput`](crate::types::FormInput).
-    pub fn build(self) -> crate::types::FormInput {
-        crate::types::FormInput {
-            form_name: self.form_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`form_name`](crate::types::builders::FormInputBuilder::form_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FormInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FormInput {
+            form_name: self.form_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "form_name",
+                    "form_name was not specified but it is required when building FormInput",
+                )
+            })?,
             type_identifier: self.type_identifier,
             type_revision: self.type_revision,
             content: self.content,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for FormInputBuilder {

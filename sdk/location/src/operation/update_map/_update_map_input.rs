@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
-    pub map_name: ::std::option::Option<::std::string::String>,
+    pub map_name: ::std::string::String,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -15,8 +15,9 @@ pub struct UpdateMapInput {
 }
 impl UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
-        self.map_name.as_deref()
+    pub fn map_name(&self) -> &str {
+        use std::ops::Deref;
+        self.map_name.deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -50,6 +51,7 @@ pub struct UpdateMapInputBuilder {
 }
 impl UpdateMapInputBuilder {
     /// <p>The name of the map resource to update.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -109,9 +111,16 @@ impl UpdateMapInputBuilder {
         &self.configuration_update
     }
     /// Consumes the builder and constructs a [`UpdateMapInput`](crate::operation::update_map::UpdateMapInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`map_name`](crate::operation::update_map::builders::UpdateMapInputBuilder::map_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_map::UpdateMapInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_map::UpdateMapInput {
-            map_name: self.map_name,
+            map_name: self.map_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_name",
+                    "map_name was not specified but it is required when building UpdateMapInput",
+                )
+            })?,
             pricing_plan: self.pricing_plan,
             description: self.description,
             configuration_update: self.configuration_update,

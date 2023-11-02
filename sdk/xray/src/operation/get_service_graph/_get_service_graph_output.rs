@@ -25,8 +25,10 @@ impl GetServiceGraphOutput {
         self.end_time.as_ref()
     }
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    pub fn services(&self) -> ::std::option::Option<&[crate::types::Service]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[crate::types::Service] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub fn contains_old_group_versions(&self) -> bool {

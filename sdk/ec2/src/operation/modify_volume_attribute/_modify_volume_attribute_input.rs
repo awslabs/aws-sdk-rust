@@ -55,6 +55,7 @@ impl ModifyVolumeAttributeInputBuilder {
         &self.auto_enable_io
     }
     /// <p>The ID of the volume.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self

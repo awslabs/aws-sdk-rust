@@ -15,8 +15,10 @@ pub struct ListAnalysesOutput {
 }
 impl ListAnalysesOutput {
     /// <p>Metadata describing each of the analyses that are listed.</p>
-    pub fn analysis_summary_list(&self) -> ::std::option::Option<&[crate::types::AnalysisSummary]> {
-        self.analysis_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_summary_list.is_none()`.
+    pub fn analysis_summary_list(&self) -> &[crate::types::AnalysisSummary] {
+        self.analysis_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

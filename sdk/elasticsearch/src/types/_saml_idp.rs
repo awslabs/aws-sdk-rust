@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlIdp {
     /// <p>The Metadata of the SAML application in xml format.</p>
-    pub metadata_content: ::std::option::Option<::std::string::String>,
+    pub metadata_content: ::std::string::String,
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
 }
 impl SamlIdp {
     /// <p>The Metadata of the SAML application in xml format.</p>
-    pub fn metadata_content(&self) -> ::std::option::Option<&str> {
-        self.metadata_content.as_deref()
+    pub fn metadata_content(&self) -> &str {
+        use std::ops::Deref;
+        self.metadata_content.deref()
     }
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
 }
 impl SamlIdp {
@@ -35,6 +37,7 @@ pub struct SamlIdpBuilder {
 }
 impl SamlIdpBuilder {
     /// <p>The Metadata of the SAML application in xml format.</p>
+    /// This field is required.
     pub fn metadata_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_content = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SamlIdpBuilder {
         &self.metadata_content
     }
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SamlIdpBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`SamlIdp`](crate::types::SamlIdp).
-    pub fn build(self) -> crate::types::SamlIdp {
-        crate::types::SamlIdp {
-            metadata_content: self.metadata_content,
-            entity_id: self.entity_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metadata_content`](crate::types::builders::SamlIdpBuilder::metadata_content)
+    /// - [`entity_id`](crate::types::builders::SamlIdpBuilder::entity_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SamlIdp, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SamlIdp {
+            metadata_content: self.metadata_content.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metadata_content",
+                    "metadata_content was not specified but it is required when building SamlIdp",
+                )
+            })?,
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building SamlIdp",
+                )
+            })?,
+        })
     }
 }

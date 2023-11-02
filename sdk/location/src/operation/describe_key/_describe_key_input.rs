@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeyInput {
     /// <p>The name of the API key resource.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
 }
 impl DescribeKeyInput {
     /// <p>The name of the API key resource.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
 }
 impl DescribeKeyInput {
@@ -27,6 +28,7 @@ pub struct DescribeKeyInputBuilder {
 }
 impl DescribeKeyInputBuilder {
     /// <p>The name of the API key resource.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl DescribeKeyInputBuilder {
         &self.key_name
     }
     /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::operation::describe_key::DescribeKeyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::operation::describe_key::builders::DescribeKeyInputBuilder::key_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_key::DescribeKeyInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_key::DescribeKeyInput { key_name: self.key_name })
+        ::std::result::Result::Ok(crate::operation::describe_key::DescribeKeyInput {
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building DescribeKeyInput",
+                )
+            })?,
+        })
     }
 }

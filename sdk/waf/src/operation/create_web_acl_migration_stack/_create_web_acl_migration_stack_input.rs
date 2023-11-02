@@ -51,6 +51,7 @@ pub struct CreateWebAclMigrationStackInputBuilder {
 }
 impl CreateWebAclMigrationStackInputBuilder {
     /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateWebAclMigrationStackInputBuilder {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl CreateWebAclMigrationStackInputBuilder {
         &self.s3_bucket_name
     }
     /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
+    /// This field is required.
     pub fn ignore_unsupported_type(mut self, input: bool) -> Self {
         self.ignore_unsupported_type = ::std::option::Option::Some(input);
         self

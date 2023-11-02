@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayOutput {
     /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
-    pub gateway_id: ::std::option::Option<::std::string::String>,
+    pub gateway_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
-    pub gateway_arn: ::std::option::Option<::std::string::String>,
+    pub gateway_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateGatewayOutput {
     /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
-        self.gateway_id.as_deref()
+    pub fn gateway_id(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
-        self.gateway_arn.as_deref()
+    pub fn gateway_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateGatewayOutput {
@@ -43,6 +45,7 @@ pub struct CreateGatewayOutputBuilder {
 }
 impl CreateGatewayOutputBuilder {
     /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl CreateGatewayOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +87,26 @@ impl CreateGatewayOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateGatewayOutput`](crate::operation::create_gateway::CreateGatewayOutput).
-    pub fn build(self) -> crate::operation::create_gateway::CreateGatewayOutput {
-        crate::operation::create_gateway::CreateGatewayOutput {
-            gateway_id: self.gateway_id,
-            gateway_arn: self.gateway_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_id`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::gateway_id)
+    /// - [`gateway_arn`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::gateway_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_gateway::CreateGatewayOutput {
+            gateway_id: self.gateway_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_id",
+                    "gateway_id was not specified but it is required when building CreateGatewayOutput",
+                )
+            })?,
+            gateway_arn: self.gateway_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_arn",
+                    "gateway_arn was not specified but it is required when building CreateGatewayOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

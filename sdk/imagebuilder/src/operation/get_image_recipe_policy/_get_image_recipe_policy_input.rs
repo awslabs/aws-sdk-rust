@@ -27,6 +27,7 @@ pub struct GetImageRecipePolicyInputBuilder {
 }
 impl GetImageRecipePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
+    /// This field is required.
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self

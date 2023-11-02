@@ -8,20 +8,20 @@ pub struct KxSavedownStorageConfiguration {
     /// <ul>
     /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::KxSavedownStorageType>,
+    pub r#type: crate::types::KxSavedownStorageType,
     /// <p>The size of temporary storage in gibibytes.</p>
-    pub size: ::std::option::Option<i32>,
+    pub size: i32,
 }
 impl KxSavedownStorageConfiguration {
     /// <p>The type of writeable storage space for temporarily storing your savedown data. The valid values are:</p>
     /// <ul>
     /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::KxSavedownStorageType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::KxSavedownStorageType {
+        &self.r#type
     }
     /// <p>The size of temporary storage in gibibytes.</p>
-    pub fn size(&self) -> ::std::option::Option<i32> {
+    pub fn size(&self) -> i32 {
         self.size
     }
 }
@@ -44,6 +44,7 @@ impl KxSavedownStorageConfigurationBuilder {
     /// <ul>
     /// <li> <p>SDS01 – This type represents 3000 IOPS and io2 ebs volume type.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::KxSavedownStorageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -64,6 +65,7 @@ impl KxSavedownStorageConfigurationBuilder {
         &self.r#type
     }
     /// <p>The size of temporary storage in gibibytes.</p>
+    /// This field is required.
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -78,10 +80,23 @@ impl KxSavedownStorageConfigurationBuilder {
         &self.size
     }
     /// Consumes the builder and constructs a [`KxSavedownStorageConfiguration`](crate::types::KxSavedownStorageConfiguration).
-    pub fn build(self) -> crate::types::KxSavedownStorageConfiguration {
-        crate::types::KxSavedownStorageConfiguration {
-            r#type: self.r#type,
-            size: self.size,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::KxSavedownStorageConfigurationBuilder::r#type)
+    /// - [`size`](crate::types::builders::KxSavedownStorageConfigurationBuilder::size)
+    pub fn build(self) -> ::std::result::Result<crate::types::KxSavedownStorageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KxSavedownStorageConfiguration {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building KxSavedownStorageConfiguration",
+                )
+            })?,
+            size: self.size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size",
+                    "size was not specified but it is required when building KxSavedownStorageConfiguration",
+                )
+            })?,
+        })
     }
 }

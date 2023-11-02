@@ -11,8 +11,10 @@ pub struct DescribeFleetUtilizationOutput {
 }
 impl DescribeFleetUtilizationOutput {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    pub fn fleet_utilization(&self) -> ::std::option::Option<&[crate::types::FleetUtilization]> {
-        self.fleet_utilization.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_utilization.is_none()`.
+    pub fn fleet_utilization(&self) -> &[crate::types::FleetUtilization] {
+        self.fleet_utilization.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

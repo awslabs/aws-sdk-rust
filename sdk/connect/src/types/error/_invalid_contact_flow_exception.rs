@@ -12,8 +12,10 @@ pub struct InvalidContactFlowException {
 }
 impl InvalidContactFlowException {
     /// <p>The problems with the flow. Please fix before trying again.</p>
-    pub fn problems(&self) -> ::std::option::Option<&[crate::types::ProblemDetail]> {
-        self.problems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.problems.is_none()`.
+    pub fn problems(&self) -> &[crate::types::ProblemDetail] {
+        self.problems.as_deref().unwrap_or_default()
     }
 }
 impl InvalidContactFlowException {

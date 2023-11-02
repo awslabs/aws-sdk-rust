@@ -85,6 +85,7 @@ pub struct CreateManagedEndpointInputBuilder {
 }
 impl CreateManagedEndpointInputBuilder {
     /// <p>The name of the managed endpoint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +100,7 @@ impl CreateManagedEndpointInputBuilder {
         &self.name
     }
     /// <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
+    /// This field is required.
     pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +115,7 @@ impl CreateManagedEndpointInputBuilder {
         &self.virtual_cluster_id
     }
     /// <p>The type of the managed endpoint.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +130,7 @@ impl CreateManagedEndpointInputBuilder {
         &self.r#type
     }
     /// <p>The Amazon EMR release version.</p>
+    /// This field is required.
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +145,7 @@ impl CreateManagedEndpointInputBuilder {
         &self.release_label
     }
     /// <p>The ARN of the execution role.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -186,6 +191,7 @@ impl CreateManagedEndpointInputBuilder {
         &self.configuration_overrides
     }
     /// <p>The client idempotency token for this create call.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

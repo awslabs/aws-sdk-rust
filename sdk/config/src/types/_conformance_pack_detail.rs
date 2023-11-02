@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackDetail {
     /// <p>Name of the conformance pack.</p>
-    pub conformance_pack_name: ::std::option::Option<::std::string::String>,
+    pub conformance_pack_name: ::std::string::String,
     /// <p>Amazon Resource Name (ARN) of the conformance pack.</p>
-    pub conformance_pack_arn: ::std::option::Option<::std::string::String>,
+    pub conformance_pack_arn: ::std::string::String,
     /// <p>ID of the conformance pack.</p>
-    pub conformance_pack_id: ::std::option::Option<::std::string::String>,
+    pub conformance_pack_id: ::std::string::String,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -29,16 +29,19 @@ pub struct ConformancePackDetail {
 }
 impl ConformancePackDetail {
     /// <p>Name of the conformance pack.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
-        self.conformance_pack_name.as_deref()
+    pub fn conformance_pack_name(&self) -> &str {
+        use std::ops::Deref;
+        self.conformance_pack_name.deref()
     }
     /// <p>Amazon Resource Name (ARN) of the conformance pack.</p>
-    pub fn conformance_pack_arn(&self) -> ::std::option::Option<&str> {
-        self.conformance_pack_arn.as_deref()
+    pub fn conformance_pack_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.conformance_pack_arn.deref()
     }
     /// <p>ID of the conformance pack.</p>
-    pub fn conformance_pack_id(&self) -> ::std::option::Option<&str> {
-        self.conformance_pack_id.as_deref()
+    pub fn conformance_pack_id(&self) -> &str {
+        use std::ops::Deref;
+        self.conformance_pack_id.deref()
     }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
     /// <p>This field is optional.</p>
@@ -53,8 +56,10 @@ impl ConformancePackDetail {
         self.delivery_s3_key_prefix.as_deref()
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn conformance_pack_input_parameters(&self) -> ::std::option::Option<&[crate::types::ConformancePackInputParameter]> {
-        self.conformance_pack_input_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_input_parameters.is_none()`.
+    pub fn conformance_pack_input_parameters(&self) -> &[crate::types::ConformancePackInputParameter] {
+        self.conformance_pack_input_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The last time a conformation pack update was requested. </p>
     pub fn last_update_requested_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -92,6 +97,7 @@ pub struct ConformancePackDetailBuilder {
 }
 impl ConformancePackDetailBuilder {
     /// <p>Name of the conformance pack.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +112,7 @@ impl ConformancePackDetailBuilder {
         &self.conformance_pack_name
     }
     /// <p>Amazon Resource Name (ARN) of the conformance pack.</p>
+    /// This field is required.
     pub fn conformance_pack_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_arn = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +127,7 @@ impl ConformancePackDetailBuilder {
         &self.conformance_pack_arn
     }
     /// <p>ID of the conformance pack.</p>
+    /// This field is required.
     pub fn conformance_pack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_id = ::std::option::Option::Some(input.into());
         self
@@ -239,17 +247,36 @@ impl ConformancePackDetailBuilder {
         &self.template_ssm_document_details
     }
     /// Consumes the builder and constructs a [`ConformancePackDetail`](crate::types::ConformancePackDetail).
-    pub fn build(self) -> crate::types::ConformancePackDetail {
-        crate::types::ConformancePackDetail {
-            conformance_pack_name: self.conformance_pack_name,
-            conformance_pack_arn: self.conformance_pack_arn,
-            conformance_pack_id: self.conformance_pack_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`conformance_pack_name`](crate::types::builders::ConformancePackDetailBuilder::conformance_pack_name)
+    /// - [`conformance_pack_arn`](crate::types::builders::ConformancePackDetailBuilder::conformance_pack_arn)
+    /// - [`conformance_pack_id`](crate::types::builders::ConformancePackDetailBuilder::conformance_pack_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackDetail, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConformancePackDetail {
+            conformance_pack_name: self.conformance_pack_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conformance_pack_name",
+                    "conformance_pack_name was not specified but it is required when building ConformancePackDetail",
+                )
+            })?,
+            conformance_pack_arn: self.conformance_pack_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conformance_pack_arn",
+                    "conformance_pack_arn was not specified but it is required when building ConformancePackDetail",
+                )
+            })?,
+            conformance_pack_id: self.conformance_pack_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conformance_pack_id",
+                    "conformance_pack_id was not specified but it is required when building ConformancePackDetail",
+                )
+            })?,
             delivery_s3_bucket: self.delivery_s3_bucket,
             delivery_s3_key_prefix: self.delivery_s3_key_prefix,
             conformance_pack_input_parameters: self.conformance_pack_input_parameters,
             last_update_requested_time: self.last_update_requested_time,
             created_by: self.created_by,
             template_ssm_document_details: self.template_ssm_document_details,
-        }
+        })
     }
 }

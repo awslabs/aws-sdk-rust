@@ -41,6 +41,7 @@ pub struct ListAccessControlConfigurationsInputBuilder {
 }
 impl ListAccessControlConfigurationsInputBuilder {
     /// <p>The identifier of the index for the access control configuration.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataSource`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::set_id): <p>The identifier of the data source connector.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::set_index_id): <p>The identifier of the index used with the data source connector.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the data source connector.</p><br>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_data_source::builders::DescribeDataSourceFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index used with the data source connector.</p><br>
     /// - On success, responds with [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::describe_data_source::DescribeDataSourceOutput::id): <p>The identifier of the data source connector.</p>
     ///   - [`index_id(Option<String>)`](crate::operation::describe_data_source::DescribeDataSourceOutput::index_id): <p>The identifier of the index used with the data source connector.</p>

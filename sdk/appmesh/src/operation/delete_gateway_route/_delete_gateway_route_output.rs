@@ -34,6 +34,7 @@ pub struct DeleteGatewayRouteOutputBuilder {
 }
 impl DeleteGatewayRouteOutputBuilder {
     /// <p>The gateway route that was deleted.</p>
+    /// This field is required.
     pub fn gateway_route(mut self, input: crate::types::GatewayRouteData) -> Self {
         self.gateway_route = ::std::option::Option::Some(input);
         self

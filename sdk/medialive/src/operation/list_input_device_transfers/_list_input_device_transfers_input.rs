@@ -70,6 +70,7 @@ impl ListInputDeviceTransfersInputBuilder {
         &self.next_token
     }
     /// Placeholder documentation for __string
+    /// This field is required.
     pub fn transfer_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_type = ::std::option::Option::Some(input.into());
         self

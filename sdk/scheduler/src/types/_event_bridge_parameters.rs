@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeParameters {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub detail_type: ::std::option::Option<::std::string::String>,
+    pub detail_type: ::std::string::String,
     /// <p>The source of the event.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
 }
 impl EventBridgeParameters {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub fn detail_type(&self) -> ::std::option::Option<&str> {
-        self.detail_type.as_deref()
+    pub fn detail_type(&self) -> &str {
+        use std::ops::Deref;
+        self.detail_type.deref()
     }
     /// <p>The source of the event.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
 }
 impl EventBridgeParameters {
@@ -35,6 +37,7 @@ pub struct EventBridgeParametersBuilder {
 }
 impl EventBridgeParametersBuilder {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    /// This field is required.
     pub fn detail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail_type = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl EventBridgeParametersBuilder {
         &self.detail_type
     }
     /// <p>The source of the event.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl EventBridgeParametersBuilder {
         &self.source
     }
     /// Consumes the builder and constructs a [`EventBridgeParameters`](crate::types::EventBridgeParameters).
-    pub fn build(self) -> crate::types::EventBridgeParameters {
-        crate::types::EventBridgeParameters {
-            detail_type: self.detail_type,
-            source: self.source,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`detail_type`](crate::types::builders::EventBridgeParametersBuilder::detail_type)
+    /// - [`source`](crate::types::builders::EventBridgeParametersBuilder::source)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventBridgeParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventBridgeParameters {
+            detail_type: self.detail_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "detail_type",
+                    "detail_type was not specified but it is required when building EventBridgeParameters",
+                )
+            })?,
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building EventBridgeParameters",
+                )
+            })?,
+        })
     }
 }

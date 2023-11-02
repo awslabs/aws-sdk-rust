@@ -13,84 +13,85 @@ pub fn ser_health_check_config(
         let mut inner_writer = scope.start_el("Port").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
-    if let Some(var_3) = &input.r#type {
+    {
         let mut inner_writer = scope.start_el("Type").finish();
+        inner_writer.data(input.r#type.as_str());
+    }
+    if let Some(var_3) = &input.resource_path {
+        let mut inner_writer = scope.start_el("ResourcePath").finish();
         inner_writer.data(var_3.as_str());
     }
-    if let Some(var_4) = &input.resource_path {
-        let mut inner_writer = scope.start_el("ResourcePath").finish();
+    if let Some(var_4) = &input.fully_qualified_domain_name {
+        let mut inner_writer = scope.start_el("FullyQualifiedDomainName").finish();
         inner_writer.data(var_4.as_str());
     }
-    if let Some(var_5) = &input.fully_qualified_domain_name {
-        let mut inner_writer = scope.start_el("FullyQualifiedDomainName").finish();
+    if let Some(var_5) = &input.search_string {
+        let mut inner_writer = scope.start_el("SearchString").finish();
         inner_writer.data(var_5.as_str());
     }
-    if let Some(var_6) = &input.search_string {
-        let mut inner_writer = scope.start_el("SearchString").finish();
-        inner_writer.data(var_6.as_str());
-    }
-    if let Some(var_7) = &input.request_interval {
+    if let Some(var_6) = &input.request_interval {
         let mut inner_writer = scope.start_el("RequestInterval").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_6).encode());
+    }
+    if let Some(var_7) = &input.failure_threshold {
+        let mut inner_writer = scope.start_el("FailureThreshold").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_7).encode());
     }
-    if let Some(var_8) = &input.failure_threshold {
-        let mut inner_writer = scope.start_el("FailureThreshold").finish();
+    if let Some(var_8) = &input.measure_latency {
+        let mut inner_writer = scope.start_el("MeasureLatency").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_8).encode());
     }
-    if let Some(var_9) = &input.measure_latency {
-        let mut inner_writer = scope.start_el("MeasureLatency").finish();
+    if let Some(var_9) = &input.inverted {
+        let mut inner_writer = scope.start_el("Inverted").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_9).encode());
     }
-    if let Some(var_10) = &input.inverted {
-        let mut inner_writer = scope.start_el("Inverted").finish();
+    if let Some(var_10) = &input.disabled {
+        let mut inner_writer = scope.start_el("Disabled").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_10).encode());
     }
-    if let Some(var_11) = &input.disabled {
-        let mut inner_writer = scope.start_el("Disabled").finish();
+    if let Some(var_11) = &input.health_threshold {
+        let mut inner_writer = scope.start_el("HealthThreshold").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_11).encode());
     }
-    if let Some(var_12) = &input.health_threshold {
-        let mut inner_writer = scope.start_el("HealthThreshold").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_12).encode());
-    }
-    if let Some(var_13) = &input.child_health_checks {
+    if let Some(var_12) = &input.child_health_checks {
         let mut inner_writer = scope.start_el("ChildHealthChecks").finish();
-        for list_item_14 in var_13 {
+        for list_item_13 in var_12 {
             {
                 let mut inner_writer = inner_writer.start_el("ChildHealthCheck").finish();
-                inner_writer.data(list_item_14.as_str());
+                inner_writer.data(list_item_13.as_str());
             }
         }
     }
-    if let Some(var_15) = &input.enable_sni {
+    if let Some(var_14) = &input.enable_sni {
         let mut inner_writer = scope.start_el("EnableSNI").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_15).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_14).encode());
     }
-    if let Some(var_16) = &input.regions {
+    if let Some(var_15) = &input.regions {
         let mut inner_writer = scope.start_el("Regions").finish();
-        for list_item_17 in var_16 {
+        for list_item_16 in var_15 {
             {
                 let mut inner_writer = inner_writer.start_el("Region").finish();
-                inner_writer.data(list_item_17.as_str());
+                inner_writer.data(list_item_16.as_str());
             }
         }
     }
-    if let Some(var_18) = &input.alarm_identifier {
+    if let Some(var_17) = &input.alarm_identifier {
         let inner_writer = scope.start_el("AlarmIdentifier");
-        crate::protocol_serde::shape_alarm_identifier::ser_alarm_identifier(var_18, inner_writer)?
+        crate::protocol_serde::shape_alarm_identifier::ser_alarm_identifier(var_17, inner_writer)?
     }
-    if let Some(var_19) = &input.insufficient_data_health_status {
+    if let Some(var_18) = &input.insufficient_data_health_status {
         let mut inner_writer = scope.start_el("InsufficientDataHealthStatus").finish();
-        inner_writer.data(var_19.as_str());
+        inner_writer.data(var_18.as_str());
     }
-    if let Some(var_20) = &input.routing_control_arn {
+    if let Some(var_19) = &input.routing_control_arn {
         let mut inner_writer = scope.start_el("RoutingControlArn").finish();
-        inner_writer.data(var_20.as_str());
+        inner_writer.data(var_19.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_health_check_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::HealthCheckConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -99,7 +100,7 @@ pub fn de_health_check_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IPAddress") /* IPAddress com.amazonaws.route53#HealthCheckConfig$IPAddress */ =>  {
-                let var_21 =
+                let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -108,11 +109,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_ip_address(var_21);
+                builder = builder.set_ip_address(var_20);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.route53#HealthCheckConfig$Port */ =>  {
-                let var_22 =
+                let var_21 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -123,11 +124,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_22);
+                builder = builder.set_port(var_21);
             }
             ,
             s if s.matches("Type") /* Type com.amazonaws.route53#HealthCheckConfig$Type */ =>  {
-                let var_23 =
+                let var_22 =
                     Some(
                         Result::<crate::types::HealthCheckType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HealthCheckType::from(
@@ -137,10 +138,23 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_23);
+                builder = builder.set_type(var_22);
             }
             ,
             s if s.matches("ResourcePath") /* ResourcePath com.amazonaws.route53#HealthCheckConfig$ResourcePath */ =>  {
+                let var_23 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_path(var_23);
+            }
+            ,
+            s if s.matches("FullyQualifiedDomainName") /* FullyQualifiedDomainName com.amazonaws.route53#HealthCheckConfig$FullyQualifiedDomainName */ =>  {
                 let var_24 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -150,10 +164,10 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_resource_path(var_24);
+                builder = builder.set_fully_qualified_domain_name(var_24);
             }
             ,
-            s if s.matches("FullyQualifiedDomainName") /* FullyQualifiedDomainName com.amazonaws.route53#HealthCheckConfig$FullyQualifiedDomainName */ =>  {
+            s if s.matches("SearchString") /* SearchString com.amazonaws.route53#HealthCheckConfig$SearchString */ =>  {
                 let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -163,24 +177,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_fully_qualified_domain_name(var_25);
-            }
-            ,
-            s if s.matches("SearchString") /* SearchString com.amazonaws.route53#HealthCheckConfig$SearchString */ =>  {
-                let var_26 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_search_string(var_26);
+                builder = builder.set_search_string(var_25);
             }
             ,
             s if s.matches("RequestInterval") /* RequestInterval com.amazonaws.route53#HealthCheckConfig$RequestInterval */ =>  {
-                let var_27 =
+                let var_26 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -191,11 +192,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_request_interval(var_27);
+                builder = builder.set_request_interval(var_26);
             }
             ,
             s if s.matches("FailureThreshold") /* FailureThreshold com.amazonaws.route53#HealthCheckConfig$FailureThreshold */ =>  {
-                let var_28 =
+                let var_27 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -206,11 +207,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_failure_threshold(var_28);
+                builder = builder.set_failure_threshold(var_27);
             }
             ,
             s if s.matches("MeasureLatency") /* MeasureLatency com.amazonaws.route53#HealthCheckConfig$MeasureLatency */ =>  {
-                let var_29 =
+                let var_28 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -221,11 +222,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_measure_latency(var_29);
+                builder = builder.set_measure_latency(var_28);
             }
             ,
             s if s.matches("Inverted") /* Inverted com.amazonaws.route53#HealthCheckConfig$Inverted */ =>  {
-                let var_30 =
+                let var_29 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -236,11 +237,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_inverted(var_30);
+                builder = builder.set_inverted(var_29);
             }
             ,
             s if s.matches("Disabled") /* Disabled com.amazonaws.route53#HealthCheckConfig$Disabled */ =>  {
-                let var_31 =
+                let var_30 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -251,11 +252,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_disabled(var_31);
+                builder = builder.set_disabled(var_30);
             }
             ,
             s if s.matches("HealthThreshold") /* HealthThreshold com.amazonaws.route53#HealthCheckConfig$HealthThreshold */ =>  {
-                let var_32 =
+                let var_31 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -266,21 +267,21 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_health_threshold(var_32);
+                builder = builder.set_health_threshold(var_31);
             }
             ,
             s if s.matches("ChildHealthChecks") /* ChildHealthChecks com.amazonaws.route53#HealthCheckConfig$ChildHealthChecks */ =>  {
-                let var_33 =
+                let var_32 =
                     Some(
                         crate::protocol_serde::shape_child_health_check_list::de_child_health_check_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_child_health_checks(var_33);
+                builder = builder.set_child_health_checks(var_32);
             }
             ,
             s if s.matches("EnableSNI") /* EnableSNI com.amazonaws.route53#HealthCheckConfig$EnableSNI */ =>  {
-                let var_34 =
+                let var_33 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -291,31 +292,31 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_enable_sni(var_34);
+                builder = builder.set_enable_sni(var_33);
             }
             ,
             s if s.matches("Regions") /* Regions com.amazonaws.route53#HealthCheckConfig$Regions */ =>  {
-                let var_35 =
+                let var_34 =
                     Some(
                         crate::protocol_serde::shape_health_check_region_list::de_health_check_region_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regions(var_35);
+                builder = builder.set_regions(var_34);
             }
             ,
             s if s.matches("AlarmIdentifier") /* AlarmIdentifier com.amazonaws.route53#HealthCheckConfig$AlarmIdentifier */ =>  {
-                let var_36 =
+                let var_35 =
                     Some(
                         crate::protocol_serde::shape_alarm_identifier::de_alarm_identifier(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_alarm_identifier(var_36);
+                builder = builder.set_alarm_identifier(var_35);
             }
             ,
             s if s.matches("InsufficientDataHealthStatus") /* InsufficientDataHealthStatus com.amazonaws.route53#HealthCheckConfig$InsufficientDataHealthStatus */ =>  {
-                let var_37 =
+                let var_36 =
                     Some(
                         Result::<crate::types::InsufficientDataHealthStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InsufficientDataHealthStatus::from(
@@ -325,11 +326,11 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_insufficient_data_health_status(var_37);
+                builder = builder.set_insufficient_data_health_status(var_36);
             }
             ,
             s if s.matches("RoutingControlArn") /* RoutingControlArn com.amazonaws.route53#HealthCheckConfig$RoutingControlArn */ =>  {
-                let var_38 =
+                let var_37 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -338,11 +339,13 @@ pub fn de_health_check_config(
                         ?
                     )
                 ;
-                builder = builder.set_routing_control_arn(var_38);
+                builder = builder.set_routing_control_arn(var_37);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::health_check_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

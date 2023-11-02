@@ -3,11 +3,11 @@ pub fn ser_member_account_ec2_deep_inspection_status(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MemberAccountEc2DeepInspectionStatus,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.account_id {
-        object.key("accountId").string(var_1.as_str());
+    {
+        object.key("accountId").string(input.account_id.as_str());
     }
-    if let Some(var_2) = &input.activate_deep_inspection {
-        object.key("activateDeepInspection").boolean(*var_2);
+    {
+        object.key("activateDeepInspection").boolean(input.activate_deep_inspection);
     }
     Ok(())
 }

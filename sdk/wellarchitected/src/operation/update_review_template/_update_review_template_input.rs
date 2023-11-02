@@ -36,12 +36,16 @@ impl UpdateReviewTemplateInput {
         self.notes.as_deref()
     }
     /// <p>A list of lens aliases or ARNs to apply to the review template.</p>
-    pub fn lenses_to_associate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lenses_to_associate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses_to_associate.is_none()`.
+    pub fn lenses_to_associate(&self) -> &[::std::string::String] {
+        self.lenses_to_associate.as_deref().unwrap_or_default()
     }
     /// <p>A list of lens aliases or ARNs to unapply to the review template. The <code>wellarchitected</code> lens cannot be unapplied.</p>
-    pub fn lenses_to_disassociate(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lenses_to_disassociate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses_to_disassociate.is_none()`.
+    pub fn lenses_to_disassociate(&self) -> &[::std::string::String] {
+        self.lenses_to_disassociate.as_deref().unwrap_or_default()
     }
 }
 impl UpdateReviewTemplateInput {
@@ -64,6 +68,7 @@ pub struct UpdateReviewTemplateInputBuilder {
 }
 impl UpdateReviewTemplateInputBuilder {
     /// <p>The review template ARN.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self

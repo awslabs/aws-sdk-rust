@@ -5,32 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExportTr34KeyBlock {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
-    pub certificate_authority_public_key_identifier: ::std::option::Option<::std::string::String>,
+    pub certificate_authority_public_key_identifier: ::std::string::String,
     /// <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
-    pub wrapping_key_certificate: ::std::option::Option<::std::string::String>,
+    pub wrapping_key_certificate: ::std::string::String,
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
-    pub export_token: ::std::option::Option<::std::string::String>,
+    pub export_token: ::std::string::String,
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
-    pub key_block_format: ::std::option::Option<crate::types::Tr34KeyBlockFormat>,
+    pub key_block_format: crate::types::Tr34KeyBlockFormat,
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub random_nonce: ::std::option::Option<::std::string::String>,
 }
 impl ExportTr34KeyBlock {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
-    pub fn certificate_authority_public_key_identifier(&self) -> ::std::option::Option<&str> {
-        self.certificate_authority_public_key_identifier.as_deref()
+    pub fn certificate_authority_public_key_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_authority_public_key_identifier.deref()
     }
     /// <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
-    pub fn wrapping_key_certificate(&self) -> ::std::option::Option<&str> {
-        self.wrapping_key_certificate.as_deref()
+    pub fn wrapping_key_certificate(&self) -> &str {
+        use std::ops::Deref;
+        self.wrapping_key_certificate.deref()
     }
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
-    pub fn export_token(&self) -> ::std::option::Option<&str> {
-        self.export_token.as_deref()
+    pub fn export_token(&self) -> &str {
+        use std::ops::Deref;
+        self.export_token.deref()
     }
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
-    pub fn key_block_format(&self) -> ::std::option::Option<&crate::types::Tr34KeyBlockFormat> {
-        self.key_block_format.as_ref()
+    pub fn key_block_format(&self) -> &crate::types::Tr34KeyBlockFormat {
+        &self.key_block_format
     }
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub fn random_nonce(&self) -> ::std::option::Option<&str> {
@@ -70,6 +73,7 @@ pub struct ExportTr34KeyBlockBuilder {
 }
 impl ExportTr34KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate during TR-34 key export.</p>
+    /// This field is required.
     pub fn certificate_authority_public_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_public_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl ExportTr34KeyBlockBuilder {
         &self.certificate_authority_public_key_identifier
     }
     /// <p>The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment Cryptography uses this certificate to wrap the key under export.</p>
+    /// This field is required.
     pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl ExportTr34KeyBlockBuilder {
         &self.wrapping_key_certificate
     }
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. It also contains the signing key certificate that will sign the wrapped key during TR-34 key block generation. Call <code>GetParametersForExport</code> to receive an export token. It expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    /// This field is required.
     pub fn export_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_token = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +118,7 @@ impl ExportTr34KeyBlockBuilder {
         &self.export_token
     }
     /// <p>The format of key block that Amazon Web Services Payment Cryptography will use during key export.</p>
+    /// This field is required.
     pub fn key_block_format(mut self, input: crate::types::Tr34KeyBlockFormat) -> Self {
         self.key_block_format = ::std::option::Option::Some(input);
         self
@@ -140,14 +147,39 @@ impl ExportTr34KeyBlockBuilder {
         &self.random_nonce
     }
     /// Consumes the builder and constructs a [`ExportTr34KeyBlock`](crate::types::ExportTr34KeyBlock).
-    pub fn build(self) -> crate::types::ExportTr34KeyBlock {
-        crate::types::ExportTr34KeyBlock {
-            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier,
-            wrapping_key_certificate: self.wrapping_key_certificate,
-            export_token: self.export_token,
-            key_block_format: self.key_block_format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_authority_public_key_identifier`](crate::types::builders::ExportTr34KeyBlockBuilder::certificate_authority_public_key_identifier)
+    /// - [`wrapping_key_certificate`](crate::types::builders::ExportTr34KeyBlockBuilder::wrapping_key_certificate)
+    /// - [`export_token`](crate::types::builders::ExportTr34KeyBlockBuilder::export_token)
+    /// - [`key_block_format`](crate::types::builders::ExportTr34KeyBlockBuilder::key_block_format)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportTr34KeyBlock, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportTr34KeyBlock {
+            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate_authority_public_key_identifier",
+                    "certificate_authority_public_key_identifier was not specified but it is required when building ExportTr34KeyBlock",
+                )
+            })?,
+            wrapping_key_certificate: self.wrapping_key_certificate.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "wrapping_key_certificate",
+                    "wrapping_key_certificate was not specified but it is required when building ExportTr34KeyBlock",
+                )
+            })?,
+            export_token: self.export_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "export_token",
+                    "export_token was not specified but it is required when building ExportTr34KeyBlock",
+                )
+            })?,
+            key_block_format: self.key_block_format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_block_format",
+                    "key_block_format was not specified but it is required when building ExportTr34KeyBlock",
+                )
+            })?,
             random_nonce: self.random_nonce,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ExportTr34KeyBlockBuilder {

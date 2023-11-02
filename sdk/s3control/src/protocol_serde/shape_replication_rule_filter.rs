@@ -21,6 +21,7 @@ pub fn ser_replication_rule_filter(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_replication_rule_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReplicationRuleFilter, ::aws_smithy_xml::decode::XmlDecodeError> {

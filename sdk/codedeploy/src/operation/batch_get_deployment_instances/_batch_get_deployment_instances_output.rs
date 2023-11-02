@@ -12,8 +12,10 @@ pub struct BatchGetDeploymentInstancesOutput {
 }
 impl BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
-    pub fn instances_summary(&self) -> ::std::option::Option<&[crate::types::InstanceSummary]> {
-        self.instances_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances_summary.is_none()`.
+    pub fn instances_summary(&self) -> &[crate::types::InstanceSummary] {
+        self.instances_summary.as_deref().unwrap_or_default()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {

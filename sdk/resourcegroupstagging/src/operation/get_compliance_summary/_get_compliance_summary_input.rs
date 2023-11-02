@@ -27,12 +27,16 @@ pub struct GetComplianceSummaryInput {
 }
 impl GetComplianceSummaryInput {
     /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
-    pub fn target_id_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_id_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_id_filters.is_none()`.
+    pub fn target_id_filters(&self) -> &[::std::string::String] {
+        self.target_id_filters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
-    pub fn region_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.region_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_filters.is_none()`.
+    pub fn region_filters(&self) -> &[::std::string::String] {
+        self.region_filters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
@@ -42,16 +46,22 @@ impl GetComplianceSummaryInput {
     /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
     /// </ul>
     /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
-    pub fn resource_type_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_type_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type_filters.is_none()`.
+    pub fn resource_type_filters(&self) -> &[::std::string::String] {
+        self.resource_type_filters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
-    pub fn tag_key_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_key_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_key_filters.is_none()`.
+    pub fn tag_key_filters(&self) -> &[::std::string::String] {
+        self.tag_key_filters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::GroupByAttribute]> {
-        self.group_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
+    pub fn group_by(&self) -> &[crate::types::GroupByAttribute] {
+        self.group_by.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

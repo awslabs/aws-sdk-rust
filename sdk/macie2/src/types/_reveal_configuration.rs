@@ -54,6 +54,7 @@ impl RevealConfigurationBuilder {
         &self.kms_key_id
     }
     /// <p>The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for the account.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RevealStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

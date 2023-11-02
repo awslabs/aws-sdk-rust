@@ -48,6 +48,7 @@ pub struct PutBucketNotificationConfigurationInputBuilder {
 }
 impl PutBucketNotificationConfigurationInputBuilder {
     /// <p>The name of the bucket.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutBucketNotificationConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
+    /// This field is required.
     pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self

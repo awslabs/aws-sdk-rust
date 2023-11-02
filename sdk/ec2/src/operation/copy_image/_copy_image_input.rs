@@ -211,6 +211,7 @@ impl CopyImageInputBuilder {
         &self.kms_key_id
     }
     /// <p>The name of the new AMI in the destination Region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -225,6 +226,7 @@ impl CopyImageInputBuilder {
         &self.name
     }
     /// <p>The ID of the AMI to copy.</p>
+    /// This field is required.
     pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_id = ::std::option::Option::Some(input.into());
         self
@@ -239,6 +241,7 @@ impl CopyImageInputBuilder {
         &self.source_image_id
     }
     /// <p>The name of the Region that contains the AMI to copy.</p>
+    /// This field is required.
     pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self

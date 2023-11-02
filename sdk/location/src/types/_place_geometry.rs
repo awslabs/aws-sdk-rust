@@ -17,8 +17,10 @@ impl PlaceGeometry {
     /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
     /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
     /// </ul>
-    pub fn point(&self) -> ::std::option::Option<&[f64]> {
-        self.point.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.point.is_none()`.
+    pub fn point(&self) -> &[f64] {
+        self.point.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for PlaceGeometry {

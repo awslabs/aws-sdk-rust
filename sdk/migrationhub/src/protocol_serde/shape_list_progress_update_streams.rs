@@ -111,11 +111,10 @@ pub fn de_list_progress_update_streams_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError::generic(generic),

@@ -53,8 +53,10 @@ impl InfrastructureConfigurationSummary {
         self.tags.as_ref()
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[::std::string::String] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {

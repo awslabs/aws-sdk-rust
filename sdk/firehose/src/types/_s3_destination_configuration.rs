@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub bucket_arn: ::std::option::Option<::std::string::String>,
+    pub bucket_arn: ::std::string::String,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
@@ -24,12 +24,14 @@ pub struct S3DestinationConfiguration {
 }
 impl S3DestinationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.bucket_arn.as_deref()
+    pub fn bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_arn.deref()
     }
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -79,6 +81,7 @@ pub struct S3DestinationConfigurationBuilder {
 }
 impl S3DestinationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +96,7 @@ impl S3DestinationConfigurationBuilder {
         &self.role_arn
     }
     /// <p>The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -194,16 +198,29 @@ impl S3DestinationConfigurationBuilder {
         &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
-    pub fn build(self) -> crate::types::S3DestinationConfiguration {
-        crate::types::S3DestinationConfiguration {
-            role_arn: self.role_arn,
-            bucket_arn: self.bucket_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::S3DestinationConfigurationBuilder::role_arn)
+    /// - [`bucket_arn`](crate::types::builders::S3DestinationConfigurationBuilder::bucket_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DestinationConfiguration {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building S3DestinationConfiguration",
+                )
+            })?,
+            bucket_arn: self.bucket_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_arn",
+                    "bucket_arn was not specified but it is required when building S3DestinationConfiguration",
+                )
+            })?,
             prefix: self.prefix,
             error_output_prefix: self.error_output_prefix,
             buffering_hints: self.buffering_hints,
             compression_format: self.compression_format,
             encryption_configuration: self.encryption_configuration,
             cloud_watch_logging_options: self.cloud_watch_logging_options,
-        }
+        })
     }
 }

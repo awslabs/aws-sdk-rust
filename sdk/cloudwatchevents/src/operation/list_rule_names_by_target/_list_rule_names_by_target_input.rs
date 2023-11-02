@@ -48,6 +48,7 @@ pub struct ListRuleNamesByTargetInputBuilder {
 }
 impl ListRuleNamesByTargetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self

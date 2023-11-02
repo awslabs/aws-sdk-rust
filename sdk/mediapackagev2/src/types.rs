@@ -21,6 +21,8 @@ pub use crate::types::_container_type::ContainerType;
 
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfiguration;
 
+pub use crate::types::_filter_configuration::FilterConfiguration;
+
 pub use crate::types::_scte_hls::ScteHls;
 
 pub use crate::types::_ad_marker_hls::AdMarkerHls;
@@ -78,6 +80,8 @@ mod _encryption;
 mod _encryption_contract_configuration;
 
 mod _encryption_method;
+
+mod _filter_configuration;
 
 mod _get_hls_manifest_configuration;
 

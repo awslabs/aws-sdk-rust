@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TraceConfiguration {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
-    pub vendor: ::std::option::Option<crate::types::TracingVendor>,
+    pub vendor: crate::types::TracingVendor,
 }
 impl TraceConfiguration {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
-    pub fn vendor(&self) -> ::std::option::Option<&crate::types::TracingVendor> {
-        self.vendor.as_ref()
+    pub fn vendor(&self) -> &crate::types::TracingVendor {
+        &self.vendor
     }
 }
 impl TraceConfiguration {
@@ -28,6 +28,7 @@ pub struct TraceConfigurationBuilder {
 }
 impl TraceConfigurationBuilder {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
+    /// This field is required.
     pub fn vendor(mut self, input: crate::types::TracingVendor) -> Self {
         self.vendor = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl TraceConfigurationBuilder {
         &self.vendor
     }
     /// Consumes the builder and constructs a [`TraceConfiguration`](crate::types::TraceConfiguration).
-    pub fn build(self) -> crate::types::TraceConfiguration {
-        crate::types::TraceConfiguration { vendor: self.vendor }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vendor`](crate::types::builders::TraceConfigurationBuilder::vendor)
+    pub fn build(self) -> ::std::result::Result<crate::types::TraceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TraceConfiguration {
+            vendor: self.vendor.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vendor",
+                    "vendor was not specified but it is required when building TraceConfiguration",
+                )
+            })?,
+        })
     }
 }

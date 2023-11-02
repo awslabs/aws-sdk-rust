@@ -3,16 +3,16 @@ pub fn ser_cdma_local_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CdmaLocalId,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pn_offset {
+    {
         object.key("PnOffset").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.pn_offset).into()),
         );
     }
-    if let Some(var_2) = &input.cdma_channel {
+    {
         object.key("CdmaChannel").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.cdma_channel).into()),
         );
     }
     Ok(())

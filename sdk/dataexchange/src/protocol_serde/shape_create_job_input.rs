@@ -9,8 +9,8 @@ pub fn ser_create_job_input(
         crate::protocol_serde::shape_request_details::ser_request_details(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("Type").string(var_3.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
     Ok(())
 }

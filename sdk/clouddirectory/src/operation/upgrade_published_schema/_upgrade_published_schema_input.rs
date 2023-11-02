@@ -48,6 +48,7 @@ pub struct UpgradePublishedSchemaInputBuilder {
 }
 impl UpgradePublishedSchemaInputBuilder {
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
+    /// This field is required.
     pub fn development_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.development_schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpgradePublishedSchemaInputBuilder {
         &self.development_schema_arn
     }
     /// <p>The ARN of the published schema to be upgraded.</p>
+    /// This field is required.
     pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpgradePublishedSchemaInputBuilder {
         &self.published_schema_arn
     }
     /// <p>Identifies the minor version of the published schema that will be created. This parameter is NOT optional.</p>
+    /// This field is required.
     pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self

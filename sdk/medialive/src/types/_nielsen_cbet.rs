@@ -42,6 +42,7 @@ pub struct NielsenCbetBuilder {
 }
 impl NielsenCbetBuilder {
     /// Enter the CBET check digits to use in the watermark.
+    /// This field is required.
     pub fn cbet_check_digit_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cbet_check_digit_string = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl NielsenCbetBuilder {
         &self.cbet_check_digit_string
     }
     /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
+    /// This field is required.
     pub fn cbet_stepaside(mut self, input: crate::types::NielsenWatermarksCbetStepaside) -> Self {
         self.cbet_stepaside = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl NielsenCbetBuilder {
         &self.cbet_stepaside
     }
     /// Enter the CBET Source ID (CSID) to use in the watermark
+    /// This field is required.
     pub fn csid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.csid = ::std::option::Option::Some(input.into());
         self

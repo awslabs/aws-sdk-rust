@@ -15,8 +15,10 @@ impl DescribeCodeCoveragesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
-    pub fn code_coverages(&self) -> ::std::option::Option<&[crate::types::CodeCoverage]> {
-        self.code_coverages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_coverages.is_none()`.
+    pub fn code_coverages(&self) -> &[crate::types::CodeCoverage] {
+        self.code_coverages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCodeCoveragesOutput {

@@ -7,7 +7,7 @@ pub struct GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     pub overall_volume: ::std::option::Option<crate::types::OverallVolume>,
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub daily_volumes: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>,
+    pub daily_volumes: ::std::vec::Vec<crate::types::DailyVolume>,
     _request_id: Option<String>,
 }
 impl GetDomainStatisticsReportOutput {
@@ -16,8 +16,9 @@ impl GetDomainStatisticsReportOutput {
         self.overall_volume.as_ref()
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub fn daily_volumes(&self) -> ::std::option::Option<&[crate::types::DailyVolume]> {
-        self.daily_volumes.as_deref()
+    pub fn daily_volumes(&self) -> &[crate::types::DailyVolume] {
+        use std::ops::Deref;
+        self.daily_volumes.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDomainStatisticsReportOutput {
@@ -42,6 +43,7 @@ pub struct GetDomainStatisticsReportOutputBuilder {
 }
 impl GetDomainStatisticsReportOutputBuilder {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
+    /// This field is required.
     pub fn overall_volume(mut self, input: crate::types::OverallVolume) -> Self {
         self.overall_volume = ::std::option::Option::Some(input);
         self
@@ -85,11 +87,23 @@ impl GetDomainStatisticsReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDomainStatisticsReportOutput`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput).
-    pub fn build(self) -> crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput {
-        crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`daily_volumes`](crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportOutputBuilder::daily_volumes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput {
             overall_volume: self.overall_volume,
-            daily_volumes: self.daily_volumes,
+            daily_volumes: self.daily_volumes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "daily_volumes",
+                    "daily_volumes was not specified but it is required when building GetDomainStatisticsReportOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

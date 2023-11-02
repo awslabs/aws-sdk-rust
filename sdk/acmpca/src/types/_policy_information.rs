@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyInformation {
     /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
-    pub cert_policy_id: ::std::option::Option<::std::string::String>,
+    pub cert_policy_id: ::std::string::String,
     /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the certification practice statement (CPS) qualifier.</p>
     pub policy_qualifiers: ::std::option::Option<::std::vec::Vec<crate::types::PolicyQualifierInfo>>,
 }
 impl PolicyInformation {
     /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
-    pub fn cert_policy_id(&self) -> ::std::option::Option<&str> {
-        self.cert_policy_id.as_deref()
+    pub fn cert_policy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.cert_policy_id.deref()
     }
     /// <p>Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the certification practice statement (CPS) qualifier.</p>
-    pub fn policy_qualifiers(&self) -> ::std::option::Option<&[crate::types::PolicyQualifierInfo]> {
-        self.policy_qualifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_qualifiers.is_none()`.
+    pub fn policy_qualifiers(&self) -> &[crate::types::PolicyQualifierInfo] {
+        self.policy_qualifiers.as_deref().unwrap_or_default()
     }
 }
 impl PolicyInformation {
@@ -35,6 +38,7 @@ pub struct PolicyInformationBuilder {
 }
 impl PolicyInformationBuilder {
     /// <p>Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+    /// This field is required.
     pub fn cert_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cert_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl PolicyInformationBuilder {
         &self.policy_qualifiers
     }
     /// Consumes the builder and constructs a [`PolicyInformation`](crate::types::PolicyInformation).
-    pub fn build(self) -> crate::types::PolicyInformation {
-        crate::types::PolicyInformation {
-            cert_policy_id: self.cert_policy_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cert_policy_id`](crate::types::builders::PolicyInformationBuilder::cert_policy_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyInformation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PolicyInformation {
+            cert_policy_id: self.cert_policy_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cert_policy_id",
+                    "cert_policy_id was not specified but it is required when building PolicyInformation",
+                )
+            })?,
             policy_qualifiers: self.policy_qualifiers,
-        }
+        })
     }
 }

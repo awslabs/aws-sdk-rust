@@ -22,16 +22,22 @@ impl GetOpsSummaryInput {
         self.sync_name.as_deref()
     }
     /// <p>Optional filters used to scope down the returned OpsData. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::OpsFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::OpsFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn aggregators(&self) -> ::std::option::Option<&[crate::types::OpsAggregator]> {
-        self.aggregators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregators.is_none()`.
+    pub fn aggregators(&self) -> &[crate::types::OpsAggregator] {
+        self.aggregators.as_deref().unwrap_or_default()
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn result_attributes(&self) -> ::std::option::Option<&[crate::types::OpsResultAttribute]> {
-        self.result_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_attributes.is_none()`.
+    pub fn result_attributes(&self) -> &[crate::types::OpsResultAttribute] {
+        self.result_attributes.as_deref().unwrap_or_default()
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

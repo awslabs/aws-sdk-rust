@@ -47,19 +47,21 @@ where
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'arn' cannot be null"))?,
                         )),
                         "url" => Some(crate::types::ItemValue::Url(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'url' cannot be null"))?,
                         )),
                         "metricDefinition" => Some(crate::types::ItemValue::MetricDefinition(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'metricDefinition' cannot be null")
+                                })?,
                         )),
                         "pagerDutyIncidentDetail" => Some(crate::types::ItemValue::PagerDutyIncidentDetail(
                             crate::protocol_serde::shape_pager_duty_incident_detail::de_pager_duty_incident_detail(tokens)?.ok_or_else(|| {

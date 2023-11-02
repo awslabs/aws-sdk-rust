@@ -9,8 +9,10 @@ pub struct DetachInstancesOutput {
 }
 impl DetachInstancesOutput {
     /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
-    pub fn activities(&self) -> ::std::option::Option<&[crate::types::Activity]> {
-        self.activities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activities.is_none()`.
+    pub fn activities(&self) -> &[crate::types::Activity] {
+        self.activities.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DetachInstancesOutput {

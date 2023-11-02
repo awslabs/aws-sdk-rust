@@ -32,7 +32,9 @@ pub fn de_update_gateway_information_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_gateway_information::UpdateGatewayInformationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_gateway_information::UpdateGatewayInformationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -77,7 +79,9 @@ pub fn de_update_gateway_information_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_gateway_information::UpdateGatewayInformationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_gateway_information::UpdateGatewayInformationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

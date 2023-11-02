@@ -17,8 +17,10 @@ impl ReactionForComment {
         self.reaction.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn reaction_users(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reaction_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reaction_users.is_none()`.
+    pub fn reaction_users(&self) -> &[::std::string::String] {
+        self.reaction_users.as_deref().unwrap_or_default()
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub fn reactions_from_deleted_users_count(&self) -> ::std::option::Option<i32> {

@@ -40,12 +40,16 @@ impl UpdateFlowInput {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(&self) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
-        self.destination_flow_config_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_flow_config_list.is_none()`.
+    pub fn destination_flow_config_list(&self) -> &[crate::types::DestinationFlowConfig] {
+        self.destination_flow_config_list.as_deref().unwrap_or_default()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::Task]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::Task] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     pub fn metadata_catalog_config(&self) -> ::std::option::Option<&crate::types::MetadataCatalogConfig> {
@@ -80,6 +84,7 @@ pub struct UpdateFlowInputBuilder {
 }
 impl UpdateFlowInputBuilder {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +113,7 @@ impl UpdateFlowInputBuilder {
         &self.description
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
+    /// This field is required.
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
         self.trigger_config = ::std::option::Option::Some(input);
         self
@@ -122,6 +128,7 @@ impl UpdateFlowInputBuilder {
         &self.trigger_config
     }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
+    /// This field is required.
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
         self.source_flow_config = ::std::option::Option::Some(input);
         self

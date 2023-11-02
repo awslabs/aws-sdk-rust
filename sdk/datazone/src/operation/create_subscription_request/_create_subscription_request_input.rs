@@ -20,12 +20,16 @@ impl CreateSubscriptionRequestInput {
         self.domain_identifier.as_deref()
     }
     /// <p>The Amazon DataZone principals for whom the subscription request is created.</p>
-    pub fn subscribed_principals(&self) -> ::std::option::Option<&[crate::types::SubscribedPrincipalInput]> {
-        self.subscribed_principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribed_principals.is_none()`.
+    pub fn subscribed_principals(&self) -> &[crate::types::SubscribedPrincipalInput] {
+        self.subscribed_principals.as_deref().unwrap_or_default()
     }
     /// <p></p>
-    pub fn subscribed_listings(&self) -> ::std::option::Option<&[crate::types::SubscribedListingInput]> {
-        self.subscribed_listings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribed_listings.is_none()`.
+    pub fn subscribed_listings(&self) -> &[crate::types::SubscribedListingInput] {
+        self.subscribed_listings.as_deref().unwrap_or_default()
     }
     /// <p>The reason for the subscription request.</p>
     pub fn request_reason(&self) -> ::std::option::Option<&str> {
@@ -66,6 +70,7 @@ pub struct CreateSubscriptionRequestInputBuilder {
 }
 impl CreateSubscriptionRequestInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +125,7 @@ impl CreateSubscriptionRequestInputBuilder {
         &self.subscribed_listings
     }
     /// <p>The reason for the subscription request.</p>
+    /// This field is required.
     pub fn request_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_reason = ::std::option::Option::Some(input.into());
         self

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationInput {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>The name of the launch configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
@@ -24,8 +24,9 @@ pub struct UpdateLaunchConfigurationInput {
 }
 impl UpdateLaunchConfigurationInput {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>The name of the launch configuration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -83,6 +84,7 @@ pub struct UpdateLaunchConfigurationInputBuilder {
 }
 impl UpdateLaunchConfigurationInputBuilder {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +214,8 @@ impl UpdateLaunchConfigurationInputBuilder {
         &self.launch_into_instance_properties
     }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationInput`](crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -219,7 +223,12 @@ impl UpdateLaunchConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building UpdateLaunchConfigurationInput",
+                )
+            })?,
             name: self.name,
             launch_disposition: self.launch_disposition,
             target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,

@@ -17,8 +17,10 @@ impl ModelConfiguration {
         self.inference_specification_name.as_deref()
     }
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
-    pub fn environment_parameters(&self) -> ::std::option::Option<&[crate::types::EnvironmentParameter]> {
-        self.environment_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_parameters.is_none()`.
+    pub fn environment_parameters(&self) -> &[crate::types::EnvironmentParameter] {
+        self.environment_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
     pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {

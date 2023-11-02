@@ -49,6 +49,7 @@ pub struct DeleteBackendStorageInputBuilder {
 }
 impl DeleteBackendStorageInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DeleteBackendStorageInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment.</p>
+    /// This field is required.
     pub fn backend_environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backend_environment_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl DeleteBackendStorageInputBuilder {
         &self.backend_environment_name
     }
     /// <p>The name of the storage resource.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl DeleteBackendStorageInputBuilder {
         &self.resource_name
     }
     /// <p>The name of the storage service.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
         self

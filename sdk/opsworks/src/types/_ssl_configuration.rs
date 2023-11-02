@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
-    pub certificate: ::std::option::Option<::std::string::String>,
+    pub certificate: ::std::string::String,
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    pub private_key: ::std::option::Option<::std::string::String>,
+    pub private_key: ::std::string::String,
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub chain: ::std::option::Option<::std::string::String>,
 }
 impl SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
-        self.certificate.as_deref()
+    pub fn certificate(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate.deref()
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    pub fn private_key(&self) -> ::std::option::Option<&str> {
-        self.private_key.as_deref()
+    pub fn private_key(&self) -> &str {
+        use std::ops::Deref;
+        self.private_key.deref()
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub fn chain(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct SslConfigurationBuilder {
 }
 impl SslConfigurationBuilder {
     /// <p>The contents of the certificate's domain.crt file.</p>
+    /// This field is required.
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl SslConfigurationBuilder {
         &self.certificate
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
+    /// This field is required.
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl SslConfigurationBuilder {
         &self.chain
     }
     /// Consumes the builder and constructs a [`SslConfiguration`](crate::types::SslConfiguration).
-    pub fn build(self) -> crate::types::SslConfiguration {
-        crate::types::SslConfiguration {
-            certificate: self.certificate,
-            private_key: self.private_key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate`](crate::types::builders::SslConfigurationBuilder::certificate)
+    /// - [`private_key`](crate::types::builders::SslConfigurationBuilder::private_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::SslConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SslConfiguration {
+            certificate: self.certificate.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate",
+                    "certificate was not specified but it is required when building SslConfiguration",
+                )
+            })?,
+            private_key: self.private_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "private_key",
+                    "private_key was not specified but it is required when building SslConfiguration",
+                )
+            })?,
             chain: self.chain,
-        }
+        })
     }
 }

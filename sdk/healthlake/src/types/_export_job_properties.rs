@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportJobProperties {
     /// <p>The AWS generated ID for an export job.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The user generated name for an export job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub job_status: ::std::option::Option<crate::types::JobStatus>,
+    pub job_status: crate::types::JobStatus,
     /// <p>The time an export job was initiated.</p>
-    pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub submit_time: ::aws_smithy_types::DateTime,
     /// <p>The time an export job completed.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
@@ -25,28 +25,30 @@ pub struct ExportJobProperties {
 }
 impl ExportJobProperties {
     /// <p>The AWS generated ID for an export job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The user generated name for an export job.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.job_status.as_ref()
+    pub fn job_status(&self) -> &crate::types::JobStatus {
+        &self.job_status
     }
     /// <p>The time an export job was initiated.</p>
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.submit_time.as_ref()
+    pub fn submit_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.submit_time
     }
     /// <p>The time an export job completed.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
@@ -84,6 +86,7 @@ pub struct ExportJobPropertiesBuilder {
 }
 impl ExportJobPropertiesBuilder {
     /// <p>The AWS generated ID for an export job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl ExportJobPropertiesBuilder {
         &self.job_name
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl ExportJobPropertiesBuilder {
         &self.job_status
     }
     /// <p>The time an export job was initiated.</p>
+    /// This field is required.
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time = ::std::option::Option::Some(input);
         self
@@ -154,6 +159,7 @@ impl ExportJobPropertiesBuilder {
         &self.end_time
     }
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +174,7 @@ impl ExportJobPropertiesBuilder {
         &self.datastore_id
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -210,17 +217,42 @@ impl ExportJobPropertiesBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`ExportJobProperties`](crate::types::ExportJobProperties).
-    pub fn build(self) -> crate::types::ExportJobProperties {
-        crate::types::ExportJobProperties {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::types::builders::ExportJobPropertiesBuilder::job_id)
+    /// - [`job_status`](crate::types::builders::ExportJobPropertiesBuilder::job_status)
+    /// - [`submit_time`](crate::types::builders::ExportJobPropertiesBuilder::submit_time)
+    /// - [`datastore_id`](crate::types::builders::ExportJobPropertiesBuilder::datastore_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportJobProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportJobProperties {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building ExportJobProperties",
+                )
+            })?,
             job_name: self.job_name,
-            job_status: self.job_status,
-            submit_time: self.submit_time,
+            job_status: self.job_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_status",
+                    "job_status was not specified but it is required when building ExportJobProperties",
+                )
+            })?,
+            submit_time: self.submit_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "submit_time",
+                    "submit_time was not specified but it is required when building ExportJobProperties",
+                )
+            })?,
             end_time: self.end_time,
-            datastore_id: self.datastore_id,
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building ExportJobProperties",
+                )
+            })?,
             output_data_config: self.output_data_config,
             data_access_role_arn: self.data_access_role_arn,
             message: self.message,
-        }
+        })
     }
 }

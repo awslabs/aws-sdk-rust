@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub access_control_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
+    pub access_control_attributes: ::std::vec::Vec<crate::types::AccessControlAttribute>,
 }
 impl InstanceAccessControlAttributeConfiguration {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn access_control_attributes(&self) -> ::std::option::Option<&[crate::types::AccessControlAttribute]> {
-        self.access_control_attributes.as_deref()
+    pub fn access_control_attributes(&self) -> &[crate::types::AccessControlAttribute] {
+        use std::ops::Deref;
+        self.access_control_attributes.deref()
     }
 }
 impl InstanceAccessControlAttributeConfiguration {
@@ -48,9 +49,18 @@ impl InstanceAccessControlAttributeConfigurationBuilder {
         &self.access_control_attributes
     }
     /// Consumes the builder and constructs a [`InstanceAccessControlAttributeConfiguration`](crate::types::InstanceAccessControlAttributeConfiguration).
-    pub fn build(self) -> crate::types::InstanceAccessControlAttributeConfiguration {
-        crate::types::InstanceAccessControlAttributeConfiguration {
-            access_control_attributes: self.access_control_attributes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_control_attributes`](crate::types::builders::InstanceAccessControlAttributeConfigurationBuilder::access_control_attributes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::InstanceAccessControlAttributeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceAccessControlAttributeConfiguration {
+            access_control_attributes: self.access_control_attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access_control_attributes",
+                    "access_control_attributes was not specified but it is required when building InstanceAccessControlAttributeConfiguration",
+                )
+            })?,
+        })
     }
 }

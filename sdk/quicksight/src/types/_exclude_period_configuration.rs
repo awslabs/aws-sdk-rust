@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExcludePeriodConfiguration {
     /// <p>The amount or number of the exclude period.</p>
-    pub amount: ::std::option::Option<i32>,
+    pub amount: i32,
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
-    pub granularity: ::std::option::Option<crate::types::TimeGranularity>,
+    pub granularity: crate::types::TimeGranularity,
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> </p> </li>
@@ -17,12 +17,12 @@ pub struct ExcludePeriodConfiguration {
 }
 impl ExcludePeriodConfiguration {
     /// <p>The amount or number of the exclude period.</p>
-    pub fn amount(&self) -> ::std::option::Option<i32> {
+    pub fn amount(&self) -> i32 {
         self.amount
     }
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
-        self.granularity.as_ref()
+    pub fn granularity(&self) -> &crate::types::TimeGranularity {
+        &self.granularity
     }
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
@@ -50,6 +50,7 @@ pub struct ExcludePeriodConfigurationBuilder {
 }
 impl ExcludePeriodConfigurationBuilder {
     /// <p>The amount or number of the exclude period.</p>
+    /// This field is required.
     pub fn amount(mut self, input: i32) -> Self {
         self.amount = ::std::option::Option::Some(input);
         self
@@ -64,6 +65,7 @@ impl ExcludePeriodConfigurationBuilder {
         &self.amount
     }
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
+    /// This field is required.
     pub fn granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.granularity = ::std::option::Option::Some(input);
         self
@@ -104,11 +106,24 @@ impl ExcludePeriodConfigurationBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ExcludePeriodConfiguration`](crate::types::ExcludePeriodConfiguration).
-    pub fn build(self) -> crate::types::ExcludePeriodConfiguration {
-        crate::types::ExcludePeriodConfiguration {
-            amount: self.amount,
-            granularity: self.granularity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`amount`](crate::types::builders::ExcludePeriodConfigurationBuilder::amount)
+    /// - [`granularity`](crate::types::builders::ExcludePeriodConfigurationBuilder::granularity)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExcludePeriodConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExcludePeriodConfiguration {
+            amount: self.amount.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "amount",
+                    "amount was not specified but it is required when building ExcludePeriodConfiguration",
+                )
+            })?,
+            granularity: self.granularity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "granularity",
+                    "granularity was not specified but it is required when building ExcludePeriodConfiguration",
+                )
+            })?,
             status: self.status,
-        }
+        })
     }
 }

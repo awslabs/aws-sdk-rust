@@ -28,7 +28,9 @@ pub fn de_create_replication_configuration_http_error(
                 output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output)
                     .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -44,7 +46,9 @@ pub fn de_create_replication_configuration_http_error(
                     output = crate::protocol_serde::shape_file_system_limit_exceeded::de_file_system_limit_exceeded_json_err(_response_body, output)
                         .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::file_system_limit_exceeded_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -60,7 +64,9 @@ pub fn de_create_replication_configuration_http_error(
                 output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(_response_body, output)
                     .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::file_system_not_found_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -79,7 +85,9 @@ pub fn de_create_replication_configuration_http_error(
                     )
                     .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::incorrect_file_system_life_cycle_state_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -99,7 +107,9 @@ pub fn de_create_replication_configuration_http_error(
                     )
                     .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::insufficient_throughput_capacity_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -115,7 +125,9 @@ pub fn de_create_replication_configuration_http_error(
                 output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
                     .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -146,7 +158,9 @@ pub fn de_create_replication_configuration_http_error(
                     output = crate::protocol_serde::shape_throughput_limit_exceeded::de_throughput_limit_exceeded_json_err(_response_body, output)
                         .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throughput_limit_exceeded_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -164,7 +178,9 @@ pub fn de_create_replication_configuration_http_error(
                         crate::protocol_serde::shape_unsupported_availability_zone::de_unsupported_availability_zone_json_err(_response_body, output)
                             .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unsupported_availability_zone_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -180,7 +196,9 @@ pub fn de_create_replication_configuration_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -206,7 +224,9 @@ pub fn de_create_replication_configuration_http_response(
         output = crate::protocol_serde::shape_create_replication_configuration::de_create_replication_configuration(_response_body, output)
             .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_replication_configuration_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_replication_configuration::CreateReplicationConfigurationError::unhandled)?
     })
 }
 

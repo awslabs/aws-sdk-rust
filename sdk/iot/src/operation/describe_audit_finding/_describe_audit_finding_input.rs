@@ -27,6 +27,7 @@ pub struct DescribeAuditFindingInputBuilder {
 }
 impl DescribeAuditFindingInputBuilder {
     /// <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DeleteBaiduChannelOutputBuilder {
 }
 impl DeleteBaiduChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    /// This field is required.
     pub fn baidu_channel_response(mut self, input: crate::types::BaiduChannelResponse) -> Self {
         self.baidu_channel_response = ::std::option::Option::Some(input);
         self

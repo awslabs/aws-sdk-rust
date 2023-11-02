@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainsOutput {
     /// <p>The status of the requested domains.</p>
-    pub domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
+    pub domain_status_list: ::std::vec::Vec<crate::types::DomainStatus>,
     _request_id: Option<String>,
 }
 impl DescribeDomainsOutput {
     /// <p>The status of the requested domains.</p>
-    pub fn domain_status_list(&self) -> ::std::option::Option<&[crate::types::DomainStatus]> {
-        self.domain_status_list.as_deref()
+    pub fn domain_status_list(&self) -> &[crate::types::DomainStatus] {
+        use std::ops::Deref;
+        self.domain_status_list.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDomainsOutput {
@@ -64,10 +65,19 @@ impl DescribeDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDomainsOutput`](crate::operation::describe_domains::DescribeDomainsOutput).
-    pub fn build(self) -> crate::operation::describe_domains::DescribeDomainsOutput {
-        crate::operation::describe_domains::DescribeDomainsOutput {
-            domain_status_list: self.domain_status_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_status_list`](crate::operation::describe_domains::builders::DescribeDomainsOutputBuilder::domain_status_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_domains::DescribeDomainsOutput {
+            domain_status_list: self.domain_status_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_status_list",
+                    "domain_status_list was not specified but it is required when building DescribeDomainsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

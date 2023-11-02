@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeysAndAttributes {
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>>,
+    pub keys: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
@@ -40,12 +40,15 @@ pub struct KeysAndAttributes {
 }
 impl KeysAndAttributes {
     /// <p>The primary key attribute values that define the items and the attributes associated with the items.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>]> {
-        self.keys.as_deref()
+    pub fn keys(&self) -> &[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>] {
+        use std::ops::Deref;
+        self.keys.deref()
     }
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn attributes_to_get(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attributes_to_get.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
+    pub fn attributes_to_get(&self) -> &[::std::string::String] {
+        self.attributes_to_get.as_deref().unwrap_or_default()
     }
     /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.</p>
     pub fn consistent_read(&self) -> ::std::option::Option<bool> {
@@ -269,13 +272,20 @@ impl KeysAndAttributesBuilder {
         &self.expression_attribute_names
     }
     /// Consumes the builder and constructs a [`KeysAndAttributes`](crate::types::KeysAndAttributes).
-    pub fn build(self) -> crate::types::KeysAndAttributes {
-        crate::types::KeysAndAttributes {
-            keys: self.keys,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keys`](crate::types::builders::KeysAndAttributesBuilder::keys)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeysAndAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeysAndAttributes {
+            keys: self.keys.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keys",
+                    "keys was not specified but it is required when building KeysAndAttributes",
+                )
+            })?,
             attributes_to_get: self.attributes_to_get,
             consistent_read: self.consistent_read,
             projection_expression: self.projection_expression,
             expression_attribute_names: self.expression_attribute_names,
-        }
+        })
     }
 }

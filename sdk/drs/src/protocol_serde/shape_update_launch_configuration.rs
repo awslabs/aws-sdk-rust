@@ -54,11 +54,10 @@ pub fn de_update_launch_configuration_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_launch_configuration::UpdateLaunchConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_launch_configuration::UpdateLaunchConfigurationError::ResourceNotFoundException({
@@ -91,11 +90,10 @@ pub fn de_update_launch_configuration_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_launch_configuration::UpdateLaunchConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => {

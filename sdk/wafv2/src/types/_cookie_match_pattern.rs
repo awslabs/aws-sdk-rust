@@ -19,12 +19,16 @@ impl CookieMatchPattern {
         self.all.as_ref()
     }
     /// <p>Inspect only the cookies that have a key that matches one of the strings specified here. </p>
-    pub fn included_cookies(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.included_cookies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_cookies.is_none()`.
+    pub fn included_cookies(&self) -> &[::std::string::String] {
+        self.included_cookies.as_deref().unwrap_or_default()
     }
     /// <p>Inspect only the cookies whose keys don't match any of the strings specified here. </p>
-    pub fn excluded_cookies(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_cookies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_cookies.is_none()`.
+    pub fn excluded_cookies(&self) -> &[::std::string::String] {
+        self.excluded_cookies.as_deref().unwrap_or_default()
     }
 }
 impl CookieMatchPattern {

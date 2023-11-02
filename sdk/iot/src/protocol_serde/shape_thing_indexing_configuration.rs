@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::thing_indexing_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -73,47 +77,47 @@ pub fn ser_thing_indexing_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThingIndexingConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.thing_indexing_mode {
-        object.key("thingIndexingMode").string(var_1.as_str());
+    {
+        object.key("thingIndexingMode").string(input.thing_indexing_mode.as_str());
     }
-    if let Some(var_2) = &input.thing_connectivity_indexing_mode {
-        object.key("thingConnectivityIndexingMode").string(var_2.as_str());
+    if let Some(var_1) = &input.thing_connectivity_indexing_mode {
+        object.key("thingConnectivityIndexingMode").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.device_defender_indexing_mode {
-        object.key("deviceDefenderIndexingMode").string(var_3.as_str());
+    if let Some(var_2) = &input.device_defender_indexing_mode {
+        object.key("deviceDefenderIndexingMode").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.named_shadow_indexing_mode {
-        object.key("namedShadowIndexingMode").string(var_4.as_str());
+    if let Some(var_3) = &input.named_shadow_indexing_mode {
+        object.key("namedShadowIndexingMode").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.managed_fields {
-        let mut array_6 = object.key("managedFields").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.managed_fields {
+        let mut array_5 = object.key("managedFields").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_field::ser_field(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_field::ser_field(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.custom_fields {
-        let mut array_10 = object.key("customFields").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.custom_fields {
+        let mut array_9 = object.key("customFields").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_field::ser_field(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_field::ser_field(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.filter {
+    if let Some(var_12) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("filter").start_object();
-        crate::protocol_serde::shape_indexing_filter::ser_indexing_filter(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_13 = object.key("filter").start_object();
+        crate::protocol_serde::shape_indexing_filter::ser_indexing_filter(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

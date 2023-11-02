@@ -34,6 +34,7 @@ pub struct DeleteAssetInputBuilder {
 }
 impl DeleteAssetInputBuilder {
     /// <p>The ID of the asset to delete.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self

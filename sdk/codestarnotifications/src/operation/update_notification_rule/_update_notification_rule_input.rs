@@ -30,12 +30,16 @@ impl UpdateNotificationRuleInput {
         self.status.as_ref()
     }
     /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn event_type_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_type_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_ids.is_none()`.
+    pub fn event_type_ids(&self) -> &[::std::string::String] {
+        self.event_type_ids.as_deref().unwrap_or_default()
     }
     /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> ::std::option::Option<&crate::types::DetailType> {
@@ -74,6 +78,7 @@ pub struct UpdateNotificationRuleInputBuilder {
 }
 impl UpdateNotificationRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

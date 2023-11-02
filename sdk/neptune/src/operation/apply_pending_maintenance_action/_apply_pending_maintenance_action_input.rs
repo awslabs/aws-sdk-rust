@@ -55,6 +55,7 @@ pub struct ApplyPendingMaintenanceActionInputBuilder {
 }
 impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code> </p>
+    /// This field is required.
     pub fn apply_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_action = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +94,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
     /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn opt_in_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_in_type = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUpload`](crate::operation::delete_upload::builders::DeleteUploadFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_upload::builders::DeleteUploadFluentBuilder::set_arn):<br>required: **true**<br><p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p><br>
     /// - On success, responds with [`DeleteUploadOutput`](crate::operation::delete_upload::DeleteUploadOutput)
     /// - On failure, responds with [`SdkError<DeleteUploadError>`](crate::operation::delete_upload::DeleteUploadError)
     pub fn delete_upload(&self) -> crate::operation::delete_upload::builders::DeleteUploadFluentBuilder {

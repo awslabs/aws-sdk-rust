@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptedOutFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub name: ::std::option::Option<crate::types::OptedOutFilterName>,
+    pub name: crate::types::OptedOutFilterName,
     /// <p>An array of values to filter for.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl OptedOutFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OptedOutFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::OptedOutFilterName {
+        &self.name
     }
     /// <p>An array of values to filter for.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl OptedOutFilter {
@@ -35,6 +36,7 @@ pub struct OptedOutFilterBuilder {
 }
 impl OptedOutFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::OptedOutFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl OptedOutFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`OptedOutFilter`](crate::types::OptedOutFilter).
-    pub fn build(self) -> crate::types::OptedOutFilter {
-        crate::types::OptedOutFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OptedOutFilterBuilder::name)
+    /// - [`values`](crate::types::builders::OptedOutFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::OptedOutFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OptedOutFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building OptedOutFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building OptedOutFilter",
+                )
+            })?,
+        })
     }
 }

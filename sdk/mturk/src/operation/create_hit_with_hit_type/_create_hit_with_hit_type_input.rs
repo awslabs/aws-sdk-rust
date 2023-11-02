@@ -76,8 +76,10 @@ impl CreateHitWithHitTypeInput {
         self.hit_layout_id.as_deref()
     }
     /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
-    pub fn hit_layout_parameters(&self) -> ::std::option::Option<&[crate::types::HitLayoutParameter]> {
-        self.hit_layout_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hit_layout_parameters.is_none()`.
+    pub fn hit_layout_parameters(&self) -> &[crate::types::HitLayoutParameter] {
+        self.hit_layout_parameters.as_deref().unwrap_or_default()
     }
 }
 impl CreateHitWithHitTypeInput {
@@ -104,6 +106,7 @@ pub struct CreateHitWithHitTypeInputBuilder {
 }
 impl CreateHitWithHitTypeInputBuilder {
     /// <p>The HIT type ID you want to create this HIT with.</p>
+    /// This field is required.
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl CreateHitWithHitTypeInputBuilder {
         &self.max_assignments
     }
     /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+    /// This field is required.
     pub fn lifetime_in_seconds(mut self, input: i64) -> Self {
         self.lifetime_in_seconds = ::std::option::Option::Some(input);
         self

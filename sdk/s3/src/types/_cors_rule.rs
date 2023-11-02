@@ -9,9 +9,9 @@ pub struct CorsRule {
     /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
     pub allowed_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
-    pub allowed_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_methods: ::std::vec::Vec<::std::string::String>,
     /// <p>One or more origins you want customers to be able to access the bucket from.</p>
-    pub allowed_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_origins: ::std::vec::Vec<::std::string::String>,
     /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     pub expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
@@ -23,20 +23,26 @@ impl CorsRule {
         self.id.as_deref()
     }
     /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
-    pub fn allowed_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_headers.is_none()`.
+    pub fn allowed_headers(&self) -> &[::std::string::String] {
+        self.allowed_headers.as_deref().unwrap_or_default()
     }
     /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
-    pub fn allowed_methods(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_methods.as_deref()
+    pub fn allowed_methods(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allowed_methods.deref()
     }
     /// <p>One or more origins you want customers to be able to access the bucket from.</p>
-    pub fn allowed_origins(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_origins.as_deref()
+    pub fn allowed_origins(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allowed_origins.deref()
     }
     /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
-    pub fn expose_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.expose_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expose_headers.is_none()`.
+    pub fn expose_headers(&self) -> &[::std::string::String] {
+        self.expose_headers.as_deref().unwrap_or_default()
     }
     /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
     pub fn max_age_seconds(&self) -> i32 {
@@ -171,14 +177,27 @@ impl CorsRuleBuilder {
         &self.max_age_seconds
     }
     /// Consumes the builder and constructs a [`CorsRule`](crate::types::CorsRule).
-    pub fn build(self) -> crate::types::CorsRule {
-        crate::types::CorsRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allowed_methods`](crate::types::builders::CorsRuleBuilder::allowed_methods)
+    /// - [`allowed_origins`](crate::types::builders::CorsRuleBuilder::allowed_origins)
+    pub fn build(self) -> ::std::result::Result<crate::types::CorsRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CorsRule {
             id: self.id,
             allowed_headers: self.allowed_headers,
-            allowed_methods: self.allowed_methods,
-            allowed_origins: self.allowed_origins,
+            allowed_methods: self.allowed_methods.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allowed_methods",
+                    "allowed_methods was not specified but it is required when building CorsRule",
+                )
+            })?,
+            allowed_origins: self.allowed_origins.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allowed_origins",
+                    "allowed_origins was not specified but it is required when building CorsRule",
+                )
+            })?,
             expose_headers: self.expose_headers,
             max_age_seconds: self.max_age_seconds.unwrap_or_default(),
-        }
+        })
     }
 }

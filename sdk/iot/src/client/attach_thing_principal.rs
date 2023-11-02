@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AttachThingPrincipal`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`principal(impl Into<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::set_principal): <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    ///   - [`thing_name(impl Into<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::set_thing_name):<br>required: **true**<br><p>The name of the thing.</p><br>
+    ///   - [`principal(impl Into<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder::set_principal):<br>required: **true**<br><p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p><br>
     /// - On success, responds with [`AttachThingPrincipalOutput`](crate::operation::attach_thing_principal::AttachThingPrincipalOutput)
     /// - On failure, responds with [`SdkError<AttachThingPrincipalError>`](crate::operation::attach_thing_principal::AttachThingPrincipalError)
     pub fn attach_thing_principal(&self) -> crate::operation::attach_thing_principal::builders::AttachThingPrincipalFluentBuilder {

@@ -132,7 +132,9 @@ pub fn de_get_trust_store_certificate_http_response(
         output = crate::protocol_serde::shape_get_trust_store_certificate::de_get_trust_store_certificate(_response_body, output)
             .map_err(crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_trust_store_certificate_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_trust_store_certificate::GetTrustStoreCertificateError::unhandled)?
     })
 }
 

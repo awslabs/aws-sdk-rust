@@ -66,6 +66,7 @@ pub struct CreateLegalHoldInputBuilder {
 }
 impl CreateLegalHoldInputBuilder {
     /// <p>This is the string title of the legal hold.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl CreateLegalHoldInputBuilder {
         &self.title
     }
     /// <p>This is the string description of the legal hold.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

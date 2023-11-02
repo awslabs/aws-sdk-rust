@@ -27,6 +27,7 @@ pub struct DisassociateVpcCidrBlockInputBuilder {
 }
 impl DisassociateVpcCidrBlockInputBuilder {
     /// <p>The association ID for the CIDR block.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self

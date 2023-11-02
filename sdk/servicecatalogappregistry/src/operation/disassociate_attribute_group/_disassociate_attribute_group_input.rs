@@ -34,6 +34,7 @@ pub struct DisassociateAttributeGroupInputBuilder {
 }
 impl DisassociateAttributeGroupInputBuilder {
     /// <p> The name, ID, or ARN of the application. </p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateAttributeGroupInputBuilder {
         &self.application
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// This field is required.
     pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTags`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to delete.</p>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tag_keys): <p>An array or one or more tag keys to delete.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource whose tags you want to delete.</p><br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>An array or one or more tag keys to delete.</p><br>
     /// - On success, responds with [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::operation::delete_tags::DeleteTagsError)
     pub fn delete_tags(&self) -> crate::operation::delete_tags::builders::DeleteTagsFluentBuilder {

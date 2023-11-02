@@ -34,6 +34,7 @@ pub struct UpdateRegistryInputBuilder {
 }
 impl UpdateRegistryInputBuilder {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn registry_id(mut self, input: crate::types::RegistryId) -> Self {
         self.registry_id = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl UpdateRegistryInputBuilder {
         &self.registry_id
     }
     /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

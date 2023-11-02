@@ -25,12 +25,16 @@ impl ModelQualityAppSpecification {
         self.image_uri.as_deref()
     }
     /// <p>Specifies the entrypoint for a container that the monitoring job runs.</p>
-    pub fn container_entrypoint(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_entrypoint.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_entrypoint.is_none()`.
+    pub fn container_entrypoint(&self) -> &[::std::string::String] {
+        self.container_entrypoint.as_deref().unwrap_or_default()
     }
     /// <p>An array of arguments for the container used to run the monitoring job.</p>
-    pub fn container_arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_arguments.is_none()`.
+    pub fn container_arguments(&self) -> &[::std::string::String] {
+        self.container_arguments.as_deref().unwrap_or_default()
     }
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn record_preprocessor_source_uri(&self) -> ::std::option::Option<&str> {
@@ -70,6 +74,7 @@ pub struct ModelQualityAppSpecificationBuilder {
 }
 impl ModelQualityAppSpecificationBuilder {
     /// <p>The address of the container image that the monitoring job runs.</p>
+    /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self

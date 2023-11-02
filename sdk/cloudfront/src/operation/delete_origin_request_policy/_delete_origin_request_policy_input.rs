@@ -34,6 +34,7 @@ pub struct DeleteOriginRequestPolicyInputBuilder {
 }
 impl DeleteOriginRequestPolicyInputBuilder {
     /// <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

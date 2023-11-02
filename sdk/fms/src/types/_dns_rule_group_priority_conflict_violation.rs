@@ -33,8 +33,10 @@ impl DnsRuleGroupPriorityConflictViolation {
         self.conflicting_policy_id.as_deref()
     }
     /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation, choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
-    pub fn unavailable_priorities(&self) -> ::std::option::Option<&[i32]> {
-        self.unavailable_priorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unavailable_priorities.is_none()`.
+    pub fn unavailable_priorities(&self) -> &[i32] {
+        self.unavailable_priorities.as_deref().unwrap_or_default()
     }
 }
 impl DnsRuleGroupPriorityConflictViolation {

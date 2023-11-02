@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
-    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub arns: ::std::vec::Vec<::std::string::String>,
 }
 impl BatchGetChannelInput {
     /// <p>Array of ARNs, one per channel.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arns.as_deref()
+    pub fn arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.arns.deref()
     }
 }
 impl BatchGetChannelInput {
@@ -47,9 +48,18 @@ impl BatchGetChannelInputBuilder {
         &self.arns
     }
     /// Consumes the builder and constructs a [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arns`](crate::operation::batch_get_channel::builders::BatchGetChannelInputBuilder::arns)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_channel::BatchGetChannelInput { arns: self.arns })
+        ::std::result::Result::Ok(crate::operation::batch_get_channel::BatchGetChannelInput {
+            arns: self.arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arns",
+                    "arns was not specified but it is required when building BatchGetChannelInput",
+                )
+            })?,
+        })
     }
 }

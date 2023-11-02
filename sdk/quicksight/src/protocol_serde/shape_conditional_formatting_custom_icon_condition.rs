@@ -3,29 +3,29 @@ pub fn ser_conditional_formatting_custom_icon_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConditionalFormattingCustomIconCondition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.expression {
-        object.key("Expression").string(var_1.as_str());
+    {
+        object.key("Expression").string(input.expression.as_str());
     }
-    if let Some(var_2) = &input.icon_options {
+    if let Some(var_1) = &input.icon_options {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("IconOptions").start_object();
+        let mut object_2 = object.key("IconOptions").start_object();
         crate::protocol_serde::shape_conditional_formatting_custom_icon_options::ser_conditional_formatting_custom_icon_options(
-            &mut object_3,
-            var_2,
+            &mut object_2,
+            var_1,
         )?;
-        object_3.finish();
+        object_2.finish();
     }
-    if let Some(var_4) = &input.color {
-        object.key("Color").string(var_4.as_str());
+    if let Some(var_3) = &input.color {
+        object.key("Color").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.display_configuration {
+    if let Some(var_4) = &input.display_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("DisplayConfiguration").start_object();
+        let mut object_5 = object.key("DisplayConfiguration").start_object();
         crate::protocol_serde::shape_conditional_formatting_icon_display_configuration::ser_conditional_formatting_icon_display_configuration(
-            &mut object_6,
-            var_5,
+            &mut object_5,
+            var_4,
         )?;
-        object_6.finish();
+        object_5.finish();
     }
     Ok(())
 }
@@ -79,7 +79,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::conditional_formatting_custom_icon_condition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

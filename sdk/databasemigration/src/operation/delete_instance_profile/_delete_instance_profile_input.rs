@@ -27,6 +27,7 @@ pub struct DeleteInstanceProfileInputBuilder {
 }
 impl DeleteInstanceProfileInputBuilder {
     /// <p>The identifier of the instance profile to delete.</p>
+    /// This field is required.
     pub fn instance_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_identifier = ::std::option::Option::Some(input.into());
         self

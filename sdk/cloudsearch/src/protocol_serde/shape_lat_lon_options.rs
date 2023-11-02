@@ -37,6 +37,7 @@ pub fn ser_lat_lon_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lat_lon_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LatLonOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

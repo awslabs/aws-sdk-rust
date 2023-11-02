@@ -67,6 +67,7 @@ impl CreatePolicyStoreInputBuilder {
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
     /// </important>
+    /// This field is required.
     pub fn validation_settings(mut self, input: crate::types::ValidationSettings) -> Self {
         self.validation_settings = ::std::option::Option::Some(input);
         self

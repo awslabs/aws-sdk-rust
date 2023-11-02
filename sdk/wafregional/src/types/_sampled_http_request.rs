@@ -60,6 +60,7 @@ pub struct SampledHttpRequestBuilder {
 }
 impl SampledHttpRequestBuilder {
     /// <p>A complex type that contains detailed information about the request.</p>
+    /// This field is required.
     pub fn request(mut self, input: crate::types::HttpRequest) -> Self {
         self.request = ::std::option::Option::Some(input);
         self
@@ -74,6 +75,7 @@ impl SampledHttpRequestBuilder {
         &self.request
     }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
+    /// This field is required.
     pub fn weight(mut self, input: i64) -> Self {
         self.weight = ::std::option::Option::Some(input);
         self

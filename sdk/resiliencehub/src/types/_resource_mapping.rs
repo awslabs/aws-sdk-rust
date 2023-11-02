@@ -39,7 +39,7 @@ pub struct ResourceMapping {
     /// <p>The resource is mapped to Resource Groups. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
-    pub mapping_type: ::std::option::Option<crate::types::ResourceMappingType>,
+    pub mapping_type: crate::types::ResourceMappingType,
     /// <p>Identifier of the physical resource.</p>
     pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
     /// <p> The short name of the Terraform source. </p>
@@ -93,8 +93,8 @@ impl ResourceMapping {
     /// <p>The resource is mapped to Resource Groups. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
-    pub fn mapping_type(&self) -> ::std::option::Option<&crate::types::ResourceMappingType> {
-        self.mapping_type.as_ref()
+    pub fn mapping_type(&self) -> &crate::types::ResourceMappingType {
+        &self.mapping_type
     }
     /// <p>Identifier of the physical resource.</p>
     pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
@@ -215,6 +215,7 @@ impl ResourceMappingBuilder {
     /// <p>The resource is mapped to Resource Groups. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn mapping_type(mut self, input: crate::types::ResourceMappingType) -> Self {
         self.mapping_type = ::std::option::Option::Some(input);
         self
@@ -281,6 +282,7 @@ impl ResourceMappingBuilder {
         &self.mapping_type
     }
     /// <p>Identifier of the physical resource.</p>
+    /// This field is required.
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
         self.physical_resource_id = ::std::option::Option::Some(input);
         self
@@ -329,16 +331,23 @@ impl ResourceMappingBuilder {
         &self.eks_source_name
     }
     /// Consumes the builder and constructs a [`ResourceMapping`](crate::types::ResourceMapping).
-    pub fn build(self) -> crate::types::ResourceMapping {
-        crate::types::ResourceMapping {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mapping_type`](crate::types::builders::ResourceMappingBuilder::mapping_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceMapping {
             resource_name: self.resource_name,
             logical_stack_name: self.logical_stack_name,
             app_registry_app_name: self.app_registry_app_name,
             resource_group_name: self.resource_group_name,
-            mapping_type: self.mapping_type,
+            mapping_type: self.mapping_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mapping_type",
+                    "mapping_type was not specified but it is required when building ResourceMapping",
+                )
+            })?,
             physical_resource_id: self.physical_resource_id,
             terraform_source_name: self.terraform_source_name,
             eks_source_name: self.eks_source_name,
-        }
+        })
     }
 }

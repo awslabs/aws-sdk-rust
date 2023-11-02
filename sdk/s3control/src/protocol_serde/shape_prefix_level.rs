@@ -13,6 +13,7 @@ pub fn ser_prefix_level(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_prefix_level(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PrefixLevel, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,5 +34,5 @@ pub fn de_prefix_level(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::prefix_level_correct_errors(builder).build())
 }

@@ -22,7 +22,7 @@ pub struct StepAdjustment {
     /// <p>The upper bound must be greater than the lower bound.</p>
     pub metric_interval_upper_bound: ::std::option::Option<f64>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
-    pub scaling_adjustment: ::std::option::Option<i32>,
+    pub scaling_adjustment: i32,
 }
 impl StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
@@ -35,7 +35,7 @@ impl StepAdjustment {
         self.metric_interval_upper_bound
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
-    pub fn scaling_adjustment(&self) -> ::std::option::Option<i32> {
+    pub fn scaling_adjustment(&self) -> i32 {
         self.scaling_adjustment
     }
 }
@@ -87,6 +87,7 @@ impl StepAdjustmentBuilder {
         &self.metric_interval_upper_bound
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a non-negative value.</p>
+    /// This field is required.
     pub fn scaling_adjustment(mut self, input: i32) -> Self {
         self.scaling_adjustment = ::std::option::Option::Some(input);
         self
@@ -101,11 +102,18 @@ impl StepAdjustmentBuilder {
         &self.scaling_adjustment
     }
     /// Consumes the builder and constructs a [`StepAdjustment`](crate::types::StepAdjustment).
-    pub fn build(self) -> crate::types::StepAdjustment {
-        crate::types::StepAdjustment {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scaling_adjustment`](crate::types::builders::StepAdjustmentBuilder::scaling_adjustment)
+    pub fn build(self) -> ::std::result::Result<crate::types::StepAdjustment, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StepAdjustment {
             metric_interval_lower_bound: self.metric_interval_lower_bound,
             metric_interval_upper_bound: self.metric_interval_upper_bound,
-            scaling_adjustment: self.scaling_adjustment,
-        }
+            scaling_adjustment: self.scaling_adjustment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scaling_adjustment",
+                    "scaling_adjustment was not specified but it is required when building StepAdjustment",
+                )
+            })?,
+        })
     }
 }

@@ -52,6 +52,7 @@ pub struct CreateBackupPlanInputBuilder {
 }
 impl CreateBackupPlanInputBuilder {
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// This field is required.
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.backup_plan = ::std::option::Option::Some(input);
         self

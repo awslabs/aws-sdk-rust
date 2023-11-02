@@ -11,8 +11,10 @@ pub struct AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
 }
 impl AwsMskClusterClusterInfoClientAuthenticationTlsDetails {
     /// <p> List of Amazon Web Services Private CA Amazon Resource Names (ARNs). Amazon Web Services Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA.</p>
-    pub fn certificate_authority_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_authority_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_authority_arn_list.is_none()`.
+    pub fn certificate_authority_arn_list(&self) -> &[::std::string::String] {
+        self.certificate_authority_arn_list.as_deref().unwrap_or_default()
     }
     /// <p> Indicates whether TLS authentication is enabled or not.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {

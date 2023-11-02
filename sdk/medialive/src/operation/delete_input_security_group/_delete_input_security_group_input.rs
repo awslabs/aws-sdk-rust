@@ -28,6 +28,7 @@ pub struct DeleteInputSecurityGroupInputBuilder {
 }
 impl DeleteInputSecurityGroupInputBuilder {
     /// The Input Security Group to delete
+    /// This field is required.
     pub fn input_security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_security_group_id = ::std::option::Option::Some(input.into());
         self

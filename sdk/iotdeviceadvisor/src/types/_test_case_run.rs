@@ -83,8 +83,10 @@ impl TestCaseRun {
         self.failure.as_deref()
     }
     /// <p> Provides the test scenarios for the test case run. </p>
-    pub fn test_scenarios(&self) -> ::std::option::Option<&[crate::types::TestCaseScenario]> {
-        self.test_scenarios.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_scenarios.is_none()`.
+    pub fn test_scenarios(&self) -> &[crate::types::TestCaseScenario] {
+        self.test_scenarios.as_deref().unwrap_or_default()
     }
 }
 impl TestCaseRun {

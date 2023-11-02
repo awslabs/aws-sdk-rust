@@ -41,8 +41,10 @@ impl DisableEnhancedMonitoringInput {
     /// <li> <p> <code>ALL</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn shard_level_metrics(&self) -> ::std::option::Option<&[crate::types::MetricsName]> {
-        self.shard_level_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shard_level_metrics.is_none()`.
+    pub fn shard_level_metrics(&self) -> &[crate::types::MetricsName] {
+        self.shard_level_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {

@@ -34,6 +34,7 @@ pub struct UpdateVirtualServiceOutputBuilder {
 }
 impl UpdateVirtualServiceOutputBuilder {
     /// <p>A full description of the virtual service that was updated.</p>
+    /// This field is required.
     pub fn virtual_service(mut self, input: crate::types::VirtualServiceData) -> Self {
         self.virtual_service = ::std::option::Option::Some(input);
         self

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-    pub preload_data_type: ::std::option::Option<crate::types::PreloadDataType>,
+    pub preload_data_type: crate::types::PreloadDataType,
 }
 impl PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-    pub fn preload_data_type(&self) -> ::std::option::Option<&crate::types::PreloadDataType> {
-        self.preload_data_type.as_ref()
+    pub fn preload_data_type(&self) -> &crate::types::PreloadDataType {
+        &self.preload_data_type
     }
 }
 impl PreloadDataConfig {
@@ -28,6 +28,7 @@ pub struct PreloadDataConfigBuilder {
 }
 impl PreloadDataConfigBuilder {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
+    /// This field is required.
     pub fn preload_data_type(mut self, input: crate::types::PreloadDataType) -> Self {
         self.preload_data_type = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl PreloadDataConfigBuilder {
         &self.preload_data_type
     }
     /// Consumes the builder and constructs a [`PreloadDataConfig`](crate::types::PreloadDataConfig).
-    pub fn build(self) -> crate::types::PreloadDataConfig {
-        crate::types::PreloadDataConfig {
-            preload_data_type: self.preload_data_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`preload_data_type`](crate::types::builders::PreloadDataConfigBuilder::preload_data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PreloadDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PreloadDataConfig {
+            preload_data_type: self.preload_data_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "preload_data_type",
+                    "preload_data_type was not specified but it is required when building PreloadDataConfig",
+                )
+            })?,
+        })
     }
 }

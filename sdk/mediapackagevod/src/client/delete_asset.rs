@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAsset`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_id): The ID of the MediaPackage VOD Asset resource to delete.
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_id):<br>required: **true**<br>The ID of the MediaPackage VOD Asset resource to delete.<br>
     /// - On success, responds with [`DeleteAssetOutput`](crate::operation::delete_asset::DeleteAssetOutput)
     /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::operation::delete_asset::DeleteAssetError)
     pub fn delete_asset(&self) -> crate::operation::delete_asset::builders::DeleteAssetFluentBuilder {

@@ -3,35 +3,35 @@ pub fn ser_create_package_import_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_package_import_job::CreatePackageImportJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("ClientToken").string(var_1.as_str());
+    {
+        object.key("ClientToken").string(input.client_token.as_str());
     }
-    if let Some(var_2) = &input.input_config {
+    if let Some(var_1) = &input.input_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("InputConfig").start_object();
-        crate::protocol_serde::shape_package_import_job_input_config::ser_package_import_job_input_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("InputConfig").start_object();
+        crate::protocol_serde::shape_package_import_job_input_config::ser_package_import_job_input_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.job_tags {
-        let mut array_5 = object.key("JobTags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.job_tags {
+        let mut array_4 = object.key("JobTags").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_job_resource_tags::ser_job_resource_tags(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_job_resource_tags::ser_job_resource_tags(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.job_type {
-        object.key("JobType").string(var_8.as_str());
+    {
+        object.key("JobType").string(input.job_type.as_str());
     }
-    if let Some(var_9) = &input.output_config {
+    if let Some(var_7) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_package_import_job_output_config::ser_package_import_job_output_config(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_8 = object.key("OutputConfig").start_object();
+        crate::protocol_serde::shape_package_import_job_output_config::ser_package_import_job_output_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

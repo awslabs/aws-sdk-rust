@@ -41,6 +41,7 @@ pub struct UpgradeAppliedSchemaInputBuilder {
 }
 impl UpgradeAppliedSchemaInputBuilder {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
+    /// This field is required.
     pub fn published_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.published_schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpgradeAppliedSchemaInputBuilder {
         &self.published_schema_arn
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self

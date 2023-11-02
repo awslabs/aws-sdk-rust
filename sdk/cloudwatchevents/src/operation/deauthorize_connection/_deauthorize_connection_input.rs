@@ -27,6 +27,7 @@ pub struct DeauthorizeConnectionInputBuilder {
 }
 impl DeauthorizeConnectionInputBuilder {
     /// <p>The name of the connection to remove authorization from.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

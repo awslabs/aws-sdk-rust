@@ -35,7 +35,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrlConfiguration {
     /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>Validity period of the CRL in days.</p>
     pub expiration_in_days: ::std::option::Option<i32>,
     /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p> <note>
@@ -54,7 +54,7 @@ pub struct CrlConfiguration {
 }
 impl CrlConfiguration {
     /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Validity period of the CRL in days.</p>
@@ -100,6 +100,7 @@ pub struct CrlConfigurationBuilder {
 }
 impl CrlConfigurationBuilder {
     /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action. </p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -191,13 +192,20 @@ impl CrlConfigurationBuilder {
         &self.s3_object_acl
     }
     /// Consumes the builder and constructs a [`CrlConfiguration`](crate::types::CrlConfiguration).
-    pub fn build(self) -> crate::types::CrlConfiguration {
-        crate::types::CrlConfiguration {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::CrlConfigurationBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::CrlConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CrlConfiguration {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building CrlConfiguration",
+                )
+            })?,
             expiration_in_days: self.expiration_in_days,
             custom_cname: self.custom_cname,
             s3_bucket_name: self.s3_bucket_name,
             s3_object_acl: self.s3_object_acl,
-        }
+        })
     }
 }

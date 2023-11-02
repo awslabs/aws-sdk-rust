@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePermissionsInput {
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub update_instruction_batch: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>,
+    pub update_instruction_batch: ::std::vec::Vec<crate::types::UpdateInstruction>,
     /// <p>The ID of the workspace to update.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
 }
 impl UpdatePermissionsInput {
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub fn update_instruction_batch(&self) -> ::std::option::Option<&[crate::types::UpdateInstruction]> {
-        self.update_instruction_batch.as_deref()
+    pub fn update_instruction_batch(&self) -> &[crate::types::UpdateInstruction] {
+        use std::ops::Deref;
+        self.update_instruction_batch.deref()
     }
     /// <p>The ID of the workspace to update.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl UpdatePermissionsInput {
@@ -54,6 +56,7 @@ impl UpdatePermissionsInputBuilder {
         &self.update_instruction_batch
     }
     /// <p>The ID of the workspace to update.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl UpdatePermissionsInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`UpdatePermissionsInput`](crate::operation::update_permissions::UpdatePermissionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_instruction_batch`](crate::operation::update_permissions::builders::UpdatePermissionsInputBuilder::update_instruction_batch)
+    /// - [`workspace_id`](crate::operation::update_permissions::builders::UpdatePermissionsInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_permissions::UpdatePermissionsInput {
-            update_instruction_batch: self.update_instruction_batch,
-            workspace_id: self.workspace_id,
+            update_instruction_batch: self.update_instruction_batch.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_instruction_batch",
+                    "update_instruction_batch was not specified but it is required when building UpdatePermissionsInput",
+                )
+            })?,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building UpdatePermissionsInput",
+                )
+            })?,
         })
     }
 }

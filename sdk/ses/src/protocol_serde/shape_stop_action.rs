@@ -6,17 +6,18 @@ pub fn ser_stop_action(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Scope");
-    if let Some(var_2) = &input.scope {
-        scope_1.string(var_2.as_str());
+    {
+        scope_1.string(input.scope.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("TopicArn");
-    if let Some(var_4) = &input.topic_arn {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("TopicArn");
+    if let Some(var_3) = &input.topic_arn {
+        scope_2.string(var_3);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_stop_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StopAction, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_stop_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Scope") /* Scope com.amazonaws.ses#StopAction$Scope */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         Result::<crate::types::StopScope, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::StopScope::from(
@@ -35,11 +36,11 @@ pub fn de_stop_action(
                         ?
                     )
                 ;
-                builder = builder.set_scope(var_5);
+                builder = builder.set_scope(var_4);
             }
             ,
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#StopAction$TopicArn */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -48,11 +49,13 @@ pub fn de_stop_action(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_6);
+                builder = builder.set_topic_arn(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::stop_action_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

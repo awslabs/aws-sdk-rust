@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Enable`](crate::operation::enable::builders::EnableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(impl Into<String>)`](crate::operation::enable::builders::EnableFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::enable::builders::EnableFluentBuilder::set_account_ids): <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-    ///   - [`resource_types(ResourceScanType)`](crate::operation::enable::builders::EnableFluentBuilder::resource_types) / [`set_resource_types(Option<Vec<ResourceScanType>>)`](crate::operation::enable::builders::EnableFluentBuilder::set_resource_types): <p>The resource scan types you want to enable.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::enable::builders::EnableFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::enable::builders::EnableFluentBuilder::set_client_token): <p>The idempotency token for the request.</p>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::enable::builders::EnableFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::enable::builders::EnableFluentBuilder::set_account_ids):<br>required: **false**<br><p>A list of account IDs you want to enable Amazon Inspector scans for.</p><br>
+    ///   - [`resource_types(ResourceScanType)`](crate::operation::enable::builders::EnableFluentBuilder::resource_types) / [`set_resource_types(Vec<ResourceScanType>)`](crate::operation::enable::builders::EnableFluentBuilder::set_resource_types):<br>required: **true**<br><p>The resource scan types you want to enable.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::enable::builders::EnableFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::enable::builders::EnableFluentBuilder::set_client_token):<br>required: **false**<br><p>The idempotency token for the request.</p><br>
     /// - On success, responds with [`EnableOutput`](crate::operation::enable::EnableOutput) with field(s):
-    ///   - [`accounts(Option<Vec<Account>>)`](crate::operation::enable::EnableOutput::accounts): <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
+    ///   - [`accounts(Vec<Account>)`](crate::operation::enable::EnableOutput::accounts): <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
     ///   - [`failed_accounts(Option<Vec<FailedAccount>>)`](crate::operation::enable::EnableOutput::failed_accounts): <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
     /// - On failure, responds with [`SdkError<EnableError>`](crate::operation::enable::EnableError)
     pub fn enable(&self) -> crate::operation::enable::builders::EnableFluentBuilder {

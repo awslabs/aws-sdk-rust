@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEmailChannel`](crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_email_channel::builders::DeleteEmailChannelFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p><br>
     /// - On success, responds with [`DeleteEmailChannelOutput`](crate::operation::delete_email_channel::DeleteEmailChannelOutput) with field(s):
     ///   - [`email_channel_response(Option<EmailChannelResponse>)`](crate::operation::delete_email_channel::DeleteEmailChannelOutput::email_channel_response): <p>Provides information about the status and settings of the email channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteEmailChannelError>`](crate::operation::delete_email_channel::DeleteEmailChannelError)

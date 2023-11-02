@@ -21,8 +21,10 @@ impl AwsGuardDutyDetectorDetails {
         self.data_sources.as_ref()
     }
     /// <p> Describes which features are activated for the detector. </p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::AwsGuardDutyDetectorFeaturesDetails]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::AwsGuardDutyDetectorFeaturesDetails] {
+        self.features.as_deref().unwrap_or_default()
     }
     /// <p> The publishing frequency of the finding. </p>
     pub fn finding_publishing_frequency(&self) -> ::std::option::Option<&str> {

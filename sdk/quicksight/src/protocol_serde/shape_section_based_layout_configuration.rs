@@ -3,47 +3,47 @@ pub fn ser_section_based_layout_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SectionBasedLayoutConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.header_sections {
-        let mut array_2 = object.key("HeaderSections").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("HeaderSections").start_array();
+        for item_2 in &input.header_sections {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_header_footer_section_configuration::ser_header_footer_section_configuration(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_header_footer_section_configuration::ser_header_footer_section_configuration(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.body_sections {
-        let mut array_6 = object.key("BodySections").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("BodySections").start_array();
+        for item_5 in &input.body_sections {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_body_section_configuration::ser_body_section_configuration(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_body_section_configuration::ser_body_section_configuration(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_9) = &input.footer_sections {
-        let mut array_10 = object.key("FooterSections").start_array();
-        for item_11 in var_9 {
+    {
+        let mut array_7 = object.key("FooterSections").start_array();
+        for item_8 in &input.footer_sections {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_header_footer_section_configuration::ser_header_footer_section_configuration(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_header_footer_section_configuration::ser_header_footer_section_configuration(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_10.finish();
+        array_7.finish();
     }
-    if let Some(var_13) = &input.canvas_size_options {
+    if let Some(var_10) = &input.canvas_size_options {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("CanvasSizeOptions").start_object();
-        crate::protocol_serde::shape_section_based_layout_canvas_size_options::ser_section_based_layout_canvas_size_options(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_11 = object.key("CanvasSizeOptions").start_object();
+        crate::protocol_serde::shape_section_based_layout_canvas_size_options::ser_section_based_layout_canvas_size_options(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }
@@ -95,7 +95,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::section_based_layout_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

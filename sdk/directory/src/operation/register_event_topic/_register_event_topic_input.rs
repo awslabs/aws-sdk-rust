@@ -35,6 +35,7 @@ pub struct RegisterEventTopicInputBuilder {
 }
 impl RegisterEventTopicInputBuilder {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RegisterEventTopicInputBuilder {
         &self.directory_id
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self

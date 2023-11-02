@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTimelineEventsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub incident_record_arn: ::std::option::Option<::std::string::String>,
+    pub incident_record_arn: ::std::string::String,
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
@@ -28,8 +28,9 @@ pub struct ListTimelineEventsInput {
 }
 impl ListTimelineEventsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
-        self.incident_record_arn.as_deref()
+    pub fn incident_record_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.incident_record_arn.deref()
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
@@ -42,8 +43,10 @@ impl ListTimelineEventsInput {
     /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
     /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Sort timeline events by the specified key value pair.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::TimelineEventSort> {
@@ -82,6 +85,7 @@ pub struct ListTimelineEventsInputBuilder {
 }
 impl ListTimelineEventsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -202,11 +206,18 @@ impl ListTimelineEventsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`incident_record_arn`](crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder::incident_record_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_timeline_events::ListTimelineEventsInput {
-            incident_record_arn: self.incident_record_arn,
+            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "incident_record_arn",
+                    "incident_record_arn was not specified but it is required when building ListTimelineEventsInput",
+                )
+            })?,
             filters: self.filters,
             sort_by: self.sort_by,
             sort_order: self.sort_order,

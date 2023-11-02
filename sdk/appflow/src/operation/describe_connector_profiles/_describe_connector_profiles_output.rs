@@ -11,8 +11,10 @@ pub struct DescribeConnectorProfilesOutput {
 }
 impl DescribeConnectorProfilesOutput {
     /// <p> Returns information about the connector profiles associated with the flow. </p>
-    pub fn connector_profile_details(&self) -> ::std::option::Option<&[crate::types::ConnectorProfile]> {
-        self.connector_profile_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_profile_details.is_none()`.
+    pub fn connector_profile_details(&self) -> &[crate::types::ConnectorProfile] {
+        self.connector_profile_details.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

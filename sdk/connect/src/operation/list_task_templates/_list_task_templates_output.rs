@@ -13,8 +13,10 @@ pub struct ListTaskTemplatesOutput {
 }
 impl ListTaskTemplatesOutput {
     /// <p>Provides details about a list of task templates belonging to an instance.</p>
-    pub fn task_templates(&self) -> ::std::option::Option<&[crate::types::TaskTemplateMetadata]> {
-        self.task_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_templates.is_none()`.
+    pub fn task_templates(&self) -> &[crate::types::TaskTemplateMetadata] {
+        self.task_templates.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as a null in the response.</p>

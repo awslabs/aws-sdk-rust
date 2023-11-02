@@ -78,6 +78,7 @@ pub struct ListChannelMembershipsInputBuilder {
 }
 impl ListChannelMembershipsInputBuilder {
     /// <p>The maximum number of channel memberships that you want returned.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +135,7 @@ impl ListChannelMembershipsInputBuilder {
         &self.next_token
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self

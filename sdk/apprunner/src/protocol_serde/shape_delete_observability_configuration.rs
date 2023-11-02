@@ -94,7 +94,7 @@ pub fn de_delete_observability_configuration_http_response(
         output = crate::protocol_serde::shape_delete_observability_configuration::de_delete_observability_configuration(_response_body, output)
             .map_err(crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_observability_configuration_output_correct_errors(output).build()
     })
 }
 

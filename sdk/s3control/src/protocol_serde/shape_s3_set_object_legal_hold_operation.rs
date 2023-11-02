@@ -13,6 +13,7 @@ pub fn ser_s3_set_object_legal_hold_operation(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_set_object_legal_hold_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3SetObjectLegalHoldOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,5 +34,5 @@ pub fn de_s3_set_object_legal_hold_operation(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::s3_set_object_legal_hold_operation_correct_errors(builder).build())
 }

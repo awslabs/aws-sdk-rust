@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// The identifier for the requested resource
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// The resource type
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// Originating service code
-    pub service_code: ::std::option::Option<crate::types::ServiceCode>,
+    pub service_code: crate::types::ServiceCode,
     /// Originating quota code
-    pub quota_code: ::std::option::Option<::std::string::String>,
+    pub quota_code: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceQuotaExceededException {
@@ -26,27 +26,26 @@ impl ServiceQuotaExceededException {
         self.resource_type.as_ref()
     }
     /// Originating service code
-    pub fn service_code(&self) -> ::std::option::Option<&crate::types::ServiceCode> {
-        self.service_code.as_ref()
+    pub fn service_code(&self) -> &crate::types::ServiceCode {
+        &self.service_code
     }
     /// Originating quota code
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
-        self.quota_code.as_deref()
+    pub fn quota_code(&self) -> &str {
+        use std::ops::Deref;
+        self.quota_code.deref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceQuotaExceededException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -83,6 +82,7 @@ pub struct ServiceQuotaExceededExceptionBuilder {
 }
 impl ServiceQuotaExceededExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +125,7 @@ impl ServiceQuotaExceededExceptionBuilder {
         &self.resource_type
     }
     /// Originating service code
+    /// This field is required.
     pub fn service_code(mut self, input: crate::types::ServiceCode) -> Self {
         self.service_code = ::std::option::Option::Some(input);
         self
@@ -139,6 +140,7 @@ impl ServiceQuotaExceededExceptionBuilder {
         &self.service_code
     }
     /// Originating quota code
+    /// This field is required.
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
@@ -164,14 +166,33 @@ impl ServiceQuotaExceededExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
-    pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
-        crate::types::error::ServiceQuotaExceededException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::message)
+    /// - [`service_code`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::service_code)
+    /// - [`quota_code`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::quota_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ServiceQuotaExceededException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ServiceQuotaExceededException",
+                )
+            })?,
             resource_identifier: self.resource_identifier,
             resource_type: self.resource_type,
-            service_code: self.service_code,
-            quota_code: self.quota_code,
+            service_code: self.service_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_code",
+                    "service_code was not specified but it is required when building ServiceQuotaExceededException",
+                )
+            })?,
+            quota_code: self.quota_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quota_code",
+                    "quota_code was not specified but it is required when building ServiceQuotaExceededException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

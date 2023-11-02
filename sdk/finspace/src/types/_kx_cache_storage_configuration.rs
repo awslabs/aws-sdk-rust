@@ -4,24 +4,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KxCacheStorageConfiguration {
-    /// <p>The type of cache storage . The valid values are: </p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
     /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
+    pub r#type: ::std::string::String,
     /// <p>The size of cache in Gigabytes.</p>
-    pub size: ::std::option::Option<i32>,
+    pub size: i32,
 }
 impl KxCacheStorageConfiguration {
-    /// <p>The type of cache storage . The valid values are: </p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
     /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The size of cache in Gigabytes.</p>
-    pub fn size(&self) -> ::std::option::Option<i32> {
+    pub fn size(&self) -> i32 {
         self.size
     }
 }
@@ -40,30 +47,41 @@ pub struct KxCacheStorageConfigurationBuilder {
     pub(crate) size: ::std::option::Option<i32>,
 }
 impl KxCacheStorageConfigurationBuilder {
-    /// <p>The type of cache storage . The valid values are: </p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
     /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
+    /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of cache storage . The valid values are: </p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
     /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
+    /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of cache storage . The valid values are: </p>
+    /// <p>The type of cache storage. The valid values are: </p>
     /// <ul>
     /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_250 – This type provides at least 250 MB/s disk access throughput. </p> </li>
+    /// <li> <p>CACHE_12 – This type provides at least 12 MB/s disk access throughput. </p> </li>
     /// </ul>
+    /// <p>For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you can select the cache size in increments of 6000 GB.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
     /// <p>The size of cache in Gigabytes.</p>
+    /// This field is required.
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -78,10 +96,23 @@ impl KxCacheStorageConfigurationBuilder {
         &self.size
     }
     /// Consumes the builder and constructs a [`KxCacheStorageConfiguration`](crate::types::KxCacheStorageConfiguration).
-    pub fn build(self) -> crate::types::KxCacheStorageConfiguration {
-        crate::types::KxCacheStorageConfiguration {
-            r#type: self.r#type,
-            size: self.size,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::KxCacheStorageConfigurationBuilder::r#type)
+    /// - [`size`](crate::types::builders::KxCacheStorageConfigurationBuilder::size)
+    pub fn build(self) -> ::std::result::Result<crate::types::KxCacheStorageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KxCacheStorageConfiguration {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building KxCacheStorageConfiguration",
+                )
+            })?,
+            size: self.size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size",
+                    "size was not specified but it is required when building KxCacheStorageConfiguration",
+                )
+            })?,
+        })
     }
 }

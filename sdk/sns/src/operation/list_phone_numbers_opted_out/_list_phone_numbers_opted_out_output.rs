@@ -12,8 +12,10 @@ pub struct ListPhoneNumbersOptedOutOutput {
 }
 impl ListPhoneNumbersOptedOutOutput {
     /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
+    pub fn phone_numbers(&self) -> &[::std::string::String] {
+        self.phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code> action if additional records are available after the first page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

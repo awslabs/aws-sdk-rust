@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDataLake`](crate::operation::update_data_lake::builders::UpdateDataLakeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configurations(DataLakeConfiguration)`](crate::operation::update_data_lake::builders::UpdateDataLakeFluentBuilder::configurations) / [`set_configurations(Option<Vec<DataLakeConfiguration>>)`](crate::operation::update_data_lake::builders::UpdateDataLakeFluentBuilder::set_configurations): <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
+    ///   - [`configurations(DataLakeConfiguration)`](crate::operation::update_data_lake::builders::UpdateDataLakeFluentBuilder::configurations) / [`set_configurations(Option<Vec<DataLakeConfiguration>>)`](crate::operation::update_data_lake::builders::UpdateDataLakeFluentBuilder::set_configurations):<br>required: **true**<br><p>Specify the Region or Regions that will contribute data to the rollup region.</p><br>
     /// - On success, responds with [`UpdateDataLakeOutput`](crate::operation::update_data_lake::UpdateDataLakeOutput) with field(s):
     ///   - [`data_lakes(Option<Vec<DataLakeResource>>)`](crate::operation::update_data_lake::UpdateDataLakeOutput::data_lakes): <p>The created Security Lake configuration object.</p>
     /// - On failure, responds with [`SdkError<UpdateDataLakeError>`](crate::operation::update_data_lake::UpdateDataLakeError)

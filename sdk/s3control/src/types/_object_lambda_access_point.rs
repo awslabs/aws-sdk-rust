@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLambdaAccessPoint {
     /// <p>The name of the Object Lambda Access Point.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     pub object_lambda_access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the Object Lambda Access Point.</p>
@@ -13,8 +13,9 @@ pub struct ObjectLambdaAccessPoint {
 }
 impl ObjectLambdaAccessPoint {
     /// <p>The name of the Object Lambda Access Point.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
     pub fn object_lambda_access_point_arn(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ObjectLambdaAccessPointBuilder {
 }
 impl ObjectLambdaAccessPointBuilder {
     /// <p>The name of the Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ObjectLambdaAccessPointBuilder {
         &self.alias
     }
     /// Consumes the builder and constructs a [`ObjectLambdaAccessPoint`](crate::types::ObjectLambdaAccessPoint).
-    pub fn build(self) -> crate::types::ObjectLambdaAccessPoint {
-        crate::types::ObjectLambdaAccessPoint {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ObjectLambdaAccessPointBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ObjectLambdaAccessPoint, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ObjectLambdaAccessPoint {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ObjectLambdaAccessPoint",
+                )
+            })?,
             object_lambda_access_point_arn: self.object_lambda_access_point_arn,
             alias: self.alias,
-        }
+        })
     }
 }

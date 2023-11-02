@@ -48,6 +48,7 @@ pub struct UpdateEventLabelInputBuilder {
 }
 impl UpdateEventLabelInputBuilder {
     /// <p>The ID of the event associated with the label to update.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateEventLabelInputBuilder {
         &self.event_id
     }
     /// <p>The event type of the event associated with the label to update.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateEventLabelInputBuilder {
         &self.event_type_name
     }
     /// <p>The new label to assign to the event.</p>
+    /// This field is required.
     pub fn assigned_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assigned_label = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateEventLabelInputBuilder {
         &self.assigned_label
     }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    /// This field is required.
     pub fn label_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_timestamp = ::std::option::Option::Some(input.into());
         self

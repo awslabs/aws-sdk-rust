@@ -6,17 +6,17 @@ pub fn ser_lf_tag_key_resource(
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.tag_key {
-        object.key("TagKey").string(var_2.as_str());
+    {
+        object.key("TagKey").string(input.tag_key.as_str());
     }
-    if let Some(var_3) = &input.tag_values {
-        let mut array_4 = object.key("TagValues").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_2 = object.key("TagValues").start_array();
+        for item_3 in &input.tag_values {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::lf_tag_key_resource_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

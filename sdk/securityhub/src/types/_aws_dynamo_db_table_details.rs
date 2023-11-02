@@ -55,8 +55,10 @@ pub struct AwsDynamoDbTableDetails {
 }
 impl AwsDynamoDbTableDetails {
     /// <p>A list of attribute definitions for the table.</p>
-    pub fn attribute_definitions(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableAttributeDefinition]> {
-        self.attribute_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_definitions.is_none()`.
+    pub fn attribute_definitions(&self) -> &[crate::types::AwsDynamoDbTableAttributeDefinition] {
+        self.attribute_definitions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the billing for read/write capacity on the table.</p>
     pub fn billing_mode_summary(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableBillingModeSummary> {
@@ -68,8 +70,10 @@ impl AwsDynamoDbTableDetails {
         self.creation_date_time.as_deref()
     }
     /// <p>List of global secondary indexes for the table.</p>
-    pub fn global_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableGlobalSecondaryIndex]> {
-        self.global_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
+    pub fn global_secondary_indexes(&self) -> &[crate::types::AwsDynamoDbTableGlobalSecondaryIndex] {
+        self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>The version of global tables being used.</p>
     pub fn global_table_version(&self) -> ::std::option::Option<&str> {
@@ -80,8 +84,10 @@ impl AwsDynamoDbTableDetails {
         self.item_count
     }
     /// <p>The primary key structure for the table.</p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableKeySchema]> {
-        self.key_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
+    pub fn key_schema(&self) -> &[crate::types::AwsDynamoDbTableKeySchema] {
+        self.key_schema.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the latest stream for the table.</p>
     pub fn latest_stream_arn(&self) -> ::std::option::Option<&str> {
@@ -92,16 +98,20 @@ impl AwsDynamoDbTableDetails {
         self.latest_stream_label.as_deref()
     }
     /// <p>The list of local secondary indexes for the table.</p>
-    pub fn local_secondary_indexes(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableLocalSecondaryIndex]> {
-        self.local_secondary_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_secondary_indexes.is_none()`.
+    pub fn local_secondary_indexes(&self) -> &[crate::types::AwsDynamoDbTableLocalSecondaryIndex] {
+        self.local_secondary_indexes.as_deref().unwrap_or_default()
     }
     /// <p>Information about the provisioned throughput for the table.</p>
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The list of replicas of this table.</p>
-    pub fn replicas(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableReplica]> {
-        self.replicas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicas.is_none()`.
+    pub fn replicas(&self) -> &[crate::types::AwsDynamoDbTableReplica] {
+        self.replicas.as_deref().unwrap_or_default()
     }
     /// <p>Information about the restore for the table.</p>
     pub fn restore_summary(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableRestoreSummary> {

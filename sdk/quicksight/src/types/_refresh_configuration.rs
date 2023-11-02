@@ -28,6 +28,7 @@ pub struct RefreshConfigurationBuilder {
 }
 impl RefreshConfigurationBuilder {
     /// <p>The incremental refresh for the dataset.</p>
+    /// This field is required.
     pub fn incremental_refresh(mut self, input: crate::types::IncrementalRefresh) -> Self {
         self.incremental_refresh = ::std::option::Option::Some(input);
         self

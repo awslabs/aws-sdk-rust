@@ -9,8 +9,10 @@ pub struct CreateMembersOutput {
 }
 impl CreateMembersOutput {
     /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes the account ID and the email address.</p>
-    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::Result]> {
-        self.unprocessed_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
+    pub fn unprocessed_accounts(&self) -> &[crate::types::Result] {
+        self.unprocessed_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateMembersOutput {

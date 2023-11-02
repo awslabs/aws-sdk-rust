@@ -15,8 +15,10 @@ pub struct DeltaTarget {
 }
 impl DeltaTarget {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub fn delta_tables(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.delta_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delta_tables.is_none()`.
+    pub fn delta_tables(&self) -> &[::std::string::String] {
+        self.delta_tables.as_deref().unwrap_or_default()
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {

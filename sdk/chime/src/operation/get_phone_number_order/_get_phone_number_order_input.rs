@@ -27,6 +27,7 @@ pub struct GetPhoneNumberOrderInputBuilder {
 }
 impl GetPhoneNumberOrderInputBuilder {
     /// <p>The ID for the phone number order.</p>
+    /// This field is required.
     pub fn phone_number_order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_order_id = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ::std::fmt::Debug for ConflictException {
@@ -18,8 +18,8 @@ impl ::std::fmt::Debug for ConflictException {
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ConflictException {
@@ -57,6 +57,7 @@ pub struct ConflictExceptionBuilder {
 }
 impl ConflictExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -82,11 +83,18 @@ impl ConflictExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
-    pub fn build(self) -> crate::types::error::ConflictException {
-        crate::types::error::ConflictException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ConflictExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ConflictException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ConflictException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ConflictExceptionBuilder {

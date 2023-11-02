@@ -7,7 +7,7 @@ pub struct AwsDomainInformation {
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
@@ -17,8 +17,9 @@ impl AwsDomainInformation {
         self.owner_id.as_deref()
     }
     /// <p>Name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
@@ -56,6 +57,7 @@ impl AwsDomainInformationBuilder {
         &self.owner_id
     }
     /// <p>Name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl AwsDomainInformationBuilder {
         &self.region
     }
     /// Consumes the builder and constructs a [`AwsDomainInformation`](crate::types::AwsDomainInformation).
-    pub fn build(self) -> crate::types::AwsDomainInformation {
-        crate::types::AwsDomainInformation {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::types::builders::AwsDomainInformationBuilder::domain_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsDomainInformation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsDomainInformation {
             owner_id: self.owner_id,
-            domain_name: self.domain_name,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building AwsDomainInformation",
+                )
+            })?,
             region: self.region,
-        }
+        })
     }
 }

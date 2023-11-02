@@ -9,8 +9,10 @@ pub struct BatchPutScheduledUpdateGroupActionOutput {
 }
 impl BatchPutScheduledUpdateGroupActionOutput {
     /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
-    pub fn failed_scheduled_update_group_actions(&self) -> ::std::option::Option<&[crate::types::FailedScheduledUpdateGroupActionRequest]> {
-        self.failed_scheduled_update_group_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_scheduled_update_group_actions.is_none()`.
+    pub fn failed_scheduled_update_group_actions(&self) -> &[crate::types::FailedScheduledUpdateGroupActionRequest] {
+        self.failed_scheduled_update_group_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchPutScheduledUpdateGroupActionOutput {

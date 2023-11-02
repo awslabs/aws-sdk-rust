@@ -27,6 +27,7 @@ pub struct DeleteTrialInputBuilder {
 }
 impl DeleteTrialInputBuilder {
     /// <p>The name of the trial to delete.</p>
+    /// This field is required.
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
         self

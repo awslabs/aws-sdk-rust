@@ -27,6 +27,7 @@ pub struct GetCallAnalyticsCategoryInputBuilder {
 }
 impl GetCallAnalyticsCategoryInputBuilder {
     /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
+    /// This field is required.
     pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self

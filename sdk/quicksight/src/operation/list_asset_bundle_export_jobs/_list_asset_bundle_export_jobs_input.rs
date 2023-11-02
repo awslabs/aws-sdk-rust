@@ -41,6 +41,7 @@ pub struct ListAssetBundleExportJobsInputBuilder {
 }
 impl ListAssetBundleExportJobsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that the export jobs were executed in. </p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self

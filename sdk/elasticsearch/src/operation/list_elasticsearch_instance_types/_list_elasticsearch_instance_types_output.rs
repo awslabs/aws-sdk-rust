@@ -12,8 +12,10 @@ pub struct ListElasticsearchInstanceTypesOutput {
 }
 impl ListElasticsearchInstanceTypesOutput {
     /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
-    pub fn elasticsearch_instance_types(&self) -> ::std::option::Option<&[crate::types::EsPartitionInstanceType]> {
-        self.elasticsearch_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elasticsearch_instance_types.is_none()`.
+    pub fn elasticsearch_instance_types(&self) -> &[crate::types::EsPartitionInstanceType] {
+        self.elasticsearch_instance_types.as_deref().unwrap_or_default()
     }
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

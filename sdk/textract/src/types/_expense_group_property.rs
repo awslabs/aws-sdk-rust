@@ -11,8 +11,10 @@ pub struct ExpenseGroupProperty {
 }
 impl ExpenseGroupProperty {
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {

@@ -5,18 +5,19 @@ pub fn ser_aws_lambda_transformation(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.function_arn {
+    {
         let mut inner_writer = scope.start_el("FunctionArn").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.function_arn.as_str());
     }
-    if let Some(var_2) = &input.function_payload {
+    if let Some(var_1) = &input.function_payload {
         let mut inner_writer = scope.start_el("FunctionPayload").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(var_1.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_aws_lambda_transformation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AwsLambdaTransformation, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,6 +26,19 @@ pub fn de_aws_lambda_transformation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("FunctionArn") /* FunctionArn com.amazonaws.s3control#AwsLambdaTransformation$FunctionArn */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_function_arn(var_2);
+            }
+            ,
+            s if s.matches("FunctionPayload") /* FunctionPayload com.amazonaws.s3control#AwsLambdaTransformation$FunctionPayload */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -34,24 +48,13 @@ pub fn de_aws_lambda_transformation(
                         ?
                     )
                 ;
-                builder = builder.set_function_arn(var_3);
-            }
-            ,
-            s if s.matches("FunctionPayload") /* FunctionPayload com.amazonaws.s3control#AwsLambdaTransformation$FunctionPayload */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_function_payload(var_4);
+                builder = builder.set_function_payload(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::aws_lambda_transformation_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

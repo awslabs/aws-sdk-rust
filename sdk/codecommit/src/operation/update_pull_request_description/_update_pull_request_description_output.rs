@@ -34,6 +34,7 @@ pub struct UpdatePullRequestDescriptionOutputBuilder {
 }
 impl UpdatePullRequestDescriptionOutputBuilder {
     /// <p>Information about the updated pull request.</p>
+    /// This field is required.
     pub fn pull_request(mut self, input: crate::types::PullRequest) -> Self {
         self.pull_request = ::std::option::Option::Some(input);
         self

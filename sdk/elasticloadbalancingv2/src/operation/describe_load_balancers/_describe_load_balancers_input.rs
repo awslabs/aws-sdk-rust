@@ -14,12 +14,16 @@ pub struct DescribeLoadBalancersInput {
 }
 impl DescribeLoadBalancersInput {
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
-    pub fn load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_arns.is_none()`.
+    pub fn load_balancer_arns(&self) -> &[::std::string::String] {
+        self.load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The names of the load balancers.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

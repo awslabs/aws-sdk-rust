@@ -62,6 +62,7 @@ pub struct ListRecommendedIntentsInputBuilder {
 }
 impl ListRecommendedIntentsInputBuilder {
     /// <p>The unique identifier of the bot associated with the recommended intents.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListRecommendedIntentsInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot that contains the recommended intents.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ListRecommendedIntentsInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale of the recommended intents.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl ListRecommendedIntentsInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the bot recommendation that contains the recommended intents.</p>
+    /// This field is required.
     pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self

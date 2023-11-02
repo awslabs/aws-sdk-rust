@@ -16,8 +16,10 @@ impl DescribeSourceRegionsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-    pub fn source_regions(&self) -> ::std::option::Option<&[crate::types::SourceRegion]> {
-        self.source_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_regions.is_none()`.
+    pub fn source_regions(&self) -> &[crate::types::SourceRegion] {
+        self.source_regions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSourceRegionsOutput {

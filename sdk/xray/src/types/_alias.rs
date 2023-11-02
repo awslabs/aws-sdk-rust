@@ -17,8 +17,10 @@ impl Alias {
         self.name.as_deref()
     }
     /// <p>A list of names for the alias, including the canonical name.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The type of the alias.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {

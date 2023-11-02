@@ -17,8 +17,10 @@ impl DescribeExpressionsInput {
         self.domain_name.as_deref()
     }
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn expression_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.expression_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expression_names.is_none()`.
+    pub fn expression_names(&self) -> &[::std::string::String] {
+        self.expression_names.as_deref().unwrap_or_default()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct DescribeExpressionsInputBuilder {
 }
 impl DescribeExpressionsInputBuilder {
     /// <p>The name of the domain you want to describe.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

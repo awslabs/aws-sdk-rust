@@ -28,6 +28,7 @@ pub struct ThumbnailConfigurationBuilder {
 }
 impl ThumbnailConfigurationBuilder {
     /// Whether Thumbnail is enabled.
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ThumbnailState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self

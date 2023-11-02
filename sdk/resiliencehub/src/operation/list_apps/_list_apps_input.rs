@@ -9,8 +9,14 @@ pub struct ListAppsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name for the one of the listed applications.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    pub from_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    pub to_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    pub reverse_order: ::std::option::Option<bool>,
 }
 impl ListAppsInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -25,9 +31,21 @@ impl ListAppsInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
+    }
+    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    pub fn from_last_assessment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.from_last_assessment_time.as_ref()
+    }
+    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    pub fn to_last_assessment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.to_last_assessment_time.as_ref()
+    }
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    pub fn reverse_order(&self) -> ::std::option::Option<bool> {
+        self.reverse_order
     }
 }
 impl ListAppsInput {
@@ -45,6 +63,9 @@ pub struct ListAppsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) app_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) from_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) to_last_assessment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) reverse_order: ::std::option::Option<bool>,
 }
 impl ListAppsInputBuilder {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -89,19 +110,61 @@ impl ListAppsInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
+    }
+    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    pub fn from_last_assessment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.from_last_assessment_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    pub fn set_from_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.from_last_assessment_time = input;
+        self
+    }
+    /// <p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p>
+    pub fn get_from_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_last_assessment_time
+    }
+    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    pub fn to_last_assessment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.to_last_assessment_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    pub fn set_to_last_assessment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.to_last_assessment_time = input;
+        self
+    }
+    /// <p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p>
+    pub fn get_to_last_assessment_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to_last_assessment_time
+    }
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    pub fn reverse_order(mut self, input: bool) -> Self {
+        self.reverse_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.reverse_order = input;
+        self
+    }
+    /// <p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p>
+    pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
+        &self.reverse_order
     }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_http::operation::error::BuildError> {
@@ -110,6 +173,9 @@ impl ListAppsInputBuilder {
             max_results: self.max_results,
             name: self.name,
             app_arn: self.app_arn,
+            from_last_assessment_time: self.from_last_assessment_time,
+            to_last_assessment_time: self.to_last_assessment_time,
+            reverse_order: self.reverse_order,
         })
     }
 }

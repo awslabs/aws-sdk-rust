@@ -11,8 +11,10 @@ pub struct BatchGetRumMetricDefinitionsOutput {
 }
 impl BatchGetRumMetricDefinitionsOutput {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
-    pub fn metric_definitions(&self) -> ::std::option::Option<&[crate::types::MetricDefinition]> {
-        self.metric_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_definitions.is_none()`.
+    pub fn metric_definitions(&self) -> &[crate::types::MetricDefinition] {
+        self.metric_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

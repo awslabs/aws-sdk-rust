@@ -9,16 +9,16 @@ pub struct HealthCheck {
     /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
     /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    pub target: ::std::option::Option<::std::string::String>,
+    pub target: ::std::string::String,
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    pub interval: ::std::option::Option<i32>,
+    pub interval: i32,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>This value must be less than the <code>Interval</code> value.</p>
-    pub timeout: ::std::option::Option<i32>,
+    pub timeout: i32,
     /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    pub unhealthy_threshold: ::std::option::Option<i32>,
+    pub unhealthy_threshold: i32,
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    pub healthy_threshold: ::std::option::Option<i32>,
+    pub healthy_threshold: i32,
 }
 impl HealthCheck {
     /// <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p>
@@ -26,24 +26,25 @@ impl HealthCheck {
     /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
     /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
-        self.target.as_deref()
+    pub fn target(&self) -> &str {
+        use std::ops::Deref;
+        self.target.deref()
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    pub fn interval(&self) -> ::std::option::Option<i32> {
+    pub fn interval(&self) -> i32 {
         self.interval
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>This value must be less than the <code>Interval</code> value.</p>
-    pub fn timeout(&self) -> ::std::option::Option<i32> {
+    pub fn timeout(&self) -> i32 {
         self.timeout
     }
     /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
-    pub fn unhealthy_threshold(&self) -> ::std::option::Option<i32> {
+    pub fn unhealthy_threshold(&self) -> i32 {
         self.unhealthy_threshold
     }
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
-    pub fn healthy_threshold(&self) -> ::std::option::Option<i32> {
+    pub fn healthy_threshold(&self) -> i32 {
         self.healthy_threshold
     }
 }
@@ -70,6 +71,7 @@ impl HealthCheckBuilder {
     /// <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p>
     /// <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than "200 OK" within the timeout period is considered unhealthy.</p>
     /// <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +94,7 @@ impl HealthCheckBuilder {
         &self.target
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
+    /// This field is required.
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
@@ -107,6 +110,7 @@ impl HealthCheckBuilder {
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     /// <p>This value must be less than the <code>Interval</code> value.</p>
+    /// This field is required.
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
         self
@@ -123,6 +127,7 @@ impl HealthCheckBuilder {
         &self.timeout
     }
     /// <p>The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.</p>
+    /// This field is required.
     pub fn unhealthy_threshold(mut self, input: i32) -> Self {
         self.unhealthy_threshold = ::std::option::Option::Some(input);
         self
@@ -137,6 +142,7 @@ impl HealthCheckBuilder {
         &self.unhealthy_threshold
     }
     /// <p>The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.</p>
+    /// This field is required.
     pub fn healthy_threshold(mut self, input: i32) -> Self {
         self.healthy_threshold = ::std::option::Option::Some(input);
         self
@@ -151,13 +157,44 @@ impl HealthCheckBuilder {
         &self.healthy_threshold
     }
     /// Consumes the builder and constructs a [`HealthCheck`](crate::types::HealthCheck).
-    pub fn build(self) -> crate::types::HealthCheck {
-        crate::types::HealthCheck {
-            target: self.target,
-            interval: self.interval,
-            timeout: self.timeout,
-            unhealthy_threshold: self.unhealthy_threshold,
-            healthy_threshold: self.healthy_threshold,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target`](crate::types::builders::HealthCheckBuilder::target)
+    /// - [`interval`](crate::types::builders::HealthCheckBuilder::interval)
+    /// - [`timeout`](crate::types::builders::HealthCheckBuilder::timeout)
+    /// - [`unhealthy_threshold`](crate::types::builders::HealthCheckBuilder::unhealthy_threshold)
+    /// - [`healthy_threshold`](crate::types::builders::HealthCheckBuilder::healthy_threshold)
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HealthCheck {
+            target: self.target.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target",
+                    "target was not specified but it is required when building HealthCheck",
+                )
+            })?,
+            interval: self.interval.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "interval",
+                    "interval was not specified but it is required when building HealthCheck",
+                )
+            })?,
+            timeout: self.timeout.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timeout",
+                    "timeout was not specified but it is required when building HealthCheck",
+                )
+            })?,
+            unhealthy_threshold: self.unhealthy_threshold.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "unhealthy_threshold",
+                    "unhealthy_threshold was not specified but it is required when building HealthCheck",
+                )
+            })?,
+            healthy_threshold: self.healthy_threshold.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "healthy_threshold",
+                    "healthy_threshold was not specified but it is required when building HealthCheck",
+                )
+            })?,
+        })
     }
 }

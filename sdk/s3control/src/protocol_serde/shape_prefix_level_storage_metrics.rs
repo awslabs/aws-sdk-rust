@@ -17,6 +17,7 @@ pub fn ser_prefix_level_storage_metrics(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_prefix_level_storage_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PrefixLevelStorageMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {

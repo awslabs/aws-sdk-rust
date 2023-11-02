@@ -8,7 +8,7 @@ pub struct ListBatchJobExecutionsInput {
     /// <p>The maximum number of batch job executions to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The unique identifier of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The unique identifier of each batch job execution.</p>
     pub execution_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of each batch job execution.</p>
@@ -30,12 +30,15 @@ impl ListBatchJobExecutionsInput {
         self.max_results
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn execution_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.execution_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_ids.is_none()`.
+    pub fn execution_ids(&self) -> &[::std::string::String] {
+        self.execution_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of each batch job execution.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
@@ -104,6 +107,7 @@ impl ListBatchJobExecutionsInputBuilder {
         &self.max_results
     }
     /// <p>The unique identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -194,6 +198,8 @@ impl ListBatchJobExecutionsInputBuilder {
         &self.started_before
     }
     /// Consumes the builder and constructs a [`ListBatchJobExecutionsInput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -203,7 +209,12 @@ impl ListBatchJobExecutionsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_batch_job_executions::ListBatchJobExecutionsInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building ListBatchJobExecutionsInput",
+                )
+            })?,
             execution_ids: self.execution_ids,
             job_name: self.job_name,
             status: self.status,

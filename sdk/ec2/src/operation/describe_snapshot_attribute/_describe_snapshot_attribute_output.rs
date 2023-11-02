@@ -13,12 +13,16 @@ pub struct DescribeSnapshotAttributeOutput {
 }
 impl DescribeSnapshotAttributeOutput {
     /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
-    pub fn create_volume_permissions(&self) -> ::std::option::Option<&[crate::types::CreateVolumePermission]> {
-        self.create_volume_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.create_volume_permissions.is_none()`.
+    pub fn create_volume_permissions(&self) -> &[crate::types::CreateVolumePermission] {
+        self.create_volume_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The product codes.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the EBS snapshot.</p>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {

@@ -97,6 +97,7 @@ pub struct CreateMlModelInputBuilder {
 }
 impl CreateMlModelInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +132,7 @@ impl CreateMlModelInputBuilder {
     /// <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>
     /// </ul>
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    /// This field is required.
     pub fn ml_model_type(mut self, input: crate::types::MlModelType) -> Self {
         self.ml_model_type = ::std::option::Option::Some(input);
         self
@@ -201,6 +203,7 @@ impl CreateMlModelInputBuilder {
         &self.parameters
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
+    /// This field is required.
     pub fn training_data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_data_source_id = ::std::option::Option::Some(input.into());
         self

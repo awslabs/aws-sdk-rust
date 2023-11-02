@@ -33,8 +33,10 @@ impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
-    pub fn projected_utilization_metrics(&self) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
-        self.projected_utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_utilization_metrics.is_none()`.
+    pub fn projected_utilization_metrics(&self) -> &[crate::types::UtilizationMetric] {
+        self.projected_utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>

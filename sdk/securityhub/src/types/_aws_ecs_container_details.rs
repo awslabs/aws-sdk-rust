@@ -23,8 +23,10 @@ impl AwsEcsContainerDetails {
         self.image.as_deref()
     }
     /// <p>The mount points for data volumes in your container. </p>
-    pub fn mount_points(&self) -> ::std::option::Option<&[crate::types::AwsMountPoint]> {
-        self.mount_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_points.is_none()`.
+    pub fn mount_points(&self) -> &[crate::types::AwsMountPoint] {
+        self.mount_points.as_deref().unwrap_or_default()
     }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user). </p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {

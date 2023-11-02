@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribedCertificate {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
@@ -35,8 +35,9 @@ pub struct DescribedCertificate {
 }
 impl DescribedCertificate {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn certificate_id(&self) -> ::std::option::Option<&str> {
@@ -87,8 +88,10 @@ impl DescribedCertificate {
         self.description.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for DescribedCertificate {
@@ -139,6 +142,7 @@ pub struct DescribedCertificateBuilder {
 }
 impl DescribedCertificateBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -341,9 +345,16 @@ impl DescribedCertificateBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedCertificate`](crate::types::DescribedCertificate).
-    pub fn build(self) -> crate::types::DescribedCertificate {
-        crate::types::DescribedCertificate {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedCertificateBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedCertificate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedCertificate {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedCertificate",
+                )
+            })?,
             certificate_id: self.certificate_id,
             usage: self.usage,
             status: self.status,
@@ -357,7 +368,7 @@ impl DescribedCertificateBuilder {
             r#type: self.r#type,
             description: self.description,
             tags: self.tags,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DescribedCertificateBuilder {

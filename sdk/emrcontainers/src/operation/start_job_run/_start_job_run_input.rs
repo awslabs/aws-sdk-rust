@@ -111,6 +111,7 @@ impl StartJobRunInputBuilder {
         &self.name
     }
     /// <p>The virtual cluster ID for which the job run request is submitted.</p>
+    /// This field is required.
     pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +126,7 @@ impl StartJobRunInputBuilder {
         &self.virtual_cluster_id
     }
     /// <p>The client idempotency token of the job run request. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

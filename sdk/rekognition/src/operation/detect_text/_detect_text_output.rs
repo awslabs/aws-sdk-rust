@@ -11,8 +11,10 @@ pub struct DetectTextOutput {
 }
 impl DetectTextOutput {
     /// <p>An array of text that was detected in the input image.</p>
-    pub fn text_detections(&self) -> ::std::option::Option<&[crate::types::TextDetection]> {
-        self.text_detections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_detections.is_none()`.
+    pub fn text_detections(&self) -> &[crate::types::TextDetection] {
+        self.text_detections.as_deref().unwrap_or_default()
     }
     /// <p>The model version used to detect text.</p>
     pub fn text_model_version(&self) -> ::std::option::Option<&str> {

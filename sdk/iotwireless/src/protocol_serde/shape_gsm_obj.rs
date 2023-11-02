@@ -3,59 +3,59 @@ pub fn ser_gsm_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GsmObj,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mcc {
+    {
         object.key("Mcc").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.mcc).into()),
         );
     }
-    if let Some(var_2) = &input.mnc {
+    {
         object.key("Mnc").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.mnc).into()),
         );
     }
-    if let Some(var_3) = &input.lac {
+    {
         object.key("Lac").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.lac).into()),
+        );
+    }
+    {
+        object.key("GeranCid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.geran_cid).into()),
+        );
+    }
+    if let Some(var_1) = &input.gsm_local_id {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("GsmLocalId").start_object();
+        crate::protocol_serde::shape_gsm_local_id::ser_gsm_local_id(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.gsm_timing_advance {
+        object.key("GsmTimingAdvance").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.geran_cid {
-        object.key("GeranCid").number(
+    if let Some(var_4) = &input.rx_level {
+        object.key("RxLevel").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.gsm_local_id {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("GsmLocalId").start_object();
-        crate::protocol_serde::shape_gsm_local_id::ser_gsm_local_id(&mut object_6, var_5)?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.gsm_timing_advance {
-        object.key("GsmTimingAdvance").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.rx_level {
-        object.key("RxLevel").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
-        );
-    }
-    if let Some(var_9) = &input.gsm_nmr {
-        let mut array_10 = object.key("GsmNmr").start_array();
-        for item_11 in var_9 {
+    if let Some(var_5) = &input.gsm_nmr {
+        let mut array_6 = object.key("GsmNmr").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_gsm_nmr_obj::ser_gsm_nmr_obj(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_gsm_nmr_obj::ser_gsm_nmr_obj(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_10.finish();
+        array_6.finish();
     }
     Ok(())
 }

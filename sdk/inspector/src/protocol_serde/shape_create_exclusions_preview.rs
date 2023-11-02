@@ -32,11 +32,10 @@ pub fn de_create_exclusions_preview_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalException" => crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::InternalException({
@@ -47,11 +46,10 @@ pub fn de_create_exclusions_preview_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidInputException" => crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::InvalidInputException({
@@ -62,11 +60,10 @@ pub fn de_create_exclusions_preview_http_error(
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_input_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NoSuchEntityException" => crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::NoSuchEntityException({
@@ -77,11 +74,10 @@ pub fn de_create_exclusions_preview_http_error(
                 output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::no_such_entity_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "PreviewGenerationInProgressException" => {
@@ -97,11 +93,10 @@ pub fn de_create_exclusions_preview_http_error(
                         )
                         .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::preview_generation_in_progress_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -113,11 +108,10 @@ pub fn de_create_exclusions_preview_http_error(
                     let mut output = crate::types::error::builders::ServiceTemporarilyUnavailableExceptionBuilder::default();
                     output = crate::protocol_serde::shape_service_temporarily_unavailable_exception::de_service_temporarily_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_temporarily_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -140,7 +134,9 @@ pub fn de_create_exclusions_preview_http_response(
         output = crate::protocol_serde::shape_create_exclusions_preview::de_create_exclusions_preview(_response_body, output)
             .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_exclusions_preview_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_exclusions_preview::CreateExclusionsPreviewError::unhandled)?
     })
 }
 

@@ -6,18 +6,18 @@ pub fn ser_message_attribute_value(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DataType");
-    if let Some(var_2) = &input.data_type {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.data_type);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("StringValue");
-    if let Some(var_4) = &input.string_value {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("StringValue");
+    if let Some(var_3) = &input.string_value {
+        scope_2.string(var_3);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("BinaryValue");
-    if let Some(var_6) = &input.binary_value {
-        scope_5.string(&::aws_smithy_types::base64::encode(var_6));
+    let mut scope_4 = writer.prefix("BinaryValue");
+    if let Some(var_5) = &input.binary_value {
+        scope_4.string(&::aws_smithy_types::base64::encode(var_5));
     }
     Ok(())
 }

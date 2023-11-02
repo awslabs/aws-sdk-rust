@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryPolicyExecution {
     /// <p>The current number of attempts made on the driver of the job.</p>
-    pub current_attempt_count: ::std::option::Option<i32>,
+    pub current_attempt_count: i32,
 }
 impl RetryPolicyExecution {
     /// <p>The current number of attempts made on the driver of the job.</p>
-    pub fn current_attempt_count(&self) -> ::std::option::Option<i32> {
+    pub fn current_attempt_count(&self) -> i32 {
         self.current_attempt_count
     }
 }
@@ -28,6 +28,7 @@ pub struct RetryPolicyExecutionBuilder {
 }
 impl RetryPolicyExecutionBuilder {
     /// <p>The current number of attempts made on the driver of the job.</p>
+    /// This field is required.
     pub fn current_attempt_count(mut self, input: i32) -> Self {
         self.current_attempt_count = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl RetryPolicyExecutionBuilder {
         &self.current_attempt_count
     }
     /// Consumes the builder and constructs a [`RetryPolicyExecution`](crate::types::RetryPolicyExecution).
-    pub fn build(self) -> crate::types::RetryPolicyExecution {
-        crate::types::RetryPolicyExecution {
-            current_attempt_count: self.current_attempt_count,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`current_attempt_count`](crate::types::builders::RetryPolicyExecutionBuilder::current_attempt_count)
+    pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyExecution, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RetryPolicyExecution {
+            current_attempt_count: self.current_attempt_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "current_attempt_count",
+                    "current_attempt_count was not specified but it is required when building RetryPolicyExecution",
+                )
+            })?,
+        })
     }
 }

@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BouncedRecipientInfo {
     /// <p>The email address of the recipient of the bounced email.</p>
-    pub recipient: ::std::option::Option<::std::string::String>,
+    pub recipient: ::std::string::String,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub recipient_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.</p>
@@ -16,8 +16,9 @@ pub struct BouncedRecipientInfo {
 }
 impl BouncedRecipientInfo {
     /// <p>The email address of the recipient of the bounced email.</p>
-    pub fn recipient(&self) -> ::std::option::Option<&str> {
-        self.recipient.as_deref()
+    pub fn recipient(&self) -> &str {
+        use std::ops::Deref;
+        self.recipient.deref()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn recipient_arn(&self) -> ::std::option::Option<&str> {
@@ -50,6 +51,7 @@ pub struct BouncedRecipientInfoBuilder {
 }
 impl BouncedRecipientInfoBuilder {
     /// <p>The email address of the recipient of the bounced email.</p>
+    /// This field is required.
     pub fn recipient(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipient = ::std::option::Option::Some(input.into());
         self
@@ -106,12 +108,19 @@ impl BouncedRecipientInfoBuilder {
         &self.recipient_dsn_fields
     }
     /// Consumes the builder and constructs a [`BouncedRecipientInfo`](crate::types::BouncedRecipientInfo).
-    pub fn build(self) -> crate::types::BouncedRecipientInfo {
-        crate::types::BouncedRecipientInfo {
-            recipient: self.recipient,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recipient`](crate::types::builders::BouncedRecipientInfoBuilder::recipient)
+    pub fn build(self) -> ::std::result::Result<crate::types::BouncedRecipientInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BouncedRecipientInfo {
+            recipient: self.recipient.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recipient",
+                    "recipient was not specified but it is required when building BouncedRecipientInfo",
+                )
+            })?,
             recipient_arn: self.recipient_arn,
             bounce_type: self.bounce_type,
             recipient_dsn_fields: self.recipient_dsn_fields,
-        }
+        })
     }
 }

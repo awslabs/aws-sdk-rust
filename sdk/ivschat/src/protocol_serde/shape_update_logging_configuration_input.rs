@@ -9,11 +9,11 @@ pub fn ser_update_logging_configuration_input(
         crate::protocol_serde::shape_destination_configuration::ser_destination_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.identifier {
-        object.key("identifier").string(var_3.as_str());
+    {
+        object.key("identifier").string(input.identifier.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
     }
     Ok(())
 }

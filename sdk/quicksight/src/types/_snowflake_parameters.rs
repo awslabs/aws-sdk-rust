@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeParameters {
     /// <p>Host.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>Database.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>Warehouse.</p>
-    pub warehouse: ::std::option::Option<::std::string::String>,
+    pub warehouse: ::std::string::String,
 }
 impl SnowflakeParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>Warehouse.</p>
-    pub fn warehouse(&self) -> ::std::option::Option<&str> {
-        self.warehouse.as_deref()
+    pub fn warehouse(&self) -> &str {
+        use std::ops::Deref;
+        self.warehouse.deref()
     }
 }
 impl SnowflakeParameters {
@@ -42,6 +45,7 @@ pub struct SnowflakeParametersBuilder {
 }
 impl SnowflakeParametersBuilder {
     /// <p>Host.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl SnowflakeParametersBuilder {
         &self.host
     }
     /// <p>Database.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl SnowflakeParametersBuilder {
         &self.database
     }
     /// <p>Warehouse.</p>
+    /// This field is required.
     pub fn warehouse(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warehouse = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl SnowflakeParametersBuilder {
         &self.warehouse
     }
     /// Consumes the builder and constructs a [`SnowflakeParameters`](crate::types::SnowflakeParameters).
-    pub fn build(self) -> crate::types::SnowflakeParameters {
-        crate::types::SnowflakeParameters {
-            host: self.host,
-            database: self.database,
-            warehouse: self.warehouse,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::SnowflakeParametersBuilder::host)
+    /// - [`database`](crate::types::builders::SnowflakeParametersBuilder::database)
+    /// - [`warehouse`](crate::types::builders::SnowflakeParametersBuilder::warehouse)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnowflakeParameters {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building SnowflakeParameters",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building SnowflakeParameters",
+                )
+            })?,
+            warehouse: self.warehouse.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "warehouse",
+                    "warehouse was not specified but it is required when building SnowflakeParameters",
+                )
+            })?,
+        })
     }
 }

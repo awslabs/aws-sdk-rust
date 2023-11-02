@@ -15,8 +15,10 @@ impl AddFlowSourcesOutput {
         self.flow_arn.as_deref()
     }
     /// The details of the newly added sources.
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::Source]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::Source] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AddFlowSourcesOutput {

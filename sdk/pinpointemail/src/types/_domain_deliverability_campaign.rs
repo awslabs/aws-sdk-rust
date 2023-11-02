@@ -51,8 +51,10 @@ impl DomainDeliverabilityCampaign {
         self.from_address.as_deref()
     }
     /// <p>The IP addresses that were used to send the email message.</p>
-    pub fn sending_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sending_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sending_ips.is_none()`.
+    pub fn sending_ips(&self) -> &[::std::string::String] {
+        self.sending_ips.as_deref().unwrap_or_default()
     }
     /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
     pub fn first_seen_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -87,8 +89,10 @@ impl DomainDeliverabilityCampaign {
         self.projected_volume
     }
     /// <p>The major email providers who handled the email message.</p>
-    pub fn esps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.esps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.esps.is_none()`.
+    pub fn esps(&self) -> &[::std::string::String] {
+        self.esps.as_deref().unwrap_or_default()
     }
 }
 impl DomainDeliverabilityCampaign {

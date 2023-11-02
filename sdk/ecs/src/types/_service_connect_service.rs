@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceConnectService {
     /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
-    pub port_name: ::std::option::Option<::std::string::String>,
+    pub port_name: ::std::string::String,
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
     /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     pub discovery_name: ::std::option::Option<::std::string::String>,
@@ -21,8 +21,9 @@ pub struct ServiceConnectService {
 }
 impl ServiceConnectService {
     /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
-    pub fn port_name(&self) -> ::std::option::Option<&str> {
-        self.port_name.as_deref()
+    pub fn port_name(&self) -> &str {
+        use std::ops::Deref;
+        self.port_name.deref()
     }
     /// <p>The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
     /// <p>If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
@@ -33,8 +34,10 @@ impl ServiceConnectService {
     /// <p>Each alias ("endpoint") is a fully-qualified name and port number that other Amazon ECS tasks ("clients") can use to connect to this service.</p>
     /// <p>Each name and port mapping must be unique within the namespace.</p>
     /// <p>For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code> with one <code>port</code>.</p>
-    pub fn client_aliases(&self) -> ::std::option::Option<&[crate::types::ServiceConnectClientAlias]> {
-        self.client_aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_aliases.is_none()`.
+    pub fn client_aliases(&self) -> &[crate::types::ServiceConnectClientAlias] {
+        self.client_aliases.as_deref().unwrap_or_default()
     }
     /// <p>The port number for the Service Connect proxy to listen on.</p>
     /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
@@ -61,6 +64,7 @@ pub struct ServiceConnectServiceBuilder {
 }
 impl ServiceConnectServiceBuilder {
     /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
+    /// This field is required.
     pub fn port_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.port_name = ::std::option::Option::Some(input.into());
         self
@@ -141,12 +145,19 @@ impl ServiceConnectServiceBuilder {
         &self.ingress_port_override
     }
     /// Consumes the builder and constructs a [`ServiceConnectService`](crate::types::ServiceConnectService).
-    pub fn build(self) -> crate::types::ServiceConnectService {
-        crate::types::ServiceConnectService {
-            port_name: self.port_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`port_name`](crate::types::builders::ServiceConnectServiceBuilder::port_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceConnectService, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceConnectService {
+            port_name: self.port_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port_name",
+                    "port_name was not specified but it is required when building ServiceConnectService",
+                )
+            })?,
             discovery_name: self.discovery_name,
             client_aliases: self.client_aliases,
             ingress_port_override: self.ingress_port_override,
-        }
+        })
     }
 }

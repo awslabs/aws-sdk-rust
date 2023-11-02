@@ -21,8 +21,10 @@ impl GetAutoSnapshotsOutput {
         self.resource_type.as_ref()
     }
     /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
-    pub fn auto_snapshots(&self) -> ::std::option::Option<&[crate::types::AutoSnapshotDetails]> {
-        self.auto_snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_snapshots.is_none()`.
+    pub fn auto_snapshots(&self) -> &[crate::types::AutoSnapshotDetails] {
+        self.auto_snapshots.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAutoSnapshotsOutput {

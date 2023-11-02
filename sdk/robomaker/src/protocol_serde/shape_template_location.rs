@@ -3,11 +3,11 @@ pub fn ser_template_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateLocation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_bucket {
-        object.key("s3Bucket").string(var_1.as_str());
+    {
+        object.key("s3Bucket").string(input.s3_bucket.as_str());
     }
-    if let Some(var_2) = &input.s3_key {
-        object.key("s3Key").string(var_2.as_str());
+    {
+        object.key("s3Key").string(input.s3_key.as_str());
     }
     Ok(())
 }

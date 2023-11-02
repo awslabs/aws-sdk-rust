@@ -34,6 +34,7 @@ pub struct UpdateAnomalyMonitorInputBuilder {
 }
 impl UpdateAnomalyMonitorInputBuilder {
     /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self

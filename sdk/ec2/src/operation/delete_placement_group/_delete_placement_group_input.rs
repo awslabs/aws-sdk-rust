@@ -48,6 +48,7 @@ impl DeletePlacementGroupInputBuilder {
         &self.dry_run
     }
     /// <p>The name of the placement group.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self

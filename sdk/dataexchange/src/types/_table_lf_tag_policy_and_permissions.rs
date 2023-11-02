@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableLfTagPolicyAndPermissions {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
+    pub expression: ::std::vec::Vec<crate::types::LfTag>,
     /// <p>The permissions granted to subscribers on table resources.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
+    pub permissions: ::std::vec::Vec<crate::types::TableTagPolicyLfPermission>,
 }
 impl TableLfTagPolicyAndPermissions {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &[crate::types::LfTag] {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>The permissions granted to subscribers on table resources.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::TableTagPolicyLfPermission]> {
-        self.permissions.as_deref()
+    pub fn permissions(&self) -> &[crate::types::TableTagPolicyLfPermission] {
+        use std::ops::Deref;
+        self.permissions.deref()
     }
 }
 impl TableLfTagPolicyAndPermissions {
@@ -75,10 +77,23 @@ impl TableLfTagPolicyAndPermissionsBuilder {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`TableLfTagPolicyAndPermissions`](crate::types::TableLfTagPolicyAndPermissions).
-    pub fn build(self) -> crate::types::TableLfTagPolicyAndPermissions {
-        crate::types::TableLfTagPolicyAndPermissions {
-            expression: self.expression,
-            permissions: self.permissions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::TableLfTagPolicyAndPermissionsBuilder::expression)
+    /// - [`permissions`](crate::types::builders::TableLfTagPolicyAndPermissionsBuilder::permissions)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableLfTagPolicyAndPermissions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableLfTagPolicyAndPermissions {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building TableLfTagPolicyAndPermissions",
+                )
+            })?,
+            permissions: self.permissions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "permissions",
+                    "permissions was not specified but it is required when building TableLfTagPolicyAndPermissions",
+                )
+            })?,
+        })
     }
 }

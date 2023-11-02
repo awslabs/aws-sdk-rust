@@ -39,8 +39,10 @@ impl GetCelebrityRecognitionOutput {
         self.next_token.as_deref()
     }
     /// <p>Array of celebrities recognized in the video.</p>
-    pub fn celebrities(&self) -> ::std::option::Option<&[crate::types::CelebrityRecognition]> {
-        self.celebrities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.celebrities.is_none()`.
+    pub fn celebrities(&self) -> &[crate::types::CelebrityRecognition] {
+        self.celebrities.as_deref().unwrap_or_default()
     }
     /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {

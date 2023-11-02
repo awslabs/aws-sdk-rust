@@ -7,7 +7,7 @@ pub struct TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>Reference identifier for the test recommendation.</p>
-    pub reference_id: ::std::option::Option<::std::string::String>,
+    pub reference_id: ::std::string::String,
     /// <p>Name of the Application Component.</p>
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the test recommendation.</p>
@@ -33,8 +33,9 @@ impl TestRecommendation {
         self.recommendation_id.as_deref()
     }
     /// <p>Reference identifier for the test recommendation.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
-        self.reference_id.as_deref()
+    pub fn reference_id(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_id.deref()
     }
     /// <p>Name of the Application Component.</p>
     pub fn app_component_name(&self) -> ::std::option::Option<&str> {
@@ -61,16 +62,20 @@ impl TestRecommendation {
         self.description.as_deref()
     }
     /// <p>The test recommendation items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::RecommendationItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::RecommendationItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Prerequisite of the test recommendation.</p>
     pub fn prerequisite(&self) -> ::std::option::Option<&str> {
         self.prerequisite.as_deref()
     }
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    pub fn depends_on_alarms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.depends_on_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on_alarms.is_none()`.
+    pub fn depends_on_alarms(&self) -> &[::std::string::String] {
+        self.depends_on_alarms.as_deref().unwrap_or_default()
     }
 }
 impl TestRecommendation {
@@ -112,6 +117,7 @@ impl TestRecommendationBuilder {
         &self.recommendation_id
     }
     /// <p>Reference identifier for the test recommendation.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
@@ -264,10 +270,17 @@ impl TestRecommendationBuilder {
         &self.depends_on_alarms
     }
     /// Consumes the builder and constructs a [`TestRecommendation`](crate::types::TestRecommendation).
-    pub fn build(self) -> crate::types::TestRecommendation {
-        crate::types::TestRecommendation {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reference_id`](crate::types::builders::TestRecommendationBuilder::reference_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestRecommendation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestRecommendation {
             recommendation_id: self.recommendation_id,
-            reference_id: self.reference_id,
+            reference_id: self.reference_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reference_id",
+                    "reference_id was not specified but it is required when building TestRecommendation",
+                )
+            })?,
             app_component_name: self.app_component_name,
             name: self.name,
             intent: self.intent,
@@ -277,6 +290,6 @@ impl TestRecommendationBuilder {
             items: self.items,
             prerequisite: self.prerequisite,
             depends_on_alarms: self.depends_on_alarms,
-        }
+        })
     }
 }

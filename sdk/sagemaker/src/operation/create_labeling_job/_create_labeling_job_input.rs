@@ -134,8 +134,10 @@ impl CreateLabelingJobInput {
         self.human_task_config.as_ref()
     }
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLabelingJobInput {
@@ -162,6 +164,7 @@ pub struct CreateLabelingJobInputBuilder {
 }
 impl CreateLabelingJobInputBuilder {
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
+    /// This field is required.
     pub fn labeling_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_name = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +193,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p></p> <important>
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
+    /// This field is required.
     pub fn label_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +242,7 @@ impl CreateLabelingJobInputBuilder {
     /// <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>
     /// </ul>
     /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::LabelingJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self
@@ -264,6 +269,7 @@ impl CreateLabelingJobInputBuilder {
         &self.input_config
     }
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::LabelingJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -278,6 +284,7 @@ impl CreateLabelingJobInputBuilder {
         &self.output_config
     }
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -382,6 +389,7 @@ impl CreateLabelingJobInputBuilder {
         &self.labeling_job_algorithms_config
     }
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
+    /// This field is required.
     pub fn human_task_config(mut self, input: crate::types::HumanTaskConfig) -> Self {
         self.human_task_config = ::std::option::Option::Some(input);
         self

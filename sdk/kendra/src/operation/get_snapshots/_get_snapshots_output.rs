@@ -19,12 +19,16 @@ impl GetSnapshotsOutput {
         self.snap_shot_time_filter.as_ref()
     }
     /// <p>The column headers for the search metrics data.</p>
-    pub fn snapshots_data_header(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshots_data_header.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots_data_header.is_none()`.
+    pub fn snapshots_data_header(&self) -> &[::std::string::String] {
+        self.snapshots_data_header.as_deref().unwrap_or_default()
     }
     /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    pub fn snapshots_data(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.snapshots_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots_data.is_none()`.
+    pub fn snapshots_data(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.snapshots_data.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

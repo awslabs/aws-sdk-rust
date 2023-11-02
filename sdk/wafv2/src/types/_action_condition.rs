@@ -6,13 +6,13 @@
 pub struct ActionCondition {
     /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
     /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
-    pub action: ::std::option::Option<crate::types::ActionValue>,
+    pub action: crate::types::ActionValue,
 }
 impl ActionCondition {
     /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
     /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ActionValue> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::ActionValue {
+        &self.action
     }
 }
 impl ActionCondition {
@@ -31,6 +31,7 @@ pub struct ActionConditionBuilder {
 impl ActionConditionBuilder {
     /// <p>The action setting that a log record must contain in order to meet the condition. This is the action that WAF applied to the web request. </p>
     /// <p>For rule groups, this is either the configured rule action setting, or if you've applied a rule action override to the rule, it's the override action. The value <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that have a rule action override of Count. </p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ActionValue) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -47,7 +48,16 @@ impl ActionConditionBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`ActionCondition`](crate::types::ActionCondition).
-    pub fn build(self) -> crate::types::ActionCondition {
-        crate::types::ActionCondition { action: self.action }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::ActionConditionBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionCondition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionCondition {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building ActionCondition",
+                )
+            })?,
+        })
     }
 }

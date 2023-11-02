@@ -53,8 +53,10 @@ impl ListPackageVersionsOutput {
         self.package.as_deref()
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
-    pub fn versions(&self) -> ::std::option::Option<&[crate::types::PackageVersionSummary]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[crate::types::PackageVersionSummary] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -35,12 +35,16 @@ impl Region {
         self.name.as_ref()
     }
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn relational_database_availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
-        self.relational_database_availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relational_database_availability_zones.is_none()`.
+    pub fn relational_database_availability_zones(&self) -> &[crate::types::AvailabilityZone] {
+        self.relational_database_availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl Region {

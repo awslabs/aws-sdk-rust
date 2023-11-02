@@ -36,8 +36,10 @@ impl ListVirtualClustersInput {
         self.created_before.as_ref()
     }
     /// <p>The states of the requested virtual clusters.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::VirtualClusterState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::VirtualClusterState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of virtual clusters that can be listed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

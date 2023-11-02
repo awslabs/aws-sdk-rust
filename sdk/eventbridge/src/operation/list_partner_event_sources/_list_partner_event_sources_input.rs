@@ -41,6 +41,7 @@ pub struct ListPartnerEventSourcesInputBuilder {
 }
 impl ListPartnerEventSourcesInputBuilder {
     /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
+    /// This field is required.
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_prefix = ::std::option::Option::Some(input.into());
         self

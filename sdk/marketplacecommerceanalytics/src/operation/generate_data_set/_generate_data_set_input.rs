@@ -157,6 +157,7 @@ impl GenerateDataSetInputBuilder {
     /// <li> <strong>customer_profile_by_geography</strong> <p>This data set is deprecated. Download related reports from AMMP instead!</p> </li>
     /// </ul>
     /// <p></p>
+    /// This field is required.
     pub fn data_set_type(mut self, input: crate::types::DataSetType) -> Self {
         self.data_set_type = ::std::option::Option::Some(input);
         self
@@ -229,6 +230,7 @@ impl GenerateDataSetInputBuilder {
         &self.data_set_type
     }
     /// The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
+    /// This field is required.
     pub fn data_set_publication_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.data_set_publication_date = ::std::option::Option::Some(input);
         self
@@ -243,6 +245,7 @@ impl GenerateDataSetInputBuilder {
         &self.data_set_publication_date
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+    /// This field is required.
     pub fn role_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name_arn = ::std::option::Option::Some(input.into());
         self
@@ -257,6 +260,7 @@ impl GenerateDataSetInputBuilder {
         &self.role_name_arn
     }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
+    /// This field is required.
     pub fn destination_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -285,6 +289,7 @@ impl GenerateDataSetInputBuilder {
         &self.destination_s3_prefix
     }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self

@@ -41,6 +41,7 @@ pub struct GetSegmentDetectionInputBuilder {
 }
 impl GetSegmentDetectionInputBuilder {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

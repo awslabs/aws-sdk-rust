@@ -34,6 +34,7 @@ pub struct ModifyWorkspaceCreationPropertiesInputBuilder {
 }
 impl ModifyWorkspaceCreationPropertiesInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyWorkspaceCreationPropertiesInputBuilder {
         &self.resource_id
     }
     /// <p>The default properties for creating WorkSpaces.</p>
+    /// This field is required.
     pub fn workspace_creation_properties(mut self, input: crate::types::WorkspaceCreationProperties) -> Self {
         self.workspace_creation_properties = ::std::option::Option::Some(input);
         self

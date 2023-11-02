@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceVersionsOutput {
     /// <p>A list of supported versions.</p>
-    pub service_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>,
+    pub service_versions: ::std::vec::Vec<crate::types::ServiceVersion>,
     /// <p>The name of the service for which the system provided supported versions.</p>
-    pub service_name: ::std::option::Option<crate::types::ServiceName>,
+    pub service_name: crate::types::ServiceName,
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
     pub dependent_services: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
@@ -15,16 +15,19 @@ pub struct ListServiceVersionsOutput {
 }
 impl ListServiceVersionsOutput {
     /// <p>A list of supported versions.</p>
-    pub fn service_versions(&self) -> ::std::option::Option<&[crate::types::ServiceVersion]> {
-        self.service_versions.as_deref()
+    pub fn service_versions(&self) -> &[crate::types::ServiceVersion] {
+        use std::ops::Deref;
+        self.service_versions.deref()
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&crate::types::ServiceName> {
-        self.service_name.as_ref()
+    pub fn service_name(&self) -> &crate::types::ServiceName {
+        &self.service_name
     }
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    pub fn dependent_services(&self) -> ::std::option::Option<&[crate::types::DependentService]> {
-        self.dependent_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependent_services.is_none()`.
+    pub fn dependent_services(&self) -> &[crate::types::DependentService] {
+        self.dependent_services.as_deref().unwrap_or_default()
     }
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -75,6 +78,7 @@ impl ListServiceVersionsOutputBuilder {
         &self.service_versions
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
         self
@@ -132,13 +136,29 @@ impl ListServiceVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceVersionsOutput`](crate::operation::list_service_versions::ListServiceVersionsOutput).
-    pub fn build(self) -> crate::operation::list_service_versions::ListServiceVersionsOutput {
-        crate::operation::list_service_versions::ListServiceVersionsOutput {
-            service_versions: self.service_versions,
-            service_name: self.service_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_versions`](crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder::service_versions)
+    /// - [`service_name`](crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder::service_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_versions::ListServiceVersionsOutput {
+            service_versions: self.service_versions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_versions",
+                    "service_versions was not specified but it is required when building ListServiceVersionsOutput",
+                )
+            })?,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building ListServiceVersionsOutput",
+                )
+            })?,
             dependent_services: self.dependent_services,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

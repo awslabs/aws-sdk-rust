@@ -90,6 +90,7 @@ impl GetSimilarProfilesInputBuilder {
         &self.max_results
     }
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl GetSimilarProfilesInputBuilder {
         &self.domain_name
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
+    /// This field is required.
     pub fn match_type(mut self, input: crate::types::MatchType) -> Self {
         self.match_type = ::std::option::Option::Some(input);
         self
@@ -118,6 +120,7 @@ impl GetSimilarProfilesInputBuilder {
         &self.match_type
     }
     /// <p>The string indicating the search key to be used.</p>
+    /// This field is required.
     pub fn search_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_key = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl GetSimilarProfilesInputBuilder {
         &self.search_key
     }
     /// <p>The string based on <code>SearchKey</code> to be searched for similar profiles.</p>
+    /// This field is required.
     pub fn search_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_value = ::std::option::Option::Some(input.into());
         self

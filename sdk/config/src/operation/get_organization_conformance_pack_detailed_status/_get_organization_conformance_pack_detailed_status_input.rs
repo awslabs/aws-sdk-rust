@@ -49,6 +49,7 @@ pub struct GetOrganizationConformancePackDetailedStatusInputBuilder {
 }
 impl GetOrganizationConformancePackDetailedStatusInputBuilder {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
+    /// This field is required.
     pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self

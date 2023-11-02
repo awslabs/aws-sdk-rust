@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateBot`](crate::operation::update_bot::builders::UpdateBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::set_bot_id): <p>The bot ID.</p>
-    ///   - [`disabled(bool)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::disabled) / [`set_disabled(Option<bool>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::set_disabled): <p>When true, stops the specified bot from running in your account.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
+    ///   - [`bot_id(impl Into<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::set_bot_id):<br>required: **true**<br><p>The bot ID.</p><br>
+    ///   - [`disabled(bool)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::disabled) / [`set_disabled(Option<bool>)`](crate::operation::update_bot::builders::UpdateBotFluentBuilder::set_disabled):<br>required: **false**<br><p>When true, stops the specified bot from running in your account.</p><br>
     /// - On success, responds with [`UpdateBotOutput`](crate::operation::update_bot::UpdateBotOutput) with field(s):
     ///   - [`bot(Option<Bot>)`](crate::operation::update_bot::UpdateBotOutput::bot): <p>The updated bot details.</p>
     /// - On failure, responds with [`SdkError<UpdateBotError>`](crate::operation::update_bot::UpdateBotError)

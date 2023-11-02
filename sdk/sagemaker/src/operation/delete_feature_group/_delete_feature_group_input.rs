@@ -27,6 +27,7 @@ pub struct DeleteFeatureGroupInputBuilder {
 }
 impl DeleteFeatureGroupInputBuilder {
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self

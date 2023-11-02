@@ -34,6 +34,7 @@ pub struct DeleteScalingPlanInputBuilder {
 }
 impl DeleteScalingPlanInputBuilder {
     /// <p>The name of the scaling plan.</p>
+    /// This field is required.
     pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteScalingPlanInputBuilder {
         &self.scaling_plan_name
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    /// This field is required.
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
         self

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchemasInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
+    pub collaboration_identifier: ::std::string::String,
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub schema_type: ::std::option::Option<crate::types::SchemaType>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -14,8 +14,9 @@ pub struct ListSchemasInput {
 }
 impl ListSchemasInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
-        self.collaboration_identifier.as_deref()
+    pub fn collaboration_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_identifier.deref()
     }
     /// <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
     pub fn schema_type(&self) -> ::std::option::Option<&crate::types::SchemaType> {
@@ -48,6 +49,7 @@ pub struct ListSchemasInputBuilder {
 }
 impl ListSchemasInputBuilder {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,9 +106,16 @@ impl ListSchemasInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_identifier`](crate::operation::list_schemas::builders::ListSchemasInputBuilder::collaboration_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
-            collaboration_identifier: self.collaboration_identifier,
+            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collaboration_identifier",
+                    "collaboration_identifier was not specified but it is required when building ListSchemasInput",
+                )
+            })?,
             schema_type: self.schema_type,
             next_token: self.next_token,
             max_results: self.max_results,

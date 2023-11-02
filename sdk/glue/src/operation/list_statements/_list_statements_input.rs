@@ -41,6 +41,7 @@ pub struct ListStatementsInputBuilder {
 }
 impl ListStatementsInputBuilder {
     /// <p>The Session ID of the statements.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

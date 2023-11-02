@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateXmlClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
@@ -15,8 +15,9 @@ pub struct UpdateXmlClassifierRequest {
 }
 impl UpdateXmlClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub fn classification(&self) -> ::std::option::Option<&str> {
@@ -46,6 +47,7 @@ pub struct UpdateXmlClassifierRequestBuilder {
 }
 impl UpdateXmlClassifierRequestBuilder {
     /// <p>The name of the classifier.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +96,18 @@ impl UpdateXmlClassifierRequestBuilder {
         &self.row_tag
     }
     /// Consumes the builder and constructs a [`UpdateXmlClassifierRequest`](crate::types::UpdateXmlClassifierRequest).
-    pub fn build(self) -> crate::types::UpdateXmlClassifierRequest {
-        crate::types::UpdateXmlClassifierRequest {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::UpdateXmlClassifierRequestBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateXmlClassifierRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateXmlClassifierRequest {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateXmlClassifierRequest",
+                )
+            })?,
             classification: self.classification,
             row_tag: self.row_tag,
-        }
+        })
     }
 }

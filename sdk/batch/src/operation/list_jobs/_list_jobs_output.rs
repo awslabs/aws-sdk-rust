@@ -11,8 +11,10 @@ pub struct ListJobsOutput {
 }
 impl ListJobsOutput {
     /// <p>A list of job summaries that match the request.</p>
-    pub fn job_summary_list(&self) -> ::std::option::Option<&[crate::types::JobSummary]> {
-        self.job_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_summary_list.is_none()`.
+    pub fn job_summary_list(&self) -> &[crate::types::JobSummary] {
+        self.job_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

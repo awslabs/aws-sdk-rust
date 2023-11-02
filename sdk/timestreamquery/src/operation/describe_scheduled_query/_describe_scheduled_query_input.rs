@@ -27,6 +27,7 @@ pub struct DescribeScheduledQueryInputBuilder {
 }
 impl DescribeScheduledQueryInputBuilder {
     /// <p>The ARN of the scheduled query.</p>
+    /// This field is required.
     pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self

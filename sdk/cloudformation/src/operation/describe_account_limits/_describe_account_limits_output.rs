@@ -12,8 +12,10 @@ pub struct DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
-    pub fn account_limits(&self) -> ::std::option::Option<&[crate::types::AccountLimit]> {
-        self.account_limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_limits.is_none()`.
+    pub fn account_limits(&self) -> &[crate::types::AccountLimit] {
+        self.account_limits.as_deref().unwrap_or_default()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -43,6 +43,7 @@ pub struct ListInstancesInputBuilder {
 }
 impl ListInstancesInputBuilder {
     /// <p>The ID of the service that you want to list instances for.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self

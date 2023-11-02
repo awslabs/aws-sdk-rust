@@ -34,6 +34,7 @@ pub struct GetEventInputBuilder {
 }
 impl GetEventInputBuilder {
     /// <p>The ID of the event to retrieve.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetEventInputBuilder {
         &self.event_id
     }
     /// <p>The event type of the event to retrieve.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self

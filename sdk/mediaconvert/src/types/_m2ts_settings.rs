@@ -101,8 +101,10 @@ impl M2tsSettings {
         self.audio_frames_per_pes
     }
     /// Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify multiple PIDs as a JSON array. Default is the range 482-492.
-    pub fn audio_pids(&self) -> ::std::option::Option<&[i32]> {
-        self.audio_pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_pids.is_none()`.
+    pub fn audio_pids(&self) -> &[i32] {
+        self.audio_pids.as_deref().unwrap_or_default()
     }
     /// Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
     pub fn bitrate(&self) -> ::std::option::Option<i32> {
@@ -125,8 +127,10 @@ impl M2tsSettings {
         self.dvb_sdt_settings.as_ref()
     }
     /// Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
-    pub fn dvb_sub_pids(&self) -> ::std::option::Option<&[i32]> {
-        self.dvb_sub_pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dvb_sub_pids.is_none()`.
+    pub fn dvb_sub_pids(&self) -> &[i32] {
+        self.dvb_sub_pids.as_deref().unwrap_or_default()
     }
     /// Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
     pub fn dvb_tdt_settings(&self) -> ::std::option::Option<&crate::types::DvbTdtSettings> {

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub membership_id: ::std::option::Option<::std::string::String>,
+    pub membership_id: ::std::string::String,
 }
 impl DescribeGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
-        self.membership_id.as_deref()
+    pub fn membership_id(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_id.deref()
     }
 }
 impl DescribeGroupMembershipInput {
@@ -34,6 +36,7 @@ pub struct DescribeGroupMembershipInputBuilder {
 }
 impl DescribeGroupMembershipInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DescribeGroupMembershipInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    /// This field is required.
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl DescribeGroupMembershipInputBuilder {
         &self.membership_id
     }
     /// Consumes the builder and constructs a [`DescribeGroupMembershipInput`](crate::operation::describe_group_membership::DescribeGroupMembershipInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder::identity_store_id)
+    /// - [`membership_id`](crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder::membership_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,8 +76,18 @@ impl DescribeGroupMembershipInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_group_membership::DescribeGroupMembershipInput {
-            identity_store_id: self.identity_store_id,
-            membership_id: self.membership_id,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building DescribeGroupMembershipInput",
+                )
+            })?,
+            membership_id: self.membership_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_id",
+                    "membership_id was not specified but it is required when building DescribeGroupMembershipInput",
+                )
+            })?,
         })
     }
 }

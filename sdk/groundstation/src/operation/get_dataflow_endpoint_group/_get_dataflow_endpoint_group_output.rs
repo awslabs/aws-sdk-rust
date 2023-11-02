@@ -28,8 +28,10 @@ impl GetDataflowEndpointGroupOutput {
         self.dataflow_endpoint_group_arn.as_deref()
     }
     /// <p>Details of a dataflow endpoint.</p>
-    pub fn endpoints_details(&self) -> ::std::option::Option<&[crate::types::EndpointDetails]> {
-        self.endpoints_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints_details.is_none()`.
+    pub fn endpoints_details(&self) -> &[crate::types::EndpointDetails] {
+        self.endpoints_details.as_deref().unwrap_or_default()
     }
     /// <p>Tags assigned to a dataflow endpoint group.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

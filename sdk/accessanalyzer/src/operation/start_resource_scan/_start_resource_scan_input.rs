@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartResourceScanInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
-    pub analyzer_arn: ::std::option::Option<::std::string::String>,
+    pub analyzer_arn: ::std::string::String,
     /// <p>The ARN of the resource to scan.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     pub resource_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceScanInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
-        self.analyzer_arn.as_deref()
+    pub fn analyzer_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.analyzer_arn.deref()
     }
     /// <p>The ARN of the resource to scan.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     pub fn resource_owner_account(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct StartResourceScanInputBuilder {
 }
 impl StartResourceScanInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl StartResourceScanInputBuilder {
         &self.analyzer_arn
     }
     /// <p>The ARN of the resource to scan.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,12 +88,25 @@ impl StartResourceScanInputBuilder {
         &self.resource_owner_account
     }
     /// Consumes the builder and constructs a [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzer_arn`](crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder::analyzer_arn)
+    /// - [`resource_arn`](crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_resource_scan::StartResourceScanInput {
-            analyzer_arn: self.analyzer_arn,
-            resource_arn: self.resource_arn,
+            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzer_arn",
+                    "analyzer_arn was not specified but it is required when building StartResourceScanInput",
+                )
+            })?,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building StartResourceScanInput",
+                )
+            })?,
             resource_owner_account: self.resource_owner_account,
         })
     }

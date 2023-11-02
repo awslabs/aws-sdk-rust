@@ -3,26 +3,26 @@ pub fn ser_resource_data_sync_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_type {
-        object.key("SourceType").string(var_1.as_str());
+    {
+        object.key("SourceType").string(input.source_type.as_str());
     }
-    if let Some(var_2) = &input.aws_organizations_source {
+    if let Some(var_1) = &input.aws_organizations_source {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("AwsOrganizationsSource").start_object();
+        let mut object_2 = object.key("AwsOrganizationsSource").start_object();
         crate::protocol_serde::shape_resource_data_sync_aws_organizations_source::ser_resource_data_sync_aws_organizations_source(
-            &mut object_3,
-            var_2,
+            &mut object_2,
+            var_1,
         )?;
-        object_3.finish();
+        object_2.finish();
     }
-    if let Some(var_4) = &input.source_regions {
-        let mut array_5 = object.key("SourceRegions").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_3 = object.key("SourceRegions").start_array();
+        for item_4 in &input.source_regions {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
     if input.include_future_regions {
         object.key("IncludeFutureRegions").boolean(input.include_future_regions);

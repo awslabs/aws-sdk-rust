@@ -34,6 +34,7 @@ pub struct CreateCidrCollectionInputBuilder {
 }
 impl CreateCidrCollectionInputBuilder {
     /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateCidrCollectionInputBuilder {
         &self.name
     }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self

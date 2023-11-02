@@ -34,6 +34,7 @@ pub struct DescribeDatastoreInputBuilder {
 }
 impl DescribeDatastoreInputBuilder {
     /// <p>The name of the data store</p>
+    /// This field is required.
     pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self

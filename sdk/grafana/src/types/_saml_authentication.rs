@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlAuthentication {
     /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
-    pub status: ::std::option::Option<crate::types::SamlConfigurationStatus>,
+    pub status: crate::types::SamlConfigurationStatus,
     /// <p>A structure containing details about how this workspace works with SAML. </p>
     pub configuration: ::std::option::Option<crate::types::SamlConfiguration>,
 }
 impl SamlAuthentication {
     /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SamlConfigurationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::SamlConfigurationStatus {
+        &self.status
     }
     /// <p>A structure containing details about how this workspace works with SAML. </p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::SamlConfiguration> {
@@ -35,6 +35,7 @@ pub struct SamlAuthenticationBuilder {
 }
 impl SamlAuthenticationBuilder {
     /// <p>Specifies whether the workspace's SAML configuration is complete.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SamlConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl SamlAuthenticationBuilder {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`SamlAuthentication`](crate::types::SamlAuthentication).
-    pub fn build(self) -> crate::types::SamlAuthentication {
-        crate::types::SamlAuthentication {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::SamlAuthenticationBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::SamlAuthentication, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SamlAuthentication {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building SamlAuthentication",
+                )
+            })?,
             configuration: self.configuration,
-        }
+        })
     }
 }

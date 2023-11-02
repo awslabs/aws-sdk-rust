@@ -48,6 +48,7 @@ impl DeleteNetworkAclInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the network ACL.</p>
+    /// This field is required.
     pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self

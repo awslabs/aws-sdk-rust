@@ -51,8 +51,10 @@ impl DescribeFeatureMetadataOutput {
         self.description.as_deref()
     }
     /// <p>The key-value pairs that you added to describe the feature.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::FeatureParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::FeatureParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeFeatureMetadataOutput {
@@ -83,6 +85,7 @@ pub struct DescribeFeatureMetadataOutputBuilder {
 }
 impl DescribeFeatureMetadataOutputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
+    /// This field is required.
     pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         &self.feature_group_arn
     }
     /// <p>The name of the feature group that you've specified.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         &self.feature_group_name
     }
     /// <p>The name of the feature that you've specified.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +130,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         &self.feature_name
     }
     /// <p>The data type of the feature.</p>
+    /// This field is required.
     pub fn feature_type(mut self, input: crate::types::FeatureType) -> Self {
         self.feature_type = ::std::option::Option::Some(input);
         self
@@ -139,6 +145,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         &self.feature_type
     }
     /// <p>A timestamp indicating when the feature was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -153,6 +160,7 @@ impl DescribeFeatureMetadataOutputBuilder {
         &self.creation_time
     }
     /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct UpdateEndpointsBatchInputBuilder {
 }
 impl UpdateEndpointsBatchInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateEndpointsBatchInputBuilder {
         &self.application_id
     }
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
+    /// This field is required.
     pub fn endpoint_batch_request(mut self, input: crate::types::EndpointBatchRequest) -> Self {
         self.endpoint_batch_request = ::std::option::Option::Some(input);
         self

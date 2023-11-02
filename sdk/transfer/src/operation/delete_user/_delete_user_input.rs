@@ -34,6 +34,7 @@ pub struct DeleteUserInputBuilder {
 }
 impl DeleteUserInputBuilder {
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteUserInputBuilder {
         &self.server_id
     }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self

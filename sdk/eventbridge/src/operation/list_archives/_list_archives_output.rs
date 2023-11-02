@@ -11,8 +11,10 @@ pub struct ListArchivesOutput {
 }
 impl ListArchivesOutput {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-    pub fn archives(&self) -> ::std::option::Option<&[crate::types::Archive]> {
-        self.archives.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.archives.is_none()`.
+    pub fn archives(&self) -> &[crate::types::Archive] {
+        self.archives.as_deref().unwrap_or_default()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

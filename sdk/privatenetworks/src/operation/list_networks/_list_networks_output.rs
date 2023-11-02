@@ -11,8 +11,10 @@ pub struct ListNetworksOutput {
 }
 impl ListNetworksOutput {
     /// <p>The networks.</p>
-    pub fn networks(&self) -> ::std::option::Option<&[crate::types::Network]> {
-        self.networks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.networks.is_none()`.
+    pub fn networks(&self) -> &[crate::types::Network] {
+        self.networks.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

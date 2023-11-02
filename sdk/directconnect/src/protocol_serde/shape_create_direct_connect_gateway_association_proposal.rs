@@ -38,8 +38,8 @@ pub fn de_create_direct_connect_gateway_association_proposal_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DirectConnectServerException" => crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError::DirectConnectServerException({
@@ -54,8 +54,8 @@ pub fn de_create_direct_connect_gateway_association_proposal_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError::generic(generic)

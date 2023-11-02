@@ -35,6 +35,7 @@ pub struct ScalingParametersStatusBuilder {
 }
 impl ScalingParametersStatusBuilder {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::ScalingParameters) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ScalingParametersStatusBuilder {
         &self.options
     }
     /// <p>The status of domain configuration option.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

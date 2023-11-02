@@ -99,8 +99,10 @@ impl TargetGroup {
         self.matcher.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each target group with only one load balancer.</p>
-    pub fn load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_arns.is_none()`.
+    pub fn load_balancer_arns(&self) -> &[::std::string::String] {
+        self.load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetTypeEnum> {

@@ -34,6 +34,7 @@ pub struct DescribeThesaurusInputBuilder {
 }
 impl DescribeThesaurusInputBuilder {
     /// <p>The identifier of the thesaurus you want to get information on.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeThesaurusInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for the thesaurus.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

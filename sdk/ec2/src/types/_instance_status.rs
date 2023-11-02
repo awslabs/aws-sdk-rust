@@ -29,8 +29,10 @@ impl InstanceStatus {
         self.outpost_arn.as_deref()
     }
     /// <p>Any scheduled events associated with the instance.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::InstanceStatusEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::InstanceStatusEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {

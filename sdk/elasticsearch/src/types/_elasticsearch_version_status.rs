@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchVersionStatus {
     /// <p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>
-    pub options: ::std::option::Option<::std::string::String>,
+    pub options: ::std::string::String,
     /// <p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl ElasticsearchVersionStatus {
     /// <p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&str> {
-        self.options.as_deref()
+    pub fn options(&self) -> &str {
+        use std::ops::Deref;
+        self.options.deref()
     }
     /// <p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
@@ -35,6 +36,7 @@ pub struct ElasticsearchVersionStatusBuilder {
 }
 impl ElasticsearchVersionStatusBuilder {
     /// <p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.options = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ElasticsearchVersionStatusBuilder {
         &self.options
     }
     /// <p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl ElasticsearchVersionStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ElasticsearchVersionStatus`](crate::types::ElasticsearchVersionStatus).
-    pub fn build(self) -> crate::types::ElasticsearchVersionStatus {
-        crate::types::ElasticsearchVersionStatus {
-            options: self.options,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`options`](crate::types::builders::ElasticsearchVersionStatusBuilder::options)
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchVersionStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ElasticsearchVersionStatus {
+            options: self.options.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "options",
+                    "options was not specified but it is required when building ElasticsearchVersionStatus",
+                )
+            })?,
             status: self.status,
-        }
+        })
     }
 }

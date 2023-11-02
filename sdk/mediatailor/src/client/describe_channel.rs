@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeChannel`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_name): <p>The name of the channel.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_name) / [`set_channel_name(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel.</p><br>
     /// - On success, responds with [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::arn): <p>The ARN of the channel.</p>
     ///   - [`channel_name(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::channel_name): <p>The name of the channel.</p>

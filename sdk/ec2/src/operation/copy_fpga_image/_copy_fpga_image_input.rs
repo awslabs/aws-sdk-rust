@@ -76,6 +76,7 @@ impl CopyFpgaImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the source AFI.</p>
+    /// This field is required.
     pub fn source_fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_fpga_image_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CopyFpgaImageInputBuilder {
         &self.name
     }
     /// <p>The Region that contains the source AFI.</p>
+    /// This field is required.
     pub fn source_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_region = ::std::option::Option::Some(input.into());
         self

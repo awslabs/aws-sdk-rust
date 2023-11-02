@@ -3,20 +3,20 @@ pub fn ser_media_stream_sink(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaStreamSink,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sink_arn {
-        object.key("SinkArn").string(var_1.as_str());
+    {
+        object.key("SinkArn").string(input.sink_arn.as_str());
     }
-    if let Some(var_2) = &input.sink_type {
-        object.key("SinkType").string(var_2.as_str());
+    {
+        object.key("SinkType").string(input.sink_type.as_str());
     }
-    if let Some(var_3) = &input.reserved_stream_capacity {
+    {
         object.key("ReservedStreamCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.reserved_stream_capacity).into()),
         );
     }
-    if let Some(var_4) = &input.media_stream_type {
-        object.key("MediaStreamType").string(var_4.as_str());
+    {
+        object.key("MediaStreamType").string(input.media_stream_type.as_str());
     }
     Ok(())
 }
@@ -74,7 +74,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::media_stream_sink_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

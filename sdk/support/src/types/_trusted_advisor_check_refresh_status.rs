@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub check_id: ::std::option::Option<::std::string::String>,
+    pub check_id: ::std::string::String,
     /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
     /// <ul>
     /// <li> <p> <code>none</code> - The check is not refreshed or the non-success status exceeds the timeout</p> </li>
@@ -14,14 +14,15 @@ pub struct TrustedAdvisorCheckRefreshStatus {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
     pub millis_until_next_refreshable: i64,
 }
 impl TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> ::std::option::Option<&str> {
-        self.check_id.as_deref()
+    pub fn check_id(&self) -> &str {
+        use std::ops::Deref;
+        self.check_id.deref()
     }
     /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
     /// <ul>
@@ -31,8 +32,9 @@ impl TrustedAdvisorCheckRefreshStatus {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
     pub fn millis_until_next_refreshable(&self) -> i64 {
@@ -56,6 +58,7 @@ pub struct TrustedAdvisorCheckRefreshStatusBuilder {
 }
 impl TrustedAdvisorCheckRefreshStatusBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl TrustedAdvisorCheckRefreshStatusBuilder {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl TrustedAdvisorCheckRefreshStatusBuilder {
         &self.status
     }
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
+    /// This field is required.
     pub fn millis_until_next_refreshable(mut self, input: i64) -> Self {
         self.millis_until_next_refreshable = ::std::option::Option::Some(input);
         self
@@ -119,11 +124,24 @@ impl TrustedAdvisorCheckRefreshStatusBuilder {
         &self.millis_until_next_refreshable
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCheckRefreshStatus`](crate::types::TrustedAdvisorCheckRefreshStatus).
-    pub fn build(self) -> crate::types::TrustedAdvisorCheckRefreshStatus {
-        crate::types::TrustedAdvisorCheckRefreshStatus {
-            check_id: self.check_id,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`check_id`](crate::types::builders::TrustedAdvisorCheckRefreshStatusBuilder::check_id)
+    /// - [`status`](crate::types::builders::TrustedAdvisorCheckRefreshStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckRefreshStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrustedAdvisorCheckRefreshStatus {
+            check_id: self.check_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "check_id",
+                    "check_id was not specified but it is required when building TrustedAdvisorCheckRefreshStatus",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building TrustedAdvisorCheckRefreshStatus",
+                )
+            })?,
             millis_until_next_refreshable: self.millis_until_next_refreshable.unwrap_or_default(),
-        }
+        })
     }
 }

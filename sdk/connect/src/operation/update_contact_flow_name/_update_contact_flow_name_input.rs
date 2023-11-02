@@ -48,6 +48,7 @@ pub struct UpdateContactFlowNameInputBuilder {
 }
 impl UpdateContactFlowNameInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateContactFlowNameInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the flow.</p>
+    /// This field is required.
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self

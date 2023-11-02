@@ -63,6 +63,7 @@ pub struct ModelVariantConfigSummaryBuilder {
 }
 impl ModelVariantConfigSummaryBuilder {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ModelVariantConfigSummaryBuilder {
         &self.model_name
     }
     /// <p>The name of the variant.</p>
+    /// This field is required.
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl ModelVariantConfigSummaryBuilder {
         &self.variant_name
     }
     /// <p>The configuration of the infrastructure that the model has been deployed to.</p>
+    /// This field is required.
     pub fn infrastructure_config(mut self, input: crate::types::ModelInfrastructureConfig) -> Self {
         self.infrastructure_config = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl ModelVariantConfigSummaryBuilder {
     /// <li> <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on the hosted inference endpoint. </p> </li>
     /// <li> <p> <code>Deleted</code> - The model variant has been deleted on the hosted inference endpoint. This can only happen after stopping the experiment. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ModelVariantStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

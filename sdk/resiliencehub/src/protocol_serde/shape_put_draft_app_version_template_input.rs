@@ -3,11 +3,11 @@ pub fn ser_put_draft_app_version_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.app_template_body {
-        object.key("appTemplateBody").string(var_2.as_str());
+    {
+        object.key("appTemplateBody").string(input.app_template_body.as_str());
     }
     Ok(())
 }

@@ -29,8 +29,10 @@ impl PendingModifiedValues {
         self.num_cache_nodes
     }
     /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
-    pub fn cache_node_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_node_ids_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_ids_to_remove.is_none()`.
+    pub fn cache_node_ids_to_remove(&self) -> &[::std::string::String] {
+        self.cache_node_ids_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>The new cache engine version that the cluster runs.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
@@ -45,8 +47,10 @@ impl PendingModifiedValues {
         self.auth_token_status.as_ref()
     }
     /// <p>The log delivery configurations being modified </p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::PendingLogDeliveryConfiguration]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::PendingLogDeliveryConfiguration] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {

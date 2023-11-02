@@ -173,8 +173,10 @@ impl TaskSet {
         self.launch_type.as_ref()
     }
     /// <p>The capacity provider strategy that are associated with the task set.</p>
-    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
-        self.capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
+    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The Fargate platform version where the tasks in the task set are running. A platform version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
@@ -190,12 +192,16 @@ impl TaskSet {
         self.network_configuration.as_ref()
     }
     /// <p>Details on a load balancer that are used with a task set.</p>
-    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::LoadBalancer]> {
-        self.load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
+    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
+        self.load_balancers.as_deref().unwrap_or_default()
     }
     /// <p>The details for the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub fn service_registries(&self) -> ::std::option::Option<&[crate::types::ServiceRegistry]> {
-        self.service_registries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_registries.is_none()`.
+    pub fn service_registries(&self) -> &[crate::types::ServiceRegistry] {
+        self.service_registries.as_deref().unwrap_or_default()
     }
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
     pub fn scale(&self) -> ::std::option::Option<&crate::types::Scale> {
@@ -227,8 +233,10 @@ impl TaskSet {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TaskSet {

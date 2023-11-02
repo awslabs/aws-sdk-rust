@@ -6,11 +6,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpactedLocation {
     /// <p>The name of the network at an impacted location.</p>
-    pub as_name: ::std::option::Option<::std::string::String>,
+    pub as_name: ::std::string::String,
     /// <p>The Autonomous System Number (ASN) of the network at an impacted location.</p>
-    pub as_number: ::std::option::Option<i64>,
+    pub as_number: i64,
     /// <p>The name of the country where the health event is located.</p>
-    pub country: ::std::option::Option<::std::string::String>,
+    pub country: ::std::string::String,
     /// <p>The subdivision location where the health event is located. The subdivision usually maps to states in most countries (including the United States). For United Kingdom, it maps to a country (England, Scotland, Wales) or province (Northern Ireland).</p>
     pub subdivision: ::std::option::Option<::std::string::String>,
     /// <p>The metro area where the health event is located.</p>
@@ -29,7 +29,7 @@ pub struct ImpactedLocation {
     /// <p>The service location where the health event is located.</p>
     pub service_location: ::std::option::Option<::std::string::String>,
     /// <p>The status of the health event at an impacted location.</p>
-    pub status: ::std::option::Option<crate::types::HealthEventStatus>,
+    pub status: crate::types::HealthEventStatus,
     /// <p>The cause of the impairment. There are two types of network impairments: Amazon Web Services network issues or internet issues. Internet issues are typically a problem with a network provider, like an internet service provider (ISP).</p>
     pub caused_by: ::std::option::Option<crate::types::NetworkImpairment>,
     /// <p>The calculated health at a specific location.</p>
@@ -37,16 +37,18 @@ pub struct ImpactedLocation {
 }
 impl ImpactedLocation {
     /// <p>The name of the network at an impacted location.</p>
-    pub fn as_name(&self) -> ::std::option::Option<&str> {
-        self.as_name.as_deref()
+    pub fn as_name(&self) -> &str {
+        use std::ops::Deref;
+        self.as_name.deref()
     }
     /// <p>The Autonomous System Number (ASN) of the network at an impacted location.</p>
-    pub fn as_number(&self) -> ::std::option::Option<i64> {
+    pub fn as_number(&self) -> i64 {
         self.as_number
     }
     /// <p>The name of the country where the health event is located.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
-        self.country.as_deref()
+    pub fn country(&self) -> &str {
+        use std::ops::Deref;
+        self.country.deref()
     }
     /// <p>The subdivision location where the health event is located. The subdivision usually maps to states in most countries (including the United States). For United Kingdom, it maps to a country (England, Scotland, Wales) or province (Northern Ireland).</p>
     pub fn subdivision(&self) -> ::std::option::Option<&str> {
@@ -82,8 +84,8 @@ impl ImpactedLocation {
         self.service_location.as_deref()
     }
     /// <p>The status of the health event at an impacted location.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::HealthEventStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::HealthEventStatus {
+        &self.status
     }
     /// <p>The cause of the impairment. There are two types of network impairments: Amazon Web Services network issues or internet issues. Internet issues are typically a problem with a network provider, like an internet service provider (ISP).</p>
     pub fn caused_by(&self) -> ::std::option::Option<&crate::types::NetworkImpairment> {
@@ -122,6 +124,7 @@ pub struct ImpactedLocationBuilder {
 }
 impl ImpactedLocationBuilder {
     /// <p>The name of the network at an impacted location.</p>
+    /// This field is required.
     pub fn as_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.as_name = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +139,7 @@ impl ImpactedLocationBuilder {
         &self.as_name
     }
     /// <p>The Autonomous System Number (ASN) of the network at an impacted location.</p>
+    /// This field is required.
     pub fn as_number(mut self, input: i64) -> Self {
         self.as_number = ::std::option::Option::Some(input);
         self
@@ -150,6 +154,7 @@ impl ImpactedLocationBuilder {
         &self.as_number
     }
     /// <p>The name of the country where the health event is located.</p>
+    /// This field is required.
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
@@ -279,6 +284,7 @@ impl ImpactedLocationBuilder {
         &self.service_location
     }
     /// <p>The status of the health event at an impacted location.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::HealthEventStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -321,11 +327,31 @@ impl ImpactedLocationBuilder {
         &self.internet_health
     }
     /// Consumes the builder and constructs a [`ImpactedLocation`](crate::types::ImpactedLocation).
-    pub fn build(self) -> crate::types::ImpactedLocation {
-        crate::types::ImpactedLocation {
-            as_name: self.as_name,
-            as_number: self.as_number,
-            country: self.country,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`as_name`](crate::types::builders::ImpactedLocationBuilder::as_name)
+    /// - [`as_number`](crate::types::builders::ImpactedLocationBuilder::as_number)
+    /// - [`country`](crate::types::builders::ImpactedLocationBuilder::country)
+    /// - [`status`](crate::types::builders::ImpactedLocationBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImpactedLocation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImpactedLocation {
+            as_name: self.as_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "as_name",
+                    "as_name was not specified but it is required when building ImpactedLocation",
+                )
+            })?,
+            as_number: self.as_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "as_number",
+                    "as_number was not specified but it is required when building ImpactedLocation",
+                )
+            })?,
+            country: self.country.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "country",
+                    "country was not specified but it is required when building ImpactedLocation",
+                )
+            })?,
             subdivision: self.subdivision,
             metro: self.metro,
             city: self.city,
@@ -334,9 +360,14 @@ impl ImpactedLocationBuilder {
             country_code: self.country_code,
             subdivision_code: self.subdivision_code,
             service_location: self.service_location,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ImpactedLocation",
+                )
+            })?,
             caused_by: self.caused_by,
             internet_health: self.internet_health,
-        }
+        })
     }
 }

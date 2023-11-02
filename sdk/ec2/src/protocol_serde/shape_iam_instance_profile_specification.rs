@@ -17,6 +17,7 @@ pub fn ser_iam_instance_profile_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_iam_instance_profile_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::IamInstanceProfileSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

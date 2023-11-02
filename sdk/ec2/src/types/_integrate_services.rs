@@ -9,8 +9,10 @@ pub struct IntegrateServices {
 }
 impl IntegrateServices {
     /// <p>Information about the integration with Amazon Athena.</p>
-    pub fn athena_integrations(&self) -> ::std::option::Option<&[crate::types::AthenaIntegration]> {
-        self.athena_integrations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.athena_integrations.is_none()`.
+    pub fn athena_integrations(&self) -> &[crate::types::AthenaIntegration] {
+        self.athena_integrations.as_deref().unwrap_or_default()
     }
 }
 impl IntegrateServices {

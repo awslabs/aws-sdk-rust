@@ -8,8 +8,10 @@ pub struct DescribeCachediScsiVolumesInput {
 }
 impl DescribeCachediScsiVolumesInput {
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn volume_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.volume_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ar_ns.is_none()`.
+    pub fn volume_ar_ns(&self) -> &[::std::string::String] {
+        self.volume_ar_ns.as_deref().unwrap_or_default()
     }
 }
 impl DescribeCachediScsiVolumesInput {

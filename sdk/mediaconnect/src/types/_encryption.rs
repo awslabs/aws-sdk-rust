@@ -168,6 +168,7 @@ impl EncryptionBuilder {
         &self.resource_id
     }
     /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct GrpcGatewayRouteBuilder {
 }
 impl GrpcGatewayRouteBuilder {
     /// <p>An object that represents the criteria for determining a request match.</p>
+    /// This field is required.
     pub fn r#match(mut self, input: crate::types::GrpcGatewayRouteMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl GrpcGatewayRouteBuilder {
         &self.r#match
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::GrpcGatewayRouteAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

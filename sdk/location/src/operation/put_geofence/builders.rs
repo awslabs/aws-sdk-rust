@@ -92,14 +92,14 @@ impl PutGeofenceFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::put_geofence::PutGeofenceOutput,
             crate::operation::put_geofence::PutGeofenceError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::put_geofence::PutGeofenceError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

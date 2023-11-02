@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>Specifies the user name for your storage system's management interface.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>Specifies the password for your storage system's management interface.</p>
-    pub password: ::std::option::Option<::std::string::String>,
+    pub password: ::std::string::String,
 }
 impl Credentials {
     /// <p>Specifies the user name for your storage system's management interface.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>Specifies the password for your storage system's management interface.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
-        self.password.as_deref()
+    pub fn password(&self) -> &str {
+        use std::ops::Deref;
+        self.password.deref()
     }
 }
 impl ::std::fmt::Debug for Credentials {
@@ -44,6 +46,7 @@ pub struct CredentialsBuilder {
 }
 impl CredentialsBuilder {
     /// <p>Specifies the user name for your storage system's management interface.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl CredentialsBuilder {
         &self.username
     }
     /// <p>Specifies the password for your storage system's management interface.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -72,11 +76,24 @@ impl CredentialsBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).
-    pub fn build(self) -> crate::types::Credentials {
-        crate::types::Credentials {
-            username: self.username,
-            password: self.password,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::types::builders::CredentialsBuilder::username)
+    /// - [`password`](crate::types::builders::CredentialsBuilder::password)
+    pub fn build(self) -> ::std::result::Result<crate::types::Credentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Credentials {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building Credentials",
+                )
+            })?,
+            password: self.password.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "password",
+                    "password was not specified but it is required when building Credentials",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for CredentialsBuilder {

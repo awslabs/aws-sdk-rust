@@ -86,16 +86,22 @@ impl MetricAlarm {
         self.actions_enabled
     }
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn ok_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ok_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ok_actions.is_none()`.
+    pub fn ok_actions(&self) -> &[::std::string::String] {
+        self.ok_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn alarm_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
+    pub fn alarm_actions(&self) -> &[::std::string::String] {
+        self.alarm_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn insufficient_data_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.insufficient_data_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insufficient_data_actions.is_none()`.
+    pub fn insufficient_data_actions(&self) -> &[::std::string::String] {
+        self.insufficient_data_actions.as_deref().unwrap_or_default()
     }
     /// <p>The state value for the alarm.</p>
     pub fn state_value(&self) -> ::std::option::Option<&crate::types::StateValue> {
@@ -130,8 +136,10 @@ impl MetricAlarm {
         self.extended_statistic.as_deref()
     }
     /// <p>The dimensions for the metric associated with the alarm.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
     pub fn period(&self) -> ::std::option::Option<i32> {
@@ -167,8 +175,10 @@ impl MetricAlarm {
         self.evaluate_low_sample_count_percentile.as_deref()
     }
     /// <p>An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the alarm watches. This expression by designated by having <code>ReturnData</code> set to true.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::MetricDataQuery]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::MetricDataQuery] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.</p>
     pub fn threshold_metric_id(&self) -> ::std::option::Option<&str> {

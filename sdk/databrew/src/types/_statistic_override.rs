@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatisticOverride {
     /// <p>The name of an evaluation</p>
-    pub statistic: ::std::option::Option<::std::string::String>,
+    pub statistic: ::std::string::String,
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl StatisticOverride {
     /// <p>The name of an evaluation</p>
-    pub fn statistic(&self) -> ::std::option::Option<&str> {
-        self.statistic.as_deref()
+    pub fn statistic(&self) -> &str {
+        use std::ops::Deref;
+        self.statistic.deref()
     }
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.parameters.as_ref()
+    pub fn parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.parameters
     }
 }
 impl StatisticOverride {
@@ -35,6 +36,7 @@ pub struct StatisticOverrideBuilder {
 }
 impl StatisticOverrideBuilder {
     /// <p>The name of an evaluation</p>
+    /// This field is required.
     pub fn statistic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statistic = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +71,23 @@ impl StatisticOverrideBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`StatisticOverride`](crate::types::StatisticOverride).
-    pub fn build(self) -> crate::types::StatisticOverride {
-        crate::types::StatisticOverride {
-            statistic: self.statistic,
-            parameters: self.parameters,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statistic`](crate::types::builders::StatisticOverrideBuilder::statistic)
+    /// - [`parameters`](crate::types::builders::StatisticOverrideBuilder::parameters)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatisticOverride, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatisticOverride {
+            statistic: self.statistic.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "statistic",
+                    "statistic was not specified but it is required when building StatisticOverride",
+                )
+            })?,
+            parameters: self.parameters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameters",
+                    "parameters was not specified but it is required when building StatisticOverride",
+                )
+            })?,
+        })
     }
 }

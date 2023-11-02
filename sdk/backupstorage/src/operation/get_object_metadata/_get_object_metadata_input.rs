@@ -34,6 +34,7 @@ pub struct GetObjectMetadataInputBuilder {
 }
 impl GetObjectMetadataInputBuilder {
     /// Backup job id for the in-progress backup.
+    /// This field is required.
     pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetObjectMetadataInputBuilder {
         &self.storage_job_id
     }
     /// Object token.
+    /// This field is required.
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_token = ::std::option::Option::Some(input.into());
         self

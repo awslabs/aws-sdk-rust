@@ -78,6 +78,7 @@ impl PutEncryptionConfigInputBuilder {
         &self.key_id
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

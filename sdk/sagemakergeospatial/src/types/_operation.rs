@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operation {
     /// <p>The name of the operation.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
-    pub equation: ::std::option::Option<::std::string::String>,
+    pub equation: ::std::string::String,
     /// <p>The type of the operation.</p>
     pub output_type: ::std::option::Option<crate::types::OutputType>,
 }
 impl Operation {
     /// <p>The name of the operation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
-    pub fn equation(&self) -> ::std::option::Option<&str> {
-        self.equation.as_deref()
+    pub fn equation(&self) -> &str {
+        use std::ops::Deref;
+        self.equation.deref()
     }
     /// <p>The type of the operation.</p>
     pub fn output_type(&self) -> ::std::option::Option<&crate::types::OutputType> {
@@ -42,6 +44,7 @@ pub struct OperationBuilder {
 }
 impl OperationBuilder {
     /// <p>The name of the operation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl OperationBuilder {
         &self.name
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
+    /// This field is required.
     pub fn equation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.equation = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl OperationBuilder {
         &self.output_type
     }
     /// Consumes the builder and constructs a [`Operation`](crate::types::Operation).
-    pub fn build(self) -> crate::types::Operation {
-        crate::types::Operation {
-            name: self.name,
-            equation: self.equation,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OperationBuilder::name)
+    /// - [`equation`](crate::types::builders::OperationBuilder::equation)
+    pub fn build(self) -> ::std::result::Result<crate::types::Operation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Operation {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Operation",
+                )
+            })?,
+            equation: self.equation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "equation",
+                    "equation was not specified but it is required when building Operation",
+                )
+            })?,
             output_type: self.output_type,
-        }
+        })
     }
 }

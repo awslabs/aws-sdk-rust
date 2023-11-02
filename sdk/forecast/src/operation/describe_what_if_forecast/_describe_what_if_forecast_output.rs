@@ -91,16 +91,20 @@ impl DescribeWhatIfForecastOutput {
         self.last_modification_time.as_ref()
     }
     /// <p>An array of <code>Action</code> and <code>TimeSeriesConditions</code> elements that describe what transformations were applied to which time series.</p>
-    pub fn time_series_transformations(&self) -> ::std::option::Option<&[crate::types::TimeSeriesTransformation]> {
-        self.time_series_transformations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_transformations.is_none()`.
+    pub fn time_series_transformations(&self) -> &[crate::types::TimeSeriesTransformation] {
+        self.time_series_transformations.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>S3Config</code>, <code>Schema</code>, and <code>Format</code> elements that describe the replacement time series.</p>
     pub fn time_series_replacements_data_source(&self) -> ::std::option::Option<&crate::types::TimeSeriesReplacementsDataSource> {
         self.time_series_replacements_data_source.as_ref()
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if forecast in the <code>CreateWhatIfForecast</code> operation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
-    pub fn forecast_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
+    pub fn forecast_types(&self) -> &[::std::string::String] {
+        self.forecast_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeWhatIfForecastOutput {

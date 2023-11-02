@@ -27,6 +27,7 @@ pub struct DescribeDeviceFleetInputBuilder {
 }
 impl DescribeDeviceFleetInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

@@ -46,6 +46,7 @@ impl SwitchoverGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global database cluster (Aurora global database).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +69,7 @@ impl SwitchoverGlobalClusterInputBuilder {
         &self.global_cluster_identifier
     }
     /// <p>The identifier of the secondary Aurora DB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn target_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_identifier = ::std::option::Option::Some(input.into());
         self

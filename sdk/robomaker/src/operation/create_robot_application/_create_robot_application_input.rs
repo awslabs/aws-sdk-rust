@@ -20,8 +20,10 @@ impl CreateRobotApplicationInput {
         self.name.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::SourceConfig]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::SourceConfig] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
     pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
@@ -55,6 +57,7 @@ pub struct CreateRobotApplicationInputBuilder {
 }
 impl CreateRobotApplicationInputBuilder {
     /// <p>The name of the robot application.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl CreateRobotApplicationInputBuilder {
         &self.sources
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
+    /// This field is required.
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
         self

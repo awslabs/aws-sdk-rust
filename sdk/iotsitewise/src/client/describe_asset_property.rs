@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAssetProperty`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`asset_id(impl Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_asset_id): <p>The ID of the asset.</p>
-    ///   - [`property_id(impl Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::property_id) / [`set_property_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_property_id): <p>The ID of the asset property.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_asset_id):<br>required: **true**<br><p>The ID of the asset.</p><br>
+    ///   - [`property_id(impl Into<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::property_id) / [`set_property_id(Option<String>)`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyFluentBuilder::set_property_id):<br>required: **true**<br><p>The ID of the asset property.</p><br>
     /// - On success, responds with [`DescribeAssetPropertyOutput`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput) with field(s):
-    ///   - [`asset_id(Option<String>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_id): <p>The ID of the asset.</p>
-    ///   - [`asset_name(Option<String>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_name): <p>The name of the asset.</p>
-    ///   - [`asset_model_id(Option<String>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_model_id): <p>The ID of the asset model.</p>
+    ///   - [`asset_id(String)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_id): <p>The ID of the asset.</p>
+    ///   - [`asset_name(String)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_name): <p>The name of the asset.</p>
+    ///   - [`asset_model_id(String)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_model_id): <p>The ID of the asset model.</p>
     ///   - [`asset_property(Option<Property>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::asset_property): <p>The asset property's definition, alias, and notification state.</p>  <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
     ///   - [`composite_model(Option<CompositeModelProperty>)`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput::composite_model): <p>The composite asset model that declares this asset property, if this asset property exists in a composite model.</p>
     /// - On failure, responds with [`SdkError<DescribeAssetPropertyError>`](crate::operation::describe_asset_property::DescribeAssetPropertyError)

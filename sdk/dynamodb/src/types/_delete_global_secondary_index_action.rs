@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be deleted.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
 }
 impl DeleteGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be deleted.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
 }
 impl DeleteGlobalSecondaryIndexAction {
@@ -28,6 +29,7 @@ pub struct DeleteGlobalSecondaryIndexActionBuilder {
 }
 impl DeleteGlobalSecondaryIndexActionBuilder {
     /// <p>The name of the global secondary index to be deleted.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl DeleteGlobalSecondaryIndexActionBuilder {
         &self.index_name
     }
     /// Consumes the builder and constructs a [`DeleteGlobalSecondaryIndexAction`](crate::types::DeleteGlobalSecondaryIndexAction).
-    pub fn build(self) -> crate::types::DeleteGlobalSecondaryIndexAction {
-        crate::types::DeleteGlobalSecondaryIndexAction { index_name: self.index_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::types::builders::DeleteGlobalSecondaryIndexActionBuilder::index_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteGlobalSecondaryIndexAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteGlobalSecondaryIndexAction {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building DeleteGlobalSecondaryIndexAction",
+                )
+            })?,
+        })
     }
 }

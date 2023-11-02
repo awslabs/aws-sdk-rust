@@ -17,8 +17,10 @@ impl ResourceTagMapping {
         self.resource_arn.as_deref()
     }
     /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
     pub fn compliance_details(&self) -> ::std::option::Option<&crate::types::ComplianceDetails> {

@@ -9,8 +9,10 @@ pub struct GetSearchSuggestionsOutput {
 }
 impl GetSearchSuggestionsOutput {
     /// <p>A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.</p>
-    pub fn property_name_suggestions(&self) -> ::std::option::Option<&[crate::types::PropertyNameSuggestion]> {
-        self.property_name_suggestions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_name_suggestions.is_none()`.
+    pub fn property_name_suggestions(&self) -> &[crate::types::PropertyNameSuggestion] {
+        self.property_name_suggestions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSearchSuggestionsOutput {

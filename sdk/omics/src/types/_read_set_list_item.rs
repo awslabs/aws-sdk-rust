@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadSetListItem {
     /// <p>The read set's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The read set's ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The read set's sequence store ID.</p>
-    pub sequence_store_id: ::std::option::Option<::std::string::String>,
+    pub sequence_store_id: ::std::string::String,
     /// <p>The read set's subject ID.</p>
     pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p>The read set's sample ID.</p>
     pub sample_id: ::std::option::Option<::std::string::String>,
     /// <p>The read set's status.</p>
-    pub status: ::std::option::Option<crate::types::ReadSetStatus>,
+    pub status: crate::types::ReadSetStatus,
     /// <p>The read set's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The read set's description.</p>
@@ -23,11 +23,11 @@ pub struct ReadSetListItem {
     /// <p>The read set's genome reference ARN.</p>
     pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p>The read set's file type.</p>
-    pub file_type: ::std::option::Option<crate::types::FileType>,
+    pub file_type: crate::types::FileType,
     /// <p>Details about a sequence.</p>
     pub sequence_information: ::std::option::Option<crate::types::SequenceInformation>,
     /// <p>When the read set was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> The creation type of the read set. </p>
@@ -37,16 +37,19 @@ pub struct ReadSetListItem {
 }
 impl ReadSetListItem {
     /// <p>The read set's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The read set's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
-        self.sequence_store_id.as_deref()
+    pub fn sequence_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_store_id.deref()
     }
     /// <p>The read set's subject ID.</p>
     pub fn subject_id(&self) -> ::std::option::Option<&str> {
@@ -57,8 +60,8 @@ impl ReadSetListItem {
         self.sample_id.as_deref()
     }
     /// <p>The read set's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReadSetStatus {
+        &self.status
     }
     /// <p>The read set's name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -73,16 +76,16 @@ impl ReadSetListItem {
         self.reference_arn.as_deref()
     }
     /// <p>The read set's file type.</p>
-    pub fn file_type(&self) -> ::std::option::Option<&crate::types::FileType> {
-        self.file_type.as_ref()
+    pub fn file_type(&self) -> &crate::types::FileType {
+        &self.file_type
     }
     /// <p>Details about a sequence.</p>
     pub fn sequence_information(&self) -> ::std::option::Option<&crate::types::SequenceInformation> {
         self.sequence_information.as_ref()
     }
     /// <p>When the read set was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -126,6 +129,7 @@ pub struct ReadSetListItemBuilder {
 }
 impl ReadSetListItemBuilder {
     /// <p>The read set's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl ReadSetListItemBuilder {
         &self.id
     }
     /// <p>The read set's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +159,7 @@ impl ReadSetListItemBuilder {
         &self.arn
     }
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +202,7 @@ impl ReadSetListItemBuilder {
         &self.sample_id
     }
     /// <p>The read set's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReadSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -252,6 +259,7 @@ impl ReadSetListItemBuilder {
         &self.reference_arn
     }
     /// <p>The read set's file type.</p>
+    /// This field is required.
     pub fn file_type(mut self, input: crate::types::FileType) -> Self {
         self.file_type = ::std::option::Option::Some(input);
         self
@@ -280,6 +288,7 @@ impl ReadSetListItemBuilder {
         &self.sequence_information
     }
     /// <p>When the read set was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -336,23 +345,60 @@ impl ReadSetListItemBuilder {
         &self.etag
     }
     /// Consumes the builder and constructs a [`ReadSetListItem`](crate::types::ReadSetListItem).
-    pub fn build(self) -> crate::types::ReadSetListItem {
-        crate::types::ReadSetListItem {
-            id: self.id,
-            arn: self.arn,
-            sequence_store_id: self.sequence_store_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ReadSetListItemBuilder::id)
+    /// - [`arn`](crate::types::builders::ReadSetListItemBuilder::arn)
+    /// - [`sequence_store_id`](crate::types::builders::ReadSetListItemBuilder::sequence_store_id)
+    /// - [`status`](crate::types::builders::ReadSetListItemBuilder::status)
+    /// - [`file_type`](crate::types::builders::ReadSetListItemBuilder::file_type)
+    /// - [`creation_time`](crate::types::builders::ReadSetListItemBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetListItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReadSetListItem {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ReadSetListItem",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ReadSetListItem",
+                )
+            })?,
+            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sequence_store_id",
+                    "sequence_store_id was not specified but it is required when building ReadSetListItem",
+                )
+            })?,
             subject_id: self.subject_id,
             sample_id: self.sample_id,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ReadSetListItem",
+                )
+            })?,
             name: self.name,
             description: self.description,
             reference_arn: self.reference_arn,
-            file_type: self.file_type,
+            file_type: self.file_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file_type",
+                    "file_type was not specified but it is required when building ReadSetListItem",
+                )
+            })?,
             sequence_information: self.sequence_information,
-            creation_time: self.creation_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ReadSetListItem",
+                )
+            })?,
             status_message: self.status_message,
             creation_type: self.creation_type,
             etag: self.etag,
-        }
+        })
     }
 }

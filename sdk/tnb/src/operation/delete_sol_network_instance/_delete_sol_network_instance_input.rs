@@ -27,6 +27,7 @@ pub struct DeleteSolNetworkInstanceInputBuilder {
 }
 impl DeleteSolNetworkInstanceInputBuilder {
     /// <p>Network instance ID.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self

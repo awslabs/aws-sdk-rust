@@ -25,6 +25,8 @@ pub use crate::types::error::_invalid_security_exception::InvalidSecurityExcepti
 
 pub use crate::types::error::_subscription_limit_exceeded_exception::SubscriptionLimitExceededExceptionBuilder;
 
+pub use crate::types::error::_replay_limit_exceeded_exception::ReplayLimitExceededExceptionBuilder;
+
 pub use crate::types::error::_filter_policy_limit_exceeded_exception::FilterPolicyLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
@@ -56,6 +58,8 @@ pub use crate::types::error::_empty_batch_request_exception::EmptyBatchRequestEx
 pub use crate::types::error::_batch_request_too_long_exception::BatchRequestTooLongExceptionBuilder;
 
 pub use crate::types::error::_batch_entry_ids_not_distinct_exception::BatchEntryIdsNotDistinctExceptionBuilder;
+
+pub use crate::types::error::_invalid_state_exception::InvalidStateExceptionBuilder;
 
 pub use crate::types::error::_user_error_exception::UserErrorExceptionBuilder;
 

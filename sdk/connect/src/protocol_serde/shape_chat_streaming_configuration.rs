@@ -3,8 +3,8 @@ pub fn ser_chat_streaming_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChatStreamingConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.streaming_endpoint_arn {
-        object.key("StreamingEndpointArn").string(var_1.as_str());
+    {
+        object.key("StreamingEndpointArn").string(input.streaming_endpoint_arn.as_str());
     }
     Ok(())
 }

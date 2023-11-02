@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a group in the identity store.</p>
-    pub group_id: ::std::option::Option<::std::string::String>,
+    pub group_id: ::std::string::String,
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
+    pub operations: ::std::vec::Vec<crate::types::AttributeOperation>,
 }
 impl UpdateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
-        self.group_id.as_deref()
+    pub fn group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.group_id.deref()
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::AttributeOperation]> {
-        self.operations.as_deref()
+    pub fn operations(&self) -> &[crate::types::AttributeOperation] {
+        use std::ops::Deref;
+        self.operations.deref()
     }
 }
 impl UpdateGroupInput {
@@ -41,6 +44,7 @@ pub struct UpdateGroupInputBuilder {
 }
 impl UpdateGroupInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl UpdateGroupInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -89,11 +94,30 @@ impl UpdateGroupInputBuilder {
         &self.operations
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::update_group::builders::UpdateGroupInputBuilder::identity_store_id)
+    /// - [`group_id`](crate::operation::update_group::builders::UpdateGroupInputBuilder::group_id)
+    /// - [`operations`](crate::operation::update_group::builders::UpdateGroupInputBuilder::operations)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
-            identity_store_id: self.identity_store_id,
-            group_id: self.group_id,
-            operations: self.operations,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building UpdateGroupInput",
+                )
+            })?,
+            group_id: self.group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "group_id",
+                    "group_id was not specified but it is required when building UpdateGroupInput",
+                )
+            })?,
+            operations: self.operations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operations",
+                    "operations was not specified but it is required when building UpdateGroupInput",
+                )
+            })?,
         })
     }
 }

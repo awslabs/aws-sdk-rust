@@ -25,8 +25,10 @@ impl DescribeCacheOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn disk_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disk_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_ids.is_none()`.
+    pub fn disk_ids(&self) -> &[::std::string::String] {
+        self.disk_ids.as_deref().unwrap_or_default()
     }
     /// <p>The amount of cache in bytes allocated to a gateway.</p>
     pub fn cache_allocated_in_bytes(&self) -> i64 {

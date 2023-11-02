@@ -31,12 +31,16 @@ impl StaleSecurityGroup {
         self.group_name.as_deref()
     }
     /// <p>Information about the stale inbound rules in the security group.</p>
-    pub fn stale_ip_permissions(&self) -> ::std::option::Option<&[crate::types::StaleIpPermission]> {
-        self.stale_ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stale_ip_permissions.is_none()`.
+    pub fn stale_ip_permissions(&self) -> &[crate::types::StaleIpPermission] {
+        self.stale_ip_permissions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the stale outbound rules in the security group.</p>
-    pub fn stale_ip_permissions_egress(&self) -> ::std::option::Option<&[crate::types::StaleIpPermission]> {
-        self.stale_ip_permissions_egress.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stale_ip_permissions_egress.is_none()`.
+    pub fn stale_ip_permissions_egress(&self) -> &[crate::types::StaleIpPermission] {
+        self.stale_ip_permissions_egress.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC for the security group.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

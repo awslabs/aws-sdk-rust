@@ -40,6 +40,7 @@ pub fn ser_double_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_double_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DoubleOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

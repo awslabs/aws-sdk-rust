@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AwsSessionCredentials {
     /// <p>The access key for the session.</p>
-    pub access_key_id: ::std::option::Option<::std::string::String>,
+    pub access_key_id: ::std::string::String,
     /// <p>The secret access key for the session.</p>
-    pub secret_access_key: ::std::option::Option<::std::string::String>,
+    pub secret_access_key: ::std::string::String,
     /// <p>The token for the session.</p>
-    pub session_token: ::std::option::Option<::std::string::String>,
+    pub session_token: ::std::string::String,
 }
 impl AwsSessionCredentials {
     /// <p>The access key for the session.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
-        self.access_key_id.as_deref()
+    pub fn access_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.access_key_id.deref()
     }
     /// <p>The secret access key for the session.</p>
-    pub fn secret_access_key(&self) -> ::std::option::Option<&str> {
-        self.secret_access_key.as_deref()
+    pub fn secret_access_key(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_access_key.deref()
     }
     /// <p>The token for the session.</p>
-    pub fn session_token(&self) -> ::std::option::Option<&str> {
-        self.session_token.as_deref()
+    pub fn session_token(&self) -> &str {
+        use std::ops::Deref;
+        self.session_token.deref()
     }
 }
 impl ::std::fmt::Debug for AwsSessionCredentials {
@@ -51,6 +54,7 @@ pub struct AwsSessionCredentialsBuilder {
 }
 impl AwsSessionCredentialsBuilder {
     /// <p>The access key for the session.</p>
+    /// This field is required.
     pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +69,7 @@ impl AwsSessionCredentialsBuilder {
         &self.access_key_id
     }
     /// <p>The secret access key for the session.</p>
+    /// This field is required.
     pub fn secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_access_key = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +84,7 @@ impl AwsSessionCredentialsBuilder {
         &self.secret_access_key
     }
     /// <p>The token for the session.</p>
+    /// This field is required.
     pub fn session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_token = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +99,31 @@ impl AwsSessionCredentialsBuilder {
         &self.session_token
     }
     /// Consumes the builder and constructs a [`AwsSessionCredentials`](crate::types::AwsSessionCredentials).
-    pub fn build(self) -> crate::types::AwsSessionCredentials {
-        crate::types::AwsSessionCredentials {
-            access_key_id: self.access_key_id,
-            secret_access_key: self.secret_access_key,
-            session_token: self.session_token,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_key_id`](crate::types::builders::AwsSessionCredentialsBuilder::access_key_id)
+    /// - [`secret_access_key`](crate::types::builders::AwsSessionCredentialsBuilder::secret_access_key)
+    /// - [`session_token`](crate::types::builders::AwsSessionCredentialsBuilder::session_token)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsSessionCredentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsSessionCredentials {
+            access_key_id: self.access_key_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access_key_id",
+                    "access_key_id was not specified but it is required when building AwsSessionCredentials",
+                )
+            })?,
+            secret_access_key: self.secret_access_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_access_key",
+                    "secret_access_key was not specified but it is required when building AwsSessionCredentials",
+                )
+            })?,
+            session_token: self.session_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "session_token",
+                    "session_token was not specified but it is required when building AwsSessionCredentials",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for AwsSessionCredentialsBuilder {

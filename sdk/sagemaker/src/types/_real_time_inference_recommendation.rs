@@ -42,6 +42,7 @@ pub struct RealTimeInferenceRecommendationBuilder {
 }
 impl RealTimeInferenceRecommendationBuilder {
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    /// This field is required.
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl RealTimeInferenceRecommendationBuilder {
         &self.recommendation_id
     }
     /// <p>The recommended instance type for Real-Time Inference.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self

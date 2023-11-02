@@ -23,8 +23,10 @@ impl AwsBackupBackupVaultNotificationsDetails {
     /// <li> <p> <code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code> </p> </li>
     /// <li> <p> <code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code> </p> </li>
     /// </ul>
-    pub fn backup_vault_events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.backup_vault_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_vault_events.is_none()`.
+    pub fn backup_vault_events(&self) -> &[::std::string::String] {
+        self.backup_vault_events.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events. </p>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {

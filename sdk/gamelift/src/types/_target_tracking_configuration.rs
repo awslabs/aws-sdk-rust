@@ -29,6 +29,7 @@ pub struct TargetTrackingConfigurationBuilder {
 }
 impl TargetTrackingConfigurationBuilder {
     /// <p>Desired value to use with a game server group target-based scaling policy. </p>
+    /// This field is required.
     pub fn target_value(mut self, input: f64) -> Self {
         self.target_value = ::std::option::Option::Some(input);
         self

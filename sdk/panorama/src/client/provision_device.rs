@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ProvisionDevice`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_name): <p>A name for the device.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_description): <p>A description for the device.</p>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_tags): <p>Tags for the device.</p>
-    ///   - [`networking_configuration(NetworkPayload)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::networking_configuration) / [`set_networking_configuration(Option<NetworkPayload>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_networking_configuration): <p>A networking configuration for the device.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_name):<br>required: **true**<br><p>A name for the device.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_description):<br>required: **false**<br><p>A description for the device.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_tags):<br>required: **false**<br><p>Tags for the device.</p><br>
+    ///   - [`networking_configuration(NetworkPayload)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::networking_configuration) / [`set_networking_configuration(Option<NetworkPayload>)`](crate::operation::provision_device::builders::ProvisionDeviceFluentBuilder::set_networking_configuration):<br>required: **false**<br><p>A networking configuration for the device.</p><br>
     /// - On success, responds with [`ProvisionDeviceOutput`](crate::operation::provision_device::ProvisionDeviceOutput) with field(s):
     ///   - [`device_id(Option<String>)`](crate::operation::provision_device::ProvisionDeviceOutput::device_id): <p>The device's ID.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::provision_device::ProvisionDeviceOutput::arn): <p>The device's ARN.</p>
-    ///   - [`status(Option<DeviceStatus>)`](crate::operation::provision_device::ProvisionDeviceOutput::status): <p>The device's status.</p>
+    ///   - [`arn(String)`](crate::operation::provision_device::ProvisionDeviceOutput::arn): <p>The device's ARN.</p>
+    ///   - [`status(DeviceStatus)`](crate::operation::provision_device::ProvisionDeviceOutput::status): <p>The device's status.</p>
     ///   - [`certificates(Option<Blob>)`](crate::operation::provision_device::ProvisionDeviceOutput::certificates): <p>The device's configuration bundle.</p>
     ///   - [`iot_thing_name(Option<String>)`](crate::operation::provision_device::ProvisionDeviceOutput::iot_thing_name): <p>The device's IoT thing name.</p>
     /// - On failure, responds with [`SdkError<ProvisionDeviceError>`](crate::operation::provision_device::ProvisionDeviceError)

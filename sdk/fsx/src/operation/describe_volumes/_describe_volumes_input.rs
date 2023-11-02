@@ -14,12 +14,16 @@ pub struct DescribeVolumesInput {
 }
 impl DescribeVolumesInput {
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-    pub fn volume_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.volume_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
+    pub fn volume_ids(&self) -> &[::std::string::String] {
+        self.volume_ids.as_deref().unwrap_or_default()
     }
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::VolumeFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::VolumeFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

@@ -32,6 +32,12 @@ pub struct Workgroup {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub port: ::std::option::Option<i32>,
+    /// <p>The custom domain name associated with the workgroup.</p>
+    pub custom_domain_name: ::std::option::Option<::std::string::String>,
+    /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+    pub custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The expiration time for the certificate.</p>
+    pub custom_domain_certificate_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
     pub workgroup_version: ::std::option::Option<::std::string::String>,
     /// <p>The patch version of your Amazon Redshift Serverless workgroup. For more information about patch versions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
@@ -63,16 +69,22 @@ impl Workgroup {
         self.enhanced_vpc_routing
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn config_parameters(&self) -> ::std::option::Option<&[crate::types::ConfigParameter]> {
-        self.config_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_parameters.is_none()`.
+    pub fn config_parameters(&self) -> &[crate::types::ConfigParameter] {
+        self.config_parameters.as_deref().unwrap_or_default()
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of subnet IDs the workgroup is associated with.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The status of the workgroup.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkgroupStatus> {
@@ -93,6 +105,18 @@ impl Workgroup {
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
+    }
+    /// <p>The custom domain name associated with the workgroup.</p>
+    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_name.as_deref()
+    }
+    /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_domain_certificate_arn.as_deref()
+    }
+    /// <p>The expiration time for the certificate.</p>
+    pub fn custom_domain_certificate_expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.custom_domain_certificate_expiry_time.as_ref()
     }
     /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
     pub fn workgroup_version(&self) -> ::std::option::Option<&str> {
@@ -128,6 +152,9 @@ pub struct WorkgroupBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) custom_domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_domain_certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_domain_certificate_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) workgroup_version: ::std::option::Option<::std::string::String>,
     pub(crate) patch_version: ::std::option::Option<::std::string::String>,
 }
@@ -346,6 +373,48 @@ impl WorkgroupBuilder {
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }
+    /// <p>The custom domain name associated with the workgroup.</p>
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_domain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name associated with the workgroup.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_domain_name = input;
+        self
+    }
+    /// <p>The custom domain name associated with the workgroup.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
+    /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+    pub fn custom_domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_domain_certificate_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+    pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_domain_certificate_arn = input;
+        self
+    }
+    /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
+    pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_certificate_arn
+    }
+    /// <p>The expiration time for the certificate.</p>
+    pub fn custom_domain_certificate_expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.custom_domain_certificate_expiry_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The expiration time for the certificate.</p>
+    pub fn set_custom_domain_certificate_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.custom_domain_certificate_expiry_time = input;
+        self
+    }
+    /// <p>The expiration time for the certificate.</p>
+    pub fn get_custom_domain_certificate_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.custom_domain_certificate_expiry_time
+    }
     /// <p>The Amazon Redshift Serverless version of your workgroup. For more information about Amazon Redshift Serverless versions, see<a href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster versions for Amazon Redshift</a>.</p>
     pub fn workgroup_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_version = ::std::option::Option::Some(input.into());
@@ -391,6 +460,9 @@ impl WorkgroupBuilder {
             publicly_accessible: self.publicly_accessible,
             creation_date: self.creation_date,
             port: self.port,
+            custom_domain_name: self.custom_domain_name,
+            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
+            custom_domain_certificate_expiry_time: self.custom_domain_certificate_expiry_time,
             workgroup_version: self.workgroup_version,
             patch_version: self.patch_version,
         }

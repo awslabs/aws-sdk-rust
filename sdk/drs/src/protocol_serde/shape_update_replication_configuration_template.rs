@@ -59,11 +59,10 @@ pub fn de_update_replication_configuration_template_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(
+                        crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -104,11 +103,10 @@ pub fn de_update_replication_configuration_template_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -173,7 +171,9 @@ pub fn de_update_replication_configuration_template_http_response(
         )
         .map_err(crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_replication_configuration_template_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::unhandled)?
     })
 }
 

@@ -46,16 +46,20 @@ impl GetReservedInstancesExchangeQuoteOutput {
         self.reserved_instance_value_rollup.as_ref()
     }
     /// <p>The configuration of your Convertible Reserved Instances.</p>
-    pub fn reserved_instance_value_set(&self) -> ::std::option::Option<&[crate::types::ReservedInstanceReservationValue]> {
-        self.reserved_instance_value_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instance_value_set.is_none()`.
+    pub fn reserved_instance_value_set(&self) -> &[crate::types::ReservedInstanceReservationValue] {
+        self.reserved_instance_value_set.as_deref().unwrap_or_default()
     }
     /// <p>The cost associated with the Reserved Instance.</p>
     pub fn target_configuration_value_rollup(&self) -> ::std::option::Option<&crate::types::ReservationValue> {
         self.target_configuration_value_rollup.as_ref()
     }
     /// <p>The values of the target Convertible Reserved Instances.</p>
-    pub fn target_configuration_value_set(&self) -> ::std::option::Option<&[crate::types::TargetReservationValue]> {
-        self.target_configuration_value_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_configuration_value_set.is_none()`.
+    pub fn target_configuration_value_set(&self) -> &[crate::types::TargetReservationValue] {
+        self.target_configuration_value_set.as_deref().unwrap_or_default()
     }
     /// <p>Describes the reason why the exchange cannot be completed.</p>
     pub fn validation_failure_reason(&self) -> ::std::option::Option<&str> {

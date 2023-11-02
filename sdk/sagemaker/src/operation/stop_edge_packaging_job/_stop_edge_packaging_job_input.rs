@@ -27,6 +27,7 @@ pub struct StopEdgePackagingJobInputBuilder {
 }
 impl StopEdgePackagingJobInputBuilder {
     /// <p>The name of the edge packaging job.</p>
+    /// This field is required.
     pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self

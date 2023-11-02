@@ -27,6 +27,7 @@ pub struct DeleteInstanceSnapshotInputBuilder {
 }
 impl DeleteInstanceSnapshotInputBuilder {
     /// <p>The name of the snapshot to delete.</p>
+    /// This field is required.
     pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_snapshot_name = ::std::option::Option::Some(input.into());
         self

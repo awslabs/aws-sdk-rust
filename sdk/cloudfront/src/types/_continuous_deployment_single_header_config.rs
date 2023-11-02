@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentSingleHeaderConfig {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    pub header: ::std::option::Option<::std::string::String>,
+    pub header: ::std::string::String,
     /// <p>The request header value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ContinuousDeploymentSingleHeaderConfig {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    pub fn header(&self) -> ::std::option::Option<&str> {
-        self.header.as_deref()
+    pub fn header(&self) -> &str {
+        use std::ops::Deref;
+        self.header.deref()
     }
     /// <p>The request header value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ContinuousDeploymentSingleHeaderConfig {
@@ -35,6 +37,7 @@ pub struct ContinuousDeploymentSingleHeaderConfigBuilder {
 }
 impl ContinuousDeploymentSingleHeaderConfigBuilder {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
+    /// This field is required.
     pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
         &self.header
     }
     /// <p>The request header value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,25 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentSingleHeaderConfig`](crate::types::ContinuousDeploymentSingleHeaderConfig).
-    pub fn build(self) -> crate::types::ContinuousDeploymentSingleHeaderConfig {
-        crate::types::ContinuousDeploymentSingleHeaderConfig {
-            header: self.header,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`header`](crate::types::builders::ContinuousDeploymentSingleHeaderConfigBuilder::header)
+    /// - [`value`](crate::types::builders::ContinuousDeploymentSingleHeaderConfigBuilder::value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ContinuousDeploymentSingleHeaderConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContinuousDeploymentSingleHeaderConfig {
+            header: self.header.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "header",
+                    "header was not specified but it is required when building ContinuousDeploymentSingleHeaderConfig",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ContinuousDeploymentSingleHeaderConfig",
+                )
+            })?,
+        })
     }
 }

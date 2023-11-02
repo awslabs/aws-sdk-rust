@@ -45,7 +45,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::connector_ssm_command_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -57,17 +61,17 @@ pub fn ser_connector_ssm_command_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectorSsmCommandConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_output_enabled {
-        object.key("s3OutputEnabled").boolean(*var_1);
+    {
+        object.key("s3OutputEnabled").boolean(input.s3_output_enabled);
     }
-    if let Some(var_2) = &input.output_s3_bucket_name {
-        object.key("outputS3BucketName").string(var_2.as_str());
+    if let Some(var_1) = &input.output_s3_bucket_name {
+        object.key("outputS3BucketName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.cloud_watch_output_enabled {
-        object.key("cloudWatchOutputEnabled").boolean(*var_3);
+    {
+        object.key("cloudWatchOutputEnabled").boolean(input.cloud_watch_output_enabled);
     }
-    if let Some(var_4) = &input.cloud_watch_log_group_name {
-        object.key("cloudWatchLogGroupName").string(var_4.as_str());
+    if let Some(var_2) = &input.cloud_watch_log_group_name {
+        object.key("cloudWatchLogGroupName").string(var_2.as_str());
     }
     Ok(())
 }

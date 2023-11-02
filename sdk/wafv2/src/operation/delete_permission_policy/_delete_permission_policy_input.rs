@@ -30,6 +30,7 @@ pub struct DeletePermissionPolicyInputBuilder {
 impl DeletePermissionPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

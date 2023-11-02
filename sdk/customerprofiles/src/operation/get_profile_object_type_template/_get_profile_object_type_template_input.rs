@@ -27,6 +27,7 @@ pub struct GetProfileObjectTypeTemplateInputBuilder {
 }
 impl GetProfileObjectTypeTemplateInputBuilder {
     /// <p>A unique identifier for the object template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self

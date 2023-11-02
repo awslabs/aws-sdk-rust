@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_name): <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p><br>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::get_environment::GetEnvironmentOutput::environment): <p>An object containing all available details about the environment.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::operation::get_environment::GetEnvironmentError)

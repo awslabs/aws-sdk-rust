@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProblemDetails {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    pub detail: ::std::option::Option<::std::string::String>,
+    pub detail: ::std::string::String,
     /// <p>A human-readable title of the problem type.</p>
     pub title: ::std::option::Option<::std::string::String>,
 }
 impl ProblemDetails {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    pub fn detail(&self) -> ::std::option::Option<&str> {
-        self.detail.as_deref()
+    pub fn detail(&self) -> &str {
+        use std::ops::Deref;
+        self.detail.deref()
     }
     /// <p>A human-readable title of the problem type.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ProblemDetailsBuilder {
 }
 impl ProblemDetailsBuilder {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
+    /// This field is required.
     pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ProblemDetailsBuilder {
         &self.title
     }
     /// Consumes the builder and constructs a [`ProblemDetails`](crate::types::ProblemDetails).
-    pub fn build(self) -> crate::types::ProblemDetails {
-        crate::types::ProblemDetails {
-            detail: self.detail,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`detail`](crate::types::builders::ProblemDetailsBuilder::detail)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProblemDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProblemDetails {
+            detail: self.detail.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "detail",
+                    "detail was not specified but it is required when building ProblemDetails",
+                )
+            })?,
             title: self.title,
-        }
+        })
     }
 }

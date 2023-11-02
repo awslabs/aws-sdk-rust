@@ -51,6 +51,7 @@ pub struct GetConsolidatedReportInputBuilder {
 impl GetConsolidatedReportInputBuilder {
     /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::ReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self

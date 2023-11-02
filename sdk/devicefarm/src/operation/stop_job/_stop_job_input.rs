@@ -27,6 +27,7 @@ pub struct StopJobInputBuilder {
 }
 impl StopJobInputBuilder {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

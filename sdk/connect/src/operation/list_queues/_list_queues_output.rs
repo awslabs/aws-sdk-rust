@@ -11,8 +11,10 @@ pub struct ListQueuesOutput {
 }
 impl ListQueuesOutput {
     /// <p>Information about the queues.</p>
-    pub fn queue_summary_list(&self) -> ::std::option::Option<&[crate::types::QueueSummary]> {
-        self.queue_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_summary_list.is_none()`.
+    pub fn queue_summary_list(&self) -> &[crate::types::QueueSummary] {
+        self.queue_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

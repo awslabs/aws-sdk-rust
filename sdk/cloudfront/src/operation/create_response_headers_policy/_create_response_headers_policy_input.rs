@@ -27,6 +27,7 @@ pub struct CreateResponseHeadersPolicyInputBuilder {
 }
 impl CreateResponseHeadersPolicyInputBuilder {
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
+    /// This field is required.
     pub fn response_headers_policy_config(mut self, input: crate::types::ResponseHeadersPolicyConfig) -> Self {
         self.response_headers_policy_config = ::std::option::Option::Some(input);
         self

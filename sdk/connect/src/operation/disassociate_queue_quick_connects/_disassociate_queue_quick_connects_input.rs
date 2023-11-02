@@ -20,8 +20,10 @@ impl DisassociateQueueQuickConnectsInput {
         self.queue_id.as_deref()
     }
     /// <p>The quick connects to disassociate from the queue.</p>
-    pub fn quick_connect_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.quick_connect_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quick_connect_ids.is_none()`.
+    pub fn quick_connect_ids(&self) -> &[::std::string::String] {
+        self.quick_connect_ids.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateQueueQuickConnectsInput {
@@ -41,6 +43,7 @@ pub struct DisassociateQueueQuickConnectsInputBuilder {
 }
 impl DisassociateQueueQuickConnectsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DisassociateQueueQuickConnectsInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the queue.</p>
+    /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self

@@ -76,6 +76,7 @@ pub struct CreateIntegrationResponseInputBuilder {
 }
 impl CreateIntegrationResponseInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +114,7 @@ impl CreateIntegrationResponseInputBuilder {
         &self.content_handling_strategy
     }
     /// <p>The integration ID.</p>
+    /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +129,7 @@ impl CreateIntegrationResponseInputBuilder {
         &self.integration_id
     }
     /// <p>The integration response key.</p>
+    /// This field is required.
     pub fn integration_response_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_response_key = ::std::option::Option::Some(input.into());
         self

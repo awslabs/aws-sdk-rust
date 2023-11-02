@@ -85,11 +85,10 @@ pub fn de_verify_mac_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::verify_mac::VerifyMacError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::verify_mac::VerifyMacError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "VerificationFailedException" => crate::operation::verify_mac::VerifyMacError::VerificationFailedException({
@@ -101,11 +100,10 @@ pub fn de_verify_mac_http_error(
                     crate::protocol_serde::shape_verification_failed_exception::de_verification_failed_exception_json_err(_response_body, output)
                         .map_err(crate::operation::verify_mac::VerifyMacError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::verification_failed_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::verify_mac::VerifyMacError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::verify_mac::VerifyMacError::generic(generic),
@@ -124,7 +122,9 @@ pub fn de_verify_mac_http_response(
         output = crate::protocol_serde::shape_verify_mac::de_verify_mac(_response_body, output)
             .map_err(crate::operation::verify_mac::VerifyMacError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::verify_mac_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::verify_mac::VerifyMacError::unhandled)?
     })
 }
 

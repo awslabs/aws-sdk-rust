@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelServiceInstanceDeploymentInput {
     /// <p>The name of the service instance with the deployment to cancel.</p>
-    pub service_instance_name: ::std::option::Option<::std::string::String>,
+    pub service_instance_name: ::std::string::String,
     /// <p>The name of the service with the service instance deployment to cancel.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
 }
 impl CancelServiceInstanceDeploymentInput {
     /// <p>The name of the service instance with the deployment to cancel.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
-        self.service_instance_name.as_deref()
+    pub fn service_instance_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_instance_name.deref()
     }
     /// <p>The name of the service with the service instance deployment to cancel.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
 }
 impl CancelServiceInstanceDeploymentInput {
@@ -34,6 +36,7 @@ pub struct CancelServiceInstanceDeploymentInputBuilder {
 }
 impl CancelServiceInstanceDeploymentInputBuilder {
     /// <p>The name of the service instance with the deployment to cancel.</p>
+    /// This field is required.
     pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl CancelServiceInstanceDeploymentInputBuilder {
         &self.service_instance_name
     }
     /// <p>The name of the service with the service instance deployment to cancel.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl CancelServiceInstanceDeploymentInputBuilder {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`CancelServiceInstanceDeploymentInput`](crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_instance_name`](crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentInputBuilder::service_instance_name)
+    /// - [`service_name`](crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,8 +77,18 @@ impl CancelServiceInstanceDeploymentInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput {
-                service_instance_name: self.service_instance_name,
-                service_name: self.service_name,
+                service_instance_name: self.service_instance_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_instance_name",
+                        "service_instance_name was not specified but it is required when building CancelServiceInstanceDeploymentInput",
+                    )
+                })?,
+                service_name: self.service_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_name",
+                        "service_name was not specified but it is required when building CancelServiceInstanceDeploymentInput",
+                    )
+                })?,
             },
         )
     }

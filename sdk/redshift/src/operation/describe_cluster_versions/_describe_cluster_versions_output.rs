@@ -16,8 +16,10 @@ impl DescribeClusterVersionsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Version</code> elements. </p>
-    pub fn cluster_versions(&self) -> ::std::option::Option<&[crate::types::ClusterVersion]> {
-        self.cluster_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_versions.is_none()`.
+    pub fn cluster_versions(&self) -> &[crate::types::ClusterVersion] {
+        self.cluster_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClusterVersionsOutput {

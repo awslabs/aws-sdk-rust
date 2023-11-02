@@ -3,20 +3,20 @@ pub fn ser_endpoint_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EndpointRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.container_name {
-        object.key("containerName").string(var_1.as_str());
+    {
+        object.key("containerName").string(input.container_name.as_str());
     }
-    if let Some(var_2) = &input.container_port {
+    {
         object.key("containerPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.container_port).into()),
         );
     }
-    if let Some(var_3) = &input.health_check {
+    if let Some(var_1) = &input.health_check {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("healthCheck").start_object();
-        crate::protocol_serde::shape_container_service_health_check_config::ser_container_service_health_check_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("healthCheck").start_object();
+        crate::protocol_serde::shape_container_service_health_check_config::ser_container_service_health_check_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

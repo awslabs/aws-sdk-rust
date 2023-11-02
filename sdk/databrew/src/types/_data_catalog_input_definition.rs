@@ -7,9 +7,9 @@ pub struct DataCatalogInputDefinition {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database in the Data Catalog.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
     pub temp_directory: ::std::option::Option<crate::types::S3Location>,
 }
@@ -19,12 +19,14 @@ impl DataCatalogInputDefinition {
         self.catalog_id.as_deref()
     }
     /// <p>The name of a database in the Data Catalog.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
     pub fn temp_directory(&self) -> ::std::option::Option<&crate::types::S3Location> {
@@ -63,6 +65,7 @@ impl DataCatalogInputDefinitionBuilder {
         &self.catalog_id
     }
     /// <p>The name of a database in the Data Catalog.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl DataCatalogInputDefinitionBuilder {
         &self.database_name
     }
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl DataCatalogInputDefinitionBuilder {
         &self.temp_directory
     }
     /// Consumes the builder and constructs a [`DataCatalogInputDefinition`](crate::types::DataCatalogInputDefinition).
-    pub fn build(self) -> crate::types::DataCatalogInputDefinition {
-        crate::types::DataCatalogInputDefinition {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::DataCatalogInputDefinitionBuilder::database_name)
+    /// - [`table_name`](crate::types::builders::DataCatalogInputDefinitionBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataCatalogInputDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataCatalogInputDefinition {
             catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building DataCatalogInputDefinition",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building DataCatalogInputDefinition",
+                )
+            })?,
             temp_directory: self.temp_directory,
-        }
+        })
     }
 }

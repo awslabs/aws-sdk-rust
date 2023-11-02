@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDefaultVocabulariesOutput {
     /// <p>A list of default vocabularies.</p>
-    pub default_vocabulary_list: ::std::option::Option<::std::vec::Vec<crate::types::DefaultVocabulary>>,
+    pub default_vocabulary_list: ::std::vec::Vec<crate::types::DefaultVocabulary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDefaultVocabulariesOutput {
     /// <p>A list of default vocabularies.</p>
-    pub fn default_vocabulary_list(&self) -> ::std::option::Option<&[crate::types::DefaultVocabulary]> {
-        self.default_vocabulary_list.as_deref()
+    pub fn default_vocabulary_list(&self) -> &[crate::types::DefaultVocabulary] {
+        use std::ops::Deref;
+        self.default_vocabulary_list.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListDefaultVocabulariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDefaultVocabulariesOutput`](crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput).
-    pub fn build(self) -> crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput {
-        crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput {
-            default_vocabulary_list: self.default_vocabulary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`default_vocabulary_list`](crate::operation::list_default_vocabularies::builders::ListDefaultVocabulariesOutputBuilder::default_vocabulary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput {
+            default_vocabulary_list: self.default_vocabulary_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "default_vocabulary_list",
+                    "default_vocabulary_list was not specified but it is required when building ListDefaultVocabulariesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

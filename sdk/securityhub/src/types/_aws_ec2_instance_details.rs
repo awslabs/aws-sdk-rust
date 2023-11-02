@@ -42,12 +42,16 @@ impl AwsEc2InstanceDetails {
         self.image_id.as_deref()
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn ip_v4_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_v4_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_v4_addresses.is_none()`.
+    pub fn ip_v4_addresses(&self) -> &[::std::string::String] {
+        self.ip_v4_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn ip_v6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_v6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_v6_addresses.is_none()`.
+    pub fn ip_v6_addresses(&self) -> &[::std::string::String] {
+        self.ip_v6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The key name associated with the instance.</p>
     pub fn key_name(&self) -> ::std::option::Option<&str> {
@@ -71,8 +75,10 @@ impl AwsEc2InstanceDetails {
         self.launched_at.as_deref()
     }
     /// <p>The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::AwsEc2InstanceNetworkInterfacesDetails]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::AwsEc2InstanceNetworkInterfacesDetails] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The virtualization type of the Amazon Machine Image (AMI) required to launch the instance. </p>
     pub fn virtualization_type(&self) -> ::std::option::Option<&str> {

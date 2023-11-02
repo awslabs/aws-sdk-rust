@@ -5,60 +5,66 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteRef {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The name of the gateway route.</p>
-    pub gateway_route_name: ::std::option::Option<::std::string::String>,
+    pub gateway_route_name: ::std::string::String,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub virtual_gateway_name: ::std::string::String,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub mesh_owner: ::std::option::Option<::std::string::String>,
+    pub mesh_owner: ::std::string::String,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub resource_owner: ::std::option::Option<::std::string::String>,
+    pub resource_owner: ::std::string::String,
     /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
-    pub version: ::std::option::Option<i64>,
+    pub version: i64,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_at: ::aws_smithy_types::DateTime,
 }
 impl GatewayRouteRef {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The name of the gateway route.</p>
-    pub fn gateway_route_name(&self) -> ::std::option::Option<&str> {
-        self.gateway_route_name.as_deref()
+    pub fn gateway_route_name(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_route_name.deref()
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_gateway_name.as_deref()
+    pub fn virtual_gateway_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_gateway_name.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
-        self.mesh_owner.as_deref()
+    pub fn mesh_owner(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_owner.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
-        self.resource_owner.as_deref()
+    pub fn resource_owner(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_owner.deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
-    pub fn version(&self) -> ::std::option::Option<i64> {
+    pub fn version(&self) -> i64 {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_at.as_ref()
+    pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_at
     }
 }
 impl GatewayRouteRef {
@@ -84,6 +90,7 @@ pub struct GatewayRouteRefBuilder {
 }
 impl GatewayRouteRefBuilder {
     /// <p>The name of the service mesh that the resource resides in. </p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl GatewayRouteRefBuilder {
         &self.mesh_name
     }
     /// <p>The name of the gateway route.</p>
+    /// This field is required.
     pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +120,7 @@ impl GatewayRouteRefBuilder {
         &self.gateway_route_name
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +135,7 @@ impl GatewayRouteRefBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// This field is required.
     pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_owner = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +150,7 @@ impl GatewayRouteRefBuilder {
         &self.mesh_owner
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// This field is required.
     pub fn resource_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +165,7 @@ impl GatewayRouteRefBuilder {
         &self.resource_owner
     }
     /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +180,7 @@ impl GatewayRouteRefBuilder {
         &self.arn
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
+    /// This field is required.
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
@@ -182,6 +195,7 @@ impl GatewayRouteRefBuilder {
         &self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -196,6 +210,7 @@ impl GatewayRouteRefBuilder {
         &self.created_at
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
+    /// This field is required.
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
@@ -210,17 +225,72 @@ impl GatewayRouteRefBuilder {
         &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`GatewayRouteRef`](crate::types::GatewayRouteRef).
-    pub fn build(self) -> crate::types::GatewayRouteRef {
-        crate::types::GatewayRouteRef {
-            mesh_name: self.mesh_name,
-            gateway_route_name: self.gateway_route_name,
-            virtual_gateway_name: self.virtual_gateway_name,
-            mesh_owner: self.mesh_owner,
-            resource_owner: self.resource_owner,
-            arn: self.arn,
-            version: self.version,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mesh_name`](crate::types::builders::GatewayRouteRefBuilder::mesh_name)
+    /// - [`gateway_route_name`](crate::types::builders::GatewayRouteRefBuilder::gateway_route_name)
+    /// - [`virtual_gateway_name`](crate::types::builders::GatewayRouteRefBuilder::virtual_gateway_name)
+    /// - [`mesh_owner`](crate::types::builders::GatewayRouteRefBuilder::mesh_owner)
+    /// - [`resource_owner`](crate::types::builders::GatewayRouteRefBuilder::resource_owner)
+    /// - [`arn`](crate::types::builders::GatewayRouteRefBuilder::arn)
+    /// - [`version`](crate::types::builders::GatewayRouteRefBuilder::version)
+    /// - [`created_at`](crate::types::builders::GatewayRouteRefBuilder::created_at)
+    /// - [`last_updated_at`](crate::types::builders::GatewayRouteRefBuilder::last_updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewayRouteRef, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GatewayRouteRef {
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            gateway_route_name: self.gateway_route_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_route_name",
+                    "gateway_route_name was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_gateway_name",
+                    "virtual_gateway_name was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            mesh_owner: self.mesh_owner.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_owner",
+                    "mesh_owner was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            resource_owner: self.resource_owner.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_owner",
+                    "resource_owner was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+            last_updated_at: self.last_updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_at",
+                    "last_updated_at was not specified but it is required when building GatewayRouteRef",
+                )
+            })?,
+        })
     }
 }

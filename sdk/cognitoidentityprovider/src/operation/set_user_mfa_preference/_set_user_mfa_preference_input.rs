@@ -78,6 +78,7 @@ impl SetUserMfaPreferenceInputBuilder {
         &self.software_token_mfa_settings
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self

@@ -53,12 +53,16 @@ impl WorkSpaceApplication {
         self.state.as_ref()
     }
     /// <p>The supported compute types of the WorkSpace application.</p>
-    pub fn supported_compute_type_names(&self) -> ::std::option::Option<&[crate::types::Compute]> {
-        self.supported_compute_type_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_compute_type_names.is_none()`.
+    pub fn supported_compute_type_names(&self) -> &[crate::types::Compute] {
+        self.supported_compute_type_names.as_deref().unwrap_or_default()
     }
     /// <p>The supported operating systems of the WorkSpace application.</p>
-    pub fn supported_operating_system_names(&self) -> ::std::option::Option<&[crate::types::OperatingSystemName]> {
-        self.supported_operating_system_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_operating_system_names.is_none()`.
+    pub fn supported_operating_system_names(&self) -> &[crate::types::OperatingSystemName] {
+        self.supported_operating_system_names.as_deref().unwrap_or_default()
     }
 }
 impl WorkSpaceApplication {

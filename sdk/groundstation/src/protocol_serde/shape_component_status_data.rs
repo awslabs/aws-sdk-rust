@@ -3,35 +3,35 @@ pub fn ser_component_status_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentStatusData,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.component_type {
-        object.key("componentType").string(var_1.as_str());
+    {
+        object.key("componentType").string(input.component_type.as_str());
     }
-    if let Some(var_2) = &input.capability_arn {
-        object.key("capabilityArn").string(var_2.as_str());
+    {
+        object.key("capabilityArn").string(input.capability_arn.as_str());
     }
-    if let Some(var_3) = &input.status {
-        object.key("status").string(var_3.as_str());
+    {
+        object.key("status").string(input.status.as_str());
     }
-    if let Some(var_4) = &input.bytes_sent {
+    if let Some(var_1) = &input.bytes_sent {
         object.key("bytesSent").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_5) = &input.bytes_received {
+    if let Some(var_2) = &input.bytes_received {
         object.key("bytesReceived").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_6) = &input.packets_dropped {
+    if let Some(var_3) = &input.packets_dropped {
         object.key("packetsDropped").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_7) = &input.dataflow_id {
-        object.key("dataflowId").string(var_7.as_str());
+    {
+        object.key("dataflowId").string(input.dataflow_id.as_str());
     }
     Ok(())
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StateMachineListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub state_machine_arn: ::std::string::String,
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -16,16 +16,17 @@ pub struct StateMachineListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p></p>
-    pub r#type: ::std::option::Option<crate::types::StateMachineType>,
+    pub r#type: crate::types::StateMachineType,
     /// <p>The date the state machine is created.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
 }
 impl StateMachineListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
-        self.state_machine_arn.as_deref()
+    pub fn state_machine_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_arn.deref()
     }
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -37,16 +38,17 @@ impl StateMachineListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p></p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StateMachineType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::StateMachineType {
+        &self.r#type
     }
     /// <p>The date the state machine is created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
 }
 impl StateMachineListItem {
@@ -67,6 +69,7 @@ pub struct StateMachineListItemBuilder {
 }
 impl StateMachineListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl StateMachineListItemBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +126,7 @@ impl StateMachineListItemBuilder {
         &self.name
     }
     /// <p></p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::StateMachineType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -136,6 +141,7 @@ impl StateMachineListItemBuilder {
         &self.r#type
     }
     /// <p>The date the state machine is created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -150,12 +156,37 @@ impl StateMachineListItemBuilder {
         &self.creation_date
     }
     /// Consumes the builder and constructs a [`StateMachineListItem`](crate::types::StateMachineListItem).
-    pub fn build(self) -> crate::types::StateMachineListItem {
-        crate::types::StateMachineListItem {
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
-            r#type: self.r#type,
-            creation_date: self.creation_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_machine_arn`](crate::types::builders::StateMachineListItemBuilder::state_machine_arn)
+    /// - [`name`](crate::types::builders::StateMachineListItemBuilder::name)
+    /// - [`r#type`](crate::types::builders::StateMachineListItemBuilder::r#type)
+    /// - [`creation_date`](crate::types::builders::StateMachineListItemBuilder::creation_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::StateMachineListItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StateMachineListItem {
+            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_machine_arn",
+                    "state_machine_arn was not specified but it is required when building StateMachineListItem",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building StateMachineListItem",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building StateMachineListItem",
+                )
+            })?,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building StateMachineListItem",
+                )
+            })?,
+        })
     }
 }

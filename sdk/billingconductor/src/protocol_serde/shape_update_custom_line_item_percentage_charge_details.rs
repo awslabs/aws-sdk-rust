@@ -3,10 +3,10 @@ pub fn ser_update_custom_line_item_percentage_charge_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateCustomLineItemPercentageChargeDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.percentage_value {
+    {
         object.key("PercentageValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.percentage_value).into()),
         );
     }
     Ok(())

@@ -57,8 +57,10 @@ impl PullRequest {
         self.author_arn.as_deref()
     }
     /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
-    pub fn pull_request_targets(&self) -> ::std::option::Option<&[crate::types::PullRequestTarget]> {
-        self.pull_request_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pull_request_targets.is_none()`.
+    pub fn pull_request_targets(&self) -> &[crate::types::PullRequestTarget] {
+        self.pull_request_targets.as_deref().unwrap_or_default()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -69,8 +71,10 @@ impl PullRequest {
         self.revision_id.as_deref()
     }
     /// <p>The approval rules applied to the pull request.</p>
-    pub fn approval_rules(&self) -> ::std::option::Option<&[crate::types::ApprovalRule]> {
-        self.approval_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approval_rules.is_none()`.
+    pub fn approval_rules(&self) -> &[crate::types::ApprovalRule] {
+        self.approval_rules.as_deref().unwrap_or_default()
     }
 }
 impl PullRequest {

@@ -48,6 +48,7 @@ impl EnableUserInputBuilder {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl EnableUserInputBuilder {
         &self.user_name
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRescoreExecutionPlan`](crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder::set_id): <p>The identifier of the rescore execution plan that you want to delete.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_rescore_execution_plan::builders::DeleteRescoreExecutionPlanFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the rescore execution plan that you want to delete.</p><br>
     /// - On success, responds with [`DeleteRescoreExecutionPlanOutput`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteRescoreExecutionPlanError>`](crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError)
     pub fn delete_rescore_execution_plan(

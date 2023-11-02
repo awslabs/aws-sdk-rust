@@ -88,7 +88,7 @@ pub fn de_put_notification_settings_http_response(
         output = crate::protocol_serde::shape_put_notification_settings::de_put_notification_settings(_response_body, output)
             .map_err(crate::operation::put_notification_settings::PutNotificationSettingsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::put_notification_settings_output_correct_errors(output).build()
     })
 }
 

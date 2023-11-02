@@ -13,16 +13,22 @@ pub struct DefaultHyperParameterRanges {
 }
 impl DefaultHyperParameterRanges {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
-    pub fn integer_hyper_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::DefaultIntegerHyperParameterRange]> {
-        self.integer_hyper_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_hyper_parameter_ranges.is_none()`.
+    pub fn integer_hyper_parameter_ranges(&self) -> &[crate::types::DefaultIntegerHyperParameterRange] {
+        self.integer_hyper_parameter_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The continuous hyperparameters and their default ranges.</p>
-    pub fn continuous_hyper_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::DefaultContinuousHyperParameterRange]> {
-        self.continuous_hyper_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.continuous_hyper_parameter_ranges.is_none()`.
+    pub fn continuous_hyper_parameter_ranges(&self) -> &[crate::types::DefaultContinuousHyperParameterRange] {
+        self.continuous_hyper_parameter_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The categorical hyperparameters and their default ranges.</p>
-    pub fn categorical_hyper_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::DefaultCategoricalHyperParameterRange]> {
-        self.categorical_hyper_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categorical_hyper_parameter_ranges.is_none()`.
+    pub fn categorical_hyper_parameter_ranges(&self) -> &[crate::types::DefaultCategoricalHyperParameterRange] {
+        self.categorical_hyper_parameter_ranges.as_deref().unwrap_or_default()
     }
 }
 impl DefaultHyperParameterRanges {

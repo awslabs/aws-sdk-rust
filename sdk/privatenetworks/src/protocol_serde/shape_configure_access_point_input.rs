@@ -3,26 +3,26 @@ pub fn ser_configure_access_point_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::configure_access_point::ConfigureAccessPointInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.access_point_arn {
-        object.key("accessPointArn").string(var_1.as_str());
+    {
+        object.key("accessPointArn").string(input.access_point_arn.as_str());
     }
-    if let Some(var_2) = &input.cpi_secret_key {
-        object.key("cpiSecretKey").string(var_2.as_str());
+    if let Some(var_1) = &input.cpi_secret_key {
+        object.key("cpiSecretKey").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.cpi_user_id {
-        object.key("cpiUserId").string(var_3.as_str());
+    if let Some(var_2) = &input.cpi_user_id {
+        object.key("cpiUserId").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.cpi_user_password {
-        object.key("cpiUserPassword").string(var_4.as_str());
+    if let Some(var_3) = &input.cpi_user_password {
+        object.key("cpiUserPassword").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.cpi_username {
-        object.key("cpiUsername").string(var_5.as_str());
+    if let Some(var_4) = &input.cpi_username {
+        object.key("cpiUsername").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.position {
+    if let Some(var_5) = &input.position {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("position").start_object();
-        crate::protocol_serde::shape_position::ser_position(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("position").start_object();
+        crate::protocol_serde::shape_position::ser_position(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

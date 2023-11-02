@@ -27,8 +27,10 @@ impl AwsS3BucketWebsiteConfiguration {
         self.redirect_all_requests_to.as_ref()
     }
     /// <p>The rules for applying redirects for requests to the website.</p>
-    pub fn routing_rules(&self) -> ::std::option::Option<&[crate::types::AwsS3BucketWebsiteConfigurationRoutingRule]> {
-        self.routing_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_rules.is_none()`.
+    pub fn routing_rules(&self) -> &[crate::types::AwsS3BucketWebsiteConfigurationRoutingRule] {
+        self.routing_rules.as_deref().unwrap_or_default()
     }
 }
 impl AwsS3BucketWebsiteConfiguration {

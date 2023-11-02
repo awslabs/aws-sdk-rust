@@ -34,6 +34,7 @@ pub struct DeleteMemberInputBuilder {
 }
 impl DeleteMemberInputBuilder {
     /// <p>The unique identifier of the network from which the member is removed.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteMemberInputBuilder {
         &self.network_id
     }
     /// <p>The unique identifier of the member to remove.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self

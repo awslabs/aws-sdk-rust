@@ -55,6 +55,7 @@ pub struct CreateTrafficDistributionGroupInputBuilder {
 }
 impl CreateTrafficDistributionGroupInputBuilder {
     /// <p>The name for the traffic distribution group. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateTrafficDistributionGroupInputBuilder {
         &self.description
     }
     /// <p>The identifier of the Amazon Connect instance that has been replicated. You can find the <code>instanceId</code> in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

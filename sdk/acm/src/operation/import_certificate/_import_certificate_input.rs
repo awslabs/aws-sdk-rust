@@ -34,8 +34,10 @@ impl ImportCertificateInput {
     }
     /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInput {
@@ -82,6 +84,7 @@ impl ImportCertificateInputBuilder {
         &self.certificate_arn
     }
     /// <p>The certificate to import.</p>
+    /// This field is required.
     pub fn certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.certificate = ::std::option::Option::Some(input);
         self
@@ -96,6 +99,7 @@ impl ImportCertificateInputBuilder {
         &self.certificate
     }
     /// <p>The private key that matches the public key in the certificate.</p>
+    /// This field is required.
     pub fn private_key(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.private_key = ::std::option::Option::Some(input);
         self

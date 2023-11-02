@@ -5,30 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSyncEvent {
     /// <p>The type of event.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The external ID for the event.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the event occurred.</p>
-    pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub time: ::aws_smithy_types::DateTime,
     /// <p>A resource sync event.</p>
-    pub event: ::std::option::Option<::std::string::String>,
+    pub event: ::std::string::String,
 }
 impl ResourceSyncEvent {
     /// <p>The type of event.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The external ID for the event.</p>
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The time when the event occurred.</p>
-    pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.time.as_ref()
+    pub fn time(&self) -> &::aws_smithy_types::DateTime {
+        &self.time
     }
     /// <p>A resource sync event.</p>
-    pub fn event(&self) -> ::std::option::Option<&str> {
-        self.event.as_deref()
+    pub fn event(&self) -> &str {
+        use std::ops::Deref;
+        self.event.deref()
     }
 }
 impl ResourceSyncEvent {
@@ -49,6 +51,7 @@ pub struct ResourceSyncEventBuilder {
 }
 impl ResourceSyncEventBuilder {
     /// <p>The type of event.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl ResourceSyncEventBuilder {
         &self.external_id
     }
     /// <p>The time when the event occurred.</p>
+    /// This field is required.
     pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl ResourceSyncEventBuilder {
         &self.time
     }
     /// <p>A resource sync event.</p>
+    /// This field is required.
     pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +110,31 @@ impl ResourceSyncEventBuilder {
         &self.event
     }
     /// Consumes the builder and constructs a [`ResourceSyncEvent`](crate::types::ResourceSyncEvent).
-    pub fn build(self) -> crate::types::ResourceSyncEvent {
-        crate::types::ResourceSyncEvent {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ResourceSyncEventBuilder::r#type)
+    /// - [`time`](crate::types::builders::ResourceSyncEventBuilder::time)
+    /// - [`event`](crate::types::builders::ResourceSyncEventBuilder::event)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncEvent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceSyncEvent {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResourceSyncEvent",
+                )
+            })?,
             external_id: self.external_id,
-            time: self.time,
-            event: self.event,
-        }
+            time: self.time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time",
+                    "time was not specified but it is required when building ResourceSyncEvent",
+                )
+            })?,
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building ResourceSyncEvent",
+                )
+            })?,
+        })
     }
 }

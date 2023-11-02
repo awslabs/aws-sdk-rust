@@ -34,6 +34,7 @@ pub struct UpdateSchemaInputBuilder {
 }
 impl UpdateSchemaInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateSchemaInputBuilder {
         &self.schema_arn
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

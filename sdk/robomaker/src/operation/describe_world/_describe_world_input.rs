@@ -27,6 +27,7 @@ pub struct DescribeWorldInputBuilder {
 }
 impl DescribeWorldInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
+    /// This field is required.
     pub fn world(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.world = ::std::option::Option::Some(input.into());
         self

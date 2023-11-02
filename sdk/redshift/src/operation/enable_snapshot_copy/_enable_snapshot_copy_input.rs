@@ -67,6 +67,7 @@ pub struct EnableSnapshotCopyInputBuilder {
 impl EnableSnapshotCopyInputBuilder {
     /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl EnableSnapshotCopyInputBuilder {
     }
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
     /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
+    /// This field is required.
     pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self

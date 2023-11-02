@@ -27,6 +27,7 @@ pub struct RejectDataShareInputBuilder {
 }
 impl RejectDataShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self

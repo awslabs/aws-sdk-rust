@@ -11,8 +11,10 @@ pub struct ListIncomingTypedLinksOutput {
 }
 impl ListIncomingTypedLinksOutput {
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn link_specifiers(&self) -> ::std::option::Option<&[crate::types::TypedLinkSpecifier]> {
-        self.link_specifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.link_specifiers.is_none()`.
+    pub fn link_specifiers(&self) -> &[crate::types::TypedLinkSpecifier] {
+        self.link_specifiers.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

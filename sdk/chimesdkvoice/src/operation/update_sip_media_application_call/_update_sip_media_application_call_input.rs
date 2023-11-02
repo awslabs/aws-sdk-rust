@@ -41,6 +41,7 @@ pub struct UpdateSipMediaApplicationCallInputBuilder {
 }
 impl UpdateSipMediaApplicationCallInputBuilder {
     /// <p>The ID of the SIP media application handling the call.</p>
+    /// This field is required.
     pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateSipMediaApplicationCallInputBuilder {
         &self.sip_media_application_id
     }
     /// <p>The ID of the call transaction.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self

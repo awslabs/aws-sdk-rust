@@ -28,6 +28,7 @@ pub struct TransactGetItemBuilder {
 }
 impl TransactGetItemBuilder {
     /// <p>Contains the primary key that identifies the item to get, together with the name of the table that contains the item, and optionally the specific attributes of the item to retrieve.</p>
+    /// This field is required.
     pub fn get(mut self, input: crate::types::Get) -> Self {
         self.get = ::std::option::Option::Some(input);
         self

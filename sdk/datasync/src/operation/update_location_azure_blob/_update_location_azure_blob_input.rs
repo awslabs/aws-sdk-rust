@@ -46,8 +46,10 @@ impl UpdateLocationAzureBlobInput {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLocationAzureBlobInput {
@@ -71,6 +73,7 @@ pub struct UpdateLocationAzureBlobInputBuilder {
 }
 impl UpdateLocationAzureBlobInputBuilder {
     /// <p>Specifies the ARN of the Azure Blob Storage transfer location that you're updating.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self

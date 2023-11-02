@@ -11,8 +11,10 @@ pub struct DescribeStandardsControlsOutput {
 }
 impl DescribeStandardsControlsOutput {
     /// <p>A list of security standards controls.</p>
-    pub fn controls(&self) -> ::std::option::Option<&[crate::types::StandardsControl]> {
-        self.controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.controls.is_none()`.
+    pub fn controls(&self) -> &[crate::types::StandardsControl] {
+        self.controls.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

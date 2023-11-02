@@ -15,8 +15,10 @@ impl DescribeFleetsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the EC2 Fleets.</p>
-    pub fn fleets(&self) -> ::std::option::Option<&[crate::types::FleetData]> {
-        self.fleets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleets.is_none()`.
+    pub fn fleets(&self) -> &[crate::types::FleetData] {
+        self.fleets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeFleetsOutput {

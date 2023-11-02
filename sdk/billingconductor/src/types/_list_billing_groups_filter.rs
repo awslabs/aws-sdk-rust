@@ -15,16 +15,20 @@ pub struct ListBillingGroupsFilter {
 }
 impl ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
+    pub fn arns(&self) -> &[::std::string::String] {
+        self.arns.as_deref().unwrap_or_default()
     }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn pricing_plan(&self) -> ::std::option::Option<&str> {
         self.pricing_plan.as_deref()
     }
     /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::BillingGroupStatus]> {
-        self.statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
+    pub fn statuses(&self) -> &[crate::types::BillingGroupStatus] {
+        self.statuses.as_deref().unwrap_or_default()
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {

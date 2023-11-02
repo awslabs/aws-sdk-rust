@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyArchiveRuleInput {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
-    pub analyzer_arn: ::std::option::Option<::std::string::String>,
+    pub analyzer_arn: ::std::string::String,
     /// <p>The name of the rule to apply.</p>
-    pub rule_name: ::std::option::Option<::std::string::String>,
+    pub rule_name: ::std::string::String,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ApplyArchiveRuleInput {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
-        self.analyzer_arn.as_deref()
+    pub fn analyzer_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.analyzer_arn.deref()
     }
     /// <p>The name of the rule to apply.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
-        self.rule_name.as_deref()
+    pub fn rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_name.deref()
     }
     /// <p>A client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct ApplyArchiveRuleInputBuilder {
 }
 impl ApplyArchiveRuleInputBuilder {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ApplyArchiveRuleInputBuilder {
         &self.analyzer_arn
     }
     /// <p>The name of the rule to apply.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -84,12 +88,25 @@ impl ApplyArchiveRuleInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzer_arn`](crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder::analyzer_arn)
+    /// - [`rule_name`](crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder::rule_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::apply_archive_rule::ApplyArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::apply_archive_rule::ApplyArchiveRuleInput {
-            analyzer_arn: self.analyzer_arn,
-            rule_name: self.rule_name,
+            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzer_arn",
+                    "analyzer_arn was not specified but it is required when building ApplyArchiveRuleInput",
+                )
+            })?,
+            rule_name: self.rule_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_name",
+                    "rule_name was not specified but it is required when building ApplyArchiveRuleInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

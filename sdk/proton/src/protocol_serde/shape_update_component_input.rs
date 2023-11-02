@@ -3,29 +3,29 @@ pub fn ser_update_component_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_component::UpdateComponentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.deployment_type {
-        object.key("deploymentType").string(var_2.as_str());
+    {
+        object.key("deploymentType").string(input.deployment_type.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.service_name {
-        object.key("serviceName").string(var_4.as_str());
+    if let Some(var_2) = &input.service_name {
+        object.key("serviceName").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.service_instance_name {
-        object.key("serviceInstanceName").string(var_5.as_str());
+    if let Some(var_3) = &input.service_instance_name {
+        object.key("serviceInstanceName").string(var_3.as_str());
     }
-    if let Some(var_6) = &input.service_spec {
-        object.key("serviceSpec").string(var_6.as_str());
+    if let Some(var_4) = &input.service_spec {
+        object.key("serviceSpec").string(var_4.as_str());
     }
-    if let Some(var_7) = &input.template_file {
-        object.key("templateFile").string(var_7.as_str());
+    if let Some(var_5) = &input.template_file {
+        object.key("templateFile").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("clientToken").string(var_8.as_str());
+    if let Some(var_6) = &input.client_token {
+        object.key("clientToken").string(var_6.as_str());
     }
     Ok(())
 }

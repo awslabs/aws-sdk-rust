@@ -8,7 +8,7 @@ pub struct ServerCertificate {
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
     pub server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     /// <p>The contents of the public key certificate.</p>
-    pub certificate_body: ::std::option::Option<::std::string::String>,
+    pub certificate_body: ::std::string::String,
     /// <p>The contents of the public key certificate chain.</p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
@@ -20,16 +20,19 @@ impl ServerCertificate {
         self.server_certificate_metadata.as_ref()
     }
     /// <p>The contents of the public key certificate.</p>
-    pub fn certificate_body(&self) -> ::std::option::Option<&str> {
-        self.certificate_body.as_deref()
+    pub fn certificate_body(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_body.deref()
     }
     /// <p>The contents of the public key certificate chain.</p>
     pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
     /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ServerCertificate {
@@ -50,6 +53,7 @@ pub struct ServerCertificateBuilder {
 }
 impl ServerCertificateBuilder {
     /// <p>The meta information of the server certificate, such as its name, path, ID, and ARN.</p>
+    /// This field is required.
     pub fn server_certificate_metadata(mut self, input: crate::types::ServerCertificateMetadata) -> Self {
         self.server_certificate_metadata = ::std::option::Option::Some(input);
         self
@@ -64,6 +68,7 @@ impl ServerCertificateBuilder {
         &self.server_certificate_metadata
     }
     /// <p>The contents of the public key certificate.</p>
+    /// This field is required.
     pub fn certificate_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_body = ::std::option::Option::Some(input.into());
         self
@@ -112,12 +117,19 @@ impl ServerCertificateBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ServerCertificate`](crate::types::ServerCertificate).
-    pub fn build(self) -> crate::types::ServerCertificate {
-        crate::types::ServerCertificate {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_body`](crate::types::builders::ServerCertificateBuilder::certificate_body)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServerCertificate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServerCertificate {
             server_certificate_metadata: self.server_certificate_metadata,
-            certificate_body: self.certificate_body,
+            certificate_body: self.certificate_body.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate_body",
+                    "certificate_body was not specified but it is required when building ServerCertificate",
+                )
+            })?,
             certificate_chain: self.certificate_chain,
             tags: self.tags,
-        }
+        })
     }
 }

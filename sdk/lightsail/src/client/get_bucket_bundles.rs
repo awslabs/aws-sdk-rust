@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBucketBundles`](crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`include_inactive(bool)`](crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder::set_include_inactive): <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    ///   - [`include_inactive(bool)`](crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::operation::get_bucket_bundles::builders::GetBucketBundlesFluentBuilder::set_include_inactive):<br>required: **false**<br><p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p><br>
     /// - On success, responds with [`GetBucketBundlesOutput`](crate::operation::get_bucket_bundles::GetBucketBundlesOutput) with field(s):
     ///   - [`bundles(Option<Vec<BucketBundle>>)`](crate::operation::get_bucket_bundles::GetBucketBundlesOutput::bundles): <p>An object that describes bucket bundles.</p>
     /// - On failure, responds with [`SdkError<GetBucketBundlesError>`](crate::operation::get_bucket_bundles::GetBucketBundlesError)

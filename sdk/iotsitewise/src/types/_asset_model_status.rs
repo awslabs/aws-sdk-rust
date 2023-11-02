@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetModelStatus {
     /// <p>The current state of the asset model.</p>
-    pub state: ::std::option::Option<crate::types::AssetModelState>,
+    pub state: crate::types::AssetModelState,
     /// <p>Contains associated error information, if any.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl AssetModelStatus {
     /// <p>The current state of the asset model.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AssetModelState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::AssetModelState {
+        &self.state
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
@@ -35,6 +35,7 @@ pub struct AssetModelStatusBuilder {
 }
 impl AssetModelStatusBuilder {
     /// <p>The current state of the asset model.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AssetModelState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl AssetModelStatusBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`AssetModelStatus`](crate::types::AssetModelStatus).
-    pub fn build(self) -> crate::types::AssetModelStatus {
-        crate::types::AssetModelStatus {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::AssetModelStatusBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetModelStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetModelStatus {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building AssetModelStatus",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

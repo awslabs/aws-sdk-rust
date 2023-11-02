@@ -6,20 +6,20 @@ pub fn ser_create_case_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.fields {
-        let mut array_3 = object.key("fields").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_2 = object.key("fields").start_array();
+        for item_3 in &input.fields {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_field_value::ser_field_value(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_field_value::ser_field_value(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.template_id {
-        object.key("templateId").string(var_6.as_str());
+    {
+        object.key("templateId").string(input.template_id.as_str());
     }
     Ok(())
 }

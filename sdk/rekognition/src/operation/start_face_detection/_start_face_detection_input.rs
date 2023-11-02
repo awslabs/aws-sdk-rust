@@ -59,6 +59,7 @@ pub struct StartFaceDetectionInputBuilder {
 }
 impl StartFaceDetectionInputBuilder {
     /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self

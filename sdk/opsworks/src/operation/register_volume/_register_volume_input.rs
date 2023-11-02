@@ -48,6 +48,7 @@ impl RegisterVolumeInputBuilder {
         &self.ec2_volume_id
     }
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self

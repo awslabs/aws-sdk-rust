@@ -27,6 +27,7 @@ pub struct GetSigningPlatformInputBuilder {
 }
 impl GetSigningPlatformInputBuilder {
     /// <p>The ID of the target signing platform.</p>
+    /// This field is required.
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
         self

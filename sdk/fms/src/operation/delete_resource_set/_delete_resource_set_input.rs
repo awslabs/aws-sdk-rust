@@ -27,6 +27,7 @@ pub struct DeleteResourceSetInputBuilder {
 }
 impl DeleteResourceSetInputBuilder {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ pub fn ser_delete_room_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_room::DeleteRoomInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identifier {
-        object.key("identifier").string(var_1.as_str());
+    {
+        object.key("identifier").string(input.identifier.as_str());
     }
     Ok(())
 }

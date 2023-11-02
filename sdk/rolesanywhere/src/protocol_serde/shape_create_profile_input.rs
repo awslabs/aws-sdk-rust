@@ -21,35 +21,35 @@ pub fn ser_create_profile_input(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_7) = &input.require_instance_properties {
-        object.key("requireInstanceProperties").boolean(*var_7);
+    if let Some(var_6) = &input.require_instance_properties {
+        object.key("requireInstanceProperties").boolean(*var_6);
     }
-    if let Some(var_8) = &input.role_arns {
-        let mut array_9 = object.key("roleArns").start_array();
-        for item_10 in var_8 {
+    {
+        let mut array_7 = object.key("roleArns").start_array();
+        for item_8 in &input.role_arns {
             {
-                array_9.value().string(item_10.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_9.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.session_policy {
-        object.key("sessionPolicy").string(var_11.as_str());
+    if let Some(var_9) = &input.session_policy {
+        object.key("sessionPolicy").string(var_9.as_str());
     }
-    if let Some(var_12) = &input.tags {
-        let mut array_13 = object.key("tags").start_array();
-        for item_14 in var_12 {
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_13.finish();
+        array_11.finish();
     }
     Ok(())
 }

@@ -58,12 +58,16 @@ impl PlatformSummary {
         self.operating_system_version.as_deref()
     }
     /// <p>The tiers in which the platform version runs.</p>
-    pub fn supported_tier_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_tier_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_tier_list.is_none()`.
+    pub fn supported_tier_list(&self) -> &[::std::string::String] {
+        self.supported_tier_list.as_deref().unwrap_or_default()
     }
     /// <p>The additions associated with the platform version.</p>
-    pub fn supported_addon_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_addon_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_addon_list.is_none()`.
+    pub fn supported_addon_list(&self) -> &[::std::string::String] {
+        self.supported_addon_list.as_deref().unwrap_or_default()
     }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>

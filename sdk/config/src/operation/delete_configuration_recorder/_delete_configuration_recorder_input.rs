@@ -28,6 +28,7 @@ pub struct DeleteConfigurationRecorderInputBuilder {
 }
 impl DeleteConfigurationRecorderInputBuilder {
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    /// This field is required.
     pub fn configuration_recorder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_recorder_name = ::std::option::Option::Some(input.into());
         self

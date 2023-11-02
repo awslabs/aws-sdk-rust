@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
+    pub dns_records: ::std::vec::Vec<crate::types::DnsRecord>,
 }
 impl DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub fn dns_records(&self) -> ::std::option::Option<&[crate::types::DnsRecord]> {
-        self.dns_records.as_deref()
+    pub fn dns_records(&self) -> &[crate::types::DnsRecord] {
+        use std::ops::Deref;
+        self.dns_records.deref()
     }
 }
 impl DnsConfigChange {
@@ -48,9 +49,16 @@ impl DnsConfigChangeBuilder {
         &self.dns_records
     }
     /// Consumes the builder and constructs a [`DnsConfigChange`](crate::types::DnsConfigChange).
-    pub fn build(self) -> crate::types::DnsConfigChange {
-        crate::types::DnsConfigChange {
-            dns_records: self.dns_records,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dns_records`](crate::types::builders::DnsConfigChangeBuilder::dns_records)
+    pub fn build(self) -> ::std::result::Result<crate::types::DnsConfigChange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DnsConfigChange {
+            dns_records: self.dns_records.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dns_records",
+                    "dns_records was not specified but it is required when building DnsConfigChange",
+                )
+            })?,
+        })
     }
 }

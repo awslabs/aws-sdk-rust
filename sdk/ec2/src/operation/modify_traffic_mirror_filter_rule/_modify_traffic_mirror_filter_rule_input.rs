@@ -72,8 +72,10 @@ impl ModifyTrafficMirrorFilterRuleInput {
     }
     /// <p>The properties that you want to remove from the Traffic Mirror filter rule.</p>
     /// <p>When you remove a property from a Traffic Mirror filter rule, the property is set to the default.</p>
-    pub fn remove_fields(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorFilterRuleField]> {
-        self.remove_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_fields.is_none()`.
+    pub fn remove_fields(&self) -> &[crate::types::TrafficMirrorFilterRuleField] {
+        self.remove_fields.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -106,6 +108,7 @@ pub struct ModifyTrafficMirrorFilterRuleInputBuilder {
 }
 impl ModifyTrafficMirrorFilterRuleInputBuilder {
     /// <p>The ID of the Traffic Mirror rule.</p>
+    /// This field is required.
     pub fn traffic_mirror_filter_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_rule_id = ::std::option::Option::Some(input.into());
         self

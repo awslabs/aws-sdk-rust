@@ -33,8 +33,10 @@ impl PurchaseReservedDbInstancesOfferingInput {
         self.db_instance_count
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PurchaseReservedDbInstancesOfferingInput {
@@ -56,6 +58,7 @@ pub struct PurchaseReservedDbInstancesOfferingInputBuilder {
 impl PurchaseReservedDbInstancesOfferingInputBuilder {
     /// <p>The ID of the Reserved DB instance offering to purchase.</p>
     /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
+    /// This field is required.
     pub fn reserved_db_instances_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_db_instances_offering_id = ::std::option::Option::Some(input.into());
         self

@@ -23,8 +23,10 @@ impl InstanceSpecification {
     }
     /// <p>The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.</p>
     /// <p>You can specify up to 40 volume IDs per request.</p>
-    pub fn exclude_data_volume_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_data_volume_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_data_volume_ids.is_none()`.
+    pub fn exclude_data_volume_ids(&self) -> &[::std::string::String] {
+        self.exclude_data_volume_ids.as_deref().unwrap_or_default()
     }
 }
 impl InstanceSpecification {
@@ -44,6 +46,7 @@ pub struct InstanceSpecificationBuilder {
 }
 impl InstanceSpecificationBuilder {
     /// <p>The instance to specify which volumes should be snapshotted.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

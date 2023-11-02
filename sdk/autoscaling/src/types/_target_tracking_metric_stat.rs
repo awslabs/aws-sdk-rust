@@ -45,6 +45,7 @@ pub struct TargetTrackingMetricStatBuilder {
 }
 impl TargetTrackingMetricStatBuilder {
     /// <p>The metric to use.</p>
+    /// This field is required.
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
@@ -60,6 +61,7 @@ impl TargetTrackingMetricStatBuilder {
     }
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     /// <p>The most commonly used metric for scaling is <code>Average</code>.</p>
+    /// This field is required.
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stat = ::std::option::Option::Some(input.into());
         self

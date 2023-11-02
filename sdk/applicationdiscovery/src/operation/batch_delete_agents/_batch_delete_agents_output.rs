@@ -9,8 +9,10 @@ pub struct BatchDeleteAgentsOutput {
 }
 impl BatchDeleteAgentsOutput {
     /// <p> A list of agent IDs that failed to delete during the deletion task, each paired with an error message. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchDeleteAgentError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchDeleteAgentError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteAgentsOutput {

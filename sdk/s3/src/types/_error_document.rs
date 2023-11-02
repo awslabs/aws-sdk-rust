@@ -7,14 +7,15 @@ pub struct ErrorDocument {
     /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
 }
 impl ErrorDocument {
     /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
 }
 impl ErrorDocument {
@@ -34,6 +35,7 @@ impl ErrorDocumentBuilder {
     /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -52,7 +54,16 @@ impl ErrorDocumentBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`ErrorDocument`](crate::types::ErrorDocument).
-    pub fn build(self) -> crate::types::ErrorDocument {
-        crate::types::ErrorDocument { key: self.key }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::ErrorDocumentBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::ErrorDocument, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ErrorDocument {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building ErrorDocument",
+                )
+            })?,
+        })
     }
 }

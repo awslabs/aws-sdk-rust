@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTemplateActionInput {
     /// <p>Launch configuration template ID.</p>
-    pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
+    pub launch_configuration_template_id: ::std::string::String,
     /// <p>Template post migration custom action name.</p>
-    pub action_name: ::std::option::Option<::std::string::String>,
+    pub action_name: ::std::string::String,
     /// <p>Template post migration custom action document identifier.</p>
-    pub document_identifier: ::std::option::Option<::std::string::String>,
+    pub document_identifier: ::std::string::String,
     /// <p>Template post migration custom action order.</p>
     pub order: i32,
     /// <p>Template post migration custom action ID.</p>
-    pub action_id: ::std::option::Option<::std::string::String>,
+    pub action_id: ::std::string::String,
     /// <p>Template post migration custom action document version.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action active status.</p>
@@ -35,24 +35,28 @@ pub struct PutTemplateActionInput {
 }
 impl PutTemplateActionInput {
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
-        self.launch_configuration_template_id.as_deref()
+    pub fn launch_configuration_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.launch_configuration_template_id.deref()
     }
     /// <p>Template post migration custom action name.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
-        self.action_name.as_deref()
+    pub fn action_name(&self) -> &str {
+        use std::ops::Deref;
+        self.action_name.deref()
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn document_identifier(&self) -> ::std::option::Option<&str> {
-        self.document_identifier.as_deref()
+    pub fn document_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.document_identifier.deref()
     }
     /// <p>Template post migration custom action order.</p>
     pub fn order(&self) -> i32 {
         self.order
     }
     /// <p>Template post migration custom action ID.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
-        self.action_id.as_deref()
+    pub fn action_id(&self) -> &str {
+        use std::ops::Deref;
+        self.action_id.deref()
     }
     /// <p>Template post migration custom action document version.</p>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
@@ -124,6 +128,7 @@ pub struct PutTemplateActionInputBuilder {
 }
 impl PutTemplateActionInputBuilder {
     /// <p>Launch configuration template ID.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +143,7 @@ impl PutTemplateActionInputBuilder {
         &self.launch_configuration_template_id
     }
     /// <p>Template post migration custom action name.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +158,7 @@ impl PutTemplateActionInputBuilder {
         &self.action_name
     }
     /// <p>Template post migration custom action document identifier.</p>
+    /// This field is required.
     pub fn document_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_identifier = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +173,7 @@ impl PutTemplateActionInputBuilder {
         &self.document_identifier
     }
     /// <p>Template post migration custom action order.</p>
+    /// This field is required.
     pub fn order(mut self, input: i32) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -180,6 +188,7 @@ impl PutTemplateActionInputBuilder {
         &self.order
     }
     /// <p>Template post migration custom action ID.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -346,15 +355,40 @@ impl PutTemplateActionInputBuilder {
         &self.category
     }
     /// Consumes the builder and constructs a [`PutTemplateActionInput`](crate::operation::put_template_action::PutTemplateActionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`launch_configuration_template_id`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::launch_configuration_template_id)
+    /// - [`action_name`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::action_name)
+    /// - [`document_identifier`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::document_identifier)
+    /// - [`action_id`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::action_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_template_action::PutTemplateActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_template_action::PutTemplateActionInput {
-            launch_configuration_template_id: self.launch_configuration_template_id,
-            action_name: self.action_name,
-            document_identifier: self.document_identifier,
+            launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "launch_configuration_template_id",
+                    "launch_configuration_template_id was not specified but it is required when building PutTemplateActionInput",
+                )
+            })?,
+            action_name: self.action_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_name",
+                    "action_name was not specified but it is required when building PutTemplateActionInput",
+                )
+            })?,
+            document_identifier: self.document_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_identifier",
+                    "document_identifier was not specified but it is required when building PutTemplateActionInput",
+                )
+            })?,
             order: self.order.unwrap_or_default(),
-            action_id: self.action_id,
+            action_id: self.action_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_id",
+                    "action_id was not specified but it is required when building PutTemplateActionInput",
+                )
+            })?,
             document_version: self.document_version,
             active: self.active,
             timeout_seconds: self.timeout_seconds.unwrap_or_default(),

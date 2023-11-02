@@ -34,6 +34,7 @@ pub struct GetPreparedStatementInputBuilder {
 }
 impl GetPreparedStatementInputBuilder {
     /// <p>The name of the prepared statement to retrieve.</p>
+    /// This field is required.
     pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPreparedStatementInputBuilder {
         &self.statement_name
     }
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self

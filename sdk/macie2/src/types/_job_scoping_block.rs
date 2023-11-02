@@ -9,8 +9,10 @@ pub struct JobScopingBlock {
 }
 impl JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn and(&self) -> ::std::option::Option<&[crate::types::JobScopeTerm]> {
-        self.and.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and.is_none()`.
+    pub fn and(&self) -> &[crate::types::JobScopeTerm] {
+        self.and.as_deref().unwrap_or_default()
     }
 }
 impl JobScopingBlock {

@@ -39,8 +39,10 @@ pub struct DashPackage {
 }
 impl DashPackage {
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn ad_triggers(&self) -> ::std::option::Option<&[crate::types::AdTriggersElement]> {
-        self.ad_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_triggers.is_none()`.
+    pub fn ad_triggers(&self) -> &[crate::types::AdTriggersElement] {
+        self.ad_triggers.as_deref().unwrap_or_default()
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     pub fn ads_on_delivery_restrictions(&self) -> ::std::option::Option<&crate::types::AdsOnDeliveryRestrictions> {
@@ -71,8 +73,10 @@ impl DashPackage {
         self.min_update_period_seconds
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
-    pub fn period_triggers(&self) -> ::std::option::Option<&[crate::types::PeriodTriggersElement]> {
-        self.period_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.period_triggers.is_none()`.
+    pub fn period_triggers(&self) -> &[crate::types::PeriodTriggersElement] {
+        self.period_triggers.as_deref().unwrap_or_default()
     }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled. When set to "DVB-DASH_2014", DVB-DASH 2014 compliant output is enabled.
     pub fn profile(&self) -> ::std::option::Option<&crate::types::Profile> {

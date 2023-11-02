@@ -14,8 +14,10 @@ pub struct DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
-    pub fn account_quotas(&self) -> ::std::option::Option<&[crate::types::AccountQuota]> {
-        self.account_quotas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_quotas.is_none()`.
+    pub fn account_quotas(&self) -> &[crate::types::AccountQuota] {
+        self.account_quotas.as_deref().unwrap_or_default()
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>

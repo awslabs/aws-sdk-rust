@@ -13,16 +13,22 @@ pub struct AnalyticsIntentResult {
 }
 impl AnalyticsIntentResult {
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    pub fn bin_keys(&self) -> ::std::option::Option<&[crate::types::AnalyticsBinKey]> {
-        self.bin_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bin_keys.is_none()`.
+    pub fn bin_keys(&self) -> &[crate::types::AnalyticsBinKey] {
+        self.bin_keys.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the groups.</p>
-    pub fn group_by_keys(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentGroupByKey]> {
-        self.group_by_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by_keys.is_none()`.
+    pub fn group_by_keys(&self) -> &[crate::types::AnalyticsIntentGroupByKey] {
+        self.group_by_keys.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn metrics_results(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentMetricResult]> {
-        self.metrics_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics_results.is_none()`.
+    pub fn metrics_results(&self) -> &[crate::types::AnalyticsIntentMetricResult] {
+        self.metrics_results.as_deref().unwrap_or_default()
     }
 }
 impl AnalyticsIntentResult {

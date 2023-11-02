@@ -11,8 +11,10 @@ pub struct ListImagesInRecycleBinOutput {
 }
 impl ListImagesInRecycleBinOutput {
     /// <p>Information about the AMIs.</p>
-    pub fn images(&self) -> ::std::option::Option<&[crate::types::ImageRecycleBinInfo]> {
-        self.images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.images.is_none()`.
+    pub fn images(&self) -> &[crate::types::ImageRecycleBinInfo] {
+        self.images.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

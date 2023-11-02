@@ -38,8 +38,10 @@ impl CreateEndpointInput {
     /// <p>Define the event buses used. </p> <important>
     /// <p>The names of the event buses must be identical in each Region.</p>
     /// </important>
-    pub fn event_buses(&self) -> ::std::option::Option<&[crate::types::EndpointEventBus]> {
-        self.event_buses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_buses.is_none()`.
+    pub fn event_buses(&self) -> &[crate::types::EndpointEventBus] {
+        self.event_buses.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the role used for replication.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -66,6 +68,7 @@ pub struct CreateEndpointInputBuilder {
 }
 impl CreateEndpointInputBuilder {
     /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +97,7 @@ impl CreateEndpointInputBuilder {
         &self.description
     }
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    /// This field is required.
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
         self.routing_config = ::std::option::Option::Some(input);
         self

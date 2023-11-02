@@ -35,6 +35,7 @@ pub struct GetReusableDelegationSetOutputBuilder {
 }
 impl GetReusableDelegationSetOutputBuilder {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
+    /// This field is required.
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
         self.delegation_set = ::std::option::Option::Some(input);
         self

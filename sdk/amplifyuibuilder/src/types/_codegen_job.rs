@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenJob {
     /// <p>The unique ID for the code generation job.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ID of the Amplify app associated with the code generation job.</p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p>The name of the backend environment associated with the code generation job.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>Describes the configuration information for rendering the UI component associated with the code generation job.</p>
     pub render_config: ::std::option::Option<crate::types::CodegenJobRenderConfig>,
     /// <p>Describes the data schema for a code generation job.</p>
@@ -35,16 +35,19 @@ pub struct CodegenJob {
 }
 impl CodegenJob {
     /// <p>The unique ID for the code generation job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ID of the Amplify app associated with the code generation job.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>Describes the configuration information for rendering the UI component associated with the code generation job.</p>
     pub fn render_config(&self) -> ::std::option::Option<&crate::types::CodegenJobRenderConfig> {
@@ -87,8 +90,10 @@ impl CodegenJob {
         self.modified_at.as_ref()
     }
     /// <p>Lists the dependency packages that may be required for the project code to run.</p>
-    pub fn dependencies(&self) -> ::std::option::Option<&[crate::types::CodegenDependency]> {
-        self.dependencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependencies.is_none()`.
+    pub fn dependencies(&self) -> &[crate::types::CodegenDependency] {
+        self.dependencies.as_deref().unwrap_or_default()
     }
 }
 impl CodegenJob {
@@ -119,6 +124,7 @@ pub struct CodegenJobBuilder {
 }
 impl CodegenJobBuilder {
     /// <p>The unique ID for the code generation job.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +139,7 @@ impl CodegenJobBuilder {
         &self.id
     }
     /// <p>The ID of the Amplify app associated with the code generation job.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +154,7 @@ impl CodegenJobBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment associated with the code generation job.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -327,11 +335,30 @@ impl CodegenJobBuilder {
         &self.dependencies
     }
     /// Consumes the builder and constructs a [`CodegenJob`](crate::types::CodegenJob).
-    pub fn build(self) -> crate::types::CodegenJob {
-        crate::types::CodegenJob {
-            id: self.id,
-            app_id: self.app_id,
-            environment_name: self.environment_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::CodegenJobBuilder::id)
+    /// - [`app_id`](crate::types::builders::CodegenJobBuilder::app_id)
+    /// - [`environment_name`](crate::types::builders::CodegenJobBuilder::environment_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenJob, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodegenJob {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CodegenJob",
+                )
+            })?,
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building CodegenJob",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building CodegenJob",
+                )
+            })?,
             render_config: self.render_config,
             generic_data_schema: self.generic_data_schema,
             auto_generate_forms: self.auto_generate_forms,
@@ -343,6 +370,6 @@ impl CodegenJobBuilder {
             created_at: self.created_at,
             modified_at: self.modified_at,
             dependencies: self.dependencies,
-        }
+        })
     }
 }

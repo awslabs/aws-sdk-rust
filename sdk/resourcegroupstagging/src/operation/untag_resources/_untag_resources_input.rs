@@ -12,12 +12,16 @@ pub struct UntagResourcesInput {
 impl UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arn_list.is_none()`.
+    pub fn resource_arn_list(&self) -> &[::std::string::String] {
+        self.resource_arn_list.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagResourcesInput {

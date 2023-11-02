@@ -17,8 +17,10 @@ impl UserTurnSlotOutput {
         self.value.as_deref()
     }
     /// <p>Values that are output by the slot recognition.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::UserTurnSlotOutput]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::UserTurnSlotOutput] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>A list of items mapping the name of the subslots to information about those subslots.</p>
     pub fn sub_slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {

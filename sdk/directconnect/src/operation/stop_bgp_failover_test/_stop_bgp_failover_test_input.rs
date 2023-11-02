@@ -27,6 +27,7 @@ pub struct StopBgpFailoverTestInputBuilder {
 }
 impl StopBgpFailoverTestInputBuilder {
     /// <p>The ID of the virtual interface you no longer want to test.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self

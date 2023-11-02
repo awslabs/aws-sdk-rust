@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCellConditionalFormatting {
     /// <p>The field ID of the cell for conditional formatting.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>The text format of the cell for conditional formatting.</p>
     pub text_format: ::std::option::Option<crate::types::TextConditionalFormat>,
 }
 impl TableCellConditionalFormatting {
     /// <p>The field ID of the cell for conditional formatting.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn text_format(&self) -> ::std::option::Option<&crate::types::TextConditionalFormat> {
@@ -35,6 +36,7 @@ pub struct TableCellConditionalFormattingBuilder {
 }
 impl TableCellConditionalFormattingBuilder {
     /// <p>The field ID of the cell for conditional formatting.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl TableCellConditionalFormattingBuilder {
         &self.text_format
     }
     /// Consumes the builder and constructs a [`TableCellConditionalFormatting`](crate::types::TableCellConditionalFormatting).
-    pub fn build(self) -> crate::types::TableCellConditionalFormatting {
-        crate::types::TableCellConditionalFormatting {
-            field_id: self.field_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_id`](crate::types::builders::TableCellConditionalFormattingBuilder::field_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableCellConditionalFormatting, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableCellConditionalFormatting {
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building TableCellConditionalFormatting",
+                )
+            })?,
             text_format: self.text_format,
-        }
+        })
     }
 }

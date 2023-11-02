@@ -7,7 +7,7 @@ pub struct XssMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
 }
 impl XssMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
@@ -15,8 +15,9 @@ impl XssMatchStatement {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub fn text_transformations(&self) -> ::std::option::Option<&[crate::types::TextTransformation]> {
-        self.text_transformations.as_deref()
+    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
+        use std::ops::Deref;
+        self.text_transformations.deref()
     }
 }
 impl XssMatchStatement {
@@ -35,6 +36,7 @@ pub struct XssMatchStatementBuilder {
 }
 impl XssMatchStatementBuilder {
     /// <p>The part of the web request that you want WAF to inspect. </p>
+    /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl XssMatchStatementBuilder {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`XssMatchStatement`](crate::types::XssMatchStatement).
-    pub fn build(self) -> crate::types::XssMatchStatement {
-        crate::types::XssMatchStatement {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text_transformations`](crate::types::builders::XssMatchStatementBuilder::text_transformations)
+    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchStatement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::XssMatchStatement {
             field_to_match: self.field_to_match,
-            text_transformations: self.text_transformations,
-        }
+            text_transformations: self.text_transformations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text_transformations",
+                    "text_transformations was not specified but it is required when building XssMatchStatement",
+                )
+            })?,
+        })
     }
 }

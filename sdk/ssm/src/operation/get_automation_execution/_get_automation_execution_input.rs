@@ -27,6 +27,7 @@ pub struct GetAutomationExecutionInputBuilder {
 }
 impl GetAutomationExecutionInputBuilder {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
+    /// This field is required.
     pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self

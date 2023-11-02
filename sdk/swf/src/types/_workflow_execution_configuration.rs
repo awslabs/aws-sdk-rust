@@ -6,10 +6,10 @@
 pub struct WorkflowExecutionConfiguration {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
+    pub task_start_to_close_timeout: ::std::string::String,
     /// <p>The total duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
+    pub execution_start_to_close_timeout: ::std::string::String,
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p>The priority assigned to decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
@@ -22,20 +22,22 @@ pub struct WorkflowExecutionConfiguration {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
+    pub child_policy: crate::types::ChildPolicy,
     /// <p>The IAM role attached to the child workflow execution.</p>
     pub lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionConfiguration {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn task_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
-        self.task_start_to_close_timeout.as_deref()
+    pub fn task_start_to_close_timeout(&self) -> &str {
+        use std::ops::Deref;
+        self.task_start_to_close_timeout.deref()
     }
     /// <p>The total duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn execution_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
-        self.execution_start_to_close_timeout.as_deref()
+    pub fn execution_start_to_close_timeout(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_start_to_close_timeout.deref()
     }
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
     pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
@@ -53,8 +55,8 @@ impl WorkflowExecutionConfiguration {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
-        self.child_policy.as_ref()
+    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+        &self.child_policy
     }
     /// <p>The IAM role attached to the child workflow execution.</p>
     pub fn lambda_role(&self) -> ::std::option::Option<&str> {
@@ -82,6 +84,7 @@ pub struct WorkflowExecutionConfigurationBuilder {
 impl WorkflowExecutionConfigurationBuilder {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// This field is required.
     pub fn task_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +102,7 @@ impl WorkflowExecutionConfigurationBuilder {
     }
     /// <p>The total duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// This field is required.
     pub fn execution_start_to_close_timeout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +119,7 @@ impl WorkflowExecutionConfigurationBuilder {
         &self.execution_start_to_close_timeout
     }
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self
@@ -152,6 +157,7 @@ impl WorkflowExecutionConfigurationBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
         self.child_policy = ::std::option::Option::Some(input);
         self
@@ -192,14 +198,33 @@ impl WorkflowExecutionConfigurationBuilder {
         &self.lambda_role
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionConfiguration`](crate::types::WorkflowExecutionConfiguration).
-    pub fn build(self) -> crate::types::WorkflowExecutionConfiguration {
-        crate::types::WorkflowExecutionConfiguration {
-            task_start_to_close_timeout: self.task_start_to_close_timeout,
-            execution_start_to_close_timeout: self.execution_start_to_close_timeout,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_start_to_close_timeout`](crate::types::builders::WorkflowExecutionConfigurationBuilder::task_start_to_close_timeout)
+    /// - [`execution_start_to_close_timeout`](crate::types::builders::WorkflowExecutionConfigurationBuilder::execution_start_to_close_timeout)
+    /// - [`child_policy`](crate::types::builders::WorkflowExecutionConfigurationBuilder::child_policy)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionConfiguration {
+            task_start_to_close_timeout: self.task_start_to_close_timeout.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_start_to_close_timeout",
+                    "task_start_to_close_timeout was not specified but it is required when building WorkflowExecutionConfiguration",
+                )
+            })?,
+            execution_start_to_close_timeout: self.execution_start_to_close_timeout.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_start_to_close_timeout",
+                    "execution_start_to_close_timeout was not specified but it is required when building WorkflowExecutionConfiguration",
+                )
+            })?,
             task_list: self.task_list,
             task_priority: self.task_priority,
-            child_policy: self.child_policy,
+            child_policy: self.child_policy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "child_policy",
+                    "child_policy was not specified but it is required when building WorkflowExecutionConfiguration",
+                )
+            })?,
             lambda_role: self.lambda_role,
-        }
+        })
     }
 }

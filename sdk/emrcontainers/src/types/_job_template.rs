@@ -174,6 +174,7 @@ impl JobTemplateBuilder {
         &self.tags
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
+    /// This field is required.
     pub fn job_template_data(mut self, input: crate::types::JobTemplateData) -> Self {
         self.job_template_data = ::std::option::Option::Some(input);
         self

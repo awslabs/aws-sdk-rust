@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationExecutionTargetsFilter {
     /// <p>The key value used in the request.</p>
-    pub key: ::std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
+    pub key: crate::types::AssociationExecutionTargetsFilterKey,
     /// <p>The value specified for the key.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl AssociationExecutionTargetsFilter {
     /// <p>The key value used in the request.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::AssociationExecutionTargetsFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::AssociationExecutionTargetsFilterKey {
+        &self.key
     }
     /// <p>The value specified for the key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl AssociationExecutionTargetsFilter {
@@ -35,6 +36,7 @@ pub struct AssociationExecutionTargetsFilterBuilder {
 }
 impl AssociationExecutionTargetsFilterBuilder {
     /// <p>The key value used in the request.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::AssociationExecutionTargetsFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl AssociationExecutionTargetsFilterBuilder {
         &self.key
     }
     /// <p>The value specified for the key.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl AssociationExecutionTargetsFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AssociationExecutionTargetsFilter`](crate::types::AssociationExecutionTargetsFilter).
-    pub fn build(self) -> crate::types::AssociationExecutionTargetsFilter {
-        crate::types::AssociationExecutionTargetsFilter {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::AssociationExecutionTargetsFilterBuilder::key)
+    /// - [`value`](crate::types::builders::AssociationExecutionTargetsFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssociationExecutionTargetsFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssociationExecutionTargetsFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building AssociationExecutionTargetsFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building AssociationExecutionTargetsFilter",
+                )
+            })?,
+        })
     }
 }

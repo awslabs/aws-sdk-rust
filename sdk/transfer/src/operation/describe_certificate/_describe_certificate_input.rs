@@ -27,6 +27,7 @@ pub struct DescribeCertificateInputBuilder {
 }
 impl DescribeCertificateInputBuilder {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self

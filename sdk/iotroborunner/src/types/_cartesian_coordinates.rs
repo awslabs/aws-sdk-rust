@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CartesianCoordinates {
     /// X coordinate.
-    pub x: ::std::option::Option<f64>,
+    pub x: f64,
     /// Y coordinate.
-    pub y: ::std::option::Option<f64>,
+    pub y: f64,
     /// Z coordinate.
     pub z: ::std::option::Option<f64>,
 }
 impl CartesianCoordinates {
     /// X coordinate.
-    pub fn x(&self) -> ::std::option::Option<f64> {
+    pub fn x(&self) -> f64 {
         self.x
     }
     /// Y coordinate.
-    pub fn y(&self) -> ::std::option::Option<f64> {
+    pub fn y(&self) -> f64 {
         self.y
     }
     /// Z coordinate.
@@ -42,6 +42,7 @@ pub struct CartesianCoordinatesBuilder {
 }
 impl CartesianCoordinatesBuilder {
     /// X coordinate.
+    /// This field is required.
     pub fn x(mut self, input: f64) -> Self {
         self.x = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl CartesianCoordinatesBuilder {
         &self.x
     }
     /// Y coordinate.
+    /// This field is required.
     pub fn y(mut self, input: f64) -> Self {
         self.y = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,24 @@ impl CartesianCoordinatesBuilder {
         &self.z
     }
     /// Consumes the builder and constructs a [`CartesianCoordinates`](crate::types::CartesianCoordinates).
-    pub fn build(self) -> crate::types::CartesianCoordinates {
-        crate::types::CartesianCoordinates {
-            x: self.x,
-            y: self.y,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`x`](crate::types::builders::CartesianCoordinatesBuilder::x)
+    /// - [`y`](crate::types::builders::CartesianCoordinatesBuilder::y)
+    pub fn build(self) -> ::std::result::Result<crate::types::CartesianCoordinates, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CartesianCoordinates {
+            x: self.x.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "x",
+                    "x was not specified but it is required when building CartesianCoordinates",
+                )
+            })?,
+            y: self.y.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "y",
+                    "y was not specified but it is required when building CartesianCoordinates",
+                )
+            })?,
             z: self.z,
-        }
+        })
     }
 }

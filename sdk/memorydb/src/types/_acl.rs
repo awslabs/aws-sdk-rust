@@ -29,8 +29,10 @@ impl Acl {
         self.status.as_deref()
     }
     /// <p>The list of user names that belong to the ACL.</p>
-    pub fn user_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names.is_none()`.
+    pub fn user_names(&self) -> &[::std::string::String] {
+        self.user_names.as_deref().unwrap_or_default()
     }
     /// <p>The minimum engine version supported for the ACL</p>
     pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
@@ -41,8 +43,10 @@ impl Acl {
         self.pending_changes.as_ref()
     }
     /// <p>A list of clusters associated with the ACL.</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[::std::string::String] {
+        self.clusters.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {

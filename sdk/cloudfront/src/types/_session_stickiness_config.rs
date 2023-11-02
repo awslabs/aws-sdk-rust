@@ -6,20 +6,20 @@
 pub struct SessionStickinessConfig {
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
-    pub idle_ttl: ::std::option::Option<i32>,
+    pub idle_ttl: i32,
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
-    pub maximum_ttl: ::std::option::Option<i32>,
+    pub maximum_ttl: i32,
 }
 impl SessionStickinessConfig {
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
-    pub fn idle_ttl(&self) -> ::std::option::Option<i32> {
+    pub fn idle_ttl(&self) -> i32 {
         self.idle_ttl
     }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
-    pub fn maximum_ttl(&self) -> ::std::option::Option<i32> {
+    pub fn maximum_ttl(&self) -> i32 {
         self.maximum_ttl
     }
 }
@@ -40,6 +40,7 @@ pub struct SessionStickinessConfigBuilder {
 impl SessionStickinessConfigBuilder {
     /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
+    /// This field is required.
     pub fn idle_ttl(mut self, input: i32) -> Self {
         self.idle_ttl = ::std::option::Option::Some(input);
         self
@@ -57,6 +58,7 @@ impl SessionStickinessConfigBuilder {
     }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
+    /// This field is required.
     pub fn maximum_ttl(mut self, input: i32) -> Self {
         self.maximum_ttl = ::std::option::Option::Some(input);
         self
@@ -73,10 +75,23 @@ impl SessionStickinessConfigBuilder {
         &self.maximum_ttl
     }
     /// Consumes the builder and constructs a [`SessionStickinessConfig`](crate::types::SessionStickinessConfig).
-    pub fn build(self) -> crate::types::SessionStickinessConfig {
-        crate::types::SessionStickinessConfig {
-            idle_ttl: self.idle_ttl,
-            maximum_ttl: self.maximum_ttl,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`idle_ttl`](crate::types::builders::SessionStickinessConfigBuilder::idle_ttl)
+    /// - [`maximum_ttl`](crate::types::builders::SessionStickinessConfigBuilder::maximum_ttl)
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionStickinessConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SessionStickinessConfig {
+            idle_ttl: self.idle_ttl.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "idle_ttl",
+                    "idle_ttl was not specified but it is required when building SessionStickinessConfig",
+                )
+            })?,
+            maximum_ttl: self.maximum_ttl.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "maximum_ttl",
+                    "maximum_ttl was not specified but it is required when building SessionStickinessConfig",
+                )
+            })?,
+        })
     }
 }

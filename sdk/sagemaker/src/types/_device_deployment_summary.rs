@@ -98,6 +98,7 @@ pub struct DeviceDeploymentSummaryBuilder {
 }
 impl DeviceDeploymentSummaryBuilder {
     /// <p>The ARN of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +113,7 @@ impl DeviceDeploymentSummaryBuilder {
         &self.edge_deployment_plan_arn
     }
     /// <p>The name of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +128,7 @@ impl DeviceDeploymentSummaryBuilder {
         &self.edge_deployment_plan_name
     }
     /// <p>The name of the stage in the edge deployment plan.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +171,7 @@ impl DeviceDeploymentSummaryBuilder {
         &self.device_fleet_name
     }
     /// <p>The name of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +186,7 @@ impl DeviceDeploymentSummaryBuilder {
         &self.device_name
     }
     /// <p>The ARN of the device.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self

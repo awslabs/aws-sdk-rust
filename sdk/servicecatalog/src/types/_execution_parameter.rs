@@ -21,8 +21,10 @@ impl ExecutionParameter {
         self.r#type.as_deref()
     }
     /// <p>The default values for the execution parameter.</p>
-    pub fn default_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.default_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_values.is_none()`.
+    pub fn default_values(&self) -> &[::std::string::String] {
+        self.default_values.as_deref().unwrap_or_default()
     }
 }
 impl ExecutionParameter {

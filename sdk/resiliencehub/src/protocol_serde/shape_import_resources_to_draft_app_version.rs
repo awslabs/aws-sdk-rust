@@ -160,7 +160,9 @@ pub fn de_import_resources_to_draft_app_version_http_response(
         output = crate::protocol_serde::shape_import_resources_to_draft_app_version::de_import_resources_to_draft_app_version(_response_body, output)
             .map_err(crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::import_resources_to_draft_app_version_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError::unhandled)?
     })
 }
 

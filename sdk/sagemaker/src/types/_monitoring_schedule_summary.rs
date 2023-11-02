@@ -77,6 +77,7 @@ pub struct MonitoringScheduleSummaryBuilder {
 }
 impl MonitoringScheduleSummaryBuilder {
     /// <p>The name of the monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl MonitoringScheduleSummaryBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl MonitoringScheduleSummaryBuilder {
         &self.monitoring_schedule_arn
     }
     /// <p>The creation time of the monitoring schedule.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +122,7 @@ impl MonitoringScheduleSummaryBuilder {
         &self.creation_time
     }
     /// <p>The last time the monitoring schedule was modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl MonitoringScheduleSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The status of the monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
         self.monitoring_schedule_status = ::std::option::Option::Some(input);
         self

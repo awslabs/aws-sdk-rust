@@ -6,18 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowHeaders {
     /// <p>The number of HTTP header names in the list.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub items: ::std::vec::Vec<::std::string::String>,
 }
 impl ResponseHeadersPolicyAccessControlAllowHeaders {
     /// <p>The number of HTTP header names in the list.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl ResponseHeadersPolicyAccessControlAllowHeaders {
@@ -36,6 +37,7 @@ pub struct ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
 }
 impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     /// <p>The number of HTTP header names in the list.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -70,10 +72,25 @@ impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::types::ResponseHeadersPolicyAccessControlAllowHeaders).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyAccessControlAllowHeaders {
-        crate::types::ResponseHeadersPolicyAccessControlAllowHeaders {
-            quantity: self.quantity,
-            items: self.items,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowHeadersBuilder::quantity)
+    /// - [`items`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowHeadersBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyAccessControlAllowHeaders {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowHeaders",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowHeaders",
+                )
+            })?,
+        })
     }
 }

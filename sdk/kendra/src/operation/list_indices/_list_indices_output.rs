@@ -11,8 +11,10 @@ pub struct ListIndicesOutput {
 }
 impl ListIndicesOutput {
     /// <p>An array of summary information on the configuration of one or more indexes.</p>
-    pub fn index_configuration_summary_items(&self) -> ::std::option::Option<&[crate::types::IndexConfigurationSummary]> {
-        self.index_configuration_summary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.index_configuration_summary_items.is_none()`.
+    pub fn index_configuration_summary_items(&self) -> &[crate::types::IndexConfigurationSummary] {
+        self.index_configuration_summary_items.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

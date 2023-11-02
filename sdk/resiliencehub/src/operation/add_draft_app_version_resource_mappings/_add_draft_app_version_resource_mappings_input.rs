@@ -3,19 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappingsInput {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub app_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub app_arn: ::std::string::String,
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
+    pub resource_mappings: ::std::vec::Vec<crate::types::ResourceMapping>,
 }
 impl AddDraftAppVersionResourceMappingsInput {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
-        self.app_arn.as_deref()
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn app_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.app_arn.deref()
     }
     /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
-    pub fn resource_mappings(&self) -> ::std::option::Option<&[crate::types::ResourceMapping]> {
-        self.resource_mappings.as_deref()
+    pub fn resource_mappings(&self) -> &[crate::types::ResourceMapping] {
+        use std::ops::Deref;
+        self.resource_mappings.deref()
     }
 }
 impl AddDraftAppVersionResourceMappingsInput {
@@ -33,17 +35,18 @@ pub struct AddDraftAppVersionResourceMappingsInputBuilder {
     pub(crate) resource_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>>,
 }
 impl AddDraftAppVersionResourceMappingsInputBuilder {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    /// This field is required.
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
@@ -68,6 +71,9 @@ impl AddDraftAppVersionResourceMappingsInputBuilder {
         &self.resource_mappings
     }
     /// Consumes the builder and constructs a [`AddDraftAppVersionResourceMappingsInput`](crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_arn`](crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder::app_arn)
+    /// - [`resource_mappings`](crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder::resource_mappings)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,8 +82,18 @@ impl AddDraftAppVersionResourceMappingsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsInput {
-                app_arn: self.app_arn,
-                resource_mappings: self.resource_mappings,
+                app_arn: self.app_arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "app_arn",
+                        "app_arn was not specified but it is required when building AddDraftAppVersionResourceMappingsInput",
+                    )
+                })?,
+                resource_mappings: self.resource_mappings.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_mappings",
+                        "resource_mappings was not specified but it is required when building AddDraftAppVersionResourceMappingsInput",
+                    )
+                })?,
             },
         )
     }

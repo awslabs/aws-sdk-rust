@@ -12,8 +12,10 @@ pub struct ListTagsOutput {
 }
 impl ListTagsOutput {
     /// <p>A list of resource tags.</p>
-    pub fn resource_tag_list(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tag_list.is_none()`.
+    pub fn resource_tag_list(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tag_list.as_deref().unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

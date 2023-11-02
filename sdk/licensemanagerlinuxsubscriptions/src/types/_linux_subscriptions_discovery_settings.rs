@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LinuxSubscriptionsDiscoverySettings {
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-    pub source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_regions: ::std::vec::Vec<::std::string::String>,
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    pub organization_integration: ::std::option::Option<crate::types::OrganizationIntegration>,
+    pub organization_integration: crate::types::OrganizationIntegration,
 }
 impl LinuxSubscriptionsDiscoverySettings {
     /// <p>The Regions in which to discover data for Linux subscriptions.</p>
-    pub fn source_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_regions.as_deref()
+    pub fn source_regions(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.source_regions.deref()
     }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
-    pub fn organization_integration(&self) -> ::std::option::Option<&crate::types::OrganizationIntegration> {
-        self.organization_integration.as_ref()
+    pub fn organization_integration(&self) -> &crate::types::OrganizationIntegration {
+        &self.organization_integration
     }
 }
 impl LinuxSubscriptionsDiscoverySettings {
@@ -55,6 +56,7 @@ impl LinuxSubscriptionsDiscoverySettingsBuilder {
         &self.source_regions
     }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
+    /// This field is required.
     pub fn organization_integration(mut self, input: crate::types::OrganizationIntegration) -> Self {
         self.organization_integration = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl LinuxSubscriptionsDiscoverySettingsBuilder {
         &self.organization_integration
     }
     /// Consumes the builder and constructs a [`LinuxSubscriptionsDiscoverySettings`](crate::types::LinuxSubscriptionsDiscoverySettings).
-    pub fn build(self) -> crate::types::LinuxSubscriptionsDiscoverySettings {
-        crate::types::LinuxSubscriptionsDiscoverySettings {
-            source_regions: self.source_regions,
-            organization_integration: self.organization_integration,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_regions`](crate::types::builders::LinuxSubscriptionsDiscoverySettingsBuilder::source_regions)
+    /// - [`organization_integration`](crate::types::builders::LinuxSubscriptionsDiscoverySettingsBuilder::organization_integration)
+    pub fn build(self) -> ::std::result::Result<crate::types::LinuxSubscriptionsDiscoverySettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LinuxSubscriptionsDiscoverySettings {
+            source_regions: self.source_regions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_regions",
+                    "source_regions was not specified but it is required when building LinuxSubscriptionsDiscoverySettings",
+                )
+            })?,
+            organization_integration: self.organization_integration.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "organization_integration",
+                    "organization_integration was not specified but it is required when building LinuxSubscriptionsDiscoverySettings",
+                )
+            })?,
+        })
     }
 }

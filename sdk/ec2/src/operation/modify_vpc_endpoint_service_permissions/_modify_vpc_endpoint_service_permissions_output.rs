@@ -11,8 +11,10 @@ pub struct ModifyVpcEndpointServicePermissionsOutput {
 }
 impl ModifyVpcEndpointServicePermissionsOutput {
     /// <p>Information about the added principals.</p>
-    pub fn added_principals(&self) -> ::std::option::Option<&[crate::types::AddedPrincipal]> {
-        self.added_principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.added_principals.is_none()`.
+    pub fn added_principals(&self) -> &[crate::types::AddedPrincipal] {
+        self.added_principals.as_deref().unwrap_or_default()
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn return_value(&self) -> ::std::option::Option<bool> {

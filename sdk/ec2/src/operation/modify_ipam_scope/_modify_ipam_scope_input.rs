@@ -55,6 +55,7 @@ impl ModifyIpamScopeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the scope you want to modify.</p>
+    /// This field is required.
     pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self

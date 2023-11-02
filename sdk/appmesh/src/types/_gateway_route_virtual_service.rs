@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
-    pub virtual_service_name: ::std::option::Option<::std::string::String>,
+    pub virtual_service_name: ::std::string::String,
 }
 impl GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
-    pub fn virtual_service_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_service_name.as_deref()
+    pub fn virtual_service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_service_name.deref()
     }
 }
 impl GatewayRouteVirtualService {
@@ -28,6 +29,7 @@ pub struct GatewayRouteVirtualServiceBuilder {
 }
 impl GatewayRouteVirtualServiceBuilder {
     /// <p>The name of the virtual service that traffic is routed to.</p>
+    /// This field is required.
     pub fn virtual_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_service_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl GatewayRouteVirtualServiceBuilder {
         &self.virtual_service_name
     }
     /// Consumes the builder and constructs a [`GatewayRouteVirtualService`](crate::types::GatewayRouteVirtualService).
-    pub fn build(self) -> crate::types::GatewayRouteVirtualService {
-        crate::types::GatewayRouteVirtualService {
-            virtual_service_name: self.virtual_service_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_service_name`](crate::types::builders::GatewayRouteVirtualServiceBuilder::virtual_service_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewayRouteVirtualService, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GatewayRouteVirtualService {
+            virtual_service_name: self.virtual_service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_service_name",
+                    "virtual_service_name was not specified but it is required when building GatewayRouteVirtualService",
+                )
+            })?,
+        })
     }
 }

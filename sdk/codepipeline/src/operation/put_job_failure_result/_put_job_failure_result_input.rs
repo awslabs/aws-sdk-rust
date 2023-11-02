@@ -35,6 +35,7 @@ pub struct PutJobFailureResultInputBuilder {
 }
 impl PutJobFailureResultInputBuilder {
     /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl PutJobFailureResultInputBuilder {
         &self.job_id
     }
     /// <p>The details about the failure of a job.</p>
+    /// This field is required.
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
         self

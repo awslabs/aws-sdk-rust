@@ -3,32 +3,32 @@ pub fn ser_detector_state_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DetectorStateDefinition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.state_name {
-        object.key("stateName").string(var_1.as_str());
+    {
+        object.key("stateName").string(input.state_name.as_str());
     }
-    if let Some(var_2) = &input.variables {
-        let mut array_3 = object.key("variables").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("variables").start_array();
+        for item_2 in &input.variables {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_variable_definition::ser_variable_definition(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_variable_definition::ser_variable_definition(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.timers {
-        let mut array_7 = object.key("timers").start_array();
-        for item_8 in var_6 {
+    {
+        let mut array_4 = object.key("timers").start_array();
+        for item_5 in &input.timers {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_timer_definition::ser_timer_definition(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_timer_definition::ser_timer_definition(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_7.finish();
+        array_4.finish();
     }
     Ok(())
 }

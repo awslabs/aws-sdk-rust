@@ -27,6 +27,7 @@ pub struct DeleteEmailMonitoringConfigurationInputBuilder {
 }
 impl DeleteEmailMonitoringConfigurationInputBuilder {
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

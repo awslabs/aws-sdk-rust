@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSetImportTaskInput {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The data set import task configuration.</p>
     pub import_config: ::std::option::Option<crate::types::DataSetImportConfig>,
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
@@ -12,8 +12,9 @@ pub struct CreateDataSetImportTaskInput {
 }
 impl CreateDataSetImportTaskInput {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The data set import task configuration.</p>
     pub fn import_config(&self) -> ::std::option::Option<&crate::types::DataSetImportConfig> {
@@ -41,6 +42,7 @@ pub struct CreateDataSetImportTaskInputBuilder {
 }
 impl CreateDataSetImportTaskInputBuilder {
     /// <p>The unique identifier of the application for which you want to import data sets.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl CreateDataSetImportTaskInputBuilder {
         &self.application_id
     }
     /// <p>The data set import task configuration.</p>
+    /// This field is required.
     pub fn import_config(mut self, input: crate::types::DataSetImportConfig) -> Self {
         self.import_config = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,8 @@ impl CreateDataSetImportTaskInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDataSetImportTaskInput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -90,7 +95,12 @@ impl CreateDataSetImportTaskInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_data_set_import_task::CreateDataSetImportTaskInput {
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building CreateDataSetImportTaskInput",
+                )
+            })?,
             import_config: self.import_config,
             client_token: self.client_token,
         })

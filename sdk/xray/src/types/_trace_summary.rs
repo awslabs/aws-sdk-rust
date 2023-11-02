@@ -91,40 +91,56 @@ impl TraceSummary {
         self.annotations.as_ref()
     }
     /// <p>Users from the trace's segment documents.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::TraceUser]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::TraceUser] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>Service IDs from the trace's segment documents.</p>
-    pub fn service_ids(&self) -> ::std::option::Option<&[crate::types::ServiceId]> {
-        self.service_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_ids.is_none()`.
+    pub fn service_ids(&self) -> &[crate::types::ServiceId] {
+        self.service_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    pub fn resource_ar_ns(&self) -> ::std::option::Option<&[crate::types::ResourceArnDetail]> {
-        self.resource_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ar_ns.is_none()`.
+    pub fn resource_ar_ns(&self) -> &[crate::types::ResourceArnDetail] {
+        self.resource_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[crate::types::InstanceIdDetail]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[crate::types::InstanceIdDetail] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZoneDetail]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZoneDetail] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The root of a trace.</p>
     pub fn entry_point(&self) -> ::std::option::Option<&crate::types::ServiceId> {
         self.entry_point.as_ref()
     }
     /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
-    pub fn fault_root_causes(&self) -> ::std::option::Option<&[crate::types::FaultRootCause]> {
-        self.fault_root_causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fault_root_causes.is_none()`.
+    pub fn fault_root_causes(&self) -> &[crate::types::FaultRootCause] {
+        self.fault_root_causes.as_deref().unwrap_or_default()
     }
     /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
-    pub fn error_root_causes(&self) -> ::std::option::Option<&[crate::types::ErrorRootCause]> {
-        self.error_root_causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_root_causes.is_none()`.
+    pub fn error_root_causes(&self) -> &[crate::types::ErrorRootCause] {
+        self.error_root_causes.as_deref().unwrap_or_default()
     }
     /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
-    pub fn response_time_root_causes(&self) -> ::std::option::Option<&[crate::types::ResponseTimeRootCause]> {
-        self.response_time_root_causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.response_time_root_causes.is_none()`.
+    pub fn response_time_root_causes(&self) -> &[crate::types::ResponseTimeRootCause] {
+        self.response_time_root_causes.as_deref().unwrap_or_default()
     }
     /// <p>The revision number of a trace.</p>
     pub fn revision(&self) -> i32 {

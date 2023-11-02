@@ -17,6 +17,7 @@ pub fn ser_s3_object_owner(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_object_owner(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3ObjectOwner, ::aws_smithy_xml::decode::XmlDecodeError> {

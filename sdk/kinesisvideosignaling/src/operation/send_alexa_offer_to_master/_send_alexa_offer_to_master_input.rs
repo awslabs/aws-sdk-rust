@@ -41,6 +41,7 @@ pub struct SendAlexaOfferToMasterInputBuilder {
 }
 impl SendAlexaOfferToMasterInputBuilder {
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl SendAlexaOfferToMasterInputBuilder {
         &self.channel_arn
     }
     /// <p>The unique identifier for the sender client.</p>
+    /// This field is required.
     pub fn sender_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_client_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl SendAlexaOfferToMasterInputBuilder {
         &self.sender_client_id
     }
     /// <p>The base64-encoded SDP offer content.</p>
+    /// This field is required.
     pub fn message_payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_payload = ::std::option::Option::Some(input.into());
         self

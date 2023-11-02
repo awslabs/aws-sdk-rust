@@ -31,12 +31,16 @@ impl ExpectedRoute {
         self.ip_v6_cidr.as_deref()
     }
     /// <p>Information about the contributing subnets.</p>
-    pub fn contributing_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contributing_subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contributing_subnets.is_none()`.
+    pub fn contributing_subnets(&self) -> &[::std::string::String] {
+        self.contributing_subnets.as_deref().unwrap_or_default()
     }
     /// <p>Information about the allowed targets.</p>
-    pub fn allowed_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_targets.is_none()`.
+    pub fn allowed_targets(&self) -> &[::std::string::String] {
+        self.allowed_targets.as_deref().unwrap_or_default()
     }
     /// <p>Information about the route table ID.</p>
     pub fn route_table_id(&self) -> ::std::option::Option<&str> {

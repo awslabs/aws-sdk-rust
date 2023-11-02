@@ -27,6 +27,7 @@ pub struct DeleteCapacityProviderInputBuilder {
 }
 impl DeleteCapacityProviderInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
+    /// This field is required.
     pub fn capacity_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider = ::std::option::Option::Some(input.into());
         self

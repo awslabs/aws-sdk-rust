@@ -15,8 +15,10 @@ pub struct ListNamespacesOutput {
 }
 impl ListNamespacesOutput {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-    pub fn namespaces(&self) -> ::std::option::Option<&[crate::types::NamespaceInfoV2]> {
-        self.namespaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
+    pub fn namespaces(&self) -> &[crate::types::NamespaceInfoV2] {
+        self.namespaces.as_deref().unwrap_or_default()
     }
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

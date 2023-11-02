@@ -43,6 +43,7 @@ pub struct UpdateContactAttributesInputBuilder {
 }
 impl UpdateContactAttributesInputBuilder {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    /// This field is required.
     pub fn initial_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initial_contact_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl UpdateContactAttributesInputBuilder {
         &self.initial_contact_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

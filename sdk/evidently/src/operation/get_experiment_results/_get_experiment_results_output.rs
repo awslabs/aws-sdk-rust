@@ -15,16 +15,22 @@ pub struct GetExperimentResultsOutput {
 }
 impl GetExperimentResultsOutput {
     /// <p>An array of structures that include experiment results including metric names and values. </p>
-    pub fn results_data(&self) -> ::std::option::Option<&[crate::types::ExperimentResultsData]> {
-        self.results_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_data.is_none()`.
+    pub fn results_data(&self) -> &[crate::types::ExperimentResultsData] {
+        self.results_data.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that include the reports that you requested.</p>
-    pub fn reports(&self) -> ::std::option::Option<&[crate::types::ExperimentReport]> {
-        self.reports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reports.is_none()`.
+    pub fn reports(&self) -> &[crate::types::ExperimentReport] {
+        self.reports.as_deref().unwrap_or_default()
     }
     /// <p>The timestamps of each result returned.</p>
-    pub fn timestamps(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.timestamps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
+    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref().unwrap_or_default()
     }
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
     pub fn details(&self) -> ::std::option::Option<&str> {

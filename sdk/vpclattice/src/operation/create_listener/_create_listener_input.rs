@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::option::Option<::std::string::String>,
+    pub service_identifier: ::std::string::String,
     /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The listener protocol HTTP or HTTPS.</p>
-    pub protocol: ::std::option::Option<crate::types::ListenerProtocol>,
+    pub protocol: crate::types::ListenerProtocol,
     /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
@@ -20,16 +20,18 @@ pub struct CreateListenerInput {
 }
 impl CreateListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_identifier.as_deref()
+    pub fn service_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_identifier.deref()
     }
     /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The listener protocol HTTP or HTTPS.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ListenerProtocol> {
-        self.protocol.as_ref()
+    pub fn protocol(&self) -> &crate::types::ListenerProtocol {
+        &self.protocol
     }
     /// <p>The listener port. You can specify a value from <code>1</code> to <code>65535</code>. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
@@ -69,6 +71,7 @@ pub struct CreateListenerInputBuilder {
 }
 impl CreateListenerInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateListenerInputBuilder {
         &self.service_identifier
     }
     /// <p>The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CreateListenerInputBuilder {
         &self.name
     }
     /// <p>The listener protocol HTTP or HTTPS.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -125,6 +130,7 @@ impl CreateListenerInputBuilder {
         &self.port
     }
     /// <p>The action for the default rule. Each listener has a default rule. Each rule consists of a priority, one or more actions, and one or more conditions. The default rule is the rule that's used if no other rules match. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed. </p>
+    /// This field is required.
     pub fn default_action(mut self, input: crate::types::RuleAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
         self
@@ -173,13 +179,32 @@ impl CreateListenerInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_identifier`](crate::operation::create_listener::builders::CreateListenerInputBuilder::service_identifier)
+    /// - [`name`](crate::operation::create_listener::builders::CreateListenerInputBuilder::name)
+    /// - [`protocol`](crate::operation::create_listener::builders::CreateListenerInputBuilder::protocol)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_listener::CreateListenerInput {
-            service_identifier: self.service_identifier,
-            name: self.name,
-            protocol: self.protocol,
+            service_identifier: self.service_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_identifier",
+                    "service_identifier was not specified but it is required when building CreateListenerInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateListenerInput",
+                )
+            })?,
+            protocol: self.protocol.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protocol",
+                    "protocol was not specified but it is required when building CreateListenerInput",
+                )
+            })?,
             port: self.port,
             default_action: self.default_action,
             client_token: self.client_token,

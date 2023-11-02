@@ -9,14 +9,14 @@ pub fn ser_batch_get_link_attributes(
         crate::protocol_serde::shape_typed_link_specifier::ser_typed_link_specifier(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.attribute_names {
-        let mut array_4 = object.key("AttributeNames").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("AttributeNames").start_array();
+        for item_4 in &input.attribute_names {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }

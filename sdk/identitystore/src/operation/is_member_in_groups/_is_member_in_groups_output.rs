@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsMemberInGroupsOutput {
     /// <p>A list containing the results of membership existence checks.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
+    pub results: ::std::vec::Vec<crate::types::GroupMembershipExistenceResult>,
     _request_id: Option<String>,
 }
 impl IsMemberInGroupsOutput {
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::GroupMembershipExistenceResult]> {
-        self.results.as_deref()
+    pub fn results(&self) -> &[crate::types::GroupMembershipExistenceResult] {
+        use std::ops::Deref;
+        self.results.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for IsMemberInGroupsOutput {
@@ -63,10 +64,19 @@ impl IsMemberInGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
-    pub fn build(self) -> crate::operation::is_member_in_groups::IsMemberInGroupsOutput {
-        crate::operation::is_member_in_groups::IsMemberInGroupsOutput {
-            results: self.results,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::is_member_in_groups::IsMemberInGroupsOutput {
+            results: self.results.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "results",
+                    "results was not specified but it is required when building IsMemberInGroupsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ListPortalsOutput {
 }
 impl ListPortalsOutput {
     /// <p>A list that summarizes each portal.</p>
-    pub fn portal_summaries(&self) -> ::std::option::Option<&[crate::types::PortalSummary]> {
-        self.portal_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.portal_summaries.is_none()`.
+    pub fn portal_summaries(&self) -> &[crate::types::PortalSummary] {
+        self.portal_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

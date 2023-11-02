@@ -34,6 +34,7 @@ pub struct CreateParameterGroupInputBuilder {
 }
 impl CreateParameterGroupInputBuilder {
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self

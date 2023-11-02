@@ -34,6 +34,7 @@ pub struct CreateVirtualNodeOutputBuilder {
 }
 impl CreateVirtualNodeOutputBuilder {
     /// <p>The full description of your virtual node following the create call.</p>
+    /// This field is required.
     pub fn virtual_node(mut self, input: crate::types::VirtualNodeData) -> Self {
         self.virtual_node = ::std::option::Option::Some(input);
         self

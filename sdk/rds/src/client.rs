@@ -100,7 +100,7 @@ impl Client {
         if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
             panic!(
                 "An async sleep implementation is required for retries or timeouts to work. \
-                                        Set the `sleep_impl` on the Config passed into this function to fix this panic."
+                                    Set the `sleep_impl` on the Config passed into this function to fix this panic."
             );
         }
 
@@ -114,22 +114,6 @@ impl Client {
 
     /// Returns the client's configuration.
     pub fn config(&self) -> &crate::Config {
-        &self.handle.conf
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Creates a client with the given service configuration.
-    pub fn with_config<C, M, R>(_client: ::aws_smithy_client::Client<C, M, R>, conf: crate::Config) -> Self {
-        Self::from_conf(conf)
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Returns the client's configuration.
-    pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
     }
 }
@@ -206,6 +190,8 @@ mod create_event_subscription;
 
 mod create_global_cluster;
 
+mod create_integration;
+
 mod create_option_group;
 
 /// Operation customization and supporting types.
@@ -269,6 +255,8 @@ mod delete_db_subnet_group;
 mod delete_event_subscription;
 
 mod delete_global_cluster;
+
+mod delete_integration;
 
 mod delete_option_group;
 
@@ -337,6 +325,8 @@ mod describe_events;
 mod describe_export_tasks;
 
 mod describe_global_clusters;
+
+mod describe_integrations;
 
 mod describe_option_group_options;
 

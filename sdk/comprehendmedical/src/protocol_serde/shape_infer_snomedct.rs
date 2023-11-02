@@ -127,7 +127,9 @@ pub fn de_infer_snomedct_http_response(
         output = crate::protocol_serde::shape_infer_snomedct::de_infer_snomedct(_response_body, output)
             .map_err(crate::operation::infer_snomedct::InferSNOMEDCTError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::infer_snomedct_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::infer_snomedct::InferSNOMEDCTError::unhandled)?
     })
 }
 

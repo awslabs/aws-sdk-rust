@@ -30,8 +30,10 @@ impl SearchListingsInput {
         self.search_text.as_deref()
     }
     /// <p></p>
-    pub fn search_in(&self) -> ::std::option::Option<&[crate::types::SearchInItem]> {
-        self.search_in.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_in.is_none()`.
+    pub fn search_in(&self) -> &[crate::types::SearchInItem] {
+        self.search_in.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in a single call to <code>SearchListings</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchListings</code> to list the next set of results. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -50,8 +52,10 @@ impl SearchListingsInput {
         self.sort.as_ref()
     }
     /// <p>Specifies additional attributes for the search.</p>
-    pub fn additional_attributes(&self) -> ::std::option::Option<&[crate::types::SearchOutputAdditionalAttribute]> {
-        self.additional_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attributes.is_none()`.
+    pub fn additional_attributes(&self) -> &[crate::types::SearchOutputAdditionalAttribute] {
+        self.additional_attributes.as_deref().unwrap_or_default()
     }
 }
 impl SearchListingsInput {
@@ -76,6 +80,7 @@ pub struct SearchListingsInputBuilder {
 }
 impl SearchListingsInputBuilder {
     /// <p>The identifier of the domain in which to search listings.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self

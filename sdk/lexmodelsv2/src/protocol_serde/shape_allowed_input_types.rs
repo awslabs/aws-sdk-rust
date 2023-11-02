@@ -3,11 +3,11 @@ pub fn ser_allowed_input_types(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AllowedInputTypes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.allow_audio_input {
-        object.key("allowAudioInput").boolean(*var_1);
+    {
+        object.key("allowAudioInput").boolean(input.allow_audio_input);
     }
-    if let Some(var_2) = &input.allow_dtmf_input {
-        object.key("allowDTMFInput").boolean(*var_2);
+    {
+        object.key("allowDTMFInput").boolean(input.allow_dtmf_input);
     }
     Ok(())
 }
@@ -43,7 +43,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::allowed_input_types_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

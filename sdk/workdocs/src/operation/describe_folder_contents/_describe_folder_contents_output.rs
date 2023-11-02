@@ -13,12 +13,16 @@ pub struct DescribeFolderContentsOutput {
 }
 impl DescribeFolderContentsOutput {
     /// <p>The subfolders in the specified folder.</p>
-    pub fn folders(&self) -> ::std::option::Option<&[crate::types::FolderMetadata]> {
-        self.folders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folders.is_none()`.
+    pub fn folders(&self) -> &[crate::types::FolderMetadata] {
+        self.folders.as_deref().unwrap_or_default()
     }
     /// <p>The documents in the specified folder.</p>
-    pub fn documents(&self) -> ::std::option::Option<&[crate::types::DocumentMetadata]> {
-        self.documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
+    pub fn documents(&self) -> &[crate::types::DocumentMetadata] {
+        self.documents.as_deref().unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

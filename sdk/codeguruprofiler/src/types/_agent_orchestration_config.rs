@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentOrchestrationConfig {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    pub profiling_enabled: ::std::option::Option<bool>,
+    pub profiling_enabled: bool,
 }
 impl AgentOrchestrationConfig {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    pub fn profiling_enabled(&self) -> ::std::option::Option<bool> {
+    pub fn profiling_enabled(&self) -> bool {
         self.profiling_enabled
     }
 }
@@ -28,6 +28,7 @@ pub struct AgentOrchestrationConfigBuilder {
 }
 impl AgentOrchestrationConfigBuilder {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
+    /// This field is required.
     pub fn profiling_enabled(mut self, input: bool) -> Self {
         self.profiling_enabled = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl AgentOrchestrationConfigBuilder {
         &self.profiling_enabled
     }
     /// Consumes the builder and constructs a [`AgentOrchestrationConfig`](crate::types::AgentOrchestrationConfig).
-    pub fn build(self) -> crate::types::AgentOrchestrationConfig {
-        crate::types::AgentOrchestrationConfig {
-            profiling_enabled: self.profiling_enabled,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_enabled`](crate::types::builders::AgentOrchestrationConfigBuilder::profiling_enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentOrchestrationConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentOrchestrationConfig {
+            profiling_enabled: self.profiling_enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_enabled",
+                    "profiling_enabled was not specified but it is required when building AgentOrchestrationConfig",
+                )
+            })?,
+        })
     }
 }

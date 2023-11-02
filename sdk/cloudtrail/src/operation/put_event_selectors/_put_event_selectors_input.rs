@@ -34,12 +34,16 @@ impl PutEventSelectorsInput {
         self.trail_name.as_deref()
     }
     /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
-    pub fn event_selectors(&self) -> ::std::option::Option<&[crate::types::EventSelector]> {
-        self.event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_selectors.is_none()`.
+    pub fn event_selectors(&self) -> &[crate::types::EventSelector] {
+        self.event_selectors.as_deref().unwrap_or_default()
     }
     /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> in the <i>CloudTrail User Guide</i>. </p>
-    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
-        self.advanced_event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
+    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref().unwrap_or_default()
     }
 }
 impl PutEventSelectorsInput {
@@ -68,6 +72,7 @@ impl PutEventSelectorsInputBuilder {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the following format.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// This field is required.
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_name = ::std::option::Option::Some(input.into());
         self

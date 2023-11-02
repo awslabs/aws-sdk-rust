@@ -27,6 +27,7 @@ pub struct GetFunctionDefinitionInputBuilder {
 }
 impl GetFunctionDefinitionInputBuilder {
     /// The ID of the Lambda function definition.
+    /// This field is required.
     pub fn function_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_definition_id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct DescribeReportJobInputBuilder {
 }
 impl DescribeReportJobInputBuilder {
     /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    /// This field is required.
     pub fn report_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_job_id = ::std::option::Option::Some(input.into());
         self

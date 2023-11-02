@@ -27,6 +27,7 @@ pub struct DeleteDataSourceInputBuilder {
 }
 impl DeleteDataSourceInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self

@@ -49,6 +49,7 @@ pub struct CreateDocumentationVersionInputBuilder {
 }
 impl CreateDocumentationVersionInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreateDocumentationVersionInputBuilder {
         &self.rest_api_id
     }
     /// <p>The version identifier of the new snapshot.</p>
+    /// This field is required.
     pub fn documentation_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.documentation_version = ::std::option::Option::Some(input.into());
         self

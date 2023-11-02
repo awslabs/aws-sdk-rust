@@ -13,8 +13,10 @@ pub struct ModifyVerifiedAccessEndpointLoadBalancerOptions {
 }
 impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
     /// <p>The IDs of the subnets.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IP protocol.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {

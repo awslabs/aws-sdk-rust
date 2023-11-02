@@ -56,6 +56,7 @@ pub struct AuthorizeDbSecurityGroupIngressInputBuilder {
 }
 impl AuthorizeDbSecurityGroupIngressInputBuilder {
     /// <p>The name of the DB security group to add authorization to.</p>
+    /// This field is required.
     pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_security_group_name = ::std::option::Option::Some(input.into());
         self

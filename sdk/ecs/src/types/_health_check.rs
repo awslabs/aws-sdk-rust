@@ -51,7 +51,7 @@ pub struct HealthCheck {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub command: ::std::vec::Vec<::std::string::String>,
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub interval: ::std::option::Option<i32>,
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
@@ -70,8 +70,9 @@ impl HealthCheck {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    pub fn command(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.command.deref()
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub fn interval(&self) -> ::std::option::Option<i32> {
@@ -208,13 +209,20 @@ impl HealthCheckBuilder {
         &self.start_period
     }
     /// Consumes the builder and constructs a [`HealthCheck`](crate::types::HealthCheck).
-    pub fn build(self) -> crate::types::HealthCheck {
-        crate::types::HealthCheck {
-            command: self.command,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`command`](crate::types::builders::HealthCheckBuilder::command)
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HealthCheck {
+            command: self.command.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "command",
+                    "command was not specified but it is required when building HealthCheck",
+                )
+            })?,
             interval: self.interval,
             timeout: self.timeout,
             retries: self.retries,
             start_period: self.start_period,
-        }
+        })
     }
 }

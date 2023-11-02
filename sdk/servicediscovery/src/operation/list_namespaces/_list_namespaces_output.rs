@@ -13,8 +13,10 @@ pub struct ListNamespacesOutput {
 }
 impl ListNamespacesOutput {
     /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
-    pub fn namespaces(&self) -> ::std::option::Option<&[crate::types::NamespaceSummary]> {
-        self.namespaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
+    pub fn namespaces(&self) -> &[crate::types::NamespaceSummary] {
+        self.namespaces.as_deref().unwrap_or_default()
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>

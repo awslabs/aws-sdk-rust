@@ -34,6 +34,7 @@ pub struct DescribeApplicationSnapshotInputBuilder {
 }
 impl DescribeApplicationSnapshotInputBuilder {
     /// <p>The name of an existing application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeApplicationSnapshotInputBuilder {
         &self.application_name
     }
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self

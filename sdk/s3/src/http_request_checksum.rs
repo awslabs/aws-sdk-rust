@@ -9,7 +9,7 @@
 //! Interceptor for handling Smithy `@httpChecksum` request checksumming with AWS SigV4
 
 use aws_http::content_encoding::{AwsChunkedBody, AwsChunkedBodyOptions};
-use aws_runtime::auth::sigv4::SigV4OperationSigningConfig;
+use aws_runtime::auth::SigV4OperationSigningConfig;
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_checksums::{body::calculate, http::HttpChecksum};

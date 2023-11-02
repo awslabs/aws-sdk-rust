@@ -31,8 +31,10 @@ impl DescribeFleetPortSettingsOutput {
         self.fleet_arn.as_deref()
     }
     /// <p>The port settings for the requested fleet ID.</p>
-    pub fn inbound_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.inbound_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inbound_permissions.is_none()`.
+    pub fn inbound_permissions(&self) -> &[crate::types::IpPermission] {
+        self.inbound_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub fn update_status(&self) -> ::std::option::Option<&crate::types::LocationUpdateStatus> {

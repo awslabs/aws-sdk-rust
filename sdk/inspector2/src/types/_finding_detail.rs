@@ -39,28 +39,38 @@ impl FindingDetail {
         self.risk_score
     }
     /// <p>Information on the evidence of the vulnerability.</p>
-    pub fn evidences(&self) -> ::std::option::Option<&[crate::types::Evidence]> {
-        self.evidences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidences.is_none()`.
+    pub fn evidences(&self) -> &[crate::types::Evidence] {
+        self.evidences.as_deref().unwrap_or_default()
     }
     /// <p>The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.</p>
-    pub fn ttps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ttps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ttps.is_none()`.
+    pub fn ttps(&self) -> &[::std::string::String] {
+        self.ttps.as_deref().unwrap_or_default()
     }
     /// <p>The known malware tools or kits that can exploit the vulnerability.</p>
-    pub fn tools(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
+    pub fn tools(&self) -> &[::std::string::String] {
+        self.tools.as_deref().unwrap_or_default()
     }
     /// <p>Contains information on when this exploit was observed.</p>
     pub fn exploit_observed(&self) -> ::std::option::Option<&crate::types::ExploitObserved> {
         self.exploit_observed.as_ref()
     }
     /// <p>The reference URLs for the vulnerability data.</p>
-    pub fn reference_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reference_urls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_urls.is_none()`.
+    pub fn reference_urls(&self) -> &[::std::string::String] {
+        self.reference_urls.as_deref().unwrap_or_default()
     }
     /// <p>The Common Weakness Enumerations (CWEs) associated with the vulnerability.</p>
-    pub fn cwes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cwes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cwes.is_none()`.
+    pub fn cwes(&self) -> &[::std::string::String] {
+        self.cwes.as_deref().unwrap_or_default()
     }
     /// <p>The Exploit Prediction Scoring System (EPSS) score of the vulnerability.</p>
     pub fn epss_score(&self) -> ::std::option::Option<f64> {

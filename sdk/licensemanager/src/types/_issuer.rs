@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Issuer {
     /// <p>Issuer name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub sign_key: ::std::option::Option<::std::string::String>,
 }
 impl Issuer {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn sign_key(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct IssuerBuilder {
 }
 impl IssuerBuilder {
     /// <p>Issuer name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl IssuerBuilder {
         &self.sign_key
     }
     /// Consumes the builder and constructs a [`Issuer`](crate::types::Issuer).
-    pub fn build(self) -> crate::types::Issuer {
-        crate::types::Issuer {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::IssuerBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Issuer, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Issuer {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Issuer",
+                )
+            })?,
             sign_key: self.sign_key,
-        }
+        })
     }
 }

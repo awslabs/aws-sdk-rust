@@ -104,7 +104,7 @@ pub fn de_update_default_auto_scaling_configuration_http_response(
         )
         .map_err(crate::operation::update_default_auto_scaling_configuration::UpdateDefaultAutoScalingConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_default_auto_scaling_configuration_output_correct_errors(output).build()
     })
 }
 

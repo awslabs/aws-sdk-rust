@@ -27,6 +27,7 @@ pub struct DeleteAuthenticationProfileInputBuilder {
 }
 impl DeleteAuthenticationProfileInputBuilder {
     /// <p>The name of the authentication profile to delete.</p>
+    /// This field is required.
     pub fn authentication_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_profile_name = ::std::option::Option::Some(input.into());
         self

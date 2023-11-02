@@ -147,6 +147,7 @@ impl PresetBuilder {
         &self.last_updated
     }
     /// A name you create for each preset. Each name must be unique within your account.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +162,7 @@ impl PresetBuilder {
         &self.name
     }
     /// Settings for preset
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::PresetSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct ListOrganizationalUnitsForParentOutput {
 }
 impl ListOrganizationalUnitsForParentOutput {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
-    pub fn organizational_units(&self) -> ::std::option::Option<&[crate::types::OrganizationalUnit]> {
-        self.organizational_units.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_units.is_none()`.
+    pub fn organizational_units(&self) -> &[crate::types::OrganizationalUnit] {
+        self.organizational_units.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

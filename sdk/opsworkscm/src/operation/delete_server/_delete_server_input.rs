@@ -27,6 +27,7 @@ pub struct DeleteServerInputBuilder {
 }
 impl DeleteServerInputBuilder {
     /// <p>The ID of the server to delete.</p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self

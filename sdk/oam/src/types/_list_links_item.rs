@@ -29,8 +29,10 @@ impl ListLinksItem {
         self.label.as_deref()
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[::std::string::String] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the sink that this link is attached to.</p>
     pub fn sink_arn(&self) -> ::std::option::Option<&str> {

@@ -15,8 +15,10 @@ impl AuthenticationMode {
         self.r#type.as_ref()
     }
     /// <p>The password(s) used for authentication</p>
-    pub fn passwords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.passwords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.passwords.is_none()`.
+    pub fn passwords(&self) -> &[::std::string::String] {
+        self.passwords.as_deref().unwrap_or_default()
     }
 }
 impl AuthenticationMode {

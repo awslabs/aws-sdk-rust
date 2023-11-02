@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Task {
     /// <p> The source fields to which a particular task is applied. </p>
-    pub source_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_fields: ::std::vec::Vec<::std::string::String>,
     /// <p> The operation to be performed on the provided source fields. </p>
     pub connector_operator: ::std::option::Option<crate::types::ConnectorOperator>,
     /// <p> A field in a destination connector, or a field value against which Amazon AppFlow validates a source field. </p>
     pub destination_field: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the particular task implementation that Amazon AppFlow performs. </p>
-    pub task_type: ::std::option::Option<crate::types::TaskType>,
+    pub task_type: crate::types::TaskType,
     /// <p> A map used to store task-related information. The execution service looks for particular information based on the <code>TaskType</code>. </p>
     pub task_properties: ::std::option::Option<::std::collections::HashMap<crate::types::OperatorPropertiesKeys, ::std::string::String>>,
 }
 impl Task {
     /// <p> The source fields to which a particular task is applied. </p>
-    pub fn source_fields(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_fields.as_deref()
+    pub fn source_fields(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.source_fields.deref()
     }
     /// <p> The operation to be performed on the provided source fields. </p>
     pub fn connector_operator(&self) -> ::std::option::Option<&crate::types::ConnectorOperator> {
@@ -29,8 +30,8 @@ impl Task {
         self.destination_field.as_deref()
     }
     /// <p> Specifies the particular task implementation that Amazon AppFlow performs. </p>
-    pub fn task_type(&self) -> ::std::option::Option<&crate::types::TaskType> {
-        self.task_type.as_ref()
+    pub fn task_type(&self) -> &crate::types::TaskType {
+        &self.task_type
     }
     /// <p> A map used to store task-related information. The execution service looks for particular information based on the <code>TaskType</code>. </p>
     pub fn task_properties(
@@ -106,6 +107,7 @@ impl TaskBuilder {
         &self.destination_field
     }
     /// <p> Specifies the particular task implementation that Amazon AppFlow performs. </p>
+    /// This field is required.
     pub fn task_type(mut self, input: crate::types::TaskType) -> Self {
         self.task_type = ::std::option::Option::Some(input);
         self
@@ -145,13 +147,26 @@ impl TaskBuilder {
         &self.task_properties
     }
     /// Consumes the builder and constructs a [`Task`](crate::types::Task).
-    pub fn build(self) -> crate::types::Task {
-        crate::types::Task {
-            source_fields: self.source_fields,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_fields`](crate::types::builders::TaskBuilder::source_fields)
+    /// - [`task_type`](crate::types::builders::TaskBuilder::task_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Task, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Task {
+            source_fields: self.source_fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_fields",
+                    "source_fields was not specified but it is required when building Task",
+                )
+            })?,
             connector_operator: self.connector_operator,
             destination_field: self.destination_field,
-            task_type: self.task_type,
+            task_type: self.task_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_type",
+                    "task_type was not specified but it is required when building Task",
+                )
+            })?,
             task_properties: self.task_properties,
-        }
+        })
     }
 }

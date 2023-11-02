@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueryStatistics`](crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_id(impl Into<String>)`](crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder::set_query_id): <p>The ID of the plan query operation.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_query_statistics::builders::GetQueryStatisticsFluentBuilder::set_query_id):<br>required: **true**<br><p>The ID of the plan query operation.</p><br>
     /// - On success, responds with [`GetQueryStatisticsOutput`](crate::operation::get_query_statistics::GetQueryStatisticsOutput) with field(s):
     ///   - [`execution_statistics(Option<ExecutionStatistics>)`](crate::operation::get_query_statistics::GetQueryStatisticsOutput::execution_statistics): <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
     ///   - [`planning_statistics(Option<PlanningStatistics>)`](crate::operation::get_query_statistics::GetQueryStatisticsOutput::planning_statistics): <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>

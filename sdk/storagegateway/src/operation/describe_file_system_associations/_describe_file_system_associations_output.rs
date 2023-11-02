@@ -9,8 +9,10 @@ pub struct DescribeFileSystemAssociationsOutput {
 }
 impl DescribeFileSystemAssociationsOutput {
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
-    pub fn file_system_association_info_list(&self) -> ::std::option::Option<&[crate::types::FileSystemAssociationInfo]> {
-        self.file_system_association_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_association_info_list.is_none()`.
+    pub fn file_system_association_info_list(&self) -> &[crate::types::FileSystemAssociationInfo] {
+        self.file_system_association_info_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeFileSystemAssociationsOutput {

@@ -3,8 +3,8 @@ pub fn ser_variable_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VariableValue,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.raw_value {
-        object.key("rawValue").string(var_1.as_str());
+    {
+        object.key("rawValue").string(input.raw_value.as_str());
     }
     Ok(())
 }

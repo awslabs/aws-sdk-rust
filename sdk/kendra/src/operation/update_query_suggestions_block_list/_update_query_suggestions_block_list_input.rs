@@ -66,6 +66,7 @@ pub struct UpdateQuerySuggestionsBlockListInputBuilder {
 }
 impl UpdateQuerySuggestionsBlockListInputBuilder {
     /// <p>The identifier of the index for the block list.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the block list you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

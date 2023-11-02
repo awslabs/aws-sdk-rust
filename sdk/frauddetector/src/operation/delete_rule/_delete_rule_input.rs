@@ -27,6 +27,7 @@ pub struct DeleteRuleInputBuilder {
 }
 impl DeleteRuleInputBuilder {
     /// <p>A rule.</p>
+    /// This field is required.
     pub fn rule(mut self, input: crate::types::Rule) -> Self {
         self.rule = ::std::option::Option::Some(input);
         self

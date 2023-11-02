@@ -123,7 +123,7 @@ pub fn de_update_domain_association_http_response(
         output = crate::protocol_serde::shape_update_domain_association::de_update_domain_association(_response_body, output)
             .map_err(crate::operation::update_domain_association::UpdateDomainAssociationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_domain_association_output_correct_errors(output).build()
     })
 }
 

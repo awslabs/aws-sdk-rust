@@ -57,6 +57,7 @@ pub struct GetPerformanceAnalysisReportInputBuilder {
 }
 impl GetPerformanceAnalysisReportInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -72,6 +73,7 @@ impl GetPerformanceAnalysisReportInputBuilder {
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +90,7 @@ impl GetPerformanceAnalysisReportInputBuilder {
         &self.identifier
     }
     /// <p>A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code> </p>
+    /// This field is required.
     pub fn analysis_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_report_id = ::std::option::Option::Some(input.into());
         self

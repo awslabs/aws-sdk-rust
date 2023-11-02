@@ -60,8 +60,10 @@ impl ModifyEndpointAccessOutput {
         self.address.as_deref()
     }
     /// <p>The security groups associated with the endpoint.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
     pub fn vpc_endpoint(&self) -> ::std::option::Option<&crate::types::VpcEndpoint> {

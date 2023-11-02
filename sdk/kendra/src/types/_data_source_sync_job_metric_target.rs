@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceSyncJobMetricTarget {
     /// <p>The ID of the data source that is running the sync job.</p>
-    pub data_source_id: ::std::option::Option<::std::string::String>,
+    pub data_source_id: ::std::string::String,
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
@@ -13,8 +13,9 @@ pub struct DataSourceSyncJobMetricTarget {
 }
 impl DataSourceSyncJobMetricTarget {
     /// <p>The ID of the data source that is running the sync job.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
-        self.data_source_id.as_deref()
+    pub fn data_source_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source_id.deref()
     }
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
@@ -39,6 +40,7 @@ pub struct DataSourceSyncJobMetricTargetBuilder {
 }
 impl DataSourceSyncJobMetricTargetBuilder {
     /// <p>The ID of the data source that is running the sync job.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +75,17 @@ impl DataSourceSyncJobMetricTargetBuilder {
         &self.data_source_sync_job_id
     }
     /// Consumes the builder and constructs a [`DataSourceSyncJobMetricTarget`](crate::types::DataSourceSyncJobMetricTarget).
-    pub fn build(self) -> crate::types::DataSourceSyncJobMetricTarget {
-        crate::types::DataSourceSyncJobMetricTarget {
-            data_source_id: self.data_source_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_source_id`](crate::types::builders::DataSourceSyncJobMetricTargetBuilder::data_source_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSyncJobMetricTarget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceSyncJobMetricTarget {
+            data_source_id: self.data_source_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source_id",
+                    "data_source_id was not specified but it is required when building DataSourceSyncJobMetricTarget",
+                )
+            })?,
             data_source_sync_job_id: self.data_source_sync_job_id,
-        }
+        })
     }
 }

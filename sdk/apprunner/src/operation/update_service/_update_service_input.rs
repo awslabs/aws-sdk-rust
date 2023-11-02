@@ -71,6 +71,7 @@ pub struct UpdateServiceInputBuilder {
 }
 impl UpdateServiceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self

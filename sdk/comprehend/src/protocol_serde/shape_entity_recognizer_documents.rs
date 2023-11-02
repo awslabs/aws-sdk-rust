@@ -3,14 +3,14 @@ pub fn ser_entity_recognizer_documents(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityRecognizerDocuments,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_uri {
-        object.key("S3Uri").string(var_1.as_str());
+    {
+        object.key("S3Uri").string(input.s3_uri.as_str());
     }
-    if let Some(var_2) = &input.test_s3_uri {
-        object.key("TestS3Uri").string(var_2.as_str());
+    if let Some(var_1) = &input.test_s3_uri {
+        object.key("TestS3Uri").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.input_format {
-        object.key("InputFormat").string(var_3.as_str());
+    if let Some(var_2) = &input.input_format {
+        object.key("InputFormat").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::entity_recognizer_documents_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

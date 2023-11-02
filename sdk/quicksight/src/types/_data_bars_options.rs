@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataBarsOptions {
     /// <p>The field ID for the data bars options.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>The color of the positive data bar.</p>
     pub positive_color: ::std::option::Option<::std::string::String>,
     /// <p>The color of the negative data bar.</p>
@@ -13,8 +13,9 @@ pub struct DataBarsOptions {
 }
 impl DataBarsOptions {
     /// <p>The field ID for the data bars options.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>The color of the positive data bar.</p>
     pub fn positive_color(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct DataBarsOptionsBuilder {
 }
 impl DataBarsOptionsBuilder {
     /// <p>The field ID for the data bars options.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl DataBarsOptionsBuilder {
         &self.negative_color
     }
     /// Consumes the builder and constructs a [`DataBarsOptions`](crate::types::DataBarsOptions).
-    pub fn build(self) -> crate::types::DataBarsOptions {
-        crate::types::DataBarsOptions {
-            field_id: self.field_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_id`](crate::types::builders::DataBarsOptionsBuilder::field_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataBarsOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataBarsOptions {
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building DataBarsOptions",
+                )
+            })?,
             positive_color: self.positive_color,
             negative_color: self.negative_color,
-        }
+        })
     }
 }

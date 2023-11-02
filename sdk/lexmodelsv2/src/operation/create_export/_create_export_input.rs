@@ -50,6 +50,7 @@ pub struct CreateExportInputBuilder {
 }
 impl CreateExportInputBuilder {
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
+    /// This field is required.
     pub fn resource_specification(mut self, input: crate::types::ExportResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
@@ -64,6 +65,7 @@ impl CreateExportInputBuilder {
         &self.resource_specification
     }
     /// <p>The file format of the bot or bot locale definition files.</p>
+    /// This field is required.
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
         self

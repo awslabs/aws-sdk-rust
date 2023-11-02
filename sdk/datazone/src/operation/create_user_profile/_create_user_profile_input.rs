@@ -48,6 +48,7 @@ pub struct CreateUserProfileInputBuilder {
 }
 impl CreateUserProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateUserProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the user for which the user profile is created.</p>
+    /// This field is required.
     pub fn user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_identifier = ::std::option::Option::Some(input.into());
         self

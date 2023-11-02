@@ -17,12 +17,16 @@ impl GetBuiltinIntentOutput {
         self.signature.as_deref()
     }
     /// <p>A list of locales that the intent supports.</p>
-    pub fn supported_locales(&self) -> ::std::option::Option<&[crate::types::Locale]> {
-        self.supported_locales.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_locales.is_none()`.
+    pub fn supported_locales(&self) -> &[crate::types::Locale] {
+        self.supported_locales.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
-    pub fn slots(&self) -> ::std::option::Option<&[crate::types::BuiltinIntentSlot]> {
-        self.slots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slots.is_none()`.
+    pub fn slots(&self) -> &[crate::types::BuiltinIntentSlot] {
+        self.slots.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBuiltinIntentOutput {

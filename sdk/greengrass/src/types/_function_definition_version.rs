@@ -15,8 +15,10 @@ impl FunctionDefinitionVersion {
         self.default_config.as_ref()
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn functions(&self) -> ::std::option::Option<&[crate::types::Function]> {
-        self.functions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.functions.is_none()`.
+    pub fn functions(&self) -> &[crate::types::Function] {
+        self.functions.as_deref().unwrap_or_default()
     }
 }
 impl FunctionDefinitionVersion {

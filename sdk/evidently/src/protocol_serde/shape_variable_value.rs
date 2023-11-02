@@ -19,24 +19,32 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                         "boolValue" => Some(crate::types::VariableValue::BoolValue(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'boolValue' cannot be null")
+                            })?,
                         )),
                         "stringValue" => Some(crate::types::VariableValue::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringValue' cannot be null")
+                                })?,
                         )),
                         "longValue" => Some(crate::types::VariableValue::LongValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(i64::try_from)
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'longValue' cannot be null")
+                                })?,
                         )),
                         "doubleValue" => Some(crate::types::VariableValue::DoubleValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(|v| v.to_f64_lossy())
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'doubleValue' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
@@ -62,24 +70,24 @@ where
 }
 
 pub fn ser_variable_value(
-    object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VariableValue,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::types::VariableValue::BoolValue(inner) => {
-            object_3.key("boolValue").boolean(*inner);
+            object_2.key("boolValue").boolean(*inner);
         }
         crate::types::VariableValue::StringValue(inner) => {
-            object_3.key("stringValue").string(inner.as_str());
+            object_2.key("stringValue").string(inner.as_str());
         }
         crate::types::VariableValue::LongValue(inner) => {
-            object_3.key("longValue").number(
+            object_2.key("longValue").number(
                 #[allow(clippy::useless_conversion)]
                 ::aws_smithy_types::Number::NegInt((*inner).into()),
             );
         }
         crate::types::VariableValue::DoubleValue(inner) => {
-            object_3.key("doubleValue").number(
+            object_2.key("doubleValue").number(
                 #[allow(clippy::useless_conversion)]
                 ::aws_smithy_types::Number::Float((*inner).into()),
             );

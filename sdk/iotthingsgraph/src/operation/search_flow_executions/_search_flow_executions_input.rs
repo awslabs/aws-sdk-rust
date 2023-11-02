@@ -62,6 +62,7 @@ pub struct SearchFlowExecutionsInputBuilder {
 }
 impl SearchFlowExecutionsInputBuilder {
     /// <p>The ID of the system instance that contains the flow.</p>
+    /// This field is required.
     pub fn system_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.system_instance_id = ::std::option::Option::Some(input.into());
         self

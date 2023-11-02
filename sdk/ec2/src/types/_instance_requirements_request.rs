@@ -171,8 +171,10 @@ impl InstanceRequirementsRequest {
     /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
-    pub fn cpu_manufacturers(&self) -> ::std::option::Option<&[crate::types::CpuManufacturer]> {
-        self.cpu_manufacturers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpu_manufacturers.is_none()`.
+    pub fn cpu_manufacturers(&self) -> &[crate::types::CpuManufacturer] {
+        self.cpu_manufacturers.as_deref().unwrap_or_default()
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -185,15 +187,19 @@ impl InstanceRequirementsRequest {
     /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: No excluded instance types</p>
-    pub fn excluded_instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_instance_types.is_none()`.
+    pub fn excluded_instance_types(&self) -> &[::std::string::String] {
+        self.excluded_instance_types.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether current or previous generation instance types are included. The current generation instance types are recommended for use. Current generation instance types are typically the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>For current generation instance types, specify <code>current</code>.</p>
     /// <p>For previous generation instance types, specify <code>previous</code>.</p>
     /// <p>Default: Current and previous generation instance types</p>
-    pub fn instance_generations(&self) -> ::std::option::Option<&[crate::types::InstanceGeneration]> {
-        self.instance_generations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_generations.is_none()`.
+    pub fn instance_generations(&self) -> &[crate::types::InstanceGeneration] {
+        self.instance_generations.as_deref().unwrap_or_default()
     }
     /// <p>The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
@@ -262,8 +268,10 @@ impl InstanceRequirementsRequest {
     /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
     /// </ul>
     /// <p>Default: <code>hdd</code> and <code>ssd</code> </p>
-    pub fn local_storage_types(&self) -> ::std::option::Option<&[crate::types::LocalStorageType]> {
-        self.local_storage_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_storage_types.is_none()`.
+    pub fn local_storage_types(&self) -> &[crate::types::LocalStorageType] {
+        self.local_storage_types.as_deref().unwrap_or_default()
     }
     /// <p>The minimum and maximum amount of total local storage, in GB.</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -282,8 +290,10 @@ impl InstanceRequirementsRequest {
     /// <li> <p>To include instance types with inference hardware, specify <code>inference</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
-    pub fn accelerator_types(&self) -> ::std::option::Option<&[crate::types::AcceleratorType]> {
-        self.accelerator_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
+    pub fn accelerator_types(&self) -> &[crate::types::AcceleratorType] {
+        self.accelerator_types.as_deref().unwrap_or_default()
     }
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance.</p>
     /// <p>To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
@@ -299,8 +309,10 @@ impl InstanceRequirementsRequest {
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
-    pub fn accelerator_manufacturers(&self) -> ::std::option::Option<&[crate::types::AcceleratorManufacturer]> {
-        self.accelerator_manufacturers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_manufacturers.is_none()`.
+    pub fn accelerator_manufacturers(&self) -> &[crate::types::AcceleratorManufacturer] {
+        self.accelerator_manufacturers.as_deref().unwrap_or_default()
     }
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
@@ -315,8 +327,10 @@ impl InstanceRequirementsRequest {
     /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
-    pub fn accelerator_names(&self) -> ::std::option::Option<&[crate::types::AcceleratorName]> {
-        self.accelerator_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_names.is_none()`.
+    pub fn accelerator_names(&self) -> &[crate::types::AcceleratorName] {
+        self.accelerator_names.as_deref().unwrap_or_default()
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -334,8 +348,10 @@ impl InstanceRequirementsRequest {
     /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: All instance types</p>
-    pub fn allowed_instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_instance_types.is_none()`.
+    pub fn allowed_instance_types(&self) -> &[::std::string::String] {
+        self.allowed_instance_types.as_deref().unwrap_or_default()
     }
 }
 impl InstanceRequirementsRequest {
@@ -375,6 +391,7 @@ pub struct InstanceRequirementsRequestBuilder {
 }
 impl InstanceRequirementsRequestBuilder {
     /// <p>The minimum and maximum number of vCPUs.</p>
+    /// This field is required.
     pub fn v_cpu_count(mut self, input: crate::types::VCpuCountRangeRequest) -> Self {
         self.v_cpu_count = ::std::option::Option::Some(input);
         self
@@ -389,6 +406,7 @@ impl InstanceRequirementsRequestBuilder {
         &self.v_cpu_count
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
+    /// This field is required.
     pub fn memory_mi_b(mut self, input: crate::types::MemoryMiBRequest) -> Self {
         self.memory_mi_b = ::std::option::Option::Some(input);
         self

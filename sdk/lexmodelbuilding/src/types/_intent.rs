@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Intent {
     /// <p>The name of the intent.</p>
-    pub intent_name: ::std::option::Option<::std::string::String>,
+    pub intent_name: ::std::string::String,
     /// <p>The version of the intent.</p>
-    pub intent_version: ::std::option::Option<::std::string::String>,
+    pub intent_version: ::std::string::String,
 }
 impl Intent {
     /// <p>The name of the intent.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
-        self.intent_name.as_deref()
+    pub fn intent_name(&self) -> &str {
+        use std::ops::Deref;
+        self.intent_name.deref()
     }
     /// <p>The version of the intent.</p>
-    pub fn intent_version(&self) -> ::std::option::Option<&str> {
-        self.intent_version.as_deref()
+    pub fn intent_version(&self) -> &str {
+        use std::ops::Deref;
+        self.intent_version.deref()
     }
 }
 impl Intent {
@@ -35,6 +37,7 @@ pub struct IntentBuilder {
 }
 impl IntentBuilder {
     /// <p>The name of the intent.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl IntentBuilder {
         &self.intent_name
     }
     /// <p>The version of the intent.</p>
+    /// This field is required.
     pub fn intent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl IntentBuilder {
         &self.intent_version
     }
     /// Consumes the builder and constructs a [`Intent`](crate::types::Intent).
-    pub fn build(self) -> crate::types::Intent {
-        crate::types::Intent {
-            intent_name: self.intent_name,
-            intent_version: self.intent_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intent_name`](crate::types::builders::IntentBuilder::intent_name)
+    /// - [`intent_version`](crate::types::builders::IntentBuilder::intent_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::Intent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Intent {
+            intent_name: self.intent_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "intent_name",
+                    "intent_name was not specified but it is required when building Intent",
+                )
+            })?,
+            intent_version: self.intent_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "intent_version",
+                    "intent_version was not specified but it is required when building Intent",
+                )
+            })?,
+        })
     }
 }

@@ -18,8 +18,10 @@ impl AuditMitigationActionsTaskTarget {
         self.audit_task_id.as_deref()
     }
     /// <p>If the task will apply a mitigation action to one or more listed findings, this value uniquely identifies those findings.</p>
-    pub fn finding_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_ids.is_none()`.
+    pub fn finding_ids(&self) -> &[::std::string::String] {
+        self.finding_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a filter in the form of an audit check and set of reason codes that identify the findings from the audit to which the audit mitigation actions task apply.</p>
     pub fn audit_check_to_reason_code_filter(

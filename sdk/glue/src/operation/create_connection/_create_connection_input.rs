@@ -55,6 +55,7 @@ impl CreateConnectionInputBuilder {
         &self.catalog_id
     }
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
+    /// This field is required.
     pub fn connection_input(mut self, input: crate::types::ConnectionInput) -> Self {
         self.connection_input = ::std::option::Option::Some(input);
         self

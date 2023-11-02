@@ -14,8 +14,10 @@ impl ModifySnapshotScheduleInput {
         self.schedule_identifier.as_deref()
     }
     /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
-    pub fn schedule_definitions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.schedule_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_definitions.is_none()`.
+    pub fn schedule_definitions(&self) -> &[::std::string::String] {
+        self.schedule_definitions.as_deref().unwrap_or_default()
     }
 }
 impl ModifySnapshotScheduleInput {
@@ -34,6 +36,7 @@ pub struct ModifySnapshotScheduleInputBuilder {
 }
 impl ModifySnapshotScheduleInputBuilder {
     /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
+    /// This field is required.
     pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_identifier = ::std::option::Option::Some(input.into());
         self

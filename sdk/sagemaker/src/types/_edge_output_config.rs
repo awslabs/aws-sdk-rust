@@ -67,6 +67,7 @@ pub struct EdgeOutputConfigBuilder {
 }
 impl EdgeOutputConfigBuilder {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
+    /// This field is required.
     pub fn s3_output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_location = ::std::option::Option::Some(input.into());
         self

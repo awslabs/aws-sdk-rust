@@ -8,9 +8,9 @@ pub struct TableWithColumnsResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
@@ -22,16 +22,20 @@ impl TableWithColumnsResource {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    pub fn column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_names.is_none()`.
+    pub fn column_names(&self) -> &[::std::string::String] {
+        self.column_names.as_deref().unwrap_or_default()
     }
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub fn column_wildcard(&self) -> ::std::option::Option<&crate::types::ColumnWildcard> {
@@ -71,6 +75,7 @@ impl TableWithColumnsResourceBuilder {
         &self.catalog_id
     }
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +90,7 @@ impl TableWithColumnsResourceBuilder {
         &self.database_name
     }
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,13 +139,26 @@ impl TableWithColumnsResourceBuilder {
         &self.column_wildcard
     }
     /// Consumes the builder and constructs a [`TableWithColumnsResource`](crate::types::TableWithColumnsResource).
-    pub fn build(self) -> crate::types::TableWithColumnsResource {
-        crate::types::TableWithColumnsResource {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::TableWithColumnsResourceBuilder::database_name)
+    /// - [`name`](crate::types::builders::TableWithColumnsResourceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableWithColumnsResource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableWithColumnsResource {
             catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            name: self.name,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building TableWithColumnsResource",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TableWithColumnsResource",
+                )
+            })?,
             column_names: self.column_names,
             column_wildcard: self.column_wildcard,
-        }
+        })
     }
 }

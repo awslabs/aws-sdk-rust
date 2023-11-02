@@ -27,6 +27,7 @@ pub struct ValidateMatchmakingRuleSetInputBuilder {
 }
 impl ValidateMatchmakingRuleSetInputBuilder {
     /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
+    /// This field is required.
     pub fn rule_set_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_body = ::std::option::Option::Some(input.into());
         self

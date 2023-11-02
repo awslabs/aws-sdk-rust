@@ -23,7 +23,7 @@ wiremock = ["test-util", "dep:hyper", "hyper?/server", "hyper?/h2", "rustls", "t
 native-tls = []
 allow-compilation = []
 rustls = ["dep:hyper-rustls", "dep:lazy_static", "dep:rustls", "client-hyper", "rt-tokio"]
-client-hyper = ["dep:hyper", "hyper?/client", "hyper?/http2", "hyper?/http1", "hyper?/tcp"]
+client-hyper = ["dep:hyper", "hyper?/client", "hyper?/http2", "hyper?/http1", "hyper?/tcp", "dep:h2"]
 hyper-webpki-doctest-only = ["dep:hyper-rustls", "hyper-rustls?/webpki-roots"]
 
 [dependencies]
@@ -60,6 +60,11 @@ version = "0.14.26"
 default-features = false
 optional = true
 
+[dependencies.h2]
+version = "0.3"
+default-features = false
+optional = true
+
 [dependencies.hyper-rustls]
 version = "0.24"
 optional = true
@@ -67,6 +72,10 @@ features = ["rustls-native-certs", "http2"]
 
 [dependencies.hyper-tls]
 version = "0.5.0"
+optional = true
+
+[dependencies.openssl]
+version = "0.10.52"
 optional = true
 
 [dependencies.rustls]
@@ -94,6 +103,7 @@ version = "0.4.6"
 features = ["util", "retry"]
 
 [dev-dependencies]
+openssl = "0.10.52"
 serde_json = "1"
 tower-test = "0.4.0"
 tracing-subscriber = "0.3.16"

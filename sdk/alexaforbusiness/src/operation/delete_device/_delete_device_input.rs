@@ -27,6 +27,7 @@ pub struct DeleteDeviceInputBuilder {
 }
 impl DeleteDeviceInputBuilder {
     /// <p>The ARN of the device for which to request details.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self

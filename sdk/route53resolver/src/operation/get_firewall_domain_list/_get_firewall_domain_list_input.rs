@@ -27,6 +27,7 @@ pub struct GetFirewallDomainListInputBuilder {
 }
 impl GetFirewallDomainListInputBuilder {
     /// <p>The ID of the domain list. </p>
+    /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self

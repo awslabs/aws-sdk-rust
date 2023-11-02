@@ -47,11 +47,10 @@ pub fn de_stop_replication_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::stop_replication::StopReplicationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::stop_replication::StopReplicationError::ResourceNotFoundException({
@@ -84,11 +83,10 @@ pub fn de_stop_replication_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::stop_replication::StopReplicationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::stop_replication::StopReplicationError::UninitializedAccountException({

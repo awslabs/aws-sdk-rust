@@ -6,7 +6,7 @@ pub struct ListCertificatesOutput {
     /// <p>Returns the next token, which you can use to list the next certificate.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::ListedCertificate>>,
+    pub certificates: ::std::vec::Vec<crate::types::ListedCertificate>,
     _request_id: Option<String>,
 }
 impl ListCertificatesOutput {
@@ -15,8 +15,9 @@ impl ListCertificatesOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::ListedCertificate]> {
-        self.certificates.as_deref()
+    pub fn certificates(&self) -> &[crate::types::ListedCertificate] {
+        use std::ops::Deref;
+        self.certificates.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCertificatesOutput {
@@ -84,11 +85,20 @@ impl ListCertificatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput).
-    pub fn build(self) -> crate::operation::list_certificates::ListCertificatesOutput {
-        crate::operation::list_certificates::ListCertificatesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificates`](crate::operation::list_certificates::builders::ListCertificatesOutputBuilder::certificates)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_certificates::ListCertificatesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesOutput {
             next_token: self.next_token,
-            certificates: self.certificates,
+            certificates: self.certificates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificates",
+                    "certificates was not specified but it is required when building ListCertificatesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct DeleteResourcePolicyInputBuilder {
 }
 impl DeleteResourcePolicyInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteResourcePolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>The policy ID.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteResourcePolicyInputBuilder {
         &self.policy_id
     }
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
+    /// This field is required.
     pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash = ::std::option::Option::Some(input.into());
         self

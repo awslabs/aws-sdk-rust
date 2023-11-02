@@ -40,7 +40,7 @@ pub struct DimensionGroup {
     /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
     /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
-    pub group: ::std::option::Option<::std::string::String>,
+    pub group: ::std::string::String,
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
     /// <ul>
@@ -116,8 +116,9 @@ impl DimensionGroup {
     /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
     /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
-    pub fn group(&self) -> ::std::option::Option<&str> {
-        self.group.as_deref()
+    pub fn group(&self) -> &str {
+        use std::ops::Deref;
+        self.group.deref()
     }
     /// <p>A list of specific dimensions from a dimension group. If this parameter is not present, then it signifies that all of the dimensions in the group were requested, or are present in the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
@@ -161,8 +162,10 @@ impl DimensionGroup {
     /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines except Amazon DocumentDB).</p> </li>
     /// <li> <p> <code>db.wait_state.name</code> - The event for which the backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
-    pub fn dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[::std::string::String] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -213,6 +216,7 @@ impl DimensionGroupBuilder {
     /// <li> <p> <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines except Amazon DocumentDB).</p> </li>
     /// <li> <p> <code>db.wait_state</code> - The event for which the database backend is waiting (only Amazon DocumentDB).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
@@ -438,11 +442,18 @@ impl DimensionGroupBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DimensionGroup`](crate::types::DimensionGroup).
-    pub fn build(self) -> crate::types::DimensionGroup {
-        crate::types::DimensionGroup {
-            group: self.group,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group`](crate::types::builders::DimensionGroupBuilder::group)
+    pub fn build(self) -> ::std::result::Result<crate::types::DimensionGroup, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DimensionGroup {
+            group: self.group.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "group",
+                    "group was not specified but it is required when building DimensionGroup",
+                )
+            })?,
             dimensions: self.dimensions,
             limit: self.limit,
-        }
+        })
     }
 }

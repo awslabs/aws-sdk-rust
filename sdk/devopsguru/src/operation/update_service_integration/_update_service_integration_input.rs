@@ -27,6 +27,7 @@ pub struct UpdateServiceIntegrationInputBuilder {
 }
 impl UpdateServiceIntegrationInputBuilder {
     /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled. </p>
+    /// This field is required.
     pub fn service_integration(mut self, input: crate::types::UpdateServiceIntegrationConfig) -> Self {
         self.service_integration = ::std::option::Option::Some(input);
         self

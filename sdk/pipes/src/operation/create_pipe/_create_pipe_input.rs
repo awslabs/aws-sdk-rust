@@ -114,6 +114,7 @@ pub struct CreatePipeInputBuilder {
 }
 impl CreatePipeInputBuilder {
     /// <p>The name of the pipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +157,7 @@ impl CreatePipeInputBuilder {
         &self.desired_state
     }
     /// <p>The ARN of the source resource.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +214,7 @@ impl CreatePipeInputBuilder {
         &self.enrichment_parameters
     }
     /// <p>The ARN of the target resource.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -240,6 +243,7 @@ impl CreatePipeInputBuilder {
         &self.target_parameters
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

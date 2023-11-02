@@ -187,6 +187,7 @@ pub struct PostContentInputBuilder {
 }
 impl PostContentInputBuilder {
     /// <p>Name of the Amazon Lex bot.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -201,6 +202,7 @@ impl PostContentInputBuilder {
         &self.bot_name
     }
     /// <p>Alias of the Amazon Lex bot.</p>
+    /// This field is required.
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
         self
@@ -222,6 +224,7 @@ impl PostContentInputBuilder {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -310,6 +313,7 @@ impl PostContentInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -415,6 +419,7 @@ impl PostContentInputBuilder {
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
+    /// This field is required.
     pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.input_stream = ::std::option::Option::Some(input);
         self

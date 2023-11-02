@@ -48,6 +48,7 @@ pub struct GetCommentReactionsInputBuilder {
 }
 impl GetCommentReactionsInputBuilder {
     /// <p>The ID of the comment for which you want to get reactions information.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self

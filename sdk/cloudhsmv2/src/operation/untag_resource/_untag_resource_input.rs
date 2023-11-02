@@ -14,8 +14,10 @@ impl UntagResourceInput {
         self.resource_id.as_deref()
     }
     /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
-    pub fn tag_key_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_key_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_key_list.is_none()`.
+    pub fn tag_key_list(&self) -> &[::std::string::String] {
+        self.tag_key_list.as_deref().unwrap_or_default()
     }
 }
 impl UntagResourceInput {
@@ -34,6 +36,7 @@ pub struct UntagResourceInputBuilder {
 }
 impl UntagResourceInputBuilder {
     /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

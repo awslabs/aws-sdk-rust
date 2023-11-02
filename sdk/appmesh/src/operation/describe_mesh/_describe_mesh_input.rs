@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMeshInput {
     /// <p>The name of the service mesh to describe.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMeshInput {
     /// <p>The name of the service mesh to describe.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct DescribeMeshInputBuilder {
 }
 impl DescribeMeshInputBuilder {
     /// <p>The name of the service mesh to describe.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -62,9 +64,16 @@ impl DescribeMeshInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DescribeMeshInput`](crate::operation::describe_mesh::DescribeMeshInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mesh_name`](crate::operation::describe_mesh::builders::DescribeMeshInputBuilder::mesh_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_mesh::DescribeMeshInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_mesh::DescribeMeshInput {
-            mesh_name: self.mesh_name,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building DescribeMeshInput",
+                )
+            })?,
             mesh_owner: self.mesh_owner,
         })
     }

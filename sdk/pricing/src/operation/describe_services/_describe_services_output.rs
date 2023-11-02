@@ -13,8 +13,10 @@ pub struct DescribeServicesOutput {
 }
 impl DescribeServicesOutput {
     /// <p>The service metadata for the service or services in the response.</p>
-    pub fn services(&self) -> ::std::option::Option<&[crate::types::Service]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[crate::types::Service] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>The format version of the response. For example, <code>aws_v1</code>.</p>
     pub fn format_version(&self) -> ::std::option::Option<&str> {

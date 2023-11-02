@@ -41,6 +41,7 @@ pub struct DeleteIamPolicyAssignmentInputBuilder {
 }
 impl DeleteIamPolicyAssignmentInputBuilder {
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteIamPolicyAssignmentInputBuilder {
         &self.aws_account_id
     }
     /// <p>The name of the assignment. </p>
+    /// This field is required.
     pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteIamPolicyAssignmentInputBuilder {
         &self.assignment_name
     }
     /// <p>The namespace that contains the assignment.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self

@@ -25,11 +25,10 @@ pub fn de_create_placement_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::create_placement::CreatePlacementError::InvalidRequestException({
@@ -40,11 +39,10 @@ pub fn de_create_placement_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceConflictException" => crate::operation::create_placement::CreatePlacementError::ResourceConflictException({
@@ -55,11 +53,10 @@ pub fn de_create_placement_http_error(
                 output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_placement::CreatePlacementError::ResourceNotFoundException({
@@ -70,11 +67,10 @@ pub fn de_create_placement_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_placement::CreatePlacementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_placement::CreatePlacementError::generic(generic),

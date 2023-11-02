@@ -82,14 +82,10 @@ impl PutBotFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::put_bot::PutBotOutput,
-            crate::operation::put_bot::PutBotError,
-            Self,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::put_bot::PutBotOutput, crate::operation::put_bot::PutBotError, Self>,
         ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -28,6 +28,7 @@ pub struct ResultReuseInformationBuilder {
 }
 impl ResultReuseInformationBuilder {
     /// <p>True if a previous query result was reused; false if the result was generated from a new run of the query.</p>
+    /// This field is required.
     pub fn reused_previous_result(mut self, input: bool) -> Self {
         self.reused_previous_result = ::std::option::Option::Some(input);
         self

@@ -48,16 +48,20 @@ impl CreateGrantInput {
     /// <ul>
     /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
     /// </ul>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[::std::string::String] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>Home Region of the grant.</p>
     pub fn home_region(&self) -> ::std::option::Option<&str> {
         self.home_region.as_deref()
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn allowed_operations(&self) -> ::std::option::Option<&[crate::types::AllowedOperation]> {
-        self.allowed_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_operations.is_none()`.
+    pub fn allowed_operations(&self) -> &[crate::types::AllowedOperation] {
+        self.allowed_operations.as_deref().unwrap_or_default()
     }
 }
 impl CreateGrantInput {
@@ -80,6 +84,7 @@ pub struct CreateGrantInputBuilder {
 }
 impl CreateGrantInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +99,7 @@ impl CreateGrantInputBuilder {
         &self.client_token
     }
     /// <p>Grant name.</p>
+    /// This field is required.
     pub fn grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_name = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +114,7 @@ impl CreateGrantInputBuilder {
         &self.grant_name
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +176,7 @@ impl CreateGrantInputBuilder {
         &self.principals
     }
     /// <p>Home Region of the grant.</p>
+    /// This field is required.
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
         self

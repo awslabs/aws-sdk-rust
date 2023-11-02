@@ -9,8 +9,8 @@ pub fn ser_application_code_configuration(
         crate::protocol_serde::shape_code_content::ser_code_content(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.code_content_type {
-        object.key("CodeContentType").string(var_3.as_str());
+    {
+        object.key("CodeContentType").string(input.code_content_type.as_str());
     }
     Ok(())
 }

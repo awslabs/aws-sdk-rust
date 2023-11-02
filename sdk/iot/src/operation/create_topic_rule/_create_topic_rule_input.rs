@@ -50,6 +50,7 @@ pub struct CreateTopicRuleInputBuilder {
 }
 impl CreateTopicRuleInputBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl CreateTopicRuleInputBuilder {
         &self.rule_name
     }
     /// <p>The rule payload.</p>
+    /// This field is required.
     pub fn topic_rule_payload(mut self, input: crate::types::TopicRulePayload) -> Self {
         self.topic_rule_payload = ::std::option::Option::Some(input);
         self

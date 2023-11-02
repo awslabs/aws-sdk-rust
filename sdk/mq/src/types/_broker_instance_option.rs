@@ -19,8 +19,10 @@ pub struct BrokerInstanceOption {
 }
 impl BrokerInstanceOption {
     /// <p>The list of available az.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The broker's engine type.</p>
     pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
@@ -35,12 +37,16 @@ impl BrokerInstanceOption {
         self.storage_type.as_ref()
     }
     /// <p>The list of supported deployment modes.</p>
-    pub fn supported_deployment_modes(&self) -> ::std::option::Option<&[crate::types::DeploymentMode]> {
-        self.supported_deployment_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_deployment_modes.is_none()`.
+    pub fn supported_deployment_modes(&self) -> &[crate::types::DeploymentMode] {
+        self.supported_deployment_modes.as_deref().unwrap_or_default()
     }
     /// <p>The list of supported engine versions.</p>
-    pub fn supported_engine_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_engine_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_engine_versions.is_none()`.
+    pub fn supported_engine_versions(&self) -> &[::std::string::String] {
+        self.supported_engine_versions.as_deref().unwrap_or_default()
     }
 }
 impl BrokerInstanceOption {

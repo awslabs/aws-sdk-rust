@@ -21,8 +21,10 @@ impl FilterCondition {
         self.comparison_operator.as_ref()
     }
     /// <p>A string with values used in evaluating the filter condition.</p>
-    pub fn string_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_value_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_value_list.is_none()`.
+    pub fn string_value_list(&self) -> &[::std::string::String] {
+        self.string_value_list.as_deref().unwrap_or_default()
     }
 }
 impl FilterCondition {

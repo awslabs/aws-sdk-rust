@@ -1336,6 +1336,9 @@ pub mod get_password_data;
 /// Types for the `GetReservedInstancesExchangeQuote` operation.
 pub mod get_reserved_instances_exchange_quote;
 
+/// Types for the `GetSecurityGroupsForVpc` operation.
+pub mod get_security_groups_for_vpc;
+
 /// Types for the `GetSerialConsoleAccessStatus` operation.
 pub mod get_serial_console_access_status;
 

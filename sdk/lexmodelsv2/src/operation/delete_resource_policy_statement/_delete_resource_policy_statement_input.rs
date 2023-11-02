@@ -43,6 +43,7 @@ pub struct DeleteResourcePolicyStatementInputBuilder {
 }
 impl DeleteResourcePolicyStatementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteResourcePolicyStatementInputBuilder {
         &self.resource_arn
     }
     /// <p>The name of the statement (SID) to delete from the policy.</p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self

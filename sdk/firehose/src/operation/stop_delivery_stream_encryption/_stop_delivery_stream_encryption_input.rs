@@ -27,6 +27,7 @@ pub struct StopDeliveryStreamEncryptionInputBuilder {
 }
 impl StopDeliveryStreamEncryptionInputBuilder {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self

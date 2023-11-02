@@ -34,6 +34,7 @@ pub struct DescribeStreamConsumerOutputBuilder {
 }
 impl DescribeStreamConsumerOutputBuilder {
     /// <p>An object that represents the details of the consumer.</p>
+    /// This field is required.
     pub fn consumer_description(mut self, input: crate::types::ConsumerDescription) -> Self {
         self.consumer_description = ::std::option::Option::Some(input);
         self

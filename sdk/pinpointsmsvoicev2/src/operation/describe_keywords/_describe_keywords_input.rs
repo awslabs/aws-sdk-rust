@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub origination_identity: ::std::option::Option<::std::string::String>,
+    pub origination_identity: ::std::string::String,
     /// <p>An array of keywords to search for.</p>
     pub keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of keyword filters to filter the results.</p>
@@ -16,16 +16,21 @@ pub struct DescribeKeywordsInput {
 }
 impl DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
-        self.origination_identity.as_deref()
+    pub fn origination_identity(&self) -> &str {
+        use std::ops::Deref;
+        self.origination_identity.deref()
     }
     /// <p>An array of keywords to search for.</p>
-    pub fn keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keywords.is_none()`.
+    pub fn keywords(&self) -> &[::std::string::String] {
+        self.keywords.as_deref().unwrap_or_default()
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::KeywordFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::KeywordFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +60,7 @@ pub struct DescribeKeywordsInputBuilder {
 }
 impl DescribeKeywordsInputBuilder {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -137,11 +143,18 @@ impl DescribeKeywordsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`origination_identity`](crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder::origination_identity)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_keywords::DescribeKeywordsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_keywords::DescribeKeywordsInput {
-            origination_identity: self.origination_identity,
+            origination_identity: self.origination_identity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "origination_identity",
+                    "origination_identity was not specified but it is required when building DescribeKeywordsInput",
+                )
+            })?,
             keywords: self.keywords,
             filters: self.filters,
             next_token: self.next_token,

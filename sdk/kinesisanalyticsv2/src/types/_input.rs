@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on. </p>
-    pub name_prefix: ::std::option::Option<::std::string::String>,
+    pub name_prefix: ::std::string::String,
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
     pub input_processing_configuration: ::std::option::Option<crate::types::InputProcessingConfiguration>,
     /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
@@ -20,8 +20,9 @@ pub struct Input {
 }
 impl Input {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on. </p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
-        self.name_prefix.as_deref()
+    pub fn name_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.name_prefix.deref()
     }
     /// <p>The <code>InputProcessingConfiguration</code> for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is <code>InputLambdaProcessor</code>. </p>
     pub fn input_processing_configuration(&self) -> ::std::option::Option<&crate::types::InputProcessingConfiguration> {
@@ -65,6 +66,7 @@ pub struct InputBuilder {
 }
 impl InputBuilder {
     /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and so on. </p>
+    /// This field is required.
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_prefix = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +138,7 @@ impl InputBuilder {
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.</p>
     /// <p>Also used to describe the format of the reference data source.</p>
+    /// This field is required.
     pub fn input_schema(mut self, input: crate::types::SourceSchema) -> Self {
         self.input_schema = ::std::option::Option::Some(input);
         self
@@ -152,14 +155,21 @@ impl InputBuilder {
         &self.input_schema
     }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
-    pub fn build(self) -> crate::types::Input {
-        crate::types::Input {
-            name_prefix: self.name_prefix,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name_prefix`](crate::types::builders::InputBuilder::name_prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::Input, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Input {
+            name_prefix: self.name_prefix.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name_prefix",
+                    "name_prefix was not specified but it is required when building Input",
+                )
+            })?,
             input_processing_configuration: self.input_processing_configuration,
             kinesis_streams_input: self.kinesis_streams_input,
             kinesis_firehose_input: self.kinesis_firehose_input,
             input_parallelism: self.input_parallelism,
             input_schema: self.input_schema,
-        }
+        })
     }
 }

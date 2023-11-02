@@ -25,11 +25,10 @@ pub fn de_update_workspace_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::update_workspace::UpdateWorkspaceError::ConflictException({
@@ -40,11 +39,10 @@ pub fn de_update_workspace_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::update_workspace::UpdateWorkspaceError::InternalServerException({
@@ -62,11 +60,10 @@ pub fn de_update_workspace_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_workspace::UpdateWorkspaceError::ResourceNotFoundException({
@@ -77,11 +74,10 @@ pub fn de_update_workspace_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_workspace::UpdateWorkspaceError::ThrottlingException({
@@ -99,11 +95,10 @@ pub fn de_update_workspace_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::update_workspace::UpdateWorkspaceError::ValidationException({
@@ -114,11 +109,10 @@ pub fn de_update_workspace_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::update_workspace::UpdateWorkspaceError::generic(generic),
@@ -137,7 +131,7 @@ pub fn de_update_workspace_http_response(
         output = crate::protocol_serde::shape_update_workspace::de_update_workspace(_response_body, output)
             .map_err(crate::operation::update_workspace::UpdateWorkspaceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_workspace_output_correct_errors(output).build()
     })
 }
 

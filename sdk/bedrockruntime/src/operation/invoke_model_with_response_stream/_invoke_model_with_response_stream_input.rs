@@ -58,6 +58,7 @@ pub struct InvokeModelWithResponseStreamInputBuilder {
 }
 impl InvokeModelWithResponseStreamInputBuilder {
     /// <p>Inference input in the format specified by the content-type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -100,6 +101,7 @@ impl InvokeModelWithResponseStreamInputBuilder {
         &self.accept
     }
     /// <p>Id of the model to invoke using the streaming request.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self

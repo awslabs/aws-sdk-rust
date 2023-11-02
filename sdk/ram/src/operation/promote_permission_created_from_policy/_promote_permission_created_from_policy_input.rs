@@ -45,6 +45,7 @@ pub struct PromotePermissionCreatedFromPolicyInputBuilder {
 }
 impl PromotePermissionCreatedFromPolicyInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the <code>CREATED_FROM_POLICY</code> permission that you want to promote. You can get this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> by calling the <code>ListResourceSharePermissions</code> operation.</p>
+    /// This field is required.
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl PromotePermissionCreatedFromPolicyInputBuilder {
         &self.permission_arn
     }
     /// <p>Specifies a name for the promoted customer managed permission.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

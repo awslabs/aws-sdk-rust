@@ -27,6 +27,7 @@ pub struct DetectPhiInputBuilder {
 }
 impl DetectPhiInputBuilder {
     /// <p>A UTF-8 text string containing the clinical content being examined for PHI entities.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self

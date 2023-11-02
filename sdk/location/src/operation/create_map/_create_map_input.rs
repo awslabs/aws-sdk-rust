@@ -10,7 +10,7 @@ pub struct CreateMapInput {
     /// <li> <p>Must be a unique map resource name. </p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
     /// </ul>
-    pub map_name: ::std::option::Option<::std::string::String>,
+    pub map_name: ::std::string::String,
     /// <p>Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.</p>
     pub configuration: ::std::option::Option<crate::types::MapConfiguration>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
@@ -39,8 +39,9 @@ impl CreateMapInput {
     /// <li> <p>Must be a unique map resource name. </p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
     /// </ul>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
-        self.map_name.as_deref()
+    pub fn map_name(&self) -> &str {
+        use std::ops::Deref;
+        self.map_name.deref()
     }
     /// <p>Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::MapConfiguration> {
@@ -95,6 +96,7 @@ impl CreateMapInputBuilder {
     /// <li> <p>Must be a unique map resource name. </p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +123,7 @@ impl CreateMapInputBuilder {
         &self.map_name
     }
     /// <p>Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::MapConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -216,9 +219,16 @@ impl CreateMapInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMapInput`](crate::operation::create_map::CreateMapInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`map_name`](crate::operation::create_map::builders::CreateMapInputBuilder::map_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_map::CreateMapInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_map::CreateMapInput {
-            map_name: self.map_name,
+            map_name: self.map_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_name",
+                    "map_name was not specified but it is required when building CreateMapInput",
+                )
+            })?,
             configuration: self.configuration,
             pricing_plan: self.pricing_plan,
             description: self.description,

@@ -42,12 +42,16 @@ impl ProjectedMetric {
         self.name.as_ref()
     }
     /// <p>The timestamps of the projected utilization metric.</p>
-    pub fn timestamps(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.timestamps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
+    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref().unwrap_or_default()
     }
     /// <p>The values of the projected utilization metrics.</p>
-    pub fn values(&self) -> ::std::option::Option<&[f64]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[f64] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl ProjectedMetric {

@@ -3,32 +3,32 @@ pub fn ser_message_insights_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MessageInsightsDataSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_date {
+    {
         object
             .key("StartDate")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.end_date {
+    {
         object
             .key("EndDate")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_3) = &input.include {
+    if let Some(var_1) = &input.include {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Include").start_object();
+        let mut object_2 = object.key("Include").start_object();
+        crate::protocol_serde::shape_message_insights_filters::ser_message_insights_filters(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.exclude {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Exclude").start_object();
         crate::protocol_serde::shape_message_insights_filters::ser_message_insights_filters(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.exclude {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("Exclude").start_object();
-        crate::protocol_serde::shape_message_insights_filters::ser_message_insights_filters(&mut object_6, var_5)?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.max_results {
+    if let Some(var_5) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())
@@ -88,7 +88,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::message_insights_data_source_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -35,6 +35,7 @@ pub struct GetDomainAssociationOutputBuilder {
 }
 impl GetDomainAssociationOutputBuilder {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
+    /// This field is required.
     pub fn domain_association(mut self, input: crate::types::DomainAssociation) -> Self {
         self.domain_association = ::std::option::Option::Some(input);
         self

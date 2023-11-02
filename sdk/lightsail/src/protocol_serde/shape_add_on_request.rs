@@ -3,20 +3,20 @@ pub fn ser_add_on_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddOnRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.add_on_type {
-        object.key("addOnType").string(var_1.as_str());
+    {
+        object.key("addOnType").string(input.add_on_type.as_str());
     }
-    if let Some(var_2) = &input.auto_snapshot_add_on_request {
+    if let Some(var_1) = &input.auto_snapshot_add_on_request {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("autoSnapshotAddOnRequest").start_object();
-        crate::protocol_serde::shape_auto_snapshot_add_on_request::ser_auto_snapshot_add_on_request(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("autoSnapshotAddOnRequest").start_object();
+        crate::protocol_serde::shape_auto_snapshot_add_on_request::ser_auto_snapshot_add_on_request(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.stop_instance_on_idle_request {
+    if let Some(var_3) = &input.stop_instance_on_idle_request {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("stopInstanceOnIdleRequest").start_object();
-        crate::protocol_serde::shape_stop_instance_on_idle_request::ser_stop_instance_on_idle_request(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("stopInstanceOnIdleRequest").start_object();
+        crate::protocol_serde::shape_stop_instance_on_idle_request::ser_stop_instance_on_idle_request(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

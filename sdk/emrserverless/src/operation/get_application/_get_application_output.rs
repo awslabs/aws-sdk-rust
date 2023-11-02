@@ -34,6 +34,7 @@ pub struct GetApplicationOutputBuilder {
 }
 impl GetApplicationOutputBuilder {
     /// <p>The output displays information about the specified application.</p>
+    /// This field is required.
     pub fn application(mut self, input: crate::types::Application) -> Self {
         self.application = ::std::option::Option::Some(input);
         self

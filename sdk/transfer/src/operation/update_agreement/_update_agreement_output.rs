@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAgreementOutput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub agreement_id: ::std::option::Option<::std::string::String>,
+    pub agreement_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateAgreementOutput {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
-        self.agreement_id.as_deref()
+    pub fn agreement_id(&self) -> &str {
+        use std::ops::Deref;
+        self.agreement_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateAgreementOutput {
@@ -34,6 +35,7 @@ pub struct UpdateAgreementOutputBuilder {
 }
 impl UpdateAgreementOutputBuilder {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    /// This field is required.
     pub fn agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agreement_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl UpdateAgreementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAgreementOutput`](crate::operation::update_agreement::UpdateAgreementOutput).
-    pub fn build(self) -> crate::operation::update_agreement::UpdateAgreementOutput {
-        crate::operation::update_agreement::UpdateAgreementOutput {
-            agreement_id: self.agreement_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agreement_id`](crate::operation::update_agreement::builders::UpdateAgreementOutputBuilder::agreement_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_agreement::UpdateAgreementOutput {
+            agreement_id: self.agreement_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "agreement_id",
+                    "agreement_id was not specified but it is required when building UpdateAgreementOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

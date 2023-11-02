@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIngestionsOutput {
     /// <p>Contains a list of ingestion summaries.</p>
-    pub ingestions: ::std::option::Option<::std::vec::Vec<crate::types::IngestionSummary>>,
+    pub ingestions: ::std::vec::Vec<crate::types::IngestionSummary>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIngestionsOutput {
     /// <p>Contains a list of ingestion summaries.</p>
-    pub fn ingestions(&self) -> ::std::option::Option<&[crate::types::IngestionSummary]> {
-        self.ingestions.as_deref()
+    pub fn ingestions(&self) -> &[crate::types::IngestionSummary] {
+        use std::ops::Deref;
+        self.ingestions.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken error</i>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListIngestionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput).
-    pub fn build(self) -> crate::operation::list_ingestions::ListIngestionsOutput {
-        crate::operation::list_ingestions::ListIngestionsOutput {
-            ingestions: self.ingestions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ingestions`](crate::operation::list_ingestions::builders::ListIngestionsOutputBuilder::ingestions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_ingestions::ListIngestionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_ingestions::ListIngestionsOutput {
+            ingestions: self.ingestions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ingestions",
+                    "ingestions was not specified but it is required when building ListIngestionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

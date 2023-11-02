@@ -240,6 +240,7 @@ impl CreateWorkflowInputBuilder {
         &self.tags
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self

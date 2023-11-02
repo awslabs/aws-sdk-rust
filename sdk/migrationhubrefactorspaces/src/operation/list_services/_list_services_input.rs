@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicesInput {
     /// <p>The ID of the environment. </p>
-    pub environment_identifier: ::std::option::Option<::std::string::String>,
+    pub environment_identifier: ::std::string::String,
     /// <p>The ID of the application. </p>
-    pub application_identifier: ::std::option::Option<::std::string::String>,
+    pub application_identifier: ::std::string::String,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -14,12 +14,14 @@ pub struct ListServicesInput {
 }
 impl ListServicesInput {
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
-        self.environment_identifier.as_deref()
+    pub fn environment_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_identifier.deref()
     }
     /// <p>The ID of the application. </p>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
-        self.application_identifier.as_deref()
+    pub fn application_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.application_identifier.deref()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListServicesInputBuilder {
 }
 impl ListServicesInputBuilder {
     /// <p>The ID of the environment. </p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl ListServicesInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application. </p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,10 +108,23 @@ impl ListServicesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_identifier`](crate::operation::list_services::builders::ListServicesInputBuilder::environment_identifier)
+    /// - [`application_identifier`](crate::operation::list_services::builders::ListServicesInputBuilder::application_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_services::ListServicesInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
+            environment_identifier: self.environment_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_identifier",
+                    "environment_identifier was not specified but it is required when building ListServicesInput",
+                )
+            })?,
+            application_identifier: self.application_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_identifier",
+                    "application_identifier was not specified but it is required when building ListServicesInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
         })

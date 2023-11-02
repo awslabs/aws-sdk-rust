@@ -119,8 +119,10 @@ impl PutAlarmInput {
     /// <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>
     /// <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the Amazon Web Services Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
-    pub fn contact_protocols(&self) -> ::std::option::Option<&[crate::types::ContactProtocol]> {
-        self.contact_protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_protocols.is_none()`.
+    pub fn contact_protocols(&self) -> &[crate::types::ContactProtocol] {
+        self.contact_protocols.as_deref().unwrap_or_default()
     }
     /// <p>The alarm states that trigger a notification.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -135,8 +137,10 @@ impl PutAlarmInput {
     /// <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>
     /// </ul>
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
-    pub fn notification_triggers(&self) -> ::std::option::Option<&[crate::types::AlarmState]> {
-        self.notification_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_triggers.is_none()`.
+    pub fn notification_triggers(&self) -> &[crate::types::AlarmState] {
+        self.notification_triggers.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
@@ -169,6 +173,7 @@ pub struct PutAlarmInputBuilder {
 }
 impl PutAlarmInputBuilder {
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
+    /// This field is required.
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_name = ::std::option::Option::Some(input.into());
         self
@@ -191,6 +196,7 @@ impl PutAlarmInputBuilder {
     /// <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: crate::types::MetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
@@ -222,6 +228,7 @@ impl PutAlarmInputBuilder {
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
+    /// This field is required.
     pub fn monitored_resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitored_resource_name = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +245,7 @@ impl PutAlarmInputBuilder {
         &self.monitored_resource_name
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
@@ -252,6 +260,7 @@ impl PutAlarmInputBuilder {
         &self.comparison_operator
     }
     /// <p>The value against which the specified statistic is compared.</p>
+    /// This field is required.
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = ::std::option::Option::Some(input);
         self
@@ -269,6 +278,7 @@ impl PutAlarmInputBuilder {
     /// <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>
     /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>
     /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
+    /// This field is required.
     pub fn evaluation_periods(mut self, input: i32) -> Self {
         self.evaluation_periods = ::std::option::Option::Some(input);
         self

@@ -28,6 +28,7 @@ pub struct RestoreFromSnapshotInputBuilder {
 }
 impl RestoreFromSnapshotInputBuilder {
     /// <p>The identifier of the snapshot to restore from.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self

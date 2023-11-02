@@ -63,7 +63,7 @@ pub fn de_create_hub_http_response(
         output = crate::protocol_serde::shape_create_hub::de_create_hub(_response_body, output)
             .map_err(crate::operation::create_hub::CreateHubError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_hub_output_correct_errors(output).build()
     })
 }
 

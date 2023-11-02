@@ -27,6 +27,7 @@ pub struct DescribeSecurityPolicyInputBuilder {
 }
 impl DescribeSecurityPolicyInputBuilder {
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// This field is required.
     pub fn security_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_policy_name = ::std::option::Option::Some(input.into());
         self

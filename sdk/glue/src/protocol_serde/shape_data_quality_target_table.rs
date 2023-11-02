@@ -3,14 +3,14 @@ pub fn ser_data_quality_target_table(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataQualityTargetTable,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.table_name {
-        object.key("TableName").string(var_1.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.catalog_id {
-        object.key("CatalogId").string(var_3.as_str());
+    if let Some(var_1) = &input.catalog_id {
+        object.key("CatalogId").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::data_quality_target_table_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -39,16 +39,22 @@ impl SimulationJobSummary {
         self.status.as_ref()
     }
     /// <p>A list of simulation job simulation application names.</p>
-    pub fn simulation_application_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.simulation_application_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.simulation_application_names.is_none()`.
+    pub fn simulation_application_names(&self) -> &[::std::string::String] {
+        self.simulation_application_names.as_deref().unwrap_or_default()
     }
     /// <p>A list of simulation job robot application names.</p>
-    pub fn robot_application_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.robot_application_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robot_application_names.is_none()`.
+    pub fn robot_application_names(&self) -> &[::std::string::String] {
+        self.robot_application_names.as_deref().unwrap_or_default()
     }
     /// <p>The names of the data sources.</p>
-    pub fn data_source_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_source_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_source_names.is_none()`.
+    pub fn data_source_names(&self) -> &[::std::string::String] {
+        self.data_source_names.as_deref().unwrap_or_default()
     }
     /// <p>The compute type for the simulation job summary.</p>
     pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {

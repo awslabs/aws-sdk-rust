@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
+    pub collaboration_identifier: ::std::string::String,
     /// <p>The name of the relation to retrieve the schema for.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl GetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
-        self.collaboration_identifier.as_deref()
+    pub fn collaboration_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_identifier.deref()
     }
     /// <p>The name of the relation to retrieve the schema for.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl GetSchemaInput {
@@ -34,6 +36,7 @@ pub struct GetSchemaInputBuilder {
 }
 impl GetSchemaInputBuilder {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetSchemaInputBuilder {
         &self.collaboration_identifier
     }
     /// <p>The name of the relation to retrieve the schema for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,10 +66,23 @@ impl GetSchemaInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_identifier`](crate::operation::get_schema::builders::GetSchemaInputBuilder::collaboration_identifier)
+    /// - [`name`](crate::operation::get_schema::builders::GetSchemaInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput {
-            collaboration_identifier: self.collaboration_identifier,
-            name: self.name,
+            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collaboration_identifier",
+                    "collaboration_identifier was not specified but it is required when building GetSchemaInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetSchemaInput",
+                )
+            })?,
         })
     }
 }

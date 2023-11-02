@@ -28,11 +28,10 @@ pub fn de_describe_account_health_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::describe_account_health::DescribeAccountHealthError::InternalServerException({
@@ -50,11 +49,10 @@ pub fn de_describe_account_health_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_account_health::DescribeAccountHealthError::ThrottlingException({
@@ -72,11 +70,10 @@ pub fn de_describe_account_health_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::describe_account_health::DescribeAccountHealthError::ValidationException({
@@ -87,11 +84,10 @@ pub fn de_describe_account_health_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_account_health::DescribeAccountHealthError::generic(generic),
@@ -113,7 +109,9 @@ pub fn de_describe_account_health_http_response(
         output = crate::protocol_serde::shape_describe_account_health::de_describe_account_health(_response_body, output)
             .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_account_health_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_account_health::DescribeAccountHealthError::unhandled)?
     })
 }
 

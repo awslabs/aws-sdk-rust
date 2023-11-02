@@ -11,12 +11,16 @@ pub struct Scope {
 }
 impl Scope {
     /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
-    pub fn aws_accounts(&self) -> ::std::option::Option<&[crate::types::AwsAccount]> {
-        self.aws_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_accounts.is_none()`.
+    pub fn aws_accounts(&self) -> &[crate::types::AwsAccount] {
+        self.aws_accounts.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
-    pub fn aws_services(&self) -> ::std::option::Option<&[crate::types::AwsService]> {
-        self.aws_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_services.is_none()`.
+    pub fn aws_services(&self) -> &[crate::types::AwsService] {
+        self.aws_services.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Scope {

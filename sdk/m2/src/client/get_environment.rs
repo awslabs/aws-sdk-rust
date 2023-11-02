@@ -3,20 +3,20 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id): <p>The unique identifier of the runtime environment.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id):<br>required: **true**<br><p>The unique identifier of the runtime environment.</p><br>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the runtime environment. Must be unique within the account.</p>
+    ///   - [`name(String)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the runtime environment. Must be unique within the account.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::description): <p>The description of the runtime environment.</p>
-    ///   - [`environment_arn(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    ///   - [`environment_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
-    ///   - [`instance_type(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::instance_type): <p>The type of instance underlying the runtime environment.</p>
-    ///   - [`status(Option<EnvironmentLifecycle>)`](crate::operation::get_environment::GetEnvironmentOutput::status): <p>The status of the runtime environment.</p>
-    ///   - [`engine_type(Option<EngineType>)`](crate::operation::get_environment::GetEnvironmentOutput::engine_type): <p>The target platform for the runtime environment.</p>
-    ///   - [`engine_version(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::engine_version): <p>The version of the runtime engine.</p>
-    ///   - [`vpc_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::vpc_id): <p>The unique identifier for the VPC used with this runtime environment.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::operation::get_environment::GetEnvironmentOutput::subnet_ids): <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::operation::get_environment::GetEnvironmentOutput::security_group_ids): <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_environment::GetEnvironmentOutput::creation_time): <p>The timestamp when the runtime environment was created.</p>
+    ///   - [`environment_arn(String)`](crate::operation::get_environment::GetEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
+    ///   - [`environment_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
+    ///   - [`instance_type(String)`](crate::operation::get_environment::GetEnvironmentOutput::instance_type): <p>The type of instance underlying the runtime environment.</p>
+    ///   - [`status(EnvironmentLifecycle)`](crate::operation::get_environment::GetEnvironmentOutput::status): <p>The status of the runtime environment.</p>
+    ///   - [`engine_type(EngineType)`](crate::operation::get_environment::GetEnvironmentOutput::engine_type): <p>The target platform for the runtime environment.</p>
+    ///   - [`engine_version(String)`](crate::operation::get_environment::GetEnvironmentOutput::engine_version): <p>The version of the runtime engine.</p>
+    ///   - [`vpc_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::vpc_id): <p>The unique identifier for the VPC used with this runtime environment.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::operation::get_environment::GetEnvironmentOutput::subnet_ids): <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::operation::get_environment::GetEnvironmentOutput::security_group_ids): <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_environment::GetEnvironmentOutput::creation_time): <p>The timestamp when the runtime environment was created.</p>
     ///   - [`storage_configurations(Option<Vec<StorageConfiguration>>)`](crate::operation::get_environment::GetEnvironmentOutput::storage_configurations): <p>The storage configurations defined for the runtime environment.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_environment::GetEnvironmentOutput::tags): <p>The tags defined for this runtime environment.</p>
     ///   - [`high_availability_config(Option<HighAvailabilityConfig>)`](crate::operation::get_environment::GetEnvironmentOutput::high_availability_config): <p>The desired capacity of the high availability configuration for the runtime environment.</p>

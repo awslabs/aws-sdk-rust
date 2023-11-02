@@ -6,14 +6,14 @@ pub fn ser_message(
     if let Some(var_1) = &input.content {
         object.key("content").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.content_type {
-        object.key("contentType").string(var_2.as_str());
+    {
+        object.key("contentType").string(input.content_type.as_str());
     }
-    if let Some(var_3) = &input.image_response_card {
+    if let Some(var_2) = &input.image_response_card {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("imageResponseCard").start_object();
-        crate::protocol_serde::shape_image_response_card::ser_image_response_card(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("imageResponseCard").start_object();
+        crate::protocol_serde::shape_image_response_card::ser_image_response_card(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::message_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

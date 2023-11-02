@@ -19,16 +19,22 @@ impl DescribePortfolioOutput {
         self.portfolio_detail.as_ref()
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Information about the TagOptions associated with the portfolio.</p>
-    pub fn tag_options(&self) -> ::std::option::Option<&[crate::types::TagOptionDetail]> {
-        self.tag_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_options.is_none()`.
+    pub fn tag_options(&self) -> &[crate::types::TagOptionDetail] {
+        self.tag_options.as_deref().unwrap_or_default()
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> ::std::option::Option<&[crate::types::BudgetDetail]> {
-        self.budgets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgets.is_none()`.
+    pub fn budgets(&self) -> &[crate::types::BudgetDetail] {
+        self.budgets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePortfolioOutput {

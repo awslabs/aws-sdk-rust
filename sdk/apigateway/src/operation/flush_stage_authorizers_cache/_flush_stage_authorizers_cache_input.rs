@@ -35,6 +35,7 @@ pub struct FlushStageAuthorizersCacheInputBuilder {
 }
 impl FlushStageAuthorizersCacheInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl FlushStageAuthorizersCacheInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the stage to flush.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self

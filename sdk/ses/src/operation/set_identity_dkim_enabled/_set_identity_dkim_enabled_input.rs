@@ -35,6 +35,7 @@ pub struct SetIdentityDkimEnabledInputBuilder {
 }
 impl SetIdentityDkimEnabledInputBuilder {
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl SetIdentityDkimEnabledInputBuilder {
         &self.identity
     }
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// This field is required.
     pub fn dkim_enabled(mut self, input: bool) -> Self {
         self.dkim_enabled = ::std::option::Option::Some(input);
         self

@@ -33,8 +33,10 @@ impl OperatingSystem {
         self.r#type.as_deref()
     }
     /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
-    pub fn configuration_managers(&self) -> ::std::option::Option<&[crate::types::OperatingSystemConfigurationManager]> {
-        self.configuration_managers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_managers.is_none()`.
+    pub fn configuration_managers(&self) -> &[crate::types::OperatingSystemConfigurationManager] {
+        self.configuration_managers.as_deref().unwrap_or_default()
     }
     /// <p>A short name for the operating system manufacturer.</p>
     pub fn reported_name(&self) -> ::std::option::Option<&str> {

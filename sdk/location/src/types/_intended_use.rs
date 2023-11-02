@@ -15,6 +15,13 @@ impl IntendedUse {
         &["SingleUse", "Storage"]
     }
 }
+impl ::std::str::FromStr for IntendedUse {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IntendedUse::from(s))
+    }
+}
 impl<T> ::std::convert::From<T> for IntendedUse
 where
     T: ::std::convert::AsRef<str>,

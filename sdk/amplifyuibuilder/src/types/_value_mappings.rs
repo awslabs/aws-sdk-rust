@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValueMappings {
     /// <p>The value and display value pairs.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
+    pub values: ::std::vec::Vec<crate::types::ValueMapping>,
     /// <p>The information to bind fields to data at runtime.</p>
     pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormInputBindingPropertiesValue>>,
 }
 impl ValueMappings {
     /// <p>The value and display value pairs.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::ValueMapping]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[crate::types::ValueMapping] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn binding_properties(
@@ -87,10 +88,17 @@ impl ValueMappingsBuilder {
         &self.binding_properties
     }
     /// Consumes the builder and constructs a [`ValueMappings`](crate::types::ValueMappings).
-    pub fn build(self) -> crate::types::ValueMappings {
-        crate::types::ValueMappings {
-            values: self.values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`values`](crate::types::builders::ValueMappingsBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValueMappings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValueMappings {
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building ValueMappings",
+                )
+            })?,
             binding_properties: self.binding_properties,
-        }
+        })
     }
 }

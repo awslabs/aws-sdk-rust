@@ -34,6 +34,7 @@ pub struct DeleteSmsChannelOutputBuilder {
 }
 impl DeleteSmsChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
+    /// This field is required.
     pub fn sms_channel_response(mut self, input: crate::types::SmsChannelResponse) -> Self {
         self.sms_channel_response = ::std::option::Option::Some(input);
         self

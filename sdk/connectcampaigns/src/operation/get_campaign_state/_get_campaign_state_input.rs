@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignStateInput {
     /// Identifier representing a Campaign
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetCampaignStateInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetCampaignStateInput {
@@ -28,6 +29,7 @@ pub struct GetCampaignStateInputBuilder {
 }
 impl GetCampaignStateInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,18 @@ impl GetCampaignStateInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetCampaignStateInput`](crate::operation::get_campaign_state::GetCampaignStateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_campaign_state::builders::GetCampaignStateInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_campaign_state::GetCampaignStateInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_campaign_state::GetCampaignStateInput { id: self.id })
+        ::std::result::Result::Ok(crate::operation::get_campaign_state::GetCampaignStateInput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetCampaignStateInput",
+                )
+            })?,
+        })
     }
 }

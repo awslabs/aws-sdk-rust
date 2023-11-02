@@ -3,8 +3,8 @@ pub fn ser_lambda_availability_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaAvailabilityProvider,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.lambda_arn {
-        object.key("LambdaArn").string(var_1.as_str());
+    {
+        object.key("LambdaArn").string(input.lambda_arn.as_str());
     }
     Ok(())
 }
@@ -41,7 +41,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::lambda_availability_provider_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

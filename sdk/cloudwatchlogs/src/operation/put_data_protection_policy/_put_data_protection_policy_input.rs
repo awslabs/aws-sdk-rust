@@ -54,6 +54,7 @@ pub struct PutDataProtectionPolicyInputBuilder {
 }
 impl PutDataProtectionPolicyInputBuilder {
     /// <p>Specify either the log group name or log group ARN.</p>
+    /// This field is required.
     pub fn log_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl PutDataProtectionPolicyInputBuilder {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self

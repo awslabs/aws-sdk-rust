@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CognitoUserPoolConfig {
     /// <p>The user pool ID.</p>
-    pub user_pool_id: ::std::option::Option<::std::string::String>,
+    pub user_pool_id: ::std::string::String,
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub aws_region: ::std::option::Option<::std::string::String>,
+    pub aws_region: ::std::string::String,
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub app_id_client_regex: ::std::option::Option<::std::string::String>,
 }
 impl CognitoUserPoolConfig {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
-        self.user_pool_id.as_deref()
+    pub fn user_pool_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_pool_id.deref()
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
-        self.aws_region.as_deref()
+    pub fn aws_region(&self) -> &str {
+        use std::ops::Deref;
+        self.aws_region.deref()
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn app_id_client_regex(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct CognitoUserPoolConfigBuilder {
 }
 impl CognitoUserPoolConfigBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl CognitoUserPoolConfigBuilder {
         &self.user_pool_id
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
+    /// This field is required.
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl CognitoUserPoolConfigBuilder {
         &self.app_id_client_regex
     }
     /// Consumes the builder and constructs a [`CognitoUserPoolConfig`](crate::types::CognitoUserPoolConfig).
-    pub fn build(self) -> crate::types::CognitoUserPoolConfig {
-        crate::types::CognitoUserPoolConfig {
-            user_pool_id: self.user_pool_id,
-            aws_region: self.aws_region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_pool_id`](crate::types::builders::CognitoUserPoolConfigBuilder::user_pool_id)
+    /// - [`aws_region`](crate::types::builders::CognitoUserPoolConfigBuilder::aws_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::CognitoUserPoolConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CognitoUserPoolConfig {
+            user_pool_id: self.user_pool_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_pool_id",
+                    "user_pool_id was not specified but it is required when building CognitoUserPoolConfig",
+                )
+            })?,
+            aws_region: self.aws_region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aws_region",
+                    "aws_region was not specified but it is required when building CognitoUserPoolConfig",
+                )
+            })?,
             app_id_client_regex: self.app_id_client_regex,
-        }
+        })
     }
 }

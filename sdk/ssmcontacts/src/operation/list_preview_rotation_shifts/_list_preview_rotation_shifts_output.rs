@@ -11,8 +11,10 @@ pub struct ListPreviewRotationShiftsOutput {
 }
 impl ListPreviewRotationShiftsOutput {
     /// <p>Details about a rotation shift, including times, types, and contacts.</p>
-    pub fn rotation_shifts(&self) -> ::std::option::Option<&[crate::types::RotationShift]> {
-        self.rotation_shifts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rotation_shifts.is_none()`.
+    pub fn rotation_shifts(&self) -> &[crate::types::RotationShift] {
+        self.rotation_shifts.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. This token is used to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

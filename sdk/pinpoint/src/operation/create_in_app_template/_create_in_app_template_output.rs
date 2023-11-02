@@ -34,6 +34,7 @@ pub struct CreateInAppTemplateOutputBuilder {
 }
 impl CreateInAppTemplateOutputBuilder {
     /// <p>Provides information about a request to create a message template.</p>
+    /// This field is required.
     pub fn template_create_message_body(mut self, input: crate::types::TemplateCreateMessageBody) -> Self {
         self.template_create_message_body = ::std::option::Option::Some(input);
         self

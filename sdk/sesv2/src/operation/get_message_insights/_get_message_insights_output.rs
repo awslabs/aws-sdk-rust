@@ -30,12 +30,16 @@ impl GetMessageInsightsOutput {
         self.subject.as_deref()
     }
     /// <p> A list of tags, in the form of name/value pairs, that were applied to the email you sent, along with Amazon SES <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>. </p>
-    pub fn email_tags(&self) -> ::std::option::Option<&[crate::types::MessageTag]> {
-        self.email_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_tags.is_none()`.
+    pub fn email_tags(&self) -> &[crate::types::MessageTag] {
+        self.email_tags.as_deref().unwrap_or_default()
     }
     /// <p>A set of insights associated with the message.</p>
-    pub fn insights(&self) -> ::std::option::Option<&[crate::types::EmailInsights]> {
-        self.insights.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights.is_none()`.
+    pub fn insights(&self) -> &[crate::types::EmailInsights] {
+        self.insights.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetMessageInsightsOutput {

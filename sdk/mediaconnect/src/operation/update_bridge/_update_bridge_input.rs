@@ -49,6 +49,7 @@ pub struct UpdateBridgeInputBuilder {
 }
 impl UpdateBridgeInputBuilder {
     /// The Amazon Resource Number (ARN) of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self

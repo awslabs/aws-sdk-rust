@@ -180,8 +180,10 @@ impl BucketMetadata {
         self.size_in_bytes_compressed
     }
     /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::KeyValuePair] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn unclassifiable_object_count(&self) -> ::std::option::Option<&crate::types::ObjectLevelStatistics> {

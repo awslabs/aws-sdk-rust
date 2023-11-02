@@ -40,6 +40,7 @@ pub struct ListResourcesForWebAclInputBuilder {
 }
 impl ListResourcesForWebAclInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
+    /// This field is required.
     pub fn web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_arn = ::std::option::Option::Some(input.into());
         self

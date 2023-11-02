@@ -17,7 +17,7 @@ pub struct DocumentReaderConfig {
     /// <li> <p> <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The Amazon Comprehend service uses the <code>DetectDocumentText</code> API operation. </p> </li>
     /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
     /// </ul>
-    pub document_read_action: ::std::option::Option<crate::types::DocumentReadAction>,
+    pub document_read_action: crate::types::DocumentReadAction,
     /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SERVICE_DEFAULT</code> - use the Amazon Comprehend service defaults for PDF files.</p> </li>
@@ -37,8 +37,8 @@ impl DocumentReaderConfig {
     /// <li> <p> <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The Amazon Comprehend service uses the <code>DetectDocumentText</code> API operation. </p> </li>
     /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
     /// </ul>
-    pub fn document_read_action(&self) -> ::std::option::Option<&crate::types::DocumentReadAction> {
-        self.document_read_action.as_ref()
+    pub fn document_read_action(&self) -> &crate::types::DocumentReadAction {
+        &self.document_read_action
     }
     /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
     /// <ul>
@@ -53,8 +53,10 @@ impl DocumentReaderConfig {
     /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
     /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
     /// </ul>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::DocumentReadFeatureTypes]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::DocumentReadFeatureTypes] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
 }
 impl DocumentReaderConfig {
@@ -78,6 +80,7 @@ impl DocumentReaderConfigBuilder {
     /// <li> <p> <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The Amazon Comprehend service uses the <code>DetectDocumentText</code> API operation. </p> </li>
     /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn document_read_action(mut self, input: crate::types::DocumentReadAction) -> Self {
         self.document_read_action = ::std::option::Option::Some(input);
         self
@@ -158,11 +161,18 @@ impl DocumentReaderConfigBuilder {
         &self.feature_types
     }
     /// Consumes the builder and constructs a [`DocumentReaderConfig`](crate::types::DocumentReaderConfig).
-    pub fn build(self) -> crate::types::DocumentReaderConfig {
-        crate::types::DocumentReaderConfig {
-            document_read_action: self.document_read_action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_read_action`](crate::types::builders::DocumentReaderConfigBuilder::document_read_action)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentReaderConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentReaderConfig {
+            document_read_action: self.document_read_action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_read_action",
+                    "document_read_action was not specified but it is required when building DocumentReaderConfig",
+                )
+            })?,
             document_read_mode: self.document_read_mode,
             feature_types: self.feature_types,
-        }
+        })
     }
 }

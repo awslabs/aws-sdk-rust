@@ -34,6 +34,7 @@ pub struct GetRawMessageContentOutputBuilder {
 }
 impl GetRawMessageContentOutputBuilder {
     /// <p>The raw content of the email message, in MIME format.</p>
+    /// This field is required.
     pub fn message_content(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.message_content = ::std::option::Option::Some(input);
         self

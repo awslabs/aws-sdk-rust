@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
-    pub pipeline_id: ::std::option::Option<::std::string::String>,
+    pub pipeline_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreatePipelineOutput {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
-        self.pipeline_id.as_deref()
+    pub fn pipeline_id(&self) -> &str {
+        use std::ops::Deref;
+        self.pipeline_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePipelineOutput {
@@ -35,6 +36,7 @@ pub struct CreatePipelineOutputBuilder {
 }
 impl CreatePipelineOutputBuilder {
     /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -58,10 +60,19 @@ impl CreatePipelineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
-    pub fn build(self) -> crate::operation::create_pipeline::CreatePipelineOutput {
-        crate::operation::create_pipeline::CreatePipelineOutput {
-            pipeline_id: self.pipeline_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pipeline_id`](crate::operation::create_pipeline::builders::CreatePipelineOutputBuilder::pipeline_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_pipeline::CreatePipelineOutput {
+            pipeline_id: self.pipeline_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pipeline_id",
+                    "pipeline_id was not specified but it is required when building CreatePipelineOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

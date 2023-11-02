@@ -12,8 +12,10 @@ pub struct DescribeOrganizationConformancePackStatusesInput {
 }
 impl DescribeOrganizationConformancePackStatusesInput {
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
-    pub fn organization_conformance_pack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organization_conformance_pack_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_conformance_pack_names.is_none()`.
+    pub fn organization_conformance_pack_names(&self) -> &[::std::string::String] {
+        self.organization_conformance_pack_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
     pub fn limit(&self) -> ::std::option::Option<i32> {

@@ -32,12 +32,16 @@ impl RestoreTableFromBackupInput {
         self.billing_mode_override.as_ref()
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn global_secondary_index_override(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndex]> {
-        self.global_secondary_index_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_index_override.is_none()`.
+    pub fn global_secondary_index_override(&self) -> &[crate::types::GlobalSecondaryIndex] {
+        self.global_secondary_index_override.as_deref().unwrap_or_default()
     }
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn local_secondary_index_override(&self) -> ::std::option::Option<&[crate::types::LocalSecondaryIndex]> {
-        self.local_secondary_index_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_secondary_index_override.is_none()`.
+    pub fn local_secondary_index_override(&self) -> &[crate::types::LocalSecondaryIndex] {
+        self.local_secondary_index_override.as_deref().unwrap_or_default()
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
     pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
@@ -69,6 +73,7 @@ pub struct RestoreTableFromBackupInputBuilder {
 }
 impl RestoreTableFromBackupInputBuilder {
     /// <p>The name of the new table to which the backup must be restored.</p>
+    /// This field is required.
     pub fn target_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_table_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl RestoreTableFromBackupInputBuilder {
         &self.target_table_name
     }
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
+    /// This field is required.
     pub fn backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_arn = ::std::option::Option::Some(input.into());
         self

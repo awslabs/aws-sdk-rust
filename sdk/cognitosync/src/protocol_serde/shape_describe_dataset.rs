@@ -25,11 +25,10 @@ pub fn de_describe_dataset_http_error(
                 output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_error_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::describe_dataset::DescribeDatasetError::InvalidParameterException({
@@ -40,11 +39,10 @@ pub fn de_describe_dataset_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotAuthorizedException" => crate::operation::describe_dataset::DescribeDatasetError::NotAuthorizedException({
@@ -55,11 +53,10 @@ pub fn de_describe_dataset_http_error(
                 output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_authorized_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_dataset::DescribeDatasetError::ResourceNotFoundException({
@@ -70,11 +67,10 @@ pub fn de_describe_dataset_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::describe_dataset::DescribeDatasetError::TooManyRequestsException({
@@ -85,11 +81,10 @@ pub fn de_describe_dataset_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_dataset::DescribeDatasetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_dataset::DescribeDatasetError::generic(generic),

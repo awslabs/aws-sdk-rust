@@ -95,8 +95,10 @@ impl PathComponent {
         self.vpc.as_ref()
     }
     /// <p>The additional details.</p>
-    pub fn additional_details(&self) -> ::std::option::Option<&[crate::types::AdditionalDetail]> {
-        self.additional_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_details.is_none()`.
+    pub fn additional_details(&self) -> &[crate::types::AdditionalDetail] {
+        self.additional_details.as_deref().unwrap_or_default()
     }
     /// <p>The transit gateway.</p>
     pub fn transit_gateway(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {
@@ -107,8 +109,10 @@ impl PathComponent {
         self.transit_gateway_route_table_route.as_ref()
     }
     /// <p>The explanation codes.</p>
-    pub fn explanations(&self) -> ::std::option::Option<&[crate::types::Explanation]> {
-        self.explanations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.explanations.is_none()`.
+    pub fn explanations(&self) -> &[crate::types::Explanation] {
+        self.explanations.as_deref().unwrap_or_default()
     }
     /// <p>The load balancer listener.</p>
     pub fn elastic_load_balancer_listener(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {

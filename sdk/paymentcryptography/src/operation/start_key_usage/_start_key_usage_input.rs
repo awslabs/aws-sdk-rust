@@ -27,6 +27,7 @@ pub struct StartKeyUsageInputBuilder {
 }
 impl StartKeyUsageInputBuilder {
     /// <p>The <code>KeyArn</code> of the key.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self

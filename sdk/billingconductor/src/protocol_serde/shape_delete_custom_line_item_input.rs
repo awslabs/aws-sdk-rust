@@ -3,14 +3,14 @@ pub fn ser_delete_custom_line_item_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_custom_line_item::DeleteCustomLineItemInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.billing_period_range {
+    if let Some(var_1) = &input.billing_period_range {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("BillingPeriodRange").start_object();
-        crate::protocol_serde::shape_custom_line_item_billing_period_range::ser_custom_line_item_billing_period_range(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("BillingPeriodRange").start_object();
+        crate::protocol_serde::shape_custom_line_item_billing_period_range::ser_custom_line_item_billing_period_range(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

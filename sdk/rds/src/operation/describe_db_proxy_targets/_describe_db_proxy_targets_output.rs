@@ -11,8 +11,10 @@ pub struct DescribeDbProxyTargetsOutput {
 }
 impl DescribeDbProxyTargetsOutput {
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::DbProxyTarget]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::DbProxyTarget] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

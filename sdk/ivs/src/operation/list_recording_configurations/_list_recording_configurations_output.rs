@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecordingConfigurationsOutput {
     /// <p>List of the matching recording configurations.</p>
-    pub recording_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RecordingConfigurationSummary>>,
+    pub recording_configurations: ::std::vec::Vec<crate::types::RecordingConfigurationSummary>,
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRecordingConfigurationsOutput {
     /// <p>List of the matching recording configurations.</p>
-    pub fn recording_configurations(&self) -> ::std::option::Option<&[crate::types::RecordingConfigurationSummary]> {
-        self.recording_configurations.as_deref()
+    pub fn recording_configurations(&self) -> &[crate::types::RecordingConfigurationSummary] {
+        use std::ops::Deref;
+        self.recording_configurations.deref()
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,23 @@ impl ListRecordingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecordingConfigurationsOutput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
-        crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
-            recording_configurations: self.recording_configurations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recording_configurations`](crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder::recording_configurations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
+            recording_configurations: self.recording_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recording_configurations",
+                    "recording_configurations was not specified but it is required when building ListRecordingConfigurationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

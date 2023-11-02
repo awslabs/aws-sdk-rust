@@ -3,56 +3,56 @@ pub fn ser_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Target,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("RoleArn").string(var_2.as_str());
+    {
+        object.key("RoleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_3) = &input.dead_letter_config {
+    if let Some(var_1) = &input.dead_letter_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("DeadLetterConfig").start_object();
-        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_4, var_3)?;
+        let mut object_2 = object.key("DeadLetterConfig").start_object();
+        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.retry_policy {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("RetryPolicy").start_object();
+        crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.retry_policy {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("RetryPolicy").start_object();
-        crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_6, var_5)?;
-        object_6.finish();
+    if let Some(var_5) = &input.input {
+        object.key("Input").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.input {
-        object.key("Input").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.ecs_parameters {
+    if let Some(var_6) = &input.ecs_parameters {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("EcsParameters").start_object();
-        crate::protocol_serde::shape_ecs_parameters::ser_ecs_parameters(&mut object_9, var_8)?;
+        let mut object_7 = object.key("EcsParameters").start_object();
+        crate::protocol_serde::shape_ecs_parameters::ser_ecs_parameters(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.event_bridge_parameters {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("EventBridgeParameters").start_object();
+        crate::protocol_serde::shape_event_bridge_parameters::ser_event_bridge_parameters(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.event_bridge_parameters {
+    if let Some(var_10) = &input.kinesis_parameters {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("EventBridgeParameters").start_object();
-        crate::protocol_serde::shape_event_bridge_parameters::ser_event_bridge_parameters(&mut object_11, var_10)?;
+        let mut object_11 = object.key("KinesisParameters").start_object();
+        crate::protocol_serde::shape_kinesis_parameters::ser_kinesis_parameters(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.kinesis_parameters {
+    if let Some(var_12) = &input.sage_maker_pipeline_parameters {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("KinesisParameters").start_object();
-        crate::protocol_serde::shape_kinesis_parameters::ser_kinesis_parameters(&mut object_13, var_12)?;
+        let mut object_13 = object.key("SageMakerPipelineParameters").start_object();
+        crate::protocol_serde::shape_sage_maker_pipeline_parameters::ser_sage_maker_pipeline_parameters(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.sage_maker_pipeline_parameters {
+    if let Some(var_14) = &input.sqs_parameters {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("SageMakerPipelineParameters").start_object();
-        crate::protocol_serde::shape_sage_maker_pipeline_parameters::ser_sage_maker_pipeline_parameters(&mut object_15, var_14)?;
+        let mut object_15 = object.key("SqsParameters").start_object();
+        crate::protocol_serde::shape_sqs_parameters::ser_sqs_parameters(&mut object_15, var_14)?;
         object_15.finish();
-    }
-    if let Some(var_16) = &input.sqs_parameters {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("SqsParameters").start_object();
-        crate::protocol_serde::shape_sqs_parameters::ser_sqs_parameters(&mut object_17, var_16)?;
-        object_17.finish();
     }
     Ok(())
 }
@@ -128,7 +128,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::target_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

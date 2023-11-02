@@ -53,8 +53,10 @@ impl DescribeComponentOutput {
         self.status.as_ref()
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::ComponentPlatform]> {
-        self.platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
+    pub fn platforms(&self) -> &[crate::types::ComponentPlatform] {
+        self.platforms.as_deref().unwrap_or_default()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

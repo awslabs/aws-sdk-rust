@@ -9,8 +9,10 @@ pub struct LoggingConfiguration {
 }
 impl LoggingConfiguration {
     /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::LogDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::LogDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
 }
 impl LoggingConfiguration {

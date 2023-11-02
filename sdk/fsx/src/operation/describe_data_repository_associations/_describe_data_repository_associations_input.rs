@@ -14,12 +14,16 @@ pub struct DescribeDataRepositoryAssociationsInput {
 }
 impl DescribeDataRepositoryAssociationsInput {
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.association_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_ids.is_none()`.
+    pub fn association_ids(&self) -> &[::std::string::String] {
+        self.association_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>Filter</code> elements.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

@@ -44,6 +44,7 @@ pub struct ListTrafficPolicyVersionsInputBuilder {
 }
 impl ListTrafficPolicyVersionsInputBuilder {
     /// <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

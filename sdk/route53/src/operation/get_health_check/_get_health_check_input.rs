@@ -28,6 +28,7 @@ pub struct GetHealthCheckInputBuilder {
 }
 impl GetHealthCheckInputBuilder {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    /// This field is required.
     pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_id = ::std::option::Option::Some(input.into());
         self

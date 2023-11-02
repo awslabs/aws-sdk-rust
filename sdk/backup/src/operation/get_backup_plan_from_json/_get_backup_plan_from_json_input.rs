@@ -27,6 +27,7 @@ pub struct GetBackupPlanFromJsonInputBuilder {
 }
 impl GetBackupPlanFromJsonInputBuilder {
     /// <p>A customer-supplied backup plan document in JSON format.</p>
+    /// This field is required.
     pub fn backup_plan_template_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_json = ::std::option::Option::Some(input.into());
         self

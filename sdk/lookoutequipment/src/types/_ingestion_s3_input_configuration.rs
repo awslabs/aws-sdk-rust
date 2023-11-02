@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p> The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first time.</p>
@@ -14,8 +14,9 @@ pub struct IngestionS3InputConfiguration {
 }
 impl IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -44,6 +45,7 @@ pub struct IngestionS3InputConfigurationBuilder {
 }
 impl IngestionS3InputConfigurationBuilder {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -89,11 +91,18 @@ impl IngestionS3InputConfigurationBuilder {
         &self.key_pattern
     }
     /// Consumes the builder and constructs a [`IngestionS3InputConfiguration`](crate::types::IngestionS3InputConfiguration).
-    pub fn build(self) -> crate::types::IngestionS3InputConfiguration {
-        crate::types::IngestionS3InputConfiguration {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::IngestionS3InputConfigurationBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::IngestionS3InputConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IngestionS3InputConfiguration {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building IngestionS3InputConfiguration",
+                )
+            })?,
             prefix: self.prefix,
             key_pattern: self.key_pattern,
-        }
+        })
     }
 }

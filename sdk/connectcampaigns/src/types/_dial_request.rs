@@ -5,30 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DialRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
-    pub client_token: ::std::option::Option<::std::string::String>,
+    pub client_token: ::std::string::String,
     /// The phone number of the customer, in E.164 format.
-    pub phone_number: ::std::option::Option<::std::string::String>,
+    pub phone_number: ::std::string::String,
     /// Timestamp with no UTC offset or timezone
-    pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub expiration_time: ::aws_smithy_types::DateTime,
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl DialRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
+    pub fn client_token(&self) -> &str {
+        use std::ops::Deref;
+        self.client_token.deref()
     }
     /// The phone number of the customer, in E.164 format.
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
-        self.phone_number.as_deref()
+    pub fn phone_number(&self) -> &str {
+        use std::ops::Deref;
+        self.phone_number.deref()
     }
     /// Timestamp with no UTC offset or timezone
-    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.expiration_time.as_ref()
+    pub fn expiration_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.expiration_time
     }
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.attributes.as_ref()
+    pub fn attributes(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.attributes
     }
 }
 impl ::std::fmt::Debug for DialRequest {
@@ -59,6 +61,7 @@ pub struct DialRequestBuilder {
 }
 impl DialRequestBuilder {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl DialRequestBuilder {
         &self.client_token
     }
     /// The phone number of the customer, in E.164 format.
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +91,7 @@ impl DialRequestBuilder {
         &self.phone_number
     }
     /// Timestamp with no UTC offset or timezone
+    /// This field is required.
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_time = ::std::option::Option::Some(input);
         self
@@ -121,13 +126,38 @@ impl DialRequestBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`DialRequest`](crate::types::DialRequest).
-    pub fn build(self) -> crate::types::DialRequest {
-        crate::types::DialRequest {
-            client_token: self.client_token,
-            phone_number: self.phone_number,
-            expiration_time: self.expiration_time,
-            attributes: self.attributes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`client_token`](crate::types::builders::DialRequestBuilder::client_token)
+    /// - [`phone_number`](crate::types::builders::DialRequestBuilder::phone_number)
+    /// - [`expiration_time`](crate::types::builders::DialRequestBuilder::expiration_time)
+    /// - [`attributes`](crate::types::builders::DialRequestBuilder::attributes)
+    pub fn build(self) -> ::std::result::Result<crate::types::DialRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DialRequest {
+            client_token: self.client_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_token",
+                    "client_token was not specified but it is required when building DialRequest",
+                )
+            })?,
+            phone_number: self.phone_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "phone_number",
+                    "phone_number was not specified but it is required when building DialRequest",
+                )
+            })?,
+            expiration_time: self.expiration_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expiration_time",
+                    "expiration_time was not specified but it is required when building DialRequest",
+                )
+            })?,
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building DialRequest",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for DialRequestBuilder {

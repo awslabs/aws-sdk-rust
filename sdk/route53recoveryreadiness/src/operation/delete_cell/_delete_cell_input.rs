@@ -27,6 +27,7 @@ pub struct DeleteCellInputBuilder {
 }
 impl DeleteCellInputBuilder {
     /// <p>The name of the cell.</p>
+    /// This field is required.
     pub fn cell_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_name = ::std::option::Option::Some(input.into());
         self

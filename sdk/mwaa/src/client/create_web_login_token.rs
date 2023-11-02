@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateWebLoginToken`](crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder::set_name): <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p><br>
     /// - On success, responds with [`CreateWebLoginTokenOutput`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput) with field(s):
     ///   - [`web_token(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::web_token): <p>An Airflow web server login token.</p>
     ///   - [`web_server_hostname(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::web_server_hostname): <p>The Airflow web server hostname for the environment.</p>

@@ -42,20 +42,26 @@ impl CreateSubscriptionTargetInput {
         self.r#type.as_deref()
     }
     /// <p>The configuration of the subscription target.</p>
-    pub fn subscription_target_config(&self) -> ::std::option::Option<&[crate::types::SubscriptionTargetForm]> {
-        self.subscription_target_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_target_config.is_none()`.
+    pub fn subscription_target_config(&self) -> &[crate::types::SubscriptionTargetForm] {
+        self.subscription_target_config.as_deref().unwrap_or_default()
     }
     /// <p>The authorized principals of the subscription target.</p>
-    pub fn authorized_principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.authorized_principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_principals.is_none()`.
+    pub fn authorized_principals(&self) -> &[::std::string::String] {
+        self.authorized_principals.as_deref().unwrap_or_default()
     }
     /// <p>The manage access role that is used to create the subscription target.</p>
     pub fn manage_access_role(&self) -> ::std::option::Option<&str> {
         self.manage_access_role.as_deref()
     }
     /// <p>The asset types that can be included in the subscription target.</p>
-    pub fn applicable_asset_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.applicable_asset_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applicable_asset_types.is_none()`.
+    pub fn applicable_asset_types(&self) -> &[::std::string::String] {
+        self.applicable_asset_types.as_deref().unwrap_or_default()
     }
     /// <p>The provider of the subscription target.</p>
     pub fn provider(&self) -> ::std::option::Option<&str> {
@@ -106,6 +112,7 @@ pub struct CreateSubscriptionTargetInputBuilder {
 }
 impl CreateSubscriptionTargetInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which subscription target is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +127,7 @@ impl CreateSubscriptionTargetInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the environment in which subscription target is created.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +142,7 @@ impl CreateSubscriptionTargetInputBuilder {
         &self.environment_identifier
     }
     /// <p>The name of the subscription target.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +157,7 @@ impl CreateSubscriptionTargetInputBuilder {
         &self.name
     }
     /// <p>The type of the subscription target.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +212,7 @@ impl CreateSubscriptionTargetInputBuilder {
         &self.authorized_principals
     }
     /// <p>The manage access role that is used to create the subscription target.</p>
+    /// This field is required.
     pub fn manage_access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manage_access_role = ::std::option::Option::Some(input.into());
         self

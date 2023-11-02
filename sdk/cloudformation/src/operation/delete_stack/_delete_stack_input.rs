@@ -24,8 +24,10 @@ impl DeleteStackInput {
     }
     /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs that are associated with the resources you want to retain. During deletion, CloudFormation deletes the stack but doesn't delete the retained resources.</p>
     /// <p>Retaining resources is useful when you can't delete a resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
-    pub fn retain_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.retain_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retain_resources.is_none()`.
+    pub fn retain_resources(&self) -> &[::std::string::String] {
+        self.retain_resources.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to delete the stack. CloudFormation uses the role's credentials to make calls on your behalf.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that's generated from your user credentials.</p>
@@ -57,6 +59,7 @@ pub struct DeleteStackInputBuilder {
 }
 impl DeleteStackInputBuilder {
     /// <p>The name or the unique stack ID that's associated with the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self

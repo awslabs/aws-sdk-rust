@@ -25,6 +25,7 @@ pub fn ser_target_description(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_target_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TargetDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -76,5 +77,5 @@ pub fn de_target_description(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::target_description_correct_errors(builder).build())
 }

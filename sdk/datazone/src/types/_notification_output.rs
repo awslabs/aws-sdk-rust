@@ -5,68 +5,73 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotificationOutput {
     /// <p>The identifier of the notification.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>The identifier of a Amazon DataZone domain in which the notification exists.</p>
-    pub domain_identifier: ::std::option::Option<::std::string::String>,
+    pub domain_identifier: ::std::string::String,
     /// <p>The type of the notification.</p>
-    pub r#type: ::std::option::Option<crate::types::NotificationType>,
+    pub r#type: crate::types::NotificationType,
     /// <p>The topic of the notification.</p>
     pub topic: ::std::option::Option<crate::types::Topic>,
     /// <p>The title of the notification.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The message included in the notification.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The status included in the notification.</p>
     pub status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>The action link included in the notification.</p>
-    pub action_link: ::std::option::Option<::std::string::String>,
+    pub action_link: ::std::string::String,
     /// <p>The timestamp of when a notification was created.</p>
-    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the notification was last updated.</p>
-    pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The metadata included in the notification.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl NotificationOutput {
     /// <p>The identifier of the notification.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>The identifier of a Amazon DataZone domain in which the notification exists.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
-        self.domain_identifier.as_deref()
+    pub fn domain_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_identifier.deref()
     }
     /// <p>The type of the notification.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::NotificationType {
+        &self.r#type
     }
     /// <p>The topic of the notification.</p>
     pub fn topic(&self) -> ::std::option::Option<&crate::types::Topic> {
         self.topic.as_ref()
     }
     /// <p>The title of the notification.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The message included in the notification.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>The status included in the notification.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
         self.status.as_ref()
     }
     /// <p>The action link included in the notification.</p>
-    pub fn action_link(&self) -> ::std::option::Option<&str> {
-        self.action_link.as_deref()
+    pub fn action_link(&self) -> &str {
+        use std::ops::Deref;
+        self.action_link.deref()
     }
     /// <p>The timestamp of when a notification was created.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_timestamp.as_ref()
+    pub fn creation_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_timestamp
     }
     /// <p>The timestamp of when the notification was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_timestamp.as_ref()
+    pub fn last_updated_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_timestamp
     }
     /// <p>The metadata included in the notification.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -115,6 +120,7 @@ pub struct NotificationOutputBuilder {
 }
 impl NotificationOutputBuilder {
     /// <p>The identifier of the notification.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +135,7 @@ impl NotificationOutputBuilder {
         &self.identifier
     }
     /// <p>The identifier of a Amazon DataZone domain in which the notification exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +150,7 @@ impl NotificationOutputBuilder {
         &self.domain_identifier
     }
     /// <p>The type of the notification.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::NotificationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -157,6 +165,7 @@ impl NotificationOutputBuilder {
         &self.r#type
     }
     /// <p>The topic of the notification.</p>
+    /// This field is required.
     pub fn topic(mut self, input: crate::types::Topic) -> Self {
         self.topic = ::std::option::Option::Some(input);
         self
@@ -171,6 +180,7 @@ impl NotificationOutputBuilder {
         &self.topic
     }
     /// <p>The title of the notification.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +195,7 @@ impl NotificationOutputBuilder {
         &self.title
     }
     /// <p>The message included in the notification.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -213,6 +224,7 @@ impl NotificationOutputBuilder {
         &self.status
     }
     /// <p>The action link included in the notification.</p>
+    /// This field is required.
     pub fn action_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_link = ::std::option::Option::Some(input.into());
         self
@@ -227,6 +239,7 @@ impl NotificationOutputBuilder {
         &self.action_link
     }
     /// <p>The timestamp of when a notification was created.</p>
+    /// This field is required.
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
@@ -241,6 +254,7 @@ impl NotificationOutputBuilder {
         &self.creation_timestamp
     }
     /// <p>The timestamp of when the notification was last updated.</p>
+    /// This field is required.
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
         self
@@ -275,20 +289,69 @@ impl NotificationOutputBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`NotificationOutput`](crate::types::NotificationOutput).
-    pub fn build(self) -> crate::types::NotificationOutput {
-        crate::types::NotificationOutput {
-            identifier: self.identifier,
-            domain_identifier: self.domain_identifier,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::types::builders::NotificationOutputBuilder::identifier)
+    /// - [`domain_identifier`](crate::types::builders::NotificationOutputBuilder::domain_identifier)
+    /// - [`r#type`](crate::types::builders::NotificationOutputBuilder::r#type)
+    /// - [`title`](crate::types::builders::NotificationOutputBuilder::title)
+    /// - [`message`](crate::types::builders::NotificationOutputBuilder::message)
+    /// - [`action_link`](crate::types::builders::NotificationOutputBuilder::action_link)
+    /// - [`creation_timestamp`](crate::types::builders::NotificationOutputBuilder::creation_timestamp)
+    /// - [`last_updated_timestamp`](crate::types::builders::NotificationOutputBuilder::last_updated_timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationOutput {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building NotificationOutput",
+                )
+            })?,
+            domain_identifier: self.domain_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_identifier",
+                    "domain_identifier was not specified but it is required when building NotificationOutput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building NotificationOutput",
+                )
+            })?,
             topic: self.topic,
-            title: self.title,
-            message: self.message,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building NotificationOutput",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building NotificationOutput",
+                )
+            })?,
             status: self.status,
-            action_link: self.action_link,
-            creation_timestamp: self.creation_timestamp,
-            last_updated_timestamp: self.last_updated_timestamp,
+            action_link: self.action_link.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_link",
+                    "action_link was not specified but it is required when building NotificationOutput",
+                )
+            })?,
+            creation_timestamp: self.creation_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_timestamp",
+                    "creation_timestamp was not specified but it is required when building NotificationOutput",
+                )
+            })?,
+            last_updated_timestamp: self.last_updated_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_timestamp",
+                    "last_updated_timestamp was not specified but it is required when building NotificationOutput",
+                )
+            })?,
             metadata: self.metadata,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for NotificationOutputBuilder {

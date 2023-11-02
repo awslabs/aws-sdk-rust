@@ -34,6 +34,7 @@ pub struct StartProtectedQueryOutputBuilder {
 }
 impl StartProtectedQueryOutputBuilder {
     /// <p>The protected query.</p>
+    /// This field is required.
     pub fn protected_query(mut self, input: crate::types::ProtectedQuery) -> Self {
         self.protected_query = ::std::option::Option::Some(input);
         self

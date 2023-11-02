@@ -42,6 +42,7 @@ pub struct ResourceToImportBuilder {
 }
 impl ResourceToImportBuilder {
     /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ResourceToImportBuilder {
         &self.resource_type
     }
     /// <p>The logical ID of the target resource as specified in the template.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self

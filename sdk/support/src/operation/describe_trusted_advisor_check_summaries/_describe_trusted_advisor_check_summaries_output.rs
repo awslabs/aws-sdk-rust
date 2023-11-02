@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
+    pub summaries: ::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::TrustedAdvisorCheckSummary]> {
-        self.summaries.as_deref()
+    pub fn summaries(&self) -> &[crate::types::TrustedAdvisorCheckSummary] {
+        use std::ops::Deref;
+        self.summaries.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckSummariesOutput {
@@ -64,10 +65,24 @@ impl DescribeTrustedAdvisorCheckSummariesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput).
-    pub fn build(self) -> crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput {
-        crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput {
-            summaries: self.summaries,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`summaries`](crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesOutputBuilder::summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput {
+                summaries: self.summaries.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "summaries",
+                        "summaries was not specified but it is required when building DescribeTrustedAdvisorCheckSummariesOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

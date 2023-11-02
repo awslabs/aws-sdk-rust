@@ -15,8 +15,10 @@ pub struct HadoopJarStepConfig {
 }
 impl HadoopJarStepConfig {
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::KeyValue]> {
-        self.properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
+    pub fn properties(&self) -> &[crate::types::KeyValue] {
+        self.properties.as_deref().unwrap_or_default()
     }
     /// <p>A path to a JAR file run during the step.</p>
     pub fn jar(&self) -> ::std::option::Option<&str> {
@@ -27,8 +29,10 @@ impl HadoopJarStepConfig {
         self.main_class.as_deref()
     }
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
-    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.args.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
+    pub fn args(&self) -> &[::std::string::String] {
+        self.args.as_deref().unwrap_or_default()
     }
 }
 impl HadoopJarStepConfig {
@@ -69,6 +73,7 @@ impl HadoopJarStepConfigBuilder {
         &self.properties
     }
     /// <p>A path to a JAR file run during the step.</p>
+    /// This field is required.
     pub fn jar(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.jar = ::std::option::Option::Some(input.into());
         self

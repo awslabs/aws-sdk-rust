@@ -71,8 +71,10 @@ impl AutoScalingGroupRecommendation {
         self.finding.as_ref()
     }
     /// <p>An array of objects that describe the utilization metrics of the Auto Scaling group.</p>
-    pub fn utilization_metrics(&self) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
-        self.utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utilization_metrics.is_none()`.
+    pub fn utilization_metrics(&self) -> &[crate::types::UtilizationMetric] {
+        self.utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the Auto Scaling group.</p>
     pub fn look_back_period_in_days(&self) -> f64 {
@@ -83,8 +85,10 @@ impl AutoScalingGroupRecommendation {
         self.current_configuration.as_ref()
     }
     /// <p>An array of objects that describe the recommendation options for the Auto Scaling group.</p>
-    pub fn recommendation_options(&self) -> ::std::option::Option<&[crate::types::AutoScalingGroupRecommendationOption]> {
-        self.recommendation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_options.is_none()`.
+    pub fn recommendation_options(&self) -> &[crate::types::AutoScalingGroupRecommendationOption] {
+        self.recommendation_options.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp of when the Auto Scaling group recommendation was last generated.</p>
     pub fn last_refresh_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -111,8 +115,10 @@ impl AutoScalingGroupRecommendation {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    pub fn inferred_workload_types(&self) -> ::std::option::Option<&[crate::types::InferredWorkloadType]> {
-        self.inferred_workload_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_types.is_none()`.
+    pub fn inferred_workload_types(&self) -> &[crate::types::InferredWorkloadType] {
+        self.inferred_workload_types.as_deref().unwrap_or_default()
     }
     /// <p> Describes the GPU accelerator settings for the current instance type of the Auto Scaling group. </p>
     pub fn current_instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {

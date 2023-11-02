@@ -80,6 +80,7 @@ impl ListAttributesInputBuilder {
         &self.cluster
     }
     /// <p>The type of the target to list attributes with.</p>
+    /// This field is required.
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self

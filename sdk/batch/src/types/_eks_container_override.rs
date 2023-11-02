@@ -23,18 +23,24 @@ impl EksContainerOverride {
         self.image.as_deref()
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.args.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
+    pub fn args(&self) -> &[::std::string::String] {
+        self.args.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn env(&self) -> ::std::option::Option<&[crate::types::EksContainerEnvironmentVariable]> {
-        self.env.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.env.is_none()`.
+    pub fn env(&self) -> &[crate::types::EksContainerEnvironmentVariable] {
+        self.env.as_deref().unwrap_or_default()
     }
     /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn resources(&self) -> ::std::option::Option<&crate::types::EksContainerResourceRequirements> {

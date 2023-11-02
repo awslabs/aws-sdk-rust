@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberAccountEc2DeepInspectionStatus {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
-    pub activate_deep_inspection: ::std::option::Option<bool>,
+    pub activate_deep_inspection: bool,
 }
 impl MemberAccountEc2DeepInspectionStatus {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
-    pub fn activate_deep_inspection(&self) -> ::std::option::Option<bool> {
+    pub fn activate_deep_inspection(&self) -> bool {
         self.activate_deep_inspection
     }
 }
@@ -35,6 +36,7 @@ pub struct MemberAccountEc2DeepInspectionStatusBuilder {
 }
 impl MemberAccountEc2DeepInspectionStatusBuilder {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl MemberAccountEc2DeepInspectionStatusBuilder {
         &self.account_id
     }
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
+    /// This field is required.
     pub fn activate_deep_inspection(mut self, input: bool) -> Self {
         self.activate_deep_inspection = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl MemberAccountEc2DeepInspectionStatusBuilder {
         &self.activate_deep_inspection
     }
     /// Consumes the builder and constructs a [`MemberAccountEc2DeepInspectionStatus`](crate::types::MemberAccountEc2DeepInspectionStatus).
-    pub fn build(self) -> crate::types::MemberAccountEc2DeepInspectionStatus {
-        crate::types::MemberAccountEc2DeepInspectionStatus {
-            account_id: self.account_id,
-            activate_deep_inspection: self.activate_deep_inspection,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::MemberAccountEc2DeepInspectionStatusBuilder::account_id)
+    /// - [`activate_deep_inspection`](crate::types::builders::MemberAccountEc2DeepInspectionStatusBuilder::activate_deep_inspection)
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberAccountEc2DeepInspectionStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MemberAccountEc2DeepInspectionStatus {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building MemberAccountEc2DeepInspectionStatus",
+                )
+            })?,
+            activate_deep_inspection: self.activate_deep_inspection.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "activate_deep_inspection",
+                    "activate_deep_inspection was not specified but it is required when building MemberAccountEc2DeepInspectionStatus",
+                )
+            })?,
+        })
     }
 }

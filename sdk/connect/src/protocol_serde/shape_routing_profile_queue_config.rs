@@ -9,16 +9,16 @@ pub fn ser_routing_profile_queue_config(
         crate::protocol_serde::shape_routing_profile_queue_reference::ser_routing_profile_queue_reference(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.priority {
+    {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
-    if let Some(var_4) = &input.delay {
+    {
         object.key("Delay").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.delay).into()),
         );
     }
     Ok(())

@@ -3,17 +3,17 @@ pub fn ser_launch_group_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LaunchGroupConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.feature {
-        object.key("feature").string(var_3.as_str());
+    {
+        object.key("feature").string(input.feature.as_str());
     }
-    if let Some(var_4) = &input.variation {
-        object.key("variation").string(var_4.as_str());
+    {
+        object.key("variation").string(input.variation.as_str());
     }
     Ok(())
 }

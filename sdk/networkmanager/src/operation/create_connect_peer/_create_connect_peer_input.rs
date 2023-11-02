@@ -38,12 +38,16 @@ impl CreateConnectPeerInput {
         self.bgp_options.as_ref()
     }
     /// <p>The inside IP addresses used for BGP peering.</p>
-    pub fn inside_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inside_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
+    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
+        self.inside_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The tags associated with the peer request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -76,6 +80,7 @@ pub struct CreateConnectPeerInputBuilder {
 }
 impl CreateConnectPeerInputBuilder {
     /// <p>The ID of the connection attachment.</p>
+    /// This field is required.
     pub fn connect_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl CreateConnectPeerInputBuilder {
         &self.core_network_address
     }
     /// <p>The Connect peer address.</p>
+    /// This field is required.
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
         self

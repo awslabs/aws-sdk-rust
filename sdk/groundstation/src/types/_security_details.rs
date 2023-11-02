@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityDetails {
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The security groups to attach to the elastic network interfaces.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>ARN to a role needed for connecting streams to your instances. </p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl SecurityDetails {
     /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>The security groups to attach to the elastic network interfaces.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
     /// <p>ARN to a role needed for connecting streams to your instances. </p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl SecurityDetails {
@@ -82,6 +85,7 @@ impl SecurityDetailsBuilder {
         &self.security_group_ids
     }
     /// <p>ARN to a role needed for connecting streams to your instances. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +100,30 @@ impl SecurityDetailsBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`SecurityDetails`](crate::types::SecurityDetails).
-    pub fn build(self) -> crate::types::SecurityDetails {
-        crate::types::SecurityDetails {
-            subnet_ids: self.subnet_ids,
-            security_group_ids: self.security_group_ids,
-            role_arn: self.role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_ids`](crate::types::builders::SecurityDetailsBuilder::subnet_ids)
+    /// - [`security_group_ids`](crate::types::builders::SecurityDetailsBuilder::security_group_ids)
+    /// - [`role_arn`](crate::types::builders::SecurityDetailsBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SecurityDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SecurityDetails {
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building SecurityDetails",
+                )
+            })?,
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building SecurityDetails",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SecurityDetails",
+                )
+            })?,
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociation {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
-    pub lambda_function_arn: ::std::option::Option<::std::string::String>,
+    pub lambda_function_arn: ::std::string::String,
     /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
     /// <ul>
     /// <li> <p> <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it checks to see whether the requested object is in the edge cache.</p> </li>
@@ -13,14 +13,15 @@ pub struct LambdaFunctionAssociation {
     /// <li> <p> <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and before it caches the object in the response. When the requested object is in the edge cache, the function doesn't execute.</p> </li>
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
-    pub event_type: ::std::option::Option<crate::types::EventType>,
+    pub event_type: crate::types::EventType,
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
     pub include_body: ::std::option::Option<bool>,
 }
 impl LambdaFunctionAssociation {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
-        self.lambda_function_arn.as_deref()
+    pub fn lambda_function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lambda_function_arn.deref()
     }
     /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
     /// <ul>
@@ -29,8 +30,8 @@ impl LambdaFunctionAssociation {
     /// <li> <p> <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and before it caches the object in the response. When the requested object is in the edge cache, the function doesn't execute.</p> </li>
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
-        self.event_type.as_ref()
+    pub fn event_type(&self) -> &crate::types::EventType {
+        &self.event_type
     }
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
     pub fn include_body(&self) -> ::std::option::Option<bool> {
@@ -54,6 +55,7 @@ pub struct LambdaFunctionAssociationBuilder {
 }
 impl LambdaFunctionAssociationBuilder {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
+    /// This field is required.
     pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +76,7 @@ impl LambdaFunctionAssociationBuilder {
     /// <li> <p> <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and before it caches the object in the response. When the requested object is in the edge cache, the function doesn't execute.</p> </li>
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
         self
@@ -114,11 +117,24 @@ impl LambdaFunctionAssociationBuilder {
         &self.include_body
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAssociation`](crate::types::LambdaFunctionAssociation).
-    pub fn build(self) -> crate::types::LambdaFunctionAssociation {
-        crate::types::LambdaFunctionAssociation {
-            lambda_function_arn: self.lambda_function_arn,
-            event_type: self.event_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lambda_function_arn`](crate::types::builders::LambdaFunctionAssociationBuilder::lambda_function_arn)
+    /// - [`event_type`](crate::types::builders::LambdaFunctionAssociationBuilder::event_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionAssociation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaFunctionAssociation {
+            lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lambda_function_arn",
+                    "lambda_function_arn was not specified but it is required when building LambdaFunctionAssociation",
+                )
+            })?,
+            event_type: self.event_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_type",
+                    "event_type was not specified but it is required when building LambdaFunctionAssociation",
+                )
+            })?,
             include_body: self.include_body,
-        }
+        })
     }
 }

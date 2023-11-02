@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Field {
     /// <p>The field identifier.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The field value, expressed as a String.</p>
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>The field value, expressed as the identifier of another object.</p>
@@ -13,8 +13,9 @@ pub struct Field {
 }
 impl Field {
     /// <p>The field identifier.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct FieldBuilder {
 }
 impl FieldBuilder {
     /// <p>The field identifier.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,15 @@ impl FieldBuilder {
         &self.ref_value
     }
     /// Consumes the builder and constructs a [`Field`](crate::types::Field).
-    pub fn build(self) -> crate::types::Field {
-        crate::types::Field {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::FieldBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::Field, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Field {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("key", "key was not specified but it is required when building Field")
+            })?,
             string_value: self.string_value,
             ref_value: self.ref_value,
-        }
+        })
     }
 }

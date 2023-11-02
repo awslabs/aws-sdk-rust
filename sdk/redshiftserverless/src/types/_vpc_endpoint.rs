@@ -21,8 +21,10 @@ impl VpcEndpoint {
         self.vpc_id.as_deref()
     }
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
 }
 impl VpcEndpoint {

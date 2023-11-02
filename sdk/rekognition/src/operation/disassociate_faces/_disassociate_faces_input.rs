@@ -26,8 +26,10 @@ impl DisassociateFacesInput {
         self.client_request_token.as_deref()
     }
     /// <p>An array of face IDs to disassociate from the UserID. </p>
-    pub fn face_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.face_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
+    pub fn face_ids(&self) -> &[::std::string::String] {
+        self.face_ids.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateFacesInput {
@@ -48,6 +50,7 @@ pub struct DisassociateFacesInputBuilder {
 }
 impl DisassociateFacesInputBuilder {
     /// <p>The ID of an existing collection containing the UserID.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl DisassociateFacesInputBuilder {
         &self.collection_id
     }
     /// <p>ID for the existing UserID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

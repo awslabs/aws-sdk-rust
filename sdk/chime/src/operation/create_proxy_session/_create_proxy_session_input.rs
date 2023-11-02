@@ -26,8 +26,10 @@ impl CreateProxySessionInput {
         self.voice_connector_id.as_deref()
     }
     /// <p>The participant phone numbers.</p>
-    pub fn participant_phone_numbers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.participant_phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participant_phone_numbers.is_none()`.
+    pub fn participant_phone_numbers(&self) -> &[::std::string::String] {
+        self.participant_phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The name of the proxy session.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -38,8 +40,10 @@ impl CreateProxySessionInput {
         self.expiry_minutes
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn number_selection_behavior(&self) -> ::std::option::Option<&crate::types::NumberSelectionBehavior> {
@@ -90,6 +94,7 @@ pub struct CreateProxySessionInputBuilder {
 }
 impl CreateProxySessionInputBuilder {
     /// <p>The Amazon Chime voice connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self

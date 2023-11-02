@@ -34,6 +34,7 @@ pub struct DeleteWorkspaceOutputBuilder {
 }
 impl DeleteWorkspaceOutputBuilder {
     /// <p>A structure containing information about the workspace that was deleted.</p>
+    /// This field is required.
     pub fn workspace(mut self, input: crate::types::WorkspaceDescription) -> Self {
         self.workspace = ::std::option::Option::Some(input);
         self

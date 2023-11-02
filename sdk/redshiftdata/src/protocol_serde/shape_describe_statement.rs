@@ -26,11 +26,10 @@ pub fn de_describe_statement_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_statement::DescribeStatementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_statement::DescribeStatementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_statement::DescribeStatementError::ResourceNotFoundException({
@@ -41,11 +40,10 @@ pub fn de_describe_statement_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_statement::DescribeStatementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_statement::DescribeStatementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::describe_statement::DescribeStatementError::ValidationException({
@@ -80,7 +78,9 @@ pub fn de_describe_statement_http_response(
         output = crate::protocol_serde::shape_describe_statement::de_describe_statement(_response_body, output)
             .map_err(crate::operation::describe_statement::DescribeStatementError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_statement_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_statement::DescribeStatementError::unhandled)?
     })
 }
 

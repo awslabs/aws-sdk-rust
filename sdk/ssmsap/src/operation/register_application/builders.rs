@@ -95,14 +95,14 @@ impl RegisterApplicationFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::register_application::RegisterApplicationOutput,
             crate::operation::register_application::RegisterApplicationError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::register_application::RegisterApplicationError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -222,5 +222,19 @@ impl RegisterApplicationFluentBuilder {
     /// <p>The credentials of the SAP application.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         self.inner.get_credentials()
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.database_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_database_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_arn()
     }
 }

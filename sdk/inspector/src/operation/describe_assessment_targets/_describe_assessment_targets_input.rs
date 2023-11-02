@@ -8,8 +8,10 @@ pub struct DescribeAssessmentTargetsInput {
 }
 impl DescribeAssessmentTargetsInput {
     /// <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-    pub fn assessment_target_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assessment_target_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_target_arns.is_none()`.
+    pub fn assessment_target_arns(&self) -> &[::std::string::String] {
+        self.assessment_target_arns.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAssessmentTargetsInput {

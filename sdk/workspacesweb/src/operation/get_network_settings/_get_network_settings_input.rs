@@ -27,6 +27,7 @@ pub struct GetNetworkSettingsInputBuilder {
 }
 impl GetNetworkSettingsInputBuilder {
     /// <p>The ARN of the network settings.</p>
+    /// This field is required.
     pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self

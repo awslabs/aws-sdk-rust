@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFleetInput {
     /// <p> The ID of the fleet to update. </p>
-    pub fleet_id: ::std::option::Option<::std::string::String>,
+    pub fleet_id: ::std::string::String,
     /// <p> An updated description of the fleet. </p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFleetInput {
     /// <p> The ID of the fleet to update. </p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
-        self.fleet_id.as_deref()
+    pub fn fleet_id(&self) -> &str {
+        use std::ops::Deref;
+        self.fleet_id.deref()
     }
     /// <p> An updated description of the fleet. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct UpdateFleetInputBuilder {
 }
 impl UpdateFleetInputBuilder {
     /// <p> The ID of the fleet to update. </p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -62,9 +64,16 @@ impl UpdateFleetInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fleet_id`](crate::operation::update_fleet::builders::UpdateFleetInputBuilder::fleet_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fleet::UpdateFleetInput {
-            fleet_id: self.fleet_id,
+            fleet_id: self.fleet_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fleet_id",
+                    "fleet_id was not specified but it is required when building UpdateFleetInput",
+                )
+            })?,
             description: self.description,
         })
     }

@@ -34,6 +34,7 @@ pub struct GetEventStreamOutputBuilder {
 }
 impl GetEventStreamOutputBuilder {
     /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
+    /// This field is required.
     pub fn event_stream(mut self, input: crate::types::EventStream) -> Self {
         self.event_stream = ::std::option::Option::Some(input);
         self

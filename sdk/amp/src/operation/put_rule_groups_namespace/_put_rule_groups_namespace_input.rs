@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to update the rule group namespace.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// The rule groups namespace name.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// The namespace data that define the rule groups.
-    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub data: ::aws_smithy_types::Blob,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to update the rule group namespace.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// The namespace data that define the rule groups.
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.data.as_ref()
+    pub fn data(&self) -> &::aws_smithy_types::Blob {
+        &self.data
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct PutRuleGroupsNamespaceInputBuilder {
 }
 impl PutRuleGroupsNamespaceInputBuilder {
     /// The ID of the workspace in which to update the rule group namespace.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl PutRuleGroupsNamespaceInputBuilder {
         &self.workspace_id
     }
     /// The rule groups namespace name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl PutRuleGroupsNamespaceInputBuilder {
         &self.name
     }
     /// The namespace data that define the rule groups.
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -105,6 +110,10 @@ impl PutRuleGroupsNamespaceInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`PutRuleGroupsNamespaceInput`](crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder::workspace_id)
+    /// - [`name`](crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder::name)
+    /// - [`data`](crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceInputBuilder::data)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -112,9 +121,24 @@ impl PutRuleGroupsNamespaceInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput {
-            workspace_id: self.workspace_id,
-            name: self.name,
-            data: self.data,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building PutRuleGroupsNamespaceInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PutRuleGroupsNamespaceInput",
+                )
+            })?,
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building PutRuleGroupsNamespaceInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

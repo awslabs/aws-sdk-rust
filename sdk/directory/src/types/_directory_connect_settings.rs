@@ -5,31 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryConnectSettings {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
+    pub vpc_id: ::std::string::String,
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub customer_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub customer_dns_ips: ::std::vec::Vec<::std::string::String>,
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
     /// <li> <p>Read users and groups</p> </li>
     /// <li> <p>Create computer objects</p> </li>
     /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
-    pub customer_user_name: ::std::option::Option<::std::string::String>,
+    pub customer_user_name: ::std::string::String,
 }
 impl DirectoryConnectSettings {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
+    pub fn vpc_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_id.deref()
     }
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
-    pub fn customer_dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.customer_dns_ips.as_deref()
+    pub fn customer_dns_ips(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.customer_dns_ips.deref()
     }
     /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
@@ -37,8 +40,9 @@ impl DirectoryConnectSettings {
     /// <li> <p>Create computer objects</p> </li>
     /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
-    pub fn customer_user_name(&self) -> ::std::option::Option<&str> {
-        self.customer_user_name.as_deref()
+    pub fn customer_user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.customer_user_name.deref()
     }
 }
 impl DirectoryConnectSettings {
@@ -59,6 +63,7 @@ pub struct DirectoryConnectSettingsBuilder {
 }
 impl DirectoryConnectSettingsBuilder {
     /// <p>The identifier of the VPC in which the AD Connector is created.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl DirectoryConnectSettingsBuilder {
     /// <li> <p>Create computer objects</p> </li>
     /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn customer_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_user_name = ::std::option::Option::Some(input.into());
         self
@@ -142,12 +148,37 @@ impl DirectoryConnectSettingsBuilder {
         &self.customer_user_name
     }
     /// Consumes the builder and constructs a [`DirectoryConnectSettings`](crate::types::DirectoryConnectSettings).
-    pub fn build(self) -> crate::types::DirectoryConnectSettings {
-        crate::types::DirectoryConnectSettings {
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            customer_dns_ips: self.customer_dns_ips,
-            customer_user_name: self.customer_user_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_id`](crate::types::builders::DirectoryConnectSettingsBuilder::vpc_id)
+    /// - [`subnet_ids`](crate::types::builders::DirectoryConnectSettingsBuilder::subnet_ids)
+    /// - [`customer_dns_ips`](crate::types::builders::DirectoryConnectSettingsBuilder::customer_dns_ips)
+    /// - [`customer_user_name`](crate::types::builders::DirectoryConnectSettingsBuilder::customer_user_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DirectoryConnectSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DirectoryConnectSettings {
+            vpc_id: self.vpc_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vpc_id",
+                    "vpc_id was not specified but it is required when building DirectoryConnectSettings",
+                )
+            })?,
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building DirectoryConnectSettings",
+                )
+            })?,
+            customer_dns_ips: self.customer_dns_ips.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "customer_dns_ips",
+                    "customer_dns_ips was not specified but it is required when building DirectoryConnectSettings",
+                )
+            })?,
+            customer_user_name: self.customer_user_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "customer_user_name",
+                    "customer_user_name was not specified but it is required when building DirectoryConnectSettings",
+                )
+            })?,
+        })
     }
 }

@@ -29,8 +29,10 @@ impl ConfigurationAggregator {
         self.configuration_aggregator_arn.as_deref()
     }
     /// <p>Provides a list of source accounts and regions to be aggregated.</p>
-    pub fn account_aggregation_sources(&self) -> ::std::option::Option<&[crate::types::AccountAggregationSource]> {
-        self.account_aggregation_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_aggregation_sources.is_none()`.
+    pub fn account_aggregation_sources(&self) -> &[crate::types::AccountAggregationSource] {
+        self.account_aggregation_sources.as_deref().unwrap_or_default()
     }
     /// <p>Provides an organization and list of regions to be aggregated.</p>
     pub fn organization_aggregation_source(&self) -> ::std::option::Option<&crate::types::OrganizationAggregationSource> {

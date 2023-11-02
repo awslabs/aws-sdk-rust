@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScheduleInput {
     /// <p>The name of the schedule to retrieve.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetScheduleInput {
     /// <p>The name of the schedule to retrieve.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct GetScheduleInputBuilder {
 }
 impl GetScheduleInputBuilder {
     /// <p>The name of the schedule to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,9 +64,16 @@ impl GetScheduleInputBuilder {
         &self.group_name
     }
     /// Consumes the builder and constructs a [`GetScheduleInput`](crate::operation::get_schedule::GetScheduleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_schedule::builders::GetScheduleInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_schedule::GetScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schedule::GetScheduleInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetScheduleInput",
+                )
+            })?,
             group_name: self.group_name,
         })
     }

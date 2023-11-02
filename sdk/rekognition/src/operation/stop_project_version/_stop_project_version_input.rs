@@ -30,6 +30,7 @@ pub struct StopProjectVersionInputBuilder {
 impl StopProjectVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to stop.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    /// This field is required.
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self

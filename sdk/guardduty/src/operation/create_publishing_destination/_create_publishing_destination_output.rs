@@ -34,6 +34,7 @@ pub struct CreatePublishingDestinationOutputBuilder {
 }
 impl CreatePublishingDestinationOutputBuilder {
     /// <p>The ID of the publishing destination that is created.</p>
+    /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self

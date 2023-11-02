@@ -3,19 +3,19 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReadSetMetadata`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::set_id): <p>The read set's ID.</p>
-    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::set_sequence_store_id): <p>The read set's sequence store ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::set_id):<br>required: **true**<br><p>The read set's ID.</p><br>
+    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataFluentBuilder::set_sequence_store_id):<br>required: **true**<br><p>The read set's sequence store ID.</p><br>
     /// - On success, responds with [`GetReadSetMetadataOutput`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::id): <p>The read set's ID.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::arn): <p>The read set's ARN.</p>
-    ///   - [`sequence_store_id(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::sequence_store_id): <p>The read set's sequence store ID.</p>
+    ///   - [`id(String)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::id): <p>The read set's ID.</p>
+    ///   - [`arn(String)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::arn): <p>The read set's ARN.</p>
+    ///   - [`sequence_store_id(String)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::sequence_store_id): <p>The read set's sequence store ID.</p>
     ///   - [`subject_id(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::subject_id): <p>The read set's subject ID.</p>
     ///   - [`sample_id(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::sample_id): <p>The read set's sample ID.</p>
-    ///   - [`status(Option<ReadSetStatus>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::status): <p>The read set's status.</p>
+    ///   - [`status(ReadSetStatus)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::status): <p>The read set's status.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::name): <p>The read set's name.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::description): <p>The read set's description.</p>
-    ///   - [`file_type(Option<FileType>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::file_type): <p>The read set's file type.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::creation_time): <p>When the read set was created.</p>
+    ///   - [`file_type(FileType)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::file_type): <p>The read set's file type.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::creation_time): <p>When the read set was created.</p>
     ///   - [`sequence_information(Option<SequenceInformation>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::sequence_information): <p>The read set's sequence information.</p>
     ///   - [`reference_arn(Option<String>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::reference_arn): <p>The read set's genome reference ARN.</p>
     ///   - [`files(Option<ReadSetFiles>)`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput::files): <p>The read set's files.</p>

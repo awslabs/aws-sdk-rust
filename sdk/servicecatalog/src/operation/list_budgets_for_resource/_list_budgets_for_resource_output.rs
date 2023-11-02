@@ -11,8 +11,10 @@ pub struct ListBudgetsForResourceOutput {
 }
 impl ListBudgetsForResourceOutput {
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> ::std::option::Option<&[crate::types::BudgetDetail]> {
-        self.budgets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgets.is_none()`.
+    pub fn budgets(&self) -> &[crate::types::BudgetDetail] {
+        self.budgets.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

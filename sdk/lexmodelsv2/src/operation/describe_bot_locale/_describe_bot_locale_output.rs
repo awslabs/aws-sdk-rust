@@ -79,8 +79,10 @@ impl DescribeBotLocaleOutput {
         self.bot_locale_status.as_ref()
     }
     /// <p>if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it failed to build the bot.</p>
-    pub fn failure_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[::std::string::String] {
+        self.failure_reasons.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that the locale was created.</p>
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -95,12 +97,16 @@ impl DescribeBotLocaleOutput {
         self.last_build_submitted_date_time.as_ref()
     }
     /// <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
-    pub fn bot_locale_history_events(&self) -> ::std::option::Option<&[crate::types::BotLocaleHistoryEvent]> {
-        self.bot_locale_history_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_locale_history_events.is_none()`.
+    pub fn bot_locale_history_events(&self) -> &[crate::types::BotLocaleHistoryEvent] {
+        self.bot_locale_history_events.as_deref().unwrap_or_default()
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn recommended_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recommended_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommended_actions.is_none()`.
+    pub fn recommended_actions(&self) -> &[::std::string::String] {
+        self.recommended_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeBotLocaleOutput {

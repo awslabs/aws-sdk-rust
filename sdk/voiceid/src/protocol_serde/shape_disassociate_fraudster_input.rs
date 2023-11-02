@@ -3,14 +3,14 @@ pub fn ser_disassociate_fraudster_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_fraudster::DisassociateFraudsterInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain_id {
-        object.key("DomainId").string(var_1.as_str());
+    {
+        object.key("DomainId").string(input.domain_id.as_str());
     }
-    if let Some(var_2) = &input.watchlist_id {
-        object.key("WatchlistId").string(var_2.as_str());
+    {
+        object.key("WatchlistId").string(input.watchlist_id.as_str());
     }
-    if let Some(var_3) = &input.fraudster_id {
-        object.key("FraudsterId").string(var_3.as_str());
+    {
+        object.key("FraudsterId").string(input.fraudster_id.as_str());
     }
     Ok(())
 }

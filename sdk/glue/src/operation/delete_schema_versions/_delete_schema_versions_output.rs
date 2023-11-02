@@ -9,8 +9,10 @@ pub struct DeleteSchemaVersionsOutput {
 }
 impl DeleteSchemaVersionsOutput {
     /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
-    pub fn schema_version_errors(&self) -> ::std::option::Option<&[crate::types::SchemaVersionErrorItem]> {
-        self.schema_version_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_version_errors.is_none()`.
+    pub fn schema_version_errors(&self) -> &[crate::types::SchemaVersionErrorItem] {
+        self.schema_version_errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteSchemaVersionsOutput {

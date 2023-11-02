@@ -176,6 +176,7 @@ pub struct UpdateUserInputBuilder {
 }
 impl UpdateUserInputBuilder {
     /// <p>The identifier for the organization under which the user exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +197,7 @@ impl UpdateUserInputBuilder {
     /// <li> <p>Email address: user@domain.tld</p> </li>
     /// <li> <p>User name: user</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

@@ -21,30 +21,42 @@ pub struct MatchAttributes {
 }
 impl MatchAttributes {
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any source address. </p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::Address] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address. </p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::Address] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>. </p>
-    pub fn source_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.source_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ports.is_none()`.
+    pub fn source_ports(&self) -> &[crate::types::PortRange] {
+        self.source_ports.as_deref().unwrap_or_default()
     }
     /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
     /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>. </p>
-    pub fn destination_ports(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.destination_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
+    pub fn destination_ports(&self) -> &[crate::types::PortRange] {
+        self.destination_ports.as_deref().unwrap_or_default()
     }
     /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol. </p>
-    pub fn protocols(&self) -> ::std::option::Option<&[i32]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[i32] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
-    pub fn tcp_flags(&self) -> ::std::option::Option<&[crate::types::TcpFlagField]> {
-        self.tcp_flags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tcp_flags.is_none()`.
+    pub fn tcp_flags(&self) -> &[crate::types::TcpFlagField] {
+        self.tcp_flags.as_deref().unwrap_or_default()
     }
 }
 impl MatchAttributes {

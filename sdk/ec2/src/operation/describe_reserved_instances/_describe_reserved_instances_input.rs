@@ -50,8 +50,10 @@ impl DescribeReservedInstancesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
     pub fn offering_class(&self) -> ::std::option::Option<&crate::types::OfferingClassType> {
@@ -59,8 +61,10 @@ impl DescribeReservedInstancesInput {
     }
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn reserved_instances_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reserved_instances_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_ids.is_none()`.
+    pub fn reserved_instances_ids(&self) -> &[::std::string::String] {
+        self.reserved_instances_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {

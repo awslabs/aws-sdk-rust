@@ -11,12 +11,16 @@ pub struct BatchGetChannelOutput {
 }
 impl BatchGetChannelOutput {
     /// <p></p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[crate::types::Channel] {
+        self.channels.as_deref().unwrap_or_default()
     }
     /// <p>Each error object is related to a specific ARN in the request.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetChannelOutput {

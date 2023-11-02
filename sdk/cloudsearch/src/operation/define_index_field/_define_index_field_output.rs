@@ -35,6 +35,7 @@ pub struct DefineIndexFieldOutputBuilder {
 }
 impl DefineIndexFieldOutputBuilder {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
+    /// This field is required.
     pub fn index_field(mut self, input: crate::types::IndexFieldStatus) -> Self {
         self.index_field = ::std::option::Option::Some(input);
         self

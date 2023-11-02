@@ -34,6 +34,7 @@ pub struct GetDatabaseInputBuilder {
 }
 impl GetDatabaseInputBuilder {
     /// <p>The name of the data catalog that contains the database to return.</p>
+    /// This field is required.
     pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDatabaseInputBuilder {
         &self.catalog_name
     }
     /// <p>The name of the database to return.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self

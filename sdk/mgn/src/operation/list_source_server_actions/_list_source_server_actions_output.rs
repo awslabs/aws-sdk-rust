@@ -11,8 +11,10 @@ pub struct ListSourceServerActionsOutput {
 }
 impl ListSourceServerActionsOutput {
     /// <p>List of source server post migration custom actions.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::SourceServerActionDocument]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::SourceServerActionDocument] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Next token returned when listing source server post migration custom actions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

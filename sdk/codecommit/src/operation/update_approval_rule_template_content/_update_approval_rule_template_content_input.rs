@@ -41,6 +41,7 @@ pub struct UpdateApprovalRuleTemplateContentInputBuilder {
 }
 impl UpdateApprovalRuleTemplateContentInputBuilder {
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateApprovalRuleTemplateContentInputBuilder {
         &self.approval_rule_template_name
     }
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
+    /// This field is required.
     pub fn new_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_rule_content = ::std::option::Option::Some(input.into());
         self

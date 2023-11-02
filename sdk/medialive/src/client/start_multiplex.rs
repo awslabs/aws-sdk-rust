@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartMultiplex`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::set_multiplex_id): The ID of the multiplex.
+    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::start_multiplex::builders::StartMultiplexFluentBuilder::set_multiplex_id):<br>required: **true**<br>The ID of the multiplex.<br>
     /// - On success, responds with [`StartMultiplexOutput`](crate::operation::start_multiplex::StartMultiplexOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::start_multiplex::StartMultiplexOutput::arn): The unique arn of the multiplex.
     ///   - [`availability_zones(Option<Vec<String>>)`](crate::operation::start_multiplex::StartMultiplexOutput::availability_zones): A list of availability zones for the multiplex.

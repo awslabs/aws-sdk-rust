@@ -28,6 +28,7 @@ pub struct DeleteEmailTemplateInputBuilder {
 }
 impl DeleteEmailTemplateInputBuilder {
     /// <p>The name of the template to be deleted.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

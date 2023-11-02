@@ -3,11 +3,11 @@ pub fn ser_task_run_sort_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaskRunSortCriteria,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.column {
-        object.key("Column").string(var_1.as_str());
+    {
+        object.key("Column").string(input.column.as_str());
     }
-    if let Some(var_2) = &input.sort_direction {
-        object.key("SortDirection").string(var_2.as_str());
+    {
+        object.key("SortDirection").string(input.sort_direction.as_str());
     }
     Ok(())
 }

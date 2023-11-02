@@ -53,12 +53,16 @@ impl AwsEcsTaskDetails {
         self.group.as_deref()
     }
     /// <p>Details about the data volume that is used in a task definition. </p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskVolumeDetails]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::AwsEcsTaskVolumeDetails] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>The containers that are associated with the task. </p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::AwsEcsContainerDetails]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::AwsEcsContainerDetails] {
+        self.containers.as_deref().unwrap_or_default()
     }
 }
 impl AwsEcsTaskDetails {

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventStreamDestinationDetails {
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
-    pub status: ::std::option::Option<crate::types::EventStreamDestinationStatus>,
+    pub status: crate::types::EventStreamDestinationStatus,
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
     pub unhealthy_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The human-readable string that corresponds to the error or success while enabling the streaming destination.</p>
@@ -15,12 +15,13 @@ pub struct EventStreamDestinationDetails {
 }
 impl EventStreamDestinationDetails {
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EventStreamDestinationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::EventStreamDestinationStatus {
+        &self.status
     }
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
     pub fn unhealthy_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -49,6 +50,7 @@ pub struct EventStreamDestinationDetailsBuilder {
 }
 impl EventStreamDestinationDetailsBuilder {
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl EventStreamDestinationDetailsBuilder {
         &self.uri
     }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EventStreamDestinationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,25 @@ impl EventStreamDestinationDetailsBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`EventStreamDestinationDetails`](crate::types::EventStreamDestinationDetails).
-    pub fn build(self) -> crate::types::EventStreamDestinationDetails {
-        crate::types::EventStreamDestinationDetails {
-            uri: self.uri,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::EventStreamDestinationDetailsBuilder::uri)
+    /// - [`status`](crate::types::builders::EventStreamDestinationDetailsBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventStreamDestinationDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventStreamDestinationDetails {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building EventStreamDestinationDetails",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building EventStreamDestinationDetails",
+                )
+            })?,
             unhealthy_since: self.unhealthy_since,
             message: self.message,
-        }
+        })
     }
 }

@@ -66,6 +66,7 @@ pub struct UpdateAssetPropertyInputBuilder {
 }
 impl UpdateAssetPropertyInputBuilder {
     /// <p>The ID of the asset to be updated.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateAssetPropertyInputBuilder {
         &self.asset_id
     }
     /// <p>The ID of the asset property to be updated.</p>
+    /// This field is required.
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
         self

@@ -35,8 +35,10 @@ impl SubtotalOptions {
         self.field_level.as_ref()
     }
     /// <p>The optional configuration of subtotal cells.</p>
-    pub fn field_level_options(&self) -> ::std::option::Option<&[crate::types::PivotTableFieldSubtotalOptions]> {
-        self.field_level_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_level_options.is_none()`.
+    pub fn field_level_options(&self) -> &[crate::types::PivotTableFieldSubtotalOptions] {
+        self.field_level_options.as_deref().unwrap_or_default()
     }
     /// <p>The cell styling options for the subtotal cells.</p>
     pub fn total_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
@@ -51,8 +53,10 @@ impl SubtotalOptions {
         self.metric_header_cell_style.as_ref()
     }
     /// <p>The style targets options for subtotals.</p>
-    pub fn style_targets(&self) -> ::std::option::Option<&[crate::types::TableStyleTarget]> {
-        self.style_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.style_targets.is_none()`.
+    pub fn style_targets(&self) -> &[crate::types::TableStyleTarget] {
+        self.style_targets.as_deref().unwrap_or_default()
     }
 }
 impl SubtotalOptions {

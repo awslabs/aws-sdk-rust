@@ -48,6 +48,7 @@ pub struct UpdateNamedQueryInputBuilder {
 }
 impl UpdateNamedQueryInputBuilder {
     /// <p>The unique identifier (UUID) of the query.</p>
+    /// This field is required.
     pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateNamedQueryInputBuilder {
         &self.named_query_id
     }
     /// <p>The name of the query.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateNamedQueryInputBuilder {
         &self.description
     }
     /// <p>The contents of the query with all query statements.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self

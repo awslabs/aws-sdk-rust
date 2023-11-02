@@ -27,6 +27,7 @@ pub struct DeleteWhatIfForecastExportInputBuilder {
 }
 impl DeleteWhatIfForecastExportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.</p>
+    /// This field is required.
     pub fn what_if_forecast_export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_export_arn = ::std::option::Option::Some(input.into());
         self

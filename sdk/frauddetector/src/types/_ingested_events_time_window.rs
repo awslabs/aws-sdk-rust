@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestedEventsTimeWindow {
     /// <p>Timestamp of the first ingensted event.</p>
-    pub start_time: ::std::option::Option<::std::string::String>,
+    pub start_time: ::std::string::String,
     /// <p>Timestamp of the final ingested event.</p>
-    pub end_time: ::std::option::Option<::std::string::String>,
+    pub end_time: ::std::string::String,
 }
 impl IngestedEventsTimeWindow {
     /// <p>Timestamp of the first ingensted event.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
-        self.start_time.as_deref()
+    pub fn start_time(&self) -> &str {
+        use std::ops::Deref;
+        self.start_time.deref()
     }
     /// <p>Timestamp of the final ingested event.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
-        self.end_time.as_deref()
+    pub fn end_time(&self) -> &str {
+        use std::ops::Deref;
+        self.end_time.deref()
     }
 }
 impl IngestedEventsTimeWindow {
@@ -35,6 +37,7 @@ pub struct IngestedEventsTimeWindowBuilder {
 }
 impl IngestedEventsTimeWindowBuilder {
     /// <p>Timestamp of the first ingensted event.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl IngestedEventsTimeWindowBuilder {
         &self.start_time
     }
     /// <p>Timestamp of the final ingested event.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl IngestedEventsTimeWindowBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`IngestedEventsTimeWindow`](crate::types::IngestedEventsTimeWindow).
-    pub fn build(self) -> crate::types::IngestedEventsTimeWindow {
-        crate::types::IngestedEventsTimeWindow {
-            start_time: self.start_time,
-            end_time: self.end_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::IngestedEventsTimeWindowBuilder::start_time)
+    /// - [`end_time`](crate::types::builders::IngestedEventsTimeWindowBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::IngestedEventsTimeWindow, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IngestedEventsTimeWindow {
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building IngestedEventsTimeWindow",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building IngestedEventsTimeWindow",
+                )
+            })?,
+        })
     }
 }

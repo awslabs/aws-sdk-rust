@@ -27,6 +27,7 @@ pub struct RequestUploadCredentialsInputBuilder {
 }
 impl RequestUploadCredentialsInputBuilder {
     /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    /// This field is required.
     pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_id = ::std::option::Option::Some(input.into());
         self

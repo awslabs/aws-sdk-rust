@@ -30,6 +30,7 @@ pub struct PutKmsEncryptionKeyInputBuilder {
 impl PutKmsEncryptionKeyInputBuilder {
     /// <p>The KMS encryption key ARN.</p>
     /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
+    /// This field is required.
     pub fn kms_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_encryption_key_arn = ::std::option::Option::Some(input.into());
         self

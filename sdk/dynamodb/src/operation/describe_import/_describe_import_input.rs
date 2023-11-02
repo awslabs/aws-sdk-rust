@@ -27,6 +27,7 @@ pub struct DescribeImportInputBuilder {
 }
 impl DescribeImportInputBuilder {
     /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    /// This field is required.
     pub fn import_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_arn = ::std::option::Option::Some(input.into());
         self

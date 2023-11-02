@@ -34,6 +34,7 @@ pub struct UpdateAppAuthorizationOutputBuilder {
 }
 impl UpdateAppAuthorizationOutputBuilder {
     /// <p>Contains information about an app authorization.</p>
+    /// This field is required.
     pub fn app_authorization(mut self, input: crate::types::AppAuthorization) -> Self {
         self.app_authorization = ::std::option::Option::Some(input);
         self

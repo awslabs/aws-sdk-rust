@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TimeRangeFilterOutput {
     /// <p>The starting time for the time range filter.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The ending time for the time range filter.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
 }
 impl TimeRangeFilterOutput {
     /// <p>The starting time for the time range filter.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>The ending time for the time range filter.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
 }
 impl ::std::fmt::Debug for TimeRangeFilterOutput {
@@ -43,6 +43,7 @@ pub struct TimeRangeFilterOutputBuilder {
 }
 impl TimeRangeFilterOutputBuilder {
     /// <p>The starting time for the time range filter.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -57,6 +58,7 @@ impl TimeRangeFilterOutputBuilder {
         &self.start_time
     }
     /// <p>The ending time for the time range filter.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -71,11 +73,24 @@ impl TimeRangeFilterOutputBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`TimeRangeFilterOutput`](crate::types::TimeRangeFilterOutput).
-    pub fn build(self) -> crate::types::TimeRangeFilterOutput {
-        crate::types::TimeRangeFilterOutput {
-            start_time: self.start_time,
-            end_time: self.end_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::TimeRangeFilterOutputBuilder::start_time)
+    /// - [`end_time`](crate::types::builders::TimeRangeFilterOutputBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeFilterOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeRangeFilterOutput {
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building TimeRangeFilterOutput",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building TimeRangeFilterOutput",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for TimeRangeFilterOutputBuilder {

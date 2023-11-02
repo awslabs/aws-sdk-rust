@@ -22,8 +22,10 @@ impl DescribeTapesInput {
         self.gateway_arn.as_deref()
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
-    pub fn tape_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tape_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_ar_ns.is_none()`.
+    pub fn tape_ar_ns(&self) -> &[::std::string::String] {
+        self.tape_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>
     /// <p>If not specified, the first page of results is retrieved.</p>
@@ -55,6 +57,7 @@ pub struct DescribeTapesInputBuilder {
 }
 impl DescribeTapesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self

@@ -43,6 +43,7 @@ impl PromoteReadReplicaDbClusterInputBuilder {
     /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-replica1</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self

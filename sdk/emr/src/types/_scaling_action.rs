@@ -49,6 +49,7 @@ impl ScalingActionBuilder {
         &self.market
     }
     /// <p>The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.</p>
+    /// This field is required.
     pub fn simple_scaling_policy_configuration(mut self, input: crate::types::SimpleScalingPolicyConfiguration) -> Self {
         self.simple_scaling_policy_configuration = ::std::option::Option::Some(input);
         self

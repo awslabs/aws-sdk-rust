@@ -27,6 +27,7 @@ pub struct GetSinkPolicyInputBuilder {
 }
 impl GetSinkPolicyInputBuilder {
     /// <p>The ARN of the sink to retrieve the policy of.</p>
+    /// This field is required.
     pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self

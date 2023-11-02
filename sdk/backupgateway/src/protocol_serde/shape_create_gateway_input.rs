@@ -3,26 +3,26 @@ pub fn ser_create_gateway_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_gateway::CreateGatewayInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.activation_key {
-        object.key("ActivationKey").string(var_1.as_str());
+    {
+        object.key("ActivationKey").string(input.activation_key.as_str());
     }
-    if let Some(var_2) = &input.gateway_display_name {
-        object.key("GatewayDisplayName").string(var_2.as_str());
+    {
+        object.key("GatewayDisplayName").string(input.gateway_display_name.as_str());
     }
-    if let Some(var_3) = &input.gateway_type {
-        object.key("GatewayType").string(var_3.as_str());
+    {
+        object.key("GatewayType").string(input.gateway_type.as_str());
     }
-    if let Some(var_4) = &input.tags {
-        let mut array_5 = object.key("Tags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_1) = &input.tags {
+        let mut array_2 = object.key("Tags").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_5.finish();
+        array_2.finish();
     }
     Ok(())
 }

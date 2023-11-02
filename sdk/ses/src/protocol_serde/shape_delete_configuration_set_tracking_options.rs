@@ -34,8 +34,8 @@ pub fn de_delete_configuration_set_tracking_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TrackingOptionsDoesNotExistException" => crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsError::TrackingOptionsDoesNotExistException({
@@ -50,8 +50,8 @@ pub fn de_delete_configuration_set_tracking_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptionsError::generic(generic)

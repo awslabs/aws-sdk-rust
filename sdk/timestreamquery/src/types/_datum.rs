@@ -21,12 +21,16 @@ impl Datum {
         self.scalar_value.as_deref()
     }
     /// <p> Indicates if the data point is a timeseries data type. </p>
-    pub fn time_series_value(&self) -> ::std::option::Option<&[crate::types::TimeSeriesDataPoint]> {
-        self.time_series_value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_value.is_none()`.
+    pub fn time_series_value(&self) -> &[crate::types::TimeSeriesDataPoint] {
+        self.time_series_value.as_deref().unwrap_or_default()
     }
     /// <p> Indicates if the data point is an array. </p>
-    pub fn array_value(&self) -> ::std::option::Option<&[crate::types::Datum]> {
-        self.array_value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.array_value.is_none()`.
+    pub fn array_value(&self) -> &[crate::types::Datum] {
+        self.array_value.as_deref().unwrap_or_default()
     }
     /// <p> Indicates if the data point is a row. </p>
     pub fn row_value(&self) -> ::std::option::Option<&crate::types::Row> {

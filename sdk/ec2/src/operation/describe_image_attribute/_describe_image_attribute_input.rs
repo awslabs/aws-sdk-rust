@@ -45,6 +45,7 @@ pub struct DescribeImageAttributeInputBuilder {
 impl DescribeImageAttributeInputBuilder {
     /// <p>The AMI attribute.</p>
     /// <p> <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the <code>DescribeImages</code> action.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::ImageAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -61,6 +62,7 @@ impl DescribeImageAttributeInputBuilder {
         &self.attribute
     }
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self

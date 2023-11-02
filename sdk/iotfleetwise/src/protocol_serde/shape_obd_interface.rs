@@ -3,8 +3,8 @@ pub fn ser_obd_interface(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ObdInterface,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
     {
         object.key("requestMessageId").number(
@@ -12,8 +12,8 @@ pub fn ser_obd_interface(
             ::aws_smithy_types::Number::NegInt((input.request_message_id).into()),
         );
     }
-    if let Some(var_2) = &input.obd_standard {
-        object.key("obdStandard").string(var_2.as_str());
+    if let Some(var_1) = &input.obd_standard {
+        object.key("obdStandard").string(var_1.as_str());
     }
     if input.pid_request_interval_seconds != 0 {
         object.key("pidRequestIntervalSeconds").number(
@@ -102,7 +102,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::obd_interface_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

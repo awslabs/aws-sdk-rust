@@ -89,12 +89,16 @@ impl FaceDetail {
         self.mouth_open.as_ref()
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
-    pub fn emotions(&self) -> ::std::option::Option<&[crate::types::Emotion]> {
-        self.emotions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emotions.is_none()`.
+    pub fn emotions(&self) -> &[crate::types::Emotion] {
+        self.emotions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
-    pub fn landmarks(&self) -> ::std::option::Option<&[crate::types::Landmark]> {
-        self.landmarks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.landmarks.is_none()`.
+    pub fn landmarks(&self) -> &[crate::types::Landmark] {
+        self.landmarks.as_deref().unwrap_or_default()
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
     pub fn pose(&self) -> ::std::option::Option<&crate::types::Pose> {

@@ -29,6 +29,7 @@ pub fn ser_bucket_level(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_bucket_level(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::BucketLevel, ::aws_smithy_xml::decode::XmlDecodeError> {

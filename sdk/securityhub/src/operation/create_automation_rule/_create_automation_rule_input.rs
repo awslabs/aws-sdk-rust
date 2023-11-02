@@ -50,8 +50,10 @@ impl CreateAutomationRuleInput {
         self.criteria.as_ref()
     }
     /// <p> One or more actions to update finding fields if a finding matches the conditions specified in <code>Criteria</code>. </p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::AutomationRulesAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::AutomationRulesAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl CreateAutomationRuleInput {
@@ -110,6 +112,7 @@ impl CreateAutomationRuleInputBuilder {
         &self.rule_status
     }
     /// <p>An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub applies rules with lower values for this parameter first. </p>
+    /// This field is required.
     pub fn rule_order(mut self, input: i32) -> Self {
         self.rule_order = ::std::option::Option::Some(input);
         self
@@ -124,6 +127,7 @@ impl CreateAutomationRuleInputBuilder {
         &self.rule_order
     }
     /// <p> The name of the rule. </p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +142,7 @@ impl CreateAutomationRuleInputBuilder {
         &self.rule_name
     }
     /// <p> A description of the rule. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +171,7 @@ impl CreateAutomationRuleInputBuilder {
         &self.is_terminal
     }
     /// <p> A set of ASFF finding field attributes and corresponding expected values that Security Hub uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub applies the rule action to the finding. </p>
+    /// This field is required.
     pub fn criteria(mut self, input: crate::types::AutomationRulesFindingFilters) -> Self {
         self.criteria = ::std::option::Option::Some(input);
         self

@@ -28,6 +28,7 @@ pub struct MonitoringOutputBuilder {
 }
 impl MonitoringOutputBuilder {
     /// <p>The Amazon S3 storage location where the results of a monitoring job are saved.</p>
+    /// This field is required.
     pub fn s3_output(mut self, input: crate::types::MonitoringS3Output) -> Self {
         self.s3_output = ::std::option::Option::Some(input);
         self

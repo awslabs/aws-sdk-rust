@@ -27,6 +27,7 @@ pub struct DescribeAuthorizerInputBuilder {
 }
 impl DescribeAuthorizerInputBuilder {
     /// <p>The name of the authorizer to describe.</p>
+    /// This field is required.
     pub fn authorizer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_name = ::std::option::Option::Some(input.into());
         self

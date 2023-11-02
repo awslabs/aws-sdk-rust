@@ -98,6 +98,7 @@ impl TreatmentResourceBuilder {
         &self.custom_delivery_configuration
     }
     /// <p>The unique identifier for the treatment.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +141,7 @@ impl TreatmentResourceBuilder {
         &self.schedule
     }
     /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
+    /// This field is required.
     pub fn size_percent(mut self, input: i32) -> Self {
         self.size_percent = ::std::option::Option::Some(input);
         self

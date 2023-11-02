@@ -12,8 +12,10 @@ pub struct DescribeOutboundCrossClusterSearchConnectionsOutput {
 }
 impl DescribeOutboundCrossClusterSearchConnectionsOutput {
     /// <p>Consists of list of <code><code>OutboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
-    pub fn cross_cluster_search_connections(&self) -> ::std::option::Option<&[crate::types::OutboundCrossClusterSearchConnection]> {
-        self.cross_cluster_search_connections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_cluster_search_connections.is_none()`.
+    pub fn cross_cluster_search_connections(&self) -> &[crate::types::OutboundCrossClusterSearchConnection] {
+        self.cross_cluster_search_connections.as_deref().unwrap_or_default()
     }
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

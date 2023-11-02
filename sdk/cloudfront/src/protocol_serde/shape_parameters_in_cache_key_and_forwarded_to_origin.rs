@@ -5,30 +5,31 @@ pub fn ser_parameters_in_cache_key_and_forwarded_to_origin(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.enable_accept_encoding_gzip {
+    {
         let mut inner_writer = scope.start_el("EnableAcceptEncodingGzip").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enable_accept_encoding_gzip).encode());
+    }
+    if let Some(var_1) = &input.enable_accept_encoding_brotli {
+        let mut inner_writer = scope.start_el("EnableAcceptEncodingBrotli").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
-    if let Some(var_2) = &input.enable_accept_encoding_brotli {
-        let mut inner_writer = scope.start_el("EnableAcceptEncodingBrotli").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
-    }
-    if let Some(var_3) = &input.headers_config {
+    if let Some(var_2) = &input.headers_config {
         let inner_writer = scope.start_el("HeadersConfig");
-        crate::protocol_serde::shape_cache_policy_headers_config::ser_cache_policy_headers_config(var_3, inner_writer)?
+        crate::protocol_serde::shape_cache_policy_headers_config::ser_cache_policy_headers_config(var_2, inner_writer)?
     }
-    if let Some(var_4) = &input.cookies_config {
+    if let Some(var_3) = &input.cookies_config {
         let inner_writer = scope.start_el("CookiesConfig");
-        crate::protocol_serde::shape_cache_policy_cookies_config::ser_cache_policy_cookies_config(var_4, inner_writer)?
+        crate::protocol_serde::shape_cache_policy_cookies_config::ser_cache_policy_cookies_config(var_3, inner_writer)?
     }
-    if let Some(var_5) = &input.query_strings_config {
+    if let Some(var_4) = &input.query_strings_config {
         let inner_writer = scope.start_el("QueryStringsConfig");
-        crate::protocol_serde::shape_cache_policy_query_strings_config::ser_cache_policy_query_strings_config(var_5, inner_writer)?
+        crate::protocol_serde::shape_cache_policy_query_strings_config::ser_cache_policy_query_strings_config(var_4, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -37,6 +38,21 @@ pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("EnableAcceptEncodingGzip") /* EnableAcceptEncodingGzip com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$EnableAcceptEncodingGzip */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_enable_accept_encoding_gzip(var_5);
+            }
+            ,
+            s if s.matches("EnableAcceptEncodingBrotli") /* EnableAcceptEncodingBrotli com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$EnableAcceptEncodingBrotli */ =>  {
                 let var_6 =
                     Some(
                          {
@@ -48,56 +64,43 @@ pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
                         ?
                     )
                 ;
-                builder = builder.set_enable_accept_encoding_gzip(var_6);
-            }
-            ,
-            s if s.matches("EnableAcceptEncodingBrotli") /* EnableAcceptEncodingBrotli com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$EnableAcceptEncodingBrotli */ =>  {
-                let var_7 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_enable_accept_encoding_brotli(var_7);
+                builder = builder.set_enable_accept_encoding_brotli(var_6);
             }
             ,
             s if s.matches("HeadersConfig") /* HeadersConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$HeadersConfig */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_cache_policy_headers_config::de_cache_policy_headers_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_headers_config(var_8);
+                builder = builder.set_headers_config(var_7);
             }
             ,
             s if s.matches("CookiesConfig") /* CookiesConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$CookiesConfig */ =>  {
-                let var_9 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_cache_policy_cookies_config::de_cache_policy_cookies_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cookies_config(var_9);
+                builder = builder.set_cookies_config(var_8);
             }
             ,
             s if s.matches("QueryStringsConfig") /* QueryStringsConfig com.amazonaws.cloudfront#ParametersInCacheKeyAndForwardedToOrigin$QueryStringsConfig */ =>  {
-                let var_10 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_cache_policy_query_strings_config::de_cache_policy_query_strings_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_strings_config(var_10);
+                builder = builder.set_query_strings_config(var_9);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::parameters_in_cache_key_and_forwarded_to_origin_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

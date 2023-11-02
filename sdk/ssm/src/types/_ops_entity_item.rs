@@ -15,8 +15,10 @@ impl OpsEntityItem {
         self.capture_time.as_deref()
     }
     /// <p>The details of an OpsData summary.</p>
-    pub fn content(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.content.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
+    pub fn content(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.content.as_deref().unwrap_or_default()
     }
 }
 impl OpsEntityItem {

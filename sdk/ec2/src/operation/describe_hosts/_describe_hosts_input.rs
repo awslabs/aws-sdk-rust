@@ -33,12 +33,16 @@ impl DescribeHostsInput {
     /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn filter(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter.is_none()`.
+    pub fn filter(&self) -> &[crate::types::Filter] {
+        self.filter.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
-    pub fn host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_ids.is_none()`.
+    pub fn host_ids(&self) -> &[::std::string::String] {
+        self.host_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
     /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>

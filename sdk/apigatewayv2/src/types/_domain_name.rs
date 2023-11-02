@@ -25,8 +25,10 @@ impl DomainName {
         self.domain_name.as_deref()
     }
     /// <p>The domain name configurations.</p>
-    pub fn domain_name_configurations(&self) -> ::std::option::Option<&[crate::types::DomainNameConfiguration]> {
-        self.domain_name_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_name_configurations.is_none()`.
+    pub fn domain_name_configurations(&self) -> &[crate::types::DomainNameConfiguration] {
+        self.domain_name_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn mutual_tls_authentication(&self) -> ::std::option::Option<&crate::types::MutualTlsAuthentication> {
@@ -70,6 +72,7 @@ impl DomainNameBuilder {
         &self.api_mapping_selection_expression
     }
     /// <p>The name of the DomainName resource.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

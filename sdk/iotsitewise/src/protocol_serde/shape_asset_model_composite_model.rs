@@ -3,29 +3,29 @@ pub fn ser_asset_model_composite_model(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetModelCompositeModel,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("type").string(var_3.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_4) = &input.properties {
-        let mut array_5 = object.key("properties").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.properties {
+        let mut array_3 = object.key("properties").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_asset_model_property::ser_asset_model_property(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_asset_model_property::ser_asset_model_property(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_8) = &input.id {
-        object.key("id").string(var_8.as_str());
+    if let Some(var_6) = &input.id {
+        object.key("id").string(var_6.as_str());
     }
     Ok(())
 }
@@ -86,7 +86,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::asset_model_composite_model_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

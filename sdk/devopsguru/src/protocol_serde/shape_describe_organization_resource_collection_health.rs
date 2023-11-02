@@ -34,12 +34,9 @@ pub fn de_describe_organization_resource_collection_health_http_error(
                     let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "InternalServerException" => crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::InternalServerException({
@@ -54,12 +51,9 @@ pub fn de_describe_organization_resource_collection_health_http_error(
                                                 .map_err(|_|crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::ThrottlingException({
@@ -74,12 +68,9 @@ pub fn de_describe_organization_resource_collection_health_http_error(
                                                 .map_err(|_|crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ValidationException" => crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::ValidationException({
@@ -90,12 +81,9 @@ pub fn de_describe_organization_resource_collection_health_http_error(
                     let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output).map_err(crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         _ => crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError::generic(generic)

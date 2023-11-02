@@ -51,11 +51,10 @@ pub fn de_delete_launch_configuration_template_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -93,11 +92,10 @@ pub fn de_delete_launch_configuration_template_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

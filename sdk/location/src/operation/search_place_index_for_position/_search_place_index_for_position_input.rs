@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub position: ::std::vec::Vec<f64>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
     pub max_results: i32,
@@ -23,14 +23,16 @@ pub struct SearchPlaceIndexForPositionInput {
 }
 impl SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn position(&self) -> ::std::option::Option<&[f64]> {
-        self.position.as_deref()
+    pub fn position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.position.deref()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
@@ -80,6 +82,7 @@ pub struct SearchPlaceIndexForPositionInputBuilder {
 }
 impl SearchPlaceIndexForPositionInputBuilder {
     /// <p>The name of the place index resource you want to use for the search.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -177,6 +180,9 @@ impl SearchPlaceIndexForPositionInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionInput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder::index_name)
+    /// - [`position`](crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder::position)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -184,8 +190,18 @@ impl SearchPlaceIndexForPositionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput {
-            index_name: self.index_name,
-            position: self.position,
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building SearchPlaceIndexForPositionInput",
+                )
+            })?,
+            position: self.position.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "position",
+                    "position was not specified but it is required when building SearchPlaceIndexForPositionInput",
+                )
+            })?,
             max_results: self.max_results.unwrap_or_default(),
             language: self.language,
             key: self.key,

@@ -46,8 +46,10 @@ impl Entity {
         self.end_offset
     }
     /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
-    pub fn block_references(&self) -> ::std::option::Option<&[crate::types::BlockReference]> {
-        self.block_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_references.is_none()`.
+    pub fn block_references(&self) -> &[crate::types::BlockReference] {
+        self.block_references.as_deref().unwrap_or_default()
     }
 }
 impl Entity {

@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineObject {
     /// <p>The ID of the object.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the object.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub fields: ::std::vec::Vec<crate::types::Field>,
 }
 impl PipelineObject {
     /// <p>The ID of the object.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the object.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Key-value pairs that define the properties of the object.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::Field] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
 }
 impl PipelineObject {
@@ -42,6 +45,7 @@ pub struct PipelineObjectBuilder {
 }
 impl PipelineObjectBuilder {
     /// <p>The ID of the object.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl PipelineObjectBuilder {
         &self.id
     }
     /// <p>The name of the object.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +95,30 @@ impl PipelineObjectBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`PipelineObject`](crate::types::PipelineObject).
-    pub fn build(self) -> crate::types::PipelineObject {
-        crate::types::PipelineObject {
-            id: self.id,
-            name: self.name,
-            fields: self.fields,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::PipelineObjectBuilder::id)
+    /// - [`name`](crate::types::builders::PipelineObjectBuilder::name)
+    /// - [`fields`](crate::types::builders::PipelineObjectBuilder::fields)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipelineObject, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipelineObject {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building PipelineObject",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PipelineObject",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building PipelineObject",
+                )
+            })?,
+        })
     }
 }

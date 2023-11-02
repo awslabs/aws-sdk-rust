@@ -27,6 +27,7 @@ pub struct StartIdMappingJobInputBuilder {
 }
 impl StartIdMappingJobInputBuilder {
     /// <p>The name of the ID mapping job to be retrieved.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self

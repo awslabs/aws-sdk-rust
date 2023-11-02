@@ -85,8 +85,10 @@ impl ConnectorSummary {
         self.log_delivery.as_ref()
     }
     /// <p>Specifies which plugins were used for this connector.</p>
-    pub fn plugins(&self) -> ::std::option::Option<&[crate::types::PluginDescription]> {
-        self.plugins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
+    pub fn plugins(&self) -> &[crate::types::PluginDescription] {
+        self.plugins.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
     pub fn service_execution_role_arn(&self) -> ::std::option::Option<&str> {

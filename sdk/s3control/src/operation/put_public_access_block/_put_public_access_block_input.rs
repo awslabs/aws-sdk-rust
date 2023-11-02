@@ -34,6 +34,7 @@ pub struct PutPublicAccessBlockInputBuilder {
 }
 impl PutPublicAccessBlockInputBuilder {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
+    /// This field is required.
     pub fn public_access_block_configuration(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.public_access_block_configuration = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl PutPublicAccessBlockInputBuilder {
         &self.public_access_block_configuration
     }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

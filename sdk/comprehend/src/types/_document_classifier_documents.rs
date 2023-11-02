@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentClassifierDocuments {
     /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p>The S3 URI location of the test documents included in the TestS3Uri CSV file. This field is not required if you do not specify a test CSV file.</p>
     pub test_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl DocumentClassifierDocuments {
     /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p>The S3 URI location of the test documents included in the TestS3Uri CSV file. This field is not required if you do not specify a test CSV file.</p>
     pub fn test_s3_uri(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct DocumentClassifierDocumentsBuilder {
 }
 impl DocumentClassifierDocumentsBuilder {
     /// <p>The S3 URI location of the training documents specified in the S3Uri CSV file.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DocumentClassifierDocumentsBuilder {
         &self.test_s3_uri
     }
     /// Consumes the builder and constructs a [`DocumentClassifierDocuments`](crate::types::DocumentClassifierDocuments).
-    pub fn build(self) -> crate::types::DocumentClassifierDocuments {
-        crate::types::DocumentClassifierDocuments {
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::DocumentClassifierDocumentsBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentClassifierDocuments, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentClassifierDocuments {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building DocumentClassifierDocuments",
+                )
+            })?,
             test_s3_uri: self.test_s3_uri,
-        }
+        })
     }
 }

@@ -21,8 +21,10 @@ impl RuleGroupSourceStatefulRulesDetails {
         self.header.as_ref()
     }
     /// <p>Additional options for the rule.</p>
-    pub fn rule_options(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatefulRulesOptionsDetails]> {
-        self.rule_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_options.is_none()`.
+    pub fn rule_options(&self) -> &[crate::types::RuleGroupSourceStatefulRulesOptionsDetails] {
+        self.rule_options.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupSourceStatefulRulesDetails {

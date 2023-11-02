@@ -8,8 +8,10 @@ pub struct DeleteAwsLogSourceInput {
 }
 impl DeleteAwsLogSourceInput {
     /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::AwsLogSourceConfiguration]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::AwsLogSourceConfiguration] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl DeleteAwsLogSourceInput {

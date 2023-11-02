@@ -15,8 +15,10 @@ impl ListRegexMatchSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RegexMatchSetSummary</code> objects.</p>
-    pub fn regex_match_sets(&self) -> ::std::option::Option<&[crate::types::RegexMatchSetSummary]> {
-        self.regex_match_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_match_sets.is_none()`.
+    pub fn regex_match_sets(&self) -> &[crate::types::RegexMatchSetSummary] {
+        self.regex_match_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRegexMatchSetsOutput {

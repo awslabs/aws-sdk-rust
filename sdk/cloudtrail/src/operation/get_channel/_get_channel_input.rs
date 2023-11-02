@@ -27,6 +27,7 @@ pub struct GetChannelInputBuilder {
 }
 impl GetChannelInputBuilder {
     /// <p>The ARN or <code>UUID</code> of a channel.</p>
+    /// This field is required.
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
         self

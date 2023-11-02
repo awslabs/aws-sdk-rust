@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetParameter {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
-    pub r#type: ::std::option::Option<crate::types::ParameterType>,
+    pub r#type: crate::types::ParameterType,
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
     pub datetime_options: ::std::option::Option<crate::types::DatetimeOptions>,
     /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
@@ -17,12 +17,13 @@ pub struct DatasetParameter {
 }
 impl DatasetParameter {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ParameterType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ParameterType {
+        &self.r#type
     }
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
     pub fn datetime_options(&self) -> ::std::option::Option<&crate::types::DatetimeOptions> {
@@ -56,6 +57,7 @@ pub struct DatasetParameterBuilder {
 }
 impl DatasetParameterBuilder {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DatasetParameterBuilder {
         &self.name
     }
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,26 @@ impl DatasetParameterBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`DatasetParameter`](crate::types::DatasetParameter).
-    pub fn build(self) -> crate::types::DatasetParameter {
-        crate::types::DatasetParameter {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DatasetParameterBuilder::name)
+    /// - [`r#type`](crate::types::builders::DatasetParameterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatasetParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DatasetParameter",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DatasetParameter",
+                )
+            })?,
             datetime_options: self.datetime_options,
             create_column: self.create_column.unwrap_or_default(),
             filter: self.filter,
-        }
+        })
     }
 }

@@ -90,8 +90,10 @@ impl CreateAppBlockBuilderInput {
         self.iam_role_arn.as_deref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn access_endpoints(&self) -> ::std::option::Option<&[crate::types::AccessEndpoint]> {
-        self.access_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
+    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl CreateAppBlockBuilderInput {
@@ -118,6 +120,7 @@ pub struct CreateAppBlockBuilderInputBuilder {
 }
 impl CreateAppBlockBuilderInputBuilder {
     /// <p>The unique name for the app block builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -193,6 +196,7 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::AppBlockBuilderPlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -216,6 +220,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -245,6 +250,7 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The VPC configuration for the app block builder.</p>
     /// <p>App block builders require that you specify at least two subnets in different availability zones.</p>
+    /// This field is required.
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter. Filter names are case-sensitive. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The operator for the filter. </p>
-    pub operator: ::std::option::Option<crate::types::FilterOperator>,
+    pub operator: crate::types::FilterOperator,
 }
 impl Filter {
     /// <p>The name of the filter. Filter names are case-sensitive. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The operator for the filter. </p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::FilterOperator {
+        &self.operator
     }
 }
 impl Filter {
@@ -42,6 +44,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The name of the filter. Filter names are case-sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FilterBuilder {
         &self.name
     }
     /// <p>The filter values. Filter values are case-sensitive. If you specify multiple values for a filter, the values are joined with an OR, and the request returns all results that match any of the specified values</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl FilterBuilder {
         &self.value
     }
     /// <p>The operator for the filter. </p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl FilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
-    pub fn build(self) -> crate::types::Filter {
-        crate::types::Filter {
-            name: self.name,
-            value: self.value,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FilterBuilder::name)
+    /// - [`value`](crate::types::builders::FilterBuilder::value)
+    /// - [`operator`](crate::types::builders::FilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Filter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Filter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Filter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building Filter",
+                )
+            })?,
+        })
     }
 }

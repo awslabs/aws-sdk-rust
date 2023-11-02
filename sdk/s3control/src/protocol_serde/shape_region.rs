@@ -5,24 +5,38 @@ pub fn ser_region(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.bucket {
+    {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.bucket_account_id {
+    if let Some(var_1) = &input.bucket_account_id {
         let mut inner_writer = scope.start_el("BucketAccountId").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(var_1.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_region(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Region, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Region::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Bucket") /* Bucket com.amazonaws.s3control#Region$Bucket */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bucket(var_2);
+            }
+            ,
+            s if s.matches("BucketAccountId") /* BucketAccountId com.amazonaws.s3control#Region$BucketAccountId */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -32,24 +46,13 @@ pub fn de_region(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
                         ?
                     )
                 ;
-                builder = builder.set_bucket(var_3);
-            }
-            ,
-            s if s.matches("BucketAccountId") /* BucketAccountId com.amazonaws.s3control#Region$BucketAccountId */ =>  {
-                let var_4 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_bucket_account_id(var_4);
+                builder = builder.set_bucket_account_id(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::region_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

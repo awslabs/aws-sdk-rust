@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DestinationConfiguration {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
@@ -16,16 +16,17 @@ pub struct S3DestinationConfiguration {
     /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
     /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
     pub glue_configuration: ::std::option::Option<crate::types::GlueConfiguration>,
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl S3DestinationConfiguration {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
@@ -37,16 +38,18 @@ impl S3DestinationConfiguration {
     /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
     /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
     pub fn glue_configuration(&self) -> ::std::option::Option<&crate::types::GlueConfiguration> {
         self.glue_configuration.as_ref()
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl S3DestinationConfiguration {
@@ -67,6 +70,7 @@ pub struct S3DestinationConfigurationBuilder {
 }
 impl S3DestinationConfigurationBuilder {
     /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl S3DestinationConfigurationBuilder {
     /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
     /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
     /// </note>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +141,7 @@ impl S3DestinationConfigurationBuilder {
         &self.glue_configuration
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -150,12 +156,31 @@ impl S3DestinationConfigurationBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
-    pub fn build(self) -> crate::types::S3DestinationConfiguration {
-        crate::types::S3DestinationConfiguration {
-            bucket: self.bucket,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3DestinationConfigurationBuilder::bucket)
+    /// - [`key`](crate::types::builders::S3DestinationConfigurationBuilder::key)
+    /// - [`role_arn`](crate::types::builders::S3DestinationConfigurationBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DestinationConfiguration {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3DestinationConfiguration",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3DestinationConfiguration",
+                )
+            })?,
             glue_configuration: self.glue_configuration,
-            role_arn: self.role_arn,
-        }
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building S3DestinationConfiguration",
+                )
+            })?,
+        })
     }
 }

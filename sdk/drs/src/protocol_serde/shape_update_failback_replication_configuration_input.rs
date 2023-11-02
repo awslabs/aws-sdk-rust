@@ -12,11 +12,11 @@ pub fn ser_update_failback_replication_configuration_input(
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_2.as_str());
+    {
+        object.key("recoveryInstanceID").string(input.recovery_instance_id.as_str());
     }
-    if let Some(var_3) = &input.use_private_ip {
-        object.key("usePrivateIP").boolean(*var_3);
+    if let Some(var_2) = &input.use_private_ip {
+        object.key("usePrivateIP").boolean(*var_2);
     }
     Ok(())
 }

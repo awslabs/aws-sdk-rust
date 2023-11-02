@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
-    pub region_name: ::std::option::Option<::std::string::String>,
+    pub region_name: ::std::string::String,
 }
 impl DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
-        self.region_name.as_deref()
+    pub fn region_name(&self) -> &str {
+        use std::ops::Deref;
+        self.region_name.deref()
     }
 }
 impl DeleteReplicationGroupMemberAction {
@@ -28,6 +29,7 @@ pub struct DeleteReplicationGroupMemberActionBuilder {
 }
 impl DeleteReplicationGroupMemberActionBuilder {
     /// <p>The Region where the replica exists.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl DeleteReplicationGroupMemberActionBuilder {
         &self.region_name
     }
     /// Consumes the builder and constructs a [`DeleteReplicationGroupMemberAction`](crate::types::DeleteReplicationGroupMemberAction).
-    pub fn build(self) -> crate::types::DeleteReplicationGroupMemberAction {
-        crate::types::DeleteReplicationGroupMemberAction {
-            region_name: self.region_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region_name`](crate::types::builders::DeleteReplicationGroupMemberActionBuilder::region_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteReplicationGroupMemberAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteReplicationGroupMemberAction {
+            region_name: self.region_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region_name",
+                    "region_name was not specified but it is required when building DeleteReplicationGroupMemberAction",
+                )
+            })?,
+        })
     }
 }

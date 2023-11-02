@@ -21,8 +21,10 @@ impl AdminSetUserSettingsInput {
         self.username.as_deref()
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn mfa_options(&self) -> ::std::option::Option<&[crate::types::MfaOptionType]> {
-        self.mfa_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
+    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
+        self.mfa_options.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AdminSetUserSettingsInput {
@@ -51,6 +53,7 @@ pub struct AdminSetUserSettingsInputBuilder {
 }
 impl AdminSetUserSettingsInputBuilder {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl AdminSetUserSettingsInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name of the user whose options you're setting.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct DeleteTokenInputBuilder {
 }
 impl DeleteTokenInputBuilder {
     /// <p>Token ID.</p>
+    /// This field is required.
     pub fn token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_id = ::std::option::Option::Some(input.into());
         self

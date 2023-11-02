@@ -50,11 +50,10 @@ pub fn de_associate_resolver_endpoint_ip_address_http_error(
                         crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                             .map_err(crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

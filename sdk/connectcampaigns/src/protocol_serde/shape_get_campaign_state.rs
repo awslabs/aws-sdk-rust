@@ -32,11 +32,10 @@ pub fn de_get_campaign_state_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_campaign_state::GetCampaignStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::get_campaign_state::GetCampaignStateError::InternalServerException({
@@ -54,11 +53,10 @@ pub fn de_get_campaign_state_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_campaign_state::GetCampaignStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_campaign_state::GetCampaignStateError::ResourceNotFoundException({
@@ -76,11 +74,10 @@ pub fn de_get_campaign_state_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_campaign_state::GetCampaignStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_campaign_state::GetCampaignStateError::ThrottlingException({
@@ -98,11 +95,10 @@ pub fn de_get_campaign_state_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_campaign_state::GetCampaignStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::get_campaign_state::GetCampaignStateError::ValidationException({
@@ -120,11 +116,10 @@ pub fn de_get_campaign_state_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_campaign_state::GetCampaignStateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_campaign_state::GetCampaignStateError::generic(generic),

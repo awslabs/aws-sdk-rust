@@ -11,8 +11,10 @@ pub struct DescribeSecurityGroupsOutput {
 }
 impl DescribeSecurityGroupsOutput {
     /// <p>Information about the security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroup]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::SecurityGroup] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

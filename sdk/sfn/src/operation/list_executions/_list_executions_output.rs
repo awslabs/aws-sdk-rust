@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
-    pub executions: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionListItem>>,
+    pub executions: ::std::vec::Vec<crate::types::ExecutionListItem>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
-    pub fn executions(&self) -> ::std::option::Option<&[crate::types::ExecutionListItem]> {
-        self.executions.as_deref()
+    pub fn executions(&self) -> &[crate::types::ExecutionListItem] {
+        use std::ops::Deref;
+        self.executions.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListExecutionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::operation::list_executions::ListExecutionsOutput).
-    pub fn build(self) -> crate::operation::list_executions::ListExecutionsOutput {
-        crate::operation::list_executions::ListExecutionsOutput {
-            executions: self.executions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`executions`](crate::operation::list_executions::builders::ListExecutionsOutputBuilder::executions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsOutput {
+            executions: self.executions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "executions",
+                    "executions was not specified but it is required when building ListExecutionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

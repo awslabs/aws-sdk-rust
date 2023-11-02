@@ -24,8 +24,10 @@ impl GetAccountOutput {
         self.throttle_settings.as_ref()
     }
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
-    pub fn features(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[::std::string::String] {
+        self.features.as_deref().unwrap_or_default()
     }
     /// <p>The version of the API keys used for the account.</p>
     pub fn api_key_version(&self) -> ::std::option::Option<&str> {

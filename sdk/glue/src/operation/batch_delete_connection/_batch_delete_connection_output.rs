@@ -11,8 +11,10 @@ pub struct BatchDeleteConnectionOutput {
 }
 impl BatchDeleteConnectionOutput {
     /// <p>A list of names of the connection definitions that were successfully deleted.</p>
-    pub fn succeeded(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.succeeded.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.succeeded.is_none()`.
+    pub fn succeeded(&self) -> &[::std::string::String] {
+        self.succeeded.as_deref().unwrap_or_default()
     }
     /// <p>A map of the names of connections that were not successfully deleted to error details.</p>
     pub fn errors(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ErrorDetail>> {

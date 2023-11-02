@@ -55,6 +55,7 @@ pub struct StartDashboardSnapshotJobInputBuilder {
 }
 impl StartDashboardSnapshotJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartDashboardSnapshotJobInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the dashboard that you want to start a snapshot job for. </p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl StartDashboardSnapshotJobInputBuilder {
         &self.dashboard_id
     }
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
+    /// This field is required.
     pub fn snapshot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_job_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl StartDashboardSnapshotJobInputBuilder {
         &self.snapshot_job_id
     }
     /// <p> A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon QuickSight.</p>
+    /// This field is required.
     pub fn user_configuration(mut self, input: crate::types::SnapshotUserConfiguration) -> Self {
         self.user_configuration = ::std::option::Option::Some(input);
         self
@@ -111,6 +115,7 @@ impl StartDashboardSnapshotJobInputBuilder {
         &self.user_configuration
     }
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
+    /// This field is required.
     pub fn snapshot_configuration(mut self, input: crate::types::SnapshotConfiguration) -> Self {
         self.snapshot_configuration = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DeleteAliasInputBuilder {
 }
 impl DeleteAliasInputBuilder {
     /// <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self

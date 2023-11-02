@@ -15,8 +15,10 @@ impl GetUsageTotalsOutput {
         self.time_range.as_ref()
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    pub fn usage_totals(&self) -> ::std::option::Option<&[crate::types::UsageTotal]> {
-        self.usage_totals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_totals.is_none()`.
+    pub fn usage_totals(&self) -> &[crate::types::UsageTotal] {
+        self.usage_totals.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetUsageTotalsOutput {

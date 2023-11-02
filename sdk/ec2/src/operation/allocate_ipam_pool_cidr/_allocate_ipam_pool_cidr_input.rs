@@ -70,8 +70,10 @@ impl AllocateIpamPoolCidrInput {
         self.preview_next_cidr
     }
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
-    pub fn disallowed_cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disallowed_cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disallowed_cidrs.is_none()`.
+    pub fn disallowed_cidrs(&self) -> &[::std::string::String] {
+        self.disallowed_cidrs.as_deref().unwrap_or_default()
     }
 }
 impl AllocateIpamPoolCidrInput {
@@ -110,6 +112,7 @@ impl AllocateIpamPoolCidrInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM pool from which you would like to allocate a CIDR.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self

@@ -53,6 +53,7 @@ pub struct S3StorageConfigBuilder {
 impl S3StorageConfigBuilder {
     /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self

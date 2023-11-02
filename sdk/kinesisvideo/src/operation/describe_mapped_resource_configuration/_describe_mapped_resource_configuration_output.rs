@@ -11,8 +11,10 @@ pub struct DescribeMappedResourceConfigurationOutput {
 }
 impl DescribeMappedResourceConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn mapped_resource_configuration_list(&self) -> ::std::option::Option<&[crate::types::MappedResourceConfigurationListItem]> {
-        self.mapped_resource_configuration_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mapped_resource_configuration_list.is_none()`.
+    pub fn mapped_resource_configuration_list(&self) -> &[crate::types::MappedResourceConfigurationListItem] {
+        self.mapped_resource_configuration_list.as_deref().unwrap_or_default()
     }
     /// <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

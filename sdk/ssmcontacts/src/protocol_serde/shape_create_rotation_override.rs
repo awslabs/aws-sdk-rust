@@ -32,11 +32,10 @@ pub fn de_create_rotation_override_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_rotation_override::CreateRotationOverrideError::InternalServerException({
@@ -47,11 +46,10 @@ pub fn de_create_rotation_override_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_rotation_override::CreateRotationOverrideError::ResourceNotFoundException({
@@ -62,11 +60,10 @@ pub fn de_create_rotation_override_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::create_rotation_override::CreateRotationOverrideError::ServiceQuotaExceededException({
@@ -80,11 +77,10 @@ pub fn de_create_rotation_override_http_error(
                 )
                 .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_rotation_override::CreateRotationOverrideError::ThrottlingException({
@@ -95,11 +91,10 @@ pub fn de_create_rotation_override_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_rotation_override::CreateRotationOverrideError::ValidationException({
@@ -110,11 +105,10 @@ pub fn de_create_rotation_override_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_rotation_override::CreateRotationOverrideError::generic(generic),
@@ -136,7 +130,9 @@ pub fn de_create_rotation_override_http_response(
         output = crate::protocol_serde::shape_create_rotation_override::de_create_rotation_override(_response_body, output)
             .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_rotation_override_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_rotation_override::CreateRotationOverrideError::unhandled)?
     })
 }
 

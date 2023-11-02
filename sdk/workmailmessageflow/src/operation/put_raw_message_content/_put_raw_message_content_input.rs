@@ -34,6 +34,7 @@ pub struct PutRawMessageContentInputBuilder {
 }
 impl PutRawMessageContentInputBuilder {
     /// <p>The identifier of the email message being updated.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutRawMessageContentInputBuilder {
         &self.message_id
     }
     /// <p>Describes the raw message content of the updated email message.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::RawMessageContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self

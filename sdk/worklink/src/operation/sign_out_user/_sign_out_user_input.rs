@@ -34,6 +34,7 @@ pub struct SignOutUserInputBuilder {
 }
 impl SignOutUserInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl SignOutUserInputBuilder {
         &self.fleet_arn
     }
     /// <p>The name of the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self

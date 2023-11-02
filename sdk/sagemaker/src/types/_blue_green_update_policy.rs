@@ -42,6 +42,7 @@ pub struct BlueGreenUpdatePolicyBuilder {
 }
 impl BlueGreenUpdatePolicyBuilder {
     /// <p>Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment.</p>
+    /// This field is required.
     pub fn traffic_routing_configuration(mut self, input: crate::types::TrafficRoutingConfig) -> Self {
         self.traffic_routing_configuration = ::std::option::Option::Some(input);
         self

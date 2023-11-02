@@ -3,8 +3,8 @@ pub fn ser_service_now_source_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceNowSourceProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.object {
-        object.key("Object").string(var_1.as_str());
+    {
+        object.key("Object").string(input.object.as_str());
     }
     Ok(())
 }

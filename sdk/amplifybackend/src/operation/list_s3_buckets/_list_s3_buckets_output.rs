@@ -11,8 +11,10 @@ pub struct ListS3BucketsOutput {
 }
 impl ListS3BucketsOutput {
     /// <p>The list of S3 buckets.</p>
-    pub fn buckets(&self) -> ::std::option::Option<&[crate::types::S3BucketInfo]> {
-        self.buckets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
+    pub fn buckets(&self) -> &[crate::types::S3BucketInfo] {
+        self.buckets.as_deref().unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

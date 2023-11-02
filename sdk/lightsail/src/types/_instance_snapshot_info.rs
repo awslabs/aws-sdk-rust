@@ -21,8 +21,10 @@ impl InstanceSnapshotInfo {
         self.from_blueprint_id.as_deref()
     }
     /// <p>A list of objects describing the disks that were attached to the source instance.</p>
-    pub fn from_disk_info(&self) -> ::std::option::Option<&[crate::types::DiskInfo]> {
-        self.from_disk_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.from_disk_info.is_none()`.
+    pub fn from_disk_info(&self) -> &[crate::types::DiskInfo] {
+        self.from_disk_info.as_deref().unwrap_or_default()
     }
 }
 impl InstanceSnapshotInfo {

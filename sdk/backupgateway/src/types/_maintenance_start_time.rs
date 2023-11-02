@@ -9,9 +9,9 @@ pub struct MaintenanceStartTime {
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     pub day_of_week: ::std::option::Option<i32>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
-    pub hour_of_day: ::std::option::Option<i32>,
+    pub hour_of_day: i32,
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
-    pub minute_of_hour: ::std::option::Option<i32>,
+    pub minute_of_hour: i32,
 }
 impl MaintenanceStartTime {
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
@@ -23,11 +23,11 @@ impl MaintenanceStartTime {
         self.day_of_week
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
-    pub fn hour_of_day(&self) -> ::std::option::Option<i32> {
+    pub fn hour_of_day(&self) -> i32 {
         self.hour_of_day
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
-    pub fn minute_of_hour(&self) -> ::std::option::Option<i32> {
+    pub fn minute_of_hour(&self) -> i32 {
         self.minute_of_hour
     }
 }
@@ -77,6 +77,7 @@ impl MaintenanceStartTimeBuilder {
         &self.day_of_week
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    /// This field is required.
     pub fn hour_of_day(mut self, input: i32) -> Self {
         self.hour_of_day = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl MaintenanceStartTimeBuilder {
         &self.hour_of_day
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
+    /// This field is required.
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.minute_of_hour = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl MaintenanceStartTimeBuilder {
         &self.minute_of_hour
     }
     /// Consumes the builder and constructs a [`MaintenanceStartTime`](crate::types::MaintenanceStartTime).
-    pub fn build(self) -> crate::types::MaintenanceStartTime {
-        crate::types::MaintenanceStartTime {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hour_of_day`](crate::types::builders::MaintenanceStartTimeBuilder::hour_of_day)
+    /// - [`minute_of_hour`](crate::types::builders::MaintenanceStartTimeBuilder::minute_of_hour)
+    pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceStartTime, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MaintenanceStartTime {
             day_of_month: self.day_of_month,
             day_of_week: self.day_of_week,
-            hour_of_day: self.hour_of_day,
-            minute_of_hour: self.minute_of_hour,
-        }
+            hour_of_day: self.hour_of_day.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hour_of_day",
+                    "hour_of_day was not specified but it is required when building MaintenanceStartTime",
+                )
+            })?,
+            minute_of_hour: self.minute_of_hour.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "minute_of_hour",
+                    "minute_of_hour was not specified but it is required when building MaintenanceStartTime",
+                )
+            })?,
+        })
     }
 }

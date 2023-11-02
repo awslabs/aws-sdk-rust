@@ -18,8 +18,10 @@ impl ListIntentStageMetricsOutput {
         self.bot_id.as_deref()
     }
     /// <p>The results for the intent stage metrics.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageResult]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::AnalyticsIntentStageResult] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>

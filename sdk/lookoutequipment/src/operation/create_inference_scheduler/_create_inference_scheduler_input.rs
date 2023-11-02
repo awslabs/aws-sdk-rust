@@ -66,8 +66,10 @@ impl CreateInferenceSchedulerInput {
         self.client_token.as_deref()
     }
     /// <p>Any tags associated with the inference scheduler. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateInferenceSchedulerInput {
@@ -94,6 +96,7 @@ pub struct CreateInferenceSchedulerInputBuilder {
 }
 impl CreateInferenceSchedulerInputBuilder {
     /// <p>The name of the previously trained machine learning model being used to create the inference scheduler. </p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl CreateInferenceSchedulerInputBuilder {
         &self.model_name
     }
     /// <p>The name of the inference scheduler being created. </p>
+    /// This field is required.
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl CreateInferenceSchedulerInputBuilder {
     }
     /// <p> How often data is uploaded to the source Amazon S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment runs inference on your data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding the inference process</a>.</p>
+    /// This field is required.
     pub fn data_upload_frequency(mut self, input: crate::types::DataUploadFrequency) -> Self {
         self.data_upload_frequency = ::std::option::Option::Some(input);
         self
@@ -156,6 +161,7 @@ impl CreateInferenceSchedulerInputBuilder {
         &self.data_upload_frequency
     }
     /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    /// This field is required.
     pub fn data_input_configuration(mut self, input: crate::types::InferenceInputConfiguration) -> Self {
         self.data_input_configuration = ::std::option::Option::Some(input);
         self
@@ -170,6 +176,7 @@ impl CreateInferenceSchedulerInputBuilder {
         &self.data_input_configuration
     }
     /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
+    /// This field is required.
     pub fn data_output_configuration(mut self, input: crate::types::InferenceOutputConfiguration) -> Self {
         self.data_output_configuration = ::std::option::Option::Some(input);
         self
@@ -184,6 +191,7 @@ impl CreateInferenceSchedulerInputBuilder {
         &self.data_output_configuration
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +220,7 @@ impl CreateInferenceSchedulerInputBuilder {
         &self.server_side_kms_key_id
     }
     /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

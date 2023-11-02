@@ -27,6 +27,7 @@ pub struct GetLoadBalancerTlsCertificatesInputBuilder {
 }
 impl GetLoadBalancerTlsCertificatesInputBuilder {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self

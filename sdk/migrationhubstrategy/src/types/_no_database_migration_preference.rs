@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoDatabaseMigrationPreference {
     /// <p> The target database engine for database migration preference that you specify. </p>
-    pub target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::TargetDatabaseEngine>>,
+    pub target_database_engine: ::std::vec::Vec<crate::types::TargetDatabaseEngine>,
 }
 impl NoDatabaseMigrationPreference {
     /// <p> The target database engine for database migration preference that you specify. </p>
-    pub fn target_database_engine(&self) -> ::std::option::Option<&[crate::types::TargetDatabaseEngine]> {
-        self.target_database_engine.as_deref()
+    pub fn target_database_engine(&self) -> &[crate::types::TargetDatabaseEngine] {
+        use std::ops::Deref;
+        self.target_database_engine.deref()
     }
 }
 impl NoDatabaseMigrationPreference {
@@ -48,9 +49,16 @@ impl NoDatabaseMigrationPreferenceBuilder {
         &self.target_database_engine
     }
     /// Consumes the builder and constructs a [`NoDatabaseMigrationPreference`](crate::types::NoDatabaseMigrationPreference).
-    pub fn build(self) -> crate::types::NoDatabaseMigrationPreference {
-        crate::types::NoDatabaseMigrationPreference {
-            target_database_engine: self.target_database_engine,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_database_engine`](crate::types::builders::NoDatabaseMigrationPreferenceBuilder::target_database_engine)
+    pub fn build(self) -> ::std::result::Result<crate::types::NoDatabaseMigrationPreference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NoDatabaseMigrationPreference {
+            target_database_engine: self.target_database_engine.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_database_engine",
+                    "target_database_engine was not specified but it is required when building NoDatabaseMigrationPreference",
+                )
+            })?,
+        })
     }
 }

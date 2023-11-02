@@ -27,6 +27,7 @@ pub struct GetStaticIpInputBuilder {
 }
 impl GetStaticIpInputBuilder {
     /// <p>The name of the static IP in Lightsail.</p>
+    /// This field is required.
     pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_ip_name = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DeleteVpcInputBuilder {
 }
 impl DeleteVpcInputBuilder {
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

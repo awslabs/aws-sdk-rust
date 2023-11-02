@@ -3,8 +3,8 @@ pub fn ser_get_view_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_view::GetViewInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.view_arn {
-        object.key("ViewArn").string(var_1.as_str());
+    {
+        object.key("ViewArn").string(input.view_arn.as_str());
     }
     Ok(())
 }

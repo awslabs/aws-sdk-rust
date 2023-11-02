@@ -15,8 +15,10 @@ impl ListDatasetsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
-    pub fn dataset_summaries(&self) -> ::std::option::Option<&[crate::types::DatasetSummary]> {
-        self.dataset_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_summaries.is_none()`.
+    pub fn dataset_summaries(&self) -> &[crate::types::DatasetSummary] {
+        self.dataset_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDatasetsOutput {

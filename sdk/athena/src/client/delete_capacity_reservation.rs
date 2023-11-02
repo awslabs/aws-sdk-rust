@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCapacityReservation`](crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationFluentBuilder::set_name):<br>required: **true**<br><p>The name of the capacity reservation to delete.</p><br>
     /// - On success, responds with [`DeleteCapacityReservationOutput`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput)
     /// - On failure, responds with [`SdkError<DeleteCapacityReservationError>`](crate::operation::delete_capacity_reservation::DeleteCapacityReservationError)
     pub fn delete_capacity_reservation(&self) -> crate::operation::delete_capacity_reservation::builders::DeleteCapacityReservationFluentBuilder {

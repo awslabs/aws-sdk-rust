@@ -31,8 +31,10 @@ impl ComponentBindingPropertiesValueProperties {
         self.field.as_deref()
     }
     /// <p>A list of predicates for binding a component's properties to data.</p>
-    pub fn predicates(&self) -> ::std::option::Option<&[crate::types::Predicate]> {
-        self.predicates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predicates.is_none()`.
+    pub fn predicates(&self) -> &[crate::types::Predicate] {
+        self.predicates.as_deref().unwrap_or_default()
     }
     /// <p>An authenticated user attribute.</p>
     pub fn user_attribute(&self) -> ::std::option::Option<&str> {

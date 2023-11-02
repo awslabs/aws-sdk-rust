@@ -215,6 +215,8 @@ pub(crate) mod shape_invalid_parameter_value_exception;
 
 pub(crate) mod shape_invalid_security_exception;
 
+pub(crate) mod shape_invalid_state_exception;
+
 pub(crate) mod shape_kms_access_denied_exception;
 
 pub(crate) mod shape_kms_disabled_exception;
@@ -236,6 +238,8 @@ pub(crate) mod shape_opted_out_exception;
 pub(crate) mod shape_platform_application_disabled_exception;
 
 pub(crate) mod shape_publish_batch_request_entry;
+
+pub(crate) mod shape_replay_limit_exceeded_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 

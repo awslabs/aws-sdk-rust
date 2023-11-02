@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationExceptionErrorArgument {
     /// <p>The argument's name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The argument's value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ValidationExceptionErrorArgument {
     /// <p>The argument's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The argument's value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ValidationExceptionErrorArgument {
@@ -35,6 +37,7 @@ pub struct ValidationExceptionErrorArgumentBuilder {
 }
 impl ValidationExceptionErrorArgumentBuilder {
     /// <p>The argument's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ValidationExceptionErrorArgumentBuilder {
         &self.name
     }
     /// <p>The argument's value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ValidationExceptionErrorArgumentBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ValidationExceptionErrorArgument`](crate::types::ValidationExceptionErrorArgument).
-    pub fn build(self) -> crate::types::ValidationExceptionErrorArgument {
-        crate::types::ValidationExceptionErrorArgument {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ValidationExceptionErrorArgumentBuilder::name)
+    /// - [`value`](crate::types::builders::ValidationExceptionErrorArgumentBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationExceptionErrorArgument, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValidationExceptionErrorArgument {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ValidationExceptionErrorArgument",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ValidationExceptionErrorArgument",
+                )
+            })?,
+        })
     }
 }

@@ -70,6 +70,7 @@ pub fn ser_refresh_preferences(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_refresh_preferences(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::RefreshPreferences, ::aws_smithy_xml::decode::XmlDecodeError> {

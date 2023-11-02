@@ -15,8 +15,10 @@ impl ModifyMountTargetSecurityGroupsInput {
         self.mount_target_id.as_deref()
     }
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl ModifyMountTargetSecurityGroupsInput {
@@ -35,6 +37,7 @@ pub struct ModifyMountTargetSecurityGroupsInputBuilder {
 }
 impl ModifyMountTargetSecurityGroupsInputBuilder {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
+    /// This field is required.
     pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self

@@ -6,24 +6,28 @@ pub struct UpdateProgramInput {
     /// <p>The ad break configuration settings.</p>
     pub ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     /// <p>The name of the channel for this Program.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The name of the Program.</p>
-    pub program_name: ::std::option::Option<::std::string::String>,
+    pub program_name: ::std::string::String,
     /// <p>The schedule configuration settings.</p>
     pub schedule_configuration: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
 }
 impl UpdateProgramInput {
     /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> ::std::option::Option<&[crate::types::AdBreak]> {
-        self.ad_breaks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_breaks.is_none()`.
+    pub fn ad_breaks(&self) -> &[crate::types::AdBreak] {
+        self.ad_breaks.as_deref().unwrap_or_default()
     }
     /// <p>The name of the channel for this Program.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The name of the Program.</p>
-    pub fn program_name(&self) -> ::std::option::Option<&str> {
-        self.program_name.as_deref()
+    pub fn program_name(&self) -> &str {
+        use std::ops::Deref;
+        self.program_name.deref()
     }
     /// <p>The schedule configuration settings.</p>
     pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::UpdateProgramScheduleConfiguration> {
@@ -68,6 +72,7 @@ impl UpdateProgramInputBuilder {
         &self.ad_breaks
     }
     /// <p>The name of the channel for this Program.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +87,7 @@ impl UpdateProgramInputBuilder {
         &self.channel_name
     }
     /// <p>The name of the Program.</p>
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +102,7 @@ impl UpdateProgramInputBuilder {
         &self.program_name
     }
     /// <p>The schedule configuration settings.</p>
+    /// This field is required.
     pub fn schedule_configuration(mut self, input: crate::types::UpdateProgramScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
         self
@@ -110,13 +117,26 @@ impl UpdateProgramInputBuilder {
         &self.schedule_configuration
     }
     /// Consumes the builder and constructs a [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_name`](crate::operation::update_program::builders::UpdateProgramInputBuilder::channel_name)
+    /// - [`program_name`](crate::operation::update_program::builders::UpdateProgramInputBuilder::program_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_program::UpdateProgramInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_program::UpdateProgramInput {
             ad_breaks: self.ad_breaks,
-            channel_name: self.channel_name,
-            program_name: self.program_name,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building UpdateProgramInput",
+                )
+            })?,
+            program_name: self.program_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "program_name",
+                    "program_name was not specified but it is required when building UpdateProgramInput",
+                )
+            })?,
             schedule_configuration: self.schedule_configuration,
         })
     }

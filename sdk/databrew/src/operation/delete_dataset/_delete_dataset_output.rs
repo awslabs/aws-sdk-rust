@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDatasetOutput {
     /// <p>The name of the dataset that you deleted.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteDatasetOutput {
     /// <p>The name of the dataset that you deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteDatasetOutput {
@@ -34,6 +35,7 @@ pub struct DeleteDatasetOutputBuilder {
 }
 impl DeleteDatasetOutputBuilder {
     /// <p>The name of the dataset that you deleted.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DeleteDatasetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput).
-    pub fn build(self) -> crate::operation::delete_dataset::DeleteDatasetOutput {
-        crate::operation::delete_dataset::DeleteDatasetOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_dataset::builders::DeleteDatasetOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteDatasetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -48,6 +48,7 @@ pub struct UpdateWorkloadInputBuilder {
 }
 impl UpdateWorkloadInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateWorkloadInputBuilder {
         &self.resource_group_name
     }
     /// <p> The name of the component. </p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateWorkloadInputBuilder {
         &self.workload_id
     }
     /// <p>The configuration settings of the workload. The value is the escaped JSON of the configuration.</p>
+    /// This field is required.
     pub fn workload_configuration(mut self, input: crate::types::WorkloadConfiguration) -> Self {
         self.workload_configuration = ::std::option::Option::Some(input);
         self

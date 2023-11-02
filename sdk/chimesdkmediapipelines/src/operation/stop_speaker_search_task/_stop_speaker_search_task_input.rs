@@ -34,6 +34,7 @@ pub struct StopSpeakerSearchTaskInputBuilder {
 }
 impl StopSpeakerSearchTaskInputBuilder {
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StopSpeakerSearchTaskInputBuilder {
         &self.identifier
     }
     /// <p>The speaker search task ID.</p>
+    /// This field is required.
     pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_search_task_id = ::std::option::Option::Some(input.into());
         self

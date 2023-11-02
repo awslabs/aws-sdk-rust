@@ -3,16 +3,16 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateAnnotationStore`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::set_name): <p>A name for the store.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::set_description): <p>A description for the store.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::set_name):<br>required: **true**<br><p>A name for the store.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_annotation_store::builders::UpdateAnnotationStoreFluentBuilder::set_description):<br>required: **false**<br><p>A description for the store.</p><br>
     /// - On success, responds with [`UpdateAnnotationStoreOutput`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::id): <p>The store's ID.</p>
+    ///   - [`id(String)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::id): <p>The store's ID.</p>
     ///   - [`reference(Option<ReferenceItem>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::reference): <p>The store's genome reference.</p>
-    ///   - [`status(Option<StoreStatus>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::status): <p>The store's status.</p>
-    ///   - [`name(Option<String>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::name): <p>The store's name.</p>
-    ///   - [`description(Option<String>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::description): <p>The store's description.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::creation_time): <p>When the store was created.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::update_time): <p>When the store was updated.</p>
+    ///   - [`status(StoreStatus)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::status): <p>The store's status.</p>
+    ///   - [`name(String)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::name): <p>The store's name.</p>
+    ///   - [`description(String)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::description): <p>The store's description.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::creation_time): <p>When the store was created.</p>
+    ///   - [`update_time(DateTime)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::update_time): <p>When the store was updated.</p>
     ///   - [`store_options(Option<StoreOptions>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::store_options): <p>Parsing options for the store.</p>
     ///   - [`store_format(Option<StoreFormat>)`](crate::operation::update_annotation_store::UpdateAnnotationStoreOutput::store_format): <p>The annotation file format of the store.</p>
     /// - On failure, responds with [`SdkError<UpdateAnnotationStoreError>`](crate::operation::update_annotation_store::UpdateAnnotationStoreError)

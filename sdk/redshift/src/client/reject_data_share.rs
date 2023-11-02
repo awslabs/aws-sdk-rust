@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RejectDataShare`](crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_share_arn(impl Into<String>)`](crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder::data_share_arn) / [`set_data_share_arn(Option<String>)`](crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder::set_data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    ///   - [`data_share_arn(impl Into<String>)`](crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder::data_share_arn) / [`set_data_share_arn(Option<String>)`](crate::operation::reject_data_share::builders::RejectDataShareFluentBuilder::set_data_share_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the datashare to reject.</p><br>
     /// - On success, responds with [`RejectDataShareOutput`](crate::operation::reject_data_share::RejectDataShareOutput) with field(s):
     ///   - [`data_share_arn(Option<String>)`](crate::operation::reject_data_share::RejectDataShareOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
     ///   - [`producer_arn(Option<String>)`](crate::operation::reject_data_share::RejectDataShareOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchDestination {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-    pub dimension_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
+    pub dimension_configurations: ::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>,
 }
 impl CloudWatchDestination {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-    pub fn dimension_configurations(&self) -> ::std::option::Option<&[crate::types::CloudWatchDimensionConfiguration]> {
-        self.dimension_configurations.as_deref()
+    pub fn dimension_configurations(&self) -> &[crate::types::CloudWatchDimensionConfiguration] {
+        use std::ops::Deref;
+        self.dimension_configurations.deref()
     }
 }
 impl CloudWatchDestination {
@@ -51,9 +52,16 @@ impl CloudWatchDestinationBuilder {
         &self.dimension_configurations
     }
     /// Consumes the builder and constructs a [`CloudWatchDestination`](crate::types::CloudWatchDestination).
-    pub fn build(self) -> crate::types::CloudWatchDestination {
-        crate::types::CloudWatchDestination {
-            dimension_configurations: self.dimension_configurations,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dimension_configurations`](crate::types::builders::CloudWatchDestinationBuilder::dimension_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchDestination {
+            dimension_configurations: self.dimension_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_configurations",
+                    "dimension_configurations was not specified but it is required when building CloudWatchDestination",
+                )
+            })?,
+        })
     }
 }

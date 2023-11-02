@@ -22,8 +22,10 @@ impl DescribeReplicationTaskAssessmentResultsOutput {
         self.bucket_name.as_deref()
     }
     /// <p> The task assessment report. </p>
-    pub fn replication_task_assessment_results(&self) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentResult]> {
-        self.replication_task_assessment_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_task_assessment_results.is_none()`.
+    pub fn replication_task_assessment_results(&self) -> &[crate::types::ReplicationTaskAssessmentResult] {
+        self.replication_task_assessment_results.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentResultsOutput {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterAgent`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`discovery_data(DiscoveryData)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::discovery_data) / [`set_discovery_data(Option<DiscoveryData>)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::set_discovery_data): <p>Data for associating an agent with the capabilities it is managing.</p>
-    ///   - [`agent_details(AgentDetails)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::agent_details) / [`set_agent_details(Option<AgentDetails>)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::set_agent_details): <p>Detailed information about the agent being registered.</p>
+    ///   - [`discovery_data(DiscoveryData)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::discovery_data) / [`set_discovery_data(Option<DiscoveryData>)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::set_discovery_data):<br>required: **true**<br><p>Data for associating an agent with the capabilities it is managing.</p><br>
+    ///   - [`agent_details(AgentDetails)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::agent_details) / [`set_agent_details(Option<AgentDetails>)`](crate::operation::register_agent::builders::RegisterAgentFluentBuilder::set_agent_details):<br>required: **true**<br><p>Detailed information about the agent being registered.</p><br>
     /// - On success, responds with [`RegisterAgentOutput`](crate::operation::register_agent::RegisterAgentOutput) with field(s):
     ///   - [`agent_id(Option<String>)`](crate::operation::register_agent::RegisterAgentOutput::agent_id): <p>UUID of registered agent.</p>
     /// - On failure, responds with [`SdkError<RegisterAgentError>`](crate::operation::register_agent::RegisterAgentError)

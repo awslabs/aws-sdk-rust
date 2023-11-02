@@ -41,6 +41,7 @@ pub struct DeleteViewVersionInputBuilder {
 }
 impl DeleteViewVersionInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteViewVersionInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
+    /// This field is required.
     pub fn view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteViewVersionInputBuilder {
         &self.view_id
     }
     /// <p>The version number of the view.</p>
+    /// This field is required.
     pub fn view_version(mut self, input: i32) -> Self {
         self.view_version = ::std::option::Option::Some(input);
         self

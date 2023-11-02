@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metrics {
     /// <p> Specifies whether the replication metrics are enabled. </p>
-    pub status: ::std::option::Option<crate::types::MetricsStatus>,
+    pub status: crate::types::MetricsStatus,
     /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
     pub event_threshold: ::std::option::Option<crate::types::ReplicationTimeValue>,
 }
 impl Metrics {
     /// <p> Specifies whether the replication metrics are enabled. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MetricsStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::MetricsStatus {
+        &self.status
     }
     /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
     pub fn event_threshold(&self) -> ::std::option::Option<&crate::types::ReplicationTimeValue> {
@@ -35,6 +35,7 @@ pub struct MetricsBuilder {
 }
 impl MetricsBuilder {
     /// <p> Specifies whether the replication metrics are enabled. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MetricsStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl MetricsBuilder {
         &self.event_threshold
     }
     /// Consumes the builder and constructs a [`Metrics`](crate::types::Metrics).
-    pub fn build(self) -> crate::types::Metrics {
-        crate::types::Metrics {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::MetricsBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::Metrics, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Metrics {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Metrics",
+                )
+            })?,
             event_threshold: self.event_threshold,
-        }
+        })
     }
 }

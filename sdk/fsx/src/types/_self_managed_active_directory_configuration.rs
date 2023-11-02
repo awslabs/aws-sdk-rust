@@ -43,8 +43,10 @@ impl SelfManagedActiveDirectoryConfiguration {
         self.password.as_deref()
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory. </p>
-    pub fn dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
+    pub fn dns_ips(&self) -> &[::std::string::String] {
+        self.dns_ips.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for SelfManagedActiveDirectoryConfiguration {
@@ -79,6 +81,7 @@ pub struct SelfManagedActiveDirectoryConfigurationBuilder {
 }
 impl SelfManagedActiveDirectoryConfigurationBuilder {
     /// <p>The fully qualified domain name of the self-managed AD directory, such as <code>corp.example.com</code>.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +130,7 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
         &self.file_system_administrators_group
     }
     /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain. This account must have the permission to join computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>, or in the default location of your AD domain.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +145,7 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
         &self.user_name
     }
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self

@@ -131,11 +131,10 @@ pub fn de_invoke_screen_automation_http_error(
                 )
                 .map_err(crate::operation::invoke_screen_automation::InvokeScreenAutomationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::invoke_screen_automation::InvokeScreenAutomationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::invoke_screen_automation::InvokeScreenAutomationError::ServiceUnavailableException({
@@ -177,11 +176,10 @@ pub fn de_invoke_screen_automation_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke_screen_automation::InvokeScreenAutomationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::invoke_screen_automation::InvokeScreenAutomationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::invoke_screen_automation::InvokeScreenAutomationError::generic(generic),
@@ -203,7 +201,7 @@ pub fn de_invoke_screen_automation_http_response(
         output = crate::protocol_serde::shape_invoke_screen_automation::de_invoke_screen_automation(_response_body, output)
             .map_err(crate::operation::invoke_screen_automation::InvokeScreenAutomationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::invoke_screen_automation_output_correct_errors(output).build()
     })
 }
 

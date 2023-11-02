@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
@@ -18,7 +18,7 @@ pub struct CreateDevEnvironmentInput {
     /// </note>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub instance_type: crate::types::InstanceType,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub inactivity_timeout_minutes: i32,
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
@@ -28,16 +28,20 @@ pub struct CreateDevEnvironmentInput {
 }
 impl CreateDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::RepositoryInput]> {
-        self.repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
+    pub fn repositories(&self) -> &[crate::types::RepositoryInput] {
+        self.repositories.as_deref().unwrap_or_default()
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -50,12 +54,14 @@ impl CreateDevEnvironmentInput {
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided. </p>
     /// </note>
-    pub fn ides(&self) -> ::std::option::Option<&[crate::types::IdeConfiguration]> {
-        self.ides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
+    pub fn ides(&self) -> &[crate::types::IdeConfiguration] {
+        self.ides.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
-        self.instance_type.as_ref()
+    pub fn instance_type(&self) -> &crate::types::InstanceType {
+        &self.instance_type
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
     pub fn inactivity_timeout_minutes(&self) -> i32 {
@@ -91,6 +97,7 @@ pub struct CreateDevEnvironmentInputBuilder {
 }
 impl CreateDevEnvironmentInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +112,7 @@ impl CreateDevEnvironmentInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -193,6 +201,7 @@ impl CreateDevEnvironmentInputBuilder {
         &self.ides
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -223,6 +232,7 @@ impl CreateDevEnvironmentInputBuilder {
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
+    /// This field is required.
     pub fn persistent_storage(mut self, input: crate::types::PersistentStorageConfiguration) -> Self {
         self.persistent_storage = ::std::option::Option::Some(input);
         self
@@ -241,18 +251,37 @@ impl CreateDevEnvironmentInputBuilder {
         &self.persistent_storage
     }
     /// Consumes the builder and constructs a [`CreateDevEnvironmentInput`](crate::operation::create_dev_environment::CreateDevEnvironmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder::space_name)
+    /// - [`project_name`](crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder::project_name)
+    /// - [`instance_type`](crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder::instance_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_dev_environment::CreateDevEnvironmentInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building CreateDevEnvironmentInput",
+                )
+            })?,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building CreateDevEnvironmentInput",
+                )
+            })?,
             repositories: self.repositories,
             client_token: self.client_token,
             alias: self.alias,
             ides: self.ides,
-            instance_type: self.instance_type,
+            instance_type: self.instance_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_type",
+                    "instance_type was not specified but it is required when building CreateDevEnvironmentInput",
+                )
+            })?,
             inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
             persistent_storage: self.persistent_storage,
         })

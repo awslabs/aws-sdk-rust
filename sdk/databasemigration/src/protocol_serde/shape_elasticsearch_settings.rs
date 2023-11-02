@@ -3,26 +3,26 @@ pub fn ser_elasticsearch_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ElasticsearchSettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.service_access_role_arn {
-        object.key("ServiceAccessRoleArn").string(var_1.as_str());
+    {
+        object.key("ServiceAccessRoleArn").string(input.service_access_role_arn.as_str());
     }
-    if let Some(var_2) = &input.endpoint_uri {
-        object.key("EndpointUri").string(var_2.as_str());
+    {
+        object.key("EndpointUri").string(input.endpoint_uri.as_str());
     }
-    if let Some(var_3) = &input.full_load_error_percentage {
+    if let Some(var_1) = &input.full_load_error_percentage {
         object.key("FullLoadErrorPercentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_4) = &input.error_retry_duration {
+    if let Some(var_2) = &input.error_retry_duration {
         object.key("ErrorRetryDuration").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_5) = &input.use_new_mapping_type {
-        object.key("UseNewMappingType").boolean(*var_5);
+    if let Some(var_3) = &input.use_new_mapping_type {
+        object.key("UseNewMappingType").boolean(*var_3);
     }
     Ok(())
 }
@@ -83,7 +83,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::elasticsearch_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

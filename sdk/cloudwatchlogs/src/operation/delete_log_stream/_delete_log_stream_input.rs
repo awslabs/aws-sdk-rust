@@ -34,6 +34,7 @@ pub struct DeleteLogStreamInputBuilder {
 }
 impl DeleteLogStreamInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLogStreamInputBuilder {
         &self.log_group_name
     }
     /// <p>The name of the log stream.</p>
+    /// This field is required.
     pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self

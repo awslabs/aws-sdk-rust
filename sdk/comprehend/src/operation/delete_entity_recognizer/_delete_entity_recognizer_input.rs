@@ -27,6 +27,7 @@ pub struct DeleteEntityRecognizerInputBuilder {
 }
 impl DeleteEntityRecognizerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    /// This field is required.
     pub fn entity_recognizer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_recognizer_arn = ::std::option::Option::Some(input.into());
         self

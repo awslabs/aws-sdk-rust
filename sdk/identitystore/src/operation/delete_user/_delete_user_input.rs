@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a user in the identity store.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
 }
 impl DeleteUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
 }
 impl DeleteUserInput {
@@ -34,6 +36,7 @@ pub struct DeleteUserInputBuilder {
 }
 impl DeleteUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteUserInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -62,10 +66,23 @@ impl DeleteUserInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::delete_user::builders::DeleteUserInputBuilder::identity_store_id)
+    /// - [`user_id`](crate::operation::delete_user::builders::DeleteUserInputBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            identity_store_id: self.identity_store_id,
-            user_id: self.user_id,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building DeleteUserInput",
+                )
+            })?,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building DeleteUserInput",
+                )
+            })?,
         })
     }
 }

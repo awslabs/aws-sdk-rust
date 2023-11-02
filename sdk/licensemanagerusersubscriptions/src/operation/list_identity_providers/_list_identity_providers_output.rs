@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityProvidersOutput {
     /// <p>Metadata that describes the list identity providers operation.</p>
-    pub identity_provider_summaries: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
+    pub identity_provider_summaries: ::std::vec::Vec<crate::types::IdentityProviderSummary>,
     /// <p>Token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIdentityProvidersOutput {
     /// <p>Metadata that describes the list identity providers operation.</p>
-    pub fn identity_provider_summaries(&self) -> ::std::option::Option<&[crate::types::IdentityProviderSummary]> {
-        self.identity_provider_summaries.as_deref()
+    pub fn identity_provider_summaries(&self) -> &[crate::types::IdentityProviderSummary] {
+        use std::ops::Deref;
+        self.identity_provider_summaries.deref()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListIdentityProvidersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
-    pub fn build(self) -> crate::operation::list_identity_providers::ListIdentityProvidersOutput {
-        crate::operation::list_identity_providers::ListIdentityProvidersOutput {
-            identity_provider_summaries: self.identity_provider_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_provider_summaries`](crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder::identity_provider_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_identity_providers::ListIdentityProvidersOutput {
+            identity_provider_summaries: self.identity_provider_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_provider_summaries",
+                    "identity_provider_summaries was not specified but it is required when building ListIdentityProvidersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

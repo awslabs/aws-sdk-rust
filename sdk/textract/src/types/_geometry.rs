@@ -15,8 +15,10 @@ impl Geometry {
         self.bounding_box.as_ref()
     }
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
-    pub fn polygon(&self) -> ::std::option::Option<&[crate::types::Point]> {
-        self.polygon.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
+    pub fn polygon(&self) -> &[crate::types::Point] {
+        self.polygon.as_deref().unwrap_or_default()
     }
 }
 impl Geometry {

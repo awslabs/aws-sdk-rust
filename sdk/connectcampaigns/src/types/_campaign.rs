@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Campaign {
     /// Identifier representing a Campaign
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// The resource name of an Amazon Connect campaign.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// The name of an Amazon Connect Campaign name.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// Amazon Connect Instance Id
-    pub connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub connect_instance_id: ::std::string::String,
     /// The possible types of dialer config parameters
     pub dialer_config: ::std::option::Option<crate::types::DialerConfig>,
     /// The configuration used for outbound calls.
@@ -21,20 +21,24 @@ pub struct Campaign {
 }
 impl Campaign {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// The resource name of an Amazon Connect campaign.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// The name of an Amazon Connect Campaign name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
-        self.connect_instance_id.as_deref()
+    pub fn connect_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connect_instance_id.deref()
     }
     /// The possible types of dialer config parameters
     pub fn dialer_config(&self) -> ::std::option::Option<&crate::types::DialerConfig> {
@@ -70,6 +74,7 @@ pub struct CampaignBuilder {
 }
 impl CampaignBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl CampaignBuilder {
         &self.id
     }
     /// The resource name of an Amazon Connect campaign.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl CampaignBuilder {
         &self.arn
     }
     /// The name of an Amazon Connect Campaign name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl CampaignBuilder {
         &self.name
     }
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl CampaignBuilder {
         &self.connect_instance_id
     }
     /// The possible types of dialer config parameters
+    /// This field is required.
     pub fn dialer_config(mut self, input: crate::types::DialerConfig) -> Self {
         self.dialer_config = ::std::option::Option::Some(input);
         self
@@ -140,6 +149,7 @@ impl CampaignBuilder {
         &self.dialer_config
     }
     /// The configuration used for outbound calls.
+    /// This field is required.
     pub fn outbound_call_config(mut self, input: crate::types::OutboundCallConfig) -> Self {
         self.outbound_call_config = ::std::option::Option::Some(input);
         self
@@ -174,15 +184,37 @@ impl CampaignBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Campaign`](crate::types::Campaign).
-    pub fn build(self) -> crate::types::Campaign {
-        crate::types::Campaign {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            connect_instance_id: self.connect_instance_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::CampaignBuilder::id)
+    /// - [`arn`](crate::types::builders::CampaignBuilder::arn)
+    /// - [`name`](crate::types::builders::CampaignBuilder::name)
+    /// - [`connect_instance_id`](crate::types::builders::CampaignBuilder::connect_instance_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Campaign, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Campaign {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Campaign")
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Campaign",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Campaign",
+                )
+            })?,
+            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connect_instance_id",
+                    "connect_instance_id was not specified but it is required when building Campaign",
+                )
+            })?,
             dialer_config: self.dialer_config,
             outbound_call_config: self.outbound_call_config,
             tags: self.tags,
-        }
+        })
     }
 }

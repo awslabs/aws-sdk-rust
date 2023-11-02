@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAttachedLinksOutput {
     /// <p>An array of structures that contain the information about the attached links.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListAttachedLinksItem>>,
+    pub items: ::std::vec::Vec<crate::types::ListAttachedLinksItem>,
     /// <p>The token to use when requesting the next set of links.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAttachedLinksOutput {
     /// <p>An array of structures that contain the information about the attached links.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListAttachedLinksItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ListAttachedLinksItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>The token to use when requesting the next set of links.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListAttachedLinksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAttachedLinksOutput`](crate::operation::list_attached_links::ListAttachedLinksOutput).
-    pub fn build(self) -> crate::operation::list_attached_links::ListAttachedLinksOutput {
-        crate::operation::list_attached_links::ListAttachedLinksOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_attached_links::builders::ListAttachedLinksOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_attached_links::ListAttachedLinksOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_attached_links::ListAttachedLinksOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListAttachedLinksOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct DescribeConfigurationSetsOutput {
 }
 impl DescribeConfigurationSetsOutput {
     /// <p>An array of ConfigurationSets objects.</p>
-    pub fn configuration_sets(&self) -> ::std::option::Option<&[crate::types::ConfigurationSetInformation]> {
-        self.configuration_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_sets.is_none()`.
+    pub fn configuration_sets(&self) -> &[crate::types::ConfigurationSetInformation] {
+        self.configuration_sets.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

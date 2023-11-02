@@ -84,8 +84,10 @@ impl CreateCustomLogSourceInput {
     /// <li> <p> <code>API_ACTIVITY</code> </p> </li>
     /// <li> <p> <code>CLOUD_API</code> </p> </li>
     /// </ul>
-    pub fn event_classes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_classes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_classes.is_none()`.
+    pub fn event_classes(&self) -> &[::std::string::String] {
+        self.event_classes.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for the third-party custom source.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::CustomLogSourceConfiguration> {
@@ -110,6 +112,7 @@ pub struct CreateCustomLogSourceInputBuilder {
 }
 impl CreateCustomLogSourceInputBuilder {
     /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
+    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self

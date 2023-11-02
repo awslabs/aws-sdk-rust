@@ -27,6 +27,7 @@ pub struct DeleteExportInputBuilder {
 }
 impl DeleteExportInputBuilder {
     /// <p>The unique identifier of the export to delete.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self

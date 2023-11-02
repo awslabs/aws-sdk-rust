@@ -27,6 +27,7 @@ pub struct DeleteActionInputBuilder {
 }
 impl DeleteActionInputBuilder {
     /// <p>The name of the action to delete.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self

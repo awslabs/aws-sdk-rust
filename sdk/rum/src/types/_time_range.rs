@@ -35,6 +35,7 @@ pub struct TimeRangeBuilder {
 }
 impl TimeRangeBuilder {
     /// <p>The beginning of the time range to retrieve performance events from.</p>
+    /// This field is required.
     pub fn after(mut self, input: i64) -> Self {
         self.after = ::std::option::Option::Some(input);
         self

@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
-    pub checks: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>>,
+    pub checks: ::std::vec::Vec<crate::types::TrustedAdvisorCheckDescription>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
-    pub fn checks(&self) -> ::std::option::Option<&[crate::types::TrustedAdvisorCheckDescription]> {
-        self.checks.as_deref()
+    pub fn checks(&self) -> &[crate::types::TrustedAdvisorCheckDescription] {
+        use std::ops::Deref;
+        self.checks.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorChecksOutput {
@@ -64,10 +65,22 @@ impl DescribeTrustedAdvisorChecksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorChecksOutput`](crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput).
-    pub fn build(self) -> crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput {
-        crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput {
-            checks: self.checks,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`checks`](crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksOutputBuilder::checks)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput {
+            checks: self.checks.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "checks",
+                    "checks was not specified but it is required when building DescribeTrustedAdvisorChecksOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DeleteDashboardInputBuilder {
 }
 impl DeleteDashboardInputBuilder {
     /// <p>The ID of the dashboard to delete.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self

@@ -44,6 +44,7 @@ pub struct UpdateResolverConfigInputBuilder {
 }
 impl UpdateResolverConfigInputBuilder {
     /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateResolverConfigInputBuilder {
     /// <p>It can take some time for the status change to be completed.</p>
     /// </note>
     /// <p></p>
+    /// This field is required.
     pub fn autodefined_reverse_flag(mut self, input: crate::types::AutodefinedReverseFlag) -> Self {
         self.autodefined_reverse_flag = ::std::option::Option::Some(input);
         self

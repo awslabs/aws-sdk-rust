@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProject`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_id(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project_id): <p>The ID of the project.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`project_id(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project_id):<br>required: **true**<br><p>The ID of the project.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p><br>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput)
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
     pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {

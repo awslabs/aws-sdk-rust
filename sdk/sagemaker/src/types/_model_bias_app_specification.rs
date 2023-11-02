@@ -42,6 +42,7 @@ pub struct ModelBiasAppSpecificationBuilder {
 }
 impl ModelBiasAppSpecificationBuilder {
     /// <p>The container image to be run by the model bias job.</p>
+    /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ModelBiasAppSpecificationBuilder {
         &self.image_uri
     }
     /// <p>JSON formatted S3 file that defines bias parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure bias parameters</a>.</p>
+    /// This field is required.
     pub fn config_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_uri = ::std::option::Option::Some(input.into());
         self

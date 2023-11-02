@@ -34,6 +34,7 @@ pub struct DeleteGlobalReplicationGroupInputBuilder {
 }
 impl DeleteGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
+    /// This field is required.
     pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>The primary replication group is retained as a standalone replication group. </p>
+    /// This field is required.
     pub fn retain_primary_replication_group(mut self, input: bool) -> Self {
         self.retain_primary_replication_group = ::std::option::Option::Some(input);
         self

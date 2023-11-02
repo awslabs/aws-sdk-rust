@@ -59,8 +59,10 @@ impl DescribeHyperParameterTuningJobOutput {
         self.training_job_definition.as_ref()
     }
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
-    pub fn training_job_definitions(&self) -> ::std::option::Option<&[crate::types::HyperParameterTrainingJobDefinition]> {
-        self.training_job_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_job_definitions.is_none()`.
+    pub fn training_job_definitions(&self) -> &[crate::types::HyperParameterTrainingJobDefinition] {
+        self.training_job_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
     pub fn hyper_parameter_tuning_job_status(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
@@ -153,6 +155,7 @@ pub struct DescribeHyperParameterTuningJobOutputBuilder {
 }
 impl DescribeHyperParameterTuningJobOutputBuilder {
     /// <p>The name of the hyperparameter tuning job.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +170,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.hyper_parameter_tuning_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +185,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.hyper_parameter_tuning_job_arn
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_config(mut self, input: crate::types::HyperParameterTuningJobConfig) -> Self {
         self.hyper_parameter_tuning_job_config = ::std::option::Option::Some(input);
         self
@@ -232,6 +237,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.training_job_definitions
     }
     /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_status(mut self, input: crate::types::HyperParameterTuningJobStatus) -> Self {
         self.hyper_parameter_tuning_job_status = ::std::option::Option::Some(input);
         self
@@ -246,6 +252,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.hyper_parameter_tuning_job_status
     }
     /// <p>The date and time that the tuning job started.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -288,6 +295,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.last_modified_time
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
+    /// This field is required.
     pub fn training_job_status_counters(mut self, input: crate::types::TrainingJobStatusCounters) -> Self {
         self.training_job_status_counters = ::std::option::Option::Some(input);
         self
@@ -302,6 +310,7 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
         &self.training_job_status_counters
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
+    /// This field is required.
     pub fn objective_status_counters(mut self, input: crate::types::ObjectiveStatusCounters) -> Self {
         self.objective_status_counters = ::std::option::Option::Some(input);
         self

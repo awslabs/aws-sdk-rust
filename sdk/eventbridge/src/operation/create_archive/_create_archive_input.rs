@@ -55,6 +55,7 @@ pub struct CreateArchiveInputBuilder {
 }
 impl CreateArchiveInputBuilder {
     /// <p>The name for the archive to create.</p>
+    /// This field is required.
     pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archive_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateArchiveInputBuilder {
         &self.archive_name
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
+    /// This field is required.
     pub fn event_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source_arn = ::std::option::Option::Some(input.into());
         self

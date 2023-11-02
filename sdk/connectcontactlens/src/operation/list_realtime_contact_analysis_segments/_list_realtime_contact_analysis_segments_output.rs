@@ -16,8 +16,10 @@ pub struct ListRealtimeContactAnalysisSegmentsOutput {
 }
 impl ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>An analyzed transcript or category.</p>
-    pub fn segments(&self) -> ::std::option::Option<&[crate::types::RealtimeContactAnalysisSegment]> {
-        self.segments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
+    pub fn segments(&self) -> &[crate::types::RealtimeContactAnalysisSegment] {
+        self.segments.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>

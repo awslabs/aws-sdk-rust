@@ -17,12 +17,16 @@ impl DeleteFileSystemOpenZfsConfiguration {
         self.skip_final_backup
     }
     /// <p>A list of tags to apply to the file system's final backup.</p>
-    pub fn final_backup_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.final_backup_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_backup_tags.is_none()`.
+    pub fn final_backup_tags(&self) -> &[crate::types::Tag] {
+        self.final_backup_tags.as_deref().unwrap_or_default()
     }
     /// <p>To delete a file system if there are child volumes present below the root volume, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system has child volumes and you don't use this option, the delete request will fail.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::DeleteFileSystemOpenZfsOption]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::DeleteFileSystemOpenZfsOption] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl DeleteFileSystemOpenZfsConfiguration {

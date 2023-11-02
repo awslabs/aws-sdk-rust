@@ -27,8 +27,10 @@ impl SessionState {
         self.intent.as_ref()
     }
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
-        self.active_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
+    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
+        self.active_contexts.as_deref().unwrap_or_default()
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
     pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

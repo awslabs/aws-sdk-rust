@@ -24,12 +24,16 @@ impl CreateDimensionInput {
         self.r#type.as_ref()
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn string_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_values.is_none()`.
+    pub fn string_values(&self) -> &[::std::string::String] {
+        self.string_values.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that can be used to manage the dimension.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +59,7 @@ pub struct CreateDimensionInputBuilder {
 }
 impl CreateDimensionInputBuilder {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl CreateDimensionInputBuilder {
         &self.name
     }
     /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -123,6 +129,7 @@ impl CreateDimensionInputBuilder {
         &self.tags
     }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

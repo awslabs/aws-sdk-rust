@@ -50,6 +50,7 @@ pub struct DecryptDataInputBuilder {
 }
 impl DecryptDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl DecryptDataInputBuilder {
         &self.key_identifier
     }
     /// <p>The ciphertext to decrypt.</p>
+    /// This field is required.
     pub fn cipher_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cipher_text = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl DecryptDataInputBuilder {
         &self.cipher_text
     }
     /// <p>The encryption key type and attributes for ciphertext decryption.</p>
+    /// This field is required.
     pub fn decryption_attributes(mut self, input: crate::types::EncryptionDecryptionAttributes) -> Self {
         self.decryption_attributes = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct DescribeDomainControllersOutput {
 }
 impl DescribeDomainControllersOutput {
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
-    pub fn domain_controllers(&self) -> ::std::option::Option<&[crate::types::DomainController]> {
-        self.domain_controllers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_controllers.is_none()`.
+    pub fn domain_controllers(&self) -> &[crate::types::DomainController] {
+        self.domain_controllers.as_deref().unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

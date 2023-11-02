@@ -27,6 +27,7 @@ pub struct GetSettingsInputBuilder {
 }
 impl GetSettingsInputBuilder {
     /// <p> The list of setting attribute enum values. </p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::SettingAttribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self

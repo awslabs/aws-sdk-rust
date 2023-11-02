@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTablesOutput {
     /// <p> The list of tables in the workbook. </p>
-    pub tables: ::std::option::Option<::std::vec::Vec<crate::types::Table>>,
+    pub tables: ::std::vec::Vec<crate::types::Table>,
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
@@ -13,8 +13,9 @@ pub struct ListTablesOutput {
 }
 impl ListTablesOutput {
     /// <p> The list of tables in the workbook. </p>
-    pub fn tables(&self) -> ::std::option::Option<&[crate::types::Table]> {
-        self.tables.as_deref()
+    pub fn tables(&self) -> &[crate::types::Table] {
+        use std::ops::Deref;
+        self.tables.deref()
     }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -105,12 +106,19 @@ impl ListTablesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
-    pub fn build(self) -> crate::operation::list_tables::ListTablesOutput {
-        crate::operation::list_tables::ListTablesOutput {
-            tables: self.tables,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tables`](crate::operation::list_tables::builders::ListTablesOutputBuilder::tables)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_tables::ListTablesOutput {
+            tables: self.tables.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tables",
+                    "tables was not specified but it is required when building ListTablesOutput",
+                )
+            })?,
             next_token: self.next_token,
             workbook_cursor: self.workbook_cursor.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

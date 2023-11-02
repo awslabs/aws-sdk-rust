@@ -18,8 +18,10 @@ pub struct DescribeScalingPlansInput {
 }
 impl DescribeScalingPlansInput {
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn scaling_plan_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scaling_plan_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_plan_names.is_none()`.
+    pub fn scaling_plan_names(&self) -> &[::std::string::String] {
+        self.scaling_plan_names.as_deref().unwrap_or_default()
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
@@ -28,8 +30,10 @@ impl DescribeScalingPlansInput {
         self.scaling_plan_version
     }
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    pub fn application_sources(&self) -> ::std::option::Option<&[crate::types::ApplicationSource]> {
-        self.application_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_sources.is_none()`.
+    pub fn application_sources(&self) -> &[crate::types::ApplicationSource] {
+        self.application_sources.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

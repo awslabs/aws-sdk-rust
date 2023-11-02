@@ -29,6 +29,7 @@ pub fn ser_metric_stream_statistics_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_metric_stream_statistics_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MetricStreamStatisticsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -59,5 +60,5 @@ pub fn de_metric_stream_statistics_configuration(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::metric_stream_statistics_configuration_correct_errors(builder).build())
 }

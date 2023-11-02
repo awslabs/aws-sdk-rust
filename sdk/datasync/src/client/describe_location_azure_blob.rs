@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationAzureBlob`](crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder::set_location_arn): <p>Specifies the Amazon Resource Name (ARN) of your Azure Blob Storage transfer location.</p>
+    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobFluentBuilder::set_location_arn):<br>required: **true**<br><p>Specifies the Amazon Resource Name (ARN) of your Azure Blob Storage transfer location.</p><br>
     /// - On success, responds with [`DescribeLocationAzureBlobOutput`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput::location_arn): <p>The ARN of your Azure Blob Storage transfer location.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput::location_uri): <p>The URL of the Azure Blob Storage container involved in your transfer.</p>

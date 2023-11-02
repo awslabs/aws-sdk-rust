@@ -22,13 +22,17 @@ pub struct CriterionAdditionalProperties {
 }
 impl CriterionAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
-    pub fn eq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eq.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eq.is_none()`.
+    pub fn eq(&self) -> &[::std::string::String] {
+        self.eq.as_deref().unwrap_or_default()
     }
     /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p>
     /// <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
-    pub fn eq_exact_match(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eq_exact_match.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eq_exact_match.is_none()`.
+    pub fn eq_exact_match(&self) -> &[::std::string::String] {
+        self.eq_exact_match.as_deref().unwrap_or_default()
     }
     /// <p>The value for the property is greater than the specified value.</p>
     pub fn gt(&self) -> ::std::option::Option<i64> {
@@ -47,8 +51,10 @@ impl CriterionAdditionalProperties {
         self.lte
     }
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
-    pub fn neq(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.neq.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.neq.is_none()`.
+    pub fn neq(&self) -> &[::std::string::String] {
+        self.neq.as_deref().unwrap_or_default()
     }
 }
 impl CriterionAdditionalProperties {

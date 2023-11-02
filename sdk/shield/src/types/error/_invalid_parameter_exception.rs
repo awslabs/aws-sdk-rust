@@ -18,8 +18,10 @@ impl InvalidParameterException {
         self.reason.as_ref()
     }
     /// <p>Fields that caused the exception.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::ValidationExceptionField] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl InvalidParameterException {

@@ -87,6 +87,49 @@ impl From<crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryP
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError> for Error {
+    fn from(err: crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError) -> Self {
+        match err {
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_endpoint_access::CreateEndpointAccessError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -238,6 +281,49 @@ impl From<crate::operation::create_workgroup::CreateWorkgroupError> for Error {
             crate::operation::create_workgroup::CreateWorkgroupError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::create_workgroup::CreateWorkgroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_workgroup::CreateWorkgroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError> for Error {
+    fn from(err: crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError) -> Self {
+        match err {
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -433,6 +519,47 @@ impl From<crate::operation::get_credentials::GetCredentialsError> for Error {
             crate::operation::get_credentials::GetCredentialsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_credentials::GetCredentialsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_credentials::GetCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_custom_domain_association::GetCustomDomainAssociationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_custom_domain_association::GetCustomDomainAssociationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_custom_domain_association::GetCustomDomainAssociationError> for Error {
+    fn from(err: crate::operation::get_custom_domain_association::GetCustomDomainAssociationError) -> Self {
+        match err {
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_custom_domain_association::GetCustomDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -649,6 +776,46 @@ impl From<crate::operation::get_workgroup::GetWorkgroupError> for Error {
             crate::operation::get_workgroup::GetWorkgroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_workgroup::GetWorkgroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_workgroup::GetWorkgroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError> for Error {
+    fn from(err: crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError) -> Self {
+        match err {
+            crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError::InvalidPaginationException(inner) => {
+                Error::InvalidPaginationException(inner)
+            }
+            crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1055,6 +1222,49 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError> for Error {
+    fn from(err: crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError) -> Self {
+        match err {
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

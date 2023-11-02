@@ -34,6 +34,7 @@ pub struct GetSignalingChannelEndpointInputBuilder {
 }
 impl GetSignalingChannelEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self

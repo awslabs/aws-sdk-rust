@@ -27,6 +27,7 @@ pub struct GetSolFunctionInstanceInputBuilder {
 }
 impl GetSolFunctionInstanceInputBuilder {
     /// <p>ID of the network function.</p>
+    /// This field is required.
     pub fn vnf_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_instance_id = ::std::option::Option::Some(input.into());
         self

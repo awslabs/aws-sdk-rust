@@ -58,8 +58,10 @@ impl DescribeEndpointOutput {
         self.endpoint_config_name.as_deref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.</p>
-    pub fn production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariantSummary]> {
-        self.production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
+    pub fn production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
+        self.production_variants.as_deref().unwrap_or_default()
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfigSummary> {
@@ -109,8 +111,10 @@ impl DescribeEndpointOutput {
         self.explainer_config.as_ref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
-    pub fn shadow_production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariantSummary]> {
-        self.shadow_production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
+    pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
+        self.shadow_production_variants.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEndpointOutput {
@@ -147,6 +151,7 @@ pub struct DescribeEndpointOutputBuilder {
 }
 impl DescribeEndpointOutputBuilder {
     /// <p>Name of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +166,7 @@ impl DescribeEndpointOutputBuilder {
         &self.endpoint_name
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +181,7 @@ impl DescribeEndpointOutputBuilder {
         &self.endpoint_arn
     }
     /// <p>The name of the endpoint configuration associated with this endpoint.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
@@ -234,6 +241,7 @@ impl DescribeEndpointOutputBuilder {
     /// <li> <p> <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use the <code>FailureReason</code> value returned by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a> for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.</p> </li>
     /// <li> <p> <code>UpdateRollbackFailed</code>: Both the rolling deployment and auto-rollback failed. Your endpoint is in service with a mix of the old and new endpoint configurations. For information about how to remedy this issue and restore the endpoint's status to <code>InService</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html">Rolling Deployments</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input);
         self
@@ -284,6 +292,7 @@ impl DescribeEndpointOutputBuilder {
         &self.failure_reason
     }
     /// <p>A timestamp that shows when the endpoint was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -298,6 +307,7 @@ impl DescribeEndpointOutputBuilder {
         &self.creation_time
     }
     /// <p>A timestamp that shows when the endpoint was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

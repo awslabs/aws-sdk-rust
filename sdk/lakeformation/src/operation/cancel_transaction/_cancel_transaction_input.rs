@@ -27,6 +27,7 @@ pub struct CancelTransactionInputBuilder {
 }
 impl CancelTransactionInputBuilder {
     /// <p>The transaction to cancel.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self

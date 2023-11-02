@@ -3,42 +3,42 @@ pub fn ser_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Rule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
     if input.disabled {
         object.key("Disabled").boolean(input.disabled);
     }
-    if let Some(var_2) = &input.check_expression {
-        object.key("CheckExpression").string(var_2.as_str());
+    {
+        object.key("CheckExpression").string(input.check_expression.as_str());
     }
-    if let Some(var_3) = &input.substitution_map {
+    if let Some(var_1) = &input.substitution_map {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("SubstitutionMap").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_2 = object.key("SubstitutionMap").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_4.finish();
+        object_2.finish();
     }
-    if let Some(var_7) = &input.threshold {
+    if let Some(var_5) = &input.threshold {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Threshold").start_object();
-        crate::protocol_serde::shape_threshold::ser_threshold(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_6 = object.key("Threshold").start_object();
+        crate::protocol_serde::shape_threshold::ser_threshold(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_9) = &input.column_selectors {
-        let mut array_10 = object.key("ColumnSelectors").start_array();
-        for item_11 in var_9 {
+    if let Some(var_7) = &input.column_selectors {
+        let mut array_8 = object.key("ColumnSelectors").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_column_selector::ser_column_selector(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_column_selector::ser_column_selector(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_10.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -95,7 +95,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rule_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

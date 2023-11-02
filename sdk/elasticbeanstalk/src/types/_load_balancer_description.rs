@@ -21,8 +21,10 @@ impl LoadBalancerDescription {
         self.domain.as_deref()
     }
     /// <p>A list of Listeners used by the LoadBalancer.</p>
-    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::Listener]> {
-        self.listeners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listeners.is_none()`.
+    pub fn listeners(&self) -> &[crate::types::Listener] {
+        self.listeners.as_deref().unwrap_or_default()
     }
 }
 impl LoadBalancerDescription {

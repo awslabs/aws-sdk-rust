@@ -3,14 +3,14 @@ pub fn ser_metric(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Metric,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.metric_name {
-        object.key("MetricName").string(var_1.as_str());
+    {
+        object.key("MetricName").string(input.metric_name.as_str());
     }
-    if let Some(var_2) = &input.aggregation_function {
-        object.key("AggregationFunction").string(var_2.as_str());
+    {
+        object.key("AggregationFunction").string(input.aggregation_function.as_str());
     }
-    if let Some(var_3) = &input.namespace {
-        object.key("Namespace").string(var_3.as_str());
+    if let Some(var_1) = &input.namespace {
+        object.key("Namespace").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::metric_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

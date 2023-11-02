@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateIpAccessSettings`](crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_arn(impl Into<String>)`](crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`portal_arn(impl Into<String>)`](crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_ip_access_settings::builders::DisassociateIpAccessSettingsFluentBuilder::set_portal_arn):<br>required: **true**<br><p>The ARN of the web portal.</p><br>
     /// - On success, responds with [`DisassociateIpAccessSettingsOutput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateIpAccessSettingsError>`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsError)
     pub fn disassociate_ip_access_settings(

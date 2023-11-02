@@ -48,6 +48,7 @@ pub struct SampleChannelDataInputBuilder {
 }
 impl SampleChannelDataInputBuilder {
     /// <p>The name of the channel whose message samples are retrieved.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self

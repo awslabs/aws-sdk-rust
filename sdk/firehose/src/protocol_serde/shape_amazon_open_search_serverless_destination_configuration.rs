@@ -3,59 +3,59 @@ pub fn ser_amazon_open_search_serverless_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonOpenSearchServerlessDestinationConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("RoleARN").string(var_1.as_str());
+    {
+        object.key("RoleARN").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.collection_endpoint {
-        object.key("CollectionEndpoint").string(var_2.as_str());
+    if let Some(var_1) = &input.collection_endpoint {
+        object.key("CollectionEndpoint").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.index_name {
-        object.key("IndexName").string(var_3.as_str());
+    {
+        object.key("IndexName").string(input.index_name.as_str());
     }
-    if let Some(var_4) = &input.buffering_hints {
+    if let Some(var_2) = &input.buffering_hints {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("BufferingHints").start_object();
+        let mut object_3 = object.key("BufferingHints").start_object();
         crate::protocol_serde::shape_amazon_open_search_serverless_buffering_hints::ser_amazon_open_search_serverless_buffering_hints(
+            &mut object_3,
+            var_2,
+        )?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.retry_options {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("RetryOptions").start_object();
+        crate::protocol_serde::shape_amazon_open_search_serverless_retry_options::ser_amazon_open_search_serverless_retry_options(
             &mut object_5,
             var_4,
         )?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.retry_options {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("RetryOptions").start_object();
-        crate::protocol_serde::shape_amazon_open_search_serverless_retry_options::ser_amazon_open_search_serverless_retry_options(
-            &mut object_7,
-            var_6,
-        )?;
-        object_7.finish();
+    if let Some(var_6) = &input.s3_backup_mode {
+        object.key("S3BackupMode").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.s3_backup_mode {
-        object.key("S3BackupMode").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.s3_configuration {
+    if let Some(var_7) = &input.s3_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("S3Configuration").start_object();
-        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_10, var_9)?;
+        let mut object_8 = object.key("S3Configuration").start_object();
+        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.processing_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("ProcessingConfiguration").start_object();
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.processing_configuration {
+    if let Some(var_11) = &input.cloud_watch_logging_options {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_12, var_11)?;
+        let mut object_12 = object.key("CloudWatchLoggingOptions").start_object();
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.cloud_watch_logging_options {
+    if let Some(var_13) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_14, var_13)?;
+        let mut object_14 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_14, var_13)?;
         object_14.finish();
-    }
-    if let Some(var_15) = &input.vpc_configuration {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_16, var_15)?;
-        object_16.finish();
     }
     Ok(())
 }

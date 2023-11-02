@@ -14,8 +14,10 @@ impl BatchGetCommitsInput {
     /// <p>The full commit IDs of the commits to get information about.</p> <note>
     /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
     /// </note>
-    pub fn commit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.commit_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commit_ids.is_none()`.
+    pub fn commit_ids(&self) -> &[::std::string::String] {
+        self.commit_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of the repository that contains the commits.</p>
     pub fn repository_name(&self) -> ::std::option::Option<&str> {
@@ -64,6 +66,7 @@ impl BatchGetCommitsInputBuilder {
         &self.commit_ids
     }
     /// <p>The name of the repository that contains the commits.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

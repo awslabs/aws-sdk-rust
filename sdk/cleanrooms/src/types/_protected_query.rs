@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProtectedQuery {
     /// <p>The identifier for a protected query instance.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The identifier for the membership.</p>
-    pub membership_id: ::std::option::Option<::std::string::String>,
+    pub membership_id: ::std::string::String,
     /// <p>The ARN of the membership.</p>
-    pub membership_arn: ::std::option::Option<::std::string::String>,
+    pub membership_arn: ::std::string::String,
     /// <p>The time at which the protected query was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The protected query SQL parameters.</p>
     pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     /// <p>The status of the query.</p>
-    pub status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
+    pub status: crate::types::ProtectedQueryStatus,
     /// <p>Contains any details needed to write the query results.</p>
     pub result_configuration: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
     /// <p>Statistics about protected query execution.</p>
@@ -27,28 +27,31 @@ pub struct ProtectedQuery {
 }
 impl ProtectedQuery {
     /// <p>The identifier for a protected query instance.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The identifier for the membership.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
-        self.membership_id.as_deref()
+    pub fn membership_id(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_id.deref()
     }
     /// <p>The ARN of the membership.</p>
-    pub fn membership_arn(&self) -> ::std::option::Option<&str> {
-        self.membership_arn.as_deref()
+    pub fn membership_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_arn.deref()
     }
     /// <p>The time at which the protected query was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The protected query SQL parameters.</p>
     pub fn sql_parameters(&self) -> ::std::option::Option<&crate::types::ProtectedQuerySqlParameters> {
         self.sql_parameters.as_ref()
     }
     /// <p>The status of the query.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProtectedQueryStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ProtectedQueryStatus {
+        &self.status
     }
     /// <p>Contains any details needed to write the query results.</p>
     pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ProtectedQueryResultConfiguration> {
@@ -107,6 +110,7 @@ pub struct ProtectedQueryBuilder {
 }
 impl ProtectedQueryBuilder {
     /// <p>The identifier for a protected query instance.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +125,7 @@ impl ProtectedQueryBuilder {
         &self.id
     }
     /// <p>The identifier for the membership.</p>
+    /// This field is required.
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +140,7 @@ impl ProtectedQueryBuilder {
         &self.membership_id
     }
     /// <p>The ARN of the membership.</p>
+    /// This field is required.
     pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_arn = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +155,7 @@ impl ProtectedQueryBuilder {
         &self.membership_arn
     }
     /// <p>The time at which the protected query was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -177,6 +184,7 @@ impl ProtectedQueryBuilder {
         &self.sql_parameters
     }
     /// <p>The status of the query.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ProtectedQueryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -247,19 +255,50 @@ impl ProtectedQueryBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`ProtectedQuery`](crate::types::ProtectedQuery).
-    pub fn build(self) -> crate::types::ProtectedQuery {
-        crate::types::ProtectedQuery {
-            id: self.id,
-            membership_id: self.membership_id,
-            membership_arn: self.membership_arn,
-            create_time: self.create_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ProtectedQueryBuilder::id)
+    /// - [`membership_id`](crate::types::builders::ProtectedQueryBuilder::membership_id)
+    /// - [`membership_arn`](crate::types::builders::ProtectedQueryBuilder::membership_arn)
+    /// - [`create_time`](crate::types::builders::ProtectedQueryBuilder::create_time)
+    /// - [`status`](crate::types::builders::ProtectedQueryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQuery, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectedQuery {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ProtectedQuery",
+                )
+            })?,
+            membership_id: self.membership_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_id",
+                    "membership_id was not specified but it is required when building ProtectedQuery",
+                )
+            })?,
+            membership_arn: self.membership_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_arn",
+                    "membership_arn was not specified but it is required when building ProtectedQuery",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building ProtectedQuery",
+                )
+            })?,
             sql_parameters: self.sql_parameters,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ProtectedQuery",
+                )
+            })?,
             result_configuration: self.result_configuration,
             statistics: self.statistics,
             result: self.result,
             error: self.error,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ProtectedQueryBuilder {

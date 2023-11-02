@@ -11,8 +11,10 @@ pub struct ListAssociatedGroupsOutput {
 }
 impl ListAssociatedGroupsOutput {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupSummary]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupSummary] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

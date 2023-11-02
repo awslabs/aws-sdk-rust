@@ -27,6 +27,7 @@ pub struct DeleteFleetInputBuilder {
 }
 impl DeleteFleetInputBuilder {
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self

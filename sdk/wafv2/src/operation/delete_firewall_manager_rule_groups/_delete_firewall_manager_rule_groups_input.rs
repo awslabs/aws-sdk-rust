@@ -34,6 +34,7 @@ pub struct DeleteFirewallManagerRuleGroupsInputBuilder {
 }
 impl DeleteFirewallManagerRuleGroupsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
+    /// This field is required.
     pub fn web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteFirewallManagerRuleGroupsInputBuilder {
         &self.web_acl_arn
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// This field is required.
     pub fn web_acl_lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_lock_token = ::std::option::Option::Some(input.into());
         self

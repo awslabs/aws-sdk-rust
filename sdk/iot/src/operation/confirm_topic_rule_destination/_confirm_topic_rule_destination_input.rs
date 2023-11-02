@@ -27,6 +27,7 @@ pub struct ConfirmTopicRuleDestinationInputBuilder {
 }
 impl ConfirmTopicRuleDestinationInputBuilder {
     /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
+    /// This field is required.
     pub fn confirmation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.confirmation_token = ::std::option::Option::Some(input.into());
         self

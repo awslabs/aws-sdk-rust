@@ -9,8 +9,10 @@ pub struct ResultSetMetadata {
 }
 impl ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
-    pub fn column_info(&self) -> ::std::option::Option<&[crate::types::ColumnInfo]> {
-        self.column_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_info.is_none()`.
+    pub fn column_info(&self) -> &[crate::types::ColumnInfo] {
+        self.column_info.as_deref().unwrap_or_default()
     }
 }
 impl ResultSetMetadata {

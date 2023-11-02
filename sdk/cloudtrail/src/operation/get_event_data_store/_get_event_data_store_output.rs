@@ -42,8 +42,10 @@ impl GetEventDataStoreOutput {
         self.status.as_ref()
     }
     /// <p>The advanced event selectors used to select events for the data store.</p>
-    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
-        self.advanced_event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
+    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the event data store includes events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {

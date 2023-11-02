@@ -9,53 +9,53 @@ pub fn ser_topic_filter(
     if let Some(var_2) = &input.filter_class {
         object.key("FilterClass").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.filter_name {
-        object.key("FilterName").string(var_3.as_str());
+    {
+        object.key("FilterName").string(input.filter_name.as_str());
     }
-    if let Some(var_4) = &input.filter_synonyms {
-        let mut array_5 = object.key("FilterSynonyms").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.filter_synonyms {
+        let mut array_4 = object.key("FilterSynonyms").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_7) = &input.operand_field_name {
-        object.key("OperandFieldName").string(var_7.as_str());
+    {
+        object.key("OperandFieldName").string(input.operand_field_name.as_str());
     }
-    if let Some(var_8) = &input.filter_type {
-        object.key("FilterType").string(var_8.as_str());
+    if let Some(var_6) = &input.filter_type {
+        object.key("FilterType").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.category_filter {
+    if let Some(var_7) = &input.category_filter {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("CategoryFilter").start_object();
-        crate::protocol_serde::shape_topic_category_filter::ser_topic_category_filter(&mut object_10, var_9)?;
+        let mut object_8 = object.key("CategoryFilter").start_object();
+        crate::protocol_serde::shape_topic_category_filter::ser_topic_category_filter(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.numeric_equality_filter {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("NumericEqualityFilter").start_object();
+        crate::protocol_serde::shape_topic_numeric_equality_filter::ser_topic_numeric_equality_filter(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.numeric_equality_filter {
+    if let Some(var_11) = &input.numeric_range_filter {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("NumericEqualityFilter").start_object();
-        crate::protocol_serde::shape_topic_numeric_equality_filter::ser_topic_numeric_equality_filter(&mut object_12, var_11)?;
+        let mut object_12 = object.key("NumericRangeFilter").start_object();
+        crate::protocol_serde::shape_topic_numeric_range_filter::ser_topic_numeric_range_filter(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.numeric_range_filter {
+    if let Some(var_13) = &input.date_range_filter {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("NumericRangeFilter").start_object();
-        crate::protocol_serde::shape_topic_numeric_range_filter::ser_topic_numeric_range_filter(&mut object_14, var_13)?;
+        let mut object_14 = object.key("DateRangeFilter").start_object();
+        crate::protocol_serde::shape_topic_date_range_filter::ser_topic_date_range_filter(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.date_range_filter {
+    if let Some(var_15) = &input.relative_date_filter {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("DateRangeFilter").start_object();
-        crate::protocol_serde::shape_topic_date_range_filter::ser_topic_date_range_filter(&mut object_16, var_15)?;
+        let mut object_16 = object.key("RelativeDateFilter").start_object();
+        crate::protocol_serde::shape_topic_relative_date_filter::ser_topic_relative_date_filter(&mut object_16, var_15)?;
         object_16.finish();
-    }
-    if let Some(var_17) = &input.relative_date_filter {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("RelativeDateFilter").start_object();
-        crate::protocol_serde::shape_topic_relative_date_filter::ser_topic_relative_date_filter(&mut object_18, var_17)?;
-        object_18.finish();
     }
     Ok(())
 }
@@ -146,7 +146,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::topic_filter_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

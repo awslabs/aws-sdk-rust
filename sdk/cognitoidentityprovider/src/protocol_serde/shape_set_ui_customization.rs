@@ -114,7 +114,7 @@ pub fn de_set_ui_customization_http_response(
         output = crate::protocol_serde::shape_set_ui_customization::de_set_ui_customization(_response_body, output)
             .map_err(crate::operation::set_ui_customization::SetUICustomizationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::set_ui_customization_output_correct_errors(output).build()
     })
 }
 

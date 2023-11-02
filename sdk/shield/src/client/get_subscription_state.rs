@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_subscription_state::builders::GetSubscriptionStateFluentBuilder::send) it.
     /// - On success, responds with [`GetSubscriptionStateOutput`](crate::operation::get_subscription_state::GetSubscriptionStateOutput) with field(s):
-    ///   - [`subscription_state(Option<SubscriptionState>)`](crate::operation::get_subscription_state::GetSubscriptionStateOutput::subscription_state): <p>The status of the subscription.</p>
+    ///   - [`subscription_state(SubscriptionState)`](crate::operation::get_subscription_state::GetSubscriptionStateOutput::subscription_state): <p>The status of the subscription.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionStateError>`](crate::operation::get_subscription_state::GetSubscriptionStateError)
     pub fn get_subscription_state(&self) -> crate::operation::get_subscription_state::builders::GetSubscriptionStateFluentBuilder {
         crate::operation::get_subscription_state::builders::GetSubscriptionStateFluentBuilder::new(self.handle.clone())

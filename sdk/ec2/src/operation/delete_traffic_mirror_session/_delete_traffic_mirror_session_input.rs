@@ -34,6 +34,7 @@ pub struct DeleteTrafficMirrorSessionInputBuilder {
 }
 impl DeleteTrafficMirrorSessionInputBuilder {
     /// <p>The ID of the Traffic Mirror session.</p>
+    /// This field is required.
     pub fn traffic_mirror_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_session_id = ::std::option::Option::Some(input.into());
         self

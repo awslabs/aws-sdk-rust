@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReplay`](crate::operation::describe_replay::builders::DescribeReplayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replay_name(impl Into<String>)`](crate::operation::describe_replay::builders::DescribeReplayFluentBuilder::replay_name) / [`set_replay_name(Option<String>)`](crate::operation::describe_replay::builders::DescribeReplayFluentBuilder::set_replay_name): <p>The name of the replay to retrieve.</p>
+    ///   - [`replay_name(impl Into<String>)`](crate::operation::describe_replay::builders::DescribeReplayFluentBuilder::replay_name) / [`set_replay_name(Option<String>)`](crate::operation::describe_replay::builders::DescribeReplayFluentBuilder::set_replay_name):<br>required: **true**<br><p>The name of the replay to retrieve.</p><br>
     /// - On success, responds with [`DescribeReplayOutput`](crate::operation::describe_replay::DescribeReplayOutput) with field(s):
     ///   - [`replay_name(Option<String>)`](crate::operation::describe_replay::DescribeReplayOutput::replay_name): <p>The name of the replay.</p>
     ///   - [`replay_arn(Option<String>)`](crate::operation::describe_replay::DescribeReplayOutput::replay_arn): <p>The ARN of the replay.</p>

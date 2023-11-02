@@ -15,8 +15,10 @@ pub struct SearchUsersByImageOutput {
 }
 impl SearchUsersByImageOutput {
     /// <p>An array of UserID objects that matched the input face, along with the confidence in the match. The returned structure will be empty if there are no matches. Returned if the SearchUsersByImageResponse action is successful.</p>
-    pub fn user_matches(&self) -> ::std::option::Option<&[crate::types::UserMatch]> {
-        self.user_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_matches.is_none()`.
+    pub fn user_matches(&self) -> &[crate::types::UserMatch] {
+        self.user_matches.as_deref().unwrap_or_default()
     }
     /// <p>Version number of the face detection model associated with the input collection CollectionId.</p>
     pub fn face_model_version(&self) -> ::std::option::Option<&str> {
@@ -27,8 +29,10 @@ impl SearchUsersByImageOutput {
         self.searched_face.as_ref()
     }
     /// <p>List of UnsearchedFace objects. Contains the face details infered from the specified image but not used for search. Contains reasons that describe why a face wasn't used for Search. </p>
-    pub fn unsearched_faces(&self) -> ::std::option::Option<&[crate::types::UnsearchedFace]> {
-        self.unsearched_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsearched_faces.is_none()`.
+    pub fn unsearched_faces(&self) -> &[crate::types::UnsearchedFace] {
+        self.unsearched_faces.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchUsersByImageOutput {

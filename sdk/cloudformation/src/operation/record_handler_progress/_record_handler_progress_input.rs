@@ -69,6 +69,7 @@ pub struct RecordHandlerProgressInputBuilder {
 }
 impl RecordHandlerProgressInputBuilder {
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    /// This field is required.
     pub fn bearer_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bearer_token = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl RecordHandlerProgressInputBuilder {
         &self.bearer_token
     }
     /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
+    /// This field is required.
     pub fn operation_status(mut self, input: crate::types::OperationStatus) -> Self {
         self.operation_status = ::std::option::Option::Some(input);
         self

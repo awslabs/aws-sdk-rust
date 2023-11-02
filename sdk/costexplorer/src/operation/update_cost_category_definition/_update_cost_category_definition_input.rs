@@ -30,16 +30,20 @@ impl UpdateCostCategoryDefinitionInput {
         self.rule_version.as_ref()
     }
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::CostCategoryRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::CostCategoryRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The default value for the cost category.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn split_charge_rules(&self) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
-        self.split_charge_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.split_charge_rules.is_none()`.
+    pub fn split_charge_rules(&self) -> &[crate::types::CostCategorySplitChargeRule] {
+        self.split_charge_rules.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCostCategoryDefinitionInput {
@@ -62,6 +66,7 @@ pub struct UpdateCostCategoryDefinitionInputBuilder {
 }
 impl UpdateCostCategoryDefinitionInputBuilder {
     /// <p>The unique identifier for your Cost Category.</p>
+    /// This field is required.
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         &self.effective_start
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
+    /// This field is required.
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
         self.rule_version = ::std::option::Option::Some(input);
         self

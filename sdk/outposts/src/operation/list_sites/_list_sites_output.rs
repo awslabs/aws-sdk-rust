@@ -11,8 +11,10 @@ pub struct ListSitesOutput {
 }
 impl ListSitesOutput {
     /// <p>Information about the sites.</p>
-    pub fn sites(&self) -> ::std::option::Option<&[crate::types::Site]> {
-        self.sites.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sites.is_none()`.
+    pub fn sites(&self) -> &[crate::types::Site] {
+        self.sites.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

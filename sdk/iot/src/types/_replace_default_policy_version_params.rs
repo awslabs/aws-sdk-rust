@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
-    pub template_name: ::std::option::Option<crate::types::PolicyTemplateName>,
+    pub template_name: crate::types::PolicyTemplateName,
 }
 impl ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&crate::types::PolicyTemplateName> {
-        self.template_name.as_ref()
+    pub fn template_name(&self) -> &crate::types::PolicyTemplateName {
+        &self.template_name
     }
 }
 impl ReplaceDefaultPolicyVersionParams {
@@ -28,6 +28,7 @@ pub struct ReplaceDefaultPolicyVersionParamsBuilder {
 }
 impl ReplaceDefaultPolicyVersionParamsBuilder {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: crate::types::PolicyTemplateName) -> Self {
         self.template_name = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl ReplaceDefaultPolicyVersionParamsBuilder {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`ReplaceDefaultPolicyVersionParams`](crate::types::ReplaceDefaultPolicyVersionParams).
-    pub fn build(self) -> crate::types::ReplaceDefaultPolicyVersionParams {
-        crate::types::ReplaceDefaultPolicyVersionParams {
-            template_name: self.template_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::types::builders::ReplaceDefaultPolicyVersionParamsBuilder::template_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplaceDefaultPolicyVersionParams, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplaceDefaultPolicyVersionParams {
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building ReplaceDefaultPolicyVersionParams",
+                )
+            })?,
+        })
     }
 }

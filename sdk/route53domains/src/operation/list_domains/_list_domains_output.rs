@@ -12,8 +12,10 @@ pub struct ListDomainsOutput {
 }
 impl ListDomainsOutput {
     /// <p>A list of domains.</p>
-    pub fn domains(&self) -> ::std::option::Option<&[crate::types::DomainSummary]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[crate::types::DomainSummary] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn next_page_marker(&self) -> ::std::option::Option<&str> {

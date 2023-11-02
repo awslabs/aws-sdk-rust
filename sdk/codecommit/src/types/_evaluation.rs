@@ -23,12 +23,16 @@ impl Evaluation {
         self.overridden
     }
     /// <p>The names of the approval rules that have had their conditions met.</p>
-    pub fn approval_rules_satisfied(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.approval_rules_satisfied.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approval_rules_satisfied.is_none()`.
+    pub fn approval_rules_satisfied(&self) -> &[::std::string::String] {
+        self.approval_rules_satisfied.as_deref().unwrap_or_default()
     }
     /// <p>The names of the approval rules that have not had their conditions met.</p>
-    pub fn approval_rules_not_satisfied(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.approval_rules_not_satisfied.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approval_rules_not_satisfied.is_none()`.
+    pub fn approval_rules_not_satisfied(&self) -> &[::std::string::String] {
+        self.approval_rules_not_satisfied.as_deref().unwrap_or_default()
     }
 }
 impl Evaluation {

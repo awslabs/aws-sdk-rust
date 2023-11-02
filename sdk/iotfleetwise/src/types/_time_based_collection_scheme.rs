@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedCollectionScheme {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
-    pub period_ms: ::std::option::Option<i64>,
+    pub period_ms: i64,
 }
 impl TimeBasedCollectionScheme {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
-    pub fn period_ms(&self) -> ::std::option::Option<i64> {
+    pub fn period_ms(&self) -> i64 {
         self.period_ms
     }
 }
@@ -28,6 +28,7 @@ pub struct TimeBasedCollectionSchemeBuilder {
 }
 impl TimeBasedCollectionSchemeBuilder {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
+    /// This field is required.
     pub fn period_ms(mut self, input: i64) -> Self {
         self.period_ms = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl TimeBasedCollectionSchemeBuilder {
         &self.period_ms
     }
     /// Consumes the builder and constructs a [`TimeBasedCollectionScheme`](crate::types::TimeBasedCollectionScheme).
-    pub fn build(self) -> crate::types::TimeBasedCollectionScheme {
-        crate::types::TimeBasedCollectionScheme { period_ms: self.period_ms }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`period_ms`](crate::types::builders::TimeBasedCollectionSchemeBuilder::period_ms)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeBasedCollectionScheme, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeBasedCollectionScheme {
+            period_ms: self.period_ms.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "period_ms",
+                    "period_ms was not specified but it is required when building TimeBasedCollectionScheme",
+                )
+            })?,
+        })
     }
 }

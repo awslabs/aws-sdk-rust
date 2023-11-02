@@ -34,6 +34,7 @@ pub struct DeleteRotationOverrideInputBuilder {
 }
 impl DeleteRotationOverrideInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRotationOverrideInputBuilder {
         &self.rotation_id
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
+    /// This field is required.
     pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_override_id = ::std::option::Option::Some(input.into());
         self

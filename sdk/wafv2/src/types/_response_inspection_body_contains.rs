@@ -8,21 +8,23 @@
 pub struct ResponseInspectionBodyContains {
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code> </p>
-    pub success_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub success_strings: ::std::vec::Vec<::std::string::String>,
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code> </p>
-    pub failure_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_strings: ::std::vec::Vec<::std::string::String>,
 }
 impl ResponseInspectionBodyContains {
     /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
     /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code> </p>
-    pub fn success_strings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.success_strings.as_deref()
+    pub fn success_strings(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.success_strings.deref()
     }
     /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
     /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code> </p>
-    pub fn failure_strings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_strings.as_deref()
+    pub fn failure_strings(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.failure_strings.deref()
     }
 }
 impl ResponseInspectionBodyContains {
@@ -87,10 +89,23 @@ impl ResponseInspectionBodyContainsBuilder {
         &self.failure_strings
     }
     /// Consumes the builder and constructs a [`ResponseInspectionBodyContains`](crate::types::ResponseInspectionBodyContains).
-    pub fn build(self) -> crate::types::ResponseInspectionBodyContains {
-        crate::types::ResponseInspectionBodyContains {
-            success_strings: self.success_strings,
-            failure_strings: self.failure_strings,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`success_strings`](crate::types::builders::ResponseInspectionBodyContainsBuilder::success_strings)
+    /// - [`failure_strings`](crate::types::builders::ResponseInspectionBodyContainsBuilder::failure_strings)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionBodyContains, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseInspectionBodyContains {
+            success_strings: self.success_strings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "success_strings",
+                    "success_strings was not specified but it is required when building ResponseInspectionBodyContains",
+                )
+            })?,
+            failure_strings: self.failure_strings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failure_strings",
+                    "failure_strings was not specified but it is required when building ResponseInspectionBodyContains",
+                )
+            })?,
+        })
     }
 }

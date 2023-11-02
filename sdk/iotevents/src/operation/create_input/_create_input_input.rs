@@ -26,8 +26,10 @@ impl CreateInputInput {
         self.input_definition.as_ref()
     }
     /// <p>Metadata that can be used to manage the input.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateInputInput {
@@ -48,6 +50,7 @@ pub struct CreateInputInputBuilder {
 }
 impl CreateInputInputBuilder {
     /// <p>The name you want to give to the input.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateInputInputBuilder {
         &self.input_description
     }
     /// <p>The definition of the input.</p>
+    /// This field is required.
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
         self.input_definition = ::std::option::Option::Some(input);
         self

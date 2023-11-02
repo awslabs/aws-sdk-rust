@@ -74,8 +74,10 @@ impl CreateMeetingInput {
         self.primary_meeting_id.as_deref()
     }
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    pub fn tenant_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tenant_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tenant_ids.is_none()`.
+    pub fn tenant_ids(&self) -> &[::std::string::String] {
+        self.tenant_ids.as_deref().unwrap_or_default()
     }
     /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
     /// <ul>
@@ -92,8 +94,10 @@ impl CreateMeetingInput {
     /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
     /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateMeetingInput {
@@ -134,6 +138,7 @@ pub struct CreateMeetingInputBuilder {
 }
 impl CreateMeetingInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +155,7 @@ impl CreateMeetingInputBuilder {
     /// <p>The Region in which to create the meeting.</p>
     /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    /// This field is required.
     pub fn media_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_region = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +190,7 @@ impl CreateMeetingInputBuilder {
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
+    /// This field is required.
     pub fn external_meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_meeting_id = ::std::option::Option::Some(input.into());
         self

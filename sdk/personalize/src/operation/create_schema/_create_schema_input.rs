@@ -41,6 +41,7 @@ pub struct CreateSchemaInputBuilder {
 }
 impl CreateSchemaInputBuilder {
     /// <p>The name for the schema.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateSchemaInputBuilder {
         &self.name
     }
     /// <p>A schema in Avro JSON format.</p>
+    /// This field is required.
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self

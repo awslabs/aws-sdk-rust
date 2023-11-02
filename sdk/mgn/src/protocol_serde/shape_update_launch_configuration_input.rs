@@ -39,11 +39,11 @@ pub fn ser_update_launch_configuration_input(
         crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.source_server_id {
-        object.key("sourceServerID").string(var_13.as_str());
+    {
+        object.key("sourceServerID").string(input.source_server_id.as_str());
     }
-    if let Some(var_14) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_14.as_str());
+    if let Some(var_13) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_13.as_str());
     }
     Ok(())
 }

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserQuickConnectConfig {
     /// <p>The identifier of the user.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p>The identifier of the flow.</p>
-    pub contact_flow_id: ::std::option::Option<::std::string::String>,
+    pub contact_flow_id: ::std::string::String,
 }
 impl UserQuickConnectConfig {
     /// <p>The identifier of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
-        self.contact_flow_id.as_deref()
+    pub fn contact_flow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_flow_id.deref()
     }
 }
 impl UserQuickConnectConfig {
@@ -35,6 +37,7 @@ pub struct UserQuickConnectConfigBuilder {
 }
 impl UserQuickConnectConfigBuilder {
     /// <p>The identifier of the user.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl UserQuickConnectConfigBuilder {
         &self.user_id
     }
     /// <p>The identifier of the flow.</p>
+    /// This field is required.
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl UserQuickConnectConfigBuilder {
         &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`UserQuickConnectConfig`](crate::types::UserQuickConnectConfig).
-    pub fn build(self) -> crate::types::UserQuickConnectConfig {
-        crate::types::UserQuickConnectConfig {
-            user_id: self.user_id,
-            contact_flow_id: self.contact_flow_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_id`](crate::types::builders::UserQuickConnectConfigBuilder::user_id)
+    /// - [`contact_flow_id`](crate::types::builders::UserQuickConnectConfigBuilder::contact_flow_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserQuickConnectConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserQuickConnectConfig {
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building UserQuickConnectConfig",
+                )
+            })?,
+            contact_flow_id: self.contact_flow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_flow_id",
+                    "contact_flow_id was not specified but it is required when building UserQuickConnectConfig",
+                )
+            })?,
+        })
     }
 }

@@ -49,6 +49,7 @@ pub struct BatchListObjectAttributesBuilder {
 }
 impl BatchListObjectAttributesBuilder {
     /// <p>Reference of the object whose attributes need to be listed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

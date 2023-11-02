@@ -28,6 +28,7 @@ pub struct DeleteHsmInputBuilder {
 }
 impl DeleteHsmInputBuilder {
     /// <p>The ARN of the HSM to delete.</p>
+    /// This field is required.
     pub fn hsm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_arn = ::std::option::Option::Some(input.into());
         self

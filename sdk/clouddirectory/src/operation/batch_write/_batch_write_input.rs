@@ -14,8 +14,10 @@ impl BatchWriteInput {
         self.directory_arn.as_deref()
     }
     /// <p>A list of operations that are part of the batch.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::BatchWriteOperation]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::BatchWriteOperation] {
+        self.operations.as_deref().unwrap_or_default()
     }
 }
 impl BatchWriteInput {
@@ -34,6 +36,7 @@ pub struct BatchWriteInputBuilder {
 }
 impl BatchWriteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self

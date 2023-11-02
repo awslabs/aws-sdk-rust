@@ -56,6 +56,7 @@ impl AntennaUplinkConfigBuilder {
         &self.transmit_disabled
     }
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
+    /// This field is required.
     pub fn spectrum_config(mut self, input: crate::types::UplinkSpectrumConfig) -> Self {
         self.spectrum_config = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl AntennaUplinkConfigBuilder {
         &self.spectrum_config
     }
     /// <p>EIRP of the target.</p>
+    /// This field is required.
     pub fn target_eirp(mut self, input: crate::types::Eirp) -> Self {
         self.target_eirp = ::std::option::Option::Some(input);
         self

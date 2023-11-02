@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnalyzedResourcesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
-    pub analyzer_arn: ::std::option::Option<::std::string::String>,
+    pub analyzer_arn: ::std::string::String,
     /// <p>The type of resource.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>A token used for pagination of results returned.</p>
@@ -15,8 +15,9 @@ pub struct ListAnalyzedResourcesInput {
 }
 impl ListAnalyzedResourcesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
-        self.analyzer_arn.as_deref()
+    pub fn analyzer_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.analyzer_arn.deref()
     }
     /// <p>The type of resource.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
@@ -49,6 +50,7 @@ pub struct ListAnalyzedResourcesInputBuilder {
 }
 impl ListAnalyzedResourcesInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl ListAnalyzedResourcesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzer_arn`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder::analyzer_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput {
-            analyzer_arn: self.analyzer_arn,
+            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzer_arn",
+                    "analyzer_arn was not specified but it is required when building ListAnalyzedResourcesInput",
+                )
+            })?,
             resource_type: self.resource_type,
             next_token: self.next_token,
             max_results: self.max_results,

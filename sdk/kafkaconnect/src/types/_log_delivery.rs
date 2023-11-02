@@ -28,6 +28,7 @@ pub struct LogDeliveryBuilder {
 }
 impl LogDeliveryBuilder {
     /// <p>The workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
+    /// This field is required.
     pub fn worker_log_delivery(mut self, input: crate::types::WorkerLogDelivery) -> Self {
         self.worker_log_delivery = ::std::option::Option::Some(input);
         self

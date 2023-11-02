@@ -41,6 +41,7 @@ pub struct DescribeConnectClientAddInsInputBuilder {
 }
 impl DescribeConnectClientAddInsInputBuilder {
     /// <p>The directory identifier for which the client add-in is configured.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

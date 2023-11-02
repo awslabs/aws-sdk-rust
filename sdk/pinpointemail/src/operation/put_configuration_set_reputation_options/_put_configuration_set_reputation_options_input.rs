@@ -35,6 +35,7 @@ pub struct PutConfigurationSetReputationOptionsInputBuilder {
 }
 impl PutConfigurationSetReputationOptionsInputBuilder {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self

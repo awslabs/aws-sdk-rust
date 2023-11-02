@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryInput {
     /// <p>The repository provider.</p>
-    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl GetRepositoryInput {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+        &self.provider
     }
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl GetRepositoryInput {
@@ -34,6 +35,7 @@ pub struct GetRepositoryInputBuilder {
 }
 impl GetRepositoryInputBuilder {
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -48,6 +50,7 @@ impl GetRepositoryInputBuilder {
         &self.provider
     }
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +65,25 @@ impl GetRepositoryInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provider`](crate::operation::get_repository::builders::GetRepositoryInputBuilder::provider)
+    /// - [`name`](crate::operation::get_repository::builders::GetRepositoryInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_repository::GetRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_repository::GetRepositoryInput {
-            provider: self.provider,
-            name: self.name,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building GetRepositoryInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetRepositoryInput",
+                )
+            })?,
         })
     }
 }

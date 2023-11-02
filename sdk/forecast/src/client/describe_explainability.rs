@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExplainability`](crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`explainability_arn(impl Into<String>)`](crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder::explainability_arn) / [`set_explainability_arn(Option<String>)`](crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder::set_explainability_arn): <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+    ///   - [`explainability_arn(impl Into<String>)`](crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder::explainability_arn) / [`set_explainability_arn(Option<String>)`](crate::operation::describe_explainability::builders::DescribeExplainabilityFluentBuilder::set_explainability_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p><br>
     /// - On success, responds with [`DescribeExplainabilityOutput`](crate::operation::describe_explainability::DescribeExplainabilityOutput) with field(s):
     ///   - [`explainability_arn(Option<String>)`](crate::operation::describe_explainability::DescribeExplainabilityOutput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     ///   - [`explainability_name(Option<String>)`](crate::operation::describe_explainability::DescribeExplainabilityOutput::explainability_name): <p>The name of the Explainability.</p>

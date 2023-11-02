@@ -9,14 +9,14 @@ pub fn ser_aggregation_sort_configuration(
         crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.sort_direction {
-        object.key("SortDirection").string(var_3.as_str());
+    {
+        object.key("SortDirection").string(input.sort_direction.as_str());
     }
-    if let Some(var_4) = &input.aggregation_function {
+    if let Some(var_3) = &input.aggregation_function {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AggregationFunction").start_object();
-        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("AggregationFunction").start_object();
+        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::aggregation_sort_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -17,20 +17,28 @@ pub struct ConfigurationSummary {
 }
 impl ConfigurationSummary {
     /// <p>The list of vCenter configurations.</p>
-    pub fn vcenter_based_remote_info_list(&self) -> ::std::option::Option<&[crate::types::VcenterBasedRemoteInfo]> {
-        self.vcenter_based_remote_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vcenter_based_remote_info_list.is_none()`.
+    pub fn vcenter_based_remote_info_list(&self) -> &[crate::types::VcenterBasedRemoteInfo] {
+        self.vcenter_based_remote_info_list.as_deref().unwrap_or_default()
     }
     /// <p>IP address based configurations.</p>
-    pub fn ip_address_based_remote_info_list(&self) -> ::std::option::Option<&[crate::types::IpAddressBasedRemoteInfo]> {
-        self.ip_address_based_remote_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_address_based_remote_info_list.is_none()`.
+    pub fn ip_address_based_remote_info_list(&self) -> &[crate::types::IpAddressBasedRemoteInfo] {
+        self.ip_address_based_remote_info_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of the version control configurations.</p>
-    pub fn version_control_info_list(&self) -> ::std::option::Option<&[crate::types::VersionControlInfo]> {
-        self.version_control_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_control_info_list.is_none()`.
+    pub fn version_control_info_list(&self) -> &[crate::types::VersionControlInfo] {
+        self.version_control_info_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of pipeline info configurations.</p>
-    pub fn pipeline_info_list(&self) -> ::std::option::Option<&[crate::types::PipelineInfo]> {
-        self.pipeline_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_info_list.is_none()`.
+    pub fn pipeline_info_list(&self) -> &[crate::types::PipelineInfo] {
+        self.pipeline_info_list.as_deref().unwrap_or_default()
     }
     /// <p>Info about the remote server source code configuration.</p>
     pub fn remote_source_code_analysis_server_info(&self) -> ::std::option::Option<&crate::types::RemoteSourceCodeAnalysisServerInfo> {

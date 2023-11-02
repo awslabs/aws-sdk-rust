@@ -27,6 +27,7 @@ pub struct DeleteDbProxyInputBuilder {
 }
 impl DeleteDbProxyInputBuilder {
     /// <p>The name of the DB proxy to delete.</p>
+    /// This field is required.
     pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self

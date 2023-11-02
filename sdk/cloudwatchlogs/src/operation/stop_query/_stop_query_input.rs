@@ -27,6 +27,7 @@ pub struct StopQueryInputBuilder {
 }
 impl StopQueryInputBuilder {
     /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct ListDimensionsOutput {
 }
 impl ListDimensionsOutput {
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
-    pub fn dimension_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimension_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_names.is_none()`.
+    pub fn dimension_names(&self) -> &[::std::string::String] {
+        self.dimension_names.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

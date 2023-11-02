@@ -52,6 +52,7 @@ pub struct ResourceProfileArtifactBuilder {
 }
 impl ResourceProfileArtifactBuilder {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl ResourceProfileArtifactBuilder {
     /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn classification_result_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification_result_status = ::std::option::Option::Some(input.into());
         self

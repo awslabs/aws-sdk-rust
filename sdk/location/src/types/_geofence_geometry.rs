@@ -22,8 +22,10 @@ impl GeofenceGeometry {
     /// <p>An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (<code>[[double, double], ...]</code>).</p>
     /// <p>A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array of linear rings, which is represented as an array of arrays of arrays of doubles (<code>[[[double, double], ...], ...]</code>).</p>
     /// <p>A linear ring for use in geofences can consist of between 4 and 1,000 vertices.</p>
-    pub fn polygon(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::vec::Vec<f64>>]> {
-        self.polygon.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
+    pub fn polygon(&self) -> &[::std::vec::Vec<::std::vec::Vec<f64>>] {
+        self.polygon.as_deref().unwrap_or_default()
     }
     /// <p>A circle on the earth, as defined by a center point and a radius.</p>
     pub fn circle(&self) -> ::std::option::Option<&crate::types::Circle> {

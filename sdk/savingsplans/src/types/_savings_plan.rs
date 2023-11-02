@@ -87,8 +87,10 @@ impl SavingsPlan {
         self.payment_option.as_ref()
     }
     /// <p>The product types.</p>
-    pub fn product_types(&self) -> ::std::option::Option<&[crate::types::SavingsPlanProductType]> {
-        self.product_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_types.is_none()`.
+    pub fn product_types(&self) -> &[crate::types::SavingsPlanProductType] {
+        self.product_types.as_deref().unwrap_or_default()
     }
     /// <p>The currency.</p>
     pub fn currency(&self) -> ::std::option::Option<&crate::types::CurrencyCode> {

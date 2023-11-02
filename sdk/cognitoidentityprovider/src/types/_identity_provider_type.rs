@@ -137,8 +137,10 @@ impl IdentityProviderType {
         self.attribute_mapping.as_ref()
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.idp_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.idp_identifiers.is_none()`.
+    pub fn idp_identifiers(&self) -> &[::std::string::String] {
+        self.idp_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

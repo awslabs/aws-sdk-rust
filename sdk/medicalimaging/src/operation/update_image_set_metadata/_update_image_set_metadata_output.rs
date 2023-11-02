@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateImageSetMetadataOutput {
     /// <p>The data store identifier.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The image set identifier.</p>
-    pub image_set_id: ::std::option::Option<::std::string::String>,
+    pub image_set_id: ::std::string::String,
     /// <p>The latest image set version identifier.</p>
-    pub latest_version_id: ::std::option::Option<::std::string::String>,
+    pub latest_version_id: ::std::string::String,
     /// <p>The image set state.</p>
-    pub image_set_state: ::std::option::Option<crate::types::ImageSetState>,
+    pub image_set_state: crate::types::ImageSetState,
     /// <p>The image set workflow status.</p>
     pub image_set_workflow_status: ::std::option::Option<crate::types::ImageSetWorkflowStatus>,
     /// <p>The timestamp when image set metadata was created.</p>
@@ -23,20 +23,23 @@ pub struct UpdateImageSetMetadataOutput {
 }
 impl UpdateImageSetMetadataOutput {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
-        self.image_set_id.as_deref()
+    pub fn image_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.image_set_id.deref()
     }
     /// <p>The latest image set version identifier.</p>
-    pub fn latest_version_id(&self) -> ::std::option::Option<&str> {
-        self.latest_version_id.as_deref()
+    pub fn latest_version_id(&self) -> &str {
+        use std::ops::Deref;
+        self.latest_version_id.deref()
     }
     /// <p>The image set state.</p>
-    pub fn image_set_state(&self) -> ::std::option::Option<&crate::types::ImageSetState> {
-        self.image_set_state.as_ref()
+    pub fn image_set_state(&self) -> &crate::types::ImageSetState {
+        &self.image_set_state
     }
     /// <p>The image set workflow status.</p>
     pub fn image_set_workflow_status(&self) -> ::std::option::Option<&crate::types::ImageSetWorkflowStatus> {
@@ -83,6 +86,7 @@ pub struct UpdateImageSetMetadataOutputBuilder {
 }
 impl UpdateImageSetMetadataOutputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl UpdateImageSetMetadataOutputBuilder {
         &self.datastore_id
     }
     /// <p>The image set identifier.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl UpdateImageSetMetadataOutputBuilder {
         &self.image_set_id
     }
     /// <p>The latest image set version identifier.</p>
+    /// This field is required.
     pub fn latest_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version_id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl UpdateImageSetMetadataOutputBuilder {
         &self.latest_version_id
     }
     /// <p>The image set state.</p>
+    /// This field is required.
     pub fn image_set_state(mut self, input: crate::types::ImageSetState) -> Self {
         self.image_set_state = ::std::option::Option::Some(input);
         self
@@ -204,17 +211,47 @@ impl UpdateImageSetMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateImageSetMetadataOutput`](crate::operation::update_image_set_metadata::UpdateImageSetMetadataOutput).
-    pub fn build(self) -> crate::operation::update_image_set_metadata::UpdateImageSetMetadataOutput {
-        crate::operation::update_image_set_metadata::UpdateImageSetMetadataOutput {
-            datastore_id: self.datastore_id,
-            image_set_id: self.image_set_id,
-            latest_version_id: self.latest_version_id,
-            image_set_state: self.image_set_state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder::datastore_id)
+    /// - [`image_set_id`](crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder::image_set_id)
+    /// - [`latest_version_id`](crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder::latest_version_id)
+    /// - [`image_set_state`](crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder::image_set_state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_image_set_metadata::UpdateImageSetMetadataOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_image_set_metadata::UpdateImageSetMetadataOutput {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building UpdateImageSetMetadataOutput",
+                )
+            })?,
+            image_set_id: self.image_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "image_set_id",
+                    "image_set_id was not specified but it is required when building UpdateImageSetMetadataOutput",
+                )
+            })?,
+            latest_version_id: self.latest_version_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "latest_version_id",
+                    "latest_version_id was not specified but it is required when building UpdateImageSetMetadataOutput",
+                )
+            })?,
+            image_set_state: self.image_set_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "image_set_state",
+                    "image_set_state was not specified but it is required when building UpdateImageSetMetadataOutput",
+                )
+            })?,
             image_set_workflow_status: self.image_set_workflow_status,
             created_at: self.created_at,
             updated_at: self.updated_at,
             message: self.message,
             _request_id: self._request_id,
-        }
+        })
     }
 }

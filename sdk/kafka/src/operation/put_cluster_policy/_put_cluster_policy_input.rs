@@ -41,6 +41,7 @@ pub struct PutClusterPolicyInputBuilder {
 }
 impl PutClusterPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutClusterPolicyInputBuilder {
         &self.current_version
     }
     /// <p>The policy.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

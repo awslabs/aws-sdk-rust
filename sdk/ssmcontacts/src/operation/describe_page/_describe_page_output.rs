@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePageOutput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    pub page_arn: ::std::option::Option<::std::string::String>,
+    pub page_arn: ::std::string::String,
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
-    pub engagement_arn: ::std::option::Option<::std::string::String>,
+    pub engagement_arn: ::std::string::String,
     /// <p>The ARN of the contact that was engaged.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The user that started the engagement.</p>
-    pub sender: ::std::option::Option<::std::string::String>,
+    pub sender: ::std::string::String,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub subject: ::std::option::Option<::std::string::String>,
+    pub subject: ::std::string::String,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub content: ::std::option::Option<::std::string::String>,
+    pub content: ::std::string::String,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_subject: ::std::option::Option<::std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
@@ -31,28 +31,34 @@ pub struct DescribePageOutput {
 }
 impl DescribePageOutput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    pub fn page_arn(&self) -> ::std::option::Option<&str> {
-        self.page_arn.as_deref()
+    pub fn page_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.page_arn.deref()
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
-    pub fn engagement_arn(&self) -> ::std::option::Option<&str> {
-        self.engagement_arn.as_deref()
+    pub fn engagement_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.engagement_arn.deref()
     }
     /// <p>The ARN of the contact that was engaged.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> ::std::option::Option<&str> {
-        self.sender.as_deref()
+    pub fn sender(&self) -> &str {
+        use std::ops::Deref;
+        self.sender.deref()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
-        self.subject.as_deref()
+    pub fn subject(&self) -> &str {
+        use std::ops::Deref;
+        self.subject.deref()
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
-        self.content.as_deref()
+    pub fn content(&self) -> &str {
+        use std::ops::Deref;
+        self.content.deref()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(&self) -> ::std::option::Option<&str> {
@@ -111,6 +117,7 @@ pub struct DescribePageOutputBuilder {
 }
 impl DescribePageOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    /// This field is required.
     pub fn page_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl DescribePageOutputBuilder {
         &self.page_arn
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
+    /// This field is required.
     pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +147,7 @@ impl DescribePageOutputBuilder {
         &self.engagement_arn
     }
     /// <p>The ARN of the contact that was engaged.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +162,7 @@ impl DescribePageOutputBuilder {
         &self.contact_arn
     }
     /// <p>The user that started the engagement.</p>
+    /// This field is required.
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +177,7 @@ impl DescribePageOutputBuilder {
         &self.sender
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// This field is required.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +192,7 @@ impl DescribePageOutputBuilder {
         &self.subject
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -288,14 +300,53 @@ impl DescribePageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePageOutput`](crate::operation::describe_page::DescribePageOutput).
-    pub fn build(self) -> crate::operation::describe_page::DescribePageOutput {
-        crate::operation::describe_page::DescribePageOutput {
-            page_arn: self.page_arn,
-            engagement_arn: self.engagement_arn,
-            contact_arn: self.contact_arn,
-            sender: self.sender,
-            subject: self.subject,
-            content: self.content,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`page_arn`](crate::operation::describe_page::builders::DescribePageOutputBuilder::page_arn)
+    /// - [`engagement_arn`](crate::operation::describe_page::builders::DescribePageOutputBuilder::engagement_arn)
+    /// - [`contact_arn`](crate::operation::describe_page::builders::DescribePageOutputBuilder::contact_arn)
+    /// - [`sender`](crate::operation::describe_page::builders::DescribePageOutputBuilder::sender)
+    /// - [`subject`](crate::operation::describe_page::builders::DescribePageOutputBuilder::subject)
+    /// - [`content`](crate::operation::describe_page::builders::DescribePageOutputBuilder::content)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_page::DescribePageOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_page::DescribePageOutput {
+            page_arn: self.page_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "page_arn",
+                    "page_arn was not specified but it is required when building DescribePageOutput",
+                )
+            })?,
+            engagement_arn: self.engagement_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engagement_arn",
+                    "engagement_arn was not specified but it is required when building DescribePageOutput",
+                )
+            })?,
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building DescribePageOutput",
+                )
+            })?,
+            sender: self.sender.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sender",
+                    "sender was not specified but it is required when building DescribePageOutput",
+                )
+            })?,
+            subject: self.subject.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subject",
+                    "subject was not specified but it is required when building DescribePageOutput",
+                )
+            })?,
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building DescribePageOutput",
+                )
+            })?,
             public_subject: self.public_subject,
             public_content: self.public_content,
             incident_id: self.incident_id,
@@ -303,6 +354,6 @@ impl DescribePageOutputBuilder {
             read_time: self.read_time,
             delivery_time: self.delivery_time,
             _request_id: self._request_id,
-        }
+        })
     }
 }

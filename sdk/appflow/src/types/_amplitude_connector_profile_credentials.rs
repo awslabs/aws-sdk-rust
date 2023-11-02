@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AmplitudeConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub api_key: ::std::option::Option<::std::string::String>,
+    pub api_key: ::std::string::String,
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub secret_key: ::std::option::Option<::std::string::String>,
+    pub secret_key: ::std::string::String,
 }
 impl AmplitudeConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
-        self.api_key.as_deref()
+    pub fn api_key(&self) -> &str {
+        use std::ops::Deref;
+        self.api_key.deref()
     }
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn secret_key(&self) -> ::std::option::Option<&str> {
-        self.secret_key.as_deref()
+    pub fn secret_key(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_key.deref()
     }
 }
 impl ::std::fmt::Debug for AmplitudeConnectorProfileCredentials {
@@ -43,6 +45,7 @@ pub struct AmplitudeConnectorProfileCredentialsBuilder {
 }
 impl AmplitudeConnectorProfileCredentialsBuilder {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
+    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
         &self.api_key
     }
     /// <p> The Secret Access Key portion of the credentials. </p>
+    /// This field is required.
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_key = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
         &self.secret_key
     }
     /// Consumes the builder and constructs a [`AmplitudeConnectorProfileCredentials`](crate::types::AmplitudeConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::AmplitudeConnectorProfileCredentials {
-        crate::types::AmplitudeConnectorProfileCredentials {
-            api_key: self.api_key,
-            secret_key: self.secret_key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`api_key`](crate::types::builders::AmplitudeConnectorProfileCredentialsBuilder::api_key)
+    /// - [`secret_key`](crate::types::builders::AmplitudeConnectorProfileCredentialsBuilder::secret_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::AmplitudeConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AmplitudeConnectorProfileCredentials {
+            api_key: self.api_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "api_key",
+                    "api_key was not specified but it is required when building AmplitudeConnectorProfileCredentials",
+                )
+            })?,
+            secret_key: self.secret_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_key",
+                    "secret_key was not specified but it is required when building AmplitudeConnectorProfileCredentials",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for AmplitudeConnectorProfileCredentialsBuilder {

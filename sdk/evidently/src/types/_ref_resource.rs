@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefResource {
     /// <p>The name of the experiment or launch.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The ARN of the experiment or launch.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the experiment or launch.</p>
@@ -21,12 +21,14 @@ pub struct RefResource {
 }
 impl RefResource {
     /// <p>The name of the experiment or launch.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The ARN of the experiment or launch.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct RefResourceBuilder {
 }
 impl RefResourceBuilder {
     /// <p>The name of the experiment or launch.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl RefResourceBuilder {
         &self.name
     }
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -168,15 +172,28 @@ impl RefResourceBuilder {
         &self.last_updated_on
     }
     /// Consumes the builder and constructs a [`RefResource`](crate::types::RefResource).
-    pub fn build(self) -> crate::types::RefResource {
-        crate::types::RefResource {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RefResourceBuilder::name)
+    /// - [`r#type`](crate::types::builders::RefResourceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RefResource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RefResource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RefResource",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building RefResource",
+                )
+            })?,
             arn: self.arn,
             status: self.status,
             start_time: self.start_time,
             end_time: self.end_time,
             last_updated_on: self.last_updated_on,
-        }
+        })
     }
 }

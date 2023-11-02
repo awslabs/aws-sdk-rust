@@ -3,35 +3,35 @@ pub fn ser_transcript_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TranscriptFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.transcript_filter_type {
-        object.key("TranscriptFilterType").string(var_1.as_str());
+    {
+        object.key("TranscriptFilterType").string(input.transcript_filter_type.as_str());
     }
-    if let Some(var_2) = &input.absolute_time_range {
+    if let Some(var_1) = &input.absolute_time_range {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("AbsoluteTimeRange").start_object();
-        crate::protocol_serde::shape_absolute_time_range::ser_absolute_time_range(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("AbsoluteTimeRange").start_object();
+        crate::protocol_serde::shape_absolute_time_range::ser_absolute_time_range(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.relative_time_range {
+    if let Some(var_3) = &input.relative_time_range {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("RelativeTimeRange").start_object();
-        crate::protocol_serde::shape_relative_time_range::ser_relative_time_range(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("RelativeTimeRange").start_object();
+        crate::protocol_serde::shape_relative_time_range::ser_relative_time_range(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.participant_role {
-        object.key("ParticipantRole").string(var_6.as_str());
+    if let Some(var_5) = &input.participant_role {
+        object.key("ParticipantRole").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.negate {
-        object.key("Negate").boolean(*var_7);
+    if let Some(var_6) = &input.negate {
+        object.key("Negate").boolean(*var_6);
     }
-    if let Some(var_8) = &input.targets {
-        let mut array_9 = object.key("Targets").start_array();
-        for item_10 in var_8 {
+    {
+        let mut array_7 = object.key("Targets").start_array();
+        for item_8 in &input.targets {
             {
-                array_9.value().string(item_10.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_9.finish();
+        array_7.finish();
     }
     Ok(())
 }
@@ -89,7 +89,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::transcript_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

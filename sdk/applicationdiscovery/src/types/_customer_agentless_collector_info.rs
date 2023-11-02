@@ -70,6 +70,7 @@ pub struct CustomerAgentlessCollectorInfoBuilder {
 }
 impl CustomerAgentlessCollectorInfoBuilder {
     /// <p>The number of active Agentless Collector collectors. </p>
+    /// This field is required.
     pub fn active_agentless_collectors(mut self, input: i32) -> Self {
         self.active_agentless_collectors = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         &self.active_agentless_collectors
     }
     /// <p>The number of healthy Agentless Collector collectors. </p>
+    /// This field is required.
     pub fn healthy_agentless_collectors(mut self, input: i32) -> Self {
         self.healthy_agentless_collectors = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         &self.healthy_agentless_collectors
     }
     /// <p>The number of deny-listed Agentless Collector collectors. </p>
+    /// This field is required.
     pub fn deny_listed_agentless_collectors(mut self, input: i32) -> Self {
         self.deny_listed_agentless_collectors = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         &self.deny_listed_agentless_collectors
     }
     /// <p>The number of Agentless Collector collectors with <code>SHUTDOWN</code> status. </p>
+    /// This field is required.
     pub fn shutdown_agentless_collectors(mut self, input: i32) -> Self {
         self.shutdown_agentless_collectors = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         &self.shutdown_agentless_collectors
     }
     /// <p> The number of unhealthy Agentless Collector collectors. </p>
+    /// This field is required.
     pub fn unhealthy_agentless_collectors(mut self, input: i32) -> Self {
         self.unhealthy_agentless_collectors = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         &self.unhealthy_agentless_collectors
     }
     /// <p> The total number of Agentless Collector collectors. </p>
+    /// This field is required.
     pub fn total_agentless_collectors(mut self, input: i32) -> Self {
         self.total_agentless_collectors = ::std::option::Option::Some(input);
         self
@@ -154,6 +160,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
         &self.total_agentless_collectors
     }
     /// <p> The number of unknown Agentless Collector collectors. </p>
+    /// This field is required.
     pub fn unknown_agentless_collectors(mut self, input: i32) -> Self {
         self.unknown_agentless_collectors = ::std::option::Option::Some(input);
         self

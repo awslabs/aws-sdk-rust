@@ -19,16 +19,20 @@ impl DirectoryVpcSettingsDescription {
         self.vpc_id.as_deref()
     }
     /// <p>The identifiers of the subnets for the directory servers.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The domain controller security group identifier for the directory.</p>
     pub fn security_group_id(&self) -> ::std::option::Option<&str> {
         self.security_group_id.as_deref()
     }
     /// <p>The list of Availability Zones that the directory is in.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl DirectoryVpcSettingsDescription {

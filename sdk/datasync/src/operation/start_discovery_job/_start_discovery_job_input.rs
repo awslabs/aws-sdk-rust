@@ -30,8 +30,10 @@ impl StartDiscoveryJobInput {
         self.client_token.as_deref()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl StartDiscoveryJobInput {
@@ -52,6 +54,7 @@ pub struct StartDiscoveryJobInputBuilder {
 }
 impl StartDiscoveryJobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
+    /// This field is required.
     pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +71,7 @@ impl StartDiscoveryJobInputBuilder {
     /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
+    /// This field is required.
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
         self.collection_duration_minutes = ::std::option::Option::Some(input);
         self
@@ -86,6 +90,7 @@ impl StartDiscoveryJobInputBuilder {
         &self.collection_duration_minutes
     }
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

@@ -34,8 +34,10 @@ impl DescribeVpcEndpointServiceConfigurationsInput {
         self.dry_run
     }
     /// <p>The IDs of the endpoint services.</p>
-    pub fn service_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_ids.is_none()`.
+    pub fn service_ids(&self) -> &[::std::string::String] {
+        self.service_ids.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -52,8 +54,10 @@ impl DescribeVpcEndpointServiceConfigurationsInput {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

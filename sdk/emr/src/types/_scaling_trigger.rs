@@ -28,6 +28,7 @@ pub struct ScalingTriggerBuilder {
 }
 impl ScalingTriggerBuilder {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
+    /// This field is required.
     pub fn cloud_watch_alarm_definition(mut self, input: crate::types::CloudWatchAlarmDefinition) -> Self {
         self.cloud_watch_alarm_definition = ::std::option::Option::Some(input);
         self

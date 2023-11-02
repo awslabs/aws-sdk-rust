@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
-    pub dataset_group_arn: ::std::option::Option<::std::string::String>,
+    pub dataset_group_arn: ::std::string::String,
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
     pub attribute_configs: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
@@ -13,16 +13,21 @@ pub struct DataConfig {
 }
 impl DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
-        self.dataset_group_arn.as_deref()
+    pub fn dataset_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.dataset_group_arn.deref()
     }
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
-    pub fn attribute_configs(&self) -> ::std::option::Option<&[crate::types::AttributeConfig]> {
-        self.attribute_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_configs.is_none()`.
+    pub fn attribute_configs(&self) -> &[crate::types::AttributeConfig] {
+        self.attribute_configs.as_deref().unwrap_or_default()
     }
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
-    pub fn additional_datasets(&self) -> ::std::option::Option<&[crate::types::AdditionalDataset]> {
-        self.additional_datasets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_datasets.is_none()`.
+    pub fn additional_datasets(&self) -> &[crate::types::AdditionalDataset] {
+        self.additional_datasets.as_deref().unwrap_or_default()
     }
 }
 impl DataConfig {
@@ -42,6 +47,7 @@ pub struct DataConfigBuilder {
 }
 impl DataConfigBuilder {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +102,18 @@ impl DataConfigBuilder {
         &self.additional_datasets
     }
     /// Consumes the builder and constructs a [`DataConfig`](crate::types::DataConfig).
-    pub fn build(self) -> crate::types::DataConfig {
-        crate::types::DataConfig {
-            dataset_group_arn: self.dataset_group_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dataset_group_arn`](crate::types::builders::DataConfigBuilder::dataset_group_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataConfig {
+            dataset_group_arn: self.dataset_group_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dataset_group_arn",
+                    "dataset_group_arn was not specified but it is required when building DataConfig",
+                )
+            })?,
             attribute_configs: self.attribute_configs,
             additional_datasets: self.additional_datasets,
-        }
+        })
     }
 }

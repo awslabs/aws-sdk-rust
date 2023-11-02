@@ -12,6 +12,7 @@ pub fn ser_managed_execution(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_managed_execution(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ManagedExecution, ::aws_smithy_xml::decode::XmlDecodeError> {

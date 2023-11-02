@@ -15,8 +15,10 @@ impl ListDataSetRevisionsOutput {
         self.next_token.as_deref()
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn revisions(&self) -> ::std::option::Option<&[crate::types::RevisionEntry]> {
-        self.revisions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revisions.is_none()`.
+    pub fn revisions(&self) -> &[crate::types::RevisionEntry] {
+        self.revisions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDataSetRevisionsOutput {

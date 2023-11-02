@@ -55,6 +55,7 @@ pub struct UpdateBotRecommendationInputBuilder {
 }
 impl UpdateBotRecommendationInputBuilder {
     /// <p>The unique identifier of the bot containing the bot recommendation to be updated.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateBotRecommendationInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot containing the bot recommendation to be updated.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl UpdateBotRecommendationInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl UpdateBotRecommendationInputBuilder {
         &self.locale_id
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
+    /// This field is required.
     pub fn bot_recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl UpdateBotRecommendationInputBuilder {
         &self.bot_recommendation_id
     }
     /// <p>The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
+    /// This field is required.
     pub fn encryption_setting(mut self, input: crate::types::EncryptionSetting) -> Self {
         self.encryption_setting = ::std::option::Option::Some(input);
         self

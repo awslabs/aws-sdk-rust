@@ -12,7 +12,7 @@ pub struct EventDestination {
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
     pub enabled: bool,
     /// <p>The type of email sending events to publish to the event destination.</p>
@@ -26,7 +26,7 @@ pub struct EventDestination {
     /// <li> <p> <code>click</code> - The recipient clicked one or more links in the email.</p> </li>
     /// <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p> </li>
     /// </ul>
-    pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub matching_event_types: ::std::vec::Vec<crate::types::EventType>,
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that contains the names, default values, and sources of the dimensions associated with an Amazon CloudWatch event destination.</p>
@@ -40,8 +40,9 @@ impl EventDestination {
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Sets whether Amazon SES publishes events to this destination when you send an email with the associated configuration set. Set to <code>true</code> to enable publishing to this destination; set to <code>false</code> to prevent publishing to this destination. The default value is <code>false</code>.</p>
     pub fn enabled(&self) -> bool {
@@ -58,8 +59,9 @@ impl EventDestination {
     /// <li> <p> <code>click</code> - The recipient clicked one or more links in the email.</p> </li>
     /// <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.</p> </li>
     /// </ul>
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.matching_event_types.as_deref()
+    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
+        use std::ops::Deref;
+        self.matching_event_types.deref()
     }
     /// <p>An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
     pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {
@@ -98,6 +100,7 @@ impl EventDestinationBuilder {
     /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain 64 characters or fewer.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -226,14 +229,27 @@ impl EventDestinationBuilder {
         &self.sns_destination
     }
     /// Consumes the builder and constructs a [`EventDestination`](crate::types::EventDestination).
-    pub fn build(self) -> crate::types::EventDestination {
-        crate::types::EventDestination {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::EventDestinationBuilder::name)
+    /// - [`matching_event_types`](crate::types::builders::EventDestinationBuilder::matching_event_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventDestination {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EventDestination",
+                )
+            })?,
             enabled: self.enabled.unwrap_or_default(),
-            matching_event_types: self.matching_event_types,
+            matching_event_types: self.matching_event_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "matching_event_types",
+                    "matching_event_types was not specified but it is required when building EventDestination",
+                )
+            })?,
             kinesis_firehose_destination: self.kinesis_firehose_destination,
             cloud_watch_destination: self.cloud_watch_destination,
             sns_destination: self.sns_destination,
-        }
+        })
     }
 }

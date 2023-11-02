@@ -75,7 +75,9 @@ pub fn de_export_journal_to_s3_http_response(
         output = crate::protocol_serde::shape_export_journal_to_s3::de_export_journal_to_s3(_response_body, output)
             .map_err(crate::operation::export_journal_to_s3::ExportJournalToS3Error::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::export_journal_to_s3_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::export_journal_to_s3::ExportJournalToS3Error::unhandled)?
     })
 }
 

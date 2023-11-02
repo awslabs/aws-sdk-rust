@@ -25,6 +25,7 @@ version = "0.56.1"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
+features = ["http0-compat"]
 version = "0.56.1"
 
 [dependencies.aws-smithy-eventstream]
@@ -38,6 +39,10 @@ version = "0.56.1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
+version = "0.56.1"
+
+[dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
 version = "0.56.1"
 
 [dependencies.aws-types]

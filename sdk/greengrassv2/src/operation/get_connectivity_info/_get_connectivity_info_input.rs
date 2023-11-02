@@ -27,6 +27,7 @@ pub struct GetConnectivityInfoInputBuilder {
 }
 impl GetConnectivityInfoInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self

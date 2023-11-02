@@ -35,6 +35,7 @@ pub struct DeleteApplicationInputBuilder {
 }
 impl DeleteApplicationInputBuilder {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteApplicationInputBuilder {
         &self.application_name
     }
     /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
+    /// This field is required.
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_timestamp = ::std::option::Option::Some(input);
         self

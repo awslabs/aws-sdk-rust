@@ -36,7 +36,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ethernet_payload_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -48,14 +50,14 @@ pub fn ser_ethernet_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EthernetPayload,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.connection_type {
-        object.key("ConnectionType").string(var_1.as_str());
+    {
+        object.key("ConnectionType").string(input.connection_type.as_str());
     }
-    if let Some(var_2) = &input.static_ip_connection_info {
+    if let Some(var_1) = &input.static_ip_connection_info {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("StaticIpConnectionInfo").start_object();
-        crate::protocol_serde::shape_static_ip_connection_info::ser_static_ip_connection_info(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("StaticIpConnectionInfo").start_object();
+        crate::protocol_serde::shape_static_ip_connection_info::ser_static_ip_connection_info(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

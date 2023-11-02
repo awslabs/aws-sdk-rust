@@ -3,14 +3,14 @@ pub fn ser_time_series_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeSeriesCondition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute_name {
-        object.key("AttributeName").string(var_1.as_str());
+    {
+        object.key("AttributeName").string(input.attribute_name.as_str());
     }
-    if let Some(var_2) = &input.attribute_value {
-        object.key("AttributeValue").string(var_2.as_str());
+    {
+        object.key("AttributeValue").string(input.attribute_value.as_str());
     }
-    if let Some(var_3) = &input.condition {
-        object.key("Condition").string(var_3.as_str());
+    {
+        object.key("Condition").string(input.condition.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::time_series_condition_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

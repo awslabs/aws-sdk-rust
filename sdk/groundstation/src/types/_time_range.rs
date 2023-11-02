@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>Time in UTC at which the time range starts.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>Time in UTC at which the time range ends.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
 }
 impl TimeRange {
     /// <p>Time in UTC at which the time range starts.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>Time in UTC at which the time range ends.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
 }
 impl TimeRange {
@@ -35,6 +35,7 @@ pub struct TimeRangeBuilder {
 }
 impl TimeRangeBuilder {
     /// <p>Time in UTC at which the time range starts.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TimeRangeBuilder {
         &self.start_time
     }
     /// <p>Time in UTC at which the time range ends.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl TimeRangeBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`TimeRange`](crate::types::TimeRange).
-    pub fn build(self) -> crate::types::TimeRange {
-        crate::types::TimeRange {
-            start_time: self.start_time,
-            end_time: self.end_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::TimeRangeBuilder::start_time)
+    /// - [`end_time`](crate::types::builders::TimeRangeBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeRange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeRange {
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building TimeRange",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building TimeRange",
+                )
+            })?,
+        })
     }
 }

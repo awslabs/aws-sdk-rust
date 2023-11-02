@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRulesOfIpGroup`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_id(impl Into<String>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::set_group_id): <p>The identifier of the group.</p>
-    ///   - [`user_rules(IpRuleItem)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::set_user_rules): <p>One or more rules.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::set_group_id):<br>required: **true**<br><p>The identifier of the group.</p><br>
+    ///   - [`user_rules(IpRuleItem)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder::set_user_rules):<br>required: **true**<br><p>One or more rules.</p><br>
     /// - On success, responds with [`UpdateRulesOfIpGroupOutput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateRulesOfIpGroupError>`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupError)
     pub fn update_rules_of_ip_group(&self) -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupFluentBuilder {

@@ -74,7 +74,7 @@ pub fn de_count_pending_decision_tasks_http_response(
         output = crate::protocol_serde::shape_count_pending_decision_tasks::de_count_pending_decision_tasks(_response_body, output)
             .map_err(crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::count_pending_decision_tasks_output_correct_errors(output).build()
     })
 }
 

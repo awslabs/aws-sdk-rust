@@ -39,8 +39,10 @@ impl PlatformBranchSummary {
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-    pub fn supported_tier_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_tier_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_tier_list.is_none()`.
+    pub fn supported_tier_list(&self) -> &[::std::string::String] {
+        self.supported_tier_list.as_deref().unwrap_or_default()
     }
 }
 impl PlatformBranchSummary {

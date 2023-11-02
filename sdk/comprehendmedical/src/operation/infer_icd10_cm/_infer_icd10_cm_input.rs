@@ -27,6 +27,7 @@ pub struct InferIcd10CmInputBuilder {
 }
 impl InferIcd10CmInputBuilder {
     /// <p>The input text used for analysis.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self

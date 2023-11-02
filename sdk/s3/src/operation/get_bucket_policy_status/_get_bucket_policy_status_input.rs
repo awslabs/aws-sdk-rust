@@ -34,6 +34,7 @@ pub struct GetBucketPolicyStatusInputBuilder {
 }
 impl GetBucketPolicyStatusInputBuilder {
     /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

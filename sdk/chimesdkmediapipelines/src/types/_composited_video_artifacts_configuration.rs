@@ -70,6 +70,7 @@ impl CompositedVideoArtifactsConfigurationBuilder {
         &self.resolution
     }
     /// <p>The <code>GridView</code> configuration setting.</p>
+    /// This field is required.
     pub fn grid_view_configuration(mut self, input: crate::types::GridViewConfiguration) -> Self {
         self.grid_view_configuration = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DescribeRestoreJobInputBuilder {
 }
 impl DescribeRestoreJobInputBuilder {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
+    /// This field is required.
     pub fn restore_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_job_id = ::std::option::Option::Some(input.into());
         self

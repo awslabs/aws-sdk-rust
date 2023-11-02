@@ -27,6 +27,7 @@ pub struct GetImageInputBuilder {
 }
 impl GetImageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self

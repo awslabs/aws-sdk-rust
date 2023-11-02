@@ -28,6 +28,7 @@ pub struct ExportVectorEnrichmentJobOutputConfigBuilder {
 }
 impl ExportVectorEnrichmentJobOutputConfigBuilder {
     /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
+    /// This field is required.
     pub fn s3_data(mut self, input: crate::types::VectorEnrichmentJobS3Data) -> Self {
         self.s3_data = ::std::option::Option::Some(input);
         self

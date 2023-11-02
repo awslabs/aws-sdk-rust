@@ -28,8 +28,10 @@ impl DeleteCustomMetadataInput {
         self.version_id.as_deref()
     }
     /// <p>List of properties to remove.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
+    pub fn keys(&self) -> &[::std::string::String] {
+        self.keys.as_deref().unwrap_or_default()
     }
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub fn delete_all(&self) -> ::std::option::Option<bool> {
@@ -80,6 +82,7 @@ impl DeleteCustomMetadataInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the resource, either a document or folder.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DeleteCarrierGatewayInputBuilder {
 }
 impl DeleteCarrierGatewayInputBuilder {
     /// <p>The ID of the carrier gateway.</p>
+    /// This field is required.
     pub fn carrier_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_gateway_id = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartInputDevice`](crate::operation::start_input_device::builders::StartInputDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_device_id(impl Into<String>)`](crate::operation::start_input_device::builders::StartInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::start_input_device::builders::StartInputDeviceFluentBuilder::set_input_device_id): The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    ///   - [`input_device_id(impl Into<String>)`](crate::operation::start_input_device::builders::StartInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::start_input_device::builders::StartInputDeviceFluentBuilder::set_input_device_id):<br>required: **true**<br>The unique ID of the input device to reboot. For example, hd-123456789abcdef.<br>
     /// - On success, responds with [`StartInputDeviceOutput`](crate::operation::start_input_device::StartInputDeviceOutput)
     /// - On failure, responds with [`SdkError<StartInputDeviceError>`](crate::operation::start_input_device::StartInputDeviceError)
     pub fn start_input_device(&self) -> crate::operation::start_input_device::builders::StartInputDeviceFluentBuilder {

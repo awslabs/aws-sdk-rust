@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketAccessLogConfig {
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
     /// <p>This parameter is required when enabling the access log for a bucket, and should be omitted when disabling the access log.</p>
     /// </note>
@@ -19,7 +19,7 @@ pub struct BucketAccessLogConfig {
 }
 impl BucketAccessLogConfig {
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The name of the bucket where the access logs are saved. The destination can be a Lightsail bucket in the same account, and in the same Amazon Web Services Region as the source bucket.</p> <note>
@@ -53,6 +53,7 @@ pub struct BucketAccessLogConfigBuilder {
 }
 impl BucketAccessLogConfigBuilder {
     /// <p>A Boolean value that indicates whether bucket access logging is enabled for the bucket.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -110,11 +111,18 @@ impl BucketAccessLogConfigBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`BucketAccessLogConfig`](crate::types::BucketAccessLogConfig).
-    pub fn build(self) -> crate::types::BucketAccessLogConfig {
-        crate::types::BucketAccessLogConfig {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::BucketAccessLogConfigBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::BucketAccessLogConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BucketAccessLogConfig {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building BucketAccessLogConfig",
+                )
+            })?,
             destination: self.destination,
             prefix: self.prefix,
-        }
+        })
     }
 }

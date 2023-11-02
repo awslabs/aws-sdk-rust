@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueuesOutput {
     /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
-    pub queue_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub queue_urls: ::std::vec::Vec<::std::string::String>,
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeadLetterSourceQueuesOutput {
     /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
-    pub fn queue_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.queue_urls.as_deref()
+    pub fn queue_urls(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.queue_urls.deref()
     }
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,23 @@ impl ListDeadLetterSourceQueuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeadLetterSourceQueuesOutput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput).
-    pub fn build(self) -> crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput {
-        crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput {
-            queue_urls: self.queue_urls,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue_urls`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder::queue_urls)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput {
+            queue_urls: self.queue_urls.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "queue_urls",
+                    "queue_urls was not specified but it is required when building ListDeadLetterSourceQueuesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct ListAssessmentFrameworkShareRequestsInputBuilder {
 }
 impl ListAssessmentFrameworkShareRequestsInputBuilder {
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
+    /// This field is required.
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
         self.request_type = ::std::option::Option::Some(input);
         self

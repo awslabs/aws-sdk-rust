@@ -41,6 +41,7 @@ pub struct ListTestSetRecordsInputBuilder {
 }
 impl ListTestSetRecordsInputBuilder {
     /// <p>The identifier of the test set to list its test set records.</p>
+    /// This field is required.
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct ListServicesOutput {
 }
 impl ListServicesOutput {
     /// <p> The list of <code>ServiceSummary</code> objects. </p>
-    pub fn service_summary_list(&self) -> ::std::option::Option<&[crate::types::ServiceSummary]> {
-        self.service_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_summary_list.is_none()`.
+    pub fn service_summary_list(&self) -> &[crate::types::ServiceSummary] {
+        self.service_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

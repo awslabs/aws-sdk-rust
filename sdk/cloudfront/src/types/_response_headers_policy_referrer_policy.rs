@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyReferrerPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub r#override: ::std::option::Option<bool>,
+    pub r#override: bool,
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>no-referrer</code> </p> </li>
@@ -19,11 +19,11 @@ pub struct ResponseHeadersPolicyReferrerPolicy {
     /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
-    pub referrer_policy: ::std::option::Option<crate::types::ReferrerPolicyList>,
+    pub referrer_policy: crate::types::ReferrerPolicyList,
 }
 impl ResponseHeadersPolicyReferrerPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn r#override(&self) -> ::std::option::Option<bool> {
+    pub fn r#override(&self) -> bool {
         self.r#override
     }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
@@ -38,8 +38,8 @@ impl ResponseHeadersPolicyReferrerPolicy {
     /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
-    pub fn referrer_policy(&self) -> ::std::option::Option<&crate::types::ReferrerPolicyList> {
-        self.referrer_policy.as_ref()
+    pub fn referrer_policy(&self) -> &crate::types::ReferrerPolicyList {
+        &self.referrer_policy
     }
 }
 impl ResponseHeadersPolicyReferrerPolicy {
@@ -58,6 +58,7 @@ pub struct ResponseHeadersPolicyReferrerPolicyBuilder {
 }
 impl ResponseHeadersPolicyReferrerPolicyBuilder {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    /// This field is required.
     pub fn r#override(mut self, input: bool) -> Self {
         self.r#override = ::std::option::Option::Some(input);
         self
@@ -83,6 +84,7 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
+    /// This field is required.
     pub fn referrer_policy(mut self, input: crate::types::ReferrerPolicyList) -> Self {
         self.referrer_policy = ::std::option::Option::Some(input);
         self
@@ -119,10 +121,23 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
         &self.referrer_policy
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyReferrerPolicy`](crate::types::ResponseHeadersPolicyReferrerPolicy).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyReferrerPolicy {
-        crate::types::ResponseHeadersPolicyReferrerPolicy {
-            r#override: self.r#override,
-            referrer_policy: self.referrer_policy,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyReferrerPolicyBuilder::r#override)
+    /// - [`referrer_policy`](crate::types::builders::ResponseHeadersPolicyReferrerPolicyBuilder::referrer_policy)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyReferrerPolicy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyReferrerPolicy {
+            r#override: self.r#override.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#override",
+                    "r#override was not specified but it is required when building ResponseHeadersPolicyReferrerPolicy",
+                )
+            })?,
+            referrer_policy: self.referrer_policy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "referrer_policy",
+                    "referrer_policy was not specified but it is required when building ResponseHeadersPolicyReferrerPolicy",
+                )
+            })?,
+        })
     }
 }

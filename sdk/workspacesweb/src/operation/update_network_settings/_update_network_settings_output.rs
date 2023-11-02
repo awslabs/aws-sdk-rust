@@ -34,6 +34,7 @@ pub struct UpdateNetworkSettingsOutputBuilder {
 }
 impl UpdateNetworkSettingsOutputBuilder {
     /// <p>The network settings.</p>
+    /// This field is required.
     pub fn network_settings(mut self, input: crate::types::NetworkSettings) -> Self {
         self.network_settings = ::std::option::Option::Some(input);
         self

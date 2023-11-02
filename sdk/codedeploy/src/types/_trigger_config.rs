@@ -21,8 +21,10 @@ impl TriggerConfig {
         self.trigger_target_arn.as_deref()
     }
     /// <p>The event type or types for which notifications are triggered.</p>
-    pub fn trigger_events(&self) -> ::std::option::Option<&[crate::types::TriggerEventType]> {
-        self.trigger_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_events.is_none()`.
+    pub fn trigger_events(&self) -> &[crate::types::TriggerEventType] {
+        self.trigger_events.as_deref().unwrap_or_default()
     }
 }
 impl TriggerConfig {

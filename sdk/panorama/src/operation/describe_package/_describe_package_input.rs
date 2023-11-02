@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageInput {
     /// <p>The package's ID.</p>
-    pub package_id: ::std::option::Option<::std::string::String>,
+    pub package_id: ::std::string::String,
 }
 impl DescribePackageInput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
-        self.package_id.as_deref()
+    pub fn package_id(&self) -> &str {
+        use std::ops::Deref;
+        self.package_id.deref()
     }
 }
 impl DescribePackageInput {
@@ -27,6 +28,7 @@ pub struct DescribePackageInputBuilder {
 }
 impl DescribePackageInputBuilder {
     /// <p>The package's ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,18 @@ impl DescribePackageInputBuilder {
         &self.package_id
     }
     /// Consumes the builder and constructs a [`DescribePackageInput`](crate::operation::describe_package::DescribePackageInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_id`](crate::operation::describe_package::builders::DescribePackageInputBuilder::package_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_package::DescribePackageInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_package::DescribePackageInput { package_id: self.package_id })
+        ::std::result::Result::Ok(crate::operation::describe_package::DescribePackageInput {
+            package_id: self.package_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_id",
+                    "package_id was not specified but it is required when building DescribePackageInput",
+                )
+            })?,
+        })
     }
 }

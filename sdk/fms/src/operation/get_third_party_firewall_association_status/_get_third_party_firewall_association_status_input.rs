@@ -27,6 +27,7 @@ pub struct GetThirdPartyFirewallAssociationStatusInputBuilder {
 }
 impl GetThirdPartyFirewallAssociationStatusInputBuilder {
     /// <p>The name of the third-party firewall vendor.</p>
+    /// This field is required.
     pub fn third_party_firewall(mut self, input: crate::types::ThirdPartyFirewall) -> Self {
         self.third_party_firewall = ::std::option::Option::Some(input);
         self

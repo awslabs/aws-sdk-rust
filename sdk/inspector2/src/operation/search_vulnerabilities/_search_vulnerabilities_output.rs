@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesOutput {
     /// <p>Details about the listed vulnerability.</p>
-    pub vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>>,
+    pub vulnerabilities: ::std::vec::Vec<crate::types::Vulnerability>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchVulnerabilitiesOutput {
     /// <p>Details about the listed vulnerability.</p>
-    pub fn vulnerabilities(&self) -> ::std::option::Option<&[crate::types::Vulnerability]> {
-        self.vulnerabilities.as_deref()
+    pub fn vulnerabilities(&self) -> &[crate::types::Vulnerability] {
+        use std::ops::Deref;
+        self.vulnerabilities.deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl SearchVulnerabilitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput).
-    pub fn build(self) -> crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
-        crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
-            vulnerabilities: self.vulnerabilities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vulnerabilities`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder::vulnerabilities)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
+            vulnerabilities: self.vulnerabilities.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vulnerabilities",
+                    "vulnerabilities was not specified but it is required when building SearchVulnerabilitiesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

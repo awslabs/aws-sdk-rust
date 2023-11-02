@@ -9,8 +9,10 @@ pub struct AwsS3BucketNotificationConfiguration {
 }
 impl AwsS3BucketNotificationConfiguration {
     /// <p>Configurations for S3 bucket notifications.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::AwsS3BucketNotificationConfigurationDetail]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::AwsS3BucketNotificationConfigurationDetail] {
+        self.configurations.as_deref().unwrap_or_default()
     }
 }
 impl AwsS3BucketNotificationConfiguration {

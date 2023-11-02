@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_monitors_output_next_token(
 pub(crate) fn lens_list_health_events_output_health_events(
     input: crate::operation::list_health_events::ListHealthEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HealthEvent>> {
-    let input = match input.health_events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.health_events;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_monitors_output_monitors(
     input: crate::operation::list_monitors::ListMonitorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
-    let input = match input.monitors {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.monitors;
     ::std::option::Option::Some(input)
 }

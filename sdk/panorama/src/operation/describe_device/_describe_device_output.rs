@@ -107,8 +107,10 @@ impl DescribeDeviceOutput {
         self.lease_expiration_time.as_ref()
     }
     /// <p>Beta software releases available for the device.</p>
-    pub fn alternate_softwares(&self) -> ::std::option::Option<&[crate::types::AlternateSoftwareMetadata]> {
-        self.alternate_softwares.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternate_softwares.is_none()`.
+    pub fn alternate_softwares(&self) -> &[crate::types::AlternateSoftwareMetadata] {
+        self.alternate_softwares.as_deref().unwrap_or_default()
     }
     /// <p>The most recent beta software release.</p>
     pub fn latest_alternate_software(&self) -> ::std::option::Option<&str> {

@@ -35,6 +35,7 @@ pub struct ListIdentityPoolsInputBuilder {
 }
 impl ListIdentityPoolsInputBuilder {
     /// <p>The maximum number of identities to return.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self

@@ -83,6 +83,7 @@ impl ListInferenceEventsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the inference scheduler for the inference events listed. </p>
+    /// This field is required.
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl ListInferenceEventsInputBuilder {
         &self.inference_scheduler_name
     }
     /// <p> Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.</p>
+    /// This field is required.
     pub fn interval_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.interval_start_time = ::std::option::Option::Some(input);
         self
@@ -111,6 +113,7 @@ impl ListInferenceEventsInputBuilder {
         &self.interval_start_time
     }
     /// <p>Returns all the inference events with an end start time equal to or greater than less than the end time given.</p>
+    /// This field is required.
     pub fn interval_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.interval_end_time = ::std::option::Option::Some(input);
         self

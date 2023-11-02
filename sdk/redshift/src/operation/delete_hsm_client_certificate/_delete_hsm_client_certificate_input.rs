@@ -28,6 +28,7 @@ pub struct DeleteHsmClientCertificateInputBuilder {
 }
 impl DeleteHsmClientCertificateInputBuilder {
     /// <p>The identifier of the HSM client certificate to be deleted.</p>
+    /// This field is required.
     pub fn hsm_client_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_client_certificate_identifier = ::std::option::Option::Some(input.into());
         self

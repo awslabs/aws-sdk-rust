@@ -35,6 +35,7 @@ pub struct ArtifactSourceTypeBuilder {
 }
 impl ArtifactSourceTypeBuilder {
     /// <p>The type of ID.</p>
+    /// This field is required.
     pub fn source_id_type(mut self, input: crate::types::ArtifactSourceIdType) -> Self {
         self.source_id_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ArtifactSourceTypeBuilder {
         &self.source_id_type
     }
     /// <p>The ID.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

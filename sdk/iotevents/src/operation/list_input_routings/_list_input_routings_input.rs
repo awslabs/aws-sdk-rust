@@ -41,6 +41,7 @@ pub struct ListInputRoutingsInputBuilder {
 }
 impl ListInputRoutingsInputBuilder {
     /// <p> The identifer of the routed input. </p>
+    /// This field is required.
     pub fn input_identifier(mut self, input: crate::types::InputIdentifier) -> Self {
         self.input_identifier = ::std::option::Option::Some(input);
         self

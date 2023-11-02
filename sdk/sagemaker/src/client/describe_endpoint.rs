@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEndpoint`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::set_endpoint_name): <p>The name of the endpoint.</p>
+    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::set_endpoint_name):<br>required: **true**<br><p>The name of the endpoint.</p><br>
     /// - On success, responds with [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput) with field(s):
     ///   - [`endpoint_name(Option<String>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::endpoint_name): <p>Name of the endpoint.</p>
     ///   - [`endpoint_arn(Option<String>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>

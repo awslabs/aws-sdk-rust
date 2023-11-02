@@ -3,29 +3,29 @@ pub fn ser_customized_load_metric_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomizedLoadMetricSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.metric_name {
-        object.key("MetricName").string(var_1.as_str());
+    {
+        object.key("MetricName").string(input.metric_name.as_str());
     }
-    if let Some(var_2) = &input.namespace {
-        object.key("Namespace").string(var_2.as_str());
+    {
+        object.key("Namespace").string(input.namespace.as_str());
     }
-    if let Some(var_3) = &input.dimensions {
-        let mut array_4 = object.key("Dimensions").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.dimensions {
+        let mut array_2 = object.key("Dimensions").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_metric_dimension::ser_metric_dimension(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_metric_dimension::ser_metric_dimension(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_7) = &input.statistic {
-        object.key("Statistic").string(var_7.as_str());
+    {
+        object.key("Statistic").string(input.statistic.as_str());
     }
-    if let Some(var_8) = &input.unit {
-        object.key("Unit").string(var_8.as_str());
+    if let Some(var_5) = &input.unit {
+        object.key("Unit").string(var_5.as_str());
     }
     Ok(())
 }
@@ -86,7 +86,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::customized_load_metric_specification_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

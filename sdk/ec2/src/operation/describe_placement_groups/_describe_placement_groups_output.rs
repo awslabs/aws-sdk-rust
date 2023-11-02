@@ -9,8 +9,10 @@ pub struct DescribePlacementGroupsOutput {
 }
 impl DescribePlacementGroupsOutput {
     /// <p>Information about the placement groups.</p>
-    pub fn placement_groups(&self) -> ::std::option::Option<&[crate::types::PlacementGroup]> {
-        self.placement_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_groups.is_none()`.
+    pub fn placement_groups(&self) -> &[crate::types::PlacementGroup] {
+        self.placement_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePlacementGroupsOutput {

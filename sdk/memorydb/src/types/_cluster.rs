@@ -79,8 +79,10 @@ impl Cluster {
         self.number_of_shards
     }
     /// <p>A list of shards that are members of the cluster.</p>
-    pub fn shards(&self) -> ::std::option::Option<&[crate::types::Shard]> {
-        self.shards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shards.is_none()`.
+    pub fn shards(&self) -> &[crate::types::Shard] {
+        self.shards.as_deref().unwrap_or_default()
     }
     /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
     pub fn availability_mode(&self) -> ::std::option::Option<&crate::types::AzStatus> {
@@ -111,8 +113,10 @@ impl Cluster {
         self.parameter_group_status.as_deref()
     }
     /// <p>A list of security groups used by the cluster</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupMembership]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::SecurityGroupMembership] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The name of the subnet group used by the cluster</p>
     pub fn subnet_group_name(&self) -> ::std::option::Option<&str> {

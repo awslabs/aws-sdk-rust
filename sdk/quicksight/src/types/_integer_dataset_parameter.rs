@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerDatasetParameter {
     /// <p>An identifier for the integer parameter created in the dataset.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the integer parameter that is created in the dataset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
+    pub value_type: crate::types::DatasetParameterValueType,
     /// <p>A list of default values for a given integer parameter. This structure only accepts static values.</p>
     pub default_values: ::std::option::Option<crate::types::IntegerDatasetParameterDefaultValues>,
 }
 impl IntegerDatasetParameter {
     /// <p>An identifier for the integer parameter created in the dataset.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the integer parameter that is created in the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn value_type(&self) -> ::std::option::Option<&crate::types::DatasetParameterValueType> {
-        self.value_type.as_ref()
+    pub fn value_type(&self) -> &crate::types::DatasetParameterValueType {
+        &self.value_type
     }
     /// <p>A list of default values for a given integer parameter. This structure only accepts static values.</p>
     pub fn default_values(&self) -> ::std::option::Option<&crate::types::IntegerDatasetParameterDefaultValues> {
@@ -49,6 +51,7 @@ pub struct IntegerDatasetParameterBuilder {
 }
 impl IntegerDatasetParameterBuilder {
     /// <p>An identifier for the integer parameter created in the dataset.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl IntegerDatasetParameterBuilder {
         &self.id
     }
     /// <p>The name of the integer parameter that is created in the dataset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl IntegerDatasetParameterBuilder {
         &self.name
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
+    /// This field is required.
     pub fn value_type(mut self, input: crate::types::DatasetParameterValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,31 @@ impl IntegerDatasetParameterBuilder {
         &self.default_values
     }
     /// Consumes the builder and constructs a [`IntegerDatasetParameter`](crate::types::IntegerDatasetParameter).
-    pub fn build(self) -> crate::types::IntegerDatasetParameter {
-        crate::types::IntegerDatasetParameter {
-            id: self.id,
-            name: self.name,
-            value_type: self.value_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::IntegerDatasetParameterBuilder::id)
+    /// - [`name`](crate::types::builders::IntegerDatasetParameterBuilder::name)
+    /// - [`value_type`](crate::types::builders::IntegerDatasetParameterBuilder::value_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerDatasetParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntegerDatasetParameter {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building IntegerDatasetParameter",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building IntegerDatasetParameter",
+                )
+            })?,
+            value_type: self.value_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value_type",
+                    "value_type was not specified but it is required when building IntegerDatasetParameter",
+                )
+            })?,
             default_values: self.default_values,
-        }
+        })
     }
 }

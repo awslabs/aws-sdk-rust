@@ -114,7 +114,9 @@ pub fn de_evaluate_expression_http_response(
         output = crate::protocol_serde::shape_evaluate_expression::de_evaluate_expression(_response_body, output)
             .map_err(crate::operation::evaluate_expression::EvaluateExpressionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::evaluate_expression_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::evaluate_expression::EvaluateExpressionError::unhandled)?
     })
 }
 

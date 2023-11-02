@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverrideDatasetParameterOperation {
     /// <p>The name of the parameter to be overridden with different values.</p>
-    pub parameter_name: ::std::option::Option<::std::string::String>,
+    pub parameter_name: ::std::string::String,
     /// <p>The new name for the parameter.</p>
     pub new_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The new default values for the parameter.</p>
@@ -13,8 +13,9 @@ pub struct OverrideDatasetParameterOperation {
 }
 impl OverrideDatasetParameterOperation {
     /// <p>The name of the parameter to be overridden with different values.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
-        self.parameter_name.as_deref()
+    pub fn parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_name.deref()
     }
     /// <p>The new name for the parameter.</p>
     pub fn new_parameter_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct OverrideDatasetParameterOperationBuilder {
 }
 impl OverrideDatasetParameterOperationBuilder {
     /// <p>The name of the parameter to be overridden with different values.</p>
+    /// This field is required.
     pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl OverrideDatasetParameterOperationBuilder {
         &self.new_default_values
     }
     /// Consumes the builder and constructs a [`OverrideDatasetParameterOperation`](crate::types::OverrideDatasetParameterOperation).
-    pub fn build(self) -> crate::types::OverrideDatasetParameterOperation {
-        crate::types::OverrideDatasetParameterOperation {
-            parameter_name: self.parameter_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_name`](crate::types::builders::OverrideDatasetParameterOperationBuilder::parameter_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::OverrideDatasetParameterOperation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OverrideDatasetParameterOperation {
+            parameter_name: self.parameter_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameter_name",
+                    "parameter_name was not specified but it is required when building OverrideDatasetParameterOperation",
+                )
+            })?,
             new_parameter_name: self.new_parameter_name,
             new_default_values: self.new_default_values,
-        }
+        })
     }
 }

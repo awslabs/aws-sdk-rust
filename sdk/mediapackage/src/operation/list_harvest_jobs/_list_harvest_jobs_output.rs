@@ -11,8 +11,10 @@ pub struct ListHarvestJobsOutput {
 }
 impl ListHarvestJobsOutput {
     /// A list of HarvestJob records.
-    pub fn harvest_jobs(&self) -> ::std::option::Option<&[crate::types::HarvestJob]> {
-        self.harvest_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.harvest_jobs.is_none()`.
+    pub fn harvest_jobs(&self) -> &[crate::types::HarvestJob] {
+        self.harvest_jobs.as_deref().unwrap_or_default()
     }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

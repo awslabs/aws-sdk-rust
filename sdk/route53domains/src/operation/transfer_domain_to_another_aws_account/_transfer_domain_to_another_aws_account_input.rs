@@ -35,6 +35,7 @@ pub struct TransferDomainToAnotherAwsAccountInputBuilder {
 }
 impl TransferDomainToAnotherAwsAccountInputBuilder {
     /// <p>The name of the domain that you want to transfer from the current Amazon Web Services account to another account.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl TransferDomainToAnotherAwsAccountInputBuilder {
         &self.domain_name
     }
     /// <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

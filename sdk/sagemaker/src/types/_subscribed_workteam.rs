@@ -56,6 +56,7 @@ pub struct SubscribedWorkteamBuilder {
 }
 impl SubscribedWorkteamBuilder {
     /// <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
+    /// This field is required.
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
         self

@@ -49,6 +49,7 @@ pub struct ListResourcesInProtectionGroupInputBuilder {
 }
 impl ListResourcesInProtectionGroupInputBuilder {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// This field is required.
     pub fn protection_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_group_id = ::std::option::Option::Some(input.into());
         self

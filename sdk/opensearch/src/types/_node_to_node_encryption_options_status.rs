@@ -35,6 +35,7 @@ pub struct NodeToNodeEncryptionOptionsStatusBuilder {
 }
 impl NodeToNodeEncryptionOptionsStatusBuilder {
     /// <p>The node-to-node encryption options for the specified domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::NodeToNodeEncryptionOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl NodeToNodeEncryptionOptionsStatusBuilder {
         &self.options
     }
     /// <p>The status of the node-to-node encryption options for the specified domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

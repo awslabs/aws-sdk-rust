@@ -25,8 +25,10 @@ pub struct Partition {
 }
 impl Partition {
     /// <p>The values of the partition.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The name of the catalog database in which to create the partition.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {

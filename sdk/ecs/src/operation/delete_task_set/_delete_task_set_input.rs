@@ -48,6 +48,7 @@ pub struct DeleteTaskSetInputBuilder {
 }
 impl DeleteTaskSetInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set found in to delete.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteTaskSetInputBuilder {
         &self.cluster
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to delete.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DeleteTaskSetInputBuilder {
         &self.service
     }
     /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
+    /// This field is required.
     pub fn task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_set = ::std::option::Option::Some(input.into());
         self

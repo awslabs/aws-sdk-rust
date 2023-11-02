@@ -28,6 +28,7 @@ pub struct GetDeploymentConfigInputBuilder {
 }
 impl GetDeploymentConfigInputBuilder {
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
+    /// This field is required.
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self

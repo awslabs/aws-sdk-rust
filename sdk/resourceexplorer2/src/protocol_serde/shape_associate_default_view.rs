@@ -88,11 +88,10 @@ pub fn de_associate_default_view_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::associate_default_view::AssociateDefaultViewError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_default_view::AssociateDefaultViewError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::associate_default_view::AssociateDefaultViewError::generic(generic),

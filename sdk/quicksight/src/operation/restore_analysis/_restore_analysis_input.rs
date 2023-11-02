@@ -34,6 +34,7 @@ pub struct RestoreAnalysisInputBuilder {
 }
 impl RestoreAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RestoreAnalysisInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the analysis that you're restoring.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentRequires {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The document version required by the current document.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The document type of the required SSM document.</p>
@@ -15,8 +15,9 @@ pub struct DocumentRequires {
 }
 impl DocumentRequires {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The document version required by the current document.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct DocumentRequiresBuilder {
 }
 impl DocumentRequiresBuilder {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl DocumentRequiresBuilder {
         &self.version_name
     }
     /// Consumes the builder and constructs a [`DocumentRequires`](crate::types::DocumentRequires).
-    pub fn build(self) -> crate::types::DocumentRequires {
-        crate::types::DocumentRequires {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DocumentRequiresBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentRequires, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentRequires {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DocumentRequires",
+                )
+            })?,
             version: self.version,
             require_type: self.require_type,
             version_name: self.version_name,
-        }
+        })
     }
 }

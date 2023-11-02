@@ -28,6 +28,7 @@ pub struct ProcessorConfigurationBuilder {
 }
 impl ProcessorConfigurationBuilder {
     /// <p>Indicates that the processor is of type Lambda.</p>
+    /// This field is required.
     pub fn lambda(mut self, input: crate::types::LambdaConfiguration) -> Self {
         self.lambda = ::std::option::Option::Some(input);
         self

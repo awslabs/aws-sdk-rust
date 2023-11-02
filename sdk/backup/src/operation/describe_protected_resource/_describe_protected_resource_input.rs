@@ -27,6 +27,7 @@ pub struct DescribeProtectedResourceInputBuilder {
 }
 impl DescribeProtectedResourceInputBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

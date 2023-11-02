@@ -3,27 +3,27 @@ pub fn ser_list_app_versions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_app_versions::ListAppVersionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.end_time {
+    if let Some(var_1) = &input.end_time {
         object
             .key("endTime")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_2) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("nextToken").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.start_time {
+    if let Some(var_4) = &input.start_time {
         object
             .key("startTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

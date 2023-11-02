@@ -9,8 +9,10 @@ pub struct DescribeDomainsInput {
 }
 impl DescribeDomainsInput {
     /// <p>Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.</p>
-    pub fn domain_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domain_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_names.is_none()`.
+    pub fn domain_names(&self) -> &[::std::string::String] {
+        self.domain_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeDomainsInput {

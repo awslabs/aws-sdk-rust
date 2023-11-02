@@ -13,16 +13,22 @@ pub struct ResourceDetails {
 }
 impl ResourceDetails {
     /// <p>The information that DataSync Discovery collects about storage virtual machines (SVMs) in your on-premises storage system.</p>
-    pub fn net_app_ontapsv_ms(&self) -> ::std::option::Option<&[crate::types::NetAppOntapsvm]> {
-        self.net_app_ontapsv_ms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.net_app_ontapsv_ms.is_none()`.
+    pub fn net_app_ontapsv_ms(&self) -> &[crate::types::NetAppOntapsvm] {
+        self.net_app_ontapsv_ms.as_deref().unwrap_or_default()
     }
     /// <p>The information that DataSync Discovery collects about volumes in your on-premises storage system.</p>
-    pub fn net_app_ontap_volumes(&self) -> ::std::option::Option<&[crate::types::NetAppOntapVolume]> {
-        self.net_app_ontap_volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.net_app_ontap_volumes.is_none()`.
+    pub fn net_app_ontap_volumes(&self) -> &[crate::types::NetAppOntapVolume] {
+        self.net_app_ontap_volumes.as_deref().unwrap_or_default()
     }
     /// <p>The information that DataSync Discovery collects about the cluster in your on-premises storage system.</p>
-    pub fn net_app_ontap_clusters(&self) -> ::std::option::Option<&[crate::types::NetAppOntapCluster]> {
-        self.net_app_ontap_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.net_app_ontap_clusters.is_none()`.
+    pub fn net_app_ontap_clusters(&self) -> &[crate::types::NetAppOntapCluster] {
+        self.net_app_ontap_clusters.as_deref().unwrap_or_default()
     }
 }
 impl ResourceDetails {

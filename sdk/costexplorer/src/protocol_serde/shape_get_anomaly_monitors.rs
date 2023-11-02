@@ -84,7 +84,9 @@ pub fn de_get_anomaly_monitors_http_response(
         output = crate::protocol_serde::shape_get_anomaly_monitors::de_get_anomaly_monitors(_response_body, output)
             .map_err(crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_anomaly_monitors_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError::unhandled)?
     })
 }
 

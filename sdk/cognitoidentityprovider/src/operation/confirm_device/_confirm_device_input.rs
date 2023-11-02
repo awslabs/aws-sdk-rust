@@ -59,6 +59,7 @@ pub struct ConfirmDeviceInputBuilder {
 }
 impl ConfirmDeviceInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl ConfirmDeviceInputBuilder {
         &self.access_token
     }
     /// <p>The device key.</p>
+    /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self

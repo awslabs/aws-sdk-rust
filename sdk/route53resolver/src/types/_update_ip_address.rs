@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIpAddress {
     /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
-    pub ip_id: ::std::option::Option<::std::string::String>,
+    pub ip_id: ::std::string::String,
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
-    pub ipv6: ::std::option::Option<::std::string::String>,
+    pub ipv6: ::std::string::String,
 }
 impl UpdateIpAddress {
     /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
-    pub fn ip_id(&self) -> ::std::option::Option<&str> {
-        self.ip_id.as_deref()
+    pub fn ip_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_id.deref()
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
-    pub fn ipv6(&self) -> ::std::option::Option<&str> {
-        self.ipv6.as_deref()
+    pub fn ipv6(&self) -> &str {
+        use std::ops::Deref;
+        self.ipv6.deref()
     }
 }
 impl UpdateIpAddress {
@@ -35,6 +37,7 @@ pub struct UpdateIpAddressBuilder {
 }
 impl UpdateIpAddressBuilder {
     /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
+    /// This field is required.
     pub fn ip_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl UpdateIpAddressBuilder {
         &self.ip_id
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
+    /// This field is required.
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl UpdateIpAddressBuilder {
         &self.ipv6
     }
     /// Consumes the builder and constructs a [`UpdateIpAddress`](crate::types::UpdateIpAddress).
-    pub fn build(self) -> crate::types::UpdateIpAddress {
-        crate::types::UpdateIpAddress {
-            ip_id: self.ip_id,
-            ipv6: self.ipv6,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_id`](crate::types::builders::UpdateIpAddressBuilder::ip_id)
+    /// - [`ipv6`](crate::types::builders::UpdateIpAddressBuilder::ipv6)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateIpAddress, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateIpAddress {
+            ip_id: self.ip_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ip_id",
+                    "ip_id was not specified but it is required when building UpdateIpAddress",
+                )
+            })?,
+            ipv6: self.ipv6.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ipv6",
+                    "ipv6 was not specified but it is required when building UpdateIpAddress",
+                )
+            })?,
+        })
     }
 }

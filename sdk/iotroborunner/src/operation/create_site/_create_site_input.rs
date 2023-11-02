@@ -6,9 +6,9 @@ pub struct CreateSiteInput {
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub country_code: ::std::option::Option<::std::string::String>,
+    pub country_code: ::std::string::String,
     /// A high-level description of the site.
     pub description: ::std::option::Option<::std::string::String>,
 }
@@ -18,12 +18,14 @@ impl CreateSiteInput {
         self.client_token.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    pub fn country_code(&self) -> ::std::option::Option<&str> {
-        self.country_code.as_deref()
+    pub fn country_code(&self) -> &str {
+        use std::ops::Deref;
+        self.country_code.deref()
     }
     /// A high-level description of the site.
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl CreateSiteInputBuilder {
         &self.client_token
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateSiteInputBuilder {
         &self.name
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    /// This field is required.
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
         self
@@ -104,11 +108,24 @@ impl CreateSiteInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_site::builders::CreateSiteInputBuilder::name)
+    /// - [`country_code`](crate::operation::create_site::builders::CreateSiteInputBuilder::country_code)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_site::CreateSiteInput {
             client_token: self.client_token,
-            name: self.name,
-            country_code: self.country_code,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateSiteInput",
+                )
+            })?,
+            country_code: self.country_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "country_code",
+                    "country_code was not specified but it is required when building CreateSiteInput",
+                )
+            })?,
             description: self.description,
         })
     }

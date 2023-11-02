@@ -28,7 +28,9 @@ pub fn de_describe_mount_target_security_groups_http_error(
                 output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output)
                     .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -45,7 +47,9 @@ pub fn de_describe_mount_target_security_groups_http_error(
                         crate::protocol_serde::shape_incorrect_mount_target_state::de_incorrect_mount_target_state_json_err(_response_body, output)
                             .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::incorrect_mount_target_state_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -62,7 +66,9 @@ pub fn de_describe_mount_target_security_groups_http_error(
                     output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
                         .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_error_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -79,7 +85,9 @@ pub fn de_describe_mount_target_security_groups_http_error(
                     output = crate::protocol_serde::shape_mount_target_not_found::de_mount_target_not_found_json_err(_response_body, output)
                         .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::mount_target_not_found_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -106,7 +114,9 @@ pub fn de_describe_mount_target_security_groups_http_response(
         output = crate::protocol_serde::shape_describe_mount_target_security_groups::de_describe_mount_target_security_groups(_response_body, output)
             .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_mount_target_security_groups_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsError::unhandled)?
     })
 }
 

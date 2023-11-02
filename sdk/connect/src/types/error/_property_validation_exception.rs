@@ -5,30 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyValidationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub property_list: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValidationExceptionProperty>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl PropertyValidationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn property_list(&self) -> ::std::option::Option<&[crate::types::PropertyValidationExceptionProperty]> {
-        self.property_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_list.is_none()`.
+    pub fn property_list(&self) -> &[crate::types::PropertyValidationExceptionProperty] {
+        self.property_list.as_deref().unwrap_or_default()
     }
 }
 impl PropertyValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for PropertyValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "PropertyValidationException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -62,6 +62,7 @@ pub struct PropertyValidationExceptionBuilder {
 }
 impl PropertyValidationExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -106,11 +107,18 @@ impl PropertyValidationExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PropertyValidationException`](crate::types::error::PropertyValidationException).
-    pub fn build(self) -> crate::types::error::PropertyValidationException {
-        crate::types::error::PropertyValidationException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::PropertyValidationExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::PropertyValidationException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::PropertyValidationException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building PropertyValidationException",
+                )
+            })?,
             property_list: self.property_list,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

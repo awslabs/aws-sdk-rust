@@ -27,6 +27,7 @@ pub struct DeleteFlowDefinitionInputBuilder {
 }
 impl DeleteFlowDefinitionInputBuilder {
     /// <p>The name of the flow definition you are deleting.</p>
+    /// This field is required.
     pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_name = ::std::option::Option::Some(input.into());
         self

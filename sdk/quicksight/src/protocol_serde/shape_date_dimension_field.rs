@@ -3,26 +3,26 @@ pub fn ser_date_dimension_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateDimensionField,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.column {
+    if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Column").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.date_granularity {
-        object.key("DateGranularity").string(var_4.as_str());
+    if let Some(var_3) = &input.date_granularity {
+        object.key("DateGranularity").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.hierarchy_id {
-        object.key("HierarchyId").string(var_5.as_str());
+    if let Some(var_4) = &input.hierarchy_id {
+        object.key("HierarchyId").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.format_configuration {
+    if let Some(var_5) = &input.format_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("FormatConfiguration").start_object();
-        crate::protocol_serde::shape_date_time_format_configuration::ser_date_time_format_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("FormatConfiguration").start_object();
+        crate::protocol_serde::shape_date_time_format_configuration::ser_date_time_format_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -81,7 +81,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::date_dimension_field_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

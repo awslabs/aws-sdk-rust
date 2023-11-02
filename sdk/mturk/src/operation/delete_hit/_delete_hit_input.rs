@@ -27,6 +27,7 @@ pub struct DeleteHitInputBuilder {
 }
 impl DeleteHitInputBuilder {
     /// <p>The ID of the HIT to be deleted.</p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self

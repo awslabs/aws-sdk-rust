@@ -11,14 +11,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAction {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
-    pub action_name: ::std::option::Option<::std::string::String>,
+    pub action_name: ::std::string::String,
     /// <p>The custom action associated with the action name.</p>
     pub action_definition: ::std::option::Option<crate::types::ActionDefinition>,
 }
 impl CustomAction {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
-        self.action_name.as_deref()
+    pub fn action_name(&self) -> &str {
+        use std::ops::Deref;
+        self.action_name.deref()
     }
     /// <p>The custom action associated with the action name.</p>
     pub fn action_definition(&self) -> ::std::option::Option<&crate::types::ActionDefinition> {
@@ -41,6 +42,7 @@ pub struct CustomActionBuilder {
 }
 impl CustomActionBuilder {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl CustomActionBuilder {
         &self.action_name
     }
     /// <p>The custom action associated with the action name.</p>
+    /// This field is required.
     pub fn action_definition(mut self, input: crate::types::ActionDefinition) -> Self {
         self.action_definition = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl CustomActionBuilder {
         &self.action_definition
     }
     /// Consumes the builder and constructs a [`CustomAction`](crate::types::CustomAction).
-    pub fn build(self) -> crate::types::CustomAction {
-        crate::types::CustomAction {
-            action_name: self.action_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_name`](crate::types::builders::CustomActionBuilder::action_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomAction {
+            action_name: self.action_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_name",
+                    "action_name was not specified but it is required when building CustomAction",
+                )
+            })?,
             action_definition: self.action_definition,
-        }
+        })
     }
 }

@@ -243,8 +243,10 @@ impl Snapshot {
         self.automatic_failover.as_ref()
     }
     /// <p>A list of the cache nodes in the source cluster.</p>
-    pub fn node_snapshots(&self) -> ::std::option::Option<&[crate::types::NodeSnapshot]> {
-        self.node_snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_snapshots.is_none()`.
+    pub fn node_snapshots(&self) -> &[crate::types::NodeSnapshot] {
+        self.node_snapshots.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {

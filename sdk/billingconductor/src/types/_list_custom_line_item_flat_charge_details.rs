@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
-    pub charge_value: ::std::option::Option<f64>,
+    pub charge_value: f64,
 }
 impl ListCustomLineItemFlatChargeDetails {
     /// <p> The custom line item's fixed charge value in USD. </p>
-    pub fn charge_value(&self) -> ::std::option::Option<f64> {
+    pub fn charge_value(&self) -> f64 {
         self.charge_value
     }
 }
@@ -28,6 +28,7 @@ pub struct ListCustomLineItemFlatChargeDetailsBuilder {
 }
 impl ListCustomLineItemFlatChargeDetailsBuilder {
     /// <p> The custom line item's fixed charge value in USD. </p>
+    /// This field is required.
     pub fn charge_value(mut self, input: f64) -> Self {
         self.charge_value = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl ListCustomLineItemFlatChargeDetailsBuilder {
         &self.charge_value
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemFlatChargeDetails`](crate::types::ListCustomLineItemFlatChargeDetails).
-    pub fn build(self) -> crate::types::ListCustomLineItemFlatChargeDetails {
-        crate::types::ListCustomLineItemFlatChargeDetails {
-            charge_value: self.charge_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`charge_value`](crate::types::builders::ListCustomLineItemFlatChargeDetailsBuilder::charge_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListCustomLineItemFlatChargeDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListCustomLineItemFlatChargeDetails {
+            charge_value: self.charge_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "charge_value",
+                    "charge_value was not specified but it is required when building ListCustomLineItemFlatChargeDetails",
+                )
+            })?,
+        })
     }
 }

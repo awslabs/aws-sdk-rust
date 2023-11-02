@@ -140,6 +140,7 @@ impl TransformJobDefinitionBuilder {
         &self.environment
     }
     /// <p>A description of the input source and the way the transform job consumes it.</p>
+    /// This field is required.
     pub fn transform_input(mut self, input: crate::types::TransformInput) -> Self {
         self.transform_input = ::std::option::Option::Some(input);
         self
@@ -154,6 +155,7 @@ impl TransformJobDefinitionBuilder {
         &self.transform_input
     }
     /// <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
+    /// This field is required.
     pub fn transform_output(mut self, input: crate::types::TransformOutput) -> Self {
         self.transform_output = ::std::option::Option::Some(input);
         self
@@ -168,6 +170,7 @@ impl TransformJobDefinitionBuilder {
         &self.transform_output
     }
     /// <p>Identifies the ML compute instances for the transform job.</p>
+    /// This field is required.
     pub fn transform_resources(mut self, input: crate::types::TransformResources) -> Self {
         self.transform_resources = ::std::option::Option::Some(input);
         self

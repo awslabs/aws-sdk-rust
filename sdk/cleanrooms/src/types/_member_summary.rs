@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberSummary {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
-    pub status: ::std::option::Option<crate::types::MemberStatus>,
+    pub status: crate::types::MemberStatus,
     /// <p>The member's display name.</p>
-    pub display_name: ::std::option::Option<::std::string::String>,
+    pub display_name: ::std::string::String,
     /// <p>The abilities granted to the collaboration member.</p>
-    pub abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>The time when the member was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the member metadata was last updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The unique ID for the member's associated membership, if present.</p>
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the member's associated membership, if present.</p>
@@ -23,28 +23,31 @@ pub struct MemberSummary {
 }
 impl MemberSummary {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MemberStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::MemberStatus {
+        &self.status
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
-        self.display_name.as_deref()
+    pub fn display_name(&self) -> &str {
+        use std::ops::Deref;
+        self.display_name.deref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn abilities(&self) -> ::std::option::Option<&[crate::types::MemberAbility]> {
-        self.abilities.as_deref()
+    pub fn abilities(&self) -> &[crate::types::MemberAbility] {
+        use std::ops::Deref;
+        self.abilities.deref()
     }
     /// <p>The time when the member was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The time the member metadata was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The unique ID for the member's associated membership, if present.</p>
     pub fn membership_id(&self) -> ::std::option::Option<&str> {
@@ -77,6 +80,7 @@ pub struct MemberSummaryBuilder {
 }
 impl MemberSummaryBuilder {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl MemberSummaryBuilder {
         &self.account_id
     }
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MemberStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -105,6 +110,7 @@ impl MemberSummaryBuilder {
         &self.status
     }
     /// <p>The member's display name.</p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +145,7 @@ impl MemberSummaryBuilder {
         &self.abilities
     }
     /// <p>The time when the member was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -153,6 +160,7 @@ impl MemberSummaryBuilder {
         &self.create_time
     }
     /// <p>The time the member metadata was last updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -195,16 +203,53 @@ impl MemberSummaryBuilder {
         &self.membership_arn
     }
     /// Consumes the builder and constructs a [`MemberSummary`](crate::types::MemberSummary).
-    pub fn build(self) -> crate::types::MemberSummary {
-        crate::types::MemberSummary {
-            account_id: self.account_id,
-            status: self.status,
-            display_name: self.display_name,
-            abilities: self.abilities,
-            create_time: self.create_time,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::MemberSummaryBuilder::account_id)
+    /// - [`status`](crate::types::builders::MemberSummaryBuilder::status)
+    /// - [`display_name`](crate::types::builders::MemberSummaryBuilder::display_name)
+    /// - [`abilities`](crate::types::builders::MemberSummaryBuilder::abilities)
+    /// - [`create_time`](crate::types::builders::MemberSummaryBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::MemberSummaryBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MemberSummary {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building MemberSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building MemberSummary",
+                )
+            })?,
+            display_name: self.display_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "display_name",
+                    "display_name was not specified but it is required when building MemberSummary",
+                )
+            })?,
+            abilities: self.abilities.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "abilities",
+                    "abilities was not specified but it is required when building MemberSummary",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building MemberSummary",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building MemberSummary",
+                )
+            })?,
             membership_id: self.membership_id,
             membership_arn: self.membership_arn,
-        }
+        })
     }
 }

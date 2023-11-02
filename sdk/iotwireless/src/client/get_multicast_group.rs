@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMulticastGroup`](crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_multicast_group::builders::GetMulticastGroupFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the multicast group.</p><br>
     /// - On success, responds with [`GetMulticastGroupOutput`](crate::operation::get_multicast_group::GetMulticastGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_multicast_group::GetMulticastGroupOutput::arn): <p>The arn of the multicast group.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_multicast_group::GetMulticastGroupOutput::id): <p>The ID of the multicast group.</p>

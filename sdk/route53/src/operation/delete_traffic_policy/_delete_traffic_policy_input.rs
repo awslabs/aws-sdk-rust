@@ -35,6 +35,7 @@ pub struct DeleteTrafficPolicyInputBuilder {
 }
 impl DeleteTrafficPolicyInputBuilder {
     /// <p>The ID of the traffic policy that you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteTrafficPolicyInputBuilder {
         &self.id
     }
     /// <p>The version number of the traffic policy that you want to delete.</p>
+    /// This field is required.
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
         self

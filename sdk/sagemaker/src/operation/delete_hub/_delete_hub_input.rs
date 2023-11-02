@@ -27,6 +27,7 @@ pub struct DeleteHubInputBuilder {
 }
 impl DeleteHubInputBuilder {
     /// <p>The name of the hub to delete.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self

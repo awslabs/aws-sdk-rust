@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorDetails {
     /// <p>The error code.</p>
-    pub code: ::std::option::Option<crate::types::ErrorCode>,
+    pub code: crate::types::ErrorCode,
     /// <p>The error message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p> A list of detailed errors. </p>
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::DetailedError>>,
 }
 impl ErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::ErrorCode {
+        &self.code
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p> A list of detailed errors. </p>
-    pub fn details(&self) -> ::std::option::Option<&[crate::types::DetailedError]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[crate::types::DetailedError] {
+        self.details.as_deref().unwrap_or_default()
     }
 }
 impl ErrorDetails {
@@ -42,6 +45,7 @@ pub struct ErrorDetailsBuilder {
 }
 impl ErrorDetailsBuilder {
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::ErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -56,6 +60,7 @@ impl ErrorDetailsBuilder {
         &self.code
     }
     /// <p>The error message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +95,24 @@ impl ErrorDetailsBuilder {
         &self.details
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
-    pub fn build(self) -> crate::types::ErrorDetails {
-        crate::types::ErrorDetails {
-            code: self.code,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::ErrorDetailsBuilder::code)
+    /// - [`message`](crate::types::builders::ErrorDetailsBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::ErrorDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ErrorDetails {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building ErrorDetails",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ErrorDetails",
+                )
+            })?,
             details: self.details,
-        }
+        })
     }
 }

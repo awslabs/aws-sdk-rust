@@ -11,12 +11,16 @@ pub struct BatchGetNamedQueryOutput {
 }
 impl BatchGetNamedQueryOutput {
     /// <p>Information about the named query IDs submitted.</p>
-    pub fn named_queries(&self) -> ::std::option::Option<&[crate::types::NamedQuery]> {
-        self.named_queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.named_queries.is_none()`.
+    pub fn named_queries(&self) -> &[crate::types::NamedQuery] {
+        self.named_queries.as_deref().unwrap_or_default()
     }
     /// <p>Information about provided query IDs.</p>
-    pub fn unprocessed_named_query_ids(&self) -> ::std::option::Option<&[crate::types::UnprocessedNamedQueryId]> {
-        self.unprocessed_named_query_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_named_query_ids.is_none()`.
+    pub fn unprocessed_named_query_ids(&self) -> &[crate::types::UnprocessedNamedQueryId] {
+        self.unprocessed_named_query_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetNamedQueryOutput {

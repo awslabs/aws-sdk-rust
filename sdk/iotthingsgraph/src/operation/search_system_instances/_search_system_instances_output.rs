@@ -11,8 +11,10 @@ pub struct SearchSystemInstancesOutput {
 }
 impl SearchSystemInstancesOutput {
     /// <p>An array of objects that contain summary data abour the system instances in the result set.</p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::SystemInstanceSummary]> {
-        self.summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
+    pub fn summaries(&self) -> &[crate::types::SystemInstanceSummary] {
+        self.summaries.as_deref().unwrap_or_default()
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

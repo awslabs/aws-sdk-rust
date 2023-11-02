@@ -3,8 +3,10 @@ pub fn ser_request_body_associated_resource_type_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestBodyAssociatedResourceTypeConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.default_size_inspection_limit {
-        object.key("DefaultSizeInspectionLimit").string(var_1.as_str());
+    {
+        object
+            .key("DefaultSizeInspectionLimit")
+            .string(input.default_size_inspection_limit.as_str());
     }
     Ok(())
 }
@@ -41,7 +43,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::request_body_associated_resource_type_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

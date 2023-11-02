@@ -43,6 +43,7 @@ pub fn ser_job_operation(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_job_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::JobOperation, ::aws_smithy_xml::decode::XmlDecodeError> {

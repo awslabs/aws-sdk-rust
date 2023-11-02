@@ -17,8 +17,10 @@ pub struct ListSuppressedDestinationsInput {
 }
 impl ListSuppressedDestinationsInput {
     /// <p>The factors that caused the email address to be added to .</p>
-    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
-        self.reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
+    pub fn reasons(&self) -> &[crate::types::SuppressionListReason] {
+        self.reasons.as_deref().unwrap_or_default()
     }
     /// <p>Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

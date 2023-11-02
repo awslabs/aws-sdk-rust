@@ -116,6 +116,7 @@ impl StackSummaryBuilder {
         &self.stack_id
     }
     /// <p>The name associated with the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +145,7 @@ impl StackSummaryBuilder {
         &self.template_description
     }
     /// <p>The time the stack was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -186,6 +188,7 @@ impl StackSummaryBuilder {
         &self.deletion_time
     }
     /// <p>The current status of the stack.</p>
+    /// This field is required.
     pub fn stack_status(mut self, input: crate::types::StackStatus) -> Self {
         self.stack_status = ::std::option::Option::Some(input);
         self

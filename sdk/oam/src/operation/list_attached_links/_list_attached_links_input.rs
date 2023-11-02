@@ -69,6 +69,7 @@ impl ListAttachedLinksInputBuilder {
         &self.next_token
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
+    /// This field is required.
     pub fn sink_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sink_identifier = ::std::option::Option::Some(input.into());
         self

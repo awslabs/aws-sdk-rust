@@ -21,8 +21,10 @@ pub struct DashPackage {
 }
 impl DashPackage {
     /// A list of DASH manifest configurations.
-    pub fn dash_manifests(&self) -> ::std::option::Option<&[crate::types::DashManifest]> {
-        self.dash_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dash_manifests.is_none()`.
+    pub fn dash_manifests(&self) -> &[crate::types::DashManifest] {
+        self.dash_manifests.as_deref().unwrap_or_default()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
     pub fn encryption(&self) -> ::std::option::Option<&crate::types::DashEncryption> {
@@ -37,8 +39,10 @@ impl DashPackage {
         self.include_iframe_only_stream
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
-    pub fn period_triggers(&self) -> ::std::option::Option<&[crate::types::PeriodTriggersElement]> {
-        self.period_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.period_triggers.is_none()`.
+    pub fn period_triggers(&self) -> &[crate::types::PeriodTriggersElement] {
+        self.period_triggers.as_deref().unwrap_or_default()
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     pub fn segment_duration_seconds(&self) -> ::std::option::Option<i32> {

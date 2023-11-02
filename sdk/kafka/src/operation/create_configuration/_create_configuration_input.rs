@@ -22,8 +22,10 @@ impl CreateConfigurationInput {
         self.description.as_deref()
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.kafka_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_versions.is_none()`.
+    pub fn kafka_versions(&self) -> &[::std::string::String] {
+        self.kafka_versions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the configuration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -90,6 +92,7 @@ impl CreateConfigurationInputBuilder {
         &self.kafka_versions
     }
     /// <p>The name of the configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl CreateConfigurationInputBuilder {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
+    /// This field is required.
     pub fn server_properties(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.server_properties = ::std::option::Option::Some(input);
         self

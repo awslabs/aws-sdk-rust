@@ -23,6 +23,10 @@ impl GetWebAclForResourceInputBuilder {
 /// Fluent builder constructing a request to `GetWebACLForResource`.
 ///
 /// <p>Retrieves the <code>WebACL</code> for the specified resource. </p>
+/// <p>This call uses <code>GetWebACL</code>, to verify that your account has permission to access the retrieved web ACL. If you get an error that indicates that your account isn't authorized to perform <code>wafv2:GetWebACL</code> on the resource, that error won't be included in your CloudTrail event history. </p>
+/// <p>For Amazon CloudFront, don't use this call. Instead, call the CloudFront action <code>GetDistributionConfig</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a> in the <i>Amazon CloudFront API Reference</i>. </p>
+/// <p> <b>Required permissions for customer-managed IAM policies</b> </p>
+/// <p>This call requires permissions that are specific to the protected resource type. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-GetWebACLForResource">Permissions for GetWebACLForResource</a> in the <i>WAF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWebACLForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +96,14 @@ impl GetWebACLForResourceFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput,
             crate::operation::get_web_acl_for_resource::GetWebACLForResourceError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_web_acl_for_resource::GetWebACLForResourceError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

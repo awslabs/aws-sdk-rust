@@ -34,6 +34,7 @@ pub struct DeleteResourceConfigInputBuilder {
 }
 impl DeleteResourceConfigInputBuilder {
     /// <p>The type of the resource.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteResourceConfigInputBuilder {
         &self.resource_type
     }
     /// <p>Unique identifier of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

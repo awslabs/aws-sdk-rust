@@ -14,8 +14,10 @@ impl PutConfigRuleInput {
         self.config_rule.as_ref()
     }
     /// <p>An array of tag object.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutConfigRuleInput {
@@ -34,6 +36,7 @@ pub struct PutConfigRuleInputBuilder {
 }
 impl PutConfigRuleInputBuilder {
     /// <p>The rule that you want to add to your account.</p>
+    /// This field is required.
     pub fn config_rule(mut self, input: crate::types::ConfigRule) -> Self {
         self.config_rule = ::std::option::Option::Some(input);
         self

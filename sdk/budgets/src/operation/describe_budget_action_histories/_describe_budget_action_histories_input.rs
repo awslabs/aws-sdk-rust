@@ -62,6 +62,7 @@ pub struct DescribeBudgetActionHistoriesInputBuilder {
 }
 impl DescribeBudgetActionHistoriesInputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
         &self.account_id
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
         &self.budget_name
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self

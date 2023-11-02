@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedMemberAccountEc2DeepInspectionStatusState {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member that failed to activate Amazon Inspector deep inspection.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The status of EC2 scanning in the account that failed to activate Amazon Inspector deep inspection.</p>
     pub ec2_scan_status: ::std::option::Option<crate::types::Status>,
     /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
@@ -13,8 +13,9 @@ pub struct FailedMemberAccountEc2DeepInspectionStatusState {
 }
 impl FailedMemberAccountEc2DeepInspectionStatusState {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member that failed to activate Amazon Inspector deep inspection.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The status of EC2 scanning in the account that failed to activate Amazon Inspector deep inspection.</p>
     pub fn ec2_scan_status(&self) -> ::std::option::Option<&crate::types::Status> {
@@ -42,6 +43,7 @@ pub struct FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
 }
 impl FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member that failed to activate Amazon Inspector deep inspection.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,20 @@ impl FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedMemberAccountEc2DeepInspectionStatusState`](crate::types::FailedMemberAccountEc2DeepInspectionStatusState).
-    pub fn build(self) -> crate::types::FailedMemberAccountEc2DeepInspectionStatusState {
-        crate::types::FailedMemberAccountEc2DeepInspectionStatusState {
-            account_id: self.account_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::FailedMemberAccountEc2DeepInspectionStatusStateBuilder::account_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::FailedMemberAccountEc2DeepInspectionStatusState, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FailedMemberAccountEc2DeepInspectionStatusState {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building FailedMemberAccountEc2DeepInspectionStatusState",
+                )
+            })?,
             ec2_scan_status: self.ec2_scan_status,
             error_message: self.error_message,
-        }
+        })
     }
 }

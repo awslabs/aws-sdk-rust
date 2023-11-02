@@ -12,8 +12,10 @@ pub struct ListEndpointsByPlatformApplicationOutput {
 }
 impl ListEndpointsByPlatformApplicationOutput {
     /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::Endpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::Endpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

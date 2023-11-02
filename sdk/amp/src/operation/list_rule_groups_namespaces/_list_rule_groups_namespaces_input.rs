@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesInput {
     /// The ID of the workspace.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
     pub name: ::std::option::Option<::std::string::String>,
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
@@ -15,8 +15,9 @@ pub struct ListRuleGroupsNamespacesInput {
 }
 impl ListRuleGroupsNamespacesInput {
     /// The ID of the workspace.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct ListRuleGroupsNamespacesInputBuilder {
 }
 impl ListRuleGroupsNamespacesInputBuilder {
     /// The ID of the workspace.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,8 @@ impl ListRuleGroupsNamespacesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRuleGroupsNamespacesInput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -112,7 +116,12 @@ impl ListRuleGroupsNamespacesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building ListRuleGroupsNamespacesInput",
+                )
+            })?,
             name: self.name,
             next_token: self.next_token,
             max_results: self.max_results,

@@ -19,12 +19,16 @@ impl AwsRoute53HostedZoneDetails {
         self.hosted_zone.as_ref()
     }
     /// <p> An object that contains information about the Amazon Virtual Private Clouds (Amazon VPCs) that are associated with the specified hosted zone.</p>
-    pub fn vpcs(&self) -> ::std::option::Option<&[crate::types::AwsRoute53HostedZoneVpcDetails]> {
-        self.vpcs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpcs.is_none()`.
+    pub fn vpcs(&self) -> &[crate::types::AwsRoute53HostedZoneVpcDetails] {
+        self.vpcs.as_deref().unwrap_or_default()
     }
     /// <p> An object that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn name_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.name_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_servers.is_none()`.
+    pub fn name_servers(&self) -> &[::std::string::String] {
+        self.name_servers.as_deref().unwrap_or_default()
     }
     /// <p> An array that contains one <code>QueryLoggingConfig</code> element for each DNS query logging configuration that is associated with the current Amazon Web Services account.</p>
     pub fn query_logging_config(&self) -> ::std::option::Option<&crate::types::AwsRoute53QueryLoggingConfigDetails> {

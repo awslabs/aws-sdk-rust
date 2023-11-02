@@ -119,7 +119,9 @@ pub fn de_batch_delete_featured_results_set_http_response(
         output = crate::protocol_serde::shape_batch_delete_featured_results_set::de_batch_delete_featured_results_set(_response_body, output)
             .map_err(crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_delete_featured_results_set_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError::unhandled)?
     })
 }
 

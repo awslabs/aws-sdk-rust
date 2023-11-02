@@ -43,6 +43,7 @@ pub struct SendSerialConsoleSshPublicKeyInputBuilder {
 }
 impl SendSerialConsoleSshPublicKeyInputBuilder {
     /// <p>The ID of the EC2 instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +75,7 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
         &self.serial_port
     }
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// This field is required.
     pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key = ::std::option::Option::Some(input.into());
         self

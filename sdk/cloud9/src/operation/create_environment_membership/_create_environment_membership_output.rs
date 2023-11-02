@@ -34,6 +34,7 @@ pub struct CreateEnvironmentMembershipOutputBuilder {
 }
 impl CreateEnvironmentMembershipOutputBuilder {
     /// <p>Information about the environment member that was added.</p>
+    /// This field is required.
     pub fn membership(mut self, input: crate::types::EnvironmentMember) -> Self {
         self.membership = ::std::option::Option::Some(input);
         self

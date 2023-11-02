@@ -27,6 +27,7 @@ pub struct DisassociateCertificateInputBuilder {
 }
 impl DisassociateCertificateInputBuilder {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

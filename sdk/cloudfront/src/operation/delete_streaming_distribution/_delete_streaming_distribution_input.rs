@@ -35,6 +35,7 @@ pub struct DeleteStreamingDistributionInputBuilder {
 }
 impl DeleteStreamingDistributionInputBuilder {
     /// <p>The distribution ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

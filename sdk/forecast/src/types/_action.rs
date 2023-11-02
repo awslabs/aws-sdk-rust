@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>The related time series that you are modifying. This value is case insensitive.</p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
     /// <li> <p> <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p> </li>
@@ -13,14 +13,15 @@ pub struct Action {
     /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// </ul>
-    pub operation: ::std::option::Option<crate::types::Operation>,
+    pub operation: crate::types::Operation,
     /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
-    pub value: ::std::option::Option<f64>,
+    pub value: f64,
 }
 impl Action {
     /// <p>The related time series that you are modifying. This value is case insensitive.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
@@ -29,11 +30,11 @@ impl Action {
     /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// </ul>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::Operation> {
-        self.operation.as_ref()
+    pub fn operation(&self) -> &crate::types::Operation {
+        &self.operation
     }
     /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<f64> {
+    pub fn value(&self) -> f64 {
         self.value
     }
 }
@@ -54,6 +55,7 @@ pub struct ActionBuilder {
 }
 impl ActionBuilder {
     /// <p>The related time series that you are modifying. This value is case insensitive.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +76,7 @@ impl ActionBuilder {
     /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self
@@ -100,6 +103,7 @@ impl ActionBuilder {
         &self.operation
     }
     /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -114,11 +118,30 @@ impl ActionBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
-    pub fn build(self) -> crate::types::Action {
-        crate::types::Action {
-            attribute_name: self.attribute_name,
-            operation: self.operation,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::ActionBuilder::attribute_name)
+    /// - [`operation`](crate::types::builders::ActionBuilder::operation)
+    /// - [`value`](crate::types::builders::ActionBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Action, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Action {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building Action",
+                )
+            })?,
+            operation: self.operation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operation",
+                    "operation was not specified but it is required when building Action",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Action",
+                )
+            })?,
+        })
     }
 }

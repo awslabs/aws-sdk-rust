@@ -42,6 +42,7 @@ pub struct AppflowIntegrationWorkflowMetricsBuilder {
 }
 impl AppflowIntegrationWorkflowMetricsBuilder {
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    /// This field is required.
     pub fn records_processed(mut self, input: i64) -> Self {
         self.records_processed = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
         &self.records_processed
     }
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    /// This field is required.
     pub fn steps_completed(mut self, input: i64) -> Self {
         self.steps_completed = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
         &self.steps_completed
     }
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
+    /// This field is required.
     pub fn total_steps(mut self, input: i64) -> Self {
         self.total_steps = ::std::option::Option::Some(input);
         self

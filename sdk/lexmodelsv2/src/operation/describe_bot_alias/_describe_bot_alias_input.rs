@@ -34,6 +34,7 @@ pub struct DescribeBotAliasInputBuilder {
 }
 impl DescribeBotAliasInputBuilder {
     /// <p>The identifier of the bot alias to describe.</p>
+    /// This field is required.
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeBotAliasInputBuilder {
         &self.bot_alias_id
     }
     /// <p>The identifier of the bot associated with the bot alias to describe.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self

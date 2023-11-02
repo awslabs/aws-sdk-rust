@@ -45,6 +45,7 @@ impl DeleteDbParameterGroupInputBuilder {
     /// <li> <p>You can't delete a default DB parameter group</p> </li>
     /// <li> <p>Cannot be associated with any DB instances</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self

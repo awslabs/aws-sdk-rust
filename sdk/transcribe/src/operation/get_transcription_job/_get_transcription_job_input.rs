@@ -27,6 +27,7 @@ pub struct GetTranscriptionJobInputBuilder {
 }
 impl GetTranscriptionJobInputBuilder {
     /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
+    /// This field is required.
     pub fn transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transcription_job_name = ::std::option::Option::Some(input.into());
         self

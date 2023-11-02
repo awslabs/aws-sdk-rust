@@ -41,6 +41,7 @@ pub struct UpdateAssessmentFrameworkShareInputBuilder {
 }
 impl UpdateAssessmentFrameworkShareInputBuilder {
     /// <p> The unique identifier for the share request. </p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
         &self.request_id
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
+    /// This field is required.
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
         self.request_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
         &self.request_type
     }
     /// <p>Specifies the update action for the share request.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ShareRequestAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

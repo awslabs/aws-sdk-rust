@@ -68,6 +68,7 @@ pub struct ExecuteChangeSetInputBuilder {
 }
 impl ExecuteChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want use to update the specified stack.</p>
+    /// This field is required.
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self

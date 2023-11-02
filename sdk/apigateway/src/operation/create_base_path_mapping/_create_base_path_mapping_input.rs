@@ -49,6 +49,7 @@ pub struct CreateBasePathMappingInputBuilder {
 }
 impl CreateBasePathMappingInputBuilder {
     /// <p>The domain name of the BasePathMapping resource to create.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl CreateBasePathMappingInputBuilder {
         &self.base_path
     }
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self

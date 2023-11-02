@@ -27,6 +27,7 @@ pub struct GetResourceProfileInputBuilder {
 }
 impl GetResourceProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

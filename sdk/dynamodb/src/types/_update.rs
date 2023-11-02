@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Update {
     /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
-    pub key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub key: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new value(s) for them.</p>
-    pub update_expression: ::std::option::Option<::std::string::String>,
+    pub update_expression: ::std::string::String,
     /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub condition_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
@@ -21,16 +21,18 @@ pub struct Update {
 }
 impl Update {
     /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
-    pub fn key(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
-        self.key.as_ref()
+    pub fn key(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
+        &self.key
     }
     /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new value(s) for them.</p>
-    pub fn update_expression(&self) -> ::std::option::Option<&str> {
-        self.update_expression.as_deref()
+    pub fn update_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.update_expression.deref()
     }
     /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub fn condition_expression(&self) -> ::std::option::Option<&str> {
@@ -92,6 +94,7 @@ impl UpdateBuilder {
         &self.key
     }
     /// <p>An expression that defines one or more attributes to be updated, the action to be performed on them, and new value(s) for them.</p>
+    /// This field is required.
     pub fn update_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_expression = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +109,7 @@ impl UpdateBuilder {
         &self.update_expression
     }
     /// <p>Name of the table for the <code>UpdateItem</code> request.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -205,15 +209,31 @@ impl UpdateBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`Update`](crate::types::Update).
-    pub fn build(self) -> crate::types::Update {
-        crate::types::Update {
-            key: self.key,
-            update_expression: self.update_expression,
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::UpdateBuilder::key)
+    /// - [`update_expression`](crate::types::builders::UpdateBuilder::update_expression)
+    /// - [`table_name`](crate::types::builders::UpdateBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Update, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Update {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("key", "key was not specified but it is required when building Update")
+            })?,
+            update_expression: self.update_expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_expression",
+                    "update_expression was not specified but it is required when building Update",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building Update",
+                )
+            })?,
             condition_expression: self.condition_expression,
             expression_attribute_names: self.expression_attribute_names,
             expression_attribute_values: self.expression_attribute_values,
             return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
-        }
+        })
     }
 }

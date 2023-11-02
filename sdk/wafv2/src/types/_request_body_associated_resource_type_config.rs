@@ -9,13 +9,13 @@
 pub struct RequestBodyAssociatedResourceTypeConfig {
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
     /// <p>Default: <code>16 KB (16,384 bytes)</code> </p>
-    pub default_size_inspection_limit: ::std::option::Option<crate::types::SizeInspectionLimit>,
+    pub default_size_inspection_limit: crate::types::SizeInspectionLimit,
 }
 impl RequestBodyAssociatedResourceTypeConfig {
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
     /// <p>Default: <code>16 KB (16,384 bytes)</code> </p>
-    pub fn default_size_inspection_limit(&self) -> ::std::option::Option<&crate::types::SizeInspectionLimit> {
-        self.default_size_inspection_limit.as_ref()
+    pub fn default_size_inspection_limit(&self) -> &crate::types::SizeInspectionLimit {
+        &self.default_size_inspection_limit
     }
 }
 impl RequestBodyAssociatedResourceTypeConfig {
@@ -34,6 +34,7 @@ pub struct RequestBodyAssociatedResourceTypeConfigBuilder {
 impl RequestBodyAssociatedResourceTypeConfigBuilder {
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
     /// <p>Default: <code>16 KB (16,384 bytes)</code> </p>
+    /// This field is required.
     pub fn default_size_inspection_limit(mut self, input: crate::types::SizeInspectionLimit) -> Self {
         self.default_size_inspection_limit = ::std::option::Option::Some(input);
         self
@@ -50,9 +51,18 @@ impl RequestBodyAssociatedResourceTypeConfigBuilder {
         &self.default_size_inspection_limit
     }
     /// Consumes the builder and constructs a [`RequestBodyAssociatedResourceTypeConfig`](crate::types::RequestBodyAssociatedResourceTypeConfig).
-    pub fn build(self) -> crate::types::RequestBodyAssociatedResourceTypeConfig {
-        crate::types::RequestBodyAssociatedResourceTypeConfig {
-            default_size_inspection_limit: self.default_size_inspection_limit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`default_size_inspection_limit`](crate::types::builders::RequestBodyAssociatedResourceTypeConfigBuilder::default_size_inspection_limit)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::RequestBodyAssociatedResourceTypeConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RequestBodyAssociatedResourceTypeConfig {
+            default_size_inspection_limit: self.default_size_inspection_limit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "default_size_inspection_limit",
+                    "default_size_inspection_limit was not specified but it is required when building RequestBodyAssociatedResourceTypeConfig",
+                )
+            })?,
+        })
     }
 }

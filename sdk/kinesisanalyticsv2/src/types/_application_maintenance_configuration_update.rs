@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
-    pub application_maintenance_window_start_time_update: ::std::option::Option<::std::string::String>,
+    pub application_maintenance_window_start_time_update: ::std::string::String,
 }
 impl ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time_update(&self) -> ::std::option::Option<&str> {
-        self.application_maintenance_window_start_time_update.as_deref()
+    pub fn application_maintenance_window_start_time_update(&self) -> &str {
+        use std::ops::Deref;
+        self.application_maintenance_window_start_time_update.deref()
     }
 }
 impl ApplicationMaintenanceConfigurationUpdate {
@@ -28,6 +29,7 @@ pub struct ApplicationMaintenanceConfigurationUpdateBuilder {
 }
 impl ApplicationMaintenanceConfigurationUpdateBuilder {
     /// <p>The updated start time for the maintenance window.</p>
+    /// This field is required.
     pub fn application_maintenance_window_start_time_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_maintenance_window_start_time_update = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,19 @@ impl ApplicationMaintenanceConfigurationUpdateBuilder {
         &self.application_maintenance_window_start_time_update
     }
     /// Consumes the builder and constructs a [`ApplicationMaintenanceConfigurationUpdate`](crate::types::ApplicationMaintenanceConfigurationUpdate).
-    pub fn build(self) -> crate::types::ApplicationMaintenanceConfigurationUpdate {
-        crate::types::ApplicationMaintenanceConfigurationUpdate {
-            application_maintenance_window_start_time_update: self.application_maintenance_window_start_time_update,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_maintenance_window_start_time_update`](crate::types::builders::ApplicationMaintenanceConfigurationUpdateBuilder::application_maintenance_window_start_time_update)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ApplicationMaintenanceConfigurationUpdate {
+                application_maintenance_window_start_time_update: self.application_maintenance_window_start_time_update
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("application_maintenance_window_start_time_update", "application_maintenance_window_start_time_update was not specified but it is required when building ApplicationMaintenanceConfigurationUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }

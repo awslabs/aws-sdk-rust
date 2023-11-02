@@ -17,8 +17,10 @@ impl ListFirewallRuleGroupsOutput {
     }
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
-    pub fn firewall_rule_groups(&self) -> ::std::option::Option<&[crate::types::FirewallRuleGroupMetadata]> {
-        self.firewall_rule_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_rule_groups.is_none()`.
+    pub fn firewall_rule_groups(&self) -> &[crate::types::FirewallRuleGroupMetadata] {
+        self.firewall_rule_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFirewallRuleGroupsOutput {

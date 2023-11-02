@@ -27,8 +27,10 @@ impl DeleteConfigurationSetOutput {
         self.configuration_set_name.as_deref()
     }
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-    pub fn event_destinations(&self) -> ::std::option::Option<&[crate::types::EventDestination]> {
-        self.event_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_destinations.is_none()`.
+    pub fn event_destinations(&self) -> &[crate::types::EventDestination] {
+        self.event_destinations.as_deref().unwrap_or_default()
     }
     /// <p>The default message type of the configuration set that was deleted.</p>
     pub fn default_message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {

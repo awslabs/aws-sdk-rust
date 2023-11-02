@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateApplicationsInput {
     /// <p>Wave ID.</p>
-    pub wave_id: ::std::option::Option<::std::string::String>,
+    pub wave_id: ::std::string::String,
     /// <p>Application IDs list.</p>
-    pub application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_i_ds: ::std::vec::Vec<::std::string::String>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApplicationsInput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
-        self.wave_id.as_deref()
+    pub fn wave_id(&self) -> &str {
+        use std::ops::Deref;
+        self.wave_id.deref()
     }
     /// <p>Application IDs list.</p>
-    pub fn application_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_i_ds.as_deref()
+    pub fn application_i_ds(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.application_i_ds.deref()
     }
     /// <p>Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct AssociateApplicationsInputBuilder {
 }
 impl AssociateApplicationsInputBuilder {
     /// <p>Wave ID.</p>
+    /// This field is required.
     pub fn wave_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wave_id = ::std::option::Option::Some(input.into());
         self
@@ -89,13 +92,26 @@ impl AssociateApplicationsInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`AssociateApplicationsInput`](crate::operation::associate_applications::AssociateApplicationsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`wave_id`](crate::operation::associate_applications::builders::AssociateApplicationsInputBuilder::wave_id)
+    /// - [`application_i_ds`](crate::operation::associate_applications::builders::AssociateApplicationsInputBuilder::application_i_ds)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_applications::AssociateApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_applications::AssociateApplicationsInput {
-            wave_id: self.wave_id,
-            application_i_ds: self.application_i_ds,
+            wave_id: self.wave_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "wave_id",
+                    "wave_id was not specified but it is required when building AssociateApplicationsInput",
+                )
+            })?,
+            application_i_ds: self.application_i_ds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_i_ds",
+                    "application_i_ds was not specified but it is required when building AssociateApplicationsInput",
+                )
+            })?,
             account_id: self.account_id,
         })
     }

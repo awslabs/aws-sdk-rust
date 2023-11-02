@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReplicationSetsOutput {
     /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
-    pub replication_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_set_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListReplicationSetsOutput {
     /// <p>The Amazon Resource Name (ARN) of the list replication set.</p>
-    pub fn replication_set_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_set_arns.as_deref()
+    pub fn replication_set_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.replication_set_arns.deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListReplicationSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReplicationSetsOutput`](crate::operation::list_replication_sets::ListReplicationSetsOutput).
-    pub fn build(self) -> crate::operation::list_replication_sets::ListReplicationSetsOutput {
-        crate::operation::list_replication_sets::ListReplicationSetsOutput {
-            replication_set_arns: self.replication_set_arns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`replication_set_arns`](crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder::replication_set_arns)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_replication_sets::ListReplicationSetsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_replication_sets::ListReplicationSetsOutput {
+            replication_set_arns: self.replication_set_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "replication_set_arns",
+                    "replication_set_arns was not specified but it is required when building ListReplicationSetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

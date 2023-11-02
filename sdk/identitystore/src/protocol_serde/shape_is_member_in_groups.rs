@@ -110,7 +110,9 @@ pub fn de_is_member_in_groups_http_response(
         output = crate::protocol_serde::shape_is_member_in_groups::de_is_member_in_groups(_response_body, output)
             .map_err(crate::operation::is_member_in_groups::IsMemberInGroupsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::is_member_in_groups_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::is_member_in_groups::IsMemberInGroupsError::unhandled)?
     })
 }
 

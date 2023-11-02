@@ -149,38 +149,52 @@ impl ModifyVpnTunnelOptionsSpecification {
     }
     /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
     /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code> </p>
-    pub fn phase1_encryption_algorithms(&self) -> ::std::option::Option<&[crate::types::Phase1EncryptionAlgorithmsRequestListValue]> {
-        self.phase1_encryption_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_encryption_algorithms.is_none()`.
+    pub fn phase1_encryption_algorithms(&self) -> &[crate::types::Phase1EncryptionAlgorithmsRequestListValue] {
+        self.phase1_encryption_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
     /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code> </p>
-    pub fn phase2_encryption_algorithms(&self) -> ::std::option::Option<&[crate::types::Phase2EncryptionAlgorithmsRequestListValue]> {
-        self.phase2_encryption_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_encryption_algorithms.is_none()`.
+    pub fn phase2_encryption_algorithms(&self) -> &[crate::types::Phase2EncryptionAlgorithmsRequestListValue] {
+        self.phase2_encryption_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
     /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
-    pub fn phase1_integrity_algorithms(&self) -> ::std::option::Option<&[crate::types::Phase1IntegrityAlgorithmsRequestListValue]> {
-        self.phase1_integrity_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_integrity_algorithms.is_none()`.
+    pub fn phase1_integrity_algorithms(&self) -> &[crate::types::Phase1IntegrityAlgorithmsRequestListValue] {
+        self.phase1_integrity_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
     /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
-    pub fn phase2_integrity_algorithms(&self) -> ::std::option::Option<&[crate::types::Phase2IntegrityAlgorithmsRequestListValue]> {
-        self.phase2_integrity_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_integrity_algorithms.is_none()`.
+    pub fn phase2_integrity_algorithms(&self) -> &[crate::types::Phase2IntegrityAlgorithmsRequestListValue] {
+        self.phase2_integrity_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
     /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
-    pub fn phase1_dh_group_numbers(&self) -> ::std::option::Option<&[crate::types::Phase1DhGroupNumbersRequestListValue]> {
-        self.phase1_dh_group_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_dh_group_numbers.is_none()`.
+    pub fn phase1_dh_group_numbers(&self) -> &[crate::types::Phase1DhGroupNumbersRequestListValue] {
+        self.phase1_dh_group_numbers.as_deref().unwrap_or_default()
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
     /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
-    pub fn phase2_dh_group_numbers(&self) -> ::std::option::Option<&[crate::types::Phase2DhGroupNumbersRequestListValue]> {
-        self.phase2_dh_group_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_dh_group_numbers.is_none()`.
+    pub fn phase2_dh_group_numbers(&self) -> &[crate::types::Phase2DhGroupNumbersRequestListValue] {
+        self.phase2_dh_group_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
     /// <p>Valid values: <code>ikev1</code> | <code>ikev2</code> </p>
-    pub fn ike_versions(&self) -> ::std::option::Option<&[crate::types::IkeVersionsRequestListValue]> {
-        self.ike_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ike_versions.is_none()`.
+    pub fn ike_versions(&self) -> &[crate::types::IkeVersionsRequestListValue] {
+        self.ike_versions.as_deref().unwrap_or_default()
     }
     /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for Amazon Web Services to initiate the IKE negotiation.</p>
     /// <p>Valid Values: <code>add</code> | <code>start</code> </p>

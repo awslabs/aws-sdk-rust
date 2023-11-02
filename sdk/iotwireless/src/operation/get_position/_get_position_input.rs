@@ -35,6 +35,7 @@ pub struct GetPositionInputBuilder {
 }
 impl GetPositionInputBuilder {
     /// <p>Resource identifier used to retrieve the position information.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetPositionInputBuilder {
         &self.resource_identifier
     }
     /// <p>Resource type of the resource for which position information is retrieved.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

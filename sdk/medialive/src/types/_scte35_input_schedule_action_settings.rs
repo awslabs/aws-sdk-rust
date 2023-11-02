@@ -49,6 +49,7 @@ impl Scte35InputScheduleActionSettingsBuilder {
         &self.input_attachment_name_reference
     }
     /// Whether the SCTE-35 input should be the active input or a fixed input.
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::Scte35InputMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self

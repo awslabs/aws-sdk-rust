@@ -27,6 +27,7 @@ pub struct StartDbClusterInputBuilder {
 }
 impl StartDbClusterInputBuilder {
     /// <p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self

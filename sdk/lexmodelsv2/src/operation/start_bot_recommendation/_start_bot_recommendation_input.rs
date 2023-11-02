@@ -55,6 +55,7 @@ pub struct StartBotRecommendationInputBuilder {
 }
 impl StartBotRecommendationInputBuilder {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartBotRecommendationInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl StartBotRecommendationInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl StartBotRecommendationInputBuilder {
         &self.locale_id
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
+    /// This field is required.
     pub fn transcript_source_setting(mut self, input: crate::types::TranscriptSourceSetting) -> Self {
         self.transcript_source_setting = ::std::option::Option::Some(input);
         self

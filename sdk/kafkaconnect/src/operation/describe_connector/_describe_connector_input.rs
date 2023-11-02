@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
-    pub connector_arn: ::std::option::Option<::std::string::String>,
+    pub connector_arn: ::std::string::String,
 }
 impl DescribeConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
-        self.connector_arn.as_deref()
+    pub fn connector_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.connector_arn.deref()
     }
 }
 impl DescribeConnectorInput {
@@ -27,6 +28,7 @@ pub struct DescribeConnectorInputBuilder {
 }
 impl DescribeConnectorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DescribeConnectorInputBuilder {
         &self.connector_arn
     }
     /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connector_arn`](crate::operation::describe_connector::builders::DescribeConnectorInputBuilder::connector_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_connector::DescribeConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_connector::DescribeConnectorInput {
-            connector_arn: self.connector_arn,
+            connector_arn: self.connector_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connector_arn",
+                    "connector_arn was not specified but it is required when building DescribeConnectorInput",
+                )
+            })?,
         })
     }
 }

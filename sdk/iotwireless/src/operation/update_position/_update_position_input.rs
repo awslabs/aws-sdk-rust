@@ -21,8 +21,10 @@ impl UpdatePositionInput {
         self.resource_type.as_ref()
     }
     /// <p>The position information of the resource.</p>
-    pub fn position(&self) -> ::std::option::Option<&[f32]> {
-        self.position.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
+    pub fn position(&self) -> &[f32] {
+        self.position.as_deref().unwrap_or_default()
     }
 }
 impl UpdatePositionInput {
@@ -42,6 +44,7 @@ pub struct UpdatePositionInputBuilder {
 }
 impl UpdatePositionInputBuilder {
     /// <p>Resource identifier of the resource for which position is updated.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl UpdatePositionInputBuilder {
         &self.resource_identifier
     }
     /// <p>Resource type of the resource for which position is updated.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

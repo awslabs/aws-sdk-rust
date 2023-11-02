@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDeniedException {
     /// <p>A description of why you have insufficient permissions.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessDeniedException {
     /// <p>A description of why you have insufficient permissions.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
 }
 impl AccessDeniedException {
@@ -62,6 +63,7 @@ pub struct AccessDeniedExceptionBuilder {
 }
 impl AccessDeniedExceptionBuilder {
     /// <p>A description of why you have insufficient permissions.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +103,18 @@ impl AccessDeniedExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AccessDeniedException`](crate::types::error::AccessDeniedException).
-    pub fn build(self) -> crate::types::error::AccessDeniedException {
-        crate::types::error::AccessDeniedException {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::AccessDeniedExceptionBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::AccessDeniedException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::AccessDeniedException {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building AccessDeniedException",
+                )
+            })?,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

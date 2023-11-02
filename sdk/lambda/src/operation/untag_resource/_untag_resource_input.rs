@@ -14,8 +14,10 @@ impl UntagResourceInput {
         self.resource.as_deref()
     }
     /// <p>A list of tag keys to remove from the function.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagResourceInput {
@@ -34,6 +36,7 @@ pub struct UntagResourceInputBuilder {
 }
 impl UntagResourceInputBuilder {
     /// <p>The function's Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self

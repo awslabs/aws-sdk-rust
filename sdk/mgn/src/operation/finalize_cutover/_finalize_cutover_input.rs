@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FinalizeCutoverInput {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Request to finalize Cutover by Source Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl FinalizeCutoverInput {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Request to finalize Cutover by Source Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct FinalizeCutoverInputBuilder {
 }
 impl FinalizeCutoverInputBuilder {
     /// <p>Request to finalize Cutover by Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -62,11 +64,18 @@ impl FinalizeCutoverInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`FinalizeCutoverInput`](crate::operation::finalize_cutover::FinalizeCutoverInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::finalize_cutover::builders::FinalizeCutoverInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::finalize_cutover::FinalizeCutoverInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::finalize_cutover::FinalizeCutoverInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building FinalizeCutoverInput",
+                )
+            })?,
             account_id: self.account_id,
         })
     }

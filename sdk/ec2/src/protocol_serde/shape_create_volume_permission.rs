@@ -17,6 +17,7 @@ pub fn ser_create_volume_permission(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_create_volume_permission(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CreateVolumePermission, ::aws_smithy_xml::decode::XmlDecodeError> {

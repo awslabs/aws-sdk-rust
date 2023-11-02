@@ -44,6 +44,7 @@ pub struct DeleteAlternateContactInputBuilder {
 }
 impl DeleteAlternateContactInputBuilder {
     /// <p>Specifies which of the alternate contacts to delete. </p>
+    /// This field is required.
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
         self.alternate_contact_type = ::std::option::Option::Some(input);
         self

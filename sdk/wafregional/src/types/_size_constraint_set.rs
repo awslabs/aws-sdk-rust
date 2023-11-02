@@ -10,25 +10,27 @@
 pub struct SizeConstraintSet {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
+    pub size_constraint_set_id: ::std::string::String,
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
-    pub size_constraints: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraint>>,
+    pub size_constraints: ::std::vec::Vec<crate::types::SizeConstraint>,
 }
 impl SizeConstraintSet {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> ::std::option::Option<&str> {
-        self.size_constraint_set_id.as_deref()
+    pub fn size_constraint_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.size_constraint_set_id.deref()
     }
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
-    pub fn size_constraints(&self) -> ::std::option::Option<&[crate::types::SizeConstraint]> {
-        self.size_constraints.as_deref()
+    pub fn size_constraints(&self) -> &[crate::types::SizeConstraint] {
+        use std::ops::Deref;
+        self.size_constraints.deref()
     }
 }
 impl SizeConstraintSet {
@@ -49,6 +51,7 @@ pub struct SizeConstraintSetBuilder {
 impl SizeConstraintSetBuilder {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    /// This field is required.
     pub fn size_constraint_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.size_constraint_set_id = ::std::option::Option::Some(input.into());
         self
@@ -99,11 +102,24 @@ impl SizeConstraintSetBuilder {
         &self.size_constraints
     }
     /// Consumes the builder and constructs a [`SizeConstraintSet`](crate::types::SizeConstraintSet).
-    pub fn build(self) -> crate::types::SizeConstraintSet {
-        crate::types::SizeConstraintSet {
-            size_constraint_set_id: self.size_constraint_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`size_constraint_set_id`](crate::types::builders::SizeConstraintSetBuilder::size_constraint_set_id)
+    /// - [`size_constraints`](crate::types::builders::SizeConstraintSetBuilder::size_constraints)
+    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SizeConstraintSet {
+            size_constraint_set_id: self.size_constraint_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size_constraint_set_id",
+                    "size_constraint_set_id was not specified but it is required when building SizeConstraintSet",
+                )
+            })?,
             name: self.name,
-            size_constraints: self.size_constraints,
-        }
+            size_constraints: self.size_constraints.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size_constraints",
+                    "size_constraints was not specified but it is required when building SizeConstraintSet",
+                )
+            })?,
+        })
     }
 }

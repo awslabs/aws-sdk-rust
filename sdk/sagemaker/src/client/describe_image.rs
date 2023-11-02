@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImage`](crate::operation::describe_image::builders::DescribeImageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_name(impl Into<String>)`](crate::operation::describe_image::builders::DescribeImageFluentBuilder::image_name) / [`set_image_name(Option<String>)`](crate::operation::describe_image::builders::DescribeImageFluentBuilder::set_image_name): <p>The name of the image to describe.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::operation::describe_image::builders::DescribeImageFluentBuilder::image_name) / [`set_image_name(Option<String>)`](crate::operation::describe_image::builders::DescribeImageFluentBuilder::set_image_name):<br>required: **true**<br><p>The name of the image to describe.</p><br>
     /// - On success, responds with [`DescribeImageOutput`](crate::operation::describe_image::DescribeImageOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_image::DescribeImageOutput::creation_time): <p>When the image was created.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_image::DescribeImageOutput::description): <p>The description of the image.</p>

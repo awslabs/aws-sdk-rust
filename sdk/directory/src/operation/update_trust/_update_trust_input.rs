@@ -34,6 +34,7 @@ pub struct UpdateTrustInputBuilder {
 }
 impl UpdateTrustInputBuilder {
     /// <p>Identifier of the trust relationship.</p>
+    /// This field is required.
     pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_id = ::std::option::Option::Some(input.into());
         self

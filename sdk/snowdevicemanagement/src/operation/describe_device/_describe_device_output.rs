@@ -61,12 +61,16 @@ impl DescribeDeviceOutput {
         self.device_state.as_ref()
     }
     /// <p>The network interfaces available on the device.</p>
-    pub fn physical_network_interfaces(&self) -> ::std::option::Option<&[crate::types::PhysicalNetworkInterface]> {
-        self.physical_network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.physical_network_interfaces.is_none()`.
+    pub fn physical_network_interfaces(&self) -> &[crate::types::PhysicalNetworkInterface] {
+        self.physical_network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The hardware specifications of the device. </p>
-    pub fn device_capacities(&self) -> ::std::option::Option<&[crate::types::Capacity]> {
-        self.device_capacities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_capacities.is_none()`.
+    pub fn device_capacities(&self) -> &[crate::types::Capacity] {
+        self.device_capacities.as_deref().unwrap_or_default()
     }
     /// <p>The software installed on the device.</p>
     pub fn software(&self) -> ::std::option::Option<&crate::types::SoftwareInformation> {

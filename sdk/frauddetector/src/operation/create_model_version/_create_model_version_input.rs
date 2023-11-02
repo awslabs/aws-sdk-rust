@@ -44,8 +44,10 @@ impl CreateModelVersionInput {
         self.ingested_events_detail.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateModelVersionInput {
@@ -69,6 +71,7 @@ pub struct CreateModelVersionInputBuilder {
 }
 impl CreateModelVersionInputBuilder {
     /// <p>The model ID. </p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateModelVersionInputBuilder {
         &self.model_id
     }
     /// <p>The model type.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl CreateModelVersionInputBuilder {
         &self.model_type
     }
     /// <p>The training data source location in Amazon S3. </p>
+    /// This field is required.
     pub fn training_data_source(mut self, input: crate::types::TrainingDataSourceEnum) -> Self {
         self.training_data_source = ::std::option::Option::Some(input);
         self
@@ -111,6 +116,7 @@ impl CreateModelVersionInputBuilder {
         &self.training_data_source
     }
     /// <p>The training data schema.</p>
+    /// This field is required.
     pub fn training_data_schema(mut self, input: crate::types::TrainingDataSchema) -> Self {
         self.training_data_schema = ::std::option::Option::Some(input);
         self

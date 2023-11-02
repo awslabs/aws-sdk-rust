@@ -69,8 +69,10 @@ impl CreateFlowLogsInput {
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
     /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[::std::string::String] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The type of resource to monitor.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::FlowLogsResourceType> {
@@ -100,8 +102,10 @@ impl CreateFlowLogsInput {
         self.log_format.as_deref()
     }
     /// <p>The tags to apply to the flow logs.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway resource types.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.</p>
@@ -241,6 +245,7 @@ impl CreateFlowLogsInputBuilder {
         &self.resource_ids
     }
     /// <p>The type of resource to monitor.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::FlowLogsResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

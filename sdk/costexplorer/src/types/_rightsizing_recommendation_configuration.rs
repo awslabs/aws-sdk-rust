@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub recommendation_target: ::std::option::Option<crate::types::RecommendationTarget>,
+    pub recommendation_target: crate::types::RecommendationTarget,
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
     pub benefits_considered: bool,
 }
 impl RightsizingRecommendationConfiguration {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
-    pub fn recommendation_target(&self) -> ::std::option::Option<&crate::types::RecommendationTarget> {
-        self.recommendation_target.as_ref()
+    pub fn recommendation_target(&self) -> &crate::types::RecommendationTarget {
+        &self.recommendation_target
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
     pub fn benefits_considered(&self) -> bool {
@@ -35,6 +35,7 @@ pub struct RightsizingRecommendationConfigurationBuilder {
 }
 impl RightsizingRecommendationConfigurationBuilder {
     /// <p>The option to see recommendations within the same instance family or recommendations for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>. </p>
+    /// This field is required.
     pub fn recommendation_target(mut self, input: crate::types::RecommendationTarget) -> Self {
         self.recommendation_target = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl RightsizingRecommendationConfigurationBuilder {
         &self.recommendation_target
     }
     /// <p>The option to consider RI or Savings Plans discount benefits in your savings calculation. The default value is <code>TRUE</code>. </p>
+    /// This field is required.
     pub fn benefits_considered(mut self, input: bool) -> Self {
         self.benefits_considered = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,19 @@ impl RightsizingRecommendationConfigurationBuilder {
         &self.benefits_considered
     }
     /// Consumes the builder and constructs a [`RightsizingRecommendationConfiguration`](crate::types::RightsizingRecommendationConfiguration).
-    pub fn build(self) -> crate::types::RightsizingRecommendationConfiguration {
-        crate::types::RightsizingRecommendationConfiguration {
-            recommendation_target: self.recommendation_target,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recommendation_target`](crate::types::builders::RightsizingRecommendationConfigurationBuilder::recommendation_target)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::RightsizingRecommendationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RightsizingRecommendationConfiguration {
+            recommendation_target: self.recommendation_target.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recommendation_target",
+                    "recommendation_target was not specified but it is required when building RightsizingRecommendationConfiguration",
+                )
+            })?,
             benefits_considered: self.benefits_considered.unwrap_or_default(),
-        }
+        })
     }
 }

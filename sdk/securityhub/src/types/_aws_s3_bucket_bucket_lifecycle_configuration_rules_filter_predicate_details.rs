@@ -15,8 +15,10 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
     /// <p>The values to use for the filter.</p>
-    pub fn operands(&self) -> ::std::option::Option<&[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails]> {
-        self.operands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operands.is_none()`.
+    pub fn operands(&self) -> &[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails] {
+        self.operands.as_deref().unwrap_or_default()
     }
     /// <p>A prefix filter.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {

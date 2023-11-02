@@ -33,8 +33,10 @@ impl Model {
         self.latest_inference.as_ref()
     }
     /// <p>Information required for model metrics.</p>
-    pub fn model_metrics(&self) -> ::std::option::Option<&[crate::types::EdgeMetric]> {
-        self.model_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_metrics.is_none()`.
+    pub fn model_metrics(&self) -> &[crate::types::EdgeMetric] {
+        self.model_metrics.as_deref().unwrap_or_default()
     }
 }
 impl Model {

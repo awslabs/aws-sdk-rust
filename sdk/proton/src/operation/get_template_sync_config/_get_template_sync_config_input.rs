@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateSyncConfigInput {
     /// <p>The template name.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The template type.</p>
-    pub template_type: ::std::option::Option<crate::types::TemplateType>,
+    pub template_type: crate::types::TemplateType,
 }
 impl GetTemplateSyncConfigInput {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The template type.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
-        self.template_type.as_ref()
+    pub fn template_type(&self) -> &crate::types::TemplateType {
+        &self.template_type
     }
 }
 impl GetTemplateSyncConfigInput {
@@ -34,6 +35,7 @@ pub struct GetTemplateSyncConfigInputBuilder {
 }
 impl GetTemplateSyncConfigInputBuilder {
     /// <p>The template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +50,7 @@ impl GetTemplateSyncConfigInputBuilder {
         &self.template_name
     }
     /// <p>The template type.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -62,13 +65,26 @@ impl GetTemplateSyncConfigInputBuilder {
         &self.template_type
     }
     /// Consumes the builder and constructs a [`GetTemplateSyncConfigInput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder::template_name)
+    /// - [`template_type`](crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder::template_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_template_sync_config::GetTemplateSyncConfigInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_template_sync_config::GetTemplateSyncConfigInput {
-            template_name: self.template_name,
-            template_type: self.template_type,
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building GetTemplateSyncConfigInput",
+                )
+            })?,
+            template_type: self.template_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_type",
+                    "template_type was not specified but it is required when building GetTemplateSyncConfigInput",
+                )
+            })?,
         })
     }
 }

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyInstance {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
@@ -15,12 +15,13 @@ pub struct AnomalyInstance {
 }
 impl AnomalyInstance {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p> The end time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -49,6 +50,7 @@ pub struct AnomalyInstanceBuilder {
 }
 impl AnomalyInstanceBuilder {
     /// <p> The universally unique identifier (UUID) of an instance of an anomaly in a metric. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl AnomalyInstanceBuilder {
         &self.id
     }
     /// <p> The start time of the period during which the metric is flagged as anomalous. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,25 @@ impl AnomalyInstanceBuilder {
         &self.user_feedback
     }
     /// Consumes the builder and constructs a [`AnomalyInstance`](crate::types::AnomalyInstance).
-    pub fn build(self) -> crate::types::AnomalyInstance {
-        crate::types::AnomalyInstance {
-            id: self.id,
-            start_time: self.start_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AnomalyInstanceBuilder::id)
+    /// - [`start_time`](crate::types::builders::AnomalyInstanceBuilder::start_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyInstance, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnomalyInstance {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AnomalyInstance",
+                )
+            })?,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building AnomalyInstance",
+                )
+            })?,
             end_time: self.end_time,
             user_feedback: self.user_feedback,
-        }
+        })
     }
 }

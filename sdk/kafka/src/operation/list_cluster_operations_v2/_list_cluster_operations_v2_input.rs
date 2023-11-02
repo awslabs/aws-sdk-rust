@@ -41,6 +41,7 @@ pub struct ListClusterOperationsV2InputBuilder {
 }
 impl ListClusterOperationsV2InputBuilder {
     /// The arn of the cluster whose operations are being requested.
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self

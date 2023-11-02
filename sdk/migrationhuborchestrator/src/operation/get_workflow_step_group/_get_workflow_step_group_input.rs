@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowStepGroupInput {
     /// <p>The ID of the step group.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
 }
 impl GetWorkflowStepGroupInput {
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
 }
 impl GetWorkflowStepGroupInput {
@@ -34,6 +36,7 @@ pub struct GetWorkflowStepGroupInputBuilder {
 }
 impl GetWorkflowStepGroupInputBuilder {
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetWorkflowStepGroupInputBuilder {
         &self.id
     }
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl GetWorkflowStepGroupInputBuilder {
         &self.workflow_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowStepGroupInput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder::id)
+    /// - [`workflow_id`](crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder::workflow_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput {
-            id: self.id,
-            workflow_id: self.workflow_id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetWorkflowStepGroupInput",
+                )
+            })?,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building GetWorkflowStepGroupInput",
+                )
+            })?,
         })
     }
 }

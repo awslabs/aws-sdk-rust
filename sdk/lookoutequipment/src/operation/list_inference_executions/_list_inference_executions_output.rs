@@ -15,8 +15,10 @@ impl ListInferenceExecutionsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
-    pub fn inference_execution_summaries(&self) -> ::std::option::Option<&[crate::types::InferenceExecutionSummary]> {
-        self.inference_execution_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_execution_summaries.is_none()`.
+    pub fn inference_execution_summaries(&self) -> &[crate::types::InferenceExecutionSummary] {
+        self.inference_execution_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListInferenceExecutionsOutput {

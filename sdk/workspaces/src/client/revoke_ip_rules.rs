@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeIpRules`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_id(impl Into<String>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::set_group_id): <p>The identifier of the group.</p>
-    ///   - [`user_rules(impl Into<String>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<String>>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::set_user_rules): <p>The rules to remove from the group.</p>
+    ///   - [`group_id(impl Into<String>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::set_group_id):<br>required: **true**<br><p>The identifier of the group.</p><br>
+    ///   - [`user_rules(impl Into<String>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<String>>)`](crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder::set_user_rules):<br>required: **true**<br><p>The rules to remove from the group.</p><br>
     /// - On success, responds with [`RevokeIpRulesOutput`](crate::operation::revoke_ip_rules::RevokeIpRulesOutput)
     /// - On failure, responds with [`SdkError<RevokeIpRulesError>`](crate::operation::revoke_ip_rules::RevokeIpRulesError)
     pub fn revoke_ip_rules(&self) -> crate::operation::revoke_ip_rules::builders::RevokeIpRulesFluentBuilder {

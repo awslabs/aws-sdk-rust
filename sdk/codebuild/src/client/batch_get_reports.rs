@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetReports`](crate::operation::batch_get_reports::builders::BatchGetReportsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_arns(impl Into<String>)`](crate::operation::batch_get_reports::builders::BatchGetReportsFluentBuilder::report_arns) / [`set_report_arns(Option<Vec<String>>)`](crate::operation::batch_get_reports::builders::BatchGetReportsFluentBuilder::set_report_arns): <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    ///   - [`report_arns(impl Into<String>)`](crate::operation::batch_get_reports::builders::BatchGetReportsFluentBuilder::report_arns) / [`set_report_arns(Option<Vec<String>>)`](crate::operation::batch_get_reports::builders::BatchGetReportsFluentBuilder::set_report_arns):<br>required: **true**<br><p> An array of ARNs that identify the <code>Report</code> objects to return. </p><br>
     /// - On success, responds with [`BatchGetReportsOutput`](crate::operation::batch_get_reports::BatchGetReportsOutput) with field(s):
     ///   - [`reports(Option<Vec<Report>>)`](crate::operation::batch_get_reports::BatchGetReportsOutput::reports): <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
     ///   - [`reports_not_found(Option<Vec<String>>)`](crate::operation::batch_get_reports::BatchGetReportsOutput::reports_not_found): <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>

@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaActionHeader {
     /// <p>The key of the Kafka header.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value of the Kafka header.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl KafkaActionHeader {
     /// <p>The key of the Kafka header.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value of the Kafka header.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl KafkaActionHeader {
@@ -36,6 +38,7 @@ pub struct KafkaActionHeaderBuilder {
 }
 impl KafkaActionHeaderBuilder {
     /// <p>The key of the Kafka header.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +53,7 @@ impl KafkaActionHeaderBuilder {
         &self.key
     }
     /// <p>The value of the Kafka header.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +68,23 @@ impl KafkaActionHeaderBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`KafkaActionHeader`](crate::types::KafkaActionHeader).
-    pub fn build(self) -> crate::types::KafkaActionHeader {
-        crate::types::KafkaActionHeader {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::KafkaActionHeaderBuilder::key)
+    /// - [`value`](crate::types::builders::KafkaActionHeaderBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::KafkaActionHeader, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KafkaActionHeader {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building KafkaActionHeader",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building KafkaActionHeader",
+                )
+            })?,
+        })
     }
 }

@@ -15,8 +15,10 @@ impl ColumnGroupSchema {
         self.name.as_deref()
     }
     /// <p>A structure containing the list of schemas for column group columns.</p>
-    pub fn column_group_column_schema_list(&self) -> ::std::option::Option<&[crate::types::ColumnGroupColumnSchema]> {
-        self.column_group_column_schema_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_group_column_schema_list.is_none()`.
+    pub fn column_group_column_schema_list(&self) -> &[crate::types::ColumnGroupColumnSchema] {
+        self.column_group_column_schema_list.as_deref().unwrap_or_default()
     }
 }
 impl ColumnGroupSchema {

@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCondition {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
-    pub name: ::std::option::Option<crate::types::ListDomainsAttributeName>,
+    pub name: crate::types::ListDomainsAttributeName,
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
     /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
     /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
-    pub operator: ::std::option::Option<crate::types::Operator>,
+    pub operator: crate::types::Operator,
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl FilterCondition {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ListDomainsAttributeName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ListDomainsAttributeName {
+        &self.name
     }
     /// <p>The operator values for filtering domain names. The values can be:</p>
     /// <ul>
@@ -27,12 +27,13 @@ impl FilterCondition {
     /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::Operator {
+        &self.operator
     }
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl FilterCondition {
@@ -52,6 +53,7 @@ pub struct FilterConditionBuilder {
 }
 impl FilterConditionBuilder {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ListDomainsAttributeName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -71,6 +73,7 @@ impl FilterConditionBuilder {
     /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -115,11 +118,30 @@ impl FilterConditionBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
-    pub fn build(self) -> crate::types::FilterCondition {
-        crate::types::FilterCondition {
-            name: self.name,
-            operator: self.operator,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FilterConditionBuilder::name)
+    /// - [`operator`](crate::types::builders::FilterConditionBuilder::operator)
+    /// - [`values`](crate::types::builders::FilterConditionBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterCondition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterCondition {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FilterCondition",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building FilterCondition",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building FilterCondition",
+                )
+            })?,
+        })
     }
 }

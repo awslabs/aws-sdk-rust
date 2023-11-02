@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRetentionSettings`](crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_retention_settings::builders::GetRetentionSettingsFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
     /// - On success, responds with [`GetRetentionSettingsOutput`](crate::operation::get_retention_settings::GetRetentionSettingsOutput) with field(s):
     ///   - [`retention_settings(Option<RetentionSettings>)`](crate::operation::get_retention_settings::GetRetentionSettingsOutput::retention_settings): <p>The retention settings.</p>
     ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::operation::get_retention_settings::GetRetentionSettingsOutput::initiate_deletion_timestamp): <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>

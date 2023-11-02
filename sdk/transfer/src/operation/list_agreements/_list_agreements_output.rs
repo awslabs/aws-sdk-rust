@@ -6,7 +6,7 @@ pub struct ListAgreementsOutput {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub agreements: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>,
+    pub agreements: ::std::vec::Vec<crate::types::ListedAgreement>,
     _request_id: Option<String>,
 }
 impl ListAgreementsOutput {
@@ -15,8 +15,9 @@ impl ListAgreementsOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn agreements(&self) -> ::std::option::Option<&[crate::types::ListedAgreement]> {
-        self.agreements.as_deref()
+    pub fn agreements(&self) -> &[crate::types::ListedAgreement] {
+        use std::ops::Deref;
+        self.agreements.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAgreementsOutput {
@@ -84,11 +85,20 @@ impl ListAgreementsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput).
-    pub fn build(self) -> crate::operation::list_agreements::ListAgreementsOutput {
-        crate::operation::list_agreements::ListAgreementsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agreements`](crate::operation::list_agreements::builders::ListAgreementsOutputBuilder::agreements)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_agreements::ListAgreementsOutput {
             next_token: self.next_token,
-            agreements: self.agreements,
+            agreements: self.agreements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "agreements",
+                    "agreements was not specified but it is required when building ListAgreementsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

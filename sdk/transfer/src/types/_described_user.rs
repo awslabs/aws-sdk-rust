@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedUser {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p> <note>
     /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
@@ -33,8 +33,9 @@ pub struct DescribedUser {
 }
 impl DescribedUser {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p> <note>
@@ -45,8 +46,10 @@ impl DescribedUser {
     }
     /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
-    pub fn home_directory_mappings(&self) -> ::std::option::Option<&[crate::types::HomeDirectoryMapEntry]> {
-        self.home_directory_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.home_directory_mappings.is_none()`.
+    pub fn home_directory_mappings(&self) -> &[crate::types::HomeDirectoryMapEntry] {
+        self.home_directory_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p> <note>
     /// <p>If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.</p>
@@ -67,12 +70,16 @@ impl DescribedUser {
         self.role.as_deref()
     }
     /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
-    pub fn ssh_public_keys(&self) -> ::std::option::Option<&[crate::types::SshPublicKey]> {
-        self.ssh_public_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssh_public_keys.is_none()`.
+    pub fn ssh_public_keys(&self) -> &[crate::types::SshPublicKey] {
+        self.ssh_public_keys.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the name of the user that was requested to be described. User names are used for authentication purposes. This is the string that will be used by your user when they log in to your server.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
@@ -103,6 +110,7 @@ pub struct DescribedUserBuilder {
 }
 impl DescribedUserBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the user that was requested to be described.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -279,9 +287,16 @@ impl DescribedUserBuilder {
         &self.user_name
     }
     /// Consumes the builder and constructs a [`DescribedUser`](crate::types::DescribedUser).
-    pub fn build(self) -> crate::types::DescribedUser {
-        crate::types::DescribedUser {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedUserBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedUser, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedUser {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedUser",
+                )
+            })?,
             home_directory: self.home_directory,
             home_directory_mappings: self.home_directory_mappings,
             home_directory_type: self.home_directory_type,
@@ -291,6 +306,6 @@ impl DescribedUserBuilder {
             ssh_public_keys: self.ssh_public_keys,
             tags: self.tags,
             user_name: self.user_name,
-        }
+        })
     }
 }

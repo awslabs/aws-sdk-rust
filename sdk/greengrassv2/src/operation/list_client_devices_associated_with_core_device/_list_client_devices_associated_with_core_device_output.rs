@@ -11,8 +11,10 @@ pub struct ListClientDevicesAssociatedWithCoreDeviceOutput {
 }
 impl ListClientDevicesAssociatedWithCoreDeviceOutput {
     /// <p>A list that describes the client devices that are associated with the core device.</p>
-    pub fn associated_client_devices(&self) -> ::std::option::Option<&[crate::types::AssociatedClientDevice]> {
-        self.associated_client_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_client_devices.is_none()`.
+    pub fn associated_client_devices(&self) -> &[crate::types::AssociatedClientDevice] {
+        self.associated_client_devices.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

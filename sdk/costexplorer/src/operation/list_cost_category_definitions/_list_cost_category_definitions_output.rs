@@ -11,8 +11,10 @@ pub struct ListCostCategoryDefinitionsOutput {
 }
 impl ListCostCategoryDefinitionsOutput {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
-    pub fn cost_category_references(&self) -> ::std::option::Option<&[crate::types::CostCategoryReference]> {
-        self.cost_category_references.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_category_references.is_none()`.
+    pub fn cost_category_references(&self) -> &[crate::types::CostCategoryReference] {
+        self.cost_category_references.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

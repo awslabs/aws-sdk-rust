@@ -41,6 +41,7 @@ pub struct ListKeywordsForDataSourceInputBuilder {
 }
 impl ListKeywordsForDataSourceInputBuilder {
     /// <p> The control mapping data source that the keywords apply to. </p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::SourceType) -> Self {
         self.source = ::std::option::Option::Some(input);
         self

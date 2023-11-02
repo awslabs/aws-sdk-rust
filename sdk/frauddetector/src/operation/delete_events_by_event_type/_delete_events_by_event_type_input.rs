@@ -27,6 +27,7 @@ pub struct DeleteEventsByEventTypeInputBuilder {
 }
 impl DeleteEventsByEventTypeInputBuilder {
     /// <p>The name of the event type.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self

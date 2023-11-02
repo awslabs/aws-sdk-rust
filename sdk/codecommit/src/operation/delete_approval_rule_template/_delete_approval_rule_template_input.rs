@@ -27,6 +27,7 @@ pub struct DeleteApprovalRuleTemplateInputBuilder {
 }
 impl DeleteApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template to delete.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self

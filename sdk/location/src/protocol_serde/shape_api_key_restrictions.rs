@@ -3,32 +3,32 @@ pub fn ser_api_key_restrictions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApiKeyRestrictions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.allow_actions {
-        let mut array_2 = object.key("AllowActions").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("AllowActions").start_array();
+        for item_2 in &input.allow_actions {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.allow_resources {
-        let mut array_5 = object.key("AllowResources").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_3 = object.key("AllowResources").start_array();
+        for item_4 in &input.allow_resources {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.allow_referers {
-        let mut array_8 = object.key("AllowReferers").start_array();
-        for item_9 in var_7 {
+    if let Some(var_5) = &input.allow_referers {
+        let mut array_6 = object.key("AllowReferers").start_array();
+        for item_7 in var_5 {
             {
-                array_8.value().string(item_9.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -67,7 +67,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::api_key_restrictions_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -27,6 +27,7 @@ pub struct DescribeSolutionVersionInputBuilder {
 }
 impl DescribeSolutionVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    /// This field is required.
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self

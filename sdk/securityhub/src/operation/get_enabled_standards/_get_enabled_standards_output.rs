@@ -11,8 +11,10 @@ pub struct GetEnabledStandardsOutput {
 }
 impl GetEnabledStandardsOutput {
     /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
-    pub fn standards_subscriptions(&self) -> ::std::option::Option<&[crate::types::StandardsSubscription]> {
-        self.standards_subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_subscriptions.is_none()`.
+    pub fn standards_subscriptions(&self) -> &[crate::types::StandardsSubscription] {
+        self.standards_subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

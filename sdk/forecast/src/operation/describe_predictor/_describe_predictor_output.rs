@@ -86,16 +86,20 @@ impl DescribePredictorOutput {
         self.algorithm_arn.as_deref()
     }
     /// <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen algorithm.</p>
-    pub fn auto_ml_algorithm_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_ml_algorithm_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_ml_algorithm_arns.is_none()`.
+    pub fn auto_ml_algorithm_arns(&self) -> &[::std::string::String] {
+        self.auto_ml_algorithm_arns.as_deref().unwrap_or_default()
     }
     /// <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
     pub fn forecast_horizon(&self) -> ::std::option::Option<i32> {
         self.forecast_horizon
     }
     /// <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
-    pub fn forecast_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
+    pub fn forecast_types(&self) -> &[::std::string::String] {
+        self.forecast_types.as_deref().unwrap_or_default()
     }
     /// <p>Whether the predictor is set to perform AutoML.</p>
     pub fn perform_auto_ml(&self) -> ::std::option::Option<bool> {
@@ -150,8 +154,10 @@ impl DescribePredictorOutput {
         self.is_auto_predictor
     }
     /// <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
-    pub fn dataset_import_job_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dataset_import_job_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_import_job_arns.is_none()`.
+    pub fn dataset_import_job_arns(&self) -> &[::std::string::String] {
+        self.dataset_import_job_arns.as_deref().unwrap_or_default()
     }
     /// <p>The status of the predictor. States include:</p>
     /// <ul>

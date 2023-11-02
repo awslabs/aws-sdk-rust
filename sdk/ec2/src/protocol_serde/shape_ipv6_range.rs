@@ -17,6 +17,7 @@ pub fn ser_ipv6_range(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ipv6_range(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Ipv6Range, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNetwork`](crate::operation::get_network::builders::GetNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`network_arn(impl Into<String>)`](crate::operation::get_network::builders::GetNetworkFluentBuilder::network_arn) / [`set_network_arn(Option<String>)`](crate::operation::get_network::builders::GetNetworkFluentBuilder::set_network_arn): <p>The Amazon Resource Name (ARN) of the network.</p>
+    ///   - [`network_arn(impl Into<String>)`](crate::operation::get_network::builders::GetNetworkFluentBuilder::network_arn) / [`set_network_arn(impl Into<String>)`](crate::operation::get_network::builders::GetNetworkFluentBuilder::set_network_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the network.</p><br>
     /// - On success, responds with [`GetNetworkOutput`](crate::operation::get_network::GetNetworkOutput) with field(s):
     ///   - [`network(Option<Network>)`](crate::operation::get_network::GetNetworkOutput::network): <p>Information about the network.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_network::GetNetworkOutput::tags): <p> The network tags. </p>

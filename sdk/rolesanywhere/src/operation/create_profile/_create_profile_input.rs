@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileInput {
     /// <p>The name of the profile.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub require_instance_properties: ::std::option::Option<bool>,
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub session_policy: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub role_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
     pub managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The number of seconds the vended session credentials are valid for. </p>
@@ -22,8 +22,9 @@ pub struct CreateProfileInput {
 }
 impl CreateProfileInput {
     /// <p>The name of the profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn require_instance_properties(&self) -> ::std::option::Option<bool> {
@@ -34,12 +35,15 @@ impl CreateProfileInput {
         self.session_policy.as_deref()
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn role_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.role_arns.as_deref()
+    pub fn role_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.role_arns.deref()
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    pub fn managed_policy_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_policy_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_policy_arns.is_none()`.
+    pub fn managed_policy_arns(&self) -> &[::std::string::String] {
+        self.managed_policy_arns.as_deref().unwrap_or_default()
     }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
@@ -50,8 +54,10 @@ impl CreateProfileInput {
         self.enabled
     }
     /// <p>The tags to attach to the profile.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProfileInput {
@@ -76,6 +82,7 @@ pub struct CreateProfileInputBuilder {
 }
 impl CreateProfileInputBuilder {
     /// <p>The name of the profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -206,14 +213,27 @@ impl CreateProfileInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_profile::builders::CreateProfileInputBuilder::name)
+    /// - [`role_arns`](crate::operation::create_profile::builders::CreateProfileInputBuilder::role_arns)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateProfileInput",
+                )
+            })?,
             require_instance_properties: self.require_instance_properties,
             session_policy: self.session_policy,
-            role_arns: self.role_arns,
+            role_arns: self.role_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arns",
+                    "role_arns was not specified but it is required when building CreateProfileInput",
+                )
+            })?,
             managed_policy_arns: self.managed_policy_arns,
             duration_seconds: self.duration_seconds,
             enabled: self.enabled,

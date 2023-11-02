@@ -24,14 +24,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
-    pub code: ::std::option::Option<crate::types::RouteMatrixErrorCode>,
+    pub code: crate::types::RouteMatrixErrorCode,
     /// <p>A message about the error that occurred for the route calculation.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::RouteMatrixErrorCode> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::RouteMatrixErrorCode {
+        &self.code
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
@@ -54,6 +54,7 @@ pub struct RouteMatrixEntryErrorBuilder {
 }
 impl RouteMatrixEntryErrorBuilder {
     /// <p>The type of error which occurred for the route calculation.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::RouteMatrixErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -82,10 +83,17 @@ impl RouteMatrixEntryErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`RouteMatrixEntryError`](crate::types::RouteMatrixEntryError).
-    pub fn build(self) -> crate::types::RouteMatrixEntryError {
-        crate::types::RouteMatrixEntryError {
-            code: self.code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::RouteMatrixEntryErrorBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::RouteMatrixEntryError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RouteMatrixEntryError {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building RouteMatrixEntryError",
+                )
+            })?,
             message: self.message,
-        }
+        })
     }
 }

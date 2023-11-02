@@ -48,6 +48,7 @@ pub struct ListAccountIntegrationsInputBuilder {
 }
 impl ListAccountIntegrationsInputBuilder {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self

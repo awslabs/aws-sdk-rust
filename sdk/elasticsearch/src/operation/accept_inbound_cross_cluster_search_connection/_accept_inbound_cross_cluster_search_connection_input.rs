@@ -29,6 +29,7 @@ pub struct AcceptInboundCrossClusterSearchConnectionInputBuilder {
 }
 impl AcceptInboundCrossClusterSearchConnectionInputBuilder {
     /// <p>The id of the inbound connection that you want to accept.</p>
+    /// This field is required.
     pub fn cross_cluster_search_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_cluster_search_connection_id = ::std::option::Option::Some(input.into());
         self

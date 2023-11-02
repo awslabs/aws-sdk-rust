@@ -8,8 +8,10 @@ pub struct BatchGetFindingsInput {
 }
 impl BatchGetFindingsInput {
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    pub fn finding_identifiers(&self) -> ::std::option::Option<&[crate::types::FindingIdentifier]> {
-        self.finding_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_identifiers.is_none()`.
+    pub fn finding_identifiers(&self) -> &[crate::types::FindingIdentifier] {
+        self.finding_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetFindingsInput {

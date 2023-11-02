@@ -38,8 +38,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::InvalidArgumentException({
@@ -54,8 +54,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequestException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::InvalidRequestException({
@@ -70,8 +70,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceInUseException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::ResourceInUseException({
@@ -86,8 +86,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::ResourceNotFoundException({
@@ -102,8 +102,8 @@ pub fn de_delete_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError::generic(generic)

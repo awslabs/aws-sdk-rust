@@ -7,14 +7,15 @@ pub struct OutputArtifact {
     /// <p>The name of the output of an artifact, such as "My App".</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl OutputArtifact {
     /// <p>The name of the output of an artifact, such as "My App".</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl OutputArtifact {
@@ -34,6 +35,7 @@ impl OutputArtifactBuilder {
     /// <p>The name of the output of an artifact, such as "My App".</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -52,7 +54,16 @@ impl OutputArtifactBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`OutputArtifact`](crate::types::OutputArtifact).
-    pub fn build(self) -> crate::types::OutputArtifact {
-        crate::types::OutputArtifact { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OutputArtifactBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputArtifact, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputArtifact {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building OutputArtifact",
+                )
+            })?,
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct UpdateResolverDnssecConfigInputBuilder {
 }
 impl UpdateResolverDnssecConfigInputBuilder {
     /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateResolverDnssecConfigInputBuilder {
         &self.resource_id
     }
     /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
+    /// This field is required.
     pub fn validation(mut self, input: crate::types::Validation) -> Self {
         self.validation = ::std::option::Option::Some(input);
         self

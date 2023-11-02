@@ -55,6 +55,7 @@ pub struct ListPullRequestsInputBuilder {
 }
 impl ListPullRequestsInputBuilder {
     /// <p>The name of the repository for which you want to list pull requests.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

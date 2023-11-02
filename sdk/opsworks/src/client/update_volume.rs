@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateVolume`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`volume_id(impl Into<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::set_volume_id): <p>The volume ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::set_name): <p>The new name.</p>
-    ///   - [`mount_point(impl Into<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::mount_point) / [`set_mount_point(Option<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::set_mount_point): <p>The new mount point.</p>
+    ///   - [`volume_id(impl Into<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::set_volume_id):<br>required: **true**<br><p>The volume ID.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::set_name):<br>required: **false**<br><p>The new name.</p><br>
+    ///   - [`mount_point(impl Into<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::mount_point) / [`set_mount_point(Option<String>)`](crate::operation::update_volume::builders::UpdateVolumeFluentBuilder::set_mount_point):<br>required: **false**<br><p>The new mount point.</p><br>
     /// - On success, responds with [`UpdateVolumeOutput`](crate::operation::update_volume::UpdateVolumeOutput)
     /// - On failure, responds with [`SdkError<UpdateVolumeError>`](crate::operation::update_volume::UpdateVolumeError)
     pub fn update_volume(&self) -> crate::operation::update_volume::builders::UpdateVolumeFluentBuilder {

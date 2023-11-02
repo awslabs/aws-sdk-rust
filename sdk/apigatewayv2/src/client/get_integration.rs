@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIntegration`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`integration_id(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::integration_id) / [`set_integration_id(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_integration_id): <p>The integration ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`integration_id(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::integration_id) / [`set_integration_id(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_integration_id):<br>required: **true**<br><p>The integration ID.</p><br>
     /// - On success, responds with [`GetIntegrationOutput`](crate::operation::get_integration::GetIntegrationOutput) with field(s):
     ///   - [`api_gateway_managed(Option<bool>)`](crate::operation::get_integration::GetIntegrationOutput::api_gateway_managed): <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     ///   - [`connection_id(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::connection_id): <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>

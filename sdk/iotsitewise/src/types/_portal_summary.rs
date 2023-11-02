@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortalSummary {
     /// <p>The ID of the portal.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the portal.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The portal's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub start_url: ::std::option::Option<::std::string::String>,
+    pub start_url: ::std::string::String,
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
@@ -23,20 +23,23 @@ pub struct PortalSummary {
 }
 impl PortalSummary {
     /// <p>The ID of the portal.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the portal.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The portal's description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
-    pub fn start_url(&self) -> ::std::option::Option<&str> {
-        self.start_url.as_deref()
+    pub fn start_url(&self) -> &str {
+        use std::ops::Deref;
+        self.start_url.deref()
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -77,6 +80,7 @@ pub struct PortalSummaryBuilder {
 }
 impl PortalSummaryBuilder {
     /// <p>The ID of the portal.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl PortalSummaryBuilder {
         &self.id
     }
     /// <p>The name of the portal.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +124,7 @@ impl PortalSummaryBuilder {
         &self.description
     }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// This field is required.
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_url = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +181,7 @@ impl PortalSummaryBuilder {
         &self.role_arn
     }
     /// <p>Contains information about the current status of a portal.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PortalStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -189,16 +196,35 @@ impl PortalSummaryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`PortalSummary`](crate::types::PortalSummary).
-    pub fn build(self) -> crate::types::PortalSummary {
-        crate::types::PortalSummary {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::PortalSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::PortalSummaryBuilder::name)
+    /// - [`start_url`](crate::types::builders::PortalSummaryBuilder::start_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::PortalSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PortalSummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building PortalSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PortalSummary",
+                )
+            })?,
             description: self.description,
-            start_url: self.start_url,
+            start_url: self.start_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_url",
+                    "start_url was not specified but it is required when building PortalSummary",
+                )
+            })?,
             creation_date: self.creation_date,
             last_update_date: self.last_update_date,
             role_arn: self.role_arn,
             status: self.status,
-        }
+        })
     }
 }

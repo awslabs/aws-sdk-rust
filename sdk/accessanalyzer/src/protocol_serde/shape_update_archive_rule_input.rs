@@ -6,18 +6,18 @@ pub fn ser_update_archive_rule_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.filter {
+    {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("filter").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("filter").start_object();
+        for (key_3, value_4) in &input.filter {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_criterion::ser_criterion(&mut object_6, value_5)?;
-                object_6.finish();
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_criterion::ser_criterion(&mut object_5, value_4)?;
+                object_5.finish();
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
     Ok(())
 }

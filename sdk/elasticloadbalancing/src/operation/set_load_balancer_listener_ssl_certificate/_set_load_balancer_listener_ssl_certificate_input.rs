@@ -42,6 +42,7 @@ pub struct SetLoadBalancerListenerSslCertificateInputBuilder {
 }
 impl SetLoadBalancerListenerSslCertificateInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl SetLoadBalancerListenerSslCertificateInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The port that uses the specified SSL certificate.</p>
+    /// This field is required.
     pub fn load_balancer_port(mut self, input: i32) -> Self {
         self.load_balancer_port = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl SetLoadBalancerListenerSslCertificateInputBuilder {
         &self.load_balancer_port
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
+    /// This field is required.
     pub fn ssl_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssl_certificate_id = ::std::option::Option::Some(input.into());
         self

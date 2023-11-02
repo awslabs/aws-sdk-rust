@@ -124,7 +124,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-ivs = "0.34.0"
+//! aws-sdk-ivs = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -283,6 +283,8 @@ pub(crate) mod protocol_serde;
 mod serialization_settings;
 
 mod lens;
+
+mod serde_util;
 
 mod endpoint_lib;
 

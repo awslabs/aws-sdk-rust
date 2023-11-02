@@ -96,8 +96,10 @@ impl CreateMaintenanceWindowInput {
     /// </ul> <note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateMaintenanceWindowInput {
@@ -144,6 +146,7 @@ pub struct CreateMaintenanceWindowInputBuilder {
 }
 impl CreateMaintenanceWindowInputBuilder {
     /// <p>The name of the maintenance window.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +203,7 @@ impl CreateMaintenanceWindowInputBuilder {
         &self.end_date
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    /// This field is required.
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +255,7 @@ impl CreateMaintenanceWindowInputBuilder {
         &self.schedule_offset
     }
     /// <p>The duration of the maintenance window in hours.</p>
+    /// This field is required.
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
@@ -265,6 +270,7 @@ impl CreateMaintenanceWindowInputBuilder {
         &self.duration
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    /// This field is required.
     pub fn cutoff(mut self, input: i32) -> Self {
         self.cutoff = ::std::option::Option::Some(input);
         self
@@ -280,6 +286,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
+    /// This field is required.
     pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
         self.allow_unassociated_targets = ::std::option::Option::Some(input);
         self

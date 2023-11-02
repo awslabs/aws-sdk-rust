@@ -3,59 +3,59 @@ pub fn ser_simulation_application_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SimulationApplicationConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application {
-        object.key("application").string(var_1.as_str());
+    {
+        object.key("application").string(input.application.as_str());
     }
-    if let Some(var_2) = &input.application_version {
-        object.key("applicationVersion").string(var_2.as_str());
+    if let Some(var_1) = &input.application_version {
+        object.key("applicationVersion").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.launch_config {
+    if let Some(var_2) = &input.launch_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("launchConfig").start_object();
-        crate::protocol_serde::shape_launch_config::ser_launch_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("launchConfig").start_object();
+        crate::protocol_serde::shape_launch_config::ser_launch_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.upload_configurations {
-        let mut array_6 = object.key("uploadConfigurations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.upload_configurations {
+        let mut array_5 = object.key("uploadConfigurations").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_upload_configuration::ser_upload_configuration(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_upload_configuration::ser_upload_configuration(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.world_configs {
-        let mut array_10 = object.key("worldConfigs").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.world_configs {
+        let mut array_9 = object.key("worldConfigs").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_world_config::ser_world_config(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_world_config::ser_world_config(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.use_default_upload_configurations {
-        object.key("useDefaultUploadConfigurations").boolean(*var_13);
+    if let Some(var_12) = &input.use_default_upload_configurations {
+        object.key("useDefaultUploadConfigurations").boolean(*var_12);
     }
-    if let Some(var_14) = &input.tools {
-        let mut array_15 = object.key("tools").start_array();
-        for item_16 in var_14 {
+    if let Some(var_13) = &input.tools {
+        let mut array_14 = object.key("tools").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_tool::ser_tool(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_tool::ser_tool(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_15.finish();
+        array_14.finish();
     }
-    if let Some(var_18) = &input.use_default_tools {
-        object.key("useDefaultTools").boolean(*var_18);
+    if let Some(var_17) = &input.use_default_tools {
+        object.key("useDefaultTools").boolean(*var_17);
     }
     Ok(())
 }
@@ -119,7 +119,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::simulation_application_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

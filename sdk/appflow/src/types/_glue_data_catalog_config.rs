@@ -8,29 +8,32 @@
 pub struct GlueDataCatalogConfig {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
     /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
     /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
     /// </note>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
-    pub table_prefix: ::std::option::Option<::std::string::String>,
+    pub table_prefix: ::std::string::String,
 }
 impl GlueDataCatalogConfig {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
     /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
     /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
     /// </note>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
-    pub fn table_prefix(&self) -> ::std::option::Option<&str> {
-        self.table_prefix.as_deref()
+    pub fn table_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.table_prefix.deref()
     }
 }
 impl GlueDataCatalogConfig {
@@ -51,6 +54,7 @@ pub struct GlueDataCatalogConfigBuilder {
 impl GlueDataCatalogConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
     /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl GlueDataCatalogConfigBuilder {
     /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
     /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
     /// </note>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +92,7 @@ impl GlueDataCatalogConfigBuilder {
         &self.database_name
     }
     /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
+    /// This field is required.
     pub fn table_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_prefix = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +107,30 @@ impl GlueDataCatalogConfigBuilder {
         &self.table_prefix
     }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfig`](crate::types::GlueDataCatalogConfig).
-    pub fn build(self) -> crate::types::GlueDataCatalogConfig {
-        crate::types::GlueDataCatalogConfig {
-            role_arn: self.role_arn,
-            database_name: self.database_name,
-            table_prefix: self.table_prefix,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::GlueDataCatalogConfigBuilder::role_arn)
+    /// - [`database_name`](crate::types::builders::GlueDataCatalogConfigBuilder::database_name)
+    /// - [`table_prefix`](crate::types::builders::GlueDataCatalogConfigBuilder::table_prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlueDataCatalogConfig {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building GlueDataCatalogConfig",
+                )
+            })?,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building GlueDataCatalogConfig",
+                )
+            })?,
+            table_prefix: self.table_prefix.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_prefix",
+                    "table_prefix was not specified but it is required when building GlueDataCatalogConfig",
+                )
+            })?,
+        })
     }
 }

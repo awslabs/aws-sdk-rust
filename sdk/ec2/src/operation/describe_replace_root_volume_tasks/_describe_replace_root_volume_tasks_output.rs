@@ -11,8 +11,10 @@ pub struct DescribeReplaceRootVolumeTasksOutput {
 }
 impl DescribeReplaceRootVolumeTasksOutput {
     /// <p>Information about the root volume replacement task.</p>
-    pub fn replace_root_volume_tasks(&self) -> ::std::option::Option<&[crate::types::ReplaceRootVolumeTask]> {
-        self.replace_root_volume_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replace_root_volume_tasks.is_none()`.
+    pub fn replace_root_volume_tasks(&self) -> &[crate::types::ReplaceRootVolumeTask] {
+        self.replace_root_volume_tasks.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

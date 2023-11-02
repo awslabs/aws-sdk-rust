@@ -9,8 +9,10 @@ pub struct ServiceCollection {
 }
 impl ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn service_names(&self) -> ::std::option::Option<&[crate::types::ServiceName]> {
-        self.service_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_names.is_none()`.
+    pub fn service_names(&self) -> &[crate::types::ServiceName] {
+        self.service_names.as_deref().unwrap_or_default()
     }
 }
 impl ServiceCollection {

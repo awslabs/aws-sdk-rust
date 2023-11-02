@@ -4,16 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordBatchOutput {
     /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
-    pub failed_put_count: ::std::option::Option<i32>,
+    pub failed_put_count: i32,
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
-    pub request_responses: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
+    pub request_responses: ::std::vec::Vec<crate::types::PutRecordBatchResponseEntry>,
     _request_id: Option<String>,
 }
 impl PutRecordBatchOutput {
     /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
-    pub fn failed_put_count(&self) -> ::std::option::Option<i32> {
+    pub fn failed_put_count(&self) -> i32 {
         self.failed_put_count
     }
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
@@ -21,8 +21,9 @@ impl PutRecordBatchOutput {
         self.encrypted
     }
     /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
-    pub fn request_responses(&self) -> ::std::option::Option<&[crate::types::PutRecordBatchResponseEntry]> {
-        self.request_responses.as_deref()
+    pub fn request_responses(&self) -> &[crate::types::PutRecordBatchResponseEntry] {
+        use std::ops::Deref;
+        self.request_responses.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PutRecordBatchOutput {
@@ -48,6 +49,7 @@ pub struct PutRecordBatchOutputBuilder {
 }
 impl PutRecordBatchOutputBuilder {
     /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
+    /// This field is required.
     pub fn failed_put_count(mut self, input: i32) -> Self {
         self.failed_put_count = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,27 @@ impl PutRecordBatchOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRecordBatchOutput`](crate::operation::put_record_batch::PutRecordBatchOutput).
-    pub fn build(self) -> crate::operation::put_record_batch::PutRecordBatchOutput {
-        crate::operation::put_record_batch::PutRecordBatchOutput {
-            failed_put_count: self.failed_put_count,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`failed_put_count`](crate::operation::put_record_batch::builders::PutRecordBatchOutputBuilder::failed_put_count)
+    /// - [`request_responses`](crate::operation::put_record_batch::builders::PutRecordBatchOutputBuilder::request_responses)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_record_batch::PutRecordBatchOutput {
+            failed_put_count: self.failed_put_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failed_put_count",
+                    "failed_put_count was not specified but it is required when building PutRecordBatchOutput",
+                )
+            })?,
             encrypted: self.encrypted,
-            request_responses: self.request_responses,
+            request_responses: self.request_responses.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "request_responses",
+                    "request_responses was not specified but it is required when building PutRecordBatchOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

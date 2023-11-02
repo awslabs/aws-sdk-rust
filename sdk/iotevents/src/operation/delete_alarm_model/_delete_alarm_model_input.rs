@@ -27,6 +27,7 @@ pub struct DeleteAlarmModelInputBuilder {
 }
 impl DeleteAlarmModelInputBuilder {
     /// <p>The name of the alarm model.</p>
+    /// This field is required.
     pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self

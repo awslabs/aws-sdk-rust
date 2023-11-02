@@ -27,6 +27,7 @@ pub struct GetLicenseConversionTaskInputBuilder {
 }
 impl GetLicenseConversionTaskInputBuilder {
     /// <p>ID of the license type conversion task to retrieve information on.</p>
+    /// This field is required.
     pub fn license_conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_conversion_task_id = ::std::option::Option::Some(input.into());
         self

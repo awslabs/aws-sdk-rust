@@ -8,9 +8,9 @@ pub struct PublishBatchRequestEntry {
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
     /// </note>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The body of the message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The subject of the batch message.</p>
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
@@ -56,12 +56,14 @@ impl PublishBatchRequestEntry {
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
     /// </note>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The body of the message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>The subject of the batch message.</p>
     pub fn subject(&self) -> ::std::option::Option<&str> {
@@ -139,6 +141,7 @@ impl PublishBatchRequestEntryBuilder {
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
     /// </note>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +162,7 @@ impl PublishBatchRequestEntryBuilder {
         &self.id
     }
     /// <p>The body of the message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -341,15 +345,28 @@ impl PublishBatchRequestEntryBuilder {
         &self.message_group_id
     }
     /// Consumes the builder and constructs a [`PublishBatchRequestEntry`](crate::types::PublishBatchRequestEntry).
-    pub fn build(self) -> crate::types::PublishBatchRequestEntry {
-        crate::types::PublishBatchRequestEntry {
-            id: self.id,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::PublishBatchRequestEntryBuilder::id)
+    /// - [`message`](crate::types::builders::PublishBatchRequestEntryBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::PublishBatchRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PublishBatchRequestEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building PublishBatchRequestEntry",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building PublishBatchRequestEntry",
+                )
+            })?,
             subject: self.subject,
             message_structure: self.message_structure,
             message_attributes: self.message_attributes,
             message_deduplication_id: self.message_deduplication_id,
             message_group_id: self.message_group_id,
-        }
+        })
     }
 }

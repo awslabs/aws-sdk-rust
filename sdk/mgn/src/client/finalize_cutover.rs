@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`FinalizeCutover`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::set_source_server_id): <p>Request to finalize Cutover by Source Server ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::set_account_id): <p>Request to finalize Cutover by Source Account ID.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::source_server_id) / [`set_source_server_id(impl Into<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::set_source_server_id):<br>required: **true**<br><p>Request to finalize Cutover by Source Server ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::finalize_cutover::builders::FinalizeCutoverFluentBuilder::set_account_id):<br>required: **false**<br><p>Request to finalize Cutover by Source Account ID.</p><br>
     /// - On success, responds with [`FinalizeCutoverOutput`](crate::operation::finalize_cutover::FinalizeCutoverOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::finalize_cutover::FinalizeCutoverOutput::arn): <p>Source server ARN.</p>

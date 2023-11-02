@@ -10,8 +10,10 @@ pub struct CreateResourceGroupInput {
 impl CreateResourceGroupInput {
     /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-    pub fn resource_group_tags(&self) -> ::std::option::Option<&[crate::types::ResourceGroupTag]> {
-        self.resource_group_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_group_tags.is_none()`.
+    pub fn resource_group_tags(&self) -> &[crate::types::ResourceGroupTag] {
+        self.resource_group_tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateResourceGroupInput {

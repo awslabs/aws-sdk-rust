@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedisSettings {
     /// <p>Fully qualified domain name of the endpoint.</p>
-    pub server_name: ::std::option::Option<::std::string::String>,
+    pub server_name: ::std::string::String,
     /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
     pub port: i32,
     /// <p>The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid values include <code>plaintext</code> and <code>ssl-encryption</code>. The default is <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA) using the <code>SslCaCertificateArn </code>setting. If an ARN isn't given for a CA, DMS uses the Amazon root CA.</p>
@@ -22,8 +22,9 @@ pub struct RedisSettings {
 }
 impl RedisSettings {
     /// <p>Fully qualified domain name of the endpoint.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
-        self.server_name.as_deref()
+    pub fn server_name(&self) -> &str {
+        use std::ops::Deref;
+        self.server_name.deref()
     }
     /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
     pub fn port(&self) -> i32 {
@@ -85,6 +86,7 @@ pub struct RedisSettingsBuilder {
 }
 impl RedisSettingsBuilder {
     /// <p>Fully qualified domain name of the endpoint.</p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +101,7 @@ impl RedisSettingsBuilder {
         &self.server_name
     }
     /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -186,16 +189,23 @@ impl RedisSettingsBuilder {
         &self.ssl_ca_certificate_arn
     }
     /// Consumes the builder and constructs a [`RedisSettings`](crate::types::RedisSettings).
-    pub fn build(self) -> crate::types::RedisSettings {
-        crate::types::RedisSettings {
-            server_name: self.server_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_name`](crate::types::builders::RedisSettingsBuilder::server_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedisSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedisSettings {
+            server_name: self.server_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_name",
+                    "server_name was not specified but it is required when building RedisSettings",
+                )
+            })?,
             port: self.port.unwrap_or_default(),
             ssl_security_protocol: self.ssl_security_protocol,
             auth_type: self.auth_type,
             auth_user_name: self.auth_user_name,
             auth_password: self.auth_password,
             ssl_ca_certificate_arn: self.ssl_ca_certificate_arn,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for RedisSettingsBuilder {

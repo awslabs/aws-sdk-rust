@@ -123,6 +123,7 @@ pub struct CreateRemoteAccessSessionInputBuilder {
 }
 impl CreateRemoteAccessSessionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +138,7 @@ impl CreateRemoteAccessSessionInputBuilder {
         &self.project_arn
     }
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self

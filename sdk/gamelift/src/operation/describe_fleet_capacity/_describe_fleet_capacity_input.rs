@@ -12,8 +12,10 @@ pub struct DescribeFleetCapacityInput {
 }
 impl DescribeFleetCapacityInput {
     /// <p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
-    pub fn fleet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fleet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_ids.is_none()`.
+    pub fn fleet_ids(&self) -> &[::std::string::String] {
+        self.fleet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {

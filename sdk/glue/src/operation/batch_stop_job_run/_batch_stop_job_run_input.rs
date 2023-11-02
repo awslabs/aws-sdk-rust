@@ -14,8 +14,10 @@ impl BatchStopJobRunInput {
         self.job_name.as_deref()
     }
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
-    pub fn job_run_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_run_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_run_ids.is_none()`.
+    pub fn job_run_ids(&self) -> &[::std::string::String] {
+        self.job_run_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchStopJobRunInput {
@@ -34,6 +36,7 @@ pub struct BatchStopJobRunInputBuilder {
 }
 impl BatchStopJobRunInputBuilder {
     /// <p>The name of the job definition for which to stop job runs.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self

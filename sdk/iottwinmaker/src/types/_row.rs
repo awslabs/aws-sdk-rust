@@ -9,8 +9,10 @@ pub struct Row {
 }
 impl Row {
     /// <p>The data in a row of query results.</p>
-    pub fn row_data(&self) -> ::std::option::Option<&[::aws_smithy_types::Document]> {
-        self.row_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_data.is_none()`.
+    pub fn row_data(&self) -> &[::aws_smithy_types::Document] {
+        self.row_data.as_deref().unwrap_or_default()
     }
 }
 impl Row {

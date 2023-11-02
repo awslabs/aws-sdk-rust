@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomModelTransformParameters {
     /// <p>The path to the Amazon S3 location where the Python module implementing your model is located. This must point to a valid existing Amazon S3 location that contains, at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code> file.</p>
-    pub source_s3_directory_path: ::std::option::Option<::std::string::String>,
+    pub source_s3_directory_path: ::std::string::String,
     /// <p>The name of the entry point in your module of a script that should be run after the best model from the hyperparameter search has been identified, to compute the model artifacts necessary for model deployment. It should be able to run with no command-line arguments. The default is <code>transform.py</code>.</p>
     pub transform_entry_point_script: ::std::option::Option<::std::string::String>,
 }
 impl CustomModelTransformParameters {
     /// <p>The path to the Amazon S3 location where the Python module implementing your model is located. This must point to a valid existing Amazon S3 location that contains, at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code> file.</p>
-    pub fn source_s3_directory_path(&self) -> ::std::option::Option<&str> {
-        self.source_s3_directory_path.as_deref()
+    pub fn source_s3_directory_path(&self) -> &str {
+        use std::ops::Deref;
+        self.source_s3_directory_path.deref()
     }
     /// <p>The name of the entry point in your module of a script that should be run after the best model from the hyperparameter search has been identified, to compute the model artifacts necessary for model deployment. It should be able to run with no command-line arguments. The default is <code>transform.py</code>.</p>
     pub fn transform_entry_point_script(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct CustomModelTransformParametersBuilder {
 }
 impl CustomModelTransformParametersBuilder {
     /// <p>The path to the Amazon S3 location where the Python module implementing your model is located. This must point to a valid existing Amazon S3 location that contains, at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code> file.</p>
+    /// This field is required.
     pub fn source_s3_directory_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_s3_directory_path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl CustomModelTransformParametersBuilder {
         &self.transform_entry_point_script
     }
     /// Consumes the builder and constructs a [`CustomModelTransformParameters`](crate::types::CustomModelTransformParameters).
-    pub fn build(self) -> crate::types::CustomModelTransformParameters {
-        crate::types::CustomModelTransformParameters {
-            source_s3_directory_path: self.source_s3_directory_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_s3_directory_path`](crate::types::builders::CustomModelTransformParametersBuilder::source_s3_directory_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelTransformParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomModelTransformParameters {
+            source_s3_directory_path: self.source_s3_directory_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_s3_directory_path",
+                    "source_s3_directory_path was not specified but it is required when building CustomModelTransformParameters",
+                )
+            })?,
             transform_entry_point_script: self.transform_entry_point_script,
-        }
+        })
     }
 }

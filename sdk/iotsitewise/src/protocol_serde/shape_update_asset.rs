@@ -26,11 +26,10 @@ pub fn de_update_asset_http_error(
                     crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalFailureException" => crate::operation::update_asset::UpdateAssetError::InternalFailureException({
@@ -41,11 +40,10 @@ pub fn de_update_asset_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::update_asset::UpdateAssetError::InvalidRequestException({
@@ -56,11 +54,10 @@ pub fn de_update_asset_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceAlreadyExistsException" => crate::operation::update_asset::UpdateAssetError::ResourceAlreadyExistsException({
@@ -74,11 +71,10 @@ pub fn de_update_asset_http_error(
                 )
                 .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_already_exists_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_asset::UpdateAssetError::ResourceNotFoundException({
@@ -89,11 +85,10 @@ pub fn de_update_asset_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_asset::UpdateAssetError::ThrottlingException({
@@ -104,11 +99,10 @@ pub fn de_update_asset_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::update_asset::UpdateAssetError::generic(generic),
@@ -127,7 +121,7 @@ pub fn de_update_asset_http_response(
         output = crate::protocol_serde::shape_update_asset::de_update_asset(_response_body, output)
             .map_err(crate::operation::update_asset::UpdateAssetError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_asset_output_correct_errors(output).build()
     })
 }
 

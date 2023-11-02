@@ -13,8 +13,10 @@ pub struct DescribeSourceNetworksRequestFilters {
 }
 impl DescribeSourceNetworksRequestFilters {
     /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
-    pub fn source_network_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_network_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_network_i_ds.is_none()`.
+    pub fn source_network_i_ds(&self) -> &[::std::string::String] {
+        self.source_network_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
     pub fn origin_account_id(&self) -> ::std::option::Option<&str> {

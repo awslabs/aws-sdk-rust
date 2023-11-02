@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Locale {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
-    pub country: ::std::option::Option<::std::string::String>,
+    pub country: ::std::string::String,
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub subdivision: ::std::option::Option<::std::string::String>,
 }
 impl Locale {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
-        self.country.as_deref()
+    pub fn country(&self) -> &str {
+        use std::ops::Deref;
+        self.country.deref()
     }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub fn subdivision(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct LocaleBuilder {
 }
 impl LocaleBuilder {
     /// <p> The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America. </p>
+    /// This field is required.
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl LocaleBuilder {
         &self.subdivision
     }
     /// Consumes the builder and constructs a [`Locale`](crate::types::Locale).
-    pub fn build(self) -> crate::types::Locale {
-        crate::types::Locale {
-            country: self.country,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`country`](crate::types::builders::LocaleBuilder::country)
+    pub fn build(self) -> ::std::result::Result<crate::types::Locale, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Locale {
+            country: self.country.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "country",
+                    "country was not specified but it is required when building Locale",
+                )
+            })?,
             subdivision: self.subdivision,
-        }
+        })
     }
 }

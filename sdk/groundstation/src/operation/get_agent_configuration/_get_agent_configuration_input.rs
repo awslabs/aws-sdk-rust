@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAgentConfigurationInput {
     /// <p>UUID of agent to get configuration information for.</p>
-    pub agent_id: ::std::option::Option<::std::string::String>,
+    pub agent_id: ::std::string::String,
 }
 impl GetAgentConfigurationInput {
     /// <p>UUID of agent to get configuration information for.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
-        self.agent_id.as_deref()
+    pub fn agent_id(&self) -> &str {
+        use std::ops::Deref;
+        self.agent_id.deref()
     }
 }
 impl GetAgentConfigurationInput {
@@ -27,6 +28,7 @@ pub struct GetAgentConfigurationInputBuilder {
 }
 impl GetAgentConfigurationInputBuilder {
     /// <p>UUID of agent to get configuration information for.</p>
+    /// This field is required.
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
         self
@@ -41,10 +43,19 @@ impl GetAgentConfigurationInputBuilder {
         &self.agent_id
     }
     /// Consumes the builder and constructs a [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_id`](crate::operation::get_agent_configuration::builders::GetAgentConfigurationInputBuilder::agent_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_agent_configuration::GetAgentConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::get_agent_configuration::GetAgentConfigurationInput { agent_id: self.agent_id })
+        ::std::result::Result::Ok(crate::operation::get_agent_configuration::GetAgentConfigurationInput {
+            agent_id: self.agent_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "agent_id",
+                    "agent_id was not specified but it is required when building GetAgentConfigurationInput",
+                )
+            })?,
+        })
     }
 }

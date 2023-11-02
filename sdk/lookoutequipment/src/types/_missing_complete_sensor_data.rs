@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MissingCompleteSensorData {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
-    pub affected_sensor_count: ::std::option::Option<i32>,
+    pub affected_sensor_count: i32,
 }
 impl MissingCompleteSensorData {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
-    pub fn affected_sensor_count(&self) -> ::std::option::Option<i32> {
+    pub fn affected_sensor_count(&self) -> i32 {
         self.affected_sensor_count
     }
 }
@@ -28,6 +28,7 @@ pub struct MissingCompleteSensorDataBuilder {
 }
 impl MissingCompleteSensorDataBuilder {
     /// <p> Indicates the number of sensors that have data missing completely. </p>
+    /// This field is required.
     pub fn affected_sensor_count(mut self, input: i32) -> Self {
         self.affected_sensor_count = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl MissingCompleteSensorDataBuilder {
         &self.affected_sensor_count
     }
     /// Consumes the builder and constructs a [`MissingCompleteSensorData`](crate::types::MissingCompleteSensorData).
-    pub fn build(self) -> crate::types::MissingCompleteSensorData {
-        crate::types::MissingCompleteSensorData {
-            affected_sensor_count: self.affected_sensor_count,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`affected_sensor_count`](crate::types::builders::MissingCompleteSensorDataBuilder::affected_sensor_count)
+    pub fn build(self) -> ::std::result::Result<crate::types::MissingCompleteSensorData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MissingCompleteSensorData {
+            affected_sensor_count: self.affected_sensor_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "affected_sensor_count",
+                    "affected_sensor_count was not specified but it is required when building MissingCompleteSensorData",
+                )
+            })?,
+        })
     }
 }

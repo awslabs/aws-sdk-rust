@@ -3,11 +3,11 @@ pub fn ser_uplink_echo_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UplinkEchoConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("enabled").boolean(*var_1);
+    {
+        object.key("enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.antenna_uplink_config_arn {
-        object.key("antennaUplinkConfigArn").string(var_2.as_str());
+    {
+        object.key("antennaUplinkConfigArn").string(input.antenna_uplink_config_arn.as_str());
     }
     Ok(())
 }
@@ -47,7 +47,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::uplink_echo_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

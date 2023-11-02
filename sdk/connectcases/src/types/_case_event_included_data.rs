@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
+    pub fields: ::std::vec::Vec<crate::types::FieldIdentifier>,
 }
 impl CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldIdentifier]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
 }
 impl CaseEventIncludedData {
@@ -48,7 +49,16 @@ impl CaseEventIncludedDataBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
-    pub fn build(self) -> crate::types::CaseEventIncludedData {
-        crate::types::CaseEventIncludedData { fields: self.fields }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fields`](crate::types::builders::CaseEventIncludedDataBuilder::fields)
+    pub fn build(self) -> ::std::result::Result<crate::types::CaseEventIncludedData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CaseEventIncludedData {
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building CaseEventIncludedData",
+                )
+            })?,
+        })
     }
 }

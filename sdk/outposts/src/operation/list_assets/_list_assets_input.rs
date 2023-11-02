@@ -20,8 +20,10 @@ impl ListAssetsInput {
         self.outpost_identifier.as_deref()
     }
     /// <p>Filters the results by the host ID of a Dedicated Host.</p>
-    pub fn host_id_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_id_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_id_filter.is_none()`.
+    pub fn host_id_filter(&self) -> &[::std::string::String] {
+        self.host_id_filter.as_deref().unwrap_or_default()
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -32,8 +34,10 @@ impl ListAssetsInput {
         self.next_token.as_deref()
     }
     /// <p>Filters the results by state.</p>
-    pub fn status_filter(&self) -> ::std::option::Option<&[crate::types::AssetState]> {
-        self.status_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_filter.is_none()`.
+    pub fn status_filter(&self) -> &[crate::types::AssetState] {
+        self.status_filter.as_deref().unwrap_or_default()
     }
 }
 impl ListAssetsInput {
@@ -55,6 +59,7 @@ pub struct ListAssetsInputBuilder {
 }
 impl ListAssetsInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// This field is required.
     pub fn outpost_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_identifier = ::std::option::Option::Some(input.into());
         self

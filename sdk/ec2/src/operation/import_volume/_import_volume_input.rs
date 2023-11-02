@@ -55,6 +55,7 @@ pub struct ImportVolumeInputBuilder {
 }
 impl ImportVolumeInputBuilder {
     /// <p>The Availability Zone for the resulting EBS volume.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl ImportVolumeInputBuilder {
         &self.dry_run
     }
     /// <p>The disk image.</p>
+    /// This field is required.
     pub fn image(mut self, input: crate::types::DiskImageDetail) -> Self {
         self.image = ::std::option::Option::Some(input);
         self
@@ -111,6 +113,7 @@ impl ImportVolumeInputBuilder {
         &self.image
     }
     /// <p>The volume size.</p>
+    /// This field is required.
     pub fn volume(mut self, input: crate::types::VolumeDetail) -> Self {
         self.volume = ::std::option::Option::Some(input);
         self

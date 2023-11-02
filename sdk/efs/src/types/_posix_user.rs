@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PosixUser {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
-    pub uid: ::std::option::Option<i64>,
+    pub uid: i64,
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
-    pub gid: ::std::option::Option<i64>,
+    pub gid: i64,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
     pub secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl PosixUser {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
-    pub fn uid(&self) -> ::std::option::Option<i64> {
+    pub fn uid(&self) -> i64 {
         self.uid
     }
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
-    pub fn gid(&self) -> ::std::option::Option<i64> {
+    pub fn gid(&self) -> i64 {
         self.gid
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub fn secondary_gids(&self) -> ::std::option::Option<&[i64]> {
-        self.secondary_gids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_gids.is_none()`.
+    pub fn secondary_gids(&self) -> &[i64] {
+        self.secondary_gids.as_deref().unwrap_or_default()
     }
 }
 impl PosixUser {
@@ -42,6 +44,7 @@ pub struct PosixUserBuilder {
 }
 impl PosixUserBuilder {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
+    /// This field is required.
     pub fn uid(mut self, input: i64) -> Self {
         self.uid = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl PosixUserBuilder {
         &self.uid
     }
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
+    /// This field is required.
     pub fn gid(mut self, input: i64) -> Self {
         self.gid = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl PosixUserBuilder {
         &self.secondary_gids
     }
     /// Consumes the builder and constructs a [`PosixUser`](crate::types::PosixUser).
-    pub fn build(self) -> crate::types::PosixUser {
-        crate::types::PosixUser {
-            uid: self.uid,
-            gid: self.gid,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uid`](crate::types::builders::PosixUserBuilder::uid)
+    /// - [`gid`](crate::types::builders::PosixUserBuilder::gid)
+    pub fn build(self) -> ::std::result::Result<crate::types::PosixUser, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PosixUser {
+            uid: self.uid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uid",
+                    "uid was not specified but it is required when building PosixUser",
+                )
+            })?,
+            gid: self.gid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gid",
+                    "gid was not specified but it is required when building PosixUser",
+                )
+            })?,
             secondary_gids: self.secondary_gids,
-        }
+        })
     }
 }

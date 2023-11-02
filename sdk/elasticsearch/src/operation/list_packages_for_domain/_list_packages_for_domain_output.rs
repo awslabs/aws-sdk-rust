@@ -12,8 +12,10 @@ pub struct ListPackagesForDomainOutput {
 }
 impl ListPackagesForDomainOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
-    pub fn domain_package_details_list(&self) -> ::std::option::Option<&[crate::types::DomainPackageDetails]> {
-        self.domain_package_details_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_package_details_list.is_none()`.
+    pub fn domain_package_details_list(&self) -> &[crate::types::DomainPackageDetails] {
+        self.domain_package_details_list.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

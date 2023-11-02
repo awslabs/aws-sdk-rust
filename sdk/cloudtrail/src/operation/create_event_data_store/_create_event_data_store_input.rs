@@ -46,8 +46,10 @@ impl CreateEventDataStoreInput {
     /// <p> For more information about how to use advanced event selectors to log CloudTrail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include Config configuration items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create an event data store for Config configuration items</a> in the CloudTrail User Guide.</p>
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
-    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
-        self.advanced_event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
+    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the event data store includes events from all Regions, or only from the Region in which the event data store is created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
@@ -68,8 +70,10 @@ impl CreateEventDataStoreInput {
         self.termination_protection_enabled
     }
     /// <p>A list of tags.</p>
-    pub fn tags_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
+    pub fn tags_list(&self) -> &[crate::types::Tag] {
+        self.tags_list.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -113,6 +117,7 @@ pub struct CreateEventDataStoreInputBuilder {
 }
 impl CreateEventDataStoreInputBuilder {
     /// <p>The name of the event data store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

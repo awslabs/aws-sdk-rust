@@ -4,30 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRouteInput {
     /// <p>The name of the route to describe.</p>
-    pub route_name: ::std::option::Option<::std::string::String>,
+    pub route_name: ::std::string::String,
     /// <p>The name of the service mesh that the route resides in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual router that the route is associated with.</p>
-    pub virtual_router_name: ::std::option::Option<::std::string::String>,
+    pub virtual_router_name: ::std::string::String,
 }
 impl DescribeRouteInput {
     /// <p>The name of the route to describe.</p>
-    pub fn route_name(&self) -> ::std::option::Option<&str> {
-        self.route_name.as_deref()
+    pub fn route_name(&self) -> &str {
+        use std::ops::Deref;
+        self.route_name.deref()
     }
     /// <p>The name of the service mesh that the route resides in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
-    pub fn virtual_router_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_router_name.as_deref()
+    pub fn virtual_router_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_router_name.deref()
     }
 }
 impl DescribeRouteInput {
@@ -48,6 +51,7 @@ pub struct DescribeRouteInputBuilder {
 }
 impl DescribeRouteInputBuilder {
     /// <p>The name of the route to describe.</p>
+    /// This field is required.
     pub fn route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl DescribeRouteInputBuilder {
         &self.route_name
     }
     /// <p>The name of the service mesh that the route resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl DescribeRouteInputBuilder {
         &self.mesh_owner
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -104,14 +110,33 @@ impl DescribeRouteInputBuilder {
         &self.virtual_router_name
     }
     /// Consumes the builder and constructs a [`DescribeRouteInput`](crate::operation::describe_route::DescribeRouteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`route_name`](crate::operation::describe_route::builders::DescribeRouteInputBuilder::route_name)
+    /// - [`mesh_name`](crate::operation::describe_route::builders::DescribeRouteInputBuilder::mesh_name)
+    /// - [`virtual_router_name`](crate::operation::describe_route::builders::DescribeRouteInputBuilder::virtual_router_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_route::DescribeRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_route::DescribeRouteInput {
-            route_name: self.route_name,
-            mesh_name: self.mesh_name,
+            route_name: self.route_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "route_name",
+                    "route_name was not specified but it is required when building DescribeRouteInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building DescribeRouteInput",
+                )
+            })?,
             mesh_owner: self.mesh_owner,
-            virtual_router_name: self.virtual_router_name,
+            virtual_router_name: self.virtual_router_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_router_name",
+                    "virtual_router_name was not specified but it is required when building DescribeRouteInput",
+                )
+            })?,
         })
     }
 }

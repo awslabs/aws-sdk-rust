@@ -11,8 +11,10 @@ pub struct DiscoverInstancesOutput {
 }
 impl DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::HttpInstanceSummary]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::HttpInstanceSummary] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The increasing revision associated to the response Instances list. If a new instance is registered or deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update <code>InstancesRevision</code>.</p>
     pub fn instances_revision(&self) -> ::std::option::Option<i64> {

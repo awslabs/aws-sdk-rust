@@ -78,6 +78,7 @@ pub struct ModifyGlobalClusterInputBuilder {
 impl ModifyGlobalClusterInputBuilder {
     /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
     /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self

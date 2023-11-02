@@ -35,8 +35,10 @@ impl CsvFormatDescriptor {
         self.delimiter.as_deref()
     }
     /// <p>A list of the source CSV file's headers, if any.</p>
-    pub fn header_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.header_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.header_list.is_none()`.
+    pub fn header_list(&self) -> &[::std::string::String] {
+        self.header_list.as_deref().unwrap_or_default()
     }
     /// <p>The character used as a quote character.</p>
     pub fn quote_symbol(&self) -> ::std::option::Option<&str> {

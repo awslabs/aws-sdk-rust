@@ -28,6 +28,7 @@ pub struct DeleteHealthCheckInputBuilder {
 }
 impl DeleteHealthCheckInputBuilder {
     /// <p>The ID of the health check that you want to delete.</p>
+    /// This field is required.
     pub fn health_check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_id = ::std::option::Option::Some(input.into());
         self

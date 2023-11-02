@@ -61,16 +61,20 @@ impl PipelineExecution {
         self.status_summary.as_deref()
     }
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    pub fn artifact_revisions(&self) -> ::std::option::Option<&[crate::types::ArtifactRevision]> {
-        self.artifact_revisions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artifact_revisions.is_none()`.
+    pub fn artifact_revisions(&self) -> &[crate::types::ArtifactRevision] {
+        self.artifact_revisions.as_deref().unwrap_or_default()
     }
     /// <p>The interaction or event that started a pipeline execution.</p>
     pub fn trigger(&self) -> ::std::option::Option<&crate::types::ExecutionTrigger> {
         self.trigger.as_ref()
     }
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::ResolvedPipelineVariable]> {
-        self.variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
+    pub fn variables(&self) -> &[crate::types::ResolvedPipelineVariable] {
+        self.variables.as_deref().unwrap_or_default()
     }
 }
 impl PipelineExecution {

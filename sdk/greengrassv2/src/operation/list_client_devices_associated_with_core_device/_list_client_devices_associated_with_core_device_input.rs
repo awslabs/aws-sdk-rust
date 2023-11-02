@@ -42,6 +42,7 @@ pub struct ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
 }
 impl ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// This field is required.
     pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self

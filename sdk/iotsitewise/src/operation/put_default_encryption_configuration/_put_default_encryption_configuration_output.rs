@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: crate::types::EncryptionType,
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
@@ -13,8 +13,8 @@ pub struct PutDefaultEncryptionConfigurationOutput {
 }
 impl PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
-        self.encryption_type.as_ref()
+    pub fn encryption_type(&self) -> &crate::types::EncryptionType {
+        &self.encryption_type
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -48,6 +48,7 @@ pub struct PutDefaultEncryptionConfigurationOutputBuilder {
 }
 impl PutDefaultEncryptionConfigurationOutputBuilder {
     /// <p>The type of encryption used for the encryption configuration.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
         &self.kms_key_arn
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
+    /// This field is required.
     pub fn configuration_status(mut self, input: crate::types::ConfigurationStatus) -> Self {
         self.configuration_status = ::std::option::Option::Some(input);
         self
@@ -99,12 +101,26 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutDefaultEncryptionConfigurationOutput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput).
-    pub fn build(self) -> crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput {
-        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput {
-            encryption_type: self.encryption_type,
-            kms_key_arn: self.kms_key_arn,
-            configuration_status: self.configuration_status,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encryption_type`](crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder::encryption_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput {
+                encryption_type: self.encryption_type.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "encryption_type",
+                        "encryption_type was not specified but it is required when building PutDefaultEncryptionConfigurationOutput",
+                    )
+                })?,
+                kms_key_arn: self.kms_key_arn,
+                configuration_status: self.configuration_status,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

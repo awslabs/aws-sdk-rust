@@ -27,6 +27,7 @@ pub struct DeleteMonitorInputBuilder {
 }
 impl DeleteMonitorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to delete.</p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self

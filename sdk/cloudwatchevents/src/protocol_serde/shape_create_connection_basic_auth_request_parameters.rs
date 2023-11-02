@@ -3,11 +3,11 @@ pub fn ser_create_connection_basic_auth_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateConnectionBasicAuthRequestParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.username {
-        object.key("Username").string(var_1.as_str());
+    {
+        object.key("Username").string(input.username.as_str());
     }
-    if let Some(var_2) = &input.password {
-        object.key("Password").string(var_2.as_str());
+    {
+        object.key("Password").string(input.password.as_str());
     }
     Ok(())
 }

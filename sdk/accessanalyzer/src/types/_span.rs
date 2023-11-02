@@ -35,6 +35,7 @@ pub struct SpanBuilder {
 }
 impl SpanBuilder {
     /// <p>The start position of the span (inclusive).</p>
+    /// This field is required.
     pub fn start(mut self, input: crate::types::Position) -> Self {
         self.start = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SpanBuilder {
         &self.start
     }
     /// <p>The end position of the span (exclusive).</p>
+    /// This field is required.
     pub fn end(mut self, input: crate::types::Position) -> Self {
         self.end = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct ListDashboardsOutput {
 }
 impl ListDashboardsOutput {
     /// <p>The list of matching dashboards.</p>
-    pub fn dashboard_entries(&self) -> ::std::option::Option<&[crate::types::DashboardEntry]> {
-        self.dashboard_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboard_entries.is_none()`.
+    pub fn dashboard_entries(&self) -> &[crate::types::DashboardEntry] {
+        self.dashboard_entries.as_deref().unwrap_or_default()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

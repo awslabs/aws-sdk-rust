@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Query {
     /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
-    pub text: ::std::option::Option<::std::string::String>,
+    pub text: ::std::string::String,
     /// <p>Alias attached to the query, for ease of location.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Pages is a parameter that the user inputs to specify which pages to apply a query to. The following is a list of rules for using this parameter.</p>
@@ -20,8 +20,9 @@ pub struct Query {
 }
 impl Query {
     /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
-        self.text.as_deref()
+    pub fn text(&self) -> &str {
+        use std::ops::Deref;
+        self.text.deref()
     }
     /// <p>Alias attached to the query, for ease of location.</p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
@@ -35,8 +36,10 @@ impl Query {
     /// <li> <p>You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code> indicates last page of document.</p> </li>
     /// <li> <p>Specified pages must be greater than 0 and less than or equal to the number of pages in the document.</p> </li>
     /// </ul>
-    pub fn pages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pages.is_none()`.
+    pub fn pages(&self) -> &[::std::string::String] {
+        self.pages.as_deref().unwrap_or_default()
     }
 }
 impl Query {
@@ -56,6 +59,7 @@ pub struct QueryBuilder {
 }
 impl QueryBuilder {
     /// <p>Question that Amazon Textract will apply to the document. An example would be "What is the customer's SSN?"</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -125,11 +129,18 @@ impl QueryBuilder {
         &self.pages
     }
     /// Consumes the builder and constructs a [`Query`](crate::types::Query).
-    pub fn build(self) -> crate::types::Query {
-        crate::types::Query {
-            text: self.text,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text`](crate::types::builders::QueryBuilder::text)
+    pub fn build(self) -> ::std::result::Result<crate::types::Query, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Query {
+            text: self.text.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text",
+                    "text was not specified but it is required when building Query",
+                )
+            })?,
             alias: self.alias,
             pages: self.pages,
-        }
+        })
     }
 }

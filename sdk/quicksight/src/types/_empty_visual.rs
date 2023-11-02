@@ -6,24 +6,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmptyVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub visual_id: ::std::option::Option<::std::string::String>,
+    pub visual_id: ::std::string::String,
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    pub data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub data_set_identifier: ::std::string::String,
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl EmptyVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> ::std::option::Option<&str> {
-        self.visual_id.as_deref()
+    pub fn visual_id(&self) -> &str {
+        use std::ops::Deref;
+        self.visual_id.deref()
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
-        self.data_set_identifier.as_deref()
+    pub fn data_set_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_identifier.deref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VisualCustomAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl EmptyVisual {
@@ -43,6 +47,7 @@ pub struct EmptyVisualBuilder {
 }
 impl EmptyVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
+    /// This field is required.
     pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.visual_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +62,7 @@ impl EmptyVisualBuilder {
         &self.visual_id
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
+    /// This field is required.
     pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
@@ -91,11 +97,24 @@ impl EmptyVisualBuilder {
         &self.actions
     }
     /// Consumes the builder and constructs a [`EmptyVisual`](crate::types::EmptyVisual).
-    pub fn build(self) -> crate::types::EmptyVisual {
-        crate::types::EmptyVisual {
-            visual_id: self.visual_id,
-            data_set_identifier: self.data_set_identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`visual_id`](crate::types::builders::EmptyVisualBuilder::visual_id)
+    /// - [`data_set_identifier`](crate::types::builders::EmptyVisualBuilder::data_set_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::EmptyVisual, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EmptyVisual {
+            visual_id: self.visual_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "visual_id",
+                    "visual_id was not specified but it is required when building EmptyVisual",
+                )
+            })?,
+            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_identifier",
+                    "data_set_identifier was not specified but it is required when building EmptyVisual",
+                )
+            })?,
             actions: self.actions,
-        }
+        })
     }
 }

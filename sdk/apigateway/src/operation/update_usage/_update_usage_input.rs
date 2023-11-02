@@ -21,8 +21,10 @@ impl UpdateUsageInput {
         self.key_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
-        self.patch_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
+    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
+        self.patch_operations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateUsageInput {
@@ -42,6 +44,7 @@ pub struct UpdateUsageInputBuilder {
 }
 impl UpdateUsageInputBuilder {
     /// <p>The Id of the usage plan associated with the usage data.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl UpdateUsageInputBuilder {
         &self.usage_plan_id
     }
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct AssociateConnectionWithLagInputBuilder {
 }
 impl AssociateConnectionWithLagInputBuilder {
     /// <p>The ID of the connection.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateConnectionWithLagInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the LAG with which to associate the connection.</p>
+    /// This field is required.
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
         self

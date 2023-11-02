@@ -8,9 +8,9 @@ pub struct ListTemplateStepsInput {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>The ID of the step group.</p>
-    pub step_group_id: ::std::option::Option<::std::string::String>,
+    pub step_group_id: ::std::string::String,
 }
 impl ListTemplateStepsInput {
     /// <p>The maximum number of results that can be returned.</p>
@@ -22,12 +22,14 @@ impl ListTemplateStepsInput {
         self.next_token.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
-        self.step_group_id.as_deref()
+    pub fn step_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.step_group_id.deref()
     }
 }
 impl ListTemplateStepsInput {
@@ -76,6 +78,7 @@ impl ListTemplateStepsInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl ListTemplateStepsInputBuilder {
         &self.template_id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
@@ -104,14 +108,27 @@ impl ListTemplateStepsInputBuilder {
         &self.step_group_id
     }
     /// Consumes the builder and constructs a [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_id`](crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder::template_id)
+    /// - [`step_group_id`](crate::operation::list_template_steps::builders::ListTemplateStepsInputBuilder::step_group_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_template_steps::ListTemplateStepsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_template_steps::ListTemplateStepsInput {
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,
-            template_id: self.template_id,
-            step_group_id: self.step_group_id,
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building ListTemplateStepsInput",
+                )
+            })?,
+            step_group_id: self.step_group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "step_group_id",
+                    "step_group_id was not specified but it is required when building ListTemplateStepsInput",
+                )
+            })?,
         })
     }
 }

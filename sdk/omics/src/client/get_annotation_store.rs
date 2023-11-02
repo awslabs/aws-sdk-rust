@@ -3,23 +3,23 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAnnotationStore`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::set_name): <p>The store's name.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::set_name):<br>required: **true**<br><p>The store's name.</p><br>
     /// - On success, responds with [`GetAnnotationStoreOutput`](crate::operation::get_annotation_store::GetAnnotationStoreOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::id): <p>The store's ID.</p>
+    ///   - [`id(String)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::id): <p>The store's ID.</p>
     ///   - [`reference(Option<ReferenceItem>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::reference): <p>The store's genome reference.</p>
-    ///   - [`status(Option<StoreStatus>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::status): <p>The store's status.</p>
-    ///   - [`store_arn(Option<String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_arn): <p>The store's ARN.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::name): <p>The store's name.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::description): <p>The store's description.</p>
+    ///   - [`status(StoreStatus)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::status): <p>The store's status.</p>
+    ///   - [`store_arn(String)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_arn): <p>The store's ARN.</p>
+    ///   - [`name(String)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::name): <p>The store's name.</p>
+    ///   - [`description(String)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::description): <p>The store's description.</p>
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::creation_time): <p>When the store was created.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::update_time): <p>When the store was updated.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::tags): <p>The store's tags.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::creation_time): <p>When the store was created.</p>
+    ///   - [`update_time(DateTime)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::update_time): <p>When the store was updated.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::tags): <p>The store's tags.</p>
     ///   - [`store_options(Option<StoreOptions>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_options): <p>The store's parsing options.</p>
     ///   - [`store_format(Option<StoreFormat>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_format): <p>The store's annotation file format.</p>
-    ///   - [`status_message(Option<String>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::status_message): <p>A status message.</p>
-    ///   - [`store_size_bytes(Option<i64>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
-    ///   - [`num_versions(Option<i32>)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::num_versions): <p> An integer indicating how many versions of an annotation store exist. </p>
+    ///   - [`status_message(String)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::status_message): <p>A status message.</p>
+    ///   - [`store_size_bytes(i64)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::store_size_bytes): <p>The store's size in bytes.</p>
+    ///   - [`num_versions(i32)`](crate::operation::get_annotation_store::GetAnnotationStoreOutput::num_versions): <p> An integer indicating how many versions of an annotation store exist. </p>
     /// - On failure, responds with [`SdkError<GetAnnotationStoreError>`](crate::operation::get_annotation_store::GetAnnotationStoreError)
     pub fn get_annotation_store(&self) -> crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder {
         crate::operation::get_annotation_store::builders::GetAnnotationStoreFluentBuilder::new(self.handle.clone())

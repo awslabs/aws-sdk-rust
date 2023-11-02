@@ -11,12 +11,16 @@ pub struct ProviderIntermediateDataAccessConfiguration {
 }
 impl ProviderIntermediateDataAccessConfiguration {
     /// <p>The Amazon Web Services account that provider can use to read or write data into the customer's intermediate S3 bucket.</p>
-    pub fn aws_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aws_account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
+    pub fn aws_account_ids(&self) -> &[::std::string::String] {
+        self.aws_account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The S3 bucket actions that the provider requires permission for.</p>
-    pub fn required_bucket_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.required_bucket_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_bucket_actions.is_none()`.
+    pub fn required_bucket_actions(&self) -> &[::std::string::String] {
+        self.required_bucket_actions.as_deref().unwrap_or_default()
     }
 }
 impl ProviderIntermediateDataAccessConfiguration {

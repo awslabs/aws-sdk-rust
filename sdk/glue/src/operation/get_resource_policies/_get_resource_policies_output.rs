@@ -11,8 +11,10 @@ pub struct GetResourcePoliciesOutput {
 }
 impl GetResourcePoliciesOutput {
     /// <p>A list of the individual resource policies and the account-level resource policy.</p>
-    pub fn get_resource_policies_response_list(&self) -> ::std::option::Option<&[crate::types::GluePolicy]> {
-        self.get_resource_policies_response_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.get_resource_policies_response_list.is_none()`.
+    pub fn get_resource_policies_response_list(&self) -> &[crate::types::GluePolicy] {
+        self.get_resource_policies_response_list.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -35,6 +35,7 @@ pub struct DeleteCustomerGatewayInputBuilder {
 }
 impl DeleteCustomerGatewayInputBuilder {
     /// <p>The ID of the customer gateway.</p>
+    /// This field is required.
     pub fn customer_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_gateway_id = ::std::option::Option::Some(input.into());
         self

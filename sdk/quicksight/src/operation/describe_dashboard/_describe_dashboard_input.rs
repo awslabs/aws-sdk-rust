@@ -48,6 +48,7 @@ pub struct DescribeDashboardInputBuilder {
 }
 impl DescribeDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeDashboardInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self

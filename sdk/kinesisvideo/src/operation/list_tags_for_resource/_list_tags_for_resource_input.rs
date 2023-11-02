@@ -48,6 +48,7 @@ impl ListTagsForResourceInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

@@ -132,6 +132,7 @@ pub struct ImportComponentInputBuilder {
 }
 impl ImportComponentInputBuilder {
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +161,7 @@ impl ImportComponentInputBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +232,7 @@ impl ImportComponentInputBuilder {
         &self.change_description
     }
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ComponentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -244,6 +247,7 @@ impl ImportComponentInputBuilder {
         &self.r#type
     }
     /// <p>The format of the resource that you want to import as a component.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::ComponentFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -258,6 +262,7 @@ impl ImportComponentInputBuilder {
         &self.format
     }
     /// <p>The platform of the component.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -334,6 +339,7 @@ impl ImportComponentInputBuilder {
         &self.tags
     }
     /// <p>The idempotency token of the component.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

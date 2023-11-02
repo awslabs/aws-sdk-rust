@@ -46,6 +46,7 @@ pub struct DescribeConfigurationSettingsInputBuilder {
 }
 impl DescribeConfigurationSettingsInputBuilder {
     /// <p>The application for the environment or configuration template.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct ListTagsForResourceInputBuilder {
 }
 impl ListTagsForResourceInputBuilder {
     /// <p>The ARN for the workload.</p>
+    /// This field is required.
     pub fn workload_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_arn = ::std::option::Option::Some(input.into());
         self

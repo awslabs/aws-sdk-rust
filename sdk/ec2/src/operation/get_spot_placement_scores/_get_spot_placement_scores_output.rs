@@ -19,8 +19,10 @@ impl GetSpotPlacementScoresOutput {
     /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
     /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
-    pub fn spot_placement_scores(&self) -> ::std::option::Option<&[crate::types::SpotPlacementScore]> {
-        self.spot_placement_scores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_placement_scores.is_none()`.
+    pub fn spot_placement_scores(&self) -> &[crate::types::SpotPlacementScore] {
+        self.spot_placement_scores.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

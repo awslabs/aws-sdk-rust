@@ -212,209 +212,146 @@ pub(crate) fn reflens_list_tags_for_resource_output_next_token(
 pub(crate) fn lens_list_component_outputs_output_outputs(
     input: crate::operation::list_component_outputs::ListComponentOutputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Output>> {
-    let input = match input.outputs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.outputs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_component_provisioned_resources_output_provisioned_resources(
     input: crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
-    let input = match input.provisioned_resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.provisioned_resources;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_components_output_components(
     input: crate::operation::list_components::ListComponentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
-    let input = match input.components {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.components;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployments_output_deployments(
     input: crate::operation::list_deployments::ListDeploymentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
-    let input = match input.deployments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.deployments;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environment_account_connections_output_environment_account_connections(
     input: crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentAccountConnectionSummary>> {
-    let input = match input.environment_account_connections {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.environment_account_connections;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environment_outputs_output_outputs(
     input: crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Output>> {
-    let input = match input.outputs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.outputs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environment_provisioned_resources_output_provisioned_resources(
     input: crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
-    let input = match input.provisioned_resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.provisioned_resources;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environment_template_versions_output_template_versions(
     input: crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>> {
-    let input = match input.template_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.template_versions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environment_templates_output_templates(
     input: crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>> {
-    let input = match input.templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.templates;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environments_output_environments(
     input: crate::operation::list_environments::ListEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
-    let input = match input.environments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.environments;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_repositories_output_repositories(
     input: crate::operation::list_repositories::ListRepositoriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>> {
-    let input = match input.repositories {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.repositories;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_repository_sync_definitions_output_sync_definitions(
     input: crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>> {
-    let input = match input.sync_definitions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.sync_definitions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_instance_outputs_output_outputs(
     input: crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Output>> {
-    let input = match input.outputs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.outputs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_instance_provisioned_resources_output_provisioned_resources(
     input: crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
-    let input = match input.provisioned_resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.provisioned_resources;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_instances_output_service_instances(
     input: crate::operation::list_service_instances::ListServiceInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>> {
-    let input = match input.service_instances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.service_instances;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_pipeline_outputs_output_outputs(
     input: crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Output>> {
-    let input = match input.outputs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.outputs;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_pipeline_provisioned_resources_output_provisioned_resources(
     input: crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
-    let input = match input.provisioned_resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.provisioned_resources;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_template_versions_output_template_versions(
     input: crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateVersionSummary>> {
-    let input = match input.template_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.template_versions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_service_templates_output_templates(
     input: crate::operation::list_service_templates::ListServiceTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>> {
-    let input = match input.templates {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.templates;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_services_output_services(
     input: crate::operation::list_services::ListServicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceSummary>> {
-    let input = match input.services {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.services;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_tags_for_resource_output_tags(
     input: crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-    let input = match input.tags {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.tags;
     ::std::option::Option::Some(input)
 }

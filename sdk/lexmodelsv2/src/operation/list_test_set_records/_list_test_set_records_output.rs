@@ -11,8 +11,10 @@ pub struct ListTestSetRecordsOutput {
 }
 impl ListTestSetRecordsOutput {
     /// <p>The list of records from the test set.</p>
-    pub fn test_set_records(&self) -> ::std::option::Option<&[crate::types::TestSetTurnRecord]> {
-        self.test_set_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_set_records.is_none()`.
+    pub fn test_set_records(&self) -> &[crate::types::TestSetTurnRecord] {
+        self.test_set_records.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more records to return in a response to the ListTestSetRecords operation. If the nextToken field is present, you send the contents as the nextToken parameter of a ListTestSetRecords operation request to get the next page of records.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDashboards`](crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dashboard_names(impl Into<String>)`](crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::dashboard_names) / [`set_dashboard_names(Option<Vec<String>>)`](crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::set_dashboard_names): <p>The dashboards to be deleted. This parameter is required.</p>
+    ///   - [`dashboard_names(impl Into<String>)`](crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::dashboard_names) / [`set_dashboard_names(Option<Vec<String>>)`](crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder::set_dashboard_names):<br>required: **true**<br><p>The dashboards to be deleted. This parameter is required.</p><br>
     /// - On success, responds with [`DeleteDashboardsOutput`](crate::operation::delete_dashboards::DeleteDashboardsOutput)
     /// - On failure, responds with [`SdkError<DeleteDashboardsError>`](crate::operation::delete_dashboards::DeleteDashboardsError)
     pub fn delete_dashboards(&self) -> crate::operation::delete_dashboards::builders::DeleteDashboardsFluentBuilder {

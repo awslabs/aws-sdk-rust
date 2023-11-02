@@ -21,8 +21,10 @@ impl GetCurrentMetricDataOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the real-time metrics.</p>
-    pub fn metric_results(&self) -> ::std::option::Option<&[crate::types::CurrentMetricResult]> {
-        self.metric_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_results.is_none()`.
+    pub fn metric_results(&self) -> &[crate::types::CurrentMetricResult] {
+        self.metric_results.as_deref().unwrap_or_default()
     }
     /// <p>The time at which the metrics were retrieved and cached for pagination.</p>
     pub fn data_snapshot_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

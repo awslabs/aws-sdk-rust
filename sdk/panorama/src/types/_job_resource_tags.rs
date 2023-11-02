@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobResourceTags {
     /// <p>The job's type.</p>
-    pub resource_type: ::std::option::Option<crate::types::JobResourceType>,
+    pub resource_type: crate::types::JobResourceType,
     /// <p>The job's tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl JobResourceTags {
     /// <p>The job's type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::JobResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::JobResourceType {
+        &self.resource_type
     }
     /// <p>The job's tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.tags.as_ref()
+    pub fn tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.tags
     }
 }
 impl JobResourceTags {
@@ -35,6 +35,7 @@ pub struct JobResourceTagsBuilder {
 }
 impl JobResourceTagsBuilder {
     /// <p>The job's type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::JobResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -69,10 +70,23 @@ impl JobResourceTagsBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`JobResourceTags`](crate::types::JobResourceTags).
-    pub fn build(self) -> crate::types::JobResourceTags {
-        crate::types::JobResourceTags {
-            resource_type: self.resource_type,
-            tags: self.tags,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::JobResourceTagsBuilder::resource_type)
+    /// - [`tags`](crate::types::builders::JobResourceTagsBuilder::tags)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobResourceTags, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobResourceTags {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building JobResourceTags",
+                )
+            })?,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building JobResourceTags",
+                )
+            })?,
+        })
     }
 }

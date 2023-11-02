@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeTargetEcsTaskParameters {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
-    pub task_definition_arn: ::std::option::Option<::std::string::String>,
+    pub task_definition_arn: ::std::string::String,
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
     pub task_count: ::std::option::Option<i32>,
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -40,8 +40,9 @@ pub struct PipeTargetEcsTaskParameters {
 }
 impl PipeTargetEcsTaskParameters {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
-    pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
-        self.task_definition_arn.as_deref()
+    pub fn task_definition_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.task_definition_arn.deref()
     }
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
     pub fn task_count(&self) -> ::std::option::Option<i32> {
@@ -67,8 +68,10 @@ impl PipeTargetEcsTaskParameters {
     }
     /// <p>The capacity provider strategy to use for the task.</p>
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
-    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
-        self.capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
+    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub fn enable_ecs_managed_tags(&self) -> bool {
@@ -79,12 +82,16 @@ impl PipeTargetEcsTaskParameters {
         self.enable_execute_command
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::PlacementConstraint]> {
-        self.placement_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
+    pub fn placement_constraints(&self) -> &[crate::types::PlacementConstraint] {
+        self.placement_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
-    pub fn placement_strategy(&self) -> ::std::option::Option<&[crate::types::PlacementStrategy]> {
-        self.placement_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_strategy.is_none()`.
+    pub fn placement_strategy(&self) -> &[crate::types::PlacementStrategy] {
+        self.placement_strategy.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action. </p>
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
@@ -99,8 +106,10 @@ impl PipeTargetEcsTaskParameters {
         self.overrides.as_ref()
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for PipeTargetEcsTaskParameters {
@@ -153,6 +162,7 @@ pub struct PipeTargetEcsTaskParametersBuilder {
 }
 impl PipeTargetEcsTaskParametersBuilder {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
+    /// This field is required.
     pub fn task_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -399,9 +409,16 @@ impl PipeTargetEcsTaskParametersBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PipeTargetEcsTaskParameters`](crate::types::PipeTargetEcsTaskParameters).
-    pub fn build(self) -> crate::types::PipeTargetEcsTaskParameters {
-        crate::types::PipeTargetEcsTaskParameters {
-            task_definition_arn: self.task_definition_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_definition_arn`](crate::types::builders::PipeTargetEcsTaskParametersBuilder::task_definition_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeTargetEcsTaskParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeTargetEcsTaskParameters {
+            task_definition_arn: self.task_definition_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_definition_arn",
+                    "task_definition_arn was not specified but it is required when building PipeTargetEcsTaskParameters",
+                )
+            })?,
             task_count: self.task_count,
             launch_type: self.launch_type,
             network_configuration: self.network_configuration,
@@ -416,7 +433,7 @@ impl PipeTargetEcsTaskParametersBuilder {
             reference_id: self.reference_id,
             overrides: self.overrides,
             tags: self.tags,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PipeTargetEcsTaskParametersBuilder {

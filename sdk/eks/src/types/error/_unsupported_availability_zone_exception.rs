@@ -24,8 +24,10 @@ impl UnsupportedAvailabilityZoneException {
         self.nodegroup_name.as_deref()
     }
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    pub fn valid_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.valid_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_zones.is_none()`.
+    pub fn valid_zones(&self) -> &[::std::string::String] {
+        self.valid_zones.as_deref().unwrap_or_default()
     }
 }
 impl UnsupportedAvailabilityZoneException {

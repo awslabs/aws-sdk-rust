@@ -9,8 +9,10 @@ pub struct PredictorBaseline {
 }
 impl PredictorBaseline {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn baseline_metrics(&self) -> ::std::option::Option<&[crate::types::BaselineMetric]> {
-        self.baseline_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.baseline_metrics.is_none()`.
+    pub fn baseline_metrics(&self) -> &[crate::types::BaselineMetric] {
+        self.baseline_metrics.as_deref().unwrap_or_default()
     }
 }
 impl PredictorBaseline {

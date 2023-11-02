@@ -6,9 +6,9 @@
 pub struct FsxConfiguration {
     /// <p>The identifier of the Amazon FSx file system.</p>
     /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
-    pub file_system_id: ::std::option::Option<::std::string::String>,
+    pub file_system_id: ::std::string::String,
     /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
-    pub file_system_type: ::std::option::Option<crate::types::FsxFileSystemType>,
+    pub file_system_type: crate::types::FsxFileSystemType,
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Amazon FSx file system. Windows is currently the only supported type. The secret must contain a JSON structure with the following keys:</p>
@@ -27,12 +27,13 @@ pub struct FsxConfiguration {
 impl FsxConfiguration {
     /// <p>The identifier of the Amazon FSx file system.</p>
     /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
-        self.file_system_id.as_deref()
+    pub fn file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.file_system_id.deref()
     }
     /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
-    pub fn file_system_type(&self) -> ::std::option::Option<&crate::types::FsxFileSystemType> {
-        self.file_system_type.as_ref()
+    pub fn file_system_type(&self) -> &crate::types::FsxFileSystemType {
+        &self.file_system_type
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
@@ -47,16 +48,22 @@ impl FsxConfiguration {
         self.secret_arn.as_deref()
     }
     /// <p>A list of regular expression patterns to include certain files in your Amazon FSx file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon FSx file system. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon FSx data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon FSx fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon FSx data source field names must exist in your Amazon FSx custom metadata.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
 }
 impl FsxConfiguration {
@@ -81,6 +88,7 @@ pub struct FsxConfigurationBuilder {
 impl FsxConfigurationBuilder {
     /// <p>The identifier of the Amazon FSx file system.</p>
     /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +105,7 @@ impl FsxConfigurationBuilder {
         &self.file_system_id
     }
     /// <p>The Amazon FSx file system type. Windows is currently the only supported type.</p>
+    /// This field is required.
     pub fn file_system_type(mut self, input: crate::types::FsxFileSystemType) -> Self {
         self.file_system_type = ::std::option::Option::Some(input);
         self
@@ -111,6 +120,7 @@ impl FsxConfigurationBuilder {
         &self.file_system_type
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Amazon FSx. Your Amazon FSx instance must reside inside your VPC.</p>
+    /// This field is required.
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
         self
@@ -211,15 +221,28 @@ impl FsxConfigurationBuilder {
         &self.field_mappings
     }
     /// Consumes the builder and constructs a [`FsxConfiguration`](crate::types::FsxConfiguration).
-    pub fn build(self) -> crate::types::FsxConfiguration {
-        crate::types::FsxConfiguration {
-            file_system_id: self.file_system_id,
-            file_system_type: self.file_system_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_system_id`](crate::types::builders::FsxConfigurationBuilder::file_system_id)
+    /// - [`file_system_type`](crate::types::builders::FsxConfigurationBuilder::file_system_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::FsxConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FsxConfiguration {
+            file_system_id: self.file_system_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file_system_id",
+                    "file_system_id was not specified but it is required when building FsxConfiguration",
+                )
+            })?,
+            file_system_type: self.file_system_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file_system_type",
+                    "file_system_type was not specified but it is required when building FsxConfiguration",
+                )
+            })?,
             vpc_configuration: self.vpc_configuration,
             secret_arn: self.secret_arn,
             inclusion_patterns: self.inclusion_patterns,
             exclusion_patterns: self.exclusion_patterns,
             field_mappings: self.field_mappings,
-        }
+        })
     }
 }

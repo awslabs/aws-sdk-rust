@@ -28,6 +28,7 @@ pub struct DatastoreIotSiteWiseMultiLayerStorageBuilder {
 }
 impl DatastoreIotSiteWiseMultiLayerStorageBuilder {
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    /// This field is required.
     pub fn customer_managed_s3_storage(mut self, input: crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage) -> Self {
         self.customer_managed_s3_storage = ::std::option::Option::Some(input);
         self

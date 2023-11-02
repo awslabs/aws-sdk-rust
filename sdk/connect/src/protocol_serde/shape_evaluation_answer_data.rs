@@ -48,7 +48,9 @@ where
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringValue' cannot be null")
+                                })?,
                         )),
                         "NumericValue" => Some(crate::types::EvaluationAnswerData::NumericValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

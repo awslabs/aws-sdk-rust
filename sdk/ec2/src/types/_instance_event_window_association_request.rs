@@ -13,16 +13,22 @@ pub struct InstanceEventWindowAssociationRequest {
 }
 impl InstanceEventWindowAssociationRequest {
     /// <p>The IDs of the instances to associate with the event window. If the instance is on a Dedicated Host, you can't specify the Instance ID parameter; you must use the Dedicated Host ID parameter.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance tags to associate with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    pub fn instance_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.instance_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_tags.is_none()`.
+    pub fn instance_tags(&self) -> &[crate::types::Tag] {
+        self.instance_tags.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the Dedicated Hosts to associate with the event window.</p>
-    pub fn dedicated_host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dedicated_host_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dedicated_host_ids.is_none()`.
+    pub fn dedicated_host_ids(&self) -> &[::std::string::String] {
+        self.dedicated_host_ids.as_deref().unwrap_or_default()
     }
 }
 impl InstanceEventWindowAssociationRequest {

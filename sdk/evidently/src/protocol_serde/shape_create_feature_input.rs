@@ -22,30 +22,30 @@ pub fn ser_create_feature_input(
     if let Some(var_7) = &input.evaluation_strategy {
         object.key("evaluationStrategy").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_10.finish();
+        object_9.finish();
     }
-    if let Some(var_13) = &input.variations {
-        let mut array_14 = object.key("variations").start_array();
-        for item_15 in var_13 {
+    {
+        let mut array_12 = object.key("variations").start_array();
+        for item_13 in &input.variations {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_variation_config::ser_variation_config(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_variation_config::ser_variation_config(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_14.finish();
+        array_12.finish();
     }
     Ok(())
 }

@@ -28,6 +28,7 @@ pub struct PutAccountVdmAttributesInputBuilder {
 }
 impl PutAccountVdmAttributesInputBuilder {
     /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+    /// This field is required.
     pub fn vdm_attributes(mut self, input: crate::types::VdmAttributes) -> Self {
         self.vdm_attributes = ::std::option::Option::Some(input);
         self

@@ -67,7 +67,7 @@ pub fn de_list_training_jobs_for_hyper_parameter_tuning_job_http_response(
                 crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError::unhandled,
             )?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_training_jobs_for_hyper_parameter_tuning_job_output_correct_errors(output).build()
     })
 }
 

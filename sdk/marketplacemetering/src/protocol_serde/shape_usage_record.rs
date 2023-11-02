@@ -3,34 +3,34 @@ pub fn ser_usage_record(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UsageRecord,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.timestamp {
+    {
         object
             .key("Timestamp")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.timestamp, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.customer_identifier {
-        object.key("CustomerIdentifier").string(var_2.as_str());
+    {
+        object.key("CustomerIdentifier").string(input.customer_identifier.as_str());
     }
-    if let Some(var_3) = &input.dimension {
-        object.key("Dimension").string(var_3.as_str());
+    {
+        object.key("Dimension").string(input.dimension.as_str());
     }
-    if let Some(var_4) = &input.quantity {
+    if let Some(var_1) = &input.quantity {
         object.key("Quantity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_5) = &input.usage_allocations {
-        let mut array_6 = object.key("UsageAllocations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_2) = &input.usage_allocations {
+        let mut array_3 = object.key("UsageAllocations").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_usage_allocation::ser_usage_allocation(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_usage_allocation::ser_usage_allocation(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_6.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -90,7 +90,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::usage_record_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProfileObjectType`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`object_type_name(impl Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::object_type_name) / [`set_object_type_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_domain_name):<br>required: **true**<br><p>The unique name of the domain.</p><br>
+    ///   - [`object_type_name(impl Into<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::object_type_name) / [`set_object_type_name(Option<String>)`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeFluentBuilder::set_object_type_name):<br>required: **true**<br><p>The name of the profile object type.</p><br>
     /// - On success, responds with [`GetProfileObjectTypeOutput`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput) with field(s):
-    ///   - [`object_type_name(Option<String>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::object_type_name): <p>The name of the profile object type.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::description): <p>The description of the profile object type.</p>
+    ///   - [`object_type_name(String)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::object_type_name): <p>The name of the profile object type.</p>
+    ///   - [`description(String)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::description): <p>The description of the profile object type.</p>
     ///   - [`template_id(Option<String>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::template_id): <p>A unique identifier for the object template.</p>
     ///   - [`expiration_days(Option<i32>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::expiration_days): <p>The number of days until the data in the object expires.</p>
     ///   - [`encryption_key(Option<String>)`](crate::operation::get_profile_object_type::GetProfileObjectTypeOutput::encryption_key): <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>

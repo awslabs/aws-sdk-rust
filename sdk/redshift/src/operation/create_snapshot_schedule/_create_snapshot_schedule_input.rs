@@ -18,8 +18,10 @@ pub struct CreateSnapshotScheduleInput {
 }
 impl CreateSnapshotScheduleInput {
     /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
-    pub fn schedule_definitions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.schedule_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_definitions.is_none()`.
+    pub fn schedule_definitions(&self) -> &[::std::string::String] {
+        self.schedule_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
     pub fn schedule_identifier(&self) -> ::std::option::Option<&str> {
@@ -30,8 +32,10 @@ impl CreateSnapshotScheduleInput {
         self.schedule_description.as_deref()
     }
     /// <p>An optional set of tags you can use to search for the schedule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p></p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {

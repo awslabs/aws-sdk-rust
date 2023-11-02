@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMembers`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::set_detector_id): <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
-    ///   - [`account_ids(impl Into<String>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::set_account_ids): <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p><br>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::delete_members::builders::DeleteMembersFluentBuilder::set_account_ids):<br>required: **true**<br><p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p><br>
     /// - On success, responds with [`DeleteMembersOutput`](crate::operation::delete_members::DeleteMembersOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::operation::delete_members::DeleteMembersOutput::unprocessed_accounts): <p>The accounts that could not be processed.</p>
     /// - On failure, responds with [`SdkError<DeleteMembersError>`](crate::operation::delete_members::DeleteMembersError)

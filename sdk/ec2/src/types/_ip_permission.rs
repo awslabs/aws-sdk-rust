@@ -31,24 +31,32 @@ impl IpPermission {
         self.ip_protocol.as_deref()
     }
     /// <p>The IPv4 ranges.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[crate::types::IpRange]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[crate::types::IpRange] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 ranges.</p>
-    pub fn ipv6_ranges(&self) -> ::std::option::Option<&[crate::types::Ipv6Range]> {
-        self.ipv6_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_ranges.is_none()`.
+    pub fn ipv6_ranges(&self) -> &[crate::types::Ipv6Range] {
+        self.ipv6_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The prefix list IDs.</p>
-    pub fn prefix_list_ids(&self) -> ::std::option::Option<&[crate::types::PrefixListId]> {
-        self.prefix_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
+    pub fn prefix_list_ids(&self) -> &[crate::types::PrefixListId] {
+        self.prefix_list_ids.as_deref().unwrap_or_default()
     }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.</p>
     pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn user_id_group_pairs(&self) -> ::std::option::Option<&[crate::types::UserIdGroupPair]> {
-        self.user_id_group_pairs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_id_group_pairs.is_none()`.
+    pub fn user_id_group_pairs(&self) -> &[crate::types::UserIdGroupPair] {
+        self.user_id_group_pairs.as_deref().unwrap_or_default()
     }
 }
 impl IpPermission {

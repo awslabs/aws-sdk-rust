@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
 }
 impl ValidationException {
@@ -62,6 +63,7 @@ pub struct ValidationExceptionBuilder {
 }
 impl ValidationExceptionBuilder {
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +103,18 @@ impl ValidationExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
-    pub fn build(self) -> crate::types::error::ValidationException {
-        crate::types::error::ValidationException {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::ValidationExceptionBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ValidationException {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building ValidationException",
+                )
+            })?,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

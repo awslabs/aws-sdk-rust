@@ -11,8 +11,10 @@ pub struct ListSolutionsOutput {
 }
 impl ListSolutionsOutput {
     /// <p>A list of the current solutions.</p>
-    pub fn solutions(&self) -> ::std::option::Option<&[crate::types::SolutionSummary]> {
-        self.solutions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solutions.is_none()`.
+    pub fn solutions(&self) -> &[crate::types::SolutionSummary] {
+        self.solutions.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of solutions (if they exist).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

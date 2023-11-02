@@ -14,8 +14,10 @@ impl BatchUnsuspendUserInput {
         self.account_id.as_deref()
     }
     /// <p>The request containing the user IDs to unsuspend.</p>
-    pub fn user_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_id_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_id_list.is_none()`.
+    pub fn user_id_list(&self) -> &[::std::string::String] {
+        self.user_id_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchUnsuspendUserInput {
@@ -34,6 +36,7 @@ pub struct BatchUnsuspendUserInputBuilder {
 }
 impl BatchUnsuspendUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

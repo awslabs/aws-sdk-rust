@@ -170,6 +170,7 @@ pub fn ser_spot_fleet_request_config_data(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_request_config_data(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SpotFleetRequestConfigData, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -525,5 +526,5 @@ pub fn de_spot_fleet_request_config_data(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::spot_fleet_request_config_data_correct_errors(builder).build())
 }

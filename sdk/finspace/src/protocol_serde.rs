@@ -81,6 +81,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_environment;
 
+pub(crate) mod shape_update_kx_cluster_code_configuration;
+
 pub(crate) mod shape_update_kx_cluster_databases;
 
 pub(crate) mod shape_update_kx_database;
@@ -133,6 +135,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_environment_input;
 
+pub(crate) mod shape_update_kx_cluster_code_configuration_input;
+
 pub(crate) mod shape_update_kx_cluster_databases_input;
 
 pub(crate) mod shape_update_kx_database_input;
@@ -174,6 +178,8 @@ pub(crate) mod shape_kx_cache_storage_configuration;
 pub(crate) mod shape_kx_cache_storage_configurations;
 
 pub(crate) mod shape_kx_changesets;
+
+pub(crate) mod shape_kx_cluster_code_deployment_configuration;
 
 pub(crate) mod shape_kx_clusters;
 

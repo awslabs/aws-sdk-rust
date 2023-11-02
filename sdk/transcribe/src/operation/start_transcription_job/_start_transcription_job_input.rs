@@ -205,8 +205,10 @@ impl StartTranscriptionJobInput {
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
     /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    pub fn language_options(&self) -> ::std::option::Option<&[crate::types::LanguageCode]> {
-        self.language_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_options.is_none()`.
+    pub fn language_options(&self) -> &[crate::types::LanguageCode] {
+        self.language_options.as_deref().unwrap_or_default()
     }
     /// <p>Produces subtitle files for your input media. You can specify WebVTT (*.vtt) and SubRip (*.srt) formats.</p>
     pub fn subtitles(&self) -> ::std::option::Option<&crate::types::Subtitles> {
@@ -214,8 +216,10 @@ impl StartTranscriptionJobInput {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you start this new job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>). Note that multi-language identification (<code>IdentifyMultipleLanguages</code>) doesn't support custom language models.</p>
     /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
@@ -228,8 +232,10 @@ impl StartTranscriptionJobInput {
     }
     /// <p>Enables toxic speech detection in your transcript. If you include <code>ToxicityDetection</code> in your request, you must also include <code>ToxicityCategories</code>.</p>
     /// <p>For information on the types of toxic speech Amazon Transcribe can detect, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting toxic speech</a>.</p>
-    pub fn toxicity_detection(&self) -> ::std::option::Option<&[crate::types::ToxicityDetectionSettings]> {
-        self.toxicity_detection.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.toxicity_detection.is_none()`.
+    pub fn toxicity_detection(&self) -> &[crate::types::ToxicityDetectionSettings] {
+        self.toxicity_detection.as_deref().unwrap_or_default()
     }
 }
 impl StartTranscriptionJobInput {
@@ -267,6 +273,7 @@ pub struct StartTranscriptionJobInputBuilder {
 impl StartTranscriptionJobInputBuilder {
     /// <p>A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the <code>OutputKey</code> parameter.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
+    /// This field is required.
     pub fn transcription_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transcription_job_name = ::std::option::Option::Some(input.into());
         self
@@ -343,6 +350,7 @@ impl StartTranscriptionJobInputBuilder {
         &self.media_format
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// This field is required.
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.media = ::std::option::Option::Some(input);
         self

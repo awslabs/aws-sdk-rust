@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagListEntry {
     /// <p>The key for an Amazon Web Services resource tag.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value for an Amazon Web Services resource tag.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl TagListEntry {
     /// <p>The key for an Amazon Web Services resource tag.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value for an Amazon Web Services resource tag.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct TagListEntryBuilder {
 }
 impl TagListEntryBuilder {
     /// <p>The key for an Amazon Web Services resource tag.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl TagListEntryBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`TagListEntry`](crate::types::TagListEntry).
-    pub fn build(self) -> crate::types::TagListEntry {
-        crate::types::TagListEntry {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::TagListEntryBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::TagListEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TagListEntry {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building TagListEntry",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

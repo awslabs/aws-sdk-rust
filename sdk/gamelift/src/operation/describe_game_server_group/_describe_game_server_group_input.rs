@@ -27,6 +27,7 @@ pub struct DescribeGameServerGroupInputBuilder {
 }
 impl DescribeGameServerGroupInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self

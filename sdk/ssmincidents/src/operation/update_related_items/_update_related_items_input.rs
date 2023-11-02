@@ -6,7 +6,7 @@ pub struct UpdateRelatedItemsInput {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
-    pub incident_record_arn: ::std::option::Option<::std::string::String>,
+    pub incident_record_arn: ::std::string::String,
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub related_items_update: ::std::option::Option<crate::types::RelatedItemsUpdate>,
 }
@@ -16,8 +16,9 @@ impl UpdateRelatedItemsInput {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
-    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
-        self.incident_record_arn.as_deref()
+    pub fn incident_record_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.incident_record_arn.deref()
     }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn related_items_update(&self) -> ::std::option::Option<&crate::types::RelatedItemsUpdate> {
@@ -55,6 +56,7 @@ impl UpdateRelatedItemsInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateRelatedItemsInputBuilder {
         &self.incident_record_arn
     }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
+    /// This field is required.
     pub fn related_items_update(mut self, input: crate::types::RelatedItemsUpdate) -> Self {
         self.related_items_update = ::std::option::Option::Some(input);
         self
@@ -83,12 +86,19 @@ impl UpdateRelatedItemsInputBuilder {
         &self.related_items_update
     }
     /// Consumes the builder and constructs a [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`incident_record_arn`](crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder::incident_record_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_related_items::UpdateRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_related_items::UpdateRelatedItemsInput {
             client_token: self.client_token,
-            incident_record_arn: self.incident_record_arn,
+            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "incident_record_arn",
+                    "incident_record_arn was not specified but it is required when building UpdateRelatedItemsInput",
+                )
+            })?,
             related_items_update: self.related_items_update,
         })
     }

@@ -9,11 +9,11 @@ pub struct ListContactsInput {
     /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Status of a contact reservation.</p>
-    pub status_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>>,
+    pub status_list: ::std::vec::Vec<crate::types::ContactStatus>,
     /// <p>Start time of a contact in UTC.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>End time of a contact in UTC.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p>Name of a ground station.</p>
     pub ground_station: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a satellite.</p>
@@ -31,16 +31,17 @@ impl ListContactsInput {
         self.next_token.as_deref()
     }
     /// <p>Status of a contact reservation.</p>
-    pub fn status_list(&self) -> ::std::option::Option<&[crate::types::ContactStatus]> {
-        self.status_list.as_deref()
+    pub fn status_list(&self) -> &[crate::types::ContactStatus] {
+        use std::ops::Deref;
+        self.status_list.deref()
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p>Name of a ground station.</p>
     pub fn ground_station(&self) -> ::std::option::Option<&str> {
@@ -125,6 +126,7 @@ impl ListContactsInputBuilder {
         &self.status_list
     }
     /// <p>Start time of a contact in UTC.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -139,6 +141,7 @@ impl ListContactsInputBuilder {
         &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -195,13 +198,32 @@ impl ListContactsInputBuilder {
         &self.mission_profile_arn
     }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status_list`](crate::operation::list_contacts::builders::ListContactsInputBuilder::status_list)
+    /// - [`start_time`](crate::operation::list_contacts::builders::ListContactsInputBuilder::start_time)
+    /// - [`end_time`](crate::operation::list_contacts::builders::ListContactsInputBuilder::end_time)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contacts::ListContactsInput {
             max_results: self.max_results,
             next_token: self.next_token,
-            status_list: self.status_list,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            status_list: self.status_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status_list",
+                    "status_list was not specified but it is required when building ListContactsInput",
+                )
+            })?,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building ListContactsInput",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building ListContactsInput",
+                )
+            })?,
             ground_station: self.ground_station,
             satellite_arn: self.satellite_arn,
             mission_profile_arn: self.mission_profile_arn,

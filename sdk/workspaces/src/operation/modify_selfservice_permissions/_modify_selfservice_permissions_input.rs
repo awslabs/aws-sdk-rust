@@ -34,6 +34,7 @@ pub struct ModifySelfservicePermissionsInputBuilder {
 }
 impl ModifySelfservicePermissionsInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifySelfservicePermissionsInputBuilder {
         &self.resource_id
     }
     /// <p>The permissions to enable or disable self-service capabilities.</p>
+    /// This field is required.
     pub fn selfservice_permissions(mut self, input: crate::types::SelfservicePermissions) -> Self {
         self.selfservice_permissions = ::std::option::Option::Some(input);
         self

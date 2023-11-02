@@ -7,26 +7,28 @@ pub struct JobManifestLocation {
     /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
-    pub object_arn: ::std::option::Option<::std::string::String>,
+    pub object_arn: ::std::string::String,
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
     pub object_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The ETag for the specified manifest object.</p>
-    pub e_tag: ::std::option::Option<::std::string::String>,
+    pub e_tag: ::std::string::String,
 }
 impl JobManifestLocation {
     /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
-    pub fn object_arn(&self) -> ::std::option::Option<&str> {
-        self.object_arn.as_deref()
+    pub fn object_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.object_arn.deref()
     }
     /// <p>The optional version ID to identify a specific version of the manifest object.</p>
     pub fn object_version_id(&self) -> ::std::option::Option<&str> {
         self.object_version_id.as_deref()
     }
     /// <p>The ETag for the specified manifest object.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
-        self.e_tag.as_deref()
+    pub fn e_tag(&self) -> &str {
+        use std::ops::Deref;
+        self.e_tag.deref()
     }
 }
 impl JobManifestLocation {
@@ -48,6 +50,7 @@ impl JobManifestLocationBuilder {
     /// <p>The Amazon Resource Name (ARN) for a manifest object.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
+    /// This field is required.
     pub fn object_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl JobManifestLocationBuilder {
         &self.object_version_id
     }
     /// <p>The ETag for the specified manifest object.</p>
+    /// This field is required.
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +98,24 @@ impl JobManifestLocationBuilder {
         &self.e_tag
     }
     /// Consumes the builder and constructs a [`JobManifestLocation`](crate::types::JobManifestLocation).
-    pub fn build(self) -> crate::types::JobManifestLocation {
-        crate::types::JobManifestLocation {
-            object_arn: self.object_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_arn`](crate::types::builders::JobManifestLocationBuilder::object_arn)
+    /// - [`e_tag`](crate::types::builders::JobManifestLocationBuilder::e_tag)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobManifestLocation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobManifestLocation {
+            object_arn: self.object_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object_arn",
+                    "object_arn was not specified but it is required when building JobManifestLocation",
+                )
+            })?,
             object_version_id: self.object_version_id,
-            e_tag: self.e_tag,
-        }
+            e_tag: self.e_tag.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "e_tag",
+                    "e_tag was not specified but it is required when building JobManifestLocation",
+                )
+            })?,
+        })
     }
 }

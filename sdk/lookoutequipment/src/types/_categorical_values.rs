@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub status: crate::types::StatisticalIssueStatus,
     /// <p> Indicates the number of categories in the data. </p>
     pub number_of_category: ::std::option::Option<i32>,
 }
 impl CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatisticalIssueStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+        &self.status
     }
     /// <p> Indicates the number of categories in the data. </p>
     pub fn number_of_category(&self) -> ::std::option::Option<i32> {
@@ -35,6 +35,7 @@ pub struct CategoricalValuesBuilder {
 }
 impl CategoricalValuesBuilder {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatisticalIssueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl CategoricalValuesBuilder {
         &self.number_of_category
     }
     /// Consumes the builder and constructs a [`CategoricalValues`](crate::types::CategoricalValues).
-    pub fn build(self) -> crate::types::CategoricalValues {
-        crate::types::CategoricalValues {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::CategoricalValuesBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::CategoricalValues, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CategoricalValues {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building CategoricalValues",
+                )
+            })?,
             number_of_category: self.number_of_category,
-        }
+        })
     }
 }

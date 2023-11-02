@@ -8,21 +8,23 @@
 pub struct EntityIdentifier {
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
-    pub entity_type: ::std::option::Option<::std::string::String>,
+    pub entity_type: ::std::string::String,
     /// <p>The identifier of an entity.</p>
     /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
 }
 impl EntityIdentifier {
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
-        self.entity_type.as_deref()
+    pub fn entity_type(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_type.deref()
     }
     /// <p>The identifier of an entity.</p>
     /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
 }
 impl ::std::fmt::Debug for EntityIdentifier {
@@ -50,6 +52,7 @@ pub struct EntityIdentifierBuilder {
 impl EntityIdentifierBuilder {
     /// <p>The type of an entity.</p>
     /// <p>Example: <code>"entityType":"<i>typeName</i>"</code> </p>
+    /// This field is required.
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_type = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +70,7 @@ impl EntityIdentifierBuilder {
     }
     /// <p>The identifier of an entity.</p>
     /// <p> <code>"entityId":"<i>identifier</i>"</code> </p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +87,24 @@ impl EntityIdentifierBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`EntityIdentifier`](crate::types::EntityIdentifier).
-    pub fn build(self) -> crate::types::EntityIdentifier {
-        crate::types::EntityIdentifier {
-            entity_type: self.entity_type,
-            entity_id: self.entity_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_type`](crate::types::builders::EntityIdentifierBuilder::entity_type)
+    /// - [`entity_id`](crate::types::builders::EntityIdentifierBuilder::entity_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityIdentifier {
+            entity_type: self.entity_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_type",
+                    "entity_type was not specified but it is required when building EntityIdentifier",
+                )
+            })?,
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building EntityIdentifier",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for EntityIdentifierBuilder {

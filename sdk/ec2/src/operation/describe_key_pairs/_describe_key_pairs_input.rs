@@ -44,17 +44,23 @@ impl DescribeKeyPairsInput {
     /// <code>TeamA</code> for the filter value.
     /// </key></p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The key pair names.</p>
     /// <p>Default: Describes all of your key pairs.</p>
-    pub fn key_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.key_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_names.is_none()`.
+    pub fn key_names(&self) -> &[::std::string::String] {
+        self.key_names.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the key pairs.</p>
-    pub fn key_pair_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.key_pair_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_pair_ids.is_none()`.
+    pub fn key_pair_ids(&self) -> &[::std::string::String] {
+        self.key_pair_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {

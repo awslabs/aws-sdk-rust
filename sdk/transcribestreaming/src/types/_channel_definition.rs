@@ -7,7 +7,7 @@ pub struct ChannelDefinition {
     /// <p>Specify the audio channel you want to define.</p>
     pub channel_id: i32,
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
+    pub participant_role: crate::types::ParticipantRole,
 }
 impl ChannelDefinition {
     /// <p>Specify the audio channel you want to define.</p>
@@ -15,8 +15,8 @@ impl ChannelDefinition {
         self.channel_id
     }
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
-        self.participant_role.as_ref()
+    pub fn participant_role(&self) -> &crate::types::ParticipantRole {
+        &self.participant_role
     }
 }
 impl ChannelDefinition {
@@ -35,6 +35,7 @@ pub struct ChannelDefinitionBuilder {
 }
 impl ChannelDefinitionBuilder {
     /// <p>Specify the audio channel you want to define.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: i32) -> Self {
         self.channel_id = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ChannelDefinitionBuilder {
         &self.channel_id
     }
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
+    /// This field is required.
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
         self.participant_role = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl ChannelDefinitionBuilder {
         &self.participant_role
     }
     /// Consumes the builder and constructs a [`ChannelDefinition`](crate::types::ChannelDefinition).
-    pub fn build(self) -> crate::types::ChannelDefinition {
-        crate::types::ChannelDefinition {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`participant_role`](crate::types::builders::ChannelDefinitionBuilder::participant_role)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChannelDefinition {
             channel_id: self.channel_id.unwrap_or_default(),
-            participant_role: self.participant_role,
-        }
+            participant_role: self.participant_role.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "participant_role",
+                    "participant_role was not specified but it is required when building ChannelDefinition",
+                )
+            })?,
+        })
     }
 }

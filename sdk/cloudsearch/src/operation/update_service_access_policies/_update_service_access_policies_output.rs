@@ -35,6 +35,7 @@ pub struct UpdateServiceAccessPoliciesOutputBuilder {
 }
 impl UpdateServiceAccessPoliciesOutputBuilder {
     /// <p>The access rules configured for the domain.</p>
+    /// This field is required.
     pub fn access_policies(mut self, input: crate::types::AccessPoliciesStatus) -> Self {
         self.access_policies = ::std::option::Option::Some(input);
         self

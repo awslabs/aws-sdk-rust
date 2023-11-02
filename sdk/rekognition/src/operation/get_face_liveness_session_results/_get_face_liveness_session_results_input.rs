@@ -27,6 +27,7 @@ pub struct GetFaceLivenessSessionResultsInputBuilder {
 }
 impl GetFaceLivenessSessionResultsInputBuilder {
     /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

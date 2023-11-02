@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_max_results): <p>The maximum number of invitations to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of invitations to return.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_invitations::builders::ListInvitationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     /// - On success, responds with [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput) with field(s):
     ///   - [`invitations(Option<Vec<Invitation>>)`](crate::operation::list_invitations::ListInvitationsOutput::invitations): <p>The invitations for the network.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_invitations::ListInvitationsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>

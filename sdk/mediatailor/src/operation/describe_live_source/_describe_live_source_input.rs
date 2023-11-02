@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLiveSourceInput {
     /// <p>The name of the live source.</p>
-    pub live_source_name: ::std::option::Option<::std::string::String>,
+    pub live_source_name: ::std::string::String,
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
 }
 impl DescribeLiveSourceInput {
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
-        self.live_source_name.as_deref()
+    pub fn live_source_name(&self) -> &str {
+        use std::ops::Deref;
+        self.live_source_name.deref()
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
 }
 impl DescribeLiveSourceInput {
@@ -34,6 +36,7 @@ pub struct DescribeLiveSourceInputBuilder {
 }
 impl DescribeLiveSourceInputBuilder {
     /// <p>The name of the live source.</p>
+    /// This field is required.
     pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DescribeLiveSourceInputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location associated with this Live Source.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl DescribeLiveSourceInputBuilder {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`DescribeLiveSourceInput`](crate::operation::describe_live_source::DescribeLiveSourceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`live_source_name`](crate::operation::describe_live_source::builders::DescribeLiveSourceInputBuilder::live_source_name)
+    /// - [`source_location_name`](crate::operation::describe_live_source::builders::DescribeLiveSourceInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_live_source::DescribeLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_live_source::DescribeLiveSourceInput {
-            live_source_name: self.live_source_name,
-            source_location_name: self.source_location_name,
+            live_source_name: self.live_source_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "live_source_name",
+                    "live_source_name was not specified but it is required when building DescribeLiveSourceInput",
+                )
+            })?,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building DescribeLiveSourceInput",
+                )
+            })?,
         })
     }
 }

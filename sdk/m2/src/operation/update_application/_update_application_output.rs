@@ -4,12 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutput {
     /// <p>The new version of the application.</p>
-    pub application_version: ::std::option::Option<i32>,
+    pub application_version: i32,
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutput {
     /// <p>The new version of the application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<i32> {
+    pub fn application_version(&self) -> i32 {
         self.application_version
     }
 }
@@ -34,6 +34,7 @@ pub struct UpdateApplicationOutputBuilder {
 }
 impl UpdateApplicationOutputBuilder {
     /// <p>The new version of the application.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,19 @@ impl UpdateApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
-    pub fn build(self) -> crate::operation::update_application::UpdateApplicationOutput {
-        crate::operation::update_application::UpdateApplicationOutput {
-            application_version: self.application_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_version`](crate::operation::update_application::builders::UpdateApplicationOutputBuilder::application_version)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationOutput {
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building UpdateApplicationOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

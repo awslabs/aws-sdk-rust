@@ -14,8 +14,10 @@ impl AddTagsToResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsToResourceInput {
@@ -34,6 +36,7 @@ pub struct AddTagsToResourceInputBuilder {
 }
 impl AddTagsToResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

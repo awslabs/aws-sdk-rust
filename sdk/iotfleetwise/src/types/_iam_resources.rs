@@ -6,12 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamResources {
     /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl IamResources {
     /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl IamResources {
@@ -29,6 +30,7 @@ pub struct IamResourcesBuilder {
 }
 impl IamResourcesBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream. For example, <code>arn:aws:iam::123456789012:role/SERVICE-ROLE-ARN</code>. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +45,16 @@ impl IamResourcesBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`IamResources`](crate::types::IamResources).
-    pub fn build(self) -> crate::types::IamResources {
-        crate::types::IamResources { role_arn: self.role_arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::IamResourcesBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IamResources, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IamResources {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building IamResources",
+                )
+            })?,
+        })
     }
 }

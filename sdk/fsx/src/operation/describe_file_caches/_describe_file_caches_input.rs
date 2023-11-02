@@ -12,8 +12,10 @@ pub struct DescribeFileCachesInput {
 }
 impl DescribeFileCachesInput {
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn file_cache_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.file_cache_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_cache_ids.is_none()`.
+    pub fn file_cache_ids(&self) -> &[::std::string::String] {
+        self.file_cache_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

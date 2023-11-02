@@ -23,8 +23,10 @@ pub struct RtmpGroupSettings {
 }
 impl RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
-    pub fn ad_markers(&self) -> ::std::option::Option<&[crate::types::RtmpAdMarkers]> {
-        self.ad_markers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_markers.is_none()`.
+    pub fn ad_markers(&self) -> &[crate::types::RtmpAdMarkers] {
+        self.ad_markers.as_deref().unwrap_or_default()
     }
     /// Authentication scheme to use when connecting with CDN
     pub fn authentication_scheme(&self) -> ::std::option::Option<&crate::types::AuthenticationScheme> {

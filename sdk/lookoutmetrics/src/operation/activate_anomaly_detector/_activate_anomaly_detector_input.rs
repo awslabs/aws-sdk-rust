@@ -27,6 +27,7 @@ pub struct ActivateAnomalyDetectorInputBuilder {
 }
 impl ActivateAnomalyDetectorInputBuilder {
     /// <p>The ARN of the anomaly detector.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self

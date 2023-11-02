@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyCommand {
     /// <p>The name of the target table. The table must already exist in the database.</p>
-    pub data_table_name: ::std::option::Option<::std::string::String>,
+    pub data_table_name: ::std::string::String,
     /// <p>A comma-separated list of column names.</p>
     pub data_table_columns: ::std::option::Option<::std::string::String>,
     /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data Firehose are as follows:</p>
@@ -19,8 +19,9 @@ pub struct CopyCommand {
 }
 impl CopyCommand {
     /// <p>The name of the target table. The table must already exist in the database.</p>
-    pub fn data_table_name(&self) -> ::std::option::Option<&str> {
-        self.data_table_name.as_deref()
+    pub fn data_table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.data_table_name.deref()
     }
     /// <p>A comma-separated list of column names.</p>
     pub fn data_table_columns(&self) -> ::std::option::Option<&str> {
@@ -54,6 +55,7 @@ pub struct CopyCommandBuilder {
 }
 impl CopyCommandBuilder {
     /// <p>The name of the target table. The table must already exist in the database.</p>
+    /// This field is required.
     pub fn data_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_table_name = ::std::option::Option::Some(input.into());
         self
@@ -114,11 +116,18 @@ impl CopyCommandBuilder {
         &self.copy_options
     }
     /// Consumes the builder and constructs a [`CopyCommand`](crate::types::CopyCommand).
-    pub fn build(self) -> crate::types::CopyCommand {
-        crate::types::CopyCommand {
-            data_table_name: self.data_table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_table_name`](crate::types::builders::CopyCommandBuilder::data_table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CopyCommand, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CopyCommand {
+            data_table_name: self.data_table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_table_name",
+                    "data_table_name was not specified but it is required when building CopyCommand",
+                )
+            })?,
             data_table_columns: self.data_table_columns,
             copy_options: self.copy_options,
-        }
+        })
     }
 }

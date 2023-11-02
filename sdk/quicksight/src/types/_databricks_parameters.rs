@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabricksParameters {
     /// <p>The host name of the Databricks data source.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>The port for the Databricks data source.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
     /// <p>The HTTP path of the Databricks data source.</p>
-    pub sql_endpoint_path: ::std::option::Option<::std::string::String>,
+    pub sql_endpoint_path: ::std::string::String,
 }
 impl DatabricksParameters {
     /// <p>The host name of the Databricks data source.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>The port for the Databricks data source.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The HTTP path of the Databricks data source.</p>
-    pub fn sql_endpoint_path(&self) -> ::std::option::Option<&str> {
-        self.sql_endpoint_path.as_deref()
+    pub fn sql_endpoint_path(&self) -> &str {
+        use std::ops::Deref;
+        self.sql_endpoint_path.deref()
     }
 }
 impl DatabricksParameters {
@@ -42,6 +44,7 @@ pub struct DatabricksParametersBuilder {
 }
 impl DatabricksParametersBuilder {
     /// <p>The host name of the Databricks data source.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl DatabricksParametersBuilder {
         &self.host
     }
     /// <p>The port for the Databricks data source.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl DatabricksParametersBuilder {
         &self.port
     }
     /// <p>The HTTP path of the Databricks data source.</p>
+    /// This field is required.
     pub fn sql_endpoint_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_endpoint_path = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl DatabricksParametersBuilder {
         &self.sql_endpoint_path
     }
     /// Consumes the builder and constructs a [`DatabricksParameters`](crate::types::DatabricksParameters).
-    pub fn build(self) -> crate::types::DatabricksParameters {
-        crate::types::DatabricksParameters {
-            host: self.host,
-            port: self.port,
-            sql_endpoint_path: self.sql_endpoint_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::DatabricksParametersBuilder::host)
+    /// - [`port`](crate::types::builders::DatabricksParametersBuilder::port)
+    /// - [`sql_endpoint_path`](crate::types::builders::DatabricksParametersBuilder::sql_endpoint_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabricksParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatabricksParameters {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building DatabricksParameters",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building DatabricksParameters",
+                )
+            })?,
+            sql_endpoint_path: self.sql_endpoint_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sql_endpoint_path",
+                    "sql_endpoint_path was not specified but it is required when building DatabricksParameters",
+                )
+            })?,
+        })
     }
 }

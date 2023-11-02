@@ -27,6 +27,7 @@ pub struct DeleteModelCardInputBuilder {
 }
 impl DeleteModelCardInputBuilder {
     /// <p>The name of the model card to delete.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self

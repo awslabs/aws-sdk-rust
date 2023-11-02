@@ -3,51 +3,51 @@ pub fn ser_pipe_target_batch_job_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetBatchJobParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.job_definition {
-        object.key("JobDefinition").string(var_1.as_str());
+    {
+        object.key("JobDefinition").string(input.job_definition.as_str());
     }
-    if let Some(var_2) = &input.job_name {
-        object.key("JobName").string(var_2.as_str());
+    {
+        object.key("JobName").string(input.job_name.as_str());
     }
-    if let Some(var_3) = &input.array_properties {
+    if let Some(var_1) = &input.array_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ArrayProperties").start_object();
-        crate::protocol_serde::shape_batch_array_properties::ser_batch_array_properties(&mut object_4, var_3)?;
+        let mut object_2 = object.key("ArrayProperties").start_object();
+        crate::protocol_serde::shape_batch_array_properties::ser_batch_array_properties(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.retry_strategy {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("RetryStrategy").start_object();
+        crate::protocol_serde::shape_batch_retry_strategy::ser_batch_retry_strategy(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.retry_strategy {
+    if let Some(var_5) = &input.container_overrides {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("RetryStrategy").start_object();
-        crate::protocol_serde::shape_batch_retry_strategy::ser_batch_retry_strategy(&mut object_6, var_5)?;
+        let mut object_6 = object.key("ContainerOverrides").start_object();
+        crate::protocol_serde::shape_batch_container_overrides::ser_batch_container_overrides(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.container_overrides {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("ContainerOverrides").start_object();
-        crate::protocol_serde::shape_batch_container_overrides::ser_batch_container_overrides(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.depends_on {
-        let mut array_10 = object.key("DependsOn").start_array();
-        for item_11 in var_9 {
+    if let Some(var_7) = &input.depends_on {
+        let mut array_8 = object.key("DependsOn").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_batch_job_dependency::ser_batch_job_dependency(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_batch_job_dependency::ser_batch_job_dependency(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_10.finish();
+        array_8.finish();
     }
-    if let Some(var_13) = &input.parameters {
+    if let Some(var_11) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Parameters").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_12 = object.key("Parameters").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_14.finish();
+        object_12.finish();
     }
     Ok(())
 }
@@ -109,7 +109,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pipe_target_batch_job_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

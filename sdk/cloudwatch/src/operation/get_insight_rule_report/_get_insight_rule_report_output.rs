@@ -19,8 +19,10 @@ pub struct GetInsightRuleReportOutput {
 }
 impl GetInsightRuleReportOutput {
     /// <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
-    pub fn key_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.key_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_labels.is_none()`.
+    pub fn key_labels(&self) -> &[::std::string::String] {
+        self.key_labels.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
     pub fn aggregation_statistic(&self) -> ::std::option::Option<&str> {
@@ -35,12 +37,16 @@ impl GetInsightRuleReportOutput {
         self.approximate_unique_count
     }
     /// <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
-    pub fn contributors(&self) -> ::std::option::Option<&[crate::types::InsightRuleContributor]> {
-        self.contributors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contributors.is_none()`.
+    pub fn contributors(&self) -> &[crate::types::InsightRuleContributor] {
+        self.contributors.as_deref().unwrap_or_default()
     }
     /// <p>A time series of metric data points that matches the time period in the rule request.</p>
-    pub fn metric_datapoints(&self) -> ::std::option::Option<&[crate::types::InsightRuleMetricDatapoint]> {
-        self.metric_datapoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_datapoints.is_none()`.
+    pub fn metric_datapoints(&self) -> &[crate::types::InsightRuleMetricDatapoint] {
+        self.metric_datapoints.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInsightRuleReportOutput {

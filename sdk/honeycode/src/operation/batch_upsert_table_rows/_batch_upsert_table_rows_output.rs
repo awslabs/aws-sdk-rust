@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpsertTableRowsOutput {
     /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
-    pub rows: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>>,
+    pub rows: ::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>,
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
     pub workbook_cursor: i64,
     /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
@@ -13,16 +13,18 @@ pub struct BatchUpsertTableRowsOutput {
 }
 impl BatchUpsertTableRowsOutput {
     /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
-    pub fn rows(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult>> {
-        self.rows.as_ref()
+    pub fn rows(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::UpsertRowsResult> {
+        &self.rows
     }
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
     pub fn workbook_cursor(&self) -> i64 {
         self.workbook_cursor
     }
     /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
-    pub fn failed_batch_items(&self) -> ::std::option::Option<&[crate::types::FailedBatchItem]> {
-        self.failed_batch_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batch_items.is_none()`.
+    pub fn failed_batch_items(&self) -> &[crate::types::FailedBatchItem] {
+        self.failed_batch_items.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpsertTableRowsOutput {
@@ -71,6 +73,7 @@ impl BatchUpsertTableRowsOutputBuilder {
         &self.rows
     }
     /// <p>The updated workbook cursor after updating or appending rows in the table.</p>
+    /// This field is required.
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
         self
@@ -114,12 +117,22 @@ impl BatchUpsertTableRowsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchUpsertTableRowsOutput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput).
-    pub fn build(self) -> crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput {
-        crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput {
-            rows: self.rows,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rows`](crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsOutputBuilder::rows)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput {
+            rows: self.rows.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rows",
+                    "rows was not specified but it is required when building BatchUpsertTableRowsOutput",
+                )
+            })?,
             workbook_cursor: self.workbook_cursor.unwrap_or_default(),
             failed_batch_items: self.failed_batch_items,
             _request_id: self._request_id,
-        }
+        })
     }
 }

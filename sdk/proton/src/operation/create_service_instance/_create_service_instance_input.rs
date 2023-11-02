@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceInstanceInput {
     /// <p>The name of the service instance to create.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the service the service instance is added to.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The spec for the service instance you want to create.</p>
-    pub spec: ::std::option::Option<::std::string::String>,
+    pub spec: ::std::string::String,
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
@@ -21,16 +21,19 @@ pub struct CreateServiceInstanceInput {
 }
 impl CreateServiceInstanceInput {
     /// <p>The name of the service instance to create.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the service the service instance is added to.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The spec for the service instance you want to create.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
-        self.spec.as_deref()
+    pub fn spec(&self) -> &str {
+        use std::ops::Deref;
+        self.spec.deref()
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn template_major_version(&self) -> ::std::option::Option<&str> {
@@ -42,8 +45,10 @@ impl CreateServiceInstanceInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token of the service instance to create.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -84,6 +89,7 @@ pub struct CreateServiceInstanceInputBuilder {
 }
 impl CreateServiceInstanceInputBuilder {
     /// <p>The name of the service instance to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl CreateServiceInstanceInputBuilder {
         &self.name
     }
     /// <p>The name of the service the service instance is added to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl CreateServiceInstanceInputBuilder {
         &self.service_name
     }
     /// <p>The spec for the service instance you want to create.</p>
+    /// This field is required.
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
         self
@@ -191,14 +199,33 @@ impl CreateServiceInstanceInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateServiceInstanceInput`](crate::operation::create_service_instance::CreateServiceInstanceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder::name)
+    /// - [`service_name`](crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder::service_name)
+    /// - [`spec`](crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder::spec)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_service_instance::CreateServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_instance::CreateServiceInstanceInput {
-            name: self.name,
-            service_name: self.service_name,
-            spec: self.spec,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateServiceInstanceInput",
+                )
+            })?,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building CreateServiceInstanceInput",
+                )
+            })?,
+            spec: self.spec.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "spec",
+                    "spec was not specified but it is required when building CreateServiceInstanceInput",
+                )
+            })?,
             template_major_version: self.template_major_version,
             template_minor_version: self.template_minor_version,
             tags: self.tags,

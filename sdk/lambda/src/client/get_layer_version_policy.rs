@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLayerVersionPolicy`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`layer_name(impl Into<String>)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::layer_name) / [`set_layer_name(Option<String>)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::set_layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    ///   - [`version_number(i64)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::version_number) / [`set_version_number(Option<i64>)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::set_version_number): <p>The version number.</p>
+    ///   - [`layer_name(impl Into<String>)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::layer_name) / [`set_layer_name(Option<String>)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::set_layer_name):<br>required: **true**<br><p>The name or Amazon Resource Name (ARN) of the layer.</p><br>
+    ///   - [`version_number(i64)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::version_number) / [`set_version_number(Option<i64>)`](crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyFluentBuilder::set_version_number):<br>required: **true**<br><p>The version number.</p><br>
     /// - On success, responds with [`GetLayerVersionPolicyOutput`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput::policy): <p>The policy document.</p>
     ///   - [`revision_id(Option<String>)`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput::revision_id): <p>A unique identifier for the current revision of the policy.</p>

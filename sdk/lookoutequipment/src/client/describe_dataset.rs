@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataset`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_name(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_name) / [`set_dataset_name(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_name): <p>The name of the dataset to be described. </p>
+    ///   - [`dataset_name(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_name) / [`set_dataset_name(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_name):<br>required: **true**<br><p>The name of the dataset to be described. </p><br>
     /// - On success, responds with [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput) with field(s):
     ///   - [`dataset_name(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_name): <p>The name of the dataset being described. </p>
     ///   - [`dataset_arn(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset being described. </p>

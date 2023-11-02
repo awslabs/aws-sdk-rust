@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetClusterSnapshot`](crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`snapshot_arn(impl Into<String>)`](crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder::set_snapshot_arn): <p>The arn of the Elastic DocumentDB snapshot.</p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder::snapshot_arn) / [`set_snapshot_arn(impl Into<String>)`](crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotFluentBuilder::set_snapshot_arn):<br>required: **true**<br><p>The arn of the Elastic DocumentDB snapshot.</p><br>
     /// - On success, responds with [`GetClusterSnapshotOutput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::operation::get_cluster_snapshot::GetClusterSnapshotOutput::snapshot): <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
     /// - On failure, responds with [`SdkError<GetClusterSnapshotError>`](crate::operation::get_cluster_snapshot::GetClusterSnapshotError)

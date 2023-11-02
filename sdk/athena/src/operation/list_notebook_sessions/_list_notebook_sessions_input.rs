@@ -41,6 +41,7 @@ pub struct ListNotebookSessionsInputBuilder {
 }
 impl ListNotebookSessionsInputBuilder {
     /// <p>The ID of the notebook to list sessions for.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefetchSchedule {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub consumption: ::std::option::Option<crate::types::PrefetchConsumption>,
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    pub playback_configuration_name: ::std::option::Option<::std::string::String>,
+    pub playback_configuration_name: ::std::string::String,
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
     pub retrieval: ::std::option::Option<crate::types::PrefetchRetrieval>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
@@ -19,20 +19,23 @@ pub struct PrefetchSchedule {
 }
 impl PrefetchSchedule {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
     pub fn consumption(&self) -> ::std::option::Option<&crate::types::PrefetchConsumption> {
         self.consumption.as_ref()
     }
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
-    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
+    pub fn playback_configuration_name(&self) -> &str {
+        use std::ops::Deref;
+        self.playback_configuration_name.deref()
     }
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
     pub fn retrieval(&self) -> ::std::option::Option<&crate::types::PrefetchRetrieval> {
@@ -63,6 +66,7 @@ pub struct PrefetchScheduleBuilder {
 }
 impl PrefetchScheduleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl PrefetchScheduleBuilder {
         &self.arn
     }
     /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    /// This field is required.
     pub fn consumption(mut self, input: crate::types::PrefetchConsumption) -> Self {
         self.consumption = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl PrefetchScheduleBuilder {
         &self.consumption
     }
     /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl PrefetchScheduleBuilder {
         &self.name
     }
     /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    /// This field is required.
     pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl PrefetchScheduleBuilder {
         &self.playback_configuration_name
     }
     /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    /// This field is required.
     pub fn retrieval(mut self, input: crate::types::PrefetchRetrieval) -> Self {
         self.retrieval = ::std::option::Option::Some(input);
         self
@@ -147,14 +155,33 @@ impl PrefetchScheduleBuilder {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`PrefetchSchedule`](crate::types::PrefetchSchedule).
-    pub fn build(self) -> crate::types::PrefetchSchedule {
-        crate::types::PrefetchSchedule {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::PrefetchScheduleBuilder::arn)
+    /// - [`name`](crate::types::builders::PrefetchScheduleBuilder::name)
+    /// - [`playback_configuration_name`](crate::types::builders::PrefetchScheduleBuilder::playback_configuration_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::PrefetchSchedule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PrefetchSchedule {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building PrefetchSchedule",
+                )
+            })?,
             consumption: self.consumption,
-            name: self.name,
-            playback_configuration_name: self.playback_configuration_name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PrefetchSchedule",
+                )
+            })?,
+            playback_configuration_name: self.playback_configuration_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "playback_configuration_name",
+                    "playback_configuration_name was not specified but it is required when building PrefetchSchedule",
+                )
+            })?,
             retrieval: self.retrieval,
             stream_id: self.stream_id,
-        }
+        })
     }
 }

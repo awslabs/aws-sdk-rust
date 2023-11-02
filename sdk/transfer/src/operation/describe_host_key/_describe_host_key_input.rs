@@ -34,6 +34,7 @@ pub struct DescribeHostKeyInputBuilder {
 }
 impl DescribeHostKeyInputBuilder {
     /// <p>The identifier of the server that contains the host key that you want described.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeHostKeyInputBuilder {
         &self.server_id
     }
     /// <p>The identifier of the host key that you want described.</p>
+    /// This field is required.
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
         self

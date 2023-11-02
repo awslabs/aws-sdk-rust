@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ParquetSource {
     /// <p>The name of the data store.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub paths: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub compression_type: ::std::option::Option<crate::types::ParquetCompressionType>,
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
@@ -29,20 +29,24 @@ pub struct S3ParquetSource {
 }
 impl S3ParquetSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.paths.as_deref()
+    pub fn paths(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.paths.deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn compression_type(&self) -> ::std::option::Option<&crate::types::ParquetCompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
-    pub fn exclusions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
+    pub fn exclusions(&self) -> &[::std::string::String] {
+        self.exclusions.as_deref().unwrap_or_default()
     }
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
     pub fn group_size(&self) -> ::std::option::Option<&str> {
@@ -69,8 +73,10 @@ impl S3ParquetSource {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the data schema for the S3 Parquet source.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl S3ParquetSource {
@@ -98,6 +104,7 @@ pub struct S3ParquetSourceBuilder {
 }
 impl S3ParquetSourceBuilder {
     /// <p>The name of the data store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -270,10 +277,23 @@ impl S3ParquetSourceBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3ParquetSource`](crate::types::S3ParquetSource).
-    pub fn build(self) -> crate::types::S3ParquetSource {
-        crate::types::S3ParquetSource {
-            name: self.name,
-            paths: self.paths,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::S3ParquetSourceBuilder::name)
+    /// - [`paths`](crate::types::builders::S3ParquetSourceBuilder::paths)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ParquetSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3ParquetSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building S3ParquetSource",
+                )
+            })?,
+            paths: self.paths.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "paths",
+                    "paths was not specified but it is required when building S3ParquetSource",
+                )
+            })?,
             compression_type: self.compression_type,
             exclusions: self.exclusions,
             group_size: self.group_size,
@@ -283,6 +303,6 @@ impl S3ParquetSourceBuilder {
             max_files_in_band: self.max_files_in_band,
             additional_options: self.additional_options,
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

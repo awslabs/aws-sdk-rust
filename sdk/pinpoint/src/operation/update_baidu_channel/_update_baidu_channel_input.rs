@@ -34,6 +34,7 @@ pub struct UpdateBaiduChannelInputBuilder {
 }
 impl UpdateBaiduChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateBaiduChannelInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
+    /// This field is required.
     pub fn baidu_channel_request(mut self, input: crate::types::BaiduChannelRequest) -> Self {
         self.baidu_channel_request = ::std::option::Option::Some(input);
         self

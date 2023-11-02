@@ -34,6 +34,7 @@ pub struct CreateFlowDefinitionOutputBuilder {
 }
 impl CreateFlowDefinitionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the flow definition you create.</p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self

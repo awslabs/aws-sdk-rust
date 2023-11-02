@@ -82,10 +82,7 @@ pub(crate) fn lens_list_plugins_output_plugins(
 pub(crate) fn lens_list_template_step_groups_output_template_step_group_summary(
     input: crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TemplateStepGroupSummary>> {
-    let input = match input.template_step_group_summary {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.template_step_group_summary;
     ::std::option::Option::Some(input)
 }
 
@@ -102,39 +99,27 @@ pub(crate) fn lens_list_template_steps_output_template_step_summary_list(
 pub(crate) fn lens_list_templates_output_template_summary(
     input: crate::operation::list_templates::ListTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
-    let input = match input.template_summary {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.template_summary;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflow_step_groups_output_workflow_step_groups_summary(
     input: crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>> {
-    let input = match input.workflow_step_groups_summary {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflow_step_groups_summary;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflow_steps_output_workflow_steps_summary(
     input: crate::operation::list_workflow_steps::ListWorkflowStepsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepSummary>> {
-    let input = match input.workflow_steps_summary {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workflow_steps_summary;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_workflows_output_migration_workflow_summary(
     input: crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>> {
-    let input = match input.migration_workflow_summary {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.migration_workflow_summary;
     ::std::option::Option::Some(input)
 }

@@ -25,14 +25,18 @@ impl DimensionValues {
         self.key.as_ref()
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The match options that you can use to filter your results.</p>
     /// <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn match_options(&self) -> ::std::option::Option<&[crate::types::MatchOption]> {
-        self.match_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_options.is_none()`.
+    pub fn match_options(&self) -> &[crate::types::MatchOption] {
+        self.match_options.as_deref().unwrap_or_default()
     }
 }
 impl DimensionValues {

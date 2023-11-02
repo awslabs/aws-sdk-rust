@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortCondition {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
-    pub name: ::std::option::Option<crate::types::ListDomainsAttributeName>,
+    pub name: crate::types::ListDomainsAttributeName,
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
-    pub sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub sort_order: crate::types::SortOrder,
 }
 impl SortCondition {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ListDomainsAttributeName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ListDomainsAttributeName {
+        &self.name
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
-        self.sort_order.as_ref()
+    pub fn sort_order(&self) -> &crate::types::SortOrder {
+        &self.sort_order
     }
 }
 impl SortCondition {
@@ -35,6 +35,7 @@ pub struct SortConditionBuilder {
 }
 impl SortConditionBuilder {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ListDomainsAttributeName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SortConditionBuilder {
         &self.name
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
+    /// This field is required.
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl SortConditionBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`SortCondition`](crate::types::SortCondition).
-    pub fn build(self) -> crate::types::SortCondition {
-        crate::types::SortCondition {
-            name: self.name,
-            sort_order: self.sort_order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SortConditionBuilder::name)
+    /// - [`sort_order`](crate::types::builders::SortConditionBuilder::sort_order)
+    pub fn build(self) -> ::std::result::Result<crate::types::SortCondition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SortCondition {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SortCondition",
+                )
+            })?,
+            sort_order: self.sort_order.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sort_order",
+                    "sort_order was not specified but it is required when building SortCondition",
+                )
+            })?,
+        })
     }
 }

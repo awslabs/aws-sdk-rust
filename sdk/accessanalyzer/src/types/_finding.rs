@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Finding {
     /// <p>The ID of the finding.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The external principal that access to a resource within the zone of trust.</p>
     pub principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
@@ -15,19 +15,19 @@ pub struct Finding {
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub is_public: ::std::option::Option<bool>,
     /// <p>The type of the resource identified in the finding.</p>
-    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub resource_type: crate::types::ResourceType,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub condition: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub condition: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>The time at which the finding was generated.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the resource was analyzed.</p>
-    pub analyzed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub analyzed_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the finding was updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The current status of the finding.</p>
-    pub status: ::std::option::Option<crate::types::FindingStatus>,
+    pub status: crate::types::FindingStatus,
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub resource_owner_account: ::std::option::Option<::std::string::String>,
+    pub resource_owner_account: ::std::string::String,
     /// <p>An error.</p>
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
@@ -35,16 +35,19 @@ pub struct Finding {
 }
 impl Finding {
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The external principal that access to a resource within the zone of trust.</p>
     pub fn principal(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.principal.as_ref()
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub fn action(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.action.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action.is_none()`.
+    pub fn action(&self) -> &[::std::string::String] {
+        self.action.as_deref().unwrap_or_default()
     }
     /// <p>The resource that an external principal has access to.</p>
     pub fn resource(&self) -> ::std::option::Option<&str> {
@@ -55,40 +58,43 @@ impl Finding {
         self.is_public
     }
     /// <p>The type of the resource identified in the finding.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::ResourceType {
+        &self.resource_type
     }
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub fn condition(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.condition.as_ref()
+    pub fn condition(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.condition
     }
     /// <p>The time at which the finding was generated.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time at which the resource was analyzed.</p>
-    pub fn analyzed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.analyzed_at.as_ref()
+    pub fn analyzed_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.analyzed_at
     }
     /// <p>The time at which the finding was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The current status of the finding.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FindingStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::FindingStatus {
+        &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> ::std::option::Option<&str> {
-        self.resource_owner_account.as_deref()
+    pub fn resource_owner_account(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_owner_account.deref()
     }
     /// <p>An error.</p>
     pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::FindingSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::FindingSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl Finding {
@@ -119,6 +125,7 @@ pub struct FindingBuilder {
 }
 impl FindingBuilder {
     /// <p>The ID of the finding.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -201,6 +208,7 @@ impl FindingBuilder {
         &self.is_public
     }
     /// <p>The type of the resource identified in the finding.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -235,6 +243,7 @@ impl FindingBuilder {
         &self.condition
     }
     /// <p>The time at which the finding was generated.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -249,6 +258,7 @@ impl FindingBuilder {
         &self.created_at
     }
     /// <p>The time at which the resource was analyzed.</p>
+    /// This field is required.
     pub fn analyzed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.analyzed_at = ::std::option::Option::Some(input);
         self
@@ -263,6 +273,7 @@ impl FindingBuilder {
         &self.analyzed_at
     }
     /// <p>The time at which the finding was updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -277,6 +288,7 @@ impl FindingBuilder {
         &self.updated_at
     }
     /// <p>The current status of the finding.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -291,6 +303,7 @@ impl FindingBuilder {
         &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    /// This field is required.
     pub fn resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_account = ::std::option::Option::Some(input.into());
         self
@@ -339,22 +352,68 @@ impl FindingBuilder {
         &self.sources
     }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
-    pub fn build(self) -> crate::types::Finding {
-        crate::types::Finding {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::FindingBuilder::id)
+    /// - [`resource_type`](crate::types::builders::FindingBuilder::resource_type)
+    /// - [`condition`](crate::types::builders::FindingBuilder::condition)
+    /// - [`created_at`](crate::types::builders::FindingBuilder::created_at)
+    /// - [`analyzed_at`](crate::types::builders::FindingBuilder::analyzed_at)
+    /// - [`updated_at`](crate::types::builders::FindingBuilder::updated_at)
+    /// - [`status`](crate::types::builders::FindingBuilder::status)
+    /// - [`resource_owner_account`](crate::types::builders::FindingBuilder::resource_owner_account)
+    pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Finding {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Finding")
+            })?,
             principal: self.principal,
             action: self.action,
             resource: self.resource,
             is_public: self.is_public,
-            resource_type: self.resource_type,
-            condition: self.condition,
-            created_at: self.created_at,
-            analyzed_at: self.analyzed_at,
-            updated_at: self.updated_at,
-            status: self.status,
-            resource_owner_account: self.resource_owner_account,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building Finding",
+                )
+            })?,
+            condition: self.condition.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition",
+                    "condition was not specified but it is required when building Finding",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Finding",
+                )
+            })?,
+            analyzed_at: self.analyzed_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzed_at",
+                    "analyzed_at was not specified but it is required when building Finding",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building Finding",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Finding",
+                )
+            })?,
+            resource_owner_account: self.resource_owner_account.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_owner_account",
+                    "resource_owner_account was not specified but it is required when building Finding",
+                )
+            })?,
             error: self.error,
             sources: self.sources,
-        }
+        })
     }
 }

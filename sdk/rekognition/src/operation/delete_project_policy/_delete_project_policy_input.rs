@@ -41,6 +41,7 @@ pub struct DeleteProjectPolicyInputBuilder {
 }
 impl DeleteProjectPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteProjectPolicyInputBuilder {
         &self.project_arn
     }
     /// <p>The name of the policy that you want to delete.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self

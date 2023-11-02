@@ -11,8 +11,10 @@ pub struct ListThirdPartyFirewallFirewallPoliciesOutput {
 }
 impl ListThirdPartyFirewallFirewallPoliciesOutput {
     /// <p>A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for each third-party firewall policies that the specified third-party firewall vendor is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall policy name and ID.</p>
-    pub fn third_party_firewall_firewall_policies(&self) -> ::std::option::Option<&[crate::types::ThirdPartyFirewallFirewallPolicy]> {
-        self.third_party_firewall_firewall_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.third_party_firewall_firewall_policies.is_none()`.
+    pub fn third_party_firewall_firewall_policies(&self) -> &[crate::types::ThirdPartyFirewallFirewallPolicy] {
+        self.third_party_firewall_firewall_policies.as_deref().unwrap_or_default()
     }
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

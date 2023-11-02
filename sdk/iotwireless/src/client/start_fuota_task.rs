@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartFuotaTask`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::set_id): <p>The ID of a FUOTA task.</p>
-    ///   - [`lo_ra_wan(LoRaWanStartFuotaTask)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanStartFuotaTask>)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::set_lo_ra_wan): <p>The LoRaWAN information used to start a FUOTA task.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::set_id):<br>required: **true**<br><p>The ID of a FUOTA task.</p><br>
+    ///   - [`lo_ra_wan(LoRaWanStartFuotaTask)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::lo_ra_wan) / [`set_lo_ra_wan(Option<LoRaWanStartFuotaTask>)`](crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder::set_lo_ra_wan):<br>required: **false**<br><p>The LoRaWAN information used to start a FUOTA task.</p><br>
     /// - On success, responds with [`StartFuotaTaskOutput`](crate::operation::start_fuota_task::StartFuotaTaskOutput)
     /// - On failure, responds with [`SdkError<StartFuotaTaskError>`](crate::operation::start_fuota_task::StartFuotaTaskError)
     pub fn start_fuota_task(&self) -> crate::operation::start_fuota_task::builders::StartFuotaTaskFluentBuilder {

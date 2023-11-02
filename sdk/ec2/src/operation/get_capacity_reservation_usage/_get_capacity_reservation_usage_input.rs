@@ -50,6 +50,7 @@ pub struct GetCapacityReservationUsageInputBuilder {
 }
 impl GetCapacityReservationUsageInputBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
+    /// This field is required.
     pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self

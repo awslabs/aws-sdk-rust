@@ -22,8 +22,10 @@ impl GetHostedZoneOutput {
         self.delegation_set.as_ref()
     }
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn vp_cs(&self) -> ::std::option::Option<&[crate::types::Vpc]> {
-        self.vp_cs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vp_cs.is_none()`.
+    pub fn vp_cs(&self) -> &[crate::types::Vpc] {
+        self.vp_cs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetHostedZoneOutput {
@@ -49,6 +51,7 @@ pub struct GetHostedZoneOutputBuilder {
 }
 impl GetHostedZoneOutputBuilder {
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone(mut self, input: crate::types::HostedZone) -> Self {
         self.hosted_zone = ::std::option::Option::Some(input);
         self

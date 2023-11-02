@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
-    pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub payload: ::aws_smithy_types::Blob,
 }
 impl Message {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.payload.as_ref()
+    pub fn payload(&self) -> &::aws_smithy_types::Blob {
+        &self.payload
     }
 }
 impl Message {
@@ -35,6 +36,7 @@ pub struct MessageBuilder {
 }
 impl MessageBuilder {
     /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl MessageBuilder {
         &self.message_id
     }
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
+    /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl MessageBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
-    pub fn build(self) -> crate::types::Message {
-        crate::types::Message {
-            message_id: self.message_id,
-            payload: self.payload,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_id`](crate::types::builders::MessageBuilder::message_id)
+    /// - [`payload`](crate::types::builders::MessageBuilder::payload)
+    pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Message {
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building Message",
+                )
+            })?,
+            payload: self.payload.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "payload",
+                    "payload was not specified but it is required when building Message",
+                )
+            })?,
+        })
     }
 }

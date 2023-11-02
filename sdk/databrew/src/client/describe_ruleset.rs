@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRuleset`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::set_name): <p>The name of the ruleset to be described.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ruleset::builders::DescribeRulesetFluentBuilder::set_name):<br>required: **true**<br><p>The name of the ruleset to be described.</p><br>
     /// - On success, responds with [`DescribeRulesetOutput`](crate::operation::describe_ruleset::DescribeRulesetOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::name): <p>The name of the ruleset.</p>
+    ///   - [`name(String)`](crate::operation::describe_ruleset::DescribeRulesetOutput::name): <p>The name of the ruleset.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::description): <p>The description of the ruleset.</p>
     ///   - [`target_arn(Option<String>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::target_arn): <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     ///   - [`rules(Option<Vec<Rule>>)`](crate::operation::describe_ruleset::DescribeRulesetOutput::rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>

@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventStreamOutput {
     /// <p>The unique name of the domain.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>A unique identifier for the event stream.</p>
-    pub event_stream_arn: ::std::option::Option<::std::string::String>,
+    pub event_stream_arn: ::std::string::String,
     /// <p>The timestamp of when the export was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The operational state of destination stream for export.</p>
-    pub state: ::std::option::Option<crate::types::EventStreamState>,
+    pub state: crate::types::EventStreamState,
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     pub stopped_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details regarding the Kinesis stream.</p>
@@ -21,20 +21,22 @@ pub struct GetEventStreamOutput {
 }
 impl GetEventStreamOutput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>A unique identifier for the event stream.</p>
-    pub fn event_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.event_stream_arn.as_deref()
+    pub fn event_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.event_stream_arn.deref()
     }
     /// <p>The timestamp of when the export was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The operational state of destination stream for export.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EventStreamState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::EventStreamState {
+        &self.state
     }
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     pub fn stopped_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -76,6 +78,7 @@ pub struct GetEventStreamOutputBuilder {
 }
 impl GetEventStreamOutputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetEventStreamOutputBuilder {
         &self.domain_name
     }
     /// <p>A unique identifier for the event stream.</p>
+    /// This field is required.
     pub fn event_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl GetEventStreamOutputBuilder {
         &self.event_stream_arn
     }
     /// <p>The timestamp of when the export was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -118,6 +123,7 @@ impl GetEventStreamOutputBuilder {
         &self.created_at
     }
     /// <p>The operational state of destination stream for export.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::EventStreamState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -146,6 +152,7 @@ impl GetEventStreamOutputBuilder {
         &self.stopped_since
     }
     /// <p>Details regarding the Kinesis stream.</p>
+    /// This field is required.
     pub fn destination_details(mut self, input: crate::types::EventStreamDestinationDetails) -> Self {
         self.destination_details = ::std::option::Option::Some(input);
         self
@@ -189,16 +196,43 @@ impl GetEventStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEventStreamOutput`](crate::operation::get_event_stream::GetEventStreamOutput).
-    pub fn build(self) -> crate::operation::get_event_stream::GetEventStreamOutput {
-        crate::operation::get_event_stream::GetEventStreamOutput {
-            domain_name: self.domain_name,
-            event_stream_arn: self.event_stream_arn,
-            created_at: self.created_at,
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::operation::get_event_stream::builders::GetEventStreamOutputBuilder::domain_name)
+    /// - [`event_stream_arn`](crate::operation::get_event_stream::builders::GetEventStreamOutputBuilder::event_stream_arn)
+    /// - [`created_at`](crate::operation::get_event_stream::builders::GetEventStreamOutputBuilder::created_at)
+    /// - [`state`](crate::operation::get_event_stream::builders::GetEventStreamOutputBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_event_stream::GetEventStreamOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_event_stream::GetEventStreamOutput {
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building GetEventStreamOutput",
+                )
+            })?,
+            event_stream_arn: self.event_stream_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_stream_arn",
+                    "event_stream_arn was not specified but it is required when building GetEventStreamOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetEventStreamOutput",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building GetEventStreamOutput",
+                )
+            })?,
             stopped_since: self.stopped_since,
             destination_details: self.destination_details,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

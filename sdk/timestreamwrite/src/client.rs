@@ -7,12 +7,12 @@ async fn resolve_endpoint(
         .send()
         .await
         .map_err(|e| ::aws_smithy_http::endpoint::ResolveEndpointError::from_source("failed to call describe_endpoints", e))?;
-    let endpoint = describe_endpoints.endpoints().unwrap().get(0).unwrap();
-    let expiry = client.conf().time_source().expect("checked when ep discovery was enabled").now()
+    let endpoint = describe_endpoints.endpoints().get(0).unwrap();
+    let expiry = client.config().time_source().expect("checked when ep discovery was enabled").now()
         + ::std::time::Duration::from_secs(endpoint.cache_period_in_minutes() as u64 * 60);
     Ok((
         ::aws_smithy_types::endpoint::Endpoint::builder()
-            .url(format!("https://{}", endpoint.address().unwrap()))
+            .url(format!("https://{}", endpoint.address()))
             .build(),
         expiry,
     ))
@@ -159,7 +159,7 @@ impl Client {
         if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
             panic!(
                 "An async sleep implementation is required for retries or timeouts to work. \
-                                        Set the `sleep_impl` on the Config passed into this function to fix this panic."
+                                    Set the `sleep_impl` on the Config passed into this function to fix this panic."
             );
         }
 
@@ -173,22 +173,6 @@ impl Client {
 
     /// Returns the client's configuration.
     pub fn config(&self) -> &crate::Config {
-        &self.handle.conf
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Creates a client with the given service configuration.
-    pub fn with_config<C, M, R>(_client: ::aws_smithy_client::Client<C, M, R>, conf: crate::Config) -> Self {
-        Self::from_conf(conf)
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Returns the client's configuration.
-    pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
     }
 }

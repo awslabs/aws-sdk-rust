@@ -35,6 +35,7 @@ pub struct DeleteChangeSetInputBuilder {
 }
 impl DeleteChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
+    /// This field is required.
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self

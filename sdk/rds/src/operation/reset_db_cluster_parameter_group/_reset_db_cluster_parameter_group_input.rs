@@ -21,8 +21,10 @@ impl ResetDbClusterParameterGroupInput {
         self.reset_all_parameters
     }
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is enabled.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ResetDbClusterParameterGroupInput {
@@ -42,6 +44,7 @@ pub struct ResetDbClusterParameterGroupInputBuilder {
 }
 impl ResetDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group to reset.</p>
+    /// This field is required.
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self

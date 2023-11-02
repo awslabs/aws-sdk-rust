@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
-    pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
+    pub vehicles: ::std::vec::Vec<crate::types::CreateVehicleRequestItem>,
 }
 impl BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
-    pub fn vehicles(&self) -> ::std::option::Option<&[crate::types::CreateVehicleRequestItem]> {
-        self.vehicles.as_deref()
+    pub fn vehicles(&self) -> &[crate::types::CreateVehicleRequestItem] {
+        use std::ops::Deref;
+        self.vehicles.deref()
     }
 }
 impl BatchCreateVehicleInput {
@@ -47,9 +48,18 @@ impl BatchCreateVehicleInputBuilder {
         &self.vehicles
     }
     /// Consumes the builder and constructs a [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicles`](crate::operation::batch_create_vehicle::builders::BatchCreateVehicleInputBuilder::vehicles)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_create_vehicle::BatchCreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_create_vehicle::BatchCreateVehicleInput { vehicles: self.vehicles })
+        ::std::result::Result::Ok(crate::operation::batch_create_vehicle::BatchCreateVehicleInput {
+            vehicles: self.vehicles.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicles",
+                    "vehicles was not specified but it is required when building BatchCreateVehicleInput",
+                )
+            })?,
+        })
     }
 }

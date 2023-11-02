@@ -41,6 +41,7 @@ pub struct GetCodegenJobInputBuilder {
 }
 impl GetCodegenJobInputBuilder {
     /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetCodegenJobInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app associated with the code generation job.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetCodegenJobInputBuilder {
         &self.environment_name
     }
     /// <p>The unique ID of the code generation job.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

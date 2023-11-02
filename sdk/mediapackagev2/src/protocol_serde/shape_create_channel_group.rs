@@ -147,7 +147,9 @@ pub fn de_create_channel_group_http_response(
         output = crate::protocol_serde::shape_create_channel_group::de_create_channel_group(_response_body, output)
             .map_err(crate::operation::create_channel_group::CreateChannelGroupError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_channel_group_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_channel_group::CreateChannelGroupError::unhandled)?
     })
 }
 

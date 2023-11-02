@@ -36,8 +36,10 @@ impl CreateFacetInput {
         self.name.as_deref()
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::FacetAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::FacetAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
@@ -79,6 +81,7 @@ pub struct CreateFacetInputBuilder {
 }
 impl CreateFacetInputBuilder {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +96,7 @@ impl CreateFacetInputBuilder {
         &self.schema_arn
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

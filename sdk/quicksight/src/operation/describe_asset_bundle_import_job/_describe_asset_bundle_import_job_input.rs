@@ -34,6 +34,7 @@ pub struct DescribeAssetBundleImportJobInputBuilder {
 }
 impl DescribeAssetBundleImportJobInputBuilder {
     /// <p>The ID of the Amazon Web Services account the import job was executed in. </p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeAssetBundleImportJobInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.</p>
+    /// This field is required.
     pub fn asset_bundle_import_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_bundle_import_job_id = ::std::option::Option::Some(input.into());
         self

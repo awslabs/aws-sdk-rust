@@ -27,6 +27,7 @@ pub struct DescribeSimulationJobBatchInputBuilder {
 }
 impl DescribeSimulationJobBatchInputBuilder {
     /// <p>The id of the batch to describe.</p>
+    /// This field is required.
     pub fn batch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch = ::std::option::Option::Some(input.into());
         self

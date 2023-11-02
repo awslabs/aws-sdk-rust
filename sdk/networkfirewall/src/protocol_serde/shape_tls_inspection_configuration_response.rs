@@ -73,6 +73,10 @@ where
                         "Certificates" => {
                             builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens)?);
                         }
+                        "CertificateAuthority" => {
+                            builder = builder
+                                .set_certificate_authority(crate::protocol_serde::shape_tls_certificate_data::de_tls_certificate_data(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -83,7 +87,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::tls_inspection_configuration_response_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

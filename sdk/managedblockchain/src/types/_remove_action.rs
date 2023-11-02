@@ -6,12 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
-    pub member_id: ::std::option::Option<::std::string::String>,
+    pub member_id: ::std::string::String,
 }
 impl RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
-        self.member_id.as_deref()
+    pub fn member_id(&self) -> &str {
+        use std::ops::Deref;
+        self.member_id.deref()
     }
 }
 impl RemoveAction {
@@ -29,6 +30,7 @@ pub struct RemoveActionBuilder {
 }
 impl RemoveActionBuilder {
     /// <p>The unique identifier of the member to remove.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +45,16 @@ impl RemoveActionBuilder {
         &self.member_id
     }
     /// Consumes the builder and constructs a [`RemoveAction`](crate::types::RemoveAction).
-    pub fn build(self) -> crate::types::RemoveAction {
-        crate::types::RemoveAction { member_id: self.member_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`member_id`](crate::types::builders::RemoveActionBuilder::member_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RemoveAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RemoveAction {
+            member_id: self.member_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "member_id",
+                    "member_id was not specified but it is required when building RemoveAction",
+                )
+            })?,
+        })
     }
 }

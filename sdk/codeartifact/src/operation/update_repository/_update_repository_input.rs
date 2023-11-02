@@ -32,8 +32,10 @@ impl UpdateRepositoryInput {
         self.description.as_deref()
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn upstreams(&self) -> ::std::option::Option<&[crate::types::UpstreamRepository]> {
-        self.upstreams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upstreams.is_none()`.
+    pub fn upstreams(&self) -> &[crate::types::UpstreamRepository] {
+        self.upstreams.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRepositoryInput {
@@ -55,6 +57,7 @@ pub struct UpdateRepositoryInputBuilder {
 }
 impl UpdateRepositoryInputBuilder {
     /// <p> The name of the domain associated with the repository to update. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl UpdateRepositoryInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository to update. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self

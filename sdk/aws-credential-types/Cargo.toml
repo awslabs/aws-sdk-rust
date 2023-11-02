@@ -29,6 +29,11 @@ version = "0.56.1"
 path = "../aws-smithy-types"
 version = "0.56.1"
 
+[dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["client"]
+version = "0.56.1"
+
 [dependencies.tokio]
 version = "1.23.1"
 features = ["sync"]
@@ -46,7 +51,3 @@ version = "0.56.1"
 [dev-dependencies.tokio]
 version = "1.23.1"
 features = ["full", "test-util", "rt"]
-
-[dev-dependencies.regex]
-version = "1.0"
-features = ["unicode-case", "unicode-perl"]

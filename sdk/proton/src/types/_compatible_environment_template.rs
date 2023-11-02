@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompatibleEnvironmentTemplate {
     /// <p>The compatible environment template name.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The major version of the compatible environment template.</p>
-    pub major_version: ::std::option::Option<::std::string::String>,
+    pub major_version: ::std::string::String,
 }
 impl CompatibleEnvironmentTemplate {
     /// <p>The compatible environment template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The major version of the compatible environment template.</p>
-    pub fn major_version(&self) -> ::std::option::Option<&str> {
-        self.major_version.as_deref()
+    pub fn major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.major_version.deref()
     }
 }
 impl CompatibleEnvironmentTemplate {
@@ -35,6 +37,7 @@ pub struct CompatibleEnvironmentTemplateBuilder {
 }
 impl CompatibleEnvironmentTemplateBuilder {
     /// <p>The compatible environment template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CompatibleEnvironmentTemplateBuilder {
         &self.template_name
     }
     /// <p>The major version of the compatible environment template.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CompatibleEnvironmentTemplateBuilder {
         &self.major_version
     }
     /// Consumes the builder and constructs a [`CompatibleEnvironmentTemplate`](crate::types::CompatibleEnvironmentTemplate).
-    pub fn build(self) -> crate::types::CompatibleEnvironmentTemplate {
-        crate::types::CompatibleEnvironmentTemplate {
-            template_name: self.template_name,
-            major_version: self.major_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::types::builders::CompatibleEnvironmentTemplateBuilder::template_name)
+    /// - [`major_version`](crate::types::builders::CompatibleEnvironmentTemplateBuilder::major_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::CompatibleEnvironmentTemplate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CompatibleEnvironmentTemplate {
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building CompatibleEnvironmentTemplate",
+                )
+            })?,
+            major_version: self.major_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "major_version",
+                    "major_version was not specified but it is required when building CompatibleEnvironmentTemplate",
+                )
+            })?,
+        })
     }
 }

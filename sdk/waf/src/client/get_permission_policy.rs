@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPermissionPolicy`](crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_permission_policy::builders::GetPermissionPolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the RuleGroup for which you want to get the policy.</p><br>
     /// - On success, responds with [`GetPermissionPolicyOutput`](crate::operation::get_permission_policy::GetPermissionPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_permission_policy::GetPermissionPolicyOutput::policy): <p>The IAM policy attached to the specified RuleGroup.</p>
     /// - On failure, responds with [`SdkError<GetPermissionPolicyError>`](crate::operation::get_permission_policy::GetPermissionPolicyError)

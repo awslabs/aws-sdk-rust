@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PsDetailAttributes {
     /// <p>The format of the data set records.</p>
-    pub format: ::std::option::Option<::std::string::String>,
+    pub format: ::std::string::String,
     /// <p>The character set encoding of the data set.</p>
-    pub encoding: ::std::option::Option<::std::string::String>,
+    pub encoding: ::std::string::String,
 }
 impl PsDetailAttributes {
     /// <p>The format of the data set records.</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
-        self.format.as_deref()
+    pub fn format(&self) -> &str {
+        use std::ops::Deref;
+        self.format.deref()
     }
     /// <p>The character set encoding of the data set.</p>
-    pub fn encoding(&self) -> ::std::option::Option<&str> {
-        self.encoding.as_deref()
+    pub fn encoding(&self) -> &str {
+        use std::ops::Deref;
+        self.encoding.deref()
     }
 }
 impl PsDetailAttributes {
@@ -35,6 +37,7 @@ pub struct PsDetailAttributesBuilder {
 }
 impl PsDetailAttributesBuilder {
     /// <p>The format of the data set records.</p>
+    /// This field is required.
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl PsDetailAttributesBuilder {
         &self.format
     }
     /// <p>The character set encoding of the data set.</p>
+    /// This field is required.
     pub fn encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoding = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl PsDetailAttributesBuilder {
         &self.encoding
     }
     /// Consumes the builder and constructs a [`PsDetailAttributes`](crate::types::PsDetailAttributes).
-    pub fn build(self) -> crate::types::PsDetailAttributes {
-        crate::types::PsDetailAttributes {
-            format: self.format,
-            encoding: self.encoding,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::PsDetailAttributesBuilder::format)
+    /// - [`encoding`](crate::types::builders::PsDetailAttributesBuilder::encoding)
+    pub fn build(self) -> ::std::result::Result<crate::types::PsDetailAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PsDetailAttributes {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building PsDetailAttributes",
+                )
+            })?,
+            encoding: self.encoding.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "encoding",
+                    "encoding was not specified but it is required when building PsDetailAttributes",
+                )
+            })?,
+        })
     }
 }

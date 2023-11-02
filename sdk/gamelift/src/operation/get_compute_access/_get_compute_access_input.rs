@@ -34,6 +34,7 @@ pub struct GetComputeAccessInputBuilder {
 }
 impl GetComputeAccessInputBuilder {
     /// <p>A unique identifier for the fleet that contains the compute resource you want to connect to. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetComputeAccessInputBuilder {
         &self.fleet_id
     }
     /// <p>A unique identifier for the compute resource that you want to connect to. You can use either a registered compute name or an instance ID.</p>
+    /// This field is required.
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self

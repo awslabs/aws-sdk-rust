@@ -28,6 +28,7 @@ pub struct StartChannelInputBuilder {
 }
 impl StartChannelInputBuilder {
     /// A request to start a channel
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self

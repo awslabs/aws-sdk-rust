@@ -11,8 +11,10 @@ pub struct ListTablesOutput {
 }
 impl ListTablesOutput {
     /// <p>A list of tables.</p>
-    pub fn tables(&self) -> ::std::option::Option<&[crate::types::Table]> {
-        self.tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tables.is_none()`.
+    pub fn tables(&self) -> &[crate::types::Table] {
+        self.tables.as_deref().unwrap_or_default()
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -15,8 +15,10 @@ impl GetMetricDataV2Output {
         self.next_token.as_deref()
     }
     /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
-    pub fn metric_results(&self) -> ::std::option::Option<&[crate::types::MetricResultV2]> {
-        self.metric_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_results.is_none()`.
+    pub fn metric_results(&self) -> &[crate::types::MetricResultV2] {
+        self.metric_results.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMetricDataV2Output {

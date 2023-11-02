@@ -42,6 +42,7 @@ pub struct AddApplicationReferenceDataSourceInputBuilder {
 }
 impl AddApplicationReferenceDataSourceInputBuilder {
     /// <p>Name of an existing application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl AddApplicationReferenceDataSourceInputBuilder {
         &self.application_name
     }
     /// <p>Version of the application for which you are adding the reference data source. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl AddApplicationReferenceDataSourceInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.</p>
+    /// This field is required.
     pub fn reference_data_source(mut self, input: crate::types::ReferenceDataSource) -> Self {
         self.reference_data_source = ::std::option::Option::Some(input);
         self

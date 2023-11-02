@@ -55,6 +55,7 @@ pub struct ListAttachedIndicesInputBuilder {
 }
 impl ListAttachedIndicesInputBuilder {
     /// <p>The ARN of the directory.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListAttachedIndicesInputBuilder {
         &self.directory_arn
     }
     /// <p>A reference to the object that has indices attached.</p>
+    /// This field is required.
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_reference = ::std::option::Option::Some(input);
         self

@@ -11,12 +11,16 @@ pub struct ModifyHostsOutput {
 }
 impl ModifyHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
-    pub fn successful(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.successful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful.is_none()`.
+    pub fn successful(&self) -> &[::std::string::String] {
+        self.successful.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
-    pub fn unsuccessful(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulItem]> {
-        self.unsuccessful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful.is_none()`.
+    pub fn unsuccessful(&self) -> &[crate::types::UnsuccessfulItem] {
+        self.unsuccessful.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ModifyHostsOutput {

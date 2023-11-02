@@ -27,6 +27,7 @@ pub struct CancelExportTaskInputBuilder {
 }
 impl CancelExportTaskInputBuilder {
     /// <p>The ID of the export task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self

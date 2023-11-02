@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
+    pub code_signing_config_arn: ::std::string::String,
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
@@ -13,13 +13,14 @@ pub struct PutFunctionCodeSigningConfigOutput {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub function_name: ::std::option::Option<::std::string::String>,
+    pub function_name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl PutFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> ::std::option::Option<&str> {
-        self.code_signing_config_arn.as_deref()
+    pub fn code_signing_config_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.code_signing_config_arn.deref()
     }
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
@@ -29,8 +30,9 @@ impl PutFunctionCodeSigningConfigOutput {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
-        self.function_name.as_deref()
+    pub fn function_name(&self) -> &str {
+        use std::ops::Deref;
+        self.function_name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PutFunctionCodeSigningConfigOutput {
@@ -55,6 +57,7 @@ pub struct PutFunctionCodeSigningConfigOutputBuilder {
 }
 impl PutFunctionCodeSigningConfigOutputBuilder {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    /// This field is required.
     pub fn code_signing_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_signing_config_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl PutFunctionCodeSigningConfigOutputBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
@@ -113,11 +117,29 @@ impl PutFunctionCodeSigningConfigOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutFunctionCodeSigningConfigOutput`](crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput).
-    pub fn build(self) -> crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput {
-        crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput {
-            code_signing_config_arn: self.code_signing_config_arn,
-            function_name: self.function_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code_signing_config_arn`](crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigOutputBuilder::code_signing_config_arn)
+    /// - [`function_name`](crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigOutputBuilder::function_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput {
+            code_signing_config_arn: self.code_signing_config_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code_signing_config_arn",
+                    "code_signing_config_arn was not specified but it is required when building PutFunctionCodeSigningConfigOutput",
+                )
+            })?,
+            function_name: self.function_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "function_name",
+                    "function_name was not specified but it is required when building PutFunctionCodeSigningConfigOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

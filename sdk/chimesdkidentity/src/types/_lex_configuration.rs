@@ -12,9 +12,9 @@ pub struct LexConfiguration {
     /// <p>Specifies the type of message that triggers a bot.</p>
     pub invoked_by: ::std::option::Option<crate::types::InvokedBy>,
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
-    pub lex_bot_alias_arn: ::std::option::Option<::std::string::String>,
+    pub lex_bot_alias_arn: ::std::string::String,
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
-    pub locale_id: ::std::option::Option<::std::string::String>,
+    pub locale_id: ::std::string::String,
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
     pub welcome_intent: ::std::option::Option<::std::string::String>,
 }
@@ -31,12 +31,14 @@ impl LexConfiguration {
         self.invoked_by.as_ref()
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
-    pub fn lex_bot_alias_arn(&self) -> ::std::option::Option<&str> {
-        self.lex_bot_alias_arn.as_deref()
+    pub fn lex_bot_alias_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lex_bot_alias_arn.deref()
     }
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
-        self.locale_id.as_deref()
+    pub fn locale_id(&self) -> &str {
+        use std::ops::Deref;
+        self.locale_id.deref()
     }
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
     pub fn welcome_intent(&self) -> ::std::option::Option<&str> {
@@ -99,6 +101,7 @@ impl LexConfigurationBuilder {
         &self.invoked_by
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
+    /// This field is required.
     pub fn lex_bot_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lex_bot_alias_arn = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +116,7 @@ impl LexConfigurationBuilder {
         &self.lex_bot_alias_arn
     }
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -141,13 +145,26 @@ impl LexConfigurationBuilder {
         &self.welcome_intent
     }
     /// Consumes the builder and constructs a [`LexConfiguration`](crate::types::LexConfiguration).
-    pub fn build(self) -> crate::types::LexConfiguration {
-        crate::types::LexConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lex_bot_alias_arn`](crate::types::builders::LexConfigurationBuilder::lex_bot_alias_arn)
+    /// - [`locale_id`](crate::types::builders::LexConfigurationBuilder::locale_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::LexConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LexConfiguration {
             responds_to: self.responds_to,
             invoked_by: self.invoked_by,
-            lex_bot_alias_arn: self.lex_bot_alias_arn,
-            locale_id: self.locale_id,
+            lex_bot_alias_arn: self.lex_bot_alias_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lex_bot_alias_arn",
+                    "lex_bot_alias_arn was not specified but it is required when building LexConfiguration",
+                )
+            })?,
+            locale_id: self.locale_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "locale_id",
+                    "locale_id was not specified but it is required when building LexConfiguration",
+                )
+            })?,
             welcome_intent: self.welcome_intent,
-        }
+        })
     }
 }

@@ -21,8 +21,10 @@ impl DescribeImageReplicationStatusOutput {
         self.image_id.as_ref()
     }
     /// <p>The replication status details for the images in the specified repository.</p>
-    pub fn replication_statuses(&self) -> ::std::option::Option<&[crate::types::ImageReplicationStatus]> {
-        self.replication_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_statuses.is_none()`.
+    pub fn replication_statuses(&self) -> &[crate::types::ImageReplicationStatus] {
+        self.replication_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeImageReplicationStatusOutput {

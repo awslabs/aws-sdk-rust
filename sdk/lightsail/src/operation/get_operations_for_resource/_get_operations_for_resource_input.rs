@@ -36,6 +36,7 @@ pub struct GetOperationsForResourceInputBuilder {
 }
 impl GetOperationsForResourceInputBuilder {
     /// <p>The name of the resource for which you are requesting information.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self

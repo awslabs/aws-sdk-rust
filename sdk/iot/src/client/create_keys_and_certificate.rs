@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateKeysAndCertificate`](crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`set_as_active(bool)`](crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder::set_as_active) / [`set_set_as_active(Option<bool>)`](crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder::set_set_as_active): <p>Specifies whether the certificate is active.</p>
+    ///   - [`set_as_active(bool)`](crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder::set_as_active) / [`set_set_as_active(Option<bool>)`](crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateFluentBuilder::set_set_as_active):<br>required: **false**<br><p>Specifies whether the certificate is active.</p><br>
     /// - On success, responds with [`CreateKeysAndCertificateOutput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput) with field(s):
     ///   - [`certificate_arn(Option<String>)`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput::certificate_arn): <p>The ARN of the certificate.</p>
     ///   - [`certificate_id(Option<String>)`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput::certificate_id): <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>

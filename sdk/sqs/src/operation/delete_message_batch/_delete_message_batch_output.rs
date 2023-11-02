@@ -5,19 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMessageBatchOutput {
     /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
-    pub successful: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchResultEntry>>,
+    pub successful: ::std::vec::Vec<crate::types::DeleteMessageBatchResultEntry>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+    pub failed: ::std::vec::Vec<crate::types::BatchResultErrorEntry>,
     _request_id: Option<String>,
 }
 impl DeleteMessageBatchOutput {
     /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
-    pub fn successful(&self) -> ::std::option::Option<&[crate::types::DeleteMessageBatchResultEntry]> {
-        self.successful.as_deref()
+    pub fn successful(&self) -> &[crate::types::DeleteMessageBatchResultEntry] {
+        use std::ops::Deref;
+        self.successful.deref()
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    pub fn failed(&self) -> ::std::option::Option<&[crate::types::BatchResultErrorEntry]> {
-        self.failed.as_deref()
+    pub fn failed(&self) -> &[crate::types::BatchResultErrorEntry] {
+        use std::ops::Deref;
+        self.failed.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteMessageBatchOutput {
@@ -91,11 +93,27 @@ impl DeleteMessageBatchOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteMessageBatchOutput`](crate::operation::delete_message_batch::DeleteMessageBatchOutput).
-    pub fn build(self) -> crate::operation::delete_message_batch::DeleteMessageBatchOutput {
-        crate::operation::delete_message_batch::DeleteMessageBatchOutput {
-            successful: self.successful,
-            failed: self.failed,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`successful`](crate::operation::delete_message_batch::builders::DeleteMessageBatchOutputBuilder::successful)
+    /// - [`failed`](crate::operation::delete_message_batch::builders::DeleteMessageBatchOutputBuilder::failed)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_message_batch::DeleteMessageBatchOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_message_batch::DeleteMessageBatchOutput {
+            successful: self.successful.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "successful",
+                    "successful was not specified but it is required when building DeleteMessageBatchOutput",
+                )
+            })?,
+            failed: self.failed.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failed",
+                    "failed was not specified but it is required when building DeleteMessageBatchOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

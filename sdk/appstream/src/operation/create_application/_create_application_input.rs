@@ -56,12 +56,16 @@ impl CreateApplicationInput {
         self.launch_parameters.as_deref()
     }
     /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::PlatformType]> {
-        self.platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
+    pub fn platforms(&self) -> &[crate::types::PlatformType] {
+        self.platforms.as_deref().unwrap_or_default()
     }
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-    pub fn instance_families(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_families.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_families.is_none()`.
+    pub fn instance_families(&self) -> &[::std::string::String] {
+        self.instance_families.as_deref().unwrap_or_default()
     }
     /// <p>The app block ARN to which the application should be associated</p>
     pub fn app_block_arn(&self) -> ::std::option::Option<&str> {
@@ -97,6 +101,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +144,7 @@ impl CreateApplicationInputBuilder {
         &self.description
     }
     /// <p>The location in S3 of the application icon.</p>
+    /// This field is required.
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.icon_s3_location = ::std::option::Option::Some(input);
         self
@@ -153,6 +159,7 @@ impl CreateApplicationInputBuilder {
         &self.icon_s3_location
     }
     /// <p>The launch path of the application.</p>
+    /// This field is required.
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_path = ::std::option::Option::Some(input.into());
         self
@@ -235,6 +242,7 @@ impl CreateApplicationInputBuilder {
         &self.instance_families
     }
     /// <p>The app block ARN to which the application should be associated</p>
+    /// This field is required.
     pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self

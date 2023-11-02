@@ -59,6 +59,7 @@ pub struct ListServiceQuotasInputBuilder {
 }
 impl ListServiceQuotasInputBuilder {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self

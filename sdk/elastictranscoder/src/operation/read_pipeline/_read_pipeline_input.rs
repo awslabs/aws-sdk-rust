@@ -28,6 +28,7 @@ pub struct ReadPipelineInputBuilder {
 }
 impl ReadPipelineInputBuilder {
     /// <p>The identifier of the pipeline to read.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

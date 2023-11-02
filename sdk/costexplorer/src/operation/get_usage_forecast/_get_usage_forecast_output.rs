@@ -15,8 +15,10 @@ impl GetUsageForecastOutput {
         self.total.as_ref()
     }
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
-    pub fn forecast_results_by_time(&self) -> ::std::option::Option<&[crate::types::ForecastResult]> {
-        self.forecast_results_by_time.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_results_by_time.is_none()`.
+    pub fn forecast_results_by_time(&self) -> &[crate::types::ForecastResult] {
+        self.forecast_results_by_time.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetUsageForecastOutput {

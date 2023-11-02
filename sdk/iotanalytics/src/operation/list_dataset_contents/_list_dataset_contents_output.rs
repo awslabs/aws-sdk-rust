@@ -11,8 +11,10 @@ pub struct ListDatasetContentsOutput {
 }
 impl ListDatasetContentsOutput {
     /// <p>Summary information about dataset contents that have been created.</p>
-    pub fn dataset_content_summaries(&self) -> ::std::option::Option<&[crate::types::DatasetContentSummary]> {
-        self.dataset_content_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_content_summaries.is_none()`.
+    pub fn dataset_content_summaries(&self) -> &[crate::types::DatasetContentSummary] {
+        self.dataset_content_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

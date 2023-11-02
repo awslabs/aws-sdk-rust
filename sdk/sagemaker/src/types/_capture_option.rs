@@ -28,6 +28,7 @@ pub struct CaptureOptionBuilder {
 }
 impl CaptureOptionBuilder {
     /// <p>Specify the boundary of data to capture.</p>
+    /// This field is required.
     pub fn capture_mode(mut self, input: crate::types::CaptureMode) -> Self {
         self.capture_mode = ::std::option::Option::Some(input);
         self

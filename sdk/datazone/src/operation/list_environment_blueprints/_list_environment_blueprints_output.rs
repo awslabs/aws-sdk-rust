@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentBlueprintsOutput {
     /// <p>The results of the <code>ListEnvironmentBlueprints</code> action.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentBlueprintSummary>>,
+    pub items: ::std::vec::Vec<crate::types::EnvironmentBlueprintSummary>,
     /// <p>When the number of blueprints in the environment is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of blueprints in the environment, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentBlueprints</code>to list the next set of blueprints.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentBlueprintsOutput {
     /// <p>The results of the <code>ListEnvironmentBlueprints</code> action.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EnvironmentBlueprintSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::EnvironmentBlueprintSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>When the number of blueprints in the environment is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of blueprints in the environment, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentBlueprints</code>to list the next set of blueprints.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListEnvironmentBlueprintsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentBlueprintsOutput`](crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsOutput).
-    pub fn build(self) -> crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsOutput {
-        crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_environment_blueprints::builders::ListEnvironmentBlueprintsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListEnvironmentBlueprintsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

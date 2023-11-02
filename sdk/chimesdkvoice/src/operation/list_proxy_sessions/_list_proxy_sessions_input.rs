@@ -48,6 +48,7 @@ pub struct ListProxySessionsInputBuilder {
 }
 impl ListProxySessionsInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self

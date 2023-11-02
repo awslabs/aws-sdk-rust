@@ -4,24 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// <p>The name of the channel.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub filler_slate: ::std::option::Option<crate::types::SlateSource>,
     /// <p>The channel's output properties.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>,
+    pub outputs: ::std::vec::Vec<crate::types::RequestOutputItem>,
 }
 impl UpdateChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn filler_slate(&self) -> ::std::option::Option<&crate::types::SlateSource> {
         self.filler_slate.as_ref()
     }
     /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::RequestOutputItem]> {
-        self.outputs.as_deref()
+    pub fn outputs(&self) -> &[crate::types::RequestOutputItem] {
+        use std::ops::Deref;
+        self.outputs.deref()
     }
 }
 impl UpdateChannelInput {
@@ -41,6 +43,7 @@ pub struct UpdateChannelInputBuilder {
 }
 impl UpdateChannelInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -89,13 +92,26 @@ impl UpdateChannelInputBuilder {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_name`](crate::operation::update_channel::builders::UpdateChannelInputBuilder::channel_name)
+    /// - [`outputs`](crate::operation::update_channel::builders::UpdateChannelInputBuilder::outputs)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
-            channel_name: self.channel_name,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building UpdateChannelInput",
+                )
+            })?,
             filler_slate: self.filler_slate,
-            outputs: self.outputs,
+            outputs: self.outputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "outputs",
+                    "outputs was not specified but it is required when building UpdateChannelInput",
+                )
+            })?,
         })
     }
 }

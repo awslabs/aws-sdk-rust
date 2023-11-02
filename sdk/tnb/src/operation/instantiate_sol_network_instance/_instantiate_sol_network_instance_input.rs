@@ -58,6 +58,7 @@ pub struct InstantiateSolNetworkInstanceInputBuilder {
 }
 impl InstantiateSolNetworkInstanceInputBuilder {
     /// <p>ID of the network instance.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self

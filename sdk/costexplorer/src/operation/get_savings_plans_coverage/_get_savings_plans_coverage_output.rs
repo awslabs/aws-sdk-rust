@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageOutput {
     /// <p>The amount of spend that your Savings Plans covered.</p>
-    pub savings_plans_coverages: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansCoverage>>,
+    pub savings_plans_coverages: ::std::vec::Vec<crate::types::SavingsPlansCoverage>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetSavingsPlansCoverageOutput {
     /// <p>The amount of spend that your Savings Plans covered.</p>
-    pub fn savings_plans_coverages(&self) -> ::std::option::Option<&[crate::types::SavingsPlansCoverage]> {
-        self.savings_plans_coverages.as_deref()
+    pub fn savings_plans_coverages(&self) -> &[crate::types::SavingsPlansCoverage] {
+        use std::ops::Deref;
+        self.savings_plans_coverages.deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl GetSavingsPlansCoverageOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansCoverageOutput`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput).
-    pub fn build(self) -> crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput {
-        crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput {
-            savings_plans_coverages: self.savings_plans_coverages,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`savings_plans_coverages`](crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageOutputBuilder::savings_plans_coverages)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput {
+            savings_plans_coverages: self.savings_plans_coverages.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "savings_plans_coverages",
+                    "savings_plans_coverages was not specified but it is required when building GetSavingsPlansCoverageOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

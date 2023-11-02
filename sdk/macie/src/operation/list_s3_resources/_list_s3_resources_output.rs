@@ -11,8 +11,10 @@ pub struct ListS3ResourcesOutput {
 }
 impl ListS3ResourcesOutput {
     /// <p>(Discontinued) A list of the associated S3 resources returned by the action.</p>
-    pub fn s3_resources(&self) -> ::std::option::Option<&[crate::types::S3ResourceClassification]> {
-        self.s3_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_resources.is_none()`.
+    pub fn s3_resources(&self) -> &[crate::types::S3ResourceClassification] {
+        self.s3_resources.as_deref().unwrap_or_default()
     }
     /// <p>(Discontinued) When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <code>nextToken</code> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

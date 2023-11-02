@@ -34,8 +34,8 @@ pub fn de_describe_organization_config_rule_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::InvalidNextTokenException({
@@ -50,8 +50,8 @@ pub fn de_describe_organization_config_rule_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOrganizationConfigRuleException" => crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::NoSuchOrganizationConfigRuleException({
@@ -66,8 +66,8 @@ pub fn de_describe_organization_config_rule_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationAccessDeniedException" => crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::OrganizationAccessDeniedException({
@@ -82,8 +82,8 @@ pub fn de_describe_organization_config_rule_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::generic(generic)

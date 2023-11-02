@@ -55,7 +55,7 @@ pub fn de_create_snapshot_http_error(
                 output = crate::protocol_serde::shape_service_limit_exceeded::de_service_limit_exceeded_json_err(_response_body, output)
                     .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_limit_exceeded_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

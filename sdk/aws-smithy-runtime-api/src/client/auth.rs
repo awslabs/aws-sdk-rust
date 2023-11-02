@@ -9,6 +9,7 @@ use crate::box_error::BoxError;
 use crate::client::identity::{Identity, SharedIdentityResolver};
 use crate::client::orchestrator::HttpRequest;
 use crate::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
+use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::type_erasure::TypeErasedBox;
 use aws_smithy_types::Document;
@@ -120,6 +121,12 @@ impl AuthSchemeOptionResolver for SharedAuthSchemeOptionResolver {
     }
 }
 
+impl_shared_conversions!(
+    convert SharedAuthSchemeOptionResolver
+    from AuthSchemeOptionResolver
+    using SharedAuthSchemeOptionResolver::new
+);
+
 /// An auth scheme.
 ///
 /// Auth schemes have unique identifiers (the `scheme_id`),
@@ -176,6 +183,8 @@ impl AuthScheme for SharedAuthScheme {
         self.0.signer()
     }
 }
+
+impl_shared_conversions!(convert SharedAuthScheme from AuthScheme using SharedAuthScheme::new);
 
 /// Signing implementation for an auth scheme.
 pub trait Signer: Send + Sync + fmt::Debug {

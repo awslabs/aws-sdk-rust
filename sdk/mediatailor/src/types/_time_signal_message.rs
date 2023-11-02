@@ -11,8 +11,10 @@ pub struct TimeSignalMessage {
 }
 impl TimeSignalMessage {
     /// <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code> message(s) sent with the <code>time_signal</code> message.</p>
-    pub fn segmentation_descriptors(&self) -> ::std::option::Option<&[crate::types::SegmentationDescriptor]> {
-        self.segmentation_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segmentation_descriptors.is_none()`.
+    pub fn segmentation_descriptors(&self) -> &[crate::types::SegmentationDescriptor] {
+        self.segmentation_descriptors.as_deref().unwrap_or_default()
     }
 }
 impl TimeSignalMessage {

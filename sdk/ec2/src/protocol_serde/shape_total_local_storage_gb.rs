@@ -23,6 +23,7 @@ pub fn ser_total_local_storage_gb(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_total_local_storage_gb(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TotalLocalStorageGb, ::aws_smithy_xml::decode::XmlDecodeError> {

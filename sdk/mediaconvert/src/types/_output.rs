@@ -23,12 +23,16 @@ pub struct Output {
 }
 impl Output {
     /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
-    pub fn audio_descriptions(&self) -> ::std::option::Option<&[crate::types::AudioDescription]> {
-        self.audio_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_descriptions.is_none()`.
+    pub fn audio_descriptions(&self) -> &[crate::types::AudioDescription] {
+        self.audio_descriptions.as_deref().unwrap_or_default()
     }
     /// Contains groups of captions settings. For each output that has captions, include one instance of CaptionDescriptions. Can contain multiple groups of captions settings.
-    pub fn caption_descriptions(&self) -> ::std::option::Option<&[crate::types::CaptionDescription]> {
-        self.caption_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_descriptions.is_none()`.
+    pub fn caption_descriptions(&self) -> &[crate::types::CaptionDescription] {
+        self.caption_descriptions.as_deref().unwrap_or_default()
     }
     /// Container specific settings.
     pub fn container_settings(&self) -> ::std::option::Option<&crate::types::ContainerSettings> {

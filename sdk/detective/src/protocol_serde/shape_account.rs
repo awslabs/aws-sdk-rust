@@ -3,11 +3,11 @@ pub fn ser_account(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Account,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.account_id {
-        object.key("AccountId").string(var_1.as_str());
+    {
+        object.key("AccountId").string(input.account_id.as_str());
     }
-    if let Some(var_2) = &input.email_address {
-        object.key("EmailAddress").string(var_2.as_str());
+    {
+        object.key("EmailAddress").string(input.email_address.as_str());
     }
     Ok(())
 }

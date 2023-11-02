@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EvaluateExpression`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_id(impl Into<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::set_pipeline_id): <p>The ID of the pipeline.</p>
-    ///   - [`object_id(impl Into<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::object_id) / [`set_object_id(Option<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::set_object_id): <p>The ID of the object.</p>
-    ///   - [`expression(impl Into<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::expression) / [`set_expression(Option<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::set_expression): <p>The expression to evaluate.</p>
+    ///   - [`pipeline_id(impl Into<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::set_pipeline_id):<br>required: **true**<br><p>The ID of the pipeline.</p><br>
+    ///   - [`object_id(impl Into<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::object_id) / [`set_object_id(Option<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::set_object_id):<br>required: **true**<br><p>The ID of the object.</p><br>
+    ///   - [`expression(impl Into<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::expression) / [`set_expression(Option<String>)`](crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::set_expression):<br>required: **true**<br><p>The expression to evaluate.</p><br>
     /// - On success, responds with [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput) with field(s):
-    ///   - [`evaluated_expression(Option<String>)`](crate::operation::evaluate_expression::EvaluateExpressionOutput::evaluated_expression): <p>The evaluated expression.</p>
+    ///   - [`evaluated_expression(String)`](crate::operation::evaluate_expression::EvaluateExpressionOutput::evaluated_expression): <p>The evaluated expression.</p>
     /// - On failure, responds with [`SdkError<EvaluateExpressionError>`](crate::operation::evaluate_expression::EvaluateExpressionError)
     pub fn evaluate_expression(&self) -> crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder {
         crate::operation::evaluate_expression::builders::EvaluateExpressionFluentBuilder::new(self.handle.clone())

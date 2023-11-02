@@ -4,18 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectorEntitiesOutput {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
-    pub connector_entity_map:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>>,
+    pub connector_entity_map: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>,
     /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListConnectorEntitiesOutput {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
-    pub fn connector_entity_map(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>>> {
-        self.connector_entity_map.as_ref()
+    pub fn connector_entity_map(&self) -> &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ConnectorEntity>> {
+        &self.connector_entity_map
     }
     /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -97,11 +94,21 @@ impl ListConnectorEntitiesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConnectorEntitiesOutput`](crate::operation::list_connector_entities::ListConnectorEntitiesOutput).
-    pub fn build(self) -> crate::operation::list_connector_entities::ListConnectorEntitiesOutput {
-        crate::operation::list_connector_entities::ListConnectorEntitiesOutput {
-            connector_entity_map: self.connector_entity_map,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connector_entity_map`](crate::operation::list_connector_entities::builders::ListConnectorEntitiesOutputBuilder::connector_entity_map)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_connector_entities::ListConnectorEntitiesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_connector_entities::ListConnectorEntitiesOutput {
+            connector_entity_map: self.connector_entity_map.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connector_entity_map",
+                    "connector_entity_map was not specified but it is required when building ListConnectorEntitiesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

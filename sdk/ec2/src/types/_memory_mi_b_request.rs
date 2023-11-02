@@ -35,6 +35,7 @@ pub struct MemoryMiBRequestBuilder {
 }
 impl MemoryMiBRequestBuilder {
     /// <p>The minimum amount of memory, in MiB. To specify no minimum limit, specify <code>0</code>.</p>
+    /// This field is required.
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
         self

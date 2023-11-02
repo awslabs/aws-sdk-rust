@@ -15,8 +15,10 @@ impl DimensionGroupDetail {
         self.group.as_deref()
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::DimensionDetail]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::DimensionDetail] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
 }
 impl DimensionGroupDetail {

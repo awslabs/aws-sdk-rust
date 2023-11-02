@@ -11,12 +11,16 @@ pub struct BatchGetCustomDataIdentifiersOutput {
 }
 impl BatchGetCustomDataIdentifiersOutput {
     /// <p>An array of objects, one for each custom data identifier that matches the criteria specified in the request.</p>
-    pub fn custom_data_identifiers(&self) -> ::std::option::Option<&[crate::types::BatchGetCustomDataIdentifierSummary]> {
-        self.custom_data_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_data_identifiers.is_none()`.
+    pub fn custom_data_identifiers(&self) -> &[crate::types::BatchGetCustomDataIdentifierSummary] {
+        self.custom_data_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
-    pub fn not_found_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_found_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_found_identifier_ids.is_none()`.
+    pub fn not_found_identifier_ids(&self) -> &[::std::string::String] {
+        self.not_found_identifier_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetCustomDataIdentifiersOutput {

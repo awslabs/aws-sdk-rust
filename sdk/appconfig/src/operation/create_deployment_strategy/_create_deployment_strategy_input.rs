@@ -88,6 +88,7 @@ pub struct CreateDeploymentStrategyInputBuilder {
 }
 impl CreateDeploymentStrategyInputBuilder {
     /// <p>A name for the deployment strategy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +117,7 @@ impl CreateDeploymentStrategyInputBuilder {
         &self.description
     }
     /// <p>Total amount of time for a deployment to last.</p>
+    /// This field is required.
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
         self.deployment_duration_in_minutes = ::std::option::Option::Some(input);
         self
@@ -144,6 +146,7 @@ impl CreateDeploymentStrategyInputBuilder {
         &self.final_bake_time_in_minutes
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    /// This field is required.
     pub fn growth_factor(mut self, input: f32) -> Self {
         self.growth_factor = ::std::option::Option::Some(input);
         self

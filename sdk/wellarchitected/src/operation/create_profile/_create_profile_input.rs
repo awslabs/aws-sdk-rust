@@ -27,8 +27,10 @@ impl CreateProfileInput {
         self.profile_description.as_deref()
     }
     /// <p>The profile questions.</p>
-    pub fn profile_questions(&self) -> ::std::option::Option<&[crate::types::ProfileQuestionUpdate]> {
-        self.profile_questions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_questions.is_none()`.
+    pub fn profile_questions(&self) -> &[crate::types::ProfileQuestionUpdate] {
+        self.profile_questions.as_deref().unwrap_or_default()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -61,6 +63,7 @@ pub struct CreateProfileInputBuilder {
 }
 impl CreateProfileInputBuilder {
     /// <p>Name of the profile.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl CreateProfileInputBuilder {
         &self.profile_name
     }
     /// <p>The profile description.</p>
+    /// This field is required.
     pub fn profile_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_description = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl CreateProfileInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

@@ -28,6 +28,7 @@ pub struct GetSubscriptionAttributesInputBuilder {
 }
 impl GetSubscriptionAttributesInputBuilder {
     /// <p>The ARN of the subscription whose properties you want to get.</p>
+    /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self

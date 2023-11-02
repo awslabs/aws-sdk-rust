@@ -15,8 +15,10 @@ impl GetGroupsForCapacityReservationOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the resource groups to which the Capacity Reservation has been added.</p>
-    pub fn capacity_reservation_groups(&self) -> ::std::option::Option<&[crate::types::CapacityReservationGroup]> {
-        self.capacity_reservation_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_reservation_groups.is_none()`.
+    pub fn capacity_reservation_groups(&self) -> &[crate::types::CapacityReservationGroup] {
+        self.capacity_reservation_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetGroupsForCapacityReservationOutput {

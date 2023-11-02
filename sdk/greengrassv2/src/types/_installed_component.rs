@@ -69,8 +69,10 @@ impl InstalledComponent {
     /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note>
-    pub fn lifecycle_status_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lifecycle_status_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_status_codes.is_none()`.
+    pub fn lifecycle_status_codes(&self) -> &[::std::string::String] {
+        self.lifecycle_status_codes.as_deref().unwrap_or_default()
     }
 }
 impl InstalledComponent {

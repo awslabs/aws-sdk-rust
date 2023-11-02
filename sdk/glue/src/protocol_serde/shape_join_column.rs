@@ -3,23 +3,23 @@ pub fn ser_join_column(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JoinColumn,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.from {
-        object.key("From").string(var_1.as_str());
+    {
+        object.key("From").string(input.from.as_str());
     }
-    if let Some(var_2) = &input.keys {
-        let mut array_3 = object.key("Keys").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Keys").start_array();
+        for item_2 in &input.keys {
             {
-                let mut array_5 = array_3.value().start_array();
-                for item_6 in item_4 {
+                let mut array_3 = array_1.value().start_array();
+                for item_4 in item_2 {
                     {
-                        array_5.value().string(item_6.as_str());
+                        array_3.value().string(item_4.as_str());
                     }
                 }
-                array_5.finish();
+                array_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -59,7 +59,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::join_column_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

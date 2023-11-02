@@ -11,8 +11,10 @@ pub struct DescribeApplicationFleetAssociationsOutput {
 }
 impl DescribeApplicationFleetAssociationsOutput {
     /// <p>The application fleet associations in the list.</p>
-    pub fn application_fleet_associations(&self) -> ::std::option::Option<&[crate::types::ApplicationFleetAssociation]> {
-        self.application_fleet_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_fleet_associations.is_none()`.
+    pub fn application_fleet_associations(&self) -> &[crate::types::ApplicationFleetAssociation] {
+        self.application_fleet_associations.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

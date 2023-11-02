@@ -28,6 +28,7 @@ pub struct PutDeliveryChannelInputBuilder {
 }
 impl PutDeliveryChannelInputBuilder {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// This field is required.
     pub fn delivery_channel(mut self, input: crate::types::DeliveryChannel) -> Self {
         self.delivery_channel = ::std::option::Option::Some(input);
         self

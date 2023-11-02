@@ -34,6 +34,7 @@ pub struct UpdateHitTypeOfHitInputBuilder {
 }
 impl UpdateHitTypeOfHitInputBuilder {
     /// <p>The HIT to update.</p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateHitTypeOfHitInputBuilder {
         &self.hit_id
     }
     /// <p>The ID of the new HIT type.</p>
+    /// This field is required.
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
         self

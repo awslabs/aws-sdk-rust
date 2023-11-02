@@ -3,26 +3,26 @@ pub fn ser_matching_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MatchingRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("Enabled").boolean(*var_1);
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.job_schedule {
+    if let Some(var_1) = &input.job_schedule {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("JobSchedule").start_object();
-        crate::protocol_serde::shape_job_schedule::ser_job_schedule(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("JobSchedule").start_object();
+        crate::protocol_serde::shape_job_schedule::ser_job_schedule(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.auto_merging {
+    if let Some(var_3) = &input.auto_merging {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AutoMerging").start_object();
-        crate::protocol_serde::shape_auto_merging::ser_auto_merging(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("AutoMerging").start_object();
+        crate::protocol_serde::shape_auto_merging::ser_auto_merging(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.exporting_config {
+    if let Some(var_5) = &input.exporting_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ExportingConfig").start_object();
-        crate::protocol_serde::shape_exporting_config::ser_exporting_config(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ExportingConfig").start_object();
+        crate::protocol_serde::shape_exporting_config::ser_exporting_config(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

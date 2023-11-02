@@ -34,6 +34,7 @@ pub struct DeleteWorkGroupInputBuilder {
 }
 impl DeleteWorkGroupInputBuilder {
     /// <p>The unique name of the workgroup to delete.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self

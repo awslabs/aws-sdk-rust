@@ -12,12 +12,16 @@ pub struct ModifyInstanceCreditSpecificationOutput {
 }
 impl ModifyInstanceCreditSpecificationOutput {
     /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
-    pub fn successful_instance_credit_specifications(&self) -> ::std::option::Option<&[crate::types::SuccessfulInstanceCreditSpecificationItem]> {
-        self.successful_instance_credit_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_instance_credit_specifications.is_none()`.
+    pub fn successful_instance_credit_specifications(&self) -> &[crate::types::SuccessfulInstanceCreditSpecificationItem] {
+        self.successful_instance_credit_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
-    pub fn unsuccessful_instance_credit_specifications(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulInstanceCreditSpecificationItem]> {
-        self.unsuccessful_instance_credit_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful_instance_credit_specifications.is_none()`.
+    pub fn unsuccessful_instance_credit_specifications(&self) -> &[crate::types::UnsuccessfulInstanceCreditSpecificationItem] {
+        self.unsuccessful_instance_credit_specifications.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ModifyInstanceCreditSpecificationOutput {

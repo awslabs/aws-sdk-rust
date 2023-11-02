@@ -35,6 +35,7 @@ pub struct EncryptionConfigurationBuilder {
 }
 impl EncryptionConfigurationBuilder {
     /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
+    /// This field is required.
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
         self

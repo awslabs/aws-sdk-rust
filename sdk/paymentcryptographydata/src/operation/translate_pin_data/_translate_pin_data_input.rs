@@ -82,6 +82,7 @@ pub struct TranslatePinDataInputBuilder {
 }
 impl TranslatePinDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
+    /// This field is required.
     pub fn incoming_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incoming_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl TranslatePinDataInputBuilder {
         &self.incoming_key_identifier
     }
     /// <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.</p>
+    /// This field is required.
     pub fn outgoing_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outgoing_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +112,7 @@ impl TranslatePinDataInputBuilder {
         &self.outgoing_key_identifier
     }
     /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn incoming_translation_attributes(mut self, input: crate::types::TranslationIsoFormats) -> Self {
         self.incoming_translation_attributes = ::std::option::Option::Some(input);
         self
@@ -124,6 +127,7 @@ impl TranslatePinDataInputBuilder {
         &self.incoming_translation_attributes
     }
     /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn outgoing_translation_attributes(mut self, input: crate::types::TranslationIsoFormats) -> Self {
         self.outgoing_translation_attributes = ::std::option::Option::Some(input);
         self
@@ -138,6 +142,7 @@ impl TranslatePinDataInputBuilder {
         &self.outgoing_translation_attributes
     }
     /// <p>The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.</p>
+    /// This field is required.
     pub fn encrypted_pin_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encrypted_pin_block = ::std::option::Option::Some(input.into());
         self

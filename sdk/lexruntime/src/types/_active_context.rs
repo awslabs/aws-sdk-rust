@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl ActiveContext {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub fn time_to_live(&self) -> ::std::option::Option<&crate::types::ActiveContextTimeToLive> {
         self.time_to_live.as_ref()
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.parameters.as_ref()
+    pub fn parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.parameters
     }
 }
 impl ActiveContext {
@@ -42,6 +43,7 @@ pub struct ActiveContextBuilder {
 }
 impl ActiveContextBuilder {
     /// <p>The name of the context.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl ActiveContextBuilder {
         &self.name
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
+    /// This field is required.
     pub fn time_to_live(mut self, input: crate::types::ActiveContextTimeToLive) -> Self {
         self.time_to_live = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,24 @@ impl ActiveContextBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ActiveContext`](crate::types::ActiveContext).
-    pub fn build(self) -> crate::types::ActiveContext {
-        crate::types::ActiveContext {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ActiveContextBuilder::name)
+    /// - [`parameters`](crate::types::builders::ActiveContextBuilder::parameters)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActiveContext, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActiveContext {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ActiveContext",
+                )
+            })?,
             time_to_live: self.time_to_live,
-            parameters: self.parameters,
-        }
+            parameters: self.parameters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameters",
+                    "parameters was not specified but it is required when building ActiveContext",
+                )
+            })?,
+        })
     }
 }

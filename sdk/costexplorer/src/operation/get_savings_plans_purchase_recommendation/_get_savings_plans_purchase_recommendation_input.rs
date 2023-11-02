@@ -78,6 +78,7 @@ pub struct GetSavingsPlansPurchaseRecommendationInputBuilder {
 }
 impl GetSavingsPlansPurchaseRecommendationInputBuilder {
     /// <p>The Savings Plans recommendation type that's requested.</p>
+    /// This field is required.
     pub fn savings_plans_type(mut self, input: crate::types::SupportedSavingsPlansType) -> Self {
         self.savings_plans_type = ::std::option::Option::Some(input);
         self
@@ -92,6 +93,7 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         &self.savings_plans_type
     }
     /// <p>The savings plan recommendation term that's used to generate these recommendations.</p>
+    /// This field is required.
     pub fn term_in_years(mut self, input: crate::types::TermInYears) -> Self {
         self.term_in_years = ::std::option::Option::Some(input);
         self
@@ -106,6 +108,7 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         &self.term_in_years
     }
     /// <p>The payment option that's used to generate these recommendations.</p>
+    /// This field is required.
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
         self
@@ -162,6 +165,7 @@ impl GetSavingsPlansPurchaseRecommendationInputBuilder {
         &self.page_size
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
+    /// This field is required.
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
         self.lookback_period_in_days = ::std::option::Option::Some(input);
         self

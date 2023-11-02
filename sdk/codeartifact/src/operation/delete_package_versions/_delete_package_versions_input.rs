@@ -58,8 +58,10 @@ impl DeletePackageVersionsInput {
         self.package.as_deref()
     }
     /// <p> An array of strings that specify the versions of the package to delete. </p>
-    pub fn versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[::std::string::String] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p> The expected status of the package version to delete. </p>
     pub fn expected_status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
@@ -88,6 +90,7 @@ pub struct DeletePackageVersionsInputBuilder {
 }
 impl DeletePackageVersionsInputBuilder {
     /// <p> The name of the domain that contains the package to delete. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl DeletePackageVersionsInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that contains the package versions to delete. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +134,7 @@ impl DeletePackageVersionsInputBuilder {
         &self.repository
     }
     /// <p> The format of the package versions to delete. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -176,6 +181,7 @@ impl DeletePackageVersionsInputBuilder {
         &self.namespace
     }
     /// <p> The name of the package with the versions to delete. </p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self

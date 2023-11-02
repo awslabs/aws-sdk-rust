@@ -27,6 +27,7 @@ pub struct GetTelemetryMetadataInputBuilder {
 }
 impl GetTelemetryMetadataInputBuilder {
     /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+    /// This field is required.
     pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self

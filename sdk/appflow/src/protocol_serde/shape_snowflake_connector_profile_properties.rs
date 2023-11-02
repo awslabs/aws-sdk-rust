@@ -3,26 +3,26 @@ pub fn ser_snowflake_connector_profile_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnowflakeConnectorProfileProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.warehouse {
-        object.key("warehouse").string(var_1.as_str());
+    {
+        object.key("warehouse").string(input.warehouse.as_str());
     }
-    if let Some(var_2) = &input.stage {
-        object.key("stage").string(var_2.as_str());
+    {
+        object.key("stage").string(input.stage.as_str());
     }
-    if let Some(var_3) = &input.bucket_name {
-        object.key("bucketName").string(var_3.as_str());
+    {
+        object.key("bucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_4) = &input.bucket_prefix {
-        object.key("bucketPrefix").string(var_4.as_str());
+    if let Some(var_1) = &input.bucket_prefix {
+        object.key("bucketPrefix").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.private_link_service_name {
-        object.key("privateLinkServiceName").string(var_5.as_str());
+    if let Some(var_2) = &input.private_link_service_name {
+        object.key("privateLinkServiceName").string(var_2.as_str());
     }
-    if let Some(var_6) = &input.account_name {
-        object.key("accountName").string(var_6.as_str());
+    if let Some(var_3) = &input.account_name {
+        object.key("accountName").string(var_3.as_str());
     }
-    if let Some(var_7) = &input.region {
-        object.key("region").string(var_7.as_str());
+    if let Some(var_4) = &input.region {
+        object.key("region").string(var_4.as_str());
     }
     Ok(())
 }
@@ -101,7 +101,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::snowflake_connector_profile_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

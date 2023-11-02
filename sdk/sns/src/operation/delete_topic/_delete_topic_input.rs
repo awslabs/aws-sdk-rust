@@ -27,6 +27,7 @@ pub struct DeleteTopicInputBuilder {
 }
 impl DeleteTopicInputBuilder {
     /// <p>The ARN of the topic you want to delete.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self

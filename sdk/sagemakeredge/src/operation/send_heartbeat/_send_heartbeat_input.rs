@@ -18,12 +18,16 @@ pub struct SendHeartbeatInput {
 }
 impl SendHeartbeatInput {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    pub fn agent_metrics(&self) -> ::std::option::Option<&[crate::types::EdgeMetric]> {
-        self.agent_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_metrics.is_none()`.
+    pub fn agent_metrics(&self) -> &[crate::types::EdgeMetric] {
+        self.agent_metrics.as_deref().unwrap_or_default()
     }
     /// <p>Returns a list of models deployed on the the device.</p>
-    pub fn models(&self) -> ::std::option::Option<&[crate::types::Model]> {
-        self.models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
+    pub fn models(&self) -> &[crate::types::Model] {
+        self.models.as_deref().unwrap_or_default()
     }
     /// <p>Returns the version of the agent.</p>
     pub fn agent_version(&self) -> ::std::option::Option<&str> {
@@ -102,6 +106,7 @@ impl SendHeartbeatInputBuilder {
         &self.models
     }
     /// <p>Returns the version of the agent.</p>
+    /// This field is required.
     pub fn agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_version = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +121,7 @@ impl SendHeartbeatInputBuilder {
         &self.agent_version
     }
     /// <p>The unique name of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +136,7 @@ impl SendHeartbeatInputBuilder {
         &self.device_name
     }
     /// <p>The name of the fleet that the device belongs to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

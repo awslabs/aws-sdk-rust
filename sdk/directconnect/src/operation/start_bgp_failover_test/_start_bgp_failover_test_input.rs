@@ -18,8 +18,10 @@ impl StartBgpFailoverTestInput {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The BGP peers to place in the DOWN state.</p>
-    pub fn bgp_peers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bgp_peers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_peers.is_none()`.
+    pub fn bgp_peers(&self) -> &[::std::string::String] {
+        self.bgp_peers.as_deref().unwrap_or_default()
     }
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
@@ -45,6 +47,7 @@ pub struct StartBgpFailoverTestInputBuilder {
 }
 impl StartBgpFailoverTestInputBuilder {
     /// <p>The ID of the virtual interface you want to test.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self

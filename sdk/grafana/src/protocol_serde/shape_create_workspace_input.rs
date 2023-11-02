@@ -3,75 +3,84 @@ pub fn ser_create_workspace_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_workspace::CreateWorkspaceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.account_access_type {
-        object.key("accountAccessType").string(var_1.as_str());
+    {
+        object.key("accountAccessType").string(input.account_access_type.as_str());
     }
-    if let Some(var_2) = &input.authentication_providers {
-        let mut array_3 = object.key("authenticationProviders").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("authenticationProviders").start_array();
+        for item_2 in &input.authentication_providers {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.client_token {
-        object.key("clientToken").string(var_5.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
     }
-    if let Some(var_6) = &input.configuration {
-        object.key("configuration").string(var_6.as_str());
+    if let Some(var_4) = &input.configuration {
+        object.key("configuration").string(var_4.as_str());
     }
-    if let Some(var_7) = &input.grafana_version {
-        object.key("grafanaVersion").string(var_7.as_str());
+    if let Some(var_5) = &input.grafana_version {
+        object.key("grafanaVersion").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.network_access_control {
+    if let Some(var_6) = &input.network_access_control {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("networkAccessControl").start_object();
-        crate::protocol_serde::shape_network_access_configuration::ser_network_access_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_7 = object.key("networkAccessControl").start_object();
+        crate::protocol_serde::shape_network_access_configuration::ser_network_access_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_10) = &input.organization_role_name {
-        object.key("organizationRoleName").string(var_10.as_str());
+    if let Some(var_8) = &input.organization_role_name {
+        object.key("organizationRoleName").string(var_8.as_str());
     }
-    if let Some(var_11) = &input.permission_type {
-        object.key("permissionType").string(var_11.as_str());
+    {
+        object.key("permissionType").string(input.permission_type.as_str());
     }
-    if let Some(var_12) = &input.stack_set_name {
-        object.key("stackSetName").string(var_12.as_str());
+    if let Some(var_9) = &input.stack_set_name {
+        object.key("stackSetName").string(var_9.as_str());
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_14.finish();
+        object_11.finish();
     }
-    if let Some(var_17) = &input.vpc_configuration {
+    if let Some(var_14) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("vpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_15 = object.key("vpcConfiguration").start_object();
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_19) = &input.workspace_data_sources {
-        let mut array_20 = object.key("workspaceDataSources").start_array();
-        for item_21 in var_19 {
+    if let Some(var_16) = &input.workspace_data_sources {
+        let mut array_17 = object.key("workspaceDataSources").start_array();
+        for item_18 in var_16 {
             {
-                array_20.value().string(item_21.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_20.finish();
+        array_17.finish();
     }
-    if let Some(var_22) = &input.workspace_description {
-        object.key("workspaceDescription").string(var_22.as_str());
+    if let Some(var_19) = &input.workspace_description {
+        object.key("workspaceDescription").string(var_19.as_str());
     }
-    if let Some(var_23) = &input.workspace_name {
-        object.key("workspaceName").string(var_23.as_str());
+    if let Some(var_20) = &input.workspace_name {
+        object.key("workspaceName").string(var_20.as_str());
     }
-    if let Some(var_24) = &input.workspace_notification_destinations {
-        let mut array_25 = object.key("workspaceNotificationDestinations").start_array();
+    if let Some(var_21) = &input.workspace_notification_destinations {
+        let mut array_22 = object.key("workspaceNotificationDestinations").start_array();
+        for item_23 in var_21 {
+            {
+                array_22.value().string(item_23.as_str());
+            }
+        }
+        array_22.finish();
+    }
+    if let Some(var_24) = &input.workspace_organizational_units {
+        let mut array_25 = object.key("workspaceOrganizationalUnits").start_array();
         for item_26 in var_24 {
             {
                 array_25.value().string(item_26.as_str());
@@ -79,17 +88,8 @@ pub fn ser_create_workspace_input(
         }
         array_25.finish();
     }
-    if let Some(var_27) = &input.workspace_organizational_units {
-        let mut array_28 = object.key("workspaceOrganizationalUnits").start_array();
-        for item_29 in var_27 {
-            {
-                array_28.value().string(item_29.as_str());
-            }
-        }
-        array_28.finish();
-    }
-    if let Some(var_30) = &input.workspace_role_arn {
-        object.key("workspaceRoleArn").string(var_30.as_str());
+    if let Some(var_27) = &input.workspace_role_arn {
+        object.key("workspaceRoleArn").string(var_27.as_str());
     }
     Ok(())
 }

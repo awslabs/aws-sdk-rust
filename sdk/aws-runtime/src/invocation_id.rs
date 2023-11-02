@@ -219,7 +219,7 @@ mod tests {
     };
     use aws_smithy_runtime_api::client::interceptors::Interceptor;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
-    use aws_smithy_types::config_bag::{ConfigBag, Layer};
+    use aws_smithy_types::config_bag::ConfigBag;
     use http::HeaderValue;
 
     fn expect_header<'a>(
@@ -258,6 +258,7 @@ mod tests {
     #[cfg(feature = "test-util")]
     #[test]
     fn custom_id_generator() {
+        use aws_smithy_types::config_bag::Layer;
         let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.enter_serialization_phase();

@@ -28,11 +28,10 @@ pub fn de_update_account_configuration_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::update_account_configuration::UpdateAccountConfigurationError::InternalServerException({
@@ -58,11 +57,10 @@ pub fn de_update_account_configuration_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_account_configuration::UpdateAccountConfigurationError::ThrottlingException({
@@ -73,11 +71,10 @@ pub fn de_update_account_configuration_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::update_account_configuration::UpdateAccountConfigurationError::ValidationException({
@@ -88,11 +85,10 @@ pub fn de_update_account_configuration_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::update_account_configuration::UpdateAccountConfigurationError::generic(generic),
@@ -114,7 +110,7 @@ pub fn de_update_account_configuration_http_response(
         output = crate::protocol_serde::shape_update_account_configuration::de_update_account_configuration(_response_body, output)
             .map_err(crate::operation::update_account_configuration::UpdateAccountConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_account_configuration_output_correct_errors(output).build()
     })
 }
 

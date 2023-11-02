@@ -12,12 +12,16 @@ pub struct TestRepositoryTriggersOutput {
 }
 impl TestRepositoryTriggersOutput {
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
-    pub fn successful_executions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.successful_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_executions.is_none()`.
+    pub fn successful_executions(&self) -> &[::std::string::String] {
+        self.successful_executions.as_deref().unwrap_or_default()
     }
     /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
-    pub fn failed_executions(&self) -> ::std::option::Option<&[crate::types::RepositoryTriggerExecutionFailure]> {
-        self.failed_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_executions.is_none()`.
+    pub fn failed_executions(&self) -> &[crate::types::RepositoryTriggerExecutionFailure] {
+        self.failed_executions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for TestRepositoryTriggersOutput {

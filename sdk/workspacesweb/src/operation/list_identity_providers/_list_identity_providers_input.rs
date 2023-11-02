@@ -69,6 +69,7 @@ impl ListIdentityProvidersInputBuilder {
         &self.max_results
     }
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self

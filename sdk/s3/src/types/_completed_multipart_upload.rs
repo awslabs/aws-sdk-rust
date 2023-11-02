@@ -11,8 +11,10 @@ pub struct CompletedMultipartUpload {
 impl CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
     /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
-    pub fn parts(&self) -> ::std::option::Option<&[crate::types::CompletedPart]> {
-        self.parts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
+    pub fn parts(&self) -> &[crate::types::CompletedPart] {
+        self.parts.as_deref().unwrap_or_default()
     }
 }
 impl CompletedMultipartUpload {

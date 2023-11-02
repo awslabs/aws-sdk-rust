@@ -22,8 +22,10 @@ impl AddCommunicationToCaseInput {
         self.communication_body.as_deref()
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn cc_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cc_email_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cc_email_addresses.is_none()`.
+    pub fn cc_email_addresses(&self) -> &[::std::string::String] {
+        self.cc_email_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn attachment_set_id(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl AddCommunicationToCaseInputBuilder {
         &self.case_id
     }
     /// <p>The body of an email communication to add to the support case.</p>
+    /// This field is required.
     pub fn communication_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.communication_body = ::std::option::Option::Some(input.into());
         self

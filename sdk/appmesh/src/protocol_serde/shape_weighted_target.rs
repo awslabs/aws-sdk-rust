@@ -3,8 +3,8 @@ pub fn ser_weighted_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WeightedTarget,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.virtual_node {
-        object.key("virtualNode").string(var_1.as_str());
+    {
+        object.key("virtualNode").string(input.virtual_node.as_str());
     }
     {
         object.key("weight").number(
@@ -12,10 +12,10 @@ pub fn ser_weighted_target(
             ::aws_smithy_types::Number::NegInt((input.weight).into()),
         );
     }
-    if let Some(var_2) = &input.port {
+    if let Some(var_1) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())
@@ -67,7 +67,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::weighted_target_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

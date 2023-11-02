@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateAssociationBatch`](crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`entries(CreateAssociationBatchRequestEntry)`](crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder::entries) / [`set_entries(Option<Vec<CreateAssociationBatchRequestEntry>>)`](crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder::set_entries): <p>One or more associations.</p>
+    ///   - [`entries(CreateAssociationBatchRequestEntry)`](crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder::entries) / [`set_entries(Option<Vec<CreateAssociationBatchRequestEntry>>)`](crate::operation::create_association_batch::builders::CreateAssociationBatchFluentBuilder::set_entries):<br>required: **true**<br><p>One or more associations.</p><br>
     /// - On success, responds with [`CreateAssociationBatchOutput`](crate::operation::create_association_batch::CreateAssociationBatchOutput) with field(s):
     ///   - [`successful(Option<Vec<AssociationDescription>>)`](crate::operation::create_association_batch::CreateAssociationBatchOutput::successful): <p>Information about the associations that succeeded.</p>
     ///   - [`failed(Option<Vec<FailedCreateAssociation>>)`](crate::operation::create_association_batch::CreateAssociationBatchOutput::failed): <p>Information about the associations that failed.</p>

@@ -12,8 +12,10 @@ pub struct ListMultiplexesOutput {
 }
 impl ListMultiplexesOutput {
     /// List of multiplexes.
-    pub fn multiplexes(&self) -> ::std::option::Option<&[crate::types::MultiplexSummary]> {
-        self.multiplexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multiplexes.is_none()`.
+    pub fn multiplexes(&self) -> &[crate::types::MultiplexSummary] {
+        self.multiplexes.as_deref().unwrap_or_default()
     }
     /// Token for the next ListMultiplexes request.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

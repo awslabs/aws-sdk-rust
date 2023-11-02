@@ -11,8 +11,10 @@ pub struct ListTokensOutput {
 }
 impl ListTokensOutput {
     /// <p>Received token details.</p>
-    pub fn tokens(&self) -> ::std::option::Option<&[crate::types::TokenData]> {
-        self.tokens.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tokens.is_none()`.
+    pub fn tokens(&self) -> &[crate::types::TokenData] {
+        self.tokens.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

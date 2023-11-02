@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
-    pub tag_key: ::std::option::Option<::std::string::String>,
+    pub tag_key: ::std::string::String,
     /// <p>The status of a cost allocation tag. </p>
-    pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
+    pub status: crate::types::CostAllocationTagStatus,
 }
 impl CostAllocationTagStatusEntry {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
-        self.tag_key.as_deref()
+    pub fn tag_key(&self) -> &str {
+        use std::ops::Deref;
+        self.tag_key.deref()
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CostAllocationTagStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::CostAllocationTagStatus {
+        &self.status
     }
 }
 impl CostAllocationTagStatusEntry {
@@ -35,6 +36,7 @@ pub struct CostAllocationTagStatusEntryBuilder {
 }
 impl CostAllocationTagStatusEntryBuilder {
     /// <p>The key for the cost allocation tag. </p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl CostAllocationTagStatusEntryBuilder {
         &self.tag_key
     }
     /// <p>The status of a cost allocation tag. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl CostAllocationTagStatusEntryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`CostAllocationTagStatusEntry`](crate::types::CostAllocationTagStatusEntry).
-    pub fn build(self) -> crate::types::CostAllocationTagStatusEntry {
-        crate::types::CostAllocationTagStatusEntry {
-            tag_key: self.tag_key,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_key`](crate::types::builders::CostAllocationTagStatusEntryBuilder::tag_key)
+    /// - [`status`](crate::types::builders::CostAllocationTagStatusEntryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTagStatusEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CostAllocationTagStatusEntry {
+            tag_key: self.tag_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tag_key",
+                    "tag_key was not specified but it is required when building CostAllocationTagStatusEntry",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building CostAllocationTagStatusEntry",
+                )
+            })?,
+        })
     }
 }

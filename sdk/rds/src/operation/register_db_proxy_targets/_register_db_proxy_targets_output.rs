@@ -9,8 +9,10 @@ pub struct RegisterDbProxyTargetsOutput {
 }
 impl RegisterDbProxyTargetsOutput {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-    pub fn db_proxy_targets(&self) -> ::std::option::Option<&[crate::types::DbProxyTarget]> {
-        self.db_proxy_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_proxy_targets.is_none()`.
+    pub fn db_proxy_targets(&self) -> &[crate::types::DbProxyTarget] {
+        self.db_proxy_targets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RegisterDbProxyTargetsOutput {

@@ -136,13 +136,14 @@ mod builder {
 
     use crate::cache::{CredentialsCache, Inner};
     use crate::provider::SharedCredentialsProvider;
-    use aws_smithy_async::rt::sleep::{default_async_sleep, SharedAsyncSleep};
-    use aws_smithy_async::time::SharedTimeSource;
+    use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
+    use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 
     use super::{
         LazyCredentialsCache, DEFAULT_BUFFER_TIME, DEFAULT_BUFFER_TIME_JITTER_FRACTION,
         DEFAULT_CREDENTIAL_EXPIRATION, DEFAULT_LOAD_TIMEOUT,
     };
+    use aws_smithy_runtime_api::shared::IntoShared;
 
     /// Builder for constructing a `LazyCredentialsCache`.
     ///
@@ -158,7 +159,7 @@ mod builder {
     /// `build` to create a `LazyCredentialsCache`.
     #[derive(Clone, Debug, Default)]
     pub struct Builder {
-        sleep: Option<SharedAsyncSleep>,
+        sleep_impl: Option<SharedAsyncSleep>,
         time_source: Option<SharedTimeSource>,
         load_timeout: Option<Duration>,
         buffer_time: Option<Duration>,
@@ -177,8 +178,8 @@ mod builder {
         /// This enables use of the `LazyCredentialsCache` with other async runtimes.
         /// If using Tokio as the async runtime, this should be set to an instance of
         /// [`TokioSleep`](aws_smithy_async::rt::sleep::TokioSleep).
-        pub fn sleep(mut self, sleep: SharedAsyncSleep) -> Self {
-            self.set_sleep(Some(sleep));
+        pub fn sleep_impl(mut self, sleep_impl: impl AsyncSleep + 'static) -> Self {
+            self.set_sleep_impl(Some(sleep_impl.into_shared()));
             self
         }
 
@@ -187,14 +188,14 @@ mod builder {
         /// This enables use of the `LazyCredentialsCache` with other async runtimes.
         /// If using Tokio as the async runtime, this should be set to an instance of
         /// [`TokioSleep`](aws_smithy_async::rt::sleep::TokioSleep).
-        pub fn set_sleep(&mut self, sleep: Option<SharedAsyncSleep>) -> &mut Self {
-            self.sleep = sleep;
+        pub fn set_sleep_impl(&mut self, sleep_impl: Option<SharedAsyncSleep>) -> &mut Self {
+            self.sleep_impl = sleep_impl;
             self
         }
 
         #[doc(hidden)] // because they only exist for tests
-        pub fn time_source(mut self, time_source: SharedTimeSource) -> Self {
-            self.set_time_source(Some(time_source));
+        pub fn time_source(mut self, time_source: impl TimeSource + 'static) -> Self {
+            self.set_time_source(Some(time_source.into_shared()));
             self
         }
 
@@ -326,7 +327,7 @@ mod builder {
             );
             LazyCredentialsCache::new(
                 self.time_source.unwrap_or_default(),
-                self.sleep.unwrap_or_else(|| {
+                self.sleep_impl.unwrap_or_else(|| {
                     default_async_sleep().expect("no default sleep implementation available")
                 }),
                 provider,

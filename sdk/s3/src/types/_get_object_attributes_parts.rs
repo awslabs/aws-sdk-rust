@@ -39,8 +39,10 @@ impl GetObjectAttributesParts {
         self.is_truncated
     }
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
-    pub fn parts(&self) -> ::std::option::Option<&[crate::types::ObjectPart]> {
-        self.parts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
+    pub fn parts(&self) -> &[crate::types::ObjectPart] {
+        self.parts.as_deref().unwrap_or_default()
     }
 }
 impl GetObjectAttributesParts {

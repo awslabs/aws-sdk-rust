@@ -12,8 +12,10 @@ pub struct ListImportJobsOutput {
 }
 impl ListImportJobsOutput {
     /// <p>A list of the import job summaries.</p>
-    pub fn import_jobs(&self) -> ::std::option::Option<&[crate::types::ImportJobSummary]> {
-        self.import_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_jobs.is_none()`.
+    pub fn import_jobs(&self) -> &[crate::types::ImportJobSummary] {
+        self.import_jobs.as_deref().unwrap_or_default()
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -52,36 +52,52 @@ impl CreateMobileDeviceAccessRuleInput {
         self.effect.as_ref()
     }
     /// <p>Device types that the rule will match.</p>
-    pub fn device_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_types.is_none()`.
+    pub fn device_types(&self) -> &[::std::string::String] {
+        self.device_types.as_deref().unwrap_or_default()
     }
     /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_types.is_none()`.
+    pub fn not_device_types(&self) -> &[::std::string::String] {
+        self.not_device_types.as_deref().unwrap_or_default()
     }
     /// <p>Device models that the rule will match.</p>
-    pub fn device_models(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_models.is_none()`.
+    pub fn device_models(&self) -> &[::std::string::String] {
+        self.device_models.as_deref().unwrap_or_default()
     }
     /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
-    pub fn not_device_models(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_models.is_none()`.
+    pub fn not_device_models(&self) -> &[::std::string::String] {
+        self.not_device_models.as_deref().unwrap_or_default()
     }
     /// <p>Device operating systems that the rule will match.</p>
-    pub fn device_operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_operating_systems.is_none()`.
+    pub fn device_operating_systems(&self) -> &[::std::string::String] {
+        self.device_operating_systems.as_deref().unwrap_or_default()
     }
     /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
-    pub fn not_device_operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_operating_systems.is_none()`.
+    pub fn not_device_operating_systems(&self) -> &[::std::string::String] {
+        self.not_device_operating_systems.as_deref().unwrap_or_default()
     }
     /// <p>Device user agents that the rule will match.</p>
-    pub fn device_user_agents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_user_agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_user_agents.is_none()`.
+    pub fn device_user_agents(&self) -> &[::std::string::String] {
+        self.device_user_agents.as_deref().unwrap_or_default()
     }
     /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
-    pub fn not_device_user_agents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_device_user_agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_device_user_agents.is_none()`.
+    pub fn not_device_user_agents(&self) -> &[::std::string::String] {
+        self.not_device_user_agents.as_deref().unwrap_or_default()
     }
 }
 impl CreateMobileDeviceAccessRuleInput {
@@ -111,6 +127,7 @@ pub struct CreateMobileDeviceAccessRuleInputBuilder {
 }
 impl CreateMobileDeviceAccessRuleInputBuilder {
     /// <p>The WorkMail organization under which the rule will be created.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +156,7 @@ impl CreateMobileDeviceAccessRuleInputBuilder {
         &self.client_token
     }
     /// <p>The rule name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +185,7 @@ impl CreateMobileDeviceAccessRuleInputBuilder {
         &self.description
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    /// This field is required.
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
         self

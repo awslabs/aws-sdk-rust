@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogTarget {
     /// <p>The target type.</p>
-    pub target_type: ::std::option::Option<crate::types::LogTargetType>,
+    pub target_type: crate::types::LogTargetType,
     /// <p>The target name.</p>
     pub target_name: ::std::option::Option<::std::string::String>,
 }
 impl LogTarget {
     /// <p>The target type.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&crate::types::LogTargetType> {
-        self.target_type.as_ref()
+    pub fn target_type(&self) -> &crate::types::LogTargetType {
+        &self.target_type
     }
     /// <p>The target name.</p>
     pub fn target_name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct LogTargetBuilder {
 }
 impl LogTargetBuilder {
     /// <p>The target type.</p>
+    /// This field is required.
     pub fn target_type(mut self, input: crate::types::LogTargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl LogTargetBuilder {
         &self.target_name
     }
     /// Consumes the builder and constructs a [`LogTarget`](crate::types::LogTarget).
-    pub fn build(self) -> crate::types::LogTarget {
-        crate::types::LogTarget {
-            target_type: self.target_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_type`](crate::types::builders::LogTargetBuilder::target_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::LogTarget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LogTarget {
+            target_type: self.target_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_type",
+                    "target_type was not specified but it is required when building LogTarget",
+                )
+            })?,
             target_name: self.target_name,
-        }
+        })
     }
 }

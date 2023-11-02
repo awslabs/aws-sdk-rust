@@ -48,6 +48,7 @@ pub struct UpdateClusterKafkaVersionInputBuilder {
 }
 impl UpdateClusterKafkaVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateClusterKafkaVersionInputBuilder {
         &self.configuration_info
     }
     /// <p>Current cluster version.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateClusterKafkaVersionInputBuilder {
         &self.current_version
     }
     /// <p>Target Kafka version.</p>
+    /// This field is required.
     pub fn target_kafka_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_kafka_version = ::std::option::Option::Some(input.into());
         self

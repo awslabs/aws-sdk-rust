@@ -15,13 +15,17 @@ pub struct ProvisioningArtifactPreferences {
 impl ProvisioningArtifactPreferences {
     /// <p>One or more Amazon Web Services accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn stack_set_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stack_set_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_set_accounts.is_none()`.
+    pub fn stack_set_accounts(&self) -> &[::std::string::String] {
+        self.stack_set_accounts.as_deref().unwrap_or_default()
     }
     /// <p>One or more Amazon Web Services Regions where stack instances are deployed from the stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-    pub fn stack_set_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stack_set_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_set_regions.is_none()`.
+    pub fn stack_set_regions(&self) -> &[::std::string::String] {
+        self.stack_set_regions.as_deref().unwrap_or_default()
     }
 }
 impl ProvisioningArtifactPreferences {

@@ -35,6 +35,7 @@ pub struct GetRecordsInputBuilder {
 }
 impl GetRecordsInputBuilder {
     /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+    /// This field is required.
     pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_iterator = ::std::option::Option::Some(input.into());
         self

@@ -9,8 +9,10 @@ pub struct TrackingFilterGeometry {
 }
 impl TrackingFilterGeometry {
     /// <p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>
-    pub fn polygon(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::vec::Vec<f64>>]> {
-        self.polygon.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
+    pub fn polygon(&self) -> &[::std::vec::Vec<::std::vec::Vec<f64>>] {
+        self.polygon.as_deref().unwrap_or_default()
     }
 }
 impl TrackingFilterGeometry {

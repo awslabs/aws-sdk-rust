@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutModelInvocationLoggingConfiguration`](crate::operation::put_model_invocation_logging_configuration::builders::PutModelInvocationLoggingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`logging_config(LoggingConfig)`](crate::operation::put_model_invocation_logging_configuration::builders::PutModelInvocationLoggingConfigurationFluentBuilder::logging_config) / [`set_logging_config(Option<LoggingConfig>)`](crate::operation::put_model_invocation_logging_configuration::builders::PutModelInvocationLoggingConfigurationFluentBuilder::set_logging_config): <p>The logging configuration values to set.</p>
+    ///   - [`logging_config(LoggingConfig)`](crate::operation::put_model_invocation_logging_configuration::builders::PutModelInvocationLoggingConfigurationFluentBuilder::logging_config) / [`set_logging_config(Option<LoggingConfig>)`](crate::operation::put_model_invocation_logging_configuration::builders::PutModelInvocationLoggingConfigurationFluentBuilder::set_logging_config):<br>required: **true**<br><p>The logging configuration values to set.</p><br>
     /// - On success, responds with [`PutModelInvocationLoggingConfigurationOutput`](crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationOutput)
     /// - On failure, responds with [`SdkError<PutModelInvocationLoggingConfigurationError>`](crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError)
     pub fn put_model_invocation_logging_configuration(

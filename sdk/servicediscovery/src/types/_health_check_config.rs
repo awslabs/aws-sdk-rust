@@ -62,7 +62,7 @@ pub struct HealthCheckConfig {
     /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
-    pub r#type: ::std::option::Option<crate::types::HealthCheckType>,
+    pub r#type: crate::types::HealthCheckType,
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
     pub resource_path: ::std::option::Option<::std::string::String>,
@@ -82,8 +82,8 @@ impl HealthCheckConfig {
     /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HealthCheckType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::HealthCheckType {
+        &self.r#type
     }
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
@@ -123,6 +123,7 @@ impl HealthCheckConfigBuilder {
     /// <li> <p> <b>TCP</b>: Route&nbsp;53 tries to establish a TCP connection.</p> <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::HealthCheckType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -190,11 +191,18 @@ impl HealthCheckConfigBuilder {
         &self.failure_threshold
     }
     /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::types::HealthCheckConfig).
-    pub fn build(self) -> crate::types::HealthCheckConfig {
-        crate::types::HealthCheckConfig {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::HealthCheckConfigBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheckConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HealthCheckConfig {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building HealthCheckConfig",
+                )
+            })?,
             resource_path: self.resource_path,
             failure_threshold: self.failure_threshold,
-        }
+        })
     }
 }

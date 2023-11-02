@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStorageLensConfigurationEntry {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    pub storage_lens_arn: ::std::option::Option<::std::string::String>,
+    pub storage_lens_arn: ::std::string::String,
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
-    pub home_region: ::std::option::Option<::std::string::String>,
+    pub home_region: ::std::string::String,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub is_enabled: bool,
 }
 impl ListStorageLensConfigurationEntry {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    pub fn storage_lens_arn(&self) -> ::std::option::Option<&str> {
-        self.storage_lens_arn.as_deref()
+    pub fn storage_lens_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.storage_lens_arn.deref()
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
-        self.home_region.as_deref()
+    pub fn home_region(&self) -> &str {
+        use std::ops::Deref;
+        self.home_region.deref()
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub fn is_enabled(&self) -> bool {
@@ -49,6 +52,7 @@ pub struct ListStorageLensConfigurationEntryBuilder {
 }
 impl ListStorageLensConfigurationEntryBuilder {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl ListStorageLensConfigurationEntryBuilder {
         &self.id
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
+    /// This field is required.
     pub fn storage_lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_lens_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl ListStorageLensConfigurationEntryBuilder {
         &self.storage_lens_arn
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
+    /// This field is required.
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +111,31 @@ impl ListStorageLensConfigurationEntryBuilder {
         &self.is_enabled
     }
     /// Consumes the builder and constructs a [`ListStorageLensConfigurationEntry`](crate::types::ListStorageLensConfigurationEntry).
-    pub fn build(self) -> crate::types::ListStorageLensConfigurationEntry {
-        crate::types::ListStorageLensConfigurationEntry {
-            id: self.id,
-            storage_lens_arn: self.storage_lens_arn,
-            home_region: self.home_region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::id)
+    /// - [`storage_lens_arn`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::storage_lens_arn)
+    /// - [`home_region`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::home_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListStorageLensConfigurationEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListStorageLensConfigurationEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ListStorageLensConfigurationEntry",
+                )
+            })?,
+            storage_lens_arn: self.storage_lens_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "storage_lens_arn",
+                    "storage_lens_arn was not specified but it is required when building ListStorageLensConfigurationEntry",
+                )
+            })?,
+            home_region: self.home_region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "home_region",
+                    "home_region was not specified but it is required when building ListStorageLensConfigurationEntry",
+                )
+            })?,
             is_enabled: self.is_enabled.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -12,8 +12,10 @@ pub struct GetDedicatedIpsOutput {
 }
 impl GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint account.</p>
-    pub fn dedicated_ips(&self) -> ::std::option::Option<&[crate::types::DedicatedIp]> {
-        self.dedicated_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dedicated_ips.is_none()`.
+    pub fn dedicated_ips(&self) -> &[crate::types::DedicatedIp] {
+        self.dedicated_ips.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -12,8 +12,8 @@
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     use aws_config::imds::Client;
 
-    let imds = Client::builder().build().await?;
+    let imds = Client::builder().build();
     let instance_id = imds.get("/latest/meta-data/instance-id").await?;
-    println!("current instance id: {}", instance_id);
+    println!("current instance id: {}", instance_id.as_ref());
     Ok(())
 }

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSpaceInput {
     /// <p>The name of the space.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl GetSpaceInput {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl GetSpaceInput {
@@ -27,6 +28,7 @@ pub struct GetSpaceInputBuilder {
 }
 impl GetSpaceInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl GetSpaceInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetSpaceInput`](crate::operation::get_space::GetSpaceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_space::builders::GetSpaceInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_space::GetSpaceInput { name: self.name })
+        ::std::result::Result::Ok(crate::operation::get_space::GetSpaceInput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetSpaceInput",
+                )
+            })?,
+        })
     }
 }

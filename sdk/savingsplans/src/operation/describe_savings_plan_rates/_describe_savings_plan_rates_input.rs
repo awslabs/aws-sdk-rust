@@ -18,8 +18,10 @@ impl DescribeSavingsPlanRatesInput {
         self.savings_plan_id.as_deref()
     }
     /// <p>The filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SavingsPlanRateFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SavingsPlanRateFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DescribeSavingsPlanRatesInputBuilder {
 }
 impl DescribeSavingsPlanRatesInputBuilder {
     /// <p>The ID of the Savings Plan.</p>
+    /// This field is required.
     pub fn savings_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.savings_plan_id = ::std::option::Option::Some(input.into());
         self

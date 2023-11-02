@@ -7,12 +7,12 @@
 pub struct DeltaTimeSessionWindowConfiguration {
     /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
-    pub timeout_in_minutes: ::std::option::Option<i32>,
+    pub timeout_in_minutes: i32,
 }
 impl DeltaTimeSessionWindowConfiguration {
     /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
-    pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
+    pub fn timeout_in_minutes(&self) -> i32 {
         self.timeout_in_minutes
     }
 }
@@ -32,6 +32,7 @@ pub struct DeltaTimeSessionWindowConfigurationBuilder {
 impl DeltaTimeSessionWindowConfigurationBuilder {
     /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+    /// This field is required.
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
         self.timeout_in_minutes = ::std::option::Option::Some(input);
         self
@@ -48,9 +49,16 @@ impl DeltaTimeSessionWindowConfigurationBuilder {
         &self.timeout_in_minutes
     }
     /// Consumes the builder and constructs a [`DeltaTimeSessionWindowConfiguration`](crate::types::DeltaTimeSessionWindowConfiguration).
-    pub fn build(self) -> crate::types::DeltaTimeSessionWindowConfiguration {
-        crate::types::DeltaTimeSessionWindowConfiguration {
-            timeout_in_minutes: self.timeout_in_minutes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timeout_in_minutes`](crate::types::builders::DeltaTimeSessionWindowConfigurationBuilder::timeout_in_minutes)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeltaTimeSessionWindowConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeltaTimeSessionWindowConfiguration {
+            timeout_in_minutes: self.timeout_in_minutes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timeout_in_minutes",
+                    "timeout_in_minutes was not specified but it is required when building DeltaTimeSessionWindowConfiguration",
+                )
+            })?,
+        })
     }
 }

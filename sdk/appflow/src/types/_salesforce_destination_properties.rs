@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
     pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
@@ -40,12 +40,15 @@ pub struct SalesforceDestinationProperties {
 }
 impl SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
-    pub fn id_field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.id_field_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id_field_names.is_none()`.
+    pub fn id_field_names(&self) -> &[::std::string::String] {
+        self.id_field_names.as_deref().unwrap_or_default()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
@@ -102,6 +105,7 @@ pub struct SalesforceDestinationPropertiesBuilder {
 }
 impl SalesforceDestinationPropertiesBuilder {
     /// <p> The object specified in the Salesforce flow destination. </p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -247,13 +251,20 @@ impl SalesforceDestinationPropertiesBuilder {
         &self.data_transfer_api
     }
     /// Consumes the builder and constructs a [`SalesforceDestinationProperties`](crate::types::SalesforceDestinationProperties).
-    pub fn build(self) -> crate::types::SalesforceDestinationProperties {
-        crate::types::SalesforceDestinationProperties {
-            object: self.object,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::SalesforceDestinationPropertiesBuilder::object)
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceDestinationProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SalesforceDestinationProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building SalesforceDestinationProperties",
+                )
+            })?,
             id_field_names: self.id_field_names,
             error_handling_config: self.error_handling_config,
             write_operation_type: self.write_operation_type,
             data_transfer_api: self.data_transfer_api,
-        }
+        })
     }
 }

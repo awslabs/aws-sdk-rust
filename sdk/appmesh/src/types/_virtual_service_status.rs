@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
-    pub status: ::std::option::Option<crate::types::VirtualServiceStatusCode>,
+    pub status: crate::types::VirtualServiceStatusCode,
 }
 impl VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualServiceStatusCode> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::VirtualServiceStatusCode {
+        &self.status
     }
 }
 impl VirtualServiceStatus {
@@ -28,6 +28,7 @@ pub struct VirtualServiceStatusBuilder {
 }
 impl VirtualServiceStatusBuilder {
     /// <p>The current status of the virtual service.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VirtualServiceStatusCode) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl VirtualServiceStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`VirtualServiceStatus`](crate::types::VirtualServiceStatus).
-    pub fn build(self) -> crate::types::VirtualServiceStatus {
-        crate::types::VirtualServiceStatus { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::VirtualServiceStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualServiceStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualServiceStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building VirtualServiceStatus",
+                )
+            })?,
+        })
     }
 }

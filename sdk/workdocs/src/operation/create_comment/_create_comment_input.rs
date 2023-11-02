@@ -104,6 +104,7 @@ impl CreateCommentInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the document.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CreateCommentInputBuilder {
         &self.document_id
     }
     /// <p>The ID of the document version.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +162,7 @@ impl CreateCommentInputBuilder {
         &self.thread_id
     }
     /// <p>The text of the comment.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self

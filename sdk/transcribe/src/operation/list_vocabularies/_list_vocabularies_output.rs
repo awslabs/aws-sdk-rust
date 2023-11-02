@@ -21,8 +21,10 @@ impl ListVocabulariesOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the custom vocabularies that match the criteria specified in your request.</p>
-    pub fn vocabularies(&self) -> ::std::option::Option<&[crate::types::VocabularyInfo]> {
-        self.vocabularies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vocabularies.is_none()`.
+    pub fn vocabularies(&self) -> &[crate::types::VocabularyInfo] {
+        self.vocabularies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVocabulariesOutput {

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
-    pub state: ::std::option::Option<::std::string::String>,
+    pub state: ::std::string::String,
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
-        self.state.as_deref()
+    pub fn state(&self) -> &str {
+        use std::ops::Deref;
+        self.state.deref()
     }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ProjectStatusBuilder {
 }
 impl ProjectStatusBuilder {
     /// <p>The phase of completion for a project creation or deletion.</p>
+    /// This field is required.
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ProjectStatusBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`ProjectStatus`](crate::types::ProjectStatus).
-    pub fn build(self) -> crate::types::ProjectStatus {
-        crate::types::ProjectStatus {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::ProjectStatusBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectStatus {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building ProjectStatus",
+                )
+            })?,
             reason: self.reason,
-        }
+        })
     }
 }

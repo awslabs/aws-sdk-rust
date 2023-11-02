@@ -3,11 +3,11 @@ pub fn ser_session_data_sort_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionDataSortBy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.order {
-        object.key("order").string(var_2.as_str());
+    {
+        object.key("order").string(input.order.as_str());
     }
     Ok(())
 }

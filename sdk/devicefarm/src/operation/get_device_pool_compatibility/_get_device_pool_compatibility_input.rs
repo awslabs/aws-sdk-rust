@@ -98,6 +98,7 @@ pub struct GetDevicePoolCompatibilityInputBuilder {
 }
 impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The device pool's ARN.</p>
+    /// This field is required.
     pub fn device_pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_pool_arn = ::std::option::Option::Some(input.into());
         self

@@ -8,7 +8,7 @@ pub struct DescribeStorageConfigurationOutput {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub storage_type: crate::types::StorageType,
     /// <p>Contains information about the storage destination.</p>
     pub multi_layer_storage: ::std::option::Option<crate::types::MultiLayerStorage>,
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
@@ -34,8 +34,8 @@ impl DescribeStorageConfigurationOutput {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
-        self.storage_type.as_ref()
+    pub fn storage_type(&self) -> &crate::types::StorageType {
+        &self.storage_type
     }
     /// <p>Contains information about the storage destination.</p>
     pub fn multi_layer_storage(&self) -> ::std::option::Option<&crate::types::MultiLayerStorage> {
@@ -95,6 +95,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
     /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
         self
@@ -180,6 +181,7 @@ impl DescribeStorageConfigurationOutputBuilder {
         &self.retention_period
     }
     /// <p>Contains current status information for the configuration.</p>
+    /// This field is required.
     pub fn configuration_status(mut self, input: crate::types::ConfigurationStatus) -> Self {
         self.configuration_status = ::std::option::Option::Some(input);
         self
@@ -217,15 +219,27 @@ impl DescribeStorageConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStorageConfigurationOutput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
-        crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
-            storage_type: self.storage_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`storage_type`](crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder::storage_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
+            storage_type: self.storage_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "storage_type",
+                    "storage_type was not specified but it is required when building DescribeStorageConfigurationOutput",
+                )
+            })?,
             multi_layer_storage: self.multi_layer_storage,
             disassociated_data_storage: self.disassociated_data_storage,
             retention_period: self.retention_period,
             configuration_status: self.configuration_status,
             last_update_date: self.last_update_date,
             _request_id: self._request_id,
-        }
+        })
     }
 }

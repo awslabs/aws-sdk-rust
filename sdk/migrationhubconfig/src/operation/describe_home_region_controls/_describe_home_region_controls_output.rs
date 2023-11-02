@@ -11,8 +11,10 @@ pub struct DescribeHomeRegionControlsOutput {
 }
 impl DescribeHomeRegionControlsOutput {
     /// <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
-    pub fn home_region_controls(&self) -> ::std::option::Option<&[crate::types::HomeRegionControl]> {
-        self.home_region_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.home_region_controls.is_none()`.
+    pub fn home_region_controls(&self) -> &[crate::types::HomeRegionControl] {
+        self.home_region_controls.as_deref().unwrap_or_default()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

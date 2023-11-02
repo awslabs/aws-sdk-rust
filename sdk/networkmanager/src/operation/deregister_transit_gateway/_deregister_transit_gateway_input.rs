@@ -34,6 +34,7 @@ pub struct DeregisterTransitGatewayInputBuilder {
 }
 impl DeregisterTransitGatewayInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeregisterTransitGatewayInputBuilder {
         &self.global_network_id
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    /// This field is required.
     pub fn transit_gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_arn = ::std::option::Option::Some(input.into());
         self

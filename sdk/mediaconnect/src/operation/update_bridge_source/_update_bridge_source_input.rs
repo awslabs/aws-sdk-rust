@@ -49,6 +49,7 @@ pub struct UpdateBridgeSourceInputBuilder {
 }
 impl UpdateBridgeSourceInputBuilder {
     /// The ARN of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl UpdateBridgeSourceInputBuilder {
         &self.network_source
     }
     /// The name of the source that you want to update.
+    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self

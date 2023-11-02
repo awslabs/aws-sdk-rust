@@ -6,8 +6,8 @@ pub fn ser_archive_wave_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.wave_id {
-        object.key("waveID").string(var_2.as_str());
+    {
+        object.key("waveID").string(input.wave_id.as_str());
     }
     Ok(())
 }

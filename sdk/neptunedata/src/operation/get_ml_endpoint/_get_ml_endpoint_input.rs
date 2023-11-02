@@ -34,6 +34,7 @@ pub struct GetMlEndpointInputBuilder {
 }
 impl GetMlEndpointInputBuilder {
     /// <p>The unique identifier of the inference endpoint.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

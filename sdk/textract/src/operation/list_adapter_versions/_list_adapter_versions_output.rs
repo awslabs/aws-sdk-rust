@@ -11,8 +11,10 @@ pub struct ListAdapterVersionsOutput {
 }
 impl ListAdapterVersionsOutput {
     /// <p>Adapter versions that match the filtering criteria specified when calling ListAdapters.</p>
-    pub fn adapter_versions(&self) -> ::std::option::Option<&[crate::types::AdapterVersionOverview]> {
-        self.adapter_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adapter_versions.is_none()`.
+    pub fn adapter_versions(&self) -> &[crate::types::AdapterVersionOverview] {
+        self.adapter_versions.as_deref().unwrap_or_default()
     }
     /// <p>Identifies the next page of results to return when listing adapter versions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -15,8 +15,10 @@ impl FleetLaunchTemplateConfig {
         self.launch_template_specification.as_ref()
     }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::FleetLaunchTemplateOverrides]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::FleetLaunchTemplateOverrides] {
+        self.overrides.as_deref().unwrap_or_default()
     }
 }
 impl FleetLaunchTemplateConfig {

@@ -9,14 +9,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeArtifacts {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-    pub source_code_artifacts_object_key: ::std::option::Option<::std::string::String>,
+    pub source_code_artifacts_object_key: ::std::string::String,
     /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
     pub build_artifacts_object_key: ::std::option::Option<::std::string::String>,
 }
 impl CodeArtifacts {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
-    pub fn source_code_artifacts_object_key(&self) -> ::std::option::Option<&str> {
-        self.source_code_artifacts_object_key.as_deref()
+    pub fn source_code_artifacts_object_key(&self) -> &str {
+        use std::ops::Deref;
+        self.source_code_artifacts_object_key.deref()
     }
     /// <p>The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
     pub fn build_artifacts_object_key(&self) -> ::std::option::Option<&str> {
@@ -39,6 +40,7 @@ pub struct CodeArtifactsBuilder {
 }
 impl CodeArtifactsBuilder {
     /// <p>The S3 object key for a source code .zip file. This is required for all code reviews.</p>
+    /// This field is required.
     pub fn source_code_artifacts_object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_code_artifacts_object_key = ::std::option::Option::Some(input.into());
         self
@@ -67,10 +69,17 @@ impl CodeArtifactsBuilder {
         &self.build_artifacts_object_key
     }
     /// Consumes the builder and constructs a [`CodeArtifacts`](crate::types::CodeArtifacts).
-    pub fn build(self) -> crate::types::CodeArtifacts {
-        crate::types::CodeArtifacts {
-            source_code_artifacts_object_key: self.source_code_artifacts_object_key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_code_artifacts_object_key`](crate::types::builders::CodeArtifactsBuilder::source_code_artifacts_object_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeArtifacts, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodeArtifacts {
+            source_code_artifacts_object_key: self.source_code_artifacts_object_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_code_artifacts_object_key",
+                    "source_code_artifacts_object_key was not specified but it is required when building CodeArtifacts",
+                )
+            })?,
             build_artifacts_object_key: self.build_artifacts_object_key,
-        }
+        })
     }
 }

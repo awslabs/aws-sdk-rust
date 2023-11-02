@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationDestination {
     /// <p>The Region to replicate to.</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    pub registry_id: ::std::option::Option<::std::string::String>,
+    pub registry_id: ::std::string::String,
 }
 impl ReplicationDestination {
     /// <p>The Region to replicate to.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
-        self.registry_id.as_deref()
+    pub fn registry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.registry_id.deref()
     }
 }
 impl ReplicationDestination {
@@ -35,6 +37,7 @@ pub struct ReplicationDestinationBuilder {
 }
 impl ReplicationDestinationBuilder {
     /// <p>The Region to replicate to.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ReplicationDestinationBuilder {
         &self.region
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
+    /// This field is required.
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ReplicationDestinationBuilder {
         &self.registry_id
     }
     /// Consumes the builder and constructs a [`ReplicationDestination`](crate::types::ReplicationDestination).
-    pub fn build(self) -> crate::types::ReplicationDestination {
-        crate::types::ReplicationDestination {
-            region: self.region,
-            registry_id: self.registry_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region`](crate::types::builders::ReplicationDestinationBuilder::region)
+    /// - [`registry_id`](crate::types::builders::ReplicationDestinationBuilder::registry_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationDestination {
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building ReplicationDestination",
+                )
+            })?,
+            registry_id: self.registry_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "registry_id",
+                    "registry_id was not specified but it is required when building ReplicationDestination",
+                )
+            })?,
+        })
     }
 }

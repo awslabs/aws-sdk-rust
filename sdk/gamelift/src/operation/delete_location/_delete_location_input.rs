@@ -27,6 +27,7 @@ pub struct DeleteLocationInputBuilder {
 }
 impl DeleteLocationInputBuilder {
     /// <p>The location name of the custom location to be deleted.</p>
+    /// This field is required.
     pub fn location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_name = ::std::option::Option::Some(input.into());
         self

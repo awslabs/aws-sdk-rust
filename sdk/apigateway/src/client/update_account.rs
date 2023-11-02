@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateAccount`](crate::operation::update_account::builders::UpdateAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`patch_operations(PatchOperation)`](crate::operation::update_account::builders::UpdateAccountFluentBuilder::patch_operations) / [`set_patch_operations(Option<Vec<PatchOperation>>)`](crate::operation::update_account::builders::UpdateAccountFluentBuilder::set_patch_operations): <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    ///   - [`patch_operations(PatchOperation)`](crate::operation::update_account::builders::UpdateAccountFluentBuilder::patch_operations) / [`set_patch_operations(Option<Vec<PatchOperation>>)`](crate::operation::update_account::builders::UpdateAccountFluentBuilder::set_patch_operations):<br>required: **false**<br><p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p><br>
     /// - On success, responds with [`UpdateAccountOutput`](crate::operation::update_account::UpdateAccountOutput) with field(s):
     ///   - [`cloudwatch_role_arn(Option<String>)`](crate::operation::update_account::UpdateAccountOutput::cloudwatch_role_arn): <p>The ARN of an Amazon CloudWatch role for the current Account. </p>
     ///   - [`throttle_settings(Option<ThrottleSettings>)`](crate::operation::update_account::UpdateAccountOutput::throttle_settings): <p>Specifies the API request limits configured for the current Account.</p>

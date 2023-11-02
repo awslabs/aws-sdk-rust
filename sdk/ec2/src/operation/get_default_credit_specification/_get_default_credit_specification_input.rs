@@ -48,6 +48,7 @@ impl GetDefaultCreditSpecificationInputBuilder {
         &self.dry_run
     }
     /// <p>The instance family.</p>
+    /// This field is required.
     pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.instance_family = ::std::option::Option::Some(input);
         self

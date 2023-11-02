@@ -49,6 +49,7 @@ pub struct DisassociateTimeSeriesFromAssetPropertyInputBuilder {
 }
 impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
     /// <p>The alias that identifies the time series.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
         &self.alias
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
         &self.asset_id
     }
     /// <p>The ID of the asset property.</p>
+    /// This field is required.
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
         self

@@ -52,6 +52,7 @@ pub struct DeleteInventoryInputBuilder {
 }
 impl DeleteInventoryInputBuilder {
     /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self

@@ -6,7 +6,7 @@ pub struct ListRecipeVersionsOutput {
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of versions for the specified recipe.</p>
-    pub recipes: ::std::option::Option<::std::vec::Vec<crate::types::Recipe>>,
+    pub recipes: ::std::vec::Vec<crate::types::Recipe>,
     _request_id: Option<String>,
 }
 impl ListRecipeVersionsOutput {
@@ -15,8 +15,9 @@ impl ListRecipeVersionsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of versions for the specified recipe.</p>
-    pub fn recipes(&self) -> ::std::option::Option<&[crate::types::Recipe]> {
-        self.recipes.as_deref()
+    pub fn recipes(&self) -> &[crate::types::Recipe] {
+        use std::ops::Deref;
+        self.recipes.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRecipeVersionsOutput {
@@ -84,11 +85,21 @@ impl ListRecipeVersionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRecipeVersionsOutput`](crate::operation::list_recipe_versions::ListRecipeVersionsOutput).
-    pub fn build(self) -> crate::operation::list_recipe_versions::ListRecipeVersionsOutput {
-        crate::operation::list_recipe_versions::ListRecipeVersionsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recipes`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsOutputBuilder::recipes)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_recipe_versions::ListRecipeVersionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_recipe_versions::ListRecipeVersionsOutput {
             next_token: self.next_token,
-            recipes: self.recipes,
+            recipes: self.recipes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recipes",
+                    "recipes was not specified but it is required when building ListRecipeVersionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

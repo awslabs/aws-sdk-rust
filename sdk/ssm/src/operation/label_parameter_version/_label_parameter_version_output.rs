@@ -11,8 +11,10 @@ pub struct LabelParameterVersionOutput {
 }
 impl LabelParameterVersionOutput {
     /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn invalid_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.invalid_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_labels.is_none()`.
+    pub fn invalid_labels(&self) -> &[::std::string::String] {
+        self.invalid_labels.as_deref().unwrap_or_default()
     }
     /// <p>The version of the parameter that has been labeled.</p>
     pub fn parameter_version(&self) -> i64 {

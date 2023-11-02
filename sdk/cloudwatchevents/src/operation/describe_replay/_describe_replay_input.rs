@@ -27,6 +27,7 @@ pub struct DescribeReplayInputBuilder {
 }
 impl DescribeReplayInputBuilder {
     /// <p>The name of the replay to retrieve.</p>
+    /// This field is required.
     pub fn replay_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replay_name = ::std::option::Option::Some(input.into());
         self

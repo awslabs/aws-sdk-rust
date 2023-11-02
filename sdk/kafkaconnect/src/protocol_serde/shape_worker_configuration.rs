@@ -9,8 +9,8 @@ pub fn ser_worker_configuration(
             ::aws_smithy_types::Number::NegInt((input.revision).into()),
         );
     }
-    if let Some(var_1) = &input.worker_configuration_arn {
-        object.key("workerConfigurationArn").string(var_1.as_str());
+    {
+        object.key("workerConfigurationArn").string(input.worker_configuration_arn.as_str());
     }
     Ok(())
 }

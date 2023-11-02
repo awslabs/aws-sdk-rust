@@ -48,6 +48,7 @@ pub struct RevokeCertificateInputBuilder {
 impl RevokeCertificateInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl RevokeCertificateInputBuilder {
     /// <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
     /// <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>
     /// <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>Certificate Manager API Reference</i>. </p>
+    /// This field is required.
     pub fn certificate_serial(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_serial = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl RevokeCertificateInputBuilder {
         &self.certificate_serial
     }
     /// <p>Specifies why you revoked the certificate.</p>
+    /// This field is required.
     pub fn revocation_reason(mut self, input: crate::types::RevocationReason) -> Self {
         self.revocation_reason = ::std::option::Option::Some(input);
         self

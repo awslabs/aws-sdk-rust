@@ -27,6 +27,7 @@ pub struct ForgetSmartHomeAppliancesInputBuilder {
 }
 impl ForgetSmartHomeAppliancesInputBuilder {
     /// <p>The room that the appliances are associated with.</p>
+    /// This field is required.
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
         self

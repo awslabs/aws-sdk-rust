@@ -7,7 +7,7 @@ pub struct CloudWatchLoggingOptionDescription {
     /// <p>The ID of the CloudWatch logging option description.</p>
     pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    pub log_stream_arn: ::std::option::Option<::std::string::String>,
+    pub log_stream_arn: ::std::string::String,
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
@@ -19,8 +19,9 @@ impl CloudWatchLoggingOptionDescription {
         self.cloud_watch_logging_option_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.log_stream_arn.as_deref()
+    pub fn log_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.log_stream_arn.deref()
     }
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
@@ -60,6 +61,7 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
         &self.cloud_watch_logging_option_id
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
+    /// This field is required.
     pub fn log_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +96,18 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOptionDescription`](crate::types::CloudWatchLoggingOptionDescription).
-    pub fn build(self) -> crate::types::CloudWatchLoggingOptionDescription {
-        crate::types::CloudWatchLoggingOptionDescription {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_stream_arn`](crate::types::builders::CloudWatchLoggingOptionDescriptionBuilder::log_stream_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLoggingOptionDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLoggingOptionDescription {
             cloud_watch_logging_option_id: self.cloud_watch_logging_option_id,
-            log_stream_arn: self.log_stream_arn,
+            log_stream_arn: self.log_stream_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_stream_arn",
+                    "log_stream_arn was not specified but it is required when building CloudWatchLoggingOptionDescription",
+                )
+            })?,
             role_arn: self.role_arn,
-        }
+        })
     }
 }

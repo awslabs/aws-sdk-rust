@@ -109,8 +109,10 @@ impl BuildSummary {
         self.primary_artifact.as_ref()
     }
     /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
-    pub fn secondary_artifacts(&self) -> ::std::option::Option<&[crate::types::ResolvedArtifact]> {
-        self.secondary_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
+    pub fn secondary_artifacts(&self) -> &[crate::types::ResolvedArtifact] {
+        self.secondary_artifacts.as_deref().unwrap_or_default()
     }
 }
 impl BuildSummary {

@@ -6,7 +6,7 @@ pub struct RegisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    pub product: ::std::option::Option<::std::string::String>,
+    pub product: ::std::string::String,
     /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub settings: ::std::option::Option<crate::types::Settings>,
 }
@@ -16,8 +16,9 @@ impl RegisterIdentityProviderInput {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> ::std::option::Option<&str> {
-        self.product.as_deref()
+    pub fn product(&self) -> &str {
+        use std::ops::Deref;
+        self.product.deref()
     }
     /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::Settings> {
@@ -41,6 +42,7 @@ pub struct RegisterIdentityProviderInputBuilder {
 }
 impl RegisterIdentityProviderInputBuilder {
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl RegisterIdentityProviderInputBuilder {
         &self.identity_provider
     }
     /// <p>The name of the user-based subscription product.</p>
+    /// This field is required.
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,8 @@ impl RegisterIdentityProviderInputBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`RegisterIdentityProviderInput`](crate::operation::register_identity_provider::RegisterIdentityProviderInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`product`](crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder::product)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,7 +96,12 @@ impl RegisterIdentityProviderInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::register_identity_provider::RegisterIdentityProviderInput {
             identity_provider: self.identity_provider,
-            product: self.product,
+            product: self.product.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "product",
+                    "product was not specified but it is required when building RegisterIdentityProviderInput",
+                )
+            })?,
             settings: self.settings,
         })
     }

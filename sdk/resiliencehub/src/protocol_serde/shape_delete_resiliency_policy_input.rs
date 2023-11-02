@@ -6,8 +6,8 @@ pub fn ser_delete_resiliency_policy_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.policy_arn {
-        object.key("policyArn").string(var_2.as_str());
+    {
+        object.key("policyArn").string(input.policy_arn.as_str());
     }
     Ok(())
 }

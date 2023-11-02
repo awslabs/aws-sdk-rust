@@ -83,6 +83,7 @@ pub struct DescribeMergeConflictsInputBuilder {
 }
 impl DescribeMergeConflictsInputBuilder {
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl DescribeMergeConflictsInputBuilder {
         &self.repository_name
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl DescribeMergeConflictsInputBuilder {
         &self.destination_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +128,7 @@ impl DescribeMergeConflictsInputBuilder {
         &self.source_commit_specifier
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
+    /// This field is required.
     pub fn merge_option(mut self, input: crate::types::MergeOptionTypeEnum) -> Self {
         self.merge_option = ::std::option::Option::Some(input);
         self
@@ -153,6 +157,7 @@ impl DescribeMergeConflictsInputBuilder {
         &self.max_merge_hunks
     }
     /// <p>The path of the target files used to describe the conflicts. </p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self

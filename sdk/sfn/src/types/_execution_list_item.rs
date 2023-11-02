@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub execution_arn: ::std::option::Option<::std::string::String>,
+    pub execution_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
-    pub state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub state_machine_arn: ::std::string::String,
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -18,11 +18,11 @@ pub struct ExecutionListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The current status of the execution.</p>
-    pub status: ::std::option::Option<crate::types::ExecutionStatus>,
+    pub status: crate::types::ExecutionStatus,
     /// <p>The date the execution started.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     /// <p>If the execution already ended, the date the execution stopped.</p>
     pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
@@ -39,12 +39,14 @@ pub struct ExecutionListItem {
 }
 impl ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_arn.as_deref()
+    pub fn execution_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
-        self.state_machine_arn.as_deref()
+    pub fn state_machine_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_arn.deref()
     }
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -56,16 +58,17 @@ impl ExecutionListItem {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ExecutionStatus {
+        &self.status
     }
     /// <p>The date the execution started.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
     /// <p>If the execution already ended, the date the execution stopped.</p>
     pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -115,6 +118,7 @@ pub struct ExecutionListItemBuilder {
 }
 impl ExecutionListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +133,7 @@ impl ExecutionListItemBuilder {
         &self.execution_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine that ran the execution.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +157,7 @@ impl ExecutionListItemBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +190,7 @@ impl ExecutionListItemBuilder {
         &self.name
     }
     /// <p>The current status of the execution.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -198,6 +205,7 @@ impl ExecutionListItemBuilder {
         &self.status
     }
     /// <p>The date the execution started.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -291,18 +299,49 @@ impl ExecutionListItemBuilder {
         &self.state_machine_alias_arn
     }
     /// Consumes the builder and constructs a [`ExecutionListItem`](crate::types::ExecutionListItem).
-    pub fn build(self) -> crate::types::ExecutionListItem {
-        crate::types::ExecutionListItem {
-            execution_arn: self.execution_arn,
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
-            status: self.status,
-            start_date: self.start_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_arn`](crate::types::builders::ExecutionListItemBuilder::execution_arn)
+    /// - [`state_machine_arn`](crate::types::builders::ExecutionListItemBuilder::state_machine_arn)
+    /// - [`name`](crate::types::builders::ExecutionListItemBuilder::name)
+    /// - [`status`](crate::types::builders::ExecutionListItemBuilder::status)
+    /// - [`start_date`](crate::types::builders::ExecutionListItemBuilder::start_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionListItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExecutionListItem {
+            execution_arn: self.execution_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_arn",
+                    "execution_arn was not specified but it is required when building ExecutionListItem",
+                )
+            })?,
+            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_machine_arn",
+                    "state_machine_arn was not specified but it is required when building ExecutionListItem",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ExecutionListItem",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ExecutionListItem",
+                )
+            })?,
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building ExecutionListItem",
+                )
+            })?,
             stop_date: self.stop_date,
             map_run_arn: self.map_run_arn,
             item_count: self.item_count,
             state_machine_version_arn: self.state_machine_version_arn,
             state_machine_alias_arn: self.state_machine_alias_arn,
-        }
+        })
     }
 }

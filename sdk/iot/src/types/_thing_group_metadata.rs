@@ -17,8 +17,10 @@ impl ThingGroupMetadata {
         self.parent_group_name.as_deref()
     }
     /// <p>The root parent thing group.</p>
-    pub fn root_to_parent_thing_groups(&self) -> ::std::option::Option<&[crate::types::GroupNameAndArn]> {
-        self.root_to_parent_thing_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.root_to_parent_thing_groups.is_none()`.
+    pub fn root_to_parent_thing_groups(&self) -> &[crate::types::GroupNameAndArn] {
+        self.root_to_parent_thing_groups.as_deref().unwrap_or_default()
     }
     /// <p>The UNIX timestamp of when the thing group was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

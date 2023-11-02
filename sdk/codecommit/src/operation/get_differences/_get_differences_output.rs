@@ -11,8 +11,10 @@ pub struct GetDifferencesOutput {
 }
 impl GetDifferencesOutput {
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    pub fn differences(&self) -> ::std::option::Option<&[crate::types::Difference]> {
-        self.differences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.differences.is_none()`.
+    pub fn differences(&self) -> &[crate::types::Difference] {
+        self.differences.as_deref().unwrap_or_default()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

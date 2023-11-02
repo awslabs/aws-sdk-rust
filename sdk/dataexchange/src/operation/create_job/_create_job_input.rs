@@ -6,7 +6,7 @@ pub struct CreateJobInput {
     /// <p>The details for the CreateJob request.</p>
     pub details: ::std::option::Option<crate::types::RequestDetails>,
     /// <p>The type of job to be created.</p>
-    pub r#type: ::std::option::Option<crate::types::Type>,
+    pub r#type: crate::types::Type,
 }
 impl CreateJobInput {
     /// <p>The details for the CreateJob request.</p>
@@ -14,8 +14,8 @@ impl CreateJobInput {
         self.details.as_ref()
     }
     /// <p>The type of job to be created.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::Type {
+        &self.r#type
     }
 }
 impl CreateJobInput {
@@ -34,6 +34,7 @@ pub struct CreateJobInputBuilder {
 }
 impl CreateJobInputBuilder {
     /// <p>The details for the CreateJob request.</p>
+    /// This field is required.
     pub fn details(mut self, input: crate::types::RequestDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl CreateJobInputBuilder {
         &self.details
     }
     /// <p>The type of job to be created.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -62,10 +64,17 @@ impl CreateJobInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::operation::create_job::builders::CreateJobInputBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
             details: self.details,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building CreateJobInput",
+                )
+            })?,
         })
     }
 }

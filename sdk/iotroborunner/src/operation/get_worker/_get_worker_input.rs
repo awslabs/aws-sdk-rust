@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkerInput {
     /// Full ARN of the worker.
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetWorkerInput {
     /// Full ARN of the worker.
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetWorkerInput {
@@ -27,6 +28,7 @@ pub struct GetWorkerInputBuilder {
 }
 impl GetWorkerInputBuilder {
     /// Full ARN of the worker.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl GetWorkerInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_worker::builders::GetWorkerInputBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_worker::GetWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_worker::GetWorkerInput { id: self.id })
+        ::std::result::Result::Ok(crate::operation::get_worker::GetWorkerInput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetWorkerInput",
+                )
+            })?,
+        })
     }
 }

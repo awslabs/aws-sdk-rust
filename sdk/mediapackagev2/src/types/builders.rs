@@ -13,6 +13,8 @@ pub use crate::types::_list_hls_manifest_configuration::ListHlsManifestConfigura
 
 pub use crate::types::_get_low_latency_hls_manifest_configuration::GetLowLatencyHlsManifestConfigurationBuilder;
 
+pub use crate::types::_filter_configuration::FilterConfigurationBuilder;
+
 pub use crate::types::_scte_hls::ScteHlsBuilder;
 
 pub use crate::types::_get_hls_manifest_configuration::GetHlsManifestConfigurationBuilder;

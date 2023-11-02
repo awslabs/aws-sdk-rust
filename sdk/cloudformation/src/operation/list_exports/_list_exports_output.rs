@@ -11,8 +11,10 @@ pub struct ListExportsOutput {
 }
 impl ListExportsOutput {
     /// <p>The output for the <code>ListExports</code> action.</p>
-    pub fn exports(&self) -> ::std::option::Option<&[crate::types::Export]> {
-        self.exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exports.is_none()`.
+    pub fn exports(&self) -> &[crate::types::Export] {
+        self.exports.as_deref().unwrap_or_default()
     }
     /// <p>If the output exceeds 100 exported output values, a string that identifies the next page of exports. If there is no additional page, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

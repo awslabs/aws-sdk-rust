@@ -15,8 +15,10 @@ impl DescribeHostReservationOfferingsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the offerings.</p>
-    pub fn offering_set(&self) -> ::std::option::Option<&[crate::types::HostOffering]> {
-        self.offering_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offering_set.is_none()`.
+    pub fn offering_set(&self) -> &[crate::types::HostOffering] {
+        self.offering_set.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeHostReservationOfferingsOutput {

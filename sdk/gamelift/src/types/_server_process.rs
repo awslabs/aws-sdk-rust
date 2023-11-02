@@ -60,6 +60,7 @@ impl ServerProcessBuilder {
     /// </ul> <note>
     /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>. </p>
     /// </note>
+    /// This field is required.
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_path = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +101,7 @@ impl ServerProcessBuilder {
         &self.parameters
     }
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
+    /// This field is required.
     pub fn concurrent_executions(mut self, input: i32) -> Self {
         self.concurrent_executions = ::std::option::Option::Some(input);
         self

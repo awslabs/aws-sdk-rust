@@ -21,8 +21,10 @@ impl RemoveTagsFromVaultInput {
         self.vault_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for RemoveTagsFromVaultInput {
@@ -47,6 +49,7 @@ pub struct RemoveTagsFromVaultInputBuilder {
 }
 impl RemoveTagsFromVaultInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +64,7 @@ impl RemoveTagsFromVaultInputBuilder {
         &self.account_id
     }
     /// <p>The name of the vault.</p>
+    /// This field is required.
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_name = ::std::option::Option::Some(input.into());
         self

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
-    pub resource_identifier: ::std::option::Option<::std::string::String>,
+    pub resource_identifier: ::std::string::String,
 }
 impl DeleteAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
-        self.resource_identifier.as_deref()
+    pub fn resource_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_identifier.deref()
     }
 }
 impl DeleteAuthPolicyInput {
@@ -27,6 +28,7 @@ pub struct DeleteAuthPolicyInputBuilder {
 }
 impl DeleteAuthPolicyInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteAuthPolicyInputBuilder {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAuthPolicyInput`](crate::operation::delete_auth_policy::DeleteAuthPolicyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_identifier`](crate::operation::delete_auth_policy::builders::DeleteAuthPolicyInputBuilder::resource_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_auth_policy::DeleteAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_auth_policy::DeleteAuthPolicyInput {
-            resource_identifier: self.resource_identifier,
+            resource_identifier: self.resource_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_identifier",
+                    "resource_identifier was not specified but it is required when building DeleteAuthPolicyInput",
+                )
+            })?,
         })
     }
 }

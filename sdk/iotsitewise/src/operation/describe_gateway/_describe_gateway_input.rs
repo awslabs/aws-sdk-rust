@@ -27,6 +27,7 @@ pub struct DescribeGatewayInputBuilder {
 }
 impl DescribeGatewayInputBuilder {
     /// <p>The ID of the gateway device.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self

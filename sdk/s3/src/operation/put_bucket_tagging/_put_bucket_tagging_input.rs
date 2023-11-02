@@ -59,6 +59,7 @@ pub struct PutBucketTaggingInputBuilder {
 }
 impl PutBucketTaggingInputBuilder {
     /// <p>The bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +108,7 @@ impl PutBucketTaggingInputBuilder {
         &self.checksum_algorithm
     }
     /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
+    /// This field is required.
     pub fn tagging(mut self, input: crate::types::Tagging) -> Self {
         self.tagging = ::std::option::Option::Some(input);
         self

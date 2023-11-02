@@ -27,6 +27,7 @@ pub struct GetSolFunctionPackageInputBuilder {
 }
 impl GetSolFunctionPackageInputBuilder {
     /// <p>ID of the function package.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self

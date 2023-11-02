@@ -15,8 +15,10 @@ impl ListFirewallsOutput {
         self.next_token.as_deref()
     }
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list. </p>
-    pub fn firewalls(&self) -> ::std::option::Option<&[crate::types::FirewallMetadata]> {
-        self.firewalls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewalls.is_none()`.
+    pub fn firewalls(&self) -> &[crate::types::FirewallMetadata] {
+        self.firewalls.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFirewallsOutput {

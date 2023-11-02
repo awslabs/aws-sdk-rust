@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateMultiplex`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::set_multiplex_id): ID of the multiplex to update.
-    ///   - [`multiplex_settings(MultiplexSettings)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::multiplex_settings) / [`set_multiplex_settings(Option<MultiplexSettings>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::set_multiplex_settings): The new settings for a multiplex.
-    ///   - [`name(impl Into<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::set_name): Name of the multiplex.
+    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::set_multiplex_id):<br>required: **true**<br>ID of the multiplex to update.<br>
+    ///   - [`multiplex_settings(MultiplexSettings)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::multiplex_settings) / [`set_multiplex_settings(Option<MultiplexSettings>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::set_multiplex_settings):<br>required: **false**<br>The new settings for a multiplex.<br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_multiplex::builders::UpdateMultiplexFluentBuilder::set_name):<br>required: **false**<br>Name of the multiplex.<br>
     /// - On success, responds with [`UpdateMultiplexOutput`](crate::operation::update_multiplex::UpdateMultiplexOutput) with field(s):
     ///   - [`multiplex(Option<Multiplex>)`](crate::operation::update_multiplex::UpdateMultiplexOutput::multiplex): The updated multiplex.
     /// - On failure, responds with [`SdkError<UpdateMultiplexError>`](crate::operation::update_multiplex::UpdateMultiplexError)

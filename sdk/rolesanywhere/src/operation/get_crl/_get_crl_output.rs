@@ -34,6 +34,7 @@ pub struct GetCrlOutputBuilder {
 }
 impl GetCrlOutputBuilder {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    /// This field is required.
     pub fn crl(mut self, input: crate::types::CrlDetail) -> Self {
         self.crl = ::std::option::Option::Some(input);
         self

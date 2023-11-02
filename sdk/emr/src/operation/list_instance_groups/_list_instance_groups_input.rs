@@ -35,6 +35,7 @@ pub struct ListInstanceGroupsInputBuilder {
 }
 impl ListInstanceGroupsInputBuilder {
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

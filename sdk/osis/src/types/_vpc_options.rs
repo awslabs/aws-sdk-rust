@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcOptions {
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of security groups associated with the VPC endpoint.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcOptions {
     /// <p>A list of subnet IDs associated with the VPC endpoint.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>A list of security groups associated with the VPC endpoint.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
 }
 impl VpcOptions {
@@ -75,10 +78,17 @@ impl VpcOptionsBuilder {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
-    pub fn build(self) -> crate::types::VpcOptions {
-        crate::types::VpcOptions {
-            subnet_ids: self.subnet_ids,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_ids`](crate::types::builders::VpcOptionsBuilder::subnet_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcOptions {
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building VpcOptions",
+                )
+            })?,
             security_group_ids: self.security_group_ids,
-        }
+        })
     }
 }

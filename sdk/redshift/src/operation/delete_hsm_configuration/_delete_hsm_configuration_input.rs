@@ -28,6 +28,7 @@ pub struct DeleteHsmConfigurationInputBuilder {
 }
 impl DeleteHsmConfigurationInputBuilder {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    /// This field is required.
     pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self

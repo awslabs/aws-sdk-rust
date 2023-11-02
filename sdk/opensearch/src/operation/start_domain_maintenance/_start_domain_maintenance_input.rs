@@ -8,7 +8,7 @@ pub struct StartDomainMaintenanceInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
     pub action: ::std::option::Option<crate::types::MaintenanceType>,
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
 }
 impl StartDomainMaintenanceInput {
@@ -20,7 +20,7 @@ impl StartDomainMaintenanceInput {
     pub fn action(&self) -> ::std::option::Option<&crate::types::MaintenanceType> {
         self.action.as_ref()
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn node_id(&self) -> ::std::option::Option<&str> {
         self.node_id.as_deref()
     }
@@ -42,6 +42,7 @@ pub struct StartDomainMaintenanceInputBuilder {
 }
 impl StartDomainMaintenanceInputBuilder {
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl StartDomainMaintenanceInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the action.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::MaintenanceType) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -69,17 +71,17 @@ impl StartDomainMaintenanceInputBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
         &self.action
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }

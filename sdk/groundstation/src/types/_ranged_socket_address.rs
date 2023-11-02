@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RangedSocketAddress {
     /// <p>IPv4 socket address.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Port range of a socket address.</p>
     pub port_range: ::std::option::Option<crate::types::IntegerRange>,
 }
 impl RangedSocketAddress {
     /// <p>IPv4 socket address.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Port range of a socket address.</p>
     pub fn port_range(&self) -> ::std::option::Option<&crate::types::IntegerRange> {
@@ -35,6 +36,7 @@ pub struct RangedSocketAddressBuilder {
 }
 impl RangedSocketAddressBuilder {
     /// <p>IPv4 socket address.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl RangedSocketAddressBuilder {
         &self.name
     }
     /// <p>Port range of a socket address.</p>
+    /// This field is required.
     pub fn port_range(mut self, input: crate::types::IntegerRange) -> Self {
         self.port_range = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl RangedSocketAddressBuilder {
         &self.port_range
     }
     /// Consumes the builder and constructs a [`RangedSocketAddress`](crate::types::RangedSocketAddress).
-    pub fn build(self) -> crate::types::RangedSocketAddress {
-        crate::types::RangedSocketAddress {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RangedSocketAddressBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RangedSocketAddress, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RangedSocketAddress {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RangedSocketAddress",
+                )
+            })?,
             port_range: self.port_range,
-        }
+        })
     }
 }

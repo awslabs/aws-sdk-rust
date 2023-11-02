@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOriginEndpoint`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::set_id): The ID of the OriginEndpoint.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointFluentBuilder::set_id):<br>required: **true**<br>The ID of the OriginEndpoint.<br>
     /// - On success, responds with [`DescribeOriginEndpointOutput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::arn): The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     ///   - [`authorization(Option<Authorization>)`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointOutput::authorization): CDN Authorization credentials

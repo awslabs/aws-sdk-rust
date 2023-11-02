@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationSettings {
     /// <p>The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.</p>
-    pub instance_sizing_type: ::std::option::Option<::std::string::String>,
+    pub instance_sizing_type: ::std::string::String,
     /// <p>The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.</p>
-    pub workload_type: ::std::option::Option<::std::string::String>,
+    pub workload_type: ::std::string::String,
 }
 impl RecommendationSettings {
     /// <p>The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.</p>
-    pub fn instance_sizing_type(&self) -> ::std::option::Option<&str> {
-        self.instance_sizing_type.as_deref()
+    pub fn instance_sizing_type(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_sizing_type.deref()
     }
     /// <p>The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.</p>
-    pub fn workload_type(&self) -> ::std::option::Option<&str> {
-        self.workload_type.as_deref()
+    pub fn workload_type(&self) -> &str {
+        use std::ops::Deref;
+        self.workload_type.deref()
     }
 }
 impl RecommendationSettings {
@@ -35,6 +37,7 @@ pub struct RecommendationSettingsBuilder {
 }
 impl RecommendationSettingsBuilder {
     /// <p>The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.</p>
+    /// This field is required.
     pub fn instance_sizing_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_sizing_type = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl RecommendationSettingsBuilder {
         &self.instance_sizing_type
     }
     /// <p>The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.</p>
+    /// This field is required.
     pub fn workload_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_type = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl RecommendationSettingsBuilder {
         &self.workload_type
     }
     /// Consumes the builder and constructs a [`RecommendationSettings`](crate::types::RecommendationSettings).
-    pub fn build(self) -> crate::types::RecommendationSettings {
-        crate::types::RecommendationSettings {
-            instance_sizing_type: self.instance_sizing_type,
-            workload_type: self.workload_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_sizing_type`](crate::types::builders::RecommendationSettingsBuilder::instance_sizing_type)
+    /// - [`workload_type`](crate::types::builders::RecommendationSettingsBuilder::workload_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecommendationSettings {
+            instance_sizing_type: self.instance_sizing_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_sizing_type",
+                    "instance_sizing_type was not specified but it is required when building RecommendationSettings",
+                )
+            })?,
+            workload_type: self.workload_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workload_type",
+                    "workload_type was not specified but it is required when building RecommendationSettings",
+                )
+            })?,
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct ListIdentityProviderConfigsInputBuilder {
 }
 impl ListIdentityProviderConfigsInputBuilder {
     /// <p>The cluster name that you want to list identity provider configurations for.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self

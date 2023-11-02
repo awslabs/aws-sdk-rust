@@ -49,6 +49,7 @@ pub struct EdgePresetDeploymentOutputBuilder {
 }
 impl EdgePresetDeploymentOutputBuilder {
     /// <p>The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EdgePresetDeploymentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

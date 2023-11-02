@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Role {
     /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The friendly name that identifies the role.</p>
-    pub role_name: ::std::option::Option<::std::string::String>,
+    pub role_name: ::std::string::String,
     /// <p> The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub role_id: ::std::option::Option<::std::string::String>,
+    pub role_id: ::std::string::String,
     /// <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i> guide. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
-    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_date: ::aws_smithy_types::DateTime,
     /// <p>The policy that grants an entity permission to assume the role.</p>
     pub assume_role_policy_document: ::std::option::Option<::std::string::String>,
     /// <p>A description of the role that you provide.</p>
@@ -30,24 +30,28 @@ pub struct Role {
 }
 impl Role {
     /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The friendly name that identifies the role.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
-        self.role_name.as_deref()
+    pub fn role_name(&self) -> &str {
+        use std::ops::Deref;
+        self.role_name.deref()
     }
     /// <p> The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn role_id(&self) -> ::std::option::Option<&str> {
-        self.role_id.as_deref()
+    pub fn role_id(&self) -> &str {
+        use std::ops::Deref;
+        self.role_id.deref()
     }
     /// <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i> guide. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_date.as_ref()
+    pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_date
     }
     /// <p>The policy that grants an entity permission to assume the role.</p>
     pub fn assume_role_policy_document(&self) -> ::std::option::Option<&str> {
@@ -67,8 +71,10 @@ impl Role {
         self.permissions_boundary.as_ref()
     }
     /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM user Guide</i>.</p>
     pub fn role_last_used(&self) -> ::std::option::Option<&crate::types::RoleLastUsed> {
@@ -100,6 +106,7 @@ pub struct RoleBuilder {
 }
 impl RoleBuilder {
     /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +121,7 @@ impl RoleBuilder {
         &self.path
     }
     /// <p>The friendly name that identifies the role.</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +136,7 @@ impl RoleBuilder {
         &self.role_name
     }
     /// <p> The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_id = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +151,7 @@ impl RoleBuilder {
         &self.role_id
     }
     /// <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i> guide. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +166,7 @@ impl RoleBuilder {
         &self.arn
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the role was created.</p>
+    /// This field is required.
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
         self
@@ -263,19 +274,44 @@ impl RoleBuilder {
         &self.role_last_used
     }
     /// Consumes the builder and constructs a [`Role`](crate::types::Role).
-    pub fn build(self) -> crate::types::Role {
-        crate::types::Role {
-            path: self.path,
-            role_name: self.role_name,
-            role_id: self.role_id,
-            arn: self.arn,
-            create_date: self.create_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::RoleBuilder::path)
+    /// - [`role_name`](crate::types::builders::RoleBuilder::role_name)
+    /// - [`role_id`](crate::types::builders::RoleBuilder::role_id)
+    /// - [`arn`](crate::types::builders::RoleBuilder::arn)
+    /// - [`create_date`](crate::types::builders::RoleBuilder::create_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::Role, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Role {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("path", "path was not specified but it is required when building Role")
+            })?,
+            role_name: self.role_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_name",
+                    "role_name was not specified but it is required when building Role",
+                )
+            })?,
+            role_id: self.role_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_id",
+                    "role_id was not specified but it is required when building Role",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building Role")
+            })?,
+            create_date: self.create_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_date",
+                    "create_date was not specified but it is required when building Role",
+                )
+            })?,
             assume_role_policy_document: self.assume_role_policy_document,
             description: self.description,
             max_session_duration: self.max_session_duration,
             permissions_boundary: self.permissions_boundary,
             tags: self.tags,
             role_last_used: self.role_last_used,
-        }
+        })
     }
 }

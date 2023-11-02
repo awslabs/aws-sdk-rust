@@ -13,8 +13,10 @@ pub struct DescribeAddonVersionsOutput {
 }
 impl DescribeAddonVersionsOutput {
     /// <p>The list of available versions with Kubernetes version compatibility and other properties.</p>
-    pub fn addons(&self) -> ::std::option::Option<&[crate::types::AddonInfo]> {
-        self.addons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addons.is_none()`.
+    pub fn addons(&self) -> &[crate::types::AddonInfo] {
+        self.addons.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>

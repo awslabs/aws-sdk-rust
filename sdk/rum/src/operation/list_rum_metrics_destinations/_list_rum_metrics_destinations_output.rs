@@ -11,8 +11,10 @@ pub struct ListRumMetricsDestinationsOutput {
 }
 impl ListRumMetricsDestinationsOutput {
     /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::MetricDestinationSummary]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::MetricDestinationSummary] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

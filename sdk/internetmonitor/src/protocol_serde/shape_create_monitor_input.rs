@@ -24,27 +24,27 @@ pub fn ser_create_monitor_input(
             ::aws_smithy_types::Number::NegInt((input.max_city_networks_to_monitor).into()),
         );
     }
-    if let Some(var_6) = &input.monitor_name {
-        object.key("MonitorName").string(var_6.as_str());
+    {
+        object.key("MonitorName").string(input.monitor_name.as_str());
     }
-    if let Some(var_7) = &input.resources {
-        let mut array_8 = object.key("Resources").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.resources {
+        let mut array_7 = object.key("Resources").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("Tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_10 = object.key("Tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_11.finish();
+        object_10.finish();
     }
     if input.traffic_percentage_to_monitor != 0 {
         object.key("TrafficPercentageToMonitor").number(

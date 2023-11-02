@@ -108,6 +108,8 @@ pub struct Fleet {
     pub usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub max_sessions_per_instance: ::std::option::Option<i32>,
 }
 impl Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
@@ -218,8 +220,10 @@ impl Fleet {
         self.created_time.as_ref()
     }
     /// <p>The fleet errors.</p>
-    pub fn fleet_errors(&self) -> ::std::option::Option<&[crate::types::FleetError]> {
-        self.fleet_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_errors.is_none()`.
+    pub fn fleet_errors(&self) -> &[crate::types::FleetError] {
+        self.fleet_errors.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
     pub fn enable_default_internet_access(&self) -> ::std::option::Option<bool> {
@@ -255,12 +259,18 @@ impl Fleet {
         self.max_concurrent_sessions
     }
     /// <p>The USB device filter strings associated with the fleet.</p>
-    pub fn usb_device_filter_strings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.usb_device_filter_strings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usb_device_filter_strings.is_none()`.
+    pub fn usb_device_filter_strings(&self) -> &[::std::string::String] {
+        self.usb_device_filter_strings.as_deref().unwrap_or_default()
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub fn session_script_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.session_script_s3_location.as_ref()
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(&self) -> ::std::option::Option<i32> {
+        self.max_sessions_per_instance
     }
 }
 impl Fleet {
@@ -298,9 +308,11 @@ pub struct FleetBuilder {
     pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
     pub(crate) usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) max_sessions_per_instance: ::std::option::Option<i32>,
 }
 impl FleetBuilder {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -315,6 +327,7 @@ impl FleetBuilder {
         &self.arn
     }
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -420,6 +433,7 @@ impl FleetBuilder {
     /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
     /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -560,6 +574,7 @@ impl FleetBuilder {
         &self.fleet_type
     }
     /// <p>The capacity status for the fleet.</p>
+    /// This field is required.
     pub fn compute_capacity_status(mut self, input: crate::types::ComputeCapacityStatus) -> Self {
         self.compute_capacity_status = ::std::option::Option::Some(input);
         self
@@ -608,6 +623,7 @@ impl FleetBuilder {
         &self.disconnect_timeout_in_seconds
     }
     /// <p>The current state for the fleet.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::FleetState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -816,6 +832,20 @@ impl FleetBuilder {
     pub fn get_session_script_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.session_script_s3_location
     }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(mut self, input: i32) -> Self {
+        self.max_sessions_per_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn set_max_sessions_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_sessions_per_instance = input;
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn get_max_sessions_per_instance(&self) -> &::std::option::Option<i32> {
+        &self.max_sessions_per_instance
+    }
     /// Consumes the builder and constructs a [`Fleet`](crate::types::Fleet).
     pub fn build(self) -> crate::types::Fleet {
         crate::types::Fleet {
@@ -843,6 +873,7 @@ impl FleetBuilder {
             max_concurrent_sessions: self.max_concurrent_sessions,
             usb_device_filter_strings: self.usb_device_filter_strings,
             session_script_s3_location: self.session_script_s3_location,
+            max_sessions_per_instance: self.max_sessions_per_instance,
         }
     }
 }

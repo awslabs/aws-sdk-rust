@@ -41,6 +41,7 @@ pub struct GetImageFrameInputBuilder {
 }
 impl GetImageFrameInputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetImageFrameInputBuilder {
         &self.datastore_id
     }
     /// <p>The image set identifier.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetImageFrameInputBuilder {
         &self.image_set_id
     }
     /// <p>Information about the image frame (pixel data) identifier.</p>
+    /// This field is required.
     pub fn image_frame_information(mut self, input: crate::types::ImageFrameInformation) -> Self {
         self.image_frame_information = ::std::option::Option::Some(input);
         self

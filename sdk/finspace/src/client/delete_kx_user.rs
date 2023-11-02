@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteKxUser`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_name(impl Into<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::set_user_name): <p>A unique identifier for the user that you want to delete.</p>
-    ///   - [`environment_id(impl Into<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::set_environment_id): <p>A unique identifier for the kdb environment.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::set_user_name):<br>required: **true**<br><p>A unique identifier for the user that you want to delete.</p><br>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
     /// - On success, responds with [`DeleteKxUserOutput`](crate::operation::delete_kx_user::DeleteKxUserOutput)
     /// - On failure, responds with [`SdkError<DeleteKxUserError>`](crate::operation::delete_kx_user::DeleteKxUserError)
     pub fn delete_kx_user(&self) -> crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder {

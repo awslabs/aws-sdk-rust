@@ -76,6 +76,7 @@ pub struct GetMergeConflictsInputBuilder {
 }
 impl GetMergeConflictsInputBuilder {
     /// <p>The name of the repository where the pull request was created.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl GetMergeConflictsInputBuilder {
         &self.repository_name
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl GetMergeConflictsInputBuilder {
         &self.destination_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl GetMergeConflictsInputBuilder {
         &self.source_commit_specifier
     }
     /// <p>The merge option or strategy you want to use to merge the code. </p>
+    /// This field is required.
     pub fn merge_option(mut self, input: crate::types::MergeOptionTypeEnum) -> Self {
         self.merge_option = ::std::option::Option::Some(input);
         self

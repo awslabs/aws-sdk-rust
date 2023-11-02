@@ -27,6 +27,7 @@ pub struct DeleteNamedQueryInputBuilder {
 }
 impl DeleteNamedQueryInputBuilder {
     /// <p>The unique ID of the query to delete.</p>
+    /// This field is required.
     pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self

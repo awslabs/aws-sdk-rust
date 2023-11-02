@@ -27,8 +27,10 @@ impl UnindexedFace {
     /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
     /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
     /// </ul>
-    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::Reason]> {
-        self.reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
+    pub fn reasons(&self) -> &[crate::types::Reason] {
+        self.reasons.as_deref().unwrap_or_default()
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
     pub fn face_detail(&self) -> ::std::option::Option<&crate::types::FaceDetail> {

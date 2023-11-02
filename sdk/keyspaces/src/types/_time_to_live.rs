@@ -6,12 +6,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
-    pub status: ::std::option::Option<crate::types::TimeToLiveStatus>,
+    pub status: crate::types::TimeToLiveStatus,
 }
 impl TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TimeToLiveStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::TimeToLiveStatus {
+        &self.status
     }
 }
 impl TimeToLive {
@@ -29,6 +29,7 @@ pub struct TimeToLiveBuilder {
 }
 impl TimeToLiveBuilder {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::TimeToLiveStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -43,7 +44,16 @@ impl TimeToLiveBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`TimeToLive`](crate::types::TimeToLive).
-    pub fn build(self) -> crate::types::TimeToLive {
-        crate::types::TimeToLive { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::TimeToLiveBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeToLive, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeToLive {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building TimeToLive",
+                )
+            })?,
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DeleteAdapterVersionInputBuilder {
 }
 impl DeleteAdapterVersionInputBuilder {
     /// <p>A string containing a unique ID for the adapter version that will be deleted.</p>
+    /// This field is required.
     pub fn adapter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteAdapterVersionInputBuilder {
         &self.adapter_id
     }
     /// <p>Specifies the adapter version to be deleted.</p>
+    /// This field is required.
     pub fn adapter_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_version = ::std::option::Option::Some(input.into());
         self

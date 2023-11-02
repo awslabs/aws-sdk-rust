@@ -92,14 +92,14 @@ impl UpdateTrainingJobFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::update_training_job::UpdateTrainingJobOutput,
             crate::operation::update_training_job::UpdateTrainingJobError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_training_job::UpdateTrainingJobError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

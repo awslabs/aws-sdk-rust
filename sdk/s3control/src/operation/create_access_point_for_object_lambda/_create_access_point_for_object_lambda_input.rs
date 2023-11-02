@@ -41,6 +41,7 @@ pub struct CreateAccessPointForObjectLambdaInputBuilder {
 }
 impl CreateAccessPointForObjectLambdaInputBuilder {
     /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
         &self.account_id
     }
     /// <p>The name you want to assign to this Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateAccessPointForObjectLambdaInputBuilder {
         &self.name
     }
     /// <p>Object Lambda Access Point configuration as a JSON document.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::ObjectLambdaConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

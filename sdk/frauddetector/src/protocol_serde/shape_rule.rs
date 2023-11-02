@@ -3,14 +3,14 @@ pub fn ser_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Rule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.detector_id {
-        object.key("detectorId").string(var_1.as_str());
+    {
+        object.key("detectorId").string(input.detector_id.as_str());
     }
-    if let Some(var_2) = &input.rule_id {
-        object.key("ruleId").string(var_2.as_str());
+    {
+        object.key("ruleId").string(input.rule_id.as_str());
     }
-    if let Some(var_3) = &input.rule_version {
-        object.key("ruleVersion").string(var_3.as_str());
+    {
+        object.key("ruleVersion").string(input.rule_version.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rule_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

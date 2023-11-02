@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterAccount`](crate::operation::register_account::builders::RegisterAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`kms_key(impl Into<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::kms_key) / [`set_kms_key(Option<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::set_kms_key): <p> The KMS key details. </p>
-    ///   - [`delegated_admin_account(impl Into<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::delegated_admin_account) / [`set_delegated_admin_account(Option<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::set_delegated_admin_account): <p> The delegated administrator account for Audit Manager. </p>
+    ///   - [`kms_key(impl Into<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::kms_key) / [`set_kms_key(Option<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::set_kms_key):<br>required: **false**<br><p> The KMS key details. </p><br>
+    ///   - [`delegated_admin_account(impl Into<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::delegated_admin_account) / [`set_delegated_admin_account(Option<String>)`](crate::operation::register_account::builders::RegisterAccountFluentBuilder::set_delegated_admin_account):<br>required: **false**<br><p> The delegated administrator account for Audit Manager. </p><br>
     /// - On success, responds with [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput) with field(s):
     ///   - [`status(Option<AccountStatus>)`](crate::operation::register_account::RegisterAccountOutput::status): <p> The status of the account registration request. </p>
     /// - On failure, responds with [`SdkError<RegisterAccountError>`](crate::operation::register_account::RegisterAccountError)

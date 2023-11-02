@@ -34,6 +34,7 @@ pub struct AssociateRoleToGroupInputBuilder {
 }
 impl AssociateRoleToGroupInputBuilder {
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateRoleToGroupInputBuilder {
         &self.group_id
     }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct ListAliasesOutput {
 }
 impl ListAliasesOutput {
     /// <p>The entity's paginated aliases.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[::std::string::String] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

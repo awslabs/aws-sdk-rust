@@ -22,8 +22,10 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -48,6 +50,7 @@ pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuil
 }
 impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
     /// <p> The ID of the local gateway route table. </p>
+    /// This field is required.
     pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         &self.local_gateway_route_table_id
     }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    /// This field is required.
     pub fn local_gateway_virtual_interface_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFunction`](crate::operation::get_function::builders::GetFunctionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_name): <p>The name of the function whose code you are getting.</p>
-    ///   - [`stage(FunctionStage)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::stage) / [`set_stage(Option<FunctionStage>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_stage): <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_name):<br>required: **true**<br><p>The name of the function whose code you are getting.</p><br>
+    ///   - [`stage(FunctionStage)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::stage) / [`set_stage(Option<FunctionStage>)`](crate::operation::get_function::builders::GetFunctionFluentBuilder::set_stage):<br>required: **false**<br><p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p><br>
     /// - On success, responds with [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput) with field(s):
     ///   - [`function_code(Option<Blob>)`](crate::operation::get_function::GetFunctionOutput::function_code): <p>The function code of a CloudFront function.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_function::GetFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>

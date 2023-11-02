@@ -17,13 +17,17 @@ pub struct SearchEntitiesInput {
 }
 impl SearchEntitiesInput {
     /// <p>The entity types for which to search.</p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[crate::types::EntityType]> {
-        self.entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_types.is_none()`.
+    pub fn entity_types(&self) -> &[crate::types::EntityType] {
+        self.entity_types.as_deref().unwrap_or_default()
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::EntityFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::EntityFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

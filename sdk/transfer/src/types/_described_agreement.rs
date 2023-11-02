@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedAgreement {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or short description that's used to identify the agreement.</p>
@@ -32,8 +32,9 @@ pub struct DescribedAgreement {
 }
 impl DescribedAgreement {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn agreement_id(&self) -> ::std::option::Option<&str> {
@@ -73,8 +74,10 @@ impl DescribedAgreement {
         self.access_role.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl DescribedAgreement {
@@ -101,6 +104,7 @@ pub struct DescribedAgreementBuilder {
 }
 impl DescribedAgreementBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -262,9 +266,16 @@ impl DescribedAgreementBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedAgreement`](crate::types::DescribedAgreement).
-    pub fn build(self) -> crate::types::DescribedAgreement {
-        crate::types::DescribedAgreement {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedAgreementBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedAgreement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedAgreement {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedAgreement",
+                )
+            })?,
             agreement_id: self.agreement_id,
             description: self.description,
             status: self.status,
@@ -274,6 +285,6 @@ impl DescribedAgreementBuilder {
             base_directory: self.base_directory,
             access_role: self.access_role,
             tags: self.tags,
-        }
+        })
     }
 }

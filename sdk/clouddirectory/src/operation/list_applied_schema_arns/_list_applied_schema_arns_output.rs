@@ -11,8 +11,10 @@ pub struct ListAppliedSchemaArnsOutput {
 }
 impl ListAppliedSchemaArnsOutput {
     /// <p>The ARNs of schemas that are applied to the directory.</p>
-    pub fn schema_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.schema_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_arns.is_none()`.
+    pub fn schema_arns(&self) -> &[::std::string::String] {
+        self.schema_arns.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

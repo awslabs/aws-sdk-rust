@@ -35,6 +35,7 @@ pub struct ListBranchesInputBuilder {
 }
 impl ListBranchesInputBuilder {
     /// <p>The name of the repository that contains the branches.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

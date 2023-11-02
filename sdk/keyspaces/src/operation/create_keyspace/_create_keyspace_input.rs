@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
-    pub keyspace_name: ::std::option::Option<::std::string::String>,
+    pub keyspace_name: ::std::string::String,
     /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -17,13 +17,16 @@ pub struct CreateKeyspaceInput {
 }
 impl CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
-        self.keyspace_name.as_deref()
+    pub fn keyspace_name(&self) -> &str {
+        use std::ops::Deref;
+        self.keyspace_name.deref()
     }
     /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> The replication specification of the keyspace includes:</p>
     /// <ul>
@@ -51,6 +54,7 @@ pub struct CreateKeyspaceInputBuilder {
 }
 impl CreateKeyspaceInputBuilder {
     /// <p>The name of the keyspace to be created.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -114,11 +118,18 @@ impl CreateKeyspaceInputBuilder {
         &self.replication_specification
     }
     /// Consumes the builder and constructs a [`CreateKeyspaceInput`](crate::operation::create_keyspace::CreateKeyspaceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyspace_name`](crate::operation::create_keyspace::builders::CreateKeyspaceInputBuilder::keyspace_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_keyspace::CreateKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_keyspace::CreateKeyspaceInput {
-            keyspace_name: self.keyspace_name,
+            keyspace_name: self.keyspace_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyspace_name",
+                    "keyspace_name was not specified but it is required when building CreateKeyspaceInput",
+                )
+            })?,
             tags: self.tags,
             replication_specification: self.replication_specification,
         })

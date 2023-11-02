@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
-    pub instance_url: ::std::option::Option<::std::string::String>,
+    pub instance_url: ::std::string::String,
 }
 impl InforNexusConnectorProfileProperties {
     /// <p> The location of the Infor Nexus resource. </p>
-    pub fn instance_url(&self) -> ::std::option::Option<&str> {
-        self.instance_url.as_deref()
+    pub fn instance_url(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_url.deref()
     }
 }
 impl InforNexusConnectorProfileProperties {
@@ -28,6 +29,7 @@ pub struct InforNexusConnectorProfilePropertiesBuilder {
 }
 impl InforNexusConnectorProfilePropertiesBuilder {
     /// <p> The location of the Infor Nexus resource. </p>
+    /// This field is required.
     pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_url = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl InforNexusConnectorProfilePropertiesBuilder {
         &self.instance_url
     }
     /// Consumes the builder and constructs a [`InforNexusConnectorProfileProperties`](crate::types::InforNexusConnectorProfileProperties).
-    pub fn build(self) -> crate::types::InforNexusConnectorProfileProperties {
-        crate::types::InforNexusConnectorProfileProperties {
-            instance_url: self.instance_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_url`](crate::types::builders::InforNexusConnectorProfilePropertiesBuilder::instance_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::InforNexusConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InforNexusConnectorProfileProperties {
+            instance_url: self.instance_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_url",
+                    "instance_url was not specified but it is required when building InforNexusConnectorProfileProperties",
+                )
+            })?,
+        })
     }
 }

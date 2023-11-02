@@ -57,6 +57,7 @@ pub struct ListNodesInputBuilder {
 }
 impl ListNodesInputBuilder {
     /// <p>The unique identifier of the network for which to list nodes.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self

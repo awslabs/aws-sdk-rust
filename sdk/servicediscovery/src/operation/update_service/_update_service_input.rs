@@ -34,6 +34,7 @@ pub struct UpdateServiceInputBuilder {
 }
 impl UpdateServiceInputBuilder {
     /// <p>The ID of the service that you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateServiceInputBuilder {
         &self.id
     }
     /// <p>A complex type that contains the new settings for the service.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::ServiceChange) -> Self {
         self.service = ::std::option::Option::Some(input);
         self

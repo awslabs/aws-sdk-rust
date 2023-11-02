@@ -16,8 +16,10 @@ impl UpdateContainerInstancesStateInput {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
-    pub fn container_instances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_instances.is_none()`.
+    pub fn container_instances(&self) -> &[::std::string::String] {
+        self.container_instances.as_deref().unwrap_or_default()
     }
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerInstanceStatus> {
@@ -75,6 +77,7 @@ impl UpdateContainerInstancesStateInputBuilder {
         &self.container_instances
     }
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ContainerInstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

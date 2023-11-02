@@ -53,8 +53,10 @@ impl PipelineExecutionSummary {
         self.last_update_time.as_ref()
     }
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
-    pub fn source_revisions(&self) -> ::std::option::Option<&[crate::types::SourceRevision]> {
-        self.source_revisions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_revisions.is_none()`.
+    pub fn source_revisions(&self) -> &[crate::types::SourceRevision] {
+        self.source_revisions.as_deref().unwrap_or_default()
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
     pub fn trigger(&self) -> ::std::option::Option<&crate::types::ExecutionTrigger> {

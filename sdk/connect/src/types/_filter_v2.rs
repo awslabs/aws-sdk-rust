@@ -15,8 +15,10 @@ impl FilterV2 {
         self.filter_key.as_deref()
     }
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>. </p>
-    pub fn filter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.filter_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_values.is_none()`.
+    pub fn filter_values(&self) -> &[::std::string::String] {
+        self.filter_values.as_deref().unwrap_or_default()
     }
 }
 impl FilterV2 {

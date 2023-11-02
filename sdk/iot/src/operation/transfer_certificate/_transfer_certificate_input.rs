@@ -42,6 +42,7 @@ pub struct TransferCertificateInputBuilder {
 }
 impl TransferCertificateInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl TransferCertificateInputBuilder {
         &self.certificate_id
     }
     /// <p>The Amazon Web Services account.</p>
+    /// This field is required.
     pub fn target_aws_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_aws_account = ::std::option::Option::Some(input.into());
         self

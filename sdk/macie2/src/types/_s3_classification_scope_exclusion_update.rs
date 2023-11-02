@@ -16,8 +16,10 @@ pub struct S3ClassificationScopeExclusionUpdate {
 }
 impl S3ClassificationScopeExclusionUpdate {
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    pub fn bucket_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bucket_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_names.is_none()`.
+    pub fn bucket_names(&self) -> &[::std::string::String] {
+        self.bucket_names.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
@@ -70,6 +72,7 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     /// <li><p>REMOVE - Remove the specified bucket names from the current list.</p></li>
     /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn operation(mut self, input: crate::types::ClassificationScopeUpdateOperation) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self

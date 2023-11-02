@@ -3,23 +3,23 @@ pub fn ser_credential_pair(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CredentialPair,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.username {
-        object.key("Username").string(var_1.as_str());
+    {
+        object.key("Username").string(input.username.as_str());
     }
-    if let Some(var_2) = &input.password {
-        object.key("Password").string(var_2.as_str());
+    {
+        object.key("Password").string(input.password.as_str());
     }
-    if let Some(var_3) = &input.alternate_data_source_parameters {
-        let mut array_4 = object.key("AlternateDataSourceParameters").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.alternate_data_source_parameters {
+        let mut array_2 = object.key("AlternateDataSourceParameters").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_data_source_parameters::ser_data_source_parameters(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_data_source_parameters::ser_data_source_parameters(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }

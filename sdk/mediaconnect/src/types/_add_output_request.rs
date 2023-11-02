@@ -37,8 +37,10 @@ pub struct AddOutputRequest {
 }
 impl AddOutputRequest {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_allow_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_allow_list.is_none()`.
+    pub fn cidr_allow_list(&self) -> &[::std::string::String] {
+        self.cidr_allow_list.as_deref().unwrap_or_default()
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -57,8 +59,10 @@ impl AddOutputRequest {
         self.max_latency
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn media_stream_output_configurations(&self) -> ::std::option::Option<&[crate::types::MediaStreamOutputConfigurationRequest]> {
-        self.media_stream_output_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_stream_output_configurations.is_none()`.
+    pub fn media_stream_output_configurations(&self) -> &[crate::types::MediaStreamOutputConfigurationRequest] {
+        self.media_stream_output_configurations.as_deref().unwrap_or_default()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(&self) -> ::std::option::Option<i32> {
@@ -269,6 +273,7 @@ impl AddOutputRequestBuilder {
         &self.port
     }
     /// The protocol to use for the output.
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self

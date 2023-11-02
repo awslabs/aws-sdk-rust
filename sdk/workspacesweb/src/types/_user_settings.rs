@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserSettings {
     /// <p>The ARN of the user settings.</p>
-    pub user_settings_arn: ::std::option::Option<::std::string::String>,
+    pub user_settings_arn: ::std::string::String,
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
     pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
@@ -27,12 +27,15 @@ pub struct UserSettings {
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.user_settings_arn.as_deref()
+    pub fn user_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_settings_arn.deref()
     }
     /// <p>A list of web portal ARNs that this user settings is associated with.</p>
-    pub fn associated_portal_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_portal_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
+    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
+        self.associated_portal_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn copy_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
@@ -107,6 +110,7 @@ pub struct UserSettingsBuilder {
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
+    /// This field is required.
     pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -256,9 +260,16 @@ impl UserSettingsBuilder {
         &self.cookie_synchronization_configuration
     }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
-    pub fn build(self) -> crate::types::UserSettings {
-        crate::types::UserSettings {
-            user_settings_arn: self.user_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_settings_arn`](crate::types::builders::UserSettingsBuilder::user_settings_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserSettings {
+            user_settings_arn: self.user_settings_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_settings_arn",
+                    "user_settings_arn was not specified but it is required when building UserSettings",
+                )
+            })?,
             associated_portal_arns: self.associated_portal_arns,
             copy_allowed: self.copy_allowed,
             paste_allowed: self.paste_allowed,
@@ -268,7 +279,7 @@ impl UserSettingsBuilder {
             disconnect_timeout_in_minutes: self.disconnect_timeout_in_minutes,
             idle_disconnect_timeout_in_minutes: self.idle_disconnect_timeout_in_minutes,
             cookie_synchronization_configuration: self.cookie_synchronization_configuration,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UserSettingsBuilder {

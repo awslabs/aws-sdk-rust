@@ -3,11 +3,11 @@ pub fn ser_dicom_study_date_and_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DicomStudyDateAndTime,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.dicom_study_date {
-        object.key("DICOMStudyDate").string(var_1.as_str());
+    {
+        object.key("DICOMStudyDate").string(input.dicom_study_date.as_str());
     }
-    if let Some(var_2) = &input.dicom_study_time {
-        object.key("DICOMStudyTime").string(var_2.as_str());
+    if let Some(var_1) = &input.dicom_study_time {
+        object.key("DICOMStudyTime").string(var_1.as_str());
     }
     Ok(())
 }

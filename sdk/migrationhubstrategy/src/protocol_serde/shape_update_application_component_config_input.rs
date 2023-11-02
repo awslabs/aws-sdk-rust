@@ -6,35 +6,35 @@ pub fn ser_update_application_component_config_input(
     if let Some(var_1) = &input.app_type {
         object.key("appType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.application_component_id {
-        object.key("applicationComponentId").string(var_2.as_str());
+    {
+        object.key("applicationComponentId").string(input.application_component_id.as_str());
     }
-    if let Some(var_3) = &input.configure_only {
-        object.key("configureOnly").boolean(*var_3);
+    if let Some(var_2) = &input.configure_only {
+        object.key("configureOnly").boolean(*var_2);
     }
-    if let Some(var_4) = &input.inclusion_status {
-        object.key("inclusionStatus").string(var_4.as_str());
+    if let Some(var_3) = &input.inclusion_status {
+        object.key("inclusionStatus").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.secrets_manager_key {
-        object.key("secretsManagerKey").string(var_5.as_str());
+    if let Some(var_4) = &input.secrets_manager_key {
+        object.key("secretsManagerKey").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.source_code_list {
-        let mut array_7 = object.key("sourceCodeList").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.source_code_list {
+        let mut array_6 = object.key("sourceCodeList").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_source_code::ser_source_code(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_source_code::ser_source_code(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_10) = &input.strategy_option {
+    if let Some(var_9) = &input.strategy_option {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("strategyOption").start_object();
-        crate::protocol_serde::shape_strategy_option::ser_strategy_option(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("strategyOption").start_object();
+        crate::protocol_serde::shape_strategy_option::ser_strategy_option(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

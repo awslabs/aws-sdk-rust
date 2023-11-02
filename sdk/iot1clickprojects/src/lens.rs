@@ -22,19 +22,13 @@ pub(crate) fn reflens_list_projects_output_next_token(
 pub(crate) fn lens_list_placements_output_placements(
     input: crate::operation::list_placements::ListPlacementsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>> {
-    let input = match input.placements {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.placements;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_projects_output_projects(
     input: crate::operation::list_projects::ListProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
-    let input = match input.projects {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.projects;
     ::std::option::Option::Some(input)
 }

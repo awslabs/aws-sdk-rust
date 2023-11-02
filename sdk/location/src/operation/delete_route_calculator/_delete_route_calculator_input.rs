@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteCalculatorInput {
     /// <p>The name of the route calculator resource to be deleted.</p>
-    pub calculator_name: ::std::option::Option<::std::string::String>,
+    pub calculator_name: ::std::string::String,
 }
 impl DeleteRouteCalculatorInput {
     /// <p>The name of the route calculator resource to be deleted.</p>
-    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
-        self.calculator_name.as_deref()
+    pub fn calculator_name(&self) -> &str {
+        use std::ops::Deref;
+        self.calculator_name.deref()
     }
 }
 impl DeleteRouteCalculatorInput {
@@ -27,6 +28,7 @@ pub struct DeleteRouteCalculatorInputBuilder {
 }
 impl DeleteRouteCalculatorInputBuilder {
     /// <p>The name of the route calculator resource to be deleted.</p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,19 @@ impl DeleteRouteCalculatorInputBuilder {
         &self.calculator_name
     }
     /// Consumes the builder and constructs a [`DeleteRouteCalculatorInput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`calculator_name`](crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorInputBuilder::calculator_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_route_calculator::DeleteRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_route_calculator::DeleteRouteCalculatorInput {
-            calculator_name: self.calculator_name,
+            calculator_name: self.calculator_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "calculator_name",
+                    "calculator_name was not specified but it is required when building DeleteRouteCalculatorInput",
+                )
+            })?,
         })
     }
 }

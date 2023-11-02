@@ -27,6 +27,7 @@ pub struct CreateRecommenderConfigurationInputBuilder {
 }
 impl CreateRecommenderConfigurationInputBuilder {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    /// This field is required.
     pub fn create_recommender_configuration(mut self, input: crate::types::CreateRecommenderConfigurationShape) -> Self {
         self.create_recommender_configuration = ::std::option::Option::Some(input);
         self

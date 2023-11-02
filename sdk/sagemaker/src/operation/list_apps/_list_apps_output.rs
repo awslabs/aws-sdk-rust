@@ -11,8 +11,10 @@ pub struct ListAppsOutput {
 }
 impl ListAppsOutput {
     /// <p>The list of apps.</p>
-    pub fn apps(&self) -> ::std::option::Option<&[crate::types::AppDetails]> {
-        self.apps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.apps.is_none()`.
+    pub fn apps(&self) -> &[crate::types::AppDetails] {
+        self.apps.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

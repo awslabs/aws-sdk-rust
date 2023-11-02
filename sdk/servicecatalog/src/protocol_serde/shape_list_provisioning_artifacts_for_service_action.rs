@@ -36,8 +36,8 @@ pub fn de_list_provisioning_artifacts_for_service_action_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionError::ResourceNotFoundException({
@@ -52,8 +52,8 @@ pub fn de_list_provisioning_artifacts_for_service_action_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionError::generic(generic)

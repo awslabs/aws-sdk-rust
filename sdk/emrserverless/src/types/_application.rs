@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Application {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The name of the application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub release_label: ::std::option::Option<::std::string::String>,
+    pub release_label: ::std::string::String,
     /// <p>The type of application, such as Spark or Hive.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The state of the application.</p>
-    pub state: ::std::option::Option<crate::types::ApplicationState>,
+    pub state: crate::types::ApplicationState,
     /// <p>The state details of the application.</p>
     pub state_details: ::std::option::Option<::std::string::String>,
     /// <p>The initial capacity of the application.</p>
@@ -23,9 +23,9 @@ pub struct Application {
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
     pub maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     /// <p>The date and time when the application run was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the application run was last updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The tags assigned to the application.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
@@ -47,28 +47,32 @@ pub struct Application {
 }
 impl Application {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The name of the application.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
-        self.release_label.as_deref()
+    pub fn release_label(&self) -> &str {
+        use std::ops::Deref;
+        self.release_label.deref()
     }
     /// <p>The type of application, such as Spark or Hive.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The state of the application.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ApplicationState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ApplicationState {
+        &self.state
     }
     /// <p>The state details of the application.</p>
     pub fn state_details(&self) -> ::std::option::Option<&str> {
@@ -85,12 +89,12 @@ impl Application {
         self.maximum_capacity.as_ref()
     }
     /// <p>The date and time when the application run was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date and time when the application run was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The tags assigned to the application.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -123,8 +127,10 @@ impl Application {
         self.worker_type_specifications.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
-    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.runtime_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_configuration.is_none()`.
+    pub fn runtime_configuration(&self) -> &[crate::types::Configuration] {
+        self.runtime_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
@@ -166,6 +172,7 @@ pub struct ApplicationBuilder {
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -194,6 +201,7 @@ impl ApplicationBuilder {
         &self.name
     }
     /// <p>The ARN of the application.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -208,6 +216,7 @@ impl ApplicationBuilder {
         &self.arn
     }
     /// <p>The Amazon EMR release associated with the application.</p>
+    /// This field is required.
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
@@ -222,6 +231,7 @@ impl ApplicationBuilder {
         &self.release_label
     }
     /// <p>The type of application, such as Spark or Hive.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -236,6 +246,7 @@ impl ApplicationBuilder {
         &self.r#type
     }
     /// <p>The state of the application.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ApplicationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -303,6 +314,7 @@ impl ApplicationBuilder {
         &self.maximum_capacity
     }
     /// <p>The date and time when the application run was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -317,6 +329,7 @@ impl ApplicationBuilder {
         &self.created_at
     }
     /// <p>The date and time when the application run was last updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -484,19 +497,62 @@ impl ApplicationBuilder {
         &self.monitoring_configuration
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
-    pub fn build(self) -> crate::types::Application {
-        crate::types::Application {
-            application_id: self.application_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::types::builders::ApplicationBuilder::application_id)
+    /// - [`arn`](crate::types::builders::ApplicationBuilder::arn)
+    /// - [`release_label`](crate::types::builders::ApplicationBuilder::release_label)
+    /// - [`r#type`](crate::types::builders::ApplicationBuilder::r#type)
+    /// - [`state`](crate::types::builders::ApplicationBuilder::state)
+    /// - [`created_at`](crate::types::builders::ApplicationBuilder::created_at)
+    /// - [`updated_at`](crate::types::builders::ApplicationBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::Application, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Application {
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building Application",
+                )
+            })?,
             name: self.name,
-            arn: self.arn,
-            release_label: self.release_label,
-            r#type: self.r#type,
-            state: self.state,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Application",
+                )
+            })?,
+            release_label: self.release_label.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "release_label",
+                    "release_label was not specified but it is required when building Application",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Application",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building Application",
+                )
+            })?,
             state_details: self.state_details,
             initial_capacity: self.initial_capacity,
             maximum_capacity: self.maximum_capacity,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Application",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building Application",
+                )
+            })?,
             tags: self.tags,
             auto_start_configuration: self.auto_start_configuration,
             auto_stop_configuration: self.auto_stop_configuration,
@@ -506,6 +562,6 @@ impl ApplicationBuilder {
             worker_type_specifications: self.worker_type_specifications,
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
-        }
+        })
     }
 }

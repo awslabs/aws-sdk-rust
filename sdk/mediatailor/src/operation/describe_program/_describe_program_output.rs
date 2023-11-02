@@ -29,8 +29,10 @@ pub struct DescribeProgramOutput {
 }
 impl DescribeProgramOutput {
     /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> ::std::option::Option<&[crate::types::AdBreak]> {
-        self.ad_breaks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_breaks.is_none()`.
+    pub fn ad_breaks(&self) -> &[crate::types::AdBreak] {
+        self.ad_breaks.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the program.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {

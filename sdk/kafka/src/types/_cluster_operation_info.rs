@@ -59,8 +59,10 @@ impl ClusterOperationInfo {
         self.operation_state.as_deref()
     }
     /// <p>Steps completed during the operation.</p>
-    pub fn operation_steps(&self) -> ::std::option::Option<&[crate::types::ClusterOperationStep]> {
-        self.operation_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_steps.is_none()`.
+    pub fn operation_steps(&self) -> &[crate::types::ClusterOperationStep] {
+        self.operation_steps.as_deref().unwrap_or_default()
     }
     /// <p>Type of the cluster operation.</p>
     pub fn operation_type(&self) -> ::std::option::Option<&str> {

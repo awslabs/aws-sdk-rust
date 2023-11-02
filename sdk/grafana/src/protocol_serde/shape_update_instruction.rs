@@ -3,23 +3,23 @@ pub fn ser_update_instruction(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateInstruction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action {
-        object.key("action").string(var_1.as_str());
+    {
+        object.key("action").string(input.action.as_str());
     }
-    if let Some(var_2) = &input.role {
-        object.key("role").string(var_2.as_str());
+    {
+        object.key("role").string(input.role.as_str());
     }
-    if let Some(var_3) = &input.users {
-        let mut array_4 = object.key("users").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("users").start_array();
+        for item_2 in &input.users {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_user::ser_user(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_user::ser_user(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -66,7 +66,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::update_instruction_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -41,6 +41,7 @@ pub struct GetReplicationRunsInputBuilder {
 }
 impl GetReplicationRunsInputBuilder {
     /// <p>The ID of the replication job.</p>
+    /// This field is required.
     pub fn replication_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_job_id = ::std::option::Option::Some(input.into());
         self

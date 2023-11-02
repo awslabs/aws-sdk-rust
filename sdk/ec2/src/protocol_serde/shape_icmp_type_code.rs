@@ -23,6 +23,7 @@ pub fn ser_icmp_type_code(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_icmp_type_code(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::IcmpTypeCode, ::aws_smithy_xml::decode::XmlDecodeError> {

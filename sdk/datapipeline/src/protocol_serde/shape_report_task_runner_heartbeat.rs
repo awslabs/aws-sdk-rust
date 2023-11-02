@@ -73,7 +73,7 @@ pub fn de_report_task_runner_heartbeat_http_response(
         output = crate::protocol_serde::shape_report_task_runner_heartbeat::de_report_task_runner_heartbeat(_response_body, output)
             .map_err(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::report_task_runner_heartbeat_output_correct_errors(output).build()
     })
 }
 

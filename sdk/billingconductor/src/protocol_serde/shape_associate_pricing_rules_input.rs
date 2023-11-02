@@ -3,17 +3,17 @@ pub fn ser_associate_pricing_rules_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_pricing_rules::AssociatePricingRulesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.pricing_rule_arns {
-        let mut array_3 = object.key("PricingRuleArns").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("PricingRuleArns").start_array();
+        for item_2 in &input.pricing_rule_arns {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }

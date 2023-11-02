@@ -27,6 +27,7 @@ pub struct DescribeAttachmentInputBuilder {
 }
 impl DescribeAttachmentInputBuilder {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self

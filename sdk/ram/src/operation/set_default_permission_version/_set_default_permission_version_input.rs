@@ -45,6 +45,7 @@ pub struct SetDefaultPermissionVersionInputBuilder {
 }
 impl SetDefaultPermissionVersionInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
+    /// This field is required.
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl SetDefaultPermissionVersionInputBuilder {
         &self.permission_arn
     }
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
+    /// This field is required.
     pub fn permission_version(mut self, input: i32) -> Self {
         self.permission_version = ::std::option::Option::Some(input);
         self

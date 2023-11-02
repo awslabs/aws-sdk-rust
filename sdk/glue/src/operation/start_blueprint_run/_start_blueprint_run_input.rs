@@ -41,6 +41,7 @@ pub struct StartBlueprintRunInputBuilder {
 }
 impl StartBlueprintRunInputBuilder {
     /// <p>The name of the blueprint.</p>
+    /// This field is required.
     pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartBlueprintRunInputBuilder {
         &self.parameters
     }
     /// <p>Specifies the IAM role used to create the workflow.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

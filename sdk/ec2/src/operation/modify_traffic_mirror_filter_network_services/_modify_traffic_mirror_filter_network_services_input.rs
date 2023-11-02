@@ -18,12 +18,16 @@ impl ModifyTrafficMirrorFilterNetworkServicesInput {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>The network service, for example Amazon DNS, that you want to mirror.</p>
-    pub fn add_network_services(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
-        self.add_network_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_network_services.is_none()`.
+    pub fn add_network_services(&self) -> &[crate::types::TrafficMirrorNetworkService] {
+        self.add_network_services.as_deref().unwrap_or_default()
     }
     /// <p>The network service, for example Amazon DNS, that you no longer want to mirror.</p>
-    pub fn remove_network_services(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorNetworkService]> {
-        self.remove_network_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_network_services.is_none()`.
+    pub fn remove_network_services(&self) -> &[crate::types::TrafficMirrorNetworkService] {
+        self.remove_network_services.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -49,6 +53,7 @@ pub struct ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
 }
 impl ModifyTrafficMirrorFilterNetworkServicesInputBuilder {
     /// <p>The ID of the Traffic Mirror filter.</p>
+    /// This field is required.
     pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self

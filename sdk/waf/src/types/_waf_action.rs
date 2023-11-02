@@ -14,7 +14,7 @@ pub struct WafAction {
     /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
     /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::WafActionType>,
+    pub r#type: crate::types::WafActionType,
 }
 impl WafAction {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
@@ -23,8 +23,8 @@ impl WafAction {
     /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
     /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WafActionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::WafActionType {
+        &self.r#type
     }
 }
 impl WafAction {
@@ -47,6 +47,7 @@ impl WafActionBuilder {
     /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
     /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::WafActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -71,7 +72,16 @@ impl WafActionBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`WafAction`](crate::types::WafAction).
-    pub fn build(self) -> crate::types::WafAction {
-        crate::types::WafAction { r#type: self.r#type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::WafActionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::WafAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WafAction {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building WafAction",
+                )
+            })?,
+        })
     }
 }

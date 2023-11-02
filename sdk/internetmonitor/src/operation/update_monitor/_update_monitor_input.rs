@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMonitorInput {
     /// <p>The name of the monitor. </p>
-    pub monitor_name: ::std::option::Option<::std::string::String>,
+    pub monitor_name: ::std::string::String,
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
@@ -29,19 +29,24 @@ pub struct UpdateMonitorInput {
 }
 impl UpdateMonitorInput {
     /// <p>The name of the monitor. </p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
-        self.monitor_name.as_deref()
+    pub fn monitor_name(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_name.deref()
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon Virtual Private Clouds resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn resources_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_add.is_none()`.
+    pub fn resources_to_add(&self) -> &[::std::string::String] {
+        self.resources_to_add.as_deref().unwrap_or_default()
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn resources_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_remove.is_none()`.
+    pub fn resources_to_remove(&self) -> &[::std::string::String] {
+        self.resources_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MonitorConfigState> {
@@ -93,6 +98,7 @@ pub struct UpdateMonitorInputBuilder {
 }
 impl UpdateMonitorInputBuilder {
     /// <p>The name of the monitor. </p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -246,11 +252,18 @@ impl UpdateMonitorInputBuilder {
         &self.health_events_config
     }
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitor_name`](crate::operation::update_monitor::builders::UpdateMonitorInputBuilder::monitor_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_monitor::UpdateMonitorInput {
-            monitor_name: self.monitor_name,
+            monitor_name: self.monitor_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitor_name",
+                    "monitor_name was not specified but it is required when building UpdateMonitorInput",
+                )
+            })?,
             resources_to_add: self.resources_to_add,
             resources_to_remove: self.resources_to_remove,
             status: self.status,

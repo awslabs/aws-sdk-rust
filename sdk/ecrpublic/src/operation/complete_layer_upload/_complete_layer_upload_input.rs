@@ -26,8 +26,10 @@ impl CompleteLayerUploadInput {
         self.upload_id.as_deref()
     }
     /// <p>The <code>sha256</code> digest of the image layer.</p>
-    pub fn layer_digests(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layer_digests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_digests.is_none()`.
+    pub fn layer_digests(&self) -> &[::std::string::String] {
+        self.layer_digests.as_deref().unwrap_or_default()
     }
 }
 impl CompleteLayerUploadInput {
@@ -62,6 +64,7 @@ impl CompleteLayerUploadInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository in a public registry to associate with the image layer.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CompleteLayerUploadInputBuilder {
         &self.repository_name
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self

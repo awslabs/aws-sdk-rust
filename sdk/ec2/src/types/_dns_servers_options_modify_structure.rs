@@ -11,8 +11,10 @@ pub struct DnsServersOptionsModifyStructure {
 }
 impl DnsServersOptionsModifyStructure {
     /// <p>The IPv4 address range, in CIDR notation, of the DNS servers to be used. You can specify up to two DNS servers. Ensure that the DNS servers can be reached by the clients. The specified values overwrite the existing values.</p>
-    pub fn custom_dns_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_dns_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_dns_servers.is_none()`.
+    pub fn custom_dns_servers(&self) -> &[::std::string::String] {
+        self.custom_dns_servers.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether DNS servers should be used. Specify <code>False</code> to delete the existing DNS servers.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {

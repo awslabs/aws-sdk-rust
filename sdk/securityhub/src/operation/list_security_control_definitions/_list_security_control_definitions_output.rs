@@ -11,8 +11,10 @@ pub struct ListSecurityControlDefinitionsOutput {
 }
 impl ListSecurityControlDefinitionsOutput {
     /// <p> An array of controls that apply to the specified standard. </p>
-    pub fn security_control_definitions(&self) -> ::std::option::Option<&[crate::types::SecurityControlDefinition]> {
-        self.security_control_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_control_definitions.is_none()`.
+    pub fn security_control_definitions(&self) -> &[crate::types::SecurityControlDefinition] {
+        self.security_control_definitions.as_deref().unwrap_or_default()
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

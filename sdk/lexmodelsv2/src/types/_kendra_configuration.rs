@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
-    pub kendra_index: ::std::option::Option<::std::string::String>,
+    pub kendra_index: ::std::string::String,
     /// <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the Amazon Kendra index.</p>
     pub query_filter_string_enabled: bool,
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
@@ -13,8 +13,9 @@ pub struct KendraConfiguration {
 }
 impl KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
-    pub fn kendra_index(&self) -> ::std::option::Option<&str> {
-        self.kendra_index.as_deref()
+    pub fn kendra_index(&self) -> &str {
+        use std::ops::Deref;
+        self.kendra_index.deref()
     }
     /// <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the Amazon Kendra index.</p>
     pub fn query_filter_string_enabled(&self) -> bool {
@@ -42,6 +43,7 @@ pub struct KendraConfigurationBuilder {
 }
 impl KendraConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
+    /// This field is required.
     pub fn kendra_index(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kendra_index = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl KendraConfigurationBuilder {
         &self.query_filter_string
     }
     /// Consumes the builder and constructs a [`KendraConfiguration`](crate::types::KendraConfiguration).
-    pub fn build(self) -> crate::types::KendraConfiguration {
-        crate::types::KendraConfiguration {
-            kendra_index: self.kendra_index,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`kendra_index`](crate::types::builders::KendraConfigurationBuilder::kendra_index)
+    pub fn build(self) -> ::std::result::Result<crate::types::KendraConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KendraConfiguration {
+            kendra_index: self.kendra_index.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "kendra_index",
+                    "kendra_index was not specified but it is required when building KendraConfiguration",
+                )
+            })?,
             query_filter_string_enabled: self.query_filter_string_enabled.unwrap_or_default(),
             query_filter_string: self.query_filter_string,
-        }
+        })
     }
 }

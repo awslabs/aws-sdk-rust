@@ -15,8 +15,10 @@ impl ListNodesOutput {
         self.next_token.as_deref()
     }
     /// <p>List containing a NodeInfo object.</p>
-    pub fn node_info_list(&self) -> ::std::option::Option<&[crate::types::NodeInfo]> {
-        self.node_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_info_list.is_none()`.
+    pub fn node_info_list(&self) -> &[crate::types::NodeInfo] {
+        self.node_info_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListNodesOutput {

@@ -56,6 +56,7 @@ pub struct FlowDefinitionSummaryBuilder {
 }
 impl FlowDefinitionSummaryBuilder {
     /// <p>The name of the flow definition.</p>
+    /// This field is required.
     pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl FlowDefinitionSummaryBuilder {
         &self.flow_definition_name
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl FlowDefinitionSummaryBuilder {
         &self.flow_definition_arn
     }
     /// <p>The status of the flow definition. Valid values:</p>
+    /// This field is required.
     pub fn flow_definition_status(mut self, input: crate::types::FlowDefinitionStatus) -> Self {
         self.flow_definition_status = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl FlowDefinitionSummaryBuilder {
         &self.flow_definition_status
     }
     /// <p>The timestamp when SageMaker created the flow definition.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

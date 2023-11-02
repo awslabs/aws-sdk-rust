@@ -91,11 +91,10 @@ pub fn de_batch_create_table_rows_http_error(
                 )
                 .map_err(crate::operation::batch_create_table_rows::BatchCreateTableRowsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_create_table_rows::BatchCreateTableRowsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::batch_create_table_rows::BatchCreateTableRowsError::ServiceUnavailableException({
@@ -137,11 +136,10 @@ pub fn de_batch_create_table_rows_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_create_table_rows::BatchCreateTableRowsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_create_table_rows::BatchCreateTableRowsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::batch_create_table_rows::BatchCreateTableRowsError::generic(generic),
@@ -163,7 +161,9 @@ pub fn de_batch_create_table_rows_http_response(
         output = crate::protocol_serde::shape_batch_create_table_rows::de_batch_create_table_rows(_response_body, output)
             .map_err(crate::operation::batch_create_table_rows::BatchCreateTableRowsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_create_table_rows_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_create_table_rows::BatchCreateTableRowsError::unhandled)?
     })
 }
 

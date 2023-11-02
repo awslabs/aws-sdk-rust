@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeHintValue {
     /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
-    pub phrase: ::std::option::Option<::std::string::String>,
+    pub phrase: ::std::string::String,
 }
 impl RuntimeHintValue {
     /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
-    pub fn phrase(&self) -> ::std::option::Option<&str> {
-        self.phrase.as_deref()
+    pub fn phrase(&self) -> &str {
+        use std::ops::Deref;
+        self.phrase.deref()
     }
 }
 impl RuntimeHintValue {
@@ -28,6 +29,7 @@ pub struct RuntimeHintValueBuilder {
 }
 impl RuntimeHintValueBuilder {
     /// <p>The phrase that Amazon Lex should look for in the user's input to the bot.</p>
+    /// This field is required.
     pub fn phrase(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phrase = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl RuntimeHintValueBuilder {
         &self.phrase
     }
     /// Consumes the builder and constructs a [`RuntimeHintValue`](crate::types::RuntimeHintValue).
-    pub fn build(self) -> crate::types::RuntimeHintValue {
-        crate::types::RuntimeHintValue { phrase: self.phrase }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`phrase`](crate::types::builders::RuntimeHintValueBuilder::phrase)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuntimeHintValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuntimeHintValue {
+            phrase: self.phrase.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "phrase",
+                    "phrase was not specified but it is required when building RuntimeHintValue",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct StopCompilationJobInputBuilder {
 }
 impl StopCompilationJobInputBuilder {
     /// <p>The name of the model compilation job to stop.</p>
+    /// This field is required.
     pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self

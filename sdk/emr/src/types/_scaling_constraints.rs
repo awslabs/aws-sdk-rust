@@ -35,6 +35,7 @@ pub struct ScalingConstraintsBuilder {
 }
 impl ScalingConstraintsBuilder {
     /// <p>The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not allowed to shrink. Scale-in activities will not terminate instances below this boundary.</p>
+    /// This field is required.
     pub fn min_capacity(mut self, input: i32) -> Self {
         self.min_capacity = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ScalingConstraintsBuilder {
         &self.min_capacity
     }
     /// <p>The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not allowed to grow. Scale-out activities will not add instances beyond this boundary.</p>
+    /// This field is required.
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
         self

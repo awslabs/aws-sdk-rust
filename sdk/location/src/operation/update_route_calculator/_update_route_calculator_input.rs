@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteCalculatorInput {
     /// <p>The name of the route calculator resource to update.</p>
-    pub calculator_name: ::std::option::Option<::std::string::String>,
+    pub calculator_name: ::std::string::String,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -13,8 +13,9 @@ pub struct UpdateRouteCalculatorInput {
 }
 impl UpdateRouteCalculatorInput {
     /// <p>The name of the route calculator resource to update.</p>
-    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
-        self.calculator_name.as_deref()
+    pub fn calculator_name(&self) -> &str {
+        use std::ops::Deref;
+        self.calculator_name.deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -43,6 +44,7 @@ pub struct UpdateRouteCalculatorInputBuilder {
 }
 impl UpdateRouteCalculatorInputBuilder {
     /// <p>The name of the route calculator resource to update.</p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -88,12 +90,19 @@ impl UpdateRouteCalculatorInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateRouteCalculatorInput`](crate::operation::update_route_calculator::UpdateRouteCalculatorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`calculator_name`](crate::operation::update_route_calculator::builders::UpdateRouteCalculatorInputBuilder::calculator_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_route_calculator::UpdateRouteCalculatorInput {
-            calculator_name: self.calculator_name,
+            calculator_name: self.calculator_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "calculator_name",
+                    "calculator_name was not specified but it is required when building UpdateRouteCalculatorInput",
+                )
+            })?,
             pricing_plan: self.pricing_plan,
             description: self.description,
         })

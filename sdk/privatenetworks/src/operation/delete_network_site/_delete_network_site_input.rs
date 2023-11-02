@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub network_site_arn: ::std::option::Option<::std::string::String>,
+    pub network_site_arn: ::std::string::String,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
-        self.network_site_arn.as_deref()
+    pub fn network_site_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_site_arn.deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct DeleteNetworkSiteInputBuilder {
 }
 impl DeleteNetworkSiteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    /// This field is required.
     pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,11 +64,18 @@ impl DeleteNetworkSiteInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteNetworkSiteInput`](crate::operation::delete_network_site::DeleteNetworkSiteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_site_arn`](crate::operation::delete_network_site::builders::DeleteNetworkSiteInputBuilder::network_site_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_network_site::DeleteNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_network_site::DeleteNetworkSiteInput {
-            network_site_arn: self.network_site_arn,
+            network_site_arn: self.network_site_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_site_arn",
+                    "network_site_arn was not specified but it is required when building DeleteNetworkSiteInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

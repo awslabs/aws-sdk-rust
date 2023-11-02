@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTelemetryMetadataOutput {
     /// <p>Telemetry details.</p>
-    pub telemetry_metadata: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryMetadata>>,
+    pub telemetry_metadata: ::std::vec::Vec<crate::types::TelemetryMetadata>,
     _request_id: Option<String>,
 }
 impl GetTelemetryMetadataOutput {
     /// <p>Telemetry details.</p>
-    pub fn telemetry_metadata(&self) -> ::std::option::Option<&[crate::types::TelemetryMetadata]> {
-        self.telemetry_metadata.as_deref()
+    pub fn telemetry_metadata(&self) -> &[crate::types::TelemetryMetadata] {
+        use std::ops::Deref;
+        self.telemetry_metadata.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTelemetryMetadataOutput {
@@ -63,10 +64,20 @@ impl GetTelemetryMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTelemetryMetadataOutput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput).
-    pub fn build(self) -> crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput {
-        crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput {
-            telemetry_metadata: self.telemetry_metadata,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`telemetry_metadata`](crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataOutputBuilder::telemetry_metadata)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput {
+            telemetry_metadata: self.telemetry_metadata.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "telemetry_metadata",
+                    "telemetry_metadata was not specified but it is required when building GetTelemetryMetadataOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

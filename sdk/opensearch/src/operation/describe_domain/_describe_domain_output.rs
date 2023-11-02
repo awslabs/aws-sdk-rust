@@ -35,6 +35,7 @@ pub struct DescribeDomainOutputBuilder {
 }
 impl DescribeDomainOutputBuilder {
     /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
+    /// This field is required.
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.domain_status = ::std::option::Option::Some(input);
         self

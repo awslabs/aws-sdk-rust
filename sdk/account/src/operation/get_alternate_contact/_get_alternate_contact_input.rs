@@ -44,6 +44,7 @@ pub struct GetAlternateContactInputBuilder {
 }
 impl GetAlternateContactInputBuilder {
     /// <p>Specifies which alternate contact you want to retrieve.</p>
+    /// This field is required.
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
         self.alternate_contact_type = ::std::option::Option::Some(input);
         self

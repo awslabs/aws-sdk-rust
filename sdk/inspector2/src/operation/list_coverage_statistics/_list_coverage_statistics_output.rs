@@ -6,18 +6,20 @@ pub struct ListCoverageStatisticsOutput {
     /// <p>An array with the number for each group.</p>
     pub counts_by_group: ::std::option::Option<::std::vec::Vec<crate::types::Counts>>,
     /// <p>The total number for all groups.</p>
-    pub total_counts: ::std::option::Option<i64>,
+    pub total_counts: i64,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCoverageStatisticsOutput {
     /// <p>An array with the number for each group.</p>
-    pub fn counts_by_group(&self) -> ::std::option::Option<&[crate::types::Counts]> {
-        self.counts_by_group.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.counts_by_group.is_none()`.
+    pub fn counts_by_group(&self) -> &[crate::types::Counts] {
+        self.counts_by_group.as_deref().unwrap_or_default()
     }
     /// <p>The total number for all groups.</p>
-    pub fn total_counts(&self) -> ::std::option::Option<i64> {
+    pub fn total_counts(&self) -> i64 {
         self.total_counts
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -68,6 +70,7 @@ impl ListCoverageStatisticsOutputBuilder {
         &self.counts_by_group
     }
     /// <p>The total number for all groups.</p>
+    /// This field is required.
     pub fn total_counts(mut self, input: i64) -> Self {
         self.total_counts = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,24 @@ impl ListCoverageStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCoverageStatisticsOutput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput).
-    pub fn build(self) -> crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput {
-        crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total_counts`](crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsOutputBuilder::total_counts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput {
             counts_by_group: self.counts_by_group,
-            total_counts: self.total_counts,
+            total_counts: self.total_counts.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "total_counts",
+                    "total_counts was not specified but it is required when building ListCoverageStatisticsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

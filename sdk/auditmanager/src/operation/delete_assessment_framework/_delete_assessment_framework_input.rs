@@ -27,6 +27,7 @@ pub struct DeleteAssessmentFrameworkInputBuilder {
 }
 impl DeleteAssessmentFrameworkInputBuilder {
     /// <p> The identifier for the custom framework. </p>
+    /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ pub fn ser_annotation_import_item_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnnotationImportItemSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source {
-        object.key("source").string(var_1.as_str());
+    {
+        object.key("source").string(input.source.as_str());
     }
     Ok(())
 }

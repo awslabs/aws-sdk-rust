@@ -22,8 +22,10 @@ impl ListEnvironmentsInput {
         self.max_results
     }
     /// <p>The names of the runtime environments. Must be unique within the account.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The engine type for the runtime environment.</p>
     pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {

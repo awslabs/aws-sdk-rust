@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Settings {
     /// <p>The subnets defined for the registered identity provider.</p>
-    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnets: ::std::vec::Vec<::std::string::String>,
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
-    pub security_group_id: ::std::option::Option<::std::string::String>,
+    pub security_group_id: ::std::string::String,
 }
 impl Settings {
     /// <p>The subnets defined for the registered identity provider.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    pub fn subnets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnets.deref()
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
-    pub fn security_group_id(&self) -> ::std::option::Option<&str> {
-        self.security_group_id.as_deref()
+    pub fn security_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.security_group_id.deref()
     }
 }
 impl Settings {
@@ -55,6 +57,7 @@ impl SettingsBuilder {
         &self.subnets
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
+    /// This field is required.
     pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl SettingsBuilder {
         &self.security_group_id
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).
-    pub fn build(self) -> crate::types::Settings {
-        crate::types::Settings {
-            subnets: self.subnets,
-            security_group_id: self.security_group_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnets`](crate::types::builders::SettingsBuilder::subnets)
+    /// - [`security_group_id`](crate::types::builders::SettingsBuilder::security_group_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Settings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Settings {
+            subnets: self.subnets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnets",
+                    "subnets was not specified but it is required when building Settings",
+                )
+            })?,
+            security_group_id: self.security_group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "security_group_id",
+                    "security_group_id was not specified but it is required when building Settings",
+                )
+            })?,
+        })
     }
 }

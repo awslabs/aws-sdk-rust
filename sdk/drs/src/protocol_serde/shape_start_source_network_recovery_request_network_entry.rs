@@ -3,11 +3,11 @@ pub fn ser_start_source_network_recovery_request_network_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartSourceNetworkRecoveryRequestNetworkEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_network_id {
-        object.key("sourceNetworkID").string(var_1.as_str());
+    {
+        object.key("sourceNetworkID").string(input.source_network_id.as_str());
     }
-    if let Some(var_2) = &input.cfn_stack_name {
-        object.key("cfnStackName").string(var_2.as_str());
+    if let Some(var_1) = &input.cfn_stack_name {
+        object.key("cfnStackName").string(var_1.as_str());
     }
     Ok(())
 }

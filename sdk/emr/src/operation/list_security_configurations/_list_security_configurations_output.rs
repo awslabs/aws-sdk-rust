@@ -11,8 +11,10 @@ pub struct ListSecurityConfigurationsOutput {
 }
 impl ListSecurityConfigurationsOutput {
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub fn security_configurations(&self) -> ::std::option::Option<&[crate::types::SecurityConfigurationSummary]> {
-        self.security_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_configurations.is_none()`.
+    pub fn security_configurations(&self) -> &[crate::types::SecurityConfigurationSummary] {
+        self.security_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
-    pub approval_rule_template_id: ::std::option::Option<::std::string::String>,
+    pub approval_rule_template_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
-    pub fn approval_rule_template_id(&self) -> ::std::option::Option<&str> {
-        self.approval_rule_template_id.as_deref()
+    pub fn approval_rule_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.approval_rule_template_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteApprovalRuleTemplateOutput {
@@ -34,6 +35,7 @@ pub struct DeleteApprovalRuleTemplateOutputBuilder {
 }
 impl DeleteApprovalRuleTemplateOutputBuilder {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
+    /// This field is required.
     pub fn approval_rule_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl DeleteApprovalRuleTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteApprovalRuleTemplateOutput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput).
-    pub fn build(self) -> crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
-        crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
-            approval_rule_template_id: self.approval_rule_template_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`approval_rule_template_id`](crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateOutputBuilder::approval_rule_template_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
+            approval_rule_template_id: self.approval_rule_template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "approval_rule_template_id",
+                    "approval_rule_template_id was not specified but it is required when building DeleteApprovalRuleTemplateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

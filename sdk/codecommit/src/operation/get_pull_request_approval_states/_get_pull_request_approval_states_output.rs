@@ -9,8 +9,10 @@ pub struct GetPullRequestApprovalStatesOutput {
 }
 impl GetPullRequestApprovalStatesOutput {
     /// <p>Information about users who have approved the pull request.</p>
-    pub fn approvals(&self) -> ::std::option::Option<&[crate::types::Approval]> {
-        self.approvals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approvals.is_none()`.
+    pub fn approvals(&self) -> &[crate::types::Approval] {
+        self.approvals.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPullRequestApprovalStatesOutput {

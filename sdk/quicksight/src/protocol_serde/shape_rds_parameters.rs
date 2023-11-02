@@ -3,11 +3,11 @@ pub fn ser_rds_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.instance_id {
-        object.key("InstanceId").string(var_1.as_str());
+    {
+        object.key("InstanceId").string(input.instance_id.as_str());
     }
-    if let Some(var_2) = &input.database {
-        object.key("Database").string(var_2.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::rds_parameters_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -18,27 +18,27 @@ pub fn ser_create_node_from_template_job_input(
     if let Some(var_5) = &input.node_description {
         object.key("NodeDescription").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.node_name {
-        object.key("NodeName").string(var_6.as_str());
+    {
+        object.key("NodeName").string(input.node_name.as_str());
     }
-    if let Some(var_7) = &input.output_package_name {
-        object.key("OutputPackageName").string(var_7.as_str());
+    {
+        object.key("OutputPackageName").string(input.output_package_name.as_str());
     }
-    if let Some(var_8) = &input.output_package_version {
-        object.key("OutputPackageVersion").string(var_8.as_str());
+    {
+        object.key("OutputPackageVersion").string(input.output_package_version.as_str());
     }
-    if let Some(var_9) = &input.template_parameters {
+    {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("TemplateParameters").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_6 = object.key("TemplateParameters").start_object();
+        for (key_7, value_8) in &input.template_parameters {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_10.finish();
+        object_6.finish();
     }
-    if let Some(var_13) = &input.template_type {
-        object.key("TemplateType").string(var_13.as_str());
+    {
+        object.key("TemplateType").string(input.template_type.as_str());
     }
     Ok(())
 }

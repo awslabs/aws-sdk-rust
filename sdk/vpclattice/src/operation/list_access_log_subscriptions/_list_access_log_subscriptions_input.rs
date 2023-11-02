@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub resource_identifier: ::std::option::Option<::std::string::String>,
+    pub resource_identifier: ::std::string::String,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token for the next page of results.</p>
@@ -12,8 +12,9 @@ pub struct ListAccessLogSubscriptionsInput {
 }
 impl ListAccessLogSubscriptionsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
-        self.resource_identifier.as_deref()
+    pub fn resource_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_identifier.deref()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -41,6 +42,7 @@ pub struct ListAccessLogSubscriptionsInputBuilder {
 }
 impl ListAccessLogSubscriptionsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,8 @@ impl ListAccessLogSubscriptionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAccessLogSubscriptionsInput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_identifier`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsInputBuilder::resource_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -90,7 +94,12 @@ impl ListAccessLogSubscriptionsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsInput {
-            resource_identifier: self.resource_identifier,
+            resource_identifier: self.resource_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_identifier",
+                    "resource_identifier was not specified but it is required when building ListAccessLogSubscriptionsInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
         })

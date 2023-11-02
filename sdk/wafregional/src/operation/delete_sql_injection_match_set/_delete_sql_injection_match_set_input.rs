@@ -35,6 +35,7 @@ pub struct DeleteSqlInjectionMatchSetInputBuilder {
 }
 impl DeleteSqlInjectionMatchSetInputBuilder {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    /// This field is required.
     pub fn sql_injection_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
         &self.sql_injection_match_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

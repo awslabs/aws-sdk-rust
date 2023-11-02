@@ -27,6 +27,7 @@ pub struct DescribeForecastExportJobInputBuilder {
 }
 impl DescribeForecastExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    /// This field is required.
     pub fn forecast_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_export_job_arn = ::std::option::Option::Some(input.into());
         self

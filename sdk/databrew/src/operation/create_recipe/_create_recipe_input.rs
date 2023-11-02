@@ -22,8 +22,10 @@ impl CreateRecipeInput {
         self.name.as_deref()
     }
     /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::RecipeStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::RecipeStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>Metadata tags to apply to this recipe.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +64,7 @@ impl CreateRecipeInputBuilder {
         &self.description
     }
     /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

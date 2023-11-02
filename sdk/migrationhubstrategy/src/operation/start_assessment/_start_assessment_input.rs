@@ -22,8 +22,10 @@ impl StartAssessmentInput {
         self.s3bucket_for_report_data.as_deref()
     }
     /// <p>List of criteria for assessment.</p>
-    pub fn assessment_targets(&self) -> ::std::option::Option<&[crate::types::AssessmentTarget]> {
-        self.assessment_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_targets.is_none()`.
+    pub fn assessment_targets(&self) -> &[crate::types::AssessmentTarget] {
+        self.assessment_targets.as_deref().unwrap_or_default()
     }
     /// The data source type of an assessment to be started.
     pub fn assessment_data_source_type(&self) -> ::std::option::Option<&crate::types::AssessmentDataSourceType> {

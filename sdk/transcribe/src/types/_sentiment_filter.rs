@@ -13,7 +13,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentFilter {
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub sentiments: ::std::option::Option<::std::vec::Vec<crate::types::SentimentValue>>,
+    pub sentiments: ::std::vec::Vec<crate::types::SentimentValue>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for the specified sentiments. See for more detail.</p>
@@ -25,8 +25,9 @@ pub struct SentimentFilter {
 }
 impl SentimentFilter {
     /// <p>Specify the sentiments that you want to flag.</p>
-    pub fn sentiments(&self) -> ::std::option::Option<&[crate::types::SentimentValue]> {
-        self.sentiments.as_deref()
+    pub fn sentiments(&self) -> &[crate::types::SentimentValue] {
+        use std::ops::Deref;
+        self.sentiments.deref()
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for the specified sentiments. See for more detail.</p>
     pub fn absolute_time_range(&self) -> ::std::option::Option<&crate::types::AbsoluteTimeRange> {
@@ -140,13 +141,20 @@ impl SentimentFilterBuilder {
         &self.negate
     }
     /// Consumes the builder and constructs a [`SentimentFilter`](crate::types::SentimentFilter).
-    pub fn build(self) -> crate::types::SentimentFilter {
-        crate::types::SentimentFilter {
-            sentiments: self.sentiments,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sentiments`](crate::types::builders::SentimentFilterBuilder::sentiments)
+    pub fn build(self) -> ::std::result::Result<crate::types::SentimentFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SentimentFilter {
+            sentiments: self.sentiments.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sentiments",
+                    "sentiments was not specified but it is required when building SentimentFilter",
+                )
+            })?,
             absolute_time_range: self.absolute_time_range,
             relative_time_range: self.relative_time_range,
             participant_role: self.participant_role,
             negate: self.negate,
-        }
+        })
     }
 }

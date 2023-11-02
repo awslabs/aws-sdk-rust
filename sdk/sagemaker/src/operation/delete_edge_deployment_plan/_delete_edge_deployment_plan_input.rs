@@ -27,6 +27,7 @@ pub struct DeleteEdgeDeploymentPlanInputBuilder {
 }
 impl DeleteEdgeDeploymentPlanInputBuilder {
     /// <p>The name of the edge deployment plan to delete.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self

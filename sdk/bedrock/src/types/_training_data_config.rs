@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingDataConfig {
     /// <p>The S3 URI where the training data is stored.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
 }
 impl TrainingDataConfig {
     /// <p>The S3 URI where the training data is stored.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
 }
 impl TrainingDataConfig {
@@ -28,6 +29,7 @@ pub struct TrainingDataConfigBuilder {
 }
 impl TrainingDataConfigBuilder {
     /// <p>The S3 URI where the training data is stored.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl TrainingDataConfigBuilder {
         &self.s3_uri
     }
     /// Consumes the builder and constructs a [`TrainingDataConfig`](crate::types::TrainingDataConfig).
-    pub fn build(self) -> crate::types::TrainingDataConfig {
-        crate::types::TrainingDataConfig { s3_uri: self.s3_uri }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::TrainingDataConfigBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrainingDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrainingDataConfig {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building TrainingDataConfig",
+                )
+            })?,
+        })
     }
 }

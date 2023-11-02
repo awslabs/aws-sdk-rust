@@ -12,26 +12,28 @@ pub fn ser_update_launch_configuration_template_input(
     if let Some(var_3) = &input.export_bucket_arn {
         object.key("exportBucketArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.launch_configuration_template_id {
-        object.key("launchConfigurationTemplateID").string(var_4.as_str());
+    {
+        object
+            .key("launchConfigurationTemplateID")
+            .string(input.launch_configuration_template_id.as_str());
     }
-    if let Some(var_5) = &input.launch_disposition {
-        object.key("launchDisposition").string(var_5.as_str());
+    if let Some(var_4) = &input.launch_disposition {
+        object.key("launchDisposition").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.launch_into_source_instance {
-        object.key("launchIntoSourceInstance").boolean(*var_6);
+    if let Some(var_5) = &input.launch_into_source_instance {
+        object.key("launchIntoSourceInstance").boolean(*var_5);
     }
-    if let Some(var_7) = &input.licensing {
+    if let Some(var_6) = &input.licensing {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("licensing").start_object();
-        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("licensing").start_object();
+        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.post_launch_enabled {
-        object.key("postLaunchEnabled").boolean(*var_9);
+    if let Some(var_8) = &input.post_launch_enabled {
+        object.key("postLaunchEnabled").boolean(*var_8);
     }
-    if let Some(var_10) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_10.as_str());
+    if let Some(var_9) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_9.as_str());
     }
     Ok(())
 }

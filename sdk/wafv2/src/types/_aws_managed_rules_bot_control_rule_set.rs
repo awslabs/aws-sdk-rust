@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsManagedRulesBotControlRuleSet {
     /// <p>The inspection level to use for the Bot Control rule group. The common level is the least expensive. The targeted level includes all common level rules and adds rules with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
-    pub inspection_level: ::std::option::Option<crate::types::InspectionLevel>,
+    pub inspection_level: crate::types::InspectionLevel,
     /// <p>Applies only to the targeted inspection level. </p>
     /// <p>Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Machine learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate distributed, coordinated bot activity.</p>
     /// <p>For more information about this choice, see the listing for these rules in the table at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html#aws-managed-rule-groups-bot-rules">Bot Control rules listing</a> in the <i>WAF Developer Guide</i>.</p>
@@ -14,8 +14,8 @@ pub struct AwsManagedRulesBotControlRuleSet {
 }
 impl AwsManagedRulesBotControlRuleSet {
     /// <p>The inspection level to use for the Bot Control rule group. The common level is the least expensive. The targeted level includes all common level rules and adds rules with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn inspection_level(&self) -> ::std::option::Option<&crate::types::InspectionLevel> {
-        self.inspection_level.as_ref()
+    pub fn inspection_level(&self) -> &crate::types::InspectionLevel {
+        &self.inspection_level
     }
     /// <p>Applies only to the targeted inspection level. </p>
     /// <p>Determines whether to use machine learning (ML) to analyze your web traffic for bot-related activity. Machine learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code> and <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior that might indicate distributed, coordinated bot activity.</p>
@@ -41,6 +41,7 @@ pub struct AwsManagedRulesBotControlRuleSetBuilder {
 }
 impl AwsManagedRulesBotControlRuleSetBuilder {
     /// <p>The inspection level to use for the Bot Control rule group. The common level is the least expensive. The targeted level includes all common level rules and adds rules with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
+    /// This field is required.
     pub fn inspection_level(mut self, input: crate::types::InspectionLevel) -> Self {
         self.inspection_level = ::std::option::Option::Some(input);
         self
@@ -78,10 +79,17 @@ impl AwsManagedRulesBotControlRuleSetBuilder {
         &self.enable_machine_learning
     }
     /// Consumes the builder and constructs a [`AwsManagedRulesBotControlRuleSet`](crate::types::AwsManagedRulesBotControlRuleSet).
-    pub fn build(self) -> crate::types::AwsManagedRulesBotControlRuleSet {
-        crate::types::AwsManagedRulesBotControlRuleSet {
-            inspection_level: self.inspection_level,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`inspection_level`](crate::types::builders::AwsManagedRulesBotControlRuleSetBuilder::inspection_level)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesBotControlRuleSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsManagedRulesBotControlRuleSet {
+            inspection_level: self.inspection_level.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inspection_level",
+                    "inspection_level was not specified but it is required when building AwsManagedRulesBotControlRuleSet",
+                )
+            })?,
             enable_machine_learning: self.enable_machine_learning.unwrap_or_default(),
-        }
+        })
     }
 }

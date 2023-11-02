@@ -34,6 +34,7 @@ pub struct GetMlModelTransformJobInputBuilder {
 }
 impl GetMlModelTransformJobInputBuilder {
     /// <p>The unique identifier of the model-transform job to be reetrieved.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

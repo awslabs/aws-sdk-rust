@@ -23,6 +23,7 @@ pub fn ser_tag_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_tag_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TagSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

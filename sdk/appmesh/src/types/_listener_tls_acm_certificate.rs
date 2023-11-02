@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
-    pub certificate_arn: ::std::option::Option<::std::string::String>,
+    pub certificate_arn: ::std::string::String,
 }
 impl ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
-        self.certificate_arn.as_deref()
+    pub fn certificate_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_arn.deref()
     }
 }
 impl ListenerTlsAcmCertificate {
@@ -28,6 +29,7 @@ pub struct ListenerTlsAcmCertificateBuilder {
 }
 impl ListenerTlsAcmCertificateBuilder {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ListenerTlsAcmCertificateBuilder {
         &self.certificate_arn
     }
     /// Consumes the builder and constructs a [`ListenerTlsAcmCertificate`](crate::types::ListenerTlsAcmCertificate).
-    pub fn build(self) -> crate::types::ListenerTlsAcmCertificate {
-        crate::types::ListenerTlsAcmCertificate {
-            certificate_arn: self.certificate_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_arn`](crate::types::builders::ListenerTlsAcmCertificateBuilder::certificate_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListenerTlsAcmCertificate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListenerTlsAcmCertificate {
+            certificate_arn: self.certificate_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate_arn",
+                    "certificate_arn was not specified but it is required when building ListenerTlsAcmCertificate",
+                )
+            })?,
+        })
     }
 }

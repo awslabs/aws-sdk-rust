@@ -27,6 +27,7 @@ pub struct DetachDiskInputBuilder {
 }
 impl DetachDiskInputBuilder {
     /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
+    /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self

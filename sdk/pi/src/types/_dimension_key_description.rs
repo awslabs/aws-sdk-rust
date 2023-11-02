@@ -27,8 +27,10 @@ impl DimensionKeyDescription {
         self.additional_metrics.as_ref()
     }
     /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
-    pub fn partitions(&self) -> ::std::option::Option<&[f64]> {
-        self.partitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partitions.is_none()`.
+    pub fn partitions(&self) -> &[f64] {
+        self.partitions.as_deref().unwrap_or_default()
     }
 }
 impl DimensionKeyDescription {

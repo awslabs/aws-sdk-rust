@@ -57,6 +57,7 @@ pub struct DescribeClusterParametersInputBuilder {
 }
 impl DescribeClusterParametersInputBuilder {
     /// <p>The name of a cluster parameter group for which to return details.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self

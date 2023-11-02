@@ -37,6 +37,7 @@ pub struct DeleteFileShareInputBuilder {
 }
 impl DeleteFileShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
+    /// This field is required.
     pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self

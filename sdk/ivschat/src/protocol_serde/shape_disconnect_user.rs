@@ -25,11 +25,10 @@ pub fn de_disconnect_user_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "PendingVerification" => crate::operation::disconnect_user::DisconnectUserError::PendingVerification({
@@ -40,11 +39,10 @@ pub fn de_disconnect_user_http_error(
                 output = crate::protocol_serde::shape_pending_verification::de_pending_verification_json_err(_response_body, output)
                     .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::pending_verification_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::disconnect_user::DisconnectUserError::ResourceNotFoundException({
@@ -55,11 +53,10 @@ pub fn de_disconnect_user_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::disconnect_user::DisconnectUserError::ThrottlingException({
@@ -70,11 +67,10 @@ pub fn de_disconnect_user_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::disconnect_user::DisconnectUserError::ValidationException({
@@ -85,11 +81,10 @@ pub fn de_disconnect_user_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disconnect_user::DisconnectUserError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::disconnect_user::DisconnectUserError::generic(generic),

@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
-    pub device_id: ::std::option::Option<::std::string::String>,
+    pub device_id: ::std::string::String,
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub sample_time: ::aws_smithy_types::DateTime,
     /// <p>Contains details associated to the batch error.</p>
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
-        self.device_id.as_deref()
+    pub fn device_id(&self) -> &str {
+        use std::ops::Deref;
+        self.device_id.deref()
     }
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.sample_time.as_ref()
+    pub fn sample_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.sample_time
     }
     /// <p>Contains details associated to the batch error.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::BatchItemError> {
@@ -42,6 +43,7 @@ pub struct BatchEvaluateGeofencesErrorBuilder {
 }
 impl BatchEvaluateGeofencesErrorBuilder {
     /// <p>The device associated with the position evaluation error.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl BatchEvaluateGeofencesErrorBuilder {
         &self.device_id
     }
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// This field is required.
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl BatchEvaluateGeofencesErrorBuilder {
         &self.sample_time
     }
     /// <p>Contains details associated to the batch error.</p>
+    /// This field is required.
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl BatchEvaluateGeofencesErrorBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesError`](crate::types::BatchEvaluateGeofencesError).
-    pub fn build(self) -> crate::types::BatchEvaluateGeofencesError {
-        crate::types::BatchEvaluateGeofencesError {
-            device_id: self.device_id,
-            sample_time: self.sample_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_id`](crate::types::builders::BatchEvaluateGeofencesErrorBuilder::device_id)
+    /// - [`sample_time`](crate::types::builders::BatchEvaluateGeofencesErrorBuilder::sample_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchEvaluateGeofencesError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchEvaluateGeofencesError {
+            device_id: self.device_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_id",
+                    "device_id was not specified but it is required when building BatchEvaluateGeofencesError",
+                )
+            })?,
+            sample_time: self.sample_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sample_time",
+                    "sample_time was not specified but it is required when building BatchEvaluateGeofencesError",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

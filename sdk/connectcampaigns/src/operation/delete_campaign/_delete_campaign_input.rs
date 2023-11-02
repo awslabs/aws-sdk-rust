@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCampaignInput {
     /// Identifier representing a Campaign
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl DeleteCampaignInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl DeleteCampaignInput {
@@ -28,6 +29,7 @@ pub struct DeleteCampaignInputBuilder {
 }
 impl DeleteCampaignInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,18 @@ impl DeleteCampaignInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteCampaignInput`](crate::operation::delete_campaign::DeleteCampaignInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::delete_campaign::builders::DeleteCampaignInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_campaign::DeleteCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_campaign::DeleteCampaignInput { id: self.id })
+        ::std::result::Result::Ok(crate::operation::delete_campaign::DeleteCampaignInput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DeleteCampaignInput",
+                )
+            })?,
+        })
     }
 }

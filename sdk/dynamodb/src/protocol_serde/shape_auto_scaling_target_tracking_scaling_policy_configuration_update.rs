@@ -18,10 +18,10 @@ pub fn ser_auto_scaling_target_tracking_scaling_policy_configuration_update(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.target_value {
+    {
         object.key("TargetValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_4).into()),
+            ::aws_smithy_types::Number::Float((input.target_value).into()),
         );
     }
     Ok(())

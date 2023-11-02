@@ -46,6 +46,7 @@ impl DeleteBlueGreenDeploymentInputBuilder {
     /// <ul>
     /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn blue_green_deployment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_identifier = ::std::option::Option::Some(input.into());
         self

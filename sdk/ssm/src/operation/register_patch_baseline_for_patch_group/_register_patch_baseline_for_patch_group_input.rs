@@ -34,6 +34,7 @@ pub struct RegisterPatchBaselineForPatchGroupInputBuilder {
 }
 impl RegisterPatchBaselineForPatchGroupInputBuilder {
     /// <p>The ID of the patch baseline to register with the patch group.</p>
+    /// This field is required.
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RegisterPatchBaselineForPatchGroupInputBuilder {
         &self.baseline_id
     }
     /// <p>The name of the patch group to be registered with the patch baseline.</p>
+    /// This field is required.
     pub fn patch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_group = ::std::option::Option::Some(input.into());
         self

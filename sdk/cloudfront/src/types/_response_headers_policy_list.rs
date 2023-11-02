@@ -7,9 +7,9 @@ pub struct ResponseHeadersPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing response headers policies where you left off.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response headers policies requested.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     /// <p>The number of response headers policies returned.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>The response headers policies in the list.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicySummary>>,
 }
@@ -19,16 +19,18 @@ impl ResponseHeadersPolicyList {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of response headers policies requested.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
     /// <p>The number of response headers policies returned.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The response headers policies in the list.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicySummary]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ResponseHeadersPolicySummary] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl ResponseHeadersPolicyList {
@@ -63,6 +65,7 @@ impl ResponseHeadersPolicyListBuilder {
         &self.next_marker
     }
     /// <p>The maximum number of response headers policies requested.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl ResponseHeadersPolicyListBuilder {
         &self.max_items
     }
     /// <p>The number of response headers policies returned.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -111,12 +115,25 @@ impl ResponseHeadersPolicyListBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyList`](crate::types::ResponseHeadersPolicyList).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyList {
-        crate::types::ResponseHeadersPolicyList {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_items`](crate::types::builders::ResponseHeadersPolicyListBuilder::max_items)
+    /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyListBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyList {
             next_marker: self.next_marker,
-            max_items: self.max_items,
-            quantity: self.quantity,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building ResponseHeadersPolicyList",
+                )
+            })?,
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building ResponseHeadersPolicyList",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

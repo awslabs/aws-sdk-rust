@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::record_column_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -57,14 +59,14 @@ pub fn ser_record_column(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecordColumn,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.mapping {
-        object.key("Mapping").string(var_2.as_str());
+    if let Some(var_1) = &input.mapping {
+        object.key("Mapping").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.sql_type {
-        object.key("SqlType").string(var_3.as_str());
+    {
+        object.key("SqlType").string(input.sql_type.as_str());
     }
     Ok(())
 }

@@ -3,23 +3,23 @@ pub fn ser_list_group_memberships_for_member_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identity_store_id {
-        object.key("IdentityStoreId").string(var_1.as_str());
+    {
+        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
     }
-    if let Some(var_2) = &input.member_id {
+    if let Some(var_1) = &input.member_id {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("MemberId").start_object();
-        crate::protocol_serde::shape_member_id::ser_member_id(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("MemberId").start_object();
+        crate::protocol_serde::shape_member_id::ser_member_id(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.max_results {
+    if let Some(var_3) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("NextToken").string(var_5.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("NextToken").string(var_4.as_str());
     }
     Ok(())
 }

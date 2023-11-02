@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub network_site_arn: ::std::option::Option<::std::string::String>,
+    pub network_site_arn: ::std::string::String,
 }
 impl GetNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
-        self.network_site_arn.as_deref()
+    pub fn network_site_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_site_arn.deref()
     }
 }
 impl GetNetworkSiteInput {
@@ -27,6 +28,7 @@ pub struct GetNetworkSiteInputBuilder {
 }
 impl GetNetworkSiteInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    /// This field is required.
     pub fn network_site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl GetNetworkSiteInputBuilder {
         &self.network_site_arn
     }
     /// Consumes the builder and constructs a [`GetNetworkSiteInput`](crate::operation::get_network_site::GetNetworkSiteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_site_arn`](crate::operation::get_network_site::builders::GetNetworkSiteInputBuilder::network_site_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_network_site::GetNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_network_site::GetNetworkSiteInput {
-            network_site_arn: self.network_site_arn,
+            network_site_arn: self.network_site_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_site_arn",
+                    "network_site_arn was not specified but it is required when building GetNetworkSiteInput",
+                )
+            })?,
         })
     }
 }

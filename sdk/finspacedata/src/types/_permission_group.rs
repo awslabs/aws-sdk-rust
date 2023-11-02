@@ -60,8 +60,10 @@ impl PermissionGroup {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn application_permissions(&self) -> ::std::option::Option<&[crate::types::ApplicationPermission]> {
-        self.application_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_permissions.is_none()`.
+    pub fn application_permissions(&self) -> &[crate::types::ApplicationPermission] {
+        self.application_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub fn create_time(&self) -> i64 {

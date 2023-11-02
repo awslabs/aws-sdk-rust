@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPlaybackKeyPairInput {
     /// <p>ARN of the key pair to be returned.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl GetPlaybackKeyPairInput {
     /// <p>ARN of the key pair to be returned.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl GetPlaybackKeyPairInput {
@@ -27,6 +28,7 @@ pub struct GetPlaybackKeyPairInputBuilder {
 }
 impl GetPlaybackKeyPairInputBuilder {
     /// <p>ARN of the key pair to be returned.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,10 +43,19 @@ impl GetPlaybackKeyPairInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetPlaybackKeyPairInput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetPlaybackKeyPairInput",
+                )
+            })?,
+        })
     }
 }

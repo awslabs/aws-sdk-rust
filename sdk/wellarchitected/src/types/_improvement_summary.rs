@@ -45,8 +45,10 @@ impl ImprovementSummary {
         self.improvement_plan_url.as_deref()
     }
     /// <p>The improvement plan details.</p>
-    pub fn improvement_plans(&self) -> ::std::option::Option<&[crate::types::ChoiceImprovementPlan]> {
-        self.improvement_plans.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.improvement_plans.is_none()`.
+    pub fn improvement_plans(&self) -> &[crate::types::ChoiceImprovementPlan] {
+        self.improvement_plans.as_deref().unwrap_or_default()
     }
 }
 impl ImprovementSummary {

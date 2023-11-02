@@ -32,8 +32,10 @@ impl UpdateWebhookInput {
         self.rotate_secret
     }
     /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
-    pub fn filter_groups(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::WebhookFilter>]> {
-        self.filter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_groups.is_none()`.
+    pub fn filter_groups(&self) -> &[::std::vec::Vec<crate::types::WebhookFilter>] {
+        self.filter_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::WebhookBuildType> {
@@ -59,6 +61,7 @@ pub struct UpdateWebhookInputBuilder {
 }
 impl UpdateWebhookInputBuilder {
     /// <p>The name of the CodeBuild project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self

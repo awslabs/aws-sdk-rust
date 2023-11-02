@@ -22,6 +22,7 @@ pub fn ser_spot_placement(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_spot_placement(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SpotPlacement, ::aws_smithy_xml::decode::XmlDecodeError> {

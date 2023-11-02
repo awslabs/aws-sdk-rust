@@ -11,8 +11,10 @@ pub struct ListSuiteDefinitionsOutput {
 }
 impl ListSuiteDefinitionsOutput {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    pub fn suite_definition_information_list(&self) -> ::std::option::Option<&[crate::types::SuiteDefinitionInformation]> {
-        self.suite_definition_information_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suite_definition_information_list.is_none()`.
+    pub fn suite_definition_information_list(&self) -> &[crate::types::SuiteDefinitionInformation] {
+        self.suite_definition_information_list.as_deref().unwrap_or_default()
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

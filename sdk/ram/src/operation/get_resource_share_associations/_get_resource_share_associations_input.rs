@@ -34,8 +34,10 @@ impl GetResourceShareAssociationsInput {
         self.association_type.as_ref()
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
-    pub fn resource_share_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_share_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
+    pub fn resource_share_arns(&self) -> &[::std::string::String] {
+        self.resource_share_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.</p>
     /// <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
@@ -85,6 +87,7 @@ impl GetResourceShareAssociationsInputBuilder {
     /// <li> <p> <code>PRINCIPAL</code> – list the principals whose associations you want to see.</p> </li>
     /// <li> <p> <code>RESOURCE</code> – list the resources whose associations you want to see.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn association_type(mut self, input: crate::types::ResourceShareAssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
         self

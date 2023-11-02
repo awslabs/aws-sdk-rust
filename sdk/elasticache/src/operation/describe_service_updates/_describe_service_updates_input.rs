@@ -18,8 +18,10 @@ impl DescribeServiceUpdatesInput {
         self.service_update_name.as_deref()
     }
     /// <p>The status of the service update</p>
-    pub fn service_update_status(&self) -> ::std::option::Option<&[crate::types::ServiceUpdateStatus]> {
-        self.service_update_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_update_status.is_none()`.
+    pub fn service_update_status(&self) -> &[crate::types::ServiceUpdateStatus] {
+        self.service_update_status.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {

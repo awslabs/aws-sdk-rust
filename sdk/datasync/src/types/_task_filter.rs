@@ -6,24 +6,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.</p>
-    pub name: ::std::option::Option<crate::types::TaskFilterName>,
+    pub name: crate::types::TaskFilterName,
     /// <p>The values that you want to filter for. For example, you might want to display only tasks for a specific destination location.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
-    pub operator: ::std::option::Option<crate::types::Operator>,
+    pub operator: crate::types::Operator,
 }
 impl TaskFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::TaskFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::TaskFilterName {
+        &self.name
     }
     /// <p>The values that you want to filter for. For example, you might want to display only tasks for a specific destination location.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::Operator {
+        &self.operator
     }
 }
 impl TaskFilter {
@@ -43,6 +44,7 @@ pub struct TaskFilterBuilder {
 }
 impl TaskFilterBuilder {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::TaskFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl TaskFilterBuilder {
         &self.values
     }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -91,11 +94,30 @@ impl TaskFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`TaskFilter`](crate::types::TaskFilter).
-    pub fn build(self) -> crate::types::TaskFilter {
-        crate::types::TaskFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TaskFilterBuilder::name)
+    /// - [`values`](crate::types::builders::TaskFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::TaskFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TaskFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building TaskFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building TaskFilter",
+                )
+            })?,
+        })
     }
 }

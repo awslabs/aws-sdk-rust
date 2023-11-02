@@ -30,6 +30,7 @@ pub struct DescribeDeploymentJobInputBuilder {
 }
 impl DescribeDeploymentJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    /// This field is required.
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job = ::std::option::Option::Some(input.into());
         self

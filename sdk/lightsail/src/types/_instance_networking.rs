@@ -15,8 +15,10 @@ impl InstanceNetworking {
         self.monthly_transfer.as_ref()
     }
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    pub fn ports(&self) -> ::std::option::Option<&[crate::types::InstancePortInfo]> {
-        self.ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ports.is_none()`.
+    pub fn ports(&self) -> &[crate::types::InstancePortInfo] {
+        self.ports.as_deref().unwrap_or_default()
     }
 }
 impl InstanceNetworking {

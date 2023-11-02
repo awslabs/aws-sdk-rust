@@ -27,8 +27,10 @@ impl Type {
         self.time_series_measure_value_column_info.as_ref()
     }
     /// <p>Indicates if the column is a row.</p>
-    pub fn row_column_info(&self) -> ::std::option::Option<&[crate::types::ColumnInfo]> {
-        self.row_column_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_column_info.is_none()`.
+    pub fn row_column_info(&self) -> &[crate::types::ColumnInfo] {
+        self.row_column_info.as_deref().unwrap_or_default()
     }
 }
 impl Type {

@@ -11,8 +11,10 @@ pub struct ListSchemaVersionsOutput {
 }
 impl ListSchemaVersionsOutput {
     /// <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
-    pub fn schemas(&self) -> ::std::option::Option<&[crate::types::SchemaVersionListItem]> {
-        self.schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schemas.is_none()`.
+    pub fn schemas(&self) -> &[crate::types::SchemaVersionListItem] {
+        self.schemas.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

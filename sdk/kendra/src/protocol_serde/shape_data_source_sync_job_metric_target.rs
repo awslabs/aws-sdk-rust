@@ -3,11 +3,11 @@ pub fn ser_data_source_sync_job_metric_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceSyncJobMetricTarget,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_source_id {
-        object.key("DataSourceId").string(var_1.as_str());
+    {
+        object.key("DataSourceId").string(input.data_source_id.as_str());
     }
-    if let Some(var_2) = &input.data_source_sync_job_id {
-        object.key("DataSourceSyncJobId").string(var_2.as_str());
+    if let Some(var_1) = &input.data_source_sync_job_id {
+        object.key("DataSourceSyncJobId").string(var_1.as_str());
     }
     Ok(())
 }

@@ -23,8 +23,10 @@ impl ListTagsForResourcesInput {
         self.resource_type.as_ref()
     }
     /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[::std::string::String] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
 }
 impl ListTagsForResourcesInput {
@@ -47,6 +49,7 @@ impl ListTagsForResourcesInputBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TagResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

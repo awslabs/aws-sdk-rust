@@ -16,8 +16,10 @@ impl SendPipelineExecutionStepSuccessInput {
         self.callback_token.as_deref()
     }
     /// <p>A list of the output parameters of the callback step.</p>
-    pub fn output_parameters(&self) -> ::std::option::Option<&[crate::types::OutputParameter]> {
-        self.output_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_parameters.is_none()`.
+    pub fn output_parameters(&self) -> &[crate::types::OutputParameter] {
+        self.output_parameters.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct SendPipelineExecutionStepSuccessInputBuilder {
 }
 impl SendPipelineExecutionStepSuccessInputBuilder {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    /// This field is required.
     pub fn callback_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.callback_token = ::std::option::Option::Some(input.into());
         self

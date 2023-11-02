@@ -13,8 +13,10 @@ pub struct GetExportSnapshotRecordsOutput {
 }
 impl GetExportSnapshotRecordsOutput {
     /// <p>A list of objects describing the export snapshot records.</p>
-    pub fn export_snapshot_records(&self) -> ::std::option::Option<&[crate::types::ExportSnapshotRecord]> {
-        self.export_snapshot_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_snapshot_records.is_none()`.
+    pub fn export_snapshot_records(&self) -> &[crate::types::ExportSnapshotRecord] {
+        self.export_snapshot_records.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

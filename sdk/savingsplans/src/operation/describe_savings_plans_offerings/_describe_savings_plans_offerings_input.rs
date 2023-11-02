@@ -32,48 +32,68 @@ pub struct DescribeSavingsPlansOfferingsInput {
 }
 impl DescribeSavingsPlansOfferingsInput {
     /// <p>The IDs of the offerings.</p>
-    pub fn offering_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.offering_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offering_ids.is_none()`.
+    pub fn offering_ids(&self) -> &[::std::string::String] {
+        self.offering_ids.as_deref().unwrap_or_default()
     }
     /// <p>The payment options.</p>
-    pub fn payment_options(&self) -> ::std::option::Option<&[crate::types::SavingsPlanPaymentOption]> {
-        self.payment_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payment_options.is_none()`.
+    pub fn payment_options(&self) -> &[crate::types::SavingsPlanPaymentOption] {
+        self.payment_options.as_deref().unwrap_or_default()
     }
     /// <p>The product type.</p>
     pub fn product_type(&self) -> ::std::option::Option<&crate::types::SavingsPlanProductType> {
         self.product_type.as_ref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_types(&self) -> ::std::option::Option<&[crate::types::SavingsPlanType]> {
-        self.plan_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plan_types.is_none()`.
+    pub fn plan_types(&self) -> &[crate::types::SavingsPlanType] {
+        self.plan_types.as_deref().unwrap_or_default()
     }
     /// <p>The durations, in seconds.</p>
-    pub fn durations(&self) -> ::std::option::Option<&[i64]> {
-        self.durations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.durations.is_none()`.
+    pub fn durations(&self) -> &[i64] {
+        self.durations.as_deref().unwrap_or_default()
     }
     /// <p>The currencies.</p>
-    pub fn currencies(&self) -> ::std::option::Option<&[crate::types::CurrencyCode]> {
-        self.currencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.currencies.is_none()`.
+    pub fn currencies(&self) -> &[crate::types::CurrencyCode] {
+        self.currencies.as_deref().unwrap_or_default()
     }
     /// <p>The descriptions.</p>
-    pub fn descriptions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.descriptions.is_none()`.
+    pub fn descriptions(&self) -> &[::std::string::String] {
+        self.descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The services.</p>
-    pub fn service_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_codes.is_none()`.
+    pub fn service_codes(&self) -> &[::std::string::String] {
+        self.service_codes.as_deref().unwrap_or_default()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.usage_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_types.is_none()`.
+    pub fn usage_types(&self) -> &[::std::string::String] {
+        self.usage_types.as_deref().unwrap_or_default()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[::std::string::String] {
+        self.operations.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SavingsPlanOfferingFilterElement]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SavingsPlanOfferingFilterElement] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

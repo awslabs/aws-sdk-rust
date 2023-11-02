@@ -142,6 +142,6 @@ pub fn de_get_in_app_template_http_response(
             crate::protocol_serde::shape_get_in_app_template_output::de_in_app_template_response_payload(_response_body)?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_in_app_template_output_correct_errors(output).build()
     })
 }

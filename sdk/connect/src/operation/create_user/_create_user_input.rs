@@ -48,8 +48,10 @@ impl CreateUserInput {
         self.directory_user_id.as_deref()
     }
     /// <p>The identifier of the security profile for the user.</p>
-    pub fn security_profile_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_profile_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profile_ids.is_none()`.
+    pub fn security_profile_ids(&self) -> &[::std::string::String] {
+        self.security_profile_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {
@@ -92,6 +94,7 @@ pub struct CreateUserInputBuilder {
 }
 impl CreateUserInputBuilder {
     /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +137,7 @@ impl CreateUserInputBuilder {
         &self.identity_info
     }
     /// <p>The phone settings for the user.</p>
+    /// This field is required.
     pub fn phone_config(mut self, input: crate::types::UserPhoneConfig) -> Self {
         self.phone_config = ::std::option::Option::Some(input);
         self
@@ -185,6 +189,7 @@ impl CreateUserInputBuilder {
         &self.security_profile_ids
     }
     /// <p>The identifier of the routing profile for the user.</p>
+    /// This field is required.
     pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -213,6 +218,7 @@ impl CreateUserInputBuilder {
         &self.hierarchy_group_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

@@ -3,11 +3,11 @@ pub fn ser_kinesis_firehose_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisFirehoseInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn {
-        object.key("ResourceARN").string(var_1.as_str());
+    {
+        object.key("ResourceARN").string(input.resource_arn.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("RoleARN").string(var_2.as_str());
+    {
+        object.key("RoleARN").string(input.role_arn.as_str());
     }
     Ok(())
 }

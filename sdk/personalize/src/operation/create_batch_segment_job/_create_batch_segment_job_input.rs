@@ -50,8 +50,10 @@ impl CreateBatchSegmentJobInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateBatchSegmentJobInput {
@@ -76,6 +78,7 @@ pub struct CreateBatchSegmentJobInputBuilder {
 }
 impl CreateBatchSegmentJobInputBuilder {
     /// <p>The name of the batch segment job to create.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateBatchSegmentJobInputBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
+    /// This field is required.
     pub fn solution_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +136,7 @@ impl CreateBatchSegmentJobInputBuilder {
         &self.num_results
     }
     /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
+    /// This field is required.
     pub fn job_input(mut self, input: crate::types::BatchSegmentJobInput) -> Self {
         self.job_input = ::std::option::Option::Some(input);
         self
@@ -146,6 +151,7 @@ impl CreateBatchSegmentJobInputBuilder {
         &self.job_input
     }
     /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
+    /// This field is required.
     pub fn job_output(mut self, input: crate::types::BatchSegmentJobOutput) -> Self {
         self.job_output = ::std::option::Option::Some(input);
         self
@@ -160,6 +166,7 @@ impl CreateBatchSegmentJobInputBuilder {
         &self.job_output
     }
     /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

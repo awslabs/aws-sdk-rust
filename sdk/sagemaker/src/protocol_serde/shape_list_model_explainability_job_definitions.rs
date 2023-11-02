@@ -35,7 +35,7 @@ pub fn de_list_model_explainability_job_definitions_http_response(
         )
         .map_err(crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_model_explainability_job_definitions_output_correct_errors(output).build()
     })
 }
 

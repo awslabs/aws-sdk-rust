@@ -3,20 +3,20 @@ pub fn ser_email_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.from {
-        object.key("from").string(var_1.as_str());
+    {
+        object.key("from").string(input.from.as_str());
     }
-    if let Some(var_2) = &input.content {
+    if let Some(var_1) = &input.content {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("content").start_object();
-        crate::protocol_serde::shape_email_content::ser_email_content(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("content").start_object();
+        crate::protocol_serde::shape_email_content::ser_email_content(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.recipients {
+    if let Some(var_3) = &input.recipients {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("recipients").start_object();
-        crate::protocol_serde::shape_email_recipients::ser_email_recipients(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("recipients").start_object();
+        crate::protocol_serde::shape_email_recipients::ser_email_recipients(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -59,7 +59,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::email_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

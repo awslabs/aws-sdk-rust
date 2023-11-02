@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeviceIdentifier`](crate::operation::get_device_identifier::builders::GetDeviceIdentifierFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_identifier_arn(impl Into<String>)`](crate::operation::get_device_identifier::builders::GetDeviceIdentifierFluentBuilder::device_identifier_arn) / [`set_device_identifier_arn(Option<String>)`](crate::operation::get_device_identifier::builders::GetDeviceIdentifierFluentBuilder::set_device_identifier_arn): <p>The Amazon Resource Name (ARN) of the device identifier.</p>
+    ///   - [`device_identifier_arn(impl Into<String>)`](crate::operation::get_device_identifier::builders::GetDeviceIdentifierFluentBuilder::device_identifier_arn) / [`set_device_identifier_arn(impl Into<String>)`](crate::operation::get_device_identifier::builders::GetDeviceIdentifierFluentBuilder::set_device_identifier_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the device identifier.</p><br>
     /// - On success, responds with [`GetDeviceIdentifierOutput`](crate::operation::get_device_identifier::GetDeviceIdentifierOutput) with field(s):
     ///   - [`device_identifier(Option<DeviceIdentifier>)`](crate::operation::get_device_identifier::GetDeviceIdentifierOutput::device_identifier): <p>Information about the device identifier.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_device_identifier::GetDeviceIdentifierOutput::tags): <p> The device identifier tags. </p>

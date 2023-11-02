@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LookbackWindow {
     /// <p>The name of the lookback window column.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>The lookback window column size.</p>
-    pub size: ::std::option::Option<i64>,
+    pub size: i64,
     /// <p>The size unit that is used for the lookback window column. Valid values for this structure are <code>HOUR</code>, <code>DAY</code>, and <code>WEEK</code>.</p>
-    pub size_unit: ::std::option::Option<crate::types::LookbackWindowSizeUnit>,
+    pub size_unit: crate::types::LookbackWindowSizeUnit,
 }
 impl LookbackWindow {
     /// <p>The name of the lookback window column.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>The lookback window column size.</p>
-    pub fn size(&self) -> ::std::option::Option<i64> {
+    pub fn size(&self) -> i64 {
         self.size
     }
     /// <p>The size unit that is used for the lookback window column. Valid values for this structure are <code>HOUR</code>, <code>DAY</code>, and <code>WEEK</code>.</p>
-    pub fn size_unit(&self) -> ::std::option::Option<&crate::types::LookbackWindowSizeUnit> {
-        self.size_unit.as_ref()
+    pub fn size_unit(&self) -> &crate::types::LookbackWindowSizeUnit {
+        &self.size_unit
     }
 }
 impl LookbackWindow {
@@ -42,6 +43,7 @@ pub struct LookbackWindowBuilder {
 }
 impl LookbackWindowBuilder {
     /// <p>The name of the lookback window column.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl LookbackWindowBuilder {
         &self.column_name
     }
     /// <p>The lookback window column size.</p>
+    /// This field is required.
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl LookbackWindowBuilder {
         &self.size
     }
     /// <p>The size unit that is used for the lookback window column. Valid values for this structure are <code>HOUR</code>, <code>DAY</code>, and <code>WEEK</code>.</p>
+    /// This field is required.
     pub fn size_unit(mut self, input: crate::types::LookbackWindowSizeUnit) -> Self {
         self.size_unit = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,30 @@ impl LookbackWindowBuilder {
         &self.size_unit
     }
     /// Consumes the builder and constructs a [`LookbackWindow`](crate::types::LookbackWindow).
-    pub fn build(self) -> crate::types::LookbackWindow {
-        crate::types::LookbackWindow {
-            column_name: self.column_name,
-            size: self.size,
-            size_unit: self.size_unit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_name`](crate::types::builders::LookbackWindowBuilder::column_name)
+    /// - [`size`](crate::types::builders::LookbackWindowBuilder::size)
+    /// - [`size_unit`](crate::types::builders::LookbackWindowBuilder::size_unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::LookbackWindow, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LookbackWindow {
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building LookbackWindow",
+                )
+            })?,
+            size: self.size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size",
+                    "size was not specified but it is required when building LookbackWindow",
+                )
+            })?,
+            size_unit: self.size_unit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size_unit",
+                    "size_unit was not specified but it is required when building LookbackWindow",
+                )
+            })?,
+        })
     }
 }

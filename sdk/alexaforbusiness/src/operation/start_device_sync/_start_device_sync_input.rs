@@ -20,8 +20,10 @@ impl StartDeviceSyncInput {
         self.device_arn.as_deref()
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::Feature]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::Feature] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl StartDeviceSyncInput {

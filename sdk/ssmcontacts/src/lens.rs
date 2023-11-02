@@ -112,10 +112,7 @@ pub(crate) fn reflens_list_rotations_output_next_token(
 pub(crate) fn lens_list_contact_channels_output_contact_channels(
     input: crate::operation::list_contact_channels::ListContactChannelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactChannel>> {
-    let input = match input.contact_channels {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contact_channels;
     ::std::option::Option::Some(input)
 }
 
@@ -132,10 +129,7 @@ pub(crate) fn lens_list_contacts_output_contacts(
 pub(crate) fn lens_list_engagements_output_engagements(
     input: crate::operation::list_engagements::ListEngagementsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Engagement>> {
-    let input = match input.engagements {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.engagements;
     ::std::option::Option::Some(input)
 }
 
@@ -152,30 +146,21 @@ pub(crate) fn lens_list_page_receipts_output_receipts(
 pub(crate) fn lens_list_page_resolutions_output_page_resolutions(
     input: crate::operation::list_page_resolutions::ListPageResolutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>> {
-    let input = match input.page_resolutions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.page_resolutions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_pages_by_contact_output_pages(
     input: crate::operation::list_pages_by_contact::ListPagesByContactOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Page>> {
-    let input = match input.pages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pages;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_pages_by_engagement_output_pages(
     input: crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Page>> {
-    let input = match input.pages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.pages;
     ::std::option::Option::Some(input)
 }
 
@@ -212,9 +197,6 @@ pub(crate) fn lens_list_rotation_shifts_output_rotation_shifts(
 pub(crate) fn lens_list_rotations_output_rotations(
     input: crate::operation::list_rotations::ListRotationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Rotation>> {
-    let input = match input.rotations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.rotations;
     ::std::option::Option::Some(input)
 }

@@ -98,6 +98,7 @@ impl RecommendationJobInferenceBenchmarkBuilder {
         &self.endpoint_configuration
     }
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
+    /// This field is required.
     pub fn model_configuration(mut self, input: crate::types::ModelConfiguration) -> Self {
         self.model_configuration = ::std::option::Option::Some(input);
         self

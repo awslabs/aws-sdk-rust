@@ -55,6 +55,7 @@ impl DescribeDeviceInputBuilder {
         &self.next_token
     }
     /// <p>The unique ID of the device.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DescribeDeviceInputBuilder {
         &self.device_name
     }
     /// <p>The name of the fleet the devices belong to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

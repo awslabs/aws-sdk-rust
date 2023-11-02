@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputBand {
     /// <p>The name of the band.</p>
-    pub band_name: ::std::option::Option<::std::string::String>,
+    pub band_name: ::std::string::String,
     /// <p>The datatype of the output band.</p>
-    pub output_data_type: ::std::option::Option<crate::types::OutputType>,
+    pub output_data_type: crate::types::OutputType,
 }
 impl OutputBand {
     /// <p>The name of the band.</p>
-    pub fn band_name(&self) -> ::std::option::Option<&str> {
-        self.band_name.as_deref()
+    pub fn band_name(&self) -> &str {
+        use std::ops::Deref;
+        self.band_name.deref()
     }
     /// <p>The datatype of the output band.</p>
-    pub fn output_data_type(&self) -> ::std::option::Option<&crate::types::OutputType> {
-        self.output_data_type.as_ref()
+    pub fn output_data_type(&self) -> &crate::types::OutputType {
+        &self.output_data_type
     }
 }
 impl OutputBand {
@@ -35,6 +36,7 @@ pub struct OutputBandBuilder {
 }
 impl OutputBandBuilder {
     /// <p>The name of the band.</p>
+    /// This field is required.
     pub fn band_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.band_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl OutputBandBuilder {
         &self.band_name
     }
     /// <p>The datatype of the output band.</p>
+    /// This field is required.
     pub fn output_data_type(mut self, input: crate::types::OutputType) -> Self {
         self.output_data_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl OutputBandBuilder {
         &self.output_data_type
     }
     /// Consumes the builder and constructs a [`OutputBand`](crate::types::OutputBand).
-    pub fn build(self) -> crate::types::OutputBand {
-        crate::types::OutputBand {
-            band_name: self.band_name,
-            output_data_type: self.output_data_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`band_name`](crate::types::builders::OutputBandBuilder::band_name)
+    /// - [`output_data_type`](crate::types::builders::OutputBandBuilder::output_data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputBand, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputBand {
+            band_name: self.band_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "band_name",
+                    "band_name was not specified but it is required when building OutputBand",
+                )
+            })?,
+            output_data_type: self.output_data_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_data_type",
+                    "output_data_type was not specified but it is required when building OutputBand",
+                )
+            })?,
+        })
     }
 }

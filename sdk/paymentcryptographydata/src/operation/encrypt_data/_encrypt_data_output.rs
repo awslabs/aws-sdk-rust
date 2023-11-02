@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EncryptDataOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     pub key_check_value: ::std::option::Option<::std::string::String>,
     /// <p>The encrypted ciphertext.</p>
-    pub cipher_text: ::std::option::Option<::std::string::String>,
+    pub cipher_text: ::std::string::String,
     _request_id: Option<String>,
 }
 impl EncryptDataOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     pub fn key_check_value(&self) -> ::std::option::Option<&str> {
         self.key_check_value.as_deref()
     }
     /// <p>The encrypted ciphertext.</p>
-    pub fn cipher_text(&self) -> ::std::option::Option<&str> {
-        self.cipher_text.as_deref()
+    pub fn cipher_text(&self) -> &str {
+        use std::ops::Deref;
+        self.cipher_text.deref()
     }
 }
 impl ::std::fmt::Debug for EncryptDataOutput {
@@ -58,6 +60,7 @@ pub struct EncryptDataOutputBuilder {
 }
 impl EncryptDataOutputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl EncryptDataOutputBuilder {
         &self.key_check_value
     }
     /// <p>The encrypted ciphertext.</p>
+    /// This field is required.
     pub fn cipher_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cipher_text = ::std::option::Option::Some(input.into());
         self
@@ -109,13 +113,26 @@ impl EncryptDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EncryptDataOutput`](crate::operation::encrypt_data::EncryptDataOutput).
-    pub fn build(self) -> crate::operation::encrypt_data::EncryptDataOutput {
-        crate::operation::encrypt_data::EncryptDataOutput {
-            key_arn: self.key_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_arn`](crate::operation::encrypt_data::builders::EncryptDataOutputBuilder::key_arn)
+    /// - [`cipher_text`](crate::operation::encrypt_data::builders::EncryptDataOutputBuilder::cipher_text)
+    pub fn build(self) -> ::std::result::Result<crate::operation::encrypt_data::EncryptDataOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::encrypt_data::EncryptDataOutput {
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building EncryptDataOutput",
+                )
+            })?,
             key_check_value: self.key_check_value,
-            cipher_text: self.cipher_text,
+            cipher_text: self.cipher_text.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cipher_text",
+                    "cipher_text was not specified but it is required when building EncryptDataOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for EncryptDataOutputBuilder {

@@ -35,6 +35,7 @@ pub struct GpsCoordinatesBuilder {
 }
 impl GpsCoordinatesBuilder {
     /// <p>The latitude coordinate of the location.</p>
+    /// This field is required.
     pub fn latitude(mut self, input: f64) -> Self {
         self.latitude = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl GpsCoordinatesBuilder {
         &self.latitude
     }
     /// <p>The longitude coordinate of the location.</p>
+    /// This field is required.
     pub fn longitude(mut self, input: f64) -> Self {
         self.longitude = ::std::option::Option::Some(input);
         self

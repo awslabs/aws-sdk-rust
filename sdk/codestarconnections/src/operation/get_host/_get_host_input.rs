@@ -27,6 +27,7 @@ pub struct GetHostInputBuilder {
 }
 impl GetHostInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the requested host.</p>
+    /// This field is required.
     pub fn host_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_arn = ::std::option::Option::Some(input.into());
         self

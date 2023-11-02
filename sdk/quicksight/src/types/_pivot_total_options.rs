@@ -51,8 +51,10 @@ impl PivotTotalOptions {
         self.metric_header_cell_style.as_ref()
     }
     /// <p>The total aggregation options for each value field.</p>
-    pub fn total_aggregation_options(&self) -> ::std::option::Option<&[crate::types::TotalAggregationOption]> {
-        self.total_aggregation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.total_aggregation_options.is_none()`.
+    pub fn total_aggregation_options(&self) -> &[crate::types::TotalAggregationOption] {
+        self.total_aggregation_options.as_deref().unwrap_or_default()
     }
 }
 impl PivotTotalOptions {

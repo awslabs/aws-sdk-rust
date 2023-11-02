@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePipelineExecution`](crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder::set_pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    ///   - [`pipeline_execution_arn(impl Into<String>)`](crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder::pipeline_execution_arn) / [`set_pipeline_execution_arn(Option<String>)`](crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder::set_pipeline_execution_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the pipeline execution.</p><br>
     /// - On success, responds with [`DescribePipelineExecutionOutput`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     ///   - [`pipeline_execution_arn(Option<String>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::pipeline_execution_arn): <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>

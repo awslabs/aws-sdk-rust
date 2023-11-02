@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassificationType {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
-    pub one_time: ::std::option::Option<crate::types::S3OneTimeClassificationType>,
+    pub one_time: crate::types::S3OneTimeClassificationType,
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
-    pub continuous: ::std::option::Option<crate::types::S3ContinuousClassificationType>,
+    pub continuous: crate::types::S3ContinuousClassificationType,
 }
 impl ClassificationType {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
-    pub fn one_time(&self) -> ::std::option::Option<&crate::types::S3OneTimeClassificationType> {
-        self.one_time.as_ref()
+    pub fn one_time(&self) -> &crate::types::S3OneTimeClassificationType {
+        &self.one_time
     }
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
-    pub fn continuous(&self) -> ::std::option::Option<&crate::types::S3ContinuousClassificationType> {
-        self.continuous.as_ref()
+    pub fn continuous(&self) -> &crate::types::S3ContinuousClassificationType {
+        &self.continuous
     }
 }
 impl ClassificationType {
@@ -35,6 +35,7 @@ pub struct ClassificationTypeBuilder {
 }
 impl ClassificationTypeBuilder {
     /// <p>(Discontinued) A one-time classification of all of the existing objects in a specified S3 bucket. </p>
+    /// This field is required.
     pub fn one_time(mut self, input: crate::types::S3OneTimeClassificationType) -> Self {
         self.one_time = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ClassificationTypeBuilder {
         &self.one_time
     }
     /// <p>(Discontinued) A continuous classification of the objects that are added to a specified S3 bucket. Amazon Macie Classic begins performing continuous classification after a bucket is successfully associated with Macie Classic.</p>
+    /// This field is required.
     pub fn continuous(mut self, input: crate::types::S3ContinuousClassificationType) -> Self {
         self.continuous = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ClassificationTypeBuilder {
         &self.continuous
     }
     /// Consumes the builder and constructs a [`ClassificationType`](crate::types::ClassificationType).
-    pub fn build(self) -> crate::types::ClassificationType {
-        crate::types::ClassificationType {
-            one_time: self.one_time,
-            continuous: self.continuous,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`one_time`](crate::types::builders::ClassificationTypeBuilder::one_time)
+    /// - [`continuous`](crate::types::builders::ClassificationTypeBuilder::continuous)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClassificationType, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClassificationType {
+            one_time: self.one_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "one_time",
+                    "one_time was not specified but it is required when building ClassificationType",
+                )
+            })?,
+            continuous: self.continuous.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "continuous",
+                    "continuous was not specified but it is required when building ClassificationType",
+                )
+            })?,
+        })
     }
 }

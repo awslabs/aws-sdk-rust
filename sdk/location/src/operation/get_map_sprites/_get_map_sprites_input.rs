@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMapSpritesInput {
     /// <p>The map resource associated with the sprite ﬁle.</p>
-    pub map_name: ::std::option::Option<::std::string::String>,
+    pub map_name: ::std::string::String,
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
     /// <li> <p> <code>sprites.png</code> </p> </li>
@@ -15,14 +15,15 @@ pub struct GetMapSpritesInput {
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
-    pub file_name: ::std::option::Option<::std::string::String>,
+    pub file_name: ::std::string::String,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetMapSpritesInput {
     /// <p>The map resource associated with the sprite ﬁle.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
-        self.map_name.as_deref()
+    pub fn map_name(&self) -> &str {
+        use std::ops::Deref;
+        self.map_name.deref()
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
@@ -34,8 +35,9 @@ impl GetMapSpritesInput {
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
-        self.file_name.as_deref()
+    pub fn file_name(&self) -> &str {
+        use std::ops::Deref;
+        self.file_name.deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -68,6 +70,7 @@ pub struct GetMapSpritesInputBuilder {
 }
 impl GetMapSpritesInputBuilder {
     /// <p>The map resource associated with the sprite ﬁle.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl GetMapSpritesInputBuilder {
     /// <li> <p> <code>sprites.json</code> </p> </li>
     /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
@@ -137,12 +141,25 @@ impl GetMapSpritesInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapSpritesInput`](crate::operation::get_map_sprites::GetMapSpritesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`map_name`](crate::operation::get_map_sprites::builders::GetMapSpritesInputBuilder::map_name)
+    /// - [`file_name`](crate::operation::get_map_sprites::builders::GetMapSpritesInputBuilder::file_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_map_sprites::GetMapSpritesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_sprites::GetMapSpritesInput {
-            map_name: self.map_name,
-            file_name: self.file_name,
+            map_name: self.map_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_name",
+                    "map_name was not specified but it is required when building GetMapSpritesInput",
+                )
+            })?,
+            file_name: self.file_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file_name",
+                    "file_name was not specified but it is required when building GetMapSpritesInput",
+                )
+            })?,
             key: self.key,
         })
     }

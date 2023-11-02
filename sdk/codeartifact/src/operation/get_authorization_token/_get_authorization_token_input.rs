@@ -41,6 +41,7 @@ pub struct GetAuthorizationTokenInputBuilder {
 }
 impl GetAuthorizationTokenInputBuilder {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self

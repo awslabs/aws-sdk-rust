@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRule`](crate::operation::get_rule::builders::GetRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_identifier):<br>required: **true**<br><p>The unique ID of the retention rule.</p><br>
     /// - On success, responds with [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput) with field(s):
     ///   - [`identifier(Option<String>)`](crate::operation::get_rule::GetRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_rule::GetRuleOutput::description): <p>The retention rule description.</p>

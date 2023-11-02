@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::timestream_resources_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,11 +52,11 @@ pub fn ser_timestream_resources(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestreamResources,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.timestream_database_name {
-        object.key("timestreamDatabaseName").string(var_1.as_str());
+    {
+        object.key("timestreamDatabaseName").string(input.timestream_database_name.as_str());
     }
-    if let Some(var_2) = &input.timestream_table_name {
-        object.key("timestreamTableName").string(var_2.as_str());
+    {
+        object.key("timestreamTableName").string(input.timestream_table_name.as_str());
     }
     Ok(())
 }

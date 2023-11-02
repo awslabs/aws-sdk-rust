@@ -9,8 +9,10 @@ pub struct SearchResourcesCriteriaBlock {
 }
 impl SearchResourcesCriteriaBlock {
     /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn and(&self) -> ::std::option::Option<&[crate::types::SearchResourcesCriteria]> {
-        self.and.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and.is_none()`.
+    pub fn and(&self) -> &[crate::types::SearchResourcesCriteria] {
+        self.and.as_deref().unwrap_or_default()
     }
 }
 impl SearchResourcesCriteriaBlock {

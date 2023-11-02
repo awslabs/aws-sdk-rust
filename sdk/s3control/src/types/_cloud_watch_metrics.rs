@@ -29,6 +29,7 @@ pub struct CloudWatchMetricsBuilder {
 }
 impl CloudWatchMetricsBuilder {
     /// <p>A container that indicates whether CloudWatch publishing for S3 Storage Lens metrics is enabled. A value of <code>true</code> indicates that CloudWatch publishing for S3 Storage Lens metrics is enabled.</p>
+    /// This field is required.
     pub fn is_enabled(mut self, input: bool) -> Self {
         self.is_enabled = ::std::option::Option::Some(input);
         self

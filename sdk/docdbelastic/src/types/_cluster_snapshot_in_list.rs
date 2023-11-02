@@ -5,36 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSnapshotInList {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub snapshot_name: ::std::option::Option<::std::string::String>,
+    pub snapshot_name: ::std::string::String,
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    pub snapshot_arn: ::std::option::Option<::std::string::String>,
+    pub snapshot_arn: ::std::string::String,
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub cluster_arn: ::std::option::Option<::std::string::String>,
+    pub cluster_arn: ::std::string::String,
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    pub status: ::std::option::Option<crate::types::Status>,
+    pub status: crate::types::Status,
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub snapshot_creation_time: ::std::option::Option<::std::string::String>,
+    pub snapshot_creation_time: ::std::string::String,
 }
 impl ClusterSnapshotInList {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
-        self.snapshot_name.as_deref()
+    pub fn snapshot_name(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_name.deref()
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
-        self.snapshot_arn.as_deref()
+    pub fn snapshot_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_arn.deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
-        self.cluster_arn.as_deref()
+    pub fn cluster_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_arn.deref()
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::Status {
+        &self.status
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn snapshot_creation_time(&self) -> ::std::option::Option<&str> {
-        self.snapshot_creation_time.as_deref()
+    pub fn snapshot_creation_time(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_creation_time.deref()
     }
 }
 impl ClusterSnapshotInList {
@@ -56,6 +60,7 @@ pub struct ClusterSnapshotInListBuilder {
 }
 impl ClusterSnapshotInListBuilder {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl ClusterSnapshotInListBuilder {
         &self.snapshot_name
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
+    /// This field is required.
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,7 @@ impl ClusterSnapshotInListBuilder {
         &self.snapshot_arn
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl ClusterSnapshotInListBuilder {
         &self.cluster_arn
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -112,6 +120,7 @@ impl ClusterSnapshotInListBuilder {
         &self.status
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
+    /// This field is required.
     pub fn snapshot_creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_creation_time = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +135,44 @@ impl ClusterSnapshotInListBuilder {
         &self.snapshot_creation_time
     }
     /// Consumes the builder and constructs a [`ClusterSnapshotInList`](crate::types::ClusterSnapshotInList).
-    pub fn build(self) -> crate::types::ClusterSnapshotInList {
-        crate::types::ClusterSnapshotInList {
-            snapshot_name: self.snapshot_name,
-            snapshot_arn: self.snapshot_arn,
-            cluster_arn: self.cluster_arn,
-            status: self.status,
-            snapshot_creation_time: self.snapshot_creation_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`snapshot_name`](crate::types::builders::ClusterSnapshotInListBuilder::snapshot_name)
+    /// - [`snapshot_arn`](crate::types::builders::ClusterSnapshotInListBuilder::snapshot_arn)
+    /// - [`cluster_arn`](crate::types::builders::ClusterSnapshotInListBuilder::cluster_arn)
+    /// - [`status`](crate::types::builders::ClusterSnapshotInListBuilder::status)
+    /// - [`snapshot_creation_time`](crate::types::builders::ClusterSnapshotInListBuilder::snapshot_creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusterSnapshotInList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClusterSnapshotInList {
+            snapshot_name: self.snapshot_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshot_name",
+                    "snapshot_name was not specified but it is required when building ClusterSnapshotInList",
+                )
+            })?,
+            snapshot_arn: self.snapshot_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshot_arn",
+                    "snapshot_arn was not specified but it is required when building ClusterSnapshotInList",
+                )
+            })?,
+            cluster_arn: self.cluster_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cluster_arn",
+                    "cluster_arn was not specified but it is required when building ClusterSnapshotInList",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ClusterSnapshotInList",
+                )
+            })?,
+            snapshot_creation_time: self.snapshot_creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshot_creation_time",
+                    "snapshot_creation_time was not specified but it is required when building ClusterSnapshotInList",
+                )
+            })?,
+        })
     }
 }

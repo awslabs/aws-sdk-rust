@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
-    pub state_name: ::std::option::Option<::std::string::String>,
+    pub state_name: ::std::string::String,
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
+    pub variables: ::std::vec::Vec<crate::types::VariableDefinition>,
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub timers: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>,
+    pub timers: ::std::vec::Vec<crate::types::TimerDefinition>,
 }
 impl DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
-    pub fn state_name(&self) -> ::std::option::Option<&str> {
-        self.state_name.as_deref()
+    pub fn state_name(&self) -> &str {
+        use std::ops::Deref;
+        self.state_name.deref()
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::VariableDefinition]> {
-        self.variables.as_deref()
+    pub fn variables(&self) -> &[crate::types::VariableDefinition] {
+        use std::ops::Deref;
+        self.variables.deref()
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn timers(&self) -> ::std::option::Option<&[crate::types::TimerDefinition]> {
-        self.timers.as_deref()
+    pub fn timers(&self) -> &[crate::types::TimerDefinition] {
+        use std::ops::Deref;
+        self.timers.deref()
     }
 }
 impl DetectorStateDefinition {
@@ -42,6 +45,7 @@ pub struct DetectorStateDefinitionBuilder {
 }
 impl DetectorStateDefinitionBuilder {
     /// <p>The name of the new state of the detector (instance).</p>
+    /// This field is required.
     pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_name = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +100,30 @@ impl DetectorStateDefinitionBuilder {
         &self.timers
     }
     /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::types::DetectorStateDefinition).
-    pub fn build(self) -> crate::types::DetectorStateDefinition {
-        crate::types::DetectorStateDefinition {
-            state_name: self.state_name,
-            variables: self.variables,
-            timers: self.timers,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_name`](crate::types::builders::DetectorStateDefinitionBuilder::state_name)
+    /// - [`variables`](crate::types::builders::DetectorStateDefinitionBuilder::variables)
+    /// - [`timers`](crate::types::builders::DetectorStateDefinitionBuilder::timers)
+    pub fn build(self) -> ::std::result::Result<crate::types::DetectorStateDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DetectorStateDefinition {
+            state_name: self.state_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_name",
+                    "state_name was not specified but it is required when building DetectorStateDefinition",
+                )
+            })?,
+            variables: self.variables.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "variables",
+                    "variables was not specified but it is required when building DetectorStateDefinition",
+                )
+            })?,
+            timers: self.timers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timers",
+                    "timers was not specified but it is required when building DetectorStateDefinition",
+                )
+            })?,
+        })
     }
 }

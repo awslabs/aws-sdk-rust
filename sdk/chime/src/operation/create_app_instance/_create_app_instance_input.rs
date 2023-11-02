@@ -26,8 +26,10 @@ impl CreateAppInstanceInput {
         self.client_request_token.as_deref()
     }
     /// <p>Tags assigned to the <code>AppInstance</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateAppInstanceInput {
@@ -58,6 +60,7 @@ pub struct CreateAppInstanceInputBuilder {
 }
 impl CreateAppInstanceInputBuilder {
     /// <p>The name of the <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl CreateAppInstanceInputBuilder {
         &self.metadata
     }
     /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

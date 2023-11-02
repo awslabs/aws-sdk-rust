@@ -27,6 +27,7 @@ pub struct DescribeDbClusterSnapshotAttributesInputBuilder {
 }
 impl DescribeDbClusterSnapshotAttributesInputBuilder {
     /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
+    /// This field is required.
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self

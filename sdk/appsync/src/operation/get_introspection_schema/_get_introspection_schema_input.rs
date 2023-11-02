@@ -41,6 +41,7 @@ pub struct GetIntrospectionSchemaInputBuilder {
 }
 impl GetIntrospectionSchemaInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetIntrospectionSchemaInputBuilder {
         &self.api_id
     }
     /// <p>The schema format: SDL or JSON.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::OutputType) -> Self {
         self.format = ::std::option::Option::Some(input);
         self

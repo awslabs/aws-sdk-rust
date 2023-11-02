@@ -3,26 +3,26 @@ pub fn ser_image_response_card(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageResponseCard,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.title {
-        object.key("title").string(var_1.as_str());
+    {
+        object.key("title").string(input.title.as_str());
     }
-    if let Some(var_2) = &input.subtitle {
-        object.key("subtitle").string(var_2.as_str());
+    if let Some(var_1) = &input.subtitle {
+        object.key("subtitle").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.image_url {
-        object.key("imageUrl").string(var_3.as_str());
+    if let Some(var_2) = &input.image_url {
+        object.key("imageUrl").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.buttons {
-        let mut array_5 = object.key("buttons").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.buttons {
+        let mut array_4 = object.key("buttons").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_button::ser_button(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_button::ser_button(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -76,7 +76,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::image_response_card_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

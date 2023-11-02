@@ -35,6 +35,7 @@ pub struct MultiplexProgramServiceDescriptorBuilder {
 }
 impl MultiplexProgramServiceDescriptorBuilder {
     /// Name of the provider.
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl MultiplexProgramServiceDescriptorBuilder {
         &self.provider_name
     }
     /// Name of the service.
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self

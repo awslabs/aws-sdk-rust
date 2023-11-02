@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
+    pub access_log_subscription_identifier: ::std::string::String,
 }
 impl GetAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(&self) -> ::std::option::Option<&str> {
-        self.access_log_subscription_identifier.as_deref()
+    pub fn access_log_subscription_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.access_log_subscription_identifier.deref()
     }
 }
 impl GetAccessLogSubscriptionInput {
@@ -27,6 +28,7 @@ pub struct GetAccessLogSubscriptionInputBuilder {
 }
 impl GetAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// This field is required.
     pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl GetAccessLogSubscriptionInputBuilder {
         &self.access_log_subscription_identifier
     }
     /// Consumes the builder and constructs a [`GetAccessLogSubscriptionInput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_log_subscription_identifier`](crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionInputBuilder::access_log_subscription_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl GetAccessLogSubscriptionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput {
-            access_log_subscription_identifier: self.access_log_subscription_identifier,
+            access_log_subscription_identifier: self.access_log_subscription_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access_log_subscription_identifier",
+                    "access_log_subscription_identifier was not specified but it is required when building GetAccessLogSubscriptionInput",
+                )
+            })?,
         })
     }
 }

@@ -34,6 +34,7 @@ pub struct GetConfigurationProfileInputBuilder {
 }
 impl GetConfigurationProfileInputBuilder {
     /// <p>The ID of the application that includes the configuration profile you want to get.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetConfigurationProfileInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the configuration profile that you want to get.</p>
+    /// This field is required.
     pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self

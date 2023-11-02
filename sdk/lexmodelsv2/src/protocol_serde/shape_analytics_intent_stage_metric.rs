@@ -3,14 +3,14 @@ pub fn ser_analytics_intent_stage_metric(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalyticsIntentStageMetric,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.statistic {
-        object.key("statistic").string(var_2.as_str());
+    {
+        object.key("statistic").string(input.statistic.as_str());
     }
-    if let Some(var_3) = &input.order {
-        object.key("order").string(var_3.as_str());
+    if let Some(var_1) = &input.order {
+        object.key("order").string(var_1.as_str());
     }
     Ok(())
 }

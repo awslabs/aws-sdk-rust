@@ -14,8 +14,10 @@ impl PutMessagingStreamingConfigurationsInput {
         self.app_instance_arn.as_deref()
     }
     /// <p>The streaming configurations.</p>
-    pub fn streaming_configurations(&self) -> ::std::option::Option<&[crate::types::StreamingConfiguration]> {
-        self.streaming_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_configurations.is_none()`.
+    pub fn streaming_configurations(&self) -> &[crate::types::StreamingConfiguration] {
+        self.streaming_configurations.as_deref().unwrap_or_default()
     }
 }
 impl PutMessagingStreamingConfigurationsInput {
@@ -34,6 +36,7 @@ pub struct PutMessagingStreamingConfigurationsInputBuilder {
 }
 impl PutMessagingStreamingConfigurationsInputBuilder {
     /// <p>The ARN of the streaming configuration.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self

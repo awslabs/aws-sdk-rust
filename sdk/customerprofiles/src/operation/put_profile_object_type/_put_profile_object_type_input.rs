@@ -114,6 +114,7 @@ pub struct PutProfileObjectTypeInputBuilder {
 }
 impl PutProfileObjectTypeInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl PutProfileObjectTypeInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +144,7 @@ impl PutProfileObjectTypeInputBuilder {
         &self.object_type_name
     }
     /// <p>Description of the profile object type.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

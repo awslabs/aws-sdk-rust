@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesOutput {
     /// <p>The requested interpolated values.</p>
-    pub interpolated_asset_property_values: ::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>>,
+    pub interpolated_asset_property_values: ::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetInterpolatedAssetPropertyValuesOutput {
     /// <p>The requested interpolated values.</p>
-    pub fn interpolated_asset_property_values(&self) -> ::std::option::Option<&[crate::types::InterpolatedAssetPropertyValue]> {
-        self.interpolated_asset_property_values.as_deref()
+    pub fn interpolated_asset_property_values(&self) -> &[crate::types::InterpolatedAssetPropertyValue] {
+        use std::ops::Deref;
+        self.interpolated_asset_property_values.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,25 @@ impl GetInterpolatedAssetPropertyValuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetInterpolatedAssetPropertyValuesOutput`](crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput).
-    pub fn build(self) -> crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput {
-        crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput {
-            interpolated_asset_property_values: self.interpolated_asset_property_values,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`interpolated_asset_property_values`](crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder::interpolated_asset_property_values)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput {
+                interpolated_asset_property_values: self.interpolated_asset_property_values
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("interpolated_asset_property_values", "interpolated_asset_property_values was not specified but it is required when building GetInterpolatedAssetPropertyValuesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

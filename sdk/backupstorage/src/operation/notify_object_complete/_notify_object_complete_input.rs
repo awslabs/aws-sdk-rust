@@ -83,6 +83,7 @@ pub struct NotifyObjectCompleteInputBuilder {
 }
 impl NotifyObjectCompleteInputBuilder {
     /// Backup job Id for the in-progress backup
+    /// This field is required.
     pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl NotifyObjectCompleteInputBuilder {
         &self.backup_job_id
     }
     /// Upload Id for the in-progress upload
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl NotifyObjectCompleteInputBuilder {
         &self.upload_id
     }
     /// Object checksum
+    /// This field is required.
     pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_checksum = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +128,7 @@ impl NotifyObjectCompleteInputBuilder {
         &self.object_checksum
     }
     /// Checksum algorithm
+    /// This field is required.
     pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.object_checksum_algorithm = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct ListProjectsOutput {
 }
 impl ListProjectsOutput {
     /// <p>A list of projects in your AWS account.</p>
-    pub fn projects(&self) -> ::std::option::Option<&[crate::types::ProjectMetadata]> {
-        self.projects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projects.is_none()`.
+    pub fn projects(&self) -> &[crate::types::ProjectMetadata] {
+        self.projects.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

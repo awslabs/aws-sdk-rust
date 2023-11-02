@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCustomDomainAssociation`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster to delete a custom domain association for.</p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::delete_custom_domain_association::builders::DeleteCustomDomainAssociationFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster to delete a custom domain association for.</p><br>
     /// - On success, responds with [`DeleteCustomDomainAssociationOutput`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomDomainAssociationError>`](crate::operation::delete_custom_domain_association::DeleteCustomDomainAssociationError)
     pub fn delete_custom_domain_association(

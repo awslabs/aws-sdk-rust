@@ -76,6 +76,7 @@ impl CreateRecordingConfigurationInputBuilder {
         &self.name
     }
     /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
+    /// This field is required.
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self

@@ -21,8 +21,10 @@ impl CreateApplicationInput {
         self.compute_platform.as_ref()
     }
     /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateApplicationInput {
@@ -42,6 +44,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application. This name must be unique with the applicable user or Amazon Web Services account.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

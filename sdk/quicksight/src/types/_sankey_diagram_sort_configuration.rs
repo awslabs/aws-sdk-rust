@@ -13,8 +13,10 @@ pub struct SankeyDiagramSortConfiguration {
 }
 impl SankeyDiagramSortConfiguration {
     /// <p>The sort configuration of the weight fields.</p>
-    pub fn weight_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.weight_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.weight_sort.is_none()`.
+    pub fn weight_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.weight_sort.as_deref().unwrap_or_default()
     }
     /// <p>The limit on the number of source nodes that are displayed in a sankey diagram.</p>
     pub fn source_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {

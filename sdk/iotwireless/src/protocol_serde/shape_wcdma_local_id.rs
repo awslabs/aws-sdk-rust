@@ -3,16 +3,16 @@ pub fn ser_wcdma_local_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WcdmaLocalId,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.uarfcndl {
+    {
         object.key("Uarfcndl").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.uarfcndl).into()),
         );
     }
-    if let Some(var_2) = &input.psc {
+    {
         object.key("Psc").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.psc).into()),
         );
     }
     Ok(())

@@ -18,8 +18,10 @@ impl AssignPrivateNatGatewayAddressInput {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[::std::string::String] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The number of private IP addresses to assign to the NAT gateway. You can't specify this parameter when also specifying private IP addresses.</p>
     pub fn private_ip_address_count(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct AssignPrivateNatGatewayAddressInputBuilder {
 }
 impl AssignPrivateNatGatewayAddressInputBuilder {
     /// <p>The ID of the NAT gateway.</p>
+    /// This field is required.
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self

@@ -15,8 +15,10 @@ impl CellValueSynonym {
         self.cell_value.as_deref()
     }
     /// <p>Other names or aliases for the cell value.</p>
-    pub fn synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.synonyms.is_none()`.
+    pub fn synonyms(&self) -> &[::std::string::String] {
+        self.synonyms.as_deref().unwrap_or_default()
     }
 }
 impl CellValueSynonym {

@@ -53,8 +53,10 @@ impl JobQueueDetail {
         self.priority
     }
     /// <p>The compute environments that are attached to the job queue and the order that job placement is preferred. Compute environments are selected for job placement in ascending order.</p>
-    pub fn compute_environment_order(&self) -> ::std::option::Option<&[crate::types::ComputeEnvironmentOrder]> {
-        self.compute_environment_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_environment_order.is_none()`.
+    pub fn compute_environment_order(&self) -> &[crate::types::ComputeEnvironmentOrder] {
+        self.compute_environment_order.as_deref().unwrap_or_default()
     }
     /// <p>The tags that are applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -84,6 +86,7 @@ pub struct JobQueueDetailBuilder {
 }
 impl JobQueueDetailBuilder {
     /// <p>The job queue name.</p>
+    /// This field is required.
     pub fn job_queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl JobQueueDetailBuilder {
         &self.job_queue_name
     }
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
+    /// This field is required.
     pub fn job_queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl JobQueueDetailBuilder {
         &self.job_queue_arn
     }
     /// <p>Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::JqState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -168,6 +173,7 @@ impl JobQueueDetailBuilder {
         &self.status_reason
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self

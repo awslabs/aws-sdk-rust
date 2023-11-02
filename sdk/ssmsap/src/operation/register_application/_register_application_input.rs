@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterApplicationInput {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The type of the application.</p>
-    pub application_type: ::std::option::Option<crate::types::ApplicationType>,
+    pub application_type: crate::types::ApplicationType,
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instances: ::std::vec::Vec<::std::string::String>,
     /// <p>The SAP instance number of the application.</p>
     pub sap_instance_number: ::std::option::Option<::std::string::String>,
     /// <p>The System ID of the application.</p>
@@ -16,20 +16,24 @@ pub struct RegisterApplicationInput {
     /// <p>The tags to be attached to the SAP application.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The credentials of the SAP application.</p>
-    pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub credentials: ::std::vec::Vec<crate::types::ApplicationCredential>,
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub database_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterApplicationInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The type of the application.</p>
-    pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
-        self.application_type.as_ref()
+    pub fn application_type(&self) -> &crate::types::ApplicationType {
+        &self.application_type
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instances.as_deref()
+    pub fn instances(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.instances.deref()
     }
     /// <p>The SAP instance number of the application.</p>
     pub fn sap_instance_number(&self) -> ::std::option::Option<&str> {
@@ -44,8 +48,13 @@ impl RegisterApplicationInput {
         self.tags.as_ref()
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
-        self.credentials.as_deref()
+    pub fn credentials(&self) -> &[crate::types::ApplicationCredential] {
+        use std::ops::Deref;
+        self.credentials.deref()
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+        self.database_arn.as_deref()
     }
 }
 impl RegisterApplicationInput {
@@ -66,9 +75,11 @@ pub struct RegisterApplicationInputBuilder {
     pub(crate) sid: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) database_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterApplicationInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +94,7 @@ impl RegisterApplicationInputBuilder {
         &self.application_id
     }
     /// <p>The type of the application.</p>
+    /// This field is required.
     pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
         self.application_type = ::std::option::Option::Some(input);
         self
@@ -184,19 +196,53 @@ impl RegisterApplicationInputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
         &self.credentials
     }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_arn
+    }
     /// Consumes the builder and constructs a [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::register_application::builders::RegisterApplicationInputBuilder::application_id)
+    /// - [`application_type`](crate::operation::register_application::builders::RegisterApplicationInputBuilder::application_type)
+    /// - [`instances`](crate::operation::register_application::builders::RegisterApplicationInputBuilder::instances)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::register_application::RegisterApplicationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_application::RegisterApplicationInput {
-            application_id: self.application_id,
-            application_type: self.application_type,
-            instances: self.instances,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building RegisterApplicationInput",
+                )
+            })?,
+            application_type: self.application_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_type",
+                    "application_type was not specified but it is required when building RegisterApplicationInput",
+                )
+            })?,
+            instances: self.instances.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instances",
+                    "instances was not specified but it is required when building RegisterApplicationInput",
+                )
+            })?,
             sap_instance_number: self.sap_instance_number,
             sid: self.sid,
             tags: self.tags,
-            credentials: self.credentials,
+            credentials: self.credentials.unwrap_or_default(),
+            database_arn: self.database_arn,
         })
     }
 }

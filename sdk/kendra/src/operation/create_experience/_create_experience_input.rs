@@ -62,6 +62,7 @@ pub struct CreateExperienceInputBuilder {
 }
 impl CreateExperienceInputBuilder {
     /// <p>A name for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateExperienceInputBuilder {
         &self.name
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

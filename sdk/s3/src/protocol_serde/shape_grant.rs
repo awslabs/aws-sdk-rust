@@ -19,6 +19,7 @@ pub fn ser_grant(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_grant(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Grant, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Grant::builder();

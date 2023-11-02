@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetsFromS3RequestDetails {
     /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
-    pub asset_sources: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
+    pub asset_sources: ::std::vec::Vec<crate::types::AssetSourceEntry>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The unique identifier for the revision associated with this import request.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
 }
 impl ImportAssetsFromS3RequestDetails {
     /// <p>Is a list of Amazon S3 bucket and object key pairs.</p>
-    pub fn asset_sources(&self) -> ::std::option::Option<&[crate::types::AssetSourceEntry]> {
-        self.asset_sources.as_deref()
+    pub fn asset_sources(&self) -> &[crate::types::AssetSourceEntry] {
+        use std::ops::Deref;
+        self.asset_sources.deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl ImportAssetsFromS3RequestDetails {
@@ -62,6 +65,7 @@ impl ImportAssetsFromS3RequestDetailsBuilder {
         &self.asset_sources
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl ImportAssetsFromS3RequestDetailsBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +95,30 @@ impl ImportAssetsFromS3RequestDetailsBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`ImportAssetsFromS3RequestDetails`](crate::types::ImportAssetsFromS3RequestDetails).
-    pub fn build(self) -> crate::types::ImportAssetsFromS3RequestDetails {
-        crate::types::ImportAssetsFromS3RequestDetails {
-            asset_sources: self.asset_sources,
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_sources`](crate::types::builders::ImportAssetsFromS3RequestDetailsBuilder::asset_sources)
+    /// - [`data_set_id`](crate::types::builders::ImportAssetsFromS3RequestDetailsBuilder::data_set_id)
+    /// - [`revision_id`](crate::types::builders::ImportAssetsFromS3RequestDetailsBuilder::revision_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportAssetsFromS3RequestDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportAssetsFromS3RequestDetails {
+            asset_sources: self.asset_sources.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_sources",
+                    "asset_sources was not specified but it is required when building ImportAssetsFromS3RequestDetails",
+                )
+            })?,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building ImportAssetsFromS3RequestDetails",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building ImportAssetsFromS3RequestDetails",
+                )
+            })?,
+        })
     }
 }

@@ -10,9 +10,9 @@ pub struct ResourcePermission {
     /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
     /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
-    pub principal: ::std::option::Option<::std::string::String>,
+    pub principal: ::std::string::String,
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub actions: ::std::vec::Vec<::std::string::String>,
 }
 impl ResourcePermission {
     /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
@@ -21,12 +21,14 @@ impl ResourcePermission {
     /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
     /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
-        self.principal.as_deref()
+    pub fn principal(&self) -> &str {
+        use std::ops::Deref;
+        self.principal.deref()
     }
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    pub fn actions(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.actions.deref()
     }
 }
 impl ResourcePermission {
@@ -50,6 +52,7 @@ impl ResourcePermissionBuilder {
     /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
     /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -94,10 +97,23 @@ impl ResourcePermissionBuilder {
         &self.actions
     }
     /// Consumes the builder and constructs a [`ResourcePermission`](crate::types::ResourcePermission).
-    pub fn build(self) -> crate::types::ResourcePermission {
-        crate::types::ResourcePermission {
-            principal: self.principal,
-            actions: self.actions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`principal`](crate::types::builders::ResourcePermissionBuilder::principal)
+    /// - [`actions`](crate::types::builders::ResourcePermissionBuilder::actions)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourcePermission, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourcePermission {
+            principal: self.principal.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "principal",
+                    "principal was not specified but it is required when building ResourcePermission",
+                )
+            })?,
+            actions: self.actions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "actions",
+                    "actions was not specified but it is required when building ResourcePermission",
+                )
+            })?,
+        })
     }
 }

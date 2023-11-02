@@ -157,9 +157,9 @@ impl ProvideRegion for ProfileFileRegionProvider {
 mod test {
     use crate::profile::ProfileFileRegionProvider;
     use crate::provider_config::ProviderConfig;
-    use crate::test_case::no_traffic_connector;
-    use aws_sdk_sts::config::Region;
+    use crate::test_case::no_traffic_client;
     use aws_types::os_shim_internal::{Env, Fs};
+    use aws_types::region::Region;
     use futures_util::FutureExt;
     use tracing_test::traced_test;
 
@@ -169,7 +169,7 @@ mod test {
         ProviderConfig::empty()
             .with_fs(fs)
             .with_env(env)
-            .with_http_connector(no_traffic_connector())
+            .with_http_client(no_traffic_client())
     }
 
     #[traced_test]
@@ -244,7 +244,7 @@ role_arn = arn:aws:iam::123456789012:role/test
         let provider_config = ProviderConfig::empty()
             .with_fs(fs)
             .with_env(env)
-            .with_http_connector(no_traffic_connector());
+            .with_http_client(no_traffic_client());
 
         assert_eq!(
             Some(Region::new("us-east-1")),

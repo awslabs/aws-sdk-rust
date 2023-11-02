@@ -34,6 +34,7 @@ pub struct UpdatePolicyStoreInputBuilder {
 }
 impl UpdatePolicyStoreInputBuilder {
     /// <p>Specifies the ID of the policy store that you want to update</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdatePolicyStoreInputBuilder {
         &self.policy_store_id
     }
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
+    /// This field is required.
     pub fn validation_settings(mut self, input: crate::types::ValidationSettings) -> Self {
         self.validation_settings = ::std::option::Option::Some(input);
         self

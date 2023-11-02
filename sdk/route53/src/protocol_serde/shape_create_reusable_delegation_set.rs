@@ -164,7 +164,9 @@ pub fn de_create_reusable_delegation_set_http_response(
             })?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_reusable_delegation_set_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?
     })
 }
 

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
-    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedColumn>>,
+    pub columns: ::std::vec::Vec<crate::types::CalculatedColumn>,
 }
 impl CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::CalculatedColumn]> {
-        self.columns.as_deref()
+    pub fn columns(&self) -> &[crate::types::CalculatedColumn] {
+        use std::ops::Deref;
+        self.columns.deref()
     }
 }
 impl CreateColumnsOperation {
@@ -48,7 +49,16 @@ impl CreateColumnsOperationBuilder {
         &self.columns
     }
     /// Consumes the builder and constructs a [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
-    pub fn build(self) -> crate::types::CreateColumnsOperation {
-        crate::types::CreateColumnsOperation { columns: self.columns }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`columns`](crate::types::builders::CreateColumnsOperationBuilder::columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateColumnsOperation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateColumnsOperation {
+            columns: self.columns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "columns",
+                    "columns was not specified but it is required when building CreateColumnsOperation",
+                )
+            })?,
+        })
     }
 }

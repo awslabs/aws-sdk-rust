@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCognitoEvents`](crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder::set_identity_pool_id): <p>The Cognito Identity Pool ID for the request</p>
+    ///   - [`identity_pool_id(impl Into<String>)`](crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::get_cognito_events::builders::GetCognitoEventsFluentBuilder::set_identity_pool_id):<br>required: **true**<br><p>The Cognito Identity Pool ID for the request</p><br>
     /// - On success, responds with [`GetCognitoEventsOutput`](crate::operation::get_cognito_events::GetCognitoEventsOutput) with field(s):
     ///   - [`events(Option<HashMap<String, String>>)`](crate::operation::get_cognito_events::GetCognitoEventsOutput::events): <p>The Cognito Events returned from the GetCognitoEvents request</p>
     /// - On failure, responds with [`SdkError<GetCognitoEventsError>`](crate::operation::get_cognito_events::GetCognitoEventsError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeClientBranding`](crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder::set_resource_id): <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_client_branding::builders::DescribeClientBrandingFluentBuilder::set_resource_id):<br>required: **true**<br><p>The directory identifier of the WorkSpace for which you want to view client branding information.</p><br>
     /// - On success, responds with [`DescribeClientBrandingOutput`](crate::operation::describe_client_branding::DescribeClientBrandingOutput) with field(s):
     ///   - [`device_type_windows(Option<DefaultClientBrandingAttributes>)`](crate::operation::describe_client_branding::DescribeClientBrandingOutput::device_type_windows): <p>The branding information for Windows devices.</p>
     ///   - [`device_type_osx(Option<DefaultClientBrandingAttributes>)`](crate::operation::describe_client_branding::DescribeClientBrandingOutput::device_type_osx): <p>The branding information for macOS devices.</p>

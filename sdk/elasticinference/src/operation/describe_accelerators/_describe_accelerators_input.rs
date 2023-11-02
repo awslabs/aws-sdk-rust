@@ -14,12 +14,16 @@ pub struct DescribeAcceleratorsInput {
 }
 impl DescribeAcceleratorsInput {
     /// <p> The IDs of the accelerators to describe. </p>
-    pub fn accelerator_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accelerator_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_ids.is_none()`.
+    pub fn accelerator_ids(&self) -> &[::std::string::String] {
+        self.accelerator_ids.as_deref().unwrap_or_default()
     }
     /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

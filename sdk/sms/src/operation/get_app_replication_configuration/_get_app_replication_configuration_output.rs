@@ -9,8 +9,10 @@ pub struct GetAppReplicationConfigurationOutput {
 }
 impl GetAppReplicationConfigurationOutput {
     /// <p>The replication configurations associated with server groups in this application.</p>
-    pub fn server_group_replication_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupReplicationConfiguration]> {
-        self.server_group_replication_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_group_replication_configurations.is_none()`.
+    pub fn server_group_replication_configurations(&self) -> &[crate::types::ServerGroupReplicationConfiguration] {
+        self.server_group_replication_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAppReplicationConfigurationOutput {

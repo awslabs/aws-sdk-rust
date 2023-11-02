@@ -5,38 +5,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeLogConfig {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The unique name of this real-time log configuration.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
-    pub sampling_rate: ::std::option::Option<i64>,
+    pub sampling_rate: i64,
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
-    pub end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
+    pub end_points: ::std::vec::Vec<crate::types::EndPoint>,
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub fields: ::std::vec::Vec<::std::string::String>,
 }
 impl RealtimeLogConfig {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The unique name of this real-time log configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
-    pub fn sampling_rate(&self) -> ::std::option::Option<i64> {
+    pub fn sampling_rate(&self) -> i64 {
         self.sampling_rate
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
-    pub fn end_points(&self) -> ::std::option::Option<&[crate::types::EndPoint]> {
-        self.end_points.as_deref()
+    pub fn end_points(&self) -> &[crate::types::EndPoint] {
+        use std::ops::Deref;
+        self.end_points.deref()
     }
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
 }
 impl RealtimeLogConfig {
@@ -58,6 +62,7 @@ pub struct RealtimeLogConfigBuilder {
 }
 impl RealtimeLogConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +77,7 @@ impl RealtimeLogConfigBuilder {
         &self.arn
     }
     /// <p>The unique name of this real-time log configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +92,7 @@ impl RealtimeLogConfigBuilder {
         &self.name
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
+    /// This field is required.
     pub fn sampling_rate(mut self, input: i64) -> Self {
         self.sampling_rate = ::std::option::Option::Some(input);
         self
@@ -143,13 +150,44 @@ impl RealtimeLogConfigBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`RealtimeLogConfig`](crate::types::RealtimeLogConfig).
-    pub fn build(self) -> crate::types::RealtimeLogConfig {
-        crate::types::RealtimeLogConfig {
-            arn: self.arn,
-            name: self.name,
-            sampling_rate: self.sampling_rate,
-            end_points: self.end_points,
-            fields: self.fields,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RealtimeLogConfigBuilder::arn)
+    /// - [`name`](crate::types::builders::RealtimeLogConfigBuilder::name)
+    /// - [`sampling_rate`](crate::types::builders::RealtimeLogConfigBuilder::sampling_rate)
+    /// - [`end_points`](crate::types::builders::RealtimeLogConfigBuilder::end_points)
+    /// - [`fields`](crate::types::builders::RealtimeLogConfigBuilder::fields)
+    pub fn build(self) -> ::std::result::Result<crate::types::RealtimeLogConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RealtimeLogConfig {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RealtimeLogConfig",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RealtimeLogConfig",
+                )
+            })?,
+            sampling_rate: self.sampling_rate.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sampling_rate",
+                    "sampling_rate was not specified but it is required when building RealtimeLogConfig",
+                )
+            })?,
+            end_points: self.end_points.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_points",
+                    "end_points was not specified but it is required when building RealtimeLogConfig",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building RealtimeLogConfig",
+                )
+            })?,
+        })
     }
 }

@@ -90,6 +90,7 @@ pub struct RestoreTableFromSnapshotInputBuilder {
 }
 impl RestoreTableFromSnapshotInputBuilder {
     /// <p>The namespace of the snapshot to restore from.</p>
+    /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl RestoreTableFromSnapshotInputBuilder {
         &self.namespace_name
     }
     /// <p>The workgroup to restore the table to.</p>
+    /// This field is required.
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl RestoreTableFromSnapshotInputBuilder {
         &self.workgroup_name
     }
     /// <p>The name of the snapshot to restore the table from.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl RestoreTableFromSnapshotInputBuilder {
         &self.snapshot_name
     }
     /// <p>The name of the source database that contains the table being restored.</p>
+    /// This field is required.
     pub fn source_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_database_name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +164,7 @@ impl RestoreTableFromSnapshotInputBuilder {
         &self.source_schema_name
     }
     /// <p>The name of the source table being restored.</p>
+    /// This field is required.
     pub fn source_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_table_name = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +207,7 @@ impl RestoreTableFromSnapshotInputBuilder {
         &self.target_schema_name
     }
     /// <p>The name of the table to create from the restore operation.</p>
+    /// This field is required.
     pub fn new_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_table_name = ::std::option::Option::Some(input.into());
         self

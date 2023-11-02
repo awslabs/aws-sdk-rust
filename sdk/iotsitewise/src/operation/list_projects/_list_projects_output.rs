@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>A list that summarizes each project in the portal.</p>
-    pub project_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
+    pub project_summaries: ::std::vec::Vec<crate::types::ProjectSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProjectsOutput {
     /// <p>A list that summarizes each project in the portal.</p>
-    pub fn project_summaries(&self) -> ::std::option::Option<&[crate::types::ProjectSummary]> {
-        self.project_summaries.as_deref()
+    pub fn project_summaries(&self) -> &[crate::types::ProjectSummary] {
+        use std::ops::Deref;
+        self.project_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListProjectsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
-    pub fn build(self) -> crate::operation::list_projects::ListProjectsOutput {
-        crate::operation::list_projects::ListProjectsOutput {
-            project_summaries: self.project_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project_summaries`](crate::operation::list_projects::builders::ListProjectsOutputBuilder::project_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsOutput {
+            project_summaries: self.project_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_summaries",
+                    "project_summaries was not specified but it is required when building ListProjectsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

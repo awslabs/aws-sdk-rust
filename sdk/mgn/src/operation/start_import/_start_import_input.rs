@@ -49,6 +49,7 @@ impl StartImportInputBuilder {
         &self.client_token
     }
     /// <p>Start import request s3 bucket source.</p>
+    /// This field is required.
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
         self.s3_bucket_source = ::std::option::Option::Some(input);
         self

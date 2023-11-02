@@ -35,7 +35,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::elicitation_code_hook_invocation_setting_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -47,11 +51,11 @@ pub fn ser_elicitation_code_hook_invocation_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ElicitationCodeHookInvocationSetting,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enable_code_hook_invocation {
-        object.key("enableCodeHookInvocation").boolean(*var_1);
+    {
+        object.key("enableCodeHookInvocation").boolean(input.enable_code_hook_invocation);
     }
-    if let Some(var_2) = &input.invocation_label {
-        object.key("invocationLabel").string(var_2.as_str());
+    if let Some(var_1) = &input.invocation_label {
+        object.key("invocationLabel").string(var_1.as_str());
     }
     Ok(())
 }

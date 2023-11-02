@@ -56,8 +56,10 @@ impl UpdateIntentInput {
         self.parent_intent_signature.as_deref()
     }
     /// <p>New utterances used to invoke the intent.</p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[crate::types::SampleUtterance]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
     pub fn dialog_code_hook(&self) -> ::std::option::Option<&crate::types::DialogCodeHookSettings> {
@@ -68,8 +70,10 @@ impl UpdateIntentInput {
         self.fulfillment_code_hook.as_ref()
     }
     /// <p>A new list of slots and their priorities that are contained by the intent.</p>
-    pub fn slot_priorities(&self) -> ::std::option::Option<&[crate::types::SlotPriority]> {
-        self.slot_priorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_priorities.is_none()`.
+    pub fn slot_priorities(&self) -> &[crate::types::SlotPriority] {
+        self.slot_priorities.as_deref().unwrap_or_default()
     }
     /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
     pub fn intent_confirmation_setting(&self) -> ::std::option::Option<&crate::types::IntentConfirmationSetting> {
@@ -80,12 +84,16 @@ impl UpdateIntentInput {
         self.intent_closing_setting.as_ref()
     }
     /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
-    pub fn input_contexts(&self) -> ::std::option::Option<&[crate::types::InputContext]> {
-        self.input_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
+    pub fn input_contexts(&self) -> &[crate::types::InputContext] {
+        self.input_contexts.as_deref().unwrap_or_default()
     }
     /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> ::std::option::Option<&[crate::types::OutputContext]> {
-        self.output_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
+    pub fn output_contexts(&self) -> &[crate::types::OutputContext] {
+        self.output_contexts.as_deref().unwrap_or_default()
     }
     /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
     pub fn kendra_configuration(&self) -> ::std::option::Option<&crate::types::KendraConfiguration> {
@@ -139,6 +147,7 @@ pub struct UpdateIntentInputBuilder {
 }
 impl UpdateIntentInputBuilder {
     /// <p>The unique identifier of the intent to update.</p>
+    /// This field is required.
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +162,7 @@ impl UpdateIntentInputBuilder {
         &self.intent_id
     }
     /// <p>The new name for the intent.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -345,6 +355,7 @@ impl UpdateIntentInputBuilder {
         &self.kendra_configuration
     }
     /// <p>The identifier of the bot that contains the intent.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -359,6 +370,7 @@ impl UpdateIntentInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot that contains the intent. Must be <code>DRAFT</code>.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -373,6 +385,7 @@ impl UpdateIntentInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self

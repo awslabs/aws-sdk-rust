@@ -41,6 +41,7 @@ pub struct UpdatePullRequestApprovalStateInputBuilder {
 }
 impl UpdatePullRequestApprovalStateInputBuilder {
     /// <p>The system-generated ID of the pull request.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdatePullRequestApprovalStateInputBuilder {
         &self.pull_request_id
     }
     /// <p>The system-generated ID of the revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdatePullRequestApprovalStateInputBuilder {
         &self.revision_id
     }
     /// <p>The approval state to associate with the user on the pull request.</p>
+    /// This field is required.
     pub fn approval_state(mut self, input: crate::types::ApprovalState) -> Self {
         self.approval_state = ::std::option::Option::Some(input);
         self

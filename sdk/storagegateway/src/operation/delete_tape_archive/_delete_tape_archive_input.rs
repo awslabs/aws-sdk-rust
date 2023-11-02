@@ -35,6 +35,7 @@ pub struct DeleteTapeArchiveInputBuilder {
 }
 impl DeleteTapeArchiveInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
+    /// This field is required.
     pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_arn = ::std::option::Option::Some(input.into());
         self

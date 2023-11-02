@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarkAsArchivedInput {
     /// <p>Mark as archived by Source Server ID.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Mark as archived by Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl MarkAsArchivedInput {
     /// <p>Mark as archived by Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Mark as archived by Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct MarkAsArchivedInputBuilder {
 }
 impl MarkAsArchivedInputBuilder {
     /// <p>Mark as archived by Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -62,11 +64,18 @@ impl MarkAsArchivedInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`MarkAsArchivedInput`](crate::operation::mark_as_archived::MarkAsArchivedInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::mark_as_archived::builders::MarkAsArchivedInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::mark_as_archived::MarkAsArchivedInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::mark_as_archived::MarkAsArchivedInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building MarkAsArchivedInput",
+                )
+            })?,
             account_id: self.account_id,
         })
     }

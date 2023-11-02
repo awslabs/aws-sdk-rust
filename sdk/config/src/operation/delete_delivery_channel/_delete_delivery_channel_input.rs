@@ -28,6 +28,7 @@ pub struct DeleteDeliveryChannelInputBuilder {
 }
 impl DeleteDeliveryChannelInputBuilder {
     /// <p>The name of the delivery channel to delete.</p>
+    /// This field is required.
     pub fn delivery_channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_channel_name = ::std::option::Option::Some(input.into());
         self

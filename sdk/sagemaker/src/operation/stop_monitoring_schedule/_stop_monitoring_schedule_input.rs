@@ -27,6 +27,7 @@ pub struct StopMonitoringScheduleInputBuilder {
 }
 impl StopMonitoringScheduleInputBuilder {
     /// <p>The name of the schedule to stop.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self

@@ -12,8 +12,10 @@ pub struct VisualReferenceOutput {
 }
 impl VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
-    pub fn base_screenshots(&self) -> ::std::option::Option<&[crate::types::BaseScreenshot]> {
-        self.base_screenshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_screenshots.is_none()`.
+    pub fn base_screenshots(&self) -> &[crate::types::BaseScreenshot] {
+        self.base_screenshots.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     pub fn base_canary_run_id(&self) -> ::std::option::Option<&str> {

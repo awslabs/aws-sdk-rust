@@ -37,12 +37,16 @@ impl Recommendation {
         self.reason.as_deref()
     }
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
-    pub fn related_events(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedEvent]> {
-        self.related_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_events.is_none()`.
+    pub fn related_events(&self) -> &[crate::types::RecommendationRelatedEvent] {
+        self.related_events.as_deref().unwrap_or_default()
     }
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
-    pub fn related_anomalies(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomaly]> {
-        self.related_anomalies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_anomalies.is_none()`.
+    pub fn related_anomalies(&self) -> &[crate::types::RecommendationRelatedAnomaly] {
+        self.related_anomalies.as_deref().unwrap_or_default()
     }
     /// <p>The category type of the recommendation.</p>
     pub fn category(&self) -> ::std::option::Option<&str> {

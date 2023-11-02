@@ -29,8 +29,10 @@ impl GetDiscoveredResourceCountsOutput {
         self.total_discovered_resources
     }
     /// <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
-    pub fn resource_counts(&self) -> ::std::option::Option<&[crate::types::ResourceCount]> {
-        self.resource_counts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_counts.is_none()`.
+    pub fn resource_counts(&self) -> &[crate::types::ResourceCount] {
+        self.resource_counts.as_deref().unwrap_or_default()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

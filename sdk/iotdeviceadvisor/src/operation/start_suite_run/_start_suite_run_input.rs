@@ -48,6 +48,7 @@ pub struct StartSuiteRunInputBuilder {
 }
 impl StartSuiteRunInputBuilder {
     /// <p>Suite definition ID of the test suite.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl StartSuiteRunInputBuilder {
         &self.suite_definition_version
     }
     /// <p>Suite run configuration.</p>
+    /// This field is required.
     pub fn suite_run_configuration(mut self, input: crate::types::SuiteRunConfiguration) -> Self {
         self.suite_run_configuration = ::std::option::Option::Some(input);
         self

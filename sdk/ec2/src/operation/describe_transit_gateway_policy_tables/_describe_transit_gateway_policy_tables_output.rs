@@ -11,8 +11,10 @@ pub struct DescribeTransitGatewayPolicyTablesOutput {
 }
 impl DescribeTransitGatewayPolicyTablesOutput {
     /// <p>Describes the transit gateway policy tables.</p>
-    pub fn transit_gateway_policy_tables(&self) -> ::std::option::Option<&[crate::types::TransitGatewayPolicyTable]> {
-        self.transit_gateway_policy_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_policy_tables.is_none()`.
+    pub fn transit_gateway_policy_tables(&self) -> &[crate::types::TransitGatewayPolicyTable] {
+        self.transit_gateway_policy_tables.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

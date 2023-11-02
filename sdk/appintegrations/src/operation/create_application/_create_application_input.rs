@@ -38,12 +38,16 @@ impl CreateApplicationInput {
         self.application_source_config.as_ref()
     }
     /// <p>The events that the application subscribes.</p>
-    pub fn subscriptions(&self) -> ::std::option::Option<&[crate::types::Subscription]> {
-        self.subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
+        self.subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The events that the application publishes.</p>
-    pub fn publications(&self) -> ::std::option::Option<&[crate::types::Publication]> {
-        self.publications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publications.is_none()`.
+    pub fn publications(&self) -> &[crate::types::Publication] {
+        self.publications.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -76,6 +80,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl CreateApplicationInputBuilder {
         &self.name
     }
     /// <p>The namespace of the application.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +124,7 @@ impl CreateApplicationInputBuilder {
         &self.description
     }
     /// <p>The configuration for where the application should be loaded from.</p>
+    /// This field is required.
     pub fn application_source_config(mut self, input: crate::types::ApplicationSourceConfig) -> Self {
         self.application_source_config = ::std::option::Option::Some(input);
         self

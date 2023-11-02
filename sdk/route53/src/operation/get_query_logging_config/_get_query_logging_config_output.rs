@@ -34,6 +34,7 @@ pub struct GetQueryLoggingConfigOutputBuilder {
 }
 impl GetQueryLoggingConfigOutputBuilder {
     /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
+    /// This field is required.
     pub fn query_logging_config(mut self, input: crate::types::QueryLoggingConfig) -> Self {
         self.query_logging_config = ::std::option::Option::Some(input);
         self

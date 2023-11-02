@@ -27,6 +27,7 @@ pub struct DeleteEndpointInputBuilder {
 }
 impl DeleteEndpointInputBuilder {
     /// <p>The name of the endpoint that you want to delete.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self

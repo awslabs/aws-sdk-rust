@@ -29,8 +29,10 @@ impl SelfManagedActiveDirectoryConfigurationUpdates {
         self.password.as_deref()
     }
     /// <p>A list of up to three DNS server or domain controller IP addresses in your self-managed AD domain.</p>
-    pub fn dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
+    pub fn dns_ips(&self) -> &[::std::string::String] {
+        self.dns_ips.as_deref().unwrap_or_default()
     }
     /// <p>Specifies an updated fully qualified domain name of your self-managed AD configuration.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {

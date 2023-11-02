@@ -5,13 +5,14 @@
 pub struct GetResourceRequestStatusInput {
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub request_token: ::std::option::Option<::std::string::String>,
+    pub request_token: ::std::string::String,
 }
 impl GetResourceRequestStatusInput {
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
-    pub fn request_token(&self) -> ::std::option::Option<&str> {
-        self.request_token.as_deref()
+    pub fn request_token(&self) -> &str {
+        use std::ops::Deref;
+        self.request_token.deref()
     }
 }
 impl GetResourceRequestStatusInput {
@@ -30,6 +31,7 @@ pub struct GetResourceRequestStatusInputBuilder {
 impl GetResourceRequestStatusInputBuilder {
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
+    /// This field is required.
     pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
@@ -46,6 +48,8 @@ impl GetResourceRequestStatusInputBuilder {
         &self.request_token
     }
     /// Consumes the builder and constructs a [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`request_token`](crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder::request_token)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -53,7 +57,12 @@ impl GetResourceRequestStatusInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_request_status::GetResourceRequestStatusInput {
-            request_token: self.request_token,
+            request_token: self.request_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "request_token",
+                    "request_token was not specified but it is required when building GetResourceRequestStatusInput",
+                )
+            })?,
         })
     }
 }

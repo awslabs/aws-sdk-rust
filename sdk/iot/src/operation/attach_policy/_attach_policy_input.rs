@@ -34,6 +34,7 @@ pub struct AttachPolicyInputBuilder {
 }
 impl AttachPolicyInputBuilder {
     /// <p>The name of the policy to attach.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AttachPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self

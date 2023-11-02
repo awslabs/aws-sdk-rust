@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateUserSettings`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_arn(impl Into<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
-    ///   - [`user_settings_arn(impl Into<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::user_settings_arn) / [`set_user_settings_arn(Option<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::set_user_settings_arn): <p>The ARN of the user settings.</p>
+    ///   - [`portal_arn(impl Into<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::set_portal_arn):<br>required: **true**<br><p>The ARN of the web portal.</p><br>
+    ///   - [`user_settings_arn(impl Into<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::user_settings_arn) / [`set_user_settings_arn(Option<String>)`](crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::set_user_settings_arn):<br>required: **true**<br><p>The ARN of the user settings.</p><br>
     /// - On success, responds with [`AssociateUserSettingsOutput`](crate::operation::associate_user_settings::AssociateUserSettingsOutput) with field(s):
-    ///   - [`portal_arn(Option<String>)`](crate::operation::associate_user_settings::AssociateUserSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
-    ///   - [`user_settings_arn(Option<String>)`](crate::operation::associate_user_settings::AssociateUserSettingsOutput::user_settings_arn): <p>The ARN of the user settings.</p>
+    ///   - [`portal_arn(String)`](crate::operation::associate_user_settings::AssociateUserSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`user_settings_arn(String)`](crate::operation::associate_user_settings::AssociateUserSettingsOutput::user_settings_arn): <p>The ARN of the user settings.</p>
     /// - On failure, responds with [`SdkError<AssociateUserSettingsError>`](crate::operation::associate_user_settings::AssociateUserSettingsError)
     pub fn associate_user_settings(&self) -> crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder {
         crate::operation::associate_user_settings::builders::AssociateUserSettingsFluentBuilder::new(self.handle.clone())

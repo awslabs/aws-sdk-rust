@@ -15,8 +15,10 @@ pub struct CreateRecoveryGroupOutput {
 }
 impl CreateRecoveryGroupOutput {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub fn cells(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[::std::string::String] {
+        self.cells.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
     pub fn recovery_group_arn(&self) -> ::std::option::Option<&str> {

@@ -9,8 +9,10 @@ pub struct CoverageFilterCriteria {
 }
 impl CoverageFilterCriteria {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    pub fn filter_criterion(&self) -> ::std::option::Option<&[crate::types::CoverageFilterCriterion]> {
-        self.filter_criterion.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_criterion.is_none()`.
+    pub fn filter_criterion(&self) -> &[crate::types::CoverageFilterCriterion] {
+        self.filter_criterion.as_deref().unwrap_or_default()
     }
 }
 impl CoverageFilterCriteria {

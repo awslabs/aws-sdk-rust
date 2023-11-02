@@ -19,8 +19,8 @@ pub fn ser_update_app_version_input(
         }
         object_2.finish();
     }
-    if let Some(var_7) = &input.app_arn {
-        object.key("appArn").string(var_7.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
     Ok(())
 }

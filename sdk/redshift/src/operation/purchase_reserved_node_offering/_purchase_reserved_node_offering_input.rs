@@ -37,6 +37,7 @@ pub struct PurchaseReservedNodeOfferingInputBuilder {
 }
 impl PurchaseReservedNodeOfferingInputBuilder {
     /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    /// This field is required.
     pub fn reserved_node_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct ListRetrainingSchedulersOutput {
 }
 impl ListRetrainingSchedulersOutput {
     /// <p>Provides information on the specified retraining scheduler, including the model name, model ARN, status, and start date. </p>
-    pub fn retraining_scheduler_summaries(&self) -> ::std::option::Option<&[crate::types::RetrainingSchedulerSummary]> {
-        self.retraining_scheduler_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retraining_scheduler_summaries.is_none()`.
+    pub fn retraining_scheduler_summaries(&self) -> &[crate::types::RetrainingSchedulerSummary] {
+        self.retraining_scheduler_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the number of results exceeds the maximum, this pagination token is returned. Use this token in the request to show the next page of retraining schedulers.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

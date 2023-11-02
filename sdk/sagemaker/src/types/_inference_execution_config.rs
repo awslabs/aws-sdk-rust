@@ -40,6 +40,7 @@ impl InferenceExecutionConfigBuilder {
     /// <li> <p> <code>SERIAL</code> - Containers run as a serial pipeline.</p> </li>
     /// <li> <p> <code>DIRECT</code> - Only the individual container that you specify is run.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::InferenceExecutionMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self

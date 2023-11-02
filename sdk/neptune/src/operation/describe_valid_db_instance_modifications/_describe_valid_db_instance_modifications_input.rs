@@ -27,6 +27,7 @@ pub struct DescribeValidDbInstanceModificationsInputBuilder {
 }
 impl DescribeValidDbInstanceModificationsInputBuilder {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self

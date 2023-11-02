@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMediaAnalysisJob`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobFluentBuilder::set_job_id): <p>Unique identifier for the media analysis job for which you want to retrieve results.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobFluentBuilder::set_job_id):<br>required: **true**<br><p>Unique identifier for the media analysis job for which you want to retrieve results.</p><br>
     /// - On success, responds with [`GetMediaAnalysisJobOutput`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::job_id): <p>The identifier for the media analysis job.</p>
+    ///   - [`job_id(String)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::job_id): <p>The identifier for the media analysis job.</p>
     ///   - [`job_name(Option<String>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::job_name): <p>The name of the media analysis job.</p>
     ///   - [`operations_config(Option<MediaAnalysisOperationsConfig>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::operations_config): <p>Operation configurations that were provided during job creation.</p>
-    ///   - [`status(Option<MediaAnalysisJobStatus>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::status): <p>The current status of the media analysis job.</p>
+    ///   - [`status(MediaAnalysisJobStatus)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::status): <p>The current status of the media analysis job.</p>
     ///   - [`failure_details(Option<MediaAnalysisJobFailureDetails>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::failure_details): <p>Details about the error that resulted in failure of the job.</p>
-    ///   - [`creation_timestamp(Option<DateTime>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::creation_timestamp): <p>The Unix date and time when the job was started.</p>
+    ///   - [`creation_timestamp(DateTime)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::creation_timestamp): <p>The Unix date and time when the job was started.</p>
     ///   - [`completion_timestamp(Option<DateTime>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::completion_timestamp): <p>The Unix date and time when the job finished.</p>
     ///   - [`input(Option<MediaAnalysisInput>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::input): <p>Reference to the input manifest that was provided in the job creation request.</p>
     ///   - [`output_config(Option<MediaAnalysisOutputConfig>)`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput::output_config): <p>Output configuration that was provided in the creation request.</p>

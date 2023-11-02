@@ -11,8 +11,10 @@ pub struct ListCustomRoutingEndpointGroupsOutput {
 }
 impl ListCustomRoutingEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
-    pub fn endpoint_groups(&self) -> ::std::option::Option<&[crate::types::CustomRoutingEndpointGroup]> {
-        self.endpoint_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_groups.is_none()`.
+    pub fn endpoint_groups(&self) -> &[crate::types::CustomRoutingEndpointGroup] {
+        self.endpoint_groups.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

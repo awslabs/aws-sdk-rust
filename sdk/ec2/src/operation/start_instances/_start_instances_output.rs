@@ -9,8 +9,10 @@ pub struct StartInstancesOutput {
 }
 impl StartInstancesOutput {
     /// <p>Information about the started instances.</p>
-    pub fn starting_instances(&self) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
-        self.starting_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.starting_instances.is_none()`.
+    pub fn starting_instances(&self) -> &[crate::types::InstanceStateChange] {
+        self.starting_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for StartInstancesOutput {

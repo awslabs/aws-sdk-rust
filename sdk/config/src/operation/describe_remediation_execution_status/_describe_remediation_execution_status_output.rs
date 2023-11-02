@@ -11,8 +11,10 @@ pub struct DescribeRemediationExecutionStatusOutput {
 }
 impl DescribeRemediationExecutionStatusOutput {
     /// <p>Returns a list of remediation execution statuses objects.</p>
-    pub fn remediation_execution_statuses(&self) -> ::std::option::Option<&[crate::types::RemediationExecutionStatus]> {
-        self.remediation_execution_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_execution_statuses.is_none()`.
+    pub fn remediation_execution_statuses(&self) -> &[crate::types::RemediationExecutionStatus] {
+        self.remediation_execution_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

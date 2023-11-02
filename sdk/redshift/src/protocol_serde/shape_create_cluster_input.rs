@@ -221,6 +221,11 @@ pub fn ser_create_cluster_input_input(
     if let Some(var_84) = &input.master_password_secret_kms_key_id {
         scope_83.string(var_84);
     }
+    #[allow(unused_mut)]
+    let mut scope_85 = writer.prefix("IpAddressType");
+    if let Some(var_86) = &input.ip_address_type {
+        scope_85.string(var_86);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

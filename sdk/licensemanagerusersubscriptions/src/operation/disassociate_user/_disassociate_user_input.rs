@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateUserInput {
     /// <p>The user name from the identity provider for the user.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
+    pub instance_id: ::std::string::String,
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The domain name of the user.</p>
@@ -14,12 +14,14 @@ pub struct DisassociateUserInput {
 }
 impl DisassociateUserInput {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
+    pub fn instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_id.deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
@@ -48,6 +50,7 @@ pub struct DisassociateUserInputBuilder {
 }
 impl DisassociateUserInputBuilder {
     /// <p>The user name from the identity provider for the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl DisassociateUserInputBuilder {
         &self.username
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl DisassociateUserInputBuilder {
         &self.instance_id
     }
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -104,12 +109,25 @@ impl DisassociateUserInputBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`DisassociateUserInput`](crate::operation::disassociate_user::DisassociateUserInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::operation::disassociate_user::builders::DisassociateUserInputBuilder::username)
+    /// - [`instance_id`](crate::operation::disassociate_user::builders::DisassociateUserInputBuilder::instance_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disassociate_user::DisassociateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_user::DisassociateUserInput {
-            username: self.username,
-            instance_id: self.instance_id,
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building DisassociateUserInput",
+                )
+            })?,
+            instance_id: self.instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_id",
+                    "instance_id was not specified but it is required when building DisassociateUserInput",
+                )
+            })?,
             identity_provider: self.identity_provider,
             domain: self.domain,
         })

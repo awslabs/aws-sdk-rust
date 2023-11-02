@@ -9,8 +9,10 @@ pub struct DescribeVirtualInterfacesOutput {
 }
 impl DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
-    pub fn virtual_interfaces(&self) -> ::std::option::Option<&[crate::types::VirtualInterface]> {
-        self.virtual_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.virtual_interfaces.is_none()`.
+    pub fn virtual_interfaces(&self) -> &[crate::types::VirtualInterface] {
+        self.virtual_interfaces.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeVirtualInterfacesOutput {

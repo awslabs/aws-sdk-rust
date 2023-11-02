@@ -95,7 +95,9 @@ pub fn de_update_job_priority_http_response(
         output = crate::protocol_serde::shape_update_job_priority::de_update_job_priority(_response_body, output)
             .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_job_priority_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::update_job_priority::UpdateJobPriorityError::unhandled)?
     })
 }
 

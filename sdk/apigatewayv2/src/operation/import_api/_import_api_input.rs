@@ -56,6 +56,7 @@ impl ImportApiInputBuilder {
         &self.basepath
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    /// This field is required.
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
         self

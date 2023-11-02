@@ -36,8 +36,8 @@ pub fn de_stop_db_instance_automated_backups_replication_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDBInstanceState" => crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError::InvalidDbInstanceStateFault({
@@ -52,8 +52,8 @@ pub fn de_stop_db_instance_automated_backups_replication_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError::generic(generic)

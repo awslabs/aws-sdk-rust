@@ -40,12 +40,16 @@ impl Schedule {
         self.copy_tags
     }
     /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn tags_to_add(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_to_add.is_none()`.
+    pub fn tags_to_add(&self) -> &[crate::types::Tag] {
+        self.tags_to_add.as_deref().unwrap_or_default()
     }
     /// <p> <b>[AMI policies and snapshot policies that target instances only]</b> A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.</p>
-    pub fn variable_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.variable_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variable_tags.is_none()`.
+    pub fn variable_tags(&self) -> &[crate::types::Tag] {
+        self.variable_tags.as_deref().unwrap_or_default()
     }
     /// <p>The creation rule.</p>
     pub fn create_rule(&self) -> ::std::option::Option<&crate::types::CreateRule> {
@@ -62,12 +66,16 @@ impl Schedule {
     /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
     /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
-    pub fn cross_region_copy_rules(&self) -> ::std::option::Option<&[crate::types::CrossRegionCopyRule]> {
-        self.cross_region_copy_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_region_copy_rules.is_none()`.
+    pub fn cross_region_copy_rules(&self) -> &[crate::types::CrossRegionCopyRule] {
+        self.cross_region_copy_rules.as_deref().unwrap_or_default()
     }
     /// <p> <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.</p>
-    pub fn share_rules(&self) -> ::std::option::Option<&[crate::types::ShareRule]> {
-        self.share_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_rules.is_none()`.
+    pub fn share_rules(&self) -> &[crate::types::ShareRule] {
+        self.share_rules.as_deref().unwrap_or_default()
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.</p>
     pub fn deprecate_rule(&self) -> ::std::option::Option<&crate::types::DeprecateRule> {

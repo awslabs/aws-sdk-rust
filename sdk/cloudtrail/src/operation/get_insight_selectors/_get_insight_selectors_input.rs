@@ -54,6 +54,7 @@ impl GetInsightSelectorsInputBuilder {
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// This field is required.
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_name = ::std::option::Option::Some(input.into());
         self

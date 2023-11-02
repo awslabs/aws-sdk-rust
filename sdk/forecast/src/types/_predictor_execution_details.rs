@@ -9,8 +9,10 @@ pub struct PredictorExecutionDetails {
 }
 impl PredictorExecutionDetails {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    pub fn predictor_executions(&self) -> ::std::option::Option<&[crate::types::PredictorExecution]> {
-        self.predictor_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predictor_executions.is_none()`.
+    pub fn predictor_executions(&self) -> &[crate::types::PredictorExecution] {
+        self.predictor_executions.as_deref().unwrap_or_default()
     }
 }
 impl PredictorExecutionDetails {

@@ -55,6 +55,7 @@ pub struct CreateExtensionAssociationInputBuilder {
 }
 impl CreateExtensionAssociationInputBuilder {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    /// This field is required.
     pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateExtensionAssociationInputBuilder {
         &self.extension_version_number
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self

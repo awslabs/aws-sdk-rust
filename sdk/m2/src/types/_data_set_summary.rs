@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetSummary {
     /// <p>The name of the data set.</p>
-    pub data_set_name: ::std::option::Option<::std::string::String>,
+    pub data_set_name: ::std::string::String,
     /// <p>The type of data set. The only supported value is VSAM.</p>
     pub data_set_org: ::std::option::Option<::std::string::String>,
     /// <p>The format of the data set. </p>
@@ -19,8 +19,9 @@ pub struct DataSetSummary {
 }
 impl DataSetSummary {
     /// <p>The name of the data set.</p>
-    pub fn data_set_name(&self) -> ::std::option::Option<&str> {
-        self.data_set_name.as_deref()
+    pub fn data_set_name(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_name.deref()
     }
     /// <p>The type of data set. The only supported value is VSAM.</p>
     pub fn data_set_org(&self) -> ::std::option::Option<&str> {
@@ -63,6 +64,7 @@ pub struct DataSetSummaryBuilder {
 }
 impl DataSetSummaryBuilder {
     /// <p>The name of the data set.</p>
+    /// This field is required.
     pub fn data_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_name = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +149,21 @@ impl DataSetSummaryBuilder {
         &self.last_referenced_time
     }
     /// Consumes the builder and constructs a [`DataSetSummary`](crate::types::DataSetSummary).
-    pub fn build(self) -> crate::types::DataSetSummary {
-        crate::types::DataSetSummary {
-            data_set_name: self.data_set_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_name`](crate::types::builders::DataSetSummaryBuilder::data_set_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSetSummary {
+            data_set_name: self.data_set_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_name",
+                    "data_set_name was not specified but it is required when building DataSetSummary",
+                )
+            })?,
             data_set_org: self.data_set_org,
             format: self.format,
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
             last_referenced_time: self.last_referenced_time,
-        }
+        })
     }
 }

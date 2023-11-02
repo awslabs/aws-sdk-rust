@@ -17,6 +17,7 @@ pub fn ser_job_manifest(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_job_manifest(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::JobManifest, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -47,5 +48,5 @@ pub fn de_job_manifest(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::job_manifest_correct_errors(builder).build())
 }

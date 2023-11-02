@@ -59,6 +59,7 @@ pub struct UpdateReportPlanInputBuilder {
 }
 impl UpdateReportPlanInputBuilder {
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    /// This field is required.
     pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct UpdateRepositoryNameInputBuilder {
 }
 impl UpdateRepositoryNameInputBuilder {
     /// <p>The current name of the repository.</p>
+    /// This field is required.
     pub fn old_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.old_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateRepositoryNameInputBuilder {
         &self.old_name
     }
     /// <p>The new name for the repository.</p>
+    /// This field is required.
     pub fn new_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_name = ::std::option::Option::Some(input.into());
         self

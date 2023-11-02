@@ -35,6 +35,7 @@ pub struct DeleteThingInputBuilder {
 }
 impl DeleteThingInputBuilder {
     /// <p>The name of the thing to delete.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self

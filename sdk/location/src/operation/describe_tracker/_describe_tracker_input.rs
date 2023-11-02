@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrackerInput {
     /// <p>The name of the tracker resource.</p>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
 }
 impl DescribeTrackerInput {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
 }
 impl DescribeTrackerInput {
@@ -27,6 +28,7 @@ pub struct DescribeTrackerInputBuilder {
 }
 impl DescribeTrackerInputBuilder {
     /// <p>The name of the tracker resource.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DescribeTrackerInputBuilder {
         &self.tracker_name
     }
     /// Consumes the builder and constructs a [`DescribeTrackerInput`](crate::operation::describe_tracker::DescribeTrackerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::describe_tracker::builders::DescribeTrackerInputBuilder::tracker_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_tracker::DescribeTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tracker::DescribeTrackerInput {
-            tracker_name: self.tracker_name,
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building DescribeTrackerInput",
+                )
+            })?,
         })
     }
 }

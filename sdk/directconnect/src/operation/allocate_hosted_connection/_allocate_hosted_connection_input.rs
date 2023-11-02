@@ -38,8 +38,10 @@ impl AllocateHostedConnectionInput {
         self.vlan
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl AllocateHostedConnectionInput {
@@ -62,6 +64,7 @@ pub struct AllocateHostedConnectionInputBuilder {
 }
 impl AllocateHostedConnectionInputBuilder {
     /// <p>The ID of the interconnect or LAG.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl AllocateHostedConnectionInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
+    /// This field is required.
     pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl AllocateHostedConnectionInputBuilder {
         &self.owner_account
     }
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
+    /// This field is required.
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl AllocateHostedConnectionInputBuilder {
         &self.bandwidth
     }
     /// <p>The name of the hosted connection.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +124,7 @@ impl AllocateHostedConnectionInputBuilder {
         &self.connection_name
     }
     /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
+    /// This field is required.
     pub fn vlan(mut self, input: i32) -> Self {
         self.vlan = ::std::option::Option::Some(input);
         self

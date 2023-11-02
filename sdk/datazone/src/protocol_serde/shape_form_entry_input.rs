@@ -3,14 +3,14 @@ pub fn ser_form_entry_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormEntryInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.type_identifier {
-        object.key("typeIdentifier").string(var_1.as_str());
+    {
+        object.key("typeIdentifier").string(input.type_identifier.as_str());
     }
-    if let Some(var_2) = &input.type_revision {
-        object.key("typeRevision").string(var_2.as_str());
+    {
+        object.key("typeRevision").string(input.type_revision.as_str());
     }
-    if let Some(var_3) = &input.required {
-        object.key("required").boolean(*var_3);
+    if let Some(var_1) = &input.required {
+        object.key("required").boolean(*var_1);
     }
     Ok(())
 }

@@ -34,6 +34,7 @@ pub struct DisassociateResolverQueryLogConfigInputBuilder {
 }
 impl DisassociateResolverQueryLogConfigInputBuilder {
     /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
+    /// This field is required.
     pub fn resolver_query_log_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateResolverQueryLogConfigInputBuilder {
         &self.resolver_query_log_config_id
     }
     /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

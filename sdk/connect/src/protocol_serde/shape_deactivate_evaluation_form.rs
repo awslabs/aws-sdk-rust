@@ -118,7 +118,9 @@ pub fn de_deactivate_evaluation_form_http_response(
         output = crate::protocol_serde::shape_deactivate_evaluation_form::de_deactivate_evaluation_form(_response_body, output)
             .map_err(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::deactivate_evaluation_form_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError::unhandled)?
     })
 }
 

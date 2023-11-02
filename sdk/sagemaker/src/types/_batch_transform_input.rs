@@ -105,6 +105,7 @@ pub struct BatchTransformInputBuilder {
 }
 impl BatchTransformInputBuilder {
     /// <p>The Amazon S3 location being used to capture the data.</p>
+    /// This field is required.
     pub fn data_captured_destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_captured_destination_s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl BatchTransformInputBuilder {
         &self.data_captured_destination_s3_uri
     }
     /// <p>The dataset format for your batch transform job.</p>
+    /// This field is required.
     pub fn dataset_format(mut self, input: crate::types::MonitoringDatasetFormat) -> Self {
         self.dataset_format = ::std::option::Option::Some(input);
         self
@@ -133,6 +135,7 @@ impl BatchTransformInputBuilder {
         &self.dataset_format
     }
     /// <p>Path to the filesystem where the batch transform data is available to the container.</p>
+    /// This field is required.
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
         self

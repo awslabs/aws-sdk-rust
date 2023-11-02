@@ -17,12 +17,16 @@ impl MedicalAlternative {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::MedicalItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::MedicalItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Contains entities identified as personal health information (PHI) in your transcription output.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::MedicalEntity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::MedicalEntity] {
+        self.entities.as_deref().unwrap_or_default()
     }
 }
 impl MedicalAlternative {

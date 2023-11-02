@@ -3,23 +3,23 @@ pub fn ser_export_earth_observation_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::export_earth_observation_job::ExportEarthObservationJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("ClientToken").string(var_2.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("ClientToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_3.as_str());
+    {
+        object.key("ExecutionRoleArn").string(input.execution_role_arn.as_str());
     }
-    if let Some(var_4) = &input.export_source_images {
-        object.key("ExportSourceImages").boolean(*var_4);
+    if let Some(var_2) = &input.export_source_images {
+        object.key("ExportSourceImages").boolean(*var_2);
     }
-    if let Some(var_5) = &input.output_config {
+    if let Some(var_3) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_output_config_input::ser_output_config_input(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("OutputConfig").start_object();
+        crate::protocol_serde::shape_output_config_input::ser_output_config_input(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

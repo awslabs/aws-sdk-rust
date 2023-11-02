@@ -70,8 +70,10 @@ impl RecommendationJobInputConfig {
         self.resource_limit.as_ref()
     }
     /// <p>Specifies the endpoint configuration to use for a job.</p>
-    pub fn endpoint_configurations(&self) -> ::std::option::Option<&[crate::types::EndpointInputConfiguration]> {
-        self.endpoint_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_configurations.is_none()`.
+    pub fn endpoint_configurations(&self) -> &[crate::types::EndpointInputConfiguration] {
+        self.endpoint_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
@@ -109,8 +111,10 @@ impl RecommendationJobInputConfig {
         self.container_config.as_ref()
     }
     /// <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::EndpointInfo]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::EndpointInfo] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobVpcConfig> {

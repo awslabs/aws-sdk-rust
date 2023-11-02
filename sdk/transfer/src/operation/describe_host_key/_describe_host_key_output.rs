@@ -34,6 +34,7 @@ pub struct DescribeHostKeyOutputBuilder {
 }
 impl DescribeHostKeyOutputBuilder {
     /// <p>Returns the details for the specified host key.</p>
+    /// This field is required.
     pub fn host_key(mut self, input: crate::types::DescribedHostKey) -> Self {
         self.host_key = ::std::option::Option::Some(input);
         self

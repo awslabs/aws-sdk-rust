@@ -9,11 +9,13 @@ pub fn ser_trusted_certificate_public_key(
         crate::protocol_serde::shape_key_attributes::ser_key_attributes(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.public_key_certificate {
-        object.key("PublicKeyCertificate").string(var_3.as_str());
+    {
+        object.key("PublicKeyCertificate").string(input.public_key_certificate.as_str());
     }
-    if let Some(var_4) = &input.certificate_authority_public_key_identifier {
-        object.key("CertificateAuthorityPublicKeyIdentifier").string(var_4.as_str());
+    {
+        object
+            .key("CertificateAuthorityPublicKeyIdentifier")
+            .string(input.certificate_authority_public_key_identifier.as_str());
     }
     Ok(())
 }

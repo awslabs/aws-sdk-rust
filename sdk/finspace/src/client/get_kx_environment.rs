@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKxEnvironment`](crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder::set_environment_id): <p>A unique identifier for the kdb environment.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_kx_environment::builders::GetKxEnvironmentFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
     /// - On success, responds with [`GetKxEnvironmentOutput`](crate::operation::get_kx_environment::GetKxEnvironmentOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_kx_environment::GetKxEnvironmentOutput::name): <p>The name of the kdb environment.</p>
     ///   - [`environment_id(Option<String>)`](crate::operation::get_kx_environment::GetKxEnvironmentOutput::environment_id): <p>A unique identifier for the kdb environment.</p>

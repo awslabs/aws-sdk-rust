@@ -32,8 +32,10 @@ impl UpdateEnvironmentInput {
         self.description.as_deref()
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEnvironmentInput {
@@ -55,6 +57,7 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl UpdateEnvironmentInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the environment that is to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

@@ -14,12 +14,16 @@ pub struct DescribeDataRepositoryTasksInput {
 }
 impl DescribeDataRepositoryTasksInput {
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
-    pub fn task_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.task_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_ids.is_none()`.
+    pub fn task_ids(&self) -> &[::std::string::String] {
+        self.task_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DataRepositoryTaskFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::DataRepositoryTaskFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

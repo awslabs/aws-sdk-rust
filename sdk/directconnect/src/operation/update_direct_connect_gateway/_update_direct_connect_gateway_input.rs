@@ -34,6 +34,7 @@ pub struct UpdateDirectConnectGatewayInputBuilder {
 }
 impl UpdateDirectConnectGatewayInputBuilder {
     /// <p>The ID of the Direct Connect gateway to update.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateDirectConnectGatewayInputBuilder {
         &self.direct_connect_gateway_id
     }
     /// <p>The new name for the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn new_direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_direct_connect_gateway_name = ::std::option::Option::Some(input.into());
         self

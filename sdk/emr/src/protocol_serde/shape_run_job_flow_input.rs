@@ -177,5 +177,17 @@ pub fn ser_run_job_flow_input(
     if let Some(var_56) = &input.os_release_label {
         object.key("OSReleaseLabel").string(var_56.as_str());
     }
+    if let Some(var_57) = &input.ebs_root_volume_iops {
+        object.key("EbsRootVolumeIops").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_57).into()),
+        );
+    }
+    if let Some(var_58) = &input.ebs_root_volume_throughput {
+        object.key("EbsRootVolumeThroughput").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_58).into()),
+        );
+    }
     Ok(())
 }

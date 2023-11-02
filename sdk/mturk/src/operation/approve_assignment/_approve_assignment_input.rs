@@ -41,6 +41,7 @@ pub struct ApproveAssignmentInputBuilder {
 }
 impl ApproveAssignmentInputBuilder {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    /// This field is required.
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self

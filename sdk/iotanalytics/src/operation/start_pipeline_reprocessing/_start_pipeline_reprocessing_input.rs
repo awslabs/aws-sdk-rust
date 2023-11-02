@@ -54,6 +54,7 @@ pub struct StartPipelineReprocessingInputBuilder {
 }
 impl StartPipelineReprocessingInputBuilder {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self

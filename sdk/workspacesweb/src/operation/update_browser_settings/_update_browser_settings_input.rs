@@ -52,6 +52,7 @@ pub struct UpdateBrowserSettingsInputBuilder {
 }
 impl UpdateBrowserSettingsInputBuilder {
     /// <p>The ARN of the browser settings.</p>
+    /// This field is required.
     pub fn browser_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self

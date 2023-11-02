@@ -11,12 +11,16 @@ pub struct OutputResources {
 }
 impl OutputResources {
     /// <p>The Amazon EC2 AMIs created by this image.</p>
-    pub fn amis(&self) -> ::std::option::Option<&[crate::types::Ami]> {
-        self.amis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.amis.is_none()`.
+    pub fn amis(&self) -> &[crate::types::Ami] {
+        self.amis.as_deref().unwrap_or_default()
     }
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::Container]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::Container] {
+        self.containers.as_deref().unwrap_or_default()
     }
 }
 impl OutputResources {

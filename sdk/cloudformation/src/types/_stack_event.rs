@@ -145,6 +145,7 @@ pub struct StackEventBuilder {
 }
 impl StackEventBuilder {
     /// <p>The unique ID name of the instance of the stack.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +160,7 @@ impl StackEventBuilder {
         &self.stack_id
     }
     /// <p>The unique ID of this event.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +175,7 @@ impl StackEventBuilder {
         &self.event_id
     }
     /// <p>The name associated with a stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -229,6 +232,7 @@ impl StackEventBuilder {
         &self.resource_type
     }
     /// <p>Time the status was updated.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self

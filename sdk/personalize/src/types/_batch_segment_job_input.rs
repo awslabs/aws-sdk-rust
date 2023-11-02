@@ -28,6 +28,7 @@ pub struct BatchSegmentJobInputBuilder {
 }
 impl BatchSegmentJobInputBuilder {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    /// This field is required.
     pub fn s3_data_source(mut self, input: crate::types::S3DataConfig) -> Self {
         self.s3_data_source = ::std::option::Option::Some(input);
         self

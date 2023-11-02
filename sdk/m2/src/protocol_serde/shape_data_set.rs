@@ -6,23 +6,23 @@ pub fn ser_data_set(
     if let Some(var_1) = &input.storage_type {
         object.key("storageType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.dataset_name {
-        object.key("datasetName").string(var_2.as_str());
+    {
+        object.key("datasetName").string(input.dataset_name.as_str());
     }
-    if let Some(var_3) = &input.dataset_org {
+    if let Some(var_2) = &input.dataset_org {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("datasetOrg").start_object();
-        crate::protocol_serde::shape_dataset_org_attributes::ser_dataset_org_attributes(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("datasetOrg").start_object();
+        crate::protocol_serde::shape_dataset_org_attributes::ser_dataset_org_attributes(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.relative_path {
-        object.key("relativePath").string(var_5.as_str());
+    if let Some(var_4) = &input.relative_path {
+        object.key("relativePath").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.record_length {
+    if let Some(var_5) = &input.record_length {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("recordLength").start_object();
-        crate::protocol_serde::shape_record_length::ser_record_length(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("recordLength").start_object();
+        crate::protocol_serde::shape_record_length::ser_record_length(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

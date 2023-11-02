@@ -92,6 +92,7 @@ impl UpdateDatasetInputBuilder {
         &self.client_token
     }
     /// <p>The unique identifier for the Dataset to update.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +107,7 @@ impl UpdateDatasetInputBuilder {
         &self.dataset_id
     }
     /// <p>A display title for the Dataset.</p>
+    /// This field is required.
     pub fn dataset_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_title = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +126,7 @@ impl UpdateDatasetInputBuilder {
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn kind(mut self, input: crate::types::DatasetKind) -> Self {
         self.kind = ::std::option::Option::Some(input);
         self

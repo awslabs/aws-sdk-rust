@@ -25,8 +25,10 @@ pub struct ListCodeReviewsInput {
 }
 impl ListCodeReviewsInput {
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn provider_types(&self) -> ::std::option::Option<&[crate::types::ProviderType]> {
-        self.provider_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_types.is_none()`.
+    pub fn provider_types(&self) -> &[crate::types::ProviderType] {
+        self.provider_types.as_deref().unwrap_or_default()
     }
     /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
     /// <p>The valid code review states are:</p>
@@ -36,12 +38,16 @@ impl ListCodeReviewsInput {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::JobState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::JobState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
+    pub fn repository_names(&self) -> &[::std::string::String] {
+        self.repository_names.as_deref().unwrap_or_default()
     }
     /// <p>The type of code reviews to list in the response.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
@@ -157,6 +163,7 @@ impl ListCodeReviewsInputBuilder {
         &self.repository_names
     }
     /// <p>The type of code reviews to list in the response.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

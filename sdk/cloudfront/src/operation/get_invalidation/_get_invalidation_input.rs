@@ -35,6 +35,7 @@ pub struct GetInvalidationInputBuilder {
 }
 impl GetInvalidationInputBuilder {
     /// <p>The distribution's ID.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetInvalidationInputBuilder {
         &self.distribution_id
     }
     /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

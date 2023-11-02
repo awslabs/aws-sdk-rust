@@ -28,6 +28,7 @@ pub struct SentimentAnalysisSettingsBuilder {
 }
 impl SentimentAnalysisSettingsBuilder {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
+    /// This field is required.
     pub fn detect_sentiment(mut self, input: bool) -> Self {
         self.detect_sentiment = ::std::option::Option::Some(input);
         self

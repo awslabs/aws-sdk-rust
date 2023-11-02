@@ -27,6 +27,7 @@ pub struct DeleteProvisionedModelThroughputInputBuilder {
 }
 impl DeleteProvisionedModelThroughputInputBuilder {
     /// <p>The ARN or name of the provisioned throughput.</p>
+    /// This field is required.
     pub fn provisioned_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_id = ::std::option::Option::Some(input.into());
         self

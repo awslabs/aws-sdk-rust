@@ -27,6 +27,7 @@ pub struct DeleteMigrationProjectInputBuilder {
 }
 impl DeleteMigrationProjectInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the migration project to delete.</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self

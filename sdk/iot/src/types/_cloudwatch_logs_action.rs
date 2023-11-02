@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The CloudWatch log group to which the action sends data.</p>
-    pub log_group_name: ::std::option::Option<::std::string::String>,
+    pub log_group_name: ::std::string::String,
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
     pub batch_mode: ::std::option::Option<bool>,
 }
 impl CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The CloudWatch log group to which the action sends data.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
-        self.log_group_name.as_deref()
+    pub fn log_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_name.deref()
     }
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
     pub fn batch_mode(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct CloudwatchLogsActionBuilder {
 }
 impl CloudwatchLogsActionBuilder {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl CloudwatchLogsActionBuilder {
         &self.role_arn
     }
     /// <p>The CloudWatch log group to which the action sends data.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl CloudwatchLogsActionBuilder {
         &self.batch_mode
     }
     /// Consumes the builder and constructs a [`CloudwatchLogsAction`](crate::types::CloudwatchLogsAction).
-    pub fn build(self) -> crate::types::CloudwatchLogsAction {
-        crate::types::CloudwatchLogsAction {
-            role_arn: self.role_arn,
-            log_group_name: self.log_group_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::CloudwatchLogsActionBuilder::role_arn)
+    /// - [`log_group_name`](crate::types::builders::CloudwatchLogsActionBuilder::log_group_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchLogsAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudwatchLogsAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building CloudwatchLogsAction",
+                )
+            })?,
+            log_group_name: self.log_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_group_name",
+                    "log_group_name was not specified but it is required when building CloudwatchLogsAction",
+                )
+            })?,
             batch_mode: self.batch_mode,
-        }
+        })
     }
 }

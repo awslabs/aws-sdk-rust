@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentLevelSlotResolutionTestResults {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>>,
+    pub items: ::std::vec::Vec<crate::types::IntentLevelSlotResolutionTestResultItem>,
 }
 impl IntentLevelSlotResolutionTestResults {
     /// <p>Indicates the items for the slot level resolution for the intents.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::IntentLevelSlotResolutionTestResultItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::IntentLevelSlotResolutionTestResultItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl IntentLevelSlotResolutionTestResults {
@@ -48,7 +49,16 @@ impl IntentLevelSlotResolutionTestResultsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`IntentLevelSlotResolutionTestResults`](crate::types::IntentLevelSlotResolutionTestResults).
-    pub fn build(self) -> crate::types::IntentLevelSlotResolutionTestResults {
-        crate::types::IntentLevelSlotResolutionTestResults { items: self.items }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::types::builders::IntentLevelSlotResolutionTestResultsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentLevelSlotResolutionTestResults, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntentLevelSlotResolutionTestResults {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building IntentLevelSlotResolutionTestResults",
+                )
+            })?,
+        })
     }
 }

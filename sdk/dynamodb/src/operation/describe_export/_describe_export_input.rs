@@ -27,6 +27,7 @@ pub struct DescribeExportInputBuilder {
 }
 impl DescribeExportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
+    /// This field is required.
     pub fn export_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_arn = ::std::option::Option::Some(input.into());
         self

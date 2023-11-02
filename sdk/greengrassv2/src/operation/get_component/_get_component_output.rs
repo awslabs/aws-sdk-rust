@@ -4,21 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentOutput {
     /// <p>The format of the recipe.</p>
-    pub recipe_output_format: ::std::option::Option<crate::types::RecipeOutputFormat>,
+    pub recipe_output_format: crate::types::RecipeOutputFormat,
     /// <p>The recipe of the component version.</p>
-    pub recipe: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub recipe: ::aws_smithy_types::Blob,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetComponentOutput {
     /// <p>The format of the recipe.</p>
-    pub fn recipe_output_format(&self) -> ::std::option::Option<&crate::types::RecipeOutputFormat> {
-        self.recipe_output_format.as_ref()
+    pub fn recipe_output_format(&self) -> &crate::types::RecipeOutputFormat {
+        &self.recipe_output_format
     }
     /// <p>The recipe of the component version.</p>
-    pub fn recipe(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.recipe.as_ref()
+    pub fn recipe(&self) -> &::aws_smithy_types::Blob {
+        &self.recipe
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -48,6 +48,7 @@ pub struct GetComponentOutputBuilder {
 }
 impl GetComponentOutputBuilder {
     /// <p>The format of the recipe.</p>
+    /// This field is required.
     pub fn recipe_output_format(mut self, input: crate::types::RecipeOutputFormat) -> Self {
         self.recipe_output_format = ::std::option::Option::Some(input);
         self
@@ -62,6 +63,7 @@ impl GetComponentOutputBuilder {
         &self.recipe_output_format
     }
     /// <p>The recipe of the component version.</p>
+    /// This field is required.
     pub fn recipe(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.recipe = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,27 @@ impl GetComponentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput).
-    pub fn build(self) -> crate::operation::get_component::GetComponentOutput {
-        crate::operation::get_component::GetComponentOutput {
-            recipe_output_format: self.recipe_output_format,
-            recipe: self.recipe,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recipe_output_format`](crate::operation::get_component::builders::GetComponentOutputBuilder::recipe_output_format)
+    /// - [`recipe`](crate::operation::get_component::builders::GetComponentOutputBuilder::recipe)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_component::GetComponentOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_component::GetComponentOutput {
+            recipe_output_format: self.recipe_output_format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recipe_output_format",
+                    "recipe_output_format was not specified but it is required when building GetComponentOutput",
+                )
+            })?,
+            recipe: self.recipe.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recipe",
+                    "recipe was not specified but it is required when building GetComponentOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

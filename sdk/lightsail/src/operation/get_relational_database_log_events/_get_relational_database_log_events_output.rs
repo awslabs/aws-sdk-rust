@@ -13,8 +13,10 @@ pub struct GetRelationalDatabaseLogEventsOutput {
 }
 impl GetRelationalDatabaseLogEventsOutput {
     /// <p>An object describing the result of your get relational database log events request.</p>
-    pub fn resource_log_events(&self) -> ::std::option::Option<&[crate::types::LogEvent]> {
-        self.resource_log_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_log_events.is_none()`.
+    pub fn resource_log_events(&self) -> &[crate::types::LogEvent] {
+        self.resource_log_events.as_deref().unwrap_or_default()
     }
     /// <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
     pub fn next_backward_token(&self) -> ::std::option::Option<&str> {

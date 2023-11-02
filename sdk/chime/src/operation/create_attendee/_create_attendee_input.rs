@@ -20,8 +20,10 @@ impl CreateAttendeeInput {
         self.external_user_id.as_deref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateAttendeeInput {
@@ -50,6 +52,7 @@ pub struct CreateAttendeeInputBuilder {
 }
 impl CreateAttendeeInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +67,7 @@ impl CreateAttendeeInputBuilder {
         &self.meeting_id
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    /// This field is required.
     pub fn external_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_user_id = ::std::option::Option::Some(input.into());
         self

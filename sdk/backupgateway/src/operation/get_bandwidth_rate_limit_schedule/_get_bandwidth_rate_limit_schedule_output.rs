@@ -15,8 +15,10 @@ impl GetBandwidthRateLimitScheduleOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn bandwidth_rate_limit_intervals(&self) -> ::std::option::Option<&[crate::types::BandwidthRateLimitInterval]> {
-        self.bandwidth_rate_limit_intervals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bandwidth_rate_limit_intervals.is_none()`.
+    pub fn bandwidth_rate_limit_intervals(&self) -> &[crate::types::BandwidthRateLimitInterval] {
+        self.bandwidth_rate_limit_intervals.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBandwidthRateLimitScheduleOutput {

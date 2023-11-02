@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartEarthObservationJobOutput {
     /// <p>The name of the Earth Observation job.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The creation time.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The duration of the session, in seconds.</p>
-    pub duration_in_seconds: ::std::option::Option<i32>,
+    pub duration_in_seconds: i32,
     /// <p>The status of the Earth Observation job.</p>
-    pub status: ::std::option::Option<crate::types::EarthObservationJobStatus>,
+    pub status: crate::types::EarthObservationJobStatus,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Input configuration information for the Earth Observation job.</p>
@@ -20,31 +20,33 @@ pub struct StartEarthObservationJobOutput {
     /// <p>An object containing information about the job configuration.</p>
     pub job_config: ::std::option::Option<crate::types::JobConfigInput>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub execution_role_arn: ::std::string::String,
     /// <p>Each tag consists of a key and a value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartEarthObservationJobOutput {
     /// <p>The name of the Earth Observation job.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The duration of the session, in seconds.</p>
-    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_seconds(&self) -> i32 {
         self.duration_in_seconds
     }
     /// <p>The status of the Earth Observation job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EarthObservationJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::EarthObservationJobStatus {
+        &self.status
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -59,8 +61,9 @@ impl StartEarthObservationJobOutput {
         self.job_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_role_arn.as_deref()
+    pub fn execution_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role_arn.deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -97,6 +100,7 @@ pub struct StartEarthObservationJobOutputBuilder {
 }
 impl StartEarthObservationJobOutputBuilder {
     /// <p>The name of the Earth Observation job.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl StartEarthObservationJobOutputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +130,7 @@ impl StartEarthObservationJobOutputBuilder {
         &self.arn
     }
     /// <p>The creation time.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -139,6 +145,7 @@ impl StartEarthObservationJobOutputBuilder {
         &self.creation_time
     }
     /// <p>The duration of the session, in seconds.</p>
+    /// This field is required.
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
         self
@@ -153,6 +160,7 @@ impl StartEarthObservationJobOutputBuilder {
         &self.duration_in_seconds
     }
     /// <p>The status of the Earth Observation job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EarthObservationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -195,6 +203,7 @@ impl StartEarthObservationJobOutputBuilder {
         &self.input_config
     }
     /// <p>An object containing information about the job configuration.</p>
+    /// This field is required.
     pub fn job_config(mut self, input: crate::types::JobConfigInput) -> Self {
         self.job_config = ::std::option::Option::Some(input);
         self
@@ -209,6 +218,7 @@ impl StartEarthObservationJobOutputBuilder {
         &self.job_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -252,19 +262,61 @@ impl StartEarthObservationJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartEarthObservationJobOutput`](crate::operation::start_earth_observation_job::StartEarthObservationJobOutput).
-    pub fn build(self) -> crate::operation::start_earth_observation_job::StartEarthObservationJobOutput {
-        crate::operation::start_earth_observation_job::StartEarthObservationJobOutput {
-            name: self.name,
-            arn: self.arn,
-            creation_time: self.creation_time,
-            duration_in_seconds: self.duration_in_seconds,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder::name)
+    /// - [`arn`](crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder::arn)
+    /// - [`creation_time`](crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder::creation_time)
+    /// - [`duration_in_seconds`](crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder::duration_in_seconds)
+    /// - [`status`](crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder::status)
+    /// - [`execution_role_arn`](crate::operation::start_earth_observation_job::builders::StartEarthObservationJobOutputBuilder::execution_role_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::start_earth_observation_job::StartEarthObservationJobOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::start_earth_observation_job::StartEarthObservationJobOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building StartEarthObservationJobOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building StartEarthObservationJobOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building StartEarthObservationJobOutput",
+                )
+            })?,
+            duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "duration_in_seconds",
+                    "duration_in_seconds was not specified but it is required when building StartEarthObservationJobOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building StartEarthObservationJobOutput",
+                )
+            })?,
             kms_key_id: self.kms_key_id,
             input_config: self.input_config,
             job_config: self.job_config,
-            execution_role_arn: self.execution_role_arn,
+            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_role_arn",
+                    "execution_role_arn was not specified but it is required when building StartEarthObservationJobOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

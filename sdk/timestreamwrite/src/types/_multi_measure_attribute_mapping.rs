@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiMeasureAttributeMapping {
     /// <p></p>
-    pub source_column: ::std::option::Option<::std::string::String>,
+    pub source_column: ::std::string::String,
     /// <p></p>
     pub target_multi_measure_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -13,8 +13,9 @@ pub struct MultiMeasureAttributeMapping {
 }
 impl MultiMeasureAttributeMapping {
     /// <p></p>
-    pub fn source_column(&self) -> ::std::option::Option<&str> {
-        self.source_column.as_deref()
+    pub fn source_column(&self) -> &str {
+        use std::ops::Deref;
+        self.source_column.deref()
     }
     /// <p></p>
     pub fn target_multi_measure_attribute_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct MultiMeasureAttributeMappingBuilder {
 }
 impl MultiMeasureAttributeMappingBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn source_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_column = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl MultiMeasureAttributeMappingBuilder {
         &self.measure_value_type
     }
     /// Consumes the builder and constructs a [`MultiMeasureAttributeMapping`](crate::types::MultiMeasureAttributeMapping).
-    pub fn build(self) -> crate::types::MultiMeasureAttributeMapping {
-        crate::types::MultiMeasureAttributeMapping {
-            source_column: self.source_column,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_column`](crate::types::builders::MultiMeasureAttributeMappingBuilder::source_column)
+    pub fn build(self) -> ::std::result::Result<crate::types::MultiMeasureAttributeMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MultiMeasureAttributeMapping {
+            source_column: self.source_column.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_column",
+                    "source_column was not specified but it is required when building MultiMeasureAttributeMapping",
+                )
+            })?,
             target_multi_measure_attribute_name: self.target_multi_measure_attribute_name,
             measure_value_type: self.measure_value_type,
-        }
+        })
     }
 }

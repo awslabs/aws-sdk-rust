@@ -76,6 +76,7 @@ pub struct CreateClientVpnRouteInputBuilder {
 }
 impl CreateClientVpnRouteInputBuilder {
     /// <p>The ID of the Client VPN endpoint to which to add the route.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl CreateClientVpnRouteInputBuilder {
     /// <li> <p>To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site VPN connection's IPv4 CIDR range</p> </li>
     /// <li> <p>To add a route for the local network, enter the client CIDR range</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +125,7 @@ impl CreateClientVpnRouteInputBuilder {
     }
     /// <p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p>
     /// <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>
+    /// This field is required.
     pub fn target_vpc_subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_vpc_subnet_id = ::std::option::Option::Some(input.into());
         self

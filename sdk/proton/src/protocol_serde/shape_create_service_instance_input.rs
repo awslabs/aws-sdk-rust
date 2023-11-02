@@ -3,35 +3,35 @@ pub fn ser_create_service_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_service_instance::CreateServiceInstanceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.service_name {
-        object.key("serviceName").string(var_2.as_str());
+    {
+        object.key("serviceName").string(input.service_name.as_str());
     }
-    if let Some(var_3) = &input.spec {
-        object.key("spec").string(var_3.as_str());
+    {
+        object.key("spec").string(input.spec.as_str());
     }
-    if let Some(var_4) = &input.template_major_version {
-        object.key("templateMajorVersion").string(var_4.as_str());
+    if let Some(var_1) = &input.template_major_version {
+        object.key("templateMajorVersion").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.template_minor_version {
-        object.key("templateMinorVersion").string(var_5.as_str());
+    if let Some(var_2) = &input.template_minor_version {
+        object.key("templateMinorVersion").string(var_2.as_str());
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_3) = &input.tags {
+        let mut array_4 = object.key("tags").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_7.finish();
+        array_4.finish();
     }
-    if let Some(var_10) = &input.client_token {
-        object.key("clientToken").string(var_10.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
     }
     Ok(())
 }

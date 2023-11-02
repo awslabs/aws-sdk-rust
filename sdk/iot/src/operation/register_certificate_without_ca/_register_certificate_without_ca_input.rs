@@ -34,6 +34,7 @@ pub struct RegisterCertificateWithoutCaInputBuilder {
 }
 impl RegisterCertificateWithoutCaInputBuilder {
     /// <p>The certificate data, in PEM format.</p>
+    /// This field is required.
     pub fn certificate_pem(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_pem = ::std::option::Option::Some(input.into());
         self

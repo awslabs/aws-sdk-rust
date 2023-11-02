@@ -18,8 +18,10 @@ impl DescribeRemediationExecutionStatusInput {
         self.config_rule_name.as_deref()
     }
     /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
-    pub fn resource_keys(&self) -> ::std::option::Option<&[crate::types::ResourceKey]> {
-        self.resource_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
+    pub fn resource_keys(&self) -> &[crate::types::ResourceKey] {
+        self.resource_keys.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct DescribeRemediationExecutionStatusInputBuilder {
 }
 impl DescribeRemediationExecutionStatusInputBuilder {
     /// <p>A list of Config rule names.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self

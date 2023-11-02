@@ -55,6 +55,7 @@ pub struct ListDeviceEventsInputBuilder {
 }
 impl ListDeviceEventsInputBuilder {
     /// <p>The unique identifier of the device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListDeviceEventsInputBuilder {
         &self.device_id
     }
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// This field is required.
     pub fn from_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_time_stamp = ::std::option::Option::Some(input);
         self
@@ -111,6 +113,7 @@ impl ListDeviceEventsInputBuilder {
         &self.next_token
     }
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
+    /// This field is required.
     pub fn to_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_time_stamp = ::std::option::Option::Some(input);
         self

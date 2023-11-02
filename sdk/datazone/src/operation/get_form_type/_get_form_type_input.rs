@@ -41,6 +41,7 @@ pub struct GetFormTypeInputBuilder {
 }
 impl GetFormTypeInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetFormTypeInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the metadata form type.</p>
+    /// This field is required.
     pub fn form_type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.form_type_identifier = ::std::option::Option::Some(input.into());
         self

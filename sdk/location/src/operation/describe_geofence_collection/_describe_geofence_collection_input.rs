@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGeofenceCollectionInput {
     /// <p>The name of the geofence collection.</p>
-    pub collection_name: ::std::option::Option<::std::string::String>,
+    pub collection_name: ::std::string::String,
 }
 impl DescribeGeofenceCollectionInput {
     /// <p>The name of the geofence collection.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
-        self.collection_name.as_deref()
+    pub fn collection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.collection_name.deref()
     }
 }
 impl DescribeGeofenceCollectionInput {
@@ -27,6 +28,7 @@ pub struct DescribeGeofenceCollectionInputBuilder {
 }
 impl DescribeGeofenceCollectionInputBuilder {
     /// <p>The name of the geofence collection.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl DescribeGeofenceCollectionInputBuilder {
         &self.collection_name
     }
     /// Consumes the builder and constructs a [`DescribeGeofenceCollectionInput`](crate::operation::describe_geofence_collection::DescribeGeofenceCollectionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collection_name`](crate::operation::describe_geofence_collection::builders::DescribeGeofenceCollectionInputBuilder::collection_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl DescribeGeofenceCollectionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_geofence_collection::DescribeGeofenceCollectionInput {
-            collection_name: self.collection_name,
+            collection_name: self.collection_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collection_name",
+                    "collection_name was not specified but it is required when building DescribeGeofenceCollectionInput",
+                )
+            })?,
         })
     }
 }

@@ -49,6 +49,7 @@ pub struct ResourceStateBuilder {
 }
 impl ResourceStateBuilder {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
+    /// This field is required.
     pub fn ec2(mut self, input: crate::types::State) -> Self {
         self.ec2 = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl ResourceStateBuilder {
         &self.ec2
     }
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
+    /// This field is required.
     pub fn ecr(mut self, input: crate::types::State) -> Self {
         self.ecr = ::std::option::Option::Some(input);
         self

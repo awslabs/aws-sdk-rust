@@ -10,8 +10,10 @@ pub struct GetContextKeysForPrincipalPolicyOutput {
 }
 impl GetContextKeysForPrincipalPolicyOutput {
     /// <p>The list of context keys that are referenced in the input policies.</p>
-    pub fn context_key_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.context_key_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_key_names.is_none()`.
+    pub fn context_key_names(&self) -> &[::std::string::String] {
+        self.context_key_names.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContextKeysForPrincipalPolicyOutput {

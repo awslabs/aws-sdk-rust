@@ -18,8 +18,10 @@ pub struct ListCertificatesInput {
 }
 impl ListCertificatesInput {
     /// <p>Filter the certificate list by status value.</p>
-    pub fn certificate_statuses(&self) -> ::std::option::Option<&[crate::types::CertificateStatus]> {
-        self.certificate_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_statuses.is_none()`.
+    pub fn certificate_statuses(&self) -> &[crate::types::CertificateStatus] {
+        self.certificate_statuses.as_deref().unwrap_or_default()
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(&self) -> ::std::option::Option<&crate::types::Filters> {

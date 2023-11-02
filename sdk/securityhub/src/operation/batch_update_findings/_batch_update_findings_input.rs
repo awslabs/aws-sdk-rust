@@ -46,8 +46,10 @@ pub struct BatchUpdateFindingsInput {
 impl BatchUpdateFindingsInput {
     /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
-    pub fn finding_identifiers(&self) -> ::std::option::Option<&[crate::types::AwsSecurityFindingIdentifier]> {
-        self.finding_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_identifiers.is_none()`.
+    pub fn finding_identifiers(&self) -> &[crate::types::AwsSecurityFindingIdentifier] {
+        self.finding_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The updated note.</p>
     pub fn note(&self) -> ::std::option::Option<&crate::types::NoteUpdate> {
@@ -87,8 +89,10 @@ impl BatchUpdateFindingsInput {
     /// <li> <p>Unusual Behaviors</p> </li>
     /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn user_defined_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -100,8 +104,10 @@ impl BatchUpdateFindingsInput {
         self.workflow.as_ref()
     }
     /// <p>A list of findings that are related to the updated findings.</p>
-    pub fn related_findings(&self) -> ::std::option::Option<&[crate::types::RelatedFinding]> {
-        self.related_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_findings.is_none()`.
+    pub fn related_findings(&self) -> &[crate::types::RelatedFinding] {
+        self.related_findings.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateFindingsInput {

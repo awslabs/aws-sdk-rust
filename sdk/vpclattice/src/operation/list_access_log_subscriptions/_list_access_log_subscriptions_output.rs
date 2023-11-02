@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessLogSubscriptionsOutput {
     /// <p>The access log subscriptions.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>>,
+    pub items: ::std::vec::Vec<crate::types::AccessLogSubscriptionSummary>,
     /// <p>A pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccessLogSubscriptionsOutput {
     /// <p>The access log subscriptions.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::AccessLogSubscriptionSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::AccessLogSubscriptionSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAccessLogSubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput).
-    pub fn build(self) -> crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
-        crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListAccessLogSubscriptionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

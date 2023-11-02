@@ -72,6 +72,7 @@ pub struct StandardsSubscriptionBuilder {
 }
 impl StandardsSubscriptionBuilder {
     /// <p>The ARN of a resource that represents your subscription to a supported standard.</p>
+    /// This field is required.
     pub fn standards_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_subscription_arn = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl StandardsSubscriptionBuilder {
         &self.standards_subscription_arn
     }
     /// <p>The ARN of a standard.</p>
+    /// This field is required.
     pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +137,7 @@ impl StandardsSubscriptionBuilder {
     /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
     /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn standards_status(mut self, input: crate::types::StandardsStatus) -> Self {
         self.standards_status = ::std::option::Option::Some(input);
         self

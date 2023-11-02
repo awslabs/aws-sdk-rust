@@ -27,6 +27,7 @@ pub struct GetVoiceProfileInputBuilder {
 }
 impl GetVoiceProfileInputBuilder {
     /// <p>The voice profile ID.</p>
+    /// This field is required.
     pub fn voice_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_id = ::std::option::Option::Some(input.into());
         self

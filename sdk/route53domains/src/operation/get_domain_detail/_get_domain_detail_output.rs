@@ -58,8 +58,10 @@ impl GetDomainDetailOutput {
         self.domain_name.as_deref()
     }
     /// <p>The name servers of the domain.</p>
-    pub fn nameservers(&self) -> ::std::option::Option<&[crate::types::Nameserver]> {
-        self.nameservers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nameservers.is_none()`.
+    pub fn nameservers(&self) -> &[crate::types::Nameserver] {
+        self.nameservers.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the domain registration is set to renew automatically.</p>
     pub fn auto_renew(&self) -> ::std::option::Option<bool> {
@@ -136,12 +138,16 @@ impl GetDomainDetailOutput {
     /// <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>
     /// <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>
     /// <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
-    pub fn status_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_list.is_none()`.
+    pub fn status_list(&self) -> &[::std::string::String] {
+        self.status_list.as_deref().unwrap_or_default()
     }
     /// <p>A complex type that contains information about the DNSSEC configuration.</p>
-    pub fn dnssec_keys(&self) -> ::std::option::Option<&[crate::types::DnssecKey]> {
-        self.dnssec_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dnssec_keys.is_none()`.
+    pub fn dnssec_keys(&self) -> &[crate::types::DnssecKey] {
+        self.dnssec_keys.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetDomainDetailOutput {

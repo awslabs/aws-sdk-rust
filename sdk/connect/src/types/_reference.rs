@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Reference {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
-    pub r#type: ::std::option::Option<crate::types::ReferenceType>,
+    pub r#type: crate::types::ReferenceType,
 }
 impl Reference {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ReferenceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ReferenceType {
+        &self.r#type
     }
 }
 impl Reference {
@@ -35,6 +36,7 @@ pub struct ReferenceBuilder {
 }
 impl ReferenceBuilder {
     /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ReferenceBuilder {
         &self.value
     }
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ReferenceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ReferenceBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Reference`](crate::types::Reference).
-    pub fn build(self) -> crate::types::Reference {
-        crate::types::Reference {
-            value: self.value,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::ReferenceBuilder::value)
+    /// - [`r#type`](crate::types::builders::ReferenceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Reference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Reference {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Reference",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Reference",
+                )
+            })?,
+        })
     }
 }

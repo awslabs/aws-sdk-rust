@@ -35,6 +35,7 @@ pub struct ExtensionsV2Builder {
 }
 impl ExtensionsV2Builder {
     /// <p>The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate.</p>
+    /// This field is required.
     pub fn key_usage(mut self, input: crate::types::KeyUsage) -> Self {
         self.key_usage = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DescribeTargetedSentimentDetectionJobInputBuilder {
 }
 impl DescribeTargetedSentimentDetectionJobInputBuilder {
     /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartTargetedSentimentDetectionJob</code> operation returns this identifier in its response.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

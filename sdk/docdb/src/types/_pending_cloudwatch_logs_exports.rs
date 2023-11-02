@@ -11,12 +11,16 @@ pub struct PendingCloudwatchLogsExports {
 }
 impl PendingCloudwatchLogsExports {
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    pub fn log_types_to_enable(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_types_to_enable.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types_to_enable.is_none()`.
+    pub fn log_types_to_enable(&self) -> &[::std::string::String] {
+        self.log_types_to_enable.as_deref().unwrap_or_default()
     }
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to Amazon CloudWatch Logs.</p>
-    pub fn log_types_to_disable(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_types_to_disable.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types_to_disable.is_none()`.
+    pub fn log_types_to_disable(&self) -> &[::std::string::String] {
+        self.log_types_to_disable.as_deref().unwrap_or_default()
     }
 }
 impl PendingCloudwatchLogsExports {

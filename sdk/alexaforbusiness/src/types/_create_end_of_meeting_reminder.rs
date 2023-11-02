@@ -5,23 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndOfMeetingReminder {
     /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub reminder_at_minutes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub reminder_at_minutes: ::std::vec::Vec<i32>,
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    pub reminder_type: ::std::option::Option<crate::types::EndOfMeetingReminderType>,
+    pub reminder_type: crate::types::EndOfMeetingReminderType,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
 }
 impl CreateEndOfMeetingReminder {
     /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn reminder_at_minutes(&self) -> ::std::option::Option<&[i32]> {
-        self.reminder_at_minutes.as_deref()
+    pub fn reminder_at_minutes(&self) -> &[i32] {
+        use std::ops::Deref;
+        self.reminder_at_minutes.deref()
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
-    pub fn reminder_type(&self) -> ::std::option::Option<&crate::types::EndOfMeetingReminderType> {
-        self.reminder_type.as_ref()
+    pub fn reminder_type(&self) -> &crate::types::EndOfMeetingReminderType {
+        &self.reminder_type
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
@@ -62,6 +63,7 @@ impl CreateEndOfMeetingReminderBuilder {
         &self.reminder_at_minutes
     }
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
+    /// This field is required.
     pub fn reminder_type(mut self, input: crate::types::EndOfMeetingReminderType) -> Self {
         self.reminder_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl CreateEndOfMeetingReminderBuilder {
         &self.reminder_type
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl CreateEndOfMeetingReminderBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`CreateEndOfMeetingReminder`](crate::types::CreateEndOfMeetingReminder).
-    pub fn build(self) -> crate::types::CreateEndOfMeetingReminder {
-        crate::types::CreateEndOfMeetingReminder {
-            reminder_at_minutes: self.reminder_at_minutes,
-            reminder_type: self.reminder_type,
-            enabled: self.enabled,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reminder_at_minutes`](crate::types::builders::CreateEndOfMeetingReminderBuilder::reminder_at_minutes)
+    /// - [`reminder_type`](crate::types::builders::CreateEndOfMeetingReminderBuilder::reminder_type)
+    /// - [`enabled`](crate::types::builders::CreateEndOfMeetingReminderBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateEndOfMeetingReminder, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateEndOfMeetingReminder {
+            reminder_at_minutes: self.reminder_at_minutes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reminder_at_minutes",
+                    "reminder_at_minutes was not specified but it is required when building CreateEndOfMeetingReminder",
+                )
+            })?,
+            reminder_type: self.reminder_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reminder_type",
+                    "reminder_type was not specified but it is required when building CreateEndOfMeetingReminder",
+                )
+            })?,
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building CreateEndOfMeetingReminder",
+                )
+            })?,
+        })
     }
 }

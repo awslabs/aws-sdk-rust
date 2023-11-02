@@ -4,25 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateComponentTypeOutput {
     /// <p>The ARN of the component type.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time when the entity was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The current state of the component type.</p>
-    pub state: ::std::option::Option<crate::types::State>,
+    pub state: crate::types::State,
     _request_id: Option<String>,
 }
 impl CreateComponentTypeOutput {
     /// <p>The ARN of the component type.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The current state of the component type.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::State {
+        &self.state
     }
 }
 impl ::aws_http::request_id::RequestId for CreateComponentTypeOutput {
@@ -48,6 +49,7 @@ pub struct CreateComponentTypeOutputBuilder {
 }
 impl CreateComponentTypeOutputBuilder {
     /// <p>The ARN of the component type.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl CreateComponentTypeOutputBuilder {
         &self.arn
     }
     /// <p>The date and time when the entity was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl CreateComponentTypeOutputBuilder {
         &self.creation_date_time
     }
     /// <p>The current state of the component type.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -99,12 +103,34 @@ impl CreateComponentTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateComponentTypeOutput`](crate::operation::create_component_type::CreateComponentTypeOutput).
-    pub fn build(self) -> crate::operation::create_component_type::CreateComponentTypeOutput {
-        crate::operation::create_component_type::CreateComponentTypeOutput {
-            arn: self.arn,
-            creation_date_time: self.creation_date_time,
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder::arn)
+    /// - [`creation_date_time`](crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder::creation_date_time)
+    /// - [`state`](crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_component_type::CreateComponentTypeOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_component_type::CreateComponentTypeOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateComponentTypeOutput",
+                )
+            })?,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building CreateComponentTypeOutput",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building CreateComponentTypeOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

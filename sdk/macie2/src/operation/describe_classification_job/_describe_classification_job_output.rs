@@ -72,8 +72,10 @@ pub struct DescribeClassificationJobOutput {
 }
 impl DescribeClassificationJobOutput {
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-    pub fn allow_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_list_ids.is_none()`.
+    pub fn allow_list_ids(&self) -> &[::std::string::String] {
+        self.allow_list_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -84,8 +86,10 @@ impl DescribeClassificationJobOutput {
         self.created_at.as_ref()
     }
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-    pub fn custom_data_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_data_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_data_identifier_ids.is_none()`.
+    pub fn custom_data_identifier_ids(&self) -> &[::std::string::String] {
+        self.custom_data_identifier_ids.as_deref().unwrap_or_default()
     }
     /// <p>The custom description of the job.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -133,8 +137,10 @@ impl DescribeClassificationJobOutput {
     }
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
     /// <p>This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.</p>
-    pub fn managed_data_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_data_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_data_identifier_ids.is_none()`.
+    pub fn managed_data_identifier_ids(&self) -> &[::std::string::String] {
+        self.managed_data_identifier_ids.as_deref().unwrap_or_default()
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>

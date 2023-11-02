@@ -9,8 +9,10 @@ use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::types::ChecksumMode;
 use aws_sdk_s3::Client;
 use aws_sdk_s3::{operation::get_object::GetObjectOutput, types::ChecksumAlgorithm};
-use aws_smithy_client::test_connection::{capture_request, TestConnection};
 use aws_smithy_http::body::SdkBody;
+use aws_smithy_runtime::client::http::test_util::{
+    capture_request, ReplayEvent, StaticReplayClient,
+};
 use http::header::AUTHORIZATION;
 use http::{HeaderValue, Uri};
 use std::time::{Duration, UNIX_EPOCH};
@@ -22,9 +24,9 @@ use tracing_test::traced_test;
 fn new_checksum_validated_response_test_connection(
     checksum_header_name: &'static str,
     checksum_header_value: &'static str,
-) -> TestConnection<&'static str> {
-    TestConnection::new(vec![
-        (http::Request::builder()
+) -> StaticReplayClient {
+    StaticReplayClient::new(vec![
+        ReplayEvent::new(http::Request::builder()
              .header("x-amz-checksum-mode", "ENABLED")
              .header("user-agent", "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
              .header("x-amz-date", "20210618T170728Z")
@@ -45,7 +47,7 @@ fn new_checksum_validated_response_test_connection(
              .header("x-amz-id-2", "kPl+IVVZAwsN8ePUyQJZ40WD9dzaqtr4eNESArqE68GSKtVvuvCTDe+SxhTT+JTUqXB1HL4OxNM=")
              .header("accept-ranges", "bytes")
              .status(http::StatusCode::from_u16(200).unwrap())
-             .body(r#"Hello world"#).unwrap()),
+             .body(SdkBody::from(r#"Hello world"#)).unwrap()),
     ])
 }
 
@@ -53,7 +55,7 @@ async fn test_checksum_on_streaming_response(
     checksum_header_name: &'static str,
     checksum_header_value: &'static str,
 ) -> GetObjectOutput {
-    let conn = new_checksum_validated_response_test_connection(
+    let http_client = new_checksum_validated_response_test_connection(
         checksum_header_name,
         checksum_header_value,
     );
@@ -61,7 +63,7 @@ async fn test_checksum_on_streaming_response(
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .time_source(UNIX_EPOCH + Duration::from_secs(1624036048))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .build();
 
     let client = Client::new(&sdk_config);
@@ -79,7 +81,7 @@ async fn test_checksum_on_streaming_response(
         .await
         .unwrap();
 
-    conn.assert_requests_match(&[
+    http_client.assert_requests_match(&[
         http::header::HeaderName::from_static("x-amz-checksum-mode"),
         AUTHORIZATION,
     ]);
@@ -149,11 +151,11 @@ async fn test_checksum_on_streaming_request<'a>(
     expected_encoded_content_length: &'a str,
     expected_aws_chunked_encoded_body: &'a str,
 ) {
-    let (conn, rcvr) = capture_request(None);
+    let (http_client, rcvr) = capture_request(None);
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .build();
 
     let client = Client::new(&sdk_config);
@@ -330,7 +332,7 @@ async fn collect_body_into_string(mut body: aws_smithy_http::body::SdkBody) -> S
 #[traced_test]
 async fn test_get_multipart_upload_part_checksum_validation() {
     let expected_checksum = "cpjwid==-12";
-    let (conn, rcvr) = capture_request(Some(
+    let (http_client, rcvr) = capture_request(Some(
         http::Response::builder()
             .header("etag", "\"3e25960a79dbc69b674cd4ec67a72c62\"")
             .header("x-amz-checksum-crc32", expected_checksum)
@@ -340,7 +342,7 @@ async fn test_get_multipart_upload_part_checksum_validation() {
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .build();
     let client = Client::new(&sdk_config);
 
@@ -376,7 +378,7 @@ async fn test_get_multipart_upload_part_checksum_validation() {
 #[traced_test]
 async fn test_response_checksum_ignores_invalid_base64() {
     let expected_checksum = "{}{!!#{})!{)@$(}";
-    let (conn, rcvr) = capture_request(Some(
+    let (http_client, rcvr) = capture_request(Some(
         http::Response::builder()
             .header("etag", "\"3e25960a79dbc69b674cd4ec67a72c62\"")
             .header("x-amz-checksum-crc32", expected_checksum)
@@ -386,7 +388,7 @@ async fn test_response_checksum_ignores_invalid_base64() {
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .build();
     let client = Client::new(&sdk_config);
 

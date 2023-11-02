@@ -30,7 +30,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::event_bridge_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -42,14 +46,14 @@ pub fn ser_event_bridge_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventBridgeConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("enabled").boolean(*var_1);
+    {
+        object.key("enabled").boolean(input.enabled);
     }
-    if let Some(var_2) = &input.included_data {
+    if let Some(var_1) = &input.included_data {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("includedData").start_object();
-        crate::protocol_serde::shape_event_included_data::ser_event_included_data(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("includedData").start_object();
+        crate::protocol_serde::shape_event_included_data::ser_event_included_data(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

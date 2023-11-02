@@ -3,11 +3,11 @@ pub fn ser_update_stage_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_stage::UpdateStageInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("arn").string(var_1.as_str());
+    {
+        object.key("arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
     Ok(())
 }

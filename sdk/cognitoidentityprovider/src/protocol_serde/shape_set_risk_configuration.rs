@@ -166,7 +166,7 @@ pub fn de_set_risk_configuration_http_response(
         output = crate::protocol_serde::shape_set_risk_configuration::de_set_risk_configuration(_response_body, output)
             .map_err(crate::operation::set_risk_configuration::SetRiskConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::set_risk_configuration_output_correct_errors(output).build()
     })
 }
 

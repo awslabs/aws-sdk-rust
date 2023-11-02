@@ -34,6 +34,7 @@ pub struct DeleteBucketCorsInputBuilder {
 }
 impl DeleteBucketCorsInputBuilder {
     /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

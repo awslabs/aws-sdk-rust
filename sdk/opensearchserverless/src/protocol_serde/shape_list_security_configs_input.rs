@@ -3,16 +3,16 @@ pub fn ser_list_security_configs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_security_configs::ListSecurityConfigsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_1) = &input.next_token {
+        object.key("nextToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_2) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

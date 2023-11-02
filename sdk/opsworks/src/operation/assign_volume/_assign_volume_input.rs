@@ -34,6 +34,7 @@ pub struct AssignVolumeInputBuilder {
 }
 impl AssignVolumeInputBuilder {
     /// <p>The volume ID.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self

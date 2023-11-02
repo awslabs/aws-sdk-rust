@@ -30,12 +30,16 @@ impl UpdateGameSessionQueueInput {
         self.timeout_in_seconds
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
-    pub fn player_latency_policies(&self) -> ::std::option::Option<&[crate::types::PlayerLatencyPolicy]> {
-        self.player_latency_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latency_policies.is_none()`.
+    pub fn player_latency_policies(&self) -> &[crate::types::PlayerLatencyPolicy] {
+        self.player_latency_policies.as_deref().unwrap_or_default()
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::GameSessionQueueDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::GameSessionQueueDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
@@ -76,6 +80,7 @@ pub struct UpdateGameSessionQueueInputBuilder {
 }
 impl UpdateGameSessionQueueInputBuilder {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

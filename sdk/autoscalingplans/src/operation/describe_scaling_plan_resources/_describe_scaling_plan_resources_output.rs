@@ -11,8 +11,10 @@ pub struct DescribeScalingPlanResourcesOutput {
 }
 impl DescribeScalingPlanResourcesOutput {
     /// <p>Information about the scalable resources.</p>
-    pub fn scaling_plan_resources(&self) -> ::std::option::Option<&[crate::types::ScalingPlanResource]> {
-        self.scaling_plan_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_plan_resources.is_none()`.
+    pub fn scaling_plan_resources(&self) -> &[crate::types::ScalingPlanResource] {
+        self.scaling_plan_resources.as_deref().unwrap_or_default()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

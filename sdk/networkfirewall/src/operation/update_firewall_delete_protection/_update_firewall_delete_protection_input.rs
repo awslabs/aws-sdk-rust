@@ -110,6 +110,7 @@ impl UpdateFirewallDeleteProtectionInputBuilder {
         &self.firewall_name
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+    /// This field is required.
     pub fn delete_protection(mut self, input: bool) -> Self {
         self.delete_protection = ::std::option::Option::Some(input);
         self

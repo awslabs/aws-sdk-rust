@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>The password associated with the user name to use for Basic authorization.</p>
-    pub password: ::std::option::Option<::std::string::String>,
+    pub password: ::std::string::String,
 }
 impl CreateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
-        self.password.as_deref()
+    pub fn password(&self) -> &str {
+        use std::ops::Deref;
+        self.password.deref()
     }
 }
 impl ::std::fmt::Debug for CreateConnectionBasicAuthRequestParameters {
@@ -43,6 +45,7 @@ pub struct CreateConnectionBasicAuthRequestParametersBuilder {
 }
 impl CreateConnectionBasicAuthRequestParametersBuilder {
     /// <p>The user name to use for Basic authorization.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl CreateConnectionBasicAuthRequestParametersBuilder {
         &self.username
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,26 @@ impl CreateConnectionBasicAuthRequestParametersBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`CreateConnectionBasicAuthRequestParameters`](crate::types::CreateConnectionBasicAuthRequestParameters).
-    pub fn build(self) -> crate::types::CreateConnectionBasicAuthRequestParameters {
-        crate::types::CreateConnectionBasicAuthRequestParameters {
-            username: self.username,
-            password: self.password,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::types::builders::CreateConnectionBasicAuthRequestParametersBuilder::username)
+    /// - [`password`](crate::types::builders::CreateConnectionBasicAuthRequestParametersBuilder::password)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CreateConnectionBasicAuthRequestParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateConnectionBasicAuthRequestParameters {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building CreateConnectionBasicAuthRequestParameters",
+                )
+            })?,
+            password: self.password.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "password",
+                    "password was not specified but it is required when building CreateConnectionBasicAuthRequestParameters",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateConnectionBasicAuthRequestParametersBuilder {

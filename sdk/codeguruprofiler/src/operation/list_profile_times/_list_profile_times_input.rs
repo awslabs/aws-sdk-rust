@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileTimesInput {
     /// <p>The name of the profiling group.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
     /// <ul>
     /// <li> <p> <code>P1D</code> — 1 day </p> </li>
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub period: ::std::option::Option<crate::types::AggregationPeriod>,
+    pub period: crate::types::AggregationPeriod,
     /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
     pub order_by: ::std::option::Option<crate::types::OrderBy>,
     /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
@@ -28,16 +28,17 @@ pub struct ListProfileTimesInput {
 }
 impl ListProfileTimesInput {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
     /// <ul>
@@ -45,8 +46,8 @@ impl ListProfileTimesInput {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn period(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
-        self.period.as_ref()
+    pub fn period(&self) -> &crate::types::AggregationPeriod {
+        &self.period
     }
     /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
     pub fn order_by(&self) -> ::std::option::Option<&crate::types::OrderBy> {
@@ -84,6 +85,7 @@ pub struct ListProfileTimesInputBuilder {
 }
 impl ListProfileTimesInputBuilder {
     /// <p>The name of the profiling group.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl ListProfileTimesInputBuilder {
         &self.profiling_group_name
     }
     /// <p>The start time of the time range from which to list the profiles.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl ListProfileTimesInputBuilder {
         &self.start_time
     }
     /// <p>The end time of the time range from which to list the profiles.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -131,6 +135,7 @@ impl ListProfileTimesInputBuilder {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -203,14 +208,39 @@ impl ListProfileTimesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProfileTimesInput`](crate::operation::list_profile_times::ListProfileTimesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder::profiling_group_name)
+    /// - [`start_time`](crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder::start_time)
+    /// - [`end_time`](crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder::end_time)
+    /// - [`period`](crate::operation::list_profile_times::builders::ListProfileTimesInputBuilder::period)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesInput {
-            profiling_group_name: self.profiling_group_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            period: self.period,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building ListProfileTimesInput",
+                )
+            })?,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building ListProfileTimesInput",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building ListProfileTimesInput",
+                )
+            })?,
+            period: self.period.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "period",
+                    "period was not specified but it is required when building ListProfileTimesInput",
+                )
+            })?,
             order_by: self.order_by,
             max_results: self.max_results,
             next_token: self.next_token,

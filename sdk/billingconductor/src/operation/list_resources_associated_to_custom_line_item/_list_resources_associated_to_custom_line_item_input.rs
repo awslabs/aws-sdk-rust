@@ -6,7 +6,7 @@ pub struct ListResourcesAssociatedToCustomLineItemInput {
     /// <p> The billing period for which the resource associations will be listed. </p>
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p> (Optional) The pagination token that's returned by a previous request. </p>
@@ -20,8 +20,9 @@ impl ListResourcesAssociatedToCustomLineItemInput {
         self.billing_period.as_deref()
     }
     /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p> (Optional) The maximum number of resource associations to be retrieved. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -70,6 +71,7 @@ impl ListResourcesAssociatedToCustomLineItemInputBuilder {
         &self.billing_period
     }
     /// <p> The ARN of the custom line item for which the resource associations will be listed. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +128,8 @@ impl ListResourcesAssociatedToCustomLineItemInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemInput`](crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::list_resources_associated_to_custom_line_item::builders::ListResourcesAssociatedToCustomLineItemInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -135,7 +139,12 @@ impl ListResourcesAssociatedToCustomLineItemInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput {
                 billing_period: self.billing_period,
-                arn: self.arn,
+                arn: self.arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "arn was not specified but it is required when building ListResourcesAssociatedToCustomLineItemInput",
+                    )
+                })?,
                 max_results: self.max_results,
                 next_token: self.next_token,
                 filters: self.filters,

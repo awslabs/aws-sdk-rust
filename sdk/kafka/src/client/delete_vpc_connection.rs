@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpcConnection`](crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p><br>
     /// - On success, responds with [`DeleteVpcConnectionOutput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput) with field(s):
     ///   - [`vpc_connection_arn(Option<String>)`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput::vpc_connection_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>
     ///   - [`state(Option<VpcConnectionState>)`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput::state): <p>The state of the VPC connection.</p>

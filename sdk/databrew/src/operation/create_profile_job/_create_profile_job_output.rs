@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileJobOutput {
     /// <p>The name of the job that was created.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateProfileJobOutput {
     /// <p>The name of the job that was created.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateProfileJobOutput {
@@ -34,6 +35,7 @@ pub struct CreateProfileJobOutputBuilder {
 }
 impl CreateProfileJobOutputBuilder {
     /// <p>The name of the job that was created.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateProfileJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProfileJobOutput`](crate::operation::create_profile_job::CreateProfileJobOutput).
-    pub fn build(self) -> crate::operation::create_profile_job::CreateProfileJobOutput {
-        crate::operation::create_profile_job::CreateProfileJobOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_profile_job::builders::CreateProfileJobOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_profile_job::CreateProfileJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_profile_job::CreateProfileJobOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateProfileJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

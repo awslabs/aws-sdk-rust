@@ -25,11 +25,10 @@ pub fn de_list_records_http_error(
                 output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_error_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_records::ListRecordsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::list_records::ListRecordsError::InvalidParameterException({
@@ -40,11 +39,10 @@ pub fn de_list_records_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_records::ListRecordsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotAuthorizedException" => crate::operation::list_records::ListRecordsError::NotAuthorizedException({
@@ -55,11 +53,10 @@ pub fn de_list_records_http_error(
                 output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_authorized_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_records::ListRecordsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::list_records::ListRecordsError::TooManyRequestsException({
@@ -70,11 +67,10 @@ pub fn de_list_records_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_records::ListRecordsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_records::ListRecordsError::generic(generic),

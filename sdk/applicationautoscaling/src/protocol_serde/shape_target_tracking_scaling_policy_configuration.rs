@@ -3,38 +3,38 @@ pub fn ser_target_tracking_scaling_policy_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetTrackingScalingPolicyConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.target_value {
+    {
         object.key("TargetValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.target_value).into()),
         );
     }
-    if let Some(var_2) = &input.predefined_metric_specification {
+    if let Some(var_1) = &input.predefined_metric_specification {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("PredefinedMetricSpecification").start_object();
-        crate::protocol_serde::shape_predefined_metric_specification::ser_predefined_metric_specification(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("PredefinedMetricSpecification").start_object();
+        crate::protocol_serde::shape_predefined_metric_specification::ser_predefined_metric_specification(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.customized_metric_specification {
+    if let Some(var_3) = &input.customized_metric_specification {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("CustomizedMetricSpecification").start_object();
-        crate::protocol_serde::shape_customized_metric_specification::ser_customized_metric_specification(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("CustomizedMetricSpecification").start_object();
+        crate::protocol_serde::shape_customized_metric_specification::ser_customized_metric_specification(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.scale_out_cooldown {
+    if let Some(var_5) = &input.scale_out_cooldown {
         object.key("ScaleOutCooldown").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.scale_in_cooldown {
+        object.key("ScaleInCooldown").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.scale_in_cooldown {
-        object.key("ScaleInCooldown").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.disable_scale_in {
-        object.key("DisableScaleIn").boolean(*var_8);
+    if let Some(var_7) = &input.disable_scale_in {
+        object.key("DisableScaleIn").boolean(*var_7);
     }
     Ok(())
 }
@@ -96,7 +96,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::target_tracking_scaling_policy_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

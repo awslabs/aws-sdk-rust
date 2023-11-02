@@ -40,6 +40,7 @@ pub fn ser_int_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_int_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::IntOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

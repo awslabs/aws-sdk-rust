@@ -28,6 +28,10 @@ where
                             builder =
                                 builder.set_access_policies(crate::protocol_serde::shape_access_policies_status::de_access_policies_status(tokens)?);
                         }
+                        "IPAddressType" => {
+                            builder =
+                                builder.set_ip_address_type(crate::protocol_serde::shape_ip_address_type_status::de_ip_address_type_status(tokens)?);
+                        }
                         "SnapshotOptions" => {
                             builder = builder
                                 .set_snapshot_options(crate::protocol_serde::shape_snapshot_options_status::de_snapshot_options_status(tokens)?);

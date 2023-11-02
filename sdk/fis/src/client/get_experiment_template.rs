@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExperimentTemplate`](crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder::set_id): <p>The ID of the experiment template.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_experiment_template::builders::GetExperimentTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the experiment template.</p><br>
     /// - On success, responds with [`GetExperimentTemplateOutput`](crate::operation::get_experiment_template::GetExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::operation::get_experiment_template::GetExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<GetExperimentTemplateError>`](crate::operation::get_experiment_template::GetExperimentTemplateError)

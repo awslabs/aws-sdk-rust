@@ -11,8 +11,10 @@ pub struct ListModelsOutput {
 }
 impl ListModelsOutput {
     /// <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
-    pub fn models(&self) -> ::std::option::Option<&[crate::types::ModelSummary]> {
-        self.models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.models.is_none()`.
+    pub fn models(&self) -> &[crate::types::ModelSummary] {
+        self.models.as_deref().unwrap_or_default()
     }
     /// <p> If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

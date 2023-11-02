@@ -41,6 +41,7 @@ pub struct ListAnomalousLogGroupsInputBuilder {
 }
 impl ListAnomalousLogGroupsInputBuilder {
     /// <p> The ID of the insight containing the log groups. </p>
+    /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self

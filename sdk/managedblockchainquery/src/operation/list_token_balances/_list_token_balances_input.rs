@@ -68,6 +68,7 @@ impl ListTokenBalancesInputBuilder {
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
+    /// This field is required.
     pub fn token_filter(mut self, input: crate::types::TokenFilter) -> Self {
         self.token_filter = ::std::option::Option::Some(input);
         self

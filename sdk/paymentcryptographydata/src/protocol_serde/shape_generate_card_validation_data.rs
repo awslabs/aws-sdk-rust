@@ -88,11 +88,10 @@ pub fn de_generate_card_validation_data_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::generate_card_validation_data::GenerateCardValidationDataError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::generate_card_validation_data::GenerateCardValidationDataError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::generate_card_validation_data::GenerateCardValidationDataError::generic(generic),
@@ -114,7 +113,9 @@ pub fn de_generate_card_validation_data_http_response(
         output = crate::protocol_serde::shape_generate_card_validation_data::de_generate_card_validation_data(_response_body, output)
             .map_err(crate::operation::generate_card_validation_data::GenerateCardValidationDataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::generate_card_validation_data_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::generate_card_validation_data::GenerateCardValidationDataError::unhandled)?
     })
 }
 

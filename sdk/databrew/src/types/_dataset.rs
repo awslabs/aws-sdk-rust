@@ -11,7 +11,7 @@ pub struct Dataset {
     /// <p>The date and time that the dataset was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique name of the dataset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
@@ -45,8 +45,9 @@ impl Dataset {
         self.create_date.as_ref()
     }
     /// <p>The unique name of the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
@@ -154,6 +155,7 @@ impl DatasetBuilder {
         &self.create_date
     }
     /// <p>The unique name of the dataset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +198,7 @@ impl DatasetBuilder {
         &self.format_options
     }
     /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -300,12 +303,19 @@ impl DatasetBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
-    pub fn build(self) -> crate::types::Dataset {
-        crate::types::Dataset {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DatasetBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Dataset, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Dataset {
             account_id: self.account_id,
             created_by: self.created_by,
             create_date: self.create_date,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Dataset",
+                )
+            })?,
             format: self.format,
             format_options: self.format_options,
             input: self.input,
@@ -315,6 +325,6 @@ impl DatasetBuilder {
             path_options: self.path_options,
             tags: self.tags,
             resource_arn: self.resource_arn,
-        }
+        })
     }
 }

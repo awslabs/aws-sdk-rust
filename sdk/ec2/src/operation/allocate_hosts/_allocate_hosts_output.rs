@@ -10,8 +10,10 @@ pub struct AllocateHostsOutput {
 }
 impl AllocateHostsOutput {
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
-    pub fn host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_ids.is_none()`.
+    pub fn host_ids(&self) -> &[::std::string::String] {
+        self.host_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AllocateHostsOutput {

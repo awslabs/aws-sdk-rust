@@ -4,24 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub application_arn: ::std::option::Option<::std::string::String>,
+    pub application_arn: ::std::string::String,
     /// <p>The unique application identifier.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The version number of the application.</p>
-    pub application_version: ::std::option::Option<i32>,
+    pub application_version: i32,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
-        self.application_arn.as_deref()
+    pub fn application_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.application_arn.deref()
     }
     /// <p>The unique application identifier.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The version number of the application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<i32> {
+    pub fn application_version(&self) -> i32 {
         self.application_version
     }
 }
@@ -48,6 +50,7 @@ pub struct CreateApplicationOutputBuilder {
 }
 impl CreateApplicationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateApplicationOutputBuilder {
         &self.application_arn
     }
     /// <p>The unique application identifier.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateApplicationOutputBuilder {
         &self.application_id
     }
     /// <p>The version number of the application.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -99,12 +104,33 @@ impl CreateApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
-    pub fn build(self) -> crate::operation::create_application::CreateApplicationOutput {
-        crate::operation::create_application::CreateApplicationOutput {
-            application_arn: self.application_arn,
-            application_id: self.application_id,
-            application_version: self.application_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_arn`](crate::operation::create_application::builders::CreateApplicationOutputBuilder::application_arn)
+    /// - [`application_id`](crate::operation::create_application::builders::CreateApplicationOutputBuilder::application_id)
+    /// - [`application_version`](crate::operation::create_application::builders::CreateApplicationOutputBuilder::application_version)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationOutput {
+            application_arn: self.application_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_arn",
+                    "application_arn was not specified but it is required when building CreateApplicationOutput",
+                )
+            })?,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building CreateApplicationOutput",
+                )
+            })?,
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building CreateApplicationOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

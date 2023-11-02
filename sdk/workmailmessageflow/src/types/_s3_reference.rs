@@ -7,20 +7,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Reference {
     /// <p>The S3 bucket name.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The S3 key object name.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
     pub object_version: ::std::option::Option<::std::string::String>,
 }
 impl S3Reference {
     /// <p>The S3 bucket name.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The S3 key object name.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
     pub fn object_version(&self) -> ::std::option::Option<&str> {
@@ -44,6 +46,7 @@ pub struct S3ReferenceBuilder {
 }
 impl S3ReferenceBuilder {
     /// <p>The S3 bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl S3ReferenceBuilder {
         &self.bucket
     }
     /// <p>The S3 key object name.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -86,11 +90,24 @@ impl S3ReferenceBuilder {
         &self.object_version
     }
     /// Consumes the builder and constructs a [`S3Reference`](crate::types::S3Reference).
-    pub fn build(self) -> crate::types::S3Reference {
-        crate::types::S3Reference {
-            bucket: self.bucket,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3ReferenceBuilder::bucket)
+    /// - [`key`](crate::types::builders::S3ReferenceBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Reference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Reference {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3Reference",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3Reference",
+                )
+            })?,
             object_version: self.object_version,
-        }
+        })
     }
 }

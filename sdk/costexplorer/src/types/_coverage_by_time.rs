@@ -17,8 +17,10 @@ impl CoverageByTime {
         self.time_period.as_ref()
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::ReservationCoverageGroup]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::ReservationCoverageGroup] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The total reservation coverage, in hours.</p>
     pub fn total(&self) -> ::std::option::Option<&crate::types::Coverage> {

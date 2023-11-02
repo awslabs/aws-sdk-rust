@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProject`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_id(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project_id): <p> Unique project identifier. </p>
+    ///   - [`project_id(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project_id):<br>required: **true**<br><p> Unique project identifier. </p><br>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput) with field(s):
     ///   - [`deleted_resources(Option<Vec<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::deleted_resources): <p> Resources which were deleted. </p>
     ///   - [`orphaned_resources(Option<Vec<Resource>>)`](crate::operation::delete_project::DeleteProjectOutput::orphaned_resources): <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>

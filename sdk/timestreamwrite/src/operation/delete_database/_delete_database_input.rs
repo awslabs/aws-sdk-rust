@@ -27,6 +27,7 @@ pub struct DeleteDatabaseInputBuilder {
 }
 impl DeleteDatabaseInputBuilder {
     /// <p>The name of the Timestream database to be deleted.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self

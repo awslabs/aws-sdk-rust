@@ -34,6 +34,7 @@ pub struct UpdateHubOutputBuilder {
 }
 impl UpdateHubOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
+    /// This field is required.
     pub fn hub_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_arn = ::std::option::Option::Some(input.into());
         self

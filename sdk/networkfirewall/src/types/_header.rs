@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Header {
     /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
-    pub protocol: ::std::option::Option<crate::types::StatefulRuleProtocol>,
+    pub protocol: crate::types::StatefulRuleProtocol,
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
@@ -16,11 +16,11 @@ pub struct Header {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
     /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
-    pub source_port: ::std::option::Option<::std::string::String>,
+    pub source_port: ::std::string::String,
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination. </p>
-    pub direction: ::std::option::Option<crate::types::StatefulRuleDirection>,
+    pub direction: crate::types::StatefulRuleDirection,
     /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
     /// <p>Examples: </p>
@@ -31,14 +31,14 @@ pub struct Header {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    pub destination: ::std::option::Option<::std::string::String>,
+    pub destination: ::std::string::String,
     /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
-    pub destination_port: ::std::option::Option<::std::string::String>,
+    pub destination_port: ::std::string::String,
 }
 impl Header {
     /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::StatefulRuleProtocol> {
-        self.protocol.as_ref()
+    pub fn protocol(&self) -> &crate::types::StatefulRuleProtocol {
+        &self.protocol
     }
     /// <p>The source IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
@@ -50,16 +50,18 @@ impl Header {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
     /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
-    pub fn source_port(&self) -> ::std::option::Option<&str> {
-        self.source_port.as_deref()
+    pub fn source_port(&self) -> &str {
+        use std::ops::Deref;
+        self.source_port.deref()
     }
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination. </p>
-    pub fn direction(&self) -> ::std::option::Option<&crate::types::StatefulRuleDirection> {
-        self.direction.as_ref()
+    pub fn direction(&self) -> &crate::types::StatefulRuleDirection {
+        &self.direction
     }
     /// <p>The destination IP address or address range to inspect for, in CIDR notation. To match with any address, specify <code>ANY</code>. </p>
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
@@ -71,12 +73,14 @@ impl Header {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
-        self.destination.as_deref()
+    pub fn destination(&self) -> &str {
+        use std::ops::Deref;
+        self.destination.deref()
     }
     /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
-    pub fn destination_port(&self) -> ::std::option::Option<&str> {
-        self.destination_port.as_deref()
+    pub fn destination_port(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_port.deref()
     }
 }
 impl Header {
@@ -99,6 +103,7 @@ pub struct HeaderBuilder {
 }
 impl HeaderBuilder {
     /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on Amazon Web Services and on the internet is IP.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::StatefulRuleProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -122,6 +127,7 @@ impl HeaderBuilder {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +160,7 @@ impl HeaderBuilder {
         &self.source
     }
     /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
+    /// This field is required.
     pub fn source_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_port = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +175,7 @@ impl HeaderBuilder {
         &self.source_port
     }
     /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection matches bidirectional traffic, both from the source to the destination and from the destination to the source. If set to <code>FORWARD</code>, the inspection only matches traffic going from the source to the destination. </p>
+    /// This field is required.
     pub fn direction(mut self, input: crate::types::StatefulRuleDirection) -> Self {
         self.direction = ::std::option::Option::Some(input);
         self
@@ -191,6 +199,7 @@ impl HeaderBuilder {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +232,7 @@ impl HeaderBuilder {
         &self.destination
     }
     /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>. </p>
+    /// This field is required.
     pub fn destination_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_port = ::std::option::Option::Some(input.into());
         self
@@ -237,14 +247,51 @@ impl HeaderBuilder {
         &self.destination_port
     }
     /// Consumes the builder and constructs a [`Header`](crate::types::Header).
-    pub fn build(self) -> crate::types::Header {
-        crate::types::Header {
-            protocol: self.protocol,
-            source: self.source,
-            source_port: self.source_port,
-            direction: self.direction,
-            destination: self.destination,
-            destination_port: self.destination_port,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`protocol`](crate::types::builders::HeaderBuilder::protocol)
+    /// - [`source`](crate::types::builders::HeaderBuilder::source)
+    /// - [`source_port`](crate::types::builders::HeaderBuilder::source_port)
+    /// - [`direction`](crate::types::builders::HeaderBuilder::direction)
+    /// - [`destination`](crate::types::builders::HeaderBuilder::destination)
+    /// - [`destination_port`](crate::types::builders::HeaderBuilder::destination_port)
+    pub fn build(self) -> ::std::result::Result<crate::types::Header, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Header {
+            protocol: self.protocol.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protocol",
+                    "protocol was not specified but it is required when building Header",
+                )
+            })?,
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building Header",
+                )
+            })?,
+            source_port: self.source_port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_port",
+                    "source_port was not specified but it is required when building Header",
+                )
+            })?,
+            direction: self.direction.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "direction",
+                    "direction was not specified but it is required when building Header",
+                )
+            })?,
+            destination: self.destination.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination",
+                    "destination was not specified but it is required when building Header",
+                )
+            })?,
+            destination_port: self.destination_port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_port",
+                    "destination_port was not specified but it is required when building Header",
+                )
+            })?,
+        })
     }
 }

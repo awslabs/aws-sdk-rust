@@ -39,7 +39,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::streaming_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -51,26 +53,26 @@ pub fn ser_streaming_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamingConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_retention_in_hours {
+    {
         object.key("DataRetentionInHours").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.data_retention_in_hours).into()),
         );
     }
-    if let Some(var_2) = &input.disabled {
-        object.key("Disabled").boolean(*var_2);
+    if let Some(var_1) = &input.disabled {
+        object.key("Disabled").boolean(*var_1);
     }
-    if let Some(var_3) = &input.streaming_notification_targets {
-        let mut array_4 = object.key("StreamingNotificationTargets").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.streaming_notification_targets {
+        let mut array_3 = object.key("StreamingNotificationTargets").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_streaming_notification_target::ser_streaming_notification_target(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_streaming_notification_target::ser_streaming_notification_target(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }

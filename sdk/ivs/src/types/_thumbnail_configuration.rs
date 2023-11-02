@@ -29,8 +29,10 @@ impl ThumbnailConfiguration {
         self.resolution.as_ref()
     }
     /// <p>Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.</p>
-    pub fn storage(&self) -> ::std::option::Option<&[crate::types::ThumbnailConfigurationStorage]> {
-        self.storage.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage.is_none()`.
+    pub fn storage(&self) -> &[crate::types::ThumbnailConfigurationStorage] {
+        self.storage.as_deref().unwrap_or_default()
     }
 }
 impl ThumbnailConfiguration {

@@ -55,6 +55,7 @@ pub struct SendBonusInputBuilder {
 }
 impl SendBonusInputBuilder {
     /// <p>The ID of the Worker being paid the bonus.</p>
+    /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl SendBonusInputBuilder {
         &self.worker_id
     }
     /// <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    /// This field is required.
     pub fn bonus_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bonus_amount = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl SendBonusInputBuilder {
         &self.bonus_amount
     }
     /// <p>The ID of the assignment for which this bonus is paid.</p>
+    /// This field is required.
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl SendBonusInputBuilder {
         &self.assignment_id
     }
     /// <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self

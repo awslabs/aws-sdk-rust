@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
-    pub health_check_count: ::std::option::Option<i64>,
+    pub health_check_count: i64,
     _request_id: Option<String>,
 }
 impl GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
-    pub fn health_check_count(&self) -> ::std::option::Option<i64> {
+    pub fn health_check_count(&self) -> i64 {
         self.health_check_count
     }
 }
@@ -35,6 +35,7 @@ pub struct GetHealthCheckCountOutputBuilder {
 }
 impl GetHealthCheckCountOutputBuilder {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
+    /// This field is required.
     pub fn health_check_count(mut self, input: i64) -> Self {
         self.health_check_count = ::std::option::Option::Some(input);
         self
@@ -58,10 +59,20 @@ impl GetHealthCheckCountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHealthCheckCountOutput`](crate::operation::get_health_check_count::GetHealthCheckCountOutput).
-    pub fn build(self) -> crate::operation::get_health_check_count::GetHealthCheckCountOutput {
-        crate::operation::get_health_check_count::GetHealthCheckCountOutput {
-            health_check_count: self.health_check_count,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`health_check_count`](crate::operation::get_health_check_count::builders::GetHealthCheckCountOutputBuilder::health_check_count)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_health_check_count::GetHealthCheckCountOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_health_check_count::GetHealthCheckCountOutput {
+            health_check_count: self.health_check_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "health_check_count",
+                    "health_check_count was not specified but it is required when building GetHealthCheckCountOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

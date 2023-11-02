@@ -71,7 +71,9 @@ pub fn de_list_slack_channel_configurations_http_response(
         output = crate::protocol_serde::shape_list_slack_channel_configurations::de_list_slack_channel_configurations(_response_body, output)
             .map_err(crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_slack_channel_configurations_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError::unhandled)?
     })
 }
 

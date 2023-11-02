@@ -11,8 +11,10 @@ pub struct ListConferenceProvidersOutput {
 }
 impl ListConferenceProvidersOutput {
     /// <p>The conference providers.</p>
-    pub fn conference_providers(&self) -> ::std::option::Option<&[crate::types::ConferenceProvider]> {
-        self.conference_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conference_providers.is_none()`.
+    pub fn conference_providers(&self) -> &[crate::types::ConferenceProvider] {
+        self.conference_providers.as_deref().unwrap_or_default()
     }
     /// <p>The tokens used for pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

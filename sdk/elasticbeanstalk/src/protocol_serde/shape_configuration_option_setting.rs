@@ -27,6 +27,7 @@ pub fn ser_configuration_option_setting(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_configuration_option_setting(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ConfigurationOptionSetting, ::aws_smithy_xml::decode::XmlDecodeError> {

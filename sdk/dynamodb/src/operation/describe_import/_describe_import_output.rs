@@ -34,6 +34,7 @@ pub struct DescribeImportOutputBuilder {
 }
 impl DescribeImportOutputBuilder {
     /// <p> Represents the properties of the table created for the import, and parameters of the import. The import parameters include import status, how many items were processed, and how many errors were encountered. </p>
+    /// This field is required.
     pub fn import_table_description(mut self, input: crate::types::ImportTableDescription) -> Self {
         self.import_table_description = ::std::option::Option::Some(input);
         self

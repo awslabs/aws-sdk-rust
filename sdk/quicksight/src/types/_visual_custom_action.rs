@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualCustomAction {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
-    pub custom_action_id: ::std::option::Option<::std::string::String>,
+    pub custom_action_id: ::std::string::String,
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
     pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
@@ -16,19 +16,21 @@ pub struct VisualCustomAction {
     /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
     /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
-    pub trigger: ::std::option::Option<crate::types::VisualCustomActionTrigger>,
+    pub trigger: crate::types::VisualCustomActionTrigger,
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub action_operations: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomActionOperation>>,
+    pub action_operations: ::std::vec::Vec<crate::types::VisualCustomActionOperation>,
 }
 impl VisualCustomAction {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
-    pub fn custom_action_id(&self) -> ::std::option::Option<&str> {
-        self.custom_action_id.as_deref()
+    pub fn custom_action_id(&self) -> &str {
+        use std::ops::Deref;
+        self.custom_action_id.deref()
     }
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The status of the <code>VisualCustomAction</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WidgetStatus> {
@@ -40,13 +42,14 @@ impl VisualCustomAction {
     /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
     /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
-    pub fn trigger(&self) -> ::std::option::Option<&crate::types::VisualCustomActionTrigger> {
-        self.trigger.as_ref()
+    pub fn trigger(&self) -> &crate::types::VisualCustomActionTrigger {
+        &self.trigger
     }
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn action_operations(&self) -> ::std::option::Option<&[crate::types::VisualCustomActionOperation]> {
-        self.action_operations.as_deref()
+    pub fn action_operations(&self) -> &[crate::types::VisualCustomActionOperation] {
+        use std::ops::Deref;
+        self.action_operations.deref()
     }
 }
 impl VisualCustomAction {
@@ -68,6 +71,7 @@ pub struct VisualCustomActionBuilder {
 }
 impl VisualCustomActionBuilder {
     /// <p>The ID of the <code>VisualCustomAction</code>.</p>
+    /// This field is required.
     pub fn custom_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_action_id = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +86,7 @@ impl VisualCustomActionBuilder {
         &self.custom_action_id
     }
     /// <p>The name of the <code>VisualCustomAction</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +120,7 @@ impl VisualCustomActionBuilder {
     /// <li> <p> <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p> </li>
     /// <li> <p> <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn trigger(mut self, input: crate::types::VisualCustomActionTrigger) -> Self {
         self.trigger = ::std::option::Option::Some(input);
         self
@@ -162,13 +168,38 @@ impl VisualCustomActionBuilder {
         &self.action_operations
     }
     /// Consumes the builder and constructs a [`VisualCustomAction`](crate::types::VisualCustomAction).
-    pub fn build(self) -> crate::types::VisualCustomAction {
-        crate::types::VisualCustomAction {
-            custom_action_id: self.custom_action_id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`custom_action_id`](crate::types::builders::VisualCustomActionBuilder::custom_action_id)
+    /// - [`name`](crate::types::builders::VisualCustomActionBuilder::name)
+    /// - [`trigger`](crate::types::builders::VisualCustomActionBuilder::trigger)
+    /// - [`action_operations`](crate::types::builders::VisualCustomActionBuilder::action_operations)
+    pub fn build(self) -> ::std::result::Result<crate::types::VisualCustomAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VisualCustomAction {
+            custom_action_id: self.custom_action_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "custom_action_id",
+                    "custom_action_id was not specified but it is required when building VisualCustomAction",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building VisualCustomAction",
+                )
+            })?,
             status: self.status,
-            trigger: self.trigger,
-            action_operations: self.action_operations,
-        }
+            trigger: self.trigger.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "trigger",
+                    "trigger was not specified but it is required when building VisualCustomAction",
+                )
+            })?,
+            action_operations: self.action_operations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_operations",
+                    "action_operations was not specified but it is required when building VisualCustomAction",
+                )
+            })?,
+        })
     }
 }

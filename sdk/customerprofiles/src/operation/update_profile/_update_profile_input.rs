@@ -226,6 +226,7 @@ pub struct UpdateProfileInputBuilder {
 }
 impl UpdateProfileInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -240,6 +241,7 @@ impl UpdateProfileInputBuilder {
         &self.domain_name
     }
     /// <p>The unique identifier of a customer profile.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self

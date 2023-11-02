@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesInProtectionGroupOutput {
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
@@ -13,8 +13,9 @@ pub struct ListResourcesInProtectionGroupOutput {
 }
 impl ListResourcesInProtectionGroupOutput {
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.resource_arns.deref()
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
@@ -94,11 +95,25 @@ impl ListResourcesInProtectionGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourcesInProtectionGroupOutput`](crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput).
-    pub fn build(self) -> crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput {
-        crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput {
-            resource_arns: self.resource_arns,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arns`](crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupOutputBuilder::resource_arns)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput {
+                resource_arns: self.resource_arns.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arns",
+                        "resource_arns was not specified but it is required when building ListResourcesInProtectionGroupOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

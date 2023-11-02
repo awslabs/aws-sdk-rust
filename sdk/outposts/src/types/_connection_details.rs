@@ -39,8 +39,10 @@ impl ConnectionDetails {
         self.server_tunnel_address.as_deref()
     }
     /// <p> The allowed IP addresses. </p>
-    pub fn allowed_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_ips.is_none()`.
+    pub fn allowed_ips(&self) -> &[::std::string::String] {
+        self.allowed_ips.as_deref().unwrap_or_default()
     }
 }
 impl ConnectionDetails {

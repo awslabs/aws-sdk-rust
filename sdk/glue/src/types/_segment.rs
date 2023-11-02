@@ -7,7 +7,7 @@ pub struct Segment {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub segment_number: i32,
     /// <p>The total number of segments.</p>
-    pub total_segments: ::std::option::Option<i32>,
+    pub total_segments: i32,
 }
 impl Segment {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
@@ -15,7 +15,7 @@ impl Segment {
         self.segment_number
     }
     /// <p>The total number of segments.</p>
-    pub fn total_segments(&self) -> ::std::option::Option<i32> {
+    pub fn total_segments(&self) -> i32 {
         self.total_segments
     }
 }
@@ -35,6 +35,7 @@ pub struct SegmentBuilder {
 }
 impl SegmentBuilder {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+    /// This field is required.
     pub fn segment_number(mut self, input: i32) -> Self {
         self.segment_number = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SegmentBuilder {
         &self.segment_number
     }
     /// <p>The total number of segments.</p>
+    /// This field is required.
     pub fn total_segments(mut self, input: i32) -> Self {
         self.total_segments = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl SegmentBuilder {
         &self.total_segments
     }
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
-    pub fn build(self) -> crate::types::Segment {
-        crate::types::Segment {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total_segments`](crate::types::builders::SegmentBuilder::total_segments)
+    pub fn build(self) -> ::std::result::Result<crate::types::Segment, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Segment {
             segment_number: self.segment_number.unwrap_or_default(),
-            total_segments: self.total_segments,
-        }
+            total_segments: self.total_segments.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "total_segments",
+                    "total_segments was not specified but it is required when building Segment",
+                )
+            })?,
+        })
     }
 }

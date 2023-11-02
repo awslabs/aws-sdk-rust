@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub s3_canonical_user_id: ::std::option::Option<::std::string::String>,
+    pub s3_canonical_user_id: ::std::string::String,
     /// <p>The current configuration information for the identity.</p>
     pub cloud_front_origin_access_identity_config: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
 }
 impl CloudFrontOriginAccessIdentity {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn s3_canonical_user_id(&self) -> ::std::option::Option<&str> {
-        self.s3_canonical_user_id.as_deref()
+    pub fn s3_canonical_user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_canonical_user_id.deref()
     }
     /// <p>The current configuration information for the identity.</p>
     pub fn cloud_front_origin_access_identity_config(&self) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
@@ -42,6 +44,7 @@ pub struct CloudFrontOriginAccessIdentityBuilder {
 }
 impl CloudFrontOriginAccessIdentityBuilder {
     /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl CloudFrontOriginAccessIdentityBuilder {
         &self.id
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
+    /// This field is required.
     pub fn s3_canonical_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_canonical_user_id = ::std::option::Option::Some(input.into());
         self
@@ -87,11 +91,24 @@ impl CloudFrontOriginAccessIdentityBuilder {
         &self.cloud_front_origin_access_identity_config
     }
     /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentity`](crate::types::CloudFrontOriginAccessIdentity).
-    pub fn build(self) -> crate::types::CloudFrontOriginAccessIdentity {
-        crate::types::CloudFrontOriginAccessIdentity {
-            id: self.id,
-            s3_canonical_user_id: self.s3_canonical_user_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::CloudFrontOriginAccessIdentityBuilder::id)
+    /// - [`s3_canonical_user_id`](crate::types::builders::CloudFrontOriginAccessIdentityBuilder::s3_canonical_user_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudFrontOriginAccessIdentity {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CloudFrontOriginAccessIdentity",
+                )
+            })?,
+            s3_canonical_user_id: self.s3_canonical_user_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_canonical_user_id",
+                    "s3_canonical_user_id was not specified but it is required when building CloudFrontOriginAccessIdentity",
+                )
+            })?,
             cloud_front_origin_access_identity_config: self.cloud_front_origin_access_identity_config,
-        }
+        })
     }
 }

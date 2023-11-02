@@ -3,44 +3,44 @@ pub fn ser_table_visual(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableVisual,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.visual_id {
-        object.key("VisualId").string(var_1.as_str());
+    {
+        object.key("VisualId").string(input.visual_id.as_str());
     }
-    if let Some(var_2) = &input.title {
+    if let Some(var_1) = &input.title {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Title").start_object();
-        crate::protocol_serde::shape_visual_title_label_options::ser_visual_title_label_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Title").start_object();
+        crate::protocol_serde::shape_visual_title_label_options::ser_visual_title_label_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.subtitle {
+    if let Some(var_3) = &input.subtitle {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Subtitle").start_object();
-        crate::protocol_serde::shape_visual_subtitle_label_options::ser_visual_subtitle_label_options(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("Subtitle").start_object();
+        crate::protocol_serde::shape_visual_subtitle_label_options::ser_visual_subtitle_label_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.chart_configuration {
+    if let Some(var_5) = &input.chart_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ChartConfiguration").start_object();
-        crate::protocol_serde::shape_table_configuration::ser_table_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ChartConfiguration").start_object();
+        crate::protocol_serde::shape_table_configuration::ser_table_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.conditional_formatting {
+    if let Some(var_7) = &input.conditional_formatting {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("ConditionalFormatting").start_object();
-        crate::protocol_serde::shape_table_conditional_formatting::ser_table_conditional_formatting(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("ConditionalFormatting").start_object();
+        crate::protocol_serde::shape_table_conditional_formatting::ser_table_conditional_formatting(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.actions {
-        let mut array_11 = object.key("Actions").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.actions {
+        let mut array_10 = object.key("Actions").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_visual_custom_action::ser_visual_custom_action(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_visual_custom_action::ser_visual_custom_action(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
     Ok(())
 }
@@ -100,7 +100,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::table_visual_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

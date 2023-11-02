@@ -27,6 +27,7 @@ pub struct GetSubscriberInputBuilder {
 }
 impl GetSubscriberInputBuilder {
     /// <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self

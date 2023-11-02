@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupMembershipsForMemberInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub member_id: ::std::option::Option<crate::types::MemberId>,
     /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
@@ -14,8 +14,9 @@ pub struct ListGroupMembershipsForMemberInput {
 }
 impl ListGroupMembershipsForMemberInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn member_id(&self) -> ::std::option::Option<&crate::types::MemberId> {
@@ -48,6 +49,7 @@ pub struct ListGroupMembershipsForMemberInputBuilder {
 }
 impl ListGroupMembershipsForMemberInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl ListGroupMembershipsForMemberInputBuilder {
         &self.identity_store_id
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.member_id = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,8 @@ impl ListGroupMembershipsForMemberInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListGroupMembershipsForMemberInput`](crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::list_group_memberships_for_member::builders::ListGroupMembershipsForMemberInputBuilder::identity_store_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -111,7 +116,12 @@ impl ListGroupMembershipsForMemberInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberInput {
-            identity_store_id: self.identity_store_id,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building ListGroupMembershipsForMemberInput",
+                )
+            })?,
             member_id: self.member_id,
             max_results: self.max_results,
             next_token: self.next_token,

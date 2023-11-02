@@ -134,6 +134,7 @@ impl ModifySubnetAttributeInputBuilder {
         &self.map_public_ip_on_launch
     }
     /// <p>The ID of the subnet.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSnapshotSchedule`](crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schedule_identifier(impl Into<String>)`](crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder::schedule_identifier) / [`set_schedule_identifier(Option<String>)`](crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder::set_schedule_identifier): <p>A unique identifier of the snapshot schedule to delete.</p>
+    ///   - [`schedule_identifier(impl Into<String>)`](crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder::schedule_identifier) / [`set_schedule_identifier(Option<String>)`](crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder::set_schedule_identifier):<br>required: **true**<br><p>A unique identifier of the snapshot schedule to delete.</p><br>
     /// - On success, responds with [`DeleteSnapshotScheduleOutput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput)
     /// - On failure, responds with [`SdkError<DeleteSnapshotScheduleError>`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError)
     pub fn delete_snapshot_schedule(&self) -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleFluentBuilder {

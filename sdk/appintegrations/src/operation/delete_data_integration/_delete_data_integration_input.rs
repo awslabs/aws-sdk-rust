@@ -27,6 +27,7 @@ pub struct DeleteDataIntegrationInputBuilder {
 }
 impl DeleteDataIntegrationInputBuilder {
     /// <p>A unique identifier for the DataIntegration.</p>
+    /// This field is required.
     pub fn data_integration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_integration_identifier = ::std::option::Option::Some(input.into());
         self

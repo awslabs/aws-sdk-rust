@@ -48,6 +48,7 @@ pub struct ListConflictingAliasesInputBuilder {
 }
 impl ListConflictingAliasesInputBuilder {
     /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListConflictingAliasesInputBuilder {
         &self.distribution_id
     }
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self

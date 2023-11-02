@@ -3,34 +3,34 @@ pub fn ser_batch_get_metric_data_query(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetMetricDataQuery,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("Id").string(var_1.as_str());
+    {
+        object.key("Id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.namespace {
-        object.key("Namespace").string(var_2.as_str());
+    {
+        object.key("Namespace").string(input.namespace.as_str());
     }
-    if let Some(var_3) = &input.metric {
-        object.key("Metric").string(var_3.as_str());
+    {
+        object.key("Metric").string(input.metric.as_str());
     }
-    if let Some(var_4) = &input.dimensions {
+    if let Some(var_1) = &input.dimensions {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Dimensions").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_2 = object.key("Dimensions").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_5.finish();
+        object_2.finish();
     }
-    if let Some(var_8) = &input.start_date {
+    {
         object
             .key("StartDate")
-            .date_time(var_8, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_9) = &input.end_date {
+    {
         object
             .key("EndDate")
-            .date_time(var_9, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

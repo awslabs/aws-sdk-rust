@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestSegmentPatternInput {
     /// <p>The pattern to test.</p>
-    pub pattern: ::std::option::Option<::std::string::String>,
+    pub pattern: ::std::string::String,
     /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
-    pub payload: ::std::option::Option<::std::string::String>,
+    pub payload: ::std::string::String,
 }
 impl TestSegmentPatternInput {
     /// <p>The pattern to test.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
-        self.pattern.as_deref()
+    pub fn pattern(&self) -> &str {
+        use std::ops::Deref;
+        self.pattern.deref()
     }
     /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
-    pub fn payload(&self) -> ::std::option::Option<&str> {
-        self.payload.as_deref()
+    pub fn payload(&self) -> &str {
+        use std::ops::Deref;
+        self.payload.deref()
     }
 }
 impl TestSegmentPatternInput {
@@ -34,6 +36,7 @@ pub struct TestSegmentPatternInputBuilder {
 }
 impl TestSegmentPatternInputBuilder {
     /// <p>The pattern to test.</p>
+    /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl TestSegmentPatternInputBuilder {
         &self.pattern
     }
     /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    /// This field is required.
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl TestSegmentPatternInputBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`TestSegmentPatternInput`](crate::operation::test_segment_pattern::TestSegmentPatternInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pattern`](crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder::pattern)
+    /// - [`payload`](crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder::payload)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_segment_pattern::TestSegmentPatternInput {
-            pattern: self.pattern,
-            payload: self.payload,
+            pattern: self.pattern.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pattern",
+                    "pattern was not specified but it is required when building TestSegmentPatternInput",
+                )
+            })?,
+            payload: self.payload.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "payload",
+                    "payload was not specified but it is required when building TestSegmentPatternInput",
+                )
+            })?,
         })
     }
 }

@@ -12,10 +12,10 @@ pub struct ListTargetedSentimentDetectionJobsOutput {
 }
 impl ListTargetedSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn targeted_sentiment_detection_job_properties_list(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::TargetedSentimentDetectionJobProperties]> {
-        self.targeted_sentiment_detection_job_properties_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targeted_sentiment_detection_job_properties_list.is_none()`.
+    pub fn targeted_sentiment_detection_job_properties_list(&self) -> &[crate::types::TargetedSentimentDetectionJobProperties] {
+        self.targeted_sentiment_detection_job_properties_list.as_deref().unwrap_or_default()
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

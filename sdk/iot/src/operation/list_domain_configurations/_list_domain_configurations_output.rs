@@ -11,8 +11,10 @@ pub struct ListDomainConfigurationsOutput {
 }
 impl ListDomainConfigurationsOutput {
     /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
-    pub fn domain_configurations(&self) -> ::std::option::Option<&[crate::types::DomainConfigurationSummary]> {
-        self.domain_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_configurations.is_none()`.
+    pub fn domain_configurations(&self) -> &[crate::types::DomainConfigurationSummary] {
+        self.domain_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

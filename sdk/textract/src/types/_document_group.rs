@@ -19,16 +19,22 @@ impl DocumentGroup {
         self.r#type.as_deref()
     }
     /// <p>An array that contains information about the pages of a document, defined by logical boundary.</p>
-    pub fn split_documents(&self) -> ::std::option::Option<&[crate::types::SplitDocument]> {
-        self.split_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.split_documents.is_none()`.
+    pub fn split_documents(&self) -> &[crate::types::SplitDocument] {
+        self.split_documents.as_deref().unwrap_or_default()
     }
     /// <p>A list of the detected signatures found in a document group.</p>
-    pub fn detected_signatures(&self) -> ::std::option::Option<&[crate::types::DetectedSignature]> {
-        self.detected_signatures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detected_signatures.is_none()`.
+    pub fn detected_signatures(&self) -> &[crate::types::DetectedSignature] {
+        self.detected_signatures.as_deref().unwrap_or_default()
     }
     /// <p>A list of any expected signatures not found in a document group.</p>
-    pub fn undetected_signatures(&self) -> ::std::option::Option<&[crate::types::UndetectedSignature]> {
-        self.undetected_signatures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.undetected_signatures.is_none()`.
+    pub fn undetected_signatures(&self) -> &[crate::types::UndetectedSignature] {
+        self.undetected_signatures.as_deref().unwrap_or_default()
     }
 }
 impl DocumentGroup {

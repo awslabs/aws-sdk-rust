@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterInList {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub cluster_name: ::std::option::Option<::std::string::String>,
+    pub cluster_name: ::std::string::String,
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub cluster_arn: ::std::option::Option<::std::string::String>,
+    pub cluster_arn: ::std::string::String,
     /// <p>The status of the Elastic DocumentDB cluster.</p>
-    pub status: ::std::option::Option<crate::types::Status>,
+    pub status: crate::types::Status,
 }
 impl ClusterInList {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
-        self.cluster_name.as_deref()
+    pub fn cluster_name(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_name.deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
-        self.cluster_arn.as_deref()
+    pub fn cluster_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_arn.deref()
     }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::Status {
+        &self.status
     }
 }
 impl ClusterInList {
@@ -42,6 +44,7 @@ pub struct ClusterInListBuilder {
 }
 impl ClusterInListBuilder {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ClusterInListBuilder {
         &self.cluster_name
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl ClusterInListBuilder {
         &self.cluster_arn
     }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl ClusterInListBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ClusterInList`](crate::types::ClusterInList).
-    pub fn build(self) -> crate::types::ClusterInList {
-        crate::types::ClusterInList {
-            cluster_name: self.cluster_name,
-            cluster_arn: self.cluster_arn,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cluster_name`](crate::types::builders::ClusterInListBuilder::cluster_name)
+    /// - [`cluster_arn`](crate::types::builders::ClusterInListBuilder::cluster_arn)
+    /// - [`status`](crate::types::builders::ClusterInListBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusterInList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClusterInList {
+            cluster_name: self.cluster_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cluster_name",
+                    "cluster_name was not specified but it is required when building ClusterInList",
+                )
+            })?,
+            cluster_arn: self.cluster_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cluster_arn",
+                    "cluster_arn was not specified but it is required when building ClusterInList",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ClusterInList",
+                )
+            })?,
+        })
     }
 }

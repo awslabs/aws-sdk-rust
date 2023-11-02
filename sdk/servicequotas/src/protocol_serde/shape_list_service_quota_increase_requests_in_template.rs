@@ -38,8 +38,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AWSServiceAccessNotEnabledException" => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::AwsServiceAccessNotEnabledException({
@@ -54,8 +54,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DependencyAccessDeniedException" => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::DependencyAccessDeniedException({
@@ -70,8 +70,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalArgumentException" => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::IllegalArgumentException({
@@ -86,8 +86,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoAvailableOrganizationException" => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::NoAvailableOrganizationException({
@@ -102,8 +102,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceException" => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::ServiceException({
@@ -118,8 +118,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TemplatesNotAvailableInRegionException" => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::TemplatesNotAvailableInRegionException({
@@ -134,8 +134,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::TooManyRequestsException({
@@ -150,8 +150,8 @@ pub fn de_list_service_quota_increase_requests_in_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError::generic(generic)

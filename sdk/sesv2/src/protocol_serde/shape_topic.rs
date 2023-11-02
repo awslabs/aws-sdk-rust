@@ -3,17 +3,17 @@ pub fn ser_topic(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Topic,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.topic_name {
-        object.key("TopicName").string(var_1.as_str());
+    {
+        object.key("TopicName").string(input.topic_name.as_str());
     }
-    if let Some(var_2) = &input.display_name {
-        object.key("DisplayName").string(var_2.as_str());
+    {
+        object.key("DisplayName").string(input.display_name.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.default_subscription_status {
-        object.key("DefaultSubscriptionStatus").string(var_4.as_str());
+    {
+        object.key("DefaultSubscriptionStatus").string(input.default_subscription_status.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::topic_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

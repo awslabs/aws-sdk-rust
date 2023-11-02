@@ -17,8 +17,10 @@ impl DescribeRecordOutput {
         self.record_detail.as_ref()
     }
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
-    pub fn record_outputs(&self) -> ::std::option::Option<&[crate::types::RecordOutput]> {
-        self.record_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_outputs.is_none()`.
+    pub fn record_outputs(&self) -> &[crate::types::RecordOutput] {
+        self.record_outputs.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

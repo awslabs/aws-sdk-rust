@@ -29,11 +29,10 @@ pub fn de_start_recommendation_report_generation_http_error(
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                         .map_err(crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -46,11 +45,10 @@ pub fn de_start_recommendation_report_generation_http_error(
                     output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                         .map_err(crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::conflict_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCheckerIpRangesOutput {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub checker_ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub checker_ip_ranges: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCheckerIpRangesOutput {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub fn checker_ip_ranges(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.checker_ip_ranges.as_deref()
+    pub fn checker_ip_ranges(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.checker_ip_ranges.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCheckerIpRangesOutput {
@@ -64,10 +65,20 @@ impl GetCheckerIpRangesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCheckerIpRangesOutput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput).
-    pub fn build(self) -> crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput {
-        crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput {
-            checker_ip_ranges: self.checker_ip_ranges,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`checker_ip_ranges`](crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder::checker_ip_ranges)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput {
+            checker_ip_ranges: self.checker_ip_ranges.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "checker_ip_ranges",
+                    "checker_ip_ranges was not specified but it is required when building GetCheckerIpRangesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

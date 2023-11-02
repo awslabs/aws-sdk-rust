@@ -13,8 +13,10 @@ pub struct ListResourceProfileArtifactsOutput {
 impl ListResourceProfileArtifactsOutput {
     /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
     /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
-    pub fn artifacts(&self) -> ::std::option::Option<&[crate::types::ResourceProfileArtifact]> {
-        self.artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artifacts.is_none()`.
+    pub fn artifacts(&self) -> &[crate::types::ResourceProfileArtifact] {
+        self.artifacts.as_deref().unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

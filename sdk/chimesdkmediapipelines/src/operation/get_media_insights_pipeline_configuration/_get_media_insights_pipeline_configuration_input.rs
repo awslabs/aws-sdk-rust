@@ -27,6 +27,7 @@ pub struct GetMediaInsightsPipelineConfigurationInputBuilder {
 }
 impl GetMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

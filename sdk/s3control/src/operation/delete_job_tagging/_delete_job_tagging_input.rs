@@ -34,6 +34,7 @@ pub struct DeleteJobTaggingInputBuilder {
 }
 impl DeleteJobTaggingInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteJobTaggingInputBuilder {
         &self.account_id
     }
     /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

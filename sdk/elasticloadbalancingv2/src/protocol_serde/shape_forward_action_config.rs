@@ -23,6 +23,7 @@ pub fn ser_forward_action_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_forward_action_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ForwardActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -69,12 +69,16 @@ impl OptionGroupOption {
         self.default_port
     }
     /// <p>The options that are prerequisites for this option.</p>
-    pub fn options_depended_on(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.options_depended_on.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_depended_on.is_none()`.
+    pub fn options_depended_on(&self) -> &[::std::string::String] {
+        self.options_depended_on.as_deref().unwrap_or_default()
     }
     /// <p>The options that conflict with this option.</p>
-    pub fn options_conflicts_with(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.options_conflicts_with.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_conflicts_with.is_none()`.
+    pub fn options_conflicts_with(&self) -> &[::std::string::String] {
+        self.options_conflicts_with.as_deref().unwrap_or_default()
     }
     /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
     pub fn persistent(&self) -> ::std::option::Option<bool> {
@@ -97,12 +101,16 @@ impl OptionGroupOption {
         self.supports_option_version_downgrade
     }
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
-    pub fn option_group_option_settings(&self) -> ::std::option::Option<&[crate::types::OptionGroupOptionSetting]> {
-        self.option_group_option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_group_option_settings.is_none()`.
+    pub fn option_group_option_settings(&self) -> &[crate::types::OptionGroupOptionSetting] {
+        self.option_group_option_settings.as_deref().unwrap_or_default()
     }
     /// <p>The versions that are available for the option.</p>
-    pub fn option_group_option_versions(&self) -> ::std::option::Option<&[crate::types::OptionVersion]> {
-        self.option_group_option_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_group_option_versions.is_none()`.
+    pub fn option_group_option_versions(&self) -> &[crate::types::OptionVersion] {
+        self.option_group_option_versions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the option can be copied across Amazon Web Services accounts.</p>
     pub fn copyable_cross_account(&self) -> ::std::option::Option<bool> {

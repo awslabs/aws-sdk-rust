@@ -48,6 +48,7 @@ pub struct DeleteHsmInputBuilder {
 }
 impl DeleteHsmInputBuilder {
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

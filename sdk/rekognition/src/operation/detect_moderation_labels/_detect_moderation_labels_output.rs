@@ -15,8 +15,10 @@ pub struct DetectModerationLabelsOutput {
 }
 impl DetectModerationLabelsOutput {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    pub fn moderation_labels(&self) -> ::std::option::Option<&[crate::types::ModerationLabel]> {
-        self.moderation_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.moderation_labels.is_none()`.
+    pub fn moderation_labels(&self) -> &[crate::types::ModerationLabel] {
+        self.moderation_labels.as_deref().unwrap_or_default()
     }
     /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub fn moderation_model_version(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct GetEventSourceMappingInputBuilder {
 }
 impl GetEventSourceMappingInputBuilder {
     /// <p>The identifier of the event source mapping.</p>
+    /// This field is required.
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
         self

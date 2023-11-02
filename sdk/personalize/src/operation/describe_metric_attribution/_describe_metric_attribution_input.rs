@@ -27,6 +27,7 @@ pub struct DescribeMetricAttributionInputBuilder {
 }
 impl DescribeMetricAttributionInputBuilder {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn metric_attribution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_attribution_arn = ::std::option::Option::Some(input.into());
         self

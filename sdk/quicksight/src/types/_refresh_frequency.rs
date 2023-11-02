@@ -13,7 +13,7 @@ pub struct RefreshFrequency {
     /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
     /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
-    pub interval: ::std::option::Option<crate::types::RefreshInterval>,
+    pub interval: crate::types::RefreshInterval,
     /// <p>The day of the week that you want to schedule the refresh on. This value is required for weekly and monthly refresh intervals.</p>
     pub refresh_on_day: ::std::option::Option<crate::types::ScheduleRefreshOnEntity>,
     /// <p>The timezone that you want the refresh schedule to use. The timezone ID must match a corresponding ID found on <code>java.util.time.getAvailableIDs()</code>.</p>
@@ -31,8 +31,8 @@ impl RefreshFrequency {
     /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
     /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
-    pub fn interval(&self) -> ::std::option::Option<&crate::types::RefreshInterval> {
-        self.interval.as_ref()
+    pub fn interval(&self) -> &crate::types::RefreshInterval {
+        &self.interval
     }
     /// <p>The day of the week that you want to schedule the refresh on. This value is required for weekly and monthly refresh intervals.</p>
     pub fn refresh_on_day(&self) -> ::std::option::Option<&crate::types::ScheduleRefreshOnEntity> {
@@ -73,6 +73,7 @@ impl RefreshFrequencyBuilder {
     /// <li> <p> <code>WEEKLY</code>: The dataset refreshes every week.</p> </li>
     /// <li> <p> <code>MONTHLY</code>: The dataset refreshes every month.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn interval(mut self, input: crate::types::RefreshInterval) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
@@ -145,12 +146,19 @@ impl RefreshFrequencyBuilder {
         &self.time_of_the_day
     }
     /// Consumes the builder and constructs a [`RefreshFrequency`](crate::types::RefreshFrequency).
-    pub fn build(self) -> crate::types::RefreshFrequency {
-        crate::types::RefreshFrequency {
-            interval: self.interval,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`interval`](crate::types::builders::RefreshFrequencyBuilder::interval)
+    pub fn build(self) -> ::std::result::Result<crate::types::RefreshFrequency, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RefreshFrequency {
+            interval: self.interval.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "interval",
+                    "interval was not specified but it is required when building RefreshFrequency",
+                )
+            })?,
             refresh_on_day: self.refresh_on_day,
             timezone: self.timezone,
             time_of_the_day: self.time_of_the_day,
-        }
+        })
     }
 }

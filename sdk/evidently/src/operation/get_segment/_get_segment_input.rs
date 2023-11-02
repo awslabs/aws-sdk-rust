@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSegmentInput {
     /// <p>The ARN of the segment to return information for.</p>
-    pub segment: ::std::option::Option<::std::string::String>,
+    pub segment: ::std::string::String,
 }
 impl GetSegmentInput {
     /// <p>The ARN of the segment to return information for.</p>
-    pub fn segment(&self) -> ::std::option::Option<&str> {
-        self.segment.as_deref()
+    pub fn segment(&self) -> &str {
+        use std::ops::Deref;
+        self.segment.deref()
     }
 }
 impl GetSegmentInput {
@@ -27,6 +28,7 @@ pub struct GetSegmentInputBuilder {
 }
 impl GetSegmentInputBuilder {
     /// <p>The ARN of the segment to return information for.</p>
+    /// This field is required.
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl GetSegmentInputBuilder {
         &self.segment
     }
     /// Consumes the builder and constructs a [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`segment`](crate::operation::get_segment::builders::GetSegmentInputBuilder::segment)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_segment::GetSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_segment::GetSegmentInput { segment: self.segment })
+        ::std::result::Result::Ok(crate::operation::get_segment::GetSegmentInput {
+            segment: self.segment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "segment",
+                    "segment was not specified but it is required when building GetSegmentInput",
+                )
+            })?,
+        })
     }
 }

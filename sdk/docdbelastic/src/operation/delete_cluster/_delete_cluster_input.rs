@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-    pub cluster_arn: ::std::option::Option<::std::string::String>,
+    pub cluster_arn: ::std::string::String,
 }
 impl DeleteClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
-        self.cluster_arn.as_deref()
+    pub fn cluster_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_arn.deref()
     }
 }
 impl DeleteClusterInput {
@@ -27,6 +28,7 @@ pub struct DeleteClusterInputBuilder {
 }
 impl DeleteClusterInputBuilder {
     /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteClusterInputBuilder {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cluster_arn`](crate::operation::delete_cluster::builders::DeleteClusterInputBuilder::cluster_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_cluster::DeleteClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cluster::DeleteClusterInput {
-            cluster_arn: self.cluster_arn,
+            cluster_arn: self.cluster_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cluster_arn",
+                    "cluster_arn was not specified but it is required when building DeleteClusterInput",
+                )
+            })?,
         })
     }
 }

@@ -3,14 +3,14 @@ pub fn ser_request_cancel_external_workflow_execution_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.workflow_id {
-        object.key("workflowId").string(var_1.as_str());
+    {
+        object.key("workflowId").string(input.workflow_id.as_str());
     }
-    if let Some(var_2) = &input.run_id {
-        object.key("runId").string(var_2.as_str());
+    if let Some(var_1) = &input.run_id {
+        object.key("runId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.control {
-        object.key("control").string(var_3.as_str());
+    if let Some(var_2) = &input.control {
+        object.key("control").string(var_2.as_str());
     }
     Ok(())
 }

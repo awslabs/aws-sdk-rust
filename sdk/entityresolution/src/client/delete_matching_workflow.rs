@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMatchingWorkflow`](crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_name(impl Into<String>)`](crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowFluentBuilder::set_workflow_name): <p>The name of the workflow to be retrieved.</p>
+    ///   - [`workflow_name(impl Into<String>)`](crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowFluentBuilder::set_workflow_name):<br>required: **true**<br><p>The name of the workflow to be retrieved.</p><br>
     /// - On success, responds with [`DeleteMatchingWorkflowOutput`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput) with field(s):
-    ///   - [`message(Option<String>)`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput::message): <p>A successful operation message.</p>
+    ///   - [`message(String)`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput::message): <p>A successful operation message.</p>
     /// - On failure, responds with [`SdkError<DeleteMatchingWorkflowError>`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError)
     pub fn delete_matching_workflow(&self) -> crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowFluentBuilder {
         crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowFluentBuilder::new(self.handle.clone())

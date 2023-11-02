@@ -19,8 +19,10 @@ pub struct BackendApiResourceConfig {
 }
 impl BackendApiResourceConfig {
     /// <p>Additional authentication methods used to interact with your data models.</p>
-    pub fn additional_auth_types(&self) -> ::std::option::Option<&[crate::types::BackendApiAuthType]> {
-        self.additional_auth_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_auth_types.is_none()`.
+    pub fn additional_auth_types(&self) -> &[crate::types::BackendApiAuthType] {
+        self.additional_auth_types.as_deref().unwrap_or_default()
     }
     /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
     pub fn api_name(&self) -> ::std::option::Option<&str> {

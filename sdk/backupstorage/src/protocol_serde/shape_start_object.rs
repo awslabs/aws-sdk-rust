@@ -155,7 +155,9 @@ pub fn de_start_object_http_response(
         output = crate::protocol_serde::shape_start_object::de_start_object(_response_body, output)
             .map_err(crate::operation::start_object::StartObjectError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_object_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::start_object::StartObjectError::unhandled)?
     })
 }
 

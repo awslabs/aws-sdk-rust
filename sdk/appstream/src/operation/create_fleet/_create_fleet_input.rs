@@ -77,7 +77,7 @@ pub struct CreateFleetInput {
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub max_user_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
@@ -115,6 +115,8 @@ pub struct CreateFleetInput {
     pub usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub max_sessions_per_instance: ::std::option::Option<i32>,
 }
 impl CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
@@ -205,7 +207,7 @@ impl CreateFleetInput {
         self.vpc_config.as_ref()
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn max_user_duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_user_duration_in_seconds
     }
@@ -264,12 +266,18 @@ impl CreateFleetInput {
         self.max_concurrent_sessions
     }
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-    pub fn usb_device_filter_strings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.usb_device_filter_strings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usb_device_filter_strings.is_none()`.
+    pub fn usb_device_filter_strings(&self) -> &[::std::string::String] {
+        self.usb_device_filter_strings.as_deref().unwrap_or_default()
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub fn session_script_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.session_script_s3_location.as_ref()
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(&self) -> ::std::option::Option<i32> {
+        self.max_sessions_per_instance
     }
 }
 impl CreateFleetInput {
@@ -304,9 +312,11 @@ pub struct CreateFleetInputBuilder {
     pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
     pub(crate) usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) max_sessions_per_instance: ::std::option::Option<i32>,
 }
 impl CreateFleetInputBuilder {
     /// <p>A unique name for the fleet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -394,6 +404,7 @@ impl CreateFleetInputBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -582,19 +593,19 @@ impl CreateFleetInputBuilder {
         &self.vpc_config
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
         self.max_user_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn set_max_user_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_user_duration_in_seconds = input;
         self
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
-    /// <p>Specify a value between 600 and 360000.</p>
+    /// <p>Specify a value between 600 and 432000.</p>
     pub fn get_max_user_duration_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.max_user_duration_in_seconds
     }
@@ -822,6 +833,20 @@ impl CreateFleetInputBuilder {
     pub fn get_session_script_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.session_script_s3_location
     }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn max_sessions_per_instance(mut self, input: i32) -> Self {
+        self.max_sessions_per_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn set_max_sessions_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_sessions_per_instance = input;
+        self
+    }
+    /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
+    pub fn get_max_sessions_per_instance(&self) -> &::std::option::Option<i32> {
+        &self.max_sessions_per_instance
+    }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
@@ -846,6 +871,7 @@ impl CreateFleetInputBuilder {
             max_concurrent_sessions: self.max_concurrent_sessions,
             usb_device_filter_strings: self.usb_device_filter_strings,
             session_script_s3_location: self.session_script_s3_location,
+            max_sessions_per_instance: self.max_sessions_per_instance,
         })
     }
 }

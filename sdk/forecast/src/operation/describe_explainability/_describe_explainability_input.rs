@@ -27,6 +27,7 @@ pub struct DescribeExplainabilityInputBuilder {
 }
 impl DescribeExplainabilityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+    /// This field is required.
     pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_arn = ::std::option::Option::Some(input.into());
         self

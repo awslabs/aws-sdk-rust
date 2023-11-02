@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UrlEndpointInput {
     /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
     pub health_url: ::std::option::Option<::std::string::String>,
 }
 impl UrlEndpointInput {
     /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
     pub fn health_url(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct UrlEndpointInputBuilder {
 }
 impl UrlEndpointInputBuilder {
     /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl UrlEndpointInputBuilder {
         &self.health_url
     }
     /// Consumes the builder and constructs a [`UrlEndpointInput`](crate::types::UrlEndpointInput).
-    pub fn build(self) -> crate::types::UrlEndpointInput {
-        crate::types::UrlEndpointInput {
-            url: self.url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`url`](crate::types::builders::UrlEndpointInputBuilder::url)
+    pub fn build(self) -> ::std::result::Result<crate::types::UrlEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UrlEndpointInput {
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building UrlEndpointInput",
+                )
+            })?,
             health_url: self.health_url,
-        }
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to update.</p>
-    pub vehicle_name: ::std::option::Option<::std::string::String>,
+    pub vehicle_name: ::std::string::String,
     /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signal decoder manifest associated with the vehicle to update.</p>
@@ -19,8 +19,9 @@ pub struct UpdateVehicleRequestItem {
 }
 impl UpdateVehicleRequestItem {
     /// <p>The unique ID of the vehicle to update.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
-        self.vehicle_name.as_deref()
+    pub fn vehicle_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vehicle_name.deref()
     }
     /// <p>The ARN of the vehicle model (model manifest) associated with the vehicle to update.</p>
     pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
@@ -60,6 +61,7 @@ pub struct UpdateVehicleRequestItemBuilder {
 }
 impl UpdateVehicleRequestItemBuilder {
     /// <p>The unique ID of the vehicle to update.</p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -142,13 +144,20 @@ impl UpdateVehicleRequestItemBuilder {
         &self.attribute_update_mode
     }
     /// Consumes the builder and constructs a [`UpdateVehicleRequestItem`](crate::types::UpdateVehicleRequestItem).
-    pub fn build(self) -> crate::types::UpdateVehicleRequestItem {
-        crate::types::UpdateVehicleRequestItem {
-            vehicle_name: self.vehicle_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicle_name`](crate::types::builders::UpdateVehicleRequestItemBuilder::vehicle_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateVehicleRequestItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateVehicleRequestItem {
+            vehicle_name: self.vehicle_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicle_name",
+                    "vehicle_name was not specified but it is required when building UpdateVehicleRequestItem",
+                )
+            })?,
             model_manifest_arn: self.model_manifest_arn,
             decoder_manifest_arn: self.decoder_manifest_arn,
             attributes: self.attributes,
             attribute_update_mode: self.attribute_update_mode,
-        }
+        })
     }
 }

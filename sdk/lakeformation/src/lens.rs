@@ -122,10 +122,7 @@ pub(crate) fn reflens_search_tables_by_lf_tags_output_next_token(
 pub(crate) fn lens_get_work_units_output_work_unit_ranges(
     input: crate::operation::get_work_units::GetWorkUnitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>> {
-    let input = match input.work_unit_ranges {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.work_unit_ranges;
     ::std::option::Option::Some(input)
 }
 

@@ -34,6 +34,7 @@ pub struct DeleteSkillAuthorizationInputBuilder {
 }
 impl DeleteSkillAuthorizationInputBuilder {
     /// <p>The unique identifier of a skill.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self

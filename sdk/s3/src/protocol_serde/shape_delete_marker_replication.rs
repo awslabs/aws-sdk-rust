@@ -13,6 +13,7 @@ pub fn ser_delete_marker_replication(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_delete_marker_replication(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DeleteMarkerReplication, ::aws_smithy_xml::decode::XmlDecodeError> {

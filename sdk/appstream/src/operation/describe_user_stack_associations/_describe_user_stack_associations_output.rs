@@ -11,8 +11,10 @@ pub struct DescribeUserStackAssociationsOutput {
 }
 impl DescribeUserStackAssociationsOutput {
     /// <p>The UserStackAssociation objects.</p>
-    pub fn user_stack_associations(&self) -> ::std::option::Option<&[crate::types::UserStackAssociation]> {
-        self.user_stack_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_stack_associations.is_none()`.
+    pub fn user_stack_associations(&self) -> &[crate::types::UserStackAssociation] {
+        self.user_stack_associations.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -15,8 +15,10 @@ impl ListFirewallConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    pub fn firewall_configs(&self) -> ::std::option::Option<&[crate::types::FirewallConfig]> {
-        self.firewall_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewall_configs.is_none()`.
+    pub fn firewall_configs(&self) -> &[crate::types::FirewallConfig] {
+        self.firewall_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListFirewallConfigsOutput {

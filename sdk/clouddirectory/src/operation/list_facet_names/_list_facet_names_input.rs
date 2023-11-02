@@ -41,6 +41,7 @@ pub struct ListFacetNamesInputBuilder {
 }
 impl ListFacetNamesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self

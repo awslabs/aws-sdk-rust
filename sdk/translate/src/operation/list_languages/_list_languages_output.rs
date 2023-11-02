@@ -13,8 +13,10 @@ pub struct ListLanguagesOutput {
 }
 impl ListLanguagesOutput {
     /// <p>The list of supported languages.</p>
-    pub fn languages(&self) -> ::std::option::Option<&[crate::types::Language]> {
-        self.languages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.languages.is_none()`.
+    pub fn languages(&self) -> &[crate::types::Language] {
+        self.languages.as_deref().unwrap_or_default()
     }
     /// <p>The language code passed in with the request.</p>
     pub fn display_language_code(&self) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {

@@ -11,8 +11,10 @@ pub struct ListLicenseSpecificationsForResourceOutput {
 }
 impl ListLicenseSpecificationsForResourceOutput {
     /// <p>License configurations associated with a resource.</p>
-    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::LicenseSpecification]> {
-        self.license_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_specifications.is_none()`.
+    pub fn license_specifications(&self) -> &[crate::types::LicenseSpecification] {
+        self.license_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

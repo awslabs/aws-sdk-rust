@@ -12,8 +12,10 @@ pub struct ListRepositoriesOutput {
 }
 impl ListRepositoriesOutput {
     /// <p>Lists the repositories called by the list repositories operation.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::RepositoryNameIdPair]> {
-        self.repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
+    pub fn repositories(&self) -> &[crate::types::RepositoryNameIdPair] {
+        self.repositories.as_deref().unwrap_or_default()
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is retrieved.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

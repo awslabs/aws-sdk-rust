@@ -175,7 +175,7 @@ pub fn de_get_pull_request_http_response(
         output = crate::protocol_serde::shape_get_pull_request::de_get_pull_request(_response_body, output)
             .map_err(crate::operation::get_pull_request::GetPullRequestError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_pull_request_output_correct_errors(output).build()
     })
 }
 

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDirectoryConfig`](crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_name(impl Into<String>)`](crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::directory_name) / [`set_directory_name(Option<String>)`](crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::set_directory_name): <p>The name of the directory configuration.</p>
+    ///   - [`directory_name(impl Into<String>)`](crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::directory_name) / [`set_directory_name(Option<String>)`](crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder::set_directory_name):<br>required: **true**<br><p>The name of the directory configuration.</p><br>
     /// - On success, responds with [`DeleteDirectoryConfigOutput`](crate::operation::delete_directory_config::DeleteDirectoryConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteDirectoryConfigError>`](crate::operation::delete_directory_config::DeleteDirectoryConfigError)
     pub fn delete_directory_config(&self) -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigFluentBuilder {

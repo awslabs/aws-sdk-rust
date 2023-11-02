@@ -3,16 +3,16 @@ pub fn ser_global_identity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalIdentity,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.lac {
+    {
         object.key("Lac").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.lac).into()),
         );
     }
-    if let Some(var_2) = &input.geran_cid {
+    {
         object.key("GeranCid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.geran_cid).into()),
         );
     }
     Ok(())

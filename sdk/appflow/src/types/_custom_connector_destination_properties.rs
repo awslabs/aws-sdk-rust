@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorDestinationProperties {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
-    pub entity_name: ::std::option::Option<::std::string::String>,
+    pub entity_name: ::std::string::String,
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     /// <p>Specifies the type of write operation to be performed in the custom connector when it's used as destination.</p>
@@ -17,8 +17,9 @@ pub struct CustomConnectorDestinationProperties {
 }
 impl CustomConnectorDestinationProperties {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
-    pub fn entity_name(&self) -> ::std::option::Option<&str> {
-        self.entity_name.as_deref()
+    pub fn entity_name(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_name.deref()
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the custom connector as destination.</p>
     pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
@@ -29,8 +30,10 @@ impl CustomConnectorDestinationProperties {
         self.write_operation_type.as_ref()
     }
     /// <p>The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update, delete, or upsert.</p>
-    pub fn id_field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.id_field_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id_field_names.is_none()`.
+    pub fn id_field_names(&self) -> &[::std::string::String] {
+        self.id_field_names.as_deref().unwrap_or_default()
     }
     /// <p>The custom properties that are specific to the connector when it's used as a destination in the flow.</p>
     pub fn custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -56,6 +59,7 @@ pub struct CustomConnectorDestinationPropertiesBuilder {
 }
 impl CustomConnectorDestinationPropertiesBuilder {
     /// <p>The entity specified in the custom connector as a destination in the flow.</p>
+    /// This field is required.
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_name = ::std::option::Option::Some(input.into());
         self
@@ -145,13 +149,20 @@ impl CustomConnectorDestinationPropertiesBuilder {
         &self.custom_properties
     }
     /// Consumes the builder and constructs a [`CustomConnectorDestinationProperties`](crate::types::CustomConnectorDestinationProperties).
-    pub fn build(self) -> crate::types::CustomConnectorDestinationProperties {
-        crate::types::CustomConnectorDestinationProperties {
-            entity_name: self.entity_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_name`](crate::types::builders::CustomConnectorDestinationPropertiesBuilder::entity_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorDestinationProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomConnectorDestinationProperties {
+            entity_name: self.entity_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_name",
+                    "entity_name was not specified but it is required when building CustomConnectorDestinationProperties",
+                )
+            })?,
             error_handling_config: self.error_handling_config,
             write_operation_type: self.write_operation_type,
             id_field_names: self.id_field_names,
             custom_properties: self.custom_properties,
-        }
+        })
     }
 }

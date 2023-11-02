@@ -41,6 +41,7 @@ pub struct UpdatePartnerAccountInputBuilder {
 }
 impl UpdatePartnerAccountInputBuilder {
     /// <p>The Sidewalk account credentials.</p>
+    /// This field is required.
     pub fn sidewalk(mut self, input: crate::types::SidewalkUpdateAccount) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdatePartnerAccountInputBuilder {
         &self.sidewalk
     }
     /// <p>The ID of the partner account to update.</p>
+    /// This field is required.
     pub fn partner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdatePartnerAccountInputBuilder {
         &self.partner_account_id
     }
     /// <p>The partner type.</p>
+    /// This field is required.
     pub fn partner_type(mut self, input: crate::types::PartnerType) -> Self {
         self.partner_type = ::std::option::Option::Some(input);
         self

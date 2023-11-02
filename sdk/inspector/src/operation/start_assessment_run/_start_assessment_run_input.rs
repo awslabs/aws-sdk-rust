@@ -34,6 +34,7 @@ pub struct StartAssessmentRunInputBuilder {
 }
 impl StartAssessmentRunInputBuilder {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
+    /// This field is required.
     pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self

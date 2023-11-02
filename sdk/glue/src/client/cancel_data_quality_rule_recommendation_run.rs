@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelDataQualityRuleRecommendationRun`](crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`run_id(impl Into<String>)`](crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunFluentBuilder::set_run_id):<br>required: **true**<br><p>The unique run identifier associated with this run.</p><br>
     /// - On success, responds with [`CancelDataQualityRuleRecommendationRunOutput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunOutput)
     /// - On failure, responds with [`SdkError<CancelDataQualityRuleRecommendationRunError>`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunError)
     pub fn cancel_data_quality_rule_recommendation_run(

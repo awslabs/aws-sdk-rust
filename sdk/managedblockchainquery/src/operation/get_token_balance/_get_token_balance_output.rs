@@ -10,7 +10,7 @@ pub struct GetTokenBalanceOutput {
     /// </note>
     pub token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
     /// <p>The container for the token balance.</p>
-    pub balance: ::std::option::Option<::std::string::String>,
+    pub balance: ::std::string::String,
     /// <p>The container for time.</p>
     pub at_blockchain_instant: ::std::option::Option<crate::types::BlockchainInstant>,
     /// <p>The container for time.</p>
@@ -29,8 +29,9 @@ impl GetTokenBalanceOutput {
         self.token_identifier.as_ref()
     }
     /// <p>The container for the token balance.</p>
-    pub fn balance(&self) -> ::std::option::Option<&str> {
-        self.balance.as_deref()
+    pub fn balance(&self) -> &str {
+        use std::ops::Deref;
+        self.balance.deref()
     }
     /// <p>The container for time.</p>
     pub fn at_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
@@ -100,6 +101,7 @@ impl GetTokenBalanceOutputBuilder {
         &self.token_identifier
     }
     /// <p>The container for the token balance.</p>
+    /// This field is required.
     pub fn balance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.balance = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +116,7 @@ impl GetTokenBalanceOutputBuilder {
         &self.balance
     }
     /// <p>The container for time.</p>
+    /// This field is required.
     pub fn at_blockchain_instant(mut self, input: crate::types::BlockchainInstant) -> Self {
         self.at_blockchain_instant = ::std::option::Option::Some(input);
         self
@@ -151,14 +154,23 @@ impl GetTokenBalanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTokenBalanceOutput`](crate::operation::get_token_balance::GetTokenBalanceOutput).
-    pub fn build(self) -> crate::operation::get_token_balance::GetTokenBalanceOutput {
-        crate::operation::get_token_balance::GetTokenBalanceOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`balance`](crate::operation::get_token_balance::builders::GetTokenBalanceOutputBuilder::balance)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_token_balance::GetTokenBalanceOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_token_balance::GetTokenBalanceOutput {
             owner_identifier: self.owner_identifier,
             token_identifier: self.token_identifier,
-            balance: self.balance,
+            balance: self.balance.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "balance",
+                    "balance was not specified but it is required when building GetTokenBalanceOutput",
+                )
+            })?,
             at_blockchain_instant: self.at_blockchain_instant,
             last_updated_time: self.last_updated_time,
             _request_id: self._request_id,
-        }
+        })
     }
 }

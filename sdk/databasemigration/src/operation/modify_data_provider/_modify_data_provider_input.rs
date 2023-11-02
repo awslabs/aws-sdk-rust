@@ -70,6 +70,7 @@ pub struct ModifyDataProviderInputBuilder {
 }
 impl ModifyDataProviderInputBuilder {
     /// <p>The identifier of the data provider. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn data_provider_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_provider_identifier = ::std::option::Option::Some(input.into());
         self

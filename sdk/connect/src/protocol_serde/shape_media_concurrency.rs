@@ -3,20 +3,20 @@ pub fn ser_media_concurrency(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaConcurrency,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.channel {
-        object.key("Channel").string(var_1.as_str());
+    {
+        object.key("Channel").string(input.channel.as_str());
     }
-    if let Some(var_2) = &input.concurrency {
+    {
         object.key("Concurrency").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.concurrency).into()),
         );
     }
-    if let Some(var_3) = &input.cross_channel_behavior {
+    if let Some(var_1) = &input.cross_channel_behavior {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("CrossChannelBehavior").start_object();
-        crate::protocol_serde::shape_cross_channel_behavior::ser_cross_channel_behavior(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("CrossChannelBehavior").start_object();
+        crate::protocol_serde::shape_cross_channel_behavior::ser_cross_channel_behavior(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::media_concurrency_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

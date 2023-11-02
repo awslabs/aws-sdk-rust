@@ -11,8 +11,10 @@ pub struct DescribeVerifiedAccessInstancesOutput {
 }
 impl DescribeVerifiedAccessInstancesOutput {
     /// <p>The IDs of the Verified Access instances.</p>
-    pub fn verified_access_instances(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessInstance]> {
-        self.verified_access_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_instances.is_none()`.
+    pub fn verified_access_instances(&self) -> &[crate::types::VerifiedAccessInstance] {
+        self.verified_access_instances.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -62,6 +62,7 @@ impl ProcessTypeBuilder {
     /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn process_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.process_name = ::std::option::Option::Some(input.into());
         self

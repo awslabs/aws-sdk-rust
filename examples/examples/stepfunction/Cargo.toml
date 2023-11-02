@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
-aws-sdk-sfn= { version = "0.34.0", path = "../../../sdk/sfn" }
+aws-sdk-sfn= { version = "0.35.0", path = "../../../sdk/sfn" }
 
 [dependencies.tokio]
 version = "1.20.1"

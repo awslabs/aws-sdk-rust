@@ -64,6 +64,7 @@ pub struct AssociateRepositoryInputBuilder {
 }
 impl AssociateRepositoryInputBuilder {
     /// <p>The repository to associate.</p>
+    /// This field is required.
     pub fn repository(mut self, input: crate::types::Repository) -> Self {
         self.repository = ::std::option::Option::Some(input);
         self

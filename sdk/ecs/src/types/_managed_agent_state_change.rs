@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedAgentStateChange {
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub container_name: ::std::option::Option<::std::string::String>,
+    pub container_name: ::std::string::String,
     /// <p>The name of the managed agent.</p>
-    pub managed_agent_name: ::std::option::Option<crate::types::ManagedAgentName>,
+    pub managed_agent_name: crate::types::ManagedAgentName,
     /// <p>The status of the managed agent.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The reason for the status of the managed agent.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ManagedAgentStateChange {
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
-        self.container_name.as_deref()
+    pub fn container_name(&self) -> &str {
+        use std::ops::Deref;
+        self.container_name.deref()
     }
     /// <p>The name of the managed agent.</p>
-    pub fn managed_agent_name(&self) -> ::std::option::Option<&crate::types::ManagedAgentName> {
-        self.managed_agent_name.as_ref()
+    pub fn managed_agent_name(&self) -> &crate::types::ManagedAgentName {
+        &self.managed_agent_name
     }
     /// <p>The status of the managed agent.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The reason for the status of the managed agent.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct ManagedAgentStateChangeBuilder {
 }
 impl ManagedAgentStateChangeBuilder {
     /// <p>The name of the container that's associated with the managed agent.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl ManagedAgentStateChangeBuilder {
         &self.container_name
     }
     /// <p>The name of the managed agent.</p>
+    /// This field is required.
     pub fn managed_agent_name(mut self, input: crate::types::ManagedAgentName) -> Self {
         self.managed_agent_name = ::std::option::Option::Some(input);
         self
@@ -77,6 +81,7 @@ impl ManagedAgentStateChangeBuilder {
         &self.managed_agent_name
     }
     /// <p>The status of the managed agent.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +110,31 @@ impl ManagedAgentStateChangeBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`ManagedAgentStateChange`](crate::types::ManagedAgentStateChange).
-    pub fn build(self) -> crate::types::ManagedAgentStateChange {
-        crate::types::ManagedAgentStateChange {
-            container_name: self.container_name,
-            managed_agent_name: self.managed_agent_name,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`container_name`](crate::types::builders::ManagedAgentStateChangeBuilder::container_name)
+    /// - [`managed_agent_name`](crate::types::builders::ManagedAgentStateChangeBuilder::managed_agent_name)
+    /// - [`status`](crate::types::builders::ManagedAgentStateChangeBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ManagedAgentStateChange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ManagedAgentStateChange {
+            container_name: self.container_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "container_name",
+                    "container_name was not specified but it is required when building ManagedAgentStateChange",
+                )
+            })?,
+            managed_agent_name: self.managed_agent_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "managed_agent_name",
+                    "managed_agent_name was not specified but it is required when building ManagedAgentStateChange",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ManagedAgentStateChange",
+                )
+            })?,
             reason: self.reason,
-        }
+        })
     }
 }

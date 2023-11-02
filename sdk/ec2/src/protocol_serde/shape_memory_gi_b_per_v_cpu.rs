@@ -23,6 +23,7 @@ pub fn ser_memory_gi_b_per_v_cpu(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_memory_gi_b_per_v_cpu(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MemoryGiBPerVCpu, ::aws_smithy_xml::decode::XmlDecodeError> {

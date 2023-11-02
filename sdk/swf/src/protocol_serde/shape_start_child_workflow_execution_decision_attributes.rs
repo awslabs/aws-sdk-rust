@@ -9,44 +9,44 @@ pub fn ser_start_child_workflow_execution_decision_attributes(
         crate::protocol_serde::shape_workflow_type::ser_workflow_type(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.workflow_id {
-        object.key("workflowId").string(var_3.as_str());
+    {
+        object.key("workflowId").string(input.workflow_id.as_str());
     }
-    if let Some(var_4) = &input.control {
-        object.key("control").string(var_4.as_str());
+    if let Some(var_3) = &input.control {
+        object.key("control").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.input {
-        object.key("input").string(var_5.as_str());
+    if let Some(var_4) = &input.input {
+        object.key("input").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.execution_start_to_close_timeout {
-        object.key("executionStartToCloseTimeout").string(var_6.as_str());
+    if let Some(var_5) = &input.execution_start_to_close_timeout {
+        object.key("executionStartToCloseTimeout").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.task_list {
+    if let Some(var_6) = &input.task_list {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("taskList").start_object();
-        crate::protocol_serde::shape_task_list::ser_task_list(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("taskList").start_object();
+        crate::protocol_serde::shape_task_list::ser_task_list(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.task_priority {
-        object.key("taskPriority").string(var_9.as_str());
+    if let Some(var_8) = &input.task_priority {
+        object.key("taskPriority").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.task_start_to_close_timeout {
-        object.key("taskStartToCloseTimeout").string(var_10.as_str());
+    if let Some(var_9) = &input.task_start_to_close_timeout {
+        object.key("taskStartToCloseTimeout").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.child_policy {
-        object.key("childPolicy").string(var_11.as_str());
+    if let Some(var_10) = &input.child_policy {
+        object.key("childPolicy").string(var_10.as_str());
     }
-    if let Some(var_12) = &input.tag_list {
-        let mut array_13 = object.key("tagList").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.tag_list {
+        let mut array_12 = object.key("tagList").start_array();
+        for item_13 in var_11 {
             {
-                array_13.value().string(item_14.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
-    if let Some(var_15) = &input.lambda_role {
-        object.key("lambdaRole").string(var_15.as_str());
+    if let Some(var_14) = &input.lambda_role {
+        object.key("lambdaRole").string(var_14.as_str());
     }
     Ok(())
 }

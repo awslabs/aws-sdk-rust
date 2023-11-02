@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunCommandParameters {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub run_command_targets: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>,
+    pub run_command_targets: ::std::vec::Vec<crate::types::RunCommandTarget>,
 }
 impl RunCommandParameters {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub fn run_command_targets(&self) -> ::std::option::Option<&[crate::types::RunCommandTarget]> {
-        self.run_command_targets.as_deref()
+    pub fn run_command_targets(&self) -> &[crate::types::RunCommandTarget] {
+        use std::ops::Deref;
+        self.run_command_targets.deref()
     }
 }
 impl RunCommandParameters {
@@ -48,9 +49,16 @@ impl RunCommandParametersBuilder {
         &self.run_command_targets
     }
     /// Consumes the builder and constructs a [`RunCommandParameters`](crate::types::RunCommandParameters).
-    pub fn build(self) -> crate::types::RunCommandParameters {
-        crate::types::RunCommandParameters {
-            run_command_targets: self.run_command_targets,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`run_command_targets`](crate::types::builders::RunCommandParametersBuilder::run_command_targets)
+    pub fn build(self) -> ::std::result::Result<crate::types::RunCommandParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RunCommandParameters {
+            run_command_targets: self.run_command_targets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "run_command_targets",
+                    "run_command_targets was not specified but it is required when building RunCommandParameters",
+                )
+            })?,
+        })
     }
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteScene`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
-    ///   - [`scene_id(impl Into<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::scene_id) / [`set_scene_id(Option<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::set_scene_id): <p>The ID of the scene to delete.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::workspace_id) / [`set_workspace_id(impl Into<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
+    ///   - [`scene_id(impl Into<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::scene_id) / [`set_scene_id(impl Into<String>)`](crate::operation::delete_scene::builders::DeleteSceneFluentBuilder::set_scene_id):<br>required: **true**<br><p>The ID of the scene to delete.</p><br>
     /// - On success, responds with [`DeleteSceneOutput`](crate::operation::delete_scene::DeleteSceneOutput)
     /// - On failure, responds with [`SdkError<DeleteSceneError>`](crate::operation::delete_scene::DeleteSceneError)
     pub fn delete_scene(&self) -> crate::operation::delete_scene::builders::DeleteSceneFluentBuilder {

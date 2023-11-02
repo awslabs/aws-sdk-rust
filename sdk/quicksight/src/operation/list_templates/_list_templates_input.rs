@@ -41,6 +41,7 @@ pub struct ListTemplatesInputBuilder {
 }
 impl ListTemplatesInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self

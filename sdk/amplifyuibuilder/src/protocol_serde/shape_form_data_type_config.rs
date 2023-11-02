@@ -3,11 +3,11 @@ pub fn ser_form_data_type_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormDataTypeConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_source_type {
-        object.key("dataSourceType").string(var_1.as_str());
+    {
+        object.key("dataSourceType").string(input.data_source_type.as_str());
     }
-    if let Some(var_2) = &input.data_type_name {
-        object.key("dataTypeName").string(var_2.as_str());
+    {
+        object.key("dataTypeName").string(input.data_type_name.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::form_data_type_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

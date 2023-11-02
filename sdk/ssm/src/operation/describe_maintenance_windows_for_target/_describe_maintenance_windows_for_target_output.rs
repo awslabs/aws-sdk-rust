@@ -11,8 +11,10 @@ pub struct DescribeMaintenanceWindowsForTargetOutput {
 }
 impl DescribeMaintenanceWindowsForTargetOutput {
     /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
-    pub fn window_identities(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowIdentityForTarget]> {
-        self.window_identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.window_identities.is_none()`.
+    pub fn window_identities(&self) -> &[crate::types::MaintenanceWindowIdentityForTarget] {
+        self.window_identities.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -9,8 +9,10 @@ pub struct Homogeneous {
 }
 impl Homogeneous {
     /// <p> The target database engine for homogeneous database migration preferences. </p>
-    pub fn target_database_engine(&self) -> ::std::option::Option<&[crate::types::HomogeneousTargetDatabaseEngine]> {
-        self.target_database_engine.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_database_engine.is_none()`.
+    pub fn target_database_engine(&self) -> &[crate::types::HomogeneousTargetDatabaseEngine] {
+        self.target_database_engine.as_deref().unwrap_or_default()
     }
 }
 impl Homogeneous {

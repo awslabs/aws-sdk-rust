@@ -3,20 +3,20 @@ pub fn ser_device_registry_enrich_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeviceRegistryEnrichActivity,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.attribute {
-        object.key("attribute").string(var_2.as_str());
+    {
+        object.key("attribute").string(input.attribute.as_str());
     }
-    if let Some(var_3) = &input.thing_name {
-        object.key("thingName").string(var_3.as_str());
+    {
+        object.key("thingName").string(input.thing_name.as_str());
     }
-    if let Some(var_4) = &input.role_arn {
-        object.key("roleArn").string(var_4.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_5) = &input.next {
-        object.key("next").string(var_5.as_str());
+    if let Some(var_1) = &input.next {
+        object.key("next").string(var_1.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::device_registry_enrich_activity_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

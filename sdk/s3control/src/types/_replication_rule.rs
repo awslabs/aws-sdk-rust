@@ -17,7 +17,7 @@ pub struct ReplicationRule {
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> element must specify exactly one <code>Prefix</code>, <code>Tag</code>, or <code>And</code> child element.</p>
     pub filter: ::std::option::Option<crate::types::ReplicationRuleFilter>,
     /// <p>Specifies whether the rule is enabled.</p>
-    pub status: ::std::option::Option<crate::types::ReplicationRuleStatus>,
+    pub status: crate::types::ReplicationRuleStatus,
     /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
     pub source_selection_criteria: ::std::option::Option<crate::types::SourceSelectionCriteria>,
     /// <p>An optional configuration to replicate existing source bucket objects. </p> <note>
@@ -30,7 +30,7 @@ pub struct ReplicationRule {
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p>
     pub delete_marker_replication: ::std::option::Option<crate::types::DeleteMarkerReplication>,
     /// <p>The Amazon Resource Name (ARN) of the access point for the source Outposts bucket that you want S3 on Outposts to replicate the objects from.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
 }
 impl ReplicationRule {
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
@@ -54,8 +54,8 @@ impl ReplicationRule {
         self.filter.as_ref()
     }
     /// <p>Specifies whether the rule is enabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationRuleStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReplicationRuleStatus {
+        &self.status
     }
     /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
     pub fn source_selection_criteria(&self) -> ::std::option::Option<&crate::types::SourceSelectionCriteria> {
@@ -77,8 +77,9 @@ impl ReplicationRule {
         self.delete_marker_replication.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access point for the source Outposts bucket that you want S3 on Outposts to replicate the objects from.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
 }
 impl ReplicationRule {
@@ -173,6 +174,7 @@ impl ReplicationRuleBuilder {
         &self.filter
     }
     /// <p>Specifies whether the rule is enabled.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReplicationRuleStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -221,6 +223,7 @@ impl ReplicationRuleBuilder {
         &self.existing_object_replication
     }
     /// <p>A container for information about the replication destination and its configurations.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -252,6 +255,7 @@ impl ReplicationRuleBuilder {
         &self.delete_marker_replication
     }
     /// <p>The Amazon Resource Name (ARN) of the access point for the source Outposts bucket that you want S3 on Outposts to replicate the objects from.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -266,18 +270,31 @@ impl ReplicationRuleBuilder {
         &self.bucket
     }
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
-    pub fn build(self) -> crate::types::ReplicationRule {
-        crate::types::ReplicationRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ReplicationRuleBuilder::status)
+    /// - [`bucket`](crate::types::builders::ReplicationRuleBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationRule {
             id: self.id,
             priority: self.priority,
             prefix: self.prefix,
             filter: self.filter,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ReplicationRule",
+                )
+            })?,
             source_selection_criteria: self.source_selection_criteria,
             existing_object_replication: self.existing_object_replication,
             destination: self.destination,
             delete_marker_replication: self.delete_marker_replication,
-            bucket: self.bucket,
-        }
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building ReplicationRule",
+                )
+            })?,
+        })
     }
 }

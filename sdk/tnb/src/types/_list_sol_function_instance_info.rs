@@ -6,17 +6,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolFunctionInstanceInfo {
     /// <p>Network function instance ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Network function instance ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Network instance ID.</p>
-    pub ns_instance_id: ::std::option::Option<::std::string::String>,
+    pub ns_instance_id: ::std::string::String,
     /// <p>Function package ID.</p>
-    pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
+    pub vnf_pkg_id: ::std::string::String,
     /// <p>Function package name.</p>
     pub vnf_pkg_name: ::std::option::Option<::std::string::String>,
     /// <p>Network function instance instantiation state.</p>
-    pub instantiation_state: ::std::option::Option<crate::types::VnfInstantiationState>,
+    pub instantiation_state: crate::types::VnfInstantiationState,
     /// <p>Information about a network function.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
     pub instantiated_vnf_info: ::std::option::Option<crate::types::GetSolInstantiatedVnfInfo>,
@@ -25,28 +25,32 @@ pub struct ListSolFunctionInstanceInfo {
 }
 impl ListSolFunctionInstanceInfo {
     /// <p>Network function instance ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Network function instance ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(&self) -> ::std::option::Option<&str> {
-        self.ns_instance_id.as_deref()
+    pub fn ns_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ns_instance_id.deref()
     }
     /// <p>Function package ID.</p>
-    pub fn vnf_pkg_id(&self) -> ::std::option::Option<&str> {
-        self.vnf_pkg_id.as_deref()
+    pub fn vnf_pkg_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vnf_pkg_id.deref()
     }
     /// <p>Function package name.</p>
     pub fn vnf_pkg_name(&self) -> ::std::option::Option<&str> {
         self.vnf_pkg_name.as_deref()
     }
     /// <p>Network function instance instantiation state.</p>
-    pub fn instantiation_state(&self) -> ::std::option::Option<&crate::types::VnfInstantiationState> {
-        self.instantiation_state.as_ref()
+    pub fn instantiation_state(&self) -> &crate::types::VnfInstantiationState {
+        &self.instantiation_state
     }
     /// <p>Information about a network function.</p>
     /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
@@ -80,6 +84,7 @@ pub struct ListSolFunctionInstanceInfoBuilder {
 }
 impl ListSolFunctionInstanceInfoBuilder {
     /// <p>Network function instance ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +99,7 @@ impl ListSolFunctionInstanceInfoBuilder {
         &self.id
     }
     /// <p>Network function instance ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +114,7 @@ impl ListSolFunctionInstanceInfoBuilder {
         &self.arn
     }
     /// <p>Network instance ID.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +129,7 @@ impl ListSolFunctionInstanceInfoBuilder {
         &self.ns_instance_id
     }
     /// <p>Function package ID.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +158,7 @@ impl ListSolFunctionInstanceInfoBuilder {
         &self.vnf_pkg_name
     }
     /// <p>Network function instance instantiation state.</p>
+    /// This field is required.
     pub fn instantiation_state(mut self, input: crate::types::VnfInstantiationState) -> Self {
         self.instantiation_state = ::std::option::Option::Some(input);
         self
@@ -181,6 +190,7 @@ impl ListSolFunctionInstanceInfoBuilder {
         &self.instantiated_vnf_info
     }
     /// <p>Network function instance metadata.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::ListSolFunctionInstanceMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -195,16 +205,47 @@ impl ListSolFunctionInstanceInfoBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolFunctionInstanceInfo`](crate::types::ListSolFunctionInstanceInfo).
-    pub fn build(self) -> crate::types::ListSolFunctionInstanceInfo {
-        crate::types::ListSolFunctionInstanceInfo {
-            id: self.id,
-            arn: self.arn,
-            ns_instance_id: self.ns_instance_id,
-            vnf_pkg_id: self.vnf_pkg_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::id)
+    /// - [`arn`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::arn)
+    /// - [`ns_instance_id`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::ns_instance_id)
+    /// - [`vnf_pkg_id`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::vnf_pkg_id)
+    /// - [`instantiation_state`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::instantiation_state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolFunctionInstanceInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListSolFunctionInstanceInfo {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ListSolFunctionInstanceInfo",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListSolFunctionInstanceInfo",
+                )
+            })?,
+            ns_instance_id: self.ns_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ns_instance_id",
+                    "ns_instance_id was not specified but it is required when building ListSolFunctionInstanceInfo",
+                )
+            })?,
+            vnf_pkg_id: self.vnf_pkg_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vnf_pkg_id",
+                    "vnf_pkg_id was not specified but it is required when building ListSolFunctionInstanceInfo",
+                )
+            })?,
             vnf_pkg_name: self.vnf_pkg_name,
-            instantiation_state: self.instantiation_state,
+            instantiation_state: self.instantiation_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instantiation_state",
+                    "instantiation_state was not specified but it is required when building ListSolFunctionInstanceInfo",
+                )
+            })?,
             instantiated_vnf_info: self.instantiated_vnf_info,
             metadata: self.metadata,
-        }
+        })
     }
 }

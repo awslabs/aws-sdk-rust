@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDatabase`](crate::operation::get_database::builders::GetDatabaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_catalog_id): <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_name): <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
+    ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_name):<br>required: **true**<br><p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p><br>
     /// - On success, responds with [`GetDatabaseOutput`](crate::operation::get_database::GetDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::get_database::GetDatabaseOutput::database): <p>The definition of the specified database in the Data Catalog.</p>
     /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::operation::get_database::GetDatabaseError)

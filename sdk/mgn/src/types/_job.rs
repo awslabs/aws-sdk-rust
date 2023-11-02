@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Job {
     /// <p>Job ID.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>the ARN of the specific Job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Job type.</p>
@@ -25,8 +25,9 @@ pub struct Job {
 }
 impl Job {
     /// <p>Job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>the ARN of the specific Job.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -53,8 +54,10 @@ impl Job {
         self.status.as_ref()
     }
     /// <p>Servers participating in a specific Job.</p>
-    pub fn participating_servers(&self) -> ::std::option::Option<&[crate::types::ParticipatingServer]> {
-        self.participating_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participating_servers.is_none()`.
+    pub fn participating_servers(&self) -> &[crate::types::ParticipatingServer] {
+        self.participating_servers.as_deref().unwrap_or_default()
     }
     /// <p>Tags associated with specific Job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -99,6 +102,7 @@ pub struct JobBuilder {
 }
 impl JobBuilder {
     /// <p>Job ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -237,9 +241,16 @@ impl JobBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
-    pub fn build(self) -> crate::types::Job {
-        crate::types::Job {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::types::builders::JobBuilder::job_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Job {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building Job",
+                )
+            })?,
             arn: self.arn,
             r#type: self.r#type,
             initiated_by: self.initiated_by,
@@ -248,7 +259,7 @@ impl JobBuilder {
             status: self.status,
             participating_servers: self.participating_servers,
             tags: self.tags,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for JobBuilder {

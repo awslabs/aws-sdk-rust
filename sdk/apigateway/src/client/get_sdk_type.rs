@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSdkType`](crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder::set_id): <p>The identifier of the queried SdkType instance.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sdk_type::builders::GetSdkTypeFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the queried SdkType instance.</p><br>
     /// - On success, responds with [`GetSdkTypeOutput`](crate::operation::get_sdk_type::GetSdkTypeOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sdk_type::GetSdkTypeOutput::id): <p>The identifier of an SdkType instance.</p>
     ///   - [`friendly_name(Option<String>)`](crate::operation::get_sdk_type::GetSdkTypeOutput::friendly_name): <p>The user-friendly name of an SdkType instance.</p>

@@ -55,6 +55,7 @@ pub struct ListObjectChildrenInputBuilder {
 }
 impl ListObjectChildrenInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListObjectChildrenInputBuilder {
         &self.directory_arn
     }
     /// <p>The reference that identifies the object for which child objects are being listed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

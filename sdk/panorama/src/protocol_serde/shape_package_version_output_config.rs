@@ -3,11 +3,11 @@ pub fn ser_package_version_output_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PackageVersionOutputConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.package_name {
-        object.key("PackageName").string(var_1.as_str());
+    {
+        object.key("PackageName").string(input.package_name.as_str());
     }
-    if let Some(var_2) = &input.package_version {
-        object.key("PackageVersion").string(var_2.as_str());
+    {
+        object.key("PackageVersion").string(input.package_version.as_str());
     }
     if input.mark_latest {
         object.key("MarkLatest").boolean(input.mark_latest);
@@ -57,7 +57,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::package_version_output_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

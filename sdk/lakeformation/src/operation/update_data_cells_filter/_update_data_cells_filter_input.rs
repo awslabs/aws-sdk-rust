@@ -27,6 +27,7 @@ pub struct UpdateDataCellsFilterInputBuilder {
 }
 impl UpdateDataCellsFilterInputBuilder {
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    /// This field is required.
     pub fn table_data(mut self, input: crate::types::DataCellsFilter) -> Self {
         self.table_data = ::std::option::Option::Some(input);
         self

@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReadSetActivationJob`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_id): <p>The job's ID.</p>
-    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_sequence_store_id): <p>The job's sequence store ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_id):<br>required: **true**<br><p>The job's ID.</p><br>
+    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_sequence_store_id):<br>required: **true**<br><p>The job's sequence store ID.</p><br>
     /// - On success, responds with [`GetReadSetActivationJobOutput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::id): <p>The job's ID.</p>
-    ///   - [`sequence_store_id(Option<String>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>
-    ///   - [`status(Option<ReadSetActivationJobStatus>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::status): <p>The job's status.</p>
+    ///   - [`id(String)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::id): <p>The job's ID.</p>
+    ///   - [`sequence_store_id(String)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>
+    ///   - [`status(ReadSetActivationJobStatus)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::status): <p>The job's status.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::status_message): <p>The job's status message.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::creation_time): <p>When the job was created.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::creation_time): <p>When the job was created.</p>
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::completion_time): <p>When the job completed.</p>
     ///   - [`sources(Option<Vec<ActivateReadSetSourceItem>>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReadSetActivationJobError>`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobError)

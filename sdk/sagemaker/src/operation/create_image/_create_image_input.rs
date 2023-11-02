@@ -32,8 +32,10 @@ impl CreateImageInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of tags to apply to the image.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateImageInput {
@@ -83,6 +85,7 @@ impl CreateImageInputBuilder {
         &self.display_name
     }
     /// <p>The name of the image. Must be unique to your account.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateImageInputBuilder {
         &self.image_name
     }
     /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

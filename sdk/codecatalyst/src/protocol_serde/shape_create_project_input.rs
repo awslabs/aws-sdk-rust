@@ -6,8 +6,8 @@ pub fn ser_create_project_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.display_name {
-        object.key("displayName").string(var_2.as_str());
+    {
+        object.key("displayName").string(input.display_name.as_str());
     }
     Ok(())
 }

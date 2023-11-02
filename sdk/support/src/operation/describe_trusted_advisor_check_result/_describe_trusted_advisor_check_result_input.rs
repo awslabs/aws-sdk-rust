@@ -63,6 +63,7 @@ pub struct DescribeTrustedAdvisorCheckResultInputBuilder {
 }
 impl DescribeTrustedAdvisorCheckResultInputBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_id = ::std::option::Option::Some(input.into());
         self

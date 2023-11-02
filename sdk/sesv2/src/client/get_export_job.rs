@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExportJob`](crate::operation::get_export_job::builders::GetExportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_export_job::builders::GetExportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_export_job::builders::GetExportJobFluentBuilder::set_job_id): <p>The export job ID.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_export_job::builders::GetExportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_export_job::builders::GetExportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The export job ID.</p><br>
     /// - On success, responds with [`GetExportJobOutput`](crate::operation::get_export_job::GetExportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::get_export_job::GetExportJobOutput::job_id): <p>The export job ID.</p>
     ///   - [`export_source_type(Option<ExportSourceType>)`](crate::operation::get_export_job::GetExportJobOutput::export_source_type): <p>The type of source of the export job.</p>

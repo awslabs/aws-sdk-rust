@@ -7,7 +7,7 @@ pub struct FieldGroup {
     /// <p>Name of the field group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
+    pub fields: ::std::vec::Vec<crate::types::FieldItem>,
 }
 impl FieldGroup {
     /// <p>Name of the field group.</p>
@@ -15,8 +15,9 @@ impl FieldGroup {
         self.name.as_deref()
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldItem]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::FieldItem] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
 }
 impl FieldGroup {
@@ -69,10 +70,17 @@ impl FieldGroupBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`FieldGroup`](crate::types::FieldGroup).
-    pub fn build(self) -> crate::types::FieldGroup {
-        crate::types::FieldGroup {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fields`](crate::types::builders::FieldGroupBuilder::fields)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldGroup, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldGroup {
             name: self.name,
-            fields: self.fields,
-        }
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building FieldGroup",
+                )
+            })?,
+        })
     }
 }

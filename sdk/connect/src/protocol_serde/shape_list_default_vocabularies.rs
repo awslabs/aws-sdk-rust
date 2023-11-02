@@ -103,7 +103,9 @@ pub fn de_list_default_vocabularies_http_response(
         output = crate::protocol_serde::shape_list_default_vocabularies::de_list_default_vocabularies(_response_body, output)
             .map_err(crate::operation::list_default_vocabularies::ListDefaultVocabulariesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_default_vocabularies_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_default_vocabularies::ListDefaultVocabulariesError::unhandled)?
     })
 }
 

@@ -4,12 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScalingPlanOutput {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-    pub scaling_plan_version: ::std::option::Option<i64>,
+    pub scaling_plan_version: i64,
     _request_id: Option<String>,
 }
 impl CreateScalingPlanOutput {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
-    pub fn scaling_plan_version(&self) -> ::std::option::Option<i64> {
+    pub fn scaling_plan_version(&self) -> i64 {
         self.scaling_plan_version
     }
 }
@@ -34,6 +34,7 @@ pub struct CreateScalingPlanOutputBuilder {
 }
 impl CreateScalingPlanOutputBuilder {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    /// This field is required.
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,19 @@ impl CreateScalingPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateScalingPlanOutput`](crate::operation::create_scaling_plan::CreateScalingPlanOutput).
-    pub fn build(self) -> crate::operation::create_scaling_plan::CreateScalingPlanOutput {
-        crate::operation::create_scaling_plan::CreateScalingPlanOutput {
-            scaling_plan_version: self.scaling_plan_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scaling_plan_version`](crate::operation::create_scaling_plan::builders::CreateScalingPlanOutputBuilder::scaling_plan_version)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_scaling_plan::CreateScalingPlanOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_scaling_plan::CreateScalingPlanOutput {
+            scaling_plan_version: self.scaling_plan_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scaling_plan_version",
+                    "scaling_plan_version was not specified but it is required when building CreateScalingPlanOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

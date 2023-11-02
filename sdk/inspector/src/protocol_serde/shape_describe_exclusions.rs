@@ -28,11 +28,10 @@ pub fn de_describe_exclusions_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_exclusions::DescribeExclusionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_exclusions::DescribeExclusionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidInputException" => crate::operation::describe_exclusions::DescribeExclusionsError::InvalidInputException({
@@ -43,11 +42,10 @@ pub fn de_describe_exclusions_http_error(
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_exclusions::DescribeExclusionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_input_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_exclusions::DescribeExclusionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_exclusions::DescribeExclusionsError::generic(generic),
@@ -69,7 +67,9 @@ pub fn de_describe_exclusions_http_response(
         output = crate::protocol_serde::shape_describe_exclusions::de_describe_exclusions(_response_body, output)
             .map_err(crate::operation::describe_exclusions::DescribeExclusionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_exclusions_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_exclusions::DescribeExclusionsError::unhandled)?
     })
 }
 

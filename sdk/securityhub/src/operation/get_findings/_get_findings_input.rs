@@ -23,8 +23,10 @@ impl GetFindingsInput {
         self.filters.as_ref()
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&[crate::types::SortCriterion]> {
-        self.sort_criteria.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_criteria.is_none()`.
+    pub fn sort_criteria(&self) -> &[crate::types::SortCriterion] {
+        self.sort_criteria.as_deref().unwrap_or_default()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>

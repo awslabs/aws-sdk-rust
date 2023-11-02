@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamodbDataSourceConfig {
     /// <p>The table name.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>The Amazon Web Services Region.</p>
-    pub aws_region: ::std::option::Option<::std::string::String>,
+    pub aws_region: ::std::string::String,
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
     pub use_caller_credentials: bool,
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
@@ -17,12 +17,14 @@ pub struct DynamodbDataSourceConfig {
 }
 impl DynamodbDataSourceConfig {
     /// <p>The table name.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
-        self.aws_region.as_deref()
+    pub fn aws_region(&self) -> &str {
+        use std::ops::Deref;
+        self.aws_region.deref()
     }
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
     pub fn use_caller_credentials(&self) -> bool {
@@ -56,6 +58,7 @@ pub struct DynamodbDataSourceConfigBuilder {
 }
 impl DynamodbDataSourceConfigBuilder {
     /// <p>The table name.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl DynamodbDataSourceConfigBuilder {
         &self.table_name
     }
     /// <p>The Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +130,26 @@ impl DynamodbDataSourceConfigBuilder {
         &self.versioned
     }
     /// Consumes the builder and constructs a [`DynamodbDataSourceConfig`](crate::types::DynamodbDataSourceConfig).
-    pub fn build(self) -> crate::types::DynamodbDataSourceConfig {
-        crate::types::DynamodbDataSourceConfig {
-            table_name: self.table_name,
-            aws_region: self.aws_region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::DynamodbDataSourceConfigBuilder::table_name)
+    /// - [`aws_region`](crate::types::builders::DynamodbDataSourceConfigBuilder::aws_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamodbDataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DynamodbDataSourceConfig {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building DynamodbDataSourceConfig",
+                )
+            })?,
+            aws_region: self.aws_region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aws_region",
+                    "aws_region was not specified but it is required when building DynamodbDataSourceConfig",
+                )
+            })?,
             use_caller_credentials: self.use_caller_credentials.unwrap_or_default(),
             delta_sync_config: self.delta_sync_config,
             versioned: self.versioned.unwrap_or_default(),
-        }
+        })
     }
 }

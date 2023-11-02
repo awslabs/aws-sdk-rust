@@ -41,6 +41,7 @@ pub struct GetLaunchProfileMemberInputBuilder {
 }
 impl GetLaunchProfileMemberInputBuilder {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetLaunchProfileMemberInputBuilder {
         &self.launch_profile_id
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetLaunchProfileMemberInputBuilder {
         &self.principal_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

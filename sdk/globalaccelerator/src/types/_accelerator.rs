@@ -53,8 +53,10 @@ impl Accelerator {
         self.enabled
     }
     /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
-    pub fn ip_sets(&self) -> ::std::option::Option<&[crate::types::IpSet]> {
-        self.ip_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_sets.is_none()`.
+    pub fn ip_sets(&self) -> &[crate::types::IpSet] {
+        self.ip_sets.as_deref().unwrap_or_default()
     }
     /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to an accelerator's static IPv4 addresses.</p>
     /// <p>The naming convention for the DNS name for an accelerator is the following: A lowercase letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.</p>
@@ -83,8 +85,10 @@ impl Accelerator {
         self.dual_stack_dns_name.as_deref()
     }
     /// <p>A history of changes that you make to an accelerator in Global Accelerator.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::AcceleratorEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::AcceleratorEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl Accelerator {

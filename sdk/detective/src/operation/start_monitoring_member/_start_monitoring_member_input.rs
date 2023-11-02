@@ -36,6 +36,7 @@ pub struct StartMonitoringMemberInputBuilder {
 }
 impl StartMonitoringMemberInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl StartMonitoringMemberInputBuilder {
     }
     /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

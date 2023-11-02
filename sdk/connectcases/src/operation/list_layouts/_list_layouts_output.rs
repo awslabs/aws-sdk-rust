@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLayoutsOutput {
     /// <p>The layouts for the domain.</p>
-    pub layouts: ::std::option::Option<::std::vec::Vec<crate::types::LayoutSummary>>,
+    pub layouts: ::std::vec::Vec<crate::types::LayoutSummary>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLayoutsOutput {
     /// <p>The layouts for the domain.</p>
-    pub fn layouts(&self) -> ::std::option::Option<&[crate::types::LayoutSummary]> {
-        self.layouts.as_deref()
+    pub fn layouts(&self) -> &[crate::types::LayoutSummary] {
+        use std::ops::Deref;
+        self.layouts.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListLayoutsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLayoutsOutput`](crate::operation::list_layouts::ListLayoutsOutput).
-    pub fn build(self) -> crate::operation::list_layouts::ListLayoutsOutput {
-        crate::operation::list_layouts::ListLayoutsOutput {
-            layouts: self.layouts,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`layouts`](crate::operation::list_layouts::builders::ListLayoutsOutputBuilder::layouts)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_layouts::ListLayoutsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_layouts::ListLayoutsOutput {
+            layouts: self.layouts.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "layouts",
+                    "layouts was not specified but it is required when building ListLayoutsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

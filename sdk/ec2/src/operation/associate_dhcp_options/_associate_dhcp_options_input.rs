@@ -41,6 +41,7 @@ pub struct AssociateDhcpOptionsInputBuilder {
 }
 impl AssociateDhcpOptionsInputBuilder {
     /// <p>The ID of the DHCP options set, or <code>default</code> to associate no DHCP options with the VPC.</p>
+    /// This field is required.
     pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateDhcpOptionsInputBuilder {
         &self.dhcp_options_id
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

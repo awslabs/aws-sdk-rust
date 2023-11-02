@@ -75,8 +75,10 @@ impl Host {
         self.host_reservation_id.as_deref()
     }
     /// <p>The IDs and instance type that are currently running on the Dedicated Host.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::HostInstance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::HostInstance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The Dedicated Host's state.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::AllocationState> {
@@ -91,8 +93,10 @@ impl Host {
         self.release_time.as_ref()
     }
     /// <p>Any tags assigned to the Dedicated Host.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether host recovery is enabled or disabled for the Dedicated Host.</p>
     pub fn host_recovery(&self) -> ::std::option::Option<&crate::types::HostRecovery> {

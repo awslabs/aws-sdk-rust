@@ -6,6 +6,10 @@
 pub struct Component {
     /// <p>The ID of the component.</p>
     pub component_id: ::std::option::Option<::std::string::String>,
+    /// <p>The SAP System Identifier of the application component.</p>
+    pub sid: ::std::option::Option<::std::string::String>,
+    /// <p>The SAP system number of the application component.</p>
+    pub system_number: ::std::option::Option<::std::string::String>,
     /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
     pub parent_component: ::std::option::Option<::std::string::String>,
     /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
@@ -15,9 +19,20 @@ pub struct Component {
     /// <p>The type of the component.</p>
     pub component_type: ::std::option::Option<crate::types::ComponentType>,
     /// <p>The status of the component.</p>
+    /// <ul>
+    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
+    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
+    /// <li> <p>STOPPED - the component is not running.</p> </li>
+    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
+    /// <li> <p>RUNNING - the component is running.</p> </li>
+    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
+    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// </ul>
     pub status: ::std::option::Option<crate::types::ComponentStatus>,
     /// <p>The hostname of the component.</p>
     pub sap_hostname: ::std::option::Option<::std::string::String>,
+    /// <p>The SAP feature of the component.</p>
+    pub sap_feature: ::std::option::Option<::std::string::String>,
     /// <p>The kernel version of the component.</p>
     pub sap_kernel_version: ::std::option::Option<::std::string::String>,
     /// <p>The SAP HANA version of the component.</p>
@@ -34,6 +49,8 @@ pub struct Component {
     /// <p>The primary host of the component.</p>
     #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub primary_host: ::std::option::Option<::std::string::String>,
+    /// <p>The connection specifications for the database of the component.</p>
+    pub database_connection: ::std::option::Option<crate::types::DatabaseConnection>,
     /// <p>The time at which the component was last updated.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -44,13 +61,23 @@ impl Component {
     pub fn component_id(&self) -> ::std::option::Option<&str> {
         self.component_id.as_deref()
     }
+    /// <p>The SAP System Identifier of the application component.</p>
+    pub fn sid(&self) -> ::std::option::Option<&str> {
+        self.sid.as_deref()
+    }
+    /// <p>The SAP system number of the application component.</p>
+    pub fn system_number(&self) -> ::std::option::Option<&str> {
+        self.system_number.as_deref()
+    }
     /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
     pub fn parent_component(&self) -> ::std::option::Option<&str> {
         self.parent_component.as_deref()
     }
     /// <p>The child components of a highly available environment. For example, in a highly available SAP on AWS workload, the child component consists of the primary and secondar instances.</p>
-    pub fn child_components(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.child_components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.child_components.is_none()`.
+    pub fn child_components(&self) -> &[::std::string::String] {
+        self.child_components.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
@@ -61,12 +88,25 @@ impl Component {
         self.component_type.as_ref()
     }
     /// <p>The status of the component.</p>
+    /// <ul>
+    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
+    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
+    /// <li> <p>STOPPED - the component is not running.</p> </li>
+    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
+    /// <li> <p>RUNNING - the component is running.</p> </li>
+    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
+    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComponentStatus> {
         self.status.as_ref()
     }
     /// <p>The hostname of the component.</p>
     pub fn sap_hostname(&self) -> ::std::option::Option<&str> {
         self.sap_hostname.as_deref()
+    }
+    /// <p>The SAP feature of the component.</p>
+    pub fn sap_feature(&self) -> ::std::option::Option<&str> {
+        self.sap_feature.as_deref()
     }
     /// <p>The kernel version of the component.</p>
     pub fn sap_kernel_version(&self) -> ::std::option::Option<&str> {
@@ -85,18 +125,26 @@ impl Component {
         self.associated_host.as_ref()
     }
     /// <p>The SAP HANA databases of the component.</p>
-    pub fn databases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.databases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.databases.is_none()`.
+    pub fn databases(&self) -> &[::std::string::String] {
+        self.databases.as_deref().unwrap_or_default()
     }
     /// <p>The hosts of the component.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hosts.is_none()`.
     #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
-    pub fn hosts(&self) -> ::std::option::Option<&[crate::types::Host]> {
-        self.hosts.as_deref()
+    pub fn hosts(&self) -> &[crate::types::Host] {
+        self.hosts.as_deref().unwrap_or_default()
     }
     /// <p>The primary host of the component.</p>
     #[deprecated(note = "This shape is no longer used. Please use AssociatedHost.")]
     pub fn primary_host(&self) -> ::std::option::Option<&str> {
         self.primary_host.as_deref()
+    }
+    /// <p>The connection specifications for the database of the component.</p>
+    pub fn database_connection(&self) -> ::std::option::Option<&crate::types::DatabaseConnection> {
+        self.database_connection.as_ref()
     }
     /// <p>The time at which the component was last updated.</p>
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -119,12 +167,15 @@ impl Component {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sid: ::std::option::Option<::std::string::String>,
+    pub(crate) system_number: ::std::option::Option<::std::string::String>,
     pub(crate) parent_component: ::std::option::Option<::std::string::String>,
     pub(crate) child_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type: ::std::option::Option<crate::types::ComponentType>,
     pub(crate) status: ::std::option::Option<crate::types::ComponentStatus>,
     pub(crate) sap_hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) sap_feature: ::std::option::Option<::std::string::String>,
     pub(crate) sap_kernel_version: ::std::option::Option<::std::string::String>,
     pub(crate) hdb_version: ::std::option::Option<::std::string::String>,
     pub(crate) resilience: ::std::option::Option<crate::types::Resilience>,
@@ -132,6 +183,7 @@ pub struct ComponentBuilder {
     pub(crate) databases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) hosts: ::std::option::Option<::std::vec::Vec<crate::types::Host>>,
     pub(crate) primary_host: ::std::option::Option<::std::string::String>,
+    pub(crate) database_connection: ::std::option::Option<crate::types::DatabaseConnection>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
@@ -149,6 +201,34 @@ impl ComponentBuilder {
     /// <p>The ID of the component.</p>
     pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_id
+    }
+    /// <p>The SAP System Identifier of the application component.</p>
+    pub fn sid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sid = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SAP System Identifier of the application component.</p>
+    pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sid = input;
+        self
+    }
+    /// <p>The SAP System Identifier of the application component.</p>
+    pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sid
+    }
+    /// <p>The SAP system number of the application component.</p>
+    pub fn system_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.system_number = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SAP system number of the application component.</p>
+    pub fn set_system_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.system_number = input;
+        self
+    }
+    /// <p>The SAP system number of the application component.</p>
+    pub fn get_system_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.system_number
     }
     /// <p>The parent component of a highly available environment. For example, in a highly available SAP on AWS workload, the parent component consists of the entire setup, including the child components.</p>
     pub fn parent_component(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,16 +293,43 @@ impl ComponentBuilder {
         &self.component_type
     }
     /// <p>The status of the component.</p>
+    /// <ul>
+    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
+    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
+    /// <li> <p>STOPPED - the component is not running.</p> </li>
+    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
+    /// <li> <p>RUNNING - the component is running.</p> </li>
+    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
+    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// </ul>
     pub fn status(mut self, input: crate::types::ComponentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the component.</p>
+    /// <ul>
+    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
+    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
+    /// <li> <p>STOPPED - the component is not running.</p> </li>
+    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
+    /// <li> <p>RUNNING - the component is running.</p> </li>
+    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
+    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComponentStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status of the component.</p>
+    /// <ul>
+    /// <li> <p>ACTIVATED - this status has been deprecated.</p> </li>
+    /// <li> <p>STARTING - the component is in the process of being started.</p> </li>
+    /// <li> <p>STOPPED - the component is not running.</p> </li>
+    /// <li> <p>STOPPING - the component is in the process of being stopped.</p> </li>
+    /// <li> <p>RUNNING - the component is running.</p> </li>
+    /// <li> <p>RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html"> <code>GetComponent</code> </a> to review the status of each child component.</p> </li>
+    /// <li> <p>UNDEFINED - AWS Systems Manager for SAP cannot provide the component status based on the discovered information. Verify your SAP application.</p> </li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComponentStatus> {
         &self.status
     }
@@ -239,6 +346,20 @@ impl ComponentBuilder {
     /// <p>The hostname of the component.</p>
     pub fn get_sap_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.sap_hostname
+    }
+    /// <p>The SAP feature of the component.</p>
+    pub fn sap_feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sap_feature = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SAP feature of the component.</p>
+    pub fn set_sap_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sap_feature = input;
+        self
+    }
+    /// <p>The SAP feature of the component.</p>
+    pub fn get_sap_feature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sap_feature
     }
     /// <p>The kernel version of the component.</p>
     pub fn sap_kernel_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -356,6 +477,20 @@ impl ComponentBuilder {
     pub fn get_primary_host(&self) -> &::std::option::Option<::std::string::String> {
         &self.primary_host
     }
+    /// <p>The connection specifications for the database of the component.</p>
+    pub fn database_connection(mut self, input: crate::types::DatabaseConnection) -> Self {
+        self.database_connection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connection specifications for the database of the component.</p>
+    pub fn set_database_connection(mut self, input: ::std::option::Option<crate::types::DatabaseConnection>) -> Self {
+        self.database_connection = input;
+        self
+    }
+    /// <p>The connection specifications for the database of the component.</p>
+    pub fn get_database_connection(&self) -> &::std::option::Option<crate::types::DatabaseConnection> {
+        &self.database_connection
+    }
     /// <p>The time at which the component was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -388,12 +523,15 @@ impl ComponentBuilder {
     pub fn build(self) -> crate::types::Component {
         crate::types::Component {
             component_id: self.component_id,
+            sid: self.sid,
+            system_number: self.system_number,
             parent_component: self.parent_component,
             child_components: self.child_components,
             application_id: self.application_id,
             component_type: self.component_type,
             status: self.status,
             sap_hostname: self.sap_hostname,
+            sap_feature: self.sap_feature,
             sap_kernel_version: self.sap_kernel_version,
             hdb_version: self.hdb_version,
             resilience: self.resilience,
@@ -401,6 +539,7 @@ impl ComponentBuilder {
             databases: self.databases,
             hosts: self.hosts,
             primary_host: self.primary_host,
+            database_connection: self.database_connection,
             last_updated: self.last_updated,
             arn: self.arn,
         }

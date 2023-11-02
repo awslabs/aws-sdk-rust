@@ -15,8 +15,10 @@ impl AppflowIntegration {
         self.flow_definition.as_ref()
     }
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    pub fn batches(&self) -> ::std::option::Option<&[crate::types::Batch]> {
-        self.batches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batches.is_none()`.
+    pub fn batches(&self) -> &[crate::types::Batch] {
+        self.batches.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AppflowIntegration {
@@ -43,6 +45,7 @@ pub struct AppflowIntegrationBuilder {
 }
 impl AppflowIntegrationBuilder {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
+    /// This field is required.
     pub fn flow_definition(mut self, input: crate::types::FlowDefinition) -> Self {
         self.flow_definition = ::std::option::Option::Some(input);
         self

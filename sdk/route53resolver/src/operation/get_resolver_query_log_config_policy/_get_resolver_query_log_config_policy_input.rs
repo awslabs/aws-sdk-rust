@@ -27,6 +27,7 @@ pub struct GetResolverQueryLogConfigPolicyInputBuilder {
 }
 impl GetResolverQueryLogConfigPolicyInputBuilder {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

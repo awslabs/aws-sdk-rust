@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutFeedback`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`insight_feedback(InsightFeedback)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::insight_feedback) / [`set_insight_feedback(Option<InsightFeedback>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::set_insight_feedback): <p> The feedback from customers is about the recommendations in this insight. </p>
+    ///   - [`insight_feedback(InsightFeedback)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::insight_feedback) / [`set_insight_feedback(Option<InsightFeedback>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::set_insight_feedback):<br>required: **false**<br><p> The feedback from customers is about the recommendations in this insight. </p><br>
     /// - On success, responds with [`PutFeedbackOutput`](crate::operation::put_feedback::PutFeedbackOutput)
     /// - On failure, responds with [`SdkError<PutFeedbackError>`](crate::operation::put_feedback::PutFeedbackError)
     pub fn put_feedback(&self) -> crate::operation::put_feedback::builders::PutFeedbackFluentBuilder {

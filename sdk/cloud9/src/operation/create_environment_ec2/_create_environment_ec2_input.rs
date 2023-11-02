@@ -99,8 +99,10 @@ impl CreateEnvironmentEc2Input {
         self.owner_arn.as_deref()
     }
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
@@ -155,6 +157,7 @@ pub struct CreateEnvironmentEc2InputBuilder {
 impl CreateEnvironmentEc2InputBuilder {
     /// <p>The name of the environment to create.</p>
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +205,7 @@ impl CreateEnvironmentEc2InputBuilder {
         &self.client_request_token
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self

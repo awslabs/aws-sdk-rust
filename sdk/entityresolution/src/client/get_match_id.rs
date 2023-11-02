@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMatchId`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_name(impl Into<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::set_workflow_name): <p>The name of the workflow.</p>
-    ///   - [`record(impl Into<String>, impl Into<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::record) / [`set_record(Option<HashMap<String, String>>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::set_record): <p>The record to fetch the Match ID for.</p>
+    ///   - [`workflow_name(impl Into<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::set_workflow_name):<br>required: **true**<br><p>The name of the workflow.</p><br>
+    ///   - [`record(impl Into<String>, impl Into<String>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::record) / [`set_record(Option<HashMap<String, String>>)`](crate::operation::get_match_id::builders::GetMatchIdFluentBuilder::set_record):<br>required: **true**<br><p>The record to fetch the Match ID for.</p><br>
     /// - On success, responds with [`GetMatchIdOutput`](crate::operation::get_match_id::GetMatchIdOutput) with field(s):
     ///   - [`match_id(Option<String>)`](crate::operation::get_match_id::GetMatchIdOutput::match_id): <p>The unique identifiers for this group of match records.</p>
     /// - On failure, responds with [`SdkError<GetMatchIdError>`](crate::operation::get_match_id::GetMatchIdError)

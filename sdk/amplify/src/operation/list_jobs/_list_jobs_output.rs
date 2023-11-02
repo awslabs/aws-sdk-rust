@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
-    pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
+    pub job_summaries: ::std::vec::Vec<crate::types::JobSummary>,
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
-    pub fn job_summaries(&self) -> ::std::option::Option<&[crate::types::JobSummary]> {
-        self.job_summaries.as_deref()
+    pub fn job_summaries(&self) -> &[crate::types::JobSummary] {
+        use std::ops::Deref;
+        self.job_summaries.deref()
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,18 @@ impl ListJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
-    pub fn build(self) -> crate::operation::list_jobs::ListJobsOutput {
-        crate::operation::list_jobs::ListJobsOutput {
-            job_summaries: self.job_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_summaries`](crate::operation::list_jobs::builders::ListJobsOutputBuilder::job_summaries)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsOutput {
+            job_summaries: self.job_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_summaries",
+                    "job_summaries was not specified but it is required when building ListJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

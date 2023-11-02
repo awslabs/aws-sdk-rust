@@ -17,9 +17,9 @@ pub struct Project {
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of a project.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of a recipe that will be developed during a project session.</p>
-    pub recipe_name: ::std::option::Option<::std::string::String>,
+    pub recipe_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample consists of the first 500 rows from the dataset.</p>
@@ -59,12 +59,14 @@ impl Project {
         self.last_modified_by.as_deref()
     }
     /// <p>The unique name of a project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of a recipe that will be developed during a project session.</p>
-    pub fn recipe_name(&self) -> ::std::option::Option<&str> {
-        self.recipe_name.as_deref()
+    pub fn recipe_name(&self) -> &str {
+        use std::ops::Deref;
+        self.recipe_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -203,6 +205,7 @@ impl ProjectBuilder {
         &self.last_modified_by
     }
     /// <p>The unique name of a project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -217,6 +220,7 @@ impl ProjectBuilder {
         &self.name
     }
     /// <p>The name of a recipe that will be developed during a project session.</p>
+    /// This field is required.
     pub fn recipe_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_name = ::std::option::Option::Some(input.into());
         self
@@ -321,22 +325,35 @@ impl ProjectBuilder {
         &self.open_date
     }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).
-    pub fn build(self) -> crate::types::Project {
-        crate::types::Project {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ProjectBuilder::name)
+    /// - [`recipe_name`](crate::types::builders::ProjectBuilder::recipe_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Project, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Project {
             account_id: self.account_id,
             create_date: self.create_date,
             created_by: self.created_by,
             dataset_name: self.dataset_name,
             last_modified_date: self.last_modified_date,
             last_modified_by: self.last_modified_by,
-            name: self.name,
-            recipe_name: self.recipe_name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Project",
+                )
+            })?,
+            recipe_name: self.recipe_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recipe_name",
+                    "recipe_name was not specified but it is required when building Project",
+                )
+            })?,
             resource_arn: self.resource_arn,
             sample: self.sample,
             tags: self.tags,
             role_arn: self.role_arn,
             opened_by: self.opened_by,
             open_date: self.open_date,
-        }
+        })
     }
 }

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostedZone {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
     /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
-    pub caller_reference: ::std::option::Option<::std::string::String>,
+    pub caller_reference: ::std::string::String,
     /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
     pub config: ::std::option::Option<crate::types::HostedZoneConfig>,
     /// <p>The number of resource record sets in the hosted zone.</p>
@@ -20,17 +20,20 @@ pub struct HostedZone {
 }
 impl HostedZone {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
     /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
-        self.caller_reference.as_deref()
+    pub fn caller_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.caller_reference.deref()
     }
     /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
     pub fn config(&self) -> ::std::option::Option<&crate::types::HostedZoneConfig> {
@@ -65,6 +68,7 @@ pub struct HostedZoneBuilder {
 }
 impl HostedZoneBuilder {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +84,7 @@ impl HostedZoneBuilder {
     }
     /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
     /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +101,7 @@ impl HostedZoneBuilder {
         &self.name
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -152,14 +158,33 @@ impl HostedZoneBuilder {
         &self.linked_service
     }
     /// Consumes the builder and constructs a [`HostedZone`](crate::types::HostedZone).
-    pub fn build(self) -> crate::types::HostedZone {
-        crate::types::HostedZone {
-            id: self.id,
-            name: self.name,
-            caller_reference: self.caller_reference,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::HostedZoneBuilder::id)
+    /// - [`name`](crate::types::builders::HostedZoneBuilder::name)
+    /// - [`caller_reference`](crate::types::builders::HostedZoneBuilder::caller_reference)
+    pub fn build(self) -> ::std::result::Result<crate::types::HostedZone, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HostedZone {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building HostedZone",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building HostedZone",
+                )
+            })?,
+            caller_reference: self.caller_reference.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "caller_reference",
+                    "caller_reference was not specified but it is required when building HostedZone",
+                )
+            })?,
             config: self.config,
             resource_record_set_count: self.resource_record_set_count,
             linked_service: self.linked_service,
-        }
+        })
     }
 }

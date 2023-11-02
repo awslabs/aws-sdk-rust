@@ -3,14 +3,14 @@ pub fn ser_commit_transaction_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::commit_transaction::CommitTransactionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn {
-        object.key("resourceArn").string(var_1.as_str());
+    {
+        object.key("resourceArn").string(input.resource_arn.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("secretArn").string(var_2.as_str());
+    {
+        object.key("secretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_3) = &input.transaction_id {
-        object.key("transactionId").string(var_3.as_str());
+    {
+        object.key("transactionId").string(input.transaction_id.as_str());
     }
     Ok(())
 }

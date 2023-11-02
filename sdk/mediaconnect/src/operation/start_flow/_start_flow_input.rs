@@ -27,6 +27,7 @@ pub struct StartFlowInputBuilder {
 }
 impl StartFlowInputBuilder {
     /// The ARN of the flow that you want to start.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self

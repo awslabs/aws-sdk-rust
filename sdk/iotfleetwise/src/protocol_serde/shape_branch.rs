@@ -3,17 +3,17 @@ pub fn ser_branch(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Branch,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.fully_qualified_name {
-        object.key("fullyQualifiedName").string(var_1.as_str());
+    {
+        object.key("fullyQualifiedName").string(input.fully_qualified_name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.deprecation_message {
-        object.key("deprecationMessage").string(var_3.as_str());
+    if let Some(var_2) = &input.deprecation_message {
+        object.key("deprecationMessage").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.comment {
-        object.key("comment").string(var_4.as_str());
+    if let Some(var_3) = &input.comment {
+        object.key("comment").string(var_3.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::branch_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

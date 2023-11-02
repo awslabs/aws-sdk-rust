@@ -28,6 +28,7 @@ pub struct MetricMonitorBuilder {
 }
 impl MetricMonitorBuilder {
     /// <p>A structure that defines the metric.</p>
+    /// This field is required.
     pub fn metric_definition(mut self, input: crate::types::MetricDefinition) -> Self {
         self.metric_definition = ::std::option::Option::Some(input);
         self

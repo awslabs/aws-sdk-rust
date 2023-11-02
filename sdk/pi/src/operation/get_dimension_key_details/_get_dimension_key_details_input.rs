@@ -56,8 +56,10 @@ impl GetDimensionKeyDetailsInput {
     /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
     /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
     /// </ul>
-    pub fn requested_dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requested_dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_dimensions.is_none()`.
+    pub fn requested_dimensions(&self) -> &[::std::string::String] {
+        self.requested_dimensions.as_deref().unwrap_or_default()
     }
 }
 impl GetDimensionKeyDetailsInput {
@@ -79,6 +81,7 @@ pub struct GetDimensionKeyDetailsInputBuilder {
 }
 impl GetDimensionKeyDetailsInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -93,6 +96,7 @@ impl GetDimensionKeyDetailsInputBuilder {
         &self.service_type
     }
     /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl GetDimensionKeyDetailsInputBuilder {
     /// <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>
     /// <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +142,7 @@ impl GetDimensionKeyDetailsInputBuilder {
     /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
     /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self

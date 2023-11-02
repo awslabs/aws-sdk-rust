@@ -53,6 +53,17 @@ pub struct SubscribeInput {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the subscription is not yet confirmed.</p>
     /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>
@@ -116,6 +127,17 @@ impl SubscribeInput {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
@@ -146,6 +168,7 @@ pub struct SubscribeInputBuilder {
 }
 impl SubscribeInputBuilder {
     /// <p>The ARN of the topic you want to subscribe to.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +194,7 @@ impl SubscribeInputBuilder {
     /// <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>
     /// <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
@@ -278,6 +302,17 @@ impl SubscribeInputBuilder {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -305,6 +340,17 @@ impl SubscribeInputBuilder {
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
     /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
+    /// </ul>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
@@ -329,6 +375,17 @@ impl SubscribeInputBuilder {
     /// <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>
     /// <li> <p>Amazon SNS listed as a trusted entity</p> </li>
     /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+    /// </ul>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+    /// <ul>
+    /// <li> <p> <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p> </li>
+    /// <li> <p> <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p> </li>
+    /// <li> <p> <code>In progress</code> – The replay is currently replaying the selected messages.</p> </li>
+    /// <li> <p> <code>Failed</code> – The replay was unable to complete.</p> </li>
+    /// <li> <p> <code>Pending</code> – The default state while the replay initiates.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes

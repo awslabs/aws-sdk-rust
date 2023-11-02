@@ -48,6 +48,7 @@ pub struct StartMetadataModelImportInputBuilder {
 }
 impl StartMetadataModelImportInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartMetadataModelImportInputBuilder {
         &self.migration_project_identifier
     }
     /// <p>A value that specifies the database objects to import.</p>
+    /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartMetadataModelImportInputBuilder {
         &self.selection_rules
     }
     /// <p>Whether to load metadata to the source or target database.</p>
+    /// This field is required.
     pub fn origin(mut self, input: crate::types::OriginTypeValue) -> Self {
         self.origin = ::std::option::Option::Some(input);
         self

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceRecord {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::RecordType>,
+    pub r#type: crate::types::RecordType,
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ResourceRecord {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecordType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::RecordType {
+        &self.r#type
     }
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ResourceRecord {
@@ -42,6 +44,7 @@ pub struct ResourceRecordBuilder {
 }
 impl ResourceRecordBuilder {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ResourceRecordBuilder {
         &self.name
     }
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RecordType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl ResourceRecordBuilder {
         &self.r#type
     }
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl ResourceRecordBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ResourceRecord`](crate::types::ResourceRecord).
-    pub fn build(self) -> crate::types::ResourceRecord {
-        crate::types::ResourceRecord {
-            name: self.name,
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ResourceRecordBuilder::name)
+    /// - [`r#type`](crate::types::builders::ResourceRecordBuilder::r#type)
+    /// - [`value`](crate::types::builders::ResourceRecordBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceRecord, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceRecord {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ResourceRecord",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResourceRecord",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ResourceRecord",
+                )
+            })?,
+        })
     }
 }

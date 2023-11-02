@@ -52,6 +52,7 @@ pub struct InferenceRecommendationsJobStepBuilder {
 impl InferenceRecommendationsJobStepBuilder {
     /// <p>The type of the subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
+    /// This field is required.
     pub fn step_type(mut self, input: crate::types::RecommendationStepType) -> Self {
         self.step_type = ::std::option::Option::Some(input);
         self
@@ -68,6 +69,7 @@ impl InferenceRecommendationsJobStepBuilder {
         &self.step_type
     }
     /// <p>The name of the Inference Recommender job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +84,7 @@ impl InferenceRecommendationsJobStepBuilder {
         &self.job_name
     }
     /// <p>The current status of the benchmark.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RecommendationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

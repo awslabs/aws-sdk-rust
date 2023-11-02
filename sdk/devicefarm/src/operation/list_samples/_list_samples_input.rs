@@ -35,6 +35,7 @@ pub struct ListSamplesInputBuilder {
 }
 impl ListSamplesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

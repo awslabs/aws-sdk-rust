@@ -62,6 +62,7 @@ pub struct RegisterComputeInputBuilder {
 }
 impl RegisterComputeInputBuilder {
     /// <p>A unique identifier for the fleet to register the compute to. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl RegisterComputeInputBuilder {
         &self.fleet_id
     }
     /// <p>A descriptive label for the compute resource.</p>
+    /// This field is required.
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self

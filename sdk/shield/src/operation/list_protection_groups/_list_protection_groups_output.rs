@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProtectionGroupsOutput {
     /// <p></p>
-    pub protection_groups: ::std::option::Option<::std::vec::Vec<crate::types::ProtectionGroup>>,
+    pub protection_groups: ::std::vec::Vec<crate::types::ProtectionGroup>,
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
@@ -13,8 +13,9 @@ pub struct ListProtectionGroupsOutput {
 }
 impl ListProtectionGroupsOutput {
     /// <p></p>
-    pub fn protection_groups(&self) -> ::std::option::Option<&[crate::types::ProtectionGroup]> {
-        self.protection_groups.as_deref()
+    pub fn protection_groups(&self) -> &[crate::types::ProtectionGroup] {
+        use std::ops::Deref;
+        self.protection_groups.deref()
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
@@ -94,11 +95,21 @@ impl ListProtectionGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProtectionGroupsOutput`](crate::operation::list_protection_groups::ListProtectionGroupsOutput).
-    pub fn build(self) -> crate::operation::list_protection_groups::ListProtectionGroupsOutput {
-        crate::operation::list_protection_groups::ListProtectionGroupsOutput {
-            protection_groups: self.protection_groups,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`protection_groups`](crate::operation::list_protection_groups::builders::ListProtectionGroupsOutputBuilder::protection_groups)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_protection_groups::ListProtectionGroupsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_protection_groups::ListProtectionGroupsOutput {
+            protection_groups: self.protection_groups.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protection_groups",
+                    "protection_groups was not specified but it is required when building ListProtectionGroupsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

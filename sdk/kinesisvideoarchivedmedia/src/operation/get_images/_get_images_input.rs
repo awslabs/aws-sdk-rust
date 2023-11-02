@@ -140,6 +140,7 @@ impl GetImagesInputBuilder {
         &self.stream_arn
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+    /// This field is required.
     pub fn image_selector_type(mut self, input: crate::types::ImageSelectorType) -> Self {
         self.image_selector_type = ::std::option::Option::Some(input);
         self
@@ -154,6 +155,7 @@ impl GetImagesInputBuilder {
         &self.image_selector_type
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
+    /// This field is required.
     pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_timestamp = ::std::option::Option::Some(input);
         self
@@ -168,6 +170,7 @@ impl GetImagesInputBuilder {
         &self.start_timestamp
     }
     /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
+    /// This field is required.
     pub fn end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_timestamp = ::std::option::Option::Some(input);
         self
@@ -202,6 +205,7 @@ impl GetImagesInputBuilder {
         &self.sampling_interval
     }
     /// <p>The format that will be used to encode the image.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self

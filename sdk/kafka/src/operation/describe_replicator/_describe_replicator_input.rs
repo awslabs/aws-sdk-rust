@@ -27,6 +27,7 @@ pub struct DescribeReplicatorInputBuilder {
 }
 impl DescribeReplicatorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
+    /// This field is required.
     pub fn replicator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replicator_arn = ::std::option::Option::Some(input.into());
         self

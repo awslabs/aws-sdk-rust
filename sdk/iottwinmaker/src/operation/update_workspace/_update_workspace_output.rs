@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceOutput {
     /// <p>The date and time of the current update.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateWorkspaceOutput {
     /// <p>The date and time of the current update.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateWorkspaceOutput {
@@ -34,6 +34,7 @@ pub struct UpdateWorkspaceOutputBuilder {
 }
 impl UpdateWorkspaceOutputBuilder {
     /// <p>The date and time of the current update.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,19 @@ impl UpdateWorkspaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput).
-    pub fn build(self) -> crate::operation::update_workspace::UpdateWorkspaceOutput {
-        crate::operation::update_workspace::UpdateWorkspaceOutput {
-            update_date_time: self.update_date_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_date_time`](crate::operation::update_workspace::builders::UpdateWorkspaceOutputBuilder::update_date_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_workspace::UpdateWorkspaceOutput {
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building UpdateWorkspaceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

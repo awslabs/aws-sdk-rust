@@ -27,6 +27,7 @@ pub struct DeleteBackupVaultLockConfigurationInputBuilder {
 }
 impl DeleteBackupVaultLockConfigurationInputBuilder {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self

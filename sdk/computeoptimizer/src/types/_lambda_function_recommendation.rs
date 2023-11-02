@@ -70,8 +70,10 @@ impl LambdaFunctionRecommendation {
         self.number_of_invocations
     }
     /// <p>An array of objects that describe the utilization metrics of the function.</p>
-    pub fn utilization_metrics(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionUtilizationMetric]> {
-        self.utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utilization_metrics.is_none()`.
+    pub fn utilization_metrics(&self) -> &[crate::types::LambdaFunctionUtilizationMetric] {
+        self.utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the function.</p>
     pub fn lookback_period_in_days(&self) -> f64 {
@@ -103,20 +105,26 @@ impl LambdaFunctionRecommendation {
     /// <li> <p> <b> <code>InsufficientData</code> </b> — The function does not have sufficient metric data for Compute Optimizer to generate a recommendation. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This finding reason code is part of the <code>Unavailable</code> finding classification.</p> </li>
     /// <li> <p> <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the <code>Unavailable</code> finding classification.</p> </li>
     /// </ul>
-    pub fn finding_reason_codes(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendationFindingReasonCode]> {
-        self.finding_reason_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
+    pub fn finding_reason_codes(&self) -> &[crate::types::LambdaFunctionRecommendationFindingReasonCode] {
+        self.finding_reason_codes.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that describe the memory configuration recommendation options for the function.</p>
-    pub fn memory_size_recommendation_options(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionMemoryRecommendationOption]> {
-        self.memory_size_recommendation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.memory_size_recommendation_options.is_none()`.
+    pub fn memory_size_recommendation_options(&self) -> &[crate::types::LambdaFunctionMemoryRecommendationOption] {
+        self.memory_size_recommendation_options.as_deref().unwrap_or_default()
     }
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     pub fn current_performance_risk(&self) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
     /// <p> A list of tags assigned to your Lambda function recommendations. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl LambdaFunctionRecommendation {

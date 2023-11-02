@@ -3,20 +3,20 @@ pub fn ser_outbound_call_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutboundCallConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.connect_contact_flow_id {
-        object.key("connectContactFlowId").string(var_1.as_str());
+    {
+        object.key("connectContactFlowId").string(input.connect_contact_flow_id.as_str());
     }
-    if let Some(var_2) = &input.connect_source_phone_number {
-        object.key("connectSourcePhoneNumber").string(var_2.as_str());
+    if let Some(var_1) = &input.connect_source_phone_number {
+        object.key("connectSourcePhoneNumber").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.connect_queue_id {
-        object.key("connectQueueId").string(var_3.as_str());
+    if let Some(var_2) = &input.connect_queue_id {
+        object.key("connectQueueId").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.answer_machine_detection_config {
+    if let Some(var_3) = &input.answer_machine_detection_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("answerMachineDetectionConfig").start_object();
-        crate::protocol_serde::shape_answer_machine_detection_config::ser_answer_machine_detection_config(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("answerMachineDetectionConfig").start_object();
+        crate::protocol_serde::shape_answer_machine_detection_config::ser_answer_machine_detection_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -72,7 +72,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::outbound_call_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

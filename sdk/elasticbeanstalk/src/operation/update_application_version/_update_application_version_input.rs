@@ -47,6 +47,7 @@ pub struct UpdateApplicationVersionInputBuilder {
 impl UpdateApplicationVersionInputBuilder {
     /// <p>The name of the application associated with this version.</p>
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl UpdateApplicationVersionInputBuilder {
     }
     /// <p>The name of the version to update.</p>
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// This field is required.
     pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self

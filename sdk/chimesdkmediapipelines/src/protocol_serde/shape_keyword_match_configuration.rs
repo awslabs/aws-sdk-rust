@@ -3,17 +3,17 @@ pub fn ser_keyword_match_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeywordMatchConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.rule_name {
-        object.key("RuleName").string(var_1.as_str());
+    {
+        object.key("RuleName").string(input.rule_name.as_str());
     }
-    if let Some(var_2) = &input.keywords {
-        let mut array_3 = object.key("Keywords").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Keywords").start_array();
+        for item_2 in &input.keywords {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     if input.negate {
         object.key("Negate").boolean(input.negate);
@@ -59,7 +59,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::keyword_match_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -17,8 +17,10 @@ impl GetUsageStatisticsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::UsageRecord]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::UsageRecord] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub fn time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {

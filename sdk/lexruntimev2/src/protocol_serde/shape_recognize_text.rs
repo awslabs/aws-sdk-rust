@@ -25,11 +25,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::recognize_text::RecognizeTextError::ResourceNotFoundException({
@@ -40,11 +39,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::recognize_text::RecognizeTextError::ThrottlingException({
@@ -55,11 +53,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "BadGatewayException" => crate::operation::recognize_text::RecognizeTextError::BadGatewayException({
@@ -70,11 +67,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_gateway_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::recognize_text::RecognizeTextError::ValidationException({
@@ -85,11 +81,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "DependencyFailedException" => crate::operation::recognize_text::RecognizeTextError::DependencyFailedException({
@@ -100,11 +95,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_dependency_failed_exception::de_dependency_failed_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::dependency_failed_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::recognize_text::RecognizeTextError::InternalServerException({
@@ -115,11 +109,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::recognize_text::RecognizeTextError::ConflictException({
@@ -130,11 +123,10 @@ pub fn de_recognize_text_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::recognize_text::RecognizeTextError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::recognize_text::RecognizeTextError::generic(generic),

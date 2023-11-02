@@ -32,6 +32,7 @@ pub fn ser_literal_array_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_literal_array_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LiteralArrayOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -48,6 +48,7 @@ pub struct DeleteRepositoryPermissionsPolicyInputBuilder {
 }
 impl DeleteRepositoryPermissionsPolicyInputBuilder {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self

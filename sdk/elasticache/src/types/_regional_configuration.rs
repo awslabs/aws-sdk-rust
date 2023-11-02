@@ -21,8 +21,10 @@ impl RegionalConfiguration {
         self.replication_group_region.as_deref()
     }
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
-    pub fn resharding_configuration(&self) -> ::std::option::Option<&[crate::types::ReshardingConfiguration]> {
-        self.resharding_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resharding_configuration.is_none()`.
+    pub fn resharding_configuration(&self) -> &[crate::types::ReshardingConfiguration] {
+        self.resharding_configuration.as_deref().unwrap_or_default()
     }
 }
 impl RegionalConfiguration {
@@ -42,6 +44,7 @@ pub struct RegionalConfigurationBuilder {
 }
 impl RegionalConfigurationBuilder {
     /// <p>The name of the secondary cluster</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl RegionalConfigurationBuilder {
         &self.replication_group_id
     }
     /// <p>The Amazon region where the cluster is stored</p>
+    /// This field is required.
     pub fn replication_group_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_region = ::std::option::Option::Some(input.into());
         self

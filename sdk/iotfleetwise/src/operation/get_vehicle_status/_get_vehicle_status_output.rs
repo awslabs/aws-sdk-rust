@@ -11,8 +11,10 @@ pub struct GetVehicleStatusOutput {
 }
 impl GetVehicleStatusOutput {
     /// <p> Lists information about the state of the vehicle with deployed campaigns. </p>
-    pub fn campaigns(&self) -> ::std::option::Option<&[crate::types::VehicleStatus]> {
-        self.campaigns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.campaigns.is_none()`.
+    pub fn campaigns(&self) -> &[crate::types::VehicleStatus] {
+        self.campaigns.as_deref().unwrap_or_default()
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

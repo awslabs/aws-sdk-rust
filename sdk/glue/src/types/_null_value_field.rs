@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NullValueField {
     /// <p>The value of the null placeholder.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The datatype of the value.</p>
     pub datatype: ::std::option::Option<crate::types::Datatype>,
 }
 impl NullValueField {
     /// <p>The value of the null placeholder.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The datatype of the value.</p>
     pub fn datatype(&self) -> ::std::option::Option<&crate::types::Datatype> {
@@ -35,6 +36,7 @@ pub struct NullValueFieldBuilder {
 }
 impl NullValueFieldBuilder {
     /// <p>The value of the null placeholder.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl NullValueFieldBuilder {
         &self.value
     }
     /// <p>The datatype of the value.</p>
+    /// This field is required.
     pub fn datatype(mut self, input: crate::types::Datatype) -> Self {
         self.datatype = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl NullValueFieldBuilder {
         &self.datatype
     }
     /// Consumes the builder and constructs a [`NullValueField`](crate::types::NullValueField).
-    pub fn build(self) -> crate::types::NullValueField {
-        crate::types::NullValueField {
-            value: self.value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::NullValueFieldBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::NullValueField, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NullValueField {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building NullValueField",
+                )
+            })?,
             datatype: self.datatype,
-        }
+        })
     }
 }

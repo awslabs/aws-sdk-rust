@@ -74,6 +74,7 @@ impl ListLayerVersionsInputBuilder {
         &self.compatible_runtime
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    /// This field is required.
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_name = ::std::option::Option::Some(input.into());
         self

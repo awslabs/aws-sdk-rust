@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-    pub definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub definition: ::std::vec::Vec<::std::string::String>,
 }
 impl IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn definition(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.definition.as_deref()
+    pub fn definition(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.definition.deref()
     }
 }
 impl IpSet {
@@ -48,7 +49,16 @@ impl IpSetBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
-    pub fn build(self) -> crate::types::IpSet {
-        crate::types::IpSet { definition: self.definition }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`definition`](crate::types::builders::IpSetBuilder::definition)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpSet {
+            definition: self.definition.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "definition",
+                    "definition was not specified but it is required when building IpSet",
+                )
+            })?,
+        })
     }
 }

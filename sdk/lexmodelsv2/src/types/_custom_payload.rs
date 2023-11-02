@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPayload {
     /// <p>The string that is sent to your application.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl CustomPayload {
     /// <p>The string that is sent to your application.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl CustomPayload {
@@ -28,6 +29,7 @@ pub struct CustomPayloadBuilder {
 }
 impl CustomPayloadBuilder {
     /// <p>The string that is sent to your application.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl CustomPayloadBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`CustomPayload`](crate::types::CustomPayload).
-    pub fn build(self) -> crate::types::CustomPayload {
-        crate::types::CustomPayload { value: self.value }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::CustomPayloadBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomPayload, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomPayload {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building CustomPayload",
+                )
+            })?,
+        })
     }
 }

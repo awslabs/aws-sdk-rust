@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
+    pub client_token: ::std::string::String,
     /// <p>The capacity to initialize when the application is updated.</p>
     pub initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
@@ -33,12 +33,14 @@ pub struct UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
+    pub fn client_token(&self) -> &str {
+        use std::ops::Deref;
+        self.client_token.deref()
     }
     /// <p>The capacity to initialize when the application is updated.</p>
     pub fn initial_capacity(
@@ -81,8 +83,10 @@ impl UpdateApplicationInput {
         self.release_label.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
-    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.runtime_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_configuration.is_none()`.
+    pub fn runtime_configuration(&self) -> &[crate::types::Configuration] {
+        self.runtime_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
@@ -117,6 +121,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The ID of the application to update.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +136,7 @@ impl UpdateApplicationInputBuilder {
         &self.application_id
     }
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -331,12 +337,25 @@ impl UpdateApplicationInputBuilder {
         &self.monitoring_configuration
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::update_application::builders::UpdateApplicationInputBuilder::application_id)
+    /// - [`client_token`](crate::operation::update_application::builders::UpdateApplicationInputBuilder::client_token)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application_id: self.application_id,
-            client_token: self.client_token,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building UpdateApplicationInput",
+                )
+            })?,
+            client_token: self.client_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_token",
+                    "client_token was not specified but it is required when building UpdateApplicationInput",
+                )
+            })?,
             initial_capacity: self.initial_capacity,
             maximum_capacity: self.maximum_capacity,
             auto_start_configuration: self.auto_start_configuration,

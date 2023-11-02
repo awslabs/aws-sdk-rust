@@ -11,8 +11,10 @@ pub struct ListSigningProfilesOutput {
 }
 impl ListSigningProfilesOutput {
     /// <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
-    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::SigningProfile]> {
-        self.profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
+    pub fn profiles(&self) -> &[crate::types::SigningProfile] {
+        self.profiles.as_deref().unwrap_or_default()
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

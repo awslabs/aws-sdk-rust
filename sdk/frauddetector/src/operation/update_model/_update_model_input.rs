@@ -41,6 +41,7 @@ pub struct UpdateModelInputBuilder {
 }
 impl UpdateModelInputBuilder {
     /// <p>The model ID.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateModelInputBuilder {
         &self.model_id
     }
     /// <p>The model type.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self

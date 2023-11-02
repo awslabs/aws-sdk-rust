@@ -27,6 +27,7 @@ pub struct DescribePipelineInputBuilder {
 }
 impl DescribePipelineInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self

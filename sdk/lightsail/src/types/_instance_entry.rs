@@ -6,9 +6,9 @@
 pub struct InstanceEntry {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
-    pub source_name: ::std::option::Option<::std::string::String>,
+    pub source_name: ::std::string::String,
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
-    pub instance_type: ::std::option::Option<::std::string::String>,
+    pub instance_type: ::std::string::String,
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
     /// <p>The following configuration options are available:</p>
     /// <ul>
@@ -19,23 +19,25 @@ pub struct InstanceEntry {
     /// </ul> <note>
     /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
     /// </note>
-    pub port_info_source: ::std::option::Option<crate::types::PortInfoSourceType>,
+    pub port_info_source: crate::types::PortInfoSourceType,
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
     /// </note>
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
-    pub availability_zone: ::std::option::Option<::std::string::String>,
+    pub availability_zone: ::std::string::String,
 }
 impl InstanceEntry {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
-        self.source_name.as_deref()
+    pub fn source_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_name.deref()
     }
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
-        self.instance_type.as_deref()
+    pub fn instance_type(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_type.deref()
     }
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
     /// <p>The following configuration options are available:</p>
@@ -47,8 +49,8 @@ impl InstanceEntry {
     /// </ul> <note>
     /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
     /// </note>
-    pub fn port_info_source(&self) -> ::std::option::Option<&crate::types::PortInfoSourceType> {
-        self.port_info_source.as_ref()
+    pub fn port_info_source(&self) -> &crate::types::PortInfoSourceType {
+        &self.port_info_source
     }
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
@@ -57,8 +59,9 @@ impl InstanceEntry {
         self.user_data.as_deref()
     }
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
-        self.availability_zone.as_deref()
+    pub fn availability_zone(&self) -> &str {
+        use std::ops::Deref;
+        self.availability_zone.deref()
     }
 }
 impl InstanceEntry {
@@ -81,6 +84,7 @@ pub struct InstanceEntryBuilder {
 impl InstanceEntryBuilder {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
+    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl InstanceEntryBuilder {
         &self.source_name
     }
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +125,7 @@ impl InstanceEntryBuilder {
     /// </ul> <note>
     /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
     /// </note>
+    /// This field is required.
     pub fn port_info_source(mut self, input: crate::types::PortInfoSourceType) -> Self {
         self.port_info_source = ::std::option::Option::Some(input);
         self
@@ -172,6 +178,7 @@ impl InstanceEntryBuilder {
         &self.user_data
     }
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -186,13 +193,38 @@ impl InstanceEntryBuilder {
         &self.availability_zone
     }
     /// Consumes the builder and constructs a [`InstanceEntry`](crate::types::InstanceEntry).
-    pub fn build(self) -> crate::types::InstanceEntry {
-        crate::types::InstanceEntry {
-            source_name: self.source_name,
-            instance_type: self.instance_type,
-            port_info_source: self.port_info_source,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_name`](crate::types::builders::InstanceEntryBuilder::source_name)
+    /// - [`instance_type`](crate::types::builders::InstanceEntryBuilder::instance_type)
+    /// - [`port_info_source`](crate::types::builders::InstanceEntryBuilder::port_info_source)
+    /// - [`availability_zone`](crate::types::builders::InstanceEntryBuilder::availability_zone)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceEntry {
+            source_name: self.source_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_name",
+                    "source_name was not specified but it is required when building InstanceEntry",
+                )
+            })?,
+            instance_type: self.instance_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_type",
+                    "instance_type was not specified but it is required when building InstanceEntry",
+                )
+            })?,
+            port_info_source: self.port_info_source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port_info_source",
+                    "port_info_source was not specified but it is required when building InstanceEntry",
+                )
+            })?,
             user_data: self.user_data,
-            availability_zone: self.availability_zone,
-        }
+            availability_zone: self.availability_zone.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "availability_zone",
+                    "availability_zone was not specified but it is required when building InstanceEntry",
+                )
+            })?,
+        })
     }
 }

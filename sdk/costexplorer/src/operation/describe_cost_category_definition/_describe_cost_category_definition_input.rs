@@ -34,6 +34,7 @@ pub struct DescribeCostCategoryDefinitionInputBuilder {
 }
 impl DescribeCostCategoryDefinitionInputBuilder {
     /// <p>The unique identifier for your Cost Category. </p>
+    /// This field is required.
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self

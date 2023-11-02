@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentsInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
@@ -16,16 +16,20 @@ pub struct ListDevEnvironmentsInput {
 }
 impl ListDevEnvironmentsInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +59,7 @@ pub struct ListDevEnvironmentsInputBuilder {
 }
 impl ListDevEnvironmentsInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl ListDevEnvironmentsInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -131,13 +137,26 @@ impl ListDevEnvironmentsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDevEnvironmentsInput`](crate::operation::list_dev_environments::ListDevEnvironmentsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder::space_name)
+    /// - [`project_name`](crate::operation::list_dev_environments::builders::ListDevEnvironmentsInputBuilder::project_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_dev_environments::ListDevEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dev_environments::ListDevEnvironmentsInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building ListDevEnvironmentsInput",
+                )
+            })?,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building ListDevEnvironmentsInput",
+                )
+            })?,
             filters: self.filters,
             next_token: self.next_token,
             max_results: self.max_results,

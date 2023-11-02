@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReverseGeocodingConfig {
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
-    pub y_attribute_name: ::std::option::Option<::std::string::String>,
+    pub y_attribute_name: ::std::string::String,
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
-    pub x_attribute_name: ::std::option::Option<::std::string::String>,
+    pub x_attribute_name: ::std::string::String,
 }
 impl ReverseGeocodingConfig {
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
-    pub fn y_attribute_name(&self) -> ::std::option::Option<&str> {
-        self.y_attribute_name.as_deref()
+    pub fn y_attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.y_attribute_name.deref()
     }
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
-    pub fn x_attribute_name(&self) -> ::std::option::Option<&str> {
-        self.x_attribute_name.as_deref()
+    pub fn x_attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.x_attribute_name.deref()
     }
 }
 impl ReverseGeocodingConfig {
@@ -35,6 +37,7 @@ pub struct ReverseGeocodingConfigBuilder {
 }
 impl ReverseGeocodingConfigBuilder {
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
+    /// This field is required.
     pub fn y_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ReverseGeocodingConfigBuilder {
         &self.y_attribute_name
     }
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
+    /// This field is required.
     pub fn x_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ReverseGeocodingConfigBuilder {
         &self.x_attribute_name
     }
     /// Consumes the builder and constructs a [`ReverseGeocodingConfig`](crate::types::ReverseGeocodingConfig).
-    pub fn build(self) -> crate::types::ReverseGeocodingConfig {
-        crate::types::ReverseGeocodingConfig {
-            y_attribute_name: self.y_attribute_name,
-            x_attribute_name: self.x_attribute_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`y_attribute_name`](crate::types::builders::ReverseGeocodingConfigBuilder::y_attribute_name)
+    /// - [`x_attribute_name`](crate::types::builders::ReverseGeocodingConfigBuilder::x_attribute_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReverseGeocodingConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReverseGeocodingConfig {
+            y_attribute_name: self.y_attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "y_attribute_name",
+                    "y_attribute_name was not specified but it is required when building ReverseGeocodingConfig",
+                )
+            })?,
+            x_attribute_name: self.x_attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "x_attribute_name",
+                    "x_attribute_name was not specified but it is required when building ReverseGeocodingConfig",
+                )
+            })?,
+        })
     }
 }

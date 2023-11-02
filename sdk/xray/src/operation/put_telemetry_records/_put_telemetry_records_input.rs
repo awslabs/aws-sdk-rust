@@ -14,8 +14,10 @@ pub struct PutTelemetryRecordsInput {
 }
 impl PutTelemetryRecordsInput {
     /// <p></p>
-    pub fn telemetry_records(&self) -> ::std::option::Option<&[crate::types::TelemetryRecord]> {
-        self.telemetry_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetry_records.is_none()`.
+    pub fn telemetry_records(&self) -> &[crate::types::TelemetryRecord] {
+        self.telemetry_records.as_deref().unwrap_or_default()
     }
     /// <p></p>
     pub fn ec2_instance_id(&self) -> ::std::option::Option<&str> {

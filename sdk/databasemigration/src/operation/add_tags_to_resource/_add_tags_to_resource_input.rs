@@ -17,8 +17,10 @@ impl AddTagsToResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>One or more tags to be assigned to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsToResourceInput {
@@ -38,6 +40,7 @@ pub struct AddTagsToResourceInputBuilder {
 impl AddTagsToResourceInputBuilder {
     /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
     /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

@@ -44,8 +44,10 @@ impl GetAdapterVersionOutput {
         self.creation_time.as_ref()
     }
     /// <p>List of the targeted feature types for the requested adapter version.</p>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::FeatureType]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
     /// <p>The status of the adapter version that has been requested.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AdapterVersionStatus> {
@@ -71,8 +73,10 @@ impl GetAdapterVersionOutput {
         self.output_config.as_ref()
     }
     /// <p>The evaluation metrics (F1 score, Precision, and Recall) for the requested version, grouped by baseline metrics and adapter version.</p>
-    pub fn evaluation_metrics(&self) -> ::std::option::Option<&[crate::types::AdapterVersionEvaluationMetric]> {
-        self.evaluation_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluation_metrics.is_none()`.
+    pub fn evaluation_metrics(&self) -> &[crate::types::AdapterVersionEvaluationMetric] {
+        self.evaluation_metrics.as_deref().unwrap_or_default()
     }
     /// <p>A set of tags (key-value pairs) that are associated with the adapter version.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

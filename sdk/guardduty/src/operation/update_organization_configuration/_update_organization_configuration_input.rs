@@ -40,8 +40,10 @@ impl UpdateOrganizationConfigurationInput {
         self.data_sources.as_ref()
     }
     /// <p>A list of features that will be configured for the organization.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::OrganizationFeatureConfiguration]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::OrganizationFeatureConfiguration] {
+        self.features.as_deref().unwrap_or_default()
     }
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>. </p>
     /// <p>Use one of the following configuration values for <code>autoEnableOrganizationMembers</code>:</p>
@@ -73,6 +75,7 @@ pub struct UpdateOrganizationConfigurationInputBuilder {
 }
 impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>The ID of the detector that configures the delegated administrator.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self

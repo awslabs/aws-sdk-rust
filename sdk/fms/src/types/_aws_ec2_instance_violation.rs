@@ -15,8 +15,10 @@ impl AwsEc2InstanceViolation {
         self.violation_target.as_deref()
     }
     /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
-    pub fn aws_ec2_network_interface_violations(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceViolation]> {
-        self.aws_ec2_network_interface_violations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_ec2_network_interface_violations.is_none()`.
+    pub fn aws_ec2_network_interface_violations(&self) -> &[crate::types::AwsEc2NetworkInterfaceViolation] {
+        self.aws_ec2_network_interface_violations.as_deref().unwrap_or_default()
     }
 }
 impl AwsEc2InstanceViolation {

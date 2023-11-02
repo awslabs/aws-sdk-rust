@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.</p>
-    pub budget_name: ::std::option::Option<::std::string::String>,
+    pub budget_name: ::std::string::String,
     /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
     /// <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>. This is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
     pub budget_limit: ::std::option::Option<crate::types::Spend>,
@@ -34,7 +34,7 @@ pub struct Budget {
     /// <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
     pub cost_types: ::std::option::Option<crate::types::CostTypes>,
     /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
-    pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
+    pub time_unit: crate::types::TimeUnit,
     /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API. </p>
     /// <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
@@ -43,7 +43,7 @@ pub struct Budget {
     /// <p>The actual and forecasted cost or usage that the budget tracks.</p>
     pub calculated_spend: ::std::option::Option<crate::types::CalculatedSpend>,
     /// <p>Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
-    pub budget_type: ::std::option::Option<crate::types::BudgetType>,
+    pub budget_type: crate::types::BudgetType,
     /// <p>The last time that you updated this budget.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
@@ -51,8 +51,9 @@ pub struct Budget {
 }
 impl Budget {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
-        self.budget_name.as_deref()
+    pub fn budget_name(&self) -> &str {
+        use std::ops::Deref;
+        self.budget_name.deref()
     }
     /// <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage that you want to track with your budget.</p>
     /// <p> <code>BudgetLimit</code> is required for cost or usage budgets, but optional for RI or Savings Plans utilization or coverage budgets. RI and Savings Plans utilization or coverage budgets default to <code>100</code>. This is the only valid value for RI or Savings Plans utilization or coverage budgets. You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
@@ -88,8 +89,8 @@ impl Budget {
         self.cost_types.as_ref()
     }
     /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
-    pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
-        self.time_unit.as_ref()
+    pub fn time_unit(&self) -> &crate::types::TimeUnit {
+        &self.time_unit
     }
     /// <p>The period of time that's covered by a budget. You setthe start date and end date. The start date must come before the end date. The end date must come before <code>06/15/87 00:00 UTC</code>. </p>
     /// <p>If you create your budget and don't specify a start date, Amazon Web Services defaults to the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an end date, Amazon Web Services set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the Billing and Cost Management console and the API. </p>
@@ -103,8 +104,8 @@ impl Budget {
         self.calculated_spend.as_ref()
     }
     /// <p>Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
-    pub fn budget_type(&self) -> ::std::option::Option<&crate::types::BudgetType> {
-        self.budget_type.as_ref()
+    pub fn budget_type(&self) -> &crate::types::BudgetType {
+        &self.budget_type
     }
     /// <p>The last time that you updated this budget.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -140,6 +141,7 @@ pub struct BudgetBuilder {
 }
 impl BudgetBuilder {
     /// <p>The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -281,6 +283,7 @@ impl BudgetBuilder {
         &self.cost_types
     }
     /// <p>The length of time until a budget resets the actual and forecasted spend.</p>
+    /// This field is required.
     pub fn time_unit(mut self, input: crate::types::TimeUnit) -> Self {
         self.time_unit = ::std::option::Option::Some(input);
         self
@@ -332,6 +335,7 @@ impl BudgetBuilder {
         &self.calculated_spend
     }
     /// <p>Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings Plans utilization, or Savings Plans coverage.</p>
+    /// This field is required.
     pub fn budget_type(mut self, input: crate::types::BudgetType) -> Self {
         self.budget_type = ::std::option::Option::Some(input);
         self
@@ -374,19 +378,38 @@ impl BudgetBuilder {
         &self.auto_adjust_data
     }
     /// Consumes the builder and constructs a [`Budget`](crate::types::Budget).
-    pub fn build(self) -> crate::types::Budget {
-        crate::types::Budget {
-            budget_name: self.budget_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`budget_name`](crate::types::builders::BudgetBuilder::budget_name)
+    /// - [`time_unit`](crate::types::builders::BudgetBuilder::time_unit)
+    /// - [`budget_type`](crate::types::builders::BudgetBuilder::budget_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Budget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Budget {
+            budget_name: self.budget_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "budget_name",
+                    "budget_name was not specified but it is required when building Budget",
+                )
+            })?,
             budget_limit: self.budget_limit,
             planned_budget_limits: self.planned_budget_limits,
             cost_filters: self.cost_filters,
             cost_types: self.cost_types,
-            time_unit: self.time_unit,
+            time_unit: self.time_unit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_unit",
+                    "time_unit was not specified but it is required when building Budget",
+                )
+            })?,
             time_period: self.time_period,
             calculated_spend: self.calculated_spend,
-            budget_type: self.budget_type,
+            budget_type: self.budget_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "budget_type",
+                    "budget_type was not specified but it is required when building Budget",
+                )
+            })?,
             last_updated_time: self.last_updated_time,
             auto_adjust_data: self.auto_adjust_data,
-        }
+        })
     }
 }

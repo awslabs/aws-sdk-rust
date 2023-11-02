@@ -34,6 +34,7 @@ pub struct StartRecommendationsInputBuilder {
 }
 impl StartRecommendationsInputBuilder {
     /// <p>The identifier of the source database to analyze and provide recommendations for.</p>
+    /// This field is required.
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartRecommendationsInputBuilder {
         &self.database_id
     }
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::RecommendationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self

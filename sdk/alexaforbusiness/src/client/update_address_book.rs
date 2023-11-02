@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateAddressBook`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`address_book_arn(impl Into<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::set_address_book_arn): <p>The ARN of the room to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::set_name): <p>The updated name of the room.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::set_description): <p>The updated description of the room.</p>
+    ///   - [`address_book_arn(impl Into<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::set_address_book_arn):<br>required: **true**<br><p>The ARN of the room to update.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::set_name):<br>required: **false**<br><p>The updated name of the room.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_address_book::builders::UpdateAddressBookFluentBuilder::set_description):<br>required: **false**<br><p>The updated description of the room.</p><br>
     /// - On success, responds with [`UpdateAddressBookOutput`](crate::operation::update_address_book::UpdateAddressBookOutput)
     /// - On failure, responds with [`SdkError<UpdateAddressBookError>`](crate::operation::update_address_book::UpdateAddressBookError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

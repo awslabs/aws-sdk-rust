@@ -35,6 +35,7 @@ pub struct DeleteDeploymentInputBuilder {
 }
 impl DeleteDeploymentInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteDeploymentInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the Deployment resource to delete.</p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self

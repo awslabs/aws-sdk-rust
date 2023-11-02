@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExportBackupPlanTemplate`](crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_plan_id(impl Into<String>)`](crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateFluentBuilder::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateFluentBuilder::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateFluentBuilder::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateFluentBuilder::set_backup_plan_id):<br>required: **true**<br><p>Uniquely identifies a backup plan.</p><br>
     /// - On success, responds with [`ExportBackupPlanTemplateOutput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateOutput) with field(s):
     ///   - [`backup_plan_template_json(Option<String>)`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateOutput::backup_plan_template_json): <p>The body of a backup plan template in JSON format.</p> <note>   <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>  </note>
     /// - On failure, responds with [`SdkError<ExportBackupPlanTemplateError>`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateError)

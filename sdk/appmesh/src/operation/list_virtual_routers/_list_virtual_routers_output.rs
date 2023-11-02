@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualRoutersOutput {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub virtual_routers: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>,
+    pub virtual_routers: ::std::vec::Vec<crate::types::VirtualRouterRef>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVirtualRoutersOutput {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub fn virtual_routers(&self) -> ::std::option::Option<&[crate::types::VirtualRouterRef]> {
-        self.virtual_routers.as_deref()
+    pub fn virtual_routers(&self) -> &[crate::types::VirtualRouterRef] {
+        use std::ops::Deref;
+        self.virtual_routers.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListVirtualRoutersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVirtualRoutersOutput`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput).
-    pub fn build(self) -> crate::operation::list_virtual_routers::ListVirtualRoutersOutput {
-        crate::operation::list_virtual_routers::ListVirtualRoutersOutput {
-            virtual_routers: self.virtual_routers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_routers`](crate::operation::list_virtual_routers::builders::ListVirtualRoutersOutputBuilder::virtual_routers)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_virtual_routers::ListVirtualRoutersOutput {
+            virtual_routers: self.virtual_routers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_routers",
+                    "virtual_routers was not specified but it is required when building ListVirtualRoutersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

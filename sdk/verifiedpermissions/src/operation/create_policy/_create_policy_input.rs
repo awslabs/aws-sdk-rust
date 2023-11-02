@@ -65,6 +65,7 @@ impl CreatePolicyInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl CreatePolicyInputBuilder {
         &self.policy_store_id
     }
     /// <p>A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

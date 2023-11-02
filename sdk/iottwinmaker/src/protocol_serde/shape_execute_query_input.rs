@@ -12,11 +12,11 @@ pub fn ser_execute_query_input(
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.query_statement {
-        object.key("queryStatement").string(var_3.as_str());
+    {
+        object.key("queryStatement").string(input.query_statement.as_str());
     }
-    if let Some(var_4) = &input.workspace_id {
-        object.key("workspaceId").string(var_4.as_str());
+    {
+        object.key("workspaceId").string(input.workspace_id.as_str());
     }
     Ok(())
 }

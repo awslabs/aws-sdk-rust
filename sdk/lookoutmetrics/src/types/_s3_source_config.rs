@@ -19,12 +19,16 @@ impl S3SourceConfig {
         self.role_arn.as_deref()
     }
     /// <p>A list of templated paths to the source files.</p>
-    pub fn templated_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.templated_path_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.templated_path_list.is_none()`.
+    pub fn templated_path_list(&self) -> &[::std::string::String] {
+        self.templated_path_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of paths to the historical data files.</p>
-    pub fn historical_data_path_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.historical_data_path_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.historical_data_path_list.is_none()`.
+    pub fn historical_data_path_list(&self) -> &[::std::string::String] {
+        self.historical_data_path_list.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about a source file's formatting.</p>
     pub fn file_format_descriptor(&self) -> ::std::option::Option<&crate::types::FileFormatDescriptor> {

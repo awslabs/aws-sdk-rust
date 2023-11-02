@@ -23,6 +23,7 @@ pub fn ser_launch_template(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_launch_template(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LaunchTemplate, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -8,7 +8,7 @@ pub struct DescribeDatasetOutput {
     /// <p>The date and time that the dataset was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the dataset.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
@@ -39,8 +39,9 @@ impl DescribeDatasetOutput {
         self.create_date.as_ref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
@@ -139,6 +140,7 @@ impl DescribeDatasetOutputBuilder {
         &self.create_date
     }
     /// <p>The name of the dataset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +183,7 @@ impl DescribeDatasetOutputBuilder {
         &self.format_options
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -294,11 +297,20 @@ impl DescribeDatasetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
-    pub fn build(self) -> crate::operation::describe_dataset::DescribeDatasetOutput {
-        crate::operation::describe_dataset::DescribeDatasetOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetOutput {
             created_by: self.created_by,
             create_date: self.create_date,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeDatasetOutput",
+                )
+            })?,
             format: self.format,
             format_options: self.format_options,
             input: self.input,
@@ -309,6 +321,6 @@ impl DescribeDatasetOutputBuilder {
             tags: self.tags,
             resource_arn: self.resource_arn,
             _request_id: self._request_id,
-        }
+        })
     }
 }

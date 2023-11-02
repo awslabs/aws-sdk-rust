@@ -128,16 +128,20 @@ impl BuildBatch {
         self.project_name.as_deref()
     }
     /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the batch build.</p>
-    pub fn phases(&self) -> ::std::option::Option<&[crate::types::BuildBatchPhase]> {
-        self.phases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phases.is_none()`.
+    pub fn phases(&self) -> &[crate::types::BuildBatchPhase] {
+        self.phases.as_deref().unwrap_or_default()
     }
     /// <p>Information about the build input source code for the build project.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::ProjectSource> {
         self.source.as_ref()
     }
     /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch build.</p>
-    pub fn secondary_sources(&self) -> ::std::option::Option<&[crate::types::ProjectSource]> {
-        self.secondary_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources.is_none()`.
+    pub fn secondary_sources(&self) -> &[crate::types::ProjectSource] {
+        self.secondary_sources.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of: </p>
     /// <ul>
@@ -146,16 +150,20 @@ impl BuildBatch {
     /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
-    pub fn secondary_source_versions(&self) -> ::std::option::Option<&[crate::types::ProjectSourceVersion]> {
-        self.secondary_source_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_source_versions.is_none()`.
+    pub fn secondary_source_versions(&self) -> &[crate::types::ProjectSourceVersion] {
+        self.secondary_source_versions.as_deref().unwrap_or_default()
     }
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
     pub fn artifacts(&self) -> ::std::option::Option<&crate::types::BuildArtifacts> {
         self.artifacts.as_ref()
     }
     /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts for this batch build.</p>
-    pub fn secondary_artifacts(&self) -> ::std::option::Option<&[crate::types::BuildArtifacts]> {
-        self.secondary_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
+    pub fn secondary_artifacts(&self) -> &[crate::types::BuildArtifacts] {
+        self.secondary_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Information about the cache for the build project.</p>
     pub fn cache(&self) -> ::std::option::Option<&crate::types::ProjectCache> {
@@ -211,16 +219,20 @@ impl BuildBatch {
         self.build_batch_number
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn file_system_locations(&self) -> ::std::option::Option<&[crate::types::ProjectFileSystemLocation]> {
-        self.file_system_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
+    pub fn file_system_locations(&self) -> &[crate::types::ProjectFileSystemLocation] {
+        self.file_system_locations.as_deref().unwrap_or_default()
     }
     /// <p>Contains configuration information about a batch build project.</p>
     pub fn build_batch_config(&self) -> ::std::option::Option<&crate::types::ProjectBuildBatchConfig> {
         self.build_batch_config.as_ref()
     }
     /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the batch build.</p>
-    pub fn build_groups(&self) -> ::std::option::Option<&[crate::types::BuildGroup]> {
-        self.build_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.build_groups.is_none()`.
+    pub fn build_groups(&self) -> &[crate::types::BuildGroup] {
+        self.build_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
     pub fn debug_session_enabled(&self) -> ::std::option::Option<bool> {

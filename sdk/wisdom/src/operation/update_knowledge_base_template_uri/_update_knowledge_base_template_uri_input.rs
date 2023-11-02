@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub knowledge_base_id: ::std::string::String,
     /// <p>The template URI to update.</p>
-    pub template_uri: ::std::option::Option<::std::string::String>,
+    pub template_uri: ::std::string::String,
 }
 impl UpdateKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
-        self.knowledge_base_id.as_deref()
+    pub fn knowledge_base_id(&self) -> &str {
+        use std::ops::Deref;
+        self.knowledge_base_id.deref()
     }
     /// <p>The template URI to update.</p>
-    pub fn template_uri(&self) -> ::std::option::Option<&str> {
-        self.template_uri.as_deref()
+    pub fn template_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.template_uri.deref()
     }
 }
 impl UpdateKnowledgeBaseTemplateUriInput {
@@ -34,6 +36,7 @@ pub struct UpdateKnowledgeBaseTemplateUriInputBuilder {
 }
 impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The template URI to update.</p>
+    /// This field is required.
     pub fn template_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_uri = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
         &self.template_uri
     }
     /// Consumes the builder and constructs a [`UpdateKnowledgeBaseTemplateUriInput`](crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`knowledge_base_id`](crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder::knowledge_base_id)
+    /// - [`template_uri`](crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder::template_uri)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,8 +77,18 @@ impl UpdateKnowledgeBaseTemplateUriInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput {
-                knowledge_base_id: self.knowledge_base_id,
-                template_uri: self.template_uri,
+                knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "knowledge_base_id",
+                        "knowledge_base_id was not specified but it is required when building UpdateKnowledgeBaseTemplateUriInput",
+                    )
+                })?,
+                template_uri: self.template_uri.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_uri",
+                        "template_uri was not specified but it is required when building UpdateKnowledgeBaseTemplateUriInput",
+                    )
+                })?,
             },
         )
     }

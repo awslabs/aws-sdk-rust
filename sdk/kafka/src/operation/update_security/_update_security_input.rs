@@ -62,6 +62,7 @@ impl UpdateSecurityInputBuilder {
         &self.client_authentication
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateSecurityInputBuilder {
         &self.cluster_arn
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self

@@ -57,6 +57,7 @@ pub struct GetWorkflowExecutionHistoryInputBuilder {
 }
 impl GetWorkflowExecutionHistoryInputBuilder {
     /// <p>The name of the domain containing the workflow execution.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl GetWorkflowExecutionHistoryInputBuilder {
         &self.domain
     }
     /// <p>Specifies the workflow execution for which to return the history.</p>
+    /// This field is required.
     pub fn execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
         self

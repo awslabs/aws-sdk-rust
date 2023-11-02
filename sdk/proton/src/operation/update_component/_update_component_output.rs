@@ -34,6 +34,7 @@ pub struct UpdateComponentOutputBuilder {
 }
 impl UpdateComponentOutputBuilder {
     /// <p>The detailed data of the updated component.</p>
+    /// This field is required.
     pub fn component(mut self, input: crate::types::Component) -> Self {
         self.component = ::std::option::Option::Some(input);
         self

@@ -36,11 +36,10 @@ pub fn de_get_failback_replication_configuration_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -78,11 +77,10 @@ pub fn de_get_failback_replication_configuration_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -127,7 +125,9 @@ pub fn de_get_failback_replication_configuration_http_response(
             crate::protocol_serde::shape_get_failback_replication_configuration::de_get_failback_replication_configuration(_response_body, output)
                 .map_err(crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_failback_replication_configuration_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError::unhandled)?
     })
 }
 

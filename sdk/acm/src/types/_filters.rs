@@ -14,17 +14,23 @@ pub struct Filters {
 }
 impl Filters {
     /// <p>Specify one or more <code>ExtendedKeyUsage</code> extension values.</p>
-    pub fn extended_key_usage(&self) -> ::std::option::Option<&[crate::types::ExtendedKeyUsageName]> {
-        self.extended_key_usage.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extended_key_usage.is_none()`.
+    pub fn extended_key_usage(&self) -> &[crate::types::ExtendedKeyUsageName] {
+        self.extended_key_usage.as_deref().unwrap_or_default()
     }
     /// <p>Specify one or more <code>KeyUsage</code> extension values.</p>
-    pub fn key_usage(&self) -> ::std::option::Option<&[crate::types::KeyUsageName]> {
-        self.key_usage.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_usage.is_none()`.
+    pub fn key_usage(&self) -> &[crate::types::KeyUsageName] {
+        self.key_usage.as_deref().unwrap_or_default()
     }
     /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
     /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.</p>
-    pub fn key_types(&self) -> ::std::option::Option<&[crate::types::KeyAlgorithm]> {
-        self.key_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_types.is_none()`.
+    pub fn key_types(&self) -> &[crate::types::KeyAlgorithm] {
+        self.key_types.as_deref().unwrap_or_default()
     }
 }
 impl Filters {

@@ -35,6 +35,7 @@ pub struct UpdateBranchOutputBuilder {
 }
 impl UpdateBranchOutputBuilder {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    /// This field is required.
     pub fn branch(mut self, input: crate::types::Branch) -> Self {
         self.branch = ::std::option::Option::Some(input);
         self

@@ -4,22 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSyncJobInput {
     /// <p>The workspace ID.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    pub sync_source: ::std::option::Option<::std::string::String>,
+    pub sync_source: ::std::string::String,
 }
 impl DeleteSyncJobInput {
     /// <p>The workspace ID.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    pub fn sync_source(&self) -> ::std::option::Option<&str> {
-        self.sync_source.as_deref()
+    pub fn sync_source(&self) -> &str {
+        use std::ops::Deref;
+        self.sync_source.deref()
     }
 }
 impl DeleteSyncJobInput {
@@ -38,6 +40,7 @@ pub struct DeleteSyncJobInputBuilder {
 }
 impl DeleteSyncJobInputBuilder {
     /// <p>The workspace ID.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +57,7 @@ impl DeleteSyncJobInputBuilder {
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
+    /// This field is required.
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
@@ -72,12 +76,25 @@ impl DeleteSyncJobInputBuilder {
         &self.sync_source
     }
     /// Consumes the builder and constructs a [`DeleteSyncJobInput`](crate::operation::delete_sync_job::DeleteSyncJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::delete_sync_job::builders::DeleteSyncJobInputBuilder::workspace_id)
+    /// - [`sync_source`](crate::operation::delete_sync_job::builders::DeleteSyncJobInputBuilder::sync_source)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_sync_job::DeleteSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_sync_job::DeleteSyncJobInput {
-            workspace_id: self.workspace_id,
-            sync_source: self.sync_source,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building DeleteSyncJobInput",
+                )
+            })?,
+            sync_source: self.sync_source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sync_source",
+                    "sync_source was not specified but it is required when building DeleteSyncJobInput",
+                )
+            })?,
         })
     }
 }

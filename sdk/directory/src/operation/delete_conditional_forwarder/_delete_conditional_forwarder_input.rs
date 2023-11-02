@@ -35,6 +35,7 @@ pub struct DeleteConditionalForwarderInputBuilder {
 }
 impl DeleteConditionalForwarderInputBuilder {
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteConditionalForwarderInputBuilder {
         &self.directory_id
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
+    /// This field is required.
     pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self

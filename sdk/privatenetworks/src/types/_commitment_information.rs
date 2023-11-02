@@ -42,6 +42,7 @@ pub struct CommitmentInformationBuilder {
 }
 impl CommitmentInformationBuilder {
     /// <p>The duration and renewal status of the commitment period for the radio unit.</p>
+    /// This field is required.
     pub fn commitment_configuration(mut self, input: crate::types::CommitmentConfiguration) -> Self {
         self.commitment_configuration = ::std::option::Option::Some(input);
         self

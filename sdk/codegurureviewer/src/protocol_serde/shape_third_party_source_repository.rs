@@ -3,14 +3,14 @@ pub fn ser_third_party_source_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThirdPartySourceRepository,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.connection_arn {
-        object.key("ConnectionArn").string(var_2.as_str());
+    {
+        object.key("ConnectionArn").string(input.connection_arn.as_str());
     }
-    if let Some(var_3) = &input.owner {
-        object.key("Owner").string(var_3.as_str());
+    {
+        object.key("Owner").string(input.owner.as_str());
     }
     Ok(())
 }

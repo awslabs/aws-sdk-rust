@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDataCellsFilter`](crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`table_data(DataCellsFilter)`](crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterFluentBuilder::table_data) / [`set_table_data(Option<DataCellsFilter>)`](crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterFluentBuilder::set_table_data): <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    ///   - [`table_data(DataCellsFilter)`](crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterFluentBuilder::table_data) / [`set_table_data(Option<DataCellsFilter>)`](crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterFluentBuilder::set_table_data):<br>required: **true**<br><p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p><br>
     /// - On success, responds with [`UpdateDataCellsFilterOutput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterOutput)
     /// - On failure, responds with [`SdkError<UpdateDataCellsFilterError>`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterError)
     pub fn update_data_cells_filter(&self) -> crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterFluentBuilder {

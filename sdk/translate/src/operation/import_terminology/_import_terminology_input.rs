@@ -38,8 +38,10 @@ impl ImportTerminologyInput {
         self.encryption_key.as_ref()
     }
     /// <p>Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ImportTerminologyInput {
@@ -62,6 +64,7 @@ pub struct ImportTerminologyInputBuilder {
 }
 impl ImportTerminologyInputBuilder {
     /// <p>The name of the custom terminology being imported.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl ImportTerminologyInputBuilder {
         &self.name
     }
     /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.</p>
+    /// This field is required.
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.merge_strategy = ::std::option::Option::Some(input);
         self
@@ -104,6 +108,7 @@ impl ImportTerminologyInputBuilder {
         &self.description
     }
     /// <p>The terminology data for the custom terminology being imported.</p>
+    /// This field is required.
     pub fn terminology_data(mut self, input: crate::types::TerminologyData) -> Self {
         self.terminology_data = ::std::option::Option::Some(input);
         self

@@ -3,8 +3,8 @@ pub fn ser_translation_pin_data_iso_format034(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TranslationPinDataIsoFormat034,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.primary_account_number {
-        object.key("PrimaryAccountNumber").string(var_1.as_str());
+    {
+        object.key("PrimaryAccountNumber").string(input.primary_account_number.as_str());
     }
     Ok(())
 }

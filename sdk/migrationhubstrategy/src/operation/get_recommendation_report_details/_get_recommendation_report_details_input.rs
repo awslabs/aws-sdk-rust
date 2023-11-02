@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsInput {
     /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetRecommendationReportDetailsInput {
     /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetRecommendationReportDetailsInput {
@@ -27,6 +28,7 @@ pub struct GetRecommendationReportDetailsInputBuilder {
 }
 impl GetRecommendationReportDetailsInputBuilder {
     /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,21 @@ impl GetRecommendationReportDetailsInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetRecommendationReportDetailsInput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput { id: self.id })
+        ::std::result::Result::Ok(crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsInput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetRecommendationReportDetailsInput",
+                )
+            })?,
+        })
     }
 }

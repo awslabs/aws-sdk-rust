@@ -14,8 +14,10 @@ impl GroupResourcesInput {
         self.group.as_deref()
     }
     /// <p>The list of ARNs of the resources to be added to the group. </p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
 }
 impl GroupResourcesInput {
@@ -34,6 +36,7 @@ pub struct GroupResourcesInputBuilder {
 }
 impl GroupResourcesInputBuilder {
     /// <p>The name or the ARN of the resource group to add resources to.</p>
+    /// This field is required.
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self

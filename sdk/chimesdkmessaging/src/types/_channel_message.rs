@@ -101,8 +101,10 @@ impl ChannelMessage {
         self.content_type.as_deref()
     }
     /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
-    pub fn target(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.target.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target.is_none()`.
+    pub fn target(&self) -> &[crate::types::Target] {
+        self.target.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ChannelMessage {

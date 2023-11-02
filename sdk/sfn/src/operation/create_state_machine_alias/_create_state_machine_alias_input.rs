@@ -22,8 +22,10 @@ impl CreateStateMachineAliasInput {
         self.name.as_deref()
     }
     /// <p>The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. <code>routingConfiguration</code> contains an array of <code>RoutingConfig</code> objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each <code>RoutingConfig</code>.</p>
-    pub fn routing_configuration(&self) -> ::std::option::Option<&[crate::types::RoutingConfigurationListItem]> {
-        self.routing_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
+    pub fn routing_configuration(&self) -> &[crate::types::RoutingConfigurationListItem] {
+        self.routing_configuration.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateStateMachineAliasInput {
@@ -67,6 +69,7 @@ impl CreateStateMachineAliasInputBuilder {
     }
     /// <p>The name of the state machine alias.</p>
     /// <p>To avoid conflict with version ARNs, don't use an integer in the name of the alias.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

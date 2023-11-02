@@ -58,6 +58,7 @@ pub struct ShareDirectoryInputBuilder {
 }
 impl ShareDirectoryInputBuilder {
     /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl ShareDirectoryInputBuilder {
         &self.share_notes
     }
     /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
+    /// This field is required.
     pub fn share_target(mut self, input: crate::types::ShareTarget) -> Self {
         self.share_target = ::std::option::Option::Some(input);
         self
@@ -100,6 +102,7 @@ impl ShareDirectoryInputBuilder {
         &self.share_target
     }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+    /// This field is required.
     pub fn share_method(mut self, input: crate::types::ShareMethod) -> Self {
         self.share_method = ::std::option::Option::Some(input);
         self

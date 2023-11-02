@@ -42,6 +42,7 @@ pub struct DeleteSchemaVersionsInputBuilder {
 }
 impl DeleteSchemaVersionsInputBuilder {
     /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self
@@ -60,6 +61,7 @@ impl DeleteSchemaVersionsInputBuilder {
     /// <li> <p>a single version number, 5</p> </li>
     /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.versions = ::std::option::Option::Some(input.into());
         self

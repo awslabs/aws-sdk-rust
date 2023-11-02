@@ -72,6 +72,7 @@ pub struct CreateIamPolicyAssignmentInputBuilder {
 }
 impl CreateIamPolicyAssignmentInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl CreateIamPolicyAssignmentInputBuilder {
         &self.aws_account_id
     }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn assignment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl CreateIamPolicyAssignmentInputBuilder {
     /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
     /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.assignment_status = ::std::option::Option::Some(input);
         self
@@ -168,6 +171,7 @@ impl CreateIamPolicyAssignmentInputBuilder {
         &self.identities
     }
     /// <p>The namespace that contains the assignment.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self

@@ -69,6 +69,7 @@ impl StartEdgeConfigurationUpdateInputBuilder {
         &self.stream_arn
     }
     /// <p>The edge configuration details required to invoke the update process.</p>
+    /// This field is required.
     pub fn edge_config(mut self, input: crate::types::EdgeConfig) -> Self {
         self.edge_config = ::std::option::Option::Some(input);
         self

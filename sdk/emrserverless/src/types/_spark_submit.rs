@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SparkSubmit {
     /// <p>The entry point for the Spark submit job run.</p>
-    pub entry_point: ::std::option::Option<::std::string::String>,
+    pub entry_point: ::std::string::String,
     /// <p>The arguments for the Spark submit job run.</p>
     pub entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The parameters for the Spark submit job run.</p>
@@ -13,12 +13,15 @@ pub struct SparkSubmit {
 }
 impl SparkSubmit {
     /// <p>The entry point for the Spark submit job run.</p>
-    pub fn entry_point(&self) -> ::std::option::Option<&str> {
-        self.entry_point.as_deref()
+    pub fn entry_point(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_point.deref()
     }
     /// <p>The arguments for the Spark submit job run.</p>
-    pub fn entry_point_arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entry_point_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entry_point_arguments.is_none()`.
+    pub fn entry_point_arguments(&self) -> &[::std::string::String] {
+        self.entry_point_arguments.as_deref().unwrap_or_default()
     }
     /// <p>The parameters for the Spark submit job run.</p>
     pub fn spark_submit_parameters(&self) -> ::std::option::Option<&str> {
@@ -51,6 +54,7 @@ pub struct SparkSubmitBuilder {
 }
 impl SparkSubmitBuilder {
     /// <p>The entry point for the Spark submit job run.</p>
+    /// This field is required.
     pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_point = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +103,19 @@ impl SparkSubmitBuilder {
         &self.spark_submit_parameters
     }
     /// Consumes the builder and constructs a [`SparkSubmit`](crate::types::SparkSubmit).
-    pub fn build(self) -> crate::types::SparkSubmit {
-        crate::types::SparkSubmit {
-            entry_point: self.entry_point,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_point`](crate::types::builders::SparkSubmitBuilder::entry_point)
+    pub fn build(self) -> ::std::result::Result<crate::types::SparkSubmit, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SparkSubmit {
+            entry_point: self.entry_point.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entry_point",
+                    "entry_point was not specified but it is required when building SparkSubmit",
+                )
+            })?,
             entry_point_arguments: self.entry_point_arguments,
             spark_submit_parameters: self.spark_submit_parameters,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for SparkSubmitBuilder {

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableStyleTarget {
     /// <p>The cell type of the table style target.</p>
-    pub cell_type: ::std::option::Option<crate::types::StyledCellType>,
+    pub cell_type: crate::types::StyledCellType,
 }
 impl TableStyleTarget {
     /// <p>The cell type of the table style target.</p>
-    pub fn cell_type(&self) -> ::std::option::Option<&crate::types::StyledCellType> {
-        self.cell_type.as_ref()
+    pub fn cell_type(&self) -> &crate::types::StyledCellType {
+        &self.cell_type
     }
 }
 impl TableStyleTarget {
@@ -28,6 +28,7 @@ pub struct TableStyleTargetBuilder {
 }
 impl TableStyleTargetBuilder {
     /// <p>The cell type of the table style target.</p>
+    /// This field is required.
     pub fn cell_type(mut self, input: crate::types::StyledCellType) -> Self {
         self.cell_type = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl TableStyleTargetBuilder {
         &self.cell_type
     }
     /// Consumes the builder and constructs a [`TableStyleTarget`](crate::types::TableStyleTarget).
-    pub fn build(self) -> crate::types::TableStyleTarget {
-        crate::types::TableStyleTarget { cell_type: self.cell_type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cell_type`](crate::types::builders::TableStyleTargetBuilder::cell_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableStyleTarget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableStyleTarget {
+            cell_type: self.cell_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cell_type",
+                    "cell_type was not specified but it is required when building TableStyleTarget",
+                )
+            })?,
+        })
     }
 }

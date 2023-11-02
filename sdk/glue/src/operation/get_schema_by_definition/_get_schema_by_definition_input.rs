@@ -46,6 +46,7 @@ impl GetSchemaByDefinitionInputBuilder {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self
@@ -68,6 +69,7 @@ impl GetSchemaByDefinitionInputBuilder {
         &self.schema_id
     }
     /// <p>The definition of the schema for which schema details are required.</p>
+    /// This field is required.
     pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ArchiveApplication`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_account_id): <p>Account ID.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::application_id) / [`set_application_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>Application ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`ArchiveApplicationOutput`](crate::operation::archive_application::ArchiveApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::application_id): <p>Application ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::arn): <p>Application ARN.</p>

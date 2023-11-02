@@ -69,6 +69,7 @@ pub struct ListParticipantsInputBuilder {
 }
 impl ListParticipantsInputBuilder {
     /// <p>Stage ARN.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListParticipantsInputBuilder {
         &self.stage_arn
     }
     /// <p>ID of the session within the stage.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

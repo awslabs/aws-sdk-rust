@@ -3,17 +3,17 @@ pub fn ser_tag_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::tag_resource::TagResourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.tags {
+    {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("tags").start_object();
-        for (key_3, value_4) in var_1 {
-            if let Some(var_5) = value_4 {
-                object_2.key(key_3.as_str()).string(var_5.as_str());
+        let mut object_1 = object.key("tags").start_object();
+        for (key_2, value_3) in &input.tags {
+            if let Some(var_4) = value_3 {
+                object_1.key(key_2.as_str()).string(var_4.as_str());
             } else {
-                object_2.key(key_3.as_str()).null();
+                object_1.key(key_2.as_str()).null();
             }
         }
-        object_2.finish();
+        object_1.finish();
     }
     Ok(())
 }

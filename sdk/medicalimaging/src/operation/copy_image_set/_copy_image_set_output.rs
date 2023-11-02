@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyImageSetOutput {
     /// <p>The data store identifier.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The properties of the source image set.</p>
     pub source_image_set_properties: ::std::option::Option<crate::types::CopySourceImageSetProperties>,
     /// <p>The properties of the destination image set.</p>
@@ -13,8 +13,9 @@ pub struct CopyImageSetOutput {
 }
 impl CopyImageSetOutput {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The properties of the source image set.</p>
     pub fn source_image_set_properties(&self) -> ::std::option::Option<&crate::types::CopySourceImageSetProperties> {
@@ -48,6 +49,7 @@ pub struct CopyImageSetOutputBuilder {
 }
 impl CopyImageSetOutputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl CopyImageSetOutputBuilder {
         &self.datastore_id
     }
     /// <p>The properties of the source image set.</p>
+    /// This field is required.
     pub fn source_image_set_properties(mut self, input: crate::types::CopySourceImageSetProperties) -> Self {
         self.source_image_set_properties = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl CopyImageSetOutputBuilder {
         &self.source_image_set_properties
     }
     /// <p>The properties of the destination image set.</p>
+    /// This field is required.
     pub fn destination_image_set_properties(mut self, input: crate::types::CopyDestinationImageSetProperties) -> Self {
         self.destination_image_set_properties = ::std::option::Option::Some(input);
         self
@@ -99,12 +103,21 @@ impl CopyImageSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CopyImageSetOutput`](crate::operation::copy_image_set::CopyImageSetOutput).
-    pub fn build(self) -> crate::operation::copy_image_set::CopyImageSetOutput {
-        crate::operation::copy_image_set::CopyImageSetOutput {
-            datastore_id: self.datastore_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::operation::copy_image_set::builders::CopyImageSetOutputBuilder::datastore_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::copy_image_set::CopyImageSetOutput {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building CopyImageSetOutput",
+                )
+            })?,
             source_image_set_properties: self.source_image_set_properties,
             destination_image_set_properties: self.destination_image_set_properties,
             _request_id: self._request_id,
-        }
+        })
     }
 }

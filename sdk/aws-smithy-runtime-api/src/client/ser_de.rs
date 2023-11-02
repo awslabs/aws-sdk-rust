@@ -8,6 +8,7 @@
 use crate::box_error::BoxError;
 use crate::client::interceptors::context::{Error, Input, Output};
 use crate::client::orchestrator::{HttpRequest, HttpResponse, OrchestratorError};
+use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::fmt;
 use std::sync::Arc;
@@ -47,6 +48,8 @@ impl RequestSerializer for SharedRequestSerializer {
 impl Storable for SharedRequestSerializer {
     type Storer = StoreReplace<Self>;
 }
+
+impl_shared_conversions!(convert SharedRequestSerializer from RequestSerializer using SharedRequestSerializer::new);
 
 /// Deserialization implementation that converts an [`HttpResponse`] into an [`Output`] or [`Error`].
 pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
@@ -103,3 +106,5 @@ impl ResponseDeserializer for SharedResponseDeserializer {
 impl Storable for SharedResponseDeserializer {
     type Storer = StoreReplace<Self>;
 }
+
+impl_shared_conversions!(convert SharedResponseDeserializer from ResponseDeserializer using SharedResponseDeserializer::new);

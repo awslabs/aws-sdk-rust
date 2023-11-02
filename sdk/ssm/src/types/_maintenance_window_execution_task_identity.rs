@@ -63,8 +63,10 @@ impl MaintenanceWindowExecutionTaskIdentity {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the maintenance window task.</p>
-    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
-        self.triggered_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
+    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref().unwrap_or_default()
     }
 }
 impl MaintenanceWindowExecutionTaskIdentity {

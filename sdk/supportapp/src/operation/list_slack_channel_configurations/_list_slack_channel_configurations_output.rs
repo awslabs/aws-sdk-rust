@@ -6,7 +6,7 @@ pub struct ListSlackChannelConfigurationsOutput {
     /// <p>The point where pagination should resume when the response returns only partial results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The configurations for a Slack channel.</p>
-    pub slack_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
+    pub slack_channel_configurations: ::std::vec::Vec<crate::types::SlackChannelConfiguration>,
     _request_id: Option<String>,
 }
 impl ListSlackChannelConfigurationsOutput {
@@ -15,8 +15,9 @@ impl ListSlackChannelConfigurationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The configurations for a Slack channel.</p>
-    pub fn slack_channel_configurations(&self) -> ::std::option::Option<&[crate::types::SlackChannelConfiguration]> {
-        self.slack_channel_configurations.as_deref()
+    pub fn slack_channel_configurations(&self) -> &[crate::types::SlackChannelConfiguration] {
+        use std::ops::Deref;
+        self.slack_channel_configurations.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSlackChannelConfigurationsOutput {
@@ -87,11 +88,25 @@ impl ListSlackChannelConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
-        crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
-            next_token: self.next_token,
-            slack_channel_configurations: self.slack_channel_configurations,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`slack_channel_configurations`](crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsOutputBuilder::slack_channel_configurations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
+                next_token: self.next_token,
+                slack_channel_configurations: self.slack_channel_configurations.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "slack_channel_configurations",
+                        "slack_channel_configurations was not specified but it is required when building ListSlackChannelConfigurationsOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

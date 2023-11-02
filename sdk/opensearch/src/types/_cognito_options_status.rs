@@ -35,6 +35,7 @@ pub struct CognitoOptionsStatusBuilder {
 }
 impl CognitoOptionsStatusBuilder {
     /// <p>Cognito options for the specified domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::CognitoOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CognitoOptionsStatusBuilder {
         &self.options
     }
     /// <p>The status of the Cognito options for the specified domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

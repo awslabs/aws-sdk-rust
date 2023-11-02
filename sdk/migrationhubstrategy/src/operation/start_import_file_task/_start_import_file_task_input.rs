@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportFileTaskInput {
     /// <p> A descriptive name for the request. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
-    pub s3_bucket: ::std::option::Option<::std::string::String>,
+    pub s3_bucket: ::std::string::String,
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub s3key: ::std::option::Option<::std::string::String>,
+    pub s3key: ::std::string::String,
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
@@ -18,24 +18,29 @@ pub struct StartImportFileTaskInput {
 }
 impl StartImportFileTaskInput {
     /// <p> A descriptive name for the request. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket.as_deref()
+    pub fn s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket.deref()
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn s3key(&self) -> ::std::option::Option<&str> {
-        self.s3key.as_deref()
+    pub fn s3key(&self) -> &str {
+        use std::ops::Deref;
+        self.s3key.deref()
     }
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
         self.data_source_type.as_ref()
     }
     /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
-    pub fn group_id(&self) -> ::std::option::Option<&[crate::types::Group]> {
-        self.group_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_id.is_none()`.
+    pub fn group_id(&self) -> &[crate::types::Group] {
+        self.group_id.as_deref().unwrap_or_default()
     }
     /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
     pub fn s3bucket_for_report_data(&self) -> ::std::option::Option<&str> {
@@ -62,6 +67,7 @@ pub struct StartImportFileTaskInputBuilder {
 }
 impl StartImportFileTaskInputBuilder {
     /// <p> A descriptive name for the request. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +82,7 @@ impl StartImportFileTaskInputBuilder {
         &self.name
     }
     /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl StartImportFileTaskInputBuilder {
         &self.s3_bucket
     }
     /// <p> The Amazon S3 key name of the import file. </p>
+    /// This field is required.
     pub fn s3key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3key = ::std::option::Option::Some(input.into());
         self
@@ -152,14 +160,33 @@ impl StartImportFileTaskInputBuilder {
         &self.s3bucket_for_report_data
     }
     /// Consumes the builder and constructs a [`StartImportFileTaskInput`](crate::operation::start_import_file_task::StartImportFileTaskInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::name)
+    /// - [`s3_bucket`](crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::s3_bucket)
+    /// - [`s3key`](crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::s3key)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_import_file_task::StartImportFileTaskInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_import_file_task::StartImportFileTaskInput {
-            name: self.name,
-            s3_bucket: self.s3_bucket,
-            s3key: self.s3key,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building StartImportFileTaskInput",
+                )
+            })?,
+            s3_bucket: self.s3_bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_bucket",
+                    "s3_bucket was not specified but it is required when building StartImportFileTaskInput",
+                )
+            })?,
+            s3key: self.s3key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3key",
+                    "s3key was not specified but it is required when building StartImportFileTaskInput",
+                )
+            })?,
             data_source_type: self.data_source_type,
             group_id: self.group_id,
             s3bucket_for_report_data: self.s3bucket_for_report_data,

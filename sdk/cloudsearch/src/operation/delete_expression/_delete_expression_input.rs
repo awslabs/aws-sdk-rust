@@ -35,6 +35,7 @@ pub struct DeleteExpressionInputBuilder {
 }
 impl DeleteExpressionInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteExpressionInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
+    /// This field is required.
     pub fn expression_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_name = ::std::option::Option::Some(input.into());
         self

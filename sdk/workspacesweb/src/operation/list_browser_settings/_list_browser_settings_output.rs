@@ -11,8 +11,10 @@ pub struct ListBrowserSettingsOutput {
 }
 impl ListBrowserSettingsOutput {
     /// <p>The browser settings.</p>
-    pub fn browser_settings(&self) -> ::std::option::Option<&[crate::types::BrowserSettingsSummary]> {
-        self.browser_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.browser_settings.is_none()`.
+    pub fn browser_settings(&self) -> &[crate::types::BrowserSettingsSummary] {
+        self.browser_settings.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

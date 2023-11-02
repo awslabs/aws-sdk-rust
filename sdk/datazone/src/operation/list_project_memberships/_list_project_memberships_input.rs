@@ -62,6 +62,7 @@ pub struct ListProjectMembershipsInputBuilder {
 }
 impl ListProjectMembershipsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which you want to list project memberships.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListProjectMembershipsInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the project whose memberships you want to list.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct GetDataViewInputBuilder {
 }
 impl GetDataViewInputBuilder {
     /// <p>The unique identifier for the Dataview.</p>
+    /// This field is required.
     pub fn data_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_view_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetDataViewInputBuilder {
         &self.data_view_id
     }
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self

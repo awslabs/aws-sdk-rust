@@ -12,8 +12,8 @@ pub fn ser_query_assistant_input(
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.query_text {
-        object.key("queryText").string(var_3.as_str());
+    {
+        object.key("queryText").string(input.query_text.as_str());
     }
     Ok(())
 }

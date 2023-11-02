@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
+    pub instance_id: ::std::string::String,
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The status of a user associated with an EC2 instance.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The status message for users of an EC2 instance.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the user.</p>
@@ -23,20 +23,23 @@ pub struct InstanceUserSummary {
 }
 impl InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
+    pub fn instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_id.deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The status message for users of an EC2 instance.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -77,6 +80,7 @@ pub struct InstanceUserSummaryBuilder {
 }
 impl InstanceUserSummaryBuilder {
     /// <p>The user name from the identity provider for the user.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl InstanceUserSummaryBuilder {
         &self.username
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl InstanceUserSummaryBuilder {
         &self.instance_id
     }
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl InstanceUserSummaryBuilder {
         &self.identity_provider
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -189,16 +196,35 @@ impl InstanceUserSummaryBuilder {
         &self.disassociation_date
     }
     /// Consumes the builder and constructs a [`InstanceUserSummary`](crate::types::InstanceUserSummary).
-    pub fn build(self) -> crate::types::InstanceUserSummary {
-        crate::types::InstanceUserSummary {
-            username: self.username,
-            instance_id: self.instance_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::types::builders::InstanceUserSummaryBuilder::username)
+    /// - [`instance_id`](crate::types::builders::InstanceUserSummaryBuilder::instance_id)
+    /// - [`status`](crate::types::builders::InstanceUserSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceUserSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceUserSummary {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building InstanceUserSummary",
+                )
+            })?,
+            instance_id: self.instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_id",
+                    "instance_id was not specified but it is required when building InstanceUserSummary",
+                )
+            })?,
             identity_provider: self.identity_provider,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building InstanceUserSummary",
+                )
+            })?,
             status_message: self.status_message,
             domain: self.domain,
             association_date: self.association_date,
             disassociation_date: self.disassociation_date,
-        }
+        })
     }
 }

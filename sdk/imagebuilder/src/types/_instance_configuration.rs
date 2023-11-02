@@ -15,8 +15,10 @@ impl InstanceConfiguration {
         self.image.as_deref()
     }
     /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
 }
 impl InstanceConfiguration {

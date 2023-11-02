@@ -32,8 +32,10 @@ impl ListRegionsInput {
         self.next_token.as_deref()
     }
     /// <p>A list of Region statuses (Enabling, Enabled, Disabling, Disabled, Enabled_by_default) to use to filter the list of Regions for a given account. For example, passing in a value of ENABLING will only return a list of Regions with a Region status of ENABLING.</p>
-    pub fn region_opt_status_contains(&self) -> ::std::option::Option<&[crate::types::RegionOptStatus]> {
-        self.region_opt_status_contains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_opt_status_contains.is_none()`.
+    pub fn region_opt_status_contains(&self) -> &[crate::types::RegionOptStatus] {
+        self.region_opt_status_contains.as_deref().unwrap_or_default()
     }
 }
 impl ListRegionsInput {

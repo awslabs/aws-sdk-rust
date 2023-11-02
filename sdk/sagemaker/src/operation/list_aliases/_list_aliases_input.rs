@@ -55,6 +55,7 @@ pub struct ListAliasesInputBuilder {
 }
 impl ListAliasesInputBuilder {
     /// <p>The name of the image.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self

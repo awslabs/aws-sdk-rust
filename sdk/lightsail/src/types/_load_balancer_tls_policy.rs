@@ -31,13 +31,17 @@ impl LoadBalancerTlsPolicy {
         self.description.as_deref()
     }
     /// <p>The protocols used in a given TLS security policy.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[::std::string::String] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>The ciphers used by the TLS security policy.</p>
     /// <p>The ciphers are listed in order of preference.</p>
-    pub fn ciphers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ciphers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ciphers.is_none()`.
+    pub fn ciphers(&self) -> &[::std::string::String] {
+        self.ciphers.as_deref().unwrap_or_default()
     }
 }
 impl LoadBalancerTlsPolicy {

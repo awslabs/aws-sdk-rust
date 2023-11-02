@@ -10,8 +10,10 @@ pub struct DescribeEnvironmentManagedActionsOutput {
 }
 impl DescribeEnvironmentManagedActionsOutput {
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    pub fn managed_actions(&self) -> ::std::option::Option<&[crate::types::ManagedAction]> {
-        self.managed_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_actions.is_none()`.
+    pub fn managed_actions(&self) -> &[crate::types::ManagedAction] {
+        self.managed_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEnvironmentManagedActionsOutput {

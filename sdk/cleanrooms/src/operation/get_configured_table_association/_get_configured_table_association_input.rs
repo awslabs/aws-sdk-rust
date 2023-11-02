@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfiguredTableAssociationInput {
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    pub configured_table_association_identifier: ::std::option::Option<::std::string::String>,
+    pub configured_table_association_identifier: ::std::string::String,
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
 }
 impl GetConfiguredTableAssociationInput {
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    pub fn configured_table_association_identifier(&self) -> ::std::option::Option<&str> {
-        self.configured_table_association_identifier.as_deref()
+    pub fn configured_table_association_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.configured_table_association_identifier.deref()
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
 }
 impl GetConfiguredTableAssociationInput {
@@ -34,6 +36,7 @@ pub struct GetConfiguredTableAssociationInputBuilder {
 }
 impl GetConfiguredTableAssociationInputBuilder {
     /// <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
+    /// This field is required.
     pub fn configured_table_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetConfiguredTableAssociationInputBuilder {
         &self.configured_table_association_identifier
     }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl GetConfiguredTableAssociationInputBuilder {
         &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`GetConfiguredTableAssociationInput`](crate::operation::get_configured_table_association::GetConfiguredTableAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configured_table_association_identifier`](crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationInputBuilder::configured_table_association_identifier)
+    /// - [`membership_identifier`](crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,8 +76,18 @@ impl GetConfiguredTableAssociationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_configured_table_association::GetConfiguredTableAssociationInput {
-            configured_table_association_identifier: self.configured_table_association_identifier,
-            membership_identifier: self.membership_identifier,
+            configured_table_association_identifier: self.configured_table_association_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configured_table_association_identifier",
+                    "configured_table_association_identifier was not specified but it is required when building GetConfiguredTableAssociationInput",
+                )
+            })?,
+            membership_identifier: self.membership_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_identifier",
+                    "membership_identifier was not specified but it is required when building GetConfiguredTableAssociationInput",
+                )
+            })?,
         })
     }
 }

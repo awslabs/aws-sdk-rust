@@ -48,6 +48,7 @@ impl DisconnectParticipantInputBuilder {
         &self.client_token
     }
     /// <p>The authentication token associated with the participant's connection.</p>
+    /// This field is required.
     pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self

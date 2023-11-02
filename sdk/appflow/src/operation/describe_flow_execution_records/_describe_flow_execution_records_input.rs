@@ -41,6 +41,7 @@ pub struct DescribeFlowExecutionRecordsInputBuilder {
 }
 impl DescribeFlowExecutionRecordsInputBuilder {
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// This field is required.
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
         self

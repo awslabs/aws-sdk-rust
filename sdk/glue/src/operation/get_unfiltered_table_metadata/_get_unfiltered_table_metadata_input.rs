@@ -32,8 +32,10 @@ impl GetUnfilteredTableMetadataInput {
         self.audit_context.as_ref()
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
-        self.supported_permission_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_permission_types.is_none()`.
+    pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
+        self.supported_permission_types.as_deref().unwrap_or_default()
     }
 }
 impl GetUnfilteredTableMetadataInput {
@@ -55,6 +57,7 @@ pub struct GetUnfilteredTableMetadataInputBuilder {
 }
 impl GetUnfilteredTableMetadataInputBuilder {
     /// <p>The catalog ID where the table resides.</p>
+    /// This field is required.
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
         &self.catalog_id
     }
     /// <p>(Required) Specifies the name of a database that contains the table.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
         &self.database_name
     }
     /// <p>(Required) Specifies the name of a table for which you are requesting metadata.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

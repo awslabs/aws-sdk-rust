@@ -27,6 +27,7 @@ pub struct StopNotebookExecutionInputBuilder {
 }
 impl StopNotebookExecutionInputBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
+    /// This field is required.
     pub fn notebook_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_execution_id = ::std::option::Option::Some(input.into());
         self

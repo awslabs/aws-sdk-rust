@@ -3,50 +3,50 @@ pub fn ser_column_statistics_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnStatisticsData,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.boolean_column_statistics_data {
+    if let Some(var_1) = &input.boolean_column_statistics_data {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("BooleanColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_boolean_column_statistics_data::ser_boolean_column_statistics_data(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("BooleanColumnStatisticsData").start_object();
+        crate::protocol_serde::shape_boolean_column_statistics_data::ser_boolean_column_statistics_data(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.date_column_statistics_data {
+    if let Some(var_3) = &input.date_column_statistics_data {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("DateColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_date_column_statistics_data::ser_date_column_statistics_data(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("DateColumnStatisticsData").start_object();
+        crate::protocol_serde::shape_date_column_statistics_data::ser_date_column_statistics_data(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.decimal_column_statistics_data {
+    if let Some(var_5) = &input.decimal_column_statistics_data {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("DecimalColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_decimal_column_statistics_data::ser_decimal_column_statistics_data(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("DecimalColumnStatisticsData").start_object();
+        crate::protocol_serde::shape_decimal_column_statistics_data::ser_decimal_column_statistics_data(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.double_column_statistics_data {
+    if let Some(var_7) = &input.double_column_statistics_data {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("DoubleColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_double_column_statistics_data::ser_double_column_statistics_data(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("DoubleColumnStatisticsData").start_object();
+        crate::protocol_serde::shape_double_column_statistics_data::ser_double_column_statistics_data(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.long_column_statistics_data {
+    if let Some(var_9) = &input.long_column_statistics_data {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("LongColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_long_column_statistics_data::ser_long_column_statistics_data(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("LongColumnStatisticsData").start_object();
+        crate::protocol_serde::shape_long_column_statistics_data::ser_long_column_statistics_data(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.string_column_statistics_data {
+    if let Some(var_11) = &input.string_column_statistics_data {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("StringColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_string_column_statistics_data::ser_string_column_statistics_data(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_12 = object.key("StringColumnStatisticsData").start_object();
+        crate::protocol_serde::shape_string_column_statistics_data::ser_string_column_statistics_data(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_14) = &input.binary_column_statistics_data {
+    if let Some(var_13) = &input.binary_column_statistics_data {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("BinaryColumnStatisticsData").start_object();
-        crate::protocol_serde::shape_binary_column_statistics_data::ser_binary_column_statistics_data(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_14 = object.key("BinaryColumnStatisticsData").start_object();
+        crate::protocol_serde::shape_binary_column_statistics_data::ser_binary_column_statistics_data(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }
@@ -118,7 +118,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::column_statistics_data_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

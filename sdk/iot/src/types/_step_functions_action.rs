@@ -7,9 +7,9 @@ pub struct StepFunctionsAction {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
     pub execution_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
-    pub state_machine_name: ::std::option::Option<::std::string::String>,
+    pub state_machine_name: ::std::string::String,
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl StepFunctionsAction {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
@@ -17,12 +17,14 @@ impl StepFunctionsAction {
         self.execution_name_prefix.as_deref()
     }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
-    pub fn state_machine_name(&self) -> ::std::option::Option<&str> {
-        self.state_machine_name.as_deref()
+    pub fn state_machine_name(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_name.deref()
     }
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl StepFunctionsAction {
@@ -56,6 +58,7 @@ impl StepFunctionsActionBuilder {
         &self.execution_name_prefix
     }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
+    /// This field is required.
     pub fn state_machine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl StepFunctionsActionBuilder {
         &self.state_machine_name
     }
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl StepFunctionsActionBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`StepFunctionsAction`](crate::types::StepFunctionsAction).
-    pub fn build(self) -> crate::types::StepFunctionsAction {
-        crate::types::StepFunctionsAction {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_machine_name`](crate::types::builders::StepFunctionsActionBuilder::state_machine_name)
+    /// - [`role_arn`](crate::types::builders::StepFunctionsActionBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::StepFunctionsAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StepFunctionsAction {
             execution_name_prefix: self.execution_name_prefix,
-            state_machine_name: self.state_machine_name,
-            role_arn: self.role_arn,
-        }
+            state_machine_name: self.state_machine_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_machine_name",
+                    "state_machine_name was not specified but it is required when building StepFunctionsAction",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building StepFunctionsAction",
+                )
+            })?,
+        })
     }
 }

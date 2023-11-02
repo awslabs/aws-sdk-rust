@@ -50,6 +50,7 @@ pub struct RevokeTokenInputBuilder {
 }
 impl RevokeTokenInputBuilder {
     /// <p>The refresh token that you want to revoke.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl RevokeTokenInputBuilder {
         &self.token
     }
     /// <p>The client ID for the token that you want to revoke.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self

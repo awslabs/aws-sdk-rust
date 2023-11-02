@@ -28,6 +28,7 @@ pub struct OutputResolutionResamplingInputBuilder {
 }
 impl OutputResolutionResamplingInputBuilder {
     /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
+    /// This field is required.
     pub fn user_defined(mut self, input: crate::types::UserDefined) -> Self {
         self.user_defined = ::std::option::Option::Some(input);
         self

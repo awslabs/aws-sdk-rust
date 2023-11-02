@@ -22,8 +22,10 @@ impl ListCrawlsInput {
         self.max_results
     }
     /// <p>Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::CrawlsFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::CrawlsFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListCrawlsInputBuilder {
 }
 impl ListCrawlsInputBuilder {
     /// <p>The name of the crawler whose runs you want to retrieve.</p>
+    /// This field is required.
     pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crawler_name = ::std::option::Option::Some(input.into());
         self

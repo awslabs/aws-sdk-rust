@@ -9,8 +9,10 @@ pub struct TrafficRoute {
 }
 impl TrafficRoute {
     /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
-    pub fn listener_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.listener_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listener_arns.is_none()`.
+    pub fn listener_arns(&self) -> &[::std::string::String] {
+        self.listener_arns.as_deref().unwrap_or_default()
     }
 }
 impl TrafficRoute {

@@ -27,9 +27,14 @@
 
 pub mod body;
 pub mod endpoint;
+// Marked as `doc(hidden)` because a type in the module is used both by this crate and by the code
+// generator, but not by external users. Also, by the module being `doc(hidden)` instead of it being
+// in `rust-runtime/inlineable`, each user won't have to pay the cost of running the module's tests
+// when compiling their generated SDK.
+#[doc(hidden)]
+pub mod futures_stream_adapter;
 pub mod header;
 pub mod http;
-pub mod http_versions;
 pub mod label;
 pub mod middleware;
 pub mod operation;

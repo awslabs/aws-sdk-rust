@@ -18,6 +18,7 @@ pub fn ser_target_groups_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_target_groups_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TargetGroupsConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

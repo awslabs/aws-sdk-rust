@@ -112,12 +112,16 @@ impl Place {
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[::std::string::String] {
+        self.categories.as_deref().unwrap_or_default()
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn supplemental_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supplemental_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplemental_categories.is_none()`.
+    pub fn supplemental_categories(&self) -> &[::std::string::String] {
+        self.supplemental_categories.as_deref().unwrap_or_default()
     }
 }
 impl Place {
@@ -164,6 +168,7 @@ impl PlaceBuilder {
         &self.label
     }
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
+    /// This field is required.
     pub fn geometry(mut self, input: crate::types::PlaceGeometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
         self

@@ -3,23 +3,23 @@ pub fn ser_agent_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.agent_healths {
-        let mut array_2 = object.key("agentHealths").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("agentHealths").start_array();
+        for item_2 in &input.agent_healths {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.agent_health_codes {
-        let mut array_5 = object.key("agentHealthCodes").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_3 = object.key("agentHealthCodes").start_array();
+        for item_4 in &input.agent_health_codes {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
     Ok(())
 }

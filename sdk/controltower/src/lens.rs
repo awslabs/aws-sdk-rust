@@ -12,9 +12,6 @@ pub(crate) fn reflens_list_enabled_controls_output_next_token(
 pub(crate) fn lens_list_enabled_controls_output_enabled_controls(
     input: crate::operation::list_enabled_controls::ListEnabledControlsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
-    let input = match input.enabled_controls {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.enabled_controls;
     ::std::option::Option::Some(input)
 }

@@ -34,6 +34,7 @@ pub struct DescribeAppInstanceAdminInputBuilder {
 }
 impl DescribeAppInstanceAdminInputBuilder {
     /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
+    /// This field is required.
     pub fn app_instance_admin_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_admin_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeAppInstanceAdminInputBuilder {
         &self.app_instance_admin_arn
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self

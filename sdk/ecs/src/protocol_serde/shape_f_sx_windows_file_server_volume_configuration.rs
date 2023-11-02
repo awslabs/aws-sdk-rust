@@ -3,20 +3,20 @@ pub fn ser_f_sx_windows_file_server_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FSxWindowsFileServerVolumeConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_system_id {
-        object.key("fileSystemId").string(var_1.as_str());
+    {
+        object.key("fileSystemId").string(input.file_system_id.as_str());
     }
-    if let Some(var_2) = &input.root_directory {
-        object.key("rootDirectory").string(var_2.as_str());
+    {
+        object.key("rootDirectory").string(input.root_directory.as_str());
     }
-    if let Some(var_3) = &input.authorization_config {
+    if let Some(var_1) = &input.authorization_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("authorizationConfig").start_object();
+        let mut object_2 = object.key("authorizationConfig").start_object();
         crate::protocol_serde::shape_f_sx_windows_file_server_authorization_config::ser_f_sx_windows_file_server_authorization_config(
-            &mut object_4,
-            var_3,
+            &mut object_2,
+            var_1,
         )?;
-        object_4.finish();
+        object_2.finish();
     }
     Ok(())
 }
@@ -65,7 +65,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::f_sx_windows_file_server_volume_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

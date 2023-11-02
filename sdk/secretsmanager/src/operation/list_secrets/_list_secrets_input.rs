@@ -30,8 +30,10 @@ impl ListSecretsInput {
         self.next_token.as_deref()
     }
     /// <p>The filters to apply to the list of secrets.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Secrets are listed by <code>CreatedDate</code>. </p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {

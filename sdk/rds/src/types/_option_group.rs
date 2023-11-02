@@ -45,8 +45,10 @@ impl OptionGroup {
         self.major_engine_version.as_deref()
     }
     /// <p>Indicates what options are available in the option group.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::Option]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::Option] {
+        self.options.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
     pub fn allows_vpc_and_non_vpc_instance_memberships(&self) -> ::std::option::Option<bool> {

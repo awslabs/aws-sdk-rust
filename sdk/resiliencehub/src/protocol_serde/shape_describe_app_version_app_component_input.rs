@@ -3,14 +3,14 @@ pub fn ser_describe_app_version_app_component_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.app_version {
-        object.key("appVersion").string(var_2.as_str());
+    {
+        object.key("appVersion").string(input.app_version.as_str());
     }
-    if let Some(var_3) = &input.id {
-        object.key("id").string(var_3.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
     Ok(())
 }

@@ -3,68 +3,68 @@ pub fn ser_field_input_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldInputConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.required {
-        object.key("required").boolean(*var_2);
+    if let Some(var_1) = &input.required {
+        object.key("required").boolean(*var_1);
     }
-    if let Some(var_3) = &input.read_only {
-        object.key("readOnly").boolean(*var_3);
+    if let Some(var_2) = &input.read_only {
+        object.key("readOnly").boolean(*var_2);
     }
-    if let Some(var_4) = &input.placeholder {
-        object.key("placeholder").string(var_4.as_str());
+    if let Some(var_3) = &input.placeholder {
+        object.key("placeholder").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.default_value {
-        object.key("defaultValue").string(var_5.as_str());
+    if let Some(var_4) = &input.default_value {
+        object.key("defaultValue").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.descriptive_text {
-        object.key("descriptiveText").string(var_6.as_str());
+    if let Some(var_5) = &input.descriptive_text {
+        object.key("descriptiveText").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.default_checked {
-        object.key("defaultChecked").boolean(*var_7);
+    if let Some(var_6) = &input.default_checked {
+        object.key("defaultChecked").boolean(*var_6);
     }
-    if let Some(var_8) = &input.default_country_code {
-        object.key("defaultCountryCode").string(var_8.as_str());
+    if let Some(var_7) = &input.default_country_code {
+        object.key("defaultCountryCode").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.value_mappings {
+    if let Some(var_8) = &input.value_mappings {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("valueMappings").start_object();
-        crate::protocol_serde::shape_value_mappings::ser_value_mappings(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("valueMappings").start_object();
+        crate::protocol_serde::shape_value_mappings::ser_value_mappings(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_11) = &input.name {
-        object.key("name").string(var_11.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
     }
-    if let Some(var_12) = &input.min_value {
+    if let Some(var_11) = &input.min_value {
         object.key("minValue").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_11).into()),
+        );
+    }
+    if let Some(var_12) = &input.max_value {
+        object.key("maxValue").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::Float((*var_12).into()),
         );
     }
-    if let Some(var_13) = &input.max_value {
-        object.key("maxValue").number(
+    if let Some(var_13) = &input.step {
+        object.key("step").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::Float((*var_13).into()),
         );
     }
-    if let Some(var_14) = &input.step {
-        object.key("step").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_14).into()),
-        );
+    if let Some(var_14) = &input.value {
+        object.key("value").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.value {
-        object.key("value").string(var_15.as_str());
+    if let Some(var_15) = &input.is_array {
+        object.key("isArray").boolean(*var_15);
     }
-    if let Some(var_16) = &input.is_array {
-        object.key("isArray").boolean(*var_16);
-    }
-    if let Some(var_17) = &input.file_uploader_config {
+    if let Some(var_16) = &input.file_uploader_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("fileUploaderConfig").start_object();
-        crate::protocol_serde::shape_file_uploader_field_config::ser_file_uploader_field_config(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_17 = object.key("fileUploaderConfig").start_object();
+        crate::protocol_serde::shape_file_uploader_field_config::ser_file_uploader_field_config(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }
@@ -177,7 +177,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::field_input_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

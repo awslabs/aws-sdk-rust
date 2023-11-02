@@ -39,8 +39,10 @@ impl StreamInfo {
         self.description.as_deref()
     }
     /// <p>The files to stream.</p>
-    pub fn files(&self) -> ::std::option::Option<&[crate::types::StreamFile]> {
-        self.files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
+    pub fn files(&self) -> &[crate::types::StreamFile] {
+        self.files.as_deref().unwrap_or_default()
     }
     /// <p>The date when the stream was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

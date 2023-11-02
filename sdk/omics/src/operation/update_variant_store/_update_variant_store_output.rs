@@ -4,49 +4,52 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVariantStoreOutput {
     /// <p>The store's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The store's genome reference.</p>
     pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>The store's status.</p>
-    pub status: ::std::option::Option<crate::types::StoreStatus>,
+    pub status: crate::types::StoreStatus,
     /// <p>The store's name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The store's description.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>When the store was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>When the store was updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateVariantStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The store's genome reference.</p>
     pub fn reference(&self) -> ::std::option::Option<&crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StoreStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StoreStatus {
+        &self.status
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateVariantStoreOutput {
@@ -76,6 +79,7 @@ pub struct UpdateVariantStoreOutputBuilder {
 }
 impl UpdateVariantStoreOutputBuilder {
     /// <p>The store's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl UpdateVariantStoreOutputBuilder {
         &self.id
     }
     /// <p>The store's genome reference.</p>
+    /// This field is required.
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = ::std::option::Option::Some(input);
         self
@@ -104,6 +109,7 @@ impl UpdateVariantStoreOutputBuilder {
         &self.reference
     }
     /// <p>The store's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -118,6 +124,7 @@ impl UpdateVariantStoreOutputBuilder {
         &self.status
     }
     /// <p>The store's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +139,7 @@ impl UpdateVariantStoreOutputBuilder {
         &self.name
     }
     /// <p>The store's description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +154,7 @@ impl UpdateVariantStoreOutputBuilder {
         &self.description
     }
     /// <p>When the store was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -160,6 +169,7 @@ impl UpdateVariantStoreOutputBuilder {
         &self.creation_time
     }
     /// <p>When the store was updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -183,16 +193,56 @@ impl UpdateVariantStoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateVariantStoreOutput`](crate::operation::update_variant_store::UpdateVariantStoreOutput).
-    pub fn build(self) -> crate::operation::update_variant_store::UpdateVariantStoreOutput {
-        crate::operation::update_variant_store::UpdateVariantStoreOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder::id)
+    /// - [`status`](crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder::status)
+    /// - [`name`](crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder::name)
+    /// - [`description`](crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder::description)
+    /// - [`creation_time`](crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder::creation_time)
+    /// - [`update_time`](crate::operation::update_variant_store::builders::UpdateVariantStoreOutputBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_variant_store::UpdateVariantStoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_variant_store::UpdateVariantStoreOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateVariantStoreOutput",
+                )
+            })?,
             reference: self.reference,
-            status: self.status,
-            name: self.name,
-            description: self.description,
-            creation_time: self.creation_time,
-            update_time: self.update_time,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building UpdateVariantStoreOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateVariantStoreOutput",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building UpdateVariantStoreOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building UpdateVariantStoreOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building UpdateVariantStoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

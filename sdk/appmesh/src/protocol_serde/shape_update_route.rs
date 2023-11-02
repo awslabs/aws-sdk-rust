@@ -154,7 +154,7 @@ pub fn de_update_route_http_response(
         let mut output = crate::operation::update_route::builders::UpdateRouteOutputBuilder::default();
         output = output.set_route(crate::protocol_serde::shape_update_route_output::de_route_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_route_output_correct_errors(output).build()
     })
 }
 

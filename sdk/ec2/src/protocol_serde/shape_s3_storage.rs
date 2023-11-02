@@ -32,6 +32,7 @@ pub fn ser_s3_storage(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_storage(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3Storage, ::aws_smithy_xml::decode::XmlDecodeError> {

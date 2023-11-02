@@ -27,6 +27,7 @@ pub struct GetCallAnalyticsJobInputBuilder {
 }
 impl GetCallAnalyticsJobInputBuilder {
     /// <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
+    /// This field is required.
     pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.call_analytics_job_name = ::std::option::Option::Some(input.into());
         self

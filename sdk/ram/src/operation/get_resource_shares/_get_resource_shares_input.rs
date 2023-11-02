@@ -28,8 +28,10 @@ pub struct GetResourceSharesInput {
 }
 impl GetResourceSharesInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub fn resource_share_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_share_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
+    pub fn resource_share_arns(&self) -> &[::std::string::String] {
+        self.resource_share_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
     pub fn resource_share_status(&self) -> ::std::option::Option<&crate::types::ResourceShareStatus> {
@@ -48,8 +50,10 @@ impl GetResourceSharesInput {
         self.name.as_deref()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    pub fn tag_filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
-        self.tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_filters.is_none()`.
+    pub fn tag_filters(&self) -> &[crate::types::TagFilter] {
+        self.tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -129,6 +133,7 @@ impl GetResourceSharesInputBuilder {
     /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
     /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.resource_owner = ::std::option::Option::Some(input);
         self

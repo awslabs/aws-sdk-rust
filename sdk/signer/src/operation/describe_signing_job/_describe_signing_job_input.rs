@@ -27,6 +27,7 @@ pub struct DescribeSigningJobInputBuilder {
 }
 impl DescribeSigningJobInputBuilder {
     /// <p>The ID of the signing job on input.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

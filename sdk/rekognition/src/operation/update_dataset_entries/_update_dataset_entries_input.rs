@@ -34,6 +34,7 @@ pub struct UpdateDatasetEntriesInputBuilder {
 }
 impl UpdateDatasetEntriesInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateDatasetEntriesInputBuilder {
         &self.dataset_arn
     }
     /// <p> The changes that you want to make to the dataset. </p>
+    /// This field is required.
     pub fn changes(mut self, input: crate::types::DatasetChanges) -> Self {
         self.changes = ::std::option::Option::Some(input);
         self

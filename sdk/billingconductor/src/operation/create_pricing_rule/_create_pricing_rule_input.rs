@@ -6,13 +6,13 @@ pub struct CreatePricingRuleInput {
     /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The pricing rule description. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub scope: ::std::option::Option<crate::types::PricingRuleScope>,
+    pub scope: crate::types::PricingRuleScope,
     /// <p> The type of pricing rule. </p>
-    pub r#type: ::std::option::Option<crate::types::PricingRuleType>,
+    pub r#type: crate::types::PricingRuleType,
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
     pub modifier_percentage: ::std::option::Option<f64>,
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
@@ -36,20 +36,21 @@ impl CreatePricingRuleInput {
         self.client_token.as_deref()
     }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The pricing rule description. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::PricingRuleScope> {
-        self.scope.as_ref()
+    pub fn scope(&self) -> &crate::types::PricingRuleScope {
+        &self.scope
     }
     /// <p> The type of pricing rule. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PricingRuleType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PricingRuleType {
+        &self.r#type
     }
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
     pub fn modifier_percentage(&self) -> ::std::option::Option<f64> {
@@ -140,6 +141,7 @@ impl CreatePricingRuleInputBuilder {
         &self.client_token
     }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +170,7 @@ impl CreatePricingRuleInputBuilder {
         &self.description
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::PricingRuleScope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -182,6 +185,7 @@ impl CreatePricingRuleInputBuilder {
         &self.scope
     }
     /// <p> The type of pricing rule. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -306,15 +310,34 @@ impl CreatePricingRuleInputBuilder {
         &self.operation
     }
     /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder::name)
+    /// - [`scope`](crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder::scope)
+    /// - [`r#type`](crate::operation::create_pricing_rule::builders::CreatePricingRuleInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_pricing_rule::CreatePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pricing_rule::CreatePricingRuleInput {
             client_token: self.client_token,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreatePricingRuleInput",
+                )
+            })?,
             description: self.description,
-            scope: self.scope,
-            r#type: self.r#type,
+            scope: self.scope.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scope",
+                    "scope was not specified but it is required when building CreatePricingRuleInput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building CreatePricingRuleInput",
+                )
+            })?,
             modifier_percentage: self.modifier_percentage,
             service: self.service,
             tags: self.tags,

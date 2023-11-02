@@ -11,8 +11,10 @@ pub struct ListFleetsOutput {
 }
 impl ListFleetsOutput {
     /// <p>A set of fleet IDs that match the list request.</p>
-    pub fn fleet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fleet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_ids.is_none()`.
+    pub fn fleet_ids(&self) -> &[::std::string::String] {
+        self.fleet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

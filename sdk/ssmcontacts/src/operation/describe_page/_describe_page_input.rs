@@ -27,6 +27,7 @@ pub struct DescribePageInputBuilder {
 }
 impl DescribePageInputBuilder {
     /// <p>The ID of the engagement to a contact channel.</p>
+    /// This field is required.
     pub fn page_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_id = ::std::option::Option::Some(input.into());
         self

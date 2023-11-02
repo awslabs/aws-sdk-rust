@@ -35,6 +35,7 @@ pub struct DeleteWebhookOutputBuilder {
 }
 impl DeleteWebhookOutputBuilder {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    /// This field is required.
     pub fn webhook(mut self, input: crate::types::Webhook) -> Self {
         self.webhook = ::std::option::Option::Some(input);
         self

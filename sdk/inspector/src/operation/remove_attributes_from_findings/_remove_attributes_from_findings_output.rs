@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsOutput {
     /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
-    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
+    pub failed_items: ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
     _request_id: Option<String>,
 }
 impl RemoveAttributesFromFindingsOutput {
     /// <p>Attributes details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
-        self.failed_items.as_ref()
+    pub fn failed_items(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails> {
+        &self.failed_items
     }
 }
 impl ::aws_http::request_id::RequestId for RemoveAttributesFromFindingsOutput {
@@ -66,10 +66,22 @@ impl RemoveAttributesFromFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveAttributesFromFindingsOutput`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput).
-    pub fn build(self) -> crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput {
-        crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput {
-            failed_items: self.failed_items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`failed_items`](crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsOutputBuilder::failed_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput {
+            failed_items: self.failed_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failed_items",
+                    "failed_items was not specified but it is required when building RemoveAttributesFromFindingsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

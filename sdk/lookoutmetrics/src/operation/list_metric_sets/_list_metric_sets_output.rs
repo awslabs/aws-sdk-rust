@@ -11,8 +11,10 @@ pub struct ListMetricSetsOutput {
 }
 impl ListMetricSetsOutput {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    pub fn metric_set_summary_list(&self) -> ::std::option::Option<&[crate::types::MetricSetSummary]> {
-        self.metric_set_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_set_summary_list.is_none()`.
+    pub fn metric_set_summary_list(&self) -> &[crate::types::MetricSetSummary] {
+        self.metric_set_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -9,8 +9,10 @@ pub struct AnalysisSchema {
 }
 impl AnalysisSchema {
     /// <p>The tables referenced in the analysis schema.</p>
-    pub fn referenced_tables(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.referenced_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.referenced_tables.is_none()`.
+    pub fn referenced_tables(&self) -> &[::std::string::String] {
+        self.referenced_tables.as_deref().unwrap_or_default()
     }
 }
 impl AnalysisSchema {

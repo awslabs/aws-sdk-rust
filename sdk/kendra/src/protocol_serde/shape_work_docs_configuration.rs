@@ -3,8 +3,8 @@ pub fn ser_work_docs_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkDocsConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.organization_id {
-        object.key("OrganizationId").string(var_1.as_str());
+    {
+        object.key("OrganizationId").string(input.organization_id.as_str());
     }
     if input.crawl_comments {
         object.key("CrawlComments").boolean(input.crawl_comments);
@@ -12,35 +12,35 @@ pub fn ser_work_docs_configuration(
     if input.use_change_log {
         object.key("UseChangeLog").boolean(input.use_change_log);
     }
-    if let Some(var_2) = &input.inclusion_patterns {
-        let mut array_3 = object.key("InclusionPatterns").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.inclusion_patterns {
+        let mut array_2 = object.key("InclusionPatterns").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.exclusion_patterns {
-        let mut array_6 = object.key("ExclusionPatterns").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.exclusion_patterns {
+        let mut array_5 = object.key("ExclusionPatterns").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.field_mappings {
-        let mut array_9 = object.key("FieldMappings").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.field_mappings {
+        let mut array_8 = object.key("FieldMappings").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -102,7 +102,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::work_docs_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

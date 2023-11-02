@@ -27,6 +27,7 @@ pub struct GetRegexPatternSetInputBuilder {
 }
 impl GetRegexPatternSetInputBuilder {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    /// This field is required.
     pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_set_id = ::std::option::Option::Some(input.into());
         self

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInstanceOutput {
     /// <p>The application instance's ID.</p>
-    pub application_instance_id: ::std::option::Option<::std::string::String>,
+    pub application_instance_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateApplicationInstanceOutput {
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> ::std::option::Option<&str> {
-        self.application_instance_id.as_deref()
+    pub fn application_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_instance_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateApplicationInstanceOutput {
@@ -34,6 +35,7 @@ pub struct CreateApplicationInstanceOutputBuilder {
 }
 impl CreateApplicationInstanceOutputBuilder {
     /// <p>The application instance's ID.</p>
+    /// This field is required.
     pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateApplicationInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateApplicationInstanceOutput`](crate::operation::create_application_instance::CreateApplicationInstanceOutput).
-    pub fn build(self) -> crate::operation::create_application_instance::CreateApplicationInstanceOutput {
-        crate::operation::create_application_instance::CreateApplicationInstanceOutput {
-            application_instance_id: self.application_instance_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_instance_id`](crate::operation::create_application_instance::builders::CreateApplicationInstanceOutputBuilder::application_instance_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_application_instance::CreateApplicationInstanceOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_application_instance::CreateApplicationInstanceOutput {
+            application_instance_id: self.application_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_instance_id",
+                    "application_instance_id was not specified but it is required when building CreateApplicationInstanceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

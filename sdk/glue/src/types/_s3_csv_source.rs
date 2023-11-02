@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3CsvSource {
     /// <p>The name of the data store.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub paths: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
@@ -25,11 +25,11 @@ pub struct S3CsvSource {
     /// <p>Specifies additional connection options.</p>
     pub additional_options: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
-    pub separator: ::std::option::Option<crate::types::Separator>,
+    pub separator: crate::types::Separator,
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
     pub escaper: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
-    pub quote_char: ::std::option::Option<crate::types::QuoteChar>,
+    pub quote_char: crate::types::QuoteChar,
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
     pub multiline: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
@@ -45,20 +45,24 @@ pub struct S3CsvSource {
 }
 impl S3CsvSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.paths.as_deref()
+    pub fn paths(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.paths.deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
-    pub fn exclusions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
+    pub fn exclusions(&self) -> &[::std::string::String] {
+        self.exclusions.as_deref().unwrap_or_default()
     }
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
     pub fn group_size(&self) -> ::std::option::Option<&str> {
@@ -85,16 +89,16 @@ impl S3CsvSource {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
-    pub fn separator(&self) -> ::std::option::Option<&crate::types::Separator> {
-        self.separator.as_ref()
+    pub fn separator(&self) -> &crate::types::Separator {
+        &self.separator
     }
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
     pub fn escaper(&self) -> ::std::option::Option<&str> {
         self.escaper.as_deref()
     }
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
-    pub fn quote_char(&self) -> ::std::option::Option<&crate::types::QuoteChar> {
-        self.quote_char.as_ref()
+    pub fn quote_char(&self) -> &crate::types::QuoteChar {
+        &self.quote_char
     }
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
     pub fn multiline(&self) -> ::std::option::Option<bool> {
@@ -117,8 +121,10 @@ impl S3CsvSource {
         self.optimize_performance
     }
     /// <p>Specifies the data schema for the S3 CSV source.</p>
-    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
-        self.output_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
+    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
+        self.output_schemas.as_deref().unwrap_or_default()
     }
 }
 impl S3CsvSource {
@@ -154,6 +160,7 @@ pub struct S3CsvSourceBuilder {
 }
 impl S3CsvSourceBuilder {
     /// <p>The name of the data store.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -306,6 +313,7 @@ impl S3CsvSourceBuilder {
         &self.additional_options
     }
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
+    /// This field is required.
     pub fn separator(mut self, input: crate::types::Separator) -> Self {
         self.separator = ::std::option::Option::Some(input);
         self
@@ -334,6 +342,7 @@ impl S3CsvSourceBuilder {
         &self.escaper
     }
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
+    /// This field is required.
     pub fn quote_char(mut self, input: crate::types::QuoteChar) -> Self {
         self.quote_char = ::std::option::Option::Some(input);
         self
@@ -438,10 +447,25 @@ impl S3CsvSourceBuilder {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3CsvSource`](crate::types::S3CsvSource).
-    pub fn build(self) -> crate::types::S3CsvSource {
-        crate::types::S3CsvSource {
-            name: self.name,
-            paths: self.paths,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::S3CsvSourceBuilder::name)
+    /// - [`paths`](crate::types::builders::S3CsvSourceBuilder::paths)
+    /// - [`separator`](crate::types::builders::S3CsvSourceBuilder::separator)
+    /// - [`quote_char`](crate::types::builders::S3CsvSourceBuilder::quote_char)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3CsvSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3CsvSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building S3CsvSource",
+                )
+            })?,
+            paths: self.paths.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "paths",
+                    "paths was not specified but it is required when building S3CsvSource",
+                )
+            })?,
             compression_type: self.compression_type,
             exclusions: self.exclusions,
             group_size: self.group_size,
@@ -450,15 +474,25 @@ impl S3CsvSourceBuilder {
             max_band: self.max_band,
             max_files_in_band: self.max_files_in_band,
             additional_options: self.additional_options,
-            separator: self.separator,
+            separator: self.separator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "separator",
+                    "separator was not specified but it is required when building S3CsvSource",
+                )
+            })?,
             escaper: self.escaper,
-            quote_char: self.quote_char,
+            quote_char: self.quote_char.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quote_char",
+                    "quote_char was not specified but it is required when building S3CsvSource",
+                )
+            })?,
             multiline: self.multiline,
             with_header: self.with_header,
             write_header: self.write_header,
             skip_first: self.skip_first,
             optimize_performance: self.optimize_performance.unwrap_or_default(),
             output_schemas: self.output_schemas,
-        }
+        })
     }
 }

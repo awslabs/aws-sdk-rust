@@ -34,6 +34,7 @@ pub struct DeleteBotInputBuilder {
 }
 impl DeleteBotInputBuilder {
     /// <p>The identifier of the bot to delete. </p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self

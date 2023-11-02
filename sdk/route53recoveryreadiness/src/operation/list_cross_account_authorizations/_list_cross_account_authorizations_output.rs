@@ -11,8 +11,10 @@ pub struct ListCrossAccountAuthorizationsOutput {
 }
 impl ListCrossAccountAuthorizationsOutput {
     /// <p>A list of cross-account authorizations.</p>
-    pub fn cross_account_authorizations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cross_account_authorizations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_authorizations.is_none()`.
+    pub fn cross_account_authorizations(&self) -> &[::std::string::String] {
+        self.cross_account_authorizations.as_deref().unwrap_or_default()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

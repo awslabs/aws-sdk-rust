@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueTable {
     /// <p>A database name in the Glue Data Catalog.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>A table name in the Glue Data Catalog.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>A unique identifier for the Glue Data Catalog.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to the Glue Data Catalog.</p>
@@ -21,12 +21,14 @@ pub struct GlueTable {
 }
 impl GlueTable {
     /// <p>A database name in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>A table name in the Glue Data Catalog.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>A unique identifier for the Glue Data Catalog.</p>
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {
@@ -64,6 +66,7 @@ pub struct GlueTableBuilder {
 }
 impl GlueTableBuilder {
     /// <p>A database name in the Glue Data Catalog.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl GlueTableBuilder {
         &self.database_name
     }
     /// <p>A table name in the Glue Data Catalog.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -159,13 +163,26 @@ impl GlueTableBuilder {
         &self.additional_options
     }
     /// Consumes the builder and constructs a [`GlueTable`](crate::types::GlueTable).
-    pub fn build(self) -> crate::types::GlueTable {
-        crate::types::GlueTable {
-            database_name: self.database_name,
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::GlueTableBuilder::database_name)
+    /// - [`table_name`](crate::types::builders::GlueTableBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueTable, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlueTable {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building GlueTable",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building GlueTable",
+                )
+            })?,
             catalog_id: self.catalog_id,
             connection_name: self.connection_name,
             additional_options: self.additional_options,
-        }
+        })
     }
 }

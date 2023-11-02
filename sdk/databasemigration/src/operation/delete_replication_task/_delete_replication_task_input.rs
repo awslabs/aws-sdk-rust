@@ -28,6 +28,7 @@ pub struct DeleteReplicationTaskInputBuilder {
 }
 impl DeleteReplicationTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
+    /// This field is required.
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self

@@ -18,8 +18,10 @@ impl UpdatePipelineInput {
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
-    pub fn pipeline_activities(&self) -> ::std::option::Option<&[crate::types::PipelineActivity]> {
-        self.pipeline_activities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_activities.is_none()`.
+    pub fn pipeline_activities(&self) -> &[crate::types::PipelineActivity] {
+        self.pipeline_activities.as_deref().unwrap_or_default()
     }
 }
 impl UpdatePipelineInput {
@@ -38,6 +40,7 @@ pub struct UpdatePipelineInputBuilder {
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to update.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self

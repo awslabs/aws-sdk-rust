@@ -35,6 +35,7 @@ pub struct GetDomainAssociationInputBuilder {
 }
 impl GetDomainAssociationInputBuilder {
     /// <p> The unique id for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetDomainAssociationInputBuilder {
         &self.app_id
     }
     /// <p> The name of the domain. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnarchiveFindings`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::set_detector_id): <p>The ID of the detector associated with the findings to unarchive.</p>
-    ///   - [`finding_ids(impl Into<String>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::set_finding_ids): <p>The IDs of the findings to unarchive.</p>
+    ///   - [`detector_id(impl Into<String>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The ID of the detector associated with the findings to unarchive.</p><br>
+    ///   - [`finding_ids(impl Into<String>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder::set_finding_ids):<br>required: **true**<br><p>The IDs of the findings to unarchive.</p><br>
     /// - On success, responds with [`UnarchiveFindingsOutput`](crate::operation::unarchive_findings::UnarchiveFindingsOutput)
     /// - On failure, responds with [`SdkError<UnarchiveFindingsError>`](crate::operation::unarchive_findings::UnarchiveFindingsError)
     pub fn unarchive_findings(&self) -> crate::operation::unarchive_findings::builders::UnarchiveFindingsFluentBuilder {

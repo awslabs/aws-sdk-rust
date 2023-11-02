@@ -27,6 +27,7 @@ pub struct GetApprovalRuleTemplateInputBuilder {
 }
 impl GetApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template for which you want to get information.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSyncBlockerInput {
     /// <p>The ID of the service sync blocker.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The reason the service sync blocker was resolved.</p>
-    pub resolved_reason: ::std::option::Option<::std::string::String>,
+    pub resolved_reason: ::std::string::String,
 }
 impl UpdateServiceSyncBlockerInput {
     /// <p>The ID of the service sync blocker.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The reason the service sync blocker was resolved.</p>
-    pub fn resolved_reason(&self) -> ::std::option::Option<&str> {
-        self.resolved_reason.as_deref()
+    pub fn resolved_reason(&self) -> &str {
+        use std::ops::Deref;
+        self.resolved_reason.deref()
     }
 }
 impl UpdateServiceSyncBlockerInput {
@@ -34,6 +36,7 @@ pub struct UpdateServiceSyncBlockerInputBuilder {
 }
 impl UpdateServiceSyncBlockerInputBuilder {
     /// <p>The ID of the service sync blocker.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl UpdateServiceSyncBlockerInputBuilder {
         &self.id
     }
     /// <p>The reason the service sync blocker was resolved.</p>
+    /// This field is required.
     pub fn resolved_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_reason = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl UpdateServiceSyncBlockerInputBuilder {
         &self.resolved_reason
     }
     /// Consumes the builder and constructs a [`UpdateServiceSyncBlockerInput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerInputBuilder::id)
+    /// - [`resolved_reason`](crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerInputBuilder::resolved_reason)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,8 +76,18 @@ impl UpdateServiceSyncBlockerInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput {
-            id: self.id,
-            resolved_reason: self.resolved_reason,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateServiceSyncBlockerInput",
+                )
+            })?,
+            resolved_reason: self.resolved_reason.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resolved_reason",
+                    "resolved_reason was not specified but it is required when building UpdateServiceSyncBlockerInput",
+                )
+            })?,
         })
     }
 }

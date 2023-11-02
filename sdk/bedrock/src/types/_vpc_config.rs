@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>VPC configuration subnets.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>VPC configuration security group Ids.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl VpcConfig {
     /// <p>VPC configuration subnets.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>VPC configuration security group Ids.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
 }
 impl VpcConfig {
@@ -75,10 +77,23 @@ impl VpcConfigBuilder {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
-    pub fn build(self) -> crate::types::VpcConfig {
-        crate::types::VpcConfig {
-            subnet_ids: self.subnet_ids,
-            security_group_ids: self.security_group_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_ids`](crate::types::builders::VpcConfigBuilder::subnet_ids)
+    /// - [`security_group_ids`](crate::types::builders::VpcConfigBuilder::security_group_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConfig {
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building VpcConfig",
+                )
+            })?,
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building VpcConfig",
+                )
+            })?,
+        })
     }
 }

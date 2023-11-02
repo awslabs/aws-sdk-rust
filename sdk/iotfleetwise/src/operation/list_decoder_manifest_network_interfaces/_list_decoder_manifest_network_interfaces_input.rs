@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDecoderManifestNetworkInterfacesInput {
     /// <p> The name of the decoder manifest to list information about. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,8 +13,9 @@ pub struct ListDecoderManifestNetworkInterfacesInput {
 }
 impl ListDecoderManifestNetworkInterfacesInput {
     /// <p> The name of the decoder manifest to list information about. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -43,6 +44,7 @@ pub struct ListDecoderManifestNetworkInterfacesInputBuilder {
 }
 impl ListDecoderManifestNetworkInterfacesInputBuilder {
     /// <p> The name of the decoder manifest to list information about. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +90,8 @@ impl ListDecoderManifestNetworkInterfacesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDecoderManifestNetworkInterfacesInput`](crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::list_decoder_manifest_network_interfaces::builders::ListDecoderManifestNetworkInterfacesInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -96,7 +100,12 @@ impl ListDecoderManifestNetworkInterfacesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesInput {
-                name: self.name,
+                name: self.name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "name was not specified but it is required when building ListDecoderManifestNetworkInterfacesInput",
+                    )
+                })?,
                 next_token: self.next_token,
                 max_results: self.max_results,
             },

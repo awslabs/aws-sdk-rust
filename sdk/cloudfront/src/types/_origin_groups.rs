@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginGroups {
     /// <p>The number of origin groups.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>The items (origin groups) in a distribution.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::OriginGroup>>,
 }
 impl OriginGroups {
     /// <p>The number of origin groups.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The items (origin groups) in a distribution.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::OriginGroup]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::OriginGroup] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl OriginGroups {
@@ -35,6 +37,7 @@ pub struct OriginGroupsBuilder {
 }
 impl OriginGroupsBuilder {
     /// <p>The number of origin groups.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl OriginGroupsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`OriginGroups`](crate::types::OriginGroups).
-    pub fn build(self) -> crate::types::OriginGroups {
-        crate::types::OriginGroups {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::OriginGroupsBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginGroups, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginGroups {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building OriginGroups",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

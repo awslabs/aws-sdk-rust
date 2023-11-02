@@ -14,8 +14,10 @@ impl ModifyTargetGroupAttributesInput {
         self.target_group_arn.as_deref()
     }
     /// <p>The attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::TargetGroupAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::TargetGroupAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl ModifyTargetGroupAttributesInput {
@@ -34,6 +36,7 @@ pub struct ModifyTargetGroupAttributesInputBuilder {
 }
 impl ModifyTargetGroupAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self

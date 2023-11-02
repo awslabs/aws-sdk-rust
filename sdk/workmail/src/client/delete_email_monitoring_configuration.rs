@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEmailMonitoringConfiguration`](crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder::set_organization_id): <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationFluentBuilder::set_organization_id):<br>required: **true**<br><p>The ID of the organization from which the email monitoring configuration is deleted.</p><br>
     /// - On success, responds with [`DeleteEmailMonitoringConfigurationOutput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteEmailMonitoringConfigurationError>`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError)
     pub fn delete_email_monitoring_configuration(

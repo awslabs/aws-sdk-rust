@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopJobRunOutput {
     /// <p>The ID of the job run that you stopped.</p>
-    pub run_id: ::std::option::Option<::std::string::String>,
+    pub run_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StopJobRunOutput {
     /// <p>The ID of the job run that you stopped.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
-        self.run_id.as_deref()
+    pub fn run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.run_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StopJobRunOutput {
@@ -34,6 +35,7 @@ pub struct StopJobRunOutputBuilder {
 }
 impl StopJobRunOutputBuilder {
     /// <p>The ID of the job run that you stopped.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,17 @@ impl StopJobRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopJobRunOutput`](crate::operation::stop_job_run::StopJobRunOutput).
-    pub fn build(self) -> crate::operation::stop_job_run::StopJobRunOutput {
-        crate::operation::stop_job_run::StopJobRunOutput {
-            run_id: self.run_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`run_id`](crate::operation::stop_job_run::builders::StopJobRunOutputBuilder::run_id)
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job_run::StopJobRunOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_job_run::StopJobRunOutput {
+            run_id: self.run_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "run_id",
+                    "run_id was not specified but it is required when building StopJobRunOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

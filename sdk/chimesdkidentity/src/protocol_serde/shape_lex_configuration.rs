@@ -12,14 +12,14 @@ pub fn ser_lex_configuration(
         crate::protocol_serde::shape_invoked_by::ser_invoked_by(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.lex_bot_alias_arn {
-        object.key("LexBotAliasArn").string(var_4.as_str());
+    {
+        object.key("LexBotAliasArn").string(input.lex_bot_alias_arn.as_str());
     }
-    if let Some(var_5) = &input.locale_id {
-        object.key("LocaleId").string(var_5.as_str());
+    {
+        object.key("LocaleId").string(input.locale_id.as_str());
     }
-    if let Some(var_6) = &input.welcome_intent {
-        object.key("WelcomeIntent").string(var_6.as_str());
+    if let Some(var_4) = &input.welcome_intent {
+        object.key("WelcomeIntent").string(var_4.as_str());
     }
     Ok(())
 }
@@ -80,7 +80,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::lex_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

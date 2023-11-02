@@ -87,6 +87,7 @@ pub struct CreateHsmInputBuilder {
 }
 impl CreateHsmInputBuilder {
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +102,7 @@ impl CreateHsmInputBuilder {
         &self.subnet_id
     }
     /// <p>The SSH public key to install on the HSM.</p>
+    /// This field is required.
     pub fn ssh_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_key = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +134,7 @@ impl CreateHsmInputBuilder {
         &self.eni_ip
     }
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -164,6 +167,7 @@ impl CreateHsmInputBuilder {
     /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
     /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
         self.subscription_type = ::std::option::Option::Some(input);
         self

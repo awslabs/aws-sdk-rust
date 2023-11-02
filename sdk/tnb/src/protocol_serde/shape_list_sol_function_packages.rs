@@ -32,11 +32,10 @@ pub fn de_list_sol_function_packages_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::InternalServerException({
@@ -47,11 +46,10 @@ pub fn de_list_sol_function_packages_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::ThrottlingException({
@@ -62,11 +60,10 @@ pub fn de_list_sol_function_packages_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::ValidationException({
@@ -77,11 +74,10 @@ pub fn de_list_sol_function_packages_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::generic(generic),
@@ -103,7 +99,9 @@ pub fn de_list_sol_function_packages_http_response(
         output = crate::protocol_serde::shape_list_sol_function_packages::de_list_sol_function_packages(_response_body, output)
             .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_sol_function_packages_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::unhandled)?
     })
 }
 

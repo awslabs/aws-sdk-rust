@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutGeofenceInput {
     /// <p>The geofence collection storing the geofences.</p>
-    pub collection_name: ::std::option::Option<::std::string::String>,
+    pub collection_name: ::std::string::String,
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>,
+    pub entries: ::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>,
 }
 impl BatchPutGeofenceInput {
     /// <p>The geofence collection storing the geofences.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
-        self.collection_name.as_deref()
+    pub fn collection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.collection_name.deref()
     }
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchPutGeofenceRequestEntry]> {
-        self.entries.as_deref()
+    pub fn entries(&self) -> &[crate::types::BatchPutGeofenceRequestEntry] {
+        use std::ops::Deref;
+        self.entries.deref()
     }
 }
 impl BatchPutGeofenceInput {
@@ -34,6 +36,7 @@ pub struct BatchPutGeofenceInputBuilder {
 }
 impl BatchPutGeofenceInputBuilder {
     /// <p>The geofence collection storing the geofences.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl BatchPutGeofenceInputBuilder {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchPutGeofenceInput`](crate::operation::batch_put_geofence::BatchPutGeofenceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collection_name`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder::collection_name)
+    /// - [`entries`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder::entries)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_geofence::BatchPutGeofenceInput {
-            collection_name: self.collection_name,
-            entries: self.entries,
+            collection_name: self.collection_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collection_name",
+                    "collection_name was not specified but it is required when building BatchPutGeofenceInput",
+                )
+            })?,
+            entries: self.entries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entries",
+                    "entries was not specified but it is required when building BatchPutGeofenceInput",
+                )
+            })?,
         })
     }
 }

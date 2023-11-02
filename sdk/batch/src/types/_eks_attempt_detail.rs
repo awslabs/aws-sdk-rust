@@ -19,8 +19,10 @@ pub struct EksAttemptDetail {
 }
 impl EksAttemptDetail {
     /// <p>The details for the final status of the containers for this job attempt.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::EksAttemptContainerDetail]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::EksAttemptContainerDetail] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>The name of the pod for this job attempt.</p>
     pub fn pod_name(&self) -> ::std::option::Option<&str> {

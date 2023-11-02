@@ -28,6 +28,7 @@ pub struct GetDistributionConfigInputBuilder {
 }
 impl GetDistributionConfigInputBuilder {
     /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delete {
     /// <p>The primary key of the item to be deleted. Each element consists of an attribute name and a value for that attribute.</p>
-    pub key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub key: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     /// <p>Name of the table in which the item to be deleted resides.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
     pub condition_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
@@ -19,12 +19,13 @@ pub struct Delete {
 }
 impl Delete {
     /// <p>The primary key of the item to be deleted. Each element consists of an attribute name and a value for that attribute.</p>
-    pub fn key(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
-        self.key.as_ref()
+    pub fn key(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
+        &self.key
     }
     /// <p>Name of the table in which the item to be deleted resides.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>A condition that must be satisfied in order for a conditional delete to succeed.</p>
     pub fn condition_expression(&self) -> ::std::option::Option<&str> {
@@ -85,6 +86,7 @@ impl DeleteBuilder {
         &self.key
     }
     /// <p>Name of the table in which the item to be deleted resides.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -184,14 +186,24 @@ impl DeleteBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`Delete`](crate::types::Delete).
-    pub fn build(self) -> crate::types::Delete {
-        crate::types::Delete {
-            key: self.key,
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::DeleteBuilder::key)
+    /// - [`table_name`](crate::types::builders::DeleteBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Delete, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Delete {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("key", "key was not specified but it is required when building Delete")
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building Delete",
+                )
+            })?,
             condition_expression: self.condition_expression,
             expression_attribute_names: self.expression_attribute_names,
             expression_attribute_values: self.expression_attribute_values,
             return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
-        }
+        })
     }
 }

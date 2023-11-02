@@ -34,6 +34,7 @@ pub struct DescribeThemePermissionsInputBuilder {
 }
 impl DescribeThemePermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeThemePermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the theme that you want to describe permissions for.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self

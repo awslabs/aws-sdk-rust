@@ -27,6 +27,7 @@ pub struct DeleteAclInputBuilder {
 }
 impl DeleteAclInputBuilder {
     /// <p>The name of the Access Control List to delete</p>
+    /// This field is required.
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
         self

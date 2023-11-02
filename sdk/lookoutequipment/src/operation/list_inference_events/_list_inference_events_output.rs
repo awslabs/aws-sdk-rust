@@ -15,8 +15,10 @@ impl ListInferenceEventsOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
-    pub fn inference_event_summaries(&self) -> ::std::option::Option<&[crate::types::InferenceEventSummary]> {
-        self.inference_event_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_event_summaries.is_none()`.
+    pub fn inference_event_summaries(&self) -> &[crate::types::InferenceEventSummary] {
+        self.inference_event_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListInferenceEventsOutput {

@@ -103,16 +103,20 @@ impl ReservedInstances {
         self.offering_type.as_ref()
     }
     /// <p>The recurring charge tag assigned to the resource.</p>
-    pub fn recurring_charges(&self) -> ::std::option::Option<&[crate::types::RecurringCharge]> {
-        self.recurring_charges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recurring_charges.is_none()`.
+    pub fn recurring_charges(&self) -> &[crate::types::RecurringCharge] {
+        self.recurring_charges.as_deref().unwrap_or_default()
     }
     /// <p>The scope of the Reserved Instance.</p>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ReservedInstances {

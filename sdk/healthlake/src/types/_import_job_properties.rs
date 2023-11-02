@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobProperties {
     /// <p>The AWS-generated id number for the Import job.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The user-generated name for an Import job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
-    pub job_status: ::std::option::Option<crate::types::JobStatus>,
+    pub job_status: crate::types::JobStatus,
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub submit_time: ::aws_smithy_types::DateTime,
     /// <p>The time that the Import job was completed.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The datastore id used when the Import job was created. </p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
@@ -27,28 +27,30 @@ pub struct ImportJobProperties {
 }
 impl ImportJobProperties {
     /// <p>The AWS-generated id number for the Import job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The user-generated name for an Import job.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.job_status.as_ref()
+    pub fn job_status(&self) -> &crate::types::JobStatus {
+        &self.job_status
     }
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.submit_time.as_ref()
+    pub fn submit_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.submit_time
     }
     /// <p>The time that the Import job was completed.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The datastore id used when the Import job was created. </p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
     pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
@@ -91,6 +93,7 @@ pub struct ImportJobPropertiesBuilder {
 }
 impl ImportJobPropertiesBuilder {
     /// <p>The AWS-generated id number for the Import job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl ImportJobPropertiesBuilder {
         &self.job_name
     }
     /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl ImportJobPropertiesBuilder {
         &self.job_status
     }
     /// <p>The time that the Import job was submitted for processing.</p>
+    /// This field is required.
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time = ::std::option::Option::Some(input);
         self
@@ -161,6 +166,7 @@ impl ImportJobPropertiesBuilder {
         &self.end_time
     }
     /// <p>The datastore id used when the Import job was created. </p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +181,7 @@ impl ImportJobPropertiesBuilder {
         &self.datastore_id
     }
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -231,18 +238,43 @@ impl ImportJobPropertiesBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`ImportJobProperties`](crate::types::ImportJobProperties).
-    pub fn build(self) -> crate::types::ImportJobProperties {
-        crate::types::ImportJobProperties {
-            job_id: self.job_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::types::builders::ImportJobPropertiesBuilder::job_id)
+    /// - [`job_status`](crate::types::builders::ImportJobPropertiesBuilder::job_status)
+    /// - [`submit_time`](crate::types::builders::ImportJobPropertiesBuilder::submit_time)
+    /// - [`datastore_id`](crate::types::builders::ImportJobPropertiesBuilder::datastore_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportJobProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportJobProperties {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building ImportJobProperties",
+                )
+            })?,
             job_name: self.job_name,
-            job_status: self.job_status,
-            submit_time: self.submit_time,
+            job_status: self.job_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_status",
+                    "job_status was not specified but it is required when building ImportJobProperties",
+                )
+            })?,
+            submit_time: self.submit_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "submit_time",
+                    "submit_time was not specified but it is required when building ImportJobProperties",
+                )
+            })?,
             end_time: self.end_time,
-            datastore_id: self.datastore_id,
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building ImportJobProperties",
+                )
+            })?,
             input_data_config: self.input_data_config,
             job_output_data_config: self.job_output_data_config,
             data_access_role_arn: self.data_access_role_arn,
             message: self.message,
-        }
+        })
     }
 }

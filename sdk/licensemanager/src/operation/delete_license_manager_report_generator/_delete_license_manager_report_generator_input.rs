@@ -27,6 +27,7 @@ pub struct DeleteLicenseManagerReportGeneratorInputBuilder {
 }
 impl DeleteLicenseManagerReportGeneratorInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
+    /// This field is required.
     pub fn license_manager_report_generator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_manager_report_generator_arn = ::std::option::Option::Some(input.into());
         self

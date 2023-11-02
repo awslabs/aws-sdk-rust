@@ -39,12 +39,16 @@ impl ListDeploymentInstancesInput {
     /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
     /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
-    pub fn instance_status_filter(&self) -> ::std::option::Option<&[crate::types::InstanceStatus]> {
-        self.instance_status_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_status_filter.is_none()`.
+    pub fn instance_status_filter(&self) -> &[crate::types::InstanceStatus] {
+        self.instance_status_filter.as_deref().unwrap_or_default()
     }
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
-    pub fn instance_type_filter(&self) -> ::std::option::Option<&[crate::types::InstanceType]> {
-        self.instance_type_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_filter.is_none()`.
+    pub fn instance_type_filter(&self) -> &[crate::types::InstanceType] {
+        self.instance_type_filter.as_deref().unwrap_or_default()
     }
 }
 impl ListDeploymentInstancesInput {
@@ -65,6 +69,7 @@ pub struct ListDeploymentInstancesInputBuilder {
 }
 impl ListDeploymentInstancesInputBuilder {
     /// <p> The unique ID of a deployment. </p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self

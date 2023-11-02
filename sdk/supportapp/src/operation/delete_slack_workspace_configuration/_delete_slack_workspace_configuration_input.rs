@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub team_id: ::std::option::Option<::std::string::String>,
+    pub team_id: ::std::string::String,
 }
 impl DeleteSlackWorkspaceConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
-        self.team_id.as_deref()
+    pub fn team_id(&self) -> &str {
+        use std::ops::Deref;
+        self.team_id.deref()
     }
 }
 impl DeleteSlackWorkspaceConfigurationInput {
@@ -27,6 +28,7 @@ pub struct DeleteSlackWorkspaceConfigurationInputBuilder {
 }
 impl DeleteSlackWorkspaceConfigurationInputBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    /// This field is required.
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl DeleteSlackWorkspaceConfigurationInputBuilder {
         &self.team_id
     }
     /// Consumes the builder and constructs a [`DeleteSlackWorkspaceConfigurationInput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`team_id`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder::team_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,14 @@ impl DeleteSlackWorkspaceConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput { team_id: self.team_id },
+            crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput {
+                team_id: self.team_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "team_id",
+                        "team_id was not specified but it is required when building DeleteSlackWorkspaceConfigurationInput",
+                    )
+                })?,
+            },
         )
     }
 }

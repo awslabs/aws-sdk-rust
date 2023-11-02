@@ -40,7 +40,9 @@ pub fn de_list_hypervisors_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_hypervisors::ListHypervisorsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_hypervisors::ListHypervisorsError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

@@ -3,14 +3,14 @@ pub fn ser_delete_app_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_app::DeleteAppInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("clientToken").string(var_2.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.force_delete {
-        object.key("forceDelete").boolean(*var_3);
+    if let Some(var_2) = &input.force_delete {
+        object.key("forceDelete").boolean(*var_2);
     }
     Ok(())
 }

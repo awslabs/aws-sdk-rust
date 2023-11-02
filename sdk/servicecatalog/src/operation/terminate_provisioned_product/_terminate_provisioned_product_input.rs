@@ -98,6 +98,7 @@ impl TerminateProvisionedProductInputBuilder {
         &self.provisioned_product_id
     }
     /// <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
+    /// This field is required.
     pub fn terminate_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.terminate_token = ::std::option::Option::Some(input.into());
         self

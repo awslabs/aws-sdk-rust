@@ -41,6 +41,7 @@ pub struct UpdateGroupProfileInputBuilder {
 }
 impl UpdateGroupProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateGroupProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the group profile that is updated.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateGroupProfileInputBuilder {
         &self.group_identifier
     }
     /// <p>The status of the group profile that is updated.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::GroupProfileStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWirelessGatewayTask`](crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder::set_id): <p>The ID of the resource to get.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the resource to get.</p><br>
     /// - On success, responds with [`GetWirelessGatewayTaskOutput`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput) with field(s):
     ///   - [`wireless_gateway_id(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::wireless_gateway_id): <p>The ID of the wireless gateway.</p>
     ///   - [`wireless_gateway_task_definition_id(Option<String>)`](crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskOutput::wireless_gateway_task_definition_id): <p>The ID of the WirelessGatewayTask.</p>

@@ -3,8 +3,8 @@ pub fn ser_list_stream_keys_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_stream_keys::ListStreamKeysInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.channel_arn {
-        object.key("channelArn").string(var_1.as_str());
+    {
+        object.key("channelArn").string(input.channel_arn.as_str());
     }
     if input.max_results != 0 {
         object.key("maxResults").number(
@@ -12,8 +12,8 @@ pub fn ser_list_stream_keys_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_1) = &input.next_token {
+        object.key("nextToken").string(var_1.as_str());
     }
     Ok(())
 }

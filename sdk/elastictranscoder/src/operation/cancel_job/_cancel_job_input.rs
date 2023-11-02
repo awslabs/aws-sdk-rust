@@ -31,6 +31,7 @@ pub struct CancelJobInputBuilder {
 impl CancelJobInputBuilder {
     /// <p>The identifier of the job that you want to cancel.</p>
     /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -19,16 +19,22 @@ impl TaggedTable {
         self.table.as_ref()
     }
     /// <p>A list of LF-tags attached to the database where the table resides.</p>
-    pub fn lf_tag_on_database(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
-        self.lf_tag_on_database.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tag_on_database.is_none()`.
+    pub fn lf_tag_on_database(&self) -> &[crate::types::LfTagPair] {
+        self.lf_tag_on_database.as_deref().unwrap_or_default()
     }
     /// <p>A list of LF-tags attached to the table.</p>
-    pub fn lf_tags_on_table(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
-        self.lf_tags_on_table.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags_on_table.is_none()`.
+    pub fn lf_tags_on_table(&self) -> &[crate::types::LfTagPair] {
+        self.lf_tags_on_table.as_deref().unwrap_or_default()
     }
     /// <p>A list of LF-tags attached to columns in the table.</p>
-    pub fn lf_tags_on_columns(&self) -> ::std::option::Option<&[crate::types::ColumnLfTag]> {
-        self.lf_tags_on_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags_on_columns.is_none()`.
+    pub fn lf_tags_on_columns(&self) -> &[crate::types::ColumnLfTag] {
+        self.lf_tags_on_columns.as_deref().unwrap_or_default()
     }
 }
 impl TaggedTable {

@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    pub deliverability_test_reports: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
+    pub deliverability_test_reports: ::std::vec::Vec<crate::types::DeliverabilityTestReport>,
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    pub fn deliverability_test_reports(&self) -> ::std::option::Option<&[crate::types::DeliverabilityTestReport]> {
-        self.deliverability_test_reports.as_deref()
+    pub fn deliverability_test_reports(&self) -> &[crate::types::DeliverabilityTestReport] {
+        use std::ops::Deref;
+        self.deliverability_test_reports.deref()
     }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,23 @@ impl ListDeliverabilityTestReportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsOutput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput).
-    pub fn build(self) -> crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput {
-        crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput {
-            deliverability_test_reports: self.deliverability_test_reports,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`deliverability_test_reports`](crate::operation::list_deliverability_test_reports::builders::ListDeliverabilityTestReportsOutputBuilder::deliverability_test_reports)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput {
+            deliverability_test_reports: self.deliverability_test_reports.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "deliverability_test_reports",
+                    "deliverability_test_reports was not specified but it is required when building ListDeliverabilityTestReportsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

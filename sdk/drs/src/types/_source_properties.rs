@@ -37,16 +37,22 @@ impl SourceProperties {
         self.identification_hints.as_ref()
     }
     /// <p>An array of network interfaces.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>An array of disks.</p>
-    pub fn disks(&self) -> ::std::option::Option<&[crate::types::Disk]> {
-        self.disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disks.is_none()`.
+    pub fn disks(&self) -> &[crate::types::Disk] {
+        self.disks.as_deref().unwrap_or_default()
     }
     /// <p>An array of CPUs.</p>
-    pub fn cpus(&self) -> ::std::option::Option<&[crate::types::Cpu]> {
-        self.cpus.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpus.is_none()`.
+    pub fn cpus(&self) -> &[crate::types::Cpu] {
+        self.cpus.as_deref().unwrap_or_default()
     }
     /// <p>The amount of RAM in bytes.</p>
     pub fn ram_bytes(&self) -> i64 {

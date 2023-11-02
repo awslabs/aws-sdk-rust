@@ -61,7 +61,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Decision {
     /// <p>Specifies the type of the decision.</p>
-    pub decision_type: ::std::option::Option<crate::types::DecisionType>,
+    pub decision_type: crate::types::DecisionType,
     /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
     pub schedule_activity_task_decision_attributes: ::std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
     /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision types.</p>
@@ -93,8 +93,8 @@ pub struct Decision {
 }
 impl Decision {
     /// <p>Specifies the type of the decision.</p>
-    pub fn decision_type(&self) -> ::std::option::Option<&crate::types::DecisionType> {
-        self.decision_type.as_ref()
+    pub fn decision_type(&self) -> &crate::types::DecisionType {
+        &self.decision_type
     }
     /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
     pub fn schedule_activity_task_decision_attributes(&self) -> ::std::option::Option<&crate::types::ScheduleActivityTaskDecisionAttributes> {
@@ -192,6 +192,7 @@ pub struct DecisionBuilder {
 }
 impl DecisionBuilder {
     /// <p>Specifies the type of the decision.</p>
+    /// This field is required.
     pub fn decision_type(mut self, input: crate::types::DecisionType) -> Self {
         self.decision_type = ::std::option::Option::Some(input);
         self
@@ -441,9 +442,16 @@ impl DecisionBuilder {
         &self.schedule_lambda_function_decision_attributes
     }
     /// Consumes the builder and constructs a [`Decision`](crate::types::Decision).
-    pub fn build(self) -> crate::types::Decision {
-        crate::types::Decision {
-            decision_type: self.decision_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`decision_type`](crate::types::builders::DecisionBuilder::decision_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Decision, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Decision {
+            decision_type: self.decision_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "decision_type",
+                    "decision_type was not specified but it is required when building Decision",
+                )
+            })?,
             schedule_activity_task_decision_attributes: self.schedule_activity_task_decision_attributes,
             request_cancel_activity_task_decision_attributes: self.request_cancel_activity_task_decision_attributes,
             complete_workflow_execution_decision_attributes: self.complete_workflow_execution_decision_attributes,
@@ -457,6 +465,6 @@ impl DecisionBuilder {
             request_cancel_external_workflow_execution_decision_attributes: self.request_cancel_external_workflow_execution_decision_attributes,
             start_child_workflow_execution_decision_attributes: self.start_child_workflow_execution_decision_attributes,
             schedule_lambda_function_decision_attributes: self.schedule_lambda_function_decision_attributes,
-        }
+        })
     }
 }

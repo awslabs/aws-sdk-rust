@@ -6,7 +6,7 @@ pub struct GetObjectTaggingOutput {
     /// <p>The versionId of the object for which you got the tagging information.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the tag set.</p>
-    pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_set: ::std::vec::Vec<crate::types::Tag>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -16,8 +16,9 @@ impl GetObjectTaggingOutput {
         self.version_id.as_deref()
     }
     /// <p>Contains the tag set.</p>
-    pub fn tag_set(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_set.as_deref()
+    pub fn tag_set(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tag_set.deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetObjectTaggingOutput {
@@ -100,12 +101,21 @@ impl GetObjectTaggingOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetObjectTaggingOutput`](crate::operation::get_object_tagging::GetObjectTaggingOutput).
-    pub fn build(self) -> crate::operation::get_object_tagging::GetObjectTaggingOutput {
-        crate::operation::get_object_tagging::GetObjectTaggingOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_set`](crate::operation::get_object_tagging::builders::GetObjectTaggingOutputBuilder::tag_set)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_object_tagging::GetObjectTaggingOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_object_tagging::GetObjectTaggingOutput {
             version_id: self.version_id,
-            tag_set: self.tag_set,
+            tag_set: self.tag_set.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tag_set",
+                    "tag_set was not specified but it is required when building GetObjectTaggingOutput",
+                )
+            })?,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }

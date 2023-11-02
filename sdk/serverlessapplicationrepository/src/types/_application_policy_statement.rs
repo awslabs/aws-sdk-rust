@@ -15,16 +15,22 @@ pub struct ApplicationPolicyStatement {
 }
 impl ApplicationPolicyStatement {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[::std::string::String] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn principal_org_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principal_org_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principal_org_i_ds.is_none()`.
+    pub fn principal_org_i_ds(&self) -> &[::std::string::String] {
+        self.principal_org_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[::std::string::String] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>A unique ID for the statement.</p>
     pub fn statement_id(&self) -> ::std::option::Option<&str> {

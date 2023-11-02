@@ -28,6 +28,7 @@ pub struct BatchInferenceJobInputBuilder {
 }
 impl BatchInferenceJobInputBuilder {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
+    /// This field is required.
     pub fn s3_data_source(mut self, input: crate::types::S3DataConfig) -> Self {
         self.s3_data_source = ::std::option::Option::Some(input);
         self

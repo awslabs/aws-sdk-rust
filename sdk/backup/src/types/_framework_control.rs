@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameworkControl {
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
-    pub control_name: ::std::option::Option<::std::string::String>,
+    pub control_name: ::std::string::String,
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
     pub control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
@@ -13,12 +13,15 @@ pub struct FrameworkControl {
 }
 impl FrameworkControl {
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
-    pub fn control_name(&self) -> ::std::option::Option<&str> {
-        self.control_name.as_deref()
+    pub fn control_name(&self) -> &str {
+        use std::ops::Deref;
+        self.control_name.deref()
     }
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
-    pub fn control_input_parameters(&self) -> ::std::option::Option<&[crate::types::ControlInputParameter]> {
-        self.control_input_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_input_parameters.is_none()`.
+    pub fn control_input_parameters(&self) -> &[crate::types::ControlInputParameter] {
+        self.control_input_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
     pub fn control_scope(&self) -> ::std::option::Option<&crate::types::ControlScope> {
@@ -42,6 +45,7 @@ pub struct FrameworkControlBuilder {
 }
 impl FrameworkControlBuilder {
     /// <p>The name of a control. This name is between 1 and 256 characters.</p>
+    /// This field is required.
     pub fn control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl FrameworkControlBuilder {
         &self.control_scope
     }
     /// Consumes the builder and constructs a [`FrameworkControl`](crate::types::FrameworkControl).
-    pub fn build(self) -> crate::types::FrameworkControl {
-        crate::types::FrameworkControl {
-            control_name: self.control_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`control_name`](crate::types::builders::FrameworkControlBuilder::control_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FrameworkControl, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FrameworkControl {
+            control_name: self.control_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "control_name",
+                    "control_name was not specified but it is required when building FrameworkControl",
+                )
+            })?,
             control_input_parameters: self.control_input_parameters,
             control_scope: self.control_scope,
-        }
+        })
     }
 }

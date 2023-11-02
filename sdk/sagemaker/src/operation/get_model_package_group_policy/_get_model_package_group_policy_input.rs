@@ -27,6 +27,7 @@ pub struct GetModelPackageGroupPolicyInputBuilder {
 }
 impl GetModelPackageGroupPolicyInputBuilder {
     /// <p>The name of the model group for which to get the resource policy.</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self

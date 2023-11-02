@@ -3,11 +3,11 @@ pub fn ser_fetch_page_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FetchPageRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.transaction_id {
-        object.key("TransactionId").string(var_1.as_str());
+    {
+        object.key("TransactionId").string(input.transaction_id.as_str());
     }
-    if let Some(var_2) = &input.next_page_token {
-        object.key("NextPageToken").string(var_2.as_str());
+    {
+        object.key("NextPageToken").string(input.next_page_token.as_str());
     }
     Ok(())
 }

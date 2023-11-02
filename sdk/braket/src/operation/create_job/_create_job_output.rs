@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// <p>The ARN of the Amazon Braket job created.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateJobOutput {
     /// <p>The ARN of the Amazon Braket job created.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateJobOutput {
@@ -34,6 +35,7 @@ pub struct CreateJobOutputBuilder {
 }
 impl CreateJobOutputBuilder {
     /// <p>The ARN of the Amazon Braket job created.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,17 @@ impl CreateJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput).
-    pub fn build(self) -> crate::operation::create_job::CreateJobOutput {
-        crate::operation::create_job::CreateJobOutput {
-            job_arn: self.job_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_arn`](crate::operation::create_job::builders::CreateJobOutputBuilder::job_arn)
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_job::CreateJobOutput {
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building CreateJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

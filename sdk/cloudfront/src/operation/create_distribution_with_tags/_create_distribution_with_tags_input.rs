@@ -28,6 +28,7 @@ pub struct CreateDistributionWithTagsInputBuilder {
 }
 impl CreateDistributionWithTagsInputBuilder {
     /// <p>The distribution's configuration information.</p>
+    /// This field is required.
     pub fn distribution_config_with_tags(mut self, input: crate::types::DistributionConfigWithTags) -> Self {
         self.distribution_config_with_tags = ::std::option::Option::Some(input);
         self

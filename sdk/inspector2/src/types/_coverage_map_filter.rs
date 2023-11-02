@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageMapFilter {
     /// <p>The operator to compare coverage on.</p>
-    pub comparison: ::std::option::Option<crate::types::CoverageMapComparison>,
+    pub comparison: crate::types::CoverageMapComparison,
     /// <p>The tag key associated with the coverage map filter.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The tag value associated with the coverage map filter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl CoverageMapFilter {
     /// <p>The operator to compare coverage on.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::CoverageMapComparison> {
-        self.comparison.as_ref()
+    pub fn comparison(&self) -> &crate::types::CoverageMapComparison {
+        &self.comparison
     }
     /// <p>The tag key associated with the coverage map filter.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The tag value associated with the coverage map filter.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct CoverageMapFilterBuilder {
 }
 impl CoverageMapFilterBuilder {
     /// <p>The operator to compare coverage on.</p>
+    /// This field is required.
     pub fn comparison(mut self, input: crate::types::CoverageMapComparison) -> Self {
         self.comparison = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl CoverageMapFilterBuilder {
         &self.comparison
     }
     /// <p>The tag key associated with the coverage map filter.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl CoverageMapFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`CoverageMapFilter`](crate::types::CoverageMapFilter).
-    pub fn build(self) -> crate::types::CoverageMapFilter {
-        crate::types::CoverageMapFilter {
-            comparison: self.comparison,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`comparison`](crate::types::builders::CoverageMapFilterBuilder::comparison)
+    /// - [`key`](crate::types::builders::CoverageMapFilterBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::CoverageMapFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CoverageMapFilter {
+            comparison: self.comparison.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "comparison",
+                    "comparison was not specified but it is required when building CoverageMapFilter",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building CoverageMapFilter",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

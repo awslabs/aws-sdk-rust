@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
-    pub snapshot_arn: ::std::option::Option<::std::string::String>,
+    pub snapshot_arn: ::std::string::String,
 }
 impl GetClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
-        self.snapshot_arn.as_deref()
+    pub fn snapshot_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_arn.deref()
     }
 }
 impl GetClusterSnapshotInput {
@@ -27,6 +28,7 @@ pub struct GetClusterSnapshotInputBuilder {
 }
 impl GetClusterSnapshotInputBuilder {
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl GetClusterSnapshotInputBuilder {
         &self.snapshot_arn
     }
     /// Consumes the builder and constructs a [`GetClusterSnapshotInput`](crate::operation::get_cluster_snapshot::GetClusterSnapshotInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`snapshot_arn`](crate::operation::get_cluster_snapshot::builders::GetClusterSnapshotInputBuilder::snapshot_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_cluster_snapshot::GetClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cluster_snapshot::GetClusterSnapshotInput {
-            snapshot_arn: self.snapshot_arn,
+            snapshot_arn: self.snapshot_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshot_arn",
+                    "snapshot_arn was not specified but it is required when building GetClusterSnapshotInput",
+                )
+            })?,
         })
     }
 }

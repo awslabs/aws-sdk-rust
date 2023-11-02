@@ -3,17 +3,19 @@ pub fn ser_ibm3624_pin_offset(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ibm3624PinOffset,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.encrypted_pin_block {
-        object.key("EncryptedPinBlock").string(var_1.as_str());
+    {
+        object.key("EncryptedPinBlock").string(input.encrypted_pin_block.as_str());
     }
-    if let Some(var_2) = &input.decimalization_table {
-        object.key("DecimalizationTable").string(var_2.as_str());
+    {
+        object.key("DecimalizationTable").string(input.decimalization_table.as_str());
     }
-    if let Some(var_3) = &input.pin_validation_data_pad_character {
-        object.key("PinValidationDataPadCharacter").string(var_3.as_str());
+    {
+        object
+            .key("PinValidationDataPadCharacter")
+            .string(input.pin_validation_data_pad_character.as_str());
     }
-    if let Some(var_4) = &input.pin_validation_data {
-        object.key("PinValidationData").string(var_4.as_str());
+    {
+        object.key("PinValidationData").string(input.pin_validation_data.as_str());
     }
     Ok(())
 }

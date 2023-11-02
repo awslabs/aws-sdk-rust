@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopAppBlockBuilder`](crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderFluentBuilder::set_name): <p>The name of the app block builder.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderFluentBuilder::set_name):<br>required: **true**<br><p>The name of the app block builder.</p><br>
     /// - On success, responds with [`StopAppBlockBuilderOutput`](crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput) with field(s):
     ///   - [`app_block_builder(Option<AppBlockBuilder>)`](crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput::app_block_builder): <p>Describes an app block builder.</p>
     /// - On failure, responds with [`SdkError<StopAppBlockBuilderError>`](crate::operation::stop_app_block_builder::StopAppBlockBuilderError)

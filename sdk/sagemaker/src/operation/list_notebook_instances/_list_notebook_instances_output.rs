@@ -15,8 +15,10 @@ impl ListNotebookInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
-    pub fn notebook_instances(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceSummary]> {
-        self.notebook_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notebook_instances.is_none()`.
+    pub fn notebook_instances(&self) -> &[crate::types::NotebookInstanceSummary] {
+        self.notebook_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListNotebookInstancesOutput {

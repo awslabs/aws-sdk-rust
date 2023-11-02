@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeries {
     /// <p>The ID of the metric.</p>
-    pub time_series_id: ::std::option::Option<::std::string::String>,
+    pub time_series_id: ::std::string::String,
     /// <p>The dimensions of the metric.</p>
-    pub dimension_list: ::std::option::Option<::std::vec::Vec<crate::types::DimensionNameValue>>,
+    pub dimension_list: ::std::vec::Vec<crate::types::DimensionNameValue>,
     /// <p>The values for the metric.</p>
-    pub metric_value_list: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub metric_value_list: ::std::vec::Vec<f64>,
 }
 impl TimeSeries {
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> ::std::option::Option<&str> {
-        self.time_series_id.as_deref()
+    pub fn time_series_id(&self) -> &str {
+        use std::ops::Deref;
+        self.time_series_id.deref()
     }
     /// <p>The dimensions of the metric.</p>
-    pub fn dimension_list(&self) -> ::std::option::Option<&[crate::types::DimensionNameValue]> {
-        self.dimension_list.as_deref()
+    pub fn dimension_list(&self) -> &[crate::types::DimensionNameValue] {
+        use std::ops::Deref;
+        self.dimension_list.deref()
     }
     /// <p>The values for the metric.</p>
-    pub fn metric_value_list(&self) -> ::std::option::Option<&[f64]> {
-        self.metric_value_list.as_deref()
+    pub fn metric_value_list(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.metric_value_list.deref()
     }
 }
 impl TimeSeries {
@@ -42,6 +45,7 @@ pub struct TimeSeriesBuilder {
 }
 impl TimeSeriesBuilder {
     /// <p>The ID of the metric.</p>
+    /// This field is required.
     pub fn time_series_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_series_id = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +100,30 @@ impl TimeSeriesBuilder {
         &self.metric_value_list
     }
     /// Consumes the builder and constructs a [`TimeSeries`](crate::types::TimeSeries).
-    pub fn build(self) -> crate::types::TimeSeries {
-        crate::types::TimeSeries {
-            time_series_id: self.time_series_id,
-            dimension_list: self.dimension_list,
-            metric_value_list: self.metric_value_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`time_series_id`](crate::types::builders::TimeSeriesBuilder::time_series_id)
+    /// - [`dimension_list`](crate::types::builders::TimeSeriesBuilder::dimension_list)
+    /// - [`metric_value_list`](crate::types::builders::TimeSeriesBuilder::metric_value_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeSeries, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeSeries {
+            time_series_id: self.time_series_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_series_id",
+                    "time_series_id was not specified but it is required when building TimeSeries",
+                )
+            })?,
+            dimension_list: self.dimension_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_list",
+                    "dimension_list was not specified but it is required when building TimeSeries",
+                )
+            })?,
+            metric_value_list: self.metric_value_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_value_list",
+                    "metric_value_list was not specified but it is required when building TimeSeries",
+                )
+            })?,
+        })
     }
 }

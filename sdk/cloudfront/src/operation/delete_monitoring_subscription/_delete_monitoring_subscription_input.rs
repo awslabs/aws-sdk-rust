@@ -27,6 +27,7 @@ pub struct DeleteMonitoringSubscriptionInputBuilder {
 }
 impl DeleteMonitoringSubscriptionInputBuilder {
     /// <p>The ID of the distribution that you are disabling metrics for.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self

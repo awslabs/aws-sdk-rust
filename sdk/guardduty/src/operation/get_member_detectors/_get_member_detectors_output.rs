@@ -11,12 +11,16 @@ pub struct GetMemberDetectorsOutput {
 }
 impl GetMemberDetectorsOutput {
     /// <p>An object that describes which data sources are enabled for a member account.</p>
-    pub fn member_data_source_configurations(&self) -> ::std::option::Option<&[crate::types::MemberDataSourceConfiguration]> {
-        self.member_data_source_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_data_source_configurations.is_none()`.
+    pub fn member_data_source_configurations(&self) -> &[crate::types::MemberDataSourceConfiguration] {
+        self.member_data_source_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn unprocessed_accounts(&self) -> ::std::option::Option<&[crate::types::UnprocessedAccount]> {
-        self.unprocessed_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
+    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMemberDetectorsOutput {

@@ -122,10 +122,7 @@ pub(crate) fn lens_list_platform_applications_output_platform_applications(
 pub(crate) fn lens_list_sms_sandbox_phone_numbers_output_phone_numbers(
     input: crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SmsSandboxPhoneNumber>> {
-    let input = match input.phone_numbers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.phone_numbers;
     ::std::option::Option::Some(input)
 }
 

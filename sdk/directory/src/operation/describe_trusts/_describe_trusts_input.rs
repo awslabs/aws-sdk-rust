@@ -21,8 +21,10 @@ impl DescribeTrustsInput {
     }
     /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn trust_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.trust_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_ids.is_none()`.
+    pub fn trust_ids(&self) -> &[::std::string::String] {
+        self.trust_ids.as_deref().unwrap_or_default()
     }
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

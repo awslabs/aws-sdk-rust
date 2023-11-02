@@ -34,8 +34,10 @@ impl CreateInterconnectInput {
         self.lag_id.as_deref()
     }
     /// <p>The tags to associate with the interconnect.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct CreateInterconnectInputBuilder {
 }
 impl CreateInterconnectInputBuilder {
     /// <p>The name of the interconnect.</p>
+    /// This field is required.
     pub fn interconnect_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateInterconnectInputBuilder {
         &self.interconnect_name
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    /// This field is required.
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl CreateInterconnectInputBuilder {
         &self.bandwidth
     }
     /// <p>The location of the interconnect.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRescoreExecutionPlanOutput {
     /// <p>The identifier of the rescore execution plan.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateRescoreExecutionPlanOutput {
     /// <p>The identifier of the rescore execution plan.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateRescoreExecutionPlanOutput {
@@ -41,6 +43,7 @@ pub struct CreateRescoreExecutionPlanOutputBuilder {
 }
 impl CreateRescoreExecutionPlanOutputBuilder {
     /// <p>The identifier of the rescore execution plan.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateRescoreExecutionPlanOutputBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,29 @@ impl CreateRescoreExecutionPlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRescoreExecutionPlanOutput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput).
-    pub fn build(self) -> crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
-        crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder::id)
+    /// - [`arn`](crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateRescoreExecutionPlanOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateRescoreExecutionPlanOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

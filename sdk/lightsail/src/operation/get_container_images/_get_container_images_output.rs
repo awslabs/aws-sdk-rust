@@ -9,8 +9,10 @@ pub struct GetContainerImagesOutput {
 }
 impl GetContainerImagesOutput {
     /// <p>An array of objects that describe container images that are registered to the container service.</p>
-    pub fn container_images(&self) -> ::std::option::Option<&[crate::types::ContainerImage]> {
-        self.container_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_images.is_none()`.
+    pub fn container_images(&self) -> &[crate::types::ContainerImage] {
+        self.container_images.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContainerImagesOutput {

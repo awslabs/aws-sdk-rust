@@ -39,8 +39,10 @@ impl GrantEntitlementRequest {
         self.name.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
-    pub fn subscribers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
+    pub fn subscribers(&self) -> &[::std::string::String] {
+        self.subscribers.as_deref().unwrap_or_default()
     }
 }
 impl GrantEntitlementRequest {

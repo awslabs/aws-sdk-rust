@@ -72,8 +72,10 @@ impl SampledHttpRequest {
         self.rule_name_within_rule_group.as_deref()
     }
     /// <p>Custom request headers inserted by WAF into the request, according to the custom request configuration for the matching rule action.</p>
-    pub fn request_headers_inserted(&self) -> ::std::option::Option<&[crate::types::HttpHeader]> {
-        self.request_headers_inserted.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.request_headers_inserted.is_none()`.
+    pub fn request_headers_inserted(&self) -> &[crate::types::HttpHeader] {
+        self.request_headers_inserted.as_deref().unwrap_or_default()
     }
     /// <p>The response code that was sent for the request.</p>
     pub fn response_code_sent(&self) -> ::std::option::Option<i32> {
@@ -81,8 +83,10 @@ impl SampledHttpRequest {
     }
     /// <p>Labels applied to the web request by matching rules. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
     /// <p>For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
-    pub fn labels(&self) -> ::std::option::Option<&[crate::types::Label]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[crate::types::Label] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The <code>CAPTCHA</code> response for the request.</p>
     pub fn captcha_response(&self) -> ::std::option::Option<&crate::types::CaptchaResponse> {
@@ -122,6 +126,7 @@ pub struct SampledHttpRequestBuilder {
 }
 impl SampledHttpRequestBuilder {
     /// <p>A complex type that contains detailed information about the request.</p>
+    /// This field is required.
     pub fn request(mut self, input: crate::types::HttpRequest) -> Self {
         self.request = ::std::option::Option::Some(input);
         self
@@ -136,6 +141,7 @@ impl SampledHttpRequestBuilder {
         &self.request
     }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. For example, a result that has a weight of <code>2</code> represents roughly twice as many web requests as a result that has a weight of <code>1</code>.</p>
+    /// This field is required.
     pub fn weight(mut self, input: i64) -> Self {
         self.weight = ::std::option::Option::Some(input);
         self

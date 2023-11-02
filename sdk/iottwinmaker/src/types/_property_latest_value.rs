@@ -35,6 +35,7 @@ pub struct PropertyLatestValueBuilder {
 }
 impl PropertyLatestValueBuilder {
     /// <p>An object that specifies information about a property.</p>
+    /// This field is required.
     pub fn property_reference(mut self, input: crate::types::EntityPropertyReference) -> Self {
         self.property_reference = ::std::option::Option::Some(input);
         self

@@ -9,8 +9,10 @@ pub struct PutApplicationPolicyOutput {
 }
 impl PutApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn statements(&self) -> ::std::option::Option<&[crate::types::ApplicationPolicyStatement]> {
-        self.statements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statements.is_none()`.
+    pub fn statements(&self) -> &[crate::types::ApplicationPolicyStatement] {
+        self.statements.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutApplicationPolicyOutput {

@@ -8,15 +8,15 @@ pub struct SpekeKeyProvider {
     pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     /// <p>The unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.</p>
     /// <p>The following example shows a resource ID: <code>MovieNight20171126093045</code> </p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The DRM solution provider you're using to protect your content during distribution.</p>
-    pub drm_systems: ::std::option::Option<::std::vec::Vec<crate::types::DrmSystem>>,
+    pub drm_systems: ::std::vec::Vec<crate::types::DrmSystem>,
     /// <p>The ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.</p>
     /// <p>Valid format: <code>arn:aws:iam::{accountID}:role/{name}</code>. The following example shows a role ARN: <code>arn:aws:iam::444455556666:role/SpekeAccess</code> </p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The URL of the API Gateway proxy that you set up to talk to your key server. The API Gateway proxy must reside in the same AWS Region as MediaPackage and must start with https://.</p>
     /// <p>The following example shows a URL: <code>https://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection</code> </p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
 }
 impl SpekeKeyProvider {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
@@ -25,22 +25,26 @@ impl SpekeKeyProvider {
     }
     /// <p>The unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.</p>
     /// <p>The following example shows a resource ID: <code>MovieNight20171126093045</code> </p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The DRM solution provider you're using to protect your content during distribution.</p>
-    pub fn drm_systems(&self) -> ::std::option::Option<&[crate::types::DrmSystem]> {
-        self.drm_systems.as_deref()
+    pub fn drm_systems(&self) -> &[crate::types::DrmSystem] {
+        use std::ops::Deref;
+        self.drm_systems.deref()
     }
     /// <p>The ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.</p>
     /// <p>Valid format: <code>arn:aws:iam::{accountID}:role/{name}</code>. The following example shows a role ARN: <code>arn:aws:iam::444455556666:role/SpekeAccess</code> </p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The URL of the API Gateway proxy that you set up to talk to your key server. The API Gateway proxy must reside in the same AWS Region as MediaPackage and must start with https://.</p>
     /// <p>The following example shows a URL: <code>https://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection</code> </p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
 }
 impl SpekeKeyProvider {
@@ -62,6 +66,7 @@ pub struct SpekeKeyProviderBuilder {
 }
 impl SpekeKeyProviderBuilder {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
+    /// This field is required.
     pub fn encryption_contract_configuration(mut self, input: crate::types::EncryptionContractConfiguration) -> Self {
         self.encryption_contract_configuration = ::std::option::Option::Some(input);
         self
@@ -77,6 +82,7 @@ impl SpekeKeyProviderBuilder {
     }
     /// <p>The unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.</p>
     /// <p>The following example shows a resource ID: <code>MovieNight20171126093045</code> </p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +120,7 @@ impl SpekeKeyProviderBuilder {
     }
     /// <p>The ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.</p>
     /// <p>Valid format: <code>arn:aws:iam::{accountID}:role/{name}</code>. The following example shows a role ARN: <code>arn:aws:iam::444455556666:role/SpekeAccess</code> </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +138,7 @@ impl SpekeKeyProviderBuilder {
     }
     /// <p>The URL of the API Gateway proxy that you set up to talk to your key server. The API Gateway proxy must reside in the same AWS Region as MediaPackage and must start with https://.</p>
     /// <p>The following example shows a URL: <code>https://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection</code> </p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -147,13 +155,38 @@ impl SpekeKeyProviderBuilder {
         &self.url
     }
     /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
-    pub fn build(self) -> crate::types::SpekeKeyProvider {
-        crate::types::SpekeKeyProvider {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_id`](crate::types::builders::SpekeKeyProviderBuilder::resource_id)
+    /// - [`drm_systems`](crate::types::builders::SpekeKeyProviderBuilder::drm_systems)
+    /// - [`role_arn`](crate::types::builders::SpekeKeyProviderBuilder::role_arn)
+    /// - [`url`](crate::types::builders::SpekeKeyProviderBuilder::url)
+    pub fn build(self) -> ::std::result::Result<crate::types::SpekeKeyProvider, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SpekeKeyProvider {
             encryption_contract_configuration: self.encryption_contract_configuration,
-            resource_id: self.resource_id,
-            drm_systems: self.drm_systems,
-            role_arn: self.role_arn,
-            url: self.url,
-        }
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building SpekeKeyProvider",
+                )
+            })?,
+            drm_systems: self.drm_systems.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "drm_systems",
+                    "drm_systems was not specified but it is required when building SpekeKeyProvider",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SpekeKeyProvider",
+                )
+            })?,
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building SpekeKeyProvider",
+                )
+            })?,
+        })
     }
 }

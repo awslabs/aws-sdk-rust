@@ -3,11 +3,11 @@ pub fn ser_catalog_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CatalogEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.database_name {
-        object.key("DatabaseName").string(var_1.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_2) = &input.table_name {
-        object.key("TableName").string(var_2.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
     Ok(())
 }

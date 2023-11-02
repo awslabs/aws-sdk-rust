@@ -27,6 +27,7 @@ pub struct CancelResizeInputBuilder {
 }
 impl CancelResizeInputBuilder {
     /// <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self

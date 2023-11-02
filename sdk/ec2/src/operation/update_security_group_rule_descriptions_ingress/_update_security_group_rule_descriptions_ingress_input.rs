@@ -28,12 +28,16 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInput {
         self.group_name.as_deref()
     }
     /// <p>The IP permissions for the security group rule. You must specify either IP permissions or a description.</p>
-    pub fn ip_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions.is_none()`.
+    pub fn ip_permissions(&self) -> &[crate::types::IpPermission] {
+        self.ip_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
-    pub fn security_group_rule_descriptions(&self) -> ::std::option::Option<&[crate::types::SecurityGroupRuleDescription]> {
-        self.security_group_rule_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_rule_descriptions.is_none()`.
+    pub fn security_group_rule_descriptions(&self) -> &[crate::types::SecurityGroupRuleDescription] {
+        self.security_group_rule_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSecurityGroupRuleDescriptionsIngressInput {

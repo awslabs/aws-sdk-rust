@@ -27,6 +27,7 @@ pub struct DeleteServerInputBuilder {
 }
 impl DeleteServerInputBuilder {
     /// <p>A unique system-assigned identifier for a server instance.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self

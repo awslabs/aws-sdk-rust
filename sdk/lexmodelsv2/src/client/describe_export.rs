@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExport`](crate::operation::describe_export::builders::DescribeExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`export_id(impl Into<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::set_export_id): <p>The unique identifier of the export to describe.</p>
+    ///   - [`export_id(impl Into<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::describe_export::builders::DescribeExportFluentBuilder::set_export_id):<br>required: **true**<br><p>The unique identifier of the export to describe.</p><br>
     /// - On success, responds with [`DescribeExportOutput`](crate::operation::describe_export::DescribeExportOutput) with field(s):
     ///   - [`export_id(Option<String>)`](crate::operation::describe_export::DescribeExportOutput::export_id): <p>The unique identifier of the described export.</p>
     ///   - [`resource_specification(Option<ExportResourceSpecification>)`](crate::operation::describe_export::DescribeExportOutput::resource_specification): <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>

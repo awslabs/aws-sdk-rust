@@ -41,8 +41,10 @@ impl SystemInstanceDescription {
         self.validated_namespace_version
     }
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
-    pub fn validated_dependency_revisions(&self) -> ::std::option::Option<&[crate::types::DependencyRevision]> {
-        self.validated_dependency_revisions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validated_dependency_revisions.is_none()`.
+    pub fn validated_dependency_revisions(&self) -> &[crate::types::DependencyRevision] {
+        self.validated_dependency_revisions.as_deref().unwrap_or_default()
     }
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     pub fn flow_actions_role_arn(&self) -> ::std::option::Option<&str> {

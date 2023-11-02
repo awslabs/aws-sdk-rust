@@ -48,6 +48,7 @@ pub struct UpdateAvailabilityConfigurationInputBuilder {
 }
 impl UpdateAvailabilityConfigurationInputBuilder {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateAvailabilityConfigurationInputBuilder {
         &self.organization_id
     }
     /// <p>The domain to which the provider applies the availability configuration.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

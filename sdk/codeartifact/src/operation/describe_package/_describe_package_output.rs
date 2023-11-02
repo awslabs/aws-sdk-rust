@@ -34,6 +34,7 @@ pub struct DescribePackageOutputBuilder {
 }
 impl DescribePackageOutputBuilder {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
+    /// This field is required.
     pub fn package(mut self, input: crate::types::PackageDescription) -> Self {
         self.package = ::std::option::Option::Some(input);
         self

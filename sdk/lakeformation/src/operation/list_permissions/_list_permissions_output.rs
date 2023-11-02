@@ -11,8 +11,10 @@ pub struct ListPermissionsOutput {
 }
 impl ListPermissionsOutput {
     /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
-    pub fn principal_resource_permissions(&self) -> ::std::option::Option<&[crate::types::PrincipalResourcePermissions]> {
-        self.principal_resource_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principal_resource_permissions.is_none()`.
+    pub fn principal_resource_permissions(&self) -> &[crate::types::PrincipalResourcePermissions] {
+        self.principal_resource_permissions.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

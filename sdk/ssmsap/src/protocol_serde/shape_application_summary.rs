@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DiscoveryStatus" => {
+                            builder = builder.set_discovery_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationDiscoveryStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Type" => {
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

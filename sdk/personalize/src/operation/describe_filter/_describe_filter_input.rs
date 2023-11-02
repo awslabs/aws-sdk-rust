@@ -27,6 +27,7 @@ pub struct DescribeFilterInputBuilder {
 }
 impl DescribeFilterInputBuilder {
     /// <p>The ARN of the filter to describe.</p>
+    /// This field is required.
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_arn = ::std::option::Option::Some(input.into());
         self

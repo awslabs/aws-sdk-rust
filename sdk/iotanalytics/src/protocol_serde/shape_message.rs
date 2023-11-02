@@ -3,11 +3,13 @@ pub fn ser_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Message,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.message_id {
-        object.key("messageId").string(var_1.as_str());
+    {
+        object.key("messageId").string(input.message_id.as_str());
     }
-    if let Some(var_2) = &input.payload {
-        object.key("payload").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+    {
+        object
+            .key("payload")
+            .string_unchecked(&::aws_smithy_types::base64::encode(&input.payload));
     }
     Ok(())
 }

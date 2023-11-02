@@ -30,8 +30,10 @@ impl CreateOrganizationInput {
         self.client_token.as_deref()
     }
     /// <p>The email domains to associate with the organization.</p>
-    pub fn domains(&self) -> ::std::option::Option<&[crate::types::Domain]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[crate::types::Domain] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -76,6 +78,7 @@ impl CreateOrganizationInputBuilder {
         &self.directory_id
     }
     /// <p>The organization alias.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self

@@ -29,8 +29,10 @@ impl ListTableRowsInput {
         self.table_id.as_deref()
     }
     /// <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
-    pub fn row_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.row_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row_ids.is_none()`.
+    pub fn row_ids(&self) -> &[::std::string::String] {
+        self.row_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of rows to return in each page of the results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -62,6 +64,7 @@ pub struct ListTableRowsInputBuilder {
 impl ListTableRowsInputBuilder {
     /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +82,7 @@ impl ListTableRowsInputBuilder {
     }
     /// <p>The ID of the table whose rows are being retrieved.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_id = ::std::option::Option::Some(input.into());
         self

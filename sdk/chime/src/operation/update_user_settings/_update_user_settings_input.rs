@@ -41,6 +41,7 @@ pub struct UpdateUserSettingsInputBuilder {
 }
 impl UpdateUserSettingsInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateUserSettingsInputBuilder {
         &self.account_id
     }
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateUserSettingsInputBuilder {
         &self.user_id
     }
     /// <p>The user settings to update.</p>
+    /// This field is required.
     pub fn user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.user_settings = ::std::option::Option::Some(input);
         self

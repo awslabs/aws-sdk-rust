@@ -57,8 +57,10 @@ impl MaintenanceWindowTarget {
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(&self) -> ::std::option::Option<&str> {

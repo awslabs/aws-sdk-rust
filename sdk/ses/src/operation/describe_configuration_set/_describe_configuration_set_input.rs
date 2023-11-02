@@ -15,8 +15,10 @@ impl DescribeConfigurationSetInput {
         self.configuration_set_name.as_deref()
     }
     /// <p>A list of configuration set attributes to return.</p>
-    pub fn configuration_set_attribute_names(&self) -> ::std::option::Option<&[crate::types::ConfigurationSetAttribute]> {
-        self.configuration_set_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_set_attribute_names.is_none()`.
+    pub fn configuration_set_attribute_names(&self) -> &[crate::types::ConfigurationSetAttribute] {
+        self.configuration_set_attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeConfigurationSetInput {
@@ -35,6 +37,7 @@ pub struct DescribeConfigurationSetInputBuilder {
 }
 impl DescribeConfigurationSetInputBuilder {
     /// <p>The name of the configuration set to describe.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self

@@ -17,24 +17,32 @@ pub struct DescribeSourceServersRequestFilters {
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
-    pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_server_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_i_ds.is_none()`.
+    pub fn source_server_i_ds(&self) -> &[::std::string::String] {
+        self.source_server_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>Request to filter Source Servers list by archived.</p>
     pub fn is_archived(&self) -> ::std::option::Option<bool> {
         self.is_archived
     }
     /// <p>Request to filter Source Servers list by replication type.</p>
-    pub fn replication_types(&self) -> ::std::option::Option<&[crate::types::ReplicationType]> {
-        self.replication_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_types.is_none()`.
+    pub fn replication_types(&self) -> &[crate::types::ReplicationType] {
+        self.replication_types.as_deref().unwrap_or_default()
     }
     /// <p>Request to filter Source Servers list by life cycle states.</p>
-    pub fn life_cycle_states(&self) -> ::std::option::Option<&[crate::types::LifeCycleState]> {
-        self.life_cycle_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.life_cycle_states.is_none()`.
+    pub fn life_cycle_states(&self) -> &[crate::types::LifeCycleState] {
+        self.life_cycle_states.as_deref().unwrap_or_default()
     }
     /// <p>Request to filter Source Servers list by application IDs.</p>
-    pub fn application_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_i_ds.is_none()`.
+    pub fn application_i_ds(&self) -> &[::std::string::String] {
+        self.application_i_ds.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSourceServersRequestFilters {

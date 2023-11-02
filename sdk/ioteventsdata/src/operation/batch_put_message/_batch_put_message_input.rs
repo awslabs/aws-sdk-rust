@@ -8,8 +8,10 @@ pub struct BatchPutMessageInput {
 }
 impl BatchPutMessageInput {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::Message] {
+        self.messages.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutMessageInput {

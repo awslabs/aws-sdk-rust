@@ -34,6 +34,7 @@ pub struct AssociateWirelessGatewayWithThingInputBuilder {
 }
 impl AssociateWirelessGatewayWithThingInputBuilder {
     /// <p>The ID of the resource to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateWirelessGatewayWithThingInputBuilder {
         &self.id
     }
     /// <p>The ARN of the thing to associate with the wireless gateway.</p>
+    /// This field is required.
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
         self

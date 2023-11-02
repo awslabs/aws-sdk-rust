@@ -21,8 +21,10 @@ impl DailyVolume {
         self.volume_statistics.as_ref()
     }
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-    pub fn domain_isp_placements(&self) -> ::std::option::Option<&[crate::types::DomainIspPlacement]> {
-        self.domain_isp_placements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_isp_placements.is_none()`.
+    pub fn domain_isp_placements(&self) -> &[crate::types::DomainIspPlacement] {
+        self.domain_isp_placements.as_deref().unwrap_or_default()
     }
 }
 impl DailyVolume {

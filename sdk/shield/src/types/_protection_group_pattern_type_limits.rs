@@ -28,6 +28,7 @@ pub struct ProtectionGroupPatternTypeLimitsBuilder {
 }
 impl ProtectionGroupPatternTypeLimitsBuilder {
     /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
+    /// This field is required.
     pub fn arbitrary_pattern_limits(mut self, input: crate::types::ProtectionGroupArbitraryPatternLimits) -> Self {
         self.arbitrary_pattern_limits = ::std::option::Option::Some(input);
         self

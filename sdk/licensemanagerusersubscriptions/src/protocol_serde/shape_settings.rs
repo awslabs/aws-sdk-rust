@@ -3,17 +3,17 @@ pub fn ser_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Settings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.subnets {
-        let mut array_2 = object.key("Subnets").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("Subnets").start_array();
+        for item_2 in &input.subnets {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.security_group_id {
-        object.key("SecurityGroupId").string(var_4.as_str());
+    {
+        object.key("SecurityGroupId").string(input.security_group_id.as_str());
     }
     Ok(())
 }
@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::settings_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

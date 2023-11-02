@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateDataQuality {
     /// <p>The name of the data quality evaluation.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The inputs of your data quality evaluation.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>The ruleset for your data quality evaluation.</p>
-    pub ruleset: ::std::option::Option<::std::string::String>,
+    pub ruleset: ::std::string::String,
     /// <p>The output of your data quality evaluation.</p>
     pub output: ::std::option::Option<crate::types::DqTransformOutput>,
     /// <p>Options to configure how your results are published.</p>
@@ -19,16 +19,19 @@ pub struct EvaluateDataQuality {
 }
 impl EvaluateDataQuality {
     /// <p>The name of the data quality evaluation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The inputs of your data quality evaluation.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>The ruleset for your data quality evaluation.</p>
-    pub fn ruleset(&self) -> ::std::option::Option<&str> {
-        self.ruleset.as_deref()
+    pub fn ruleset(&self) -> &str {
+        use std::ops::Deref;
+        self.ruleset.deref()
     }
     /// <p>The output of your data quality evaluation.</p>
     pub fn output(&self) -> ::std::option::Option<&crate::types::DqTransformOutput> {
@@ -63,6 +66,7 @@ pub struct EvaluateDataQualityBuilder {
 }
 impl EvaluateDataQualityBuilder {
     /// <p>The name of the data quality evaluation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl EvaluateDataQualityBuilder {
         &self.inputs
     }
     /// <p>The ruleset for your data quality evaluation.</p>
+    /// This field is required.
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +158,33 @@ impl EvaluateDataQualityBuilder {
         &self.stop_job_on_failure_options
     }
     /// Consumes the builder and constructs a [`EvaluateDataQuality`](crate::types::EvaluateDataQuality).
-    pub fn build(self) -> crate::types::EvaluateDataQuality {
-        crate::types::EvaluateDataQuality {
-            name: self.name,
-            inputs: self.inputs,
-            ruleset: self.ruleset,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::EvaluateDataQualityBuilder::name)
+    /// - [`inputs`](crate::types::builders::EvaluateDataQualityBuilder::inputs)
+    /// - [`ruleset`](crate::types::builders::EvaluateDataQualityBuilder::ruleset)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluateDataQuality, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluateDataQuality {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EvaluateDataQuality",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building EvaluateDataQuality",
+                )
+            })?,
+            ruleset: self.ruleset.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ruleset",
+                    "ruleset was not specified but it is required when building EvaluateDataQuality",
+                )
+            })?,
             output: self.output,
             publishing_options: self.publishing_options,
             stop_job_on_failure_options: self.stop_job_on_failure_options,
-        }
+        })
     }
 }

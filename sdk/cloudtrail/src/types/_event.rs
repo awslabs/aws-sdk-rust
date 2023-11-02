@@ -53,8 +53,10 @@ impl Event {
         self.username.as_deref()
     }
     /// <p>A list of resources referenced by the event returned.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::Resource] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>A JSON string that contains a representation of the event returned.</p>
     pub fn cloud_trail_event(&self) -> ::std::option::Option<&str> {

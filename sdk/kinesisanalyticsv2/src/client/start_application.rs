@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartApplication`](crate::operation::start_application::builders::StartApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_application_name): <p>The name of the application.</p>
-    ///   - [`run_configuration(RunConfiguration)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::run_configuration) / [`set_run_configuration(Option<RunConfiguration>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_run_configuration): <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    ///   - [`application_name(impl Into<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_application_name):<br>required: **true**<br><p>The name of the application.</p><br>
+    ///   - [`run_configuration(RunConfiguration)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::run_configuration) / [`set_run_configuration(Option<RunConfiguration>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_run_configuration):<br>required: **false**<br><p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p><br>
     /// - On success, responds with [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput)
     /// - On failure, responds with [`SdkError<StartApplicationError>`](crate::operation::start_application::StartApplicationError)
     pub fn start_application(&self) -> crate::operation::start_application::builders::StartApplicationFluentBuilder {

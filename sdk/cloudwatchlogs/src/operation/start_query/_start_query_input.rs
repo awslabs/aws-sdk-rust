@@ -35,15 +35,19 @@ impl StartQueryInput {
     /// <p>The list of log groups to be queried. You can include up to 50 log groups.</p> <note>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
     /// </note>
-    pub fn log_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_names.is_none()`.
+    pub fn log_group_names(&self) -> &[::std::string::String] {
+        self.log_group_names.as_deref().unwrap_or_default()
     }
     /// <p>The list of log groups to query. You can include up to 50 log groups.</p>
     /// <p>You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.</p>
     /// <p>If you specify an ARN, the ARN can't end with an asterisk (*).</p>
     /// <p>A <code>StartQuery</code> operation must include exactly one of the following parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
-    pub fn log_group_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_group_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_identifiers.is_none()`.
+    pub fn log_group_identifiers(&self) -> &[::std::string::String] {
+        self.log_group_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn start_time(&self) -> ::std::option::Option<i64> {
@@ -158,6 +162,7 @@ impl StartQueryInputBuilder {
         &self.log_group_identifiers
     }
     /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: i64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -172,6 +177,7 @@ impl StartQueryInputBuilder {
         &self.start_time
     }
     /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: i64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -186,6 +192,7 @@ impl StartQueryInputBuilder {
         &self.end_time
     }
     /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self

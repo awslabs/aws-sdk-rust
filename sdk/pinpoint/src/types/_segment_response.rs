@@ -113,6 +113,7 @@ pub struct SegmentResponseBuilder {
 }
 impl SegmentResponseBuilder {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +128,7 @@ impl SegmentResponseBuilder {
         &self.application_id
     }
     /// <p>The Amazon Resource Name (ARN) of the segment.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +143,7 @@ impl SegmentResponseBuilder {
         &self.arn
     }
     /// <p>The date and time when the segment was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +172,7 @@ impl SegmentResponseBuilder {
         &self.dimensions
     }
     /// <p>The unique identifier for the segment.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -243,6 +247,7 @@ impl SegmentResponseBuilder {
     /// <li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li>
     /// <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn segment_type(mut self, input: crate::types::SegmentType) -> Self {
         self.segment_type = ::std::option::Option::Some(input);
         self

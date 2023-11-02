@@ -21,8 +21,10 @@ impl BuildGroup {
         self.identifier.as_deref()
     }
     /// <p>An array of strings that contain the identifiers of the build groups that this build group depends on.</p>
-    pub fn depends_on(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.depends_on.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on.is_none()`.
+    pub fn depends_on(&self) -> &[::std::string::String] {
+        self.depends_on.as_deref().unwrap_or_default()
     }
     /// <p>Specifies if failures in this build group can be ignored.</p>
     pub fn ignore_failure(&self) -> bool {
@@ -33,8 +35,10 @@ impl BuildGroup {
         self.current_build_summary.as_ref()
     }
     /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous build groups.</p>
-    pub fn prior_build_summary_list(&self) -> ::std::option::Option<&[crate::types::BuildSummary]> {
-        self.prior_build_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prior_build_summary_list.is_none()`.
+    pub fn prior_build_summary_list(&self) -> &[crate::types::BuildSummary] {
+        self.prior_build_summary_list.as_deref().unwrap_or_default()
     }
 }
 impl BuildGroup {

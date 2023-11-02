@@ -27,6 +27,7 @@ pub fn ser_block_device_mapping(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_block_device_mapping(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::BlockDeviceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {

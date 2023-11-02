@@ -3,41 +3,41 @@ pub fn ser_view_frame(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ViewFrame,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_column_index {
+    {
         object.key("StartColumnIndex").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.start_column_index).into()),
+        );
+    }
+    if let Some(var_1) = &input.column_range {
+        object.key("ColumnRange").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.column_range {
-        object.key("ColumnRange").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.hidden_columns {
-        let mut array_4 = object.key("HiddenColumns").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.hidden_columns {
+        let mut array_3 = object.key("HiddenColumns").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.start_row_index {
+    if let Some(var_5) = &input.start_row_index {
         object.key("StartRowIndex").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.row_range {
+        object.key("RowRange").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.row_range {
-        object.key("RowRange").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.analytics {
-        object.key("Analytics").string(var_8.as_str());
+    if let Some(var_7) = &input.analytics {
+        object.key("Analytics").string(var_7.as_str());
     }
     Ok(())
 }

@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitFeedbackInput {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub anomaly_instance_id: ::std::option::Option<::std::string::String>,
+    pub anomaly_instance_id: ::std::string::String,
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
-    pub r#type: ::std::option::Option<crate::types::FeedbackType>,
+    pub r#type: crate::types::FeedbackType,
     /// <p>Optional feedback about this anomaly.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
 impl SubmitFeedbackInput {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
-    pub fn anomaly_instance_id(&self) -> ::std::option::Option<&str> {
-        self.anomaly_instance_id.as_deref()
+    pub fn anomaly_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.anomaly_instance_id.deref()
     }
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FeedbackType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FeedbackType {
+        &self.r#type
     }
     /// <p>Optional feedback about this anomaly.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct SubmitFeedbackInputBuilder {
 }
 impl SubmitFeedbackInputBuilder {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl SubmitFeedbackInputBuilder {
         &self.profiling_group_name
     }
     /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
+    /// This field is required.
     pub fn anomaly_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl SubmitFeedbackInputBuilder {
         &self.anomaly_instance_id
     }
     /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -105,13 +110,32 @@ impl SubmitFeedbackInputBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`SubmitFeedbackInput`](crate::operation::submit_feedback::SubmitFeedbackInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder::profiling_group_name)
+    /// - [`anomaly_instance_id`](crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder::anomaly_instance_id)
+    /// - [`r#type`](crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::submit_feedback::SubmitFeedbackInput {
-            profiling_group_name: self.profiling_group_name,
-            anomaly_instance_id: self.anomaly_instance_id,
-            r#type: self.r#type,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building SubmitFeedbackInput",
+                )
+            })?,
+            anomaly_instance_id: self.anomaly_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "anomaly_instance_id",
+                    "anomaly_instance_id was not specified but it is required when building SubmitFeedbackInput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SubmitFeedbackInput",
+                )
+            })?,
             comment: self.comment,
         })
     }

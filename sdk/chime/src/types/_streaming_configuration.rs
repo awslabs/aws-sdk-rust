@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingConfiguration {
     /// <p>The retention period, in hours, for the Amazon Kinesis data.</p>
-    pub data_retention_in_hours: ::std::option::Option<i32>,
+    pub data_retention_in_hours: i32,
     /// <p>When true, media streaming to Amazon Kinesis is turned off.</p>
     pub disabled: ::std::option::Option<bool>,
     /// <p>The streaming notification targets.</p>
@@ -13,7 +13,7 @@ pub struct StreamingConfiguration {
 }
 impl StreamingConfiguration {
     /// <p>The retention period, in hours, for the Amazon Kinesis data.</p>
-    pub fn data_retention_in_hours(&self) -> ::std::option::Option<i32> {
+    pub fn data_retention_in_hours(&self) -> i32 {
         self.data_retention_in_hours
     }
     /// <p>When true, media streaming to Amazon Kinesis is turned off.</p>
@@ -21,8 +21,10 @@ impl StreamingConfiguration {
         self.disabled
     }
     /// <p>The streaming notification targets.</p>
-    pub fn streaming_notification_targets(&self) -> ::std::option::Option<&[crate::types::StreamingNotificationTarget]> {
-        self.streaming_notification_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_notification_targets.is_none()`.
+    pub fn streaming_notification_targets(&self) -> &[crate::types::StreamingNotificationTarget] {
+        self.streaming_notification_targets.as_deref().unwrap_or_default()
     }
 }
 impl StreamingConfiguration {
@@ -42,6 +44,7 @@ pub struct StreamingConfigurationBuilder {
 }
 impl StreamingConfigurationBuilder {
     /// <p>The retention period, in hours, for the Amazon Kinesis data.</p>
+    /// This field is required.
     pub fn data_retention_in_hours(mut self, input: i32) -> Self {
         self.data_retention_in_hours = ::std::option::Option::Some(input);
         self
@@ -93,11 +96,18 @@ impl StreamingConfigurationBuilder {
         &self.streaming_notification_targets
     }
     /// Consumes the builder and constructs a [`StreamingConfiguration`](crate::types::StreamingConfiguration).
-    pub fn build(self) -> crate::types::StreamingConfiguration {
-        crate::types::StreamingConfiguration {
-            data_retention_in_hours: self.data_retention_in_hours,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_retention_in_hours`](crate::types::builders::StreamingConfigurationBuilder::data_retention_in_hours)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamingConfiguration {
+            data_retention_in_hours: self.data_retention_in_hours.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_retention_in_hours",
+                    "data_retention_in_hours was not specified but it is required when building StreamingConfiguration",
+                )
+            })?,
             disabled: self.disabled,
             streaming_notification_targets: self.streaming_notification_targets,
-        }
+        })
     }
 }

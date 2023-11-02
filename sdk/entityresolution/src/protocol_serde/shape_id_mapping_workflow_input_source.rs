@@ -3,11 +3,11 @@ pub fn ser_id_mapping_workflow_input_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdMappingWorkflowInputSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.input_source_arn {
-        object.key("inputSourceARN").string(var_1.as_str());
+    {
+        object.key("inputSourceARN").string(input.input_source_arn.as_str());
     }
-    if let Some(var_2) = &input.schema_name {
-        object.key("schemaName").string(var_2.as_str());
+    {
+        object.key("schemaName").string(input.schema_name.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::id_mapping_workflow_input_source_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

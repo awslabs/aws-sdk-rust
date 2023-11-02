@@ -12,12 +12,16 @@ pub struct BatchMeterUsageOutput {
 }
 impl BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::UsageRecordResult]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::UsageRecordResult] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
-    pub fn unprocessed_records(&self) -> ::std::option::Option<&[crate::types::UsageRecord]> {
-        self.unprocessed_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_records.is_none()`.
+    pub fn unprocessed_records(&self) -> &[crate::types::UsageRecord] {
+        self.unprocessed_records.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchMeterUsageOutput {

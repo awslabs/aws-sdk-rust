@@ -77,6 +77,7 @@ impl ExecutePolicyInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The name or ARN of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self

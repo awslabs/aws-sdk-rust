@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEntity`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::set_organization_id): <p>The identifier for the organization under which the entity exists.</p>
-    ///   - [`email(impl Into<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::email) / [`set_email(Option<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::set_email): <p>The email under which the entity exists.</p>
+    ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::set_organization_id):<br>required: **true**<br><p>The identifier for the organization under which the entity exists.</p><br>
+    ///   - [`email(impl Into<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::email) / [`set_email(Option<String>)`](crate::operation::describe_entity::builders::DescribeEntityFluentBuilder::set_email):<br>required: **true**<br><p>The email under which the entity exists.</p><br>
     /// - On success, responds with [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput) with field(s):
     ///   - [`entity_id(Option<String>)`](crate::operation::describe_entity::DescribeEntityOutput::entity_id): <p>The entity ID under which the entity exists.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_entity::DescribeEntityOutput::name): <p>Username, GroupName, or ResourceName based on entity type.</p>

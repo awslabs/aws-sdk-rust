@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelativeDatesFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub filter_id: ::std::option::Option<::std::string::String>,
+    pub filter_id: ::std::string::String,
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The date configuration of the filter.</p>
@@ -13,7 +13,7 @@ pub struct RelativeDatesFilter {
     /// <p>The minimum granularity (period granularity) of the relative dates filter.</p>
     pub minimum_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
+    pub time_granularity: crate::types::TimeGranularity,
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
     /// <li> <p> <code>PREVIOUS</code> </p> </li>
@@ -22,7 +22,7 @@ pub struct RelativeDatesFilter {
     /// <li> <p> <code>NOW</code> </p> </li>
     /// <li> <p> <code>NEXT</code> </p> </li>
     /// </ul>
-    pub relative_date_type: ::std::option::Option<crate::types::RelativeDateType>,
+    pub relative_date_type: crate::types::RelativeDateType,
     /// <p>The date value of the filter.</p>
     pub relative_date_value: ::std::option::Option<i32>,
     /// <p>The parameter whose value should be used for the filter value.</p>
@@ -33,14 +33,15 @@ pub struct RelativeDatesFilter {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
+    pub null_option: crate::types::FilterNullOption,
     /// <p>The configuration for the exclude period of the filter.</p>
     pub exclude_period_configuration: ::std::option::Option<crate::types::ExcludePeriodConfiguration>,
 }
 impl RelativeDatesFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> ::std::option::Option<&str> {
-        self.filter_id.as_deref()
+    pub fn filter_id(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_id.deref()
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
@@ -55,8 +56,8 @@ impl RelativeDatesFilter {
         self.minimum_granularity.as_ref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
-        self.time_granularity.as_ref()
+    pub fn time_granularity(&self) -> &crate::types::TimeGranularity {
+        &self.time_granularity
     }
     /// <p>The range date type of the filter. Choose one of the options below:</p>
     /// <ul>
@@ -66,8 +67,8 @@ impl RelativeDatesFilter {
     /// <li> <p> <code>NOW</code> </p> </li>
     /// <li> <p> <code>NEXT</code> </p> </li>
     /// </ul>
-    pub fn relative_date_type(&self) -> ::std::option::Option<&crate::types::RelativeDateType> {
-        self.relative_date_type.as_ref()
+    pub fn relative_date_type(&self) -> &crate::types::RelativeDateType {
+        &self.relative_date_type
     }
     /// <p>The date value of the filter.</p>
     pub fn relative_date_value(&self) -> ::std::option::Option<i32> {
@@ -83,8 +84,8 @@ impl RelativeDatesFilter {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn null_option(&self) -> ::std::option::Option<&crate::types::FilterNullOption> {
-        self.null_option.as_ref()
+    pub fn null_option(&self) -> &crate::types::FilterNullOption {
+        &self.null_option
     }
     /// <p>The configuration for the exclude period of the filter.</p>
     pub fn exclude_period_configuration(&self) -> ::std::option::Option<&crate::types::ExcludePeriodConfiguration> {
@@ -115,6 +116,7 @@ pub struct RelativeDatesFilterBuilder {
 }
 impl RelativeDatesFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    /// This field is required.
     pub fn filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_id = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +131,7 @@ impl RelativeDatesFilterBuilder {
         &self.filter_id
     }
     /// <p>The column that the filter is applied to.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -143,6 +146,7 @@ impl RelativeDatesFilterBuilder {
         &self.column
     }
     /// <p>The date configuration of the filter.</p>
+    /// This field is required.
     pub fn anchor_date_configuration(mut self, input: crate::types::AnchorDateConfiguration) -> Self {
         self.anchor_date_configuration = ::std::option::Option::Some(input);
         self
@@ -171,6 +175,7 @@ impl RelativeDatesFilterBuilder {
         &self.minimum_granularity
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    /// This field is required.
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.time_granularity = ::std::option::Option::Some(input);
         self
@@ -192,6 +197,7 @@ impl RelativeDatesFilterBuilder {
     /// <li> <p> <code>NOW</code> </p> </li>
     /// <li> <p> <code>NEXT</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn relative_date_type(mut self, input: crate::types::RelativeDateType) -> Self {
         self.relative_date_type = ::std::option::Option::Some(input);
         self
@@ -253,6 +259,7 @@ impl RelativeDatesFilterBuilder {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
         self.null_option = ::std::option::Option::Some(input);
         self
@@ -291,18 +298,43 @@ impl RelativeDatesFilterBuilder {
         &self.exclude_period_configuration
     }
     /// Consumes the builder and constructs a [`RelativeDatesFilter`](crate::types::RelativeDatesFilter).
-    pub fn build(self) -> crate::types::RelativeDatesFilter {
-        crate::types::RelativeDatesFilter {
-            filter_id: self.filter_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_id`](crate::types::builders::RelativeDatesFilterBuilder::filter_id)
+    /// - [`time_granularity`](crate::types::builders::RelativeDatesFilterBuilder::time_granularity)
+    /// - [`relative_date_type`](crate::types::builders::RelativeDatesFilterBuilder::relative_date_type)
+    /// - [`null_option`](crate::types::builders::RelativeDatesFilterBuilder::null_option)
+    pub fn build(self) -> ::std::result::Result<crate::types::RelativeDatesFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RelativeDatesFilter {
+            filter_id: self.filter_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter_id",
+                    "filter_id was not specified but it is required when building RelativeDatesFilter",
+                )
+            })?,
             column: self.column,
             anchor_date_configuration: self.anchor_date_configuration,
             minimum_granularity: self.minimum_granularity,
-            time_granularity: self.time_granularity,
-            relative_date_type: self.relative_date_type,
+            time_granularity: self.time_granularity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_granularity",
+                    "time_granularity was not specified but it is required when building RelativeDatesFilter",
+                )
+            })?,
+            relative_date_type: self.relative_date_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "relative_date_type",
+                    "relative_date_type was not specified but it is required when building RelativeDatesFilter",
+                )
+            })?,
             relative_date_value: self.relative_date_value,
             parameter_name: self.parameter_name,
-            null_option: self.null_option,
+            null_option: self.null_option.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "null_option",
+                    "null_option was not specified but it is required when building RelativeDatesFilter",
+                )
+            })?,
             exclude_period_configuration: self.exclude_period_configuration,
-        }
+        })
     }
 }

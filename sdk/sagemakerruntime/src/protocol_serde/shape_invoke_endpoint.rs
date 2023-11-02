@@ -142,7 +142,7 @@ pub fn de_invoke_endpoint_http_response(
             })?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::invoke_endpoint_output_correct_errors(output).build()
     })
 }
 

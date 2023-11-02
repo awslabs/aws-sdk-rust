@@ -41,8 +41,10 @@ impl GetInsightImpactGraphOutput {
         self.service_graph_end_time.as_ref()
     }
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-    pub fn services(&self) -> ::std::option::Option<&[crate::types::InsightImpactGraphService]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[crate::types::InsightImpactGraphService] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

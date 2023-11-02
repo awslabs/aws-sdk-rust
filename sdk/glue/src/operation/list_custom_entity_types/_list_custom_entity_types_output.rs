@@ -11,8 +11,10 @@ pub struct ListCustomEntityTypesOutput {
 }
 impl ListCustomEntityTypesOutput {
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
-    pub fn custom_entity_types(&self) -> ::std::option::Option<&[crate::types::CustomEntityType]> {
-        self.custom_entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_entity_types.is_none()`.
+    pub fn custom_entity_types(&self) -> &[crate::types::CustomEntityType] {
+        self.custom_entity_types.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

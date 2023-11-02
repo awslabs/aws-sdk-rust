@@ -10,8 +10,10 @@ pub struct BatchCreateDelegationByAssessmentInput {
 }
 impl BatchCreateDelegationByAssessmentInput {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
-    pub fn create_delegation_requests(&self) -> ::std::option::Option<&[crate::types::CreateDelegationRequest]> {
-        self.create_delegation_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.create_delegation_requests.is_none()`.
+    pub fn create_delegation_requests(&self) -> &[crate::types::CreateDelegationRequest] {
+        self.create_delegation_requests.as_deref().unwrap_or_default()
     }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl BatchCreateDelegationByAssessmentInputBuilder {
         &self.create_delegation_requests
     }
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self

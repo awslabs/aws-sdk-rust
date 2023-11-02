@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>An object containing the name of the user.</p>
@@ -34,8 +34,9 @@ pub struct CreateUserInput {
 }
 impl CreateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
@@ -58,16 +59,22 @@ impl CreateUserInput {
         self.profile_url.as_deref()
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn emails(&self) -> ::std::option::Option<&[crate::types::Email]> {
-        self.emails.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emails.is_none()`.
+    pub fn emails(&self) -> &[crate::types::Email] {
+        self.emails.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn addresses(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[crate::types::Address] {
+        self.addresses.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::PhoneNumber]> {
-        self.phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
+    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumber] {
+        self.phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn user_type(&self) -> ::std::option::Option<&str> {
@@ -138,6 +145,7 @@ pub struct CreateUserInputBuilder {
 }
 impl CreateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -352,9 +360,16 @@ impl CreateUserInputBuilder {
         &self.timezone
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::create_user::builders::CreateUserInputBuilder::identity_store_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
-            identity_store_id: self.identity_store_id,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building CreateUserInput",
+                )
+            })?,
             user_name: self.user_name,
             name: self.name,
             display_name: self.display_name,

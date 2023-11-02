@@ -35,6 +35,7 @@ pub struct InstallToRemoteAccessSessionInputBuilder {
 }
 impl InstallToRemoteAccessSessionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
+    /// This field is required.
     pub fn remote_access_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_access_session_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl InstallToRemoteAccessSessionInputBuilder {
         &self.remote_access_session_arn
     }
     /// <p>The ARN of the app about which you are requesting information.</p>
+    /// This field is required.
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self

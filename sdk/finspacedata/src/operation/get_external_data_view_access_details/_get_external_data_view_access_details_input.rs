@@ -34,6 +34,7 @@ pub struct GetExternalDataViewAccessDetailsInputBuilder {
 }
 impl GetExternalDataViewAccessDetailsInputBuilder {
     /// <p>The unique identifier for the Dataview that you want to access.</p>
+    /// This field is required.
     pub fn data_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_view_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
         &self.data_view_id
     }
     /// <p>The unique identifier for the Dataset.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self

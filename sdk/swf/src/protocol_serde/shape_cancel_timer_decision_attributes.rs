@@ -3,8 +3,8 @@ pub fn ser_cancel_timer_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CancelTimerDecisionAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.timer_id {
-        object.key("timerId").string(var_1.as_str());
+    {
+        object.key("timerId").string(input.timer_id.as_str());
     }
     Ok(())
 }

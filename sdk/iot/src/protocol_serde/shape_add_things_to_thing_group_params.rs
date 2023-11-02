@@ -3,17 +3,17 @@ pub fn ser_add_things_to_thing_group_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddThingsToThingGroupParams,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.thing_group_names {
-        let mut array_2 = object.key("thingGroupNames").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("thingGroupNames").start_array();
+        for item_2 in &input.thing_group_names {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.override_dynamic_groups {
-        object.key("overrideDynamicGroups").boolean(*var_4);
+    if let Some(var_3) = &input.override_dynamic_groups {
+        object.key("overrideDynamicGroups").boolean(*var_3);
     }
     Ok(())
 }
@@ -49,7 +49,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::add_things_to_thing_group_params_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

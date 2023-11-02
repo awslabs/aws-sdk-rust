@@ -57,6 +57,7 @@ pub struct CompleteSnapshotInputBuilder {
 }
 impl CompleteSnapshotInputBuilder {
     /// <p>The ID of the snapshot.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl CompleteSnapshotInputBuilder {
         &self.snapshot_id
     }
     /// <p>The number of blocks that were written to the snapshot.</p>
+    /// This field is required.
     pub fn changed_blocks_count(mut self, input: i32) -> Self {
         self.changed_blocks_count = ::std::option::Option::Some(input);
         self

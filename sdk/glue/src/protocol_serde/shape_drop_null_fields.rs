@@ -3,35 +3,35 @@ pub fn ser_drop_null_fields(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DropNullFields,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.inputs {
-        let mut array_3 = object.key("Inputs").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Inputs").start_array();
+        for item_2 in &input.inputs {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.null_check_box_list {
+    if let Some(var_3) = &input.null_check_box_list {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("NullCheckBoxList").start_object();
-        crate::protocol_serde::shape_null_check_box_list::ser_null_check_box_list(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("NullCheckBoxList").start_object();
+        crate::protocol_serde::shape_null_check_box_list::ser_null_check_box_list(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_7) = &input.null_text_list {
-        let mut array_8 = object.key("NullTextList").start_array();
-        for item_9 in var_7 {
+    if let Some(var_5) = &input.null_text_list {
+        let mut array_6 = object.key("NullTextList").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_null_value_field::ser_null_value_field(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_null_value_field::ser_null_value_field(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -78,7 +78,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::drop_null_fields_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -96,7 +96,7 @@ impl PutModelInvocationLoggingConfigurationFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationOutput,
             crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError,
             Self,
@@ -105,7 +105,7 @@ impl PutModelInvocationLoggingConfigurationFluentBuilder {
             crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

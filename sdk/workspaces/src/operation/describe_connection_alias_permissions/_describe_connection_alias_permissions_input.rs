@@ -41,6 +41,7 @@ pub struct DescribeConnectionAliasPermissionsInputBuilder {
 }
 impl DescribeConnectionAliasPermissionsInputBuilder {
     /// <p>The identifier of the connection alias.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self

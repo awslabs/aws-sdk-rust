@@ -55,8 +55,10 @@ impl OrcSerDe {
         self.compression.as_ref()
     }
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
-    pub fn bloom_filter_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bloom_filter_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bloom_filter_columns.is_none()`.
+    pub fn bloom_filter_columns(&self) -> &[::std::string::String] {
+        self.bloom_filter_columns.as_deref().unwrap_or_default()
     }
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
     pub fn bloom_filter_false_positive_probability(&self) -> ::std::option::Option<f64> {

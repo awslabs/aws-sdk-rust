@@ -41,6 +41,7 @@ pub struct UpdateTopicInputBuilder {
 }
 impl UpdateTopicInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateTopicInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// This field is required.
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateTopicInputBuilder {
         &self.topic_id
     }
     /// <p>The definition of the topic that you want to update.</p>
+    /// This field is required.
     pub fn topic(mut self, input: crate::types::TopicDetails) -> Self {
         self.topic = ::std::option::Option::Some(input);
         self

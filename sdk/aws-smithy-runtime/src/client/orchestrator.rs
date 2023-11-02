@@ -9,14 +9,14 @@
 use self::auth::orchestrate_auth;
 use crate::client::interceptors::Interceptors;
 use crate::client::orchestrator::endpoints::orchestrate_endpoint;
-use crate::client::orchestrator::http::read_body;
+use crate::client::orchestrator::http::{log_response_body, read_body};
 use crate::client::timeout::{MaybeTimeout, MaybeTimeoutConfig, TimeoutKind};
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::byte_stream::ByteStream;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::connectors::HttpConnector;
+use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnector, HttpConnectorSettings};
 use aws_smithy_runtime_api::client::interceptors::context::{
     Error, Input, InterceptorContext, Output, RewindResult,
 };
@@ -30,13 +30,18 @@ use aws_smithy_runtime_api::client::ser_de::{
     RequestSerializer, ResponseDeserializer, SharedRequestSerializer, SharedResponseDeserializer,
 };
 use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::timeout::TimeoutConfig;
 use std::mem;
 use tracing::{debug, debug_span, instrument, trace, Instrument};
 
 mod auth;
 /// Defines types that implement a trait for endpoint resolution
 pub mod endpoints;
+/// Defines types that work with HTTP types
 mod http;
+/// Utility for making one-off unmodeled requests with the orchestrator.
+#[doc(hidden)]
+pub mod operation;
 
 macro_rules! halt {
     ([$ctx:ident] => $err:expr) => {{
@@ -352,16 +357,19 @@ async fn try_attempt(
     let response = halt_on_err!([ctx] => {
         let request = ctx.take_request().expect("set during serialization");
         trace!(request = ?request, "transmitting request");
-        let connector = halt_on_err!([ctx] => runtime_components.http_connector().ok_or_else(||
-            OrchestratorError::other("No HTTP connector was available to send this request. \
-                Enable the `rustls` crate feature or set a connector to fix this.")
+        let http_client = halt_on_err!([ctx] => runtime_components.http_client().ok_or_else(||
+            OrchestratorError::other("No HTTP client was available to send this request. \
+                Enable the `rustls` crate feature or configure a HTTP client to fix this.")
         ));
-        connector.call(request).await.map_err(|err| {
-            match err.downcast() {
-                Ok(connector_error) => OrchestratorError::connector(*connector_error),
-                Err(box_err) => OrchestratorError::other(box_err)
-            }
-        })
+        let timeout_config = cfg.load::<TimeoutConfig>().expect("timeout config must be set");
+        let settings = {
+            let mut builder = HttpConnectorSettings::builder();
+            builder.set_connect_timeout(timeout_config.connect_timeout());
+            builder.set_read_timeout(timeout_config.read_timeout());
+            builder.build()
+        };
+        let connector = http_client.http_connector(&settings, runtime_components);
+        connector.call(request).await.map_err(OrchestratorError::connector)
     });
     trace!(response = ?response, "received response from service");
     ctx.set_response(response);
@@ -391,6 +399,7 @@ async fn try_attempt(
                 .map_err(OrchestratorError::response)
                 .and_then(|_| {
                     let _span = debug_span!("deserialize_nonstreaming").entered();
+                    log_response_body(response, cfg);
                     response_deserializer.deserialize_nonstreaming(response)
                 }),
         }
@@ -442,9 +451,11 @@ mod tests {
     use aws_smithy_runtime_api::client::auth::{
         AuthSchemeOptionResolverParams, SharedAuthSchemeOptionResolver,
     };
-    use aws_smithy_runtime_api::client::connectors::{HttpConnector, SharedHttpConnector};
     use aws_smithy_runtime_api::client::endpoint::{
         EndpointResolverParams, SharedEndpointResolver,
+    };
+    use aws_smithy_runtime_api::client::http::{
+        http_client_fn, HttpConnector, HttpConnectorFuture,
     };
     use aws_smithy_runtime_api::client::interceptors::context::{
         AfterDeserializationInterceptorContextRef, BeforeDeserializationInterceptorContextMut,
@@ -454,10 +465,11 @@ mod tests {
         FinalizerInterceptorContextRef,
     };
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, SharedInterceptor};
-    use aws_smithy_runtime_api::client::orchestrator::{BoxFuture, Future, HttpRequest};
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::retries::SharedRetryStrategy;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, RuntimePlugins};
+    use aws_smithy_runtime_api::shared::IntoShared;
     use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
     use std::borrow::Cow;
     use std::sync::atomic::{AtomicBool, Ordering};
@@ -492,11 +504,11 @@ mod tests {
     }
 
     impl HttpConnector for OkConnector {
-        fn call(&self, _request: HttpRequest) -> BoxFuture<HttpResponse> {
-            Box::pin(Future::ready(Ok(::http::Response::builder()
+        fn call(&self, _request: HttpRequest) -> HttpConnectorFuture {
+            HttpConnectorFuture::ready(Ok(::http::Response::builder()
                 .status(200)
                 .body(SdkBody::empty())
-                .expect("OK response is valid"))))
+                .expect("OK response is valid")))
         }
     }
 
@@ -513,7 +525,9 @@ mod tests {
                     .with_endpoint_resolver(Some(SharedEndpointResolver::new(
                         StaticUriEndpointResolver::http_localhost(8080),
                     )))
-                    .with_http_connector(Some(SharedHttpConnector::new(OkConnector::new())))
+                    .with_http_client(Some(http_client_fn(|_, _| {
+                        OkConnector::new().into_shared()
+                    })))
                     .with_auth_scheme_option_resolver(Some(SharedAuthSchemeOptionResolver::new(
                         StaticAuthSchemeOptionResolver::new(vec![NO_AUTH_SCHEME_ID]),
                     ))),
@@ -528,10 +542,14 @@ mod tests {
             layer.store_put(EndpointResolverParams::new("dontcare"));
             layer.store_put(SharedRequestSerializer::new(new_request_serializer()));
             layer.store_put(SharedResponseDeserializer::new(new_response_deserializer()));
+            layer.store_put(TimeoutConfig::builder().build());
             Some(layer.freeze())
         }
 
-        fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+        fn runtime_components(
+            &self,
+            _: &RuntimeComponentsBuilder,
+        ) -> Cow<'_, RuntimeComponentsBuilder> {
             Cow::Borrowed(&self.builder)
         }
     }
@@ -600,7 +618,7 @@ mod tests {
                 }
             }
             impl RuntimePlugin for FailingInterceptorsClientRuntimePlugin {
-                fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+                fn runtime_components(&self, _: &RuntimeComponentsBuilder) -> Cow<'_, RuntimeComponentsBuilder> {
                     Cow::Borrowed(&self.0)
                 }
             }
@@ -617,7 +635,7 @@ mod tests {
                 }
             }
             impl RuntimePlugin for FailingInterceptorsOperationRuntimePlugin {
-                fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+                fn runtime_components(&self, _: &RuntimeComponentsBuilder) -> Cow<'_, RuntimeComponentsBuilder> {
                     Cow::Borrowed(&self.0)
                 }
             }
@@ -901,7 +919,7 @@ mod tests {
                 }
             }
             impl RuntimePlugin for InterceptorsTestOperationRuntimePlugin {
-                fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+                fn runtime_components(&self, _: &RuntimeComponentsBuilder) -> Cow<'_, RuntimeComponentsBuilder> {
                     Cow::Borrowed(&self.0)
                 }
             }
@@ -1240,7 +1258,10 @@ mod tests {
             builder: RuntimeComponentsBuilder,
         }
         impl RuntimePlugin for TestInterceptorRuntimePlugin {
-            fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+            fn runtime_components(
+                &self,
+                _: &RuntimeComponentsBuilder,
+            ) -> Cow<'_, RuntimeComponentsBuilder> {
                 Cow::Borrowed(&self.builder)
             }
         }

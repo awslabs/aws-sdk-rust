@@ -36,8 +36,10 @@ impl CreateRestoreImageTaskInput {
     /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
     /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
     /// </ul>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -63,6 +65,7 @@ pub struct CreateRestoreImageTaskInputBuilder {
 }
 impl CreateRestoreImageTaskInputBuilder {
     /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl CreateRestoreImageTaskInputBuilder {
         &self.bucket
     }
     /// <p>The name of the stored AMI object in the bucket.</p>
+    /// This field is required.
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
         self

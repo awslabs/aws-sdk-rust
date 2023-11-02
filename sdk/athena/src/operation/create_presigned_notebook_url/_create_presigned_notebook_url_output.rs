@@ -4,24 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresignedNotebookUrlOutput {
     /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
-    pub notebook_url: ::std::option::Option<::std::string::String>,
+    pub notebook_url: ::std::string::String,
     /// <p>The authentication token for the notebook.</p>
-    pub auth_token: ::std::option::Option<::std::string::String>,
+    pub auth_token: ::std::string::String,
     /// <p>The UTC epoch time when the authentication token expires.</p>
-    pub auth_token_expiration_time: ::std::option::Option<i64>,
+    pub auth_token_expiration_time: i64,
     _request_id: Option<String>,
 }
 impl CreatePresignedNotebookUrlOutput {
     /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
-    pub fn notebook_url(&self) -> ::std::option::Option<&str> {
-        self.notebook_url.as_deref()
+    pub fn notebook_url(&self) -> &str {
+        use std::ops::Deref;
+        self.notebook_url.deref()
     }
     /// <p>The authentication token for the notebook.</p>
-    pub fn auth_token(&self) -> ::std::option::Option<&str> {
-        self.auth_token.as_deref()
+    pub fn auth_token(&self) -> &str {
+        use std::ops::Deref;
+        self.auth_token.deref()
     }
     /// <p>The UTC epoch time when the authentication token expires.</p>
-    pub fn auth_token_expiration_time(&self) -> ::std::option::Option<i64> {
+    pub fn auth_token_expiration_time(&self) -> i64 {
         self.auth_token_expiration_time
     }
 }
@@ -48,6 +50,7 @@ pub struct CreatePresignedNotebookUrlOutputBuilder {
 }
 impl CreatePresignedNotebookUrlOutputBuilder {
     /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
+    /// This field is required.
     pub fn notebook_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_url = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreatePresignedNotebookUrlOutputBuilder {
         &self.notebook_url
     }
     /// <p>The authentication token for the notebook.</p>
+    /// This field is required.
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_token = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreatePresignedNotebookUrlOutputBuilder {
         &self.auth_token
     }
     /// <p>The UTC epoch time when the authentication token expires.</p>
+    /// This field is required.
     pub fn auth_token_expiration_time(mut self, input: i64) -> Self {
         self.auth_token_expiration_time = ::std::option::Option::Some(input);
         self
@@ -99,12 +104,36 @@ impl CreatePresignedNotebookUrlOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput).
-    pub fn build(self) -> crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
-        crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
-            notebook_url: self.notebook_url,
-            auth_token: self.auth_token,
-            auth_token_expiration_time: self.auth_token_expiration_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`notebook_url`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder::notebook_url)
+    /// - [`auth_token`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder::auth_token)
+    /// - [`auth_token_expiration_time`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder::auth_token_expiration_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
+            notebook_url: self.notebook_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "notebook_url",
+                    "notebook_url was not specified but it is required when building CreatePresignedNotebookUrlOutput",
+                )
+            })?,
+            auth_token: self.auth_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "auth_token",
+                    "auth_token was not specified but it is required when building CreatePresignedNotebookUrlOutput",
+                )
+            })?,
+            auth_token_expiration_time: self.auth_token_expiration_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "auth_token_expiration_time",
+                    "auth_token_expiration_time was not specified but it is required when building CreatePresignedNotebookUrlOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

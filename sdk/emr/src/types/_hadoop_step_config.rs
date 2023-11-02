@@ -27,8 +27,10 @@ impl HadoopStepConfig {
         self.main_class.as_deref()
     }
     /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
-    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.args.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
+    pub fn args(&self) -> &[::std::string::String] {
+        self.args.as_deref().unwrap_or_default()
     }
 }
 impl HadoopStepConfig {

@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartSyncExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub execution_arn: ::std::option::Option<::std::string::String>,
+    pub execution_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the execution.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date the execution is started.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub stop_date: ::aws_smithy_types::DateTime,
     /// <p>The current status of the execution.</p>
-    pub status: ::std::option::Option<crate::types::SyncExecutionStatus>,
+    pub status: crate::types::SyncExecutionStatus,
     /// <p>The error code of the failure.</p>
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
@@ -37,8 +37,9 @@ pub struct StartSyncExecutionOutput {
 }
 impl StartSyncExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_arn.as_deref()
+    pub fn execution_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
@@ -49,16 +50,16 @@ impl StartSyncExecutionOutput {
         self.name.as_deref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.stop_date.as_ref()
+    pub fn stop_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.stop_date
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SyncExecutionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::SyncExecutionStatus {
+        &self.status
     }
     /// <p>The error code of the failure.</p>
     pub fn error(&self) -> ::std::option::Option<&str> {
@@ -150,6 +151,7 @@ pub struct StartSyncExecutionOutputBuilder {
 }
 impl StartSyncExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -192,6 +194,7 @@ impl StartSyncExecutionOutputBuilder {
         &self.name
     }
     /// <p>The date the execution is started.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -206,6 +209,7 @@ impl StartSyncExecutionOutputBuilder {
         &self.start_date
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
+    /// This field is required.
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_date = ::std::option::Option::Some(input);
         self
@@ -220,6 +224,7 @@ impl StartSyncExecutionOutputBuilder {
         &self.stop_date
     }
     /// <p>The current status of the execution.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SyncExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -361,14 +366,42 @@ impl StartSyncExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartSyncExecutionOutput`](crate::operation::start_sync_execution::StartSyncExecutionOutput).
-    pub fn build(self) -> crate::operation::start_sync_execution::StartSyncExecutionOutput {
-        crate::operation::start_sync_execution::StartSyncExecutionOutput {
-            execution_arn: self.execution_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_arn`](crate::operation::start_sync_execution::builders::StartSyncExecutionOutputBuilder::execution_arn)
+    /// - [`start_date`](crate::operation::start_sync_execution::builders::StartSyncExecutionOutputBuilder::start_date)
+    /// - [`stop_date`](crate::operation::start_sync_execution::builders::StartSyncExecutionOutputBuilder::stop_date)
+    /// - [`status`](crate::operation::start_sync_execution::builders::StartSyncExecutionOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_sync_execution::StartSyncExecutionOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_sync_execution::StartSyncExecutionOutput {
+            execution_arn: self.execution_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_arn",
+                    "execution_arn was not specified but it is required when building StartSyncExecutionOutput",
+                )
+            })?,
             state_machine_arn: self.state_machine_arn,
             name: self.name,
-            start_date: self.start_date,
-            stop_date: self.stop_date,
-            status: self.status,
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building StartSyncExecutionOutput",
+                )
+            })?,
+            stop_date: self.stop_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "stop_date",
+                    "stop_date was not specified but it is required when building StartSyncExecutionOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building StartSyncExecutionOutput",
+                )
+            })?,
             error: self.error,
             cause: self.cause,
             input: self.input,
@@ -378,7 +411,7 @@ impl StartSyncExecutionOutputBuilder {
             trace_header: self.trace_header,
             billing_details: self.billing_details,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for StartSyncExecutionOutputBuilder {

@@ -41,6 +41,7 @@ pub struct DeleteGrantInputBuilder {
 }
 impl DeleteGrantInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// This field is required.
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteGrantInputBuilder {
         &self.status_reason
     }
     /// <p>Current version of the grant.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self

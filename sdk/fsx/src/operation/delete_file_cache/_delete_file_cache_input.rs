@@ -34,6 +34,7 @@ pub struct DeleteFileCacheInputBuilder {
 }
 impl DeleteFileCacheInputBuilder {
     /// <p>The ID of the cache that's being deleted.</p>
+    /// This field is required.
     pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_id = ::std::option::Option::Some(input.into());
         self

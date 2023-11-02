@@ -41,6 +41,7 @@ pub struct RevokeSignatureInputBuilder {
 }
 impl RevokeSignatureInputBuilder {
     /// <p>ID of the signing job to be revoked.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl RevokeSignatureInputBuilder {
         &self.job_owner
     }
     /// <p>The reason for revoking the signing job.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self

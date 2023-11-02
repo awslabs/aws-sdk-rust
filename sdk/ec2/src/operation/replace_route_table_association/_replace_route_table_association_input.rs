@@ -41,6 +41,7 @@ pub struct ReplaceRouteTableAssociationInputBuilder {
 }
 impl ReplaceRouteTableAssociationInputBuilder {
     /// <p>The association ID.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ReplaceRouteTableAssociationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the new route table to associate with the subnet.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self

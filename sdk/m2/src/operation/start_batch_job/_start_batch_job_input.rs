@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartBatchJobInput {
     /// <p>The unique identifier of the application associated with this batch job.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The unique identifier of the batch job.</p>
     pub batch_job_identifier: ::std::option::Option<crate::types::BatchJobIdentifier>,
     /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
@@ -12,8 +12,9 @@ pub struct StartBatchJobInput {
 }
 impl StartBatchJobInput {
     /// <p>The unique identifier of the application associated with this batch job.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The unique identifier of the batch job.</p>
     pub fn batch_job_identifier(&self) -> ::std::option::Option<&crate::types::BatchJobIdentifier> {
@@ -41,6 +42,7 @@ pub struct StartBatchJobInputBuilder {
 }
 impl StartBatchJobInputBuilder {
     /// <p>The unique identifier of the application associated with this batch job.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl StartBatchJobInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the batch job.</p>
+    /// This field is required.
     pub fn batch_job_identifier(mut self, input: crate::types::BatchJobIdentifier) -> Self {
         self.batch_job_identifier = ::std::option::Option::Some(input);
         self
@@ -89,11 +92,18 @@ impl StartBatchJobInputBuilder {
         &self.job_params
     }
     /// Consumes the builder and constructs a [`StartBatchJobInput`](crate::operation::start_batch_job::StartBatchJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::start_batch_job::builders::StartBatchJobInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_batch_job::StartBatchJobInput {
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building StartBatchJobInput",
+                )
+            })?,
             batch_job_identifier: self.batch_job_identifier,
             job_params: self.job_params,
         })

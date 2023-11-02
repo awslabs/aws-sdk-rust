@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSourceOverrideParameters {
     /// <p>The ID of the data source to apply overrides to.</p>
-    pub data_source_id: ::std::option::Option<::std::string::String>,
+    pub data_source_id: ::std::string::String,
     /// <p>A new name for the data source.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
@@ -19,8 +19,9 @@ pub struct AssetBundleImportJobDataSourceOverrideParameters {
 }
 impl AssetBundleImportJobDataSourceOverrideParameters {
     /// <p>The ID of the data source to apply overrides to.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
-        self.data_source_id.as_deref()
+    pub fn data_source_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source_id.deref()
     }
     /// <p>A new name for the data source.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -63,6 +64,7 @@ pub struct AssetBundleImportJobDataSourceOverrideParametersBuilder {
 }
 impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     /// <p>The ID of the data source to apply overrides to.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +149,23 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
         &self.credentials
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSourceOverrideParameters`](crate::types::AssetBundleImportJobDataSourceOverrideParameters).
-    pub fn build(self) -> crate::types::AssetBundleImportJobDataSourceOverrideParameters {
-        crate::types::AssetBundleImportJobDataSourceOverrideParameters {
-            data_source_id: self.data_source_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_source_id`](crate::types::builders::AssetBundleImportJobDataSourceOverrideParametersBuilder::data_source_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceOverrideParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDataSourceOverrideParameters {
+            data_source_id: self.data_source_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source_id",
+                    "data_source_id was not specified but it is required when building AssetBundleImportJobDataSourceOverrideParameters",
+                )
+            })?,
             name: self.name,
             data_source_parameters: self.data_source_parameters,
             vpc_connection_properties: self.vpc_connection_properties,
             ssl_properties: self.ssl_properties,
             credentials: self.credentials,
-        }
+        })
     }
 }

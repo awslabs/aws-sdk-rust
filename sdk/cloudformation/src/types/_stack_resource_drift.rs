@@ -51,8 +51,10 @@ impl StackResourceDrift {
         self.physical_resource_id.as_deref()
     }
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
-    pub fn physical_resource_id_context(&self) -> ::std::option::Option<&[crate::types::PhysicalResourceIdContextKeyValuePair]> {
-        self.physical_resource_id_context.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.physical_resource_id_context.is_none()`.
+    pub fn physical_resource_id_context(&self) -> &[crate::types::PhysicalResourceIdContextKeyValuePair] {
+        self.physical_resource_id_context.as_deref().unwrap_or_default()
     }
     /// <p>The type of the resource.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
@@ -69,8 +71,10 @@ impl StackResourceDrift {
         self.actual_properties.as_deref()
     }
     /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
-    pub fn property_differences(&self) -> ::std::option::Option<&[crate::types::PropertyDifference]> {
-        self.property_differences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_differences.is_none()`.
+    pub fn property_differences(&self) -> &[crate::types::PropertyDifference] {
+        self.property_differences.as_deref().unwrap_or_default()
     }
     /// <p>Status of the resource's actual configuration compared to its expected configuration.</p>
     /// <ul>
@@ -116,6 +120,7 @@ pub struct StackResourceDriftBuilder {
 }
 impl StackResourceDriftBuilder {
     /// <p>The ID of the stack.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +135,7 @@ impl StackResourceDriftBuilder {
         &self.stack_id
     }
     /// <p>The logical name of the resource specified in the template.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +187,7 @@ impl StackResourceDriftBuilder {
         &self.physical_resource_id_context
     }
     /// <p>The type of the resource.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -255,6 +262,7 @@ impl StackResourceDriftBuilder {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn stack_resource_drift_status(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.stack_resource_drift_status = ::std::option::Option::Some(input);
         self
@@ -281,6 +289,7 @@ impl StackResourceDriftBuilder {
         &self.stack_resource_drift_status
     }
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self

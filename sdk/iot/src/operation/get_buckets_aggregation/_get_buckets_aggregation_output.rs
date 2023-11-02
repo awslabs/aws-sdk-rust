@@ -19,8 +19,10 @@ impl GetBucketsAggregationOutput {
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p> <code>count</code>: The number of documents that have that value.</p>
-    pub fn buckets(&self) -> ::std::option::Option<&[crate::types::Bucket]> {
-        self.buckets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
+    pub fn buckets(&self) -> &[crate::types::Bucket] {
+        self.buckets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBucketsAggregationOutput {

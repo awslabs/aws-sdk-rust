@@ -28,6 +28,7 @@ pub struct CheckIfPhoneNumberIsOptedOutInputBuilder {
 }
 impl CheckIfPhoneNumberIsOptedOutInputBuilder {
     /// <p>The phone number for which you want to check the opt out status.</p>
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self

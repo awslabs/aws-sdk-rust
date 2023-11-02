@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The query parameter to match on.</p>
     pub r#match: ::std::option::Option<crate::types::QueryParameterMatch>,
 }
 impl HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The query parameter to match on.</p>
     pub fn r#match(&self) -> ::std::option::Option<&crate::types::QueryParameterMatch> {
@@ -35,6 +36,7 @@ pub struct HttpQueryParameterBuilder {
 }
 impl HttpQueryParameterBuilder {
     /// <p>A name for the query parameter that will be matched on.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl HttpQueryParameterBuilder {
         &self.r#match
     }
     /// Consumes the builder and constructs a [`HttpQueryParameter`](crate::types::HttpQueryParameter).
-    pub fn build(self) -> crate::types::HttpQueryParameter {
-        crate::types::HttpQueryParameter {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::HttpQueryParameterBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpQueryParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpQueryParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building HttpQueryParameter",
+                )
+            })?,
             r#match: self.r#match,
-        }
+        })
     }
 }

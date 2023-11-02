@@ -56,6 +56,7 @@ pub struct AlgorithmSummaryBuilder {
 }
 impl AlgorithmSummaryBuilder {
     /// <p>The name of the algorithm that is described by the summary.</p>
+    /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl AlgorithmSummaryBuilder {
         &self.algorithm_name
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
+    /// This field is required.
     pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl AlgorithmSummaryBuilder {
         &self.algorithm_description
     }
     /// <p>A timestamp that shows when the algorithm was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl AlgorithmSummaryBuilder {
         &self.creation_time
     }
     /// <p>The overall status of the algorithm.</p>
+    /// This field is required.
     pub fn algorithm_status(mut self, input: crate::types::AlgorithmStatus) -> Self {
         self.algorithm_status = ::std::option::Option::Some(input);
         self

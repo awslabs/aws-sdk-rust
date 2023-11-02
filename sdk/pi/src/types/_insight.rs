@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Insight {
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
-    pub insight_id: ::std::option::Option<::std::string::String>,
+    pub insight_id: ::std::string::String,
     /// <p>The type of insight. For example, <code>HighDBLoad</code>, <code>HighCPU</code>, or <code>DominatingSQLs</code>.</p>
     pub insight_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the insight is causal or correlated insight.</p>
@@ -29,8 +29,9 @@ pub struct Insight {
 }
 impl Insight {
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
-    pub fn insight_id(&self) -> ::std::option::Option<&str> {
-        self.insight_id.as_deref()
+    pub fn insight_id(&self) -> &str {
+        use std::ops::Deref;
+        self.insight_id.deref()
     }
     /// <p>The type of insight. For example, <code>HighDBLoad</code>, <code>HighCPU</code>, or <code>DominatingSQLs</code>.</p>
     pub fn insight_type(&self) -> ::std::option::Option<&str> {
@@ -53,24 +54,32 @@ impl Insight {
         self.severity.as_ref()
     }
     /// <p>List of supporting insights that provide additional factors for the insight.</p>
-    pub fn supporting_insights(&self) -> ::std::option::Option<&[crate::types::Insight]> {
-        self.supporting_insights.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supporting_insights.is_none()`.
+    pub fn supporting_insights(&self) -> &[crate::types::Insight] {
+        self.supporting_insights.as_deref().unwrap_or_default()
     }
     /// <p>Description of the insight. For example: <code>A high severity Insight found between 02:00 to 02:30, where there was an unusually high DB load 600x above baseline. Likely performance impact</code>.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>List of recommendations for the insight. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code>.</p>
-    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::Recommendation]> {
-        self.recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
+    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
+        self.recommendations.as_deref().unwrap_or_default()
     }
     /// <p>List of data objects containing metrics and references from the time range while generating the insight.</p>
-    pub fn insight_data(&self) -> ::std::option::Option<&[crate::types::Data]> {
-        self.insight_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_data.is_none()`.
+    pub fn insight_data(&self) -> &[crate::types::Data] {
+        self.insight_data.as_deref().unwrap_or_default()
     }
     /// <p> Metric names and values from the timeframe used as baseline to generate the insight.</p>
-    pub fn baseline_data(&self) -> ::std::option::Option<&[crate::types::Data]> {
-        self.baseline_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.baseline_data.is_none()`.
+    pub fn baseline_data(&self) -> &[crate::types::Data] {
+        self.baseline_data.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Insight {
@@ -115,6 +124,7 @@ pub struct InsightBuilder {
 }
 impl InsightBuilder {
     /// <p>The unique identifier for the insight. For example, <code>insight-12345678901234567</code>.</p>
+    /// This field is required.
     pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_id = ::std::option::Option::Some(input.into());
         self
@@ -293,9 +303,16 @@ impl InsightBuilder {
         &self.baseline_data
     }
     /// Consumes the builder and constructs a [`Insight`](crate::types::Insight).
-    pub fn build(self) -> crate::types::Insight {
-        crate::types::Insight {
-            insight_id: self.insight_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`insight_id`](crate::types::builders::InsightBuilder::insight_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Insight, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Insight {
+            insight_id: self.insight_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "insight_id",
+                    "insight_id was not specified but it is required when building Insight",
+                )
+            })?,
             insight_type: self.insight_type,
             context: self.context,
             start_time: self.start_time,
@@ -306,7 +323,7 @@ impl InsightBuilder {
             recommendations: self.recommendations,
             insight_data: self.insight_data,
             baseline_data: self.baseline_data,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for InsightBuilder {

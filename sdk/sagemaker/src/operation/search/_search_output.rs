@@ -11,8 +11,10 @@ pub struct SearchOutput {
 }
 impl SearchOutput {
     /// <p>A list of <code>SearchRecord</code> objects.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::SearchRecord]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::SearchRecord] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct GetPublicAccessBlockInputBuilder {
 }
 impl GetPublicAccessBlockInputBuilder {
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

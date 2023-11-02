@@ -56,6 +56,7 @@ pub struct ModifyTransitGatewayPrefixListReferenceInputBuilder {
 }
 impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ModifyTransitGatewayPrefixListReferenceInputBuilder {
         &self.transit_gateway_route_table_id
     }
     /// <p>The ID of the prefix list.</p>
+    /// This field is required.
     pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self

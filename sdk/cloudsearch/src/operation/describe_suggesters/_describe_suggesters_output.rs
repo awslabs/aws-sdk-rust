@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub suggesters: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
+    pub suggesters: ::std::vec::Vec<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }
 impl DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn suggesters(&self) -> ::std::option::Option<&[crate::types::SuggesterStatus]> {
-        self.suggesters.as_deref()
+    pub fn suggesters(&self) -> &[crate::types::SuggesterStatus] {
+        use std::ops::Deref;
+        self.suggesters.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSuggestersOutput {
@@ -64,10 +65,19 @@ impl DescribeSuggestersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeSuggestersOutput`](crate::operation::describe_suggesters::DescribeSuggestersOutput).
-    pub fn build(self) -> crate::operation::describe_suggesters::DescribeSuggestersOutput {
-        crate::operation::describe_suggesters::DescribeSuggestersOutput {
-            suggesters: self.suggesters,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`suggesters`](crate::operation::describe_suggesters::builders::DescribeSuggestersOutputBuilder::suggesters)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_suggesters::DescribeSuggestersOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_suggesters::DescribeSuggestersOutput {
+            suggesters: self.suggesters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "suggesters",
+                    "suggesters was not specified but it is required when building DescribeSuggestersOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

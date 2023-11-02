@@ -42,6 +42,7 @@ pub struct GetHostedZoneLimitOutputBuilder {
 }
 impl GetHostedZoneLimitOutputBuilder {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
+    /// This field is required.
     pub fn limit(mut self, input: crate::types::HostedZoneLimit) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl GetHostedZoneLimitOutputBuilder {
         &self.limit
     }
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of records that you have created in the specified hosted zone.</p>
+    /// This field is required.
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
         self

@@ -3,23 +3,23 @@ pub fn ser_filter_expression(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterExpression,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.operation {
-        object.key("Operation").string(var_1.as_str());
+    {
+        object.key("Operation").string(input.operation.as_str());
     }
-    if let Some(var_2) = &input.negated {
-        object.key("Negated").boolean(*var_2);
+    if let Some(var_1) = &input.negated {
+        object.key("Negated").boolean(*var_1);
     }
-    if let Some(var_3) = &input.values {
-        let mut array_4 = object.key("Values").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_2 = object.key("Values").start_array();
+        for item_3 in &input.values {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_filter_value::ser_filter_value(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_filter_value::ser_filter_value(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::filter_expression_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

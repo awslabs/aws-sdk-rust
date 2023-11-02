@@ -41,6 +41,7 @@ pub struct ModifyAvailabilityZoneGroupInputBuilder {
 }
 impl ModifyAvailabilityZoneGroupInputBuilder {
     /// <p>The name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ModifyAvailabilityZoneGroupInputBuilder {
         &self.group_name
     }
     /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
+    /// This field is required.
     pub fn opt_in_status(mut self, input: crate::types::ModifyAvailabilityZoneOptInStatus) -> Self {
         self.opt_in_status = ::std::option::Option::Some(input);
         self

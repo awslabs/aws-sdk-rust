@@ -34,6 +34,7 @@ pub struct UnregisterConnectorInputBuilder {
 }
 impl UnregisterConnectorInputBuilder {
     /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn connector_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_label = ::std::option::Option::Some(input.into());
         self

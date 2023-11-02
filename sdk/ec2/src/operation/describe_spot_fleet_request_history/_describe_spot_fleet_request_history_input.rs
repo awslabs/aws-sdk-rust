@@ -119,6 +119,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
         &self.next_token
     }
     /// <p>The ID of the Spot Fleet request.</p>
+    /// This field is required.
     pub fn spot_fleet_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +134,7 @@ impl DescribeSpotFleetRequestHistoryInputBuilder {
         &self.spot_fleet_request_id
     }
     /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self

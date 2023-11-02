@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdAndCountry {
     /// <p>The unique identifier of the sender.</p>
-    pub sender_id: ::std::option::Option<::std::string::String>,
+    pub sender_id: ::std::string::String,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub iso_country_code: ::std::option::Option<::std::string::String>,
+    pub iso_country_code: ::std::string::String,
 }
 impl SenderIdAndCountry {
     /// <p>The unique identifier of the sender.</p>
-    pub fn sender_id(&self) -> ::std::option::Option<&str> {
-        self.sender_id.as_deref()
+    pub fn sender_id(&self) -> &str {
+        use std::ops::Deref;
+        self.sender_id.deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
-        self.iso_country_code.as_deref()
+    pub fn iso_country_code(&self) -> &str {
+        use std::ops::Deref;
+        self.iso_country_code.deref()
     }
 }
 impl SenderIdAndCountry {
@@ -35,6 +37,7 @@ pub struct SenderIdAndCountryBuilder {
 }
 impl SenderIdAndCountryBuilder {
     /// <p>The unique identifier of the sender.</p>
+    /// This field is required.
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SenderIdAndCountryBuilder {
         &self.sender_id
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    /// This field is required.
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SenderIdAndCountryBuilder {
         &self.iso_country_code
     }
     /// Consumes the builder and constructs a [`SenderIdAndCountry`](crate::types::SenderIdAndCountry).
-    pub fn build(self) -> crate::types::SenderIdAndCountry {
-        crate::types::SenderIdAndCountry {
-            sender_id: self.sender_id,
-            iso_country_code: self.iso_country_code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sender_id`](crate::types::builders::SenderIdAndCountryBuilder::sender_id)
+    /// - [`iso_country_code`](crate::types::builders::SenderIdAndCountryBuilder::iso_country_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::SenderIdAndCountry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SenderIdAndCountry {
+            sender_id: self.sender_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sender_id",
+                    "sender_id was not specified but it is required when building SenderIdAndCountry",
+                )
+            })?,
+            iso_country_code: self.iso_country_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "iso_country_code",
+                    "iso_country_code was not specified but it is required when building SenderIdAndCountry",
+                )
+            })?,
+        })
     }
 }

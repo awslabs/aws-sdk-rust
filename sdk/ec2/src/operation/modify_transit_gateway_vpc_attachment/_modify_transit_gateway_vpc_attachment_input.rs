@@ -20,12 +20,16 @@ impl ModifyTransitGatewayVpcAttachmentInput {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
-    pub fn add_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_subnet_ids.is_none()`.
+    pub fn add_subnet_ids(&self) -> &[::std::string::String] {
+        self.add_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of one or more subnets to remove.</p>
-    pub fn remove_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_subnet_ids.is_none()`.
+    pub fn remove_subnet_ids(&self) -> &[::std::string::String] {
+        self.remove_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The new VPC attachment options.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions> {
@@ -55,6 +59,7 @@ pub struct ModifyTransitGatewayVpcAttachmentInputBuilder {
 }
 impl ModifyTransitGatewayVpcAttachmentInputBuilder {
     /// <p>The ID of the attachment.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self

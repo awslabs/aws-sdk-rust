@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelephonyConfig {
     /// <p>Information about traffic distributions.</p>
-    pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
+    pub distributions: ::std::vec::Vec<crate::types::Distribution>,
 }
 impl TelephonyConfig {
     /// <p>Information about traffic distributions.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::Distribution]> {
-        self.distributions.as_deref()
+    pub fn distributions(&self) -> &[crate::types::Distribution] {
+        use std::ops::Deref;
+        self.distributions.deref()
     }
 }
 impl TelephonyConfig {
@@ -48,9 +49,16 @@ impl TelephonyConfigBuilder {
         &self.distributions
     }
     /// Consumes the builder and constructs a [`TelephonyConfig`](crate::types::TelephonyConfig).
-    pub fn build(self) -> crate::types::TelephonyConfig {
-        crate::types::TelephonyConfig {
-            distributions: self.distributions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`distributions`](crate::types::builders::TelephonyConfigBuilder::distributions)
+    pub fn build(self) -> ::std::result::Result<crate::types::TelephonyConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TelephonyConfig {
+            distributions: self.distributions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "distributions",
+                    "distributions was not specified but it is required when building TelephonyConfig",
+                )
+            })?,
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRolesOutput {
     /// <p>A list of roles.</p>
-    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
+    pub roles: ::std::vec::Vec<crate::types::Role>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListRolesOutput {
 }
 impl ListRolesOutput {
     /// <p>A list of roles.</p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::Role]> {
-        self.roles.as_deref()
+    pub fn roles(&self) -> &[crate::types::Role] {
+        use std::ops::Deref;
+        self.roles.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,19 @@ impl ListRolesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRolesOutput`](crate::operation::list_roles::ListRolesOutput).
-    pub fn build(self) -> crate::operation::list_roles::ListRolesOutput {
-        crate::operation::list_roles::ListRolesOutput {
-            roles: self.roles,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`roles`](crate::operation::list_roles::builders::ListRolesOutputBuilder::roles)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_roles::ListRolesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_roles::ListRolesOutput {
+            roles: self.roles.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "roles",
+                    "roles was not specified but it is required when building ListRolesOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

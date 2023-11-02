@@ -55,6 +55,7 @@ pub struct ListFileCommitHistoryInputBuilder {
 }
 impl ListFileCommitHistoryInputBuilder {
     /// <p>The name of the repository that contains the file.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListFileCommitHistoryInputBuilder {
         &self.commit_specifier
     }
     /// <p>The full path of the file whose history you want to retrieve, including the name of the file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self

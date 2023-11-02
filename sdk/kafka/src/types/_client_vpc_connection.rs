@@ -98,6 +98,7 @@ impl ClientVpcConnectionBuilder {
         &self.state
     }
     /// <p>The ARN that identifies the Vpc Connection.</p>
+    /// This field is required.
     pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyEmailType {
     /// <p>The email subject.</p>
-    pub subject: ::std::option::Option<::std::string::String>,
+    pub subject: ::std::string::String,
     /// <p>The email HTML body.</p>
     pub html_body: ::std::option::Option<::std::string::String>,
     /// <p>The email text body.</p>
@@ -13,8 +13,9 @@ pub struct NotifyEmailType {
 }
 impl NotifyEmailType {
     /// <p>The email subject.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
-        self.subject.as_deref()
+    pub fn subject(&self) -> &str {
+        use std::ops::Deref;
+        self.subject.deref()
     }
     /// <p>The email HTML body.</p>
     pub fn html_body(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct NotifyEmailTypeBuilder {
 }
 impl NotifyEmailTypeBuilder {
     /// <p>The email subject.</p>
+    /// This field is required.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl NotifyEmailTypeBuilder {
         &self.text_body
     }
     /// Consumes the builder and constructs a [`NotifyEmailType`](crate::types::NotifyEmailType).
-    pub fn build(self) -> crate::types::NotifyEmailType {
-        crate::types::NotifyEmailType {
-            subject: self.subject,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subject`](crate::types::builders::NotifyEmailTypeBuilder::subject)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotifyEmailType, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotifyEmailType {
+            subject: self.subject.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subject",
+                    "subject was not specified but it is required when building NotifyEmailType",
+                )
+            })?,
             html_body: self.html_body,
             text_body: self.text_body,
-        }
+        })
     }
 }

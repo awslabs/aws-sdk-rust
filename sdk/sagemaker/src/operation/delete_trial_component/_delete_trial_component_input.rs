@@ -27,6 +27,7 @@ pub struct DeleteTrialComponentInputBuilder {
 }
 impl DeleteTrialComponentInputBuilder {
     /// <p>The name of the component to delete.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self

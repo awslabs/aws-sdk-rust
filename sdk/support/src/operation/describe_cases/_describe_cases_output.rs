@@ -12,8 +12,10 @@ pub struct DescribeCasesOutput {
 }
 impl DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
-    pub fn cases(&self) -> ::std::option::Option<&[crate::types::CaseDetails]> {
-        self.cases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cases.is_none()`.
+    pub fn cases(&self) -> &[crate::types::CaseDetails] {
+        self.cases.as_deref().unwrap_or_default()
     }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

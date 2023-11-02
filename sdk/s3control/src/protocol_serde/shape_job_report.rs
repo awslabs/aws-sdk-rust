@@ -29,6 +29,7 @@ pub fn ser_job_report(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_job_report(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::JobReport, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -108,5 +109,5 @@ pub fn de_job_report(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::job_report_correct_errors(builder).build())
 }

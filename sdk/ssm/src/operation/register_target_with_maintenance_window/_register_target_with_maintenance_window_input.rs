@@ -108,8 +108,10 @@ impl RegisterTargetWithMaintenanceWindowInput {
     /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(&self) -> ::std::option::Option<&str> {
@@ -162,6 +164,7 @@ pub struct RegisterTargetWithMaintenanceWindowInputBuilder {
 }
 impl RegisterTargetWithMaintenanceWindowInputBuilder {
     /// <p>The ID of the maintenance window the target should be registered with.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +179,7 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         &self.window_id
     }
     /// <p>The type of target being registered with the maintenance window.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::MaintenanceWindowResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

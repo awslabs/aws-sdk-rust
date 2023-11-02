@@ -28,6 +28,7 @@ pub struct S3TableOutputOptionsBuilder {
 }
 impl S3TableOutputOptionsBuilder {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can write output from a job.</p>
+    /// This field is required.
     pub fn location(mut self, input: crate::types::S3Location) -> Self {
         self.location = ::std::option::Option::Some(input);
         self

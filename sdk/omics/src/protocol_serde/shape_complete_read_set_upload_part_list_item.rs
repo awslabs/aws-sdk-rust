@@ -3,17 +3,17 @@ pub fn ser_complete_read_set_upload_part_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CompleteReadSetUploadPartListItem,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.part_number {
+    {
         object.key("partNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.part_number).into()),
         );
     }
-    if let Some(var_2) = &input.part_source {
-        object.key("partSource").string(var_2.as_str());
+    {
+        object.key("partSource").string(input.part_source.as_str());
     }
-    if let Some(var_3) = &input.checksum {
-        object.key("checksum").string(var_3.as_str());
+    {
+        object.key("checksum").string(input.checksum.as_str());
     }
     Ok(())
 }

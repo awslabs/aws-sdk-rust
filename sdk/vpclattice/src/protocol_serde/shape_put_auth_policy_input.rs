@@ -3,8 +3,8 @@ pub fn ser_put_auth_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_auth_policy::PutAuthPolicyInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.policy {
-        object.key("policy").string(var_1.as_str());
+    {
+        object.key("policy").string(input.policy.as_str());
     }
     Ok(())
 }

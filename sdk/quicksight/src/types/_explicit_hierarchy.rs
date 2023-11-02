@@ -5,24 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExplicitHierarchy {
     /// <p>The hierarchy ID of the explicit hierarchy.</p>
-    pub hierarchy_id: ::std::option::Option<::std::string::String>,
+    pub hierarchy_id: ::std::string::String,
     /// <p>The list of columns that define the explicit hierarchy.</p>
-    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
+    pub columns: ::std::vec::Vec<crate::types::ColumnIdentifier>,
     /// <p>The option that determines the drill down filters for the explicit hierarchy.</p>
     pub drill_down_filters: ::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>>,
 }
 impl ExplicitHierarchy {
     /// <p>The hierarchy ID of the explicit hierarchy.</p>
-    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
-        self.hierarchy_id.as_deref()
+    pub fn hierarchy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.hierarchy_id.deref()
     }
     /// <p>The list of columns that define the explicit hierarchy.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::ColumnIdentifier]> {
-        self.columns.as_deref()
+    pub fn columns(&self) -> &[crate::types::ColumnIdentifier] {
+        use std::ops::Deref;
+        self.columns.deref()
     }
     /// <p>The option that determines the drill down filters for the explicit hierarchy.</p>
-    pub fn drill_down_filters(&self) -> ::std::option::Option<&[crate::types::DrillDownFilter]> {
-        self.drill_down_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.drill_down_filters.is_none()`.
+    pub fn drill_down_filters(&self) -> &[crate::types::DrillDownFilter] {
+        self.drill_down_filters.as_deref().unwrap_or_default()
     }
 }
 impl ExplicitHierarchy {
@@ -42,6 +46,7 @@ pub struct ExplicitHierarchyBuilder {
 }
 impl ExplicitHierarchyBuilder {
     /// <p>The hierarchy ID of the explicit hierarchy.</p>
+    /// This field is required.
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_id = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +101,24 @@ impl ExplicitHierarchyBuilder {
         &self.drill_down_filters
     }
     /// Consumes the builder and constructs a [`ExplicitHierarchy`](crate::types::ExplicitHierarchy).
-    pub fn build(self) -> crate::types::ExplicitHierarchy {
-        crate::types::ExplicitHierarchy {
-            hierarchy_id: self.hierarchy_id,
-            columns: self.columns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hierarchy_id`](crate::types::builders::ExplicitHierarchyBuilder::hierarchy_id)
+    /// - [`columns`](crate::types::builders::ExplicitHierarchyBuilder::columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExplicitHierarchy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExplicitHierarchy {
+            hierarchy_id: self.hierarchy_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hierarchy_id",
+                    "hierarchy_id was not specified but it is required when building ExplicitHierarchy",
+                )
+            })?,
+            columns: self.columns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "columns",
+                    "columns was not specified but it is required when building ExplicitHierarchy",
+                )
+            })?,
             drill_down_filters: self.drill_down_filters,
-        }
+        })
     }
 }

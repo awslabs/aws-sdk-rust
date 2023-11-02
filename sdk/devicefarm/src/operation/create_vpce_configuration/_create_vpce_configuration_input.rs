@@ -48,6 +48,7 @@ pub struct CreateVpceConfigurationInputBuilder {
 }
 impl CreateVpceConfigurationInputBuilder {
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
+    /// This field is required.
     pub fn vpce_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpce_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateVpceConfigurationInputBuilder {
         &self.vpce_configuration_name
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    /// This field is required.
     pub fn vpce_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpce_service_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateVpceConfigurationInputBuilder {
         &self.vpce_service_name
     }
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
+    /// This field is required.
     pub fn service_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_dns_name = ::std::option::Option::Some(input.into());
         self

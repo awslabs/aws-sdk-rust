@@ -28,6 +28,7 @@ pub struct DescribeRefreshSchemasStatusInputBuilder {
 }
 impl DescribeRefreshSchemasStatusInputBuilder {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self

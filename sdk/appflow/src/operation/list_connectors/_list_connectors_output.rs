@@ -11,8 +11,10 @@ pub struct ListConnectorsOutput {
 }
 impl ListConnectorsOutput {
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    pub fn connectors(&self) -> ::std::option::Option<&[crate::types::ConnectorDetail]> {
-        self.connectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectors.is_none()`.
+    pub fn connectors(&self) -> &[crate::types::ConnectorDetail] {
+        self.connectors.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

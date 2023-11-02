@@ -30,6 +30,7 @@ pub struct DeleteDbClusterSnapshotInputBuilder {
 impl DeleteDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
+    /// This field is required.
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self

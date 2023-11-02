@@ -14,8 +14,10 @@ pub struct DescribeUsersOutput {
 }
 impl DescribeUsersOutput {
     /// <p>The users.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::User] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>The total number of users included in the results.</p>
     #[deprecated]

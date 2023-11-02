@@ -9,8 +9,10 @@ pub struct GetServicesInScopeOutput {
 }
 impl GetServicesInScopeOutput {
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
-    pub fn service_metadata(&self) -> ::std::option::Option<&[crate::types::ServiceMetadata]> {
-        self.service_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_metadata.is_none()`.
+    pub fn service_metadata(&self) -> &[crate::types::ServiceMetadata] {
+        self.service_metadata.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetServicesInScopeOutput {

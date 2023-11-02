@@ -62,6 +62,7 @@ pub struct AddProfilePermissionInputBuilder {
 }
 impl AddProfilePermissionInputBuilder {
     /// <p>The human-readable name of the signing profile.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl AddProfilePermissionInputBuilder {
         &self.profile_version
     }
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    /// This field is required.
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl AddProfilePermissionInputBuilder {
         &self.action
     }
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl AddProfilePermissionInputBuilder {
         &self.revision_id
     }
     /// <p>A unique identifier for the cross-account permission statement.</p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self

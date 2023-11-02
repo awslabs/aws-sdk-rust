@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>The username for the hypervisor.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the hypervisor.</p>
@@ -18,12 +18,14 @@ pub struct ImportHypervisorConfigurationInput {
 }
 impl ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
@@ -38,8 +40,10 @@ impl ImportHypervisorConfigurationInput {
         self.kms_key_arn.as_deref()
     }
     /// <p>The tags of the hypervisor configuration to import.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ImportHypervisorConfigurationInput {
@@ -74,6 +78,7 @@ pub struct ImportHypervisorConfigurationInputBuilder {
 }
 impl ImportHypervisorConfigurationInputBuilder {
     /// <p>The name of the hypervisor.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +93,7 @@ impl ImportHypervisorConfigurationInputBuilder {
         &self.name
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -164,6 +170,9 @@ impl ImportHypervisorConfigurationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportHypervisorConfigurationInput`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder::name)
+    /// - [`host`](crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder::host)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -171,8 +180,18 @@ impl ImportHypervisorConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput {
-            name: self.name,
-            host: self.host,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ImportHypervisorConfigurationInput",
+                )
+            })?,
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building ImportHypervisorConfigurationInput",
+                )
+            })?,
             username: self.username,
             password: self.password,
             kms_key_arn: self.kms_key_arn,

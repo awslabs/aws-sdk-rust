@@ -34,6 +34,7 @@ pub struct DeleteMeshOutputBuilder {
 }
 impl DeleteMeshOutputBuilder {
     /// <p>The service mesh that was deleted.</p>
+    /// This field is required.
     pub fn mesh(mut self, input: crate::types::MeshData) -> Self {
         self.mesh = ::std::option::Option::Some(input);
         self

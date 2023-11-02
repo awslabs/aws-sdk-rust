@@ -34,6 +34,7 @@ pub struct StartExportLabelsTaskRunInputBuilder {
 }
 impl StartExportLabelsTaskRunInputBuilder {
     /// <p>The unique identifier of the machine learning transform.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartExportLabelsTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
+    /// This field is required.
     pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self

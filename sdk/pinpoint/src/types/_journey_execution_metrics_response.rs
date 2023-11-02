@@ -49,6 +49,7 @@ pub struct JourneyExecutionMetricsResponseBuilder {
 }
 impl JourneyExecutionMetricsResponseBuilder {
     /// <p>The unique identifier for the application that the metric applies to.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl JourneyExecutionMetricsResponseBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
+    /// This field is required.
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl JourneyExecutionMetricsResponseBuilder {
         &self.journey_id
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey and updated the data for the metric.</p>
+    /// This field is required.
     pub fn last_evaluated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_evaluated_time = ::std::option::Option::Some(input.into());
         self

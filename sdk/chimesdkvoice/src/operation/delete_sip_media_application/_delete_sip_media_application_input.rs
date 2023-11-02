@@ -27,6 +27,7 @@ pub struct DeleteSipMediaApplicationInputBuilder {
 }
 impl DeleteSipMediaApplicationInputBuilder {
     /// <p>The SIP media application ID.</p>
+    /// This field is required.
     pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSpeechSynthesisTask`](crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder::set_task_id): <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The Amazon Polly generated identifier for a speech synthesis task.</p><br>
     /// - On success, responds with [`GetSpeechSynthesisTaskOutput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput) with field(s):
     ///   - [`synthesis_task(Option<SynthesisTask>)`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput::synthesis_task): <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     /// - On failure, responds with [`SdkError<GetSpeechSynthesisTaskError>`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError)

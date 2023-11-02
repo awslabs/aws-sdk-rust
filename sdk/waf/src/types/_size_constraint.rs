@@ -49,7 +49,7 @@ pub struct SizeConstraint {
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
-    pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
+    pub text_transformation: crate::types::TextTransformation,
     /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p>
@@ -57,7 +57,7 @@ pub struct SizeConstraint {
     /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: crate::types::ComparisonOperator,
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -107,8 +107,8 @@ impl SizeConstraint {
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
-    pub fn text_transformation(&self) -> ::std::option::Option<&crate::types::TextTransformation> {
-        self.text_transformation.as_ref()
+    pub fn text_transformation(&self) -> &crate::types::TextTransformation {
+        &self.text_transformation
     }
     /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
@@ -117,8 +117,8 @@ impl SizeConstraint {
     /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
-        self.comparison_operator.as_ref()
+    pub fn comparison_operator(&self) -> &crate::types::ComparisonOperator {
+        &self.comparison_operator
     }
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
@@ -145,6 +145,7 @@ pub struct SizeConstraintBuilder {
 }
 impl SizeConstraintBuilder {
     /// <p>Specifies where in a web request to look for the size constraint.</p>
+    /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
@@ -197,6 +198,7 @@ impl SizeConstraintBuilder {
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
+    /// This field is required.
     pub fn text_transformation(mut self, input: crate::types::TextTransformation) -> Self {
         self.text_transformation = ::std::option::Option::Some(input);
         self
@@ -293,6 +295,7 @@ impl SizeConstraintBuilder {
     /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
@@ -321,6 +324,7 @@ impl SizeConstraintBuilder {
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
+    /// This field is required.
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -339,12 +343,25 @@ impl SizeConstraintBuilder {
         &self.size
     }
     /// Consumes the builder and constructs a [`SizeConstraint`](crate::types::SizeConstraint).
-    pub fn build(self) -> crate::types::SizeConstraint {
-        crate::types::SizeConstraint {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text_transformation`](crate::types::builders::SizeConstraintBuilder::text_transformation)
+    /// - [`comparison_operator`](crate::types::builders::SizeConstraintBuilder::comparison_operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraint, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SizeConstraint {
             field_to_match: self.field_to_match,
-            text_transformation: self.text_transformation,
-            comparison_operator: self.comparison_operator,
+            text_transformation: self.text_transformation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text_transformation",
+                    "text_transformation was not specified but it is required when building SizeConstraint",
+                )
+            })?,
+            comparison_operator: self.comparison_operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "comparison_operator",
+                    "comparison_operator was not specified but it is required when building SizeConstraint",
+                )
+            })?,
             size: self.size.unwrap_or_default(),
-        }
+        })
     }
 }

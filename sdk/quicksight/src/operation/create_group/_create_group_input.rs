@@ -49,6 +49,7 @@ pub struct CreateGroupInputBuilder {
 }
 impl CreateGroupInputBuilder {
     /// <p>A name for the group that you want to create.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl CreateGroupInputBuilder {
         &self.description
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl CreateGroupInputBuilder {
         &self.aws_account_id
     }
     /// <p>The namespace that you want the group to be a part of.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self

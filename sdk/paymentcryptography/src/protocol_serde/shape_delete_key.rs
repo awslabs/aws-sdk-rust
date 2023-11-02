@@ -139,7 +139,7 @@ pub fn de_delete_key_http_response(
         output = crate::protocol_serde::shape_delete_key::de_delete_key(_response_body, output)
             .map_err(crate::operation::delete_key::DeleteKeyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_key_output_correct_errors(output).build()
     })
 }
 

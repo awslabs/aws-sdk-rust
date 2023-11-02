@@ -43,8 +43,10 @@ impl DescribeHubOutput {
         self.hub_description.as_deref()
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hub_search_keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_search_keywords.is_none()`.
+    pub fn hub_search_keywords(&self) -> &[::std::string::String] {
+        self.hub_search_keywords.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
     pub fn s3_storage_config(&self) -> ::std::option::Option<&crate::types::HubS3StorageConfig> {
@@ -97,6 +99,7 @@ pub struct DescribeHubOutputBuilder {
 }
 impl DescribeHubOutputBuilder {
     /// <p>The name of the hub.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl DescribeHubOutputBuilder {
         &self.hub_name
     }
     /// <p>The Amazon Resource Name (ARN) of the hub.</p>
+    /// This field is required.
     pub fn hub_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_arn = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +191,7 @@ impl DescribeHubOutputBuilder {
         &self.s3_storage_config
     }
     /// <p>The status of the hub.</p>
+    /// This field is required.
     pub fn hub_status(mut self, input: crate::types::HubStatus) -> Self {
         self.hub_status = ::std::option::Option::Some(input);
         self
@@ -215,6 +220,7 @@ impl DescribeHubOutputBuilder {
         &self.failure_reason
     }
     /// <p>The date and time that the hub was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -229,6 +235,7 @@ impl DescribeHubOutputBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the hub was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

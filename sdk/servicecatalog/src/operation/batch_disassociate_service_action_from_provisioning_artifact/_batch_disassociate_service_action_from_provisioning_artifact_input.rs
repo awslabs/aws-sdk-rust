@@ -14,8 +14,10 @@ pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
 }
 impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    pub fn service_action_associations(&self) -> ::std::option::Option<&[crate::types::ServiceActionAssociation]> {
-        self.service_action_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_action_associations.is_none()`.
+    pub fn service_action_associations(&self) -> &[crate::types::ServiceActionAssociation] {
+        self.service_action_associations.as_deref().unwrap_or_default()
     }
     /// <p>The language code.</p>
     /// <ul>

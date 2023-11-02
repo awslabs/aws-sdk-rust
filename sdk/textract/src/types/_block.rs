@@ -163,8 +163,10 @@ impl Block {
         self.id.as_deref()
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    pub fn relationships(&self) -> ::std::option::Option<&[crate::types::Relationship]> {
-        self.relationships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relationships.is_none()`.
+    pub fn relationships(&self) -> &[crate::types::Relationship] {
+        self.relationships.as_deref().unwrap_or_default()
     }
     /// <p>The type of entity. </p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
@@ -183,8 +185,10 @@ impl Block {
     /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[crate::types::EntityType]> {
-        self.entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_types.is_none()`.
+    pub fn entity_types(&self) -> &[crate::types::EntityType] {
+        self.entity_types.as_deref().unwrap_or_default()
     }
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
     pub fn selection_status(&self) -> ::std::option::Option<&crate::types::SelectionStatus> {

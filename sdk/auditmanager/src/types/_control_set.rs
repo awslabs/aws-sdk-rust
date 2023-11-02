@@ -21,8 +21,10 @@ impl ControlSet {
         self.name.as_deref()
     }
     /// <p> The list of controls within the control set. </p>
-    pub fn controls(&self) -> ::std::option::Option<&[crate::types::Control]> {
-        self.controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.controls.is_none()`.
+    pub fn controls(&self) -> &[crate::types::Control] {
+        self.controls.as_deref().unwrap_or_default()
     }
 }
 impl ControlSet {

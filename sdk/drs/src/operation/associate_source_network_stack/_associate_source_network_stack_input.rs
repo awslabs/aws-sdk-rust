@@ -42,6 +42,7 @@ pub struct AssociateSourceNetworkStackInputBuilder {
 }
 impl AssociateSourceNetworkStackInputBuilder {
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
+    /// This field is required.
     pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl AssociateSourceNetworkStackInputBuilder {
         &self.source_network_id
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
+    /// This field is required.
     pub fn cfn_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cfn_stack_name = ::std::option::Option::Some(input.into());
         self

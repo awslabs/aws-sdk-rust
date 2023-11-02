@@ -55,6 +55,7 @@ pub struct ListGroupsOlderThanOrderingIdInputBuilder {
 }
 impl ListGroupsOlderThanOrderingIdInputBuilder {
     /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
         &self.data_source_id
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
+    /// This field is required.
     pub fn ordering_id(mut self, input: i64) -> Self {
         self.ordering_id = ::std::option::Option::Some(input);
         self

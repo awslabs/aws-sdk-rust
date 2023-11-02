@@ -4,48 +4,53 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNodeFromTemplateJobInput {
     /// <p>The type of node.</p>
-    pub template_type: ::std::option::Option<crate::types::TemplateType>,
+    pub template_type: crate::types::TemplateType,
     /// <p>An output package name for the node.</p>
-    pub output_package_name: ::std::option::Option<::std::string::String>,
+    pub output_package_name: ::std::string::String,
     /// <p>An output package version for the node.</p>
-    pub output_package_version: ::std::option::Option<::std::string::String>,
+    pub output_package_version: ::std::string::String,
     /// <p>A name for the node.</p>
-    pub node_name: ::std::option::Option<::std::string::String>,
+    pub node_name: ::std::string::String,
     /// <p>A description for the node.</p>
     pub node_description: ::std::option::Option<::std::string::String>,
     /// <p>Template parameters for the node.</p>
-    pub template_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub template_parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>Tags for the job.</p>
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
 }
 impl CreateNodeFromTemplateJobInput {
     /// <p>The type of node.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
-        self.template_type.as_ref()
+    pub fn template_type(&self) -> &crate::types::TemplateType {
+        &self.template_type
     }
     /// <p>An output package name for the node.</p>
-    pub fn output_package_name(&self) -> ::std::option::Option<&str> {
-        self.output_package_name.as_deref()
+    pub fn output_package_name(&self) -> &str {
+        use std::ops::Deref;
+        self.output_package_name.deref()
     }
     /// <p>An output package version for the node.</p>
-    pub fn output_package_version(&self) -> ::std::option::Option<&str> {
-        self.output_package_version.as_deref()
+    pub fn output_package_version(&self) -> &str {
+        use std::ops::Deref;
+        self.output_package_version.deref()
     }
     /// <p>A name for the node.</p>
-    pub fn node_name(&self) -> ::std::option::Option<&str> {
-        self.node_name.as_deref()
+    pub fn node_name(&self) -> &str {
+        use std::ops::Deref;
+        self.node_name.deref()
     }
     /// <p>A description for the node.</p>
     pub fn node_description(&self) -> ::std::option::Option<&str> {
         self.node_description.as_deref()
     }
     /// <p>Template parameters for the node.</p>
-    pub fn template_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.template_parameters.as_ref()
+    pub fn template_parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.template_parameters
     }
     /// <p>Tags for the job.</p>
-    pub fn job_tags(&self) -> ::std::option::Option<&[crate::types::JobResourceTags]> {
-        self.job_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_tags.is_none()`.
+    pub fn job_tags(&self) -> &[crate::types::JobResourceTags] {
+        self.job_tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateNodeFromTemplateJobInput {
@@ -69,6 +74,7 @@ pub struct CreateNodeFromTemplateJobInputBuilder {
 }
 impl CreateNodeFromTemplateJobInputBuilder {
     /// <p>The type of node.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +89,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
         &self.template_type
     }
     /// <p>An output package name for the node.</p>
+    /// This field is required.
     pub fn output_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_package_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
         &self.output_package_name
     }
     /// <p>An output package version for the node.</p>
+    /// This field is required.
     pub fn output_package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_package_version = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +119,7 @@ impl CreateNodeFromTemplateJobInputBuilder {
         &self.output_package_version
     }
     /// <p>A name for the node.</p>
+    /// This field is required.
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
         self
@@ -186,6 +195,12 @@ impl CreateNodeFromTemplateJobInputBuilder {
         &self.job_tags
     }
     /// Consumes the builder and constructs a [`CreateNodeFromTemplateJobInput`](crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_type`](crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder::template_type)
+    /// - [`output_package_name`](crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder::output_package_name)
+    /// - [`output_package_version`](crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder::output_package_version)
+    /// - [`node_name`](crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder::node_name)
+    /// - [`template_parameters`](crate::operation::create_node_from_template_job::builders::CreateNodeFromTemplateJobInputBuilder::template_parameters)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -193,12 +208,37 @@ impl CreateNodeFromTemplateJobInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobInput {
-            template_type: self.template_type,
-            output_package_name: self.output_package_name,
-            output_package_version: self.output_package_version,
-            node_name: self.node_name,
+            template_type: self.template_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_type",
+                    "template_type was not specified but it is required when building CreateNodeFromTemplateJobInput",
+                )
+            })?,
+            output_package_name: self.output_package_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_package_name",
+                    "output_package_name was not specified but it is required when building CreateNodeFromTemplateJobInput",
+                )
+            })?,
+            output_package_version: self.output_package_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_package_version",
+                    "output_package_version was not specified but it is required when building CreateNodeFromTemplateJobInput",
+                )
+            })?,
+            node_name: self.node_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "node_name",
+                    "node_name was not specified but it is required when building CreateNodeFromTemplateJobInput",
+                )
+            })?,
             node_description: self.node_description,
-            template_parameters: self.template_parameters,
+            template_parameters: self.template_parameters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_parameters",
+                    "template_parameters was not specified but it is required when building CreateNodeFromTemplateJobInput",
+                )
+            })?,
             job_tags: self.job_tags,
         })
     }

@@ -41,6 +41,7 @@ pub struct DeleteProjectMembershipInputBuilder {
 }
 impl DeleteProjectMembershipInputBuilder {
     /// <p>The ID of the Amazon DataZone domain where project membership is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteProjectMembershipInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the Amazon DataZone project the membership to which is deleted.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteProjectMembershipInputBuilder {
         &self.project_identifier
     }
     /// <p>The project member whose project membership is deleted.</p>
+    /// This field is required.
     pub fn member(mut self, input: crate::types::Member) -> Self {
         self.member = ::std::option::Option::Some(input);
         self

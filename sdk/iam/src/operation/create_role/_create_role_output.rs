@@ -35,6 +35,7 @@ pub struct CreateRoleOutputBuilder {
 }
 impl CreateRoleOutputBuilder {
     /// <p>A structure containing details about the new role.</p>
+    /// This field is required.
     pub fn role(mut self, input: crate::types::Role) -> Self {
         self.role = ::std::option::Option::Some(input);
         self

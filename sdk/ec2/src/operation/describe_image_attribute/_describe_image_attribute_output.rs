@@ -36,20 +36,26 @@ pub struct DescribeImageAttributeOutput {
 }
 impl DescribeImageAttributeOutput {
     /// <p>The block device mapping entries.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>The launch permissions.</p>
-    pub fn launch_permissions(&self) -> ::std::option::Option<&[crate::types::LaunchPermission]> {
-        self.launch_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_permissions.is_none()`.
+    pub fn launch_permissions(&self) -> &[crate::types::LaunchPermission] {
+        self.launch_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The product codes.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>A description for the AMI.</p>
     pub fn description(&self) -> ::std::option::Option<&crate::types::AttributeValue> {

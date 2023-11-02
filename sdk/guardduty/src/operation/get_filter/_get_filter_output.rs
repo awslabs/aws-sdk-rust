@@ -69,6 +69,7 @@ pub struct GetFilterOutputBuilder {
 }
 impl GetFilterOutputBuilder {
     /// <p>The name of the filter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl GetFilterOutputBuilder {
         &self.description
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -125,6 +127,7 @@ impl GetFilterOutputBuilder {
         &self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    /// This field is required.
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.finding_criteria = ::std::option::Option::Some(input);
         self

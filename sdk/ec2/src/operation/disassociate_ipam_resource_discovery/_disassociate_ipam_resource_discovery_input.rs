@@ -48,6 +48,7 @@ impl DisassociateIpamResourceDiscoveryInputBuilder {
         &self.dry_run
     }
     /// <p>A resource discovery association ID.</p>
+    /// This field is required.
     pub fn ipam_resource_discovery_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_association_id = ::std::option::Option::Some(input.into());
         self

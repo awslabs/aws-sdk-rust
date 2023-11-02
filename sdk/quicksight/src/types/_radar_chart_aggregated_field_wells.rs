@@ -13,16 +13,22 @@ pub struct RadarChartAggregatedFieldWells {
 }
 impl RadarChartAggregatedFieldWells {
     /// <p>The aggregated field well categories of a radar chart.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.category.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category.is_none()`.
+    pub fn category(&self) -> &[crate::types::DimensionField] {
+        self.category.as_deref().unwrap_or_default()
     }
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn color(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.color.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color.is_none()`.
+    pub fn color(&self) -> &[crate::types::DimensionField] {
+        self.color.as_deref().unwrap_or_default()
     }
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl RadarChartAggregatedFieldWells {

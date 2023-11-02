@@ -4,31 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyPinDataOutput {
     /// <p>The <code>keyARN</code> of the PIN encryption key that Amazon Web Services Payment Cryptography uses for PIN or PIN Offset verification.</p>
-    pub verification_key_arn: ::std::option::Option<::std::string::String>,
+    pub verification_key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub verification_key_check_value: ::std::option::Option<::std::string::String>,
+    pub verification_key_check_value: ::std::string::String,
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    pub encryption_key_arn: ::std::option::Option<::std::string::String>,
+    pub encryption_key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub encryption_key_check_value: ::std::option::Option<::std::string::String>,
+    pub encryption_key_check_value: ::std::string::String,
     _request_id: Option<String>,
 }
 impl VerifyPinDataOutput {
     /// <p>The <code>keyARN</code> of the PIN encryption key that Amazon Web Services Payment Cryptography uses for PIN or PIN Offset verification.</p>
-    pub fn verification_key_arn(&self) -> ::std::option::Option<&str> {
-        self.verification_key_arn.as_deref()
+    pub fn verification_key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.verification_key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn verification_key_check_value(&self) -> ::std::option::Option<&str> {
-        self.verification_key_check_value.as_deref()
+    pub fn verification_key_check_value(&self) -> &str {
+        use std::ops::Deref;
+        self.verification_key_check_value.deref()
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
-        self.encryption_key_arn.as_deref()
+    pub fn encryption_key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.encryption_key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn encryption_key_check_value(&self) -> ::std::option::Option<&str> {
-        self.encryption_key_check_value.as_deref()
+    pub fn encryption_key_check_value(&self) -> &str {
+        use std::ops::Deref;
+        self.encryption_key_check_value.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for VerifyPinDataOutput {
@@ -55,6 +59,7 @@ pub struct VerifyPinDataOutputBuilder {
 }
 impl VerifyPinDataOutputBuilder {
     /// <p>The <code>keyARN</code> of the PIN encryption key that Amazon Web Services Payment Cryptography uses for PIN or PIN Offset verification.</p>
+    /// This field is required.
     pub fn verification_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_key_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl VerifyPinDataOutputBuilder {
         &self.verification_key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// This field is required.
     pub fn verification_key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verification_key_check_value = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,7 @@ impl VerifyPinDataOutputBuilder {
         &self.verification_key_check_value
     }
     /// <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block generation.</p>
+    /// This field is required.
     pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl VerifyPinDataOutputBuilder {
         &self.encryption_key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// This field is required.
     pub fn encryption_key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_check_value = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +128,40 @@ impl VerifyPinDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`VerifyPinDataOutput`](crate::operation::verify_pin_data::VerifyPinDataOutput).
-    pub fn build(self) -> crate::operation::verify_pin_data::VerifyPinDataOutput {
-        crate::operation::verify_pin_data::VerifyPinDataOutput {
-            verification_key_arn: self.verification_key_arn,
-            verification_key_check_value: self.verification_key_check_value,
-            encryption_key_arn: self.encryption_key_arn,
-            encryption_key_check_value: self.encryption_key_check_value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`verification_key_arn`](crate::operation::verify_pin_data::builders::VerifyPinDataOutputBuilder::verification_key_arn)
+    /// - [`verification_key_check_value`](crate::operation::verify_pin_data::builders::VerifyPinDataOutputBuilder::verification_key_check_value)
+    /// - [`encryption_key_arn`](crate::operation::verify_pin_data::builders::VerifyPinDataOutputBuilder::encryption_key_arn)
+    /// - [`encryption_key_check_value`](crate::operation::verify_pin_data::builders::VerifyPinDataOutputBuilder::encryption_key_check_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::verify_pin_data::VerifyPinDataOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::verify_pin_data::VerifyPinDataOutput {
+            verification_key_arn: self.verification_key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "verification_key_arn",
+                    "verification_key_arn was not specified but it is required when building VerifyPinDataOutput",
+                )
+            })?,
+            verification_key_check_value: self.verification_key_check_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "verification_key_check_value",
+                    "verification_key_check_value was not specified but it is required when building VerifyPinDataOutput",
+                )
+            })?,
+            encryption_key_arn: self.encryption_key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "encryption_key_arn",
+                    "encryption_key_arn was not specified but it is required when building VerifyPinDataOutput",
+                )
+            })?,
+            encryption_key_check_value: self.encryption_key_check_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "encryption_key_check_value",
+                    "encryption_key_check_value was not specified but it is required when building VerifyPinDataOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

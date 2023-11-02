@@ -11,8 +11,10 @@ pub struct SearchResourceTagsOutput {
 }
 impl SearchResourceTagsOutput {
     /// <p>A list of tags used in the Amazon Connect instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagSet]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagSet] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

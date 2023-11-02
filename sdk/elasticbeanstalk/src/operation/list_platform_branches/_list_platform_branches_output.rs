@@ -11,8 +11,10 @@ pub struct ListPlatformBranchesOutput {
 }
 impl ListPlatformBranchesOutput {
     /// <p>Summary information about the platform branches.</p>
-    pub fn platform_branch_summary_list(&self) -> ::std::option::Option<&[crate::types::PlatformBranchSummary]> {
-        self.platform_branch_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_branch_summary_list.is_none()`.
+    pub fn platform_branch_summary_list(&self) -> &[crate::types::PlatformBranchSummary] {
+        self.platform_branch_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

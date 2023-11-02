@@ -30,12 +30,16 @@ impl GrantPermissionsInput {
         self.resource.as_ref()
     }
     /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources. </p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
-    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions_with_grant_option.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions_with_grant_option.is_none()`.
+    pub fn permissions_with_grant_option(&self) -> &[crate::types::Permission] {
+        self.permissions_with_grant_option.as_deref().unwrap_or_default()
     }
 }
 impl GrantPermissionsInput {
@@ -72,6 +76,7 @@ impl GrantPermissionsInputBuilder {
     }
     /// <p>The principal to be granted the permissions on the resource. Supported principals are IAM users or IAM roles, and they are defined by their principal type and their ARN.</p>
     /// <p>Note that if you define a resource with a particular ARN, then later delete, and recreate a resource with that same ARN, the resource maintains the permissions already granted. </p>
+    /// This field is required.
     pub fn principal(mut self, input: crate::types::DataLakePrincipal) -> Self {
         self.principal = ::std::option::Option::Some(input);
         self
@@ -88,6 +93,7 @@ impl GrantPermissionsInputBuilder {
         &self.principal
     }
     /// <p>The resource to which permissions are to be granted. Resources in Lake Formation are the Data Catalog, databases, and tables.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self

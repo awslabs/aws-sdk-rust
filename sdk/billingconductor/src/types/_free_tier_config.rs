@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTierConfig {
     /// <p> Activate or deactivate Amazon Web Services Free Tier application. </p>
-    pub activated: ::std::option::Option<bool>,
+    pub activated: bool,
 }
 impl FreeTierConfig {
     /// <p> Activate or deactivate Amazon Web Services Free Tier application. </p>
-    pub fn activated(&self) -> ::std::option::Option<bool> {
+    pub fn activated(&self) -> bool {
         self.activated
     }
 }
@@ -28,6 +28,7 @@ pub struct FreeTierConfigBuilder {
 }
 impl FreeTierConfigBuilder {
     /// <p> Activate or deactivate Amazon Web Services Free Tier application. </p>
+    /// This field is required.
     pub fn activated(mut self, input: bool) -> Self {
         self.activated = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl FreeTierConfigBuilder {
         &self.activated
     }
     /// Consumes the builder and constructs a [`FreeTierConfig`](crate::types::FreeTierConfig).
-    pub fn build(self) -> crate::types::FreeTierConfig {
-        crate::types::FreeTierConfig { activated: self.activated }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`activated`](crate::types::builders::FreeTierConfigBuilder::activated)
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeTierConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeTierConfig {
+            activated: self.activated.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "activated",
+                    "activated was not specified but it is required when building FreeTierConfig",
+                )
+            })?,
+        })
     }
 }

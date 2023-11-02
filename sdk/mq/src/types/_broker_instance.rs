@@ -17,8 +17,10 @@ impl BrokerInstance {
         self.console_url.as_deref()
     }
     /// <p>The broker's wire-level protocol endpoints.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[::std::string::String] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {

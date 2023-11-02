@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVariable`](crate::operation::delete_variable::builders::DeleteVariableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::set_name): <p>The name of the variable to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_variable::builders::DeleteVariableFluentBuilder::set_name):<br>required: **true**<br><p>The name of the variable to delete.</p><br>
     /// - On success, responds with [`DeleteVariableOutput`](crate::operation::delete_variable::DeleteVariableOutput)
     /// - On failure, responds with [`SdkError<DeleteVariableError>`](crate::operation::delete_variable::DeleteVariableError)
     pub fn delete_variable(&self) -> crate::operation::delete_variable::builders::DeleteVariableFluentBuilder {

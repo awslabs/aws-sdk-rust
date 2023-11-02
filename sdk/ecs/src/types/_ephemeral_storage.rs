@@ -34,6 +34,7 @@ pub struct EphemeralStorageBuilder {
 }
 impl EphemeralStorageBuilder {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
+    /// This field is required.
     pub fn size_in_gi_b(mut self, input: i32) -> Self {
         self.size_in_gi_b = ::std::option::Option::Some(input);
         self

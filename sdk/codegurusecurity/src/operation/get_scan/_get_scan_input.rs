@@ -34,6 +34,7 @@ pub struct GetScanInputBuilder {
 }
 impl GetScanInputBuilder {
     /// <p>The name of the scan you want to view details about.</p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SymmetricEncryptionAttributes {
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
-    pub mode: ::std::option::Option<crate::types::EncryptionMode>,
+    pub mode: crate::types::EncryptionMode,
     /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
     pub initialization_vector: ::std::option::Option<::std::string::String>,
     /// <p>The padding to be included with the data.</p>
@@ -13,8 +13,8 @@ pub struct SymmetricEncryptionAttributes {
 }
 impl SymmetricEncryptionAttributes {
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
-        self.mode.as_ref()
+    pub fn mode(&self) -> &crate::types::EncryptionMode {
+        &self.mode
     }
     /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
     pub fn initialization_vector(&self) -> ::std::option::Option<&str> {
@@ -51,6 +51,7 @@ pub struct SymmetricEncryptionAttributesBuilder {
 }
 impl SymmetricEncryptionAttributesBuilder {
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -93,12 +94,19 @@ impl SymmetricEncryptionAttributesBuilder {
         &self.padding_type
     }
     /// Consumes the builder and constructs a [`SymmetricEncryptionAttributes`](crate::types::SymmetricEncryptionAttributes).
-    pub fn build(self) -> crate::types::SymmetricEncryptionAttributes {
-        crate::types::SymmetricEncryptionAttributes {
-            mode: self.mode,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mode`](crate::types::builders::SymmetricEncryptionAttributesBuilder::mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::SymmetricEncryptionAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SymmetricEncryptionAttributes {
+            mode: self.mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mode",
+                    "mode was not specified but it is required when building SymmetricEncryptionAttributes",
+                )
+            })?,
             initialization_vector: self.initialization_vector,
             padding_type: self.padding_type,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for SymmetricEncryptionAttributesBuilder {

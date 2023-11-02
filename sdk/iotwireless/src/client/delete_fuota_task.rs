@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFuotaTask`](crate::operation::delete_fuota_task::builders::DeleteFuotaTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_fuota_task::builders::DeleteFuotaTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_fuota_task::builders::DeleteFuotaTaskFluentBuilder::set_id): <p>The ID of a FUOTA task.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_fuota_task::builders::DeleteFuotaTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_fuota_task::builders::DeleteFuotaTaskFluentBuilder::set_id):<br>required: **true**<br><p>The ID of a FUOTA task.</p><br>
     /// - On success, responds with [`DeleteFuotaTaskOutput`](crate::operation::delete_fuota_task::DeleteFuotaTaskOutput)
     /// - On failure, responds with [`SdkError<DeleteFuotaTaskError>`](crate::operation::delete_fuota_task::DeleteFuotaTaskError)
     pub fn delete_fuota_task(&self) -> crate::operation::delete_fuota_task::builders::DeleteFuotaTaskFluentBuilder {

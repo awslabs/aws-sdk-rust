@@ -7,9 +7,9 @@ pub struct AssetModelProperty {
     /// <p>The ID of the asset model property.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset model property.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data type of the asset model property.</p>
-    pub data_type: ::std::option::Option<crate::types::PropertyDataType>,
+    pub data_type: crate::types::PropertyDataType,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub data_type_spec: ::std::option::Option<::std::string::String>,
     /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
@@ -23,12 +23,13 @@ impl AssetModelProperty {
         self.id.as_deref()
     }
     /// <p>The name of the asset model property.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data type of the asset model property.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::PropertyDataType> {
-        self.data_type.as_ref()
+    pub fn data_type(&self) -> &crate::types::PropertyDataType {
+        &self.data_type
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn data_type_spec(&self) -> ::std::option::Option<&str> {
@@ -77,6 +78,7 @@ impl AssetModelPropertyBuilder {
         &self.id
     }
     /// <p>The name of the asset model property.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl AssetModelPropertyBuilder {
         &self.name
     }
     /// <p>The data type of the asset model property.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -133,6 +136,7 @@ impl AssetModelPropertyBuilder {
         &self.unit
     }
     /// <p>The property type (see <code>PropertyType</code>).</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PropertyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -147,14 +151,27 @@ impl AssetModelPropertyBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`AssetModelProperty`](crate::types::AssetModelProperty).
-    pub fn build(self) -> crate::types::AssetModelProperty {
-        crate::types::AssetModelProperty {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AssetModelPropertyBuilder::name)
+    /// - [`data_type`](crate::types::builders::AssetModelPropertyBuilder::data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetModelProperty, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetModelProperty {
             id: self.id,
-            name: self.name,
-            data_type: self.data_type,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssetModelProperty",
+                )
+            })?,
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building AssetModelProperty",
+                )
+            })?,
             data_type_spec: self.data_type_spec,
             unit: self.unit,
             r#type: self.r#type,
-        }
+        })
     }
 }

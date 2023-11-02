@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The ARN of the Amazon Braket job to cancel.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
 }
 impl CancelJobInput {
     /// <p>The ARN of the Amazon Braket job to cancel.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
 }
 impl CancelJobInput {
@@ -27,6 +28,7 @@ pub struct CancelJobInputBuilder {
 }
 impl CancelJobInputBuilder {
     /// <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl CancelJobInputBuilder {
         &self.job_arn
     }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_arn`](crate::operation::cancel_job::builders::CancelJobInputBuilder::job_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobInput { job_arn: self.job_arn })
+        ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobInput {
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building CancelJobInput",
+                )
+            })?,
+        })
     }
 }

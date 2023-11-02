@@ -17,8 +17,10 @@ impl GetCoipPoolUsageOutput {
         self.coip_pool_id.as_deref()
     }
     /// <p>Information about the address usage.</p>
-    pub fn coip_address_usages(&self) -> ::std::option::Option<&[crate::types::CoipAddressUsage]> {
-        self.coip_address_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.coip_address_usages.is_none()`.
+    pub fn coip_address_usages(&self) -> &[crate::types::CoipAddressUsage] {
+        self.coip_address_usages.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {

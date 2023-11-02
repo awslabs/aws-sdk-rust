@@ -67,8 +67,10 @@ impl InstanceProfile {
         self.subnet_group_identifier.as_deref()
     }
     /// <p>The VPC security groups that are used with the instance profile. The VPC security group must work with the VPC containing the instance profile.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[::std::string::String] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl InstanceProfile {

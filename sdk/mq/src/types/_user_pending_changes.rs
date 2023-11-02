@@ -17,8 +17,10 @@ impl UserPendingChanges {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub fn pending_change(&self) -> ::std::option::Option<&crate::types::ChangeType> {
@@ -76,6 +78,7 @@ impl UserPendingChangesBuilder {
         &self.groups
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
+    /// This field is required.
     pub fn pending_change(mut self, input: crate::types::ChangeType) -> Self {
         self.pending_change = ::std::option::Option::Some(input);
         self

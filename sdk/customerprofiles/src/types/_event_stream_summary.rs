@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventStreamSummary {
     /// <p>The unique name of the domain.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The name of the event stream.</p>
-    pub event_stream_name: ::std::option::Option<::std::string::String>,
+    pub event_stream_name: ::std::string::String,
     /// <p>A unique identifier for the event stream.</p>
-    pub event_stream_arn: ::std::option::Option<::std::string::String>,
+    pub event_stream_arn: ::std::string::String,
     /// <p>The operational state of destination stream for export.</p>
-    pub state: ::std::option::Option<crate::types::EventStreamState>,
+    pub state: crate::types::EventStreamState,
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     pub stopped_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Summary information about the Kinesis data stream.</p>
@@ -21,20 +21,23 @@ pub struct EventStreamSummary {
 }
 impl EventStreamSummary {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The name of the event stream.</p>
-    pub fn event_stream_name(&self) -> ::std::option::Option<&str> {
-        self.event_stream_name.as_deref()
+    pub fn event_stream_name(&self) -> &str {
+        use std::ops::Deref;
+        self.event_stream_name.deref()
     }
     /// <p>A unique identifier for the event stream.</p>
-    pub fn event_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.event_stream_arn.as_deref()
+    pub fn event_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.event_stream_arn.deref()
     }
     /// <p>The operational state of destination stream for export.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EventStreamState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::EventStreamState {
+        &self.state
     }
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     pub fn stopped_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -70,6 +73,7 @@ pub struct EventStreamSummaryBuilder {
 }
 impl EventStreamSummaryBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl EventStreamSummaryBuilder {
         &self.domain_name
     }
     /// <p>The name of the event stream.</p>
+    /// This field is required.
     pub fn event_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl EventStreamSummaryBuilder {
         &self.event_stream_name
     }
     /// <p>A unique identifier for the event stream.</p>
+    /// This field is required.
     pub fn event_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +118,7 @@ impl EventStreamSummaryBuilder {
         &self.event_stream_arn
     }
     /// <p>The operational state of destination stream for export.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::EventStreamState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -174,15 +181,40 @@ impl EventStreamSummaryBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`EventStreamSummary`](crate::types::EventStreamSummary).
-    pub fn build(self) -> crate::types::EventStreamSummary {
-        crate::types::EventStreamSummary {
-            domain_name: self.domain_name,
-            event_stream_name: self.event_stream_name,
-            event_stream_arn: self.event_stream_arn,
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::types::builders::EventStreamSummaryBuilder::domain_name)
+    /// - [`event_stream_name`](crate::types::builders::EventStreamSummaryBuilder::event_stream_name)
+    /// - [`event_stream_arn`](crate::types::builders::EventStreamSummaryBuilder::event_stream_arn)
+    /// - [`state`](crate::types::builders::EventStreamSummaryBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventStreamSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventStreamSummary {
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building EventStreamSummary",
+                )
+            })?,
+            event_stream_name: self.event_stream_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_stream_name",
+                    "event_stream_name was not specified but it is required when building EventStreamSummary",
+                )
+            })?,
+            event_stream_arn: self.event_stream_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_stream_arn",
+                    "event_stream_arn was not specified but it is required when building EventStreamSummary",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building EventStreamSummary",
+                )
+            })?,
             stopped_since: self.stopped_since,
             destination_summary: self.destination_summary,
             tags: self.tags,
-        }
+        })
     }
 }

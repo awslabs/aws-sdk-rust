@@ -69,6 +69,7 @@ impl ListDeploymentsInputBuilder {
         &self.max_results
     }
     /// <p>The application identifier.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

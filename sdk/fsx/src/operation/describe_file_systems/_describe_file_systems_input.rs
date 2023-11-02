@@ -13,8 +13,10 @@ pub struct DescribeFileSystemsInput {
 }
 impl DescribeFileSystemsInput {
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
-    pub fn file_system_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.file_system_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_ids.is_none()`.
+    pub fn file_system_ids(&self) -> &[::std::string::String] {
+        self.file_system_ids.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

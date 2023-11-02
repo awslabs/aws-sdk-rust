@@ -5,22 +5,23 @@ pub fn ser_content_type_profile(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.format {
+    {
         let mut inner_writer = scope.start_el("Format").finish();
+        inner_writer.data(input.format.as_str());
+    }
+    if let Some(var_1) = &input.profile_id {
+        let mut inner_writer = scope.start_el("ProfileId").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.profile_id {
-        let mut inner_writer = scope.start_el("ProfileId").finish();
-        inner_writer.data(var_2.as_str());
-    }
-    if let Some(var_3) = &input.content_type {
+    {
         let mut inner_writer = scope.start_el("ContentType").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.content_type.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_content_type_profile(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ContentTypeProfile, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,7 +30,7 @@ pub fn de_content_type_profile(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.cloudfront#ContentTypeProfile$Format */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<crate::types::Format, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Format::from(
@@ -39,11 +40,11 @@ pub fn de_content_type_profile(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_4);
+                builder = builder.set_format(var_2);
             }
             ,
             s if s.matches("ProfileId") /* ProfileId com.amazonaws.cloudfront#ContentTypeProfile$ProfileId */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -52,11 +53,11 @@ pub fn de_content_type_profile(
                         ?
                     )
                 ;
-                builder = builder.set_profile_id(var_5);
+                builder = builder.set_profile_id(var_3);
             }
             ,
             s if s.matches("ContentType") /* ContentType com.amazonaws.cloudfront#ContentTypeProfile$ContentType */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -65,11 +66,13 @@ pub fn de_content_type_profile(
                         ?
                     )
                 ;
-                builder = builder.set_content_type(var_6);
+                builder = builder.set_content_type(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::content_type_profile_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

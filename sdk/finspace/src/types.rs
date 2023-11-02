@@ -25,6 +25,14 @@ pub use crate::types::_kx_database_configuration::KxDatabaseConfiguration;
 
 pub use crate::types::_kx_database_cache_configuration::KxDatabaseCacheConfiguration;
 
+pub use crate::types::_kx_cluster_code_deployment_configuration::KxClusterCodeDeploymentConfiguration;
+
+pub use crate::types::_kx_cluster_code_deployment_strategy::KxClusterCodeDeploymentStrategy;
+
+pub use crate::types::_kx_command_line_argument::KxCommandLineArgument;
+
+pub use crate::types::_code_configuration::CodeConfiguration;
+
 pub use crate::types::_environment::Environment;
 
 pub use crate::types::_federation_parameters::FederationParameters;
@@ -54,10 +62,6 @@ pub use crate::types::_changeset_status::ChangesetStatus;
 pub use crate::types::_kx_savedown_storage_configuration::KxSavedownStorageConfiguration;
 
 pub use crate::types::_kx_savedown_storage_type::KxSavedownStorageType;
-
-pub use crate::types::_code_configuration::CodeConfiguration;
-
-pub use crate::types::_kx_command_line_argument::KxCommandLineArgument;
 
 pub use crate::types::_vpc_configuration::VpcConfiguration;
 
@@ -122,6 +126,10 @@ mod _kx_cache_storage_configuration;
 mod _kx_changeset_list_entry;
 
 mod _kx_cluster;
+
+mod _kx_cluster_code_deployment_configuration;
+
+mod _kx_cluster_code_deployment_strategy;
 
 mod _kx_cluster_status;
 

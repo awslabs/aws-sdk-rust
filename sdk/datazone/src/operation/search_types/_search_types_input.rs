@@ -44,8 +44,10 @@ impl SearchTypesInput {
         self.search_text.as_deref()
     }
     /// <p></p>
-    pub fn search_in(&self) -> ::std::option::Option<&[crate::types::SearchInItem]> {
-        self.search_in.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_in.is_none()`.
+    pub fn search_in(&self) -> &[crate::types::SearchInItem] {
+        self.search_in.as_deref().unwrap_or_default()
     }
     /// <p>The filters for the <code>SearchTypes</code> action.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::FilterClause> {
@@ -83,6 +85,7 @@ pub struct SearchTypesInputBuilder {
 }
 impl SearchTypesInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which to invoke the <code>SearchTypes</code> action.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +128,7 @@ impl SearchTypesInputBuilder {
         &self.next_token
     }
     /// <p>Specifies the scope of the search for types.</p>
+    /// This field is required.
     pub fn search_scope(mut self, input: crate::types::TypesSearchScope) -> Self {
         self.search_scope = ::std::option::Option::Some(input);
         self
@@ -201,6 +205,7 @@ impl SearchTypesInputBuilder {
         &self.sort
     }
     /// <p></p>
+    /// This field is required.
     pub fn managed(mut self, input: bool) -> Self {
         self.managed = ::std::option::Option::Some(input);
         self

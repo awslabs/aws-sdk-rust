@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolNetworkOperation`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ns_lcm_op_occ_id(impl Into<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::ns_lcm_op_occ_id) / [`set_ns_lcm_op_occ_id(Option<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::set_ns_lcm_op_occ_id): <p>The identifier of the network operation.</p>
+    ///   - [`ns_lcm_op_occ_id(impl Into<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::ns_lcm_op_occ_id) / [`set_ns_lcm_op_occ_id(Option<String>)`](crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationFluentBuilder::set_ns_lcm_op_occ_id):<br>required: **true**<br><p>The identifier of the network operation.</p><br>
     /// - On success, responds with [`GetSolNetworkOperationOutput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::id): <p>ID of this network operation occurrence.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::arn): <p>Network operation ARN.</p>
+    ///   - [`arn(String)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::arn): <p>Network operation ARN.</p>
     ///   - [`operation_state(Option<NsLcmOperationState>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::operation_state): <p>The state of the network operation.</p>
     ///   - [`ns_instance_id(Option<String>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::ns_instance_id): <p>ID of the network operation instance.</p>
     ///   - [`lcm_operation_type(Option<LcmOperationType>)`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput::lcm_operation_type): <p>Type of the operation represented by this occurrence.</p>

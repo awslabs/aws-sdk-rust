@@ -34,6 +34,7 @@ pub struct DeleteSecurityProfileInputBuilder {
 }
 impl DeleteSecurityProfileInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSecurityProfileInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the security profle.</p>
+    /// This field is required.
     pub fn security_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_id = ::std::option::Option::Some(input.into());
         self

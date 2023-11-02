@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfileOutput {
     /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
-    pub profile_id: ::std::option::Option<::std::string::String>,
+    pub profile_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateProfileOutput {
     /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
-        self.profile_id.as_deref()
+    pub fn profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.profile_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateProfileOutput {
@@ -34,6 +35,7 @@ pub struct CreateProfileOutputBuilder {
 }
 impl CreateProfileOutputBuilder {
     /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput).
-    pub fn build(self) -> crate::operation::create_profile::CreateProfileOutput {
-        crate::operation::create_profile::CreateProfileOutput {
-            profile_id: self.profile_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profile_id`](crate::operation::create_profile::builders::CreateProfileOutputBuilder::profile_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileOutput {
+            profile_id: self.profile_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profile_id",
+                    "profile_id was not specified but it is required when building CreateProfileOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

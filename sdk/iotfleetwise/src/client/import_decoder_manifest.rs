@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ImportDecoderManifest`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::set_name): <p> The name of the decoder manifest to import. </p>
-    ///   - [`network_file_definitions(NetworkFileDefinition)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::network_file_definitions) / [`set_network_file_definitions(Option<Vec<NetworkFileDefinition>>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::set_network_file_definitions): <p> The file to load into an Amazon Web Services account. </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::set_name):<br>required: **true**<br><p> The name of the decoder manifest to import. </p><br>
+    ///   - [`network_file_definitions(NetworkFileDefinition)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::network_file_definitions) / [`set_network_file_definitions(Vec<NetworkFileDefinition>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::set_network_file_definitions):<br>required: **true**<br><p> The file to load into an Amazon Web Services account. </p><br>
     /// - On success, responds with [`ImportDecoderManifestOutput`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput::name): <p> The name of the imported decoder manifest. </p>
-    ///   - [`arn(Option<String>)`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the decoder manifest that was imported. </p>
+    ///   - [`name(String)`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput::name): <p> The name of the imported decoder manifest. </p>
+    ///   - [`arn(String)`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the decoder manifest that was imported. </p>
     /// - On failure, responds with [`SdkError<ImportDecoderManifestError>`](crate::operation::import_decoder_manifest::ImportDecoderManifestError)
     pub fn import_decoder_manifest(&self) -> crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder {
         crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::new(self.handle.clone())

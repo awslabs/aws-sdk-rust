@@ -97,6 +97,7 @@ pub struct ListHubContentVersionsInputBuilder {
 }
 impl ListHubContentVersionsInputBuilder {
     /// <p>The name of the hub to list the content versions of.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl ListHubContentVersionsInputBuilder {
         &self.hub_name
     }
     /// <p>The type of hub content to list versions of.</p>
+    /// This field is required.
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
         self
@@ -125,6 +127,7 @@ impl ListHubContentVersionsInputBuilder {
         &self.hub_content_type
     }
     /// <p>The name of the hub content.</p>
+    /// This field is required.
     pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_name = ::std::option::Option::Some(input.into());
         self

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be retrieved.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
 }
 impl GetLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be retrieved.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
 }
 impl GetLoggingConfigurationInput {
@@ -27,6 +28,7 @@ pub struct GetLoggingConfigurationInputBuilder {
 }
 impl GetLoggingConfigurationInputBuilder {
     /// <p>Identifier of the logging configuration to be retrieved.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,21 @@ impl GetLoggingConfigurationInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder::identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logging_configuration::GetLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::get_logging_configuration::GetLoggingConfigurationInput { identifier: self.identifier })
+        ::std::result::Result::Ok(crate::operation::get_logging_configuration::GetLoggingConfigurationInput {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building GetLoggingConfigurationInput",
+                )
+            })?,
+        })
     }
 }

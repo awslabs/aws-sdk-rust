@@ -26,8 +26,10 @@ impl CreateNamespaceInput {
         self.identity_store.as_ref()
     }
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateNamespaceInput {
@@ -48,6 +50,7 @@ pub struct CreateNamespaceInputBuilder {
 }
 impl CreateNamespaceInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateNamespaceInputBuilder {
         &self.aws_account_id
     }
     /// <p>The name that you want to use to describe the new namespace.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateNamespaceInputBuilder {
         &self.namespace
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
+    /// This field is required.
     pub fn identity_store(mut self, input: crate::types::IdentityStore) -> Self {
         self.identity_store = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct UpdateDefaultAutoScalingConfigurationOutputBuilder {
 }
 impl UpdateDefaultAutoScalingConfigurationOutputBuilder {
     /// <p>A description of the App Runner auto scaling configuration that was set as default.</p>
+    /// This field is required.
     pub fn auto_scaling_configuration(mut self, input: crate::types::AutoScalingConfiguration) -> Self {
         self.auto_scaling_configuration = ::std::option::Option::Some(input);
         self

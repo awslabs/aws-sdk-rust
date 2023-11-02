@@ -48,8 +48,10 @@ impl CloudFormationStackRecord {
         self.state.as_ref()
     }
     /// <p>A list of objects describing the source of the CloudFormation stack record.</p>
-    pub fn source_info(&self) -> ::std::option::Option<&[crate::types::CloudFormationStackRecordSourceInfo]> {
-        self.source_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_info.is_none()`.
+    pub fn source_info(&self) -> &[crate::types::CloudFormationStackRecordSourceInfo] {
+        self.source_info.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects describing the destination service, which is AWS CloudFormation, and the Amazon Resource Name (ARN) of the AWS CloudFormation stack.</p>
     pub fn destination_info(&self) -> ::std::option::Option<&crate::types::DestinationInfo> {

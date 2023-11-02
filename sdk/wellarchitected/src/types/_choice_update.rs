@@ -42,6 +42,7 @@ pub struct ChoiceUpdateBuilder {
 }
 impl ChoiceUpdateBuilder {
     /// <p>The status of a choice.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ChoiceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

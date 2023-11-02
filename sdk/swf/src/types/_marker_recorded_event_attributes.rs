@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarkerRecordedEventAttributes {
     /// <p>The name of the marker.</p>
-    pub marker_name: ::std::option::Option<::std::string::String>,
+    pub marker_name: ::std::string::String,
     /// <p>The details of the marker.</p>
     pub details: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -13,8 +13,9 @@ pub struct MarkerRecordedEventAttributes {
 }
 impl MarkerRecordedEventAttributes {
     /// <p>The name of the marker.</p>
-    pub fn marker_name(&self) -> ::std::option::Option<&str> {
-        self.marker_name.as_deref()
+    pub fn marker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.marker_name.deref()
     }
     /// <p>The details of the marker.</p>
     pub fn details(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct MarkerRecordedEventAttributesBuilder {
 }
 impl MarkerRecordedEventAttributesBuilder {
     /// <p>The name of the marker.</p>
+    /// This field is required.
     pub fn marker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl MarkerRecordedEventAttributesBuilder {
         &self.details
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl MarkerRecordedEventAttributesBuilder {
         &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`MarkerRecordedEventAttributes`](crate::types::MarkerRecordedEventAttributes).
-    pub fn build(self) -> crate::types::MarkerRecordedEventAttributes {
-        crate::types::MarkerRecordedEventAttributes {
-            marker_name: self.marker_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`marker_name`](crate::types::builders::MarkerRecordedEventAttributesBuilder::marker_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MarkerRecordedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MarkerRecordedEventAttributes {
+            marker_name: self.marker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "marker_name",
+                    "marker_name was not specified but it is required when building MarkerRecordedEventAttributes",
+                )
+            })?,
             details: self.details,
             decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVirtualRouterInput {
     /// <p>The name of the virtual router to update.</p>
-    pub virtual_router_name: ::std::option::Option<::std::string::String>,
+    pub virtual_router_name: ::std::string::String,
     /// <p>The name of the service mesh that the virtual router resides in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
     pub spec: ::std::option::Option<crate::types::VirtualRouterSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
@@ -16,12 +16,14 @@ pub struct UpdateVirtualRouterInput {
 }
 impl UpdateVirtualRouterInput {
     /// <p>The name of the virtual router to update.</p>
-    pub fn virtual_router_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_router_name.as_deref()
+    pub fn virtual_router_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_router_name.deref()
     }
     /// <p>The name of the service mesh that the virtual router resides in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::VirtualRouterSpec> {
@@ -55,6 +57,7 @@ pub struct UpdateVirtualRouterInputBuilder {
 }
 impl UpdateVirtualRouterInputBuilder {
     /// <p>The name of the virtual router to update.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl UpdateVirtualRouterInputBuilder {
         &self.virtual_router_name
     }
     /// <p>The name of the service mesh that the virtual router resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl UpdateVirtualRouterInputBuilder {
         &self.mesh_name
     }
     /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::VirtualRouterSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -125,13 +130,26 @@ impl UpdateVirtualRouterInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`UpdateVirtualRouterInput`](crate::operation::update_virtual_router::UpdateVirtualRouterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_router_name`](crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder::virtual_router_name)
+    /// - [`mesh_name`](crate::operation::update_virtual_router::builders::UpdateVirtualRouterInputBuilder::mesh_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_virtual_router::UpdateVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_virtual_router::UpdateVirtualRouterInput {
-            virtual_router_name: self.virtual_router_name,
-            mesh_name: self.mesh_name,
+            virtual_router_name: self.virtual_router_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_router_name",
+                    "virtual_router_name was not specified but it is required when building UpdateVirtualRouterInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building UpdateVirtualRouterInput",
+                )
+            })?,
             spec: self.spec,
             client_token: self.client_token,
             mesh_owner: self.mesh_owner,

@@ -11,8 +11,10 @@ pub struct DescribeSpendLimitsOutput {
 }
 impl DescribeSpendLimitsOutput {
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
-    pub fn spend_limits(&self) -> ::std::option::Option<&[crate::types::SpendLimit]> {
-        self.spend_limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spend_limits.is_none()`.
+    pub fn spend_limits(&self) -> &[crate::types::SpendLimit] {
+        self.spend_limits.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

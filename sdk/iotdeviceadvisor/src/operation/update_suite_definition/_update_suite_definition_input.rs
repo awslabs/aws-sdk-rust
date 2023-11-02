@@ -34,6 +34,7 @@ pub struct UpdateSuiteDefinitionInputBuilder {
 }
 impl UpdateSuiteDefinitionInputBuilder {
     /// <p>Suite definition ID of the test suite to be updated.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateSuiteDefinitionInputBuilder {
         &self.suite_definition_id
     }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
+    /// This field is required.
     pub fn suite_definition_configuration(mut self, input: crate::types::SuiteDefinitionConfiguration) -> Self {
         self.suite_definition_configuration = ::std::option::Option::Some(input);
         self

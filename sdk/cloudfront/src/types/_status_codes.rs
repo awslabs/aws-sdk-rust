@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The number of status codes.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>The items (status codes) for an origin group.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub items: ::std::vec::Vec<i32>,
 }
 impl StatusCodes {
     /// <p>The number of status codes.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The items (status codes) for an origin group.</p>
-    pub fn items(&self) -> ::std::option::Option<&[i32]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[i32] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl StatusCodes {
@@ -35,6 +36,7 @@ pub struct StatusCodesBuilder {
 }
 impl StatusCodesBuilder {
     /// <p>The number of status codes.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl StatusCodesBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`StatusCodes`](crate::types::StatusCodes).
-    pub fn build(self) -> crate::types::StatusCodes {
-        crate::types::StatusCodes {
-            quantity: self.quantity,
-            items: self.items,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::StatusCodesBuilder::quantity)
+    /// - [`items`](crate::types::builders::StatusCodesBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatusCodes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatusCodes {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building StatusCodes",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building StatusCodes",
+                )
+            })?,
+        })
     }
 }

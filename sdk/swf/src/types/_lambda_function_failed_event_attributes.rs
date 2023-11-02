@@ -49,6 +49,7 @@ pub struct LambdaFunctionFailedEventAttributesBuilder {
 }
 impl LambdaFunctionFailedEventAttributesBuilder {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
         self.scheduled_event_id = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl LambdaFunctionFailedEventAttributesBuilder {
         &self.scheduled_event_id
     }
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCustomEntityType`](crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeFluentBuilder::set_name): <p>The name of the custom pattern that you want to retrieve.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the custom pattern that you want to retrieve.</p><br>
     /// - On success, responds with [`GetCustomEntityTypeOutput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_custom_entity_type::GetCustomEntityTypeOutput::name): <p>The name of the custom pattern that you retrieved.</p>
     ///   - [`regex_string(Option<String>)`](crate::operation::get_custom_entity_type::GetCustomEntityTypeOutput::regex_string): <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>

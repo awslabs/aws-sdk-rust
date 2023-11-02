@@ -27,6 +27,7 @@ pub struct DetachStaticIpInputBuilder {
 }
 impl DetachStaticIpInputBuilder {
     /// <p>The name of the static IP to detach from the instance.</p>
+    /// This field is required.
     pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_ip_name = ::std::option::Option::Some(input.into());
         self

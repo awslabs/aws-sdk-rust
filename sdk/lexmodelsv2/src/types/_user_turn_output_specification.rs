@@ -17,8 +17,10 @@ impl UserTurnOutputSpecification {
         self.intent.as_ref()
     }
     /// <p>The contexts that are active in the turn.</p>
-    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
-        self.active_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
+    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
+        self.active_contexts.as_deref().unwrap_or_default()
     }
     /// <p>The transcript that is output for the user turn by the test execution.</p>
     pub fn transcript(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct UserTurnOutputSpecificationBuilder {
 }
 impl UserTurnOutputSpecificationBuilder {
     /// <p>Contains information about the intent.</p>
+    /// This field is required.
     pub fn intent(mut self, input: crate::types::UserTurnIntentOutput) -> Self {
         self.intent = ::std::option::Option::Some(input);
         self

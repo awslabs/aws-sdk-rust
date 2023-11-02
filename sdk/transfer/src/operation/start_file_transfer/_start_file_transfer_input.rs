@@ -24,12 +24,16 @@ impl StartFileTransferInput {
     /// <p>One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> <note>
     /// <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.</p>
     /// </note>
-    pub fn send_file_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.send_file_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.send_file_paths.is_none()`.
+    pub fn send_file_paths(&self) -> &[::std::string::String] {
+        self.send_file_paths.as_deref().unwrap_or_default()
     }
     /// <p>One or more source paths for the partner's SFTP server. Each string represents a source file path for one inbound file transfer.</p>
-    pub fn retrieve_file_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.retrieve_file_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retrieve_file_paths.is_none()`.
+    pub fn retrieve_file_paths(&self) -> &[::std::string::String] {
+        self.retrieve_file_paths.as_deref().unwrap_or_default()
     }
     /// <p>For an inbound transfer, the <code>LocaDirectoryPath</code> specifies the destination for one or more files that are transferred from the partner's SFTP server.</p>
     pub fn local_directory_path(&self) -> ::std::option::Option<&str> {
@@ -59,6 +63,7 @@ pub struct StartFileTransferInputBuilder {
 }
 impl StartFileTransferInputBuilder {
     /// <p>The unique identifier for the connector.</p>
+    /// This field is required.
     pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_id = ::std::option::Option::Some(input.into());
         self

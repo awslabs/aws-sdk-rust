@@ -51,6 +51,7 @@ pub struct UpdatePipelineNotificationsInputBuilder {
 }
 impl UpdatePipelineNotificationsInputBuilder {
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl UpdatePipelineNotificationsInputBuilder {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn notifications(mut self, input: crate::types::Notifications) -> Self {
         self.notifications = ::std::option::Option::Some(input);
         self

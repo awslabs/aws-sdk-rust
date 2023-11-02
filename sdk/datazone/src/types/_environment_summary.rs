@@ -5,48 +5,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentSummary {
     /// <p>The identifier of the project in which the environment exists.</p>
-    pub project_id: ::std::option::Option<::std::string::String>,
+    pub project_id: ::std::string::String,
     /// <p>The identifier of the environment.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone domain in which the environment exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The Amazon DataZone user who created the environment.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The timestamp of when the environment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the environment was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the environment.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment profile with which the environment was created.</p>
-    pub environment_profile_id: ::std::option::Option<::std::string::String>,
+    pub environment_profile_id: ::std::string::String,
     /// <p>The identifier of the Amazon Web Services account in which an environment exists.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which an environment exists.</p>
     pub aws_account_region: ::std::option::Option<::std::string::String>,
     /// <p>The provider of the environment.</p>
-    pub provider: ::std::option::Option<::std::string::String>,
+    pub provider: ::std::string::String,
     /// <p>The status of the environment.</p>
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
 }
 impl EnvironmentSummary {
     /// <p>The identifier of the project in which the environment exists.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
-        self.project_id.as_deref()
+    pub fn project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.project_id.deref()
     }
     /// <p>The identifier of the environment.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The timestamp of when the environment was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -57,16 +60,18 @@ impl EnvironmentSummary {
         self.updated_at.as_ref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the environment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the environment profile with which the environment was created.</p>
-    pub fn environment_profile_id(&self) -> ::std::option::Option<&str> {
-        self.environment_profile_id.as_deref()
+    pub fn environment_profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_profile_id.deref()
     }
     /// <p>The identifier of the Amazon Web Services account in which an environment exists.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
@@ -77,8 +82,9 @@ impl EnvironmentSummary {
         self.aws_account_region.as_deref()
     }
     /// <p>The provider of the environment.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
-        self.provider.as_deref()
+    pub fn provider(&self) -> &str {
+        use std::ops::Deref;
+        self.provider.deref()
     }
     /// <p>The status of the environment.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
@@ -131,6 +137,7 @@ pub struct EnvironmentSummaryBuilder {
 }
 impl EnvironmentSummaryBuilder {
     /// <p>The identifier of the project in which the environment exists.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +166,7 @@ impl EnvironmentSummaryBuilder {
         &self.id
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +181,7 @@ impl EnvironmentSummaryBuilder {
         &self.domain_id
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -215,6 +224,7 @@ impl EnvironmentSummaryBuilder {
         &self.updated_at
     }
     /// <p>The name of the environment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -243,6 +253,7 @@ impl EnvironmentSummaryBuilder {
         &self.description
     }
     /// <p>The identifier of the environment profile with which the environment was created.</p>
+    /// This field is required.
     pub fn environment_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -285,6 +296,7 @@ impl EnvironmentSummaryBuilder {
         &self.aws_account_region
     }
     /// <p>The provider of the environment.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -313,22 +325,59 @@ impl EnvironmentSummaryBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
-    pub fn build(self) -> crate::types::EnvironmentSummary {
-        crate::types::EnvironmentSummary {
-            project_id: self.project_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project_id`](crate::types::builders::EnvironmentSummaryBuilder::project_id)
+    /// - [`domain_id`](crate::types::builders::EnvironmentSummaryBuilder::domain_id)
+    /// - [`created_by`](crate::types::builders::EnvironmentSummaryBuilder::created_by)
+    /// - [`name`](crate::types::builders::EnvironmentSummaryBuilder::name)
+    /// - [`environment_profile_id`](crate::types::builders::EnvironmentSummaryBuilder::environment_profile_id)
+    /// - [`provider`](crate::types::builders::EnvironmentSummaryBuilder::provider)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentSummary {
+            project_id: self.project_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_id",
+                    "project_id was not specified but it is required when building EnvironmentSummary",
+                )
+            })?,
             id: self.id,
-            domain_id: self.domain_id,
-            created_by: self.created_by,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building EnvironmentSummary",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building EnvironmentSummary",
+                )
+            })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EnvironmentSummary",
+                )
+            })?,
             description: self.description,
-            environment_profile_id: self.environment_profile_id,
+            environment_profile_id: self.environment_profile_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_profile_id",
+                    "environment_profile_id was not specified but it is required when building EnvironmentSummary",
+                )
+            })?,
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
-            provider: self.provider,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building EnvironmentSummary",
+                )
+            })?,
             status: self.status,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for EnvironmentSummaryBuilder {

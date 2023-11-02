@@ -82,7 +82,7 @@ pub fn de_create_model_explainability_job_definition_http_response(
         )
         .map_err(crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_model_explainability_job_definition_output_correct_errors(output).build()
     })
 }
 

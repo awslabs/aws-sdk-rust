@@ -69,7 +69,7 @@ pub fn de_update_monitoring_alert_http_response(
         output = crate::protocol_serde::shape_update_monitoring_alert::de_update_monitoring_alert(_response_body, output)
             .map_err(crate::operation::update_monitoring_alert::UpdateMonitoringAlertError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_monitoring_alert_output_correct_errors(output).build()
     })
 }
 

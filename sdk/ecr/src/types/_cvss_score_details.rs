@@ -17,8 +17,10 @@ pub struct CvssScoreDetails {
 }
 impl CvssScoreDetails {
     /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
-    pub fn adjustments(&self) -> ::std::option::Option<&[crate::types::CvssScoreAdjustment]> {
-        self.adjustments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adjustments.is_none()`.
+    pub fn adjustments(&self) -> &[crate::types::CvssScoreAdjustment] {
+        self.adjustments.as_deref().unwrap_or_default()
     }
     /// <p>The CVSS score.</p>
     pub fn score(&self) -> f64 {

@@ -30,6 +30,7 @@ pub struct DisassociateMembershipInputBuilder {
 impl DisassociateMembershipInputBuilder {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self

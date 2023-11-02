@@ -56,6 +56,7 @@ impl DecreaseStreamRetentionPeriodInputBuilder {
         &self.stream_name
     }
     /// <p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>
+    /// This field is required.
     pub fn retention_period_hours(mut self, input: i32) -> Self {
         self.retention_period_hours = ::std::option::Option::Some(input);
         self

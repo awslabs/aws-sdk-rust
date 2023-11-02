@@ -6,6 +6,7 @@
 //! APIs needed to configure endpoint resolution for clients.
 
 use crate::client::orchestrator::Future;
+use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::type_erasure::TypeErasedBox;
@@ -60,3 +61,5 @@ impl EndpointResolver for SharedEndpointResolver {
         self.0.resolve_endpoint(params)
     }
 }
+
+impl_shared_conversions!(convert SharedEndpointResolver from EndpointResolver using SharedEndpointResolver::new);

@@ -3,26 +3,26 @@ pub fn ser_efs_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EfsVolumeConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_system_id {
-        object.key("fileSystemId").string(var_1.as_str());
+    {
+        object.key("fileSystemId").string(input.file_system_id.as_str());
     }
-    if let Some(var_2) = &input.root_directory {
-        object.key("rootDirectory").string(var_2.as_str());
+    if let Some(var_1) = &input.root_directory {
+        object.key("rootDirectory").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.transit_encryption {
-        object.key("transitEncryption").string(var_3.as_str());
+    if let Some(var_2) = &input.transit_encryption {
+        object.key("transitEncryption").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.transit_encryption_port {
+    if let Some(var_3) = &input.transit_encryption_port {
         object.key("transitEncryptionPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_5) = &input.authorization_config {
+    if let Some(var_4) = &input.authorization_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("authorizationConfig").start_object();
-        crate::protocol_serde::shape_efs_authorization_config::ser_efs_authorization_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("authorizationConfig").start_object();
+        crate::protocol_serde::shape_efs_authorization_config::ser_efs_authorization_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -85,7 +85,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::efs_volume_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

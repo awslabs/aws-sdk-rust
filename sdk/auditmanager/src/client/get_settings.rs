@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSettings`](crate::operation::get_settings::builders::GetSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attribute(SettingAttribute)`](crate::operation::get_settings::builders::GetSettingsFluentBuilder::attribute) / [`set_attribute(Option<SettingAttribute>)`](crate::operation::get_settings::builders::GetSettingsFluentBuilder::set_attribute): <p> The list of setting attribute enum values. </p>
+    ///   - [`attribute(SettingAttribute)`](crate::operation::get_settings::builders::GetSettingsFluentBuilder::attribute) / [`set_attribute(Option<SettingAttribute>)`](crate::operation::get_settings::builders::GetSettingsFluentBuilder::set_attribute):<br>required: **true**<br><p> The list of setting attribute enum values. </p><br>
     /// - On success, responds with [`GetSettingsOutput`](crate::operation::get_settings::GetSettingsOutput) with field(s):
     ///   - [`settings(Option<Settings>)`](crate::operation::get_settings::GetSettingsOutput::settings): <p> The settings object that holds all supported Audit Manager settings. </p>
     /// - On failure, responds with [`SdkError<GetSettingsError>`](crate::operation::get_settings::GetSettingsError)

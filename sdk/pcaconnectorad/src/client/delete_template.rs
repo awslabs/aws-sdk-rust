@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTemplate`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_arn(impl Into<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::set_template_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
+    ///   - [`template_arn(impl Into<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::set_template_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p><br>
     /// - On success, responds with [`DeleteTemplateOutput`](crate::operation::delete_template::DeleteTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteTemplateError>`](crate::operation::delete_template::DeleteTemplateError)
     pub fn delete_template(&self) -> crate::operation::delete_template::builders::DeleteTemplateFluentBuilder {

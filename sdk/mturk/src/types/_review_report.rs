@@ -11,12 +11,16 @@ pub struct ReviewReport {
 }
 impl ReviewReport {
     /// <p> A list of ReviewResults objects for each action specified in the Review Policy. </p>
-    pub fn review_results(&self) -> ::std::option::Option<&[crate::types::ReviewResultDetail]> {
-        self.review_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.review_results.is_none()`.
+    pub fn review_results(&self) -> &[crate::types::ReviewResultDetail] {
+        self.review_results.as_deref().unwrap_or_default()
     }
     /// <p> A list of ReviewAction objects for each action specified in the Review Policy. </p>
-    pub fn review_actions(&self) -> ::std::option::Option<&[crate::types::ReviewActionDetail]> {
-        self.review_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.review_actions.is_none()`.
+    pub fn review_actions(&self) -> &[crate::types::ReviewActionDetail] {
+        self.review_actions.as_deref().unwrap_or_default()
     }
 }
 impl ReviewReport {

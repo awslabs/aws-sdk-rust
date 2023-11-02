@@ -26,8 +26,10 @@ impl ListQuickConnectsInput {
         self.max_results
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn quick_connect_types(&self) -> ::std::option::Option<&[crate::types::QuickConnectType]> {
-        self.quick_connect_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quick_connect_types.is_none()`.
+    pub fn quick_connect_types(&self) -> &[crate::types::QuickConnectType] {
+        self.quick_connect_types.as_deref().unwrap_or_default()
     }
 }
 impl ListQuickConnectsInput {
@@ -48,6 +50,7 @@ pub struct ListQuickConnectsInputBuilder {
 }
 impl ListQuickConnectsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

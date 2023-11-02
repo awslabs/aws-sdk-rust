@@ -28,6 +28,7 @@ pub struct SectionLayoutConfigurationBuilder {
 }
 impl SectionLayoutConfigurationBuilder {
     /// <p>The free-form layout configuration of a section.</p>
+    /// This field is required.
     pub fn free_form_layout(mut self, input: crate::types::FreeFormSectionLayoutConfiguration) -> Self {
         self.free_form_layout = ::std::option::Option::Some(input);
         self

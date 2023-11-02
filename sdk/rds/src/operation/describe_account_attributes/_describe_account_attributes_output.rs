@@ -10,8 +10,10 @@ pub struct DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
-    pub fn account_quotas(&self) -> ::std::option::Option<&[crate::types::AccountQuota]> {
-        self.account_quotas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_quotas.is_none()`.
+    pub fn account_quotas(&self) -> &[crate::types::AccountQuota] {
+        self.account_quotas.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAccountAttributesOutput {

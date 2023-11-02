@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-    pub major_version: ::std::option::Option<::std::string::String>,
+    pub major_version: ::std::string::String,
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-    pub minor_version: ::std::option::Option<::std::string::String>,
+    pub minor_version: ::std::string::String,
     /// <p>A description of environment template version to update.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the environment template minor version to update.</p>
@@ -16,16 +16,19 @@ pub struct UpdateEnvironmentTemplateVersionInput {
 }
 impl UpdateEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-    pub fn major_version(&self) -> ::std::option::Option<&str> {
-        self.major_version.as_deref()
+    pub fn major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.major_version.deref()
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-    pub fn minor_version(&self) -> ::std::option::Option<&str> {
-        self.minor_version.as_deref()
+    pub fn minor_version(&self) -> &str {
+        use std::ops::Deref;
+        self.minor_version.deref()
     }
     /// <p>A description of environment template version to update.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -66,6 +69,7 @@ pub struct UpdateEnvironmentTemplateVersionInputBuilder {
 }
 impl UpdateEnvironmentTemplateVersionInputBuilder {
     /// <p>The name of the environment template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +84,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
+    /// This field is required.
     pub fn major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +99,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    /// This field is required.
     pub fn minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.minor_version = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +142,10 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentTemplateVersionInput`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder::template_name)
+    /// - [`major_version`](crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder::major_version)
+    /// - [`minor_version`](crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder::minor_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -144,9 +154,24 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput {
-                template_name: self.template_name,
-                major_version: self.major_version,
-                minor_version: self.minor_version,
+                template_name: self.template_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_name",
+                        "template_name was not specified but it is required when building UpdateEnvironmentTemplateVersionInput",
+                    )
+                })?,
+                major_version: self.major_version.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "major_version",
+                        "major_version was not specified but it is required when building UpdateEnvironmentTemplateVersionInput",
+                    )
+                })?,
+                minor_version: self.minor_version.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "minor_version",
+                        "minor_version was not specified but it is required when building UpdateEnvironmentTemplateVersionInput",
+                    )
+                })?,
                 description: self.description,
                 status: self.status,
             },

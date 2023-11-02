@@ -30,16 +30,22 @@ impl CreateDbClusterEndpointInput {
         self.endpoint_type.as_deref()
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.static_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_members.is_none()`.
+    pub fn static_members(&self) -> &[::std::string::String] {
+        self.static_members.as_deref().unwrap_or_default()
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_members.is_none()`.
+    pub fn excluded_members(&self) -> &[::std::string::String] {
+        self.excluded_members.as_deref().unwrap_or_default()
     }
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDbClusterEndpointInput {
@@ -62,6 +68,7 @@ pub struct CreateDbClusterEndpointInputBuilder {
 }
 impl CreateDbClusterEndpointInputBuilder {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +83,7 @@ impl CreateDbClusterEndpointInputBuilder {
         &self.db_cluster_identifier
     }
     /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +98,7 @@ impl CreateDbClusterEndpointInputBuilder {
         &self.db_cluster_endpoint_identifier
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    /// This field is required.
     pub fn endpoint_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input.into());
         self

@@ -57,6 +57,7 @@ impl ModifyVpcEndpointServicePayerResponsibilityInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the service.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl ModifyVpcEndpointServicePayerResponsibilityInputBuilder {
         &self.service_id
     }
     /// <p>The entity that is responsible for the endpoint costs. The default is the endpoint owner. If you set the payer responsibility to the service owner, you cannot set it back to the endpoint owner.</p>
+    /// This field is required.
     pub fn payer_responsibility(mut self, input: crate::types::PayerResponsibility) -> Self {
         self.payer_responsibility = ::std::option::Option::Some(input);
         self

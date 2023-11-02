@@ -21,7 +21,7 @@ pub struct ScheduleActivityTaskDecisionAttributes {
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
     /// <p> The <code>activityId</code> of the activity task.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub activity_id: ::std::option::Option<::std::string::String>,
+    pub activity_id: ::std::string::String,
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The input provided to the activity task.</p>
@@ -60,8 +60,9 @@ impl ScheduleActivityTaskDecisionAttributes {
     }
     /// <p> The <code>activityId</code> of the activity task.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn activity_id(&self) -> ::std::option::Option<&str> {
-        self.activity_id.as_deref()
+    pub fn activity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.activity_id.deref()
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
     pub fn control(&self) -> ::std::option::Option<&str> {
@@ -134,6 +135,7 @@ pub struct ScheduleActivityTaskDecisionAttributesBuilder {
 }
 impl ScheduleActivityTaskDecisionAttributesBuilder {
     /// <p> The type of the activity task to schedule.</p>
+    /// This field is required.
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.activity_type = ::std::option::Option::Some(input);
         self
@@ -149,6 +151,7 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
     }
     /// <p> The <code>activityId</code> of the activity task.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_id = ::std::option::Option::Some(input.into());
         self
@@ -319,10 +322,19 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
         &self.heartbeat_timeout
     }
     /// Consumes the builder and constructs a [`ScheduleActivityTaskDecisionAttributes`](crate::types::ScheduleActivityTaskDecisionAttributes).
-    pub fn build(self) -> crate::types::ScheduleActivityTaskDecisionAttributes {
-        crate::types::ScheduleActivityTaskDecisionAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`activity_id`](crate::types::builders::ScheduleActivityTaskDecisionAttributesBuilder::activity_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ScheduleActivityTaskDecisionAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduleActivityTaskDecisionAttributes {
             activity_type: self.activity_type,
-            activity_id: self.activity_id,
+            activity_id: self.activity_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "activity_id",
+                    "activity_id was not specified but it is required when building ScheduleActivityTaskDecisionAttributes",
+                )
+            })?,
             control: self.control,
             input: self.input,
             schedule_to_close_timeout: self.schedule_to_close_timeout,
@@ -331,6 +343,6 @@ impl ScheduleActivityTaskDecisionAttributesBuilder {
             schedule_to_start_timeout: self.schedule_to_start_timeout,
             start_to_close_timeout: self.start_to_close_timeout,
             heartbeat_timeout: self.heartbeat_timeout,
-        }
+        })
     }
 }

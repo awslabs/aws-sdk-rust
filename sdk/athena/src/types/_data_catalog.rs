@@ -7,11 +7,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCatalog {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An optional description of the data catalog.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
-    pub r#type: ::std::option::Option<crate::types::DataCatalogType>,
+    pub r#type: crate::types::DataCatalogType,
     /// <p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
     /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
@@ -30,16 +30,17 @@ pub struct DataCatalog {
 }
 impl DataCatalog {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An optional description of the data catalog.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCatalogType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DataCatalogType {
+        &self.r#type
     }
     /// <p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
@@ -77,6 +78,7 @@ pub struct DataCatalogBuilder {
 }
 impl DataCatalogBuilder {
     /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl DataCatalogBuilder {
         &self.description
     }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -178,12 +181,25 @@ impl DataCatalogBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`DataCatalog`](crate::types::DataCatalog).
-    pub fn build(self) -> crate::types::DataCatalog {
-        crate::types::DataCatalog {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DataCatalogBuilder::name)
+    /// - [`r#type`](crate::types::builders::DataCatalogBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataCatalog, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataCatalog {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DataCatalog",
+                )
+            })?,
             description: self.description,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DataCatalog",
+                )
+            })?,
             parameters: self.parameters,
-        }
+        })
     }
 }

@@ -18,8 +18,10 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
-    pub fn repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
+    pub fn repository_names(&self) -> &[::std::string::String] {
+        self.repository_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
@@ -38,6 +40,7 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
     /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self

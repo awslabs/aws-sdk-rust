@@ -23,8 +23,10 @@ impl ClusterParameterGroupStatus {
     }
     /// <p>The list of parameter statuses.</p>
     /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn cluster_parameter_status_list(&self) -> ::std::option::Option<&[crate::types::ClusterParameterStatus]> {
-        self.cluster_parameter_status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_parameter_status_list.is_none()`.
+    pub fn cluster_parameter_status_list(&self) -> &[crate::types::ClusterParameterStatus] {
+        self.cluster_parameter_status_list.as_deref().unwrap_or_default()
     }
 }
 impl ClusterParameterGroupStatus {

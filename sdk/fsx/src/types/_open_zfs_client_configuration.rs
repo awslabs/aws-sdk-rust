@@ -23,8 +23,10 @@ impl OpenZfsClientConfiguration {
     /// <li> <p> <code>crossmnt</code> is used by default. If you don't specify <code>crossmnt</code> when changing the client configuration, you won't be able to see or access snapshots in your file system's snapshot directory.</p> </li>
     /// <li> <p> <code>sync</code> is used by default. If you instead specify <code>async</code>, the system acknowledges writes before writing to disk. If the system crashes before the writes are finished, you lose the unwritten data. </p> </li>
     /// </ul>
-    pub fn options(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[::std::string::String] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl OpenZfsClientConfiguration {
@@ -43,6 +45,7 @@ pub struct OpenZfsClientConfigurationBuilder {
 }
 impl OpenZfsClientConfigurationBuilder {
     /// <p>A value that specifies who can mount the file system. You can provide a wildcard character (<code>*</code>), an IP address (<code>0.0.0.0</code>), or a CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the wildcard character when specifying the client. </p>
+    /// This field is required.
     pub fn clients(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.clients = ::std::option::Option::Some(input.into());
         self

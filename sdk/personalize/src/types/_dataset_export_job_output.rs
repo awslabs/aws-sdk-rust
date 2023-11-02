@@ -28,6 +28,7 @@ pub struct DatasetExportJobOutputBuilder {
 }
 impl DatasetExportJobOutputBuilder {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    /// This field is required.
     pub fn s3_data_destination(mut self, input: crate::types::S3DataConfig) -> Self {
         self.s3_data_destination = ::std::option::Option::Some(input);
         self

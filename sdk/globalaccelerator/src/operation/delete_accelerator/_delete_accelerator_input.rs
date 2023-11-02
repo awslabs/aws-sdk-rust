@@ -27,6 +27,7 @@ pub struct DeleteAcceleratorInputBuilder {
 }
 impl DeleteAcceleratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
+    /// This field is required.
     pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self

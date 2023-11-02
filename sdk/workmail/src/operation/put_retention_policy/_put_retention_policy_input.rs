@@ -32,8 +32,10 @@ impl PutRetentionPolicyInput {
         self.description.as_deref()
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn folder_configurations(&self) -> ::std::option::Option<&[crate::types::FolderConfiguration]> {
-        self.folder_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_configurations.is_none()`.
+    pub fn folder_configurations(&self) -> &[crate::types::FolderConfiguration] {
+        self.folder_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for PutRetentionPolicyInput {
@@ -66,6 +68,7 @@ pub struct PutRetentionPolicyInputBuilder {
 }
 impl PutRetentionPolicyInputBuilder {
     /// <p>The organization ID.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +97,7 @@ impl PutRetentionPolicyInputBuilder {
         &self.id
     }
     /// <p>The retention policy name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileConfiguration {
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
-    pub folders: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub folders: ::std::vec::Vec<::std::string::String>,
     /// <p>Restrictions for what files should be pulled from the source.</p>
     pub filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl FileConfiguration {
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
-    pub fn folders(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.folders.as_deref()
+    pub fn folders(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.folders.deref()
     }
     /// <p>Restrictions for what files should be pulled from the source.</p>
     pub fn filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
@@ -78,10 +79,17 @@ impl FileConfigurationBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`FileConfiguration`](crate::types::FileConfiguration).
-    pub fn build(self) -> crate::types::FileConfiguration {
-        crate::types::FileConfiguration {
-            folders: self.folders,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`folders`](crate::types::builders::FileConfigurationBuilder::folders)
+    pub fn build(self) -> ::std::result::Result<crate::types::FileConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FileConfiguration {
+            folders: self.folders.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "folders",
+                    "folders was not specified but it is required when building FileConfiguration",
+                )
+            })?,
             filters: self.filters,
-        }
+        })
     }
 }

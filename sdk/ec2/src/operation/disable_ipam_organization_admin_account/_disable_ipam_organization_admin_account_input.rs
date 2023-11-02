@@ -48,6 +48,7 @@ impl DisableIpamOrganizationAdminAccountInputBuilder {
         &self.dry_run
     }
     /// <p>The Organizations member account ID that you want to disable as IPAM account.</p>
+    /// This field is required.
     pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self

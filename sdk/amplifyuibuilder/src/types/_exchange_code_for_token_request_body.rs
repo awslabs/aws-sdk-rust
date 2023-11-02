@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExchangeCodeForTokenRequestBody {
     /// <p>The access code to send in the request.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     /// <p>The location of the application that will receive the access code.</p>
-    pub redirect_uri: ::std::option::Option<::std::string::String>,
+    pub redirect_uri: ::std::string::String,
     /// <p>The ID of the client to request the token from.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl ExchangeCodeForTokenRequestBody {
     /// <p>The access code to send in the request.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
     /// <p>The location of the application that will receive the access code.</p>
-    pub fn redirect_uri(&self) -> ::std::option::Option<&str> {
-        self.redirect_uri.as_deref()
+    pub fn redirect_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.redirect_uri.deref()
     }
     /// <p>The ID of the client to request the token from.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
@@ -51,6 +53,7 @@ pub struct ExchangeCodeForTokenRequestBodyBuilder {
 }
 impl ExchangeCodeForTokenRequestBodyBuilder {
     /// <p>The access code to send in the request.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
         &self.code
     }
     /// <p>The location of the application that will receive the access code.</p>
+    /// This field is required.
     pub fn redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.redirect_uri = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +97,25 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
         &self.client_id
     }
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenRequestBody`](crate::types::ExchangeCodeForTokenRequestBody).
-    pub fn build(self) -> crate::types::ExchangeCodeForTokenRequestBody {
-        crate::types::ExchangeCodeForTokenRequestBody {
-            code: self.code,
-            redirect_uri: self.redirect_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::ExchangeCodeForTokenRequestBodyBuilder::code)
+    /// - [`redirect_uri`](crate::types::builders::ExchangeCodeForTokenRequestBodyBuilder::redirect_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExchangeCodeForTokenRequestBody, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExchangeCodeForTokenRequestBody {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building ExchangeCodeForTokenRequestBody",
+                )
+            })?,
+            redirect_uri: self.redirect_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "redirect_uri",
+                    "redirect_uri was not specified but it is required when building ExchangeCodeForTokenRequestBody",
+                )
+            })?,
             client_id: self.client_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ExchangeCodeForTokenRequestBodyBuilder {

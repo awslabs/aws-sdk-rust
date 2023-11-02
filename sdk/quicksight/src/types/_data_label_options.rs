@@ -39,8 +39,10 @@ impl DataLabelOptions {
         self.measure_label_visibility.as_ref()
     }
     /// <p>The option that determines the data label type.</p>
-    pub fn data_label_types(&self) -> ::std::option::Option<&[crate::types::DataLabelType]> {
-        self.data_label_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_label_types.is_none()`.
+    pub fn data_label_types(&self) -> &[crate::types::DataLabelType] {
+        self.data_label_types.as_deref().unwrap_or_default()
     }
     /// <p>Determines the position of the data labels.</p>
     pub fn position(&self) -> ::std::option::Option<&crate::types::DataLabelPosition> {

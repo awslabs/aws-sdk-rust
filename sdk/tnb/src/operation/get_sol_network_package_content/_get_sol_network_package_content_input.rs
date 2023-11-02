@@ -34,6 +34,7 @@ pub struct GetSolNetworkPackageContentInputBuilder {
 }
 impl GetSolNetworkPackageContentInputBuilder {
     /// <p>ID of the network service descriptor in the network package.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSolNetworkPackageContentInputBuilder {
         &self.nsd_info_id
     }
     /// <p>The format of the package you want to download from the network package.</p>
+    /// This field is required.
     pub fn accept(mut self, input: crate::types::PackageContentType) -> Self {
         self.accept = ::std::option::Option::Some(input);
         self

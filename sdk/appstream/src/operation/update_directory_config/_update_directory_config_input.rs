@@ -18,8 +18,10 @@ impl UpdateDirectoryConfigInput {
         self.directory_name.as_deref()
     }
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
-    pub fn organizational_unit_distinguished_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_unit_distinguished_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_distinguished_names.is_none()`.
+    pub fn organizational_unit_distinguished_names(&self) -> &[::std::string::String] {
+        self.organizational_unit_distinguished_names.as_deref().unwrap_or_default()
     }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     pub fn service_account_credentials(&self) -> ::std::option::Option<&crate::types::ServiceAccountCredentials> {
@@ -48,6 +50,7 @@ pub struct UpdateDirectoryConfigInputBuilder {
 }
 impl UpdateDirectoryConfigInputBuilder {
     /// <p>The name of the Directory Config object.</p>
+    /// This field is required.
     pub fn directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_name = ::std::option::Option::Some(input.into());
         self

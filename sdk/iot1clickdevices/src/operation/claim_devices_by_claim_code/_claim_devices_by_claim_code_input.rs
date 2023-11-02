@@ -27,6 +27,7 @@ pub struct ClaimDevicesByClaimCodeInputBuilder {
 }
 impl ClaimDevicesByClaimCodeInputBuilder {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    /// This field is required.
     pub fn claim_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.claim_code = ::std::option::Option::Some(input.into());
         self

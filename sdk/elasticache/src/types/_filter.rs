@@ -15,8 +15,10 @@ impl Filter {
         self.name.as_deref()
     }
     /// <p>The property values to filter on. For example, "user-123".</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl Filter {
@@ -35,6 +37,7 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The property being filtered. For example, UserId.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

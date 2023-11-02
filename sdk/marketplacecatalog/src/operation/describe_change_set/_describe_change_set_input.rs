@@ -34,6 +34,7 @@ pub struct DescribeChangeSetInputBuilder {
 }
 impl DescribeChangeSetInputBuilder {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeChangeSetInputBuilder {
         &self.catalog
     }
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
+    /// This field is required.
     pub fn change_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_id = ::std::option::Option::Some(input.into());
         self

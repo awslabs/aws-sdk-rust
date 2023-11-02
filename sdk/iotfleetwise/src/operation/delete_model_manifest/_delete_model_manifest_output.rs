@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteModelManifestOutput {
     /// <p>The name of the deleted model manifest.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the deleted model manifest.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteModelManifestOutput {
     /// <p>The name of the deleted model manifest.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted model manifest.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteModelManifestOutput {
@@ -41,6 +43,7 @@ pub struct DeleteModelManifestOutputBuilder {
 }
 impl DeleteModelManifestOutputBuilder {
     /// <p>The name of the deleted model manifest.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DeleteModelManifestOutputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted model manifest.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,27 @@ impl DeleteModelManifestOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteModelManifestOutput`](crate::operation::delete_model_manifest::DeleteModelManifestOutput).
-    pub fn build(self) -> crate::operation::delete_model_manifest::DeleteModelManifestOutput {
-        crate::operation::delete_model_manifest::DeleteModelManifestOutput {
-            name: self.name,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder::name)
+    /// - [`arn`](crate::operation::delete_model_manifest::builders::DeleteModelManifestOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_model_manifest::DeleteModelManifestOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_model_manifest::DeleteModelManifestOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteModelManifestOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DeleteModelManifestOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

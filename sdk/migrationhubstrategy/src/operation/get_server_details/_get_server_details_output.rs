@@ -21,8 +21,10 @@ impl GetServerDetailsOutput {
         self.server_detail.as_ref()
     }
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    pub fn associated_applications(&self) -> ::std::option::Option<&[crate::types::AssociatedApplication]> {
-        self.associated_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_applications.is_none()`.
+    pub fn associated_applications(&self) -> &[crate::types::AssociatedApplication] {
+        self.associated_applications.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetServerDetailsOutput {

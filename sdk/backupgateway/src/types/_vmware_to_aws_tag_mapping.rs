@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VmwareToAwsTagMapping {
     /// <p>The is the category of VMware.</p>
-    pub vmware_category: ::std::option::Option<::std::string::String>,
+    pub vmware_category: ::std::string::String,
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub vmware_tag_name: ::std::option::Option<::std::string::String>,
+    pub vmware_tag_name: ::std::string::String,
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
-    pub aws_tag_key: ::std::option::Option<::std::string::String>,
+    pub aws_tag_key: ::std::string::String,
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-    pub aws_tag_value: ::std::option::Option<::std::string::String>,
+    pub aws_tag_value: ::std::string::String,
 }
 impl VmwareToAwsTagMapping {
     /// <p>The is the category of VMware.</p>
-    pub fn vmware_category(&self) -> ::std::option::Option<&str> {
-        self.vmware_category.as_deref()
+    pub fn vmware_category(&self) -> &str {
+        use std::ops::Deref;
+        self.vmware_category.deref()
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn vmware_tag_name(&self) -> ::std::option::Option<&str> {
-        self.vmware_tag_name.as_deref()
+    pub fn vmware_tag_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vmware_tag_name.deref()
     }
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn aws_tag_key(&self) -> ::std::option::Option<&str> {
-        self.aws_tag_key.as_deref()
+    pub fn aws_tag_key(&self) -> &str {
+        use std::ops::Deref;
+        self.aws_tag_key.deref()
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn aws_tag_value(&self) -> ::std::option::Option<&str> {
-        self.aws_tag_value.as_deref()
+    pub fn aws_tag_value(&self) -> &str {
+        use std::ops::Deref;
+        self.aws_tag_value.deref()
     }
 }
 impl VmwareToAwsTagMapping {
@@ -49,6 +53,7 @@ pub struct VmwareToAwsTagMappingBuilder {
 }
 impl VmwareToAwsTagMappingBuilder {
     /// <p>The is the category of VMware.</p>
+    /// This field is required.
     pub fn vmware_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vmware_category = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl VmwareToAwsTagMappingBuilder {
         &self.vmware_category
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
+    /// This field is required.
     pub fn vmware_tag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vmware_tag_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl VmwareToAwsTagMappingBuilder {
         &self.vmware_tag_name
     }
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
+    /// This field is required.
     pub fn aws_tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_tag_key = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl VmwareToAwsTagMappingBuilder {
         &self.aws_tag_key
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
+    /// This field is required.
     pub fn aws_tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_tag_value = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl VmwareToAwsTagMappingBuilder {
         &self.aws_tag_value
     }
     /// Consumes the builder and constructs a [`VmwareToAwsTagMapping`](crate::types::VmwareToAwsTagMapping).
-    pub fn build(self) -> crate::types::VmwareToAwsTagMapping {
-        crate::types::VmwareToAwsTagMapping {
-            vmware_category: self.vmware_category,
-            vmware_tag_name: self.vmware_tag_name,
-            aws_tag_key: self.aws_tag_key,
-            aws_tag_value: self.aws_tag_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vmware_category`](crate::types::builders::VmwareToAwsTagMappingBuilder::vmware_category)
+    /// - [`vmware_tag_name`](crate::types::builders::VmwareToAwsTagMappingBuilder::vmware_tag_name)
+    /// - [`aws_tag_key`](crate::types::builders::VmwareToAwsTagMappingBuilder::aws_tag_key)
+    /// - [`aws_tag_value`](crate::types::builders::VmwareToAwsTagMappingBuilder::aws_tag_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::VmwareToAwsTagMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VmwareToAwsTagMapping {
+            vmware_category: self.vmware_category.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vmware_category",
+                    "vmware_category was not specified but it is required when building VmwareToAwsTagMapping",
+                )
+            })?,
+            vmware_tag_name: self.vmware_tag_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vmware_tag_name",
+                    "vmware_tag_name was not specified but it is required when building VmwareToAwsTagMapping",
+                )
+            })?,
+            aws_tag_key: self.aws_tag_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aws_tag_key",
+                    "aws_tag_key was not specified but it is required when building VmwareToAwsTagMapping",
+                )
+            })?,
+            aws_tag_value: self.aws_tag_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aws_tag_value",
+                    "aws_tag_value was not specified but it is required when building VmwareToAwsTagMapping",
+                )
+            })?,
+        })
     }
 }

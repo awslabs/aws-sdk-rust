@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-    pub name: ::std::option::Option<crate::types::ListNotificationRulesFilterName>,
+    pub name: crate::types::ListNotificationRulesFilterName,
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ListNotificationRulesFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ListNotificationRulesFilterName {
+        &self.name
     }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ListNotificationRulesFilter {
@@ -35,6 +36,7 @@ pub struct ListNotificationRulesFilterBuilder {
 }
 impl ListNotificationRulesFilterBuilder {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ListNotificationRulesFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl ListNotificationRulesFilterBuilder {
         &self.name
     }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl ListNotificationRulesFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ListNotificationRulesFilter`](crate::types::ListNotificationRulesFilter).
-    pub fn build(self) -> crate::types::ListNotificationRulesFilter {
-        crate::types::ListNotificationRulesFilter {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ListNotificationRulesFilterBuilder::name)
+    /// - [`value`](crate::types::builders::ListNotificationRulesFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListNotificationRulesFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListNotificationRulesFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ListNotificationRulesFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ListNotificationRulesFilter",
+                )
+            })?,
+        })
     }
 }

@@ -7,7 +7,7 @@ pub struct ImportReferenceSourceItem {
     /// <p>The source file's location in Amazon S3.</p>
     pub source_file: ::std::option::Option<::std::string::String>,
     /// <p>The source's status.</p>
-    pub status: ::std::option::Option<crate::types::ReferenceImportJobItemStatus>,
+    pub status: crate::types::ReferenceImportJobItemStatus,
     /// <p>The source's status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The source's name.</p>
@@ -23,8 +23,8 @@ impl ImportReferenceSourceItem {
         self.source_file.as_deref()
     }
     /// <p>The source's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceImportJobItemStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReferenceImportJobItemStatus {
+        &self.status
     }
     /// <p>The source's status message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -77,6 +77,7 @@ impl ImportReferenceSourceItemBuilder {
         &self.source_file
     }
     /// <p>The source's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReferenceImportJobItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -153,14 +154,21 @@ impl ImportReferenceSourceItemBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportReferenceSourceItem`](crate::types::ImportReferenceSourceItem).
-    pub fn build(self) -> crate::types::ImportReferenceSourceItem {
-        crate::types::ImportReferenceSourceItem {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ImportReferenceSourceItemBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportReferenceSourceItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportReferenceSourceItem {
             source_file: self.source_file,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ImportReferenceSourceItem",
+                )
+            })?,
             status_message: self.status_message,
             name: self.name,
             description: self.description,
             tags: self.tags,
-        }
+        })
     }
 }

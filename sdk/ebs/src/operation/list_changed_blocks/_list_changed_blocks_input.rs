@@ -95,6 +95,7 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The ID of the second snapshot to use for the comparison.</p> <important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
+    /// This field is required.
     pub fn second_snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.second_snapshot_id = ::std::option::Option::Some(input.into());
         self

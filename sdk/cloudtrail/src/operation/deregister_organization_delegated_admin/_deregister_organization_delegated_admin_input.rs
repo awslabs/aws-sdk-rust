@@ -28,6 +28,7 @@ pub struct DeregisterOrganizationDelegatedAdminInputBuilder {
 }
 impl DeregisterOrganizationDelegatedAdminInputBuilder {
     /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
+    /// This field is required.
     pub fn delegated_admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self

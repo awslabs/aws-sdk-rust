@@ -48,6 +48,7 @@ pub struct UpdateWorkGroupInputBuilder {
 }
 impl UpdateWorkGroupInputBuilder {
     /// <p>The specified workgroup that will be updated.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self

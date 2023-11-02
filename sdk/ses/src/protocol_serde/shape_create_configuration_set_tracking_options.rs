@@ -34,8 +34,8 @@ pub fn de_create_configuration_set_tracking_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidTrackingOptions" => crate::operation::create_configuration_set_tracking_options::CreateConfigurationSetTrackingOptionsError::InvalidTrackingOptionsException({
@@ -50,8 +50,8 @@ pub fn de_create_configuration_set_tracking_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TrackingOptionsAlreadyExistsException" => crate::operation::create_configuration_set_tracking_options::CreateConfigurationSetTrackingOptionsError::TrackingOptionsAlreadyExistsException({
@@ -66,8 +66,8 @@ pub fn de_create_configuration_set_tracking_options_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::create_configuration_set_tracking_options::CreateConfigurationSetTrackingOptionsError::generic(generic)

@@ -83,8 +83,10 @@ impl OpenZfsFileSystemConfiguration {
         self.endpoint_ip_address_range.as_deref()
     }
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
-    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_table_ids.is_none()`.
+    pub fn route_table_ids(&self) -> &[::std::string::String] {
+        self.route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IP address of the endpoint that is used to access data or to manage the file system.</p>
     pub fn endpoint_ip_address(&self) -> ::std::option::Option<&str> {

@@ -22,8 +22,10 @@ impl UpdateStreamInput {
         self.description.as_deref()
     }
     /// <p>The files associated with the stream.</p>
-    pub fn files(&self) -> ::std::option::Option<&[crate::types::StreamFile]> {
-        self.files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
+    pub fn files(&self) -> &[crate::types::StreamFile] {
+        self.files.as_deref().unwrap_or_default()
     }
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct UpdateStreamInputBuilder {
 }
 impl UpdateStreamInputBuilder {
     /// <p>The stream ID.</p>
+    /// This field is required.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
         self

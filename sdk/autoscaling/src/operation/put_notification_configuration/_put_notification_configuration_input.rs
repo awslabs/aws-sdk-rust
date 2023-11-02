@@ -20,8 +20,10 @@ impl PutNotificationConfigurationInput {
         self.topic_arn.as_deref()
     }
     /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    pub fn notification_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_types.is_none()`.
+    pub fn notification_types(&self) -> &[::std::string::String] {
+        self.notification_types.as_deref().unwrap_or_default()
     }
 }
 impl PutNotificationConfigurationInput {
@@ -41,6 +43,7 @@ pub struct PutNotificationConfigurationInputBuilder {
 }
 impl PutNotificationConfigurationInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl PutNotificationConfigurationInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self

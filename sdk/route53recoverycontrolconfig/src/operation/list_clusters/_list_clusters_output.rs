@@ -11,8 +11,10 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>An array of the clusters in an account.</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[crate::types::Cluster]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[crate::types::Cluster] {
+        self.clusters.as_deref().unwrap_or_default()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

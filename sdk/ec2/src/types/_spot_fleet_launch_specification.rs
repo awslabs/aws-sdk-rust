@@ -53,16 +53,20 @@ pub struct SpotFleetLaunchSpecification {
 }
 impl SpotFleetLaunchSpecification {
     /// <p>The security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Deprecated.</p>
     pub fn addressing_type(&self) -> ::std::option::Option<&str> {
         self.addressing_type.as_deref()
     }
     /// <p>One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
@@ -96,8 +100,10 @@ impl SpotFleetLaunchSpecification {
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p> <note>
     /// <p> <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.</p>
     /// </note>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::InstanceNetworkInterfaceSpecification] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The placement information.</p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::SpotPlacement> {
@@ -127,8 +133,10 @@ impl SpotFleetLaunchSpecification {
         self.weighted_capacity
     }
     /// <p>The tags to apply during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::SpotFleetTagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::SpotFleetTagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p> <note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>

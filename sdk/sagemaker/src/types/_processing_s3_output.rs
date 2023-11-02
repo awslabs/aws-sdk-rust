@@ -42,6 +42,7 @@ pub struct ProcessingS3OutputBuilder {
 }
 impl ProcessingS3OutputBuilder {
     /// <p>A URI that identifies the Amazon S3 bucket where you want Amazon SageMaker to save the results of a processing job.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ProcessingS3OutputBuilder {
         &self.s3_uri
     }
     /// <p>The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created by the platform and exist when your container's entrypoint is invoked.</p>
+    /// This field is required.
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ProcessingS3OutputBuilder {
         &self.local_path
     }
     /// <p>Whether to upload the results of the processing job continuously or after the job completes.</p>
+    /// This field is required.
     pub fn s3_upload_mode(mut self, input: crate::types::ProcessingS3UploadMode) -> Self {
         self.s3_upload_mode = ::std::option::Option::Some(input);
         self

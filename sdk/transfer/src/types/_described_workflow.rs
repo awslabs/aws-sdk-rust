@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Specifies the text description for the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
@@ -19,28 +19,35 @@ pub struct DescribedWorkflow {
 }
 impl DescribedWorkflow {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Specifies the text description for the workflow.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::WorkflowStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::WorkflowStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    pub fn on_exception_steps(&self) -> ::std::option::Option<&[crate::types::WorkflowStep]> {
-        self.on_exception_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_exception_steps.is_none()`.
+    pub fn on_exception_steps(&self) -> &[crate::types::WorkflowStep] {
+        self.on_exception_steps.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(&self) -> ::std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl DescribedWorkflow {
@@ -63,6 +70,7 @@ pub struct DescribedWorkflowBuilder {
 }
 impl DescribedWorkflowBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the workflow.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -165,14 +173,21 @@ impl DescribedWorkflowBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedWorkflow`](crate::types::DescribedWorkflow).
-    pub fn build(self) -> crate::types::DescribedWorkflow {
-        crate::types::DescribedWorkflow {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedWorkflowBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedWorkflow, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedWorkflow {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedWorkflow",
+                )
+            })?,
             description: self.description,
             steps: self.steps,
             on_exception_steps: self.on_exception_steps,
             workflow_id: self.workflow_id,
             tags: self.tags,
-        }
+        })
     }
 }

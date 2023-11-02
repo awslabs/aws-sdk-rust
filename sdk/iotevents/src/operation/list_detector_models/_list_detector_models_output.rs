@@ -11,8 +11,10 @@ pub struct ListDetectorModelsOutput {
 }
 impl ListDetectorModelsOutput {
     /// <p>Summary information about the detector models.</p>
-    pub fn detector_model_summaries(&self) -> ::std::option::Option<&[crate::types::DetectorModelSummary]> {
-        self.detector_model_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detector_model_summaries.is_none()`.
+    pub fn detector_model_summaries(&self) -> &[crate::types::DetectorModelSummary] {
+        self.detector_model_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserProperty {
     /// <p>A key to be specified in <code>UserProperty</code>.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>A value to be specified in <code>UserProperty</code>.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl UserProperty {
     /// <p>A key to be specified in <code>UserProperty</code>.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>A value to be specified in <code>UserProperty</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl UserProperty {
@@ -35,6 +37,7 @@ pub struct UserPropertyBuilder {
 }
 impl UserPropertyBuilder {
     /// <p>A key to be specified in <code>UserProperty</code>.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl UserPropertyBuilder {
         &self.key
     }
     /// <p>A value to be specified in <code>UserProperty</code>.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl UserPropertyBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`UserProperty`](crate::types::UserProperty).
-    pub fn build(self) -> crate::types::UserProperty {
-        crate::types::UserProperty {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::UserPropertyBuilder::key)
+    /// - [`value`](crate::types::builders::UserPropertyBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserProperty, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserProperty {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building UserProperty",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building UserProperty",
+                )
+            })?,
+        })
     }
 }

@@ -28,11 +28,10 @@ pub fn de_get_asset_property_aggregates_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::InvalidRequestException({
@@ -43,11 +42,10 @@ pub fn de_get_asset_property_aggregates_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::ResourceNotFoundException({
@@ -58,11 +56,10 @@ pub fn de_get_asset_property_aggregates_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => {
@@ -75,11 +72,10 @@ pub fn de_get_asset_property_aggregates_http_error(
                         crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                             .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -91,11 +87,10 @@ pub fn de_get_asset_property_aggregates_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::generic(generic),
@@ -117,7 +112,9 @@ pub fn de_get_asset_property_aggregates_http_response(
         output = crate::protocol_serde::shape_get_asset_property_aggregates::de_get_asset_property_aggregates(_response_body, output)
             .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_asset_property_aggregates_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesError::unhandled)?
     })
 }
 

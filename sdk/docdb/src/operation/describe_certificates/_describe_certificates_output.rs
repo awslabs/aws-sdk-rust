@@ -11,8 +11,10 @@ pub struct DescribeCertificatesOutput {
 }
 impl DescribeCertificatesOutput {
     /// <p>A list of certificates for this Amazon Web Services account.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

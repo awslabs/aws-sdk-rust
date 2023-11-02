@@ -34,6 +34,7 @@ pub struct CreateThreatIntelSetOutputBuilder {
 }
 impl CreateThreatIntelSetOutputBuilder {
     /// <p>The ID of the ThreatIntelSet resource.</p>
+    /// This field is required.
     pub fn threat_intel_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_intel_set_id = ::std::option::Option::Some(input.into());
         self

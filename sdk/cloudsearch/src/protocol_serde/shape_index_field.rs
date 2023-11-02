@@ -6,72 +6,73 @@ pub fn ser_index_field(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IndexFieldName");
-    if let Some(var_2) = &input.index_field_name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.index_field_name);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("IndexFieldType");
-    if let Some(var_4) = &input.index_field_type {
-        scope_3.string(var_4.as_str());
+    let mut scope_2 = writer.prefix("IndexFieldType");
+    {
+        scope_2.string(input.index_field_type.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("IntOptions");
-    if let Some(var_6) = &input.int_options {
-        crate::protocol_serde::shape_int_options::ser_int_options(scope_5, var_6)?;
+    let mut scope_3 = writer.prefix("IntOptions");
+    if let Some(var_4) = &input.int_options {
+        crate::protocol_serde::shape_int_options::ser_int_options(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("DoubleOptions");
-    if let Some(var_8) = &input.double_options {
-        crate::protocol_serde::shape_double_options::ser_double_options(scope_7, var_8)?;
+    let mut scope_5 = writer.prefix("DoubleOptions");
+    if let Some(var_6) = &input.double_options {
+        crate::protocol_serde::shape_double_options::ser_double_options(scope_5, var_6)?;
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("LiteralOptions");
-    if let Some(var_10) = &input.literal_options {
-        crate::protocol_serde::shape_literal_options::ser_literal_options(scope_9, var_10)?;
+    let mut scope_7 = writer.prefix("LiteralOptions");
+    if let Some(var_8) = &input.literal_options {
+        crate::protocol_serde::shape_literal_options::ser_literal_options(scope_7, var_8)?;
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("TextOptions");
-    if let Some(var_12) = &input.text_options {
-        crate::protocol_serde::shape_text_options::ser_text_options(scope_11, var_12)?;
+    let mut scope_9 = writer.prefix("TextOptions");
+    if let Some(var_10) = &input.text_options {
+        crate::protocol_serde::shape_text_options::ser_text_options(scope_9, var_10)?;
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("DateOptions");
-    if let Some(var_14) = &input.date_options {
-        crate::protocol_serde::shape_date_options::ser_date_options(scope_13, var_14)?;
+    let mut scope_11 = writer.prefix("DateOptions");
+    if let Some(var_12) = &input.date_options {
+        crate::protocol_serde::shape_date_options::ser_date_options(scope_11, var_12)?;
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("LatLonOptions");
-    if let Some(var_16) = &input.lat_lon_options {
-        crate::protocol_serde::shape_lat_lon_options::ser_lat_lon_options(scope_15, var_16)?;
+    let mut scope_13 = writer.prefix("LatLonOptions");
+    if let Some(var_14) = &input.lat_lon_options {
+        crate::protocol_serde::shape_lat_lon_options::ser_lat_lon_options(scope_13, var_14)?;
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("IntArrayOptions");
-    if let Some(var_18) = &input.int_array_options {
-        crate::protocol_serde::shape_int_array_options::ser_int_array_options(scope_17, var_18)?;
+    let mut scope_15 = writer.prefix("IntArrayOptions");
+    if let Some(var_16) = &input.int_array_options {
+        crate::protocol_serde::shape_int_array_options::ser_int_array_options(scope_15, var_16)?;
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("DoubleArrayOptions");
-    if let Some(var_20) = &input.double_array_options {
-        crate::protocol_serde::shape_double_array_options::ser_double_array_options(scope_19, var_20)?;
+    let mut scope_17 = writer.prefix("DoubleArrayOptions");
+    if let Some(var_18) = &input.double_array_options {
+        crate::protocol_serde::shape_double_array_options::ser_double_array_options(scope_17, var_18)?;
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("LiteralArrayOptions");
-    if let Some(var_22) = &input.literal_array_options {
-        crate::protocol_serde::shape_literal_array_options::ser_literal_array_options(scope_21, var_22)?;
+    let mut scope_19 = writer.prefix("LiteralArrayOptions");
+    if let Some(var_20) = &input.literal_array_options {
+        crate::protocol_serde::shape_literal_array_options::ser_literal_array_options(scope_19, var_20)?;
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("TextArrayOptions");
-    if let Some(var_24) = &input.text_array_options {
-        crate::protocol_serde::shape_text_array_options::ser_text_array_options(scope_23, var_24)?;
+    let mut scope_21 = writer.prefix("TextArrayOptions");
+    if let Some(var_22) = &input.text_array_options {
+        crate::protocol_serde::shape_text_array_options::ser_text_array_options(scope_21, var_22)?;
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("DateArrayOptions");
-    if let Some(var_26) = &input.date_array_options {
-        crate::protocol_serde::shape_date_array_options::ser_date_array_options(scope_25, var_26)?;
+    let mut scope_23 = writer.prefix("DateArrayOptions");
+    if let Some(var_24) = &input.date_array_options {
+        crate::protocol_serde::shape_date_array_options::ser_date_array_options(scope_23, var_24)?;
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_index_field(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::IndexField, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -80,7 +81,7 @@ pub fn de_index_field(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IndexFieldName") /* IndexFieldName com.amazonaws.cloudsearch#IndexField$IndexFieldName */ =>  {
-                let var_27 =
+                let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -89,11 +90,11 @@ pub fn de_index_field(
                         ?
                     )
                 ;
-                builder = builder.set_index_field_name(var_27);
+                builder = builder.set_index_field_name(var_25);
             }
             ,
             s if s.matches("IndexFieldType") /* IndexFieldType com.amazonaws.cloudsearch#IndexField$IndexFieldType */ =>  {
-                let var_28 =
+                let var_26 =
                     Some(
                         Result::<crate::types::IndexFieldType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::IndexFieldType::from(
@@ -103,121 +104,123 @@ pub fn de_index_field(
                         ?
                     )
                 ;
-                builder = builder.set_index_field_type(var_28);
+                builder = builder.set_index_field_type(var_26);
             }
             ,
             s if s.matches("IntOptions") /* IntOptions com.amazonaws.cloudsearch#IndexField$IntOptions */ =>  {
-                let var_29 =
+                let var_27 =
                     Some(
                         crate::protocol_serde::shape_int_options::de_int_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_int_options(var_29);
+                builder = builder.set_int_options(var_27);
             }
             ,
             s if s.matches("DoubleOptions") /* DoubleOptions com.amazonaws.cloudsearch#IndexField$DoubleOptions */ =>  {
-                let var_30 =
+                let var_28 =
                     Some(
                         crate::protocol_serde::shape_double_options::de_double_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_double_options(var_30);
+                builder = builder.set_double_options(var_28);
             }
             ,
             s if s.matches("LiteralOptions") /* LiteralOptions com.amazonaws.cloudsearch#IndexField$LiteralOptions */ =>  {
-                let var_31 =
+                let var_29 =
                     Some(
                         crate::protocol_serde::shape_literal_options::de_literal_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_literal_options(var_31);
+                builder = builder.set_literal_options(var_29);
             }
             ,
             s if s.matches("TextOptions") /* TextOptions com.amazonaws.cloudsearch#IndexField$TextOptions */ =>  {
-                let var_32 =
+                let var_30 =
                     Some(
                         crate::protocol_serde::shape_text_options::de_text_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_text_options(var_32);
+                builder = builder.set_text_options(var_30);
             }
             ,
             s if s.matches("DateOptions") /* DateOptions com.amazonaws.cloudsearch#IndexField$DateOptions */ =>  {
-                let var_33 =
+                let var_31 =
                     Some(
                         crate::protocol_serde::shape_date_options::de_date_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_date_options(var_33);
+                builder = builder.set_date_options(var_31);
             }
             ,
             s if s.matches("LatLonOptions") /* LatLonOptions com.amazonaws.cloudsearch#IndexField$LatLonOptions */ =>  {
-                let var_34 =
+                let var_32 =
                     Some(
                         crate::protocol_serde::shape_lat_lon_options::de_lat_lon_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lat_lon_options(var_34);
+                builder = builder.set_lat_lon_options(var_32);
             }
             ,
             s if s.matches("IntArrayOptions") /* IntArrayOptions com.amazonaws.cloudsearch#IndexField$IntArrayOptions */ =>  {
-                let var_35 =
+                let var_33 =
                     Some(
                         crate::protocol_serde::shape_int_array_options::de_int_array_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_int_array_options(var_35);
+                builder = builder.set_int_array_options(var_33);
             }
             ,
             s if s.matches("DoubleArrayOptions") /* DoubleArrayOptions com.amazonaws.cloudsearch#IndexField$DoubleArrayOptions */ =>  {
-                let var_36 =
+                let var_34 =
                     Some(
                         crate::protocol_serde::shape_double_array_options::de_double_array_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_double_array_options(var_36);
+                builder = builder.set_double_array_options(var_34);
             }
             ,
             s if s.matches("LiteralArrayOptions") /* LiteralArrayOptions com.amazonaws.cloudsearch#IndexField$LiteralArrayOptions */ =>  {
-                let var_37 =
+                let var_35 =
                     Some(
                         crate::protocol_serde::shape_literal_array_options::de_literal_array_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_literal_array_options(var_37);
+                builder = builder.set_literal_array_options(var_35);
             }
             ,
             s if s.matches("TextArrayOptions") /* TextArrayOptions com.amazonaws.cloudsearch#IndexField$TextArrayOptions */ =>  {
-                let var_38 =
+                let var_36 =
                     Some(
                         crate::protocol_serde::shape_text_array_options::de_text_array_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_text_array_options(var_38);
+                builder = builder.set_text_array_options(var_36);
             }
             ,
             s if s.matches("DateArrayOptions") /* DateArrayOptions com.amazonaws.cloudsearch#IndexField$DateArrayOptions */ =>  {
-                let var_39 =
+                let var_37 =
                     Some(
                         crate::protocol_serde::shape_date_array_options::de_date_array_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_date_array_options(var_39);
+                builder = builder.set_date_array_options(var_37);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::index_field_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

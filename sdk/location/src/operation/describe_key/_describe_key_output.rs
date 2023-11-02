@@ -4,22 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeKeyOutput {
     /// <p>The key value/string of an API key.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The name of the API key resource.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
     pub restrictions: ::std::option::Option<crate::types::ApiKeyRestrictions>,
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub expire_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub expire_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The optional description for the API key resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with the API key resource.</p>
@@ -28,35 +28,38 @@ pub struct DescribeKeyOutput {
 }
 impl DescribeKeyOutput {
     /// <p>The key value/string of an API key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The name of the API key resource.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
     pub fn restrictions(&self) -> ::std::option::Option<&crate::types::ApiKeyRestrictions> {
         self.restrictions.as_ref()
     }
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn expire_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.expire_time.as_ref()
+    pub fn expire_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.expire_time
     }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The optional description for the API key resource.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -112,6 +115,7 @@ pub struct DescribeKeyOutputBuilder {
 }
 impl DescribeKeyOutputBuilder {
     /// <p>The key value/string of an API key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +133,7 @@ impl DescribeKeyOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +154,7 @@ impl DescribeKeyOutputBuilder {
         &self.key_arn
     }
     /// <p>The name of the API key resource.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +169,7 @@ impl DescribeKeyOutputBuilder {
         &self.key_name
     }
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
+    /// This field is required.
     pub fn restrictions(mut self, input: crate::types::ApiKeyRestrictions) -> Self {
         self.restrictions = ::std::option::Option::Some(input);
         self
@@ -177,6 +184,7 @@ impl DescribeKeyOutputBuilder {
         &self.restrictions
     }
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -191,6 +199,7 @@ impl DescribeKeyOutputBuilder {
         &self.create_time
     }
     /// <p>The timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expire_time = ::std::option::Option::Some(input);
         self
@@ -205,6 +214,7 @@ impl DescribeKeyOutputBuilder {
         &self.expire_time
     }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -262,19 +272,56 @@ impl DescribeKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeKeyOutput`](crate::operation::describe_key::DescribeKeyOutput).
-    pub fn build(self) -> crate::operation::describe_key::DescribeKeyOutput {
-        crate::operation::describe_key::DescribeKeyOutput {
-            key: self.key,
-            key_arn: self.key_arn,
-            key_name: self.key_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::key)
+    /// - [`key_arn`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::key_arn)
+    /// - [`key_name`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::key_name)
+    /// - [`create_time`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::create_time)
+    /// - [`expire_time`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::expire_time)
+    /// - [`update_time`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_key::DescribeKeyOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_key::DescribeKeyOutput {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building DescribeKeyOutput",
+                )
+            })?,
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building DescribeKeyOutput",
+                )
+            })?,
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building DescribeKeyOutput",
+                )
+            })?,
             restrictions: self.restrictions,
-            create_time: self.create_time,
-            expire_time: self.expire_time,
-            update_time: self.update_time,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building DescribeKeyOutput",
+                )
+            })?,
+            expire_time: self.expire_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expire_time",
+                    "expire_time was not specified but it is required when building DescribeKeyOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building DescribeKeyOutput",
+                )
+            })?,
             description: self.description,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeKeyOutputBuilder {

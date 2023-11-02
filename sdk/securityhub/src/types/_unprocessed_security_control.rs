@@ -42,6 +42,7 @@ pub struct UnprocessedSecurityControlBuilder {
 }
 impl UnprocessedSecurityControlBuilder {
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
+    /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UnprocessedSecurityControlBuilder {
         &self.security_control_id
     }
     /// <p> The error code for the unprocessed security control. </p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self

@@ -14,13 +14,17 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDe
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
     /// <p>The Linux capabilities for the container that are added to the default configuration provided by Docker. Valid values are as follows:</p>
     /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
-    pub fn add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add.is_none()`.
+    pub fn add(&self) -> &[::std::string::String] {
+        self.add.as_deref().unwrap_or_default()
     }
     /// <p>The Linux capabilities for the container that are dropped from the default configuration provided by Docker.</p>
     /// <p>Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code> | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code> | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> | <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code> | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code> | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code> | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> | <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code> | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code> | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> | <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> | <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code> </p>
-    pub fn drop(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.drop.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.drop.is_none()`.
+    pub fn drop(&self) -> &[::std::string::String] {
+        self.drop.as_deref().unwrap_or_default()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {

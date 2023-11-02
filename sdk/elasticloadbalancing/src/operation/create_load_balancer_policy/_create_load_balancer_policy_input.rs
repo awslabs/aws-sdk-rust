@@ -27,8 +27,10 @@ impl CreateLoadBalancerPolicyInput {
         self.policy_type_name.as_deref()
     }
     /// <p>The policy attributes.</p>
-    pub fn policy_attributes(&self) -> ::std::option::Option<&[crate::types::PolicyAttribute]> {
-        self.policy_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_attributes.is_none()`.
+    pub fn policy_attributes(&self) -> &[crate::types::PolicyAttribute] {
+        self.policy_attributes.as_deref().unwrap_or_default()
     }
 }
 impl CreateLoadBalancerPolicyInput {
@@ -49,6 +51,7 @@ pub struct CreateLoadBalancerPolicyInputBuilder {
 }
 impl CreateLoadBalancerPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CreateLoadBalancerPolicyInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl CreateLoadBalancerPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
+    /// This field is required.
     pub fn policy_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type_name = ::std::option::Option::Some(input.into());
         self

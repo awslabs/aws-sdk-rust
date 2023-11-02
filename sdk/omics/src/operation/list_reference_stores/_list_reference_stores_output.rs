@@ -6,7 +6,7 @@ pub struct ListReferenceStoresOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of reference stores.</p>
-    pub reference_stores: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>>,
+    pub reference_stores: ::std::vec::Vec<crate::types::ReferenceStoreDetail>,
     _request_id: Option<String>,
 }
 impl ListReferenceStoresOutput {
@@ -15,8 +15,9 @@ impl ListReferenceStoresOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of reference stores.</p>
-    pub fn reference_stores(&self) -> ::std::option::Option<&[crate::types::ReferenceStoreDetail]> {
-        self.reference_stores.as_deref()
+    pub fn reference_stores(&self) -> &[crate::types::ReferenceStoreDetail] {
+        use std::ops::Deref;
+        self.reference_stores.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListReferenceStoresOutput {
@@ -84,11 +85,21 @@ impl ListReferenceStoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput).
-    pub fn build(self) -> crate::operation::list_reference_stores::ListReferenceStoresOutput {
-        crate::operation::list_reference_stores::ListReferenceStoresOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reference_stores`](crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder::reference_stores)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_reference_stores::ListReferenceStoresOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_reference_stores::ListReferenceStoresOutput {
             next_token: self.next_token,
-            reference_stores: self.reference_stores,
+            reference_stores: self.reference_stores.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reference_stores",
+                    "reference_stores was not specified but it is required when building ListReferenceStoresOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

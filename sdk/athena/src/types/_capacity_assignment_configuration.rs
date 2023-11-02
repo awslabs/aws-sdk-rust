@@ -15,8 +15,10 @@ impl CapacityAssignmentConfiguration {
         self.capacity_reservation_name.as_deref()
     }
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    pub fn capacity_assignments(&self) -> ::std::option::Option<&[crate::types::CapacityAssignment]> {
-        self.capacity_assignments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_assignments.is_none()`.
+    pub fn capacity_assignments(&self) -> &[crate::types::CapacityAssignment] {
+        self.capacity_assignments.as_deref().unwrap_or_default()
     }
 }
 impl CapacityAssignmentConfiguration {

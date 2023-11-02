@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags_model(TagsModel)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags_model) / [`set_tags_model(Option<TagsModel>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags_model): <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource.</p><br>
+    ///   - [`tags_model(TagsModel)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags_model) / [`set_tags_model(Option<TagsModel>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags_model):<br>required: **true**<br><p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p><br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {

@@ -62,6 +62,7 @@ pub struct VerifyAuthRequestCryptogramInputBuilder {
 }
 impl VerifyAuthRequestCryptogramInputBuilder {
     /// <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         &self.key_identifier
     }
     /// <p>The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn transaction_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_data = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         &self.transaction_data
     }
     /// <p>The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.</p>
+    /// This field is required.
     pub fn auth_request_cryptogram(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_request_cryptogram = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         &self.auth_request_cryptogram
     }
     /// <p>The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn major_key_derivation_mode(mut self, input: crate::types::MajorKeyDerivationMode) -> Self {
         self.major_key_derivation_mode = ::std::option::Option::Some(input);
         self
@@ -118,6 +122,7 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         &self.major_key_derivation_mode
     }
     /// <p>The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn session_key_derivation_attributes(mut self, input: crate::types::SessionKeyDerivation) -> Self {
         self.session_key_derivation_attributes = ::std::option::Option::Some(input);
         self

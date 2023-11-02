@@ -10,8 +10,10 @@ pub struct DescribeAccountAttributesInput {
 }
 impl DescribeAccountAttributesInput {
     /// <p>The account attribute names.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[crate::types::AccountAttributeName]> {
-        self.attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[crate::types::AccountAttributeName] {
+        self.attribute_names.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {

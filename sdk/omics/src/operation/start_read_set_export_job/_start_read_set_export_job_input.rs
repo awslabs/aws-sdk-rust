@@ -32,8 +32,10 @@ impl StartReadSetExportJobInput {
         self.client_token.as_deref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::ExportReadSet]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::ExportReadSet] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl StartReadSetExportJobInput {
@@ -55,6 +57,7 @@ pub struct StartReadSetExportJobInputBuilder {
 }
 impl StartReadSetExportJobInputBuilder {
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl StartReadSetExportJobInputBuilder {
         &self.sequence_store_id
     }
     /// <p>A location for exported files in Amazon S3.</p>
+    /// This field is required.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl StartReadSetExportJobInputBuilder {
         &self.destination
     }
     /// <p>A service role for the job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

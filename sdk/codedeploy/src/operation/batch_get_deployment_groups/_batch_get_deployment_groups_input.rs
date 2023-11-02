@@ -15,8 +15,10 @@ impl BatchGetDeploymentGroupsInput {
         self.application_name.as_deref()
     }
     /// <p>The names of the deployment groups.</p>
-    pub fn deployment_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deployment_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_group_names.is_none()`.
+    pub fn deployment_group_names(&self) -> &[::std::string::String] {
+        self.deployment_group_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDeploymentGroupsInput {
@@ -35,6 +37,7 @@ pub struct BatchGetDeploymentGroupsInputBuilder {
 }
 impl BatchGetDeploymentGroupsInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

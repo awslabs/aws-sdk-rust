@@ -35,6 +35,7 @@ pub struct KafkaClusterBuilder {
 }
 impl KafkaClusterBuilder {
     /// <p>Details of an Amazon MSK Cluster.</p>
+    /// This field is required.
     pub fn amazon_msk_cluster(mut self, input: crate::types::AmazonMskCluster) -> Self {
         self.amazon_msk_cluster = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl KafkaClusterBuilder {
         &self.amazon_msk_cluster
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
+    /// This field is required.
     pub fn vpc_config(mut self, input: crate::types::KafkaClusterClientVpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self

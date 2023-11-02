@@ -1123,7 +1123,7 @@
           "canonical_seconds": "-62133482201",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Thu, 25 Jan 0001 11:23:19.123 GMT"
+          "smithy_format_value": "Thu, 25 Jan 0001 11:23:19 GMT"
       },
       {
           "iso8601": "0001-02-01T12:24:12Z",
@@ -1179,28 +1179,28 @@
           "canonical_seconds": "-62114444917",
           "canonical_nanos": 1000000,
           "error": false,
-          "smithy_format_value": "Sun, 02 Sep 0001 19:31:23.001 GMT"
+          "smithy_format_value": "Sun, 02 Sep 0001 19:31:23 GMT"
       },
       {
           "iso8601": "0001-10-03T20:32:16.01Z",
           "canonical_seconds": "-62111762864",
           "canonical_nanos": 10000000,
           "error": false,
-          "smithy_format_value": "Wed, 03 Oct 0001 20:32:16.01 GMT"
+          "smithy_format_value": "Wed, 03 Oct 0001 20:32:16 GMT"
       },
       {
           "iso8601": "0001-11-04T21:33:09.1Z",
           "canonical_seconds": "-62108994411",
           "canonical_nanos": 100000000,
           "error": false,
-          "smithy_format_value": "Sun, 04 Nov 0001 21:33:09.1 GMT"
+          "smithy_format_value": "Sun, 04 Nov 0001 21:33:09 GMT"
       },
       {
           "iso8601": "0001-12-05T22:34:02.123456789Z",
           "canonical_seconds": "-62106312358",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Wed, 05 Dec 0001 22:34:02.123 GMT"
+          "smithy_format_value": "Wed, 05 Dec 0001 22:34:02 GMT"
       },
       {
           "iso8601": "0100-01-06T23:35:55Z",
@@ -1256,28 +1256,28 @@
           "canonical_seconds": "-58992081474",
           "canonical_nanos": 1000000,
           "error": false,
-          "smithy_format_value": "Fri, 13 Aug 0100 06:42:06.001 GMT"
+          "smithy_format_value": "Fri, 13 Aug 0100 06:42:06 GMT"
       },
       {
           "iso8601": "0100-09-14T07:43:59.01Z",
           "canonical_seconds": "-58989312961",
           "canonical_nanos": 10000000,
           "error": false,
-          "smithy_format_value": "Tue, 14 Sep 0100 07:43:59.01 GMT"
+          "smithy_format_value": "Tue, 14 Sep 0100 07:43:59 GMT"
       },
       {
           "iso8601": "0100-10-15T08:44:52.1Z",
           "canonical_seconds": "-58986630908",
           "canonical_nanos": 100000000,
           "error": false,
-          "smithy_format_value": "Fri, 15 Oct 0100 08:44:52.1 GMT"
+          "smithy_format_value": "Fri, 15 Oct 0100 08:44:52 GMT"
       },
       {
           "iso8601": "0100-11-16T09:45:45.123456789Z",
           "canonical_seconds": "-58983862455",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Tue, 16 Nov 0100 09:45:45.123 GMT"
+          "smithy_format_value": "Tue, 16 Nov 0100 09:45:45 GMT"
       },
       {
           "iso8601": "0100-12-17T10:46:38Z",
@@ -1291,7 +1291,7 @@
           "canonical_seconds": "-12175833601",
           "canonical_nanos": 999000000,
           "error": false,
-          "smithy_format_value": "Wed, 29 Feb 1584 23:59:59.999 GMT"
+          "smithy_format_value": "Wed, 29 Feb 1584 23:59:59 GMT"
       },
       {
           "iso8601": "1969-01-18T11:47:31.000000001Z",
@@ -1340,28 +1340,28 @@
           "canonical_seconds": "-13845971",
           "canonical_nanos": 1000000,
           "error": false,
-          "smithy_format_value": "Thu, 24 Jul 1969 17:53:49.001 GMT"
+          "smithy_format_value": "Thu, 24 Jul 1969 17:53:49 GMT"
       },
       {
           "iso8601": "1969-08-25T18:54:42.01Z",
           "canonical_seconds": "-11077518",
           "canonical_nanos": 10000000,
           "error": false,
-          "smithy_format_value": "Mon, 25 Aug 1969 18:54:42.01 GMT"
+          "smithy_format_value": "Mon, 25 Aug 1969 18:54:42 GMT"
       },
       {
           "iso8601": "1969-09-26T19:55:35.1Z",
           "canonical_seconds": "-8309065",
           "canonical_nanos": 100000000,
           "error": false,
-          "smithy_format_value": "Fri, 26 Sep 1969 19:55:35.1 GMT"
+          "smithy_format_value": "Fri, 26 Sep 1969 19:55:35 GMT"
       },
       {
           "iso8601": "1969-10-27T20:56:28.123456789Z",
           "canonical_seconds": "-5627012",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Mon, 27 Oct 1969 20:56:28.123 GMT"
+          "smithy_format_value": "Mon, 27 Oct 1969 20:56:28 GMT"
       },
       {
           "iso8601": "1969-11-28T21:57:21Z",
@@ -1417,28 +1417,28 @@
           "canonical_seconds": "13406672",
           "canonical_nanos": 1000000,
           "error": false,
-          "smithy_format_value": "Fri, 05 Jun 1970 04:04:32.001 GMT"
+          "smithy_format_value": "Fri, 05 Jun 1970 04:04:32 GMT"
       },
       {
           "iso8601": "1970-07-05T05:05:25.01Z",
           "canonical_seconds": "16002325",
           "canonical_nanos": 10000000,
           "error": false,
-          "smithy_format_value": "Sun, 05 Jul 1970 05:05:25.01 GMT"
+          "smithy_format_value": "Sun, 05 Jul 1970 05:05:25 GMT"
       },
       {
           "iso8601": "1970-08-06T06:06:18.1Z",
           "canonical_seconds": "18770778",
           "canonical_nanos": 100000000,
           "error": false,
-          "smithy_format_value": "Thu, 06 Aug 1970 06:06:18.1 GMT"
+          "smithy_format_value": "Thu, 06 Aug 1970 06:06:18 GMT"
       },
       {
           "iso8601": "1970-09-08T07:07:11.123456789Z",
           "canonical_seconds": "21625631",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Tue, 08 Sep 1970 07:07:11.123 GMT"
+          "smithy_format_value": "Tue, 08 Sep 1970 07:07:11 GMT"
       },
       {
           "iso8601": "1970-10-08T08:08:04Z",
@@ -1466,7 +1466,7 @@
           "canonical_seconds": "1078099199",
           "canonical_nanos": 999000000,
           "error": false,
-          "smithy_format_value": "Sun, 29 Feb 2004 23:59:59.999 GMT"
+          "smithy_format_value": "Sun, 29 Feb 2004 23:59:59 GMT"
       },
       {
           "iso8601": "2037-01-11T11:11:43.0000001Z",
@@ -1501,28 +1501,28 @@
           "canonical_seconds": "2126013315",
           "canonical_nanos": 1000000,
           "error": false,
-          "smithy_format_value": "Fri, 15 May 2037 15:15:15.001 GMT"
+          "smithy_format_value": "Fri, 15 May 2037 15:15:15 GMT"
       },
       {
           "iso8601": "2037-06-17T16:16:08.01Z",
           "canonical_seconds": "2128868168",
           "canonical_nanos": 10000000,
           "error": false,
-          "smithy_format_value": "Wed, 17 Jun 2037 16:16:08.01 GMT"
+          "smithy_format_value": "Wed, 17 Jun 2037 16:16:08 GMT"
       },
       {
           "iso8601": "2037-07-17T17:17:01.1Z",
           "canonical_seconds": "2131463821",
           "canonical_nanos": 100000000,
           "error": false,
-          "smithy_format_value": "Fri, 17 Jul 2037 17:17:01.1 GMT"
+          "smithy_format_value": "Fri, 17 Jul 2037 17:17:01 GMT"
       },
       {
           "iso8601": "2037-08-18T18:18:54.123456789Z",
           "canonical_seconds": "2134232334",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Tue, 18 Aug 2037 18:18:54.123 GMT"
+          "smithy_format_value": "Tue, 18 Aug 2037 18:18:54 GMT"
       },
       {
           "iso8601": "2037-09-20T19:19:47Z",
@@ -1578,28 +1578,28 @@
           "canonical_seconds": "2155948018",
           "canonical_nanos": 1000000,
           "error": false,
-          "smithy_format_value": "Tue, 27 Apr 2038 02:26:58.001 GMT"
+          "smithy_format_value": "Tue, 27 Apr 2038 02:26:58 GMT"
       },
       {
           "iso8601": "2038-05-27T03:27:51.01Z",
           "canonical_seconds": "2158543671",
           "canonical_nanos": 10000000,
           "error": false,
-          "smithy_format_value": "Thu, 27 May 2038 03:27:51.01 GMT"
+          "smithy_format_value": "Thu, 27 May 2038 03:27:51 GMT"
       },
       {
           "iso8601": "2038-06-29T04:28:44.1Z",
           "canonical_seconds": "2161398524",
           "canonical_nanos": 100000000,
           "error": false,
-          "smithy_format_value": "Tue, 29 Jun 2038 04:28:44.1 GMT"
+          "smithy_format_value": "Tue, 29 Jun 2038 04:28:44 GMT"
       },
       {
           "iso8601": "2038-07-29T05:29:37.123456789Z",
           "canonical_seconds": "2163994177",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Thu, 29 Jul 2038 05:29:37.123 GMT"
+          "smithy_format_value": "Thu, 29 Jul 2038 05:29:37 GMT"
       },
       {
           "iso8601": "2038-08-30T06:30:30Z",
@@ -1655,28 +1655,28 @@
           "canonical_seconds": "253376343461",
           "canonical_nanos": 1000000,
           "error": false,
-          "smithy_format_value": "Sat, 06 Mar 9999 13:37:41.001 GMT"
+          "smithy_format_value": "Sat, 06 Mar 9999 13:37:41 GMT"
       },
       {
           "iso8601": "9999-04-09T14:38:34.01Z",
           "canonical_seconds": "253379284714",
           "canonical_nanos": 10000000,
           "error": false,
-          "smithy_format_value": "Fri, 09 Apr 9999 14:38:34.01 GMT"
+          "smithy_format_value": "Fri, 09 Apr 9999 14:38:34 GMT"
       },
       {
           "iso8601": "9999-05-08T15:39:27.1Z",
           "canonical_seconds": "253381793967",
           "canonical_nanos": 100000000,
           "error": false,
-          "smithy_format_value": "Sat, 08 May 9999 15:39:27.1 GMT"
+          "smithy_format_value": "Sat, 08 May 9999 15:39:27 GMT"
       },
       {
           "iso8601": "9999-06-11T16:40:20.123456789Z",
           "canonical_seconds": "253384735220",
           "canonical_nanos": 123456789,
           "error": false,
-          "smithy_format_value": "Fri, 11 Jun 9999 16:40:20.123 GMT"
+          "smithy_format_value": "Fri, 11 Jun 9999 16:40:20 GMT"
       },
       {
           "iso8601": "9999-07-10T17:41:13Z",

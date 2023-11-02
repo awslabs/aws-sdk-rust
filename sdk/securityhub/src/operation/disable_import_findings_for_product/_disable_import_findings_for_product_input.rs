@@ -27,6 +27,7 @@ pub struct DisableImportFindingsForProductInputBuilder {
 }
 impl DisableImportFindingsForProductInputBuilder {
     /// <p>The ARN of the integrated product to disable the integration for.</p>
+    /// This field is required.
     pub fn product_subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_subscription_arn = ::std::option::Option::Some(input.into());
         self

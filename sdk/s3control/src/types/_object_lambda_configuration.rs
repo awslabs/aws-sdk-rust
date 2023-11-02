@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLambdaConfiguration {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
-    pub supporting_access_point: ::std::option::Option<::std::string::String>,
+    pub supporting_access_point: ::std::string::String,
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
     pub allowed_features: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>,
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-    pub transformation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>>,
+    pub transformation_configurations: ::std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>,
 }
 impl ObjectLambdaConfiguration {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
-    pub fn supporting_access_point(&self) -> ::std::option::Option<&str> {
-        self.supporting_access_point.as_deref()
+    pub fn supporting_access_point(&self) -> &str {
+        use std::ops::Deref;
+        self.supporting_access_point.deref()
     }
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
     pub fn cloud_watch_metrics_enabled(&self) -> bool {
         self.cloud_watch_metrics_enabled
     }
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
-    pub fn allowed_features(&self) -> ::std::option::Option<&[crate::types::ObjectLambdaAllowedFeature]> {
-        self.allowed_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_features.is_none()`.
+    pub fn allowed_features(&self) -> &[crate::types::ObjectLambdaAllowedFeature] {
+        self.allowed_features.as_deref().unwrap_or_default()
     }
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-    pub fn transformation_configurations(&self) -> ::std::option::Option<&[crate::types::ObjectLambdaTransformationConfiguration]> {
-        self.transformation_configurations.as_deref()
+    pub fn transformation_configurations(&self) -> &[crate::types::ObjectLambdaTransformationConfiguration] {
+        use std::ops::Deref;
+        self.transformation_configurations.deref()
     }
 }
 impl ObjectLambdaConfiguration {
@@ -49,6 +53,7 @@ pub struct ObjectLambdaConfigurationBuilder {
 }
 impl ObjectLambdaConfigurationBuilder {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn supporting_access_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.supporting_access_point = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +127,25 @@ impl ObjectLambdaConfigurationBuilder {
         &self.transformation_configurations
     }
     /// Consumes the builder and constructs a [`ObjectLambdaConfiguration`](crate::types::ObjectLambdaConfiguration).
-    pub fn build(self) -> crate::types::ObjectLambdaConfiguration {
-        crate::types::ObjectLambdaConfiguration {
-            supporting_access_point: self.supporting_access_point,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`supporting_access_point`](crate::types::builders::ObjectLambdaConfigurationBuilder::supporting_access_point)
+    /// - [`transformation_configurations`](crate::types::builders::ObjectLambdaConfigurationBuilder::transformation_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::ObjectLambdaConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ObjectLambdaConfiguration {
+            supporting_access_point: self.supporting_access_point.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "supporting_access_point",
+                    "supporting_access_point was not specified but it is required when building ObjectLambdaConfiguration",
+                )
+            })?,
             cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled.unwrap_or_default(),
             allowed_features: self.allowed_features,
-            transformation_configurations: self.transformation_configurations,
-        }
+            transformation_configurations: self.transformation_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transformation_configurations",
+                    "transformation_configurations was not specified but it is required when building ObjectLambdaConfiguration",
+                )
+            })?,
+        })
     }
 }

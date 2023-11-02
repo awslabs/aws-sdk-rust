@@ -61,6 +61,7 @@ pub struct ModifyCapacityReservationFleetInputBuilder {
 }
 impl ModifyCapacityReservationFleetInputBuilder {
     /// <p>The ID of the Capacity Reservation Fleet to modify.</p>
+    /// This field is required.
     pub fn capacity_reservation_fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_fleet_id = ::std::option::Option::Some(input.into());
         self

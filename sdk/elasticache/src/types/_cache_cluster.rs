@@ -220,8 +220,10 @@ impl CacheCluster {
         self.notification_configuration.as_ref()
     }
     /// <p>A list of cache security group elements, composed of name and status sub-elements.</p>
-    pub fn cache_security_groups(&self) -> ::std::option::Option<&[crate::types::CacheSecurityGroupMembership]> {
-        self.cache_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_security_groups.is_none()`.
+    pub fn cache_security_groups(&self) -> &[crate::types::CacheSecurityGroupMembership] {
+        self.cache_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Status of the cache parameter group.</p>
     pub fn cache_parameter_group(&self) -> ::std::option::Option<&crate::types::CacheParameterGroupStatus> {
@@ -232,16 +234,20 @@ impl CacheCluster {
         self.cache_subnet_group_name.as_deref()
     }
     /// <p>A list of cache nodes that are members of the cluster.</p>
-    pub fn cache_nodes(&self) -> ::std::option::Option<&[crate::types::CacheNode]> {
-        self.cache_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_nodes.is_none()`.
+    pub fn cache_nodes(&self) -> &[crate::types::CacheNode] {
+        self.cache_nodes.as_deref().unwrap_or_default()
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
     pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>A list of VPC Security Groups associated with the cluster.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupMembership]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::SecurityGroupMembership] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.</p>
     pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
@@ -289,8 +295,10 @@ impl CacheCluster {
         self.replication_group_log_delivery_enabled
     }
     /// <p>Returns the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfiguration]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfiguration] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {

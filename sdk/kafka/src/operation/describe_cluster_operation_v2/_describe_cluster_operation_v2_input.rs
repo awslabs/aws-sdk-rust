@@ -27,6 +27,7 @@ pub struct DescribeClusterOperationV2InputBuilder {
 }
 impl DescribeClusterOperationV2InputBuilder {
     /// ARN of the cluster operation to describe.
+    /// This field is required.
     pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_operation_arn = ::std::option::Option::Some(input.into());
         self

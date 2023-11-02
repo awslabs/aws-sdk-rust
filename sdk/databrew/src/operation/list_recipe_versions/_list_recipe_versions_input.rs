@@ -69,6 +69,7 @@ impl ListRecipeVersionsInputBuilder {
         &self.next_token
     }
     /// <p>The name of the recipe for which to return version information.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -56,6 +56,7 @@ impl ArchiveGroupSettingsBuilder {
         &self.archive_cdn_settings
     }
     /// A directory and base filename where archive files should be written.
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

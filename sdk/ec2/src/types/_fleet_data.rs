@@ -85,8 +85,10 @@ impl FleetData {
         self.fulfilled_on_demand_capacity
     }
     /// <p>The launch template and overrides.</p>
-    pub fn launch_template_configs(&self) -> ::std::option::Option<&[crate::types::FleetLaunchTemplateConfig]> {
-        self.launch_template_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configs.is_none()`.
+    pub fn launch_template_configs(&self) -> &[crate::types::FleetLaunchTemplateConfig] {
+        self.launch_template_configs.as_deref().unwrap_or_default()
     }
     /// <p>The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
     pub fn target_capacity_specification(&self) -> ::std::option::Option<&crate::types::TargetCapacitySpecification> {
@@ -121,16 +123,22 @@ impl FleetData {
         self.on_demand_options.as_ref()
     }
     /// <p>The tags for an EC2 Fleet resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to <code>instant</code>.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::DescribeFleetError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::DescribeFleetError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to <code>instant</code>.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::DescribeFleetsInstances]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::DescribeFleetsInstances] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>Reserved.</p>
     pub fn context(&self) -> ::std::option::Option<&str> {

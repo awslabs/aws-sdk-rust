@@ -34,6 +34,7 @@ pub struct PutInboundDmarcSettingsInputBuilder {
 }
 impl PutInboundDmarcSettingsInputBuilder {
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutInboundDmarcSettingsInputBuilder {
         &self.organization_id
     }
     /// <p>Enforces or suspends a policy after it's applied.</p>
+    /// This field is required.
     pub fn enforced(mut self, input: bool) -> Self {
         self.enforced = ::std::option::Option::Some(input);
         self

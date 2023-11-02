@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub knowledge_base_id: ::std::string::String,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub content_id: ::std::option::Option<::std::string::String>,
+    pub content_id: ::std::string::String,
 }
 impl DeleteContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
-        self.knowledge_base_id.as_deref()
+    pub fn knowledge_base_id(&self) -> &str {
+        use std::ops::Deref;
+        self.knowledge_base_id.deref()
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn content_id(&self) -> ::std::option::Option<&str> {
-        self.content_id.as_deref()
+    pub fn content_id(&self) -> &str {
+        use std::ops::Deref;
+        self.content_id.deref()
     }
 }
 impl DeleteContentInput {
@@ -34,6 +36,7 @@ pub struct DeleteContentInputBuilder {
 }
 impl DeleteContentInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteContentInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_id = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl DeleteContentInputBuilder {
         &self.content_id
     }
     /// Consumes the builder and constructs a [`DeleteContentInput`](crate::operation::delete_content::DeleteContentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`knowledge_base_id`](crate::operation::delete_content::builders::DeleteContentInputBuilder::knowledge_base_id)
+    /// - [`content_id`](crate::operation::delete_content::builders::DeleteContentInputBuilder::content_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_content::DeleteContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_content::DeleteContentInput {
-            knowledge_base_id: self.knowledge_base_id,
-            content_id: self.content_id,
+            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "knowledge_base_id",
+                    "knowledge_base_id was not specified but it is required when building DeleteContentInput",
+                )
+            })?,
+            content_id: self.content_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_id",
+                    "content_id was not specified but it is required when building DeleteContentInput",
+                )
+            })?,
         })
     }
 }

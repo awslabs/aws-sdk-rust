@@ -33,11 +33,10 @@ pub fn de_get_transit_gateway_route_table_attachment_http_error(
                             crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -59,11 +58,10 @@ pub fn de_get_transit_gateway_route_table_attachment_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(
+                        crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -79,11 +77,10 @@ pub fn de_get_transit_gateway_route_table_attachment_http_error(
                             crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output).build().map_err(
+                        crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -104,11 +101,10 @@ pub fn de_get_transit_gateway_route_table_attachment_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -122,11 +118,10 @@ pub fn de_get_transit_gateway_route_table_attachment_http_error(
                         crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Shard {
     /// <p>The unique identifier of the shard within the stream.</p>
-    pub shard_id: ::std::option::Option<::std::string::String>,
+    pub shard_id: ::std::string::String,
     /// <p>The shard ID of the shard's parent.</p>
     pub parent_shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
@@ -17,8 +17,9 @@ pub struct Shard {
 }
 impl Shard {
     /// <p>The unique identifier of the shard within the stream.</p>
-    pub fn shard_id(&self) -> ::std::option::Option<&str> {
-        self.shard_id.as_deref()
+    pub fn shard_id(&self) -> &str {
+        use std::ops::Deref;
+        self.shard_id.deref()
     }
     /// <p>The shard ID of the shard's parent.</p>
     pub fn parent_shard_id(&self) -> ::std::option::Option<&str> {
@@ -56,6 +57,7 @@ pub struct ShardBuilder {
 }
 impl ShardBuilder {
     /// <p>The unique identifier of the shard within the stream.</p>
+    /// This field is required.
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl ShardBuilder {
         &self.adjacent_parent_shard_id
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
+    /// This field is required.
     pub fn hash_key_range(mut self, input: crate::types::HashKeyRange) -> Self {
         self.hash_key_range = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl ShardBuilder {
         &self.hash_key_range
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
+    /// This field is required.
     pub fn sequence_number_range(mut self, input: crate::types::SequenceNumberRange) -> Self {
         self.sequence_number_range = ::std::option::Option::Some(input);
         self
@@ -126,13 +130,20 @@ impl ShardBuilder {
         &self.sequence_number_range
     }
     /// Consumes the builder and constructs a [`Shard`](crate::types::Shard).
-    pub fn build(self) -> crate::types::Shard {
-        crate::types::Shard {
-            shard_id: self.shard_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`shard_id`](crate::types::builders::ShardBuilder::shard_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Shard, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Shard {
+            shard_id: self.shard_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "shard_id",
+                    "shard_id was not specified but it is required when building Shard",
+                )
+            })?,
             parent_shard_id: self.parent_shard_id,
             adjacent_parent_shard_id: self.adjacent_parent_shard_id,
             hash_key_range: self.hash_key_range,
             sequence_number_range: self.sequence_number_range,
-        }
+        })
     }
 }

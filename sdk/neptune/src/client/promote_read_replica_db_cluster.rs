@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PromoteReadReplicaDBCluster`](crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder::set_db_cluster_identifier): <p>Not supported.</p>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDBClusterFluentBuilder::set_db_cluster_identifier):<br>required: **true**<br><p>Not supported.</p><br>
     /// - On success, responds with [`PromoteReadReplicaDbClusterOutput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput) with field(s):
-    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code>.</p>
     /// - On failure, responds with [`SdkError<PromoteReadReplicaDBClusterError>`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError)
     pub fn promote_read_replica_db_cluster(
         &self,

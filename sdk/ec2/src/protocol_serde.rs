@@ -1803,6 +1803,10 @@ pub(crate) mod shape_get_reserved_instances_exchange_quote;
 
 pub(crate) mod shape_get_reserved_instances_exchange_quote_input;
 
+pub(crate) mod shape_get_security_groups_for_vpc;
+
+pub(crate) mod shape_get_security_groups_for_vpc_input;
+
 pub(crate) mod shape_get_serial_console_access_status;
 
 pub(crate) mod shape_get_serial_console_access_status_input;
@@ -3209,6 +3213,8 @@ pub(crate) mod shape_scheduled_instances_network_interface;
 
 pub(crate) mod shape_scheduled_instances_placement;
 
+pub(crate) mod shape_security_group_for_vpc_list;
+
 pub(crate) mod shape_security_group_list;
 
 pub(crate) mod shape_security_group_references;
@@ -3814,6 +3820,8 @@ pub(crate) mod shape_scheduled_instances_ipv6_address;
 pub(crate) mod shape_scheduled_instances_private_ip_address_config;
 
 pub(crate) mod shape_security_group;
+
+pub(crate) mod shape_security_group_for_vpc;
 
 pub(crate) mod shape_security_group_id_list;
 

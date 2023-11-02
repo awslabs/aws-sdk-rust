@@ -5,18 +5,19 @@ pub fn ser_origin_shield(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.enabled {
+    {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
-    if let Some(var_2) = &input.origin_shield_region {
+    if let Some(var_1) = &input.origin_shield_region {
         let mut inner_writer = scope.start_el("OriginShieldRegion").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(var_1.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_origin_shield(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::OriginShield, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_origin_shield(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#OriginShield$Enabled */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,11 +37,11 @@ pub fn de_origin_shield(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_3);
+                builder = builder.set_enabled(var_2);
             }
             ,
             s if s.matches("OriginShieldRegion") /* OriginShieldRegion com.amazonaws.cloudfront#OriginShield$OriginShieldRegion */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -49,11 +50,13 @@ pub fn de_origin_shield(
                         ?
                     )
                 ;
-                builder = builder.set_origin_shield_region(var_4);
+                builder = builder.set_origin_shield_region(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::origin_shield_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

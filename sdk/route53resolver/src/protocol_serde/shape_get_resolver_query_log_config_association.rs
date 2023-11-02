@@ -71,11 +71,10 @@ pub fn de_get_resolver_query_log_config_association_http_error(
                                 crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::unhandled,
                             )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

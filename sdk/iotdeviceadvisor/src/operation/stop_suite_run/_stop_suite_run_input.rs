@@ -34,6 +34,7 @@ pub struct StopSuiteRunInputBuilder {
 }
 impl StopSuiteRunInputBuilder {
     /// <p>Suite definition ID of the test suite run to be stopped.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StopSuiteRunInputBuilder {
         &self.suite_definition_id
     }
     /// <p>Suite run ID of the test suite run to be stopped.</p>
+    /// This field is required.
     pub fn suite_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_run_id = ::std::option::Option::Some(input.into());
         self

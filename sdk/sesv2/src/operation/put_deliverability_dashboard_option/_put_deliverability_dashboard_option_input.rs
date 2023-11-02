@@ -16,8 +16,10 @@ impl PutDeliverabilityDashboardOptionInput {
         self.dashboard_enabled
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    pub fn subscribed_domains(&self) -> ::std::option::Option<&[crate::types::DomainDeliverabilityTrackingOption]> {
-        self.subscribed_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribed_domains.is_none()`.
+    pub fn subscribed_domains(&self) -> &[crate::types::DomainDeliverabilityTrackingOption] {
+        self.subscribed_domains.as_deref().unwrap_or_default()
     }
 }
 impl PutDeliverabilityDashboardOptionInput {
@@ -36,6 +38,7 @@ pub struct PutDeliverabilityDashboardOptionInputBuilder {
 }
 impl PutDeliverabilityDashboardOptionInputBuilder {
     /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to <code>true</code>.</p>
+    /// This field is required.
     pub fn dashboard_enabled(mut self, input: bool) -> Self {
         self.dashboard_enabled = ::std::option::Option::Some(input);
         self

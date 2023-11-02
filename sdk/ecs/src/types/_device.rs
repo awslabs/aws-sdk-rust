@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Device {
     /// <p>The path for the device on the host container instance.</p>
-    pub host_path: ::std::option::Option<::std::string::String>,
+    pub host_path: ::std::string::String,
     /// <p>The path inside the container at which to expose the host device.</p>
     pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
@@ -13,16 +13,19 @@ pub struct Device {
 }
 impl Device {
     /// <p>The path for the device on the host container instance.</p>
-    pub fn host_path(&self) -> ::std::option::Option<&str> {
-        self.host_path.as_deref()
+    pub fn host_path(&self) -> &str {
+        use std::ops::Deref;
+        self.host_path.deref()
     }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn container_path(&self) -> ::std::option::Option<&str> {
         self.container_path.as_deref()
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::DeviceCgroupPermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::DeviceCgroupPermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
 }
 impl Device {
@@ -42,6 +45,7 @@ pub struct DeviceBuilder {
 }
 impl DeviceBuilder {
     /// <p>The path for the device on the host container instance.</p>
+    /// This field is required.
     pub fn host_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_path = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl DeviceBuilder {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
-    pub fn build(self) -> crate::types::Device {
-        crate::types::Device {
-            host_path: self.host_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host_path`](crate::types::builders::DeviceBuilder::host_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::Device, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Device {
+            host_path: self.host_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host_path",
+                    "host_path was not specified but it is required when building Device",
+                )
+            })?,
             container_path: self.container_path,
             permissions: self.permissions,
-        }
+        })
     }
 }

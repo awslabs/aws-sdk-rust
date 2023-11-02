@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBucketStatistics`](crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder::set_account_id): <p>The unique identifier for the Amazon Web Services account.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_bucket_statistics::builders::GetBucketStatisticsFluentBuilder::set_account_id):<br>required: **false**<br><p>The unique identifier for the Amazon Web Services account.</p><br>
     /// - On success, responds with [`GetBucketStatisticsOutput`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput) with field(s):
     ///   - [`bucket_count(Option<i64>)`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput::bucket_count): <p>The total number of buckets.</p>
     ///   - [`bucket_count_by_effective_permission(Option<BucketCountByEffectivePermission>)`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput::bucket_count_by_effective_permission): <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>

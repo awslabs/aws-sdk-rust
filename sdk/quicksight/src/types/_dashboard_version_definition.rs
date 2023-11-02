@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardVersionDefinition {
     /// <p>An array of dataset identifier declarations. With this mapping,you can use dataset identifiers instead of dataset Amazon Resource Names (ARNs) throughout the dashboard's sub-structures.</p>
-    pub data_set_identifier_declarations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>>,
+    pub data_set_identifier_declarations: ::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>,
     /// <p>An array of sheet definitions for a dashboard.</p>
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     /// <p>An array of calculated field definitions for the dashboard.</p>
@@ -23,30 +23,41 @@ pub struct DashboardVersionDefinition {
 }
 impl DashboardVersionDefinition {
     /// <p>An array of dataset identifier declarations. With this mapping,you can use dataset identifiers instead of dataset Amazon Resource Names (ARNs) throughout the dashboard's sub-structures.</p>
-    pub fn data_set_identifier_declarations(&self) -> ::std::option::Option<&[crate::types::DataSetIdentifierDeclaration]> {
-        self.data_set_identifier_declarations.as_deref()
+    pub fn data_set_identifier_declarations(&self) -> &[crate::types::DataSetIdentifierDeclaration] {
+        use std::ops::Deref;
+        self.data_set_identifier_declarations.deref()
     }
     /// <p>An array of sheet definitions for a dashboard.</p>
-    pub fn sheets(&self) -> ::std::option::Option<&[crate::types::SheetDefinition]> {
-        self.sheets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheets.is_none()`.
+    pub fn sheets(&self) -> &[crate::types::SheetDefinition] {
+        self.sheets.as_deref().unwrap_or_default()
     }
     /// <p>An array of calculated field definitions for the dashboard.</p>
-    pub fn calculated_fields(&self) -> ::std::option::Option<&[crate::types::CalculatedField]> {
-        self.calculated_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calculated_fields.is_none()`.
+    pub fn calculated_fields(&self) -> &[crate::types::CalculatedField] {
+        self.calculated_fields.as_deref().unwrap_or_default()
     }
     /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn parameter_declarations(&self) -> ::std::option::Option<&[crate::types::ParameterDeclaration]> {
-        self.parameter_declarations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_declarations.is_none()`.
+    pub fn parameter_declarations(&self) -> &[crate::types::ParameterDeclaration] {
+        self.parameter_declarations.as_deref().unwrap_or_default()
     }
     /// <p>The filter definitions for a dashboard.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn filter_groups(&self) -> ::std::option::Option<&[crate::types::FilterGroup]> {
-        self.filter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_groups.is_none()`.
+    pub fn filter_groups(&self) -> &[crate::types::FilterGroup] {
+        self.filter_groups.as_deref().unwrap_or_default()
     }
     /// <p>An array of dashboard-level column configurations. Column configurations are used to set the default formatting for a column that is used throughout a dashboard. </p>
-    pub fn column_configurations(&self) -> ::std::option::Option<&[crate::types::ColumnConfiguration]> {
-        self.column_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_configurations.is_none()`.
+    pub fn column_configurations(&self) -> &[crate::types::ColumnConfiguration] {
+        self.column_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for default analysis settings.</p>
     pub fn analysis_defaults(&self) -> ::std::option::Option<&crate::types::AnalysisDefaults> {
@@ -217,15 +228,22 @@ impl DashboardVersionDefinitionBuilder {
         &self.analysis_defaults
     }
     /// Consumes the builder and constructs a [`DashboardVersionDefinition`](crate::types::DashboardVersionDefinition).
-    pub fn build(self) -> crate::types::DashboardVersionDefinition {
-        crate::types::DashboardVersionDefinition {
-            data_set_identifier_declarations: self.data_set_identifier_declarations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_identifier_declarations`](crate::types::builders::DashboardVersionDefinitionBuilder::data_set_identifier_declarations)
+    pub fn build(self) -> ::std::result::Result<crate::types::DashboardVersionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DashboardVersionDefinition {
+            data_set_identifier_declarations: self.data_set_identifier_declarations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_identifier_declarations",
+                    "data_set_identifier_declarations was not specified but it is required when building DashboardVersionDefinition",
+                )
+            })?,
             sheets: self.sheets,
             calculated_fields: self.calculated_fields,
             parameter_declarations: self.parameter_declarations,
             filter_groups: self.filter_groups,
             column_configurations: self.column_configurations,
             analysis_defaults: self.analysis_defaults,
-        }
+        })
     }
 }

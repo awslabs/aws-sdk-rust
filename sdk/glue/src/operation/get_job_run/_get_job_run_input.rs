@@ -41,6 +41,7 @@ pub struct GetJobRunInputBuilder {
 }
 impl GetJobRunInputBuilder {
     /// <p>Name of the job definition being run.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetJobRunInputBuilder {
         &self.job_name
     }
     /// <p>The ID of the job run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self

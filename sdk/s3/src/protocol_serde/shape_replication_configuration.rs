@@ -5,15 +5,15 @@ pub fn ser_replication_configuration(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.role {
+    {
         let mut inner_writer = scope.start_el("Role").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.role.as_str());
     }
-    if let Some(var_2) = &input.rules {
-        for list_item_3 in var_2 {
+    {
+        for list_item_1 in &input.rules {
             {
                 let inner_writer = scope.start_el("Rule");
-                crate::protocol_serde::shape_replication_rule::ser_replication_rule(list_item_3, inner_writer)?
+                crate::protocol_serde::shape_replication_rule::ser_replication_rule(list_item_1, inner_writer)?
             }
         }
     }
@@ -21,6 +21,7 @@ pub fn ser_replication_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_replication_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReplicationConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,7 +30,7 @@ pub fn de_replication_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Role") /* Role com.amazonaws.s3#ReplicationConfiguration$Role */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -38,28 +39,30 @@ pub fn de_replication_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_role(var_4);
+                builder = builder.set_role(var_2);
             }
             ,
             s if s.matches("Rule") /* Rules com.amazonaws.s3#ReplicationConfiguration$Rules */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<::std::vec::Vec<crate::types::ReplicationRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_6 = builder.rules.take().unwrap_or_default();
-                            list_6.push(
+                            let mut list_4 = builder.rules.take().unwrap_or_default();
+                            list_4.push(
                                 crate::protocol_serde::shape_replication_rule::de_replication_rule(&mut tag)
                                 ?
                             );
-                            list_6
+                            list_4
                         })
                         ?
                     )
                 ;
-                builder = builder.set_rules(var_5);
+                builder = builder.set_rules(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::replication_configuration_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

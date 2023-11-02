@@ -9,8 +9,10 @@ pub struct SnapshotFileGroup {
 }
 impl SnapshotFileGroup {
     /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
-    pub fn files(&self) -> ::std::option::Option<&[crate::types::SnapshotFile]> {
-        self.files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
+    pub fn files(&self) -> &[crate::types::SnapshotFile] {
+        self.files.as_deref().unwrap_or_default()
     }
 }
 impl SnapshotFileGroup {

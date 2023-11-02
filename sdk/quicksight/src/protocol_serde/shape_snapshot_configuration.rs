@@ -37,7 +37,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::snapshot_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -49,29 +51,29 @@ pub fn ser_snapshot_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnapshotConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_groups {
-        let mut array_2 = object.key("FileGroups").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("FileGroups").start_array();
+        for item_2 in &input.file_groups {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_snapshot_file_group::ser_snapshot_file_group(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_snapshot_file_group::ser_snapshot_file_group(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.destination_configuration {
+    if let Some(var_4) = &input.destination_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("DestinationConfiguration").start_object();
-        crate::protocol_serde::shape_snapshot_destination_configuration::ser_snapshot_destination_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("DestinationConfiguration").start_object();
+        crate::protocol_serde::shape_snapshot_destination_configuration::ser_snapshot_destination_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.parameters {
+    if let Some(var_6) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Parameters").start_object();
-        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("Parameters").start_object();
+        crate::protocol_serde::shape_parameters::ser_parameters(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

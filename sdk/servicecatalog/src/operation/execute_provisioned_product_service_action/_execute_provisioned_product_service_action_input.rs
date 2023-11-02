@@ -63,6 +63,7 @@ pub struct ExecuteProvisionedProductServiceActionInputBuilder {
 }
 impl ExecuteProvisionedProductServiceActionInputBuilder {
     /// <p>The identifier of the provisioned product.</p>
+    /// This field is required.
     pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ExecuteProvisionedProductServiceActionInputBuilder {
         &self.provisioned_product_id
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    /// This field is required.
     pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_action_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl ExecuteProvisionedProductServiceActionInputBuilder {
         &self.service_action_id
     }
     /// <p>An idempotency token that uniquely identifies the execute request.</p>
+    /// This field is required.
     pub fn execute_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execute_token = ::std::option::Option::Some(input.into());
         self

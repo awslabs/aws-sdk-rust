@@ -16,8 +16,10 @@ impl AssociateEncryptionConfigInput {
         self.cluster_name.as_deref()
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&[crate::types::EncryptionConfig]> {
-        self.encryption_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encryption_config.is_none()`.
+    pub fn encryption_config(&self) -> &[crate::types::EncryptionConfig] {
+        self.encryption_config.as_deref().unwrap_or_default()
     }
     /// <p>The client request token you are using with the encryption configuration.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct AssociateEncryptionConfigInputBuilder {
 }
 impl AssociateEncryptionConfigInputBuilder {
     /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self

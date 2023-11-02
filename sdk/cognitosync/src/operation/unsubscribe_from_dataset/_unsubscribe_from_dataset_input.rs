@@ -49,6 +49,7 @@ pub struct UnsubscribeFromDatasetInputBuilder {
 }
 impl UnsubscribeFromDatasetInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UnsubscribeFromDatasetInputBuilder {
         &self.identity_pool_id
     }
     /// <p>Unique ID for this identity.</p>
+    /// This field is required.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl UnsubscribeFromDatasetInputBuilder {
         &self.identity_id
     }
     /// <p>The name of the dataset from which to unsubcribe.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl UnsubscribeFromDatasetInputBuilder {
         &self.dataset_name
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self

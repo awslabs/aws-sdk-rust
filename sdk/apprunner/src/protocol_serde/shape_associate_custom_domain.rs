@@ -87,7 +87,9 @@ pub fn de_associate_custom_domain_http_response(
         output = crate::protocol_serde::shape_associate_custom_domain::de_associate_custom_domain(_response_body, output)
             .map_err(crate::operation::associate_custom_domain::AssociateCustomDomainError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::associate_custom_domain_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::associate_custom_domain::AssociateCustomDomainError::unhandled)?
     })
 }
 

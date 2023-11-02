@@ -157,6 +157,7 @@ pub struct AdminRespondToAuthChallengeInputBuilder {
 }
 impl AdminRespondToAuthChallengeInputBuilder {
     /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +172,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
         &self.user_pool_id
     }
     /// <p>The app client ID.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +187,7 @@ impl AdminRespondToAuthChallengeInputBuilder {
         &self.client_id
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    /// This field is required.
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
         self.challenge_name = ::std::option::Option::Some(input);
         self

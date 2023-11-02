@@ -55,6 +55,7 @@ impl PutImageTagMutabilityInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository in which to update the image tag mutability settings.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutImageTagMutabilityInputBuilder {
         &self.repository_name
     }
     /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
+    /// This field is required.
     pub fn image_tag_mutability(mut self, input: crate::types::ImageTagMutability) -> Self {
         self.image_tag_mutability = ::std::option::Option::Some(input);
         self

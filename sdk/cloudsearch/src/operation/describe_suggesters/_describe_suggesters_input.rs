@@ -17,8 +17,10 @@ impl DescribeSuggestersInput {
         self.domain_name.as_deref()
     }
     /// <p>The suggesters you want to describe.</p>
-    pub fn suggester_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.suggester_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggester_names.is_none()`.
+    pub fn suggester_names(&self) -> &[::std::string::String] {
+        self.suggester_names.as_deref().unwrap_or_default()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct DescribeSuggestersInputBuilder {
 }
 impl DescribeSuggestersInputBuilder {
     /// <p>The name of the domain you want to describe.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

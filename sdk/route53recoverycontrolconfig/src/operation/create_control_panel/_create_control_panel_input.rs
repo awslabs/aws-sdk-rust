@@ -63,6 +63,7 @@ impl CreateControlPanelInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl CreateControlPanelInputBuilder {
         &self.cluster_arn
     }
     /// <p>The name of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_name = ::std::option::Option::Some(input.into());
         self

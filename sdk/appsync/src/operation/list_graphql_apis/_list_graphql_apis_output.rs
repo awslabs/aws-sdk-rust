@@ -11,8 +11,10 @@ pub struct ListGraphqlApisOutput {
 }
 impl ListGraphqlApisOutput {
     /// <p>The <code>GraphqlApi</code> objects.</p>
-    pub fn graphql_apis(&self) -> ::std::option::Option<&[crate::types::GraphqlApi]> {
-        self.graphql_apis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.graphql_apis.is_none()`.
+    pub fn graphql_apis(&self) -> &[crate::types::GraphqlApi] {
+        self.graphql_apis.as_deref().unwrap_or_default()
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct ListHandshakesForOrganizationOutput {
 }
 impl ListHandshakesForOrganizationOutput {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
-    pub fn handshakes(&self) -> ::std::option::Option<&[crate::types::Handshake]> {
-        self.handshakes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.handshakes.is_none()`.
+    pub fn handshakes(&self) -> &[crate::types::Handshake] {
+        self.handshakes.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -48,6 +48,7 @@ pub struct UpdateWorldTemplateInputBuilder {
 }
 impl UpdateWorldTemplateInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
+    /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self

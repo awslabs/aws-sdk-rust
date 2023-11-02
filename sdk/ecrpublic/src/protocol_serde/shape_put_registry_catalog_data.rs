@@ -89,7 +89,7 @@ pub fn de_put_registry_catalog_data_http_response(
         output = crate::protocol_serde::shape_put_registry_catalog_data::de_put_registry_catalog_data(_response_body, output)
             .map_err(crate::operation::put_registry_catalog_data::PutRegistryCatalogDataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::put_registry_catalog_data_output_correct_errors(output).build()
     })
 }
 

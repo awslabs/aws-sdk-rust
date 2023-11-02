@@ -35,6 +35,7 @@ pub struct ListSubscriptionsByTopicInputBuilder {
 }
 impl ListSubscriptionsByTopicInputBuilder {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self

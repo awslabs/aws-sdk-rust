@@ -101,8 +101,10 @@ impl Endpoint {
         self.security_group.as_deref()
     }
     /// <p>The subnet IDs of the endpoint. </p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p> Additional details of the endpoint state. </p>
     pub fn state_details(&self) -> ::std::option::Option<&str> {

@@ -6,13 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceLastAccessed {
     /// <p>The name of the service in which access was attempted.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub last_authenticated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub service_namespace: ::std::option::Option<::std::string::String>,
+    pub service_namespace: ::std::string::String,
     /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
     pub last_authenticated_entity: ::std::option::Option<::std::string::String>,
@@ -28,8 +28,9 @@ pub struct ServiceLastAccessed {
 }
 impl ServiceLastAccessed {
     /// <p>The name of the service in which access was attempted.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when an authenticated entity most recently attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
@@ -38,8 +39,9 @@ impl ServiceLastAccessed {
     }
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&str> {
-        self.service_namespace.as_deref()
+    pub fn service_namespace(&self) -> &str {
+        use std::ops::Deref;
+        self.service_namespace.deref()
     }
     /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>.</p>
@@ -58,8 +60,10 @@ impl ServiceLastAccessed {
     }
     /// <p>An object that contains details about the most recent attempt to access a tracked action within the service.</p>
     /// <p>This field is null if there no tracked actions or if the principal did not use the tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking period</a>. This field is also null if the report was generated at the service level and not the action level. For more information, see the <code>Granularity</code> field in <code>GenerateServiceLastAccessedDetails</code>.</p>
-    pub fn tracked_actions_last_accessed(&self) -> ::std::option::Option<&[crate::types::TrackedActionLastAccessed]> {
-        self.tracked_actions_last_accessed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tracked_actions_last_accessed.is_none()`.
+    pub fn tracked_actions_last_accessed(&self) -> &[crate::types::TrackedActionLastAccessed] {
+        self.tracked_actions_last_accessed.as_deref().unwrap_or_default()
     }
 }
 impl ServiceLastAccessed {
@@ -83,6 +87,7 @@ pub struct ServiceLastAccessedBuilder {
 }
 impl ServiceLastAccessedBuilder {
     /// <p>The name of the service in which access was attempted.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +120,7 @@ impl ServiceLastAccessedBuilder {
     }
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_namespace = ::std::option::Option::Some(input.into());
         self
@@ -208,15 +214,28 @@ impl ServiceLastAccessedBuilder {
         &self.tracked_actions_last_accessed
     }
     /// Consumes the builder and constructs a [`ServiceLastAccessed`](crate::types::ServiceLastAccessed).
-    pub fn build(self) -> crate::types::ServiceLastAccessed {
-        crate::types::ServiceLastAccessed {
-            service_name: self.service_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_name`](crate::types::builders::ServiceLastAccessedBuilder::service_name)
+    /// - [`service_namespace`](crate::types::builders::ServiceLastAccessedBuilder::service_namespace)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceLastAccessed, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceLastAccessed {
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building ServiceLastAccessed",
+                )
+            })?,
             last_authenticated: self.last_authenticated,
-            service_namespace: self.service_namespace,
+            service_namespace: self.service_namespace.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_namespace",
+                    "service_namespace was not specified but it is required when building ServiceLastAccessed",
+                )
+            })?,
             last_authenticated_entity: self.last_authenticated_entity,
             last_authenticated_region: self.last_authenticated_region,
             total_authenticated_entities: self.total_authenticated_entities,
             tracked_actions_last_accessed: self.tracked_actions_last_accessed,
-        }
+        })
     }
 }

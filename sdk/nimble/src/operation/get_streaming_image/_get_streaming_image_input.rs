@@ -34,6 +34,7 @@ pub struct GetStreamingImageInputBuilder {
 }
 impl GetStreamingImageInputBuilder {
     /// <p>The streaming image ID.</p>
+    /// This field is required.
     pub fn streaming_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetStreamingImageInputBuilder {
         &self.streaming_image_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

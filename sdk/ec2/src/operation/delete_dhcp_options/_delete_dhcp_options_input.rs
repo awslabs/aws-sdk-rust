@@ -34,6 +34,7 @@ pub struct DeleteDhcpOptionsInputBuilder {
 }
 impl DeleteDhcpOptionsInputBuilder {
     /// <p>The ID of the DHCP options set.</p>
+    /// This field is required.
     pub fn dhcp_options_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self

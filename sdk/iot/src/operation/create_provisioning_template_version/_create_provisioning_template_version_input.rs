@@ -41,6 +41,7 @@ pub struct CreateProvisioningTemplateVersionInputBuilder {
 }
 impl CreateProvisioningTemplateVersionInputBuilder {
     /// <p>The name of the provisioning template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateProvisioningTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
+    /// This field is required.
     pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self

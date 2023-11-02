@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The unique identifier for the connector.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
@@ -28,8 +28,9 @@ pub struct DescribedConnector {
 }
 impl DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The unique identifier for the connector.</p>
     pub fn connector_id(&self) -> ::std::option::Option<&str> {
@@ -57,8 +58,10 @@ impl DescribedConnector {
         self.logging_role.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for connectors.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
@@ -87,6 +90,7 @@ pub struct DescribedConnectorBuilder {
 }
 impl DescribedConnectorBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -220,9 +224,16 @@ impl DescribedConnectorBuilder {
         &self.sftp_config
     }
     /// Consumes the builder and constructs a [`DescribedConnector`](crate::types::DescribedConnector).
-    pub fn build(self) -> crate::types::DescribedConnector {
-        crate::types::DescribedConnector {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedConnectorBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedConnector, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedConnector {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedConnector",
+                )
+            })?,
             connector_id: self.connector_id,
             url: self.url,
             as2_config: self.as2_config,
@@ -230,6 +241,6 @@ impl DescribedConnectorBuilder {
             logging_role: self.logging_role,
             tags: self.tags,
             sftp_config: self.sftp_config,
-        }
+        })
     }
 }

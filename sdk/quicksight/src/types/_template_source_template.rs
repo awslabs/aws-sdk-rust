@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl TemplateSourceTemplate {
@@ -28,6 +29,7 @@ pub struct TemplateSourceTemplateBuilder {
 }
 impl TemplateSourceTemplateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl TemplateSourceTemplateBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`TemplateSourceTemplate`](crate::types::TemplateSourceTemplate).
-    pub fn build(self) -> crate::types::TemplateSourceTemplate {
-        crate::types::TemplateSourceTemplate { arn: self.arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::TemplateSourceTemplateBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSourceTemplate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateSourceTemplate {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building TemplateSourceTemplate",
+                )
+            })?,
+        })
     }
 }

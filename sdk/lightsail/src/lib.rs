@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-lightsail = "0.34.0"
+//! aws-sdk-lightsail = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -194,6 +194,8 @@ mod serialization_settings;
 mod endpoint_lib;
 
 mod json_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

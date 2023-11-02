@@ -29,8 +29,10 @@ impl FieldBasedTooltip {
         self.tooltip_title_type.as_ref()
     }
     /// <p>The fields configuration in the tooltip.</p>
-    pub fn tooltip_fields(&self) -> ::std::option::Option<&[crate::types::TooltipItem]> {
-        self.tooltip_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tooltip_fields.is_none()`.
+    pub fn tooltip_fields(&self) -> &[crate::types::TooltipItem] {
+        self.tooltip_fields.as_deref().unwrap_or_default()
     }
 }
 impl FieldBasedTooltip {

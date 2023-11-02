@@ -62,6 +62,7 @@ pub struct UpdateLifecyclePolicyInputBuilder {
 }
 impl UpdateLifecyclePolicyInputBuilder {
     /// <p> The type of lifecycle policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl UpdateLifecyclePolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateLifecyclePolicyInputBuilder {
         &self.name
     }
     /// <p>The version of the policy being updated.</p>
+    /// This field is required.
     pub fn policy_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_version = ::std::option::Option::Some(input.into());
         self

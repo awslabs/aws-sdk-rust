@@ -58,6 +58,7 @@ pub struct ListAssetModelPropertiesInputBuilder {
 }
 impl ListAssetModelPropertiesInputBuilder {
     /// <p>The ID of the asset model.</p>
+    /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self

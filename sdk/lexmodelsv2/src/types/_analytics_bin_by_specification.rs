@@ -5,20 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsBinBySpecification {
     /// <p>Specifies the time metric by which to bin the analytics data.</p>
-    pub name: ::std::option::Option<crate::types::AnalyticsBinByName>,
+    pub name: crate::types::AnalyticsBinByName,
     /// <p>Specifies the interval of time by which to bin the analytics data.</p>
-    pub interval: ::std::option::Option<crate::types::AnalyticsInterval>,
+    pub interval: crate::types::AnalyticsInterval,
     /// <p>Specifies whether to bin the analytics data in ascending or descending order. If this field is left blank, the default order is by the key of the bin in descending order.</p>
     pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
 }
 impl AnalyticsBinBySpecification {
     /// <p>Specifies the time metric by which to bin the analytics data.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsBinByName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsBinByName {
+        &self.name
     }
     /// <p>Specifies the interval of time by which to bin the analytics data.</p>
-    pub fn interval(&self) -> ::std::option::Option<&crate::types::AnalyticsInterval> {
-        self.interval.as_ref()
+    pub fn interval(&self) -> &crate::types::AnalyticsInterval {
+        &self.interval
     }
     /// <p>Specifies whether to bin the analytics data in ascending or descending order. If this field is left blank, the default order is by the key of the bin in descending order.</p>
     pub fn order(&self) -> ::std::option::Option<&crate::types::AnalyticsSortOrder> {
@@ -42,6 +42,7 @@ pub struct AnalyticsBinBySpecificationBuilder {
 }
 impl AnalyticsBinBySpecificationBuilder {
     /// <p>Specifies the time metric by which to bin the analytics data.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsBinByName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl AnalyticsBinBySpecificationBuilder {
         &self.name
     }
     /// <p>Specifies the interval of time by which to bin the analytics data.</p>
+    /// This field is required.
     pub fn interval(mut self, input: crate::types::AnalyticsInterval) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,24 @@ impl AnalyticsBinBySpecificationBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`AnalyticsBinBySpecification`](crate::types::AnalyticsBinBySpecification).
-    pub fn build(self) -> crate::types::AnalyticsBinBySpecification {
-        crate::types::AnalyticsBinBySpecification {
-            name: self.name,
-            interval: self.interval,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsBinBySpecificationBuilder::name)
+    /// - [`interval`](crate::types::builders::AnalyticsBinBySpecificationBuilder::interval)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsBinBySpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsBinBySpecification {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsBinBySpecification",
+                )
+            })?,
+            interval: self.interval.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "interval",
+                    "interval was not specified but it is required when building AnalyticsBinBySpecification",
+                )
+            })?,
             order: self.order,
-        }
+        })
     }
 }

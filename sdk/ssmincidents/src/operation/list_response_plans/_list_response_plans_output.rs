@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResponsePlansOutput {
     /// <p>Details of each response plan.</p>
-    pub response_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
+    pub response_plan_summaries: ::std::vec::Vec<crate::types::ResponsePlanSummary>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResponsePlansOutput {
     /// <p>Details of each response plan.</p>
-    pub fn response_plan_summaries(&self) -> ::std::option::Option<&[crate::types::ResponsePlanSummary]> {
-        self.response_plan_summaries.as_deref()
+    pub fn response_plan_summaries(&self) -> &[crate::types::ResponsePlanSummary] {
+        use std::ops::Deref;
+        self.response_plan_summaries.deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListResponsePlansOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResponsePlansOutput`](crate::operation::list_response_plans::ListResponsePlansOutput).
-    pub fn build(self) -> crate::operation::list_response_plans::ListResponsePlansOutput {
-        crate::operation::list_response_plans::ListResponsePlansOutput {
-            response_plan_summaries: self.response_plan_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`response_plan_summaries`](crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder::response_plan_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_response_plans::ListResponsePlansOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_response_plans::ListResponsePlansOutput {
+            response_plan_summaries: self.response_plan_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "response_plan_summaries",
+                    "response_plan_summaries was not specified but it is required when building ListResponsePlansOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

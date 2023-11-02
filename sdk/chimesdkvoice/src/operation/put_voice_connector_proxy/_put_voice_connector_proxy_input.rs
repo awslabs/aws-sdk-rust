@@ -24,8 +24,10 @@ impl PutVoiceConnectorProxyInput {
         self.default_session_expiry_minutes
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn phone_number_pool_countries(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phone_number_pool_countries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_pool_countries.is_none()`.
+    pub fn phone_number_pool_countries(&self) -> &[::std::string::String] {
+        self.phone_number_pool_countries.as_deref().unwrap_or_default()
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fn fall_back_phone_number(&self) -> ::std::option::Option<&str> {
@@ -66,6 +68,7 @@ pub struct PutVoiceConnectorProxyInputBuilder {
 }
 impl PutVoiceConnectorProxyInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl PutVoiceConnectorProxyInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The default number of minutes allowed for proxy session.</p>
+    /// This field is required.
     pub fn default_session_expiry_minutes(mut self, input: i32) -> Self {
         self.default_session_expiry_minutes = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct DeleteSubscriptionGrantInputBuilder {
 }
 impl DeleteSubscriptionGrantInputBuilder {
     /// <p>The ID of the Amazon DataZone domain where the subscription grant is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteSubscriptionGrantInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the subscription grant that is deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

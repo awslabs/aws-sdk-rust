@@ -7,7 +7,7 @@
 // This code is referenced in generated code, so the compiler doesn't realize it is used.
 #![allow(dead_code)]
 
-use aws_runtime::auth::sigv4::SigV4OperationSigningConfig;
+use aws_runtime::auth::SigV4OperationSigningConfig;
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::byte_stream;

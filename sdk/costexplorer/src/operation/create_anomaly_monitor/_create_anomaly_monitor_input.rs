@@ -34,8 +34,10 @@ impl CreateAnomalyMonitorInput {
     /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
     /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
     /// </ul>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::ResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAnomalyMonitorInput {
@@ -54,6 +56,7 @@ pub struct CreateAnomalyMonitorInputBuilder {
 }
 impl CreateAnomalyMonitorInputBuilder {
     /// <p>The cost anomaly detection monitor object that you want to create.</p>
+    /// This field is required.
     pub fn anomaly_monitor(mut self, input: crate::types::AnomalyMonitor) -> Self {
         self.anomaly_monitor = ::std::option::Option::Some(input);
         self

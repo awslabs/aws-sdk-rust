@@ -27,6 +27,7 @@ pub struct DeleteDbClusterAutomatedBackupInputBuilder {
 }
 impl DeleteDbClusterAutomatedBackupInputBuilder {
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_resource_id = ::std::option::Option::Some(input.into());
         self

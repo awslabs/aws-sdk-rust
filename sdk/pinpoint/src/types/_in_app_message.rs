@@ -13,8 +13,10 @@ pub struct InAppMessage {
 }
 impl InAppMessage {
     /// <p>In-app message content.</p>
-    pub fn content(&self) -> ::std::option::Option<&[crate::types::InAppMessageContent]> {
-        self.content.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
+    pub fn content(&self) -> &[crate::types::InAppMessageContent] {
+        self.content.as_deref().unwrap_or_default()
     }
     /// <p>Custom config to be sent to SDK.</p>
     pub fn custom_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

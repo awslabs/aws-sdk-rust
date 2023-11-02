@@ -11,8 +11,10 @@ pub struct ListCompilationJobsOutput {
 }
 impl ListCompilationJobsOutput {
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job. </p>
-    pub fn compilation_job_summaries(&self) -> ::std::option::Option<&[crate::types::CompilationJobSummary]> {
-        self.compilation_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compilation_job_summaries.is_none()`.
+    pub fn compilation_job_summaries(&self) -> &[crate::types::CompilationJobSummary] {
+        self.compilation_job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

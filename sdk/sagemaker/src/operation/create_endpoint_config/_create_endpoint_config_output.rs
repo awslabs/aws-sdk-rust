@@ -34,6 +34,7 @@ pub struct CreateEndpointConfigOutputBuilder {
 }
 impl CreateEndpointConfigOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration. </p>
+    /// This field is required.
     pub fn endpoint_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_arn = ::std::option::Option::Some(input.into());
         self

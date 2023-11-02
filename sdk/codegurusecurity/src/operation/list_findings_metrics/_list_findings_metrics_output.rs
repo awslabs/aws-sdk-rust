@@ -11,8 +11,10 @@ pub struct ListFindingsMetricsOutput {
 }
 impl ListFindingsMetricsOutput {
     /// <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
-    pub fn findings_metrics(&self) -> ::std::option::Option<&[crate::types::AccountFindingsMetric]> {
-        self.findings_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings_metrics.is_none()`.
+    pub fn findings_metrics(&self) -> &[crate::types::AccountFindingsMetric] {
+        self.findings_metrics.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

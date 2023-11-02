@@ -61,11 +61,10 @@ pub fn de_create_lifecycle_policy_http_error(
                 )
                 .map_err(crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ValidationException({

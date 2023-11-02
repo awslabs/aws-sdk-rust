@@ -6,7 +6,7 @@ pub struct SendProjectSessionActionOutput {
     /// <p>A message indicating the result of performing the action.</p>
     pub result: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project that was affected by the action.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique identifier for the action that was performed.</p>
     pub action_id: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -17,8 +17,9 @@ impl SendProjectSessionActionOutput {
         self.result.as_deref()
     }
     /// <p>The name of the project that was affected by the action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique identifier for the action that was performed.</p>
     pub fn action_id(&self) -> ::std::option::Option<i32> {
@@ -62,6 +63,7 @@ impl SendProjectSessionActionOutputBuilder {
         &self.result
     }
     /// <p>The name of the project that was affected by the action.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +101,24 @@ impl SendProjectSessionActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendProjectSessionActionOutput`](crate::operation::send_project_session_action::SendProjectSessionActionOutput).
-    pub fn build(self) -> crate::operation::send_project_session_action::SendProjectSessionActionOutput {
-        crate::operation::send_project_session_action::SendProjectSessionActionOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::send_project_session_action::builders::SendProjectSessionActionOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::send_project_session_action::SendProjectSessionActionOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::send_project_session_action::SendProjectSessionActionOutput {
             result: self.result,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SendProjectSessionActionOutput",
+                )
+            })?,
             action_id: self.action_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }

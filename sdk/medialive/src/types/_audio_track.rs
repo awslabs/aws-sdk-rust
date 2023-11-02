@@ -28,6 +28,7 @@ pub struct AudioTrackBuilder {
 }
 impl AudioTrackBuilder {
     /// 1-based integer value that maps to a specific audio track
+    /// This field is required.
     pub fn track(mut self, input: i32) -> Self {
         self.track = ::std::option::Option::Some(input);
         self

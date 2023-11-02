@@ -193,8 +193,10 @@ impl StartLoaderJobInput {
     /// </ol>
     /// <p>Because of the <code>dependencies</code> parameter, the bulk loader will not start <code>Job-C</code> until <code>Job-A</code> and <code>Job-B</code> have completed successfully. If either one of them fails, Job-C will not be executed, and its status will be set to <code>LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED</code>.</p>
     /// <p>You can set up multiple levels of dependency in this way, so that the failure of one job will cause all requests that are directly or indirectly dependent on it to be cancelled.</p>
-    pub fn dependencies(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dependencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependencies.is_none()`.
+    pub fn dependencies(&self) -> &[::std::string::String] {
+        self.dependencies.as_deref().unwrap_or_default()
     }
     /// <p>This parameter is required only when loading openCypher data that contains relationship IDs. It must be included and set to <code>True</code> when openCypher relationship IDs are explicitly provided in the load data (recommended).</p>
     /// <p>When <code>userProvidedEdgeIds</code> is absent or set to <code>True</code>, an <code>:ID</code> column must be present in every relationship file in the load.</p>
@@ -238,6 +240,7 @@ impl StartLoaderJobInputBuilder {
     /// </ul>
     /// <p>The <code>object-key-name</code> element of the URI is equivalent to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html#API_ListObjects_RequestParameters">prefix</a> parameter in an S3 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a> API call. It identifies all the objects in the specified S3 bucket whose names begin with that prefix. That can be a single file or folder, or multiple files and/or folders.</p>
     /// <p>The specified folder or folders can contain multiple vertex files and multiple edge files.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -277,6 +280,7 @@ impl StartLoaderJobInputBuilder {
     /// <li> <p> <b> <code>rdfxml</code> </b> for the <a href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF\XML RDF data format</a>.</p> </li>
     /// <li> <p> <b> <code>turtle</code> </b> for the <a href="https://www.w3.org/TR/turtle/">Turtle RDF data format</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -309,6 +313,7 @@ impl StartLoaderJobInputBuilder {
         &self.format
     }
     /// <p>The Amazon region of the S3 bucket. This must match the Amazon Region of the DB cluster.</p>
+    /// This field is required.
     pub fn s3_bucket_region(mut self, input: crate::types::S3BucketRegion) -> Self {
         self.s3_bucket_region = ::std::option::Option::Some(input);
         self
@@ -323,6 +328,7 @@ impl StartLoaderJobInputBuilder {
         &self.s3_bucket_region
     }
     /// <p>The Amazon Resource Name (ARN) for an IAM role to be assumed by the Neptune DB instance for access to the S3 bucket. The IAM role ARN provided here should be attached to the DB cluster (see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM-add-role-cluster.html">Adding the IAM Role to an Amazon Neptune Cluster</a>.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self

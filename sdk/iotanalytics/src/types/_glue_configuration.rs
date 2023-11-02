@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueConfiguration {
     /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
 }
 impl GlueConfiguration {
     /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
 }
 impl GlueConfiguration {
@@ -35,6 +37,7 @@ pub struct GlueConfigurationBuilder {
 }
 impl GlueConfigurationBuilder {
     /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL operations. An Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl GlueConfigurationBuilder {
         &self.table_name
     }
     /// <p>The name of the database in your Glue Data Catalog in which the table is located. An Glue Data Catalog database contains metadata tables.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl GlueConfigurationBuilder {
         &self.database_name
     }
     /// Consumes the builder and constructs a [`GlueConfiguration`](crate::types::GlueConfiguration).
-    pub fn build(self) -> crate::types::GlueConfiguration {
-        crate::types::GlueConfiguration {
-            table_name: self.table_name,
-            database_name: self.database_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::GlueConfigurationBuilder::table_name)
+    /// - [`database_name`](crate::types::builders::GlueConfigurationBuilder::database_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlueConfiguration {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building GlueConfiguration",
+                )
+            })?,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building GlueConfiguration",
+                )
+            })?,
+        })
     }
 }

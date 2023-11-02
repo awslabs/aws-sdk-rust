@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReplicationSetInput {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    pub regions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>>,
+    pub regions: ::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to add to the replication set.</p>
@@ -12,8 +12,8 @@ pub struct CreateReplicationSetInput {
 }
 impl CreateReplicationSetInput {
     /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
-    pub fn regions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue>> {
-        self.regions.as_ref()
+    pub fn regions(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::RegionMapInputValue> {
+        &self.regions
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -98,12 +98,19 @@ impl CreateReplicationSetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReplicationSetInput`](crate::operation::create_replication_set::CreateReplicationSetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`regions`](crate::operation::create_replication_set::builders::CreateReplicationSetInputBuilder::regions)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_replication_set::CreateReplicationSetInput {
-            regions: self.regions,
+            regions: self.regions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "regions",
+                    "regions was not specified but it is required when building CreateReplicationSetInput",
+                )
+            })?,
             client_token: self.client_token,
             tags: self.tags,
         })

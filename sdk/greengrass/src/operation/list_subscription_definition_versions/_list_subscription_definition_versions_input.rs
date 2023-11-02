@@ -69,6 +69,7 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
         &self.next_token
     }
     /// The ID of the subscription definition.
+    /// This field is required.
     pub fn subscription_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_definition_id = ::std::option::Option::Some(input.into());
         self

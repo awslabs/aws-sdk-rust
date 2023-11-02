@@ -6,9 +6,9 @@ pub struct CreateWorkerFleetInput {
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// Site ARN.
-    pub site: ::std::option::Option<::std::string::String>,
+    pub site: ::std::string::String,
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub additional_fixed_properties: ::std::option::Option<::std::string::String>,
 }
@@ -18,12 +18,14 @@ impl CreateWorkerFleetInput {
         self.client_token.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> ::std::option::Option<&str> {
-        self.site.as_deref()
+    pub fn site(&self) -> &str {
+        use std::ops::Deref;
+        self.site.deref()
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl CreateWorkerFleetInputBuilder {
         &self.client_token
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateWorkerFleetInputBuilder {
         &self.name
     }
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -104,13 +108,26 @@ impl CreateWorkerFleetInputBuilder {
         &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`CreateWorkerFleetInput`](crate::operation::create_worker_fleet::CreateWorkerFleetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_worker_fleet::builders::CreateWorkerFleetInputBuilder::name)
+    /// - [`site`](crate::operation::create_worker_fleet::builders::CreateWorkerFleetInputBuilder::site)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_worker_fleet::CreateWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_worker_fleet::CreateWorkerFleetInput {
             client_token: self.client_token,
-            name: self.name,
-            site: self.site,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateWorkerFleetInput",
+                )
+            })?,
+            site: self.site.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "site",
+                    "site was not specified but it is required when building CreateWorkerFleetInput",
+                )
+            })?,
             additional_fixed_properties: self.additional_fixed_properties,
         })
     }

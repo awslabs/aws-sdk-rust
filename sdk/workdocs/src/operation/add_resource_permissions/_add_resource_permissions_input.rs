@@ -22,8 +22,10 @@ impl AddResourcePermissionsInput {
         self.resource_id.as_deref()
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[crate::types::SharePrincipal]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[crate::types::SharePrincipal] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>The notification options.</p>
     pub fn notification_options(&self) -> ::std::option::Option<&crate::types::NotificationOptions> {
@@ -72,6 +74,7 @@ impl AddResourcePermissionsInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

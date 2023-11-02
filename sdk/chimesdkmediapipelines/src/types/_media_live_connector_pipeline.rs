@@ -21,12 +21,16 @@ pub struct MediaLiveConnectorPipeline {
 }
 impl MediaLiveConnectorPipeline {
     /// <p>The connector pipeline's data sources.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LiveConnectorSourceConfiguration]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::LiveConnectorSourceConfiguration] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The connector pipeline's data sinks.</p>
-    pub fn sinks(&self) -> ::std::option::Option<&[crate::types::LiveConnectorSinkConfiguration]> {
-        self.sinks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sinks.is_none()`.
+    pub fn sinks(&self) -> &[crate::types::LiveConnectorSinkConfiguration] {
+        self.sinks.as_deref().unwrap_or_default()
     }
     /// <p>The connector pipeline's ID.</p>
     pub fn media_pipeline_id(&self) -> ::std::option::Option<&str> {

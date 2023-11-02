@@ -213,6 +213,7 @@ impl CopySnapshotInputBuilder {
         &self.use_latest_restorable_auto_snapshot
     }
     /// <p>The name of the new manual snapshot to be created as a copy.</p>
+    /// This field is required.
     pub fn target_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -227,6 +228,7 @@ impl CopySnapshotInputBuilder {
         &self.target_snapshot_name
     }
     /// <p>The Amazon Web Services Region where the source manual or automatic snapshot is located.</p>
+    /// This field is required.
     pub fn source_region(mut self, input: crate::types::RegionName) -> Self {
         self.source_region = ::std::option::Option::Some(input);
         self

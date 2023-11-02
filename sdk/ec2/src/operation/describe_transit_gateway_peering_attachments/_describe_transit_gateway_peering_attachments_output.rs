@@ -11,8 +11,10 @@ pub struct DescribeTransitGatewayPeeringAttachmentsOutput {
 }
 impl DescribeTransitGatewayPeeringAttachmentsOutput {
     /// <p>The transit gateway peering attachments.</p>
-    pub fn transit_gateway_peering_attachments(&self) -> ::std::option::Option<&[crate::types::TransitGatewayPeeringAttachment]> {
-        self.transit_gateway_peering_attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_peering_attachments.is_none()`.
+    pub fn transit_gateway_peering_attachments(&self) -> &[crate::types::TransitGatewayPeeringAttachment] {
+        self.transit_gateway_peering_attachments.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

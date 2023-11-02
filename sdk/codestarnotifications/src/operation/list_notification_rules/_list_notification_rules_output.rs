@@ -15,8 +15,10 @@ impl ListNotificationRulesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    pub fn notification_rules(&self) -> ::std::option::Option<&[crate::types::NotificationRuleSummary]> {
-        self.notification_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_rules.is_none()`.
+    pub fn notification_rules(&self) -> &[crate::types::NotificationRuleSummary] {
+        self.notification_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListNotificationRulesOutput {

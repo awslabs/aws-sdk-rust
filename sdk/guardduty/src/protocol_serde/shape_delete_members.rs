@@ -64,7 +64,7 @@ pub fn de_delete_members_http_response(
         output = crate::protocol_serde::shape_delete_members::de_delete_members(_response_body, output)
             .map_err(crate::operation::delete_members::DeleteMembersError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_members_output_correct_errors(output).build()
     })
 }
 

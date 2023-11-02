@@ -21,8 +21,10 @@ impl InsightResults {
         self.group_by_attribute.as_deref()
     }
     /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn result_values(&self) -> ::std::option::Option<&[crate::types::InsightResultValue]> {
-        self.result_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_values.is_none()`.
+    pub fn result_values(&self) -> &[crate::types::InsightResultValue] {
+        self.result_values.as_deref().unwrap_or_default()
     }
 }
 impl InsightResults {
@@ -42,6 +44,7 @@ pub struct InsightResultsBuilder {
 }
 impl InsightResultsBuilder {
     /// <p>The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
+    /// This field is required.
     pub fn insight_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl InsightResultsBuilder {
         &self.insight_arn
     }
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
+    /// This field is required.
     pub fn group_by_attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_by_attribute = ::std::option::Option::Some(input.into());
         self

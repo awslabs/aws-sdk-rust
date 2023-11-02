@@ -28,6 +28,7 @@ pub struct EnableTopicRuleInputBuilder {
 }
 impl EnableTopicRuleInputBuilder {
     /// <p>The name of the topic rule to enable.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self

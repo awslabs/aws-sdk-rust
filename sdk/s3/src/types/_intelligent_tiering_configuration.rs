@@ -6,30 +6,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntelligentTieringConfiguration {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
     pub filter: ::std::option::Option<crate::types::IntelligentTieringFilter>,
     /// <p>Specifies the status of the configuration.</p>
-    pub status: ::std::option::Option<crate::types::IntelligentTieringStatus>,
+    pub status: crate::types::IntelligentTieringStatus,
     /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
-    pub tierings: ::std::option::Option<::std::vec::Vec<crate::types::Tiering>>,
+    pub tierings: ::std::vec::Vec<crate::types::Tiering>,
 }
 impl IntelligentTieringConfiguration {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::IntelligentTieringFilter> {
         self.filter.as_ref()
     }
     /// <p>Specifies the status of the configuration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IntelligentTieringStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::IntelligentTieringStatus {
+        &self.status
     }
     /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
-    pub fn tierings(&self) -> ::std::option::Option<&[crate::types::Tiering]> {
-        self.tierings.as_deref()
+    pub fn tierings(&self) -> &[crate::types::Tiering] {
+        use std::ops::Deref;
+        self.tierings.deref()
     }
 }
 impl IntelligentTieringConfiguration {
@@ -50,6 +52,7 @@ pub struct IntelligentTieringConfigurationBuilder {
 }
 impl IntelligentTieringConfigurationBuilder {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl IntelligentTieringConfigurationBuilder {
         &self.filter
     }
     /// <p>Specifies the status of the configuration.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::IntelligentTieringStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -112,12 +116,31 @@ impl IntelligentTieringConfigurationBuilder {
         &self.tierings
     }
     /// Consumes the builder and constructs a [`IntelligentTieringConfiguration`](crate::types::IntelligentTieringConfiguration).
-    pub fn build(self) -> crate::types::IntelligentTieringConfiguration {
-        crate::types::IntelligentTieringConfiguration {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::IntelligentTieringConfigurationBuilder::id)
+    /// - [`status`](crate::types::builders::IntelligentTieringConfigurationBuilder::status)
+    /// - [`tierings`](crate::types::builders::IntelligentTieringConfigurationBuilder::tierings)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntelligentTieringConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntelligentTieringConfiguration {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building IntelligentTieringConfiguration",
+                )
+            })?,
             filter: self.filter,
-            status: self.status,
-            tierings: self.tierings,
-        }
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building IntelligentTieringConfiguration",
+                )
+            })?,
+            tierings: self.tierings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tierings",
+                    "tierings was not specified but it is required when building IntelligentTieringConfiguration",
+                )
+            })?,
+        })
     }
 }

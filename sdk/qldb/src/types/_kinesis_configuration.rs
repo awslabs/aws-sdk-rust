@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
-    pub stream_arn: ::std::option::Option<::std::string::String>,
+    pub stream_arn: ::std::string::String,
     /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p>Default: <code>True</code> </p> <important>
     /// <p>Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
@@ -14,8 +14,9 @@ pub struct KinesisConfiguration {
 }
 impl KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
-        self.stream_arn.as_deref()
+    pub fn stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_arn.deref()
     }
     /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p>Default: <code>True</code> </p> <important>
@@ -41,6 +42,7 @@ pub struct KinesisConfigurationBuilder {
 }
 impl KinesisConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,10 +80,17 @@ impl KinesisConfigurationBuilder {
         &self.aggregation_enabled
     }
     /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::types::KinesisConfiguration).
-    pub fn build(self) -> crate::types::KinesisConfiguration {
-        crate::types::KinesisConfiguration {
-            stream_arn: self.stream_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_arn`](crate::types::builders::KinesisConfigurationBuilder::stream_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisConfiguration {
+            stream_arn: self.stream_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "stream_arn",
+                    "stream_arn was not specified but it is required when building KinesisConfiguration",
+                )
+            })?,
             aggregation_enabled: self.aggregation_enabled,
-        }
+        })
     }
 }

@@ -123,12 +123,16 @@ impl StartBuildInput {
         self.project_name.as_deref()
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn secondary_sources_override(&self) -> ::std::option::Option<&[crate::types::ProjectSource]> {
-        self.secondary_sources_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources_override.is_none()`.
+    pub fn secondary_sources_override(&self) -> &[crate::types::ProjectSource] {
+        self.secondary_sources_override.as_deref().unwrap_or_default()
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
-    pub fn secondary_sources_version_override(&self) -> ::std::option::Option<&[crate::types::ProjectSourceVersion]> {
-        self.secondary_sources_version_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources_version_override.is_none()`.
+    pub fn secondary_sources_version_override(&self) -> &[crate::types::ProjectSourceVersion] {
+        self.secondary_sources_version_override.as_deref().unwrap_or_default()
     }
     /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
     /// <dl>
@@ -167,12 +171,16 @@ impl StartBuildInput {
         self.artifacts_override.as_ref()
     }
     /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
-    pub fn secondary_artifacts_override(&self) -> ::std::option::Option<&[crate::types::ProjectArtifacts]> {
-        self.secondary_artifacts_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts_override.is_none()`.
+    pub fn secondary_artifacts_override(&self) -> &[crate::types::ProjectArtifacts] {
+        self.secondary_artifacts_override.as_deref().unwrap_or_default()
     }
     /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
-    pub fn environment_variables_override(&self) -> ::std::option::Option<&[crate::types::EnvironmentVariable]> {
-        self.environment_variables_override.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables_override.is_none()`.
+    pub fn environment_variables_override(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables_override.as_deref().unwrap_or_default()
     }
     /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
     pub fn source_type_override(&self) -> ::std::option::Option<&crate::types::SourceType> {
@@ -339,6 +347,7 @@ pub struct StartBuildInputBuilder {
 }
 impl StartBuildInputBuilder {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self

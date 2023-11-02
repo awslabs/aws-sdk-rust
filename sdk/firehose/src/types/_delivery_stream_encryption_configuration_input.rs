@@ -11,7 +11,7 @@ pub struct DeliveryStreamEncryptionConfigurationInput {
     /// <p>You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> operation exceeds this limit, Kinesis Data Firehose throws a <code>LimitExceededException</code>. </p> <important>
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.</p>
     /// </important>
-    pub key_type: ::std::option::Option<crate::types::KeyType>,
+    pub key_type: crate::types::KeyType,
 }
 impl DeliveryStreamEncryptionConfigurationInput {
     /// <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.</p>
@@ -23,8 +23,8 @@ impl DeliveryStreamEncryptionConfigurationInput {
     /// <p>You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> operation exceeds this limit, Kinesis Data Firehose throws a <code>LimitExceededException</code>. </p> <important>
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.</p>
     /// </important>
-    pub fn key_type(&self) -> ::std::option::Option<&crate::types::KeyType> {
-        self.key_type.as_ref()
+    pub fn key_type(&self) -> &crate::types::KeyType {
+        &self.key_type
     }
 }
 impl DeliveryStreamEncryptionConfigurationInput {
@@ -61,6 +61,7 @@ impl DeliveryStreamEncryptionConfigurationInputBuilder {
     /// <p>You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a <code>CreateDeliveryStream</code> or <code>StartDeliveryStreamEncryption</code> operation exceeds this limit, Kinesis Data Firehose throws a <code>LimitExceededException</code>. </p> <important>
     /// <p>To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.</p>
     /// </important>
+    /// This field is required.
     pub fn key_type(mut self, input: crate::types::KeyType) -> Self {
         self.key_type = ::std::option::Option::Some(input);
         self
@@ -83,10 +84,19 @@ impl DeliveryStreamEncryptionConfigurationInputBuilder {
         &self.key_type
     }
     /// Consumes the builder and constructs a [`DeliveryStreamEncryptionConfigurationInput`](crate::types::DeliveryStreamEncryptionConfigurationInput).
-    pub fn build(self) -> crate::types::DeliveryStreamEncryptionConfigurationInput {
-        crate::types::DeliveryStreamEncryptionConfigurationInput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_type`](crate::types::builders::DeliveryStreamEncryptionConfigurationInputBuilder::key_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::DeliveryStreamEncryptionConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeliveryStreamEncryptionConfigurationInput {
             key_arn: self.key_arn,
-            key_type: self.key_type,
-        }
+            key_type: self.key_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_type",
+                    "key_type was not specified but it is required when building DeliveryStreamEncryptionConfigurationInput",
+                )
+            })?,
+        })
     }
 }

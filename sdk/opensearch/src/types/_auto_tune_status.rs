@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneStatus {
     /// <p>Date and time when Auto-Tune was enabled for the domain.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>Date and time when the Auto-Tune options were last updated for the domain.</p>
-    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date: ::aws_smithy_types::DateTime,
     /// <p>The latest version of the Auto-Tune options.</p>
     pub update_version: i32,
     /// <p>The current state of Auto-Tune on the domain.</p>
-    pub state: ::std::option::Option<crate::types::AutoTuneState>,
+    pub state: crate::types::AutoTuneState,
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the domain is being deleted.</p>
@@ -19,20 +19,20 @@ pub struct AutoTuneStatus {
 }
 impl AutoTuneStatus {
     /// <p>Date and time when Auto-Tune was enabled for the domain.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>Date and time when the Auto-Tune options were last updated for the domain.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date.as_ref()
+    pub fn update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date
     }
     /// <p>The latest version of the Auto-Tune options.</p>
     pub fn update_version(&self) -> i32 {
         self.update_version
     }
     /// <p>The current state of Auto-Tune on the domain.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AutoTuneState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::AutoTuneState {
+        &self.state
     }
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
@@ -63,6 +63,7 @@ pub struct AutoTuneStatusBuilder {
 }
 impl AutoTuneStatusBuilder {
     /// <p>Date and time when Auto-Tune was enabled for the domain.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl AutoTuneStatusBuilder {
         &self.creation_date
     }
     /// <p>Date and time when the Auto-Tune options were last updated for the domain.</p>
+    /// This field is required.
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl AutoTuneStatusBuilder {
         &self.update_version
     }
     /// <p>The current state of Auto-Tune on the domain.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AutoTuneState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -147,14 +150,33 @@ impl AutoTuneStatusBuilder {
         &self.pending_deletion
     }
     /// Consumes the builder and constructs a [`AutoTuneStatus`](crate::types::AutoTuneStatus).
-    pub fn build(self) -> crate::types::AutoTuneStatus {
-        crate::types::AutoTuneStatus {
-            creation_date: self.creation_date,
-            update_date: self.update_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`creation_date`](crate::types::builders::AutoTuneStatusBuilder::creation_date)
+    /// - [`update_date`](crate::types::builders::AutoTuneStatusBuilder::update_date)
+    /// - [`state`](crate::types::builders::AutoTuneStatusBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoTuneStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutoTuneStatus {
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building AutoTuneStatus",
+                )
+            })?,
+            update_date: self.update_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date",
+                    "update_date was not specified but it is required when building AutoTuneStatus",
+                )
+            })?,
             update_version: self.update_version.unwrap_or_default(),
-            state: self.state,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building AutoTuneStatus",
+                )
+            })?,
             error_message: self.error_message,
             pending_deletion: self.pending_deletion,
-        }
+        })
     }
 }

@@ -3,17 +3,17 @@ pub fn ser_infor_nexus_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InforNexusConnectorProfileCredentials,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.access_key_id {
-        object.key("accessKeyId").string(var_1.as_str());
+    {
+        object.key("accessKeyId").string(input.access_key_id.as_str());
     }
-    if let Some(var_2) = &input.user_id {
-        object.key("userId").string(var_2.as_str());
+    {
+        object.key("userId").string(input.user_id.as_str());
     }
-    if let Some(var_3) = &input.secret_access_key {
-        object.key("secretAccessKey").string(var_3.as_str());
+    {
+        object.key("secretAccessKey").string(input.secret_access_key.as_str());
     }
-    if let Some(var_4) = &input.datakey {
-        object.key("datakey").string(var_4.as_str());
+    {
+        object.key("datakey").string(input.datakey.as_str());
     }
     Ok(())
 }

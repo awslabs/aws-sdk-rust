@@ -11,8 +11,10 @@ pub struct ListAccountsOutput {
 }
 impl ListAccountsOutput {
     /// <p>List of Amazon Chime accounts and account details.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[crate::types::Account]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[crate::types::Account] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

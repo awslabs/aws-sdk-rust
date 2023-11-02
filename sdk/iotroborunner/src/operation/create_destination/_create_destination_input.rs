@@ -6,9 +6,9 @@ pub struct CreateDestinationInput {
     /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// Site ARN.
-    pub site: ::std::option::Option<::std::string::String>,
+    pub site: ::std::string::String,
     /// The state of the destination. Default used if not specified.
     pub state: ::std::option::Option<crate::types::DestinationState>,
     /// JSON document containing additional fixed properties regarding the destination
@@ -20,12 +20,14 @@ impl CreateDestinationInput {
         self.client_token.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// Site ARN.
-    pub fn site(&self) -> ::std::option::Option<&str> {
-        self.site.as_deref()
+    pub fn site(&self) -> &str {
+        use std::ops::Deref;
+        self.site.deref()
     }
     /// The state of the destination. Default used if not specified.
     pub fn state(&self) -> ::std::option::Option<&crate::types::DestinationState> {
@@ -69,6 +71,7 @@ impl CreateDestinationInputBuilder {
         &self.client_token
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateDestinationInputBuilder {
         &self.name
     }
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -125,13 +129,26 @@ impl CreateDestinationInputBuilder {
         &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_destination::builders::CreateDestinationInputBuilder::name)
+    /// - [`site`](crate::operation::create_destination::builders::CreateDestinationInputBuilder::site)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_destination::CreateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_destination::CreateDestinationInput {
             client_token: self.client_token,
-            name: self.name,
-            site: self.site,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateDestinationInput",
+                )
+            })?,
+            site: self.site.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "site",
+                    "site was not specified but it is required when building CreateDestinationInput",
+                )
+            })?,
             state: self.state,
             additional_fixed_properties: self.additional_fixed_properties,
         })

@@ -6,14 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GridLayoutConfiguration {
     /// <p>The elements that are included in a grid layout.</p>
-    pub elements: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>,
+    pub elements: ::std::vec::Vec<crate::types::GridLayoutElement>,
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }
 impl GridLayoutConfiguration {
     /// <p>The elements that are included in a grid layout.</p>
-    pub fn elements(&self) -> ::std::option::Option<&[crate::types::GridLayoutElement]> {
-        self.elements.as_deref()
+    pub fn elements(&self) -> &[crate::types::GridLayoutElement] {
+        use std::ops::Deref;
+        self.elements.deref()
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::GridLayoutCanvasSizeOptions> {
@@ -70,10 +71,17 @@ impl GridLayoutConfigurationBuilder {
         &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`GridLayoutConfiguration`](crate::types::GridLayoutConfiguration).
-    pub fn build(self) -> crate::types::GridLayoutConfiguration {
-        crate::types::GridLayoutConfiguration {
-            elements: self.elements,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`elements`](crate::types::builders::GridLayoutConfigurationBuilder::elements)
+    pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GridLayoutConfiguration {
+            elements: self.elements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "elements",
+                    "elements was not specified but it is required when building GridLayoutConfiguration",
+                )
+            })?,
             canvas_size_options: self.canvas_size_options,
-        }
+        })
     }
 }

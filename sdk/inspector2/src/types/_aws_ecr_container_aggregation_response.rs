@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrContainerAggregationResponse {
     /// <p>The resource ID of the container.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The SHA value of the container image.</p>
     pub image_sha: ::std::option::Option<::std::string::String>,
     /// <p>The container repository.</p>
@@ -21,8 +21,9 @@ pub struct AwsEcrContainerAggregationResponse {
 }
 impl AwsEcrContainerAggregationResponse {
     /// <p>The resource ID of the container.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The SHA value of the container image.</p>
     pub fn image_sha(&self) -> ::std::option::Option<&str> {
@@ -37,8 +38,10 @@ impl AwsEcrContainerAggregationResponse {
         self.architecture.as_deref()
     }
     /// <p>The container image stags.</p>
-    pub fn image_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
+    pub fn image_tags(&self) -> &[::std::string::String] {
+        self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -70,6 +73,7 @@ pub struct AwsEcrContainerAggregationResponseBuilder {
 }
 impl AwsEcrContainerAggregationResponseBuilder {
     /// <p>The resource ID of the container.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -174,15 +178,22 @@ impl AwsEcrContainerAggregationResponseBuilder {
         &self.severity_counts
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerAggregationResponse`](crate::types::AwsEcrContainerAggregationResponse).
-    pub fn build(self) -> crate::types::AwsEcrContainerAggregationResponse {
-        crate::types::AwsEcrContainerAggregationResponse {
-            resource_id: self.resource_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_id`](crate::types::builders::AwsEcrContainerAggregationResponseBuilder::resource_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsEcrContainerAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsEcrContainerAggregationResponse {
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building AwsEcrContainerAggregationResponse",
+                )
+            })?,
             image_sha: self.image_sha,
             repository: self.repository,
             architecture: self.architecture,
             image_tags: self.image_tags,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
-        }
+        })
     }
 }

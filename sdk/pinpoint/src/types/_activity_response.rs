@@ -119,6 +119,7 @@ pub struct ActivityResponseBuilder {
 }
 impl ActivityResponseBuilder {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +134,7 @@ impl ActivityResponseBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the campaign that the activity applies to.</p>
+    /// This field is required.
     pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_id = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +163,7 @@ impl ActivityResponseBuilder {
         &self.end
     }
     /// <p>The unique identifier for the activity.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -155,6 +155,7 @@ pub struct DescribeCompilationJobOutputBuilder {
 }
 impl DescribeCompilationJobOutputBuilder {
     /// <p>The name of the model compilation job.</p>
+    /// This field is required.
     pub fn compilation_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +170,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.compilation_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+    /// This field is required.
     pub fn compilation_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compilation_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -183,6 +185,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.compilation_job_arn
     }
     /// <p>The status of the model compilation job.</p>
+    /// This field is required.
     pub fn compilation_job_status(mut self, input: crate::types::CompilationJobStatus) -> Self {
         self.compilation_job_status = ::std::option::Option::Some(input);
         self
@@ -228,6 +231,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.compilation_end_time
     }
     /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
+    /// This field is required.
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
         self.stopping_condition = ::std::option::Option::Some(input);
         self
@@ -270,6 +274,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.model_package_version_arn
     }
     /// <p>The time that the model compilation job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -284,6 +289,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.creation_time
     }
     /// <p>The time that the status of the model compilation job was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -298,6 +304,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.last_modified_time
     }
     /// <p>If a model compilation job failed, the reason it failed. </p>
+    /// This field is required.
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
         self
@@ -312,6 +319,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.failure_reason
     }
     /// <p>Information about the location in Amazon S3 that has been configured for storing the model artifacts used in the compilation job.</p>
+    /// This field is required.
     pub fn model_artifacts(mut self, input: crate::types::ModelArtifacts) -> Self {
         self.model_artifacts = ::std::option::Option::Some(input);
         self
@@ -340,6 +348,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.model_digests
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -354,6 +363,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.role_arn
     }
     /// <p>Information about the location in Amazon S3 of the input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::InputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self
@@ -368,6 +378,7 @@ impl DescribeCompilationJobOutputBuilder {
         &self.input_config
     }
     /// <p>Information about the output location for the compiled model and the target device that the model runs on.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

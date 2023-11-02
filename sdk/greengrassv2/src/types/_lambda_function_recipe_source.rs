@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionRecipeSource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
-    pub lambda_arn: ::std::option::Option<::std::string::String>,
+    pub lambda_arn: ::std::string::String,
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
@@ -22,8 +22,9 @@ pub struct LambdaFunctionRecipeSource {
 }
 impl LambdaFunctionRecipeSource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
-    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
-        self.lambda_arn.as_deref()
+    pub fn lambda_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lambda_arn.deref()
     }
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
@@ -36,8 +37,10 @@ impl LambdaFunctionRecipeSource {
         self.component_version.as_deref()
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn component_platforms(&self) -> ::std::option::Option<&[crate::types::ComponentPlatform]> {
-        self.component_platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_platforms.is_none()`.
+    pub fn component_platforms(&self) -> &[crate::types::ComponentPlatform] {
+        self.component_platforms.as_deref().unwrap_or_default()
     }
     /// <p>The component versions on which this Lambda function component depends.</p>
     pub fn component_dependencies(
@@ -71,6 +74,7 @@ pub struct LambdaFunctionRecipeSourceBuilder {
 }
 impl LambdaFunctionRecipeSourceBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
+    /// This field is required.
     pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_arn = ::std::option::Option::Some(input.into());
         self
@@ -182,14 +186,21 @@ impl LambdaFunctionRecipeSourceBuilder {
         &self.component_lambda_parameters
     }
     /// Consumes the builder and constructs a [`LambdaFunctionRecipeSource`](crate::types::LambdaFunctionRecipeSource).
-    pub fn build(self) -> crate::types::LambdaFunctionRecipeSource {
-        crate::types::LambdaFunctionRecipeSource {
-            lambda_arn: self.lambda_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lambda_arn`](crate::types::builders::LambdaFunctionRecipeSourceBuilder::lambda_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionRecipeSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaFunctionRecipeSource {
+            lambda_arn: self.lambda_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lambda_arn",
+                    "lambda_arn was not specified but it is required when building LambdaFunctionRecipeSource",
+                )
+            })?,
             component_name: self.component_name,
             component_version: self.component_version,
             component_platforms: self.component_platforms,
             component_dependencies: self.component_dependencies,
             component_lambda_parameters: self.component_lambda_parameters,
-        }
+        })
     }
 }

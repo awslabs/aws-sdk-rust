@@ -13,16 +13,20 @@ pub struct CreateGatewayInput {
 }
 impl CreateGatewayInput {
     /// The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn egress_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.egress_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_cidr_blocks.is_none()`.
+    pub fn egress_cidr_blocks(&self) -> &[::std::string::String] {
+        self.egress_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// The name of the gateway. This name can not be modified after the gateway is created.
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The list of networks that you want to add.
-    pub fn networks(&self) -> ::std::option::Option<&[crate::types::GatewayNetwork]> {
-        self.networks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.networks.is_none()`.
+    pub fn networks(&self) -> &[crate::types::GatewayNetwork] {
+        self.networks.as_deref().unwrap_or_default()
     }
 }
 impl CreateGatewayInput {
@@ -62,6 +66,7 @@ impl CreateGatewayInputBuilder {
         &self.egress_cidr_blocks
     }
     /// The name of the gateway. This name can not be modified after the gateway is created.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -28,6 +28,7 @@ pub struct ArchiveRuleBuilder {
 }
 impl ArchiveRuleBuilder {
     /// <p>Information about the retention period for the snapshot archiving rule.</p>
+    /// This field is required.
     pub fn retain_rule(mut self, input: crate::types::ArchiveRetainRule) -> Self {
         self.retain_rule = ::std::option::Option::Some(input);
         self

@@ -48,7 +48,9 @@ pub fn de_unsubscribe_http_response(
         output = crate::protocol_serde::shape_unsubscribe::de_unsubscribe(_response_body, output)
             .map_err(crate::operation::unsubscribe::UnsubscribeError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::unsubscribe_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::unsubscribe::UnsubscribeError::unhandled)?
     })
 }
 

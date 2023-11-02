@@ -28,6 +28,7 @@ pub struct CancelReservedInstancesListingInputBuilder {
 }
 impl CancelReservedInstancesListingInputBuilder {
     /// <p>The ID of the Reserved Instance listing.</p>
+    /// This field is required.
     pub fn reserved_instances_listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_listing_id = ::std::option::Option::Some(input.into());
         self

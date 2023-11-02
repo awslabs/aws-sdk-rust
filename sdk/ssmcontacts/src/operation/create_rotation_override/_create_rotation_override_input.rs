@@ -22,8 +22,10 @@ impl CreateRotationOverrideInput {
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to replace those in the current on-call rotation with.</p>
     /// <p>If you want to include any current team members in the override shift, you must include their ARNs in the new contact ID list.</p>
-    pub fn new_contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.new_contact_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.new_contact_ids.is_none()`.
+    pub fn new_contact_ids(&self) -> &[::std::string::String] {
+        self.new_contact_ids.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the override goes into effect.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -57,6 +59,7 @@ pub struct CreateRotationOverrideInputBuilder {
 }
 impl CreateRotationOverrideInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation to create an override for.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +97,7 @@ impl CreateRotationOverrideInputBuilder {
         &self.new_contact_ids
     }
     /// <p>The date and time when the override goes into effect.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -108,6 +112,7 @@ impl CreateRotationOverrideInputBuilder {
         &self.start_time
     }
     /// <p>The date and time when the override ends.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

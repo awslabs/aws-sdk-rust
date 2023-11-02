@@ -281,6 +281,22 @@ pub fn de_create_cluster_http_error(
             }
             tmp
         }),
+        "Ipv6CidrBlockNotFoundFault" => crate::operation::create_cluster::CreateClusterError::Ipv6CidrBlockNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::Ipv6CidrBlockNotFoundFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_ipv6_cidr_block_not_found_fault::de_ipv6_cidr_block_not_found_fault_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "LimitExceededFault" => crate::operation::create_cluster::CreateClusterError::LimitExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {

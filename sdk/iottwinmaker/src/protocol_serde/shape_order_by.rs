@@ -6,8 +6,8 @@ pub fn ser_order_by(
     if let Some(var_1) = &input.order {
         object.key("order").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.property_name {
-        object.key("propertyName").string(var_2.as_str());
+    {
+        object.key("propertyName").string(input.property_name.as_str());
     }
     Ok(())
 }

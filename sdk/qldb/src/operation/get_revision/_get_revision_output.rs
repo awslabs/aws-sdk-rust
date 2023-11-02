@@ -64,6 +64,7 @@ impl GetRevisionOutputBuilder {
         &self.proof
     }
     /// <p>The document revision data object in Amazon Ion format.</p>
+    /// This field is required.
     pub fn revision(mut self, input: crate::types::ValueHolder) -> Self {
         self.revision = ::std::option::Option::Some(input);
         self

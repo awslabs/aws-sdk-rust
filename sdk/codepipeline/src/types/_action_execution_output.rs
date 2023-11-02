@@ -13,8 +13,10 @@ pub struct ActionExecutionOutput {
 }
 impl ActionExecutionOutput {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-    pub fn output_artifacts(&self) -> ::std::option::Option<&[crate::types::ArtifactDetail]> {
-        self.output_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_artifacts.is_none()`.
+    pub fn output_artifacts(&self) -> &[crate::types::ArtifactDetail] {
+        self.output_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Execution result information listed in the output details for an action execution.</p>
     pub fn execution_result(&self) -> ::std::option::Option<&crate::types::ActionExecutionResult> {

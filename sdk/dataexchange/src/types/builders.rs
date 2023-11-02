@@ -39,6 +39,24 @@ pub use crate::types::_redshift_data_share_asset::RedshiftDataShareAssetBuilder;
 
 pub use crate::types::_s3_snapshot_asset::S3SnapshotAssetBuilder;
 
+pub use crate::types::_notification_details::NotificationDetailsBuilder;
+
+pub use crate::types::_schema_change_request_details::SchemaChangeRequestDetailsBuilder;
+
+pub use crate::types::_schema_change_details::SchemaChangeDetailsBuilder;
+
+pub use crate::types::_deprecation_request_details::DeprecationRequestDetailsBuilder;
+
+pub use crate::types::_data_update_request_details::DataUpdateRequestDetailsBuilder;
+
+pub use crate::types::_scope_details::ScopeDetailsBuilder;
+
+pub use crate::types::_s3_data_access_details::S3DataAccessDetailsBuilder;
+
+pub use crate::types::_redshift_data_share_details::RedshiftDataShareDetailsBuilder;
+
+pub use crate::types::_lake_formation_tag_policy_details::LakeFormationTagPolicyDetailsBuilder;
+
 pub use crate::types::_asset_entry::AssetEntryBuilder;
 
 pub use crate::types::_job_entry::JobEntryBuilder;

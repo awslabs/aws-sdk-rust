@@ -23,8 +23,10 @@ impl CreateVpcLinkInput {
         self.description.as_deref()
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub fn target_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_arns.is_none()`.
+    pub fn target_arns(&self) -> &[::std::string::String] {
+        self.target_arns.as_deref().unwrap_or_default()
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -49,6 +51,7 @@ pub struct CreateVpcLinkInputBuilder {
 }
 impl CreateVpcLinkInputBuilder {
     /// <p>The name used to label and identify the VPC link.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

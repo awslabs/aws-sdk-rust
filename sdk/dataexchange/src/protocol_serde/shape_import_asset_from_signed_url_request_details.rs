@@ -3,17 +3,17 @@ pub fn ser_import_asset_from_signed_url_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetFromSignedUrlRequestDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.asset_name {
-        object.key("AssetName").string(var_1.as_str());
+    {
+        object.key("AssetName").string(input.asset_name.as_str());
     }
-    if let Some(var_2) = &input.data_set_id {
-        object.key("DataSetId").string(var_2.as_str());
+    {
+        object.key("DataSetId").string(input.data_set_id.as_str());
     }
-    if let Some(var_3) = &input.md5_hash {
-        object.key("Md5Hash").string(var_3.as_str());
+    {
+        object.key("Md5Hash").string(input.md5_hash.as_str());
     }
-    if let Some(var_4) = &input.revision_id {
-        object.key("RevisionId").string(var_4.as_str());
+    {
+        object.key("RevisionId").string(input.revision_id.as_str());
     }
     Ok(())
 }

@@ -78,7 +78,7 @@ pub fn de_create_code_signing_config_http_response(
         output = crate::protocol_serde::shape_create_code_signing_config::de_create_code_signing_config(_response_body, output)
             .map_err(crate::operation::create_code_signing_config::CreateCodeSigningConfigError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_code_signing_config_output_correct_errors(output).build()
     })
 }
 

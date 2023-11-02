@@ -42,6 +42,7 @@ pub struct UpdateThingShadowInputBuilder {
 }
 impl UpdateThingShadowInputBuilder {
     /// <p>The name of the thing.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl UpdateThingShadowInputBuilder {
         &self.shadow_name
     }
     /// <p>The state information, in JSON format.</p>
+    /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct DescribeScalingActivitiesOutput {
 }
 impl DescribeScalingActivitiesOutput {
     /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
-    pub fn activities(&self) -> ::std::option::Option<&[crate::types::Activity]> {
-        self.activities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activities.is_none()`.
+    pub fn activities(&self) -> &[crate::types::Activity] {
+        self.activities.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

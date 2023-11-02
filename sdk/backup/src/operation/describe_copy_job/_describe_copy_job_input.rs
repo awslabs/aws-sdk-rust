@@ -27,6 +27,7 @@ pub struct DescribeCopyJobInputBuilder {
 }
 impl DescribeCopyJobInputBuilder {
     /// <p>Uniquely identifies a copy job.</p>
+    /// This field is required.
     pub fn copy_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.copy_job_id = ::std::option::Option::Some(input.into());
         self

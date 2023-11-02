@@ -34,6 +34,7 @@ pub struct DescribeBatchLoadTaskOutputBuilder {
 }
 impl DescribeBatchLoadTaskOutputBuilder {
     /// <p>Description of the batch load task.</p>
+    /// This field is required.
     pub fn batch_load_task_description(mut self, input: crate::types::BatchLoadTaskDescription) -> Self {
         self.batch_load_task_description = ::std::option::Option::Some(input);
         self

@@ -41,6 +41,7 @@ pub struct ListMultipartReadSetUploadsInputBuilder {
 }
 impl ListMultipartReadSetUploadsInputBuilder {
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self

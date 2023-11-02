@@ -15,8 +15,10 @@ impl ListStreamingSessionsOutput {
         self.next_token.as_deref()
     }
     /// <p>A collection of streaming sessions.</p>
-    pub fn sessions(&self) -> ::std::option::Option<&[crate::types::StreamingSession]> {
-        self.sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sessions.is_none()`.
+    pub fn sessions(&self) -> &[crate::types::StreamingSession] {
+        self.sessions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListStreamingSessionsOutput {

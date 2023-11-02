@@ -69,8 +69,10 @@ impl DataSet {
         self.logical_table_map.as_ref()
     }
     /// <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p>
-    pub fn output_columns(&self) -> ::std::option::Option<&[crate::types::OutputColumn]> {
-        self.output_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_columns.is_none()`.
+    pub fn output_columns(&self) -> &[crate::types::OutputColumn] {
+        self.output_columns.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates whether you want to import the data into SPICE.</p>
     pub fn import_mode(&self) -> ::std::option::Option<&crate::types::DataSetImportMode> {
@@ -81,8 +83,10 @@ impl DataSet {
         self.consumed_spice_capacity_in_bytes
     }
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
-    pub fn column_groups(&self) -> ::std::option::Option<&[crate::types::ColumnGroup]> {
-        self.column_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_groups.is_none()`.
+    pub fn column_groups(&self) -> &[crate::types::ColumnGroup] {
+        self.column_groups.as_deref().unwrap_or_default()
     }
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub fn field_folders(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>> {
@@ -97,16 +101,20 @@ impl DataSet {
         self.row_level_permission_tag_configuration.as_ref()
     }
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
-    pub fn column_level_permission_rules(&self) -> ::std::option::Option<&[crate::types::ColumnLevelPermissionRule]> {
-        self.column_level_permission_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_level_permission_rules.is_none()`.
+    pub fn column_level_permission_rules(&self) -> &[crate::types::ColumnLevelPermissionRule] {
+        self.column_level_permission_rules.as_deref().unwrap_or_default()
     }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub fn data_set_usage_configuration(&self) -> ::std::option::Option<&crate::types::DataSetUsageConfiguration> {
         self.data_set_usage_configuration.as_ref()
     }
     /// <p>The parameters that are declared in a dataset.</p>
-    pub fn dataset_parameters(&self) -> ::std::option::Option<&[crate::types::DatasetParameter]> {
-        self.dataset_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_parameters.is_none()`.
+    pub fn dataset_parameters(&self) -> &[crate::types::DatasetParameter] {
+        self.dataset_parameters.as_deref().unwrap_or_default()
     }
 }
 impl DataSet {

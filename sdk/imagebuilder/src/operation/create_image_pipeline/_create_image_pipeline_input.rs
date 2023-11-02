@@ -111,6 +111,7 @@ pub struct CreateImagePipelineInputBuilder {
 }
 impl CreateImagePipelineInputBuilder {
     /// <p>The name of the image pipeline.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +168,7 @@ impl CreateImagePipelineInputBuilder {
         &self.container_recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
+    /// This field is required.
     pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -271,6 +273,7 @@ impl CreateImagePipelineInputBuilder {
         &self.tags
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

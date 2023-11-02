@@ -7,20 +7,20 @@ pub struct WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
     pub account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     /// <p>The date that the workspace was created.</p>
-    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created: ::aws_smithy_types::DateTime,
     /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
     /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>,
+    pub data_sources: ::std::vec::Vec<crate::types::DataSourceType>,
     /// <p>The user-defined description of the workspace.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
-    pub endpoint: ::std::option::Option<::std::string::String>,
+    pub endpoint: ::std::string::String,
     /// <p>The version of Grafana supported in this workspace.</p>
-    pub grafana_version: ::std::option::Option<::std::string::String>,
+    pub grafana_version: ::std::string::String,
     /// <p>The unique ID of this workspace.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The most recent date that the workspace was modified.</p>
-    pub modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub modified: ::aws_smithy_types::DateTime,
     /// <p>The name of the workspace.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
@@ -37,7 +37,7 @@ pub struct WorkspaceDescription {
     /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the workspace.</p>
-    pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
+    pub status: crate::types::WorkspaceStatus,
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
     pub workspace_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
@@ -63,33 +63,37 @@ impl WorkspaceDescription {
         self.account_access_type.as_ref()
     }
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created.as_ref()
+    pub fn created(&self) -> &::aws_smithy_types::DateTime {
+        &self.created
     }
     /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
     /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSourceType]> {
-        self.data_sources.as_deref()
+    pub fn data_sources(&self) -> &[crate::types::DataSourceType] {
+        use std::ops::Deref;
+        self.data_sources.deref()
     }
     /// <p>The user-defined description of the workspace.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
-        self.endpoint.as_deref()
+    pub fn endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.endpoint.deref()
     }
     /// <p>The version of Grafana supported in this workspace.</p>
-    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
-        self.grafana_version.as_deref()
+    pub fn grafana_version(&self) -> &str {
+        use std::ops::Deref;
+        self.grafana_version.deref()
     }
     /// <p>The unique ID of this workspace.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.modified.as_ref()
+    pub fn modified(&self) -> &::aws_smithy_types::DateTime {
+        &self.modified
     }
     /// <p>The name of the workspace.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -100,12 +104,16 @@ impl WorkspaceDescription {
         self.organization_role_name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(&self) -> ::std::option::Option<&[crate::types::NotificationDestinationType]> {
-        self.notification_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_destinations.is_none()`.
+    pub fn notification_destinations(&self) -> &[crate::types::NotificationDestinationType] {
+        self.notification_destinations.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn organizational_units(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organizational_units.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_units.is_none()`.
+    pub fn organizational_units(&self) -> &[::std::string::String] {
+        self.organizational_units.as_deref().unwrap_or_default()
     }
     /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
@@ -119,8 +127,8 @@ impl WorkspaceDescription {
         self.stack_set_name.as_deref()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::WorkspaceStatus {
+        &self.status
     }
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
     pub fn workspace_role_arn(&self) -> ::std::option::Option<&str> {
@@ -241,6 +249,7 @@ impl WorkspaceDescriptionBuilder {
         &self.account_access_type
     }
     /// <p>The date that the workspace was created.</p>
+    /// This field is required.
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
         self
@@ -292,6 +301,7 @@ impl WorkspaceDescriptionBuilder {
         &self.description
     }
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
@@ -306,6 +316,7 @@ impl WorkspaceDescriptionBuilder {
         &self.endpoint
     }
     /// <p>The version of Grafana supported in this workspace.</p>
+    /// This field is required.
     pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_version = ::std::option::Option::Some(input.into());
         self
@@ -320,6 +331,7 @@ impl WorkspaceDescriptionBuilder {
         &self.grafana_version
     }
     /// <p>The unique ID of this workspace.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -334,6 +346,7 @@ impl WorkspaceDescriptionBuilder {
         &self.id
     }
     /// <p>The most recent date that the workspace was modified.</p>
+    /// This field is required.
     pub fn modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified = ::std::option::Option::Some(input);
         self
@@ -453,6 +466,7 @@ impl WorkspaceDescriptionBuilder {
         &self.stack_set_name
     }
     /// <p>The current status of the workspace.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -537,6 +551,7 @@ impl WorkspaceDescriptionBuilder {
         &self.free_trial_expiration
     }
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
+    /// This field is required.
     pub fn authentication(mut self, input: crate::types::AuthenticationSummary) -> Self {
         self.authentication = ::std::option::Option::Some(input);
         self
@@ -599,23 +614,66 @@ impl WorkspaceDescriptionBuilder {
         &self.network_access_control
     }
     /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::types::WorkspaceDescription).
-    pub fn build(self) -> crate::types::WorkspaceDescription {
-        crate::types::WorkspaceDescription {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created`](crate::types::builders::WorkspaceDescriptionBuilder::created)
+    /// - [`data_sources`](crate::types::builders::WorkspaceDescriptionBuilder::data_sources)
+    /// - [`endpoint`](crate::types::builders::WorkspaceDescriptionBuilder::endpoint)
+    /// - [`grafana_version`](crate::types::builders::WorkspaceDescriptionBuilder::grafana_version)
+    /// - [`id`](crate::types::builders::WorkspaceDescriptionBuilder::id)
+    /// - [`modified`](crate::types::builders::WorkspaceDescriptionBuilder::modified)
+    /// - [`status`](crate::types::builders::WorkspaceDescriptionBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkspaceDescription {
             account_access_type: self.account_access_type,
-            created: self.created,
-            data_sources: self.data_sources,
+            created: self.created.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created",
+                    "created was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
+            data_sources: self.data_sources.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_sources",
+                    "data_sources was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
             description: self.description,
-            endpoint: self.endpoint,
-            grafana_version: self.grafana_version,
-            id: self.id,
-            modified: self.modified,
+            endpoint: self.endpoint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "endpoint",
+                    "endpoint was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
+            grafana_version: self.grafana_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "grafana_version",
+                    "grafana_version was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
+            modified: self.modified.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "modified",
+                    "modified was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
             name: self.name,
             organization_role_name: self.organization_role_name,
             notification_destinations: self.notification_destinations,
             organizational_units: self.organizational_units,
             permission_type: self.permission_type,
             stack_set_name: self.stack_set_name,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
             workspace_role_arn: self.workspace_role_arn,
             license_type: self.license_type,
             free_trial_consumed: self.free_trial_consumed,
@@ -625,7 +683,7 @@ impl WorkspaceDescriptionBuilder {
             tags: self.tags,
             vpc_configuration: self.vpc_configuration,
             network_access_control: self.network_access_control,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for WorkspaceDescriptionBuilder {

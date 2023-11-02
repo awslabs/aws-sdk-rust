@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsAction {
     /// <p>The ARN of the SNS topic.</p>
-    pub target_arn: ::std::option::Option<::std::string::String>,
+    pub target_arn: ::std::string::String,
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub message_format: ::std::option::Option<crate::types::MessageFormat>,
 }
 impl SnsAction {
     /// <p>The ARN of the SNS topic.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
-        self.target_arn.as_deref()
+    pub fn target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_arn.deref()
     }
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub fn message_format(&self) -> ::std::option::Option<&crate::types::MessageFormat> {
@@ -42,6 +44,7 @@ pub struct SnsActionBuilder {
 }
 impl SnsActionBuilder {
     /// <p>The ARN of the SNS topic.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl SnsActionBuilder {
         &self.target_arn
     }
     /// <p>The ARN of the IAM role that grants access.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl SnsActionBuilder {
         &self.message_format
     }
     /// Consumes the builder and constructs a [`SnsAction`](crate::types::SnsAction).
-    pub fn build(self) -> crate::types::SnsAction {
-        crate::types::SnsAction {
-            target_arn: self.target_arn,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_arn`](crate::types::builders::SnsActionBuilder::target_arn)
+    /// - [`role_arn`](crate::types::builders::SnsActionBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnsAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnsAction {
+            target_arn: self.target_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_arn",
+                    "target_arn was not specified but it is required when building SnsAction",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SnsAction",
+                )
+            })?,
             message_format: self.message_format,
-        }
+        })
     }
 }

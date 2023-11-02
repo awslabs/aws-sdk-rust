@@ -27,6 +27,7 @@ pub struct DescribeTrainingJobInputBuilder {
 }
 impl DescribeTrainingJobInputBuilder {
     /// <p>The name of the training job.</p>
+    /// This field is required.
     pub fn training_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.training_job_name = ::std::option::Option::Some(input.into());
         self

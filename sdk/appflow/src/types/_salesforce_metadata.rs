@@ -33,12 +33,16 @@ pub struct SalesforceMetadata {
 }
 impl SalesforceMetadata {
     /// <p> The desired authorization scope for the Salesforce account. </p>
-    pub fn o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.o_auth_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.o_auth_scopes.is_none()`.
+    pub fn o_auth_scopes(&self) -> &[::std::string::String] {
+        self.o_auth_scopes.as_deref().unwrap_or_default()
     }
     /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
-    pub fn data_transfer_apis(&self) -> ::std::option::Option<&[crate::types::SalesforceDataTransferApi]> {
-        self.data_transfer_apis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_transfer_apis.is_none()`.
+    pub fn data_transfer_apis(&self) -> &[crate::types::SalesforceDataTransferApi] {
+        self.data_transfer_apis.as_deref().unwrap_or_default()
     }
     /// <p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
     /// <dl>
@@ -61,8 +65,10 @@ impl SalesforceMetadata {
     /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
     /// </dd>
     /// </dl>
-    pub fn oauth2_grant_types_supported(&self) -> ::std::option::Option<&[crate::types::OAuth2GrantType]> {
-        self.oauth2_grant_types_supported.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.oauth2_grant_types_supported.is_none()`.
+    pub fn oauth2_grant_types_supported(&self) -> &[crate::types::OAuth2GrantType] {
+        self.oauth2_grant_types_supported.as_deref().unwrap_or_default()
     }
 }
 impl SalesforceMetadata {

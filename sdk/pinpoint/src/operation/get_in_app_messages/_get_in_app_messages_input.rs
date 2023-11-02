@@ -34,6 +34,7 @@ pub struct GetInAppMessagesInputBuilder {
 }
 impl GetInAppMessagesInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetInAppMessagesInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self

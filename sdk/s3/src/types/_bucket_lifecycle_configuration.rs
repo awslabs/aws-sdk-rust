@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
+    pub rules: ::std::vec::Vec<crate::types::LifecycleRule>,
 }
 impl BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::LifecycleRule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::LifecycleRule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
 }
 impl BucketLifecycleConfiguration {
@@ -48,7 +49,16 @@ impl BucketLifecycleConfigurationBuilder {
         &self.rules
     }
     /// Consumes the builder and constructs a [`BucketLifecycleConfiguration`](crate::types::BucketLifecycleConfiguration).
-    pub fn build(self) -> crate::types::BucketLifecycleConfiguration {
-        crate::types::BucketLifecycleConfiguration { rules: self.rules }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rules`](crate::types::builders::BucketLifecycleConfigurationBuilder::rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::BucketLifecycleConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BucketLifecycleConfiguration {
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building BucketLifecycleConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -42,6 +42,7 @@ impl AnalyzeExpenseInputBuilder {
     /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
+    /// This field is required.
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.document = ::std::option::Option::Some(input);
         self

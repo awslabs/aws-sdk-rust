@@ -32,8 +32,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CNAMEAlreadyExists" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::CnameAlreadyExists({
@@ -48,8 +48,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ContinuousDeploymentPolicyInUse" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::ContinuousDeploymentPolicyInUse({
@@ -64,8 +64,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DistributionAlreadyExists" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::DistributionAlreadyExists({
@@ -80,8 +80,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
@@ -96,8 +96,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalOriginAccessConfiguration" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::IllegalOriginAccessConfiguration({
@@ -112,8 +112,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InconsistentQuantities({
@@ -128,8 +128,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidArgument({
@@ -144,8 +144,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDefaultRootObject" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidDefaultRootObject({
@@ -160,8 +160,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDomainNameForOriginAccessControl" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidDomainNameForOriginAccessControl({
@@ -176,8 +176,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidErrorCode" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidErrorCode({
@@ -192,8 +192,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidForwardCookies" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidForwardCookies({
@@ -208,8 +208,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidFunctionAssociation" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidFunctionAssociation({
@@ -224,8 +224,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidGeoRestrictionParameter" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidGeoRestrictionParameter({
@@ -240,8 +240,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidHeadersForS3Origin" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidHeadersForS3Origin({
@@ -256,8 +256,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidLambdaFunctionAssociation" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidLambdaFunctionAssociation({
@@ -272,8 +272,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidLocationCode" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidLocationCode({
@@ -288,8 +288,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidMinimumProtocolVersion" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidMinimumProtocolVersion({
@@ -304,8 +304,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOrigin" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidOrigin({
@@ -320,8 +320,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginAccessControl" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidOriginAccessControl({
@@ -336,8 +336,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginAccessIdentity" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidOriginAccessIdentity({
@@ -352,8 +352,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginKeepaliveTimeout" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidOriginKeepaliveTimeout({
@@ -368,8 +368,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidOriginReadTimeout" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidOriginReadTimeout({
@@ -384,8 +384,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidProtocolSettings" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidProtocolSettings({
@@ -400,8 +400,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidQueryStringParameters" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidQueryStringParameters({
@@ -416,8 +416,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRelativePath" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidRelativePath({
@@ -432,8 +432,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequiredProtocol" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidRequiredProtocol({
@@ -448,8 +448,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidResponseCode" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidResponseCode({
@@ -464,8 +464,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidTagging" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidTagging({
@@ -480,8 +480,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidTTLOrder" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidTtlOrder({
@@ -496,8 +496,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidViewerCertificate" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidViewerCertificate({
@@ -512,8 +512,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidWebACLId" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::InvalidWebAclId({
@@ -528,8 +528,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MissingBody" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::MissingBody({
@@ -544,8 +544,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchCachePolicy" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::NoSuchCachePolicy({
@@ -560,8 +560,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchContinuousDeploymentPolicy" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::NoSuchContinuousDeploymentPolicy({
@@ -576,8 +576,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchFieldLevelEncryptionConfig" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::NoSuchFieldLevelEncryptionConfig({
@@ -592,8 +592,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOrigin" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::NoSuchOrigin({
@@ -608,8 +608,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOriginRequestPolicy" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::NoSuchOriginRequestPolicy({
@@ -624,8 +624,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchRealtimeLogConfig" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::NoSuchRealtimeLogConfig({
@@ -640,8 +640,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchResponseHeadersPolicy" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::NoSuchResponseHeadersPolicy({
@@ -656,8 +656,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RealtimeLogConfigOwnerMismatch" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::RealtimeLogConfigOwnerMismatch({
@@ -672,8 +672,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyCacheBehaviors" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyCacheBehaviors({
@@ -688,8 +688,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyCertificates" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyCertificates({
@@ -704,8 +704,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyCookieNamesInWhiteList" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyCookieNamesInWhiteList({
@@ -720,8 +720,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionCNAMEs" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionCnamEs({
@@ -736,8 +736,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributions" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributions({
@@ -752,8 +752,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToCachePolicy" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToCachePolicy({
@@ -768,8 +768,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
@@ -784,8 +784,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToKeyGroup" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToKeyGroup({
@@ -800,8 +800,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToOriginAccessControl" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToOriginAccessControl({
@@ -816,8 +816,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToOriginRequestPolicy({
@@ -832,8 +832,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsAssociatedToResponseHeadersPolicy({
@@ -848,8 +848,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsWithFunctionAssociations" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsWithFunctionAssociations({
@@ -864,8 +864,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsWithLambdaAssociations" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsWithLambdaAssociations({
@@ -880,8 +880,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyDistributionsWithSingleFunctionARN" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyDistributionsWithSingleFunctionArn({
@@ -896,8 +896,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyFunctionAssociations" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyFunctionAssociations({
@@ -912,8 +912,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyHeadersInForwardedValues" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyHeadersInForwardedValues({
@@ -928,8 +928,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyKeyGroupsAssociatedToDistribution" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyKeyGroupsAssociatedToDistribution({
@@ -944,8 +944,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyLambdaFunctionAssociations" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyLambdaFunctionAssociations({
@@ -960,8 +960,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyOriginCustomHeaders" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyOriginCustomHeaders({
@@ -976,8 +976,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyOriginGroupsPerDistribution" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyOriginGroupsPerDistribution({
@@ -992,8 +992,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyOrigins" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyOrigins({
@@ -1008,8 +1008,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyQueryStringParameters" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyQueryStringParameters({
@@ -1024,8 +1024,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyTrustedSigners" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TooManyTrustedSigners({
@@ -1040,8 +1040,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TrustedKeyGroupDoesNotExist" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TrustedKeyGroupDoesNotExist({
@@ -1056,8 +1056,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TrustedSignerDoesNotExist" => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::TrustedSignerDoesNotExist({
@@ -1072,8 +1072,8 @@ pub fn de_create_distribution_with_tags_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError::generic(generic)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ValidateSecurityProfileBehaviors`](crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`behaviors(Behavior)`](crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder::behaviors) / [`set_behaviors(Option<Vec<Behavior>>)`](crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder::set_behaviors): <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    ///   - [`behaviors(Behavior)`](crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder::behaviors) / [`set_behaviors(Option<Vec<Behavior>>)`](crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsFluentBuilder::set_behaviors):<br>required: **true**<br><p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p><br>
     /// - On success, responds with [`ValidateSecurityProfileBehaviorsOutput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput) with field(s):
     ///   - [`valid(bool)`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput::valid): <p>True if the behaviors were valid.</p>
     ///   - [`validation_errors(Option<Vec<ValidationError>>)`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput::validation_errors): <p>The list of any errors found in the behaviors.</p>

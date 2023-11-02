@@ -42,6 +42,7 @@ pub struct MonitoringS3OutputBuilder {
 }
 impl MonitoringS3OutputBuilder {
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl MonitoringS3OutputBuilder {
         &self.s3_uri
     }
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
+    /// This field is required.
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
         self

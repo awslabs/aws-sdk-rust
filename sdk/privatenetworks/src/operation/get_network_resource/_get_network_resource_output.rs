@@ -50,6 +50,7 @@ pub struct GetNetworkResourceOutputBuilder {
 }
 impl GetNetworkResourceOutputBuilder {
     /// <p>Information about the network resource.</p>
+    /// This field is required.
     pub fn network_resource(mut self, input: crate::types::NetworkResource) -> Self {
         self.network_resource = ::std::option::Option::Some(input);
         self

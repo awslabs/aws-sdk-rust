@@ -27,6 +27,7 @@ pub struct InvalidateProjectCacheInputBuilder {
 }
 impl InvalidateProjectCacheInputBuilder {
     /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self

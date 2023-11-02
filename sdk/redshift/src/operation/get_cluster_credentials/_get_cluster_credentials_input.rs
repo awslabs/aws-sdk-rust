@@ -95,8 +95,10 @@ impl GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn db_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_groups.is_none()`.
+    pub fn db_groups(&self) -> &[::std::string::String] {
+        self.db_groups.as_deref().unwrap_or_default()
     }
     /// <p>The custom domain name for the cluster credentials.</p>
     pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
@@ -133,6 +135,7 @@ impl GetClusterCredentialsInputBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_user = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct PutDefaultEncryptionConfigurationInputBuilder {
 }
 impl PutDefaultEncryptionConfigurationInputBuilder {
     /// <p>The type of encryption used for the encryption configuration.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self

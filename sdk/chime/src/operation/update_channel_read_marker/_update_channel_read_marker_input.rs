@@ -34,6 +34,7 @@ pub struct UpdateChannelReadMarkerInputBuilder {
 }
 impl UpdateChannelReadMarkerInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self

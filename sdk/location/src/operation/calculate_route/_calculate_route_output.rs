@@ -15,7 +15,7 @@ pub struct CalculateRouteOutput {
     /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
     /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
-    pub legs: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>,
+    pub legs: ::std::vec::Vec<crate::types::Leg>,
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub summary: ::std::option::Option<crate::types::CalculateRouteSummary>,
     _request_id: Option<String>,
@@ -32,8 +32,9 @@ impl CalculateRouteOutput {
     /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
     /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
-    pub fn legs(&self) -> ::std::option::Option<&[crate::types::Leg]> {
-        self.legs.as_deref()
+    pub fn legs(&self) -> &[crate::types::Leg] {
+        use std::ops::Deref;
+        self.legs.deref()
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub fn summary(&self) -> ::std::option::Option<&crate::types::CalculateRouteSummary> {
@@ -112,6 +113,7 @@ impl CalculateRouteOutputBuilder {
         &self.legs
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
+    /// This field is required.
     pub fn summary(mut self, input: crate::types::CalculateRouteSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
@@ -135,11 +137,20 @@ impl CalculateRouteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CalculateRouteOutput`](crate::operation::calculate_route::CalculateRouteOutput).
-    pub fn build(self) -> crate::operation::calculate_route::CalculateRouteOutput {
-        crate::operation::calculate_route::CalculateRouteOutput {
-            legs: self.legs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`legs`](crate::operation::calculate_route::builders::CalculateRouteOutputBuilder::legs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::calculate_route::CalculateRouteOutput {
+            legs: self.legs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "legs",
+                    "legs was not specified but it is required when building CalculateRouteOutput",
+                )
+            })?,
             summary: self.summary,
             _request_id: self._request_id,
-        }
+        })
     }
 }

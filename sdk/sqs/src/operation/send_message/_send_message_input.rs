@@ -159,6 +159,7 @@ pub struct SendMessageInputBuilder {
 impl SendMessageInputBuilder {
     /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +180,7 @@ impl SendMessageInputBuilder {
     /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
     /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// </important>
+    /// This field is required.
     pub fn message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_body = ::std::option::Option::Some(input.into());
         self

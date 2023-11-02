@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
-    pub log_level: ::std::option::Option<crate::types::LogLevel>,
+    pub log_level: crate::types::LogLevel,
 }
 impl ZeppelinMonitoringConfiguration {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
-        self.log_level.as_ref()
+    pub fn log_level(&self) -> &crate::types::LogLevel {
+        &self.log_level
     }
 }
 impl ZeppelinMonitoringConfiguration {
@@ -28,6 +28,7 @@ pub struct ZeppelinMonitoringConfigurationBuilder {
 }
 impl ZeppelinMonitoringConfigurationBuilder {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
+    /// This field is required.
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl ZeppelinMonitoringConfigurationBuilder {
         &self.log_level
     }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfiguration`](crate::types::ZeppelinMonitoringConfiguration).
-    pub fn build(self) -> crate::types::ZeppelinMonitoringConfiguration {
-        crate::types::ZeppelinMonitoringConfiguration { log_level: self.log_level }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_level`](crate::types::builders::ZeppelinMonitoringConfigurationBuilder::log_level)
+    pub fn build(self) -> ::std::result::Result<crate::types::ZeppelinMonitoringConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ZeppelinMonitoringConfiguration {
+            log_level: self.log_level.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_level",
+                    "log_level was not specified but it is required when building ZeppelinMonitoringConfiguration",
+                )
+            })?,
+        })
     }
 }

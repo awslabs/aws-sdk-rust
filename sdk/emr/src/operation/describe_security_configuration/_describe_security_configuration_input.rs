@@ -27,6 +27,7 @@ pub struct DescribeSecurityConfigurationInputBuilder {
 }
 impl DescribeSecurityConfigurationInputBuilder {
     /// <p>The name of the security configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

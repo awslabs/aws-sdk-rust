@@ -41,6 +41,7 @@ pub struct DeleteKxClusterInputBuilder {
 }
 impl DeleteKxClusterInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteKxClusterInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the cluster that you want to delete.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self

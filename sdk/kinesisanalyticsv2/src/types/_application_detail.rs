@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationDetail {
     /// <p>The ARN of the application.</p>
-    pub application_arn: ::std::option::Option<::std::string::String>,
+    pub application_arn: ::std::string::String,
     /// <p>The description of the application.</p>
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the application.</p>
-    pub application_name: ::std::option::Option<::std::string::String>,
+    pub application_name: ::std::string::String,
     /// <p>The runtime environment for the application.</p>
-    pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
+    pub runtime_environment: crate::types::RuntimeEnvironment,
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
     pub service_execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application.</p>
-    pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
+    pub application_status: crate::types::ApplicationStatus,
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    pub application_version_id: ::std::option::Option<i64>,
+    pub application_version_id: i64,
     /// <p>The current timestamp when the application was created.</p>
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current timestamp when the application was last updated.</p>
@@ -41,31 +41,33 @@ pub struct ApplicationDetail {
 }
 impl ApplicationDetail {
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
-        self.application_arn.as_deref()
+    pub fn application_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.application_arn.deref()
     }
     /// <p>The description of the application.</p>
     pub fn application_description(&self) -> ::std::option::Option<&str> {
         self.application_description.as_deref()
     }
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
-        self.application_name.as_deref()
+    pub fn application_name(&self) -> &str {
+        use std::ops::Deref;
+        self.application_name.deref()
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn runtime_environment(&self) -> ::std::option::Option<&crate::types::RuntimeEnvironment> {
-        self.runtime_environment.as_ref()
+    pub fn runtime_environment(&self) -> &crate::types::RuntimeEnvironment {
+        &self.runtime_environment
     }
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
     pub fn service_execution_role(&self) -> ::std::option::Option<&str> {
         self.service_execution_role.as_deref()
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
-        self.application_status.as_ref()
+    pub fn application_status(&self) -> &crate::types::ApplicationStatus {
+        &self.application_status
     }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    pub fn application_version_id(&self) -> ::std::option::Option<i64> {
+    pub fn application_version_id(&self) -> i64 {
         self.application_version_id
     }
     /// <p>The current timestamp when the application was created.</p>
@@ -81,8 +83,10 @@ impl ApplicationDetail {
         self.application_configuration_description.as_ref()
     }
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
-    pub fn cloud_watch_logging_option_descriptions(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOptionDescription]> {
-        self.cloud_watch_logging_option_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_descriptions.is_none()`.
+    pub fn cloud_watch_logging_option_descriptions(&self) -> &[crate::types::CloudWatchLoggingOptionDescription] {
+        self.cloud_watch_logging_option_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The details of the maintenance configuration for the application.</p>
     pub fn application_maintenance_configuration_description(
@@ -142,6 +146,7 @@ pub struct ApplicationDetailBuilder {
 }
 impl ApplicationDetailBuilder {
     /// <p>The ARN of the application.</p>
+    /// This field is required.
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +175,7 @@ impl ApplicationDetailBuilder {
         &self.application_description
     }
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +190,7 @@ impl ApplicationDetailBuilder {
         &self.application_name
     }
     /// <p>The runtime environment for the application.</p>
+    /// This field is required.
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
         self.runtime_environment = ::std::option::Option::Some(input);
         self
@@ -212,6 +219,7 @@ impl ApplicationDetailBuilder {
         &self.service_execution_role
     }
     /// <p>The status of the application.</p>
+    /// This field is required.
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
         self
@@ -226,6 +234,7 @@ impl ApplicationDetailBuilder {
         &self.application_status
     }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    /// This field is required.
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
@@ -399,15 +408,46 @@ impl ApplicationDetailBuilder {
         &self.application_mode
     }
     /// Consumes the builder and constructs a [`ApplicationDetail`](crate::types::ApplicationDetail).
-    pub fn build(self) -> crate::types::ApplicationDetail {
-        crate::types::ApplicationDetail {
-            application_arn: self.application_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_arn`](crate::types::builders::ApplicationDetailBuilder::application_arn)
+    /// - [`application_name`](crate::types::builders::ApplicationDetailBuilder::application_name)
+    /// - [`runtime_environment`](crate::types::builders::ApplicationDetailBuilder::runtime_environment)
+    /// - [`application_status`](crate::types::builders::ApplicationDetailBuilder::application_status)
+    /// - [`application_version_id`](crate::types::builders::ApplicationDetailBuilder::application_version_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationDetail, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationDetail {
+            application_arn: self.application_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_arn",
+                    "application_arn was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
             application_description: self.application_description,
-            application_name: self.application_name,
-            runtime_environment: self.runtime_environment,
+            application_name: self.application_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_name",
+                    "application_name was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
+            runtime_environment: self.runtime_environment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "runtime_environment",
+                    "runtime_environment was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
             service_execution_role: self.service_execution_role,
-            application_status: self.application_status,
-            application_version_id: self.application_version_id,
+            application_status: self.application_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_status",
+                    "application_status was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
+            application_version_id: self.application_version_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version_id",
+                    "application_version_id was not specified but it is required when building ApplicationDetail",
+                )
+            })?,
             create_timestamp: self.create_timestamp,
             last_update_timestamp: self.last_update_timestamp,
             application_configuration_description: self.application_configuration_description,
@@ -418,6 +458,6 @@ impl ApplicationDetailBuilder {
             conditional_token: self.conditional_token,
             application_version_rolled_back_to: self.application_version_rolled_back_to,
             application_mode: self.application_mode,
-        }
+        })
     }
 }

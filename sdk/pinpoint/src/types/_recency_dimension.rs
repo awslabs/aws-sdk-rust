@@ -35,6 +35,7 @@ pub struct RecencyDimensionBuilder {
 }
 impl RecencyDimensionBuilder {
     /// <p>The duration to use when determining whether an endpoint is active or inactive.</p>
+    /// This field is required.
     pub fn duration(mut self, input: crate::types::Duration) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl RecencyDimensionBuilder {
         &self.duration
     }
     /// <p>The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the specified duration are included in the segment.</p>
+    /// This field is required.
     pub fn recency_type(mut self, input: crate::types::RecencyType) -> Self {
         self.recency_type = ::std::option::Option::Some(input);
         self

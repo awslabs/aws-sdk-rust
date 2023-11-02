@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    pub should_profile: ::std::option::Option<bool>,
+    pub should_profile: bool,
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
-    pub period_in_seconds: ::std::option::Option<i32>,
+    pub period_in_seconds: i32,
     /// <p> Parameters used by the profiler. The valid parameters are: </p>
     /// <ul>
     /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li>
@@ -20,11 +20,11 @@ pub struct AgentConfiguration {
 }
 impl AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    pub fn should_profile(&self) -> ::std::option::Option<bool> {
+    pub fn should_profile(&self) -> bool {
         self.should_profile
     }
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
-    pub fn period_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn period_in_seconds(&self) -> i32 {
         self.period_in_seconds
     }
     /// <p> Parameters used by the profiler. The valid parameters are: </p>
@@ -56,6 +56,7 @@ pub struct AgentConfigurationBuilder {
 }
 impl AgentConfigurationBuilder {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
+    /// This field is required.
     pub fn should_profile(mut self, input: bool) -> Self {
         self.should_profile = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl AgentConfigurationBuilder {
         &self.should_profile
     }
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
+    /// This field is required.
     pub fn period_in_seconds(mut self, input: i32) -> Self {
         self.period_in_seconds = ::std::option::Option::Some(input);
         self
@@ -130,11 +132,24 @@ impl AgentConfigurationBuilder {
         &self.agent_parameters
     }
     /// Consumes the builder and constructs a [`AgentConfiguration`](crate::types::AgentConfiguration).
-    pub fn build(self) -> crate::types::AgentConfiguration {
-        crate::types::AgentConfiguration {
-            should_profile: self.should_profile,
-            period_in_seconds: self.period_in_seconds,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`should_profile`](crate::types::builders::AgentConfigurationBuilder::should_profile)
+    /// - [`period_in_seconds`](crate::types::builders::AgentConfigurationBuilder::period_in_seconds)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentConfiguration {
+            should_profile: self.should_profile.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "should_profile",
+                    "should_profile was not specified but it is required when building AgentConfiguration",
+                )
+            })?,
+            period_in_seconds: self.period_in_seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "period_in_seconds",
+                    "period_in_seconds was not specified but it is required when building AgentConfiguration",
+                )
+            })?,
             agent_parameters: self.agent_parameters,
-        }
+        })
     }
 }

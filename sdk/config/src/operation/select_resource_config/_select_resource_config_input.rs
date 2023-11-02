@@ -41,6 +41,7 @@ pub struct SelectResourceConfigInputBuilder {
 }
 impl SelectResourceConfigInputBuilder {
     /// <p>The SQL query <code>SELECT</code> command.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self

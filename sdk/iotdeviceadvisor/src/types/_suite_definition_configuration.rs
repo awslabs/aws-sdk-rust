@@ -26,8 +26,10 @@ impl SuiteDefinitionConfiguration {
         self.suite_definition_name.as_deref()
     }
     /// <p>Gets the devices configured.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::DeviceUnderTest]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::DeviceUnderTest] {
+        self.devices.as_deref().unwrap_or_default()
     }
     /// <p>Gets the tests intended for qualification in a suite.</p>
     pub fn intended_for_qualification(&self) -> ::std::option::Option<bool> {
@@ -72,6 +74,7 @@ pub struct SuiteDefinitionConfigurationBuilder {
 }
 impl SuiteDefinitionConfigurationBuilder {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
+    /// This field is required.
     pub fn suite_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +138,7 @@ impl SuiteDefinitionConfigurationBuilder {
     }
     /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
     /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
+    /// This field is required.
     pub fn root_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_group = ::std::option::Option::Some(input.into());
         self
@@ -151,6 +155,7 @@ impl SuiteDefinitionConfigurationBuilder {
         &self.root_group
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
+    /// This field is required.
     pub fn device_permission_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_permission_role_arn = ::std::option::Option::Some(input.into());
         self

@@ -103,6 +103,8 @@ pub(crate) mod shape_start_application_refresh_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_unauthorized_exception;
+
 pub(crate) mod shape_update_application_settings_input;
 
 pub(crate) mod shape_validation_exception;
@@ -143,6 +145,8 @@ pub(crate) mod shape_component_id_list;
 
 pub(crate) mod shape_component_summary;
 
+pub(crate) mod shape_database_connection;
+
 pub(crate) mod shape_database_id_list;
 
 pub(crate) mod shape_database_summary;
@@ -154,3 +158,7 @@ pub(crate) mod shape_operation_properties;
 pub(crate) mod shape_resilience;
 
 pub(crate) mod shape_host;
+
+pub(crate) mod shape_ip_address_list;
+
+pub(crate) mod shape_ip_address_member;

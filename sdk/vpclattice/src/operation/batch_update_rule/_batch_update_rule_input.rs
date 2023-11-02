@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::option::Option<::std::string::String>,
+    pub service_identifier: ::std::string::String,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub listener_identifier: ::std::option::Option<::std::string::String>,
+    pub listener_identifier: ::std::string::String,
     /// <p>The rules for the specified listener.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>>,
+    pub rules: ::std::vec::Vec<crate::types::RuleUpdate>,
 }
 impl BatchUpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_identifier.as_deref()
+    pub fn service_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_identifier.deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
-        self.listener_identifier.as_deref()
+    pub fn listener_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.listener_identifier.deref()
     }
     /// <p>The rules for the specified listener.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::RuleUpdate]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::RuleUpdate] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
 }
 impl BatchUpdateRuleInput {
@@ -41,6 +44,7 @@ pub struct BatchUpdateRuleInputBuilder {
 }
 impl BatchUpdateRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl BatchUpdateRuleInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -89,13 +94,32 @@ impl BatchUpdateRuleInputBuilder {
         &self.rules
     }
     /// Consumes the builder and constructs a [`BatchUpdateRuleInput`](crate::operation::batch_update_rule::BatchUpdateRuleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_identifier`](crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder::service_identifier)
+    /// - [`listener_identifier`](crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder::listener_identifier)
+    /// - [`rules`](crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder::rules)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_update_rule::BatchUpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_update_rule::BatchUpdateRuleInput {
-            service_identifier: self.service_identifier,
-            listener_identifier: self.listener_identifier,
-            rules: self.rules,
+            service_identifier: self.service_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_identifier",
+                    "service_identifier was not specified but it is required when building BatchUpdateRuleInput",
+                )
+            })?,
+            listener_identifier: self.listener_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "listener_identifier",
+                    "listener_identifier was not specified but it is required when building BatchUpdateRuleInput",
+                )
+            })?,
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building BatchUpdateRuleInput",
+                )
+            })?,
         })
     }
 }

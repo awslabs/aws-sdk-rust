@@ -45,6 +45,7 @@ pub struct UpdateWorkspaceImagePermissionInputBuilder {
 }
 impl UpdateWorkspaceImagePermissionInputBuilder {
     /// <p>The identifier of the image.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
         &self.image_id
     }
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
+    /// This field is required.
     pub fn allow_copy_image(mut self, input: bool) -> Self {
         self.allow_copy_image = ::std::option::Option::Some(input);
         self
@@ -75,6 +77,7 @@ impl UpdateWorkspaceImagePermissionInputBuilder {
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
     /// </important>
+    /// This field is required.
     pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self

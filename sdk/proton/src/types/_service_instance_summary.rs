@@ -5,27 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceInstanceSummary {
     /// <p>The name of the service instance.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The time when the service instance was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time when a deployment of the service was last attempted.</p>
-    pub last_deployment_attempted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_deployment_attempted_at: ::aws_smithy_types::DateTime,
     /// <p>The time when the service was last deployed successfully.</p>
-    pub last_deployment_succeeded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_deployment_succeeded_at: ::aws_smithy_types::DateTime,
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The name of the environment that the service instance was deployed into.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The name of the service template.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The service instance template major version.</p>
-    pub template_major_version: ::std::option::Option<::std::string::String>,
+    pub template_major_version: ::std::string::String,
     /// <p>The service instance template minor version.</p>
-    pub template_minor_version: ::std::option::Option<::std::string::String>,
+    pub template_minor_version: ::std::string::String,
     /// <p>The service instance deployment status.</p>
-    pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
+    pub deployment_status: crate::types::DeploymentStatus,
     /// <p>A service instance deployment status message.</p>
     pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last attempted deployment of this service instance.</p>
@@ -35,48 +35,55 @@ pub struct ServiceInstanceSummary {
 }
 impl ServiceInstanceSummary {
     /// <p>The name of the service instance.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The time when the service instance was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time when a deployment of the service was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_deployment_attempted_at.as_ref()
+    pub fn last_deployment_attempted_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_deployment_attempted_at
     }
     /// <p>The time when the service was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_deployment_succeeded_at.as_ref()
+    pub fn last_deployment_succeeded_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_deployment_succeeded_at
     }
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The name of the environment that the service instance was deployed into.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The service instance template major version.</p>
-    pub fn template_major_version(&self) -> ::std::option::Option<&str> {
-        self.template_major_version.as_deref()
+    pub fn template_major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_major_version.deref()
     }
     /// <p>The service instance template minor version.</p>
-    pub fn template_minor_version(&self) -> ::std::option::Option<&str> {
-        self.template_minor_version.as_deref()
+    pub fn template_minor_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_minor_version.deref()
     }
     /// <p>The service instance deployment status.</p>
-    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
-        self.deployment_status.as_ref()
+    pub fn deployment_status(&self) -> &crate::types::DeploymentStatus {
+        &self.deployment_status
     }
     /// <p>A service instance deployment status message.</p>
     pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
@@ -139,6 +146,7 @@ pub struct ServiceInstanceSummaryBuilder {
 }
 impl ServiceInstanceSummaryBuilder {
     /// <p>The name of the service instance.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +161,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the service instance.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +176,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.arn
     }
     /// <p>The time when the service instance was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -181,6 +191,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.created_at
     }
     /// <p>The time when a deployment of the service was last attempted.</p>
+    /// This field is required.
     pub fn last_deployment_attempted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_deployment_attempted_at = ::std::option::Option::Some(input);
         self
@@ -195,6 +206,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.last_deployment_attempted_at
     }
     /// <p>The time when the service was last deployed successfully.</p>
+    /// This field is required.
     pub fn last_deployment_succeeded_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_deployment_succeeded_at = ::std::option::Option::Some(input);
         self
@@ -209,6 +221,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.last_deployment_succeeded_at
     }
     /// <p>The name of the service that the service instance belongs to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +236,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.service_name
     }
     /// <p>The name of the environment that the service instance was deployed into.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -237,6 +251,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.environment_name
     }
     /// <p>The name of the service template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +266,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.template_name
     }
     /// <p>The service instance template major version.</p>
+    /// This field is required.
     pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
@@ -265,6 +281,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.template_major_version
     }
     /// <p>The service instance template minor version.</p>
+    /// This field is required.
     pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
@@ -279,6 +296,7 @@ impl ServiceInstanceSummaryBuilder {
         &self.template_minor_version
     }
     /// <p>The service instance deployment status.</p>
+    /// This field is required.
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
         self
@@ -335,23 +353,90 @@ impl ServiceInstanceSummaryBuilder {
         &self.last_succeeded_deployment_id
     }
     /// Consumes the builder and constructs a [`ServiceInstanceSummary`](crate::types::ServiceInstanceSummary).
-    pub fn build(self) -> crate::types::ServiceInstanceSummary {
-        crate::types::ServiceInstanceSummary {
-            name: self.name,
-            arn: self.arn,
-            created_at: self.created_at,
-            last_deployment_attempted_at: self.last_deployment_attempted_at,
-            last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-            service_name: self.service_name,
-            environment_name: self.environment_name,
-            template_name: self.template_name,
-            template_major_version: self.template_major_version,
-            template_minor_version: self.template_minor_version,
-            deployment_status: self.deployment_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ServiceInstanceSummaryBuilder::name)
+    /// - [`arn`](crate::types::builders::ServiceInstanceSummaryBuilder::arn)
+    /// - [`created_at`](crate::types::builders::ServiceInstanceSummaryBuilder::created_at)
+    /// - [`last_deployment_attempted_at`](crate::types::builders::ServiceInstanceSummaryBuilder::last_deployment_attempted_at)
+    /// - [`last_deployment_succeeded_at`](crate::types::builders::ServiceInstanceSummaryBuilder::last_deployment_succeeded_at)
+    /// - [`service_name`](crate::types::builders::ServiceInstanceSummaryBuilder::service_name)
+    /// - [`environment_name`](crate::types::builders::ServiceInstanceSummaryBuilder::environment_name)
+    /// - [`template_name`](crate::types::builders::ServiceInstanceSummaryBuilder::template_name)
+    /// - [`template_major_version`](crate::types::builders::ServiceInstanceSummaryBuilder::template_major_version)
+    /// - [`template_minor_version`](crate::types::builders::ServiceInstanceSummaryBuilder::template_minor_version)
+    /// - [`deployment_status`](crate::types::builders::ServiceInstanceSummaryBuilder::deployment_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceInstanceSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceInstanceSummary {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            last_deployment_attempted_at: self.last_deployment_attempted_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_deployment_attempted_at",
+                    "last_deployment_attempted_at was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            last_deployment_succeeded_at: self.last_deployment_succeeded_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_deployment_succeeded_at",
+                    "last_deployment_succeeded_at was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            template_major_version: self.template_major_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_major_version",
+                    "template_major_version was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            template_minor_version: self.template_minor_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_minor_version",
+                    "template_minor_version was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
+            deployment_status: self.deployment_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "deployment_status",
+                    "deployment_status was not specified but it is required when building ServiceInstanceSummary",
+                )
+            })?,
             deployment_status_message: self.deployment_status_message,
             last_attempted_deployment_id: self.last_attempted_deployment_id,
             last_succeeded_deployment_id: self.last_succeeded_deployment_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ServiceInstanceSummaryBuilder {

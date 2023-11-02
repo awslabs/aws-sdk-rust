@@ -4,33 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryOutput {
     /// <p> A unique ID for the given query. </p>
-    pub query_id: ::std::option::Option<::std::string::String>,
+    pub query_id: ::std::string::String,
     /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The result set rows returned by the query. </p>
-    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
+    pub rows: ::std::vec::Vec<crate::types::Row>,
     /// <p> The column data types of the returned result set. </p>
-    pub column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
+    pub column_info: ::std::vec::Vec<crate::types::ColumnInfo>,
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     _request_id: Option<String>,
 }
 impl QueryOutput {
     /// <p> A unique ID for the given query. </p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
-        self.query_id.as_deref()
+    pub fn query_id(&self) -> &str {
+        use std::ops::Deref;
+        self.query_id.deref()
     }
     /// <p> A pagination token that can be used again on a <code>Query</code> call to get the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> The result set rows returned by the query. </p>
-    pub fn rows(&self) -> ::std::option::Option<&[crate::types::Row]> {
-        self.rows.as_deref()
+    pub fn rows(&self) -> &[crate::types::Row] {
+        use std::ops::Deref;
+        self.rows.deref()
     }
     /// <p> The column data types of the returned result set. </p>
-    pub fn column_info(&self) -> ::std::option::Option<&[crate::types::ColumnInfo]> {
-        self.column_info.as_deref()
+    pub fn column_info(&self) -> &[crate::types::ColumnInfo] {
+        use std::ops::Deref;
+        self.column_info.deref()
     }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub fn query_status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
@@ -62,6 +65,7 @@ pub struct QueryOutputBuilder {
 }
 impl QueryOutputBuilder {
     /// <p> A unique ID for the given query. </p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +157,33 @@ impl QueryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`QueryOutput`](crate::operation::query::QueryOutput).
-    pub fn build(self) -> crate::operation::query::QueryOutput {
-        crate::operation::query::QueryOutput {
-            query_id: self.query_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_id`](crate::operation::query::builders::QueryOutputBuilder::query_id)
+    /// - [`rows`](crate::operation::query::builders::QueryOutputBuilder::rows)
+    /// - [`column_info`](crate::operation::query::builders::QueryOutputBuilder::column_info)
+    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::query::QueryOutput {
+            query_id: self.query_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "query_id",
+                    "query_id was not specified but it is required when building QueryOutput",
+                )
+            })?,
             next_token: self.next_token,
-            rows: self.rows,
-            column_info: self.column_info,
+            rows: self.rows.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rows",
+                    "rows was not specified but it is required when building QueryOutput",
+                )
+            })?,
+            column_info: self.column_info.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_info",
+                    "column_info was not specified but it is required when building QueryOutput",
+                )
+            })?,
             query_status: self.query_status,
             _request_id: self._request_id,
-        }
+        })
     }
 }

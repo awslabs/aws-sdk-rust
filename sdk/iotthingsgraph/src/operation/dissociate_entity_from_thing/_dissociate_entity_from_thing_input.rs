@@ -34,6 +34,7 @@ pub struct DissociateEntityFromThingInputBuilder {
 }
 impl DissociateEntityFromThingInputBuilder {
     /// <p>The name of the thing to disassociate.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DissociateEntityFromThingInputBuilder {
         &self.thing_name
     }
     /// <p>The entity type from which to disassociate the thing.</p>
+    /// This field is required.
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.entity_type = ::std::option::Option::Some(input);
         self

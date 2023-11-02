@@ -15,8 +15,10 @@ impl ListUsageTotalsOutput {
         self.next_token.as_deref()
     }
     /// <p>An object with details on the total usage for the requested account.</p>
-    pub fn totals(&self) -> ::std::option::Option<&[crate::types::UsageTotal]> {
-        self.totals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.totals.is_none()`.
+    pub fn totals(&self) -> &[crate::types::UsageTotal] {
+        self.totals.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListUsageTotalsOutput {

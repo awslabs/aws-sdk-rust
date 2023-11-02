@@ -9,8 +9,8 @@ pub fn ser_typed_link_facet_attribute_update(
         crate::protocol_serde::shape_typed_link_attribute_definition::ser_typed_link_attribute_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.action {
-        object.key("Action").string(var_3.as_str());
+    {
+        object.key("Action").string(input.action.as_str());
     }
     Ok(())
 }

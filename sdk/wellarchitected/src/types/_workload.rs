@@ -120,16 +120,22 @@ impl Workload {
         self.updated_at.as_ref()
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn aws_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aws_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_regions.is_none()`.
+    pub fn aws_regions(&self) -> &[::std::string::String] {
+        self.aws_regions.as_deref().unwrap_or_default()
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.non_aws_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_aws_regions.is_none()`.
+    pub fn non_aws_regions(&self) -> &[::std::string::String] {
+        self.non_aws_regions.as_deref().unwrap_or_default()
     }
     /// <p>The URL of the architectural design for the workload.</p>
     pub fn architectural_design(&self) -> ::std::option::Option<&str> {
@@ -200,13 +206,17 @@ impl Workload {
         self.risk_counts.as_ref()
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pillar_priorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillar_priorities.is_none()`.
+    pub fn pillar_priorities(&self) -> &[::std::string::String] {
+        self.pillar_priorities.as_deref().unwrap_or_default()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
-    pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lenses.is_none()`.
+    pub fn lenses(&self) -> &[::std::string::String] {
+        self.lenses.as_deref().unwrap_or_default()
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {
@@ -225,12 +235,16 @@ impl Workload {
         self.discovery_config.as_ref()
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[::std::string::String] {
+        self.applications.as_deref().unwrap_or_default()
     }
     /// <p>Profile associated with a workload.</p>
-    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::WorkloadProfile]> {
-        self.profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
+    pub fn profiles(&self) -> &[crate::types::WorkloadProfile] {
+        self.profiles.as_deref().unwrap_or_default()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn prioritized_risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {

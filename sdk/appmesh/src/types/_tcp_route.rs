@@ -42,6 +42,7 @@ pub struct TcpRouteBuilder {
 }
 impl TcpRouteBuilder {
     /// <p>The action to take if a match is determined.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::TcpRouteAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch Configuration Template ID.</p>
-    pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
+    pub launch_configuration_template_id: ::std::string::String,
     /// <p>Launch disposition.</p>
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
@@ -24,8 +24,9 @@ pub struct UpdateLaunchConfigurationTemplateInput {
 }
 impl UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
-        self.launch_configuration_template_id.as_deref()
+    pub fn launch_configuration_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.launch_configuration_template_id.deref()
     }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(&self) -> ::std::option::Option<&crate::types::LaunchDisposition> {
@@ -83,6 +84,7 @@ pub struct UpdateLaunchConfigurationTemplateInputBuilder {
 }
 impl UpdateLaunchConfigurationTemplateInputBuilder {
     /// <p>Launch Configuration Template ID.</p>
+    /// This field is required.
     pub fn launch_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +214,8 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         &self.launch_into_source_instance
     }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`launch_configuration_template_id`](crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder::launch_configuration_template_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -220,7 +224,12 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput {
-                launch_configuration_template_id: self.launch_configuration_template_id,
+                launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "launch_configuration_template_id",
+                        "launch_configuration_template_id was not specified but it is required when building UpdateLaunchConfigurationTemplateInput",
+                    )
+                })?,
                 launch_disposition: self.launch_disposition,
                 target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
                 copy_private_ip: self.copy_private_ip,

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkersInput {
     /// Site ARN.
-    pub site: ::std::option::Option<::std::string::String>,
+    pub site: ::std::string::String,
     /// Maximum number of results to retrieve in a single ListWorkers call.
     pub max_results: ::std::option::Option<i32>,
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -14,8 +14,9 @@ pub struct ListWorkersInput {
 }
 impl ListWorkersInput {
     /// Site ARN.
-    pub fn site(&self) -> ::std::option::Option<&str> {
-        self.site.as_deref()
+    pub fn site(&self) -> &str {
+        use std::ops::Deref;
+        self.site.deref()
     }
     /// Maximum number of results to retrieve in a single ListWorkers call.
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -48,6 +49,7 @@ pub struct ListWorkersInputBuilder {
 }
 impl ListWorkersInputBuilder {
     /// Site ARN.
+    /// This field is required.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site = ::std::option::Option::Some(input.into());
         self
@@ -104,9 +106,16 @@ impl ListWorkersInputBuilder {
         &self.fleet
     }
     /// Consumes the builder and constructs a [`ListWorkersInput`](crate::operation::list_workers::ListWorkersInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`site`](crate::operation::list_workers::builders::ListWorkersInputBuilder::site)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_workers::ListWorkersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workers::ListWorkersInput {
-            site: self.site,
+            site: self.site.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "site",
+                    "site was not specified but it is required when building ListWorkersInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
             fleet: self.fleet,

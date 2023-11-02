@@ -3,20 +3,20 @@ pub fn ser_create_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_resource::CreateResourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.type_name {
-        object.key("TypeName").string(var_1.as_str());
+    {
+        object.key("TypeName").string(input.type_name.as_str());
     }
-    if let Some(var_2) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_2.as_str());
+    if let Some(var_1) = &input.type_version_id {
+        object.key("TypeVersionId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("RoleArn").string(var_3.as_str());
+    if let Some(var_2) = &input.role_arn {
+        object.key("RoleArn").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("ClientToken").string(var_4.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("ClientToken").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.desired_state {
-        object.key("DesiredState").string(var_5.as_str());
+    {
+        object.key("DesiredState").string(input.desired_state.as_str());
     }
     Ok(())
 }

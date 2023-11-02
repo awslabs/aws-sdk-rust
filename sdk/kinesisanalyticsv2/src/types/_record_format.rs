@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordFormat {
     /// <p>The type of record format.</p>
-    pub record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
+    pub record_format_type: crate::types::RecordFormatType,
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub mapping_parameters: ::std::option::Option<crate::types::MappingParameters>,
 }
 impl RecordFormat {
     /// <p>The type of record format.</p>
-    pub fn record_format_type(&self) -> ::std::option::Option<&crate::types::RecordFormatType> {
-        self.record_format_type.as_ref()
+    pub fn record_format_type(&self) -> &crate::types::RecordFormatType {
+        &self.record_format_type
     }
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub fn mapping_parameters(&self) -> ::std::option::Option<&crate::types::MappingParameters> {
@@ -35,6 +35,7 @@ pub struct RecordFormatBuilder {
 }
 impl RecordFormatBuilder {
     /// <p>The type of record format.</p>
+    /// This field is required.
     pub fn record_format_type(mut self, input: crate::types::RecordFormatType) -> Self {
         self.record_format_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl RecordFormatBuilder {
         &self.mapping_parameters
     }
     /// Consumes the builder and constructs a [`RecordFormat`](crate::types::RecordFormat).
-    pub fn build(self) -> crate::types::RecordFormat {
-        crate::types::RecordFormat {
-            record_format_type: self.record_format_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`record_format_type`](crate::types::builders::RecordFormatBuilder::record_format_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecordFormat, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecordFormat {
+            record_format_type: self.record_format_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "record_format_type",
+                    "record_format_type was not specified but it is required when building RecordFormat",
+                )
+            })?,
             mapping_parameters: self.mapping_parameters,
-        }
+        })
     }
 }

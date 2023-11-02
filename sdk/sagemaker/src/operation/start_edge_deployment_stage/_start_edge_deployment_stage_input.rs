@@ -34,6 +34,7 @@ pub struct StartEdgeDeploymentStageInputBuilder {
 }
 impl StartEdgeDeploymentStageInputBuilder {
     /// <p>The name of the edge deployment plan to start.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartEdgeDeploymentStageInputBuilder {
         &self.edge_deployment_plan_name
     }
     /// <p>The name of the stage to start.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self

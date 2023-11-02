@@ -29,6 +29,7 @@ pub fn ser_account_level(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_account_level(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AccountLevel, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -89,5 +90,5 @@ pub fn de_account_level(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::account_level_correct_errors(builder).build())
 }

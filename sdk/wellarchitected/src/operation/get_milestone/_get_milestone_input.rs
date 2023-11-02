@@ -37,6 +37,7 @@ pub struct GetMilestoneInputBuilder {
 }
 impl GetMilestoneInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +53,7 @@ impl GetMilestoneInputBuilder {
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
+    /// This field is required.
     pub fn milestone_number(mut self, input: i32) -> Self {
         self.milestone_number = ::std::option::Option::Some(input);
         self

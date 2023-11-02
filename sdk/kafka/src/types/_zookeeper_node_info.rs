@@ -25,8 +25,10 @@ impl ZookeeperNodeInfo {
         self.client_vpc_ip_address.as_deref()
     }
     /// <p>Endpoints for accessing the ZooKeeper.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[::std::string::String] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The role-specific ID for Zookeeper.</p>
     pub fn zookeeper_id(&self) -> ::std::option::Option<f64> {

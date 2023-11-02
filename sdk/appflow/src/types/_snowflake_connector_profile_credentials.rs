@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnowflakeConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p> The password that corresponds to the user name. </p>
-    pub password: ::std::option::Option<::std::string::String>,
+    pub password: ::std::string::String,
 }
 impl SnowflakeConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p> The password that corresponds to the user name. </p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
-        self.password.as_deref()
+    pub fn password(&self) -> &str {
+        use std::ops::Deref;
+        self.password.deref()
     }
 }
 impl ::std::fmt::Debug for SnowflakeConnectorProfileCredentials {
@@ -43,6 +45,7 @@ pub struct SnowflakeConnectorProfileCredentialsBuilder {
 }
 impl SnowflakeConnectorProfileCredentialsBuilder {
     /// <p> The name of the user. </p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl SnowflakeConnectorProfileCredentialsBuilder {
         &self.username
     }
     /// <p> The password that corresponds to the user name. </p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl SnowflakeConnectorProfileCredentialsBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`SnowflakeConnectorProfileCredentials`](crate::types::SnowflakeConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::SnowflakeConnectorProfileCredentials {
-        crate::types::SnowflakeConnectorProfileCredentials {
-            username: self.username,
-            password: self.password,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::types::builders::SnowflakeConnectorProfileCredentialsBuilder::username)
+    /// - [`password`](crate::types::builders::SnowflakeConnectorProfileCredentialsBuilder::password)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnowflakeConnectorProfileCredentials {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building SnowflakeConnectorProfileCredentials",
+                )
+            })?,
+            password: self.password.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "password",
+                    "password was not specified but it is required when building SnowflakeConnectorProfileCredentials",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for SnowflakeConnectorProfileCredentialsBuilder {

@@ -26,8 +26,10 @@ pub struct ListRecordsOutput {
 }
 impl ListRecordsOutput {
     /// A list of all records.
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::Record] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// A pagination token for obtaining the next page of results.
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -46,8 +48,10 @@ impl ListRecordsOutput {
         self.last_modified_by.as_deref()
     }
     /// Names of merged datasets.
-    pub fn merged_dataset_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.merged_dataset_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.merged_dataset_names.is_none()`.
+    pub fn merged_dataset_names(&self) -> &[::std::string::String] {
+        self.merged_dataset_names.as_deref().unwrap_or_default()
     }
     /// Indicates whether the dataset exists.
     pub fn dataset_exists(&self) -> bool {

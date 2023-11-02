@@ -15,12 +15,16 @@ pub struct AwsEc2VpcDetails {
 }
 impl AwsEc2VpcDetails {
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::CidrBlockAssociation]> {
-        self.cidr_block_association_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_block_association_set.is_none()`.
+    pub fn cidr_block_association_set(&self) -> &[crate::types::CidrBlockAssociation] {
+        self.cidr_block_association_set.as_deref().unwrap_or_default()
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn ipv6_cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::Ipv6CidrBlockAssociation]> {
-        self.ipv6_cidr_block_association_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_cidr_block_association_set.is_none()`.
+    pub fn ipv6_cidr_block_association_set(&self) -> &[crate::types::Ipv6CidrBlockAssociation] {
+        self.ipv6_cidr_block_association_set.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
     pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {

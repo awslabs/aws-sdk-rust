@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModelPackageGroupPolicy`](crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_package_group_name(impl Into<String>)`](crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder::set_model_package_group_name): <p>The name of the model group for which to get the resource policy.</p>
+    ///   - [`model_package_group_name(impl Into<String>)`](crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder::model_package_group_name) / [`set_model_package_group_name(Option<String>)`](crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyFluentBuilder::set_model_package_group_name):<br>required: **true**<br><p>The name of the model group for which to get the resource policy.</p><br>
     /// - On success, responds with [`GetModelPackageGroupPolicyOutput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput) with field(s):
     ///   - [`resource_policy(Option<String>)`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput::resource_policy): <p>The resource policy for the model group.</p>
     /// - On failure, responds with [`SdkError<GetModelPackageGroupPolicyError>`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyError)

@@ -8,15 +8,15 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::Builder;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::Client;
-use aws_smithy_client::test_connection::{capture_request, CaptureRequestReceiver};
+use aws_smithy_runtime::client::http::test_util::{capture_request, CaptureRequestReceiver};
 use std::time::{Duration, UNIX_EPOCH};
 
 fn test_client(update_builder: fn(Builder) -> Builder) -> (CaptureRequestReceiver, Client) {
-    let (conn, captured_request) = capture_request(None);
+    let (http_client, captured_request) = capture_request(None);
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-west-4"))
-        .http_connector(conn)
+        .http_client(http_client)
         .build();
     let client = Client::from_conf(update_builder(Builder::from(&sdk_config)).build());
     (captured_request, client)
@@ -62,43 +62,36 @@ async fn dual_stack() {
     );
 }
 
-#[cfg(not(aws_sdk_middleware_mode))]
 #[tokio::test]
 async fn multi_region_access_points() {
-    let (_captured_request, client) = test_client(|b| b);
-    let response = client
+    let (captured_request, client) = test_client(|b| b);
+    let _ = client
         .get_object()
         .bucket("arn:aws:s3::123456789012:accesspoint/mfzwi23gnjvgw.mrap")
         .key("blah")
+        .customize()
+        .await
+        .unwrap()
+        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
+        .user_agent_for_tests()
         .send()
         .await;
-    let error = response.expect_err("should fail—sigv4a is not supported");
-    assert!(
-        dbg!(format!(
-            "{}",
-            aws_smithy_types::error::display::DisplayErrorContext(&error)
-        ))
-        .contains("selected auth scheme / endpoint config mismatch"),
-        "message should contain the correct error, found: {:?}",
-        error
+    let captured_request = captured_request.expect_request();
+    assert_eq!(
+        captured_request.uri().to_string(),
+        "https://mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com/blah?x-id=GetObject"
     );
-}
+    let auth_header = captured_request.headers().get("AUTHORIZATION").unwrap();
+    let auth_header = auth_header.to_str().unwrap();
+    // Verifies that the sigv4a signing algorithm was used, that the signing scope doesn't include a region, and that the x-amz-region-set header was signed.
+    let expected_start =
+        "AWS4-ECDSA-P256-SHA256 Credential=ANOTREAL/20210618/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-region-set;x-amz-user-agent, Signature=";
 
-#[cfg(aws_sdk_middleware_mode)]
-#[tokio::test]
-async fn multi_region_access_points() {
-    let (_captured_request, client) = test_client(|b| b);
-    let response = client
-        .get_object()
-        .bucket("arn:aws:s3::123456789012:accesspoint/mfzwi23gnjvgw.mrap")
-        .key("blah")
-        .send()
-        .await;
-    let error = response.expect_err("should fail—sigv4a is not supported");
     assert!(
-        dbg!(format!("{:?}", error)).contains("No auth schemes were supported"),
-        "message should contain the correct error, found: {:?}",
-        error
+        auth_header.starts_with(expected_start),
+        "expected auth header to start with {} but it was {}",
+        expected_start,
+        auth_header
     );
 }
 

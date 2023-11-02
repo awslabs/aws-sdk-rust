@@ -21,8 +21,6 @@ pub mod endpoint_config;
 pub mod os_shim_internal;
 pub mod region;
 pub mod sdk_config;
-
-pub use aws_smithy_client::http_connector;
 pub use sdk_config::SdkConfig;
 
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
@@ -30,34 +28,34 @@ use std::borrow::Cow;
 
 /// The name of the service used to sign this request
 ///
-/// Generally, user code should never interact with `SigningService` directly
+/// Generally, user code should never interact with `SigningName` directly
 #[derive(Clone, Debug, PartialEq, Eq)]
-pub struct SigningService(Cow<'static, str>);
-impl AsRef<str> for SigningService {
+pub struct SigningName(Cow<'static, str>);
+impl AsRef<str> for SigningName {
     fn as_ref(&self) -> &str {
         &self.0
     }
 }
 
-impl SigningService {
-    /// Creates a `SigningService` from a static str.
-    pub fn from_static(service: &'static str) -> Self {
-        SigningService(Cow::Borrowed(service))
+impl SigningName {
+    /// Creates a `SigningName` from a static str.
+    pub fn from_static(name: &'static str) -> Self {
+        SigningName(Cow::Borrowed(name))
     }
 }
 
-impl From<String> for SigningService {
-    fn from(service: String) -> Self {
-        SigningService(Cow::Owned(service))
+impl From<String> for SigningName {
+    fn from(name: String) -> Self {
+        SigningName(Cow::Owned(name))
     }
 }
 
-impl From<&'static str> for SigningService {
-    fn from(service: &'static str) -> Self {
-        Self::from_static(service)
+impl From<&'static str> for SigningName {
+    fn from(name: &'static str) -> Self {
+        Self::from_static(name)
     }
 }
 
-impl Storable for SigningService {
+impl Storable for SigningName {
     type Storer = StoreReplace<Self>;
 }

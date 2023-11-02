@@ -67,8 +67,10 @@ impl VpnConnectionOptions {
         self.tunnel_inside_ip_version.as_ref()
     }
     /// <p>Indicates the VPN tunnel options.</p>
-    pub fn tunnel_options(&self) -> ::std::option::Option<&[crate::types::TunnelOption]> {
-        self.tunnel_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tunnel_options.is_none()`.
+    pub fn tunnel_options(&self) -> &[crate::types::TunnelOption] {
+        self.tunnel_options.as_deref().unwrap_or_default()
     }
 }
 impl VpnConnectionOptions {

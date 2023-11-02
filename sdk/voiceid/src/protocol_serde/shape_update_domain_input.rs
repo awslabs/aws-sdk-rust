@@ -3,20 +3,20 @@ pub fn ser_update_domain_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_domain::UpdateDomainInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain_id {
-        object.key("DomainId").string(var_1.as_str());
+    {
+        object.key("DomainId").string(input.domain_id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.server_side_encryption_configuration {
+    if let Some(var_2) = &input.server_side_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ServerSideEncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("ServerSideEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

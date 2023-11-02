@@ -28,6 +28,7 @@ pub struct FlowLogsConfigurationResultBuilder {
 }
 impl FlowLogsConfigurationResultBuilder {
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

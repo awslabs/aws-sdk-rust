@@ -48,6 +48,7 @@ pub struct CopyImageInputBuilder {
 }
 impl CopyImageInputBuilder {
     /// <p>The name of the image to copy.</p>
+    /// This field is required.
     pub fn source_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CopyImageInputBuilder {
         &self.source_image_name
     }
     /// <p>The name that the image will have when it is copied to the destination.</p>
+    /// This field is required.
     pub fn destination_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_image_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CopyImageInputBuilder {
         &self.destination_image_name
     }
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
+    /// This field is required.
     pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self

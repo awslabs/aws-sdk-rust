@@ -34,6 +34,7 @@ pub struct GetSearchSuggestionsInputBuilder {
 }
 impl GetSearchSuggestionsInputBuilder {
     /// <p>The name of the SageMaker resource to search for.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::ResourceType) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self

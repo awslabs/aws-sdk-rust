@@ -3,14 +3,14 @@ pub fn ser_test_execution_result_filter_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestExecutionResultFilterBy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.result_type_filter {
-        object.key("resultTypeFilter").string(var_1.as_str());
+    {
+        object.key("resultTypeFilter").string(input.result_type_filter.as_str());
     }
-    if let Some(var_2) = &input.conversation_level_test_results_filter_by {
+    if let Some(var_1) = &input.conversation_level_test_results_filter_by {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("conversationLevelTestResultsFilterBy").start_object();
-        crate::protocol_serde::shape_conversation_level_test_results_filter_by::ser_conversation_level_test_results_filter_by(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("conversationLevelTestResultsFilterBy").start_object();
+        crate::protocol_serde::shape_conversation_level_test_results_filter_by::ser_conversation_level_test_results_filter_by(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

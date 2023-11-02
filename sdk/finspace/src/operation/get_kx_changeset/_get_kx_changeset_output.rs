@@ -43,8 +43,10 @@ impl GetKxChangesetOutput {
         self.environment_id.as_deref()
     }
     /// <p>A list of change request objects that are run in order.</p>
-    pub fn change_requests(&self) -> ::std::option::Option<&[crate::types::ChangeRequest]> {
-        self.change_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_requests.is_none()`.
+    pub fn change_requests(&self) -> &[crate::types::ChangeRequest] {
+        self.change_requests.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

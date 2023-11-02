@@ -4,26 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMetadataFlagInput {
     /// <p>The unique ID for the Amplify app.</p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The name of the feature associated with the metadata.</p>
-    pub feature_name: ::std::option::Option<::std::string::String>,
+    pub feature_name: ::std::string::String,
     /// <p>The metadata information to store.</p>
     pub body: ::std::option::Option<crate::types::PutMetadataFlagBody>,
 }
 impl PutMetadataFlagInput {
     /// <p>The unique ID for the Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The name of the feature associated with the metadata.</p>
-    pub fn feature_name(&self) -> ::std::option::Option<&str> {
-        self.feature_name.as_deref()
+    pub fn feature_name(&self) -> &str {
+        use std::ops::Deref;
+        self.feature_name.deref()
     }
     /// <p>The metadata information to store.</p>
     pub fn body(&self) -> ::std::option::Option<&crate::types::PutMetadataFlagBody> {
@@ -48,6 +51,7 @@ pub struct PutMetadataFlagInputBuilder {
 }
 impl PutMetadataFlagInputBuilder {
     /// <p>The unique ID for the Amplify app.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl PutMetadataFlagInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl PutMetadataFlagInputBuilder {
         &self.environment_name
     }
     /// <p>The name of the feature associated with the metadata.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl PutMetadataFlagInputBuilder {
         &self.feature_name
     }
     /// <p>The metadata information to store.</p>
+    /// This field is required.
     pub fn body(mut self, input: crate::types::PutMetadataFlagBody) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -104,13 +111,32 @@ impl PutMetadataFlagInputBuilder {
         &self.body
     }
     /// Consumes the builder and constructs a [`PutMetadataFlagInput`](crate::operation::put_metadata_flag::PutMetadataFlagInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_id`](crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder::app_id)
+    /// - [`environment_name`](crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder::environment_name)
+    /// - [`feature_name`](crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder::feature_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_metadata_flag::PutMetadataFlagInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metadata_flag::PutMetadataFlagInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            feature_name: self.feature_name,
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building PutMetadataFlagInput",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building PutMetadataFlagInput",
+                )
+            })?,
+            feature_name: self.feature_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "feature_name",
+                    "feature_name was not specified but it is required when building PutMetadataFlagInput",
+                )
+            })?,
             body: self.body,
         })
     }

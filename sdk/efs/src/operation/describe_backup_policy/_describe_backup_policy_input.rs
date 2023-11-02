@@ -27,6 +27,7 @@ pub struct DescribeBackupPolicyInputBuilder {
 }
 impl DescribeBackupPolicyInputBuilder {
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self

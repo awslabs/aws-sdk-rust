@@ -56,6 +56,7 @@ pub struct GetExportInputBuilder {
 }
 impl GetExportInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl GetExportInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the Stage that will be exported.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl GetExportInputBuilder {
         &self.stage_name
     }
     /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+    /// This field is required.
     pub fn export_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_type = ::std::option::Option::Some(input.into());
         self

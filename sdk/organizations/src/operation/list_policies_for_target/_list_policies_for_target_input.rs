@@ -78,6 +78,7 @@ impl ListPoliciesForTargetInputBuilder {
     /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
     /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +111,7 @@ impl ListPoliciesForTargetInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn filter(mut self, input: crate::types::PolicyType) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self

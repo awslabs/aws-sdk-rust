@@ -34,6 +34,7 @@ pub struct UpdateElasticIpInputBuilder {
 }
 impl UpdateElasticIpInputBuilder {
     /// <p>The IP address for which you want to update the name.</p>
+    /// This field is required.
     pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_ip = ::std::option::Option::Some(input.into());
         self

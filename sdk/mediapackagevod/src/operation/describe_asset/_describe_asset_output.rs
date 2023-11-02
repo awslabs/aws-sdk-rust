@@ -33,8 +33,10 @@ impl DescribeAssetOutput {
         self.created_at.as_deref()
     }
     /// The list of egress endpoints available for the Asset.
-    pub fn egress_endpoints(&self) -> ::std::option::Option<&[crate::types::EgressEndpoint]> {
-        self.egress_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_endpoints.is_none()`.
+    pub fn egress_endpoints(&self) -> &[crate::types::EgressEndpoint] {
+        self.egress_endpoints.as_deref().unwrap_or_default()
     }
     /// The unique identifier for the Asset.
     pub fn id(&self) -> ::std::option::Option<&str> {

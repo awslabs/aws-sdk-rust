@@ -3,82 +3,82 @@ pub fn ser_runbook(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Runbook,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.document_name {
-        object.key("DocumentName").string(var_1.as_str());
+    {
+        object.key("DocumentName").string(input.document_name.as_str());
     }
-    if let Some(var_2) = &input.document_version {
-        object.key("DocumentVersion").string(var_2.as_str());
+    if let Some(var_1) = &input.document_version {
+        object.key("DocumentVersion").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.parameters {
+    if let Some(var_2) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Parameters").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("Parameters").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                let mut array_7 = object_4.key(key_5.as_str()).start_array();
-                for item_8 in value_6 {
+                let mut array_6 = object_3.key(key_4.as_str()).start_array();
+                for item_7 in value_5 {
                     {
-                        array_7.value().string(item_8.as_str());
+                        array_6.value().string(item_7.as_str());
                     }
                 }
-                array_7.finish();
+                array_6.finish();
             }
         }
-        object_4.finish();
+        object_3.finish();
     }
-    if let Some(var_9) = &input.target_parameter_name {
-        object.key("TargetParameterName").string(var_9.as_str());
+    if let Some(var_8) = &input.target_parameter_name {
+        object.key("TargetParameterName").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.targets {
-        let mut array_11 = object.key("Targets").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.targets {
+        let mut array_10 = object.key("Targets").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_target::ser_target(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_target::ser_target(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
-    if let Some(var_14) = &input.target_maps {
-        let mut array_15 = object.key("TargetMaps").start_array();
-        for item_16 in var_14 {
+    if let Some(var_13) = &input.target_maps {
+        let mut array_14 = object.key("TargetMaps").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                for (key_18, value_19) in item_16 {
+                let mut object_16 = array_14.value().start_object();
+                for (key_17, value_18) in item_15 {
                     {
-                        let mut array_20 = object_17.key(key_18.as_str()).start_array();
-                        for item_21 in value_19 {
+                        let mut array_19 = object_16.key(key_17.as_str()).start_array();
+                        for item_20 in value_18 {
                             {
-                                array_20.value().string(item_21.as_str());
+                                array_19.value().string(item_20.as_str());
                             }
                         }
-                        array_20.finish();
+                        array_19.finish();
                     }
                 }
-                object_17.finish();
+                object_16.finish();
             }
         }
-        array_15.finish();
+        array_14.finish();
     }
-    if let Some(var_22) = &input.max_concurrency {
-        object.key("MaxConcurrency").string(var_22.as_str());
+    if let Some(var_21) = &input.max_concurrency {
+        object.key("MaxConcurrency").string(var_21.as_str());
     }
-    if let Some(var_23) = &input.max_errors {
-        object.key("MaxErrors").string(var_23.as_str());
+    if let Some(var_22) = &input.max_errors {
+        object.key("MaxErrors").string(var_22.as_str());
     }
-    if let Some(var_24) = &input.target_locations {
-        let mut array_25 = object.key("TargetLocations").start_array();
-        for item_26 in var_24 {
+    if let Some(var_23) = &input.target_locations {
+        let mut array_24 = object.key("TargetLocations").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_target_location::ser_target_location(&mut object_27, item_26)?;
-                object_27.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_target_location::ser_target_location(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_25.finish();
+        array_24.finish();
     }
     Ok(())
 }
@@ -157,7 +157,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::runbook_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

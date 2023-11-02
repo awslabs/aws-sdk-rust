@@ -24,16 +24,22 @@ impl ListCatalogItemsInput {
         self.max_results
     }
     /// <p>Filters the results by item class.</p>
-    pub fn item_class_filter(&self) -> ::std::option::Option<&[crate::types::CatalogItemClass]> {
-        self.item_class_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item_class_filter.is_none()`.
+    pub fn item_class_filter(&self) -> &[crate::types::CatalogItemClass] {
+        self.item_class_filter.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by storage option.</p>
-    pub fn supported_storage_filter(&self) -> ::std::option::Option<&[crate::types::SupportedStorageEnum]> {
-        self.supported_storage_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_storage_filter.is_none()`.
+    pub fn supported_storage_filter(&self) -> &[crate::types::SupportedStorageEnum] {
+        self.supported_storage_filter.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by EC2 family (for example, M5).</p>
-    pub fn ec2_family_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_family_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_family_filter.is_none()`.
+    pub fn ec2_family_filter(&self) -> &[::std::string::String] {
+        self.ec2_family_filter.as_deref().unwrap_or_default()
     }
 }
 impl ListCatalogItemsInput {

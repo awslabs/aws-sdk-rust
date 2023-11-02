@@ -4,23 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationOutput {
     /// <p>The unique Id of the web application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The ARN of the web application.</p>
-    pub application_arn: ::std::option::Option<::std::string::String>,
+    pub application_arn: ::std::string::String,
     /// <p>The name of the web application.</p>
-    pub application_name: ::std::option::Option<::std::string::String>,
+    pub application_name: ::std::string::String,
     /// <p>An optional description of the web application.</p>
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the web application.</p>
-    pub application_url: ::std::option::Option<::std::string::String>,
+    pub application_url: ::std::string::String,
     /// <p>The current state of the web application.</p>
-    pub application_state: ::std::option::Option<crate::types::ApplicationState>,
+    pub application_state: crate::types::ApplicationState,
     /// <p>The date (in Unix epoch time) when the application was created.</p>
     pub application_creation_date: i64,
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
     pub application_last_update_date: i64,
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
     pub sso_client_id: ::std::option::Option<::std::string::String>,
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
@@ -31,28 +31,32 @@ pub struct DescribeApplicationOutput {
 }
 impl DescribeApplicationOutput {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The ARN of the web application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
-        self.application_arn.as_deref()
+    pub fn application_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.application_arn.deref()
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
-        self.application_name.as_deref()
+    pub fn application_name(&self) -> &str {
+        use std::ops::Deref;
+        self.application_name.deref()
     }
     /// <p>An optional description of the web application.</p>
     pub fn application_description(&self) -> ::std::option::Option<&str> {
         self.application_description.as_deref()
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(&self) -> ::std::option::Option<&str> {
-        self.application_url.as_deref()
+    pub fn application_url(&self) -> &str {
+        use std::ops::Deref;
+        self.application_url.deref()
     }
     /// <p>The current state of the web application.</p>
-    pub fn application_state(&self) -> ::std::option::Option<&crate::types::ApplicationState> {
-        self.application_state.as_ref()
+    pub fn application_state(&self) -> &crate::types::ApplicationState {
+        &self.application_state
     }
     /// <p>The date (in Unix epoch time) when the application was created.</p>
     pub fn application_creation_date(&self) -> i64 {
@@ -63,8 +67,9 @@ impl DescribeApplicationOutput {
         self.application_last_update_date
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
     pub fn sso_client_id(&self) -> ::std::option::Option<&str> {
@@ -111,6 +116,7 @@ pub struct DescribeApplicationOutputBuilder {
 }
 impl DescribeApplicationOutputBuilder {
     /// <p>The unique Id of the web application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl DescribeApplicationOutputBuilder {
         &self.application_id
     }
     /// <p>The ARN of the web application.</p>
+    /// This field is required.
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +146,7 @@ impl DescribeApplicationOutputBuilder {
         &self.application_arn
     }
     /// <p>The name of the web application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +175,7 @@ impl DescribeApplicationOutputBuilder {
         &self.application_description
     }
     /// <p>The URL of the web application.</p>
+    /// This field is required.
     pub fn application_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_url = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +190,7 @@ impl DescribeApplicationOutputBuilder {
         &self.application_url
     }
     /// <p>The current state of the web application.</p>
+    /// This field is required.
     pub fn application_state(mut self, input: crate::types::ApplicationState) -> Self {
         self.application_state = ::std::option::Option::Some(input);
         self
@@ -195,6 +205,7 @@ impl DescribeApplicationOutputBuilder {
         &self.application_state
     }
     /// <p>The date (in Unix epoch time) when the application was created.</p>
+    /// This field is required.
     pub fn application_creation_date(mut self, input: i64) -> Self {
         self.application_creation_date = ::std::option::Option::Some(input);
         self
@@ -209,6 +220,7 @@ impl DescribeApplicationOutputBuilder {
         &self.application_creation_date
     }
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
+    /// This field is required.
     pub fn application_last_update_date(mut self, input: i64) -> Self {
         self.application_last_update_date = ::std::option::Option::Some(input);
         self
@@ -223,6 +235,7 @@ impl DescribeApplicationOutputBuilder {
         &self.application_last_update_date
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -294,21 +307,61 @@ impl DescribeApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
-    pub fn build(self) -> crate::operation::describe_application::DescribeApplicationOutput {
-        crate::operation::describe_application::DescribeApplicationOutput {
-            application_id: self.application_id,
-            application_arn: self.application_arn,
-            application_name: self.application_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_id)
+    /// - [`application_arn`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_arn)
+    /// - [`application_name`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_name)
+    /// - [`application_url`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_url)
+    /// - [`application_state`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_state)
+    /// - [`role_arn`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::role_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_application::DescribeApplicationOutput {
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building DescribeApplicationOutput",
+                )
+            })?,
+            application_arn: self.application_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_arn",
+                    "application_arn was not specified but it is required when building DescribeApplicationOutput",
+                )
+            })?,
+            application_name: self.application_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_name",
+                    "application_name was not specified but it is required when building DescribeApplicationOutput",
+                )
+            })?,
             application_description: self.application_description,
-            application_url: self.application_url,
-            application_state: self.application_state,
+            application_url: self.application_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_url",
+                    "application_url was not specified but it is required when building DescribeApplicationOutput",
+                )
+            })?,
+            application_state: self.application_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_state",
+                    "application_state was not specified but it is required when building DescribeApplicationOutput",
+                )
+            })?,
             application_creation_date: self.application_creation_date.unwrap_or_default(),
             application_last_update_date: self.application_last_update_date.unwrap_or_default(),
-            role_arn: self.role_arn,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building DescribeApplicationOutput",
+                )
+            })?,
             sso_client_id: self.sso_client_id,
             error_message: self.error_message,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

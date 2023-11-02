@@ -165,6 +165,10 @@ pub use crate::types::_option_group_option_setting::OptionGroupOptionSettingBuil
 
 pub use crate::types::_minimum_engine_version_per_allowed_value::MinimumEngineVersionPerAllowedValueBuilder;
 
+pub use crate::types::_integration::IntegrationBuilder;
+
+pub use crate::types::_integration_error::IntegrationErrorBuilder;
+
 pub use crate::types::_export_task::ExportTaskBuilder;
 
 pub use crate::types::_event::EventBuilder;

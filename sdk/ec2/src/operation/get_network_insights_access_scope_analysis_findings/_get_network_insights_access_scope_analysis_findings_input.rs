@@ -50,6 +50,7 @@ pub struct GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
+    /// This field is required.
     pub fn network_insights_access_scope_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_access_scope_analysis_id = ::std::option::Option::Some(input.into());
         self

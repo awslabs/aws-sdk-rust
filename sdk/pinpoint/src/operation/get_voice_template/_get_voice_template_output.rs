@@ -34,6 +34,7 @@ pub struct GetVoiceTemplateOutputBuilder {
 }
 impl GetVoiceTemplateOutputBuilder {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    /// This field is required.
     pub fn voice_template_response(mut self, input: crate::types::VoiceTemplateResponse) -> Self {
         self.voice_template_response = ::std::option::Option::Some(input);
         self

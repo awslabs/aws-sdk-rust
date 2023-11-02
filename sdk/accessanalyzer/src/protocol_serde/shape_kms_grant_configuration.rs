@@ -3,29 +3,29 @@ pub fn ser_kms_grant_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KmsGrantConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.operations {
-        let mut array_2 = object.key("operations").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("operations").start_array();
+        for item_2 in &input.operations {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.grantee_principal {
-        object.key("granteePrincipal").string(var_4.as_str());
+    {
+        object.key("granteePrincipal").string(input.grantee_principal.as_str());
     }
-    if let Some(var_5) = &input.retiring_principal {
-        object.key("retiringPrincipal").string(var_5.as_str());
+    if let Some(var_3) = &input.retiring_principal {
+        object.key("retiringPrincipal").string(var_3.as_str());
     }
-    if let Some(var_6) = &input.constraints {
+    if let Some(var_4) = &input.constraints {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("constraints").start_object();
-        crate::protocol_serde::shape_kms_grant_constraints::ser_kms_grant_constraints(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_5 = object.key("constraints").start_object();
+        crate::protocol_serde::shape_kms_grant_constraints::ser_kms_grant_constraints(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_8) = &input.issuing_account {
-        object.key("issuingAccount").string(var_8.as_str());
+    {
+        object.key("issuingAccount").string(input.issuing_account.as_str());
     }
     Ok(())
 }
@@ -84,7 +84,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::kms_grant_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

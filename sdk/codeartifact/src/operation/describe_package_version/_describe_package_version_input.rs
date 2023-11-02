@@ -81,6 +81,7 @@ pub struct DescribePackageVersionInputBuilder {
 }
 impl DescribePackageVersionInputBuilder {
     /// <p> The name of the domain that contains the repository that contains the package version. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +110,7 @@ impl DescribePackageVersionInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that contains the package version. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +125,7 @@ impl DescribePackageVersionInputBuilder {
         &self.repository
     }
     /// <p> A format that specifies the type of the requested package version. </p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -169,6 +172,7 @@ impl DescribePackageVersionInputBuilder {
         &self.namespace
     }
     /// <p> The name of the requested package version. </p>
+    /// This field is required.
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
         self
@@ -183,6 +187,7 @@ impl DescribePackageVersionInputBuilder {
         &self.package
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self

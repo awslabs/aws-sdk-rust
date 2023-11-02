@@ -6,8 +6,8 @@ pub fn ser_studio_encryption_configuration(
     if let Some(var_1) = &input.key_arn {
         object.key("keyArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.key_type {
-        object.key("keyType").string(var_2.as_str());
+    {
+        object.key("keyType").string(input.key_type.as_str());
     }
     Ok(())
 }
@@ -54,7 +54,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::studio_encryption_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

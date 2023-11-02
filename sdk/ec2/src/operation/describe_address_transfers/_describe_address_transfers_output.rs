@@ -11,8 +11,10 @@ pub struct DescribeAddressTransfersOutput {
 }
 impl DescribeAddressTransfersOutput {
     /// <p>The Elastic IP address transfer.</p>
-    pub fn address_transfers(&self) -> ::std::option::Option<&[crate::types::AddressTransfer]> {
-        self.address_transfers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address_transfers.is_none()`.
+    pub fn address_transfers(&self) -> &[crate::types::AddressTransfer] {
+        self.address_transfers.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

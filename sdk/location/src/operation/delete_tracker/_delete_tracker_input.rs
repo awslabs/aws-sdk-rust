@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrackerInput {
     /// <p>The name of the tracker resource to be deleted.</p>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
 }
 impl DeleteTrackerInput {
     /// <p>The name of the tracker resource to be deleted.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
 }
 impl DeleteTrackerInput {
@@ -27,6 +28,7 @@ pub struct DeleteTrackerInputBuilder {
 }
 impl DeleteTrackerInputBuilder {
     /// <p>The name of the tracker resource to be deleted.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteTrackerInputBuilder {
         &self.tracker_name
     }
     /// Consumes the builder and constructs a [`DeleteTrackerInput`](crate::operation::delete_tracker::DeleteTrackerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::delete_tracker::builders::DeleteTrackerInputBuilder::tracker_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_tracker::DeleteTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tracker::DeleteTrackerInput {
-            tracker_name: self.tracker_name,
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building DeleteTrackerInput",
+                )
+            })?,
         })
     }
 }

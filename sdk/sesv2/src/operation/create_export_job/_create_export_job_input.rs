@@ -35,6 +35,7 @@ pub struct CreateExportJobInputBuilder {
 }
 impl CreateExportJobInputBuilder {
     /// <p>The data source for the export job.</p>
+    /// This field is required.
     pub fn export_data_source(mut self, input: crate::types::ExportDataSource) -> Self {
         self.export_data_source = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CreateExportJobInputBuilder {
         &self.export_data_source
     }
     /// <p>The destination for the export job.</p>
+    /// This field is required.
     pub fn export_destination(mut self, input: crate::types::ExportDestination) -> Self {
         self.export_destination = ::std::option::Option::Some(input);
         self

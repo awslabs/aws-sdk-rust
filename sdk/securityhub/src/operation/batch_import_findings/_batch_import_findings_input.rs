@@ -8,8 +8,10 @@ pub struct BatchImportFindingsInput {
 }
 impl BatchImportFindingsInput {
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::AwsSecurityFinding]> {
-        self.findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings.is_none()`.
+    pub fn findings(&self) -> &[crate::types::AwsSecurityFinding] {
+        self.findings.as_deref().unwrap_or_default()
     }
 }
 impl BatchImportFindingsInput {

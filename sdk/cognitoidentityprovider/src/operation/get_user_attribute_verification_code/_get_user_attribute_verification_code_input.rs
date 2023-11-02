@@ -69,6 +69,7 @@ pub struct GetUserAttributeVerificationCodeInputBuilder {
 }
 impl GetUserAttributeVerificationCodeInputBuilder {
     /// <p>A non-expired access token for the user whose attribute verification code you want to generate.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl GetUserAttributeVerificationCodeInputBuilder {
         &self.access_token
     }
     /// <p>The attribute name returned by the server response to get the user attribute verification code.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self

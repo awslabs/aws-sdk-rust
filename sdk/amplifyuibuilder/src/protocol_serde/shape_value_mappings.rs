@@ -3,30 +3,30 @@ pub fn ser_value_mappings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ValueMappings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.values {
-        let mut array_2 = object.key("values").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("values").start_array();
+        for item_2 in &input.values {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_value_mapping::ser_value_mapping(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_value_mapping::ser_value_mapping(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.binding_properties {
+    if let Some(var_4) = &input.binding_properties {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("bindingProperties").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("bindingProperties").start_object();
+        for (key_6, value_7) in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_form_input_binding_properties_value::ser_form_input_binding_properties_value(&mut object_9, value_8)?;
-                object_9.finish();
+                let mut object_8 = object_5.key(key_6.as_str()).start_object();
+                crate::protocol_serde::shape_form_input_binding_properties_value::ser_form_input_binding_properties_value(&mut object_8, value_7)?;
+                object_8.finish();
             }
         }
-        object_6.finish();
+        object_5.finish();
     }
     Ok(())
 }
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::value_mappings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

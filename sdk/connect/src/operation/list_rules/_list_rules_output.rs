@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRulesOutput {
     /// <p>Summary information about a rule.</p>
-    pub rule_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>>,
+    pub rule_summary_list: ::std::vec::Vec<crate::types::RuleSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRulesOutput {
     /// <p>Summary information about a rule.</p>
-    pub fn rule_summary_list(&self) -> ::std::option::Option<&[crate::types::RuleSummary]> {
-        self.rule_summary_list.as_deref()
+    pub fn rule_summary_list(&self) -> &[crate::types::RuleSummary] {
+        use std::ops::Deref;
+        self.rule_summary_list.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListRulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
-    pub fn build(self) -> crate::operation::list_rules::ListRulesOutput {
-        crate::operation::list_rules::ListRulesOutput {
-            rule_summary_list: self.rule_summary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_summary_list`](crate::operation::list_rules::builders::ListRulesOutputBuilder::rule_summary_list)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_rules::ListRulesOutput {
+            rule_summary_list: self.rule_summary_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_summary_list",
+                    "rule_summary_list was not specified but it is required when building ListRulesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

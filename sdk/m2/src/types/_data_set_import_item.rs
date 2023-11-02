@@ -35,6 +35,7 @@ pub struct DataSetImportItemBuilder {
 }
 impl DataSetImportItemBuilder {
     /// <p>The data set.</p>
+    /// This field is required.
     pub fn data_set(mut self, input: crate::types::DataSet) -> Self {
         self.data_set = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl DataSetImportItemBuilder {
         &self.data_set
     }
     /// <p>The location of the data set.</p>
+    /// This field is required.
     pub fn external_location(mut self, input: crate::types::ExternalLocation) -> Self {
         self.external_location = ::std::option::Option::Some(input);
         self

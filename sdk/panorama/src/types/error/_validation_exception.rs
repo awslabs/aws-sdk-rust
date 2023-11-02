@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The reason that validation failed.</p>
     pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     /// <p>A unique ID for the error.</p>
@@ -26,27 +26,29 @@ impl ValidationException {
         self.error_id.as_deref()
     }
     /// <p>A list of attributes that led to the exception and their values.</p>
-    pub fn error_arguments(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionErrorArgument]> {
-        self.error_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_arguments.is_none()`.
+    pub fn error_arguments(&self) -> &[crate::types::ValidationExceptionErrorArgument] {
+        self.error_arguments.as_deref().unwrap_or_default()
     }
     /// <p>A list of request parameters that failed validation.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::ValidationExceptionField] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ValidationException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -83,6 +85,7 @@ pub struct ValidationExceptionBuilder {
 }
 impl ValidationExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -176,14 +179,21 @@ impl ValidationExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
-    pub fn build(self) -> crate::types::error::ValidationException {
-        crate::types::error::ValidationException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ValidationExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ValidationException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ValidationException",
+                )
+            })?,
             reason: self.reason,
             error_id: self.error_id,
             error_arguments: self.error_arguments,
             fields: self.fields,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -47,8 +47,10 @@ impl UserDefinedFunction {
         self.create_time.as_ref()
     }
     /// <p>The resource URIs for the function.</p>
-    pub fn resource_uris(&self) -> ::std::option::Option<&[crate::types::ResourceUri]> {
-        self.resource_uris.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_uris.is_none()`.
+    pub fn resource_uris(&self) -> &[crate::types::ResourceUri] {
+        self.resource_uris.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Data Catalog in which the function resides.</p>
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {

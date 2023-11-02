@@ -41,6 +41,7 @@ pub struct UpdateBillingGroupInputBuilder {
 }
 impl UpdateBillingGroupInputBuilder {
     /// <p>The name of the billing group.</p>
+    /// This field is required.
     pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateBillingGroupInputBuilder {
         &self.billing_group_name
     }
     /// <p>The properties of the billing group.</p>
+    /// This field is required.
     pub fn billing_group_properties(mut self, input: crate::types::BillingGroupProperties) -> Self {
         self.billing_group_properties = ::std::option::Option::Some(input);
         self

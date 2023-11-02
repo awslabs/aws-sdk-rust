@@ -34,6 +34,7 @@ pub struct GetWorkgroupOutputBuilder {
 }
 impl GetWorkgroupOutputBuilder {
     /// <p>The returned workgroup object.</p>
+    /// This field is required.
     pub fn workgroup(mut self, input: crate::types::Workgroup) -> Self {
         self.workgroup = ::std::option::Option::Some(input);
         self

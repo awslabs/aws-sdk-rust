@@ -11,8 +11,10 @@ pub struct ListSigningPlatformsOutput {
 }
 impl ListSigningPlatformsOutput {
     /// <p>A list of all platforms that match the request parameters.</p>
-    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::SigningPlatform]> {
-        self.platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
+    pub fn platforms(&self) -> &[crate::types::SigningPlatform] {
+        self.platforms.as_deref().unwrap_or_default()
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

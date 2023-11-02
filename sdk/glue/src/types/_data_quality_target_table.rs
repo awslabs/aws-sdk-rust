@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityTargetTable {
     /// <p>The name of the Glue table.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>The name of the database where the Glue table exists.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The catalog id where the Glue table exists.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityTargetTable {
     /// <p>The name of the Glue table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>The name of the database where the Glue table exists.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The catalog id where the Glue table exists.</p>
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct DataQualityTargetTableBuilder {
 }
 impl DataQualityTargetTableBuilder {
     /// <p>The name of the Glue table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl DataQualityTargetTableBuilder {
         &self.table_name
     }
     /// <p>The name of the database where the Glue table exists.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl DataQualityTargetTableBuilder {
         &self.catalog_id
     }
     /// Consumes the builder and constructs a [`DataQualityTargetTable`](crate::types::DataQualityTargetTable).
-    pub fn build(self) -> crate::types::DataQualityTargetTable {
-        crate::types::DataQualityTargetTable {
-            table_name: self.table_name,
-            database_name: self.database_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::DataQualityTargetTableBuilder::table_name)
+    /// - [`database_name`](crate::types::builders::DataQualityTargetTableBuilder::database_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataQualityTargetTable, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataQualityTargetTable {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building DataQualityTargetTable",
+                )
+            })?,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building DataQualityTargetTable",
+                )
+            })?,
             catalog_id: self.catalog_id,
-        }
+        })
     }
 }

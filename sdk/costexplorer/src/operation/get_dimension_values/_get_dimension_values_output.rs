@@ -43,11 +43,11 @@ pub struct GetDimensionValuesOutput {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
-    pub dimension_values: ::std::option::Option<::std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
+    pub dimension_values: ::std::vec::Vec<crate::types::DimensionValuesWithAttributes>,
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
-    pub return_size: ::std::option::Option<i32>,
+    pub return_size: i32,
     /// <p>The total number of search results.</p>
-    pub total_size: ::std::option::Option<i32>,
+    pub total_size: i32,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -93,15 +93,16 @@ impl GetDimensionValuesOutput {
     /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
     /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
-    pub fn dimension_values(&self) -> ::std::option::Option<&[crate::types::DimensionValuesWithAttributes]> {
-        self.dimension_values.as_deref()
+    pub fn dimension_values(&self) -> &[crate::types::DimensionValuesWithAttributes] {
+        use std::ops::Deref;
+        self.dimension_values.deref()
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
-    pub fn return_size(&self) -> ::std::option::Option<i32> {
+    pub fn return_size(&self) -> i32 {
         self.return_size
     }
     /// <p>The total number of search results.</p>
-    pub fn total_size(&self) -> ::std::option::Option<i32> {
+    pub fn total_size(&self) -> i32 {
         self.total_size
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -270,6 +271,7 @@ impl GetDimensionValuesOutputBuilder {
         &self.dimension_values
     }
     /// <p>The number of results that Amazon Web Services returned at one time.</p>
+    /// This field is required.
     pub fn return_size(mut self, input: i32) -> Self {
         self.return_size = ::std::option::Option::Some(input);
         self
@@ -284,6 +286,7 @@ impl GetDimensionValuesOutputBuilder {
         &self.return_size
     }
     /// <p>The total number of search results.</p>
+    /// This field is required.
     pub fn total_size(mut self, input: i32) -> Self {
         self.total_size = ::std::option::Option::Some(input);
         self
@@ -321,13 +324,35 @@ impl GetDimensionValuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDimensionValuesOutput`](crate::operation::get_dimension_values::GetDimensionValuesOutput).
-    pub fn build(self) -> crate::operation::get_dimension_values::GetDimensionValuesOutput {
-        crate::operation::get_dimension_values::GetDimensionValuesOutput {
-            dimension_values: self.dimension_values,
-            return_size: self.return_size,
-            total_size: self.total_size,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dimension_values`](crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::dimension_values)
+    /// - [`return_size`](crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::return_size)
+    /// - [`total_size`](crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::total_size)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_dimension_values::GetDimensionValuesOutput {
+            dimension_values: self.dimension_values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_values",
+                    "dimension_values was not specified but it is required when building GetDimensionValuesOutput",
+                )
+            })?,
+            return_size: self.return_size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "return_size",
+                    "return_size was not specified but it is required when building GetDimensionValuesOutput",
+                )
+            })?,
+            total_size: self.total_size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "total_size",
+                    "total_size was not specified but it is required when building GetDimensionValuesOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

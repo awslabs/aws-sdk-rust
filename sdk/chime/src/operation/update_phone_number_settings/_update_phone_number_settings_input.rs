@@ -34,6 +34,7 @@ pub struct UpdatePhoneNumberSettingsInputBuilder {
 }
 impl UpdatePhoneNumberSettingsInputBuilder {
     /// <p>The default outbound calling name for the account.</p>
+    /// This field is required.
     pub fn calling_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calling_name = ::std::option::Option::Some(input.into());
         self

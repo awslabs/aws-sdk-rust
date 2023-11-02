@@ -9,8 +9,10 @@ pub struct ListCuratedEnvironmentImagesOutput {
 }
 impl ListCuratedEnvironmentImagesOutput {
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::EnvironmentPlatform]> {
-        self.platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
+    pub fn platforms(&self) -> &[crate::types::EnvironmentPlatform] {
+        self.platforms.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCuratedEnvironmentImagesOutput {

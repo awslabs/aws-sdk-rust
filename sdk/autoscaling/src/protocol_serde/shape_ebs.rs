@@ -51,6 +51,7 @@ pub fn ser_ebs(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ebs(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Ebs, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Ebs::builder();

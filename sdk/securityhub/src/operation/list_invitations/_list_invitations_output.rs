@@ -11,8 +11,10 @@ pub struct ListInvitationsOutput {
 }
 impl ListInvitationsOutput {
     /// <p>The details of the invitations returned by the operation.</p>
-    pub fn invitations(&self) -> ::std::option::Option<&[crate::types::Invitation]> {
-        self.invitations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invitations.is_none()`.
+    pub fn invitations(&self) -> &[crate::types::Invitation] {
+        self.invitations.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

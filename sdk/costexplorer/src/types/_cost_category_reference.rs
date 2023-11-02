@@ -44,12 +44,16 @@ impl CostCategoryReference {
         self.number_of_rules
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-    pub fn processing_status(&self) -> ::std::option::Option<&[crate::types::CostCategoryProcessingStatus]> {
-        self.processing_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_status.is_none()`.
+    pub fn processing_status(&self) -> &[crate::types::CostCategoryProcessingStatus] {
+        self.processing_status.as_deref().unwrap_or_default()
     }
     /// <p>A list of unique cost category values in a specific cost category. </p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The default value for the cost category.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {

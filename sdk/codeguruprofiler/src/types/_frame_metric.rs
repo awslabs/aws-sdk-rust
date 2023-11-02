@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub frame_name: ::std::option::Option<::std::string::String>,
+    pub frame_name: ::std::string::String,
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
-    pub r#type: ::std::option::Option<crate::types::MetricType>,
+    pub r#type: crate::types::MetricType,
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub thread_states: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub thread_states: ::std::vec::Vec<::std::string::String>,
 }
 impl FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub fn frame_name(&self) -> ::std::option::Option<&str> {
-        self.frame_name.as_deref()
+    pub fn frame_name(&self) -> &str {
+        use std::ops::Deref;
+        self.frame_name.deref()
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MetricType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::MetricType {
+        &self.r#type
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.thread_states.as_deref()
+    pub fn thread_states(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.thread_states.deref()
     }
 }
 impl FrameMetric {
@@ -42,6 +44,7 @@ pub struct FrameMetricBuilder {
 }
 impl FrameMetricBuilder {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
+    /// This field is required.
     pub fn frame_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.frame_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FrameMetricBuilder {
         &self.frame_name
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::MetricType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl FrameMetricBuilder {
         &self.thread_states
     }
     /// Consumes the builder and constructs a [`FrameMetric`](crate::types::FrameMetric).
-    pub fn build(self) -> crate::types::FrameMetric {
-        crate::types::FrameMetric {
-            frame_name: self.frame_name,
-            r#type: self.r#type,
-            thread_states: self.thread_states,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`frame_name`](crate::types::builders::FrameMetricBuilder::frame_name)
+    /// - [`r#type`](crate::types::builders::FrameMetricBuilder::r#type)
+    /// - [`thread_states`](crate::types::builders::FrameMetricBuilder::thread_states)
+    pub fn build(self) -> ::std::result::Result<crate::types::FrameMetric, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FrameMetric {
+            frame_name: self.frame_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "frame_name",
+                    "frame_name was not specified but it is required when building FrameMetric",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FrameMetric",
+                )
+            })?,
+            thread_states: self.thread_states.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "thread_states",
+                    "thread_states was not specified but it is required when building FrameMetric",
+                )
+            })?,
+        })
     }
 }

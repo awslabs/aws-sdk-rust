@@ -16,18 +16,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     pub featurization_pipeline: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
 }
 impl Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
-    pub fn featurization_pipeline(&self) -> ::std::option::Option<&[crate::types::FeaturizationMethod]> {
-        self.featurization_pipeline.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featurization_pipeline.is_none()`.
+    pub fn featurization_pipeline(&self) -> &[crate::types::FeaturizationMethod] {
+        self.featurization_pipeline.as_deref().unwrap_or_default()
     }
 }
 impl Featurization {
@@ -46,6 +49,7 @@ pub struct FeaturizationBuilder {
 }
 impl FeaturizationBuilder {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -80,10 +84,17 @@ impl FeaturizationBuilder {
         &self.featurization_pipeline
     }
     /// Consumes the builder and constructs a [`Featurization`](crate::types::Featurization).
-    pub fn build(self) -> crate::types::Featurization {
-        crate::types::Featurization {
-            attribute_name: self.attribute_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::FeaturizationBuilder::attribute_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Featurization, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Featurization {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building Featurization",
+                )
+            })?,
             featurization_pipeline: self.featurization_pipeline,
-        }
+        })
     }
 }

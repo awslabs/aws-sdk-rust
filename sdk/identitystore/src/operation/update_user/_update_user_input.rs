@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a user in the identity store.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
+    pub operations: ::std::vec::Vec<crate::types::AttributeOperation>,
 }
 impl UpdateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::AttributeOperation]> {
-        self.operations.as_deref()
+    pub fn operations(&self) -> &[crate::types::AttributeOperation] {
+        use std::ops::Deref;
+        self.operations.deref()
     }
 }
 impl UpdateUserInput {
@@ -41,6 +44,7 @@ pub struct UpdateUserInputBuilder {
 }
 impl UpdateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl UpdateUserInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -89,11 +94,30 @@ impl UpdateUserInputBuilder {
         &self.operations
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::update_user::builders::UpdateUserInputBuilder::identity_store_id)
+    /// - [`user_id`](crate::operation::update_user::builders::UpdateUserInputBuilder::user_id)
+    /// - [`operations`](crate::operation::update_user::builders::UpdateUserInputBuilder::operations)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
-            identity_store_id: self.identity_store_id,
-            user_id: self.user_id,
-            operations: self.operations,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building UpdateUserInput",
+                )
+            })?,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building UpdateUserInput",
+                )
+            })?,
+            operations: self.operations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operations",
+                    "operations was not specified but it is required when building UpdateUserInput",
+                )
+            })?,
         })
     }
 }

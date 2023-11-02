@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHapg`](crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hapg_arn(impl Into<String>)`](crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder::hapg_arn) / [`set_hapg_arn(Option<String>)`](crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder::set_hapg_arn): <p>The ARN of the high-availability partition group to delete.</p>
+    ///   - [`hapg_arn(impl Into<String>)`](crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder::hapg_arn) / [`set_hapg_arn(Option<String>)`](crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder::set_hapg_arn):<br>required: **true**<br><p>The ARN of the high-availability partition group to delete.</p><br>
     /// - On success, responds with [`DeleteHapgOutput`](crate::operation::delete_hapg::DeleteHapgOutput) with field(s):
-    ///   - [`status(Option<String>)`](crate::operation::delete_hapg::DeleteHapgOutput::status): <p>The status of the action.</p>
+    ///   - [`status(String)`](crate::operation::delete_hapg::DeleteHapgOutput::status): <p>The status of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteHapgError>`](crate::operation::delete_hapg::DeleteHapgError)
     #[deprecated(note = "This API is deprecated.")]
     pub fn delete_hapg(&self) -> crate::operation::delete_hapg::builders::DeleteHapgFluentBuilder {

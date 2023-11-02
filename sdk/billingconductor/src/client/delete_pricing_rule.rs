@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePricingRule`](crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder::set_arn): <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::delete_pricing_rule::builders::DeletePricingRuleFluentBuilder::set_arn):<br>required: **true**<br><p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p><br>
     /// - On success, responds with [`DeletePricingRuleOutput`](crate::operation::delete_pricing_rule::DeletePricingRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_pricing_rule::DeletePricingRuleOutput::arn): <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
     /// - On failure, responds with [`SdkError<DeletePricingRuleError>`](crate::operation::delete_pricing_rule::DeletePricingRuleError)

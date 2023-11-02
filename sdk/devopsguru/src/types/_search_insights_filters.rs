@@ -15,12 +15,16 @@ pub struct SearchInsightsFilters {
 }
 impl SearchInsightsFilters {
     /// <p> An array of severity values used to search for insights. </p>
-    pub fn severities(&self) -> ::std::option::Option<&[crate::types::InsightSeverity]> {
-        self.severities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severities.is_none()`.
+    pub fn severities(&self) -> &[crate::types::InsightSeverity] {
+        self.severities.as_deref().unwrap_or_default()
     }
     /// <p> An array of status values used to search for insights. </p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::InsightStatus]> {
-        self.statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
+    pub fn statuses(&self) -> &[crate::types::InsightStatus] {
+        self.statuses.as_deref().unwrap_or_default()
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::ResourceCollection> {

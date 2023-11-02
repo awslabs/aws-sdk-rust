@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataFieldSeriesItem {
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>The field value of the field that you are setting the axis binding to.</p>
     pub field_value: ::std::option::Option<::std::string::String>,
     /// <p>The axis that you are binding the field to.</p>
-    pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
+    pub axis_binding: crate::types::AxisBinding,
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub settings: ::std::option::Option<crate::types::LineChartSeriesSettings>,
 }
 impl DataFieldSeriesItem {
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>The field value of the field that you are setting the axis binding to.</p>
     pub fn field_value(&self) -> ::std::option::Option<&str> {
         self.field_value.as_deref()
     }
     /// <p>The axis that you are binding the field to.</p>
-    pub fn axis_binding(&self) -> ::std::option::Option<&crate::types::AxisBinding> {
-        self.axis_binding.as_ref()
+    pub fn axis_binding(&self) -> &crate::types::AxisBinding {
+        &self.axis_binding
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::LineChartSeriesSettings> {
@@ -59,6 +60,7 @@ pub struct DataFieldSeriesItemBuilder {
 }
 impl DataFieldSeriesItemBuilder {
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl DataFieldSeriesItemBuilder {
         &self.field_value
     }
     /// <p>The axis that you are binding the field to.</p>
+    /// This field is required.
     pub fn axis_binding(mut self, input: crate::types::AxisBinding) -> Self {
         self.axis_binding = ::std::option::Option::Some(input);
         self
@@ -115,13 +118,26 @@ impl DataFieldSeriesItemBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`DataFieldSeriesItem`](crate::types::DataFieldSeriesItem).
-    pub fn build(self) -> crate::types::DataFieldSeriesItem {
-        crate::types::DataFieldSeriesItem {
-            field_id: self.field_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_id`](crate::types::builders::DataFieldSeriesItemBuilder::field_id)
+    /// - [`axis_binding`](crate::types::builders::DataFieldSeriesItemBuilder::axis_binding)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataFieldSeriesItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataFieldSeriesItem {
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building DataFieldSeriesItem",
+                )
+            })?,
             field_value: self.field_value,
-            axis_binding: self.axis_binding,
+            axis_binding: self.axis_binding.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "axis_binding",
+                    "axis_binding was not specified but it is required when building DataFieldSeriesItem",
+                )
+            })?,
             settings: self.settings,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DataFieldSeriesItemBuilder {

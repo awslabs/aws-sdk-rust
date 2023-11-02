@@ -62,6 +62,7 @@ pub struct DescribeCodeRepositoryOutputBuilder {
 }
 impl DescribeCodeRepositoryOutputBuilder {
     /// <p>The name of the Git repository.</p>
+    /// This field is required.
     pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DescribeCodeRepositoryOutputBuilder {
         &self.code_repository_name
     }
     /// <p>The Amazon Resource Name (ARN) of the Git repository.</p>
+    /// This field is required.
     pub fn code_repository_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl DescribeCodeRepositoryOutputBuilder {
         &self.code_repository_arn
     }
     /// <p>The date and time that the repository was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl DescribeCodeRepositoryOutputBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the repository was last changed.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

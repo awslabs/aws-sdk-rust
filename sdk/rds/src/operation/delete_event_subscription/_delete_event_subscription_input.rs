@@ -28,6 +28,7 @@ pub struct DeleteEventSubscriptionInputBuilder {
 }
 impl DeleteEventSubscriptionInputBuilder {
     /// <p>The name of the RDS event notification subscription you want to delete.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self

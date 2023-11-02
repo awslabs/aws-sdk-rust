@@ -11,9 +11,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedMethods {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
+    pub items: ::std::vec::Vec<crate::types::Method>,
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
     /// <ul>
     /// <li> <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p> </li>
@@ -24,12 +24,13 @@ pub struct AllowedMethods {
 }
 impl AllowedMethods {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward to your origin.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::Method]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::Method] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p>
     /// <ul>
@@ -58,6 +59,7 @@ pub struct AllowedMethodsBuilder {
 }
 impl AllowedMethodsBuilder {
     /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -121,11 +123,24 @@ impl AllowedMethodsBuilder {
         &self.cached_methods
     }
     /// Consumes the builder and constructs a [`AllowedMethods`](crate::types::AllowedMethods).
-    pub fn build(self) -> crate::types::AllowedMethods {
-        crate::types::AllowedMethods {
-            quantity: self.quantity,
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::AllowedMethodsBuilder::quantity)
+    /// - [`items`](crate::types::builders::AllowedMethodsBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::AllowedMethods, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AllowedMethods {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building AllowedMethods",
+                )
+            })?,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building AllowedMethods",
+                )
+            })?,
             cached_methods: self.cached_methods,
-        }
+        })
     }
 }

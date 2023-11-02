@@ -35,6 +35,7 @@ pub struct GetChangesetInputBuilder {
 }
 impl GetChangesetInputBuilder {
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetChangesetInputBuilder {
         &self.dataset_id
     }
     /// <p>The unique identifier of the Changeset for which to get data.</p>
+    /// This field is required.
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
         self

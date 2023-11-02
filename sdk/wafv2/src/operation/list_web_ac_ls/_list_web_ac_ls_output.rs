@@ -15,8 +15,10 @@ impl ListWebAcLsOutput {
         self.next_marker.as_deref()
     }
     /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn web_ac_ls(&self) -> ::std::option::Option<&[crate::types::WebAclSummary]> {
-        self.web_ac_ls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.web_ac_ls.is_none()`.
+    pub fn web_ac_ls(&self) -> &[crate::types::WebAclSummary] {
+        self.web_ac_ls.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListWebAcLsOutput {

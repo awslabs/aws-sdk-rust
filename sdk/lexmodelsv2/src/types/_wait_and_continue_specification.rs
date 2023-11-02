@@ -49,6 +49,7 @@ pub struct WaitAndContinueSpecificationBuilder {
 }
 impl WaitAndContinueSpecificationBuilder {
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    /// This field is required.
     pub fn waiting_response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.waiting_response = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl WaitAndContinueSpecificationBuilder {
         &self.waiting_response
     }
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    /// This field is required.
     pub fn continue_response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.continue_response = ::std::option::Option::Some(input);
         self

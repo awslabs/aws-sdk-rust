@@ -85,12 +85,16 @@ impl GetDataQualityRulesetEvaluationRunOutput {
         self.execution_time
     }
     /// <p>A list of ruleset names for the run.</p>
-    pub fn ruleset_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ruleset_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ruleset_names.is_none()`.
+    pub fn ruleset_names(&self) -> &[::std::string::String] {
+        self.ruleset_names.as_deref().unwrap_or_default()
     }
     /// <p>A list of result IDs for the data quality results for the run.</p>
-    pub fn result_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.result_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_ids.is_none()`.
+    pub fn result_ids(&self) -> &[::std::string::String] {
+        self.result_ids.as_deref().unwrap_or_default()
     }
     /// <p>A map of reference strings to additional data sources you can specify for an evaluation run.</p>
     pub fn additional_data_sources(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DataSource>> {

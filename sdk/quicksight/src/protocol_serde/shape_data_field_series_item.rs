@@ -3,20 +3,20 @@ pub fn ser_data_field_series_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataFieldSeriesItem,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.field_value {
-        object.key("FieldValue").string(var_2.as_str());
+    if let Some(var_1) = &input.field_value {
+        object.key("FieldValue").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.axis_binding {
-        object.key("AxisBinding").string(var_3.as_str());
+    {
+        object.key("AxisBinding").string(input.axis_binding.as_str());
     }
-    if let Some(var_4) = &input.settings {
+    if let Some(var_2) = &input.settings {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Settings").start_object();
-        crate::protocol_serde::shape_line_chart_series_settings::ser_line_chart_series_settings(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("Settings").start_object();
+        crate::protocol_serde::shape_line_chart_series_settings::ser_line_chart_series_settings(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -72,7 +72,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_field_series_item_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

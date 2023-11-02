@@ -34,8 +34,8 @@ pub fn de_add_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApplicationConfigurationException" => crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError::InvalidApplicationConfigurationException({
@@ -50,8 +50,8 @@ pub fn de_add_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError::InvalidArgumentException({
@@ -66,8 +66,8 @@ pub fn de_add_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRequestException" => crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError::InvalidRequestException({
@@ -82,8 +82,8 @@ pub fn de_add_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceInUseException" => crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError::ResourceInUseException({
@@ -98,8 +98,8 @@ pub fn de_add_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError::ResourceNotFoundException({
@@ -114,8 +114,8 @@ pub fn de_add_application_cloud_watch_logging_option_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError::generic(generic)

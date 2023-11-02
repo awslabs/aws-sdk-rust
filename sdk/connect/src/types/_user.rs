@@ -51,8 +51,10 @@ impl User {
         self.directory_user_id.as_deref()
     }
     /// <p>The identifiers of the security profiles for the user.</p>
-    pub fn security_profile_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_profile_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profile_ids.is_none()`.
+    pub fn security_profile_ids(&self) -> &[::std::string::String] {
+        self.security_profile_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {

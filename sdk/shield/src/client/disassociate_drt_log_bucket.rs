@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateDRTLogBucket`](crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_bucket(impl Into<String>)`](crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder::log_bucket) / [`set_log_bucket(Option<String>)`](crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder::set_log_bucket): <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    ///   - [`log_bucket(impl Into<String>)`](crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder::log_bucket) / [`set_log_bucket(Option<String>)`](crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder::set_log_bucket):<br>required: **true**<br><p>The Amazon S3 bucket that contains the logs that you want to share.</p><br>
     /// - On success, responds with [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput)
     /// - On failure, responds with [`SdkError<DisassociateDRTLogBucketError>`](crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError)
     pub fn disassociate_drt_log_bucket(&self) -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDRTLogBucketFluentBuilder {

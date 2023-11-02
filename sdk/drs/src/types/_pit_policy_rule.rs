@@ -7,7 +7,7 @@ pub struct PitPolicyRule {
     /// <p>The ID of the rule.</p>
     pub rule_id: i64,
     /// <p>The units used to measure the interval and retentionDuration.</p>
-    pub units: ::std::option::Option<crate::types::PitPolicyRuleUnits>,
+    pub units: crate::types::PitPolicyRuleUnits,
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
     pub interval: i32,
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
@@ -21,8 +21,8 @@ impl PitPolicyRule {
         self.rule_id
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
-    pub fn units(&self) -> ::std::option::Option<&crate::types::PitPolicyRuleUnits> {
-        self.units.as_ref()
+    pub fn units(&self) -> &crate::types::PitPolicyRuleUnits {
+        &self.units
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
     pub fn interval(&self) -> i32 {
@@ -70,6 +70,7 @@ impl PitPolicyRuleBuilder {
         &self.rule_id
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
+    /// This field is required.
     pub fn units(mut self, input: crate::types::PitPolicyRuleUnits) -> Self {
         self.units = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl PitPolicyRuleBuilder {
         &self.units
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
+    /// This field is required.
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl PitPolicyRuleBuilder {
         &self.interval
     }
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
+    /// This field is required.
     pub fn retention_duration(mut self, input: i32) -> Self {
         self.retention_duration = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,20 @@ impl PitPolicyRuleBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`PitPolicyRule`](crate::types::PitPolicyRule).
-    pub fn build(self) -> crate::types::PitPolicyRule {
-        crate::types::PitPolicyRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`units`](crate::types::builders::PitPolicyRuleBuilder::units)
+    pub fn build(self) -> ::std::result::Result<crate::types::PitPolicyRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PitPolicyRule {
             rule_id: self.rule_id.unwrap_or_default(),
-            units: self.units,
+            units: self.units.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "units",
+                    "units was not specified but it is required when building PitPolicyRule",
+                )
+            })?,
             interval: self.interval.unwrap_or_default(),
             retention_duration: self.retention_duration.unwrap_or_default(),
             enabled: self.enabled,
-        }
+        })
     }
 }

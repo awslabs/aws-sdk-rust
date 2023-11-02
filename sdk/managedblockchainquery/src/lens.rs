@@ -42,39 +42,27 @@ pub(crate) fn reflens_list_transactions_output_next_token(
 pub(crate) fn lens_list_asset_contracts_output_contracts(
     input: crate::operation::list_asset_contracts::ListAssetContractsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetContract>> {
-    let input = match input.contracts {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.contracts;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_token_balances_output_token_balances(
     input: crate::operation::list_token_balances::ListTokenBalancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TokenBalance>> {
-    let input = match input.token_balances {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.token_balances;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_transaction_events_output_events(
     input: crate::operation::list_transaction_events::ListTransactionEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>> {
-    let input = match input.events {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.events;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_transactions_output_transactions(
     input: crate::operation::list_transactions::ListTransactionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TransactionOutputItem>> {
-    let input = match input.transactions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.transactions;
     ::std::option::Option::Some(input)
 }

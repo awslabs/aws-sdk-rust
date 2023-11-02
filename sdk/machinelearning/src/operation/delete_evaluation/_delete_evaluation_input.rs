@@ -27,6 +27,7 @@ pub struct DeleteEvaluationInputBuilder {
 }
 impl DeleteEvaluationInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    /// This field is required.
     pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self

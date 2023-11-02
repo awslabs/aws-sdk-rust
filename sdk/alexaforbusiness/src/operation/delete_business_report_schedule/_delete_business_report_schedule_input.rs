@@ -27,6 +27,7 @@ pub struct DeleteBusinessReportScheduleInputBuilder {
 }
 impl DeleteBusinessReportScheduleInputBuilder {
     /// <p>The ARN of the business report schedule.</p>
+    /// This field is required.
     pub fn schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_arn = ::std::option::Option::Some(input.into());
         self

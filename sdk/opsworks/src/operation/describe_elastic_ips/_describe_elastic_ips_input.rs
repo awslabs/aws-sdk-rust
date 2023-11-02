@@ -20,8 +20,10 @@ impl DescribeElasticIpsInput {
         self.stack_id.as_deref()
     }
     /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
-    pub fn ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ips.is_none()`.
+    pub fn ips(&self) -> &[::std::string::String] {
+        self.ips.as_deref().unwrap_or_default()
     }
 }
 impl DescribeElasticIpsInput {

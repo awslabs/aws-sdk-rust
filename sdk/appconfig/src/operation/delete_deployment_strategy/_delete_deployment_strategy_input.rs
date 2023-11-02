@@ -27,6 +27,7 @@ pub struct DeleteDeploymentStrategyInputBuilder {
 }
 impl DeleteDeploymentStrategyInputBuilder {
     /// <p>The ID of the deployment strategy you want to delete.</p>
+    /// This field is required.
     pub fn deployment_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_strategy_id = ::std::option::Option::Some(input.into());
         self

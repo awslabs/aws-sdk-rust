@@ -44,8 +44,10 @@ impl CreateEventDataStoreOutput {
         self.status.as_ref()
     }
     /// <p>The advanced event selectors that were used to select the events for the data store.</p>
-    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
-        self.advanced_event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
+    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
@@ -64,8 +66,10 @@ impl CreateEventDataStoreOutput {
         self.termination_protection_enabled
     }
     /// <p>A list of tags.</p>
-    pub fn tags_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
+    pub fn tags_list(&self) -> &[crate::types::Tag] {
+        self.tags_list.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp that shows when the event data store was created.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

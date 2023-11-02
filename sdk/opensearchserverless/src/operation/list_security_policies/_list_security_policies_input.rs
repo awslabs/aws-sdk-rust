@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityPoliciesInput {
     /// <p>The type of policy.</p>
-    pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
+    pub r#type: crate::types::SecurityPolicyType,
     /// <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
     pub resource: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
@@ -14,12 +14,14 @@ pub struct ListSecurityPoliciesInput {
 }
 impl ListSecurityPoliciesInput {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SecurityPolicyType {
+        &self.r#type
     }
     /// <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
-    pub fn resource(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource.is_none()`.
+    pub fn resource(&self) -> &[::std::string::String] {
+        self.resource.as_deref().unwrap_or_default()
     }
     /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListSecurityPoliciesInputBuilder {
 }
 impl ListSecurityPoliciesInputBuilder {
     /// <p>The type of policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -110,12 +113,19 @@ impl ListSecurityPoliciesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_security_policies::ListSecurityPoliciesInput {
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ListSecurityPoliciesInput",
+                )
+            })?,
             resource: self.resource,
             next_token: self.next_token,
             max_results: self.max_results,

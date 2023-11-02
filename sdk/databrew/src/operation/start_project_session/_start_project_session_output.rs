@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartProjectSessionOutput {
     /// <p>The name of the project to be acted upon.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A system-generated identifier for the session.</p>
     pub client_session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartProjectSessionOutput {
     /// <p>The name of the project to be acted upon.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A system-generated identifier for the session.</p>
     pub fn client_session_id(&self) -> ::std::option::Option<&str> {
@@ -50,6 +51,7 @@ pub struct StartProjectSessionOutputBuilder {
 }
 impl StartProjectSessionOutputBuilder {
     /// <p>The name of the project to be acted upon.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -87,12 +89,22 @@ impl StartProjectSessionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput).
-    pub fn build(self) -> crate::operation::start_project_session::StartProjectSessionOutput {
-        crate::operation::start_project_session::StartProjectSessionOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_project_session::StartProjectSessionOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building StartProjectSessionOutput",
+                )
+            })?,
             client_session_id: self.client_session_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for StartProjectSessionOutputBuilder {

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The ID of the environment. </p>
-    pub environment_identifier: ::std::option::Option<::std::string::String>,
+    pub environment_identifier: ::std::string::String,
 }
 impl DeleteEnvironmentInput {
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
-        self.environment_identifier.as_deref()
+    pub fn environment_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_identifier.deref()
     }
 }
 impl DeleteEnvironmentInput {
@@ -27,6 +28,7 @@ pub struct DeleteEnvironmentInputBuilder {
 }
 impl DeleteEnvironmentInputBuilder {
     /// <p>The ID of the environment. </p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteEnvironmentInputBuilder {
         &self.environment_identifier
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_identifier`](crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder::environment_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_environment::DeleteEnvironmentInput {
-            environment_identifier: self.environment_identifier,
+            environment_identifier: self.environment_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_identifier",
+                    "environment_identifier was not specified but it is required when building DeleteEnvironmentInput",
+                )
+            })?,
         })
     }
 }

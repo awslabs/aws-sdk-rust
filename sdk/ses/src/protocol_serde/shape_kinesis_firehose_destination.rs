@@ -6,17 +6,18 @@ pub fn ser_kinesis_firehose_destination(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IAMRoleARN");
-    if let Some(var_2) = &input.iam_role_arn {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.iam_role_arn);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DeliveryStreamARN");
-    if let Some(var_4) = &input.delivery_stream_arn {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("DeliveryStreamARN");
+    {
+        scope_2.string(&input.delivery_stream_arn);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_kinesis_firehose_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::KinesisFirehoseDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_kinesis_firehose_destination(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IAMRoleARN") /* IAMRoleARN com.amazonaws.ses#KinesisFirehoseDestination$IAMRoleARN */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_kinesis_firehose_destination(
                         ?
                     )
                 ;
-                builder = builder.set_iam_role_arn(var_5);
+                builder = builder.set_iam_role_arn(var_3);
             }
             ,
             s if s.matches("DeliveryStreamARN") /* DeliveryStreamARN com.amazonaws.ses#KinesisFirehoseDestination$DeliveryStreamARN */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -47,11 +48,13 @@ pub fn de_kinesis_firehose_destination(
                         ?
                     )
                 ;
-                builder = builder.set_delivery_stream_arn(var_6);
+                builder = builder.set_delivery_stream_arn(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::kinesis_firehose_destination_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

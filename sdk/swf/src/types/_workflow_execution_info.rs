@@ -9,11 +9,11 @@ pub struct WorkflowExecutionInfo {
     /// <p>The type of the workflow execution.</p>
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The time when the execution was started.</p>
-    pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
     pub close_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the execution.</p>
-    pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
+    pub execution_status: crate::types::ExecutionStatus,
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
     /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li>
@@ -41,16 +41,16 @@ impl WorkflowExecutionInfo {
         self.workflow_type.as_ref()
     }
     /// <p>The time when the execution was started.</p>
-    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_timestamp.as_ref()
+    pub fn start_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_timestamp
     }
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
     pub fn close_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.close_timestamp.as_ref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
-        self.execution_status.as_ref()
+    pub fn execution_status(&self) -> &crate::types::ExecutionStatus {
+        &self.execution_status
     }
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
@@ -69,8 +69,10 @@ impl WorkflowExecutionInfo {
         self.parent.as_ref()
     }
     /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[::std::string::String] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
     pub fn cancel_requested(&self) -> bool {
@@ -100,6 +102,7 @@ pub struct WorkflowExecutionInfoBuilder {
 }
 impl WorkflowExecutionInfoBuilder {
     /// <p>The workflow execution this information is about.</p>
+    /// This field is required.
     pub fn execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
         self
@@ -114,6 +117,7 @@ impl WorkflowExecutionInfoBuilder {
         &self.execution
     }
     /// <p>The type of the workflow execution.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -128,6 +132,7 @@ impl WorkflowExecutionInfoBuilder {
         &self.workflow_type
     }
     /// <p>The time when the execution was started.</p>
+    /// This field is required.
     pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_timestamp = ::std::option::Option::Some(input);
         self
@@ -156,6 +161,7 @@ impl WorkflowExecutionInfoBuilder {
         &self.close_timestamp
     }
     /// <p>The current status of the execution.</p>
+    /// This field is required.
     pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.execution_status = ::std::option::Option::Some(input);
         self
@@ -256,17 +262,30 @@ impl WorkflowExecutionInfoBuilder {
         &self.cancel_requested
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionInfo`](crate::types::WorkflowExecutionInfo).
-    pub fn build(self) -> crate::types::WorkflowExecutionInfo {
-        crate::types::WorkflowExecutionInfo {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_timestamp`](crate::types::builders::WorkflowExecutionInfoBuilder::start_timestamp)
+    /// - [`execution_status`](crate::types::builders::WorkflowExecutionInfoBuilder::execution_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionInfo {
             execution: self.execution,
             workflow_type: self.workflow_type,
-            start_timestamp: self.start_timestamp,
+            start_timestamp: self.start_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_timestamp",
+                    "start_timestamp was not specified but it is required when building WorkflowExecutionInfo",
+                )
+            })?,
             close_timestamp: self.close_timestamp,
-            execution_status: self.execution_status,
+            execution_status: self.execution_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_status",
+                    "execution_status was not specified but it is required when building WorkflowExecutionInfo",
+                )
+            })?,
             close_status: self.close_status,
             parent: self.parent,
             tag_list: self.tag_list,
             cancel_requested: self.cancel_requested.unwrap_or_default(),
-        }
+        })
     }
 }

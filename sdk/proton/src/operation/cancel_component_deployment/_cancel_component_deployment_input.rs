@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
-    pub component_name: ::std::option::Option<::std::string::String>,
+    pub component_name: ::std::string::String,
 }
 impl CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
-        self.component_name.as_deref()
+    pub fn component_name(&self) -> &str {
+        use std::ops::Deref;
+        self.component_name.deref()
     }
 }
 impl CancelComponentDeploymentInput {
@@ -27,6 +28,7 @@ pub struct CancelComponentDeploymentInputBuilder {
 }
 impl CancelComponentDeploymentInputBuilder {
     /// <p>The name of the component with the deployment to cancel.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl CancelComponentDeploymentInputBuilder {
         &self.component_name
     }
     /// Consumes the builder and constructs a [`CancelComponentDeploymentInput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_name`](crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder::component_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl CancelComponentDeploymentInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_component_deployment::CancelComponentDeploymentInput {
-            component_name: self.component_name,
+            component_name: self.component_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "component_name",
+                    "component_name was not specified but it is required when building CancelComponentDeploymentInput",
+                )
+            })?,
         })
     }
 }

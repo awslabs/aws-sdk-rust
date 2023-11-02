@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledAction {
     /// <p>The unique identifier of the scheduled action.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The type of action that will be taken on the domain.</p>
-    pub r#type: ::std::option::Option<crate::types::ActionType>,
+    pub r#type: crate::types::ActionType,
     /// <p>The severity of the action.</p>
-    pub severity: ::std::option::Option<crate::types::ActionSeverity>,
+    pub severity: crate::types::ActionSeverity,
     /// <p>The time when the change is scheduled to happen.</p>
-    pub scheduled_time: ::std::option::Option<i64>,
+    pub scheduled_time: i64,
     /// <p>A description of the action to be taken.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
@@ -25,19 +25,20 @@ pub struct ScheduledAction {
 }
 impl ScheduledAction {
     /// <p>The unique identifier of the scheduled action.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The type of action that will be taken on the domain.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ActionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ActionType {
+        &self.r#type
     }
     /// <p>The severity of the action.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::ActionSeverity> {
-        self.severity.as_ref()
+    pub fn severity(&self) -> &crate::types::ActionSeverity {
+        &self.severity
     }
     /// <p>The time when the change is scheduled to happen.</p>
-    pub fn scheduled_time(&self) -> ::std::option::Option<i64> {
+    pub fn scheduled_time(&self) -> i64 {
         self.scheduled_time
     }
     /// <p>A description of the action to be taken.</p>
@@ -84,6 +85,7 @@ pub struct ScheduledActionBuilder {
 }
 impl ScheduledActionBuilder {
     /// <p>The unique identifier of the scheduled action.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl ScheduledActionBuilder {
         &self.id
     }
     /// <p>The type of action that will be taken on the domain.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl ScheduledActionBuilder {
         &self.r#type
     }
     /// <p>The severity of the action.</p>
+    /// This field is required.
     pub fn severity(mut self, input: crate::types::ActionSeverity) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl ScheduledActionBuilder {
         &self.severity
     }
     /// <p>The time when the change is scheduled to happen.</p>
+    /// This field is required.
     pub fn scheduled_time(mut self, input: i64) -> Self {
         self.scheduled_time = ::std::option::Option::Some(input);
         self
@@ -210,17 +215,42 @@ impl ScheduledActionBuilder {
         &self.cancellable
     }
     /// Consumes the builder and constructs a [`ScheduledAction`](crate::types::ScheduledAction).
-    pub fn build(self) -> crate::types::ScheduledAction {
-        crate::types::ScheduledAction {
-            id: self.id,
-            r#type: self.r#type,
-            severity: self.severity,
-            scheduled_time: self.scheduled_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ScheduledActionBuilder::id)
+    /// - [`r#type`](crate::types::builders::ScheduledActionBuilder::r#type)
+    /// - [`severity`](crate::types::builders::ScheduledActionBuilder::severity)
+    /// - [`scheduled_time`](crate::types::builders::ScheduledActionBuilder::scheduled_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduledAction {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ScheduledAction",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ScheduledAction",
+                )
+            })?,
+            severity: self.severity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "severity",
+                    "severity was not specified but it is required when building ScheduledAction",
+                )
+            })?,
+            scheduled_time: self.scheduled_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scheduled_time",
+                    "scheduled_time was not specified but it is required when building ScheduledAction",
+                )
+            })?,
             description: self.description,
             scheduled_by: self.scheduled_by,
             status: self.status,
             mandatory: self.mandatory,
             cancellable: self.cancellable,
-        }
+        })
     }
 }

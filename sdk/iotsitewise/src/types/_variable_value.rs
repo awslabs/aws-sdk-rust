@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VariableValue {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
-    pub property_id: ::std::option::Option<::std::string::String>,
+    pub property_id: ::std::string::String,
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
 }
 impl VariableValue {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
-        self.property_id.as_deref()
+    pub fn property_id(&self) -> &str {
+        use std::ops::Deref;
+        self.property_id.deref()
     }
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -37,6 +38,7 @@ pub struct VariableValueBuilder {
 }
 impl VariableValueBuilder {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
+    /// This field is required.
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
         self
@@ -68,10 +70,17 @@ impl VariableValueBuilder {
         &self.hierarchy_id
     }
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
-    pub fn build(self) -> crate::types::VariableValue {
-        crate::types::VariableValue {
-            property_id: self.property_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property_id`](crate::types::builders::VariableValueBuilder::property_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::VariableValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VariableValue {
+            property_id: self.property_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "property_id",
+                    "property_id was not specified but it is required when building VariableValue",
+                )
+            })?,
             hierarchy_id: self.hierarchy_id,
-        }
+        })
     }
 }

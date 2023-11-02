@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingConfig {
     /// <p>Current setting for autotrack.</p>
-    pub autotrack: ::std::option::Option<crate::types::Criticality>,
+    pub autotrack: crate::types::Criticality,
 }
 impl TrackingConfig {
     /// <p>Current setting for autotrack.</p>
-    pub fn autotrack(&self) -> ::std::option::Option<&crate::types::Criticality> {
-        self.autotrack.as_ref()
+    pub fn autotrack(&self) -> &crate::types::Criticality {
+        &self.autotrack
     }
 }
 impl TrackingConfig {
@@ -28,6 +28,7 @@ pub struct TrackingConfigBuilder {
 }
 impl TrackingConfigBuilder {
     /// <p>Current setting for autotrack.</p>
+    /// This field is required.
     pub fn autotrack(mut self, input: crate::types::Criticality) -> Self {
         self.autotrack = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl TrackingConfigBuilder {
         &self.autotrack
     }
     /// Consumes the builder and constructs a [`TrackingConfig`](crate::types::TrackingConfig).
-    pub fn build(self) -> crate::types::TrackingConfig {
-        crate::types::TrackingConfig { autotrack: self.autotrack }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`autotrack`](crate::types::builders::TrackingConfigBuilder::autotrack)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrackingConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrackingConfig {
+            autotrack: self.autotrack.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "autotrack",
+                    "autotrack was not specified but it is required when building TrackingConfig",
+                )
+            })?,
+        })
     }
 }

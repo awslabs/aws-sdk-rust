@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartySourceRepository {
     /// <p>The name of the third party source repository.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-    pub connection_arn: ::std::option::Option<::std::string::String>,
+    pub connection_arn: ::std::string::String,
     /// <p>The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID </p>
-    pub owner: ::std::option::Option<::std::string::String>,
+    pub owner: ::std::string::String,
 }
 impl ThirdPartySourceRepository {
     /// <p>The name of the third party source repository.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
-        self.connection_arn.as_deref()
+    pub fn connection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_arn.deref()
     }
     /// <p>The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID </p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
-        self.owner.as_deref()
+    pub fn owner(&self) -> &str {
+        use std::ops::Deref;
+        self.owner.deref()
     }
 }
 impl ThirdPartySourceRepository {
@@ -42,6 +45,7 @@ pub struct ThirdPartySourceRepositoryBuilder {
 }
 impl ThirdPartySourceRepositoryBuilder {
     /// <p>The name of the third party source repository.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl ThirdPartySourceRepositoryBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl ThirdPartySourceRepositoryBuilder {
         &self.connection_arn
     }
     /// <p>The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID </p>
+    /// This field is required.
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl ThirdPartySourceRepositoryBuilder {
         &self.owner
     }
     /// Consumes the builder and constructs a [`ThirdPartySourceRepository`](crate::types::ThirdPartySourceRepository).
-    pub fn build(self) -> crate::types::ThirdPartySourceRepository {
-        crate::types::ThirdPartySourceRepository {
-            name: self.name,
-            connection_arn: self.connection_arn,
-            owner: self.owner,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ThirdPartySourceRepositoryBuilder::name)
+    /// - [`connection_arn`](crate::types::builders::ThirdPartySourceRepositoryBuilder::connection_arn)
+    /// - [`owner`](crate::types::builders::ThirdPartySourceRepositoryBuilder::owner)
+    pub fn build(self) -> ::std::result::Result<crate::types::ThirdPartySourceRepository, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ThirdPartySourceRepository {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ThirdPartySourceRepository",
+                )
+            })?,
+            connection_arn: self.connection_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connection_arn",
+                    "connection_arn was not specified but it is required when building ThirdPartySourceRepository",
+                )
+            })?,
+            owner: self.owner.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "owner",
+                    "owner was not specified but it is required when building ThirdPartySourceRepository",
+                )
+            })?,
+        })
     }
 }

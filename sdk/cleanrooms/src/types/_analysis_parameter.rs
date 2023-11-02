@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AnalysisParameter {
     /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of parameter.</p>
-    pub r#type: ::std::option::Option<crate::types::ParameterType>,
+    pub r#type: crate::types::ParameterType,
     /// <p>Optional. The default value that is applied in the analysis template. The member who can query can override this value in the query editor.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisParameter {
     /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of parameter.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ParameterType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ParameterType {
+        &self.r#type
     }
     /// <p>Optional. The default value that is applied in the analysis template. The member who can query can override this value in the query editor.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
@@ -51,6 +52,7 @@ pub struct AnalysisParameterBuilder {
 }
 impl AnalysisParameterBuilder {
     /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +67,7 @@ impl AnalysisParameterBuilder {
         &self.name
     }
     /// <p>The type of parameter.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -93,12 +96,25 @@ impl AnalysisParameterBuilder {
         &self.default_value
     }
     /// Consumes the builder and constructs a [`AnalysisParameter`](crate::types::AnalysisParameter).
-    pub fn build(self) -> crate::types::AnalysisParameter {
-        crate::types::AnalysisParameter {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalysisParameterBuilder::name)
+    /// - [`r#type`](crate::types::builders::AnalysisParameterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalysisParameter",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AnalysisParameter",
+                )
+            })?,
             default_value: self.default_value,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for AnalysisParameterBuilder {

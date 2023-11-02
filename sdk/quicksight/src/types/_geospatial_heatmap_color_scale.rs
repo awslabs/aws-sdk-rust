@@ -9,8 +9,10 @@ pub struct GeospatialHeatmapColorScale {
 }
 impl GeospatialHeatmapColorScale {
     /// <p>The list of colors to be used in heatmap point style.</p>
-    pub fn colors(&self) -> ::std::option::Option<&[crate::types::GeospatialHeatmapDataColor]> {
-        self.colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.colors.is_none()`.
+    pub fn colors(&self) -> &[crate::types::GeospatialHeatmapDataColor] {
+        self.colors.as_deref().unwrap_or_default()
     }
 }
 impl GeospatialHeatmapColorScale {

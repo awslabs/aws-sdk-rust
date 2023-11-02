@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
-    pub compute_location: ::std::option::Option<crate::types::ComputeLocation>,
+    pub compute_location: crate::types::ComputeLocation,
     /// <p>The forwarding configuration for a given property.</p>
     pub forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
-    pub fn compute_location(&self) -> ::std::option::Option<&crate::types::ComputeLocation> {
-        self.compute_location.as_ref()
+    pub fn compute_location(&self) -> &crate::types::ComputeLocation {
+        &self.compute_location
     }
     /// <p>The forwarding configuration for a given property.</p>
     pub fn forwarding_config(&self) -> ::std::option::Option<&crate::types::ForwardingConfig> {
@@ -35,6 +35,7 @@ pub struct TransformProcessingConfigBuilder {
 }
 impl TransformProcessingConfigBuilder {
     /// <p>The compute location for the given transform property. </p>
+    /// This field is required.
     pub fn compute_location(mut self, input: crate::types::ComputeLocation) -> Self {
         self.compute_location = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl TransformProcessingConfigBuilder {
         &self.forwarding_config
     }
     /// Consumes the builder and constructs a [`TransformProcessingConfig`](crate::types::TransformProcessingConfig).
-    pub fn build(self) -> crate::types::TransformProcessingConfig {
-        crate::types::TransformProcessingConfig {
-            compute_location: self.compute_location,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`compute_location`](crate::types::builders::TransformProcessingConfigBuilder::compute_location)
+    pub fn build(self) -> ::std::result::Result<crate::types::TransformProcessingConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TransformProcessingConfig {
+            compute_location: self.compute_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "compute_location",
+                    "compute_location was not specified but it is required when building TransformProcessingConfig",
+                )
+            })?,
             forwarding_config: self.forwarding_config,
-        }
+        })
     }
 }

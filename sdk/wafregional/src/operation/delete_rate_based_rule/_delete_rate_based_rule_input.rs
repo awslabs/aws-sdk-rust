@@ -34,6 +34,7 @@ pub struct DeleteRateBasedRuleInputBuilder {
 }
 impl DeleteRateBasedRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteRateBasedRuleInputBuilder {
         &self.rule_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

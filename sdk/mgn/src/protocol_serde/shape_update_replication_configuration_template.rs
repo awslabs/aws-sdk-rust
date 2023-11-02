@@ -122,7 +122,9 @@ pub fn de_update_replication_configuration_template_http_response(
         )
         .map_err(crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_replication_configuration_template_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError::unhandled)?
     })
 }
 

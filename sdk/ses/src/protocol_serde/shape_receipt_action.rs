@@ -42,6 +42,7 @@ pub fn ser_receipt_action(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_receipt_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReceiptAction, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -69,7 +69,7 @@ pub fn de_create_human_task_ui_http_response(
         output = crate::protocol_serde::shape_create_human_task_ui::de_create_human_task_ui(_response_body, output)
             .map_err(crate::operation::create_human_task_ui::CreateHumanTaskUiError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_human_task_ui_output_correct_errors(output).build()
     })
 }
 

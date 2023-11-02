@@ -3,8 +3,8 @@ pub fn ser_routing_configuration_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoutingConfigurationListItem,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.state_machine_version_arn {
-        object.key("stateMachineVersionArn").string(var_1.as_str());
+    {
+        object.key("stateMachineVersionArn").string(input.state_machine_version_arn.as_str());
     }
     {
         object.key("weight").number(
@@ -54,7 +54,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::routing_configuration_list_item_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

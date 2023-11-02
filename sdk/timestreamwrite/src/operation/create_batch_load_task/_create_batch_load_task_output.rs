@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBatchLoadTaskOutput {
     /// <p>The ID of the batch load task.</p>
-    pub task_id: ::std::option::Option<::std::string::String>,
+    pub task_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateBatchLoadTaskOutput {
     /// <p>The ID of the batch load task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
-        self.task_id.as_deref()
+    pub fn task_id(&self) -> &str {
+        use std::ops::Deref;
+        self.task_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateBatchLoadTaskOutput {
@@ -34,6 +35,7 @@ pub struct CreateBatchLoadTaskOutputBuilder {
 }
 impl CreateBatchLoadTaskOutputBuilder {
     /// <p>The ID of the batch load task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateBatchLoadTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateBatchLoadTaskOutput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput).
-    pub fn build(self) -> crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput {
-        crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput {
-            task_id: self.task_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_id`](crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskOutputBuilder::task_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput {
+            task_id: self.task_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_id",
+                    "task_id was not specified but it is required when building CreateBatchLoadTaskOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -35,6 +35,7 @@ pub struct GetBackendEnvironmentInputBuilder {
 }
 impl GetBackendEnvironmentInputBuilder {
     /// <p> The unique id for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetBackendEnvironmentInputBuilder {
         &self.app_id
     }
     /// <p> The name for the backend environment. </p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self

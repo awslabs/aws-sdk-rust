@@ -76,6 +76,7 @@ pub struct CreatePackageVersionInputBuilder {
 }
 impl CreatePackageVersionInputBuilder {
     /// <p>The name of the associated software package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreatePackageVersionInputBuilder {
         &self.package_name
     }
     /// <p>The name of the new package version.</p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self

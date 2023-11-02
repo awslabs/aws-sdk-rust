@@ -74,12 +74,16 @@ impl CreateKxClusterInput {
         self.cluster_type.as_ref()
     }
     /// <p>A list of databases that will be available for querying.</p>
-    pub fn databases(&self) -> ::std::option::Option<&[crate::types::KxDatabaseConfiguration]> {
-        self.databases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.databases.is_none()`.
+    pub fn databases(&self) -> &[crate::types::KxDatabaseConfiguration] {
+        self.databases.as_deref().unwrap_or_default()
     }
     /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
-    pub fn cache_storage_configurations(&self) -> ::std::option::Option<&[crate::types::KxCacheStorageConfiguration]> {
-        self.cache_storage_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_storage_configurations.is_none()`.
+    pub fn cache_storage_configurations(&self) -> &[crate::types::KxCacheStorageConfiguration] {
+        self.cache_storage_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
     pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingConfiguration> {
@@ -106,8 +110,10 @@ impl CreateKxClusterInput {
         self.initialization_script.as_deref()
     }
     /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
-    pub fn command_line_arguments(&self) -> ::std::option::Option<&[crate::types::KxCommandLineArgument]> {
-        self.command_line_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_line_arguments.is_none()`.
+    pub fn command_line_arguments(&self) -> &[crate::types::KxCommandLineArgument] {
+        self.command_line_arguments.as_deref().unwrap_or_default()
     }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
     pub fn code(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {
@@ -185,6 +191,7 @@ impl CreateKxClusterInputBuilder {
         &self.client_token
     }
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -199,6 +206,7 @@ impl CreateKxClusterInputBuilder {
         &self.environment_id
     }
     /// <p>A unique name for the cluster that you want to create.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -218,6 +226,7 @@ impl CreateKxClusterInputBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn cluster_type(mut self, input: crate::types::KxClusterType) -> Self {
         self.cluster_type = ::std::option::Option::Some(input);
         self
@@ -313,6 +322,7 @@ impl CreateKxClusterInputBuilder {
         &self.cluster_description
     }
     /// <p>A structure for the metadata of a cluster. It includes information like the CPUs needed, memory of instances, and number of instances.</p>
+    /// This field is required.
     pub fn capacity_configuration(mut self, input: crate::types::CapacityConfiguration) -> Self {
         self.capacity_configuration = ::std::option::Option::Some(input);
         self
@@ -327,6 +337,7 @@ impl CreateKxClusterInputBuilder {
         &self.capacity_configuration
     }
     /// <p>The version of FinSpace managed kdb to run.</p>
+    /// This field is required.
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
@@ -435,6 +446,7 @@ impl CreateKxClusterInputBuilder {
     /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
     /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.az_mode = ::std::option::Option::Some(input);
         self

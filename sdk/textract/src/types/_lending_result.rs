@@ -21,8 +21,10 @@ impl LendingResult {
         self.page_classification.as_ref()
     }
     /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
-    pub fn extractions(&self) -> ::std::option::Option<&[crate::types::Extraction]> {
-        self.extractions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extractions.is_none()`.
+    pub fn extractions(&self) -> &[crate::types::Extraction] {
+        self.extractions.as_deref().unwrap_or_default()
     }
 }
 impl LendingResult {

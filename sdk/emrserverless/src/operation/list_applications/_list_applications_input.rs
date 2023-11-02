@@ -20,8 +20,10 @@ impl ListApplicationsInput {
         self.max_results
     }
     /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::ApplicationState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::ApplicationState] {
+        self.states.as_deref().unwrap_or_default()
     }
 }
 impl ListApplicationsInput {

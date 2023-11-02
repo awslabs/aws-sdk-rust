@@ -29,8 +29,10 @@ impl DataSource {
         self.s3_bucket.as_deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_keys(&self) -> ::std::option::Option<&[crate::types::S3KeyOutput]> {
-        self.s3_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_keys.is_none()`.
+    pub fn s3_keys(&self) -> &[crate::types::S3KeyOutput] {
+        self.s3_keys.as_deref().unwrap_or_default()
     }
     /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>

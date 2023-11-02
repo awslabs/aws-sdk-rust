@@ -9,8 +9,10 @@ pub struct ListBillingGroupCostReportsFilter {
 }
 impl ListBillingGroupCostReportsFilter {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports. </p>
-    pub fn billing_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.billing_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_group_arns.is_none()`.
+    pub fn billing_group_arns(&self) -> &[::std::string::String] {
+        self.billing_group_arns.as_deref().unwrap_or_default()
     }
 }
 impl ListBillingGroupCostReportsFilter {

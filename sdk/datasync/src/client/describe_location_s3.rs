@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationS3`](crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_s3::builders::DescribeLocationS3FluentBuilder::set_location_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p><br>
     /// - On success, responds with [`DescribeLocationS3Output`](crate::operation::describe_location_s3::DescribeLocationS3Output) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_s3::DescribeLocationS3Output::location_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_s3::DescribeLocationS3Output::location_uri): <p>The URL of the Amazon S3 location that was described.</p>

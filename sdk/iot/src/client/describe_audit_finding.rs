@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAuditFinding`](crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`finding_id(impl Into<String>)`](crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder::finding_id) / [`set_finding_id(Option<String>)`](crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder::set_finding_id): <p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p>
+    ///   - [`finding_id(impl Into<String>)`](crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder::finding_id) / [`set_finding_id(Option<String>)`](crate::operation::describe_audit_finding::builders::DescribeAuditFindingFluentBuilder::set_finding_id):<br>required: **true**<br><p>A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.</p><br>
     /// - On success, responds with [`DescribeAuditFindingOutput`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput) with field(s):
     ///   - [`finding(Option<AuditFinding>)`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput::finding): <p>The findings (results) of the audit.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditFindingError>`](crate::operation::describe_audit_finding::DescribeAuditFindingError)

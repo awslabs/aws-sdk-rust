@@ -11,8 +11,10 @@ pub struct GetFindingsOutput {
 }
 impl GetFindingsOutput {
     /// <p>The findings that matched the filters specified in the request.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::AwsSecurityFinding]> {
-        self.findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings.is_none()`.
+    pub fn findings(&self) -> &[crate::types::AwsSecurityFinding] {
+        self.findings.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

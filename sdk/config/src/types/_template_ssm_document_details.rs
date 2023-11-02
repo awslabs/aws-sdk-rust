@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSsmDocumentDetails {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
-    pub document_name: ::std::option::Option<::std::string::String>,
+    pub document_name: ::std::string::String,
     /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -14,8 +14,9 @@ pub struct TemplateSsmDocumentDetails {
 }
 impl TemplateSsmDocumentDetails {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
-        self.document_name.as_deref()
+    pub fn document_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_name.deref()
     }
     /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p> <note>
     /// <p>This field is optional.</p>
@@ -40,6 +41,7 @@ pub struct TemplateSsmDocumentDetailsBuilder {
 }
 impl TemplateSsmDocumentDetailsBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want to use an SSM document from another Region or account, you must provide the ARN.</p>
+    /// This field is required.
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
@@ -74,10 +76,17 @@ impl TemplateSsmDocumentDetailsBuilder {
         &self.document_version
     }
     /// Consumes the builder and constructs a [`TemplateSsmDocumentDetails`](crate::types::TemplateSsmDocumentDetails).
-    pub fn build(self) -> crate::types::TemplateSsmDocumentDetails {
-        crate::types::TemplateSsmDocumentDetails {
-            document_name: self.document_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_name`](crate::types::builders::TemplateSsmDocumentDetailsBuilder::document_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSsmDocumentDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateSsmDocumentDetails {
+            document_name: self.document_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_name",
+                    "document_name was not specified but it is required when building TemplateSsmDocumentDetails",
+                )
+            })?,
             document_version: self.document_version,
-        }
+        })
     }
 }

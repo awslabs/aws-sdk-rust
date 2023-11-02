@@ -43,6 +43,7 @@ pub struct DeleteUserPoolClientInputBuilder {
 }
 impl DeleteUserPoolClientInputBuilder {
     /// <p>The user pool ID for the user pool where you want to delete the client.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteUserPoolClientInputBuilder {
         &self.user_pool_id
     }
     /// <p>The app client ID of the app associated with the user pool.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self

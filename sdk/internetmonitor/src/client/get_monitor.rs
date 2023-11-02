@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMonitor`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitor_name(impl Into<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::monitor_name) / [`set_monitor_name(Option<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::set_monitor_name): <p>The name of the monitor.</p>
+    ///   - [`monitor_name(impl Into<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::monitor_name) / [`set_monitor_name(impl Into<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::set_monitor_name):<br>required: **true**<br><p>The name of the monitor.</p><br>
     /// - On success, responds with [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput) with field(s):
-    ///   - [`monitor_name(Option<String>)`](crate::operation::get_monitor::GetMonitorOutput::monitor_name): <p>The name of the monitor.</p>
-    ///   - [`monitor_arn(Option<String>)`](crate::operation::get_monitor::GetMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    ///   - [`resources(Option<Vec<String>>)`](crate::operation::get_monitor::GetMonitorOutput::resources): <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
-    ///   - [`status(Option<MonitorConfigState>)`](crate::operation::get_monitor::GetMonitorOutput::status): <p>The status of the monitor.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_monitor::GetMonitorOutput::created_at): <p>The time when the monitor was created.</p>
-    ///   - [`modified_at(Option<DateTime>)`](crate::operation::get_monitor::GetMonitorOutput::modified_at): <p>The last time that the monitor was modified.</p>
+    ///   - [`monitor_name(String)`](crate::operation::get_monitor::GetMonitorOutput::monitor_name): <p>The name of the monitor.</p>
+    ///   - [`monitor_arn(String)`](crate::operation::get_monitor::GetMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor.</p>
+    ///   - [`resources(Vec<String>)`](crate::operation::get_monitor::GetMonitorOutput::resources): <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
+    ///   - [`status(MonitorConfigState)`](crate::operation::get_monitor::GetMonitorOutput::status): <p>The status of the monitor.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_monitor::GetMonitorOutput::created_at): <p>The time when the monitor was created.</p>
+    ///   - [`modified_at(DateTime)`](crate::operation::get_monitor::GetMonitorOutput::modified_at): <p>The last time that the monitor was modified.</p>
     ///   - [`processing_status(Option<MonitorProcessingStatusCode>)`](crate::operation::get_monitor::GetMonitorOutput::processing_status): <p>The health of the data processing for the monitor.</p>
     ///   - [`processing_status_info(Option<String>)`](crate::operation::get_monitor::GetMonitorOutput::processing_status_info): <p>Additional information about the health of the data processing for the monitor.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_monitor::GetMonitorOutput::tags): <p>The tags that have been added to monitor.</p>

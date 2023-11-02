@@ -58,12 +58,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         self.accelerator_count.as_ref()
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers. </p>
-    pub fn accelerator_manufacturers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accelerator_manufacturers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_manufacturers.is_none()`.
+    pub fn accelerator_manufacturers(&self) -> &[::std::string::String] {
+        self.accelerator_manufacturers.as_deref().unwrap_or_default()
     }
     /// <p> The accelerators that must be on the instance type. </p>
-    pub fn accelerator_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accelerator_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_names.is_none()`.
+    pub fn accelerator_names(&self) -> &[::std::string::String] {
+        self.accelerator_names.as_deref().unwrap_or_default()
     }
     /// <p> The minimum and maximum amount of total accelerator memory, in MiB. </p>
     pub fn accelerator_total_memory_mi_b(
@@ -72,8 +76,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         self.accelerator_total_memory_mi_b.as_ref()
     }
     /// <p>The accelerator types that must be on the instance type. </p>
-    pub fn accelerator_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accelerator_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
+    pub fn accelerator_types(&self) -> &[::std::string::String] {
+        self.accelerator_types.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required. </p>
     pub fn bare_metal(&self) -> ::std::option::Option<&str> {
@@ -90,24 +96,32 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         self.burstable_performance.as_deref()
     }
     /// <p> The CPU manufacturers to include. </p>
-    pub fn cpu_manufacturers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cpu_manufacturers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpu_manufacturers.is_none()`.
+    pub fn cpu_manufacturers(&self) -> &[::std::string::String] {
+        self.cpu_manufacturers.as_deref().unwrap_or_default()
     }
     /// <p> The instance types to exclude. </p>
-    pub fn excluded_instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_instance_types.is_none()`.
+    pub fn excluded_instance_types(&self) -> &[::std::string::String] {
+        self.excluded_instance_types.as_deref().unwrap_or_default()
     }
     /// <p> Indicates whether current or previous generation instance types are included. </p>
-    pub fn instance_generations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_generations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_generations.is_none()`.
+    pub fn instance_generations(&self) -> &[::std::string::String] {
+        self.instance_generations.as_deref().unwrap_or_default()
     }
     /// <p> Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>. </p>
     pub fn local_storage(&self) -> ::std::option::Option<&str> {
         self.local_storage.as_deref()
     }
     /// <p> The type of local storage that is required. </p>
-    pub fn local_storage_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.local_storage_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_storage_types.is_none()`.
+    pub fn local_storage_types(&self) -> &[::std::string::String] {
+        self.local_storage_types.as_deref().unwrap_or_default()
     }
     /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
     pub fn memory_gi_b_per_v_cpu(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {

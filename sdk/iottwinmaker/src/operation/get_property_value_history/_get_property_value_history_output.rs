@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryOutput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub property_values: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>>,
+    pub property_values: ::std::vec::Vec<crate::types::PropertyValueHistory>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPropertyValueHistoryOutput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn property_values(&self) -> ::std::option::Option<&[crate::types::PropertyValueHistory]> {
-        self.property_values.as_deref()
+    pub fn property_values(&self) -> &[crate::types::PropertyValueHistory] {
+        use std::ops::Deref;
+        self.property_values.deref()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl GetPropertyValueHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput).
-    pub fn build(self) -> crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
-        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
-            property_values: self.property_values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property_values`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryOutputBuilder::property_values)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
+            property_values: self.property_values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "property_values",
+                    "property_values was not specified but it is required when building GetPropertyValueHistoryOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

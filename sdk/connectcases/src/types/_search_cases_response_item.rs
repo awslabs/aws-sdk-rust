@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchCasesResponseItem {
     /// <p>A unique identifier of the case.</p>
-    pub case_id: ::std::option::Option<::std::string::String>,
+    pub case_id: ::std::string::String,
     /// <p>A unique identifier of a template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>List of case field values.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub fields: ::std::vec::Vec<crate::types::FieldValue>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl SearchCasesResponseItem {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
-        self.case_id.as_deref()
+    pub fn case_id(&self) -> &str {
+        use std::ops::Deref;
+        self.case_id.deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>List of case field values.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldValue]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::FieldValue] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
@@ -49,6 +52,7 @@ pub struct SearchCasesResponseItemBuilder {
 }
 impl SearchCasesResponseItemBuilder {
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl SearchCasesResponseItemBuilder {
         &self.case_id
     }
     /// <p>A unique identifier of a template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +127,31 @@ impl SearchCasesResponseItemBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SearchCasesResponseItem`](crate::types::SearchCasesResponseItem).
-    pub fn build(self) -> crate::types::SearchCasesResponseItem {
-        crate::types::SearchCasesResponseItem {
-            case_id: self.case_id,
-            template_id: self.template_id,
-            fields: self.fields,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`case_id`](crate::types::builders::SearchCasesResponseItemBuilder::case_id)
+    /// - [`template_id`](crate::types::builders::SearchCasesResponseItemBuilder::template_id)
+    /// - [`fields`](crate::types::builders::SearchCasesResponseItemBuilder::fields)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchCasesResponseItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchCasesResponseItem {
+            case_id: self.case_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "case_id",
+                    "case_id was not specified but it is required when building SearchCasesResponseItem",
+                )
+            })?,
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building SearchCasesResponseItem",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building SearchCasesResponseItem",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

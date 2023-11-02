@@ -35,6 +35,7 @@ pub struct AudioLanguageSelectionBuilder {
 }
 impl AudioLanguageSelectionBuilder {
     /// Selects a specific three-letter language code from within an audio source.
+    /// This field is required.
     pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self

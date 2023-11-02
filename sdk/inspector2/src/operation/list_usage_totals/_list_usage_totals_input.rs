@@ -20,8 +20,10 @@ impl ListUsageTotalsInput {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl ListUsageTotalsInput {

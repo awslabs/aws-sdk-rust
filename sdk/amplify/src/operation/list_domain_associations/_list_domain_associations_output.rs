@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
-    pub domain_associations: ::std::option::Option<::std::vec::Vec<crate::types::DomainAssociation>>,
+    pub domain_associations: ::std::vec::Vec<crate::types::DomainAssociation>,
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
-    pub fn domain_associations(&self) -> ::std::option::Option<&[crate::types::DomainAssociation]> {
-        self.domain_associations.as_deref()
+    pub fn domain_associations(&self) -> &[crate::types::DomainAssociation] {
+        use std::ops::Deref;
+        self.domain_associations.deref()
     }
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,23 @@ impl ListDomainAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDomainAssociationsOutput`](crate::operation::list_domain_associations::ListDomainAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_domain_associations::ListDomainAssociationsOutput {
-        crate::operation::list_domain_associations::ListDomainAssociationsOutput {
-            domain_associations: self.domain_associations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_associations`](crate::operation::list_domain_associations::builders::ListDomainAssociationsOutputBuilder::domain_associations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_domain_associations::ListDomainAssociationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_domain_associations::ListDomainAssociationsOutput {
+            domain_associations: self.domain_associations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_associations",
+                    "domain_associations was not specified but it is required when building ListDomainAssociationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

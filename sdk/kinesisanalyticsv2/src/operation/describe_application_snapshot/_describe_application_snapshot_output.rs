@@ -34,6 +34,7 @@ pub struct DescribeApplicationSnapshotOutputBuilder {
 }
 impl DescribeApplicationSnapshotOutputBuilder {
     /// <p>An object containing information about the application snapshot.</p>
+    /// This field is required.
     pub fn snapshot_details(mut self, input: crate::types::SnapshotDetails) -> Self {
         self.snapshot_details = ::std::option::Option::Some(input);
         self

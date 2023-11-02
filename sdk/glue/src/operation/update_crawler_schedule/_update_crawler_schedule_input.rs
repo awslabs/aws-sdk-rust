@@ -34,6 +34,7 @@ pub struct UpdateCrawlerScheduleInputBuilder {
 }
 impl UpdateCrawlerScheduleInputBuilder {
     /// <p>The name of the crawler whose schedule to update.</p>
+    /// This field is required.
     pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crawler_name = ::std::option::Option::Some(input.into());
         self

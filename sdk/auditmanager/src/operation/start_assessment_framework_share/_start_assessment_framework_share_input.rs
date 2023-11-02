@@ -48,6 +48,7 @@ pub struct StartAssessmentFrameworkShareInputBuilder {
 }
 impl StartAssessmentFrameworkShareInputBuilder {
     /// <p> The unique identifier for the custom framework to be shared. </p>
+    /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartAssessmentFrameworkShareInputBuilder {
         &self.framework_id
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
+    /// This field is required.
     pub fn destination_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_account = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartAssessmentFrameworkShareInputBuilder {
         &self.destination_account
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
+    /// This field is required.
     pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self

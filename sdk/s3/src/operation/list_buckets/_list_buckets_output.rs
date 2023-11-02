@@ -12,8 +12,10 @@ pub struct ListBucketsOutput {
 }
 impl ListBucketsOutput {
     /// <p>The list of buckets owned by the requester.</p>
-    pub fn buckets(&self) -> ::std::option::Option<&[crate::types::Bucket]> {
-        self.buckets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
+    pub fn buckets(&self) -> &[crate::types::Bucket] {
+        self.buckets.as_deref().unwrap_or_default()
     }
     /// <p>The owner of the buckets listed.</p>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {

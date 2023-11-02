@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub is_singleton: ::std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
-    pub component_type_id: ::std::option::Option<::std::string::String>,
+    pub component_type_id: ::std::string::String,
     /// <p>The description of the component type.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
@@ -18,11 +18,11 @@ pub struct GetComponentTypeOutput {
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub functions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>>,
     /// <p>The date and time when the component type was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the component was last updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     /// <p>The ARN of the component type.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A Boolean value that specifies whether the component type is abstract.</p>
     pub is_abstract: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
@@ -40,16 +40,18 @@ pub struct GetComponentTypeOutput {
 }
 impl GetComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub fn is_singleton(&self) -> ::std::option::Option<bool> {
         self.is_singleton
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
-        self.component_type_id.as_deref()
+    pub fn component_type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.component_type_id.deref()
     }
     /// <p>The description of the component type.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -62,24 +64,27 @@ impl GetComponentTypeOutput {
         self.property_definitions.as_ref()
     }
     /// <p>The name of the parent component type that this component type extends.</p>
-    pub fn extends_from(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.extends_from.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extends_from.is_none()`.
+    pub fn extends_from(&self) -> &[::std::string::String] {
+        self.extends_from.as_deref().unwrap_or_default()
     }
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn functions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FunctionResponse>> {
         self.functions.as_ref()
     }
     /// <p>The date and time when the component type was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The date and time when the component was last updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
     /// <p>The ARN of the component type.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A Boolean value that specifies whether the component type is abstract.</p>
     pub fn is_abstract(&self) -> ::std::option::Option<bool> {
@@ -144,6 +149,7 @@ pub struct GetComponentTypeOutputBuilder {
 }
 impl GetComponentTypeOutputBuilder {
     /// <p>The ID of the workspace that contains the component type.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +178,7 @@ impl GetComponentTypeOutputBuilder {
         &self.is_singleton
     }
     /// <p>The ID of the component type.</p>
+    /// This field is required.
     pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
@@ -268,6 +275,7 @@ impl GetComponentTypeOutputBuilder {
         &self.functions
     }
     /// <p>The date and time when the component type was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -282,6 +290,7 @@ impl GetComponentTypeOutputBuilder {
         &self.creation_date_time
     }
     /// <p>The date and time when the component was last updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -296,6 +305,7 @@ impl GetComponentTypeOutputBuilder {
         &self.update_date_time
     }
     /// <p>The ARN of the component type.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -417,18 +427,51 @@ impl GetComponentTypeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetComponentTypeOutput`](crate::operation::get_component_type::GetComponentTypeOutput).
-    pub fn build(self) -> crate::operation::get_component_type::GetComponentTypeOutput {
-        crate::operation::get_component_type::GetComponentTypeOutput {
-            workspace_id: self.workspace_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder::workspace_id)
+    /// - [`component_type_id`](crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder::component_type_id)
+    /// - [`creation_date_time`](crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder::creation_date_time)
+    /// - [`update_date_time`](crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder::update_date_time)
+    /// - [`arn`](crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_component_type::GetComponentTypeOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_component_type::GetComponentTypeOutput {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building GetComponentTypeOutput",
+                )
+            })?,
             is_singleton: self.is_singleton,
-            component_type_id: self.component_type_id,
+            component_type_id: self.component_type_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "component_type_id",
+                    "component_type_id was not specified but it is required when building GetComponentTypeOutput",
+                )
+            })?,
             description: self.description,
             property_definitions: self.property_definitions,
             extends_from: self.extends_from,
             functions: self.functions,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
-            arn: self.arn,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building GetComponentTypeOutput",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building GetComponentTypeOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetComponentTypeOutput",
+                )
+            })?,
             is_abstract: self.is_abstract,
             is_schema_initialized: self.is_schema_initialized,
             status: self.status,
@@ -436,6 +479,6 @@ impl GetComponentTypeOutputBuilder {
             sync_source: self.sync_source,
             component_type_name: self.component_type_name,
             _request_id: self._request_id,
-        }
+        })
     }
 }

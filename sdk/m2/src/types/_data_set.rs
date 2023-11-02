@@ -7,7 +7,7 @@ pub struct DataSet {
     /// <p>The storage type of the data set: database or file system. For Micro Focus, database corresponds to datastore and file system corresponds to EFS/FSX. For Blu Age, there is no support of file system and database corresponds to Blusam. </p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
-    pub dataset_name: ::std::option::Option<::std::string::String>,
+    pub dataset_name: ::std::string::String,
     /// <p>The type of dataset. The only supported value is VSAM.</p>
     pub dataset_org: ::std::option::Option<crate::types::DatasetOrgAttributes>,
     /// <p>The relative location of the data set in the database or file system. </p>
@@ -21,8 +21,9 @@ impl DataSet {
         self.storage_type.as_deref()
     }
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
-        self.dataset_name.as_deref()
+    pub fn dataset_name(&self) -> &str {
+        use std::ops::Deref;
+        self.dataset_name.deref()
     }
     /// <p>The type of dataset. The only supported value is VSAM.</p>
     pub fn dataset_org(&self) -> ::std::option::Option<&crate::types::DatasetOrgAttributes> {
@@ -70,6 +71,7 @@ impl DataSetBuilder {
         &self.storage_type
     }
     /// <p>The logical identifier for a specific data set (in mainframe format).</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl DataSetBuilder {
         &self.dataset_name
     }
     /// <p>The type of dataset. The only supported value is VSAM.</p>
+    /// This field is required.
     pub fn dataset_org(mut self, input: crate::types::DatasetOrgAttributes) -> Self {
         self.dataset_org = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl DataSetBuilder {
         &self.relative_path
     }
     /// <p>The length of a record.</p>
+    /// This field is required.
     pub fn record_length(mut self, input: crate::types::RecordLength) -> Self {
         self.record_length = ::std::option::Option::Some(input);
         self
@@ -126,13 +130,20 @@ impl DataSetBuilder {
         &self.record_length
     }
     /// Consumes the builder and constructs a [`DataSet`](crate::types::DataSet).
-    pub fn build(self) -> crate::types::DataSet {
-        crate::types::DataSet {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dataset_name`](crate::types::builders::DataSetBuilder::dataset_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSet {
             storage_type: self.storage_type,
-            dataset_name: self.dataset_name,
+            dataset_name: self.dataset_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dataset_name",
+                    "dataset_name was not specified but it is required when building DataSet",
+                )
+            })?,
             dataset_org: self.dataset_org,
             relative_path: self.relative_path,
             record_length: self.record_length,
-        }
+        })
     }
 }

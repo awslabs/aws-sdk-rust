@@ -18,8 +18,10 @@ impl DisassociateNatGatewayAddressInput {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The association IDs of EIPs that have been associated with the NAT gateway.</p>
-    pub fn association_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.association_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_ids.is_none()`.
+    pub fn association_ids(&self) -> &[::std::string::String] {
+        self.association_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.</p>
     pub fn max_drain_duration_seconds(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct DisassociateNatGatewayAddressInputBuilder {
 }
 impl DisassociateNatGatewayAddressInputBuilder {
     /// <p>The ID of the NAT gateway.</p>
+    /// This field is required.
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self

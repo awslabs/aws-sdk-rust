@@ -38,6 +38,7 @@ pub struct DeleteIdentityPolicyInputBuilder {
 impl DeleteIdentityPolicyInputBuilder {
     /// <p>The identity that is associated with the policy to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl DeleteIdentityPolicyInputBuilder {
         &self.identity
     }
     /// <p>The name of the policy to be deleted.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self

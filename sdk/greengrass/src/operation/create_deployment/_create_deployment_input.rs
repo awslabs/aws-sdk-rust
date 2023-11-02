@@ -83,6 +83,7 @@ impl CreateDeploymentInputBuilder {
         &self.deployment_id
     }
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +98,7 @@ impl CreateDeploymentInputBuilder {
         &self.deployment_type
     }
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct CharacterOffsetsBuilder {
 }
 impl CharacterOffsetsBuilder {
     /// <p>The beginning of the issue.</p>
+    /// This field is required.
     pub fn begin_offset_char(mut self, input: i32) -> Self {
         self.begin_offset_char = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CharacterOffsetsBuilder {
         &self.begin_offset_char
     }
     /// <p>The end of the issue.</p>
+    /// This field is required.
     pub fn end_offset_char(mut self, input: i32) -> Self {
         self.end_offset_char = ::std::option::Option::Some(input);
         self

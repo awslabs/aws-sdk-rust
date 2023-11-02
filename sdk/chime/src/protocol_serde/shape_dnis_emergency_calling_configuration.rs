@@ -3,14 +3,14 @@ pub fn ser_dnis_emergency_calling_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DnisEmergencyCallingConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.emergency_phone_number {
-        object.key("EmergencyPhoneNumber").string(var_1.as_str());
+    {
+        object.key("EmergencyPhoneNumber").string(input.emergency_phone_number.as_str());
     }
-    if let Some(var_2) = &input.test_phone_number {
-        object.key("TestPhoneNumber").string(var_2.as_str());
+    if let Some(var_1) = &input.test_phone_number {
+        object.key("TestPhoneNumber").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.calling_country {
-        object.key("CallingCountry").string(var_3.as_str());
+    {
+        object.key("CallingCountry").string(input.calling_country.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::dnis_emergency_calling_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -128,6 +128,7 @@ pub struct CreateServiceActionInputBuilder {
 }
 impl CreateServiceActionInputBuilder {
     /// <p>The self-service action name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +143,7 @@ impl CreateServiceActionInputBuilder {
         &self.name
     }
     /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
+    /// This field is required.
     pub fn definition_type(mut self, input: crate::types::ServiceActionDefinitionType) -> Self {
         self.definition_type = ::std::option::Option::Some(input);
         self
@@ -308,6 +310,7 @@ impl CreateServiceActionInputBuilder {
         &self.accept_language
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self

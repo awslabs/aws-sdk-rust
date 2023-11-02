@@ -11,12 +11,16 @@ pub struct DescribeContainerInstancesOutput {
 }
 impl DescribeContainerInstancesOutput {
     /// <p>The list of container instances.</p>
-    pub fn container_instances(&self) -> ::std::option::Option<&[crate::types::ContainerInstance]> {
-        self.container_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_instances.is_none()`.
+    pub fn container_instances(&self) -> &[crate::types::ContainerInstance] {
+        self.container_instances.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::Failure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::Failure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeContainerInstancesOutput {

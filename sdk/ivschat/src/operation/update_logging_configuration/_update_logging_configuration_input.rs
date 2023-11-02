@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be updated.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
@@ -12,8 +12,9 @@ pub struct UpdateLoggingConfigurationInput {
 }
 impl UpdateLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct UpdateLoggingConfigurationInputBuilder {
 }
 impl UpdateLoggingConfigurationInputBuilder {
     /// <p>Identifier of the logging configuration to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,8 @@ impl UpdateLoggingConfigurationInputBuilder {
         &self.destination_configuration
     }
     /// Consumes the builder and constructs a [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder::identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -90,7 +94,12 @@ impl UpdateLoggingConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput {
-            identifier: self.identifier,
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building UpdateLoggingConfigurationInput",
+                )
+            })?,
             name: self.name,
             destination_configuration: self.destination_configuration,
         })

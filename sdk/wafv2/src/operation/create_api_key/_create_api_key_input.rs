@@ -28,8 +28,10 @@ impl CreateApiKeyInput {
     /// <p>The client application domains that you want to use this API key for. </p>
     /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn token_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_domains.is_none()`.
+    pub fn token_domains(&self) -> &[::std::string::String] {
+        self.token_domains.as_deref().unwrap_or_default()
     }
 }
 impl CreateApiKeyInput {
@@ -53,6 +55,7 @@ impl CreateApiKeyInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self

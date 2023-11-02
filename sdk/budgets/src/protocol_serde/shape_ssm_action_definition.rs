@@ -3,20 +3,20 @@ pub fn ser_ssm_action_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmActionDefinition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_sub_type {
-        object.key("ActionSubType").string(var_1.as_str());
+    {
+        object.key("ActionSubType").string(input.action_sub_type.as_str());
     }
-    if let Some(var_2) = &input.region {
-        object.key("Region").string(var_2.as_str());
+    {
+        object.key("Region").string(input.region.as_str());
     }
-    if let Some(var_3) = &input.instance_ids {
-        let mut array_4 = object.key("InstanceIds").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("InstanceIds").start_array();
+        for item_2 in &input.instance_ids {
             {
-                array_4.value().string(item_5.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ssm_action_definition_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

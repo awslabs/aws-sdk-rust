@@ -89,8 +89,10 @@ impl CopyDbClusterSnapshotInput {
         self.copy_tags
     }
     /// <p>The tags to be assigned to the cluster snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopyDbClusterSnapshotInput {
@@ -120,6 +122,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid cluster snapshot ARN.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    /// This field is required.
     pub fn source_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -155,6 +158,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    /// This field is required.
     pub fn target_db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self

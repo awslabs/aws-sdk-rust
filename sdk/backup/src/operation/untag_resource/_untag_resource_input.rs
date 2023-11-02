@@ -14,8 +14,10 @@ impl UntagResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
-    pub fn tag_key_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_key_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_key_list.is_none()`.
+    pub fn tag_key_list(&self) -> &[::std::string::String] {
+        self.tag_key_list.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UntagResourceInput {
@@ -42,6 +44,7 @@ pub struct UntagResourceInputBuilder {
 }
 impl UntagResourceInputBuilder {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

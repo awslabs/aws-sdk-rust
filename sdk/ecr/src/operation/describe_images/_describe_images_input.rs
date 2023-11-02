@@ -26,8 +26,10 @@ impl DescribeImagesInput {
         self.repository_name.as_deref()
     }
     /// <p>The list of image IDs for the requested repository.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[crate::types::ImageIdentifier]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[crate::types::ImageIdentifier] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -76,6 +78,7 @@ impl DescribeImagesInputBuilder {
         &self.registry_id
     }
     /// <p>The repository that contains the images to describe.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

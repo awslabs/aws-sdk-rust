@@ -15,8 +15,10 @@ impl SubjectStructure {
         self.count
     }
     /// <p>A list of predicates present in this specific structure.</p>
-    pub fn predicates(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.predicates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predicates.is_none()`.
+    pub fn predicates(&self) -> &[::std::string::String] {
+        self.predicates.as_deref().unwrap_or_default()
     }
 }
 impl SubjectStructure {

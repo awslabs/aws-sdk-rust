@@ -3,14 +3,14 @@ pub fn ser_update_server_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_server_config::UpdateServerConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.server_id {
-        object.key("serverId").string(var_1.as_str());
+    {
+        object.key("serverId").string(input.server_id.as_str());
     }
-    if let Some(var_2) = &input.strategy_option {
+    if let Some(var_1) = &input.strategy_option {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("strategyOption").start_object();
-        crate::protocol_serde::shape_strategy_option::ser_strategy_option(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("strategyOption").start_object();
+        crate::protocol_serde::shape_strategy_option::ser_strategy_option(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

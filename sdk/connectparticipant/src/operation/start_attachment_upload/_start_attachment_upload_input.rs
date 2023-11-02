@@ -55,6 +55,7 @@ pub struct StartAttachmentUploadInputBuilder {
 }
 impl StartAttachmentUploadInputBuilder {
     /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartAttachmentUploadInputBuilder {
         &self.content_type
     }
     /// <p>The size of the attachment in bytes.</p>
+    /// This field is required.
     pub fn attachment_size_in_bytes(mut self, input: i64) -> Self {
         self.attachment_size_in_bytes = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl StartAttachmentUploadInputBuilder {
         &self.attachment_size_in_bytes
     }
     /// <p>A case-sensitive name of the attachment being uploaded.</p>
+    /// This field is required.
     pub fn attachment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl StartAttachmentUploadInputBuilder {
         &self.attachment_name
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl StartAttachmentUploadInputBuilder {
         &self.client_token
     }
     /// <p>The authentication token associated with the participant's connection.</p>
+    /// This field is required.
     pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self

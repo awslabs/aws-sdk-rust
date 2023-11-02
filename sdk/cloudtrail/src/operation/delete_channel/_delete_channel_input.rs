@@ -27,6 +27,7 @@ pub struct DeleteChannelInputBuilder {
 }
 impl DeleteChannelInputBuilder {
     /// <p>The ARN or the <code>UUID</code> value of the channel that you want to delete.</p>
+    /// This field is required.
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
         self

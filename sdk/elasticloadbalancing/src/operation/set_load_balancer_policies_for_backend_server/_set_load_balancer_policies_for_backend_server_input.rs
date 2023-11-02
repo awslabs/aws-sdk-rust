@@ -21,8 +21,10 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
         self.instance_port
     }
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
+    pub fn policy_names(&self) -> &[::std::string::String] {
+        self.policy_names.as_deref().unwrap_or_default()
     }
 }
 impl SetLoadBalancerPoliciesForBackendServerInput {
@@ -43,6 +45,7 @@ pub struct SetLoadBalancerPoliciesForBackendServerInputBuilder {
 }
 impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The port number associated with the EC2 instance.</p>
+    /// This field is required.
     pub fn instance_port(mut self, input: i32) -> Self {
         self.instance_port = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct AcceptShareInputBuilder {
 }
 impl AcceptShareInputBuilder {
     /// <p> The ID for a share offer for analytics store data. </p>
+    /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self

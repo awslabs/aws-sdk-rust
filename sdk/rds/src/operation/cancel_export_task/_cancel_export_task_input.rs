@@ -27,6 +27,7 @@ pub struct CancelExportTaskInputBuilder {
 }
 impl CancelExportTaskInputBuilder {
     /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
+    /// This field is required.
     pub fn export_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_task_identifier = ::std::option::Option::Some(input.into());
         self

@@ -10,8 +10,10 @@ pub struct BatchDetectTargetedSentimentInput {
 }
 impl BatchDetectTargetedSentimentInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
-    pub fn text_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.text_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_list.is_none()`.
+    pub fn text_list(&self) -> &[::std::string::String] {
+        self.text_list.as_deref().unwrap_or_default()
     }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
@@ -62,6 +64,7 @@ impl BatchDetectTargetedSentimentInputBuilder {
         &self.text_list
     }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self

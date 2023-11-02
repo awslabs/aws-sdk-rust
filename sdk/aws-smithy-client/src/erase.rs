@@ -169,10 +169,8 @@ impl DynConnector {
     pub fn call_lite(
         &mut self,
         req: http::Request<SdkBody>,
-    ) -> BoxFuture<http::Response<SdkBody>, Box<dyn std::error::Error + Send + Sync + 'static>>
-    {
-        let future = Service::call(self, req);
-        Box::pin(async move { future.await.map_err(|err| Box::new(err) as _) })
+    ) -> BoxFuture<http::Response<SdkBody>, ConnectorError> {
+        Service::call(self, req)
     }
 }
 

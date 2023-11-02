@@ -23,8 +23,10 @@ impl BatchGetRecordResultDetail {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>The <code>Record</code> retrieved.</p>
-    pub fn record(&self) -> ::std::option::Option<&[crate::types::FeatureValue]> {
-        self.record.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record.is_none()`.
+    pub fn record(&self) -> &[crate::types::FeatureValue] {
+        self.record.as_deref().unwrap_or_default()
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn expires_at(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct BatchGetRecordResultDetailBuilder {
 }
 impl BatchGetRecordResultDetailBuilder {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl BatchGetRecordResultDetailBuilder {
         &self.feature_group_name
     }
     /// <p>The value of the record identifier in string format.</p>
+    /// This field is required.
     pub fn record_identifier_value_as_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_value_as_string = ::std::option::Option::Some(input.into());
         self

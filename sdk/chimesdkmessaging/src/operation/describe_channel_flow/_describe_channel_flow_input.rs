@@ -27,6 +27,7 @@ pub struct DescribeChannelFlowInputBuilder {
 }
 impl DescribeChannelFlowInputBuilder {
     /// <p>The ARN of the channel flow.</p>
+    /// This field is required.
     pub fn channel_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self

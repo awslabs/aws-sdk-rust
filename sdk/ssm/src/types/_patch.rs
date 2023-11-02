@@ -109,16 +109,22 @@ impl Patch {
         self.language.as_deref()
     }
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn advisory_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.advisory_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advisory_ids.is_none()`.
+    pub fn advisory_ids(&self) -> &[::std::string::String] {
+        self.advisory_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn bugzilla_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bugzilla_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bugzilla_ids.is_none()`.
+    pub fn bugzilla_ids(&self) -> &[::std::string::String] {
+        self.bugzilla_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn cve_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cve_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cve_ids.is_none()`.
+    pub fn cve_ids(&self) -> &[::std::string::String] {
+        self.cve_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {

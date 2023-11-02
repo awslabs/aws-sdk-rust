@@ -9,18 +9,18 @@ pub fn ser_create_session_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_3) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("tags").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
     Ok(())
 }

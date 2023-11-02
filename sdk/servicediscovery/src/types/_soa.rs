@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
-    pub ttl: ::std::option::Option<i64>,
+    pub ttl: i64,
 }
 impl Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
-    pub fn ttl(&self) -> ::std::option::Option<i64> {
+    pub fn ttl(&self) -> i64 {
         self.ttl
     }
 }
@@ -28,6 +28,7 @@ pub struct SoaBuilder {
 }
 impl SoaBuilder {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
+    /// This field is required.
     pub fn ttl(mut self, input: i64) -> Self {
         self.ttl = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,13 @@ impl SoaBuilder {
         &self.ttl
     }
     /// Consumes the builder and constructs a [`Soa`](crate::types::Soa).
-    pub fn build(self) -> crate::types::Soa {
-        crate::types::Soa { ttl: self.ttl }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ttl`](crate::types::builders::SoaBuilder::ttl)
+    pub fn build(self) -> ::std::result::Result<crate::types::Soa, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Soa {
+            ttl: self.ttl.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("ttl", "ttl was not specified but it is required when building Soa")
+            })?,
+        })
     }
 }

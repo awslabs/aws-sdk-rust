@@ -35,6 +35,7 @@ pub struct DescribeLoggingConfigurationOutputBuilder {
 }
 impl DescribeLoggingConfigurationOutputBuilder {
     /// Metadata object containing information about the logging configuration of a workspace.
+    /// This field is required.
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfigurationMetadata) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self

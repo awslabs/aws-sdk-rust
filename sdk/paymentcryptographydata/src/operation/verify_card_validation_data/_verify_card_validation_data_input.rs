@@ -58,6 +58,7 @@ pub struct VerifyCardValidationDataInputBuilder {
 }
 impl VerifyCardValidationDataInputBuilder {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl VerifyCardValidationDataInputBuilder {
         &self.key_identifier
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
+    /// This field is required.
     pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_number = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl VerifyCardValidationDataInputBuilder {
         &self.primary_account_number
     }
     /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn verification_attributes(mut self, input: crate::types::CardVerificationAttributes) -> Self {
         self.verification_attributes = ::std::option::Option::Some(input);
         self
@@ -100,6 +103,7 @@ impl VerifyCardValidationDataInputBuilder {
         &self.verification_attributes
     }
     /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn validation_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_data = ::std::option::Option::Some(input.into());
         self

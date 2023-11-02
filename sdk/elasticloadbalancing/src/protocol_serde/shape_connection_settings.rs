@@ -6,15 +6,16 @@ pub fn ser_connection_settings(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IdleTimeout");
-    if let Some(var_2) = &input.idle_timeout {
+    {
         scope_1.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.idle_timeout).into()),
         );
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_connection_settings(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ConnectionSettings, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -23,7 +24,7 @@ pub fn de_connection_settings(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IdleTimeout") /* IdleTimeout com.amazonaws.elasticloadbalancing#ConnectionSettings$IdleTimeout */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -34,11 +35,13 @@ pub fn de_connection_settings(
                         ?
                     )
                 ;
-                builder = builder.set_idle_timeout(var_3);
+                builder = builder.set_idle_timeout(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::connection_settings_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

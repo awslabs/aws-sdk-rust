@@ -13,27 +13,23 @@
 use crate::fs_util::{home_dir, Os};
 use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials};
 use crate::provider_config::ProviderConfig;
-
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
 use aws_sdk_sso::types::RoleCredentials;
-use aws_sdk_sso::{config::Builder as SsoConfigBuilder, Client as SsoClient, Config as SsoConfig};
+use aws_sdk_sso::Client as SsoClient;
 use aws_smithy_json::deserialize::Token;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
 use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::region::Region;
-
+use aws_types::SdkConfig;
+use ring::digest;
 use std::convert::TryInto;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use std::io;
 use std::path::PathBuf;
-
-use crate::connector::expect_connector;
-use aws_smithy_types::retry::RetryConfig;
-use ring::digest;
 use zeroize::Zeroizing;
 
 /// SSO Credentials Provider
@@ -47,7 +43,7 @@ pub struct SsoCredentialsProvider {
     fs: Fs,
     env: Env,
     sso_provider_config: SsoProviderConfig,
-    sso_config: SsoConfigBuilder,
+    sdk_config: SdkConfig,
 }
 
 impl SsoCredentialsProvider {
@@ -63,26 +59,18 @@ impl SsoCredentialsProvider {
         let fs = provider_config.fs();
         let env = provider_config.env();
 
-        let mut sso_config = SsoConfig::builder()
-            .http_connector(expect_connector(
-                "The SSO credentials provider",
-                provider_config.connector(&Default::default()),
-            ))
-            .retry_config(RetryConfig::standard());
-        sso_config.set_sleep_impl(provider_config.sleep());
-
         SsoCredentialsProvider {
             fs,
             env,
             sso_provider_config,
-            sso_config,
+            sdk_config: provider_config.client_config(),
         }
     }
 
     async fn credentials(&self) -> provider::Result {
         load_sso_credentials(
             &self.sso_provider_config,
-            &self.sso_config,
+            &self.sdk_config,
             &self.env,
             &self.fs,
         )
@@ -206,20 +194,20 @@ pub(crate) struct SsoProviderConfig {
 
 async fn load_sso_credentials(
     sso_provider_config: &SsoProviderConfig,
-    sso_config: &SsoConfigBuilder,
+    sdk_config: &SdkConfig,
     env: &Env,
     fs: &Fs,
 ) -> provider::Result {
     let token = load_token(&sso_provider_config.start_url, env, fs)
         .await
         .map_err(CredentialsError::provider_error)?;
-    let config = sso_config
-        .clone()
+    let config = sdk_config
+        .to_builder()
         .region(sso_provider_config.region.clone())
         .credentials_cache(CredentialsCache::no_caching())
         .build();
     // TODO(enableNewSmithyRuntimeCleanup): Use `customize().config_override()` to set the region instead of creating a new client once middleware is removed
-    let client = SsoClient::from_conf(config);
+    let client = SsoClient::new(&config);
     let resp = client
         .get_role_credentials()
         .role_name(&sso_provider_config.role_name)

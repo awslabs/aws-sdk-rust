@@ -55,6 +55,7 @@ pub struct GetExclusionsPreviewInputBuilder {
 }
 impl GetExclusionsPreviewInputBuilder {
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
+    /// This field is required.
     pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetExclusionsPreviewInputBuilder {
         &self.assessment_template_arn
     }
     /// <p>The unique identifier associated of the exclusions preview.</p>
+    /// This field is required.
     pub fn preview_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preview_token = ::std::option::Option::Some(input.into());
         self

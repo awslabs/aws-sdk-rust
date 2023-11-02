@@ -11,8 +11,10 @@ pub struct ListProjectsOutput {
 }
 impl ListProjectsOutput {
     /// <p>An array of structures that contain the configuration details of the projects in the Region.</p>
-    pub fn projects(&self) -> ::std::option::Option<&[crate::types::ProjectSummary]> {
-        self.projects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projects.is_none()`.
+    pub fn projects(&self) -> &[crate::types::ProjectSummary] {
+        self.projects.as_deref().unwrap_or_default()
     }
     /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

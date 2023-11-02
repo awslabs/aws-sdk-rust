@@ -48,6 +48,7 @@ pub struct DeleteHubContentInputBuilder {
 }
 impl DeleteHubContentInputBuilder {
     /// <p>The name of the hub that you want to delete content in.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteHubContentInputBuilder {
         &self.hub_name
     }
     /// <p>The type of content that you want to delete from a hub.</p>
+    /// This field is required.
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl DeleteHubContentInputBuilder {
         &self.hub_content_type
     }
     /// <p>The name of the content that you want to delete from a hub.</p>
+    /// This field is required.
     pub fn hub_content_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl DeleteHubContentInputBuilder {
         &self.hub_content_name
     }
     /// <p>The version of the content that you want to delete from a hub.</p>
+    /// This field is required.
     pub fn hub_content_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_content_version = ::std::option::Option::Some(input.into());
         self

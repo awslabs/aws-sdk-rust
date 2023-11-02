@@ -11,8 +11,10 @@ pub struct ListGraphsOutput {
 }
 impl ListGraphsOutput {
     /// <p>A list of behavior graphs that the account is an administrator account for.</p>
-    pub fn graph_list(&self) -> ::std::option::Option<&[crate::types::Graph]> {
-        self.graph_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.graph_list.is_none()`.
+    pub fn graph_list(&self) -> &[crate::types::Graph] {
+        self.graph_list.as_deref().unwrap_or_default()
     }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

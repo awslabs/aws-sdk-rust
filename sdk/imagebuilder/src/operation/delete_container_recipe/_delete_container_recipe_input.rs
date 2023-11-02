@@ -27,6 +27,7 @@ pub struct DeleteContainerRecipeInputBuilder {
 }
 impl DeleteContainerRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
+    /// This field is required.
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self

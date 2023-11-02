@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub team_id: ::std::option::Option<::std::string::String>,
+    pub team_id: ::std::string::String,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub channel_id: ::std::option::Option<::std::string::String>,
+    pub channel_id: ::std::string::String,
     /// <p>The Slack channel name that you want to update.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -36,12 +36,14 @@ pub struct UpdateSlackChannelConfigurationInput {
 }
 impl UpdateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
-        self.team_id.as_deref()
+    pub fn team_id(&self) -> &str {
+        use std::ops::Deref;
+        self.team_id.deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
-        self.channel_id.as_deref()
+    pub fn channel_id(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_id.deref()
     }
     /// <p>The Slack channel name that you want to update.</p>
     pub fn channel_name(&self) -> ::std::option::Option<&str> {
@@ -104,6 +106,7 @@ pub struct UpdateSlackChannelConfigurationInputBuilder {
 }
 impl UpdateSlackChannelConfigurationInputBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    /// This field is required.
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl UpdateSlackChannelConfigurationInputBuilder {
         &self.team_id
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -258,6 +262,9 @@ impl UpdateSlackChannelConfigurationInputBuilder {
         &self.channel_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateSlackChannelConfigurationInput`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`team_id`](crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder::team_id)
+    /// - [`channel_id`](crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder::channel_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -266,8 +273,18 @@ impl UpdateSlackChannelConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationInput {
-                team_id: self.team_id,
-                channel_id: self.channel_id,
+                team_id: self.team_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "team_id",
+                        "team_id was not specified but it is required when building UpdateSlackChannelConfigurationInput",
+                    )
+                })?,
+                channel_id: self.channel_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "channel_id",
+                        "channel_id was not specified but it is required when building UpdateSlackChannelConfigurationInput",
+                    )
+                })?,
                 channel_name: self.channel_name,
                 notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case,
                 notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case,

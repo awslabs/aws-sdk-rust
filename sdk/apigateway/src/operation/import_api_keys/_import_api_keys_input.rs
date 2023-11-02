@@ -42,6 +42,7 @@ pub struct ImportApiKeysInputBuilder {
 }
 impl ImportApiKeysInputBuilder {
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl ImportApiKeysInputBuilder {
         &self.body
     }
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::ApiKeysFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self

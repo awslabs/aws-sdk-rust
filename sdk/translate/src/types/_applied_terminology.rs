@@ -15,8 +15,10 @@ impl AppliedTerminology {
         self.name.as_deref()
     }
     /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
-    pub fn terms(&self) -> ::std::option::Option<&[crate::types::Term]> {
-        self.terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terms.is_none()`.
+    pub fn terms(&self) -> &[crate::types::Term] {
+        self.terms.as_deref().unwrap_or_default()
     }
 }
 impl AppliedTerminology {

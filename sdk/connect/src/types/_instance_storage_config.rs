@@ -7,7 +7,7 @@ pub struct InstanceStorageConfig {
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>A valid storage type.</p>
-    pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub storage_type: crate::types::StorageType,
     /// <p>The S3 bucket configuration.</p>
     pub s3_config: ::std::option::Option<crate::types::S3Config>,
     /// <p>The configuration of the Kinesis video stream.</p>
@@ -23,8 +23,8 @@ impl InstanceStorageConfig {
         self.association_id.as_deref()
     }
     /// <p>A valid storage type.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
-        self.storage_type.as_ref()
+    pub fn storage_type(&self) -> &crate::types::StorageType {
+        &self.storage_type
     }
     /// <p>The S3 bucket configuration.</p>
     pub fn s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
@@ -77,6 +77,7 @@ impl InstanceStorageConfigBuilder {
         &self.association_id
     }
     /// <p>A valid storage type.</p>
+    /// This field is required.
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
         self
@@ -147,14 +148,21 @@ impl InstanceStorageConfigBuilder {
         &self.kinesis_firehose_config
     }
     /// Consumes the builder and constructs a [`InstanceStorageConfig`](crate::types::InstanceStorageConfig).
-    pub fn build(self) -> crate::types::InstanceStorageConfig {
-        crate::types::InstanceStorageConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`storage_type`](crate::types::builders::InstanceStorageConfigBuilder::storage_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceStorageConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceStorageConfig {
             association_id: self.association_id,
-            storage_type: self.storage_type,
+            storage_type: self.storage_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "storage_type",
+                    "storage_type was not specified but it is required when building InstanceStorageConfig",
+                )
+            })?,
             s3_config: self.s3_config,
             kinesis_video_stream_config: self.kinesis_video_stream_config,
             kinesis_stream_config: self.kinesis_stream_config,
             kinesis_firehose_config: self.kinesis_firehose_config,
-        }
+        })
     }
 }

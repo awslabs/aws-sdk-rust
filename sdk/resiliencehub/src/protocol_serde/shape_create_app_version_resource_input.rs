@@ -19,41 +19,41 @@ pub fn ser_create_app_version_resource_input(
         }
         object_2.finish();
     }
-    if let Some(var_7) = &input.app_arn {
-        object.key("appArn").string(var_7.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_8) = &input.app_components {
-        let mut array_9 = object.key("appComponents").start_array();
-        for item_10 in var_8 {
+    {
+        let mut array_7 = object.key("appComponents").start_array();
+        for item_8 in &input.app_components {
             {
-                array_9.value().string(item_10.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_9.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.aws_account_id {
-        object.key("awsAccountId").string(var_11.as_str());
+    if let Some(var_9) = &input.aws_account_id {
+        object.key("awsAccountId").string(var_9.as_str());
     }
-    if let Some(var_12) = &input.aws_region {
-        object.key("awsRegion").string(var_12.as_str());
+    if let Some(var_10) = &input.aws_region {
+        object.key("awsRegion").string(var_10.as_str());
     }
-    if let Some(var_13) = &input.client_token {
-        object.key("clientToken").string(var_13.as_str());
+    if let Some(var_11) = &input.client_token {
+        object.key("clientToken").string(var_11.as_str());
     }
-    if let Some(var_14) = &input.logical_resource_id {
+    if let Some(var_12) = &input.logical_resource_id {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("logicalResourceId").start_object();
-        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_13 = object.key("logicalResourceId").start_object();
+        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_16) = &input.physical_resource_id {
-        object.key("physicalResourceId").string(var_16.as_str());
+    {
+        object.key("physicalResourceId").string(input.physical_resource_id.as_str());
     }
-    if let Some(var_17) = &input.resource_name {
-        object.key("resourceName").string(var_17.as_str());
+    if let Some(var_14) = &input.resource_name {
+        object.key("resourceName").string(var_14.as_str());
     }
-    if let Some(var_18) = &input.resource_type {
-        object.key("resourceType").string(var_18.as_str());
+    {
+        object.key("resourceType").string(input.resource_type.as_str());
     }
     Ok(())
 }

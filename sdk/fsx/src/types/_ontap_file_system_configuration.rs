@@ -70,8 +70,10 @@ impl OntapFileSystemConfiguration {
         self.preferred_subnet_id.as_deref()
     }
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
-    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_table_ids.is_none()`.
+    pub fn route_table_ids(&self) -> &[::std::string::String] {
+        self.route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {

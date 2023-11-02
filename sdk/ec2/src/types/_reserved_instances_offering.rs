@@ -85,12 +85,16 @@ impl ReservedInstancesOffering {
         self.offering_type.as_ref()
     }
     /// <p>The pricing details of the Reserved Instance offering.</p>
-    pub fn pricing_details(&self) -> ::std::option::Option<&[crate::types::PricingDetail]> {
-        self.pricing_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_details.is_none()`.
+    pub fn pricing_details(&self) -> &[crate::types::PricingDetail] {
+        self.pricing_details.as_deref().unwrap_or_default()
     }
     /// <p>The recurring charge tag assigned to the resource.</p>
-    pub fn recurring_charges(&self) -> ::std::option::Option<&[crate::types::RecurringCharge]> {
-        self.recurring_charges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recurring_charges.is_none()`.
+    pub fn recurring_charges(&self) -> &[crate::types::RecurringCharge] {
+        self.recurring_charges.as_deref().unwrap_or_default()
     }
     /// <p>Whether the Reserved Instance is applied to instances in a Region or an Availability Zone.</p>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {

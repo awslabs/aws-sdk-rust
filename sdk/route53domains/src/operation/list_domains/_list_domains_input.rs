@@ -17,8 +17,10 @@ pub struct ListDomainsInput {
 }
 impl ListDomainsInput {
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
-    pub fn filter_conditions(&self) -> ::std::option::Option<&[crate::types::FilterCondition]> {
-        self.filter_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_conditions.is_none()`.
+    pub fn filter_conditions(&self) -> &[crate::types::FilterCondition] {
+        self.filter_conditions.as_deref().unwrap_or_default()
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
     pub fn sort_condition(&self) -> ::std::option::Option<&crate::types::SortCondition> {

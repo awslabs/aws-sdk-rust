@@ -68,8 +68,10 @@ impl CreateFileSystemOntapConfiguration {
         self.preferred_subnet_id.as_deref()
     }
     /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
-    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_table_ids.is_none()`.
+    pub fn route_table_ids(&self) -> &[::std::string::String] {
+        self.route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
@@ -156,6 +158,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::OntapDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -256,6 +259,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
         &self.route_table_ids
     }
     /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
+    /// This field is required.
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
         self

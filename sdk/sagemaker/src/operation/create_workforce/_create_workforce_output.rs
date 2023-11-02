@@ -34,6 +34,7 @@ pub struct CreateWorkforceOutputBuilder {
 }
 impl CreateWorkforceOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
+    /// This field is required.
     pub fn workforce_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_arn = ::std::option::Option::Some(input.into());
         self

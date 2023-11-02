@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The Amazon S3 location of the object to delete.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
@@ -13,16 +13,19 @@ pub struct DeleteObjectInput {
 }
 impl DeleteObjectInput {
     /// <p>The Amazon S3 location of the object to delete.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the governed table.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
+    pub fn partition_values(&self) -> &[::std::string::String] {
+        self.partition_values.as_deref().unwrap_or_default()
     }
 }
 impl DeleteObjectInput {
@@ -42,6 +45,7 @@ pub struct DeleteObjectInputBuilder {
 }
 impl DeleteObjectInputBuilder {
     /// <p>The Amazon S3 location of the object to delete.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl DeleteObjectInputBuilder {
         &self.partition_values
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::types::DeleteObjectInput).
-    pub fn build(self) -> crate::types::DeleteObjectInput {
-        crate::types::DeleteObjectInput {
-            uri: self.uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::DeleteObjectInputBuilder::uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteObjectInput {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building DeleteObjectInput",
+                )
+            })?,
             e_tag: self.e_tag,
             partition_values: self.partition_values,
-        }
+        })
     }
 }

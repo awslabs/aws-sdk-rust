@@ -5,23 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
-    pub r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
+    pub r#type: crate::types::NetworkResourceDefinitionType,
     /// <p>The options in the network resource definition.</p>
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
     /// <p>The count in the network resource definition.</p>
-    pub count: ::std::option::Option<i32>,
+    pub count: i32,
 }
 impl NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkResourceDefinitionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::NetworkResourceDefinitionType {
+        &self.r#type
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::NameValuePair]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::NameValuePair] {
+        self.options.as_deref().unwrap_or_default()
     }
     /// <p>The count in the network resource definition.</p>
-    pub fn count(&self) -> ::std::option::Option<i32> {
+    pub fn count(&self) -> i32 {
         self.count
     }
 }
@@ -42,6 +44,7 @@ pub struct NetworkResourceDefinitionBuilder {
 }
 impl NetworkResourceDefinitionBuilder {
     /// <p>The type in the network resource definition.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::NetworkResourceDefinitionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl NetworkResourceDefinitionBuilder {
         &self.options
     }
     /// <p>The count in the network resource definition.</p>
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl NetworkResourceDefinitionBuilder {
         &self.count
     }
     /// Consumes the builder and constructs a [`NetworkResourceDefinition`](crate::types::NetworkResourceDefinition).
-    pub fn build(self) -> crate::types::NetworkResourceDefinition {
-        crate::types::NetworkResourceDefinition {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::NetworkResourceDefinitionBuilder::r#type)
+    /// - [`count`](crate::types::builders::NetworkResourceDefinitionBuilder::count)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkResourceDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkResourceDefinition {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building NetworkResourceDefinition",
+                )
+            })?,
             options: self.options,
-            count: self.count,
-        }
+            count: self.count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "count",
+                    "count was not specified but it is required when building NetworkResourceDefinition",
+                )
+            })?,
+        })
     }
 }

@@ -11,7 +11,7 @@ pub struct HeaderOrder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
+    pub oversize_handling: crate::types::OversizeHandling,
 }
 impl HeaderOrder {
     /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. </p>
@@ -21,8 +21,8 @@ impl HeaderOrder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn oversize_handling(&self) -> ::std::option::Option<&crate::types::OversizeHandling> {
-        self.oversize_handling.as_ref()
+    pub fn oversize_handling(&self) -> &crate::types::OversizeHandling {
+        &self.oversize_handling
     }
 }
 impl HeaderOrder {
@@ -46,6 +46,7 @@ impl HeaderOrderBuilder {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn oversize_handling(mut self, input: crate::types::OversizeHandling) -> Self {
         self.oversize_handling = ::std::option::Option::Some(input);
         self
@@ -72,9 +73,16 @@ impl HeaderOrderBuilder {
         &self.oversize_handling
     }
     /// Consumes the builder and constructs a [`HeaderOrder`](crate::types::HeaderOrder).
-    pub fn build(self) -> crate::types::HeaderOrder {
-        crate::types::HeaderOrder {
-            oversize_handling: self.oversize_handling,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`oversize_handling`](crate::types::builders::HeaderOrderBuilder::oversize_handling)
+    pub fn build(self) -> ::std::result::Result<crate::types::HeaderOrder, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HeaderOrder {
+            oversize_handling: self.oversize_handling.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "oversize_handling",
+                    "oversize_handling was not specified but it is required when building HeaderOrder",
+                )
+            })?,
+        })
     }
 }

@@ -17,8 +17,10 @@ impl ListPricingPlansOutput {
         self.billing_period.as_deref()
     }
     /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
-    pub fn pricing_plans(&self) -> ::std::option::Option<&[crate::types::PricingPlanListElement]> {
-        self.pricing_plans.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_plans.is_none()`.
+    pub fn pricing_plans(&self) -> &[crate::types::PricingPlanListElement] {
+        self.pricing_plans.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

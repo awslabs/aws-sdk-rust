@@ -62,6 +62,7 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
+    /// This field is required.
     pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         &self.prefix_list_id
     }
     /// <p>The version to restore.</p>
+    /// This field is required.
     pub fn previous_version(mut self, input: i64) -> Self {
         self.previous_version = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         &self.previous_version
     }
     /// <p>The current version number for the prefix list.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: i64) -> Self {
         self.current_version = ::std::option::Option::Some(input);
         self

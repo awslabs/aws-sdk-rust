@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterExpression {
     /// <p>The search filter explresison type.</p>
-    pub r#type: ::std::option::Option<crate::types::FilterExpressionType>,
+    pub r#type: crate::types::FilterExpressionType,
     /// <p>The search filter expression.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
 }
 impl FilterExpression {
     /// <p>The search filter explresison type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FilterExpressionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FilterExpressionType {
+        &self.r#type
     }
     /// <p>The search filter expression.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
 }
 impl FilterExpression {
@@ -35,6 +36,7 @@ pub struct FilterExpressionBuilder {
 }
 impl FilterExpressionBuilder {
     /// <p>The search filter explresison type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FilterExpressionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl FilterExpressionBuilder {
         &self.r#type
     }
     /// <p>The search filter expression.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl FilterExpressionBuilder {
         &self.expression
     }
     /// Consumes the builder and constructs a [`FilterExpression`](crate::types::FilterExpression).
-    pub fn build(self) -> crate::types::FilterExpression {
-        crate::types::FilterExpression {
-            r#type: self.r#type,
-            expression: self.expression,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FilterExpressionBuilder::r#type)
+    /// - [`expression`](crate::types::builders::FilterExpressionBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterExpression {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FilterExpression",
+                )
+            })?,
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building FilterExpression",
+                )
+            })?,
+        })
     }
 }

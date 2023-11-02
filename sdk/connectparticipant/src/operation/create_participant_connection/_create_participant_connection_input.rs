@@ -13,8 +13,10 @@ pub struct CreateParticipantConnectionInput {
 }
 impl CreateParticipantConnectionInput {
     /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&[crate::types::ConnectionType]> {
-        self.r#type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
+    pub fn r#type(&self) -> &[crate::types::ConnectionType] {
+        self.r#type.as_deref().unwrap_or_default()
     }
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
@@ -64,6 +66,7 @@ impl CreateParticipantConnectionInputBuilder {
     }
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
+    /// This field is required.
     pub fn participant_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_token = ::std::option::Option::Some(input.into());
         self

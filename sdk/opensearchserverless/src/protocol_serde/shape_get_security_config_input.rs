@@ -3,8 +3,8 @@ pub fn ser_get_security_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_security_config::GetSecurityConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
     Ok(())
 }

@@ -5,37 +5,39 @@
 pub struct GetPropertygraphStreamOutput {
     /// <p>Sequence identifier of the last change in the stream response.</p>
     /// <p>An event ID is composed of two fields: a <code>commitNum</code>, which identifies a transaction that changed the graph, and an <code>opNum</code>, which identifies a specific operation within that transaction:</p>
-    pub last_event_id: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub last_event_id: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
-    pub last_trx_timestamp_in_millis: ::std::option::Option<i64>,
+    pub last_trx_timestamp_in_millis: i64,
     /// <p>Serialization format for the change records being returned. Currently, the only supported value is <code>PG_JSON</code>.</p>
-    pub format: ::std::option::Option<::std::string::String>,
+    pub format: ::std::string::String,
     /// <p>An array of serialized change-log stream records included in the response.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::PropertygraphRecord>>,
+    pub records: ::std::vec::Vec<crate::types::PropertygraphRecord>,
     /// <p>The total number of records in the response.</p>
-    pub total_records: ::std::option::Option<i32>,
+    pub total_records: i32,
     _request_id: Option<String>,
 }
 impl GetPropertygraphStreamOutput {
     /// <p>Sequence identifier of the last change in the stream response.</p>
     /// <p>An event ID is composed of two fields: a <code>commitNum</code>, which identifies a transaction that changed the graph, and an <code>opNum</code>, which identifies a specific operation within that transaction:</p>
-    pub fn last_event_id(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.last_event_id.as_ref()
+    pub fn last_event_id(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.last_event_id
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
-    pub fn last_trx_timestamp_in_millis(&self) -> ::std::option::Option<i64> {
+    pub fn last_trx_timestamp_in_millis(&self) -> i64 {
         self.last_trx_timestamp_in_millis
     }
     /// <p>Serialization format for the change records being returned. Currently, the only supported value is <code>PG_JSON</code>.</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
-        self.format.as_deref()
+    pub fn format(&self) -> &str {
+        use std::ops::Deref;
+        self.format.deref()
     }
     /// <p>An array of serialized change-log stream records included in the response.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::PropertygraphRecord]> {
-        self.records.as_deref()
+    pub fn records(&self) -> &[crate::types::PropertygraphRecord] {
+        use std::ops::Deref;
+        self.records.deref()
     }
     /// <p>The total number of records in the response.</p>
-    pub fn total_records(&self) -> ::std::option::Option<i32> {
+    pub fn total_records(&self) -> i32 {
         self.total_records
     }
 }
@@ -90,6 +92,7 @@ impl GetPropertygraphStreamOutputBuilder {
         &self.last_event_id
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
+    /// This field is required.
     pub fn last_trx_timestamp_in_millis(mut self, input: i64) -> Self {
         self.last_trx_timestamp_in_millis = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl GetPropertygraphStreamOutputBuilder {
         &self.last_trx_timestamp_in_millis
     }
     /// <p>Serialization format for the change records being returned. Currently, the only supported value is <code>PG_JSON</code>.</p>
+    /// This field is required.
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +142,7 @@ impl GetPropertygraphStreamOutputBuilder {
         &self.records
     }
     /// <p>The total number of records in the response.</p>
+    /// This field is required.
     pub fn total_records(mut self, input: i32) -> Self {
         self.total_records = ::std::option::Option::Some(input);
         self
@@ -161,14 +166,50 @@ impl GetPropertygraphStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetPropertygraphStreamOutput`](crate::operation::get_propertygraph_stream::GetPropertygraphStreamOutput).
-    pub fn build(self) -> crate::operation::get_propertygraph_stream::GetPropertygraphStreamOutput {
-        crate::operation::get_propertygraph_stream::GetPropertygraphStreamOutput {
-            last_event_id: self.last_event_id,
-            last_trx_timestamp_in_millis: self.last_trx_timestamp_in_millis,
-            format: self.format,
-            records: self.records,
-            total_records: self.total_records,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`last_event_id`](crate::operation::get_propertygraph_stream::builders::GetPropertygraphStreamOutputBuilder::last_event_id)
+    /// - [`last_trx_timestamp_in_millis`](crate::operation::get_propertygraph_stream::builders::GetPropertygraphStreamOutputBuilder::last_trx_timestamp_in_millis)
+    /// - [`format`](crate::operation::get_propertygraph_stream::builders::GetPropertygraphStreamOutputBuilder::format)
+    /// - [`records`](crate::operation::get_propertygraph_stream::builders::GetPropertygraphStreamOutputBuilder::records)
+    /// - [`total_records`](crate::operation::get_propertygraph_stream::builders::GetPropertygraphStreamOutputBuilder::total_records)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_propertygraph_stream::GetPropertygraphStreamOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_propertygraph_stream::GetPropertygraphStreamOutput {
+            last_event_id: self.last_event_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_event_id",
+                    "last_event_id was not specified but it is required when building GetPropertygraphStreamOutput",
+                )
+            })?,
+            last_trx_timestamp_in_millis: self.last_trx_timestamp_in_millis.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_trx_timestamp_in_millis",
+                    "last_trx_timestamp_in_millis was not specified but it is required when building GetPropertygraphStreamOutput",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building GetPropertygraphStreamOutput",
+                )
+            })?,
+            records: self.records.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "records",
+                    "records was not specified but it is required when building GetPropertygraphStreamOutput",
+                )
+            })?,
+            total_records: self.total_records.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "total_records",
+                    "total_records was not specified but it is required when building GetPropertygraphStreamOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

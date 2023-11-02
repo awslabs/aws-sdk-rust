@@ -74,7 +74,7 @@ pub fn de_start_monitoring_members_http_response(
         output = crate::protocol_serde::shape_start_monitoring_members::de_start_monitoring_members(_response_body, output)
             .map_err(crate::operation::start_monitoring_members::StartMonitoringMembersError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_monitoring_members_output_correct_errors(output).build()
     })
 }
 

@@ -139,7 +139,7 @@ pub fn de_update_mesh_http_response(
         let mut output = crate::operation::update_mesh::builders::UpdateMeshOutputBuilder::default();
         output = output.set_mesh(crate::protocol_serde::shape_update_mesh_output::de_mesh_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_mesh_output_correct_errors(output).build()
     })
 }
 

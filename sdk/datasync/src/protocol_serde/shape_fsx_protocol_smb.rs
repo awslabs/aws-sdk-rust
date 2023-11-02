@@ -12,11 +12,11 @@ pub fn ser_fsx_protocol_smb(
         crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.password {
-        object.key("Password").string(var_4.as_str());
+    {
+        object.key("Password").string(input.password.as_str());
     }
-    if let Some(var_5) = &input.user {
-        object.key("User").string(var_5.as_str());
+    {
+        object.key("User").string(input.user.as_str());
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::fsx_protocol_smb_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

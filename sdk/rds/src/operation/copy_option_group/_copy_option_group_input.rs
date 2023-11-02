@@ -51,8 +51,10 @@ impl CopyOptionGroupInput {
         self.target_option_group_description.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CopyOptionGroupInput {
@@ -77,6 +79,7 @@ impl CopyOptionGroupInputBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_option_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +110,7 @@ impl CopyOptionGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
+    /// This field is required.
     pub fn target_option_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_option_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +141,7 @@ impl CopyOptionGroupInputBuilder {
         &self.target_option_group_identifier
     }
     /// <p>The description for the copied option group.</p>
+    /// This field is required.
     pub fn target_option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_option_group_description = ::std::option::Option::Some(input.into());
         self

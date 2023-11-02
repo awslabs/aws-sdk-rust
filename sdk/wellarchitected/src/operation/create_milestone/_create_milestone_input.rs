@@ -50,6 +50,7 @@ pub struct CreateMilestoneInputBuilder {
 }
 impl CreateMilestoneInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl CreateMilestoneInputBuilder {
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
+    /// This field is required.
     pub fn milestone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.milestone_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl CreateMilestoneInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

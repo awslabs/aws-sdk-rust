@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
-    pub compute_type: ::std::option::Option<crate::types::ComputeType>,
+    pub compute_type: crate::types::ComputeType,
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
-    pub volume_size_in_gb: ::std::option::Option<i32>,
+    pub volume_size_in_gb: i32,
 }
 impl ResourceConfiguration {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
-    pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {
-        self.compute_type.as_ref()
+    pub fn compute_type(&self) -> &crate::types::ComputeType {
+        &self.compute_type
     }
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
-    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
+    pub fn volume_size_in_gb(&self) -> i32 {
         self.volume_size_in_gb
     }
 }
@@ -35,6 +35,7 @@ pub struct ResourceConfigurationBuilder {
 }
 impl ResourceConfigurationBuilder {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
+    /// This field is required.
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ResourceConfigurationBuilder {
         &self.compute_type
     }
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
+    /// This field is required.
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ResourceConfigurationBuilder {
         &self.volume_size_in_gb
     }
     /// Consumes the builder and constructs a [`ResourceConfiguration`](crate::types::ResourceConfiguration).
-    pub fn build(self) -> crate::types::ResourceConfiguration {
-        crate::types::ResourceConfiguration {
-            compute_type: self.compute_type,
-            volume_size_in_gb: self.volume_size_in_gb,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`compute_type`](crate::types::builders::ResourceConfigurationBuilder::compute_type)
+    /// - [`volume_size_in_gb`](crate::types::builders::ResourceConfigurationBuilder::volume_size_in_gb)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceConfiguration {
+            compute_type: self.compute_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "compute_type",
+                    "compute_type was not specified but it is required when building ResourceConfiguration",
+                )
+            })?,
+            volume_size_in_gb: self.volume_size_in_gb.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "volume_size_in_gb",
+                    "volume_size_in_gb was not specified but it is required when building ResourceConfiguration",
+                )
+            })?,
+        })
     }
 }

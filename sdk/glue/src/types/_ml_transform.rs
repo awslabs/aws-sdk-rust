@@ -94,8 +94,10 @@ impl MlTransform {
         self.last_modified_on.as_ref()
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn input_record_tables(&self) -> ::std::option::Option<&[crate::types::GlueTable]> {
-        self.input_record_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_record_tables.is_none()`.
+    pub fn input_record_tables(&self) -> &[crate::types::GlueTable] {
+        self.input_record_tables.as_deref().unwrap_or_default()
     }
     /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::TransformParameters> {
@@ -110,8 +112,10 @@ impl MlTransform {
         self.label_count
     }
     /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
-    pub fn schema(&self) -> ::std::option::Option<&[crate::types::SchemaColumn]> {
-        self.schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
+    pub fn schema(&self) -> &[crate::types::SchemaColumn] {
+        self.schema.as_deref().unwrap_or_default()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
     /// <ul>

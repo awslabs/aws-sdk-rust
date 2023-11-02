@@ -55,6 +55,7 @@ pub struct CreateLifecyclePolicyInputBuilder {
 }
 impl CreateLifecyclePolicyInputBuilder {
     /// <p>The type of lifecycle policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreateLifecyclePolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the lifecycle policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl CreateLifecyclePolicyInputBuilder {
         &self.description
     }
     /// <p>The JSON policy document to use as the content for the lifecycle policy.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

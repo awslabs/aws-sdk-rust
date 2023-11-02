@@ -36,8 +36,10 @@ impl CreateThesaurusInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The path to the thesaurus file in S3.</p>
     pub fn source_s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {
@@ -69,6 +71,7 @@ pub struct CreateThesaurusInputBuilder {
 }
 impl CreateThesaurusInputBuilder {
     /// <p>The identifier of the index for the thesaurus.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateThesaurusInputBuilder {
         &self.index_id
     }
     /// <p>A name for the thesaurus.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl CreateThesaurusInputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the thesaurus file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +150,7 @@ impl CreateThesaurusInputBuilder {
         &self.tags
     }
     /// <p>The path to the thesaurus file in S3.</p>
+    /// This field is required.
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
         self.source_s3_path = ::std::option::Option::Some(input);
         self

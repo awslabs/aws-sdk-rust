@@ -64,6 +64,7 @@ pub struct ListSessionsInputBuilder {
 }
 impl ListSessionsInputBuilder {
     /// <p>The workgroup to which the session belongs.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self

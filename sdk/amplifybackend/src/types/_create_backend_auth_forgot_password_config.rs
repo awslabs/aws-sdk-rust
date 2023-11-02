@@ -51,6 +51,7 @@ pub struct CreateBackendAuthForgotPasswordConfigBuilder {
 }
 impl CreateBackendAuthForgotPasswordConfigBuilder {
     /// <p><b>(DEPRECATED)</b> Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
+    /// This field is required.
     pub fn delivery_method(mut self, input: crate::types::DeliveryMethod) -> Self {
         self.delivery_method = ::std::option::Option::Some(input);
         self

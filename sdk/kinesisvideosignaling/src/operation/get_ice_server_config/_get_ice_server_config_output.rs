@@ -9,8 +9,10 @@ pub struct GetIceServerConfigOutput {
 }
 impl GetIceServerConfigOutput {
     /// <p>The list of ICE server information objects.</p>
-    pub fn ice_server_list(&self) -> ::std::option::Option<&[crate::types::IceServer]> {
-        self.ice_server_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ice_server_list.is_none()`.
+    pub fn ice_server_list(&self) -> &[crate::types::IceServer] {
+        self.ice_server_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetIceServerConfigOutput {

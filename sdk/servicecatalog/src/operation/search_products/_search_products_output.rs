@@ -14,8 +14,10 @@ pub struct SearchProductsOutput {
 }
 impl SearchProductsOutput {
     /// <p>Information about the product views.</p>
-    pub fn product_view_summaries(&self) -> ::std::option::Option<&[crate::types::ProductViewSummary]> {
-        self.product_view_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_view_summaries.is_none()`.
+    pub fn product_view_summaries(&self) -> &[crate::types::ProductViewSummary] {
+        self.product_view_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The product view aggregations.</p>
     pub fn product_view_aggregations(

@@ -34,6 +34,7 @@ pub struct CreateSubscriberNotificationInputBuilder {
 }
 impl CreateSubscriberNotificationInputBuilder {
     /// <p>The subscriber ID for the notification subscription.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateSubscriberNotificationInputBuilder {
         &self.subscriber_id
     }
     /// <p>Specify the configuration using which you want to create the subscriber notification.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

@@ -3,11 +3,11 @@ pub fn ser_platform_device(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PlatformDevice,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }

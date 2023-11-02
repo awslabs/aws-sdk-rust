@@ -43,40 +43,54 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
         self.dpd_timeout_seconds
     }
     /// <p>The Internet Key Exchange (IKE) versions that are permitted for the VPN tunnel.</p>
-    pub fn ike_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ike_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ike_versions.is_none()`.
+    pub fn ike_versions(&self) -> &[::std::string::String] {
+        self.ike_versions.as_deref().unwrap_or_default()
     }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn outside_ip_address(&self) -> ::std::option::Option<&str> {
         self.outside_ip_address.as_deref()
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn phase1_dh_group_numbers(&self) -> ::std::option::Option<&[i32]> {
-        self.phase1_dh_group_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_dh_group_numbers.is_none()`.
+    pub fn phase1_dh_group_numbers(&self) -> &[i32] {
+        self.phase1_dh_group_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn phase1_encryption_algorithms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phase1_encryption_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_encryption_algorithms.is_none()`.
+    pub fn phase1_encryption_algorithms(&self) -> &[::std::string::String] {
+        self.phase1_encryption_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn phase1_integrity_algorithms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phase1_integrity_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_integrity_algorithms.is_none()`.
+    pub fn phase1_integrity_algorithms(&self) -> &[::std::string::String] {
+        self.phase1_integrity_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
     pub fn phase1_lifetime_seconds(&self) -> ::std::option::Option<i32> {
         self.phase1_lifetime_seconds
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn phase2_dh_group_numbers(&self) -> ::std::option::Option<&[i32]> {
-        self.phase2_dh_group_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_dh_group_numbers.is_none()`.
+    pub fn phase2_dh_group_numbers(&self) -> &[i32] {
+        self.phase2_dh_group_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn phase2_encryption_algorithms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phase2_encryption_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_encryption_algorithms.is_none()`.
+    pub fn phase2_encryption_algorithms(&self) -> &[::std::string::String] {
+        self.phase2_encryption_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn phase2_integrity_algorithms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phase2_integrity_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_integrity_algorithms.is_none()`.
+    pub fn phase2_integrity_algorithms(&self) -> &[::std::string::String] {
+        self.phase2_integrity_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
     pub fn phase2_lifetime_seconds(&self) -> ::std::option::Option<i32> {

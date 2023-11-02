@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
     /// <p>The device whose position you want to retrieve.</p>
-    pub device_id: ::std::option::Option<::std::string::String>,
+    pub device_id: ::std::string::String,
 }
 impl GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
     /// <p>The device whose position you want to retrieve.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
-        self.device_id.as_deref()
+    pub fn device_id(&self) -> &str {
+        use std::ops::Deref;
+        self.device_id.deref()
     }
 }
 impl GetDevicePositionInput {
@@ -34,6 +36,7 @@ pub struct GetDevicePositionInputBuilder {
 }
 impl GetDevicePositionInputBuilder {
     /// <p>The tracker resource receiving the position update.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetDevicePositionInputBuilder {
         &self.tracker_name
     }
     /// <p>The device whose position you want to retrieve.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl GetDevicePositionInputBuilder {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::get_device_position::builders::GetDevicePositionInputBuilder::tracker_name)
+    /// - [`device_id`](crate::operation::get_device_position::builders::GetDevicePositionInputBuilder::device_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_device_position::GetDevicePositionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_device_position::GetDevicePositionInput {
-            tracker_name: self.tracker_name,
-            device_id: self.device_id,
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building GetDevicePositionInput",
+                )
+            })?,
+            device_id: self.device_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_id",
+                    "device_id was not specified but it is required when building GetDevicePositionInput",
+                )
+            })?,
         })
     }
 }

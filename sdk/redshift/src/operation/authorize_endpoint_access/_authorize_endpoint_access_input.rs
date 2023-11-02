@@ -20,8 +20,10 @@ impl AuthorizeEndpointAccessInput {
         self.account.as_deref()
     }
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    pub fn vpc_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
+    pub fn vpc_ids(&self) -> &[::std::string::String] {
+        self.vpc_ids.as_deref().unwrap_or_default()
     }
 }
 impl AuthorizeEndpointAccessInput {
@@ -55,6 +57,7 @@ impl AuthorizeEndpointAccessInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
+    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self

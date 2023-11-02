@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub table_catalog_id: ::std::option::Option<::std::string::String>,
+    pub table_catalog_id: ::std::string::String,
     /// <p>A database in the Glue Data Catalog.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>A table in the database.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>The name given by the user to the data filter cell.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A PartiQL predicate.</p>
     pub row_filter: ::std::option::Option<crate::types::RowFilter>,
     /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
@@ -24,28 +24,34 @@ pub struct DataCellsFilter {
 }
 impl DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(&self) -> ::std::option::Option<&str> {
-        self.table_catalog_id.as_deref()
+    pub fn table_catalog_id(&self) -> &str {
+        use std::ops::Deref;
+        self.table_catalog_id.deref()
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>A table in the database.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>The name given by the user to the data filter cell.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A PartiQL predicate.</p>
     pub fn row_filter(&self) -> ::std::option::Option<&crate::types::RowFilter> {
         self.row_filter.as_ref()
     }
     /// <p>A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.</p>
-    pub fn column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_names.is_none()`.
+    pub fn column_names(&self) -> &[::std::string::String] {
+        self.column_names.as_deref().unwrap_or_default()
     }
     /// <p>A wildcard with exclusions.</p>
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
@@ -79,6 +85,7 @@ pub struct DataCellsFilterBuilder {
 }
 impl DataCellsFilterBuilder {
     /// <p>The ID of the catalog to which the table belongs.</p>
+    /// This field is required.
     pub fn table_catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_catalog_id = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +100,7 @@ impl DataCellsFilterBuilder {
         &self.table_catalog_id
     }
     /// <p>A database in the Glue Data Catalog.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +115,7 @@ impl DataCellsFilterBuilder {
         &self.database_name
     }
     /// <p>A table in the database.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +130,7 @@ impl DataCellsFilterBuilder {
         &self.table_name
     }
     /// <p>The name given by the user to the data filter cell.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -200,16 +210,41 @@ impl DataCellsFilterBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`DataCellsFilter`](crate::types::DataCellsFilter).
-    pub fn build(self) -> crate::types::DataCellsFilter {
-        crate::types::DataCellsFilter {
-            table_catalog_id: self.table_catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_catalog_id`](crate::types::builders::DataCellsFilterBuilder::table_catalog_id)
+    /// - [`database_name`](crate::types::builders::DataCellsFilterBuilder::database_name)
+    /// - [`table_name`](crate::types::builders::DataCellsFilterBuilder::table_name)
+    /// - [`name`](crate::types::builders::DataCellsFilterBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataCellsFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataCellsFilter {
+            table_catalog_id: self.table_catalog_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_catalog_id",
+                    "table_catalog_id was not specified but it is required when building DataCellsFilter",
+                )
+            })?,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building DataCellsFilter",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building DataCellsFilter",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DataCellsFilter",
+                )
+            })?,
             row_filter: self.row_filter,
             column_names: self.column_names,
             column_wildcard: self.column_wildcard,
             version_id: self.version_id,
-        }
+        })
     }
 }

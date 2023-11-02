@@ -3,28 +3,28 @@ pub fn ser_list_environment_account_connections_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.requested_by {
-        object.key("requestedBy").string(var_1.as_str());
+    {
+        object.key("requestedBy").string(input.requested_by.as_str());
     }
-    if let Some(var_2) = &input.environment_name {
-        object.key("environmentName").string(var_2.as_str());
+    if let Some(var_1) = &input.environment_name {
+        object.key("environmentName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.statuses {
-        let mut array_4 = object.key("statuses").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.statuses {
+        let mut array_3 = object.key("statuses").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("nextToken").string(var_6.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.max_results {
+    if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

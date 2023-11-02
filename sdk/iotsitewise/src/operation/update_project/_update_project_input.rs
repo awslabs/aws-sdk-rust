@@ -48,6 +48,7 @@ pub struct UpdateProjectInputBuilder {
 }
 impl UpdateProjectInputBuilder {
     /// <p>The ID of the project to update.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateProjectInputBuilder {
         &self.project_id
     }
     /// <p>A new friendly name for the project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self

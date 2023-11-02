@@ -15,8 +15,10 @@ impl EnableFastSnapshotRestoreErrorItem {
         self.snapshot_id.as_deref()
     }
     /// <p>The errors.</p>
-    pub fn fast_snapshot_restore_state_errors(&self) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreStateErrorItem]> {
-        self.fast_snapshot_restore_state_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fast_snapshot_restore_state_errors.is_none()`.
+    pub fn fast_snapshot_restore_state_errors(&self) -> &[crate::types::EnableFastSnapshotRestoreStateErrorItem] {
+        self.fast_snapshot_restore_state_errors.as_deref().unwrap_or_default()
     }
 }
 impl EnableFastSnapshotRestoreErrorItem {

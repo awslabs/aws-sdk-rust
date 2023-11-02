@@ -55,8 +55,10 @@ impl Trigger {
         self.schedule.as_deref()
     }
     /// <p>The actions initiated by this trigger.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub fn predicate(&self) -> ::std::option::Option<&crate::types::Predicate> {

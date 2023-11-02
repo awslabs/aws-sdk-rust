@@ -34,6 +34,7 @@ pub struct DeleteDomainAssociationOutputBuilder {
 }
 impl DeleteDomainAssociationOutputBuilder {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
+    /// This field is required.
     pub fn domain_association(mut self, input: crate::types::DomainAssociation) -> Self {
         self.domain_association = ::std::option::Option::Some(input);
         self

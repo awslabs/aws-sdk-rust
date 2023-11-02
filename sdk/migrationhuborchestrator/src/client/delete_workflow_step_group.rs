@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkflowStepGroup`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_id(impl Into<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::set_workflow_id): <p>The ID of the migration workflow.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::set_id): <p>The ID of the step group you want to delete.</p>
+    ///   - [`workflow_id(impl Into<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::workflow_id) / [`set_workflow_id(impl Into<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::set_workflow_id):<br>required: **true**<br><p>The ID of the migration workflow.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the step group you want to delete.</p><br>
     /// - On success, responds with [`DeleteWorkflowStepGroupOutput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkflowStepGroupError>`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError)
     pub fn delete_workflow_step_group(&self) -> crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupFluentBuilder {

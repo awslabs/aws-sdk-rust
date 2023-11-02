@@ -14,12 +14,16 @@ pub struct DescribePhoneNumbersInput {
 }
 impl DescribePhoneNumbersInput {
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phone_number_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_ids.is_none()`.
+    pub fn phone_number_ids(&self) -> &[::std::string::String] {
+        self.phone_number_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PhoneNumberFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PhoneNumberFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

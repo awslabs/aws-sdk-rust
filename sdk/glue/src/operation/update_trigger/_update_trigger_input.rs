@@ -34,6 +34,7 @@ pub struct UpdateTriggerInputBuilder {
 }
 impl UpdateTriggerInputBuilder {
     /// <p>The name of the trigger to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateTriggerInputBuilder {
         &self.name
     }
     /// <p>The new values with which to update the trigger.</p>
+    /// This field is required.
     pub fn trigger_update(mut self, input: crate::types::TriggerUpdate) -> Self {
         self.trigger_update = ::std::option::Option::Some(input);
         self

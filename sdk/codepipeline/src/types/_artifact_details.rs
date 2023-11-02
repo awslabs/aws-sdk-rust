@@ -35,6 +35,7 @@ pub struct ArtifactDetailsBuilder {
 }
 impl ArtifactDetailsBuilder {
     /// <p>The minimum number of artifacts allowed for the action type.</p>
+    /// This field is required.
     pub fn minimum_count(mut self, input: i32) -> Self {
         self.minimum_count = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ArtifactDetailsBuilder {
         &self.minimum_count
     }
     /// <p>The maximum number of artifacts allowed for the action type.</p>
+    /// This field is required.
     pub fn maximum_count(mut self, input: i32) -> Self {
         self.maximum_count = ::std::option::Option::Some(input);
         self

@@ -3,14 +3,14 @@ pub fn ser_data_bars_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataBarsOptions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.positive_color {
-        object.key("PositiveColor").string(var_2.as_str());
+    if let Some(var_1) = &input.positive_color {
+        object.key("PositiveColor").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.negative_color {
-        object.key("NegativeColor").string(var_3.as_str());
+    if let Some(var_2) = &input.negative_color {
+        object.key("NegativeColor").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_bars_options_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

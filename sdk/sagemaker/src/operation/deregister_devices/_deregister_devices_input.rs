@@ -14,8 +14,10 @@ impl DeregisterDevicesInput {
         self.device_fleet_name.as_deref()
     }
     /// <p>The unique IDs of the devices.</p>
-    pub fn device_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_names.is_none()`.
+    pub fn device_names(&self) -> &[::std::string::String] {
+        self.device_names.as_deref().unwrap_or_default()
     }
 }
 impl DeregisterDevicesInput {
@@ -34,6 +36,7 @@ pub struct DeregisterDevicesInputBuilder {
 }
 impl DeregisterDevicesInputBuilder {
     /// <p>The name of the fleet the devices belong to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

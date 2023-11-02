@@ -3,8 +3,8 @@ pub fn ser_disconnect_recovery_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_1.as_str());
+    {
+        object.key("recoveryInstanceID").string(input.recovery_instance_id.as_str());
     }
     Ok(())
 }

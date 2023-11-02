@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::apps_list_data_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -78,52 +80,52 @@ pub fn ser_apps_list_data(
     if let Some(var_1) = &input.list_id {
         object.key("ListId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.list_name {
-        object.key("ListName").string(var_2.as_str());
+    {
+        object.key("ListName").string(input.list_name.as_str());
     }
-    if let Some(var_3) = &input.list_update_token {
-        object.key("ListUpdateToken").string(var_3.as_str());
+    if let Some(var_2) = &input.list_update_token {
+        object.key("ListUpdateToken").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.create_time {
+    if let Some(var_3) = &input.create_time {
         object
             .key("CreateTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.last_update_time {
+    if let Some(var_4) = &input.last_update_time {
         object
             .key("LastUpdateTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.apps_list {
-        let mut array_7 = object.key("AppsList").start_array();
-        for item_8 in var_6 {
+    {
+        let mut array_5 = object.key("AppsList").start_array();
+        for item_6 in &input.apps_list {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_app::ser_app(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_app::ser_app(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_10) = &input.previous_apps_list {
+    if let Some(var_8) = &input.previous_apps_list {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("PreviousAppsList").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_9 = object.key("PreviousAppsList").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                let mut array_14 = object_11.key(key_12.as_str()).start_array();
-                for item_15 in value_13 {
+                let mut array_12 = object_9.key(key_10.as_str()).start_array();
+                for item_13 in value_11 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_16 = array_14.value().start_object();
-                        crate::protocol_serde::shape_app::ser_app(&mut object_16, item_15)?;
-                        object_16.finish();
+                        let mut object_14 = array_12.value().start_object();
+                        crate::protocol_serde::shape_app::ser_app(&mut object_14, item_13)?;
+                        object_14.finish();
                     }
                 }
-                array_14.finish();
+                array_12.finish();
             }
         }
-        object_11.finish();
+        object_9.finish();
     }
     Ok(())
 }

@@ -3,11 +3,11 @@ pub fn ser_api_key_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApiKeyCredentials,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.api_key {
-        object.key("apiKey").string(var_1.as_str());
+    {
+        object.key("apiKey").string(input.api_key.as_str());
     }
-    if let Some(var_2) = &input.api_secret_key {
-        object.key("apiSecretKey").string(var_2.as_str());
+    if let Some(var_1) = &input.api_secret_key {
+        object.key("apiSecretKey").string(var_1.as_str());
     }
     Ok(())
 }

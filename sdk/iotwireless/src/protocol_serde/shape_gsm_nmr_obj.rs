@@ -3,29 +3,29 @@ pub fn ser_gsm_nmr_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GsmNmrObj,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bsic {
+    {
         object.key("Bsic").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.bsic).into()),
+        );
+    }
+    {
+        object.key("Bcch").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.bcch).into()),
+        );
+    }
+    if let Some(var_1) = &input.rx_level {
+        object.key("RxLevel").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.bcch {
-        object.key("Bcch").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.rx_level {
-        object.key("RxLevel").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.global_identity {
+    if let Some(var_2) = &input.global_identity {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("GlobalIdentity").start_object();
-        crate::protocol_serde::shape_global_identity::ser_global_identity(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("GlobalIdentity").start_object();
+        crate::protocol_serde::shape_global_identity::ser_global_identity(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

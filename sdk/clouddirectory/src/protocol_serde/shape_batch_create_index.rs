@@ -3,32 +3,32 @@ pub fn ser_batch_create_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchCreateIndex,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ordered_indexed_attribute_list {
-        let mut array_2 = object.key("OrderedIndexedAttributeList").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("OrderedIndexedAttributeList").start_array();
+        for item_2 in &input.ordered_indexed_attribute_list {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_attribute_key::ser_attribute_key(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_attribute_key::ser_attribute_key(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     {
         object.key("IsUnique").boolean(input.is_unique);
     }
-    if let Some(var_5) = &input.parent_reference {
+    if let Some(var_4) = &input.parent_reference {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ParentReference").start_object();
-        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("ParentReference").start_object();
+        crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.link_name {
-        object.key("LinkName").string(var_7.as_str());
+    if let Some(var_6) = &input.link_name {
+        object.key("LinkName").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.batch_reference_name {
-        object.key("BatchReferenceName").string(var_8.as_str());
+    if let Some(var_7) = &input.batch_reference_name {
+        object.key("BatchReferenceName").string(var_7.as_str());
     }
     Ok(())
 }

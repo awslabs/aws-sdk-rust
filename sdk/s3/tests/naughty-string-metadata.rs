@@ -5,7 +5,7 @@
 
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::{config::Credentials, config::Region, primitives::ByteStream, Client};
-use aws_smithy_client::test_connection::capture_request;
+use aws_smithy_runtime::client::http::test_util::capture_request;
 use aws_types::SdkConfig;
 use http::HeaderValue;
 use std::time::{Duration, UNIX_EPOCH};
@@ -48,11 +48,13 @@ const NAUGHTY_STRINGS: &str = include_str!("blns/blns.txt");
 
 #[tokio::test]
 async fn test_s3_signer_with_naughty_string_metadata() {
-    let (conn, rcvr) = capture_request(None);
+    let (http_client, rcvr) = capture_request(None);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(
+            Credentials::for_tests_with_session_token(),
+        ))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .build();
     let config = aws_sdk_s3::config::Builder::from(&sdk_config)
         .force_path_style(true)

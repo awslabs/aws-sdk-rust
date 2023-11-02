@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterApplicationInput {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
 }
 impl DeregisterApplicationInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
 }
 impl DeregisterApplicationInput {
@@ -27,6 +28,7 @@ pub struct DeregisterApplicationInputBuilder {
 }
 impl DeregisterApplicationInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,19 @@ impl DeregisterApplicationInputBuilder {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`DeregisterApplicationInput`](crate::operation::deregister_application::DeregisterApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::deregister_application::builders::DeregisterApplicationInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::deregister_application::DeregisterApplicationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_application::DeregisterApplicationInput {
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building DeregisterApplicationInput",
+                )
+            })?,
         })
     }
 }

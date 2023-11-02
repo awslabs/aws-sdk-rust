@@ -13,8 +13,10 @@ pub struct ListOperationsOutput {
 }
 impl ListOperationsOutput {
     /// <p>Summary information about the operations that match the specified criteria.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::OperationSummary]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::OperationSummary] {
+        self.operations.as_deref().unwrap_or_default()
     }
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
     /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>

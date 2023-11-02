@@ -35,6 +35,7 @@ pub struct InferenceOutputConfigurationBuilder {
 }
 impl InferenceOutputConfigurationBuilder {
     /// <p> Specifies configuration information for the output results from for the inference, output S3 location. </p>
+    /// This field is required.
     pub fn s3_output_configuration(mut self, input: crate::types::InferenceS3OutputConfiguration) -> Self {
         self.s3_output_configuration = ::std::option::Option::Some(input);
         self

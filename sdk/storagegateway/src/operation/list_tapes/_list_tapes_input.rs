@@ -18,8 +18,10 @@ pub struct ListTapesInput {
 }
 impl ListTapesInput {
     /// <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
-    pub fn tape_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tape_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_ar_ns.is_none()`.
+    pub fn tape_ar_ns(&self) -> &[::std::string::String] {
+        self.tape_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates the position at which to begin the returned list of tapes.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

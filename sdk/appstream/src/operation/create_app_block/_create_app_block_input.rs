@@ -76,6 +76,7 @@ pub struct CreateAppBlockInputBuilder {
 }
 impl CreateAppBlockInputBuilder {
     /// <p>The name of the app block.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CreateAppBlockInputBuilder {
         &self.display_name
     }
     /// <p>The source S3 location of the app block.</p>
+    /// This field is required.
     pub fn source_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.source_s3_location = ::std::option::Option::Some(input);
         self

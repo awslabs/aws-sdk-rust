@@ -11,8 +11,10 @@ pub struct ListLfTagsOutput {
 }
 impl ListLfTagsOutput {
     /// <p>A list of LF-tags that the requested has permission to view.</p>
-    pub fn lf_tags(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
-        self.lf_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags.is_none()`.
+    pub fn lf_tags(&self) -> &[crate::types::LfTagPair] {
+        self.lf_tags.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

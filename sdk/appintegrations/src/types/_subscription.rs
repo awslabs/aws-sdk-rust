@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The name of the subscription.</p>
-    pub event: ::std::option::Option<::std::string::String>,
+    pub event: ::std::string::String,
     /// <p>The description of the subscription.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl Subscription {
     /// <p>The name of the subscription.</p>
-    pub fn event(&self) -> ::std::option::Option<&str> {
-        self.event.as_deref()
+    pub fn event(&self) -> &str {
+        use std::ops::Deref;
+        self.event.deref()
     }
     /// <p>The description of the subscription.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct SubscriptionBuilder {
 }
 impl SubscriptionBuilder {
     /// <p>The name of the subscription.</p>
+    /// This field is required.
     pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl SubscriptionBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
-    pub fn build(self) -> crate::types::Subscription {
-        crate::types::Subscription {
-            event: self.event,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event`](crate::types::builders::SubscriptionBuilder::event)
+    pub fn build(self) -> ::std::result::Result<crate::types::Subscription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Subscription {
+            event: self.event.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event",
+                    "event was not specified but it is required when building Subscription",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

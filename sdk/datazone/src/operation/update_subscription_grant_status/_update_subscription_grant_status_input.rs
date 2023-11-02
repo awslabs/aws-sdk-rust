@@ -62,6 +62,7 @@ pub struct UpdateSubscriptionGrantStatusInputBuilder {
 }
 impl UpdateSubscriptionGrantStatusInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the subscription grant the status of which is to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
         &self.identifier
     }
     /// <p>The identifier of the asset the subscription grant status of which is to be updated.</p>
+    /// This field is required.
     pub fn asset_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
         &self.asset_identifier
     }
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::SubscriptionGrantStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

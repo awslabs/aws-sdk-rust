@@ -3,20 +3,20 @@ pub fn ser_update_service_pipeline_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_pipeline::UpdateServicePipelineInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.service_name {
-        object.key("serviceName").string(var_1.as_str());
+    {
+        object.key("serviceName").string(input.service_name.as_str());
     }
-    if let Some(var_2) = &input.spec {
-        object.key("spec").string(var_2.as_str());
+    {
+        object.key("spec").string(input.spec.as_str());
     }
-    if let Some(var_3) = &input.deployment_type {
-        object.key("deploymentType").string(var_3.as_str());
+    {
+        object.key("deploymentType").string(input.deployment_type.as_str());
     }
-    if let Some(var_4) = &input.template_major_version {
-        object.key("templateMajorVersion").string(var_4.as_str());
+    if let Some(var_1) = &input.template_major_version {
+        object.key("templateMajorVersion").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.template_minor_version {
-        object.key("templateMinorVersion").string(var_5.as_str());
+    if let Some(var_2) = &input.template_minor_version {
+        object.key("templateMinorVersion").string(var_2.as_str());
     }
     Ok(())
 }

@@ -35,6 +35,7 @@ pub struct ParameterBuilder {
 }
 impl ParameterBuilder {
     /// <p>The name of the parameter to assign a value to. This parameter name must match a named parameter in the pipeline definition.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ParameterBuilder {
         &self.name
     }
     /// <p>The literal value for the parameter.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

@@ -10,9 +10,9 @@ pub struct FrequencyBandwidth {
     /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
-    pub value: ::std::option::Option<f64>,
+    pub value: f64,
     /// <p>Frequency bandwidth units.</p>
-    pub units: ::std::option::Option<crate::types::BandwidthUnits>,
+    pub units: crate::types::BandwidthUnits,
 }
 impl FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
@@ -21,12 +21,12 @@ impl FrequencyBandwidth {
     /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<f64> {
+    pub fn value(&self) -> f64 {
         self.value
     }
     /// <p>Frequency bandwidth units.</p>
-    pub fn units(&self) -> ::std::option::Option<&crate::types::BandwidthUnits> {
-        self.units.as_ref()
+    pub fn units(&self) -> &crate::types::BandwidthUnits {
+        &self.units
     }
 }
 impl FrequencyBandwidth {
@@ -50,6 +50,7 @@ impl FrequencyBandwidthBuilder {
     /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -74,6 +75,7 @@ impl FrequencyBandwidthBuilder {
         &self.value
     }
     /// <p>Frequency bandwidth units.</p>
+    /// This field is required.
     pub fn units(mut self, input: crate::types::BandwidthUnits) -> Self {
         self.units = ::std::option::Option::Some(input);
         self
@@ -88,10 +90,23 @@ impl FrequencyBandwidthBuilder {
         &self.units
     }
     /// Consumes the builder and constructs a [`FrequencyBandwidth`](crate::types::FrequencyBandwidth).
-    pub fn build(self) -> crate::types::FrequencyBandwidth {
-        crate::types::FrequencyBandwidth {
-            value: self.value,
-            units: self.units,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::FrequencyBandwidthBuilder::value)
+    /// - [`units`](crate::types::builders::FrequencyBandwidthBuilder::units)
+    pub fn build(self) -> ::std::result::Result<crate::types::FrequencyBandwidth, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FrequencyBandwidth {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building FrequencyBandwidth",
+                )
+            })?,
+            units: self.units.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "units",
+                    "units was not specified but it is required when building FrequencyBandwidth",
+                )
+            })?,
+        })
     }
 }

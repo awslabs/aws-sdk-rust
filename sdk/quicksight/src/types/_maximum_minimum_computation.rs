@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaximumMinimumComputation {
     /// <p>The ID for a computation.</p>
-    pub computation_id: ::std::option::Option<::std::string::String>,
+    pub computation_id: ::std::string::String,
     /// <p>The name of a computation.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
@@ -17,12 +17,13 @@ pub struct MaximumMinimumComputation {
     /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
     /// <li> <p>MINIMUM: A minimum computation.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::MaximumMinimumComputationType>,
+    pub r#type: crate::types::MaximumMinimumComputationType,
 }
 impl MaximumMinimumComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> ::std::option::Option<&str> {
-        self.computation_id.as_deref()
+    pub fn computation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.computation_id.deref()
     }
     /// <p>The name of a computation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,8 +42,8 @@ impl MaximumMinimumComputation {
     /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
     /// <li> <p>MINIMUM: A minimum computation.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MaximumMinimumComputationType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::MaximumMinimumComputationType {
+        &self.r#type
     }
 }
 impl MaximumMinimumComputation {
@@ -64,6 +65,7 @@ pub struct MaximumMinimumComputationBuilder {
 }
 impl MaximumMinimumComputationBuilder {
     /// <p>The ID for a computation.</p>
+    /// This field is required.
     pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +126,7 @@ impl MaximumMinimumComputationBuilder {
     /// <li> <p>MAXIMUM: A maximum computation.</p> </li>
     /// <li> <p>MINIMUM: A minimum computation.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::MaximumMinimumComputationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -146,13 +149,26 @@ impl MaximumMinimumComputationBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`MaximumMinimumComputation`](crate::types::MaximumMinimumComputation).
-    pub fn build(self) -> crate::types::MaximumMinimumComputation {
-        crate::types::MaximumMinimumComputation {
-            computation_id: self.computation_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`computation_id`](crate::types::builders::MaximumMinimumComputationBuilder::computation_id)
+    /// - [`r#type`](crate::types::builders::MaximumMinimumComputationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::MaximumMinimumComputation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MaximumMinimumComputation {
+            computation_id: self.computation_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "computation_id",
+                    "computation_id was not specified but it is required when building MaximumMinimumComputation",
+                )
+            })?,
             name: self.name,
             time: self.time,
             value: self.value,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building MaximumMinimumComputation",
+                )
+            })?,
+        })
     }
 }

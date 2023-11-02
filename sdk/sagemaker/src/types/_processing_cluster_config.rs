@@ -63,6 +63,7 @@ pub struct ProcessingClusterConfigBuilder {
 }
 impl ProcessingClusterConfigBuilder {
     /// <p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl ProcessingClusterConfigBuilder {
         &self.instance_count
     }
     /// <p>The ML compute instance type for the processing job.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::ProcessingInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -94,6 +96,7 @@ impl ProcessingClusterConfigBuilder {
     /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
     /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
+    /// This field is required.
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
         self

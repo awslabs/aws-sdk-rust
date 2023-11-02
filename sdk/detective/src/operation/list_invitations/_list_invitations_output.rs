@@ -11,8 +11,10 @@ pub struct ListInvitationsOutput {
 }
 impl ListInvitationsOutput {
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
-    pub fn invitations(&self) -> ::std::option::Option<&[crate::types::MemberDetail]> {
-        self.invitations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invitations.is_none()`.
+    pub fn invitations(&self) -> &[crate::types::MemberDetail] {
+        self.invitations.as_deref().unwrap_or_default()
     }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

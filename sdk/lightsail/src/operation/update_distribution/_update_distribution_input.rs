@@ -42,8 +42,10 @@ impl UpdateDistributionInput {
         self.cache_behavior_settings.as_ref()
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn cache_behaviors(&self) -> ::std::option::Option<&[crate::types::CacheBehaviorPerPath]> {
-        self.cache_behaviors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_behaviors.is_none()`.
+    pub fn cache_behaviors(&self) -> &[crate::types::CacheBehaviorPerPath] {
+        self.cache_behaviors.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to enable the distribution.</p>
     pub fn is_enabled(&self) -> ::std::option::Option<bool> {
@@ -71,6 +73,7 @@ pub struct UpdateDistributionInputBuilder {
 impl UpdateDistributionInputBuilder {
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    /// This field is required.
     pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self

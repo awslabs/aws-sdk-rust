@@ -46,8 +46,10 @@ impl PutSlotTypeInput {
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
-    pub fn enumeration_values(&self) -> ::std::option::Option<&[crate::types::EnumerationValue]> {
-        self.enumeration_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enumeration_values.is_none()`.
+    pub fn enumeration_values(&self) -> &[crate::types::EnumerationValue] {
+        self.enumeration_values.as_deref().unwrap_or_default()
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
@@ -74,8 +76,10 @@ impl PutSlotTypeInput {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn slot_type_configurations(&self) -> ::std::option::Option<&[crate::types::SlotTypeConfiguration]> {
-        self.slot_type_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_type_configurations.is_none()`.
+    pub fn slot_type_configurations(&self) -> &[crate::types::SlotTypeConfiguration] {
+        self.slot_type_configurations.as_deref().unwrap_or_default()
     }
 }
 impl PutSlotTypeInput {
@@ -102,6 +106,7 @@ impl PutSlotTypeInputBuilder {
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

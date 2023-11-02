@@ -11,12 +11,16 @@ pub struct ListAllowedNodeTypeUpdatesOutput {
 }
 impl ListAllowedNodeTypeUpdatesOutput {
     /// <p>A list node types which you can use to scale up your cluster.</p>
-    pub fn scale_up_node_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scale_up_node_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scale_up_node_types.is_none()`.
+    pub fn scale_up_node_types(&self) -> &[::std::string::String] {
+        self.scale_up_node_types.as_deref().unwrap_or_default()
     }
     /// <p>A list node types which you can use to scale down your cluster.</p>
-    pub fn scale_down_node_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scale_down_node_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scale_down_node_types.is_none()`.
+    pub fn scale_down_node_types(&self) -> &[::std::string::String] {
+        self.scale_down_node_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAllowedNodeTypeUpdatesOutput {

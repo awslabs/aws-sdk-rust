@@ -37,22 +37,28 @@ impl CreateEventSubscriptionInput {
         self.source_type.as_deref()
     }
     /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p>A list of identifiers for which DMS provides notification events.</p>
     /// <p>If you don't specify a value, notifications are provided for all sources.</p>
     /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
-    pub fn source_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids.is_none()`.
+    pub fn source_ids(&self) -> &[::std::string::String] {
+        self.source_ids.as_deref().unwrap_or_default()
     }
     /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>One or more tags to be assigned to the event subscription.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateEventSubscriptionInput {
@@ -76,6 +82,7 @@ pub struct CreateEventSubscriptionInputBuilder {
 }
 impl CreateEventSubscriptionInputBuilder {
     /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl CreateEventSubscriptionInputBuilder {
         &self.subscription_name
     }
     /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self

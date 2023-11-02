@@ -21,8 +21,10 @@ impl CreateWhatIfForecastExportInput {
         self.what_if_forecast_export_name.as_deref()
     }
     /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
-    pub fn what_if_forecast_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.what_if_forecast_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.what_if_forecast_arns.is_none()`.
+    pub fn what_if_forecast_arns(&self) -> &[::std::string::String] {
+        self.what_if_forecast_arns.as_deref().unwrap_or_default()
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
@@ -30,8 +32,10 @@ impl CreateWhatIfForecastExportInput {
         self.destination.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn format(&self) -> ::std::option::Option<&str> {
@@ -57,6 +61,7 @@ pub struct CreateWhatIfForecastExportInputBuilder {
 }
 impl CreateWhatIfForecastExportInputBuilder {
     /// <p>The name of the what-if forecast to export.</p>
+    /// This field is required.
     pub fn what_if_forecast_export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_export_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +97,7 @@ impl CreateWhatIfForecastExportInputBuilder {
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

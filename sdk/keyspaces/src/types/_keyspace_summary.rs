@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
-    pub keyspace_name: ::std::option::Option<::std::string::String>,
+    pub keyspace_name: ::std::string::String,
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-    pub replication_strategy: ::std::option::Option<crate::types::Rs>,
+    pub replication_strategy: crate::types::Rs,
     /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
     pub replication_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
-        self.keyspace_name.as_deref()
+    pub fn keyspace_name(&self) -> &str {
+        use std::ops::Deref;
+        self.keyspace_name.deref()
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
-    pub fn replication_strategy(&self) -> ::std::option::Option<&crate::types::Rs> {
-        self.replication_strategy.as_ref()
+    pub fn replication_strategy(&self) -> &crate::types::Rs {
+        &self.replication_strategy
     }
     /// <p> If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>, a list of replication Regions is returned. </p>
-    pub fn replication_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_regions.is_none()`.
+    pub fn replication_regions(&self) -> &[::std::string::String] {
+        self.replication_regions.as_deref().unwrap_or_default()
     }
 }
 impl KeyspaceSummary {
@@ -49,6 +53,7 @@ pub struct KeyspaceSummaryBuilder {
 }
 impl KeyspaceSummaryBuilder {
     /// <p>The name of the keyspace.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl KeyspaceSummaryBuilder {
         &self.keyspace_name
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl KeyspaceSummaryBuilder {
         &self.resource_arn
     }
     /// <p> This property specifies if a keyspace is a single Region keyspace or a multi-Region keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>. </p>
+    /// This field is required.
     pub fn replication_strategy(mut self, input: crate::types::Rs) -> Self {
         self.replication_strategy = ::std::option::Option::Some(input);
         self
@@ -111,12 +118,31 @@ impl KeyspaceSummaryBuilder {
         &self.replication_regions
     }
     /// Consumes the builder and constructs a [`KeyspaceSummary`](crate::types::KeyspaceSummary).
-    pub fn build(self) -> crate::types::KeyspaceSummary {
-        crate::types::KeyspaceSummary {
-            keyspace_name: self.keyspace_name,
-            resource_arn: self.resource_arn,
-            replication_strategy: self.replication_strategy,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyspace_name`](crate::types::builders::KeyspaceSummaryBuilder::keyspace_name)
+    /// - [`resource_arn`](crate::types::builders::KeyspaceSummaryBuilder::resource_arn)
+    /// - [`replication_strategy`](crate::types::builders::KeyspaceSummaryBuilder::replication_strategy)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyspaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeyspaceSummary {
+            keyspace_name: self.keyspace_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyspace_name",
+                    "keyspace_name was not specified but it is required when building KeyspaceSummary",
+                )
+            })?,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building KeyspaceSummary",
+                )
+            })?,
+            replication_strategy: self.replication_strategy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "replication_strategy",
+                    "replication_strategy was not specified but it is required when building KeyspaceSummary",
+                )
+            })?,
             replication_regions: self.replication_regions,
-        }
+        })
     }
 }

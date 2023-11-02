@@ -7,7 +7,7 @@ pub struct Consent {
     /// <p> Maximum amount the customer agreed to accept. </p>
     pub max_price: f64,
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    pub currency: ::std::option::Option<::std::string::String>,
+    pub currency: ::std::string::String,
 }
 impl Consent {
     /// <p> Maximum amount the customer agreed to accept. </p>
@@ -15,8 +15,9 @@ impl Consent {
         self.max_price
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    pub fn currency(&self) -> ::std::option::Option<&str> {
-        self.currency.as_deref()
+    pub fn currency(&self) -> &str {
+        use std::ops::Deref;
+        self.currency.deref()
     }
 }
 impl Consent {
@@ -35,6 +36,7 @@ pub struct ConsentBuilder {
 }
 impl ConsentBuilder {
     /// <p> Maximum amount the customer agreed to accept. </p>
+    /// This field is required.
     pub fn max_price(mut self, input: f64) -> Self {
         self.max_price = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl ConsentBuilder {
         &self.max_price
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
+    /// This field is required.
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,17 @@ impl ConsentBuilder {
         &self.currency
     }
     /// Consumes the builder and constructs a [`Consent`](crate::types::Consent).
-    pub fn build(self) -> crate::types::Consent {
-        crate::types::Consent {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`currency`](crate::types::builders::ConsentBuilder::currency)
+    pub fn build(self) -> ::std::result::Result<crate::types::Consent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Consent {
             max_price: self.max_price.unwrap_or_default(),
-            currency: self.currency,
-        }
+            currency: self.currency.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "currency",
+                    "currency was not specified but it is required when building Consent",
+                )
+            })?,
+        })
     }
 }

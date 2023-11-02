@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatadogConnectorProfileProperties {
     /// <p> The location of the Datadog resource. </p>
-    pub instance_url: ::std::option::Option<::std::string::String>,
+    pub instance_url: ::std::string::String,
 }
 impl DatadogConnectorProfileProperties {
     /// <p> The location of the Datadog resource. </p>
-    pub fn instance_url(&self) -> ::std::option::Option<&str> {
-        self.instance_url.as_deref()
+    pub fn instance_url(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_url.deref()
     }
 }
 impl DatadogConnectorProfileProperties {
@@ -28,6 +29,7 @@ pub struct DatadogConnectorProfilePropertiesBuilder {
 }
 impl DatadogConnectorProfilePropertiesBuilder {
     /// <p> The location of the Datadog resource. </p>
+    /// This field is required.
     pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_url = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl DatadogConnectorProfilePropertiesBuilder {
         &self.instance_url
     }
     /// Consumes the builder and constructs a [`DatadogConnectorProfileProperties`](crate::types::DatadogConnectorProfileProperties).
-    pub fn build(self) -> crate::types::DatadogConnectorProfileProperties {
-        crate::types::DatadogConnectorProfileProperties {
-            instance_url: self.instance_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_url`](crate::types::builders::DatadogConnectorProfilePropertiesBuilder::instance_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatadogConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatadogConnectorProfileProperties {
+            instance_url: self.instance_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_url",
+                    "instance_url was not specified but it is required when building DatadogConnectorProfileProperties",
+                )
+            })?,
+        })
     }
 }

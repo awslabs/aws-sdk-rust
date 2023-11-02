@@ -15,8 +15,10 @@ impl ListLegalHoldsOutput {
         self.next_token.as_deref()
     }
     /// <p>This is an array of returned legal holds, both active and previous.</p>
-    pub fn legal_holds(&self) -> ::std::option::Option<&[crate::types::LegalHold]> {
-        self.legal_holds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.legal_holds.is_none()`.
+    pub fn legal_holds(&self) -> &[crate::types::LegalHold] {
+        self.legal_holds.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListLegalHoldsOutput {

@@ -98,6 +98,7 @@ pub struct EndpointInputBuilder {
 }
 impl EndpointInputBuilder {
     /// <p>An endpoint in customer's account which has enabled <code>DataCaptureConfig</code> enabled.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +113,7 @@ impl EndpointInputBuilder {
         &self.endpoint_name
     }
     /// <p>Path to the filesystem where the endpoint data is available to the container.</p>
+    /// This field is required.
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
         self

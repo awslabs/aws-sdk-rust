@@ -41,6 +41,7 @@ pub struct CreateApplicationPresignedUrlInputBuilder {
 }
 impl CreateApplicationPresignedUrlInputBuilder {
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateApplicationPresignedUrlInputBuilder {
         &self.application_name
     }
     /// <p>The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. </p>
+    /// This field is required.
     pub fn url_type(mut self, input: crate::types::UrlType) -> Self {
         self.url_type = ::std::option::Option::Some(input);
         self

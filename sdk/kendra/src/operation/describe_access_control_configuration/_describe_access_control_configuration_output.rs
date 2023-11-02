@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccessControlConfigurationOutput {
     /// <p>The name for the access control configuration.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description for the access control configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The error message containing details if there are issues processing the access control configuration.</p>
@@ -17,8 +17,9 @@ pub struct DescribeAccessControlConfigurationOutput {
 }
 impl DescribeAccessControlConfigurationOutput {
     /// <p>The name for the access control configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description for the access control configuration.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -29,12 +30,16 @@ impl DescribeAccessControlConfigurationOutput {
         self.error_message.as_deref()
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn access_control_list(&self) -> ::std::option::Option<&[crate::types::Principal]> {
-        self.access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
+    pub fn access_control_list(&self) -> &[crate::types::Principal] {
+        self.access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(&self) -> ::std::option::Option<&[crate::types::HierarchicalPrincipal]> {
-        self.hierarchical_access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchical_access_control_list.is_none()`.
+    pub fn hierarchical_access_control_list(&self) -> &[crate::types::HierarchicalPrincipal] {
+        self.hierarchical_access_control_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAccessControlConfigurationOutput {
@@ -62,6 +67,7 @@ pub struct DescribeAccessControlConfigurationOutputBuilder {
 }
 impl DescribeAccessControlConfigurationOutputBuilder {
     /// <p>The name for the access control configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -156,14 +162,28 @@ impl DescribeAccessControlConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccessControlConfigurationOutput`](crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput {
-        crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput {
-            name: self.name,
-            description: self.description,
-            error_message: self.error_message,
-            access_control_list: self.access_control_list,
-            hierarchical_access_control_list: self.hierarchical_access_control_list,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput {
+                name: self.name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "name was not specified but it is required when building DescribeAccessControlConfigurationOutput",
+                    )
+                })?,
+                description: self.description,
+                error_message: self.error_message,
+                access_control_list: self.access_control_list,
+                hierarchical_access_control_list: self.hierarchical_access_control_list,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

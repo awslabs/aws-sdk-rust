@@ -28,6 +28,7 @@ pub struct DeleteReplicationInstanceInputBuilder {
 }
 impl DeleteReplicationInstanceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self

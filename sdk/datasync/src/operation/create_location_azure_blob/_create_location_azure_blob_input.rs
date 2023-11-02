@@ -48,12 +48,16 @@ impl CreateLocationAzureBlobInput {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your transfer location.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLocationAzureBlobInput {
@@ -78,6 +82,7 @@ pub struct CreateLocationAzureBlobInputBuilder {
 }
 impl CreateLocationAzureBlobInputBuilder {
     /// <p>Specifies the URL of the Azure Blob Storage container involved in your transfer.</p>
+    /// This field is required.
     pub fn container_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_url = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +97,7 @@ impl CreateLocationAzureBlobInputBuilder {
         &self.container_url
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AzureBlobAuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self

@@ -70,6 +70,7 @@ impl ListPrincipalThingsInputBuilder {
         &self.max_results
     }
     /// <p>The principal.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self

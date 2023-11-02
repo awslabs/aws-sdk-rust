@@ -50,8 +50,10 @@ impl BatchDescribeMergeConflictsInput {
         self.max_conflict_files
     }
     /// <p>The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.</p>
-    pub fn file_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.file_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_paths.is_none()`.
+    pub fn file_paths(&self) -> &[::std::string::String] {
+        self.file_paths.as_deref().unwrap_or_default()
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn conflict_detail_level(&self) -> ::std::option::Option<&crate::types::ConflictDetailLevelTypeEnum> {
@@ -90,6 +92,7 @@ pub struct BatchDescribeMergeConflictsInputBuilder {
 }
 impl BatchDescribeMergeConflictsInputBuilder {
     /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl BatchDescribeMergeConflictsInputBuilder {
         &self.repository_name
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn destination_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl BatchDescribeMergeConflictsInputBuilder {
         &self.destination_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    /// This field is required.
     pub fn source_commit_specifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_specifier = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl BatchDescribeMergeConflictsInputBuilder {
         &self.source_commit_specifier
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
+    /// This field is required.
     pub fn merge_option(mut self, input: crate::types::MergeOptionTypeEnum) -> Self {
         self.merge_option = ::std::option::Option::Some(input);
         self

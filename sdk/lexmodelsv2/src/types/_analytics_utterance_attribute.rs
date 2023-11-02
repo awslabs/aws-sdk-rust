@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceAttribute {
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
-    pub name: ::std::option::Option<crate::types::AnalyticsUtteranceAttributeName>,
+    pub name: crate::types::AnalyticsUtteranceAttributeName,
 }
 impl AnalyticsUtteranceAttribute {
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsUtteranceAttributeName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsUtteranceAttributeName {
+        &self.name
     }
 }
 impl AnalyticsUtteranceAttribute {
@@ -28,6 +28,7 @@ pub struct AnalyticsUtteranceAttributeBuilder {
 }
 impl AnalyticsUtteranceAttributeBuilder {
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsUtteranceAttributeName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AnalyticsUtteranceAttributeBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceAttribute`](crate::types::AnalyticsUtteranceAttribute).
-    pub fn build(self) -> crate::types::AnalyticsUtteranceAttribute {
-        crate::types::AnalyticsUtteranceAttribute { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsUtteranceAttributeBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsUtteranceAttribute, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsUtteranceAttribute {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsUtteranceAttribute",
+                )
+            })?,
+        })
     }
 }

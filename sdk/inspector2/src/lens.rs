@@ -102,10 +102,7 @@ pub(crate) fn reflens_search_vulnerabilities_output_next_token(
 pub(crate) fn lens_list_account_permissions_output_permissions(
     input: crate::operation::list_account_permissions::ListAccountPermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
-    let input = match input.permissions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.permissions;
     ::std::option::Option::Some(input)
 }
 
@@ -142,10 +139,7 @@ pub(crate) fn lens_list_delegated_admin_accounts_output_delegated_admin_accounts
 pub(crate) fn lens_list_filters_output_filters(
     input: crate::operation::list_filters::ListFiltersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
-    let input = match input.filters {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.filters;
     ::std::option::Option::Some(input)
 }
 
@@ -192,9 +186,6 @@ pub(crate) fn lens_list_usage_totals_output_totals(
 pub(crate) fn lens_search_vulnerabilities_output_vulnerabilities(
     input: crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Vulnerability>> {
-    let input = match input.vulnerabilities {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.vulnerabilities;
     ::std::option::Option::Some(input)
 }

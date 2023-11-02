@@ -36,6 +36,7 @@ pub struct InstanceDefinitionBuilder {
 }
 impl InstanceDefinitionBuilder {
     /// <p>An Amazon EC2 instance type designation.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::GameServerGroupInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self

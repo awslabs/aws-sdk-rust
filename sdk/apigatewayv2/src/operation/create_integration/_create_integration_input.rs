@@ -201,6 +201,7 @@ pub struct CreateIntegrationInputBuilder {
 }
 impl CreateIntegrationInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -327,6 +328,7 @@ impl CreateIntegrationInputBuilder {
     /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
     /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p>
     /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
+    /// This field is required.
     pub fn integration_type(mut self, input: crate::types::IntegrationType) -> Self {
         self.integration_type = ::std::option::Option::Some(input);
         self

@@ -19,8 +19,10 @@ impl CmafPackage {
         self.encryption.as_ref()
     }
     /// A list of HLS manifest configurations.
-    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::HlsManifest]> {
-        self.hls_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_manifests.is_none()`.
+    pub fn hls_manifests(&self) -> &[crate::types::HlsManifest] {
+        self.hls_manifests.as_deref().unwrap_or_default()
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     pub fn include_encoder_configuration_in_segments(&self) -> ::std::option::Option<bool> {

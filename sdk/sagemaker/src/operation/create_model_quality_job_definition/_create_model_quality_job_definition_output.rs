@@ -34,6 +34,7 @@ pub struct CreateModelQualityJobDefinitionOutputBuilder {
 }
 impl CreateModelQualityJobDefinitionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model quality monitoring job.</p>
+    /// This field is required.
     pub fn job_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_arn = ::std::option::Option::Some(input.into());
         self

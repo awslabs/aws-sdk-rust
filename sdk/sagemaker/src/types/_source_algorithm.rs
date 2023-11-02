@@ -59,6 +59,7 @@ impl SourceAlgorithmBuilder {
         &self.model_data_url
     }
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
+    /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self

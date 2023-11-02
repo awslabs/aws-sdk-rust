@@ -69,7 +69,7 @@ pub fn de_get_savings_plans_utilization_http_response(
         output = crate::protocol_serde::shape_get_savings_plans_utilization::de_get_savings_plans_utilization(_response_body, output)
             .map_err(crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_savings_plans_utilization_output_correct_errors(output).build()
     })
 }
 

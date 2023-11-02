@@ -35,6 +35,7 @@ pub struct ScanConditionPairBuilder {
 }
 impl ScanConditionPairBuilder {
     /// <p>Represents the <b>key</b> in the map condition.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self

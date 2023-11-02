@@ -5,18 +5,19 @@ pub fn ser_cache_policy_query_strings_config(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.query_string_behavior {
+    {
         let mut inner_writer = scope.start_el("QueryStringBehavior").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.query_string_behavior.as_str());
     }
-    if let Some(var_2) = &input.query_strings {
+    if let Some(var_1) = &input.query_strings {
         let inner_writer = scope.start_el("QueryStrings");
-        crate::protocol_serde::shape_query_string_names::ser_query_string_names(var_2, inner_writer)?
+        crate::protocol_serde::shape_query_string_names::ser_query_string_names(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cache_policy_query_strings_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CachePolicyQueryStringsConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_cache_policy_query_strings_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("QueryStringBehavior") /* QueryStringBehavior com.amazonaws.cloudfront#CachePolicyQueryStringsConfig$QueryStringBehavior */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<crate::types::CachePolicyQueryStringBehavior, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::CachePolicyQueryStringBehavior::from(
@@ -35,21 +36,23 @@ pub fn de_cache_policy_query_strings_config(
                         ?
                     )
                 ;
-                builder = builder.set_query_string_behavior(var_3);
+                builder = builder.set_query_string_behavior(var_2);
             }
             ,
             s if s.matches("QueryStrings") /* QueryStrings com.amazonaws.cloudfront#CachePolicyQueryStringsConfig$QueryStrings */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_query_string_names::de_query_string_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_strings(var_4);
+                builder = builder.set_query_strings(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cache_policy_query_strings_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

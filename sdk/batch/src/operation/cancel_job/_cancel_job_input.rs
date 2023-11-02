@@ -35,6 +35,7 @@ pub struct CancelJobInputBuilder {
 }
 impl CancelJobInputBuilder {
     /// <p>The Batch job ID of the job to cancel.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CancelJobInputBuilder {
         &self.job_id
     }
     /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self

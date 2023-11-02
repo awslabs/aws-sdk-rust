@@ -15,8 +15,10 @@ impl ResumeWorkflowRunOutput {
         self.run_id.as_deref()
     }
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
-    pub fn node_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids.is_none()`.
+    pub fn node_ids(&self) -> &[::std::string::String] {
+        self.node_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ResumeWorkflowRunOutput {

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EffectiveDeployment {
     /// <p>The ID of the deployment.</p>
-    pub deployment_id: ::std::option::Option<::std::string::String>,
+    pub deployment_id: ::std::string::String,
     /// <p>The name of the deployment.</p>
-    pub deployment_name: ::std::option::Option<::std::string::String>,
+    pub deployment_name: ::std::string::String,
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
@@ -15,7 +15,7 @@ pub struct EffectiveDeployment {
     /// <p>The description of the deployment job.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-    pub target_arn: ::std::option::Option<::std::string::String>,
+    pub target_arn: ::std::string::String,
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
     /// <li> <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li>
@@ -27,24 +27,26 @@ pub struct EffectiveDeployment {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
-    pub core_device_execution_status: ::std::option::Option<crate::types::EffectiveDeploymentExecutionStatus>,
+    pub core_device_execution_status: crate::types::EffectiveDeploymentExecutionStatus,
     /// <p>The reason code for the update, if the job was updated.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
-    pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub modified_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
     pub status_details: ::std::option::Option<crate::types::EffectiveDeploymentStatusDetails>,
 }
 impl EffectiveDeployment {
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
-        self.deployment_id.as_deref()
+    pub fn deployment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.deployment_id.deref()
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(&self) -> ::std::option::Option<&str> {
-        self.deployment_name.as_deref()
+    pub fn deployment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.deployment_name.deref()
     }
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub fn iot_job_id(&self) -> ::std::option::Option<&str> {
@@ -59,8 +61,9 @@ impl EffectiveDeployment {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
-        self.target_arn.as_deref()
+    pub fn target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_arn.deref()
     }
     /// <p>The status of the deployment job on the Greengrass core device.</p>
     /// <ul>
@@ -73,20 +76,20 @@ impl EffectiveDeployment {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
-    pub fn core_device_execution_status(&self) -> ::std::option::Option<&crate::types::EffectiveDeploymentExecutionStatus> {
-        self.core_device_execution_status.as_ref()
+    pub fn core_device_execution_status(&self) -> &crate::types::EffectiveDeploymentExecutionStatus {
+        &self.core_device_execution_status
     }
     /// <p>The reason code for the update, if the job was updated.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_timestamp.as_ref()
+    pub fn creation_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_timestamp
     }
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
-    pub fn modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.modified_timestamp.as_ref()
+    pub fn modified_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.modified_timestamp
     }
     /// <p>The status details that explain why a deployment has an error. This response will be null if the deployment is in a success state.</p>
     pub fn status_details(&self) -> ::std::option::Option<&crate::types::EffectiveDeploymentStatusDetails> {
@@ -118,6 +121,7 @@ pub struct EffectiveDeploymentBuilder {
 }
 impl EffectiveDeploymentBuilder {
     /// <p>The ID of the deployment.</p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +136,7 @@ impl EffectiveDeploymentBuilder {
         &self.deployment_id
     }
     /// <p>The name of the deployment.</p>
+    /// This field is required.
     pub fn deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_name = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +193,7 @@ impl EffectiveDeploymentBuilder {
         &self.description
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +218,7 @@ impl EffectiveDeploymentBuilder {
     /// <li> <p> <code>REJECTED</code> – The deployment was rejected. For more information, see the <code>statusDetails</code> field.</p> </li>
     /// <li> <p> <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn core_device_execution_status(mut self, input: crate::types::EffectiveDeploymentExecutionStatus) -> Self {
         self.core_device_execution_status = ::std::option::Option::Some(input);
         self
@@ -260,6 +267,7 @@ impl EffectiveDeploymentBuilder {
         &self.reason
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    /// This field is required.
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
         self
@@ -274,6 +282,7 @@ impl EffectiveDeploymentBuilder {
         &self.creation_timestamp
     }
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601 format.</p>
+    /// This field is required.
     pub fn modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_timestamp = ::std::option::Option::Some(input);
         self
@@ -302,19 +311,56 @@ impl EffectiveDeploymentBuilder {
         &self.status_details
     }
     /// Consumes the builder and constructs a [`EffectiveDeployment`](crate::types::EffectiveDeployment).
-    pub fn build(self) -> crate::types::EffectiveDeployment {
-        crate::types::EffectiveDeployment {
-            deployment_id: self.deployment_id,
-            deployment_name: self.deployment_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`deployment_id`](crate::types::builders::EffectiveDeploymentBuilder::deployment_id)
+    /// - [`deployment_name`](crate::types::builders::EffectiveDeploymentBuilder::deployment_name)
+    /// - [`target_arn`](crate::types::builders::EffectiveDeploymentBuilder::target_arn)
+    /// - [`core_device_execution_status`](crate::types::builders::EffectiveDeploymentBuilder::core_device_execution_status)
+    /// - [`creation_timestamp`](crate::types::builders::EffectiveDeploymentBuilder::creation_timestamp)
+    /// - [`modified_timestamp`](crate::types::builders::EffectiveDeploymentBuilder::modified_timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::EffectiveDeployment, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EffectiveDeployment {
+            deployment_id: self.deployment_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "deployment_id",
+                    "deployment_id was not specified but it is required when building EffectiveDeployment",
+                )
+            })?,
+            deployment_name: self.deployment_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "deployment_name",
+                    "deployment_name was not specified but it is required when building EffectiveDeployment",
+                )
+            })?,
             iot_job_id: self.iot_job_id,
             iot_job_arn: self.iot_job_arn,
             description: self.description,
-            target_arn: self.target_arn,
-            core_device_execution_status: self.core_device_execution_status,
+            target_arn: self.target_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_arn",
+                    "target_arn was not specified but it is required when building EffectiveDeployment",
+                )
+            })?,
+            core_device_execution_status: self.core_device_execution_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "core_device_execution_status",
+                    "core_device_execution_status was not specified but it is required when building EffectiveDeployment",
+                )
+            })?,
             reason: self.reason,
-            creation_timestamp: self.creation_timestamp,
-            modified_timestamp: self.modified_timestamp,
+            creation_timestamp: self.creation_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_timestamp",
+                    "creation_timestamp was not specified but it is required when building EffectiveDeployment",
+                )
+            })?,
+            modified_timestamp: self.modified_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "modified_timestamp",
+                    "modified_timestamp was not specified but it is required when building EffectiveDeployment",
+                )
+            })?,
             status_details: self.status_details,
-        }
+        })
     }
 }

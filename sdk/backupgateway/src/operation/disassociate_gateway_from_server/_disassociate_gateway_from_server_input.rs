@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateGatewayFromServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
-    pub gateway_arn: ::std::option::Option<::std::string::String>,
+    pub gateway_arn: ::std::string::String,
 }
 impl DisassociateGatewayFromServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
-        self.gateway_arn.as_deref()
+    pub fn gateway_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_arn.deref()
     }
 }
 impl DisassociateGatewayFromServerInput {
@@ -27,6 +28,7 @@ pub struct DisassociateGatewayFromServerInputBuilder {
 }
 impl DisassociateGatewayFromServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl DisassociateGatewayFromServerInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`DisassociateGatewayFromServerInput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_arn`](crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder::gateway_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl DisassociateGatewayFromServerInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput {
-            gateway_arn: self.gateway_arn,
+            gateway_arn: self.gateway_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_arn",
+                    "gateway_arn was not specified but it is required when building DisassociateGatewayFromServerInput",
+                )
+            })?,
         })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePool`](crate::operation::delete_pool::builders::DeletePoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_id(impl Into<String>)`](crate::operation::delete_pool::builders::DeletePoolFluentBuilder::pool_id) / [`set_pool_id(Option<String>)`](crate::operation::delete_pool::builders::DeletePoolFluentBuilder::set_pool_id): <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
+    ///   - [`pool_id(impl Into<String>)`](crate::operation::delete_pool::builders::DeletePoolFluentBuilder::pool_id) / [`set_pool_id(impl Into<String>)`](crate::operation::delete_pool::builders::DeletePoolFluentBuilder::set_pool_id):<br>required: **true**<br><p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p><br>
     /// - On success, responds with [`DeletePoolOutput`](crate::operation::delete_pool::DeletePoolOutput) with field(s):
     ///   - [`pool_arn(Option<String>)`](crate::operation::delete_pool::DeletePoolOutput::pool_arn): <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
     ///   - [`pool_id(Option<String>)`](crate::operation::delete_pool::DeletePoolOutput::pool_id): <p>The PoolId of the pool that was deleted.</p>

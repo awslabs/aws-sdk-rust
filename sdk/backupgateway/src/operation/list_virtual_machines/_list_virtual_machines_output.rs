@@ -11,8 +11,10 @@ pub struct ListVirtualMachinesOutput {
 }
 impl ListVirtualMachinesOutput {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn virtual_machines(&self) -> ::std::option::Option<&[crate::types::VirtualMachine]> {
-        self.virtual_machines.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.virtual_machines.is_none()`.
+    pub fn virtual_machines(&self) -> &[crate::types::VirtualMachine] {
+        self.virtual_machines.as_deref().unwrap_or_default()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

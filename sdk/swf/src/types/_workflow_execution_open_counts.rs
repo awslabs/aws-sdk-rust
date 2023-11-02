@@ -56,6 +56,7 @@ pub struct WorkflowExecutionOpenCountsBuilder {
 }
 impl WorkflowExecutionOpenCountsBuilder {
     /// <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
+    /// This field is required.
     pub fn open_activity_tasks(mut self, input: i32) -> Self {
         self.open_activity_tasks = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl WorkflowExecutionOpenCountsBuilder {
         &self.open_activity_tasks
     }
     /// <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
+    /// This field is required.
     pub fn open_decision_tasks(mut self, input: i32) -> Self {
         self.open_decision_tasks = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl WorkflowExecutionOpenCountsBuilder {
         &self.open_decision_tasks
     }
     /// <p>The count of timers started by this workflow execution that have not fired yet.</p>
+    /// This field is required.
     pub fn open_timers(mut self, input: i32) -> Self {
         self.open_timers = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl WorkflowExecutionOpenCountsBuilder {
         &self.open_timers
     }
     /// <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
+    /// This field is required.
     pub fn open_child_workflow_executions(mut self, input: i32) -> Self {
         self.open_child_workflow_executions = ::std::option::Option::Some(input);
         self

@@ -41,8 +41,10 @@ impl ConnectionNotification {
         self.connection_notification_arn.as_deref()
     }
     /// <p>The events for the notification. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connection_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_events.is_none()`.
+    pub fn connection_events(&self) -> &[::std::string::String] {
+        self.connection_events.as_deref().unwrap_or_default()
     }
     /// <p>The state of the notification.</p>
     pub fn connection_notification_state(&self) -> ::std::option::Option<&crate::types::ConnectionNotificationState> {

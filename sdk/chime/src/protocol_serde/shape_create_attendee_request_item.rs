@@ -3,20 +3,20 @@ pub fn ser_create_attendee_request_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateAttendeeRequestItem,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.external_user_id {
-        object.key("ExternalUserId").string(var_1.as_str());
+    {
+        object.key("ExternalUserId").string(input.external_user_id.as_str());
     }
-    if let Some(var_2) = &input.tags {
-        let mut array_3 = object.key("Tags").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.tags {
+        let mut array_2 = object.key("Tags").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }

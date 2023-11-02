@@ -19,12 +19,16 @@ impl AddonVersionInfo {
         self.addon_version.as_deref()
     }
     /// <p>The architectures that the version supports.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.architecture.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architecture.is_none()`.
+    pub fn architecture(&self) -> &[::std::string::String] {
+        self.architecture.as_deref().unwrap_or_default()
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    pub fn compatibilities(&self) -> ::std::option::Option<&[crate::types::Compatibility]> {
-        self.compatibilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatibilities.is_none()`.
+    pub fn compatibilities(&self) -> &[crate::types::Compatibility] {
+        self.compatibilities.as_deref().unwrap_or_default()
     }
     /// <p>Whether the add-on requires configuration.</p>
     pub fn requires_configuration(&self) -> bool {

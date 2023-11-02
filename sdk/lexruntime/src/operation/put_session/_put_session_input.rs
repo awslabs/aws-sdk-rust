@@ -70,8 +70,10 @@ impl PutSessionInput {
     /// <li> <p> <code>slotToElict</code> </p> </li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
-    pub fn recent_intent_summary_view(&self) -> ::std::option::Option<&[crate::types::IntentSummary]> {
-        self.recent_intent_summary_view.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recent_intent_summary_view.is_none()`.
+    pub fn recent_intent_summary_view(&self) -> &[crate::types::IntentSummary] {
+        self.recent_intent_summary_view.as_deref().unwrap_or_default()
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
@@ -92,8 +94,10 @@ impl PutSessionInput {
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
-        self.active_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
+    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
+        self.active_contexts.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for PutSessionInput {
@@ -132,6 +136,7 @@ pub struct PutSessionInputBuilder {
 }
 impl PutSessionInputBuilder {
     /// <p>The name of the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +151,7 @@ impl PutSessionInputBuilder {
         &self.bot_name
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +166,7 @@ impl PutSessionInputBuilder {
         &self.bot_alias
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

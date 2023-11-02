@@ -19,12 +19,16 @@ impl ListStepsInput {
         self.cluster_id.as_deref()
     }
     /// <p>The filter to limit the step list based on certain states.</p>
-    pub fn step_states(&self) -> ::std::option::Option<&[crate::types::StepState]> {
-        self.step_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_states.is_none()`.
+    pub fn step_states(&self) -> &[crate::types::StepState] {
+        self.step_states.as_deref().unwrap_or_default()
     }
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
-    pub fn step_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_ids.is_none()`.
+    pub fn step_ids(&self) -> &[::std::string::String] {
+        self.step_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -49,6 +53,7 @@ pub struct ListStepsInputBuilder {
 }
 impl ListStepsInputBuilder {
     /// <p>The identifier of the cluster for which to list the steps.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

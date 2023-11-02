@@ -23,8 +23,10 @@ impl Slot {
         self.shape.as_ref()
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::Slot]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::Slot] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The constituent sub slots of a composite slot.</p>
     pub fn sub_slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Slot>> {

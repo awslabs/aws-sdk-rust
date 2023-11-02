@@ -50,8 +50,10 @@ impl CreateDomainInput {
         self.default_user_settings.as_ref()
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
@@ -59,8 +61,10 @@ impl CreateDomainInput {
     }
     /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
     /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
@@ -118,6 +122,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p>A name for the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl CreateDomainInputBuilder {
         &self.domain_name
     }
     /// <p>The mode of authentication that members use to access the domain.</p>
+    /// This field is required.
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
         self.auth_mode = ::std::option::Option::Some(input);
         self
@@ -147,6 +153,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
     /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    /// This field is required.
     pub fn default_user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.default_user_settings = ::std::option::Option::Some(input);
         self
@@ -183,6 +190,7 @@ impl CreateDomainInputBuilder {
         &self.subnet_ids
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

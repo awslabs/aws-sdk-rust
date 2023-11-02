@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLowLatencyHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub manifest_name: ::std::option::Option<::std::string::String>,
+    pub manifest_name: ::std::string::String,
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index, with an added suffix to distinguish it from the manifest name. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub child_manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>The SCTE configuration.</p>
@@ -15,11 +15,14 @@ pub struct CreateLowLatencyHlsManifestConfiguration {
     /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
     pub program_date_time_interval_seconds: ::std::option::Option<i32>,
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
 impl CreateLowLatencyHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub fn manifest_name(&self) -> ::std::option::Option<&str> {
-        self.manifest_name.as_deref()
+    pub fn manifest_name(&self) -> &str {
+        use std::ops::Deref;
+        self.manifest_name.deref()
     }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index, with an added suffix to distinguish it from the manifest name. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn child_manifest_name(&self) -> ::std::option::Option<&str> {
@@ -38,6 +41,10 @@ impl CreateLowLatencyHlsManifestConfiguration {
     pub fn program_date_time_interval_seconds(&self) -> ::std::option::Option<i32> {
         self.program_date_time_interval_seconds
     }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
+        self.filter_configuration.as_ref()
+    }
 }
 impl CreateLowLatencyHlsManifestConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateLowLatencyHlsManifestConfiguration`](crate::types::CreateLowLatencyHlsManifestConfiguration).
@@ -55,9 +62,11 @@ pub struct CreateLowLatencyHlsManifestConfigurationBuilder {
     pub(crate) scte_hls: ::std::option::Option<crate::types::ScteHls>,
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) program_date_time_interval_seconds: ::std::option::Option<i32>,
+    pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
 impl CreateLowLatencyHlsManifestConfigurationBuilder {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
+    /// This field is required.
     pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
@@ -130,14 +139,38 @@ impl CreateLowLatencyHlsManifestConfigurationBuilder {
     pub fn get_program_date_time_interval_seconds(&self) -> &::std::option::Option<i32> {
         &self.program_date_time_interval_seconds
     }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn filter_configuration(mut self, input: crate::types::FilterConfiguration) -> Self {
+        self.filter_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
+        self.filter_configuration = input;
+        self
+    }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
+        &self.filter_configuration
+    }
     /// Consumes the builder and constructs a [`CreateLowLatencyHlsManifestConfiguration`](crate::types::CreateLowLatencyHlsManifestConfiguration).
-    pub fn build(self) -> crate::types::CreateLowLatencyHlsManifestConfiguration {
-        crate::types::CreateLowLatencyHlsManifestConfiguration {
-            manifest_name: self.manifest_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`manifest_name`](crate::types::builders::CreateLowLatencyHlsManifestConfigurationBuilder::manifest_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CreateLowLatencyHlsManifestConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateLowLatencyHlsManifestConfiguration {
+            manifest_name: self.manifest_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "manifest_name",
+                    "manifest_name was not specified but it is required when building CreateLowLatencyHlsManifestConfiguration",
+                )
+            })?,
             child_manifest_name: self.child_manifest_name,
             scte_hls: self.scte_hls,
             manifest_window_seconds: self.manifest_window_seconds,
             program_date_time_interval_seconds: self.program_date_time_interval_seconds,
-        }
+            filter_configuration: self.filter_configuration,
+        })
     }
 }

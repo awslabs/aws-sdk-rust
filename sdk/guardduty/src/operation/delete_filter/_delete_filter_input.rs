@@ -34,6 +34,7 @@ pub struct DeleteFilterInputBuilder {
 }
 impl DeleteFilterInputBuilder {
     /// <p>The unique ID of the detector that the filter is associated with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteFilterInputBuilder {
         &self.detector_id
     }
     /// <p>The name of the filter that you want to delete.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self

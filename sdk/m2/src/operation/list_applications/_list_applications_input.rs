@@ -22,8 +22,10 @@ impl ListApplicationsInput {
         self.max_results
     }
     /// <p>The names of the applications.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {

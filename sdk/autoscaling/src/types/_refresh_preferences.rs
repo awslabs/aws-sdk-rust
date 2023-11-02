@@ -91,8 +91,10 @@ impl RefreshPreferences {
     }
     /// <p>(Optional) Threshold values for each checkpoint in ascending order. Each number must be unique. To replace all instances in the Auto Scaling group, the last number in the array must be <code>100</code>.</p>
     /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn checkpoint_percentages(&self) -> ::std::option::Option<&[i32]> {
-        self.checkpoint_percentages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checkpoint_percentages.is_none()`.
+    pub fn checkpoint_percentages(&self) -> &[i32] {
+        self.checkpoint_percentages.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) The amount of time, in seconds, to wait after a checkpoint before continuing. This property is optional, but if you specify a value for it, you must also specify a value for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code> and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults to <code>3600</code> (1 hour). </p>
     pub fn checkpoint_delay(&self) -> ::std::option::Option<i32> {

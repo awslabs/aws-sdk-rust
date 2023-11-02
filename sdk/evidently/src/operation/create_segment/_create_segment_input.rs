@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSegmentInput {
     /// <p>A name for the segment.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
-    pub pattern: ::std::option::Option<::std::string::String>,
+    pub pattern: ::std::string::String,
     /// <p>An optional description for this segment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the segment.</p>
@@ -18,12 +18,14 @@ pub struct CreateSegmentInput {
 }
 impl CreateSegmentInput {
     /// <p>A name for the segment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
-        self.pattern.as_deref()
+    pub fn pattern(&self) -> &str {
+        use std::ops::Deref;
+        self.pattern.deref()
     }
     /// <p>An optional description for this segment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct CreateSegmentInputBuilder {
 }
 impl CreateSegmentInputBuilder {
     /// <p>A name for the segment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CreateSegmentInputBuilder {
         &self.name
     }
     /// <p>The pattern to use for the segment. For more information about pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"> Segment rule pattern syntax</a>.</p>
+    /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self
@@ -130,12 +134,25 @@ impl CreateSegmentInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSegmentInput`](crate::operation::create_segment::CreateSegmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_segment::builders::CreateSegmentInputBuilder::name)
+    /// - [`pattern`](crate::operation::create_segment::builders::CreateSegmentInputBuilder::pattern)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_segment::CreateSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_segment::CreateSegmentInput {
-            name: self.name,
-            pattern: self.pattern,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateSegmentInput",
+                )
+            })?,
+            pattern: self.pattern.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pattern",
+                    "pattern was not specified but it is required when building CreateSegmentInput",
+                )
+            })?,
             description: self.description,
             tags: self.tags,
         })

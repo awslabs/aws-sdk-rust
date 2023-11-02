@@ -3,8 +3,8 @@ pub fn ser_get_fleet_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_fleet::GetFleetInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.fleet_id {
-        object.key("fleetId").string(var_1.as_str());
+    {
+        object.key("fleetId").string(input.fleet_id.as_str());
     }
     Ok(())
 }

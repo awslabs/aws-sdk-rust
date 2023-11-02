@@ -132,7 +132,9 @@ pub fn de_list_app_version_app_components_http_response(
         output = crate::protocol_serde::shape_list_app_version_app_components::de_list_app_version_app_components(_response_body, output)
             .map_err(crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_app_version_app_components_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError::unhandled)?
     })
 }
 

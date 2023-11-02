@@ -34,6 +34,7 @@ pub struct CreateFeatureGroupOutputBuilder {
 }
 impl CreateFeatureGroupOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>FeatureGroup</code>. This is a unique identifier for the feature group. </p>
+    /// This field is required.
     pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct GetRelationalDatabaseSnapshotInputBuilder {
 }
 impl GetRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name of the database snapshot for which to get information.</p>
+    /// This field is required.
     pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self

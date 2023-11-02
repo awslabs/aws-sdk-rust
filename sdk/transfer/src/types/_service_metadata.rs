@@ -28,6 +28,7 @@ pub struct ServiceMetadataBuilder {
 }
 impl ServiceMetadataBuilder {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
+    /// This field is required.
     pub fn user_details(mut self, input: crate::types::UserDetails) -> Self {
         self.user_details = ::std::option::Option::Some(input);
         self

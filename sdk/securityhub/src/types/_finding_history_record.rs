@@ -37,8 +37,10 @@ impl FindingHistoryRecord {
         self.update_source.as_ref()
     }
     /// <p> An array of objects that provides details about the finding change event, including the Amazon Web Services Security Finding Format (ASFF) field that changed, the value of the field before the change, and the value of the field after the change. </p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::FindingHistoryUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::FindingHistoryUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
     /// <p> A token for pagination purposes. Provide this token in the subsequent request to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingsHistory.html"> <code>GetFindingsHistory</code> </a> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

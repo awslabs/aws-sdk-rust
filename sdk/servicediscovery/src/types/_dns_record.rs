@@ -63,11 +63,11 @@ pub struct DnsRecord {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub r#type: ::std::option::Option<crate::types::RecordType>,
+    pub r#type: crate::types::RecordType,
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
     /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
-    pub ttl: ::std::option::Option<i64>,
+    pub ttl: i64,
 }
 impl DnsRecord {
     /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
@@ -129,13 +129,13 @@ impl DnsRecord {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecordType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::RecordType {
+        &self.r#type
     }
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
     /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
-    pub fn ttl(&self) -> ::std::option::Option<i64> {
+    pub fn ttl(&self) -> i64 {
         self.ttl
     }
 }
@@ -213,6 +213,7 @@ impl DnsRecordBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RecordType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -345,6 +346,7 @@ impl DnsRecordBuilder {
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
     /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
+    /// This field is required.
     pub fn ttl(mut self, input: i64) -> Self {
         self.ttl = ::std::option::Option::Some(input);
         self
@@ -363,10 +365,23 @@ impl DnsRecordBuilder {
         &self.ttl
     }
     /// Consumes the builder and constructs a [`DnsRecord`](crate::types::DnsRecord).
-    pub fn build(self) -> crate::types::DnsRecord {
-        crate::types::DnsRecord {
-            r#type: self.r#type,
-            ttl: self.ttl,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::DnsRecordBuilder::r#type)
+    /// - [`ttl`](crate::types::builders::DnsRecordBuilder::ttl)
+    pub fn build(self) -> ::std::result::Result<crate::types::DnsRecord, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DnsRecord {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DnsRecord",
+                )
+            })?,
+            ttl: self.ttl.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ttl",
+                    "ttl was not specified but it is required when building DnsRecord",
+                )
+            })?,
+        })
     }
 }

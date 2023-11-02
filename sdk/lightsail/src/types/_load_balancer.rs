@@ -71,8 +71,10 @@ impl LoadBalancer {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The DNS name of your Lightsail load balancer.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
@@ -88,8 +90,10 @@ impl LoadBalancer {
         self.protocol.as_ref()
     }
     /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS, use port 443.</p>
-    pub fn public_ports(&self) -> ::std::option::Option<&[i32]> {
-        self.public_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_ports.is_none()`.
+    pub fn public_ports(&self) -> &[i32] {
+        self.public_ports.as_deref().unwrap_or_default()
     }
     /// <p>The path you specified to perform your health checks. If no path is specified, the load balancer tries to make a request to the default (root) page.</p>
     pub fn health_check_path(&self) -> ::std::option::Option<&str> {
@@ -100,12 +104,16 @@ impl LoadBalancer {
         self.instance_port
     }
     /// <p>An array of InstanceHealthSummary objects describing the health of the load balancer.</p>
-    pub fn instance_health_summary(&self) -> ::std::option::Option<&[crate::types::InstanceHealthSummary]> {
-        self.instance_health_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_health_summary.is_none()`.
+    pub fn instance_health_summary(&self) -> &[crate::types::InstanceHealthSummary] {
+        self.instance_health_summary.as_deref().unwrap_or_default()
     }
     /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached to the load balancer.</p>
-    pub fn tls_certificate_summaries(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTlsCertificateSummary]> {
-        self.tls_certificate_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_certificate_summaries.is_none()`.
+    pub fn tls_certificate_summaries(&self) -> &[crate::types::LoadBalancerTlsCertificateSummary] {
+        self.tls_certificate_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A string to string map of the configuration options for your load balancer. Valid values are listed below.</p>
     pub fn configuration_options(

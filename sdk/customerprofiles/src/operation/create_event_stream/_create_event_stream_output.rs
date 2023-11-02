@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventStreamOutput {
     /// <p>A unique identifier for the event stream.</p>
-    pub event_stream_arn: ::std::option::Option<::std::string::String>,
+    pub event_stream_arn: ::std::string::String,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateEventStreamOutput {
     /// <p>A unique identifier for the event stream.</p>
-    pub fn event_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.event_stream_arn.as_deref()
+    pub fn event_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.event_stream_arn.deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -41,6 +42,7 @@ pub struct CreateEventStreamOutputBuilder {
 }
 impl CreateEventStreamOutputBuilder {
     /// <p>A unique identifier for the event stream.</p>
+    /// This field is required.
     pub fn event_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,20 @@ impl CreateEventStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateEventStreamOutput`](crate::operation::create_event_stream::CreateEventStreamOutput).
-    pub fn build(self) -> crate::operation::create_event_stream::CreateEventStreamOutput {
-        crate::operation::create_event_stream::CreateEventStreamOutput {
-            event_stream_arn: self.event_stream_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_stream_arn`](crate::operation::create_event_stream::builders::CreateEventStreamOutputBuilder::event_stream_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_event_stream::CreateEventStreamOutput {
+            event_stream_arn: self.event_stream_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_stream_arn",
+                    "event_stream_arn was not specified but it is required when building CreateEventStreamOutput",
+                )
+            })?,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -48,6 +48,7 @@ pub struct UpdateParallelDataInputBuilder {
 }
 impl UpdateParallelDataInputBuilder {
     /// <p>The name of the parallel data resource being updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateParallelDataInputBuilder {
         &self.description
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
+    /// This field is required.
     pub fn parallel_data_config(mut self, input: crate::types::ParallelDataConfig) -> Self {
         self.parallel_data_config = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl UpdateParallelDataInputBuilder {
         &self.parallel_data_config
     }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

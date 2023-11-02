@@ -6,9 +6,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupSelection {
     /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub selection_name: ::std::option::Option<::std::string::String>,
+    pub selection_name: ::std::string::String,
     /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    pub iam_role_arn: ::std::option::Option<::std::string::String>,
+    pub iam_role_arn: ::std::string::String,
     /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -32,17 +32,21 @@ pub struct BackupSelection {
 }
 impl BackupSelection {
     /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn selection_name(&self) -> ::std::option::Option<&str> {
-        self.selection_name.as_deref()
+    pub fn selection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.selection_name.deref()
     }
     /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
-        self.iam_role_arn.as_deref()
+    pub fn iam_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.iam_role_arn.deref()
     }
     /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
@@ -50,13 +54,17 @@ impl BackupSelection {
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
     /// <li> <p> <code>ListOfTags</code> only supports <code>StringEquals</code>. <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li>
     /// </ul>
-    pub fn list_of_tags(&self) -> ::std::option::Option<&[crate::types::Condition]> {
-        self.list_of_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_of_tags.is_none()`.
+    pub fn list_of_tags(&self) -> &[crate::types::Condition] {
+        self.list_of_tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to exclude many resources from a backup plan, consider a different resource selection strategy, such as assigning only one or a few resource types or refining your resource selection using tags.</p>
-    pub fn not_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_resources.is_none()`.
+    pub fn not_resources(&self) -> &[::std::string::String] {
+        self.not_resources.as_deref().unwrap_or_default()
     }
     /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
@@ -88,6 +96,7 @@ pub struct BackupSelectionBuilder {
 }
 impl BackupSelectionBuilder {
     /// <p>The display name of a resource selection document. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// This field is required.
     pub fn selection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +111,7 @@ impl BackupSelectionBuilder {
         &self.selection_name
     }
     /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -226,14 +236,27 @@ impl BackupSelectionBuilder {
         &self.conditions
     }
     /// Consumes the builder and constructs a [`BackupSelection`](crate::types::BackupSelection).
-    pub fn build(self) -> crate::types::BackupSelection {
-        crate::types::BackupSelection {
-            selection_name: self.selection_name,
-            iam_role_arn: self.iam_role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`selection_name`](crate::types::builders::BackupSelectionBuilder::selection_name)
+    /// - [`iam_role_arn`](crate::types::builders::BackupSelectionBuilder::iam_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupSelection, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BackupSelection {
+            selection_name: self.selection_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "selection_name",
+                    "selection_name was not specified but it is required when building BackupSelection",
+                )
+            })?,
+            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "iam_role_arn",
+                    "iam_role_arn was not specified but it is required when building BackupSelection",
+                )
+            })?,
             resources: self.resources,
             list_of_tags: self.list_of_tags,
             not_resources: self.not_resources,
             conditions: self.conditions,
-        }
+        })
     }
 }

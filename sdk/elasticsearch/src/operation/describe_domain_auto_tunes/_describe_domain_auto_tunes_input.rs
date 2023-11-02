@@ -42,6 +42,7 @@ pub struct DescribeDomainAutoTunesInputBuilder {
 }
 impl DescribeDomainAutoTunesInputBuilder {
     /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

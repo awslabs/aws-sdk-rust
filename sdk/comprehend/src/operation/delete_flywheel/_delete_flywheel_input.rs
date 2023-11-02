@@ -27,6 +27,7 @@ pub struct DeleteFlywheelInputBuilder {
 }
 impl DeleteFlywheelInputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the flywheel to delete.</p>
+    /// This field is required.
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
         self

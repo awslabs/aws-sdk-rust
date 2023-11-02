@@ -11,8 +11,10 @@ pub struct DescribeTrafficMirrorTargetsOutput {
 }
 impl DescribeTrafficMirrorTargetsOutput {
     /// <p>Information about one or more Traffic Mirror targets.</p>
-    pub fn traffic_mirror_targets(&self) -> ::std::option::Option<&[crate::types::TrafficMirrorTarget]> {
-        self.traffic_mirror_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traffic_mirror_targets.is_none()`.
+    pub fn traffic_mirror_targets(&self) -> &[crate::types::TrafficMirrorTarget] {
+        self.traffic_mirror_targets.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

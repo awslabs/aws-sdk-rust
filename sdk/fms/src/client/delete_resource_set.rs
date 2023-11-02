@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteResourceSet`](crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::set_identifier): <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder::set_identifier):<br>required: **true**<br><p>A unique identifier for the resource set, used in a request to refer to the resource set.</p><br>
     /// - On success, responds with [`DeleteResourceSetOutput`](crate::operation::delete_resource_set::DeleteResourceSetOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceSetError>`](crate::operation::delete_resource_set::DeleteResourceSetError)
     pub fn delete_resource_set(&self) -> crate::operation::delete_resource_set::builders::DeleteResourceSetFluentBuilder {

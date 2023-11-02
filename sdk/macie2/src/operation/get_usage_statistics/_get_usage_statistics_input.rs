@@ -16,8 +16,10 @@ pub struct GetUsageStatisticsInput {
 }
 impl GetUsageStatisticsInput {
     /// <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
-    pub fn filter_by(&self) -> ::std::option::Option<&[crate::types::UsageStatisticsFilter]> {
-        self.filter_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_by.is_none()`.
+    pub fn filter_by(&self) -> &[crate::types::UsageStatisticsFilter] {
+        self.filter_by.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

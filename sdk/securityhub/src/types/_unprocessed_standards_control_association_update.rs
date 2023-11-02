@@ -42,6 +42,7 @@ pub struct UnprocessedStandardsControlAssociationUpdateBuilder {
 }
 impl UnprocessedStandardsControlAssociationUpdateBuilder {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
+    /// This field is required.
     pub fn standards_control_association_update(mut self, input: crate::types::StandardsControlAssociationUpdate) -> Self {
         self.standards_control_association_update = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
         &self.standards_control_association_update
     }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self

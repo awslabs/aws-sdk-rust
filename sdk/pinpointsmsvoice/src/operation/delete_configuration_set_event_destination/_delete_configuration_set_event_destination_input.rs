@@ -34,6 +34,7 @@ pub struct DeleteConfigurationSetEventDestinationInputBuilder {
 }
 impl DeleteConfigurationSetEventDestinationInputBuilder {
     /// ConfigurationSetName
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteConfigurationSetEventDestinationInputBuilder {
         &self.configuration_set_name
     }
     /// EventDestinationName
+    /// This field is required.
     pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self

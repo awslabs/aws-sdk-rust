@@ -34,6 +34,7 @@ pub struct GetProposalInputBuilder {
 }
 impl GetProposalInputBuilder {
     /// <p>The unique identifier of the network for which the proposal is made.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetProposalInputBuilder {
         &self.network_id
     }
     /// <p>The unique identifier of the proposal.</p>
+    /// This field is required.
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
         self

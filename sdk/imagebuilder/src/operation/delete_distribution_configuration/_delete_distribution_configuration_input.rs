@@ -27,6 +27,7 @@ pub struct DeleteDistributionConfigurationInputBuilder {
 }
 impl DeleteDistributionConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
+    /// This field is required.
     pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self

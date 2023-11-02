@@ -28,6 +28,7 @@ pub struct NotStatementBuilder {
 }
 impl NotStatementBuilder {
     /// <p>The statement to negate. You can use any statement that can be nested.</p>
+    /// This field is required.
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Statement>>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
         self

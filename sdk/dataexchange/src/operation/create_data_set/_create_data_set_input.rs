@@ -4,26 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSetInput {
     /// <p>The type of asset that is added to a data set.</p>
-    pub asset_type: ::std::option::Option<crate::types::AssetType>,
+    pub asset_type: crate::types::AssetType,
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The name of the data set.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDataSetInput {
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> ::std::option::Option<&crate::types::AssetType> {
-        self.asset_type.as_ref()
+    pub fn asset_type(&self) -> &crate::types::AssetType {
+        &self.asset_type
     }
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -48,6 +50,7 @@ pub struct CreateDataSetInputBuilder {
 }
 impl CreateDataSetInputBuilder {
     /// <p>The type of asset that is added to a data set.</p>
+    /// This field is required.
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
         self.asset_type = ::std::option::Option::Some(input);
         self
@@ -62,6 +65,7 @@ impl CreateDataSetInputBuilder {
         &self.asset_type
     }
     /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateDataSetInputBuilder {
         &self.description
     }
     /// <p>The name of the data set.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,13 +115,32 @@ impl CreateDataSetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_type`](crate::operation::create_data_set::builders::CreateDataSetInputBuilder::asset_type)
+    /// - [`description`](crate::operation::create_data_set::builders::CreateDataSetInputBuilder::description)
+    /// - [`name`](crate::operation::create_data_set::builders::CreateDataSetInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_data_set::CreateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_set::CreateDataSetInput {
-            asset_type: self.asset_type,
-            description: self.description,
-            name: self.name,
+            asset_type: self.asset_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_type",
+                    "asset_type was not specified but it is required when building CreateDataSetInput",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building CreateDataSetInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateDataSetInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

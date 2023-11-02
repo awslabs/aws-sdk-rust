@@ -27,6 +27,7 @@ pub struct DeleteAccountSubscriptionInputBuilder {
 }
 impl DeleteAccountSubscriptionInputBuilder {
     /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self

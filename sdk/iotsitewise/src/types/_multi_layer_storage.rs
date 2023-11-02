@@ -28,6 +28,7 @@ pub struct MultiLayerStorageBuilder {
 }
 impl MultiLayerStorageBuilder {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn customer_managed_s3_storage(mut self, input: crate::types::CustomerManagedS3Storage) -> Self {
         self.customer_managed_s3_storage = ::std::option::Option::Some(input);
         self

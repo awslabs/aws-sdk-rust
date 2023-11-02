@@ -5,8 +5,8 @@
 
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::{config::Credentials, config::Region, types::ObjectAttributes, Client};
-use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
+use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
 use aws_types::SdkConfig;
 use http::header::AUTHORIZATION;
 use std::time::{Duration, UNIX_EPOCH};
@@ -15,8 +15,8 @@ const RESPONSE_BODY_XML: &[u8] = b"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<
 
 #[tokio::test]
 async fn ignore_invalid_xml_body_root() {
-    let conn = TestConnection::new(vec![
-        (http::Request::builder()
+    let http_client = StaticReplayClient::new(vec![
+        ReplayEvent::new(http::Request::builder()
              .header("x-amz-object-attributes", "Checksum")
              .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
              .header("x-amz-date", "20210618T170728Z")
@@ -37,14 +37,16 @@ async fn ignore_invalid_xml_body_root() {
              .header("server", "AmazonS3")
              .header("content-length", "224")
              .status(200)
-             .body(RESPONSE_BODY_XML)
+             .body(SdkBody::from(RESPONSE_BODY_XML))
              .unwrap())
     ]);
 
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(
+            Credentials::for_tests_with_session_token(),
+        ))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .build();
     let client = Client::new(&sdk_config);
 
@@ -62,5 +64,5 @@ async fn ignore_invalid_xml_body_root() {
         .await
         .unwrap();
 
-    conn.assert_requests_match(&[AUTHORIZATION]);
+    http_client.assert_requests_match(&[AUTHORIZATION]);
 }

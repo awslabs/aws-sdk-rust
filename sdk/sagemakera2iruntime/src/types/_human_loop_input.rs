@@ -28,6 +28,7 @@ pub struct HumanLoopInputBuilder {
 }
 impl HumanLoopInputBuilder {
     /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
+    /// This field is required.
     pub fn input_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_content = ::std::option::Option::Some(input.into());
         self

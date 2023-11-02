@@ -23,8 +23,10 @@ impl AwsDynamoDbTableLocalSecondaryIndex {
         self.index_name.as_deref()
     }
     /// <p>The complete key schema for the index.</p>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableKeySchema]> {
-        self.key_schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
+    pub fn key_schema(&self) -> &[crate::types::AwsDynamoDbTableKeySchema] {
+        self.key_schema.as_deref().unwrap_or_default()
     }
     /// <p>Attributes that are copied from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub fn projection(&self) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProjection> {

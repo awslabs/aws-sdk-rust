@@ -8,8 +8,10 @@ pub struct RebootWorkspacesInput {
 }
 impl RebootWorkspacesInput {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn reboot_workspace_requests(&self) -> ::std::option::Option<&[crate::types::RebootRequest]> {
-        self.reboot_workspace_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reboot_workspace_requests.is_none()`.
+    pub fn reboot_workspace_requests(&self) -> &[crate::types::RebootRequest] {
+        self.reboot_workspace_requests.as_deref().unwrap_or_default()
     }
 }
 impl RebootWorkspacesInput {

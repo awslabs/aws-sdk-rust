@@ -14,8 +14,10 @@ impl DeleteMembersInput {
         self.graph_arn.as_deref()
     }
     /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeleteMembersInput {
@@ -34,6 +36,7 @@ pub struct DeleteMembersInputBuilder {
 }
 impl DeleteMembersInputBuilder {
     /// <p>The ARN of the behavior graph to remove members from.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self

@@ -28,6 +28,7 @@ pub struct GetJobDetailsInputBuilder {
 }
 impl GetJobDetailsInputBuilder {
     /// <p>The unique system-generated ID for the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

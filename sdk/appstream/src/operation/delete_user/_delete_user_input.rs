@@ -48,6 +48,7 @@ impl DeleteUserInputBuilder {
     /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl DeleteUserInputBuilder {
         &self.user_name
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self

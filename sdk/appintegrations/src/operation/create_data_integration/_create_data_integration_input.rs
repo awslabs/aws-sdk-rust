@@ -100,6 +100,7 @@ pub struct CreateDataIntegrationInputBuilder {
 }
 impl CreateDataIntegrationInputBuilder {
     /// <p>The name of the DataIntegration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl CreateDataIntegrationInputBuilder {
         &self.description
     }
     /// <p>The KMS key for the DataIntegration.</p>
+    /// This field is required.
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +144,7 @@ impl CreateDataIntegrationInputBuilder {
         &self.kms_key
     }
     /// <p>The URI of the data source.</p>
+    /// This field is required.
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_uri = ::std::option::Option::Some(input.into());
         self

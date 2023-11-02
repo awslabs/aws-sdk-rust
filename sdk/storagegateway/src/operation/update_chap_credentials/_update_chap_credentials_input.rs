@@ -75,6 +75,7 @@ pub struct UpdateChapCredentialsInputBuilder {
 }
 impl UpdateChapCredentialsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl UpdateChapCredentialsInputBuilder {
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
+    /// This field is required.
     pub fn secret_to_authenticate_initiator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_to_authenticate_initiator = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +111,7 @@ impl UpdateChapCredentialsInputBuilder {
         &self.secret_to_authenticate_initiator
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
+    /// This field is required.
     pub fn initiator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiator_name = ::std::option::Option::Some(input.into());
         self

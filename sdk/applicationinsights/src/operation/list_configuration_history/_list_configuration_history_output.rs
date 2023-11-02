@@ -11,8 +11,10 @@ pub struct ListConfigurationHistoryOutput {
 }
 impl ListConfigurationHistoryOutput {
     /// <p> The list of configuration events and their corresponding details. </p>
-    pub fn event_list(&self) -> ::std::option::Option<&[crate::types::ConfigurationEvent]> {
-        self.event_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_list.is_none()`.
+    pub fn event_list(&self) -> &[crate::types::ConfigurationEvent] {
+        self.event_list.as_deref().unwrap_or_default()
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -82,8 +82,10 @@ impl CreateProductInput {
         self.product_type.as_ref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The configuration of the provisioning artifact. </p>
     pub fn provisioning_artifact_parameters(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactProperties> {
@@ -155,6 +157,7 @@ impl CreateProductInputBuilder {
         &self.accept_language
     }
     /// <p>The name of the product.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +172,7 @@ impl CreateProductInputBuilder {
         &self.name
     }
     /// <p>The owner of the product.</p>
+    /// This field is required.
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
         self
@@ -256,6 +260,7 @@ impl CreateProductInputBuilder {
         &self.support_url
     }
     /// <p>The type of product.</p>
+    /// This field is required.
     pub fn product_type(mut self, input: crate::types::ProductType) -> Self {
         self.product_type = ::std::option::Option::Some(input);
         self
@@ -304,6 +309,7 @@ impl CreateProductInputBuilder {
         &self.provisioning_artifact_parameters
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self

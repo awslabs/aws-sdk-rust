@@ -3,20 +3,20 @@ pub fn ser_filled_map_conditional_formatting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilledMapConditionalFormatting,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.conditional_formatting_options {
-        let mut array_2 = object.key("ConditionalFormattingOptions").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("ConditionalFormattingOptions").start_array();
+        for item_2 in &input.conditional_formatting_options {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
+                let mut object_3 = array_1.value().start_object();
                 crate::protocol_serde::shape_filled_map_conditional_formatting_option::ser_filled_map_conditional_formatting_option(
-                    &mut object_4,
-                    item_3,
+                    &mut object_3,
+                    item_2,
                 )?;
-                object_4.finish();
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::filled_map_conditional_formatting_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

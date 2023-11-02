@@ -13,8 +13,10 @@ pub struct DescribeElasticGpusOutput {
 }
 impl DescribeElasticGpusOutput {
     /// <p>Information about the Elastic Graphics accelerators.</p>
-    pub fn elastic_gpu_set(&self) -> ::std::option::Option<&[crate::types::ElasticGpus]> {
-        self.elastic_gpu_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_set.is_none()`.
+    pub fn elastic_gpu_set(&self) -> &[crate::types::ElasticGpus] {
+        self.elastic_gpu_set.as_deref().unwrap_or_default()
     }
     /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

@@ -48,6 +48,7 @@ pub struct DeleteFolderMembershipInputBuilder {
 }
 impl DeleteFolderMembershipInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteFolderMembershipInputBuilder {
         &self.aws_account_id
     }
     /// <p>The Folder ID.</p>
+    /// This field is required.
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DeleteFolderMembershipInputBuilder {
         &self.folder_id
     }
     /// <p>The ID of the asset that you want to delete.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl DeleteFolderMembershipInputBuilder {
         &self.member_id
     }
     /// <p>The member type of the asset that you want to delete from a folder.</p>
+    /// This field is required.
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
         self.member_type = ::std::option::Option::Some(input);
         self

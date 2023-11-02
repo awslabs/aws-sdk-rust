@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRescoreExecutionPlan`](crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder::set_id): <p>The identifier of the rescore execution plan that you want to get information on.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the rescore execution plan that you want to get information on.</p><br>
     /// - On success, responds with [`DescribeRescoreExecutionPlanOutput`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanOutput::id): <p>The identifier of the rescore execution plan.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_rescore_execution_plan::DescribeRescoreExecutionPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>

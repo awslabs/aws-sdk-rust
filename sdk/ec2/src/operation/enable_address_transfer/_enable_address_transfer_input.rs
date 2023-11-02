@@ -41,6 +41,7 @@ pub struct EnableAddressTransferInputBuilder {
 }
 impl EnableAddressTransferInputBuilder {
     /// <p>The allocation ID of an Elastic IP address.</p>
+    /// This field is required.
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl EnableAddressTransferInputBuilder {
         &self.allocation_id
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
+    /// This field is required.
     pub fn transfer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transfer_account_id = ::std::option::Option::Some(input.into());
         self

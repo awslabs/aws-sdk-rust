@@ -66,8 +66,10 @@ impl CreateEnvironmentInput {
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
     /// </ul>
-    pub fn data_bundles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_bundles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_bundles.is_none()`.
+    pub fn data_bundles(&self) -> &[::std::string::String] {
+        self.data_bundles.as_deref().unwrap_or_default()
     }
 }
 impl CreateEnvironmentInput {
@@ -92,6 +94,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the FinSpace environment to be created.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

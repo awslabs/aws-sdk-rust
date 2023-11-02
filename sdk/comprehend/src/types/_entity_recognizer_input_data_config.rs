@@ -13,7 +13,7 @@ pub struct EntityRecognizerInputDataConfig {
     pub data_format: ::std::option::Option<crate::types::EntityRecognizerDataFormat>,
     /// <p>The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer. Any entity types that you don't specify are ignored.</p>
     /// <p>A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma). </p>
-    pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>,
+    pub entity_types: ::std::vec::Vec<crate::types::EntityTypesListItem>,
     /// <p>The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
     pub documents: ::std::option::Option<crate::types::EntityRecognizerDocuments>,
@@ -37,8 +37,9 @@ impl EntityRecognizerInputDataConfig {
     }
     /// <p>The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer. Any entity types that you don't specify are ignored.</p>
     /// <p>A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma). </p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[crate::types::EntityTypesListItem]> {
-        self.entity_types.as_deref()
+    pub fn entity_types(&self) -> &[crate::types::EntityTypesListItem] {
+        use std::ops::Deref;
+        self.entity_types.deref()
     }
     /// <p>The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
@@ -55,8 +56,10 @@ impl EntityRecognizerInputDataConfig {
     }
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
-    pub fn augmented_manifests(&self) -> ::std::option::Option<&[crate::types::AugmentedManifestsListItem]> {
-        self.augmented_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.augmented_manifests.is_none()`.
+    pub fn augmented_manifests(&self) -> &[crate::types::AugmentedManifestsListItem] {
+        self.augmented_manifests.as_deref().unwrap_or_default()
     }
 }
 impl EntityRecognizerInputDataConfig {
@@ -199,14 +202,21 @@ impl EntityRecognizerInputDataConfigBuilder {
         &self.augmented_manifests
     }
     /// Consumes the builder and constructs a [`EntityRecognizerInputDataConfig`](crate::types::EntityRecognizerInputDataConfig).
-    pub fn build(self) -> crate::types::EntityRecognizerInputDataConfig {
-        crate::types::EntityRecognizerInputDataConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_types`](crate::types::builders::EntityRecognizerInputDataConfigBuilder::entity_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognizerInputDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityRecognizerInputDataConfig {
             data_format: self.data_format,
-            entity_types: self.entity_types,
+            entity_types: self.entity_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_types",
+                    "entity_types was not specified but it is required when building EntityRecognizerInputDataConfig",
+                )
+            })?,
             documents: self.documents,
             annotations: self.annotations,
             entity_list: self.entity_list,
             augmented_manifests: self.augmented_manifests,
-        }
+        })
     }
 }

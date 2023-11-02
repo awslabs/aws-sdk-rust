@@ -34,7 +34,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::linux_subscriptions_discovery_settings_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -46,17 +50,17 @@ pub fn ser_linux_subscriptions_discovery_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LinuxSubscriptionsDiscoverySettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_regions {
-        let mut array_2 = object.key("SourceRegions").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("SourceRegions").start_array();
+        for item_2 in &input.source_regions {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.organization_integration {
-        object.key("OrganizationIntegration").string(var_4.as_str());
+    {
+        object.key("OrganizationIntegration").string(input.organization_integration.as_str());
     }
     Ok(())
 }

@@ -175,8 +175,10 @@ impl Instance {
         self.private_ip_address.as_deref()
     }
     /// <p>The product codes attached to this instance, if applicable.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
     pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
@@ -212,8 +214,10 @@ impl Instance {
         self.architecture.as_ref()
     }
     /// <p>Any block device mapping entries for the instance.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The idempotency token you provided when you launched the instance, if applicable.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -240,16 +244,22 @@ impl Instance {
         self.instance_lifecycle.as_ref()
     }
     /// <p>The Elastic GPU associated with the instance.</p>
-    pub fn elastic_gpu_associations(&self) -> ::std::option::Option<&[crate::types::ElasticGpuAssociation]> {
-        self.elastic_gpu_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_associations.is_none()`.
+    pub fn elastic_gpu_associations(&self) -> &[crate::types::ElasticGpuAssociation] {
+        self.elastic_gpu_associations.as_deref().unwrap_or_default()
     }
     /// <p>The elastic inference accelerator associated with the instance.</p>
-    pub fn elastic_inference_accelerator_associations(&self) -> ::std::option::Option<&[crate::types::ElasticInferenceAcceleratorAssociation]> {
-        self.elastic_inference_accelerator_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerator_associations.is_none()`.
+    pub fn elastic_inference_accelerator_associations(&self) -> &[crate::types::ElasticInferenceAcceleratorAssociation] {
+        self.elastic_inference_accelerator_associations.as_deref().unwrap_or_default()
     }
     /// <p>The network interfaces for the instance.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::InstanceNetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::InstanceNetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
@@ -264,8 +274,10 @@ impl Instance {
         self.root_device_type.as_ref()
     }
     /// <p>The security groups for the instance.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub fn source_dest_check(&self) -> ::std::option::Option<bool> {
@@ -284,8 +296,10 @@ impl Instance {
         self.state_reason.as_ref()
     }
     /// <p>Any tags assigned to the instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The virtualization type of the instance.</p>
     pub fn virtualization_type(&self) -> ::std::option::Option<&crate::types::VirtualizationType> {
@@ -308,8 +322,10 @@ impl Instance {
         self.hibernation_options.as_ref()
     }
     /// <p>The license configurations for the instance.</p>
-    pub fn licenses(&self) -> ::std::option::Option<&[crate::types::LicenseConfiguration]> {
-        self.licenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.licenses.is_none()`.
+    pub fn licenses(&self) -> &[crate::types::LicenseConfiguration] {
+        self.licenses.as_deref().unwrap_or_default()
     }
     /// <p>The metadata options for the instance.</p>
     pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptionsResponse> {

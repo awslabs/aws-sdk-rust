@@ -41,6 +41,7 @@ pub struct ModifyAddressAttributeInputBuilder {
 }
 impl ModifyAddressAttributeInputBuilder {
     /// <p>[EC2-VPC] The allocation ID.</p>
+    /// This field is required.
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self

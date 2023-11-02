@@ -5,18 +5,19 @@ pub fn ser_query_arg_profile_config(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.forward_when_query_arg_profile_is_unknown {
+    {
         let mut inner_writer = scope.start_el("ForwardWhenQueryArgProfileIsUnknown").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.forward_when_query_arg_profile_is_unknown).encode());
     }
-    if let Some(var_2) = &input.query_arg_profiles {
+    if let Some(var_1) = &input.query_arg_profiles {
         let inner_writer = scope.start_el("QueryArgProfiles");
-        crate::protocol_serde::shape_query_arg_profiles::ser_query_arg_profiles(var_2, inner_writer)?
+        crate::protocol_serde::shape_query_arg_profiles::ser_query_arg_profiles(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_query_arg_profile_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::QueryArgProfileConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_query_arg_profile_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ForwardWhenQueryArgProfileIsUnknown") /* ForwardWhenQueryArgProfileIsUnknown com.amazonaws.cloudfront#QueryArgProfileConfig$ForwardWhenQueryArgProfileIsUnknown */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,21 +37,23 @@ pub fn de_query_arg_profile_config(
                         ?
                     )
                 ;
-                builder = builder.set_forward_when_query_arg_profile_is_unknown(var_3);
+                builder = builder.set_forward_when_query_arg_profile_is_unknown(var_2);
             }
             ,
             s if s.matches("QueryArgProfiles") /* QueryArgProfiles com.amazonaws.cloudfront#QueryArgProfileConfig$QueryArgProfiles */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_query_arg_profiles::de_query_arg_profiles(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_arg_profiles(var_4);
+                builder = builder.set_query_arg_profiles(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::query_arg_profile_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

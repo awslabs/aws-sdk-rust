@@ -41,6 +41,7 @@ pub struct DisassociateEnclaveCertificateIamRoleInputBuilder {
 }
 impl DisassociateEnclaveCertificateIamRoleInputBuilder {
     /// <p>The ARN of the ACM certificate from which to disassociate the IAM role.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateEnclaveCertificateIamRoleInputBuilder {
         &self.certificate_arn
     }
     /// <p>The ARN of the IAM role to disassociate.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

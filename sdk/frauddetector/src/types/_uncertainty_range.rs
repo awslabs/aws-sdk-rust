@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UncertaintyRange {
     /// <p> The lower bound value of the area under curve (auc). </p>
-    pub lower_bound_value: ::std::option::Option<f32>,
+    pub lower_bound_value: f32,
     /// <p> The upper bound value of the area under curve (auc). </p>
-    pub upper_bound_value: ::std::option::Option<f32>,
+    pub upper_bound_value: f32,
 }
 impl UncertaintyRange {
     /// <p> The lower bound value of the area under curve (auc). </p>
-    pub fn lower_bound_value(&self) -> ::std::option::Option<f32> {
+    pub fn lower_bound_value(&self) -> f32 {
         self.lower_bound_value
     }
     /// <p> The upper bound value of the area under curve (auc). </p>
-    pub fn upper_bound_value(&self) -> ::std::option::Option<f32> {
+    pub fn upper_bound_value(&self) -> f32 {
         self.upper_bound_value
     }
 }
@@ -35,6 +35,7 @@ pub struct UncertaintyRangeBuilder {
 }
 impl UncertaintyRangeBuilder {
     /// <p> The lower bound value of the area under curve (auc). </p>
+    /// This field is required.
     pub fn lower_bound_value(mut self, input: f32) -> Self {
         self.lower_bound_value = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl UncertaintyRangeBuilder {
         &self.lower_bound_value
     }
     /// <p> The upper bound value of the area under curve (auc). </p>
+    /// This field is required.
     pub fn upper_bound_value(mut self, input: f32) -> Self {
         self.upper_bound_value = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl UncertaintyRangeBuilder {
         &self.upper_bound_value
     }
     /// Consumes the builder and constructs a [`UncertaintyRange`](crate::types::UncertaintyRange).
-    pub fn build(self) -> crate::types::UncertaintyRange {
-        crate::types::UncertaintyRange {
-            lower_bound_value: self.lower_bound_value,
-            upper_bound_value: self.upper_bound_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lower_bound_value`](crate::types::builders::UncertaintyRangeBuilder::lower_bound_value)
+    /// - [`upper_bound_value`](crate::types::builders::UncertaintyRangeBuilder::upper_bound_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::UncertaintyRange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UncertaintyRange {
+            lower_bound_value: self.lower_bound_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lower_bound_value",
+                    "lower_bound_value was not specified but it is required when building UncertaintyRange",
+                )
+            })?,
+            upper_bound_value: self.upper_bound_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upper_bound_value",
+                    "upper_bound_value was not specified but it is required when building UncertaintyRange",
+                )
+            })?,
+        })
     }
 }

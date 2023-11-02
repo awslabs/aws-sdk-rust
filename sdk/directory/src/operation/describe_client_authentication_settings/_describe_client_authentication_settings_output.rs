@@ -11,8 +11,10 @@ pub struct DescribeClientAuthenticationSettingsOutput {
 }
 impl DescribeClientAuthenticationSettingsOutput {
     /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
-    pub fn client_authentication_settings_info(&self) -> ::std::option::Option<&[crate::types::ClientAuthenticationSettingInfo]> {
-        self.client_authentication_settings_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_authentication_settings_info.is_none()`.
+    pub fn client_authentication_settings_info(&self) -> &[crate::types::ClientAuthenticationSettingInfo] {
+        self.client_authentication_settings_info.as_deref().unwrap_or_default()
     }
     /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

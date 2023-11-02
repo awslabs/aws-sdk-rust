@@ -19,38 +19,52 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                         "isNull" => Some(crate::types::Value::IsNull(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'isNull' cannot be null")
+                            })?,
                         )),
                         "bitValue" => Some(crate::types::Value::BitValue(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bitValue' cannot be null")
+                            })?,
                         )),
                         "bigIntValue" => Some(crate::types::Value::BigIntValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(i64::try_from)
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bigIntValue' cannot be null")
+                                })?,
                         )),
                         "intValue" => Some(crate::types::Value::IntValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(i32::try_from)
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'intValue' cannot be null")
+                                })?,
                         )),
                         "doubleValue" => Some(crate::types::Value::DoubleValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(|v| v.to_f64_lossy())
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'doubleValue' cannot be null")
+                                })?,
                         )),
                         "realValue" => Some(crate::types::Value::RealValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(|v| v.to_f32_lossy())
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'realValue' cannot be null")
+                                })?,
                         )),
                         "stringValue" => Some(crate::types::Value::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringValue' cannot be null")
+                                })?,
                         )),
                         "blobValue" => Some(crate::types::Value::BlobValue(
                             ::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?.ok_or_else(|| {

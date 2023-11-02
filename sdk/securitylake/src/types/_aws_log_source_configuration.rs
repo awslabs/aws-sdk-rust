@@ -7,28 +7,32 @@ pub struct AwsLogSourceConfiguration {
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::vec::Vec<::std::string::String>,
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub source_name: ::std::option::Option<crate::types::AwsLogSourceName>,
+    pub source_name: crate::types::AwsLogSourceName,
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub source_version: ::std::option::Option<::std::string::String>,
+    pub source_version: ::std::string::String,
 }
 impl AwsLogSourceConfiguration {
     /// <p>Specify the Amazon Web Services account information where you want to enable Security Lake.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>Specify the Regions where you want to enable Security Lake.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    pub fn regions(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.regions.deref()
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&crate::types::AwsLogSourceName> {
-        self.source_name.as_ref()
+    pub fn source_name(&self) -> &crate::types::AwsLogSourceName {
+        &self.source_name
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
-        self.source_version.as_deref()
+    pub fn source_version(&self) -> &str {
+        use std::ops::Deref;
+        self.source_version.deref()
     }
 }
 impl AwsLogSourceConfiguration {
@@ -89,6 +93,7 @@ impl AwsLogSourceConfigurationBuilder {
         &self.regions
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
+    /// This field is required.
     pub fn source_name(mut self, input: crate::types::AwsLogSourceName) -> Self {
         self.source_name = ::std::option::Option::Some(input);
         self
@@ -117,12 +122,25 @@ impl AwsLogSourceConfigurationBuilder {
         &self.source_version
     }
     /// Consumes the builder and constructs a [`AwsLogSourceConfiguration`](crate::types::AwsLogSourceConfiguration).
-    pub fn build(self) -> crate::types::AwsLogSourceConfiguration {
-        crate::types::AwsLogSourceConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`regions`](crate::types::builders::AwsLogSourceConfigurationBuilder::regions)
+    /// - [`source_name`](crate::types::builders::AwsLogSourceConfigurationBuilder::source_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsLogSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsLogSourceConfiguration {
             accounts: self.accounts,
-            regions: self.regions,
-            source_name: self.source_name,
-            source_version: self.source_version,
-        }
+            regions: self.regions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "regions",
+                    "regions was not specified but it is required when building AwsLogSourceConfiguration",
+                )
+            })?,
+            source_name: self.source_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_name",
+                    "source_name was not specified but it is required when building AwsLogSourceConfiguration",
+                )
+            })?,
+            source_version: self.source_version.unwrap_or_else(|| "latest".to_owned()),
+        })
     }
 }

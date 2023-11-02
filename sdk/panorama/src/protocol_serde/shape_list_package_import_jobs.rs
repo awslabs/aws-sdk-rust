@@ -28,11 +28,10 @@ pub fn de_list_package_import_jobs_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::list_package_import_jobs::ListPackageImportJobsError::ConflictException({
@@ -43,11 +42,10 @@ pub fn de_list_package_import_jobs_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_package_import_jobs::ListPackageImportJobsError::InternalServerException({
@@ -65,11 +63,10 @@ pub fn de_list_package_import_jobs_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_package_import_jobs::ListPackageImportJobsError::ValidationException({
@@ -80,11 +77,10 @@ pub fn de_list_package_import_jobs_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_package_import_jobs::ListPackageImportJobsError::generic(generic),
@@ -106,7 +102,9 @@ pub fn de_list_package_import_jobs_http_response(
         output = crate::protocol_serde::shape_list_package_import_jobs::de_list_package_import_jobs(_response_body, output)
             .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_package_import_jobs_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_package_import_jobs::ListPackageImportJobsError::unhandled)?
     })
 }
 

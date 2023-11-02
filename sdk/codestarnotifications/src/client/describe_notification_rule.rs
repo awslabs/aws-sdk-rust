@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNotificationRule`](crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_notification_rule::builders::DescribeNotificationRuleFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the notification rule.</p><br>
     /// - On success, responds with [`DescribeNotificationRuleOutput`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    ///   - [`arn(String)`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput::name): <p>The name of the notification rule.</p>
     ///   - [`event_types(Option<Vec<EventTypeSummary>>)`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput::event_types): <p>A list of the event types associated with the notification rule.</p>
     ///   - [`resource(Option<String>)`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput::resource): <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>

@@ -3,23 +3,23 @@ pub fn ser_import_assets_from_s3_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetsFromS3RequestDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.asset_sources {
-        let mut array_2 = object.key("AssetSources").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("AssetSources").start_array();
+        for item_2 in &input.asset_sources {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_asset_source_entry::ser_asset_source_entry(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_asset_source_entry::ser_asset_source_entry(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.data_set_id {
-        object.key("DataSetId").string(var_5.as_str());
+    {
+        object.key("DataSetId").string(input.data_set_id.as_str());
     }
-    if let Some(var_6) = &input.revision_id {
-        object.key("RevisionId").string(var_6.as_str());
+    {
+        object.key("RevisionId").string(input.revision_id.as_str());
     }
     Ok(())
 }

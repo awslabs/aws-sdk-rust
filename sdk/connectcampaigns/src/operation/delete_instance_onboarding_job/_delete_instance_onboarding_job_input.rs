@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    pub connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub connect_instance_id: ::std::string::String,
 }
 impl DeleteInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
-        self.connect_instance_id.as_deref()
+    pub fn connect_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connect_instance_id.deref()
     }
 }
 impl DeleteInstanceOnboardingJobInput {
@@ -28,6 +29,7 @@ pub struct DeleteInstanceOnboardingJobInputBuilder {
 }
 impl DeleteInstanceOnboardingJobInputBuilder {
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -42,6 +44,8 @@ impl DeleteInstanceOnboardingJobInputBuilder {
         &self.connect_instance_id
     }
     /// Consumes the builder and constructs a [`DeleteInstanceOnboardingJobInput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connect_instance_id`](crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobInputBuilder::connect_instance_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +53,12 @@ impl DeleteInstanceOnboardingJobInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput {
-            connect_instance_id: self.connect_instance_id,
+            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connect_instance_id",
+                    "connect_instance_id was not specified but it is required when building DeleteInstanceOnboardingJobInput",
+                )
+            })?,
         })
     }
 }

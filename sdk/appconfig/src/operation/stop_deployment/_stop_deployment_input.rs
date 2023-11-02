@@ -41,6 +41,7 @@ pub struct StopDeploymentInputBuilder {
 }
 impl StopDeploymentInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StopDeploymentInputBuilder {
         &self.application_id
     }
     /// <p>The environment ID.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl StopDeploymentInputBuilder {
         &self.environment_id
     }
     /// <p>The sequence number of the deployment.</p>
+    /// This field is required.
     pub fn deployment_number(mut self, input: i32) -> Self {
         self.deployment_number = ::std::option::Option::Some(input);
         self

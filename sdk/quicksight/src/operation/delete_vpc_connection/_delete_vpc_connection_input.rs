@@ -34,6 +34,7 @@ pub struct DeleteVpcConnectionInputBuilder {
 }
 impl DeleteVpcConnectionInputBuilder {
     /// <p>The Amazon Web Services account ID of the account where you want to delete a VPC connection.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteVpcConnectionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self

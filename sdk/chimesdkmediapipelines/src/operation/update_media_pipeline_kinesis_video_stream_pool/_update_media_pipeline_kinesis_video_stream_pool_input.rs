@@ -35,6 +35,7 @@ pub struct UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder {
 }
 impl UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder {
     /// <p>The ID of the video stream pool.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

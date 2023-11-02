@@ -94,6 +94,7 @@ pub struct IsAuthorizedWithTokenInputBuilder {
 }
 impl IsAuthorizedWithTokenInputBuilder {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self

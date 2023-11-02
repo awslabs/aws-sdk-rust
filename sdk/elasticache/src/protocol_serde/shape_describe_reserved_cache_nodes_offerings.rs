@@ -32,8 +32,8 @@ pub fn de_describe_reserved_cache_nodes_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValue" => crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError::InvalidParameterValueException({
@@ -48,8 +48,8 @@ pub fn de_describe_reserved_cache_nodes_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ReservedCacheNodesOfferingNotFound" => crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError::ReservedCacheNodesOfferingNotFoundFault({
@@ -64,8 +64,8 @@ pub fn de_describe_reserved_cache_nodes_offerings_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsError::generic(generic)

@@ -30,8 +30,10 @@ impl Commit {
         self.tree_id.as_deref()
     }
     /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
-    pub fn parents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
+    pub fn parents(&self) -> &[::std::string::String] {
+        self.parents.as_deref().unwrap_or_default()
     }
     /// <p>The commit message associated with the specified commit.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {

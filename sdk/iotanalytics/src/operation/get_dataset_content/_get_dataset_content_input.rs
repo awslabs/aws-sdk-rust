@@ -34,6 +34,7 @@ pub struct GetDatasetContentInputBuilder {
 }
 impl GetDatasetContentInputBuilder {
     /// <p>The name of the dataset whose contents are retrieved.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self

@@ -41,6 +41,7 @@ pub struct DeregisterTargetFromMaintenanceWindowInputBuilder {
 }
 impl DeregisterTargetFromMaintenanceWindowInputBuilder {
     /// <p>The ID of the maintenance window the target should be removed from.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeregisterTargetFromMaintenanceWindowInputBuilder {
         &self.window_id
     }
     /// <p>The ID of the target definition to remove.</p>
+    /// This field is required.
     pub fn window_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_target_id = ::std::option::Option::Some(input.into());
         self

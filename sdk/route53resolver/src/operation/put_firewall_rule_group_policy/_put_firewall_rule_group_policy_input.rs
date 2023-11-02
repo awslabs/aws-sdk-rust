@@ -34,6 +34,7 @@ pub struct PutFirewallRuleGroupPolicyInputBuilder {
 }
 impl PutFirewallRuleGroupPolicyInputBuilder {
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutFirewallRuleGroupPolicyInputBuilder {
         &self.arn
     }
     /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
+    /// This field is required.
     pub fn firewall_rule_group_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_policy = ::std::option::Option::Some(input.into());
         self

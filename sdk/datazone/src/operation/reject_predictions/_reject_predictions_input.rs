@@ -34,8 +34,10 @@ impl RejectPredictionsInput {
         self.reject_rule.as_ref()
     }
     /// <p></p>
-    pub fn reject_choices(&self) -> ::std::option::Option<&[crate::types::RejectChoice]> {
-        self.reject_choices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reject_choices.is_none()`.
+    pub fn reject_choices(&self) -> &[crate::types::RejectChoice] {
+        self.reject_choices.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct RejectPredictionsInputBuilder {
 }
 impl RejectPredictionsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl RejectPredictionsInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the prediction.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

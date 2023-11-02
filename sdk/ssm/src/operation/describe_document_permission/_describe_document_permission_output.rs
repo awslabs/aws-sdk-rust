@@ -13,12 +13,16 @@ pub struct DescribeDocumentPermissionOutput {
 }
 impl DescribeDocumentPermissionOutput {
     /// <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
-    pub fn account_sharing_info_list(&self) -> ::std::option::Option<&[crate::types::AccountSharingInfo]> {
-        self.account_sharing_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_sharing_info_list.is_none()`.
+    pub fn account_sharing_info_list(&self) -> &[crate::types::AccountSharingInfo] {
+        self.account_sharing_info_list.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

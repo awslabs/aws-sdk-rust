@@ -7,16 +7,18 @@ use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::primitives::ByteStream;
 use aws_sdk_s3::{config::Credentials, config::Region, Client};
-use aws_smithy_client::test_connection::capture_request;
+use aws_smithy_runtime::client::http::test_util::capture_request;
 use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
 async fn test_operation_should_not_normalize_uri_path() {
-    let (conn, rx) = capture_request(None);
+    let (http_client, rx) = capture_request(None);
     let sdk_config = SdkConfig::builder()
-        .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+        .credentials_provider(SharedCredentialsProvider::new(
+            Credentials::for_tests_with_session_token(),
+        ))
         .region(Region::new("us-east-1"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .build();
 
     let client = Client::new(&sdk_config);

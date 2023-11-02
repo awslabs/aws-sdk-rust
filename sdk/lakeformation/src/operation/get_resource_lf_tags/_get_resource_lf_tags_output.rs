@@ -13,16 +13,22 @@ pub struct GetResourceLfTagsOutput {
 }
 impl GetResourceLfTagsOutput {
     /// <p>A list of LF-tags applied to a database resource.</p>
-    pub fn lf_tag_on_database(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
-        self.lf_tag_on_database.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tag_on_database.is_none()`.
+    pub fn lf_tag_on_database(&self) -> &[crate::types::LfTagPair] {
+        self.lf_tag_on_database.as_deref().unwrap_or_default()
     }
     /// <p>A list of LF-tags applied to a table resource.</p>
-    pub fn lf_tags_on_table(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
-        self.lf_tags_on_table.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags_on_table.is_none()`.
+    pub fn lf_tags_on_table(&self) -> &[crate::types::LfTagPair] {
+        self.lf_tags_on_table.as_deref().unwrap_or_default()
     }
     /// <p>A list of LF-tags applied to a column resource.</p>
-    pub fn lf_tags_on_columns(&self) -> ::std::option::Option<&[crate::types::ColumnLfTag]> {
-        self.lf_tags_on_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags_on_columns.is_none()`.
+    pub fn lf_tags_on_columns(&self) -> &[crate::types::ColumnLfTag] {
+        self.lf_tags_on_columns.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetResourceLfTagsOutput {

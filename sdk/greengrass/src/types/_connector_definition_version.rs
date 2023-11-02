@@ -9,8 +9,10 @@ pub struct ConnectorDefinitionVersion {
 }
 impl ConnectorDefinitionVersion {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn connectors(&self) -> ::std::option::Option<&[crate::types::Connector]> {
-        self.connectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectors.is_none()`.
+    pub fn connectors(&self) -> &[crate::types::Connector] {
+        self.connectors.as_deref().unwrap_or_default()
     }
 }
 impl ConnectorDefinitionVersion {

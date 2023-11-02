@@ -27,6 +27,7 @@ pub struct PutModelInvocationLoggingConfigurationInputBuilder {
 }
 impl PutModelInvocationLoggingConfigurationInputBuilder {
     /// <p>The logging configuration values to set.</p>
+    /// This field is required.
     pub fn logging_config(mut self, input: crate::types::LoggingConfig) -> Self {
         self.logging_config = ::std::option::Option::Some(input);
         self

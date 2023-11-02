@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeThingRegistrationTask`](crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder::set_task_id): <p>The task ID.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The task ID.</p><br>
     /// - On success, responds with [`DescribeThingRegistrationTaskOutput`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput::task_id): <p>The task ID.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskOutput::creation_date): <p>The task creation date.</p>

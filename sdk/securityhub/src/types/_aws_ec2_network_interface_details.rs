@@ -31,20 +31,26 @@ impl AwsEc2NetworkInterfaceDetails {
         self.network_interface_id.as_deref()
     }
     /// <p>Security groups for the network interface.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceSecurityGroup]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::AwsEc2NetworkInterfaceSecurityGroup] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether traffic to or from the instance is validated.</p>
     pub fn source_dest_check(&self) -> ::std::option::Option<bool> {
         self.source_dest_check
     }
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    pub fn ip_v6_addresses(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail]> {
-        self.ip_v6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_v6_addresses.is_none()`.
+    pub fn ip_v6_addresses(&self) -> &[crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail] {
+        self.ip_v6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::AwsEc2NetworkInterfacePrivateIpAddressDetail] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The public DNS name of the network interface.</p>
     pub fn public_dns_name(&self) -> ::std::option::Option<&str> {

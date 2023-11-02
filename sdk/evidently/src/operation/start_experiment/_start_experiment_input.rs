@@ -4,24 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The name of the experiment to start.</p>
-    pub experiment: ::std::option::Option<::std::string::String>,
+    pub experiment: ::std::string::String,
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    pub analysis_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub analysis_complete_time: ::aws_smithy_types::DateTime,
 }
 impl StartExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The name of the experiment to start.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
-        self.experiment.as_deref()
+    pub fn experiment(&self) -> &str {
+        use std::ops::Deref;
+        self.experiment.deref()
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
-    pub fn analysis_complete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.analysis_complete_time.as_ref()
+    pub fn analysis_complete_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.analysis_complete_time
     }
 }
 impl StartExperimentInput {
@@ -41,6 +43,7 @@ pub struct StartExperimentInputBuilder {
 }
 impl StartExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment to start.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl StartExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment to start.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl StartExperimentInputBuilder {
         &self.experiment
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
+    /// This field is required.
     pub fn analysis_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.analysis_complete_time = ::std::option::Option::Some(input);
         self
@@ -83,13 +88,32 @@ impl StartExperimentInputBuilder {
         &self.analysis_complete_time
     }
     /// Consumes the builder and constructs a [`StartExperimentInput`](crate::operation::start_experiment::StartExperimentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::start_experiment::builders::StartExperimentInputBuilder::project)
+    /// - [`experiment`](crate::operation::start_experiment::builders::StartExperimentInputBuilder::experiment)
+    /// - [`analysis_complete_time`](crate::operation::start_experiment::builders::StartExperimentInputBuilder::analysis_complete_time)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_experiment::StartExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_experiment::StartExperimentInput {
-            project: self.project,
-            experiment: self.experiment,
-            analysis_complete_time: self.analysis_complete_time,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building StartExperimentInput",
+                )
+            })?,
+            experiment: self.experiment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "experiment",
+                    "experiment was not specified but it is required when building StartExperimentInput",
+                )
+            })?,
+            analysis_complete_time: self.analysis_complete_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analysis_complete_time",
+                    "analysis_complete_time was not specified but it is required when building StartExperimentInput",
+                )
+            })?,
         })
     }
 }

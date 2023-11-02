@@ -42,6 +42,7 @@ pub struct BatchListAttachedIndicesBuilder {
 }
 impl BatchListAttachedIndicesBuilder {
     /// <p>A reference to the object that has indices attached.</p>
+    /// This field is required.
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_reference = ::std::option::Option::Some(input);
         self

@@ -3,26 +3,26 @@ pub fn ser_custom_routing_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomRoutingDestinationConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.from_port {
+    {
         object.key("FromPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.from_port).into()),
         );
     }
-    if let Some(var_2) = &input.to_port {
+    {
         object.key("ToPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.to_port).into()),
         );
     }
-    if let Some(var_3) = &input.protocols {
-        let mut array_4 = object.key("Protocols").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("Protocols").start_array();
+        for item_2 in &input.protocols {
             {
-                array_4.value().string(item_5.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
     Ok(())
 }

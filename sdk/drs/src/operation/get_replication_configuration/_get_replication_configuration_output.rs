@@ -57,8 +57,10 @@ impl GetReplicationConfigurationOutput {
         self.associate_default_security_group
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn replication_servers_security_groups_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_servers_security_groups_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_i_ds.is_none()`.
+    pub fn replication_servers_security_groups_i_ds(&self) -> &[::std::string::String] {
+        self.replication_servers_security_groups_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>The instance type to be used for the replication server.</p>
     pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
@@ -73,8 +75,10 @@ impl GetReplicationConfigurationOutput {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-    pub fn replicated_disks(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationReplicatedDisk]> {
-        self.replicated_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
+    pub fn replicated_disks(&self) -> &[crate::types::ReplicationConfigurationReplicatedDisk] {
+        self.replicated_disks.as_deref().unwrap_or_default()
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
     pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
@@ -101,8 +105,10 @@ impl GetReplicationConfigurationOutput {
         self.staging_area_tags.as_ref()
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub fn pit_policy(&self) -> ::std::option::Option<&[crate::types::PitPolicyRule]> {
-        self.pit_policy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pit_policy.is_none()`.
+    pub fn pit_policy(&self) -> &[crate::types::PitPolicyRule] {
+        self.pit_policy.as_deref().unwrap_or_default()
     }
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     pub fn auto_replicate_new_disks(&self) -> ::std::option::Option<bool> {

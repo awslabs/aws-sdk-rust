@@ -17,8 +17,10 @@ impl DescribeWarmPoolOutput {
         self.warm_pool_configuration.as_ref()
     }
     /// <p>The instances that are currently in the warm pool.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

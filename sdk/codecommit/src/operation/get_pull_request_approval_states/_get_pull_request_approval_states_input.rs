@@ -34,6 +34,7 @@ pub struct GetPullRequestApprovalStatesInputBuilder {
 }
 impl GetPullRequestApprovalStatesInputBuilder {
     /// <p>The system-generated ID for the pull request.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPullRequestApprovalStatesInputBuilder {
         &self.pull_request_id
     }
     /// <p>The system-generated ID for the pull request revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self

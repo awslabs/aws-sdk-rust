@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLunaClient`](crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_arn(impl Into<String>)`](crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder::set_client_arn): <p>The ARN of the client to delete.</p>
+    ///   - [`client_arn(impl Into<String>)`](crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder::set_client_arn):<br>required: **true**<br><p>The ARN of the client to delete.</p><br>
     /// - On success, responds with [`DeleteLunaClientOutput`](crate::operation::delete_luna_client::DeleteLunaClientOutput) with field(s):
-    ///   - [`status(Option<String>)`](crate::operation::delete_luna_client::DeleteLunaClientOutput::status): <p>The status of the action.</p>
+    ///   - [`status(String)`](crate::operation::delete_luna_client::DeleteLunaClientOutput::status): <p>The status of the action.</p>
     /// - On failure, responds with [`SdkError<DeleteLunaClientError>`](crate::operation::delete_luna_client::DeleteLunaClientError)
     #[deprecated(note = "This API is deprecated.")]
     pub fn delete_luna_client(&self) -> crate::operation::delete_luna_client::builders::DeleteLunaClientFluentBuilder {

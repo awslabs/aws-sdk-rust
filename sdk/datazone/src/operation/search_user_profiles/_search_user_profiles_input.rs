@@ -66,6 +66,7 @@ pub struct SearchUserProfilesInputBuilder {
 }
 impl SearchUserProfilesInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which you want to search user profiles.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl SearchUserProfilesInputBuilder {
         &self.domain_identifier
     }
     /// <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
+    /// This field is required.
     pub fn user_type(mut self, input: crate::types::UserSearchType) -> Self {
         self.user_type = ::std::option::Option::Some(input);
         self

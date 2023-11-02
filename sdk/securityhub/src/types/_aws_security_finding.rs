@@ -148,8 +148,10 @@ impl AwsSecurityFinding {
     }
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>Indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -215,32 +217,42 @@ impl AwsSecurityFinding {
         self.user_defined_fields.as_ref()
     }
     /// <p>A list of malware related to a finding.</p>
-    pub fn malware(&self) -> ::std::option::Option<&[crate::types::Malware]> {
-        self.malware.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.malware.is_none()`.
+    pub fn malware(&self) -> &[crate::types::Malware] {
+        self.malware.as_deref().unwrap_or_default()
     }
     /// <p>The details of network-related information about a finding.</p>
     pub fn network(&self) -> ::std::option::Option<&crate::types::Network> {
         self.network.as_ref()
     }
     /// <p>Provides information about a network path that is relevant to a finding. Each entry under <code>NetworkPath</code> represents a component of that path.</p>
-    pub fn network_path(&self) -> ::std::option::Option<&[crate::types::NetworkPathComponent]> {
-        self.network_path.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_path.is_none()`.
+    pub fn network_path(&self) -> &[crate::types::NetworkPathComponent] {
+        self.network_path.as_deref().unwrap_or_default()
     }
     /// <p>The details of process-related information about a finding.</p>
     pub fn process(&self) -> ::std::option::Option<&crate::types::ProcessDetails> {
         self.process.as_ref()
     }
     /// <p>Details about the threat detected in a security finding and the file paths that were affected by the threat. </p>
-    pub fn threats(&self) -> ::std::option::Option<&[crate::types::Threat]> {
-        self.threats.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threats.is_none()`.
+    pub fn threats(&self) -> &[crate::types::Threat] {
+        self.threats.as_deref().unwrap_or_default()
     }
     /// <p>Threat intelligence details related to a finding.</p>
-    pub fn threat_intel_indicators(&self) -> ::std::option::Option<&[crate::types::ThreatIntelIndicator]> {
-        self.threat_intel_indicators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threat_intel_indicators.is_none()`.
+    pub fn threat_intel_indicators(&self) -> &[crate::types::ThreatIntelIndicator] {
+        self.threat_intel_indicators.as_deref().unwrap_or_default()
     }
     /// <p>A set of resource data types that describe the resources that the finding refers to.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::Resource] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>This data type is exclusive to findings that are generated as the result of a check run against a specific rule in a supported security standard, such as CIS Amazon Web Services Foundations. Contains security standard-related finding details.</p>
     pub fn compliance(&self) -> ::std::option::Option<&crate::types::Compliance> {
@@ -263,16 +275,20 @@ impl AwsSecurityFinding {
         self.record_state.as_ref()
     }
     /// <p>A list of related findings.</p>
-    pub fn related_findings(&self) -> ::std::option::Option<&[crate::types::RelatedFinding]> {
-        self.related_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_findings.is_none()`.
+    pub fn related_findings(&self) -> &[crate::types::RelatedFinding] {
+        self.related_findings.as_deref().unwrap_or_default()
     }
     /// <p>A user-defined note added to a finding.</p>
     pub fn note(&self) -> ::std::option::Option<&crate::types::Note> {
         self.note.as_ref()
     }
     /// <p>Provides a list of vulnerabilities associated with the findings.</p>
-    pub fn vulnerabilities(&self) -> ::std::option::Option<&[crate::types::Vulnerability]> {
-        self.vulnerabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerabilities.is_none()`.
+    pub fn vulnerabilities(&self) -> &[crate::types::Vulnerability] {
+        self.vulnerabilities.as_deref().unwrap_or_default()
     }
     /// <p>Provides an overview of the patch compliance status for an instance against a selected compliance standard.</p>
     pub fn patch_summary(&self) -> ::std::option::Option<&crate::types::PatchSummary> {
@@ -351,6 +367,7 @@ pub struct AwsSecurityFindingBuilder {
 }
 impl AwsSecurityFindingBuilder {
     /// <p>The schema version that a finding is formatted for.</p>
+    /// This field is required.
     pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
@@ -365,6 +382,7 @@ impl AwsSecurityFindingBuilder {
         &self.schema_version
     }
     /// <p>The security findings provider-specific identifier for a finding.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -379,6 +397,7 @@ impl AwsSecurityFindingBuilder {
         &self.id
     }
     /// <p>The ARN generated by Security Hub that uniquely identifies a product that generates findings. This can be the ARN for a third-party product that is integrated with Security Hub, or the ARN for a custom integration.</p>
+    /// This field is required.
     pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_arn = ::std::option::Option::Some(input.into());
         self
@@ -450,6 +469,7 @@ impl AwsSecurityFindingBuilder {
         &self.region
     }
     /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// This field is required.
     pub fn generator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generator_id = ::std::option::Option::Some(input.into());
         self
@@ -464,6 +484,7 @@ impl AwsSecurityFindingBuilder {
         &self.generator_id
     }
     /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -536,6 +557,7 @@ impl AwsSecurityFindingBuilder {
     }
     /// <p>Indicates when the security findings provider created the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
         self
@@ -553,6 +575,7 @@ impl AwsSecurityFindingBuilder {
     }
     /// <p>Indicates when the security findings provider last updated the finding record.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_at = ::std::option::Option::Some(input.into());
         self
@@ -619,6 +642,7 @@ impl AwsSecurityFindingBuilder {
     /// <p>A finding's title.</p> <note>
     /// <p>In this release, <code>Title</code> is a required property.</p>
     /// </note>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -639,6 +663,7 @@ impl AwsSecurityFindingBuilder {
     /// <p>A finding's description.</p> <note>
     /// <p>In this release, <code>Description</code> is a required property.</p>
     /// </note>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

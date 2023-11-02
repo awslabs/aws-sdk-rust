@@ -10,8 +10,10 @@ pub struct DescribeEventTopicsOutput {
 }
 impl DescribeEventTopicsOutput {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    pub fn event_topics(&self) -> ::std::option::Option<&[crate::types::EventTopic]> {
-        self.event_topics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_topics.is_none()`.
+    pub fn event_topics(&self) -> &[crate::types::EventTopic] {
+        self.event_topics.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEventTopicsOutput {

@@ -7,7 +7,7 @@ pub struct PipeSourceActiveMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
     pub credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     /// <p>The name of the destination queue to consume.</p>
-    pub queue_name: ::std::option::Option<::std::string::String>,
+    pub queue_name: ::std::string::String,
     /// <p>The maximum number of records to include in each batch.</p>
     pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
@@ -19,8 +19,9 @@ impl PipeSourceActiveMqBrokerParameters {
         self.credentials.as_ref()
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn queue_name(&self) -> ::std::option::Option<&str> {
-        self.queue_name.as_deref()
+    pub fn queue_name(&self) -> &str {
+        use std::ops::Deref;
+        self.queue_name.deref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(&self) -> ::std::option::Option<i32> {
@@ -59,6 +60,7 @@ pub struct PipeSourceActiveMqBrokerParametersBuilder {
 }
 impl PipeSourceActiveMqBrokerParametersBuilder {
     /// <p>The credentials needed to access the resource.</p>
+    /// This field is required.
     pub fn credentials(mut self, input: crate::types::MqBrokerAccessCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
@@ -73,6 +75,7 @@ impl PipeSourceActiveMqBrokerParametersBuilder {
         &self.credentials
     }
     /// <p>The name of the destination queue to consume.</p>
+    /// This field is required.
     pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +118,20 @@ impl PipeSourceActiveMqBrokerParametersBuilder {
         &self.maximum_batching_window_in_seconds
     }
     /// Consumes the builder and constructs a [`PipeSourceActiveMqBrokerParameters`](crate::types::PipeSourceActiveMqBrokerParameters).
-    pub fn build(self) -> crate::types::PipeSourceActiveMqBrokerParameters {
-        crate::types::PipeSourceActiveMqBrokerParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue_name`](crate::types::builders::PipeSourceActiveMqBrokerParametersBuilder::queue_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeSourceActiveMqBrokerParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeSourceActiveMqBrokerParameters {
             credentials: self.credentials,
-            queue_name: self.queue_name,
+            queue_name: self.queue_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "queue_name",
+                    "queue_name was not specified but it is required when building PipeSourceActiveMqBrokerParameters",
+                )
+            })?,
             batch_size: self.batch_size,
             maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PipeSourceActiveMqBrokerParametersBuilder {

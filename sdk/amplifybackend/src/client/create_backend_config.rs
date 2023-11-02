@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateBackendConfig`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::set_app_id): <p>The app ID.</p>
-    ///   - [`backend_manager_app_id(impl Into<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::backend_manager_app_id) / [`set_backend_manager_app_id(Option<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::set_backend_manager_app_id): <p>The app ID for the backend manager.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::set_app_id):<br>required: **true**<br><p>The app ID.</p><br>
+    ///   - [`backend_manager_app_id(impl Into<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::backend_manager_app_id) / [`set_backend_manager_app_id(Option<String>)`](crate::operation::create_backend_config::builders::CreateBackendConfigFluentBuilder::set_backend_manager_app_id):<br>required: **false**<br><p>The app ID for the backend manager.</p><br>
     /// - On success, responds with [`CreateBackendConfigOutput`](crate::operation::create_backend_config::CreateBackendConfigOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::create_backend_config::CreateBackendConfigOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::operation::create_backend_config::CreateBackendConfigOutput::backend_environment_name): <p>The name of the backend environment.</p>

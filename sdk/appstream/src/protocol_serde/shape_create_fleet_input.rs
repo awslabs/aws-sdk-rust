@@ -103,5 +103,11 @@ pub fn ser_create_fleet_input(
         crate::protocol_serde::shape_s3_location::ser_s3_location(&mut object_30, var_29)?;
         object_30.finish();
     }
+    if let Some(var_31) = &input.max_sessions_per_instance {
+        object.key("MaxSessionsPerInstance").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+        );
+    }
     Ok(())
 }

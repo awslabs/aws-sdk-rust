@@ -51,8 +51,10 @@ impl DescribeAssetBundleExportJobOutput {
     }
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::AssetBundleExportJobError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -71,8 +73,10 @@ impl DescribeAssetBundleExportJobOutput {
         self.aws_account_id.as_deref()
     }
     /// <p>A list of resource ARNs that exported with the job.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>The include dependencies flag.</p>
     pub fn include_all_dependencies(&self) -> bool {

@@ -27,6 +27,7 @@ pub struct DescribeAcceleratorAttributesInputBuilder {
 }
 impl DescribeAcceleratorAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
+    /// This field is required.
     pub fn accelerator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accelerator_arn = ::std::option::Option::Some(input.into());
         self

@@ -13,8 +13,10 @@ pub struct ListDataLakeExceptionsInput {
 }
 impl ListDataLakeExceptionsInput {
     /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>List the maximum number of failures in Security Lake.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

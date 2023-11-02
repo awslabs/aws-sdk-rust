@@ -27,6 +27,7 @@ pub struct DescribeBotInputBuilder {
 }
 impl DescribeBotInputBuilder {
     /// <p>The unique identifier of the bot to describe.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self

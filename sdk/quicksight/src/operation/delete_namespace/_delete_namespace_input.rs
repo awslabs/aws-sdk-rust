@@ -34,6 +34,7 @@ pub struct DeleteNamespaceInputBuilder {
 }
 impl DeleteNamespaceInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteNamespaceInputBuilder {
         &self.aws_account_id
     }
     /// <p>The namespace that you want to delete.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self

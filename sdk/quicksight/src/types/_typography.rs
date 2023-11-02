@@ -9,8 +9,10 @@ pub struct Typography {
 }
 impl Typography {
     /// <p>Determines the list of font families.</p>
-    pub fn font_families(&self) -> ::std::option::Option<&[crate::types::Font]> {
-        self.font_families.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.font_families.is_none()`.
+    pub fn font_families(&self) -> &[crate::types::Font] {
+        self.font_families.as_deref().unwrap_or_default()
     }
 }
 impl Typography {

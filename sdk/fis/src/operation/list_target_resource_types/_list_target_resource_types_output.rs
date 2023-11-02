@@ -11,8 +11,10 @@ pub struct ListTargetResourceTypesOutput {
 }
 impl ListTargetResourceTypesOutput {
     /// <p>The target resource types.</p>
-    pub fn target_resource_types(&self) -> ::std::option::Option<&[crate::types::TargetResourceTypeSummary]> {
-        self.target_resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_resource_types.is_none()`.
+    pub fn target_resource_types(&self) -> &[crate::types::TargetResourceTypeSummary] {
+        self.target_resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

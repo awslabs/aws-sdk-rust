@@ -9,8 +9,10 @@ pub struct NodegroupHealth {
 }
 impl NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
-    pub fn issues(&self) -> ::std::option::Option<&[crate::types::Issue]> {
-        self.issues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues.is_none()`.
+    pub fn issues(&self) -> &[crate::types::Issue] {
+        self.issues.as_deref().unwrap_or_default()
     }
 }
 impl NodegroupHealth {

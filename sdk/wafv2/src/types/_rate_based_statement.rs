@@ -44,7 +44,7 @@ pub struct RateBasedStatement {
     /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
-    pub limit: ::std::option::Option<i64>,
+    pub limit: i64,
     /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling. </p>
     /// </note>
@@ -54,7 +54,7 @@ pub struct RateBasedStatement {
     /// <li> <p> <code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header. </p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property. </p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// <li> <p> <code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// </ul>
-    pub aggregate_key_type: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
+    pub aggregate_key_type: crate::types::RateBasedStatementAggregateKeyType,
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
@@ -72,7 +72,7 @@ impl RateBasedStatement {
     /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
-    pub fn limit(&self) -> ::std::option::Option<i64> {
+    pub fn limit(&self) -> i64 {
         self.limit
     }
     /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
@@ -84,8 +84,8 @@ impl RateBasedStatement {
     /// <li> <p> <code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header. </p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property. </p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// <li> <p> <code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// </ul>
-    pub fn aggregate_key_type(&self) -> ::std::option::Option<&crate::types::RateBasedStatementAggregateKeyType> {
-        self.aggregate_key_type.as_ref()
+    pub fn aggregate_key_type(&self) -> &crate::types::RateBasedStatementAggregateKeyType {
+        &self.aggregate_key_type
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub fn scope_down_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
@@ -99,8 +99,10 @@ impl RateBasedStatement {
         self.forwarded_ip_config.as_ref()
     }
     /// <p>Specifies the aggregate keys to use in a rate-base rule. </p>
-    pub fn custom_keys(&self) -> ::std::option::Option<&[crate::types::RateBasedStatementCustomKey]> {
-        self.custom_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_keys.is_none()`.
+    pub fn custom_keys(&self) -> &[crate::types::RateBasedStatementCustomKey] {
+        self.custom_keys.as_deref().unwrap_or_default()
     }
 }
 impl RateBasedStatement {
@@ -127,6 +129,7 @@ impl RateBasedStatementBuilder {
     /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn limit(mut self, input: i64) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
@@ -159,6 +162,7 @@ impl RateBasedStatementBuilder {
     /// <li> <p> <code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header. </p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property. </p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// <li> <p> <code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn aggregate_key_type(mut self, input: crate::types::RateBasedStatementAggregateKeyType) -> Self {
         self.aggregate_key_type = ::std::option::Option::Some(input);
         self
@@ -246,13 +250,26 @@ impl RateBasedStatementBuilder {
         &self.custom_keys
     }
     /// Consumes the builder and constructs a [`RateBasedStatement`](crate::types::RateBasedStatement).
-    pub fn build(self) -> crate::types::RateBasedStatement {
-        crate::types::RateBasedStatement {
-            limit: self.limit,
-            aggregate_key_type: self.aggregate_key_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`limit`](crate::types::builders::RateBasedStatementBuilder::limit)
+    /// - [`aggregate_key_type`](crate::types::builders::RateBasedStatementBuilder::aggregate_key_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RateBasedStatement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RateBasedStatement {
+            limit: self.limit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "limit",
+                    "limit was not specified but it is required when building RateBasedStatement",
+                )
+            })?,
+            aggregate_key_type: self.aggregate_key_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aggregate_key_type",
+                    "aggregate_key_type was not specified but it is required when building RateBasedStatement",
+                )
+            })?,
             scope_down_statement: self.scope_down_statement,
             forwarded_ip_config: self.forwarded_ip_config,
             custom_keys: self.custom_keys,
-        }
+        })
     }
 }

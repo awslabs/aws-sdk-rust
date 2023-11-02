@@ -18,12 +18,16 @@ impl AssociateNatGatewayAddressInput {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The allocation IDs of EIPs that you want to associate with your NAT gateway.</p>
-    pub fn allocation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allocation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_ids.is_none()`.
+    pub fn allocation_ids(&self) -> &[::std::string::String] {
+        self.allocation_ids.as_deref().unwrap_or_default()
     }
     /// <p>The private IPv4 addresses that you want to assign to the NAT gateway.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[::std::string::String] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -48,6 +52,7 @@ pub struct AssociateNatGatewayAddressInputBuilder {
 }
 impl AssociateNatGatewayAddressInputBuilder {
     /// <p>The ID of the NAT gateway.</p>
+    /// This field is required.
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self

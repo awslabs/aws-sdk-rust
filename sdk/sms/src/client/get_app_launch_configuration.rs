@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAppLaunchConfiguration`](crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_app_launch_configuration::builders::GetAppLaunchConfigurationFluentBuilder::set_app_id):<br>required: **false**<br><p>The ID of the application.</p><br>
     /// - On success, responds with [`GetAppLaunchConfigurationOutput`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::app_id): <p>The ID of the application.</p>
     ///   - [`role_name(Option<String>)`](crate::operation::get_app_launch_configuration::GetAppLaunchConfigurationOutput::role_name): <p>The name of the service role in the customer's account that CloudFormation uses to launch the application.</p>

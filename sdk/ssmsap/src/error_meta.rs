@@ -9,6 +9,8 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource is not available.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request is not authorized.</p>
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service. </p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -20,6 +22,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -79,6 +82,7 @@ impl From<crate::operation::deregister_application::DeregisterApplicationError> 
             crate::operation::deregister_application::DeregisterApplicationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::deregister_application::DeregisterApplicationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::deregister_application::DeregisterApplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::deregister_application::DeregisterApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -129,6 +133,7 @@ impl From<crate::operation::get_component::GetComponentError> for Error {
     fn from(err: crate::operation::get_component::GetComponentError) -> Self {
         match err {
             crate::operation::get_component::GetComponentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_component::GetComponentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_component::GetComponentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_component::GetComponentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -261,6 +266,7 @@ impl From<crate::operation::list_components::ListComponentsError> for Error {
         match err {
             crate::operation::list_components::ListComponentsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_components::ListComponentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_components::ListComponentsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_components::ListComponentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_components::ListComponentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -396,6 +402,9 @@ impl From<crate::operation::register_application::RegisterApplicationError> for 
         match err {
             crate::operation::register_application::RegisterApplicationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::register_application::RegisterApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::register_application::RegisterApplicationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::register_application::RegisterApplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::register_application::RegisterApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -426,6 +435,9 @@ impl From<crate::operation::start_application_refresh::StartApplicationRefreshEr
             }
             crate::operation::start_application_refresh::StartApplicationRefreshError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_application_refresh::StartApplicationRefreshError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
             }
             crate::operation::start_application_refresh::StartApplicationRefreshError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -514,6 +526,9 @@ impl From<crate::operation::update_application_settings::UpdateApplicationSettin
             crate::operation::update_application_settings::UpdateApplicationSettingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_application_settings::UpdateApplicationSettingsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
             crate::operation::update_application_settings::UpdateApplicationSettingsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -527,6 +542,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::UnauthorizedException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
@@ -538,6 +554,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::UnauthorizedException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

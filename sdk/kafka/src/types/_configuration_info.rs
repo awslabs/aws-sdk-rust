@@ -35,6 +35,7 @@ pub struct ConfigurationInfoBuilder {
 }
 impl ConfigurationInfoBuilder {
     /// <p>ARN of the configuration to use.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ConfigurationInfoBuilder {
         &self.arn
     }
     /// <p>The revision of the configuration to use.</p>
+    /// This field is required.
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
         self

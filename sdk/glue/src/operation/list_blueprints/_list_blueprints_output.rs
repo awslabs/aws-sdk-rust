@@ -11,8 +11,10 @@ pub struct ListBlueprintsOutput {
 }
 impl ListBlueprintsOutput {
     /// <p>List of names of blueprints in the account.</p>
-    pub fn blueprints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.blueprints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprints.is_none()`.
+    pub fn blueprints(&self) -> &[::std::string::String] {
+        self.blueprints.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if not all blueprint names have been returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

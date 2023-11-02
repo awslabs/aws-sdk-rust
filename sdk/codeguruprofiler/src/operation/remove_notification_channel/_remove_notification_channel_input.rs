@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveNotificationChannelInput {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
-    pub channel_id: ::std::option::Option<::std::string::String>,
+    pub channel_id: ::std::string::String,
 }
 impl RemoveNotificationChannelInput {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
-        self.channel_id.as_deref()
+    pub fn channel_id(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_id.deref()
     }
 }
 impl RemoveNotificationChannelInput {
@@ -35,6 +37,7 @@ pub struct RemoveNotificationChannelInputBuilder {
 }
 impl RemoveNotificationChannelInputBuilder {
     /// <p>The name of the profiling group we want to change notification configuration for.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl RemoveNotificationChannelInputBuilder {
         &self.profiling_group_name
     }
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,9 @@ impl RemoveNotificationChannelInputBuilder {
         &self.channel_id
     }
     /// Consumes the builder and constructs a [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder::profiling_group_name)
+    /// - [`channel_id`](crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder::channel_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,8 +77,18 @@ impl RemoveNotificationChannelInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
-            profiling_group_name: self.profiling_group_name,
-            channel_id: self.channel_id,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building RemoveNotificationChannelInput",
+                )
+            })?,
+            channel_id: self.channel_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_id",
+                    "channel_id was not specified but it is required when building RemoveNotificationChannelInput",
+                )
+            })?,
         })
     }
 }

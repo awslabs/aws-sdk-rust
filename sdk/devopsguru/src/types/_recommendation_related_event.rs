@@ -15,8 +15,10 @@ impl RecommendationRelatedEvent {
         self.name.as_deref()
     }
     /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::RecommendationRelatedEventResource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::RecommendationRelatedEventResource] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl RecommendationRelatedEvent {

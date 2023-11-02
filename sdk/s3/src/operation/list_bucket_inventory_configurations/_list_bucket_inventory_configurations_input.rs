@@ -41,6 +41,7 @@ pub struct ListBucketInventoryConfigurationsInputBuilder {
 }
 impl ListBucketInventoryConfigurationsInputBuilder {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

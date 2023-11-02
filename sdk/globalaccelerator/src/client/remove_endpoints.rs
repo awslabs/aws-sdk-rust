@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveEndpoints`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_identifiers(EndpointIdentifier)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_identifiers) / [`set_endpoint_identifiers(Option<Vec<EndpointIdentifier>>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_identifiers): <p>The identifiers of the endpoints that you want to remove.</p>
-    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    ///   - [`endpoint_identifiers(EndpointIdentifier)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_identifiers) / [`set_endpoint_identifiers(Option<Vec<EndpointIdentifier>>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_identifiers):<br>required: **true**<br><p>The identifiers of the endpoints that you want to remove.</p><br>
+    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_group_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the endpoint group.</p><br>
     /// - On success, responds with [`RemoveEndpointsOutput`](crate::operation::remove_endpoints::RemoveEndpointsOutput)
     /// - On failure, responds with [`SdkError<RemoveEndpointsError>`](crate::operation::remove_endpoints::RemoveEndpointsError)
     pub fn remove_endpoints(&self) -> crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder {

@@ -27,6 +27,7 @@ pub struct DescribeFeatureTransformationInputBuilder {
 }
 impl DescribeFeatureTransformationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
+    /// This field is required.
     pub fn feature_transformation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_transformation_arn = ::std::option::Option::Some(input.into());
         self

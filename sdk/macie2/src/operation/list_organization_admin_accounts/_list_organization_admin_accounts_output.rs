@@ -11,8 +11,10 @@ pub struct ListOrganizationAdminAccountsOutput {
 }
 impl ListOrganizationAdminAccountsOutput {
     /// <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
-    pub fn admin_accounts(&self) -> ::std::option::Option<&[crate::types::AdminAccount]> {
-        self.admin_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_accounts.is_none()`.
+    pub fn admin_accounts(&self) -> &[crate::types::AdminAccount] {
+        self.admin_accounts.as_deref().unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

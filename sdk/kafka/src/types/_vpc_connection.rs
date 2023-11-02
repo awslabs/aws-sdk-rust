@@ -63,6 +63,7 @@ pub struct VpcConnectionBuilder {
 }
 impl VpcConnectionBuilder {
     /// <p>The ARN that identifies the Vpc Connection.</p>
+    /// This field is required.
     pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl VpcConnectionBuilder {
         &self.vpc_connection_arn
     }
     /// <p>The ARN that identifies the Cluster which the Vpc Connection belongs to.</p>
+    /// This field is required.
     pub fn target_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_cluster_arn = ::std::option::Option::Some(input.into());
         self

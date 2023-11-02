@@ -6,21 +6,22 @@
 pub struct SourceCodeVersion {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
-    pub r#type: ::std::option::Option<crate::types::SourceCodeVersionType>,
+    pub r#type: crate::types::SourceCodeVersionType,
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl SourceCodeVersion {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceCodeVersionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SourceCodeVersionType {
+        &self.r#type
     }
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl SourceCodeVersion {
@@ -40,6 +41,7 @@ pub struct SourceCodeVersionBuilder {
 impl SourceCodeVersionBuilder {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SourceCodeVersionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -57,6 +59,7 @@ impl SourceCodeVersionBuilder {
     }
     /// <p>A source code version.</p>
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +76,23 @@ impl SourceCodeVersionBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`SourceCodeVersion`](crate::types::SourceCodeVersion).
-    pub fn build(self) -> crate::types::SourceCodeVersion {
-        crate::types::SourceCodeVersion {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::SourceCodeVersionBuilder::r#type)
+    /// - [`value`](crate::types::builders::SourceCodeVersionBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceCodeVersion, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceCodeVersion {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building SourceCodeVersion",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building SourceCodeVersion",
+                )
+            })?,
+        })
     }
 }

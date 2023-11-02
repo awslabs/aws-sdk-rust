@@ -41,6 +41,7 @@ pub struct ListFaqsInputBuilder {
 }
 impl ListFaqsInputBuilder {
     /// <p>The index that contains the FAQ lists.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

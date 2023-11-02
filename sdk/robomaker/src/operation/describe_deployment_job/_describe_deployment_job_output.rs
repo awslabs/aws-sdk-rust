@@ -46,8 +46,10 @@ impl DescribeDeploymentJobOutput {
         self.deployment_config.as_ref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
-        self.deployment_application_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_application_configs.is_none()`.
+    pub fn deployment_application_configs(&self) -> &[crate::types::DeploymentApplicationConfig] {
+        self.deployment_application_configs.as_deref().unwrap_or_default()
     }
     /// <p>A short description of the reason why the deployment job failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
@@ -62,8 +64,10 @@ impl DescribeDeploymentJobOutput {
         self.created_at.as_ref()
     }
     /// <p>A list of robot deployment summaries.</p>
-    pub fn robot_deployment_summary(&self) -> ::std::option::Option<&[crate::types::RobotDeployment]> {
-        self.robot_deployment_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robot_deployment_summary.is_none()`.
+    pub fn robot_deployment_summary(&self) -> &[crate::types::RobotDeployment] {
+        self.robot_deployment_summary.as_deref().unwrap_or_default()
     }
     /// <p>The list of all tags added to the specified deployment job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

@@ -75,8 +75,10 @@ impl GetApiOutput {
         self.disable_execute_api_endpoint
     }
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    pub fn import_info(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.import_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_info.is_none()`.
+    pub fn import_info(&self) -> &[::std::string::String] {
+        self.import_info.as_deref().unwrap_or_default()
     }
     /// <p>The name of the API.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -99,8 +101,10 @@ impl GetApiOutput {
         self.version.as_deref()
     }
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[::std::string::String] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetApiOutput {

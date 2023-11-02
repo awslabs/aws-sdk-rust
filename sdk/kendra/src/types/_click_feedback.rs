@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClickFeedback {
     /// <p>The identifier of the search result that was clicked.</p>
-    pub result_id: ::std::option::Option<::std::string::String>,
+    pub result_id: ::std::string::String,
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub click_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub click_time: ::aws_smithy_types::DateTime,
 }
 impl ClickFeedback {
     /// <p>The identifier of the search result that was clicked.</p>
-    pub fn result_id(&self) -> ::std::option::Option<&str> {
-        self.result_id.as_deref()
+    pub fn result_id(&self) -> &str {
+        use std::ops::Deref;
+        self.result_id.deref()
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub fn click_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.click_time.as_ref()
+    pub fn click_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.click_time
     }
 }
 impl ClickFeedback {
@@ -35,6 +36,7 @@ pub struct ClickFeedbackBuilder {
 }
 impl ClickFeedbackBuilder {
     /// <p>The identifier of the search result that was clicked.</p>
+    /// This field is required.
     pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ClickFeedbackBuilder {
         &self.result_id
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
+    /// This field is required.
     pub fn click_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.click_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ClickFeedbackBuilder {
         &self.click_time
     }
     /// Consumes the builder and constructs a [`ClickFeedback`](crate::types::ClickFeedback).
-    pub fn build(self) -> crate::types::ClickFeedback {
-        crate::types::ClickFeedback {
-            result_id: self.result_id,
-            click_time: self.click_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`result_id`](crate::types::builders::ClickFeedbackBuilder::result_id)
+    /// - [`click_time`](crate::types::builders::ClickFeedbackBuilder::click_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClickFeedback, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClickFeedback {
+            result_id: self.result_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "result_id",
+                    "result_id was not specified but it is required when building ClickFeedback",
+                )
+            })?,
+            click_time: self.click_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "click_time",
+                    "click_time was not specified but it is required when building ClickFeedback",
+                )
+            })?,
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationAggregationSource {
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The source regions being aggregated.</p>
     pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If true, aggregate existing Config regions and future regions.</p>
@@ -13,12 +13,15 @@ pub struct OrganizationAggregationSource {
 }
 impl OrganizationAggregationSource {
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn aws_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aws_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_regions.is_none()`.
+    pub fn aws_regions(&self) -> &[::std::string::String] {
+        self.aws_regions.as_deref().unwrap_or_default()
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn all_aws_regions(&self) -> bool {
@@ -42,6 +45,7 @@ pub struct OrganizationAggregationSourceBuilder {
 }
 impl OrganizationAggregationSourceBuilder {
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl OrganizationAggregationSourceBuilder {
         &self.all_aws_regions
     }
     /// Consumes the builder and constructs a [`OrganizationAggregationSource`](crate::types::OrganizationAggregationSource).
-    pub fn build(self) -> crate::types::OrganizationAggregationSource {
-        crate::types::OrganizationAggregationSource {
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::OrganizationAggregationSourceBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationAggregationSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationAggregationSource {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building OrganizationAggregationSource",
+                )
+            })?,
             aws_regions: self.aws_regions,
             all_aws_regions: self.all_aws_regions.unwrap_or_default(),
-        }
+        })
     }
 }

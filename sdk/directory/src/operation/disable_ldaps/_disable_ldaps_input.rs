@@ -34,6 +34,7 @@ pub struct DisableLdapsInputBuilder {
 }
 impl DisableLdapsInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisableLdapsInputBuilder {
         &self.directory_id
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LdapsType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

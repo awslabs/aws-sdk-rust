@@ -17,6 +17,7 @@ pub fn ser_auto_deployment(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_auto_deployment(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AutoDeployment, ::aws_smithy_xml::decode::XmlDecodeError> {

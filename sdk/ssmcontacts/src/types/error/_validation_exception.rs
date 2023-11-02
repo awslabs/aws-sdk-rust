@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// Reason the request failed validation
     pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     /// The fields that caused the error
@@ -18,23 +18,23 @@ impl ValidationException {
         self.reason.as_ref()
     }
     /// The fields that caused the error
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::ValidationExceptionField] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ValidationException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -69,6 +69,7 @@ pub struct ValidationExceptionBuilder {
 }
 impl ValidationExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -128,12 +129,19 @@ impl ValidationExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
-    pub fn build(self) -> crate::types::error::ValidationException {
-        crate::types::error::ValidationException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ValidationExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ValidationException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ValidationException",
+                )
+            })?,
             reason: self.reason,
             fields: self.fields,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

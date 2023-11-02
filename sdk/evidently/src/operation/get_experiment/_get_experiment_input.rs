@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The name of the experiment that you want to see the details of.</p>
-    pub experiment: ::std::option::Option<::std::string::String>,
+    pub experiment: ::std::string::String,
 }
 impl GetExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The name of the experiment that you want to see the details of.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
-        self.experiment.as_deref()
+    pub fn experiment(&self) -> &str {
+        use std::ops::Deref;
+        self.experiment.deref()
     }
 }
 impl GetExperimentInput {
@@ -34,6 +36,7 @@ pub struct GetExperimentInputBuilder {
 }
 impl GetExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment that you want to see the details of.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl GetExperimentInputBuilder {
         &self.experiment
     }
     /// Consumes the builder and constructs a [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::get_experiment::builders::GetExperimentInputBuilder::project)
+    /// - [`experiment`](crate::operation::get_experiment::builders::GetExperimentInputBuilder::experiment)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_experiment::GetExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_experiment::GetExperimentInput {
-            project: self.project,
-            experiment: self.experiment,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building GetExperimentInput",
+                )
+            })?,
+            experiment: self.experiment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "experiment",
+                    "experiment was not specified but it is required when building GetExperimentInput",
+                )
+            })?,
         })
     }
 }

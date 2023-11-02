@@ -16,21 +16,29 @@ pub struct UsageCriteria {
 }
 impl UsageCriteria {
     /// <p>The account IDs to aggregate usage statistics from.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The data sources to aggregate usage statistics from.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSource]> {
-        self.data_sources.as_deref()
+    pub fn data_sources(&self) -> &[crate::types::DataSource] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[::std::string::String] {
+        self.resources.as_deref().unwrap_or_default()
     }
     /// <p>The features to aggregate usage statistics from.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::UsageFeature]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::UsageFeature] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl UsageCriteria {

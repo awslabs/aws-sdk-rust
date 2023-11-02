@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssetInput {
     /// <p>The unique identifier for an asset.</p>
-    pub asset_id: ::std::option::Option<::std::string::String>,
+    pub asset_id: ::std::string::String,
     /// <p>The unique identifier for a data set.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The unique identifier for a revision.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
 }
 impl DeleteAssetInput {
     /// <p>The unique identifier for an asset.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
-        self.asset_id.as_deref()
+    pub fn asset_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_id.deref()
     }
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl DeleteAssetInput {
@@ -41,6 +44,7 @@ pub struct DeleteAssetInputBuilder {
 }
 impl DeleteAssetInputBuilder {
     /// <p>The unique identifier for an asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl DeleteAssetInputBuilder {
         &self.asset_id
     }
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl DeleteAssetInputBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +89,30 @@ impl DeleteAssetInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::operation::delete_asset::DeleteAssetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_id`](crate::operation::delete_asset::builders::DeleteAssetInputBuilder::asset_id)
+    /// - [`data_set_id`](crate::operation::delete_asset::builders::DeleteAssetInputBuilder::data_set_id)
+    /// - [`revision_id`](crate::operation::delete_asset::builders::DeleteAssetInputBuilder::revision_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_asset::DeleteAssetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_asset::DeleteAssetInput {
-            asset_id: self.asset_id,
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
+            asset_id: self.asset_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_id",
+                    "asset_id was not specified but it is required when building DeleteAssetInput",
+                )
+            })?,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building DeleteAssetInput",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building DeleteAssetInput",
+                )
+            })?,
         })
     }
 }

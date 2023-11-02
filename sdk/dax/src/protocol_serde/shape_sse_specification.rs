@@ -3,8 +3,8 @@ pub fn ser_sse_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SseSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enabled {
-        object.key("Enabled").boolean(*var_1);
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
     Ok(())
 }

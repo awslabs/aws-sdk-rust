@@ -48,6 +48,7 @@ pub struct ListTargetsByRuleInputBuilder {
 }
 impl ListTargetsByRuleInputBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule = ::std::option::Option::Some(input.into());
         self

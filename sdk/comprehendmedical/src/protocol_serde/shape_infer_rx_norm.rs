@@ -127,7 +127,9 @@ pub fn de_infer_rx_norm_http_response(
         output = crate::protocol_serde::shape_infer_rx_norm::de_infer_rx_norm(_response_body, output)
             .map_err(crate::operation::infer_rx_norm::InferRxNormError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::infer_rx_norm_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::infer_rx_norm::InferRxNormError::unhandled)?
     })
 }
 

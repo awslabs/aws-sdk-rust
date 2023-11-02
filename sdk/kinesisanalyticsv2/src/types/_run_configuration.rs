@@ -17,8 +17,10 @@ impl RunConfiguration {
         self.flink_run_configuration.as_ref()
     }
     /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application application.</p>
-    pub fn sql_run_configurations(&self) -> ::std::option::Option<&[crate::types::SqlRunConfiguration]> {
-        self.sql_run_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sql_run_configurations.is_none()`.
+    pub fn sql_run_configurations(&self) -> &[crate::types::SqlRunConfiguration] {
+        self.sql_run_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Describes the restore behavior of a restarting application.</p>
     pub fn application_restore_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationRestoreConfiguration> {

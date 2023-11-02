@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssistantAssociationInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
     /// <p>The type of association.</p>
-    pub association_type: ::std::option::Option<crate::types::AssociationType>,
+    pub association_type: crate::types::AssociationType,
     /// <p>The identifier of the associated resource.</p>
     pub association: ::std::option::Option<crate::types::AssistantAssociationInputData>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -16,12 +16,13 @@ pub struct CreateAssistantAssociationInput {
 }
 impl CreateAssistantAssociationInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
     /// <p>The type of association.</p>
-    pub fn association_type(&self) -> ::std::option::Option<&crate::types::AssociationType> {
-        self.association_type.as_ref()
+    pub fn association_type(&self) -> &crate::types::AssociationType {
+        &self.association_type
     }
     /// <p>The identifier of the associated resource.</p>
     pub fn association(&self) -> ::std::option::Option<&crate::types::AssistantAssociationInputData> {
@@ -55,6 +56,7 @@ pub struct CreateAssistantAssociationInputBuilder {
 }
 impl CreateAssistantAssociationInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateAssistantAssociationInputBuilder {
         &self.assistant_id
     }
     /// <p>The type of association.</p>
+    /// This field is required.
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,7 @@ impl CreateAssistantAssociationInputBuilder {
         &self.association_type
     }
     /// <p>The identifier of the associated resource.</p>
+    /// This field is required.
     pub fn association(mut self, input: crate::types::AssistantAssociationInputData) -> Self {
         self.association = ::std::option::Option::Some(input);
         self
@@ -131,6 +135,9 @@ impl CreateAssistantAssociationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssistantAssociationInput`](crate::operation::create_assistant_association::CreateAssistantAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_id`](crate::operation::create_assistant_association::builders::CreateAssistantAssociationInputBuilder::assistant_id)
+    /// - [`association_type`](crate::operation::create_assistant_association::builders::CreateAssistantAssociationInputBuilder::association_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -138,8 +145,18 @@ impl CreateAssistantAssociationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_assistant_association::CreateAssistantAssociationInput {
-            assistant_id: self.assistant_id,
-            association_type: self.association_type,
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building CreateAssistantAssociationInput",
+                )
+            })?,
+            association_type: self.association_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "association_type",
+                    "association_type was not specified but it is required when building CreateAssistantAssociationInput",
+                )
+            })?,
             association: self.association,
             client_token: self.client_token,
             tags: self.tags,

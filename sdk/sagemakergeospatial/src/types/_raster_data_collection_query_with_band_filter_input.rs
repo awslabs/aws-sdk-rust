@@ -27,8 +27,10 @@ impl RasterDataCollectionQueryWithBandFilterInput {
         self.property_filters.as_ref()
     }
     /// <p>The list of Bands to be displayed in the result for each item.</p>
-    pub fn band_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.band_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.band_filter.is_none()`.
+    pub fn band_filter(&self) -> &[::std::string::String] {
+        self.band_filter.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for RasterDataCollectionQueryWithBandFilterInput {
@@ -59,6 +61,7 @@ pub struct RasterDataCollectionQueryWithBandFilterInputBuilder {
 }
 impl RasterDataCollectionQueryWithBandFilterInputBuilder {
     /// <p>The TimeRange Filter used in the search query.</p>
+    /// This field is required.
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterInput) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input);
         self

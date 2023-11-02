@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
-    pub query_logging_configs: ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>>,
+    pub query_logging_configs: ::std::vec::Vec<crate::types::QueryLoggingConfig>,
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,8 +12,9 @@ pub struct ListQueryLoggingConfigsOutput {
 }
 impl ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
-    pub fn query_logging_configs(&self) -> ::std::option::Option<&[crate::types::QueryLoggingConfig]> {
-        self.query_logging_configs.as_deref()
+    pub fn query_logging_configs(&self) -> &[crate::types::QueryLoggingConfig] {
+        use std::ops::Deref;
+        self.query_logging_configs.deref()
     }
     /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
@@ -89,11 +90,23 @@ impl ListQueryLoggingConfigsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListQueryLoggingConfigsOutput`](crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput).
-    pub fn build(self) -> crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput {
-        crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput {
-            query_logging_configs: self.query_logging_configs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_logging_configs`](crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsOutputBuilder::query_logging_configs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput {
+            query_logging_configs: self.query_logging_configs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "query_logging_configs",
+                    "query_logging_configs was not specified but it is required when building ListQueryLoggingConfigsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

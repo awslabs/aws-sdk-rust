@@ -27,6 +27,7 @@ pub struct GetMigrationInputBuilder {
 }
 impl GetMigrationInputBuilder {
     /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
+    /// This field is required.
     pub fn migration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_id = ::std::option::Option::Some(input.into());
         self

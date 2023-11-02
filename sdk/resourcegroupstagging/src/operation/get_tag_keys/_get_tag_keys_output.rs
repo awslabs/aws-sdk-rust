@@ -15,8 +15,10 @@ impl GetTagKeysOutput {
         self.pagination_token.as_deref()
     }
     /// <p>A list of all tag keys in the Amazon Web Services account.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTagKeysOutput {

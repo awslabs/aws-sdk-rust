@@ -34,6 +34,7 @@ pub struct PutExternalEvaluationInputBuilder {
 }
 impl PutExternalEvaluationInputBuilder {
     /// <p>The name of the Config rule.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutExternalEvaluationInputBuilder {
         &self.config_rule_name
     }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
+    /// This field is required.
     pub fn external_evaluation(mut self, input: crate::types::ExternalEvaluation) -> Self {
         self.external_evaluation = ::std::option::Option::Some(input);
         self

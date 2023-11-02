@@ -27,6 +27,7 @@ pub struct GetRawMessageContentInputBuilder {
 }
 impl GetRawMessageContentInputBuilder {
     /// <p>The identifier of the email message to retrieve.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self

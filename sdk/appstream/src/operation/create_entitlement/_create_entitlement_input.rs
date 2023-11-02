@@ -32,8 +32,10 @@ impl CreateEntitlementInput {
         self.app_visibility.as_ref()
     }
     /// <p>The attributes of the entitlement.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::EntitlementAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::EntitlementAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl CreateEntitlementInput {
@@ -55,6 +57,7 @@ pub struct CreateEntitlementInputBuilder {
 }
 impl CreateEntitlementInputBuilder {
     /// <p>The name of the entitlement.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateEntitlementInputBuilder {
         &self.name
     }
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl CreateEntitlementInputBuilder {
         &self.description
     }
     /// <p>Specifies whether all or selected apps are entitled.</p>
+    /// This field is required.
     pub fn app_visibility(mut self, input: crate::types::AppVisibility) -> Self {
         self.app_visibility = ::std::option::Option::Some(input);
         self

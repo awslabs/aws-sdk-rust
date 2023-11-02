@@ -11,8 +11,10 @@ pub struct ListRepositoriesForApprovalRuleTemplateOutput {
 }
 impl ListRepositoriesForApprovalRuleTemplateOutput {
     /// <p>A list of repository names that are associated with the specified approval rule template.</p>
-    pub fn repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_names.is_none()`.
+    pub fn repository_names(&self) -> &[::std::string::String] {
+        self.repository_names.as_deref().unwrap_or_default()
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub state: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
+    pub state: crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState,
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState {
+        &self.state
     }
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {
@@ -28,6 +28,7 @@ pub struct ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
     /// <p>The request to change the source server migration lifecycle state.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,18 @@ impl ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::types::ChangeServerLifeCycleStateSourceServerLifecycle).
-    pub fn build(self) -> crate::types::ChangeServerLifeCycleStateSourceServerLifecycle {
-        crate::types::ChangeServerLifeCycleStateSourceServerLifecycle { state: self.state }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::ChangeServerLifeCycleStateSourceServerLifecycleBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChangeServerLifeCycleStateSourceServerLifecycle {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building ChangeServerLifeCycleStateSourceServerLifecycle",
+                )
+            })?,
+        })
     }
 }

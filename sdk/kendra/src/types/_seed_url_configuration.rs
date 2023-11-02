@@ -7,7 +7,7 @@
 pub struct SeedUrlConfiguration {
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    pub seed_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub seed_urls: ::std::vec::Vec<::std::string::String>,
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
     /// <li> <p> <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.</p> </li>
@@ -20,8 +20,9 @@ pub struct SeedUrlConfiguration {
 impl SeedUrlConfiguration {
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    pub fn seed_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.seed_urls.as_deref()
+    pub fn seed_urls(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.seed_urls.deref()
     }
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
@@ -105,10 +106,17 @@ impl SeedUrlConfigurationBuilder {
         &self.web_crawler_mode
     }
     /// Consumes the builder and constructs a [`SeedUrlConfiguration`](crate::types::SeedUrlConfiguration).
-    pub fn build(self) -> crate::types::SeedUrlConfiguration {
-        crate::types::SeedUrlConfiguration {
-            seed_urls: self.seed_urls,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`seed_urls`](crate::types::builders::SeedUrlConfigurationBuilder::seed_urls)
+    pub fn build(self) -> ::std::result::Result<crate::types::SeedUrlConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SeedUrlConfiguration {
+            seed_urls: self.seed_urls.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "seed_urls",
+                    "seed_urls was not specified but it is required when building SeedUrlConfiguration",
+                )
+            })?,
             web_crawler_mode: self.web_crawler_mode,
-        }
+        })
     }
 }

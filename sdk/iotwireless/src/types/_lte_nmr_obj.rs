@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteNmrObj {
     /// <p>Physical cell ID.</p>
-    pub pci: ::std::option::Option<i32>,
+    pub pci: i32,
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
-    pub earfcn: ::std::option::Option<i32>,
+    pub earfcn: i32,
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
-    pub eutran_cid: ::std::option::Option<i32>,
+    pub eutran_cid: i32,
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub rsrp: ::std::option::Option<i32>,
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
@@ -17,15 +17,15 @@ pub struct LteNmrObj {
 }
 impl LteNmrObj {
     /// <p>Physical cell ID.</p>
-    pub fn pci(&self) -> ::std::option::Option<i32> {
+    pub fn pci(&self) -> i32 {
         self.pci
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
-    pub fn earfcn(&self) -> ::std::option::Option<i32> {
+    pub fn earfcn(&self) -> i32 {
         self.earfcn
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
-    pub fn eutran_cid(&self) -> ::std::option::Option<i32> {
+    pub fn eutran_cid(&self) -> i32 {
         self.eutran_cid
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
@@ -56,6 +56,7 @@ pub struct LteNmrObjBuilder {
 }
 impl LteNmrObjBuilder {
     /// <p>Physical cell ID.</p>
+    /// This field is required.
     pub fn pci(mut self, input: i32) -> Self {
         self.pci = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl LteNmrObjBuilder {
         &self.pci
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
+    /// This field is required.
     pub fn earfcn(mut self, input: i32) -> Self {
         self.earfcn = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl LteNmrObjBuilder {
         &self.earfcn
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
+    /// This field is required.
     pub fn eutran_cid(mut self, input: i32) -> Self {
         self.eutran_cid = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,32 @@ impl LteNmrObjBuilder {
         &self.rsrq
     }
     /// Consumes the builder and constructs a [`LteNmrObj`](crate::types::LteNmrObj).
-    pub fn build(self) -> crate::types::LteNmrObj {
-        crate::types::LteNmrObj {
-            pci: self.pci,
-            earfcn: self.earfcn,
-            eutran_cid: self.eutran_cid,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pci`](crate::types::builders::LteNmrObjBuilder::pci)
+    /// - [`earfcn`](crate::types::builders::LteNmrObjBuilder::earfcn)
+    /// - [`eutran_cid`](crate::types::builders::LteNmrObjBuilder::eutran_cid)
+    pub fn build(self) -> ::std::result::Result<crate::types::LteNmrObj, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LteNmrObj {
+            pci: self.pci.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pci",
+                    "pci was not specified but it is required when building LteNmrObj",
+                )
+            })?,
+            earfcn: self.earfcn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "earfcn",
+                    "earfcn was not specified but it is required when building LteNmrObj",
+                )
+            })?,
+            eutran_cid: self.eutran_cid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "eutran_cid",
+                    "eutran_cid was not specified but it is required when building LteNmrObj",
+                )
+            })?,
             rsrp: self.rsrp,
             rsrq: self.rsrq,
-        }
+        })
     }
 }

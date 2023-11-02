@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestedFilesSummary {
     /// <p>Indicates the total number of files that were submitted for ingestion.</p>
-    pub total_number_of_files: ::std::option::Option<i32>,
+    pub total_number_of_files: i32,
     /// <p>Indicates the number of files that were successfully ingested.</p>
-    pub ingested_number_of_files: ::std::option::Option<i32>,
+    pub ingested_number_of_files: i32,
     /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
     pub discarded_files: ::std::option::Option<::std::vec::Vec<crate::types::S3Object>>,
 }
 impl IngestedFilesSummary {
     /// <p>Indicates the total number of files that were submitted for ingestion.</p>
-    pub fn total_number_of_files(&self) -> ::std::option::Option<i32> {
+    pub fn total_number_of_files(&self) -> i32 {
         self.total_number_of_files
     }
     /// <p>Indicates the number of files that were successfully ingested.</p>
-    pub fn ingested_number_of_files(&self) -> ::std::option::Option<i32> {
+    pub fn ingested_number_of_files(&self) -> i32 {
         self.ingested_number_of_files
     }
     /// <p>Indicates the number of files that were discarded. A file could be discarded because its format is invalid (for example, a jpg or pdf) or not readable.</p>
-    pub fn discarded_files(&self) -> ::std::option::Option<&[crate::types::S3Object]> {
-        self.discarded_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.discarded_files.is_none()`.
+    pub fn discarded_files(&self) -> &[crate::types::S3Object] {
+        self.discarded_files.as_deref().unwrap_or_default()
     }
 }
 impl IngestedFilesSummary {
@@ -42,6 +44,7 @@ pub struct IngestedFilesSummaryBuilder {
 }
 impl IngestedFilesSummaryBuilder {
     /// <p>Indicates the total number of files that were submitted for ingestion.</p>
+    /// This field is required.
     pub fn total_number_of_files(mut self, input: i32) -> Self {
         self.total_number_of_files = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl IngestedFilesSummaryBuilder {
         &self.total_number_of_files
     }
     /// <p>Indicates the number of files that were successfully ingested.</p>
+    /// This field is required.
     pub fn ingested_number_of_files(mut self, input: i32) -> Self {
         self.ingested_number_of_files = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl IngestedFilesSummaryBuilder {
         &self.discarded_files
     }
     /// Consumes the builder and constructs a [`IngestedFilesSummary`](crate::types::IngestedFilesSummary).
-    pub fn build(self) -> crate::types::IngestedFilesSummary {
-        crate::types::IngestedFilesSummary {
-            total_number_of_files: self.total_number_of_files,
-            ingested_number_of_files: self.ingested_number_of_files,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total_number_of_files`](crate::types::builders::IngestedFilesSummaryBuilder::total_number_of_files)
+    /// - [`ingested_number_of_files`](crate::types::builders::IngestedFilesSummaryBuilder::ingested_number_of_files)
+    pub fn build(self) -> ::std::result::Result<crate::types::IngestedFilesSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IngestedFilesSummary {
+            total_number_of_files: self.total_number_of_files.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "total_number_of_files",
+                    "total_number_of_files was not specified but it is required when building IngestedFilesSummary",
+                )
+            })?,
+            ingested_number_of_files: self.ingested_number_of_files.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ingested_number_of_files",
+                    "ingested_number_of_files was not specified but it is required when building IngestedFilesSummary",
+                )
+            })?,
             discarded_files: self.discarded_files,
-        }
+        })
     }
 }

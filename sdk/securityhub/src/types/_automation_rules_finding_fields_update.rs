@@ -45,8 +45,10 @@ impl AutomationRulesFindingFieldsUpdate {
         self.criticality
     }
     /// <p> The rule action updates the <code>Types</code> field of a finding. </p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p> The rule action updates the <code>UserDefinedFields</code> field of a finding. </p>
     pub fn user_defined_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -57,8 +59,10 @@ impl AutomationRulesFindingFieldsUpdate {
         self.workflow.as_ref()
     }
     /// <p> The rule action updates the <code>RelatedFindings</code> field of a finding. </p>
-    pub fn related_findings(&self) -> ::std::option::Option<&[crate::types::RelatedFinding]> {
-        self.related_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_findings.is_none()`.
+    pub fn related_findings(&self) -> &[crate::types::RelatedFinding] {
+        self.related_findings.as_deref().unwrap_or_default()
     }
 }
 impl AutomationRulesFindingFieldsUpdate {

@@ -11,8 +11,10 @@ pub struct DescribeFleetsOutput {
 }
 impl DescribeFleetsOutput {
     /// <p>Information about the fleets.</p>
-    pub fn fleets(&self) -> ::std::option::Option<&[crate::types::Fleet]> {
-        self.fleets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleets.is_none()`.
+    pub fn fleets(&self) -> &[crate::types::Fleet] {
+        self.fleets.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

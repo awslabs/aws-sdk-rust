@@ -21,8 +21,10 @@ impl UnsuccessfulFaceDisassociation {
         self.user_id.as_deref()
     }
     /// <p>The reason why the deletion was unsuccessful. </p>
-    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDisassociationReason]> {
-        self.reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
+    pub fn reasons(&self) -> &[crate::types::UnsuccessfulFaceDisassociationReason] {
+        self.reasons.as_deref().unwrap_or_default()
     }
 }
 impl UnsuccessfulFaceDisassociation {

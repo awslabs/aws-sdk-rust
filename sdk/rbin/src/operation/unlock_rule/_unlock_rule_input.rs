@@ -27,6 +27,7 @@ pub struct UnlockRuleInputBuilder {
 }
 impl UnlockRuleInputBuilder {
     /// <p>The unique ID of the retention rule.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

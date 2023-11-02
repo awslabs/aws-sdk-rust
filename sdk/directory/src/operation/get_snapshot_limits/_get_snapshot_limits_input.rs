@@ -28,6 +28,7 @@ pub struct GetSnapshotLimitsInputBuilder {
 }
 impl GetSnapshotLimitsInputBuilder {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct DeleteAlertInputBuilder {
 }
 impl DeleteAlertInputBuilder {
     /// <p>The ARN of the alert to delete.</p>
+    /// This field is required.
     pub fn alert_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_arn = ::std::option::Option::Some(input.into());
         self

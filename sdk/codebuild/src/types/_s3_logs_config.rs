@@ -9,7 +9,7 @@ pub struct S3LogsConfig {
     /// <li> <p> <code>ENABLED</code>: S3 build logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::LogsConfigStatusType>,
+    pub status: crate::types::LogsConfigStatusType,
     /// <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p> Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted. </p>
@@ -51,8 +51,8 @@ impl S3LogsConfig {
     /// <li> <p> <code>ENABLED</code>: S3 build logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LogsConfigStatusType> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::LogsConfigStatusType {
+        &self.status
     }
     /// <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
     pub fn location(&self) -> ::std::option::Option<&str> {
@@ -117,6 +117,7 @@ impl S3LogsConfigBuilder {
     /// <li> <p> <code>ENABLED</code>: S3 build logs are enabled for this build project.</p> </li>
     /// <li> <p> <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LogsConfigStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -265,12 +266,19 @@ impl S3LogsConfigBuilder {
         &self.bucket_owner_access
     }
     /// Consumes the builder and constructs a [`S3LogsConfig`](crate::types::S3LogsConfig).
-    pub fn build(self) -> crate::types::S3LogsConfig {
-        crate::types::S3LogsConfig {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::S3LogsConfigBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3LogsConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3LogsConfig {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building S3LogsConfig",
+                )
+            })?,
             location: self.location,
             encryption_disabled: self.encryption_disabled,
             bucket_owner_access: self.bucket_owner_access,
-        }
+        })
     }
 }

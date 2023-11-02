@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
-    pub pool_id: ::std::option::Option<::std::string::String>,
+    pub pool_id: ::std::string::String,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub two_way_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
@@ -20,8 +20,9 @@ pub struct UpdatePoolInput {
 }
 impl UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
-        self.pool_id.as_deref()
+    pub fn pool_id(&self) -> &str {
+        use std::ops::Deref;
+        self.pool_id.deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(&self) -> ::std::option::Option<bool> {
@@ -69,6 +70,7 @@ pub struct UpdatePoolInputBuilder {
 }
 impl UpdatePoolInputBuilder {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -167,9 +169,16 @@ impl UpdatePoolInputBuilder {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdatePoolInput`](crate::operation::update_pool::UpdatePoolInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pool_id`](crate::operation::update_pool::builders::UpdatePoolInputBuilder::pool_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_pool::UpdatePoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pool::UpdatePoolInput {
-            pool_id: self.pool_id,
+            pool_id: self.pool_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pool_id",
+                    "pool_id was not specified but it is required when building UpdatePoolInput",
+                )
+            })?,
             two_way_enabled: self.two_way_enabled,
             two_way_channel_arn: self.two_way_channel_arn,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,

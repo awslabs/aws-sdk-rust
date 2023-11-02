@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTags`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_names(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_load_balancer_names): <p>The names of the load balancers.</p>
+    ///   - [`load_balancer_names(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_load_balancer_names):<br>required: **true**<br><p>The names of the load balancers.</p><br>
     /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
     ///   - [`tag_descriptions(Option<Vec<TagDescription>>)`](crate::operation::describe_tags::DescribeTagsOutput::tag_descriptions): <p>Information about the tags.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)

@@ -34,6 +34,7 @@ pub struct GetReferenceMetadataInputBuilder {
 }
 impl GetReferenceMetadataInputBuilder {
     /// <p>The reference's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetReferenceMetadataInputBuilder {
         &self.id
     }
     /// <p>The reference's reference store ID.</p>
+    /// This field is required.
     pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self

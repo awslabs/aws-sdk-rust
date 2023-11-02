@@ -19,8 +19,10 @@ impl DescribeTapeRecoveryPointsOutput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
-    pub fn tape_recovery_point_infos(&self) -> ::std::option::Option<&[crate::types::TapeRecoveryPointInfo]> {
-        self.tape_recovery_point_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_recovery_point_infos.is_none()`.
+    pub fn tape_recovery_point_infos(&self) -> &[crate::types::TapeRecoveryPointInfo] {
+        self.tape_recovery_point_infos.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>
     /// <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>

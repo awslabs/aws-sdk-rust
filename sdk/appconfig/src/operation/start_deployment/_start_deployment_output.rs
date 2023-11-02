@@ -107,8 +107,10 @@ impl StartDeploymentOutput {
         self.state.as_ref()
     }
     /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    pub fn event_log(&self) -> ::std::option::Option<&[crate::types::DeploymentEvent]> {
-        self.event_log.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_log.is_none()`.
+    pub fn event_log(&self) -> &[crate::types::DeploymentEvent] {
+        self.event_log.as_deref().unwrap_or_default()
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub fn percentage_complete(&self) -> ::std::option::Option<f32> {
@@ -123,8 +125,10 @@ impl StartDeploymentOutput {
         self.completed_at.as_ref()
     }
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-    pub fn applied_extensions(&self) -> ::std::option::Option<&[crate::types::AppliedExtension]> {
-        self.applied_extensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applied_extensions.is_none()`.
+    pub fn applied_extensions(&self) -> &[crate::types::AppliedExtension] {
+        self.applied_extensions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store. </p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {

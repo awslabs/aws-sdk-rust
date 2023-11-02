@@ -35,6 +35,7 @@ pub struct UpdateDefaultBranchInputBuilder {
 }
 impl UpdateDefaultBranchInputBuilder {
     /// <p>The name of the repository for which you want to set or change the default branch.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateDefaultBranchInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the branch to set as the default branch.</p>
+    /// This field is required.
     pub fn default_branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_branch_name = ::std::option::Option::Some(input.into());
         self

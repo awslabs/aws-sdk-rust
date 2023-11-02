@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteResourcePolicy`](crate::operation::delete_resource_policy) operation has
-/// a [`Client::delete_resource_policy`], function which returns a builder for that operation.
+/// For example, the [`CreateCustomDomainAssociation`](crate::operation::create_custom_domain_association) operation has
+/// a [`Client::create_custom_domain_association`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_resource_policy()
-///     .resource_arn("example")
+/// let result = client.create_custom_domain_association()
+///     .workgroup_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -100,7 +100,7 @@ impl Client {
         if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
             panic!(
                 "An async sleep implementation is required for retries or timeouts to work. \
-                                        Set the `sleep_impl` on the Config passed into this function to fix this panic."
+                                    Set the `sleep_impl` on the Config passed into this function to fix this panic."
             );
         }
 
@@ -114,22 +114,6 @@ impl Client {
 
     /// Returns the client's configuration.
     pub fn config(&self) -> &crate::Config {
-        &self.handle.conf
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Creates a client with the given service configuration.
-    pub fn with_config<C, M, R>(_client: ::aws_smithy_client::Client<C, M, R>, conf: crate::Config) -> Self {
-        Self::from_conf(conf)
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Returns the client's configuration.
-    pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
     }
 }
@@ -149,6 +133,8 @@ impl Client {
 }
 
 mod convert_recovery_point_to_snapshot;
+
+mod create_custom_domain_association;
 
 mod create_endpoint_access;
 
@@ -171,7 +157,7 @@ mod create_workgroup;
 /// # let client: aws_sdk_redshiftserverless::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.delete_resource_policy()
+/// let result = client.create_custom_domain_association()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {
@@ -188,6 +174,8 @@ mod create_workgroup;
 /// ```
 pub mod customize;
 
+mod delete_custom_domain_association;
+
 mod delete_endpoint_access;
 
 mod delete_namespace;
@@ -201,6 +189,8 @@ mod delete_usage_limit;
 mod delete_workgroup;
 
 mod get_credentials;
+
+mod get_custom_domain_association;
 
 mod get_endpoint_access;
 
@@ -217,6 +207,8 @@ mod get_table_restore_status;
 mod get_usage_limit;
 
 mod get_workgroup;
+
+mod list_custom_domain_associations;
 
 mod list_endpoint_access;
 
@@ -245,6 +237,8 @@ mod restore_table_from_snapshot;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_custom_domain_association;
 
 mod update_endpoint_access;
 

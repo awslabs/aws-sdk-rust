@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::logging_options_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -57,26 +59,26 @@ pub fn ser_logging_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingOptions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.level {
-        object.key("level").string(var_2.as_str());
+    {
+        object.key("level").string(input.level.as_str());
     }
     {
         object.key("enabled").boolean(input.enabled);
     }
-    if let Some(var_3) = &input.detector_debug_options {
-        let mut array_4 = object.key("detectorDebugOptions").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.detector_debug_options {
+        let mut array_2 = object.key("detectorDebugOptions").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_detector_debug_option::ser_detector_debug_option(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_detector_debug_option::ser_detector_debug_option(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }

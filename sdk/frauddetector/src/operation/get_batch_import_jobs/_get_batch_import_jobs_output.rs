@@ -11,8 +11,10 @@ pub struct GetBatchImportJobsOutput {
 }
 impl GetBatchImportJobsOutput {
     /// <p>An array containing the details of each batch import job.</p>
-    pub fn batch_imports(&self) -> ::std::option::Option<&[crate::types::BatchImport]> {
-        self.batch_imports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_imports.is_none()`.
+    pub fn batch_imports(&self) -> &[crate::types::BatchImport] {
+        self.batch_imports.as_deref().unwrap_or_default()
     }
     /// <p>The next token for the subsequent resquest.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

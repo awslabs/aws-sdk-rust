@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    pub data_source_type: ::std::option::Option<crate::types::FormDataSourceType>,
+    pub data_source_type: crate::types::FormDataSourceType,
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub data_type_name: ::std::option::Option<::std::string::String>,
+    pub data_type_name: ::std::string::String,
 }
 impl FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::FormDataSourceType> {
-        self.data_source_type.as_ref()
+    pub fn data_source_type(&self) -> &crate::types::FormDataSourceType {
+        &self.data_source_type
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub fn data_type_name(&self) -> ::std::option::Option<&str> {
-        self.data_type_name.as_deref()
+    pub fn data_type_name(&self) -> &str {
+        use std::ops::Deref;
+        self.data_type_name.deref()
     }
 }
 impl FormDataTypeConfig {
@@ -35,6 +36,7 @@ pub struct FormDataTypeConfigBuilder {
 }
 impl FormDataTypeConfigBuilder {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
+    /// This field is required.
     pub fn data_source_type(mut self, input: crate::types::FormDataSourceType) -> Self {
         self.data_source_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl FormDataTypeConfigBuilder {
         &self.data_source_type
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
+    /// This field is required.
     pub fn data_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl FormDataTypeConfigBuilder {
         &self.data_type_name
     }
     /// Consumes the builder and constructs a [`FormDataTypeConfig`](crate::types::FormDataTypeConfig).
-    pub fn build(self) -> crate::types::FormDataTypeConfig {
-        crate::types::FormDataTypeConfig {
-            data_source_type: self.data_source_type,
-            data_type_name: self.data_type_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_source_type`](crate::types::builders::FormDataTypeConfigBuilder::data_source_type)
+    /// - [`data_type_name`](crate::types::builders::FormDataTypeConfigBuilder::data_type_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FormDataTypeConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FormDataTypeConfig {
+            data_source_type: self.data_source_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source_type",
+                    "data_source_type was not specified but it is required when building FormDataTypeConfig",
+                )
+            })?,
+            data_type_name: self.data_type_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_type_name",
+                    "data_type_name was not specified but it is required when building FormDataTypeConfig",
+                )
+            })?,
+        })
     }
 }

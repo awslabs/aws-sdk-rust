@@ -16,8 +16,10 @@ impl TagResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TagResourceInput {
@@ -37,6 +39,7 @@ pub struct TagResourceInputBuilder {
 impl TagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

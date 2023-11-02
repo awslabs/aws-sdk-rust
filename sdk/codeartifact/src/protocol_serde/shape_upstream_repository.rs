@@ -3,8 +3,8 @@ pub fn ser_upstream_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpstreamRepository,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.repository_name {
-        object.key("repositoryName").string(var_1.as_str());
+    {
+        object.key("repositoryName").string(input.repository_name.as_str());
     }
     Ok(())
 }

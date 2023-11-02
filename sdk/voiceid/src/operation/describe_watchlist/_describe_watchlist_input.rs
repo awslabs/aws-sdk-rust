@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the watchlist that you are describing.</p>
-    pub watchlist_id: ::std::option::Option<::std::string::String>,
+    pub watchlist_id: ::std::string::String,
 }
 impl DescribeWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the watchlist that you are describing.</p>
-    pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
-        self.watchlist_id.as_deref()
+    pub fn watchlist_id(&self) -> &str {
+        use std::ops::Deref;
+        self.watchlist_id.deref()
     }
 }
 impl DescribeWatchlistInput {
@@ -34,6 +36,7 @@ pub struct DescribeWatchlistInputBuilder {
 }
 impl DescribeWatchlistInputBuilder {
     /// <p>The identifier of the domain that contains the watchlist.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DescribeWatchlistInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the watchlist that you are describing.</p>
+    /// This field is required.
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.watchlist_id = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl DescribeWatchlistInputBuilder {
         &self.watchlist_id
     }
     /// Consumes the builder and constructs a [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder::domain_id)
+    /// - [`watchlist_id`](crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder::watchlist_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_watchlist::DescribeWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_watchlist::DescribeWatchlistInput {
-            domain_id: self.domain_id,
-            watchlist_id: self.watchlist_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DescribeWatchlistInput",
+                )
+            })?,
+            watchlist_id: self.watchlist_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "watchlist_id",
+                    "watchlist_id was not specified but it is required when building DescribeWatchlistInput",
+                )
+            })?,
         })
     }
 }

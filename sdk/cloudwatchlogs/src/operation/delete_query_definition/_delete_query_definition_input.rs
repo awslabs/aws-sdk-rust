@@ -27,6 +27,7 @@ pub struct DeleteQueryDefinitionInputBuilder {
 }
 impl DeleteQueryDefinitionInputBuilder {
     /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+    /// This field is required.
     pub fn query_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_definition_id = ::std::option::Option::Some(input.into());
         self

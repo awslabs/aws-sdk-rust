@@ -30,39 +30,41 @@ pub fn ser_update_replication_configuration_template_input(
     if let Some(var_7) = &input.ebs_encryption_key_arn {
         object.key("ebsEncryptionKeyArn").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.replication_configuration_template_id {
-        object.key("replicationConfigurationTemplateID").string(var_8.as_str());
+    {
+        object
+            .key("replicationConfigurationTemplateID")
+            .string(input.replication_configuration_template_id.as_str());
     }
-    if let Some(var_9) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_9.as_str());
+    if let Some(var_8) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.replication_servers_security_groups_i_ds {
-        let mut array_11 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.replication_servers_security_groups_i_ds {
+        let mut array_10 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_11 in var_9 {
             {
-                array_11.value().string(item_12.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
-    if let Some(var_13) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_13.as_str());
+    if let Some(var_12) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_12.as_str());
     }
-    if let Some(var_14) = &input.staging_area_tags {
+    if let Some(var_13) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("stagingAreaTags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_14 = object.key("stagingAreaTags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_15.finish();
+        object_14.finish();
     }
-    if let Some(var_18) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_18);
+    if let Some(var_17) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_17);
     }
-    if let Some(var_19) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_19);
+    if let Some(var_18) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_18);
     }
     Ok(())
 }

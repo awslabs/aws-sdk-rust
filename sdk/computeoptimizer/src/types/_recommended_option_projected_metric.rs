@@ -27,8 +27,10 @@ impl RecommendedOptionProjectedMetric {
         self.rank
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    pub fn projected_metrics(&self) -> ::std::option::Option<&[crate::types::ProjectedMetric]> {
-        self.projected_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_metrics.is_none()`.
+    pub fn projected_metrics(&self) -> &[crate::types::ProjectedMetric] {
+        self.projected_metrics.as_deref().unwrap_or_default()
     }
 }
 impl RecommendedOptionProjectedMetric {

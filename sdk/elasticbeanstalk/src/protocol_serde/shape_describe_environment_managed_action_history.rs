@@ -36,8 +36,8 @@ pub fn de_describe_environment_managed_action_history_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryError::generic(generic)

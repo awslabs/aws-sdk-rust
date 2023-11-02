@@ -10,8 +10,10 @@ pub struct DescribeCustomerGatewaysOutput {
 }
 impl DescribeCustomerGatewaysOutput {
     /// <p>Information about one or more customer gateways.</p>
-    pub fn customer_gateways(&self) -> ::std::option::Option<&[crate::types::CustomerGateway]> {
-        self.customer_gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_gateways.is_none()`.
+    pub fn customer_gateways(&self) -> &[crate::types::CustomerGateway] {
+        self.customer_gateways.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCustomerGatewaysOutput {

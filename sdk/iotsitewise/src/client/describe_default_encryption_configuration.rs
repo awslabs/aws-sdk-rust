@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`DescribeDefaultEncryptionConfigurationOutput`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput) with field(s):
-    ///   - [`encryption_type(Option<EncryptionType>)`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput::encryption_type): <p>The type of encryption used for the encryption configuration.</p>
+    ///   - [`encryption_type(EncryptionType)`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput::encryption_type): <p>The type of encryption used for the encryption configuration.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput::kms_key_arn): <p>The key ARN of the customer managed key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     ///   - [`configuration_status(Option<ConfigurationStatus>)`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationOutput::configuration_status): <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there's an error, it also contains the <code>ErrorDetails</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeDefaultEncryptionConfigurationError>`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationError)

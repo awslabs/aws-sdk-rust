@@ -49,6 +49,7 @@ pub struct UpdateDomainConfigOutputBuilder {
 }
 impl UpdateDomainConfigOutputBuilder {
     /// <p>The status of the updated domain.</p>
+    /// This field is required.
     pub fn domain_config(mut self, input: crate::types::DomainConfig) -> Self {
         self.domain_config = ::std::option::Option::Some(input);
         self

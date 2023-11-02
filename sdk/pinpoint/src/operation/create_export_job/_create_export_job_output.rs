@@ -34,6 +34,7 @@ pub struct CreateExportJobOutputBuilder {
 }
 impl CreateExportJobOutputBuilder {
     /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn export_job_response(mut self, input: crate::types::ExportJobResponse) -> Self {
         self.export_job_response = ::std::option::Option::Some(input);
         self

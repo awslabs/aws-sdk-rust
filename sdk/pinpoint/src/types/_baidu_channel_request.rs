@@ -42,6 +42,7 @@ pub struct BaiduChannelRequestBuilder {
 }
 impl BaiduChannelRequestBuilder {
     /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl BaiduChannelRequestBuilder {
         &self.enabled
     }
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
+    /// This field is required.
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_key = ::std::option::Option::Some(input.into());
         self

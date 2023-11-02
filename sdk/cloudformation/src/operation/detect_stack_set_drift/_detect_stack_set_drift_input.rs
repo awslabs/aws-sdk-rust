@@ -60,6 +60,7 @@ pub struct DetectStackSetDriftInputBuilder {
 }
 impl DetectStackSetDriftInputBuilder {
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedTranscriptFilter {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-    pub name: ::std::option::Option<crate::types::AssociatedTranscriptFilterName>,
+    pub name: crate::types::AssociatedTranscriptFilterName,
     /// <p>The values to use to filter the transcript.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl AssociatedTranscriptFilter {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AssociatedTranscriptFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AssociatedTranscriptFilterName {
+        &self.name
     }
     /// <p>The values to use to filter the transcript.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl AssociatedTranscriptFilter {
@@ -35,6 +36,7 @@ pub struct AssociatedTranscriptFilterBuilder {
 }
 impl AssociatedTranscriptFilterBuilder {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AssociatedTranscriptFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl AssociatedTranscriptFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`AssociatedTranscriptFilter`](crate::types::AssociatedTranscriptFilter).
-    pub fn build(self) -> crate::types::AssociatedTranscriptFilter {
-        crate::types::AssociatedTranscriptFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AssociatedTranscriptFilterBuilder::name)
+    /// - [`values`](crate::types::builders::AssociatedTranscriptFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssociatedTranscriptFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssociatedTranscriptFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssociatedTranscriptFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building AssociatedTranscriptFilter",
+                )
+            })?,
+        })
     }
 }

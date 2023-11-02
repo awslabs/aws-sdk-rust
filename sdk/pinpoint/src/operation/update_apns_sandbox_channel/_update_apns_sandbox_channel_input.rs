@@ -34,6 +34,7 @@ pub struct UpdateApnsSandboxChannelInputBuilder {
 }
 impl UpdateApnsSandboxChannelInputBuilder {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
+    /// This field is required.
     pub fn apns_sandbox_channel_request(mut self, input: crate::types::ApnsSandboxChannelRequest) -> Self {
         self.apns_sandbox_channel_request = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl UpdateApnsSandboxChannelInputBuilder {
         &self.apns_sandbox_channel_request
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

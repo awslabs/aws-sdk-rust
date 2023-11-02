@@ -12,14 +12,14 @@ pub fn ser_activate_network_site_input(
         crate::protocol_serde::shape_commitment_configuration::ser_commitment_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.network_site_arn {
-        object.key("networkSiteArn").string(var_4.as_str());
+    {
+        object.key("networkSiteArn").string(input.network_site_arn.as_str());
     }
-    if let Some(var_5) = &input.shipping_address {
+    if let Some(var_4) = &input.shipping_address {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("shippingAddress").start_object();
-        crate::protocol_serde::shape_address::ser_address(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("shippingAddress").start_object();
+        crate::protocol_serde::shape_address::ser_address(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

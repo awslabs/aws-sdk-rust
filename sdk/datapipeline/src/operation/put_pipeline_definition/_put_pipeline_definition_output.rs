@@ -14,12 +14,16 @@ pub struct PutPipelineDefinitionOutput {
 }
 impl PutPipelineDefinitionOutput {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn validation_errors(&self) -> ::std::option::Option<&[crate::types::ValidationError]> {
-        self.validation_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_errors.is_none()`.
+    pub fn validation_errors(&self) -> &[crate::types::ValidationError] {
+        self.validation_errors.as_deref().unwrap_or_default()
     }
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn validation_warnings(&self) -> ::std::option::Option<&[crate::types::ValidationWarning]> {
-        self.validation_warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_warnings.is_none()`.
+    pub fn validation_warnings(&self) -> &[crate::types::ValidationWarning] {
+        self.validation_warnings.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub fn errored(&self) -> bool {
@@ -89,6 +93,7 @@ impl PutPipelineDefinitionOutputBuilder {
         &self.validation_warnings
     }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+    /// This field is required.
     pub fn errored(mut self, input: bool) -> Self {
         self.errored = ::std::option::Option::Some(input);
         self

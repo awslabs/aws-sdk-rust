@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteModelManifestInput {
     /// <p> The name of the model manifest to delete. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl DeleteModelManifestInput {
     /// <p> The name of the model manifest to delete. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl DeleteModelManifestInput {
@@ -27,6 +28,7 @@ pub struct DeleteModelManifestInputBuilder {
 }
 impl DeleteModelManifestInputBuilder {
     /// <p> The name of the model manifest to delete. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,10 +43,19 @@ impl DeleteModelManifestInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_model_manifest::builders::DeleteModelManifestInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_model_manifest::DeleteModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::delete_model_manifest::DeleteModelManifestInput { name: self.name })
+        ::std::result::Result::Ok(crate::operation::delete_model_manifest::DeleteModelManifestInput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteModelManifestInput",
+                )
+            })?,
+        })
     }
 }

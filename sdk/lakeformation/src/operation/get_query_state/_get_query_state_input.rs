@@ -27,6 +27,7 @@ pub struct GetQueryStateInputBuilder {
 }
 impl GetQueryStateInputBuilder {
     /// <p>The ID of the plan query operation.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self

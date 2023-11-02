@@ -30,6 +30,7 @@ pub struct ListTagsForResourceInputBuilder {
 impl ListTagsForResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
     /// <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaSettingsUpdate {
     /// <p>The Region of the replica to be added.</p>
-    pub region_name: ::std::option::Option<::std::string::String>,
+    pub region_name: ::std::string::String,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     pub replica_provisioned_read_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
@@ -18,8 +18,9 @@ pub struct ReplicaSettingsUpdate {
 }
 impl ReplicaSettingsUpdate {
     /// <p>The Region of the replica to be added.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
-        self.region_name.as_deref()
+    pub fn region_name(&self) -> &str {
+        use std::ops::Deref;
+        self.region_name.deref()
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     pub fn replica_provisioned_read_capacity_units(&self) -> ::std::option::Option<i64> {
@@ -30,10 +31,10 @@ impl ReplicaSettingsUpdate {
         self.replica_provisioned_read_capacity_auto_scaling_settings_update.as_ref()
     }
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
-    pub fn replica_global_secondary_index_settings_update(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate]> {
-        self.replica_global_secondary_index_settings_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_global_secondary_index_settings_update.is_none()`.
+    pub fn replica_global_secondary_index_settings_update(&self) -> &[crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate] {
+        self.replica_global_secondary_index_settings_update.as_deref().unwrap_or_default()
     }
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
     pub fn replica_table_class(&self) -> ::std::option::Option<&crate::types::TableClass> {
@@ -60,6 +61,7 @@ pub struct ReplicaSettingsUpdateBuilder {
 }
 impl ReplicaSettingsUpdateBuilder {
     /// <p>The Region of the replica to be added.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -146,13 +148,20 @@ impl ReplicaSettingsUpdateBuilder {
         &self.replica_table_class
     }
     /// Consumes the builder and constructs a [`ReplicaSettingsUpdate`](crate::types::ReplicaSettingsUpdate).
-    pub fn build(self) -> crate::types::ReplicaSettingsUpdate {
-        crate::types::ReplicaSettingsUpdate {
-            region_name: self.region_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region_name`](crate::types::builders::ReplicaSettingsUpdateBuilder::region_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaSettingsUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicaSettingsUpdate {
+            region_name: self.region_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region_name",
+                    "region_name was not specified but it is required when building ReplicaSettingsUpdate",
+                )
+            })?,
             replica_provisioned_read_capacity_units: self.replica_provisioned_read_capacity_units,
             replica_provisioned_read_capacity_auto_scaling_settings_update: self.replica_provisioned_read_capacity_auto_scaling_settings_update,
             replica_global_secondary_index_settings_update: self.replica_global_secondary_index_settings_update,
             replica_table_class: self.replica_table_class,
-        }
+        })
     }
 }

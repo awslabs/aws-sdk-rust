@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListListenersInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::option::Option<::std::string::String>,
+    pub service_identifier: ::std::string::String,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token for the next page of results.</p>
@@ -12,8 +12,9 @@ pub struct ListListenersInput {
 }
 impl ListListenersInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_identifier.as_deref()
+    pub fn service_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_identifier.deref()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -41,6 +42,7 @@ pub struct ListListenersInputBuilder {
 }
 impl ListListenersInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +85,18 @@ impl ListListenersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_identifier`](crate::operation::list_listeners::builders::ListListenersInputBuilder::service_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersInput {
-            service_identifier: self.service_identifier,
+            service_identifier: self.service_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_identifier",
+                    "service_identifier was not specified but it is required when building ListListenersInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
         })

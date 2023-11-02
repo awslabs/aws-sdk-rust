@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RejectInputDeviceTransfer`](crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_device_id(impl Into<String>)`](crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferFluentBuilder::set_input_device_id): The unique ID of the input device to reject. For example, hd-123456789abcdef.
+    ///   - [`input_device_id(impl Into<String>)`](crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferFluentBuilder::set_input_device_id):<br>required: **true**<br>The unique ID of the input device to reject. For example, hd-123456789abcdef.<br>
     /// - On success, responds with [`RejectInputDeviceTransferOutput`](crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput)
     /// - On failure, responds with [`SdkError<RejectInputDeviceTransferError>`](crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError)
     pub fn reject_input_device_transfer(&self) -> crate::operation::reject_input_device_transfer::builders::RejectInputDeviceTransferFluentBuilder {

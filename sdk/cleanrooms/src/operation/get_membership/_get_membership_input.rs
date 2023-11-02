@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMembershipInput {
     /// <p>The identifier for a membership resource.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
 }
 impl GetMembershipInput {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
 }
 impl GetMembershipInput {
@@ -27,6 +28,7 @@ pub struct GetMembershipInputBuilder {
 }
 impl GetMembershipInputBuilder {
     /// <p>The identifier for a membership resource.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl GetMembershipInputBuilder {
         &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`GetMembershipInput`](crate::operation::get_membership::GetMembershipInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`membership_identifier`](crate::operation::get_membership::builders::GetMembershipInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_membership::GetMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_membership::GetMembershipInput {
-            membership_identifier: self.membership_identifier,
+            membership_identifier: self.membership_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_identifier",
+                    "membership_identifier was not specified but it is required when building GetMembershipInput",
+                )
+            })?,
         })
     }
 }

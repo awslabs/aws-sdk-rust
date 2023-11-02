@@ -11,8 +11,10 @@ pub struct GetIntentsOutput {
 }
 impl GetIntentsOutput {
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn intents(&self) -> ::std::option::Option<&[crate::types::IntentMetadata]> {
-        self.intents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intents.is_none()`.
+    pub fn intents(&self) -> &[crate::types::IntentMetadata] {
+        self.intents.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

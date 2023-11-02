@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutScreenCanvasSizeOptions {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub optimized_view_port_width: ::std::option::Option<::std::string::String>,
+    pub optimized_view_port_width: ::std::string::String,
 }
 impl FreeFormLayoutScreenCanvasSizeOptions {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub fn optimized_view_port_width(&self) -> ::std::option::Option<&str> {
-        self.optimized_view_port_width.as_deref()
+    pub fn optimized_view_port_width(&self) -> &str {
+        use std::ops::Deref;
+        self.optimized_view_port_width.deref()
     }
 }
 impl FreeFormLayoutScreenCanvasSizeOptions {
@@ -28,6 +29,7 @@ pub struct FreeFormLayoutScreenCanvasSizeOptionsBuilder {
 }
 impl FreeFormLayoutScreenCanvasSizeOptionsBuilder {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
+    /// This field is required.
     pub fn optimized_view_port_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.optimized_view_port_width = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,18 @@ impl FreeFormLayoutScreenCanvasSizeOptionsBuilder {
         &self.optimized_view_port_width
     }
     /// Consumes the builder and constructs a [`FreeFormLayoutScreenCanvasSizeOptions`](crate::types::FreeFormLayoutScreenCanvasSizeOptions).
-    pub fn build(self) -> crate::types::FreeFormLayoutScreenCanvasSizeOptions {
-        crate::types::FreeFormLayoutScreenCanvasSizeOptions {
-            optimized_view_port_width: self.optimized_view_port_width,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`optimized_view_port_width`](crate::types::builders::FreeFormLayoutScreenCanvasSizeOptionsBuilder::optimized_view_port_width)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::FreeFormLayoutScreenCanvasSizeOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeFormLayoutScreenCanvasSizeOptions {
+            optimized_view_port_width: self.optimized_view_port_width.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "optimized_view_port_width",
+                    "optimized_view_port_width was not specified but it is required when building FreeFormLayoutScreenCanvasSizeOptions",
+                )
+            })?,
+        })
     }
 }

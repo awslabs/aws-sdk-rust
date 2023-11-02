@@ -27,6 +27,7 @@ pub struct DeregisterWorkspaceDirectoryInputBuilder {
 }
 impl DeregisterWorkspaceDirectoryInputBuilder {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

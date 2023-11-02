@@ -11,8 +11,10 @@ pub struct ListWhatIfForecastExportsOutput {
 }
 impl ListWhatIfForecastExportsOutput {
     /// <p>An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast exports.</p>
-    pub fn what_if_forecast_exports(&self) -> ::std::option::Option<&[crate::types::WhatIfForecastExportSummary]> {
-        self.what_if_forecast_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.what_if_forecast_exports.is_none()`.
+    pub fn what_if_forecast_exports(&self) -> &[crate::types::WhatIfForecastExportSummary] {
+        self.what_if_forecast_exports.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

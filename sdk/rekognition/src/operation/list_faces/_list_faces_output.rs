@@ -13,8 +13,10 @@ pub struct ListFacesOutput {
 }
 impl ListFacesOutput {
     /// <p>An array of <code>Face</code> objects. </p>
-    pub fn faces(&self) -> ::std::option::Option<&[crate::types::Face]> {
-        self.faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faces.is_none()`.
+    pub fn faces(&self) -> &[crate::types::Face] {
+        self.faces.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

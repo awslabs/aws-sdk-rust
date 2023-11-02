@@ -30,8 +30,10 @@ impl DescribeEgressOnlyInternetGatewaysInput {
         self.dry_run
     }
     /// <p>The IDs of the egress-only internet gateways.</p>
-    pub fn egress_only_internet_gateway_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.egress_only_internet_gateway_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_only_internet_gateway_ids.is_none()`.
+    pub fn egress_only_internet_gateway_ids(&self) -> &[::std::string::String] {
+        self.egress_only_internet_gateway_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -52,8 +54,10 @@ impl DescribeEgressOnlyInternetGatewaysInput {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeEgressOnlyInternetGatewaysInput {

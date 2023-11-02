@@ -6,24 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegexPatternSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The part of the web request that you want WAF to inspect. </p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
 }
 impl RegexPatternSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents. </p>
-    pub fn text_transformations(&self) -> ::std::option::Option<&[crate::types::TextTransformation]> {
-        self.text_transformations.as_deref()
+    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
+        use std::ops::Deref;
+        self.text_transformations.deref()
     }
 }
 impl RegexPatternSetReferenceStatement {
@@ -43,6 +45,7 @@ pub struct RegexPatternSetReferenceStatementBuilder {
 }
 impl RegexPatternSetReferenceStatementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>RegexPatternSet</code> that this statement references.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl RegexPatternSetReferenceStatementBuilder {
         &self.arn
     }
     /// <p>The part of the web request that you want WAF to inspect. </p>
+    /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
@@ -91,11 +95,24 @@ impl RegexPatternSetReferenceStatementBuilder {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`RegexPatternSetReferenceStatement`](crate::types::RegexPatternSetReferenceStatement).
-    pub fn build(self) -> crate::types::RegexPatternSetReferenceStatement {
-        crate::types::RegexPatternSetReferenceStatement {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RegexPatternSetReferenceStatementBuilder::arn)
+    /// - [`text_transformations`](crate::types::builders::RegexPatternSetReferenceStatementBuilder::text_transformations)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetReferenceStatement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegexPatternSetReferenceStatement {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RegexPatternSetReferenceStatement",
+                )
+            })?,
             field_to_match: self.field_to_match,
-            text_transformations: self.text_transformations,
-        }
+            text_transformations: self.text_transformations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text_transformations",
+                    "text_transformations was not specified but it is required when building RegexPatternSetReferenceStatement",
+                )
+            })?,
+        })
     }
 }

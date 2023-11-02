@@ -30,12 +30,16 @@ impl CreateMatchingWorkflowInput {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn input_source_config(&self) -> ::std::option::Option<&[crate::types::InputSource]> {
-        self.input_source_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_source_config.is_none()`.
+    pub fn input_source_config(&self) -> &[crate::types::InputSource] {
+        self.input_source_config.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn output_source_config(&self) -> ::std::option::Option<&[crate::types::OutputSource]> {
-        self.output_source_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
+    pub fn output_source_config(&self) -> &[crate::types::OutputSource] {
+        self.output_source_config.as_deref().unwrap_or_default()
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
     pub fn resolution_techniques(&self) -> ::std::option::Option<&crate::types::ResolutionTechniques> {
@@ -76,6 +80,7 @@ pub struct CreateMatchingWorkflowInputBuilder {
 }
 impl CreateMatchingWorkflowInputBuilder {
     /// <p>The name of the workflow. There can't be multiple <code>MatchingWorkflows</code> with the same name.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +149,7 @@ impl CreateMatchingWorkflowInputBuilder {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.</p>
+    /// This field is required.
     pub fn resolution_techniques(mut self, input: crate::types::ResolutionTechniques) -> Self {
         self.resolution_techniques = ::std::option::Option::Some(input);
         self
@@ -172,6 +178,7 @@ impl CreateMatchingWorkflowInputBuilder {
         &self.incremental_run_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

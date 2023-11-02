@@ -9,18 +9,18 @@ pub fn ser_time_range_drill_down_filter(
         crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.range_minimum {
+    {
         object
             .key("RangeMinimum")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.range_minimum, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.range_maximum {
+    {
         object
             .key("RangeMaximum")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.range_maximum, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.time_granularity {
-        object.key("TimeGranularity").string(var_5.as_str());
+    {
+        object.key("TimeGranularity").string(input.time_granularity.as_str());
     }
     Ok(())
 }
@@ -72,7 +72,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::time_range_drill_down_filter_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

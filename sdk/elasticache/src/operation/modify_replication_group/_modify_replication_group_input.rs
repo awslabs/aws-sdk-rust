@@ -136,13 +136,17 @@ impl ModifyReplicationGroupInput {
     /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
-    pub fn cache_security_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_security_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_security_group_names.is_none()`.
+    pub fn cache_security_group_names(&self) -> &[::std::string::String] {
+        self.cache_security_group_names.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
     /// <p>This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -225,20 +229,26 @@ impl ModifyReplicationGroupInput {
         self.auth_token_update_strategy.as_ref()
     }
     /// <p>The ID of the user group you are associating with the replication group.</p>
-    pub fn user_group_ids_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_group_ids_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_group_ids_to_add.is_none()`.
+    pub fn user_group_ids_to_add(&self) -> &[::std::string::String] {
+        self.user_group_ids_to_add.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
-    pub fn user_group_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_group_ids_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_group_ids_to_remove.is_none()`.
+    pub fn user_group_ids_to_remove(&self) -> &[::std::string::String] {
+        self.user_group_ids_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Removes the user group associated with this replication group.</p>
     pub fn remove_user_groups(&self) -> ::std::option::Option<bool> {
         self.remove_user_groups
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfigurationRequest] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(&self) -> ::std::option::Option<&crate::types::IpDiscovery> {
@@ -302,6 +312,7 @@ pub struct ModifyReplicationGroupInputBuilder {
 }
 impl ModifyReplicationGroupInputBuilder {
     /// <p>The identifier of the replication group to modify.</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self

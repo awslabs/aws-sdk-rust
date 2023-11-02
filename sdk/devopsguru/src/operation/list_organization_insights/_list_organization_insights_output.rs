@@ -13,12 +13,16 @@ pub struct ListOrganizationInsightsOutput {
 }
 impl ListOrganizationInsightsOutput {
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
-    pub fn proactive_insights(&self) -> ::std::option::Option<&[crate::types::ProactiveOrganizationInsightSummary]> {
-        self.proactive_insights.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proactive_insights.is_none()`.
+    pub fn proactive_insights(&self) -> &[crate::types::ProactiveOrganizationInsightSummary] {
+        self.proactive_insights.as_deref().unwrap_or_default()
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
-    pub fn reactive_insights(&self) -> ::std::option::Option<&[crate::types::ReactiveOrganizationInsightSummary]> {
-        self.reactive_insights.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reactive_insights.is_none()`.
+    pub fn reactive_insights(&self) -> &[crate::types::ReactiveOrganizationInsightSummary] {
+        self.reactive_insights.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

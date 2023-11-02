@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectionProperties {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
-    pub vpc_connection_arn: ::std::option::Option<::std::string::String>,
+    pub vpc_connection_arn: ::std::string::String,
 }
 impl VpcConnectionProperties {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
-    pub fn vpc_connection_arn(&self) -> ::std::option::Option<&str> {
-        self.vpc_connection_arn.as_deref()
+    pub fn vpc_connection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_connection_arn.deref()
     }
 }
 impl VpcConnectionProperties {
@@ -28,6 +29,7 @@ pub struct VpcConnectionPropertiesBuilder {
 }
 impl VpcConnectionPropertiesBuilder {
     /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
+    /// This field is required.
     pub fn vpc_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl VpcConnectionPropertiesBuilder {
         &self.vpc_connection_arn
     }
     /// Consumes the builder and constructs a [`VpcConnectionProperties`](crate::types::VpcConnectionProperties).
-    pub fn build(self) -> crate::types::VpcConnectionProperties {
-        crate::types::VpcConnectionProperties {
-            vpc_connection_arn: self.vpc_connection_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vpc_connection_arn`](crate::types::builders::VpcConnectionPropertiesBuilder::vpc_connection_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConnectionProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConnectionProperties {
+            vpc_connection_arn: self.vpc_connection_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vpc_connection_arn",
+                    "vpc_connection_arn was not specified but it is required when building VpcConnectionProperties",
+                )
+            })?,
+        })
     }
 }

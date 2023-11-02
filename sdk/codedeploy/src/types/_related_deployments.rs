@@ -15,8 +15,10 @@ impl RelatedDeployments {
         self.auto_update_outdated_instances_root_deployment_id.as_deref()
     }
     /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
-    pub fn auto_update_outdated_instances_deployment_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_update_outdated_instances_deployment_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_update_outdated_instances_deployment_ids.is_none()`.
+    pub fn auto_update_outdated_instances_deployment_ids(&self) -> &[::std::string::String] {
+        self.auto_update_outdated_instances_deployment_ids.as_deref().unwrap_or_default()
     }
 }
 impl RelatedDeployments {

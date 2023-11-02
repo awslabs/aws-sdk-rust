@@ -43,8 +43,10 @@ impl Endpoint {
         self.endpoint_config_name.as_deref()
     }
     /// <p>A list of the production variants hosted on the endpoint. Each production variant is a model.</p>
-    pub fn production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariantSummary]> {
-        self.production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
+    pub fn production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
+        self.production_variants.as_deref().unwrap_or_default()
     }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfigSummary> {
@@ -67,16 +69,22 @@ impl Endpoint {
         self.last_modified_time.as_ref()
     }
     /// <p>A list of monitoring schedules for the endpoint. For information about model monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-    pub fn monitoring_schedules(&self) -> ::std::option::Option<&[crate::types::MonitoringSchedule]> {
-        self.monitoring_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_schedules.is_none()`.
+    pub fn monitoring_schedules(&self) -> &[crate::types::MonitoringSchedule] {
+        self.monitoring_schedules.as_deref().unwrap_or_default()
     }
     /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with production traffic replicated from the production variant.</p>
-    pub fn shadow_production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariantSummary]> {
-        self.shadow_production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
+    pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
+        self.shadow_production_variants.as_deref().unwrap_or_default()
     }
 }
 impl Endpoint {
@@ -105,6 +113,7 @@ pub struct EndpointBuilder {
 }
 impl EndpointBuilder {
     /// <p>The name of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +128,7 @@ impl EndpointBuilder {
         &self.endpoint_name
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +143,7 @@ impl EndpointBuilder {
         &self.endpoint_arn
     }
     /// <p>The endpoint configuration associated with the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +192,7 @@ impl EndpointBuilder {
         &self.data_capture_config
     }
     /// <p>The status of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input);
         self
@@ -209,6 +221,7 @@ impl EndpointBuilder {
         &self.failure_reason
     }
     /// <p>The time that the endpoint was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -223,6 +236,7 @@ impl EndpointBuilder {
         &self.creation_time
     }
     /// <p>The last time the endpoint was modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

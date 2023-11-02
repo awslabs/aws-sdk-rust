@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamicCardVerificationValue {
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub pan_sequence_number: ::std::option::Option<::std::string::String>,
+    pub pan_sequence_number: ::std::string::String,
     /// <p>The expiry date of a payment card.</p>
-    pub card_expiry_date: ::std::option::Option<::std::string::String>,
+    pub card_expiry_date: ::std::string::String,
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
-    pub service_code: ::std::option::Option<::std::string::String>,
+    pub service_code: ::std::string::String,
     /// <p>The transaction counter value that comes from the terminal.</p>
-    pub application_transaction_counter: ::std::option::Option<::std::string::String>,
+    pub application_transaction_counter: ::std::string::String,
 }
 impl DynamicCardVerificationValue {
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn pan_sequence_number(&self) -> ::std::option::Option<&str> {
-        self.pan_sequence_number.as_deref()
+    pub fn pan_sequence_number(&self) -> &str {
+        use std::ops::Deref;
+        self.pan_sequence_number.deref()
     }
     /// <p>The expiry date of a payment card.</p>
-    pub fn card_expiry_date(&self) -> ::std::option::Option<&str> {
-        self.card_expiry_date.as_deref()
+    pub fn card_expiry_date(&self) -> &str {
+        use std::ops::Deref;
+        self.card_expiry_date.deref()
     }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
-        self.service_code.as_deref()
+    pub fn service_code(&self) -> &str {
+        use std::ops::Deref;
+        self.service_code.deref()
     }
     /// <p>The transaction counter value that comes from the terminal.</p>
-    pub fn application_transaction_counter(&self) -> ::std::option::Option<&str> {
-        self.application_transaction_counter.as_deref()
+    pub fn application_transaction_counter(&self) -> &str {
+        use std::ops::Deref;
+        self.application_transaction_counter.deref()
     }
 }
 impl DynamicCardVerificationValue {
@@ -49,6 +53,7 @@ pub struct DynamicCardVerificationValueBuilder {
 }
 impl DynamicCardVerificationValueBuilder {
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    /// This field is required.
     pub fn pan_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pan_sequence_number = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl DynamicCardVerificationValueBuilder {
         &self.pan_sequence_number
     }
     /// <p>The expiry date of a payment card.</p>
+    /// This field is required.
     pub fn card_expiry_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.card_expiry_date = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl DynamicCardVerificationValueBuilder {
         &self.card_expiry_date
     }
     /// <p>The service code of the payment card. This is different from Card Security Code (CSC).</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl DynamicCardVerificationValueBuilder {
         &self.service_code
     }
     /// <p>The transaction counter value that comes from the terminal.</p>
+    /// This field is required.
     pub fn application_transaction_counter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_transaction_counter = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl DynamicCardVerificationValueBuilder {
         &self.application_transaction_counter
     }
     /// Consumes the builder and constructs a [`DynamicCardVerificationValue`](crate::types::DynamicCardVerificationValue).
-    pub fn build(self) -> crate::types::DynamicCardVerificationValue {
-        crate::types::DynamicCardVerificationValue {
-            pan_sequence_number: self.pan_sequence_number,
-            card_expiry_date: self.card_expiry_date,
-            service_code: self.service_code,
-            application_transaction_counter: self.application_transaction_counter,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pan_sequence_number`](crate::types::builders::DynamicCardVerificationValueBuilder::pan_sequence_number)
+    /// - [`card_expiry_date`](crate::types::builders::DynamicCardVerificationValueBuilder::card_expiry_date)
+    /// - [`service_code`](crate::types::builders::DynamicCardVerificationValueBuilder::service_code)
+    /// - [`application_transaction_counter`](crate::types::builders::DynamicCardVerificationValueBuilder::application_transaction_counter)
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamicCardVerificationValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DynamicCardVerificationValue {
+            pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pan_sequence_number",
+                    "pan_sequence_number was not specified but it is required when building DynamicCardVerificationValue",
+                )
+            })?,
+            card_expiry_date: self.card_expiry_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "card_expiry_date",
+                    "card_expiry_date was not specified but it is required when building DynamicCardVerificationValue",
+                )
+            })?,
+            service_code: self.service_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_code",
+                    "service_code was not specified but it is required when building DynamicCardVerificationValue",
+                )
+            })?,
+            application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_transaction_counter",
+                    "application_transaction_counter was not specified but it is required when building DynamicCardVerificationValue",
+                )
+            })?,
+        })
     }
 }

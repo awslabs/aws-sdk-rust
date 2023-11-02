@@ -3,47 +3,47 @@ pub fn ser_backup_selection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackupSelection,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.selection_name {
-        object.key("SelectionName").string(var_1.as_str());
+    {
+        object.key("SelectionName").string(input.selection_name.as_str());
     }
-    if let Some(var_2) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_2.as_str());
+    {
+        object.key("IamRoleArn").string(input.iam_role_arn.as_str());
     }
-    if let Some(var_3) = &input.resources {
-        let mut array_4 = object.key("Resources").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.resources {
+        let mut array_2 = object.key("Resources").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.list_of_tags {
-        let mut array_7 = object.key("ListOfTags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.list_of_tags {
+        let mut array_5 = object.key("ListOfTags").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_condition::ser_condition(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_condition::ser_condition(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_10) = &input.not_resources {
-        let mut array_11 = object.key("NotResources").start_array();
-        for item_12 in var_10 {
+    if let Some(var_8) = &input.not_resources {
+        let mut array_9 = object.key("NotResources").start_array();
+        for item_10 in var_8 {
             {
-                array_11.value().string(item_12.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_11.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.conditions {
+    if let Some(var_11) = &input.conditions {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Conditions").start_object();
-        crate::protocol_serde::shape_conditions::ser_conditions(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_12 = object.key("Conditions").start_object();
+        crate::protocol_serde::shape_conditions::ser_conditions(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }
@@ -99,7 +99,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::backup_selection_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

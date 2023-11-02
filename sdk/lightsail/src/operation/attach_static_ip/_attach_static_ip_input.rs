@@ -34,6 +34,7 @@ pub struct AttachStaticIpInputBuilder {
 }
 impl AttachStaticIpInputBuilder {
     /// <p>The name of the static IP.</p>
+    /// This field is required.
     pub fn static_ip_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.static_ip_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AttachStaticIpInputBuilder {
         &self.static_ip_name
     }
     /// <p>The instance name to which you want to attach the static IP address.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

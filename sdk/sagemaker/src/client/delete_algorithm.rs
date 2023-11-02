@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAlgorithm`](crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`algorithm_name(impl Into<String>)`](crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::set_algorithm_name): <p>The name of the algorithm to delete.</p>
+    ///   - [`algorithm_name(impl Into<String>)`](crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::algorithm_name) / [`set_algorithm_name(Option<String>)`](crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder::set_algorithm_name):<br>required: **true**<br><p>The name of the algorithm to delete.</p><br>
     /// - On success, responds with [`DeleteAlgorithmOutput`](crate::operation::delete_algorithm::DeleteAlgorithmOutput)
     /// - On failure, responds with [`SdkError<DeleteAlgorithmError>`](crate::operation::delete_algorithm::DeleteAlgorithmError)
     pub fn delete_algorithm(&self) -> crate::operation::delete_algorithm::builders::DeleteAlgorithmFluentBuilder {

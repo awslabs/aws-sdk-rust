@@ -27,6 +27,7 @@ pub struct DeleteHumanLoopInputBuilder {
 }
 impl DeleteHumanLoopInputBuilder {
     /// <p>The name of the human loop that you want to delete.</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self

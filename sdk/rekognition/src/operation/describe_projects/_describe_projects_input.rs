@@ -22,12 +22,16 @@ impl DescribeProjectsInput {
         self.max_results
     }
     /// <p>A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn project_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.project_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_names.is_none()`.
+    pub fn project_names(&self) -> &[::std::string::String] {
+        self.project_names.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::CustomizationFeature]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::CustomizationFeature] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl DescribeProjectsInput {

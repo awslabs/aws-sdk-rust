@@ -14,8 +14,10 @@ impl PublishBatchInput {
         self.topic_arn.as_deref()
     }
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
-    pub fn publish_batch_request_entries(&self) -> ::std::option::Option<&[crate::types::PublishBatchRequestEntry]> {
-        self.publish_batch_request_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publish_batch_request_entries.is_none()`.
+    pub fn publish_batch_request_entries(&self) -> &[crate::types::PublishBatchRequestEntry] {
+        self.publish_batch_request_entries.as_deref().unwrap_or_default()
     }
 }
 impl PublishBatchInput {
@@ -34,6 +36,7 @@ pub struct PublishBatchInputBuilder {
 }
 impl PublishBatchInputBuilder {
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self

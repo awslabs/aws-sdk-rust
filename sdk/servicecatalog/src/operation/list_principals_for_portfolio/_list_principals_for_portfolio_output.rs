@@ -11,8 +11,10 @@ pub struct ListPrincipalsForPortfolioOutput {
 }
 impl ListPrincipalsForPortfolioOutput {
     /// <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[crate::types::Principal]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[crate::types::Principal] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

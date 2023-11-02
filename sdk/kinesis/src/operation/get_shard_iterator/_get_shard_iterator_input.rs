@@ -93,6 +93,7 @@ impl GetShardIteratorInputBuilder {
         &self.stream_name
     }
     /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
+    /// This field is required.
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +116,7 @@ impl GetShardIteratorInputBuilder {
     /// <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li>
     /// <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn shard_iterator_type(mut self, input: crate::types::ShardIteratorType) -> Self {
         self.shard_iterator_type = ::std::option::Option::Some(input);
         self

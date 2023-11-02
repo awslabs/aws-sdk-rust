@@ -28,11 +28,10 @@ pub fn de_list_routing_controls_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "EndpointTemporarilyUnavailableException" => {
@@ -43,11 +42,10 @@ pub fn de_list_routing_controls_http_error(
                     let mut output = crate::types::error::builders::EndpointTemporarilyUnavailableExceptionBuilder::default();
                     output = crate::protocol_serde::shape_endpoint_temporarily_unavailable_exception::de_endpoint_temporarily_unavailable_exception_json_err(_response_body, output).map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::endpoint_temporarily_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -59,11 +57,10 @@ pub fn de_list_routing_controls_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_routing_controls::ListRoutingControlsError::ResourceNotFoundException({
@@ -74,11 +71,10 @@ pub fn de_list_routing_controls_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_routing_controls::ListRoutingControlsError::ThrottlingException({
@@ -89,11 +85,10 @@ pub fn de_list_routing_controls_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_routing_controls::ListRoutingControlsError::ValidationException({
@@ -104,11 +99,10 @@ pub fn de_list_routing_controls_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_routing_controls::ListRoutingControlsError::generic(generic),
@@ -130,7 +124,9 @@ pub fn de_list_routing_controls_http_response(
         output = crate::protocol_serde::shape_list_routing_controls::de_list_routing_controls(_response_body, output)
             .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_routing_controls_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_routing_controls::ListRoutingControlsError::unhandled)?
     })
 }
 

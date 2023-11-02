@@ -17,6 +17,7 @@ pub fn ser_ip_range(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ip_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::IpRange, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::IpRange::builder();

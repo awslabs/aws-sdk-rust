@@ -3,29 +3,29 @@ pub fn ser_polygon_geometry_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolygonGeometryInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.coordinates {
-        let mut array_2 = object.key("Coordinates").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("Coordinates").start_array();
+        for item_2 in &input.coordinates {
             {
-                let mut array_4 = array_2.value().start_array();
-                for item_5 in item_3 {
+                let mut array_3 = array_1.value().start_array();
+                for item_4 in item_2 {
                     {
-                        let mut array_6 = array_4.value().start_array();
-                        for item_7 in item_5 {
+                        let mut array_5 = array_3.value().start_array();
+                        for item_6 in item_4 {
                             {
-                                array_6.value().number(
+                                array_5.value().number(
                                     #[allow(clippy::useless_conversion)]
-                                    ::aws_smithy_types::Number::Float((*item_7).into()),
+                                    ::aws_smithy_types::Number::Float((*item_6).into()),
                                 );
                             }
                         }
-                        array_6.finish();
+                        array_5.finish();
                     }
                 }
-                array_4.finish();
+                array_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::polygon_geometry_input_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

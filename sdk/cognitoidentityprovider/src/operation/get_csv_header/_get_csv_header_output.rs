@@ -16,8 +16,10 @@ impl GetCsvHeaderOutput {
         self.user_pool_id.as_deref()
     }
     /// <p>The header information of the CSV file for the user import job.</p>
-    pub fn csv_header(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.csv_header.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.csv_header.is_none()`.
+    pub fn csv_header(&self) -> &[::std::string::String] {
+        self.csv_header.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCsvHeaderOutput {

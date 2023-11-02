@@ -6,14 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Domain {
     /// <p>The fully qualified domain name.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl Domain {
     /// <p>The fully qualified domain name.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
     pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
@@ -36,6 +37,7 @@ pub struct DomainBuilder {
 }
 impl DomainBuilder {
     /// <p>The fully qualified domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +66,17 @@ impl DomainBuilder {
         &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`Domain`](crate::types::Domain).
-    pub fn build(self) -> crate::types::Domain {
-        crate::types::Domain {
-            domain_name: self.domain_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::types::builders::DomainBuilder::domain_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Domain, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Domain {
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building Domain",
+                )
+            })?,
             hosted_zone_id: self.hosted_zone_id,
-        }
+        })
     }
 }

@@ -8,8 +8,10 @@ pub struct BatchEnableAlarmInput {
 }
 impl BatchEnableAlarmInput {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    pub fn enable_action_requests(&self) -> ::std::option::Option<&[crate::types::EnableAlarmActionRequest]> {
-        self.enable_action_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_action_requests.is_none()`.
+    pub fn enable_action_requests(&self) -> &[crate::types::EnableAlarmActionRequest] {
+        self.enable_action_requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchEnableAlarmInput {

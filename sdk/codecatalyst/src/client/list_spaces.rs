@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_spaces::builders::ListSpacesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p><br>
     /// - On success, responds with [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_spaces::ListSpacesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     ///   - [`items(Option<Vec<SpaceSummary>>)`](crate::operation::list_spaces::ListSpacesOutput::items): <p>Information about the spaces. </p>

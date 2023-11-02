@@ -89,8 +89,10 @@ impl ManagedPolicyDetail {
         self.update_date.as_ref()
     }
     /// <p>A list containing information about the versions of the policy.</p>
-    pub fn policy_version_list(&self) -> ::std::option::Option<&[crate::types::PolicyVersion]> {
-        self.policy_version_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_version_list.is_none()`.
+    pub fn policy_version_list(&self) -> &[crate::types::PolicyVersion] {
+        self.policy_version_list.as_deref().unwrap_or_default()
     }
 }
 impl ManagedPolicyDetail {

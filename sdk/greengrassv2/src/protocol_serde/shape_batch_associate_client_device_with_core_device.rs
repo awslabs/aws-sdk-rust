@@ -35,11 +35,10 @@ pub fn de_batch_associate_client_device_with_core_device_http_error(
                         crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -56,11 +55,8 @@ pub fn de_batch_associate_client_device_with_core_device_http_error(
                                                 .map_err(|_|crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                         let output = output.meta(generic);
-                        output.build()
+                        crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?
                     };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
                     tmp
                 },
             )
@@ -74,11 +70,8 @@ pub fn de_batch_associate_client_device_with_core_device_http_error(
                         let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                         output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?;
                         let output = output.meta(generic);
-                        output.build()
+                        crate::serde_util::resource_not_found_exception_correct_errors(output).build().map_err(crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled)?
                     };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
                     tmp
                 },
             )
@@ -97,11 +90,10 @@ pub fn de_batch_associate_client_device_with_core_device_http_error(
                                                 .map_err(|_|crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -115,11 +107,10 @@ pub fn de_batch_associate_client_device_with_core_device_http_error(
                         crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

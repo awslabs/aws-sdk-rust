@@ -35,6 +35,7 @@ pub struct ConnectorProfileConfigBuilder {
 }
 impl ConnectorProfileConfigBuilder {
     /// <p> The connector-specific properties of the profile configuration. </p>
+    /// This field is required.
     pub fn connector_profile_properties(mut self, input: crate::types::ConnectorProfileProperties) -> Self {
         self.connector_profile_properties = ::std::option::Option::Some(input);
         self

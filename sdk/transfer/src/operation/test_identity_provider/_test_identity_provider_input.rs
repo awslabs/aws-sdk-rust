@@ -80,6 +80,7 @@ pub struct TestIdentityProviderInputBuilder {
 }
 impl TestIdentityProviderInputBuilder {
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +144,7 @@ impl TestIdentityProviderInputBuilder {
         &self.source_ip
     }
     /// <p>The name of the account to be tested.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self

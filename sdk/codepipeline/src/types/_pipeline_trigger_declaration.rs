@@ -9,14 +9,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineTriggerDeclaration {
     /// <p>The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.</p>
-    pub provider_type: ::std::option::Option<crate::types::PipelineTriggerProviderType>,
+    pub provider_type: crate::types::PipelineTriggerProviderType,
     /// <p>Provides the filter criteria and the source stage for the repository event that starts the pipeline, such as Git tags.</p>
     pub git_configuration: ::std::option::Option<crate::types::GitConfiguration>,
 }
 impl PipelineTriggerDeclaration {
     /// <p>The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::PipelineTriggerProviderType> {
-        self.provider_type.as_ref()
+    pub fn provider_type(&self) -> &crate::types::PipelineTriggerProviderType {
+        &self.provider_type
     }
     /// <p>Provides the filter criteria and the source stage for the repository event that starts the pipeline, such as Git tags.</p>
     pub fn git_configuration(&self) -> ::std::option::Option<&crate::types::GitConfiguration> {
@@ -39,6 +39,7 @@ pub struct PipelineTriggerDeclarationBuilder {
 }
 impl PipelineTriggerDeclarationBuilder {
     /// <p>The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.</p>
+    /// This field is required.
     pub fn provider_type(mut self, input: crate::types::PipelineTriggerProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
         self
@@ -53,6 +54,7 @@ impl PipelineTriggerDeclarationBuilder {
         &self.provider_type
     }
     /// <p>Provides the filter criteria and the source stage for the repository event that starts the pipeline, such as Git tags.</p>
+    /// This field is required.
     pub fn git_configuration(mut self, input: crate::types::GitConfiguration) -> Self {
         self.git_configuration = ::std::option::Option::Some(input);
         self
@@ -67,10 +69,17 @@ impl PipelineTriggerDeclarationBuilder {
         &self.git_configuration
     }
     /// Consumes the builder and constructs a [`PipelineTriggerDeclaration`](crate::types::PipelineTriggerDeclaration).
-    pub fn build(self) -> crate::types::PipelineTriggerDeclaration {
-        crate::types::PipelineTriggerDeclaration {
-            provider_type: self.provider_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provider_type`](crate::types::builders::PipelineTriggerDeclarationBuilder::provider_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipelineTriggerDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipelineTriggerDeclaration {
+            provider_type: self.provider_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider_type",
+                    "provider_type was not specified but it is required when building PipelineTriggerDeclaration",
+                )
+            })?,
             git_configuration: self.git_configuration,
-        }
+        })
     }
 }

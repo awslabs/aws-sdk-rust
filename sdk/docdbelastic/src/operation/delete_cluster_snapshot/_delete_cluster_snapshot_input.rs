@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-    pub snapshot_arn: ::std::option::Option<::std::string::String>,
+    pub snapshot_arn: ::std::string::String,
 }
 impl DeleteClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
-        self.snapshot_arn.as_deref()
+    pub fn snapshot_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_arn.deref()
     }
 }
 impl DeleteClusterSnapshotInput {
@@ -27,6 +28,7 @@ pub struct DeleteClusterSnapshotInputBuilder {
 }
 impl DeleteClusterSnapshotInputBuilder {
     /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+    /// This field is required.
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,19 @@ impl DeleteClusterSnapshotInputBuilder {
         &self.snapshot_arn
     }
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`snapshot_arn`](crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder::snapshot_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
-            snapshot_arn: self.snapshot_arn,
+            snapshot_arn: self.snapshot_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshot_arn",
+                    "snapshot_arn was not specified but it is required when building DeleteClusterSnapshotInput",
+                )
+            })?,
         })
     }
 }

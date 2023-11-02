@@ -9,8 +9,10 @@ pub struct DataSetSchema {
 }
 impl DataSetSchema {
     /// <p>A structure containing the list of column schemas.</p>
-    pub fn column_schema_list(&self) -> ::std::option::Option<&[crate::types::ColumnSchema]> {
-        self.column_schema_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_schema_list.is_none()`.
+    pub fn column_schema_list(&self) -> &[crate::types::ColumnSchema] {
+        self.column_schema_list.as_deref().unwrap_or_default()
     }
 }
 impl DataSetSchema {

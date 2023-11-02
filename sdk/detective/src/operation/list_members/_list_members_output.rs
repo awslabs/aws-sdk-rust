@@ -15,8 +15,10 @@ impl ListMembersOutput {
     /// <p>The list of member accounts in the behavior graph.</p>
     /// <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
     /// <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
-    pub fn member_details(&self) -> ::std::option::Option<&[crate::types::MemberDetail]> {
-        self.member_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_details.is_none()`.
+    pub fn member_details(&self) -> &[crate::types::MemberDetail] {
+        self.member_details.as_deref().unwrap_or_default()
     }
     /// <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

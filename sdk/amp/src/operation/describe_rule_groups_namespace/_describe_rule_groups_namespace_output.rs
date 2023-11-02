@@ -35,6 +35,7 @@ pub struct DescribeRuleGroupsNamespaceOutputBuilder {
 }
 impl DescribeRuleGroupsNamespaceOutputBuilder {
     /// The selected rule groups namespace.
+    /// This field is required.
     pub fn rule_groups_namespace(mut self, input: crate::types::RuleGroupsNamespaceDescription) -> Self {
         self.rule_groups_namespace = ::std::option::Option::Some(input);
         self

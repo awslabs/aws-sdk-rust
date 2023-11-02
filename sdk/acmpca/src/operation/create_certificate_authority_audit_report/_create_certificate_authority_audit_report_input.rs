@@ -44,6 +44,7 @@ pub struct CreateCertificateAuthorityAuditReportInputBuilder {
 impl CreateCertificateAuthorityAuditReportInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +61,7 @@ impl CreateCertificateAuthorityAuditReportInputBuilder {
         &self.certificate_authority_arn
     }
     /// <p>The name of the S3 bucket that will contain the audit report.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +76,7 @@ impl CreateCertificateAuthorityAuditReportInputBuilder {
         &self.s3_bucket_name
     }
     /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
+    /// This field is required.
     pub fn audit_report_response_format(mut self, input: crate::types::AuditReportResponseFormat) -> Self {
         self.audit_report_response_format = ::std::option::Option::Some(input);
         self

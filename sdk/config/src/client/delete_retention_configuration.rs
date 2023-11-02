@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRetentionConfiguration`](crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`retention_configuration_name(impl Into<String>)`](crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationFluentBuilder::retention_configuration_name) / [`set_retention_configuration_name(Option<String>)`](crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationFluentBuilder::set_retention_configuration_name): <p>The name of the retention configuration to delete.</p>
+    ///   - [`retention_configuration_name(impl Into<String>)`](crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationFluentBuilder::retention_configuration_name) / [`set_retention_configuration_name(Option<String>)`](crate::operation::delete_retention_configuration::builders::DeleteRetentionConfigurationFluentBuilder::set_retention_configuration_name):<br>required: **true**<br><p>The name of the retention configuration to delete.</p><br>
     /// - On success, responds with [`DeleteRetentionConfigurationOutput`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteRetentionConfigurationError>`](crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError)
     pub fn delete_retention_configuration(

@@ -144,7 +144,9 @@ pub fn de_translate_document_http_response(
         output = crate::protocol_serde::shape_translate_document::de_translate_document(_response_body, output)
             .map_err(crate::operation::translate_document::TranslateDocumentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::translate_document_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::translate_document::TranslateDocumentError::unhandled)?
     })
 }
 

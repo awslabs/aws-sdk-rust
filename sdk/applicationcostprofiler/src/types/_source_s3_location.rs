@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceS3Location {
     /// <p>Name of the bucket.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>Key of the object.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     pub region: ::std::option::Option<crate::types::S3BucketRegion>,
 }
 impl SourceS3Location {
     /// <p>Name of the bucket.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>Key of the object.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     pub fn region(&self) -> ::std::option::Option<&crate::types::S3BucketRegion> {
@@ -42,6 +44,7 @@ pub struct SourceS3LocationBuilder {
 }
 impl SourceS3LocationBuilder {
     /// <p>Name of the bucket.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl SourceS3LocationBuilder {
         &self.bucket
     }
     /// <p>Key of the object.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl SourceS3LocationBuilder {
         &self.region
     }
     /// Consumes the builder and constructs a [`SourceS3Location`](crate::types::SourceS3Location).
-    pub fn build(self) -> crate::types::SourceS3Location {
-        crate::types::SourceS3Location {
-            bucket: self.bucket,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::SourceS3LocationBuilder::bucket)
+    /// - [`key`](crate::types::builders::SourceS3LocationBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceS3Location, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceS3Location {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building SourceS3Location",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building SourceS3Location",
+                )
+            })?,
             region: self.region,
-        }
+        })
     }
 }

@@ -3,35 +3,35 @@ pub fn ser_cost_category_split_charge_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CostCategorySplitChargeRule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source {
-        object.key("Source").string(var_1.as_str());
+    {
+        object.key("Source").string(input.source.as_str());
     }
-    if let Some(var_2) = &input.targets {
-        let mut array_3 = object.key("Targets").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Targets").start_array();
+        for item_2 in &input.targets {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.method {
-        object.key("Method").string(var_5.as_str());
+    {
+        object.key("Method").string(input.method.as_str());
     }
-    if let Some(var_6) = &input.parameters {
-        let mut array_7 = object.key("Parameters").start_array();
-        for item_8 in var_6 {
+    if let Some(var_3) = &input.parameters {
+        let mut array_4 = object.key("Parameters").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
+                let mut object_6 = array_4.value().start_object();
                 crate::protocol_serde::shape_cost_category_split_charge_rule_parameter::ser_cost_category_split_charge_rule_parameter(
-                    &mut object_9,
-                    item_8,
+                    &mut object_6,
+                    item_5,
                 )?;
-                object_9.finish();
+                object_6.finish();
             }
         }
-        array_7.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -85,7 +85,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::cost_category_split_charge_rule_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

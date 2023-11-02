@@ -23,8 +23,10 @@ impl SystemInfo {
         self.file_system_type.as_deref()
     }
     /// <p> Networking information related to a server. </p>
-    pub fn network_info_list(&self) -> ::std::option::Option<&[crate::types::NetworkInfo]> {
-        self.network_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_info_list.is_none()`.
+    pub fn network_info_list(&self) -> &[crate::types::NetworkInfo] {
+        self.network_info_list.as_deref().unwrap_or_default()
     }
     /// <p> CPU architecture type for the server. </p>
     pub fn cpu_architecture(&self) -> ::std::option::Option<&str> {

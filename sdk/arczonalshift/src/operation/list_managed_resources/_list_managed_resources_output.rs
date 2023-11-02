@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagedResourcesOutput {
     /// <p>The items in the response list.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>>,
+    pub items: ::std::vec::Vec<crate::types::ManagedResourceSummary>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListManagedResourcesOutput {
     /// <p>The items in the response list.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ManagedResourceSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ManagedResourceSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListManagedResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListManagedResourcesOutput`](crate::operation::list_managed_resources::ListManagedResourcesOutput).
-    pub fn build(self) -> crate::operation::list_managed_resources::ListManagedResourcesOutput {
-        crate::operation::list_managed_resources::ListManagedResourcesOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_managed_resources::builders::ListManagedResourcesOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_managed_resources::ListManagedResourcesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_managed_resources::ListManagedResourcesOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListManagedResourcesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -61,8 +61,10 @@ impl UpdateIntentOutput {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The updated list of sample utterances for the intent.</p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[crate::types::SampleUtterance]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>The updated Lambda function called during each turn of the conversation with the user.</p>
     pub fn dialog_code_hook(&self) -> ::std::option::Option<&crate::types::DialogCodeHookSettings> {
@@ -73,8 +75,10 @@ impl UpdateIntentOutput {
         self.fulfillment_code_hook.as_ref()
     }
     /// <p>The updated list of slots and their priorities that are elicited from the user for the intent.</p>
-    pub fn slot_priorities(&self) -> ::std::option::Option<&[crate::types::SlotPriority]> {
-        self.slot_priorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_priorities.is_none()`.
+    pub fn slot_priorities(&self) -> &[crate::types::SlotPriority] {
+        self.slot_priorities.as_deref().unwrap_or_default()
     }
     /// <p>The updated prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
     pub fn intent_confirmation_setting(&self) -> ::std::option::Option<&crate::types::IntentConfirmationSetting> {
@@ -85,12 +89,16 @@ impl UpdateIntentOutput {
         self.intent_closing_setting.as_ref()
     }
     /// <p>The updated list of contexts that must be active for the intent to be considered by Amazon Lex.</p>
-    pub fn input_contexts(&self) -> ::std::option::Option<&[crate::types::InputContext]> {
-        self.input_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
+    pub fn input_contexts(&self) -> &[crate::types::InputContext] {
+        self.input_contexts.as_deref().unwrap_or_default()
     }
     /// <p>The updated list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> ::std::option::Option<&[crate::types::OutputContext]> {
-        self.output_contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
+    pub fn output_contexts(&self) -> &[crate::types::OutputContext] {
+        self.output_contexts.as_deref().unwrap_or_default()
     }
     /// <p>The updated configuration for connecting to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
     pub fn kendra_configuration(&self) -> ::std::option::Option<&crate::types::KendraConfiguration> {

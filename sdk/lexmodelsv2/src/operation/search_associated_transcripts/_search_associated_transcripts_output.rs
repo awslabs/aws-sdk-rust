@@ -41,8 +41,10 @@ impl SearchAssociatedTranscriptsOutput {
         self.next_index
     }
     /// <p>The object that contains the associated transcript that meet the criteria you specified.</p>
-    pub fn associated_transcripts(&self) -> ::std::option::Option<&[crate::types::AssociatedTranscript]> {
-        self.associated_transcripts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_transcripts.is_none()`.
+    pub fn associated_transcripts(&self) -> &[crate::types::AssociatedTranscript] {
+        self.associated_transcripts.as_deref().unwrap_or_default()
     }
     /// <p>The total number of transcripts returned by the search.</p>
     pub fn total_results(&self) -> ::std::option::Option<i32> {

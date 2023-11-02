@@ -38,7 +38,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::timestream_timestamp_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,11 +52,11 @@ pub fn ser_timestream_timestamp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestreamTimestamp,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.value {
-        object.key("value").string(var_1.as_str());
+    {
+        object.key("value").string(input.value.as_str());
     }
-    if let Some(var_2) = &input.unit {
-        object.key("unit").string(var_2.as_str());
+    {
+        object.key("unit").string(input.unit.as_str());
     }
     Ok(())
 }

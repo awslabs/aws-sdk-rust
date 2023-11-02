@@ -56,6 +56,7 @@ pub struct ListResourcesForTagOptionInputBuilder {
 }
 impl ListResourcesForTagOptionInputBuilder {
     /// <p>The TagOption identifier.</p>
+    /// This field is required.
     pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_option_id = ::std::option::Option::Some(input.into());
         self

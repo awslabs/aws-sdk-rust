@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VeevaConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p> The password that corresponds to the user name. </p>
-    pub password: ::std::option::Option<::std::string::String>,
+    pub password: ::std::string::String,
 }
 impl VeevaConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p> The password that corresponds to the user name. </p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
-        self.password.as_deref()
+    pub fn password(&self) -> &str {
+        use std::ops::Deref;
+        self.password.deref()
     }
 }
 impl ::std::fmt::Debug for VeevaConnectorProfileCredentials {
@@ -43,6 +45,7 @@ pub struct VeevaConnectorProfileCredentialsBuilder {
 }
 impl VeevaConnectorProfileCredentialsBuilder {
     /// <p> The name of the user. </p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl VeevaConnectorProfileCredentialsBuilder {
         &self.username
     }
     /// <p> The password that corresponds to the user name. </p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl VeevaConnectorProfileCredentialsBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`VeevaConnectorProfileCredentials`](crate::types::VeevaConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::VeevaConnectorProfileCredentials {
-        crate::types::VeevaConnectorProfileCredentials {
-            username: self.username,
-            password: self.password,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::types::builders::VeevaConnectorProfileCredentialsBuilder::username)
+    /// - [`password`](crate::types::builders::VeevaConnectorProfileCredentialsBuilder::password)
+    pub fn build(self) -> ::std::result::Result<crate::types::VeevaConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VeevaConnectorProfileCredentials {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building VeevaConnectorProfileCredentials",
+                )
+            })?,
+            password: self.password.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "password",
+                    "password was not specified but it is required when building VeevaConnectorProfileCredentials",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for VeevaConnectorProfileCredentialsBuilder {

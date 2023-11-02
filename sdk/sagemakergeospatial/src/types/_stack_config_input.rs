@@ -15,8 +15,10 @@ impl StackConfigInput {
         self.output_resolution.as_ref()
     }
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
-    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_bands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
+    pub fn target_bands(&self) -> &[::std::string::String] {
+        self.target_bands.as_deref().unwrap_or_default()
     }
 }
 impl StackConfigInput {

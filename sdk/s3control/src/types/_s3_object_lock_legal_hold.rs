@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ObjectLockLegalHold {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub status: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
+    pub status: crate::types::S3ObjectLockLegalHoldStatus,
 }
 impl S3ObjectLockLegalHold {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::S3ObjectLockLegalHoldStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::S3ObjectLockLegalHoldStatus {
+        &self.status
     }
 }
 impl S3ObjectLockLegalHold {
@@ -28,6 +28,7 @@ pub struct S3ObjectLockLegalHoldBuilder {
 }
 impl S3ObjectLockLegalHoldBuilder {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::S3ObjectLockLegalHoldStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl S3ObjectLockLegalHoldBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`S3ObjectLockLegalHold`](crate::types::S3ObjectLockLegalHold).
-    pub fn build(self) -> crate::types::S3ObjectLockLegalHold {
-        crate::types::S3ObjectLockLegalHold { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::S3ObjectLockLegalHoldBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ObjectLockLegalHold, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3ObjectLockLegalHold {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building S3ObjectLockLegalHold",
+                )
+            })?,
+        })
     }
 }

@@ -30,12 +30,16 @@ impl CreateProfileInput {
         self.profile_type.as_ref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_ids.is_none()`.
+    pub fn certificate_ids(&self) -> &[::std::string::String] {
+        self.certificate_ids.as_deref().unwrap_or_default()
     }
     /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateProfileInput {
@@ -56,6 +60,7 @@ pub struct CreateProfileInputBuilder {
 }
 impl CreateProfileInputBuilder {
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    /// This field is required.
     pub fn as2_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.as2_id = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +79,7 @@ impl CreateProfileInputBuilder {
     /// <li> <p>Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family server organization or party.</p> </li>
     /// <li> <p>Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization, external to Transfer Family.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
         self.profile_type = ::std::option::Option::Some(input);
         self

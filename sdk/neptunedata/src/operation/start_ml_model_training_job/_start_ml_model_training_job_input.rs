@@ -90,12 +90,16 @@ impl StartMlModelTrainingJobInput {
         self.max_hpo_parallel_training_jobs
     }
     /// <p>The IDs of the subnets in the Neptune VPC. The default is None.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The VPC security group IDs. The default is None.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Key Management Service (KMS) key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instances that run the training job. The default is None.</p>
     pub fn volume_encryption_kms_key(&self) -> ::std::option::Option<&str> {
@@ -174,6 +178,7 @@ impl StartMlModelTrainingJobInputBuilder {
         &self.previous_model_training_job_id
     }
     /// <p>The job ID of the completed data-processing job that has created the data that the training will work with.</p>
+    /// This field is required.
     pub fn data_processing_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_processing_job_id = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +193,7 @@ impl StartMlModelTrainingJobInputBuilder {
         &self.data_processing_job_id
     }
     /// <p>The location in Amazon S3 where the model artifacts are to be stored.</p>
+    /// This field is required.
     pub fn train_model_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.train_model_s3_location = ::std::option::Option::Some(input.into());
         self

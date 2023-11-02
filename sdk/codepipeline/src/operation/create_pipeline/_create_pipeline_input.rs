@@ -15,8 +15,10 @@ impl CreatePipelineInput {
         self.pipeline.as_ref()
     }
     /// <p>The tags for the pipeline.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePipelineInput {
@@ -35,6 +37,7 @@ pub struct CreatePipelineInputBuilder {
 }
 impl CreatePipelineInputBuilder {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    /// This field is required.
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
         self.pipeline = ::std::option::Option::Some(input);
         self

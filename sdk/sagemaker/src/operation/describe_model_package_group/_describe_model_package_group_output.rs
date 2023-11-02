@@ -69,6 +69,7 @@ pub struct DescribeModelPackageGroupOutputBuilder {
 }
 impl DescribeModelPackageGroupOutputBuilder {
     /// <p>The name of the model group.</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl DescribeModelPackageGroupOutputBuilder {
         &self.model_package_group_name
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
+    /// This field is required.
     pub fn model_package_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl DescribeModelPackageGroupOutputBuilder {
         &self.model_package_group_description
     }
     /// <p>The time that the model group was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -125,6 +128,7 @@ impl DescribeModelPackageGroupOutputBuilder {
         &self.creation_time
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
         self
@@ -139,6 +143,7 @@ impl DescribeModelPackageGroupOutputBuilder {
         &self.created_by
     }
     /// <p>The status of the model group.</p>
+    /// This field is required.
     pub fn model_package_group_status(mut self, input: crate::types::ModelPackageGroupStatus) -> Self {
         self.model_package_group_status = ::std::option::Option::Some(input);
         self

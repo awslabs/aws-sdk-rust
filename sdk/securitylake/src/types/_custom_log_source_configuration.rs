@@ -35,6 +35,7 @@ pub struct CustomLogSourceConfigurationBuilder {
 }
 impl CustomLogSourceConfigurationBuilder {
     /// <p>The configuration for the Glue Crawler for the third-party custom source.</p>
+    /// This field is required.
     pub fn crawler_configuration(mut self, input: crate::types::CustomLogSourceCrawlerConfiguration) -> Self {
         self.crawler_configuration = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CustomLogSourceConfigurationBuilder {
         &self.crawler_configuration
     }
     /// <p>The identity of the log provider for the third-party custom source.</p>
+    /// This field is required.
     pub fn provider_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.provider_identity = ::std::option::Option::Some(input);
         self

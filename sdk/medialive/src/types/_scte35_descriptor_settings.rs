@@ -28,6 +28,7 @@ pub struct Scte35DescriptorSettingsBuilder {
 }
 impl Scte35DescriptorSettingsBuilder {
     /// SCTE-35 Segmentation Descriptor.
+    /// This field is required.
     pub fn segmentation_descriptor_scte35_descriptor_settings(mut self, input: crate::types::Scte35SegmentationDescriptor) -> Self {
         self.segmentation_descriptor_scte35_descriptor_settings = ::std::option::Option::Some(input);
         self

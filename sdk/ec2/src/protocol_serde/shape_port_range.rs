@@ -23,6 +23,7 @@ pub fn ser_port_range(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_port_range(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PortRange, ::aws_smithy_xml::decode::XmlDecodeError> {

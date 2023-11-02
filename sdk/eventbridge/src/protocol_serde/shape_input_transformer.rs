@@ -13,8 +13,8 @@ pub fn ser_input_transformer(
         }
         object_2.finish();
     }
-    if let Some(var_5) = &input.input_template {
-        object.key("InputTemplate").string(var_5.as_str());
+    {
+        object.key("InputTemplate").string(input.input_template.as_str());
     }
     Ok(())
 }
@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::input_transformer_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

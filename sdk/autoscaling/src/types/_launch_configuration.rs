@@ -67,16 +67,20 @@ impl LaunchConfiguration {
         self.key_name.as_deref()
     }
     /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Available for backward compatibility.</p>
     pub fn classic_link_vpc_id(&self) -> ::std::option::Option<&str> {
         self.classic_link_vpc_id.as_deref()
     }
     /// <p>Available for backward compatibility.</p>
-    pub fn classic_link_vpc_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.classic_link_vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classic_link_vpc_security_groups.is_none()`.
+    pub fn classic_link_vpc_security_groups(&self) -> &[::std::string::String] {
+        self.classic_link_vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
     pub fn user_data(&self) -> ::std::option::Option<&str> {
@@ -95,8 +99,10 @@ impl LaunchConfiguration {
         self.ramdisk_id.as_deref()
     }
     /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::BlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -167,6 +173,7 @@ pub struct LaunchConfigurationBuilder {
 }
 impl LaunchConfigurationBuilder {
     /// <p>The name of the launch configuration.</p>
+    /// This field is required.
     pub fn launch_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +202,7 @@ impl LaunchConfigurationBuilder {
         &self.launch_configuration_arn
     }
     /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -294,6 +302,7 @@ impl LaunchConfigurationBuilder {
         &self.user_data
     }
     /// <p>The instance type for the instances. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -401,6 +410,7 @@ impl LaunchConfigurationBuilder {
         &self.iam_instance_profile
     }
     /// <p>The creation date and time for the launch configuration.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self

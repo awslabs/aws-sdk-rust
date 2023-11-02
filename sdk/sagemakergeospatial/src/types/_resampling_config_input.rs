@@ -21,8 +21,10 @@ impl ResamplingConfigInput {
         self.algorithm_name.as_ref()
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available in the input.</p>
-    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_bands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
+    pub fn target_bands(&self) -> &[::std::string::String] {
+        self.target_bands.as_deref().unwrap_or_default()
     }
 }
 impl ResamplingConfigInput {
@@ -42,6 +44,7 @@ pub struct ResamplingConfigInputBuilder {
 }
 impl ResamplingConfigInputBuilder {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of resampling operation.</p>
+    /// This field is required.
     pub fn output_resolution(mut self, input: crate::types::OutputResolutionResamplingInput) -> Self {
         self.output_resolution = ::std::option::Option::Some(input);
         self

@@ -48,6 +48,7 @@ pub struct DescribeConformancePackComplianceInputBuilder {
 }
 impl DescribeConformancePackComplianceInputBuilder {
     /// <p>Name of the conformance pack.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self

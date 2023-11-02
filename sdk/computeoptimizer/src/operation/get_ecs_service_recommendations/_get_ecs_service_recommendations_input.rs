@@ -23,8 +23,10 @@ impl GetEcsServiceRecommendationsInput {
     /// <p> The ARN that identifies the Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    pub fn service_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_arns.is_none()`.
+    pub fn service_arns(&self) -> &[::std::string::String] {
+        self.service_arns.as_deref().unwrap_or_default()
     }
     /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -36,14 +38,18 @@ impl GetEcsServiceRecommendationsInput {
         self.max_results
     }
     /// <p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::EcsServiceRecommendationFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::EcsServiceRecommendationFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p>
     /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p>
     /// <p>You can only specify one account ID per request.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl GetEcsServiceRecommendationsInput {

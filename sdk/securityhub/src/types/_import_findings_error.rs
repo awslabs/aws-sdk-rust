@@ -42,6 +42,7 @@ pub struct ImportFindingsErrorBuilder {
 }
 impl ImportFindingsErrorBuilder {
     /// <p>The identifier of the finding that could not be updated.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ImportFindingsErrorBuilder {
         &self.id
     }
     /// <p>The code of the error returned by the <code>BatchImportFindings</code> operation.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ImportFindingsErrorBuilder {
         &self.error_code
     }
     /// <p>The message of the error returned by the <code>BatchImportFindings</code> operation.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self

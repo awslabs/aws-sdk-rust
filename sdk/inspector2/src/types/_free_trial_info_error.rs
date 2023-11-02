@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialInfoError {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The error code.</p>
-    pub code: ::std::option::Option<crate::types::FreeTrialInfoErrorCode>,
+    pub code: crate::types::FreeTrialInfoErrorCode,
     /// <p>The error message returned.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl FreeTrialInfoError {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::FreeTrialInfoErrorCode> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::FreeTrialInfoErrorCode {
+        &self.code
     }
     /// <p>The error message returned.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl FreeTrialInfoError {
@@ -42,6 +44,7 @@ pub struct FreeTrialInfoErrorBuilder {
 }
 impl FreeTrialInfoErrorBuilder {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FreeTrialInfoErrorBuilder {
         &self.account_id
     }
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::FreeTrialInfoErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl FreeTrialInfoErrorBuilder {
         &self.code
     }
     /// <p>The error message returned.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl FreeTrialInfoErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`FreeTrialInfoError`](crate::types::FreeTrialInfoError).
-    pub fn build(self) -> crate::types::FreeTrialInfoError {
-        crate::types::FreeTrialInfoError {
-            account_id: self.account_id,
-            code: self.code,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::FreeTrialInfoErrorBuilder::account_id)
+    /// - [`code`](crate::types::builders::FreeTrialInfoErrorBuilder::code)
+    /// - [`message`](crate::types::builders::FreeTrialInfoErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialInfoError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeTrialInfoError {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building FreeTrialInfoError",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building FreeTrialInfoError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building FreeTrialInfoError",
+                )
+            })?,
+        })
     }
 }

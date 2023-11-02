@@ -9,17 +9,22 @@ repository = "https://github.com/awslabs/smithy-rs"
 
 [features]
 rt-tokio = ["tokio/time"]
-test-util = []
+test-util = ["rt-tokio"]
 
 [dependencies]
 pin-project-lite = "0.2"
 tokio = { version = "1.23.1", features = ["sync"] }
-tokio-stream = { version = "0.1.5", default-features = false }
 futures-util = { version = "0.3.16", default-features = false }
 
 [dev-dependencies]
+pin-utils = "0.1"
 tokio = { version = "1.23.1", features = ["rt", "macros", "test-util"] }
 tokio-test = "0.4.2"
+
+# futures-util is used by `now_or_later`, for instance, but the tooling
+# reports a false positive, saying it is unused.
+[package.metadata.cargo-udeps.ignore]
+normal = ["futures-util"]
 
 [package.metadata.docs.rs]
 all-features = true

@@ -49,8 +49,10 @@ impl AutoMlCandidateGenerationConfig {
     /// </ul>
     /// <p>For the list of all algorithms per training mode, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html"> AutoMLAlgorithmConfig</a>.</p>
     /// <p>For more information on each algorithm, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm support</a> section in Autopilot developer guide.</p>
-    pub fn algorithms_config(&self) -> ::std::option::Option<&[crate::types::AutoMlAlgorithmConfig]> {
-        self.algorithms_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.algorithms_config.is_none()`.
+    pub fn algorithms_config(&self) -> &[crate::types::AutoMlAlgorithmConfig] {
+        self.algorithms_config.as_deref().unwrap_or_default()
     }
 }
 impl AutoMlCandidateGenerationConfig {

@@ -111,8 +111,10 @@ impl ContainerProperties {
         self.memory
     }
     /// <p>The command that's passed to the container. This parameter maps to <code>Cmd</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn job_role_arn(&self) -> ::std::option::Option<&str> {
@@ -123,20 +125,26 @@ impl ContainerProperties {
         self.execution_role_arn.as_deref()
     }
     /// <p>A list of data volumes used in a job.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::Volume]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::Volume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <important>
     /// <p>We don't recommend using plaintext environment variables for sensitive information, such as credential data.</p>
     /// </important> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::KeyValuePair] {
+        self.environment.as_deref().unwrap_or_default()
     }
     /// <p>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-    pub fn mount_points(&self) -> ::std::option::Option<&[crate::types::MountPoint]> {
-        self.mount_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_points.is_none()`.
+    pub fn mount_points(&self) -> &[crate::types::MountPoint] {
+        self.mount_points.as_deref().unwrap_or_default()
     }
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</p>
     pub fn readonly_root_filesystem(&self) -> ::std::option::Option<bool> {
@@ -151,8 +159,10 @@ impl ContainerProperties {
     /// <p>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
     /// </note>
-    pub fn ulimits(&self) -> ::std::option::Option<&[crate::types::Ulimit]> {
-        self.ulimits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ulimits.is_none()`.
+    pub fn ulimits(&self) -> &[crate::types::Ulimit] {
+        self.ulimits.as_deref().unwrap_or_default()
     }
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     pub fn user(&self) -> ::std::option::Option<&str> {
@@ -165,8 +175,10 @@ impl ContainerProperties {
         self.instance_type.as_deref()
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
-        self.resource_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
+    pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
+        self.resource_requirements.as_deref().unwrap_or_default()
     }
     /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
     pub fn linux_parameters(&self) -> ::std::option::Option<&crate::types::LinuxParameters> {
@@ -183,8 +195,10 @@ impl ContainerProperties {
         self.log_configuration.as_ref()
     }
     /// <p>The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
-    pub fn secrets(&self) -> ::std::option::Option<&[crate::types::Secret]> {
-        self.secrets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secrets.is_none()`.
+    pub fn secrets(&self) -> &[crate::types::Secret] {
+        self.secrets.as_deref().unwrap_or_default()
     }
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {

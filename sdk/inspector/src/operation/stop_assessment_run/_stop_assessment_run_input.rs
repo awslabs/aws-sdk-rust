@@ -34,6 +34,7 @@ pub struct StopAssessmentRunInputBuilder {
 }
 impl StopAssessmentRunInputBuilder {
     /// <p>The ARN of the assessment run that you want to stop.</p>
+    /// This field is required.
     pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self

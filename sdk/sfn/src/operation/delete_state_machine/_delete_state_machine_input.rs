@@ -27,6 +27,7 @@ pub struct DeleteStateMachineInputBuilder {
 }
 impl DeleteStateMachineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self

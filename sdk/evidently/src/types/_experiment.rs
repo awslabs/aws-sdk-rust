@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Experiment {
     /// <p>The ARN of the experiment.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the experiment.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name or ARN of the project that contains this experiment.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the experiment.</p>
-    pub status: ::std::option::Option<crate::types::ExperimentStatus>,
+    pub status: crate::types::ExperimentStatus,
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>A description of the experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the experiment is first created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the experiment was most recently updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
     pub schedule: ::std::option::Option<crate::types::ExperimentSchedule>,
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
@@ -36,7 +36,7 @@ pub struct Experiment {
     /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::ExperimentType>,
+    pub r#type: crate::types::ExperimentType,
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_definition: ::std::option::Option<crate::types::OnlineAbDefinition>,
     /// <p>The list of tag keys and values associated with this experiment.</p>
@@ -44,20 +44,22 @@ pub struct Experiment {
 }
 impl Experiment {
     /// <p>The ARN of the experiment.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the experiment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name or ARN of the project that contains this experiment.</p>
     pub fn project(&self) -> ::std::option::Option<&str> {
         self.project.as_deref()
     }
     /// <p>The current state of the experiment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExperimentStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ExperimentStatus {
+        &self.status
     }
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -68,12 +70,12 @@ impl Experiment {
         self.description.as_deref()
     }
     /// <p>The date and time that the experiment is first created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The date and time that the experiment was most recently updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::ExperimentSchedule> {
@@ -84,12 +86,16 @@ impl Experiment {
         self.execution.as_ref()
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn treatments(&self) -> ::std::option::Option<&[crate::types::Treatment]> {
-        self.treatments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatments.is_none()`.
+    pub fn treatments(&self) -> &[crate::types::Treatment] {
+        self.treatments.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn metric_goals(&self) -> ::std::option::Option<&[crate::types::MetricGoal]> {
-        self.metric_goals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_goals.is_none()`.
+    pub fn metric_goals(&self) -> &[crate::types::MetricGoal] {
+        self.metric_goals.as_deref().unwrap_or_default()
     }
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
@@ -105,8 +111,8 @@ impl Experiment {
         self.segment.as_deref()
     }
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExperimentType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ExperimentType {
+        &self.r#type
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_definition(&self) -> ::std::option::Option<&crate::types::OnlineAbDefinition> {
@@ -149,6 +155,7 @@ pub struct ExperimentBuilder {
 }
 impl ExperimentBuilder {
     /// <p>The ARN of the experiment.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +170,7 @@ impl ExperimentBuilder {
         &self.arn
     }
     /// <p>The name of the experiment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -191,6 +199,7 @@ impl ExperimentBuilder {
         &self.project
     }
     /// <p>The current state of the experiment.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ExperimentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -233,6 +242,7 @@ impl ExperimentBuilder {
         &self.description
     }
     /// <p>The date and time that the experiment is first created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -247,6 +257,7 @@ impl ExperimentBuilder {
         &self.created_time
     }
     /// <p>The date and time that the experiment was most recently updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -374,6 +385,7 @@ impl ExperimentBuilder {
         &self.segment
     }
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ExperimentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -422,16 +434,48 @@ impl ExperimentBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Experiment`](crate::types::Experiment).
-    pub fn build(self) -> crate::types::Experiment {
-        crate::types::Experiment {
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ExperimentBuilder::arn)
+    /// - [`name`](crate::types::builders::ExperimentBuilder::name)
+    /// - [`status`](crate::types::builders::ExperimentBuilder::status)
+    /// - [`created_time`](crate::types::builders::ExperimentBuilder::created_time)
+    /// - [`last_updated_time`](crate::types::builders::ExperimentBuilder::last_updated_time)
+    /// - [`r#type`](crate::types::builders::ExperimentBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Experiment, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Experiment {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Experiment",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Experiment",
+                )
+            })?,
             project: self.project,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Experiment",
+                )
+            })?,
             status_reason: self.status_reason,
             description: self.description,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building Experiment",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building Experiment",
+                )
+            })?,
             schedule: self.schedule,
             execution: self.execution,
             treatments: self.treatments,
@@ -439,9 +483,14 @@ impl ExperimentBuilder {
             randomization_salt: self.randomization_salt,
             sampling_rate: self.sampling_rate.unwrap_or_default(),
             segment: self.segment,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Experiment",
+                )
+            })?,
             online_ab_definition: self.online_ab_definition,
             tags: self.tags,
-        }
+        })
     }
 }

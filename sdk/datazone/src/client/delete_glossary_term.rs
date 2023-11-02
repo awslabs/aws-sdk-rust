@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGlossaryTerm`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the business glossary term is deleted.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::set_identifier): <p>The ID of the business glossary term that is deleted.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the business glossary term is deleted.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the business glossary term that is deleted.</p><br>
     /// - On success, responds with [`DeleteGlossaryTermOutput`](crate::operation::delete_glossary_term::DeleteGlossaryTermOutput)
     /// - On failure, responds with [`SdkError<DeleteGlossaryTermError>`](crate::operation::delete_glossary_term::DeleteGlossaryTermError)
     pub fn delete_glossary_term(&self) -> crate::operation::delete_glossary_term::builders::DeleteGlossaryTermFluentBuilder {

@@ -57,6 +57,7 @@ impl ForgetDeviceInputBuilder {
         &self.access_token
     }
     /// <p>The device key.</p>
+    /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self

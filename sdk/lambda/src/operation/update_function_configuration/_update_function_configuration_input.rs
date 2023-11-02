@@ -110,12 +110,16 @@ impl UpdateFunctionConfigurationInput {
         self.revision_id.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-    pub fn layers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layers.is_none()`.
+    pub fn layers(&self) -> &[::std::string::String] {
+        self.layers.as_deref().unwrap_or_default()
     }
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    pub fn file_system_configs(&self) -> ::std::option::Option<&[crate::types::FileSystemConfig]> {
-        self.file_system_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_configs.is_none()`.
+    pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
+        self.file_system_configs.as_deref().unwrap_or_default()
     }
     /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
@@ -169,6 +173,7 @@ impl UpdateFunctionConfigurationInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self

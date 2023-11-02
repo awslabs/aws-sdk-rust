@@ -25,7 +25,9 @@ pub fn de_get_sparql_stream_http_error(
                 output = crate::protocol_serde::shape_client_timeout_exception::de_client_timeout_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::client_timeout_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -41,7 +43,9 @@ pub fn de_get_sparql_stream_http_error(
                     crate::protocol_serde::shape_constraint_violation_exception::de_constraint_violation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::constraint_violation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -56,7 +60,9 @@ pub fn de_get_sparql_stream_http_error(
                 output = crate::protocol_serde::shape_expired_stream_exception::de_expired_stream_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::expired_stream_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -71,7 +77,9 @@ pub fn de_get_sparql_stream_http_error(
                 output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::illegal_argument_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -86,7 +94,9 @@ pub fn de_get_sparql_stream_http_error(
                 output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_argument_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -101,7 +111,9 @@ pub fn de_get_sparql_stream_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -117,7 +129,9 @@ pub fn de_get_sparql_stream_http_error(
                     crate::protocol_serde::shape_memory_limit_exceeded_exception::de_memory_limit_exceeded_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::memory_limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -133,7 +147,9 @@ pub fn de_get_sparql_stream_http_error(
                     crate::protocol_serde::shape_preconditions_failed_exception::de_preconditions_failed_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::preconditions_failed_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -151,7 +167,9 @@ pub fn de_get_sparql_stream_http_error(
                 )
                 .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::stream_records_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -166,7 +184,9 @@ pub fn de_get_sparql_stream_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -181,7 +201,9 @@ pub fn de_get_sparql_stream_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::too_many_requests_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -197,7 +219,9 @@ pub fn de_get_sparql_stream_http_error(
                     crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unsupported_operation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -220,7 +244,9 @@ pub fn de_get_sparql_stream_http_response(
         output = crate::protocol_serde::shape_get_sparql_stream::de_get_sparql_stream(_response_body, output)
             .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_sparql_stream_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_sparql_stream::GetSparqlStreamError::unhandled)?
     })
 }
 

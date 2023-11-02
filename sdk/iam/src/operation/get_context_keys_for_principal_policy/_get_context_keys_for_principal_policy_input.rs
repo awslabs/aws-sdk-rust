@@ -28,8 +28,10 @@ impl GetContextKeysForPrincipalPolicyInput {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn policy_input_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_input_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_input_list.is_none()`.
+    pub fn policy_input_list(&self) -> &[::std::string::String] {
+        self.policy_input_list.as_deref().unwrap_or_default()
     }
 }
 impl GetContextKeysForPrincipalPolicyInput {
@@ -49,6 +51,7 @@ pub struct GetContextKeysForPrincipalPolicyInputBuilder {
 impl GetContextKeysForPrincipalPolicyInputBuilder {
     /// <p>The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn policy_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_source_arn = ::std::option::Option::Some(input.into());
         self

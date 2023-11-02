@@ -48,8 +48,10 @@ impl PutRuleInput {
         self.role_arn.as_deref()
     }
     /// <p>The list of key-value pairs to associate with the rule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> ::std::option::Option<&str> {
@@ -78,6 +80,7 @@ pub struct PutRuleInputBuilder {
 }
 impl PutRuleInputBuilder {
     /// <p>The name of the rule that you are creating or updating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -44,8 +44,10 @@ impl DescribeScheduledActionsInput {
         self.active
     }
     /// <p>List of scheduled action filters. </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ScheduledActionFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ScheduledActionFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

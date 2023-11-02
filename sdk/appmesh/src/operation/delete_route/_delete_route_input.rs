@@ -4,26 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteInput {
     /// <p>The name of the route to delete.</p>
-    pub route_name: ::std::option::Option<::std::string::String>,
+    pub route_name: ::std::string::String,
     /// <p>The name of the service mesh to delete the route in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual router to delete the route in.</p>
-    pub virtual_router_name: ::std::option::Option<::std::string::String>,
+    pub virtual_router_name: ::std::string::String,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRouteInput {
     /// <p>The name of the route to delete.</p>
-    pub fn route_name(&self) -> ::std::option::Option<&str> {
-        self.route_name.as_deref()
+    pub fn route_name(&self) -> &str {
+        use std::ops::Deref;
+        self.route_name.deref()
     }
     /// <p>The name of the service mesh to delete the route in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The name of the virtual router to delete the route in.</p>
-    pub fn virtual_router_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_router_name.as_deref()
+    pub fn virtual_router_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_router_name.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
@@ -48,6 +51,7 @@ pub struct DeleteRouteInputBuilder {
 }
 impl DeleteRouteInputBuilder {
     /// <p>The name of the route to delete.</p>
+    /// This field is required.
     pub fn route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl DeleteRouteInputBuilder {
         &self.route_name
     }
     /// <p>The name of the service mesh to delete the route in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl DeleteRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual router to delete the route in.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -104,11 +110,30 @@ impl DeleteRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`route_name`](crate::operation::delete_route::builders::DeleteRouteInputBuilder::route_name)
+    /// - [`mesh_name`](crate::operation::delete_route::builders::DeleteRouteInputBuilder::mesh_name)
+    /// - [`virtual_router_name`](crate::operation::delete_route::builders::DeleteRouteInputBuilder::virtual_router_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
-            route_name: self.route_name,
-            mesh_name: self.mesh_name,
-            virtual_router_name: self.virtual_router_name,
+            route_name: self.route_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "route_name",
+                    "route_name was not specified but it is required when building DeleteRouteInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building DeleteRouteInput",
+                )
+            })?,
+            virtual_router_name: self.virtual_router_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_router_name",
+                    "virtual_router_name was not specified but it is required when building DeleteRouteInput",
+                )
+            })?,
             mesh_owner: self.mesh_owner,
         })
     }

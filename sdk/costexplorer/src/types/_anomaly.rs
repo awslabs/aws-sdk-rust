@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Anomaly {
     /// <p>The unique identifier for the anomaly. </p>
-    pub anomaly_id: ::std::option::Option<::std::string::String>,
+    pub anomaly_id: ::std::string::String,
     /// <p>The first day the anomaly is detected. </p>
     pub anomaly_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The last day the anomaly is detected. </p>
@@ -19,14 +19,15 @@ pub struct Anomaly {
     /// <p>The dollar impact for the anomaly. </p>
     pub impact: ::std::option::Option<crate::types::Impact>,
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
-    pub monitor_arn: ::std::option::Option<::std::string::String>,
+    pub monitor_arn: ::std::string::String,
     /// <p>The feedback value. </p>
     pub feedback: ::std::option::Option<crate::types::AnomalyFeedbackType>,
 }
 impl Anomaly {
     /// <p>The unique identifier for the anomaly. </p>
-    pub fn anomaly_id(&self) -> ::std::option::Option<&str> {
-        self.anomaly_id.as_deref()
+    pub fn anomaly_id(&self) -> &str {
+        use std::ops::Deref;
+        self.anomaly_id.deref()
     }
     /// <p>The first day the anomaly is detected. </p>
     pub fn anomaly_start_date(&self) -> ::std::option::Option<&str> {
@@ -41,8 +42,10 @@ impl Anomaly {
         self.dimension_value.as_deref()
     }
     /// <p>The list of identified root causes for the anomaly. </p>
-    pub fn root_causes(&self) -> ::std::option::Option<&[crate::types::RootCause]> {
-        self.root_causes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.root_causes.is_none()`.
+    pub fn root_causes(&self) -> &[crate::types::RootCause] {
+        self.root_causes.as_deref().unwrap_or_default()
     }
     /// <p>The latest and maximum score for the anomaly. </p>
     pub fn anomaly_score(&self) -> ::std::option::Option<&crate::types::AnomalyScore> {
@@ -53,8 +56,9 @@ impl Anomaly {
         self.impact.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
-        self.monitor_arn.as_deref()
+    pub fn monitor_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_arn.deref()
     }
     /// <p>The feedback value. </p>
     pub fn feedback(&self) -> ::std::option::Option<&crate::types::AnomalyFeedbackType> {
@@ -84,6 +88,7 @@ pub struct AnomalyBuilder {
 }
 impl AnomalyBuilder {
     /// <p>The unique identifier for the anomaly. </p>
+    /// This field is required.
     pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +165,7 @@ impl AnomalyBuilder {
         &self.root_causes
     }
     /// <p>The latest and maximum score for the anomaly. </p>
+    /// This field is required.
     pub fn anomaly_score(mut self, input: crate::types::AnomalyScore) -> Self {
         self.anomaly_score = ::std::option::Option::Some(input);
         self
@@ -174,6 +180,7 @@ impl AnomalyBuilder {
         &self.anomaly_score
     }
     /// <p>The dollar impact for the anomaly. </p>
+    /// This field is required.
     pub fn impact(mut self, input: crate::types::Impact) -> Self {
         self.impact = ::std::option::Option::Some(input);
         self
@@ -188,6 +195,7 @@ impl AnomalyBuilder {
         &self.impact
     }
     /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly. </p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
@@ -216,17 +224,30 @@ impl AnomalyBuilder {
         &self.feedback
     }
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).
-    pub fn build(self) -> crate::types::Anomaly {
-        crate::types::Anomaly {
-            anomaly_id: self.anomaly_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`anomaly_id`](crate::types::builders::AnomalyBuilder::anomaly_id)
+    /// - [`monitor_arn`](crate::types::builders::AnomalyBuilder::monitor_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Anomaly, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Anomaly {
+            anomaly_id: self.anomaly_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "anomaly_id",
+                    "anomaly_id was not specified but it is required when building Anomaly",
+                )
+            })?,
             anomaly_start_date: self.anomaly_start_date,
             anomaly_end_date: self.anomaly_end_date,
             dimension_value: self.dimension_value,
             root_causes: self.root_causes,
             anomaly_score: self.anomaly_score,
             impact: self.impact,
-            monitor_arn: self.monitor_arn,
+            monitor_arn: self.monitor_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitor_arn",
+                    "monitor_arn was not specified but it is required when building Anomaly",
+                )
+            })?,
             feedback: self.feedback,
-        }
+        })
     }
 }

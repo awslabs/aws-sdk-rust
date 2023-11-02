@@ -9,19 +9,19 @@ pub struct ScheduleEntry {
     /// <p>The approximate time that the program will start playing.</p>
     pub approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the program.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the channel that uses this schedule.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The name of the live source used for the program.</p>
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the program.</p>
-    pub program_name: ::std::option::Option<::std::string::String>,
+    pub program_name: ::std::string::String,
     /// <p>The schedule's ad break properties.</p>
     pub schedule_ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
     /// <p>The type of schedule entry.</p>
     pub schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
     /// <p>The name of the source location.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
     /// <p>The name of the VOD source.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
@@ -35,32 +35,38 @@ impl ScheduleEntry {
         self.approximate_start_time.as_ref()
     }
     /// <p>The ARN of the program.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the channel that uses this schedule.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The name of the live source used for the program.</p>
     pub fn live_source_name(&self) -> ::std::option::Option<&str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> ::std::option::Option<&str> {
-        self.program_name.as_deref()
+    pub fn program_name(&self) -> &str {
+        use std::ops::Deref;
+        self.program_name.deref()
     }
     /// <p>The schedule's ad break properties.</p>
-    pub fn schedule_ad_breaks(&self) -> ::std::option::Option<&[crate::types::ScheduleAdBreak]> {
-        self.schedule_ad_breaks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_ad_breaks.is_none()`.
+    pub fn schedule_ad_breaks(&self) -> &[crate::types::ScheduleAdBreak] {
+        self.schedule_ad_breaks.as_deref().unwrap_or_default()
     }
     /// <p>The type of schedule entry.</p>
     pub fn schedule_entry_type(&self) -> ::std::option::Option<&crate::types::ScheduleEntryType> {
         self.schedule_entry_type.as_ref()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
@@ -119,6 +125,7 @@ impl ScheduleEntryBuilder {
         &self.approximate_start_time
     }
     /// <p>The ARN of the program.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +140,7 @@ impl ScheduleEntryBuilder {
         &self.arn
     }
     /// <p>The name of the channel that uses this schedule.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +169,7 @@ impl ScheduleEntryBuilder {
         &self.live_source_name
     }
     /// <p>The name of the program.</p>
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +218,7 @@ impl ScheduleEntryBuilder {
         &self.schedule_entry_type
     }
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -237,18 +247,43 @@ impl ScheduleEntryBuilder {
         &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`ScheduleEntry`](crate::types::ScheduleEntry).
-    pub fn build(self) -> crate::types::ScheduleEntry {
-        crate::types::ScheduleEntry {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ScheduleEntryBuilder::arn)
+    /// - [`channel_name`](crate::types::builders::ScheduleEntryBuilder::channel_name)
+    /// - [`program_name`](crate::types::builders::ScheduleEntryBuilder::program_name)
+    /// - [`source_location_name`](crate::types::builders::ScheduleEntryBuilder::source_location_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduleEntry {
             approximate_duration_seconds: self.approximate_duration_seconds.unwrap_or_default(),
             approximate_start_time: self.approximate_start_time,
-            arn: self.arn,
-            channel_name: self.channel_name,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ScheduleEntry",
+                )
+            })?,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building ScheduleEntry",
+                )
+            })?,
             live_source_name: self.live_source_name,
-            program_name: self.program_name,
+            program_name: self.program_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "program_name",
+                    "program_name was not specified but it is required when building ScheduleEntry",
+                )
+            })?,
             schedule_ad_breaks: self.schedule_ad_breaks,
             schedule_entry_type: self.schedule_entry_type,
-            source_location_name: self.source_location_name,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building ScheduleEntry",
+                )
+            })?,
             vod_source_name: self.vod_source_name,
-        }
+        })
     }
 }

@@ -12,10 +12,14 @@ pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput
 }
 impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput {
     /// <p>Information about the associations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_gateway_route_table_virtual_interface_group_associations.is_none()`.
     pub fn local_gateway_route_table_virtual_interface_group_associations(
         &self,
-    ) -> ::std::option::Option<&[crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation]> {
-        self.local_gateway_route_table_virtual_interface_group_associations.as_deref()
+    ) -> &[crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation] {
+        self.local_gateway_route_table_virtual_interface_group_associations
+            .as_deref()
+            .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

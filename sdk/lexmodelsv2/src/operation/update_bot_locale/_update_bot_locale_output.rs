@@ -63,8 +63,10 @@ impl UpdateBotLocaleOutput {
         self.bot_locale_status.as_ref()
     }
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    pub fn failure_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[::std::string::String] {
+        self.failure_reasons.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp of the date and time that the locale was created.</p>
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -75,8 +77,10 @@ impl UpdateBotLocaleOutput {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn recommended_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recommended_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommended_actions.is_none()`.
+    pub fn recommended_actions(&self) -> &[::std::string::String] {
+        self.recommended_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateBotLocaleOutput {

@@ -18,8 +18,10 @@ impl LookupDeveloperIdentityOutput {
         self.identity_id.as_deref()
     }
     /// <p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>
-    pub fn developer_user_identifier_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.developer_user_identifier_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.developer_user_identifier_list.is_none()`.
+    pub fn developer_user_identifier_list(&self) -> &[::std::string::String] {
+        self.developer_user_identifier_list.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

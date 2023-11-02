@@ -11,8 +11,10 @@ pub struct ListFunctionEventInvokeConfigsOutput {
 }
 impl ListFunctionEventInvokeConfigsOutput {
     /// <p>A list of configurations.</p>
-    pub fn function_event_invoke_configs(&self) -> ::std::option::Option<&[crate::types::FunctionEventInvokeConfig]> {
-        self.function_event_invoke_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_event_invoke_configs.is_none()`.
+    pub fn function_event_invoke_configs(&self) -> &[crate::types::FunctionEventInvokeConfig] {
+        self.function_event_invoke_configs.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

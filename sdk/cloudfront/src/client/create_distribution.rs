@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateDistribution`](crate::operation::create_distribution::builders::CreateDistributionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`distribution_config(DistributionConfig)`](crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::distribution_config) / [`set_distribution_config(Option<DistributionConfig>)`](crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::set_distribution_config): <p>The distribution's configuration information.</p>
+    ///   - [`distribution_config(DistributionConfig)`](crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::distribution_config) / [`set_distribution_config(Option<DistributionConfig>)`](crate::operation::create_distribution::builders::CreateDistributionFluentBuilder::set_distribution_config):<br>required: **true**<br><p>The distribution's configuration information.</p><br>
     /// - On success, responds with [`CreateDistributionOutput`](crate::operation::create_distribution::CreateDistributionOutput) with field(s):
     ///   - [`distribution(Option<Distribution>)`](crate::operation::create_distribution::CreateDistributionOutput::distribution): <p>The distribution's information.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_distribution::CreateDistributionOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>

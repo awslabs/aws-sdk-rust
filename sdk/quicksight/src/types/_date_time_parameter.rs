@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeParameter {
     /// <p>A display name for the date-time parameter.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The values for the date-time parameter.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub values: ::std::vec::Vec<::aws_smithy_types::DateTime>,
 }
 impl DateTimeParameter {
     /// <p>A display name for the date-time parameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::aws_smithy_types::DateTime] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl DateTimeParameter {
@@ -35,6 +37,7 @@ pub struct DateTimeParameterBuilder {
 }
 impl DateTimeParameterBuilder {
     /// <p>A display name for the date-time parameter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl DateTimeParameterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`DateTimeParameter`](crate::types::DateTimeParameter).
-    pub fn build(self) -> crate::types::DateTimeParameter {
-        crate::types::DateTimeParameter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DateTimeParameterBuilder::name)
+    /// - [`values`](crate::types::builders::DateTimeParameterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::DateTimeParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DateTimeParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DateTimeParameter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building DateTimeParameter",
+                )
+            })?,
+        })
     }
 }

@@ -4,37 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessLogSubscriptionOutput {
     /// <p>The ID of the access log subscription.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The ID of the resource.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub destination_arn: ::std::option::Option<::std::string::String>,
+    pub destination_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateAccessLogSubscriptionOutput {
     /// <p>The ID of the access log subscription.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
-        self.destination_arn.as_deref()
+    pub fn destination_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateAccessLogSubscriptionOutput {
@@ -62,6 +67,7 @@ pub struct UpdateAccessLogSubscriptionOutputBuilder {
 }
 impl UpdateAccessLogSubscriptionOutputBuilder {
     /// <p>The ID of the access log subscription.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +82,7 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         &self.arn
     }
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +112,7 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         &self.resource_id
     }
     /// <p>The Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +127,7 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         &self.resource_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -141,14 +151,50 @@ impl UpdateAccessLogSubscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateAccessLogSubscriptionOutput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput).
-    pub fn build(self) -> crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput {
-        crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput {
-            id: self.id,
-            arn: self.arn,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
-            destination_arn: self.destination_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder::id)
+    /// - [`arn`](crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder::arn)
+    /// - [`resource_id`](crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder::resource_id)
+    /// - [`resource_arn`](crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder::resource_arn)
+    /// - [`destination_arn`](crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionOutputBuilder::destination_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateAccessLogSubscriptionOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateAccessLogSubscriptionOutput",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building UpdateAccessLogSubscriptionOutput",
+                )
+            })?,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building UpdateAccessLogSubscriptionOutput",
+                )
+            })?,
+            destination_arn: self.destination_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_arn",
+                    "destination_arn was not specified but it is required when building UpdateAccessLogSubscriptionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

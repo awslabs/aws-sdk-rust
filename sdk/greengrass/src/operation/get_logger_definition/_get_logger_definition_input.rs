@@ -27,6 +27,7 @@ pub struct GetLoggerDefinitionInputBuilder {
 }
 impl GetLoggerDefinitionInputBuilder {
     /// The ID of the logger definition.
+    /// This field is required.
     pub fn logger_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logger_definition_id = ::std::option::Option::Some(input.into());
         self

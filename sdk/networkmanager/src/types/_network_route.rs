@@ -21,8 +21,10 @@ impl NetworkRoute {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The destinations.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::NetworkRouteDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::NetworkRouteDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {

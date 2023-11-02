@@ -28,6 +28,7 @@ pub struct DeleteMountTargetInputBuilder {
 }
 impl DeleteMountTargetInputBuilder {
     /// <p>The ID of the mount target to delete (String).</p>
+    /// This field is required.
     pub fn mount_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_target_id = ::std::option::Option::Some(input.into());
         self

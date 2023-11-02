@@ -11,8 +11,10 @@ pub struct DescribeMovingAddressesOutput {
 }
 impl DescribeMovingAddressesOutput {
     /// <p>The status for each Elastic IP address.</p>
-    pub fn moving_address_statuses(&self) -> ::std::option::Option<&[crate::types::MovingAddressStatus]> {
-        self.moving_address_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.moving_address_statuses.is_none()`.
+    pub fn moving_address_statuses(&self) -> &[crate::types::MovingAddressStatus] {
+        self.moving_address_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

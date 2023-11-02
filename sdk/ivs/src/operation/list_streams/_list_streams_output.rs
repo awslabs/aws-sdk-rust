@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsOutput {
     /// <p>List of streams.</p>
-    pub streams: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
+    pub streams: ::std::vec::Vec<crate::types::StreamSummary>,
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStreamsOutput {
     /// <p>List of streams.</p>
-    pub fn streams(&self) -> ::std::option::Option<&[crate::types::StreamSummary]> {
-        self.streams.as_deref()
+    pub fn streams(&self) -> &[crate::types::StreamSummary] {
+        use std::ops::Deref;
+        self.streams.deref()
     }
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListStreamsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
-    pub fn build(self) -> crate::operation::list_streams::ListStreamsOutput {
-        crate::operation::list_streams::ListStreamsOutput {
-            streams: self.streams,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`streams`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::streams)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsOutput {
+            streams: self.streams.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "streams",
+                    "streams was not specified but it is required when building ListStreamsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteCustomKeyStoreInputBuilder {
 }
 impl DeleteCustomKeyStoreInputBuilder {
     /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
+    /// This field is required.
     pub fn custom_key_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_id = ::std::option::Option::Some(input.into());
         self

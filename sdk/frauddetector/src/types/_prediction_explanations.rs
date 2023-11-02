@@ -12,13 +12,17 @@ pub struct PredictionExplanations {
 }
 impl PredictionExplanations {
     /// <p> The details of the event variable's impact on the prediction score. </p>
-    pub fn variable_impact_explanations(&self) -> ::std::option::Option<&[crate::types::VariableImpactExplanation]> {
-        self.variable_impact_explanations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variable_impact_explanations.is_none()`.
+    pub fn variable_impact_explanations(&self) -> &[crate::types::VariableImpactExplanation] {
+        self.variable_impact_explanations.as_deref().unwrap_or_default()
     }
     /// <p> The details of the aggregated variables impact on the prediction score. </p>
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    pub fn aggregated_variables_impact_explanations(&self) -> ::std::option::Option<&[crate::types::AggregatedVariablesImpactExplanation]> {
-        self.aggregated_variables_impact_explanations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregated_variables_impact_explanations.is_none()`.
+    pub fn aggregated_variables_impact_explanations(&self) -> &[crate::types::AggregatedVariablesImpactExplanation] {
+        self.aggregated_variables_impact_explanations.as_deref().unwrap_or_default()
     }
 }
 impl PredictionExplanations {

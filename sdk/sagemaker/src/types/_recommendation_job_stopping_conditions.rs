@@ -17,8 +17,10 @@ impl RecommendationJobStoppingConditions {
         self.max_invocations
     }
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
-    pub fn model_latency_thresholds(&self) -> ::std::option::Option<&[crate::types::ModelLatencyThreshold]> {
-        self.model_latency_thresholds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_latency_thresholds.is_none()`.
+    pub fn model_latency_thresholds(&self) -> &[crate::types::ModelLatencyThreshold] {
+        self.model_latency_thresholds.as_deref().unwrap_or_default()
     }
     /// <p>Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations have flattened, set the value to <code>Continue</code>.</p>
     pub fn flat_invocations(&self) -> ::std::option::Option<&crate::types::FlatInvocations> {

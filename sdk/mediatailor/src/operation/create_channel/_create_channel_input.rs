@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelInput {
     /// <p>The name of the channel.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub filler_slate: ::std::option::Option<crate::types::SlateSource>,
     /// <p>The channel's output properties.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>,
+    pub outputs: ::std::vec::Vec<crate::types::RequestOutputItem>,
     /// <p>The type of playback mode to use for this channel.</p>
     /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
     /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
-    pub playback_mode: ::std::option::Option<crate::types::PlaybackMode>,
+    pub playback_mode: crate::types::PlaybackMode,
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tier of the channel.</p>
@@ -20,22 +20,24 @@ pub struct CreateChannelInput {
 }
 impl CreateChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn filler_slate(&self) -> ::std::option::Option<&crate::types::SlateSource> {
         self.filler_slate.as_ref()
     }
     /// <p>The channel's output properties.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::RequestOutputItem]> {
-        self.outputs.as_deref()
+    pub fn outputs(&self) -> &[crate::types::RequestOutputItem] {
+        use std::ops::Deref;
+        self.outputs.deref()
     }
     /// <p>The type of playback mode to use for this channel.</p>
     /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
     /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
-    pub fn playback_mode(&self) -> ::std::option::Option<&crate::types::PlaybackMode> {
-        self.playback_mode.as_ref()
+    pub fn playback_mode(&self) -> &crate::types::PlaybackMode {
+        &self.playback_mode
     }
     /// <p>The tags to assign to the channel. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -66,6 +68,7 @@ pub struct CreateChannelInputBuilder {
 }
 impl CreateChannelInputBuilder {
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl CreateChannelInputBuilder {
     /// <p>The type of playback mode to use for this channel.</p>
     /// <p> <code>LINEAR</code> - The programs in the schedule play once back-to-back in the schedule.</p>
     /// <p> <code>LOOP</code> - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    /// This field is required.
     pub fn playback_mode(mut self, input: crate::types::PlaybackMode) -> Self {
         self.playback_mode = ::std::option::Option::Some(input);
         self
@@ -168,14 +172,33 @@ impl CreateChannelInputBuilder {
         &self.tier
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_name`](crate::operation::create_channel::builders::CreateChannelInputBuilder::channel_name)
+    /// - [`outputs`](crate::operation::create_channel::builders::CreateChannelInputBuilder::outputs)
+    /// - [`playback_mode`](crate::operation::create_channel::builders::CreateChannelInputBuilder::playback_mode)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_channel::CreateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel::CreateChannelInput {
-            channel_name: self.channel_name,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building CreateChannelInput",
+                )
+            })?,
             filler_slate: self.filler_slate,
-            outputs: self.outputs,
-            playback_mode: self.playback_mode,
+            outputs: self.outputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "outputs",
+                    "outputs was not specified but it is required when building CreateChannelInput",
+                )
+            })?,
+            playback_mode: self.playback_mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "playback_mode",
+                    "playback_mode was not specified but it is required when building CreateChannelInput",
+                )
+            })?,
             tags: self.tags,
             tier: self.tier,
         })

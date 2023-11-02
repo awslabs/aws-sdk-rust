@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ssml {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
-    pub locale: ::std::option::Option<crate::types::Locale>,
+    pub locale: crate::types::Locale,
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl Ssml {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
-        self.locale.as_ref()
+    pub fn locale(&self) -> &crate::types::Locale {
+        &self.locale
     }
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl Ssml {
@@ -35,6 +36,7 @@ pub struct SsmlBuilder {
 }
 impl SsmlBuilder {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
+    /// This field is required.
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.locale = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl SsmlBuilder {
         &self.locale
     }
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl SsmlBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`Ssml`](crate::types::Ssml).
-    pub fn build(self) -> crate::types::Ssml {
-        crate::types::Ssml {
-            locale: self.locale,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`locale`](crate::types::builders::SsmlBuilder::locale)
+    /// - [`value`](crate::types::builders::SsmlBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ssml, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ssml {
+            locale: self.locale.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "locale",
+                    "locale was not specified but it is required when building Ssml",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building Ssml",
+                )
+            })?,
+        })
     }
 }

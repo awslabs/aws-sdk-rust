@@ -45,12 +45,16 @@ impl AssessmentControl {
         self.response.as_ref()
     }
     /// <p> The list of comments that's attached to the control. </p>
-    pub fn comments(&self) -> ::std::option::Option<&[crate::types::ControlComment]> {
-        self.comments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comments.is_none()`.
+    pub fn comments(&self) -> &[crate::types::ControlComment] {
+        self.comments.as_deref().unwrap_or_default()
     }
     /// <p> The list of data sources for the evidence. </p>
-    pub fn evidence_sources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.evidence_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_sources.is_none()`.
+    pub fn evidence_sources(&self) -> &[::std::string::String] {
+        self.evidence_sources.as_deref().unwrap_or_default()
     }
     /// <p> The amount of evidence that's collected for the control. </p>
     pub fn evidence_count(&self) -> i32 {

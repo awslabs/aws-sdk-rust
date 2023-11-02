@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAnalysisTemplateInput {
     /// <p>The identifier for a membership resource.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
     /// <p>The identifier for the analysis template resource.</p>
-    pub analysis_template_identifier: ::std::option::Option<::std::string::String>,
+    pub analysis_template_identifier: ::std::string::String,
     /// <p>A new description for the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAnalysisTemplateInput {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
     /// <p>The identifier for the analysis template resource.</p>
-    pub fn analysis_template_identifier(&self) -> ::std::option::Option<&str> {
-        self.analysis_template_identifier.as_deref()
+    pub fn analysis_template_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.analysis_template_identifier.deref()
     }
     /// <p>A new description for the analysis template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct UpdateAnalysisTemplateInputBuilder {
 }
 impl UpdateAnalysisTemplateInputBuilder {
     /// <p>The identifier for a membership resource.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateAnalysisTemplateInputBuilder {
         &self.membership_identifier
     }
     /// <p>The identifier for the analysis template resource.</p>
+    /// This field is required.
     pub fn analysis_template_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_template_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,13 +87,26 @@ impl UpdateAnalysisTemplateInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateAnalysisTemplateInput`](crate::operation::update_analysis_template::UpdateAnalysisTemplateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`membership_identifier`](crate::operation::update_analysis_template::builders::UpdateAnalysisTemplateInputBuilder::membership_identifier)
+    /// - [`analysis_template_identifier`](crate::operation::update_analysis_template::builders::UpdateAnalysisTemplateInputBuilder::analysis_template_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_analysis_template::UpdateAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_analysis_template::UpdateAnalysisTemplateInput {
-            membership_identifier: self.membership_identifier,
-            analysis_template_identifier: self.analysis_template_identifier,
+            membership_identifier: self.membership_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_identifier",
+                    "membership_identifier was not specified but it is required when building UpdateAnalysisTemplateInput",
+                )
+            })?,
+            analysis_template_identifier: self.analysis_template_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analysis_template_identifier",
+                    "analysis_template_identifier was not specified but it is required when building UpdateAnalysisTemplateInput",
+                )
+            })?,
             description: self.description,
         })
     }

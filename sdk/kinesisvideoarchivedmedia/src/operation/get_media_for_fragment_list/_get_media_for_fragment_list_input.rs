@@ -20,8 +20,10 @@ impl GetMediaForFragmentListInput {
         self.stream_arn.as_deref()
     }
     /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
-    pub fn fragments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fragments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fragments.is_none()`.
+    pub fn fragments(&self) -> &[::std::string::String] {
+        self.fragments.as_deref().unwrap_or_default()
     }
 }
 impl GetMediaForFragmentListInput {

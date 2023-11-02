@@ -45,6 +45,7 @@ pub struct CreateNotebookInputBuilder {
 }
 impl CreateNotebookInputBuilder {
     /// <p>The name of the Spark enabled workgroup in which the notebook will be created.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl CreateNotebookInputBuilder {
         &self.work_group
     }
     /// <p>The name of the <code>ipynb</code> file to be created in the Spark workgroup, without the <code>.ipynb</code> extension.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

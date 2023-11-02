@@ -11,8 +11,10 @@ pub struct DescribeBackupsOutput {
 }
 impl DescribeBackupsOutput {
     /// <p>A list of backups.</p>
-    pub fn backups(&self) -> ::std::option::Option<&[crate::types::Backup]> {
-        self.backups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backups.is_none()`.
+    pub fn backups(&self) -> &[crate::types::Backup] {
+        self.backups.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

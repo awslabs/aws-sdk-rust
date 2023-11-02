@@ -41,6 +41,7 @@ pub struct ListFeaturedResultsSetsInputBuilder {
 }
 impl ListFeaturedResultsSetsInputBuilder {
     /// <p>The identifier of the index used for featuring results.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

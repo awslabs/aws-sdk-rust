@@ -34,6 +34,7 @@ pub struct CreateEnvironmentTemplateOutputBuilder {
 }
 impl CreateEnvironmentTemplateOutputBuilder {
     /// <p>The environment template detail data that's returned by Proton.</p>
+    /// This field is required.
     pub fn environment_template(mut self, input: crate::types::EnvironmentTemplate) -> Self {
         self.environment_template = ::std::option::Option::Some(input);
         self

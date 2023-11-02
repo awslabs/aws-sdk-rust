@@ -65,8 +65,10 @@ impl DirectConnectGatewayAssociation {
         self.association_id.as_deref()
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.allowed_prefixes_to_direct_connect_gateway.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_prefixes_to_direct_connect_gateway.is_none()`.
+    pub fn allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {

@@ -17,12 +17,16 @@ pub struct AutomatedAbrRule {
 }
 impl AutomatedAbrRule {
     /// When customer adds the allowed renditions rule for auto ABR ladder, they are required to add at leat one rendition to allowedRenditions list
-    pub fn allowed_renditions(&self) -> ::std::option::Option<&[crate::types::AllowedRenditionSize]> {
-        self.allowed_renditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_renditions.is_none()`.
+    pub fn allowed_renditions(&self) -> &[crate::types::AllowedRenditionSize] {
+        self.allowed_renditions.as_deref().unwrap_or_default()
     }
     /// When customer adds the force include renditions rule for auto ABR ladder, they are required to add at leat one rendition to forceIncludeRenditions list
-    pub fn force_include_renditions(&self) -> ::std::option::Option<&[crate::types::ForceIncludeRenditionSize]> {
-        self.force_include_renditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.force_include_renditions.is_none()`.
+    pub fn force_include_renditions(&self) -> &[crate::types::ForceIncludeRenditionSize] {
+        self.force_include_renditions.as_deref().unwrap_or_default()
     }
     /// Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size.
     pub fn min_bottom_rendition_size(&self) -> ::std::option::Option<&crate::types::MinBottomRenditionSize> {

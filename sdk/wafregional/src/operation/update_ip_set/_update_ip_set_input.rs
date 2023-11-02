@@ -30,8 +30,10 @@ impl UpdateIpSetInput {
     /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::IpSetUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::IpSetUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateIpSetInput {
@@ -51,6 +53,7 @@ pub struct UpdateIpSetInputBuilder {
 }
 impl UpdateIpSetInputBuilder {
     /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl UpdateIpSetInputBuilder {
         &self.ip_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

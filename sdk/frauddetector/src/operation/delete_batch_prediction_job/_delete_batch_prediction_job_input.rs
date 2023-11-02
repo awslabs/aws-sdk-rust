@@ -27,6 +27,7 @@ pub struct DeleteBatchPredictionJobInputBuilder {
 }
 impl DeleteBatchPredictionJobInputBuilder {
     /// <p>The ID of the batch prediction job to delete.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

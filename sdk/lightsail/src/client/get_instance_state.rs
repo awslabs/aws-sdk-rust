@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetInstanceState`](crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_name(impl Into<String>)`](crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder::set_instance_name): <p>The name of the instance to get state information about.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::get_instance_state::builders::GetInstanceStateFluentBuilder::set_instance_name):<br>required: **true**<br><p>The name of the instance to get state information about.</p><br>
     /// - On success, responds with [`GetInstanceStateOutput`](crate::operation::get_instance_state::GetInstanceStateOutput) with field(s):
     ///   - [`state(Option<InstanceState>)`](crate::operation::get_instance_state::GetInstanceStateOutput::state): <p>The state of the instance.</p>
     /// - On failure, responds with [`SdkError<GetInstanceStateError>`](crate::operation::get_instance_state::GetInstanceStateError)

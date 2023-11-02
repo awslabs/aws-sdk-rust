@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// The name of an Amazon Connect Campaign name.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// Amazon Connect Instance Id
-    pub connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub connect_instance_id: ::std::string::String,
     /// The possible types of dialer config parameters
     pub dialer_config: ::std::option::Option<crate::types::DialerConfig>,
     /// The configuration used for outbound calls.
@@ -17,12 +17,14 @@ pub struct CreateCampaignInput {
 }
 impl CreateCampaignInput {
     /// The name of an Amazon Connect Campaign name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
-        self.connect_instance_id.as_deref()
+    pub fn connect_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connect_instance_id.deref()
     }
     /// The possible types of dialer config parameters
     pub fn dialer_config(&self) -> ::std::option::Option<&crate::types::DialerConfig> {
@@ -56,6 +58,7 @@ pub struct CreateCampaignInputBuilder {
 }
 impl CreateCampaignInputBuilder {
     /// The name of an Amazon Connect Campaign name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CreateCampaignInputBuilder {
         &self.name
     }
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl CreateCampaignInputBuilder {
         &self.connect_instance_id
     }
     /// The possible types of dialer config parameters
+    /// This field is required.
     pub fn dialer_config(mut self, input: crate::types::DialerConfig) -> Self {
         self.dialer_config = ::std::option::Option::Some(input);
         self
@@ -98,6 +103,7 @@ impl CreateCampaignInputBuilder {
         &self.dialer_config
     }
     /// The configuration used for outbound calls.
+    /// This field is required.
     pub fn outbound_call_config(mut self, input: crate::types::OutboundCallConfig) -> Self {
         self.outbound_call_config = ::std::option::Option::Some(input);
         self
@@ -132,12 +138,25 @@ impl CreateCampaignInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_campaign::builders::CreateCampaignInputBuilder::name)
+    /// - [`connect_instance_id`](crate::operation::create_campaign::builders::CreateCampaignInputBuilder::connect_instance_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_campaign::CreateCampaignInput {
-            name: self.name,
-            connect_instance_id: self.connect_instance_id,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateCampaignInput",
+                )
+            })?,
+            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connect_instance_id",
+                    "connect_instance_id was not specified but it is required when building CreateCampaignInput",
+                )
+            })?,
             dialer_config: self.dialer_config,
             outbound_call_config: self.outbound_call_config,
             tags: self.tags,

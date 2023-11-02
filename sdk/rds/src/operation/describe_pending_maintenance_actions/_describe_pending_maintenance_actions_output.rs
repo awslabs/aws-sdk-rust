@@ -12,8 +12,10 @@ pub struct DescribePendingMaintenanceActionsOutput {
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
-    pub fn pending_maintenance_actions(&self) -> ::std::option::Option<&[crate::types::ResourcePendingMaintenanceActions]> {
-        self.pending_maintenance_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_maintenance_actions.is_none()`.
+    pub fn pending_maintenance_actions(&self) -> &[crate::types::ResourcePendingMaintenanceActions] {
+        self.pending_maintenance_actions.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

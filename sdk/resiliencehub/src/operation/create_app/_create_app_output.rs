@@ -34,6 +34,7 @@ pub struct CreateAppOutputBuilder {
 }
 impl CreateAppOutputBuilder {
     /// <p>The created application returned as an object with details including compliance status, creation time, description, resiliency score, and more.</p>
+    /// This field is required.
     pub fn app(mut self, input: crate::types::App) -> Self {
         self.app = ::std::option::Option::Some(input);
         self

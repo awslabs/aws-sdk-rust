@@ -49,6 +49,7 @@ pub struct DisablePolicyTypeInputBuilder {
 impl DisablePolicyTypeInputBuilder {
     /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+    /// This field is required.
     pub fn root_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl DisablePolicyTypeInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self

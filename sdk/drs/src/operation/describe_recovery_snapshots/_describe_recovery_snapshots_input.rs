@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsInput {
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
     pub filters: ::std::option::Option<crate::types::DescribeRecoverySnapshotsRequestFilters>,
     /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
@@ -16,8 +16,9 @@ pub struct DescribeRecoverySnapshotsInput {
 }
 impl DescribeRecoverySnapshotsInput {
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>A set of filters by which to return Recovery Snapshots.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeRecoverySnapshotsRequestFilters> {
@@ -55,6 +56,7 @@ pub struct DescribeRecoverySnapshotsInputBuilder {
 }
 impl DescribeRecoverySnapshotsInputBuilder {
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,8 @@ impl DescribeRecoverySnapshotsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeRecoverySnapshotsInput`](crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -132,7 +136,12 @@ impl DescribeRecoverySnapshotsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building DescribeRecoverySnapshotsInput",
+                )
+            })?,
             filters: self.filters,
             order: self.order,
             max_results: self.max_results.unwrap_or_default(),

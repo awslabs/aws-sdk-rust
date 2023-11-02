@@ -11,8 +11,10 @@ pub struct DescribeDataRepositoryTasksOutput {
 }
 impl DescribeDataRepositoryTasksOutput {
     /// <p>The collection of data repository task descriptions returned.</p>
-    pub fn data_repository_tasks(&self) -> ::std::option::Option<&[crate::types::DataRepositoryTask]> {
-        self.data_repository_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_repository_tasks.is_none()`.
+    pub fn data_repository_tasks(&self) -> &[crate::types::DataRepositoryTask] {
+        self.data_repository_tasks.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

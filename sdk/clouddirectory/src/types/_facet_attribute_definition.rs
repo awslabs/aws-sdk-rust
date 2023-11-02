@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetAttributeDefinition {
     /// <p>The type of the attribute.</p>
-    pub r#type: ::std::option::Option<crate::types::FacetAttributeType>,
+    pub r#type: crate::types::FacetAttributeType,
     /// <p>The default value of the attribute (if configured).</p>
     pub default_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     /// <p>Whether the attribute is mutable or not.</p>
@@ -15,8 +15,8 @@ pub struct FacetAttributeDefinition {
 }
 impl FacetAttributeDefinition {
     /// <p>The type of the attribute.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FacetAttributeType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FacetAttributeType {
+        &self.r#type
     }
     /// <p>The default value of the attribute (if configured).</p>
     pub fn default_value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
@@ -49,6 +49,7 @@ pub struct FacetAttributeDefinitionBuilder {
 }
 impl FacetAttributeDefinitionBuilder {
     /// <p>The type of the attribute.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FacetAttributeType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -111,12 +112,19 @@ impl FacetAttributeDefinitionBuilder {
         &self.rules
     }
     /// Consumes the builder and constructs a [`FacetAttributeDefinition`](crate::types::FacetAttributeDefinition).
-    pub fn build(self) -> crate::types::FacetAttributeDefinition {
-        crate::types::FacetAttributeDefinition {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FacetAttributeDefinitionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::FacetAttributeDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FacetAttributeDefinition {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FacetAttributeDefinition",
+                )
+            })?,
             default_value: self.default_value,
             is_immutable: self.is_immutable.unwrap_or_default(),
             rules: self.rules,
-        }
+        })
     }
 }

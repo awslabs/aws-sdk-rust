@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewSunAzimuthInput {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
-    pub lower_bound: ::std::option::Option<f32>,
+    pub lower_bound: f32,
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
-    pub upper_bound: ::std::option::Option<f32>,
+    pub upper_bound: f32,
 }
 impl ViewSunAzimuthInput {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
-    pub fn lower_bound(&self) -> ::std::option::Option<f32> {
+    pub fn lower_bound(&self) -> f32 {
         self.lower_bound
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
-    pub fn upper_bound(&self) -> ::std::option::Option<f32> {
+    pub fn upper_bound(&self) -> f32 {
         self.upper_bound
     }
 }
@@ -35,6 +35,7 @@ pub struct ViewSunAzimuthInputBuilder {
 }
 impl ViewSunAzimuthInputBuilder {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
+    /// This field is required.
     pub fn lower_bound(mut self, input: f32) -> Self {
         self.lower_bound = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ViewSunAzimuthInputBuilder {
         &self.lower_bound
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
+    /// This field is required.
     pub fn upper_bound(mut self, input: f32) -> Self {
         self.upper_bound = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ViewSunAzimuthInputBuilder {
         &self.upper_bound
     }
     /// Consumes the builder and constructs a [`ViewSunAzimuthInput`](crate::types::ViewSunAzimuthInput).
-    pub fn build(self) -> crate::types::ViewSunAzimuthInput {
-        crate::types::ViewSunAzimuthInput {
-            lower_bound: self.lower_bound,
-            upper_bound: self.upper_bound,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lower_bound`](crate::types::builders::ViewSunAzimuthInputBuilder::lower_bound)
+    /// - [`upper_bound`](crate::types::builders::ViewSunAzimuthInputBuilder::upper_bound)
+    pub fn build(self) -> ::std::result::Result<crate::types::ViewSunAzimuthInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ViewSunAzimuthInput {
+            lower_bound: self.lower_bound.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lower_bound",
+                    "lower_bound was not specified but it is required when building ViewSunAzimuthInput",
+                )
+            })?,
+            upper_bound: self.upper_bound.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upper_bound",
+                    "upper_bound was not specified but it is required when building ViewSunAzimuthInput",
+                )
+            })?,
+        })
     }
 }

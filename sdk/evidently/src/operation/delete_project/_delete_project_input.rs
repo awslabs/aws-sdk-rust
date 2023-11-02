@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The name or ARN of the project to delete.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
 }
 impl DeleteProjectInput {
     /// <p>The name or ARN of the project to delete.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
 }
 impl DeleteProjectInput {
@@ -27,6 +28,7 @@ pub struct DeleteProjectInputBuilder {
 }
 impl DeleteProjectInputBuilder {
     /// <p>The name or ARN of the project to delete.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,18 @@ impl DeleteProjectInputBuilder {
         &self.project
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::delete_project::builders::DeleteProjectInputBuilder::project)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput { project: self.project })
+        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building DeleteProjectInput",
+                )
+            })?,
+        })
     }
 }

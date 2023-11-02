@@ -35,11 +35,10 @@ pub fn de_list_resources_associated_to_custom_line_item_http_error(
                             crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -61,11 +60,10 @@ pub fn de_list_resources_associated_to_custom_line_item_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(
+                        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -84,11 +82,10 @@ pub fn de_list_resources_associated_to_custom_line_item_http_error(
                             crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
                         )?;
                         let output = output.meta(generic);
-                        output.build()
+                        crate::serde_util::resource_not_found_exception_correct_errors(output).build().map_err(
+                            crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
+                        )?
                     };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
                     tmp
                 },
             )
@@ -110,11 +107,10 @@ pub fn de_list_resources_associated_to_custom_line_item_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -128,11 +124,10 @@ pub fn de_list_resources_associated_to_custom_line_item_http_error(
                         crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

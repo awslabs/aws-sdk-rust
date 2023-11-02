@@ -34,6 +34,7 @@ pub struct GetBucketEncryptionInputBuilder {
 }
 impl GetBucketEncryptionInputBuilder {
     /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

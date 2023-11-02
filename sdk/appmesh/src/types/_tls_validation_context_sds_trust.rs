@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
-    pub secret_name: ::std::option::Option<::std::string::String>,
+    pub secret_name: ::std::string::String,
 }
 impl TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
-    pub fn secret_name(&self) -> ::std::option::Option<&str> {
-        self.secret_name.as_deref()
+    pub fn secret_name(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_name.deref()
     }
 }
 impl TlsValidationContextSdsTrust {
@@ -28,6 +29,7 @@ pub struct TlsValidationContextSdsTrustBuilder {
 }
 impl TlsValidationContextSdsTrustBuilder {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+    /// This field is required.
     pub fn secret_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl TlsValidationContextSdsTrustBuilder {
         &self.secret_name
     }
     /// Consumes the builder and constructs a [`TlsValidationContextSdsTrust`](crate::types::TlsValidationContextSdsTrust).
-    pub fn build(self) -> crate::types::TlsValidationContextSdsTrust {
-        crate::types::TlsValidationContextSdsTrust {
-            secret_name: self.secret_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`secret_name`](crate::types::builders::TlsValidationContextSdsTrustBuilder::secret_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TlsValidationContextSdsTrust, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TlsValidationContextSdsTrust {
+            secret_name: self.secret_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_name",
+                    "secret_name was not specified but it is required when building TlsValidationContextSdsTrust",
+                )
+            })?,
+        })
     }
 }

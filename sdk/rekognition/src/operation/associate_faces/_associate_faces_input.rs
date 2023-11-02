@@ -24,8 +24,10 @@ impl AssociateFacesInput {
         self.user_id.as_deref()
     }
     /// <p>An array of FaceIDs to associate with the UserID.</p>
-    pub fn face_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.face_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
+    pub fn face_ids(&self) -> &[::std::string::String] {
+        self.face_ids.as_deref().unwrap_or_default()
     }
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
     pub fn user_match_threshold(&self) -> ::std::option::Option<f32> {
@@ -55,6 +57,7 @@ pub struct AssociateFacesInputBuilder {
 }
 impl AssociateFacesInputBuilder {
     /// <p>The ID of an existing collection containing the UserID.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl AssociateFacesInputBuilder {
         &self.collection_id
     }
     /// <p>The ID for the existing UserID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

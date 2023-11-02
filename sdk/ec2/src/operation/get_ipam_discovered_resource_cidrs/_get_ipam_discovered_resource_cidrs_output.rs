@@ -11,8 +11,10 @@ pub struct GetIpamDiscoveredResourceCidrsOutput {
 }
 impl GetIpamDiscoveredResourceCidrsOutput {
     /// <p>Discovered resource CIDRs.</p>
-    pub fn ipam_discovered_resource_cidrs(&self) -> ::std::option::Option<&[crate::types::IpamDiscoveredResourceCidr]> {
-        self.ipam_discovered_resource_cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_discovered_resource_cidrs.is_none()`.
+    pub fn ipam_discovered_resource_cidrs(&self) -> &[crate::types::IpamDiscoveredResourceCidr] {
+        self.ipam_discovered_resource_cidrs.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

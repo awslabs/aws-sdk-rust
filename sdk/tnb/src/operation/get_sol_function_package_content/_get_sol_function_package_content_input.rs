@@ -34,6 +34,7 @@ pub struct GetSolFunctionPackageContentInputBuilder {
 }
 impl GetSolFunctionPackageContentInputBuilder {
     /// <p>ID of the function package.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSolFunctionPackageContentInputBuilder {
         &self.vnf_pkg_id
     }
     /// <p>The format of the package that you want to download from the function packages.</p>
+    /// This field is required.
     pub fn accept(mut self, input: crate::types::PackageContentType) -> Self {
         self.accept = ::std::option::Option::Some(input);
         self

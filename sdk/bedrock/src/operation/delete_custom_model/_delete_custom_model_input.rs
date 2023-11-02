@@ -27,6 +27,7 @@ pub struct DeleteCustomModelInputBuilder {
 }
 impl DeleteCustomModelInputBuilder {
     /// <p>Name of the model to delete.</p>
+    /// This field is required.
     pub fn model_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_identifier = ::std::option::Option::Some(input.into());
         self

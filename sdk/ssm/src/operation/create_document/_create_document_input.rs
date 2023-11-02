@@ -57,12 +57,16 @@ impl CreateDocumentInput {
         self.content.as_deref()
     }
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn requires(&self) -> ::std::option::Option<&[crate::types::DocumentRequires]> {
-        self.requires.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires.is_none()`.
+    pub fn requires(&self) -> &[crate::types::DocumentRequires] {
+        self.requires.as_deref().unwrap_or_default()
     }
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::AttachmentsSource]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::AttachmentsSource] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>A name for the SSM document.</p> <important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
@@ -104,8 +108,10 @@ impl CreateDocumentInput {
     /// </ul> <note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDocumentInput {
@@ -138,6 +144,7 @@ impl CreateDocumentInputBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -211,6 +218,7 @@ impl CreateDocumentInputBuilder {
     /// <li> <p> <code>amzn</code> </p> </li>
     /// </ul>
     /// </important>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

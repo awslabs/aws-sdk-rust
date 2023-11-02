@@ -9,8 +9,8 @@ pub fn ser_channel_definition(
             ::aws_smithy_types::Number::NegInt((input.channel_id).into()),
         );
     }
-    if let Some(var_1) = &input.participant_role {
-        object.key("ParticipantRole").string(var_1.as_str());
+    {
+        object.key("ParticipantRole").string(input.participant_role.as_str());
     }
     Ok(())
 }

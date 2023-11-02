@@ -59,6 +59,7 @@ pub struct AdminListDevicesInputBuilder {
 }
 impl AdminListDevicesInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl AdminListDevicesInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self

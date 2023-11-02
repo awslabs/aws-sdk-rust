@@ -27,6 +27,7 @@ pub struct DescribePredictorBacktestExportJobInputBuilder {
 }
 impl DescribePredictorBacktestExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    /// This field is required.
     pub fn predictor_backtest_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_backtest_export_job_arn = ::std::option::Option::Some(input.into());
         self

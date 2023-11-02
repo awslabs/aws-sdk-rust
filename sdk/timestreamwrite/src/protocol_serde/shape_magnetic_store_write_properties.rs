@@ -3,14 +3,14 @@ pub fn ser_magnetic_store_write_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MagneticStoreWriteProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.enable_magnetic_store_writes {
-        object.key("EnableMagneticStoreWrites").boolean(*var_1);
+    {
+        object.key("EnableMagneticStoreWrites").boolean(input.enable_magnetic_store_writes);
     }
-    if let Some(var_2) = &input.magnetic_store_rejected_data_location {
+    if let Some(var_1) = &input.magnetic_store_rejected_data_location {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("MagneticStoreRejectedDataLocation").start_object();
-        crate::protocol_serde::shape_magnetic_store_rejected_data_location::ser_magnetic_store_rejected_data_location(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("MagneticStoreRejectedDataLocation").start_object();
+        crate::protocol_serde::shape_magnetic_store_rejected_data_location::ser_magnetic_store_rejected_data_location(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -49,7 +49,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::magnetic_store_write_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

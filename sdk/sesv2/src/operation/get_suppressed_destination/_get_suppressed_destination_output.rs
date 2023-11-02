@@ -35,6 +35,7 @@ pub struct GetSuppressedDestinationOutputBuilder {
 }
 impl GetSuppressedDestinationOutputBuilder {
     /// <p>An object containing information about the suppressed email address.</p>
+    /// This field is required.
     pub fn suppressed_destination(mut self, input: crate::types::SuppressedDestination) -> Self {
         self.suppressed_destination = ::std::option::Option::Some(input);
         self

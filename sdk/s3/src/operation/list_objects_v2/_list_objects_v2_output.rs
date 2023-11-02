@@ -46,8 +46,10 @@ impl ListObjectsV2Output {
         self.is_truncated
     }
     /// <p>Metadata about each object returned.</p>
-    pub fn contents(&self) -> ::std::option::Option<&[crate::types::Object]> {
-        self.contents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contents.is_none()`.
+    pub fn contents(&self) -> &[crate::types::Object] {
+        self.contents.as_deref().unwrap_or_default()
     }
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -72,8 +74,10 @@ impl ListObjectsV2Output {
     /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
     /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
-    pub fn common_prefixes(&self) -> ::std::option::Option<&[crate::types::CommonPrefix]> {
-        self.common_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.common_prefixes.is_none()`.
+    pub fn common_prefixes(&self) -> &[crate::types::CommonPrefix] {
+        self.common_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>

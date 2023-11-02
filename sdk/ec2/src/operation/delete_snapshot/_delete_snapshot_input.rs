@@ -34,6 +34,7 @@ pub struct DeleteSnapshotInputBuilder {
 }
 impl DeleteSnapshotInputBuilder {
     /// <p>The ID of the EBS snapshot.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self

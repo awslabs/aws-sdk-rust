@@ -14,8 +14,10 @@ impl UpdateDatasourcePackagesInput {
         self.graph_arn.as_deref()
     }
     /// <p>The data source package start for the behavior graph.</p>
-    pub fn datasource_packages(&self) -> ::std::option::Option<&[crate::types::DatasourcePackage]> {
-        self.datasource_packages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasource_packages.is_none()`.
+    pub fn datasource_packages(&self) -> &[crate::types::DatasourcePackage] {
+        self.datasource_packages.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDatasourcePackagesInput {
@@ -34,6 +36,7 @@ pub struct UpdateDatasourcePackagesInputBuilder {
 }
 impl UpdateDatasourcePackagesInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self

@@ -14,6 +14,7 @@
 /// match resourcestatus {
 ///     ResourceStatus::Active => { /* ... */ },
 ///     ResourceStatus::Deleting => { /* ... */ },
+///     ResourceStatus::Error => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum ResourceStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for ResourceStatus {
         match s {
             "ACTIVE" => ResourceStatus::Active,
             "DELETING" => ResourceStatus::Deleting,
+            "ERROR" => ResourceStatus::Error,
             other => ResourceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,12 +74,13 @@ impl ResourceStatus {
         match self {
             ResourceStatus::Active => "ACTIVE",
             ResourceStatus::Deleting => "DELETING",
+            ResourceStatus::Error => "ERROR",
             ResourceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETING"]
+        &["ACTIVE", "DELETING", "ERROR"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceStatus {

@@ -19,8 +19,10 @@ impl ListInstalledComponentsOutput {
     /// </note> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass nucleus versions.</p>
     /// </note>
-    pub fn installed_components(&self) -> ::std::option::Option<&[crate::types::InstalledComponent]> {
-        self.installed_components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.installed_components.is_none()`.
+    pub fn installed_components(&self) -> &[crate::types::InstalledComponent] {
+        self.installed_components.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

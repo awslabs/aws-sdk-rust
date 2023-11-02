@@ -11,8 +11,10 @@ pub struct ListAccessPoliciesOutput {
 }
 impl ListAccessPoliciesOutput {
     /// <p>Details about the requested access policies.</p>
-    pub fn access_policy_summaries(&self) -> ::std::option::Option<&[crate::types::AccessPolicySummary]> {
-        self.access_policy_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_policy_summaries.is_none()`.
+    pub fn access_policy_summaries(&self) -> &[crate::types::AccessPolicySummary] {
+        self.access_policy_summaries.as_deref().unwrap_or_default()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

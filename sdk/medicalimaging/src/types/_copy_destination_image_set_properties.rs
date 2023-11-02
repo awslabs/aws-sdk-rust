@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyDestinationImageSetProperties {
     /// <p>The image set identifier of the copied image set properties.</p>
-    pub image_set_id: ::std::option::Option<::std::string::String>,
+    pub image_set_id: ::std::string::String,
     /// <p>The latest version identifier for the destination image set properties.</p>
-    pub latest_version_id: ::std::option::Option<::std::string::String>,
+    pub latest_version_id: ::std::string::String,
     /// <p>The image set state of the destination image set properties.</p>
     pub image_set_state: ::std::option::Option<crate::types::ImageSetState>,
     /// <p>The image set workflow status of the destination image set properties.</p>
@@ -21,12 +21,14 @@ pub struct CopyDestinationImageSetProperties {
 }
 impl CopyDestinationImageSetProperties {
     /// <p>The image set identifier of the copied image set properties.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
-        self.image_set_id.as_deref()
+    pub fn image_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.image_set_id.deref()
     }
     /// <p>The latest version identifier for the destination image set properties.</p>
-    pub fn latest_version_id(&self) -> ::std::option::Option<&str> {
-        self.latest_version_id.as_deref()
+    pub fn latest_version_id(&self) -> &str {
+        use std::ops::Deref;
+        self.latest_version_id.deref()
     }
     /// <p>The image set state of the destination image set properties.</p>
     pub fn image_set_state(&self) -> ::std::option::Option<&crate::types::ImageSetState> {
@@ -70,6 +72,7 @@ pub struct CopyDestinationImageSetPropertiesBuilder {
 }
 impl CopyDestinationImageSetPropertiesBuilder {
     /// <p>The image set identifier of the copied image set properties.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl CopyDestinationImageSetPropertiesBuilder {
         &self.image_set_id
     }
     /// <p>The latest version identifier for the destination image set properties.</p>
+    /// This field is required.
     pub fn latest_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version_id = ::std::option::Option::Some(input.into());
         self
@@ -168,15 +172,28 @@ impl CopyDestinationImageSetPropertiesBuilder {
         &self.image_set_arn
     }
     /// Consumes the builder and constructs a [`CopyDestinationImageSetProperties`](crate::types::CopyDestinationImageSetProperties).
-    pub fn build(self) -> crate::types::CopyDestinationImageSetProperties {
-        crate::types::CopyDestinationImageSetProperties {
-            image_set_id: self.image_set_id,
-            latest_version_id: self.latest_version_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_set_id`](crate::types::builders::CopyDestinationImageSetPropertiesBuilder::image_set_id)
+    /// - [`latest_version_id`](crate::types::builders::CopyDestinationImageSetPropertiesBuilder::latest_version_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CopyDestinationImageSetProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CopyDestinationImageSetProperties {
+            image_set_id: self.image_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "image_set_id",
+                    "image_set_id was not specified but it is required when building CopyDestinationImageSetProperties",
+                )
+            })?,
+            latest_version_id: self.latest_version_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "latest_version_id",
+                    "latest_version_id was not specified but it is required when building CopyDestinationImageSetProperties",
+                )
+            })?,
             image_set_state: self.image_set_state,
             image_set_workflow_status: self.image_set_workflow_status,
             created_at: self.created_at,
             updated_at: self.updated_at,
             image_set_arn: self.image_set_arn,
-        }
+        })
     }
 }

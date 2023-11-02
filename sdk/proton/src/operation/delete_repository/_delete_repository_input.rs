@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRepositoryInput {
     /// <p>The repository provider.</p>
-    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl DeleteRepositoryInput {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+        &self.provider
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl DeleteRepositoryInput {
@@ -34,6 +35,7 @@ pub struct DeleteRepositoryInputBuilder {
 }
 impl DeleteRepositoryInputBuilder {
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -48,6 +50,7 @@ impl DeleteRepositoryInputBuilder {
         &self.provider
     }
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +65,25 @@ impl DeleteRepositoryInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provider`](crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder::provider)
+    /// - [`name`](crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
-            provider: self.provider,
-            name: self.name,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building DeleteRepositoryInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteRepositoryInput",
+                )
+            })?,
         })
     }
 }

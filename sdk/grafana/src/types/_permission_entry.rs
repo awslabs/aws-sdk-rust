@@ -7,7 +7,7 @@ pub struct PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
     pub user: ::std::option::Option<crate::types::User>,
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    pub role: ::std::option::Option<crate::types::Role>,
+    pub role: crate::types::Role,
 }
 impl PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
@@ -15,8 +15,8 @@ impl PermissionEntry {
         self.user.as_ref()
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
-        self.role.as_ref()
+    pub fn role(&self) -> &crate::types::Role {
+        &self.role
     }
 }
 impl PermissionEntry {
@@ -35,6 +35,7 @@ pub struct PermissionEntryBuilder {
 }
 impl PermissionEntryBuilder {
     /// <p>A structure with the ID of the user or group with this role.</p>
+    /// This field is required.
     pub fn user(mut self, input: crate::types::User) -> Self {
         self.user = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PermissionEntryBuilder {
         &self.user
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
+    /// This field is required.
     pub fn role(mut self, input: crate::types::Role) -> Self {
         self.role = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl PermissionEntryBuilder {
         &self.role
     }
     /// Consumes the builder and constructs a [`PermissionEntry`](crate::types::PermissionEntry).
-    pub fn build(self) -> crate::types::PermissionEntry {
-        crate::types::PermissionEntry {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role`](crate::types::builders::PermissionEntryBuilder::role)
+    pub fn build(self) -> ::std::result::Result<crate::types::PermissionEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PermissionEntry {
             user: self.user,
-            role: self.role,
-        }
+            role: self.role.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role",
+                    "role was not specified but it is required when building PermissionEntry",
+                )
+            })?,
+        })
     }
 }

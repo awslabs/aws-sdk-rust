@@ -27,6 +27,7 @@ pub struct StartSmartHomeApplianceDiscoveryInputBuilder {
 }
 impl StartSmartHomeApplianceDiscoveryInputBuilder {
     /// <p>The room where smart home appliance discovery was initiated.</p>
+    /// This field is required.
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
         self

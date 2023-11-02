@@ -49,6 +49,7 @@ pub struct EvaluationFormNumericQuestionOptionBuilder {
 }
 impl EvaluationFormNumericQuestionOptionBuilder {
     /// <p>The minimum answer value of the range option.</p>
+    /// This field is required.
     pub fn min_value(mut self, input: i32) -> Self {
         self.min_value = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl EvaluationFormNumericQuestionOptionBuilder {
         &self.min_value
     }
     /// <p>The maximum answer value of the range option.</p>
+    /// This field is required.
     pub fn max_value(mut self, input: i32) -> Self {
         self.max_value = ::std::option::Option::Some(input);
         self

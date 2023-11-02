@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::engine_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -69,37 +71,37 @@ pub fn ser_engine_configuration(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.max_concurrent_dpus {
+    {
         object.key("MaxConcurrentDpus").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.max_concurrent_dpus).into()),
+        );
+    }
+    if let Some(var_2) = &input.default_executor_dpu_size {
+        object.key("DefaultExecutorDpuSize").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.default_executor_dpu_size {
-        object.key("DefaultExecutorDpuSize").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.additional_configs {
+    if let Some(var_3) = &input.additional_configs {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AdditionalConfigs").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("AdditionalConfigs").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
-    if let Some(var_8) = &input.spark_properties {
+    if let Some(var_7) = &input.spark_properties {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("SparkProperties").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_8 = object.key("SparkProperties").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_9.finish();
+        object_8.finish();
     }
     Ok(())
 }

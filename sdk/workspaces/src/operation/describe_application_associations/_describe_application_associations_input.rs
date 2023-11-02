@@ -26,8 +26,10 @@ impl DescribeApplicationAssociationsInput {
         self.application_id.as_deref()
     }
     /// <p>The resource type of the associated resources.</p>
-    pub fn associated_resource_types(&self) -> ::std::option::Option<&[crate::types::ApplicationAssociatedResourceType]> {
-        self.associated_resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resource_types.is_none()`.
+    pub fn associated_resource_types(&self) -> &[crate::types::ApplicationAssociatedResourceType] {
+        self.associated_resource_types.as_deref().unwrap_or_default()
     }
 }
 impl DescribeApplicationAssociationsInput {
@@ -76,6 +78,7 @@ impl DescribeApplicationAssociationsInputBuilder {
         &self.next_token
     }
     /// <p>The identifier of the specified application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

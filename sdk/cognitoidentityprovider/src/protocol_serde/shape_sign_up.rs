@@ -268,7 +268,9 @@ pub fn de_sign_up_http_response(
         output =
             crate::protocol_serde::shape_sign_up::de_sign_up(_response_body, output).map_err(crate::operation::sign_up::SignUpError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::sign_up_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::sign_up::SignUpError::unhandled)?
     })
 }
 

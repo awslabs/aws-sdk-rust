@@ -17,8 +17,10 @@ impl DeleteMessageBatchInput {
         self.queue_url.as_deref()
     }
     /// <p>Lists the receipt handles for the messages to be deleted.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::DeleteMessageBatchRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::DeleteMessageBatchRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl DeleteMessageBatchInput {
@@ -38,6 +40,7 @@ pub struct DeleteMessageBatchInputBuilder {
 impl DeleteMessageBatchInputBuilder {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self

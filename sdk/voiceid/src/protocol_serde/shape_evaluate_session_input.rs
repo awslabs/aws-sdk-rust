@@ -3,11 +3,11 @@ pub fn ser_evaluate_session_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::evaluate_session::EvaluateSessionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain_id {
-        object.key("DomainId").string(var_1.as_str());
+    {
+        object.key("DomainId").string(input.domain_id.as_str());
     }
-    if let Some(var_2) = &input.session_name_or_id {
-        object.key("SessionNameOrId").string(var_2.as_str());
+    {
+        object.key("SessionNameOrId").string(input.session_name_or_id.as_str());
     }
     Ok(())
 }

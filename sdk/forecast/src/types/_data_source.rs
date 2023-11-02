@@ -28,6 +28,7 @@ pub struct DataSourceBuilder {
 }
 impl DataSourceBuilder {
     /// <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the data.</p>
+    /// This field is required.
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
         self.s3_config = ::std::option::Option::Some(input);
         self

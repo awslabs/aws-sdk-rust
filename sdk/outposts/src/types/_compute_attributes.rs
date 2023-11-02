@@ -31,8 +31,10 @@ impl ComputeAttributes {
         self.state.as_ref()
     }
     /// <p>A list of the names of instance families that are currently associated with a given asset.</p>
-    pub fn instance_families(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_families.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_families.is_none()`.
+    pub fn instance_families(&self) -> &[::std::string::String] {
+        self.instance_families.as_deref().unwrap_or_default()
     }
 }
 impl ComputeAttributes {

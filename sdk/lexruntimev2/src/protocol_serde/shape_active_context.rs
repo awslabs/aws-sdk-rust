@@ -3,24 +3,24 @@ pub fn ser_active_context(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActiveContext,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.time_to_live {
+    if let Some(var_1) = &input.time_to_live {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("timeToLive").start_object();
-        crate::protocol_serde::shape_active_context_time_to_live::ser_active_context_time_to_live(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("timeToLive").start_object();
+        crate::protocol_serde::shape_active_context_time_to_live::ser_active_context_time_to_live(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.context_attributes {
+    {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("contextAttributes").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_3 = object.key("contextAttributes").start_object();
+        for (key_4, value_5) in &input.context_attributes {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_5.finish();
+        object_3.finish();
     }
     Ok(())
 }
@@ -67,7 +67,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::active_context_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

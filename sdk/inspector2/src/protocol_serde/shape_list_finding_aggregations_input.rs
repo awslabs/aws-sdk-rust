@@ -21,17 +21,17 @@ pub fn ser_list_finding_aggregations_input(
         crate::protocol_serde::shape_aggregation_request::ser_aggregation_request(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.aggregation_type {
-        object.key("aggregationType").string(var_7.as_str());
+    {
+        object.key("aggregationType").string(input.aggregation_type.as_str());
     }
-    if let Some(var_8) = &input.max_results {
+    if let Some(var_7) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_9) = &input.next_token {
-        object.key("nextToken").string(var_9.as_str());
+    if let Some(var_8) = &input.next_token {
+        object.key("nextToken").string(var_8.as_str());
     }
     Ok(())
 }

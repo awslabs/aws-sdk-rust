@@ -47,6 +47,7 @@ pub struct GetRelationalDatabaseEventsInputBuilder {
 }
 impl GetRelationalDatabaseEventsInputBuilder {
     /// <p>The name of the database from which to get events.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self

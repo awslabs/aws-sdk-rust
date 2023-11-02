@@ -59,6 +59,7 @@ pub struct QueryForecastInputBuilder {
 }
 impl QueryForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
+    /// This field is required.
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
         self

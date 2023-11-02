@@ -34,6 +34,7 @@ pub struct DeleteObservabilityConfigurationOutputBuilder {
 }
 impl DeleteObservabilityConfigurationOutputBuilder {
     /// <p>A description of the App Runner observability configuration that this request just deleted.</p>
+    /// This field is required.
     pub fn observability_configuration(mut self, input: crate::types::ObservabilityConfiguration) -> Self {
         self.observability_configuration = ::std::option::Option::Some(input);
         self

@@ -41,6 +41,7 @@ pub struct GetDetectorModelAnalysisResultsInputBuilder {
 }
 impl GetDetectorModelAnalysisResultsInputBuilder {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self

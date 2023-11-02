@@ -114,7 +114,9 @@ pub fn de_start_contact_streaming_http_response(
         output = crate::protocol_serde::shape_start_contact_streaming::de_start_contact_streaming(_response_body, output)
             .map_err(crate::operation::start_contact_streaming::StartContactStreamingError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_contact_streaming_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::start_contact_streaming::StartContactStreamingError::unhandled)?
     })
 }
 

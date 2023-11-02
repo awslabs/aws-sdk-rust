@@ -42,17 +42,23 @@ impl AnswerSummary {
         self.question_title.as_deref()
     }
     /// <p>List of choices available for a question.</p>
-    pub fn choices(&self) -> ::std::option::Option<&[crate::types::Choice]> {
-        self.choices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.choices.is_none()`.
+    pub fn choices(&self) -> &[crate::types::Choice] {
+        self.choices.as_deref().unwrap_or_default()
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_choices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_choices.is_none()`.
+    pub fn selected_choices(&self) -> &[::std::string::String] {
+        self.selected_choices.as_deref().unwrap_or_default()
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn choice_answer_summaries(&self) -> ::std::option::Option<&[crate::types::ChoiceAnswerSummary]> {
-        self.choice_answer_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.choice_answer_summaries.is_none()`.
+    pub fn choice_answer_summaries(&self) -> &[crate::types::ChoiceAnswerSummary] {
+        self.choice_answer_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(&self) -> ::std::option::Option<bool> {

@@ -22,8 +22,10 @@ impl PutStudioMembersInput {
         self.identity_store_id.as_deref()
     }
     /// <p>A list of members.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::NewStudioMember]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[crate::types::NewStudioMember] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl PutStudioMembersInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl PutStudioMembersInputBuilder {
         &self.members
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

@@ -3,17 +3,17 @@ pub fn ser_batch_put_field_options_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_put_field_options::BatchPutFieldOptionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.options {
-        let mut array_2 = object.key("options").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("options").start_array();
+        for item_2 in &input.options {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_field_option::ser_field_option(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_field_option::ser_field_option(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }

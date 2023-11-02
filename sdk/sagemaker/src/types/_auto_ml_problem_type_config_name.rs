@@ -15,6 +15,7 @@
 ///     AutoMlProblemTypeConfigName::ImageClassification => { /* ... */ },
 ///     AutoMlProblemTypeConfigName::Tabular => { /* ... */ },
 ///     AutoMlProblemTypeConfigName::TextClassification => { /* ... */ },
+///     AutoMlProblemTypeConfigName::TextGeneration => { /* ... */ },
 ///     AutoMlProblemTypeConfigName::TimeseriesForecasting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum AutoMlProblemTypeConfigName {
     #[allow(missing_docs)] // documentation missing in model
     TextClassification,
     #[allow(missing_docs)] // documentation missing in model
+    TextGeneration,
+    #[allow(missing_docs)] // documentation missing in model
     TimeseriesForecasting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for AutoMlProblemTypeConfigName {
             "ImageClassification" => AutoMlProblemTypeConfigName::ImageClassification,
             "Tabular" => AutoMlProblemTypeConfigName::Tabular,
             "TextClassification" => AutoMlProblemTypeConfigName::TextClassification,
+            "TextGeneration" => AutoMlProblemTypeConfigName::TextGeneration,
             "TimeSeriesForecasting" => AutoMlProblemTypeConfigName::TimeseriesForecasting,
             other => AutoMlProblemTypeConfigName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -79,13 +83,20 @@ impl AutoMlProblemTypeConfigName {
             AutoMlProblemTypeConfigName::ImageClassification => "ImageClassification",
             AutoMlProblemTypeConfigName::Tabular => "Tabular",
             AutoMlProblemTypeConfigName::TextClassification => "TextClassification",
+            AutoMlProblemTypeConfigName::TextGeneration => "TextGeneration",
             AutoMlProblemTypeConfigName::TimeseriesForecasting => "TimeSeriesForecasting",
             AutoMlProblemTypeConfigName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ImageClassification", "Tabular", "TextClassification", "TimeSeriesForecasting"]
+        &[
+            "ImageClassification",
+            "Tabular",
+            "TextClassification",
+            "TextGeneration",
+            "TimeSeriesForecasting",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AutoMlProblemTypeConfigName {

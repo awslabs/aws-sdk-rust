@@ -9,19 +9,19 @@ pub struct SourceBuildInformation {
     /// <li> <p> <code>Git</code> </p> </li>
     /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
-    pub source_type: ::std::option::Option<crate::types::SourceType>,
+    pub source_type: crate::types::SourceType,
     /// <p>Location where the repository is stored.</p>
     /// <ul>
     /// <li> <p> <code>CodeCommit</code> </p> </li>
     /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
-    pub source_repository: ::std::option::Option<crate::types::SourceRepository>,
+    pub source_repository: crate::types::SourceRepository,
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
     /// <ul>
     /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
     /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
-    pub source_location: ::std::option::Option<::std::string::String>,
+    pub source_location: ::std::string::String,
 }
 impl SourceBuildInformation {
     /// <p>The type of repository.</p>
@@ -29,24 +29,25 @@ impl SourceBuildInformation {
     /// <li> <p> <code>Git</code> </p> </li>
     /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
-        self.source_type.as_ref()
+    pub fn source_type(&self) -> &crate::types::SourceType {
+        &self.source_type
     }
     /// <p>Location where the repository is stored.</p>
     /// <ul>
     /// <li> <p> <code>CodeCommit</code> </p> </li>
     /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
-    pub fn source_repository(&self) -> ::std::option::Option<&crate::types::SourceRepository> {
-        self.source_repository.as_ref()
+    pub fn source_repository(&self) -> &crate::types::SourceRepository {
+        &self.source_repository
     }
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
     /// <ul>
     /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
     /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
-    pub fn source_location(&self) -> ::std::option::Option<&str> {
-        self.source_location.as_deref()
+    pub fn source_location(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location.deref()
     }
 }
 impl SourceBuildInformation {
@@ -70,6 +71,7 @@ impl SourceBuildInformationBuilder {
     /// <li> <p> <code>Git</code> </p> </li>
     /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
@@ -96,6 +98,7 @@ impl SourceBuildInformationBuilder {
     /// <li> <p> <code>CodeCommit</code> </p> </li>
     /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_repository(mut self, input: crate::types::SourceRepository) -> Self {
         self.source_repository = ::std::option::Option::Some(input);
         self
@@ -122,6 +125,7 @@ impl SourceBuildInformationBuilder {
     /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
     /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location = ::std::option::Option::Some(input.into());
         self
@@ -144,11 +148,30 @@ impl SourceBuildInformationBuilder {
         &self.source_location
     }
     /// Consumes the builder and constructs a [`SourceBuildInformation`](crate::types::SourceBuildInformation).
-    pub fn build(self) -> crate::types::SourceBuildInformation {
-        crate::types::SourceBuildInformation {
-            source_type: self.source_type,
-            source_repository: self.source_repository,
-            source_location: self.source_location,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_type`](crate::types::builders::SourceBuildInformationBuilder::source_type)
+    /// - [`source_repository`](crate::types::builders::SourceBuildInformationBuilder::source_repository)
+    /// - [`source_location`](crate::types::builders::SourceBuildInformationBuilder::source_location)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceBuildInformation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceBuildInformation {
+            source_type: self.source_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_type",
+                    "source_type was not specified but it is required when building SourceBuildInformation",
+                )
+            })?,
+            source_repository: self.source_repository.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_repository",
+                    "source_repository was not specified but it is required when building SourceBuildInformation",
+                )
+            })?,
+            source_location: self.source_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location",
+                    "source_location was not specified but it is required when building SourceBuildInformation",
+                )
+            })?,
+        })
     }
 }

@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInstruction {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
-    pub action: ::std::option::Option<crate::types::UpdateAction>,
+    pub action: crate::types::UpdateAction,
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
-    pub role: ::std::option::Option<crate::types::Role>,
+    pub role: crate::types::Role,
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub users: ::std::vec::Vec<crate::types::User>,
 }
 impl UpdateInstruction {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::UpdateAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::UpdateAction {
+        &self.action
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
-        self.role.as_ref()
+    pub fn role(&self) -> &crate::types::Role {
+        &self.role
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
-        self.users.as_deref()
+    pub fn users(&self) -> &[crate::types::User] {
+        use std::ops::Deref;
+        self.users.deref()
     }
 }
 impl UpdateInstruction {
@@ -42,6 +43,7 @@ pub struct UpdateInstructionBuilder {
 }
 impl UpdateInstructionBuilder {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::UpdateAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl UpdateInstructionBuilder {
         &self.action
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
+    /// This field is required.
     pub fn role(mut self, input: crate::types::Role) -> Self {
         self.role = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl UpdateInstructionBuilder {
         &self.users
     }
     /// Consumes the builder and constructs a [`UpdateInstruction`](crate::types::UpdateInstruction).
-    pub fn build(self) -> crate::types::UpdateInstruction {
-        crate::types::UpdateInstruction {
-            action: self.action,
-            role: self.role,
-            users: self.users,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::UpdateInstructionBuilder::action)
+    /// - [`role`](crate::types::builders::UpdateInstructionBuilder::role)
+    /// - [`users`](crate::types::builders::UpdateInstructionBuilder::users)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateInstruction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateInstruction {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building UpdateInstruction",
+                )
+            })?,
+            role: self.role.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role",
+                    "role was not specified but it is required when building UpdateInstruction",
+                )
+            })?,
+            users: self.users.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "users",
+                    "users was not specified but it is required when building UpdateInstruction",
+                )
+            })?,
+        })
     }
 }

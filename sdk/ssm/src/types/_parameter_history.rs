@@ -72,8 +72,10 @@ impl ParameterHistory {
         self.version
     }
     /// <p>Labels assigned to the parameter version.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The parameter tier.</p>
     pub fn tier(&self) -> ::std::option::Option<&crate::types::ParameterTier> {
@@ -81,8 +83,10 @@ impl ParameterHistory {
     }
     /// <p>Information about the policies assigned to a parameter.</p>
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::ParameterInlinePolicy]> {
-        self.policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
+    pub fn policies(&self) -> &[crate::types::ParameterInlinePolicy] {
+        self.policies.as_deref().unwrap_or_default()
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(&self) -> ::std::option::Option<&str> {

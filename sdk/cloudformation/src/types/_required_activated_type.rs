@@ -30,8 +30,10 @@ impl RequiredActivatedType {
         self.publisher_id.as_deref()
     }
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
-    pub fn supported_major_versions(&self) -> ::std::option::Option<&[i32]> {
-        self.supported_major_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_major_versions.is_none()`.
+    pub fn supported_major_versions(&self) -> &[i32] {
+        self.supported_major_versions.as_deref().unwrap_or_default()
     }
 }
 impl RequiredActivatedType {

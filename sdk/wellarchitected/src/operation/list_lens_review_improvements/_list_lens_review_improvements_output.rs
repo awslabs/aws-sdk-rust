@@ -44,8 +44,10 @@ impl ListLensReviewImprovementsOutput {
         self.lens_arn.as_deref()
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub fn improvement_summaries(&self) -> ::std::option::Option<&[crate::types::ImprovementSummary]> {
-        self.improvement_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.improvement_summaries.is_none()`.
+    pub fn improvement_summaries(&self) -> &[crate::types::ImprovementSummary] {
+        self.improvement_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

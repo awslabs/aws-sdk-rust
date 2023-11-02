@@ -6,8 +6,8 @@ pub fn ser_delivery_stream_encryption_configuration_input(
     if let Some(var_1) = &input.key_arn {
         object.key("KeyARN").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.key_type {
-        object.key("KeyType").string(var_2.as_str());
+    {
+        object.key("KeyType").string(input.key_type.as_str());
     }
     Ok(())
 }

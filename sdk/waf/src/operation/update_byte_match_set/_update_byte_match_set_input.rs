@@ -30,8 +30,10 @@ impl UpdateByteMatchSetInput {
     /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::ByteMatchSetUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::ByteMatchSetUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateByteMatchSetInput {
@@ -51,6 +53,7 @@ pub struct UpdateByteMatchSetInputBuilder {
 }
 impl UpdateByteMatchSetInputBuilder {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// This field is required.
     pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl UpdateByteMatchSetInputBuilder {
         &self.byte_match_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

@@ -42,6 +42,7 @@ pub struct PutMetricPolicyInputBuilder {
 }
 impl PutMetricPolicyInputBuilder {
     /// <p>The name of the container that you want to add the metric policy to.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +61,7 @@ impl PutMetricPolicyInputBuilder {
     /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
     /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric_policy(mut self, input: crate::types::MetricPolicy) -> Self {
         self.metric_policy = ::std::option::Option::Some(input);
         self

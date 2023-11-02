@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteClusterSnapshot`](crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`snapshot_arn(impl Into<String>)`](crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::set_snapshot_arn): <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+    ///   - [`snapshot_arn(impl Into<String>)`](crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::snapshot_arn) / [`set_snapshot_arn(impl Into<String>)`](crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotFluentBuilder::set_snapshot_arn):<br>required: **true**<br><p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p><br>
     /// - On success, responds with [`DeleteClusterSnapshotOutput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotOutput::snapshot): <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
     /// - On failure, responds with [`SdkError<DeleteClusterSnapshotError>`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotError)

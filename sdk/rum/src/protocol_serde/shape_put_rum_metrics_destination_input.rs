@@ -3,14 +3,14 @@ pub fn ser_put_rum_metrics_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.destination {
-        object.key("Destination").string(var_1.as_str());
+    {
+        object.key("Destination").string(input.destination.as_str());
     }
-    if let Some(var_2) = &input.destination_arn {
-        object.key("DestinationArn").string(var_2.as_str());
+    if let Some(var_1) = &input.destination_arn {
+        object.key("DestinationArn").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_3.as_str());
+    if let Some(var_2) = &input.iam_role_arn {
+        object.key("IamRoleArn").string(var_2.as_str());
     }
     Ok(())
 }

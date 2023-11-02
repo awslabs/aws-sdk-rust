@@ -7,20 +7,21 @@ pub struct ResourceRequirement {
     /// <p>The value for the specified resource type.</p>
     /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
     /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::ResourceType>,
+    pub r#type: crate::types::ResourceType,
 }
 impl ResourceRequirement {
     /// <p>The value for the specified resource type.</p>
     /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
     /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ResourceType {
+        &self.r#type
     }
 }
 impl ResourceRequirement {
@@ -41,6 +42,7 @@ impl ResourceRequirementBuilder {
     /// <p>The value for the specified resource type.</p>
     /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
     /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a> specified in a task definition.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +61,7 @@ impl ResourceRequirementBuilder {
         &self.value
     }
     /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -73,10 +76,23 @@ impl ResourceRequirementBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ResourceRequirement`](crate::types::ResourceRequirement).
-    pub fn build(self) -> crate::types::ResourceRequirement {
-        crate::types::ResourceRequirement {
-            value: self.value,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::ResourceRequirementBuilder::value)
+    /// - [`r#type`](crate::types::builders::ResourceRequirementBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceRequirement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceRequirement {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ResourceRequirement",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResourceRequirement",
+                )
+            })?,
+        })
     }
 }

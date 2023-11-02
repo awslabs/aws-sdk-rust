@@ -29,8 +29,10 @@ impl GetResourceMetricsOutput {
         self.identifier.as_deref()
     }
     /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
-    pub fn metric_list(&self) -> ::std::option::Option<&[crate::types::MetricKeyDataPoints]> {
-        self.metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_list.is_none()`.
+    pub fn metric_list(&self) -> &[crate::types::MetricKeyDataPoints] {
+        self.metric_list.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -8,7 +8,7 @@ pub struct ListLiveSourcesInput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location associated with this Live Sources list.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
 }
 impl ListLiveSourcesInput {
     /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
@@ -20,8 +20,9 @@ impl ListLiveSourcesInput {
         self.next_token.as_deref()
     }
     /// <p>The name of the source location associated with this Live Sources list.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
 }
 impl ListLiveSourcesInput {
@@ -69,6 +70,7 @@ impl ListLiveSourcesInputBuilder {
         &self.next_token
     }
     /// <p>The name of the source location associated with this Live Sources list.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -83,13 +85,20 @@ impl ListLiveSourcesInputBuilder {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`ListLiveSourcesInput`](crate::operation::list_live_sources::ListLiveSourcesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_location_name`](crate::operation::list_live_sources::builders::ListLiveSourcesInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_live_sources::ListLiveSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_live_sources::ListLiveSourcesInput {
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,
-            source_location_name: self.source_location_name,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building ListLiveSourcesInput",
+                )
+            })?,
         })
     }
 }

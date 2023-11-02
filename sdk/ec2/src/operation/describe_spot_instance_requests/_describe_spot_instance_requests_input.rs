@@ -101,16 +101,20 @@ impl DescribeSpotInstanceRequestsInput {
     /// <li> <p> <code>valid-from</code> - The start date of the request.</p> </li>
     /// <li> <p> <code>valid-until</code> - The end date of the request.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn spot_instance_request_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.spot_instance_request_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_instance_request_ids.is_none()`.
+    pub fn spot_instance_request_ids(&self) -> &[::std::string::String] {
+        self.spot_instance_request_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

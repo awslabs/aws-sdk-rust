@@ -63,8 +63,10 @@ impl UpdateTaskTemplateOutput {
         self.defaults.as_ref()
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::TaskTemplateField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::TaskTemplateField] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskTemplateStatus> {

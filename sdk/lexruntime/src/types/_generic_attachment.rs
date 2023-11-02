@@ -33,8 +33,10 @@ impl GenericAttachment {
         self.image_url.as_deref()
     }
     /// <p>The list of options to show to the user.</p>
-    pub fn buttons(&self) -> ::std::option::Option<&[crate::types::Button]> {
-        self.buttons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buttons.is_none()`.
+    pub fn buttons(&self) -> &[crate::types::Button] {
+        self.buttons.as_deref().unwrap_or_default()
     }
 }
 impl GenericAttachment {

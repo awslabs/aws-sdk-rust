@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceNetworkInput {
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-    pub service_network_identifier: ::std::option::Option<::std::string::String>,
+    pub service_network_identifier: ::std::string::String,
 }
 impl DeleteServiceNetworkInput {
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_network_identifier.as_deref()
+    pub fn service_network_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_network_identifier.deref()
     }
 }
 impl DeleteServiceNetworkInput {
@@ -27,6 +28,7 @@ pub struct DeleteServiceNetworkInputBuilder {
 }
 impl DeleteServiceNetworkInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
+    /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,19 @@ impl DeleteServiceNetworkInputBuilder {
         &self.service_network_identifier
     }
     /// Consumes the builder and constructs a [`DeleteServiceNetworkInput`](crate::operation::delete_service_network::DeleteServiceNetworkInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_network_identifier`](crate::operation::delete_service_network::builders::DeleteServiceNetworkInputBuilder::service_network_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_service_network::DeleteServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_service_network::DeleteServiceNetworkInput {
-            service_network_identifier: self.service_network_identifier,
+            service_network_identifier: self.service_network_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_network_identifier",
+                    "service_network_identifier was not specified but it is required when building DeleteServiceNetworkInput",
+                )
+            })?,
         })
     }
 }

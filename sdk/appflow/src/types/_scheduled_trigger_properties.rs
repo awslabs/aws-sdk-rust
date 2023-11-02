@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledTriggerProperties {
     /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
-    pub schedule_expression: ::std::option::Option<::std::string::String>,
+    pub schedule_expression: ::std::string::String,
     /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
     pub data_pull_mode: ::std::option::Option<crate::types::DataPullMode>,
     /// <p>The time at which the scheduled flow starts. The time is formatted as a timestamp that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</p>
@@ -24,8 +24,9 @@ pub struct ScheduledTriggerProperties {
 }
 impl ScheduledTriggerProperties {
     /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
-        self.schedule_expression.as_deref()
+    pub fn schedule_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.schedule_expression.deref()
     }
     /// <p> Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow run. </p>
     pub fn data_pull_mode(&self) -> ::std::option::Option<&crate::types::DataPullMode> {
@@ -79,6 +80,7 @@ pub struct ScheduledTriggerPropertiesBuilder {
 }
 impl ScheduledTriggerPropertiesBuilder {
     /// <p> The scheduling expression that determines the rate at which the schedule will run, for example <code>rate(5minutes)</code>. </p>
+    /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
@@ -194,9 +196,16 @@ impl ScheduledTriggerPropertiesBuilder {
         &self.flow_error_deactivation_threshold
     }
     /// Consumes the builder and constructs a [`ScheduledTriggerProperties`](crate::types::ScheduledTriggerProperties).
-    pub fn build(self) -> crate::types::ScheduledTriggerProperties {
-        crate::types::ScheduledTriggerProperties {
-            schedule_expression: self.schedule_expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schedule_expression`](crate::types::builders::ScheduledTriggerPropertiesBuilder::schedule_expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledTriggerProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduledTriggerProperties {
+            schedule_expression: self.schedule_expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "schedule_expression",
+                    "schedule_expression was not specified but it is required when building ScheduledTriggerProperties",
+                )
+            })?,
             data_pull_mode: self.data_pull_mode,
             schedule_start_time: self.schedule_start_time,
             schedule_end_time: self.schedule_end_time,
@@ -204,6 +213,6 @@ impl ScheduledTriggerPropertiesBuilder {
             schedule_offset: self.schedule_offset,
             first_execution_from: self.first_execution_from,
             flow_error_deactivation_threshold: self.flow_error_deactivation_threshold,
-        }
+        })
     }
 }

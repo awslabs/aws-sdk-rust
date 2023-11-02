@@ -3,14 +3,14 @@ pub fn ser_ews_availability_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EwsAvailabilityProvider,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ews_endpoint {
-        object.key("EwsEndpoint").string(var_1.as_str());
+    {
+        object.key("EwsEndpoint").string(input.ews_endpoint.as_str());
     }
-    if let Some(var_2) = &input.ews_username {
-        object.key("EwsUsername").string(var_2.as_str());
+    {
+        object.key("EwsUsername").string(input.ews_username.as_str());
     }
-    if let Some(var_3) = &input.ews_password {
-        object.key("EwsPassword").string(var_3.as_str());
+    {
+        object.key("EwsPassword").string(input.ews_password.as_str());
     }
     Ok(())
 }

@@ -5,10 +5,10 @@
 pub struct DescribeRuleGroupMetadataOutput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub rule_group_arn: ::std::option::Option<::std::string::String>,
+    pub rule_group_arn: ::std::string::String,
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub rule_group_name: ::std::option::Option<::std::string::String>,
+    pub rule_group_name: ::std::string::String,
     /// <p>Returns the metadata objects for the specified rule group. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
@@ -27,13 +27,15 @@ pub struct DescribeRuleGroupMetadataOutput {
 impl DescribeRuleGroupMetadataOutput {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
-        self.rule_group_arn.as_deref()
+    pub fn rule_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_group_arn.deref()
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
-        self.rule_group_name.as_deref()
+    pub fn rule_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_group_name.deref()
     }
     /// <p>Returns the metadata objects for the specified rule group. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -87,6 +89,7 @@ pub struct DescribeRuleGroupMetadataOutputBuilder {
 impl DescribeRuleGroupMetadataOutputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// This field is required.
     pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl DescribeRuleGroupMetadataOutputBuilder {
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    /// This field is required.
     pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
@@ -208,16 +212,34 @@ impl DescribeRuleGroupMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataOutput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput).
-    pub fn build(self) -> crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
-        crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
-            rule_group_arn: self.rule_group_arn,
-            rule_group_name: self.rule_group_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_group_arn`](crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder::rule_group_arn)
+    /// - [`rule_group_name`](crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataOutputBuilder::rule_group_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
+            rule_group_arn: self.rule_group_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_group_arn",
+                    "rule_group_arn was not specified but it is required when building DescribeRuleGroupMetadataOutput",
+                )
+            })?,
+            rule_group_name: self.rule_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_group_name",
+                    "rule_group_name was not specified but it is required when building DescribeRuleGroupMetadataOutput",
+                )
+            })?,
             description: self.description,
             r#type: self.r#type,
             capacity: self.capacity,
             stateful_rule_options: self.stateful_rule_options,
             last_modified_time: self.last_modified_time,
             _request_id: self._request_id,
-        }
+        })
     }
 }

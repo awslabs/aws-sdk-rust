@@ -15,8 +15,10 @@ impl StartTextDetectionFilters {
         self.word_filter.as_ref()
     }
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
-    pub fn regions_of_interest(&self) -> ::std::option::Option<&[crate::types::RegionOfInterest]> {
-        self.regions_of_interest.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest.is_none()`.
+    pub fn regions_of_interest(&self) -> &[crate::types::RegionOfInterest] {
+        self.regions_of_interest.as_deref().unwrap_or_default()
     }
 }
 impl StartTextDetectionFilters {

@@ -11,8 +11,10 @@ pub struct SearchLocalGatewayRoutesOutput {
 }
 impl SearchLocalGatewayRoutesOutput {
     /// <p>Information about the routes.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::LocalGatewayRoute]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::LocalGatewayRoute] {
+        self.routes.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

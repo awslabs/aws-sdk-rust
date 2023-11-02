@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingIdentifier {
     /// <p>The name of the scan that generated the finding. </p>
-    pub scan_name: ::std::option::Option<::std::string::String>,
+    pub scan_name: ::std::string::String,
     /// <p>The identifier for a finding.</p>
-    pub finding_id: ::std::option::Option<::std::string::String>,
+    pub finding_id: ::std::string::String,
 }
 impl FindingIdentifier {
     /// <p>The name of the scan that generated the finding. </p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
-        self.scan_name.as_deref()
+    pub fn scan_name(&self) -> &str {
+        use std::ops::Deref;
+        self.scan_name.deref()
     }
     /// <p>The identifier for a finding.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
-        self.finding_id.as_deref()
+    pub fn finding_id(&self) -> &str {
+        use std::ops::Deref;
+        self.finding_id.deref()
     }
 }
 impl FindingIdentifier {
@@ -35,6 +37,7 @@ pub struct FindingIdentifierBuilder {
 }
 impl FindingIdentifierBuilder {
     /// <p>The name of the scan that generated the finding. </p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl FindingIdentifierBuilder {
         &self.scan_name
     }
     /// <p>The identifier for a finding.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl FindingIdentifierBuilder {
         &self.finding_id
     }
     /// Consumes the builder and constructs a [`FindingIdentifier`](crate::types::FindingIdentifier).
-    pub fn build(self) -> crate::types::FindingIdentifier {
-        crate::types::FindingIdentifier {
-            scan_name: self.scan_name,
-            finding_id: self.finding_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scan_name`](crate::types::builders::FindingIdentifierBuilder::scan_name)
+    /// - [`finding_id`](crate::types::builders::FindingIdentifierBuilder::finding_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FindingIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FindingIdentifier {
+            scan_name: self.scan_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scan_name",
+                    "scan_name was not specified but it is required when building FindingIdentifier",
+                )
+            })?,
+            finding_id: self.finding_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "finding_id",
+                    "finding_id was not specified but it is required when building FindingIdentifier",
+                )
+            })?,
+        })
     }
 }

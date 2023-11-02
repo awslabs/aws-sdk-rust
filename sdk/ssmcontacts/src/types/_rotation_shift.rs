@@ -7,9 +7,9 @@ pub struct RotationShift {
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
     pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time a shift rotation begins.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The time a shift rotation ends.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The type of shift rotation.</p>
     pub r#type: ::std::option::Option<crate::types::ShiftType>,
     /// <p>Additional information about an on-call rotation shift.</p>
@@ -17,16 +17,18 @@ pub struct RotationShift {
 }
 impl RotationShift {
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
-    pub fn contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contact_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_ids.is_none()`.
+    pub fn contact_ids(&self) -> &[::std::string::String] {
+        self.contact_ids.as_deref().unwrap_or_default()
     }
     /// <p>The time a shift rotation begins.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>The time a shift rotation ends.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p>The type of shift rotation.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ShiftType> {
@@ -76,6 +78,7 @@ impl RotationShiftBuilder {
         &self.contact_ids
     }
     /// <p>The time a shift rotation begins.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl RotationShiftBuilder {
         &self.start_time
     }
     /// <p>The time a shift rotation ends.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -132,13 +136,26 @@ impl RotationShiftBuilder {
         &self.shift_details
     }
     /// Consumes the builder and constructs a [`RotationShift`](crate::types::RotationShift).
-    pub fn build(self) -> crate::types::RotationShift {
-        crate::types::RotationShift {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::RotationShiftBuilder::start_time)
+    /// - [`end_time`](crate::types::builders::RotationShiftBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::RotationShift, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RotationShift {
             contact_ids: self.contact_ids,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building RotationShift",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building RotationShift",
+                )
+            })?,
             r#type: self.r#type,
             shift_details: self.shift_details,
-        }
+        })
     }
 }

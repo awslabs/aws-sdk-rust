@@ -11,8 +11,10 @@ pub struct ListScheduledAuditsOutput {
 }
 impl ListScheduledAuditsOutput {
     /// <p>The list of scheduled audits.</p>
-    pub fn scheduled_audits(&self) -> ::std::option::Option<&[crate::types::ScheduledAuditMetadata]> {
-        self.scheduled_audits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_audits.is_none()`.
+    pub fn scheduled_audits(&self) -> &[crate::types::ScheduledAuditMetadata] {
+        self.scheduled_audits.as_deref().unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

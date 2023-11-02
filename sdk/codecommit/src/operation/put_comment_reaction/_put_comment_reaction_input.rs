@@ -34,6 +34,7 @@ pub struct PutCommentReactionInputBuilder {
 }
 impl PutCommentReactionInputBuilder {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutCommentReactionInputBuilder {
         &self.comment_id
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit User Guide</a>.</p>
+    /// This field is required.
     pub fn reaction_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reaction_value = ::std::option::Option::Some(input.into());
         self

@@ -5,26 +5,27 @@ pub fn ser_custom_error_response(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.error_code {
+    {
         let mut inner_writer = scope.start_el("ErrorCode").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.error_code).encode());
     }
-    if let Some(var_2) = &input.response_page_path {
+    if let Some(var_1) = &input.response_page_path {
         let mut inner_writer = scope.start_el("ResponsePagePath").finish();
+        inner_writer.data(var_1.as_str());
+    }
+    if let Some(var_2) = &input.response_code {
+        let mut inner_writer = scope.start_el("ResponseCode").finish();
         inner_writer.data(var_2.as_str());
     }
-    if let Some(var_3) = &input.response_code {
-        let mut inner_writer = scope.start_el("ResponseCode").finish();
-        inner_writer.data(var_3.as_str());
-    }
-    if let Some(var_4) = &input.error_caching_min_ttl {
+    if let Some(var_3) = &input.error_caching_min_ttl {
         let mut inner_writer = scope.start_el("ErrorCachingMinTTL").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_custom_error_response(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CustomErrorResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,7 +34,7 @@ pub fn de_custom_error_response(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ErrorCode") /* ErrorCode com.amazonaws.cloudfront#CustomErrorResponse$ErrorCode */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -44,10 +45,23 @@ pub fn de_custom_error_response(
                         ?
                     )
                 ;
-                builder = builder.set_error_code(var_5);
+                builder = builder.set_error_code(var_4);
             }
             ,
             s if s.matches("ResponsePagePath") /* ResponsePagePath com.amazonaws.cloudfront#CustomErrorResponse$ResponsePagePath */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_response_page_path(var_5);
+            }
+            ,
+            s if s.matches("ResponseCode") /* ResponseCode com.amazonaws.cloudfront#CustomErrorResponse$ResponseCode */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -57,24 +71,11 @@ pub fn de_custom_error_response(
                         ?
                     )
                 ;
-                builder = builder.set_response_page_path(var_6);
-            }
-            ,
-            s if s.matches("ResponseCode") /* ResponseCode com.amazonaws.cloudfront#CustomErrorResponse$ResponseCode */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_response_code(var_7);
+                builder = builder.set_response_code(var_6);
             }
             ,
             s if s.matches("ErrorCachingMinTTL") /* ErrorCachingMinTTL com.amazonaws.cloudfront#CustomErrorResponse$ErrorCachingMinTTL */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                          {
                             <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -85,11 +86,13 @@ pub fn de_custom_error_response(
                         ?
                     )
                 ;
-                builder = builder.set_error_caching_min_ttl(var_8);
+                builder = builder.set_error_caching_min_ttl(var_7);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::custom_error_response_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub budget_name: ::std::option::Option<::std::string::String>,
+    pub budget_name: ::std::string::String,
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub action_id: ::std::option::Option<::std::string::String>,
+    pub action_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
-        self.budget_name.as_deref()
+    pub fn budget_name(&self) -> &str {
+        use std::ops::Deref;
+        self.budget_name.deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
-        self.action_id.as_deref()
+    pub fn action_id(&self) -> &str {
+        use std::ops::Deref;
+        self.action_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateBudgetActionOutput {
@@ -48,6 +51,7 @@ pub struct CreateBudgetActionOutputBuilder {
 }
 impl CreateBudgetActionOutputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl CreateBudgetActionOutputBuilder {
         &self.account_id
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl CreateBudgetActionOutputBuilder {
         &self.budget_name
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +105,34 @@ impl CreateBudgetActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateBudgetActionOutput`](crate::operation::create_budget_action::CreateBudgetActionOutput).
-    pub fn build(self) -> crate::operation::create_budget_action::CreateBudgetActionOutput {
-        crate::operation::create_budget_action::CreateBudgetActionOutput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
-            action_id: self.action_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder::account_id)
+    /// - [`budget_name`](crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder::budget_name)
+    /// - [`action_id`](crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder::action_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_budget_action::CreateBudgetActionOutput {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building CreateBudgetActionOutput",
+                )
+            })?,
+            budget_name: self.budget_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "budget_name",
+                    "budget_name was not specified but it is required when building CreateBudgetActionOutput",
+                )
+            })?,
+            action_id: self.action_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_id",
+                    "action_id was not specified but it is required when building CreateBudgetActionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

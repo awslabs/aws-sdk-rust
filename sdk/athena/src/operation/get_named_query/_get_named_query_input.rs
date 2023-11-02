@@ -27,6 +27,7 @@ pub struct GetNamedQueryInputBuilder {
 }
 impl GetNamedQueryInputBuilder {
     /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
+    /// This field is required.
     pub fn named_query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.named_query_id = ::std::option::Option::Some(input.into());
         self

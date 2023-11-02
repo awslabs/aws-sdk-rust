@@ -55,6 +55,7 @@ impl CreateCodeSigningConfigInputBuilder {
         &self.description
     }
     /// <p>Signing profiles for this code signing configuration.</p>
+    /// This field is required.
     pub fn allowed_publishers(mut self, input: crate::types::AllowedPublishers) -> Self {
         self.allowed_publishers = ::std::option::Option::Some(input);
         self

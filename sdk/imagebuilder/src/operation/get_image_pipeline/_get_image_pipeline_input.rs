@@ -27,6 +27,7 @@ pub struct GetImagePipelineInputBuilder {
 }
 impl GetImagePipelineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
+    /// This field is required.
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self

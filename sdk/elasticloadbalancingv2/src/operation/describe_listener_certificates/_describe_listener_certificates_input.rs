@@ -41,6 +41,7 @@ pub struct DescribeListenerCertificatesInputBuilder {
 }
 impl DescribeListenerCertificatesInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self

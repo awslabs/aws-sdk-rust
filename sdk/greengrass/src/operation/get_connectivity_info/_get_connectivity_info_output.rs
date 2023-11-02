@@ -11,8 +11,10 @@ pub struct GetConnectivityInfoOutput {
 }
 impl GetConnectivityInfoOutput {
     /// Connectivity info list.
-    pub fn connectivity_info(&self) -> ::std::option::Option<&[crate::types::ConnectivityInfo]> {
-        self.connectivity_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectivity_info.is_none()`.
+    pub fn connectivity_info(&self) -> &[crate::types::ConnectivityInfo] {
+        self.connectivity_info.as_deref().unwrap_or_default()
     }
     /// A message about the connectivity info request.
     pub fn message(&self) -> ::std::option::Option<&str> {

@@ -33,8 +33,10 @@ impl AnomalousLogGroup {
         self.number_of_log_lines_scanned
     }
     /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
-    pub fn log_anomaly_showcases(&self) -> ::std::option::Option<&[crate::types::LogAnomalyShowcase]> {
-        self.log_anomaly_showcases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_anomaly_showcases.is_none()`.
+    pub fn log_anomaly_showcases(&self) -> &[crate::types::LogAnomalyShowcase] {
+        self.log_anomaly_showcases.as_deref().unwrap_or_default()
     }
 }
 impl AnomalousLogGroup {

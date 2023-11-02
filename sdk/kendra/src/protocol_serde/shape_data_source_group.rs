@@ -3,11 +3,11 @@ pub fn ser_data_source_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceGroup,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.group_id {
-        object.key("GroupId").string(var_1.as_str());
+    {
+        object.key("GroupId").string(input.group_id.as_str());
     }
-    if let Some(var_2) = &input.data_source_id {
-        object.key("DataSourceId").string(var_2.as_str());
+    {
+        object.key("DataSourceId").string(input.data_source_id.as_str());
     }
     Ok(())
 }

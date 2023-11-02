@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Network {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub network_arn: ::std::option::Option<::std::string::String>,
+    pub network_arn: ::std::string::String,
     /// <p>The name of the network.</p>
-    pub network_name: ::std::option::Option<::std::string::String>,
+    pub network_name: ::std::string::String,
     /// <p>The description of the network.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the network.</p>
-    pub status: ::std::option::Option<crate::types::NetworkStatus>,
+    pub status: crate::types::NetworkStatus,
     /// <p>The status reason of the network.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the network.</p>
@@ -19,20 +19,22 @@ pub struct Network {
 }
 impl Network {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> ::std::option::Option<&str> {
-        self.network_arn.as_deref()
+    pub fn network_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_arn.deref()
     }
     /// <p>The name of the network.</p>
-    pub fn network_name(&self) -> ::std::option::Option<&str> {
-        self.network_name.as_deref()
+    pub fn network_name(&self) -> &str {
+        use std::ops::Deref;
+        self.network_name.deref()
     }
     /// <p>The description of the network.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The status of the network.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NetworkStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::NetworkStatus {
+        &self.status
     }
     /// <p>The status reason of the network.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ pub struct NetworkBuilder {
 }
 impl NetworkBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    /// This field is required.
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl NetworkBuilder {
         &self.network_arn
     }
     /// <p>The name of the network.</p>
+    /// This field is required.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl NetworkBuilder {
         &self.description
     }
     /// <p>The status of the network.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::NetworkStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -147,14 +152,33 @@ impl NetworkBuilder {
         &self.created_at
     }
     /// Consumes the builder and constructs a [`Network`](crate::types::Network).
-    pub fn build(self) -> crate::types::Network {
-        crate::types::Network {
-            network_arn: self.network_arn,
-            network_name: self.network_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_arn`](crate::types::builders::NetworkBuilder::network_arn)
+    /// - [`network_name`](crate::types::builders::NetworkBuilder::network_name)
+    /// - [`status`](crate::types::builders::NetworkBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::Network, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Network {
+            network_arn: self.network_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_arn",
+                    "network_arn was not specified but it is required when building Network",
+                )
+            })?,
+            network_name: self.network_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_name",
+                    "network_name was not specified but it is required when building Network",
+                )
+            })?,
             description: self.description,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Network",
+                )
+            })?,
             status_reason: self.status_reason,
             created_at: self.created_at,
-        }
+        })
     }
 }

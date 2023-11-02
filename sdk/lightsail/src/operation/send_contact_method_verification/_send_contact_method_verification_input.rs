@@ -27,6 +27,7 @@ pub struct SendContactMethodVerificationInputBuilder {
 }
 impl SendContactMethodVerificationInputBuilder {
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::ContactMethodVerificationProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self

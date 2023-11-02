@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheck {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>A unique string that you specified when you created the health check.</p>
-    pub caller_reference: ::std::option::Option<::std::string::String>,
+    pub caller_reference: ::std::string::String,
     /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub linked_service: ::std::option::Option<crate::types::LinkedService>,
     /// <p>A complex type that contains detailed information about one health check.</p>
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
     /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
-    pub health_check_version: ::std::option::Option<i64>,
+    pub health_check_version: i64,
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
     pub cloud_watch_alarm_configuration: ::std::option::Option<crate::types::CloudWatchAlarmConfiguration>,
 }
 impl HealthCheck {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>A unique string that you specified when you created the health check.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
-        self.caller_reference.as_deref()
+    pub fn caller_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.caller_reference.deref()
     }
     /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     pub fn linked_service(&self) -> ::std::option::Option<&crate::types::LinkedService> {
@@ -35,7 +37,7 @@ impl HealthCheck {
         self.health_check_config.as_ref()
     }
     /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
-    pub fn health_check_version(&self) -> ::std::option::Option<i64> {
+    pub fn health_check_version(&self) -> i64 {
         self.health_check_version
     }
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
@@ -63,6 +65,7 @@ pub struct HealthCheckBuilder {
 }
 impl HealthCheckBuilder {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl HealthCheckBuilder {
         &self.id
     }
     /// <p>A unique string that you specified when you created the health check.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl HealthCheckBuilder {
         &self.linked_service
     }
     /// <p>A complex type that contains detailed information about one health check.</p>
+    /// This field is required.
     pub fn health_check_config(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check_config = ::std::option::Option::Some(input);
         self
@@ -119,6 +124,7 @@ impl HealthCheckBuilder {
         &self.health_check_config
     }
     /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
+    /// This field is required.
     pub fn health_check_version(mut self, input: i64) -> Self {
         self.health_check_version = ::std::option::Option::Some(input);
         self
@@ -147,14 +153,33 @@ impl HealthCheckBuilder {
         &self.cloud_watch_alarm_configuration
     }
     /// Consumes the builder and constructs a [`HealthCheck`](crate::types::HealthCheck).
-    pub fn build(self) -> crate::types::HealthCheck {
-        crate::types::HealthCheck {
-            id: self.id,
-            caller_reference: self.caller_reference,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::HealthCheckBuilder::id)
+    /// - [`caller_reference`](crate::types::builders::HealthCheckBuilder::caller_reference)
+    /// - [`health_check_version`](crate::types::builders::HealthCheckBuilder::health_check_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HealthCheck {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building HealthCheck",
+                )
+            })?,
+            caller_reference: self.caller_reference.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "caller_reference",
+                    "caller_reference was not specified but it is required when building HealthCheck",
+                )
+            })?,
             linked_service: self.linked_service,
             health_check_config: self.health_check_config,
-            health_check_version: self.health_check_version,
+            health_check_version: self.health_check_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "health_check_version",
+                    "health_check_version was not specified but it is required when building HealthCheck",
+                )
+            })?,
             cloud_watch_alarm_configuration: self.cloud_watch_alarm_configuration,
-        }
+        })
     }
 }

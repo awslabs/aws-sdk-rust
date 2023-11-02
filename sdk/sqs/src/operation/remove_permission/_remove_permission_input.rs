@@ -38,6 +38,7 @@ pub struct RemovePermissionInputBuilder {
 impl RemovePermissionInputBuilder {
     /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl RemovePermissionInputBuilder {
         &self.queue_url
     }
     /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
+    /// This field is required.
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
         self

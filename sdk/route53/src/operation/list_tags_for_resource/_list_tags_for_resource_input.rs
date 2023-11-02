@@ -47,6 +47,7 @@ impl ListTagsForResourceInputBuilder {
     /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
     /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TagResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl ListTagsForResourceInputBuilder {
         &self.resource_type
     }
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

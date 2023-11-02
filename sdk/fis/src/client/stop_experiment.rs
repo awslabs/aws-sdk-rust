@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopExperiment`](crate::operation::stop_experiment::builders::StopExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::stop_experiment::builders::StopExperimentFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_experiment::builders::StopExperimentFluentBuilder::set_id): <p>The ID of the experiment.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::stop_experiment::builders::StopExperimentFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_experiment::builders::StopExperimentFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the experiment.</p><br>
     /// - On success, responds with [`StopExperimentOutput`](crate::operation::stop_experiment::StopExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::operation::stop_experiment::StopExperimentOutput::experiment): <p>Information about the experiment.</p>
     /// - On failure, responds with [`SdkError<StopExperimentError>`](crate::operation::stop_experiment::StopExperimentError)

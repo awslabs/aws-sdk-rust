@@ -42,6 +42,7 @@ pub struct DescribeEffectivePatchesForPatchBaselineInputBuilder {
 }
 impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
+    /// This field is required.
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_id = ::std::option::Option::Some(input.into());
         self

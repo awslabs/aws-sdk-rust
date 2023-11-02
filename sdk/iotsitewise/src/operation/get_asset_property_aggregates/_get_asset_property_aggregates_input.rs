@@ -45,16 +45,20 @@ impl GetAssetPropertyAggregatesInput {
         self.property_alias.as_deref()
     }
     /// <p>The data aggregating function.</p>
-    pub fn aggregate_types(&self) -> ::std::option::Option<&[crate::types::AggregateType]> {
-        self.aggregate_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregate_types.is_none()`.
+    pub fn aggregate_types(&self) -> &[crate::types::AggregateType] {
+        self.aggregate_types.as_deref().unwrap_or_default()
     }
     /// <p>The time interval over which to aggregate data.</p>
     pub fn resolution(&self) -> ::std::option::Option<&str> {
         self.resolution.as_deref()
     }
     /// <p>The quality by which to filter asset data.</p>
-    pub fn qualities(&self) -> ::std::option::Option<&[crate::types::Quality]> {
-        self.qualities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualities.is_none()`.
+    pub fn qualities(&self) -> &[crate::types::Quality] {
+        self.qualities.as_deref().unwrap_or_default()
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -169,6 +173,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
         &self.aggregate_types
     }
     /// <p>The time interval over which to aggregate data.</p>
+    /// This field is required.
     pub fn resolution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolution = ::std::option::Option::Some(input.into());
         self
@@ -203,6 +208,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
         &self.qualities
     }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -217,6 +223,7 @@ impl GetAssetPropertyAggregatesInputBuilder {
         &self.start_date
     }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self

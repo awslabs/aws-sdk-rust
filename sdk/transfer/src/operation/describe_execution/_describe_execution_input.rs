@@ -34,6 +34,7 @@ pub struct DescribeExecutionInputBuilder {
 }
 impl DescribeExecutionInputBuilder {
     /// <p>A unique identifier for the execution of a workflow.</p>
+    /// This field is required.
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeExecutionInputBuilder {
         &self.execution_id
     }
     /// <p>A unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self

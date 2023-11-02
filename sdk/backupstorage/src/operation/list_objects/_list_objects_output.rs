@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectsOutput {
     /// Object list
-    pub object_list: ::std::option::Option<::std::vec::Vec<crate::types::BackupObject>>,
+    pub object_list: ::std::vec::Vec<crate::types::BackupObject>,
     /// Pagination token
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListObjectsOutput {
     /// Object list
-    pub fn object_list(&self) -> ::std::option::Option<&[crate::types::BackupObject]> {
-        self.object_list.as_deref()
+    pub fn object_list(&self) -> &[crate::types::BackupObject] {
+        use std::ops::Deref;
+        self.object_list.deref()
     }
     /// Pagination token
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListObjectsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput).
-    pub fn build(self) -> crate::operation::list_objects::ListObjectsOutput {
-        crate::operation::list_objects::ListObjectsOutput {
-            object_list: self.object_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_list`](crate::operation::list_objects::builders::ListObjectsOutputBuilder::object_list)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_objects::ListObjectsOutput {
+            object_list: self.object_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object_list",
+                    "object_list was not specified but it is required when building ListObjectsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

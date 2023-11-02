@@ -9,7 +9,7 @@ pub struct GitConfiguration {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p> <note>
     /// <p>You can only specify one trigger configuration per source action.</p>
     /// </note>
-    pub source_action_name: ::std::option::Option<::std::string::String>,
+    pub source_action_name: ::std::string::String,
     /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p> <note>
     /// <p>Git tags is the only supported event type.</p>
     /// </note>
@@ -19,14 +19,17 @@ impl GitConfiguration {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p> <note>
     /// <p>You can only specify one trigger configuration per source action.</p>
     /// </note>
-    pub fn source_action_name(&self) -> ::std::option::Option<&str> {
-        self.source_action_name.as_deref()
+    pub fn source_action_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_action_name.deref()
     }
     /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p> <note>
     /// <p>Git tags is the only supported event type.</p>
     /// </note>
-    pub fn push(&self) -> ::std::option::Option<&[crate::types::GitPushFilter]> {
-        self.push.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.push.is_none()`.
+    pub fn push(&self) -> &[crate::types::GitPushFilter] {
+        self.push.as_deref().unwrap_or_default()
     }
 }
 impl GitConfiguration {
@@ -47,6 +50,7 @@ impl GitConfigurationBuilder {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p> <note>
     /// <p>You can only specify one trigger configuration per source action.</p>
     /// </note>
+    /// This field is required.
     pub fn source_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_action_name = ::std::option::Option::Some(input.into());
         self
@@ -91,10 +95,17 @@ impl GitConfigurationBuilder {
         &self.push
     }
     /// Consumes the builder and constructs a [`GitConfiguration`](crate::types::GitConfiguration).
-    pub fn build(self) -> crate::types::GitConfiguration {
-        crate::types::GitConfiguration {
-            source_action_name: self.source_action_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_action_name`](crate::types::builders::GitConfigurationBuilder::source_action_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GitConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GitConfiguration {
+            source_action_name: self.source_action_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_action_name",
+                    "source_action_name was not specified but it is required when building GitConfiguration",
+                )
+            })?,
             push: self.push,
-        }
+        })
     }
 }

@@ -18,8 +18,10 @@ impl ListSessionMetricsOutput {
         self.bot_id.as_deref()
     }
     /// <p>The results for the session metrics.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::AnalyticsSessionResult]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::AnalyticsSessionResult] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>If the response from the ListSessionMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListSessionMetrics request to return the next page of results. For a complete set of results, call the ListSessionMetrics operation until the nextToken returned in the response is null.</p>

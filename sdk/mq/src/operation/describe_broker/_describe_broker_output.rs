@@ -73,8 +73,10 @@ pub struct DescribeBrokerOutput {
 }
 impl DescribeBrokerOutput {
     /// <p>Actions required for a broker.</p>
-    pub fn actions_required(&self) -> ::std::option::Option<&[crate::types::ActionRequired]> {
-        self.actions_required.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions_required.is_none()`.
+    pub fn actions_required(&self) -> &[crate::types::ActionRequired] {
+        self.actions_required.as_deref().unwrap_or_default()
     }
     /// <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn authentication_strategy(&self) -> ::std::option::Option<&crate::types::AuthenticationStrategy> {
@@ -93,8 +95,10 @@ impl DescribeBrokerOutput {
         self.broker_id.as_deref()
     }
     /// <p>A list of information about allocated brokers.</p>
-    pub fn broker_instances(&self) -> ::std::option::Option<&[crate::types::BrokerInstance]> {
-        self.broker_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.broker_instances.is_none()`.
+    pub fn broker_instances(&self) -> &[crate::types::BrokerInstance] {
+        self.broker_instances.as_deref().unwrap_or_default()
     }
     /// <p>The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     pub fn broker_name(&self) -> ::std::option::Option<&str> {
@@ -161,32 +165,40 @@ impl DescribeBrokerOutput {
         self.pending_ldap_server_metadata.as_ref()
     }
     /// <p>The list of pending security groups to authorize connections to brokers.</p>
-    pub fn pending_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pending_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_security_groups.is_none()`.
+    pub fn pending_security_groups(&self) -> &[::std::string::String] {
+        self.pending_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The broker's storage type.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::BrokerStorageType> {
         self.storage_type.as_ref()
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The list of all tags associated with this broker.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The list of all broker usernames for the specified broker.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::UserSummary]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::UserSummary] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to CRDR.</p>
     pub fn data_replication_metadata(&self) -> ::std::option::Option<&crate::types::DataReplicationMetadataOutput> {

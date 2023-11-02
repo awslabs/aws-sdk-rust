@@ -92,14 +92,14 @@ impl UpdateDomainConfigFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::update_domain_config::UpdateDomainConfigOutput,
             crate::operation::update_domain_config::UpdateDomainConfigError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_domain_config::UpdateDomainConfigError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -250,6 +250,20 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_policies()
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
     /// Adds a key-value pair to `LogPublishingOptions`.
     ///

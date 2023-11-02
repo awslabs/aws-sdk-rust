@@ -48,6 +48,7 @@ pub struct ChannelFlowCallbackInputBuilder {
 }
 impl ChannelFlowCallbackInputBuilder {
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    /// This field is required.
     pub fn callback_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.callback_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ChannelFlowCallbackInputBuilder {
         &self.callback_id
     }
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ChannelFlowCallbackInputBuilder {
         &self.delete_resource
     }
     /// <p>Stores information about the processed message.</p>
+    /// This field is required.
     pub fn channel_message(mut self, input: crate::types::ChannelMessageCallback) -> Self {
         self.channel_message = ::std::option::Option::Some(input);
         self

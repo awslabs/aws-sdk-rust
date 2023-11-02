@@ -57,8 +57,10 @@ impl GetPatchBaselineOutput {
         self.approval_rules.as_ref()
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn approved_patches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.approved_patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approved_patches.is_none()`.
+    pub fn approved_patches(&self) -> &[::std::string::String] {
+        self.approved_patches.as_deref().unwrap_or_default()
     }
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
     pub fn approved_patches_compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
@@ -69,16 +71,20 @@ impl GetPatchBaselineOutput {
         self.approved_patches_enable_non_security
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn rejected_patches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rejected_patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rejected_patches.is_none()`.
+    pub fn rejected_patches(&self) -> &[::std::string::String] {
+        self.rejected_patches.as_deref().unwrap_or_default()
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub fn rejected_patches_action(&self) -> ::std::option::Option<&crate::types::PatchAction> {
         self.rejected_patches_action.as_ref()
     }
     /// <p>Patch groups included in the patch baseline.</p>
-    pub fn patch_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.patch_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_groups.is_none()`.
+    pub fn patch_groups(&self) -> &[::std::string::String] {
+        self.patch_groups.as_deref().unwrap_or_default()
     }
     /// <p>The date the patch baseline was created.</p>
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -93,8 +99,10 @@ impl GetPatchBaselineOutput {
         self.description.as_deref()
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::PatchSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::PatchSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPatchBaselineOutput {

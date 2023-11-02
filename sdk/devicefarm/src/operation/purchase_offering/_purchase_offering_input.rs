@@ -42,6 +42,7 @@ pub struct PurchaseOfferingInputBuilder {
 }
 impl PurchaseOfferingInputBuilder {
     /// <p>The ID of the offering.</p>
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl PurchaseOfferingInputBuilder {
         &self.offering_id
     }
     /// <p>The number of device slots to purchase in an offering request.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self

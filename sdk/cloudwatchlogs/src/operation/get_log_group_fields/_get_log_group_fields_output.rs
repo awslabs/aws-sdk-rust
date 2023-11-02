@@ -9,8 +9,10 @@ pub struct GetLogGroupFieldsOutput {
 }
 impl GetLogGroupFieldsOutput {
     /// <p>The array of fields found in the query. Each object in the array contains the name of the field, along with the percentage of time it appeared in the log events that were queried.</p>
-    pub fn log_group_fields(&self) -> ::std::option::Option<&[crate::types::LogGroupField]> {
-        self.log_group_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_fields.is_none()`.
+    pub fn log_group_fields(&self) -> &[crate::types::LogGroupField] {
+        self.log_group_fields.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLogGroupFieldsOutput {

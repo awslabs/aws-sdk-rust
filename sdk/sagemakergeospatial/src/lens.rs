@@ -42,29 +42,20 @@ pub(crate) fn reflens_search_raster_data_collection_output_next_token(
 pub(crate) fn lens_list_earth_observation_jobs_output_earth_observation_job_summaries(
     input: crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>> {
-    let input = match input.earth_observation_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.earth_observation_job_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_raster_data_collections_output_raster_data_collection_summaries(
     input: crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RasterDataCollectionMetadata>> {
-    let input = match input.raster_data_collection_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.raster_data_collection_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_vector_enrichment_jobs_output_vector_enrichment_job_summaries(
     input: crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>> {
-    let input = match input.vector_enrichment_job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.vector_enrichment_job_summaries;
     ::std::option::Option::Some(input)
 }

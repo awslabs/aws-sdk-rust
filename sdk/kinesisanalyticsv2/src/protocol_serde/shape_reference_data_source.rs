@@ -3,20 +3,20 @@ pub fn ser_reference_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReferenceDataSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.table_name {
-        object.key("TableName").string(var_1.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_2) = &input.s3_reference_data_source {
+    if let Some(var_1) = &input.s3_reference_data_source {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("S3ReferenceDataSource").start_object();
-        crate::protocol_serde::shape_s3_reference_data_source::ser_s3_reference_data_source(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("S3ReferenceDataSource").start_object();
+        crate::protocol_serde::shape_s3_reference_data_source::ser_s3_reference_data_source(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.reference_schema {
+    if let Some(var_3) = &input.reference_schema {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ReferenceSchema").start_object();
-        crate::protocol_serde::shape_source_schema::ser_source_schema(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("ReferenceSchema").start_object();
+        crate::protocol_serde::shape_source_schema::ser_source_schema(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

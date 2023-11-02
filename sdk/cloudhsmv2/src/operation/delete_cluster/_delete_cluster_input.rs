@@ -27,6 +27,7 @@ pub struct DeleteClusterInputBuilder {
 }
 impl DeleteClusterInputBuilder {
     /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct GetContainerImagesInputBuilder {
 }
 impl GetContainerImagesInputBuilder {
     /// <p>The name of the container service for which to return registered container images.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self

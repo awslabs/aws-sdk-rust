@@ -26,8 +26,10 @@ impl DescribeAlarmHistoryInput {
         self.alarm_name.as_deref()
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn alarm_types(&self) -> ::std::option::Option<&[crate::types::AlarmType]> {
-        self.alarm_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_types.is_none()`.
+    pub fn alarm_types(&self) -> &[crate::types::AlarmType] {
+        self.alarm_types.as_deref().unwrap_or_default()
     }
     /// <p>The type of alarm histories to retrieve.</p>
     pub fn history_item_type(&self) -> ::std::option::Option<&crate::types::HistoryItemType> {

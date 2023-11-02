@@ -34,6 +34,7 @@ pub struct DeleteVirtualGatewayOutputBuilder {
 }
 impl DeleteVirtualGatewayOutputBuilder {
     /// <p>The virtual gateway that was deleted.</p>
+    /// This field is required.
     pub fn virtual_gateway(mut self, input: crate::types::VirtualGatewayData) -> Self {
         self.virtual_gateway = ::std::option::Option::Some(input);
         self

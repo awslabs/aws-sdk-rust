@@ -26,11 +26,10 @@ pub fn de_list_databases_http_error(
                     crate::protocol_serde::shape_database_connection_exception::de_database_connection_exception_json_err(_response_body, output)
                         .map_err(crate::operation::list_databases::ListDatabasesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::database_connection_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_databases::ListDatabasesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_databases::ListDatabasesError::InternalServerException({
@@ -41,11 +40,10 @@ pub fn de_list_databases_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_databases::ListDatabasesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_databases::ListDatabasesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_databases::ListDatabasesError::ValidationException({

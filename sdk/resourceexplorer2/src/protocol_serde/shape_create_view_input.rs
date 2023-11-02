@@ -34,8 +34,8 @@ pub fn ser_create_view_input(
         }
         object_9.finish();
     }
-    if let Some(var_12) = &input.view_name {
-        object.key("ViewName").string(var_12.as_str());
+    {
+        object.key("ViewName").string(input.view_name.as_str());
     }
     Ok(())
 }

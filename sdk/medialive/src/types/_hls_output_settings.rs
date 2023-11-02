@@ -63,6 +63,7 @@ impl HlsOutputSettingsBuilder {
         &self.h265_packaging_type
     }
     /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
+    /// This field is required.
     pub fn hls_settings(mut self, input: crate::types::HlsSettings) -> Self {
         self.hls_settings = ::std::option::Option::Some(input);
         self

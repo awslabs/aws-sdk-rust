@@ -37,18 +37,24 @@ impl ModifyReplicationGroupShardConfigurationInput {
     }
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
-    pub fn resharding_configuration(&self) -> ::std::option::Option<&[crate::types::ReshardingConfiguration]> {
-        self.resharding_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resharding_configuration.is_none()`.
+    pub fn resharding_configuration(&self) -> &[crate::types::ReshardingConfiguration] {
+        self.resharding_configuration.as_deref().unwrap_or_default()
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
-    pub fn node_groups_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_groups_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_groups_to_remove.is_none()`.
+    pub fn node_groups_to_remove(&self) -> &[::std::string::String] {
+        self.node_groups_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
-    pub fn node_groups_to_retain(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_groups_to_retain.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_groups_to_retain.is_none()`.
+    pub fn node_groups_to_retain(&self) -> &[::std::string::String] {
+        self.node_groups_to_retain.as_deref().unwrap_or_default()
     }
 }
 impl ModifyReplicationGroupShardConfigurationInput {
@@ -72,6 +78,7 @@ pub struct ModifyReplicationGroupShardConfigurationInputBuilder {
 }
 impl ModifyReplicationGroupShardConfigurationInputBuilder {
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
+    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +93,7 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
         &self.replication_group_id
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
+    /// This field is required.
     pub fn node_group_count(mut self, input: i32) -> Self {
         self.node_group_count = ::std::option::Option::Some(input);
         self
@@ -101,6 +109,7 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is <code>true</code>.</p>
     /// <p>Value: true</p>
+    /// This field is required.
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self

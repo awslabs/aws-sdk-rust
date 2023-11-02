@@ -44,8 +44,10 @@ impl CreateFlowDefinitionInput {
         self.role_arn.as_deref()
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFlowDefinitionInput {
@@ -69,6 +71,7 @@ pub struct CreateFlowDefinitionInputBuilder {
 }
 impl CreateFlowDefinitionInputBuilder {
     /// <p>The name of your flow definition.</p>
+    /// This field is required.
     pub fn flow_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl CreateFlowDefinitionInputBuilder {
         &self.human_loop_activation_config
     }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
+    /// This field is required.
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.human_loop_config = ::std::option::Option::Some(input);
         self
@@ -125,6 +129,7 @@ impl CreateFlowDefinitionInputBuilder {
         &self.human_loop_config
     }
     /// <p>An object containing information about where the human review results will be uploaded.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::FlowDefinitionOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -139,6 +144,7 @@ impl CreateFlowDefinitionInputBuilder {
         &self.output_config
     }
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

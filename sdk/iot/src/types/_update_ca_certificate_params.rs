@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCaCertificateParams {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub action: ::std::option::Option<crate::types::CaCertificateUpdateAction>,
+    pub action: crate::types::CaCertificateUpdateAction,
 }
 impl UpdateCaCertificateParams {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::CaCertificateUpdateAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::CaCertificateUpdateAction {
+        &self.action
     }
 }
 impl UpdateCaCertificateParams {
@@ -28,6 +28,7 @@ pub struct UpdateCaCertificateParamsBuilder {
 }
 impl UpdateCaCertificateParamsBuilder {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::CaCertificateUpdateAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl UpdateCaCertificateParamsBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`UpdateCaCertificateParams`](crate::types::UpdateCaCertificateParams).
-    pub fn build(self) -> crate::types::UpdateCaCertificateParams {
-        crate::types::UpdateCaCertificateParams { action: self.action }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::UpdateCaCertificateParamsBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateCaCertificateParams, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateCaCertificateParams {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building UpdateCaCertificateParams",
+                )
+            })?,
+        })
     }
 }

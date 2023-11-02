@@ -18,8 +18,10 @@ impl ReadPipelineOutput {
     }
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::Warning]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::Warning] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ReadPipelineOutput {

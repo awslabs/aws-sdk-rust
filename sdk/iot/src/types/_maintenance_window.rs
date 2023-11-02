@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindow {
     /// <p>Displays the start time of the next maintenance window.</p>
-    pub start_time: ::std::option::Option<::std::string::String>,
+    pub start_time: ::std::string::String,
     /// <p>Displays the duration of the next maintenance window.</p>
-    pub duration_in_minutes: ::std::option::Option<i32>,
+    pub duration_in_minutes: i32,
 }
 impl MaintenanceWindow {
     /// <p>Displays the start time of the next maintenance window.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
-        self.start_time.as_deref()
+    pub fn start_time(&self) -> &str {
+        use std::ops::Deref;
+        self.start_time.deref()
     }
     /// <p>Displays the duration of the next maintenance window.</p>
-    pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_minutes(&self) -> i32 {
         self.duration_in_minutes
     }
 }
@@ -35,6 +36,7 @@ pub struct MaintenanceWindowBuilder {
 }
 impl MaintenanceWindowBuilder {
     /// <p>Displays the start time of the next maintenance window.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl MaintenanceWindowBuilder {
         &self.start_time
     }
     /// <p>Displays the duration of the next maintenance window.</p>
+    /// This field is required.
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl MaintenanceWindowBuilder {
         &self.duration_in_minutes
     }
     /// Consumes the builder and constructs a [`MaintenanceWindow`](crate::types::MaintenanceWindow).
-    pub fn build(self) -> crate::types::MaintenanceWindow {
-        crate::types::MaintenanceWindow {
-            start_time: self.start_time,
-            duration_in_minutes: self.duration_in_minutes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_time`](crate::types::builders::MaintenanceWindowBuilder::start_time)
+    /// - [`duration_in_minutes`](crate::types::builders::MaintenanceWindowBuilder::duration_in_minutes)
+    pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceWindow, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MaintenanceWindow {
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building MaintenanceWindow",
+                )
+            })?,
+            duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "duration_in_minutes",
+                    "duration_in_minutes was not specified but it is required when building MaintenanceWindow",
+                )
+            })?,
+        })
     }
 }

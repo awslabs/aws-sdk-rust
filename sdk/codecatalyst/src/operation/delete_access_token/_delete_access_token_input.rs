@@ -27,6 +27,7 @@ pub struct DeleteAccessTokenInputBuilder {
 }
 impl DeleteAccessTokenInputBuilder {
     /// <p>The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <code>ListAccessTokens</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

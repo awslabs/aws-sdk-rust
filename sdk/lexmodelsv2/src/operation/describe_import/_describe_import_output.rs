@@ -49,8 +49,10 @@ impl DescribeImportOutput {
         self.import_status.as_ref()
     }
     /// <p>If the <code>importStatus</code> field is <code>Failed</code>, this provides one or more reasons for the failure.</p>
-    pub fn failure_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[::std::string::String] {
+        self.failure_reasons.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that the import was created.</p>
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

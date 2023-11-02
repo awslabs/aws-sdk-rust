@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEvaluation`](crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`evaluation_id(impl Into<String>)`](crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder::evaluation_id) / [`set_evaluation_id(Option<String>)`](crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder::set_evaluation_id): <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    ///   - [`evaluation_id(impl Into<String>)`](crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder::evaluation_id) / [`set_evaluation_id(Option<String>)`](crate::operation::delete_evaluation::builders::DeleteEvaluationFluentBuilder::set_evaluation_id):<br>required: **true**<br><p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p><br>
     /// - On success, responds with [`DeleteEvaluationOutput`](crate::operation::delete_evaluation::DeleteEvaluationOutput) with field(s):
     ///   - [`evaluation_id(Option<String>)`](crate::operation::delete_evaluation::DeleteEvaluationOutput::evaluation_id): <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteEvaluationError>`](crate::operation::delete_evaluation::DeleteEvaluationError)

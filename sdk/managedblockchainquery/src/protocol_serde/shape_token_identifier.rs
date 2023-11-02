@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::token_identifier_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -57,14 +59,14 @@ pub fn ser_token_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TokenIdentifier,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.network {
-        object.key("network").string(var_1.as_str());
+    {
+        object.key("network").string(input.network.as_str());
     }
-    if let Some(var_2) = &input.contract_address {
-        object.key("contractAddress").string(var_2.as_str());
+    if let Some(var_1) = &input.contract_address {
+        object.key("contractAddress").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.token_id {
-        object.key("tokenId").string(var_3.as_str());
+    if let Some(var_2) = &input.token_id {
+        object.key("tokenId").string(var_2.as_str());
     }
     Ok(())
 }

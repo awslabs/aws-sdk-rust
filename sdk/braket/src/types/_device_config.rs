@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    pub device: ::std::option::Option<::std::string::String>,
+    pub device: ::std::string::String,
 }
 impl DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    pub fn device(&self) -> ::std::option::Option<&str> {
-        self.device.as_deref()
+    pub fn device(&self) -> &str {
+        use std::ops::Deref;
+        self.device.deref()
     }
 }
 impl DeviceConfig {
@@ -28,6 +29,7 @@ pub struct DeviceConfigBuilder {
 }
 impl DeviceConfigBuilder {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
+    /// This field is required.
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl DeviceConfigBuilder {
         &self.device
     }
     /// Consumes the builder and constructs a [`DeviceConfig`](crate::types::DeviceConfig).
-    pub fn build(self) -> crate::types::DeviceConfig {
-        crate::types::DeviceConfig { device: self.device }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device`](crate::types::builders::DeviceConfigBuilder::device)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeviceConfig {
+            device: self.device.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device",
+                    "device was not specified but it is required when building DeviceConfig",
+                )
+            })?,
+        })
     }
 }

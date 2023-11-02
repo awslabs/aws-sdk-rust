@@ -27,6 +27,7 @@ pub struct DescribeBatchInferenceJobInputBuilder {
 }
 impl DescribeBatchInferenceJobInputBuilder {
     /// <p>The ARN of the batch inference job to describe.</p>
+    /// This field is required.
     pub fn batch_inference_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_inference_job_arn = ::std::option::Option::Some(input.into());
         self

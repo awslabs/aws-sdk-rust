@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceOutput {
     /// <p>The status of the operation.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     _request_id: Option<String>,
 }
 impl RemoveTagsFromResourceOutput {
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
@@ -34,6 +35,7 @@ pub struct RemoveTagsFromResourceOutputBuilder {
 }
 impl RemoveTagsFromResourceOutputBuilder {
     /// <p>The status of the operation.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl RemoveTagsFromResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput).
-    pub fn build(self) -> crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
-        crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building RemoveTagsFromResourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

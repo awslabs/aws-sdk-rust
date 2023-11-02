@@ -3,14 +3,14 @@ pub fn ser_code_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_source {
-        object.key("ConfigurationSource").string(var_1.as_str());
+    {
+        object.key("ConfigurationSource").string(input.configuration_source.as_str());
     }
-    if let Some(var_2) = &input.code_configuration_values {
+    if let Some(var_1) = &input.code_configuration_values {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("CodeConfigurationValues").start_object();
-        crate::protocol_serde::shape_code_configuration_values::ser_code_configuration_values(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("CodeConfigurationValues").start_object();
+        crate::protocol_serde::shape_code_configuration_values::ser_code_configuration_values(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::code_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

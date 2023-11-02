@@ -7,7 +7,7 @@ pub struct SearchPlaceIndexForTextOutput {
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForTextSummary>,
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForTextResult>>,
+    pub results: ::std::vec::Vec<crate::types::SearchForTextResult>,
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForTextOutput {
@@ -17,8 +17,9 @@ impl SearchPlaceIndexForTextOutput {
     }
     /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::SearchForTextResult]> {
-        self.results.as_deref()
+    pub fn results(&self) -> &[crate::types::SearchForTextResult] {
+        use std::ops::Deref;
+        self.results.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchPlaceIndexForTextOutput {
@@ -43,6 +44,7 @@ pub struct SearchPlaceIndexForTextOutputBuilder {
 }
 impl SearchPlaceIndexForTextOutputBuilder {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
+    /// This field is required.
     pub fn summary(mut self, input: crate::types::SearchPlaceIndexForTextSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
@@ -89,11 +91,23 @@ impl SearchPlaceIndexForTextOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForTextOutput`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput).
-    pub fn build(self) -> crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput {
-        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput {
             summary: self.summary,
-            results: self.results,
+            results: self.results.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "results",
+                    "results was not specified but it is required when building SearchPlaceIndexForTextOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

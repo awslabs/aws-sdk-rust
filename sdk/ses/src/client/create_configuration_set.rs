@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateConfigurationSet`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_set(ConfigurationSet)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::configuration_set) / [`set_configuration_set(Option<ConfigurationSet>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_configuration_set): <p>A data structure that contains the name of the configuration set.</p>
+    ///   - [`configuration_set(ConfigurationSet)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::configuration_set) / [`set_configuration_set(Option<ConfigurationSet>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_configuration_set):<br>required: **true**<br><p>A data structure that contains the name of the configuration set.</p><br>
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::operation::create_configuration_set::CreateConfigurationSetError)
     pub fn create_configuration_set(&self) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder {

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartTest`](crate::operation::start_test::builders::StartTestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_i_ds(impl Into<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::operation::start_test::builders::StartTestFluentBuilder::set_source_server_i_ds): <p>Start Test for Source Server IDs.</p>
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::start_test::builders::StartTestFluentBuilder::set_tags): <p>Start Test by Tags.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::set_account_id): <p>Start Test for Account ID.</p>
+    ///   - [`source_server_i_ds(impl Into<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::source_server_i_ds) / [`set_source_server_i_ds(Vec<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::set_source_server_i_ds):<br>required: **true**<br><p>Start Test for Source Server IDs.</p><br>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::start_test::builders::StartTestFluentBuilder::set_tags):<br>required: **false**<br><p>Start Test by Tags.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::start_test::builders::StartTestFluentBuilder::set_account_id):<br>required: **false**<br><p>Start Test for Account ID.</p><br>
     /// - On success, responds with [`StartTestOutput`](crate::operation::start_test::StartTestOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::start_test::StartTestOutput::job): <p>Start Test Job response.</p>
     /// - On failure, responds with [`SdkError<StartTestError>`](crate::operation::start_test::StartTestError)

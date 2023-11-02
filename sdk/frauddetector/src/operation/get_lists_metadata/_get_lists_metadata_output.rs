@@ -11,8 +11,10 @@ pub struct GetListsMetadataOutput {
 }
 impl GetListsMetadataOutput {
     /// <p> The metadata of the specified list or all lists under the account. </p>
-    pub fn lists(&self) -> ::std::option::Option<&[crate::types::AllowDenyList]> {
-        self.lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lists.is_none()`.
+    pub fn lists(&self) -> &[crate::types::AllowDenyList] {
+        self.lists.as_deref().unwrap_or_default()
     }
     /// <p> The next page token. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

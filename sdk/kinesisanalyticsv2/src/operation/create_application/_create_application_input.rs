@@ -42,12 +42,16 @@ impl CreateApplicationInput {
         self.application_configuration.as_ref()
     }
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
-    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&[crate::types::CloudWatchLoggingOption]> {
-        self.cloud_watch_logging_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_options.is_none()`.
+    pub fn cloud_watch_logging_options(&self) -> &[crate::types::CloudWatchLoggingOption] {
+        self.cloud_watch_logging_options.as_deref().unwrap_or_default()
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub fn application_mode(&self) -> ::std::option::Option<&crate::types::ApplicationMode> {
@@ -76,6 +80,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl CreateApplicationInputBuilder {
         &self.application_description
     }
     /// <p>The runtime environment for the application.</p>
+    /// This field is required.
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
         self.runtime_environment = ::std::option::Option::Some(input);
         self
@@ -118,6 +124,7 @@ impl CreateApplicationInputBuilder {
         &self.runtime_environment
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
+    /// This field is required.
     pub fn service_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_execution_role = ::std::option::Option::Some(input.into());
         self

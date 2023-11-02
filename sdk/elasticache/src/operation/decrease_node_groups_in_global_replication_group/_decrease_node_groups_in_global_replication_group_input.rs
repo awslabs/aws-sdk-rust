@@ -24,12 +24,16 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         self.node_group_count
     }
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
-    pub fn global_node_groups_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.global_node_groups_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_node_groups_to_remove.is_none()`.
+    pub fn global_node_groups_to_remove(&self) -> &[::std::string::String] {
+        self.global_node_groups_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster. </p>
-    pub fn global_node_groups_to_retain(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.global_node_groups_to_retain.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_node_groups_to_retain.is_none()`.
+    pub fn global_node_groups_to_retain(&self) -> &[::std::string::String] {
+        self.global_node_groups_to_retain.as_deref().unwrap_or_default()
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
@@ -57,6 +61,7 @@ pub struct DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
+    /// This field is required.
     pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +76,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
+    /// This field is required.
     pub fn node_group_count(mut self, input: i32) -> Self {
         self.node_group_count = ::std::option::Option::Some(input);
         self
@@ -125,6 +131,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         &self.global_node_groups_to_retain
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
+    /// This field is required.
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct CreateLogSubscriptionInputBuilder {
 }
 impl CreateLogSubscriptionInputBuilder {
     /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateLogSubscriptionInputBuilder {
         &self.directory_id
     }
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self

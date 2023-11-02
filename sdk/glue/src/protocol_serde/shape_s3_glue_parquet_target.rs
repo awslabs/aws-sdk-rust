@@ -3,44 +3,44 @@ pub fn ser_s3_glue_parquet_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3GlueParquetTarget,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.inputs {
-        let mut array_3 = object.key("Inputs").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Inputs").start_array();
+        for item_2 in &input.inputs {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.partition_keys {
-        let mut array_6 = object.key("PartitionKeys").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.partition_keys {
+        let mut array_4 = object.key("PartitionKeys").start_array();
+        for item_5 in var_3 {
             {
-                let mut array_8 = array_6.value().start_array();
-                for item_9 in item_7 {
+                let mut array_6 = array_4.value().start_array();
+                for item_7 in item_5 {
                     {
-                        array_8.value().string(item_9.as_str());
+                        array_6.value().string(item_7.as_str());
                     }
                 }
-                array_8.finish();
+                array_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_10) = &input.path {
-        object.key("Path").string(var_10.as_str());
+    {
+        object.key("Path").string(input.path.as_str());
     }
-    if let Some(var_11) = &input.compression {
-        object.key("Compression").string(var_11.as_str());
+    if let Some(var_8) = &input.compression {
+        object.key("Compression").string(var_8.as_str());
     }
-    if let Some(var_12) = &input.schema_change_policy {
+    if let Some(var_9) = &input.schema_change_policy {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("SchemaChangePolicy").start_object();
-        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_10 = object.key("SchemaChangePolicy").start_object();
+        crate::protocol_serde::shape_direct_schema_change_policy::ser_direct_schema_change_policy(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }
@@ -103,7 +103,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_glue_parquet_target_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

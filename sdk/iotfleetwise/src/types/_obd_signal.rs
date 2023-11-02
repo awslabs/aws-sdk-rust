@@ -11,13 +11,13 @@ pub struct ObdSignal {
     /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
     pub pid: i32,
     /// <p>A multiplier used to decode the message.</p>
-    pub scaling: ::std::option::Option<f64>,
+    pub scaling: f64,
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
-    pub offset: ::std::option::Option<f64>,
+    pub offset: f64,
     /// <p>Indicates the beginning of the message.</p>
     pub start_byte: i32,
     /// <p>The length of a message.</p>
-    pub byte_length: ::std::option::Option<i32>,
+    pub byte_length: i32,
     /// <p>The number of positions to shift bits in the message.</p>
     pub bit_right_shift: i32,
     /// <p>The number of bits to mask in a message.</p>
@@ -37,11 +37,11 @@ impl ObdSignal {
         self.pid
     }
     /// <p>A multiplier used to decode the message.</p>
-    pub fn scaling(&self) -> ::std::option::Option<f64> {
+    pub fn scaling(&self) -> f64 {
         self.scaling
     }
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
-    pub fn offset(&self) -> ::std::option::Option<f64> {
+    pub fn offset(&self) -> f64 {
         self.offset
     }
     /// <p>Indicates the beginning of the message.</p>
@@ -49,7 +49,7 @@ impl ObdSignal {
         self.start_byte
     }
     /// <p>The length of a message.</p>
-    pub fn byte_length(&self) -> ::std::option::Option<i32> {
+    pub fn byte_length(&self) -> i32 {
         self.byte_length
     }
     /// <p>The number of positions to shift bits in the message.</p>
@@ -84,6 +84,7 @@ pub struct ObdSignalBuilder {
 }
 impl ObdSignalBuilder {
     /// <p>The length of the requested data.</p>
+    /// This field is required.
     pub fn pid_response_length(mut self, input: i32) -> Self {
         self.pid_response_length = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl ObdSignalBuilder {
         &self.pid_response_length
     }
     /// <p>The mode of operation (diagnostic service) in a message.</p>
+    /// This field is required.
     pub fn service_mode(mut self, input: i32) -> Self {
         self.service_mode = ::std::option::Option::Some(input);
         self
@@ -112,6 +114,7 @@ impl ObdSignalBuilder {
         &self.service_mode
     }
     /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
+    /// This field is required.
     pub fn pid(mut self, input: i32) -> Self {
         self.pid = ::std::option::Option::Some(input);
         self
@@ -126,6 +129,7 @@ impl ObdSignalBuilder {
         &self.pid
     }
     /// <p>A multiplier used to decode the message.</p>
+    /// This field is required.
     pub fn scaling(mut self, input: f64) -> Self {
         self.scaling = ::std::option::Option::Some(input);
         self
@@ -140,6 +144,7 @@ impl ObdSignalBuilder {
         &self.scaling
     }
     /// <p>The offset used to calculate the signal value. Combined with scaling, the calculation is <code>value = raw_value * scaling + offset</code>.</p>
+    /// This field is required.
     pub fn offset(mut self, input: f64) -> Self {
         self.offset = ::std::option::Option::Some(input);
         self
@@ -154,6 +159,7 @@ impl ObdSignalBuilder {
         &self.offset
     }
     /// <p>Indicates the beginning of the message.</p>
+    /// This field is required.
     pub fn start_byte(mut self, input: i32) -> Self {
         self.start_byte = ::std::option::Option::Some(input);
         self
@@ -168,6 +174,7 @@ impl ObdSignalBuilder {
         &self.start_byte
     }
     /// <p>The length of a message.</p>
+    /// This field is required.
     pub fn byte_length(mut self, input: i32) -> Self {
         self.byte_length = ::std::option::Option::Some(input);
         self
@@ -210,17 +217,36 @@ impl ObdSignalBuilder {
         &self.bit_mask_length
     }
     /// Consumes the builder and constructs a [`ObdSignal`](crate::types::ObdSignal).
-    pub fn build(self) -> crate::types::ObdSignal {
-        crate::types::ObdSignal {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scaling`](crate::types::builders::ObdSignalBuilder::scaling)
+    /// - [`offset`](crate::types::builders::ObdSignalBuilder::offset)
+    /// - [`byte_length`](crate::types::builders::ObdSignalBuilder::byte_length)
+    pub fn build(self) -> ::std::result::Result<crate::types::ObdSignal, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ObdSignal {
             pid_response_length: self.pid_response_length.unwrap_or_default(),
             service_mode: self.service_mode.unwrap_or_default(),
             pid: self.pid.unwrap_or_default(),
-            scaling: self.scaling,
-            offset: self.offset,
+            scaling: self.scaling.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scaling",
+                    "scaling was not specified but it is required when building ObdSignal",
+                )
+            })?,
+            offset: self.offset.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "offset",
+                    "offset was not specified but it is required when building ObdSignal",
+                )
+            })?,
             start_byte: self.start_byte.unwrap_or_default(),
-            byte_length: self.byte_length,
+            byte_length: self.byte_length.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "byte_length",
+                    "byte_length was not specified but it is required when building ObdSignal",
+                )
+            })?,
             bit_right_shift: self.bit_right_shift.unwrap_or_default(),
             bit_mask_length: self.bit_mask_length,
-        }
+        })
     }
 }

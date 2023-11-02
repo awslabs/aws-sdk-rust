@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryS3Output {
     /// <p>The S3 location of the result.</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
 }
 impl ProtectedQueryS3Output {
     /// <p>The S3 location of the result.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
 }
 impl ProtectedQueryS3Output {
@@ -28,6 +29,7 @@ pub struct ProtectedQueryS3OutputBuilder {
 }
 impl ProtectedQueryS3OutputBuilder {
     /// <p>The S3 location of the result.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl ProtectedQueryS3OutputBuilder {
         &self.location
     }
     /// Consumes the builder and constructs a [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
-    pub fn build(self) -> crate::types::ProtectedQueryS3Output {
-        crate::types::ProtectedQueryS3Output { location: self.location }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`location`](crate::types::builders::ProtectedQueryS3OutputBuilder::location)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryS3Output, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectedQueryS3Output {
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building ProtectedQueryS3Output",
+                )
+            })?,
+        })
     }
 }

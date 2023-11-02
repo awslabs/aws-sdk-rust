@@ -27,12 +27,16 @@ impl Pipeline {
         self.arn.as_deref()
     }
     /// <p>The activities that perform transformations on the messages.</p>
-    pub fn activities(&self) -> ::std::option::Option<&[crate::types::PipelineActivity]> {
-        self.activities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activities.is_none()`.
+    pub fn activities(&self) -> &[crate::types::PipelineActivity] {
+        self.activities.as_deref().unwrap_or_default()
     }
     /// <p>A summary of information about the pipeline reprocessing.</p>
-    pub fn reprocessing_summaries(&self) -> ::std::option::Option<&[crate::types::ReprocessingSummary]> {
-        self.reprocessing_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reprocessing_summaries.is_none()`.
+    pub fn reprocessing_summaries(&self) -> &[crate::types::ReprocessingSummary] {
+        self.reprocessing_summaries.as_deref().unwrap_or_default()
     }
     /// <p>When the pipeline was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

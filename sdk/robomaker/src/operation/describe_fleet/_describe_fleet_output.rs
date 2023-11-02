@@ -34,8 +34,10 @@ impl DescribeFleetOutput {
         self.arn.as_deref()
     }
     /// <p>A list of robots.</p>
-    pub fn robots(&self) -> ::std::option::Option<&[crate::types::Robot]> {
-        self.robots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robots.is_none()`.
+    pub fn robots(&self) -> &[crate::types::Robot] {
+        self.robots.as_deref().unwrap_or_default()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

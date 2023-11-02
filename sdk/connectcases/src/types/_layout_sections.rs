@@ -9,8 +9,10 @@ pub struct LayoutSections {
 }
 impl LayoutSections {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    pub fn sections(&self) -> ::std::option::Option<&[crate::types::Section]> {
-        self.sections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sections.is_none()`.
+    pub fn sections(&self) -> &[crate::types::Section] {
+        self.sections.as_deref().unwrap_or_default()
     }
 }
 impl LayoutSections {

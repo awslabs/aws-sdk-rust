@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Aliases {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
     pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Aliases {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl Aliases {
@@ -35,6 +37,7 @@ pub struct AliasesBuilder {
 }
 impl AliasesBuilder {
     /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl AliasesBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`Aliases`](crate::types::Aliases).
-    pub fn build(self) -> crate::types::Aliases {
-        crate::types::Aliases {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::AliasesBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::Aliases, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Aliases {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building Aliases",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

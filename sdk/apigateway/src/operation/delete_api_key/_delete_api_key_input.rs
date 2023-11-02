@@ -28,6 +28,7 @@ pub struct DeleteApiKeyInputBuilder {
 }
 impl DeleteApiKeyInputBuilder {
     /// <p>The identifier of the ApiKey resource to be deleted.</p>
+    /// This field is required.
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
         self

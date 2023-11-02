@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVocabularyFilter`](crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder::set_vocabulary_filter_name): <p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p>
+    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::operation::get_vocabulary_filter::builders::GetVocabularyFilterFluentBuilder::set_vocabulary_filter_name):<br>required: **true**<br><p>The name of the custom vocabulary filter you want information about. Custom vocabulary filter names are case sensitive.</p><br>
     /// - On success, responds with [`GetVocabularyFilterOutput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput) with field(s):
     ///   - [`vocabulary_filter_name(Option<String>)`](crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput::vocabulary_filter_name): <p>The name of the custom vocabulary filter you requested information about.</p>
     ///   - [`language_code(Option<LanguageCode>)`](crate::operation::get_vocabulary_filter::GetVocabularyFilterOutput::language_code): <p>The language code you selected for your custom vocabulary filter.</p>

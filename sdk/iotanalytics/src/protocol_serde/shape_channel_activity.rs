@@ -3,14 +3,14 @@ pub fn ser_channel_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChannelActivity,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.channel_name {
-        object.key("channelName").string(var_2.as_str());
+    {
+        object.key("channelName").string(input.channel_name.as_str());
     }
-    if let Some(var_3) = &input.next {
-        object.key("next").string(var_3.as_str());
+    if let Some(var_1) = &input.next {
+        object.key("next").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::channel_activity_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -26,8 +26,10 @@ impl ListLensReviewsOutput {
         self.milestone_number
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub fn lens_review_summaries(&self) -> ::std::option::Option<&[crate::types::LensReviewSummary]> {
-        self.lens_review_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lens_review_summaries.is_none()`.
+    pub fn lens_review_summaries(&self) -> &[crate::types::LensReviewSummary] {
+        self.lens_review_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

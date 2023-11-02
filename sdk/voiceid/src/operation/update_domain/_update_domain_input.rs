@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDomainInput {
     /// <p>The identifier of the domain to be updated.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The name of the domain.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A brief description about this domain.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
@@ -14,12 +14,14 @@ pub struct UpdateDomainInput {
 }
 impl UpdateDomainInput {
     /// <p>The identifier of the domain to be updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A brief description about this domain.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -58,6 +60,7 @@ pub struct UpdateDomainInputBuilder {
 }
 impl UpdateDomainInputBuilder {
     /// <p>The identifier of the domain to be updated.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl UpdateDomainInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +104,7 @@ impl UpdateDomainInputBuilder {
         &self.description
     }
     /// <p>The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Changing the domain's associated KMS key immediately triggers an asynchronous process to remove dependency on the old KMS key, such that the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the details for this process.</p>
+    /// This field is required.
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
@@ -114,10 +119,23 @@ impl UpdateDomainInputBuilder {
         &self.server_side_encryption_configuration
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::update_domain::builders::UpdateDomainInputBuilder::domain_id)
+    /// - [`name`](crate::operation::update_domain::builders::UpdateDomainInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainInput {
-            domain_id: self.domain_id,
-            name: self.name,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building UpdateDomainInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateDomainInput",
+                )
+            })?,
             description: self.description,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
         })

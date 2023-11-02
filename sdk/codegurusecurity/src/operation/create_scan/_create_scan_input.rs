@@ -86,6 +86,7 @@ impl CreateScanInputBuilder {
         &self.client_token
     }
     /// <p>The identifier for an input resource used to create a scan.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: crate::types::ResourceId) -> Self {
         self.resource_id = ::std::option::Option::Some(input);
         self
@@ -100,6 +101,7 @@ impl CreateScanInputBuilder {
         &self.resource_id
     }
     /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated. </p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self

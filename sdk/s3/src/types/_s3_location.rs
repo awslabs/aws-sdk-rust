@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the bucket where the restore results will be placed.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>The prefix that is prepended to the restore results for this request.</p>
-    pub prefix: ::std::option::Option<::std::string::String>,
+    pub prefix: ::std::string::String,
     /// <p>Contains the type of server-side encryption used.</p>
     pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p>The canned ACL to apply to the restore results.</p>
@@ -23,12 +23,14 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The name of the bucket where the restore results will be placed.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>The prefix that is prepended to the restore results for this request.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
-        self.prefix.as_deref()
+    pub fn prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.prefix.deref()
     }
     /// <p>Contains the type of server-side encryption used.</p>
     pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
@@ -39,16 +41,20 @@ impl S3Location {
         self.canned_acl.as_ref()
     }
     /// <p>A list of grants that control access to the staged results.</p>
-    pub fn access_control_list(&self) -> ::std::option::Option<&[crate::types::Grant]> {
-        self.access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
+    pub fn access_control_list(&self) -> &[crate::types::Grant] {
+        self.access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The tag-set that is applied to the restore results.</p>
     pub fn tagging(&self) -> ::std::option::Option<&crate::types::Tagging> {
         self.tagging.as_ref()
     }
     /// <p>A list of metadata to store with the restore results in S3.</p>
-    pub fn user_metadata(&self) -> ::std::option::Option<&[crate::types::MetadataEntry]> {
-        self.user_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_metadata.is_none()`.
+    pub fn user_metadata(&self) -> &[crate::types::MetadataEntry] {
+        self.user_metadata.as_deref().unwrap_or_default()
     }
     /// <p>The class of storage used to store the restore results.</p>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
@@ -77,6 +83,7 @@ pub struct S3LocationBuilder {
 }
 impl S3LocationBuilder {
     /// <p>The name of the bucket where the restore results will be placed.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl S3LocationBuilder {
         &self.bucket_name
     }
     /// <p>The prefix that is prepended to the restore results for this request.</p>
+    /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
@@ -201,16 +209,29 @@ impl S3LocationBuilder {
         &self.storage_class
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
-    pub fn build(self) -> crate::types::S3Location {
-        crate::types::S3Location {
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3LocationBuilder::bucket_name)
+    /// - [`prefix`](crate::types::builders::S3LocationBuilder::prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Location, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Location {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3Location",
+                )
+            })?,
+            prefix: self.prefix.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "prefix",
+                    "prefix was not specified but it is required when building S3Location",
+                )
+            })?,
             encryption: self.encryption,
             canned_acl: self.canned_acl,
             access_control_list: self.access_control_list,
             tagging: self.tagging,
             user_metadata: self.user_metadata,
             storage_class: self.storage_class,
-        }
+        })
     }
 }

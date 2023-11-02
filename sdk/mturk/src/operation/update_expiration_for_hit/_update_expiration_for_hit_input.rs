@@ -34,6 +34,7 @@ pub struct UpdateExpirationForHitInputBuilder {
 }
 impl UpdateExpirationForHitInputBuilder {
     /// <p> The HIT to update. </p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateExpirationForHitInputBuilder {
         &self.hit_id
     }
     /// <p> The date and time at which you want the HIT to expire </p>
+    /// This field is required.
     pub fn expire_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expire_at = ::std::option::Option::Some(input);
         self

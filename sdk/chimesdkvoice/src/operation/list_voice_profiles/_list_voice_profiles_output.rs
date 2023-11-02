@@ -11,8 +11,10 @@ pub struct ListVoiceProfilesOutput {
 }
 impl ListVoiceProfilesOutput {
     /// <p>The list of voice profiles.</p>
-    pub fn voice_profiles(&self) -> ::std::option::Option<&[crate::types::VoiceProfileSummary]> {
-        self.voice_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_profiles.is_none()`.
+    pub fn voice_profiles(&self) -> &[crate::types::VoiceProfileSummary] {
+        self.voice_profiles.as_deref().unwrap_or_default()
     }
     /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

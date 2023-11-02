@@ -5,23 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogOddsMetric {
     /// <p>The name of the variable.</p>
-    pub variable_name: ::std::option::Option<::std::string::String>,
+    pub variable_name: ::std::string::String,
     /// <p>The type of variable.</p>
-    pub variable_type: ::std::option::Option<::std::string::String>,
+    pub variable_type: ::std::string::String,
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
-    pub variable_importance: ::std::option::Option<f32>,
+    pub variable_importance: f32,
 }
 impl LogOddsMetric {
     /// <p>The name of the variable.</p>
-    pub fn variable_name(&self) -> ::std::option::Option<&str> {
-        self.variable_name.as_deref()
+    pub fn variable_name(&self) -> &str {
+        use std::ops::Deref;
+        self.variable_name.deref()
     }
     /// <p>The type of variable.</p>
-    pub fn variable_type(&self) -> ::std::option::Option<&str> {
-        self.variable_type.as_deref()
+    pub fn variable_type(&self) -> &str {
+        use std::ops::Deref;
+        self.variable_type.deref()
     }
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
-    pub fn variable_importance(&self) -> ::std::option::Option<f32> {
+    pub fn variable_importance(&self) -> f32 {
         self.variable_importance
     }
 }
@@ -42,6 +44,7 @@ pub struct LogOddsMetricBuilder {
 }
 impl LogOddsMetricBuilder {
     /// <p>The name of the variable.</p>
+    /// This field is required.
     pub fn variable_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl LogOddsMetricBuilder {
         &self.variable_name
     }
     /// <p>The type of variable.</p>
+    /// This field is required.
     pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_type = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl LogOddsMetricBuilder {
         &self.variable_type
     }
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
+    /// This field is required.
     pub fn variable_importance(mut self, input: f32) -> Self {
         self.variable_importance = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl LogOddsMetricBuilder {
         &self.variable_importance
     }
     /// Consumes the builder and constructs a [`LogOddsMetric`](crate::types::LogOddsMetric).
-    pub fn build(self) -> crate::types::LogOddsMetric {
-        crate::types::LogOddsMetric {
-            variable_name: self.variable_name,
-            variable_type: self.variable_type,
-            variable_importance: self.variable_importance,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`variable_name`](crate::types::builders::LogOddsMetricBuilder::variable_name)
+    /// - [`variable_type`](crate::types::builders::LogOddsMetricBuilder::variable_type)
+    /// - [`variable_importance`](crate::types::builders::LogOddsMetricBuilder::variable_importance)
+    pub fn build(self) -> ::std::result::Result<crate::types::LogOddsMetric, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LogOddsMetric {
+            variable_name: self.variable_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "variable_name",
+                    "variable_name was not specified but it is required when building LogOddsMetric",
+                )
+            })?,
+            variable_type: self.variable_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "variable_type",
+                    "variable_type was not specified but it is required when building LogOddsMetric",
+                )
+            })?,
+            variable_importance: self.variable_importance.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "variable_importance",
+                    "variable_importance was not specified but it is required when building LogOddsMetric",
+                )
+            })?,
+        })
     }
 }

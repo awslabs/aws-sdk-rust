@@ -41,6 +41,7 @@ pub struct SearchResourcesInputBuilder {
 }
 impl SearchResourcesInputBuilder {
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
+    /// This field is required.
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.resource_query = ::std::option::Option::Some(input);
         self

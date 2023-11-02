@@ -50,6 +50,7 @@ pub struct ExecuteScheduledQueryInputBuilder {
 }
 impl ExecuteScheduledQueryInputBuilder {
     /// <p>ARN of the scheduled query.</p>
+    /// This field is required.
     pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ExecuteScheduledQueryInputBuilder {
         &self.scheduled_query_arn
     }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
+    /// This field is required.
     pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invocation_time = ::std::option::Option::Some(input);
         self

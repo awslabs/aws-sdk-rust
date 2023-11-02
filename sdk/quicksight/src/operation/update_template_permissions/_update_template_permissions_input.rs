@@ -22,12 +22,16 @@ impl UpdateTemplatePermissionsInput {
         self.template_id.as_deref()
     }
     /// <p>A list of resource permissions to be granted on the template. </p>
-    pub fn grant_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.grant_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
+    pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.grant_permissions.as_deref().unwrap_or_default()
     }
     /// <p>A list of resource permissions to be revoked from the template. </p>
-    pub fn revoke_permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.revoke_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
+    pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.revoke_permissions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTemplatePermissionsInput {
@@ -48,6 +52,7 @@ pub struct UpdateTemplatePermissionsInputBuilder {
 }
 impl UpdateTemplatePermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl UpdateTemplatePermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self

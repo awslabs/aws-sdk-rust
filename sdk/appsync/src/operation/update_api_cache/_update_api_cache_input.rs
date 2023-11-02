@@ -101,6 +101,7 @@ pub struct UpdateApiCacheInputBuilder {
 }
 impl UpdateApiCacheInputBuilder {
     /// <p>The GraphQL API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +117,7 @@ impl UpdateApiCacheInputBuilder {
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
+    /// This field is required.
     pub fn ttl(mut self, input: i64) -> Self {
         self.ttl = ::std::option::Option::Some(input);
         self
@@ -136,6 +138,7 @@ impl UpdateApiCacheInputBuilder {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn api_caching_behavior(mut self, input: crate::types::ApiCachingBehavior) -> Self {
         self.api_caching_behavior = ::std::option::Option::Some(input);
         self
@@ -179,6 +182,7 @@ impl UpdateApiCacheInputBuilder {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ApiCacheType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct GetDomainInputBuilder {
 }
 impl GetDomainInputBuilder {
     /// <p>The domain name for which your want to return information about.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

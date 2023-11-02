@@ -107,8 +107,10 @@ impl Cluster {
         self.tags.as_ref()
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&[crate::types::EncryptionConfig]> {
-        self.encryption_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encryption_config.is_none()`.
+    pub fn encryption_config(&self) -> &[crate::types::EncryptionConfig] {
+        self.encryption_config.as_deref().unwrap_or_default()
     }
     /// <p>The configuration used to connect to a cluster for registration.</p>
     pub fn connector_config(&self) -> ::std::option::Option<&crate::types::ConnectorConfigResponse> {

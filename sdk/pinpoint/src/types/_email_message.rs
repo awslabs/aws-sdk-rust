@@ -37,8 +37,10 @@ impl EmailMessage {
         self.raw_email.as_ref()
     }
     /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
-    pub fn reply_to_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reply_to_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reply_to_addresses.is_none()`.
+    pub fn reply_to_addresses(&self) -> &[::std::string::String] {
+        self.reply_to_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
     pub fn simple_email(&self) -> ::std::option::Option<&crate::types::SimpleEmail> {

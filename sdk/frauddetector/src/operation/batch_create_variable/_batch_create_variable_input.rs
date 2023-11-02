@@ -10,12 +10,16 @@ pub struct BatchCreateVariableInput {
 }
 impl BatchCreateVariableInput {
     /// <p>The list of variables for the batch create variable request.</p>
-    pub fn variable_entries(&self) -> ::std::option::Option<&[crate::types::VariableEntry]> {
-        self.variable_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variable_entries.is_none()`.
+    pub fn variable_entries(&self) -> &[crate::types::VariableEntry] {
+        self.variable_entries.as_deref().unwrap_or_default()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateVariableInput {

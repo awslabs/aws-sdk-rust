@@ -82,79 +82,55 @@ pub(crate) fn reflens_validate_policy_output_next_token(
 pub(crate) fn lens_list_access_preview_findings_output_findings(
     input: crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>> {
-    let input = match input.findings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_access_previews_output_access_previews(
     input: crate::operation::list_access_previews::ListAccessPreviewsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewSummary>> {
-    let input = match input.access_previews {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.access_previews;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_analyzed_resources_output_analyzed_resources(
     input: crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalyzedResourceSummary>> {
-    let input = match input.analyzed_resources {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.analyzed_resources;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_analyzers_output_analyzers(
     input: crate::operation::list_analyzers::ListAnalyzersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>> {
-    let input = match input.analyzers {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.analyzers;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_archive_rules_output_archive_rules(
     input: crate::operation::list_archive_rules::ListArchiveRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>> {
-    let input = match input.archive_rules {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.archive_rules;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_findings_output_findings(
     input: crate::operation::list_findings::ListFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>> {
-    let input = match input.findings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_policy_generations_output_policy_generations(
     input: crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
-    let input = match input.policy_generations {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.policy_generations;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_validate_policy_output_findings(
     input: crate::operation::validate_policy::ValidatePolicyOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>> {
-    let input = match input.findings {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.findings;
     ::std::option::Option::Some(input)
 }

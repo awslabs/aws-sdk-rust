@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutboundCallConfig {
     /// The identifier of the contact flow for the outbound call.
-    pub connect_contact_flow_id: ::std::option::Option<::std::string::String>,
+    pub connect_contact_flow_id: ::std::string::String,
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub connect_source_phone_number: ::std::option::Option<::std::string::String>,
     /// The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
@@ -15,8 +15,9 @@ pub struct OutboundCallConfig {
 }
 impl OutboundCallConfig {
     /// The identifier of the contact flow for the outbound call.
-    pub fn connect_contact_flow_id(&self) -> ::std::option::Option<&str> {
-        self.connect_contact_flow_id.as_deref()
+    pub fn connect_contact_flow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connect_contact_flow_id.deref()
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub fn connect_source_phone_number(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct OutboundCallConfigBuilder {
 }
 impl OutboundCallConfigBuilder {
     /// The identifier of the contact flow for the outbound call.
+    /// This field is required.
     pub fn connect_contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_contact_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl OutboundCallConfigBuilder {
         &self.answer_machine_detection_config
     }
     /// Consumes the builder and constructs a [`OutboundCallConfig`](crate::types::OutboundCallConfig).
-    pub fn build(self) -> crate::types::OutboundCallConfig {
-        crate::types::OutboundCallConfig {
-            connect_contact_flow_id: self.connect_contact_flow_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connect_contact_flow_id`](crate::types::builders::OutboundCallConfigBuilder::connect_contact_flow_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutboundCallConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutboundCallConfig {
+            connect_contact_flow_id: self.connect_contact_flow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connect_contact_flow_id",
+                    "connect_contact_flow_id was not specified but it is required when building OutboundCallConfig",
+                )
+            })?,
             connect_source_phone_number: self.connect_source_phone_number,
             connect_queue_id: self.connect_queue_id,
             answer_machine_detection_config: self.answer_machine_detection_config,
-        }
+        })
     }
 }

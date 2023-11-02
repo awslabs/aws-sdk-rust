@@ -28,16 +28,20 @@ impl CreateNotificationRuleInput {
         self.name.as_deref()
     }
     /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
-    pub fn event_type_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_type_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_ids.is_none()`.
+    pub fn event_type_ids(&self) -> &[::std::string::String] {
+        self.event_type_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
     pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> ::std::option::Option<&crate::types::DetailType> {
@@ -94,6 +98,7 @@ pub struct CreateNotificationRuleInputBuilder {
 }
 impl CreateNotificationRuleInputBuilder {
     /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +133,7 @@ impl CreateNotificationRuleInputBuilder {
         &self.event_type_ids
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit, and build projects in CodeBuild.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -162,6 +168,7 @@ impl CreateNotificationRuleInputBuilder {
         &self.targets
     }
     /// <p>The level of detail to include in the notifications for this resource. <code>BASIC</code> will include only the contents of the event as it would appear in Amazon CloudWatch. <code>FULL</code> will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// This field is required.
     pub fn detail_type(mut self, input: crate::types::DetailType) -> Self {
         self.detail_type = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DeregisterEcsClusterInputBuilder {
 }
 impl DeregisterEcsClusterInputBuilder {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
+    /// This field is required.
     pub fn ecs_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self

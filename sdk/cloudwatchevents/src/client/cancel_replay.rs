@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelReplay`](crate::operation::cancel_replay::builders::CancelReplayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replay_name(impl Into<String>)`](crate::operation::cancel_replay::builders::CancelReplayFluentBuilder::replay_name) / [`set_replay_name(Option<String>)`](crate::operation::cancel_replay::builders::CancelReplayFluentBuilder::set_replay_name): <p>The name of the replay to cancel.</p>
+    ///   - [`replay_name(impl Into<String>)`](crate::operation::cancel_replay::builders::CancelReplayFluentBuilder::replay_name) / [`set_replay_name(Option<String>)`](crate::operation::cancel_replay::builders::CancelReplayFluentBuilder::set_replay_name):<br>required: **true**<br><p>The name of the replay to cancel.</p><br>
     /// - On success, responds with [`CancelReplayOutput`](crate::operation::cancel_replay::CancelReplayOutput) with field(s):
     ///   - [`replay_arn(Option<String>)`](crate::operation::cancel_replay::CancelReplayOutput::replay_arn): <p>The ARN of the replay to cancel.</p>
     ///   - [`state(Option<ReplayState>)`](crate::operation::cancel_replay::CancelReplayOutput::state): <p>The current state of the replay.</p>

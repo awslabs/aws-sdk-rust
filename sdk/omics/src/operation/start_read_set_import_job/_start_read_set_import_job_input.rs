@@ -26,8 +26,10 @@ impl StartReadSetImportJobInput {
         self.client_token.as_deref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::StartReadSetImportJobSourceItem]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::StartReadSetImportJobSourceItem] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl StartReadSetImportJobInput {
@@ -48,6 +50,7 @@ pub struct StartReadSetImportJobInputBuilder {
 }
 impl StartReadSetImportJobInputBuilder {
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl StartReadSetImportJobInputBuilder {
         &self.sequence_store_id
     }
     /// <p>A service role for the job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

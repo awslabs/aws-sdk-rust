@@ -14,8 +14,10 @@ impl DescribeSecurityGroupReferencesInput {
         self.dry_run
     }
     /// <p>The IDs of the security groups in your account.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_id.is_none()`.
+    pub fn group_id(&self) -> &[::std::string::String] {
+        self.group_id.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSecurityGroupReferencesInput {

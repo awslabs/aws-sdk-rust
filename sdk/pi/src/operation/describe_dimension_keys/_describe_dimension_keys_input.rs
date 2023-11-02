@@ -104,8 +104,10 @@ impl DescribeDimensionKeysInput {
         self.group_by.as_ref()
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>. </p>
-    pub fn additional_metrics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_metrics.is_none()`.
+    pub fn additional_metrics(&self) -> &[::std::string::String] {
+        self.additional_metrics.as_deref().unwrap_or_default()
     }
     /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response. </p>
     pub fn partition_by(&self) -> ::std::option::Option<&crate::types::DimensionGroup> {
@@ -158,6 +160,7 @@ impl DescribeDimensionKeysInputBuilder {
     /// <li> <p> <code>RDS</code> </p> </li>
     /// <li> <p> <code>DOCDB</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -181,6 +184,7 @@ impl DescribeDimensionKeysInputBuilder {
     }
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -198,6 +202,7 @@ impl DescribeDimensionKeysInputBuilder {
     }
     /// <p>The date and time specifying the beginning of the requested time series data. You must specify a <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code> are returned. </p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -215,6 +220,7 @@ impl DescribeDimensionKeysInputBuilder {
     }
     /// <p>The date and time specifying the end of the requested time series data. The value specified is <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -237,6 +243,7 @@ impl DescribeDimensionKeysInputBuilder {
     /// <li> <p> <code>db.sampledload.avg</code> - The raw number of active sessions for the database engine. </p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
+    /// This field is required.
     pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric = ::std::option::Option::Some(input.into());
         self
@@ -301,6 +308,7 @@ impl DescribeDimensionKeysInputBuilder {
         &self.period_in_seconds
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension. </p>
+    /// This field is required.
     pub fn group_by(mut self, input: crate::types::DimensionGroup) -> Self {
         self.group_by = ::std::option::Option::Some(input);
         self

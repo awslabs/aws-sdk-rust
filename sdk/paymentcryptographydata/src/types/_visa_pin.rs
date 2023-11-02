@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisaPin {
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
-    pub pin_verification_key_index: ::std::option::Option<i32>,
+    pub pin_verification_key_index: i32,
 }
 impl VisaPin {
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
-    pub fn pin_verification_key_index(&self) -> ::std::option::Option<i32> {
+    pub fn pin_verification_key_index(&self) -> i32 {
         self.pin_verification_key_index
     }
 }
@@ -28,6 +28,7 @@ pub struct VisaPinBuilder {
 }
 impl VisaPinBuilder {
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
+    /// This field is required.
     pub fn pin_verification_key_index(mut self, input: i32) -> Self {
         self.pin_verification_key_index = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl VisaPinBuilder {
         &self.pin_verification_key_index
     }
     /// Consumes the builder and constructs a [`VisaPin`](crate::types::VisaPin).
-    pub fn build(self) -> crate::types::VisaPin {
-        crate::types::VisaPin {
-            pin_verification_key_index: self.pin_verification_key_index,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pin_verification_key_index`](crate::types::builders::VisaPinBuilder::pin_verification_key_index)
+    pub fn build(self) -> ::std::result::Result<crate::types::VisaPin, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VisaPin {
+            pin_verification_key_index: self.pin_verification_key_index.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pin_verification_key_index",
+                    "pin_verification_key_index was not specified but it is required when building VisaPin",
+                )
+            })?,
+        })
     }
 }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub target_identifier: ::std::option::Option<::std::string::String>,
+    pub target_identifier: ::std::string::String,
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>How many results to return per API call.</p>
@@ -12,8 +12,9 @@ pub struct ListEnabledControlsInput {
 }
 impl ListEnabledControlsInput {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
-        self.target_identifier.as_deref()
+    pub fn target_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.target_identifier.deref()
     }
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct ListEnabledControlsInputBuilder {
 }
 impl ListEnabledControlsInputBuilder {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// This field is required.
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,12 +85,19 @@ impl ListEnabledControlsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_identifier`](crate::operation::list_enabled_controls::builders::ListEnabledControlsInputBuilder::target_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_enabled_controls::ListEnabledControlsInput {
-            target_identifier: self.target_identifier,
+            target_identifier: self.target_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_identifier",
+                    "target_identifier was not specified but it is required when building ListEnabledControlsInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
         })

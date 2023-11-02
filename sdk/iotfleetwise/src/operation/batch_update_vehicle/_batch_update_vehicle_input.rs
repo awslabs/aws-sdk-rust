@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleInput {
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
+    pub vehicles: ::std::vec::Vec<crate::types::UpdateVehicleRequestItem>,
 }
 impl BatchUpdateVehicleInput {
     /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn vehicles(&self) -> ::std::option::Option<&[crate::types::UpdateVehicleRequestItem]> {
-        self.vehicles.as_deref()
+    pub fn vehicles(&self) -> &[crate::types::UpdateVehicleRequestItem] {
+        use std::ops::Deref;
+        self.vehicles.deref()
     }
 }
 impl BatchUpdateVehicleInput {
@@ -47,9 +48,18 @@ impl BatchUpdateVehicleInputBuilder {
         &self.vehicles
     }
     /// Consumes the builder and constructs a [`BatchUpdateVehicleInput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicles`](crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder::vehicles)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_update_vehicle::BatchUpdateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_update_vehicle::BatchUpdateVehicleInput { vehicles: self.vehicles })
+        ::std::result::Result::Ok(crate::operation::batch_update_vehicle::BatchUpdateVehicleInput {
+            vehicles: self.vehicles.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicles",
+                    "vehicles was not specified but it is required when building BatchUpdateVehicleInput",
+                )
+            })?,
+        })
     }
 }

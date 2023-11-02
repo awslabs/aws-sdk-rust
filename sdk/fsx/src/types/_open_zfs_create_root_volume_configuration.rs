@@ -37,12 +37,16 @@ impl OpenZfsCreateRootVolumeConfiguration {
         self.data_compression_type.as_ref()
     }
     /// <p>The configuration object for mounting a file system.</p>
-    pub fn nfs_exports(&self) -> ::std::option::Option<&[crate::types::OpenZfsNfsExport]> {
-        self.nfs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nfs_exports.is_none()`.
+    pub fn nfs_exports(&self) -> &[crate::types::OpenZfsNfsExport] {
+        self.nfs_exports.as_deref().unwrap_or_default()
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn user_and_group_quotas(&self) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
-        self.user_and_group_quotas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_and_group_quotas.is_none()`.
+    pub fn user_and_group_quotas(&self) -> &[crate::types::OpenZfsUserOrGroupQuota] {
+        self.user_and_group_quotas.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
     pub fn copy_tags_to_snapshots(&self) -> ::std::option::Option<bool> {

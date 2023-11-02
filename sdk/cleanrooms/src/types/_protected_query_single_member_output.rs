@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQuerySingleMemberOutput {
     /// <p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
 }
 impl ProtectedQuerySingleMemberOutput {
     /// <p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
 }
 impl ProtectedQuerySingleMemberOutput {
@@ -28,6 +29,7 @@ pub struct ProtectedQuerySingleMemberOutputBuilder {
 }
 impl ProtectedQuerySingleMemberOutputBuilder {
     /// <p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl ProtectedQuerySingleMemberOutputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ProtectedQuerySingleMemberOutput`](crate::types::ProtectedQuerySingleMemberOutput).
-    pub fn build(self) -> crate::types::ProtectedQuerySingleMemberOutput {
-        crate::types::ProtectedQuerySingleMemberOutput { account_id: self.account_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::ProtectedQuerySingleMemberOutputBuilder::account_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQuerySingleMemberOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectedQuerySingleMemberOutput {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building ProtectedQuerySingleMemberOutput",
+                )
+            })?,
+        })
     }
 }

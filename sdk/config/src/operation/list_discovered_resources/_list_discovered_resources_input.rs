@@ -23,8 +23,10 @@ impl ListDiscoveredResourcesInput {
         self.resource_type.as_ref()
     }
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[::std::string::String] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ pub struct ListDiscoveredResourcesInputBuilder {
 }
 impl ListDiscoveredResourcesInputBuilder {
     /// <p>The type of resources that you want Config to list in the response.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

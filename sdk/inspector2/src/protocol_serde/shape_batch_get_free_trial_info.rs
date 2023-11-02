@@ -32,11 +32,10 @@ pub fn de_batch_get_free_trial_info_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::InternalServerException({
@@ -54,11 +53,10 @@ pub fn de_batch_get_free_trial_info_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::ThrottlingException({
@@ -76,11 +74,10 @@ pub fn de_batch_get_free_trial_info_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::ValidationException({
@@ -91,11 +88,10 @@ pub fn de_batch_get_free_trial_info_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::generic(generic),
@@ -117,7 +113,9 @@ pub fn de_batch_get_free_trial_info_http_response(
         output = crate::protocol_serde::shape_batch_get_free_trial_info::de_batch_get_free_trial_info(_response_body, output)
             .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_get_free_trial_info_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError::unhandled)?
     })
 }
 

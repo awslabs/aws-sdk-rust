@@ -50,11 +50,10 @@ pub fn de_start_failback_launch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_failback_launch::StartFailbackLaunchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::start_failback_launch::StartFailbackLaunchError::ServiceQuotaExceededException({
@@ -90,11 +89,10 @@ pub fn de_start_failback_launch_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_failback_launch::StartFailbackLaunchError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::start_failback_launch::StartFailbackLaunchError::UninitializedAccountException({

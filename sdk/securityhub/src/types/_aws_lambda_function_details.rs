@@ -81,8 +81,10 @@ impl AwsLambdaFunctionDetails {
         self.last_modified.as_deref()
     }
     /// <p>The function's layers.</p>
-    pub fn layers(&self) -> ::std::option::Option<&[crate::types::AwsLambdaFunctionLayer]> {
-        self.layers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layers.is_none()`.
+    pub fn layers(&self) -> &[crate::types::AwsLambdaFunctionLayer] {
+        self.layers.as_deref().unwrap_or_default()
     }
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub fn master_arn(&self) -> ::std::option::Option<&str> {
@@ -121,8 +123,10 @@ impl AwsLambdaFunctionDetails {
         self.version.as_deref()
     }
     /// <p>The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or <code>arm64</code>.</p>
-    pub fn architectures(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[::std::string::String] {
+        self.architectures.as_deref().unwrap_or_default()
     }
     /// <p>The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive. </p>
     pub fn package_type(&self) -> ::std::option::Option<&str> {

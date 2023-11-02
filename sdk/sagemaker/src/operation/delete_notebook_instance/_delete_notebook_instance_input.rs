@@ -27,6 +27,7 @@ pub struct DeleteNotebookInstanceInputBuilder {
 }
 impl DeleteNotebookInstanceInputBuilder {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self

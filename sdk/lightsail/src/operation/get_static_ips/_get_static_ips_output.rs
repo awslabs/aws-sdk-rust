@@ -13,8 +13,10 @@ pub struct GetStaticIpsOutput {
 }
 impl GetStaticIpsOutput {
     /// <p>An array of key-value pairs containing information about your get static IPs request.</p>
-    pub fn static_ips(&self) -> ::std::option::Option<&[crate::types::StaticIp]> {
-        self.static_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_ips.is_none()`.
+    pub fn static_ips(&self) -> &[crate::types::StaticIp] {
+        self.static_ips.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

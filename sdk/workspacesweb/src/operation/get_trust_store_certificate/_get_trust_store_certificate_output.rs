@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrustStoreCertificateOutput {
     /// <p>The ARN of the trust store certificate.</p>
-    pub trust_store_arn: ::std::option::Option<::std::string::String>,
+    pub trust_store_arn: ::std::string::String,
     /// <p>The certificate of the trust store certificate.</p>
     pub certificate: ::std::option::Option<crate::types::Certificate>,
     _request_id: Option<String>,
 }
 impl GetTrustStoreCertificateOutput {
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
-        self.trust_store_arn.as_deref()
+    pub fn trust_store_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.trust_store_arn.deref()
     }
     /// <p>The certificate of the trust store certificate.</p>
     pub fn certificate(&self) -> ::std::option::Option<&crate::types::Certificate> {
@@ -41,6 +42,7 @@ pub struct GetTrustStoreCertificateOutputBuilder {
 }
 impl GetTrustStoreCertificateOutputBuilder {
     /// <p>The ARN of the trust store certificate.</p>
+    /// This field is required.
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +80,23 @@ impl GetTrustStoreCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTrustStoreCertificateOutput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput).
-    pub fn build(self) -> crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
-        crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
-            trust_store_arn: self.trust_store_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`trust_store_arn`](crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder::trust_store_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
+            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "trust_store_arn",
+                    "trust_store_arn was not specified but it is required when building GetTrustStoreCertificateOutput",
+                )
+            })?,
             certificate: self.certificate,
             _request_id: self._request_id,
-        }
+        })
     }
 }

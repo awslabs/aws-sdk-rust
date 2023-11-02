@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptionMessagesConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
+    pub state: crate::types::ArtifactsConcatenationState,
 }
 impl TranscriptionMessagesConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsConcatenationState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ArtifactsConcatenationState {
+        &self.state
     }
 }
 impl TranscriptionMessagesConcatenationConfiguration {
@@ -28,6 +28,7 @@ pub struct TranscriptionMessagesConcatenationConfigurationBuilder {
 }
 impl TranscriptionMessagesConcatenationConfigurationBuilder {
     /// <p>Enables or disables the configuration object.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ArtifactsConcatenationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,18 @@ impl TranscriptionMessagesConcatenationConfigurationBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`TranscriptionMessagesConcatenationConfiguration`](crate::types::TranscriptionMessagesConcatenationConfiguration).
-    pub fn build(self) -> crate::types::TranscriptionMessagesConcatenationConfiguration {
-        crate::types::TranscriptionMessagesConcatenationConfiguration { state: self.state }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::TranscriptionMessagesConcatenationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TranscriptionMessagesConcatenationConfiguration {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building TranscriptionMessagesConcatenationConfiguration",
+                )
+            })?,
+        })
     }
 }

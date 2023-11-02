@@ -27,6 +27,7 @@ pub struct DeleteExternalModelInputBuilder {
 }
 impl DeleteExternalModelInputBuilder {
     /// <p>The endpoint of the Amazon Sagemaker model to delete.</p>
+    /// This field is required.
     pub fn model_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_endpoint = ::std::option::Option::Some(input.into());
         self

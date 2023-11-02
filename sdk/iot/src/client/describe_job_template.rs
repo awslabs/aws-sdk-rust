@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJobTemplate`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_template_id(impl Into<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::job_template_id) / [`set_job_template_id(Option<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::set_job_template_id): <p>The unique identifier of the job template.</p>
+    ///   - [`job_template_id(impl Into<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::job_template_id) / [`set_job_template_id(Option<String>)`](crate::operation::describe_job_template::builders::DescribeJobTemplateFluentBuilder::set_job_template_id):<br>required: **true**<br><p>The unique identifier of the job template.</p><br>
     /// - On success, responds with [`DescribeJobTemplateOutput`](crate::operation::describe_job_template::DescribeJobTemplateOutput) with field(s):
     ///   - [`job_template_arn(Option<String>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::job_template_arn): <p>The ARN of the job template.</p>
     ///   - [`job_template_id(Option<String>)`](crate::operation::describe_job_template::DescribeJobTemplateOutput::job_template_id): <p>The unique identifier of the job template.</p>

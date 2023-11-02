@@ -34,6 +34,7 @@ pub struct DetectPiiEntitiesInputBuilder {
 }
 impl DetectPiiEntitiesInputBuilder {
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetectPiiEntitiesInputBuilder {
         &self.text
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self

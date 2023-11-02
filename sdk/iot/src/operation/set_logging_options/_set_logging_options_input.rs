@@ -28,6 +28,7 @@ pub struct SetLoggingOptionsInputBuilder {
 }
 impl SetLoggingOptionsInputBuilder {
     /// <p>The logging options payload.</p>
+    /// This field is required.
     pub fn logging_options_payload(mut self, input: crate::types::LoggingOptionsPayload) -> Self {
         self.logging_options_payload = ::std::option::Option::Some(input);
         self

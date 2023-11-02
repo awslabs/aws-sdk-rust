@@ -8,9 +8,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedRuleGroupStatement {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    pub vendor_name: ::std::option::Option<::std::string::String>,
+    pub vendor_name: ::std::string::String,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings. </p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
@@ -33,12 +33,14 @@ pub struct ManagedRuleGroupStatement {
 }
 impl ManagedRuleGroupStatement {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    pub fn vendor_name(&self) -> ::std::option::Option<&str> {
-        self.vendor_name.as_deref()
+    pub fn vendor_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vendor_name.deref()
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The version of the managed rule group to use. If you specify this, the version setting is fixed until you change it. If you don't specify this, WAF uses the vendor's default version, and then keeps the version at the vendor's default when the vendor updates the managed rule group settings. </p>
     pub fn version(&self) -> ::std::option::Option<&str> {
@@ -47,8 +49,10 @@ impl ManagedRuleGroupStatement {
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn excluded_rules(&self) -> ::std::option::Option<&[crate::types::ExcludedRule]> {
-        self.excluded_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_rules.is_none()`.
+    pub fn excluded_rules(&self) -> &[crate::types::ExcludedRule] {
+        self.excluded_rules.as_deref().unwrap_or_default()
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated by the managed rule group. Requests are only evaluated by the rule group if they match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub fn scope_down_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
@@ -61,13 +65,17 @@ impl ManagedRuleGroupStatement {
     /// <li> <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password. </p> </li>
     /// <li> <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use. </p> </li>
     /// </ul>
-    pub fn managed_rule_group_configs(&self) -> ::std::option::Option<&[crate::types::ManagedRuleGroupConfig]> {
-        self.managed_rule_group_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rule_group_configs.is_none()`.
+    pub fn managed_rule_group_configs(&self) -> &[crate::types::ManagedRuleGroupConfig] {
+        self.managed_rule_group_configs.as_deref().unwrap_or_default()
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn rule_action_overrides(&self) -> ::std::option::Option<&[crate::types::RuleActionOverride]> {
-        self.rule_action_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_action_overrides.is_none()`.
+    pub fn rule_action_overrides(&self) -> &[crate::types::RuleActionOverride] {
+        self.rule_action_overrides.as_deref().unwrap_or_default()
     }
 }
 impl ManagedRuleGroupStatement {
@@ -91,6 +99,7 @@ pub struct ManagedRuleGroupStatementBuilder {
 }
 impl ManagedRuleGroupStatementBuilder {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
+    /// This field is required.
     pub fn vendor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +114,7 @@ impl ManagedRuleGroupStatementBuilder {
         &self.vendor_name
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -234,15 +244,28 @@ impl ManagedRuleGroupStatementBuilder {
         &self.rule_action_overrides
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupStatement`](crate::types::ManagedRuleGroupStatement).
-    pub fn build(self) -> crate::types::ManagedRuleGroupStatement {
-        crate::types::ManagedRuleGroupStatement {
-            vendor_name: self.vendor_name,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vendor_name`](crate::types::builders::ManagedRuleGroupStatementBuilder::vendor_name)
+    /// - [`name`](crate::types::builders::ManagedRuleGroupStatementBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ManagedRuleGroupStatement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ManagedRuleGroupStatement {
+            vendor_name: self.vendor_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vendor_name",
+                    "vendor_name was not specified but it is required when building ManagedRuleGroupStatement",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ManagedRuleGroupStatement",
+                )
+            })?,
             version: self.version,
             excluded_rules: self.excluded_rules,
             scope_down_statement: self.scope_down_statement,
             managed_rule_group_configs: self.managed_rule_group_configs,
             rule_action_overrides: self.rule_action_overrides,
-        }
+        })
     }
 }

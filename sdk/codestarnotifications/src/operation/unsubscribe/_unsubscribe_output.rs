@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UnsubscribeOutput {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UnsubscribeOutput {
@@ -34,6 +35,7 @@ pub struct UnsubscribeOutputBuilder {
 }
 impl UnsubscribeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,17 @@ impl UnsubscribeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput).
-    pub fn build(self) -> crate::operation::unsubscribe::UnsubscribeOutput {
-        crate::operation::unsubscribe::UnsubscribeOutput {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::unsubscribe::builders::UnsubscribeOutputBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UnsubscribeOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

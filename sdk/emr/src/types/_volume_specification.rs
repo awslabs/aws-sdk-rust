@@ -49,6 +49,7 @@ pub struct VolumeSpecificationBuilder {
 }
 impl VolumeSpecificationBuilder {
     /// <p>The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.</p>
+    /// This field is required.
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl VolumeSpecificationBuilder {
         &self.iops
     }
     /// <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If the volume type is EBS-optimized, the minimum value is 10.</p>
+    /// This field is required.
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
         self

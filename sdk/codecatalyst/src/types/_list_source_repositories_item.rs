@@ -5,36 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSourceRepositoriesItem {
     /// <p>The system-generated unique ID of the source repository.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the source repository.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the repository, if any.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
 }
 impl ListSourceRepositoriesItem {
     /// <p>The system-generated unique ID of the source repository.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the source repository.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the repository, if any.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
 }
 impl ListSourceRepositoriesItem {
@@ -56,6 +58,7 @@ pub struct ListSourceRepositoriesItemBuilder {
 }
 impl ListSourceRepositoriesItemBuilder {
     /// <p>The system-generated unique ID of the source repository.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl ListSourceRepositoriesItemBuilder {
         &self.id
     }
     /// <p>The name of the source repository.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl ListSourceRepositoriesItemBuilder {
         &self.description
     }
     /// <p>The time the source repository was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl ListSourceRepositoriesItemBuilder {
         &self.last_updated_time
     }
     /// <p>The time the source repository was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,38 @@ impl ListSourceRepositoriesItemBuilder {
         &self.created_time
     }
     /// Consumes the builder and constructs a [`ListSourceRepositoriesItem`](crate::types::ListSourceRepositoriesItem).
-    pub fn build(self) -> crate::types::ListSourceRepositoriesItem {
-        crate::types::ListSourceRepositoriesItem {
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ListSourceRepositoriesItemBuilder::id)
+    /// - [`name`](crate::types::builders::ListSourceRepositoriesItemBuilder::name)
+    /// - [`last_updated_time`](crate::types::builders::ListSourceRepositoriesItemBuilder::last_updated_time)
+    /// - [`created_time`](crate::types::builders::ListSourceRepositoriesItemBuilder::created_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSourceRepositoriesItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListSourceRepositoriesItem {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ListSourceRepositoriesItem",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ListSourceRepositoriesItem",
+                )
+            })?,
             description: self.description,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
-        }
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building ListSourceRepositoriesItem",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building ListSourceRepositoriesItem",
+                )
+            })?,
+        })
     }
 }

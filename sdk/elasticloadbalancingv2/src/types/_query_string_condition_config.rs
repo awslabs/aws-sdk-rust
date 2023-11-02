@@ -12,8 +12,10 @@ pub struct QueryStringConditionConfig {
 impl QueryStringConditionConfig {
     /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::QueryStringKeyValuePair]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::QueryStringKeyValuePair] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl QueryStringConditionConfig {

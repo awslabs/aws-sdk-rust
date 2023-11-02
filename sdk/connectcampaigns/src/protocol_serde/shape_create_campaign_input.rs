@@ -3,33 +3,33 @@ pub fn ser_create_campaign_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_campaign::CreateCampaignInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.connect_instance_id {
-        object.key("connectInstanceId").string(var_1.as_str());
+    {
+        object.key("connectInstanceId").string(input.connect_instance_id.as_str());
     }
-    if let Some(var_2) = &input.dialer_config {
+    if let Some(var_1) = &input.dialer_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("dialerConfig").start_object();
-        crate::protocol_serde::shape_dialer_config::ser_dialer_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("dialerConfig").start_object();
+        crate::protocol_serde::shape_dialer_config::ser_dialer_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_5) = &input.outbound_call_config {
+    if let Some(var_3) = &input.outbound_call_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("outboundCallConfig").start_object();
-        crate::protocol_serde::shape_outbound_call_config::ser_outbound_call_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("outboundCallConfig").start_object();
+        crate::protocol_serde::shape_outbound_call_config::ser_outbound_call_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_8.finish();
+        object_6.finish();
     }
     Ok(())
 }

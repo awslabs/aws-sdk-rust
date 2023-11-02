@@ -27,6 +27,7 @@ pub struct DisableOrganizationAdminAccountInputBuilder {
 }
 impl DisableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+    /// This field is required.
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self

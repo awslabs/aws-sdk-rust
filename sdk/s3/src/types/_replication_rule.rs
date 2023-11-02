@@ -17,7 +17,7 @@ pub struct ReplicationRule {
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
     pub filter: ::std::option::Option<crate::types::ReplicationRuleFilter>,
     /// <p>Specifies whether the rule is enabled.</p>
-    pub status: ::std::option::Option<crate::types::ReplicationRuleStatus>,
+    pub status: crate::types::ReplicationRuleStatus,
     /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
     pub source_selection_criteria: ::std::option::Option<crate::types::SourceSelectionCriteria>,
     /// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
@@ -52,8 +52,8 @@ impl ReplicationRule {
         self.filter.as_ref()
     }
     /// <p>Specifies whether the rule is enabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationRuleStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReplicationRuleStatus {
+        &self.status
     }
     /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
     pub fn source_selection_criteria(&self) -> ::std::option::Option<&crate::types::SourceSelectionCriteria> {
@@ -166,6 +166,7 @@ impl ReplicationRuleBuilder {
         &self.filter
     }
     /// <p>Specifies whether the rule is enabled.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReplicationRuleStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -208,6 +209,7 @@ impl ReplicationRuleBuilder {
         &self.existing_object_replication
     }
     /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -245,17 +247,24 @@ impl ReplicationRuleBuilder {
         &self.delete_marker_replication
     }
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
-    pub fn build(self) -> crate::types::ReplicationRule {
-        crate::types::ReplicationRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ReplicationRuleBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationRule {
             id: self.id,
             priority: self.priority.unwrap_or_default(),
             prefix: self.prefix,
             filter: self.filter,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ReplicationRule",
+                )
+            })?,
             source_selection_criteria: self.source_selection_criteria,
             existing_object_replication: self.existing_object_replication,
             destination: self.destination,
             delete_marker_replication: self.delete_marker_replication,
-        }
+        })
     }
 }

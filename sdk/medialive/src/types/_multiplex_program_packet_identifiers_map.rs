@@ -33,12 +33,16 @@ pub struct MultiplexProgramPacketIdentifiersMap {
 }
 impl MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
-    pub fn audio_pids(&self) -> ::std::option::Option<&[i32]> {
-        self.audio_pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_pids.is_none()`.
+    pub fn audio_pids(&self) -> &[i32] {
+        self.audio_pids.as_deref().unwrap_or_default()
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn dvb_sub_pids(&self) -> ::std::option::Option<&[i32]> {
-        self.dvb_sub_pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dvb_sub_pids.is_none()`.
+    pub fn dvb_sub_pids(&self) -> &[i32] {
+        self.dvb_sub_pids.as_deref().unwrap_or_default()
     }
     /// Placeholder documentation for __integer
     pub fn dvb_teletext_pid(&self) -> ::std::option::Option<i32> {
@@ -53,8 +57,10 @@ impl MultiplexProgramPacketIdentifiersMap {
         self.etv_signal_pid
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn klv_data_pids(&self) -> ::std::option::Option<&[i32]> {
-        self.klv_data_pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.klv_data_pids.is_none()`.
+    pub fn klv_data_pids(&self) -> &[i32] {
+        self.klv_data_pids.as_deref().unwrap_or_default()
     }
     /// Placeholder documentation for __integer
     pub fn pcr_pid(&self) -> ::std::option::Option<i32> {
@@ -69,8 +75,10 @@ impl MultiplexProgramPacketIdentifiersMap {
         self.private_metadata_pid
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn scte27_pids(&self) -> ::std::option::Option<&[i32]> {
-        self.scte27_pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scte27_pids.is_none()`.
+    pub fn scte27_pids(&self) -> &[i32] {
+        self.scte27_pids.as_deref().unwrap_or_default()
     }
     /// Placeholder documentation for __integer
     pub fn scte35_pid(&self) -> ::std::option::Option<i32> {

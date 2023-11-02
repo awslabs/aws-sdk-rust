@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The name or ARN of the project.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the project.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The current state of the project.</p>
-    pub status: ::std::option::Option<crate::types::ProjectStatus>,
+    pub status: crate::types::ProjectStatus,
     /// <p>The description of the project.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the project is created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the project was most recently updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The number of features currently in the project.</p>
     pub feature_count: ::std::option::Option<i64>,
     /// <p>The number of launches currently in the project, including launches that are ongoing, completed, and not started yet.</p>
@@ -31,28 +31,30 @@ pub struct ProjectSummary {
 }
 impl ProjectSummary {
     /// <p>The name or ARN of the project.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The current state of the project.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ProjectStatus {
+        &self.status
     }
     /// <p>The description of the project.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the project is created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The date and time that the project was most recently updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>The number of features currently in the project.</p>
     pub fn feature_count(&self) -> ::std::option::Option<i64> {
@@ -105,6 +107,7 @@ pub struct ProjectSummaryBuilder {
 }
 impl ProjectSummaryBuilder {
     /// <p>The name or ARN of the project.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl ProjectSummaryBuilder {
         &self.arn
     }
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +137,7 @@ impl ProjectSummaryBuilder {
         &self.name
     }
     /// <p>The current state of the project.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ProjectStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -161,6 +166,7 @@ impl ProjectSummaryBuilder {
         &self.description
     }
     /// <p>The date and time that the project is created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -175,6 +181,7 @@ impl ProjectSummaryBuilder {
         &self.created_time
     }
     /// <p>The date and time that the project was most recently updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -279,20 +286,51 @@ impl ProjectSummaryBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
-    pub fn build(self) -> crate::types::ProjectSummary {
-        crate::types::ProjectSummary {
-            arn: self.arn,
-            name: self.name,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ProjectSummaryBuilder::arn)
+    /// - [`name`](crate::types::builders::ProjectSummaryBuilder::name)
+    /// - [`status`](crate::types::builders::ProjectSummaryBuilder::status)
+    /// - [`created_time`](crate::types::builders::ProjectSummaryBuilder::created_time)
+    /// - [`last_updated_time`](crate::types::builders::ProjectSummaryBuilder::last_updated_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectSummary {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ProjectSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ProjectSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ProjectSummary",
+                )
+            })?,
             description: self.description,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building ProjectSummary",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building ProjectSummary",
+                )
+            })?,
             feature_count: self.feature_count,
             launch_count: self.launch_count,
             active_launch_count: self.active_launch_count,
             experiment_count: self.experiment_count,
             active_experiment_count: self.active_experiment_count,
             tags: self.tags,
-        }
+        })
     }
 }

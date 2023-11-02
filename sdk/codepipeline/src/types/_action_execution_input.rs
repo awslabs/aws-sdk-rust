@@ -41,8 +41,10 @@ impl ActionExecutionInput {
         self.region.as_deref()
     }
     /// <p>Details of input artifacts of the action that correspond to the action execution.</p>
-    pub fn input_artifacts(&self) -> ::std::option::Option<&[crate::types::ArtifactDetail]> {
-        self.input_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_artifacts.is_none()`.
+    pub fn input_artifacts(&self) -> &[crate::types::ArtifactDetail] {
+        self.input_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {

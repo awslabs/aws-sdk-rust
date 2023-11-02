@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssistantAssociationData {
     /// <p>The identifier of the assistant association.</p>
-    pub assistant_association_id: ::std::option::Option<::std::string::String>,
+    pub assistant_association_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-    pub assistant_association_arn: ::std::option::Option<::std::string::String>,
+    pub assistant_association_arn: ::std::string::String,
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub assistant_arn: ::std::option::Option<::std::string::String>,
+    pub assistant_arn: ::std::string::String,
     /// <p>The type of association.</p>
-    pub association_type: ::std::option::Option<crate::types::AssociationType>,
+    pub association_type: crate::types::AssociationType,
     /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
     pub association_data: ::std::option::Option<crate::types::AssistantAssociationOutputData>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -21,24 +21,28 @@ pub struct AssistantAssociationData {
 }
 impl AssistantAssociationData {
     /// <p>The identifier of the assistant association.</p>
-    pub fn assistant_association_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_association_id.as_deref()
+    pub fn assistant_association_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_association_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-    pub fn assistant_association_arn(&self) -> ::std::option::Option<&str> {
-        self.assistant_association_arn.as_deref()
+    pub fn assistant_association_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_association_arn.deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> ::std::option::Option<&str> {
-        self.assistant_arn.as_deref()
+    pub fn assistant_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_arn.deref()
     }
     /// <p>The type of association.</p>
-    pub fn association_type(&self) -> ::std::option::Option<&crate::types::AssociationType> {
-        self.association_type.as_ref()
+    pub fn association_type(&self) -> &crate::types::AssociationType {
+        &self.association_type
     }
     /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
     pub fn association_data(&self) -> ::std::option::Option<&crate::types::AssistantAssociationOutputData> {
@@ -70,6 +74,7 @@ pub struct AssistantAssociationDataBuilder {
 }
 impl AssistantAssociationDataBuilder {
     /// <p>The identifier of the assistant association.</p>
+    /// This field is required.
     pub fn assistant_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_association_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl AssistantAssociationDataBuilder {
         &self.assistant_association_id
     }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
+    /// This field is required.
     pub fn assistant_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_association_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl AssistantAssociationDataBuilder {
         &self.assistant_association_arn
     }
     /// <p>The identifier of the Wisdom assistant.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl AssistantAssociationDataBuilder {
         &self.assistant_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    /// This field is required.
     pub fn assistant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl AssistantAssociationDataBuilder {
         &self.assistant_arn
     }
     /// <p>The type of association.</p>
+    /// This field is required.
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
         self
@@ -140,6 +149,7 @@ impl AssistantAssociationDataBuilder {
         &self.association_type
     }
     /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
+    /// This field is required.
     pub fn association_data(mut self, input: crate::types::AssistantAssociationOutputData) -> Self {
         self.association_data = ::std::option::Option::Some(input);
         self
@@ -174,15 +184,46 @@ impl AssistantAssociationDataBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`AssistantAssociationData`](crate::types::AssistantAssociationData).
-    pub fn build(self) -> crate::types::AssistantAssociationData {
-        crate::types::AssistantAssociationData {
-            assistant_association_id: self.assistant_association_id,
-            assistant_association_arn: self.assistant_association_arn,
-            assistant_id: self.assistant_id,
-            assistant_arn: self.assistant_arn,
-            association_type: self.association_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_association_id`](crate::types::builders::AssistantAssociationDataBuilder::assistant_association_id)
+    /// - [`assistant_association_arn`](crate::types::builders::AssistantAssociationDataBuilder::assistant_association_arn)
+    /// - [`assistant_id`](crate::types::builders::AssistantAssociationDataBuilder::assistant_id)
+    /// - [`assistant_arn`](crate::types::builders::AssistantAssociationDataBuilder::assistant_arn)
+    /// - [`association_type`](crate::types::builders::AssistantAssociationDataBuilder::association_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssistantAssociationData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssistantAssociationData {
+            assistant_association_id: self.assistant_association_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_association_id",
+                    "assistant_association_id was not specified but it is required when building AssistantAssociationData",
+                )
+            })?,
+            assistant_association_arn: self.assistant_association_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_association_arn",
+                    "assistant_association_arn was not specified but it is required when building AssistantAssociationData",
+                )
+            })?,
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building AssistantAssociationData",
+                )
+            })?,
+            assistant_arn: self.assistant_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_arn",
+                    "assistant_arn was not specified but it is required when building AssistantAssociationData",
+                )
+            })?,
+            association_type: self.association_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "association_type",
+                    "association_type was not specified but it is required when building AssistantAssociationData",
+                )
+            })?,
             association_data: self.association_data,
             tags: self.tags,
-        }
+        })
     }
 }

@@ -29,8 +29,10 @@ pub struct GetSpotPlacementScoresInput {
 impl GetSpotPlacementScoresInput {
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[::std::string::String] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The target capacity.</p>
     pub fn target_capacity(&self) -> ::std::option::Option<i32> {
@@ -47,8 +49,10 @@ impl GetSpotPlacementScoresInput {
         self.single_availability_zone
     }
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
-    pub fn region_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.region_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_names.is_none()`.
+    pub fn region_names(&self) -> &[::std::string::String] {
+        self.region_names.as_deref().unwrap_or_default()
     }
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p>
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
@@ -114,6 +118,7 @@ impl GetSpotPlacementScoresInputBuilder {
         &self.instance_types
     }
     /// <p>The target capacity.</p>
+    /// This field is required.
     pub fn target_capacity(mut self, input: i32) -> Self {
         self.target_capacity = ::std::option::Option::Some(input);
         self

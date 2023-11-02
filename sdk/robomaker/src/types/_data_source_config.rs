@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfig {
     /// <p>The name of the data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The S3 bucket where the data files are located.</p>
-    pub s3_bucket: ::std::option::Option<::std::string::String>,
+    pub s3_bucket: ::std::string::String,
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub s3_keys: ::std::vec::Vec<::std::string::String>,
     /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
@@ -21,16 +21,19 @@ pub struct DataSourceConfig {
 }
 impl DataSourceConfig {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The S3 bucket where the data files are located.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket.as_deref()
+    pub fn s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket.deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.s3_keys.as_deref()
+    pub fn s3_keys(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.s3_keys.deref()
     }
     /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
@@ -64,6 +67,7 @@ pub struct DataSourceConfigBuilder {
 }
 impl DataSourceConfigBuilder {
     /// <p>The name of the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +82,7 @@ impl DataSourceConfigBuilder {
         &self.name
     }
     /// <p>The S3 bucket where the data files are located.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -152,13 +157,32 @@ impl DataSourceConfigBuilder {
         &self.destination
     }
     /// Consumes the builder and constructs a [`DataSourceConfig`](crate::types::DataSourceConfig).
-    pub fn build(self) -> crate::types::DataSourceConfig {
-        crate::types::DataSourceConfig {
-            name: self.name,
-            s3_bucket: self.s3_bucket,
-            s3_keys: self.s3_keys,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DataSourceConfigBuilder::name)
+    /// - [`s3_bucket`](crate::types::builders::DataSourceConfigBuilder::s3_bucket)
+    /// - [`s3_keys`](crate::types::builders::DataSourceConfigBuilder::s3_keys)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceConfig {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DataSourceConfig",
+                )
+            })?,
+            s3_bucket: self.s3_bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_bucket",
+                    "s3_bucket was not specified but it is required when building DataSourceConfig",
+                )
+            })?,
+            s3_keys: self.s3_keys.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_keys",
+                    "s3_keys was not specified but it is required when building DataSourceConfig",
+                )
+            })?,
             r#type: self.r#type,
             destination: self.destination,
-        }
+        })
     }
 }

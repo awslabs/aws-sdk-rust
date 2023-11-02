@@ -27,12 +27,16 @@ impl LambdaContainerParams {
         self.mount_ro_sysfs
     }
     /// <p>The list of volumes that the container can access.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::LambdaVolumeMount]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::LambdaVolumeMount] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>The list of system devices that the container can access.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::LambdaDeviceMount]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::LambdaDeviceMount] {
+        self.devices.as_deref().unwrap_or_default()
     }
 }
 impl LambdaContainerParams {

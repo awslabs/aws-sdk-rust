@@ -9,41 +9,41 @@ pub fn ser_bandwidth_rate_limit_interval(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.start_hour_of_day {
+    {
         object.key("StartHourOfDay").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.start_hour_of_day).into()),
         );
     }
-    if let Some(var_3) = &input.end_hour_of_day {
+    {
         object.key("EndHourOfDay").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.end_hour_of_day).into()),
         );
     }
-    if let Some(var_4) = &input.start_minute_of_hour {
+    {
         object.key("StartMinuteOfHour").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.start_minute_of_hour).into()),
         );
     }
-    if let Some(var_5) = &input.end_minute_of_hour {
+    {
         object.key("EndMinuteOfHour").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((input.end_minute_of_hour).into()),
         );
     }
-    if let Some(var_6) = &input.days_of_week {
-        let mut array_7 = object.key("DaysOfWeek").start_array();
-        for item_8 in var_6 {
+    {
+        let mut array_2 = object.key("DaysOfWeek").start_array();
+        for item_3 in &input.days_of_week {
             {
-                array_7.value().number(
+                array_2.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_8).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_3).into()),
                 );
             }
         }
-        array_7.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -111,7 +111,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::bandwidth_rate_limit_interval_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

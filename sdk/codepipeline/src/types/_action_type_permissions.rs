@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypePermissions {
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub allowed_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_accounts: ::std::vec::Vec<::std::string::String>,
 }
 impl ActionTypePermissions {
     /// <p>A list of Amazon Web Services account IDs with access to use the action type in their pipelines.</p>
-    pub fn allowed_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_accounts.as_deref()
+    pub fn allowed_accounts(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allowed_accounts.deref()
     }
 }
 impl ActionTypePermissions {
@@ -48,9 +49,16 @@ impl ActionTypePermissionsBuilder {
         &self.allowed_accounts
     }
     /// Consumes the builder and constructs a [`ActionTypePermissions`](crate::types::ActionTypePermissions).
-    pub fn build(self) -> crate::types::ActionTypePermissions {
-        crate::types::ActionTypePermissions {
-            allowed_accounts: self.allowed_accounts,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allowed_accounts`](crate::types::builders::ActionTypePermissionsBuilder::allowed_accounts)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypePermissions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionTypePermissions {
+            allowed_accounts: self.allowed_accounts.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allowed_accounts",
+                    "allowed_accounts was not specified but it is required when building ActionTypePermissions",
+                )
+            })?,
+        })
     }
 }

@@ -18,8 +18,10 @@ impl DescribeFleetLocationAttributesInput {
         self.fleet_id.as_deref()
     }
     /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn locations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
+    pub fn locations(&self) -> &[::std::string::String] {
+        self.locations.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct DescribeFleetLocationAttributesInputBuilder {
 }
 impl DescribeFleetLocationAttributesInputBuilder {
     /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self

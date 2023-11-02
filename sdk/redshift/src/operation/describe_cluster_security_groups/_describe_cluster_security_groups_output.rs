@@ -16,8 +16,10 @@ impl DescribeClusterSecurityGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
-    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[crate::types::ClusterSecurityGroup]> {
-        self.cluster_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
+    pub fn cluster_security_groups(&self) -> &[crate::types::ClusterSecurityGroup] {
+        self.cluster_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeClusterSecurityGroupsOutput {

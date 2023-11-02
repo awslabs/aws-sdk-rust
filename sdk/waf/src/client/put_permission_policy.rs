@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutPermissionPolicy`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
-    ///   - [`policy(impl Into<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::set_policy): <p>The policy to attach to the specified RuleGroup.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p><br>
+    ///   - [`policy(impl Into<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder::set_policy):<br>required: **true**<br><p>The policy to attach to the specified RuleGroup.</p><br>
     /// - On success, responds with [`PutPermissionPolicyOutput`](crate::operation::put_permission_policy::PutPermissionPolicyOutput)
     /// - On failure, responds with [`SdkError<PutPermissionPolicyError>`](crate::operation::put_permission_policy::PutPermissionPolicyError)
     pub fn put_permission_policy(&self) -> crate::operation::put_permission_policy::builders::PutPermissionPolicyFluentBuilder {

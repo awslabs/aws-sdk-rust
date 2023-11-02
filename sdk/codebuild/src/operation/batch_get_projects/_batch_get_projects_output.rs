@@ -11,12 +11,16 @@ pub struct BatchGetProjectsOutput {
 }
 impl BatchGetProjectsOutput {
     /// <p>Information about the requested build projects.</p>
-    pub fn projects(&self) -> ::std::option::Option<&[crate::types::Project]> {
-        self.projects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projects.is_none()`.
+    pub fn projects(&self) -> &[crate::types::Project] {
+        self.projects.as_deref().unwrap_or_default()
     }
     /// <p>The names of build projects for which information could not be found.</p>
-    pub fn projects_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.projects_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projects_not_found.is_none()`.
+    pub fn projects_not_found(&self) -> &[::std::string::String] {
+        self.projects_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetProjectsOutput {

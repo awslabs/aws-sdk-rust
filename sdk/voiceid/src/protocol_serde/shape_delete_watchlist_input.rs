@@ -3,11 +3,11 @@ pub fn ser_delete_watchlist_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_watchlist::DeleteWatchlistInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain_id {
-        object.key("DomainId").string(var_1.as_str());
+    {
+        object.key("DomainId").string(input.domain_id.as_str());
     }
-    if let Some(var_2) = &input.watchlist_id {
-        object.key("WatchlistId").string(var_2.as_str());
+    {
+        object.key("WatchlistId").string(input.watchlist_id.as_str());
     }
     Ok(())
 }

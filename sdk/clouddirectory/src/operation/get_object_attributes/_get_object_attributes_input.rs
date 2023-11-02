@@ -32,8 +32,10 @@ impl GetObjectAttributesInput {
         self.schema_facet.as_ref()
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[::std::string::String] {
+        self.attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl GetObjectAttributesInput {
@@ -55,6 +57,7 @@ pub struct GetObjectAttributesInputBuilder {
 }
 impl GetObjectAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl GetObjectAttributesInputBuilder {
         &self.directory_arn
     }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl GetObjectAttributesInputBuilder {
         &self.consistency_level
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
+    /// This field is required.
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
         self

@@ -32,12 +32,16 @@ impl CreateLaunchProfileInput {
         self.description.as_deref()
     }
     /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
-    pub fn ec2_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_subnet_ids.is_none()`.
+    pub fn ec2_subnet_ids(&self) -> &[::std::string::String] {
+        self.ec2_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn launch_profile_protocol_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_profile_protocol_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_profile_protocol_versions.is_none()`.
+    pub fn launch_profile_protocol_versions(&self) -> &[::std::string::String] {
+        self.launch_profile_protocol_versions.as_deref().unwrap_or_default()
     }
     /// <p>The name for the launch profile.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -48,8 +52,10 @@ impl CreateLaunchProfileInput {
         self.stream_configuration.as_ref()
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn studio_component_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.studio_component_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.studio_component_ids.is_none()`.
+    pub fn studio_component_ids(&self) -> &[::std::string::String] {
+        self.studio_component_ids.as_deref().unwrap_or_default()
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
@@ -166,6 +172,7 @@ impl CreateLaunchProfileInputBuilder {
         &self.launch_profile_protocol_versions
     }
     /// <p>The name for the launch profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -180,6 +187,7 @@ impl CreateLaunchProfileInputBuilder {
         &self.name
     }
     /// <p>A configuration for a streaming session.</p>
+    /// This field is required.
     pub fn stream_configuration(mut self, input: crate::types::StreamConfigurationCreate) -> Self {
         self.stream_configuration = ::std::option::Option::Some(input);
         self
@@ -214,6 +222,7 @@ impl CreateLaunchProfileInputBuilder {
         &self.studio_component_ids
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

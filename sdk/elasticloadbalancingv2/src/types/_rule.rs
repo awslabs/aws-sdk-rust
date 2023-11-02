@@ -25,12 +25,16 @@ impl Rule {
         self.priority.as_deref()
     }
     /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::RuleCondition]> {
-        self.conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
+    pub fn conditions(&self) -> &[crate::types::RuleCondition] {
+        self.conditions.as_deref().unwrap_or_default()
     }
     /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether this is the default rule.</p>
     pub fn is_default(&self) -> ::std::option::Option<bool> {

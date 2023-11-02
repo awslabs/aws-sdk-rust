@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>Encryption configuration for the export job.</p>
     pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The destination for the revision.</p>
-    pub revision_destinations: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+    pub revision_destinations: ::std::vec::Vec<crate::types::RevisionDestinationEntry>,
 }
 impl ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>Encryption configuration for the export job.</p>
     pub fn encryption(&self) -> ::std::option::Option<&crate::types::ExportServerSideEncryption> {
         self.encryption.as_ref()
     }
     /// <p>The destination for the revision.</p>
-    pub fn revision_destinations(&self) -> ::std::option::Option<&[crate::types::RevisionDestinationEntry]> {
-        self.revision_destinations.as_deref()
+    pub fn revision_destinations(&self) -> &[crate::types::RevisionDestinationEntry] {
+        use std::ops::Deref;
+        self.revision_destinations.deref()
     }
 }
 impl ExportRevisionsToS3RequestDetails {
@@ -42,6 +44,7 @@ pub struct ExportRevisionsToS3RequestDetailsBuilder {
 }
 impl ExportRevisionsToS3RequestDetailsBuilder {
     /// <p>The unique identifier for the data set associated with this export job.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +93,24 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
         &self.revision_destinations
     }
     /// Consumes the builder and constructs a [`ExportRevisionsToS3RequestDetails`](crate::types::ExportRevisionsToS3RequestDetails).
-    pub fn build(self) -> crate::types::ExportRevisionsToS3RequestDetails {
-        crate::types::ExportRevisionsToS3RequestDetails {
-            data_set_id: self.data_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_id`](crate::types::builders::ExportRevisionsToS3RequestDetailsBuilder::data_set_id)
+    /// - [`revision_destinations`](crate::types::builders::ExportRevisionsToS3RequestDetailsBuilder::revision_destinations)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportRevisionsToS3RequestDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExportRevisionsToS3RequestDetails {
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building ExportRevisionsToS3RequestDetails",
+                )
+            })?,
             encryption: self.encryption,
-            revision_destinations: self.revision_destinations,
-        }
+            revision_destinations: self.revision_destinations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_destinations",
+                    "revision_destinations was not specified but it is required when building ExportRevisionsToS3RequestDetails",
+                )
+            })?,
+        })
     }
 }

@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on voice messages.</p>
-    pub monthly_limit: ::std::option::Option<i64>,
+    pub monthly_limit: i64,
 }
 impl SetVoiceMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on voice messages.</p>
-    pub fn monthly_limit(&self) -> ::std::option::Option<i64> {
+    pub fn monthly_limit(&self) -> i64 {
         self.monthly_limit
     }
 }
@@ -27,6 +27,7 @@ pub struct SetVoiceMessageSpendLimitOverrideInputBuilder {
 }
 impl SetVoiceMessageSpendLimitOverrideInputBuilder {
     /// <p>The new monthly limit to enforce on voice messages.</p>
+    /// This field is required.
     pub fn monthly_limit(mut self, input: i64) -> Self {
         self.monthly_limit = ::std::option::Option::Some(input);
         self
@@ -41,6 +42,8 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
         &self.monthly_limit
     }
     /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monthly_limit`](crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder::monthly_limit)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +52,12 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput {
-                monthly_limit: self.monthly_limit,
+                monthly_limit: self.monthly_limit.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "monthly_limit",
+                        "monthly_limit was not specified but it is required when building SetVoiceMessageSpendLimitOverrideInput",
+                    )
+                })?,
             },
         )
     }

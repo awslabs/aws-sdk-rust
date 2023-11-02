@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoInput {
     /// <p>The account IDs to get free trial status for.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl BatchGetFreeTrialInfoInput {
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.account_ids.deref()
     }
 }
 impl BatchGetFreeTrialInfoInput {
@@ -47,12 +48,19 @@ impl BatchGetFreeTrialInfoInputBuilder {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_ids`](crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoInputBuilder::account_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput {
-            account_ids: self.account_ids,
+            account_ids: self.account_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_ids",
+                    "account_ids was not specified but it is required when building BatchGetFreeTrialInfoInput",
+                )
+            })?,
         })
     }
 }

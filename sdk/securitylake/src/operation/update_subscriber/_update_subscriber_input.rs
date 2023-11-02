@@ -32,8 +32,10 @@ impl UpdateSubscriberInput {
         self.subscriber_description.as_deref()
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::LogSourceResource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::LogSourceResource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSubscriberInput {
@@ -55,6 +57,7 @@ pub struct UpdateSubscriberInputBuilder {
 }
 impl UpdateSubscriberInputBuilder {
     /// <p>A value created by Security Lake that uniquely identifies your subscription.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self

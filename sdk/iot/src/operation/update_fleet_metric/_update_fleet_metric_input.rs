@@ -90,6 +90,7 @@ pub struct UpdateFleetMetricInputBuilder {
 }
 impl UpdateFleetMetricInputBuilder {
     /// <p>The name of the fleet metric to update.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +189,7 @@ impl UpdateFleetMetricInputBuilder {
         &self.query_version
     }
     /// <p>The name of the index to search.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self

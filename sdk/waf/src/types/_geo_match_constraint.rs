@@ -9,18 +9,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMatchConstraint {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
-    pub r#type: ::std::option::Option<crate::types::GeoMatchConstraintType>,
+    pub r#type: crate::types::GeoMatchConstraintType,
     /// <p>The country that you want AWS WAF to search for.</p>
-    pub value: ::std::option::Option<crate::types::GeoMatchConstraintValue>,
+    pub value: crate::types::GeoMatchConstraintValue,
 }
 impl GeoMatchConstraint {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::GeoMatchConstraintType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::GeoMatchConstraintType {
+        &self.r#type
     }
     /// <p>The country that you want AWS WAF to search for.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::GeoMatchConstraintValue> {
-        self.value.as_ref()
+    pub fn value(&self) -> &crate::types::GeoMatchConstraintValue {
+        &self.value
     }
 }
 impl GeoMatchConstraint {
@@ -39,6 +39,7 @@ pub struct GeoMatchConstraintBuilder {
 }
 impl GeoMatchConstraintBuilder {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::GeoMatchConstraintType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -53,6 +54,7 @@ impl GeoMatchConstraintBuilder {
         &self.r#type
     }
     /// <p>The country that you want AWS WAF to search for.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::GeoMatchConstraintValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -67,10 +69,23 @@ impl GeoMatchConstraintBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`GeoMatchConstraint`](crate::types::GeoMatchConstraint).
-    pub fn build(self) -> crate::types::GeoMatchConstraint {
-        crate::types::GeoMatchConstraint {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::GeoMatchConstraintBuilder::r#type)
+    /// - [`value`](crate::types::builders::GeoMatchConstraintBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchConstraint, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GeoMatchConstraint {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building GeoMatchConstraint",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building GeoMatchConstraint",
+                )
+            })?,
+        })
     }
 }

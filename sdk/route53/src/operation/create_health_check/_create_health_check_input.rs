@@ -56,6 +56,7 @@ impl CreateHealthCheckInputBuilder {
     /// <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>
     /// </ul>
     /// <p> Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The <code>CallerReference</code> for a deleted health check will be deleted after a number of days.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl CreateHealthCheckInputBuilder {
         &self.caller_reference
     }
     /// <p>A complex type that contains settings for a new health check.</p>
+    /// This field is required.
     pub fn health_check_config(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check_config = ::std::option::Option::Some(input);
         self

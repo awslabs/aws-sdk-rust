@@ -11,8 +11,10 @@ pub struct DescribeVerifiedAccessTrustProvidersOutput {
 }
 impl DescribeVerifiedAccessTrustProvidersOutput {
     /// <p>The IDs of the Verified Access trust providers.</p>
-    pub fn verified_access_trust_providers(&self) -> ::std::option::Option<&[crate::types::VerifiedAccessTrustProvider]> {
-        self.verified_access_trust_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_trust_providers.is_none()`.
+    pub fn verified_access_trust_providers(&self) -> &[crate::types::VerifiedAccessTrustProvider] {
+        self.verified_access_trust_providers.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContent`](crate::operation::delete_content::builders::DeleteContentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    ///   - [`content_id(impl Into<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::content_id) / [`set_content_id(Option<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::set_content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(impl Into<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
+    ///   - [`content_id(impl Into<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::content_id) / [`set_content_id(impl Into<String>)`](crate::operation::delete_content::builders::DeleteContentFluentBuilder::set_content_id):<br>required: **true**<br><p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     /// - On success, responds with [`DeleteContentOutput`](crate::operation::delete_content::DeleteContentOutput)
     /// - On failure, responds with [`SdkError<DeleteContentError>`](crate::operation::delete_content::DeleteContentError)
     pub fn delete_content(&self) -> crate::operation::delete_content::builders::DeleteContentFluentBuilder {

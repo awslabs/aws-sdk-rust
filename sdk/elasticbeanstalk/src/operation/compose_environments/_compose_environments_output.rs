@@ -12,8 +12,10 @@ pub struct ComposeEnvironmentsOutput {
 }
 impl ComposeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
-    pub fn environments(&self) -> ::std::option::Option<&[crate::types::EnvironmentDescription]> {
-        self.environments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environments.is_none()`.
+    pub fn environments(&self) -> &[crate::types::EnvironmentDescription] {
+        self.environments.as_deref().unwrap_or_default()
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

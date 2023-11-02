@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PhoneNumberValidate`](crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`number_validate_request(NumberValidateRequest)`](crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder::number_validate_request) / [`set_number_validate_request(Option<NumberValidateRequest>)`](crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder::set_number_validate_request): <p>Specifies a phone number to validate and retrieve information about.</p>
+    ///   - [`number_validate_request(NumberValidateRequest)`](crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder::number_validate_request) / [`set_number_validate_request(Option<NumberValidateRequest>)`](crate::operation::phone_number_validate::builders::PhoneNumberValidateFluentBuilder::set_number_validate_request):<br>required: **true**<br><p>Specifies a phone number to validate and retrieve information about.</p><br>
     /// - On success, responds with [`PhoneNumberValidateOutput`](crate::operation::phone_number_validate::PhoneNumberValidateOutput) with field(s):
     ///   - [`number_validate_response(Option<NumberValidateResponse>)`](crate::operation::phone_number_validate::PhoneNumberValidateOutput::number_validate_response): <p>Provides information about a phone number.</p>
     /// - On failure, responds with [`SdkError<PhoneNumberValidateError>`](crate::operation::phone_number_validate::PhoneNumberValidateError)

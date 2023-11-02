@@ -34,6 +34,7 @@ pub struct DeleteCustomLogSourceInputBuilder {
 }
 impl DeleteCustomLogSourceInputBuilder {
     /// <p>The source name of custom log source that you want to delete.</p>
+    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self

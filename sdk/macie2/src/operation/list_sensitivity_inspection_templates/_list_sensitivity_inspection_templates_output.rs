@@ -15,8 +15,10 @@ impl ListSensitivityInspectionTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn sensitivity_inspection_templates(&self) -> ::std::option::Option<&[crate::types::SensitivityInspectionTemplatesEntry]> {
-        self.sensitivity_inspection_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sensitivity_inspection_templates.is_none()`.
+    pub fn sensitivity_inspection_templates(&self) -> &[crate::types::SensitivityInspectionTemplatesEntry] {
+        self.sensitivity_inspection_templates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSensitivityInspectionTemplatesOutput {

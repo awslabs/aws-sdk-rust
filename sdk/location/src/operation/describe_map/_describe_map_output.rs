@@ -4,40 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
-    pub map_name: ::std::option::Option<::std::string::String>,
+    pub map_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
-    pub map_arn: ::std::option::Option<::std::string::String>,
+    pub map_arn: ::std::string::String,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub data_source: ::std::option::Option<::std::string::String>,
+    pub data_source: ::std::string::String,
     /// <p>Specifies the map tile style selected from a partner data provider.</p>
     pub configuration: ::std::option::Option<crate::types::MapConfiguration>,
     /// <p>The optional description for the map resource.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>Tags associated with the map resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
-        self.map_name.as_deref()
+    pub fn map_name(&self) -> &str {
+        use std::ops::Deref;
+        self.map_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
-    pub fn map_arn(&self) -> ::std::option::Option<&str> {
-        self.map_arn.as_deref()
+    pub fn map_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.map_arn.deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -45,28 +47,30 @@ impl DescribeMapOutput {
         self.pricing_plan.as_ref()
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&str> {
-        self.data_source.as_deref()
+    pub fn data_source(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source.deref()
     }
     /// <p>Specifies the map tile style selected from a partner data provider.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::MapConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The optional description for the map resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>Tags associated with the map resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMapOutput {
@@ -98,6 +102,7 @@ pub struct DescribeMapOutputBuilder {
 }
 impl DescribeMapOutputBuilder {
     /// <p>The map style selected from an available provider.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +120,7 @@ impl DescribeMapOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn map_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_arn = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +158,7 @@ impl DescribeMapOutputBuilder {
         &self.pricing_plan
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +173,7 @@ impl DescribeMapOutputBuilder {
         &self.data_source
     }
     /// <p>Specifies the map tile style selected from a partner data provider.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::MapConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
@@ -180,6 +188,7 @@ impl DescribeMapOutputBuilder {
         &self.configuration
     }
     /// <p>The optional description for the map resource.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -214,6 +223,7 @@ impl DescribeMapOutputBuilder {
         &self.tags
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -228,6 +238,7 @@ impl DescribeMapOutputBuilder {
         &self.create_time
     }
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -251,18 +262,55 @@ impl DescribeMapOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMapOutput`](crate::operation::describe_map::DescribeMapOutput).
-    pub fn build(self) -> crate::operation::describe_map::DescribeMapOutput {
-        crate::operation::describe_map::DescribeMapOutput {
-            map_name: self.map_name,
-            map_arn: self.map_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`map_name`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::map_name)
+    /// - [`map_arn`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::map_arn)
+    /// - [`data_source`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::data_source)
+    /// - [`description`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::description)
+    /// - [`create_time`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::create_time)
+    /// - [`update_time`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapOutput {
+            map_name: self.map_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_name",
+                    "map_name was not specified but it is required when building DescribeMapOutput",
+                )
+            })?,
+            map_arn: self.map_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_arn",
+                    "map_arn was not specified but it is required when building DescribeMapOutput",
+                )
+            })?,
             pricing_plan: self.pricing_plan,
-            data_source: self.data_source,
+            data_source: self.data_source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source",
+                    "data_source was not specified but it is required when building DescribeMapOutput",
+                )
+            })?,
             configuration: self.configuration,
-            description: self.description,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building DescribeMapOutput",
+                )
+            })?,
             tags: self.tags,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building DescribeMapOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building DescribeMapOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

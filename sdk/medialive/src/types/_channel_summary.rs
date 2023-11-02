@@ -51,20 +51,26 @@ impl ChannelSummary {
         self.channel_class.as_ref()
     }
     /// A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::OutputDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::OutputDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// The endpoints where outgoing connections initiate from
-    pub fn egress_endpoints(&self) -> ::std::option::Option<&[crate::types::ChannelEgressEndpoint]> {
-        self.egress_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_endpoints.is_none()`.
+    pub fn egress_endpoints(&self) -> &[crate::types::ChannelEgressEndpoint] {
+        self.egress_endpoints.as_deref().unwrap_or_default()
     }
     /// The unique id of the channel.
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// List of input attachments for channel.
-    pub fn input_attachments(&self) -> ::std::option::Option<&[crate::types::InputAttachment]> {
-        self.input_attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_attachments.is_none()`.
+    pub fn input_attachments(&self) -> &[crate::types::InputAttachment] {
+        self.input_attachments.as_deref().unwrap_or_default()
     }
     /// Specification of network and file inputs for this channel
     pub fn input_specification(&self) -> ::std::option::Option<&crate::types::InputSpecification> {

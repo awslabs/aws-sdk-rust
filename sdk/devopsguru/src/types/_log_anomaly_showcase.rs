@@ -9,8 +9,10 @@ pub struct LogAnomalyShowcase {
 }
 impl LogAnomalyShowcase {
     /// <p> A list of anomalous log events that may be related. </p>
-    pub fn log_anomaly_classes(&self) -> ::std::option::Option<&[crate::types::LogAnomalyClass]> {
-        self.log_anomaly_classes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_anomaly_classes.is_none()`.
+    pub fn log_anomaly_classes(&self) -> &[crate::types::LogAnomalyClass] {
+        self.log_anomaly_classes.as_deref().unwrap_or_default()
     }
 }
 impl LogAnomalyShowcase {

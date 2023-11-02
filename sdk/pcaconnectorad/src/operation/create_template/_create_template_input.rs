@@ -55,6 +55,7 @@ pub struct CreateTemplateInputBuilder {
 }
 impl CreateTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateTemplateInputBuilder {
         &self.connector_arn
     }
     /// <p>Name of the template. The template name must be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateTemplateInputBuilder {
         &self.name
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::TemplateDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

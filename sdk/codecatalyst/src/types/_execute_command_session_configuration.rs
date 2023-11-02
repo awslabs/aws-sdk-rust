@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteCommandSessionConfiguration {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub command: ::std::option::Option<::std::string::String>,
+    pub command: ::std::string::String,
     /// <p>An array of arguments containing arguments and members.</p>
     pub arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExecuteCommandSessionConfiguration {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub fn command(&self) -> ::std::option::Option<&str> {
-        self.command.as_deref()
+    pub fn command(&self) -> &str {
+        use std::ops::Deref;
+        self.command.deref()
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arguments.is_none()`.
+    pub fn arguments(&self) -> &[::std::string::String] {
+        self.arguments.as_deref().unwrap_or_default()
     }
 }
 impl ExecuteCommandSessionConfiguration {
@@ -35,6 +38,7 @@ pub struct ExecuteCommandSessionConfigurationBuilder {
 }
 impl ExecuteCommandSessionConfigurationBuilder {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
+    /// This field is required.
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.command = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl ExecuteCommandSessionConfigurationBuilder {
         &self.arguments
     }
     /// Consumes the builder and constructs a [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
-    pub fn build(self) -> crate::types::ExecuteCommandSessionConfiguration {
-        crate::types::ExecuteCommandSessionConfiguration {
-            command: self.command,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`command`](crate::types::builders::ExecuteCommandSessionConfigurationBuilder::command)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecuteCommandSessionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExecuteCommandSessionConfiguration {
+            command: self.command.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "command",
+                    "command was not specified but it is required when building ExecuteCommandSessionConfiguration",
+                )
+            })?,
             arguments: self.arguments,
-        }
+        })
     }
 }

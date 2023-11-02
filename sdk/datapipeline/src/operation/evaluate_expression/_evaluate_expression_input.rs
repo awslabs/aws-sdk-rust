@@ -42,6 +42,7 @@ pub struct EvaluateExpressionInputBuilder {
 }
 impl EvaluateExpressionInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl EvaluateExpressionInputBuilder {
         &self.pipeline_id
     }
     /// <p>The ID of the object.</p>
+    /// This field is required.
     pub fn object_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl EvaluateExpressionInputBuilder {
         &self.object_id
     }
     /// <p>The expression to evaluate.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
-    pub service: ::std::option::Option<crate::types::ContainerRepositoryService>,
+    pub service: crate::types::ContainerRepositoryService,
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
 }
 impl TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::ContainerRepositoryService> {
-        self.service.as_ref()
+    pub fn service(&self) -> &crate::types::ContainerRepositoryService {
+        &self.service
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
 }
 impl TargetContainerRepository {
@@ -35,6 +36,7 @@ pub struct TargetContainerRepositoryBuilder {
 }
 impl TargetContainerRepositoryBuilder {
     /// <p>Specifies the service in which this image was registered.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::ContainerRepositoryService) -> Self {
         self.service = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl TargetContainerRepositoryBuilder {
         &self.service
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl TargetContainerRepositoryBuilder {
         &self.repository_name
     }
     /// Consumes the builder and constructs a [`TargetContainerRepository`](crate::types::TargetContainerRepository).
-    pub fn build(self) -> crate::types::TargetContainerRepository {
-        crate::types::TargetContainerRepository {
-            service: self.service,
-            repository_name: self.repository_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service`](crate::types::builders::TargetContainerRepositoryBuilder::service)
+    /// - [`repository_name`](crate::types::builders::TargetContainerRepositoryBuilder::repository_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TargetContainerRepository, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TargetContainerRepository {
+            service: self.service.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service",
+                    "service was not specified but it is required when building TargetContainerRepository",
+                )
+            })?,
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building TargetContainerRepository",
+                )
+            })?,
+        })
     }
 }

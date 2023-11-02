@@ -36,8 +36,10 @@ impl CreateMeetingInput {
         self.media_region.as_deref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     pub fn notifications_configuration(&self) -> ::std::option::Option<&crate::types::MeetingNotificationConfiguration> {
@@ -76,6 +78,7 @@ pub struct CreateMeetingInputBuilder {
 }
 impl CreateMeetingInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

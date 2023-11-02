@@ -10,8 +10,10 @@ pub struct AttachInstancesInput {
 }
 impl AttachInstancesInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl AttachInstancesInputBuilder {
         &self.instance_ids
     }
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self

@@ -9,7 +9,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    pub capacity_provider: ::std::option::Option<::std::string::String>,
+    pub capacity_provider: ::std::string::String,
     /// <p>The <i>weight</i> value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The <code>weight</code> value is taken into consideration after the <code>base</code> value, if defined, is satisfied.</p>
     /// <p>If no <code>weight</code> value is specified, the default value of <code>0</code> is used. When multiple capacity providers are specified within a capacity provider strategy, at least one of the capacity providers must have a weight value greater than zero and any capacity providers with a weight of <code>0</code> can't be used to place tasks. If you specify multiple capacity providers in a strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or <code>CreateService</code> actions using the capacity provider strategy will fail.</p>
     /// <p>An example scenario for using weights is defining a strategy that contains two capacity providers and both have a weight of <code>1</code>, then when the <code>base</code> is satisfied, the tasks will be split evenly across the two capacity providers. Using that same logic, if you specify a weight of <code>1</code> for <i>capacityProviderA</i> and a weight of <code>4</code> for <i>capacityProviderB</i>, then for every one task that's run using <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
@@ -19,8 +19,9 @@ pub struct CapacityProviderStrategyItem {
 }
 impl CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(&self) -> ::std::option::Option<&str> {
-        self.capacity_provider.as_deref()
+    pub fn capacity_provider(&self) -> &str {
+        use std::ops::Deref;
+        self.capacity_provider.deref()
     }
     /// <p>The <i>weight</i> value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The <code>weight</code> value is taken into consideration after the <code>base</code> value, if defined, is satisfied.</p>
     /// <p>If no <code>weight</code> value is specified, the default value of <code>0</code> is used. When multiple capacity providers are specified within a capacity provider strategy, at least one of the capacity providers must have a weight value greater than zero and any capacity providers with a weight of <code>0</code> can't be used to place tasks. If you specify multiple capacity providers in a strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or <code>CreateService</code> actions using the capacity provider strategy will fail.</p>
@@ -50,6 +51,7 @@ pub struct CapacityProviderStrategyItemBuilder {
 }
 impl CapacityProviderStrategyItemBuilder {
     /// <p>The short name of the capacity provider.</p>
+    /// This field is required.
     pub fn capacity_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider = ::std::option::Option::Some(input.into());
         self
@@ -98,11 +100,18 @@ impl CapacityProviderStrategyItemBuilder {
         &self.base
     }
     /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
-    pub fn build(self) -> crate::types::CapacityProviderStrategyItem {
-        crate::types::CapacityProviderStrategyItem {
-            capacity_provider: self.capacity_provider,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`capacity_provider`](crate::types::builders::CapacityProviderStrategyItemBuilder::capacity_provider)
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityProviderStrategyItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CapacityProviderStrategyItem {
+            capacity_provider: self.capacity_provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "capacity_provider",
+                    "capacity_provider was not specified but it is required when building CapacityProviderStrategyItem",
+                )
+            })?,
             weight: self.weight.unwrap_or_default(),
             base: self.base.unwrap_or_default(),
-        }
+        })
     }
 }

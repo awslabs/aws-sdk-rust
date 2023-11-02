@@ -28,11 +28,10 @@ pub fn de_import_ssh_public_key_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::import_ssh_public_key::ImportSshPublicKeyError::InvalidRequestException({
@@ -43,11 +42,10 @@ pub fn de_import_ssh_public_key_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceExistsException" => crate::operation::import_ssh_public_key::ImportSshPublicKeyError::ResourceExistsException({
@@ -58,11 +56,10 @@ pub fn de_import_ssh_public_key_http_error(
                 output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(_response_body, output)
                     .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_exists_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::import_ssh_public_key::ImportSshPublicKeyError::ResourceNotFoundException({
@@ -73,11 +70,10 @@ pub fn de_import_ssh_public_key_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::import_ssh_public_key::ImportSshPublicKeyError::ServiceUnavailableException({
@@ -130,7 +126,9 @@ pub fn de_import_ssh_public_key_http_response(
         output = crate::protocol_serde::shape_import_ssh_public_key::de_import_ssh_public_key(_response_body, output)
             .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::import_ssh_public_key_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::import_ssh_public_key::ImportSshPublicKeyError::unhandled)?
     })
 }
 

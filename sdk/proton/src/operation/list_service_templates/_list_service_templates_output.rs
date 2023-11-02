@@ -6,7 +6,7 @@ pub struct ListServiceTemplatesOutput {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service templates with detail data.</p>
-    pub templates: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>>,
+    pub templates: ::std::vec::Vec<crate::types::ServiceTemplateSummary>,
     _request_id: Option<String>,
 }
 impl ListServiceTemplatesOutput {
@@ -15,8 +15,9 @@ impl ListServiceTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn templates(&self) -> ::std::option::Option<&[crate::types::ServiceTemplateSummary]> {
-        self.templates.as_deref()
+    pub fn templates(&self) -> &[crate::types::ServiceTemplateSummary] {
+        use std::ops::Deref;
+        self.templates.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServiceTemplatesOutput {
@@ -84,11 +85,21 @@ impl ListServiceTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceTemplatesOutput`](crate::operation::list_service_templates::ListServiceTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_service_templates::ListServiceTemplatesOutput {
-        crate::operation::list_service_templates::ListServiceTemplatesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`templates`](crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder::templates)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_service_templates::ListServiceTemplatesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_templates::ListServiceTemplatesOutput {
             next_token: self.next_token,
-            templates: self.templates,
+            templates: self.templates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "templates",
+                    "templates was not specified but it is required when building ListServiceTemplatesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

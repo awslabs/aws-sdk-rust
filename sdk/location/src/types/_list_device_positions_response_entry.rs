@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListDevicePositionsResponseEntry {
     /// <p>The ID of the device for this position.</p>
-    pub device_id: ::std::option::Option<::std::string::String>,
+    pub device_id: ::std::string::String,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub sample_time: ::aws_smithy_types::DateTime,
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    pub position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub position: ::std::vec::Vec<f64>,
     /// <p>The accuracy of the device position.</p>
     pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
@@ -17,16 +17,18 @@ pub struct ListDevicePositionsResponseEntry {
 }
 impl ListDevicePositionsResponseEntry {
     /// <p>The ID of the device for this position.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
-        self.device_id.as_deref()
+    pub fn device_id(&self) -> &str {
+        use std::ops::Deref;
+        self.device_id.deref()
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.sample_time.as_ref()
+    pub fn sample_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.sample_time
     }
     /// <p>The last known device position. Empty if no positions currently stored.</p>
-    pub fn position(&self) -> ::std::option::Option<&[f64]> {
-        self.position.as_deref()
+    pub fn position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.position.deref()
     }
     /// <p>The accuracy of the device position.</p>
     pub fn accuracy(&self) -> ::std::option::Option<&crate::types::PositionalAccuracy> {
@@ -67,6 +69,7 @@ pub struct ListDevicePositionsResponseEntryBuilder {
 }
 impl ListDevicePositionsResponseEntryBuilder {
     /// <p>The ID of the device for this position.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl ListDevicePositionsResponseEntryBuilder {
         &self.device_id
     }
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// This field is required.
     pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_time = ::std::option::Option::Some(input);
         self
@@ -156,14 +160,33 @@ impl ListDevicePositionsResponseEntryBuilder {
         &self.position_properties
     }
     /// Consumes the builder and constructs a [`ListDevicePositionsResponseEntry`](crate::types::ListDevicePositionsResponseEntry).
-    pub fn build(self) -> crate::types::ListDevicePositionsResponseEntry {
-        crate::types::ListDevicePositionsResponseEntry {
-            device_id: self.device_id,
-            sample_time: self.sample_time,
-            position: self.position,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_id`](crate::types::builders::ListDevicePositionsResponseEntryBuilder::device_id)
+    /// - [`sample_time`](crate::types::builders::ListDevicePositionsResponseEntryBuilder::sample_time)
+    /// - [`position`](crate::types::builders::ListDevicePositionsResponseEntryBuilder::position)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListDevicePositionsResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListDevicePositionsResponseEntry {
+            device_id: self.device_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_id",
+                    "device_id was not specified but it is required when building ListDevicePositionsResponseEntry",
+                )
+            })?,
+            sample_time: self.sample_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sample_time",
+                    "sample_time was not specified but it is required when building ListDevicePositionsResponseEntry",
+                )
+            })?,
+            position: self.position.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "position",
+                    "position was not specified but it is required when building ListDevicePositionsResponseEntry",
+                )
+            })?,
             accuracy: self.accuracy,
             position_properties: self.position_properties,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ListDevicePositionsResponseEntryBuilder {

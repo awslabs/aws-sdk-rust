@@ -11,12 +11,16 @@ pub struct BatchGetCustomEntityTypesOutput {
 }
 impl BatchGetCustomEntityTypesOutput {
     /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
-    pub fn custom_entity_types(&self) -> ::std::option::Option<&[crate::types::CustomEntityType]> {
-        self.custom_entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_entity_types.is_none()`.
+    pub fn custom_entity_types(&self) -> &[crate::types::CustomEntityType] {
+        self.custom_entity_types.as_deref().unwrap_or_default()
     }
     /// <p>A list of the names of custom patterns that were not found.</p>
-    pub fn custom_entity_types_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_entity_types_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_entity_types_not_found.is_none()`.
+    pub fn custom_entity_types_not_found(&self) -> &[::std::string::String] {
+        self.custom_entity_types_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetCustomEntityTypesOutput {

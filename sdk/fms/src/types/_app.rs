@@ -5,23 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct App {
     /// <p>The application's name.</p>
-    pub app_name: ::std::option::Option<::std::string::String>,
+    pub app_name: ::std::string::String,
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
-    pub protocol: ::std::option::Option<::std::string::String>,
+    pub protocol: ::std::string::String,
     /// <p>The application's port number, for example <code>80</code>.</p>
-    pub port: ::std::option::Option<i64>,
+    pub port: i64,
 }
 impl App {
     /// <p>The application's name.</p>
-    pub fn app_name(&self) -> ::std::option::Option<&str> {
-        self.app_name.as_deref()
+    pub fn app_name(&self) -> &str {
+        use std::ops::Deref;
+        self.app_name.deref()
     }
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
-        self.protocol.as_deref()
+    pub fn protocol(&self) -> &str {
+        use std::ops::Deref;
+        self.protocol.deref()
     }
     /// <p>The application's port number, for example <code>80</code>.</p>
-    pub fn port(&self) -> ::std::option::Option<i64> {
+    pub fn port(&self) -> i64 {
         self.port
     }
 }
@@ -42,6 +44,7 @@ pub struct AppBuilder {
 }
 impl AppBuilder {
     /// <p>The application's name.</p>
+    /// This field is required.
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl AppBuilder {
         &self.app_name
     }
     /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl AppBuilder {
         &self.protocol
     }
     /// <p>The application's port number, for example <code>80</code>.</p>
+    /// This field is required.
     pub fn port(mut self, input: i64) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,27 @@ impl AppBuilder {
         &self.port
     }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
-    pub fn build(self) -> crate::types::App {
-        crate::types::App {
-            app_name: self.app_name,
-            protocol: self.protocol,
-            port: self.port,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_name`](crate::types::builders::AppBuilder::app_name)
+    /// - [`protocol`](crate::types::builders::AppBuilder::protocol)
+    /// - [`port`](crate::types::builders::AppBuilder::port)
+    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::App {
+            app_name: self.app_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_name",
+                    "app_name was not specified but it is required when building App",
+                )
+            })?,
+            protocol: self.protocol.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protocol",
+                    "protocol was not specified but it is required when building App",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("port", "port was not specified but it is required when building App")
+            })?,
+        })
     }
 }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketDestination {
     /// <p></p>
-    pub format: ::std::option::Option<crate::types::Format>,
+    pub format: crate::types::Format,
     /// <p>The schema version of the export file.</p>
-    pub output_schema_version: ::std::option::Option<crate::types::OutputSchemaVersion>,
+    pub output_schema_version: crate::types::OutputSchemaVersion,
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The container for the type encryption of the metrics exports in this bucket.</p>
@@ -19,20 +19,22 @@ pub struct S3BucketDestination {
 }
 impl S3BucketDestination {
     /// <p></p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::Format {
+        &self.format
     }
     /// <p>The schema version of the export file.</p>
-    pub fn output_schema_version(&self) -> ::std::option::Option<&crate::types::OutputSchemaVersion> {
-        self.output_schema_version.as_ref()
+    pub fn output_schema_version(&self) -> &crate::types::OutputSchemaVersion {
+        &self.output_schema_version
     }
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The prefix of the destination bucket where the metrics export will be delivered.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ pub struct S3BucketDestinationBuilder {
 }
 impl S3BucketDestinationBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl S3BucketDestinationBuilder {
         &self.format
     }
     /// <p>The schema version of the export file.</p>
+    /// This field is required.
     pub fn output_schema_version(mut self, input: crate::types::OutputSchemaVersion) -> Self {
         self.output_schema_version = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl S3BucketDestinationBuilder {
         &self.output_schema_version
     }
     /// <p>The account ID of the owner of the S3 Storage Lens metrics export bucket.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl S3BucketDestinationBuilder {
         &self.account_id
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:bucket/<i>your-destination-bucket-name</i> </code> </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +153,39 @@ impl S3BucketDestinationBuilder {
         &self.encryption
     }
     /// Consumes the builder and constructs a [`S3BucketDestination`](crate::types::S3BucketDestination).
-    pub fn build(self) -> crate::types::S3BucketDestination {
-        crate::types::S3BucketDestination {
-            format: self.format,
-            output_schema_version: self.output_schema_version,
-            account_id: self.account_id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::S3BucketDestinationBuilder::format)
+    /// - [`output_schema_version`](crate::types::builders::S3BucketDestinationBuilder::output_schema_version)
+    /// - [`account_id`](crate::types::builders::S3BucketDestinationBuilder::account_id)
+    /// - [`arn`](crate::types::builders::S3BucketDestinationBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3BucketDestination {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building S3BucketDestination",
+                )
+            })?,
+            output_schema_version: self.output_schema_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_schema_version",
+                    "output_schema_version was not specified but it is required when building S3BucketDestination",
+                )
+            })?,
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building S3BucketDestination",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building S3BucketDestination",
+                )
+            })?,
             prefix: self.prefix,
             encryption: self.encryption,
-        }
+        })
     }
 }

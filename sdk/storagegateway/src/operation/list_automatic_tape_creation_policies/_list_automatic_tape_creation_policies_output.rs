@@ -9,8 +9,10 @@ pub struct ListAutomaticTapeCreationPoliciesOutput {
 }
 impl ListAutomaticTapeCreationPoliciesOutput {
     /// <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
-    pub fn automatic_tape_creation_policy_infos(&self) -> ::std::option::Option<&[crate::types::AutomaticTapeCreationPolicyInfo]> {
-        self.automatic_tape_creation_policy_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automatic_tape_creation_policy_infos.is_none()`.
+    pub fn automatic_tape_creation_policy_infos(&self) -> &[crate::types::AutomaticTapeCreationPolicyInfo] {
+        self.automatic_tape_creation_policy_infos.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAutomaticTapeCreationPoliciesOutput {

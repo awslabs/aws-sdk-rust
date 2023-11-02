@@ -6,28 +6,28 @@ pub fn ser_create_replication_set_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.regions {
+    {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("regions").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("regions").start_object();
+        for (key_3, value_4) in &input.regions {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_region_map_input_value::ser_region_map_input_value(&mut object_6, value_5)?;
-                object_6.finish();
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_region_map_input_value::ser_region_map_input_value(&mut object_5, value_4)?;
+                object_5.finish();
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_8.finish();
+        object_7.finish();
     }
     Ok(())
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnection`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_catalog_id): <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    ///   - [`connection_name(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_name) / [`set_connection_name(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_name): <p>The name of the connection to delete.</p>
+    ///   - [`catalog_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p><br>
+    ///   - [`connection_name(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_name) / [`set_connection_name(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_name):<br>required: **true**<br><p>The name of the connection to delete.</p><br>
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::operation::delete_connection::DeleteConnectionError)
     pub fn delete_connection(&self) -> crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder {

@@ -41,7 +41,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::prefetch_consumption_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -65,15 +67,15 @@ pub fn ser_prefetch_consumption(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.end_time {
+    {
         object
             .key("EndTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.start_time {
+    if let Some(var_5) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

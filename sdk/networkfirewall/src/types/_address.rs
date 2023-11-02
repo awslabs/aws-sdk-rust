@@ -13,7 +13,7 @@ pub struct Address {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    pub address_definition: ::std::option::Option<::std::string::String>,
+    pub address_definition: ::std::string::String,
 }
 impl Address {
     /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4 and IPv6. </p>
@@ -25,8 +25,9 @@ impl Address {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    pub fn address_definition(&self) -> ::std::option::Option<&str> {
-        self.address_definition.as_deref()
+    pub fn address_definition(&self) -> &str {
+        use std::ops::Deref;
+        self.address_definition.deref()
     }
 }
 impl Address {
@@ -52,6 +53,7 @@ impl AddressBuilder {
     /// <li> <p>To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
     /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    /// This field is required.
     pub fn address_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_definition = ::std::option::Option::Some(input.into());
         self
@@ -82,9 +84,16 @@ impl AddressBuilder {
         &self.address_definition
     }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
-    pub fn build(self) -> crate::types::Address {
-        crate::types::Address {
-            address_definition: self.address_definition,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`address_definition`](crate::types::builders::AddressBuilder::address_definition)
+    pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Address {
+            address_definition: self.address_definition.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "address_definition",
+                    "address_definition was not specified but it is required when building Address",
+                )
+            })?,
+        })
     }
 }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub firewall_policy_name: ::std::option::Option<::std::string::String>,
+    pub firewall_policy_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
-    pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
+    pub firewall_policy_arn: ::std::string::String,
     /// <p>The unique identifier for the firewall policy. </p>
-    pub firewall_policy_id: ::std::option::Option<::std::string::String>,
+    pub firewall_policy_id: ::std::string::String,
     /// <p>A description of the firewall policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
@@ -31,18 +31,21 @@ pub struct FirewallPolicyResponse {
 }
 impl FirewallPolicyResponse {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-    pub fn firewall_policy_name(&self) -> ::std::option::Option<&str> {
-        self.firewall_policy_name.as_deref()
+    pub fn firewall_policy_name(&self) -> &str {
+        use std::ops::Deref;
+        self.firewall_policy_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
-    pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
-        self.firewall_policy_arn.as_deref()
+    pub fn firewall_policy_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.firewall_policy_arn.deref()
     }
     /// <p>The unique identifier for the firewall policy. </p>
-    pub fn firewall_policy_id(&self) -> ::std::option::Option<&str> {
-        self.firewall_policy_id.as_deref()
+    pub fn firewall_policy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.firewall_policy_id.deref()
     }
     /// <p>A description of the firewall policy.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -53,8 +56,10 @@ impl FirewallPolicyResponse {
         self.firewall_policy_status.as_ref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
     pub fn consumed_stateless_rule_capacity(&self) -> ::std::option::Option<i32> {
@@ -102,6 +107,7 @@ pub struct FirewallPolicyResponseBuilder {
 }
 impl FirewallPolicyResponseBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    /// This field is required.
     pub fn firewall_policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +124,7 @@ impl FirewallPolicyResponseBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
+    /// This field is required.
     pub fn firewall_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +143,7 @@ impl FirewallPolicyResponseBuilder {
         &self.firewall_policy_arn
     }
     /// <p>The unique identifier for the firewall policy. </p>
+    /// This field is required.
     pub fn firewall_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -268,11 +276,30 @@ impl FirewallPolicyResponseBuilder {
         &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`FirewallPolicyResponse`](crate::types::FirewallPolicyResponse).
-    pub fn build(self) -> crate::types::FirewallPolicyResponse {
-        crate::types::FirewallPolicyResponse {
-            firewall_policy_name: self.firewall_policy_name,
-            firewall_policy_arn: self.firewall_policy_arn,
-            firewall_policy_id: self.firewall_policy_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`firewall_policy_name`](crate::types::builders::FirewallPolicyResponseBuilder::firewall_policy_name)
+    /// - [`firewall_policy_arn`](crate::types::builders::FirewallPolicyResponseBuilder::firewall_policy_arn)
+    /// - [`firewall_policy_id`](crate::types::builders::FirewallPolicyResponseBuilder::firewall_policy_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FirewallPolicyResponse, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FirewallPolicyResponse {
+            firewall_policy_name: self.firewall_policy_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "firewall_policy_name",
+                    "firewall_policy_name was not specified but it is required when building FirewallPolicyResponse",
+                )
+            })?,
+            firewall_policy_arn: self.firewall_policy_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "firewall_policy_arn",
+                    "firewall_policy_arn was not specified but it is required when building FirewallPolicyResponse",
+                )
+            })?,
+            firewall_policy_id: self.firewall_policy_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "firewall_policy_id",
+                    "firewall_policy_id was not specified but it is required when building FirewallPolicyResponse",
+                )
+            })?,
             description: self.description,
             firewall_policy_status: self.firewall_policy_status,
             tags: self.tags,
@@ -281,6 +308,6 @@ impl FirewallPolicyResponseBuilder {
             number_of_associations: self.number_of_associations,
             encryption_configuration: self.encryption_configuration,
             last_modified_time: self.last_modified_time,
-        }
+        })
     }
 }

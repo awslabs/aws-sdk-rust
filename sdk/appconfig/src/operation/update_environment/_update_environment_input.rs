@@ -32,8 +32,10 @@ impl UpdateEnvironmentInput {
         self.description.as_deref()
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn monitors(&self) -> ::std::option::Option<&[crate::types::Monitor]> {
-        self.monitors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitors.is_none()`.
+    pub fn monitors(&self) -> &[crate::types::Monitor] {
+        self.monitors.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEnvironmentInput {
@@ -55,6 +57,7 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl UpdateEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>The environment ID.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self

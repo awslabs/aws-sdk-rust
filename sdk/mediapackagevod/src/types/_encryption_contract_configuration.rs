@@ -35,6 +35,7 @@ pub struct EncryptionContractConfigurationBuilder {
 }
 impl EncryptionContractConfigurationBuilder {
     /// A collection of audio encryption presets.
+    /// This field is required.
     pub fn preset_speke20_audio(mut self, input: crate::types::PresetSpeke20Audio) -> Self {
         self.preset_speke20_audio = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl EncryptionContractConfigurationBuilder {
         &self.preset_speke20_audio
     }
     /// A collection of video encryption presets.
+    /// This field is required.
     pub fn preset_speke20_video(mut self, input: crate::types::PresetSpeke20Video) -> Self {
         self.preset_speke20_video = ::std::option::Option::Some(input);
         self

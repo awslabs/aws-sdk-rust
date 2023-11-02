@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
-    pub duration_in_minutes: ::std::option::Option<i32>,
+    pub duration_in_minutes: i32,
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::vec::Vec<crate::types::Target>,
 }
 impl Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
-    pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_minutes(&self) -> i32 {
         self.duration_in_minutes
     }
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    pub fn targets(&self) -> &[crate::types::Target] {
+        use std::ops::Deref;
+        self.targets.deref()
     }
 }
 impl Stage {
@@ -35,6 +36,7 @@ pub struct StageBuilder {
 }
 impl StageBuilder {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
+    /// This field is required.
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl StageBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`Stage`](crate::types::Stage).
-    pub fn build(self) -> crate::types::Stage {
-        crate::types::Stage {
-            duration_in_minutes: self.duration_in_minutes,
-            targets: self.targets,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`duration_in_minutes`](crate::types::builders::StageBuilder::duration_in_minutes)
+    /// - [`targets`](crate::types::builders::StageBuilder::targets)
+    pub fn build(self) -> ::std::result::Result<crate::types::Stage, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Stage {
+            duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "duration_in_minutes",
+                    "duration_in_minutes was not specified but it is required when building Stage",
+                )
+            })?,
+            targets: self.targets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "targets",
+                    "targets was not specified but it is required when building Stage",
+                )
+            })?,
+        })
     }
 }

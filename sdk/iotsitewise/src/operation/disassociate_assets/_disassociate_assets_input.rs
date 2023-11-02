@@ -48,6 +48,7 @@ pub struct DisassociateAssetsInputBuilder {
 }
 impl DisassociateAssetsInputBuilder {
     /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DisassociateAssetsInputBuilder {
         &self.asset_id
     }
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// This field is required.
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hierarchy_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DisassociateAssetsInputBuilder {
         &self.hierarchy_id
     }
     /// <p>The ID of the child asset to disassociate.</p>
+    /// This field is required.
     pub fn child_asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_asset_id = ::std::option::Option::Some(input.into());
         self

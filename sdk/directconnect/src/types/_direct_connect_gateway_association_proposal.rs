@@ -51,12 +51,16 @@ impl DirectConnectGatewayAssociationProposal {
         self.associated_gateway.as_ref()
     }
     /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
-    pub fn existing_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.existing_allowed_prefixes_to_direct_connect_gateway.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.existing_allowed_prefixes_to_direct_connect_gateway.is_none()`.
+    pub fn existing_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.existing_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
-    pub fn requested_allowed_prefixes_to_direct_connect_gateway(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.requested_allowed_prefixes_to_direct_connect_gateway.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_allowed_prefixes_to_direct_connect_gateway.is_none()`.
+    pub fn requested_allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.requested_allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
 }
 impl DirectConnectGatewayAssociationProposal {

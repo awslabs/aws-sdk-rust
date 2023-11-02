@@ -3,35 +3,35 @@ pub fn ser_component_data_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentDataConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.model {
-        object.key("model").string(var_1.as_str());
+    {
+        object.key("model").string(input.model.as_str());
     }
-    if let Some(var_2) = &input.sort {
-        let mut array_3 = object.key("sort").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.sort {
+        let mut array_2 = object.key("sort").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_sort_property::ser_sort_property(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_sort_property::ser_sort_property(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.predicate {
+    if let Some(var_5) = &input.predicate {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("predicate").start_object();
-        crate::protocol_serde::shape_predicate::ser_predicate(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("predicate").start_object();
+        crate::protocol_serde::shape_predicate::ser_predicate(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.identifiers {
-        let mut array_9 = object.key("identifiers").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.identifiers {
+        let mut array_8 = object.key("identifiers").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -77,7 +77,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::component_data_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

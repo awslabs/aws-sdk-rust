@@ -34,6 +34,7 @@ pub struct GetEnvironmentTemplateVersionOutputBuilder {
 }
 impl GetEnvironmentTemplateVersionOutputBuilder {
     /// <p>The detailed data of the requested environment template version.</p>
+    /// This field is required.
     pub fn environment_template_version(mut self, input: crate::types::EnvironmentTemplateVersion) -> Self {
         self.environment_template_version = ::std::option::Option::Some(input);
         self

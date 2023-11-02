@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationMetrics {
     /// <p>The type of machine learning transform.</p>
-    pub transform_type: ::std::option::Option<crate::types::TransformType>,
+    pub transform_type: crate::types::TransformType,
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub find_matches_metrics: ::std::option::Option<crate::types::FindMatchesMetrics>,
 }
 impl EvaluationMetrics {
     /// <p>The type of machine learning transform.</p>
-    pub fn transform_type(&self) -> ::std::option::Option<&crate::types::TransformType> {
-        self.transform_type.as_ref()
+    pub fn transform_type(&self) -> &crate::types::TransformType {
+        &self.transform_type
     }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub fn find_matches_metrics(&self) -> ::std::option::Option<&crate::types::FindMatchesMetrics> {
@@ -35,6 +35,7 @@ pub struct EvaluationMetricsBuilder {
 }
 impl EvaluationMetricsBuilder {
     /// <p>The type of machine learning transform.</p>
+    /// This field is required.
     pub fn transform_type(mut self, input: crate::types::TransformType) -> Self {
         self.transform_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl EvaluationMetricsBuilder {
         &self.find_matches_metrics
     }
     /// Consumes the builder and constructs a [`EvaluationMetrics`](crate::types::EvaluationMetrics).
-    pub fn build(self) -> crate::types::EvaluationMetrics {
-        crate::types::EvaluationMetrics {
-            transform_type: self.transform_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transform_type`](crate::types::builders::EvaluationMetricsBuilder::transform_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationMetrics, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationMetrics {
+            transform_type: self.transform_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transform_type",
+                    "transform_type was not specified but it is required when building EvaluationMetrics",
+                )
+            })?,
             find_matches_metrics: self.find_matches_metrics,
-        }
+        })
     }
 }

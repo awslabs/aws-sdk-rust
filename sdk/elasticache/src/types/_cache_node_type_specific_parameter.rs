@@ -53,8 +53,10 @@ impl CacheNodeTypeSpecificParameter {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of cache node types and their corresponding values for this parameter.</p>
-    pub fn cache_node_type_specific_values(&self) -> ::std::option::Option<&[crate::types::CacheNodeTypeSpecificValue]> {
-        self.cache_node_type_specific_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_type_specific_values.is_none()`.
+    pub fn cache_node_type_specific_values(&self) -> &[crate::types::CacheNodeTypeSpecificValue] {
+        self.cache_node_type_specific_values.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
     pub fn change_type(&self) -> ::std::option::Option<&crate::types::ChangeType> {

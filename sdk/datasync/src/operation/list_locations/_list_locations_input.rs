@@ -21,8 +21,10 @@ impl ListLocationsInput {
         self.next_token.as_deref()
     }
     /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::LocationFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::LocationFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListLocationsInput {

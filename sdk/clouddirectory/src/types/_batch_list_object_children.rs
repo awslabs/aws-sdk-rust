@@ -42,6 +42,7 @@ pub struct BatchListObjectChildrenBuilder {
 }
 impl BatchListObjectChildrenBuilder {
     /// <p>Reference of the object for which child objects are being listed.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

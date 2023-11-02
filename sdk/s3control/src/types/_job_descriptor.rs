@@ -85,8 +85,10 @@ impl JobDescriptor {
         self.status_update_reason.as_deref()
     }
     /// <p>If the specified job failed, this field contains information describing the failure.</p>
-    pub fn failure_reasons(&self) -> ::std::option::Option<&[crate::types::JobFailure]> {
-        self.failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[crate::types::JobFailure] {
+        self.failure_reasons.as_deref().unwrap_or_default()
     }
     /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
     pub fn report(&self) -> ::std::option::Option<&crate::types::JobReport> {

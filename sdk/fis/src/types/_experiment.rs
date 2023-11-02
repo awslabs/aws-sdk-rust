@@ -55,8 +55,10 @@ impl Experiment {
         self.actions.as_ref()
     }
     /// <p>The stop conditions for the experiment.</p>
-    pub fn stop_conditions(&self) -> ::std::option::Option<&[crate::types::ExperimentStopCondition]> {
-        self.stop_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stop_conditions.is_none()`.
+    pub fn stop_conditions(&self) -> &[crate::types::ExperimentStopCondition] {
+        self.stop_conditions.as_deref().unwrap_or_default()
     }
     /// <p>The time that the experiment was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

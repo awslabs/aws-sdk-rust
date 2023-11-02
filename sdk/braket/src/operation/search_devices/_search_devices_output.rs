@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchDevicesOutput {
     /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
-    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>>,
+    pub devices: ::std::vec::Vec<crate::types::DeviceSummary>,
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchDevicesOutput {
     /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::DeviceSummary]> {
-        self.devices.as_deref()
+    pub fn devices(&self) -> &[crate::types::DeviceSummary] {
+        use std::ops::Deref;
+        self.devices.deref()
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl SearchDevicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchDevicesOutput`](crate::operation::search_devices::SearchDevicesOutput).
-    pub fn build(self) -> crate::operation::search_devices::SearchDevicesOutput {
-        crate::operation::search_devices::SearchDevicesOutput {
-            devices: self.devices,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`devices`](crate::operation::search_devices::builders::SearchDevicesOutputBuilder::devices)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_devices::SearchDevicesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_devices::SearchDevicesOutput {
+            devices: self.devices.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "devices",
+                    "devices was not specified but it is required when building SearchDevicesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

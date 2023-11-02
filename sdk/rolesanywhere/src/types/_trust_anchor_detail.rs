@@ -51,8 +51,10 @@ impl TrustAnchorDetail {
         self.updated_at.as_ref()
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn notification_settings(&self) -> ::std::option::Option<&[crate::types::NotificationSettingDetail]> {
-        self.notification_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_settings.is_none()`.
+    pub fn notification_settings(&self) -> &[crate::types::NotificationSettingDetail] {
+        self.notification_settings.as_deref().unwrap_or_default()
     }
 }
 impl TrustAnchorDetail {

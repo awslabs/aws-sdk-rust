@@ -34,6 +34,7 @@ pub struct DescribeApplicationVersionInputBuilder {
 }
 impl DescribeApplicationVersionInputBuilder {
     /// <p>The name of the application for which you want to get the version description.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeApplicationVersionInputBuilder {
         &self.application_name
     }
     /// <p>The ID of the application version for which you want to get the description.</p>
+    /// This field is required.
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self

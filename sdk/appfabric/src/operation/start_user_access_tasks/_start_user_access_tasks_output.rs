@@ -9,8 +9,10 @@ pub struct StartUserAccessTasksOutput {
 }
 impl StartUserAccessTasksOutput {
     /// <p>Contains a list of user access task information.</p>
-    pub fn user_access_tasks_list(&self) -> ::std::option::Option<&[crate::types::UserAccessTaskItem]> {
-        self.user_access_tasks_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_access_tasks_list.is_none()`.
+    pub fn user_access_tasks_list(&self) -> &[crate::types::UserAccessTaskItem] {
+        self.user_access_tasks_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for StartUserAccessTasksOutput {

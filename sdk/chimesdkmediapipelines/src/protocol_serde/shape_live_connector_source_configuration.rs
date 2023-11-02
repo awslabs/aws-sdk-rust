@@ -3,17 +3,17 @@ pub fn ser_live_connector_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LiveConnectorSourceConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_type {
-        object.key("SourceType").string(var_1.as_str());
+    {
+        object.key("SourceType").string(input.source_type.as_str());
     }
-    if let Some(var_2) = &input.chime_sdk_meeting_live_connector_configuration {
+    if let Some(var_1) = &input.chime_sdk_meeting_live_connector_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("ChimeSdkMeetingLiveConnectorConfiguration").start_object();
+        let mut object_2 = object.key("ChimeSdkMeetingLiveConnectorConfiguration").start_object();
         crate::protocol_serde::shape_chime_sdk_meeting_live_connector_configuration::ser_chime_sdk_meeting_live_connector_configuration(
-            &mut object_3,
-            var_2,
+            &mut object_2,
+            var_1,
         )?;
-        object_3.finish();
+        object_2.finish();
     }
     Ok(())
 }
@@ -55,7 +55,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::live_connector_source_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

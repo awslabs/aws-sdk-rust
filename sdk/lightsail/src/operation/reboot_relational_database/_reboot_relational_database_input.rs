@@ -27,6 +27,7 @@ pub struct RebootRelationalDatabaseInputBuilder {
 }
 impl RebootRelationalDatabaseInputBuilder {
     /// <p>The name of your database to reboot.</p>
+    /// This field is required.
     pub fn relational_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_name = ::std::option::Option::Some(input.into());
         self

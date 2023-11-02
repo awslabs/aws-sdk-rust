@@ -14,12 +14,16 @@ pub struct GroupMembers {
 }
 impl GroupMembers {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    pub fn member_groups(&self) -> ::std::option::Option<&[crate::types::MemberGroup]> {
-        self.member_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_groups.is_none()`.
+    pub fn member_groups(&self) -> &[crate::types::MemberGroup] {
+        self.member_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    pub fn member_users(&self) -> ::std::option::Option<&[crate::types::MemberUser]> {
-        self.member_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_users.is_none()`.
+    pub fn member_users(&self) -> &[crate::types::MemberUser] {
+        self.member_users.as_deref().unwrap_or_default()
     }
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     /// <p>You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code> is optional. The value of <code>type</code> for a group is always <code>GROUP</code> and for a user it is always <code>USER</code>.</p>

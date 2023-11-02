@@ -3,32 +3,32 @@ pub fn ser_explicit_hierarchy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExplicitHierarchy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hierarchy_id {
-        object.key("HierarchyId").string(var_1.as_str());
+    {
+        object.key("HierarchyId").string(input.hierarchy_id.as_str());
     }
-    if let Some(var_2) = &input.columns {
-        let mut array_3 = object.key("Columns").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Columns").start_array();
+        for item_2 in &input.columns {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.drill_down_filters {
-        let mut array_7 = object.key("DrillDownFilters").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.drill_down_filters {
+        let mut array_5 = object.key("DrillDownFilters").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_drill_down_filter::ser_drill_down_filter(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_drill_down_filter::ser_drill_down_filter(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
     Ok(())
 }
@@ -73,7 +73,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::explicit_hierarchy_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

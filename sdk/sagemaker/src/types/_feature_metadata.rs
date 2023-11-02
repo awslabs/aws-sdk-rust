@@ -51,8 +51,10 @@ impl FeatureMetadata {
         self.description.as_deref()
     }
     /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::FeatureParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::FeatureParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl FeatureMetadata {

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEntity`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::set_workspace_id): <p>The ID of the workspace that contains the entity to delete.</p>
-    ///   - [`entity_id(impl Into<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::set_entity_id): <p>The ID of the entity to delete.</p>
-    ///   - [`is_recursive(bool)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::is_recursive) / [`set_is_recursive(Option<bool>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::set_is_recursive): <p>A Boolean value that specifies whether the operation deletes child entities.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::workspace_id) / [`set_workspace_id(impl Into<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace that contains the entity to delete.</p><br>
+    ///   - [`entity_id(impl Into<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::entity_id) / [`set_entity_id(impl Into<String>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::set_entity_id):<br>required: **true**<br><p>The ID of the entity to delete.</p><br>
+    ///   - [`is_recursive(bool)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::is_recursive) / [`set_is_recursive(Option<bool>)`](crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::set_is_recursive):<br>required: **false**<br><p>A Boolean value that specifies whether the operation deletes child entities.</p><br>
     /// - On success, responds with [`DeleteEntityOutput`](crate::operation::delete_entity::DeleteEntityOutput) with field(s):
-    ///   - [`state(Option<State>)`](crate::operation::delete_entity::DeleteEntityOutput::state): <p>The current state of the deleted entity.</p>
+    ///   - [`state(State)`](crate::operation::delete_entity::DeleteEntityOutput::state): <p>The current state of the deleted entity.</p>
     /// - On failure, responds with [`SdkError<DeleteEntityError>`](crate::operation::delete_entity::DeleteEntityError)
     pub fn delete_entity(&self) -> crate::operation::delete_entity::builders::DeleteEntityFluentBuilder {
         crate::operation::delete_entity::builders::DeleteEntityFluentBuilder::new(self.handle.clone())

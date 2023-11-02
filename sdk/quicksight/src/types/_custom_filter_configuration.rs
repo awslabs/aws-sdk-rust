@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomFilterConfiguration {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub match_operator: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
+    pub match_operator: crate::types::CategoryFilterMatchOperator,
     /// <p>The category value for the filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
     pub category_value: ::std::option::Option<::std::string::String>,
@@ -23,12 +23,12 @@ pub struct CustomFilterConfiguration {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
+    pub null_option: crate::types::FilterNullOption,
 }
 impl CustomFilterConfiguration {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn match_operator(&self) -> ::std::option::Option<&crate::types::CategoryFilterMatchOperator> {
-        self.match_operator.as_ref()
+    pub fn match_operator(&self) -> &crate::types::CategoryFilterMatchOperator {
+        &self.match_operator
     }
     /// <p>The category value for the filter.</p>
     /// <p>This field is mutually exclusive to <code>ParameterName</code>.</p>
@@ -53,8 +53,8 @@ impl CustomFilterConfiguration {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn null_option(&self) -> ::std::option::Option<&crate::types::FilterNullOption> {
-        self.null_option.as_ref()
+    pub fn null_option(&self) -> &crate::types::FilterNullOption {
+        &self.null_option
     }
 }
 impl CustomFilterConfiguration {
@@ -76,6 +76,7 @@ pub struct CustomFilterConfigurationBuilder {
 }
 impl CustomFilterConfigurationBuilder {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
+    /// This field is required.
     pub fn match_operator(mut self, input: crate::types::CategoryFilterMatchOperator) -> Self {
         self.match_operator = ::std::option::Option::Some(input);
         self
@@ -152,6 +153,7 @@ impl CustomFilterConfigurationBuilder {
     /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
     /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
         self.null_option = ::std::option::Option::Some(input);
         self
@@ -176,13 +178,26 @@ impl CustomFilterConfigurationBuilder {
         &self.null_option
     }
     /// Consumes the builder and constructs a [`CustomFilterConfiguration`](crate::types::CustomFilterConfiguration).
-    pub fn build(self) -> crate::types::CustomFilterConfiguration {
-        crate::types::CustomFilterConfiguration {
-            match_operator: self.match_operator,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`match_operator`](crate::types::builders::CustomFilterConfigurationBuilder::match_operator)
+    /// - [`null_option`](crate::types::builders::CustomFilterConfigurationBuilder::null_option)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomFilterConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomFilterConfiguration {
+            match_operator: self.match_operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "match_operator",
+                    "match_operator was not specified but it is required when building CustomFilterConfiguration",
+                )
+            })?,
             category_value: self.category_value,
             select_all_options: self.select_all_options,
             parameter_name: self.parameter_name,
-            null_option: self.null_option,
-        }
+            null_option: self.null_option.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "null_option",
+                    "null_option was not specified but it is required when building CustomFilterConfiguration",
+                )
+            })?,
+        })
     }
 }

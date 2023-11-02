@@ -34,6 +34,7 @@ pub struct DescribeServiceOutputBuilder {
 }
 impl DescribeServiceOutputBuilder {
     /// <p>A full description of the App Runner service that you specified in this request.</p>
+    /// This field is required.
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.service = ::std::option::Option::Some(input);
         self

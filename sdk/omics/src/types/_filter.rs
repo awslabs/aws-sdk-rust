@@ -11,12 +11,16 @@ pub struct Filter {
 }
 impl Filter {
     /// <p> The Amazon Resource Number (Arn) for an analytics store. </p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p> The status of an annotation store version. </p>
-    pub fn status(&self) -> ::std::option::Option<&[crate::types::ShareStatus]> {
-        self.status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
+    pub fn status(&self) -> &[crate::types::ShareStatus] {
+        self.status.as_deref().unwrap_or_default()
     }
 }
 impl Filter {

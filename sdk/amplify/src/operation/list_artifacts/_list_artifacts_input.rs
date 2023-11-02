@@ -56,6 +56,7 @@ pub struct ListArtifactsInputBuilder {
 }
 impl ListArtifactsInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ListArtifactsInputBuilder {
         &self.app_id
     }
     /// <p> The name of a branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl ListArtifactsInputBuilder {
         &self.branch_name
     }
     /// <p> The unique ID for a job. </p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

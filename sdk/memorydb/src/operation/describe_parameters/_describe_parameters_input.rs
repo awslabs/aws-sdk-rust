@@ -41,6 +41,7 @@ pub struct DescribeParametersInputBuilder {
 }
 impl DescribeParametersInputBuilder {
     /// <p>he name of a specific parameter group to return details for.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self

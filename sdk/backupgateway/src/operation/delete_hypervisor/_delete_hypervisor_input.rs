@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub hypervisor_arn: ::std::option::Option<::std::string::String>,
+    pub hypervisor_arn: ::std::string::String,
 }
 impl DeleteHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
-        self.hypervisor_arn.as_deref()
+    pub fn hypervisor_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.hypervisor_arn.deref()
     }
 }
 impl DeleteHypervisorInput {
@@ -27,6 +28,7 @@ pub struct DeleteHypervisorInputBuilder {
 }
 impl DeleteHypervisorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
+    /// This field is required.
     pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteHypervisorInputBuilder {
         &self.hypervisor_arn
     }
     /// Consumes the builder and constructs a [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hypervisor_arn`](crate::operation::delete_hypervisor::builders::DeleteHypervisorInputBuilder::hypervisor_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_hypervisor::DeleteHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hypervisor::DeleteHypervisorInput {
-            hypervisor_arn: self.hypervisor_arn,
+            hypervisor_arn: self.hypervisor_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hypervisor_arn",
+                    "hypervisor_arn was not specified but it is required when building DeleteHypervisorInput",
+                )
+            })?,
         })
     }
 }

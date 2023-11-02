@@ -28,6 +28,7 @@ pub struct GetIdentityPoolRolesInputBuilder {
 }
 impl GetIdentityPoolRolesInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self

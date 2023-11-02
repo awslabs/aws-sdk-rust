@@ -26,11 +26,10 @@ pub fn de_create_core_network_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::create_core_network::CreateCoreNetworkError::ConflictException({
@@ -41,11 +40,10 @@ pub fn de_create_core_network_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "CoreNetworkPolicyException" => crate::operation::create_core_network::CreateCoreNetworkError::CoreNetworkPolicyException({
@@ -57,11 +55,10 @@ pub fn de_create_core_network_http_error(
                     crate::protocol_serde::shape_core_network_policy_exception::de_core_network_policy_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::core_network_policy_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_core_network::CreateCoreNetworkError::InternalServerException({
@@ -79,11 +76,10 @@ pub fn de_create_core_network_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::create_core_network::CreateCoreNetworkError::ServiceQuotaExceededException({
@@ -97,11 +93,10 @@ pub fn de_create_core_network_http_error(
                 )
                 .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_core_network::CreateCoreNetworkError::ThrottlingException({
@@ -119,11 +114,10 @@ pub fn de_create_core_network_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_core_network::CreateCoreNetworkError::ValidationException({
@@ -134,11 +128,10 @@ pub fn de_create_core_network_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_core_network::CreateCoreNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_core_network::CreateCoreNetworkError::generic(generic),

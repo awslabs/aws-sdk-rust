@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutConfigRule`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`config_rule(ConfigRule)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::config_rule) / [`set_config_rule(Option<ConfigRule>)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::set_config_rule): <p>The rule that you want to add to your account.</p>
-    ///   - [`tags(Tag)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::set_tags): <p>An array of tag object.</p>
+    ///   - [`config_rule(ConfigRule)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::config_rule) / [`set_config_rule(Option<ConfigRule>)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::set_config_rule):<br>required: **true**<br><p>The rule that you want to add to your account.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder::set_tags):<br>required: **false**<br><p>An array of tag object.</p><br>
     /// - On success, responds with [`PutConfigRuleOutput`](crate::operation::put_config_rule::PutConfigRuleOutput)
     /// - On failure, responds with [`SdkError<PutConfigRuleError>`](crate::operation::put_config_rule::PutConfigRuleError)
     pub fn put_config_rule(&self) -> crate::operation::put_config_rule::builders::PutConfigRuleFluentBuilder {

@@ -27,6 +27,7 @@ pub struct CancelAuditMitigationActionsTaskInputBuilder {
 }
 impl CancelAuditMitigationActionsTaskInputBuilder {
     /// <p>The unique identifier for the task that you want to cancel. </p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self

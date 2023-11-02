@@ -34,8 +34,8 @@ pub fn de_authorize_cluster_security_group_ingress_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AuthorizationQuotaExceeded" => crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::AuthorizationQuotaExceededFault({
@@ -50,8 +50,8 @@ pub fn de_authorize_cluster_security_group_ingress_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ClusterSecurityGroupNotFound" => crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::ClusterSecurityGroupNotFoundFault({
@@ -66,8 +66,8 @@ pub fn de_authorize_cluster_security_group_ingress_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidClusterSecurityGroupState" => crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::InvalidClusterSecurityGroupStateFault({
@@ -82,8 +82,8 @@ pub fn de_authorize_cluster_security_group_ingress_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError::generic(generic)

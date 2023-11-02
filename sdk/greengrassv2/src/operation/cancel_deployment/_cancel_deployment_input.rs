@@ -27,6 +27,7 @@ pub struct CancelDeploymentInputBuilder {
 }
 impl CancelDeploymentInputBuilder {
     /// <p>The ID of the deployment.</p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self

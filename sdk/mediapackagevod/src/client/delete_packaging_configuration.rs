@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePackagingConfiguration`](crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationFluentBuilder::set_id): The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_packaging_configuration::builders::DeletePackagingConfigurationFluentBuilder::set_id):<br>required: **true**<br>The ID of the MediaPackage VOD PackagingConfiguration resource to delete.<br>
     /// - On success, responds with [`DeletePackagingConfigurationOutput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeletePackagingConfigurationError>`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationError)
     pub fn delete_packaging_configuration(

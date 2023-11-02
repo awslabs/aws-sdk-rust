@@ -101,8 +101,10 @@ impl Asn1Subject {
     /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
-    pub fn custom_attributes(&self) -> ::std::option::Option<&[crate::types::CustomAttribute]> {
-        self.custom_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_attributes.is_none()`.
+    pub fn custom_attributes(&self) -> &[crate::types::CustomAttribute] {
+        self.custom_attributes.as_deref().unwrap_or_default()
     }
 }
 impl Asn1Subject {

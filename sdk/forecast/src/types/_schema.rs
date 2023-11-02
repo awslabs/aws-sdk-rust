@@ -9,8 +9,10 @@ pub struct Schema {
 }
 impl Schema {
     /// <p>An array of attributes specifying the name and type of each field in a dataset.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::SchemaAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::SchemaAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl Schema {

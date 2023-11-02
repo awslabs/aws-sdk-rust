@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleUpdate {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub rule_identifier: ::std::option::Option<::std::string::String>,
+    pub rule_identifier: ::std::string::String,
     /// <p>The rule match.</p>
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -15,8 +15,9 @@ pub struct RuleUpdate {
 }
 impl RuleUpdate {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
-        self.rule_identifier.as_deref()
+    pub fn rule_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_identifier.deref()
     }
     /// <p>The rule match.</p>
     pub fn r#match(&self) -> ::std::option::Option<&crate::types::RuleMatch> {
@@ -49,6 +50,7 @@ pub struct RuleUpdateBuilder {
 }
 impl RuleUpdateBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl RuleUpdateBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`RuleUpdate`](crate::types::RuleUpdate).
-    pub fn build(self) -> crate::types::RuleUpdate {
-        crate::types::RuleUpdate {
-            rule_identifier: self.rule_identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_identifier`](crate::types::builders::RuleUpdateBuilder::rule_identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleUpdate {
+            rule_identifier: self.rule_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_identifier",
+                    "rule_identifier was not specified but it is required when building RuleUpdate",
+                )
+            })?,
             r#match: self.r#match,
             priority: self.priority,
             action: self.action,
-        }
+        })
     }
 }

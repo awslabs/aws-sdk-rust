@@ -44,8 +44,10 @@ impl CreatePermissionGroupInput {
     /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
     /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
     /// </ul>
-    pub fn application_permissions(&self) -> ::std::option::Option<&[crate::types::ApplicationPermission]> {
-        self.application_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_permissions.is_none()`.
+    pub fn application_permissions(&self) -> &[crate::types::ApplicationPermission] {
+        self.application_permissions.as_deref().unwrap_or_default()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -80,6 +82,7 @@ pub struct CreatePermissionGroupInputBuilder {
 }
 impl CreatePermissionGroupInputBuilder {
     /// <p>The name of the permission group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

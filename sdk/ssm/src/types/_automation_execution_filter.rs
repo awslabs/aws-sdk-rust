@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationExecutionFilter {
     /// <p>One or more keys to limit the results.</p>
-    pub key: ::std::option::Option<crate::types::AutomationExecutionFilterKey>,
+    pub key: crate::types::AutomationExecutionFilterKey,
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl AutomationExecutionFilter {
     /// <p>One or more keys to limit the results.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::AutomationExecutionFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::AutomationExecutionFilterKey {
+        &self.key
     }
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl AutomationExecutionFilter {
@@ -35,6 +36,7 @@ pub struct AutomationExecutionFilterBuilder {
 }
 impl AutomationExecutionFilterBuilder {
     /// <p>One or more keys to limit the results.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::AutomationExecutionFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl AutomationExecutionFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`AutomationExecutionFilter`](crate::types::AutomationExecutionFilter).
-    pub fn build(self) -> crate::types::AutomationExecutionFilter {
-        crate::types::AutomationExecutionFilter {
-            key: self.key,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::AutomationExecutionFilterBuilder::key)
+    /// - [`values`](crate::types::builders::AutomationExecutionFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutomationExecutionFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutomationExecutionFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building AutomationExecutionFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building AutomationExecutionFilter",
+                )
+            })?,
+        })
     }
 }

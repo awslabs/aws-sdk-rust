@@ -15,8 +15,10 @@ impl DocumentMetadata {
         self.pages
     }
     /// <p>List of pages in the document, with the number of characters extracted from each page.</p>
-    pub fn extracted_characters(&self) -> ::std::option::Option<&[crate::types::ExtractedCharactersListItem]> {
-        self.extracted_characters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extracted_characters.is_none()`.
+    pub fn extracted_characters(&self) -> &[crate::types::ExtractedCharactersListItem] {
+        self.extracted_characters.as_deref().unwrap_or_default()
     }
 }
 impl DocumentMetadata {

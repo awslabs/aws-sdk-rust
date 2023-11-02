@@ -22,8 +22,10 @@ impl UpdateRateBasedRuleInput {
         self.change_token.as_deref()
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::RuleUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::RuleUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn rate_limit(&self) -> ::std::option::Option<i64> {
@@ -48,6 +50,7 @@ pub struct UpdateRateBasedRuleInputBuilder {
 }
 impl UpdateRateBasedRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl UpdateRateBasedRuleInputBuilder {
         &self.rule_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +100,7 @@ impl UpdateRateBasedRuleInputBuilder {
         &self.updates
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    /// This field is required.
     pub fn rate_limit(mut self, input: i64) -> Self {
         self.rate_limit = ::std::option::Option::Some(input);
         self

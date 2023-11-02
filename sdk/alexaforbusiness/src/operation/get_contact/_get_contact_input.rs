@@ -27,6 +27,7 @@ pub struct GetContactInputBuilder {
 }
 impl GetContactInputBuilder {
     /// <p>The ARN of the contact for which to request details.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self

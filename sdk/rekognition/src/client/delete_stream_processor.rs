@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStreamProcessor`](crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::set_name): <p>The name of the stream processor you want to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder::set_name):<br>required: **true**<br><p>The name of the stream processor you want to delete.</p><br>
     /// - On success, responds with [`DeleteStreamProcessorOutput`](crate::operation::delete_stream_processor::DeleteStreamProcessorOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamProcessorError>`](crate::operation::delete_stream_processor::DeleteStreamProcessorError)
     pub fn delete_stream_processor(&self) -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorFluentBuilder {

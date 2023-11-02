@@ -28,6 +28,7 @@ pub struct ImportSourceBuilder {
 }
 impl ImportSourceBuilder {
     /// <p> The source S3 bucket. </p>
+    /// This field is required.
     pub fn s3(mut self, input: crate::types::S3ImportSource) -> Self {
         self.s3 = ::std::option::Option::Some(input);
         self

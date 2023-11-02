@@ -17,18 +17,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentFile {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::EnvironmentFileType>,
+    pub r#type: crate::types::EnvironmentFileType,
 }
 impl EnvironmentFile {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EnvironmentFileType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EnvironmentFileType {
+        &self.r#type
     }
 }
 impl EnvironmentFile {
@@ -47,6 +48,7 @@ pub struct EnvironmentFileBuilder {
 }
 impl EnvironmentFileBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +63,7 @@ impl EnvironmentFileBuilder {
         &self.value
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EnvironmentFileType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -75,10 +78,23 @@ impl EnvironmentFileBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EnvironmentFile`](crate::types::EnvironmentFile).
-    pub fn build(self) -> crate::types::EnvironmentFile {
-        crate::types::EnvironmentFile {
-            value: self.value,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::EnvironmentFileBuilder::value)
+    /// - [`r#type`](crate::types::builders::EnvironmentFileBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentFile, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentFile {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building EnvironmentFile",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EnvironmentFile",
+                )
+            })?,
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct SendUsersMessagesInputBuilder {
 }
 impl SendUsersMessagesInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl SendUsersMessagesInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
+    /// This field is required.
     pub fn send_users_message_request(mut self, input: crate::types::SendUsersMessageRequest) -> Self {
         self.send_users_message_request = ::std::option::Option::Some(input);
         self

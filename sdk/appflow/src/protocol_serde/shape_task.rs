@@ -3,36 +3,36 @@ pub fn ser_task(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Task,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_fields {
-        let mut array_2 = object.key("sourceFields").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("sourceFields").start_array();
+        for item_2 in &input.source_fields {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.connector_operator {
+    if let Some(var_3) = &input.connector_operator {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("connectorOperator").start_object();
-        crate::protocol_serde::shape_connector_operator::ser_connector_operator(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("connectorOperator").start_object();
+        crate::protocol_serde::shape_connector_operator::ser_connector_operator(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.destination_field {
-        object.key("destinationField").string(var_6.as_str());
+    if let Some(var_5) = &input.destination_field {
+        object.key("destinationField").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.task_type {
-        object.key("taskType").string(var_7.as_str());
+    {
+        object.key("taskType").string(input.task_type.as_str());
     }
-    if let Some(var_8) = &input.task_properties {
+    if let Some(var_6) = &input.task_properties {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("taskProperties").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_7 = object.key("taskProperties").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_9.finish();
+        object_7.finish();
     }
     Ok(())
 }
@@ -85,7 +85,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::task_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

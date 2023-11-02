@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGlossary`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which this business glossary exists.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::set_identifier): <p>The ID of the business glossary.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which this business glossary exists.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_glossary::builders::GetGlossaryFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the business glossary.</p><br>
     /// - On success, responds with [`GetGlossaryOutput`](crate::operation::get_glossary::GetGlossaryOutput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::domain_id): <p>The ID of the Amazon DataZone domain in which this business glossary exists.</p>
-    ///   - [`id(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::id): <p>The ID of the business glossary.</p>
-    ///   - [`owning_project_id(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::owning_project_id): <p>The ID of the project that owns this business glossary.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::name): <p>The name of the business glossary.</p>
+    ///   - [`domain_id(String)`](crate::operation::get_glossary::GetGlossaryOutput::domain_id): <p>The ID of the Amazon DataZone domain in which this business glossary exists.</p>
+    ///   - [`id(String)`](crate::operation::get_glossary::GetGlossaryOutput::id): <p>The ID of the business glossary.</p>
+    ///   - [`owning_project_id(String)`](crate::operation::get_glossary::GetGlossaryOutput::owning_project_id): <p>The ID of the project that owns this business glossary.</p>
+    ///   - [`name(String)`](crate::operation::get_glossary::GetGlossaryOutput::name): <p>The name of the business glossary.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::description): <p>The description of the business glossary.</p>
-    ///   - [`status(Option<GlossaryStatus>)`](crate::operation::get_glossary::GetGlossaryOutput::status): <p>The status of the business glossary.</p>
+    ///   - [`status(GlossaryStatus)`](crate::operation::get_glossary::GetGlossaryOutput::status): <p>The status of the business glossary.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_glossary::GetGlossaryOutput::created_at): <p>The timestamp of when this business glossary was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::get_glossary::GetGlossaryOutput::created_by): <p>The Amazon DataZone user who created this business glossary.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_glossary::GetGlossaryOutput::updated_at): <p>The timestamp of when the business glossary was updated.</p>

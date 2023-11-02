@@ -8,8 +8,10 @@ pub struct BatchResetAlarmInput {
 }
 impl BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    pub fn reset_action_requests(&self) -> ::std::option::Option<&[crate::types::ResetAlarmActionRequest]> {
-        self.reset_action_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reset_action_requests.is_none()`.
+    pub fn reset_action_requests(&self) -> &[crate::types::ResetAlarmActionRequest] {
+        self.reset_action_requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchResetAlarmInput {

@@ -54,6 +54,7 @@ pub struct ListAssetRelationshipsInputBuilder {
 }
 impl ListAssetRelationshipsInputBuilder {
     /// <p>The ID of the asset.</p>
+    /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl ListAssetRelationshipsInputBuilder {
     /// <ul>
     /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn traversal_type(mut self, input: crate::types::TraversalType) -> Self {
         self.traversal_type = ::std::option::Option::Some(input);
         self

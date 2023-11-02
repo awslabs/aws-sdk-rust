@@ -85,16 +85,22 @@ impl VpnConnection {
         self.options.as_ref()
     }
     /// <p>The static routes associated with the VPN connection.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::VpnStaticRoute]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::VpnStaticRoute] {
+        self.routes.as_deref().unwrap_or_default()
     }
     /// <p>Any tags assigned to the VPN connection.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Information about the VPN tunnel.</p>
-    pub fn vgw_telemetry(&self) -> ::std::option::Option<&[crate::types::VgwTelemetry]> {
-        self.vgw_telemetry.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vgw_telemetry.is_none()`.
+    pub fn vgw_telemetry(&self) -> &[crate::types::VgwTelemetry] {
+        self.vgw_telemetry.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for VpnConnection {

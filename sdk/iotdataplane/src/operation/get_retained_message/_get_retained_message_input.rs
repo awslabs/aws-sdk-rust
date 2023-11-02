@@ -28,6 +28,7 @@ pub struct GetRetainedMessageInputBuilder {
 }
 impl GetRetainedMessageInputBuilder {
     /// <p>The topic name of the retained message to retrieve.</p>
+    /// This field is required.
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic = ::std::option::Option::Some(input.into());
         self

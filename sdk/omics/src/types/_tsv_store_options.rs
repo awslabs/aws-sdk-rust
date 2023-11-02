@@ -21,8 +21,10 @@ impl TsvStoreOptions {
         self.format_to_header.as_ref()
     }
     /// <p>The store's schema.</p>
-    pub fn schema(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>]> {
-        self.schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
+    pub fn schema(&self) -> &[::std::collections::HashMap<::std::string::String, crate::types::SchemaValueType>] {
+        self.schema.as_deref().unwrap_or_default()
     }
 }
 impl TsvStoreOptions {

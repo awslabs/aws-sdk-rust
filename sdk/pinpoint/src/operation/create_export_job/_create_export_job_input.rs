@@ -34,6 +34,7 @@ pub struct CreateExportJobInputBuilder {
 }
 impl CreateExportJobInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateExportJobInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    /// This field is required.
     pub fn export_job_request(mut self, input: crate::types::ExportJobRequest) -> Self {
         self.export_job_request = ::std::option::Option::Some(input);
         self

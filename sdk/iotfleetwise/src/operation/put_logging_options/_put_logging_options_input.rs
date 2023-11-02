@@ -27,6 +27,7 @@ pub struct PutLoggingOptionsInputBuilder {
 }
 impl PutLoggingOptionsInputBuilder {
     /// <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
+    /// This field is required.
     pub fn cloud_watch_log_delivery(mut self, input: crate::types::CloudWatchLogDeliveryOptions) -> Self {
         self.cloud_watch_log_delivery = ::std::option::Option::Some(input);
         self

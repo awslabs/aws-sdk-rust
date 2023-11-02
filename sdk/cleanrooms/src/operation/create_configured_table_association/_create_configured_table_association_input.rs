@@ -4,38 +4,42 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableAssociationInput {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description for the configured table association.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    pub configured_table_identifier: ::std::option::Option<::std::string::String>,
+    pub configured_table_identifier: ::std::string::String,
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfiguredTableAssociationInput {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description for the configured table association.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
-        self.configured_table_identifier.as_deref()
+    pub fn configured_table_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.configured_table_identifier.deref()
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +66,7 @@ pub struct CreateConfiguredTableAssociationInputBuilder {
 }
 impl CreateConfiguredTableAssociationInputBuilder {
     /// <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.description
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.membership_identifier
     }
     /// <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +125,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.configured_table_identifier
     }
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +160,11 @@ impl CreateConfiguredTableAssociationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfiguredTableAssociationInput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder::name)
+    /// - [`membership_identifier`](crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder::membership_identifier)
+    /// - [`configured_table_identifier`](crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder::configured_table_identifier)
+    /// - [`role_arn`](crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder::role_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -160,11 +173,31 @@ impl CreateConfiguredTableAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput {
-                name: self.name,
+                name: self.name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "name",
+                        "name was not specified but it is required when building CreateConfiguredTableAssociationInput",
+                    )
+                })?,
                 description: self.description,
-                membership_identifier: self.membership_identifier,
-                configured_table_identifier: self.configured_table_identifier,
-                role_arn: self.role_arn,
+                membership_identifier: self.membership_identifier.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "membership_identifier",
+                        "membership_identifier was not specified but it is required when building CreateConfiguredTableAssociationInput",
+                    )
+                })?,
+                configured_table_identifier: self.configured_table_identifier.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "configured_table_identifier",
+                        "configured_table_identifier was not specified but it is required when building CreateConfiguredTableAssociationInput",
+                    )
+                })?,
+                role_arn: self.role_arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "role_arn",
+                        "role_arn was not specified but it is required when building CreateConfiguredTableAssociationInput",
+                    )
+                })?,
                 tags: self.tags,
             },
         )

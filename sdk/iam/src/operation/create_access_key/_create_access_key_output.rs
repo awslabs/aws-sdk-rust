@@ -35,6 +35,7 @@ pub struct CreateAccessKeyOutputBuilder {
 }
 impl CreateAccessKeyOutputBuilder {
     /// <p>A structure with details about the access key.</p>
+    /// This field is required.
     pub fn access_key(mut self, input: crate::types::AccessKey) -> Self {
         self.access_key = ::std::option::Option::Some(input);
         self

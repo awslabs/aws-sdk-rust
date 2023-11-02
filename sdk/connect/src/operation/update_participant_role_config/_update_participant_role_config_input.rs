@@ -41,6 +41,7 @@ pub struct UpdateParticipantRoleConfigInputBuilder {
 }
 impl UpdateParticipantRoleConfigInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateParticipantRoleConfigInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateParticipantRoleConfigInputBuilder {
         &self.contact_id
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
+    /// This field is required.
     pub fn channel_configuration(mut self, input: crate::types::UpdateParticipantRoleConfigChannelInfo) -> Self {
         self.channel_configuration = ::std::option::Option::Some(input);
         self

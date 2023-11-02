@@ -13,12 +13,16 @@ pub struct BatchGetTracesOutput {
 }
 impl BatchGetTracesOutput {
     /// <p>Full traces for the specified requests.</p>
-    pub fn traces(&self) -> ::std::option::Option<&[crate::types::Trace]> {
-        self.traces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traces.is_none()`.
+    pub fn traces(&self) -> &[crate::types::Trace] {
+        self.traces.as_deref().unwrap_or_default()
     }
     /// <p>Trace IDs of requests that haven't been processed.</p>
-    pub fn unprocessed_trace_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.unprocessed_trace_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_trace_ids.is_none()`.
+    pub fn unprocessed_trace_ids(&self) -> &[::std::string::String] {
+        self.unprocessed_trace_ids.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

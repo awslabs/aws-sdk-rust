@@ -34,6 +34,7 @@ pub struct DescribeEntityInputBuilder {
 }
 impl DescribeEntityInputBuilder {
     /// <p>The identifier for the organization under which the entity exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeEntityInputBuilder {
         &self.organization_id
     }
     /// <p>The email under which the entity exists.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self

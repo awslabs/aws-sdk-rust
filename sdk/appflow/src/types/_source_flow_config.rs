@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub connector_type: ::std::option::Option<crate::types::ConnectorType>,
+    pub connector_type: crate::types::ConnectorType,
     /// <p>The API version of the connector when it's used as a source in the flow.</p>
     pub api_version: ::std::option::Option<::std::string::String>,
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
@@ -17,8 +17,8 @@ pub struct SourceFlowConfig {
 }
 impl SourceFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::ConnectorType> {
-        self.connector_type.as_ref()
+    pub fn connector_type(&self) -> &crate::types::ConnectorType {
+        &self.connector_type
     }
     /// <p>The API version of the connector when it's used as a source in the flow.</p>
     pub fn api_version(&self) -> ::std::option::Option<&str> {
@@ -56,6 +56,7 @@ pub struct SourceFlowConfigBuilder {
 }
 impl SourceFlowConfigBuilder {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    /// This field is required.
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl SourceFlowConfigBuilder {
         &self.connector_profile_name
     }
     /// <p> Specifies the information that is required to query a particular source connector. </p>
+    /// This field is required.
     pub fn source_connector_properties(mut self, input: crate::types::SourceConnectorProperties) -> Self {
         self.source_connector_properties = ::std::option::Option::Some(input);
         self
@@ -126,13 +128,20 @@ impl SourceFlowConfigBuilder {
         &self.incremental_pull_config
     }
     /// Consumes the builder and constructs a [`SourceFlowConfig`](crate::types::SourceFlowConfig).
-    pub fn build(self) -> crate::types::SourceFlowConfig {
-        crate::types::SourceFlowConfig {
-            connector_type: self.connector_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connector_type`](crate::types::builders::SourceFlowConfigBuilder::connector_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceFlowConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceFlowConfig {
+            connector_type: self.connector_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connector_type",
+                    "connector_type was not specified but it is required when building SourceFlowConfig",
+                )
+            })?,
             api_version: self.api_version,
             connector_profile_name: self.connector_profile_name,
             source_connector_properties: self.source_connector_properties,
             incremental_pull_config: self.incremental_pull_config,
-        }
+        })
     }
 }

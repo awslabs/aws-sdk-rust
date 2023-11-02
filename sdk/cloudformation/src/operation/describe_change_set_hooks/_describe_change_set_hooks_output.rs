@@ -29,8 +29,10 @@ impl DescribeChangeSetHooksOutput {
         self.change_set_name.as_deref()
     }
     /// <p>List of hook objects.</p>
-    pub fn hooks(&self) -> ::std::option::Option<&[crate::types::ChangeSetHook]> {
-        self.hooks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hooks.is_none()`.
+    pub fn hooks(&self) -> &[crate::types::ChangeSetHook] {
+        self.hooks.as_deref().unwrap_or_default()
     }
     /// <p>Provides the status of the change set hook.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeSetHooksStatus> {

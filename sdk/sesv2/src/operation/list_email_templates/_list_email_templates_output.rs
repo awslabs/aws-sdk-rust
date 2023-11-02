@@ -12,8 +12,10 @@ pub struct ListEmailTemplatesOutput {
 }
 impl ListEmailTemplatesOutput {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
-    pub fn templates_metadata(&self) -> ::std::option::Option<&[crate::types::EmailTemplateMetadata]> {
-        self.templates_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.templates_metadata.is_none()`.
+    pub fn templates_metadata(&self) -> &[crate::types::EmailTemplateMetadata] {
+        self.templates_metadata.as_deref().unwrap_or_default()
     }
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the next 10 email templates.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

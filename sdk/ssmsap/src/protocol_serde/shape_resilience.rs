@@ -42,6 +42,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EnqueueReplication" => {
+                            builder = builder.set_enqueue_replication(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

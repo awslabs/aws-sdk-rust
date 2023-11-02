@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyMapping {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
-    pub mapping: ::std::option::Option<::std::vec::Vec<crate::types::Mapping>>,
+    pub mapping: ::std::vec::Vec<crate::types::Mapping>,
 }
 impl ApplyMapping {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>Specifies the mapping of data property keys in the data source to data property keys in the data target.</p>
-    pub fn mapping(&self) -> ::std::option::Option<&[crate::types::Mapping]> {
-        self.mapping.as_deref()
+    pub fn mapping(&self) -> &[crate::types::Mapping] {
+        use std::ops::Deref;
+        self.mapping.deref()
     }
 }
 impl ApplyMapping {
@@ -42,6 +45,7 @@ pub struct ApplyMappingBuilder {
 }
 impl ApplyMappingBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +100,30 @@ impl ApplyMappingBuilder {
         &self.mapping
     }
     /// Consumes the builder and constructs a [`ApplyMapping`](crate::types::ApplyMapping).
-    pub fn build(self) -> crate::types::ApplyMapping {
-        crate::types::ApplyMapping {
-            name: self.name,
-            inputs: self.inputs,
-            mapping: self.mapping,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ApplyMappingBuilder::name)
+    /// - [`inputs`](crate::types::builders::ApplyMappingBuilder::inputs)
+    /// - [`mapping`](crate::types::builders::ApplyMappingBuilder::mapping)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplyMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplyMapping {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ApplyMapping",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building ApplyMapping",
+                )
+            })?,
+            mapping: self.mapping.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mapping",
+                    "mapping was not specified but it is required when building ApplyMapping",
+                )
+            })?,
+        })
     }
 }

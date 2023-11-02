@@ -6,7 +6,7 @@ pub struct UpdateNamespaceInput {
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub admin_username: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl UpdateNamespaceInput {
         self.namespace_name.as_deref()
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
         self.admin_user_password.as_deref()
     }
@@ -46,12 +46,16 @@ impl UpdateNamespaceInput {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>A list of IAM roles to associate with the namespace. This parameter must be updated together with <code>defaultIamRoleArn</code>.</p>
-    pub fn iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[::std::string::String] {
+        self.iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>The types of logs the namespace can export. The export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn log_exports(&self) -> ::std::option::Option<&[crate::types::LogExport]> {
-        self.log_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
+    pub fn log_exports(&self) -> &[crate::types::LogExport] {
+        self.log_exports.as_deref().unwrap_or_default()
     }
     /// <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the admin user account's password. </p>
     pub fn manage_admin_password(&self) -> ::std::option::Option<bool> {
@@ -100,6 +104,7 @@ pub struct UpdateNamespaceInputBuilder {
 }
 impl UpdateNamespaceInputBuilder {
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
+    /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
@@ -114,19 +119,19 @@ impl UpdateNamespaceInputBuilder {
         &self.namespace_name
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
-    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. </p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_password
     }

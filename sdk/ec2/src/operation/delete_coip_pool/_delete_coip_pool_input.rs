@@ -34,6 +34,7 @@ pub struct DeleteCoipPoolInputBuilder {
 }
 impl DeleteCoipPoolInputBuilder {
     /// <p>The ID of the CoIP pool that you want to delete. </p>
+    /// This field is required.
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
         self

@@ -72,12 +72,16 @@ impl ListMultipartUploadsOutput {
         self.is_truncated
     }
     /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
-    pub fn uploads(&self) -> ::std::option::Option<&[crate::types::MultipartUpload]> {
-        self.uploads.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uploads.is_none()`.
+    pub fn uploads(&self) -> &[crate::types::MultipartUpload] {
+        self.uploads.as_deref().unwrap_or_default()
     }
     /// <p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key prefixes are returned in the <code>Prefix</code> child element.</p>
-    pub fn common_prefixes(&self) -> ::std::option::Option<&[crate::types::CommonPrefix]> {
-        self.common_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.common_prefixes.is_none()`.
+    pub fn common_prefixes(&self) -> &[crate::types::CommonPrefix] {
+        self.common_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>

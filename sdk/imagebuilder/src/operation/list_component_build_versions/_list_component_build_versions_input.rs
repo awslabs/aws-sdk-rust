@@ -41,6 +41,7 @@ pub struct ListComponentBuildVersionsInputBuilder {
 }
 impl ListComponentBuildVersionsInputBuilder {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// This field is required.
     pub fn component_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version_arn = ::std::option::Option::Some(input.into());
         self

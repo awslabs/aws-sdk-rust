@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::set_next_token): <p>Pagination token from the previous response.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::set_max_results): <p>Maximum number of collection IDs to return. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token from the previous response.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_collections::builders::ListCollectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of collection IDs to return. </p><br>
     /// - On success, responds with [`ListCollectionsOutput`](crate::operation::list_collections::ListCollectionsOutput) with field(s):
     ///   - [`collection_ids(Option<Vec<String>>)`](crate::operation::list_collections::ListCollectionsOutput::collection_ids): <p>An array of collection IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_collections::ListCollectionsOutput::next_token): <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>

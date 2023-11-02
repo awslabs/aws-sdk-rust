@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiPolygonGeometryInput {
     /// <p>The coordinates of the multipolygon geometry.</p>
-    pub coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>>,
+    pub coordinates: ::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
 }
 impl MultiPolygonGeometryInput {
     /// <p>The coordinates of the multipolygon geometry.</p>
-    pub fn coordinates(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>]> {
-        self.coordinates.as_deref()
+    pub fn coordinates(&self) -> &[::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>] {
+        use std::ops::Deref;
+        self.coordinates.deref()
     }
 }
 impl MultiPolygonGeometryInput {
@@ -48,9 +49,16 @@ impl MultiPolygonGeometryInputBuilder {
         &self.coordinates
     }
     /// Consumes the builder and constructs a [`MultiPolygonGeometryInput`](crate::types::MultiPolygonGeometryInput).
-    pub fn build(self) -> crate::types::MultiPolygonGeometryInput {
-        crate::types::MultiPolygonGeometryInput {
-            coordinates: self.coordinates,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`coordinates`](crate::types::builders::MultiPolygonGeometryInputBuilder::coordinates)
+    pub fn build(self) -> ::std::result::Result<crate::types::MultiPolygonGeometryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MultiPolygonGeometryInput {
+            coordinates: self.coordinates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "coordinates",
+                    "coordinates was not specified but it is required when building MultiPolygonGeometryInput",
+                )
+            })?,
+        })
     }
 }

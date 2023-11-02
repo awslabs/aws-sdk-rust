@@ -31,6 +31,7 @@ pub struct DisableLoggingInputBuilder {
 impl DisableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code> </p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self

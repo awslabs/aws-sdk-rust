@@ -3,20 +3,20 @@ pub fn ser_update_detector_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateDetectorRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.message_id {
-        object.key("messageId").string(var_1.as_str());
+    {
+        object.key("messageId").string(input.message_id.as_str());
     }
-    if let Some(var_2) = &input.detector_model_name {
-        object.key("detectorModelName").string(var_2.as_str());
+    {
+        object.key("detectorModelName").string(input.detector_model_name.as_str());
     }
-    if let Some(var_3) = &input.key_value {
-        object.key("keyValue").string(var_3.as_str());
+    if let Some(var_1) = &input.key_value {
+        object.key("keyValue").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.state {
+    if let Some(var_2) = &input.state {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("state").start_object();
-        crate::protocol_serde::shape_detector_state_definition::ser_detector_state_definition(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("state").start_object();
+        crate::protocol_serde::shape_detector_state_definition::ser_detector_state_definition(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

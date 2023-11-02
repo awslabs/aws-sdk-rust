@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentProvisionedResourcesInput {
     /// <p>The environment name.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListEnvironmentProvisionedResourcesInput {
     /// <p>The environment name.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct ListEnvironmentProvisionedResourcesInputBuilder {
 }
 impl ListEnvironmentProvisionedResourcesInputBuilder {
     /// <p>The environment name.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,8 @@ impl ListEnvironmentProvisionedResourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEnvironmentProvisionedResourcesInput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_name`](crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesInputBuilder::environment_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,7 +74,12 @@ impl ListEnvironmentProvisionedResourcesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput {
-                environment_name: self.environment_name,
+                environment_name: self.environment_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "environment_name",
+                        "environment_name was not specified but it is required when building ListEnvironmentProvisionedResourcesInput",
+                    )
+                })?,
                 next_token: self.next_token,
             },
         )

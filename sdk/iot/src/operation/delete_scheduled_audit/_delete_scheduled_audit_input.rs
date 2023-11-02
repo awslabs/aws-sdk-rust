@@ -27,6 +27,7 @@ pub struct DeleteScheduledAuditInputBuilder {
 }
 impl DeleteScheduledAuditInputBuilder {
     /// <p>The name of the scheduled audit you want to delete.</p>
+    /// This field is required.
     pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self

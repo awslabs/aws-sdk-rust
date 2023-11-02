@@ -9,7 +9,7 @@ pub struct GetDeliverabilityTestReportOutput {
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
     pub overall_placement: ::std::option::Option<crate::types::PlacementStatistics>,
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-    pub isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::IspPlacement>>,
+    pub isp_placements: ::std::vec::Vec<crate::types::IspPlacement>,
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
@@ -26,16 +26,19 @@ impl GetDeliverabilityTestReportOutput {
         self.overall_placement.as_ref()
     }
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-    pub fn isp_placements(&self) -> ::std::option::Option<&[crate::types::IspPlacement]> {
-        self.isp_placements.as_deref()
+    pub fn isp_placements(&self) -> &[crate::types::IspPlacement] {
+        use std::ops::Deref;
+        self.isp_placements.deref()
     }
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDeliverabilityTestReportOutput {
@@ -63,6 +66,7 @@ pub struct GetDeliverabilityTestReportOutputBuilder {
 }
 impl GetDeliverabilityTestReportOutputBuilder {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
+    /// This field is required.
     pub fn deliverability_test_report(mut self, input: crate::types::DeliverabilityTestReport) -> Self {
         self.deliverability_test_report = ::std::option::Option::Some(input);
         self
@@ -77,6 +81,7 @@ impl GetDeliverabilityTestReportOutputBuilder {
         &self.deliverability_test_report
     }
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
+    /// This field is required.
     pub fn overall_placement(mut self, input: crate::types::PlacementStatistics) -> Self {
         self.overall_placement = ::std::option::Option::Some(input);
         self
@@ -154,14 +159,26 @@ impl GetDeliverabilityTestReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDeliverabilityTestReportOutput`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput).
-    pub fn build(self) -> crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput {
-        crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`isp_placements`](crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportOutputBuilder::isp_placements)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput {
             deliverability_test_report: self.deliverability_test_report,
             overall_placement: self.overall_placement,
-            isp_placements: self.isp_placements,
+            isp_placements: self.isp_placements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "isp_placements",
+                    "isp_placements was not specified but it is required when building GetDeliverabilityTestReportOutput",
+                )
+            })?,
             message: self.message,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

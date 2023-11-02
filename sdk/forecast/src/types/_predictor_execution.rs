@@ -15,8 +15,10 @@ impl PredictorExecution {
         self.algorithm_arn.as_deref()
     }
     /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    pub fn test_windows(&self) -> ::std::option::Option<&[crate::types::TestWindowSummary]> {
-        self.test_windows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_windows.is_none()`.
+    pub fn test_windows(&self) -> &[crate::types::TestWindowSummary] {
+        self.test_windows.as_deref().unwrap_or_default()
     }
 }
 impl PredictorExecution {

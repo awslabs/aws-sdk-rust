@@ -66,6 +66,7 @@ pub struct SearchGroupProfilesInputBuilder {
 }
 impl SearchGroupProfilesInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which you want to search group profiles.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl SearchGroupProfilesInputBuilder {
         &self.domain_identifier
     }
     /// <p>The group type for which to search.</p>
+    /// This field is required.
     pub fn group_type(mut self, input: crate::types::GroupSearchType) -> Self {
         self.group_type = ::std::option::Option::Some(input);
         self

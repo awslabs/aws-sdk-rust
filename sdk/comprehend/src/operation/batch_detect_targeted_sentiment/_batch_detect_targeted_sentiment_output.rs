@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchDetectTargetedSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub result_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchDetectTargetedSentimentItemResult>>,
+    pub result_list: ::std::vec::Vec<crate::types::BatchDetectTargetedSentimentItemResult>,
     /// <p>List of errors that the operation can return.</p>
-    pub error_list: ::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>>,
+    pub error_list: ::std::vec::Vec<crate::types::BatchItemError>,
     _request_id: Option<String>,
 }
 impl BatchDetectTargetedSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(&self) -> ::std::option::Option<&[crate::types::BatchDetectTargetedSentimentItemResult]> {
-        self.result_list.as_deref()
+    pub fn result_list(&self) -> &[crate::types::BatchDetectTargetedSentimentItemResult] {
+        use std::ops::Deref;
+        self.result_list.deref()
     }
     /// <p>List of errors that the operation can return.</p>
-    pub fn error_list(&self) -> ::std::option::Option<&[crate::types::BatchItemError]> {
-        self.error_list.as_deref()
+    pub fn error_list(&self) -> &[crate::types::BatchItemError] {
+        use std::ops::Deref;
+        self.error_list.deref()
     }
 }
 impl ::std::fmt::Debug for BatchDetectTargetedSentimentOutput {
@@ -99,12 +101,30 @@ impl BatchDetectTargetedSentimentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentOutput`](crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput).
-    pub fn build(self) -> crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput {
-        crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput {
-            result_list: self.result_list,
-            error_list: self.error_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`result_list`](crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentOutputBuilder::result_list)
+    /// - [`error_list`](crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentOutputBuilder::error_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput {
+            result_list: self.result_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "result_list",
+                    "result_list was not specified but it is required when building BatchDetectTargetedSentimentOutput",
+                )
+            })?,
+            error_list: self.error_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_list",
+                    "error_list was not specified but it is required when building BatchDetectTargetedSentimentOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for BatchDetectTargetedSentimentOutputBuilder {

@@ -77,6 +77,7 @@ impl CreatePackagingGroupInputBuilder {
         &self.egress_access_logs
     }
     /// The ID of the PackagingGroup.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

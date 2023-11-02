@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetMetadata {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub dataset_arn: ::std::option::Option<::std::string::String>,
+    pub dataset_arn: ::std::string::String,
     /// <p>The name of the dataset.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the dataset.</p>
@@ -23,8 +23,9 @@ pub struct DatasetMetadata {
 }
 impl DatasetMetadata {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
-        self.dataset_arn.as_deref()
+    pub fn dataset_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.dataset_arn.deref()
     }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
@@ -39,20 +40,28 @@ impl DatasetMetadata {
         self.data_aggregation.as_ref()
     }
     /// <p>The list of filter definitions.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::TopicFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::TopicFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The list of column definitions.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::TopicColumn]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[crate::types::TopicColumn] {
+        self.columns.as_deref().unwrap_or_default()
     }
     /// <p>The list of calculated field definitions.</p>
-    pub fn calculated_fields(&self) -> ::std::option::Option<&[crate::types::TopicCalculatedField]> {
-        self.calculated_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calculated_fields.is_none()`.
+    pub fn calculated_fields(&self) -> &[crate::types::TopicCalculatedField] {
+        self.calculated_fields.as_deref().unwrap_or_default()
     }
     /// <p>The list of named entities definitions.</p>
-    pub fn named_entities(&self) -> ::std::option::Option<&[crate::types::TopicNamedEntity]> {
-        self.named_entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.named_entities.is_none()`.
+    pub fn named_entities(&self) -> &[crate::types::TopicNamedEntity] {
+        self.named_entities.as_deref().unwrap_or_default()
     }
 }
 impl DatasetMetadata {
@@ -77,6 +86,7 @@ pub struct DatasetMetadataBuilder {
 }
 impl DatasetMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
@@ -213,9 +223,16 @@ impl DatasetMetadataBuilder {
         &self.named_entities
     }
     /// Consumes the builder and constructs a [`DatasetMetadata`](crate::types::DatasetMetadata).
-    pub fn build(self) -> crate::types::DatasetMetadata {
-        crate::types::DatasetMetadata {
-            dataset_arn: self.dataset_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dataset_arn`](crate::types::builders::DatasetMetadataBuilder::dataset_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatasetMetadata {
+            dataset_arn: self.dataset_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dataset_arn",
+                    "dataset_arn was not specified but it is required when building DatasetMetadata",
+                )
+            })?,
             dataset_name: self.dataset_name,
             dataset_description: self.dataset_description,
             data_aggregation: self.data_aggregation,
@@ -223,6 +240,6 @@ impl DatasetMetadataBuilder {
             columns: self.columns,
             calculated_fields: self.calculated_fields,
             named_entities: self.named_entities,
-        }
+        })
     }
 }

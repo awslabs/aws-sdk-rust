@@ -41,6 +41,7 @@ pub struct ListControlsInputBuilder {
 }
 impl ListControlsInputBuilder {
     /// <p> The type of control, such as a standard control or a custom control. </p>
+    /// This field is required.
     pub fn control_type(mut self, input: crate::types::ControlType) -> Self {
         self.control_type = ::std::option::Option::Some(input);
         self

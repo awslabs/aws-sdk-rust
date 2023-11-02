@@ -15,16 +15,20 @@ pub struct IcebergTarget {
 }
 impl IcebergTarget {
     /// <p>One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.</p>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
+    pub fn paths(&self) -> &[::std::string::String] {
+        self.paths.as_deref().unwrap_or_default()
     }
     /// <p>The name of the connection to use to connect to the Iceberg target.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn exclusions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
+    pub fn exclusions(&self) -> &[::std::string::String] {
+        self.exclusions.as_deref().unwrap_or_default()
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn maximum_traversal_depth(&self) -> ::std::option::Option<i32> {

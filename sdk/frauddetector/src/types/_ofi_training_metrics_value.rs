@@ -11,8 +11,10 @@ pub struct OfiTrainingMetricsValue {
 }
 impl OfiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
-    pub fn metric_data_points(&self) -> ::std::option::Option<&[crate::types::OfiMetricDataPoint]> {
-        self.metric_data_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_points.is_none()`.
+    pub fn metric_data_points(&self) -> &[crate::types::OfiMetricDataPoint] {
+        self.metric_data_points.as_deref().unwrap_or_default()
     }
     /// <p> The model's overall performance score. </p>
     pub fn model_performance(&self) -> ::std::option::Option<&crate::types::OfiModelPerformance> {

@@ -57,6 +57,7 @@ pub struct ModifySnapshotCopyRetentionPeriodInputBuilder {
 impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
+    /// This field is required.
     pub fn retention_period(mut self, input: i32) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
         self

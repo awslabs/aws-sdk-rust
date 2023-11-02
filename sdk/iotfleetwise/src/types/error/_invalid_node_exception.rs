@@ -14,8 +14,10 @@ pub struct InvalidNodeException {
 }
 impl InvalidNodeException {
     /// <p>The specified node type isn't valid.</p>
-    pub fn invalid_nodes(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.invalid_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_nodes.is_none()`.
+    pub fn invalid_nodes(&self) -> &[crate::types::Node] {
+        self.invalid_nodes.as_deref().unwrap_or_default()
     }
     /// <p>The reason the node validation failed.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {

@@ -7,11 +7,11 @@ pub struct UpdateKeyOutput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The name of the API key resource.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateKeyOutput {
@@ -19,16 +19,18 @@ impl UpdateKeyOutput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The name of the API key resource.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateKeyOutput {
@@ -57,6 +59,7 @@ impl UpdateKeyOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl UpdateKeyOutputBuilder {
         &self.key_arn
     }
     /// <p>The name of the API key resource.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl UpdateKeyOutputBuilder {
         &self.key_name
     }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -114,12 +119,31 @@ impl UpdateKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateKeyOutput`](crate::operation::update_key::UpdateKeyOutput).
-    pub fn build(self) -> crate::operation::update_key::UpdateKeyOutput {
-        crate::operation::update_key::UpdateKeyOutput {
-            key_arn: self.key_arn,
-            key_name: self.key_name,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_arn`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::key_arn)
+    /// - [`key_name`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::key_name)
+    /// - [`update_time`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_key::UpdateKeyOutput {
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building UpdateKeyOutput",
+                )
+            })?,
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building UpdateKeyOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building UpdateKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

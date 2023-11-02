@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlFluentBuilder::send) it.
     /// - On success, responds with [`GetSignedBluinsightsUrlOutput`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput) with field(s):
-    ///   - [`signed_bi_url(Option<String>)`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput::signed_bi_url): <p>Single sign-on AWS Blu Insights URL.</p>
+    ///   - [`signed_bi_url(String)`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput::signed_bi_url): <p>Single sign-on AWS Blu Insights URL.</p>
     /// - On failure, responds with [`SdkError<GetSignedBluinsightsUrlError>`](crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlError)
     pub fn get_signed_bluinsights_url(&self) -> crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlFluentBuilder {
         crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlFluentBuilder::new(self.handle.clone())

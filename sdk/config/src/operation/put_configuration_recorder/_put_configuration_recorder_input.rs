@@ -28,6 +28,7 @@ pub struct PutConfigurationRecorderInputBuilder {
 }
 impl PutConfigurationRecorderInputBuilder {
     /// <p>An object for the configuration recorder to record configuration changes for specified resource types.</p>
+    /// This field is required.
     pub fn configuration_recorder(mut self, input: crate::types::ConfigurationRecorder) -> Self {
         self.configuration_recorder = ::std::option::Option::Some(input);
         self

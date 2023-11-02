@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub alert_target_arn: ::std::option::Option<::std::string::String>,
+    pub alert_target_arn: ::std::string::String,
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub fn alert_target_arn(&self) -> ::std::option::Option<&str> {
-        self.alert_target_arn.as_deref()
+    pub fn alert_target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.alert_target_arn.deref()
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl AlertTarget {
@@ -35,6 +37,7 @@ pub struct AlertTargetBuilder {
 }
 impl AlertTargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
+    /// This field is required.
     pub fn alert_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl AlertTargetBuilder {
         &self.alert_target_arn
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl AlertTargetBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`AlertTarget`](crate::types::AlertTarget).
-    pub fn build(self) -> crate::types::AlertTarget {
-        crate::types::AlertTarget {
-            alert_target_arn: self.alert_target_arn,
-            role_arn: self.role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alert_target_arn`](crate::types::builders::AlertTargetBuilder::alert_target_arn)
+    /// - [`role_arn`](crate::types::builders::AlertTargetBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::AlertTarget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AlertTarget {
+            alert_target_arn: self.alert_target_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "alert_target_arn",
+                    "alert_target_arn was not specified but it is required when building AlertTarget",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building AlertTarget",
+                )
+            })?,
+        })
     }
 }

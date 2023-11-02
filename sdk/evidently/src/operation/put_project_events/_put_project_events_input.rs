@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutProjectEventsInput {
     /// <p>The name or ARN of the project to write the events to.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::vec::Vec<crate::types::Event>,
 }
 impl PutProjectEventsInput {
     /// <p>The name or ARN of the project to write the events to.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::Event] {
+        use std::ops::Deref;
+        self.events.deref()
     }
 }
 impl PutProjectEventsInput {
@@ -34,6 +36,7 @@ pub struct PutProjectEventsInputBuilder {
 }
 impl PutProjectEventsInputBuilder {
     /// <p>The name or ARN of the project to write the events to.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl PutProjectEventsInputBuilder {
         &self.events
     }
     /// Consumes the builder and constructs a [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::put_project_events::builders::PutProjectEventsInputBuilder::project)
+    /// - [`events`](crate::operation::put_project_events::builders::PutProjectEventsInputBuilder::events)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_project_events::PutProjectEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_project_events::PutProjectEventsInput {
-            project: self.project,
-            events: self.events,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building PutProjectEventsInput",
+                )
+            })?,
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building PutProjectEventsInput",
+                )
+            })?,
         })
     }
 }

@@ -196,6 +196,7 @@ impl CreateApiInputBuilder {
         &self.disable_execute_api_endpoint
     }
     /// <p>The name of the API.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +211,7 @@ impl CreateApiInputBuilder {
         &self.name
     }
     /// <p>The API protocol.</p>
+    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::ProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self

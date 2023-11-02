@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteClusterSubnetGroup`](crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_subnet_group_name(impl Into<String>)`](crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder::cluster_subnet_group_name) / [`set_cluster_subnet_group_name(Option<String>)`](crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder::set_cluster_subnet_group_name): <p>The name of the cluster subnet group name to be deleted.</p>
+    ///   - [`cluster_subnet_group_name(impl Into<String>)`](crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder::cluster_subnet_group_name) / [`set_cluster_subnet_group_name(Option<String>)`](crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder::set_cluster_subnet_group_name):<br>required: **true**<br><p>The name of the cluster subnet group name to be deleted.</p><br>
     /// - On success, responds with [`DeleteClusterSubnetGroupOutput`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteClusterSubnetGroupError>`](crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupError)
     pub fn delete_cluster_subnet_group(&self) -> crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupFluentBuilder {

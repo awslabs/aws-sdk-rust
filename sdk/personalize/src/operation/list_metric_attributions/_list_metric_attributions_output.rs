@@ -11,8 +11,10 @@ pub struct ListMetricAttributionsOutput {
 }
 impl ListMetricAttributionsOutput {
     /// <p>The list of metric attributions.</p>
-    pub fn metric_attributions(&self) -> ::std::option::Option<&[crate::types::MetricAttributionSummary]> {
-        self.metric_attributions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_attributions.is_none()`.
+    pub fn metric_attributions(&self) -> &[crate::types::MetricAttributionSummary] {
+        self.metric_attributions.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

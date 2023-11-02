@@ -42,6 +42,7 @@ pub struct UserTurnInputSpecificationBuilder {
 }
 impl UserTurnInputSpecificationBuilder {
     /// <p>The utterance input in the user turn.</p>
+    /// This field is required.
     pub fn utterance_input(mut self, input: crate::types::UtteranceInputSpecification) -> Self {
         self.utterance_input = ::std::option::Option::Some(input);
         self

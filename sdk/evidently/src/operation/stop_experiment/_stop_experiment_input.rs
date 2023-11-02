@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to stop.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The name of the experiment to stop.</p>
-    pub experiment: ::std::option::Option<::std::string::String>,
+    pub experiment: ::std::string::String,
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub desired_state: ::std::option::Option<crate::types::ExperimentStopDesiredState>,
     /// <p>A string that describes why you are stopping the experiment.</p>
@@ -14,12 +14,14 @@ pub struct StopExperimentInput {
 }
 impl StopExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to stop.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The name of the experiment to stop.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
-        self.experiment.as_deref()
+    pub fn experiment(&self) -> &str {
+        use std::ops::Deref;
+        self.experiment.deref()
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(&self) -> ::std::option::Option<&crate::types::ExperimentStopDesiredState> {
@@ -48,6 +50,7 @@ pub struct StopExperimentInputBuilder {
 }
 impl StopExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment to stop.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl StopExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment to stop.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -104,12 +108,25 @@ impl StopExperimentInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::stop_experiment::builders::StopExperimentInputBuilder::project)
+    /// - [`experiment`](crate::operation::stop_experiment::builders::StopExperimentInputBuilder::experiment)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_experiment::StopExperimentInput {
-            project: self.project,
-            experiment: self.experiment,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building StopExperimentInput",
+                )
+            })?,
+            experiment: self.experiment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "experiment",
+                    "experiment was not specified but it is required when building StopExperimentInput",
+                )
+            })?,
             desired_state: self.desired_state,
             reason: self.reason,
         })

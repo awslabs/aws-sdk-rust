@@ -29,6 +29,7 @@ pub struct DeleteDirectConnectGatewayAssociationProposalInputBuilder {
 }
 impl DeleteDirectConnectGatewayAssociationProposalInputBuilder {
     /// <p>The ID of the proposal.</p>
+    /// This field is required.
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proposal_id = ::std::option::Option::Some(input.into());
         self

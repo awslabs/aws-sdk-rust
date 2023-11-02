@@ -34,8 +34,8 @@ pub fn de_create_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EventDestinationAlreadyExists" => crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError::EventDestinationAlreadyExistsException({
@@ -50,8 +50,8 @@ pub fn de_create_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidCloudWatchDestination" => crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError::InvalidCloudWatchDestinationException({
@@ -66,8 +66,8 @@ pub fn de_create_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidFirehoseDestination" => crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError::InvalidFirehoseDestinationException({
@@ -82,8 +82,8 @@ pub fn de_create_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidSNSDestination" => crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError::InvalidSnsDestinationException({
@@ -98,8 +98,8 @@ pub fn de_create_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceeded" => crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError::LimitExceededException({
@@ -114,8 +114,8 @@ pub fn de_create_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError::generic(generic)

@@ -69,6 +69,7 @@ pub struct ThrottlingExceptionBuilder {
 }
 impl ThrottlingExceptionBuilder {
     /// <p>Description of the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

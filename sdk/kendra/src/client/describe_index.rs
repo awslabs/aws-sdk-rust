@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIndex`](crate::operation::describe_index::builders::DescribeIndexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_index::builders::DescribeIndexFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_index::builders::DescribeIndexFluentBuilder::set_id): <p>The identifier of the index you want to get information on.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_index::builders::DescribeIndexFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_index::builders::DescribeIndexFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the index you want to get information on.</p><br>
     /// - On success, responds with [`DescribeIndexOutput`](crate::operation::describe_index::DescribeIndexOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_index::DescribeIndexOutput::name): <p>The name of the index.</p>
     ///   - [`id(Option<String>)`](crate::operation::describe_index::DescribeIndexOutput::id): <p>The identifier of the index.</p>

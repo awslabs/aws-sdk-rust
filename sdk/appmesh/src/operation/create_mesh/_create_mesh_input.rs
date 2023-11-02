@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMeshInput {
     /// <p>The name to use for the service mesh.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The service mesh specification to apply.</p>
     pub spec: ::std::option::Option<crate::types::MeshSpec>,
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
@@ -14,16 +14,19 @@ pub struct CreateMeshInput {
 }
 impl CreateMeshInput {
     /// <p>The name to use for the service mesh.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The service mesh specification to apply.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::MeshSpec> {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagRef]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagRef] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +51,7 @@ pub struct CreateMeshInputBuilder {
 }
 impl CreateMeshInputBuilder {
     /// <p>The name to use for the service mesh.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -110,9 +114,16 @@ impl CreateMeshInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateMeshInput`](crate::operation::create_mesh::CreateMeshInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mesh_name`](crate::operation::create_mesh::builders::CreateMeshInputBuilder::mesh_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_mesh::CreateMeshInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_mesh::CreateMeshInput {
-            mesh_name: self.mesh_name,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building CreateMeshInput",
+                )
+            })?,
             spec: self.spec,
             tags: self.tags,
             client_token: self.client_token,

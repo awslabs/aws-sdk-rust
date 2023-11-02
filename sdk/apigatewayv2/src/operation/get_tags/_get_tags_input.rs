@@ -27,6 +27,7 @@ pub struct GetTagsInputBuilder {
 }
 impl GetTagsInputBuilder {
     /// <p>The resource ARN for the tag.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

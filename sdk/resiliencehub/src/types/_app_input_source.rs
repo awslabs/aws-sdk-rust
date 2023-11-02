@@ -7,8 +7,8 @@ pub struct AppInputSource {
     /// <p>The name of the input source.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the input source.</p>
-    pub import_type: ::std::option::Option<crate::types::ResourceMappingType>,
-    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub import_type: crate::types::ResourceMappingType,
+    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Terraform s3 state ﬁle.</p>
     pub terraform_source: ::std::option::Option<crate::types::TerraformSource>,
@@ -23,10 +23,10 @@ impl AppInputSource {
         self.source_name.as_deref()
     }
     /// <p>The resource type of the input source.</p>
-    pub fn import_type(&self) -> ::std::option::Option<&crate::types::ResourceMappingType> {
-        self.import_type.as_ref()
+    pub fn import_type(&self) -> &crate::types::ResourceMappingType {
+        &self.import_type
     }
-    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
@@ -77,6 +77,7 @@ impl AppInputSourceBuilder {
         &self.source_name
     }
     /// <p>The resource type of the input source.</p>
+    /// This field is required.
     pub fn import_type(mut self, input: crate::types::ResourceMappingType) -> Self {
         self.import_type = ::std::option::Option::Some(input);
         self
@@ -90,17 +91,17 @@ impl AppInputSourceBuilder {
     pub fn get_import_type(&self) -> &::std::option::Option<crate::types::ResourceMappingType> {
         &self.import_type
     }
-    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>The Amazon Resource Name (ARN) of the input source. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }
@@ -147,14 +148,21 @@ impl AppInputSourceBuilder {
         &self.eks_source_cluster_namespace
     }
     /// Consumes the builder and constructs a [`AppInputSource`](crate::types::AppInputSource).
-    pub fn build(self) -> crate::types::AppInputSource {
-        crate::types::AppInputSource {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`import_type`](crate::types::builders::AppInputSourceBuilder::import_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AppInputSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AppInputSource {
             source_name: self.source_name,
-            import_type: self.import_type,
+            import_type: self.import_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "import_type",
+                    "import_type was not specified but it is required when building AppInputSource",
+                )
+            })?,
             source_arn: self.source_arn,
             terraform_source: self.terraform_source,
             resource_count: self.resource_count.unwrap_or_default(),
             eks_source_cluster_namespace: self.eks_source_cluster_namespace,
-        }
+        })
     }
 }

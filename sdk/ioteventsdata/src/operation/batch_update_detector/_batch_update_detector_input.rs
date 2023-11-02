@@ -8,8 +8,10 @@ pub struct BatchUpdateDetectorInput {
 }
 impl BatchUpdateDetectorInput {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
-    pub fn detectors(&self) -> ::std::option::Option<&[crate::types::UpdateDetectorRequest]> {
-        self.detectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detectors.is_none()`.
+    pub fn detectors(&self) -> &[crate::types::UpdateDetectorRequest] {
+        self.detectors.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateDetectorInput {

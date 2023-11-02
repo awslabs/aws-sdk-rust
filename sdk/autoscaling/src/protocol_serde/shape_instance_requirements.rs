@@ -176,6 +176,7 @@ pub fn ser_instance_requirements(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instance_requirements(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::InstanceRequirements, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -443,5 +444,5 @@ pub fn de_instance_requirements(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::instance_requirements_correct_errors(builder).build())
 }

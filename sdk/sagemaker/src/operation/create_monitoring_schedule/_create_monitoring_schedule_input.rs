@@ -20,8 +20,10 @@ impl CreateMonitoringScheduleInput {
         self.monitoring_schedule_config.as_ref()
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateMonitoringScheduleInput {
@@ -41,6 +43,7 @@ pub struct CreateMonitoringScheduleInputBuilder {
 }
 impl CreateMonitoringScheduleInputBuilder {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateMonitoringScheduleInputBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    /// This field is required.
     pub fn monitoring_schedule_config(mut self, input: crate::types::MonitoringScheduleConfig) -> Self {
         self.monitoring_schedule_config = ::std::option::Option::Some(input);
         self

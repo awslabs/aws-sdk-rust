@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryScanningRule {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
-    pub scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
+    pub scan_frequency: crate::types::ScanFrequency,
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
-    pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
+    pub repository_filters: ::std::vec::Vec<crate::types::ScanningRepositoryFilter>,
 }
 impl RegistryScanningRule {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
-    pub fn scan_frequency(&self) -> ::std::option::Option<&crate::types::ScanFrequency> {
-        self.scan_frequency.as_ref()
+    pub fn scan_frequency(&self) -> &crate::types::ScanFrequency {
+        &self.scan_frequency
     }
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
-    pub fn repository_filters(&self) -> ::std::option::Option<&[crate::types::ScanningRepositoryFilter]> {
-        self.repository_filters.as_deref()
+    pub fn repository_filters(&self) -> &[crate::types::ScanningRepositoryFilter] {
+        use std::ops::Deref;
+        self.repository_filters.deref()
     }
 }
 impl RegistryScanningRule {
@@ -35,6 +36,7 @@ pub struct RegistryScanningRuleBuilder {
 }
 impl RegistryScanningRuleBuilder {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>
+    /// This field is required.
     pub fn scan_frequency(mut self, input: crate::types::ScanFrequency) -> Self {
         self.scan_frequency = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl RegistryScanningRuleBuilder {
         &self.repository_filters
     }
     /// Consumes the builder and constructs a [`RegistryScanningRule`](crate::types::RegistryScanningRule).
-    pub fn build(self) -> crate::types::RegistryScanningRule {
-        crate::types::RegistryScanningRule {
-            scan_frequency: self.scan_frequency,
-            repository_filters: self.repository_filters,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scan_frequency`](crate::types::builders::RegistryScanningRuleBuilder::scan_frequency)
+    /// - [`repository_filters`](crate::types::builders::RegistryScanningRuleBuilder::repository_filters)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegistryScanningRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegistryScanningRule {
+            scan_frequency: self.scan_frequency.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scan_frequency",
+                    "scan_frequency was not specified but it is required when building RegistryScanningRule",
+                )
+            })?,
+            repository_filters: self.repository_filters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_filters",
+                    "repository_filters was not specified but it is required when building RegistryScanningRule",
+                )
+            })?,
+        })
     }
 }

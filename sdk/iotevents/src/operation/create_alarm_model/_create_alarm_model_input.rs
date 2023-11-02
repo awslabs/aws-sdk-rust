@@ -40,8 +40,10 @@ impl CreateAlarmModelInput {
     }
     /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -92,6 +94,7 @@ pub struct CreateAlarmModelInputBuilder {
 }
 impl CreateAlarmModelInputBuilder {
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
+    /// This field is required.
     pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +123,7 @@ impl CreateAlarmModelInputBuilder {
         &self.alarm_model_description
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +189,7 @@ impl CreateAlarmModelInputBuilder {
         &self.severity
     }
     /// <p>Defines when your alarm is invoked.</p>
+    /// This field is required.
     pub fn alarm_rule(mut self, input: crate::types::AlarmRule) -> Self {
         self.alarm_rule = ::std::option::Option::Some(input);
         self

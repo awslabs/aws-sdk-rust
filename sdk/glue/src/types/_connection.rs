@@ -78,8 +78,10 @@ impl Connection {
         self.connection_type.as_ref()
     }
     /// <p>A list of criteria that can be used in selecting this connection.</p>
-    pub fn match_criteria(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.match_criteria.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_criteria.is_none()`.
+    pub fn match_criteria(&self) -> &[::std::string::String] {
+        self.match_criteria.as_deref().unwrap_or_default()
     }
     /// <p>These key-value pairs define parameters for the connection:</p>
     /// <ul>

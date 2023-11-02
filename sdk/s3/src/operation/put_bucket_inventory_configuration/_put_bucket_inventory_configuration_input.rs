@@ -48,6 +48,7 @@ pub struct PutBucketInventoryConfigurationInputBuilder {
 }
 impl PutBucketInventoryConfigurationInputBuilder {
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutBucketInventoryConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID used to identify the inventory configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl PutBucketInventoryConfigurationInputBuilder {
         &self.id
     }
     /// <p>Specifies the inventory configuration.</p>
+    /// This field is required.
     pub fn inventory_configuration(mut self, input: crate::types::InventoryConfiguration) -> Self {
         self.inventory_configuration = ::std::option::Option::Some(input);
         self

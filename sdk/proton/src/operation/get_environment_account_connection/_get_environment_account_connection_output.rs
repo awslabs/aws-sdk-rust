@@ -34,6 +34,7 @@ pub struct GetEnvironmentAccountConnectionOutputBuilder {
 }
 impl GetEnvironmentAccountConnectionOutputBuilder {
     /// <p>The detailed data of the requested environment account connection.</p>
+    /// This field is required.
     pub fn environment_account_connection(mut self, input: crate::types::EnvironmentAccountConnection) -> Self {
         self.environment_account_connection = ::std::option::Option::Some(input);
         self

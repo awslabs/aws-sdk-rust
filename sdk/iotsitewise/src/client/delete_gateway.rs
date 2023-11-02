@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGateway`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_id(impl Into<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::gateway_id) / [`set_gateway_id(Option<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::set_gateway_id): <p>The ID of the gateway to delete.</p>
+    ///   - [`gateway_id(impl Into<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::gateway_id) / [`set_gateway_id(Option<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::set_gateway_id):<br>required: **true**<br><p>The ID of the gateway to delete.</p><br>
     /// - On success, responds with [`DeleteGatewayOutput`](crate::operation::delete_gateway::DeleteGatewayOutput)
     /// - On failure, responds with [`SdkError<DeleteGatewayError>`](crate::operation::delete_gateway::DeleteGatewayError)
     pub fn delete_gateway(&self) -> crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder {

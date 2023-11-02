@@ -27,6 +27,7 @@ pub struct DescribeAlgorithmInputBuilder {
 }
 impl DescribeAlgorithmInputBuilder {
     /// <p>The name of the algorithm to describe.</p>
+    /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self

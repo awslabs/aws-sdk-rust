@@ -5,18 +5,19 @@ pub fn ser_continuous_deployment_single_weight_config(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.weight {
+    {
         let mut inner_writer = scope.start_el("Weight").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.weight).encode());
     }
-    if let Some(var_2) = &input.session_stickiness_config {
+    if let Some(var_1) = &input.session_stickiness_config {
         let inner_writer = scope.start_el("SessionStickinessConfig");
-        crate::protocol_serde::shape_session_stickiness_config::ser_session_stickiness_config(var_2, inner_writer)?
+        crate::protocol_serde::shape_session_stickiness_config::ser_session_stickiness_config(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_continuous_deployment_single_weight_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ContinuousDeploymentSingleWeightConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_continuous_deployment_single_weight_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Weight") /* Weight com.amazonaws.cloudfront#ContinuousDeploymentSingleWeightConfig$Weight */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                          {
                             <f32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,21 +37,23 @@ pub fn de_continuous_deployment_single_weight_config(
                         ?
                     )
                 ;
-                builder = builder.set_weight(var_3);
+                builder = builder.set_weight(var_2);
             }
             ,
             s if s.matches("SessionStickinessConfig") /* SessionStickinessConfig com.amazonaws.cloudfront#ContinuousDeploymentSingleWeightConfig$SessionStickinessConfig */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_session_stickiness_config::de_session_stickiness_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_session_stickiness_config(var_4);
+                builder = builder.set_session_stickiness_config(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::continuous_deployment_single_weight_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -21,8 +21,10 @@ impl GenericRevisionInfo {
         self.description.as_deref()
     }
     /// <p>The deployment groups for which this is the current target revision.</p>
-    pub fn deployment_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deployment_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_groups.is_none()`.
+    pub fn deployment_groups(&self) -> &[::std::string::String] {
+        self.deployment_groups.as_deref().unwrap_or_default()
     }
     /// <p>When the revision was first used by CodeDeploy.</p>
     pub fn first_used_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

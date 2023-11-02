@@ -14,8 +14,10 @@ pub struct ListSshPublicKeysOutput {
 }
 impl ListSshPublicKeysOutput {
     /// <p>A list of the SSH public keys assigned to IAM user.</p>
-    pub fn ssh_public_keys(&self) -> ::std::option::Option<&[crate::types::SshPublicKeyMetadata]> {
-        self.ssh_public_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssh_public_keys.is_none()`.
+    pub fn ssh_public_keys(&self) -> &[crate::types::SshPublicKeyMetadata] {
+        self.ssh_public_keys.as_deref().unwrap_or_default()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {

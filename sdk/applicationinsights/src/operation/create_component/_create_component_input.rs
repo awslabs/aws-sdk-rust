@@ -20,8 +20,10 @@ impl CreateComponentInput {
         self.component_name.as_deref()
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn resource_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_list.is_none()`.
+    pub fn resource_list(&self) -> &[::std::string::String] {
+        self.resource_list.as_deref().unwrap_or_default()
     }
 }
 impl CreateComponentInput {
@@ -41,6 +43,7 @@ pub struct CreateComponentInputBuilder {
 }
 impl CreateComponentInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateComponentInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self

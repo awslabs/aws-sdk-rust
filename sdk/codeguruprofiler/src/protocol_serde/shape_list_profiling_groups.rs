@@ -28,11 +28,10 @@ pub fn de_list_profiling_groups_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_profiling_groups::ListProfilingGroupsError::ThrottlingException({
@@ -43,11 +42,10 @@ pub fn de_list_profiling_groups_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_profiling_groups::ListProfilingGroupsError::generic(generic),
@@ -69,7 +67,9 @@ pub fn de_list_profiling_groups_http_response(
         output = crate::protocol_serde::shape_list_profiling_groups::de_list_profiling_groups(_response_body, output)
             .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_profiling_groups_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?
     })
 }
 

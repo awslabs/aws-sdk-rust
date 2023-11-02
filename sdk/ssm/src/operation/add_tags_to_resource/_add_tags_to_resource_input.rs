@@ -46,8 +46,10 @@ impl AddTagsToResourceInput {
     /// <p>One or more tags. The value parameter is required.</p> <important>
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsToResourceInput {
@@ -69,6 +71,7 @@ impl AddTagsToResourceInputBuilder {
     /// <p>Specifies the type of resource you are tagging.</p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceTypeForTagging) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -96,6 +99,7 @@ impl AddTagsToResourceInputBuilder {
     /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
     /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

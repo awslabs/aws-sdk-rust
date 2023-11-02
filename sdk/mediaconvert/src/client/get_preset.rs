@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPreset`](crate::operation::get_preset::builders::GetPresetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_preset::builders::GetPresetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_preset::builders::GetPresetFluentBuilder::set_name): The name of the preset.
+    ///   - [`name(impl Into<String>)`](crate::operation::get_preset::builders::GetPresetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_preset::builders::GetPresetFluentBuilder::set_name):<br>required: **true**<br>The name of the preset.<br>
     /// - On success, responds with [`GetPresetOutput`](crate::operation::get_preset::GetPresetOutput) with field(s):
     ///   - [`preset(Option<Preset>)`](crate::operation::get_preset::GetPresetOutput::preset): A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
     /// - On failure, responds with [`SdkError<GetPresetError>`](crate::operation::get_preset::GetPresetError)

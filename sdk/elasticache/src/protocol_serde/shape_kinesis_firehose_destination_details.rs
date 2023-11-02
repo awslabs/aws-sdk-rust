@@ -12,6 +12,7 @@ pub fn ser_kinesis_firehose_destination_details(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_kinesis_firehose_destination_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::KinesisFirehoseDestinationDetails, ::aws_smithy_xml::decode::XmlDecodeError> {

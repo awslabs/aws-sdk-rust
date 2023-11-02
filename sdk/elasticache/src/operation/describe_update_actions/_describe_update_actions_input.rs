@@ -30,28 +30,36 @@ impl DescribeUpdateActionsInput {
         self.service_update_name.as_deref()
     }
     /// <p>The replication group IDs</p>
-    pub fn replication_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group_ids.is_none()`.
+    pub fn replication_group_ids(&self) -> &[::std::string::String] {
+        self.replication_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The cache cluster IDs</p>
-    pub fn cache_cluster_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_cluster_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_cluster_ids.is_none()`.
+    pub fn cache_cluster_ids(&self) -> &[::std::string::String] {
+        self.cache_cluster_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The status of the service update</p>
-    pub fn service_update_status(&self) -> ::std::option::Option<&[crate::types::ServiceUpdateStatus]> {
-        self.service_update_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_update_status.is_none()`.
+    pub fn service_update_status(&self) -> &[crate::types::ServiceUpdateStatus] {
+        self.service_update_status.as_deref().unwrap_or_default()
     }
     /// <p>The range of time specified to search for service updates that are in available status</p>
     pub fn service_update_time_range(&self) -> ::std::option::Option<&crate::types::TimeRangeFilter> {
         self.service_update_time_range.as_ref()
     }
     /// <p>The status of the update action.</p>
-    pub fn update_action_status(&self) -> ::std::option::Option<&[crate::types::UpdateActionStatus]> {
-        self.update_action_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_action_status.is_none()`.
+    pub fn update_action_status(&self) -> &[crate::types::UpdateActionStatus] {
+        self.update_action_status.as_deref().unwrap_or_default()
     }
     /// <p>Dictates whether to include node level update status in the response </p>
     pub fn show_node_level_update_status(&self) -> ::std::option::Option<bool> {

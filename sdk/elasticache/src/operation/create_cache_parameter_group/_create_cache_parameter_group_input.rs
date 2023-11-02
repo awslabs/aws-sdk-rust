@@ -29,8 +29,10 @@ impl CreateCacheParameterGroupInput {
         self.description.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCacheParameterGroupInput {
@@ -51,6 +53,7 @@ pub struct CreateCacheParameterGroupInputBuilder {
 }
 impl CreateCacheParameterGroupInputBuilder {
     /// <p>A user-specified name for the cache parameter group.</p>
+    /// This field is required.
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl CreateCacheParameterGroupInputBuilder {
     }
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
+    /// This field is required.
     pub fn cache_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_family = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +86,7 @@ impl CreateCacheParameterGroupInputBuilder {
         &self.cache_parameter_group_family
     }
     /// <p>A user-specified description for the cache parameter group.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

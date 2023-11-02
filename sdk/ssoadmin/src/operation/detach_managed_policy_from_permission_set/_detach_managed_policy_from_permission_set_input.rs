@@ -41,6 +41,7 @@ pub struct DetachManagedPolicyFromPermissionSetInputBuilder {
 }
 impl DetachManagedPolicyFromPermissionSetInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code> from which the policy should be detached.</p>
+    /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
         &self.permission_set_arn
     }
     /// <p>The Amazon Web Services managed policy ARN to be detached from a permission set.</p>
+    /// This field is required.
     pub fn managed_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_policy_arn = ::std::option::Option::Some(input.into());
         self

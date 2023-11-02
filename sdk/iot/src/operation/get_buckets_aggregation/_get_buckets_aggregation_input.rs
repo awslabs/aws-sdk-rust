@@ -69,6 +69,7 @@ impl GetBucketsAggregationInputBuilder {
         &self.index_name
     }
     /// <p>The search query string.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl GetBucketsAggregationInputBuilder {
         &self.query_string
     }
     /// <p>The aggregation field.</p>
+    /// This field is required.
     pub fn aggregation_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aggregation_field = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +113,7 @@ impl GetBucketsAggregationInputBuilder {
         &self.query_version
     }
     /// <p>The basic control of the response shape and the bucket aggregation type to perform. </p>
+    /// This field is required.
     pub fn buckets_aggregation_type(mut self, input: crate::types::BucketsAggregationType) -> Self {
         self.buckets_aggregation_type = ::std::option::Option::Some(input);
         self

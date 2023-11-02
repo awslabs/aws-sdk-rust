@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayRouteInput {
     /// <p>The name of the gateway route to update.</p>
-    pub gateway_route_name: ::std::option::Option<::std::string::String>,
+    pub gateway_route_name: ::std::string::String,
     /// <p>The name of the service mesh that the gateway route resides in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub virtual_gateway_name: ::std::string::String,
     /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
     pub spec: ::std::option::Option<crate::types::GatewayRouteSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
@@ -18,16 +18,19 @@ pub struct UpdateGatewayRouteInput {
 }
 impl UpdateGatewayRouteInput {
     /// <p>The name of the gateway route to update.</p>
-    pub fn gateway_route_name(&self) -> ::std::option::Option<&str> {
-        self.gateway_route_name.as_deref()
+    pub fn gateway_route_name(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_route_name.deref()
     }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_gateway_name.as_deref()
+    pub fn virtual_gateway_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_gateway_name.deref()
     }
     /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::GatewayRouteSpec> {
@@ -62,6 +65,7 @@ pub struct UpdateGatewayRouteInputBuilder {
 }
 impl UpdateGatewayRouteInputBuilder {
     /// <p>The name of the gateway route to update.</p>
+    /// This field is required.
     pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl UpdateGatewayRouteInputBuilder {
         &self.gateway_route_name
     }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl UpdateGatewayRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl UpdateGatewayRouteInputBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::GatewayRouteSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -146,13 +153,32 @@ impl UpdateGatewayRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`UpdateGatewayRouteInput`](crate::operation::update_gateway_route::UpdateGatewayRouteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_route_name`](crate::operation::update_gateway_route::builders::UpdateGatewayRouteInputBuilder::gateway_route_name)
+    /// - [`mesh_name`](crate::operation::update_gateway_route::builders::UpdateGatewayRouteInputBuilder::mesh_name)
+    /// - [`virtual_gateway_name`](crate::operation::update_gateway_route::builders::UpdateGatewayRouteInputBuilder::virtual_gateway_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_gateway_route::UpdateGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_gateway_route::UpdateGatewayRouteInput {
-            gateway_route_name: self.gateway_route_name,
-            mesh_name: self.mesh_name,
-            virtual_gateway_name: self.virtual_gateway_name,
+            gateway_route_name: self.gateway_route_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_route_name",
+                    "gateway_route_name was not specified but it is required when building UpdateGatewayRouteInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building UpdateGatewayRouteInput",
+                )
+            })?,
+            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_gateway_name",
+                    "virtual_gateway_name was not specified but it is required when building UpdateGatewayRouteInput",
+                )
+            })?,
             spec: self.spec,
             client_token: self.client_token,
             mesh_owner: self.mesh_owner,

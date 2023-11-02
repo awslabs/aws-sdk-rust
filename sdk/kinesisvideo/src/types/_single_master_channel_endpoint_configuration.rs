@@ -11,8 +11,10 @@ pub struct SingleMasterChannelEndpointConfiguration {
 }
 impl SingleMasterChannelEndpointConfiguration {
     /// <p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::ChannelProtocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::ChannelProtocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>
     pub fn role(&self) -> ::std::option::Option<&crate::types::ChannelRole> {

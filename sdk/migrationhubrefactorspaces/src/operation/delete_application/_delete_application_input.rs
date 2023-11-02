@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>The ID of the environment. </p>
-    pub environment_identifier: ::std::option::Option<::std::string::String>,
+    pub environment_identifier: ::std::string::String,
     /// <p>The ID of the application.</p>
-    pub application_identifier: ::std::option::Option<::std::string::String>,
+    pub application_identifier: ::std::string::String,
 }
 impl DeleteApplicationInput {
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
-        self.environment_identifier.as_deref()
+    pub fn environment_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_identifier.deref()
     }
     /// <p>The ID of the application.</p>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
-        self.application_identifier.as_deref()
+    pub fn application_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.application_identifier.deref()
     }
 }
 impl DeleteApplicationInput {
@@ -34,6 +36,7 @@ pub struct DeleteApplicationInputBuilder {
 }
 impl DeleteApplicationInputBuilder {
     /// <p>The ID of the environment. </p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteApplicationInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl DeleteApplicationInputBuilder {
         &self.application_identifier
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_identifier`](crate::operation::delete_application::builders::DeleteApplicationInputBuilder::environment_identifier)
+    /// - [`application_identifier`](crate::operation::delete_application::builders::DeleteApplicationInputBuilder::application_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_application::DeleteApplicationInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
+            environment_identifier: self.environment_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_identifier",
+                    "environment_identifier was not specified but it is required when building DeleteApplicationInput",
+                )
+            })?,
+            application_identifier: self.application_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_identifier",
+                    "application_identifier was not specified but it is required when building DeleteApplicationInput",
+                )
+            })?,
         })
     }
 }

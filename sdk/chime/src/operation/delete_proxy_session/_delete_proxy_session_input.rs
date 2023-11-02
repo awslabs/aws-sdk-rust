@@ -34,6 +34,7 @@ pub struct DeleteProxySessionInputBuilder {
 }
 impl DeleteProxySessionInputBuilder {
     /// <p>The Amazon Chime voice connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteProxySessionInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The proxy session ID.</p>
+    /// This field is required.
     pub fn proxy_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.proxy_session_id = ::std::option::Option::Some(input.into());
         self

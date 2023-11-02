@@ -92,14 +92,14 @@ impl DeleteAccessLogSubscriptionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionOutput,
             crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

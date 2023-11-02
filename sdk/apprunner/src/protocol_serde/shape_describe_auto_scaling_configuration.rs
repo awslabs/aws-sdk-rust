@@ -94,7 +94,7 @@ pub fn de_describe_auto_scaling_configuration_http_response(
         output = crate::protocol_serde::shape_describe_auto_scaling_configuration::de_describe_auto_scaling_configuration(_response_body, output)
             .map_err(crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_auto_scaling_configuration_output_correct_errors(output).build()
     })
 }
 

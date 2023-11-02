@@ -34,6 +34,7 @@ pub struct DescribeUserInputBuilder {
 }
 impl DescribeUserInputBuilder {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeUserInputBuilder {
         &self.server_id
     }
     /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self

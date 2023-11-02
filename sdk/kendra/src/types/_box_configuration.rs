@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxConfiguration {
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
-    pub enterprise_id: ::std::option::Option<::std::string::String>,
+    pub enterprise_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p> </li>
@@ -15,7 +15,7 @@ pub struct BoxConfiguration {
     /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub use_change_log: bool,
     /// <p> <code>TRUE</code> to index comments.</p>
@@ -41,8 +41,9 @@ pub struct BoxConfiguration {
 }
 impl BoxConfiguration {
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
-    pub fn enterprise_id(&self) -> ::std::option::Option<&str> {
-        self.enterprise_id.as_deref()
+    pub fn enterprise_id(&self) -> &str {
+        use std::ops::Deref;
+        self.enterprise_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -53,8 +54,9 @@ impl BoxConfiguration {
     /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p> <code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn use_change_log(&self) -> bool {
@@ -73,28 +75,40 @@ impl BoxConfiguration {
         self.crawl_web_links
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn file_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.file_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_field_mappings.is_none()`.
+    pub fn file_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.file_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box tasks to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn task_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.task_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_field_mappings.is_none()`.
+    pub fn task_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.task_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn comment_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.comment_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comment_field_mappings.is_none()`.
+    pub fn comment_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.comment_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box web links to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn web_link_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.web_link_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.web_link_field_mappings.is_none()`.
+    pub fn web_link_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.web_link_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to include certain files and folders in your Box platform. Files and folders that match the patterns are included in the index. Files and folders that don't match the patterns are excluded from the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
@@ -128,6 +142,7 @@ pub struct BoxConfigurationBuilder {
 }
 impl BoxConfigurationBuilder {
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
+    /// This field is required.
     pub fn enterprise_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enterprise_id = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +165,7 @@ impl BoxConfigurationBuilder {
     /// <li> <p>passphrase—A set of characters that act like a password.</p> </li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -370,10 +386,23 @@ impl BoxConfigurationBuilder {
         &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`BoxConfiguration`](crate::types::BoxConfiguration).
-    pub fn build(self) -> crate::types::BoxConfiguration {
-        crate::types::BoxConfiguration {
-            enterprise_id: self.enterprise_id,
-            secret_arn: self.secret_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enterprise_id`](crate::types::builders::BoxConfigurationBuilder::enterprise_id)
+    /// - [`secret_arn`](crate::types::builders::BoxConfigurationBuilder::secret_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::BoxConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BoxConfiguration {
+            enterprise_id: self.enterprise_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enterprise_id",
+                    "enterprise_id was not specified but it is required when building BoxConfiguration",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building BoxConfiguration",
+                )
+            })?,
             use_change_log: self.use_change_log.unwrap_or_default(),
             crawl_comments: self.crawl_comments.unwrap_or_default(),
             crawl_tasks: self.crawl_tasks.unwrap_or_default(),
@@ -385,6 +414,6 @@ impl BoxConfigurationBuilder {
             inclusion_patterns: self.inclusion_patterns,
             exclusion_patterns: self.exclusion_patterns,
             vpc_configuration: self.vpc_configuration,
-        }
+        })
     }
 }

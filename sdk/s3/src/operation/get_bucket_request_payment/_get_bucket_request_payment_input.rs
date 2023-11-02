@@ -34,6 +34,7 @@ pub struct GetBucketRequestPaymentInputBuilder {
 }
 impl GetBucketRequestPaymentInputBuilder {
     /// <p>The name of the bucket for which to get the payment request configuration</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

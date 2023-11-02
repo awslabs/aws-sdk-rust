@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Language {
     /// <p>Language name of the supported language.</p>
-    pub language_name: ::std::option::Option<::std::string::String>,
+    pub language_name: ::std::string::String,
     /// <p>Language code for the supported language.</p>
-    pub language_code: ::std::option::Option<::std::string::String>,
+    pub language_code: ::std::string::String,
 }
 impl Language {
     /// <p>Language name of the supported language.</p>
-    pub fn language_name(&self) -> ::std::option::Option<&str> {
-        self.language_name.as_deref()
+    pub fn language_name(&self) -> &str {
+        use std::ops::Deref;
+        self.language_name.deref()
     }
     /// <p>Language code for the supported language.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&str> {
-        self.language_code.as_deref()
+    pub fn language_code(&self) -> &str {
+        use std::ops::Deref;
+        self.language_code.deref()
     }
 }
 impl Language {
@@ -35,6 +37,7 @@ pub struct LanguageBuilder {
 }
 impl LanguageBuilder {
     /// <p>Language name of the supported language.</p>
+    /// This field is required.
     pub fn language_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl LanguageBuilder {
         &self.language_name
     }
     /// <p>Language code for the supported language.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl LanguageBuilder {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`Language`](crate::types::Language).
-    pub fn build(self) -> crate::types::Language {
-        crate::types::Language {
-            language_name: self.language_name,
-            language_code: self.language_code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`language_name`](crate::types::builders::LanguageBuilder::language_name)
+    /// - [`language_code`](crate::types::builders::LanguageBuilder::language_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::Language, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Language {
+            language_name: self.language_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "language_name",
+                    "language_name was not specified but it is required when building Language",
+                )
+            })?,
+            language_code: self.language_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "language_code",
+                    "language_code was not specified but it is required when building Language",
+                )
+            })?,
+        })
     }
 }

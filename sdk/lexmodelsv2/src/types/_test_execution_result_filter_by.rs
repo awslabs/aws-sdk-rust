@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestExecutionResultFilterBy {
     /// <p>Specifies which results to filter. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test result details"&gt;Test results details</a> for details about different types of results.</p>
-    pub result_type_filter: ::std::option::Option<crate::types::TestResultTypeFilter>,
+    pub result_type_filter: crate::types::TestResultTypeFilter,
     /// <p>Contains information about the method for filtering Conversation level test results.</p>
     pub conversation_level_test_results_filter_by: ::std::option::Option<crate::types::ConversationLevelTestResultsFilterBy>,
 }
 impl TestExecutionResultFilterBy {
     /// <p>Specifies which results to filter. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test result details"&gt;Test results details</a> for details about different types of results.</p>
-    pub fn result_type_filter(&self) -> ::std::option::Option<&crate::types::TestResultTypeFilter> {
-        self.result_type_filter.as_ref()
+    pub fn result_type_filter(&self) -> &crate::types::TestResultTypeFilter {
+        &self.result_type_filter
     }
     /// <p>Contains information about the method for filtering Conversation level test results.</p>
     pub fn conversation_level_test_results_filter_by(&self) -> ::std::option::Option<&crate::types::ConversationLevelTestResultsFilterBy> {
@@ -35,6 +35,7 @@ pub struct TestExecutionResultFilterByBuilder {
 }
 impl TestExecutionResultFilterByBuilder {
     /// <p>Specifies which results to filter. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test result details"&gt;Test results details</a> for details about different types of results.</p>
+    /// This field is required.
     pub fn result_type_filter(mut self, input: crate::types::TestResultTypeFilter) -> Self {
         self.result_type_filter = ::std::option::Option::Some(input);
         self
@@ -66,10 +67,17 @@ impl TestExecutionResultFilterByBuilder {
         &self.conversation_level_test_results_filter_by
     }
     /// Consumes the builder and constructs a [`TestExecutionResultFilterBy`](crate::types::TestExecutionResultFilterBy).
-    pub fn build(self) -> crate::types::TestExecutionResultFilterBy {
-        crate::types::TestExecutionResultFilterBy {
-            result_type_filter: self.result_type_filter,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`result_type_filter`](crate::types::builders::TestExecutionResultFilterByBuilder::result_type_filter)
+    pub fn build(self) -> ::std::result::Result<crate::types::TestExecutionResultFilterBy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TestExecutionResultFilterBy {
+            result_type_filter: self.result_type_filter.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "result_type_filter",
+                    "result_type_filter was not specified but it is required when building TestExecutionResultFilterBy",
+                )
+            })?,
             conversation_level_test_results_filter_by: self.conversation_level_test_results_filter_by,
-        }
+        })
     }
 }

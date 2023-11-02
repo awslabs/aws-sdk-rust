@@ -28,8 +28,10 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
     /// <li> <p>Values (array containing a single string)</p> </li>
     /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::InstancePatchStateFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::InstancePatchStateFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct DescribeInstancePatchStatesForPatchGroupInputBuilder {
 }
 impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
+    /// This field is required.
     pub fn patch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_group = ::std::option::Option::Some(input.into());
         self

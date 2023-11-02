@@ -85,12 +85,16 @@ impl DescribeClusterSnapshotsInput {
         self.owner_account.as_deref()
     }
     /// <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
     /// <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
+    pub fn tag_values(&self) -> &[::std::string::String] {
+        self.tag_values.as_deref().unwrap_or_default()
     }
     /// <p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p>
     /// <ul>
@@ -103,8 +107,10 @@ impl DescribeClusterSnapshotsInput {
         self.cluster_exists
     }
     /// <p></p>
-    pub fn sorting_entities(&self) -> ::std::option::Option<&[crate::types::SnapshotSortingEntity]> {
-        self.sorting_entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sorting_entities.is_none()`.
+    pub fn sorting_entities(&self) -> &[crate::types::SnapshotSortingEntity] {
+        self.sorting_entities.as_deref().unwrap_or_default()
     }
 }
 impl DescribeClusterSnapshotsInput {

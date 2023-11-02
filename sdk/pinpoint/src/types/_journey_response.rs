@@ -173,8 +173,10 @@ impl JourneyResponse {
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
-    pub fn timezone_estimation_methods(&self) -> ::std::option::Option<&[crate::types::TimezoneEstimationMethodsElement]> {
-        self.timezone_estimation_methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timezone_estimation_methods.is_none()`.
+    pub fn timezone_estimation_methods(&self) -> &[crate::types::TimezoneEstimationMethodsElement] {
+        self.timezone_estimation_methods.as_deref().unwrap_or_default()
     }
 }
 impl JourneyResponse {
@@ -236,6 +238,7 @@ impl JourneyResponseBuilder {
         &self.activities
     }
     /// <p>The unique identifier for the application that the journey applies to.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -264,6 +267,7 @@ impl JourneyResponseBuilder {
         &self.creation_date
     }
     /// <p>The unique identifier for the journey.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -320,6 +324,7 @@ impl JourneyResponseBuilder {
         &self.local_time
     }
     /// <p>The name of the journey.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -9,8 +9,10 @@ pub struct ScanCondition {
 }
 impl ScanCondition {
     /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
-    pub fn map_equals(&self) -> ::std::option::Option<&[crate::types::ScanConditionPair]> {
-        self.map_equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.map_equals.is_none()`.
+    pub fn map_equals(&self) -> &[crate::types::ScanConditionPair] {
+        self.map_equals.as_deref().unwrap_or_default()
     }
 }
 impl ScanCondition {

@@ -35,6 +35,7 @@ pub struct GetPipelineInputBuilder {
 }
 impl GetPipelineInputBuilder {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

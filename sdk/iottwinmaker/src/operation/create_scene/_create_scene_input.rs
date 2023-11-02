@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ID of the scene.</p>
-    pub scene_id: ::std::option::Option<::std::string::String>,
+    pub scene_id: ::std::string::String,
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub content_location: ::std::option::Option<::std::string::String>,
+    pub content_location: ::std::string::String,
     /// <p>The description for this scene.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of capabilities that the scene uses to render itself.</p>
@@ -20,24 +20,29 @@ pub struct CreateSceneInput {
 }
 impl CreateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> ::std::option::Option<&str> {
-        self.scene_id.as_deref()
+    pub fn scene_id(&self) -> &str {
+        use std::ops::Deref;
+        self.scene_id.deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(&self) -> ::std::option::Option<&str> {
-        self.content_location.as_deref()
+    pub fn content_location(&self) -> &str {
+        use std::ops::Deref;
+        self.content_location.deref()
     }
     /// <p>The description for this scene.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[::std::string::String] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that you can use to manage the scene.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -69,6 +74,7 @@ pub struct CreateSceneInputBuilder {
 }
 impl CreateSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,7 @@ impl CreateSceneInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the scene.</p>
+    /// This field is required.
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl CreateSceneInputBuilder {
         &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    /// This field is required.
     pub fn content_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_location = ::std::option::Option::Some(input.into());
         self
@@ -192,11 +200,30 @@ impl CreateSceneInputBuilder {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`CreateSceneInput`](crate::operation::create_scene::CreateSceneInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::create_scene::builders::CreateSceneInputBuilder::workspace_id)
+    /// - [`scene_id`](crate::operation::create_scene::builders::CreateSceneInputBuilder::scene_id)
+    /// - [`content_location`](crate::operation::create_scene::builders::CreateSceneInputBuilder::content_location)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scene::CreateSceneInput {
-            workspace_id: self.workspace_id,
-            scene_id: self.scene_id,
-            content_location: self.content_location,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building CreateSceneInput",
+                )
+            })?,
+            scene_id: self.scene_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scene_id",
+                    "scene_id was not specified but it is required when building CreateSceneInput",
+                )
+            })?,
+            content_location: self.content_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_location",
+                    "content_location was not specified but it is required when building CreateSceneInput",
+                )
+            })?,
             description: self.description,
             capabilities: self.capabilities,
             tags: self.tags,

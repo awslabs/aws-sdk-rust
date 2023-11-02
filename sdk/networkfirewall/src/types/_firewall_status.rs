@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallStatus {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you've configured it. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>. </p>
-    pub status: ::std::option::Option<crate::types::FirewallStatusValue>,
+    pub status: crate::types::FirewallStatusValue,
     /// <p>The configuration sync state for the firewall. This summarizes the sync states reported in the <code>Config</code> settings for all of the Availability Zones where you have configured the firewall. </p>
     /// <p>When you create a firewall or update its configuration, for example by adding a rule group to its firewall policy, Network Firewall distributes the configuration changes to all zones where the firewall is in use. This summary indicates whether the configuration changes have been applied everywhere. </p>
     /// <p>This status must be <code>IN_SYNC</code> for the firewall to be ready for use, but it doesn't indicate that the firewall is ready. The <code>Status</code> setting indicates firewall readiness.</p>
-    pub configuration_sync_state_summary: ::std::option::Option<crate::types::ConfigurationSyncState>,
+    pub configuration_sync_state_summary: crate::types::ConfigurationSyncState,
     /// <p>The subnets that you've configured for use by the Network Firewall firewall. This contains one array element per Availability Zone where you've configured a subnet. These objects provide details of the information that is summarized in the <code>ConfigurationSyncStateSummary</code> and <code>Status</code>, broken down by zone and configuration object. </p>
     pub sync_states: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SyncState>>,
     /// <p>Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference sets in a firewall.</p>
@@ -17,14 +17,14 @@ pub struct FirewallStatus {
 }
 impl FirewallStatus {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you've configured it. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallStatusValue> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::FirewallStatusValue {
+        &self.status
     }
     /// <p>The configuration sync state for the firewall. This summarizes the sync states reported in the <code>Config</code> settings for all of the Availability Zones where you have configured the firewall. </p>
     /// <p>When you create a firewall or update its configuration, for example by adding a rule group to its firewall policy, Network Firewall distributes the configuration changes to all zones where the firewall is in use. This summary indicates whether the configuration changes have been applied everywhere. </p>
     /// <p>This status must be <code>IN_SYNC</code> for the firewall to be ready for use, but it doesn't indicate that the firewall is ready. The <code>Status</code> setting indicates firewall readiness.</p>
-    pub fn configuration_sync_state_summary(&self) -> ::std::option::Option<&crate::types::ConfigurationSyncState> {
-        self.configuration_sync_state_summary.as_ref()
+    pub fn configuration_sync_state_summary(&self) -> &crate::types::ConfigurationSyncState {
+        &self.configuration_sync_state_summary
     }
     /// <p>The subnets that you've configured for use by the Network Firewall firewall. This contains one array element per Availability Zone where you've configured a subnet. These objects provide details of the information that is summarized in the <code>ConfigurationSyncStateSummary</code> and <code>Status</code>, broken down by zone and configuration object. </p>
     pub fn sync_states(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SyncState>> {
@@ -53,6 +53,7 @@ pub struct FirewallStatusBuilder {
 }
 impl FirewallStatusBuilder {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you've configured it. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::FirewallStatusValue) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl FirewallStatusBuilder {
     /// <p>The configuration sync state for the firewall. This summarizes the sync states reported in the <code>Config</code> settings for all of the Availability Zones where you have configured the firewall. </p>
     /// <p>When you create a firewall or update its configuration, for example by adding a rule group to its firewall policy, Network Firewall distributes the configuration changes to all zones where the firewall is in use. This summary indicates whether the configuration changes have been applied everywhere. </p>
     /// <p>This status must be <code>IN_SYNC</code> for the firewall to be ready for use, but it doesn't indicate that the firewall is ready. The <code>Status</code> setting indicates firewall readiness.</p>
+    /// This field is required.
     pub fn configuration_sync_state_summary(mut self, input: crate::types::ConfigurationSyncState) -> Self {
         self.configuration_sync_state_summary = ::std::option::Option::Some(input);
         self
@@ -124,12 +126,25 @@ impl FirewallStatusBuilder {
         &self.capacity_usage_summary
     }
     /// Consumes the builder and constructs a [`FirewallStatus`](crate::types::FirewallStatus).
-    pub fn build(self) -> crate::types::FirewallStatus {
-        crate::types::FirewallStatus {
-            status: self.status,
-            configuration_sync_state_summary: self.configuration_sync_state_summary,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::FirewallStatusBuilder::status)
+    /// - [`configuration_sync_state_summary`](crate::types::builders::FirewallStatusBuilder::configuration_sync_state_summary)
+    pub fn build(self) -> ::std::result::Result<crate::types::FirewallStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FirewallStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building FirewallStatus",
+                )
+            })?,
+            configuration_sync_state_summary: self.configuration_sync_state_summary.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configuration_sync_state_summary",
+                    "configuration_sync_state_summary was not specified but it is required when building FirewallStatus",
+                )
+            })?,
             sync_states: self.sync_states,
             capacity_usage_summary: self.capacity_usage_summary,
-        }
+        })
     }
 }

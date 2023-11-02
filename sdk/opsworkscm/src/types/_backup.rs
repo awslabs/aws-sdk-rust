@@ -123,8 +123,10 @@ impl Backup {
         self.s3_log_url.as_deref()
     }
     /// <p> The security group IDs that are obtained from the server when the backup is created. </p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p> The name of the server from which the backup was made. </p>
     pub fn server_name(&self) -> ::std::option::Option<&str> {
@@ -143,8 +145,10 @@ impl Backup {
         self.status_description.as_deref()
     }
     /// <p> The subnet IDs that are obtained from the server when the backup is created. </p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p> The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created. </p>
     pub fn tools_version(&self) -> ::std::option::Option<&str> {

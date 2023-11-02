@@ -11,7 +11,7 @@ pub struct EntityPropertyReference {
     /// <p>The ID of the entity.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the property.</p>
-    pub property_name: ::std::option::Option<::std::string::String>,
+    pub property_name: ::std::string::String,
 }
 impl EntityPropertyReference {
     /// <p>The name of the component.</p>
@@ -27,8 +27,9 @@ impl EntityPropertyReference {
         self.entity_id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn property_name(&self) -> ::std::option::Option<&str> {
-        self.property_name.as_deref()
+    pub fn property_name(&self) -> &str {
+        use std::ops::Deref;
+        self.property_name.deref()
     }
 }
 impl EntityPropertyReference {
@@ -104,6 +105,7 @@ impl EntityPropertyReferenceBuilder {
         &self.entity_id
     }
     /// <p>The name of the property.</p>
+    /// This field is required.
     pub fn property_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_name = ::std::option::Option::Some(input.into());
         self
@@ -118,12 +120,19 @@ impl EntityPropertyReferenceBuilder {
         &self.property_name
     }
     /// Consumes the builder and constructs a [`EntityPropertyReference`](crate::types::EntityPropertyReference).
-    pub fn build(self) -> crate::types::EntityPropertyReference {
-        crate::types::EntityPropertyReference {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property_name`](crate::types::builders::EntityPropertyReferenceBuilder::property_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityPropertyReference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityPropertyReference {
             component_name: self.component_name,
             external_id_property: self.external_id_property,
             entity_id: self.entity_id,
-            property_name: self.property_name,
-        }
+            property_name: self.property_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "property_name",
+                    "property_name was not specified but it is required when building EntityPropertyReference",
+                )
+            })?,
+        })
     }
 }

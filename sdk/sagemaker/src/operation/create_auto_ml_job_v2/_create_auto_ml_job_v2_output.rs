@@ -34,6 +34,7 @@ pub struct CreateAutoMlJobV2OutputBuilder {
 }
 impl CreateAutoMlJobV2OutputBuilder {
     /// <p>The unique ARN assigned to the AutoMLJob when it is created.</p>
+    /// This field is required.
     pub fn auto_ml_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_arn = ::std::option::Option::Some(input.into());
         self

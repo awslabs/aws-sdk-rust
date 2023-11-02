@@ -3,18 +3,18 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVectorEnrichmentJob`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p><br>
     /// - On success, responds with [`GetVectorEnrichmentJobOutput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    ///   - [`r#type(Option<VectorEnrichmentJobType>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::type): <p>The type of the Vector Enrichment job being initiated.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::name): <p>The name of the Vector Enrichment job.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::creation_time): <p>The creation time.</p>
-    ///   - [`duration_in_seconds(Option<i32>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::duration_in_seconds): <p>The duration of the Vector Enrichment job, in seconds.</p>
-    ///   - [`status(Option<VectorEnrichmentJobStatus>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::status): <p>The status of the initiated Vector Enrichment job.</p>
+    ///   - [`arn(String)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    ///   - [`r#type(VectorEnrichmentJobType)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::type): <p>The type of the Vector Enrichment job being initiated.</p>
+    ///   - [`name(String)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::name): <p>The name of the Vector Enrichment job.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::creation_time): <p>The creation time.</p>
+    ///   - [`duration_in_seconds(i32)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::duration_in_seconds): <p>The duration of the Vector Enrichment job, in seconds.</p>
+    ///   - [`status(VectorEnrichmentJobStatus)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::status): <p>The status of the initiated Vector Enrichment job.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::kms_key_id): <p>The Key Management Service key ID for server-side encryption.</p>
     ///   - [`input_config(Option<VectorEnrichmentJobInputConfig>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::input_config): <p>Input configuration information for the Vector Enrichment job.</p>
     ///   - [`job_config(Option<VectorEnrichmentJobConfig>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::job_config): <p>An object containing information about the job configuration.</p>
-    ///   - [`execution_role_arn(Option<String>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    ///   - [`execution_role_arn(String)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     ///   - [`error_details(Option<VectorEnrichmentJobErrorDetails>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::error_details): <p>Details about the errors generated during the Vector Enrichment job.</p>
     ///   - [`export_status(Option<VectorEnrichmentJobExportStatus>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::export_status): <p>The export status of the Vector Enrichment job being initiated.</p>
     ///   - [`export_error_details(Option<VectorEnrichmentJobExportErrorDetails>)`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput::export_error_details): <p>Details about the errors generated during the ExportVectorEnrichmentJob.</p>

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetails {
     /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub percentage_value: ::std::option::Option<f64>,
+    pub percentage_value: f64,
     /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
     pub associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomLineItemPercentageChargeDetails {
     /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub fn percentage_value(&self) -> ::std::option::Option<f64> {
+    pub fn percentage_value(&self) -> f64 {
         self.percentage_value
     }
     /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
-    pub fn associated_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_values.is_none()`.
+    pub fn associated_values(&self) -> &[::std::string::String] {
+        self.associated_values.as_deref().unwrap_or_default()
     }
 }
 impl CustomLineItemPercentageChargeDetails {
@@ -35,6 +37,7 @@ pub struct CustomLineItemPercentageChargeDetailsBuilder {
 }
 impl CustomLineItemPercentageChargeDetailsBuilder {
     /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    /// This field is required.
     pub fn percentage_value(mut self, input: f64) -> Self {
         self.percentage_value = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,19 @@ impl CustomLineItemPercentageChargeDetailsBuilder {
         &self.associated_values
     }
     /// Consumes the builder and constructs a [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).
-    pub fn build(self) -> crate::types::CustomLineItemPercentageChargeDetails {
-        crate::types::CustomLineItemPercentageChargeDetails {
-            percentage_value: self.percentage_value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`percentage_value`](crate::types::builders::CustomLineItemPercentageChargeDetailsBuilder::percentage_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CustomLineItemPercentageChargeDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomLineItemPercentageChargeDetails {
+            percentage_value: self.percentage_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "percentage_value",
+                    "percentage_value was not specified but it is required when building CustomLineItemPercentageChargeDetails",
+                )
+            })?,
             associated_values: self.associated_values,
-        }
+        })
     }
 }

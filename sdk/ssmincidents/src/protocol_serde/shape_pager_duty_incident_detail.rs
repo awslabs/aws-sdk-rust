@@ -3,14 +3,14 @@ pub fn ser_pager_duty_incident_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PagerDutyIncidentDetail,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.auto_resolve {
-        object.key("autoResolve").boolean(*var_2);
+    if let Some(var_1) = &input.auto_resolve {
+        object.key("autoResolve").boolean(*var_1);
     }
-    if let Some(var_3) = &input.secret_id {
-        object.key("secretId").string(var_3.as_str());
+    if let Some(var_2) = &input.secret_id {
+        object.key("secretId").string(var_2.as_str());
     }
     Ok(())
 }
@@ -57,7 +57,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pager_duty_incident_detail_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

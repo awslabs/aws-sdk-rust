@@ -76,6 +76,7 @@ pub struct ListLabelingJobsForWorkteamInputBuilder {
 }
 impl ListLabelingJobsForWorkteamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
+    /// This field is required.
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
         self

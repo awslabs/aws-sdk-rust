@@ -3,17 +3,17 @@ pub fn ser_partition_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PartitionIndex,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.keys {
-        let mut array_2 = object.key("Keys").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("Keys").start_array();
+        for item_2 in &input.keys {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.index_name {
-        object.key("IndexName").string(var_4.as_str());
+    {
+        object.key("IndexName").string(input.index_name.as_str());
     }
     Ok(())
 }

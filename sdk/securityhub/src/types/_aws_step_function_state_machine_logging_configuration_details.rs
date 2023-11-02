@@ -13,8 +13,10 @@ pub struct AwsStepFunctionStateMachineLoggingConfigurationDetails {
 }
 impl AwsStepFunctionStateMachineLoggingConfigurationDetails {
     /// <p> An array of objects that describes where your execution history events will be logged. </p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p> Determines whether execution data is included in your log. When set to false, data is excluded. </p>
     pub fn include_execution_data(&self) -> ::std::option::Option<bool> {

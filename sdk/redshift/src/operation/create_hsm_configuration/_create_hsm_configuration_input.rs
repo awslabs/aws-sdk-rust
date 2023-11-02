@@ -45,8 +45,10 @@ impl CreateHsmConfigurationInput {
         self.hsm_server_public_certificate.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateHsmConfigurationInput {
@@ -70,6 +72,7 @@ pub struct CreateHsmConfigurationInputBuilder {
 }
 impl CreateHsmConfigurationInputBuilder {
     /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
+    /// This field is required.
     pub fn hsm_configuration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl CreateHsmConfigurationInputBuilder {
         &self.hsm_configuration_identifier
     }
     /// <p>A text description of the HSM configuration to be created.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl CreateHsmConfigurationInputBuilder {
         &self.description
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    /// This field is required.
     pub fn hsm_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_ip_address = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +117,7 @@ impl CreateHsmConfigurationInputBuilder {
         &self.hsm_ip_address
     }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    /// This field is required.
     pub fn hsm_partition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_partition_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +132,7 @@ impl CreateHsmConfigurationInputBuilder {
         &self.hsm_partition_name
     }
     /// <p>The password required to access the HSM partition.</p>
+    /// This field is required.
     pub fn hsm_partition_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_partition_password = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +147,7 @@ impl CreateHsmConfigurationInputBuilder {
         &self.hsm_partition_password
     }
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
+    /// This field is required.
     pub fn hsm_server_public_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_server_public_certificate = ::std::option::Option::Some(input.into());
         self

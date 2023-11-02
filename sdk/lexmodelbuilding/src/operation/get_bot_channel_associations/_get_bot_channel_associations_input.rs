@@ -55,6 +55,7 @@ pub struct GetBotChannelAssociationsInputBuilder {
 }
 impl GetBotChannelAssociationsInputBuilder {
     /// <p>The name of the Amazon Lex bot in the association.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetBotChannelAssociationsInputBuilder {
         &self.bot_name
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    /// This field is required.
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
         self

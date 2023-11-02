@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnection`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::delete_connection::builders::DeleteConnectionFluentBuilder::set_connection_id):<br>required: **true**<br><p>The ID of the connection.</p><br>
     /// - On success, responds with [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput) with field(s):
     ///   - [`owner_account(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
     ///   - [`connection_id(Option<String>)`](crate::operation::delete_connection::DeleteConnectionOutput::connection_id): <p>The ID of the connection.</p>

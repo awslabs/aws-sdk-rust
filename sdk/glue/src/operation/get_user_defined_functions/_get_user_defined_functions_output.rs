@@ -11,8 +11,10 @@ pub struct GetUserDefinedFunctionsOutput {
 }
 impl GetUserDefinedFunctionsOutput {
     /// <p>A list of requested function definitions.</p>
-    pub fn user_defined_functions(&self) -> ::std::option::Option<&[crate::types::UserDefinedFunction]> {
-        self.user_defined_functions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_defined_functions.is_none()`.
+    pub fn user_defined_functions(&self) -> &[crate::types::UserDefinedFunction] {
+        self.user_defined_functions.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -28,6 +28,7 @@ pub struct GetTopicAttributesInputBuilder {
 }
 impl GetTopicAttributesInputBuilder {
     /// <p>The ARN of the topic whose properties you want to get.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self

@@ -34,8 +34,8 @@ pub fn de_update_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EventDestinationDoesNotExist" => crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError::EventDestinationDoesNotExistException({
@@ -50,8 +50,8 @@ pub fn de_update_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidCloudWatchDestination" => crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError::InvalidCloudWatchDestinationException({
@@ -66,8 +66,8 @@ pub fn de_update_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidFirehoseDestination" => crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError::InvalidFirehoseDestinationException({
@@ -82,8 +82,8 @@ pub fn de_update_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidSNSDestination" => crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError::InvalidSnsDestinationException({
@@ -98,8 +98,8 @@ pub fn de_update_configuration_set_event_destination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError::generic(generic)

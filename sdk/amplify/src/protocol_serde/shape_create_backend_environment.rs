@@ -118,7 +118,7 @@ pub fn de_create_backend_environment_http_response(
         output = crate::protocol_serde::shape_create_backend_environment::de_create_backend_environment(_response_body, output)
             .map_err(crate::operation::create_backend_environment::CreateBackendEnvironmentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_backend_environment_output_correct_errors(output).build()
     })
 }
 

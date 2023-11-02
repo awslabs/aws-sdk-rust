@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SparqlData {
     /// <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement expressing the changed quad.</p>
-    pub stmt: ::std::option::Option<::std::string::String>,
+    pub stmt: ::std::string::String,
 }
 impl SparqlData {
     /// <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement expressing the changed quad.</p>
-    pub fn stmt(&self) -> ::std::option::Option<&str> {
-        self.stmt.as_deref()
+    pub fn stmt(&self) -> &str {
+        use std::ops::Deref;
+        self.stmt.deref()
     }
 }
 impl SparqlData {
@@ -28,6 +29,7 @@ pub struct SparqlDataBuilder {
 }
 impl SparqlDataBuilder {
     /// <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement expressing the changed quad.</p>
+    /// This field is required.
     pub fn stmt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stmt = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SparqlDataBuilder {
         &self.stmt
     }
     /// Consumes the builder and constructs a [`SparqlData`](crate::types::SparqlData).
-    pub fn build(self) -> crate::types::SparqlData {
-        crate::types::SparqlData { stmt: self.stmt }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stmt`](crate::types::builders::SparqlDataBuilder::stmt)
+    pub fn build(self) -> ::std::result::Result<crate::types::SparqlData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SparqlData {
+            stmt: self.stmt.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "stmt",
+                    "stmt was not specified but it is required when building SparqlData",
+                )
+            })?,
+        })
     }
 }

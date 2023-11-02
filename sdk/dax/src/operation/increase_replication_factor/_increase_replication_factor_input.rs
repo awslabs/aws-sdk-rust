@@ -20,8 +20,10 @@ impl IncreaseReplicationFactorInput {
         self.new_replication_factor
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl IncreaseReplicationFactorInput {
@@ -41,6 +43,7 @@ pub struct IncreaseReplicationFactorInputBuilder {
 }
 impl IncreaseReplicationFactorInputBuilder {
     /// <p>The name of the DAX cluster that will receive additional nodes.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl IncreaseReplicationFactorInputBuilder {
         &self.cluster_name
     }
     /// <p>The new number of nodes for the DAX cluster.</p>
+    /// This field is required.
     pub fn new_replication_factor(mut self, input: i32) -> Self {
         self.new_replication_factor = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct BatchListObjectParentPathsResponse {
 }
 impl BatchListObjectParentPathsResponse {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn path_to_object_identifiers_list(&self) -> ::std::option::Option<&[crate::types::PathToObjectIdentifiers]> {
-        self.path_to_object_identifiers_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path_to_object_identifiers_list.is_none()`.
+    pub fn path_to_object_identifiers_list(&self) -> &[crate::types::PathToObjectIdentifiers] {
+        self.path_to_object_identifiers_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -33,8 +33,10 @@ impl DescribeVolumesModificationsInput {
         self.dry_run
     }
     /// <p>The IDs of the volumes.</p>
-    pub fn volume_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.volume_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
+    pub fn volume_ids(&self) -> &[::std::string::String] {
+        self.volume_ids.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -50,8 +52,10 @@ impl DescribeVolumesModificationsInput {
     /// <li> <p> <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).</p> </li>
     /// <li> <p> <code>volume-id</code> - The ID of the volume.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token returned by a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -97,6 +97,7 @@ pub struct DescribeCodeCoveragesInputBuilder {
 }
 impl DescribeCodeCoveragesInputBuilder {
     /// <p> The ARN of the report for which test cases are returned. </p>
+    /// This field is required.
     pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_arn = ::std::option::Option::Some(input.into());
         self

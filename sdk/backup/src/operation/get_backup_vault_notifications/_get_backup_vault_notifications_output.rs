@@ -27,8 +27,10 @@ impl GetBackupVaultNotificationsOutput {
         self.sns_topic_arn.as_deref()
     }
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
-    pub fn backup_vault_events(&self) -> ::std::option::Option<&[crate::types::BackupVaultEvent]> {
-        self.backup_vault_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_vault_events.is_none()`.
+    pub fn backup_vault_events(&self) -> &[crate::types::BackupVaultEvent] {
+        self.backup_vault_events.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetBackupVaultNotificationsOutput {

@@ -74,6 +74,7 @@ pub struct PutSubscriptionFilterInputBuilder {
 }
 impl PutSubscriptionFilterInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +89,7 @@ impl PutSubscriptionFilterInputBuilder {
         &self.log_group_name
     }
     /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl PutSubscriptionFilterInputBuilder {
         &self.filter_name
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
+    /// This field is required.
     pub fn filter_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_pattern = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +125,7 @@ impl PutSubscriptionFilterInputBuilder {
     /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self

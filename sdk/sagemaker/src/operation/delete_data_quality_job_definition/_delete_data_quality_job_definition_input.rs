@@ -27,6 +27,7 @@ pub struct DeleteDataQualityJobDefinitionInputBuilder {
 }
 impl DeleteDataQualityJobDefinitionInputBuilder {
     /// <p>The name of the data quality monitoring job definition to delete.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self

@@ -57,6 +57,8 @@ pub use crate::types::error::_number_of_nodes_per_cluster_limit_exceeded_fault::
 
 pub use crate::types::error::_limit_exceeded_fault::LimitExceededFault;
 
+pub use crate::types::error::_ipv6_cidr_block_not_found_fault::Ipv6CidrBlockNotFoundFault;
+
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFault;
 
 pub use crate::types::error::_invalid_tag_fault::InvalidTagFault;
@@ -92,6 +94,12 @@ pub use crate::types::error::_unsupported_option_fault::UnsupportedOptionFault;
 pub use crate::types::error::_invalid_cluster_parameter_group_state_fault::InvalidClusterParameterGroupStateFault;
 
 pub use crate::types::error::_invalid_data_share_fault::InvalidDataShareFault;
+
+pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFault;
+
+pub use crate::types::error::_invalid_policy_fault::InvalidPolicyFault;
+
+pub use crate::types::error::_conflict_policy_update_fault::ConflictPolicyUpdateFault;
 
 pub use crate::types::error::_reserved_node_quota_exceeded_fault::ReservedNodeQuotaExceededFault;
 
@@ -171,13 +179,13 @@ pub use crate::types::error::_invalid_namespace_fault::InvalidNamespaceFault;
 
 pub use crate::types::error::_snapshot_copy_already_disabled_fault::SnapshotCopyAlreadyDisabledFault;
 
-pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFault;
-
 pub use crate::types::error::_table_restore_not_found_fault::TableRestoreNotFoundFault;
 
 pub use crate::types::error::_resize_not_found_fault::ResizeNotFoundFault;
 
 pub use crate::types::error::_reserved_node_exchange_not_found_fault::ReservedNodeExchangeNotFoundFault;
+
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
 
 pub use crate::types::error::_custom_domain_association_not_found_fault::CustomDomainAssociationNotFoundFault;
 
@@ -311,6 +319,8 @@ mod _cluster_subnet_group_quota_exceeded_fault;
 
 mod _cluster_subnet_quota_exceeded_fault;
 
+mod _conflict_policy_update_fault;
+
 mod _copy_to_region_disabled_fault;
 
 mod _custom_cname_association_fault;
@@ -357,6 +367,8 @@ mod _insufficient_cluster_capacity_fault;
 
 mod _insufficient_s3_bucket_policy_fault;
 
+mod _integration_not_found_fault;
+
 mod _invalid_authentication_profile_request_fault;
 
 mod _invalid_authorization_state_fault;
@@ -389,6 +401,8 @@ mod _invalid_hsm_configuration_state_fault;
 
 mod _invalid_namespace_fault;
 
+mod _invalid_policy_fault;
+
 mod _invalid_reserved_node_state_fault;
 
 mod _invalid_restore_fault;
@@ -416,6 +430,8 @@ mod _invalid_tag_fault;
 mod _invalid_usage_limit_fault;
 
 mod _invalid_vpc_network_state_fault;
+
+mod _ipv6_cidr_block_not_found_fault;
 
 mod _limit_exceeded_fault;
 

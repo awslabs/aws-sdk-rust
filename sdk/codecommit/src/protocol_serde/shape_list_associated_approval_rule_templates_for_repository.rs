@@ -33,8 +33,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyAccessDeniedException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyAccessDeniedException({
@@ -49,8 +49,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyDisabledException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyDisabledException({
@@ -65,8 +65,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyNotFoundException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyNotFoundException({
@@ -81,8 +81,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyUnavailableException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyUnavailableException({
@@ -97,8 +97,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidContinuationTokenException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidContinuationTokenException({
@@ -113,8 +113,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidMaxResultsException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidMaxResultsException({
@@ -129,8 +129,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRepositoryNameException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidRepositoryNameException({
@@ -145,8 +145,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RepositoryDoesNotExistException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::RepositoryDoesNotExistException({
@@ -161,8 +161,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RepositoryNameRequiredException" => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::RepositoryNameRequiredException({
@@ -177,8 +177,8 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::generic(generic)

@@ -45,6 +45,7 @@ pub struct UpdateNotebookMetadataInputBuilder {
 }
 impl UpdateNotebookMetadataInputBuilder {
     /// <p>The ID of the notebook to update the metadata for.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl UpdateNotebookMetadataInputBuilder {
         &self.client_request_token
     }
     /// <p>The name to update the notebook to.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

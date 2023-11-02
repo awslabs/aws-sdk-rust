@@ -56,6 +56,7 @@ pub struct ReplicationInfoBuilder {
 }
 impl ReplicationInfoBuilder {
     /// <p>Configuration relating to consumer group replication.</p>
+    /// This field is required.
     pub fn consumer_group_replication(mut self, input: crate::types::ConsumerGroupReplication) -> Self {
         self.consumer_group_replication = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl ReplicationInfoBuilder {
         &self.consumer_group_replication
     }
     /// <p>The ARN of the source Kafka cluster.</p>
+    /// This field is required.
     pub fn source_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl ReplicationInfoBuilder {
         &self.source_kafka_cluster_arn
     }
     /// <p>The compression type to use when producing records to target cluster.</p>
+    /// This field is required.
     pub fn target_compression_type(mut self, input: crate::types::TargetCompressionType) -> Self {
         self.target_compression_type = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl ReplicationInfoBuilder {
         &self.target_compression_type
     }
     /// <p>The ARN of the target Kafka cluster.</p>
+    /// This field is required.
     pub fn target_kafka_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_kafka_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl ReplicationInfoBuilder {
         &self.target_kafka_cluster_arn
     }
     /// <p>Configuration relating to topic replication.</p>
+    /// This field is required.
     pub fn topic_replication(mut self, input: crate::types::TopicReplication) -> Self {
         self.topic_replication = ::std::option::Option::Some(input);
         self

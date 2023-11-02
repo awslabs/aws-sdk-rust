@@ -16,12 +16,16 @@ impl UpdateLogLevelsByResourceTypesInput {
         self.default_log_level.as_ref()
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn wireless_device_log_options(&self) -> ::std::option::Option<&[crate::types::WirelessDeviceLogOption]> {
-        self.wireless_device_log_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_device_log_options.is_none()`.
+    pub fn wireless_device_log_options(&self) -> &[crate::types::WirelessDeviceLogOption] {
+        self.wireless_device_log_options.as_deref().unwrap_or_default()
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn wireless_gateway_log_options(&self) -> ::std::option::Option<&[crate::types::WirelessGatewayLogOption]> {
-        self.wireless_gateway_log_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateway_log_options.is_none()`.
+    pub fn wireless_gateway_log_options(&self) -> &[crate::types::WirelessGatewayLogOption] {
+        self.wireless_gateway_log_options.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLogLevelsByResourceTypesInput {

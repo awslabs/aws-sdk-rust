@@ -11,8 +11,10 @@ pub struct DescribeInstanceAssociationsStatusOutput {
 }
 impl DescribeInstanceAssociationsStatusOutput {
     /// <p>Status information about the association.</p>
-    pub fn instance_association_status_infos(&self) -> ::std::option::Option<&[crate::types::InstanceAssociationStatusInfo]> {
-        self.instance_association_status_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_association_status_infos.is_none()`.
+    pub fn instance_association_status_infos(&self) -> &[crate::types::InstanceAssociationStatusInfo] {
+        self.instance_association_status_infos.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

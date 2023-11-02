@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBackendJob`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::set_app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(impl Into<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::set_backend_environment_name): <p>The name of the backend environment.</p>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::set_job_id): <p>The ID for the job.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::set_app_id):<br>required: **true**<br><p>The app ID.</p><br>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::set_backend_environment_name):<br>required: **true**<br><p>The name of the backend environment.</p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_backend_job::builders::GetBackendJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The ID for the job.</p><br>
     /// - On success, responds with [`GetBackendJobOutput`](crate::operation::get_backend_job::GetBackendJobOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::get_backend_job::GetBackendJobOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::operation::get_backend_job::GetBackendJobOutput::backend_environment_name): <p>The name of the backend environment.</p>

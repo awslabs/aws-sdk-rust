@@ -5,26 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomEntityType {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
-    pub regex_string: ::std::option::Option<::std::string::String>,
+    pub regex_string: ::std::string::String,
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
     pub context_words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomEntityType {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
-    pub fn regex_string(&self) -> ::std::option::Option<&str> {
-        self.regex_string.as_deref()
+    pub fn regex_string(&self) -> &str {
+        use std::ops::Deref;
+        self.regex_string.deref()
     }
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn context_words(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.context_words.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_words.is_none()`.
+    pub fn context_words(&self) -> &[::std::string::String] {
+        self.context_words.as_deref().unwrap_or_default()
     }
 }
 impl CustomEntityType {
@@ -44,6 +48,7 @@ pub struct CustomEntityTypeBuilder {
 }
 impl CustomEntityTypeBuilder {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +63,7 @@ impl CustomEntityTypeBuilder {
         &self.name
     }
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
+    /// This field is required.
     pub fn regex_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_string = ::std::option::Option::Some(input.into());
         self
@@ -95,11 +101,24 @@ impl CustomEntityTypeBuilder {
         &self.context_words
     }
     /// Consumes the builder and constructs a [`CustomEntityType`](crate::types::CustomEntityType).
-    pub fn build(self) -> crate::types::CustomEntityType {
-        crate::types::CustomEntityType {
-            name: self.name,
-            regex_string: self.regex_string,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CustomEntityTypeBuilder::name)
+    /// - [`regex_string`](crate::types::builders::CustomEntityTypeBuilder::regex_string)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomEntityType, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomEntityType {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CustomEntityType",
+                )
+            })?,
+            regex_string: self.regex_string.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "regex_string",
+                    "regex_string was not specified but it is required when building CustomEntityType",
+                )
+            })?,
             context_words: self.context_words,
-        }
+        })
     }
 }

@@ -5,38 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReserveContactInput {
     /// <p>ARN of a mission profile.</p>
-    pub mission_profile_arn: ::std::option::Option<::std::string::String>,
+    pub mission_profile_arn: ::std::string::String,
     /// <p>ARN of a satellite</p>
-    pub satellite_arn: ::std::option::Option<::std::string::String>,
+    pub satellite_arn: ::std::string::String,
     /// <p>Start time of a contact in UTC.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>End time of a contact in UTC.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p>Name of a ground station.</p>
-    pub ground_station: ::std::option::Option<::std::string::String>,
+    pub ground_station: ::std::string::String,
     /// <p>Tags assigned to a contact.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ReserveContactInput {
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(&self) -> ::std::option::Option<&str> {
-        self.mission_profile_arn.as_deref()
+    pub fn mission_profile_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.mission_profile_arn.deref()
     }
     /// <p>ARN of a satellite</p>
-    pub fn satellite_arn(&self) -> ::std::option::Option<&str> {
-        self.satellite_arn.as_deref()
+    pub fn satellite_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.satellite_arn.deref()
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station(&self) -> ::std::option::Option<&str> {
-        self.ground_station.as_deref()
+    pub fn ground_station(&self) -> &str {
+        use std::ops::Deref;
+        self.ground_station.deref()
     }
     /// <p>Tags assigned to a contact.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -63,6 +66,7 @@ pub struct ReserveContactInputBuilder {
 }
 impl ReserveContactInputBuilder {
     /// <p>ARN of a mission profile.</p>
+    /// This field is required.
     pub fn mission_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl ReserveContactInputBuilder {
         &self.mission_profile_arn
     }
     /// <p>ARN of a satellite</p>
+    /// This field is required.
     pub fn satellite_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl ReserveContactInputBuilder {
         &self.satellite_arn
     }
     /// <p>Start time of a contact in UTC.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -105,6 +111,7 @@ impl ReserveContactInputBuilder {
         &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +126,7 @@ impl ReserveContactInputBuilder {
         &self.end_time
     }
     /// <p>Name of a ground station.</p>
+    /// This field is required.
     pub fn ground_station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ground_station = ::std::option::Option::Some(input.into());
         self
@@ -153,15 +161,46 @@ impl ReserveContactInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ReserveContactInput`](crate::operation::reserve_contact::ReserveContactInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mission_profile_arn`](crate::operation::reserve_contact::builders::ReserveContactInputBuilder::mission_profile_arn)
+    /// - [`satellite_arn`](crate::operation::reserve_contact::builders::ReserveContactInputBuilder::satellite_arn)
+    /// - [`start_time`](crate::operation::reserve_contact::builders::ReserveContactInputBuilder::start_time)
+    /// - [`end_time`](crate::operation::reserve_contact::builders::ReserveContactInputBuilder::end_time)
+    /// - [`ground_station`](crate::operation::reserve_contact::builders::ReserveContactInputBuilder::ground_station)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::reserve_contact::ReserveContactInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::reserve_contact::ReserveContactInput {
-            mission_profile_arn: self.mission_profile_arn,
-            satellite_arn: self.satellite_arn,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            ground_station: self.ground_station,
+            mission_profile_arn: self.mission_profile_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mission_profile_arn",
+                    "mission_profile_arn was not specified but it is required when building ReserveContactInput",
+                )
+            })?,
+            satellite_arn: self.satellite_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "satellite_arn",
+                    "satellite_arn was not specified but it is required when building ReserveContactInput",
+                )
+            })?,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building ReserveContactInput",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building ReserveContactInput",
+                )
+            })?,
+            ground_station: self.ground_station.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ground_station",
+                    "ground_station was not specified but it is required when building ReserveContactInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

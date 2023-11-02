@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutPropertyValuesOutput {
     /// <p>Entries that caused errors in the batch put operation.</p>
-    pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>>,
+    pub error_entries: ::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>,
     _request_id: Option<String>,
 }
 impl BatchPutPropertyValuesOutput {
     /// <p>Entries that caused errors in the batch put operation.</p>
-    pub fn error_entries(&self) -> ::std::option::Option<&[crate::types::BatchPutPropertyErrorEntry]> {
-        self.error_entries.as_deref()
+    pub fn error_entries(&self) -> &[crate::types::BatchPutPropertyErrorEntry] {
+        use std::ops::Deref;
+        self.error_entries.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchPutPropertyValuesOutput {
@@ -63,10 +64,22 @@ impl BatchPutPropertyValuesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyValuesOutput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput).
-    pub fn build(self) -> crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput {
-        crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput {
-            error_entries: self.error_entries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_entries`](crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesOutputBuilder::error_entries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput {
+            error_entries: self.error_entries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_entries",
+                    "error_entries was not specified but it is required when building BatchPutPropertyValuesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

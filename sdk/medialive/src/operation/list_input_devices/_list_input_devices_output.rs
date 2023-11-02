@@ -12,8 +12,10 @@ pub struct ListInputDevicesOutput {
 }
 impl ListInputDevicesOutput {
     /// The list of input devices.
-    pub fn input_devices(&self) -> ::std::option::Option<&[crate::types::InputDeviceSummary]> {
-        self.input_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_devices.is_none()`.
+    pub fn input_devices(&self) -> &[crate::types::InputDeviceSummary] {
+        self.input_devices.as_deref().unwrap_or_default()
     }
     /// A token to get additional list results.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

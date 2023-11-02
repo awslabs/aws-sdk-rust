@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub knowledge_base_id: ::std::string::String,
 }
 impl RemoveKnowledgeBaseTemplateUriInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
-        self.knowledge_base_id.as_deref()
+    pub fn knowledge_base_id(&self) -> &str {
+        use std::ops::Deref;
+        self.knowledge_base_id.deref()
     }
 }
 impl RemoveKnowledgeBaseTemplateUriInput {
@@ -27,6 +28,7 @@ pub struct RemoveKnowledgeBaseTemplateUriInputBuilder {
 }
 impl RemoveKnowledgeBaseTemplateUriInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl RemoveKnowledgeBaseTemplateUriInputBuilder {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`RemoveKnowledgeBaseTemplateUriInput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`knowledge_base_id`](crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriInputBuilder::knowledge_base_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +53,12 @@ impl RemoveKnowledgeBaseTemplateUriInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput {
-                knowledge_base_id: self.knowledge_base_id,
+                knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "knowledge_base_id",
+                        "knowledge_base_id was not specified but it is required when building RemoveKnowledgeBaseTemplateUriInput",
+                    )
+                })?,
             },
         )
     }

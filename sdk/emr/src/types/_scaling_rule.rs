@@ -49,6 +49,7 @@ pub struct ScalingRuleBuilder {
 }
 impl ScalingRuleBuilder {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ScalingRuleBuilder {
         &self.description
     }
     /// <p>The conditions that trigger an automatic scaling activity.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ScalingAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl ScalingRuleBuilder {
         &self.action
     }
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
+    /// This field is required.
     pub fn trigger(mut self, input: crate::types::ScalingTrigger) -> Self {
         self.trigger = ::std::option::Option::Some(input);
         self

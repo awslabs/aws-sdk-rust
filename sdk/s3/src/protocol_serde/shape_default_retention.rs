@@ -21,6 +21,7 @@ pub fn ser_default_retention(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_default_retention(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DefaultRetention, ::aws_smithy_xml::decode::XmlDecodeError> {

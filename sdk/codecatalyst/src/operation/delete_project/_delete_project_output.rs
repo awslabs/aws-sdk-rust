@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteProjectOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DeleteProjectOutputBuilder {
 }
 impl DeleteProjectOutputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl DeleteProjectOutputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +103,27 @@ impl DeleteProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
-    pub fn build(self) -> crate::operation::delete_project::DeleteProjectOutput {
-        crate::operation::delete_project::DeleteProjectOutput {
-            space_name: self.space_name,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::operation::delete_project::builders::DeleteProjectOutputBuilder::space_name)
+    /// - [`name`](crate::operation::delete_project::builders::DeleteProjectOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectOutput {
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building DeleteProjectOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteProjectOutput",
+                )
+            })?,
             display_name: self.display_name,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSourceLocationInput {
     /// <p>The name of the source location.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
 }
 impl DeleteSourceLocationInput {
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
 }
 impl DeleteSourceLocationInput {
@@ -27,6 +28,7 @@ pub struct DeleteSourceLocationInputBuilder {
 }
 impl DeleteSourceLocationInputBuilder {
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,19 @@ impl DeleteSourceLocationInputBuilder {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`DeleteSourceLocationInput`](crate::operation::delete_source_location::DeleteSourceLocationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_location_name`](crate::operation::delete_source_location::builders::DeleteSourceLocationInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_source_location::DeleteSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_source_location::DeleteSourceLocationInput {
-            source_location_name: self.source_location_name,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building DeleteSourceLocationInput",
+                )
+            })?,
         })
     }
 }

@@ -49,6 +49,7 @@ pub struct MergeDeveloperIdentitiesInputBuilder {
 }
 impl MergeDeveloperIdentitiesInputBuilder {
     /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+    /// This field is required.
     pub fn source_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_user_identifier = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl MergeDeveloperIdentitiesInputBuilder {
         &self.source_user_identifier
     }
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+    /// This field is required.
     pub fn destination_user_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_user_identifier = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl MergeDeveloperIdentitiesInputBuilder {
         &self.destination_user_identifier
     }
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
+    /// This field is required.
     pub fn developer_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.developer_provider_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl MergeDeveloperIdentitiesInputBuilder {
         &self.developer_provider_name
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self

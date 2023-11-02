@@ -7,7 +7,7 @@ pub struct JobCheckpointConfig {
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
     pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
 }
 impl JobCheckpointConfig {
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/braket/checkpoints/</code>.</p>
@@ -15,8 +15,9 @@ impl JobCheckpointConfig {
         self.local_path.as_deref()
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
 }
 impl JobCheckpointConfig {
@@ -49,6 +50,7 @@ impl JobCheckpointConfigBuilder {
         &self.local_path
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl JobCheckpointConfigBuilder {
         &self.s3_uri
     }
     /// Consumes the builder and constructs a [`JobCheckpointConfig`](crate::types::JobCheckpointConfig).
-    pub fn build(self) -> crate::types::JobCheckpointConfig {
-        crate::types::JobCheckpointConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::JobCheckpointConfigBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobCheckpointConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobCheckpointConfig {
             local_path: self.local_path,
-            s3_uri: self.s3_uri,
-        }
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building JobCheckpointConfig",
+                )
+            })?,
+        })
     }
 }

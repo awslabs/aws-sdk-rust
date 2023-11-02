@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub target_group_identifier: ::std::option::Option<::std::string::String>,
+    pub target_group_identifier: ::std::string::String,
     /// <p>The targets.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::vec::Vec<crate::types::Target>,
 }
 impl RegisterTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
-        self.target_group_identifier.as_deref()
+    pub fn target_group_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.target_group_identifier.deref()
     }
     /// <p>The targets.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    pub fn targets(&self) -> &[crate::types::Target] {
+        use std::ops::Deref;
+        self.targets.deref()
     }
 }
 impl RegisterTargetsInput {
@@ -34,6 +36,7 @@ pub struct RegisterTargetsInputBuilder {
 }
 impl RegisterTargetsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl RegisterTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`RegisterTargetsInput`](crate::operation::register_targets::RegisterTargetsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_group_identifier`](crate::operation::register_targets::builders::RegisterTargetsInputBuilder::target_group_identifier)
+    /// - [`targets`](crate::operation::register_targets::builders::RegisterTargetsInputBuilder::targets)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::register_targets::RegisterTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_targets::RegisterTargetsInput {
-            target_group_identifier: self.target_group_identifier,
-            targets: self.targets,
+            target_group_identifier: self.target_group_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_group_identifier",
+                    "target_group_identifier was not specified but it is required when building RegisterTargetsInput",
+                )
+            })?,
+            targets: self.targets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "targets",
+                    "targets was not specified but it is required when building RegisterTargetsInput",
+                )
+            })?,
         })
     }
 }

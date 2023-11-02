@@ -27,8 +27,10 @@ impl DetectorFeatureConfigurationResult {
         self.updated_at.as_ref()
     }
     /// <p>Additional configuration for a resource.</p>
-    pub fn additional_configuration(&self) -> ::std::option::Option<&[crate::types::DetectorAdditionalConfigurationResult]> {
-        self.additional_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_configuration.is_none()`.
+    pub fn additional_configuration(&self) -> &[crate::types::DetectorAdditionalConfigurationResult] {
+        self.additional_configuration.as_deref().unwrap_or_default()
     }
 }
 impl DetectorFeatureConfigurationResult {

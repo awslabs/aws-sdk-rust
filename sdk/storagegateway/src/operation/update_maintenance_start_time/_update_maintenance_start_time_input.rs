@@ -62,6 +62,7 @@ pub struct UpdateMaintenanceStartTimeInputBuilder {
 }
 impl UpdateMaintenanceStartTimeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
         &self.gateway_arn
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
+    /// This field is required.
     pub fn hour_of_day(mut self, input: i32) -> Self {
         self.hour_of_day = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
         &self.hour_of_day
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time zone of the gateway.</p>
+    /// This field is required.
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.minute_of_hour = ::std::option::Option::Some(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFleetAdvisorCollector`](crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collector_referenced_id(impl Into<String>)`](crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorFluentBuilder::collector_referenced_id) / [`set_collector_referenced_id(Option<String>)`](crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorFluentBuilder::set_collector_referenced_id): <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    ///   - [`collector_referenced_id(impl Into<String>)`](crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorFluentBuilder::collector_referenced_id) / [`set_collector_referenced_id(Option<String>)`](crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorFluentBuilder::set_collector_referenced_id):<br>required: **true**<br><p>The reference ID of the Fleet Advisor collector to delete.</p><br>
     /// - On success, responds with [`DeleteFleetAdvisorCollectorOutput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetAdvisorCollectorError>`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorError)
     pub fn delete_fleet_advisor_collector(

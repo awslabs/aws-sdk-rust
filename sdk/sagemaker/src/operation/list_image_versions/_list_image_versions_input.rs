@@ -111,6 +111,7 @@ impl ListImageVersionsInputBuilder {
         &self.creation_time_before
     }
     /// <p>The name of the image to list the versions of.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self

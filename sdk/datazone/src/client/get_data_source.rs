@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataSource`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_identifier): <p>The ID of the Amazon DataZone data source.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the data source exists.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_data_source::builders::GetDataSourceFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone data source.</p><br>
     /// - On success, responds with [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::id): <p>The ID of the data source.</p>
+    ///   - [`id(String)`](crate::operation::get_data_source::GetDataSourceOutput::id): <p>The ID of the data source.</p>
     ///   - [`status(Option<DataSourceStatus>)`](crate::operation::get_data_source::GetDataSourceOutput::status): <p>The status of the data source.</p>
     ///   - [`r#type(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::type): <p>The type of the data source.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::name): <p>The name of the data source.</p>
+    ///   - [`name(String)`](crate::operation::get_data_source::GetDataSourceOutput::name): <p>The name of the data source.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::description): <p>The description of the data source.</p>
-    ///   - [`domain_id(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
-    ///   - [`project_id(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::project_id): <p>The ID of the project where the data source creates and publishes assets.</p>
-    ///   - [`environment_id(Option<String>)`](crate::operation::get_data_source::GetDataSourceOutput::environment_id): <p>The ID of the environment where this data source creates and publishes assets,</p>
+    ///   - [`domain_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the data source exists.</p>
+    ///   - [`project_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::project_id): <p>The ID of the project where the data source creates and publishes assets.</p>
+    ///   - [`environment_id(String)`](crate::operation::get_data_source::GetDataSourceOutput::environment_id): <p>The ID of the environment where this data source creates and publishes assets,</p>
     ///   - [`configuration(Option<DataSourceConfigurationOutput>)`](crate::operation::get_data_source::GetDataSourceOutput::configuration): <p>The configuration of the data source.</p>
     ///   - [`recommendation(Option<RecommendationConfiguration>)`](crate::operation::get_data_source::GetDataSourceOutput::recommendation): <p></p>
     ///   - [`enable_setting(Option<EnableSetting>)`](crate::operation::get_data_source::GetDataSourceOutput::enable_setting): <p>Specifies whether this data source is enabled or not.</p>

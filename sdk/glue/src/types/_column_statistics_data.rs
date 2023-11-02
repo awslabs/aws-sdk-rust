@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnStatisticsData {
     /// <p>The type of column statistics data.</p>
-    pub r#type: ::std::option::Option<crate::types::ColumnStatisticsType>,
+    pub r#type: crate::types::ColumnStatisticsType,
     /// <p>Boolean column statistics data.</p>
     pub boolean_column_statistics_data: ::std::option::Option<crate::types::BooleanColumnStatisticsData>,
     /// <p>Date column statistics data.</p>
@@ -23,8 +23,8 @@ pub struct ColumnStatisticsData {
 }
 impl ColumnStatisticsData {
     /// <p>The type of column statistics data.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ColumnStatisticsType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ColumnStatisticsType {
+        &self.r#type
     }
     /// <p>Boolean column statistics data.</p>
     pub fn boolean_column_statistics_data(&self) -> ::std::option::Option<&crate::types::BooleanColumnStatisticsData> {
@@ -77,6 +77,7 @@ pub struct ColumnStatisticsDataBuilder {
 }
 impl ColumnStatisticsDataBuilder {
     /// <p>The type of column statistics data.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ColumnStatisticsType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -189,9 +190,16 @@ impl ColumnStatisticsDataBuilder {
         &self.binary_column_statistics_data
     }
     /// Consumes the builder and constructs a [`ColumnStatisticsData`](crate::types::ColumnStatisticsData).
-    pub fn build(self) -> crate::types::ColumnStatisticsData {
-        crate::types::ColumnStatisticsData {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ColumnStatisticsDataBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnStatisticsData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ColumnStatisticsData {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ColumnStatisticsData",
+                )
+            })?,
             boolean_column_statistics_data: self.boolean_column_statistics_data,
             date_column_statistics_data: self.date_column_statistics_data,
             decimal_column_statistics_data: self.decimal_column_statistics_data,
@@ -199,6 +207,6 @@ impl ColumnStatisticsDataBuilder {
             long_column_statistics_data: self.long_column_statistics_data,
             string_column_statistics_data: self.string_column_statistics_data,
             binary_column_statistics_data: self.binary_column_statistics_data,
-        }
+        })
     }
 }

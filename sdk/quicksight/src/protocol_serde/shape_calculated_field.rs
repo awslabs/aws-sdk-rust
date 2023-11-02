@@ -3,14 +3,14 @@ pub fn ser_calculated_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CalculatedField,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_set_identifier {
-        object.key("DataSetIdentifier").string(var_1.as_str());
+    {
+        object.key("DataSetIdentifier").string(input.data_set_identifier.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.expression {
-        object.key("Expression").string(var_3.as_str());
+    {
+        object.key("Expression").string(input.expression.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::calculated_field_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the Amazon DataZone domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon DataZone domain.</p>
@@ -27,8 +27,9 @@ pub struct CreateDomainOutput {
 }
 impl CreateDomainOutput {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -97,6 +98,7 @@ pub struct CreateDomainOutputBuilder {
 }
 impl CreateDomainOutputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -252,9 +254,18 @@ impl CreateDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
-    pub fn build(self) -> crate::operation::create_domain::CreateDomainOutput {
-        crate::operation::create_domain::CreateDomainOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_domain::builders::CreateDomainOutputBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateDomainOutput",
+                )
+            })?,
             name: self.name,
             description: self.description,
             single_sign_on: self.single_sign_on,
@@ -265,6 +276,6 @@ impl CreateDomainOutputBuilder {
             portal_url: self.portal_url,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

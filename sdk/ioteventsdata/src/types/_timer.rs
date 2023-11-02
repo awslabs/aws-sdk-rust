@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Timer {
     /// <p>The name of the timer.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The expiration time for the timer.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
 }
 impl Timer {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The expiration time for the timer.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
 }
 impl Timer {
@@ -35,6 +36,7 @@ pub struct TimerBuilder {
 }
 impl TimerBuilder {
     /// <p>The name of the timer.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl TimerBuilder {
         &self.name
     }
     /// <p>The expiration time for the timer.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl TimerBuilder {
         &self.timestamp
     }
     /// Consumes the builder and constructs a [`Timer`](crate::types::Timer).
-    pub fn build(self) -> crate::types::Timer {
-        crate::types::Timer {
-            name: self.name,
-            timestamp: self.timestamp,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TimerBuilder::name)
+    /// - [`timestamp`](crate::types::builders::TimerBuilder::timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::Timer, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Timer {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Timer",
+                )
+            })?,
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building Timer",
+                )
+            })?,
+        })
     }
 }

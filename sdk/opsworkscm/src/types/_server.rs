@@ -115,8 +115,10 @@ impl Server {
     /// <li> <p> <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains a Puppet starter kit, including a README and a required private key. Save this file, unzip it, and then change to the directory where you've unzipped the file contents.</p> </li>
     /// <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p> </li>
     /// </ul>
-    pub fn engine_attributes(&self) -> ::std::option::Option<&[crate::types::EngineAttribute]> {
-        self.engine_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
+    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>. </p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
@@ -147,8 +149,10 @@ impl Server {
         self.preferred_backup_window.as_deref()
     }
     /// <p> The security group IDs for the server, as specified in the CloudFormation stack. These might not be the same security groups that are shown in the EC2 console. </p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The service role ARN used to create the server. </p>
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
@@ -163,8 +167,10 @@ impl Server {
         self.status_reason.as_deref()
     }
     /// <p> The subnet IDs specified in a CreateServer request. </p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the server. </p>
     pub fn server_arn(&self) -> ::std::option::Option<&str> {

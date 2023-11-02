@@ -42,6 +42,7 @@ pub struct ResultRowValueBuilder {
 }
 impl ResultRowValueBuilder {
     /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ResultRowValueBuilder {
         &self.key
     }
     /// <p>The data type of the value specified by the Value property.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ResultRowValueBuilder {
         &self.r#type
     }
     /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

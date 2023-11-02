@@ -3,17 +3,17 @@ pub fn ser_directory_vpc_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DirectoryVpcSettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vpc_id {
-        object.key("VpcId").string(var_1.as_str());
+    {
+        object.key("VpcId").string(input.vpc_id.as_str());
     }
-    if let Some(var_2) = &input.subnet_ids {
-        let mut array_3 = object.key("SubnetIds").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("SubnetIds").start_array();
+        for item_2 in &input.subnet_ids {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::directory_vpc_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

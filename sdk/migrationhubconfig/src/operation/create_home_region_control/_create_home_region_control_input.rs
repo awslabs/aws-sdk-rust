@@ -41,6 +41,7 @@ pub struct CreateHomeRegionControlInputBuilder {
 }
 impl CreateHomeRegionControlInputBuilder {
     /// <p>The name of the home region of the calling account.</p>
+    /// This field is required.
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateHomeRegionControlInputBuilder {
         &self.home_region
     }
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self

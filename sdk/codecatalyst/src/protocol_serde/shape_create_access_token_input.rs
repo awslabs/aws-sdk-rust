@@ -8,8 +8,8 @@ pub fn ser_create_access_token_input(
             .key("expiresTime")
             .date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
     Ok(())
 }

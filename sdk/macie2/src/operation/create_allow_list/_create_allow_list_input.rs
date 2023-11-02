@@ -57,6 +57,7 @@ pub struct CreateAllowListInputBuilder {
 }
 impl CreateAllowListInputBuilder {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl CreateAllowListInputBuilder {
         &self.client_token
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression (regex) that defines a text pattern to ignore.</p>
+    /// This field is required.
     pub fn criteria(mut self, input: crate::types::AllowListCriteria) -> Self {
         self.criteria = ::std::option::Option::Some(input);
         self
@@ -99,6 +101,7 @@ impl CreateAllowListInputBuilder {
         &self.description
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

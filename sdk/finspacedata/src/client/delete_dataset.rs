@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataset`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    ///   - [`dataset_id(impl Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_dataset_id): <p>The unique identifier of the Dataset to be deleted.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_client_token):<br>required: **false**<br><p>A token that ensures idempotency. This token expires in 10 minutes.</p><br>
+    ///   - [`dataset_id(impl Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_dataset_id):<br>required: **true**<br><p>The unique identifier of the Dataset to be deleted.</p><br>
     /// - On success, responds with [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput) with field(s):
     ///   - [`dataset_id(Option<String>)`](crate::operation::delete_dataset::DeleteDatasetOutput::dataset_id): <p>The unique identifier for the deleted Dataset.</p>
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::operation::delete_dataset::DeleteDatasetError)

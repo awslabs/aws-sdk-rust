@@ -11,8 +11,10 @@ pub struct GetRouteResponsesOutput {
 }
 impl GetRouteResponsesOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::RouteResponse]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::RouteResponse] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

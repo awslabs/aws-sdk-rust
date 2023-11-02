@@ -32,10 +32,7 @@ pub(crate) fn reflens_list_workspaces_output_next_token(
 pub(crate) fn lens_list_permissions_output_permissions(
     input: crate::operation::list_permissions::ListPermissionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PermissionEntry>> {
-    let input = match input.permissions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.permissions;
     ::std::option::Option::Some(input)
 }
 
@@ -52,9 +49,6 @@ pub(crate) fn lens_list_versions_output_grafana_versions(
 pub(crate) fn lens_list_workspaces_output_workspaces(
     input: crate::operation::list_workspaces::ListWorkspacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
-    let input = match input.workspaces {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.workspaces;
     ::std::option::Option::Some(input)
 }

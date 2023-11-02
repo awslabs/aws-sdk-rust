@@ -3,29 +3,29 @@ pub fn ser_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Source,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.owner {
-        object.key("Owner").string(var_1.as_str());
+    {
+        object.key("Owner").string(input.owner.as_str());
     }
-    if let Some(var_2) = &input.source_identifier {
-        object.key("SourceIdentifier").string(var_2.as_str());
+    if let Some(var_1) = &input.source_identifier {
+        object.key("SourceIdentifier").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.source_details {
-        let mut array_4 = object.key("SourceDetails").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.source_details {
+        let mut array_3 = object.key("SourceDetails").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_source_detail::ser_source_detail(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_source_detail::ser_source_detail(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.custom_policy_details {
+    if let Some(var_6) = &input.custom_policy_details {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("CustomPolicyDetails").start_object();
-        crate::protocol_serde::shape_custom_policy_details::ser_custom_policy_details(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("CustomPolicyDetails").start_object();
+        crate::protocol_serde::shape_custom_policy_details::ser_custom_policy_details(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }
@@ -76,7 +76,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::source_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -42,6 +42,7 @@ pub struct NielsenNaesIiNwBuilder {
 }
 impl NielsenNaesIiNwBuilder {
     /// Enter the check digit string for the watermark
+    /// This field is required.
     pub fn check_digit_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_digit_string = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl NielsenNaesIiNwBuilder {
         &self.check_digit_string
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
+    /// This field is required.
     pub fn sid(mut self, input: f64) -> Self {
         self.sid = ::std::option::Option::Some(input);
         self

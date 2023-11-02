@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>The expression string that is evaluated. </p>
-    pub expression_string: ::std::option::Option<::std::string::String>,
+    pub expression_string: ::std::string::String,
 }
 impl Condition {
     /// <p>The expression string that is evaluated. </p>
-    pub fn expression_string(&self) -> ::std::option::Option<&str> {
-        self.expression_string.as_deref()
+    pub fn expression_string(&self) -> &str {
+        use std::ops::Deref;
+        self.expression_string.deref()
     }
 }
 impl Condition {
@@ -28,6 +29,7 @@ pub struct ConditionBuilder {
 }
 impl ConditionBuilder {
     /// <p>The expression string that is evaluated. </p>
+    /// This field is required.
     pub fn expression_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression_string = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ConditionBuilder {
         &self.expression_string
     }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
-    pub fn build(self) -> crate::types::Condition {
-        crate::types::Condition {
-            expression_string: self.expression_string,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression_string`](crate::types::builders::ConditionBuilder::expression_string)
+    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Condition {
+            expression_string: self.expression_string.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression_string",
+                    "expression_string was not specified but it is required when building Condition",
+                )
+            })?,
+        })
     }
 }

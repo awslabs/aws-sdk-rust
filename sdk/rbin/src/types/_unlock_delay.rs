@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlockDelay {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
-    pub unlock_delay_value: ::std::option::Option<i32>,
+    pub unlock_delay_value: i32,
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    pub unlock_delay_unit: ::std::option::Option<crate::types::UnlockDelayUnit>,
+    pub unlock_delay_unit: crate::types::UnlockDelayUnit,
 }
 impl UnlockDelay {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
-    pub fn unlock_delay_value(&self) -> ::std::option::Option<i32> {
+    pub fn unlock_delay_value(&self) -> i32 {
         self.unlock_delay_value
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    pub fn unlock_delay_unit(&self) -> ::std::option::Option<&crate::types::UnlockDelayUnit> {
-        self.unlock_delay_unit.as_ref()
+    pub fn unlock_delay_unit(&self) -> &crate::types::UnlockDelayUnit {
+        &self.unlock_delay_unit
     }
 }
 impl UnlockDelay {
@@ -35,6 +35,7 @@ pub struct UnlockDelayBuilder {
 }
 impl UnlockDelayBuilder {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
+    /// This field is required.
     pub fn unlock_delay_value(mut self, input: i32) -> Self {
         self.unlock_delay_value = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl UnlockDelayBuilder {
         &self.unlock_delay_value
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
+    /// This field is required.
     pub fn unlock_delay_unit(mut self, input: crate::types::UnlockDelayUnit) -> Self {
         self.unlock_delay_unit = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl UnlockDelayBuilder {
         &self.unlock_delay_unit
     }
     /// Consumes the builder and constructs a [`UnlockDelay`](crate::types::UnlockDelay).
-    pub fn build(self) -> crate::types::UnlockDelay {
-        crate::types::UnlockDelay {
-            unlock_delay_value: self.unlock_delay_value,
-            unlock_delay_unit: self.unlock_delay_unit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`unlock_delay_value`](crate::types::builders::UnlockDelayBuilder::unlock_delay_value)
+    /// - [`unlock_delay_unit`](crate::types::builders::UnlockDelayBuilder::unlock_delay_unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::UnlockDelay, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UnlockDelay {
+            unlock_delay_value: self.unlock_delay_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "unlock_delay_value",
+                    "unlock_delay_value was not specified but it is required when building UnlockDelay",
+                )
+            })?,
+            unlock_delay_unit: self.unlock_delay_unit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "unlock_delay_unit",
+                    "unlock_delay_unit was not specified but it is required when building UnlockDelay",
+                )
+            })?,
+        })
     }
 }

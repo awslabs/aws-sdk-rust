@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
-    pub keyspace_name: ::std::option::Option<::std::string::String>,
+    pub keyspace_name: ::std::string::String,
     /// <p>The name of the table.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
     /// <ul>
@@ -73,12 +73,14 @@ pub struct CreateTableInput {
 }
 impl CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
-        self.keyspace_name.as_deref()
+    pub fn keyspace_name(&self) -> &str {
+        use std::ops::Deref;
+        self.keyspace_name.deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
     /// <p>For each column to be created:</p>
@@ -150,8 +152,10 @@ impl CreateTableInput {
     }
     /// <p>A list of key-value pair tags to be attached to the resource. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:</p>
     /// <ul>
@@ -187,6 +191,7 @@ pub struct CreateTableInputBuilder {
 }
 impl CreateTableInputBuilder {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -201,6 +206,7 @@ impl CreateTableInputBuilder {
         &self.keyspace_name
     }
     /// <p>The name of the table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +236,7 @@ impl CreateTableInputBuilder {
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
     /// <li> <p> <code>type</code> - An Amazon Keyspaces data type.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn schema_definition(mut self, input: crate::types::SchemaDefinition) -> Self {
         self.schema_definition = ::std::option::Option::Some(input);
         self
@@ -482,10 +489,23 @@ impl CreateTableInputBuilder {
         &self.client_side_timestamps
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyspace_name`](crate::operation::create_table::builders::CreateTableInputBuilder::keyspace_name)
+    /// - [`table_name`](crate::operation::create_table::builders::CreateTableInputBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
-            keyspace_name: self.keyspace_name,
-            table_name: self.table_name,
+            keyspace_name: self.keyspace_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyspace_name",
+                    "keyspace_name was not specified but it is required when building CreateTableInput",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building CreateTableInput",
+                )
+            })?,
             schema_definition: self.schema_definition,
             comment: self.comment,
             capacity_specification: self.capacity_specification,

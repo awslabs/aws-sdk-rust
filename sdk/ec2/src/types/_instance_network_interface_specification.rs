@@ -69,16 +69,20 @@ impl InstanceNetworkInterfaceSpecification {
         self.device_index
     }
     /// <p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses from the range of the subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_address_count
     }
     /// <p>The IPv6 addresses to assign to the network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::InstanceIpv6Address]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::InstanceIpv6Address] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     /// <p>If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.</p>
@@ -90,8 +94,10 @@ impl InstanceNetworkInterfaceSpecification {
         self.private_ip_address.as_deref()
     }
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::PrivateIpAddressSpecification]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::PrivateIpAddressSpecification] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
@@ -117,16 +123,20 @@ impl InstanceNetworkInterfaceSpecification {
         self.network_card_index
     }
     /// <p>The IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecificationRequest]> {
-        self.ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[crate::types::Ipv4PrefixSpecificationRequest] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     pub fn ipv4_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv4_prefix_count
     }
     /// <p>The IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecificationRequest]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[crate::types::Ipv6PrefixSpecificationRequest] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {

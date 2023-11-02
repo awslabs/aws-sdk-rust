@@ -49,6 +49,7 @@ pub fn ser_customized_metric_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_customized_metric_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CustomizedMetricSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

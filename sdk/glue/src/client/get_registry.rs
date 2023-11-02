@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRegistry`](crate::operation::get_registry::builders::GetRegistryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`registry_id(RegistryId)`](crate::operation::get_registry::builders::GetRegistryFluentBuilder::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::operation::get_registry::builders::GetRegistryFluentBuilder::set_registry_id): <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    ///   - [`registry_id(RegistryId)`](crate::operation::get_registry::builders::GetRegistryFluentBuilder::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::operation::get_registry::builders::GetRegistryFluentBuilder::set_registry_id):<br>required: **true**<br><p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p><br>
     /// - On success, responds with [`GetRegistryOutput`](crate::operation::get_registry::GetRegistryOutput) with field(s):
     ///   - [`registry_name(Option<String>)`](crate::operation::get_registry::GetRegistryOutput::registry_name): <p>The name of the registry.</p>
     ///   - [`registry_arn(Option<String>)`](crate::operation::get_registry::GetRegistryOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the registry.</p>

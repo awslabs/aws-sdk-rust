@@ -89,8 +89,10 @@ impl StorageVirtualMachine {
         self.uuid.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Describes why the SVM lifecycle state changed.</p>
     pub fn lifecycle_transition_reason(&self) -> ::std::option::Option<&crate::types::LifecycleTransitionReason> {

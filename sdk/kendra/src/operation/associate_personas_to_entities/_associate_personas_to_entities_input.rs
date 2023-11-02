@@ -20,8 +20,10 @@ impl AssociatePersonasToEntitiesInput {
         self.index_id.as_deref()
     }
     /// <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    pub fn personas(&self) -> ::std::option::Option<&[crate::types::EntityPersonaConfiguration]> {
-        self.personas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.personas.is_none()`.
+    pub fn personas(&self) -> &[crate::types::EntityPersonaConfiguration] {
+        self.personas.as_deref().unwrap_or_default()
     }
 }
 impl AssociatePersonasToEntitiesInput {
@@ -41,6 +43,7 @@ pub struct AssociatePersonasToEntitiesInputBuilder {
 }
 impl AssociatePersonasToEntitiesInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl AssociatePersonasToEntitiesInputBuilder {
         &self.id
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

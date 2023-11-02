@@ -27,6 +27,7 @@ pub struct DeleteResolverRuleInputBuilder {
 }
 impl DeleteResolverRuleInputBuilder {
     /// <p>The ID of the Resolver rule that you want to delete.</p>
+    /// This field is required.
     pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self

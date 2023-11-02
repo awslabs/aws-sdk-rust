@@ -3,14 +3,14 @@ pub fn ser_script_mode_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScriptModeConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entry_point {
-        object.key("entryPoint").string(var_1.as_str());
+    {
+        object.key("entryPoint").string(input.entry_point.as_str());
     }
-    if let Some(var_2) = &input.s3_uri {
-        object.key("s3Uri").string(var_2.as_str());
+    {
+        object.key("s3Uri").string(input.s3_uri.as_str());
     }
-    if let Some(var_3) = &input.compression_type {
-        object.key("compressionType").string(var_3.as_str());
+    if let Some(var_1) = &input.compression_type {
+        object.key("compressionType").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::script_mode_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

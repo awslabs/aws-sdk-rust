@@ -27,8 +27,10 @@ pub struct Record {
 }
 impl Record {
     /// <p>Contains the list of dimensions for time-series data points.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>Measure represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures. </p>
     pub fn measure_name(&self) -> ::std::option::Option<&str> {
@@ -58,8 +60,10 @@ impl Record {
     }
     /// <p> Contains the list of MeasureValue for time-series data points. </p>
     /// <p> This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code> attribute of the record directly. </p>
-    pub fn measure_values(&self) -> ::std::option::Option<&[crate::types::MeasureValue]> {
-        self.measure_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.measure_values.is_none()`.
+    pub fn measure_values(&self) -> &[crate::types::MeasureValue] {
+        self.measure_values.as_deref().unwrap_or_default()
     }
 }
 impl Record {

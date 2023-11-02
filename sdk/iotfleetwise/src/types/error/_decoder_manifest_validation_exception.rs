@@ -14,12 +14,16 @@ pub struct DecoderManifestValidationException {
 }
 impl DecoderManifestValidationException {
     /// <p>The request couldn't be completed because of invalid signals in the request.</p>
-    pub fn invalid_signals(&self) -> ::std::option::Option<&[crate::types::InvalidSignalDecoder]> {
-        self.invalid_signals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_signals.is_none()`.
+    pub fn invalid_signals(&self) -> &[crate::types::InvalidSignalDecoder] {
+        self.invalid_signals.as_deref().unwrap_or_default()
     }
     /// <p>The request couldn't be completed because of invalid network interfaces in the request.</p>
-    pub fn invalid_network_interfaces(&self) -> ::std::option::Option<&[crate::types::InvalidNetworkInterface]> {
-        self.invalid_network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_network_interfaces.is_none()`.
+    pub fn invalid_network_interfaces(&self) -> &[crate::types::InvalidNetworkInterface] {
+        self.invalid_network_interfaces.as_deref().unwrap_or_default()
     }
 }
 impl DecoderManifestValidationException {

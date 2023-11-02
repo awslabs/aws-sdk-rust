@@ -11,8 +11,10 @@ pub struct ListContainerInstancesOutput {
 }
 impl ListContainerInstancesOutput {
     /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
-    pub fn container_instance_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_instance_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_instance_arns.is_none()`.
+    pub fn container_instance_arns(&self) -> &[::std::string::String] {
+        self.container_instance_arns.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

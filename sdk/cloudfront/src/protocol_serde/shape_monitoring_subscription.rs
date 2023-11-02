@@ -13,6 +13,7 @@ pub fn ser_monitoring_subscription(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_monitoring_subscription(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MonitoringSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -69,6 +69,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
         &self.launch_profile_id
     }
     /// <p>The persona.</p>
+    /// This field is required.
     pub fn persona(mut self, input: crate::types::LaunchProfilePersona) -> Self {
         self.persona = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
         &self.persona
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
         &self.principal_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

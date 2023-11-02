@@ -34,6 +34,7 @@ pub struct StartImagePipelineExecutionInputBuilder {
 }
 impl StartImagePipelineExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
+    /// This field is required.
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartImagePipelineExecutionInputBuilder {
         &self.image_pipeline_arn
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

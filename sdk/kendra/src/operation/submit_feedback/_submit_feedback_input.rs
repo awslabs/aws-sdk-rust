@@ -22,12 +22,16 @@ impl SubmitFeedbackInput {
         self.query_id.as_deref()
     }
     /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    pub fn click_feedback_items(&self) -> ::std::option::Option<&[crate::types::ClickFeedback]> {
-        self.click_feedback_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.click_feedback_items.is_none()`.
+    pub fn click_feedback_items(&self) -> &[crate::types::ClickFeedback] {
+        self.click_feedback_items.as_deref().unwrap_or_default()
     }
     /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    pub fn relevance_feedback_items(&self) -> ::std::option::Option<&[crate::types::RelevanceFeedback]> {
-        self.relevance_feedback_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relevance_feedback_items.is_none()`.
+    pub fn relevance_feedback_items(&self) -> &[crate::types::RelevanceFeedback] {
+        self.relevance_feedback_items.as_deref().unwrap_or_default()
     }
 }
 impl SubmitFeedbackInput {
@@ -48,6 +52,7 @@ pub struct SubmitFeedbackInputBuilder {
 }
 impl SubmitFeedbackInputBuilder {
     /// <p>The identifier of the index that was queried.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl SubmitFeedbackInputBuilder {
         &self.index_id
     }
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self

@@ -36,6 +36,7 @@ pub struct UpdateBucketBundleInputBuilder {
 }
 impl UpdateBucketBundleInputBuilder {
     /// <p>The name of the bucket for which to update the bundle.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl UpdateBucketBundleInputBuilder {
     }
     /// <p>The ID of the new bundle to apply to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self

@@ -11,12 +11,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericQuestionPropertyValueAutomation {
     /// <p>The property label of the automation.</p>
-    pub label: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
+    pub label: crate::types::NumericQuestionPropertyAutomationLabel,
 }
 impl NumericQuestionPropertyValueAutomation {
     /// <p>The property label of the automation.</p>
-    pub fn label(&self) -> ::std::option::Option<&crate::types::NumericQuestionPropertyAutomationLabel> {
-        self.label.as_ref()
+    pub fn label(&self) -> &crate::types::NumericQuestionPropertyAutomationLabel {
+        &self.label
     }
 }
 impl NumericQuestionPropertyValueAutomation {
@@ -34,6 +34,7 @@ pub struct NumericQuestionPropertyValueAutomationBuilder {
 }
 impl NumericQuestionPropertyValueAutomationBuilder {
     /// <p>The property label of the automation.</p>
+    /// This field is required.
     pub fn label(mut self, input: crate::types::NumericQuestionPropertyAutomationLabel) -> Self {
         self.label = ::std::option::Option::Some(input);
         self
@@ -48,7 +49,18 @@ impl NumericQuestionPropertyValueAutomationBuilder {
         &self.label
     }
     /// Consumes the builder and constructs a [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).
-    pub fn build(self) -> crate::types::NumericQuestionPropertyValueAutomation {
-        crate::types::NumericQuestionPropertyValueAutomation { label: self.label }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`label`](crate::types::builders::NumericQuestionPropertyValueAutomationBuilder::label)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::NumericQuestionPropertyValueAutomation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NumericQuestionPropertyValueAutomation {
+            label: self.label.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "label",
+                    "label was not specified but it is required when building NumericQuestionPropertyValueAutomation",
+                )
+            })?,
+        })
     }
 }

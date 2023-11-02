@@ -53,16 +53,20 @@ impl VolumeRecommendation {
         self.finding.as_ref()
     }
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-    pub fn utilization_metrics(&self) -> ::std::option::Option<&[crate::types::EbsUtilizationMetric]> {
-        self.utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utilization_metrics.is_none()`.
+    pub fn utilization_metrics(&self) -> &[crate::types::EbsUtilizationMetric] {
+        self.utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
     pub fn look_back_period_in_days(&self) -> f64 {
         self.look_back_period_in_days
     }
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    pub fn volume_recommendation_options(&self) -> ::std::option::Option<&[crate::types::VolumeRecommendationOption]> {
-        self.volume_recommendation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_recommendation_options.is_none()`.
+    pub fn volume_recommendation_options(&self) -> &[crate::types::VolumeRecommendationOption] {
+        self.volume_recommendation_options.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
     pub fn last_refresh_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -73,8 +77,10 @@ impl VolumeRecommendation {
         self.current_performance_risk.as_ref()
     }
     /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl VolumeRecommendation {

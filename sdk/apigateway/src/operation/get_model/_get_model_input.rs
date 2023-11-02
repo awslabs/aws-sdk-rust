@@ -42,6 +42,7 @@ pub struct GetModelInputBuilder {
 }
 impl GetModelInputBuilder {
     /// <p>The RestApi identifier under which the Model exists.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl GetModelInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the model as an identifier.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self

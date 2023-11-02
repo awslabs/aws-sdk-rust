@@ -27,6 +27,7 @@ pub struct DeleteMlModelInputBuilder {
 }
 impl DeleteMlModelInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    /// This field is required.
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
         self

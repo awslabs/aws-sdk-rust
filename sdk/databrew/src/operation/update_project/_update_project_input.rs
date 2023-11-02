@@ -55,6 +55,7 @@ impl UpdateProjectInputBuilder {
         &self.sample
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateProjectInputBuilder {
         &self.role_arn
     }
     /// <p>The name of the project to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

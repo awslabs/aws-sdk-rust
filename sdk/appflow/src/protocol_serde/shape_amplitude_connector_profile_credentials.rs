@@ -3,11 +3,11 @@ pub fn ser_amplitude_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmplitudeConnectorProfileCredentials,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.api_key {
-        object.key("apiKey").string(var_1.as_str());
+    {
+        object.key("apiKey").string(input.api_key.as_str());
     }
-    if let Some(var_2) = &input.secret_key {
-        object.key("secretKey").string(var_2.as_str());
+    {
+        object.key("secretKey").string(input.secret_key.as_str());
     }
     Ok(())
 }

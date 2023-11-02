@@ -17,8 +17,10 @@ pub struct ListSnapshotBlocksOutput {
 }
 impl ListSnapshotBlocksOutput {
     /// <p>An array of objects containing information about the blocks.</p>
-    pub fn blocks(&self) -> ::std::option::Option<&[crate::types::Block]> {
-        self.blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
+    pub fn blocks(&self) -> &[crate::types::Block] {
+        self.blocks.as_deref().unwrap_or_default()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
     pub fn expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

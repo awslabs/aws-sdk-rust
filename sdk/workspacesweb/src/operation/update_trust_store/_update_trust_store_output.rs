@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrustStoreOutput {
     /// <p>The ARN of the trust store.</p>
-    pub trust_store_arn: ::std::option::Option<::std::string::String>,
+    pub trust_store_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateTrustStoreOutput {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
-        self.trust_store_arn.as_deref()
+    pub fn trust_store_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.trust_store_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateTrustStoreOutput {
@@ -34,6 +35,7 @@ pub struct UpdateTrustStoreOutputBuilder {
 }
 impl UpdateTrustStoreOutputBuilder {
     /// <p>The ARN of the trust store.</p>
+    /// This field is required.
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl UpdateTrustStoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTrustStoreOutput`](crate::operation::update_trust_store::UpdateTrustStoreOutput).
-    pub fn build(self) -> crate::operation::update_trust_store::UpdateTrustStoreOutput {
-        crate::operation::update_trust_store::UpdateTrustStoreOutput {
-            trust_store_arn: self.trust_store_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`trust_store_arn`](crate::operation::update_trust_store::builders::UpdateTrustStoreOutputBuilder::trust_store_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_trust_store::UpdateTrustStoreOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_trust_store::UpdateTrustStoreOutput {
+            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "trust_store_arn",
+                    "trust_store_arn was not specified but it is required when building UpdateTrustStoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

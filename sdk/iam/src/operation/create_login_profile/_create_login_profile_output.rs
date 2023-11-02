@@ -35,6 +35,7 @@ pub struct CreateLoginProfileOutputBuilder {
 }
 impl CreateLoginProfileOutputBuilder {
     /// <p>A structure containing the user name and password create date.</p>
+    /// This field is required.
     pub fn login_profile(mut self, input: crate::types::LoginProfile) -> Self {
         self.login_profile = ::std::option::Option::Some(input);
         self

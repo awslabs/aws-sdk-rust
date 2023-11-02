@@ -21,8 +21,10 @@ impl SidewalkGetDeviceProfile {
         self.qualification_status
     }
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
-    pub fn dak_certificate_metadata(&self) -> ::std::option::Option<&[crate::types::DakCertificateMetadata]> {
-        self.dak_certificate_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dak_certificate_metadata.is_none()`.
+    pub fn dak_certificate_metadata(&self) -> &[crate::types::DakCertificateMetadata] {
+        self.dak_certificate_metadata.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for SidewalkGetDeviceProfile {

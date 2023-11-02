@@ -9,8 +9,10 @@ pub struct GetBlacklistReportsInput {
 }
 impl GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
-    pub fn blacklist_item_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.blacklist_item_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blacklist_item_names.is_none()`.
+    pub fn blacklist_item_names(&self) -> &[::std::string::String] {
+        self.blacklist_item_names.as_deref().unwrap_or_default()
     }
 }
 impl GetBlacklistReportsInput {

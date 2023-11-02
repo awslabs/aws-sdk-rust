@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateApplicationComponentConfigInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    pub application_component_id: ::std::option::Option<::std::string::String>,
+    pub application_component_id: ::std::string::String,
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub inclusion_status: ::std::option::Option<crate::types::InclusionStatus>,
     /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
@@ -20,8 +20,9 @@ pub struct UpdateApplicationComponentConfigInput {
 }
 impl UpdateApplicationComponentConfigInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    pub fn application_component_id(&self) -> ::std::option::Option<&str> {
-        self.application_component_id.as_deref()
+    pub fn application_component_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_component_id.deref()
     }
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn inclusion_status(&self) -> ::std::option::Option<&crate::types::InclusionStatus> {
@@ -32,8 +33,10 @@ impl UpdateApplicationComponentConfigInput {
         self.strategy_option.as_ref()
     }
     /// <p> The list of source code configurations to update for the application component. </p>
-    pub fn source_code_list(&self) -> ::std::option::Option<&[crate::types::SourceCode]> {
-        self.source_code_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_code_list.is_none()`.
+    pub fn source_code_list(&self) -> &[crate::types::SourceCode] {
+        self.source_code_list.as_deref().unwrap_or_default()
     }
     /// <p> Database credentials. </p>
     pub fn secrets_manager_key(&self) -> ::std::option::Option<&str> {
@@ -82,6 +85,7 @@ pub struct UpdateApplicationComponentConfigInputBuilder {
 }
 impl UpdateApplicationComponentConfigInputBuilder {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    /// This field is required.
     pub fn application_component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_component_id = ::std::option::Option::Some(input.into());
         self
@@ -186,6 +190,8 @@ impl UpdateApplicationComponentConfigInputBuilder {
         &self.app_type
     }
     /// Consumes the builder and constructs a [`UpdateApplicationComponentConfigInput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_component_id`](crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder::application_component_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -194,7 +200,12 @@ impl UpdateApplicationComponentConfigInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput {
-                application_component_id: self.application_component_id,
+                application_component_id: self.application_component_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "application_component_id",
+                        "application_component_id was not specified but it is required when building UpdateApplicationComponentConfigInput",
+                    )
+                })?,
                 inclusion_status: self.inclusion_status,
                 strategy_option: self.strategy_option,
                 source_code_list: self.source_code_list,

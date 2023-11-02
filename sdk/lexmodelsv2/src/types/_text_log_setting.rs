@@ -35,6 +35,7 @@ pub struct TextLogSettingBuilder {
 }
 impl TextLogSettingBuilder {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TextLogSettingBuilder {
         &self.enabled
     }
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::TextLogDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

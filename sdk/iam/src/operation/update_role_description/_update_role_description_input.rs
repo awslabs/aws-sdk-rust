@@ -34,6 +34,7 @@ pub struct UpdateRoleDescriptionInputBuilder {
 }
 impl UpdateRoleDescriptionInputBuilder {
     /// <p>The name of the role that you want to modify.</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateRoleDescriptionInputBuilder {
         &self.role_name
     }
     /// <p>The new description that you want to apply to the specified role.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

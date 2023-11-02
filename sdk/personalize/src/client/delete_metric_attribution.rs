@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMetricAttribution`](crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`metric_attribution_arn(impl Into<String>)`](crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder::set_metric_attribution_arn): <p>The metric attribution's Amazon Resource Name (ARN).</p>
+    ///   - [`metric_attribution_arn(impl Into<String>)`](crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder::metric_attribution_arn) / [`set_metric_attribution_arn(Option<String>)`](crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder::set_metric_attribution_arn):<br>required: **true**<br><p>The metric attribution's Amazon Resource Name (ARN).</p><br>
     /// - On success, responds with [`DeleteMetricAttributionOutput`](crate::operation::delete_metric_attribution::DeleteMetricAttributionOutput)
     /// - On failure, responds with [`SdkError<DeleteMetricAttributionError>`](crate::operation::delete_metric_attribution::DeleteMetricAttributionError)
     pub fn delete_metric_attribution(&self) -> crate::operation::delete_metric_attribution::builders::DeleteMetricAttributionFluentBuilder {

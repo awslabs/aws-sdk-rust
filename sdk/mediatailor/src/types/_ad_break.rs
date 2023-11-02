@@ -43,8 +43,10 @@ impl AdBreak {
         self.time_signal_message.as_ref()
     }
     /// <p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>
-    pub fn ad_break_metadata(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.ad_break_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_break_metadata.is_none()`.
+    pub fn ad_break_metadata(&self) -> &[crate::types::KeyValuePair] {
+        self.ad_break_metadata.as_deref().unwrap_or_default()
     }
 }
 impl AdBreak {

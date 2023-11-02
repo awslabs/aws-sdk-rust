@@ -20,8 +20,10 @@ impl CreateCodeRepositoryInput {
         self.git_config.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCodeRepositoryInput {
@@ -41,6 +43,7 @@ pub struct CreateCodeRepositoryInputBuilder {
 }
 impl CreateCodeRepositoryInputBuilder {
     /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateCodeRepositoryInputBuilder {
         &self.code_repository_name
     }
     /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
+    /// This field is required.
     pub fn git_config(mut self, input: crate::types::GitConfig) -> Self {
         self.git_config = ::std::option::Option::Some(input);
         self

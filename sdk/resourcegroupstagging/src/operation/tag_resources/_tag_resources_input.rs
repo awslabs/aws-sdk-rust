@@ -12,8 +12,10 @@ pub struct TagResourcesInput {
 impl TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arn_list.is_none()`.
+    pub fn resource_arn_list(&self) -> &[::std::string::String] {
+        self.resource_arn_list.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

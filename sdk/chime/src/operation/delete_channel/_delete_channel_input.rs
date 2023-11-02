@@ -34,6 +34,7 @@ pub struct DeleteChannelInputBuilder {
 }
 impl DeleteChannelInputBuilder {
     /// <p>The ARN of the channel being deleted.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self

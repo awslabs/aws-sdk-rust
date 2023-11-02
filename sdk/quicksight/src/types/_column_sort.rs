@@ -7,7 +7,7 @@ pub struct ColumnSort {
     /// <p>A column of a data set.</p>
     pub sort_by: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The sort direction.</p>
-    pub direction: ::std::option::Option<crate::types::SortDirection>,
+    pub direction: crate::types::SortDirection,
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
 }
@@ -17,8 +17,8 @@ impl ColumnSort {
         self.sort_by.as_ref()
     }
     /// <p>The sort direction.</p>
-    pub fn direction(&self) -> ::std::option::Option<&crate::types::SortDirection> {
-        self.direction.as_ref()
+    pub fn direction(&self) -> &crate::types::SortDirection {
+        &self.direction
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
@@ -42,6 +42,7 @@ pub struct ColumnSortBuilder {
 }
 impl ColumnSortBuilder {
     /// <p>A column of a data set.</p>
+    /// This field is required.
     pub fn sort_by(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl ColumnSortBuilder {
         &self.sort_by
     }
     /// <p>The sort direction.</p>
+    /// This field is required.
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
         self.direction = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,18 @@ impl ColumnSortBuilder {
         &self.aggregation_function
     }
     /// Consumes the builder and constructs a [`ColumnSort`](crate::types::ColumnSort).
-    pub fn build(self) -> crate::types::ColumnSort {
-        crate::types::ColumnSort {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`direction`](crate::types::builders::ColumnSortBuilder::direction)
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnSort, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ColumnSort {
             sort_by: self.sort_by,
-            direction: self.direction,
+            direction: self.direction.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "direction",
+                    "direction was not specified but it is required when building ColumnSort",
+                )
+            })?,
             aggregation_function: self.aggregation_function,
-        }
+        })
     }
 }

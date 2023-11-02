@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResumeBatchLoadTask`](crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::set_task_id): <p>The ID of the batch load task to resume.</p>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The ID of the batch load task to resume.</p><br>
     /// - On success, responds with [`ResumeBatchLoadTaskOutput`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskOutput)
     /// - On failure, responds with [`SdkError<ResumeBatchLoadTaskError>`](crate::operation::resume_batch_load_task::ResumeBatchLoadTaskError)
     pub fn resume_batch_load_task(&self) -> crate::operation::resume_batch_load_task::builders::ResumeBatchLoadTaskFluentBuilder {

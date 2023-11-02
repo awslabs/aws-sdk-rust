@@ -42,6 +42,7 @@ pub struct UpdateFlowInputBuilder {
 }
 impl UpdateFlowInputBuilder {
     /// The flow that you want to update.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self

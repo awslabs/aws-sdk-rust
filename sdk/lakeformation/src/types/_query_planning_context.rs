@@ -7,7 +7,7 @@ pub struct QueryPlanningContext {
     /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database containing the table.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map consisting of key-value pairs.</p>
@@ -21,8 +21,9 @@ impl QueryPlanningContext {
         self.catalog_id.as_deref()
     }
     /// <p>The database containing the table.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn query_as_of_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -70,6 +71,7 @@ impl QueryPlanningContextBuilder {
         &self.catalog_id
     }
     /// <p>The database containing the table.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -139,13 +141,20 @@ impl QueryPlanningContextBuilder {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`QueryPlanningContext`](crate::types::QueryPlanningContext).
-    pub fn build(self) -> crate::types::QueryPlanningContext {
-        crate::types::QueryPlanningContext {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::QueryPlanningContextBuilder::database_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryPlanningContext, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueryPlanningContext {
             catalog_id: self.catalog_id,
-            database_name: self.database_name,
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building QueryPlanningContext",
+                )
+            })?,
             query_as_of_time: self.query_as_of_time,
             query_parameters: self.query_parameters,
             transaction_id: self.transaction_id,
-        }
+        })
     }
 }

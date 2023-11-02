@@ -3,20 +3,20 @@ pub fn ser_report_delivery_channel(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportDeliveryChannel,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_1.as_str());
+    {
+        object.key("S3BucketName").string(input.s3_bucket_name.as_str());
     }
-    if let Some(var_2) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_2.as_str());
+    if let Some(var_1) = &input.s3_key_prefix {
+        object.key("S3KeyPrefix").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.formats {
-        let mut array_4 = object.key("Formats").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.formats {
+        let mut array_3 = object.key("Formats").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::report_delivery_channel_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

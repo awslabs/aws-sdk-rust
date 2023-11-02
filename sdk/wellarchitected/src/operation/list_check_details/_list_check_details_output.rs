@@ -11,8 +11,10 @@ pub struct ListCheckDetailsOutput {
 }
 impl ListCheckDetailsOutput {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-    pub fn check_details(&self) -> ::std::option::Option<&[crate::types::CheckDetail]> {
-        self.check_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.check_details.is_none()`.
+    pub fn check_details(&self) -> &[crate::types::CheckDetail] {
+        self.check_details.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

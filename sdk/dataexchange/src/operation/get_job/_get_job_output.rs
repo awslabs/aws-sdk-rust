@@ -35,8 +35,10 @@ impl GetJobOutput {
         self.details.as_ref()
     }
     /// <p>The errors associated with jobs.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::JobError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::JobError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier for the job.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {

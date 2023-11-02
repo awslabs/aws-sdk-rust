@@ -41,8 +41,10 @@ impl JobSummary {
         self.bucket_criteria.as_ref()
     }
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
-    pub fn bucket_definitions(&self) -> ::std::option::Option<&[crate::types::S3BucketDefinitionForJob]> {
-        self.bucket_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_definitions.is_none()`.
+    pub fn bucket_definitions(&self) -> &[crate::types::S3BucketDefinitionForJob] {
+        self.bucket_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Resource {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>(Discontinued) The prefix of the S3 bucket.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3Resource {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>(Discontinued) The prefix of the S3 bucket.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct S3ResourceBuilder {
 }
 impl S3ResourceBuilder {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl S3ResourceBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`S3Resource`](crate::types::S3Resource).
-    pub fn build(self) -> crate::types::S3Resource {
-        crate::types::S3Resource {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3ResourceBuilder::bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Resource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Resource {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3Resource",
+                )
+            })?,
             prefix: self.prefix,
-        }
+        })
     }
 }

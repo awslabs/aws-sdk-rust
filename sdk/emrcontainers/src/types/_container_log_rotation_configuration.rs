@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerLogRotationConfiguration {
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
-    pub rotation_size: ::std::option::Option<::std::string::String>,
+    pub rotation_size: ::std::string::String,
     /// <p>The number of files to keep in container after rotation.</p>
-    pub max_files_to_keep: ::std::option::Option<i32>,
+    pub max_files_to_keep: i32,
 }
 impl ContainerLogRotationConfiguration {
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
-    pub fn rotation_size(&self) -> ::std::option::Option<&str> {
-        self.rotation_size.as_deref()
+    pub fn rotation_size(&self) -> &str {
+        use std::ops::Deref;
+        self.rotation_size.deref()
     }
     /// <p>The number of files to keep in container after rotation.</p>
-    pub fn max_files_to_keep(&self) -> ::std::option::Option<i32> {
+    pub fn max_files_to_keep(&self) -> i32 {
         self.max_files_to_keep
     }
 }
@@ -35,6 +36,7 @@ pub struct ContainerLogRotationConfigurationBuilder {
 }
 impl ContainerLogRotationConfigurationBuilder {
     /// <p>The file size at which to rotate logs. Minimum of 2KB, Maximum of 2GB.</p>
+    /// This field is required.
     pub fn rotation_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_size = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ContainerLogRotationConfigurationBuilder {
         &self.rotation_size
     }
     /// <p>The number of files to keep in container after rotation.</p>
+    /// This field is required.
     pub fn max_files_to_keep(mut self, input: i32) -> Self {
         self.max_files_to_keep = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ContainerLogRotationConfigurationBuilder {
         &self.max_files_to_keep
     }
     /// Consumes the builder and constructs a [`ContainerLogRotationConfiguration`](crate::types::ContainerLogRotationConfiguration).
-    pub fn build(self) -> crate::types::ContainerLogRotationConfiguration {
-        crate::types::ContainerLogRotationConfiguration {
-            rotation_size: self.rotation_size,
-            max_files_to_keep: self.max_files_to_keep,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rotation_size`](crate::types::builders::ContainerLogRotationConfigurationBuilder::rotation_size)
+    /// - [`max_files_to_keep`](crate::types::builders::ContainerLogRotationConfigurationBuilder::max_files_to_keep)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContainerLogRotationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContainerLogRotationConfiguration {
+            rotation_size: self.rotation_size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rotation_size",
+                    "rotation_size was not specified but it is required when building ContainerLogRotationConfiguration",
+                )
+            })?,
+            max_files_to_keep: self.max_files_to_keep.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_files_to_keep",
+                    "max_files_to_keep was not specified but it is required when building ContainerLogRotationConfiguration",
+                )
+            })?,
+        })
     }
 }

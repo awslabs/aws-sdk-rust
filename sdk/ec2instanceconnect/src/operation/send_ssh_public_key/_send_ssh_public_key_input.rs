@@ -48,6 +48,7 @@ pub struct SendSshPublicKeyInputBuilder {
 }
 impl SendSshPublicKeyInputBuilder {
     /// <p>The ID of the EC2 instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl SendSshPublicKeyInputBuilder {
         &self.instance_id
     }
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
+    /// This field is required.
     pub fn instance_os_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_os_user = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl SendSshPublicKeyInputBuilder {
         &self.instance_os_user
     }
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
+    /// This field is required.
     pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key = ::std::option::Option::Some(input.into());
         self

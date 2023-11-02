@@ -25,16 +25,20 @@ impl TransitGatewayConnectPeerConfiguration {
         self.peer_address.as_deref()
     }
     /// <p>The range of interior BGP peer IP addresses.</p>
-    pub fn inside_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inside_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
+    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
+        self.inside_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The tunnel protocol.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolValue> {
         self.protocol.as_ref()
     }
     /// <p>The BGP configuration details.</p>
-    pub fn bgp_configurations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayAttachmentBgpConfiguration]> {
-        self.bgp_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_configurations.is_none()`.
+    pub fn bgp_configurations(&self) -> &[crate::types::TransitGatewayAttachmentBgpConfiguration] {
+        self.bgp_configurations.as_deref().unwrap_or_default()
     }
 }
 impl TransitGatewayConnectPeerConfiguration {

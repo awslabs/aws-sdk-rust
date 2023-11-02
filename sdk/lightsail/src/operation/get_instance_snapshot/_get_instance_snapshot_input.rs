@@ -27,6 +27,7 @@ pub struct GetInstanceSnapshotInputBuilder {
 }
 impl GetInstanceSnapshotInputBuilder {
     /// <p>The name of the snapshot for which you are requesting information.</p>
+    /// This field is required.
     pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_snapshot_name = ::std::option::Option::Some(input.into());
         self

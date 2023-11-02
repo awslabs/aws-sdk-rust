@@ -15,8 +15,10 @@ impl CategoricalParameterRange {
         self.name.as_deref()
     }
     /// <p>A list of the categories for the hyperparameter.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl CategoricalParameterRange {
@@ -35,6 +37,7 @@ pub struct CategoricalParameterRangeBuilder {
 }
 impl CategoricalParameterRangeBuilder {
     /// <p>The name of the categorical hyperparameter to tune.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

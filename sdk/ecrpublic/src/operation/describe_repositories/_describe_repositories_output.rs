@@ -11,8 +11,10 @@ pub struct DescribeRepositoriesOutput {
 }
 impl DescribeRepositoriesOutput {
     /// <p>A list of repository objects corresponding to valid repositories.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::Repository]> {
-        self.repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
+    pub fn repositories(&self) -> &[crate::types::Repository] {
+        self.repositories.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

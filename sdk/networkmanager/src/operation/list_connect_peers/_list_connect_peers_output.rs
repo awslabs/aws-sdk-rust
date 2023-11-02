@@ -11,8 +11,10 @@ pub struct ListConnectPeersOutput {
 }
 impl ListConnectPeersOutput {
     /// <p>Describes the Connect peers.</p>
-    pub fn connect_peers(&self) -> ::std::option::Option<&[crate::types::ConnectPeerSummary]> {
-        self.connect_peers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connect_peers.is_none()`.
+    pub fn connect_peers(&self) -> &[crate::types::ConnectPeerSummary] {
+        self.connect_peers.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct GetByteMatchSetInputBuilder {
 }
 impl GetByteMatchSetInputBuilder {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// This field is required.
     pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self

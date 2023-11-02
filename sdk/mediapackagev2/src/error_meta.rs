@@ -487,6 +487,7 @@ impl From<crate::operation::list_channels::ListChannelsError> for Error {
         match err {
             crate::operation::list_channels::ListChannelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_channels::ListChannelsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_channels::ListChannelsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_channels::ListChannelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_channels::ListChannelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),

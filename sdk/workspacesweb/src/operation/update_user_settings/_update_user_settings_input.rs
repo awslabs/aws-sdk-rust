@@ -110,6 +110,7 @@ pub struct UpdateUserSettingsInputBuilder {
 }
 impl UpdateUserSettingsInputBuilder {
     /// <p>The ARN of the user settings.</p>
+    /// This field is required.
     pub fn user_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_settings_arn = ::std::option::Option::Some(input.into());
         self

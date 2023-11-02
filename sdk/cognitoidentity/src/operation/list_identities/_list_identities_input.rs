@@ -49,6 +49,7 @@ pub struct ListIdentitiesInputBuilder {
 }
 impl ListIdentitiesInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl ListIdentitiesInputBuilder {
         &self.identity_pool_id
     }
     /// <p>The maximum number of identities to return.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self

@@ -31,8 +31,10 @@ impl Purchase {
         self.duration
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub fn host_id_set(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_id_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_id_set.is_none()`.
+    pub fn host_id_set(&self) -> &[::std::string::String] {
+        self.host_id_set.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the reservation.</p>
     pub fn host_reservation_id(&self) -> ::std::option::Option<&str> {

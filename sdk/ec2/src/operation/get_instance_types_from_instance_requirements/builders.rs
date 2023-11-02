@@ -101,7 +101,7 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
             crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
             Self,
@@ -110,7 +110,7 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
             crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -123,7 +123,7 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(
         self,
     ) -> crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator {

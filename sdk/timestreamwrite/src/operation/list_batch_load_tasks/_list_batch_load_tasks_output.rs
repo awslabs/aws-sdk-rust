@@ -15,8 +15,10 @@ impl ListBatchLoadTasksOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of batch load task details.</p>
-    pub fn batch_load_tasks(&self) -> ::std::option::Option<&[crate::types::BatchLoadTask]> {
-        self.batch_load_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_load_tasks.is_none()`.
+    pub fn batch_load_tasks(&self) -> &[crate::types::BatchLoadTask] {
+        self.batch_load_tasks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListBatchLoadTasksOutput {

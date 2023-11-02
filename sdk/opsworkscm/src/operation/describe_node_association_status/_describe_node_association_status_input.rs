@@ -34,6 +34,7 @@ pub struct DescribeNodeAssociationStatusInputBuilder {
 }
 impl DescribeNodeAssociationStatusInputBuilder {
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
+    /// This field is required.
     pub fn node_association_status_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_association_status_token = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeNodeAssociationStatusInputBuilder {
         &self.node_association_status_token
     }
     /// <p>The name of the server from which to disassociate the node. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self

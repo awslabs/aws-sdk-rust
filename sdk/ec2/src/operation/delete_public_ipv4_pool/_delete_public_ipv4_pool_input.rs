@@ -48,6 +48,7 @@ impl DeletePublicIpv4PoolInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the public IPv4 pool you want to delete.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self

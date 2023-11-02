@@ -41,6 +41,7 @@ pub struct AllocateTransitVirtualInterfaceInputBuilder {
 }
 impl AllocateTransitVirtualInterfaceInputBuilder {
     /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AllocateTransitVirtualInterfaceInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
+    /// This field is required.
     pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AllocateTransitVirtualInterfaceInputBuilder {
         &self.owner_account
     }
     /// <p>Information about the transit virtual interface.</p>
+    /// This field is required.
     pub fn new_transit_virtual_interface_allocation(mut self, input: crate::types::NewTransitVirtualInterfaceAllocation) -> Self {
         self.new_transit_virtual_interface_allocation = ::std::option::Option::Some(input);
         self

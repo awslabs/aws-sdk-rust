@@ -28,7 +28,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                 output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -45,7 +47,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                         crate::protocol_serde::shape_cancelled_by_user_exception::de_cancelled_by_user_exception_json_err(_response_body, output)
                             .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::cancelled_by_user_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -62,7 +66,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     output = crate::protocol_serde::shape_client_timeout_exception::de_client_timeout_exception_json_err(_response_body, output)
                         .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::client_timeout_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -82,7 +88,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     )
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::concurrent_modification_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -102,7 +110,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     )
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::constraint_violation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -119,7 +129,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     output = crate::protocol_serde::shape_failure_by_query_exception::de_failure_by_query_exception_json_err(_response_body, output)
                         .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::failure_by_query_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -136,7 +148,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(_response_body, output)
                         .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::illegal_argument_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -153,7 +167,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     output = crate::protocol_serde::shape_invalid_argument_exception::de_invalid_argument_exception_json_err(_response_body, output)
                         .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_argument_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -173,7 +189,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     )
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_numeric_data_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -191,7 +209,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                         crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                             .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -208,7 +228,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     output = crate::protocol_serde::shape_malformed_query_exception::de_malformed_query_exception_json_err(_response_body, output)
                         .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::malformed_query_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -228,7 +250,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     )
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::memory_limit_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -246,7 +270,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                         crate::protocol_serde::shape_missing_parameter_exception::de_missing_parameter_exception_json_err(_response_body, output)
                             .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::missing_parameter_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -262,7 +288,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                 output = crate::protocol_serde::shape_parsing_exception::de_parsing_exception_json_err(_response_body, output)
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::parsing_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -281,7 +309,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     )
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::preconditions_failed_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -301,7 +331,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     )
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::query_limit_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -317,7 +349,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                 output = crate::protocol_serde::shape_query_limit_exception::de_query_limit_exception_json_err(_response_body, output)
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::query_limit_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -333,7 +367,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     output = crate::protocol_serde::shape_query_too_large_exception::de_query_too_large_exception_json_err(_response_body, output)
                         .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::query_too_large_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -351,7 +387,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                         crate::protocol_serde::shape_time_limit_exceeded_exception::de_time_limit_exceeded_exception_json_err(_response_body, output)
                             .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::time_limit_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -369,7 +407,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                         crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                             .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::too_many_requests_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -389,7 +429,9 @@ pub fn de_execute_open_cypher_explain_query_http_error(
                     )
                     .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unsupported_operation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
@@ -417,7 +459,9 @@ pub fn de_execute_open_cypher_explain_query_http_response(
             _response_body,
         )?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::execute_open_cypher_explain_query_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::unhandled)?
     })
 }
 

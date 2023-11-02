@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProjectSummary {
     /// <p>The identifier of a Amazon DataZone domain where the project exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of a project.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of a project.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of a project.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon DataZone user who created the project.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The timestamp of when a project was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the project was updated.</p>
@@ -21,24 +21,28 @@ pub struct ProjectSummary {
 }
 impl ProjectSummary {
     /// <p>The identifier of a Amazon DataZone domain where the project exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of a project.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of a project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of a project.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon DataZone user who created the project.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The timestamp of when a project was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -83,6 +87,7 @@ pub struct ProjectSummaryBuilder {
 }
 impl ProjectSummaryBuilder {
     /// <p>The identifier of a Amazon DataZone domain where the project exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl ProjectSummaryBuilder {
         &self.domain_id
     }
     /// <p>The identifier of a project.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl ProjectSummaryBuilder {
         &self.id
     }
     /// <p>The name of a project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +146,7 @@ impl ProjectSummaryBuilder {
         &self.description
     }
     /// <p>The Amazon DataZone user who created the project.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -181,16 +189,41 @@ impl ProjectSummaryBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
-    pub fn build(self) -> crate::types::ProjectSummary {
-        crate::types::ProjectSummary {
-            domain_id: self.domain_id,
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::ProjectSummaryBuilder::domain_id)
+    /// - [`id`](crate::types::builders::ProjectSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::ProjectSummaryBuilder::name)
+    /// - [`created_by`](crate::types::builders::ProjectSummaryBuilder::created_by)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectSummary {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building ProjectSummary",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ProjectSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ProjectSummary",
+                )
+            })?,
             description: self.description,
-            created_by: self.created_by,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building ProjectSummary",
+                )
+            })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ProjectSummaryBuilder {

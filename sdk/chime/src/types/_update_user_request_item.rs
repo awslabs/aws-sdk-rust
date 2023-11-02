@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserRequestItem {
     /// <p>The user ID.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p>The user license type.</p>
     pub license_type: ::std::option::Option<crate::types::License>,
     /// <p>The user type.</p>
@@ -15,8 +15,9 @@ pub struct UpdateUserRequestItem {
 }
 impl UpdateUserRequestItem {
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p>The user license type.</p>
     pub fn license_type(&self) -> ::std::option::Option<&crate::types::License> {
@@ -49,6 +50,7 @@ pub struct UpdateUserRequestItemBuilder {
 }
 impl UpdateUserRequestItemBuilder {
     /// <p>The user ID.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl UpdateUserRequestItemBuilder {
         &self.alexa_for_business_metadata
     }
     /// Consumes the builder and constructs a [`UpdateUserRequestItem`](crate::types::UpdateUserRequestItem).
-    pub fn build(self) -> crate::types::UpdateUserRequestItem {
-        crate::types::UpdateUserRequestItem {
-            user_id: self.user_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_id`](crate::types::builders::UpdateUserRequestItemBuilder::user_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateUserRequestItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateUserRequestItem {
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building UpdateUserRequestItem",
+                )
+            })?,
             license_type: self.license_type,
             user_type: self.user_type,
             alexa_for_business_metadata: self.alexa_for_business_metadata,
-        }
+        })
     }
 }

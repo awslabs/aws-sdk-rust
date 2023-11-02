@@ -7,33 +7,36 @@
 pub struct EntityInfo {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the entity (user or role).</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of entity (user or role).</p>
-    pub r#type: ::std::option::Option<crate::types::PolicyOwnerEntityType>,
+    pub r#type: crate::types::PolicyOwnerEntityType,
     /// <p>The identifier of the entity (user or role).</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl EntityInfo {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the entity (user or role).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of entity (user or role).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PolicyOwnerEntityType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PolicyOwnerEntityType {
+        &self.r#type
     }
     /// <p>The identifier of the entity (user or role).</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn path(&self) -> ::std::option::Option<&str> {
@@ -60,6 +63,7 @@ pub struct EntityInfoBuilder {
 impl EntityInfoBuilder {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl EntityInfoBuilder {
         &self.arn
     }
     /// <p>The name of the entity (user or role).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl EntityInfoBuilder {
         &self.name
     }
     /// <p>The type of entity (user or role).</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PolicyOwnerEntityType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -104,6 +110,7 @@ impl EntityInfoBuilder {
         &self.r#type
     }
     /// <p>The identifier of the entity (user or role).</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +139,38 @@ impl EntityInfoBuilder {
         &self.path
     }
     /// Consumes the builder and constructs a [`EntityInfo`](crate::types::EntityInfo).
-    pub fn build(self) -> crate::types::EntityInfo {
-        crate::types::EntityInfo {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::EntityInfoBuilder::arn)
+    /// - [`name`](crate::types::builders::EntityInfoBuilder::name)
+    /// - [`r#type`](crate::types::builders::EntityInfoBuilder::r#type)
+    /// - [`id`](crate::types::builders::EntityInfoBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityInfo {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building EntityInfo",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EntityInfo",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building EntityInfo",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building EntityInfo",
+                )
+            })?,
             path: self.path,
-        }
+        })
     }
 }

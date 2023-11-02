@@ -6,29 +6,29 @@ pub fn ser_create_workflow_step_group_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.next {
-        let mut array_4 = object.key("next").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.next {
+        let mut array_3 = object.key("next").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.previous {
-        let mut array_7 = object.key("previous").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.previous {
+        let mut array_6 = object.key("previous").start_array();
+        for item_7 in var_5 {
             {
-                array_7.value().string(item_8.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_9) = &input.workflow_id {
-        object.key("workflowId").string(var_9.as_str());
+    {
+        object.key("workflowId").string(input.workflow_id.as_str());
     }
     Ok(())
 }

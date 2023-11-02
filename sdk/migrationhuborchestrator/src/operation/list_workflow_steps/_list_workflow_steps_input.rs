@@ -8,9 +8,9 @@ pub struct ListWorkflowStepsInput {
     /// <p>The maximum number of results that can be returned.</p>
     pub max_results: i32,
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The ID of the step group.</p>
-    pub step_group_id: ::std::option::Option<::std::string::String>,
+    pub step_group_id: ::std::string::String,
 }
 impl ListWorkflowStepsInput {
     /// <p>The pagination token.</p>
@@ -22,12 +22,14 @@ impl ListWorkflowStepsInput {
         self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
-        self.step_group_id.as_deref()
+    pub fn step_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.step_group_id.deref()
     }
 }
 impl ListWorkflowStepsInput {
@@ -76,6 +78,7 @@ impl ListWorkflowStepsInputBuilder {
         &self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl ListWorkflowStepsInputBuilder {
         &self.workflow_id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
@@ -104,14 +108,27 @@ impl ListWorkflowStepsInputBuilder {
         &self.step_group_id
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepsInput`](crate::operation::list_workflow_steps::ListWorkflowStepsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::list_workflow_steps::builders::ListWorkflowStepsInputBuilder::workflow_id)
+    /// - [`step_group_id`](crate::operation::list_workflow_steps::builders::ListWorkflowStepsInputBuilder::step_group_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_workflow_steps::ListWorkflowStepsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflow_steps::ListWorkflowStepsInput {
             next_token: self.next_token,
             max_results: self.max_results.unwrap_or_default(),
-            workflow_id: self.workflow_id,
-            step_group_id: self.step_group_id,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building ListWorkflowStepsInput",
+                )
+            })?,
+            step_group_id: self.step_group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "step_group_id",
+                    "step_group_id was not specified but it is required when building ListWorkflowStepsInput",
+                )
+            })?,
         })
     }
 }

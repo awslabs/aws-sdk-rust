@@ -27,8 +27,10 @@ pub struct EcsTaskOverride {
 }
 impl EcsTaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn container_overrides(&self) -> ::std::option::Option<&[crate::types::EcsContainerOverride]> {
-        self.container_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_overrides.is_none()`.
+    pub fn container_overrides(&self) -> &[crate::types::EcsContainerOverride] {
+        self.container_overrides.as_deref().unwrap_or_default()
     }
     /// <p>The cpu override for the task.</p>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
@@ -49,8 +51,10 @@ impl EcsTaskOverride {
         self.execution_role_arn.as_deref()
     }
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn inference_accelerator_overrides(&self) -> ::std::option::Option<&[crate::types::EcsInferenceAcceleratorOverride]> {
-        self.inference_accelerator_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerator_overrides.is_none()`.
+    pub fn inference_accelerator_overrides(&self) -> &[crate::types::EcsInferenceAcceleratorOverride] {
+        self.inference_accelerator_overrides.as_deref().unwrap_or_default()
     }
     /// <p>The memory override for the task.</p>
     pub fn memory(&self) -> ::std::option::Option<&str> {

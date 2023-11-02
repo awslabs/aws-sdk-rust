@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventDataStore`](crate::operation::get_event_data_store::builders::GetEventDataStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_data_store(impl Into<String>)`](crate::operation::get_event_data_store::builders::GetEventDataStoreFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::get_event_data_store::builders::GetEventDataStoreFluentBuilder::set_event_data_store): <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+    ///   - [`event_data_store(impl Into<String>)`](crate::operation::get_event_data_store::builders::GetEventDataStoreFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::get_event_data_store::builders::GetEventDataStoreFluentBuilder::set_event_data_store):<br>required: **true**<br><p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p><br>
     /// - On success, responds with [`GetEventDataStoreOutput`](crate::operation::get_event_data_store::GetEventDataStoreOutput) with field(s):
     ///   - [`event_data_store_arn(Option<String>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::event_data_store_arn): <p>The event data store Amazon Resource Number (ARN).</p>
     ///   - [`name(Option<String>)`](crate::operation::get_event_data_store::GetEventDataStoreOutput::name): <p>The name of the event data store.</p>

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelCommand`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`command_id(impl Into<String>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::command_id) / [`set_command_id(Option<String>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::set_command_id): <p>The ID of the command you want to cancel.</p>
-    ///   - [`instance_ids(impl Into<String>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::set_instance_ids): <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
+    ///   - [`command_id(impl Into<String>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::command_id) / [`set_command_id(Option<String>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::set_command_id):<br>required: **true**<br><p>The ID of the command you want to cancel.</p><br>
+    ///   - [`instance_ids(impl Into<String>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::cancel_command::builders::CancelCommandFluentBuilder::set_instance_ids):<br>required: **false**<br><p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p><br>
     /// - On success, responds with [`CancelCommandOutput`](crate::operation::cancel_command::CancelCommandOutput)
     /// - On failure, responds with [`SdkError<CancelCommandError>`](crate::operation::cancel_command::CancelCommandError)
     pub fn cancel_command(&self) -> crate::operation::cancel_command::builders::CancelCommandFluentBuilder {

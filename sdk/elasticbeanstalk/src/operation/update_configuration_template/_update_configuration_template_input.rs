@@ -34,13 +34,17 @@ impl UpdateConfigurationTemplateInput {
         self.description.as_deref()
     }
     /// <p>A list of configuration option settings to update with the new specified option value.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>A list of configuration options to remove from the configuration set.</p>
     /// <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
-    pub fn options_to_remove(&self) -> ::std::option::Option<&[crate::types::OptionSpecification]> {
-        self.options_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_remove.is_none()`.
+    pub fn options_to_remove(&self) -> &[crate::types::OptionSpecification] {
+        self.options_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateConfigurationTemplateInput {
@@ -63,6 +67,7 @@ pub struct UpdateConfigurationTemplateInputBuilder {
 impl UpdateConfigurationTemplateInputBuilder {
     /// <p>The name of the application associated with the configuration template to update.</p>
     /// <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +85,7 @@ impl UpdateConfigurationTemplateInputBuilder {
     }
     /// <p>The name of the configuration template to update.</p>
     /// <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

@@ -4,21 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteDataSourceOutput {
     /// <p>The ID of the data source that is deleted.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The status of this data source.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     /// <p>The type of this data source.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data source that is deleted.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the data source that is deleted.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The ID of the project in which this data source exists and from which it's deleted.</p>
-    pub project_id: ::std::option::Option<::std::string::String>,
+    pub project_id: ::std::string::String,
     /// <p>The ID of the environemnt associated with this data source.</p>
-    pub environment_id: ::std::option::Option<::std::string::String>,
+    pub environment_id: ::std::string::String,
     /// <p>The configuration of the data source that is deleted.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     /// <p>The enable setting of the data source that specifies whether the data source is enabled or disabled.</p>
@@ -45,8 +45,9 @@ pub struct DeleteDataSourceOutput {
 }
 impl DeleteDataSourceOutput {
     /// <p>The ID of the data source that is deleted.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The status of this data source.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
@@ -57,24 +58,28 @@ impl DeleteDataSourceOutput {
         self.r#type.as_deref()
     }
     /// <p>The name of the data source that is deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the data source that is deleted.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The ID of the project in which this data source exists and from which it's deleted.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
-        self.project_id.as_deref()
+    pub fn project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.project_id.deref()
     }
     /// <p>The ID of the environemnt associated with this data source.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    pub fn environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_id.deref()
     }
     /// <p>The configuration of the data source that is deleted.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationOutput> {
@@ -89,8 +94,10 @@ impl DeleteDataSourceOutput {
         self.publish_on_import
     }
     /// <p>The asset data forms associated with this data source.</p>
-    pub fn asset_forms_output(&self) -> ::std::option::Option<&[crate::types::FormOutput]> {
-        self.asset_forms_output.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_forms_output.is_none()`.
+    pub fn asset_forms_output(&self) -> &[crate::types::FormOutput] {
+        self.asset_forms_output.as_deref().unwrap_or_default()
     }
     /// <p>The schedule of runs for this data source.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
@@ -186,6 +193,7 @@ pub struct DeleteDataSourceOutputBuilder {
 }
 impl DeleteDataSourceOutputBuilder {
     /// <p>The ID of the data source that is deleted.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -228,6 +236,7 @@ impl DeleteDataSourceOutputBuilder {
         &self.r#type
     }
     /// <p>The name of the data source that is deleted.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -256,6 +265,7 @@ impl DeleteDataSourceOutputBuilder {
         &self.description
     }
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -270,6 +280,7 @@ impl DeleteDataSourceOutputBuilder {
         &self.domain_id
     }
     /// <p>The ID of the project in which this data source exists and from which it's deleted.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -284,6 +295,7 @@ impl DeleteDataSourceOutputBuilder {
         &self.project_id
     }
     /// <p>The ID of the environemnt associated with this data source.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -467,16 +479,49 @@ impl DeleteDataSourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput).
-    pub fn build(self) -> crate::operation::delete_data_source::DeleteDataSourceOutput {
-        crate::operation::delete_data_source::DeleteDataSourceOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::id)
+    /// - [`name`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::name)
+    /// - [`domain_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::domain_id)
+    /// - [`project_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::project_id)
+    /// - [`environment_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::environment_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_data_source::DeleteDataSourceOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DeleteDataSourceOutput",
+                )
+            })?,
             status: self.status,
             r#type: self.r#type,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteDataSourceOutput",
+                )
+            })?,
             description: self.description,
-            domain_id: self.domain_id,
-            project_id: self.project_id,
-            environment_id: self.environment_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DeleteDataSourceOutput",
+                )
+            })?,
+            project_id: self.project_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_id",
+                    "project_id was not specified but it is required when building DeleteDataSourceOutput",
+                )
+            })?,
+            environment_id: self.environment_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_id",
+                    "environment_id was not specified but it is required when building DeleteDataSourceOutput",
+                )
+            })?,
             configuration: self.configuration,
             enable_setting: self.enable_setting,
             publish_on_import: self.publish_on_import,
@@ -489,7 +534,7 @@ impl DeleteDataSourceOutputBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DeleteDataSourceOutputBuilder {

@@ -41,6 +41,7 @@ pub struct UpdateDataLakeExceptionSubscriptionInputBuilder {
 }
 impl UpdateDataLakeExceptionSubscriptionInputBuilder {
     /// <p>The subscription protocol to which exception messages are posted.</p>
+    /// This field is required.
     pub fn subscription_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_protocol = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateDataLakeExceptionSubscriptionInputBuilder {
         &self.subscription_protocol
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
+    /// This field is required.
     pub fn notification_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notification_endpoint = ::std::option::Option::Some(input.into());
         self

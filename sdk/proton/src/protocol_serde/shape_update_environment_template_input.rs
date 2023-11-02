@@ -3,14 +3,14 @@ pub fn ser_update_environment_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_environment_template::UpdateEnvironmentTemplateInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.display_name {
-        object.key("displayName").string(var_2.as_str());
+    if let Some(var_1) = &input.display_name {
+        object.key("displayName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
     Ok(())
 }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfilingGroupInput {
     /// <p>The name of the profiling group to create.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
-    pub client_token: ::std::option::Option<::std::string::String>,
+    pub client_token: ::std::string::String,
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
     pub agent_orchestration_config: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
     /// <p> A list of tags to add to the created profiling group. </p>
@@ -17,16 +17,18 @@ pub struct CreateProfilingGroupInput {
 }
 impl CreateProfilingGroupInput {
     /// <p>The name of the profiling group to create.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
     pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
+    pub fn client_token(&self) -> &str {
+        use std::ops::Deref;
+        self.client_token.deref()
     }
     /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
     pub fn agent_orchestration_config(&self) -> ::std::option::Option<&crate::types::AgentOrchestrationConfig> {
@@ -56,6 +58,7 @@ pub struct CreateProfilingGroupInputBuilder {
 }
 impl CreateProfilingGroupInputBuilder {
     /// <p>The name of the profiling group to create.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl CreateProfilingGroupInputBuilder {
         &self.compute_platform
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -132,14 +136,27 @@ impl CreateProfilingGroupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProfilingGroupInput`](crate::operation::create_profiling_group::CreateProfilingGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::create_profiling_group::builders::CreateProfilingGroupInputBuilder::profiling_group_name)
+    /// - [`client_token`](crate::operation::create_profiling_group::builders::CreateProfilingGroupInputBuilder::client_token)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_profiling_group::CreateProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_profiling_group::CreateProfilingGroupInput {
-            profiling_group_name: self.profiling_group_name,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building CreateProfilingGroupInput",
+                )
+            })?,
             compute_platform: self.compute_platform,
-            client_token: self.client_token,
+            client_token: self.client_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_token",
+                    "client_token was not specified but it is required when building CreateProfilingGroupInput",
+                )
+            })?,
             agent_orchestration_config: self.agent_orchestration_config,
             tags: self.tags,
         })

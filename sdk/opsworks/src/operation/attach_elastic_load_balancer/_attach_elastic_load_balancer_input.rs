@@ -34,6 +34,7 @@ pub struct AttachElasticLoadBalancerInputBuilder {
 }
 impl AttachElasticLoadBalancerInputBuilder {
     /// <p>The Elastic Load Balancing instance's name.</p>
+    /// This field is required.
     pub fn elastic_load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AttachElasticLoadBalancerInputBuilder {
         &self.elastic_load_balancer_name
     }
     /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
+    /// This field is required.
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
         self

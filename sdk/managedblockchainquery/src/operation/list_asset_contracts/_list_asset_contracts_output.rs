@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetContractsOutput {
     /// <p>An array of contract objects that contain the properties for each contract.</p>
-    pub contracts: ::std::option::Option<::std::vec::Vec<crate::types::AssetContract>>,
+    pub contracts: ::std::vec::Vec<crate::types::AssetContract>,
     /// <p>The pagination token that indicates the next set of results to retrieve. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssetContractsOutput {
     /// <p>An array of contract objects that contain the properties for each contract.</p>
-    pub fn contracts(&self) -> ::std::option::Option<&[crate::types::AssetContract]> {
-        self.contracts.as_deref()
+    pub fn contracts(&self) -> &[crate::types::AssetContract] {
+        use std::ops::Deref;
+        self.contracts.deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListAssetContractsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssetContractsOutput`](crate::operation::list_asset_contracts::ListAssetContractsOutput).
-    pub fn build(self) -> crate::operation::list_asset_contracts::ListAssetContractsOutput {
-        crate::operation::list_asset_contracts::ListAssetContractsOutput {
-            contracts: self.contracts,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contracts`](crate::operation::list_asset_contracts::builders::ListAssetContractsOutputBuilder::contracts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_asset_contracts::ListAssetContractsOutput {
+            contracts: self.contracts.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contracts",
+                    "contracts was not specified but it is required when building ListAssetContractsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

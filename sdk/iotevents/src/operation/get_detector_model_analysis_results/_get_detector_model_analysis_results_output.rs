@@ -11,8 +11,10 @@ pub struct GetDetectorModelAnalysisResultsOutput {
 }
 impl GetDetectorModelAnalysisResultsOutput {
     /// <p>Contains information about one or more analysis results.</p>
-    pub fn analysis_results(&self) -> ::std::option::Option<&[crate::types::AnalysisResult]> {
-        self.analysis_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_results.is_none()`.
+    pub fn analysis_results(&self) -> &[crate::types::AnalysisResult] {
+        self.analysis_results.as_deref().unwrap_or_default()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

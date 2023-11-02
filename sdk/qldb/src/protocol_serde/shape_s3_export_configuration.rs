@@ -3,17 +3,17 @@ pub fn ser_s3_export_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ExportConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket {
-        object.key("Bucket").string(var_1.as_str());
+    {
+        object.key("Bucket").string(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("Prefix").string(var_2.as_str());
+    {
+        object.key("Prefix").string(input.prefix.as_str());
     }
-    if let Some(var_3) = &input.encryption_configuration {
+    if let Some(var_1) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_s3_encryption_configuration::ser_s3_encryption_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("EncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_s3_encryption_configuration::ser_s3_encryption_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_export_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

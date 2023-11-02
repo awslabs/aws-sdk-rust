@@ -34,6 +34,7 @@ pub struct GetJobRunOutputBuilder {
 }
 impl GetJobRunOutputBuilder {
     /// <p>The output displays information about the job run.</p>
+    /// This field is required.
     pub fn job_run(mut self, input: crate::types::JobRun) -> Self {
         self.job_run = ::std::option::Option::Some(input);
         self

@@ -22,12 +22,16 @@ impl DeregisterDbProxyTargetsInput {
         self.target_group_name.as_deref()
     }
     /// <p>One or more DB instance identifiers.</p>
-    pub fn db_instance_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_instance_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instance_identifiers.is_none()`.
+    pub fn db_instance_identifiers(&self) -> &[::std::string::String] {
+        self.db_instance_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>One or more DB cluster identifiers.</p>
-    pub fn db_cluster_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_cluster_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_identifiers.is_none()`.
+    pub fn db_cluster_identifiers(&self) -> &[::std::string::String] {
+        self.db_cluster_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl DeregisterDbProxyTargetsInput {
@@ -48,6 +52,7 @@ pub struct DeregisterDbProxyTargetsInputBuilder {
 }
 impl DeregisterDbProxyTargetsInputBuilder {
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
+    /// This field is required.
     pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self

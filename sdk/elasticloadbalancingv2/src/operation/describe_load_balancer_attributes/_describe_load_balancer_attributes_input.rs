@@ -27,6 +27,7 @@ pub struct DescribeLoadBalancerAttributesInputBuilder {
 }
 impl DescribeLoadBalancerAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self

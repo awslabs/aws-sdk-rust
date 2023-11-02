@@ -48,6 +48,7 @@ pub struct CreateIngestionInputBuilder {
 }
 impl CreateIngestionInputBuilder {
     /// <p>The ID of the dataset used in the ingestion.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateIngestionInputBuilder {
         &self.data_set_id
     }
     /// <p>An ID for the ingestion.</p>
+    /// This field is required.
     pub fn ingestion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateIngestionInputBuilder {
         &self.ingestion_id
     }
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self

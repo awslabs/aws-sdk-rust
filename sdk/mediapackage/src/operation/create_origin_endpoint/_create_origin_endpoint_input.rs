@@ -87,8 +87,10 @@ impl CreateOriginEndpointInput {
         self.time_delay_seconds
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn whitelist(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.whitelist.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.whitelist.is_none()`.
+    pub fn whitelist(&self) -> &[::std::string::String] {
+        self.whitelist.as_deref().unwrap_or_default()
     }
 }
 impl CreateOriginEndpointInput {
@@ -133,6 +135,7 @@ impl CreateOriginEndpointInputBuilder {
         &self.authorization
     }
     /// The ID of the Channel that the OriginEndpoint will be associated with. This cannot be changed after the OriginEndpoint is created.
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -203,6 +206,7 @@ impl CreateOriginEndpointInputBuilder {
         &self.hls_package
     }
     /// The ID of the OriginEndpoint. The ID must be unique within the region and it cannot be changed after the OriginEndpoint is created.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

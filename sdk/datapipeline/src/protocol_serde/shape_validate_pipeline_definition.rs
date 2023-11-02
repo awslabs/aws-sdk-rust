@@ -99,7 +99,7 @@ pub fn de_validate_pipeline_definition_http_response(
         output = crate::protocol_serde::shape_validate_pipeline_definition::de_validate_pipeline_definition(_response_body, output)
             .map_err(crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::validate_pipeline_definition_output_correct_errors(output).build()
     })
 }
 

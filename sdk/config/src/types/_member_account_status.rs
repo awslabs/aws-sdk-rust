@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberAccountStatus {
     /// <p>The 12-digit account ID of a member account.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The name of Config rule deployed in the member account.</p>
-    pub config_rule_name: ::std::option::Option<::std::string::String>,
+    pub config_rule_name: ::std::string::String,
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
     /// <ul>
@@ -21,7 +21,7 @@ pub struct MemberAccountStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub member_account_rule_status: ::std::option::Option<crate::types::MemberAccountRuleStatus>,
+    pub member_account_rule_status: crate::types::MemberAccountRuleStatus,
     /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
@@ -31,12 +31,14 @@ pub struct MemberAccountStatus {
 }
 impl MemberAccountStatus {
     /// <p>The 12-digit account ID of a member account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The name of Config rule deployed in the member account.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
-        self.config_rule_name.as_deref()
+    pub fn config_rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.config_rule_name.deref()
     }
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
@@ -51,8 +53,8 @@ impl MemberAccountStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn member_account_rule_status(&self) -> ::std::option::Option<&crate::types::MemberAccountRuleStatus> {
-        self.member_account_rule_status.as_ref()
+    pub fn member_account_rule_status(&self) -> &crate::types::MemberAccountRuleStatus {
+        &self.member_account_rule_status
     }
     /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
     pub fn error_code(&self) -> ::std::option::Option<&str> {
@@ -87,6 +89,7 @@ pub struct MemberAccountStatusBuilder {
 }
 impl MemberAccountStatusBuilder {
     /// <p>The 12-digit account ID of a member account.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +104,7 @@ impl MemberAccountStatusBuilder {
         &self.account_id
     }
     /// <p>The name of Config rule deployed in the member account.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +131,7 @@ impl MemberAccountStatusBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn member_account_rule_status(mut self, input: crate::types::MemberAccountRuleStatus) -> Self {
         self.member_account_rule_status = ::std::option::Option::Some(input);
         self
@@ -207,14 +212,33 @@ impl MemberAccountStatusBuilder {
         &self.last_update_time
     }
     /// Consumes the builder and constructs a [`MemberAccountStatus`](crate::types::MemberAccountStatus).
-    pub fn build(self) -> crate::types::MemberAccountStatus {
-        crate::types::MemberAccountStatus {
-            account_id: self.account_id,
-            config_rule_name: self.config_rule_name,
-            member_account_rule_status: self.member_account_rule_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::MemberAccountStatusBuilder::account_id)
+    /// - [`config_rule_name`](crate::types::builders::MemberAccountStatusBuilder::config_rule_name)
+    /// - [`member_account_rule_status`](crate::types::builders::MemberAccountStatusBuilder::member_account_rule_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberAccountStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MemberAccountStatus {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building MemberAccountStatus",
+                )
+            })?,
+            config_rule_name: self.config_rule_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "config_rule_name",
+                    "config_rule_name was not specified but it is required when building MemberAccountStatus",
+                )
+            })?,
+            member_account_rule_status: self.member_account_rule_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "member_account_rule_status",
+                    "member_account_rule_status was not specified but it is required when building MemberAccountStatus",
+                )
+            })?,
             error_code: self.error_code,
             error_message: self.error_message,
             last_update_time: self.last_update_time,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct DeleteNamespaceInputBuilder {
 }
 impl DeleteNamespaceInputBuilder {
     /// <p>The name of the namespace to delete.</p>
+    /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self

@@ -36,11 +36,10 @@ pub fn de_disassociate_service_role_from_account_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

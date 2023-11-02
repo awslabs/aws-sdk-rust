@@ -11,8 +11,10 @@ pub struct GetTablesOutput {
 }
 impl GetTablesOutput {
     /// <p>A list of the requested <code>Table</code> objects.</p>
-    pub fn table_list(&self) -> ::std::option::Option<&[crate::types::Table]> {
-        self.table_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_list.is_none()`.
+    pub fn table_list(&self) -> &[crate::types::Table] {
+        self.table_list.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

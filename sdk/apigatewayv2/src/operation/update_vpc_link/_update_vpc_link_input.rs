@@ -49,6 +49,7 @@ impl UpdateVpcLinkInputBuilder {
         &self.name
     }
     /// <p>The ID of the VPC link.</p>
+    /// This field is required.
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_link_id = ::std::option::Option::Some(input.into());
         self

@@ -126,6 +126,7 @@ impl Scte35SegmentationDescriptorBuilder {
         &self.segment_num
     }
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
+    /// This field is required.
     pub fn segmentation_cancel_indicator(mut self, input: crate::types::Scte35SegmentationCancelIndicator) -> Self {
         self.segmentation_cancel_indicator = ::std::option::Option::Some(input);
         self
@@ -154,6 +155,7 @@ impl Scte35SegmentationDescriptorBuilder {
         &self.segmentation_duration
     }
     /// Corresponds to SCTE-35 segmentation_event_id.
+    /// This field is required.
     pub fn segmentation_event_id(mut self, input: i64) -> Self {
         self.segmentation_event_id = ::std::option::Option::Some(input);
         self

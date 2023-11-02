@@ -28,6 +28,7 @@ pub struct PutReportDefinitionInputBuilder {
 }
 impl PutReportDefinitionInputBuilder {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
+    /// This field is required.
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.report_definition = ::std::option::Option::Some(input);
         self

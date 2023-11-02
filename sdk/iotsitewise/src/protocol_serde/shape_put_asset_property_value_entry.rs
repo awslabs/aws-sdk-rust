@@ -3,29 +3,29 @@ pub fn ser_put_asset_property_value_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutAssetPropertyValueEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entry_id {
-        object.key("entryId").string(var_1.as_str());
+    {
+        object.key("entryId").string(input.entry_id.as_str());
     }
-    if let Some(var_2) = &input.asset_id {
-        object.key("assetId").string(var_2.as_str());
+    if let Some(var_1) = &input.asset_id {
+        object.key("assetId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.property_id {
-        object.key("propertyId").string(var_3.as_str());
+    if let Some(var_2) = &input.property_id {
+        object.key("propertyId").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.property_alias {
-        object.key("propertyAlias").string(var_4.as_str());
+    if let Some(var_3) = &input.property_alias {
+        object.key("propertyAlias").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.property_values {
-        let mut array_6 = object.key("propertyValues").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_4 = object.key("propertyValues").start_array();
+        for item_5 in &input.property_values {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_asset_property_value::ser_asset_property_value(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_asset_property_value::ser_asset_property_value(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
     Ok(())
 }

@@ -28,20 +28,28 @@ impl Label {
         self.confidence
     }
     /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
-    pub fn parents(&self) -> ::std::option::Option<&[crate::types::Parent]> {
-        self.parents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
+    pub fn parents(&self) -> &[crate::types::Parent] {
+        self.parents.as_deref().unwrap_or_default()
     }
     /// <p>A list of potential aliases for a given label.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::LabelAlias]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[crate::types::LabelAlias] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>A list of the categories associated with a given label.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[crate::types::LabelCategory]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[crate::types::LabelCategory] {
+        self.categories.as_deref().unwrap_or_default()
     }
 }
 impl Label {

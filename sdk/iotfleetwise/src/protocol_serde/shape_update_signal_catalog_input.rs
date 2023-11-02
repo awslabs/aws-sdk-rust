@@ -3,44 +3,44 @@ pub fn ser_update_signal_catalog_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_signal_catalog::UpdateSignalCatalogInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.nodes_to_add {
-        let mut array_4 = object.key("nodesToAdd").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.nodes_to_add {
+        let mut array_3 = object.key("nodesToAdd").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_node::ser_node(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_node::ser_node(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.nodes_to_update {
-        let mut array_8 = object.key("nodesToUpdate").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.nodes_to_update {
+        let mut array_7 = object.key("nodesToUpdate").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_node::ser_node(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_node::ser_node(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.nodes_to_remove {
-        let mut array_12 = object.key("nodesToRemove").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.nodes_to_remove {
+        let mut array_11 = object.key("nodesToRemove").start_array();
+        for item_12 in var_10 {
             {
-                array_12.value().string(item_13.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
     Ok(())
 }

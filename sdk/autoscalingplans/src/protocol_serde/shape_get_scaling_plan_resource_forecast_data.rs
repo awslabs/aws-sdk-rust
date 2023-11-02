@@ -75,7 +75,9 @@ pub fn de_get_scaling_plan_resource_forecast_data_http_response(
             crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data::de_get_scaling_plan_resource_forecast_data(_response_body, output)
                 .map_err(crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_scaling_plan_resource_forecast_data_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError::unhandled)?
     })
 }
 

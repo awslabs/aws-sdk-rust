@@ -55,16 +55,22 @@ impl Icd10CmEntity {
         self.end_offset
     }
     /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Icd10CmAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Icd10CmAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::Icd10CmTrait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::Icd10CmTrait] {
+        self.traits.as_deref().unwrap_or_default()
     }
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    pub fn icd10_cm_concepts(&self) -> ::std::option::Option<&[crate::types::Icd10CmConcept]> {
-        self.icd10_cm_concepts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.icd10_cm_concepts.is_none()`.
+    pub fn icd10_cm_concepts(&self) -> &[crate::types::Icd10CmConcept] {
+        self.icd10_cm_concepts.as_deref().unwrap_or_default()
     }
 }
 impl Icd10CmEntity {

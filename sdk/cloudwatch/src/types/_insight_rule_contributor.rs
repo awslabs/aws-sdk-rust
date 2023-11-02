@@ -15,16 +15,20 @@ pub struct InsightRuleContributor {
 }
 impl InsightRuleContributor {
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
+    pub fn keys(&self) -> &[::std::string::String] {
+        self.keys.as_deref().unwrap_or_default()
     }
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
     pub fn approximate_aggregate_value(&self) -> ::std::option::Option<f64> {
         self.approximate_aggregate_value
     }
     /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
-    pub fn datapoints(&self) -> ::std::option::Option<&[crate::types::InsightRuleContributorDatapoint]> {
-        self.datapoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datapoints.is_none()`.
+    pub fn datapoints(&self) -> &[crate::types::InsightRuleContributorDatapoint] {
+        self.datapoints.as_deref().unwrap_or_default()
     }
 }
 impl InsightRuleContributor {
@@ -64,6 +68,7 @@ impl InsightRuleContributorBuilder {
         &self.keys
     }
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
+    /// This field is required.
     pub fn approximate_aggregate_value(mut self, input: f64) -> Self {
         self.approximate_aggregate_value = ::std::option::Option::Some(input);
         self

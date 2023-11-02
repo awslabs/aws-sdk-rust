@@ -9,8 +9,10 @@ pub struct AwsS3BucketNotificationConfigurationS3KeyFilter {
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilter {
     /// <p>The filter rules for the filter.</p>
-    pub fn filter_rules(&self) -> ::std::option::Option<&[crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule]> {
-        self.filter_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_rules.is_none()`.
+    pub fn filter_rules(&self) -> &[crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule] {
+        self.filter_rules.as_deref().unwrap_or_default()
     }
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilter {

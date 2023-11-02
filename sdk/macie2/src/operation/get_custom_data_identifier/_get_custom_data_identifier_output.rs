@@ -51,12 +51,16 @@ impl GetCustomDataIdentifierOutput {
         self.id.as_deref()
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
-    pub fn ignore_words(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ignore_words.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ignore_words.is_none()`.
+    pub fn ignore_words(&self) -> &[::std::string::String] {
+        self.ignore_words.as_deref().unwrap_or_default()
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
-    pub fn keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keywords.is_none()`.
+    pub fn keywords(&self) -> &[::std::string::String] {
+        self.keywords.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
     pub fn maximum_match_distance(&self) -> ::std::option::Option<i32> {
@@ -71,8 +75,10 @@ impl GetCustomDataIdentifierOutput {
         self.regex.as_deref()
     }
     /// <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that match the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
-    pub fn severity_levels(&self) -> ::std::option::Option<&[crate::types::SeverityLevel]> {
-        self.severity_levels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severity_levels.is_none()`.
+    pub fn severity_levels(&self) -> &[crate::types::SeverityLevel] {
+        self.severity_levels.as_deref().unwrap_or_default()
     }
     /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

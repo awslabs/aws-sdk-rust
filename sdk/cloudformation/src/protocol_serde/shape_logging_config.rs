@@ -17,6 +17,7 @@ pub fn ser_logging_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_logging_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LoggingConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -53,5 +54,5 @@ pub fn de_logging_config(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::logging_config_correct_errors(builder).build())
 }

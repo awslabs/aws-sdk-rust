@@ -53,8 +53,10 @@ impl CompositeAlarm {
         self.actions_enabled
     }
     /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn alarm_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
+    pub fn alarm_actions(&self) -> &[::std::string::String] {
+        self.alarm_actions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn alarm_arn(&self) -> ::std::option::Option<&str> {
@@ -77,12 +79,16 @@ impl CompositeAlarm {
         self.alarm_rule.as_deref()
     }
     /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn insufficient_data_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.insufficient_data_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insufficient_data_actions.is_none()`.
+    pub fn insufficient_data_actions(&self) -> &[::std::string::String] {
+        self.insufficient_data_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    pub fn ok_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ok_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ok_actions.is_none()`.
+    pub fn ok_actions(&self) -> &[::std::string::String] {
+        self.ok_actions.as_deref().unwrap_or_default()
     }
     /// <p>An explanation for the alarm state, in text format.</p>
     pub fn state_reason(&self) -> ::std::option::Option<&str> {

@@ -3,71 +3,71 @@ pub fn ser_create_form_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateFormData,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.data_type {
+    if let Some(var_1) = &input.data_type {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("dataType").start_object();
-        crate::protocol_serde::shape_form_data_type_config::ser_form_data_type_config(&mut object_3, var_2)?;
+        let mut object_2 = object.key("dataType").start_object();
+        crate::protocol_serde::shape_form_data_type_config::ser_form_data_type_config(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    {
+        object.key("formActionType").string(input.form_action_type.as_str());
+    }
+    {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("fields").start_object();
+        for (key_4, value_5) in &input.fields {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
+                crate::protocol_serde::shape_field_config::ser_field_config(&mut object_6, value_5)?;
+                object_6.finish();
+            }
+        }
         object_3.finish();
     }
-    if let Some(var_4) = &input.form_action_type {
-        object.key("formActionType").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.fields {
+    if let Some(var_7) = &input.style {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("fields").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_8 = object.key("style").start_object();
+        crate::protocol_serde::shape_form_style::ser_form_style(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("sectionalElements").start_object();
+        for (key_10, value_11) in &input.sectional_elements {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_field_config::ser_field_config(&mut object_9, value_8)?;
-                object_9.finish();
+                let mut object_12 = object_9.key(key_10.as_str()).start_object();
+                crate::protocol_serde::shape_sectional_element::ser_sectional_element(&mut object_12, value_11)?;
+                object_12.finish();
             }
         }
-        object_6.finish();
+        object_9.finish();
     }
-    if let Some(var_10) = &input.style {
-        #[allow(unused_mut)]
-        let mut object_11 = object.key("style").start_object();
-        crate::protocol_serde::shape_form_style::ser_form_style(&mut object_11, var_10)?;
-        object_11.finish();
+    {
+        object.key("schemaVersion").string(input.schema_version.as_str());
     }
-    if let Some(var_12) = &input.sectional_elements {
+    if let Some(var_13) = &input.cta {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("sectionalElements").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("cta").start_object();
+        crate::protocol_serde::shape_form_cta::ser_form_cta(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_sectional_element::ser_sectional_element(&mut object_16, value_15)?;
-                object_16.finish();
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_13.finish();
+        object_16.finish();
     }
-    if let Some(var_17) = &input.schema_version {
-        object.key("schemaVersion").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.cta {
-        #[allow(unused_mut)]
-        let mut object_19 = object.key("cta").start_object();
-        crate::protocol_serde::shape_form_cta::ser_form_cta(&mut object_19, var_18)?;
-        object_19.finish();
-    }
-    if let Some(var_20) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_21 = object.key("tags").start_object();
-        for (key_22, value_23) in var_20 {
-            {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
-            }
-        }
-        object_21.finish();
-    }
-    if let Some(var_24) = &input.label_decorator {
-        object.key("labelDecorator").string(var_24.as_str());
+    if let Some(var_19) = &input.label_decorator {
+        object.key("labelDecorator").string(var_19.as_str());
     }
     Ok(())
 }

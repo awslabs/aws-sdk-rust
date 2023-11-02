@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHub`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hub_arn(impl Into<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::hub_arn) / [`set_hub_arn(Option<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::set_hub_arn): <p>The ARN of the Hub resource to retrieve.</p>
+    ///   - [`hub_arn(impl Into<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::hub_arn) / [`set_hub_arn(Option<String>)`](crate::operation::describe_hub::builders::DescribeHubFluentBuilder::set_hub_arn):<br>required: **false**<br><p>The ARN of the Hub resource to retrieve.</p><br>
     /// - On success, responds with [`DescribeHubOutput`](crate::operation::describe_hub::DescribeHubOutput) with field(s):
     ///   - [`hub_arn(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::hub_arn): <p>The ARN of the Hub resource that was retrieved.</p>
     ///   - [`subscribed_at(Option<String>)`](crate::operation::describe_hub::DescribeHubOutput::subscribed_at): <p>The date and time when Security Hub was enabled in the account.</p>

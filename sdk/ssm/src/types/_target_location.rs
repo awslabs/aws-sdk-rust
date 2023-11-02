@@ -19,12 +19,16 @@ pub struct TargetLocation {
 }
 impl TargetLocation {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
     pub fn target_location_max_concurrency(&self) -> ::std::option::Option<&str> {

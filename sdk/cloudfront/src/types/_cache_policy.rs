@@ -11,20 +11,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>The cache policy configuration.</p>
     pub cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
 }
 impl CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
     /// <p>The cache policy configuration.</p>
     pub fn cache_policy_config(&self) -> ::std::option::Option<&crate::types::CachePolicyConfig> {
@@ -48,6 +49,7 @@ pub struct CachePolicyBuilder {
 }
 impl CachePolicyBuilder {
     /// <p>The unique identifier for the cache policy.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl CachePolicyBuilder {
         &self.id
     }
     /// <p>The date and time when the cache policy was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl CachePolicyBuilder {
         &self.last_modified_time
     }
     /// <p>The cache policy configuration.</p>
+    /// This field is required.
     pub fn cache_policy_config(mut self, input: crate::types::CachePolicyConfig) -> Self {
         self.cache_policy_config = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl CachePolicyBuilder {
         &self.cache_policy_config
     }
     /// Consumes the builder and constructs a [`CachePolicy`](crate::types::CachePolicy).
-    pub fn build(self) -> crate::types::CachePolicy {
-        crate::types::CachePolicy {
-            id: self.id,
-            last_modified_time: self.last_modified_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::CachePolicyBuilder::id)
+    /// - [`last_modified_time`](crate::types::builders::CachePolicyBuilder::last_modified_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CachePolicy {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CachePolicy",
+                )
+            })?,
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building CachePolicy",
+                )
+            })?,
             cache_policy_config: self.cache_policy_config,
-        }
+        })
     }
 }

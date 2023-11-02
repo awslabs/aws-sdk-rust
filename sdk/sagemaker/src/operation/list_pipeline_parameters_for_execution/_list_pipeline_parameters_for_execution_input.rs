@@ -41,6 +41,7 @@ pub struct ListPipelineParametersForExecutionInputBuilder {
 }
 impl ListPipelineParametersForExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    /// This field is required.
     pub fn pipeline_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_arn = ::std::option::Option::Some(input.into());
         self

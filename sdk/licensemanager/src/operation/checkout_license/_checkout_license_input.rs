@@ -32,8 +32,10 @@ impl CheckoutLicenseInput {
         self.key_fingerprint.as_deref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::EntitlementData]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::EntitlementData] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct CheckoutLicenseInputBuilder {
 }
 impl CheckoutLicenseInputBuilder {
     /// <p>Product SKU.</p>
+    /// This field is required.
     pub fn product_sku(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_sku = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CheckoutLicenseInputBuilder {
         &self.product_sku
     }
     /// <p>Checkout type.</p>
+    /// This field is required.
     pub fn checkout_type(mut self, input: crate::types::CheckoutType) -> Self {
         self.checkout_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl CheckoutLicenseInputBuilder {
         &self.checkout_type
     }
     /// <p>Key fingerprint identifying the license.</p>
+    /// This field is required.
     pub fn key_fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +136,7 @@ impl CheckoutLicenseInputBuilder {
         &self.entitlements
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

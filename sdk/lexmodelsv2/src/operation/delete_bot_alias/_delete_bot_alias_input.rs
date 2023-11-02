@@ -41,6 +41,7 @@ pub struct DeleteBotAliasInputBuilder {
 }
 impl DeleteBotAliasInputBuilder {
     /// <p>The unique identifier of the bot alias to delete.</p>
+    /// This field is required.
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteBotAliasInputBuilder {
         &self.bot_alias_id
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self

@@ -5,25 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
+    pub ssh_public_key_id: ::std::string::String,
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn ssh_public_key_id(&self) -> ::std::option::Option<&str> {
-        self.ssh_public_key_id.as_deref()
+    pub fn ssh_public_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ssh_public_key_id.deref()
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ImportSshPublicKeyOutput {
@@ -49,6 +52,7 @@ pub struct ImportSshPublicKeyOutputBuilder {
 }
 impl ImportSshPublicKeyOutputBuilder {
     /// <p>A system-assigned unique identifier for a server.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl ImportSshPublicKeyOutputBuilder {
         &self.server_id
     }
     /// <p>The name given to a public key by the system that was imported.</p>
+    /// This field is required.
     pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl ImportSshPublicKeyOutputBuilder {
         &self.ssh_public_key_id
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -100,12 +106,34 @@ impl ImportSshPublicKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportSshPublicKeyOutput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput).
-    pub fn build(self) -> crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput {
-        crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput {
-            server_id: self.server_id,
-            ssh_public_key_id: self.ssh_public_key_id,
-            user_name: self.user_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::server_id)
+    /// - [`ssh_public_key_id`](crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::ssh_public_key_id)
+    /// - [`user_name`](crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::user_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput {
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building ImportSshPublicKeyOutput",
+                )
+            })?,
+            ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ssh_public_key_id",
+                    "ssh_public_key_id was not specified but it is required when building ImportSshPublicKeyOutput",
+                )
+            })?,
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building ImportSshPublicKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

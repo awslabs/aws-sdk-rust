@@ -56,6 +56,7 @@ impl DeleteAccessKeyInputBuilder {
     }
     /// <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// This field is required.
     pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self

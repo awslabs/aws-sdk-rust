@@ -48,6 +48,7 @@ impl DeleteNetworkInsightsPathInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the path.</p>
+    /// This field is required.
     pub fn network_insights_path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_path_id = ::std::option::Option::Some(input.into());
         self

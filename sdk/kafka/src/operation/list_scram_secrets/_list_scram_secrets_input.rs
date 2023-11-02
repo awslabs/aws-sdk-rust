@@ -41,6 +41,7 @@ pub struct ListScramSecretsInputBuilder {
 }
 impl ListScramSecretsInputBuilder {
     /// <p>The arn of the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self

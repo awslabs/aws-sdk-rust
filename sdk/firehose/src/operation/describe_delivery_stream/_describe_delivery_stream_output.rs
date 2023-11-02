@@ -34,6 +34,7 @@ pub struct DescribeDeliveryStreamOutputBuilder {
 }
 impl DescribeDeliveryStreamOutputBuilder {
     /// <p>Information about the delivery stream.</p>
+    /// This field is required.
     pub fn delivery_stream_description(mut self, input: crate::types::DeliveryStreamDescription) -> Self {
         self.delivery_stream_description = ::std::option::Option::Some(input);
         self

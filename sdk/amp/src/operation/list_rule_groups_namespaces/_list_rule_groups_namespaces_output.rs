@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
-    pub rule_groups_namespaces: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
+    pub rule_groups_namespaces: ::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>,
     /// Pagination token to use when requesting the next page in this list.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
-    pub fn rule_groups_namespaces(&self) -> ::std::option::Option<&[crate::types::RuleGroupsNamespaceSummary]> {
-        self.rule_groups_namespaces.as_deref()
+    pub fn rule_groups_namespaces(&self) -> &[crate::types::RuleGroupsNamespaceSummary] {
+        use std::ops::Deref;
+        self.rule_groups_namespaces.deref()
     }
     /// Pagination token to use when requesting the next page in this list.
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,23 @@ impl ListRuleGroupsNamespacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRuleGroupsNamespacesOutput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput).
-    pub fn build(self) -> crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput {
-        crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput {
-            rule_groups_namespaces: self.rule_groups_namespaces,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_groups_namespaces`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder::rule_groups_namespaces)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput {
+            rule_groups_namespaces: self.rule_groups_namespaces.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_groups_namespaces",
+                    "rule_groups_namespaces was not specified but it is required when building ListRuleGroupsNamespacesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

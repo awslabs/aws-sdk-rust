@@ -45,8 +45,10 @@ impl ListUsersInput {
         self.user_pool_id.as_deref()
     }
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
-    pub fn attributes_to_get(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attributes_to_get.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
+    pub fn attributes_to_get(&self) -> &[::std::string::String] {
+        self.attributes_to_get.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of users to be returned.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -104,6 +106,7 @@ pub struct ListUsersInputBuilder {
 }
 impl ListUsersInputBuilder {
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self

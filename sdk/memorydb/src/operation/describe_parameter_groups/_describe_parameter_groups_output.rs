@@ -15,8 +15,10 @@ impl DescribeParameterGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>
-    pub fn parameter_groups(&self) -> ::std::option::Option<&[crate::types::ParameterGroup]> {
-        self.parameter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_groups.is_none()`.
+    pub fn parameter_groups(&self) -> &[crate::types::ParameterGroup] {
+        self.parameter_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeParameterGroupsOutput {

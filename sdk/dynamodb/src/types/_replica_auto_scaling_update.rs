@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaAutoScalingUpdate {
     /// <p>The Region where the replica exists.</p>
-    pub region_name: ::std::option::Option<::std::string::String>,
+    pub region_name: ::std::string::String,
     /// <p>Represents the auto scaling settings of global secondary indexes that will be modified.</p>
     pub replica_global_secondary_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexAutoScalingUpdate>>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
@@ -13,12 +13,15 @@ pub struct ReplicaAutoScalingUpdate {
 }
 impl ReplicaAutoScalingUpdate {
     /// <p>The Region where the replica exists.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
-        self.region_name.as_deref()
+    pub fn region_name(&self) -> &str {
+        use std::ops::Deref;
+        self.region_name.deref()
     }
     /// <p>Represents the auto scaling settings of global secondary indexes that will be modified.</p>
-    pub fn replica_global_secondary_index_updates(&self) -> ::std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndexAutoScalingUpdate]> {
-        self.replica_global_secondary_index_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_global_secondary_index_updates.is_none()`.
+    pub fn replica_global_secondary_index_updates(&self) -> &[crate::types::ReplicaGlobalSecondaryIndexAutoScalingUpdate] {
+        self.replica_global_secondary_index_updates.as_deref().unwrap_or_default()
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub fn replica_provisioned_read_capacity_auto_scaling_update(&self) -> ::std::option::Option<&crate::types::AutoScalingSettingsUpdate> {
@@ -43,6 +46,7 @@ pub struct ReplicaAutoScalingUpdateBuilder {
 }
 impl ReplicaAutoScalingUpdateBuilder {
     /// <p>The Region where the replica exists.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -99,11 +103,18 @@ impl ReplicaAutoScalingUpdateBuilder {
         &self.replica_provisioned_read_capacity_auto_scaling_update
     }
     /// Consumes the builder and constructs a [`ReplicaAutoScalingUpdate`](crate::types::ReplicaAutoScalingUpdate).
-    pub fn build(self) -> crate::types::ReplicaAutoScalingUpdate {
-        crate::types::ReplicaAutoScalingUpdate {
-            region_name: self.region_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region_name`](crate::types::builders::ReplicaAutoScalingUpdateBuilder::region_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaAutoScalingUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicaAutoScalingUpdate {
+            region_name: self.region_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region_name",
+                    "region_name was not specified but it is required when building ReplicaAutoScalingUpdate",
+                )
+            })?,
             replica_global_secondary_index_updates: self.replica_global_secondary_index_updates,
             replica_provisioned_read_capacity_auto_scaling_update: self.replica_provisioned_read_capacity_auto_scaling_update,
-        }
+        })
     }
 }

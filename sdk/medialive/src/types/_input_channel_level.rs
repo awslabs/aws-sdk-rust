@@ -35,6 +35,7 @@ pub struct InputChannelLevelBuilder {
 }
 impl InputChannelLevelBuilder {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
+    /// This field is required.
     pub fn gain(mut self, input: i32) -> Self {
         self.gain = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl InputChannelLevelBuilder {
         &self.gain
     }
     /// The index of the input channel used as a source.
+    /// This field is required.
     pub fn input_channel(mut self, input: i32) -> Self {
         self.input_channel = ::std::option::Option::Some(input);
         self

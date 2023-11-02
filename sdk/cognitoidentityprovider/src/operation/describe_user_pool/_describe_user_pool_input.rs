@@ -28,6 +28,7 @@ pub struct DescribeUserPoolInputBuilder {
 }
 impl DescribeUserPoolInputBuilder {
     /// <p>The user pool ID for the user pool you want to describe.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self

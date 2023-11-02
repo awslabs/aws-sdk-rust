@@ -6,17 +6,17 @@ pub fn ser_value(
     if let Some(var_1) = &input.original_value {
         object.key("originalValue").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.interpreted_value {
-        object.key("interpretedValue").string(var_2.as_str());
+    {
+        object.key("interpretedValue").string(input.interpreted_value.as_str());
     }
-    if let Some(var_3) = &input.resolved_values {
-        let mut array_4 = object.key("resolvedValues").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.resolved_values {
+        let mut array_3 = object.key("resolvedValues").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::value_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

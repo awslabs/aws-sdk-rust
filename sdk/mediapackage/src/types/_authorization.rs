@@ -35,6 +35,7 @@ pub struct AuthorizationBuilder {
 }
 impl AuthorizationBuilder {
     /// The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
+    /// This field is required.
     pub fn cdn_identifier_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cdn_identifier_secret = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AuthorizationBuilder {
         &self.cdn_identifier_secret
     }
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+    /// This field is required.
     pub fn secrets_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secrets_role_arn = ::std::option::Option::Some(input.into());
         self

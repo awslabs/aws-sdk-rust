@@ -3,11 +3,11 @@ pub fn ser_routing_profile_queue_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoutingProfileQueueReference,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.queue_id {
-        object.key("QueueId").string(var_1.as_str());
+    {
+        object.key("QueueId").string(input.queue_id.as_str());
     }
-    if let Some(var_2) = &input.channel {
-        object.key("Channel").string(var_2.as_str());
+    {
+        object.key("Channel").string(input.channel.as_str());
     }
     Ok(())
 }

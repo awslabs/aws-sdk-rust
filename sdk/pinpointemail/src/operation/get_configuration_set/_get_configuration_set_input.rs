@@ -28,6 +28,7 @@ pub struct GetConfigurationSetInputBuilder {
 }
 impl GetConfigurationSetInputBuilder {
     /// <p>The name of the configuration set that you want to obtain more information about.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct CreateEdgeDeploymentPlanOutputBuilder {
 }
 impl CreateEdgeDeploymentPlanOutputBuilder {
     /// <p>The ARN of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_arn = ::std::option::Option::Some(input.into());
         self

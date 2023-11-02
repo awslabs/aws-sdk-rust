@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotEventsAction {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
-    pub input_name: ::std::option::Option<::std::string::String>,
+    pub input_name: ::std::string::String,
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotEventsAction {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
-        self.input_name.as_deref()
+    pub fn input_name(&self) -> &str {
+        use std::ops::Deref;
+        self.input_name.deref()
     }
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
@@ -35,6 +36,7 @@ pub struct IotEventsActionBuilder {
 }
 impl IotEventsActionBuilder {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl IotEventsActionBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`IotEventsAction`](crate::types::IotEventsAction).
-    pub fn build(self) -> crate::types::IotEventsAction {
-        crate::types::IotEventsAction {
-            input_name: self.input_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_name`](crate::types::builders::IotEventsActionBuilder::input_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IotEventsAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IotEventsAction {
+            input_name: self.input_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "input_name",
+                    "input_name was not specified but it is required when building IotEventsAction",
+                )
+            })?,
             payload: self.payload,
-        }
+        })
     }
 }

@@ -17,6 +17,7 @@ pub fn ser_additional_attribute(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_additional_attribute(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AdditionalAttribute, ::aws_smithy_xml::decode::XmlDecodeError> {

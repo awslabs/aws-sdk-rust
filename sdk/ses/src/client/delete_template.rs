@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTemplate`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::set_template_name): <p>The name of the template to be deleted.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_template::builders::DeleteTemplateFluentBuilder::set_template_name):<br>required: **true**<br><p>The name of the template to be deleted.</p><br>
     /// - On success, responds with [`DeleteTemplateOutput`](crate::operation::delete_template::DeleteTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteTemplateError>`](crate::operation::delete_template::DeleteTemplateError)
     pub fn delete_template(&self) -> crate::operation::delete_template::builders::DeleteTemplateFluentBuilder {

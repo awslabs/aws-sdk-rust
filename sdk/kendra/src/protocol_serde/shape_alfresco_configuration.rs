@@ -3,20 +3,20 @@ pub fn ser_alfresco_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlfrescoConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.site_url {
-        object.key("SiteUrl").string(var_1.as_str());
+    {
+        object.key("SiteUrl").string(input.site_url.as_str());
     }
-    if let Some(var_2) = &input.site_id {
-        object.key("SiteId").string(var_2.as_str());
+    {
+        object.key("SiteId").string(input.site_id.as_str());
     }
-    if let Some(var_3) = &input.secret_arn {
-        object.key("SecretArn").string(var_3.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_4) = &input.ssl_certificate_s3_path {
+    if let Some(var_1) = &input.ssl_certificate_s3_path {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("SslCertificateS3Path").start_object();
-        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("SslCertificateS3Path").start_object();
+        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_2, var_1)?;
+        object_2.finish();
     }
     if input.crawl_system_folders {
         object.key("CrawlSystemFolders").boolean(input.crawl_system_folders);
@@ -24,53 +24,62 @@ pub fn ser_alfresco_configuration(
     if input.crawl_comments {
         object.key("CrawlComments").boolean(input.crawl_comments);
     }
-    if let Some(var_6) = &input.entity_filter {
-        let mut array_7 = object.key("EntityFilter").start_array();
+    if let Some(var_3) = &input.entity_filter {
+        let mut array_4 = object.key("EntityFilter").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_6) = &input.document_library_field_mappings {
+        let mut array_7 = object.key("DocumentLibraryFieldMappings").start_array();
         for item_8 in var_6 {
             {
-                array_7.value().string(item_8.as_str());
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.document_library_field_mappings {
-        let mut array_10 = object.key("DocumentLibraryFieldMappings").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.blog_field_mappings {
+        let mut array_11 = object.key("BlogFieldMappings").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.blog_field_mappings {
-        let mut array_14 = object.key("BlogFieldMappings").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.wiki_field_mappings {
+        let mut array_15 = object.key("WikiFieldMappings").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_17) = &input.wiki_field_mappings {
-        let mut array_18 = object.key("WikiFieldMappings").start_array();
-        for item_19 in var_17 {
+    if let Some(var_18) = &input.inclusion_patterns {
+        let mut array_19 = object.key("InclusionPatterns").start_array();
+        for item_20 in var_18 {
             {
-                #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_20, item_19)?;
-                object_20.finish();
+                array_19.value().string(item_20.as_str());
             }
         }
-        array_18.finish();
+        array_19.finish();
     }
-    if let Some(var_21) = &input.inclusion_patterns {
-        let mut array_22 = object.key("InclusionPatterns").start_array();
+    if let Some(var_21) = &input.exclusion_patterns {
+        let mut array_22 = object.key("ExclusionPatterns").start_array();
         for item_23 in var_21 {
             {
                 array_22.value().string(item_23.as_str());
@@ -78,20 +87,11 @@ pub fn ser_alfresco_configuration(
         }
         array_22.finish();
     }
-    if let Some(var_24) = &input.exclusion_patterns {
-        let mut array_25 = object.key("ExclusionPatterns").start_array();
-        for item_26 in var_24 {
-            {
-                array_25.value().string(item_26.as_str());
-            }
-        }
-        array_25.finish();
-    }
-    if let Some(var_27) = &input.vpc_configuration {
+    if let Some(var_24) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_28, var_27)?;
-        object_28.finish();
+        let mut object_25 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_25, var_24)?;
+        object_25.finish();
     }
     Ok(())
 }
@@ -193,7 +193,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::alfresco_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -3,20 +3,20 @@ pub fn ser_o_auth_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OAuthProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.token_url {
-        object.key("tokenUrl").string(var_1.as_str());
+    {
+        object.key("tokenUrl").string(input.token_url.as_str());
     }
-    if let Some(var_2) = &input.auth_code_url {
-        object.key("authCodeUrl").string(var_2.as_str());
+    {
+        object.key("authCodeUrl").string(input.auth_code_url.as_str());
     }
-    if let Some(var_3) = &input.o_auth_scopes {
-        let mut array_4 = object.key("oAuthScopes").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("oAuthScopes").start_array();
+        for item_2 in &input.o_auth_scopes {
             {
-                array_4.value().string(item_5.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -63,7 +63,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::o_auth_properties_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -23,6 +23,7 @@ pub fn ser_memory_mi_b_request(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_memory_mi_b_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MemoryMiBRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -63,5 +64,5 @@ pub fn de_memory_mi_b_request(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::memory_mi_b_request_correct_errors(builder).build())
 }

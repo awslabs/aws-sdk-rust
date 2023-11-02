@@ -30,12 +30,16 @@ impl UpdateWirelessGatewayInput {
         self.description.as_deref()
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn join_eui_filters(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.join_eui_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.join_eui_filters.is_none()`.
+    pub fn join_eui_filters(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.join_eui_filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn net_id_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.net_id_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.net_id_filters.is_none()`.
+    pub fn net_id_filters(&self) -> &[::std::string::String] {
+        self.net_id_filters.as_deref().unwrap_or_default()
     }
     /// <p>The MaxEIRP value.</p>
     pub fn max_eirp(&self) -> ::std::option::Option<f32> {
@@ -62,6 +66,7 @@ pub struct UpdateWirelessGatewayInputBuilder {
 }
 impl UpdateWirelessGatewayInputBuilder {
     /// <p>The ID of the resource to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

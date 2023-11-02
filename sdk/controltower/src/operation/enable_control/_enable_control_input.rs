@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub control_identifier: ::std::option::Option<::std::string::String>,
+    pub control_identifier: ::std::string::String,
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub target_identifier: ::std::option::Option<::std::string::String>,
+    pub target_identifier: ::std::string::String,
 }
 impl EnableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
-        self.control_identifier.as_deref()
+    pub fn control_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.control_identifier.deref()
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
-        self.target_identifier.as_deref()
+    pub fn target_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.target_identifier.deref()
     }
 }
 impl EnableControlInput {
@@ -34,6 +36,7 @@ pub struct EnableControlInputBuilder {
 }
 impl EnableControlInputBuilder {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// This field is required.
     pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl EnableControlInputBuilder {
         &self.control_identifier
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// This field is required.
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl EnableControlInputBuilder {
         &self.target_identifier
     }
     /// Consumes the builder and constructs a [`EnableControlInput`](crate::operation::enable_control::EnableControlInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`control_identifier`](crate::operation::enable_control::builders::EnableControlInputBuilder::control_identifier)
+    /// - [`target_identifier`](crate::operation::enable_control::builders::EnableControlInputBuilder::target_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::enable_control::EnableControlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_control::EnableControlInput {
-            control_identifier: self.control_identifier,
-            target_identifier: self.target_identifier,
+            control_identifier: self.control_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "control_identifier",
+                    "control_identifier was not specified but it is required when building EnableControlInput",
+                )
+            })?,
+            target_identifier: self.target_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_identifier",
+                    "target_identifier was not specified but it is required when building EnableControlInput",
+                )
+            })?,
         })
     }
 }

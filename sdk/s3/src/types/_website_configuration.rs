@@ -31,8 +31,10 @@ impl WebsiteConfiguration {
         self.redirect_all_requests_to.as_ref()
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn routing_rules(&self) -> ::std::option::Option<&[crate::types::RoutingRule]> {
-        self.routing_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_rules.is_none()`.
+    pub fn routing_rules(&self) -> &[crate::types::RoutingRule] {
+        self.routing_rules.as_deref().unwrap_or_default()
     }
 }
 impl WebsiteConfiguration {

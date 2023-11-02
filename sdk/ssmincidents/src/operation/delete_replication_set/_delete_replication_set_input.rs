@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl DeleteReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl DeleteReplicationSetInput {
@@ -27,6 +28,7 @@ pub struct DeleteReplicationSetInputBuilder {
 }
 impl DeleteReplicationSetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,10 +43,19 @@ impl DeleteReplicationSetInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteReplicationSetInput`](crate::operation::delete_replication_set::DeleteReplicationSetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::delete_replication_set::builders::DeleteReplicationSetInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_replication_set::DeleteReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::delete_replication_set::DeleteReplicationSetInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::delete_replication_set::DeleteReplicationSetInput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DeleteReplicationSetInput",
+                )
+            })?,
+        })
     }
 }

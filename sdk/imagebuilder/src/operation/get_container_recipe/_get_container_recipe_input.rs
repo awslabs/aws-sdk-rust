@@ -27,6 +27,7 @@ pub struct GetContainerRecipeInputBuilder {
 }
 impl GetContainerRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
+    /// This field is required.
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self

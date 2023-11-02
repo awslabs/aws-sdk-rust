@@ -17,8 +17,10 @@ impl MssPackage {
         self.encryption.as_ref()
     }
     /// A list of MSS manifest configurations.
-    pub fn mss_manifests(&self) -> ::std::option::Option<&[crate::types::MssManifest]> {
-        self.mss_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mss_manifests.is_none()`.
+    pub fn mss_manifests(&self) -> &[crate::types::MssManifest] {
+        self.mss_manifests.as_deref().unwrap_or_default()
     }
     /// The duration (in seconds) of each segment.
     pub fn segment_duration_seconds(&self) -> ::std::option::Option<i32> {

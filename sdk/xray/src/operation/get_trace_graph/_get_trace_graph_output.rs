@@ -11,8 +11,10 @@ pub struct GetTraceGraphOutput {
 }
 impl GetTraceGraphOutput {
     /// <p>The services that have processed one of the specified requests.</p>
-    pub fn services(&self) -> ::std::option::Option<&[crate::types::Service]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[crate::types::Service] {
+        self.services.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

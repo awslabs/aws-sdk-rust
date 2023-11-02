@@ -35,6 +35,7 @@ pub struct FollowUpPromptBuilder {
 }
 impl FollowUpPromptBuilder {
     /// <p>Prompts for information from the user. </p>
+    /// This field is required.
     pub fn prompt(mut self, input: crate::types::Prompt) -> Self {
         self.prompt = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl FollowUpPromptBuilder {
         &self.prompt
     }
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    /// This field is required.
     pub fn rejection_statement(mut self, input: crate::types::Statement) -> Self {
         self.rejection_statement = ::std::option::Option::Some(input);
         self

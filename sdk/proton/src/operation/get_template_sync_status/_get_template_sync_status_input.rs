@@ -4,24 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateSyncStatusInput {
     /// <p>The template name.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The template type.</p>
-    pub template_type: ::std::option::Option<crate::types::TemplateType>,
+    pub template_type: crate::types::TemplateType,
     /// <p>The template major version.</p>
-    pub template_version: ::std::option::Option<::std::string::String>,
+    pub template_version: ::std::string::String,
 }
 impl GetTemplateSyncStatusInput {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The template type.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
-        self.template_type.as_ref()
+    pub fn template_type(&self) -> &crate::types::TemplateType {
+        &self.template_type
     }
     /// <p>The template major version.</p>
-    pub fn template_version(&self) -> ::std::option::Option<&str> {
-        self.template_version.as_deref()
+    pub fn template_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_version.deref()
     }
 }
 impl GetTemplateSyncStatusInput {
@@ -41,6 +43,7 @@ pub struct GetTemplateSyncStatusInputBuilder {
 }
 impl GetTemplateSyncStatusInputBuilder {
     /// <p>The template name.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl GetTemplateSyncStatusInputBuilder {
         &self.template_name
     }
     /// <p>The template type.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +73,7 @@ impl GetTemplateSyncStatusInputBuilder {
         &self.template_type
     }
     /// <p>The template major version.</p>
+    /// This field is required.
     pub fn template_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_version = ::std::option::Option::Some(input.into());
         self
@@ -83,14 +88,33 @@ impl GetTemplateSyncStatusInputBuilder {
         &self.template_version
     }
     /// Consumes the builder and constructs a [`GetTemplateSyncStatusInput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusInputBuilder::template_name)
+    /// - [`template_type`](crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusInputBuilder::template_type)
+    /// - [`template_version`](crate::operation::get_template_sync_status::builders::GetTemplateSyncStatusInputBuilder::template_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_template_sync_status::GetTemplateSyncStatusInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_template_sync_status::GetTemplateSyncStatusInput {
-            template_name: self.template_name,
-            template_type: self.template_type,
-            template_version: self.template_version,
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building GetTemplateSyncStatusInput",
+                )
+            })?,
+            template_type: self.template_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_type",
+                    "template_type was not specified but it is required when building GetTemplateSyncStatusInput",
+                )
+            })?,
+            template_version: self.template_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_version",
+                    "template_version was not specified but it is required when building GetTemplateSyncStatusInput",
+                )
+            })?,
         })
     }
 }

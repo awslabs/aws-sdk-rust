@@ -48,6 +48,7 @@ pub struct GetImageSetMetadataOutputBuilder {
 }
 impl GetImageSetMetadataOutputBuilder {
     /// <p>The blob containing the aggregated metadata information for the image set.</p>
+    /// This field is required.
     pub fn image_set_metadata_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.image_set_metadata_blob = ::std::option::Option::Some(input);
         self

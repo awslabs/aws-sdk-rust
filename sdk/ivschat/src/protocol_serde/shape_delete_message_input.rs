@@ -3,14 +3,14 @@ pub fn ser_delete_message_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_message::DeleteMessageInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.reason {
-        object.key("reason").string(var_2.as_str());
+    if let Some(var_1) = &input.reason {
+        object.key("reason").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.room_identifier {
-        object.key("roomIdentifier").string(var_3.as_str());
+    {
+        object.key("roomIdentifier").string(input.room_identifier.as_str());
     }
     Ok(())
 }

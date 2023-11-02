@@ -32,11 +32,10 @@ pub fn de_get_case_event_configuration_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::InternalServerException({
@@ -54,11 +53,10 @@ pub fn de_get_case_event_configuration_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::ResourceNotFoundException({
@@ -69,11 +67,10 @@ pub fn de_get_case_event_configuration_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::ThrottlingException({
@@ -84,11 +81,10 @@ pub fn de_get_case_event_configuration_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::ValidationException({
@@ -99,11 +95,10 @@ pub fn de_get_case_event_configuration_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::generic(generic),
@@ -125,7 +120,7 @@ pub fn de_get_case_event_configuration_http_response(
         output = crate::protocol_serde::shape_get_case_event_configuration::de_get_case_event_configuration(_response_body, output)
             .map_err(crate::operation::get_case_event_configuration::GetCaseEventConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_case_event_configuration_output_correct_errors(output).build()
     })
 }
 

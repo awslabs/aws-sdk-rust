@@ -11,8 +11,10 @@ pub struct GetDelegationsOutput {
 }
 impl GetDelegationsOutput {
     /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
-    pub fn delegations(&self) -> ::std::option::Option<&[crate::types::DelegationMetadata]> {
-        self.delegations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegations.is_none()`.
+    pub fn delegations(&self) -> &[crate::types::DelegationMetadata] {
+        self.delegations.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

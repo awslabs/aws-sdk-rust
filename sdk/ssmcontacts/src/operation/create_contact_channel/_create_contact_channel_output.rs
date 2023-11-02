@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContactChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub contact_channel_arn: ::std::option::Option<::std::string::String>,
+    pub contact_channel_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateContactChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_channel_arn.as_deref()
+    pub fn contact_channel_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_channel_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateContactChannelOutput {
@@ -34,6 +35,7 @@ pub struct CreateContactChannelOutputBuilder {
 }
 impl CreateContactChannelOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    /// This field is required.
     pub fn contact_channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateContactChannelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateContactChannelOutput`](crate::operation::create_contact_channel::CreateContactChannelOutput).
-    pub fn build(self) -> crate::operation::create_contact_channel::CreateContactChannelOutput {
-        crate::operation::create_contact_channel::CreateContactChannelOutput {
-            contact_channel_arn: self.contact_channel_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_channel_arn`](crate::operation::create_contact_channel::builders::CreateContactChannelOutputBuilder::contact_channel_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_contact_channel::CreateContactChannelOutput {
+            contact_channel_arn: self.contact_channel_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_channel_arn",
+                    "contact_channel_arn was not specified but it is required when building CreateContactChannelOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

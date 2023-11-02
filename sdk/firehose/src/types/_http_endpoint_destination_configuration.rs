@@ -84,6 +84,7 @@ pub struct HttpEndpointDestinationConfigurationBuilder {
 }
 impl HttpEndpointDestinationConfigurationBuilder {
     /// <p>The configuration of the HTTP endpoint selected as the destination.</p>
+    /// This field is required.
     pub fn endpoint_configuration(mut self, input: crate::types::HttpEndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
@@ -196,6 +197,7 @@ impl HttpEndpointDestinationConfigurationBuilder {
         &self.s3_backup_mode
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
+    /// This field is required.
     pub fn s3_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self

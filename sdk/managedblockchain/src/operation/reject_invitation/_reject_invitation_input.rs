@@ -27,6 +27,7 @@ pub struct RejectInvitationInputBuilder {
 }
 impl RejectInvitationInputBuilder {
     /// <p>The unique identifier of the invitation to reject.</p>
+    /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self

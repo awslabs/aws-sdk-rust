@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub consumer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub consumer_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    pub fn consumer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.consumer_arns.as_deref()
+    pub fn consumer_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.consumer_arns.deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListTrackerConsumersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrackerConsumersOutput`](crate::operation::list_tracker_consumers::ListTrackerConsumersOutput).
-    pub fn build(self) -> crate::operation::list_tracker_consumers::ListTrackerConsumersOutput {
-        crate::operation::list_tracker_consumers::ListTrackerConsumersOutput {
-            consumer_arns: self.consumer_arns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`consumer_arns`](crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder::consumer_arns)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tracker_consumers::ListTrackerConsumersOutput {
+            consumer_arns: self.consumer_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "consumer_arns",
+                    "consumer_arns was not specified but it is required when building ListTrackerConsumersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

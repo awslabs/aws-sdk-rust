@@ -3,26 +3,26 @@ pub fn ser_framework_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FrameworkControl,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.control_name {
-        object.key("ControlName").string(var_1.as_str());
+    {
+        object.key("ControlName").string(input.control_name.as_str());
     }
-    if let Some(var_2) = &input.control_input_parameters {
-        let mut array_3 = object.key("ControlInputParameters").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.control_input_parameters {
+        let mut array_2 = object.key("ControlInputParameters").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_control_input_parameter::ser_control_input_parameter(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_control_input_parameter::ser_control_input_parameter(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.control_scope {
+    if let Some(var_5) = &input.control_scope {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ControlScope").start_object();
-        crate::protocol_serde::shape_control_scope::ser_control_scope(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ControlScope").start_object();
+        crate::protocol_serde::shape_control_scope::ser_control_scope(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -67,7 +67,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::framework_control_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

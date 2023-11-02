@@ -41,6 +41,7 @@ pub struct UpdateJourneyInputBuilder {
 }
 impl UpdateJourneyInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateJourneyInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the journey.</p>
+    /// This field is required.
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateJourneyInputBuilder {
         &self.journey_id
     }
     /// <p>Specifies the configuration and other settings for a journey.</p>
+    /// This field is required.
     pub fn write_journey_request(mut self, input: crate::types::WriteJourneyRequest) -> Self {
         self.write_journey_request = ::std::option::Option::Some(input);
         self

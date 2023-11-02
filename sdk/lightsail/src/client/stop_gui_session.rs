@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopGUISession`](crate::operation::stop_gui_session::builders::StopGUISessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl Into<String>)`](crate::operation::stop_gui_session::builders::StopGUISessionFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::stop_gui_session::builders::StopGUISessionFluentBuilder::set_resource_name): <p>The resource name.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::stop_gui_session::builders::StopGUISessionFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::stop_gui_session::builders::StopGUISessionFluentBuilder::set_resource_name):<br>required: **true**<br><p>The resource name.</p><br>
     /// - On success, responds with [`StopGuiSessionOutput`](crate::operation::stop_gui_session::StopGuiSessionOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::stop_gui_session::StopGuiSessionOutput::operations): <p>The available API operations.</p>
     /// - On failure, responds with [`SdkError<StopGUISessionError>`](crate::operation::stop_gui_session::StopGUISessionError)

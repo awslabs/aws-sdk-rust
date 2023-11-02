@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
-    pub application_host_url: ::std::option::Option<::std::string::String>,
+    pub application_host_url: ::std::string::String,
     /// <p> The application path to catalog service. </p>
-    pub application_service_path: ::std::option::Option<::std::string::String>,
+    pub application_service_path: ::std::string::String,
     /// <p> The port number of the SAPOData instance. </p>
-    pub port_number: ::std::option::Option<i32>,
+    pub port_number: i32,
     /// <p> The client number for the client creating the connection. </p>
-    pub client_number: ::std::option::Option<::std::string::String>,
+    pub client_number: ::std::string::String,
     /// <p> The logon language of SAPOData instance. </p>
     pub logon_language: ::std::option::Option<::std::string::String>,
     /// <p> The SAPOData Private Link service name to be used for private data transfers. </p>
@@ -24,20 +24,23 @@ pub struct SapoDataConnectorProfileProperties {
 }
 impl SapoDataConnectorProfileProperties {
     /// <p> The location of the SAPOData resource. </p>
-    pub fn application_host_url(&self) -> ::std::option::Option<&str> {
-        self.application_host_url.as_deref()
+    pub fn application_host_url(&self) -> &str {
+        use std::ops::Deref;
+        self.application_host_url.deref()
     }
     /// <p> The application path to catalog service. </p>
-    pub fn application_service_path(&self) -> ::std::option::Option<&str> {
-        self.application_service_path.as_deref()
+    pub fn application_service_path(&self) -> &str {
+        use std::ops::Deref;
+        self.application_service_path.deref()
     }
     /// <p> The port number of the SAPOData instance. </p>
-    pub fn port_number(&self) -> ::std::option::Option<i32> {
+    pub fn port_number(&self) -> i32 {
         self.port_number
     }
     /// <p> The client number for the client creating the connection. </p>
-    pub fn client_number(&self) -> ::std::option::Option<&str> {
-        self.client_number.as_deref()
+    pub fn client_number(&self) -> &str {
+        use std::ops::Deref;
+        self.client_number.deref()
     }
     /// <p> The logon language of SAPOData instance. </p>
     pub fn logon_language(&self) -> ::std::option::Option<&str> {
@@ -79,6 +82,7 @@ pub struct SapoDataConnectorProfilePropertiesBuilder {
 }
 impl SapoDataConnectorProfilePropertiesBuilder {
     /// <p> The location of the SAPOData resource. </p>
+    /// This field is required.
     pub fn application_host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_host_url = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +97,7 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.application_host_url
     }
     /// <p> The application path to catalog service. </p>
+    /// This field is required.
     pub fn application_service_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_service_path = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +112,7 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.application_service_path
     }
     /// <p> The port number of the SAPOData instance. </p>
+    /// This field is required.
     pub fn port_number(mut self, input: i32) -> Self {
         self.port_number = ::std::option::Option::Some(input);
         self
@@ -121,6 +127,7 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.port_number
     }
     /// <p> The client number for the client creating the connection. </p>
+    /// This field is required.
     pub fn client_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_number = ::std::option::Option::Some(input.into());
         self
@@ -194,16 +201,41 @@ impl SapoDataConnectorProfilePropertiesBuilder {
         &self.disable_sso
     }
     /// Consumes the builder and constructs a [`SapoDataConnectorProfileProperties`](crate::types::SapoDataConnectorProfileProperties).
-    pub fn build(self) -> crate::types::SapoDataConnectorProfileProperties {
-        crate::types::SapoDataConnectorProfileProperties {
-            application_host_url: self.application_host_url,
-            application_service_path: self.application_service_path,
-            port_number: self.port_number,
-            client_number: self.client_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_host_url`](crate::types::builders::SapoDataConnectorProfilePropertiesBuilder::application_host_url)
+    /// - [`application_service_path`](crate::types::builders::SapoDataConnectorProfilePropertiesBuilder::application_service_path)
+    /// - [`port_number`](crate::types::builders::SapoDataConnectorProfilePropertiesBuilder::port_number)
+    /// - [`client_number`](crate::types::builders::SapoDataConnectorProfilePropertiesBuilder::client_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SapoDataConnectorProfileProperties {
+            application_host_url: self.application_host_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_host_url",
+                    "application_host_url was not specified but it is required when building SapoDataConnectorProfileProperties",
+                )
+            })?,
+            application_service_path: self.application_service_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_service_path",
+                    "application_service_path was not specified but it is required when building SapoDataConnectorProfileProperties",
+                )
+            })?,
+            port_number: self.port_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port_number",
+                    "port_number was not specified but it is required when building SapoDataConnectorProfileProperties",
+                )
+            })?,
+            client_number: self.client_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_number",
+                    "client_number was not specified but it is required when building SapoDataConnectorProfileProperties",
+                )
+            })?,
             logon_language: self.logon_language,
             private_link_service_name: self.private_link_service_name,
             o_auth_properties: self.o_auth_properties,
             disable_sso: self.disable_sso.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -24,8 +24,10 @@ pub struct ParameterConstraints {
 }
 impl ParameterConstraints {
     /// <p>The values that the administrator has allowed for the parameter.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
+    pub fn allowed_values(&self) -> &[::std::string::String] {
+        self.allowed_values.as_deref().unwrap_or_default()
     }
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
     pub fn allowed_pattern(&self) -> ::std::option::Option<&str> {

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExecutionsInput {
     /// <p>The ID of the task.</p>
-    pub task_id: ::std::option::Option<::std::string::String>,
+    pub task_id: ::std::string::String,
     /// <p>A structure used to filter the tasks by their current state.</p>
     pub state: ::std::option::Option<crate::types::ExecutionState>,
     /// <p>The maximum number of tasks to list per page.</p>
@@ -14,8 +14,9 @@ pub struct ListExecutionsInput {
 }
 impl ListExecutionsInput {
     /// <p>The ID of the task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
-        self.task_id.as_deref()
+    pub fn task_id(&self) -> &str {
+        use std::ops::Deref;
+        self.task_id.deref()
     }
     /// <p>A structure used to filter the tasks by their current state.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ExecutionState> {
@@ -48,6 +49,7 @@ pub struct ListExecutionsInputBuilder {
 }
 impl ListExecutionsInputBuilder {
     /// <p>The ID of the task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -104,11 +106,18 @@ impl ListExecutionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_id`](crate::operation::list_executions::builders::ListExecutionsInputBuilder::task_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsInput {
-            task_id: self.task_id,
+            task_id: self.task_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_id",
+                    "task_id was not specified but it is required when building ListExecutionsInput",
+                )
+            })?,
             state: self.state,
             max_results: self.max_results,
             next_token: self.next_token,

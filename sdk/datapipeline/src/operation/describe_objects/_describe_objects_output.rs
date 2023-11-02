@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
-    pub pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
+    pub pipeline_objects: ::std::vec::Vec<crate::types::PipelineObject>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether there are more results to return.</p>
@@ -14,8 +14,9 @@ pub struct DescribeObjectsOutput {
 }
 impl DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
-    pub fn pipeline_objects(&self) -> ::std::option::Option<&[crate::types::PipelineObject]> {
-        self.pipeline_objects.as_deref()
+    pub fn pipeline_objects(&self) -> &[crate::types::PipelineObject] {
+        use std::ops::Deref;
+        self.pipeline_objects.deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -106,12 +107,21 @@ impl DescribeObjectsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeObjectsOutput`](crate::operation::describe_objects::DescribeObjectsOutput).
-    pub fn build(self) -> crate::operation::describe_objects::DescribeObjectsOutput {
-        crate::operation::describe_objects::DescribeObjectsOutput {
-            pipeline_objects: self.pipeline_objects,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pipeline_objects`](crate::operation::describe_objects::builders::DescribeObjectsOutputBuilder::pipeline_objects)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_objects::DescribeObjectsOutput {
+            pipeline_objects: self.pipeline_objects.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pipeline_objects",
+                    "pipeline_objects was not specified but it is required when building DescribeObjectsOutput",
+                )
+            })?,
             marker: self.marker,
             has_more_results: self.has_more_results.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

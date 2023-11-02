@@ -11,8 +11,10 @@ pub struct ListPartnerEventSourcesOutput {
 }
 impl ListPartnerEventSourcesOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn partner_event_sources(&self) -> ::std::option::Option<&[crate::types::PartnerEventSource]> {
-        self.partner_event_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partner_event_sources.is_none()`.
+    pub fn partner_event_sources(&self) -> &[crate::types::PartnerEventSource] {
+        self.partner_event_sources.as_deref().unwrap_or_default()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

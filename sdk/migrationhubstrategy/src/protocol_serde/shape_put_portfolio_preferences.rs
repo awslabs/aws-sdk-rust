@@ -32,11 +32,10 @@ pub fn de_put_portfolio_preferences_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::ConflictException({
@@ -47,11 +46,10 @@ pub fn de_put_portfolio_preferences_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError::InternalServerException({

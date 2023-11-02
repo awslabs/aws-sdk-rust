@@ -27,6 +27,7 @@ pub struct ListQueueTagsInputBuilder {
 }
 impl ListQueueTagsInputBuilder {
     /// <p>The URL of the queue.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self

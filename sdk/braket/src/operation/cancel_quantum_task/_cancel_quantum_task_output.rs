@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
-    pub quantum_task_arn: ::std::option::Option<::std::string::String>,
+    pub quantum_task_arn: ::std::string::String,
     /// <p>The status of the cancellation request.</p>
-    pub cancellation_status: ::std::option::Option<crate::types::CancellationStatus>,
+    pub cancellation_status: crate::types::CancellationStatus,
     _request_id: Option<String>,
 }
 impl CancelQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
-    pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
-        self.quantum_task_arn.as_deref()
+    pub fn quantum_task_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.quantum_task_arn.deref()
     }
     /// <p>The status of the cancellation request.</p>
-    pub fn cancellation_status(&self) -> ::std::option::Option<&crate::types::CancellationStatus> {
-        self.cancellation_status.as_ref()
+    pub fn cancellation_status(&self) -> &crate::types::CancellationStatus {
+        &self.cancellation_status
     }
 }
 impl ::aws_http::request_id::RequestId for CancelQuantumTaskOutput {
@@ -41,6 +42,7 @@ pub struct CancelQuantumTaskOutputBuilder {
 }
 impl CancelQuantumTaskOutputBuilder {
     /// <p>The ARN of the task.</p>
+    /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl CancelQuantumTaskOutputBuilder {
         &self.quantum_task_arn
     }
     /// <p>The status of the cancellation request.</p>
+    /// This field is required.
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
         self.cancellation_status = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,26 @@ impl CancelQuantumTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CancelQuantumTaskOutput`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput).
-    pub fn build(self) -> crate::operation::cancel_quantum_task::CancelQuantumTaskOutput {
-        crate::operation::cancel_quantum_task::CancelQuantumTaskOutput {
-            quantum_task_arn: self.quantum_task_arn,
-            cancellation_status: self.cancellation_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantum_task_arn`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder::quantum_task_arn)
+    /// - [`cancellation_status`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder::cancellation_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::cancel_quantum_task::CancelQuantumTaskOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::cancel_quantum_task::CancelQuantumTaskOutput {
+            quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantum_task_arn",
+                    "quantum_task_arn was not specified but it is required when building CancelQuantumTaskOutput",
+                )
+            })?,
+            cancellation_status: self.cancellation_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cancellation_status",
+                    "cancellation_status was not specified but it is required when building CancelQuantumTaskOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

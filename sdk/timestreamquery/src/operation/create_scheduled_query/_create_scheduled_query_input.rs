@@ -65,8 +65,10 @@ impl CreateScheduledQueryInput {
         self.scheduled_query_execution_role_arn.as_deref()
     }
     /// <p>A list of key-value pairs to label the scheduled query.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with <i>alias/</i> </p>
     /// <p>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same KmsKeyId is used to encrypt the error report at rest.</p>
@@ -118,6 +120,7 @@ pub struct CreateScheduledQueryInputBuilder {
 }
 impl CreateScheduledQueryInputBuilder {
     /// <p>Name of the scheduled query.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +136,7 @@ impl CreateScheduledQueryInputBuilder {
     }
     /// <p>The query string to run. Parameter names can be specified in the query string <code>@</code> character followed by an identifier. The named Parameter <code>@scheduled_runtime</code> is reserved and can be used in the query to get the time at which the query is scheduled to run.</p>
     /// <p>The timestamp calculated according to the ScheduleConfiguration parameter, will be the value of <code>@scheduled_runtime</code> paramater for each query run. For example, consider an instance of a scheduled query executing on 2021-12-01 00:00:00. For this instance, the <code>@scheduled_runtime</code> parameter is initialized to the timestamp 2021-12-01 00:00:00 when invoking the query.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +153,7 @@ impl CreateScheduledQueryInputBuilder {
         &self.query_string
     }
     /// <p>The schedule configuration for the query.</p>
+    /// This field is required.
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
         self
@@ -163,6 +168,7 @@ impl CreateScheduledQueryInputBuilder {
         &self.schedule_configuration
     }
     /// <p>Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it. </p>
+    /// This field is required.
     pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.notification_configuration = ::std::option::Option::Some(input);
         self
@@ -217,6 +223,7 @@ impl CreateScheduledQueryInputBuilder {
         &self.client_token
     }
     /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query. </p>
+    /// This field is required.
     pub fn scheduled_query_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -268,6 +275,7 @@ impl CreateScheduledQueryInputBuilder {
         &self.kms_key_id
     }
     /// <p>Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results. </p>
+    /// This field is required.
     pub fn error_report_configuration(mut self, input: crate::types::ErrorReportConfiguration) -> Self {
         self.error_report_configuration = ::std::option::Option::Some(input);
         self

@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointInput {
     /// <p>The VPC endpoint identifier.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVpcEndpointInput {
     /// <p>The VPC endpoint identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct DeleteVpcEndpointInputBuilder {
 }
 impl DeleteVpcEndpointInputBuilder {
     /// <p>The VPC endpoint identifier.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,11 +64,18 @@ impl DeleteVpcEndpointInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointInput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput {
-            id: self.id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DeleteVpcEndpointInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBroker`](crate::operation::describe_broker::builders::DescribeBrokerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`broker_id(impl Into<String>)`](crate::operation::describe_broker::builders::DescribeBrokerFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::describe_broker::builders::DescribeBrokerFluentBuilder::set_broker_id): <p>The unique ID that Amazon MQ generates for the broker.</p>
+    ///   - [`broker_id(impl Into<String>)`](crate::operation::describe_broker::builders::DescribeBrokerFluentBuilder::broker_id) / [`set_broker_id(Option<String>)`](crate::operation::describe_broker::builders::DescribeBrokerFluentBuilder::set_broker_id):<br>required: **true**<br><p>The unique ID that Amazon MQ generates for the broker.</p><br>
     /// - On success, responds with [`DescribeBrokerOutput`](crate::operation::describe_broker::DescribeBrokerOutput) with field(s):
     ///   - [`actions_required(Option<Vec<ActionRequired>>)`](crate::operation::describe_broker::DescribeBrokerOutput::actions_required): <p>Actions required for a broker.</p>
     ///   - [`authentication_strategy(Option<AuthenticationStrategy>)`](crate::operation::describe_broker::DescribeBrokerOutput::authentication_strategy): <p>The authentication strategy used to secure the broker. The default is SIMPLE.</p>

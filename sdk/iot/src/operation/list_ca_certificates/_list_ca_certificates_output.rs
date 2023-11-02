@@ -12,8 +12,10 @@ pub struct ListCaCertificatesOutput {
 }
 impl ListCaCertificatesOutput {
     /// <p>The CA certificates registered in your Amazon Web Services account.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::CaCertificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::CaCertificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>The current position within the list of CA certificates.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

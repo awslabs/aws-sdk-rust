@@ -175,16 +175,20 @@ impl ImageBuilder {
         self.network_access_configuration.as_ref()
     }
     /// <p>The image builder errors.</p>
-    pub fn image_builder_errors(&self) -> ::std::option::Option<&[crate::types::ResourceError]> {
-        self.image_builder_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_builder_errors.is_none()`.
+    pub fn image_builder_errors(&self) -> &[crate::types::ResourceError] {
+        self.image_builder_errors.as_deref().unwrap_or_default()
     }
     /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
     pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
         self.appstream_agent_version.as_deref()
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn access_endpoints(&self) -> ::std::option::Option<&[crate::types::AccessEndpoint]> {
-        self.access_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
+    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl ImageBuilder {
@@ -219,6 +223,7 @@ pub struct ImageBuilderBuilder {
 }
 impl ImageBuilderBuilder {
     /// <p>The name of the image builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

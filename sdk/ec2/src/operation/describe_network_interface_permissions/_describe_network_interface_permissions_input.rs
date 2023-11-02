@@ -22,8 +22,10 @@ pub struct DescribeNetworkInterfacePermissionsInput {
 }
 impl DescribeNetworkInterfacePermissionsInput {
     /// <p>The network interface permission IDs.</p>
-    pub fn network_interface_permission_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interface_permission_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_permission_ids.is_none()`.
+    pub fn network_interface_permission_ids(&self) -> &[::std::string::String] {
+        self.network_interface_permission_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -33,8 +35,10 @@ impl DescribeNetworkInterfacePermissionsInput {
     /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
     /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

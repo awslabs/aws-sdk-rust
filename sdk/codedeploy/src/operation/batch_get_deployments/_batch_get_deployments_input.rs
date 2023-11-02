@@ -9,8 +9,10 @@ pub struct BatchGetDeploymentsInput {
 }
 impl BatchGetDeploymentsInput {
     /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
-    pub fn deployment_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deployment_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_ids.is_none()`.
+    pub fn deployment_ids(&self) -> &[::std::string::String] {
+        self.deployment_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDeploymentsInput {

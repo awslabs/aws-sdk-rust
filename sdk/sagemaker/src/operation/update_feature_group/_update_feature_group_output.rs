@@ -34,6 +34,7 @@ pub struct UpdateFeatureGroupOutputBuilder {
 }
 impl UpdateFeatureGroupOutputBuilder {
     /// <p>The Amazon Resource Number (ARN) of the feature group that you're updating.</p>
+    /// This field is required.
     pub fn feature_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_arn = ::std::option::Option::Some(input.into());
         self

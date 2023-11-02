@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerDetailsInput {
     /// <p> The ID of the server. </p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
@@ -12,8 +12,9 @@ pub struct GetServerDetailsInput {
 }
 impl GetServerDetailsInput {
     /// <p> The ID of the server. </p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct GetServerDetailsInputBuilder {
 }
 impl GetServerDetailsInputBuilder {
     /// <p> The ID of the server. </p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +85,18 @@ impl GetServerDetailsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetServerDetailsInput`](crate::operation::get_server_details::GetServerDetailsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::get_server_details::builders::GetServerDetailsInputBuilder::server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_server_details::GetServerDetailsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_server_details::GetServerDetailsInput {
-            server_id: self.server_id,
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building GetServerDetailsInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
         })

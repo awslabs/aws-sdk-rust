@@ -9,11 +9,11 @@ pub fn ser_cookies(
         crate::protocol_serde::shape_cookie_match_pattern::ser_cookie_match_pattern(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.match_scope {
-        object.key("MatchScope").string(var_3.as_str());
+    {
+        object.key("MatchScope").string(input.match_scope.as_str());
     }
-    if let Some(var_4) = &input.oversize_handling {
-        object.key("OversizeHandling").string(var_4.as_str());
+    {
+        object.key("OversizeHandling").string(input.oversize_handling.as_str());
     }
     Ok(())
 }
@@ -60,7 +60,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::cookies_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -41,6 +41,7 @@ pub struct CreateCoipCidrInputBuilder {
 }
 impl CreateCoipCidrInputBuilder {
     /// <p> A customer-owned IP address range to create. </p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateCoipCidrInputBuilder {
         &self.cidr
     }
     /// <p> The ID of the address pool. </p>
+    /// This field is required.
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
         self

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
-    pub gateway_arn: ::std::option::Option<::std::string::String>,
+    pub gateway_arn: ::std::string::String,
 }
 impl UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
-        self.gateway_arn.as_deref()
+    pub fn gateway_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_arn.deref()
     }
 }
 impl UpdateGatewaySoftwareNowInput {
@@ -27,6 +28,7 @@ pub struct UpdateGatewaySoftwareNowInputBuilder {
 }
 impl UpdateGatewaySoftwareNowInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl UpdateGatewaySoftwareNowInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`UpdateGatewaySoftwareNowInput`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_arn`](crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowInputBuilder::gateway_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl UpdateGatewaySoftwareNowInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput {
-            gateway_arn: self.gateway_arn,
+            gateway_arn: self.gateway_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_arn",
+                    "gateway_arn was not specified but it is required when building UpdateGatewaySoftwareNowInput",
+                )
+            })?,
         })
     }
 }

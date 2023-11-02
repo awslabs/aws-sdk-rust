@@ -27,6 +27,7 @@ pub struct DescribeResourcePolicyInputBuilder {
 }
 impl DescribeResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

@@ -90,6 +90,7 @@ impl PutSchemaVersionMetadataInputBuilder {
         &self.schema_version_id
     }
     /// <p>The metadata key's corresponding value.</p>
+    /// This field is required.
     pub fn metadata_key_value(mut self, input: crate::types::MetadataKeyValuePair) -> Self {
         self.metadata_key_value = ::std::option::Option::Some(input);
         self

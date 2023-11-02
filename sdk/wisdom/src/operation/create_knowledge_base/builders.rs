@@ -101,14 +101,14 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::create_knowledge_base::CreateKnowledgeBaseOutput,
             crate::operation::create_knowledge_base::CreateKnowledgeBaseError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_knowledge_base::CreateKnowledgeBaseError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -189,17 +189,23 @@ impl CreateKnowledgeBaseFluentBuilder {
     pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
         self.inner.get_rendering_configuration()
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.inner = self.inner.server_side_encryption_configuration(input);
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         self.inner.get_server_side_encryption_configuration()
     }

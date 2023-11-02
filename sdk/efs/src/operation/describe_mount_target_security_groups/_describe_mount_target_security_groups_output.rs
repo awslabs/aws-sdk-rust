@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsOutput {
     /// <p>An array of security groups.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeMountTargetSecurityGroupsOutput {
     /// <p>An array of security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_groups.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMountTargetSecurityGroupsOutput {
@@ -63,10 +64,24 @@ impl DescribeMountTargetSecurityGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput {
-        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput {
-            security_groups: self.security_groups,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`security_groups`](crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder::security_groups)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput {
+                security_groups: self.security_groups.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "security_groups",
+                        "security_groups was not specified but it is required when building DescribeMountTargetSecurityGroupsOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -41,6 +41,7 @@ pub struct ListProjectPoliciesInputBuilder {
 }
 impl ListProjectPoliciesInputBuilder {
     /// <p>The ARN of the project for which you want to list the project policies.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self

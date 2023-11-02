@@ -27,6 +27,7 @@ pub struct DescribeContinuousBackupsInputBuilder {
 }
 impl DescribeContinuousBackupsInputBuilder {
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

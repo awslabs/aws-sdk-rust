@@ -27,6 +27,7 @@ pub struct DescribeDatasetExportJobInputBuilder {
 }
 impl DescribeDatasetExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset export job to describe.</p>
+    /// This field is required.
     pub fn dataset_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_export_job_arn = ::std::option::Option::Some(input.into());
         self

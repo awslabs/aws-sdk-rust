@@ -59,8 +59,10 @@ impl DetectMitigationActionsTaskSummary {
         self.suppressed_alerts_included
     }
     /// <p> The definition of the actions. </p>
-    pub fn actions_definition(&self) -> ::std::option::Option<&[crate::types::MitigationAction]> {
-        self.actions_definition.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions_definition.is_none()`.
+    pub fn actions_definition(&self) -> &[crate::types::MitigationAction] {
+        self.actions_definition.as_deref().unwrap_or_default()
     }
     /// <p> The statistics of a mitigation action task. </p>
     pub fn task_statistics(&self) -> ::std::option::Option<&crate::types::DetectMitigationActionsTaskStatistics> {

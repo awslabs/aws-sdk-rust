@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMapOutput {
     /// <p>The name of the updated map resource.</p>
-    pub map_name: ::std::option::Option<::std::string::String>,
+    pub map_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
-    pub map_arn: ::std::option::Option<::std::string::String>,
+    pub map_arn: ::std::string::String,
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateMapOutput {
     /// <p>The name of the updated map resource.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
-        self.map_name.as_deref()
+    pub fn map_name(&self) -> &str {
+        use std::ops::Deref;
+        self.map_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
-    pub fn map_arn(&self) -> ::std::option::Option<&str> {
-        self.map_arn.as_deref()
+    pub fn map_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.map_arn.deref()
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateMapOutput {
@@ -54,6 +56,7 @@ pub struct UpdateMapOutputBuilder {
 }
 impl UpdateMapOutputBuilder {
     /// <p>The name of the updated map resource.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl UpdateMapOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn map_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl UpdateMapOutputBuilder {
         &self.map_arn
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -114,12 +119,31 @@ impl UpdateMapOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMapOutput`](crate::operation::update_map::UpdateMapOutput).
-    pub fn build(self) -> crate::operation::update_map::UpdateMapOutput {
-        crate::operation::update_map::UpdateMapOutput {
-            map_name: self.map_name,
-            map_arn: self.map_arn,
-            update_time: self.update_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`map_name`](crate::operation::update_map::builders::UpdateMapOutputBuilder::map_name)
+    /// - [`map_arn`](crate::operation::update_map::builders::UpdateMapOutputBuilder::map_arn)
+    /// - [`update_time`](crate::operation::update_map::builders::UpdateMapOutputBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_map::UpdateMapOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_map::UpdateMapOutput {
+            map_name: self.map_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_name",
+                    "map_name was not specified but it is required when building UpdateMapOutput",
+                )
+            })?,
+            map_arn: self.map_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_arn",
+                    "map_arn was not specified but it is required when building UpdateMapOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building UpdateMapOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

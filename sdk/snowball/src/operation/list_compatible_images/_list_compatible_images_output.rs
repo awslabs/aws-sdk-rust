@@ -11,8 +11,10 @@ pub struct ListCompatibleImagesOutput {
 }
 impl ListCompatibleImagesOutput {
     /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
-    pub fn compatible_images(&self) -> ::std::option::Option<&[crate::types::CompatibleImage]> {
-        self.compatible_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_images.is_none()`.
+    pub fn compatible_images(&self) -> &[crate::types::CompatibleImage] {
+        self.compatible_images.as_deref().unwrap_or_default()
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

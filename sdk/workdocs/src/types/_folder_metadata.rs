@@ -61,8 +61,10 @@ impl FolderMetadata {
         self.signature.as_deref()
     }
     /// <p>List of labels on the folder.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The size of the folder metadata.</p>
     pub fn size(&self) -> ::std::option::Option<i64> {

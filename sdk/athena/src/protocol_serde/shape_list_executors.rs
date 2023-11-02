@@ -78,7 +78,9 @@ pub fn de_list_executors_http_response(
         output = crate::protocol_serde::shape_list_executors::de_list_executors(_response_body, output)
             .map_err(crate::operation::list_executors::ListExecutorsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_executors_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_executors::ListExecutorsError::unhandled)?
     })
 }
 

@@ -23,8 +23,10 @@ impl DescribeVtlDevicesInput {
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn vtl_device_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vtl_device_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vtl_device_ar_ns.is_none()`.
+    pub fn vtl_device_ar_ns(&self) -> &[::std::string::String] {
+        self.vtl_device_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -53,6 +55,7 @@ pub struct DescribeVtlDevicesInputBuilder {
 }
 impl DescribeVtlDevicesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self

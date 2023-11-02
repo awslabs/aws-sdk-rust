@@ -42,6 +42,7 @@ pub struct EnvironmentParameterBuilder {
 }
 impl EnvironmentParameterBuilder {
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl EnvironmentParameterBuilder {
         &self.key
     }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
+    /// This field is required.
     pub fn value_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_type = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl EnvironmentParameterBuilder {
         &self.value_type
     }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

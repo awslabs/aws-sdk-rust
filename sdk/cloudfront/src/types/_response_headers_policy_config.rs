@@ -10,7 +10,7 @@ pub struct ResponseHeadersPolicyConfig {
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A name to identify the response headers policy.</p>
     /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
     pub cors_config: ::std::option::Option<crate::types::ResponseHeadersPolicyCorsConfig>,
     /// <p>A configuration for a set of security-related HTTP response headers.</p>
@@ -30,8 +30,9 @@ impl ResponseHeadersPolicyConfig {
     }
     /// <p>A name to identify the response headers policy.</p>
     /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS).</p>
     pub fn cors_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyCorsConfig> {
@@ -93,6 +94,7 @@ impl ResponseHeadersPolicyConfigBuilder {
     }
     /// <p>A name to identify the response headers policy.</p>
     /// <p>The name must be unique for response headers policies in this Amazon Web Services account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -182,15 +184,22 @@ impl ResponseHeadersPolicyConfigBuilder {
         &self.remove_headers_config
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyConfig`](crate::types::ResponseHeadersPolicyConfig).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyConfig {
-        crate::types::ResponseHeadersPolicyConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ResponseHeadersPolicyConfigBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyConfig {
             comment: self.comment,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ResponseHeadersPolicyConfig",
+                )
+            })?,
             cors_config: self.cors_config,
             security_headers_config: self.security_headers_config,
             server_timing_headers_config: self.server_timing_headers_config,
             custom_headers_config: self.custom_headers_config,
             remove_headers_config: self.remove_headers_config,
-        }
+        })
     }
 }

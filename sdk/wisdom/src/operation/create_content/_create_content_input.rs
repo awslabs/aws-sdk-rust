@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub knowledge_base_id: ::std::string::String,
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The title of the content. If not set, the title is equal to the name.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
@@ -14,7 +14,7 @@ pub struct CreateContentInput {
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-    pub upload_id: ::std::option::Option<::std::string::String>,
+    pub upload_id: ::std::string::String,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -22,12 +22,14 @@ pub struct CreateContentInput {
 }
 impl CreateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
-        self.knowledge_base_id.as_deref()
+    pub fn knowledge_base_id(&self) -> &str {
+        use std::ops::Deref;
+        self.knowledge_base_id.deref()
     }
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The title of the content. If not set, the title is equal to the name.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
@@ -42,8 +44,9 @@ impl CreateContentInput {
         self.metadata.as_ref()
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
-        self.upload_id.as_deref()
+    pub fn upload_id(&self) -> &str {
+        use std::ops::Deref;
+        self.upload_id.deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -76,6 +79,7 @@ pub struct CreateContentInputBuilder {
 }
 impl CreateContentInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl CreateContentInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +157,7 @@ impl CreateContentInputBuilder {
         &self.metadata
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -200,16 +206,35 @@ impl CreateContentInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateContentInput`](crate::operation::create_content::CreateContentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`knowledge_base_id`](crate::operation::create_content::builders::CreateContentInputBuilder::knowledge_base_id)
+    /// - [`name`](crate::operation::create_content::builders::CreateContentInputBuilder::name)
+    /// - [`upload_id`](crate::operation::create_content::builders::CreateContentInputBuilder::upload_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_content::CreateContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_content::CreateContentInput {
-            knowledge_base_id: self.knowledge_base_id,
-            name: self.name,
+            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "knowledge_base_id",
+                    "knowledge_base_id was not specified but it is required when building CreateContentInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateContentInput",
+                )
+            })?,
             title: self.title,
             override_link_out_uri: self.override_link_out_uri,
             metadata: self.metadata,
-            upload_id: self.upload_id,
+            upload_id: self.upload_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upload_id",
+                    "upload_id was not specified but it is required when building CreateContentInput",
+                )
+            })?,
             client_token: self.client_token,
             tags: self.tags,
         })

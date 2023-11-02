@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationError {
     /// <p>Channel ARN.</p>
-    pub channel_arn: ::std::option::Option<::std::string::String>,
+    pub channel_arn: ::std::string::String,
     /// <p>The ID of the viewer session to revoke.</p>
-    pub viewer_id: ::std::option::Option<::std::string::String>,
+    pub viewer_id: ::std::string::String,
     /// <p>Error code.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>Error message, determined by the application.</p>
@@ -15,12 +15,14 @@ pub struct BatchStartViewerSessionRevocationError {
 }
 impl BatchStartViewerSessionRevocationError {
     /// <p>Channel ARN.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
-        self.channel_arn.as_deref()
+    pub fn channel_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_arn.deref()
     }
     /// <p>The ID of the viewer session to revoke.</p>
-    pub fn viewer_id(&self) -> ::std::option::Option<&str> {
-        self.viewer_id.as_deref()
+    pub fn viewer_id(&self) -> &str {
+        use std::ops::Deref;
+        self.viewer_id.deref()
     }
     /// <p>Error code.</p>
     pub fn code(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct BatchStartViewerSessionRevocationErrorBuilder {
 }
 impl BatchStartViewerSessionRevocationErrorBuilder {
     /// <p>Channel ARN.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl BatchStartViewerSessionRevocationErrorBuilder {
         &self.channel_arn
     }
     /// <p>The ID of the viewer session to revoke.</p>
+    /// This field is required.
     pub fn viewer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.viewer_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,27 @@ impl BatchStartViewerSessionRevocationErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`BatchStartViewerSessionRevocationError`](crate::types::BatchStartViewerSessionRevocationError).
-    pub fn build(self) -> crate::types::BatchStartViewerSessionRevocationError {
-        crate::types::BatchStartViewerSessionRevocationError {
-            channel_arn: self.channel_arn,
-            viewer_id: self.viewer_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_arn`](crate::types::builders::BatchStartViewerSessionRevocationErrorBuilder::channel_arn)
+    /// - [`viewer_id`](crate::types::builders::BatchStartViewerSessionRevocationErrorBuilder::viewer_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchStartViewerSessionRevocationError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchStartViewerSessionRevocationError {
+            channel_arn: self.channel_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_arn",
+                    "channel_arn was not specified but it is required when building BatchStartViewerSessionRevocationError",
+                )
+            })?,
+            viewer_id: self.viewer_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "viewer_id",
+                    "viewer_id was not specified but it is required when building BatchStartViewerSessionRevocationError",
+                )
+            })?,
             code: self.code,
             message: self.message,
-        }
+        })
     }
 }

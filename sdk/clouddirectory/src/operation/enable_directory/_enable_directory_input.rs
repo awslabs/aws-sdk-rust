@@ -27,6 +27,7 @@ pub struct EnableDirectoryInputBuilder {
 }
 impl EnableDirectoryInputBuilder {
     /// <p>The ARN of the directory to enable.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self

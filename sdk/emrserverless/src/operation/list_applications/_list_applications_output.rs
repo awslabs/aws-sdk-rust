@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
     /// <p>The output lists the specified applications.</p>
-    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
+    pub applications: ::std::vec::Vec<crate::types::ApplicationSummary>,
     /// <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
     /// <p>The output lists the specified applications.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::ApplicationSummary]> {
-        self.applications.as_deref()
+    pub fn applications(&self) -> &[crate::types::ApplicationSummary] {
+        use std::ops::Deref;
+        self.applications.deref()
     }
     /// <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListApplicationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
-    pub fn build(self) -> crate::operation::list_applications::ListApplicationsOutput {
-        crate::operation::list_applications::ListApplicationsOutput {
-            applications: self.applications,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`applications`](crate::operation::list_applications::builders::ListApplicationsOutputBuilder::applications)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsOutput {
+            applications: self.applications.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "applications",
+                    "applications was not specified but it is required when building ListApplicationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

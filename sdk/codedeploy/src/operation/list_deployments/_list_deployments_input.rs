@@ -55,8 +55,10 @@ impl ListDeploymentsInput {
     /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
     /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
-    pub fn include_only_statuses(&self) -> ::std::option::Option<&[crate::types::DeploymentStatus]> {
-        self.include_only_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_only_statuses.is_none()`.
+    pub fn include_only_statuses(&self) -> &[crate::types::DeploymentStatus] {
+        self.include_only_statuses.as_deref().unwrap_or_default()
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
     pub fn create_time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {

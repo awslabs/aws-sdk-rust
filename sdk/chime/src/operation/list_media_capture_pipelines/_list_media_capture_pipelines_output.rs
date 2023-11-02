@@ -11,8 +11,10 @@ pub struct ListMediaCapturePipelinesOutput {
 }
 impl ListMediaCapturePipelinesOutput {
     /// <p>The media capture pipeline objects in the list.</p>
-    pub fn media_capture_pipelines(&self) -> ::std::option::Option<&[crate::types::MediaCapturePipeline]> {
-        self.media_capture_pipelines.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_capture_pipelines.is_none()`.
+    pub fn media_capture_pipelines(&self) -> &[crate::types::MediaCapturePipeline] {
+        self.media_capture_pipelines.as_deref().unwrap_or_default()
     }
     /// <p>The token used to retrieve the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

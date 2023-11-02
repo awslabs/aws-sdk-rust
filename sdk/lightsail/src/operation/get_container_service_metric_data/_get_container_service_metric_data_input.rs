@@ -66,8 +66,10 @@ impl GetContainerServiceMetricDataInput {
     /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
     /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
     /// </ul>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::MetricStatistic]> {
-        self.statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
+    pub fn statistics(&self) -> &[crate::types::MetricStatistic] {
+        self.statistics.as_deref().unwrap_or_default()
     }
 }
 impl GetContainerServiceMetricDataInput {
@@ -90,6 +92,7 @@ pub struct GetContainerServiceMetricDataInputBuilder {
 }
 impl GetContainerServiceMetricDataInputBuilder {
     /// <p>The name of the container service for which to get metric data.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +112,7 @@ impl GetContainerServiceMetricDataInputBuilder {
     /// <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric_name(mut self, input: crate::types::ContainerServiceMetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl GetContainerServiceMetricDataInputBuilder {
         &self.metric_name
     }
     /// <p>The start time of the time period.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -147,6 +152,7 @@ impl GetContainerServiceMetricDataInputBuilder {
         &self.start_time
     }
     /// <p>The end time of the time period.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -162,6 +168,7 @@ impl GetContainerServiceMetricDataInputBuilder {
     }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self

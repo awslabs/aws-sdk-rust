@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SessionKeyEmv2000 {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub primary_account_number: ::std::option::Option<::std::string::String>,
+    pub primary_account_number: ::std::string::String,
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub pan_sequence_number: ::std::option::Option<::std::string::String>,
+    pub pan_sequence_number: ::std::string::String,
     /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
-    pub application_transaction_counter: ::std::option::Option<::std::string::String>,
+    pub application_transaction_counter: ::std::string::String,
 }
 impl SessionKeyEmv2000 {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn primary_account_number(&self) -> ::std::option::Option<&str> {
-        self.primary_account_number.as_deref()
+    pub fn primary_account_number(&self) -> &str {
+        use std::ops::Deref;
+        self.primary_account_number.deref()
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn pan_sequence_number(&self) -> ::std::option::Option<&str> {
-        self.pan_sequence_number.as_deref()
+    pub fn pan_sequence_number(&self) -> &str {
+        use std::ops::Deref;
+        self.pan_sequence_number.deref()
     }
     /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
-    pub fn application_transaction_counter(&self) -> ::std::option::Option<&str> {
-        self.application_transaction_counter.as_deref()
+    pub fn application_transaction_counter(&self) -> &str {
+        use std::ops::Deref;
+        self.application_transaction_counter.deref()
     }
 }
 impl ::std::fmt::Debug for SessionKeyEmv2000 {
@@ -51,6 +54,7 @@ pub struct SessionKeyEmv2000Builder {
 }
 impl SessionKeyEmv2000Builder {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
+    /// This field is required.
     pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_number = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +69,7 @@ impl SessionKeyEmv2000Builder {
         &self.primary_account_number
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
+    /// This field is required.
     pub fn pan_sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pan_sequence_number = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +84,7 @@ impl SessionKeyEmv2000Builder {
         &self.pan_sequence_number
     }
     /// <p>The transaction counter that is provided by the terminal during transaction processing.</p>
+    /// This field is required.
     pub fn application_transaction_counter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_transaction_counter = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +99,31 @@ impl SessionKeyEmv2000Builder {
         &self.application_transaction_counter
     }
     /// Consumes the builder and constructs a [`SessionKeyEmv2000`](crate::types::SessionKeyEmv2000).
-    pub fn build(self) -> crate::types::SessionKeyEmv2000 {
-        crate::types::SessionKeyEmv2000 {
-            primary_account_number: self.primary_account_number,
-            pan_sequence_number: self.pan_sequence_number,
-            application_transaction_counter: self.application_transaction_counter,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`primary_account_number`](crate::types::builders::SessionKeyEmv2000Builder::primary_account_number)
+    /// - [`pan_sequence_number`](crate::types::builders::SessionKeyEmv2000Builder::pan_sequence_number)
+    /// - [`application_transaction_counter`](crate::types::builders::SessionKeyEmv2000Builder::application_transaction_counter)
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyEmv2000, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SessionKeyEmv2000 {
+            primary_account_number: self.primary_account_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "primary_account_number",
+                    "primary_account_number was not specified but it is required when building SessionKeyEmv2000",
+                )
+            })?,
+            pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pan_sequence_number",
+                    "pan_sequence_number was not specified but it is required when building SessionKeyEmv2000",
+                )
+            })?,
+            application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_transaction_counter",
+                    "application_transaction_counter was not specified but it is required when building SessionKeyEmv2000",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for SessionKeyEmv2000Builder {

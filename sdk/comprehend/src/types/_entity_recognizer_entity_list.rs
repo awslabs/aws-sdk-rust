@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
 }
 impl EntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
 }
 impl EntityRecognizerEntityList {
@@ -28,6 +29,7 @@ pub struct EntityRecognizerEntityListBuilder {
 }
 impl EntityRecognizerEntityListBuilder {
     /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API endpoint that you are calling.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl EntityRecognizerEntityListBuilder {
         &self.s3_uri
     }
     /// Consumes the builder and constructs a [`EntityRecognizerEntityList`](crate::types::EntityRecognizerEntityList).
-    pub fn build(self) -> crate::types::EntityRecognizerEntityList {
-        crate::types::EntityRecognizerEntityList { s3_uri: self.s3_uri }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::EntityRecognizerEntityListBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognizerEntityList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityRecognizerEntityList {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building EntityRecognizerEntityList",
+                )
+            })?,
+        })
     }
 }

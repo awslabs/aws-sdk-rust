@@ -34,6 +34,7 @@ pub struct StartSchemaCreationInputBuilder {
 }
 impl StartSchemaCreationInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartSchemaCreationInputBuilder {
         &self.api_id
     }
     /// <p>The schema definition, in GraphQL schema language format.</p>
+    /// This field is required.
     pub fn definition(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

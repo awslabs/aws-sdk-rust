@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OptOutSpeakerInput {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the speaker you want opted-out.</p>
-    pub speaker_id: ::std::option::Option<::std::string::String>,
+    pub speaker_id: ::std::string::String,
 }
 impl OptOutSpeakerInput {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the speaker you want opted-out.</p>
-    pub fn speaker_id(&self) -> ::std::option::Option<&str> {
-        self.speaker_id.as_deref()
+    pub fn speaker_id(&self) -> &str {
+        use std::ops::Deref;
+        self.speaker_id.deref()
     }
 }
 impl ::std::fmt::Debug for OptOutSpeakerInput {
@@ -42,6 +44,7 @@ pub struct OptOutSpeakerInputBuilder {
 }
 impl OptOutSpeakerInputBuilder {
     /// <p>The identifier of the domain that contains the speaker.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl OptOutSpeakerInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the speaker you want opted-out.</p>
+    /// This field is required.
     pub fn speaker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_id = ::std::option::Option::Some(input.into());
         self
@@ -70,12 +74,25 @@ impl OptOutSpeakerInputBuilder {
         &self.speaker_id
     }
     /// Consumes the builder and constructs a [`OptOutSpeakerInput`](crate::operation::opt_out_speaker::OptOutSpeakerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::opt_out_speaker::builders::OptOutSpeakerInputBuilder::domain_id)
+    /// - [`speaker_id`](crate::operation::opt_out_speaker::builders::OptOutSpeakerInputBuilder::speaker_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::opt_out_speaker::OptOutSpeakerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::opt_out_speaker::OptOutSpeakerInput {
-            domain_id: self.domain_id,
-            speaker_id: self.speaker_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building OptOutSpeakerInput",
+                )
+            })?,
+            speaker_id: self.speaker_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "speaker_id",
+                    "speaker_id was not specified but it is required when building OptOutSpeakerInput",
+                )
+            })?,
         })
     }
 }

@@ -93,17 +93,21 @@ impl CreateJobOutput {
         self.segment_duration.as_deref()
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    pub fn watermarks(&self) -> ::std::option::Option<&[crate::types::JobWatermark]> {
-        self.watermarks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.watermarks.is_none()`.
+    pub fn watermarks(&self) -> &[crate::types::JobWatermark] {
+        self.watermarks.as_deref().unwrap_or_default()
     }
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
     pub fn album_art(&self) -> ::std::option::Option<&crate::types::JobAlbumArt> {
         self.album_art.as_ref()
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.composition.is_none()`.
     #[deprecated]
-    pub fn composition(&self) -> ::std::option::Option<&[crate::types::Clip]> {
-        self.composition.as_deref()
+    pub fn composition(&self) -> &[crate::types::Clip] {
+        self.composition.as_deref().unwrap_or_default()
     }
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>

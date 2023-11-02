@@ -33,8 +33,10 @@ impl EndpointDetails {
         self.health_status.as_ref()
     }
     /// <p>Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.</p>
-    pub fn health_reasons(&self) -> ::std::option::Option<&[crate::types::CapabilityHealthReason]> {
-        self.health_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.health_reasons.is_none()`.
+    pub fn health_reasons(&self) -> &[crate::types::CapabilityHealthReason] {
+        self.health_reasons.as_deref().unwrap_or_default()
     }
 }
 impl EndpointDetails {

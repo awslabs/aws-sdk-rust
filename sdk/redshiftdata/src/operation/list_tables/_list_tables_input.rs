@@ -10,7 +10,7 @@ pub struct ListTablesInput {
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub connected_database: ::std::option::Option<::std::string::String>,
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
@@ -38,8 +38,9 @@ impl ListTablesInput {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub fn connected_database(&self) -> ::std::option::Option<&str> {
@@ -132,6 +133,7 @@ impl ListTablesInputBuilder {
         &self.db_user
     }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -230,12 +232,19 @@ impl ListTablesInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database`](crate::operation::list_tables::builders::ListTablesInputBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,
             db_user: self.db_user,
-            database: self.database,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building ListTablesInput",
+                )
+            })?,
             connected_database: self.connected_database,
             schema_pattern: self.schema_pattern,
             table_pattern: self.table_pattern,

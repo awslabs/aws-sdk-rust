@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDICOMImportJob`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_id(impl Into<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::set_datastore_id): <p>The data store identifier.</p>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::set_job_id): <p>The import job identifier.</p>
+    ///   - [`datastore_id(impl Into<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The data store identifier.</p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_dicom_import_job::builders::GetDICOMImportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The import job identifier.</p><br>
     /// - On success, responds with [`GetDicomImportJobOutput`](crate::operation::get_dicom_import_job::GetDicomImportJobOutput) with field(s):
     ///   - [`job_properties(Option<DicomImportJobProperties>)`](crate::operation::get_dicom_import_job::GetDicomImportJobOutput::job_properties): <p>The properties of the import job.</p>
     /// - On failure, responds with [`SdkError<GetDICOMImportJobError>`](crate::operation::get_dicom_import_job::GetDICOMImportJobError)

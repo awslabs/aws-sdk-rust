@@ -27,6 +27,7 @@ pub struct GetDnssecInputBuilder {
 }
 impl GetDnssecInputBuilder {
     /// <p>A unique string used to identify a hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self

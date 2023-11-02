@@ -35,6 +35,7 @@ pub struct AvailabilityOptionsStatusBuilder {
 }
 impl AvailabilityOptionsStatusBuilder {
     /// <p>The availability options configured for the domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: bool) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AvailabilityOptionsStatusBuilder {
         &self.options
     }
     /// <p>The status of domain configuration option.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

@@ -51,6 +51,7 @@ pub struct UpdateDistributionWithStagingConfigInputBuilder {
 }
 impl UpdateDistributionWithStagingConfigInputBuilder {
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

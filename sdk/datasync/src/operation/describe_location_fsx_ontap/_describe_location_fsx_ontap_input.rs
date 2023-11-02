@@ -27,6 +27,7 @@ pub struct DescribeLocationFsxOntapInputBuilder {
 }
 impl DescribeLocationFsxOntapInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self

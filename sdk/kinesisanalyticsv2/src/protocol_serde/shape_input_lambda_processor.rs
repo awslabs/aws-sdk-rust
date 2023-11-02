@@ -3,8 +3,8 @@ pub fn ser_input_lambda_processor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputLambdaProcessor,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn {
-        object.key("ResourceARN").string(var_1.as_str());
+    {
+        object.key("ResourceARN").string(input.resource_arn.as_str());
     }
     Ok(())
 }

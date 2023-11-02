@@ -34,6 +34,7 @@ pub struct DescribeManagedJobTemplateInputBuilder {
 }
 impl DescribeManagedJobTemplateInputBuilder {
     /// <p>The unique name of a managed job template, which is required.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

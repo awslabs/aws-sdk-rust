@@ -48,8 +48,10 @@ impl DescribeOpsItemsInput {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn ops_item_filters(&self) -> ::std::option::Option<&[crate::types::OpsItemFilter]> {
-        self.ops_item_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ops_item_filters.is_none()`.
+    pub fn ops_item_filters(&self) -> &[crate::types::OpsItemFilter] {
+        self.ops_item_filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

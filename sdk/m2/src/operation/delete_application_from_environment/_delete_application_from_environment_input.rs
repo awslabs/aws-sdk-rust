@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationFromEnvironmentInput {
     /// <p>The unique identifier of the application you want to delete.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    pub environment_id: ::std::option::Option<::std::string::String>,
+    pub environment_id: ::std::string::String,
 }
 impl DeleteApplicationFromEnvironmentInput {
     /// <p>The unique identifier of the application you want to delete.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    pub fn environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_id.deref()
     }
 }
 impl DeleteApplicationFromEnvironmentInput {
@@ -34,6 +36,7 @@ pub struct DeleteApplicationFromEnvironmentInputBuilder {
 }
 impl DeleteApplicationFromEnvironmentInputBuilder {
     /// <p>The unique identifier of the application you want to delete.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
         &self.environment_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationFromEnvironmentInput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder::application_id)
+    /// - [`environment_id`](crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder::environment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,8 +77,18 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput {
-                application_id: self.application_id,
-                environment_id: self.environment_id,
+                application_id: self.application_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "application_id",
+                        "application_id was not specified but it is required when building DeleteApplicationFromEnvironmentInput",
+                    )
+                })?,
+                environment_id: self.environment_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "environment_id",
+                        "environment_id was not specified but it is required when building DeleteApplicationFromEnvironmentInput",
+                    )
+                })?,
             },
         )
     }

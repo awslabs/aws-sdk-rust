@@ -19,16 +19,22 @@ impl DiscoverInputSchemaOutput {
         self.input_schema.as_ref()
     }
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    pub fn parsed_input_records(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.parsed_input_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parsed_input_records.is_none()`.
+    pub fn parsed_input_records(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.parsed_input_records.as_deref().unwrap_or_default()
     }
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    pub fn processed_input_records(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.processed_input_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_input_records.is_none()`.
+    pub fn processed_input_records(&self) -> &[::std::string::String] {
+        self.processed_input_records.as_deref().unwrap_or_default()
     }
     /// <p>The raw stream data that was sampled to infer the schema.</p>
-    pub fn raw_input_records(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.raw_input_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.raw_input_records.is_none()`.
+    pub fn raw_input_records(&self) -> &[::std::string::String] {
+        self.raw_input_records.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DiscoverInputSchemaOutput {

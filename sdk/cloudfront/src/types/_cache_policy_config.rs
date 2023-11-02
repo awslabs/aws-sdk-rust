@@ -13,7 +13,7 @@ pub struct CachePolicyConfig {
     /// <p>A comment to describe the cache policy. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A unique name to identify the cache policy.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The default amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. CloudFront uses this value as the object's time to live (TTL) only when the origin does <i>not</i> send <code>Cache-Control</code> or <code>Expires</code> headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The default value for this field is 86400 seconds (one day). If the value of <code>MinTTL</code> is more than 86400 seconds, then the default value for this field is the same as the value of <code>MinTTL</code>.</p>
     pub default_ttl: ::std::option::Option<i64>,
@@ -21,7 +21,7 @@ pub struct CachePolicyConfig {
     /// <p>The default value for this field is 31536000 seconds (one year). If the value of <code>MinTTL</code> or <code>DefaultTTL</code> is more than 31536000 seconds, then the default value for this field is the same as the value of <code>DefaultTTL</code>.</p>
     pub max_ttl: ::std::option::Option<i64>,
     /// <p>The minimum amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub min_ttl: ::std::option::Option<i64>,
+    pub min_ttl: i64,
     /// <p>The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache key are also included in requests that CloudFront sends to the origin.</p>
     pub parameters_in_cache_key_and_forwarded_to_origin: ::std::option::Option<crate::types::ParametersInCacheKeyAndForwardedToOrigin>,
 }
@@ -31,8 +31,9 @@ impl CachePolicyConfig {
         self.comment.as_deref()
     }
     /// <p>A unique name to identify the cache policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The default amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. CloudFront uses this value as the object's time to live (TTL) only when the origin does <i>not</i> send <code>Cache-Control</code> or <code>Expires</code> headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The default value for this field is 86400 seconds (one day). If the value of <code>MinTTL</code> is more than 86400 seconds, then the default value for this field is the same as the value of <code>MinTTL</code>.</p>
@@ -45,7 +46,7 @@ impl CachePolicyConfig {
         self.max_ttl
     }
     /// <p>The minimum amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn min_ttl(&self) -> ::std::option::Option<i64> {
+    pub fn min_ttl(&self) -> i64 {
         self.min_ttl
     }
     /// <p>The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache key are also included in requests that CloudFront sends to the origin.</p>
@@ -87,6 +88,7 @@ impl CachePolicyConfigBuilder {
         &self.comment
     }
     /// <p>A unique name to identify the cache policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +137,7 @@ impl CachePolicyConfigBuilder {
         &self.max_ttl
     }
     /// <p>The minimum amount of time, in seconds, that you want objects to stay in the CloudFront cache before CloudFront sends another request to the origin to see if the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn min_ttl(mut self, input: i64) -> Self {
         self.min_ttl = ::std::option::Option::Some(input);
         self
@@ -168,14 +171,27 @@ impl CachePolicyConfigBuilder {
         &self.parameters_in_cache_key_and_forwarded_to_origin
     }
     /// Consumes the builder and constructs a [`CachePolicyConfig`](crate::types::CachePolicyConfig).
-    pub fn build(self) -> crate::types::CachePolicyConfig {
-        crate::types::CachePolicyConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CachePolicyConfigBuilder::name)
+    /// - [`min_ttl`](crate::types::builders::CachePolicyConfigBuilder::min_ttl)
+    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CachePolicyConfig {
             comment: self.comment,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CachePolicyConfig",
+                )
+            })?,
             default_ttl: self.default_ttl,
             max_ttl: self.max_ttl,
-            min_ttl: self.min_ttl,
+            min_ttl: self.min_ttl.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "min_ttl",
+                    "min_ttl was not specified but it is required when building CachePolicyConfig",
+                )
+            })?,
             parameters_in_cache_key_and_forwarded_to_origin: self.parameters_in_cache_key_and_forwarded_to_origin,
-        }
+        })
     }
 }

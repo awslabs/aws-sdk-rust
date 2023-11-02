@@ -14,8 +14,10 @@ pub struct Subtitles {
 }
 impl Subtitles {
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
-    pub fn formats(&self) -> ::std::option::Option<&[crate::types::SubtitleFormat]> {
-        self.formats.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.formats.is_none()`.
+    pub fn formats(&self) -> &[crate::types::SubtitleFormat] {
+        self.formats.as_deref().unwrap_or_default()
     }
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>

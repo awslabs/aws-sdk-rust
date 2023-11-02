@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    pub vehicle_name: ::std::option::Option<::std::string::String>,
+    pub vehicle_name: ::std::string::String,
 }
 impl GetVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
-        self.vehicle_name.as_deref()
+    pub fn vehicle_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vehicle_name.deref()
     }
 }
 impl GetVehicleInput {
@@ -27,6 +28,7 @@ pub struct GetVehicleInputBuilder {
 }
 impl GetVehicleInputBuilder {
     /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,16 @@ impl GetVehicleInputBuilder {
         &self.vehicle_name
     }
     /// Consumes the builder and constructs a [`GetVehicleInput`](crate::operation::get_vehicle::GetVehicleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicle_name`](crate::operation::get_vehicle::builders::GetVehicleInputBuilder::vehicle_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_vehicle::GetVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vehicle::GetVehicleInput {
-            vehicle_name: self.vehicle_name,
+            vehicle_name: self.vehicle_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicle_name",
+                    "vehicle_name was not specified but it is required when building GetVehicleInput",
+                )
+            })?,
         })
     }
 }

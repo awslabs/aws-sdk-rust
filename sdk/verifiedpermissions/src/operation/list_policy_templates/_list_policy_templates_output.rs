@@ -6,7 +6,7 @@ pub struct ListPolicyTemplatesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of the policy templates in the specified policy store.</p>
-    pub policy_templates: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTemplateItem>>,
+    pub policy_templates: ::std::vec::Vec<crate::types::PolicyTemplateItem>,
     _request_id: Option<String>,
 }
 impl ListPolicyTemplatesOutput {
@@ -15,8 +15,9 @@ impl ListPolicyTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of the policy templates in the specified policy store.</p>
-    pub fn policy_templates(&self) -> ::std::option::Option<&[crate::types::PolicyTemplateItem]> {
-        self.policy_templates.as_deref()
+    pub fn policy_templates(&self) -> &[crate::types::PolicyTemplateItem] {
+        use std::ops::Deref;
+        self.policy_templates.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPolicyTemplatesOutput {
@@ -84,11 +85,21 @@ impl ListPolicyTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPolicyTemplatesOutput`](crate::operation::list_policy_templates::ListPolicyTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_policy_templates::ListPolicyTemplatesOutput {
-        crate::operation::list_policy_templates::ListPolicyTemplatesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_templates`](crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder::policy_templates)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_policy_templates::ListPolicyTemplatesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_policy_templates::ListPolicyTemplatesOutput {
             next_token: self.next_token,
-            policy_templates: self.policy_templates,
+            policy_templates: self.policy_templates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_templates",
+                    "policy_templates was not specified but it is required when building ListPolicyTemplatesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

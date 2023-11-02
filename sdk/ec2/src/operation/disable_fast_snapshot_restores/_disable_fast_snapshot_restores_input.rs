@@ -12,12 +12,16 @@ pub struct DisableFastSnapshotRestoresInput {
 }
 impl DisableFastSnapshotRestoresInput {
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
-    pub fn source_snapshot_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_snapshot_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_snapshot_ids.is_none()`.
+    pub fn source_snapshot_ids(&self) -> &[::std::string::String] {
+        self.source_snapshot_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {

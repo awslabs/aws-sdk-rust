@@ -3,20 +3,20 @@ pub fn ser_line_item_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LineItemFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute {
-        object.key("Attribute").string(var_1.as_str());
+    {
+        object.key("Attribute").string(input.attribute.as_str());
     }
-    if let Some(var_2) = &input.match_option {
-        object.key("MatchOption").string(var_2.as_str());
+    {
+        object.key("MatchOption").string(input.match_option.as_str());
     }
-    if let Some(var_3) = &input.values {
-        let mut array_4 = object.key("Values").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("Values").start_array();
+        for item_2 in &input.values {
             {
-                array_4.value().string(item_5.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::line_item_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

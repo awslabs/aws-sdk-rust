@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data type of the column.</p>
-    pub r#type: ::std::option::Option<crate::types::InputColumnDataType>,
+    pub r#type: crate::types::InputColumnDataType,
 }
 impl InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InputColumnDataType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::InputColumnDataType {
+        &self.r#type
     }
 }
 impl InputColumn {
@@ -35,6 +36,7 @@ pub struct InputColumnBuilder {
 }
 impl InputColumnBuilder {
     /// <p>The name of this column in the underlying data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl InputColumnBuilder {
         &self.name
     }
     /// <p>The data type of the column.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InputColumnDataType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl InputColumnBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`InputColumn`](crate::types::InputColumn).
-    pub fn build(self) -> crate::types::InputColumn {
-        crate::types::InputColumn {
-            name: self.name,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::InputColumnBuilder::name)
+    /// - [`r#type`](crate::types::builders::InputColumnBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputColumn, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputColumn {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building InputColumn",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building InputColumn",
+                )
+            })?,
+        })
     }
 }

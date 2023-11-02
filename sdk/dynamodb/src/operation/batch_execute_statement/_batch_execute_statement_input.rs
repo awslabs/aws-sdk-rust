@@ -15,8 +15,10 @@ pub struct BatchExecuteStatementInput {
 }
 impl BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
-    pub fn statements(&self) -> ::std::option::Option<&[crate::types::BatchStatementRequest]> {
-        self.statements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statements.is_none()`.
+    pub fn statements(&self) -> &[crate::types::BatchStatementRequest] {
+        self.statements.as_deref().unwrap_or_default()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>

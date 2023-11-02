@@ -13,16 +13,22 @@ pub struct TreeMapAggregatedFieldWells {
 }
 impl TreeMapAggregatedFieldWells {
     /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::DimensionField] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
-    pub fn sizes(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.sizes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sizes.is_none()`.
+    pub fn sizes(&self) -> &[crate::types::MeasureField] {
+        self.sizes.as_deref().unwrap_or_default()
     }
     /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
-    pub fn colors(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.colors.is_none()`.
+    pub fn colors(&self) -> &[crate::types::MeasureField] {
+        self.colors.as_deref().unwrap_or_default()
     }
 }
 impl TreeMapAggregatedFieldWells {

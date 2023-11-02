@@ -5,30 +5,30 @@ pub fn ser_object_lambda_configuration(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.supporting_access_point {
+    {
         let mut inner_writer = scope.start_el("SupportingAccessPoint").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.supporting_access_point.as_str());
     }
     if input.cloud_watch_metrics_enabled {
         let mut inner_writer = scope.start_el("CloudWatchMetricsEnabled").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.cloud_watch_metrics_enabled).encode());
     }
-    if let Some(var_2) = &input.allowed_features {
+    if let Some(var_1) = &input.allowed_features {
         let mut inner_writer = scope.start_el("AllowedFeatures").finish();
-        for list_item_3 in var_2 {
+        for list_item_2 in var_1 {
             {
                 let mut inner_writer = inner_writer.start_el("AllowedFeature").finish();
-                inner_writer.data(list_item_3.as_str());
+                inner_writer.data(list_item_2.as_str());
             }
         }
     }
-    if let Some(var_4) = &input.transformation_configurations {
+    {
         let mut inner_writer = scope.start_el("TransformationConfigurations").finish();
-        for list_item_5 in var_4 {
+        for list_item_3 in &input.transformation_configurations {
             {
                 let inner_writer = inner_writer.start_el("TransformationConfiguration");
                 crate::protocol_serde::shape_object_lambda_transformation_configuration::ser_object_lambda_transformation_configuration(
-                    list_item_5,
+                    list_item_3,
                     inner_writer,
                 )?
             }
@@ -38,6 +38,7 @@ pub fn ser_object_lambda_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_object_lambda_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ObjectLambdaConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -46,7 +47,7 @@ pub fn de_object_lambda_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SupportingAccessPoint") /* SupportingAccessPoint com.amazonaws.s3control#ObjectLambdaConfiguration$SupportingAccessPoint */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -55,11 +56,11 @@ pub fn de_object_lambda_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_supporting_access_point(var_6);
+                builder = builder.set_supporting_access_point(var_4);
             }
             ,
             s if s.matches("CloudWatchMetricsEnabled") /* CloudWatchMetricsEnabled com.amazonaws.s3control#ObjectLambdaConfiguration$CloudWatchMetricsEnabled */ =>  {
-                let var_7 =
+                let var_5 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -70,31 +71,33 @@ pub fn de_object_lambda_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_cloud_watch_metrics_enabled(var_7);
+                builder = builder.set_cloud_watch_metrics_enabled(var_5);
             }
             ,
             s if s.matches("AllowedFeatures") /* AllowedFeatures com.amazonaws.s3control#ObjectLambdaConfiguration$AllowedFeatures */ =>  {
-                let var_8 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_object_lambda_allowed_features_list::de_object_lambda_allowed_features_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_features(var_8);
+                builder = builder.set_allowed_features(var_6);
             }
             ,
             s if s.matches("TransformationConfigurations") /* TransformationConfigurations com.amazonaws.s3control#ObjectLambdaConfiguration$TransformationConfigurations */ =>  {
-                let var_9 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_object_lambda_transformation_configurations_list::de_object_lambda_transformation_configurations_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_transformation_configurations(var_9);
+                builder = builder.set_transformation_configurations(var_7);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::object_lambda_configuration_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

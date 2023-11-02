@@ -31,8 +31,10 @@ impl ProjectDescription {
         self.status.as_ref()
     }
     /// <p> Information about the training and test datasets in the project. </p>
-    pub fn datasets(&self) -> ::std::option::Option<&[crate::types::DatasetMetadata]> {
-        self.datasets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
+    pub fn datasets(&self) -> &[crate::types::DatasetMetadata] {
+        self.datasets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the project that is being customized.</p>
     pub fn feature(&self) -> ::std::option::Option<&crate::types::CustomizationFeature> {

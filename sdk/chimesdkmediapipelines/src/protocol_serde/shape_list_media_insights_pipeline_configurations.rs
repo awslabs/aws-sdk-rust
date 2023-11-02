@@ -36,8 +36,8 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ForbiddenException({
@@ -52,8 +52,8 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceLimitExceededException" => crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ResourceLimitExceededException({
@@ -68,8 +68,8 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ServiceFailureException({
@@ -84,8 +84,8 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ServiceUnavailableException({
@@ -100,8 +100,8 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::ThrottledClientException({
@@ -116,8 +116,8 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::UnauthorizedClientException({
@@ -132,8 +132,8 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError::generic(generic)

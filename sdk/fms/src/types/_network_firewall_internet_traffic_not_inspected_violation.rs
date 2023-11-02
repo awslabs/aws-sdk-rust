@@ -49,8 +49,10 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
         self.route_table_id.as_deref()
     }
     /// <p>The route or routes that are in violation.</p>
-    pub fn violating_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.violating_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violating_routes.is_none()`.
+    pub fn violating_routes(&self) -> &[crate::types::Route] {
+        self.violating_routes.as_deref().unwrap_or_default()
     }
     /// <p>Information about whether the route table is used in another Availability Zone.</p>
     pub fn is_route_table_used_in_different_az(&self) -> bool {
@@ -69,12 +71,16 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
         self.firewall_subnet_id.as_deref()
     }
     /// <p>The firewall subnet routes that are expected.</p>
-    pub fn expected_firewall_subnet_routes(&self) -> ::std::option::Option<&[crate::types::ExpectedRoute]> {
-        self.expected_firewall_subnet_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expected_firewall_subnet_routes.is_none()`.
+    pub fn expected_firewall_subnet_routes(&self) -> &[crate::types::ExpectedRoute] {
+        self.expected_firewall_subnet_routes.as_deref().unwrap_or_default()
     }
     /// <p>The actual firewall subnet routes.</p>
-    pub fn actual_firewall_subnet_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.actual_firewall_subnet_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actual_firewall_subnet_routes.is_none()`.
+    pub fn actual_firewall_subnet_routes(&self) -> &[crate::types::Route] {
+        self.actual_firewall_subnet_routes.as_deref().unwrap_or_default()
     }
     /// <p>The internet gateway ID.</p>
     pub fn internet_gateway_id(&self) -> ::std::option::Option<&str> {
@@ -85,12 +91,16 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
         self.current_internet_gateway_route_table.as_deref()
     }
     /// <p>The internet gateway routes that are expected.</p>
-    pub fn expected_internet_gateway_routes(&self) -> ::std::option::Option<&[crate::types::ExpectedRoute]> {
-        self.expected_internet_gateway_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expected_internet_gateway_routes.is_none()`.
+    pub fn expected_internet_gateway_routes(&self) -> &[crate::types::ExpectedRoute] {
+        self.expected_internet_gateway_routes.as_deref().unwrap_or_default()
     }
     /// <p>The actual internet gateway routes.</p>
-    pub fn actual_internet_gateway_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.actual_internet_gateway_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actual_internet_gateway_routes.is_none()`.
+    pub fn actual_internet_gateway_routes(&self) -> &[crate::types::Route] {
+        self.actual_internet_gateway_routes.as_deref().unwrap_or_default()
     }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

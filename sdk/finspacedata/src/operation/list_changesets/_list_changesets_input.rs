@@ -42,6 +42,7 @@ pub struct ListChangesetsInputBuilder {
 }
 impl ListChangesetsInputBuilder {
     /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self

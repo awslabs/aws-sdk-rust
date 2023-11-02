@@ -11,8 +11,10 @@ pub struct ListTestGridProjectsOutput {
 }
 impl ListTestGridProjectsOutput {
     /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
-    pub fn test_grid_projects(&self) -> ::std::option::Option<&[crate::types::TestGridProject]> {
-        self.test_grid_projects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.test_grid_projects.is_none()`.
+    pub fn test_grid_projects(&self) -> &[crate::types::TestGridProject] {
+        self.test_grid_projects.as_deref().unwrap_or_default()
     }
     /// <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

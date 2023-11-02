@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The maximum number of resource policies to display for each page of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to continue to the next page of results.</p>
@@ -12,8 +12,9 @@ pub struct GetResourcePoliciesInput {
 }
 impl GetResourcePoliciesInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The maximum number of resource policies to display for each page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -41,6 +42,7 @@ pub struct GetResourcePoliciesInputBuilder {
 }
 impl GetResourcePoliciesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the response plan with the attached resource policy. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,12 +85,19 @@ impl GetResourcePoliciesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::operation::get_resource_policies::builders::GetResourcePoliciesInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resource_policies::GetResourcePoliciesInput {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building GetResourcePoliciesInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
         })

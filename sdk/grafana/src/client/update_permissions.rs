@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdatePermissions`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`update_instruction_batch(UpdateInstruction)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::update_instruction_batch) / [`set_update_instruction_batch(Option<Vec<UpdateInstruction>>)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::set_update_instruction_batch): <p>An array of structures that contain the permission updates to make.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::set_workspace_id): <p>The ID of the workspace to update.</p>
+    ///   - [`update_instruction_batch(UpdateInstruction)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::update_instruction_batch) / [`set_update_instruction_batch(Vec<UpdateInstruction>)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::set_update_instruction_batch):<br>required: **true**<br><p>An array of structures that contain the permission updates to make.</p><br>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::workspace_id) / [`set_workspace_id(impl Into<String>)`](crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace to update.</p><br>
     /// - On success, responds with [`UpdatePermissionsOutput`](crate::operation::update_permissions::UpdatePermissionsOutput) with field(s):
-    ///   - [`errors(Option<Vec<UpdateError>>)`](crate::operation::update_permissions::UpdatePermissionsOutput::errors): <p>An array of structures that contain the errors from the operation, if any.</p>
+    ///   - [`errors(Vec<UpdateError>)`](crate::operation::update_permissions::UpdatePermissionsOutput::errors): <p>An array of structures that contain the errors from the operation, if any.</p>
     /// - On failure, responds with [`SdkError<UpdatePermissionsError>`](crate::operation::update_permissions::UpdatePermissionsError)
     pub fn update_permissions(&self) -> crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder {
         crate::operation::update_permissions::builders::UpdatePermissionsFluentBuilder::new(self.handle.clone())

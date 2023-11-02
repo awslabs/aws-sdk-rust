@@ -59,16 +59,22 @@ impl RoleDetail {
         self.assume_role_policy_document.as_deref()
     }
     /// <p>A list of instance profiles that contain this role.</p>
-    pub fn instance_profile_list(&self) -> ::std::option::Option<&[crate::types::InstanceProfile]> {
-        self.instance_profile_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_profile_list.is_none()`.
+    pub fn instance_profile_list(&self) -> &[crate::types::InstanceProfile] {
+        self.instance_profile_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of inline policies embedded in the role. These policies are the role's access (permissions) policies.</p>
-    pub fn role_policy_list(&self) -> ::std::option::Option<&[crate::types::PolicyDetail]> {
-        self.role_policy_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_policy_list.is_none()`.
+    pub fn role_policy_list(&self) -> &[crate::types::PolicyDetail] {
+        self.role_policy_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of managed policies attached to the role. These policies are the role's access (permissions) policies.</p>
-    pub fn attached_managed_policies(&self) -> ::std::option::Option<&[crate::types::AttachedPolicy]> {
-        self.attached_managed_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
+    pub fn attached_managed_policies(&self) -> &[crate::types::AttachedPolicy] {
+        self.attached_managed_policies.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
@@ -76,8 +82,10 @@ impl RoleDetail {
         self.permissions_boundary.as_ref()
     }
     /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>.</p>
     pub fn role_last_used(&self) -> ::std::option::Option<&crate::types::RoleLastUsed> {

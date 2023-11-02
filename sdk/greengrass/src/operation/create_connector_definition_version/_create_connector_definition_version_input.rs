@@ -20,8 +20,10 @@ impl CreateConnectorDefinitionVersionInput {
         self.connector_definition_id.as_deref()
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn connectors(&self) -> ::std::option::Option<&[crate::types::Connector]> {
-        self.connectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectors.is_none()`.
+    pub fn connectors(&self) -> &[crate::types::Connector] {
+        self.connectors.as_deref().unwrap_or_default()
     }
 }
 impl CreateConnectorDefinitionVersionInput {
@@ -55,6 +57,7 @@ impl CreateConnectorDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the connector definition.
+    /// This field is required.
     pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self

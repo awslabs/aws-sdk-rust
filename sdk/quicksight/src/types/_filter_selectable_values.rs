@@ -9,8 +9,10 @@ pub struct FilterSelectableValues {
 }
 impl FilterSelectableValues {
     /// <p>The values that are used in the <code>FilterSelectableValues</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl FilterSelectableValues {

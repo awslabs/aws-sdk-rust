@@ -56,8 +56,10 @@ impl CreateMatchmakingConfigurationInput {
     /// ::gamesessionqueue/
     /// <queue name></queue>
     /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
-    pub fn game_session_queue_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.game_session_queue_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_session_queue_arns.is_none()`.
+    pub fn game_session_queue_arns(&self) -> &[::std::string::String] {
+        self.game_session_queue_arns.as_deref().unwrap_or_default()
     }
     /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
     pub fn request_timeout_seconds(&self) -> ::std::option::Option<i32> {
@@ -88,8 +90,10 @@ impl CreateMatchmakingConfigurationInput {
         self.custom_event_data.as_deref()
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-    pub fn game_properties(&self) -> ::std::option::Option<&[crate::types::GameProperty]> {
-        self.game_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
+    pub fn game_properties(&self) -> &[crate::types::GameProperty] {
+        self.game_properties.as_deref().unwrap_or_default()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
     pub fn game_session_data(&self) -> ::std::option::Option<&str> {
@@ -108,8 +112,10 @@ impl CreateMatchmakingConfigurationInput {
         self.flex_match_mode.as_ref()
     }
     /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateMatchmakingConfigurationInput {
@@ -141,6 +147,7 @@ pub struct CreateMatchmakingConfigurationInputBuilder {
 }
 impl CreateMatchmakingConfigurationInputBuilder {
     /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -201,6 +208,7 @@ impl CreateMatchmakingConfigurationInputBuilder {
         &self.game_session_queue_arns
     }
     /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
+    /// This field is required.
     pub fn request_timeout_seconds(mut self, input: i32) -> Self {
         self.request_timeout_seconds = ::std::option::Option::Some(input);
         self
@@ -229,6 +237,7 @@ impl CreateMatchmakingConfigurationInputBuilder {
         &self.acceptance_timeout_seconds
     }
     /// <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
+    /// This field is required.
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.acceptance_required = ::std::option::Option::Some(input);
         self
@@ -243,6 +252,7 @@ impl CreateMatchmakingConfigurationInputBuilder {
         &self.acceptance_required
     }
     /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
+    /// This field is required.
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self

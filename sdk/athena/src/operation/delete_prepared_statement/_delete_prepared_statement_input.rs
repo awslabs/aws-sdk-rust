@@ -34,6 +34,7 @@ pub struct DeletePreparedStatementInputBuilder {
 }
 impl DeletePreparedStatementInputBuilder {
     /// <p>The name of the prepared statement to delete.</p>
+    /// This field is required.
     pub fn statement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeletePreparedStatementInputBuilder {
         &self.statement_name
     }
     /// <p>The workgroup to which the statement to be deleted belongs.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self

@@ -41,8 +41,10 @@ impl ApplicationConfigurationUpdate {
         self.application_snapshot_configuration_update.as_ref()
     }
     /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
-    pub fn vpc_configuration_updates(&self) -> ::std::option::Option<&[crate::types::VpcConfigurationUpdate]> {
-        self.vpc_configuration_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_configuration_updates.is_none()`.
+    pub fn vpc_configuration_updates(&self) -> &[crate::types::VpcConfigurationUpdate] {
+        self.vpc_configuration_updates.as_deref().unwrap_or_default()
     }
     /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub fn zeppelin_application_configuration_update(&self) -> ::std::option::Option<&crate::types::ZeppelinApplicationConfigurationUpdate> {

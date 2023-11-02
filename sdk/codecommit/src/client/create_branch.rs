@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateBranch`](crate::operation::create_branch::builders::CreateBranchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`repository_name(impl Into<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::set_repository_name): <p>The name of the repository in which you want to create the new branch.</p>
-    ///   - [`branch_name(impl Into<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::set_branch_name): <p>The name of the new branch to create.</p>
-    ///   - [`commit_id(impl Into<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::commit_id) / [`set_commit_id(Option<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::set_commit_id): <p>The ID of the commit to point the new branch to.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository in which you want to create the new branch.</p><br>
+    ///   - [`branch_name(impl Into<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::set_branch_name):<br>required: **true**<br><p>The name of the new branch to create.</p><br>
+    ///   - [`commit_id(impl Into<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::commit_id) / [`set_commit_id(Option<String>)`](crate::operation::create_branch::builders::CreateBranchFluentBuilder::set_commit_id):<br>required: **true**<br><p>The ID of the commit to point the new branch to.</p><br>
     /// - On success, responds with [`CreateBranchOutput`](crate::operation::create_branch::CreateBranchOutput)
     /// - On failure, responds with [`SdkError<CreateBranchError>`](crate::operation::create_branch::CreateBranchError)
     pub fn create_branch(&self) -> crate::operation::create_branch::builders::CreateBranchFluentBuilder {

@@ -14,8 +14,10 @@ impl AttachLoadBalancerTargetGroupsInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn target_group_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_group_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_ar_ns.is_none()`.
+    pub fn target_group_ar_ns(&self) -> &[::std::string::String] {
+        self.target_group_ar_ns.as_deref().unwrap_or_default()
     }
 }
 impl AttachLoadBalancerTargetGroupsInput {
@@ -34,6 +36,7 @@ pub struct AttachLoadBalancerTargetGroupsInputBuilder {
 }
 impl AttachLoadBalancerTargetGroupsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self

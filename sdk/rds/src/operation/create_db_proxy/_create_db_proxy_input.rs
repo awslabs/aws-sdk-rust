@@ -34,20 +34,26 @@ impl CreateDbProxyInput {
         self.engine_family.as_ref()
     }
     /// <p>The authorization mechanism that the proxy uses.</p>
-    pub fn auth(&self) -> ::std::option::Option<&[crate::types::UserAuthConfig]> {
-        self.auth.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth.is_none()`.
+    pub fn auth(&self) -> &[crate::types::UserAuthConfig] {
+        self.auth.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    pub fn vpc_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
+    pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
+        self.vpc_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn require_tls(&self) -> ::std::option::Option<bool> {
@@ -62,8 +68,10 @@ impl CreateDbProxyInput {
         self.debug_logging
     }
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDbProxyInput {
@@ -90,6 +98,7 @@ pub struct CreateDbProxyInputBuilder {
 }
 impl CreateDbProxyInputBuilder {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_proxy_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +113,7 @@ impl CreateDbProxyInputBuilder {
         &self.db_proxy_name
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
+    /// This field is required.
     pub fn engine_family(mut self, input: crate::types::EngineFamily) -> Self {
         self.engine_family = ::std::option::Option::Some(input);
         self
@@ -138,6 +148,7 @@ impl CreateDbProxyInputBuilder {
         &self.auth
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

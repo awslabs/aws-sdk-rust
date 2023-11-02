@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoExportRevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl AutoExportRevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub fn key_pattern(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AutoExportRevisionDestinationEntryBuilder {
 }
 impl AutoExportRevisionDestinationEntryBuilder {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AutoExportRevisionDestinationEntryBuilder {
         &self.key_pattern
     }
     /// Consumes the builder and constructs a [`AutoExportRevisionDestinationEntry`](crate::types::AutoExportRevisionDestinationEntry).
-    pub fn build(self) -> crate::types::AutoExportRevisionDestinationEntry {
-        crate::types::AutoExportRevisionDestinationEntry {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::AutoExportRevisionDestinationEntryBuilder::bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoExportRevisionDestinationEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutoExportRevisionDestinationEntry {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building AutoExportRevisionDestinationEntry",
+                )
+            })?,
             key_pattern: self.key_pattern,
-        }
+        })
     }
 }

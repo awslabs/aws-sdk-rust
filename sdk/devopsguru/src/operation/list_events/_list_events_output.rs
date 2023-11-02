@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventsOutput {
     /// <p> A list of the requested events. </p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::vec::Vec<crate::types::Event>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEventsOutput {
     /// <p> A list of the requested events. </p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::Event] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEventsOutput`](crate::operation::list_events::ListEventsOutput).
-    pub fn build(self) -> crate::operation::list_events::ListEventsOutput {
-        crate::operation::list_events::ListEventsOutput {
-            events: self.events,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`events`](crate::operation::list_events::builders::ListEventsOutputBuilder::events)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_events::ListEventsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_events::ListEventsOutput {
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building ListEventsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

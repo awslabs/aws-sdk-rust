@@ -32,7 +32,9 @@ pub fn de_get_object_tagging_http_response(
         );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_object_tagging_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_object_tagging::GetObjectTaggingError::unhandled)?
     })
 }
 

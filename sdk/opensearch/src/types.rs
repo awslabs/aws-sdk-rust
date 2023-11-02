@@ -115,6 +115,10 @@ pub use crate::types::_snapshot_options_status::SnapshotOptionsStatus;
 
 pub use crate::types::_snapshot_options::SnapshotOptions;
 
+pub use crate::types::_ip_address_type_status::IpAddressTypeStatus;
+
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_access_policies_status::AccessPoliciesStatus;
 
 pub use crate::types::_ebs_options_status::EbsOptionsStatus;
@@ -416,6 +420,10 @@ mod _instance_count_limits;
 mod _instance_limits;
 
 mod _instance_type_details;
+
+mod _ip_address_type;
+
+mod _ip_address_type_status;
 
 mod _limits;
 

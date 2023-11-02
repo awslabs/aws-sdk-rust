@@ -62,6 +62,7 @@ pub struct UpdateBotLocaleInputBuilder {
 }
 impl UpdateBotLocaleInputBuilder {
     /// <p>The unique identifier of the bot that contains the locale.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateBotLocaleInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl UpdateBotLocaleInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl UpdateBotLocaleInputBuilder {
         &self.description
     }
     /// <p>The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
+    /// This field is required.
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
         self.nlu_intent_confidence_threshold = ::std::option::Option::Some(input);
         self

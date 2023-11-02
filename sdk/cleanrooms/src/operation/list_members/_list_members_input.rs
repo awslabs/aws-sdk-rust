@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMembersInput {
     /// <p>The identifier of the collaboration in which the members are listed.</p>
-    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
+    pub collaboration_identifier: ::std::string::String,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -12,8 +12,9 @@ pub struct ListMembersInput {
 }
 impl ListMembersInput {
     /// <p>The identifier of the collaboration in which the members are listed.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
-        self.collaboration_identifier.as_deref()
+    pub fn collaboration_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_identifier.deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct ListMembersInputBuilder {
 }
 impl ListMembersInputBuilder {
     /// <p>The identifier of the collaboration in which the members are listed.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,9 +85,16 @@ impl ListMembersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_identifier`](crate::operation::list_members::builders::ListMembersInputBuilder::collaboration_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
-            collaboration_identifier: self.collaboration_identifier,
+            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collaboration_identifier",
+                    "collaboration_identifier was not specified but it is required when building ListMembersInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
         })

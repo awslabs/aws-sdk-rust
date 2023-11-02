@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::schedule_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -63,8 +65,8 @@ pub fn ser_schedule_configuration(
     if let Some(var_2) = &input.object {
         object.key("Object").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.schedule_expression {
-        object.key("ScheduleExpression").string(var_3.as_str());
+    {
+        object.key("ScheduleExpression").string(input.schedule_expression.as_str());
     }
     Ok(())
 }

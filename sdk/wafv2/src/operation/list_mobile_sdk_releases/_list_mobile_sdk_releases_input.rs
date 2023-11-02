@@ -41,6 +41,7 @@ pub struct ListMobileSdkReleasesInputBuilder {
 }
 impl ListMobileSdkReleasesInputBuilder {
     /// <p>The device platform to retrieve the list for.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self

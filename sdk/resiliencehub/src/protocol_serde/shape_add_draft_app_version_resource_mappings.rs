@@ -144,7 +144,9 @@ pub fn de_add_draft_app_version_resource_mappings_http_response(
             crate::protocol_serde::shape_add_draft_app_version_resource_mappings::de_add_draft_app_version_resource_mappings(_response_body, output)
                 .map_err(crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::add_draft_app_version_resource_mappings_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError::unhandled)?
     })
 }
 

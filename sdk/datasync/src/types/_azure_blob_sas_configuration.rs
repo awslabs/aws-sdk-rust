@@ -8,14 +8,15 @@ pub struct AzureBlobSasConfiguration {
     /// <p>Specifies a SAS token that provides permissions to access your Azure Blob Storage.</p>
     /// <p>The token is part of the SAS URI string that comes after the storage resource URI and a question mark. A token looks something like this:</p>
     /// <p> <code>sp=r&amp;st=2023-12-20T14:54:52Z&amp;se=2023-12-20T22:54:52Z&amp;spr=https&amp;sv=2021-06-08&amp;sr=c&amp;sig=aBBKDWQvyuVcTPH9EBp%2FXTI9E%2F%2Fmq171%2BZU178wcwqU%3D</code> </p>
-    pub token: ::std::option::Option<::std::string::String>,
+    pub token: ::std::string::String,
 }
 impl AzureBlobSasConfiguration {
     /// <p>Specifies a SAS token that provides permissions to access your Azure Blob Storage.</p>
     /// <p>The token is part of the SAS URI string that comes after the storage resource URI and a question mark. A token looks something like this:</p>
     /// <p> <code>sp=r&amp;st=2023-12-20T14:54:52Z&amp;se=2023-12-20T22:54:52Z&amp;spr=https&amp;sv=2021-06-08&amp;sr=c&amp;sig=aBBKDWQvyuVcTPH9EBp%2FXTI9E%2F%2Fmq171%2BZU178wcwqU%3D</code> </p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
-        self.token.as_deref()
+    pub fn token(&self) -> &str {
+        use std::ops::Deref;
+        self.token.deref()
     }
 }
 impl ::std::fmt::Debug for AzureBlobSasConfiguration {
@@ -42,6 +43,7 @@ impl AzureBlobSasConfigurationBuilder {
     /// <p>Specifies a SAS token that provides permissions to access your Azure Blob Storage.</p>
     /// <p>The token is part of the SAS URI string that comes after the storage resource URI and a question mark. A token looks something like this:</p>
     /// <p> <code>sp=r&amp;st=2023-12-20T14:54:52Z&amp;se=2023-12-20T22:54:52Z&amp;spr=https&amp;sv=2021-06-08&amp;sr=c&amp;sig=aBBKDWQvyuVcTPH9EBp%2FXTI9E%2F%2Fmq171%2BZU178wcwqU%3D</code> </p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -60,8 +62,17 @@ impl AzureBlobSasConfigurationBuilder {
         &self.token
     }
     /// Consumes the builder and constructs a [`AzureBlobSasConfiguration`](crate::types::AzureBlobSasConfiguration).
-    pub fn build(self) -> crate::types::AzureBlobSasConfiguration {
-        crate::types::AzureBlobSasConfiguration { token: self.token }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`token`](crate::types::builders::AzureBlobSasConfigurationBuilder::token)
+    pub fn build(self) -> ::std::result::Result<crate::types::AzureBlobSasConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AzureBlobSasConfiguration {
+            token: self.token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "token",
+                    "token was not specified but it is required when building AzureBlobSasConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for AzureBlobSasConfigurationBuilder {

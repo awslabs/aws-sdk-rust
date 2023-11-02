@@ -24,26 +24,6 @@ use tracing::trace;
 enum AuthOrchestrationError {
     NoMatchingAuthScheme,
     BadAuthSchemeEndpointConfig(Cow<'static, str>),
-    AuthSchemeEndpointConfigMismatch(String),
-}
-
-impl AuthOrchestrationError {
-    fn auth_scheme_endpoint_config_mismatch<'a>(
-        auth_schemes: impl Iterator<Item = &'a Document>,
-    ) -> Self {
-        Self::AuthSchemeEndpointConfigMismatch(
-            auth_schemes
-                .flat_map(|s| match s {
-                    Document::Object(map) => match map.get("name") {
-                        Some(Document::String(name)) => Some(name.as_str()),
-                        _ => None,
-                    },
-                    _ => None,
-                })
-                .collect::<Vec<_>>()
-                .join(", "),
-        )
-    }
 }
 
 impl fmt::Display for AuthOrchestrationError {
@@ -53,13 +33,6 @@ impl fmt::Display for AuthOrchestrationError {
                 "no auth scheme matched auth scheme options. This is a bug. Please file an issue.",
             ),
             Self::BadAuthSchemeEndpointConfig(message) => f.write_str(message),
-            Self::AuthSchemeEndpointConfigMismatch(supported_schemes) => {
-                write!(f,
-                    "selected auth scheme / endpoint config mismatch. Couldn't find `sigv4` endpoint config for this endpoint. \
-                    The authentication schemes supported by this endpoint are: {:?}",
-                    supported_schemes
-                )
-            }
         }
     }
 }
@@ -76,6 +49,9 @@ pub(super) async fn orchestrate_auth(
         .expect("auth scheme option resolver params must be set");
     let option_resolver = runtime_components.auth_scheme_option_resolver();
     let options = option_resolver.resolve_auth_scheme_options(params)?;
+    let endpoint = cfg
+        .load::<Endpoint>()
+        .expect("endpoint added to config bag by endpoint orchestrator");
 
     trace!(
         auth_scheme_option_resolver_params = ?params,
@@ -83,8 +59,11 @@ pub(super) async fn orchestrate_auth(
         "orchestrating auth",
     );
 
+    // Iterate over IDs of possibly-supported auth schemes
     for &scheme_id in options.as_ref() {
+        // For each ID, try to resolve the corresponding auth scheme.
         if let Some(auth_scheme) = runtime_components.auth_scheme(scheme_id) {
+            // Use the resolved auth scheme to resolve an identity
             if let Some(identity_resolver) = auth_scheme.identity_resolver(runtime_components) {
                 let signer = auth_scheme.signer();
                 trace!(
@@ -94,26 +73,29 @@ pub(super) async fn orchestrate_auth(
                     "resolved auth scheme, identity resolver, and signing implementation"
                 );
 
-                let endpoint = cfg
-                    .load::<Endpoint>()
-                    .expect("endpoint added to config bag by endpoint orchestrator");
-                let auth_scheme_endpoint_config =
-                    extract_endpoint_auth_scheme_config(endpoint, scheme_id)?;
-                trace!(auth_scheme_endpoint_config = ?auth_scheme_endpoint_config, "extracted auth scheme endpoint config");
+                match extract_endpoint_auth_scheme_config(endpoint, scheme_id) {
+                    Ok(auth_scheme_endpoint_config) => {
+                        trace!(auth_scheme_endpoint_config = ?auth_scheme_endpoint_config, "extracted auth scheme endpoint config");
 
-                let identity = identity_resolver.resolve_identity(cfg).await?;
-                trace!(identity = ?identity, "resolved identity");
+                        let identity = identity_resolver.resolve_identity(cfg).await?;
+                        trace!(identity = ?identity, "resolved identity");
 
-                trace!("signing request");
-                let request = ctx.request_mut().expect("set during serialization");
-                signer.sign_http_request(
-                    request,
-                    &identity,
-                    auth_scheme_endpoint_config,
-                    runtime_components,
-                    cfg,
-                )?;
-                return Ok(());
+                        trace!("signing request");
+                        let request = ctx.request_mut().expect("set during serialization");
+                        signer.sign_http_request(
+                            request,
+                            &identity,
+                            auth_scheme_endpoint_config,
+                            runtime_components,
+                            cfg,
+                        )?;
+                        return Ok(());
+                    }
+                    Err(AuthOrchestrationError::NoMatchingAuthScheme) => {
+                        continue;
+                    }
+                    Err(other_err) => return Err(other_err.into()),
+                }
             }
         }
     }
@@ -149,9 +131,7 @@ fn extract_endpoint_auth_scheme_config(
                 .and_then(Document::as_string);
             config_scheme_id == Some(scheme_id.as_str())
         })
-        .ok_or_else(|| {
-            AuthOrchestrationError::auth_scheme_endpoint_config_mismatch(auth_schemes.iter())
-        })?;
+        .ok_or(AuthOrchestrationError::NoMatchingAuthScheme)?;
     Ok(AuthSchemeEndpointConfig::from(Some(auth_scheme_config)))
 }
 

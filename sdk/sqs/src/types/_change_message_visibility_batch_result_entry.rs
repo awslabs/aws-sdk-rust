@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchResultEntry {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl ChangeMessageVisibilityBatchResultEntry {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ChangeMessageVisibilityBatchResultEntry {
@@ -28,6 +29,7 @@ pub struct ChangeMessageVisibilityBatchResultEntryBuilder {
 }
 impl ChangeMessageVisibilityBatchResultEntryBuilder {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,18 @@ impl ChangeMessageVisibilityBatchResultEntryBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchResultEntry`](crate::types::ChangeMessageVisibilityBatchResultEntry).
-    pub fn build(self) -> crate::types::ChangeMessageVisibilityBatchResultEntry {
-        crate::types::ChangeMessageVisibilityBatchResultEntry { id: self.id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ChangeMessageVisibilityBatchResultEntryBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ChangeMessageVisibilityBatchResultEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChangeMessageVisibilityBatchResultEntry {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ChangeMessageVisibilityBatchResultEntry",
+                )
+            })?,
+        })
     }
 }

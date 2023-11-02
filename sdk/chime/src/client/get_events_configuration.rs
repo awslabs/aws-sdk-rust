@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventsConfiguration`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::set_bot_id): <p>The bot ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
+    ///   - [`bot_id(impl Into<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::get_events_configuration::builders::GetEventsConfigurationFluentBuilder::set_bot_id):<br>required: **true**<br><p>The bot ID.</p><br>
     /// - On success, responds with [`GetEventsConfigurationOutput`](crate::operation::get_events_configuration::GetEventsConfigurationOutput) with field(s):
     ///   - [`events_configuration(Option<EventsConfiguration>)`](crate::operation::get_events_configuration::GetEventsConfigurationOutput::events_configuration): <p>The events configuration details.</p>
     /// - On failure, responds with [`SdkError<GetEventsConfigurationError>`](crate::operation::get_events_configuration::GetEventsConfigurationError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHostKey`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::set_server_id): <p>The identifier of the server that contains the host key that you want described.</p>
-    ///   - [`host_key_id(impl Into<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::host_key_id) / [`set_host_key_id(Option<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::set_host_key_id): <p>The identifier of the host key that you want described.</p>
+    ///   - [`server_id(impl Into<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::set_server_id):<br>required: **true**<br><p>The identifier of the server that contains the host key that you want described.</p><br>
+    ///   - [`host_key_id(impl Into<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::host_key_id) / [`set_host_key_id(Option<String>)`](crate::operation::describe_host_key::builders::DescribeHostKeyFluentBuilder::set_host_key_id):<br>required: **true**<br><p>The identifier of the host key that you want described.</p><br>
     /// - On success, responds with [`DescribeHostKeyOutput`](crate::operation::describe_host_key::DescribeHostKeyOutput) with field(s):
     ///   - [`host_key(Option<DescribedHostKey>)`](crate::operation::describe_host_key::DescribeHostKeyOutput::host_key): <p>Returns the details for the specified host key.</p>
     /// - On failure, responds with [`SdkError<DescribeHostKeyError>`](crate::operation::describe_host_key::DescribeHostKeyError)

@@ -11,8 +11,10 @@ pub struct ListStackSetOperationsOutput {
 }
 impl ListStackSetOperationsOutput {
     /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary information about operations for the specified stack set.</p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::StackSetOperationSummary]> {
-        self.summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
+    pub fn summaries(&self) -> &[crate::types::StackSetOperationSummary] {
+        self.summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListOperationResults</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

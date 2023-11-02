@@ -87,14 +87,10 @@ impl VerifyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
-            crate::operation::verify::VerifyOutput,
-            crate::operation::verify::VerifyError,
-            Self,
-        >,
+        crate::client::customize::CustomizableOperation<crate::operation::verify::VerifyOutput, crate::operation::verify::VerifyError, Self>,
         ::aws_smithy_http::result::SdkError<crate::operation::verify::VerifyError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

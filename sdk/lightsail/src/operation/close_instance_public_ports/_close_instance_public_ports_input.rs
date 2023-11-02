@@ -34,6 +34,7 @@ pub struct CloseInstancePublicPortsInputBuilder {
 }
 impl CloseInstancePublicPortsInputBuilder {
     /// <p>An object to describe the ports to close for the specified instance.</p>
+    /// This field is required.
     pub fn port_info(mut self, input: crate::types::PortInfo) -> Self {
         self.port_info = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl CloseInstancePublicPortsInputBuilder {
         &self.port_info
     }
     /// <p>The name of the instance for which to close ports.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

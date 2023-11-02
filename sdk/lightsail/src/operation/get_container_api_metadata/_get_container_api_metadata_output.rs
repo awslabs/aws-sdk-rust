@@ -9,8 +9,10 @@ pub struct GetContainerApiMetadataOutput {
 }
 impl GetContainerApiMetadataOutput {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata.is_none()`.
+    pub fn metadata(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.metadata.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContainerApiMetadataOutput {

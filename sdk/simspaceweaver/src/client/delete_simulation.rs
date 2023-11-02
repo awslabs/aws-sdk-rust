@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSimulation`](crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl Into<String>)`](crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::set_simulation): <p>The name of the simulation.</p>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::simulation) / [`set_simulation(impl Into<String>)`](crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation.</p><br>
     /// - On success, responds with [`DeleteSimulationOutput`](crate::operation::delete_simulation::DeleteSimulationOutput)
     /// - On failure, responds with [`SdkError<DeleteSimulationError>`](crate::operation::delete_simulation::DeleteSimulationError)
     pub fn delete_simulation(&self) -> crate::operation::delete_simulation::builders::DeleteSimulationFluentBuilder {

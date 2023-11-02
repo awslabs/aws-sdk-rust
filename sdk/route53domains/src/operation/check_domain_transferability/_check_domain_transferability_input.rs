@@ -64,6 +64,7 @@ impl CheckDomainTransferabilityInputBuilder {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

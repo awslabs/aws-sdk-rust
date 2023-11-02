@@ -11,8 +11,10 @@ pub struct SetVisibleToAllUsersInput {
 }
 impl SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
-    pub fn job_flow_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_flow_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
+    pub fn job_flow_ids(&self) -> &[::std::string::String] {
+        self.job_flow_ids.as_deref().unwrap_or_default()
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn visible_to_all_users(&self) -> ::std::option::Option<bool> {
@@ -55,6 +57,7 @@ impl SetVisibleToAllUsersInputBuilder {
         &self.job_flow_ids
     }
     /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
+    /// This field is required.
     pub fn visible_to_all_users(mut self, input: bool) -> Self {
         self.visible_to_all_users = ::std::option::Option::Some(input);
         self

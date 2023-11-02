@@ -17,6 +17,7 @@ pub fn ser_mixed_instances_policy(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_mixed_instances_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MixedInstancesPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {

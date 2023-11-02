@@ -12,8 +12,8 @@ pub fn ser_list_tags_for_resource_input(
     if let Some(var_2) = &input.next_token {
         object.key("nextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.resource_arn {
-        object.key("resourceARN").string(var_3.as_str());
+    {
+        object.key("resourceARN").string(input.resource_arn.as_str());
     }
     Ok(())
 }

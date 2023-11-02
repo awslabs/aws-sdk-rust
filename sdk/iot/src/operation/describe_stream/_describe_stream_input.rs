@@ -27,6 +27,7 @@ pub struct DescribeStreamInputBuilder {
 }
 impl DescribeStreamInputBuilder {
     /// <p>The stream ID.</p>
+    /// This field is required.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
         self

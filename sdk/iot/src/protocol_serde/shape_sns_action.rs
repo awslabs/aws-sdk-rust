@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sns_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -57,14 +59,14 @@ pub fn ser_sns_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnsAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.target_arn {
-        object.key("targetArn").string(var_1.as_str());
+    {
+        object.key("targetArn").string(input.target_arn.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("roleArn").string(var_2.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_3) = &input.message_format {
-        object.key("messageFormat").string(var_3.as_str());
+    if let Some(var_1) = &input.message_format {
+        object.key("messageFormat").string(var_1.as_str());
     }
     Ok(())
 }

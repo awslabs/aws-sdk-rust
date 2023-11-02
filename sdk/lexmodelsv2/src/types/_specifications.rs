@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Specifications {
     /// <p>The unique identifier assigned to the slot type.</p>
-    pub slot_type_id: ::std::option::Option<::std::string::String>,
+    pub slot_type_id: ::std::string::String,
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
     pub value_elicitation_setting: ::std::option::Option<crate::types::SubSlotValueElicitationSetting>,
 }
 impl Specifications {
     /// <p>The unique identifier assigned to the slot type.</p>
-    pub fn slot_type_id(&self) -> ::std::option::Option<&str> {
-        self.slot_type_id.as_deref()
+    pub fn slot_type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.slot_type_id.deref()
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
     pub fn value_elicitation_setting(&self) -> ::std::option::Option<&crate::types::SubSlotValueElicitationSetting> {
@@ -35,6 +36,7 @@ pub struct SpecificationsBuilder {
 }
 impl SpecificationsBuilder {
     /// <p>The unique identifier assigned to the slot type.</p>
+    /// This field is required.
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_type_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SpecificationsBuilder {
         &self.slot_type_id
     }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
+    /// This field is required.
     pub fn value_elicitation_setting(mut self, input: crate::types::SubSlotValueElicitationSetting) -> Self {
         self.value_elicitation_setting = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl SpecificationsBuilder {
         &self.value_elicitation_setting
     }
     /// Consumes the builder and constructs a [`Specifications`](crate::types::Specifications).
-    pub fn build(self) -> crate::types::Specifications {
-        crate::types::Specifications {
-            slot_type_id: self.slot_type_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`slot_type_id`](crate::types::builders::SpecificationsBuilder::slot_type_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Specifications, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Specifications {
+            slot_type_id: self.slot_type_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "slot_type_id",
+                    "slot_type_id was not specified but it is required when building Specifications",
+                )
+            })?,
             value_elicitation_setting: self.value_elicitation_setting,
-        }
+        })
     }
 }

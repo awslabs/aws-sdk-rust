@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct XksProxyAuthenticationCredentialType {
     /// <p>A unique identifier for the raw secret access key.</p>
-    pub access_key_id: ::std::option::Option<::std::string::String>,
+    pub access_key_id: ::std::string::String,
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
-    pub raw_secret_access_key: ::std::option::Option<::std::string::String>,
+    pub raw_secret_access_key: ::std::string::String,
 }
 impl XksProxyAuthenticationCredentialType {
     /// <p>A unique identifier for the raw secret access key.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
-        self.access_key_id.as_deref()
+    pub fn access_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.access_key_id.deref()
     }
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
-    pub fn raw_secret_access_key(&self) -> ::std::option::Option<&str> {
-        self.raw_secret_access_key.as_deref()
+    pub fn raw_secret_access_key(&self) -> &str {
+        use std::ops::Deref;
+        self.raw_secret_access_key.deref()
     }
 }
 impl ::std::fmt::Debug for XksProxyAuthenticationCredentialType {
@@ -44,6 +46,7 @@ pub struct XksProxyAuthenticationCredentialTypeBuilder {
 }
 impl XksProxyAuthenticationCredentialTypeBuilder {
     /// <p>A unique identifier for the raw secret access key.</p>
+    /// This field is required.
     pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl XksProxyAuthenticationCredentialTypeBuilder {
         &self.access_key_id
     }
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
+    /// This field is required.
     pub fn raw_secret_access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_secret_access_key = ::std::option::Option::Some(input.into());
         self
@@ -72,11 +76,24 @@ impl XksProxyAuthenticationCredentialTypeBuilder {
         &self.raw_secret_access_key
     }
     /// Consumes the builder and constructs a [`XksProxyAuthenticationCredentialType`](crate::types::XksProxyAuthenticationCredentialType).
-    pub fn build(self) -> crate::types::XksProxyAuthenticationCredentialType {
-        crate::types::XksProxyAuthenticationCredentialType {
-            access_key_id: self.access_key_id,
-            raw_secret_access_key: self.raw_secret_access_key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_key_id`](crate::types::builders::XksProxyAuthenticationCredentialTypeBuilder::access_key_id)
+    /// - [`raw_secret_access_key`](crate::types::builders::XksProxyAuthenticationCredentialTypeBuilder::raw_secret_access_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::XksProxyAuthenticationCredentialType, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::XksProxyAuthenticationCredentialType {
+            access_key_id: self.access_key_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access_key_id",
+                    "access_key_id was not specified but it is required when building XksProxyAuthenticationCredentialType",
+                )
+            })?,
+            raw_secret_access_key: self.raw_secret_access_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "raw_secret_access_key",
+                    "raw_secret_access_key was not specified but it is required when building XksProxyAuthenticationCredentialType",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for XksProxyAuthenticationCredentialTypeBuilder {

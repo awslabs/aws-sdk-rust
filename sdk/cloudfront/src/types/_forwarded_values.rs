@@ -15,7 +15,7 @@ pub struct ForwardedValues {
     /// <p>If you specify true for <code>QueryString</code> and you specify one or more values for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin, but it only caches based on the query string parameters that you specify.</p>
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub query_string: ::std::option::Option<bool>,
+    pub query_string: bool,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -42,7 +42,7 @@ impl ForwardedValues {
     /// <p>If you specify true for <code>QueryString</code> and you specify one or more values for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin, but it only caches based on the query string parameters that you specify.</p>
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn query_string(&self) -> ::std::option::Option<bool> {
+    pub fn query_string(&self) -> bool {
         self.query_string
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -93,6 +93,7 @@ impl ForwardedValuesBuilder {
     /// <p>If you specify true for <code>QueryString</code> and you specify one or more values for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin, but it only caches based on the query string parameters that you specify.</p>
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: bool) -> Self {
         self.query_string = ::std::option::Option::Some(input);
         self
@@ -124,6 +125,7 @@ impl ForwardedValuesBuilder {
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// This field is required.
     pub fn cookies(mut self, input: crate::types::CookiePreference) -> Self {
         self.cookies = ::std::option::Option::Some(input);
         self
@@ -193,12 +195,19 @@ impl ForwardedValuesBuilder {
         &self.query_string_cache_keys
     }
     /// Consumes the builder and constructs a [`ForwardedValues`](crate::types::ForwardedValues).
-    pub fn build(self) -> crate::types::ForwardedValues {
-        crate::types::ForwardedValues {
-            query_string: self.query_string,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_string`](crate::types::builders::ForwardedValuesBuilder::query_string)
+    pub fn build(self) -> ::std::result::Result<crate::types::ForwardedValues, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ForwardedValues {
+            query_string: self.query_string.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "query_string",
+                    "query_string was not specified but it is required when building ForwardedValues",
+                )
+            })?,
             cookies: self.cookies,
             headers: self.headers,
             query_string_cache_keys: self.query_string_cache_keys,
-        }
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ListAnnotationImportJobsOutput {
 }
 impl ListAnnotationImportJobsOutput {
     /// <p>A list of jobs.</p>
-    pub fn annotation_import_jobs(&self) -> ::std::option::Option<&[crate::types::AnnotationImportJobItem]> {
-        self.annotation_import_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.annotation_import_jobs.is_none()`.
+    pub fn annotation_import_jobs(&self) -> &[crate::types::AnnotationImportJobItem] {
+        self.annotation_import_jobs.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

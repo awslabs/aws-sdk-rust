@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionSummary {
     /// <p>The identifier of the session.</p>
-    pub session_id: ::std::option::Option<::std::string::String>,
+    pub session_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub session_arn: ::std::option::Option<::std::string::String>,
+    pub session_arn: ::std::string::String,
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub assistant_arn: ::std::option::Option<::std::string::String>,
+    pub assistant_arn: ::std::string::String,
 }
 impl SessionSummary {
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
-        self.session_id.as_deref()
+    pub fn session_id(&self) -> &str {
+        use std::ops::Deref;
+        self.session_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> ::std::option::Option<&str> {
-        self.session_arn.as_deref()
+    pub fn session_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.session_arn.deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> ::std::option::Option<&str> {
-        self.assistant_arn.as_deref()
+    pub fn assistant_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_arn.deref()
     }
 }
 impl SessionSummary {
@@ -49,6 +53,7 @@ pub struct SessionSummaryBuilder {
 }
 impl SessionSummaryBuilder {
     /// <p>The identifier of the session.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl SessionSummaryBuilder {
         &self.session_id
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
+    /// This field is required.
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl SessionSummaryBuilder {
         &self.session_arn
     }
     /// <p>The identifier of the Wisdom assistant.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl SessionSummaryBuilder {
         &self.assistant_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    /// This field is required.
     pub fn assistant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl SessionSummaryBuilder {
         &self.assistant_arn
     }
     /// Consumes the builder and constructs a [`SessionSummary`](crate::types::SessionSummary).
-    pub fn build(self) -> crate::types::SessionSummary {
-        crate::types::SessionSummary {
-            session_id: self.session_id,
-            session_arn: self.session_arn,
-            assistant_id: self.assistant_id,
-            assistant_arn: self.assistant_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`session_id`](crate::types::builders::SessionSummaryBuilder::session_id)
+    /// - [`session_arn`](crate::types::builders::SessionSummaryBuilder::session_arn)
+    /// - [`assistant_id`](crate::types::builders::SessionSummaryBuilder::assistant_id)
+    /// - [`assistant_arn`](crate::types::builders::SessionSummaryBuilder::assistant_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SessionSummary {
+            session_id: self.session_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "session_id",
+                    "session_id was not specified but it is required when building SessionSummary",
+                )
+            })?,
+            session_arn: self.session_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "session_arn",
+                    "session_arn was not specified but it is required when building SessionSummary",
+                )
+            })?,
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building SessionSummary",
+                )
+            })?,
+            assistant_arn: self.assistant_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_arn",
+                    "assistant_arn was not specified but it is required when building SessionSummary",
+                )
+            })?,
+        })
     }
 }

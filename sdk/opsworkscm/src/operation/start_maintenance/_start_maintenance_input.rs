@@ -22,8 +22,10 @@ impl StartMaintenanceInput {
     /// <ul>
     /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
     /// </ul>
-    pub fn engine_attributes(&self) -> ::std::option::Option<&[crate::types::EngineAttribute]> {
-        self.engine_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
+    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref().unwrap_or_default()
     }
 }
 impl StartMaintenanceInput {
@@ -42,6 +44,7 @@ pub struct StartMaintenanceInputBuilder {
 }
 impl StartMaintenanceInputBuilder {
     /// <p>The name of the server on which to run maintenance. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self

@@ -41,6 +41,7 @@ pub struct ListAccessPointsForObjectLambdaInputBuilder {
 }
 impl ListAccessPointsForObjectLambdaInputBuilder {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

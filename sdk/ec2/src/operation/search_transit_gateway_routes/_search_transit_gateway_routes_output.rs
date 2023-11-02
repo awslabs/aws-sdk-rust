@@ -11,8 +11,10 @@ pub struct SearchTransitGatewayRoutesOutput {
 }
 impl SearchTransitGatewayRoutesOutput {
     /// <p>Information about the routes.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRoute]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::TransitGatewayRoute] {
+        self.routes.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn additional_routes_available(&self) -> ::std::option::Option<bool> {

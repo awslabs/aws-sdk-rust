@@ -14,8 +14,10 @@ impl AssociateConfigurationItemsToApplicationInput {
         self.application_configuration_id.as_deref()
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn configuration_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_ids.is_none()`.
+    pub fn configuration_ids(&self) -> &[::std::string::String] {
+        self.configuration_ids.as_deref().unwrap_or_default()
     }
 }
 impl AssociateConfigurationItemsToApplicationInput {
@@ -35,6 +37,7 @@ pub struct AssociateConfigurationItemsToApplicationInputBuilder {
 }
 impl AssociateConfigurationItemsToApplicationInputBuilder {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
+    /// This field is required.
     pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_configuration_id = ::std::option::Option::Some(input.into());
         self

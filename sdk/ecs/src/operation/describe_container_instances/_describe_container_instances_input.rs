@@ -16,12 +16,16 @@ impl DescribeContainerInstancesInput {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn container_instances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_instances.is_none()`.
+    pub fn container_instances(&self) -> &[::std::string::String] {
+        self.container_instances.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::ContainerInstanceField]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[crate::types::ContainerInstanceField] {
+        self.include.as_deref().unwrap_or_default()
     }
 }
 impl DescribeContainerInstancesInput {

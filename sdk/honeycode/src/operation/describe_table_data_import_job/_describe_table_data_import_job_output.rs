@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableDataImportJobOutput {
     /// <p> The current status of the import job. </p>
-    pub job_status: ::std::option::Option<crate::types::TableDataImportJobStatus>,
+    pub job_status: crate::types::TableDataImportJobStatus,
     /// <p> A message providing more details about the current status of the import job. </p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p> The metadata about the job that was submitted for import. </p>
     pub job_metadata: ::std::option::Option<crate::types::TableDataImportJobMetadata>,
     /// <p> If job status is failed, error code to understand reason for the failure. </p>
@@ -15,12 +15,13 @@ pub struct DescribeTableDataImportJobOutput {
 }
 impl DescribeTableDataImportJobOutput {
     /// <p> The current status of the import job. </p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::TableDataImportJobStatus> {
-        self.job_status.as_ref()
+    pub fn job_status(&self) -> &crate::types::TableDataImportJobStatus {
+        &self.job_status
     }
     /// <p> A message providing more details about the current status of the import job. </p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p> The metadata about the job that was submitted for import. </p>
     pub fn job_metadata(&self) -> ::std::option::Option<&crate::types::TableDataImportJobMetadata> {
@@ -55,6 +56,7 @@ pub struct DescribeTableDataImportJobOutputBuilder {
 }
 impl DescribeTableDataImportJobOutputBuilder {
     /// <p> The current status of the import job. </p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::TableDataImportJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl DescribeTableDataImportJobOutputBuilder {
         &self.job_status
     }
     /// <p> A message providing more details about the current status of the import job. </p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl DescribeTableDataImportJobOutputBuilder {
         &self.message
     }
     /// <p> The metadata about the job that was submitted for import. </p>
+    /// This field is required.
     pub fn job_metadata(mut self, input: crate::types::TableDataImportJobMetadata) -> Self {
         self.job_metadata = ::std::option::Option::Some(input);
         self
@@ -120,13 +124,31 @@ impl DescribeTableDataImportJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTableDataImportJobOutput`](crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput).
-    pub fn build(self) -> crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput {
-        crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput {
-            job_status: self.job_status,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_status`](crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobOutputBuilder::job_status)
+    /// - [`message`](crate::operation::describe_table_data_import_job::builders::DescribeTableDataImportJobOutputBuilder::message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput {
+            job_status: self.job_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_status",
+                    "job_status was not specified but it is required when building DescribeTableDataImportJobOutput",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building DescribeTableDataImportJobOutput",
+                )
+            })?,
             job_metadata: self.job_metadata,
             error_code: self.error_code,
             _request_id: self._request_id,
-        }
+        })
     }
 }

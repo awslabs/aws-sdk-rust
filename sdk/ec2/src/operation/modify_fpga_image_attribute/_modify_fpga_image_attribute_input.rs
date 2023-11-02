@@ -42,16 +42,22 @@ impl ModifyFpgaImageAttributeInput {
         self.operation_type.as_ref()
     }
     /// <p>The Amazon Web Services account IDs. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
     /// <p>The user groups. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    pub fn user_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
+    pub fn user_groups(&self) -> &[::std::string::String] {
+        self.user_groups.as_deref().unwrap_or_default()
     }
     /// <p>The product codes. After you add a product code to an AFI, it can't be removed. This parameter is valid only when modifying the <code>productCodes</code> attribute.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[::std::string::String] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>The load permission for the AFI.</p>
     pub fn load_permission(&self) -> ::std::option::Option<&crate::types::LoadPermissionModifications> {
@@ -104,6 +110,7 @@ impl ModifyFpgaImageAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
+    /// This field is required.
     pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self

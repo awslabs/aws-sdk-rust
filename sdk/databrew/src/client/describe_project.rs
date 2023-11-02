@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProject`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_name): <p>The name of the project to be described.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_name):<br>required: **true**<br><p>The name of the project to be described.</p><br>
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::create_date): <p>The date and time that the project was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::created_by): <p>The identifier (user name) of the user who created the project.</p>
     ///   - [`dataset_name(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::dataset_name): <p>The dataset associated with the project.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::last_modified_date): <p>The date and time that the project was last modified.</p>
     ///   - [`last_modified_by(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the project.</p>
-    ///   - [`name(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::name): <p>The name of the project.</p>
+    ///   - [`name(String)`](crate::operation::describe_project::DescribeProjectOutput::name): <p>The name of the project.</p>
     ///   - [`recipe_name(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::recipe_name): <p>The recipe associated with this job.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
     ///   - [`sample(Option<Sample>)`](crate::operation::describe_project::DescribeProjectOutput::sample): <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>

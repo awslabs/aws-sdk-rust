@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainItem {
     /// <p>The unique name of the domain.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListDomainItem {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_at.as_ref()
+    pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_at
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -49,6 +50,7 @@ pub struct ListDomainItemBuilder {
 }
 impl ListDomainItemBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl ListDomainItemBuilder {
         &self.domain_name
     }
     /// <p>The timestamp of when the domain was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl ListDomainItemBuilder {
         &self.created_at
     }
     /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// This field is required.
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
@@ -111,12 +115,31 @@ impl ListDomainItemBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListDomainItem`](crate::types::ListDomainItem).
-    pub fn build(self) -> crate::types::ListDomainItem {
-        crate::types::ListDomainItem {
-            domain_name: self.domain_name,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::types::builders::ListDomainItemBuilder::domain_name)
+    /// - [`created_at`](crate::types::builders::ListDomainItemBuilder::created_at)
+    /// - [`last_updated_at`](crate::types::builders::ListDomainItemBuilder::last_updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListDomainItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListDomainItem {
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building ListDomainItem",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building ListDomainItem",
+                )
+            })?,
+            last_updated_at: self.last_updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_at",
+                    "last_updated_at was not specified but it is required when building ListDomainItem",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct ModifyReportDefinitionInputBuilder {
 }
 impl ModifyReportDefinitionInputBuilder {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    /// This field is required.
     pub fn report_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyReportDefinitionInputBuilder {
         &self.report_name
     }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    /// This field is required.
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.report_definition = ::std::option::Option::Some(input);
         self

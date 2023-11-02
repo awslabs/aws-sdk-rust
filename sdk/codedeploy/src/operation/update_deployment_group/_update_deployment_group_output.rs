@@ -10,8 +10,10 @@ pub struct UpdateDeploymentGroupOutput {
 }
 impl UpdateDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
-    pub fn hooks_not_cleaned_up(&self) -> ::std::option::Option<&[crate::types::AutoScalingGroup]> {
-        self.hooks_not_cleaned_up.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hooks_not_cleaned_up.is_none()`.
+    pub fn hooks_not_cleaned_up(&self) -> &[crate::types::AutoScalingGroup] {
+        self.hooks_not_cleaned_up.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateDeploymentGroupOutput {

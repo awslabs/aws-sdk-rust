@@ -34,6 +34,7 @@ pub struct GetNamespaceOutputBuilder {
 }
 impl GetNamespaceOutputBuilder {
     /// <p>The returned namespace object.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: crate::types::Namespace) -> Self {
         self.namespace = ::std::option::Option::Some(input);
         self

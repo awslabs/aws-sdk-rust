@@ -3,14 +3,14 @@ pub fn ser_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Condition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.key {
-        object.key("Key").string(var_2.as_str());
+    {
+        object.key("Key").string(input.key.as_str());
     }
-    if let Some(var_3) = &input.value {
-        object.key("Value").string(var_3.as_str());
+    {
+        object.key("Value").string(input.value.as_str());
     }
     Ok(())
 }

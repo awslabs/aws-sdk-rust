@@ -12,11 +12,11 @@ pub fn ser_associate_user_input(
         crate::protocol_serde::shape_identity_provider::ser_identity_provider(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.instance_id {
-        object.key("InstanceId").string(var_4.as_str());
+    {
+        object.key("InstanceId").string(input.instance_id.as_str());
     }
-    if let Some(var_5) = &input.username {
-        object.key("Username").string(var_5.as_str());
+    {
+        object.key("Username").string(input.username.as_str());
     }
     Ok(())
 }

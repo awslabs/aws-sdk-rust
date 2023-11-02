@@ -11,8 +11,10 @@ pub struct GetBlueprintRunsOutput {
 }
 impl GetBlueprintRunsOutput {
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-    pub fn blueprint_runs(&self) -> ::std::option::Option<&[crate::types::BlueprintRun]> {
-        self.blueprint_runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprint_runs.is_none()`.
+    pub fn blueprint_runs(&self) -> &[crate::types::BlueprintRun] {
+        self.blueprint_runs.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

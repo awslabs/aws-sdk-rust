@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTopicRuleDestination`](crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`destination_configuration(TopicRuleDestinationConfiguration)`](crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder::destination_configuration) / [`set_destination_configuration(Option<TopicRuleDestinationConfiguration>)`](crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder::set_destination_configuration): <p>The topic rule destination configuration.</p>
+    ///   - [`destination_configuration(TopicRuleDestinationConfiguration)`](crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder::destination_configuration) / [`set_destination_configuration(Option<TopicRuleDestinationConfiguration>)`](crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationFluentBuilder::set_destination_configuration):<br>required: **true**<br><p>The topic rule destination configuration.</p><br>
     /// - On success, responds with [`CreateTopicRuleDestinationOutput`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput) with field(s):
     ///   - [`topic_rule_destination(Option<TopicRuleDestination>)`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput::topic_rule_destination): <p>The topic rule destination.</p>
     /// - On failure, responds with [`SdkError<CreateTopicRuleDestinationError>`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError)

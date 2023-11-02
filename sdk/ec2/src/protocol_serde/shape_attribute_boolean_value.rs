@@ -12,6 +12,7 @@ pub fn ser_attribute_boolean_value(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_attribute_boolean_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AttributeBooleanValue, ::aws_smithy_xml::decode::XmlDecodeError> {

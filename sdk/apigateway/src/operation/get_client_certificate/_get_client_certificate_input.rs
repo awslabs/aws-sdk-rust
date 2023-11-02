@@ -28,6 +28,7 @@ pub struct GetClientCertificateInputBuilder {
 }
 impl GetClientCertificateInputBuilder {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
+    /// This field is required.
     pub fn client_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_certificate_id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DeleteRuleGroupOutputBuilder {
 }
 impl DeleteRuleGroupOutputBuilder {
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+    /// This field is required.
     pub fn rule_group_response(mut self, input: crate::types::RuleGroupResponse) -> Self {
         self.rule_group_response = ::std::option::Option::Some(input);
         self

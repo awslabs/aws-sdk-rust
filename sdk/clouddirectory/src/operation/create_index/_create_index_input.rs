@@ -20,8 +20,10 @@ impl CreateIndexInput {
         self.directory_arn.as_deref()
     }
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn ordered_indexed_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKey]> {
-        self.ordered_indexed_attribute_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ordered_indexed_attribute_list.is_none()`.
+    pub fn ordered_indexed_attribute_list(&self) -> &[crate::types::AttributeKey] {
+        self.ordered_indexed_attribute_list.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub fn is_unique(&self) -> ::std::option::Option<bool> {
@@ -55,6 +57,7 @@ pub struct CreateIndexInputBuilder {
 }
 impl CreateIndexInputBuilder {
     /// <p>The ARN of the directory where the index should be created.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +92,7 @@ impl CreateIndexInputBuilder {
         &self.ordered_indexed_attribute_list
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
+    /// This field is required.
     pub fn is_unique(mut self, input: bool) -> Self {
         self.is_unique = ::std::option::Option::Some(input);
         self

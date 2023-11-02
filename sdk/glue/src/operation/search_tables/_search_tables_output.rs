@@ -15,8 +15,10 @@ impl SearchTablesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
-    pub fn table_list(&self) -> ::std::option::Option<&[crate::types::Table]> {
-        self.table_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_list.is_none()`.
+    pub fn table_list(&self) -> &[crate::types::Table] {
+        self.table_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchTablesOutput {

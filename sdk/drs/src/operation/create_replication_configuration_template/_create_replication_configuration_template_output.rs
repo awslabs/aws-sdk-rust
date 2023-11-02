@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateOutput {
     /// <p>The Replication Configuration Template ID.</p>
-    pub replication_configuration_template_id: ::std::option::Option<::std::string::String>,
+    pub replication_configuration_template_id: ::std::string::String,
     /// <p>The Replication Configuration Template ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
@@ -41,8 +41,9 @@ pub struct CreateReplicationConfigurationTemplateOutput {
 }
 impl CreateReplicationConfigurationTemplateOutput {
     /// <p>The Replication Configuration Template ID.</p>
-    pub fn replication_configuration_template_id(&self) -> ::std::option::Option<&str> {
-        self.replication_configuration_template_id.as_deref()
+    pub fn replication_configuration_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.replication_configuration_template_id.deref()
     }
     /// <p>The Replication Configuration Template ARN.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -57,8 +58,10 @@ impl CreateReplicationConfigurationTemplateOutput {
         self.associate_default_security_group
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn replication_servers_security_groups_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_servers_security_groups_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_i_ds.is_none()`.
+    pub fn replication_servers_security_groups_i_ds(&self) -> &[::std::string::String] {
+        self.replication_servers_security_groups_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>The instance type to be used for the replication server.</p>
     pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
@@ -101,8 +104,10 @@ impl CreateReplicationConfigurationTemplateOutput {
         self.tags.as_ref()
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub fn pit_policy(&self) -> ::std::option::Option<&[crate::types::PitPolicyRule]> {
-        self.pit_policy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pit_policy.is_none()`.
+    pub fn pit_policy(&self) -> &[crate::types::PitPolicyRule] {
+        self.pit_policy.as_deref().unwrap_or_default()
     }
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     pub fn auto_replicate_new_disks(&self) -> ::std::option::Option<bool> {
@@ -170,6 +175,7 @@ pub struct CreateReplicationConfigurationTemplateOutputBuilder {
 }
 impl CreateReplicationConfigurationTemplateOutputBuilder {
     /// <p>The Replication Configuration Template ID.</p>
+    /// This field is required.
     pub fn replication_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -451,27 +457,57 @@ impl CreateReplicationConfigurationTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateOutput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput).
-    pub fn build(self) -> crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput {
-        crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput {
-            replication_configuration_template_id: self.replication_configuration_template_id,
-            arn: self.arn,
-            staging_area_subnet_id: self.staging_area_subnet_id,
-            associate_default_security_group: self.associate_default_security_group,
-            replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds,
-            replication_server_instance_type: self.replication_server_instance_type,
-            use_dedicated_replication_server: self.use_dedicated_replication_server,
-            default_large_staging_disk_type: self.default_large_staging_disk_type,
-            ebs_encryption: self.ebs_encryption,
-            ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-            bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
-            data_plane_routing: self.data_plane_routing,
-            create_public_ip: self.create_public_ip,
-            staging_area_tags: self.staging_area_tags,
-            tags: self.tags,
-            pit_policy: self.pit_policy,
-            auto_replicate_new_disks: self.auto_replicate_new_disks,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`replication_configuration_template_id`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateOutputBuilder::replication_configuration_template_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput {
+                replication_configuration_template_id: self.replication_configuration_template_id
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_configuration_template_id", "replication_configuration_template_id was not specified but it is required when building CreateReplicationConfigurationTemplateOutput")
+                    )?
+                ,
+                arn: self.arn
+                ,
+                staging_area_subnet_id: self.staging_area_subnet_id
+                ,
+                associate_default_security_group: self.associate_default_security_group
+                ,
+                replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
+                ,
+                replication_server_instance_type: self.replication_server_instance_type
+                ,
+                use_dedicated_replication_server: self.use_dedicated_replication_server
+                ,
+                default_large_staging_disk_type: self.default_large_staging_disk_type
+                ,
+                ebs_encryption: self.ebs_encryption
+                ,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                    .unwrap_or_default()
+                ,
+                data_plane_routing: self.data_plane_routing
+                ,
+                create_public_ip: self.create_public_ip
+                ,
+                staging_area_tags: self.staging_area_tags
+                ,
+                tags: self.tags
+                ,
+                pit_policy: self.pit_policy
+                ,
+                auto_replicate_new_disks: self.auto_replicate_new_disks
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateOutputBuilder {

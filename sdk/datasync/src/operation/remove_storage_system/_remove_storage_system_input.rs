@@ -27,6 +27,7 @@ pub struct RemoveStorageSystemInputBuilder {
 }
 impl RemoveStorageSystemInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
+    /// This field is required.
     pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self

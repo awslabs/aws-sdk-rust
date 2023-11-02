@@ -3,11 +3,11 @@ pub fn ser_custom_policy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomPolicyDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.policy_runtime {
-        object.key("PolicyRuntime").string(var_1.as_str());
+    {
+        object.key("PolicyRuntime").string(input.policy_runtime.as_str());
     }
-    if let Some(var_2) = &input.policy_text {
-        object.key("PolicyText").string(var_2.as_str());
+    {
+        object.key("PolicyText").string(input.policy_text.as_str());
     }
     if input.enable_debug_log_delivery {
         object.key("EnableDebugLogDelivery").boolean(input.enable_debug_log_delivery);
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::custom_policy_details_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

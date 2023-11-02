@@ -11,8 +11,10 @@ pub struct ListTrialComponentsOutput {
 }
 impl ListTrialComponentsOutput {
     /// <p>A list of the summaries of your trial components.</p>
-    pub fn trial_component_summaries(&self) -> ::std::option::Option<&[crate::types::TrialComponentSummary]> {
-        self.trial_component_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trial_component_summaries.is_none()`.
+    pub fn trial_component_summaries(&self) -> &[crate::types::TrialComponentSummary] {
+        self.trial_component_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of components, if there are any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,8 +27,10 @@ impl UsageRecord {
         self.free_trial_start_date.as_ref()
     }
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
-    pub fn usage(&self) -> ::std::option::Option<&[crate::types::UsageByAccount]> {
-        self.usage.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage.is_none()`.
+    pub fn usage(&self) -> &[crate::types::UsageByAccount] {
+        self.usage.as_deref().unwrap_or_default()
     }
 }
 impl UsageRecord {

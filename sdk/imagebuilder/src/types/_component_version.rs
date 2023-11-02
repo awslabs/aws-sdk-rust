@@ -103,8 +103,10 @@ impl ComponentVersion {
         self.platform.as_ref()
     }
     /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
-    pub fn supported_os_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_os_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_os_versions.is_none()`.
+    pub fn supported_os_versions(&self) -> &[::std::string::String] {
+        self.supported_os_versions.as_deref().unwrap_or_default()
     }
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ComponentType> {

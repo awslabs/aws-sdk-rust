@@ -48,6 +48,7 @@ impl DeleteFpgaImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the AFI.</p>
+    /// This field is required.
     pub fn fpga_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fpga_image_id = ::std::option::Option::Some(input.into());
         self

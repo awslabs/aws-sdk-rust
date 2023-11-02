@@ -10,8 +10,10 @@ pub struct GetDiscoveredSchemaInput {
 }
 impl GetDiscoveredSchemaInput {
     /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    pub fn events(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[::std::string::String] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>The type of event.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
@@ -54,6 +56,7 @@ impl GetDiscoveredSchemaInputBuilder {
         &self.events
     }
     /// <p>The type of event.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationSummary {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
+    pub providers: ::std::vec::Vec<crate::types::AuthenticationProviderTypes>,
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
     pub saml_configuration_status: ::std::option::Option<crate::types::SamlConfigurationStatus>,
 }
 impl AuthenticationSummary {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn providers(&self) -> ::std::option::Option<&[crate::types::AuthenticationProviderTypes]> {
-        self.providers.as_deref()
+    pub fn providers(&self) -> &[crate::types::AuthenticationProviderTypes] {
+        use std::ops::Deref;
+        self.providers.deref()
     }
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
     pub fn saml_configuration_status(&self) -> ::std::option::Option<&crate::types::SamlConfigurationStatus> {
@@ -69,10 +70,17 @@ impl AuthenticationSummaryBuilder {
         &self.saml_configuration_status
     }
     /// Consumes the builder and constructs a [`AuthenticationSummary`](crate::types::AuthenticationSummary).
-    pub fn build(self) -> crate::types::AuthenticationSummary {
-        crate::types::AuthenticationSummary {
-            providers: self.providers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`providers`](crate::types::builders::AuthenticationSummaryBuilder::providers)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuthenticationSummary {
+            providers: self.providers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "providers",
+                    "providers was not specified but it is required when building AuthenticationSummary",
+                )
+            })?,
             saml_configuration_status: self.saml_configuration_status,
-        }
+        })
     }
 }

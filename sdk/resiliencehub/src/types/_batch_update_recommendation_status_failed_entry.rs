@@ -7,20 +7,22 @@ pub struct BatchUpdateRecommendationStatusFailedEntry {
     /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
-    pub entry_id: ::std::option::Option<::std::string::String>,
+    pub entry_id: ::std::string::String,
     /// <p>Indicates the error that occurred while excluding an operational recommendation.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl BatchUpdateRecommendationStatusFailedEntry {
     /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
-        self.entry_id.as_deref()
+    pub fn entry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_id.deref()
     }
     /// <p>Indicates the error that occurred while excluding an operational recommendation.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl BatchUpdateRecommendationStatusFailedEntry {
@@ -41,6 +43,7 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
     /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
+    /// This field is required.
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +62,7 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
         &self.entry_id
     }
     /// <p>Indicates the error that occurred while excluding an operational recommendation.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +77,25 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchUpdateRecommendationStatusFailedEntry`](crate::types::BatchUpdateRecommendationStatusFailedEntry).
-    pub fn build(self) -> crate::types::BatchUpdateRecommendationStatusFailedEntry {
-        crate::types::BatchUpdateRecommendationStatusFailedEntry {
-            entry_id: self.entry_id,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_id`](crate::types::builders::BatchUpdateRecommendationStatusFailedEntryBuilder::entry_id)
+    /// - [`error_message`](crate::types::builders::BatchUpdateRecommendationStatusFailedEntryBuilder::error_message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchUpdateRecommendationStatusFailedEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchUpdateRecommendationStatusFailedEntry {
+            entry_id: self.entry_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entry_id",
+                    "entry_id was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry",
+                )
+            })?,
+        })
     }
 }

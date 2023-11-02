@@ -35,6 +35,7 @@ pub struct AutoParameterBuilder {
 }
 impl AutoParameterBuilder {
     /// <p>The name of the hyperparameter to optimize using Autotune.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AutoParameterBuilder {
         &self.name
     }
     /// <p>An example value of the hyperparameter to optimize using Autotune.</p>
+    /// This field is required.
     pub fn value_hint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_hint = ::std::option::Option::Some(input.into());
         self

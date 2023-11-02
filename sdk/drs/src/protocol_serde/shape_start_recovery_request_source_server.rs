@@ -3,11 +3,11 @@ pub fn ser_start_recovery_request_source_server(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartRecoveryRequestSourceServer,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_server_id {
-        object.key("sourceServerID").string(var_1.as_str());
+    {
+        object.key("sourceServerID").string(input.source_server_id.as_str());
     }
-    if let Some(var_2) = &input.recovery_snapshot_id {
-        object.key("recoverySnapshotID").string(var_2.as_str());
+    if let Some(var_1) = &input.recovery_snapshot_id {
+        object.key("recoverySnapshotID").string(var_1.as_str());
     }
     Ok(())
 }

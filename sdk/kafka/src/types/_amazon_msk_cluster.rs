@@ -28,6 +28,7 @@ pub struct AmazonMskClusterBuilder {
 }
 impl AmazonMskClusterBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Amazon MSK cluster.</p>
+    /// This field is required.
     pub fn msk_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.msk_cluster_arn = ::std::option::Option::Some(input.into());
         self

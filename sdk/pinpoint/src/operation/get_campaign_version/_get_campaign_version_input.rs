@@ -41,6 +41,7 @@ pub struct GetCampaignVersionInputBuilder {
 }
 impl GetCampaignVersionInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetCampaignVersionInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the campaign.</p>
+    /// This field is required.
     pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetCampaignVersionInputBuilder {
         &self.campaign_id
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFieldOutput {
     /// <p>A list of detailed field information. </p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>>,
+    pub fields: ::std::vec::Vec<crate::types::GetFieldResponse>,
     /// <p>A list of field errors. </p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FieldError>>,
+    pub errors: ::std::vec::Vec<crate::types::FieldError>,
     _request_id: Option<String>,
 }
 impl BatchGetFieldOutput {
     /// <p>A list of detailed field information. </p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::GetFieldResponse]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::GetFieldResponse] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
     /// <p>A list of field errors. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::FieldError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::FieldError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetFieldOutput {
@@ -90,11 +92,26 @@ impl BatchGetFieldOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetFieldOutput`](crate::operation::batch_get_field::BatchGetFieldOutput).
-    pub fn build(self) -> crate::operation::batch_get_field::BatchGetFieldOutput {
-        crate::operation::batch_get_field::BatchGetFieldOutput {
-            fields: self.fields,
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fields`](crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder::fields)
+    /// - [`errors`](crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_field::BatchGetFieldOutput {
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building BatchGetFieldOutput",
+                )
+            })?,
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchGetFieldOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

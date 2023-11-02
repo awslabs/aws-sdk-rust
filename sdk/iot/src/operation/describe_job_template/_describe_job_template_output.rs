@@ -78,13 +78,17 @@ impl DescribeJobTemplateOutput {
         self.job_executions_retry_config.as_ref()
     }
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
-    pub fn maintenance_windows(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindow]> {
-        self.maintenance_windows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_windows.is_none()`.
+    pub fn maintenance_windows(&self) -> &[crate::types::MaintenanceWindow] {
+        self.maintenance_windows.as_deref().unwrap_or_default()
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_package_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_package_versions.is_none()`.
+    pub fn destination_package_versions(&self) -> &[::std::string::String] {
+        self.destination_package_versions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeJobTemplateOutput {

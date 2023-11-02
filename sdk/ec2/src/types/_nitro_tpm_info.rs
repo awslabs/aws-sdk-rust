@@ -9,8 +9,10 @@ pub struct NitroTpmInfo {
 }
 impl NitroTpmInfo {
     /// <p>Indicates the supported NitroTPM versions.</p>
-    pub fn supported_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_versions.is_none()`.
+    pub fn supported_versions(&self) -> &[::std::string::String] {
+        self.supported_versions.as_deref().unwrap_or_default()
     }
 }
 impl NitroTpmInfo {

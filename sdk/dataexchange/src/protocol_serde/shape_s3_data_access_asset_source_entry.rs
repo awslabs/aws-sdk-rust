@@ -3,38 +3,38 @@ pub fn ser_s3_data_access_asset_source_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DataAccessAssetSourceEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket {
-        object.key("Bucket").string(var_1.as_str());
+    {
+        object.key("Bucket").string(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.key_prefixes {
-        let mut array_3 = object.key("KeyPrefixes").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.key_prefixes {
+        let mut array_2 = object.key("KeyPrefixes").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.keys {
-        let mut array_6 = object.key("Keys").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.keys {
+        let mut array_5 = object.key("Keys").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.kms_keys_to_grant {
-        let mut array_9 = object.key("KmsKeysToGrant").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.kms_keys_to_grant {
+        let mut array_8 = object.key("KmsKeysToGrant").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_kms_key_to_grant::ser_kms_key_to_grant(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_kms_key_to_grant::ser_kms_key_to_grant(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -82,7 +82,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::s3_data_access_asset_source_entry_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

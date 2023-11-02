@@ -28,6 +28,7 @@ pub struct DeleteDedicatedIpPoolInputBuilder {
 }
 impl DeleteDedicatedIpPoolInputBuilder {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
+    /// This field is required.
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
         self

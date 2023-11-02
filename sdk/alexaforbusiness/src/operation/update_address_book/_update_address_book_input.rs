@@ -41,6 +41,7 @@ pub struct UpdateAddressBookInputBuilder {
 }
 impl UpdateAddressBookInputBuilder {
     /// <p>The ARN of the room to update.</p>
+    /// This field is required.
     pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self

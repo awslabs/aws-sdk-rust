@@ -34,6 +34,7 @@ pub struct ConfirmTransitVirtualInterfaceInputBuilder {
 }
 impl ConfirmTransitVirtualInterfaceInputBuilder {
     /// <p>The ID of the virtual interface.</p>
+    /// This field is required.
     pub fn virtual_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
         &self.virtual_interface_id
     }
     /// <p>The ID of the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self

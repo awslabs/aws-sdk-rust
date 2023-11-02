@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAgent {
     /// <p> The ID of the agent or data collector to delete. </p>
-    pub agent_id: ::std::option::Option<::std::string::String>,
+    pub agent_id: ::std::string::String,
     /// <p> Optional flag used to force delete an agent or data collector. It is needed to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an agent that is actively reporting health causes it to be re-registered with a different agent ID after data collector re-connects with Amazon Web Services. </p>
     pub force: bool,
 }
 impl DeleteAgent {
     /// <p> The ID of the agent or data collector to delete. </p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
-        self.agent_id.as_deref()
+    pub fn agent_id(&self) -> &str {
+        use std::ops::Deref;
+        self.agent_id.deref()
     }
     /// <p> Optional flag used to force delete an agent or data collector. It is needed to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an agent that is actively reporting health causes it to be re-registered with a different agent ID after data collector re-connects with Amazon Web Services. </p>
     pub fn force(&self) -> bool {
@@ -35,6 +36,7 @@ pub struct DeleteAgentBuilder {
 }
 impl DeleteAgentBuilder {
     /// <p> The ID of the agent or data collector to delete. </p>
+    /// This field is required.
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DeleteAgentBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`DeleteAgent`](crate::types::DeleteAgent).
-    pub fn build(self) -> crate::types::DeleteAgent {
-        crate::types::DeleteAgent {
-            agent_id: self.agent_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_id`](crate::types::builders::DeleteAgentBuilder::agent_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteAgent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteAgent {
+            agent_id: self.agent_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "agent_id",
+                    "agent_id was not specified but it is required when building DeleteAgent",
+                )
+            })?,
             force: self.force.unwrap_or_default(),
-        }
+        })
     }
 }

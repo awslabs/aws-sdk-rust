@@ -59,8 +59,10 @@ impl AwsNetworkFirewallFirewallDetails {
         self.subnet_change_protection
     }
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub fn subnet_mappings(&self) -> ::std::option::Option<&[crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails]> {
-        self.subnet_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_mappings.is_none()`.
+    pub fn subnet_mappings(&self) -> &[crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails] {
+        self.subnet_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the VPC where the firewall is used.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

@@ -90,6 +90,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
         &self.environment_name
     }
     /// <p>The type of information to retrieve.</p>
+    /// This field is required.
     pub fn info_type(mut self, input: crate::types::EnvironmentInfoType) -> Self {
         self.info_type = ::std::option::Option::Some(input);
         self

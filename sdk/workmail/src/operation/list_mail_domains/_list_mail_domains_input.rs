@@ -41,6 +41,7 @@ pub struct ListMailDomainsInputBuilder {
 }
 impl ListMailDomainsInputBuilder {
     /// <p>The WorkMail organization for which to list domains.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

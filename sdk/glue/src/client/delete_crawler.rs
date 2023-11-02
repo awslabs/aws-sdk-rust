@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCrawler`](crate::operation::delete_crawler::builders::DeleteCrawlerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_crawler::builders::DeleteCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_crawler::builders::DeleteCrawlerFluentBuilder::set_name): <p>The name of the crawler to remove.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_crawler::builders::DeleteCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_crawler::builders::DeleteCrawlerFluentBuilder::set_name):<br>required: **true**<br><p>The name of the crawler to remove.</p><br>
     /// - On success, responds with [`DeleteCrawlerOutput`](crate::operation::delete_crawler::DeleteCrawlerOutput)
     /// - On failure, responds with [`SdkError<DeleteCrawlerError>`](crate::operation::delete_crawler::DeleteCrawlerError)
     pub fn delete_crawler(&self) -> crate::operation::delete_crawler::builders::DeleteCrawlerFluentBuilder {

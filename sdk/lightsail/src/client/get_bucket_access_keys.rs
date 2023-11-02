@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBucketAccessKeys`](crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bucket_name(impl Into<String>)`](crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysFluentBuilder::bucket_name) / [`set_bucket_name(Option<String>)`](crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysFluentBuilder::set_bucket_name): <p>The name of the bucket for which to return access keys.</p>
+    ///   - [`bucket_name(impl Into<String>)`](crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysFluentBuilder::bucket_name) / [`set_bucket_name(Option<String>)`](crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysFluentBuilder::set_bucket_name):<br>required: **true**<br><p>The name of the bucket for which to return access keys.</p><br>
     /// - On success, responds with [`GetBucketAccessKeysOutput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput) with field(s):
     ///   - [`access_keys(Option<Vec<AccessKey>>)`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput::access_keys): <p>An object that describes the access keys for the specified bucket.</p>
     /// - On failure, responds with [`SdkError<GetBucketAccessKeysError>`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysError)

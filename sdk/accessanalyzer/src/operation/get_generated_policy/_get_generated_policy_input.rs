@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGeneratedPolicyInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
     /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
     pub include_resource_placeholders: ::std::option::Option<bool>,
@@ -14,8 +14,9 @@ pub struct GetGeneratedPolicyInput {
 }
 impl GetGeneratedPolicyInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
     /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
@@ -45,6 +46,7 @@ pub struct GetGeneratedPolicyInputBuilder {
 }
 impl GetGeneratedPolicyInputBuilder {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -93,11 +95,18 @@ impl GetGeneratedPolicyInputBuilder {
         &self.include_service_level_template
     }
     /// Consumes the builder and constructs a [`GetGeneratedPolicyInput`](crate::operation::get_generated_policy::GetGeneratedPolicyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder::job_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_generated_policy::GetGeneratedPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_generated_policy::GetGeneratedPolicyInput {
-            job_id: self.job_id,
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building GetGeneratedPolicyInput",
+                )
+            })?,
             include_resource_placeholders: self.include_resource_placeholders,
             include_service_level_template: self.include_service_level_template,
         })

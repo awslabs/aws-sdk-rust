@@ -27,8 +27,10 @@ impl DeleteFleetLocationsOutput {
         self.fleet_arn.as_deref()
     }
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    pub fn location_states(&self) -> ::std::option::Option<&[crate::types::LocationState]> {
-        self.location_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_states.is_none()`.
+    pub fn location_states(&self) -> &[crate::types::LocationState] {
+        self.location_states.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteFleetLocationsOutput {

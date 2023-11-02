@@ -27,6 +27,7 @@ pub struct GetAliasInputBuilder {
 }
 impl GetAliasInputBuilder {
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self

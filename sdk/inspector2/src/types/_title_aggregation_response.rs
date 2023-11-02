@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TitleAggregationResponse {
     /// <p>The title that the findings were aggregated on.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The vulnerability ID of the finding.</p>
     pub vulnerability_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
@@ -15,8 +15,9 @@ pub struct TitleAggregationResponse {
 }
 impl TitleAggregationResponse {
     /// <p>The title that the findings were aggregated on.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The vulnerability ID of the finding.</p>
     pub fn vulnerability_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct TitleAggregationResponseBuilder {
 }
 impl TitleAggregationResponseBuilder {
     /// <p>The title that the findings were aggregated on.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl TitleAggregationResponseBuilder {
         &self.severity_counts
     }
     /// Consumes the builder and constructs a [`TitleAggregationResponse`](crate::types::TitleAggregationResponse).
-    pub fn build(self) -> crate::types::TitleAggregationResponse {
-        crate::types::TitleAggregationResponse {
-            title: self.title,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`title`](crate::types::builders::TitleAggregationResponseBuilder::title)
+    pub fn build(self) -> ::std::result::Result<crate::types::TitleAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TitleAggregationResponse {
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building TitleAggregationResponse",
+                )
+            })?,
             vulnerability_id: self.vulnerability_id,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
-        }
+        })
     }
 }

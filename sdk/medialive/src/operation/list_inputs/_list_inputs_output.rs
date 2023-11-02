@@ -12,8 +12,10 @@ pub struct ListInputsOutput {
 }
 impl ListInputsOutput {
     /// Placeholder documentation for __listOfInput
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::Input]> {
-        self.inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
+    pub fn inputs(&self) -> &[crate::types::Input] {
+        self.inputs.as_deref().unwrap_or_default()
     }
     /// Placeholder documentation for __string
     pub fn next_token(&self) -> ::std::option::Option<&str> {

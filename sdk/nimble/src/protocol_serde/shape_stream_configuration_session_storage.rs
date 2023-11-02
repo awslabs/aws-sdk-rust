@@ -9,14 +9,14 @@ pub fn ser_stream_configuration_session_storage(
         crate::protocol_serde::shape_streaming_session_storage_root::ser_streaming_session_storage_root(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.mode {
-        let mut array_4 = object.key("mode").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("mode").start_array();
+        for item_4 in &input.mode {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -55,7 +55,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::stream_configuration_session_storage_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

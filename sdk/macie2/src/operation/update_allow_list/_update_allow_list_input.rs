@@ -51,6 +51,7 @@ pub struct UpdateAllowListInputBuilder {
 impl UpdateAllowListInputBuilder {
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
+    /// This field is required.
     pub fn criteria(mut self, input: crate::types::AllowListCriteria) -> Self {
         self.criteria = ::std::option::Option::Some(input);
         self
@@ -81,6 +82,7 @@ impl UpdateAllowListInputBuilder {
         &self.description
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +97,7 @@ impl UpdateAllowListInputBuilder {
         &self.id
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

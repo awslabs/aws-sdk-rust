@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTimeBasedAutoScaling`](crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_ids(impl Into<String>)`](crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder::set_instance_ids): <p>An array of instance IDs.</p>
+    ///   - [`instance_ids(impl Into<String>)`](crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::describe_time_based_auto_scaling::builders::DescribeTimeBasedAutoScalingFluentBuilder::set_instance_ids):<br>required: **true**<br><p>An array of instance IDs.</p><br>
     /// - On success, responds with [`DescribeTimeBasedAutoScalingOutput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput) with field(s):
     ///   - [`time_based_auto_scaling_configurations(Option<Vec<TimeBasedAutoScalingConfiguration>>)`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput::time_based_auto_scaling_configurations): <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     /// - On failure, responds with [`SdkError<DescribeTimeBasedAutoScalingError>`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError)

@@ -41,6 +41,7 @@ pub struct ListTestGridSessionActionsInputBuilder {
 }
 impl ListTestGridSessionActionsInputBuilder {
     /// <p>The ARN of the session to retrieve.</p>
+    /// This field is required.
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
         self

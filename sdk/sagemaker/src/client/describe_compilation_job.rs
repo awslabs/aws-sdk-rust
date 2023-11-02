@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCompilationJob`](crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`compilation_job_name(impl Into<String>)`](crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder::set_compilation_job_name): <p>The name of the model compilation job that you want information about.</p>
+    ///   - [`compilation_job_name(impl Into<String>)`](crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder::compilation_job_name) / [`set_compilation_job_name(Option<String>)`](crate::operation::describe_compilation_job::builders::DescribeCompilationJobFluentBuilder::set_compilation_job_name):<br>required: **true**<br><p>The name of the model compilation job that you want information about.</p><br>
     /// - On success, responds with [`DescribeCompilationJobOutput`](crate::operation::describe_compilation_job::DescribeCompilationJobOutput) with field(s):
     ///   - [`compilation_job_name(Option<String>)`](crate::operation::describe_compilation_job::DescribeCompilationJobOutput::compilation_job_name): <p>The name of the model compilation job.</p>
     ///   - [`compilation_job_arn(Option<String>)`](crate::operation::describe_compilation_job::DescribeCompilationJobOutput::compilation_job_arn): <p>The Amazon Resource Name (ARN) of the model compilation job.</p>

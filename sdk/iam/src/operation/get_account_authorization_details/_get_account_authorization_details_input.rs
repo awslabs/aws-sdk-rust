@@ -15,8 +15,10 @@ pub struct GetAccountAuthorizationDetailsInput {
 impl GetAccountAuthorizationDetailsInput {
     /// <p>A list of entity types used to filter the results. Only the entities that match the types you specify are included in the output. Use the value <code>LocalManagedPolicy</code> to include customer managed policies.</p>
     /// <p>The format for this parameter is a comma-separated (if more than one) list of strings. Each string value in the list must be one of the valid values listed below.</p>
-    pub fn filter(&self) -> ::std::option::Option<&[crate::types::EntityType]> {
-        self.filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter.is_none()`.
+    pub fn filter(&self) -> &[crate::types::EntityType] {
+        self.filter.as_deref().unwrap_or_default()
     }
     /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
     /// <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>

@@ -16,8 +16,10 @@ pub struct DescribeVerifiedAccessInstancesInput {
 }
 impl DescribeVerifiedAccessInstancesInput {
     /// <p>The IDs of the Verified Access instances.</p>
-    pub fn verified_access_instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.verified_access_instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.verified_access_instance_ids.is_none()`.
+    pub fn verified_access_instance_ids(&self) -> &[::std::string::String] {
+        self.verified_access_instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -28,8 +30,10 @@ impl DescribeVerifiedAccessInstancesInput {
         self.next_token.as_deref()
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {

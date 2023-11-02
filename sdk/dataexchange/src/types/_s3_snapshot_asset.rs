@@ -28,6 +28,7 @@ pub struct S3SnapshotAssetBuilder {
 }
 impl S3SnapshotAssetBuilder {
     /// <p>The size of the Amazon S3 object that is the object.</p>
+    /// This field is required.
     pub fn size(mut self, input: f64) -> Self {
         self.size = ::std::option::Option::Some(input);
         self

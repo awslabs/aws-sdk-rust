@@ -15,8 +15,10 @@ impl ListCustomModelsOutput {
         self.next_token.as_deref()
     }
     /// <p>Model summaries.</p>
-    pub fn model_summaries(&self) -> ::std::option::Option<&[crate::types::CustomModelSummary]> {
-        self.model_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_summaries.is_none()`.
+    pub fn model_summaries(&self) -> &[crate::types::CustomModelSummary] {
+        self.model_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCustomModelsOutput {

@@ -28,6 +28,7 @@ pub struct DeleteSuppressedDestinationInputBuilder {
 }
 impl DeleteSuppressedDestinationInputBuilder {
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self

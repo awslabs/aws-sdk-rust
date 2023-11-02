@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RobotApplicationConfig {
     /// <p>The application information for the robot application.</p>
-    pub application: ::std::option::Option<::std::string::String>,
+    pub application: ::std::string::String,
     /// <p>The version of the robot application.</p>
     pub application_version: ::std::option::Option<::std::string::String>,
     /// <p>The launch configuration for the robot application.</p>
@@ -32,8 +32,9 @@ pub struct RobotApplicationConfig {
 }
 impl RobotApplicationConfig {
     /// <p>The application information for the robot application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
-        self.application.as_deref()
+    pub fn application(&self) -> &str {
+        use std::ops::Deref;
+        self.application.deref()
     }
     /// <p>The version of the robot application.</p>
     pub fn application_version(&self) -> ::std::option::Option<&str> {
@@ -44,8 +45,10 @@ impl RobotApplicationConfig {
         self.launch_config.as_ref()
     }
     /// <p>The upload configurations for the robot application.</p>
-    pub fn upload_configurations(&self) -> ::std::option::Option<&[crate::types::UploadConfiguration]> {
-        self.upload_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upload_configurations.is_none()`.
+    pub fn upload_configurations(&self) -> &[crate::types::UploadConfiguration] {
+        self.upload_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
@@ -58,8 +61,10 @@ impl RobotApplicationConfig {
         self.use_default_upload_configurations
     }
     /// <p>Information about tools configured for the robot application.</p>
-    pub fn tools(&self) -> ::std::option::Option<&[crate::types::Tool]> {
-        self.tools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
+    pub fn tools(&self) -> &[crate::types::Tool] {
+        self.tools.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
@@ -92,6 +97,7 @@ pub struct RobotApplicationConfigBuilder {
 }
 impl RobotApplicationConfigBuilder {
     /// <p>The application information for the robot application.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +126,7 @@ impl RobotApplicationConfigBuilder {
         &self.application_version
     }
     /// <p>The launch configuration for the robot application.</p>
+    /// This field is required.
     pub fn launch_config(mut self, input: crate::types::LaunchConfig) -> Self {
         self.launch_config = ::std::option::Option::Some(input);
         self
@@ -235,15 +242,22 @@ impl RobotApplicationConfigBuilder {
         &self.use_default_tools
     }
     /// Consumes the builder and constructs a [`RobotApplicationConfig`](crate::types::RobotApplicationConfig).
-    pub fn build(self) -> crate::types::RobotApplicationConfig {
-        crate::types::RobotApplicationConfig {
-            application: self.application,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application`](crate::types::builders::RobotApplicationConfigBuilder::application)
+    pub fn build(self) -> ::std::result::Result<crate::types::RobotApplicationConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RobotApplicationConfig {
+            application: self.application.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application",
+                    "application was not specified but it is required when building RobotApplicationConfig",
+                )
+            })?,
             application_version: self.application_version,
             launch_config: self.launch_config,
             upload_configurations: self.upload_configurations,
             use_default_upload_configurations: self.use_default_upload_configurations,
             tools: self.tools,
             use_default_tools: self.use_default_tools,
-        }
+        })
     }
 }

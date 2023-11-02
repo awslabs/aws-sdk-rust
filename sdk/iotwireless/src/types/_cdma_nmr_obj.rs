@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaNmrObj {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub pn_offset: ::std::option::Option<i32>,
+    pub pn_offset: i32,
     /// <p>CDMA channel information.</p>
-    pub cdma_channel: ::std::option::Option<i32>,
+    pub cdma_channel: i32,
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub pilot_power: ::std::option::Option<i32>,
     /// <p>CDMA base station ID (BSID).</p>
@@ -15,11 +15,11 @@ pub struct CdmaNmrObj {
 }
 impl CdmaNmrObj {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub fn pn_offset(&self) -> ::std::option::Option<i32> {
+    pub fn pn_offset(&self) -> i32 {
         self.pn_offset
     }
     /// <p>CDMA channel information.</p>
-    pub fn cdma_channel(&self) -> ::std::option::Option<i32> {
+    pub fn cdma_channel(&self) -> i32 {
         self.cdma_channel
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
@@ -49,6 +49,7 @@ pub struct CdmaNmrObjBuilder {
 }
 impl CdmaNmrObjBuilder {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
+    /// This field is required.
     pub fn pn_offset(mut self, input: i32) -> Self {
         self.pn_offset = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl CdmaNmrObjBuilder {
         &self.pn_offset
     }
     /// <p>CDMA channel information.</p>
+    /// This field is required.
     pub fn cdma_channel(mut self, input: i32) -> Self {
         self.cdma_channel = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl CdmaNmrObjBuilder {
         &self.base_station_id
     }
     /// Consumes the builder and constructs a [`CdmaNmrObj`](crate::types::CdmaNmrObj).
-    pub fn build(self) -> crate::types::CdmaNmrObj {
-        crate::types::CdmaNmrObj {
-            pn_offset: self.pn_offset,
-            cdma_channel: self.cdma_channel,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pn_offset`](crate::types::builders::CdmaNmrObjBuilder::pn_offset)
+    /// - [`cdma_channel`](crate::types::builders::CdmaNmrObjBuilder::cdma_channel)
+    pub fn build(self) -> ::std::result::Result<crate::types::CdmaNmrObj, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CdmaNmrObj {
+            pn_offset: self.pn_offset.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pn_offset",
+                    "pn_offset was not specified but it is required when building CdmaNmrObj",
+                )
+            })?,
+            cdma_channel: self.cdma_channel.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cdma_channel",
+                    "cdma_channel was not specified but it is required when building CdmaNmrObj",
+                )
+            })?,
             pilot_power: self.pilot_power,
             base_station_id: self.base_station_id,
-        }
+        })
     }
 }

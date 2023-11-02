@@ -28,6 +28,7 @@ pub struct DeleteDirectoryInputBuilder {
 }
 impl DeleteDirectoryInputBuilder {
     /// <p>The identifier of the directory to delete.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

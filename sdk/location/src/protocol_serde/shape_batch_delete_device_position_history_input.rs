@@ -3,14 +3,14 @@ pub fn ser_batch_delete_device_position_history_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.device_ids {
-        let mut array_2 = object.key("DeviceIds").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("DeviceIds").start_array();
+        for item_2 in &input.device_ids {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }

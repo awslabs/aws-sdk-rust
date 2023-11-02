@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSchedulesOutput {
     /// <p>A list of schedules that are defined.</p>
-    pub schedules: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
+    pub schedules: ::std::vec::Vec<crate::types::Schedule>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSchedulesOutput {
     /// <p>A list of schedules that are defined.</p>
-    pub fn schedules(&self) -> ::std::option::Option<&[crate::types::Schedule]> {
-        self.schedules.as_deref()
+    pub fn schedules(&self) -> &[crate::types::Schedule] {
+        use std::ops::Deref;
+        self.schedules.deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListSchedulesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput).
-    pub fn build(self) -> crate::operation::list_schedules::ListSchedulesOutput {
-        crate::operation::list_schedules::ListSchedulesOutput {
-            schedules: self.schedules,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schedules`](crate::operation::list_schedules::builders::ListSchedulesOutputBuilder::schedules)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_schedules::ListSchedulesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_schedules::ListSchedulesOutput {
+            schedules: self.schedules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "schedules",
+                    "schedules was not specified but it is required when building ListSchedulesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

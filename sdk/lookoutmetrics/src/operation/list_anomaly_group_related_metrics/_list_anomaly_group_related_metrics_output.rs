@@ -11,8 +11,10 @@ pub struct ListAnomalyGroupRelatedMetricsOutput {
 }
 impl ListAnomalyGroupRelatedMetricsOutput {
     /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
-    pub fn inter_metric_impact_list(&self) -> ::std::option::Option<&[crate::types::InterMetricImpactDetails]> {
-        self.inter_metric_impact_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inter_metric_impact_list.is_none()`.
+    pub fn inter_metric_impact_list(&self) -> &[crate::types::InterMetricImpactDetails] {
+        self.inter_metric_impact_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

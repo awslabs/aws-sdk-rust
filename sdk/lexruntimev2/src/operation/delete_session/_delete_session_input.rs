@@ -48,6 +48,7 @@ pub struct DeleteSessionInputBuilder {
 }
 impl DeleteSessionInputBuilder {
     /// <p>The identifier of the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteSessionInputBuilder {
         &self.bot_id
     }
     /// <p>The alias identifier in use for the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DeleteSessionInputBuilder {
         &self.bot_alias_id
     }
     /// <p>The locale where the session is in use.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl DeleteSessionInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the session to delete.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

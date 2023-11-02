@@ -12,7 +12,7 @@ use std::time::{Duration, SystemTime};
 #[tokio::test]
 async fn test_presigning() {
     let config = Config::builder()
-        .credentials_provider(Credentials::for_tests())
+        .credentials_provider(Credentials::for_tests_with_session_token())
         .region(Region::new("us-east-1"))
         .build();
     let client = polly::Client::from_conf(config);

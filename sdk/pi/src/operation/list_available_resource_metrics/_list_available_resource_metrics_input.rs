@@ -36,8 +36,10 @@ impl ListAvailableResourceMetricsInput {
     /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
-    pub fn metric_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_types.is_none()`.
+    pub fn metric_types(&self) -> &[::std::string::String] {
+        self.metric_types.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -67,6 +69,7 @@ pub struct ListAvailableResourceMetricsInputBuilder {
 }
 impl ListAvailableResourceMetricsInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -81,6 +84,7 @@ impl ListAvailableResourceMetricsInputBuilder {
         &self.service_type
     }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

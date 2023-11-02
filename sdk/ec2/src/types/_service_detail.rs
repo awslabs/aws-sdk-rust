@@ -46,28 +46,36 @@ impl ServiceDetail {
         self.service_id.as_deref()
     }
     /// <p>The type of service.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&[crate::types::ServiceTypeDetail]> {
-        self.service_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_type.is_none()`.
+    pub fn service_type(&self) -> &[crate::types::ServiceTypeDetail] {
+        self.service_type.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zones in which the service is available.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The DNS names for the service.</p>
-    pub fn base_endpoint_dns_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.base_endpoint_dns_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.base_endpoint_dns_names.is_none()`.
+    pub fn base_endpoint_dns_names(&self) -> &[::std::string::String] {
+        self.base_endpoint_dns_names.as_deref().unwrap_or_default()
     }
     /// <p>The private DNS name for the service.</p>
     pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private DNS names assigned to the VPC endpoint service.</p>
-    pub fn private_dns_names(&self) -> ::std::option::Option<&[crate::types::PrivateDnsDetails]> {
-        self.private_dns_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_dns_names.is_none()`.
+    pub fn private_dns_names(&self) -> &[crate::types::PrivateDnsDetails] {
+        self.private_dns_names.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the service supports endpoint policies.</p>
     pub fn vpc_endpoint_policy_supported(&self) -> ::std::option::Option<bool> {
@@ -86,8 +94,10 @@ impl ServiceDetail {
         self.payer_responsibility.as_ref()
     }
     /// <p>The tags assigned to the service.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The verification state of the VPC endpoint service.</p>
     /// <p>Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.</p>
@@ -95,8 +105,10 @@ impl ServiceDetail {
         self.private_dns_name_verification_state.as_ref()
     }
     /// <p>The supported IP address types.</p>
-    pub fn supported_ip_address_types(&self) -> ::std::option::Option<&[crate::types::ServiceConnectivityType]> {
-        self.supported_ip_address_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ip_address_types.is_none()`.
+    pub fn supported_ip_address_types(&self) -> &[crate::types::ServiceConnectivityType] {
+        self.supported_ip_address_types.as_deref().unwrap_or_default()
     }
 }
 impl ServiceDetail {

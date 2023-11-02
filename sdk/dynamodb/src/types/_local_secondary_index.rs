@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalSecondaryIndex {
     /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
     /// <li> <p> <code>HASH</code> - partition key</p> </li>
@@ -14,14 +14,15 @@ pub struct LocalSecondaryIndex {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::vec::Vec<crate::types::KeySchemaElement>,
     /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub projection: ::std::option::Option<crate::types::Projection>,
 }
 impl LocalSecondaryIndex {
     /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
@@ -31,8 +32,9 @@ impl LocalSecondaryIndex {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.key_schema.as_deref()
+    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
+        use std::ops::Deref;
+        self.key_schema.deref()
     }
     /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn projection(&self) -> ::std::option::Option<&crate::types::Projection> {
@@ -56,6 +58,7 @@ pub struct LocalSecondaryIndexBuilder {
 }
 impl LocalSecondaryIndexBuilder {
     /// <p>The name of the local secondary index. The name must be unique among all other indexes on this table.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl LocalSecondaryIndexBuilder {
         &self.key_schema
     }
     /// <p>Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
+    /// This field is required.
     pub fn projection(mut self, input: crate::types::Projection) -> Self {
         self.projection = ::std::option::Option::Some(input);
         self
@@ -125,11 +129,24 @@ impl LocalSecondaryIndexBuilder {
         &self.projection
     }
     /// Consumes the builder and constructs a [`LocalSecondaryIndex`](crate::types::LocalSecondaryIndex).
-    pub fn build(self) -> crate::types::LocalSecondaryIndex {
-        crate::types::LocalSecondaryIndex {
-            index_name: self.index_name,
-            key_schema: self.key_schema,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::types::builders::LocalSecondaryIndexBuilder::index_name)
+    /// - [`key_schema`](crate::types::builders::LocalSecondaryIndexBuilder::key_schema)
+    pub fn build(self) -> ::std::result::Result<crate::types::LocalSecondaryIndex, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LocalSecondaryIndex {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building LocalSecondaryIndex",
+                )
+            })?,
+            key_schema: self.key_schema.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_schema",
+                    "key_schema was not specified but it is required when building LocalSecondaryIndex",
+                )
+            })?,
             projection: self.projection,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct PutMultiRegionAccessPointPolicyInputBuilder {
 }
 impl PutMultiRegionAccessPointPolicyInputBuilder {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         &self.account_id
     }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         &self.client_token
     }
     /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+    /// This field is required.
     pub fn details(mut self, input: crate::types::PutMultiRegionAccessPointPolicyInput) -> Self {
         self.details = ::std::option::Option::Some(input);
         self

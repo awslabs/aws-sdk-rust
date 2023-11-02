@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetThingRuntimeConfiguration`](crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder::set_thing_name): The thing name.
+    ///   - [`thing_name(impl Into<String>)`](crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationFluentBuilder::set_thing_name):<br>required: **true**<br>The thing name.<br>
     /// - On success, responds with [`GetThingRuntimeConfigurationOutput`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput) with field(s):
     ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput::runtime_configuration): Runtime configuration for a thing.
     /// - On failure, responds with [`SdkError<GetThingRuntimeConfigurationError>`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError)

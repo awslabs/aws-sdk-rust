@@ -145,6 +145,6 @@ pub fn de_get_campaign_activities_http_response(
         output = output
             .set_activities_response(crate::protocol_serde::shape_get_campaign_activities_output::de_activities_response_payload(_response_body)?);
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_campaign_activities_output_correct_errors(output).build()
     })
 }

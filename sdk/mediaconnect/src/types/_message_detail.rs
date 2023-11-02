@@ -41,6 +41,7 @@ pub struct MessageDetailBuilder {
 }
 impl MessageDetailBuilder {
     /// The error code.
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl MessageDetailBuilder {
         &self.code
     }
     /// The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

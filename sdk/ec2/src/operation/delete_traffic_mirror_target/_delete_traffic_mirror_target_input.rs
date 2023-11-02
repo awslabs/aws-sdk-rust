@@ -34,6 +34,7 @@ pub struct DeleteTrafficMirrorTargetInputBuilder {
 }
 impl DeleteTrafficMirrorTargetInputBuilder {
     /// <p>The ID of the Traffic Mirror target.</p>
+    /// This field is required.
     pub fn traffic_mirror_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_target_id = ::std::option::Option::Some(input.into());
         self

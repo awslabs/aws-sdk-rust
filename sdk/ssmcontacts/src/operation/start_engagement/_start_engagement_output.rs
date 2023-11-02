@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartEngagementOutput {
     /// <p>The ARN of the engagement.</p>
-    pub engagement_arn: ::std::option::Option<::std::string::String>,
+    pub engagement_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartEngagementOutput {
     /// <p>The ARN of the engagement.</p>
-    pub fn engagement_arn(&self) -> ::std::option::Option<&str> {
-        self.engagement_arn.as_deref()
+    pub fn engagement_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.engagement_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartEngagementOutput {
@@ -34,6 +35,7 @@ pub struct StartEngagementOutputBuilder {
 }
 impl StartEngagementOutputBuilder {
     /// <p>The ARN of the engagement.</p>
+    /// This field is required.
     pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl StartEngagementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartEngagementOutput`](crate::operation::start_engagement::StartEngagementOutput).
-    pub fn build(self) -> crate::operation::start_engagement::StartEngagementOutput {
-        crate::operation::start_engagement::StartEngagementOutput {
-            engagement_arn: self.engagement_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`engagement_arn`](crate::operation::start_engagement::builders::StartEngagementOutputBuilder::engagement_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_engagement::StartEngagementOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_engagement::StartEngagementOutput {
+            engagement_arn: self.engagement_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engagement_arn",
+                    "engagement_arn was not specified but it is required when building StartEngagementOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct GetBatchPredictionInputBuilder {
 }
 impl GetBatchPredictionInputBuilder {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
+    /// This field is required.
     pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self

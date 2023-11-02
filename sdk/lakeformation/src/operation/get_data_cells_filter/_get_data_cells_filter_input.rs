@@ -48,6 +48,7 @@ pub struct GetDataCellsFilterInputBuilder {
 }
 impl GetDataCellsFilterInputBuilder {
     /// <p>The ID of the catalog to which the table belongs.</p>
+    /// This field is required.
     pub fn table_catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_catalog_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetDataCellsFilterInputBuilder {
         &self.table_catalog_id
     }
     /// <p>A database in the Glue Data Catalog.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl GetDataCellsFilterInputBuilder {
         &self.database_name
     }
     /// <p>A table in the database.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetDataCellsFilterInputBuilder {
         &self.table_name
     }
     /// <p>The name given by the user to the data filter cell.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

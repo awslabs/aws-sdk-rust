@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentProvisionedResourcesInput {
     /// <p>The name of the component whose provisioned resources you want.</p>
-    pub component_name: ::std::option::Option<::std::string::String>,
+    pub component_name: ::std::string::String,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentProvisionedResourcesInput {
     /// <p>The name of the component whose provisioned resources you want.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
-        self.component_name.as_deref()
+    pub fn component_name(&self) -> &str {
+        use std::ops::Deref;
+        self.component_name.deref()
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct ListComponentProvisionedResourcesInputBuilder {
 }
 impl ListComponentProvisionedResourcesInputBuilder {
     /// <p>The name of the component whose provisioned resources you want.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,8 @@ impl ListComponentProvisionedResourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComponentProvisionedResourcesInput`](crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_name`](crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesInputBuilder::component_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,7 +74,12 @@ impl ListComponentProvisionedResourcesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesInput {
-                component_name: self.component_name,
+                component_name: self.component_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_name",
+                        "component_name was not specified but it is required when building ListComponentProvisionedResourcesInput",
+                    )
+                })?,
                 next_token: self.next_token,
             },
         )

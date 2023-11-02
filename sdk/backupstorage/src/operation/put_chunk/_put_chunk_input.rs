@@ -69,6 +69,7 @@ pub struct PutChunkInputBuilder {
 }
 impl PutChunkInputBuilder {
     /// Backup job Id for the in-progress backup.
+    /// This field is required.
     pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl PutChunkInputBuilder {
         &self.backup_job_id
     }
     /// Upload Id for the in-progress upload.
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl PutChunkInputBuilder {
         &self.upload_id
     }
     /// Describes this chunk's position relative to the other chunks
+    /// This field is required.
     pub fn chunk_index(mut self, input: i64) -> Self {
         self.chunk_index = ::std::option::Option::Some(input);
         self
@@ -111,6 +114,7 @@ impl PutChunkInputBuilder {
         &self.chunk_index
     }
     /// Data to be uploaded
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -125,6 +129,7 @@ impl PutChunkInputBuilder {
         &self.data
     }
     /// Data length
+    /// This field is required.
     pub fn length(mut self, input: i64) -> Self {
         self.length = ::std::option::Option::Some(input);
         self
@@ -139,6 +144,7 @@ impl PutChunkInputBuilder {
         &self.length
     }
     /// Data checksum
+    /// This field is required.
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +159,7 @@ impl PutChunkInputBuilder {
         &self.checksum
     }
     /// Checksum algorithm
+    /// This field is required.
     pub fn checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
         self.checksum_algorithm = ::std::option::Option::Some(input);
         self

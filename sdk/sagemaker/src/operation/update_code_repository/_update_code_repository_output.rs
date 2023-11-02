@@ -34,6 +34,7 @@ pub struct UpdateCodeRepositoryOutputBuilder {
 }
 impl UpdateCodeRepositoryOutputBuilder {
     /// <p>The ARN of the Git repository.</p>
+    /// This field is required.
     pub fn code_repository_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_arn = ::std::option::Option::Some(input.into());
         self

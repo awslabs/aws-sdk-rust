@@ -76,8 +76,10 @@ impl ListPartsOutput {
         self.is_truncated
     }
     /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
-    pub fn parts(&self) -> ::std::option::Option<&[crate::types::Part]> {
-        self.parts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
+    pub fn parts(&self) -> &[crate::types::Part] {
+        self.parts.as_deref().unwrap_or_default()
     }
     /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
     pub fn initiator(&self) -> ::std::option::Option<&crate::types::Initiator> {

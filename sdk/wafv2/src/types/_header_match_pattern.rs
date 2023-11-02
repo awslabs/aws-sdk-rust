@@ -19,12 +19,16 @@ impl HeaderMatchPattern {
         self.all.as_ref()
     }
     /// <p>Inspect only the headers that have a key that matches one of the strings specified here. </p>
-    pub fn included_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.included_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_headers.is_none()`.
+    pub fn included_headers(&self) -> &[::std::string::String] {
+        self.included_headers.as_deref().unwrap_or_default()
     }
     /// <p>Inspect only the headers whose keys don't match any of the strings specified here. </p>
-    pub fn excluded_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_headers.is_none()`.
+    pub fn excluded_headers(&self) -> &[::std::string::String] {
+        self.excluded_headers.as_deref().unwrap_or_default()
     }
 }
 impl HeaderMatchPattern {

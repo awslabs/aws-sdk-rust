@@ -9,33 +9,33 @@ pub fn ser_create_channel_input(
         crate::protocol_serde::shape_slate_source::ser_slate_source(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.outputs {
-        let mut array_4 = object.key("Outputs").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("Outputs").start_array();
+        for item_4 in &input.outputs {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_request_output_item::ser_request_output_item(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_request_output_item::ser_request_output_item(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.playback_mode {
-        object.key("PlaybackMode").string(var_7.as_str());
+    {
+        object.key("PlaybackMode").string(input.playback_mode.as_str());
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_9.finish();
+        object_7.finish();
     }
-    if let Some(var_12) = &input.tier {
-        object.key("Tier").string(var_12.as_str());
+    if let Some(var_10) = &input.tier {
+        object.key("Tier").string(var_10.as_str());
     }
     Ok(())
 }

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionMapping {
     /// <p>Column name from query result.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Type for the dimension. </p>
-    pub dimension_value_type: ::std::option::Option<crate::types::DimensionValueType>,
+    pub dimension_value_type: crate::types::DimensionValueType,
 }
 impl DimensionMapping {
     /// <p>Column name from query result.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Type for the dimension. </p>
-    pub fn dimension_value_type(&self) -> ::std::option::Option<&crate::types::DimensionValueType> {
-        self.dimension_value_type.as_ref()
+    pub fn dimension_value_type(&self) -> &crate::types::DimensionValueType {
+        &self.dimension_value_type
     }
 }
 impl DimensionMapping {
@@ -35,6 +36,7 @@ pub struct DimensionMappingBuilder {
 }
 impl DimensionMappingBuilder {
     /// <p>Column name from query result.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl DimensionMappingBuilder {
         &self.name
     }
     /// <p>Type for the dimension. </p>
+    /// This field is required.
     pub fn dimension_value_type(mut self, input: crate::types::DimensionValueType) -> Self {
         self.dimension_value_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl DimensionMappingBuilder {
         &self.dimension_value_type
     }
     /// Consumes the builder and constructs a [`DimensionMapping`](crate::types::DimensionMapping).
-    pub fn build(self) -> crate::types::DimensionMapping {
-        crate::types::DimensionMapping {
-            name: self.name,
-            dimension_value_type: self.dimension_value_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DimensionMappingBuilder::name)
+    /// - [`dimension_value_type`](crate::types::builders::DimensionMappingBuilder::dimension_value_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DimensionMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DimensionMapping {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DimensionMapping",
+                )
+            })?,
+            dimension_value_type: self.dimension_value_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_value_type",
+                    "dimension_value_type was not specified but it is required when building DimensionMapping",
+                )
+            })?,
+        })
     }
 }

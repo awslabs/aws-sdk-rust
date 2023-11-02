@@ -86,6 +86,7 @@ impl BacktrackDbClusterInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +123,7 @@ impl BacktrackDbClusterInputBuilder {
     /// <li> <p>Can't contain a timestamp set in the future.</p> </li>
     /// </ul>
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
+    /// This field is required.
     pub fn backtrack_to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.backtrack_to = ::std::option::Option::Some(input);
         self

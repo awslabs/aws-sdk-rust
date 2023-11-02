@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorEntityField {
     /// <p> The unique identifier of the connector field. </p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>The parent identifier of the connector field.</p>
     pub parent_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The label applied to a connector entity field. </p>
@@ -29,8 +29,9 @@ pub struct ConnectorEntityField {
 }
 impl ConnectorEntityField {
     /// <p> The unique identifier of the connector field. </p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>The parent identifier of the connector field.</p>
     pub fn parent_identifier(&self) -> ::std::option::Option<&str> {
@@ -98,6 +99,7 @@ pub struct ConnectorEntityFieldBuilder {
 }
 impl ConnectorEntityFieldBuilder {
     /// <p> The unique identifier of the connector field. </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -265,9 +267,16 @@ impl ConnectorEntityFieldBuilder {
         &self.custom_properties
     }
     /// Consumes the builder and constructs a [`ConnectorEntityField`](crate::types::ConnectorEntityField).
-    pub fn build(self) -> crate::types::ConnectorEntityField {
-        crate::types::ConnectorEntityField {
-            identifier: self.identifier,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::types::builders::ConnectorEntityFieldBuilder::identifier)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectorEntityField, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConnectorEntityField {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building ConnectorEntityField",
+                )
+            })?,
             parent_identifier: self.parent_identifier,
             label: self.label,
             is_primary_key: self.is_primary_key.unwrap_or_default(),
@@ -278,6 +287,6 @@ impl ConnectorEntityFieldBuilder {
             source_properties: self.source_properties,
             destination_properties: self.destination_properties,
             custom_properties: self.custom_properties,
-        }
+        })
     }
 }

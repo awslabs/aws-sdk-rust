@@ -27,6 +27,7 @@ pub struct DeleteDataProtectionPolicyInputBuilder {
 }
 impl DeleteDataProtectionPolicyInputBuilder {
     /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
+    /// This field is required.
     pub fn log_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_identifier = ::std::option::Option::Some(input.into());
         self

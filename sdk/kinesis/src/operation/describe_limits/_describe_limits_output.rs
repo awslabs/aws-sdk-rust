@@ -4,30 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLimitsOutput {
     /// <p>The maximum number of shards.</p>
-    pub shard_limit: ::std::option::Option<i32>,
+    pub shard_limit: i32,
     /// <p>The number of open shards.</p>
-    pub open_shard_count: ::std::option::Option<i32>,
+    pub open_shard_count: i32,
     /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
-    pub on_demand_stream_count: ::std::option::Option<i32>,
+    pub on_demand_stream_count: i32,
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
-    pub on_demand_stream_count_limit: ::std::option::Option<i32>,
+    pub on_demand_stream_count_limit: i32,
     _request_id: Option<String>,
 }
 impl DescribeLimitsOutput {
     /// <p>The maximum number of shards.</p>
-    pub fn shard_limit(&self) -> ::std::option::Option<i32> {
+    pub fn shard_limit(&self) -> i32 {
         self.shard_limit
     }
     /// <p>The number of open shards.</p>
-    pub fn open_shard_count(&self) -> ::std::option::Option<i32> {
+    pub fn open_shard_count(&self) -> i32 {
         self.open_shard_count
     }
     /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
-    pub fn on_demand_stream_count(&self) -> ::std::option::Option<i32> {
+    pub fn on_demand_stream_count(&self) -> i32 {
         self.on_demand_stream_count
     }
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
-    pub fn on_demand_stream_count_limit(&self) -> ::std::option::Option<i32> {
+    pub fn on_demand_stream_count_limit(&self) -> i32 {
         self.on_demand_stream_count_limit
     }
 }
@@ -55,6 +55,7 @@ pub struct DescribeLimitsOutputBuilder {
 }
 impl DescribeLimitsOutputBuilder {
     /// <p>The maximum number of shards.</p>
+    /// This field is required.
     pub fn shard_limit(mut self, input: i32) -> Self {
         self.shard_limit = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl DescribeLimitsOutputBuilder {
         &self.shard_limit
     }
     /// <p>The number of open shards.</p>
+    /// This field is required.
     pub fn open_shard_count(mut self, input: i32) -> Self {
         self.open_shard_count = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl DescribeLimitsOutputBuilder {
         &self.open_shard_count
     }
     /// <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+    /// This field is required.
     pub fn on_demand_stream_count(mut self, input: i32) -> Self {
         self.on_demand_stream_count = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl DescribeLimitsOutputBuilder {
         &self.on_demand_stream_count
     }
     /// <p> The maximum number of data streams with the on-demand capacity mode. </p>
+    /// This field is required.
     pub fn on_demand_stream_count_limit(mut self, input: i32) -> Self {
         self.on_demand_stream_count_limit = ::std::option::Option::Some(input);
         self
@@ -120,13 +124,40 @@ impl DescribeLimitsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeLimitsOutput`](crate::operation::describe_limits::DescribeLimitsOutput).
-    pub fn build(self) -> crate::operation::describe_limits::DescribeLimitsOutput {
-        crate::operation::describe_limits::DescribeLimitsOutput {
-            shard_limit: self.shard_limit,
-            open_shard_count: self.open_shard_count,
-            on_demand_stream_count: self.on_demand_stream_count,
-            on_demand_stream_count_limit: self.on_demand_stream_count_limit,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`shard_limit`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::shard_limit)
+    /// - [`open_shard_count`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::open_shard_count)
+    /// - [`on_demand_stream_count`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::on_demand_stream_count)
+    /// - [`on_demand_stream_count_limit`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::on_demand_stream_count_limit)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_limits::DescribeLimitsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_limits::DescribeLimitsOutput {
+            shard_limit: self.shard_limit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "shard_limit",
+                    "shard_limit was not specified but it is required when building DescribeLimitsOutput",
+                )
+            })?,
+            open_shard_count: self.open_shard_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "open_shard_count",
+                    "open_shard_count was not specified but it is required when building DescribeLimitsOutput",
+                )
+            })?,
+            on_demand_stream_count: self.on_demand_stream_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "on_demand_stream_count",
+                    "on_demand_stream_count was not specified but it is required when building DescribeLimitsOutput",
+                )
+            })?,
+            on_demand_stream_count_limit: self.on_demand_stream_count_limit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "on_demand_stream_count_limit",
+                    "on_demand_stream_count_limit was not specified but it is required when building DescribeLimitsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

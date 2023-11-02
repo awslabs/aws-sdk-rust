@@ -3,11 +3,11 @@ pub fn ser_enable_io_t_logging_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnableIoTLoggingParams,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn_for_logging {
-        object.key("roleArnForLogging").string(var_1.as_str());
+    {
+        object.key("roleArnForLogging").string(input.role_arn_for_logging.as_str());
     }
-    if let Some(var_2) = &input.log_level {
-        object.key("logLevel").string(var_2.as_str());
+    {
+        object.key("logLevel").string(input.log_level.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::enable_io_t_logging_params_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

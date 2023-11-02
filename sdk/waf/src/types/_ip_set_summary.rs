@@ -9,18 +9,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetSummary {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
-    pub ip_set_id: ::std::option::Option<::std::string::String>,
+    pub ip_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl IpSetSummary {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
-    pub fn ip_set_id(&self) -> ::std::option::Option<&str> {
-        self.ip_set_id.as_deref()
+    pub fn ip_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl IpSetSummary {
@@ -39,6 +41,7 @@ pub struct IpSetSummaryBuilder {
 }
 impl IpSetSummaryBuilder {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self
@@ -53,6 +56,7 @@ impl IpSetSummaryBuilder {
         &self.ip_set_id
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -67,10 +71,23 @@ impl IpSetSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`IpSetSummary`](crate::types::IpSetSummary).
-    pub fn build(self) -> crate::types::IpSetSummary {
-        crate::types::IpSetSummary {
-            ip_set_id: self.ip_set_id,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_set_id`](crate::types::builders::IpSetSummaryBuilder::ip_set_id)
+    /// - [`name`](crate::types::builders::IpSetSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpSetSummary {
+            ip_set_id: self.ip_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ip_set_id",
+                    "ip_set_id was not specified but it is required when building IpSetSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building IpSetSummary",
+                )
+            })?,
+        })
     }
 }

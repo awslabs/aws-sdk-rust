@@ -35,6 +35,7 @@ pub struct UpdateAgentInputBuilder {
 }
 impl UpdateAgentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
+    /// This field is required.
     pub fn agent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_arn = ::std::option::Option::Some(input.into());
         self

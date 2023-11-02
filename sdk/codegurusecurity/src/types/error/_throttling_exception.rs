@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>The identifier for the error.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>Description of the error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The identifier for the originating service.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the originating quota.</p>
@@ -16,8 +16,9 @@ pub struct ThrottlingException {
 }
 impl ThrottlingException {
     /// <p>The identifier for the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The identifier for the originating service.</p>
     pub fn service_code(&self) -> ::std::option::Option<&str> {
@@ -34,17 +35,15 @@ impl ThrottlingException {
         ::aws_smithy_types::retry::ErrorKind::ThrottlingError
     }
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ThrottlingException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -80,6 +79,7 @@ pub struct ThrottlingExceptionBuilder {
 }
 impl ThrottlingExceptionBuilder {
     /// <p>The identifier for the error.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +94,7 @@ impl ThrottlingExceptionBuilder {
         &self.error_code
     }
     /// <p>Description of the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -147,13 +148,26 @@ impl ThrottlingExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ThrottlingException`](crate::types::error::ThrottlingException).
-    pub fn build(self) -> crate::types::error::ThrottlingException {
-        crate::types::error::ThrottlingException {
-            error_code: self.error_code,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::ThrottlingExceptionBuilder::error_code)
+    /// - [`message`](crate::types::error::builders::ThrottlingExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ThrottlingException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ThrottlingException {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building ThrottlingException",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ThrottlingException",
+                )
+            })?,
             service_code: self.service_code,
             quota_code: self.quota_code,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::environment_identifier) / [`set_environment_identifier(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_environment_identifier):<br>required: **true**<br><p>The ID of the environment. </p><br>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_environment::DeleteEnvironmentOutput::name): <p>The name of the environment.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_environment::DeleteEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the environment.</p>

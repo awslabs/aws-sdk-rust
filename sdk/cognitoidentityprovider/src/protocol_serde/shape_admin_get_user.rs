@@ -123,7 +123,9 @@ pub fn de_admin_get_user_http_response(
         output = crate::protocol_serde::shape_admin_get_user::de_admin_get_user(_response_body, output)
             .map_err(crate::operation::admin_get_user::AdminGetUserError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::admin_get_user_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::admin_get_user::AdminGetUserError::unhandled)?
     })
 }
 

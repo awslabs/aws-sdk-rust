@@ -84,6 +84,7 @@ impl EmailChannelRequestBuilder {
         &self.enabled
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
+    /// This field is required.
     pub fn from_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_address = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl EmailChannelRequestBuilder {
         &self.from_address
     }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self

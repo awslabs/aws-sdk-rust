@@ -6,7 +6,7 @@ pub struct CreateEnvironmentTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment template.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>A description of the new version of an environment template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
@@ -24,8 +24,9 @@ impl CreateEnvironmentTemplateVersionInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>A description of the new version of an environment template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -42,8 +43,10 @@ impl CreateEnvironmentTemplateVersionInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentTemplateVersionInput {
@@ -92,6 +95,7 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         &self.client_token
     }
     /// <p>The name of the environment template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +141,7 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         &self.major_version
     }
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::TemplateVersionSourceInput) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -174,6 +179,8 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateVersionInput`](crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionInputBuilder::template_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -183,7 +190,12 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput {
                 client_token: self.client_token,
-                template_name: self.template_name,
+                template_name: self.template_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_name",
+                        "template_name was not specified but it is required when building CreateEnvironmentTemplateVersionInput",
+                    )
+                })?,
                 description: self.description,
                 major_version: self.major_version,
                 source: self.source,

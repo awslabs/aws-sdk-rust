@@ -36,12 +36,16 @@ impl CreateTransitGatewayConnectPeerInput {
         self.bgp_options.as_ref()
     }
     /// <p>The range of inside IP addresses that are used for BGP peering. You must specify a size /29 IPv4 CIDR block from the <code>169.254.0.0/16</code> range. The first address from the range must be configured on the appliance as the BGP IP address. You can also optionally specify a size /125 IPv6 CIDR block from the <code>fd00::/8</code> range.</p>
-    pub fn inside_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inside_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
+    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
+        self.inside_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The tags to apply to the Connect peer.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -69,6 +73,7 @@ pub struct CreateTransitGatewayConnectPeerInputBuilder {
 }
 impl CreateTransitGatewayConnectPeerInputBuilder {
     /// <p>The ID of the Connect attachment.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
         &self.transit_gateway_address
     }
     /// <p>The peer IP address (GRE outer IP address) on the appliance side of the Connect peer.</p>
+    /// This field is required.
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
         self

@@ -42,6 +42,7 @@ pub struct DescribeChangeSetInputBuilder {
 }
 impl DescribeChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
+    /// This field is required.
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_set_name = ::std::option::Option::Some(input.into());
         self

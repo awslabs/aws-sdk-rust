@@ -273,7 +273,7 @@ struct ConditionallyEnabledInterceptor(SharedInterceptor);
 impl ConditionallyEnabledInterceptor {
     fn if_enabled(&self, cfg: &ConfigBag) -> Option<&dyn Interceptor> {
         if self.0.enabled(cfg) {
-            Some(self.0.as_ref())
+            Some(&self.0)
         } else {
             None
         }

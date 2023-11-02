@@ -1030,6 +1030,7 @@ impl AnnotationConsolidationConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn annotation_consolidation_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation_consolidation_lambda_arn = ::std::option::Option::Some(input.into());
         self

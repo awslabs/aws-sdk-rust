@@ -27,6 +27,7 @@ pub struct CreatePublicKeyInputBuilder {
 }
 impl CreatePublicKeyInputBuilder {
     /// <p>A CloudFront public key configuration.</p>
+    /// This field is required.
     pub fn public_key_config(mut self, input: crate::types::PublicKeyConfig) -> Self {
         self.public_key_config = ::std::option::Option::Some(input);
         self

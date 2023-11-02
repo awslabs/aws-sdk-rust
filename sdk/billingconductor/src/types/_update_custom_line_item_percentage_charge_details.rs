@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub percentage_value: ::std::option::Option<f64>,
+    pub percentage_value: f64,
 }
 impl UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub fn percentage_value(&self) -> ::std::option::Option<f64> {
+    pub fn percentage_value(&self) -> f64 {
         self.percentage_value
     }
 }
@@ -28,6 +28,7 @@ pub struct UpdateCustomLineItemPercentageChargeDetailsBuilder {
 }
 impl UpdateCustomLineItemPercentageChargeDetailsBuilder {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    /// This field is required.
     pub fn percentage_value(mut self, input: f64) -> Self {
         self.percentage_value = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,18 @@ impl UpdateCustomLineItemPercentageChargeDetailsBuilder {
         &self.percentage_value
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemPercentageChargeDetails`](crate::types::UpdateCustomLineItemPercentageChargeDetails).
-    pub fn build(self) -> crate::types::UpdateCustomLineItemPercentageChargeDetails {
-        crate::types::UpdateCustomLineItemPercentageChargeDetails {
-            percentage_value: self.percentage_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`percentage_value`](crate::types::builders::UpdateCustomLineItemPercentageChargeDetailsBuilder::percentage_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::UpdateCustomLineItemPercentageChargeDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateCustomLineItemPercentageChargeDetails {
+            percentage_value: self.percentage_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "percentage_value",
+                    "percentage_value was not specified but it is required when building UpdateCustomLineItemPercentageChargeDetails",
+                )
+            })?,
+        })
     }
 }

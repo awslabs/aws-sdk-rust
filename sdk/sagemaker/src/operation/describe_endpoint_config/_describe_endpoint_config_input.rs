@@ -27,6 +27,7 @@ pub struct DescribeEndpointConfigInputBuilder {
 }
 impl DescribeEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self

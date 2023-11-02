@@ -11,8 +11,10 @@ pub struct ListDeviceIdentifiersOutput {
 }
 impl ListDeviceIdentifiersOutput {
     /// <p>Information about the device identifiers.</p>
-    pub fn device_identifiers(&self) -> ::std::option::Option<&[crate::types::DeviceIdentifier]> {
-        self.device_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_identifiers.is_none()`.
+    pub fn device_identifiers(&self) -> &[crate::types::DeviceIdentifier] {
+        self.device_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

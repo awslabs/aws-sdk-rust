@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEvent`](crate::operation::get_event::builders::GetEventFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_id(impl Into<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::event_id) / [`set_event_id(Option<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::set_event_id): <p>The ID of the event to retrieve.</p>
-    ///   - [`event_type_name(impl Into<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::set_event_type_name): <p>The event type of the event to retrieve.</p>
+    ///   - [`event_id(impl Into<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::event_id) / [`set_event_id(Option<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::set_event_id):<br>required: **true**<br><p>The ID of the event to retrieve.</p><br>
+    ///   - [`event_type_name(impl Into<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::get_event::builders::GetEventFluentBuilder::set_event_type_name):<br>required: **true**<br><p>The event type of the event to retrieve.</p><br>
     /// - On success, responds with [`GetEventOutput`](crate::operation::get_event::GetEventOutput) with field(s):
     ///   - [`event(Option<Event>)`](crate::operation::get_event::GetEventOutput::event): <p>The details of the event.</p>
     /// - On failure, responds with [`SdkError<GetEventError>`](crate::operation::get_event::GetEventError)

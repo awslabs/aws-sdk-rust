@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HoursOfOperationTimeSlice {
     /// <p>The hours.</p>
-    pub hours: ::std::option::Option<i32>,
+    pub hours: i32,
     /// <p>The minutes.</p>
-    pub minutes: ::std::option::Option<i32>,
+    pub minutes: i32,
 }
 impl HoursOfOperationTimeSlice {
     /// <p>The hours.</p>
-    pub fn hours(&self) -> ::std::option::Option<i32> {
+    pub fn hours(&self) -> i32 {
         self.hours
     }
     /// <p>The minutes.</p>
-    pub fn minutes(&self) -> ::std::option::Option<i32> {
+    pub fn minutes(&self) -> i32 {
         self.minutes
     }
 }
@@ -35,6 +35,7 @@ pub struct HoursOfOperationTimeSliceBuilder {
 }
 impl HoursOfOperationTimeSliceBuilder {
     /// <p>The hours.</p>
+    /// This field is required.
     pub fn hours(mut self, input: i32) -> Self {
         self.hours = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl HoursOfOperationTimeSliceBuilder {
         &self.hours
     }
     /// <p>The minutes.</p>
+    /// This field is required.
     pub fn minutes(mut self, input: i32) -> Self {
         self.minutes = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl HoursOfOperationTimeSliceBuilder {
         &self.minutes
     }
     /// Consumes the builder and constructs a [`HoursOfOperationTimeSlice`](crate::types::HoursOfOperationTimeSlice).
-    pub fn build(self) -> crate::types::HoursOfOperationTimeSlice {
-        crate::types::HoursOfOperationTimeSlice {
-            hours: self.hours,
-            minutes: self.minutes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hours`](crate::types::builders::HoursOfOperationTimeSliceBuilder::hours)
+    /// - [`minutes`](crate::types::builders::HoursOfOperationTimeSliceBuilder::minutes)
+    pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationTimeSlice, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HoursOfOperationTimeSlice {
+            hours: self.hours.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hours",
+                    "hours was not specified but it is required when building HoursOfOperationTimeSlice",
+                )
+            })?,
+            minutes: self.minutes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "minutes",
+                    "minutes was not specified but it is required when building HoursOfOperationTimeSlice",
+                )
+            })?,
+        })
     }
 }

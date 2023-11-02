@@ -19,16 +19,22 @@ impl GetCostAndUsageOutput {
         self.next_page_token.as_deref()
     }
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
-    pub fn group_definitions(&self) -> ::std::option::Option<&[crate::types::GroupDefinition]> {
-        self.group_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_definitions.is_none()`.
+    pub fn group_definitions(&self) -> &[crate::types::GroupDefinition] {
+        self.group_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The time period that's covered by the results in the response.</p>
-    pub fn results_by_time(&self) -> ::std::option::Option<&[crate::types::ResultByTime]> {
-        self.results_by_time.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_by_time.is_none()`.
+    pub fn results_by_time(&self) -> &[crate::types::ResultByTime] {
+        self.results_by_time.as_deref().unwrap_or_default()
     }
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
-    pub fn dimension_value_attributes(&self) -> ::std::option::Option<&[crate::types::DimensionValuesWithAttributes]> {
-        self.dimension_value_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_value_attributes.is_none()`.
+    pub fn dimension_value_attributes(&self) -> &[crate::types::DimensionValuesWithAttributes] {
+        self.dimension_value_attributes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCostAndUsageOutput {

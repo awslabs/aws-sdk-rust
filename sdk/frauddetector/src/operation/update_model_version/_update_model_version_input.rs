@@ -38,8 +38,10 @@ impl UpdateModelVersionInput {
         self.ingested_events_detail.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UpdateModelVersionInput {
@@ -62,6 +64,7 @@ pub struct UpdateModelVersionInputBuilder {
 }
 impl UpdateModelVersionInputBuilder {
     /// <p>The model ID.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl UpdateModelVersionInputBuilder {
         &self.model_id
     }
     /// <p>The model type.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +94,7 @@ impl UpdateModelVersionInputBuilder {
         &self.model_type
     }
     /// <p>The major version number.</p>
+    /// This field is required.
     pub fn major_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_version_number = ::std::option::Option::Some(input.into());
         self

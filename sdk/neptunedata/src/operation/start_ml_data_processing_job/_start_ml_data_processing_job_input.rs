@@ -80,12 +80,16 @@ impl StartMlDataProcessingJobInput {
         self.config_file_name.as_deref()
     }
     /// <p>The IDs of the subnets in the Neptune VPC. The default is None.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The VPC security group IDs. The default is None.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Key Management Service (Amazon KMS) key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instances that run the training job. The default is None.</p>
     pub fn volume_encryption_kms_key(&self) -> ::std::option::Option<&str> {
@@ -153,6 +157,7 @@ impl StartMlDataProcessingJobInputBuilder {
         &self.previous_data_processing_job_id
     }
     /// <p>The URI of the Amazon S3 location where you want SageMaker to download the data needed to run the data processing job.</p>
+    /// This field is required.
     pub fn input_data_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_data_s3_location = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +172,7 @@ impl StartMlDataProcessingJobInputBuilder {
         &self.input_data_s3_location
     }
     /// <p>The URI of the Amazon S3 location where you want SageMaker to save the results of a data processing job.</p>
+    /// This field is required.
     pub fn processed_data_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processed_data_s3_location = ::std::option::Option::Some(input.into());
         self

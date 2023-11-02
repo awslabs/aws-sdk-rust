@@ -46,8 +46,10 @@ impl CreateQueueInput {
         self.max_contacts
     }
     /// <p>The quick connects available to agents who are working the queue.</p>
-    pub fn quick_connect_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.quick_connect_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quick_connect_ids.is_none()`.
+    pub fn quick_connect_ids(&self) -> &[::std::string::String] {
+        self.quick_connect_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -76,6 +78,7 @@ pub struct CreateQueueInputBuilder {
 }
 impl CreateQueueInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateQueueInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the queue.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +136,7 @@ impl CreateQueueInputBuilder {
         &self.outbound_caller_config
     }
     /// <p>The identifier for the hours of operation.</p>
+    /// This field is required.
     pub fn hours_of_operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self

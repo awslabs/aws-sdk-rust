@@ -48,6 +48,7 @@ pub struct PutBucketVersioningInputBuilder {
 }
 impl PutBucketVersioningInputBuilder {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutBucketVersioningInputBuilder {
         &self.account_id
     }
     /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl PutBucketVersioningInputBuilder {
         &self.mfa
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+    /// This field is required.
     pub fn versioning_configuration(mut self, input: crate::types::VersioningConfiguration) -> Self {
         self.versioning_configuration = ::std::option::Option::Some(input);
         self

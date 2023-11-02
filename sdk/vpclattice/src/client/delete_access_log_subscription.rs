@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccessLogSubscription`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_log_subscription_identifier(impl Into<String>)`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder::access_log_subscription_identifier) / [`set_access_log_subscription_identifier(Option<String>)`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder::set_access_log_subscription_identifier): <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    ///   - [`access_log_subscription_identifier(impl Into<String>)`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder::access_log_subscription_identifier) / [`set_access_log_subscription_identifier(impl Into<String>)`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionFluentBuilder::set_access_log_subscription_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p><br>
     /// - On success, responds with [`DeleteAccessLogSubscriptionOutput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessLogSubscriptionError>`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionError)
     pub fn delete_access_log_subscription(

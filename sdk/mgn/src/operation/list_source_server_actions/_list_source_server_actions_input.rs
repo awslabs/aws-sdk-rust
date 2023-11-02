@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSourceServerActionsInput {
     /// <p>Source server ID.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
     pub filters: ::std::option::Option<crate::types::SourceServerActionsRequestFilters>,
     /// <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
@@ -16,8 +16,9 @@ pub struct ListSourceServerActionsInput {
 }
 impl ListSourceServerActionsInput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Filters to apply when listing source server post migration custom actions.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::SourceServerActionsRequestFilters> {
@@ -55,6 +56,7 @@ pub struct ListSourceServerActionsInputBuilder {
 }
 impl ListSourceServerActionsInputBuilder {
     /// <p>Source server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,8 @@ impl ListSourceServerActionsInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListSourceServerActionsInput`](crate::operation::list_source_server_actions::ListSourceServerActionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::list_source_server_actions::builders::ListSourceServerActionsInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -132,7 +136,12 @@ impl ListSourceServerActionsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_source_server_actions::ListSourceServerActionsInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building ListSourceServerActionsInput",
+                )
+            })?,
             filters: self.filters,
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,

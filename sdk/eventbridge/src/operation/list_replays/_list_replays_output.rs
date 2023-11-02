@@ -11,8 +11,10 @@ pub struct ListReplaysOutput {
 }
 impl ListReplaysOutput {
     /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
-    pub fn replays(&self) -> ::std::option::Option<&[crate::types::Replay]> {
-        self.replays.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replays.is_none()`.
+    pub fn replays(&self) -> &[crate::types::Replay] {
+        self.replays.as_deref().unwrap_or_default()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

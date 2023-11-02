@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
-    pub api_key_name: ::std::option::Option<::std::string::String>,
+    pub api_key_name: ::std::string::String,
     /// <p>The value for the API key to use for authorization.</p>
-    pub api_key_value: ::std::option::Option<::std::string::String>,
+    pub api_key_value: ::std::string::String,
 }
 impl CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
-    pub fn api_key_name(&self) -> ::std::option::Option<&str> {
-        self.api_key_name.as_deref()
+    pub fn api_key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.api_key_name.deref()
     }
     /// <p>The value for the API key to use for authorization.</p>
-    pub fn api_key_value(&self) -> ::std::option::Option<&str> {
-        self.api_key_value.as_deref()
+    pub fn api_key_value(&self) -> &str {
+        use std::ops::Deref;
+        self.api_key_value.deref()
     }
 }
 impl ::std::fmt::Debug for CreateConnectionApiKeyAuthRequestParameters {
@@ -43,6 +45,7 @@ pub struct CreateConnectionApiKeyAuthRequestParametersBuilder {
 }
 impl CreateConnectionApiKeyAuthRequestParametersBuilder {
     /// <p>The name of the API key to use for authorization.</p>
+    /// This field is required.
     pub fn api_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl CreateConnectionApiKeyAuthRequestParametersBuilder {
         &self.api_key_name
     }
     /// <p>The value for the API key to use for authorization.</p>
+    /// This field is required.
     pub fn api_key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key_value = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,26 @@ impl CreateConnectionApiKeyAuthRequestParametersBuilder {
         &self.api_key_value
     }
     /// Consumes the builder and constructs a [`CreateConnectionApiKeyAuthRequestParameters`](crate::types::CreateConnectionApiKeyAuthRequestParameters).
-    pub fn build(self) -> crate::types::CreateConnectionApiKeyAuthRequestParameters {
-        crate::types::CreateConnectionApiKeyAuthRequestParameters {
-            api_key_name: self.api_key_name,
-            api_key_value: self.api_key_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`api_key_name`](crate::types::builders::CreateConnectionApiKeyAuthRequestParametersBuilder::api_key_name)
+    /// - [`api_key_value`](crate::types::builders::CreateConnectionApiKeyAuthRequestParametersBuilder::api_key_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CreateConnectionApiKeyAuthRequestParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateConnectionApiKeyAuthRequestParameters {
+            api_key_name: self.api_key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "api_key_name",
+                    "api_key_name was not specified but it is required when building CreateConnectionApiKeyAuthRequestParameters",
+                )
+            })?,
+            api_key_value: self.api_key_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "api_key_value",
+                    "api_key_value was not specified but it is required when building CreateConnectionApiKeyAuthRequestParameters",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for CreateConnectionApiKeyAuthRequestParametersBuilder {

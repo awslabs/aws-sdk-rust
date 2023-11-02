@@ -55,6 +55,7 @@ impl DeleteUserDefinedFunctionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the function is located.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteUserDefinedFunctionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the function definition to be deleted.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self

@@ -94,6 +94,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+    /// This field is required.
     pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_with_restore_access = ::std::option::Option::Some(input.into());
         self

@@ -8,8 +8,10 @@ pub struct DescribeUserProfilesInput {
 }
 impl DescribeUserProfilesInput {
     /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-    pub fn iam_user_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.iam_user_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_user_arns.is_none()`.
+    pub fn iam_user_arns(&self) -> &[::std::string::String] {
+        self.iam_user_arns.as_deref().unwrap_or_default()
     }
 }
 impl DescribeUserProfilesInput {

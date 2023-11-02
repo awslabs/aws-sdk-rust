@@ -48,6 +48,7 @@ pub struct GetAssociatedIpv6PoolCidrsInputBuilder {
 }
 impl GetAssociatedIpv6PoolCidrsInputBuilder {
     /// <p>The ID of the IPv6 address pool.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self

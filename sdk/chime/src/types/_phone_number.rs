@@ -61,8 +61,10 @@ impl PhoneNumber {
         self.capabilities.as_ref()
     }
     /// <p>The phone number associations.</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::PhoneNumberAssociation]> {
-        self.associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::PhoneNumberAssociation] {
+        self.associations.as_deref().unwrap_or_default()
     }
     /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(&self) -> ::std::option::Option<&str> {

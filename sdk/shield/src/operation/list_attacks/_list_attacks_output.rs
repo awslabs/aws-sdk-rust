@@ -13,8 +13,10 @@ pub struct ListAttacksOutput {
 }
 impl ListAttacksOutput {
     /// <p>The attack information for the specified time range.</p>
-    pub fn attack_summaries(&self) -> ::std::option::Option<&[crate::types::AttackSummary]> {
-        self.attack_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_summaries.is_none()`.
+    pub fn attack_summaries(&self) -> &[crate::types::AttackSummary] {
+        self.attack_summaries.as_deref().unwrap_or_default()
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>

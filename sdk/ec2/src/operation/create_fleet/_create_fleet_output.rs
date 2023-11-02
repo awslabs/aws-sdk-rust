@@ -17,12 +17,16 @@ impl CreateFleetOutput {
         self.fleet_id.as_deref()
     }
     /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::CreateFleetError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::CreateFleetError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::CreateFleetInstance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::CreateFleetInstance] {
+        self.instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateFleetOutput {

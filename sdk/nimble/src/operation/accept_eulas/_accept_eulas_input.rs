@@ -16,8 +16,10 @@ impl AcceptEulasInput {
         self.client_token.as_deref()
     }
     /// <p>The EULA ID.</p>
-    pub fn eula_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.eula_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eula_ids.is_none()`.
+    pub fn eula_ids(&self) -> &[::std::string::String] {
+        self.eula_ids.as_deref().unwrap_or_default()
     }
     /// <p>The studio ID.</p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
@@ -75,6 +77,7 @@ impl AcceptEulasInputBuilder {
         &self.eula_ids
     }
     /// <p>The studio ID.</p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

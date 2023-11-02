@@ -55,6 +55,7 @@ pub struct StartSpeakerSearchTaskInputBuilder {
 }
 impl StartSpeakerSearchTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartSpeakerSearchTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The transaction ID of the call being analyzed.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl StartSpeakerSearchTaskInputBuilder {
         &self.transaction_id
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
+    /// This field is required.
     pub fn voice_profile_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self

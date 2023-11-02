@@ -12,8 +12,10 @@ pub struct DescribeWorkspaceDirectoriesInput {
 }
 impl DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
-    pub fn directory_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.directory_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_ids.is_none()`.
+    pub fn directory_ids(&self) -> &[::std::string::String] {
+        self.directory_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of directories to return.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {

@@ -34,6 +34,7 @@ pub struct DescribeDatasetInputBuilder {
 }
 impl DescribeDatasetInputBuilder {
     /// <p>The name of the project that contains the dataset that you want to describe.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeDatasetInputBuilder {
         &self.project_name
     }
     /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
         self

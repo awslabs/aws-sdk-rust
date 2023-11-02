@@ -19,7 +19,7 @@ pub struct WorkmailAction {
     /// </region></code> </p>
     /// <p>You can find the ID of your organization by using the <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListOrganizations.html">ListOrganizations</a> operation in Amazon WorkMail. Amazon WorkMail organization IDs begin with "<code>m-</code>", followed by a string of alphanumeric characters.</p>
     /// <p>For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
-    pub organization_arn: ::std::option::Option<::std::string::String>,
+    pub organization_arn: ::std::string::String,
 }
 impl WorkmailAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> operation in Amazon SNS.</p>
@@ -38,8 +38,9 @@ impl WorkmailAction {
     /// </region></code> </p>
     /// <p>You can find the ID of your organization by using the <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListOrganizations.html">ListOrganizations</a> operation in Amazon WorkMail. Amazon WorkMail organization IDs begin with "<code>m-</code>", followed by a string of alphanumeric characters.</p>
     /// <p>For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
-    pub fn organization_arn(&self) -> ::std::option::Option<&str> {
-        self.organization_arn.as_deref()
+    pub fn organization_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_arn.deref()
     }
 }
 impl WorkmailAction {
@@ -85,6 +86,7 @@ impl WorkmailActionBuilder {
     /// </region></code> </p>
     /// <p>You can find the ID of your organization by using the <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListOrganizations.html">ListOrganizations</a> operation in Amazon WorkMail. Amazon WorkMail organization IDs begin with "<code>m-</code>", followed by a string of alphanumeric characters.</p>
     /// <p>For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
+    /// This field is required.
     pub fn organization_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,10 +121,17 @@ impl WorkmailActionBuilder {
         &self.organization_arn
     }
     /// Consumes the builder and constructs a [`WorkmailAction`](crate::types::WorkmailAction).
-    pub fn build(self) -> crate::types::WorkmailAction {
-        crate::types::WorkmailAction {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`organization_arn`](crate::types::builders::WorkmailActionBuilder::organization_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkmailAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkmailAction {
             topic_arn: self.topic_arn,
-            organization_arn: self.organization_arn,
-        }
+            organization_arn: self.organization_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "organization_arn",
+                    "organization_arn was not specified but it is required when building WorkmailAction",
+                )
+            })?,
+        })
     }
 }

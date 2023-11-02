@@ -27,6 +27,7 @@ pub struct DescribeProfileInputBuilder {
 }
 impl DescribeProfileInputBuilder {
     /// <p>The identifier of the profile that you want described.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self

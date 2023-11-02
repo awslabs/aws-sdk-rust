@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInterface {
     /// <p>The node interface's inputs.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>>,
+    pub inputs: ::std::vec::Vec<crate::types::NodeInputPort>,
     /// <p>The node interface's outputs.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>>,
+    pub outputs: ::std::vec::Vec<crate::types::NodeOutputPort>,
 }
 impl NodeInterface {
     /// <p>The node interface's inputs.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::NodeInputPort]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[crate::types::NodeInputPort] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>The node interface's outputs.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::NodeOutputPort]> {
-        self.outputs.as_deref()
+    pub fn outputs(&self) -> &[crate::types::NodeOutputPort] {
+        use std::ops::Deref;
+        self.outputs.deref()
     }
 }
 impl NodeInterface {
@@ -75,10 +77,23 @@ impl NodeInterfaceBuilder {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`NodeInterface`](crate::types::NodeInterface).
-    pub fn build(self) -> crate::types::NodeInterface {
-        crate::types::NodeInterface {
-            inputs: self.inputs,
-            outputs: self.outputs,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`inputs`](crate::types::builders::NodeInterfaceBuilder::inputs)
+    /// - [`outputs`](crate::types::builders::NodeInterfaceBuilder::outputs)
+    pub fn build(self) -> ::std::result::Result<crate::types::NodeInterface, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NodeInterface {
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building NodeInterface",
+                )
+            })?,
+            outputs: self.outputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "outputs",
+                    "outputs was not specified but it is required when building NodeInterface",
+                )
+            })?,
+        })
     }
 }

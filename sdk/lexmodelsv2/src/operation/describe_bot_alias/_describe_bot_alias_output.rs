@@ -63,8 +63,10 @@ impl DescribeBotAliasOutput {
         self.sentiment_analysis_settings.as_ref()
     }
     /// <p>A list of events that affect a bot alias. For example, an event is recorded when the version that the alias points to changes.</p>
-    pub fn bot_alias_history_events(&self) -> ::std::option::Option<&[crate::types::BotAliasHistoryEvent]> {
-        self.bot_alias_history_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_alias_history_events.is_none()`.
+    pub fn bot_alias_history_events(&self) -> &[crate::types::BotAliasHistoryEvent] {
+        self.bot_alias_history_events.as_deref().unwrap_or_default()
     }
     /// <p>The current status of the alias. When the alias is <code>Available</code>, the alias is ready for use with your bot.</p>
     pub fn bot_alias_status(&self) -> ::std::option::Option<&crate::types::BotAliasStatus> {
@@ -83,8 +85,10 @@ impl DescribeBotAliasOutput {
         self.last_updated_date_time.as_ref()
     }
     /// <p>A list of the networks to which the bot alias you described belongs.</p>
-    pub fn parent_bot_networks(&self) -> ::std::option::Option<&[crate::types::ParentBotNetwork]> {
-        self.parent_bot_networks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_bot_networks.is_none()`.
+    pub fn parent_bot_networks(&self) -> &[crate::types::ParentBotNetwork] {
+        self.parent_bot_networks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeBotAliasOutput {

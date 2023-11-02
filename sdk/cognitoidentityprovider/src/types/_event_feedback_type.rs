@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventFeedbackType {
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
-    pub feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
+    pub feedback_value: crate::types::FeedbackValueType,
     /// <p>The provider.</p>
-    pub provider: ::std::option::Option<::std::string::String>,
+    pub provider: ::std::string::String,
     /// <p>The event feedback date.</p>
     pub feedback_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventFeedbackType {
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
-    pub fn feedback_value(&self) -> ::std::option::Option<&crate::types::FeedbackValueType> {
-        self.feedback_value.as_ref()
+    pub fn feedback_value(&self) -> &crate::types::FeedbackValueType {
+        &self.feedback_value
     }
     /// <p>The provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
-        self.provider.as_deref()
+    pub fn provider(&self) -> &str {
+        use std::ops::Deref;
+        self.provider.deref()
     }
     /// <p>The event feedback date.</p>
     pub fn feedback_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -42,6 +43,7 @@ pub struct EventFeedbackTypeBuilder {
 }
 impl EventFeedbackTypeBuilder {
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
+    /// This field is required.
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
         self.feedback_value = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl EventFeedbackTypeBuilder {
         &self.feedback_value
     }
     /// <p>The provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl EventFeedbackTypeBuilder {
         &self.feedback_date
     }
     /// Consumes the builder and constructs a [`EventFeedbackType`](crate::types::EventFeedbackType).
-    pub fn build(self) -> crate::types::EventFeedbackType {
-        crate::types::EventFeedbackType {
-            feedback_value: self.feedback_value,
-            provider: self.provider,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`feedback_value`](crate::types::builders::EventFeedbackTypeBuilder::feedback_value)
+    /// - [`provider`](crate::types::builders::EventFeedbackTypeBuilder::provider)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventFeedbackType, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventFeedbackType {
+            feedback_value: self.feedback_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "feedback_value",
+                    "feedback_value was not specified but it is required when building EventFeedbackType",
+                )
+            })?,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building EventFeedbackType",
+                )
+            })?,
             feedback_date: self.feedback_date,
-        }
+        })
     }
 }

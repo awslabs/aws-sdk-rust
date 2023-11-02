@@ -14,8 +14,10 @@ impl UpdateDatasetGroupInput {
         self.dataset_group_arn.as_deref()
     }
     /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
-    pub fn dataset_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dataset_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_arns.is_none()`.
+    pub fn dataset_arns(&self) -> &[::std::string::String] {
+        self.dataset_arns.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDatasetGroupInput {
@@ -34,6 +36,7 @@ pub struct UpdateDatasetGroupInputBuilder {
 }
 impl UpdateDatasetGroupInputBuilder {
     /// <p>The ARN of the dataset group.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self

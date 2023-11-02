@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarketoDestinationProperties {
     /// <p>The object specified in the Marketo flow destination.</p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
 }
 impl MarketoDestinationProperties {
     /// <p>The object specified in the Marketo flow destination.</p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
@@ -35,6 +36,7 @@ pub struct MarketoDestinationPropertiesBuilder {
 }
 impl MarketoDestinationPropertiesBuilder {
     /// <p>The object specified in the Marketo flow destination.</p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl MarketoDestinationPropertiesBuilder {
         &self.error_handling_config
     }
     /// Consumes the builder and constructs a [`MarketoDestinationProperties`](crate::types::MarketoDestinationProperties).
-    pub fn build(self) -> crate::types::MarketoDestinationProperties {
-        crate::types::MarketoDestinationProperties {
-            object: self.object,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::MarketoDestinationPropertiesBuilder::object)
+    pub fn build(self) -> ::std::result::Result<crate::types::MarketoDestinationProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MarketoDestinationProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building MarketoDestinationProperties",
+                )
+            })?,
             error_handling_config: self.error_handling_config,
-        }
+        })
     }
 }

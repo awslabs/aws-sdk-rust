@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIntent`](crate::operation::get_intent::builders::GetIntentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::set_name): <p>The name of the intent. The name is case sensitive. </p>
-    ///   - [`version(impl Into<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::set_version): <p>The version of the intent.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::set_name):<br>required: **true**<br><p>The name of the intent. The name is case sensitive. </p><br>
+    ///   - [`version(impl Into<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_intent::builders::GetIntentFluentBuilder::set_version):<br>required: **true**<br><p>The version of the intent.</p><br>
     /// - On success, responds with [`GetIntentOutput`](crate::operation::get_intent::GetIntentOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_intent::GetIntentOutput::name): <p>The name of the intent.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_intent::GetIntentOutput::description): <p>A description of the intent.</p>

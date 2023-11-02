@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfiguration {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub subnet_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_id_list: ::std::vec::Vec<::std::string::String>,
     /// <p>An array of strings containing the list of security groups.</p>
-    pub security_group_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_id_list: ::std::vec::Vec<::std::string::String>,
 }
 impl VpcConfiguration {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub fn subnet_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_id_list.as_deref()
+    pub fn subnet_id_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_id_list.deref()
     }
     /// <p>An array of strings containing the list of security groups.</p>
-    pub fn security_group_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_id_list.as_deref()
+    pub fn security_group_id_list(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_id_list.deref()
     }
 }
 impl VpcConfiguration {
@@ -75,10 +77,23 @@ impl VpcConfigurationBuilder {
         &self.security_group_id_list
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
-    pub fn build(self) -> crate::types::VpcConfiguration {
-        crate::types::VpcConfiguration {
-            subnet_id_list: self.subnet_id_list,
-            security_group_id_list: self.security_group_id_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_id_list`](crate::types::builders::VpcConfigurationBuilder::subnet_id_list)
+    /// - [`security_group_id_list`](crate::types::builders::VpcConfigurationBuilder::security_group_id_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcConfiguration {
+            subnet_id_list: self.subnet_id_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnet_id_list",
+                    "subnet_id_list was not specified but it is required when building VpcConfiguration",
+                )
+            })?,
+            security_group_id_list: self.security_group_id_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "security_group_id_list",
+                    "security_group_id_list was not specified but it is required when building VpcConfiguration",
+                )
+            })?,
+        })
     }
 }

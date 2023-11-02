@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-    pub core_device_thing_name: ::std::option::Option<::std::string::String>,
+    pub core_device_thing_name: ::std::string::String,
 }
 impl GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-    pub fn core_device_thing_name(&self) -> ::std::option::Option<&str> {
-        self.core_device_thing_name.as_deref()
+    pub fn core_device_thing_name(&self) -> &str {
+        use std::ops::Deref;
+        self.core_device_thing_name.deref()
     }
 }
 impl GreengrassV2 {
@@ -28,6 +29,7 @@ pub struct GreengrassV2Builder {
 }
 impl GreengrassV2Builder {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
+    /// This field is required.
     pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl GreengrassV2Builder {
         &self.core_device_thing_name
     }
     /// Consumes the builder and constructs a [`GreengrassV2`](crate::types::GreengrassV2).
-    pub fn build(self) -> crate::types::GreengrassV2 {
-        crate::types::GreengrassV2 {
-            core_device_thing_name: self.core_device_thing_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`core_device_thing_name`](crate::types::builders::GreengrassV2Builder::core_device_thing_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GreengrassV2, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GreengrassV2 {
+            core_device_thing_name: self.core_device_thing_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "core_device_thing_name",
+                    "core_device_thing_name was not specified but it is required when building GreengrassV2",
+                )
+            })?,
+        })
     }
 }

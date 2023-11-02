@@ -16,8 +16,10 @@ impl DescribeDbInstanceAutomatedBackupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
-    pub fn db_instance_automated_backups(&self) -> ::std::option::Option<&[crate::types::DbInstanceAutomatedBackup]> {
-        self.db_instance_automated_backups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instance_automated_backups.is_none()`.
+    pub fn db_instance_automated_backups(&self) -> &[crate::types::DbInstanceAutomatedBackup] {
+        self.db_instance_automated_backups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDbInstanceAutomatedBackupsOutput {

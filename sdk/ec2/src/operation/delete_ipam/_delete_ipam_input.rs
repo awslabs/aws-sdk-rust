@@ -73,6 +73,7 @@ impl DeleteIpamInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM to delete.</p>
+    /// This field is required.
     pub fn ipam_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_id = ::std::option::Option::Some(input.into());
         self

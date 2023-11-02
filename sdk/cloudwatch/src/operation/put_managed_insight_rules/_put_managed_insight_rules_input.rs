@@ -8,8 +8,10 @@ pub struct PutManagedInsightRulesInput {
 }
 impl PutManagedInsightRulesInput {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn managed_rules(&self) -> ::std::option::Option<&[crate::types::ManagedRule]> {
-        self.managed_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rules.is_none()`.
+    pub fn managed_rules(&self) -> &[crate::types::ManagedRule] {
+        self.managed_rules.as_deref().unwrap_or_default()
     }
 }
 impl PutManagedInsightRulesInput {

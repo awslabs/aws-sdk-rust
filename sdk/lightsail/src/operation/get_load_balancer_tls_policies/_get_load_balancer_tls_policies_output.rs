@@ -13,8 +13,10 @@ pub struct GetLoadBalancerTlsPoliciesOutput {
 }
 impl GetLoadBalancerTlsPoliciesOutput {
     /// <p>An array of objects that describe the TLS security policies that are available.</p>
-    pub fn tls_policies(&self) -> ::std::option::Option<&[crate::types::LoadBalancerTlsPolicy]> {
-        self.tls_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tls_policies.is_none()`.
+    pub fn tls_policies(&self) -> &[crate::types::LoadBalancerTlsPolicy] {
+        self.tls_policies.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

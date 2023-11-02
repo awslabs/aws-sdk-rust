@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub contact_id: ::std::option::Option<::std::string::String>,
+    pub contact_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub evaluator_arn: ::std::option::Option<::std::string::String>,
+    pub evaluator_arn: ::std::string::String,
     /// <p>The identifier of the agent who performed the contact.</p>
     pub contact_agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The overall score of the contact evaluation.</p>
@@ -15,12 +15,14 @@ pub struct EvaluationMetadata {
 }
 impl EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
-        self.contact_id.as_deref()
+    pub fn contact_id(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(&self) -> ::std::option::Option<&str> {
-        self.evaluator_arn.as_deref()
+    pub fn evaluator_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluator_arn.deref()
     }
     /// <p>The identifier of the agent who performed the contact.</p>
     pub fn contact_agent_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct EvaluationMetadataBuilder {
 }
 impl EvaluationMetadataBuilder {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl EvaluationMetadataBuilder {
         &self.contact_id
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
+    /// This field is required.
     pub fn evaluator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluator_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl EvaluationMetadataBuilder {
         &self.score
     }
     /// Consumes the builder and constructs a [`EvaluationMetadata`](crate::types::EvaluationMetadata).
-    pub fn build(self) -> crate::types::EvaluationMetadata {
-        crate::types::EvaluationMetadata {
-            contact_id: self.contact_id,
-            evaluator_arn: self.evaluator_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_id`](crate::types::builders::EvaluationMetadataBuilder::contact_id)
+    /// - [`evaluator_arn`](crate::types::builders::EvaluationMetadataBuilder::evaluator_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationMetadata {
+            contact_id: self.contact_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_id",
+                    "contact_id was not specified but it is required when building EvaluationMetadata",
+                )
+            })?,
+            evaluator_arn: self.evaluator_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "evaluator_arn",
+                    "evaluator_arn was not specified but it is required when building EvaluationMetadata",
+                )
+            })?,
             contact_agent_id: self.contact_agent_id,
             score: self.score,
-        }
+        })
     }
 }

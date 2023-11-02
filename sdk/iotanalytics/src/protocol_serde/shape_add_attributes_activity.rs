@@ -3,21 +3,21 @@ pub fn ser_add_attributes_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddAttributesActivity,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.attributes {
+    {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("attributes").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_1 = object.key("attributes").start_object();
+        for (key_2, value_3) in &input.attributes {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_1.key(key_2.as_str()).string(value_3.as_str());
             }
         }
-        object_3.finish();
+        object_1.finish();
     }
-    if let Some(var_6) = &input.next {
-        object.key("next").string(var_6.as_str());
+    if let Some(var_4) = &input.next {
+        object.key("next").string(var_4.as_str());
     }
     Ok(())
 }
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::add_attributes_activity_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

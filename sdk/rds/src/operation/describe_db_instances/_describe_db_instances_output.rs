@@ -16,8 +16,10 @@ impl DescribeDbInstancesOutput {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBInstance</code> instances.</p>
-    pub fn db_instances(&self) -> ::std::option::Option<&[crate::types::DbInstance]> {
-        self.db_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_instances.is_none()`.
+    pub fn db_instances(&self) -> &[crate::types::DbInstance] {
+        self.db_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDbInstancesOutput {

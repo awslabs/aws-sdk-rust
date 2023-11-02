@@ -12,8 +12,10 @@ pub struct ListPricesOutput {
 }
 impl ListPricesOutput {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
-    pub fn prices(&self) -> ::std::option::Option<&[crate::types::DomainPrice]> {
-        self.prices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prices.is_none()`.
+    pub fn prices(&self) -> &[crate::types::DomainPrice] {
+        self.prices.as_deref().unwrap_or_default()
     }
     /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>

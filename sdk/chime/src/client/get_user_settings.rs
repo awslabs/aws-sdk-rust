@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUserSettings`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::set_user_id): <p>The user ID.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::get_user_settings::builders::GetUserSettingsFluentBuilder::set_user_id):<br>required: **true**<br><p>The user ID.</p><br>
     /// - On success, responds with [`GetUserSettingsOutput`](crate::operation::get_user_settings::GetUserSettingsOutput) with field(s):
     ///   - [`user_settings(Option<UserSettings>)`](crate::operation::get_user_settings::GetUserSettingsOutput::user_settings): <p>The user settings.</p>
     /// - On failure, responds with [`SdkError<GetUserSettingsError>`](crate::operation::get_user_settings::GetUserSettingsError)

@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkSettingsOutput {
     /// <p>The ARN of the network settings.</p>
-    pub network_settings_arn: ::std::option::Option<::std::string::String>,
+    pub network_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateNetworkSettingsOutput {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.network_settings_arn.as_deref()
+    pub fn network_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_settings_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateNetworkSettingsOutput {
@@ -34,6 +35,7 @@ pub struct CreateNetworkSettingsOutputBuilder {
 }
 impl CreateNetworkSettingsOutputBuilder {
     /// <p>The ARN of the network settings.</p>
+    /// This field is required.
     pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateNetworkSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateNetworkSettingsOutput`](crate::operation::create_network_settings::CreateNetworkSettingsOutput).
-    pub fn build(self) -> crate::operation::create_network_settings::CreateNetworkSettingsOutput {
-        crate::operation::create_network_settings::CreateNetworkSettingsOutput {
-            network_settings_arn: self.network_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_settings_arn`](crate::operation::create_network_settings::builders::CreateNetworkSettingsOutputBuilder::network_settings_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_network_settings::CreateNetworkSettingsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_network_settings::CreateNetworkSettingsOutput {
+            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_settings_arn",
+                    "network_settings_arn was not specified but it is required when building CreateNetworkSettingsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

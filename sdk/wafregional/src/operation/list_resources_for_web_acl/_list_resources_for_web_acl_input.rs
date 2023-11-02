@@ -34,6 +34,7 @@ pub struct ListResourcesForWebAclInputBuilder {
 }
 impl ListResourcesForWebAclInputBuilder {
     /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self

@@ -6,17 +6,18 @@ pub fn ser_add_header_action(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("HeaderName");
-    if let Some(var_2) = &input.header_name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.header_name);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("HeaderValue");
-    if let Some(var_4) = &input.header_value {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("HeaderValue");
+    {
+        scope_2.string(&input.header_value);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_add_header_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AddHeaderAction, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_add_header_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HeaderName") /* HeaderName com.amazonaws.ses#AddHeaderAction$HeaderName */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_add_header_action(
                         ?
                     )
                 ;
-                builder = builder.set_header_name(var_5);
+                builder = builder.set_header_name(var_3);
             }
             ,
             s if s.matches("HeaderValue") /* HeaderValue com.amazonaws.ses#AddHeaderAction$HeaderValue */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -47,11 +48,13 @@ pub fn de_add_header_action(
                         ?
                     )
                 ;
-                builder = builder.set_header_value(var_6);
+                builder = builder.set_header_value(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::add_header_action_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

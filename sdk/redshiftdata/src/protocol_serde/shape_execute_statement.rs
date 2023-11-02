@@ -43,11 +43,10 @@ pub fn de_execute_statement_http_error(
                 output = crate::protocol_serde::shape_execute_statement_exception::de_execute_statement_exception_json_err(_response_body, output)
                     .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::execute_statement_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::execute_statement::ExecuteStatementError::ValidationException({

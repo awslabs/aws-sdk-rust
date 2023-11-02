@@ -63,6 +63,7 @@ pub struct UserStackAssociationBuilder {
 }
 impl UserStackAssociationBuilder {
     /// <p>The name of the stack that is associated with the user.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl UserStackAssociationBuilder {
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl UserStackAssociationBuilder {
         &self.user_name
     }
     /// <p>The authentication type for the user.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self

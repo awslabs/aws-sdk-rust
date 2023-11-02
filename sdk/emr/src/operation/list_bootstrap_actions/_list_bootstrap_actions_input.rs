@@ -35,6 +35,7 @@ pub struct ListBootstrapActionsInputBuilder {
 }
 impl ListBootstrapActionsInputBuilder {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

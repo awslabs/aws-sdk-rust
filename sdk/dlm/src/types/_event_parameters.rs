@@ -18,8 +18,10 @@ impl EventParameters {
         self.event_type.as_ref()
     }
     /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account. The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
-    pub fn snapshot_owner(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshot_owner.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_owner.is_none()`.
+    pub fn snapshot_owner(&self) -> &[::std::string::String] {
+        self.snapshot_owner.as_deref().unwrap_or_default()
     }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
@@ -44,6 +46,7 @@ pub struct EventParametersBuilder {
 }
 impl EventParametersBuilder {
     /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: crate::types::EventTypeValues) -> Self {
         self.event_type = ::std::option::Option::Some(input);
         self
@@ -79,6 +82,7 @@ impl EventParametersBuilder {
     }
     /// <p>The snapshot description that can trigger the policy. The description pattern is specified using a regular expression. The policy runs only if a snapshot with a description that matches the specified pattern is shared with your account.</p>
     /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code> configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code> are shared with your account.</p>
+    /// This field is required.
     pub fn description_regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description_regex = ::std::option::Option::Some(input.into());
         self

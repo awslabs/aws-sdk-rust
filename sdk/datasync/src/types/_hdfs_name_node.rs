@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HdfsNameNode {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
-    pub hostname: ::std::option::Option<::std::string::String>,
+    pub hostname: ::std::string::String,
     /// <p>The port that the NameNode uses to listen to client requests.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
 }
 impl HdfsNameNode {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
-        self.hostname.as_deref()
+    pub fn hostname(&self) -> &str {
+        use std::ops::Deref;
+        self.hostname.deref()
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
 }
@@ -35,6 +36,7 @@ pub struct HdfsNameNodeBuilder {
 }
 impl HdfsNameNodeBuilder {
     /// <p>The hostname of the NameNode in the HDFS cluster. This value is the IP address or Domain Name Service (DNS) name of the NameNode. An agent that's installed on-premises uses this hostname to communicate with the NameNode in the network.</p>
+    /// This field is required.
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl HdfsNameNodeBuilder {
         &self.hostname
     }
     /// <p>The port that the NameNode uses to listen to client requests.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl HdfsNameNodeBuilder {
         &self.port
     }
     /// Consumes the builder and constructs a [`HdfsNameNode`](crate::types::HdfsNameNode).
-    pub fn build(self) -> crate::types::HdfsNameNode {
-        crate::types::HdfsNameNode {
-            hostname: self.hostname,
-            port: self.port,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hostname`](crate::types::builders::HdfsNameNodeBuilder::hostname)
+    /// - [`port`](crate::types::builders::HdfsNameNodeBuilder::port)
+    pub fn build(self) -> ::std::result::Result<crate::types::HdfsNameNode, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HdfsNameNode {
+            hostname: self.hostname.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hostname",
+                    "hostname was not specified but it is required when building HdfsNameNode",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building HdfsNameNode",
+                )
+            })?,
+        })
     }
 }

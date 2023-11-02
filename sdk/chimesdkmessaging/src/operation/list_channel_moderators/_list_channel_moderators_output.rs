@@ -21,8 +21,10 @@ impl ListChannelModeratorsOutput {
         self.next_token.as_deref()
     }
     /// <p>The information about and names of each moderator.</p>
-    pub fn channel_moderators(&self) -> ::std::option::Option<&[crate::types::ChannelModeratorSummary]> {
-        self.channel_moderators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_moderators.is_none()`.
+    pub fn channel_moderators(&self) -> &[crate::types::ChannelModeratorSummary] {
+        self.channel_moderators.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ListChannelModeratorsOutput {

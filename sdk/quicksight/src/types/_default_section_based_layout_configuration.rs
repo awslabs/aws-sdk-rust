@@ -28,6 +28,7 @@ pub struct DefaultSectionBasedLayoutConfigurationBuilder {
 }
 impl DefaultSectionBasedLayoutConfigurationBuilder {
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
+    /// This field is required.
     pub fn canvas_size_options(mut self, input: crate::types::SectionBasedLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
         self

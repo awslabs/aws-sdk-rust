@@ -62,6 +62,7 @@ pub struct UpdateThemeInputBuilder {
 }
 impl UpdateThemeInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateThemeInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the theme.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl UpdateThemeInputBuilder {
         &self.name
     }
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
+    /// This field is required.
     pub fn base_theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_theme_id = ::std::option::Option::Some(input.into());
         self

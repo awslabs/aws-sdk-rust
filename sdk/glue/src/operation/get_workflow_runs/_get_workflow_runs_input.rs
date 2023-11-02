@@ -48,6 +48,7 @@ pub struct GetWorkflowRunsInputBuilder {
 }
 impl GetWorkflowRunsInputBuilder {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

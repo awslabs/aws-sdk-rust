@@ -21,8 +21,10 @@ impl ConformancePackRuleCompliance {
         self.compliance_type.as_ref()
     }
     /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives. A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
-    pub fn controls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.controls.is_none()`.
+    pub fn controls(&self) -> &[::std::string::String] {
+        self.controls.as_deref().unwrap_or_default()
     }
 }
 impl ConformancePackRuleCompliance {

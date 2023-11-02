@@ -62,6 +62,7 @@ pub struct UpdateFilterInputBuilder {
 }
 impl UpdateFilterInputBuilder {
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl UpdateFilterInputBuilder {
         &self.detector_id
     }
     /// <p>The name of the filter.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self

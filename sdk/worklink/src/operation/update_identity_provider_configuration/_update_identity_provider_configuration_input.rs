@@ -41,6 +41,7 @@ pub struct UpdateIdentityProviderConfigurationInputBuilder {
 }
 impl UpdateIdentityProviderConfigurationInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateIdentityProviderConfigurationInputBuilder {
         &self.fleet_arn
     }
     /// <p>The type of identity provider.</p>
+    /// This field is required.
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.identity_provider_type = ::std::option::Option::Some(input);
         self

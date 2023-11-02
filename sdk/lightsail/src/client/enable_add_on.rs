@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableAddOn`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_name(impl Into<String>)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::set_resource_name): <p>The name of the source resource for which to enable or modify the add-on.</p>
-    ///   - [`add_on_request(AddOnRequest)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::add_on_request) / [`set_add_on_request(Option<AddOnRequest>)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::set_add_on_request): <p>An array of strings representing the add-on to enable or modify.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::set_resource_name):<br>required: **true**<br><p>The name of the source resource for which to enable or modify the add-on.</p><br>
+    ///   - [`add_on_request(AddOnRequest)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::add_on_request) / [`set_add_on_request(Option<AddOnRequest>)`](crate::operation::enable_add_on::builders::EnableAddOnFluentBuilder::set_add_on_request):<br>required: **true**<br><p>An array of strings representing the add-on to enable or modify.</p><br>
     /// - On success, responds with [`EnableAddOnOutput`](crate::operation::enable_add_on::EnableAddOnOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::enable_add_on::EnableAddOnOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<EnableAddOnError>`](crate::operation::enable_add_on::EnableAddOnError)

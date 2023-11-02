@@ -3,24 +3,24 @@ pub fn ser_start_failback_launch_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_failback_launch::StartFailbackLaunchInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.recovery_instance_i_ds {
-        let mut array_2 = object.key("recoveryInstanceIDs").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("recoveryInstanceIDs").start_array();
+        for item_2 in &input.recovery_instance_i_ds {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_3) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("tags").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
     Ok(())
 }

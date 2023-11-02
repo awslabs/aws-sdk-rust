@@ -35,6 +35,7 @@ pub struct RemovePermissionInputBuilder {
 }
 impl RemovePermissionInputBuilder {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RemovePermissionInputBuilder {
         &self.topic_arn
     }
     /// <p>The unique label of the statement you want to remove.</p>
+    /// This field is required.
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
         self

@@ -56,12 +56,16 @@ impl CreateModelCustomizationJobInput {
         self.custom_model_kms_key_id.as_deref()
     }
     /// <p>Assign tags to the job.</p>
-    pub fn job_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.job_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_tags.is_none()`.
+    pub fn job_tags(&self) -> &[crate::types::Tag] {
+        self.job_tags.as_deref().unwrap_or_default()
     }
     /// <p>Assign tags to the custom model.</p>
-    pub fn custom_model_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.custom_model_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_model_tags.is_none()`.
+    pub fn custom_model_tags(&self) -> &[crate::types::Tag] {
+        self.custom_model_tags.as_deref().unwrap_or_default()
     }
     /// <p>Information about the training dataset.</p>
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
@@ -111,6 +115,7 @@ pub struct CreateModelCustomizationJobInputBuilder {
 }
 impl CreateModelCustomizationJobInputBuilder {
     /// <p>Enter a unique name for the fine-tuning job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +130,7 @@ impl CreateModelCustomizationJobInputBuilder {
         &self.job_name
     }
     /// <p>Enter a name for the custom model.</p>
+    /// This field is required.
     pub fn custom_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_model_name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +145,7 @@ impl CreateModelCustomizationJobInputBuilder {
         &self.custom_model_name
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +174,7 @@ impl CreateModelCustomizationJobInputBuilder {
         &self.client_request_token
     }
     /// <p>Name of the base model.</p>
+    /// This field is required.
     pub fn base_model_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_model_identifier = ::std::option::Option::Some(input.into());
         self
@@ -235,6 +243,7 @@ impl CreateModelCustomizationJobInputBuilder {
         &self.custom_model_tags
     }
     /// <p>Information about the training dataset.</p>
+    /// This field is required.
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
         self
@@ -263,6 +272,7 @@ impl CreateModelCustomizationJobInputBuilder {
         &self.validation_data_config
     }
     /// <p>S3 location for the output data.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self

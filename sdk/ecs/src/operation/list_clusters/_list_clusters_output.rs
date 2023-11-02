@@ -11,8 +11,10 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
-    pub fn cluster_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cluster_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_arns.is_none()`.
+    pub fn cluster_arns(&self) -> &[::std::string::String] {
+        self.cluster_arns.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

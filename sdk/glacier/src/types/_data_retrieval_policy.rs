@@ -9,8 +9,10 @@ pub struct DataRetrievalPolicy {
 }
 impl DataRetrievalPolicy {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::DataRetrievalRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::DataRetrievalRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl DataRetrievalPolicy {

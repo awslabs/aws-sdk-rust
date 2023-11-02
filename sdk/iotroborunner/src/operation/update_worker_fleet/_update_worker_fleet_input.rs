@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerFleetInput {
     /// Full ARN of the worker fleet.
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// Human friendly name of the resource.
     pub name: ::std::option::Option<::std::string::String>,
     /// JSON blob containing additional fixed properties regarding the worker fleet
@@ -12,8 +12,9 @@ pub struct UpdateWorkerFleetInput {
 }
 impl UpdateWorkerFleetInput {
     /// Full ARN of the worker fleet.
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// Human friendly name of the resource.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct UpdateWorkerFleetInputBuilder {
 }
 impl UpdateWorkerFleetInputBuilder {
     /// Full ARN of the worker fleet.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +85,18 @@ impl UpdateWorkerFleetInputBuilder {
         &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`UpdateWorkerFleetInput`](crate::operation::update_worker_fleet::UpdateWorkerFleetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_worker_fleet::UpdateWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_worker_fleet::UpdateWorkerFleetInput {
-            id: self.id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateWorkerFleetInput",
+                )
+            })?,
             name: self.name,
             additional_fixed_properties: self.additional_fixed_properties,
         })

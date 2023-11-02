@@ -892,6 +892,55 @@ impl From<crate::operation::update_environment::UpdateEnvironmentError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError> for Error {
+    fn from(err: crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError) -> Self {
+        match err {
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

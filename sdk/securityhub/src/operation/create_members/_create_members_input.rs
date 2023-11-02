@@ -8,8 +8,10 @@ pub struct CreateMembersInput {
 }
 impl CreateMembersInput {
     /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
-    pub fn account_details(&self) -> ::std::option::Option<&[crate::types::AccountDetails]> {
-        self.account_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_details.is_none()`.
+    pub fn account_details(&self) -> &[crate::types::AccountDetails] {
+        self.account_details.as_deref().unwrap_or_default()
     }
 }
 impl CreateMembersInput {

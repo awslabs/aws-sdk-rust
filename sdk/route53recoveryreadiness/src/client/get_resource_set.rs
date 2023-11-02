@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResourceSet`](crate::operation::get_resource_set::builders::GetResourceSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::operation::get_resource_set::builders::GetResourceSetFluentBuilder::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::operation::get_resource_set::builders::GetResourceSetFluentBuilder::set_resource_set_name): <p>Name of a resource set.</p>
+    ///   - [`resource_set_name(impl Into<String>)`](crate::operation::get_resource_set::builders::GetResourceSetFluentBuilder::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::operation::get_resource_set::builders::GetResourceSetFluentBuilder::set_resource_set_name):<br>required: **true**<br><p>Name of a resource set.</p><br>
     /// - On success, responds with [`GetResourceSetOutput`](crate::operation::get_resource_set::GetResourceSetOutput) with field(s):
     ///   - [`resource_set_arn(Option<String>)`](crate::operation::get_resource_set::GetResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
     ///   - [`resource_set_name(Option<String>)`](crate::operation::get_resource_set::GetResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>

@@ -11,8 +11,10 @@ pub struct ListVoiceProfileDomainsOutput {
 }
 impl ListVoiceProfileDomainsOutput {
     /// <p>The list of voice profile domains.</p>
-    pub fn voice_profile_domains(&self) -> ::std::option::Option<&[crate::types::VoiceProfileDomainSummary]> {
-        self.voice_profile_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_profile_domains.is_none()`.
+    pub fn voice_profile_domains(&self) -> &[crate::types::VoiceProfileDomainSummary] {
+        self.voice_profile_domains.as_deref().unwrap_or_default()
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

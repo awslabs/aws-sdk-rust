@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeContext`](crate::operation::describe_context::builders::DescribeContextFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`context_name(impl Into<String>)`](crate::operation::describe_context::builders::DescribeContextFluentBuilder::context_name) / [`set_context_name(Option<String>)`](crate::operation::describe_context::builders::DescribeContextFluentBuilder::set_context_name): <p>The name of the context to describe.</p>
+    ///   - [`context_name(impl Into<String>)`](crate::operation::describe_context::builders::DescribeContextFluentBuilder::context_name) / [`set_context_name(Option<String>)`](crate::operation::describe_context::builders::DescribeContextFluentBuilder::set_context_name):<br>required: **true**<br><p>The name of the context to describe.</p><br>
     /// - On success, responds with [`DescribeContextOutput`](crate::operation::describe_context::DescribeContextOutput) with field(s):
     ///   - [`context_name(Option<String>)`](crate::operation::describe_context::DescribeContextOutput::context_name): <p>The name of the context.</p>
     ///   - [`context_arn(Option<String>)`](crate::operation::describe_context::DescribeContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>

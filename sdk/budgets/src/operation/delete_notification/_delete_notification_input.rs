@@ -42,6 +42,7 @@ pub struct DeleteNotificationInputBuilder {
 }
 impl DeleteNotificationInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteNotificationInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget whose notification you want to delete.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl DeleteNotificationInputBuilder {
         &self.budget_name
     }
     /// <p>The notification that you want to delete.</p>
+    /// This field is required.
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self

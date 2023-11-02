@@ -23,6 +23,7 @@ pub fn ser_memory_mi_b(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_memory_mi_b(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MemoryMiB, ::aws_smithy_xml::decode::XmlDecodeError> {

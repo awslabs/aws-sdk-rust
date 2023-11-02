@@ -104,6 +104,7 @@ pub struct ListPackagesInputBuilder {
 }
 impl ListPackagesInputBuilder {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +133,7 @@ impl ListPackagesInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository that contains the requested packages. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self

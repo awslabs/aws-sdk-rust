@@ -35,6 +35,7 @@ pub struct DeleteExpressionOutputBuilder {
 }
 impl DeleteExpressionOutputBuilder {
     /// <p>The status of the expression being deleted.</p>
+    /// This field is required.
     pub fn expression(mut self, input: crate::types::ExpressionStatus) -> Self {
         self.expression = ::std::option::Option::Some(input);
         self

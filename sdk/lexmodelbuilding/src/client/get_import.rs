@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImport`](crate::operation::get_import::builders::GetImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl Into<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::set_import_id): <p>The identifier of the import job information to return.</p>
+    ///   - [`import_id(impl Into<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::get_import::builders::GetImportFluentBuilder::set_import_id):<br>required: **true**<br><p>The identifier of the import job information to return.</p><br>
     /// - On success, responds with [`GetImportOutput`](crate::operation::get_import::GetImportOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_import::GetImportOutput::name): <p>The name given to the import job.</p>
     ///   - [`resource_type(Option<ResourceType>)`](crate::operation::get_import::GetImportOutput::resource_type): <p>The type of resource imported.</p>

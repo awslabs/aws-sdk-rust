@@ -48,6 +48,7 @@ pub struct ListReferencesInputBuilder {
 }
 impl ListReferencesInputBuilder {
     /// <p>The references' reference store ID.</p>
+    /// This field is required.
     pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self

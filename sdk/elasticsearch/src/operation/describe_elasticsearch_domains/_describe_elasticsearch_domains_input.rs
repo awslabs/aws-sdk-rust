@@ -9,8 +9,10 @@ pub struct DescribeElasticsearchDomainsInput {
 }
 impl DescribeElasticsearchDomainsInput {
     /// <p>The Elasticsearch domains for which you want information.</p>
-    pub fn domain_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domain_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_names.is_none()`.
+    pub fn domain_names(&self) -> &[::std::string::String] {
+        self.domain_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeElasticsearchDomainsInput {

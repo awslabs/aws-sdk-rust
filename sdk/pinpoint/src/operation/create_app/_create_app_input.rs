@@ -27,6 +27,7 @@ pub struct CreateAppInputBuilder {
 }
 impl CreateAppInputBuilder {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    /// This field is required.
     pub fn create_application_request(mut self, input: crate::types::CreateApplicationRequest) -> Self {
         self.create_application_request = ::std::option::Option::Some(input);
         self

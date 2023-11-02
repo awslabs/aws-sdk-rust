@@ -11,8 +11,10 @@ pub struct ListCandidatesForAutoMlJobOutput {
 }
 impl ListCandidatesForAutoMlJobOutput {
     /// <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-    pub fn candidates(&self) -> ::std::option::Option<&[crate::types::AutoMlCandidate]> {
-        self.candidates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.candidates.is_none()`.
+    pub fn candidates(&self) -> &[crate::types::AutoMlCandidate] {
+        self.candidates.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

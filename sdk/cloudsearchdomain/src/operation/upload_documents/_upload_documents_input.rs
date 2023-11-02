@@ -43,6 +43,7 @@ pub struct UploadDocumentsInputBuilder {
 }
 impl UploadDocumentsInputBuilder {
     /// <p>A batch of documents formatted in JSON or HTML.</p>
+    /// This field is required.
     pub fn documents(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.documents = ::std::option::Option::Some(input);
         self
@@ -61,6 +62,7 @@ impl UploadDocumentsInputBuilder {
     /// <li>application/json</li>
     /// <li>application/xml</li>
     /// </ul>
+    /// This field is required.
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self

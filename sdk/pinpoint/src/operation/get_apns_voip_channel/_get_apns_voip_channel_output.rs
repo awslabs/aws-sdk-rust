@@ -34,6 +34,7 @@ pub struct GetApnsVoipChannelOutputBuilder {
 }
 impl GetApnsVoipChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    /// This field is required.
     pub fn apns_voip_channel_response(mut self, input: crate::types::ApnsVoipChannelResponse) -> Self {
         self.apns_voip_channel_response = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct GetAttributeGroupInputBuilder {
 }
 impl GetAttributeGroupInputBuilder {
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    /// This field is required.
     pub fn attribute_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_group = ::std::option::Option::Some(input.into());
         self

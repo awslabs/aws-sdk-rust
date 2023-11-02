@@ -55,6 +55,7 @@ pub struct ListHostedConfigurationVersionsInputBuilder {
 }
 impl ListHostedConfigurationVersionsInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListHostedConfigurationVersionsInputBuilder {
         &self.application_id
     }
     /// <p>The configuration profile ID.</p>
+    /// This field is required.
     pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self

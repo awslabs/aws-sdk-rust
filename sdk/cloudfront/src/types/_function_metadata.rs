@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
-    pub function_arn: ::std::option::Option<::std::string::String>,
+    pub function_arn: ::std::string::String,
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
@@ -13,12 +13,13 @@ pub struct FunctionMetadata {
     /// <p>The date and time when the function was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the function was most recently updated.</p>
-    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_time: ::aws_smithy_types::DateTime,
 }
 impl FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
-        self.function_arn.as_deref()
+    pub fn function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.function_arn.deref()
     }
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
@@ -31,8 +32,8 @@ impl FunctionMetadata {
         self.created_time.as_ref()
     }
     /// <p>The date and time when the function was most recently updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_time.as_ref()
+    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_time
     }
 }
 impl FunctionMetadata {
@@ -53,6 +54,7 @@ pub struct FunctionMetadataBuilder {
 }
 impl FunctionMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +103,7 @@ impl FunctionMetadataBuilder {
         &self.created_time
     }
     /// <p>The date and time when the function was most recently updated.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -115,12 +118,25 @@ impl FunctionMetadataBuilder {
         &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`FunctionMetadata`](crate::types::FunctionMetadata).
-    pub fn build(self) -> crate::types::FunctionMetadata {
-        crate::types::FunctionMetadata {
-            function_arn: self.function_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_arn`](crate::types::builders::FunctionMetadataBuilder::function_arn)
+    /// - [`last_modified_time`](crate::types::builders::FunctionMetadataBuilder::last_modified_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FunctionMetadata {
+            function_arn: self.function_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "function_arn",
+                    "function_arn was not specified but it is required when building FunctionMetadata",
+                )
+            })?,
             stage: self.stage,
             created_time: self.created_time,
-            last_modified_time: self.last_modified_time,
-        }
+            last_modified_time: self.last_modified_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_modified_time",
+                    "last_modified_time was not specified but it is required when building FunctionMetadata",
+                )
+            })?,
+        })
     }
 }

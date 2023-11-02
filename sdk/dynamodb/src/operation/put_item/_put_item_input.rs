@@ -206,6 +206,7 @@ pub struct PutItemInputBuilder {
 }
 impl PutItemInputBuilder {
     /// <p>The name of the table to contain the item.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

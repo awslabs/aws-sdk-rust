@@ -21,8 +21,10 @@ impl InputSchemaUpdate {
         self.record_encoding_update.as_deref()
     }
     /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping of the streaming source element to the corresponding column in the in-application stream.</p>
-    pub fn record_column_updates(&self) -> ::std::option::Option<&[crate::types::RecordColumn]> {
-        self.record_column_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_column_updates.is_none()`.
+    pub fn record_column_updates(&self) -> &[crate::types::RecordColumn] {
+        self.record_column_updates.as_deref().unwrap_or_default()
     }
 }
 impl InputSchemaUpdate {

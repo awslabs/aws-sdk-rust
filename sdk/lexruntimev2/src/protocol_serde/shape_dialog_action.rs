@@ -48,7 +48,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dialog_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -60,20 +62,20 @@ pub fn ser_dialog_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DialogAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.slot_to_elicit {
-        object.key("slotToElicit").string(var_2.as_str());
+    if let Some(var_1) = &input.slot_to_elicit {
+        object.key("slotToElicit").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.slot_elicitation_style {
-        object.key("slotElicitationStyle").string(var_3.as_str());
+    if let Some(var_2) = &input.slot_elicitation_style {
+        object.key("slotElicitationStyle").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.sub_slot_to_elicit {
+    if let Some(var_3) = &input.sub_slot_to_elicit {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("subSlotToElicit").start_object();
-        crate::protocol_serde::shape_elicit_sub_slot::ser_elicit_sub_slot(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("subSlotToElicit").start_object();
+        crate::protocol_serde::shape_elicit_sub_slot::ser_elicit_sub_slot(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

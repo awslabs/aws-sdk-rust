@@ -40,12 +40,16 @@ pub struct AttributeFilter {
 }
 impl AttributeFilter {
     /// <p>Performs a logical <code>AND</code> operation on all filters that you specify.</p>
-    pub fn and_all_filters(&self) -> ::std::option::Option<&[crate::types::AttributeFilter]> {
-        self.and_all_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and_all_filters.is_none()`.
+    pub fn and_all_filters(&self) -> &[crate::types::AttributeFilter] {
+        self.and_all_filters.as_deref().unwrap_or_default()
     }
     /// <p>Performs a logical <code>OR</code> operation on all filters that you specify.</p>
-    pub fn or_all_filters(&self) -> ::std::option::Option<&[crate::types::AttributeFilter]> {
-        self.or_all_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.or_all_filters.is_none()`.
+    pub fn or_all_filters(&self) -> &[crate::types::AttributeFilter] {
+        self.or_all_filters.as_deref().unwrap_or_default()
     }
     /// <p>Performs a logical <code>NOT</code> operation on all filters that you specify.</p>
     pub fn not_filter(&self) -> ::std::option::Option<&crate::types::AttributeFilter> {

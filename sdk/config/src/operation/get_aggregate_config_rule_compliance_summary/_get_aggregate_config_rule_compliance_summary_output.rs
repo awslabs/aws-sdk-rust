@@ -17,8 +17,10 @@ impl GetAggregateConfigRuleComplianceSummaryOutput {
         self.group_by_key.as_deref()
     }
     /// <p>Returns a list of AggregateComplianceCounts object.</p>
-    pub fn aggregate_compliance_counts(&self) -> ::std::option::Option<&[crate::types::AggregateComplianceCount]> {
-        self.aggregate_compliance_counts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregate_compliance_counts.is_none()`.
+    pub fn aggregate_compliance_counts(&self) -> &[crate::types::AggregateComplianceCount] {
+        self.aggregate_compliance_counts.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

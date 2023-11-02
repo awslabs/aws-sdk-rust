@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub function_arn: ::std::option::Option<::std::string::String>,
+    pub function_arn: ::std::string::String,
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
-    pub event_type: ::std::option::Option<crate::types::EventType>,
+    pub event_type: crate::types::EventType,
 }
 impl FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
-        self.function_arn.as_deref()
+    pub fn function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.function_arn.deref()
     }
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
-        self.event_type.as_ref()
+    pub fn event_type(&self) -> &crate::types::EventType {
+        &self.event_type
     }
 }
 impl FunctionAssociation {
@@ -35,6 +36,7 @@ pub struct FunctionAssociationBuilder {
 }
 impl FunctionAssociationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl FunctionAssociationBuilder {
         &self.function_arn
     }
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl FunctionAssociationBuilder {
         &self.event_type
     }
     /// Consumes the builder and constructs a [`FunctionAssociation`](crate::types::FunctionAssociation).
-    pub fn build(self) -> crate::types::FunctionAssociation {
-        crate::types::FunctionAssociation {
-            function_arn: self.function_arn,
-            event_type: self.event_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_arn`](crate::types::builders::FunctionAssociationBuilder::function_arn)
+    /// - [`event_type`](crate::types::builders::FunctionAssociationBuilder::event_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionAssociation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FunctionAssociation {
+            function_arn: self.function_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "function_arn",
+                    "function_arn was not specified but it is required when building FunctionAssociation",
+                )
+            })?,
+            event_type: self.event_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_type",
+                    "event_type was not specified but it is required when building FunctionAssociation",
+                )
+            })?,
+        })
     }
 }

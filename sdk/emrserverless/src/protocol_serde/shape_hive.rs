@@ -3,14 +3,14 @@ pub fn ser_hive(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Hive,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.query {
-        object.key("query").string(var_1.as_str());
+    {
+        object.key("query").string(input.query.as_str());
     }
-    if let Some(var_2) = &input.init_query_file {
-        object.key("initQueryFile").string(var_2.as_str());
+    if let Some(var_1) = &input.init_query_file {
+        object.key("initQueryFile").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.parameters {
-        object.key("parameters").string(var_3.as_str());
+    if let Some(var_2) = &input.parameters {
+        object.key("parameters").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::hive_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

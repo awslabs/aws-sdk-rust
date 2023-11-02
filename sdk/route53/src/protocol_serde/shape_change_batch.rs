@@ -9,12 +9,12 @@ pub fn ser_change_batch(
         let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.changes {
+    {
         let mut inner_writer = scope.start_el("Changes").finish();
-        for list_item_3 in var_2 {
+        for list_item_2 in &input.changes {
             {
                 let inner_writer = inner_writer.start_el("Change");
-                crate::protocol_serde::shape_change::ser_change(list_item_3, inner_writer)?
+                crate::protocol_serde::shape_change::ser_change(list_item_2, inner_writer)?
             }
         }
     }

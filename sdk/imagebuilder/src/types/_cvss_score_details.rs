@@ -39,8 +39,10 @@ impl CvssScoreDetails {
         self.scoring_vector.as_deref()
     }
     /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
-    pub fn adjustments(&self) -> ::std::option::Option<&[crate::types::CvssScoreAdjustment]> {
-        self.adjustments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adjustments.is_none()`.
+    pub fn adjustments(&self) -> &[crate::types::CvssScoreAdjustment] {
+        self.adjustments.as_deref().unwrap_or_default()
     }
 }
 impl CvssScoreDetails {

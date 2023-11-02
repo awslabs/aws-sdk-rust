@@ -62,6 +62,7 @@ pub struct GetIpSetOutputBuilder {
 }
 impl GetIpSetOutputBuilder {
     /// <p>The user-friendly name for the IPSet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl GetIpSetOutputBuilder {
         &self.name
     }
     /// <p>The format of the file that contains the IPSet.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::IpSetFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl GetIpSetOutputBuilder {
         &self.format
     }
     /// <p>The URI of the file that contains the IPSet.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl GetIpSetOutputBuilder {
         &self.location
     }
     /// <p>The status of IPSet file that was uploaded.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::IpSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

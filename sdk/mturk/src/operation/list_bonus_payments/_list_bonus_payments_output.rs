@@ -21,8 +21,10 @@ impl ListBonusPaymentsOutput {
         self.next_token.as_deref()
     }
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
-    pub fn bonus_payments(&self) -> ::std::option::Option<&[crate::types::BonusPayment]> {
-        self.bonus_payments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bonus_payments.is_none()`.
+    pub fn bonus_payments(&self) -> &[crate::types::BonusPayment] {
+        self.bonus_payments.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListBonusPaymentsOutput {

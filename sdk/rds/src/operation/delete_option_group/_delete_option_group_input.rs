@@ -34,6 +34,7 @@ impl DeleteOptionGroupInputBuilder {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
+    /// This field is required.
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self

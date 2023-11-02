@@ -14,8 +14,10 @@ impl SubmitAttachmentStateChangesInput {
         self.cluster.as_deref()
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::AttachmentStateChange]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::AttachmentStateChange] {
+        self.attachments.as_deref().unwrap_or_default()
     }
 }
 impl SubmitAttachmentStateChangesInput {

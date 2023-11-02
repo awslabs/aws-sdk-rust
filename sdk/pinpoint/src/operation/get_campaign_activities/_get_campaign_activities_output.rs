@@ -34,6 +34,7 @@ pub struct GetCampaignActivitiesOutputBuilder {
 }
 impl GetCampaignActivitiesOutputBuilder {
     /// <p>Provides information about the activities that were performed by a campaign.</p>
+    /// This field is required.
     pub fn activities_response(mut self, input: crate::types::ActivitiesResponse) -> Self {
         self.activities_response = ::std::option::Option::Some(input);
         self

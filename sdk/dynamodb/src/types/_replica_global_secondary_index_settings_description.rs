@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p> The current status of the global secondary index:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The global secondary index is being created.</p> </li>
@@ -25,8 +25,9 @@ pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
 }
 impl ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p> The current status of the global secondary index:</p>
     /// <ul>
@@ -75,6 +76,7 @@ pub struct ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
 }
 impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -183,14 +185,23 @@ impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
         &self.provisioned_write_capacity_auto_scaling_settings
     }
     /// Consumes the builder and constructs a [`ReplicaGlobalSecondaryIndexSettingsDescription`](crate::types::ReplicaGlobalSecondaryIndexSettingsDescription).
-    pub fn build(self) -> crate::types::ReplicaGlobalSecondaryIndexSettingsDescription {
-        crate::types::ReplicaGlobalSecondaryIndexSettingsDescription {
-            index_name: self.index_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::types::builders::ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder::index_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicaGlobalSecondaryIndexSettingsDescription {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndexSettingsDescription",
+                )
+            })?,
             index_status: self.index_status,
             provisioned_read_capacity_units: self.provisioned_read_capacity_units,
             provisioned_read_capacity_auto_scaling_settings: self.provisioned_read_capacity_auto_scaling_settings,
             provisioned_write_capacity_units: self.provisioned_write_capacity_units,
             provisioned_write_capacity_auto_scaling_settings: self.provisioned_write_capacity_auto_scaling_settings,
-        }
+        })
     }
 }

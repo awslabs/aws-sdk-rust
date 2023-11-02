@@ -64,6 +64,7 @@ pub struct UpdateModelCardInputBuilder {
 }
 impl UpdateModelCardInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model card to update.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self

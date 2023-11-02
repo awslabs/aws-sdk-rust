@@ -4,20 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
-    pub analyzer_arn: ::std::option::Option<::std::string::String>,
+    pub analyzer_arn: ::std::string::String,
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub configurations: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
+    pub configurations: ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPreviewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
-        self.analyzer_arn.as_deref()
+    pub fn analyzer_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.analyzer_arn.deref()
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
-        self.configurations.as_ref()
+    pub fn configurations(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::Configuration> {
+        &self.configurations
     }
     /// <p>A client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct CreateAccessPreviewInputBuilder {
 }
 impl CreateAccessPreviewInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -92,13 +94,26 @@ impl CreateAccessPreviewInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzer_arn`](crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder::analyzer_arn)
+    /// - [`configurations`](crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder::configurations)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_access_preview::CreateAccessPreviewInput {
-            analyzer_arn: self.analyzer_arn,
-            configurations: self.configurations,
+            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzer_arn",
+                    "analyzer_arn was not specified but it is required when building CreateAccessPreviewInput",
+                )
+            })?,
+            configurations: self.configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configurations",
+                    "configurations was not specified but it is required when building CreateAccessPreviewInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

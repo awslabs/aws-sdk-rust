@@ -55,6 +55,7 @@ pub struct DescribeCacheParametersInputBuilder {
 }
 impl DescribeCacheParametersInputBuilder {
     /// <p>The name of a specific cache parameter group to return details for.</p>
+    /// This field is required.
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self

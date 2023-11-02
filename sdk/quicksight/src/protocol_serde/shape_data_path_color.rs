@@ -9,11 +9,11 @@ pub fn ser_data_path_color(
         crate::protocol_serde::shape_data_path_value::ser_data_path_value(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.color {
-        object.key("Color").string(var_3.as_str());
+    {
+        object.key("Color").string(input.color.as_str());
     }
-    if let Some(var_4) = &input.time_granularity {
-        object.key("TimeGranularity").string(var_4.as_str());
+    if let Some(var_3) = &input.time_granularity {
+        object.key("TimeGranularity").string(var_3.as_str());
     }
     Ok(())
 }
@@ -60,7 +60,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_path_color_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

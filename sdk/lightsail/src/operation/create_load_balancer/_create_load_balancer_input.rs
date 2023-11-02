@@ -55,13 +55,17 @@ impl CreateLoadBalancerInput {
         self.certificate_domain_name.as_deref()
     }
     /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
-    pub fn certificate_alternative_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_alternative_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_alternative_names.is_none()`.
+    pub fn certificate_alternative_names(&self) -> &[::std::string::String] {
+        self.certificate_alternative_names.as_deref().unwrap_or_default()
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type for the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -99,6 +103,7 @@ pub struct CreateLoadBalancerInputBuilder {
 }
 impl CreateLoadBalancerInputBuilder {
     /// <p>The name of your load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +118,7 @@ impl CreateLoadBalancerInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The instance port where you're creating your load balancer.</p>
+    /// This field is required.
     pub fn instance_port(mut self, input: i32) -> Self {
         self.instance_port = ::std::option::Option::Some(input);
         self

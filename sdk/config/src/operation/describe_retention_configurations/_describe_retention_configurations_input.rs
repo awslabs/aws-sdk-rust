@@ -14,8 +14,10 @@ impl DescribeRetentionConfigurationsInput {
     /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
-    pub fn retention_configuration_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.retention_configuration_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retention_configuration_names.is_none()`.
+    pub fn retention_configuration_names(&self) -> &[::std::string::String] {
+        self.retention_configuration_names.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

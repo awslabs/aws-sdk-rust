@@ -34,8 +34,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CloudFrontOriginAccessIdentityInUse" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::CloudFrontOriginAccessIdentityInUse({
@@ -50,8 +50,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidIfMatchVersion" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::InvalidIfMatchVersion({
@@ -66,8 +66,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchCloudFrontOriginAccessIdentity" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::NoSuchCloudFrontOriginAccessIdentity({
@@ -82,8 +82,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PreconditionFailed" => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::PreconditionFailed({
@@ -98,8 +98,8 @@ pub fn de_delete_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::generic(generic)

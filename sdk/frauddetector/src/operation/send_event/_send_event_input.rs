@@ -44,8 +44,10 @@ impl SendEventInput {
         self.label_timestamp.as_deref()
     }
     /// <p>An array of entities.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::Entity] {
+        self.entities.as_deref().unwrap_or_default()
     }
 }
 impl SendEventInput {
@@ -69,6 +71,7 @@ pub struct SendEventInputBuilder {
 }
 impl SendEventInputBuilder {
     /// <p>The event ID to upload.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl SendEventInputBuilder {
         &self.event_id
     }
     /// <p>The event type name of the event.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl SendEventInputBuilder {
         &self.event_type_name
     }
     /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// This field is required.
     pub fn event_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_timestamp = ::std::option::Option::Some(input.into());
         self

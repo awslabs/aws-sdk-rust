@@ -11,8 +11,10 @@ pub struct GetLinkAssociationsOutput {
 }
 impl GetLinkAssociationsOutput {
     /// <p>The link associations.</p>
-    pub fn link_associations(&self) -> ::std::option::Option<&[crate::types::LinkAssociation]> {
-        self.link_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.link_associations.is_none()`.
+    pub fn link_associations(&self) -> &[crate::types::LinkAssociation] {
+        self.link_associations.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

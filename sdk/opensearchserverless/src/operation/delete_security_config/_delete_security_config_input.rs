@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSecurityConfigInput {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSecurityConfigInput {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct DeleteSecurityConfigInputBuilder {
 }
 impl DeleteSecurityConfigInputBuilder {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +64,19 @@ impl DeleteSecurityConfigInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteSecurityConfigInput`](crate::operation::delete_security_config::DeleteSecurityConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::delete_security_config::builders::DeleteSecurityConfigInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_security_config::DeleteSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_security_config::DeleteSecurityConfigInput {
-            id: self.id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DeleteSecurityConfigInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

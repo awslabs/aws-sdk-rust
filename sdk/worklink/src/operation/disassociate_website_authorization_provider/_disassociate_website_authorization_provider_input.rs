@@ -35,6 +35,7 @@ pub struct DisassociateWebsiteAuthorizationProviderInputBuilder {
 }
 impl DisassociateWebsiteAuthorizationProviderInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DisassociateWebsiteAuthorizationProviderInputBuilder {
         &self.fleet_arn
     }
     /// <p>A unique identifier for the authorization provider.</p>
+    /// This field is required.
     pub fn authorization_provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_provider_id = ::std::option::Option::Some(input.into());
         self

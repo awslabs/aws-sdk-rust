@@ -35,6 +35,7 @@ pub struct BatchDetachPolicyBuilder {
 }
 impl BatchDetachPolicyBuilder {
     /// <p>Reference that identifies the policy object.</p>
+    /// This field is required.
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.policy_reference = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BatchDetachPolicyBuilder {
         &self.policy_reference
     }
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

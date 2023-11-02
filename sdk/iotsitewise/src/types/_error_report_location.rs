@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorReportLocation {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub prefix: ::std::option::Option<::std::string::String>,
+    pub prefix: ::std::string::String,
 }
 impl ErrorReportLocation {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
-        self.prefix.as_deref()
+    pub fn prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.prefix.deref()
     }
 }
 impl ErrorReportLocation {
@@ -35,6 +37,7 @@ pub struct ErrorReportLocationBuilder {
 }
 impl ErrorReportLocationBuilder {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ErrorReportLocationBuilder {
         &self.bucket
     }
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// This field is required.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ErrorReportLocationBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`ErrorReportLocation`](crate::types::ErrorReportLocation).
-    pub fn build(self) -> crate::types::ErrorReportLocation {
-        crate::types::ErrorReportLocation {
-            bucket: self.bucket,
-            prefix: self.prefix,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::ErrorReportLocationBuilder::bucket)
+    /// - [`prefix`](crate::types::builders::ErrorReportLocationBuilder::prefix)
+    pub fn build(self) -> ::std::result::Result<crate::types::ErrorReportLocation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ErrorReportLocation {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building ErrorReportLocation",
+                )
+            })?,
+            prefix: self.prefix.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "prefix",
+                    "prefix was not specified but it is required when building ErrorReportLocation",
+                )
+            })?,
+        })
     }
 }

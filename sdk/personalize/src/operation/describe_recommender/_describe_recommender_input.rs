@@ -27,6 +27,7 @@ pub struct DescribeRecommenderInputBuilder {
 }
 impl DescribeRecommenderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
+    /// This field is required.
     pub fn recommender_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_arn = ::std::option::Option::Some(input.into());
         self

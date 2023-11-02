@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDomain`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_id): <p>The domain ID.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_id):<br>required: **true**<br><p>The domain ID.</p><br>
     /// - On success, responds with [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_arn): <p>The domain's Amazon Resource Name (ARN).</p>
     ///   - [`domain_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_id): <p>The domain ID.</p>

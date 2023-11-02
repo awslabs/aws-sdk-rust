@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutPolicy`](crate::operation::put_policy::builders::PutPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy(Policy)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::policy) / [`set_policy(Option<Policy>)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::set_policy): A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    ///   - [`policy(Policy)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::policy) / [`set_policy(Option<Policy>)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::set_policy):<br>required: **true**<br>A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<br>
     /// - On success, responds with [`PutPolicyOutput`](crate::operation::put_policy::PutPolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::operation::put_policy::PutPolicyOutput::policy): A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     /// - On failure, responds with [`SdkError<PutPolicyError>`](crate::operation::put_policy::PutPolicyError)

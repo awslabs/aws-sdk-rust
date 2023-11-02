@@ -27,6 +27,7 @@ pub struct StopHumanLoopInputBuilder {
 }
 impl StopHumanLoopInputBuilder {
     /// <p>The name of the human loop that you want to stop.</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self

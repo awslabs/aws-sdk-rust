@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetInstance`](crate::operation::get_instance::builders::GetInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_id(impl Into<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::service_id) / [`set_service_id(Option<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_service_id): <p>The ID of the service that the instance is associated with.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_instance_id): <p>The ID of the instance that you want to get information about.</p>
+    ///   - [`service_id(impl Into<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::service_id) / [`set_service_id(Option<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_service_id):<br>required: **true**<br><p>The ID of the service that the instance is associated with.</p><br>
+    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_instance_id):<br>required: **true**<br><p>The ID of the instance that you want to get information about.</p><br>
     /// - On success, responds with [`GetInstanceOutput`](crate::operation::get_instance::GetInstanceOutput) with field(s):
     ///   - [`instance(Option<Instance>)`](crate::operation::get_instance::GetInstanceOutput::instance): <p>A complex type that contains information about a specified instance.</p>
     /// - On failure, responds with [`SdkError<GetInstanceError>`](crate::operation::get_instance::GetInstanceError)

@@ -27,6 +27,7 @@ pub struct GetSchemaMappingInputBuilder {
 }
 impl GetSchemaMappingInputBuilder {
     /// <p>The name of the schema to be retrieved.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Slot {
     /// <p>The name of the slot.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description of the slot.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the slot is required or optional. </p>
-    pub slot_constraint: ::std::option::Option<crate::types::SlotConstraint>,
+    pub slot_constraint: crate::types::SlotConstraint,
     /// <p>The type of the slot, either a custom slot type that you defined or one of the built-in slot types.</p>
     pub slot_type: ::std::option::Option<::std::string::String>,
     /// <p>The version of the slot type.</p>
@@ -30,16 +30,17 @@ pub struct Slot {
 }
 impl Slot {
     /// <p>The name of the slot.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description of the slot.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the slot is required or optional. </p>
-    pub fn slot_constraint(&self) -> ::std::option::Option<&crate::types::SlotConstraint> {
-        self.slot_constraint.as_ref()
+    pub fn slot_constraint(&self) -> &crate::types::SlotConstraint {
+        &self.slot_constraint
     }
     /// <p>The type of the slot, either a custom slot type that you defined or one of the built-in slot types.</p>
     pub fn slot_type(&self) -> ::std::option::Option<&str> {
@@ -59,8 +60,10 @@ impl Slot {
         self.priority
     }
     /// <p> If you know a specific pattern with which users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances. </p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[::std::string::String] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p> A set of possible responses for the slot type used by text-based clients. A user chooses an option from the response card, instead of using text to reply. </p>
     pub fn response_card(&self) -> ::std::option::Option<&str> {
@@ -100,6 +103,7 @@ pub struct SlotBuilder {
 }
 impl SlotBuilder {
     /// <p>The name of the slot.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +132,7 @@ impl SlotBuilder {
         &self.description
     }
     /// <p>Specifies whether the slot is required or optional. </p>
+    /// This field is required.
     pub fn slot_constraint(mut self, input: crate::types::SlotConstraint) -> Self {
         self.slot_constraint = ::std::option::Option::Some(input);
         self
@@ -263,11 +268,21 @@ impl SlotBuilder {
         &self.default_value_spec
     }
     /// Consumes the builder and constructs a [`Slot`](crate::types::Slot).
-    pub fn build(self) -> crate::types::Slot {
-        crate::types::Slot {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SlotBuilder::name)
+    /// - [`slot_constraint`](crate::types::builders::SlotBuilder::slot_constraint)
+    pub fn build(self) -> ::std::result::Result<crate::types::Slot, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Slot {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Slot")
+            })?,
             description: self.description,
-            slot_constraint: self.slot_constraint,
+            slot_constraint: self.slot_constraint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "slot_constraint",
+                    "slot_constraint was not specified but it is required when building Slot",
+                )
+            })?,
             slot_type: self.slot_type,
             slot_type_version: self.slot_type_version,
             value_elicitation_prompt: self.value_elicitation_prompt,
@@ -276,6 +291,6 @@ impl SlotBuilder {
             response_card: self.response_card,
             obfuscation_setting: self.obfuscation_setting,
             default_value_spec: self.default_value_spec,
-        }
+        })
     }
 }

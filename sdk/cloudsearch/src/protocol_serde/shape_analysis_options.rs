@@ -32,6 +32,7 @@ pub fn ser_analysis_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_analysis_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AnalysisOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

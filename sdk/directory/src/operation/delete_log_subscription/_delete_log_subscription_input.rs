@@ -27,6 +27,7 @@ pub struct DeleteLogSubscriptionInputBuilder {
 }
 impl DeleteLogSubscriptionInputBuilder {
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

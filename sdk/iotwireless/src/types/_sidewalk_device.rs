@@ -35,12 +35,16 @@ impl SidewalkDevice {
         self.sidewalk_manufacturing_sn.as_deref()
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn device_certificates(&self) -> ::std::option::Option<&[crate::types::CertificateList]> {
-        self.device_certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_certificates.is_none()`.
+    pub fn device_certificates(&self) -> &[crate::types::CertificateList] {
+        self.device_certificates.as_deref().unwrap_or_default()
     }
     /// <p>The Sidewalk device private keys that will be used for onboarding the device.</p>
-    pub fn private_keys(&self) -> ::std::option::Option<&[crate::types::CertificateList]> {
-        self.private_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_keys.is_none()`.
+    pub fn private_keys(&self) -> &[crate::types::CertificateList] {
+        self.private_keys.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Sidewalk device profile.</p>
     pub fn device_profile_id(&self) -> ::std::option::Option<&str> {

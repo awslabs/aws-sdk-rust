@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModelTemplate`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`model_id(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_model_id): <p>The model ID.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`model_id(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_model_id):<br>required: **true**<br><p>The model ID.</p><br>
     /// - On success, responds with [`GetModelTemplateOutput`](crate::operation::get_model_template::GetModelTemplateOutput) with field(s):
     ///   - [`value(Option<String>)`](crate::operation::get_model_template::GetModelTemplateOutput::value): <p>The template value.</p>
     /// - On failure, responds with [`SdkError<GetModelTemplateError>`](crate::operation::get_model_template::GetModelTemplateError)

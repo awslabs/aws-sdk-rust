@@ -34,6 +34,7 @@ pub struct UpdateApprovalRuleTemplateNameInputBuilder {
 }
 impl UpdateApprovalRuleTemplateNameInputBuilder {
     /// <p>The current name of the approval rule template.</p>
+    /// This field is required.
     pub fn old_approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.old_approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateApprovalRuleTemplateNameInputBuilder {
         &self.old_approval_rule_template_name
     }
     /// <p>The new name you want to apply to the approval rule template.</p>
+    /// This field is required.
     pub fn new_approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_approval_rule_template_name = ::std::option::Option::Some(input.into());
         self

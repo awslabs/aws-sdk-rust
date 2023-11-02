@@ -16,8 +16,10 @@ impl UpdateLinkInput {
     }
     /// <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>
     /// <p>Your input here replaces the current set of data types that are shared.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceType]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ResourceType] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLinkInput {
@@ -36,6 +38,7 @@ pub struct UpdateLinkInputBuilder {
 }
 impl UpdateLinkInputBuilder {
     /// <p>The ARN of the link that you want to update.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

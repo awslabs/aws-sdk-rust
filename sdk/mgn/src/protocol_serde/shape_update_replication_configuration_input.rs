@@ -60,27 +60,27 @@ pub fn ser_update_replication_configuration_input(
         }
         array_15.finish();
     }
-    if let Some(var_17) = &input.source_server_id {
-        object.key("sourceServerID").string(var_17.as_str());
+    {
+        object.key("sourceServerID").string(input.source_server_id.as_str());
     }
-    if let Some(var_18) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_18.as_str());
+    if let Some(var_17) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_17.as_str());
     }
-    if let Some(var_19) = &input.staging_area_tags {
+    if let Some(var_18) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("stagingAreaTags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_19 = object.key("stagingAreaTags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_20.finish();
+        object_19.finish();
     }
-    if let Some(var_23) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_23);
+    if let Some(var_22) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_22);
     }
-    if let Some(var_24) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_24);
+    if let Some(var_23) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_23);
     }
     Ok(())
 }

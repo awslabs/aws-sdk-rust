@@ -77,7 +77,7 @@ pub fn de_create_volume_from_backup_http_error(
                 output = crate::protocol_serde::shape_incompatible_parameter_error::de_incompatible_parameter_error_json_err(_response_body, output)
                     .map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::incompatible_parameter_error_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -122,7 +122,7 @@ pub fn de_create_volume_from_backup_http_error(
                 output = crate::protocol_serde::shape_service_limit_exceeded::de_service_limit_exceeded_json_err(_response_body, output)
                     .map_err(crate::operation::create_volume_from_backup::CreateVolumeFromBackupError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_limit_exceeded_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

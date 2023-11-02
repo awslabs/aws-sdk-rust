@@ -34,6 +34,7 @@ pub struct DeleteObjectInputBuilder {
 }
 impl DeleteObjectInputBuilder {
     /// Backup job Id for the in-progress backup.
+    /// This field is required.
     pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteObjectInputBuilder {
         &self.backup_job_id
     }
     /// The name of the Object.
+    /// This field is required.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_name = ::std::option::Option::Some(input.into());
         self

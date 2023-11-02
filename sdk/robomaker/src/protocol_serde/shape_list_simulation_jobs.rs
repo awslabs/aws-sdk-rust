@@ -84,7 +84,9 @@ pub fn de_list_simulation_jobs_http_response(
         output = crate::protocol_serde::shape_list_simulation_jobs::de_list_simulation_jobs(_response_body, output)
             .map_err(crate::operation::list_simulation_jobs::ListSimulationJobsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_simulation_jobs_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_simulation_jobs::ListSimulationJobsError::unhandled)?
     })
 }
 

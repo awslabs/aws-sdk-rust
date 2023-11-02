@@ -86,12 +86,16 @@ impl CreateIpamPoolInput {
         self.allocation_default_netmask_length
     }
     /// <p>Tags that are required for resources that use CIDRs from this IPAM pool. Resources that do not have these tags will not be allowed to allocate space from the pool. If the resources have their tags changed after they have allocated space or if the allocation tagging requirements are changed on the pool, the resource may be marked as noncompliant.</p>
-    pub fn allocation_resource_tags(&self) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
-        self.allocation_resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_resource_tags.is_none()`.
+    pub fn allocation_resource_tags(&self) -> &[crate::types::RequestIpamResourceTag] {
+        self.allocation_resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -150,6 +154,7 @@ impl CreateIpamPoolInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the scope in which you would like to create the IPAM pool.</p>
+    /// This field is required.
     pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +214,7 @@ impl CreateIpamPoolInputBuilder {
         &self.description
     }
     /// <p>The IP protocol assigned to this IPAM pool. You must choose either IPv4 or IPv6 protocol for a pool.</p>
+    /// This field is required.
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
         self.address_family = ::std::option::Option::Some(input);
         self

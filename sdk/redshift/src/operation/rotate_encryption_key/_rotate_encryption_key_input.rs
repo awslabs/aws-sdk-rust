@@ -31,6 +31,7 @@ pub struct RotateEncryptionKeyInputBuilder {
 impl RotateEncryptionKeyInputBuilder {
     /// <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>
     /// <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self

@@ -57,8 +57,10 @@ pub struct CampaignResponse {
 }
 impl CampaignResponse {
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
-    pub fn additional_treatments(&self) -> ::std::option::Option<&[crate::types::TreatmentResource]> {
-        self.additional_treatments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_treatments.is_none()`.
+    pub fn additional_treatments(&self) -> &[crate::types::TreatmentResource] {
+        self.additional_treatments.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier for the application that the campaign applies to.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
@@ -216,6 +218,7 @@ impl CampaignResponseBuilder {
         &self.additional_treatments
     }
     /// <p>The unique identifier for the application that the campaign applies to.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +233,7 @@ impl CampaignResponseBuilder {
         &self.application_id
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -244,6 +248,7 @@ impl CampaignResponseBuilder {
         &self.arn
     }
     /// <p>The date, in ISO 8601 format, when the campaign was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -328,6 +333,7 @@ impl CampaignResponseBuilder {
         &self.hook
     }
     /// <p>The unique identifier for the campaign.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -356,6 +362,7 @@ impl CampaignResponseBuilder {
         &self.is_paused
     }
     /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
@@ -426,6 +433,7 @@ impl CampaignResponseBuilder {
         &self.schedule
     }
     /// <p>The unique identifier for the segment that's associated with the campaign.</p>
+    /// This field is required.
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
         self
@@ -440,6 +448,7 @@ impl CampaignResponseBuilder {
         &self.segment_id
     }
     /// <p>The version number of the segment that's associated with the campaign.</p>
+    /// This field is required.
     pub fn segment_version(mut self, input: i32) -> Self {
         self.segment_version = ::std::option::Option::Some(input);
         self

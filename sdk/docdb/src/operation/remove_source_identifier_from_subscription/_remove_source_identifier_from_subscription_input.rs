@@ -35,6 +35,7 @@ pub struct RemoveSourceIdentifierFromSubscriptionInputBuilder {
 }
 impl RemoveSourceIdentifierFromSubscriptionInputBuilder {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RemoveSourceIdentifierFromSubscriptionInputBuilder {
         &self.subscription_name
     }
     /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
+    /// This field is required.
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self

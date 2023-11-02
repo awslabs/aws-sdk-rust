@@ -7,7 +7,7 @@ pub struct CreateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the new traffic policy instance.</p>
     pub traffic_policy_instance: ::std::option::Option<crate::types::TrafficPolicyInstance>,
     /// <p>A unique URL that represents a new traffic policy instance.</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateTrafficPolicyInstanceOutput {
@@ -16,8 +16,9 @@ impl CreateTrafficPolicyInstanceOutput {
         self.traffic_policy_instance.as_ref()
     }
     /// <p>A unique URL that represents a new traffic policy instance.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateTrafficPolicyInstanceOutput {
@@ -42,6 +43,7 @@ pub struct CreateTrafficPolicyInstanceOutputBuilder {
 }
 impl CreateTrafficPolicyInstanceOutputBuilder {
     /// <p>A complex type that contains settings for the new traffic policy instance.</p>
+    /// This field is required.
     pub fn traffic_policy_instance(mut self, input: crate::types::TrafficPolicyInstance) -> Self {
         self.traffic_policy_instance = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl CreateTrafficPolicyInstanceOutputBuilder {
         &self.traffic_policy_instance
     }
     /// <p>A unique URL that represents a new traffic policy instance.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -79,11 +82,23 @@ impl CreateTrafficPolicyInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTrafficPolicyInstanceOutput`](crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput).
-    pub fn build(self) -> crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput {
-        crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`location`](crate::operation::create_traffic_policy_instance::builders::CreateTrafficPolicyInstanceOutputBuilder::location)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput {
             traffic_policy_instance: self.traffic_policy_instance,
-            location: self.location,
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building CreateTrafficPolicyInstanceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

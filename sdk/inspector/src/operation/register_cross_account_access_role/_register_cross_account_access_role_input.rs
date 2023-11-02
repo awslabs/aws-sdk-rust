@@ -27,6 +27,7 @@ pub struct RegisterCrossAccountAccessRoleInputBuilder {
 }
 impl RegisterCrossAccountAccessRoleInputBuilder {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

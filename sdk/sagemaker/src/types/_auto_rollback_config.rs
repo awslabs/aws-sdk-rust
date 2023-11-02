@@ -9,8 +9,10 @@ pub struct AutoRollbackConfig {
 }
 impl AutoRollbackConfig {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
-        self.alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
+    pub fn alarms(&self) -> &[crate::types::Alarm] {
+        self.alarms.as_deref().unwrap_or_default()
     }
 }
 impl AutoRollbackConfig {

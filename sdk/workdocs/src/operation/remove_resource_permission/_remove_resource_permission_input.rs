@@ -72,6 +72,7 @@ impl RemoveResourcePermissionInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl RemoveResourcePermissionInputBuilder {
         &self.resource_id
     }
     /// <p>The principal ID of the resource.</p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self

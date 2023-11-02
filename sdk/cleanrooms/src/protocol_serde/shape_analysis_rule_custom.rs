@@ -3,23 +3,23 @@ pub fn ser_analysis_rule_custom(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisRuleCustom,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.allowed_analyses {
-        let mut array_2 = object.key("allowedAnalyses").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("allowedAnalyses").start_array();
+        for item_2 in &input.allowed_analyses {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.allowed_analysis_providers {
-        let mut array_5 = object.key("allowedAnalysisProviders").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.allowed_analysis_providers {
+        let mut array_4 = object.key("allowedAnalysisProviders").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::analysis_rule_custom_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -23,7 +23,7 @@ impl PutAutoTerminationPolicyInputBuilder {
 /// Fluent builder constructing a request to `PutAutoTerminationPolicy`.
 ///
 /// <note>
-/// <p>Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0 and later. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using an auto-termination policy</a>.</p>
+/// <p>Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0 and higher. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using an auto-termination policy</a>.</p>
 /// </note>
 /// <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -95,14 +95,14 @@ impl PutAutoTerminationPolicyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput,
             crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

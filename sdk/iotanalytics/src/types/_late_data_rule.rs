@@ -49,6 +49,7 @@ impl LateDataRuleBuilder {
         &self.rule_name
     }
     /// <p>The information needed to configure the late data rule.</p>
+    /// This field is required.
     pub fn rule_configuration(mut self, input: crate::types::LateDataRuleConfiguration) -> Self {
         self.rule_configuration = ::std::option::Option::Some(input);
         self

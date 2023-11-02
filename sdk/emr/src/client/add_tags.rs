@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddTags`](crate::operation::add_tags::builders::AddTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_id): <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
-    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags): <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags):<br>required: **true**<br><p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p><br>
     /// - On success, responds with [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput)
     /// - On failure, responds with [`SdkError<AddTagsError>`](crate::operation::add_tags::AddTagsError)
     pub fn add_tags(&self) -> crate::operation::add_tags::builders::AddTagsFluentBuilder {

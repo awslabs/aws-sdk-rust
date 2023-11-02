@@ -9,8 +9,8 @@ pub fn ser_update_config_input(
         crate::protocol_serde::shape_config_type_data::ser_config_type_data(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
     Ok(())
 }

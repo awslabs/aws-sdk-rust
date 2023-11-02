@@ -94,8 +94,10 @@ impl PutIntegrationInput {
         self.cache_namespace.as_deref()
     }
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
-    pub fn cache_key_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_key_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_key_parameters.is_none()`.
+    pub fn cache_key_parameters(&self) -> &[::std::string::String] {
+        self.cache_key_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
@@ -142,6 +144,7 @@ pub struct PutIntegrationInputBuilder {
 }
 impl PutIntegrationInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +159,7 @@ impl PutIntegrationInputBuilder {
         &self.rest_api_id
     }
     /// <p>Specifies a put integration request's resource ID.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +174,7 @@ impl PutIntegrationInputBuilder {
         &self.resource_id
     }
     /// <p>Specifies the HTTP method for the integration.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -184,6 +189,7 @@ impl PutIntegrationInputBuilder {
         &self.http_method
     }
     /// <p>Specifies a put integration input's type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::IntegrationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

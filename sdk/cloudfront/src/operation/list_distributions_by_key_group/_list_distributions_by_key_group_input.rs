@@ -69,6 +69,7 @@ impl ListDistributionsByKeyGroupInputBuilder {
         &self.max_items
     }
     /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
+    /// This field is required.
     pub fn key_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_group_id = ::std::option::Option::Some(input.into());
         self

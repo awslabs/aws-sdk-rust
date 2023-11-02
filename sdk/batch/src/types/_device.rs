@@ -23,8 +23,10 @@ impl Device {
         self.container_path.as_deref()
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::DeviceCgroupPermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::DeviceCgroupPermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
 }
 impl Device {
@@ -44,6 +46,7 @@ pub struct DeviceBuilder {
 }
 impl DeviceBuilder {
     /// <p>The path for the device on the host container instance.</p>
+    /// This field is required.
     pub fn host_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_path = ::std::option::Option::Some(input.into());
         self

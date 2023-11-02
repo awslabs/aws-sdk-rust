@@ -39,8 +39,10 @@ impl AnomalyGroup {
         self.primary_metric_name.as_deref()
     }
     /// <p>A list of measures affected by the anomaly.</p>
-    pub fn metric_level_impact_list(&self) -> ::std::option::Option<&[crate::types::MetricLevelImpact]> {
-        self.metric_level_impact_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_level_impact_list.is_none()`.
+    pub fn metric_level_impact_list(&self) -> &[crate::types::MetricLevelImpact] {
+        self.metric_level_impact_list.as_deref().unwrap_or_default()
     }
 }
 impl AnomalyGroup {

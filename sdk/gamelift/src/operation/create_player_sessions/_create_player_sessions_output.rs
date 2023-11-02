@@ -9,8 +9,10 @@ pub struct CreatePlayerSessionsOutput {
 }
 impl CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
-    pub fn player_sessions(&self) -> ::std::option::Option<&[crate::types::PlayerSession]> {
-        self.player_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_sessions.is_none()`.
+    pub fn player_sessions(&self) -> &[crate::types::PlayerSession] {
+        self.player_sessions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePlayerSessionsOutput {

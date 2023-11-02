@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceConnectorItem {
     /// <p>The Voice Connector ID.</p>
-    pub voice_connector_id: ::std::option::Option<::std::string::String>,
+    pub voice_connector_id: ::std::string::String,
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
-    pub priority: ::std::option::Option<i32>,
+    pub priority: i32,
 }
 impl VoiceConnectorItem {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
-        self.voice_connector_id.as_deref()
+    pub fn voice_connector_id(&self) -> &str {
+        use std::ops::Deref;
+        self.voice_connector_id.deref()
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
-    pub fn priority(&self) -> ::std::option::Option<i32> {
+    pub fn priority(&self) -> i32 {
         self.priority
     }
 }
@@ -35,6 +36,7 @@ pub struct VoiceConnectorItemBuilder {
 }
 impl VoiceConnectorItemBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl VoiceConnectorItemBuilder {
         &self.voice_connector_id
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl VoiceConnectorItemBuilder {
         &self.priority
     }
     /// Consumes the builder and constructs a [`VoiceConnectorItem`](crate::types::VoiceConnectorItem).
-    pub fn build(self) -> crate::types::VoiceConnectorItem {
-        crate::types::VoiceConnectorItem {
-            voice_connector_id: self.voice_connector_id,
-            priority: self.priority,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`voice_connector_id`](crate::types::builders::VoiceConnectorItemBuilder::voice_connector_id)
+    /// - [`priority`](crate::types::builders::VoiceConnectorItemBuilder::priority)
+    pub fn build(self) -> ::std::result::Result<crate::types::VoiceConnectorItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VoiceConnectorItem {
+            voice_connector_id: self.voice_connector_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "voice_connector_id",
+                    "voice_connector_id was not specified but it is required when building VoiceConnectorItem",
+                )
+            })?,
+            priority: self.priority.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "priority",
+                    "priority was not specified but it is required when building VoiceConnectorItem",
+                )
+            })?,
+        })
     }
 }

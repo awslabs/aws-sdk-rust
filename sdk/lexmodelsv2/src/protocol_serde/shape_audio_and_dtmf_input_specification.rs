@@ -3,23 +3,23 @@ pub fn ser_audio_and_dtmf_input_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AudioAndDtmfInputSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.start_timeout_ms {
+    {
         object.key("startTimeoutMs").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.start_timeout_ms).into()),
         );
     }
-    if let Some(var_2) = &input.audio_specification {
+    if let Some(var_1) = &input.audio_specification {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("audioSpecification").start_object();
-        crate::protocol_serde::shape_audio_specification::ser_audio_specification(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("audioSpecification").start_object();
+        crate::protocol_serde::shape_audio_specification::ser_audio_specification(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.dtmf_specification {
+    if let Some(var_3) = &input.dtmf_specification {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("dtmfSpecification").start_object();
-        crate::protocol_serde::shape_dtmf_specification::ser_dtmf_specification(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("dtmfSpecification").start_object();
+        crate::protocol_serde::shape_dtmf_specification::ser_dtmf_specification(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -63,7 +63,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::audio_and_dtmf_input_specification_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

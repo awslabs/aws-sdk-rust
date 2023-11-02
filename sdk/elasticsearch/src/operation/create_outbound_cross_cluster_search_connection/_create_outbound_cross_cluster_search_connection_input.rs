@@ -43,6 +43,7 @@ pub struct CreateOutboundCrossClusterSearchConnectionInputBuilder {
 }
 impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
+    /// This field is required.
     pub fn source_domain_info(mut self, input: crate::types::DomainInformation) -> Self {
         self.source_domain_info = ::std::option::Option::Some(input);
         self
@@ -57,6 +58,7 @@ impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
         &self.source_domain_info
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
+    /// This field is required.
     pub fn destination_domain_info(mut self, input: crate::types::DomainInformation) -> Self {
         self.destination_domain_info = ::std::option::Option::Some(input);
         self
@@ -71,6 +73,7 @@ impl CreateOutboundCrossClusterSearchConnectionInputBuilder {
         &self.destination_domain_info
     }
     /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
+    /// This field is required.
     pub fn connection_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_alias = ::std::option::Option::Some(input.into());
         self

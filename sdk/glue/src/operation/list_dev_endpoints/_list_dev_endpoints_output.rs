@@ -11,8 +11,10 @@ pub struct ListDevEndpointsOutput {
 }
 impl ListDevEndpointsOutput {
     /// <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
-    pub fn dev_endpoint_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dev_endpoint_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dev_endpoint_names.is_none()`.
+    pub fn dev_endpoint_names(&self) -> &[::std::string::String] {
+        self.dev_endpoint_names.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct DescribeGameSessionPlacementInputBuilder {
 }
 impl DescribeGameSessionPlacementInputBuilder {
     /// <p>A unique identifier for a game session placement to retrieve.</p>
+    /// This field is required.
     pub fn placement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_id = ::std::option::Option::Some(input.into());
         self

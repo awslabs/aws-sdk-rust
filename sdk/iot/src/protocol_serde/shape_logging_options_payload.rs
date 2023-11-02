@@ -3,11 +3,11 @@ pub fn ser_logging_options_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingOptionsPayload,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.log_level {
-        object.key("logLevel").string(var_2.as_str());
+    if let Some(var_1) = &input.log_level {
+        object.key("logLevel").string(var_1.as_str());
     }
     Ok(())
 }

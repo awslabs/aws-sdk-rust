@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_exports::builders::ListExportsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filters(ListExportsRequestFilters)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::filters) / [`set_filters(Option<ListExportsRequestFilters>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_filters): <p>List exports request filters.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_max_results): <p>List export request max results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_next_token): <p>List export request next token.</p>
+    ///   - [`filters(ListExportsRequestFilters)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::filters) / [`set_filters(Option<ListExportsRequestFilters>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_filters):<br>required: **false**<br><p>List exports request filters.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_max_results):<br>required: **false**<br><p>List export request max results.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_next_token):<br>required: **false**<br><p>List export request next token.</p><br>
     /// - On success, responds with [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput) with field(s):
     ///   - [`items(Option<Vec<ExportTask>>)`](crate::operation::list_exports::ListExportsOutput::items): <p>List export response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_exports::ListExportsOutput::next_token): <p>List export response next token.</p>

@@ -94,7 +94,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dynamo_db_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -106,35 +108,35 @@ pub fn ser_dynamo_db_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamoDbAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.table_name {
-        object.key("tableName").string(var_1.as_str());
+    {
+        object.key("tableName").string(input.table_name.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("roleArn").string(var_2.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_3) = &input.operation {
-        object.key("operation").string(var_3.as_str());
+    if let Some(var_1) = &input.operation {
+        object.key("operation").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.hash_key_field {
-        object.key("hashKeyField").string(var_4.as_str());
+    {
+        object.key("hashKeyField").string(input.hash_key_field.as_str());
     }
-    if let Some(var_5) = &input.hash_key_value {
-        object.key("hashKeyValue").string(var_5.as_str());
+    {
+        object.key("hashKeyValue").string(input.hash_key_value.as_str());
     }
-    if let Some(var_6) = &input.hash_key_type {
-        object.key("hashKeyType").string(var_6.as_str());
+    if let Some(var_2) = &input.hash_key_type {
+        object.key("hashKeyType").string(var_2.as_str());
     }
-    if let Some(var_7) = &input.range_key_field {
-        object.key("rangeKeyField").string(var_7.as_str());
+    if let Some(var_3) = &input.range_key_field {
+        object.key("rangeKeyField").string(var_3.as_str());
     }
-    if let Some(var_8) = &input.range_key_value {
-        object.key("rangeKeyValue").string(var_8.as_str());
+    if let Some(var_4) = &input.range_key_value {
+        object.key("rangeKeyValue").string(var_4.as_str());
     }
-    if let Some(var_9) = &input.range_key_type {
-        object.key("rangeKeyType").string(var_9.as_str());
+    if let Some(var_5) = &input.range_key_type {
+        object.key("rangeKeyType").string(var_5.as_str());
     }
-    if let Some(var_10) = &input.payload_field {
-        object.key("payloadField").string(var_10.as_str());
+    if let Some(var_6) = &input.payload_field {
+        object.key("payloadField").string(var_6.as_str());
     }
     Ok(())
 }

@@ -30,8 +30,10 @@ impl CreateSecurityProfileInput {
         self.security_profile_description.as_deref()
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn behaviors(&self) -> ::std::option::Option<&[crate::types::Behavior]> {
-        self.behaviors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.behaviors.is_none()`.
+    pub fn behaviors(&self) -> &[crate::types::Behavior] {
+        self.behaviors.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
     pub fn alert_targets(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>> {
@@ -39,17 +41,23 @@ impl CreateSecurityProfileInput {
     }
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_metrics_to_retain.is_none()`.
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn additional_metrics_to_retain(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_metrics_to_retain.as_deref()
+    pub fn additional_metrics_to_retain(&self) -> &[::std::string::String] {
+        self.additional_metrics_to_retain.as_deref().unwrap_or_default()
     }
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    pub fn additional_metrics_to_retain_v2(&self) -> ::std::option::Option<&[crate::types::MetricToRetain]> {
-        self.additional_metrics_to_retain_v2.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_metrics_to_retain_v2.is_none()`.
+    pub fn additional_metrics_to_retain_v2(&self) -> &[crate::types::MetricToRetain] {
+        self.additional_metrics_to_retain_v2.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that can be used to manage the security profile.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSecurityProfileInput {
@@ -73,6 +81,7 @@ pub struct CreateSecurityProfileInputBuilder {
 }
 impl CreateSecurityProfileInputBuilder {
     /// <p>The name you are giving to the security profile.</p>
+    /// This field is required.
     pub fn security_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_name = ::std::option::Option::Some(input.into());
         self

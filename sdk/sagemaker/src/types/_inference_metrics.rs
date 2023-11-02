@@ -35,6 +35,7 @@ pub struct InferenceMetricsBuilder {
 }
 impl InferenceMetricsBuilder {
     /// <p>The expected maximum number of requests per minute for the instance.</p>
+    /// This field is required.
     pub fn max_invocations(mut self, input: i32) -> Self {
         self.max_invocations = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl InferenceMetricsBuilder {
         &self.max_invocations
     }
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
+    /// This field is required.
     pub fn model_latency(mut self, input: i32) -> Self {
         self.model_latency = ::std::option::Option::Some(input);
         self

@@ -45,8 +45,10 @@ impl DatabaseResponse {
         self.software_details.as_ref()
     }
     /// <p>A list of collectors associated with the database.</p>
-    pub fn collectors(&self) -> ::std::option::Option<&[crate::types::CollectorShortInfoResponse]> {
-        self.collectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collectors.is_none()`.
+    pub fn collectors(&self) -> &[crate::types::CollectorShortInfoResponse] {
+        self.collectors.as_deref().unwrap_or_default()
     }
 }
 impl DatabaseResponse {

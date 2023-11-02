@@ -11,8 +11,10 @@ pub struct GetEffectivePermissionsForPathOutput {
 }
 impl GetEffectivePermissionsForPathOutput {
     /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::PrincipalResourcePermissions]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::PrincipalResourcePermissions] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

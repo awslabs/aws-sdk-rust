@@ -11,8 +11,10 @@ pub struct DescribeDocumentVersionsOutput {
 }
 impl DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
-    pub fn document_versions(&self) -> ::std::option::Option<&[crate::types::DocumentVersionMetadata]> {
-        self.document_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_versions.is_none()`.
+    pub fn document_versions(&self) -> &[crate::types::DocumentVersionMetadata] {
+        self.document_versions.as_deref().unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

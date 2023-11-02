@@ -12,24 +12,24 @@ pub fn ser_create_application_input(
     if let Some(var_3) = &input.client_token {
         object.key("ClientToken").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_5) = &input.proxy_type {
-        object.key("ProxyType").string(var_5.as_str());
+    {
+        object.key("ProxyType").string(input.proxy_type.as_str());
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_4) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_5 = object.key("Tags").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_7.finish();
+        object_5.finish();
     }
-    if let Some(var_10) = &input.vpc_id {
-        object.key("VpcId").string(var_10.as_str());
+    {
+        object.key("VpcId").string(input.vpc_id.as_str());
     }
     Ok(())
 }

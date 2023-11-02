@@ -11,8 +11,10 @@ pub struct DescribeCanariesOutput {
 }
 impl DescribeCanariesOutput {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
-    pub fn canaries(&self) -> ::std::option::Option<&[crate::types::Canary]> {
-        self.canaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.canaries.is_none()`.
+    pub fn canaries(&self) -> &[crate::types::Canary] {
+        self.canaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

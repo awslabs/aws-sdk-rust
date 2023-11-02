@@ -43,7 +43,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-rds = "0.34.0"
+//! aws-sdk-rds = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -206,6 +206,8 @@ mod lens;
 mod endpoint_lib;
 
 mod rest_xml_wrapped_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

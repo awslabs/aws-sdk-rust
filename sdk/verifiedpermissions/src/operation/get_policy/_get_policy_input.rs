@@ -34,6 +34,7 @@ pub struct GetPolicyInputBuilder {
 }
 impl GetPolicyInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the policy that you want information about.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetPolicyInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the policy you want information about.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self

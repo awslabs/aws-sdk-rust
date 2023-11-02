@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_marker): <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
-    ///   - [`limit(i32)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_limit): <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
+    ///   - [`marker(impl Into<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_marker):<br>required: **false**<br><p>An opaque string that indicates the position at which to begin the returned list of gateways.</p><br>
+    ///   - [`limit(i32)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_gateways::builders::ListGatewaysFluentBuilder::set_limit):<br>required: **false**<br><p>Specifies that the list of gateways returned be limited to the specified number of items.</p><br>
     /// - On success, responds with [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput) with field(s):
     ///   - [`gateways(Option<Vec<GatewayInfo>>)`](crate::operation::list_gateways::ListGatewaysOutput::gateways): <p>An array of <code>GatewayInfo</code> objects.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_gateways::ListGatewaysOutput::marker): <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>

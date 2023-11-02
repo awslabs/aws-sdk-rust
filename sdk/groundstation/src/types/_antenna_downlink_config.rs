@@ -28,6 +28,7 @@ pub struct AntennaDownlinkConfigBuilder {
 }
 impl AntennaDownlinkConfigBuilder {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
+    /// This field is required.
     pub fn spectrum_config(mut self, input: crate::types::SpectrumConfig) -> Self {
         self.spectrum_config = ::std::option::Option::Some(input);
         self

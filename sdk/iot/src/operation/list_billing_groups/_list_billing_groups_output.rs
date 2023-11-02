@@ -11,8 +11,10 @@ pub struct ListBillingGroupsOutput {
 }
 impl ListBillingGroupsOutput {
     /// <p>The list of billing groups.</p>
-    pub fn billing_groups(&self) -> ::std::option::Option<&[crate::types::GroupNameAndArn]> {
-        self.billing_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_groups.is_none()`.
+    pub fn billing_groups(&self) -> &[crate::types::GroupNameAndArn] {
+        self.billing_groups.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

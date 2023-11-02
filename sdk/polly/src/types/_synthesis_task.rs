@@ -72,8 +72,10 @@ impl SynthesisTask {
         self.sns_topic_arn.as_deref()
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn lexicon_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lexicon_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lexicon_names.is_none()`.
+    pub fn lexicon_names(&self) -> &[::std::string::String] {
+        self.lexicon_names.as_deref().unwrap_or_default()
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
@@ -86,8 +88,10 @@ impl SynthesisTask {
         self.sample_rate.as_deref()
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn speech_mark_types(&self) -> ::std::option::Option<&[crate::types::SpeechMarkType]> {
-        self.speech_mark_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.speech_mark_types.is_none()`.
+    pub fn speech_mark_types(&self) -> &[crate::types::SpeechMarkType] {
+        self.speech_mark_types.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
     pub fn text_type(&self) -> ::std::option::Option<&crate::types::TextType> {

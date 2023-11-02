@@ -28,6 +28,7 @@ pub struct GetUsagePlanInputBuilder {
 }
 impl GetUsagePlanInputBuilder {
     /// <p>The identifier of the UsagePlan resource to be retrieved.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self

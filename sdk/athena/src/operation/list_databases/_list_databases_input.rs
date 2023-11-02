@@ -41,6 +41,7 @@ pub struct ListDatabasesInputBuilder {
 }
 impl ListDatabasesInputBuilder {
     /// <p>The name of the data catalog that contains the databases to return.</p>
+    /// This field is required.
     pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_name = ::std::option::Option::Some(input.into());
         self

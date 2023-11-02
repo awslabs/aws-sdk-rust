@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
-    pub connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub connect_instance_id: ::std::string::String,
 }
 impl GetConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
-        self.connect_instance_id.as_deref()
+    pub fn connect_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connect_instance_id.deref()
     }
 }
 impl GetConnectInstanceConfigInput {
@@ -28,6 +29,7 @@ pub struct GetConnectInstanceConfigInputBuilder {
 }
 impl GetConnectInstanceConfigInputBuilder {
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -42,6 +44,8 @@ impl GetConnectInstanceConfigInputBuilder {
         &self.connect_instance_id
     }
     /// Consumes the builder and constructs a [`GetConnectInstanceConfigInput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connect_instance_id`](crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigInputBuilder::connect_instance_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +53,12 @@ impl GetConnectInstanceConfigInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_connect_instance_config::GetConnectInstanceConfigInput {
-            connect_instance_id: self.connect_instance_id,
+            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connect_instance_id",
+                    "connect_instance_id was not specified but it is required when building GetConnectInstanceConfigInput",
+                )
+            })?,
         })
     }
 }

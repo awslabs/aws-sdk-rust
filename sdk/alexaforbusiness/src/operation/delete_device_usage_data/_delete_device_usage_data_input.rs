@@ -34,6 +34,7 @@ pub struct DeleteDeviceUsageDataInputBuilder {
 }
 impl DeleteDeviceUsageDataInputBuilder {
     /// <p>The ARN of the device.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteDeviceUsageDataInputBuilder {
         &self.device_arn
     }
     /// <p>The type of usage data to delete.</p>
+    /// This field is required.
     pub fn device_usage_type(mut self, input: crate::types::DeviceUsageType) -> Self {
         self.device_usage_type = ::std::option::Option::Some(input);
         self

@@ -56,6 +56,7 @@ impl ListedEntitlementBuilder {
         &self.data_transfer_subscriber_fee_percent
     }
     /// The ARN of the entitlement.
+    /// This field is required.
     pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ListedEntitlementBuilder {
         &self.entitlement_arn
     }
     /// The name of the entitlement.
+    /// This field is required.
     pub fn entitlement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_name = ::std::option::Option::Some(input.into());
         self

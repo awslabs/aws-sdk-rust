@@ -10,8 +10,10 @@ pub struct ListVolumeInitiatorsOutput {
 }
 impl ListVolumeInitiatorsOutput {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
-    pub fn initiators(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.initiators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.initiators.is_none()`.
+    pub fn initiators(&self) -> &[::std::string::String] {
+        self.initiators.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVolumeInitiatorsOutput {

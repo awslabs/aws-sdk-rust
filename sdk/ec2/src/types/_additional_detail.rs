@@ -35,24 +35,32 @@ impl AdditionalDetail {
         self.vpc_endpoint_service.as_ref()
     }
     /// <p>The rule options.</p>
-    pub fn rule_options(&self) -> ::std::option::Option<&[crate::types::RuleOption]> {
-        self.rule_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_options.is_none()`.
+    pub fn rule_options(&self) -> &[crate::types::RuleOption] {
+        self.rule_options.as_deref().unwrap_or_default()
     }
     /// <p>The rule group type.</p>
-    pub fn rule_group_type_pairs(&self) -> ::std::option::Option<&[crate::types::RuleGroupTypePair]> {
-        self.rule_group_type_pairs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_group_type_pairs.is_none()`.
+    pub fn rule_group_type_pairs(&self) -> &[crate::types::RuleGroupTypePair] {
+        self.rule_group_type_pairs.as_deref().unwrap_or_default()
     }
     /// <p>The rule options.</p>
-    pub fn rule_group_rule_options_pairs(&self) -> ::std::option::Option<&[crate::types::RuleGroupRuleOptionsPair]> {
-        self.rule_group_rule_options_pairs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_group_rule_options_pairs.is_none()`.
+    pub fn rule_group_rule_options_pairs(&self) -> &[crate::types::RuleGroupRuleOptionsPair] {
+        self.rule_group_rule_options_pairs.as_deref().unwrap_or_default()
     }
     /// <p>The name of the VPC endpoint service.</p>
     pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The load balancers.</p>
-    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::AnalysisComponent]> {
-        self.load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
+    pub fn load_balancers(&self) -> &[crate::types::AnalysisComponent] {
+        self.load_balancers.as_deref().unwrap_or_default()
     }
 }
 impl AdditionalDetail {

@@ -14,8 +14,10 @@ impl DescribeTaskDefinitionInput {
         self.task_definition.as_deref()
     }
     /// <p>Determines whether to see the resource tags for the task definition. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::TaskDefinitionField]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[crate::types::TaskDefinitionField] {
+        self.include.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTaskDefinitionInput {
@@ -34,6 +36,7 @@ pub struct DescribeTaskDefinitionInputBuilder {
 }
 impl DescribeTaskDefinitionInputBuilder {
     /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision, <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to describe.</p>
+    /// This field is required.
     pub fn task_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_definition = ::std::option::Option::Some(input.into());
         self

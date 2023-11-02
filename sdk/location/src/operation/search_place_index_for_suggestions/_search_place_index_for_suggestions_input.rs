@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForSuggestionsInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.</p>
-    pub text: ::std::option::Option<::std::string::String>,
+    pub text: ::std::string::String,
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
@@ -41,35 +41,43 @@ pub struct SearchPlaceIndexForSuggestionsInput {
 }
 impl SearchPlaceIndexForSuggestionsInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
-        self.text.as_deref()
+    pub fn text(&self) -> &str {
+        use std::ops::Deref;
+        self.text.deref()
     }
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
     /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
-    pub fn bias_position(&self) -> ::std::option::Option<&[f64]> {
-        self.bias_position.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bias_position.is_none()`.
+    pub fn bias_position(&self) -> &[f64] {
+        self.bias_position.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>
     /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
     /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
     /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
-    pub fn filter_b_box(&self) -> ::std::option::Option<&[f64]> {
-        self.filter_b_box.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_b_box.is_none()`.
+    pub fn filter_b_box(&self) -> &[f64] {
+        self.filter_b_box.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that limits the search results by returning only suggestions within the provided list of countries.</p>
     /// <ul>
     /// <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
-    pub fn filter_countries(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.filter_countries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_countries.is_none()`.
+    pub fn filter_countries(&self) -> &[::std::string::String] {
+        self.filter_countries.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
     /// <p>The default: <code>5</code> </p>
@@ -86,8 +94,10 @@ impl SearchPlaceIndexForSuggestionsInput {
     }
     /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn filter_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.filter_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_categories.is_none()`.
+    pub fn filter_categories(&self) -> &[::std::string::String] {
+        self.filter_categories.as_deref().unwrap_or_default()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -132,6 +142,7 @@ pub struct SearchPlaceIndexForSuggestionsInputBuilder {
 }
 impl SearchPlaceIndexForSuggestionsInputBuilder {
     /// <p>The name of the place index resource you want to use for the search.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +157,7 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
         &self.index_name
     }
     /// <p>The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -333,6 +345,9 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsInput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder::index_name)
+    /// - [`text`](crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder::text)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -341,8 +356,18 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput {
-                index_name: self.index_name,
-                text: self.text,
+                index_name: self.index_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "index_name",
+                        "index_name was not specified but it is required when building SearchPlaceIndexForSuggestionsInput",
+                    )
+                })?,
+                text: self.text.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "text",
+                        "text was not specified but it is required when building SearchPlaceIndexForSuggestionsInput",
+                    )
+                })?,
                 bias_position: self.bias_position,
                 filter_b_box: self.filter_b_box,
                 filter_countries: self.filter_countries,

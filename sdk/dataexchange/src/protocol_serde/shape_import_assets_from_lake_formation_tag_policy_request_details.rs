@@ -3,29 +3,29 @@ pub fn ser_import_assets_from_lake_formation_tag_policy_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.catalog_id {
-        object.key("CatalogId").string(var_1.as_str());
+    {
+        object.key("CatalogId").string(input.catalog_id.as_str());
     }
-    if let Some(var_2) = &input.database {
+    if let Some(var_1) = &input.database {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Database").start_object();
-        crate::protocol_serde::shape_database_lf_tag_policy_and_permissions::ser_database_lf_tag_policy_and_permissions(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Database").start_object();
+        crate::protocol_serde::shape_database_lf_tag_policy_and_permissions::ser_database_lf_tag_policy_and_permissions(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.table {
+    if let Some(var_3) = &input.table {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Table").start_object();
-        crate::protocol_serde::shape_table_lf_tag_policy_and_permissions::ser_table_lf_tag_policy_and_permissions(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("Table").start_object();
+        crate::protocol_serde::shape_table_lf_tag_policy_and_permissions::ser_table_lf_tag_policy_and_permissions(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("RoleArn").string(var_6.as_str());
+    {
+        object.key("RoleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_7) = &input.data_set_id {
-        object.key("DataSetId").string(var_7.as_str());
+    {
+        object.key("DataSetId").string(input.data_set_id.as_str());
     }
-    if let Some(var_8) = &input.revision_id {
-        object.key("RevisionId").string(var_8.as_str());
+    {
+        object.key("RevisionId").string(input.revision_id.as_str());
     }
     Ok(())
 }

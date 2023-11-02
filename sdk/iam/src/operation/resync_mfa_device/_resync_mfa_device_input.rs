@@ -57,6 +57,7 @@ pub struct ResyncMfaDeviceInputBuilder {
 impl ResyncMfaDeviceInputBuilder {
     /// <p>The name of the user whose MFA device you want to resynchronize.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +75,7 @@ impl ResyncMfaDeviceInputBuilder {
     }
     /// <p>Serial number that uniquely identifies the MFA device.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl ResyncMfaDeviceInputBuilder {
     }
     /// <p>An authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a sequence of six digits.</p>
+    /// This field is required.
     pub fn authentication_code1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_code1 = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl ResyncMfaDeviceInputBuilder {
     }
     /// <p>A subsequent authentication code emitted by the device.</p>
     /// <p>The format for this parameter is a sequence of six digits.</p>
+    /// This field is required.
     pub fn authentication_code2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_code2 = ::std::option::Option::Some(input.into());
         self

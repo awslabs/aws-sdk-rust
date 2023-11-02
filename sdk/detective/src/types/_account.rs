@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Account {
     /// <p>The account identifier of the Amazon Web Services account.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
-    pub email_address: ::std::option::Option<::std::string::String>,
+    pub email_address: ::std::string::String,
 }
 impl Account {
     /// <p>The account identifier of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
-        self.email_address.as_deref()
+    pub fn email_address(&self) -> &str {
+        use std::ops::Deref;
+        self.email_address.deref()
     }
 }
 impl ::std::fmt::Debug for Account {
@@ -43,6 +45,7 @@ pub struct AccountBuilder {
 }
 impl AccountBuilder {
     /// <p>The account identifier of the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl AccountBuilder {
         &self.account_id
     }
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl AccountBuilder {
         &self.email_address
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
-    pub fn build(self) -> crate::types::Account {
-        crate::types::Account {
-            account_id: self.account_id,
-            email_address: self.email_address,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::AccountBuilder::account_id)
+    /// - [`email_address`](crate::types::builders::AccountBuilder::email_address)
+    pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Account {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building Account",
+                )
+            })?,
+            email_address: self.email_address.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "email_address",
+                    "email_address was not specified but it is required when building Account",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for AccountBuilder {

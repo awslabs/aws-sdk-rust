@@ -11,8 +11,10 @@ pub struct DescribeStoreImageTasksOutput {
 }
 impl DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
-    pub fn store_image_task_results(&self) -> ::std::option::Option<&[crate::types::StoreImageTaskResult]> {
-        self.store_image_task_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.store_image_task_results.is_none()`.
+    pub fn store_image_task_results(&self) -> &[crate::types::StoreImageTaskResult] {
+        self.store_image_task_results.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

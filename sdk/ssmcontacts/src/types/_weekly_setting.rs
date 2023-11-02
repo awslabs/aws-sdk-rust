@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeeklySetting {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
-    pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
+    pub day_of_week: crate::types::DayOfWeek,
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
     pub hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
 }
 impl WeeklySetting {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
-    pub fn day_of_week(&self) -> ::std::option::Option<&crate::types::DayOfWeek> {
-        self.day_of_week.as_ref()
+    pub fn day_of_week(&self) -> &crate::types::DayOfWeek {
+        &self.day_of_week
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
     pub fn hand_off_time(&self) -> ::std::option::Option<&crate::types::HandOffTime> {
@@ -35,6 +35,7 @@ pub struct WeeklySettingBuilder {
 }
 impl WeeklySettingBuilder {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
+    /// This field is required.
     pub fn day_of_week(mut self, input: crate::types::DayOfWeek) -> Self {
         self.day_of_week = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl WeeklySettingBuilder {
         &self.day_of_week
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
+    /// This field is required.
     pub fn hand_off_time(mut self, input: crate::types::HandOffTime) -> Self {
         self.hand_off_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl WeeklySettingBuilder {
         &self.hand_off_time
     }
     /// Consumes the builder and constructs a [`WeeklySetting`](crate::types::WeeklySetting).
-    pub fn build(self) -> crate::types::WeeklySetting {
-        crate::types::WeeklySetting {
-            day_of_week: self.day_of_week,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`day_of_week`](crate::types::builders::WeeklySettingBuilder::day_of_week)
+    pub fn build(self) -> ::std::result::Result<crate::types::WeeklySetting, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WeeklySetting {
+            day_of_week: self.day_of_week.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "day_of_week",
+                    "day_of_week was not specified but it is required when building WeeklySetting",
+                )
+            })?,
             hand_off_time: self.hand_off_time,
-        }
+        })
     }
 }

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alarms {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
-    pub alarm_role_arn: ::std::option::Option<::std::string::String>,
+    pub alarm_role_arn: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub notification_lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl Alarms {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
-    pub fn alarm_role_arn(&self) -> ::std::option::Option<&str> {
-        self.alarm_role_arn.as_deref()
+    pub fn alarm_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.alarm_role_arn.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub fn notification_lambda_arn(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AlarmsBuilder {
 }
 impl AlarmsBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
+    /// This field is required.
     pub fn alarm_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AlarmsBuilder {
         &self.notification_lambda_arn
     }
     /// Consumes the builder and constructs a [`Alarms`](crate::types::Alarms).
-    pub fn build(self) -> crate::types::Alarms {
-        crate::types::Alarms {
-            alarm_role_arn: self.alarm_role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`alarm_role_arn`](crate::types::builders::AlarmsBuilder::alarm_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Alarms, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Alarms {
+            alarm_role_arn: self.alarm_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "alarm_role_arn",
+                    "alarm_role_arn was not specified but it is required when building Alarms",
+                )
+            })?,
             notification_lambda_arn: self.notification_lambda_arn,
-        }
+        })
     }
 }

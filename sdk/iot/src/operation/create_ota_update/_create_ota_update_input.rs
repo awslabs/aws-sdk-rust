@@ -40,12 +40,16 @@ impl CreateOtaUpdateInput {
         self.description.as_deref()
     }
     /// <p>The devices targeted to receive OTA updates.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
     pub fn target_selection(&self) -> ::std::option::Option<&crate::types::TargetSelection> {
@@ -68,8 +72,10 @@ impl CreateOtaUpdateInput {
         self.aws_job_timeout_config.as_ref()
     }
     /// <p>The files to be streamed by the OTA update.</p>
-    pub fn files(&self) -> ::std::option::Option<&[crate::types::OtaUpdateFile]> {
-        self.files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
+    pub fn files(&self) -> &[crate::types::OtaUpdateFile] {
+        self.files.as_deref().unwrap_or_default()
     }
     /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -80,8 +86,10 @@ impl CreateOtaUpdateInput {
         self.additional_parameters.as_ref()
     }
     /// <p>Metadata which can be used to manage updates.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateOtaUpdateInput {
@@ -111,6 +119,7 @@ pub struct CreateOtaUpdateInputBuilder {
 }
 impl CreateOtaUpdateInputBuilder {
     /// <p>The ID of the OTA update to be created.</p>
+    /// This field is required.
     pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_id = ::std::option::Option::Some(input.into());
         self
@@ -269,6 +278,7 @@ impl CreateOtaUpdateInputBuilder {
         &self.files
     }
     /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

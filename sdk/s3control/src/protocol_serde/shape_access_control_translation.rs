@@ -5,14 +5,15 @@ pub fn ser_access_control_translation(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.owner {
+    {
         let mut inner_writer = scope.start_el("Owner").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.owner.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_access_control_translation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AccessControlTranslation, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -21,7 +22,7 @@ pub fn de_access_control_translation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Owner") /* Owner com.amazonaws.s3control#AccessControlTranslation$Owner */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<crate::types::OwnerOverride, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::OwnerOverride::from(
@@ -31,11 +32,13 @@ pub fn de_access_control_translation(
                         ?
                     )
                 ;
-                builder = builder.set_owner(var_2);
+                builder = builder.set_owner(var_1);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::access_control_translation_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

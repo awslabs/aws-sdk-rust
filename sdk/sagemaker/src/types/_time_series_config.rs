@@ -27,8 +27,10 @@ impl TimeSeriesConfig {
         self.item_identifier_attribute_name.as_deref()
     }
     /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
-    pub fn grouping_attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.grouping_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouping_attribute_names.is_none()`.
+    pub fn grouping_attribute_names(&self) -> &[::std::string::String] {
+        self.grouping_attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl TimeSeriesConfig {
@@ -49,6 +51,7 @@ pub struct TimeSeriesConfigBuilder {
 }
 impl TimeSeriesConfigBuilder {
     /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
+    /// This field is required.
     pub fn target_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl TimeSeriesConfigBuilder {
         &self.target_attribute_name
     }
     /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
+    /// This field is required.
     pub fn timestamp_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl TimeSeriesConfigBuilder {
         &self.timestamp_attribute_name
     }
     /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
+    /// This field is required.
     pub fn item_identifier_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.item_identifier_attribute_name = ::std::option::Option::Some(input.into());
         self

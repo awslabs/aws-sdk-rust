@@ -11,8 +11,10 @@ pub struct ListAccountAssociationsOutput {
 }
 impl ListAccountAssociationsOutput {
     /// <p> The list of linked accounts in the payer account. </p>
-    pub fn linked_accounts(&self) -> ::std::option::Option<&[crate::types::AccountAssociationsListElement]> {
-        self.linked_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.linked_accounts.is_none()`.
+    pub fn linked_accounts(&self) -> &[crate::types::AccountAssociationsListElement] {
+        self.linked_accounts.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

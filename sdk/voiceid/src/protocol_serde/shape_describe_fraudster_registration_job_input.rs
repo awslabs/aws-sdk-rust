@@ -3,11 +3,11 @@ pub fn ser_describe_fraudster_registration_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain_id {
-        object.key("DomainId").string(var_1.as_str());
+    {
+        object.key("DomainId").string(input.domain_id.as_str());
     }
-    if let Some(var_2) = &input.job_id {
-        object.key("JobId").string(var_2.as_str());
+    {
+        object.key("JobId").string(input.job_id.as_str());
     }
     Ok(())
 }

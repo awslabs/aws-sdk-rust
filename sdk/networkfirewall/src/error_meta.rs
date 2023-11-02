@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::types::error::InvalidOperationException),

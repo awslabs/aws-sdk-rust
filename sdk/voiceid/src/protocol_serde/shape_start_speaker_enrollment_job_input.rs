@@ -9,29 +9,29 @@ pub fn ser_start_speaker_enrollment_job_input(
     if let Some(var_2) = &input.job_name {
         object.key("JobName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.domain_id {
-        object.key("DomainId").string(var_3.as_str());
+    {
+        object.key("DomainId").string(input.domain_id.as_str());
     }
-    if let Some(var_4) = &input.data_access_role_arn {
-        object.key("DataAccessRoleArn").string(var_4.as_str());
+    {
+        object.key("DataAccessRoleArn").string(input.data_access_role_arn.as_str());
     }
-    if let Some(var_5) = &input.enrollment_config {
+    if let Some(var_3) = &input.enrollment_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("EnrollmentConfig").start_object();
-        crate::protocol_serde::shape_enrollment_config::ser_enrollment_config(&mut object_6, var_5)?;
+        let mut object_4 = object.key("EnrollmentConfig").start_object();
+        crate::protocol_serde::shape_enrollment_config::ser_enrollment_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.input_data_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("InputDataConfig").start_object();
+        crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.input_data_config {
+    if let Some(var_7) = &input.output_data_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("InputDataConfig").start_object();
-        crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_8, var_7)?;
+        let mut object_8 = object.key("OutputDataConfig").start_object();
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_8, var_7)?;
         object_8.finish();
-    }
-    if let Some(var_9) = &input.output_data_config {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("OutputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_10, var_9)?;
-        object_10.finish();
     }
     Ok(())
 }

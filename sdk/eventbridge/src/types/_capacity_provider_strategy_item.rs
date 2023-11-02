@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    pub capacity_provider: ::std::option::Option<::std::string::String>,
+    pub capacity_provider: ::std::string::String,
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub weight: i32,
     /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
@@ -13,8 +13,9 @@ pub struct CapacityProviderStrategyItem {
 }
 impl CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(&self) -> ::std::option::Option<&str> {
-        self.capacity_provider.as_deref()
+    pub fn capacity_provider(&self) -> &str {
+        use std::ops::Deref;
+        self.capacity_provider.deref()
     }
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub fn weight(&self) -> i32 {
@@ -42,6 +43,7 @@ pub struct CapacityProviderStrategyItemBuilder {
 }
 impl CapacityProviderStrategyItemBuilder {
     /// <p>The short name of the capacity provider.</p>
+    /// This field is required.
     pub fn capacity_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl CapacityProviderStrategyItemBuilder {
         &self.base
     }
     /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
-    pub fn build(self) -> crate::types::CapacityProviderStrategyItem {
-        crate::types::CapacityProviderStrategyItem {
-            capacity_provider: self.capacity_provider,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`capacity_provider`](crate::types::builders::CapacityProviderStrategyItemBuilder::capacity_provider)
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityProviderStrategyItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CapacityProviderStrategyItem {
+            capacity_provider: self.capacity_provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "capacity_provider",
+                    "capacity_provider was not specified but it is required when building CapacityProviderStrategyItem",
+                )
+            })?,
             weight: self.weight.unwrap_or_default(),
             base: self.base.unwrap_or_default(),
-        }
+        })
     }
 }

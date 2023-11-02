@@ -15,13 +15,17 @@ pub struct CreateRealtimeLogConfigInput {
 }
 impl CreateRealtimeLogConfigInput {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn end_points(&self) -> ::std::option::Option<&[crate::types::EndPoint]> {
-        self.end_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.end_points.is_none()`.
+    pub fn end_points(&self) -> &[crate::types::EndPoint] {
+        self.end_points.as_deref().unwrap_or_default()
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[::std::string::String] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>A unique name to identify this real-time log configuration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -93,6 +97,7 @@ impl CreateRealtimeLogConfigInputBuilder {
         &self.fields
     }
     /// <p>A unique name to identify this real-time log configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +112,7 @@ impl CreateRealtimeLogConfigInputBuilder {
         &self.name
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
+    /// This field is required.
     pub fn sampling_rate(mut self, input: i64) -> Self {
         self.sampling_rate = ::std::option::Option::Some(input);
         self

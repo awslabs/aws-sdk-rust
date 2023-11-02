@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-    pub resource_arn_update: ::std::option::Option<::std::string::String>,
+    pub resource_arn_update: ::std::string::String,
 }
 impl KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
-        self.resource_arn_update.as_deref()
+    pub fn resource_arn_update(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn_update.deref()
     }
 }
 impl KinesisStreamsInputUpdate {
@@ -28,6 +29,7 @@ pub struct KinesisStreamsInputUpdateBuilder {
 }
 impl KinesisStreamsInputUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
+    /// This field is required.
     pub fn resource_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn_update = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl KinesisStreamsInputUpdateBuilder {
         &self.resource_arn_update
     }
     /// Consumes the builder and constructs a [`KinesisStreamsInputUpdate`](crate::types::KinesisStreamsInputUpdate).
-    pub fn build(self) -> crate::types::KinesisStreamsInputUpdate {
-        crate::types::KinesisStreamsInputUpdate {
-            resource_arn_update: self.resource_arn_update,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn_update`](crate::types::builders::KinesisStreamsInputUpdateBuilder::resource_arn_update)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamsInputUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisStreamsInputUpdate {
+            resource_arn_update: self.resource_arn_update.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn_update",
+                    "resource_arn_update was not specified but it is required when building KinesisStreamsInputUpdate",
+                )
+            })?,
+        })
     }
 }

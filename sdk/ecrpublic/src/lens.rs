@@ -62,10 +62,7 @@ pub(crate) fn lens_describe_images_output_image_details(
 pub(crate) fn lens_describe_registries_output_registries(
     input: crate::operation::describe_registries::DescribeRegistriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Registry>> {
-    let input = match input.registries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.registries;
     ::std::option::Option::Some(input)
 }
 

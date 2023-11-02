@@ -5,22 +5,23 @@ pub fn ser_origin_group(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.id {
+    {
         let mut inner_writer = scope.start_el("Id").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.id.as_str());
     }
-    if let Some(var_2) = &input.failover_criteria {
+    if let Some(var_1) = &input.failover_criteria {
         let inner_writer = scope.start_el("FailoverCriteria");
-        crate::protocol_serde::shape_origin_group_failover_criteria::ser_origin_group_failover_criteria(var_2, inner_writer)?
+        crate::protocol_serde::shape_origin_group_failover_criteria::ser_origin_group_failover_criteria(var_1, inner_writer)?
     }
-    if let Some(var_3) = &input.members {
+    if let Some(var_2) = &input.members {
         let inner_writer = scope.start_el("Members");
-        crate::protocol_serde::shape_origin_group_members::ser_origin_group_members(var_3, inner_writer)?
+        crate::protocol_serde::shape_origin_group_members::ser_origin_group_members(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_origin_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::OriginGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,7 +30,7 @@ pub fn de_origin_group(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#OriginGroup$Id */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -38,31 +39,33 @@ pub fn de_origin_group(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_4);
+                builder = builder.set_id(var_3);
             }
             ,
             s if s.matches("FailoverCriteria") /* FailoverCriteria com.amazonaws.cloudfront#OriginGroup$FailoverCriteria */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_origin_group_failover_criteria::de_origin_group_failover_criteria(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failover_criteria(var_5);
+                builder = builder.set_failover_criteria(var_4);
             }
             ,
             s if s.matches("Members") /* Members com.amazonaws.cloudfront#OriginGroup$Members */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_origin_group_members::de_origin_group_members(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_members(var_6);
+                builder = builder.set_members(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::origin_group_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

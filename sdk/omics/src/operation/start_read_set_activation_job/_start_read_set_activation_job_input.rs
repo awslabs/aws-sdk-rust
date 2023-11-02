@@ -20,8 +20,10 @@ impl StartReadSetActivationJobInput {
         self.client_token.as_deref()
     }
     /// <p>The job's source files.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::StartReadSetActivationJobSourceItem]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::StartReadSetActivationJobSourceItem] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl StartReadSetActivationJobInput {
@@ -41,6 +43,7 @@ pub struct StartReadSetActivationJobInputBuilder {
 }
 impl StartReadSetActivationJobInputBuilder {
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self

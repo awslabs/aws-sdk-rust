@@ -11,8 +11,10 @@ pub struct ListWorkflowsOutput {
 }
 impl ListWorkflowsOutput {
     /// <p>List of names of workflows in the account.</p>
-    pub fn workflows(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.workflows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
+    pub fn workflows(&self) -> &[::std::string::String] {
+        self.workflows.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if not all workflow names have been returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

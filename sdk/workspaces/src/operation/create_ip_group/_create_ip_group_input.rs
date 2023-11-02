@@ -22,12 +22,16 @@ impl CreateIpGroupInput {
         self.group_desc.as_deref()
     }
     /// <p>The rules to add to the group.</p>
-    pub fn user_rules(&self) -> ::std::option::Option<&[crate::types::IpRuleItem]> {
-        self.user_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_rules.is_none()`.
+    pub fn user_rules(&self) -> &[crate::types::IpRuleItem] {
+        self.user_rules.as_deref().unwrap_or_default()
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateIpGroupInput {
@@ -48,6 +52,7 @@ pub struct CreateIpGroupInputBuilder {
 }
 impl CreateIpGroupInputBuilder {
     /// <p>The name of the group.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self

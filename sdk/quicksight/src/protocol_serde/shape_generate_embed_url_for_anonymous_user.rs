@@ -187,7 +187,9 @@ pub fn de_generate_embed_url_for_anonymous_user_http_response(
             .map_err(crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserError::unhandled)?;
         output = output.set_status(Some(_response_status as _));
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::generate_embed_url_for_anonymous_user_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserError::unhandled)?
     })
 }
 

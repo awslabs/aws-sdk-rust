@@ -43,6 +43,7 @@ pub struct ServiceAccountCredentialsBuilder {
 }
 impl ServiceAccountCredentialsBuilder {
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
+    /// This field is required.
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl ServiceAccountCredentialsBuilder {
         &self.account_name
     }
     /// <p>The password for the account.</p>
+    /// This field is required.
     pub fn account_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_password = ::std::option::Option::Some(input.into());
         self

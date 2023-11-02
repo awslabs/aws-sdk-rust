@@ -17,8 +17,10 @@ impl ChangeMessageVisibilityBatchInput {
         self.queue_url.as_deref()
     }
     /// <p>Lists the receipt handles of the messages for which the visibility timeout must be changed.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::ChangeMessageVisibilityBatchRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::ChangeMessageVisibilityBatchRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl ChangeMessageVisibilityBatchInput {
@@ -38,6 +40,7 @@ pub struct ChangeMessageVisibilityBatchInputBuilder {
 impl ChangeMessageVisibilityBatchInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self

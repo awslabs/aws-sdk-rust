@@ -48,6 +48,7 @@ impl AssociateSkillWithSkillGroupInputBuilder {
         &self.skill_group_arn
     }
     /// <p>The unique identifier of the skill.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self

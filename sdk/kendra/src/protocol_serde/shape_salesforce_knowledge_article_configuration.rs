@@ -3,32 +3,32 @@ pub fn ser_salesforce_knowledge_article_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceKnowledgeArticleConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.included_states {
-        let mut array_2 = object.key("IncludedStates").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("IncludedStates").start_array();
+        for item_2 in &input.included_states {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.standard_knowledge_article_type_configuration {
+    if let Some(var_3) = &input.standard_knowledge_article_type_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("StandardKnowledgeArticleTypeConfiguration").start_object();
-        crate::protocol_serde::shape_salesforce_standard_knowledge_article_type_configuration::ser_salesforce_standard_knowledge_article_type_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("StandardKnowledgeArticleTypeConfiguration").start_object();
+        crate::protocol_serde::shape_salesforce_standard_knowledge_article_type_configuration::ser_salesforce_standard_knowledge_article_type_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.custom_knowledge_article_type_configurations {
-        let mut array_7 = object.key("CustomKnowledgeArticleTypeConfigurations").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.custom_knowledge_article_type_configurations {
+        let mut array_6 = object.key("CustomKnowledgeArticleTypeConfigurations").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_salesforce_custom_knowledge_article_type_configuration::ser_salesforce_custom_knowledge_article_type_configuration(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_salesforce_custom_knowledge_article_type_configuration::ser_salesforce_custom_knowledge_article_type_configuration(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -75,7 +75,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::salesforce_knowledge_article_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

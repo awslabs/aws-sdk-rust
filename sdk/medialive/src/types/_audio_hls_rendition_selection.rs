@@ -35,6 +35,7 @@ pub struct AudioHlsRenditionSelectionBuilder {
 }
 impl AudioHlsRenditionSelectionBuilder {
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AudioHlsRenditionSelectionBuilder {
         &self.group_id
     }
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

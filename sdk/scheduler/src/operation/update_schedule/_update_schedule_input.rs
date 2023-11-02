@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScheduleInput {
     /// <p>The name of the schedule that you are updating.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the schedule group with which the schedule is associated. You must provide this value in order for EventBridge Scheduler to find the schedule you want to update. If you omit this value, EventBridge Scheduler assumes the group is associated to the default group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p> The expression that defines when the schedule runs. The following formats are supported. </p>
@@ -17,7 +17,7 @@ pub struct UpdateScheduleInput {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    pub schedule_expression: ::std::option::Option<::std::string::String>,
+    pub schedule_expression: ::std::string::String,
     /// <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
@@ -41,8 +41,9 @@ pub struct UpdateScheduleInput {
 }
 impl UpdateScheduleInput {
     /// <p>The name of the schedule that you are updating.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the schedule group with which the schedule is associated. You must provide this value in order for EventBridge Scheduler to find the schedule you want to update. If you omit this value, EventBridge Scheduler assumes the group is associated to the default group.</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
@@ -58,8 +59,9 @@ impl UpdateScheduleInput {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
-        self.schedule_expression.as_deref()
+    pub fn schedule_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.schedule_expression.deref()
     }
     /// <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -129,6 +131,7 @@ pub struct UpdateScheduleInputBuilder {
 }
 impl UpdateScheduleInputBuilder {
     /// <p>The name of the schedule that you are updating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +169,7 @@ impl UpdateScheduleInputBuilder {
     /// <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>
     /// <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>
     /// <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
+    /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
@@ -282,6 +286,7 @@ impl UpdateScheduleInputBuilder {
         &self.kms_key_arn
     }
     /// <p>The schedule target. You can use this operation to change the target that your schedule invokes.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -296,6 +301,7 @@ impl UpdateScheduleInputBuilder {
         &self.target
     }
     /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
+    /// This field is required.
     pub fn flexible_time_window(mut self, input: crate::types::FlexibleTimeWindow) -> Self {
         self.flexible_time_window = ::std::option::Option::Some(input);
         self
@@ -338,13 +344,26 @@ impl UpdateScheduleInputBuilder {
         &self.action_after_completion
     }
     /// Consumes the builder and constructs a [`UpdateScheduleInput`](crate::operation::update_schedule::UpdateScheduleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::update_schedule::builders::UpdateScheduleInputBuilder::name)
+    /// - [`schedule_expression`](crate::operation::update_schedule::builders::UpdateScheduleInputBuilder::schedule_expression)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schedule::UpdateScheduleInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateScheduleInput",
+                )
+            })?,
             group_name: self.group_name,
-            schedule_expression: self.schedule_expression,
+            schedule_expression: self.schedule_expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "schedule_expression",
+                    "schedule_expression was not specified but it is required when building UpdateScheduleInput",
+                )
+            })?,
             start_date: self.start_date,
             end_date: self.end_date,
             description: self.description,

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidityPeriod {
     /// <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-    pub period_type: ::std::option::Option<crate::types::ValidityPeriodType>,
+    pub period_type: crate::types::ValidityPeriodType,
     /// <p>The numeric value for the validity period.</p>
-    pub period: ::std::option::Option<i64>,
+    pub period: i64,
 }
 impl ValidityPeriod {
     /// <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-    pub fn period_type(&self) -> ::std::option::Option<&crate::types::ValidityPeriodType> {
-        self.period_type.as_ref()
+    pub fn period_type(&self) -> &crate::types::ValidityPeriodType {
+        &self.period_type
     }
     /// <p>The numeric value for the validity period.</p>
-    pub fn period(&self) -> ::std::option::Option<i64> {
+    pub fn period(&self) -> i64 {
         self.period
     }
 }
@@ -35,6 +35,7 @@ pub struct ValidityPeriodBuilder {
 }
 impl ValidityPeriodBuilder {
     /// <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
+    /// This field is required.
     pub fn period_type(mut self, input: crate::types::ValidityPeriodType) -> Self {
         self.period_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ValidityPeriodBuilder {
         &self.period_type
     }
     /// <p>The numeric value for the validity period.</p>
+    /// This field is required.
     pub fn period(mut self, input: i64) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ValidityPeriodBuilder {
         &self.period
     }
     /// Consumes the builder and constructs a [`ValidityPeriod`](crate::types::ValidityPeriod).
-    pub fn build(self) -> crate::types::ValidityPeriod {
-        crate::types::ValidityPeriod {
-            period_type: self.period_type,
-            period: self.period,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`period_type`](crate::types::builders::ValidityPeriodBuilder::period_type)
+    /// - [`period`](crate::types::builders::ValidityPeriodBuilder::period)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidityPeriod, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValidityPeriod {
+            period_type: self.period_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "period_type",
+                    "period_type was not specified but it is required when building ValidityPeriod",
+                )
+            })?,
+            period: self.period.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "period",
+                    "period was not specified but it is required when building ValidityPeriod",
+                )
+            })?,
+        })
     }
 }

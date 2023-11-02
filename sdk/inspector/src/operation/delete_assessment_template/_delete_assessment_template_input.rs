@@ -27,6 +27,7 @@ pub struct DeleteAssessmentTemplateInputBuilder {
 }
 impl DeleteAssessmentTemplateInputBuilder {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
+    /// This field is required.
     pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self

@@ -92,14 +92,14 @@ impl CreateUserFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::create_user::CreateUserOutput,
             crate::operation::create_user::CreateUserError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -258,9 +258,7 @@ impl CreateUserFluentBuilder {
         self.inner.get_server_id()
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -272,9 +270,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -286,9 +282,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>

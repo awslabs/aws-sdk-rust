@@ -69,8 +69,10 @@ impl ListAggregatedUtterancesOutput {
         self.aggregation_last_refreshed_date_time.as_ref()
     }
     /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
-    pub fn aggregated_utterances_summaries(&self) -> ::std::option::Option<&[crate::types::AggregatedUtterancesSummary]> {
-        self.aggregated_utterances_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregated_utterances_summaries.is_none()`.
+    pub fn aggregated_utterances_summaries(&self) -> &[crate::types::AggregatedUtterancesSummary] {
+        self.aggregated_utterances_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

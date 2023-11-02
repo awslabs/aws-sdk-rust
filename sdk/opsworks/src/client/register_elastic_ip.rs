@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterElasticIp`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`elastic_ip(impl Into<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::set_elastic_ip): <p>The Elastic IP address.</p>
-    ///   - [`stack_id(impl Into<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::set_stack_id): <p>The stack ID.</p>
+    ///   - [`elastic_ip(impl Into<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::set_elastic_ip):<br>required: **true**<br><p>The Elastic IP address.</p><br>
+    ///   - [`stack_id(impl Into<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::register_elastic_ip::builders::RegisterElasticIpFluentBuilder::set_stack_id):<br>required: **true**<br><p>The stack ID.</p><br>
     /// - On success, responds with [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput) with field(s):
     ///   - [`elastic_ip(Option<String>)`](crate::operation::register_elastic_ip::RegisterElasticIpOutput::elastic_ip): <p>The Elastic IP address.</p>
     /// - On failure, responds with [`SdkError<RegisterElasticIpError>`](crate::operation::register_elastic_ip::RegisterElasticIpError)

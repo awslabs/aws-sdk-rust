@@ -30,8 +30,10 @@ impl UpdateScalingPlanInput {
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn scaling_instructions(&self) -> ::std::option::Option<&[crate::types::ScalingInstruction]> {
-        self.scaling_instructions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_instructions.is_none()`.
+    pub fn scaling_instructions(&self) -> &[crate::types::ScalingInstruction] {
+        self.scaling_instructions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateScalingPlanInput {
@@ -52,6 +54,7 @@ pub struct UpdateScalingPlanInputBuilder {
 }
 impl UpdateScalingPlanInputBuilder {
     /// <p>The name of the scaling plan.</p>
+    /// This field is required.
     pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl UpdateScalingPlanInputBuilder {
         &self.scaling_plan_name
     }
     /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    /// This field is required.
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
         self

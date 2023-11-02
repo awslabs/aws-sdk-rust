@@ -17,8 +17,10 @@ pub struct ListChangedBlocksOutput {
 }
 impl ListChangedBlocksOutput {
     /// <p>An array of objects containing information about the changed blocks.</p>
-    pub fn changed_blocks(&self) -> ::std::option::Option<&[crate::types::ChangedBlock]> {
-        self.changed_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changed_blocks.is_none()`.
+    pub fn changed_blocks(&self) -> &[crate::types::ChangedBlock] {
+        self.changed_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
     pub fn expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

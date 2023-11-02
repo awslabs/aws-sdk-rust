@@ -52,8 +52,10 @@ impl VpnConnectionOptionsSpecification {
         self.tunnel_inside_ip_version.as_ref()
     }
     /// <p>The tunnel options for the VPN connection.</p>
-    pub fn tunnel_options(&self) -> ::std::option::Option<&[crate::types::VpnTunnelOptionsSpecification]> {
-        self.tunnel_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tunnel_options.is_none()`.
+    pub fn tunnel_options(&self) -> &[crate::types::VpnTunnelOptionsSpecification] {
+        self.tunnel_options.as_deref().unwrap_or_default()
     }
     /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>

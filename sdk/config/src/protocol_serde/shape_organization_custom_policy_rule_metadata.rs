@@ -39,20 +39,20 @@ pub fn ser_organization_custom_policy_rule_metadata(
     if let Some(var_12) = &input.tag_value_scope {
         object.key("TagValueScope").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.policy_runtime {
-        object.key("PolicyRuntime").string(var_13.as_str());
+    {
+        object.key("PolicyRuntime").string(input.policy_runtime.as_str());
     }
-    if let Some(var_14) = &input.policy_text {
-        object.key("PolicyText").string(var_14.as_str());
+    {
+        object.key("PolicyText").string(input.policy_text.as_str());
     }
-    if let Some(var_15) = &input.debug_log_delivery_accounts {
-        let mut array_16 = object.key("DebugLogDeliveryAccounts").start_array();
-        for item_17 in var_15 {
+    if let Some(var_13) = &input.debug_log_delivery_accounts {
+        let mut array_14 = object.key("DebugLogDeliveryAccounts").start_array();
+        for item_15 in var_13 {
             {
-                array_16.value().string(item_17.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_16.finish();
+        array_14.finish();
     }
     Ok(())
 }

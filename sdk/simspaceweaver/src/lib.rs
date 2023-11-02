@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-simspaceweaver = "0.12.0"
+//! aws-sdk-simspaceweaver = "0.13.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -200,6 +200,8 @@ mod lens;
 mod endpoint_lib;
 
 mod json_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

@@ -76,6 +76,7 @@ impl StopStreamEncryptionInputBuilder {
         &self.stream_name
     }
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +98,7 @@ impl StopStreamEncryptionInputBuilder {
     /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
     /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self

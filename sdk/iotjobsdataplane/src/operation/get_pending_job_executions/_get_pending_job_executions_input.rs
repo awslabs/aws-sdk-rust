@@ -27,6 +27,7 @@ pub struct GetPendingJobExecutionsInputBuilder {
 }
 impl GetPendingJobExecutionsInputBuilder {
     /// <p>The name of the thing that is executing the job.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self

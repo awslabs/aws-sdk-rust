@@ -38,8 +38,10 @@ impl ListNotificationsInput {
         self.before_timestamp.as_ref()
     }
     /// <p>The subjects of notifications.</p>
-    pub fn subjects(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subjects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subjects.is_none()`.
+    pub fn subjects(&self) -> &[::std::string::String] {
+        self.subjects.as_deref().unwrap_or_default()
     }
     /// <p>The task status of notifications.</p>
     pub fn task_status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
@@ -76,6 +78,7 @@ pub struct ListNotificationsInputBuilder {
 }
 impl ListNotificationsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl ListNotificationsInputBuilder {
         &self.domain_identifier
     }
     /// <p>The type of notifications.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::NotificationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

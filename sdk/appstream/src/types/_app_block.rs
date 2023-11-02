@@ -79,8 +79,10 @@ impl AppBlock {
         self.state.as_ref()
     }
     /// <p>The errors of the app block.</p>
-    pub fn app_block_errors(&self) -> ::std::option::Option<&[crate::types::ErrorDetails]> {
-        self.app_block_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_block_errors.is_none()`.
+    pub fn app_block_errors(&self) -> &[crate::types::ErrorDetails] {
+        self.app_block_errors.as_deref().unwrap_or_default()
     }
 }
 impl AppBlock {
@@ -108,6 +110,7 @@ pub struct AppBlockBuilder {
 }
 impl AppBlockBuilder {
     /// <p>The name of the app block.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +125,7 @@ impl AppBlockBuilder {
         &self.name
     }
     /// <p>The ARN of the app block.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GsmObj {
     /// <p>Mobile Country Code.</p>
-    pub mcc: ::std::option::Option<i32>,
+    pub mcc: i32,
     /// <p>Mobile Network Code.</p>
-    pub mnc: ::std::option::Option<i32>,
+    pub mnc: i32,
     /// <p>Location area code.</p>
-    pub lac: ::std::option::Option<i32>,
+    pub lac: i32,
     /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
-    pub geran_cid: ::std::option::Option<i32>,
+    pub geran_cid: i32,
     /// <p>GSM local identification (local ID) information.</p>
     pub gsm_local_id: ::std::option::Option<crate::types::GsmLocalId>,
     /// <p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>
@@ -23,19 +23,19 @@ pub struct GsmObj {
 }
 impl GsmObj {
     /// <p>Mobile Country Code.</p>
-    pub fn mcc(&self) -> ::std::option::Option<i32> {
+    pub fn mcc(&self) -> i32 {
         self.mcc
     }
     /// <p>Mobile Network Code.</p>
-    pub fn mnc(&self) -> ::std::option::Option<i32> {
+    pub fn mnc(&self) -> i32 {
         self.mnc
     }
     /// <p>Location area code.</p>
-    pub fn lac(&self) -> ::std::option::Option<i32> {
+    pub fn lac(&self) -> i32 {
         self.lac
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
-    pub fn geran_cid(&self) -> ::std::option::Option<i32> {
+    pub fn geran_cid(&self) -> i32 {
         self.geran_cid
     }
     /// <p>GSM local identification (local ID) information.</p>
@@ -51,8 +51,10 @@ impl GsmObj {
         self.rx_level
     }
     /// <p>GSM object for network measurement reports.</p>
-    pub fn gsm_nmr(&self) -> ::std::option::Option<&[crate::types::GsmNmrObj]> {
-        self.gsm_nmr.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gsm_nmr.is_none()`.
+    pub fn gsm_nmr(&self) -> &[crate::types::GsmNmrObj] {
+        self.gsm_nmr.as_deref().unwrap_or_default()
     }
 }
 impl GsmObj {
@@ -77,6 +79,7 @@ pub struct GsmObjBuilder {
 }
 impl GsmObjBuilder {
     /// <p>Mobile Country Code.</p>
+    /// This field is required.
     pub fn mcc(mut self, input: i32) -> Self {
         self.mcc = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl GsmObjBuilder {
         &self.mcc
     }
     /// <p>Mobile Network Code.</p>
+    /// This field is required.
     pub fn mnc(mut self, input: i32) -> Self {
         self.mnc = ::std::option::Option::Some(input);
         self
@@ -105,6 +109,7 @@ impl GsmObjBuilder {
         &self.mnc
     }
     /// <p>Location area code.</p>
+    /// This field is required.
     pub fn lac(mut self, input: i32) -> Self {
         self.lac = ::std::option::Option::Some(input);
         self
@@ -119,6 +124,7 @@ impl GsmObjBuilder {
         &self.lac
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>
+    /// This field is required.
     pub fn geran_cid(mut self, input: i32) -> Self {
         self.geran_cid = ::std::option::Option::Some(input);
         self
@@ -195,16 +201,32 @@ impl GsmObjBuilder {
         &self.gsm_nmr
     }
     /// Consumes the builder and constructs a [`GsmObj`](crate::types::GsmObj).
-    pub fn build(self) -> crate::types::GsmObj {
-        crate::types::GsmObj {
-            mcc: self.mcc,
-            mnc: self.mnc,
-            lac: self.lac,
-            geran_cid: self.geran_cid,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mcc`](crate::types::builders::GsmObjBuilder::mcc)
+    /// - [`mnc`](crate::types::builders::GsmObjBuilder::mnc)
+    /// - [`lac`](crate::types::builders::GsmObjBuilder::lac)
+    /// - [`geran_cid`](crate::types::builders::GsmObjBuilder::geran_cid)
+    pub fn build(self) -> ::std::result::Result<crate::types::GsmObj, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GsmObj {
+            mcc: self.mcc.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("mcc", "mcc was not specified but it is required when building GsmObj")
+            })?,
+            mnc: self.mnc.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("mnc", "mnc was not specified but it is required when building GsmObj")
+            })?,
+            lac: self.lac.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("lac", "lac was not specified but it is required when building GsmObj")
+            })?,
+            geran_cid: self.geran_cid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "geran_cid",
+                    "geran_cid was not specified but it is required when building GsmObj",
+                )
+            })?,
             gsm_local_id: self.gsm_local_id,
             gsm_timing_advance: self.gsm_timing_advance,
             rx_level: self.rx_level,
             gsm_nmr: self.gsm_nmr,
-        }
+        })
     }
 }

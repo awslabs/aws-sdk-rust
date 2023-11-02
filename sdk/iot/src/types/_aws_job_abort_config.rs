@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub abort_criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>,
+    pub abort_criteria_list: ::std::vec::Vec<crate::types::AwsJobAbortCriteria>,
 }
 impl AwsJobAbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn abort_criteria_list(&self) -> ::std::option::Option<&[crate::types::AwsJobAbortCriteria]> {
-        self.abort_criteria_list.as_deref()
+    pub fn abort_criteria_list(&self) -> &[crate::types::AwsJobAbortCriteria] {
+        use std::ops::Deref;
+        self.abort_criteria_list.deref()
     }
 }
 impl AwsJobAbortConfig {
@@ -48,9 +49,16 @@ impl AwsJobAbortConfigBuilder {
         &self.abort_criteria_list
     }
     /// Consumes the builder and constructs a [`AwsJobAbortConfig`](crate::types::AwsJobAbortConfig).
-    pub fn build(self) -> crate::types::AwsJobAbortConfig {
-        crate::types::AwsJobAbortConfig {
-            abort_criteria_list: self.abort_criteria_list,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`abort_criteria_list`](crate::types::builders::AwsJobAbortConfigBuilder::abort_criteria_list)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsJobAbortConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsJobAbortConfig {
+            abort_criteria_list: self.abort_criteria_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "abort_criteria_list",
+                    "abort_criteria_list was not specified but it is required when building AwsJobAbortConfig",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteUserAccessLoggingSettingsInputBuilder {
 }
 impl DeleteUserAccessLoggingSettingsInputBuilder {
     /// <p>The ARN of the user access logging settings.</p>
+    /// This field is required.
     pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self

@@ -14,8 +14,10 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
         self.endpoint_name.as_deref()
     }
     /// <p>An object that provides new capacity and weight values for a variant.</p>
-    pub fn desired_weights_and_capacities(&self) -> ::std::option::Option<&[crate::types::DesiredWeightAndCapacity]> {
-        self.desired_weights_and_capacities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.desired_weights_and_capacities.is_none()`.
+    pub fn desired_weights_and_capacities(&self) -> &[crate::types::DesiredWeightAndCapacity] {
+        self.desired_weights_and_capacities.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEndpointWeightsAndCapacitiesInput {
@@ -34,6 +36,7 @@ pub struct UpdateEndpointWeightsAndCapacitiesInputBuilder {
 }
 impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
     /// <p>The name of an existing SageMaker endpoint.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self

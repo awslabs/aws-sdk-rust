@@ -6,18 +6,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentSecurityPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub r#override: ::std::option::Option<bool>,
+    pub r#override: bool,
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
-    pub content_security_policy: ::std::option::Option<::std::string::String>,
+    pub content_security_policy: ::std::string::String,
 }
 impl ResponseHeadersPolicyContentSecurityPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn r#override(&self) -> ::std::option::Option<bool> {
+    pub fn r#override(&self) -> bool {
         self.r#override
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
-    pub fn content_security_policy(&self) -> ::std::option::Option<&str> {
-        self.content_security_policy.as_deref()
+    pub fn content_security_policy(&self) -> &str {
+        use std::ops::Deref;
+        self.content_security_policy.deref()
     }
 }
 impl ResponseHeadersPolicyContentSecurityPolicy {
@@ -36,6 +37,7 @@ pub struct ResponseHeadersPolicyContentSecurityPolicyBuilder {
 }
 impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Content-Security-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    /// This field is required.
     pub fn r#override(mut self, input: bool) -> Self {
         self.r#override = ::std::option::Option::Some(input);
         self
@@ -50,6 +52,7 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
         &self.r#override
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
+    /// This field is required.
     pub fn content_security_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_security_policy = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +67,25 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
         &self.content_security_policy
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyContentSecurityPolicy`](crate::types::ResponseHeadersPolicyContentSecurityPolicy).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyContentSecurityPolicy {
-        crate::types::ResponseHeadersPolicyContentSecurityPolicy {
-            r#override: self.r#override,
-            content_security_policy: self.content_security_policy,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::r#override)
+    /// - [`content_security_policy`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::content_security_policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentSecurityPolicy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyContentSecurityPolicy {
+            r#override: self.r#override.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#override",
+                    "r#override was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy",
+                )
+            })?,
+            content_security_policy: self.content_security_policy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_security_policy",
+                    "content_security_policy was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy",
+                )
+            })?,
+        })
     }
 }

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The name of the launch to stop.</p>
-    pub launch: ::std::option::Option<::std::string::String>,
+    pub launch: ::std::string::String,
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub desired_state: ::std::option::Option<crate::types::LaunchStopDesiredState>,
     /// <p>A string that describes why you are stopping the launch.</p>
@@ -14,12 +14,14 @@ pub struct StopLaunchInput {
 }
 impl StopLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The name of the launch to stop.</p>
-    pub fn launch(&self) -> ::std::option::Option<&str> {
-        self.launch.as_deref()
+    pub fn launch(&self) -> &str {
+        use std::ops::Deref;
+        self.launch.deref()
     }
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(&self) -> ::std::option::Option<&crate::types::LaunchStopDesiredState> {
@@ -48,6 +50,7 @@ pub struct StopLaunchInputBuilder {
 }
 impl StopLaunchInputBuilder {
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl StopLaunchInputBuilder {
         &self.project
     }
     /// <p>The name of the launch to stop.</p>
+    /// This field is required.
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
         self
@@ -104,10 +108,23 @@ impl StopLaunchInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopLaunchInput`](crate::operation::stop_launch::StopLaunchInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::stop_launch::builders::StopLaunchInputBuilder::project)
+    /// - [`launch`](crate::operation::stop_launch::builders::StopLaunchInputBuilder::launch)
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_launch::StopLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_launch::StopLaunchInput {
-            project: self.project,
-            launch: self.launch,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building StopLaunchInput",
+                )
+            })?,
+            launch: self.launch.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "launch",
+                    "launch was not specified but it is required when building StopLaunchInput",
+                )
+            })?,
             desired_state: self.desired_state,
             reason: self.reason,
         })

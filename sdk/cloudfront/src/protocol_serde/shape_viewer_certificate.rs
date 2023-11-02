@@ -37,6 +37,7 @@ pub fn ser_viewer_certificate(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_viewer_certificate(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ViewerCertificate, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -15,8 +15,10 @@ pub struct ListIamPolicyAssignmentsForUserOutput {
 }
 impl ListIamPolicyAssignmentsForUserOutput {
     /// <p>The active assignments for this user.</p>
-    pub fn active_assignments(&self) -> ::std::option::Option<&[crate::types::ActiveIamPolicyAssignment]> {
-        self.active_assignments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_assignments.is_none()`.
+    pub fn active_assignments(&self) -> &[crate::types::ActiveIamPolicyAssignment] {
+        self.active_assignments.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {

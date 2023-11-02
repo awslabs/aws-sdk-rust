@@ -38,8 +38,8 @@ pub fn ser_message_system_attribute_value(
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("DataType");
-    if let Some(var_16) = &input.data_type {
-        scope_15.string(var_16);
+    {
+        scope_15.string(&input.data_type);
     }
     Ok(())
 }

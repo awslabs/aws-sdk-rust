@@ -15,16 +15,20 @@ pub struct RadarChartSortConfiguration {
 }
 impl RadarChartSortConfiguration {
     /// <p>The category sort options of a radar chart.</p>
-    pub fn category_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.category_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_sort.is_none()`.
+    pub fn category_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.category_sort.as_deref().unwrap_or_default()
     }
     /// <p>The category items limit for a radar chart.</p>
     pub fn category_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The color sort configuration of a radar chart.</p>
-    pub fn color_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.color_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color_sort.is_none()`.
+    pub fn color_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.color_sort.as_deref().unwrap_or_default()
     }
     /// <p>The color items limit of a radar chart.</p>
     pub fn color_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {

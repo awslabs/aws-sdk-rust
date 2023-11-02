@@ -3,17 +3,17 @@ pub fn ser_get_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_resource::GetResourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.type_name {
-        object.key("TypeName").string(var_1.as_str());
+    {
+        object.key("TypeName").string(input.type_name.as_str());
     }
-    if let Some(var_2) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_2.as_str());
+    if let Some(var_1) = &input.type_version_id {
+        object.key("TypeVersionId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("RoleArn").string(var_3.as_str());
+    if let Some(var_2) = &input.role_arn {
+        object.key("RoleArn").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.identifier {
-        object.key("Identifier").string(var_4.as_str());
+    {
+        object.key("Identifier").string(input.identifier.as_str());
     }
     Ok(())
 }

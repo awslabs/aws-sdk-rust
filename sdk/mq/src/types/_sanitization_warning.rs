@@ -70,6 +70,7 @@ impl SanitizationWarningBuilder {
         &self.element_name
     }
     /// <p>The reason for which the configuration elements or attributes were sanitized.</p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::SanitizationWarningReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self

@@ -78,8 +78,10 @@ impl IpamResourceCidr {
         self.resource_type.as_ref()
     }
     /// <p>The tags for an IPAM resource.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::IpamResourceTag]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::IpamResourceTag] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>

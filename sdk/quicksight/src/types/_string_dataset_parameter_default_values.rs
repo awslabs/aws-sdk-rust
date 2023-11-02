@@ -9,8 +9,10 @@ pub struct StringDatasetParameterDefaultValues {
 }
 impl StringDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn static_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.static_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_values.is_none()`.
+    pub fn static_values(&self) -> &[::std::string::String] {
+        self.static_values.as_deref().unwrap_or_default()
     }
 }
 impl StringDatasetParameterDefaultValues {

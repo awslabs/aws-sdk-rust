@@ -48,6 +48,7 @@ pub struct ListRealtimeContactAnalysisSegmentsInputBuilder {
 }
 impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self

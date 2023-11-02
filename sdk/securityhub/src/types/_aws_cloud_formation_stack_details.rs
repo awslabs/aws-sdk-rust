@@ -37,8 +37,10 @@ pub struct AwsCloudFormationStackDetails {
 }
 impl AwsCloudFormationStackDetails {
     /// <p>The capabilities allowed in the stack. </p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[::std::string::String] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The time at which the stack was created. </p>
     pub fn creation_time(&self) -> ::std::option::Option<&str> {
@@ -65,12 +67,16 @@ impl AwsCloudFormationStackDetails {
         self.last_updated_time.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Amazon SNS topic to which stack-related events are published. </p>
-    pub fn notification_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of output structures. </p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::AwsCloudFormationStackOutputsDetails]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::AwsCloudFormationStackOutputsDetails] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of an IAM role that's associated with the stack. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct GetFirewallRuleGroupPolicyInputBuilder {
 }
 impl GetFirewallRuleGroupPolicyInputBuilder {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

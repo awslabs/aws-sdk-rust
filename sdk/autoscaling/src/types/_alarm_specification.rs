@@ -9,8 +9,10 @@ pub struct AlarmSpecification {
 }
 impl AlarmSpecification {
     /// <p>The names of one or more CloudWatch alarms to monitor for the instance refresh. You can specify up to 10 alarms.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
+    pub fn alarms(&self) -> &[::std::string::String] {
+        self.alarms.as_deref().unwrap_or_default()
     }
 }
 impl AlarmSpecification {

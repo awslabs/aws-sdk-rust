@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
     pub default_action: ::std::option::Option<crate::types::DefaultAction>,
     /// <p>A description of the web ACL that helps with identification. </p>
@@ -59,16 +59,19 @@ pub struct WebAcl {
 }
 impl WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
     pub fn default_action(&self) -> ::std::option::Option<&crate::types::DefaultAction> {
@@ -79,8 +82,10 @@ impl WebAcl {
         self.description.as_deref()
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
@@ -93,13 +98,17 @@ impl WebAcl {
     }
     /// <p>The first set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized after these. </p>
     /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
-    pub fn pre_process_firewall_manager_rule_groups(&self) -> ::std::option::Option<&[crate::types::FirewallManagerRuleGroup]> {
-        self.pre_process_firewall_manager_rule_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pre_process_firewall_manager_rule_groups.is_none()`.
+    pub fn pre_process_firewall_manager_rule_groups(&self) -> &[crate::types::FirewallManagerRuleGroup] {
+        self.pre_process_firewall_manager_rule_groups.as_deref().unwrap_or_default()
     }
     /// <p>The last set of rules for WAF to process in the web ACL. This is defined in an Firewall Manager WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define for the web ACL are prioritized before these. </p>
     /// <p>In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the rule groups, to determine their relative processing order.</p>
-    pub fn post_process_firewall_manager_rule_groups(&self) -> ::std::option::Option<&[crate::types::FirewallManagerRuleGroup]> {
-        self.post_process_firewall_manager_rule_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.post_process_firewall_manager_rule_groups.is_none()`.
+    pub fn post_process_firewall_manager_rule_groups(&self) -> &[crate::types::FirewallManagerRuleGroup] {
+        self.post_process_firewall_manager_rule_groups.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL. </p>
     pub fn managed_by_firewall_manager(&self) -> bool {
@@ -136,8 +145,10 @@ impl WebAcl {
         self.challenge_config.as_ref()
     }
     /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
-    pub fn token_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_domains.is_none()`.
+    pub fn token_domains(&self) -> &[::std::string::String] {
+        self.token_domains.as_deref().unwrap_or_default()
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
     /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes). </p> <note>
@@ -178,6 +189,7 @@ pub struct WebAclBuilder {
 }
 impl WebAclBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -192,6 +204,7 @@ impl WebAclBuilder {
         &self.name
     }
     /// <p>A unique identifier for the <code>WebACL</code>. This ID is returned in the responses to create and list commands. You use this ID to do things like get, update, and delete a <code>WebACL</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -206,6 +219,7 @@ impl WebAclBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -220,6 +234,7 @@ impl WebAclBuilder {
         &self.arn
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
+    /// This field is required.
     pub fn default_action(mut self, input: crate::types::DefaultAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
         self
@@ -268,6 +283,7 @@ impl WebAclBuilder {
         &self.rules
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// This field is required.
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
@@ -511,11 +527,24 @@ impl WebAclBuilder {
         &self.association_config
     }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
-    pub fn build(self) -> crate::types::WebAcl {
-        crate::types::WebAcl {
-            name: self.name,
-            id: self.id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::WebAclBuilder::name)
+    /// - [`id`](crate::types::builders::WebAclBuilder::id)
+    /// - [`arn`](crate::types::builders::WebAclBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::WebAcl, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WebAcl {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building WebAcl",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building WebAcl")
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building WebAcl")
+            })?,
             default_action: self.default_action,
             description: self.description,
             rules: self.rules,
@@ -530,6 +559,6 @@ impl WebAclBuilder {
             challenge_config: self.challenge_config,
             token_domains: self.token_domains,
             association_config: self.association_config,
-        }
+        })
     }
 }

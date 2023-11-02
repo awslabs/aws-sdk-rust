@@ -21,16 +21,22 @@ where
                         "NumberValue" => Some(crate::types::AnnotationValue::NumberValue(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(|v| v.to_f64_lossy())
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NumberValue' cannot be null")
+                                })?,
                         )),
                         "BooleanValue" => Some(crate::types::AnnotationValue::BooleanValue(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BooleanValue' cannot be null")
+                            })?,
                         )),
                         "StringValue" => Some(crate::types::AnnotationValue::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringValue' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

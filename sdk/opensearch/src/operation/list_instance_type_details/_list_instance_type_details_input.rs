@@ -62,6 +62,7 @@ pub struct ListInstanceTypeDetailsInputBuilder {
 }
 impl ListInstanceTypeDetailsInputBuilder {
     /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// This field is required.
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self

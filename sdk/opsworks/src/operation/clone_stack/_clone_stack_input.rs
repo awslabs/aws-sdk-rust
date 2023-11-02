@@ -225,8 +225,10 @@ impl CloneStackInput {
         self.clone_permissions
     }
     /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-    pub fn clone_app_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.clone_app_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clone_app_ids.is_none()`.
+    pub fn clone_app_ids(&self) -> &[::std::string::String] {
+        self.clone_app_ids.as_deref().unwrap_or_default()
     }
     /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn default_root_device_type(&self) -> ::std::option::Option<&crate::types::RootDeviceType> {
@@ -280,6 +282,7 @@ pub struct CloneStackInputBuilder {
 }
 impl CloneStackInputBuilder {
     /// <p>The source stack ID.</p>
+    /// This field is required.
     pub fn source_stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_stack_id = ::std::option::Option::Some(input.into());
         self
@@ -394,6 +397,7 @@ impl CloneStackInputBuilder {
     /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
     /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
     /// </note>
+    /// This field is required.
     pub fn service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role_arn = ::std::option::Option::Some(input.into());
         self

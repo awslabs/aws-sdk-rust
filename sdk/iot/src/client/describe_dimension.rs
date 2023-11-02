@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDimension`](crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder::set_name): <p>The unique identifier for the dimension.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_dimension::builders::DescribeDimensionFluentBuilder::set_name):<br>required: **true**<br><p>The unique identifier for the dimension.</p><br>
     /// - On success, responds with [`DescribeDimensionOutput`](crate::operation::describe_dimension::DescribeDimensionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_dimension::DescribeDimensionOutput::name): <p>The unique identifier for the dimension.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_dimension::DescribeDimensionOutput::arn): <p>The Amazon Resource Name (ARN) for the dimension.</p>

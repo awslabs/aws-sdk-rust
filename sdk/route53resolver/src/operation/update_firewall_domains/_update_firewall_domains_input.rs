@@ -46,8 +46,10 @@ impl UpdateFirewallDomainsInput {
     /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
     /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
-    pub fn domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[::std::string::String] {
+        self.domains.as_deref().unwrap_or_default()
     }
 }
 impl UpdateFirewallDomainsInput {
@@ -67,6 +69,7 @@ pub struct UpdateFirewallDomainsInputBuilder {
 }
 impl UpdateFirewallDomainsInputBuilder {
     /// <p>The ID of the domain list whose domains you want to update. </p>
+    /// This field is required.
     pub fn firewall_domain_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_domain_list_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl UpdateFirewallDomainsInputBuilder {
     /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
     /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn operation(mut self, input: crate::types::FirewallDomainUpdateOperation) -> Self {
         self.operation = ::std::option::Option::Some(input);
         self

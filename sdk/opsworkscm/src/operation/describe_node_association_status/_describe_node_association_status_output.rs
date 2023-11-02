@@ -27,8 +27,10 @@ impl DescribeNodeAssociationStatusOutput {
         self.node_association_status.as_ref()
     }
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
-    pub fn engine_attributes(&self) -> ::std::option::Option<&[crate::types::EngineAttribute]> {
-        self.engine_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
+    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeNodeAssociationStatusOutput {

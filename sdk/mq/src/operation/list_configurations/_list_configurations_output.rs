@@ -13,8 +13,10 @@ pub struct ListConfigurationsOutput {
 }
 impl ListConfigurationsOutput {
     /// <p>The list of all revisions for the specified configuration.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of configurations that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

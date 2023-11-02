@@ -34,8 +34,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInput {
         self.failure_reason.as_deref()
     }
     /// <p> The output of the update engine execution. </p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::RecordOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::RecordOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p> The idempotency token that identifies the update engine execution. </p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
 }
 impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
     /// <p> The encrypted contents of the update engine execution payload that Service Catalog sends after the Terraform product update workflow starts. </p>
+    /// This field is required.
     pub fn workflow_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_token = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.workflow_token
     }
     /// <p> The identifier of the record. </p>
+    /// This field is required.
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.record_id
     }
     /// <p> The status of the update engine execution. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -138,6 +143,7 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
         &self.outputs
     }
     /// <p> The idempotency token that identifies the update engine execution. </p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self

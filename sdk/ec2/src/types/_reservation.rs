@@ -17,12 +17,16 @@ pub struct Reservation {
 }
 impl Reservation {
     /// <p>Not supported.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The instances.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {

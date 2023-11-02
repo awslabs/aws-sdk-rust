@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsIntentStageGroupBySpecification {
     /// <p>Specifies whether to group the intent stages by their name or the intent to which the session was switched.</p>
-    pub name: ::std::option::Option<crate::types::AnalyticsIntentStageField>,
+    pub name: crate::types::AnalyticsIntentStageField,
 }
 impl AnalyticsIntentStageGroupBySpecification {
     /// <p>Specifies whether to group the intent stages by their name or the intent to which the session was switched.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsIntentStageField> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsIntentStageField {
+        &self.name
     }
 }
 impl AnalyticsIntentStageGroupBySpecification {
@@ -28,6 +28,7 @@ pub struct AnalyticsIntentStageGroupBySpecificationBuilder {
 }
 impl AnalyticsIntentStageGroupBySpecificationBuilder {
     /// <p>Specifies whether to group the intent stages by their name or the intent to which the session was switched.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsIntentStageField) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,18 @@ impl AnalyticsIntentStageGroupBySpecificationBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentStageGroupBySpecification`](crate::types::AnalyticsIntentStageGroupBySpecification).
-    pub fn build(self) -> crate::types::AnalyticsIntentStageGroupBySpecification {
-        crate::types::AnalyticsIntentStageGroupBySpecification { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsIntentStageGroupBySpecificationBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AnalyticsIntentStageGroupBySpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsIntentStageGroupBySpecification {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsIntentStageGroupBySpecification",
+                )
+            })?,
+        })
     }
 }

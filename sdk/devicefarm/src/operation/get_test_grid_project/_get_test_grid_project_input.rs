@@ -27,6 +27,7 @@ pub struct GetTestGridProjectInputBuilder {
 }
 impl GetTestGridProjectInputBuilder {
     /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self

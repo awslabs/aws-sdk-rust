@@ -14,8 +14,10 @@ impl BatchGetUserAccessTasksInput {
         self.app_bundle_identifier.as_deref()
     }
     /// <p>The tasks IDs to use for the request.</p>
-    pub fn task_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.task_id_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_id_list.is_none()`.
+    pub fn task_id_list(&self) -> &[::std::string::String] {
+        self.task_id_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetUserAccessTasksInput {
@@ -34,6 +36,7 @@ pub struct BatchGetUserAccessTasksInputBuilder {
 }
 impl BatchGetUserAccessTasksInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self

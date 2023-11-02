@@ -3,11 +3,11 @@ pub fn ser_disable_control_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disable_control::DisableControlInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.control_identifier {
-        object.key("controlIdentifier").string(var_1.as_str());
+    {
+        object.key("controlIdentifier").string(input.control_identifier.as_str());
     }
-    if let Some(var_2) = &input.target_identifier {
-        object.key("targetIdentifier").string(var_2.as_str());
+    {
+        object.key("targetIdentifier").string(input.target_identifier.as_str());
     }
     Ok(())
 }

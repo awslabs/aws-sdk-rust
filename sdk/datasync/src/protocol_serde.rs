@@ -319,6 +319,8 @@ pub(crate) mod shape_options;
 
 pub(crate) mod shape_output_tag_list;
 
+pub(crate) mod shape_platform;
+
 pub(crate) mod shape_private_link_config;
 
 pub(crate) mod shape_qop_configuration;

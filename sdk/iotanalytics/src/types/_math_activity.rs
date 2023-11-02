@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MathActivity {
     /// <p>The name of the math activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the attribute that contains the result of the math operation.</p>
-    pub attribute: ::std::option::Option<::std::string::String>,
+    pub attribute: ::std::string::String,
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
-    pub math: ::std::option::Option<::std::string::String>,
+    pub math: ::std::string::String,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl MathActivity {
     /// <p>The name of the math activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&str> {
-        self.attribute.as_deref()
+    pub fn attribute(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute.deref()
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
-    pub fn math(&self) -> ::std::option::Option<&str> {
-        self.math.as_deref()
+    pub fn math(&self) -> &str {
+        use std::ops::Deref;
+        self.math.deref()
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> ::std::option::Option<&str> {
@@ -49,6 +52,7 @@ pub struct MathActivityBuilder {
 }
 impl MathActivityBuilder {
     /// <p>The name of the math activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl MathActivityBuilder {
         &self.name
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl MathActivityBuilder {
         &self.attribute
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
+    /// This field is required.
     pub fn math(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.math = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +111,31 @@ impl MathActivityBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`MathActivity`](crate::types::MathActivity).
-    pub fn build(self) -> crate::types::MathActivity {
-        crate::types::MathActivity {
-            name: self.name,
-            attribute: self.attribute,
-            math: self.math,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::MathActivityBuilder::name)
+    /// - [`attribute`](crate::types::builders::MathActivityBuilder::attribute)
+    /// - [`math`](crate::types::builders::MathActivityBuilder::math)
+    pub fn build(self) -> ::std::result::Result<crate::types::MathActivity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MathActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building MathActivity",
+                )
+            })?,
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building MathActivity",
+                )
+            })?,
+            math: self.math.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "math",
+                    "math was not specified but it is required when building MathActivity",
+                )
+            })?,
             next: self.next,
-        }
+        })
     }
 }

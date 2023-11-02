@@ -27,6 +27,7 @@ pub struct GetAssetContractInputBuilder {
 }
 impl GetAssetContractInputBuilder {
     /// <p>Contains the blockchain address and network information about the contract.</p>
+    /// This field is required.
     pub fn contract_identifier(mut self, input: crate::types::ContractIdentifier) -> Self {
         self.contract_identifier = ::std::option::Option::Some(input);
         self

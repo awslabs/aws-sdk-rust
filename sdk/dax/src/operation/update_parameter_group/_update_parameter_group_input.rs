@@ -18,8 +18,10 @@ impl UpdateParameterGroupInput {
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
     /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
-    pub fn parameter_name_values(&self) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
-        self.parameter_name_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_name_values.is_none()`.
+    pub fn parameter_name_values(&self) -> &[crate::types::ParameterNameValue] {
+        self.parameter_name_values.as_deref().unwrap_or_default()
     }
 }
 impl UpdateParameterGroupInput {
@@ -38,6 +40,7 @@ pub struct UpdateParameterGroupInputBuilder {
 }
 impl UpdateParameterGroupInputBuilder {
     /// <p>The name of the parameter group.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self

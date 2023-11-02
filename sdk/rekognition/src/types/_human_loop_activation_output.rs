@@ -17,8 +17,10 @@ impl HumanLoopActivationOutput {
         self.human_loop_arn.as_deref()
     }
     /// <p>Shows if and why human review was needed.</p>
-    pub fn human_loop_activation_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.human_loop_activation_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.human_loop_activation_reasons.is_none()`.
+    pub fn human_loop_activation_reasons(&self) -> &[::std::string::String] {
+        self.human_loop_activation_reasons.as_deref().unwrap_or_default()
     }
     /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
     pub fn human_loop_activation_conditions_evaluation_results(&self) -> ::std::option::Option<&str> {

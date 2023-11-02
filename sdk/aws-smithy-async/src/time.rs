@@ -6,7 +6,7 @@
 //! Time source abstraction to support WASM and testing
 use std::fmt::Debug;
 use std::sync::Arc;
-use std::time::SystemTime;
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 /// Trait with a `now()` function returning the current time
 pub trait TimeSource: Debug + Send + Sync {
@@ -50,6 +50,11 @@ impl StaticTimeSource {
     /// Creates a new static time source that always returns the same time
     pub fn new(time: SystemTime) -> Self {
         Self { time }
+    }
+
+    /// Creates a new static time source from the provided number of seconds since the UNIX epoch
+    pub fn from_secs(epoch_secs: u64) -> Self {
+        Self::new(UNIX_EPOCH + Duration::from_secs(epoch_secs))
     }
 }
 

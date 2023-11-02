@@ -34,6 +34,7 @@ pub struct DescribeModelPackagingJobInputBuilder {
 }
 impl DescribeModelPackagingJobInputBuilder {
     /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeModelPackagingJobInputBuilder {
         &self.project_name
     }
     /// <p>The job name for the model packaging job. </p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self

@@ -53,6 +53,7 @@ pub struct DiskImageDetailBuilder {
 }
 impl DiskImageDetailBuilder {
     /// <p>The size of the disk image, in GiB.</p>
+    /// This field is required.
     pub fn bytes(mut self, input: i64) -> Self {
         self.bytes = ::std::option::Option::Some(input);
         self
@@ -67,6 +68,7 @@ impl DiskImageDetailBuilder {
         &self.bytes
     }
     /// <p>The disk image format.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::DiskImageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -82,6 +84,7 @@ impl DiskImageDetailBuilder {
     }
     /// <p>A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For information about creating a presigned URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
+    /// This field is required.
     pub fn import_manifest_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_manifest_url = ::std::option::Option::Some(input.into());
         self

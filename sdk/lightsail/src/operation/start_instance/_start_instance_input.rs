@@ -27,6 +27,7 @@ pub struct StartInstanceInputBuilder {
 }
 impl StartInstanceInputBuilder {
     /// <p>The name of the instance (a virtual private server) to start.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

@@ -75,8 +75,10 @@ impl CreateReplicationConfigInput {
         self.resource_identifier.as_deref()
     }
     /// <p>One or more optional tags associated with resources used by the DMS Serverless replication. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tagging.html"> Tagging resources in Database Migration Service</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateReplicationConfigInput {
@@ -103,6 +105,7 @@ pub struct CreateReplicationConfigInputBuilder {
 }
 impl CreateReplicationConfigInputBuilder {
     /// <p>A unique identifier that you want to use to create a <code>ReplicationConfigArn</code> that is returned as part of the output from this action. You can then pass this output <code>ReplicationConfigArn</code> as the value of the <code>ReplicationConfigArn</code> option for other actions to identify both DMS Serverless replications and replication configurations that you want those actions to operate on. For some actions, you can also use either this unique identifier or a corresponding ARN in action filters to identify the specific replication and replication configuration to operate on.</p>
+    /// This field is required.
     pub fn replication_config_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_identifier = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +120,7 @@ impl CreateReplicationConfigInputBuilder {
         &self.replication_config_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the source endpoint for this DMS Serverless replication configuration.</p>
+    /// This field is required.
     pub fn source_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +135,7 @@ impl CreateReplicationConfigInputBuilder {
         &self.source_endpoint_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the target endpoint for this DMS serverless replication configuration.</p>
+    /// This field is required.
     pub fn target_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +150,7 @@ impl CreateReplicationConfigInputBuilder {
         &self.target_endpoint_arn
     }
     /// <p>Configuration parameters for provisioning an DMS Serverless replication.</p>
+    /// This field is required.
     pub fn compute_config(mut self, input: crate::types::ComputeConfig) -> Self {
         self.compute_config = ::std::option::Option::Some(input);
         self
@@ -165,6 +171,7 @@ impl CreateReplicationConfigInputBuilder {
     /// <li> <p> <code>"cdc"</code> </p> </li>
     /// <li> <p> <code>"full-load-and-cdc"</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn replication_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
         self.replication_type = ::std::option::Option::Some(input);
         self
@@ -191,6 +198,7 @@ impl CreateReplicationConfigInputBuilder {
         &self.replication_type
     }
     /// <p>JSON table mappings for DMS Serverless replications that are provisioned using this replication configuration. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.html"> Specifying table selection and transformations rules using JSON</a>.</p>
+    /// This field is required.
     pub fn table_mappings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_mappings = ::std::option::Option::Some(input.into());
         self

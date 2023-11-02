@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagMeeting`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`tags(Tag)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_tags): <p>The tag key-value pairs.</p>
+    ///   - [`meeting_id(impl Into<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_meeting_id):<br>required: **true**<br><p>The Amazon Chime SDK meeting ID.</p><br>
+    ///   - [`tags(Tag)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_tags):<br>required: **true**<br><p>The tag key-value pairs.</p><br>
     /// - On success, responds with [`TagMeetingOutput`](crate::operation::tag_meeting::TagMeetingOutput)
     /// - On failure, responds with [`SdkError<TagMeetingError>`](crate::operation::tag_meeting::TagMeetingError)
     #[deprecated(note = "Use TagResource in the Amazon Chime SDK Meetings Namespace.")]

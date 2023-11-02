@@ -16,27 +16,27 @@ pub fn ser_create_content_input(
         }
         object_3.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_7) = &input.override_link_out_uri {
-        object.key("overrideLinkOutUri").string(var_7.as_str());
+    if let Some(var_6) = &input.override_link_out_uri {
+        object.key("overrideLinkOutUri").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_9.finish();
+        object_8.finish();
     }
-    if let Some(var_12) = &input.title {
-        object.key("title").string(var_12.as_str());
+    if let Some(var_11) = &input.title {
+        object.key("title").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.upload_id {
-        object.key("uploadId").string(var_13.as_str());
+    {
+        object.key("uploadId").string(input.upload_id.as_str());
     }
     Ok(())
 }

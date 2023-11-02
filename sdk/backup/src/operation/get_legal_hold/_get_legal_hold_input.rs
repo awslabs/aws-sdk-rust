@@ -27,6 +27,7 @@ pub struct GetLegalHoldInputBuilder {
 }
 impl GetLegalHoldInputBuilder {
     /// <p>This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated with a specific legal hold.</p>
+    /// This field is required.
     pub fn legal_hold_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.legal_hold_id = ::std::option::Option::Some(input.into());
         self

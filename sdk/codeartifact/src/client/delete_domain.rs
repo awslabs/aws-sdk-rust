@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain): <p> The name of the domain to delete. </p>
-    ///   - [`domain_owner(impl Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_owner) / [`set_domain_owner(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_owner): <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`domain(impl Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain):<br>required: **true**<br><p> The name of the domain to delete. </p><br>
+    ///   - [`domain_owner(impl Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_owner) / [`set_domain_owner(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_owner):<br>required: **false**<br><p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p><br>
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput) with field(s):
     ///   - [`domain(Option<DomainDescription>)`](crate::operation::delete_domain::DeleteDomainOutput::domain): <p> Contains information about the deleted domain after processing the request. </p>
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)

@@ -4,20 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSecurityPolicyInput {
     /// <p>The type of policy.</p>
-    pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
+    pub r#type: crate::types::SecurityPolicyType,
     /// <p>The name of the policy to delete.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSecurityPolicyInput {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SecurityPolicyType {
+        &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct DeleteSecurityPolicyInputBuilder {
 }
 impl DeleteSecurityPolicyInputBuilder {
     /// <p>The type of policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl DeleteSecurityPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,13 +86,26 @@ impl DeleteSecurityPolicyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteSecurityPolicyInput`](crate::operation::delete_security_policy::DeleteSecurityPolicyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder::r#type)
+    /// - [`name`](crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_security_policy::DeleteSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_security_policy::DeleteSecurityPolicyInput {
-            r#type: self.r#type,
-            name: self.name,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DeleteSecurityPolicyInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteSecurityPolicyInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

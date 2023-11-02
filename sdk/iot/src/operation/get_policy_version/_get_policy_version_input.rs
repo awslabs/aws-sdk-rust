@@ -35,6 +35,7 @@ pub struct GetPolicyVersionInputBuilder {
 }
 impl GetPolicyVersionInputBuilder {
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetPolicyVersionInputBuilder {
         &self.policy_name
     }
     /// <p>The policy version ID.</p>
+    /// This field is required.
     pub fn policy_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_version_id = ::std::option::Option::Some(input.into());
         self

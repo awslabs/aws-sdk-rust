@@ -27,6 +27,7 @@ pub struct GetTopicRuleDestinationInputBuilder {
 }
 impl GetTopicRuleDestinationInputBuilder {
     /// <p>The ARN of the topic rule destination.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

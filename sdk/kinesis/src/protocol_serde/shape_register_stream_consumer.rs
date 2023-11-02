@@ -103,7 +103,7 @@ pub fn de_register_stream_consumer_http_response(
         output = crate::protocol_serde::shape_register_stream_consumer::de_register_stream_consumer(_response_body, output)
             .map_err(crate::operation::register_stream_consumer::RegisterStreamConsumerError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::register_stream_consumer_output_correct_errors(output).build()
     })
 }
 

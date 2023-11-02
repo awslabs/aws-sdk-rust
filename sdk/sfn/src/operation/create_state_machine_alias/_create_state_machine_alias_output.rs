@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStateMachineAliasOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
-    pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
+    pub state_machine_alias_arn: ::std::string::String,
     /// <p>The date the state machine alias was created.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl CreateStateMachineAliasOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
-    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
-        self.state_machine_alias_arn.as_deref()
+    pub fn state_machine_alias_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_alias_arn.deref()
     }
     /// <p>The date the state machine alias was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
 }
 impl ::aws_http::request_id::RequestId for CreateStateMachineAliasOutput {
@@ -41,6 +42,7 @@ pub struct CreateStateMachineAliasOutputBuilder {
 }
 impl CreateStateMachineAliasOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the created state machine alias.</p>
+    /// This field is required.
     pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl CreateStateMachineAliasOutputBuilder {
         &self.state_machine_alias_arn
     }
     /// <p>The date the state machine alias was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,29 @@ impl CreateStateMachineAliasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateStateMachineAliasOutput`](crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput).
-    pub fn build(self) -> crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
-        crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
-            state_machine_alias_arn: self.state_machine_alias_arn,
-            creation_date: self.creation_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_machine_alias_arn`](crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder::state_machine_alias_arn)
+    /// - [`creation_date`](crate::operation::create_state_machine_alias::builders::CreateStateMachineAliasOutputBuilder::creation_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
+            state_machine_alias_arn: self.state_machine_alias_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_machine_alias_arn",
+                    "state_machine_alias_arn was not specified but it is required when building CreateStateMachineAliasOutput",
+                )
+            })?,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building CreateStateMachineAliasOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

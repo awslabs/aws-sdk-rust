@@ -3,8 +3,8 @@ pub fn ser_dynatrace_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynatraceConnectorProfileCredentials,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.api_token {
-        object.key("apiToken").string(var_1.as_str());
+    {
+        object.key("apiToken").string(input.api_token.as_str());
     }
     Ok(())
 }

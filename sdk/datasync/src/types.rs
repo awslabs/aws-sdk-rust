@@ -115,6 +115,8 @@ pub use crate::types::_discovery_job_status::DiscoveryJobStatus;
 
 pub use crate::types::_agent_list_entry::AgentListEntry;
 
+pub use crate::types::_platform::Platform;
+
 pub use crate::types::_agent_status::AgentStatus;
 
 pub use crate::types::_discovery_resource_type::DiscoveryResourceType;
@@ -274,6 +276,8 @@ mod _overwrite_mode;
 mod _p95_metrics;
 
 mod _phase_status;
+
+mod _platform;
 
 mod _posix_permissions;
 

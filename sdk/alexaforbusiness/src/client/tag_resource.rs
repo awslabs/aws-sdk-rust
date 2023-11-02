@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_arn): <p>The ARN of the resource to which to add metadata tags. Required. </p>
-    ///   - [`tags(Tag)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_arn):<br>required: **true**<br><p>The ARN of the resource to which to add metadata tags. Required. </p><br>
+    ///   - [`tags(Tag)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>The tags to be added to the specified resource. Do not provide system tags. Required. </p><br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

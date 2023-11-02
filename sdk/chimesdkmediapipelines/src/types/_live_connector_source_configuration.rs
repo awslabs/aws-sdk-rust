@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveConnectorSourceConfiguration {
     /// <p>The source configuration's media source type.</p>
-    pub source_type: ::std::option::Option<crate::types::LiveConnectorSourceType>,
+    pub source_type: crate::types::LiveConnectorSourceType,
     /// <p>The configuration settings of the connector pipeline.</p>
     pub chime_sdk_meeting_live_connector_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
 }
 impl LiveConnectorSourceConfiguration {
     /// <p>The source configuration's media source type.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::LiveConnectorSourceType> {
-        self.source_type.as_ref()
+    pub fn source_type(&self) -> &crate::types::LiveConnectorSourceType {
+        &self.source_type
     }
     /// <p>The configuration settings of the connector pipeline.</p>
     pub fn chime_sdk_meeting_live_connector_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingLiveConnectorConfiguration> {
@@ -35,6 +35,7 @@ pub struct LiveConnectorSourceConfigurationBuilder {
 }
 impl LiveConnectorSourceConfigurationBuilder {
     /// <p>The source configuration's media source type.</p>
+    /// This field is required.
     pub fn source_type(mut self, input: crate::types::LiveConnectorSourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl LiveConnectorSourceConfigurationBuilder {
         &self.source_type
     }
     /// <p>The configuration settings of the connector pipeline.</p>
+    /// This field is required.
     pub fn chime_sdk_meeting_live_connector_configuration(mut self, input: crate::types::ChimeSdkMeetingLiveConnectorConfiguration) -> Self {
         self.chime_sdk_meeting_live_connector_configuration = ::std::option::Option::Some(input);
         self
@@ -68,10 +70,17 @@ impl LiveConnectorSourceConfigurationBuilder {
         &self.chime_sdk_meeting_live_connector_configuration
     }
     /// Consumes the builder and constructs a [`LiveConnectorSourceConfiguration`](crate::types::LiveConnectorSourceConfiguration).
-    pub fn build(self) -> crate::types::LiveConnectorSourceConfiguration {
-        crate::types::LiveConnectorSourceConfiguration {
-            source_type: self.source_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_type`](crate::types::builders::LiveConnectorSourceConfigurationBuilder::source_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::LiveConnectorSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LiveConnectorSourceConfiguration {
+            source_type: self.source_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_type",
+                    "source_type was not specified but it is required when building LiveConnectorSourceConfiguration",
+                )
+            })?,
             chime_sdk_meeting_live_connector_configuration: self.chime_sdk_meeting_live_connector_configuration,
-        }
+        })
     }
 }

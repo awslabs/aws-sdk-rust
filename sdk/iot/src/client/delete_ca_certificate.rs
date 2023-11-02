@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCACertificate`](crate::operation::delete_ca_certificate::builders::DeleteCACertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`certificate_id(impl Into<String>)`](crate::operation::delete_ca_certificate::builders::DeleteCACertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::delete_ca_certificate::builders::DeleteCACertificateFluentBuilder::set_certificate_id): <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`certificate_id(impl Into<String>)`](crate::operation::delete_ca_certificate::builders::DeleteCACertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::delete_ca_certificate::builders::DeleteCACertificateFluentBuilder::set_certificate_id):<br>required: **true**<br><p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p><br>
     /// - On success, responds with [`DeleteCaCertificateOutput`](crate::operation::delete_ca_certificate::DeleteCaCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteCACertificateError>`](crate::operation::delete_ca_certificate::DeleteCACertificateError)
     pub fn delete_ca_certificate(&self) -> crate::operation::delete_ca_certificate::builders::DeleteCACertificateFluentBuilder {

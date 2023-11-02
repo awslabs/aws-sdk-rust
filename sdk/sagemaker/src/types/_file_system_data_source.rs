@@ -49,6 +49,7 @@ pub struct FileSystemDataSourceBuilder {
 }
 impl FileSystemDataSourceBuilder {
     /// <p>The file system id.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl FileSystemDataSourceBuilder {
         &self.file_system_id
     }
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
+    /// This field is required.
     pub fn file_system_access_mode(mut self, input: crate::types::FileSystemAccessMode) -> Self {
         self.file_system_access_mode = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl FileSystemDataSourceBuilder {
         &self.file_system_access_mode
     }
     /// <p>The file system type. </p>
+    /// This field is required.
     pub fn file_system_type(mut self, input: crate::types::FileSystemType) -> Self {
         self.file_system_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl FileSystemDataSourceBuilder {
         &self.file_system_type
     }
     /// <p>The full path to the directory to associate with the channel.</p>
+    /// This field is required.
     pub fn directory_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_path = ::std::option::Option::Some(input.into());
         self

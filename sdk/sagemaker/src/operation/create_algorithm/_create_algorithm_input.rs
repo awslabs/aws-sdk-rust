@@ -72,8 +72,10 @@ impl CreateAlgorithmInput {
         self.certify_for_marketplace
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAlgorithmInput {
@@ -97,6 +99,7 @@ pub struct CreateAlgorithmInputBuilder {
 }
 impl CreateAlgorithmInputBuilder {
     /// <p>The name of the algorithm.</p>
+    /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_name = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +137,7 @@ impl CreateAlgorithmInputBuilder {
     /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
     /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn training_specification(mut self, input: crate::types::TrainingSpecification) -> Self {
         self.training_specification = ::std::option::Option::Some(input);
         self

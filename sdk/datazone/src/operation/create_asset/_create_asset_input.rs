@@ -52,12 +52,16 @@ impl CreateAssetInput {
         self.description.as_deref()
     }
     /// <p>Glossary terms attached to the asset.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>Metadata forms attached to the asset.</p>
-    pub fn forms_input(&self) -> ::std::option::Option<&[crate::types::FormInput]> {
-        self.forms_input.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forms_input.is_none()`.
+    pub fn forms_input(&self) -> &[crate::types::FormInput] {
+        self.forms_input.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of the project that owns this asset.</p>
     pub fn owning_project_identifier(&self) -> ::std::option::Option<&str> {
@@ -114,6 +118,7 @@ pub struct CreateAssetInputBuilder {
 }
 impl CreateAssetInputBuilder {
     /// <p>Asset name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +133,7 @@ impl CreateAssetInputBuilder {
         &self.name
     }
     /// <p>Amazon DataZone domain where the asset is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +162,7 @@ impl CreateAssetInputBuilder {
         &self.external_identifier
     }
     /// <p>The unique identifier of this asset's type.</p>
+    /// This field is required.
     pub fn type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_identifier = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +245,7 @@ impl CreateAssetInputBuilder {
         &self.forms_input
     }
     /// <p>The unique identifier of the project that owns this asset.</p>
+    /// This field is required.
     pub fn owning_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_identifier = ::std::option::Option::Some(input.into());
         self

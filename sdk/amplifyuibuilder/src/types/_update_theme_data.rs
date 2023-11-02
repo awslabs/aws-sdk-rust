@@ -9,7 +9,7 @@ pub struct UpdateThemeData {
     /// <p>The name of the theme to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
+    pub values: ::std::vec::Vec<crate::types::ThemeValues>,
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
 }
@@ -23,12 +23,15 @@ impl UpdateThemeData {
         self.name.as_deref()
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[crate::types::ThemeValues] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::ThemeValues] {
+        self.overrides.as_deref().unwrap_or_default()
     }
 }
 impl UpdateThemeData {
@@ -117,12 +120,19 @@ impl UpdateThemeDataBuilder {
         &self.overrides
     }
     /// Consumes the builder and constructs a [`UpdateThemeData`](crate::types::UpdateThemeData).
-    pub fn build(self) -> crate::types::UpdateThemeData {
-        crate::types::UpdateThemeData {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`values`](crate::types::builders::UpdateThemeDataBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateThemeData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateThemeData {
             id: self.id,
             name: self.name,
-            values: self.values,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building UpdateThemeData",
+                )
+            })?,
             overrides: self.overrides,
-        }
+        })
     }
 }

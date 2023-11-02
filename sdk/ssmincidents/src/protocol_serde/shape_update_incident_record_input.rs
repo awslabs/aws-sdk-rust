@@ -3,44 +3,44 @@ pub fn ser_update_incident_record_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_incident_record::UpdateIncidentRecordInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("arn").string(var_1.as_str());
+    {
+        object.key("arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.chat_channel {
+    if let Some(var_1) = &input.chat_channel {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("chatChannel").start_object();
-        crate::protocol_serde::shape_chat_channel::ser_chat_channel(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("chatChannel").start_object();
+        crate::protocol_serde::shape_chat_channel::ser_chat_channel(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.impact {
+    if let Some(var_4) = &input.impact {
         object.key("impact").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_6) = &input.notification_targets {
-        let mut array_7 = object.key("notificationTargets").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.notification_targets {
+        let mut array_6 = object.key("notificationTargets").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_notification_target_item::ser_notification_target_item(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_notification_target_item::ser_notification_target_item(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_10) = &input.status {
-        object.key("status").string(var_10.as_str());
+    if let Some(var_9) = &input.status {
+        object.key("status").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.summary {
-        object.key("summary").string(var_11.as_str());
+    if let Some(var_10) = &input.summary {
+        object.key("summary").string(var_10.as_str());
     }
-    if let Some(var_12) = &input.title {
-        object.key("title").string(var_12.as_str());
+    if let Some(var_11) = &input.title {
+        object.key("title").string(var_11.as_str());
     }
     Ok(())
 }

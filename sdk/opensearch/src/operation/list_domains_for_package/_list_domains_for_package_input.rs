@@ -42,6 +42,7 @@ pub struct ListDomainsForPackageInputBuilder {
 }
 impl ListDomainsForPackageInputBuilder {
     /// <p>The unique identifier of the package for which to list associated domains.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self

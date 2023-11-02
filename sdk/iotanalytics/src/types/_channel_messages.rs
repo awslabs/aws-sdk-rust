@@ -13,8 +13,10 @@ impl ChannelMessages {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your channel messages.</p>
     /// <p>You must use the full path for the key.</p>
     /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code> </p>
-    pub fn s3_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.s3_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_paths.is_none()`.
+    pub fn s3_paths(&self) -> &[::std::string::String] {
+        self.s3_paths.as_deref().unwrap_or_default()
     }
 }
 impl ChannelMessages {

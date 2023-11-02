@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageAttributeValue {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
-    pub data_type: ::std::option::Option<::std::string::String>,
+    pub data_type: ::std::string::String,
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
@@ -14,8 +14,9 @@ pub struct MessageAttributeValue {
 }
 impl MessageAttributeValue {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&str> {
-        self.data_type.as_deref()
+    pub fn data_type(&self) -> &str {
+        use std::ops::Deref;
+        self.data_type.deref()
     }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     pub fn string_value(&self) -> ::std::option::Option<&str> {
@@ -43,6 +44,7 @@ pub struct MessageAttributeValueBuilder {
 }
 impl MessageAttributeValueBuilder {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
         self
@@ -85,11 +87,18 @@ impl MessageAttributeValueBuilder {
         &self.binary_value
     }
     /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::types::MessageAttributeValue).
-    pub fn build(self) -> crate::types::MessageAttributeValue {
-        crate::types::MessageAttributeValue {
-            data_type: self.data_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_type`](crate::types::builders::MessageAttributeValueBuilder::data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageAttributeValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MessageAttributeValue {
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building MessageAttributeValue",
+                )
+            })?,
             string_value: self.string_value,
             binary_value: self.binary_value,
-        }
+        })
     }
 }

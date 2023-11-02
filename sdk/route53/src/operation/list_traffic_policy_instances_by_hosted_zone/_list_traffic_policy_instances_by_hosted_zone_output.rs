@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByHostedZoneOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
-    pub traffic_policy_instances: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicyInstance>>,
+    pub traffic_policy_instances: ::std::vec::Vec<crate::types::TrafficPolicyInstance>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
     pub traffic_policy_instance_name_marker: ::std::option::Option<::std::string::String>,
     /// <p>If <code>IsTruncated</code> is true, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance in the next group of traffic policy instances.</p>
@@ -13,13 +13,14 @@ pub struct ListTrafficPolicyInstancesByHostedZoneOutput {
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
     pub is_truncated: bool,
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the current response.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     _request_id: Option<String>,
 }
 impl ListTrafficPolicyInstancesByHostedZoneOutput {
     /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
-    pub fn traffic_policy_instances(&self) -> ::std::option::Option<&[crate::types::TrafficPolicyInstance]> {
-        self.traffic_policy_instances.as_deref()
+    pub fn traffic_policy_instances(&self) -> &[crate::types::TrafficPolicyInstance] {
+        use std::ops::Deref;
+        self.traffic_policy_instances.deref()
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
     pub fn traffic_policy_instance_name_marker(&self) -> ::std::option::Option<&str> {
@@ -34,7 +35,7 @@ impl ListTrafficPolicyInstancesByHostedZoneOutput {
         self.is_truncated
     }
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the current response.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
 }
@@ -112,6 +113,7 @@ impl ListTrafficPolicyInstancesByHostedZoneOutputBuilder {
         &self.traffic_policy_instance_type_marker
     }
     /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
+    /// This field is required.
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
@@ -126,6 +128,7 @@ impl ListTrafficPolicyInstancesByHostedZoneOutputBuilder {
         &self.is_truncated
     }
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the current response.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -149,14 +152,34 @@ impl ListTrafficPolicyInstancesByHostedZoneOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput).
-    pub fn build(self) -> crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput {
-        crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput {
-            traffic_policy_instances: self.traffic_policy_instances,
-            traffic_policy_instance_name_marker: self.traffic_policy_instance_name_marker,
-            traffic_policy_instance_type_marker: self.traffic_policy_instance_type_marker,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            max_items: self.max_items,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`traffic_policy_instances`](crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneOutputBuilder::traffic_policy_instances)
+    /// - [`max_items`](crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneOutputBuilder::max_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput {
+                traffic_policy_instances: self.traffic_policy_instances.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "traffic_policy_instances",
+                        "traffic_policy_instances was not specified but it is required when building ListTrafficPolicyInstancesByHostedZoneOutput",
+                    )
+                })?,
+                traffic_policy_instance_name_marker: self.traffic_policy_instance_name_marker,
+                traffic_policy_instance_type_marker: self.traffic_policy_instance_type_marker,
+                is_truncated: self.is_truncated.unwrap_or_default(),
+                max_items: self.max_items.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "max_items",
+                        "max_items was not specified but it is required when building ListTrafficPolicyInstancesByHostedZoneOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -66,6 +66,7 @@ pub struct CreateAssetTypeInputBuilder {
 }
 impl CreateAssetTypeInputBuilder {
     /// <p>The unique identifier of the Amazon DataZone domain where the custom asset type is being created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl CreateAssetTypeInputBuilder {
         &self.domain_identifier
     }
     /// <p>The name of the custom asset type.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +133,7 @@ impl CreateAssetTypeInputBuilder {
         &self.forms_input
     }
     /// <p>The identifier of the Amazon DataZone project that is to own the custom asset type.</p>
+    /// This field is required.
     pub fn owning_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_identifier = ::std::option::Option::Some(input.into());
         self

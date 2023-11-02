@@ -15,8 +15,10 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the quota increase requests.</p>
-    pub fn requested_quotas(&self) -> ::std::option::Option<&[crate::types::RequestedServiceQuotaChange]> {
-        self.requested_quotas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_quotas.is_none()`.
+    pub fn requested_quotas(&self) -> &[crate::types::RequestedServiceQuotaChange] {
+        self.requested_quotas.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRequestedServiceQuotaChangeHistoryByQuotaOutput {

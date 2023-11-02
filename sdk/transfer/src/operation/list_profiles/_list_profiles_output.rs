@@ -6,7 +6,7 @@ pub struct ListProfilesOutput {
     /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::ListedProfile>>,
+    pub profiles: ::std::vec::Vec<crate::types::ListedProfile>,
     _request_id: Option<String>,
 }
 impl ListProfilesOutput {
@@ -15,8 +15,9 @@ impl ListProfilesOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of a profile.</p>
-    pub fn profiles(&self) -> ::std::option::Option<&[crate::types::ListedProfile]> {
-        self.profiles.as_deref()
+    pub fn profiles(&self) -> &[crate::types::ListedProfile] {
+        use std::ops::Deref;
+        self.profiles.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListProfilesOutput {
@@ -84,11 +85,20 @@ impl ListProfilesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProfilesOutput`](crate::operation::list_profiles::ListProfilesOutput).
-    pub fn build(self) -> crate::operation::list_profiles::ListProfilesOutput {
-        crate::operation::list_profiles::ListProfilesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiles`](crate::operation::list_profiles::builders::ListProfilesOutputBuilder::profiles)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_profiles::ListProfilesOutput {
             next_token: self.next_token,
-            profiles: self.profiles,
+            profiles: self.profiles.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiles",
+                    "profiles was not specified but it is required when building ListProfilesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

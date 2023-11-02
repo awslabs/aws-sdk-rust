@@ -63,6 +63,7 @@ impl VirtualGatewayListenerBuilder {
         &self.health_check
     }
     /// <p>The port mapping information for the listener.</p>
+    /// This field is required.
     pub fn port_mapping(mut self, input: crate::types::VirtualGatewayPortMapping) -> Self {
         self.port_mapping = ::std::option::Option::Some(input);
         self

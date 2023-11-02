@@ -34,6 +34,7 @@ pub struct DeleteCoreNetworkPolicyVersionInputBuilder {
 }
 impl DeleteCoreNetworkPolicyVersionInputBuilder {
     /// <p>The ID of a core network for the deleted policy.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteCoreNetworkPolicyVersionInputBuilder {
         &self.core_network_id
     }
     /// <p>The version ID of the deleted policy.</p>
+    /// This field is required.
     pub fn policy_version_id(mut self, input: i32) -> Self {
         self.policy_version_id = ::std::option::Option::Some(input);
         self

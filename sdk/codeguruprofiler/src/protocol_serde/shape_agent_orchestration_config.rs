@@ -3,8 +3,8 @@ pub fn ser_agent_orchestration_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentOrchestrationConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.profiling_enabled {
-        object.key("profilingEnabled").boolean(*var_1);
+    {
+        object.key("profilingEnabled").boolean(input.profiling_enabled);
     }
     Ok(())
 }
@@ -37,7 +37,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::agent_orchestration_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

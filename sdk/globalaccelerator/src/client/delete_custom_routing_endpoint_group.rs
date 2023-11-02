@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCustomRoutingEndpointGroup`](crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::delete_custom_routing_endpoint_group::builders::DeleteCustomRoutingEndpointGroupFluentBuilder::set_endpoint_group_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p><br>
     /// - On success, responds with [`DeleteCustomRoutingEndpointGroupOutput`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteCustomRoutingEndpointGroupError>`](crate::operation::delete_custom_routing_endpoint_group::DeleteCustomRoutingEndpointGroupError)
     pub fn delete_custom_routing_endpoint_group(

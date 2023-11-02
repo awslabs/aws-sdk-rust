@@ -11,8 +11,10 @@ pub struct ListEntitiesOutput {
 }
 impl ListEntitiesOutput {
     /// <p> Array of <code>EntitySummary</code> object.</p>
-    pub fn entity_summary_list(&self) -> ::std::option::Option<&[crate::types::EntitySummary]> {
-        self.entity_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_summary_list.is_none()`.
+    pub fn entity_summary_list(&self) -> &[crate::types::EntitySummary] {
+        self.entity_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The value of the next token if it exists. Null if there is no more result.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

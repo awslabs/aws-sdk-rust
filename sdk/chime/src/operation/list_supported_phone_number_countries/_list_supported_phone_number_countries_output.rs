@@ -9,8 +9,10 @@ pub struct ListSupportedPhoneNumberCountriesOutput {
 }
 impl ListSupportedPhoneNumberCountriesOutput {
     /// <p>The supported phone number countries.</p>
-    pub fn phone_number_countries(&self) -> ::std::option::Option<&[crate::types::PhoneNumberCountry]> {
-        self.phone_number_countries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_countries.is_none()`.
+    pub fn phone_number_countries(&self) -> &[crate::types::PhoneNumberCountry] {
+        self.phone_number_countries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSupportedPhoneNumberCountriesOutput {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMultiplex`](crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder::set_multiplex_id): The ID of the multiplex.
+    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::delete_multiplex::builders::DeleteMultiplexFluentBuilder::set_multiplex_id):<br>required: **true**<br>The ID of the multiplex.<br>
     /// - On success, responds with [`DeleteMultiplexOutput`](crate::operation::delete_multiplex::DeleteMultiplexOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_multiplex::DeleteMultiplexOutput::arn): The unique arn of the multiplex.
     ///   - [`availability_zones(Option<Vec<String>>)`](crate::operation::delete_multiplex::DeleteMultiplexOutput::availability_zones): A list of availability zones for the multiplex.

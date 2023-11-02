@@ -34,6 +34,7 @@ pub struct UpdateEnvironmentAccountConnectionOutputBuilder {
 }
 impl UpdateEnvironmentAccountConnectionOutputBuilder {
     /// <p>The environment account connection detail data that's returned by Proton.</p>
+    /// This field is required.
     pub fn environment_account_connection(mut self, input: crate::types::EnvironmentAccountConnection) -> Self {
         self.environment_account_connection = ::std::option::Option::Some(input);
         self

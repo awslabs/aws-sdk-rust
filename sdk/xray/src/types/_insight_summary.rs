@@ -49,8 +49,10 @@ impl InsightSummary {
         self.root_cause_service_id.as_ref()
     }
     /// <p> Categories The categories that label and describe the type of insight.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[crate::types::InsightCategory]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[crate::types::InsightCategory] {
+        self.categories.as_deref().unwrap_or_default()
     }
     /// <p>The current state of the insight.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::InsightState> {
@@ -77,8 +79,10 @@ impl InsightSummary {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service within the insight that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> ::std::option::Option<&[crate::types::AnomalousService]> {
-        self.top_anomalous_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.top_anomalous_services.is_none()`.
+    pub fn top_anomalous_services(&self) -> &[crate::types::AnomalousService] {
+        self.top_anomalous_services.as_deref().unwrap_or_default()
     }
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
     pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentDataConfiguration {
     /// <p>The name of the data model to use to bind data to a component.</p>
-    pub model: ::std::option::Option<::std::string::String>,
+    pub model: ::std::string::String,
     /// <p>Describes how to sort the component's properties.</p>
     pub sort: ::std::option::Option<::std::vec::Vec<crate::types::SortProperty>>,
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
@@ -15,20 +15,25 @@ pub struct ComponentDataConfiguration {
 }
 impl ComponentDataConfiguration {
     /// <p>The name of the data model to use to bind data to a component.</p>
-    pub fn model(&self) -> ::std::option::Option<&str> {
-        self.model.as_deref()
+    pub fn model(&self) -> &str {
+        use std::ops::Deref;
+        self.model.deref()
     }
     /// <p>Describes how to sort the component's properties.</p>
-    pub fn sort(&self) -> ::std::option::Option<&[crate::types::SortProperty]> {
-        self.sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort.is_none()`.
+    pub fn sort(&self) -> &[crate::types::SortProperty] {
+        self.sort.as_deref().unwrap_or_default()
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
     pub fn predicate(&self) -> ::std::option::Option<&crate::types::Predicate> {
         self.predicate.as_ref()
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identifiers.is_none()`.
+    pub fn identifiers(&self) -> &[::std::string::String] {
+        self.identifiers.as_deref().unwrap_or_default()
     }
 }
 impl ComponentDataConfiguration {
@@ -49,6 +54,7 @@ pub struct ComponentDataConfigurationBuilder {
 }
 impl ComponentDataConfigurationBuilder {
     /// <p>The name of the data model to use to bind data to a component.</p>
+    /// This field is required.
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model = ::std::option::Option::Some(input.into());
         self
@@ -117,12 +123,19 @@ impl ComponentDataConfigurationBuilder {
         &self.identifiers
     }
     /// Consumes the builder and constructs a [`ComponentDataConfiguration`](crate::types::ComponentDataConfiguration).
-    pub fn build(self) -> crate::types::ComponentDataConfiguration {
-        crate::types::ComponentDataConfiguration {
-            model: self.model,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`model`](crate::types::builders::ComponentDataConfigurationBuilder::model)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentDataConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentDataConfiguration {
+            model: self.model.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "model",
+                    "model was not specified but it is required when building ComponentDataConfiguration",
+                )
+            })?,
             sort: self.sort,
             predicate: self.predicate,
             identifiers: self.identifiers,
-        }
+        })
     }
 }

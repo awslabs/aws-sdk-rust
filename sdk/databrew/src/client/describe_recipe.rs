@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRecipe`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_name): <p>The name of the recipe to be described.</p>
-    ///   - [`recipe_version(impl Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::recipe_version) / [`set_recipe_version(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_recipe_version): <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_name):<br>required: **true**<br><p>The name of the recipe to be described.</p><br>
+    ///   - [`recipe_version(impl Into<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::recipe_version) / [`set_recipe_version(Option<String>)`](crate::operation::describe_recipe::builders::DescribeRecipeFluentBuilder::set_recipe_version):<br>required: **false**<br><p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p><br>
     /// - On success, responds with [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput) with field(s):
     ///   - [`created_by(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::created_by): <p>The identifier (user name) of the user who created the recipe.</p>
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_recipe::DescribeRecipeOutput::create_date): <p>The date and time that the recipe was created.</p>
@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`published_by(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::published_by): <p>The identifier (user name) of the user who last published the recipe.</p>
     ///   - [`published_date(Option<DateTime>)`](crate::operation::describe_recipe::DescribeRecipeOutput::published_date): <p>The date and time when the recipe was last published.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::description): <p>The description of the recipe.</p>
-    ///   - [`name(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::name): <p>The name of the recipe.</p>
+    ///   - [`name(String)`](crate::operation::describe_recipe::DescribeRecipeOutput::name): <p>The name of the recipe.</p>
     ///   - [`steps(Option<Vec<RecipeStep>>)`](crate::operation::describe_recipe::DescribeRecipeOutput::steps): <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_recipe::DescribeRecipeOutput::tags): <p>Metadata tags associated with this project.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::describe_recipe::DescribeRecipeOutput::resource_arn): <p>The ARN of the recipe.</p>

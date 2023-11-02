@@ -34,12 +34,16 @@ impl DescribeLaunchTemplatesInput {
         self.dry_run
     }
     /// <p>One or more launch template IDs.</p>
-    pub fn launch_template_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_template_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_ids.is_none()`.
+    pub fn launch_template_ids(&self) -> &[::std::string::String] {
+        self.launch_template_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more launch template names.</p>
-    pub fn launch_template_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_template_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_names.is_none()`.
+    pub fn launch_template_names(&self) -> &[::std::string::String] {
+        self.launch_template_names.as_deref().unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -54,8 +58,10 @@ impl DescribeLaunchTemplatesInput {
     /// </key></p> </li>
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -3,32 +3,32 @@ pub fn ser_sentiment_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SentimentFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sentiments {
-        let mut array_2 = object.key("Sentiments").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("Sentiments").start_array();
+        for item_2 in &input.sentiments {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.absolute_time_range {
+    if let Some(var_3) = &input.absolute_time_range {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AbsoluteTimeRange").start_object();
-        crate::protocol_serde::shape_absolute_time_range::ser_absolute_time_range(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("AbsoluteTimeRange").start_object();
+        crate::protocol_serde::shape_absolute_time_range::ser_absolute_time_range(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.relative_time_range {
+    if let Some(var_5) = &input.relative_time_range {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("RelativeTimeRange").start_object();
-        crate::protocol_serde::shape_relative_time_range::ser_relative_time_range(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("RelativeTimeRange").start_object();
+        crate::protocol_serde::shape_relative_time_range::ser_relative_time_range(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.participant_role {
-        object.key("ParticipantRole").string(var_8.as_str());
+    if let Some(var_7) = &input.participant_role {
+        object.key("ParticipantRole").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.negate {
-        object.key("Negate").boolean(*var_9);
+    if let Some(var_8) = &input.negate {
+        object.key("Negate").boolean(*var_8);
     }
     Ok(())
 }
@@ -79,7 +79,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sentiment_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

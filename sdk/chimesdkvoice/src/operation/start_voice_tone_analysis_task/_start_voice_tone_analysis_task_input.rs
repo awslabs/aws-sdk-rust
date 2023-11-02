@@ -48,6 +48,7 @@ pub struct StartVoiceToneAnalysisTaskInputBuilder {
 }
 impl StartVoiceToneAnalysisTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The transaction ID.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         &self.transaction_id
     }
     /// <p>The language code.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self

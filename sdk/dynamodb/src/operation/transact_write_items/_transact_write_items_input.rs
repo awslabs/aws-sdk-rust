@@ -22,8 +22,10 @@ pub struct TransactWriteItemsInput {
 }
 impl TransactWriteItemsInput {
     /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
-    pub fn transact_items(&self) -> ::std::option::Option<&[crate::types::TransactWriteItem]> {
-        self.transact_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transact_items.is_none()`.
+    pub fn transact_items(&self) -> &[crate::types::TransactWriteItem] {
+        self.transact_items.as_deref().unwrap_or_default()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>

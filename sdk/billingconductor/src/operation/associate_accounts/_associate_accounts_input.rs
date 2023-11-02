@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateAccountsInput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p> The associating array of account IDs. </p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl AssociateAccountsInput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.account_ids.deref()
     }
 }
 impl AssociateAccountsInput {
@@ -34,6 +36,7 @@ pub struct AssociateAccountsInputBuilder {
 }
 impl AssociateAccountsInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl AssociateAccountsInputBuilder {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`AssociateAccountsInput`](crate::operation::associate_accounts::AssociateAccountsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder::arn)
+    /// - [`account_ids`](crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder::account_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_accounts::AssociateAccountsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_accounts::AssociateAccountsInput {
-            arn: self.arn,
-            account_ids: self.account_ids,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AssociateAccountsInput",
+                )
+            })?,
+            account_ids: self.account_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_ids",
+                    "account_ids was not specified but it is required when building AssociateAccountsInput",
+                )
+            })?,
         })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub filter_id: ::std::option::Option<::std::string::String>,
+    pub filter_id: ::std::string::String,
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The value of a <code>TimeEquality</code> filter.</p>
@@ -22,8 +22,9 @@ pub struct TimeEqualityFilter {
 }
 impl TimeEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> ::std::option::Option<&str> {
-        self.filter_id.as_deref()
+    pub fn filter_id(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_id.deref()
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
@@ -69,6 +70,7 @@ pub struct TimeEqualityFilterBuilder {
 }
 impl TimeEqualityFilterBuilder {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    /// This field is required.
     pub fn filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl TimeEqualityFilterBuilder {
         &self.filter_id
     }
     /// <p>The column that the filter is applied to.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -162,14 +165,21 @@ impl TimeEqualityFilterBuilder {
         &self.rolling_date
     }
     /// Consumes the builder and constructs a [`TimeEqualityFilter`](crate::types::TimeEqualityFilter).
-    pub fn build(self) -> crate::types::TimeEqualityFilter {
-        crate::types::TimeEqualityFilter {
-            filter_id: self.filter_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_id`](crate::types::builders::TimeEqualityFilterBuilder::filter_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeEqualityFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeEqualityFilter {
+            filter_id: self.filter_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter_id",
+                    "filter_id was not specified but it is required when building TimeEqualityFilter",
+                )
+            })?,
             column: self.column,
             value: self.value,
             parameter_name: self.parameter_name,
             time_granularity: self.time_granularity,
             rolling_date: self.rolling_date,
-        }
+        })
     }
 }

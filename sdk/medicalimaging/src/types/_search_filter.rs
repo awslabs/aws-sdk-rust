@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFilter {
     /// <p>The search filter values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::SearchByAttributeValue>>,
+    pub values: ::std::vec::Vec<crate::types::SearchByAttributeValue>,
     /// <p>The search filter operator for <code>imageSetDateTime</code>.</p>
-    pub operator: ::std::option::Option<crate::types::Operator>,
+    pub operator: crate::types::Operator,
 }
 impl SearchFilter {
     /// <p>The search filter values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::SearchByAttributeValue]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[crate::types::SearchByAttributeValue] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The search filter operator for <code>imageSetDateTime</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::Operator {
+        &self.operator
     }
 }
 impl SearchFilter {
@@ -55,6 +56,7 @@ impl SearchFilterBuilder {
         &self.values
     }
     /// <p>The search filter operator for <code>imageSetDateTime</code>.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl SearchFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`SearchFilter`](crate::types::SearchFilter).
-    pub fn build(self) -> crate::types::SearchFilter {
-        crate::types::SearchFilter {
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`values`](crate::types::builders::SearchFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::SearchFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchFilter {
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building SearchFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building SearchFilter",
+                )
+            })?,
+        })
     }
 }

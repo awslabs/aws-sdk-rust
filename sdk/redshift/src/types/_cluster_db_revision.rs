@@ -27,8 +27,10 @@ impl ClusterDbRevision {
         self.database_revision_release_date.as_ref()
     }
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-    pub fn revision_targets(&self) -> ::std::option::Option<&[crate::types::RevisionTarget]> {
-        self.revision_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revision_targets.is_none()`.
+    pub fn revision_targets(&self) -> &[crate::types::RevisionTarget] {
+        self.revision_targets.as_deref().unwrap_or_default()
     }
 }
 impl ClusterDbRevision {

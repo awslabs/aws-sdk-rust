@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackageImportJobInput {
     /// <p>The job's ID.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
 }
 impl DescribePackageImportJobInput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
 }
 impl DescribePackageImportJobInput {
@@ -27,6 +28,7 @@ pub struct DescribePackageImportJobInputBuilder {
 }
 impl DescribePackageImportJobInputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,21 @@ impl DescribePackageImportJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribePackageImportJobInput`](crate::operation::describe_package_import_job::DescribePackageImportJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobInputBuilder::job_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_package_import_job::DescribePackageImportJobInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::describe_package_import_job::DescribePackageImportJobInput { job_id: self.job_id })
+        ::std::result::Result::Ok(crate::operation::describe_package_import_job::DescribePackageImportJobInput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building DescribePackageImportJobInput",
+                )
+            })?,
+        })
     }
 }

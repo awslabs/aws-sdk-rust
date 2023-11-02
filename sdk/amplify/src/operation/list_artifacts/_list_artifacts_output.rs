@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArtifactsOutput {
     /// <p> A list of artifacts. </p>
-    pub artifacts: ::std::option::Option<::std::vec::Vec<crate::types::Artifact>>,
+    pub artifacts: ::std::vec::Vec<crate::types::Artifact>,
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListArtifactsOutput {
     /// <p> A list of artifacts. </p>
-    pub fn artifacts(&self) -> ::std::option::Option<&[crate::types::Artifact]> {
-        self.artifacts.as_deref()
+    pub fn artifacts(&self) -> &[crate::types::Artifact] {
+        use std::ops::Deref;
+        self.artifacts.deref()
     }
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListArtifactsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput).
-    pub fn build(self) -> crate::operation::list_artifacts::ListArtifactsOutput {
-        crate::operation::list_artifacts::ListArtifactsOutput {
-            artifacts: self.artifacts,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`artifacts`](crate::operation::list_artifacts::builders::ListArtifactsOutputBuilder::artifacts)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_artifacts::ListArtifactsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_artifacts::ListArtifactsOutput {
+            artifacts: self.artifacts.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "artifacts",
+                    "artifacts was not specified but it is required when building ListArtifactsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

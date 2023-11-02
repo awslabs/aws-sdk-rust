@@ -19,24 +19,30 @@ pub struct AwsEc2RouteTableDetails {
 }
 impl AwsEc2RouteTableDetails {
     /// <p> The associations between a route table and one or more subnets or a gateway. </p>
-    pub fn association_set(&self) -> ::std::option::Option<&[crate::types::AssociationSetDetails]> {
-        self.association_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_set.is_none()`.
+    pub fn association_set(&self) -> &[crate::types::AssociationSetDetails] {
+        self.association_set.as_deref().unwrap_or_default()
     }
     /// <p> The ID of the Amazon Web Services account that owns the route table. </p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p> Describes a virtual private gateway propagating route. </p>
-    pub fn propagating_vgw_set(&self) -> ::std::option::Option<&[crate::types::PropagatingVgwSetDetails]> {
-        self.propagating_vgw_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.propagating_vgw_set.is_none()`.
+    pub fn propagating_vgw_set(&self) -> &[crate::types::PropagatingVgwSetDetails] {
+        self.propagating_vgw_set.as_deref().unwrap_or_default()
     }
     /// <p> The ID of the route table. </p>
     pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
     /// <p> The routes in the route table. </p>
-    pub fn route_set(&self) -> ::std::option::Option<&[crate::types::RouteSetDetails]> {
-        self.route_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_set.is_none()`.
+    pub fn route_set(&self) -> &[crate::types::RouteSetDetails] {
+        self.route_set.as_deref().unwrap_or_default()
     }
     /// <p> The ID of the virtual private cloud (VPC). </p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeArtifact`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`artifact_arn(impl Into<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::set_artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    ///   - [`artifact_arn(impl Into<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::operation::describe_artifact::builders::DescribeArtifactFluentBuilder::set_artifact_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the artifact to describe.</p><br>
     /// - On success, responds with [`DescribeArtifactOutput`](crate::operation::describe_artifact::DescribeArtifactOutput) with field(s):
     ///   - [`artifact_name(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_name): <p>The name of the artifact.</p>
     ///   - [`artifact_arn(Option<String>)`](crate::operation::describe_artifact::DescribeArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>

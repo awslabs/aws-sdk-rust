@@ -34,6 +34,7 @@ pub struct DeleteConnectorProfileInputBuilder {
 }
 impl DeleteConnectorProfileInputBuilder {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
+    /// This field is required.
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_profile_name = ::std::option::Option::Some(input.into());
         self

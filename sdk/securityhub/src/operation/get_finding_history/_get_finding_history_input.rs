@@ -59,6 +59,7 @@ pub struct GetFindingHistoryInputBuilder {
 }
 impl GetFindingHistoryInputBuilder {
     /// <p>Identifies which finding to get the finding history for.</p>
+    /// This field is required.
     pub fn finding_identifier(mut self, input: crate::types::AwsSecurityFindingIdentifier) -> Self {
         self.finding_identifier = ::std::option::Option::Some(input);
         self

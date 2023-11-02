@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::option::Option<::std::string::String>,
+    pub service_identifier: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of IAM policy.</p>
@@ -16,8 +16,9 @@ pub struct UpdateServiceInput {
 }
 impl UpdateServiceInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_identifier.as_deref()
+    pub fn service_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_identifier.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct UpdateServiceInputBuilder {
 }
 impl UpdateServiceInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -103,11 +105,18 @@ impl UpdateServiceInputBuilder {
         &self.auth_type
     }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_identifier`](crate::operation::update_service::builders::UpdateServiceInputBuilder::service_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_service::UpdateServiceInput {
-            service_identifier: self.service_identifier,
+            service_identifier: self.service_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_identifier",
+                    "service_identifier was not specified but it is required when building UpdateServiceInput",
+                )
+            })?,
             certificate_arn: self.certificate_arn,
             auth_type: self.auth_type,
         })

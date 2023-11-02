@@ -16,8 +16,10 @@ impl DescribeSchemasOutput {
         self.marker.as_deref()
     }
     /// <p>The described schema.</p>
-    pub fn schemas(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schemas.is_none()`.
+    pub fn schemas(&self) -> &[::std::string::String] {
+        self.schemas.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSchemasOutput {

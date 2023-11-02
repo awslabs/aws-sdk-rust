@@ -8,7 +8,7 @@ pub struct KeyMetadata {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the KMS key.</p>
-    pub key_id: ::std::option::Option<::std::string::String>,
+    pub key_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the KMS key was created.</p>
@@ -76,8 +76,9 @@ impl KeyMetadata {
         self.aws_account_id.as_deref()
     }
     /// <p>The globally unique identifier for the KMS key.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
-        self.key_id.as_deref()
+    pub fn key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.key_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -145,13 +146,17 @@ impl KeyMetadata {
     }
     /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
-    pub fn encryption_algorithms(&self) -> ::std::option::Option<&[crate::types::EncryptionAlgorithmSpec]> {
-        self.encryption_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encryption_algorithms.is_none()`.
+    pub fn encryption_algorithms(&self) -> &[crate::types::EncryptionAlgorithmSpec] {
+        self.encryption_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
     /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
-    pub fn signing_algorithms(&self) -> ::std::option::Option<&[crate::types::SigningAlgorithmSpec]> {
-        self.signing_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signing_algorithms.is_none()`.
+    pub fn signing_algorithms(&self) -> &[crate::types::SigningAlgorithmSpec] {
+        self.signing_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -175,8 +180,10 @@ impl KeyMetadata {
     }
     /// <p>The message authentication code (MAC) algorithm that the HMAC KMS key supports.</p>
     /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
-    pub fn mac_algorithms(&self) -> ::std::option::Option<&[crate::types::MacAlgorithmSpec]> {
-        self.mac_algorithms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_algorithms.is_none()`.
+    pub fn mac_algorithms(&self) -> &[crate::types::MacAlgorithmSpec] {
+        self.mac_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -236,6 +243,7 @@ impl KeyMetadataBuilder {
         &self.aws_account_id
     }
     /// <p>The globally unique identifier for the KMS key.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -624,10 +632,17 @@ impl KeyMetadataBuilder {
         &self.xks_key_configuration
     }
     /// Consumes the builder and constructs a [`KeyMetadata`](crate::types::KeyMetadata).
-    pub fn build(self) -> crate::types::KeyMetadata {
-        crate::types::KeyMetadata {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_id`](crate::types::builders::KeyMetadataBuilder::key_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeyMetadata {
             aws_account_id: self.aws_account_id,
-            key_id: self.key_id,
+            key_id: self.key_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_id",
+                    "key_id was not specified but it is required when building KeyMetadata",
+                )
+            })?,
             arn: self.arn,
             creation_date: self.creation_date,
             enabled: self.enabled.unwrap_or_default(),
@@ -650,6 +665,6 @@ impl KeyMetadataBuilder {
             pending_deletion_window_in_days: self.pending_deletion_window_in_days,
             mac_algorithms: self.mac_algorithms,
             xks_key_configuration: self.xks_key_configuration,
-        }
+        })
     }
 }

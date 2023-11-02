@@ -11,8 +11,10 @@ pub struct ListAdminAccountsForOrganizationOutput {
 }
 impl ListAdminAccountsForOrganizationOutput {
     /// <p>A list of Firewall Manager administrator accounts within the organization that were onboarded as administrators by <code>AssociateAdminAccount</code> or <code>PutAdminAccount</code>.</p>
-    pub fn admin_accounts(&self) -> ::std::option::Option<&[crate::types::AdminAccountSummary]> {
-        self.admin_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_accounts.is_none()`.
+    pub fn admin_accounts(&self) -> &[crate::types::AdminAccountSummary] {
+        self.admin_accounts.as_deref().unwrap_or_default()
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -48,6 +48,7 @@ pub struct GetGroupsForCapacityReservationInputBuilder {
 }
 impl GetGroupsForCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
+    /// This field is required.
     pub fn capacity_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self

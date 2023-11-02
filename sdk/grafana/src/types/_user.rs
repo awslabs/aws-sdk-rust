@@ -6,19 +6,20 @@
 pub struct User {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Specifies whether this is a single user or a group.</p>
-    pub r#type: ::std::option::Option<crate::types::UserType>,
+    pub r#type: crate::types::UserType,
 }
 impl User {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Specifies whether this is a single user or a group.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::UserType {
+        &self.r#type
     }
 }
 impl User {
@@ -38,6 +39,7 @@ pub struct UserBuilder {
 impl UserBuilder {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +56,7 @@ impl UserBuilder {
         &self.id
     }
     /// <p>Specifies whether this is a single user or a group.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -68,10 +71,20 @@ impl UserBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
-    pub fn build(self) -> crate::types::User {
-        crate::types::User {
-            id: self.id,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::UserBuilder::id)
+    /// - [`r#type`](crate::types::builders::UserBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::User {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building User")
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building User",
+                )
+            })?,
+        })
     }
 }

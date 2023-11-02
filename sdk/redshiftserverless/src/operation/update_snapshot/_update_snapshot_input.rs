@@ -34,6 +34,7 @@ pub struct UpdateSnapshotInputBuilder {
 }
 impl UpdateSnapshotInputBuilder {
     /// <p>The name of the snapshot.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self

@@ -55,6 +55,7 @@ pub struct ListAttachedUserPoliciesInputBuilder {
 impl ListAttachedUserPoliciesInputBuilder {
     /// <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self

@@ -70,8 +70,10 @@ impl GetMethodOutput {
         self.method_integration.as_ref()
     }
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    pub fn authorization_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.authorization_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorization_scopes.is_none()`.
+    pub fn authorization_scopes(&self) -> &[::std::string::String] {
+        self.authorization_scopes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMethodOutput {

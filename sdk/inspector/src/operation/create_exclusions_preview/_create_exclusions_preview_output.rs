@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExclusionsPreviewOutput {
     /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
-    pub preview_token: ::std::option::Option<::std::string::String>,
+    pub preview_token: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateExclusionsPreviewOutput {
     /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
-    pub fn preview_token(&self) -> ::std::option::Option<&str> {
-        self.preview_token.as_deref()
+    pub fn preview_token(&self) -> &str {
+        use std::ops::Deref;
+        self.preview_token.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateExclusionsPreviewOutput {
@@ -34,6 +35,7 @@ pub struct CreateExclusionsPreviewOutputBuilder {
 }
 impl CreateExclusionsPreviewOutputBuilder {
     /// <p>Specifies the unique identifier of the requested exclusions preview. You can use the unique identifier to retrieve the exclusions preview when running the GetExclusionsPreview API.</p>
+    /// This field is required.
     pub fn preview_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preview_token = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateExclusionsPreviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateExclusionsPreviewOutput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput).
-    pub fn build(self) -> crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput {
-        crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput {
-            preview_token: self.preview_token,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`preview_token`](crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewOutputBuilder::preview_token)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput {
+            preview_token: self.preview_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "preview_token",
+                    "preview_token was not specified but it is required when building CreateExclusionsPreviewOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

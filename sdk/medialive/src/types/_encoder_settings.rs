@@ -33,8 +33,10 @@ pub struct EncoderSettings {
 }
 impl EncoderSettings {
     /// Placeholder documentation for __listOfAudioDescription
-    pub fn audio_descriptions(&self) -> ::std::option::Option<&[crate::types::AudioDescription]> {
-        self.audio_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_descriptions.is_none()`.
+    pub fn audio_descriptions(&self) -> &[crate::types::AudioDescription] {
+        self.audio_descriptions.as_deref().unwrap_or_default()
     }
     /// Settings for ad avail blanking.
     pub fn avail_blanking(&self) -> ::std::option::Option<&crate::types::AvailBlanking> {
@@ -49,8 +51,10 @@ impl EncoderSettings {
         self.blackout_slate.as_ref()
     }
     /// Settings for caption decriptions
-    pub fn caption_descriptions(&self) -> ::std::option::Option<&[crate::types::CaptionDescription]> {
-        self.caption_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_descriptions.is_none()`.
+    pub fn caption_descriptions(&self) -> &[crate::types::CaptionDescription] {
+        self.caption_descriptions.as_deref().unwrap_or_default()
     }
     /// Feature Activations
     pub fn feature_activations(&self) -> ::std::option::Option<&crate::types::FeatureActivations> {
@@ -69,16 +73,20 @@ impl EncoderSettings {
         self.nielsen_configuration.as_ref()
     }
     /// Placeholder documentation for __listOfOutputGroup
-    pub fn output_groups(&self) -> ::std::option::Option<&[crate::types::OutputGroup]> {
-        self.output_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_groups.is_none()`.
+    pub fn output_groups(&self) -> &[crate::types::OutputGroup] {
+        self.output_groups.as_deref().unwrap_or_default()
     }
     /// Contains settings used to acquire and adjust timecode information from inputs.
     pub fn timecode_config(&self) -> ::std::option::Option<&crate::types::TimecodeConfig> {
         self.timecode_config.as_ref()
     }
     /// Placeholder documentation for __listOfVideoDescription
-    pub fn video_descriptions(&self) -> ::std::option::Option<&[crate::types::VideoDescription]> {
-        self.video_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.video_descriptions.is_none()`.
+    pub fn video_descriptions(&self) -> &[crate::types::VideoDescription] {
+        self.video_descriptions.as_deref().unwrap_or_default()
     }
     /// Thumbnail configuration settings.
     pub fn thumbnail_configuration(&self) -> ::std::option::Option<&crate::types::ThumbnailConfiguration> {
@@ -270,6 +278,7 @@ impl EncoderSettingsBuilder {
         &self.output_groups
     }
     /// Contains settings used to acquire and adjust timecode information from inputs.
+    /// This field is required.
     pub fn timecode_config(mut self, input: crate::types::TimecodeConfig) -> Self {
         self.timecode_config = ::std::option::Option::Some(input);
         self

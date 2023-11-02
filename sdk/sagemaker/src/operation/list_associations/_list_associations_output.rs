@@ -11,8 +11,10 @@ pub struct ListAssociationsOutput {
 }
 impl ListAssociationsOutput {
     /// <p>A list of associations and their properties.</p>
-    pub fn association_summaries(&self) -> ::std::option::Option<&[crate::types::AssociationSummary]> {
-        self.association_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_summaries.is_none()`.
+    pub fn association_summaries(&self) -> &[crate::types::AssociationSummary] {
+        self.association_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of associations, if there are any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

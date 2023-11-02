@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-    pub pipeline_id_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
+    pub pipeline_id_list: ::std::vec::Vec<crate::types::PipelineIdName>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
@@ -14,8 +14,9 @@ pub struct ListPipelinesOutput {
 }
 impl ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-    pub fn pipeline_id_list(&self) -> ::std::option::Option<&[crate::types::PipelineIdName]> {
-        self.pipeline_id_list.as_deref()
+    pub fn pipeline_id_list(&self) -> &[crate::types::PipelineIdName] {
+        use std::ops::Deref;
+        self.pipeline_id_list.deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -106,12 +107,21 @@ impl ListPipelinesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
-    pub fn build(self) -> crate::operation::list_pipelines::ListPipelinesOutput {
-        crate::operation::list_pipelines::ListPipelinesOutput {
-            pipeline_id_list: self.pipeline_id_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pipeline_id_list`](crate::operation::list_pipelines::builders::ListPipelinesOutputBuilder::pipeline_id_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_pipelines::ListPipelinesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_pipelines::ListPipelinesOutput {
+            pipeline_id_list: self.pipeline_id_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pipeline_id_list",
+                    "pipeline_id_list was not specified but it is required when building ListPipelinesOutput",
+                )
+            })?,
             marker: self.marker,
             has_more_results: self.has_more_results.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

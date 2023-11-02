@@ -12,11 +12,11 @@ pub fn ser_search_input(
     if let Some(var_2) = &input.next_token {
         object.key("NextToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.query_string {
-        object.key("QueryString").string(var_3.as_str());
+    {
+        object.key("QueryString").string(input.query_string.as_str());
     }
-    if let Some(var_4) = &input.view_arn {
-        object.key("ViewArn").string(var_4.as_str());
+    if let Some(var_3) = &input.view_arn {
+        object.key("ViewArn").string(var_3.as_str());
     }
     Ok(())
 }

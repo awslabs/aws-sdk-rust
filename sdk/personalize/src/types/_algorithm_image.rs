@@ -7,7 +7,7 @@ pub struct AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub docker_uri: ::std::option::Option<::std::string::String>,
+    pub docker_uri: ::std::string::String,
 }
 impl AlgorithmImage {
     /// <p>The name of the algorithm image.</p>
@@ -15,8 +15,9 @@ impl AlgorithmImage {
         self.name.as_deref()
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub fn docker_uri(&self) -> ::std::option::Option<&str> {
-        self.docker_uri.as_deref()
+    pub fn docker_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.docker_uri.deref()
     }
 }
 impl AlgorithmImage {
@@ -49,6 +50,7 @@ impl AlgorithmImageBuilder {
         &self.name
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
+    /// This field is required.
     pub fn docker_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.docker_uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AlgorithmImageBuilder {
         &self.docker_uri
     }
     /// Consumes the builder and constructs a [`AlgorithmImage`](crate::types::AlgorithmImage).
-    pub fn build(self) -> crate::types::AlgorithmImage {
-        crate::types::AlgorithmImage {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`docker_uri`](crate::types::builders::AlgorithmImageBuilder::docker_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::AlgorithmImage, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AlgorithmImage {
             name: self.name,
-            docker_uri: self.docker_uri,
-        }
+            docker_uri: self.docker_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "docker_uri",
+                    "docker_uri was not specified but it is required when building AlgorithmImage",
+                )
+            })?,
+        })
     }
 }

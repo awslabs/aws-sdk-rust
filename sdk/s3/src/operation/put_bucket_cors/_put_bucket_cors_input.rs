@@ -59,6 +59,7 @@ pub struct PutBucketCorsInputBuilder {
 }
 impl PutBucketCorsInputBuilder {
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl PutBucketCorsInputBuilder {
         &self.bucket
     }
     /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn cors_configuration(mut self, input: crate::types::CorsConfiguration) -> Self {
         self.cors_configuration = ::std::option::Option::Some(input);
         self

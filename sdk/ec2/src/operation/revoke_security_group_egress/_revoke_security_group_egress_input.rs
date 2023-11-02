@@ -34,12 +34,16 @@ impl RevokeSecurityGroupEgressInput {
         self.group_id.as_deref()
     }
     /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
-    pub fn ip_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions.is_none()`.
+    pub fn ip_permissions(&self) -> &[crate::types::IpPermission] {
+        self.ip_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the security group rules.</p>
-    pub fn security_group_rule_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_rule_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_rule_ids.is_none()`.
+    pub fn security_group_rule_ids(&self) -> &[::std::string::String] {
+        self.security_group_rule_ids.as_deref().unwrap_or_default()
     }
     /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
     pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
@@ -104,6 +108,7 @@ impl RevokeSecurityGroupEgressInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the security group.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self

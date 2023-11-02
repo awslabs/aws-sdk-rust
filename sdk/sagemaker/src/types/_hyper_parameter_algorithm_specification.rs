@@ -45,8 +45,10 @@ impl HyperParameterAlgorithmSpecification {
         self.algorithm_name.as_deref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> objects that specify the metrics that the algorithm emits.</p>
-    pub fn metric_definitions(&self) -> ::std::option::Option<&[crate::types::MetricDefinition]> {
-        self.metric_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_definitions.is_none()`.
+    pub fn metric_definitions(&self) -> &[crate::types::MetricDefinition] {
+        self.metric_definitions.as_deref().unwrap_or_default()
     }
 }
 impl HyperParameterAlgorithmSpecification {
@@ -90,6 +92,7 @@ impl HyperParameterAlgorithmSpecificationBuilder {
     /// <p> <b>FastFile mode</b> </p>
     /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
     /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+    /// This field is required.
     pub fn training_input_mode(mut self, input: crate::types::TrainingInputMode) -> Self {
         self.training_input_mode = ::std::option::Option::Some(input);
         self

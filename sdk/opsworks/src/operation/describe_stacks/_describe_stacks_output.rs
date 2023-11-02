@@ -10,8 +10,10 @@ pub struct DescribeStacksOutput {
 }
 impl DescribeStacksOutput {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-    pub fn stacks(&self) -> ::std::option::Option<&[crate::types::Stack]> {
-        self.stacks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stacks.is_none()`.
+    pub fn stacks(&self) -> &[crate::types::Stack] {
+        self.stacks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeStacksOutput {

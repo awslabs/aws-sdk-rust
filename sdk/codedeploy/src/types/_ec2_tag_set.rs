@@ -9,8 +9,10 @@ pub struct Ec2TagSet {
 }
 impl Ec2TagSet {
     /// <p>A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    pub fn ec2_tag_set_list(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::Ec2TagFilter>]> {
-        self.ec2_tag_set_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_tag_set_list.is_none()`.
+    pub fn ec2_tag_set_list(&self) -> &[::std::vec::Vec<crate::types::Ec2TagFilter>] {
+        self.ec2_tag_set_list.as_deref().unwrap_or_default()
     }
 }
 impl Ec2TagSet {

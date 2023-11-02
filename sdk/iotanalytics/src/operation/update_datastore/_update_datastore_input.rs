@@ -52,6 +52,7 @@ pub struct UpdateDatastoreInputBuilder {
 }
 impl UpdateDatastoreInputBuilder {
     /// <p>The name of the data store to be updated.</p>
+    /// This field is required.
     pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self

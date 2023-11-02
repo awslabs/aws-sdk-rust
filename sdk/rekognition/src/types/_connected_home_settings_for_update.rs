@@ -11,8 +11,10 @@ pub struct ConnectedHomeSettingsForUpdate {
 }
 impl ConnectedHomeSettingsForUpdate {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn min_confidence(&self) -> ::std::option::Option<f32> {

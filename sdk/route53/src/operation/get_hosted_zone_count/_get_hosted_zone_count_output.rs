@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
-    pub hosted_zone_count: ::std::option::Option<i64>,
+    pub hosted_zone_count: i64,
     _request_id: Option<String>,
 }
 impl GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
-    pub fn hosted_zone_count(&self) -> ::std::option::Option<i64> {
+    pub fn hosted_zone_count(&self) -> i64 {
         self.hosted_zone_count
     }
 }
@@ -35,6 +35,7 @@ pub struct GetHostedZoneCountOutputBuilder {
 }
 impl GetHostedZoneCountOutputBuilder {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
+    /// This field is required.
     pub fn hosted_zone_count(mut self, input: i64) -> Self {
         self.hosted_zone_count = ::std::option::Option::Some(input);
         self
@@ -58,10 +59,20 @@ impl GetHostedZoneCountOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
-    pub fn build(self) -> crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
-        crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
-            hosted_zone_count: self.hosted_zone_count,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hosted_zone_count`](crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder::hosted_zone_count)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
+            hosted_zone_count: self.hosted_zone_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hosted_zone_count",
+                    "hosted_zone_count was not specified but it is required when building GetHostedZoneCountOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -35,6 +35,7 @@ pub struct NumericEqualityDrillDownFilterBuilder {
 }
 impl NumericEqualityDrillDownFilterBuilder {
     /// <p>The column that the filter is applied to.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl NumericEqualityDrillDownFilterBuilder {
         &self.column
     }
     /// <p>The value of the double input numeric drill down filter.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

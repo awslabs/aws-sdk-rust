@@ -20,8 +20,10 @@ impl UpdateLinkAttributesInput {
         self.typed_link_specifier.as_ref()
     }
     /// <p>The attributes update structure.</p>
-    pub fn attribute_updates(&self) -> ::std::option::Option<&[crate::types::LinkAttributeUpdate]> {
-        self.attribute_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_updates.is_none()`.
+    pub fn attribute_updates(&self) -> &[crate::types::LinkAttributeUpdate] {
+        self.attribute_updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLinkAttributesInput {
@@ -41,6 +43,7 @@ pub struct UpdateLinkAttributesInputBuilder {
 }
 impl UpdateLinkAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateLinkAttributesInputBuilder {
         &self.directory_arn
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    /// This field is required.
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
         self

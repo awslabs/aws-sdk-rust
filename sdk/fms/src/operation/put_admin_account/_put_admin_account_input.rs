@@ -34,6 +34,7 @@ pub struct PutAdminAccountInputBuilder {
 }
 impl PutAdminAccountInputBuilder {
     /// <p>The Amazon Web Services account ID to add as an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>
+    /// This field is required.
     pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account = ::std::option::Option::Some(input.into());
         self

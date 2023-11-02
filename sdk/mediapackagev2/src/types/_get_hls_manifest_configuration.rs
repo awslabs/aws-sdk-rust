@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub manifest_name: ::std::option::Option<::std::string::String>,
+    pub manifest_name: ::std::string::String,
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub child_manifest_name: ::std::option::Option<::std::string::String>,
     /// <p>The total duration (in seconds) of the manifest's content.</p>
@@ -17,15 +17,19 @@ pub struct GetHlsManifestConfiguration {
     pub program_date_time_interval_seconds: ::std::option::Option<i32>,
     /// <p>The SCTE configuration.</p>
     pub scte_hls: ::std::option::Option<crate::types::ScteHls>,
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
 impl GetHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub fn manifest_name(&self) -> ::std::option::Option<&str> {
-        self.manifest_name.as_deref()
+    pub fn manifest_name(&self) -> &str {
+        use std::ops::Deref;
+        self.manifest_name.deref()
     }
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn child_manifest_name(&self) -> ::std::option::Option<&str> {
@@ -43,6 +47,10 @@ impl GetHlsManifestConfiguration {
     /// <p>The SCTE configuration.</p>
     pub fn scte_hls(&self) -> ::std::option::Option<&crate::types::ScteHls> {
         self.scte_hls.as_ref()
+    }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
+        self.filter_configuration.as_ref()
     }
 }
 impl GetHlsManifestConfiguration {
@@ -62,9 +70,11 @@ pub struct GetHlsManifestConfigurationBuilder {
     pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
     pub(crate) program_date_time_interval_seconds: ::std::option::Option<i32>,
     pub(crate) scte_hls: ::std::option::Option<crate::types::ScteHls>,
+    pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
 impl GetHlsManifestConfigurationBuilder {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
+    /// This field is required.
     pub fn manifest_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.manifest_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +89,7 @@ impl GetHlsManifestConfigurationBuilder {
         &self.manifest_name
     }
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -151,15 +162,43 @@ impl GetHlsManifestConfigurationBuilder {
     pub fn get_scte_hls(&self) -> &::std::option::Option<crate::types::ScteHls> {
         &self.scte_hls
     }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn filter_configuration(mut self, input: crate::types::FilterConfiguration) -> Self {
+        self.filter_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
+        self.filter_configuration = input;
+        self
+    }
+    /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. </p>
+    pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
+        &self.filter_configuration
+    }
     /// Consumes the builder and constructs a [`GetHlsManifestConfiguration`](crate::types::GetHlsManifestConfiguration).
-    pub fn build(self) -> crate::types::GetHlsManifestConfiguration {
-        crate::types::GetHlsManifestConfiguration {
-            manifest_name: self.manifest_name,
-            url: self.url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`manifest_name`](crate::types::builders::GetHlsManifestConfigurationBuilder::manifest_name)
+    /// - [`url`](crate::types::builders::GetHlsManifestConfigurationBuilder::url)
+    pub fn build(self) -> ::std::result::Result<crate::types::GetHlsManifestConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GetHlsManifestConfiguration {
+            manifest_name: self.manifest_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "manifest_name",
+                    "manifest_name was not specified but it is required when building GetHlsManifestConfiguration",
+                )
+            })?,
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building GetHlsManifestConfiguration",
+                )
+            })?,
             child_manifest_name: self.child_manifest_name,
             manifest_window_seconds: self.manifest_window_seconds,
             program_date_time_interval_seconds: self.program_date_time_interval_seconds,
             scte_hls: self.scte_hls,
-        }
+            filter_configuration: self.filter_configuration,
+        })
     }
 }

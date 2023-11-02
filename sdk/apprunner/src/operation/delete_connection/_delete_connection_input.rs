@@ -27,6 +27,7 @@ pub struct DeleteConnectionInputBuilder {
 }
 impl DeleteConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self

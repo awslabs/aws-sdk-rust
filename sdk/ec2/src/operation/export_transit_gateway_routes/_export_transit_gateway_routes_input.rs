@@ -40,8 +40,10 @@ impl ExportTransitGatewayRoutesInput {
     /// <li> <p> <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p> </li>
     /// <li> <p> <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct ExportTransitGatewayRoutesInputBuilder {
 }
 impl ExportTransitGatewayRoutesInputBuilder {
     /// <p>The ID of the route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +140,7 @@ impl ExportTransitGatewayRoutesInputBuilder {
         &self.filters
     }
     /// <p>The name of the S3 bucket.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self

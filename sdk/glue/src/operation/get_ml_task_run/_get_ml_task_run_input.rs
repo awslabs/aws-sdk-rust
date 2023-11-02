@@ -34,6 +34,7 @@ pub struct GetMlTaskRunInputBuilder {
 }
 impl GetMlTaskRunInputBuilder {
     /// <p>The unique identifier of the machine learning transform.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMlTaskRunInputBuilder {
         &self.transform_id
     }
     /// <p>The unique identifier of the task run.</p>
+    /// This field is required.
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_run_id = ::std::option::Option::Some(input.into());
         self

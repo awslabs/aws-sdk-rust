@@ -29,8 +29,10 @@ impl EvaluatedModelVersion {
         self.model_type.as_deref()
     }
     /// <p> Evaluations generated for the model version. </p>
-    pub fn evaluations(&self) -> ::std::option::Option<&[crate::types::ModelVersionEvaluation]> {
-        self.evaluations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluations.is_none()`.
+    pub fn evaluations(&self) -> &[crate::types::ModelVersionEvaluation] {
+        self.evaluations.as_deref().unwrap_or_default()
     }
 }
 impl EvaluatedModelVersion {

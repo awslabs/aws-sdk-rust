@@ -128,7 +128,9 @@ pub fn de_send_message_batch_http_response(
         output = crate::protocol_serde::shape_send_message_batch::de_send_message_batch(_response_body, output)
             .map_err(crate::operation::send_message_batch::SendMessageBatchError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::send_message_batch_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::send_message_batch::SendMessageBatchError::unhandled)?
     })
 }
 

@@ -35,6 +35,7 @@ pub struct DescribeStepInputBuilder {
 }
 impl DescribeStepInputBuilder {
     /// <p>The identifier of the cluster with steps to describe.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DescribeStepInputBuilder {
         &self.cluster_id
     }
     /// <p>The identifier of the step to describe.</p>
+    /// This field is required.
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_id = ::std::option::Option::Some(input.into());
         self

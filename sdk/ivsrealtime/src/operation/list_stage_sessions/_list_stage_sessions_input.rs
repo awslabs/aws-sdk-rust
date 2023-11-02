@@ -41,6 +41,7 @@ pub struct ListStageSessionsInputBuilder {
 }
 impl ListStageSessionsInputBuilder {
     /// <p>Stage ARN.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self

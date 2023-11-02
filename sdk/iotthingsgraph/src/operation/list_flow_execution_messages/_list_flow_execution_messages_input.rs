@@ -41,6 +41,7 @@ pub struct ListFlowExecutionMessagesInputBuilder {
 }
 impl ListFlowExecutionMessagesInputBuilder {
     /// <p>The ID of the flow execution.</p>
+    /// This field is required.
     pub fn flow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_execution_id = ::std::option::Option::Some(input.into());
         self

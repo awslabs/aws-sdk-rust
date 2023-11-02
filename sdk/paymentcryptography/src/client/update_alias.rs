@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateAlias`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alias_name(impl Into<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::alias_name) / [`set_alias_name(Option<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::set_alias_name): <p>The alias whose associated key is changing.</p>
-    ///   - [`key_arn(impl Into<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::key_arn) / [`set_key_arn(Option<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::set_key_arn): <p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p>
+    ///   - [`alias_name(impl Into<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::alias_name) / [`set_alias_name(Option<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::set_alias_name):<br>required: **true**<br><p>The alias whose associated key is changing.</p><br>
+    ///   - [`key_arn(impl Into<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::key_arn) / [`set_key_arn(Option<String>)`](crate::operation::update_alias::builders::UpdateAliasFluentBuilder::set_key_arn):<br>required: **false**<br><p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p><br>
     /// - On success, responds with [`UpdateAliasOutput`](crate::operation::update_alias::UpdateAliasOutput) with field(s):
     ///   - [`alias(Option<Alias>)`](crate::operation::update_alias::UpdateAliasOutput::alias): <p>The alias name.</p>
     /// - On failure, responds with [`SdkError<UpdateAliasError>`](crate::operation::update_alias::UpdateAliasError)

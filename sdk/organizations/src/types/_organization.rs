@@ -59,8 +59,10 @@ impl Organization {
     /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
     /// </important>
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
-    pub fn available_policy_types(&self) -> ::std::option::Option<&[crate::types::PolicyTypeSummary]> {
-        self.available_policy_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_policy_types.is_none()`.
+    pub fn available_policy_types(&self) -> &[crate::types::PolicyTypeSummary] {
+        self.available_policy_types.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Organization {

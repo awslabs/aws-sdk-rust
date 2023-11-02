@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableRadius`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl Into<String>)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::set_directory_id): <p>The identifier of the directory for which to enable MFA.</p>
-    ///   - [`radius_settings(RadiusSettings)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::radius_settings) / [`set_radius_settings(Option<RadiusSettings>)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::set_radius_settings): <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory for which to enable MFA.</p><br>
+    ///   - [`radius_settings(RadiusSettings)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::radius_settings) / [`set_radius_settings(Option<RadiusSettings>)`](crate::operation::enable_radius::builders::EnableRadiusFluentBuilder::set_radius_settings):<br>required: **true**<br><p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p><br>
     /// - On success, responds with [`EnableRadiusOutput`](crate::operation::enable_radius::EnableRadiusOutput)
     /// - On failure, responds with [`SdkError<EnableRadiusError>`](crate::operation::enable_radius::EnableRadiusError)
     pub fn enable_radius(&self) -> crate::operation::enable_radius::builders::EnableRadiusFluentBuilder {

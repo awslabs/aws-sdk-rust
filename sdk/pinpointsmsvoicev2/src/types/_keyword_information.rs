@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeywordInformation {
     /// <p>The keyword as a string.</p>
-    pub keyword: ::std::option::Option<::std::string::String>,
+    pub keyword: ::std::string::String,
     /// <p>A custom message that can be used with the keyword.</p>
-    pub keyword_message: ::std::option::Option<::std::string::String>,
+    pub keyword_message: ::std::string::String,
     /// <p>The action to perform for the keyword.</p>
-    pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
+    pub keyword_action: crate::types::KeywordAction,
 }
 impl KeywordInformation {
     /// <p>The keyword as a string.</p>
-    pub fn keyword(&self) -> ::std::option::Option<&str> {
-        self.keyword.as_deref()
+    pub fn keyword(&self) -> &str {
+        use std::ops::Deref;
+        self.keyword.deref()
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn keyword_message(&self) -> ::std::option::Option<&str> {
-        self.keyword_message.as_deref()
+    pub fn keyword_message(&self) -> &str {
+        use std::ops::Deref;
+        self.keyword_message.deref()
     }
     /// <p>The action to perform for the keyword.</p>
-    pub fn keyword_action(&self) -> ::std::option::Option<&crate::types::KeywordAction> {
-        self.keyword_action.as_ref()
+    pub fn keyword_action(&self) -> &crate::types::KeywordAction {
+        &self.keyword_action
     }
 }
 impl KeywordInformation {
@@ -42,6 +44,7 @@ pub struct KeywordInformationBuilder {
 }
 impl KeywordInformationBuilder {
     /// <p>The keyword as a string.</p>
+    /// This field is required.
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl KeywordInformationBuilder {
         &self.keyword
     }
     /// <p>A custom message that can be used with the keyword.</p>
+    /// This field is required.
     pub fn keyword_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword_message = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl KeywordInformationBuilder {
         &self.keyword_message
     }
     /// <p>The action to perform for the keyword.</p>
+    /// This field is required.
     pub fn keyword_action(mut self, input: crate::types::KeywordAction) -> Self {
         self.keyword_action = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl KeywordInformationBuilder {
         &self.keyword_action
     }
     /// Consumes the builder and constructs a [`KeywordInformation`](crate::types::KeywordInformation).
-    pub fn build(self) -> crate::types::KeywordInformation {
-        crate::types::KeywordInformation {
-            keyword: self.keyword,
-            keyword_message: self.keyword_message,
-            keyword_action: self.keyword_action,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyword`](crate::types::builders::KeywordInformationBuilder::keyword)
+    /// - [`keyword_message`](crate::types::builders::KeywordInformationBuilder::keyword_message)
+    /// - [`keyword_action`](crate::types::builders::KeywordInformationBuilder::keyword_action)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeywordInformation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeywordInformation {
+            keyword: self.keyword.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyword",
+                    "keyword was not specified but it is required when building KeywordInformation",
+                )
+            })?,
+            keyword_message: self.keyword_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyword_message",
+                    "keyword_message was not specified but it is required when building KeywordInformation",
+                )
+            })?,
+            keyword_action: self.keyword_action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyword_action",
+                    "keyword_action was not specified but it is required when building KeywordInformation",
+                )
+            })?,
+        })
     }
 }

@@ -48,6 +48,7 @@ pub struct ListQueuedMessagesInputBuilder {
 }
 impl ListQueuedMessagesInputBuilder {
     /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentVariable {
     /// <p>The name or key of the environment variable.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value of the environment variable.</p> <important>
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter Store. To learn how to specify a parameter store environment variable, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the <i>CodeBuild User Guide</i>.</p> </li>
@@ -20,14 +20,16 @@ pub struct EnvironmentVariable {
 }
 impl EnvironmentVariable {
     /// <p>The name or key of the environment variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value of the environment variable.</p> <important>
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
@@ -56,6 +58,7 @@ pub struct EnvironmentVariableBuilder {
 }
 impl EnvironmentVariableBuilder {
     /// <p>The name or key of the environment variable.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl EnvironmentVariableBuilder {
     /// <p>The value of the environment variable.</p> <important>
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. </p>
     /// </important>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -119,11 +123,24 @@ impl EnvironmentVariableBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`EnvironmentVariable`](crate::types::EnvironmentVariable).
-    pub fn build(self) -> crate::types::EnvironmentVariable {
-        crate::types::EnvironmentVariable {
-            name: self.name,
-            value: self.value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::EnvironmentVariableBuilder::name)
+    /// - [`value`](crate::types::builders::EnvironmentVariableBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentVariable, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentVariable {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EnvironmentVariable",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building EnvironmentVariable",
+                )
+            })?,
             r#type: self.r#type,
-        }
+        })
     }
 }

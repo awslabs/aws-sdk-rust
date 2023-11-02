@@ -34,6 +34,7 @@ pub struct ImportKeyOutputBuilder {
 }
 impl ImportKeyOutputBuilder {
     /// <p>The <code>KeyARN</code> of the key material imported within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::Key) -> Self {
         self.key = ::std::option::Option::Some(input);
         self

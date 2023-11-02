@@ -63,6 +63,7 @@ pub struct UpdateCustomVerificationEmailTemplateInputBuilder {
 }
 impl UpdateCustomVerificationEmailTemplateInputBuilder {
     /// <p>The name of the custom verification email template to update.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

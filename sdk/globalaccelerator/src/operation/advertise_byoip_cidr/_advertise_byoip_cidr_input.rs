@@ -27,6 +27,7 @@ pub struct AdvertiseByoipCidrInputBuilder {
 }
 impl AdvertiseByoipCidrInputBuilder {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self

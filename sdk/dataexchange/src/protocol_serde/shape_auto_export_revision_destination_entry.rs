@@ -38,7 +38,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::auto_export_revision_destination_entry_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,11 +54,11 @@ pub fn ser_auto_export_revision_destination_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoExportRevisionDestinationEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket {
-        object.key("Bucket").string(var_1.as_str());
+    {
+        object.key("Bucket").string(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.key_pattern {
-        object.key("KeyPattern").string(var_2.as_str());
+    if let Some(var_1) = &input.key_pattern {
+        object.key("KeyPattern").string(var_1.as_str());
     }
     Ok(())
 }

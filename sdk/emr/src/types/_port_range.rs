@@ -35,6 +35,7 @@ pub struct PortRangeBuilder {
 }
 impl PortRangeBuilder {
     /// <p>The smallest port number in a specified range of port numbers.</p>
+    /// This field is required.
     pub fn min_range(mut self, input: i32) -> Self {
         self.min_range = ::std::option::Option::Some(input);
         self

@@ -17,8 +17,10 @@ impl UtilizationByTime {
         self.time_period.as_ref()
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::ReservationUtilizationGroup]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::ReservationUtilizationGroup] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The total number of reservation hours that were used.</p>
     pub fn total(&self) -> ::std::option::Option<&crate::types::ReservationAggregates> {

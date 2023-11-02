@@ -6,41 +6,41 @@ pub fn ser_organization_custom_rule_metadata(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.lambda_function_arn {
-        object.key("LambdaFunctionArn").string(var_2.as_str());
+    {
+        object.key("LambdaFunctionArn").string(input.lambda_function_arn.as_str());
     }
-    if let Some(var_3) = &input.organization_config_rule_trigger_types {
-        let mut array_4 = object.key("OrganizationConfigRuleTriggerTypes").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_2 = object.key("OrganizationConfigRuleTriggerTypes").start_array();
+        for item_3 in &input.organization_config_rule_trigger_types {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.input_parameters {
-        object.key("InputParameters").string(var_6.as_str());
+    if let Some(var_4) = &input.input_parameters {
+        object.key("InputParameters").string(var_4.as_str());
     }
-    if let Some(var_7) = &input.maximum_execution_frequency {
-        object.key("MaximumExecutionFrequency").string(var_7.as_str());
+    if let Some(var_5) = &input.maximum_execution_frequency {
+        object.key("MaximumExecutionFrequency").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.resource_types_scope {
-        let mut array_9 = object.key("ResourceTypesScope").start_array();
-        for item_10 in var_8 {
+    if let Some(var_6) = &input.resource_types_scope {
+        let mut array_7 = object.key("ResourceTypesScope").start_array();
+        for item_8 in var_6 {
             {
-                array_9.value().string(item_10.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_9.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.resource_id_scope {
-        object.key("ResourceIdScope").string(var_11.as_str());
+    if let Some(var_9) = &input.resource_id_scope {
+        object.key("ResourceIdScope").string(var_9.as_str());
     }
-    if let Some(var_12) = &input.tag_key_scope {
-        object.key("TagKeyScope").string(var_12.as_str());
+    if let Some(var_10) = &input.tag_key_scope {
+        object.key("TagKeyScope").string(var_10.as_str());
     }
-    if let Some(var_13) = &input.tag_value_scope {
-        object.key("TagValueScope").string(var_13.as_str());
+    if let Some(var_11) = &input.tag_value_scope {
+        object.key("TagValueScope").string(var_11.as_str());
     }
     Ok(())
 }
@@ -130,7 +130,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::organization_custom_rule_metadata_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

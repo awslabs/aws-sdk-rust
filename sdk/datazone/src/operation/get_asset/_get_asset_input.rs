@@ -41,6 +41,7 @@ pub struct GetAssetInputBuilder {
 }
 impl GetAssetInputBuilder {
     /// <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetAssetInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the Amazon DataZone asset.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

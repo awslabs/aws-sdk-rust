@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p>The name or ARN of the project to update.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
     /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
     pub app_config_resource: ::std::option::Option<crate::types::ProjectAppConfigResourceConfig>,
@@ -13,8 +13,9 @@ pub struct UpdateProjectInput {
 }
 impl UpdateProjectInput {
     /// <p>The name or ARN of the project to update.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>Use this parameter if the project will use client-side evaluation powered by AppConfig. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation. This mitigates the latency and availability risks that come with an API call. allows you to</p>
     /// <p>This parameter is a structure that contains information about the AppConfig application that will be used for client-side evaluation.</p>
@@ -43,6 +44,7 @@ pub struct UpdateProjectInputBuilder {
 }
 impl UpdateProjectInputBuilder {
     /// <p>The name or ARN of the project to update.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -88,11 +90,18 @@ impl UpdateProjectInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::update_project::builders::UpdateProjectInputBuilder::project)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
-            project: self.project,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building UpdateProjectInput",
+                )
+            })?,
             app_config_resource: self.app_config_resource,
             description: self.description,
         })

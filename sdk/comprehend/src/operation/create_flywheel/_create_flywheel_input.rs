@@ -56,8 +56,10 @@ impl CreateFlywheelInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to associate with this flywheel.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFlywheelInput {
@@ -83,6 +85,7 @@ pub struct CreateFlywheelInputBuilder {
 }
 impl CreateFlywheelInputBuilder {
     /// <p>Name for the flywheel.</p>
+    /// This field is required.
     pub fn flywheel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl CreateFlywheelInputBuilder {
         &self.active_model_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +157,7 @@ impl CreateFlywheelInputBuilder {
         &self.model_type
     }
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
+    /// This field is required.
     pub fn data_lake_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_lake_s3_uri = ::std::option::Option::Some(input.into());
         self

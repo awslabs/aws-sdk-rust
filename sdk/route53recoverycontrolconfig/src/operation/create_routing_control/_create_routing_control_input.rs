@@ -63,6 +63,7 @@ impl CreateRoutingControlInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl CreateRoutingControlInputBuilder {
         &self.control_panel_arn
     }
     /// <p>The name of the routing control.</p>
+    /// This field is required.
     pub fn routing_control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_name = ::std::option::Option::Some(input.into());
         self

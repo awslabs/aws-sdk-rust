@@ -3,32 +3,32 @@ pub fn ser_field_validation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldValidationConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.str_values {
-        let mut array_3 = object.key("strValues").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.str_values {
+        let mut array_2 = object.key("strValues").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.num_values {
-        let mut array_6 = object.key("numValues").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.num_values {
+        let mut array_5 = object.key("numValues").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().number(
+                array_5.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_7).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_6).into()),
                 );
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.validation_message {
-        object.key("validationMessage").string(var_8.as_str());
+    if let Some(var_7) = &input.validation_message {
+        object.key("validationMessage").string(var_7.as_str());
     }
     Ok(())
 }
@@ -78,7 +78,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::field_validation_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

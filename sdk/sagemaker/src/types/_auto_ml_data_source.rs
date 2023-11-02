@@ -28,6 +28,7 @@ pub struct AutoMlDataSourceBuilder {
 }
 impl AutoMlDataSourceBuilder {
     /// <p>The Amazon S3 location of the input data.</p>
+    /// This field is required.
     pub fn s3_data_source(mut self, input: crate::types::AutoMls3DataSource) -> Self {
         self.s3_data_source = ::std::option::Option::Some(input);
         self

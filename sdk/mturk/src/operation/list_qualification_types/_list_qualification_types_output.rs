@@ -21,8 +21,10 @@ impl ListQualificationTypesOutput {
         self.next_token.as_deref()
     }
     /// <p> The list of QualificationType elements returned by the query. </p>
-    pub fn qualification_types(&self) -> ::std::option::Option<&[crate::types::QualificationType]> {
-        self.qualification_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualification_types.is_none()`.
+    pub fn qualification_types(&self) -> &[crate::types::QualificationType] {
+        self.qualification_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListQualificationTypesOutput {

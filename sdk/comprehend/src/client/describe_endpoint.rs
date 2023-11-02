@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEndpoint`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::set_endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
+    ///   - [`endpoint_arn(impl Into<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::operation::describe_endpoint::builders::DescribeEndpointFluentBuilder::set_endpoint_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the endpoint being described.</p><br>
     /// - On success, responds with [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput) with field(s):
     ///   - [`endpoint_properties(Option<EndpointProperties>)`](crate::operation::describe_endpoint::DescribeEndpointOutput::endpoint_properties): <p>Describes information associated with the specific endpoint.</p>
     /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::operation::describe_endpoint::DescribeEndpointError)

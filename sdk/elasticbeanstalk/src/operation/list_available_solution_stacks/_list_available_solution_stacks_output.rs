@@ -12,12 +12,16 @@ pub struct ListAvailableSolutionStacksOutput {
 }
 impl ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
-    pub fn solution_stacks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.solution_stacks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solution_stacks.is_none()`.
+    pub fn solution_stacks(&self) -> &[::std::string::String] {
+        self.solution_stacks.as_deref().unwrap_or_default()
     }
     /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
-    pub fn solution_stack_details(&self) -> ::std::option::Option<&[crate::types::SolutionStackDescription]> {
-        self.solution_stack_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.solution_stack_details.is_none()`.
+    pub fn solution_stack_details(&self) -> &[crate::types::SolutionStackDescription] {
+        self.solution_stack_details.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAvailableSolutionStacksOutput {

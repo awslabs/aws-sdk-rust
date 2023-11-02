@@ -15,8 +15,10 @@ impl GeneratedPolicyResult {
         self.properties.as_ref()
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    pub fn generated_policies(&self) -> ::std::option::Option<&[crate::types::GeneratedPolicy]> {
-        self.generated_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generated_policies.is_none()`.
+    pub fn generated_policies(&self) -> &[crate::types::GeneratedPolicy] {
+        self.generated_policies.as_deref().unwrap_or_default()
     }
 }
 impl GeneratedPolicyResult {
@@ -35,6 +37,7 @@ pub struct GeneratedPolicyResultBuilder {
 }
 impl GeneratedPolicyResultBuilder {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
+    /// This field is required.
     pub fn properties(mut self, input: crate::types::GeneratedPolicyProperties) -> Self {
         self.properties = ::std::option::Option::Some(input);
         self

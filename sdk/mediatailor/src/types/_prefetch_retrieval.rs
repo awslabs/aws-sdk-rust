@@ -8,7 +8,7 @@ pub struct PrefetchRetrieval {
     /// <p>You initially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
     pub dynamic_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -19,8 +19,8 @@ impl PrefetchRetrieval {
         self.dynamic_variables.as_ref()
     }
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -74,6 +74,7 @@ impl PrefetchRetrievalBuilder {
         &self.dynamic_variables
     }
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -102,11 +103,18 @@ impl PrefetchRetrievalBuilder {
         &self.start_time
     }
     /// Consumes the builder and constructs a [`PrefetchRetrieval`](crate::types::PrefetchRetrieval).
-    pub fn build(self) -> crate::types::PrefetchRetrieval {
-        crate::types::PrefetchRetrieval {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`end_time`](crate::types::builders::PrefetchRetrievalBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::PrefetchRetrieval, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PrefetchRetrieval {
             dynamic_variables: self.dynamic_variables,
-            end_time: self.end_time,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building PrefetchRetrieval",
+                )
+            })?,
             start_time: self.start_time,
-        }
+        })
     }
 }

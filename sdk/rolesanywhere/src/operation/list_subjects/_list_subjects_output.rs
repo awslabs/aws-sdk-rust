@@ -11,8 +11,10 @@ pub struct ListSubjectsOutput {
 }
 impl ListSubjectsOutput {
     /// <p>A list of subjects.</p>
-    pub fn subjects(&self) -> ::std::option::Option<&[crate::types::SubjectSummary]> {
-        self.subjects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subjects.is_none()`.
+    pub fn subjects(&self) -> &[crate::types::SubjectSummary] {
+        self.subjects.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

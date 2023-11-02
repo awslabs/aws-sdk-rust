@@ -73,6 +73,7 @@ pub struct GetSnapshotsInputBuilder {
 }
 impl GetSnapshotsInputBuilder {
     /// <p>The identifier of the index to get search metrics data.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +96,7 @@ impl GetSnapshotsInputBuilder {
     /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
     /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn interval(mut self, input: crate::types::Interval) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
@@ -126,6 +128,7 @@ impl GetSnapshotsInputBuilder {
     }
     /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
+    /// This field is required.
     pub fn metric_type(mut self, input: crate::types::MetricType) -> Self {
         self.metric_type = ::std::option::Option::Some(input);
         self

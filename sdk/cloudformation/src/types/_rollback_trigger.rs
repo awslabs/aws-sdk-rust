@@ -38,6 +38,7 @@ pub struct RollbackTriggerBuilder {
 impl RollbackTriggerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl RollbackTriggerBuilder {
         &self.arn
     }
     /// <p>The resource type of the rollback trigger. Specify either <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html">AWS::CloudWatch::Alarm</a> or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html">AWS::CloudWatch::CompositeAlarm</a> resource types.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

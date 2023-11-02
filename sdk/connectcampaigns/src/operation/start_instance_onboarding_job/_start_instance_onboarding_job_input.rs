@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    pub connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub connect_instance_id: ::std::string::String,
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl StartInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
-        self.connect_instance_id.as_deref()
+    pub fn connect_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.connect_instance_id.deref()
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
@@ -35,6 +36,7 @@ pub struct StartInstanceOnboardingJobInputBuilder {
 }
 impl StartInstanceOnboardingJobInputBuilder {
     /// Amazon Connect Instance Id
+    /// This field is required.
     pub fn connect_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl StartInstanceOnboardingJobInputBuilder {
         &self.connect_instance_id
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
+    /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self
@@ -63,6 +66,8 @@ impl StartInstanceOnboardingJobInputBuilder {
         &self.encryption_config
     }
     /// Consumes the builder and constructs a [`StartInstanceOnboardingJobInput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connect_instance_id`](crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder::connect_instance_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,7 +75,12 @@ impl StartInstanceOnboardingJobInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput {
-            connect_instance_id: self.connect_instance_id,
+            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connect_instance_id",
+                    "connect_instance_id was not specified but it is required when building StartInstanceOnboardingJobInput",
+                )
+            })?,
             encryption_config: self.encryption_config,
         })
     }

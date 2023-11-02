@@ -4,29 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetEnvironmentOutput {
     /// <p>The ID of the Amazon DataZone project in which this environment is created.</p>
-    pub project_id: ::std::option::Option<::std::string::String>,
+    pub project_id: ::std::string::String,
     /// <p>The ID of the environment.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon DataZone domain where the environment exists.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The Amazon DataZone user who created the environment.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The timestamp of when the environment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when this environment was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the environment.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment profile with which the environment is created.</p>
-    pub environment_profile_id: ::std::option::Option<::std::string::String>,
+    pub environment_profile_id: ::std::string::String,
     /// <p>The ID of the Amazon Web Services account where the environment exists.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services region where the environment exists.</p>
     pub aws_account_region: ::std::option::Option<::std::string::String>,
     /// <p>The provider of this Amazon DataZone environment.</p>
-    pub provider: ::std::option::Option<::std::string::String>,
+    pub provider: ::std::string::String,
     /// <p>The provisioned resources of this Amazon DataZone environment.</p>
     pub provisioned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The status of this Amazon DataZone environment.</p>
@@ -49,20 +49,23 @@ pub struct GetEnvironmentOutput {
 }
 impl GetEnvironmentOutput {
     /// <p>The ID of the Amazon DataZone project in which this environment is created.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
-        self.project_id.as_deref()
+    pub fn project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.project_id.deref()
     }
     /// <p>The ID of the environment.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the Amazon DataZone domain where the environment exists.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The timestamp of when the environment was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -73,16 +76,18 @@ impl GetEnvironmentOutput {
         self.updated_at.as_ref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the environment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the environment profile with which the environment is created.</p>
-    pub fn environment_profile_id(&self) -> ::std::option::Option<&str> {
-        self.environment_profile_id.as_deref()
+    pub fn environment_profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_profile_id.deref()
     }
     /// <p>The ID of the Amazon Web Services account where the environment exists.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
@@ -93,28 +98,37 @@ impl GetEnvironmentOutput {
         self.aws_account_region.as_deref()
     }
     /// <p>The provider of this Amazon DataZone environment.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
-        self.provider.as_deref()
+    pub fn provider(&self) -> &str {
+        use std::ops::Deref;
+        self.provider.deref()
     }
     /// <p>The provisioned resources of this Amazon DataZone environment.</p>
-    pub fn provisioned_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.provisioned_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_resources.is_none()`.
+    pub fn provisioned_resources(&self) -> &[crate::types::Resource] {
+        self.provisioned_resources.as_deref().unwrap_or_default()
     }
     /// <p>The status of this Amazon DataZone environment.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>The actions of the environment.</p>
-    pub fn environment_actions(&self) -> ::std::option::Option<&[crate::types::ConfigurableEnvironmentAction]> {
-        self.environment_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_actions.is_none()`.
+    pub fn environment_actions(&self) -> &[crate::types::ConfigurableEnvironmentAction] {
+        self.environment_actions.as_deref().unwrap_or_default()
     }
     /// <p>The business glossary terms that can be used in this environment.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>The user parameters of this Amazon DataZone environment.</p>
-    pub fn user_parameters(&self) -> ::std::option::Option<&[crate::types::CustomParameter]> {
-        self.user_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The details of the last deployment of the environment.</p>
     pub fn last_deployment(&self) -> ::std::option::Option<&crate::types::Deployment> {
@@ -202,6 +216,7 @@ pub struct GetEnvironmentOutputBuilder {
 }
 impl GetEnvironmentOutputBuilder {
     /// <p>The ID of the Amazon DataZone project in which this environment is created.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +245,7 @@ impl GetEnvironmentOutputBuilder {
         &self.id
     }
     /// <p>The ID of the Amazon DataZone domain where the environment exists.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -244,6 +260,7 @@ impl GetEnvironmentOutputBuilder {
         &self.domain_id
     }
     /// <p>The Amazon DataZone user who created the environment.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -286,6 +303,7 @@ impl GetEnvironmentOutputBuilder {
         &self.updated_at
     }
     /// <p>The name of the environment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -314,6 +332,7 @@ impl GetEnvironmentOutputBuilder {
         &self.description
     }
     /// <p>The ID of the environment profile with which the environment is created.</p>
+    /// This field is required.
     pub fn environment_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -356,6 +375,7 @@ impl GetEnvironmentOutputBuilder {
         &self.aws_account_region
     }
     /// <p>The provider of this Amazon DataZone environment.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -529,20 +549,59 @@ impl GetEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput).
-    pub fn build(self) -> crate::operation::get_environment::GetEnvironmentOutput {
-        crate::operation::get_environment::GetEnvironmentOutput {
-            project_id: self.project_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project_id`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::project_id)
+    /// - [`domain_id`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::domain_id)
+    /// - [`created_by`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::created_by)
+    /// - [`name`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::name)
+    /// - [`environment_profile_id`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::environment_profile_id)
+    /// - [`provider`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::provider)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_environment::GetEnvironmentOutput {
+            project_id: self.project_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_id",
+                    "project_id was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
             id: self.id,
-            domain_id: self.domain_id,
-            created_by: self.created_by,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
             description: self.description,
-            environment_profile_id: self.environment_profile_id,
+            environment_profile_id: self.environment_profile_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_profile_id",
+                    "environment_profile_id was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
-            provider: self.provider,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building GetEnvironmentOutput",
+                )
+            })?,
             provisioned_resources: self.provisioned_resources,
             status: self.status,
             environment_actions: self.environment_actions,
@@ -553,7 +612,7 @@ impl GetEnvironmentOutputBuilder {
             deployment_properties: self.deployment_properties,
             environment_blueprint_id: self.environment_blueprint_id,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetEnvironmentOutputBuilder {

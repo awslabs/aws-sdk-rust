@@ -3,11 +3,11 @@ pub fn ser_veeva_source_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VeevaSourceProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.object {
-        object.key("object").string(var_1.as_str());
+    {
+        object.key("object").string(input.object.as_str());
     }
-    if let Some(var_2) = &input.document_type {
-        object.key("documentType").string(var_2.as_str());
+    if let Some(var_1) = &input.document_type {
+        object.key("documentType").string(var_1.as_str());
     }
     if input.include_source_files {
         object.key("includeSourceFiles").boolean(input.include_source_files);
@@ -69,7 +69,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::veeva_source_properties_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

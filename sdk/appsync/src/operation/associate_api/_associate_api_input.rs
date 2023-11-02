@@ -34,6 +34,7 @@ pub struct AssociateApiInputBuilder {
 }
 impl AssociateApiInputBuilder {
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateApiInputBuilder {
         &self.domain_name
     }
     /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self

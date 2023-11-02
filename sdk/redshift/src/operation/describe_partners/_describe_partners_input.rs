@@ -48,6 +48,7 @@ pub struct DescribePartnersInputBuilder {
 }
 impl DescribePartnersInputBuilder {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribePartnersInputBuilder {
         &self.account_id
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self

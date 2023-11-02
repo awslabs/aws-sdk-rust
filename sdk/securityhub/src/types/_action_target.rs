@@ -42,6 +42,7 @@ pub struct ActionTargetBuilder {
 }
 impl ActionTargetBuilder {
     /// <p>The ARN for the target action.</p>
+    /// This field is required.
     pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ActionTargetBuilder {
         &self.action_target_arn
     }
     /// <p>The name of the action target.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ActionTargetBuilder {
         &self.name
     }
     /// <p>The description of the target action.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

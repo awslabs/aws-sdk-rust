@@ -34,6 +34,7 @@ pub struct DeleteManagedEndpointInputBuilder {
 }
 impl DeleteManagedEndpointInputBuilder {
     /// <p>The ID of the managed endpoint.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteManagedEndpointInputBuilder {
         &self.id
     }
     /// <p>The ID of the endpoint's virtual cluster.</p>
+    /// This field is required.
     pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self

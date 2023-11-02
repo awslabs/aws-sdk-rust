@@ -27,6 +27,7 @@ pub struct DeleteCampaignInputBuilder {
 }
 impl DeleteCampaignInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign to delete.</p>
+    /// This field is required.
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
         self

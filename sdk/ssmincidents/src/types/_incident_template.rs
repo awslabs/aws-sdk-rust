@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentTemplate {
     /// <p>The title of the incident. </p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The impact of the incident on your customers and applications. </p>
-    pub impact: ::std::option::Option<i32>,
+    pub impact: i32,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
     pub summary: ::std::option::Option<::std::string::String>,
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
@@ -19,11 +19,12 @@ pub struct IncidentTemplate {
 }
 impl IncidentTemplate {
     /// <p>The title of the incident. </p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The impact of the incident on your customers and applications. </p>
-    pub fn impact(&self) -> ::std::option::Option<i32> {
+    pub fn impact(&self) -> i32 {
         self.impact
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
@@ -35,8 +36,10 @@ impl IncidentTemplate {
         self.dedupe_string.as_deref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn notification_targets(&self) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
-        self.notification_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_targets.is_none()`.
+    pub fn notification_targets(&self) -> &[crate::types::NotificationTargetItem] {
+        self.notification_targets.as_deref().unwrap_or_default()
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
     pub fn incident_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -63,6 +66,7 @@ pub struct IncidentTemplateBuilder {
 }
 impl IncidentTemplateBuilder {
     /// <p>The title of the incident. </p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl IncidentTemplateBuilder {
         &self.title
     }
     /// <p>The impact of the incident on your customers and applications. </p>
+    /// This field is required.
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
         self
@@ -162,14 +167,27 @@ impl IncidentTemplateBuilder {
         &self.incident_tags
     }
     /// Consumes the builder and constructs a [`IncidentTemplate`](crate::types::IncidentTemplate).
-    pub fn build(self) -> crate::types::IncidentTemplate {
-        crate::types::IncidentTemplate {
-            title: self.title,
-            impact: self.impact,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`title`](crate::types::builders::IncidentTemplateBuilder::title)
+    /// - [`impact`](crate::types::builders::IncidentTemplateBuilder::impact)
+    pub fn build(self) -> ::std::result::Result<crate::types::IncidentTemplate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IncidentTemplate {
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building IncidentTemplate",
+                )
+            })?,
+            impact: self.impact.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "impact",
+                    "impact was not specified but it is required when building IncidentTemplate",
+                )
+            })?,
             summary: self.summary,
             dedupe_string: self.dedupe_string,
             notification_targets: self.notification_targets,
             incident_tags: self.incident_tags,
-        }
+        })
     }
 }

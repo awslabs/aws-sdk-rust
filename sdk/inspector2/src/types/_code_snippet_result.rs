@@ -29,12 +29,16 @@ impl CodeSnippetResult {
         self.end_line
     }
     /// <p>Contains information on the retrieved code snippet.</p>
-    pub fn code_snippet(&self) -> ::std::option::Option<&[crate::types::CodeLine]> {
-        self.code_snippet.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_snippet.is_none()`.
+    pub fn code_snippet(&self) -> &[crate::types::CodeLine] {
+        self.code_snippet.as_deref().unwrap_or_default()
     }
     /// <p>Details of a suggested code fix.</p>
-    pub fn suggested_fixes(&self) -> ::std::option::Option<&[crate::types::SuggestedFix]> {
-        self.suggested_fixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggested_fixes.is_none()`.
+    pub fn suggested_fixes(&self) -> &[crate::types::SuggestedFix] {
+        self.suggested_fixes.as_deref().unwrap_or_default()
     }
 }
 impl CodeSnippetResult {

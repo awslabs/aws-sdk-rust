@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldTypeDetails {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
-    pub field_type: ::std::option::Option<::std::string::String>,
+    pub field_type: ::std::string::String,
     /// <p> The list of operators supported by a field. </p>
-    pub filter_operators: ::std::option::Option<::std::vec::Vec<crate::types::Operator>>,
+    pub filter_operators: ::std::vec::Vec<crate::types::Operator>,
     /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
     pub supported_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The regular expression pattern for the field name.</p>
@@ -21,16 +21,20 @@ pub struct FieldTypeDetails {
 }
 impl FieldTypeDetails {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
-    pub fn field_type(&self) -> ::std::option::Option<&str> {
-        self.field_type.as_deref()
+    pub fn field_type(&self) -> &str {
+        use std::ops::Deref;
+        self.field_type.deref()
     }
     /// <p> The list of operators supported by a field. </p>
-    pub fn filter_operators(&self) -> ::std::option::Option<&[crate::types::Operator]> {
-        self.filter_operators.as_deref()
+    pub fn filter_operators(&self) -> &[crate::types::Operator] {
+        use std::ops::Deref;
+        self.filter_operators.deref()
     }
     /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
-    pub fn supported_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_values.is_none()`.
+    pub fn supported_values(&self) -> &[::std::string::String] {
+        self.supported_values.as_deref().unwrap_or_default()
     }
     /// <p>The regular expression pattern for the field name.</p>
     pub fn value_regex_pattern(&self) -> ::std::option::Option<&str> {
@@ -70,6 +74,7 @@ pub struct FieldTypeDetailsBuilder {
 }
 impl FieldTypeDetailsBuilder {
     /// <p> The type of field, such as string, integer, date, and so on. </p>
+    /// This field is required.
     pub fn field_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_type = ::std::option::Option::Some(input.into());
         self
@@ -180,15 +185,28 @@ impl FieldTypeDetailsBuilder {
         &self.field_length_range
     }
     /// Consumes the builder and constructs a [`FieldTypeDetails`](crate::types::FieldTypeDetails).
-    pub fn build(self) -> crate::types::FieldTypeDetails {
-        crate::types::FieldTypeDetails {
-            field_type: self.field_type,
-            filter_operators: self.filter_operators,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_type`](crate::types::builders::FieldTypeDetailsBuilder::field_type)
+    /// - [`filter_operators`](crate::types::builders::FieldTypeDetailsBuilder::filter_operators)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldTypeDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldTypeDetails {
+            field_type: self.field_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_type",
+                    "field_type was not specified but it is required when building FieldTypeDetails",
+                )
+            })?,
+            filter_operators: self.filter_operators.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter_operators",
+                    "filter_operators was not specified but it is required when building FieldTypeDetails",
+                )
+            })?,
             supported_values: self.supported_values,
             value_regex_pattern: self.value_regex_pattern,
             supported_date_format: self.supported_date_format,
             field_value_range: self.field_value_range,
             field_length_range: self.field_length_range,
-        }
+        })
     }
 }

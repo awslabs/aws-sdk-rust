@@ -114,6 +114,7 @@ impl RunScheduledInstancesInputBuilder {
         &self.instance_count
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
+    /// This field is required.
     pub fn launch_specification(mut self, input: crate::types::ScheduledInstancesLaunchSpecification) -> Self {
         self.launch_specification = ::std::option::Option::Some(input);
         self
@@ -128,6 +129,7 @@ impl RunScheduledInstancesInputBuilder {
         &self.launch_specification
     }
     /// <p>The Scheduled Instance ID.</p>
+    /// This field is required.
     pub fn scheduled_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_instance_id = ::std::option::Option::Some(input.into());
         self

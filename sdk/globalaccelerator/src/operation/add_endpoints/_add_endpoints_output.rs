@@ -11,8 +11,10 @@ pub struct AddEndpointsOutput {
 }
 impl AddEndpointsOutput {
     /// <p>The list of endpoint objects.</p>
-    pub fn endpoint_descriptions(&self) -> ::std::option::Option<&[crate::types::EndpointDescription]> {
-        self.endpoint_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_descriptions.is_none()`.
+    pub fn endpoint_descriptions(&self) -> &[crate::types::EndpointDescription] {
+        self.endpoint_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {

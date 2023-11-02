@@ -28,6 +28,7 @@ pub struct VerifyTrustInputBuilder {
 }
 impl VerifyTrustInputBuilder {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
+    /// This field is required.
     pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_id = ::std::option::Option::Some(input.into());
         self

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionOutput {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetDevicePositionError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchGetDevicePositionError>,
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-    pub device_positions: ::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>>,
+    pub device_positions: ::std::vec::Vec<crate::types::DevicePosition>,
     _request_id: Option<String>,
 }
 impl BatchGetDevicePositionOutput {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchGetDevicePositionError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchGetDevicePositionError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-    pub fn device_positions(&self) -> ::std::option::Option<&[crate::types::DevicePosition]> {
-        self.device_positions.as_deref()
+    pub fn device_positions(&self) -> &[crate::types::DevicePosition] {
+        use std::ops::Deref;
+        self.device_positions.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetDevicePositionOutput {
@@ -90,11 +92,29 @@ impl BatchGetDevicePositionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetDevicePositionOutput`](crate::operation::batch_get_device_position::BatchGetDevicePositionOutput).
-    pub fn build(self) -> crate::operation::batch_get_device_position::BatchGetDevicePositionOutput {
-        crate::operation::batch_get_device_position::BatchGetDevicePositionOutput {
-            errors: self.errors,
-            device_positions: self.device_positions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::operation::batch_get_device_position::builders::BatchGetDevicePositionOutputBuilder::errors)
+    /// - [`device_positions`](crate::operation::batch_get_device_position::builders::BatchGetDevicePositionOutputBuilder::device_positions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_device_position::BatchGetDevicePositionOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_get_device_position::BatchGetDevicePositionOutput {
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchGetDevicePositionOutput",
+                )
+            })?,
+            device_positions: self.device_positions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_positions",
+                    "device_positions was not specified but it is required when building BatchGetDevicePositionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

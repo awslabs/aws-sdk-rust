@@ -36,8 +36,10 @@ impl StackSetOperationPreferences {
         self.region_concurrency_type.as_ref()
     }
     /// <p>The order of the Regions where you want to perform the stack operation.</p>
-    pub fn region_order(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.region_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_order.is_none()`.
+    pub fn region_order(&self) -> &[::std::string::String] {
+        self.region_order.as_deref().unwrap_or_default()
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before CloudFormation stops the operation in that Region. If the operation is stopped in a Region, CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code> (but not both).</p>

@@ -48,6 +48,7 @@ pub struct StartCelebrityRecognitionInputBuilder {
 }
 impl StartCelebrityRecognitionInputBuilder {
     /// <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self

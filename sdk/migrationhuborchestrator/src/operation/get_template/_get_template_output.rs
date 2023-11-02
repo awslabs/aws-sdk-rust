@@ -33,12 +33,16 @@ impl GetTemplateOutput {
         self.description.as_deref()
     }
     /// <p>The inputs provided for the creation of the migration workflow.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::TemplateInput]> {
-        self.inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
+    pub fn inputs(&self) -> &[crate::types::TemplateInput] {
+        self.inputs.as_deref().unwrap_or_default()
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn tools(&self) -> ::std::option::Option<&[crate::types::Tool]> {
-        self.tools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
+    pub fn tools(&self) -> &[crate::types::Tool] {
+        self.tools.as_deref().unwrap_or_default()
     }
     /// <p>The status of the template.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {

@@ -37,8 +37,10 @@ impl UpdateJobQueueInput {
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn compute_environment_order(&self) -> ::std::option::Option<&[crate::types::ComputeEnvironmentOrder]> {
-        self.compute_environment_order.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_environment_order.is_none()`.
+    pub fn compute_environment_order(&self) -> &[crate::types::ComputeEnvironmentOrder] {
+        self.compute_environment_order.as_deref().unwrap_or_default()
     }
 }
 impl UpdateJobQueueInput {
@@ -60,6 +62,7 @@ pub struct UpdateJobQueueInputBuilder {
 }
 impl UpdateJobQueueInputBuilder {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
+    /// This field is required.
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue = ::std::option::Option::Some(input.into());
         self

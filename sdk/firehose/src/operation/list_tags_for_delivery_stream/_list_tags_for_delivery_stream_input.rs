@@ -41,6 +41,7 @@ pub struct ListTagsForDeliveryStreamInputBuilder {
 }
 impl ListTagsForDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream whose tags you want to list.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self

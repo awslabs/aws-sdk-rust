@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberConfiguration {
     /// <p>The name of the member.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An optional description of the member.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration properties of the blockchain framework relevant to the member.</p>
@@ -27,8 +27,9 @@ pub struct MemberConfiguration {
 }
 impl MemberConfiguration {
     /// <p>The name of the member.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An optional description of the member.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -78,6 +79,7 @@ pub struct MemberConfigurationBuilder {
 }
 impl MemberConfigurationBuilder {
     /// <p>The name of the member.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +108,7 @@ impl MemberConfigurationBuilder {
         &self.description
     }
     /// <p>Configuration properties of the blockchain framework relevant to the member.</p>
+    /// This field is required.
     pub fn framework_configuration(mut self, input: crate::types::MemberFrameworkConfiguration) -> Self {
         self.framework_configuration = ::std::option::Option::Some(input);
         self
@@ -189,14 +192,21 @@ impl MemberConfigurationBuilder {
         &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`MemberConfiguration`](crate::types::MemberConfiguration).
-    pub fn build(self) -> crate::types::MemberConfiguration {
-        crate::types::MemberConfiguration {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::MemberConfigurationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MemberConfiguration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building MemberConfiguration",
+                )
+            })?,
             description: self.description,
             framework_configuration: self.framework_configuration,
             log_publishing_configuration: self.log_publishing_configuration,
             tags: self.tags,
             kms_key_arn: self.kms_key_arn,
-        }
+        })
     }
 }

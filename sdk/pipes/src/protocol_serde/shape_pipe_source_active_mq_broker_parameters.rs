@@ -9,19 +9,19 @@ pub fn ser_pipe_source_active_mq_broker_parameters(
         crate::protocol_serde::shape_mq_broker_access_credentials::ser_mq_broker_access_credentials(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.queue_name {
-        object.key("QueueName").string(var_3.as_str());
+    {
+        object.key("QueueName").string(input.queue_name.as_str());
     }
-    if let Some(var_4) = &input.batch_size {
+    if let Some(var_3) = &input.batch_size {
         object.key("BatchSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_5) = &input.maximum_batching_window_in_seconds {
+    if let Some(var_4) = &input.maximum_batching_window_in_seconds {
         object.key("MaximumBatchingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())
@@ -77,7 +77,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pipe_source_active_mq_broker_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

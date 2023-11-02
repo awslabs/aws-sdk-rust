@@ -3,17 +3,17 @@ pub fn ser_input_file_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputFileConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.channel_name {
-        object.key("channelName").string(var_1.as_str());
+    {
+        object.key("channelName").string(input.channel_name.as_str());
     }
-    if let Some(var_2) = &input.content_type {
-        object.key("contentType").string(var_2.as_str());
+    if let Some(var_1) = &input.content_type {
+        object.key("contentType").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.data_source {
+    if let Some(var_2) = &input.data_source {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("dataSource").start_object();
-        crate::protocol_serde::shape_data_source::ser_data_source(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("dataSource").start_object();
+        crate::protocol_serde::shape_data_source::ser_data_source(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -60,7 +60,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::input_file_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

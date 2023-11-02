@@ -13,8 +13,10 @@ pub struct ListBackupsOutput {
 }
 impl ListBackupsOutput {
     /// <p>List of <code>BackupSummary</code> objects.</p>
-    pub fn backup_summaries(&self) -> ::std::option::Option<&[crate::types::BackupSummary]> {
-        self.backup_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_summaries.is_none()`.
+    pub fn backup_summaries(&self) -> &[crate::types::BackupSummary] {
+        self.backup_summaries.as_deref().unwrap_or_default()
     }
     /// <p> The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
     /// <p> If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are no more results to be retrieved. </p>

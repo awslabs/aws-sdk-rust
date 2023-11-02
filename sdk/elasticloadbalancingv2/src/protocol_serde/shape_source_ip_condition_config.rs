@@ -18,6 +18,7 @@ pub fn ser_source_ip_condition_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_source_ip_condition_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SourceIpConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

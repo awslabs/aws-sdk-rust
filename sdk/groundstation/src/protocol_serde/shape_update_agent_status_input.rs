@@ -9,20 +9,20 @@ pub fn ser_update_agent_status_input(
         crate::protocol_serde::shape_aggregate_status::ser_aggregate_status(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.component_statuses {
-        let mut array_4 = object.key("componentStatuses").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("componentStatuses").start_array();
+        for item_4 in &input.component_statuses {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_component_status_data::ser_component_status_data(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_component_status_data::ser_component_status_data(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.task_id {
-        object.key("taskId").string(var_7.as_str());
+    {
+        object.key("taskId").string(input.task_id.as_str());
     }
     Ok(())
 }

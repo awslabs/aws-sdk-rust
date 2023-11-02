@@ -43,6 +43,7 @@ pub struct PollForActivityTaskInputBuilder {
 }
 impl PollForActivityTaskInputBuilder {
     /// <p>The name of the domain that contains the task lists being polled.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl PollForActivityTaskInputBuilder {
     }
     /// <p>Specifies the task list to poll for activity tasks.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentTurnSpecification {
     /// <p>The agent prompt for the agent turn in a test set.</p>
-    pub agent_prompt: ::std::option::Option<::std::string::String>,
+    pub agent_prompt: ::std::string::String,
 }
 impl AgentTurnSpecification {
     /// <p>The agent prompt for the agent turn in a test set.</p>
-    pub fn agent_prompt(&self) -> ::std::option::Option<&str> {
-        self.agent_prompt.as_deref()
+    pub fn agent_prompt(&self) -> &str {
+        use std::ops::Deref;
+        self.agent_prompt.deref()
     }
 }
 impl AgentTurnSpecification {
@@ -28,6 +29,7 @@ pub struct AgentTurnSpecificationBuilder {
 }
 impl AgentTurnSpecificationBuilder {
     /// <p>The agent prompt for the agent turn in a test set.</p>
+    /// This field is required.
     pub fn agent_prompt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_prompt = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl AgentTurnSpecificationBuilder {
         &self.agent_prompt
     }
     /// Consumes the builder and constructs a [`AgentTurnSpecification`](crate::types::AgentTurnSpecification).
-    pub fn build(self) -> crate::types::AgentTurnSpecification {
-        crate::types::AgentTurnSpecification {
-            agent_prompt: self.agent_prompt,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_prompt`](crate::types::builders::AgentTurnSpecificationBuilder::agent_prompt)
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AgentTurnSpecification {
+            agent_prompt: self.agent_prompt.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "agent_prompt",
+                    "agent_prompt was not specified but it is required when building AgentTurnSpecification",
+                )
+            })?,
+        })
     }
 }

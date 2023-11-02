@@ -34,6 +34,7 @@ pub struct UpdateExtensionAssociationInputBuilder {
 }
 impl UpdateExtensionAssociationInputBuilder {
     /// <p>The system-generated ID for the association.</p>
+    /// This field is required.
     pub fn extension_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_association_id = ::std::option::Option::Some(input.into());
         self

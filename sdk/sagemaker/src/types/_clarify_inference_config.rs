@@ -71,16 +71,22 @@ impl ClarifyInferenceConfig {
         self.label_attribute.as_deref()
     }
     /// <p>For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label. These are used to help readability for the output of the <code>InvokeEndpoint</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information. If there are no label headers in the model container output, provide them manually using this parameter.</p>
-    pub fn label_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.label_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_headers.is_none()`.
+    pub fn label_headers(&self) -> &[::std::string::String] {
+        self.label_headers.as_deref().unwrap_or_default()
     }
     /// <p>The names of the features. If provided, these are included in the endpoint response payload to help readability of the <code>InvokeEndpoint</code> output. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
-    pub fn feature_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.feature_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_headers.is_none()`.
+    pub fn feature_headers(&self) -> &[::std::string::String] {
+        self.feature_headers.as_deref().unwrap_or_default()
     }
     /// <p>A list of data types of the features (optional). Applicable only to NLP explainability. If provided, <code>FeatureTypes</code> must have at least one <code>'text'</code> string (for example, <code>['text']</code>). If <code>FeatureTypes</code> is not provided, the explainer infers the feature types based on the baseline data. The feature types are included in the endpoint response payload. For additional information see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">response</a> section under <b>Invoke the endpoint</b> in the Developer Guide for more information.</p>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::ClarifyFeatureType]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::ClarifyFeatureType] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
 }
 impl ClarifyInferenceConfig {

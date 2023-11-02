@@ -49,6 +49,7 @@ pub struct DesiredWeightAndCapacityBuilder {
 }
 impl DesiredWeightAndCapacityBuilder {
     /// <p>The name of the variant to update.</p>
+    /// This field is required.
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
         self

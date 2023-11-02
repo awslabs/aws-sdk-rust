@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChimeSdkMeetingLiveConnectorConfiguration {
     /// <p>The configuration object's Chime SDK meeting ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The configuration object's multiplex type.</p>
-    pub mux_type: ::std::option::Option<crate::types::LiveConnectorMuxType>,
+    pub mux_type: crate::types::LiveConnectorMuxType,
     /// <p>The media pipeline's composited video.</p>
     pub composited_video: ::std::option::Option<crate::types::CompositedVideoArtifactsConfiguration>,
     /// <p>The source configuration settings of the media pipeline's configuration object.</p>
@@ -15,12 +15,13 @@ pub struct ChimeSdkMeetingLiveConnectorConfiguration {
 }
 impl ChimeSdkMeetingLiveConnectorConfiguration {
     /// <p>The configuration object's Chime SDK meeting ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The configuration object's multiplex type.</p>
-    pub fn mux_type(&self) -> ::std::option::Option<&crate::types::LiveConnectorMuxType> {
-        self.mux_type.as_ref()
+    pub fn mux_type(&self) -> &crate::types::LiveConnectorMuxType {
+        &self.mux_type
     }
     /// <p>The media pipeline's composited video.</p>
     pub fn composited_video(&self) -> ::std::option::Option<&crate::types::CompositedVideoArtifactsConfiguration> {
@@ -59,6 +60,7 @@ pub struct ChimeSdkMeetingLiveConnectorConfigurationBuilder {
 }
 impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
     /// <p>The configuration object's Chime SDK meeting ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +75,7 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
         &self.arn
     }
     /// <p>The configuration object's multiplex type.</p>
+    /// This field is required.
     pub fn mux_type(mut self, input: crate::types::LiveConnectorMuxType) -> Self {
         self.mux_type = ::std::option::Option::Some(input);
         self
@@ -115,13 +118,28 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
         &self.source_configuration
     }
     /// Consumes the builder and constructs a [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::types::ChimeSdkMeetingLiveConnectorConfiguration).
-    pub fn build(self) -> crate::types::ChimeSdkMeetingLiveConnectorConfiguration {
-        crate::types::ChimeSdkMeetingLiveConnectorConfiguration {
-            arn: self.arn,
-            mux_type: self.mux_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ChimeSdkMeetingLiveConnectorConfigurationBuilder::arn)
+    /// - [`mux_type`](crate::types::builders::ChimeSdkMeetingLiveConnectorConfigurationBuilder::mux_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ChimeSdkMeetingLiveConnectorConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChimeSdkMeetingLiveConnectorConfiguration {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ChimeSdkMeetingLiveConnectorConfiguration",
+                )
+            })?,
+            mux_type: self.mux_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mux_type",
+                    "mux_type was not specified but it is required when building ChimeSdkMeetingLiveConnectorConfiguration",
+                )
+            })?,
             composited_video: self.composited_video,
             source_configuration: self.source_configuration,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ChimeSdkMeetingLiveConnectorConfigurationBuilder {

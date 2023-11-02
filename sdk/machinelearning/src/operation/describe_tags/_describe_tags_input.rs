@@ -34,6 +34,7 @@ pub struct DescribeTagsInputBuilder {
 }
 impl DescribeTagsInputBuilder {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeTagsInputBuilder {
         &self.resource_id
     }
     /// <p>The type of the ML object.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

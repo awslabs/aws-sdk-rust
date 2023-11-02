@@ -37,8 +37,10 @@ impl DescribeTestSetGenerationOutput {
         self.test_set_generation_status.as_ref()
     }
     /// <p>The reasons the test set generation failed.</p>
-    pub fn failure_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[::std::string::String] {
+        self.failure_reasons.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier for the test set created for the generated test set.</p>
     pub fn test_set_id(&self) -> ::std::option::Option<&str> {

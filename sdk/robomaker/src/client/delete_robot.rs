@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRobot`](crate::operation::delete_robot::builders::DeleteRobotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`robot(impl Into<String>)`](crate::operation::delete_robot::builders::DeleteRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::delete_robot::builders::DeleteRobotFluentBuilder::set_robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    ///   - [`robot(impl Into<String>)`](crate::operation::delete_robot::builders::DeleteRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::delete_robot::builders::DeleteRobotFluentBuilder::set_robot):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the robot.</p><br>
     /// - On success, responds with [`DeleteRobotOutput`](crate::operation::delete_robot::DeleteRobotOutput)
     /// - On failure, responds with [`SdkError<DeleteRobotError>`](crate::operation::delete_robot::DeleteRobotError)
     #[deprecated(

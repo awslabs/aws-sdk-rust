@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Import {
     /// <p>The name of the import.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The revision of the import.</p>
-    pub revision: ::std::option::Option<::std::string::String>,
+    pub revision: ::std::string::String,
 }
 impl Import {
     /// <p>The name of the import.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The revision of the import.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
-        self.revision.as_deref()
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
 }
 impl ::std::fmt::Debug for Import {
@@ -43,6 +45,7 @@ pub struct ImportBuilder {
 }
 impl ImportBuilder {
     /// <p>The name of the import.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl ImportBuilder {
         &self.name
     }
     /// <p>The revision of the import.</p>
+    /// This field is required.
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl ImportBuilder {
         &self.revision
     }
     /// Consumes the builder and constructs a [`Import`](crate::types::Import).
-    pub fn build(self) -> crate::types::Import {
-        crate::types::Import {
-            name: self.name,
-            revision: self.revision,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ImportBuilder::name)
+    /// - [`revision`](crate::types::builders::ImportBuilder::revision)
+    pub fn build(self) -> ::std::result::Result<crate::types::Import, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Import {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Import",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building Import",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ImportBuilder {

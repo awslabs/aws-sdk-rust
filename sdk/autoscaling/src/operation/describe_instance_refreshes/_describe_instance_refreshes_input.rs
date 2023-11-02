@@ -18,8 +18,10 @@ impl DescribeInstanceRefreshesInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>One or more instance refresh IDs.</p>
-    pub fn instance_refresh_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_refresh_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_refresh_ids.is_none()`.
+    pub fn instance_refresh_ids(&self) -> &[::std::string::String] {
+        self.instance_refresh_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct DescribeInstanceRefreshesInputBuilder {
 }
 impl DescribeInstanceRefreshesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self

@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The city for this address.</p>
-    pub city: ::std::option::Option<::std::string::String>,
+    pub city: ::std::string::String,
     /// <p>The company name for this address.</p>
     pub company: ::std::option::Option<::std::string::String>,
     /// <p>The country for this address.</p>
-    pub country: ::std::option::Option<::std::string::String>,
+    pub country: ::std::string::String,
     /// <p>The recipient's name for this address.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The recipient's phone number.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The postal code for this address.</p>
-    pub postal_code: ::std::option::Option<::std::string::String>,
+    pub postal_code: ::std::string::String,
     /// <p>The state or province for this address.</p>
-    pub state_or_province: ::std::option::Option<::std::string::String>,
+    pub state_or_province: ::std::string::String,
     /// <p>The first line of the street address.</p>
-    pub street1: ::std::option::Option<::std::string::String>,
+    pub street1: ::std::string::String,
     /// <p>The second line of the street address.</p>
     pub street2: ::std::option::Option<::std::string::String>,
     /// <p>The third line of the street address.</p>
@@ -29,36 +29,42 @@ pub struct Address {
 }
 impl Address {
     /// <p>The city for this address.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
-        self.city.as_deref()
+    pub fn city(&self) -> &str {
+        use std::ops::Deref;
+        self.city.deref()
     }
     /// <p>The company name for this address.</p>
     pub fn company(&self) -> ::std::option::Option<&str> {
         self.company.as_deref()
     }
     /// <p>The country for this address.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
-        self.country.as_deref()
+    pub fn country(&self) -> &str {
+        use std::ops::Deref;
+        self.country.deref()
     }
     /// <p>The recipient's name for this address.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The recipient's phone number.</p>
     pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>The postal code for this address.</p>
-    pub fn postal_code(&self) -> ::std::option::Option<&str> {
-        self.postal_code.as_deref()
+    pub fn postal_code(&self) -> &str {
+        use std::ops::Deref;
+        self.postal_code.deref()
     }
     /// <p>The state or province for this address.</p>
-    pub fn state_or_province(&self) -> ::std::option::Option<&str> {
-        self.state_or_province.as_deref()
+    pub fn state_or_province(&self) -> &str {
+        use std::ops::Deref;
+        self.state_or_province.deref()
     }
     /// <p>The first line of the street address.</p>
-    pub fn street1(&self) -> ::std::option::Option<&str> {
-        self.street1.as_deref()
+    pub fn street1(&self) -> &str {
+        use std::ops::Deref;
+        self.street1.deref()
     }
     /// <p>The second line of the street address.</p>
     pub fn street2(&self) -> ::std::option::Option<&str> {
@@ -115,6 +121,7 @@ pub struct AddressBuilder {
 }
 impl AddressBuilder {
     /// <p>The city for this address.</p>
+    /// This field is required.
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +150,7 @@ impl AddressBuilder {
         &self.company
     }
     /// <p>The country for this address.</p>
+    /// This field is required.
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +165,7 @@ impl AddressBuilder {
         &self.country
     }
     /// <p>The recipient's name for this address.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +194,7 @@ impl AddressBuilder {
         &self.phone_number
     }
     /// <p>The postal code for this address.</p>
+    /// This field is required.
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
         self
@@ -199,6 +209,7 @@ impl AddressBuilder {
         &self.postal_code
     }
     /// <p>The state or province for this address.</p>
+    /// This field is required.
     pub fn state_or_province(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_or_province = ::std::option::Option::Some(input.into());
         self
@@ -213,6 +224,7 @@ impl AddressBuilder {
         &self.state_or_province
     }
     /// <p>The first line of the street address.</p>
+    /// This field is required.
     pub fn street1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street1 = ::std::option::Option::Some(input.into());
         self
@@ -269,20 +281,57 @@ impl AddressBuilder {
         &self.email_address
     }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
-    pub fn build(self) -> crate::types::Address {
-        crate::types::Address {
-            city: self.city,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`city`](crate::types::builders::AddressBuilder::city)
+    /// - [`country`](crate::types::builders::AddressBuilder::country)
+    /// - [`name`](crate::types::builders::AddressBuilder::name)
+    /// - [`postal_code`](crate::types::builders::AddressBuilder::postal_code)
+    /// - [`state_or_province`](crate::types::builders::AddressBuilder::state_or_province)
+    /// - [`street1`](crate::types::builders::AddressBuilder::street1)
+    pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Address {
+            city: self.city.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "city",
+                    "city was not specified but it is required when building Address",
+                )
+            })?,
             company: self.company,
-            country: self.country,
-            name: self.name,
+            country: self.country.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "country",
+                    "country was not specified but it is required when building Address",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Address",
+                )
+            })?,
             phone_number: self.phone_number,
-            postal_code: self.postal_code,
-            state_or_province: self.state_or_province,
-            street1: self.street1,
+            postal_code: self.postal_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "postal_code",
+                    "postal_code was not specified but it is required when building Address",
+                )
+            })?,
+            state_or_province: self.state_or_province.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_or_province",
+                    "state_or_province was not specified but it is required when building Address",
+                )
+            })?,
+            street1: self.street1.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "street1",
+                    "street1 was not specified but it is required when building Address",
+                )
+            })?,
             street2: self.street2,
             street3: self.street3,
             email_address: self.email_address,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for AddressBuilder {

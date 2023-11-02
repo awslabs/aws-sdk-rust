@@ -11,8 +11,10 @@ pub struct GetSamplingStatisticSummariesOutput {
 }
 impl GetSamplingStatisticSummariesOutput {
     /// <p>Information about the number of requests instrumented for each sampling rule.</p>
-    pub fn sampling_statistic_summaries(&self) -> ::std::option::Option<&[crate::types::SamplingStatisticSummary]> {
-        self.sampling_statistic_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sampling_statistic_summaries.is_none()`.
+    pub fn sampling_statistic_summaries(&self) -> &[crate::types::SamplingStatisticSummary] {
+        self.sampling_statistic_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

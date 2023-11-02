@@ -34,6 +34,7 @@ impl DeleteCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group to delete.</p> <note>
     /// <p>The specified cache security group must not be associated with any clusters.</p>
     /// </note>
+    /// This field is required.
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self

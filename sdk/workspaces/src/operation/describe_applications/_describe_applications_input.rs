@@ -20,20 +20,26 @@ pub struct DescribeApplicationsInput {
 }
 impl DescribeApplicationsInput {
     /// <p>The identifiers of one or more applications.</p>
-    pub fn application_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_ids.is_none()`.
+    pub fn application_ids(&self) -> &[::std::string::String] {
+        self.application_ids.as_deref().unwrap_or_default()
     }
     /// <p>The compute types supported by the applications.</p>
-    pub fn compute_type_names(&self) -> ::std::option::Option<&[crate::types::Compute]> {
-        self.compute_type_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_type_names.is_none()`.
+    pub fn compute_type_names(&self) -> &[crate::types::Compute] {
+        self.compute_type_names.as_deref().unwrap_or_default()
     }
     /// <p>The license availability for the applications.</p>
     pub fn license_type(&self) -> ::std::option::Option<&crate::types::WorkSpaceApplicationLicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The operating systems supported by the applications.</p>
-    pub fn operating_system_names(&self) -> ::std::option::Option<&[crate::types::OperatingSystemName]> {
-        self.operating_system_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_system_names.is_none()`.
+    pub fn operating_system_names(&self) -> &[crate::types::OperatingSystemName] {
+        self.operating_system_names.as_deref().unwrap_or_default()
     }
     /// <p>The owner of the applications.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {

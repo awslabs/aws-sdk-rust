@@ -34,6 +34,7 @@ pub struct DescribeTemplatePermissionsInputBuilder {
 }
 impl DescribeTemplatePermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeTemplatePermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self

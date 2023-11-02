@@ -28,6 +28,7 @@ pub struct OrganizationConfigurationBuilder {
 }
 impl OrganizationConfigurationBuilder {
     /// <p>Enables Organizations integration.</p>
+    /// This field is required.
     pub fn enable_integration(mut self, input: bool) -> Self {
         self.enable_integration = ::std::option::Option::Some(input);
         self

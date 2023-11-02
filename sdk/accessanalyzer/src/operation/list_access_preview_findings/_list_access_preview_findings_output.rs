@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPreviewFindingsOutput {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>,
+    pub findings: ::std::vec::Vec<crate::types::AccessPreviewFinding>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAccessPreviewFindingsOutput {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::AccessPreviewFinding]> {
-        self.findings.as_deref()
+    pub fn findings(&self) -> &[crate::types::AccessPreviewFinding] {
+        use std::ops::Deref;
+        self.findings.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAccessPreviewFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
-    pub fn build(self) -> crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
-        crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
-            findings: self.findings,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`findings`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder::findings)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
+            findings: self.findings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "findings",
+                    "findings was not specified but it is required when building ListAccessPreviewFindingsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

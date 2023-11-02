@@ -34,6 +34,7 @@ pub struct ListStorageLensConfigurationsInputBuilder {
 }
 impl ListStorageLensConfigurationsInputBuilder {
     /// <p>The account ID of the requester.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

@@ -64,6 +64,7 @@ pub struct CreateContactFlowInputBuilder {
 }
 impl CreateContactFlowInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +79,7 @@ impl CreateContactFlowInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the flow.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +94,7 @@ impl CreateContactFlowInputBuilder {
         &self.name
     }
     /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContactFlowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -121,6 +124,7 @@ impl CreateContactFlowInputBuilder {
     }
     /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>. </p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 256000.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self

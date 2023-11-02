@@ -48,6 +48,7 @@ pub struct ListSensorStatisticsInputBuilder {
 }
 impl ListSensorStatisticsInputBuilder {
     /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self

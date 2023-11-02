@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceStreamingConfiguration {
     /// <p>The type of data to be streamed.</p>
-    pub app_instance_data_type: ::std::option::Option<crate::types::AppInstanceDataType>,
+    pub app_instance_data_type: crate::types::AppInstanceDataType,
     /// <p>The resource ARN.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
 }
 impl AppInstanceStreamingConfiguration {
     /// <p>The type of data to be streamed.</p>
-    pub fn app_instance_data_type(&self) -> ::std::option::Option<&crate::types::AppInstanceDataType> {
-        self.app_instance_data_type.as_ref()
+    pub fn app_instance_data_type(&self) -> &crate::types::AppInstanceDataType {
+        &self.app_instance_data_type
     }
     /// <p>The resource ARN.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
 }
 impl ::std::fmt::Debug for AppInstanceStreamingConfiguration {
@@ -43,6 +44,7 @@ pub struct AppInstanceStreamingConfigurationBuilder {
 }
 impl AppInstanceStreamingConfigurationBuilder {
     /// <p>The type of data to be streamed.</p>
+    /// This field is required.
     pub fn app_instance_data_type(mut self, input: crate::types::AppInstanceDataType) -> Self {
         self.app_instance_data_type = ::std::option::Option::Some(input);
         self
@@ -57,6 +59,7 @@ impl AppInstanceStreamingConfigurationBuilder {
         &self.app_instance_data_type
     }
     /// <p>The resource ARN.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +74,24 @@ impl AppInstanceStreamingConfigurationBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`AppInstanceStreamingConfiguration`](crate::types::AppInstanceStreamingConfiguration).
-    pub fn build(self) -> crate::types::AppInstanceStreamingConfiguration {
-        crate::types::AppInstanceStreamingConfiguration {
-            app_instance_data_type: self.app_instance_data_type,
-            resource_arn: self.resource_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_instance_data_type`](crate::types::builders::AppInstanceStreamingConfigurationBuilder::app_instance_data_type)
+    /// - [`resource_arn`](crate::types::builders::AppInstanceStreamingConfigurationBuilder::resource_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::AppInstanceStreamingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AppInstanceStreamingConfiguration {
+            app_instance_data_type: self.app_instance_data_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_instance_data_type",
+                    "app_instance_data_type was not specified but it is required when building AppInstanceStreamingConfiguration",
+                )
+            })?,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building AppInstanceStreamingConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for AppInstanceStreamingConfigurationBuilder {

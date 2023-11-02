@@ -8,8 +8,10 @@ pub struct BatchGetCustomDataIdentifiersInput {
 }
 impl BatchGetCustomDataIdentifiersInput {
     /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetCustomDataIdentifiersInput {

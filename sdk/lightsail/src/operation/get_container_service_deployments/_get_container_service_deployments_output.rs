@@ -9,8 +9,10 @@ pub struct GetContainerServiceDeploymentsOutput {
 }
 impl GetContainerServiceDeploymentsOutput {
     /// <p>An array of objects that describe deployments for a container service.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::ContainerServiceDeployment]> {
-        self.deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments.is_none()`.
+    pub fn deployments(&self) -> &[crate::types::ContainerServiceDeployment] {
+        self.deployments.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContainerServiceDeploymentsOutput {

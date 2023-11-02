@@ -20,6 +20,7 @@ pub fn ser_spot_capacity_rebalance(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_spot_capacity_rebalance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SpotCapacityRebalance, ::aws_smithy_xml::decode::XmlDecodeError> {

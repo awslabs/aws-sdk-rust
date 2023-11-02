@@ -27,6 +27,7 @@ pub struct DeleteBatchPredictionInputBuilder {
 }
 impl DeleteBatchPredictionInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    /// This field is required.
     pub fn batch_prediction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self

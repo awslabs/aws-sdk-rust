@@ -90,19 +90,13 @@ pub(crate) fn reflens_search_related_items_output_next_token(
 pub(crate) fn lens_search_cases_output_cases(
     input: crate::operation::search_cases::SearchCasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>> {
-    let input = match input.cases {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.cases;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_search_related_items_output_related_items(
     input: crate::operation::search_related_items::SearchRelatedItemsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchRelatedItemsResponseItem>>> {
-    let input = match input.related_items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.related_items;
     ::std::option::Option::Some(input)
 }

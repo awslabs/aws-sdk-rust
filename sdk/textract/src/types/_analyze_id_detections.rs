@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyzeIdDetections {
     /// <p>Text of either the normalized field or value associated with it.</p>
-    pub text: ::std::option::Option<::std::string::String>,
+    pub text: ::std::string::String,
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
     pub normalized_value: ::std::option::Option<crate::types::NormalizedValue>,
     /// <p>The confidence score of the detected text.</p>
@@ -13,8 +13,9 @@ pub struct AnalyzeIdDetections {
 }
 impl AnalyzeIdDetections {
     /// <p>Text of either the normalized field or value associated with it.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
-        self.text.as_deref()
+    pub fn text(&self) -> &str {
+        use std::ops::Deref;
+        self.text.deref()
     }
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
     pub fn normalized_value(&self) -> ::std::option::Option<&crate::types::NormalizedValue> {
@@ -42,6 +43,7 @@ pub struct AnalyzeIdDetectionsBuilder {
 }
 impl AnalyzeIdDetectionsBuilder {
     /// <p>Text of either the normalized field or value associated with it.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl AnalyzeIdDetectionsBuilder {
         &self.confidence
     }
     /// Consumes the builder and constructs a [`AnalyzeIdDetections`](crate::types::AnalyzeIdDetections).
-    pub fn build(self) -> crate::types::AnalyzeIdDetections {
-        crate::types::AnalyzeIdDetections {
-            text: self.text,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text`](crate::types::builders::AnalyzeIdDetectionsBuilder::text)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzeIdDetections, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyzeIdDetections {
+            text: self.text.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text",
+                    "text was not specified but it is required when building AnalyzeIdDetections",
+                )
+            })?,
             normalized_value: self.normalized_value,
             confidence: self.confidence,
-        }
+        })
     }
 }

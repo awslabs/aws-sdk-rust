@@ -6,7 +6,7 @@ pub struct ListPermissionsOutput {
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The permissions returned by the operation.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::PermissionEntry>>,
+    pub permissions: ::std::vec::Vec<crate::types::PermissionEntry>,
     _request_id: Option<String>,
 }
 impl ListPermissionsOutput {
@@ -15,8 +15,9 @@ impl ListPermissionsOutput {
         self.next_token.as_deref()
     }
     /// <p>The permissions returned by the operation.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::PermissionEntry]> {
-        self.permissions.as_deref()
+    pub fn permissions(&self) -> &[crate::types::PermissionEntry] {
+        use std::ops::Deref;
+        self.permissions.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPermissionsOutput {
@@ -84,11 +85,20 @@ impl ListPermissionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput).
-    pub fn build(self) -> crate::operation::list_permissions::ListPermissionsOutput {
-        crate::operation::list_permissions::ListPermissionsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`permissions`](crate::operation::list_permissions::builders::ListPermissionsOutputBuilder::permissions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsOutput {
             next_token: self.next_token,
-            permissions: self.permissions,
+            permissions: self.permissions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "permissions",
+                    "permissions was not specified but it is required when building ListPermissionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

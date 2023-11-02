@@ -23,24 +23,32 @@ pub struct UpdateInputInput {
 }
 impl UpdateInputInput {
     /// Destination settings for PUSH type inputs.
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::InputDestinationRequest]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::InputDestinationRequest] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// Settings for the devices.
-    pub fn input_devices(&self) -> ::std::option::Option<&[crate::types::InputDeviceRequest]> {
-        self.input_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_devices.is_none()`.
+    pub fn input_devices(&self) -> &[crate::types::InputDeviceRequest] {
+        self.input_devices.as_deref().unwrap_or_default()
     }
     /// Unique ID of the input.
     pub fn input_id(&self) -> ::std::option::Option<&str> {
         self.input_id.as_deref()
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn input_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.input_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_security_groups.is_none()`.
+    pub fn input_security_groups(&self) -> &[::std::string::String] {
+        self.input_security_groups.as_deref().unwrap_or_default()
     }
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn media_connect_flows(&self) -> ::std::option::Option<&[crate::types::MediaConnectFlowRequest]> {
-        self.media_connect_flows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_connect_flows.is_none()`.
+    pub fn media_connect_flows(&self) -> &[crate::types::MediaConnectFlowRequest] {
+        self.media_connect_flows.as_deref().unwrap_or_default()
     }
     /// Name of the input.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -51,8 +59,10 @@ impl UpdateInputInput {
         self.role_arn.as_deref()
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::InputSourceRequest]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::InputSourceRequest] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl UpdateInputInput {
@@ -117,6 +127,7 @@ impl UpdateInputInputBuilder {
         &self.input_devices
     }
     /// Unique ID of the input.
+    /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_association_id: ::std::option::Option<::std::string::String>,
+    pub assistant_association_id: ::std::string::String,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
 }
 impl GetAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_association_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_association_id.as_deref()
+    pub fn assistant_association_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_association_id.deref()
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
 }
 impl GetAssistantAssociationInput {
@@ -34,6 +36,7 @@ pub struct GetAssistantAssociationInputBuilder {
 }
 impl GetAssistantAssociationInputBuilder {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_association_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetAssistantAssociationInputBuilder {
         &self.assistant_association_id
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl GetAssistantAssociationInputBuilder {
         &self.assistant_id
     }
     /// Consumes the builder and constructs a [`GetAssistantAssociationInput`](crate::operation::get_assistant_association::GetAssistantAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_association_id`](crate::operation::get_assistant_association::builders::GetAssistantAssociationInputBuilder::assistant_association_id)
+    /// - [`assistant_id`](crate::operation::get_assistant_association::builders::GetAssistantAssociationInputBuilder::assistant_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,8 +76,18 @@ impl GetAssistantAssociationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_assistant_association::GetAssistantAssociationInput {
-            assistant_association_id: self.assistant_association_id,
-            assistant_id: self.assistant_id,
+            assistant_association_id: self.assistant_association_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_association_id",
+                    "assistant_association_id was not specified but it is required when building GetAssistantAssociationInput",
+                )
+            })?,
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building GetAssistantAssociationInput",
+                )
+            })?,
         })
     }
 }

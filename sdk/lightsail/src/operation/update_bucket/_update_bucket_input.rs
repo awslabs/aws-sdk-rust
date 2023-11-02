@@ -40,8 +40,10 @@ impl UpdateBucketInput {
     }
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn readonly_access_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.readonly_access_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readonly_access_accounts.is_none()`.
+    pub fn readonly_access_accounts(&self) -> &[::std::string::String] {
+        self.readonly_access_accounts.as_deref().unwrap_or_default()
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub fn access_log_config(&self) -> ::std::option::Option<&crate::types::BucketAccessLogConfig> {
@@ -67,6 +69,7 @@ pub struct UpdateBucketInputBuilder {
 }
 impl UpdateBucketInputBuilder {
     /// <p>The name of the bucket to update.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self

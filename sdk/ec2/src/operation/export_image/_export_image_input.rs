@@ -50,8 +50,10 @@ impl ExportImageInput {
         self.role_name.as_deref()
     }
     /// <p>The tags to apply to the export image task during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl ExportImageInput {
@@ -104,6 +106,7 @@ impl ExportImageInputBuilder {
         &self.description
     }
     /// <p>The disk image format.</p>
+    /// This field is required.
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
         self.disk_image_format = ::std::option::Option::Some(input);
         self
@@ -132,6 +135,7 @@ impl ExportImageInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the image.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl ExportImageInputBuilder {
         &self.image_id
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist.</p>
+    /// This field is required.
     pub fn s3_export_location(mut self, input: crate::types::ExportTaskS3LocationRequest) -> Self {
         self.s3_export_location = ::std::option::Option::Some(input);
         self

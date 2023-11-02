@@ -3,14 +3,14 @@ pub fn ser_application_credential(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApplicationCredential,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.database_name {
-        object.key("DatabaseName").string(var_1.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_2) = &input.credential_type {
-        object.key("CredentialType").string(var_2.as_str());
+    {
+        object.key("CredentialType").string(input.credential_type.as_str());
     }
-    if let Some(var_3) = &input.secret_id {
-        object.key("SecretId").string(var_3.as_str());
+    {
+        object.key("SecretId").string(input.secret_id.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::application_credential_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

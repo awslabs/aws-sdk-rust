@@ -43,6 +43,7 @@ pub struct ListMapRunsInputBuilder {
 }
 impl ListMapRunsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self

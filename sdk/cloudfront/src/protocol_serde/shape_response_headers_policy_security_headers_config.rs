@@ -42,6 +42,7 @@ pub fn ser_response_headers_policy_security_headers_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_security_headers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicySecurityHeadersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

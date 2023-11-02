@@ -27,6 +27,7 @@ pub struct CancelWorldGenerationJobInputBuilder {
 }
 impl CancelWorldGenerationJobInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
+    /// This field is required.
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job = ::std::option::Option::Some(input.into());
         self

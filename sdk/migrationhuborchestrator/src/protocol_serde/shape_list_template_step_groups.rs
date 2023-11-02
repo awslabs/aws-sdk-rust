@@ -32,11 +32,10 @@ pub fn de_list_template_step_groups_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_template_step_groups::ListTemplateStepGroupsError::InternalServerException({
@@ -47,11 +46,10 @@ pub fn de_list_template_step_groups_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_template_step_groups::ListTemplateStepGroupsError::ResourceNotFoundException({
@@ -62,11 +60,10 @@ pub fn de_list_template_step_groups_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_template_step_groups::ListTemplateStepGroupsError::ThrottlingException({
@@ -77,11 +74,10 @@ pub fn de_list_template_step_groups_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_template_step_groups::ListTemplateStepGroupsError::generic(generic),
@@ -103,7 +99,9 @@ pub fn de_list_template_step_groups_http_response(
         output = crate::protocol_serde::shape_list_template_step_groups::de_list_template_step_groups(_response_body, output)
             .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_template_step_groups_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_template_step_groups::ListTemplateStepGroupsError::unhandled)?
     })
 }
 

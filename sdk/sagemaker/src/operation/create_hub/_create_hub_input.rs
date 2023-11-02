@@ -30,16 +30,20 @@ impl CreateHubInput {
         self.hub_display_name.as_deref()
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn hub_search_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hub_search_keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_search_keywords.is_none()`.
+    pub fn hub_search_keywords(&self) -> &[::std::string::String] {
+        self.hub_search_keywords.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
     pub fn s3_storage_config(&self) -> ::std::option::Option<&crate::types::HubS3StorageConfig> {
         self.s3_storage_config.as_ref()
     }
     /// <p>Any tags to associate with the hub.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateHubInput {
@@ -62,6 +66,7 @@ pub struct CreateHubInputBuilder {
 }
 impl CreateHubInputBuilder {
     /// <p>The name of the hub to create.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl CreateHubInputBuilder {
         &self.hub_name
     }
     /// <p>A description of the hub.</p>
+    /// This field is required.
     pub fn hub_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_description = ::std::option::Option::Some(input.into());
         self

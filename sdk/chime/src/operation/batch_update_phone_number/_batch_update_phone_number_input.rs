@@ -8,8 +8,10 @@ pub struct BatchUpdatePhoneNumberInput {
 }
 impl BatchUpdatePhoneNumberInput {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    pub fn update_phone_number_request_items(&self) -> ::std::option::Option<&[crate::types::UpdatePhoneNumberRequestItem]> {
-        self.update_phone_number_request_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_phone_number_request_items.is_none()`.
+    pub fn update_phone_number_request_items(&self) -> &[crate::types::UpdatePhoneNumberRequestItem] {
+        self.update_phone_number_request_items.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdatePhoneNumberInput {

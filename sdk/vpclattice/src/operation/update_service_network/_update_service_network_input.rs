@@ -4,26 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub service_network_identifier: ::std::option::Option<::std::string::String>,
+    pub service_network_identifier: ::std::string::String,
     /// <p>The type of IAM policy.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
     /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
-    pub auth_type: ::std::option::Option<crate::types::AuthType>,
+    pub auth_type: crate::types::AuthType,
 }
 impl UpdateServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_network_identifier.as_deref()
+    pub fn service_network_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_network_identifier.deref()
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
     /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
-        self.auth_type.as_ref()
+    pub fn auth_type(&self) -> &crate::types::AuthType {
+        &self.auth_type
     }
 }
 impl UpdateServiceNetworkInput {
@@ -42,6 +43,7 @@ pub struct UpdateServiceNetworkInputBuilder {
 }
 impl UpdateServiceNetworkInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +62,7 @@ impl UpdateServiceNetworkInputBuilder {
     /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
     /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
@@ -82,13 +85,26 @@ impl UpdateServiceNetworkInputBuilder {
         &self.auth_type
     }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_network_identifier`](crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder::service_network_identifier)
+    /// - [`auth_type`](crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder::auth_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_network::UpdateServiceNetworkInput {
-            service_network_identifier: self.service_network_identifier,
-            auth_type: self.auth_type,
+            service_network_identifier: self.service_network_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_network_identifier",
+                    "service_network_identifier was not specified but it is required when building UpdateServiceNetworkInput",
+                )
+            })?,
+            auth_type: self.auth_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "auth_type",
+                    "auth_type was not specified but it is required when building UpdateServiceNetworkInput",
+                )
+            })?,
         })
     }
 }

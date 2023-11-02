@@ -11,25 +11,27 @@
 pub struct ByteMatchSet {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub byte_match_set_id: ::std::option::Option<::std::string::String>,
+    pub byte_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-    pub byte_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::ByteMatchTuple>>,
+    pub byte_match_tuples: ::std::vec::Vec<crate::types::ByteMatchTuple>,
 }
 impl ByteMatchSet {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> ::std::option::Option<&str> {
-        self.byte_match_set_id.as_deref()
+    pub fn byte_match_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.byte_match_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-    pub fn byte_match_tuples(&self) -> ::std::option::Option<&[crate::types::ByteMatchTuple]> {
-        self.byte_match_tuples.as_deref()
+    pub fn byte_match_tuples(&self) -> &[crate::types::ByteMatchTuple] {
+        use std::ops::Deref;
+        self.byte_match_tuples.deref()
     }
 }
 impl ByteMatchSet {
@@ -50,6 +52,7 @@ pub struct ByteMatchSetBuilder {
 impl ByteMatchSetBuilder {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// This field is required.
     pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -100,11 +103,24 @@ impl ByteMatchSetBuilder {
         &self.byte_match_tuples
     }
     /// Consumes the builder and constructs a [`ByteMatchSet`](crate::types::ByteMatchSet).
-    pub fn build(self) -> crate::types::ByteMatchSet {
-        crate::types::ByteMatchSet {
-            byte_match_set_id: self.byte_match_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`byte_match_set_id`](crate::types::builders::ByteMatchSetBuilder::byte_match_set_id)
+    /// - [`byte_match_tuples`](crate::types::builders::ByteMatchSetBuilder::byte_match_tuples)
+    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ByteMatchSet {
+            byte_match_set_id: self.byte_match_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "byte_match_set_id",
+                    "byte_match_set_id was not specified but it is required when building ByteMatchSet",
+                )
+            })?,
             name: self.name,
-            byte_match_tuples: self.byte_match_tuples,
-        }
+            byte_match_tuples: self.byte_match_tuples.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "byte_match_tuples",
+                    "byte_match_tuples was not specified but it is required when building ByteMatchSet",
+                )
+            })?,
+        })
     }
 }

@@ -49,6 +49,7 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
         &self.duration_in_minutes
     }
     /// <p>The FinSpace environment identifier.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self

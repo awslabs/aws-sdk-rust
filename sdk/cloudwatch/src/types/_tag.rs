@@ -35,6 +35,7 @@ pub struct TagBuilder {
 }
 impl TagBuilder {
     /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl TagBuilder {
         &self.key
     }
     /// <p>The value for the specified tag key.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

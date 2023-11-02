@@ -43,6 +43,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// <p>Constraints:</p>
     /// <p>Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
+    /// This field is required.
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self

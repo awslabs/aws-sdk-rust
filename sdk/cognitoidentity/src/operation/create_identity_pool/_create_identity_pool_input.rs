@@ -47,16 +47,22 @@ impl CreateIdentityPoolInput {
         self.developer_provider_name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    pub fn open_id_connect_provider_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.open_id_connect_provider_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_id_connect_provider_ar_ns.is_none()`.
+    pub fn open_id_connect_provider_ar_ns(&self) -> &[::std::string::String] {
+        self.open_id_connect_provider_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
-    pub fn cognito_identity_providers(&self) -> ::std::option::Option<&[crate::types::CognitoIdentityProvider]> {
-        self.cognito_identity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cognito_identity_providers.is_none()`.
+    pub fn cognito_identity_providers(&self) -> &[crate::types::CognitoIdentityProvider] {
+        self.cognito_identity_providers.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn saml_provider_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.saml_provider_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.saml_provider_ar_ns.is_none()`.
+    pub fn saml_provider_ar_ns(&self) -> &[::std::string::String] {
+        self.saml_provider_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub fn identity_pool_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -86,6 +92,7 @@ pub struct CreateIdentityPoolInputBuilder {
 }
 impl CreateIdentityPoolInputBuilder {
     /// <p>A string that you provide.</p>
+    /// This field is required.
     pub fn identity_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_name = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +107,7 @@ impl CreateIdentityPoolInputBuilder {
         &self.identity_pool_name
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    /// This field is required.
     pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
         self.allow_unauthenticated_identities = ::std::option::Option::Some(input);
         self

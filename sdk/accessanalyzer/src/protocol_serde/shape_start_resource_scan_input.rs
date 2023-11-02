@@ -3,14 +3,14 @@ pub fn ser_start_resource_scan_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_resource_scan::StartResourceScanInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.analyzer_arn {
-        object.key("analyzerArn").string(var_1.as_str());
+    {
+        object.key("analyzerArn").string(input.analyzer_arn.as_str());
     }
-    if let Some(var_2) = &input.resource_arn {
-        object.key("resourceArn").string(var_2.as_str());
+    {
+        object.key("resourceArn").string(input.resource_arn.as_str());
     }
-    if let Some(var_3) = &input.resource_owner_account {
-        object.key("resourceOwnerAccount").string(var_3.as_str());
+    if let Some(var_1) = &input.resource_owner_account {
+        object.key("resourceOwnerAccount").string(var_1.as_str());
     }
     Ok(())
 }

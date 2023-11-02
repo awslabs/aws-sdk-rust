@@ -25,8 +25,10 @@ impl ScheduledInstanceRecurrenceRequest {
         self.interval
     }
     /// <p>The days. For a monthly schedule, this is one or more days of the month (1-31). For a weekly schedule, this is one or more days of the week (1-7, where 1 is Sunday). You can't specify this value with a daily schedule. If the occurrence is relative to the end of the month, you can specify only a single day.</p>
-    pub fn occurrence_days(&self) -> ::std::option::Option<&[i32]> {
-        self.occurrence_days.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.occurrence_days.is_none()`.
+    pub fn occurrence_days(&self) -> &[i32] {
+        self.occurrence_days.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the occurrence is relative to the end of the specified week or month. You can't specify this value with a daily schedule.</p>
     pub fn occurrence_relative_to_end(&self) -> ::std::option::Option<bool> {

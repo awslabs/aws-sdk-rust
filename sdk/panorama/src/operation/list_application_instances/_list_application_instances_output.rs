@@ -11,8 +11,10 @@ pub struct ListApplicationInstancesOutput {
 }
 impl ListApplicationInstancesOutput {
     /// <p>A list of application instances.</p>
-    pub fn application_instances(&self) -> ::std::option::Option<&[crate::types::ApplicationInstance]> {
-        self.application_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_instances.is_none()`.
+    pub fn application_instances(&self) -> &[crate::types::ApplicationInstance] {
+        self.application_instances.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

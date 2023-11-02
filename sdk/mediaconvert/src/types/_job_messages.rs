@@ -11,12 +11,16 @@ pub struct JobMessages {
 }
 impl JobMessages {
     /// List of messages that are informational only and don't indicate a problem with your job.
-    pub fn info(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.info.is_none()`.
+    pub fn info(&self) -> &[::std::string::String] {
+        self.info.as_deref().unwrap_or_default()
     }
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
-    pub fn warning(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.warning.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warning.is_none()`.
+    pub fn warning(&self) -> &[::std::string::String] {
+        self.warning.as_deref().unwrap_or_default()
     }
 }
 impl JobMessages {

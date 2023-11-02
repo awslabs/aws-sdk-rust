@@ -3,8 +3,8 @@ pub fn ser_start_content_upload_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_content_upload::StartContentUploadInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.content_type {
-        object.key("contentType").string(var_1.as_str());
+    {
+        object.key("contentType").string(input.content_type.as_str());
     }
     Ok(())
 }

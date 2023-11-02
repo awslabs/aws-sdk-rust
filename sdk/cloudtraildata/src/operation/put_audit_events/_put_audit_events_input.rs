@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAuditEventsInput {
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub audit_events: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>,
+    pub audit_events: ::std::vec::Vec<crate::types::AuditEvent>,
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
-    pub channel_arn: ::std::option::Option<::std::string::String>,
+    pub channel_arn: ::std::string::String,
     /// <p>A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl PutAuditEventsInput {
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn audit_events(&self) -> ::std::option::Option<&[crate::types::AuditEvent]> {
-        self.audit_events.as_deref()
+    pub fn audit_events(&self) -> &[crate::types::AuditEvent] {
+        use std::ops::Deref;
+        self.audit_events.deref()
     }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
-        self.channel_arn.as_deref()
+    pub fn channel_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_arn.deref()
     }
     /// <p>A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.</p>
     pub fn external_id(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl PutAuditEventsInputBuilder {
         &self.audit_events
     }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -89,12 +92,25 @@ impl PutAuditEventsInputBuilder {
         &self.external_id
     }
     /// Consumes the builder and constructs a [`PutAuditEventsInput`](crate::operation::put_audit_events::PutAuditEventsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`audit_events`](crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder::audit_events)
+    /// - [`channel_arn`](crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder::channel_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_audit_events::PutAuditEventsInput {
-            audit_events: self.audit_events,
-            channel_arn: self.channel_arn,
+            audit_events: self.audit_events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "audit_events",
+                    "audit_events was not specified but it is required when building PutAuditEventsInput",
+                )
+            })?,
+            channel_arn: self.channel_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_arn",
+                    "channel_arn was not specified but it is required when building PutAuditEventsInput",
+                )
+            })?,
             external_id: self.external_id,
         })
     }

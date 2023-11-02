@@ -27,6 +27,7 @@ pub struct DescribeOfferingInputBuilder {
 }
 impl DescribeOfferingInputBuilder {
     /// The Amazon Resource Name (ARN) of the offering.
+    /// This field is required.
     pub fn offering_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_arn = ::std::option::Option::Some(input.into());
         self

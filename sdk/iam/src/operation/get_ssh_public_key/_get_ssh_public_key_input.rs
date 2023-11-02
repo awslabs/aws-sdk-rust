@@ -46,6 +46,7 @@ pub struct GetSshPublicKeyInputBuilder {
 impl GetSshPublicKeyInputBuilder {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl GetSshPublicKeyInputBuilder {
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// This field is required.
     pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +81,7 @@ impl GetSshPublicKeyInputBuilder {
         &self.ssh_public_key_id
     }
     /// <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
+    /// This field is required.
     pub fn encoding(mut self, input: crate::types::EncodingType) -> Self {
         self.encoding = ::std::option::Option::Some(input);
         self

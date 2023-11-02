@@ -70,6 +70,7 @@ pub struct CreateUpdatedImageInputBuilder {
 }
 impl CreateUpdatedImageInputBuilder {
     /// <p>The name of the image to update.</p>
+    /// This field is required.
     pub fn existing_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.existing_image_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl CreateUpdatedImageInputBuilder {
         &self.existing_image_name
     }
     /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
+    /// This field is required.
     pub fn new_image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_image_name = ::std::option::Option::Some(input.into());
         self

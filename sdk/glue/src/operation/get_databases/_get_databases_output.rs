@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDatabasesOutput {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub database_list: ::std::option::Option<::std::vec::Vec<crate::types::Database>>,
+    pub database_list: ::std::vec::Vec<crate::types::Database>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDatabasesOutput {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub fn database_list(&self) -> ::std::option::Option<&[crate::types::Database]> {
-        self.database_list.as_deref()
+    pub fn database_list(&self) -> &[crate::types::Database] {
+        use std::ops::Deref;
+        self.database_list.deref()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl GetDatabasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDatabasesOutput`](crate::operation::get_databases::GetDatabasesOutput).
-    pub fn build(self) -> crate::operation::get_databases::GetDatabasesOutput {
-        crate::operation::get_databases::GetDatabasesOutput {
-            database_list: self.database_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_list`](crate::operation::get_databases::builders::GetDatabasesOutputBuilder::database_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_databases::GetDatabasesOutput {
+            database_list: self.database_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_list",
+                    "database_list was not specified but it is required when building GetDatabasesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

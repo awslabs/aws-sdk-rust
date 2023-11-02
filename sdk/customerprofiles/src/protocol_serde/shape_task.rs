@@ -12,27 +12,27 @@ pub fn ser_task(
     if let Some(var_3) = &input.destination_field {
         object.key("DestinationField").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.source_fields {
-        let mut array_5 = object.key("SourceFields").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_4 = object.key("SourceFields").start_array();
+        for item_5 in &input.source_fields {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_7) = &input.task_properties {
+    if let Some(var_6) = &input.task_properties {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("TaskProperties").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_7 = object.key("TaskProperties").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_8.finish();
+        object_7.finish();
     }
-    if let Some(var_11) = &input.task_type {
-        object.key("TaskType").string(var_11.as_str());
+    {
+        object.key("TaskType").string(input.task_type.as_str());
     }
     Ok(())
 }

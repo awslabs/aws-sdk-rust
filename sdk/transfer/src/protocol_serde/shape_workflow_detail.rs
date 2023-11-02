@@ -3,11 +3,11 @@ pub fn ser_workflow_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkflowDetail,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.workflow_id {
-        object.key("WorkflowId").string(var_1.as_str());
+    {
+        object.key("WorkflowId").string(input.workflow_id.as_str());
     }
-    if let Some(var_2) = &input.execution_role {
-        object.key("ExecutionRole").string(var_2.as_str());
+    {
+        object.key("ExecutionRole").string(input.execution_role.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::workflow_detail_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

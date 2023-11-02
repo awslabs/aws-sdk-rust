@@ -38,8 +38,8 @@ pub fn de_describe_component_configuration_recommendation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationError::ResourceNotFoundException({
@@ -54,8 +54,8 @@ pub fn de_describe_component_configuration_recommendation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationError::ValidationException({
@@ -70,8 +70,8 @@ pub fn de_describe_component_configuration_recommendation_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationError::generic(generic)

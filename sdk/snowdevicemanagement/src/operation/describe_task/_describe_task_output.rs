@@ -33,8 +33,10 @@ impl DescribeTaskOutput {
         self.task_arn.as_deref()
     }
     /// <p>The managed devices that the task was sent to.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The current state of the task.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::TaskState> {

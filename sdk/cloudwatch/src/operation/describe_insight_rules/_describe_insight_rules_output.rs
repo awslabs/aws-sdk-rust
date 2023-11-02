@@ -15,8 +15,10 @@ impl DescribeInsightRulesOutput {
         self.next_token.as_deref()
     }
     /// <p>The rules returned by the operation.</p>
-    pub fn insight_rules(&self) -> ::std::option::Option<&[crate::types::InsightRule]> {
-        self.insight_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_rules.is_none()`.
+    pub fn insight_rules(&self) -> &[crate::types::InsightRule] {
+        self.insight_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeInsightRulesOutput {

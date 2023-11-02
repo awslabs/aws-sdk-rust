@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaxCountRule {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>Specify the maximum number of application versions to retain.</p>
     pub max_count: ::std::option::Option<i32>,
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
@@ -13,7 +13,7 @@ pub struct MaxCountRule {
 }
 impl MaxCountRule {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
@@ -42,6 +42,7 @@ pub struct MaxCountRuleBuilder {
 }
 impl MaxCountRuleBuilder {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl MaxCountRuleBuilder {
         &self.delete_source_from_s3
     }
     /// Consumes the builder and constructs a [`MaxCountRule`](crate::types::MaxCountRule).
-    pub fn build(self) -> crate::types::MaxCountRule {
-        crate::types::MaxCountRule {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::MaxCountRuleBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::MaxCountRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MaxCountRule {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building MaxCountRule",
+                )
+            })?,
             max_count: self.max_count,
             delete_source_from_s3: self.delete_source_from_s3,
-        }
+        })
     }
 }

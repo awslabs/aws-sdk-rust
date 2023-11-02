@@ -3,22 +3,22 @@ pub fn ser_column_statistics(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnStatistics,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.column_name {
-        object.key("ColumnName").string(var_1.as_str());
+    {
+        object.key("ColumnName").string(input.column_name.as_str());
     }
-    if let Some(var_2) = &input.column_type {
-        object.key("ColumnType").string(var_2.as_str());
+    {
+        object.key("ColumnType").string(input.column_type.as_str());
     }
-    if let Some(var_3) = &input.analyzed_time {
+    {
         object
             .key("AnalyzedTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.analyzed_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.statistics_data {
+    if let Some(var_1) = &input.statistics_data {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("StatisticsData").start_object();
-        crate::protocol_serde::shape_column_statistics_data::ser_column_statistics_data(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("StatisticsData").start_object();
+        crate::protocol_serde::shape_column_statistics_data::ser_column_statistics_data(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -72,7 +72,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::column_statistics_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

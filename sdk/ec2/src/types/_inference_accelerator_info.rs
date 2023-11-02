@@ -11,8 +11,10 @@ pub struct InferenceAcceleratorInfo {
 }
 impl InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
-    pub fn accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceDeviceInfo]> {
-        self.accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerators.is_none()`.
+    pub fn accelerators(&self) -> &[crate::types::InferenceDeviceInfo] {
+        self.accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The total size of the memory for the inference accelerators for the instance type, in MiB.</p>
     pub fn total_inference_memory_in_mi_b(&self) -> ::std::option::Option<i32> {

@@ -3,22 +3,22 @@ pub fn ser_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VolumeConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.size {
+    if input.size != 0 {
         object.key("size").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.size).into()),
         );
     }
-    if let Some(var_2) = &input.throughput {
+    if input.throughput != 0 {
         object.key("throughput").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.throughput).into()),
         );
     }
-    if let Some(var_3) = &input.iops {
+    if input.iops != 0 {
         object.key("iops").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.iops).into()),
         );
     }
     Ok(())

@@ -27,6 +27,7 @@ pub struct GetPermissionGroupInputBuilder {
 }
 impl GetPermissionGroupInputBuilder {
     /// <p>The unique identifier for the permission group.</p>
+    /// This field is required.
     pub fn permission_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_group_id = ::std::option::Option::Some(input.into());
         self

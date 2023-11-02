@@ -20,8 +20,10 @@ impl EventInfoMap {
         self.event_id.as_deref()
     }
     /// <p>The category of an Amazon Redshift event.</p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p>The description of an Amazon Redshift event.</p>
     pub fn event_description(&self) -> ::std::option::Option<&str> {

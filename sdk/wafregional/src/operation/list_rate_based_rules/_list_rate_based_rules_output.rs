@@ -15,8 +15,10 @@ impl ListRateBasedRulesOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleSummary</code> objects.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::RuleSummary]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::RuleSummary] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRateBasedRulesOutput {

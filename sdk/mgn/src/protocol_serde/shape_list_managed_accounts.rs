@@ -70,7 +70,9 @@ pub fn de_list_managed_accounts_http_response(
         output = crate::protocol_serde::shape_list_managed_accounts::de_list_managed_accounts(_response_body, output)
             .map_err(crate::operation::list_managed_accounts::ListManagedAccountsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_managed_accounts_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_managed_accounts::ListManagedAccountsError::unhandled)?
     })
 }
 

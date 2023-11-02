@@ -45,7 +45,7 @@ pub fn de_delete_storage_virtual_machine_http_error(
                         crate::protocol_serde::shape_incompatible_parameter_error::de_incompatible_parameter_error_json_err(_response_body, output)
                             .map_err(crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::incompatible_parameter_error_correct_errors(output).build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;

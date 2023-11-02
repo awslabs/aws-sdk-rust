@@ -34,6 +34,7 @@ pub struct DeprecateWorkflowTypeInputBuilder {
 }
 impl DeprecateWorkflowTypeInputBuilder {
     /// <p>The name of the domain in which the workflow type is registered.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeprecateWorkflowTypeInputBuilder {
         &self.domain
     }
     /// <p>The workflow type to deprecate.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirehoseAction {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The delivery stream name.</p>
-    pub delivery_stream_name: ::std::option::Option<::std::string::String>,
+    pub delivery_stream_name: ::std::string::String,
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub separator: ::std::option::Option<::std::string::String>,
     /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
@@ -16,12 +16,14 @@ pub struct FirehoseAction {
 }
 impl FirehoseAction {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The delivery stream name.</p>
-    pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
-        self.delivery_stream_name.as_deref()
+    pub fn delivery_stream_name(&self) -> &str {
+        use std::ops::Deref;
+        self.delivery_stream_name.deref()
     }
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn separator(&self) -> ::std::option::Option<&str> {
@@ -51,6 +53,7 @@ pub struct FirehoseActionBuilder {
 }
 impl FirehoseActionBuilder {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl FirehoseActionBuilder {
         &self.role_arn
     }
     /// <p>The delivery stream name.</p>
+    /// This field is required.
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -110,12 +114,25 @@ impl FirehoseActionBuilder {
         &self.batch_mode
     }
     /// Consumes the builder and constructs a [`FirehoseAction`](crate::types::FirehoseAction).
-    pub fn build(self) -> crate::types::FirehoseAction {
-        crate::types::FirehoseAction {
-            role_arn: self.role_arn,
-            delivery_stream_name: self.delivery_stream_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::FirehoseActionBuilder::role_arn)
+    /// - [`delivery_stream_name`](crate::types::builders::FirehoseActionBuilder::delivery_stream_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FirehoseAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building FirehoseAction",
+                )
+            })?,
+            delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "delivery_stream_name",
+                    "delivery_stream_name was not specified but it is required when building FirehoseAction",
+                )
+            })?,
             separator: self.separator,
             batch_mode: self.batch_mode,
-        }
+        })
     }
 }

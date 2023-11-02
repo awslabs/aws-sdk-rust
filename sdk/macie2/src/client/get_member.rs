@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMember`](crate::operation::get_member::builders::GetMemberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier for the Amazon Macie resource that the request applies to.</p><br>
     /// - On success, responds with [`GetMemberOutput`](crate::operation::get_member::GetMemberOutput) with field(s):
     ///   - [`account_id(Option<String>)`](crate::operation::get_member::GetMemberOutput::account_id): <p>The Amazon Web Services account ID for the account.</p>
     ///   - [`administrator_account_id(Option<String>)`](crate::operation::get_member::GetMemberOutput::administrator_account_id): <p>The Amazon Web Services account ID for the administrator account.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFilter`](crate::operation::describe_filter::builders::DescribeFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filter_arn(impl Into<String>)`](crate::operation::describe_filter::builders::DescribeFilterFluentBuilder::filter_arn) / [`set_filter_arn(Option<String>)`](crate::operation::describe_filter::builders::DescribeFilterFluentBuilder::set_filter_arn): <p>The ARN of the filter to describe.</p>
+    ///   - [`filter_arn(impl Into<String>)`](crate::operation::describe_filter::builders::DescribeFilterFluentBuilder::filter_arn) / [`set_filter_arn(Option<String>)`](crate::operation::describe_filter::builders::DescribeFilterFluentBuilder::set_filter_arn):<br>required: **true**<br><p>The ARN of the filter to describe.</p><br>
     /// - On success, responds with [`DescribeFilterOutput`](crate::operation::describe_filter::DescribeFilterOutput) with field(s):
     ///   - [`filter(Option<Filter>)`](crate::operation::describe_filter::DescribeFilterOutput::filter): <p>The filter's details.</p>
     /// - On failure, responds with [`SdkError<DescribeFilterError>`](crate::operation::describe_filter::DescribeFilterError)

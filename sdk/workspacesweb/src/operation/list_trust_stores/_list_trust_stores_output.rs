@@ -11,8 +11,10 @@ pub struct ListTrustStoresOutput {
 }
 impl ListTrustStoresOutput {
     /// <p>The trust stores.</p>
-    pub fn trust_stores(&self) -> ::std::option::Option<&[crate::types::TrustStoreSummary]> {
-        self.trust_stores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_stores.is_none()`.
+    pub fn trust_stores(&self) -> &[crate::types::TrustStoreSummary] {
+        self.trust_stores.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

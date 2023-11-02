@@ -12,8 +12,10 @@ pub struct SlotNotAvailableException {
 }
 impl SlotNotAvailableException {
     /// <p>Alternate time slots during which OpenSearch Service has available capacity to schedule a domain action.</p>
-    pub fn slot_suggestions(&self) -> ::std::option::Option<&[i64]> {
-        self.slot_suggestions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_suggestions.is_none()`.
+    pub fn slot_suggestions(&self) -> &[i64] {
+        self.slot_suggestions.as_deref().unwrap_or_default()
     }
 }
 impl SlotNotAvailableException {

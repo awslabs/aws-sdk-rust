@@ -54,6 +54,7 @@ pub struct CreateParticipantInputBuilder {
 }
 impl CreateParticipantInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. </p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +69,7 @@ impl CreateParticipantInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +101,7 @@ impl CreateParticipantInputBuilder {
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
     /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
+    /// This field is required.
     pub fn participant_details(mut self, input: crate::types::ParticipantDetailsToAdd) -> Self {
         self.participant_details = ::std::option::Option::Some(input);
         self

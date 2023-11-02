@@ -27,6 +27,7 @@ pub struct DescribeIpRestrictionInputBuilder {
 }
 impl DescribeIpRestrictionInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self

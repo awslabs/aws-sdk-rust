@@ -34,6 +34,7 @@ pub struct DescribeAnalysisInputBuilder {
 }
 impl DescribeAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeAnalysisInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self

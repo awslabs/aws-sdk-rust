@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolNetworkInstance`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ns_instance_id(impl Into<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::ns_instance_id) / [`set_ns_instance_id(Option<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::set_ns_instance_id): <p>ID of the network instance.</p>
+    ///   - [`ns_instance_id(impl Into<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::ns_instance_id) / [`set_ns_instance_id(Option<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::set_ns_instance_id):<br>required: **true**<br><p>ID of the network instance.</p><br>
     /// - On success, responds with [`GetSolNetworkInstanceOutput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::id): <p>Network instance ID.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::arn): <p>Network instance ARN.</p>
-    ///   - [`ns_instance_name(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::ns_instance_name): <p>Network instance name.</p>
-    ///   - [`ns_instance_description(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::ns_instance_description): <p>Network instance description.</p>
-    ///   - [`nsd_id(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::nsd_id): <p>Network service descriptor ID.</p>
-    ///   - [`nsd_info_id(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::nsd_info_id): <p>Network service descriptor info ID.</p>
+    ///   - [`id(String)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::id): <p>Network instance ID.</p>
+    ///   - [`arn(String)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::arn): <p>Network instance ARN.</p>
+    ///   - [`ns_instance_name(String)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::ns_instance_name): <p>Network instance name.</p>
+    ///   - [`ns_instance_description(String)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::ns_instance_description): <p>Network instance description.</p>
+    ///   - [`nsd_id(String)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::nsd_id): <p>Network service descriptor ID.</p>
+    ///   - [`nsd_info_id(String)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::nsd_info_id): <p>Network service descriptor info ID.</p>
     ///   - [`ns_state(Option<NsState>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::ns_state): <p>Network instance state.</p>
     ///   - [`lcm_op_info(Option<LcmOperationInfo>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::lcm_op_info): <p>Lifecycle management operation details on the network instance.</p>  <p>Lifecycle management operations are deploy, update, or delete operations.</p>
     ///   - [`metadata(Option<GetSolNetworkInstanceMetadata>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::metadata): <p>The metadata of a network instance.</p>  <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>

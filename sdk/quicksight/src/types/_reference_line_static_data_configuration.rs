@@ -35,6 +35,7 @@ pub struct ReferenceLineStaticDataConfigurationBuilder {
 }
 impl ReferenceLineStaticDataConfigurationBuilder {
     /// <p>The double input of the static data.</p>
+    /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

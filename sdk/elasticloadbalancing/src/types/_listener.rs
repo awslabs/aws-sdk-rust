@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Listener {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
-    pub protocol: ::std::option::Option<::std::string::String>,
+    pub protocol: ::std::string::String,
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub load_balancer_port: i32,
     /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
@@ -15,14 +15,15 @@ pub struct Listener {
     /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     pub instance_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the instance is listening.</p>
-    pub instance_port: ::std::option::Option<i32>,
+    pub instance_port: i32,
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl Listener {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
-        self.protocol.as_deref()
+    pub fn protocol(&self) -> &str {
+        use std::ops::Deref;
+        self.protocol.deref()
     }
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub fn load_balancer_port(&self) -> i32 {
@@ -36,7 +37,7 @@ impl Listener {
         self.instance_protocol.as_deref()
     }
     /// <p>The port on which the instance is listening.</p>
-    pub fn instance_port(&self) -> ::std::option::Option<i32> {
+    pub fn instance_port(&self) -> i32 {
         self.instance_port
     }
     /// <p>The Amazon Resource Name (ARN) of the server certificate.</p>
@@ -63,6 +64,7 @@ pub struct ListenerBuilder {
 }
 impl ListenerBuilder {
     /// <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl ListenerBuilder {
         &self.protocol
     }
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
+    /// This field is required.
     pub fn load_balancer_port(mut self, input: i32) -> Self {
         self.load_balancer_port = ::std::option::Option::Some(input);
         self
@@ -114,6 +117,7 @@ impl ListenerBuilder {
         &self.instance_protocol
     }
     /// <p>The port on which the instance is listening.</p>
+    /// This field is required.
     pub fn instance_port(mut self, input: i32) -> Self {
         self.instance_port = ::std::option::Option::Some(input);
         self
@@ -142,13 +146,26 @@ impl ListenerBuilder {
         &self.ssl_certificate_id
     }
     /// Consumes the builder and constructs a [`Listener`](crate::types::Listener).
-    pub fn build(self) -> crate::types::Listener {
-        crate::types::Listener {
-            protocol: self.protocol,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`protocol`](crate::types::builders::ListenerBuilder::protocol)
+    /// - [`instance_port`](crate::types::builders::ListenerBuilder::instance_port)
+    pub fn build(self) -> ::std::result::Result<crate::types::Listener, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Listener {
+            protocol: self.protocol.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protocol",
+                    "protocol was not specified but it is required when building Listener",
+                )
+            })?,
             load_balancer_port: self.load_balancer_port.unwrap_or_default(),
             instance_protocol: self.instance_protocol,
-            instance_port: self.instance_port,
+            instance_port: self.instance_port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_port",
+                    "instance_port was not specified but it is required when building Listener",
+                )
+            })?,
             ssl_certificate_id: self.ssl_certificate_id,
-        }
+        })
     }
 }

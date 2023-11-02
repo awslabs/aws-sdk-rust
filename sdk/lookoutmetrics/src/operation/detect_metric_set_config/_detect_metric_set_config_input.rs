@@ -34,6 +34,7 @@ pub struct DetectMetricSetConfigInputBuilder {
 }
 impl DetectMetricSetConfigInputBuilder {
     /// <p>An anomaly detector ARN.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetectMetricSetConfigInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>A data source.</p>
+    /// This field is required.
     pub fn auto_detection_metric_source(mut self, input: crate::types::AutoDetectionMetricSource) -> Self {
         self.auto_detection_metric_source = ::std::option::Option::Some(input);
         self

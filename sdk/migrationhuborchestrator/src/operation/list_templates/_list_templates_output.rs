@@ -6,7 +6,7 @@ pub struct ListTemplatesOutput {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the template.</p>
-    pub template_summary: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub template_summary: ::std::vec::Vec<crate::types::TemplateSummary>,
     _request_id: Option<String>,
 }
 impl ListTemplatesOutput {
@@ -15,8 +15,9 @@ impl ListTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>The summary of the template.</p>
-    pub fn template_summary(&self) -> ::std::option::Option<&[crate::types::TemplateSummary]> {
-        self.template_summary.as_deref()
+    pub fn template_summary(&self) -> &[crate::types::TemplateSummary] {
+        use std::ops::Deref;
+        self.template_summary.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTemplatesOutput {
@@ -84,11 +85,20 @@ impl ListTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_templates::ListTemplatesOutput {
-        crate::operation::list_templates::ListTemplatesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_summary`](crate::operation::list_templates::builders::ListTemplatesOutputBuilder::template_summary)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesOutput {
             next_token: self.next_token,
-            template_summary: self.template_summary,
+            template_summary: self.template_summary.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_summary",
+                    "template_summary was not specified but it is required when building ListTemplatesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

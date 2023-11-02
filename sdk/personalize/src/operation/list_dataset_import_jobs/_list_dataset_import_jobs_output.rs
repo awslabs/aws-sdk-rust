@@ -11,8 +11,10 @@ pub struct ListDatasetImportJobsOutput {
 }
 impl ListDatasetImportJobsOutput {
     /// <p>The list of dataset import jobs.</p>
-    pub fn dataset_import_jobs(&self) -> ::std::option::Option<&[crate::types::DatasetImportJobSummary]> {
-        self.dataset_import_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_import_jobs.is_none()`.
+    pub fn dataset_import_jobs(&self) -> &[crate::types::DatasetImportJobSummary] {
+        self.dataset_import_jobs.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

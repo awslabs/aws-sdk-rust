@@ -42,6 +42,7 @@ pub struct ModelExplainabilityAppSpecificationBuilder {
 }
 impl ModelExplainabilityAppSpecificationBuilder {
     /// <p>The container image to be run by the model explainability job.</p>
+    /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ModelExplainabilityAppSpecificationBuilder {
         &self.image_uri
     }
     /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
+    /// This field is required.
     pub fn config_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_uri = ::std::option::Option::Some(input.into());
         self

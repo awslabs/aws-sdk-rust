@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChannelsOutput {
     /// <p>List of the matching channels.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSummary>>,
+    pub channels: ::std::vec::Vec<crate::types::ChannelSummary>,
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListChannelsOutput {
     /// <p>List of the matching channels.</p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::ChannelSummary]> {
-        self.channels.as_deref()
+    pub fn channels(&self) -> &[crate::types::ChannelSummary] {
+        use std::ops::Deref;
+        self.channels.deref()
     }
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListChannelsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput).
-    pub fn build(self) -> crate::operation::list_channels::ListChannelsOutput {
-        crate::operation::list_channels::ListChannelsOutput {
-            channels: self.channels,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channels`](crate::operation::list_channels::builders::ListChannelsOutputBuilder::channels)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_channels::ListChannelsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsOutput {
+            channels: self.channels.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channels",
+                    "channels was not specified but it is required when building ListChannelsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

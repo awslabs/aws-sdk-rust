@@ -4,21 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteMatrixInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
-    pub calculator_name: ::std::option::Option<::std::string::String>,
+    pub calculator_name: ::std::string::String,
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub departure_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
+    pub departure_positions: ::std::vec::Vec<::std::vec::Vec<f64>>,
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </important> <note>
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub destination_positions: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
+    pub destination_positions: ::std::vec::Vec<::std::vec::Vec<f64>>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
     /// <ul>
@@ -56,8 +56,9 @@ pub struct CalculateRouteMatrixInput {
 }
 impl CalculateRouteMatrixInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
-    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
-        self.calculator_name.as_deref()
+    pub fn calculator_name(&self) -> &str {
+        use std::ops::Deref;
+        self.calculator_name.deref()
     }
     /// <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
@@ -65,8 +66,9 @@ impl CalculateRouteMatrixInput {
     /// <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn departure_positions(&self) -> ::std::option::Option<&[::std::vec::Vec<f64>]> {
-        self.departure_positions.as_deref()
+    pub fn departure_positions(&self) -> &[::std::vec::Vec<f64>] {
+        use std::ops::Deref;
+        self.departure_positions.deref()
     }
     /// <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>
     /// <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
@@ -74,8 +76,9 @@ impl CalculateRouteMatrixInput {
     /// <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn destination_positions(&self) -> ::std::option::Option<&[::std::vec::Vec<f64>]> {
-        self.destination_positions.as_deref()
+    pub fn destination_positions(&self) -> &[::std::vec::Vec<f64>] {
+        use std::ops::Deref;
+        self.destination_positions.deref()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
     /// <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>
@@ -166,6 +169,7 @@ pub struct CalculateRouteMatrixInputBuilder {
 }
 impl CalculateRouteMatrixInputBuilder {
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -408,14 +412,33 @@ impl CalculateRouteMatrixInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`CalculateRouteMatrixInput`](crate::operation::calculate_route_matrix::CalculateRouteMatrixInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`calculator_name`](crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInputBuilder::calculator_name)
+    /// - [`departure_positions`](crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInputBuilder::departure_positions)
+    /// - [`destination_positions`](crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInputBuilder::destination_positions)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::calculate_route_matrix::CalculateRouteMatrixInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::calculate_route_matrix::CalculateRouteMatrixInput {
-            calculator_name: self.calculator_name,
-            departure_positions: self.departure_positions,
-            destination_positions: self.destination_positions,
+            calculator_name: self.calculator_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "calculator_name",
+                    "calculator_name was not specified but it is required when building CalculateRouteMatrixInput",
+                )
+            })?,
+            departure_positions: self.departure_positions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "departure_positions",
+                    "departure_positions was not specified but it is required when building CalculateRouteMatrixInput",
+                )
+            })?,
+            destination_positions: self.destination_positions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_positions",
+                    "destination_positions was not specified but it is required when building CalculateRouteMatrixInput",
+                )
+            })?,
             travel_mode: self.travel_mode,
             departure_time: self.departure_time,
             depart_now: self.depart_now,

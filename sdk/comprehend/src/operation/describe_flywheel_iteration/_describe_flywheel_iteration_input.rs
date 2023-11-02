@@ -34,6 +34,7 @@ pub struct DescribeFlywheelIterationInputBuilder {
 }
 impl DescribeFlywheelIterationInputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFlywheelIterationInputBuilder {
         &self.flywheel_arn
     }
     /// <p></p>
+    /// This field is required.
     pub fn flywheel_iteration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_iteration_id = ::std::option::Option::Some(input.into());
         self

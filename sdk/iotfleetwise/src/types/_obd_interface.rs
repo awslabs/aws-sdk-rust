@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObdInterface {
     /// <p>The name of the interface.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ID of the message requesting vehicle data.</p>
     pub request_message_id: i32,
     /// <p>The standard OBD II PID.</p>
@@ -21,8 +21,9 @@ pub struct ObdInterface {
 }
 impl ObdInterface {
     /// <p>The name of the interface.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ID of the message requesting vehicle data.</p>
     pub fn request_message_id(&self) -> i32 {
@@ -70,6 +71,7 @@ pub struct ObdInterfaceBuilder {
 }
 impl ObdInterfaceBuilder {
     /// <p>The name of the interface.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl ObdInterfaceBuilder {
         &self.name
     }
     /// <p>The ID of the message requesting vehicle data.</p>
+    /// This field is required.
     pub fn request_message_id(mut self, input: i32) -> Self {
         self.request_message_id = ::std::option::Option::Some(input);
         self
@@ -168,15 +171,22 @@ impl ObdInterfaceBuilder {
         &self.has_transmission_ecu
     }
     /// Consumes the builder and constructs a [`ObdInterface`](crate::types::ObdInterface).
-    pub fn build(self) -> crate::types::ObdInterface {
-        crate::types::ObdInterface {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ObdInterfaceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ObdInterface, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ObdInterface {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ObdInterface",
+                )
+            })?,
             request_message_id: self.request_message_id.unwrap_or_default(),
             obd_standard: self.obd_standard,
             pid_request_interval_seconds: self.pid_request_interval_seconds.unwrap_or_default(),
             dtc_request_interval_seconds: self.dtc_request_interval_seconds.unwrap_or_default(),
             use_extended_ids: self.use_extended_ids.unwrap_or_default(),
             has_transmission_ecu: self.has_transmission_ecu.unwrap_or_default(),
-        }
+        })
     }
 }

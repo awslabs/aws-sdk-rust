@@ -53,6 +53,7 @@ pub struct ListTrafficPolicyInstancesByHostedZoneInputBuilder {
 }
 impl ListTrafficPolicyInstancesByHostedZoneInputBuilder {
     /// <p>The ID of the hosted zone that you want to list traffic policy instances for.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self

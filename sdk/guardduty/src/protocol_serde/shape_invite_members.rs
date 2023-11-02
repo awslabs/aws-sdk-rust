@@ -64,7 +64,7 @@ pub fn de_invite_members_http_response(
         output = crate::protocol_serde::shape_invite_members::de_invite_members(_response_body, output)
             .map_err(crate::operation::invite_members::InviteMembersError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::invite_members_output_correct_errors(output).build()
     })
 }
 

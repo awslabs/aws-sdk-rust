@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArchiveRuleInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub analyzer_name: ::std::option::Option<::std::string::String>,
+    pub analyzer_name: ::std::string::String,
     /// <p>The name of the rule to retrieve.</p>
-    pub rule_name: ::std::option::Option<::std::string::String>,
+    pub rule_name: ::std::string::String,
 }
 impl GetArchiveRuleInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
-        self.analyzer_name.as_deref()
+    pub fn analyzer_name(&self) -> &str {
+        use std::ops::Deref;
+        self.analyzer_name.deref()
     }
     /// <p>The name of the rule to retrieve.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
-        self.rule_name.as_deref()
+    pub fn rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_name.deref()
     }
 }
 impl GetArchiveRuleInput {
@@ -35,6 +37,7 @@ pub struct GetArchiveRuleInputBuilder {
 }
 impl GetArchiveRuleInputBuilder {
     /// <p>The name of the analyzer to retrieve rules from.</p>
+    /// This field is required.
     pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl GetArchiveRuleInputBuilder {
         &self.analyzer_name
     }
     /// <p>The name of the rule to retrieve.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -63,12 +67,25 @@ impl GetArchiveRuleInputBuilder {
         &self.rule_name
     }
     /// Consumes the builder and constructs a [`GetArchiveRuleInput`](crate::operation::get_archive_rule::GetArchiveRuleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzer_name`](crate::operation::get_archive_rule::builders::GetArchiveRuleInputBuilder::analyzer_name)
+    /// - [`rule_name`](crate::operation::get_archive_rule::builders::GetArchiveRuleInputBuilder::rule_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_archive_rule::GetArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_archive_rule::GetArchiveRuleInput {
-            analyzer_name: self.analyzer_name,
-            rule_name: self.rule_name,
+            analyzer_name: self.analyzer_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzer_name",
+                    "analyzer_name was not specified but it is required when building GetArchiveRuleInput",
+                )
+            })?,
+            rule_name: self.rule_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_name",
+                    "rule_name was not specified but it is required when building GetArchiveRuleInput",
+                )
+            })?,
         })
     }
 }

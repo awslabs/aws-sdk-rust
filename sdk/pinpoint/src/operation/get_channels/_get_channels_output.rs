@@ -34,6 +34,7 @@ pub struct GetChannelsOutputBuilder {
 }
 impl GetChannelsOutputBuilder {
     /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
+    /// This field is required.
     pub fn channels_response(mut self, input: crate::types::ChannelsResponse) -> Self {
         self.channels_response = ::std::option::Option::Some(input);
         self

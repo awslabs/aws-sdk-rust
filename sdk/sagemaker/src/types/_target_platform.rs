@@ -78,6 +78,7 @@ impl TargetPlatformBuilder {
     /// <li> <p> <code>LINUX</code>: Linux-based operating systems.</p> </li>
     /// <li> <p> <code>ANDROID</code>: Android operating systems. Android API level can be specified using the <code>ANDROID_PLATFORM</code> compiler option. For example, <code>"CompilerOptions": {'ANDROID_PLATFORM': 28}</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn os(mut self, input: crate::types::TargetPlatformOs) -> Self {
         self.os = ::std::option::Option::Some(input);
         self
@@ -107,6 +108,7 @@ impl TargetPlatformBuilder {
     /// <li> <p> <code>ARM_EABIHF</code>: ARMv7 32-bit, Hard Float.</p> </li>
     /// <li> <p> <code>ARM_EABI</code>: ARMv7 32-bit, Soft Float. Used by Android 32-bit ARM platform.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn arch(mut self, input: crate::types::TargetPlatformArch) -> Self {
         self.arch = ::std::option::Option::Some(input);
         self

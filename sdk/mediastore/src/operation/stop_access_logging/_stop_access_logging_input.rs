@@ -27,6 +27,7 @@ pub struct StopAccessLoggingInputBuilder {
 }
 impl StopAccessLoggingInputBuilder {
     /// <p>The name of the container that you want to stop access logging on.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self

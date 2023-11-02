@@ -6,7 +6,7 @@
 pub struct FulfillmentUpdatesSpecification {
     /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
-    pub active: ::std::option::Option<bool>,
+    pub active: bool,
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
     pub start_response: ::std::option::Option<crate::types::FulfillmentStartResponseSpecification>,
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
@@ -17,7 +17,7 @@ pub struct FulfillmentUpdatesSpecification {
 impl FulfillmentUpdatesSpecification {
     /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
-    pub fn active(&self) -> ::std::option::Option<bool> {
+    pub fn active(&self) -> bool {
         self.active
     }
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
@@ -52,6 +52,7 @@ pub struct FulfillmentUpdatesSpecificationBuilder {
 impl FulfillmentUpdatesSpecificationBuilder {
     /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
+    /// This field is required.
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
         self
@@ -110,12 +111,19 @@ impl FulfillmentUpdatesSpecificationBuilder {
         &self.timeout_in_seconds
     }
     /// Consumes the builder and constructs a [`FulfillmentUpdatesSpecification`](crate::types::FulfillmentUpdatesSpecification).
-    pub fn build(self) -> crate::types::FulfillmentUpdatesSpecification {
-        crate::types::FulfillmentUpdatesSpecification {
-            active: self.active,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`active`](crate::types::builders::FulfillmentUpdatesSpecificationBuilder::active)
+    pub fn build(self) -> ::std::result::Result<crate::types::FulfillmentUpdatesSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FulfillmentUpdatesSpecification {
+            active: self.active.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "active",
+                    "active was not specified but it is required when building FulfillmentUpdatesSpecification",
+                )
+            })?,
             start_response: self.start_response,
             update_response: self.update_response,
             timeout_in_seconds: self.timeout_in_seconds,
-        }
+        })
     }
 }

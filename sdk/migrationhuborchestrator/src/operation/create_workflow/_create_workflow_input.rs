@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkflowInput {
     /// <p>The name of the migration workflow.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the migration workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    pub application_configuration_id: ::std::option::Option<::std::string::String>,
+    pub application_configuration_id: ::std::string::String,
     /// <p>The input parameters required to create a migration workflow.</p>
-    pub input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
+    pub input_parameters: ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
     /// <p>The servers on which a step will be run.</p>
     pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to add on a migration workflow.</p>
@@ -20,28 +20,33 @@ pub struct CreateWorkflowInput {
 }
 impl CreateWorkflowInput {
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the migration workflow.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    pub fn application_configuration_id(&self) -> ::std::option::Option<&str> {
-        self.application_configuration_id.as_deref()
+    pub fn application_configuration_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_configuration_id.deref()
     }
     /// <p>The input parameters required to create a migration workflow.</p>
-    pub fn input_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
-        self.input_parameters.as_ref()
+    pub fn input_parameters(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::StepInput> {
+        &self.input_parameters
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_targets.is_none()`.
+    pub fn step_targets(&self) -> &[::std::string::String] {
+        self.step_targets.as_deref().unwrap_or_default()
     }
     /// <p>The tags to add on a migration workflow.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -82,6 +87,7 @@ pub struct CreateWorkflowInputBuilder {
 }
 impl CreateWorkflowInputBuilder {
     /// <p>The name of the migration workflow.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +116,7 @@ impl CreateWorkflowInputBuilder {
         &self.description
     }
     /// <p>The ID of the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +131,7 @@ impl CreateWorkflowInputBuilder {
         &self.template_id
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
+    /// This field is required.
     pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_configuration_id = ::std::option::Option::Some(input.into());
         self
@@ -201,15 +209,40 @@ impl CreateWorkflowInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_workflow::builders::CreateWorkflowInputBuilder::name)
+    /// - [`template_id`](crate::operation::create_workflow::builders::CreateWorkflowInputBuilder::template_id)
+    /// - [`application_configuration_id`](crate::operation::create_workflow::builders::CreateWorkflowInputBuilder::application_configuration_id)
+    /// - [`input_parameters`](crate::operation::create_workflow::builders::CreateWorkflowInputBuilder::input_parameters)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_workflow::CreateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow::CreateWorkflowInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateWorkflowInput",
+                )
+            })?,
             description: self.description,
-            template_id: self.template_id,
-            application_configuration_id: self.application_configuration_id,
-            input_parameters: self.input_parameters,
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building CreateWorkflowInput",
+                )
+            })?,
+            application_configuration_id: self.application_configuration_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_configuration_id",
+                    "application_configuration_id was not specified but it is required when building CreateWorkflowInput",
+                )
+            })?,
+            input_parameters: self.input_parameters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "input_parameters",
+                    "input_parameters was not specified but it is required when building CreateWorkflowInput",
+                )
+            })?,
             step_targets: self.step_targets,
             tags: self.tags,
         })

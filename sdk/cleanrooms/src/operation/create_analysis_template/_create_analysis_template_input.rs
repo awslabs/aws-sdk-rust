@@ -6,11 +6,11 @@ pub struct CreateAnalysisTemplateInput {
     /// <p>The description of the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a membership resource.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
     /// <p>The name of the analysis template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The format of the analysis template.</p>
-    pub format: ::std::option::Option<crate::types::AnalysisFormat>,
+    pub format: crate::types::AnalysisFormat,
     /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
@@ -24,16 +24,18 @@ impl CreateAnalysisTemplateInput {
         self.description.as_deref()
     }
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
     /// <p>The name of the analysis template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The format of the analysis template.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::AnalysisFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::AnalysisFormat {
+        &self.format
     }
     /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::AnalysisSource> {
@@ -44,8 +46,10 @@ impl CreateAnalysisTemplateInput {
         self.tags.as_ref()
     }
     /// <p>The parameters of the analysis template.</p>
-    pub fn analysis_parameters(&self) -> ::std::option::Option<&[crate::types::AnalysisParameter]> {
-        self.analysis_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_parameters.is_none()`.
+    pub fn analysis_parameters(&self) -> &[crate::types::AnalysisParameter] {
+        self.analysis_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateAnalysisTemplateInput {
@@ -96,6 +100,7 @@ impl CreateAnalysisTemplateInputBuilder {
         &self.description
     }
     /// <p>The identifier for a membership resource.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +115,7 @@ impl CreateAnalysisTemplateInputBuilder {
         &self.membership_identifier
     }
     /// <p>The name of the analysis template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +130,7 @@ impl CreateAnalysisTemplateInputBuilder {
         &self.name
     }
     /// <p>The format of the analysis template.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::AnalysisFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -138,6 +145,7 @@ impl CreateAnalysisTemplateInputBuilder {
         &self.format
     }
     /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::AnalysisSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -192,15 +200,34 @@ impl CreateAnalysisTemplateInputBuilder {
         &self.analysis_parameters
     }
     /// Consumes the builder and constructs a [`CreateAnalysisTemplateInput`](crate::operation::create_analysis_template::CreateAnalysisTemplateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`membership_identifier`](crate::operation::create_analysis_template::builders::CreateAnalysisTemplateInputBuilder::membership_identifier)
+    /// - [`name`](crate::operation::create_analysis_template::builders::CreateAnalysisTemplateInputBuilder::name)
+    /// - [`format`](crate::operation::create_analysis_template::builders::CreateAnalysisTemplateInputBuilder::format)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_analysis_template::CreateAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_analysis_template::CreateAnalysisTemplateInput {
             description: self.description,
-            membership_identifier: self.membership_identifier,
-            name: self.name,
-            format: self.format,
+            membership_identifier: self.membership_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_identifier",
+                    "membership_identifier was not specified but it is required when building CreateAnalysisTemplateInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateAnalysisTemplateInput",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building CreateAnalysisTemplateInput",
+                )
+            })?,
             source: self.source,
             tags: self.tags,
             analysis_parameters: self.analysis_parameters,

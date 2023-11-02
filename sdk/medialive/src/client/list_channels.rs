@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results): Placeholder documentation for MaxResults
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token): Placeholder documentation for __string
+    ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results):<br>required: **false**<br>Placeholder documentation for MaxResults<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
     /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
     ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::operation::list_channels::ListChannelsOutput::channels): Placeholder documentation for __listOfChannelSummary
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): Placeholder documentation for __string

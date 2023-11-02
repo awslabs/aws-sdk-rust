@@ -11,8 +11,10 @@ pub struct ListLaunchesOutput {
 }
 impl ListLaunchesOutput {
     /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
-    pub fn launches(&self) -> ::std::option::Option<&[crate::types::Launch]> {
-        self.launches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launches.is_none()`.
+    pub fn launches(&self) -> &[crate::types::Launch] {
+        self.launches.as_deref().unwrap_or_default()
     }
     /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

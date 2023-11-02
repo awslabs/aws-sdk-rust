@@ -41,6 +41,7 @@ pub struct CreateConnectClientAddInInputBuilder {
 }
 impl CreateConnectClientAddInInputBuilder {
     /// <p>The directory identifier for which to configure the client add-in.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateConnectClientAddInInputBuilder {
         &self.resource_id
     }
     /// <p>The name of the client add-in.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateConnectClientAddInInputBuilder {
         &self.name
     }
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self

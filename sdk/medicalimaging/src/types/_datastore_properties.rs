@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastoreProperties {
     /// <p>The data store identifier.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The data store name.</p>
-    pub datastore_name: ::std::option::Option<::std::string::String>,
+    pub datastore_name: ::std::string::String,
     /// <p>The data store status.</p>
-    pub datastore_status: ::std::option::Option<crate::types::DatastoreStatus>,
+    pub datastore_status: crate::types::DatastoreStatus,
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the data store.</p>
@@ -21,16 +21,18 @@ pub struct DatastoreProperties {
 }
 impl DatastoreProperties {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The data store name.</p>
-    pub fn datastore_name(&self) -> ::std::option::Option<&str> {
-        self.datastore_name.as_deref()
+    pub fn datastore_name(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_name.deref()
     }
     /// <p>The data store status.</p>
-    pub fn datastore_status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
-        self.datastore_status.as_ref()
+    pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
+        &self.datastore_status
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the Key Management Service (KMS) key for accessing encrypted data.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct DatastorePropertiesBuilder {
 }
 impl DatastorePropertiesBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl DatastorePropertiesBuilder {
         &self.datastore_id
     }
     /// <p>The data store name.</p>
+    /// This field is required.
     pub fn datastore_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl DatastorePropertiesBuilder {
         &self.datastore_name
     }
     /// <p>The data store status.</p>
+    /// This field is required.
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
         self
@@ -168,15 +173,34 @@ impl DatastorePropertiesBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`DatastoreProperties`](crate::types::DatastoreProperties).
-    pub fn build(self) -> crate::types::DatastoreProperties {
-        crate::types::DatastoreProperties {
-            datastore_id: self.datastore_id,
-            datastore_name: self.datastore_name,
-            datastore_status: self.datastore_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_id`](crate::types::builders::DatastorePropertiesBuilder::datastore_id)
+    /// - [`datastore_name`](crate::types::builders::DatastorePropertiesBuilder::datastore_name)
+    /// - [`datastore_status`](crate::types::builders::DatastorePropertiesBuilder::datastore_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatastoreProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatastoreProperties {
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
+            datastore_name: self.datastore_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_name",
+                    "datastore_name was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
+            datastore_status: self.datastore_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_status",
+                    "datastore_status was not specified but it is required when building DatastoreProperties",
+                )
+            })?,
             kms_key_arn: self.kms_key_arn,
             datastore_arn: self.datastore_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,
-        }
+        })
     }
 }

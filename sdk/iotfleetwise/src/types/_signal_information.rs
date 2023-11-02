@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalInformation {
     /// <p>The name of the signal.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The maximum number of samples to collect.</p>
     pub max_sample_count: ::std::option::Option<i64>,
     /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
@@ -15,8 +15,9 @@ pub struct SignalInformation {
 }
 impl SignalInformation {
     /// <p>The name of the signal.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The maximum number of samples to collect.</p>
     pub fn max_sample_count(&self) -> ::std::option::Option<i64> {
@@ -46,6 +47,7 @@ pub struct SignalInformationBuilder {
 }
 impl SignalInformationBuilder {
     /// <p>The name of the signal.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +96,18 @@ impl SignalInformationBuilder {
         &self.minimum_sampling_interval_ms
     }
     /// Consumes the builder and constructs a [`SignalInformation`](crate::types::SignalInformation).
-    pub fn build(self) -> crate::types::SignalInformation {
-        crate::types::SignalInformation {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SignalInformationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SignalInformation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SignalInformation {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SignalInformation",
+                )
+            })?,
             max_sample_count: self.max_sample_count,
             minimum_sampling_interval_ms: self.minimum_sampling_interval_ms,
-        }
+        })
     }
 }

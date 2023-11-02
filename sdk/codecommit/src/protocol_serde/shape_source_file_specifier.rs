@@ -3,8 +3,8 @@ pub fn ser_source_file_specifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceFileSpecifier,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_path {
-        object.key("filePath").string(var_1.as_str());
+    {
+        object.key("filePath").string(input.file_path.as_str());
     }
     if input.is_move {
         object.key("isMove").boolean(input.is_move);

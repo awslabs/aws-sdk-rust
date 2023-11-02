@@ -30,6 +30,7 @@ pub struct DescribeAccountInputBuilder {
 impl DescribeAccountInputBuilder {
     /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

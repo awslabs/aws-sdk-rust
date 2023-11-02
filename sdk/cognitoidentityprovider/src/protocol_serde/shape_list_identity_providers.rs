@@ -114,7 +114,9 @@ pub fn de_list_identity_providers_http_response(
         output = crate::protocol_serde::shape_list_identity_providers::de_list_identity_providers(_response_body, output)
             .map_err(crate::operation::list_identity_providers::ListIdentityProvidersError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_identity_providers_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_identity_providers::ListIdentityProvidersError::unhandled)?
     })
 }
 

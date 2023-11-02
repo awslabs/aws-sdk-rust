@@ -7,7 +7,7 @@ pub struct EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
     pub coordinator_dpu_size: ::std::option::Option<i32>,
     /// <p>The maximum number of DPUs that can run concurrently.</p>
-    pub max_concurrent_dpus: ::std::option::Option<i32>,
+    pub max_concurrent_dpus: i32,
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     pub default_executor_dpu_size: ::std::option::Option<i32>,
     /// <p>Contains additional notebook engine <code>MAP
@@ -22,7 +22,7 @@ impl EngineConfiguration {
         self.coordinator_dpu_size
     }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
-    pub fn max_concurrent_dpus(&self) -> ::std::option::Option<i32> {
+    pub fn max_concurrent_dpus(&self) -> i32 {
         self.max_concurrent_dpus
     }
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
@@ -72,6 +72,7 @@ impl EngineConfigurationBuilder {
         &self.coordinator_dpu_size
     }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
+    /// This field is required.
     pub fn max_concurrent_dpus(mut self, input: i32) -> Self {
         self.max_concurrent_dpus = ::std::option::Option::Some(input);
         self
@@ -157,13 +158,20 @@ impl EngineConfigurationBuilder {
         &self.spark_properties
     }
     /// Consumes the builder and constructs a [`EngineConfiguration`](crate::types::EngineConfiguration).
-    pub fn build(self) -> crate::types::EngineConfiguration {
-        crate::types::EngineConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_concurrent_dpus`](crate::types::builders::EngineConfigurationBuilder::max_concurrent_dpus)
+    pub fn build(self) -> ::std::result::Result<crate::types::EngineConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EngineConfiguration {
             coordinator_dpu_size: self.coordinator_dpu_size,
-            max_concurrent_dpus: self.max_concurrent_dpus,
+            max_concurrent_dpus: self.max_concurrent_dpus.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_concurrent_dpus",
+                    "max_concurrent_dpus was not specified but it is required when building EngineConfiguration",
+                )
+            })?,
             default_executor_dpu_size: self.default_executor_dpu_size,
             additional_configs: self.additional_configs,
             spark_properties: self.spark_properties,
-        }
+        })
     }
 }

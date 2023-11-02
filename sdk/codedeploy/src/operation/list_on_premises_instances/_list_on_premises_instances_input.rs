@@ -25,8 +25,10 @@ impl ListOnPremisesInstancesInput {
         self.registration_status.as_ref()
     }
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
-    pub fn tag_filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
-        self.tag_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_filters.is_none()`.
+    pub fn tag_filters(&self) -> &[crate::types::TagFilter] {
+        self.tag_filters.as_deref().unwrap_or_default()
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

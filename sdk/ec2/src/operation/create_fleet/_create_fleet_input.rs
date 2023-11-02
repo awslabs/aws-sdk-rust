@@ -64,8 +64,10 @@ impl CreateFleetInput {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The configuration for the EC2 Fleet.</p>
-    pub fn launch_template_configs(&self) -> ::std::option::Option<&[crate::types::FleetLaunchTemplateConfigRequest]> {
-        self.launch_template_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configs.is_none()`.
+    pub fn launch_template_configs(&self) -> &[crate::types::FleetLaunchTemplateConfigRequest] {
+        self.launch_template_configs.as_deref().unwrap_or_default()
     }
     /// <p>The number of units to request.</p>
     pub fn target_capacity_specification(&self) -> ::std::option::Option<&crate::types::TargetCapacitySpecificationRequest> {
@@ -100,8 +102,10 @@ impl CreateFleetInput {
     /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
     /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Reserved.</p>
     pub fn context(&self) -> ::std::option::Option<&str> {
@@ -235,6 +239,7 @@ impl CreateFleetInputBuilder {
         &self.launch_template_configs
     }
     /// <p>The number of units to request.</p>
+    /// This field is required.
     pub fn target_capacity_specification(mut self, input: crate::types::TargetCapacitySpecificationRequest) -> Self {
         self.target_capacity_specification = ::std::option::Option::Some(input);
         self

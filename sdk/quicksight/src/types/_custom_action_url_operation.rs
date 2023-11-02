@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionUrlOperation {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    pub url_template: ::std::option::Option<::std::string::String>,
+    pub url_template: ::std::string::String,
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -13,12 +13,13 @@ pub struct CustomActionUrlOperation {
     /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
-    pub url_target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
+    pub url_target: crate::types::UrlTargetConfiguration,
 }
 impl CustomActionUrlOperation {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    pub fn url_template(&self) -> ::std::option::Option<&str> {
-        self.url_template.as_deref()
+    pub fn url_template(&self) -> &str {
+        use std::ops::Deref;
+        self.url_template.deref()
     }
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -27,8 +28,8 @@ impl CustomActionUrlOperation {
     /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
-    pub fn url_target(&self) -> ::std::option::Option<&crate::types::UrlTargetConfiguration> {
-        self.url_target.as_ref()
+    pub fn url_target(&self) -> &crate::types::UrlTargetConfiguration {
+        &self.url_target
     }
 }
 impl CustomActionUrlOperation {
@@ -47,6 +48,7 @@ pub struct CustomActionUrlOperationBuilder {
 }
 impl CustomActionUrlOperationBuilder {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
+    /// This field is required.
     pub fn url_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url_template = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +69,7 @@ impl CustomActionUrlOperationBuilder {
     /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn url_target(mut self, input: crate::types::UrlTargetConfiguration) -> Self {
         self.url_target = ::std::option::Option::Some(input);
         self
@@ -93,10 +96,23 @@ impl CustomActionUrlOperationBuilder {
         &self.url_target
     }
     /// Consumes the builder and constructs a [`CustomActionUrlOperation`](crate::types::CustomActionUrlOperation).
-    pub fn build(self) -> crate::types::CustomActionUrlOperation {
-        crate::types::CustomActionUrlOperation {
-            url_template: self.url_template,
-            url_target: self.url_target,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`url_template`](crate::types::builders::CustomActionUrlOperationBuilder::url_template)
+    /// - [`url_target`](crate::types::builders::CustomActionUrlOperationBuilder::url_target)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomActionUrlOperation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomActionUrlOperation {
+            url_template: self.url_template.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url_template",
+                    "url_template was not specified but it is required when building CustomActionUrlOperation",
+                )
+            })?,
+            url_target: self.url_target.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url_target",
+                    "url_target was not specified but it is required when building CustomActionUrlOperation",
+                )
+            })?,
+        })
     }
 }

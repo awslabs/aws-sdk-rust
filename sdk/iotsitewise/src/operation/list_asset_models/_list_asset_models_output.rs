@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssetModelsOutput {
     /// <p>A list that summarizes each asset model.</p>
-    pub asset_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>>,
+    pub asset_model_summaries: ::std::vec::Vec<crate::types::AssetModelSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssetModelsOutput {
     /// <p>A list that summarizes each asset model.</p>
-    pub fn asset_model_summaries(&self) -> ::std::option::Option<&[crate::types::AssetModelSummary]> {
-        self.asset_model_summaries.as_deref()
+    pub fn asset_model_summaries(&self) -> &[crate::types::AssetModelSummary] {
+        use std::ops::Deref;
+        self.asset_model_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListAssetModelsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssetModelsOutput`](crate::operation::list_asset_models::ListAssetModelsOutput).
-    pub fn build(self) -> crate::operation::list_asset_models::ListAssetModelsOutput {
-        crate::operation::list_asset_models::ListAssetModelsOutput {
-            asset_model_summaries: self.asset_model_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_model_summaries`](crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder::asset_model_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_asset_models::ListAssetModelsOutput {
+            asset_model_summaries: self.asset_model_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_summaries",
+                    "asset_model_summaries was not specified but it is required when building ListAssetModelsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableGateway`](crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::disable_gateway::builders::DisableGatewayFluentBuilder::set_gateway_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p><br>
     /// - On success, responds with [`DisableGatewayOutput`](crate::operation::disable_gateway::DisableGatewayOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::disable_gateway::DisableGatewayOutput::gateway_arn): <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
     /// - On failure, responds with [`SdkError<DisableGatewayError>`](crate::operation::disable_gateway::DisableGatewayError)

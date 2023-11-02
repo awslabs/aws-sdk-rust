@@ -7,7 +7,7 @@ pub struct ItemIdentifier {
     /// <p>Details about the related item.</p>
     pub value: ::std::option::Option<crate::types::ItemValue>,
     /// <p>The type of related item. </p>
-    pub r#type: ::std::option::Option<crate::types::ItemType>,
+    pub r#type: crate::types::ItemType,
 }
 impl ItemIdentifier {
     /// <p>Details about the related item.</p>
@@ -15,8 +15,8 @@ impl ItemIdentifier {
         self.value.as_ref()
     }
     /// <p>The type of related item. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ItemType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ItemType {
+        &self.r#type
     }
 }
 impl ItemIdentifier {
@@ -35,6 +35,7 @@ pub struct ItemIdentifierBuilder {
 }
 impl ItemIdentifierBuilder {
     /// <p>Details about the related item.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::ItemValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ItemIdentifierBuilder {
         &self.value
     }
     /// <p>The type of related item. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl ItemIdentifierBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ItemIdentifier`](crate::types::ItemIdentifier).
-    pub fn build(self) -> crate::types::ItemIdentifier {
-        crate::types::ItemIdentifier {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ItemIdentifierBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ItemIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ItemIdentifier {
             value: self.value,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ItemIdentifier",
+                )
+            })?,
+        })
     }
 }

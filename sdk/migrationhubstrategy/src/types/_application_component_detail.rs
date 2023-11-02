@@ -73,16 +73,20 @@ impl ApplicationComponentDetail {
         self.status_message.as_deref()
     }
     /// <p> A list of anti-pattern severity summaries. </p>
-    pub fn list_antipattern_severity_summary(&self) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
-        self.list_antipattern_severity_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_antipattern_severity_summary.is_none()`.
+    pub fn list_antipattern_severity_summary(&self) -> &[crate::types::AntipatternSeveritySummary] {
+        self.list_antipattern_severity_summary.as_deref().unwrap_or_default()
     }
     /// <p> Configuration details for the database associated with the application component. </p>
     pub fn database_config_detail(&self) -> ::std::option::Option<&crate::types::DatabaseConfigDetail> {
         self.database_config_detail.as_ref()
     }
     /// <p> Details about the source code repository associated with the application component. </p>
-    pub fn source_code_repositories(&self) -> ::std::option::Option<&[crate::types::SourceCodeRepository]> {
-        self.source_code_repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_code_repositories.is_none()`.
+    pub fn source_code_repositories(&self) -> &[crate::types::SourceCodeRepository] {
+        self.source_code_repositories.as_deref().unwrap_or_default()
     }
     /// <p> The type of application component. </p>
     pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
@@ -141,8 +145,10 @@ impl ApplicationComponentDetail {
         self.app_unit_error.as_ref()
     }
     /// <p>A list of the analysis results.</p>
-    pub fn result_list(&self) -> ::std::option::Option<&[crate::types::Result]> {
-        self.result_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_list.is_none()`.
+    pub fn result_list(&self) -> &[crate::types::Result] {
+        self.result_list.as_deref().unwrap_or_default()
     }
 }
 impl ApplicationComponentDetail {

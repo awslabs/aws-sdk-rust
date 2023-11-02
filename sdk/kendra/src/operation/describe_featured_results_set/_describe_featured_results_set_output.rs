@@ -41,16 +41,22 @@ impl DescribeFeaturedResultsSetOutput {
         self.status.as_ref()
     }
     /// <p>The list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn query_texts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_texts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_texts.is_none()`.
+    pub fn query_texts(&self) -> &[::std::string::String] {
+        self.query_texts.as_deref().unwrap_or_default()
     }
     /// <p>The list of document IDs for the documents you want to feature with their metadata information. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn featured_documents_with_metadata(&self) -> ::std::option::Option<&[crate::types::FeaturedDocumentWithMetadata]> {
-        self.featured_documents_with_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_documents_with_metadata.is_none()`.
+    pub fn featured_documents_with_metadata(&self) -> &[crate::types::FeaturedDocumentWithMetadata] {
+        self.featured_documents_with_metadata.as_deref().unwrap_or_default()
     }
     /// <p>The list of document IDs that don't exist but you have specified as featured documents. Amazon Kendra cannot feature these documents if they don't exist in the index. You can check the status of a document and its ID or check for documents with status errors using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchGetDocumentStatus.html">BatchGetDocumentStatus</a> API.</p>
-    pub fn featured_documents_missing(&self) -> ::std::option::Option<&[crate::types::FeaturedDocumentMissing]> {
-        self.featured_documents_missing.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_documents_missing.is_none()`.
+    pub fn featured_documents_missing(&self) -> &[crate::types::FeaturedDocumentMissing] {
+        self.featured_documents_missing.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp when the set of featured results was last updated.</p>
     pub fn last_updated_timestamp(&self) -> ::std::option::Option<i64> {

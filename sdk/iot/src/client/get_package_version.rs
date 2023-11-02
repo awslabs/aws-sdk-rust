@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPackageVersion`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_name(impl Into<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::set_package_name): <p>The name of the associated package.</p>
-    ///   - [`version_name(impl Into<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::version_name) / [`set_version_name(Option<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::set_version_name): <p>The name of the target package version.</p>
+    ///   - [`package_name(impl Into<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::set_package_name):<br>required: **true**<br><p>The name of the associated package.</p><br>
+    ///   - [`version_name(impl Into<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::version_name) / [`set_version_name(Option<String>)`](crate::operation::get_package_version::builders::GetPackageVersionFluentBuilder::set_version_name):<br>required: **true**<br><p>The name of the target package version.</p><br>
     /// - On success, responds with [`GetPackageVersionOutput`](crate::operation::get_package_version::GetPackageVersionOutput) with field(s):
     ///   - [`package_version_arn(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::package_version_arn): <p>The ARN for the package version.</p>
     ///   - [`package_name(Option<String>)`](crate::operation::get_package_version::GetPackageVersionOutput::package_name): <p>The name of the software package.</p>

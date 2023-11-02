@@ -28,8 +28,10 @@ impl StartDocumentAnalysisInput {
         self.document_location.as_ref()
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
-    pub fn feature_types(&self) -> ::std::option::Option<&[crate::types::FeatureType]> {
-        self.feature_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
+    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
+        self.feature_types.as_deref().unwrap_or_default()
     }
     /// <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -83,6 +85,7 @@ pub struct StartDocumentAnalysisInputBuilder {
 }
 impl StartDocumentAnalysisInputBuilder {
     /// <p>The location of the document to be processed.</p>
+    /// This field is required.
     pub fn document_location(mut self, input: crate::types::DocumentLocation) -> Self {
         self.document_location = ::std::option::Option::Some(input);
         self

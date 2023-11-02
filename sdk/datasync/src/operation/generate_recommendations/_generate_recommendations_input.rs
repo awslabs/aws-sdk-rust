@@ -16,8 +16,10 @@ impl GenerateRecommendationsInput {
         self.discovery_job_arn.as_deref()
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the resources in your storage system that you want recommendations on.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[::std::string::String] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::DiscoveryResourceType> {
@@ -41,6 +43,7 @@ pub struct GenerateRecommendationsInputBuilder {
 }
 impl GenerateRecommendationsInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
+    /// This field is required.
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl GenerateRecommendationsInputBuilder {
         &self.resource_ids
     }
     /// <p>Specifies the type of resource in your storage system that you want recommendations on.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::DiscoveryResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

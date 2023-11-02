@@ -35,6 +35,7 @@ pub struct StandardsControlAssociationIdBuilder {
 }
 impl StandardsControlAssociationIdBuilder {
     /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
+    /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl StandardsControlAssociationIdBuilder {
         &self.security_control_id
     }
     /// <p> The ARN of a standard. </p>
+    /// This field is required.
     pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self

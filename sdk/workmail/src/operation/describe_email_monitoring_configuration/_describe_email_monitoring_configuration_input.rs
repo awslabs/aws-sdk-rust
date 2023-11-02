@@ -27,6 +27,7 @@ pub struct DescribeEmailMonitoringConfigurationInputBuilder {
 }
 impl DescribeEmailMonitoringConfigurationInputBuilder {
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

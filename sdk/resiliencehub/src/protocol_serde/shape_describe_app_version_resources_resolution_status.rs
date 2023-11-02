@@ -38,8 +38,8 @@ pub fn de_describe_app_version_resources_resolution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServerException" => crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError::InternalServerException({
@@ -54,8 +54,8 @@ pub fn de_describe_app_version_resources_resolution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError::ResourceNotFoundException({
@@ -70,8 +70,8 @@ pub fn de_describe_app_version_resources_resolution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError::ThrottlingException({
@@ -86,8 +86,8 @@ pub fn de_describe_app_version_resources_resolution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError::ValidationException({
@@ -102,8 +102,8 @@ pub fn de_describe_app_version_resources_resolution_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError::generic(generic)
@@ -128,7 +128,11 @@ pub fn de_describe_app_version_resources_resolution_status_http_response(
         )
         .map_err(crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_app_version_resources_resolution_status_output_correct_errors(output)
+            .build()
+            .map_err(
+                crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError::unhandled,
+            )?
     })
 }
 

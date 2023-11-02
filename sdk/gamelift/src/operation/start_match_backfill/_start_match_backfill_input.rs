@@ -36,8 +36,10 @@ impl StartMatchBackfillInput {
     /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> <p>The backfill request must specify the team membership for every player. Do not specify team if you are not using backfill.</p> </li>
     /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
     /// </ul>
-    pub fn players(&self) -> ::std::option::Option<&[crate::types::Player]> {
-        self.players.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.players.is_none()`.
+    pub fn players(&self) -> &[crate::types::Player] {
+        self.players.as_deref().unwrap_or_default()
     }
 }
 impl StartMatchBackfillInput {
@@ -72,6 +74,7 @@ impl StartMatchBackfillInputBuilder {
         &self.ticket_id
     }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
+    /// This field is required.
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self

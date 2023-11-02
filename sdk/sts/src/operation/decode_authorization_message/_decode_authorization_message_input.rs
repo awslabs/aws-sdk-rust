@@ -27,6 +27,7 @@ pub struct DecodeAuthorizationMessageInputBuilder {
 }
 impl DecodeAuthorizationMessageInputBuilder {
     /// <p>The encoded message that was returned with the response.</p>
+    /// This field is required.
     pub fn encoded_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoded_message = ::std::option::Option::Some(input.into());
         self

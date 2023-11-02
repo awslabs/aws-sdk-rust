@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrinoParameters {
     /// <p>The host name of the Trino data source.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>The port for the Trino data source.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
     /// <p>The catalog name for the Trino data source.</p>
-    pub catalog: ::std::option::Option<::std::string::String>,
+    pub catalog: ::std::string::String,
 }
 impl TrinoParameters {
     /// <p>The host name of the Trino data source.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>The port for the Trino data source.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The catalog name for the Trino data source.</p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
-        self.catalog.as_deref()
+    pub fn catalog(&self) -> &str {
+        use std::ops::Deref;
+        self.catalog.deref()
     }
 }
 impl TrinoParameters {
@@ -42,6 +44,7 @@ pub struct TrinoParametersBuilder {
 }
 impl TrinoParametersBuilder {
     /// <p>The host name of the Trino data source.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl TrinoParametersBuilder {
         &self.host
     }
     /// <p>The port for the Trino data source.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl TrinoParametersBuilder {
         &self.port
     }
     /// <p>The catalog name for the Trino data source.</p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl TrinoParametersBuilder {
         &self.catalog
     }
     /// Consumes the builder and constructs a [`TrinoParameters`](crate::types::TrinoParameters).
-    pub fn build(self) -> crate::types::TrinoParameters {
-        crate::types::TrinoParameters {
-            host: self.host,
-            port: self.port,
-            catalog: self.catalog,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::TrinoParametersBuilder::host)
+    /// - [`port`](crate::types::builders::TrinoParametersBuilder::port)
+    /// - [`catalog`](crate::types::builders::TrinoParametersBuilder::catalog)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrinoParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrinoParameters {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building TrinoParameters",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building TrinoParameters",
+                )
+            })?,
+            catalog: self.catalog.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "catalog",
+                    "catalog was not specified but it is required when building TrinoParameters",
+                )
+            })?,
+        })
     }
 }

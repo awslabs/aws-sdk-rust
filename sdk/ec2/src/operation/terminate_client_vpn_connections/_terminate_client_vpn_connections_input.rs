@@ -48,6 +48,7 @@ pub struct TerminateClientVpnConnectionsInputBuilder {
 }
 impl TerminateClientVpnConnectionsInputBuilder {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self

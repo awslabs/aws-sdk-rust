@@ -11,8 +11,10 @@ pub struct UpdateConnectivityInfoInput {
 }
 impl UpdateConnectivityInfoInput {
     /// A list of connectivity info.
-    pub fn connectivity_info(&self) -> ::std::option::Option<&[crate::types::ConnectivityInfo]> {
-        self.connectivity_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectivity_info.is_none()`.
+    pub fn connectivity_info(&self) -> &[crate::types::ConnectivityInfo] {
+        self.connectivity_info.as_deref().unwrap_or_default()
     }
     /// The thing name.
     pub fn thing_name(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ impl UpdateConnectivityInfoInputBuilder {
         &self.connectivity_info
     }
     /// The thing name.
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentsOutput {
     /// <p>The list of deployments that is returned.</p>
-    pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>>,
+    pub deployments: ::std::vec::Vec<crate::types::DeploymentSummary>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeploymentsOutput {
     /// <p>The list of deployments that is returned.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::DeploymentSummary]> {
-        self.deployments.as_deref()
+    pub fn deployments(&self) -> &[crate::types::DeploymentSummary] {
+        use std::ops::Deref;
+        self.deployments.deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListDeploymentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeploymentsOutput`](crate::operation::list_deployments::ListDeploymentsOutput).
-    pub fn build(self) -> crate::operation::list_deployments::ListDeploymentsOutput {
-        crate::operation::list_deployments::ListDeploymentsOutput {
-            deployments: self.deployments,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`deployments`](crate::operation::list_deployments::builders::ListDeploymentsOutputBuilder::deployments)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsOutput {
+            deployments: self.deployments.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "deployments",
+                    "deployments was not specified but it is required when building ListDeploymentsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -21,8 +21,10 @@ impl ListQualificationRequestsOutput {
         self.next_token.as_deref()
     }
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    pub fn qualification_requests(&self) -> ::std::option::Option<&[crate::types::QualificationRequest]> {
-        self.qualification_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualification_requests.is_none()`.
+    pub fn qualification_requests(&self) -> &[crate::types::QualificationRequest] {
+        self.qualification_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListQualificationRequestsOutput {

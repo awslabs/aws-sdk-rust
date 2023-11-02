@@ -34,6 +34,7 @@ pub struct DescribeFleetLocationUtilizationInputBuilder {
 }
 impl DescribeFleetLocationUtilizationInputBuilder {
     /// <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFleetLocationUtilizationInputBuilder {
         &self.fleet_id
     }
     /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self

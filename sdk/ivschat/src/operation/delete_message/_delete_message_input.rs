@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMessageInput {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
-    pub room_identifier: ::std::option::Option<::std::string::String>,
+    pub room_identifier: ::std::string::String,
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Reason for deleting the message.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMessageInput {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
-    pub fn room_identifier(&self) -> ::std::option::Option<&str> {
-        self.room_identifier.as_deref()
+    pub fn room_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.room_identifier.deref()
     }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Reason for deleting the message.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct DeleteMessageInputBuilder {
 }
 impl DeleteMessageInputBuilder {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DeleteMessageInputBuilder {
         &self.room_identifier
     }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -83,12 +87,25 @@ impl DeleteMessageInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`room_identifier`](crate::operation::delete_message::builders::DeleteMessageInputBuilder::room_identifier)
+    /// - [`id`](crate::operation::delete_message::builders::DeleteMessageInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_message::DeleteMessageInput {
-            room_identifier: self.room_identifier,
-            id: self.id,
+            room_identifier: self.room_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "room_identifier",
+                    "room_identifier was not specified but it is required when building DeleteMessageInput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DeleteMessageInput",
+                )
+            })?,
             reason: self.reason,
         })
     }

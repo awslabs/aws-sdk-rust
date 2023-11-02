@@ -45,6 +45,7 @@ pub struct DeleteDatasetInputBuilder {
 }
 impl DeleteDatasetInputBuilder {
     /// <p>The name of the project that contains the dataset that you want to delete.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl DeleteDatasetInputBuilder {
         &self.project_name
     }
     /// <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset. Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project, specify <code>train</code>.</p>
+    /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
         self

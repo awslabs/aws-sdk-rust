@@ -92,14 +92,14 @@ impl UpdateSecurityProfileFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::update_security_profile::UpdateSecurityProfileOutput,
             crate::operation::update_security_profile::UpdateSecurityProfileError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_security_profile::UpdateSecurityProfileError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -220,19 +220,19 @@ impl UpdateSecurityProfileFluentBuilder {
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
+    /// <p>A list of the third-party application's metadata.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         self.inner = self.inner.applications(input);
         self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
+    /// <p>A list of the third-party application's metadata.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
-    /// <p>A list of the third party application's metadata.</p>
+    /// <p>A list of the third-party application's metadata.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         self.inner.get_applications()
     }

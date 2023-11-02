@@ -27,8 +27,10 @@ impl GetMatchesOutput {
         self.potential_matches
     }
     /// <p>The list of matched profiles for this instance.</p>
-    pub fn matches(&self) -> ::std::option::Option<&[crate::types::MatchItem]> {
-        self.matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matches.is_none()`.
+    pub fn matches(&self) -> &[crate::types::MatchItem] {
+        self.matches.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMatchesOutput {

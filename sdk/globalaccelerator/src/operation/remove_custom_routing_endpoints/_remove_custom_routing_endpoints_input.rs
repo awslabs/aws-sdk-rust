@@ -10,8 +10,10 @@ pub struct RemoveCustomRoutingEndpointsInput {
 }
 impl RemoveCustomRoutingEndpointsInput {
     /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
-    pub fn endpoint_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.endpoint_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_ids.is_none()`.
+    pub fn endpoint_ids(&self) -> &[::std::string::String] {
+        self.endpoint_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
         &self.endpoint_ids
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
+    /// This field is required.
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self

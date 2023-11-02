@@ -8,8 +8,10 @@ pub struct UpdateCostAllocationTagsStatusInput {
 }
 impl UpdateCostAllocationTagsStatusInput {
     /// <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update cost allocation tags status for this request. </p>
-    pub fn cost_allocation_tags_status(&self) -> ::std::option::Option<&[crate::types::CostAllocationTagStatusEntry]> {
-        self.cost_allocation_tags_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_allocation_tags_status.is_none()`.
+    pub fn cost_allocation_tags_status(&self) -> &[crate::types::CostAllocationTagStatusEntry] {
+        self.cost_allocation_tags_status.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCostAllocationTagsStatusInput {

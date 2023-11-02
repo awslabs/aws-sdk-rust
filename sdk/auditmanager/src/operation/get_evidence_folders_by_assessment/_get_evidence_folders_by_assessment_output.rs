@@ -11,8 +11,10 @@ pub struct GetEvidenceFoldersByAssessmentOutput {
 }
 impl GetEvidenceFoldersByAssessmentOutput {
     /// <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
-    pub fn evidence_folders(&self) -> ::std::option::Option<&[crate::types::AssessmentEvidenceFolder]> {
-        self.evidence_folders.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_folders.is_none()`.
+    pub fn evidence_folders(&self) -> &[crate::types::AssessmentEvidenceFolder] {
+        self.evidence_folders.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

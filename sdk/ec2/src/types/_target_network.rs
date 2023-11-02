@@ -39,8 +39,10 @@ impl TargetNetwork {
         self.status.as_ref()
     }
     /// <p>The IDs of the security groups applied to the target network association.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl TargetNetwork {

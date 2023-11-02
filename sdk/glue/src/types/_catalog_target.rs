@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogTarget {
     /// <p>The name of the database to be synchronized.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>A list of the tables to be synchronized.</p>
-    pub tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tables: ::std::vec::Vec<::std::string::String>,
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
@@ -17,12 +17,14 @@ pub struct CatalogTarget {
 }
 impl CatalogTarget {
     /// <p>The name of the database to be synchronized.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>A list of the tables to be synchronized.</p>
-    pub fn tables(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tables.as_deref()
+    pub fn tables(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.tables.deref()
     }
     /// <p>The name of the connection for an Amazon S3-backed Data Catalog table to be a target of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code> Connection type.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct CatalogTargetBuilder {
 }
 impl CatalogTargetBuilder {
     /// <p>The name of the database to be synchronized.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +135,26 @@ impl CatalogTargetBuilder {
         &self.dlq_event_queue_arn
     }
     /// Consumes the builder and constructs a [`CatalogTarget`](crate::types::CatalogTarget).
-    pub fn build(self) -> crate::types::CatalogTarget {
-        crate::types::CatalogTarget {
-            database_name: self.database_name,
-            tables: self.tables,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::CatalogTargetBuilder::database_name)
+    /// - [`tables`](crate::types::builders::CatalogTargetBuilder::tables)
+    pub fn build(self) -> ::std::result::Result<crate::types::CatalogTarget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CatalogTarget {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building CatalogTarget",
+                )
+            })?,
+            tables: self.tables.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tables",
+                    "tables was not specified but it is required when building CatalogTarget",
+                )
+            })?,
             connection_name: self.connection_name,
             event_queue_arn: self.event_queue_arn,
             dlq_event_queue_arn: self.dlq_event_queue_arn,
-        }
+        })
     }
 }

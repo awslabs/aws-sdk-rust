@@ -21,8 +21,10 @@ impl AwsWafv2CustomResponseDetails {
         self.response_code
     }
     /// <p> The HTTP headers to use in the response. </p>
-    pub fn response_headers(&self) -> ::std::option::Option<&[crate::types::AwsWafv2CustomHttpHeader]> {
-        self.response_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.response_headers.is_none()`.
+    pub fn response_headers(&self) -> &[crate::types::AwsWafv2CustomHttpHeader] {
+        self.response_headers.as_deref().unwrap_or_default()
     }
 }
 impl AwsWafv2CustomResponseDetails {

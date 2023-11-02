@@ -34,6 +34,7 @@ pub struct ListTagsForResourceInputBuilder {
 }
 impl ListTagsForResourceInputBuilder {
     /// <p>Returns a list of tags for a specific resource type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceTypeForTagging) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl ListTagsForResourceInputBuilder {
         &self.resource_type
     }
     /// <p>The resource ID for which you want to see a list of tags.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

@@ -9,7 +9,7 @@ pub struct DataModel {
     /// <p> The granularity of the timestamp unit. It indicates if the time value is in seconds, milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>. </p>
     pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
     /// <p>Source to target mappings for dimensions.</p>
-    pub dimension_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
+    pub dimension_mappings: ::std::vec::Vec<crate::types::DimensionMapping>,
     /// <p>Source to target mappings for multi-measure records.</p>
     pub multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
     /// <p>Source to target mappings for measures.</p>
@@ -27,16 +27,19 @@ impl DataModel {
         self.time_unit.as_ref()
     }
     /// <p>Source to target mappings for dimensions.</p>
-    pub fn dimension_mappings(&self) -> ::std::option::Option<&[crate::types::DimensionMapping]> {
-        self.dimension_mappings.as_deref()
+    pub fn dimension_mappings(&self) -> &[crate::types::DimensionMapping] {
+        use std::ops::Deref;
+        self.dimension_mappings.deref()
     }
     /// <p>Source to target mappings for multi-measure records.</p>
     pub fn multi_measure_mappings(&self) -> ::std::option::Option<&crate::types::MultiMeasureMappings> {
         self.multi_measure_mappings.as_ref()
     }
     /// <p>Source to target mappings for measures.</p>
-    pub fn mixed_measure_mappings(&self) -> ::std::option::Option<&[crate::types::MixedMeasureMapping]> {
-        self.mixed_measure_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mixed_measure_mappings.is_none()`.
+    pub fn mixed_measure_mappings(&self) -> &[crate::types::MixedMeasureMapping] {
+        self.mixed_measure_mappings.as_deref().unwrap_or_default()
     }
     /// <p></p>
     pub fn measure_name_column(&self) -> ::std::option::Option<&str> {
@@ -159,14 +162,21 @@ impl DataModelBuilder {
         &self.measure_name_column
     }
     /// Consumes the builder and constructs a [`DataModel`](crate::types::DataModel).
-    pub fn build(self) -> crate::types::DataModel {
-        crate::types::DataModel {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dimension_mappings`](crate::types::builders::DataModelBuilder::dimension_mappings)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataModel, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataModel {
             time_column: self.time_column,
             time_unit: self.time_unit,
-            dimension_mappings: self.dimension_mappings,
+            dimension_mappings: self.dimension_mappings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_mappings",
+                    "dimension_mappings was not specified but it is required when building DataModel",
+                )
+            })?,
             multi_measure_mappings: self.multi_measure_mappings,
             mixed_measure_mappings: self.mixed_measure_mappings,
             measure_name_column: self.measure_name_column,
-        }
+        })
     }
 }

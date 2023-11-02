@@ -21,6 +21,7 @@ pub fn ser_selection_criteria(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_selection_criteria(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SelectionCriteria, ::aws_smithy_xml::decode::XmlDecodeError> {

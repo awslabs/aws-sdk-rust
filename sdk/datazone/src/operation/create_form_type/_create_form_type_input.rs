@@ -74,6 +74,7 @@ pub struct CreateFormTypeInputBuilder {
 }
 impl CreateFormTypeInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +89,7 @@ impl CreateFormTypeInputBuilder {
         &self.domain_identifier
     }
     /// <p>The name of this Amazon DataZone metadata form type.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl CreateFormTypeInputBuilder {
         &self.name
     }
     /// <p>The model of this Amazon DataZone metadata form type.</p>
+    /// This field is required.
     pub fn model(mut self, input: crate::types::Model) -> Self {
         self.model = ::std::option::Option::Some(input);
         self
@@ -116,6 +119,7 @@ impl CreateFormTypeInputBuilder {
         &self.model
     }
     /// <p>The ID of the Amazon DataZone project that owns this metadata form type.</p>
+    /// This field is required.
     pub fn owning_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_identifier = ::std::option::Option::Some(input.into());
         self

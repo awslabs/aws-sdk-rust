@@ -5,13 +5,13 @@ pub fn ser_object_identifier(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.key {
+    {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.key.as_str());
     }
-    if let Some(var_2) = &input.version_id {
+    if let Some(var_1) = &input.version_id {
         let mut inner_writer = scope.start_el("VersionId").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(var_1.as_str());
     }
     scope.finish();
     Ok(())

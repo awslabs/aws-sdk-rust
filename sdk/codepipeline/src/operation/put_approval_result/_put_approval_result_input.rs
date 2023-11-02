@@ -56,6 +56,7 @@ pub struct PutApprovalResultInputBuilder {
 }
 impl PutApprovalResultInputBuilder {
     /// <p>The name of the pipeline that contains the action. </p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl PutApprovalResultInputBuilder {
         &self.pipeline_name
     }
     /// <p>The name of the stage that contains the action.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl PutApprovalResultInputBuilder {
         &self.stage_name
     }
     /// <p>The name of the action for which approval is requested.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl PutApprovalResultInputBuilder {
         &self.action_name
     }
     /// <p>Represents information about the result of the approval request.</p>
+    /// This field is required.
     pub fn result(mut self, input: crate::types::ApprovalResult) -> Self {
         self.result = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl PutApprovalResultInputBuilder {
         &self.result
     }
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self

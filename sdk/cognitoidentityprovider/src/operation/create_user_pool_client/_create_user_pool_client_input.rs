@@ -163,13 +163,17 @@ impl CreateUserPoolClientInput {
         self.token_validity_units.as_ref()
     }
     /// <p>The read attributes.</p>
-    pub fn read_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.read_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_attributes.is_none()`.
+    pub fn read_attributes(&self) -> &[::std::string::String] {
+        self.read_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The user pool attributes that the app client can write to.</p>
     /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
-    pub fn write_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.write_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.write_attributes.is_none()`.
+    pub fn write_attributes(&self) -> &[::std::string::String] {
+        self.write_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
     /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
@@ -183,12 +187,16 @@ impl CreateUserPoolClientInput {
     /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
-    pub fn explicit_auth_flows(&self) -> ::std::option::Option<&[crate::types::ExplicitAuthFlowsType]> {
-        self.explicit_auth_flows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.explicit_auth_flows.is_none()`.
+    pub fn explicit_auth_flows(&self) -> &[crate::types::ExplicitAuthFlowsType] {
+        self.explicit_auth_flows.as_deref().unwrap_or_default()
     }
     /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
-    pub fn supported_identity_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_identity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_identity_providers.is_none()`.
+    pub fn supported_identity_providers(&self) -> &[::std::string::String] {
+        self.supported_identity_providers.as_deref().unwrap_or_default()
     }
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
@@ -200,12 +208,16 @@ impl CreateUserPoolClientInput {
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
-    pub fn callback_ur_ls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.callback_ur_ls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.callback_ur_ls.is_none()`.
+    pub fn callback_ur_ls(&self) -> &[::std::string::String] {
+        self.callback_ur_ls.as_deref().unwrap_or_default()
     }
     /// <p>A list of allowed logout URLs for the IdPs.</p>
-    pub fn logout_ur_ls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.logout_ur_ls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logout_ur_ls.is_none()`.
+    pub fn logout_ur_ls(&self) -> &[::std::string::String] {
+        self.logout_ur_ls.as_deref().unwrap_or_default()
     }
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
@@ -241,12 +253,16 @@ impl CreateUserPoolClientInput {
     /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
     /// </dd>
     /// </dl>
-    pub fn allowed_o_auth_flows(&self) -> ::std::option::Option<&[crate::types::OAuthFlowType]> {
-        self.allowed_o_auth_flows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_o_auth_flows.is_none()`.
+    pub fn allowed_o_auth_flows(&self) -> &[crate::types::OAuthFlowType] {
+        self.allowed_o_auth_flows.as_deref().unwrap_or_default()
     }
     /// <p>The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
-    pub fn allowed_o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_o_auth_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_o_auth_scopes.is_none()`.
+    pub fn allowed_o_auth_scopes(&self) -> &[::std::string::String] {
+        self.allowed_o_auth_scopes.as_deref().unwrap_or_default()
     }
     /// <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
     /// <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following features in your app client.</p>
@@ -325,6 +341,7 @@ pub struct CreateUserPoolClientInputBuilder {
 }
 impl CreateUserPoolClientInputBuilder {
     /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -339,6 +356,7 @@ impl CreateUserPoolClientInputBuilder {
         &self.user_pool_id
     }
     /// <p>The client name for the user pool client you would like to create.</p>
+    /// This field is required.
     pub fn client_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_name = ::std::option::Option::Some(input.into());
         self

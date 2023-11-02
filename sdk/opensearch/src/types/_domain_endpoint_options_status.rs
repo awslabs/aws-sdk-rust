@@ -35,6 +35,7 @@ pub struct DomainEndpointOptionsStatusBuilder {
 }
 impl DomainEndpointOptionsStatusBuilder {
     /// <p>Options to configure the endpoint for a domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl DomainEndpointOptionsStatusBuilder {
         &self.options
     }
     /// <p>The status of the endpoint options for a domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

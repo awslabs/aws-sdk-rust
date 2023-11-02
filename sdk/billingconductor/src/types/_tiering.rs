@@ -28,6 +28,7 @@ pub struct TieringBuilder {
 }
 impl TieringBuilder {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
+    /// This field is required.
     pub fn free_tier(mut self, input: crate::types::FreeTierConfig) -> Self {
         self.free_tier = ::std::option::Option::Some(input);
         self

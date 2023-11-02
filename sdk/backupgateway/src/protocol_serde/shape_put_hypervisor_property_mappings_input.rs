@@ -3,23 +3,23 @@ pub fn ser_put_hypervisor_property_mappings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hypervisor_arn {
-        object.key("HypervisorArn").string(var_1.as_str());
+    {
+        object.key("HypervisorArn").string(input.hypervisor_arn.as_str());
     }
-    if let Some(var_2) = &input.vmware_to_aws_tag_mappings {
-        let mut array_3 = object.key("VmwareToAwsTagMappings").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("VmwareToAwsTagMappings").start_array();
+        for item_2 in &input.vmware_to_aws_tag_mappings {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_vmware_to_aws_tag_mapping::ser_vmware_to_aws_tag_mapping(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_vmware_to_aws_tag_mapping::ser_vmware_to_aws_tag_mapping(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.iam_role_arn {
-        object.key("IamRoleArn").string(var_6.as_str());
+    {
+        object.key("IamRoleArn").string(input.iam_role_arn.as_str());
     }
     Ok(())
 }

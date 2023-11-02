@@ -16,8 +16,10 @@ impl TagSamlProviderInput {
         self.saml_provider_arn.as_deref()
     }
     /// <p>The list of tags that you want to attach to the SAML identity provider in IAM. Each tag consists of a key name and an associated value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TagSamlProviderInput {
@@ -37,6 +39,7 @@ pub struct TagSamlProviderInputBuilder {
 impl TagSamlProviderInputBuilder {
     /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self

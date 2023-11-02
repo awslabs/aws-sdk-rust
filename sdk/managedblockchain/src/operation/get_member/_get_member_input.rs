@@ -34,6 +34,7 @@ pub struct GetMemberInputBuilder {
 }
 impl GetMemberInputBuilder {
     /// <p>The unique identifier of the network to which the member belongs.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMemberInputBuilder {
         &self.network_id
     }
     /// <p>The unique identifier of the member.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self

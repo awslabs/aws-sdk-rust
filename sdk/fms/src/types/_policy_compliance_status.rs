@@ -37,8 +37,10 @@ impl PolicyComplianceStatus {
         self.member_account.as_deref()
     }
     /// <p>An array of <code>EvaluationResult</code> objects.</p>
-    pub fn evaluation_results(&self) -> ::std::option::Option<&[crate::types::EvaluationResult]> {
-        self.evaluation_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluation_results.is_none()`.
+    pub fn evaluation_results(&self) -> &[crate::types::EvaluationResult] {
+        self.evaluation_results.as_deref().unwrap_or_default()
     }
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

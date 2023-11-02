@@ -22,8 +22,10 @@ pub struct DescribeNetworkInsightsAccessScopeAnalysesInput {
 }
 impl DescribeNetworkInsightsAccessScopeAnalysesInput {
     /// <p>The IDs of the Network Access Scope analyses.</p>
-    pub fn network_insights_access_scope_analysis_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_insights_access_scope_analysis_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_insights_access_scope_analysis_ids.is_none()`.
+    pub fn network_insights_access_scope_analysis_ids(&self) -> &[::std::string::String] {
+        self.network_insights_access_scope_analysis_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<&str> {
@@ -38,8 +40,10 @@ impl DescribeNetworkInsightsAccessScopeAnalysesInput {
         self.analysis_start_time_end.as_ref()
     }
     /// <p>There are no supported filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

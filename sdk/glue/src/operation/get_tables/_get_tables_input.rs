@@ -83,6 +83,7 @@ impl GetTablesInputBuilder {
         &self.catalog_id
     }
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self

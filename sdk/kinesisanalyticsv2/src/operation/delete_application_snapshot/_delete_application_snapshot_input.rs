@@ -41,6 +41,7 @@ pub struct DeleteApplicationSnapshotInputBuilder {
 }
 impl DeleteApplicationSnapshotInputBuilder {
     /// <p>The name of an existing application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteApplicationSnapshotInputBuilder {
         &self.application_name
     }
     /// <p>The identifier for the snapshot delete.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteApplicationSnapshotInputBuilder {
         &self.snapshot_name
     }
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
+    /// This field is required.
     pub fn snapshot_creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.snapshot_creation_timestamp = ::std::option::Option::Some(input);
         self

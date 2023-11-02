@@ -35,6 +35,7 @@ pub struct UplinkSpectrumConfigBuilder {
 }
 impl UplinkSpectrumConfigBuilder {
     /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
+    /// This field is required.
     pub fn center_frequency(mut self, input: crate::types::Frequency) -> Self {
         self.center_frequency = ::std::option::Option::Some(input);
         self

@@ -34,8 +34,10 @@ impl CreateAppInstanceBotInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::Configuration> {
@@ -74,6 +76,7 @@ pub struct CreateAppInstanceBotInputBuilder {
 }
 impl CreateAppInstanceBotInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +119,7 @@ impl CreateAppInstanceBotInputBuilder {
         &self.metadata
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +154,7 @@ impl CreateAppInstanceBotInputBuilder {
         &self.tags
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

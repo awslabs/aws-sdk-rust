@@ -48,8 +48,10 @@ impl User {
         self.access_string.as_deref()
     }
     /// <p>Returns a list of the user group IDs the user belongs to.</p>
-    pub fn user_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_group_ids.is_none()`.
+    pub fn user_group_ids(&self) -> &[::std::string::String] {
+        self.user_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
     pub fn authentication(&self) -> ::std::option::Option<&crate::types::Authentication> {

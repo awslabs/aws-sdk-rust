@@ -70,6 +70,7 @@ pub struct PurchaseOfferingInputBuilder {
 }
 impl PurchaseOfferingInputBuilder {
     /// Number of resources
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl PurchaseOfferingInputBuilder {
         &self.name
     }
     /// Offering to purchase, e.g. '87654321'
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self

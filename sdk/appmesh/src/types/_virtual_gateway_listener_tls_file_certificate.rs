@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
-    pub certificate_chain: ::std::option::Option<::std::string::String>,
+    pub certificate_chain: ::std::string::String,
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
-    pub private_key: ::std::option::Option<::std::string::String>,
+    pub private_key: ::std::string::String,
 }
 impl VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
-        self.certificate_chain.as_deref()
+    pub fn certificate_chain(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_chain.deref()
     }
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
-    pub fn private_key(&self) -> ::std::option::Option<&str> {
-        self.private_key.as_deref()
+    pub fn private_key(&self) -> &str {
+        use std::ops::Deref;
+        self.private_key.deref()
     }
 }
 impl VirtualGatewayListenerTlsFileCertificate {
@@ -35,6 +37,7 @@ pub struct VirtualGatewayListenerTlsFileCertificateBuilder {
 }
 impl VirtualGatewayListenerTlsFileCertificateBuilder {
     /// <p>The certificate chain for the certificate.</p>
+    /// This field is required.
     pub fn certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl VirtualGatewayListenerTlsFileCertificateBuilder {
         &self.certificate_chain
     }
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
+    /// This field is required.
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,25 @@ impl VirtualGatewayListenerTlsFileCertificateBuilder {
         &self.private_key
     }
     /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsFileCertificate`](crate::types::VirtualGatewayListenerTlsFileCertificate).
-    pub fn build(self) -> crate::types::VirtualGatewayListenerTlsFileCertificate {
-        crate::types::VirtualGatewayListenerTlsFileCertificate {
-            certificate_chain: self.certificate_chain,
-            private_key: self.private_key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_chain`](crate::types::builders::VirtualGatewayListenerTlsFileCertificateBuilder::certificate_chain)
+    /// - [`private_key`](crate::types::builders::VirtualGatewayListenerTlsFileCertificateBuilder::private_key)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::VirtualGatewayListenerTlsFileCertificate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewayListenerTlsFileCertificate {
+            certificate_chain: self.certificate_chain.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate_chain",
+                    "certificate_chain was not specified but it is required when building VirtualGatewayListenerTlsFileCertificate",
+                )
+            })?,
+            private_key: self.private_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "private_key",
+                    "private_key was not specified but it is required when building VirtualGatewayListenerTlsFileCertificate",
+                )
+            })?,
+        })
     }
 }

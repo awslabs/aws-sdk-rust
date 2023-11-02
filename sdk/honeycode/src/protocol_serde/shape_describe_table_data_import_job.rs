@@ -124,11 +124,10 @@ pub fn de_describe_table_data_import_job_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::generic(generic),
@@ -150,7 +149,9 @@ pub fn de_describe_table_data_import_job_http_response(
         output = crate::protocol_serde::shape_describe_table_data_import_job::de_describe_table_data_import_job(_response_body, output)
             .map_err(crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_table_data_import_job_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError::unhandled)?
     })
 }
 

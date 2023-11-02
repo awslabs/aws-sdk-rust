@@ -12,8 +12,10 @@ pub struct DescribeDirectoryConfigsInput {
 }
 impl DescribeDirectoryConfigsInput {
     /// <p>The directory names.</p>
-    pub fn directory_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.directory_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_names.is_none()`.
+    pub fn directory_names(&self) -> &[::std::string::String] {
+        self.directory_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

@@ -7,7 +7,7 @@ pub struct DatabaseTableOutputOptions {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
     pub temp_directory: ::std::option::Option<crate::types::S3Location>,
     /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
 }
 impl DatabaseTableOutputOptions {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
@@ -15,8 +15,9 @@ impl DatabaseTableOutputOptions {
         self.temp_directory.as_ref()
     }
     /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
 }
 impl DatabaseTableOutputOptions {
@@ -49,6 +50,7 @@ impl DatabaseTableOutputOptionsBuilder {
         &self.temp_directory
     }
     /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DatabaseTableOutputOptionsBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`DatabaseTableOutputOptions`](crate::types::DatabaseTableOutputOptions).
-    pub fn build(self) -> crate::types::DatabaseTableOutputOptions {
-        crate::types::DatabaseTableOutputOptions {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::DatabaseTableOutputOptionsBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseTableOutputOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatabaseTableOutputOptions {
             temp_directory: self.temp_directory,
-            table_name: self.table_name,
-        }
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building DatabaseTableOutputOptions",
+                )
+            })?,
+        })
     }
 }

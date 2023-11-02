@@ -35,6 +35,7 @@ pub struct EndpointPerformanceBuilder {
 }
 impl EndpointPerformanceBuilder {
     /// <p>The metrics for an existing endpoint.</p>
+    /// This field is required.
     pub fn metrics(mut self, input: crate::types::InferenceMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl EndpointPerformanceBuilder {
         &self.metrics
     }
     /// <p>Details about a customer endpoint that was compared in an Inference Recommender job.</p>
+    /// This field is required.
     pub fn endpoint_info(mut self, input: crate::types::EndpointInfo) -> Self {
         self.endpoint_info = ::std::option::Option::Some(input);
         self

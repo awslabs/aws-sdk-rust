@@ -34,6 +34,7 @@ pub struct GetAccessPreviewOutputBuilder {
 }
 impl GetAccessPreviewOutputBuilder {
     /// <p>An object that contains information about the access preview.</p>
+    /// This field is required.
     pub fn access_preview(mut self, input: crate::types::AccessPreview) -> Self {
         self.access_preview = ::std::option::Option::Some(input);
         self

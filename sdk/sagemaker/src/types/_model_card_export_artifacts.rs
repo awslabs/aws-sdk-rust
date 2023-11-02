@@ -28,6 +28,7 @@ pub struct ModelCardExportArtifactsBuilder {
 }
 impl ModelCardExportArtifactsBuilder {
     /// <p>The Amazon S3 URI of the exported model artifacts.</p>
+    /// This field is required.
     pub fn s3_export_artifacts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_export_artifacts = ::std::option::Option::Some(input.into());
         self

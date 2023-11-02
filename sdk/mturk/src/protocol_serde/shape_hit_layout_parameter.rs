@@ -3,11 +3,11 @@ pub fn ser_hit_layout_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HitLayoutParameter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.value {
-        object.key("Value").string(var_2.as_str());
+    {
+        object.key("Value").string(input.value.as_str());
     }
     Ok(())
 }

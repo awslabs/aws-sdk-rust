@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
@@ -14,8 +14,9 @@ pub struct DynamoDBv2Action {
 }
 impl DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
@@ -40,6 +41,7 @@ pub struct DynamoDBv2ActionBuilder {
 }
 impl DynamoDBv2ActionBuilder {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl DynamoDBv2ActionBuilder {
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
+    /// This field is required.
     pub fn put_item(mut self, input: crate::types::PutItemInput) -> Self {
         self.put_item = ::std::option::Option::Some(input);
         self
@@ -74,10 +77,17 @@ impl DynamoDBv2ActionBuilder {
         &self.put_item
     }
     /// Consumes the builder and constructs a [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
-    pub fn build(self) -> crate::types::DynamoDBv2Action {
-        crate::types::DynamoDBv2Action {
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::DynamoDBv2ActionBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDBv2Action, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DynamoDBv2Action {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building DynamoDBv2Action",
+                )
+            })?,
             put_item: self.put_item,
-        }
+        })
     }
 }

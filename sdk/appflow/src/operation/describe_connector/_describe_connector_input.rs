@@ -34,6 +34,7 @@ pub struct DescribeConnectorInputBuilder {
 }
 impl DescribeConnectorInputBuilder {
     /// <p>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR for Lambda based custom connectors.</p>
+    /// This field is required.
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
         self.connector_type = ::std::option::Option::Some(input);
         self

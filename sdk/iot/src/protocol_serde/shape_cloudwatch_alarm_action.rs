@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::cloudwatch_alarm_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -64,17 +66,17 @@ pub fn ser_cloudwatch_alarm_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudwatchAlarmAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.alarm_name {
-        object.key("alarmName").string(var_2.as_str());
+    {
+        object.key("alarmName").string(input.alarm_name.as_str());
     }
-    if let Some(var_3) = &input.state_reason {
-        object.key("stateReason").string(var_3.as_str());
+    {
+        object.key("stateReason").string(input.state_reason.as_str());
     }
-    if let Some(var_4) = &input.state_value {
-        object.key("stateValue").string(var_4.as_str());
+    {
+        object.key("stateValue").string(input.state_value.as_str());
     }
     Ok(())
 }

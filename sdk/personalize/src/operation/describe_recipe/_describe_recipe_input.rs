@@ -27,6 +27,7 @@ pub struct DescribeRecipeInputBuilder {
 }
 impl DescribeRecipeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
+    /// This field is required.
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
         self

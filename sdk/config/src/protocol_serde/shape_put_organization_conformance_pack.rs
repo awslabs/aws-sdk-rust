@@ -32,8 +32,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MaxNumberOfOrganizationConformancePacksExceededException" => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::MaxNumberOfOrganizationConformancePacksExceededException({
@@ -48,8 +48,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoAvailableOrganizationException" => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::NoAvailableOrganizationException({
@@ -64,8 +64,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationAccessDeniedException" => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::OrganizationAccessDeniedException({
@@ -80,8 +80,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationAllFeaturesNotEnabledException" => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::OrganizationAllFeaturesNotEnabledException({
@@ -96,8 +96,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationConformancePackTemplateValidationException" => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::OrganizationConformancePackTemplateValidationException({
@@ -112,8 +112,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceInUseException" => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::ResourceInUseException({
@@ -128,8 +128,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::ValidationException({
@@ -144,8 +144,8 @@ pub fn de_put_organization_conformance_pack_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::generic(generic)

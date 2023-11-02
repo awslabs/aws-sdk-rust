@@ -49,6 +49,7 @@ impl ColumnInfoBuilder {
         &self.name
     }
     /// <p>The data type of the result set column. The data type can be a scalar or complex. Scalar data types are integers, strings, doubles, Booleans, and others. Complex data types are types such as arrays, rows, and others. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Type>>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

@@ -20,20 +20,26 @@ impl CreateRuleInput {
         self.listener_arn.as_deref()
     }
     /// <p>The conditions.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::RuleCondition]> {
-        self.conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
+    pub fn conditions(&self) -> &[crate::types::RuleCondition] {
+        self.conditions.as_deref().unwrap_or_default()
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The actions.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The tags to assign to the rule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateRuleInput {
@@ -55,6 +61,7 @@ pub struct CreateRuleInputBuilder {
 }
 impl CreateRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +96,7 @@ impl CreateRuleInputBuilder {
         &self.conditions
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self

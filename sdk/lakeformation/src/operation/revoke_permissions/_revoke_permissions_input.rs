@@ -28,12 +28,16 @@ impl RevokePermissionsInput {
         self.resource.as_ref()
     }
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-    pub fn permissions_with_grant_option(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions_with_grant_option.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions_with_grant_option.is_none()`.
+    pub fn permissions_with_grant_option(&self) -> &[crate::types::Permission] {
+        self.permissions_with_grant_option.as_deref().unwrap_or_default()
     }
 }
 impl RevokePermissionsInput {
@@ -69,6 +73,7 @@ impl RevokePermissionsInputBuilder {
         &self.catalog_id
     }
     /// <p>The principal to be revoked permissions on the resource.</p>
+    /// This field is required.
     pub fn principal(mut self, input: crate::types::DataLakePrincipal) -> Self {
         self.principal = ::std::option::Option::Some(input);
         self
@@ -83,6 +88,7 @@ impl RevokePermissionsInputBuilder {
         &self.principal
     }
     /// <p>The resource to which permissions are to be revoked.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self

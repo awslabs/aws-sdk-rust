@@ -35,6 +35,7 @@ pub struct DeprecateThingTypeInputBuilder {
 }
 impl DeprecateThingTypeInputBuilder {
     /// <p>The name of the thing type to deprecate.</p>
+    /// This field is required.
     pub fn thing_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_type_name = ::std::option::Option::Some(input.into());
         self

@@ -22,7 +22,8 @@ impl DeleteAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAgent`.
 ///
-/// <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN) of the agent in your request. The operation disassociates the agent from your Amazon Web Services account. However, it doesn't delete the agent virtual machine (VM) from your on-premises environment.</p>
+/// <p>Removes an DataSync agent resource from your Amazon Web Services account.</p>
+/// <p>Keep in mind that this operation (which can't be undone) doesn't remove the agent's virtual machine (VM) or Amazon EC2 instance from your storage environment. For next steps, you can delete the VM or instance from your storage environment or reuse it to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activate a new agent</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +93,14 @@ impl DeleteAgentFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::delete_agent::DeleteAgentOutput,
             crate::operation::delete_agent::DeleteAgentError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::delete_agent::DeleteAgentError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -11,12 +11,16 @@ pub struct BatchGetWorkflowsOutput {
 }
 impl BatchGetWorkflowsOutput {
     /// <p>A list of workflow resource metadata.</p>
-    pub fn workflows(&self) -> ::std::option::Option<&[crate::types::Workflow]> {
-        self.workflows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
+    pub fn workflows(&self) -> &[crate::types::Workflow] {
+        self.workflows.as_deref().unwrap_or_default()
     }
     /// <p>A list of names of workflows not found.</p>
-    pub fn missing_workflows(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.missing_workflows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.missing_workflows.is_none()`.
+    pub fn missing_workflows(&self) -> &[::std::string::String] {
+        self.missing_workflows.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetWorkflowsOutput {

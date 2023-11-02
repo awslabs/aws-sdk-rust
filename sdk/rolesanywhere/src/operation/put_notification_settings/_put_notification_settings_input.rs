@@ -14,8 +14,10 @@ impl PutNotificationSettingsInput {
         self.trust_anchor_id.as_deref()
     }
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
-    pub fn notification_settings(&self) -> ::std::option::Option<&[crate::types::NotificationSetting]> {
-        self.notification_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_settings.is_none()`.
+    pub fn notification_settings(&self) -> &[crate::types::NotificationSetting] {
+        self.notification_settings.as_deref().unwrap_or_default()
     }
 }
 impl PutNotificationSettingsInput {
@@ -34,6 +36,7 @@ pub struct PutNotificationSettingsInputBuilder {
 }
 impl PutNotificationSettingsInputBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
+    /// This field is required.
     pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_id = ::std::option::Option::Some(input.into());
         self

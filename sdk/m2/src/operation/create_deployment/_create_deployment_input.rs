@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
-    pub environment_id: ::std::option::Option<::std::string::String>,
+    pub environment_id: ::std::string::String,
     /// <p>The application identifier.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The version of the application to deploy.</p>
-    pub application_version: ::std::option::Option<i32>,
+    pub application_version: i32,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDeploymentInput {
     /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    pub fn environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_id.deref()
     }
     /// <p>The application identifier.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The version of the application to deploy.</p>
-    pub fn application_version(&self) -> ::std::option::Option<i32> {
+    pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
@@ -48,6 +50,7 @@ pub struct CreateDeploymentInputBuilder {
 }
 impl CreateDeploymentInputBuilder {
     /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateDeploymentInputBuilder {
         &self.environment_id
     }
     /// <p>The application identifier.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateDeploymentInputBuilder {
         &self.application_id
     }
     /// <p>The version of the application to deploy.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -104,13 +109,32 @@ impl CreateDeploymentInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_id`](crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::environment_id)
+    /// - [`application_id`](crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::application_id)
+    /// - [`application_version`](crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::application_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
-            environment_id: self.environment_id,
-            application_id: self.application_id,
-            application_version: self.application_version,
+            environment_id: self.environment_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_id",
+                    "environment_id was not specified but it is required when building CreateDeploymentInput",
+                )
+            })?,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building CreateDeploymentInput",
+                )
+            })?,
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building CreateDeploymentInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

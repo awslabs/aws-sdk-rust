@@ -17,8 +17,10 @@ impl SetSecurityGroupsInput {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through Amazon Web Services PrivateLink. The default is <code>on</code>.</p>
     pub fn enforce_security_group_inbound_rules_on_private_link_traffic(
@@ -45,6 +47,7 @@ pub struct SetSecurityGroupsInputBuilder {
 }
 impl SetSecurityGroupsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self

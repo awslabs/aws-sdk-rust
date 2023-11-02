@@ -52,6 +52,7 @@ pub struct AssociateOpsItemRelatedItemInputBuilder {
 }
 impl AssociateOpsItemRelatedItemInputBuilder {
     /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
+    /// This field is required.
     pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
         &self.ops_item_id
     }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+    /// This field is required.
     pub fn association_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_type = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +84,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
     /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +103,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
         &self.resource_type
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
+    /// This field is required.
     pub fn resource_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_uri = ::std::option::Option::Some(input.into());
         self

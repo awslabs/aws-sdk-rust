@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_store_id): <p>Specifies the ID of the policy store that contains the policy that you want information about.</p>
-    ///   - [`policy_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_id): <p>Specifies the ID of the policy you want information about.</p>
+    ///   - [`policy_store_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_store_id) / [`set_policy_store_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_store_id):<br>required: **true**<br><p>Specifies the ID of the policy store that contains the policy that you want information about.</p><br>
+    ///   - [`policy_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_policy_id):<br>required: **true**<br><p>Specifies the ID of the policy you want information about.</p><br>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
-    ///   - [`policy_store_id(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy_store_id): <p>The ID of the policy store that contains the policy that you want information about.</p>
-    ///   - [`policy_id(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy_id): <p>The unique ID of the policy that you want information about.</p>
-    ///   - [`policy_type(Option<PolicyType>)`](crate::operation::get_policy::GetPolicyOutput::policy_type): <p>The type of the policy.</p>
+    ///   - [`policy_store_id(String)`](crate::operation::get_policy::GetPolicyOutput::policy_store_id): <p>The ID of the policy store that contains the policy that you want information about.</p>
+    ///   - [`policy_id(String)`](crate::operation::get_policy::GetPolicyOutput::policy_id): <p>The unique ID of the policy that you want information about.</p>
+    ///   - [`policy_type(PolicyType)`](crate::operation::get_policy::GetPolicyOutput::policy_type): <p>The type of the policy.</p>
     ///   - [`principal(Option<EntityIdentifier>)`](crate::operation::get_policy::GetPolicyOutput::principal): <p>The principal specified in the policy's scope. This element isn't included in the response when <code>Principal</code> isn't present in the policy content.</p>
     ///   - [`resource(Option<EntityIdentifier>)`](crate::operation::get_policy::GetPolicyOutput::resource): <p>The resource specified in the policy's scope. This element isn't included in the response when <code>Resource</code> isn't present in the policy content.</p>
     ///   - [`definition(Option<PolicyDefinitionDetail>)`](crate::operation::get_policy::GetPolicyOutput::definition): <p>The definition of the requested policy.</p>
-    ///   - [`created_date(Option<DateTime>)`](crate::operation::get_policy::GetPolicyOutput::created_date): <p>The date and time that the policy was originally created.</p>
-    ///   - [`last_updated_date(Option<DateTime>)`](crate::operation::get_policy::GetPolicyOutput::last_updated_date): <p>The date and time that the policy was last updated.</p>
+    ///   - [`created_date(DateTime)`](crate::operation::get_policy::GetPolicyOutput::created_date): <p>The date and time that the policy was originally created.</p>
+    ///   - [`last_updated_date(DateTime)`](crate::operation::get_policy::GetPolicyOutput::last_updated_date): <p>The date and time that the policy was last updated.</p>
     /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::operation::get_policy::GetPolicyError)
     pub fn get_policy(&self) -> crate::operation::get_policy::builders::GetPolicyFluentBuilder {
         crate::operation::get_policy::builders::GetPolicyFluentBuilder::new(self.handle.clone())

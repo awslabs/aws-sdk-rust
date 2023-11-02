@@ -10,12 +10,16 @@ pub struct AddAttributesToFindingsInput {
 }
 impl AddAttributesToFindingsInput {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn finding_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arns.is_none()`.
+    pub fn finding_arns(&self) -> &[::std::string::String] {
+        self.finding_arns.as_deref().unwrap_or_default()
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::Attribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl AddAttributesToFindingsInput {

@@ -208,6 +208,7 @@ impl CreateQueueInputBuilder {
     /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name = ::std::option::Option::Some(input.into());
         self

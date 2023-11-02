@@ -9,8 +9,10 @@ pub struct DescribeConfigurationRecordersInput {
 }
 impl DescribeConfigurationRecordersInput {
     /// <p>A list of configuration recorder names.</p>
-    pub fn configuration_recorder_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_recorder_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_recorder_names.is_none()`.
+    pub fn configuration_recorder_names(&self) -> &[::std::string::String] {
+        self.configuration_recorder_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeConfigurationRecordersInput {

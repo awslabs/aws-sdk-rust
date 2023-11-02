@@ -59,11 +59,10 @@ pub fn de_update_task_template_http_error(
                     crate::protocol_serde::shape_property_validation_exception::de_property_validation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::update_task_template::UpdateTaskTemplateError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::property_validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_task_template::UpdateTaskTemplateError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_task_template::UpdateTaskTemplateError::ResourceNotFoundException({

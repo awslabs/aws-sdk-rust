@@ -104,6 +104,7 @@ pub struct CreateReplicationJobInputBuilder {
 }
 impl CreateReplicationJobInputBuilder {
     /// <p>The ID of the server.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CreateReplicationJobInputBuilder {
         &self.server_id
     }
     /// <p>The seed replication time.</p>
+    /// This field is required.
     pub fn seed_replication_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.seed_replication_time = ::std::option::Option::Some(input);
         self

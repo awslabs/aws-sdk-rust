@@ -60,16 +60,22 @@ impl DbProxy {
         self.vpc_id.as_deref()
     }
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    pub fn vpc_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
+    pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
+        self.vpc_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    pub fn auth(&self) -> ::std::option::Option<&[crate::types::UserAuthConfigInfo]> {
-        self.auth.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth.is_none()`.
+    pub fn auth(&self) -> &[crate::types::UserAuthConfigInfo] {
+        self.auth.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {

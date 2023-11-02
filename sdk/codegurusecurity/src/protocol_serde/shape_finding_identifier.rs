@@ -3,11 +3,11 @@ pub fn ser_finding_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FindingIdentifier,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.scan_name {
-        object.key("scanName").string(var_1.as_str());
+    {
+        object.key("scanName").string(input.scan_name.as_str());
     }
-    if let Some(var_2) = &input.finding_id {
-        object.key("findingId").string(var_2.as_str());
+    {
+        object.key("findingId").string(input.finding_id.as_str());
     }
     Ok(())
 }

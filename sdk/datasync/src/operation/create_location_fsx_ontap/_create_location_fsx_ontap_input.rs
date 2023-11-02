@@ -35,8 +35,10 @@ impl CreateLocationFsxOntapInput {
     /// <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        self.security_group_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
     pub fn storage_virtual_machine_arn(&self) -> ::std::option::Option<&str> {
@@ -50,8 +52,10 @@ impl CreateLocationFsxOntapInput {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLocationFsxOntapInput {
@@ -73,6 +77,7 @@ pub struct CreateLocationFsxOntapInputBuilder {
 }
 impl CreateLocationFsxOntapInputBuilder {
     /// <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::FsxProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -125,6 +130,7 @@ impl CreateLocationFsxOntapInputBuilder {
         &self.security_group_arns
     }
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
+    /// This field is required.
     pub fn storage_virtual_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_arn = ::std::option::Option::Some(input.into());
         self

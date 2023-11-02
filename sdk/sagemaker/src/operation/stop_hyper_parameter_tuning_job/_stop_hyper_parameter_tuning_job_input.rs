@@ -27,6 +27,7 @@ pub struct StopHyperParameterTuningJobInputBuilder {
 }
 impl StopHyperParameterTuningJobInputBuilder {
     /// <p>The name of the tuning job to stop.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self

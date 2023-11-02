@@ -5,32 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContextDataType {
     /// <p>The source IP address of your user's device.</p>
-    pub ip_address: ::std::option::Option<::std::string::String>,
+    pub ip_address: ::std::string::String,
     /// <p>Your server endpoint where this API is invoked.</p>
-    pub server_name: ::std::option::Option<::std::string::String>,
+    pub server_name: ::std::string::String,
     /// <p>Your server path where this API is invoked.</p>
-    pub server_path: ::std::option::Option<::std::string::String>,
+    pub server_path: ::std::string::String,
     /// <p>HttpHeaders received on your server in same order.</p>
-    pub http_headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
+    pub http_headers: ::std::vec::Vec<crate::types::HttpHeader>,
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub encoded_data: ::std::option::Option<::std::string::String>,
 }
 impl ContextDataType {
     /// <p>The source IP address of your user's device.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
-        self.ip_address.as_deref()
+    pub fn ip_address(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_address.deref()
     }
     /// <p>Your server endpoint where this API is invoked.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
-        self.server_name.as_deref()
+    pub fn server_name(&self) -> &str {
+        use std::ops::Deref;
+        self.server_name.deref()
     }
     /// <p>Your server path where this API is invoked.</p>
-    pub fn server_path(&self) -> ::std::option::Option<&str> {
-        self.server_path.as_deref()
+    pub fn server_path(&self) -> &str {
+        use std::ops::Deref;
+        self.server_path.deref()
     }
     /// <p>HttpHeaders received on your server in same order.</p>
-    pub fn http_headers(&self) -> ::std::option::Option<&[crate::types::HttpHeader]> {
-        self.http_headers.as_deref()
+    pub fn http_headers(&self) -> &[crate::types::HttpHeader] {
+        use std::ops::Deref;
+        self.http_headers.deref()
     }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn encoded_data(&self) -> ::std::option::Option<&str> {
@@ -56,6 +60,7 @@ pub struct ContextDataTypeBuilder {
 }
 impl ContextDataTypeBuilder {
     /// <p>The source IP address of your user's device.</p>
+    /// This field is required.
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl ContextDataTypeBuilder {
         &self.ip_address
     }
     /// <p>Your server endpoint where this API is invoked.</p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,7 @@ impl ContextDataTypeBuilder {
         &self.server_name
     }
     /// <p>Your server path where this API is invoked.</p>
+    /// This field is required.
     pub fn server_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_path = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +139,38 @@ impl ContextDataTypeBuilder {
         &self.encoded_data
     }
     /// Consumes the builder and constructs a [`ContextDataType`](crate::types::ContextDataType).
-    pub fn build(self) -> crate::types::ContextDataType {
-        crate::types::ContextDataType {
-            ip_address: self.ip_address,
-            server_name: self.server_name,
-            server_path: self.server_path,
-            http_headers: self.http_headers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_address`](crate::types::builders::ContextDataTypeBuilder::ip_address)
+    /// - [`server_name`](crate::types::builders::ContextDataTypeBuilder::server_name)
+    /// - [`server_path`](crate::types::builders::ContextDataTypeBuilder::server_path)
+    /// - [`http_headers`](crate::types::builders::ContextDataTypeBuilder::http_headers)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContextDataType, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContextDataType {
+            ip_address: self.ip_address.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ip_address",
+                    "ip_address was not specified but it is required when building ContextDataType",
+                )
+            })?,
+            server_name: self.server_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_name",
+                    "server_name was not specified but it is required when building ContextDataType",
+                )
+            })?,
+            server_path: self.server_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_path",
+                    "server_path was not specified but it is required when building ContextDataType",
+                )
+            })?,
+            http_headers: self.http_headers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "http_headers",
+                    "http_headers was not specified but it is required when building ContextDataType",
+                )
+            })?,
             encoded_data: self.encoded_data,
-        }
+        })
     }
 }

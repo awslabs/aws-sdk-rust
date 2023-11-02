@@ -70,6 +70,7 @@ pub struct UpdateDynamicThingGroupInputBuilder {
 }
 impl UpdateDynamicThingGroupInputBuilder {
     /// <p>The name of the dynamic thing group to update.</p>
+    /// This field is required.
     pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl UpdateDynamicThingGroupInputBuilder {
         &self.thing_group_name
     }
     /// <p>The dynamic thing group properties to update.</p>
+    /// This field is required.
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.thing_group_properties = ::std::option::Option::Some(input);
         self

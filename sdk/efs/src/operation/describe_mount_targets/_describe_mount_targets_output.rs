@@ -18,8 +18,10 @@ impl DescribeMountTargetsOutput {
         self.marker.as_deref()
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    pub fn mount_targets(&self) -> ::std::option::Option<&[crate::types::MountTargetDescription]> {
-        self.mount_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_targets.is_none()`.
+    pub fn mount_targets(&self) -> &[crate::types::MountTargetDescription] {
+        self.mount_targets.as_deref().unwrap_or_default()
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

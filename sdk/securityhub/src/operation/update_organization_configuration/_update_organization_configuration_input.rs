@@ -44,6 +44,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
     /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
+    /// This field is required.
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
         self

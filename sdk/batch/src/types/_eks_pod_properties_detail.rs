@@ -37,12 +37,16 @@ impl EksPodPropertiesDetail {
         self.dns_policy.as_deref()
     }
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::EksContainerDetail]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::EksContainerDetail] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the volumes for a job definition using Amazon EKS resources.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::EksVolume]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::EksVolume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>The name of the pod for this job.</p>
     pub fn pod_name(&self) -> ::std::option::Option<&str> {

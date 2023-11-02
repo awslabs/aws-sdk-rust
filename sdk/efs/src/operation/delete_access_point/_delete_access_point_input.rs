@@ -27,6 +27,7 @@ pub struct DeleteAccessPointInputBuilder {
 }
 impl DeleteAccessPointInputBuilder {
     /// <p>The ID of the access point that you want to delete.</p>
+    /// This field is required.
     pub fn access_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_id = ::std::option::Option::Some(input.into());
         self

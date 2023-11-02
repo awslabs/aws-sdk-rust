@@ -28,8 +28,10 @@ impl PriceList {
         self.currency_code.as_deref()
     }
     /// <p>The format you want to retrieve your Price List files. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceList</code> </a> response. </p>
-    pub fn file_formats(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.file_formats.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_formats.is_none()`.
+    pub fn file_formats(&self) -> &[::std::string::String] {
+        self.file_formats.as_deref().unwrap_or_default()
     }
 }
 impl PriceList {

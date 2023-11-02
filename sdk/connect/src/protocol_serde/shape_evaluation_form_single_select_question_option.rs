@@ -3,11 +3,11 @@ pub fn ser_evaluation_form_single_select_question_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormSingleSelectQuestionOption,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ref_id {
-        object.key("RefId").string(var_1.as_str());
+    {
+        object.key("RefId").string(input.ref_id.as_str());
     }
-    if let Some(var_2) = &input.text {
-        object.key("Text").string(var_2.as_str());
+    {
+        object.key("Text").string(input.text.as_str());
     }
     if input.score != 0 {
         object.key("Score").number(
@@ -70,7 +70,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::evaluation_form_single_select_question_option_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

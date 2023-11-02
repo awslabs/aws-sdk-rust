@@ -12,6 +12,7 @@ pub fn ser_spot_maintenance_strategies(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_spot_maintenance_strategies(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SpotMaintenanceStrategies, ::aws_smithy_xml::decode::XmlDecodeError> {

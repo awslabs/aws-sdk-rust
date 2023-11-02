@@ -50,6 +50,7 @@ impl StartVpcEndpointServicePrivateDnsVerificationInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the endpoint service.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self

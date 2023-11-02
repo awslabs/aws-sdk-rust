@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContactList`](crate::operation::get_contact_list::builders::GetContactListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_list_name(impl Into<String>)`](crate::operation::get_contact_list::builders::GetContactListFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::get_contact_list::builders::GetContactListFluentBuilder::set_contact_list_name): <p>The name of the contact list.</p>
+    ///   - [`contact_list_name(impl Into<String>)`](crate::operation::get_contact_list::builders::GetContactListFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::get_contact_list::builders::GetContactListFluentBuilder::set_contact_list_name):<br>required: **true**<br><p>The name of the contact list.</p><br>
     /// - On success, responds with [`GetContactListOutput`](crate::operation::get_contact_list::GetContactListOutput) with field(s):
     ///   - [`contact_list_name(Option<String>)`](crate::operation::get_contact_list::GetContactListOutput::contact_list_name): <p>The name of the contact list.</p>
     ///   - [`topics(Option<Vec<Topic>>)`](crate::operation::get_contact_list::GetContactListOutput::topics): <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>

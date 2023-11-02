@@ -13,8 +13,10 @@ pub struct Origination {
 }
 impl Origination {
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::OriginationRoute]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::OriginationRoute] {
+        self.routes.as_deref().unwrap_or_default()
     }
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     pub fn disabled(&self) -> ::std::option::Option<bool> {

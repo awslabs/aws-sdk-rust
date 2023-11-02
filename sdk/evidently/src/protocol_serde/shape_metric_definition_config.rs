@@ -3,20 +3,20 @@ pub fn ser_metric_definition_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricDefinitionConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.entity_id_key {
-        object.key("entityIdKey").string(var_2.as_str());
+    {
+        object.key("entityIdKey").string(input.entity_id_key.as_str());
     }
-    if let Some(var_3) = &input.value_key {
-        object.key("valueKey").string(var_3.as_str());
+    {
+        object.key("valueKey").string(input.value_key.as_str());
     }
-    if let Some(var_4) = &input.event_pattern {
-        object.key("eventPattern").string(var_4.as_str());
+    if let Some(var_1) = &input.event_pattern {
+        object.key("eventPattern").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.unit_label {
-        object.key("unitLabel").string(var_5.as_str());
+    if let Some(var_2) = &input.unit_label {
+        object.key("unitLabel").string(var_2.as_str());
     }
     Ok(())
 }

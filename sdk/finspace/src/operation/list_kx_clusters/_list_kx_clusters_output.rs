@@ -11,8 +11,10 @@ pub struct ListKxClustersOutput {
 }
 impl ListKxClustersOutput {
     /// <p>Lists the cluster details.</p>
-    pub fn kx_cluster_summaries(&self) -> ::std::option::Option<&[crate::types::KxCluster]> {
-        self.kx_cluster_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kx_cluster_summaries.is_none()`.
+    pub fn kx_cluster_summaries(&self) -> &[crate::types::KxCluster] {
+        self.kx_cluster_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

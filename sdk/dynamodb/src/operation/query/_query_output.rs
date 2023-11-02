@@ -23,8 +23,10 @@ pub struct QueryOutput {
 }
 impl QueryOutput {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The number of items in the response.</p>
     /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GroupResources`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group(impl Into<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::set_group): <p>The name or the ARN of the resource group to add resources to.</p>
-    ///   - [`resource_arns(impl Into<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::set_resource_arns): <p>The list of ARNs of the resources to be added to the group. </p>
+    ///   - [`group(impl Into<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::set_group):<br>required: **true**<br><p>The name or the ARN of the resource group to add resources to.</p><br>
+    ///   - [`resource_arns(impl Into<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::set_resource_arns):<br>required: **true**<br><p>The list of ARNs of the resources to be added to the group. </p><br>
     /// - On success, responds with [`GroupResourcesOutput`](crate::operation::group_resources::GroupResourcesOutput) with field(s):
     ///   - [`succeeded(Option<Vec<String>>)`](crate::operation::group_resources::GroupResourcesOutput::succeeded): <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
     ///   - [`failed(Option<Vec<FailedResource>>)`](crate::operation::group_resources::GroupResourcesOutput::failed): <p>A list of ARNs of any resources that this operation failed to add to the group.</p>

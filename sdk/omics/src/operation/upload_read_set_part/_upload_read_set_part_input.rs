@@ -55,6 +55,7 @@ pub struct UploadReadSetPartInputBuilder {
 }
 impl UploadReadSetPartInputBuilder {
     /// <p> The Sequence Store ID used for the multipart upload. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UploadReadSetPartInputBuilder {
         &self.sequence_store_id
     }
     /// <p> The ID for the initiated multipart upload. </p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl UploadReadSetPartInputBuilder {
         &self.upload_id
     }
     /// <p> The source file for an upload part. </p>
+    /// This field is required.
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
         self.part_source = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl UploadReadSetPartInputBuilder {
         &self.part_source
     }
     /// <p> The number of the part being uploaded. </p>
+    /// This field is required.
     pub fn part_number(mut self, input: i32) -> Self {
         self.part_number = ::std::option::Option::Some(input);
         self
@@ -111,6 +115,7 @@ impl UploadReadSetPartInputBuilder {
         &self.part_number
     }
     /// <p> The read set data to upload for a part. </p>
+    /// This field is required.
     pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self

@@ -45,8 +45,10 @@ impl ConnectDirectoryInput {
         self.connect_settings.as_ref()
     }
     /// <p>The tags to be assigned to AD Connector.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ConnectDirectoryInput {
@@ -83,6 +85,7 @@ pub struct ConnectDirectoryInputBuilder {
 }
 impl ConnectDirectoryInputBuilder {
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl ConnectDirectoryInputBuilder {
         &self.short_name
     }
     /// <p>The password for your self-managed user account.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +143,7 @@ impl ConnectDirectoryInputBuilder {
         &self.description
     }
     /// <p>The size of the directory.</p>
+    /// This field is required.
     pub fn size(mut self, input: crate::types::DirectorySize) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -153,6 +158,7 @@ impl ConnectDirectoryInputBuilder {
         &self.size
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
+    /// This field is required.
     pub fn connect_settings(mut self, input: crate::types::DirectoryConnectSettings) -> Self {
         self.connect_settings = ::std::option::Option::Some(input);
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsConfiguration {
     /// <p>The ID that identifies the analytics configuration.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub filter: ::std::option::Option<crate::types::AnalyticsFilter>,
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
@@ -13,8 +13,9 @@ pub struct AnalyticsConfiguration {
 }
 impl AnalyticsConfiguration {
     /// <p>The ID that identifies the analytics configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::AnalyticsFilter> {
@@ -42,6 +43,7 @@ pub struct AnalyticsConfigurationBuilder {
 }
 impl AnalyticsConfigurationBuilder {
     /// <p>The ID that identifies the analytics configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl AnalyticsConfigurationBuilder {
         &self.filter
     }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    /// This field is required.
     pub fn storage_class_analysis(mut self, input: crate::types::StorageClassAnalysis) -> Self {
         self.storage_class_analysis = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl AnalyticsConfigurationBuilder {
         &self.storage_class_analysis
     }
     /// Consumes the builder and constructs a [`AnalyticsConfiguration`](crate::types::AnalyticsConfiguration).
-    pub fn build(self) -> crate::types::AnalyticsConfiguration {
-        crate::types::AnalyticsConfiguration {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AnalyticsConfigurationBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsConfiguration {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AnalyticsConfiguration",
+                )
+            })?,
             filter: self.filter,
             storage_class_analysis: self.storage_class_analysis,
-        }
+        })
     }
 }

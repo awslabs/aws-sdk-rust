@@ -7,14 +7,15 @@ pub struct IamUserIdentity {
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl IamUserIdentity {
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl IamUserIdentity {
@@ -34,6 +35,7 @@ impl IamUserIdentityBuilder {
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
     /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -52,7 +54,16 @@ impl IamUserIdentityBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`IamUserIdentity`](crate::types::IamUserIdentity).
-    pub fn build(self) -> crate::types::IamUserIdentity {
-        crate::types::IamUserIdentity { arn: self.arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::IamUserIdentityBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IamUserIdentity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IamUserIdentity {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building IamUserIdentity",
+                )
+            })?,
+        })
     }
 }

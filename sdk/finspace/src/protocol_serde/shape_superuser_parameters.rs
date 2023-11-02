@@ -3,14 +3,14 @@ pub fn ser_superuser_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SuperuserParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.email_address {
-        object.key("emailAddress").string(var_1.as_str());
+    {
+        object.key("emailAddress").string(input.email_address.as_str());
     }
-    if let Some(var_2) = &input.first_name {
-        object.key("firstName").string(var_2.as_str());
+    {
+        object.key("firstName").string(input.first_name.as_str());
     }
-    if let Some(var_3) = &input.last_name {
-        object.key("lastName").string(var_3.as_str());
+    {
+        object.key("lastName").string(input.last_name.as_str());
     }
     Ok(())
 }

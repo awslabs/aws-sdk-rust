@@ -4,6 +4,9 @@ pub use ::aws_http::request_id::RequestId;
 /// Types for the `ConvertRecoveryPointToSnapshot` operation.
 pub mod convert_recovery_point_to_snapshot;
 
+/// Types for the `CreateCustomDomainAssociation` operation.
+pub mod create_custom_domain_association;
+
 /// Types for the `CreateEndpointAccess` operation.
 pub mod create_endpoint_access;
 
@@ -18,6 +21,9 @@ pub mod create_usage_limit;
 
 /// Types for the `CreateWorkgroup` operation.
 pub mod create_workgroup;
+
+/// Types for the `DeleteCustomDomainAssociation` operation.
+pub mod delete_custom_domain_association;
 
 /// Types for the `DeleteEndpointAccess` operation.
 pub mod delete_endpoint_access;
@@ -39,6 +45,9 @@ pub mod delete_workgroup;
 
 /// Types for the `GetCredentials` operation.
 pub mod get_credentials;
+
+/// Types for the `GetCustomDomainAssociation` operation.
+pub mod get_custom_domain_association;
 
 /// Types for the `GetEndpointAccess` operation.
 pub mod get_endpoint_access;
@@ -63,6 +72,9 @@ pub mod get_usage_limit;
 
 /// Types for the `GetWorkgroup` operation.
 pub mod get_workgroup;
+
+/// Types for the `ListCustomDomainAssociations` operation.
+pub mod list_custom_domain_associations;
 
 /// Types for the `ListEndpointAccess` operation.
 pub mod list_endpoint_access;
@@ -105,6 +117,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateCustomDomainAssociation` operation.
+pub mod update_custom_domain_association;
 
 /// Types for the `UpdateEndpointAccess` operation.
 pub mod update_endpoint_access;

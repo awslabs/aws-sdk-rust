@@ -11,8 +11,10 @@ pub struct DescribeAutoScalingInstancesOutput {
 }
 impl DescribeAutoScalingInstancesOutput {
     /// <p>The instances.</p>
-    pub fn auto_scaling_instances(&self) -> ::std::option::Option<&[crate::types::AutoScalingInstanceDetails]> {
-        self.auto_scaling_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_instances.is_none()`.
+    pub fn auto_scaling_instances(&self) -> &[crate::types::AutoScalingInstanceDetails] {
+        self.auto_scaling_instances.as_deref().unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

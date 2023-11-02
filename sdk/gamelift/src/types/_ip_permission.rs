@@ -59,6 +59,7 @@ impl IpPermissionBuilder {
     /// <p>A starting value for a range of allowed port numbers.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
+    /// This field is required.
     pub fn from_port(mut self, input: i32) -> Self {
         self.from_port = ::std::option::Option::Some(input);
         self
@@ -79,6 +80,7 @@ impl IpPermissionBuilder {
     /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than <code>FromPort</code>.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
+    /// This field is required.
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl IpPermissionBuilder {
         &self.to_port
     }
     /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
+    /// This field is required.
     pub fn ip_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_range = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl IpPermissionBuilder {
         &self.ip_range
     }
     /// <p>The network communication protocol used by the fleet.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::IpProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self

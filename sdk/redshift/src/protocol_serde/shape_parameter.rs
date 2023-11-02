@@ -52,6 +52,7 @@ pub fn ser_parameter(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_parameter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Parameter, ::aws_smithy_xml::decode::XmlDecodeError> {

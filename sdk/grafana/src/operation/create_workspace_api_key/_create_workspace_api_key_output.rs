@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkspaceApiKeyOutput {
     /// <p>The name of the key that was created.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The ID of the workspace that the key is valid for.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateWorkspaceApiKeyOutput {
     /// <p>The name of the key that was created.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The ID of the workspace that the key is valid for.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl ::std::fmt::Debug for CreateWorkspaceApiKeyOutput {
@@ -58,6 +61,7 @@ pub struct CreateWorkspaceApiKeyOutputBuilder {
 }
 impl CreateWorkspaceApiKeyOutputBuilder {
     /// <p>The name of the key that was created.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +76,7 @@ impl CreateWorkspaceApiKeyOutputBuilder {
         &self.key_name
     }
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +91,7 @@ impl CreateWorkspaceApiKeyOutputBuilder {
         &self.key
     }
     /// <p>The ID of the workspace that the key is valid for.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -109,13 +115,35 @@ impl CreateWorkspaceApiKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyOutput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput).
-    pub fn build(self) -> crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput {
-        crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput {
-            key_name: self.key_name,
-            key: self.key,
-            workspace_id: self.workspace_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder::key_name)
+    /// - [`key`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder::key)
+    /// - [`workspace_id`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder::workspace_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput {
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building CreateWorkspaceApiKeyOutput",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building CreateWorkspaceApiKeyOutput",
+                )
+            })?,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building CreateWorkspaceApiKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CreateWorkspaceApiKeyOutputBuilder {

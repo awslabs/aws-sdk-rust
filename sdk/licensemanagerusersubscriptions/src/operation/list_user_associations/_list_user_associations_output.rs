@@ -11,8 +11,10 @@ pub struct ListUserAssociationsOutput {
 }
 impl ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
-    pub fn instance_user_summaries(&self) -> ::std::option::Option<&[crate::types::InstanceUserSummary]> {
-        self.instance_user_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_user_summaries.is_none()`.
+    pub fn instance_user_summaries(&self) -> &[crate::types::InstanceUserSummary] {
+        self.instance_user_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

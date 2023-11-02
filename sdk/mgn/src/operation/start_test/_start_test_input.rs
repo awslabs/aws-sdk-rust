@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
-    pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_server_i_ds: ::std::vec::Vec<::std::string::String>,
     /// <p>Start Test by Tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Start Test for Account ID.</p>
@@ -12,8 +12,9 @@ pub struct StartTestInput {
 }
 impl StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_server_i_ds.as_deref()
+    pub fn source_server_i_ds(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.source_server_i_ds.deref()
     }
     /// <p>Start Test by Tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -104,9 +105,16 @@ impl StartTestInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`StartTestInput`](crate::operation::start_test::StartTestInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_i_ds`](crate::operation::start_test::builders::StartTestInputBuilder::source_server_i_ds)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_test::StartTestInput {
-            source_server_i_ds: self.source_server_i_ds,
+            source_server_i_ds: self.source_server_i_ds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_i_ds",
+                    "source_server_i_ds was not specified but it is required when building StartTestInput",
+                )
+            })?,
             tags: self.tags,
             account_id: self.account_id,
         })

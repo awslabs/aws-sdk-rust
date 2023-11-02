@@ -27,6 +27,7 @@ pub struct DeleteRoutingControlInputBuilder {
 }
 impl DeleteRoutingControlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self

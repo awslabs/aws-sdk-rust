@@ -11,8 +11,10 @@ pub struct SearchThingsOutput {
 }
 impl SearchThingsOutput {
     /// <p>An array of things in the result set.</p>
-    pub fn things(&self) -> ::std::option::Option<&[crate::types::Thing]> {
-        self.things.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.things.is_none()`.
+    pub fn things(&self) -> &[crate::types::Thing] {
+        self.things.as_deref().unwrap_or_default()
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

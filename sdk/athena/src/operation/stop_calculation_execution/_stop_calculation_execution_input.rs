@@ -27,6 +27,7 @@ pub struct StopCalculationExecutionInputBuilder {
 }
 impl StopCalculationExecutionInputBuilder {
     /// <p>The calculation execution UUID.</p>
+    /// This field is required.
     pub fn calculation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculation_execution_id = ::std::option::Option::Some(input.into());
         self

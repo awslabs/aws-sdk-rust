@@ -27,6 +27,7 @@ pub struct CreateExclusionsPreviewInputBuilder {
 }
 impl CreateExclusionsPreviewInputBuilder {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
+    /// This field is required.
     pub fn assessment_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self

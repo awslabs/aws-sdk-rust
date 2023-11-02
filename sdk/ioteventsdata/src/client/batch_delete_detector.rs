@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDeleteDetector`](crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detectors(DeleteDetectorRequest)`](crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder::detectors) / [`set_detectors(Option<Vec<DeleteDetectorRequest>>)`](crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder::set_detectors): <p>The list of one or more detectors to be deleted.</p>
+    ///   - [`detectors(DeleteDetectorRequest)`](crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder::detectors) / [`set_detectors(Option<Vec<DeleteDetectorRequest>>)`](crate::operation::batch_delete_detector::builders::BatchDeleteDetectorFluentBuilder::set_detectors):<br>required: **true**<br><p>The list of one or more detectors to be deleted.</p><br>
     /// - On success, responds with [`BatchDeleteDetectorOutput`](crate::operation::batch_delete_detector::BatchDeleteDetectorOutput) with field(s):
     ///   - [`batch_delete_detector_error_entries(Option<Vec<BatchDeleteDetectorErrorEntry>>)`](crate::operation::batch_delete_detector::BatchDeleteDetectorOutput::batch_delete_detector_error_entries): <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
     /// - On failure, responds with [`SdkError<BatchDeleteDetectorError>`](crate::operation::batch_delete_detector::BatchDeleteDetectorError)

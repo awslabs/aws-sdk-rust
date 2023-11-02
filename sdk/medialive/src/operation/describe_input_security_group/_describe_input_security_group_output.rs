@@ -28,8 +28,10 @@ impl DescribeInputSecurityGroupOutput {
         self.id.as_deref()
     }
     /// The list of inputs currently using this Input Security Group.
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
+    pub fn inputs(&self) -> &[::std::string::String] {
+        self.inputs.as_deref().unwrap_or_default()
     }
     /// The current state of the Input Security Group.
     pub fn state(&self) -> ::std::option::Option<&crate::types::InputSecurityGroupState> {
@@ -40,8 +42,10 @@ impl DescribeInputSecurityGroupOutput {
         self.tags.as_ref()
     }
     /// Whitelist rules and their sync status
-    pub fn whitelist_rules(&self) -> ::std::option::Option<&[crate::types::InputWhitelistRule]> {
-        self.whitelist_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.whitelist_rules.is_none()`.
+    pub fn whitelist_rules(&self) -> &[crate::types::InputWhitelistRule] {
+        self.whitelist_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeInputSecurityGroupOutput {

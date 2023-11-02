@@ -17,6 +17,7 @@ pub fn ser_private_ip_address_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_private_ip_address_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PrivateIpAddressSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -11,8 +11,10 @@ pub struct BudgetNotificationsForAccount {
 }
 impl BudgetNotificationsForAccount {
     /// <p> A list of notifications.</p>
-    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::Notification]> {
-        self.notifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notifications.is_none()`.
+    pub fn notifications(&self) -> &[crate::types::Notification] {
+        self.notifications.as_deref().unwrap_or_default()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn budget_name(&self) -> ::std::option::Option<&str> {

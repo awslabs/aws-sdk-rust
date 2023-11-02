@@ -35,8 +35,10 @@ impl ByoipCidr {
         self.state.as_ref()
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::ByoipCidrEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::ByoipCidrEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl ByoipCidr {

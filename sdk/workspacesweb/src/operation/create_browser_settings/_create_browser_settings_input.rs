@@ -17,8 +17,10 @@ pub struct CreateBrowserSettingsInput {
 }
 impl CreateBrowserSettingsInput {
     /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The custom managed key of the browser settings.</p>
     pub fn customer_managed_key(&self) -> ::std::option::Option<&str> {
@@ -131,6 +133,7 @@ impl CreateBrowserSettingsInputBuilder {
         &self.additional_encryption_context
     }
     /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
+    /// This field is required.
     pub fn browser_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.browser_policy = ::std::option::Option::Some(input.into());
         self

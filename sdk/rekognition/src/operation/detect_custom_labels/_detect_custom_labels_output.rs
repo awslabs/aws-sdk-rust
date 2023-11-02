@@ -9,8 +9,10 @@ pub struct DetectCustomLabelsOutput {
 }
 impl DetectCustomLabelsOutput {
     /// <p>An array of custom labels detected in the input image.</p>
-    pub fn custom_labels(&self) -> ::std::option::Option<&[crate::types::CustomLabel]> {
-        self.custom_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_labels.is_none()`.
+    pub fn custom_labels(&self) -> &[crate::types::CustomLabel] {
+        self.custom_labels.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DetectCustomLabelsOutput {

@@ -5,23 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
-    pub header: ::std::option::Option<::std::string::String>,
+    pub header: ::std::string::String,
     /// <p>The value for the HTTP response header.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
-    pub r#override: ::std::option::Option<bool>,
+    pub r#override: bool,
 }
 impl ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
-    pub fn header(&self) -> ::std::option::Option<&str> {
-        self.header.as_deref()
+    pub fn header(&self) -> &str {
+        use std::ops::Deref;
+        self.header.deref()
     }
     /// <p>The value for the HTTP response header.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
-    pub fn r#override(&self) -> ::std::option::Option<bool> {
+    pub fn r#override(&self) -> bool {
         self.r#override
     }
 }
@@ -42,6 +44,7 @@ pub struct ResponseHeadersPolicyCustomHeaderBuilder {
 }
 impl ResponseHeadersPolicyCustomHeaderBuilder {
     /// <p>The HTTP response header name.</p>
+    /// This field is required.
     pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
         &self.header
     }
     /// <p>The value for the HTTP response header.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
         &self.value
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
+    /// This field is required.
     pub fn r#override(mut self, input: bool) -> Self {
         self.r#override = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
         &self.r#override
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyCustomHeader`](crate::types::ResponseHeadersPolicyCustomHeader).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicyCustomHeader {
-        crate::types::ResponseHeadersPolicyCustomHeader {
-            header: self.header,
-            value: self.value,
-            r#override: self.r#override,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`header`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::header)
+    /// - [`value`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::value)
+    /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::r#override)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCustomHeader, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyCustomHeader {
+            header: self.header.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "header",
+                    "header was not specified but it is required when building ResponseHeadersPolicyCustomHeader",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ResponseHeadersPolicyCustomHeader",
+                )
+            })?,
+            r#override: self.r#override.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#override",
+                    "r#override was not specified but it is required when building ResponseHeadersPolicyCustomHeader",
+                )
+            })?,
+        })
     }
 }

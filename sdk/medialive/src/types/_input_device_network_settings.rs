@@ -17,8 +17,10 @@ pub struct InputDeviceNetworkSettings {
 }
 impl InputDeviceNetworkSettings {
     /// The DNS addresses of the input device.
-    pub fn dns_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_addresses.is_none()`.
+    pub fn dns_addresses(&self) -> &[::std::string::String] {
+        self.dns_addresses.as_deref().unwrap_or_default()
     }
     /// The network gateway IP address.
     pub fn gateway(&self) -> ::std::option::Option<&str> {

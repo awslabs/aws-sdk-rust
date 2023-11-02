@@ -49,6 +49,7 @@ pub struct UpdatePackageInputBuilder {
 }
 impl UpdatePackageInputBuilder {
     /// <p>The unique identifier for the package.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdatePackageInputBuilder {
         &self.package_id
     }
     /// <p>Amazon S3 bucket and key for the package.</p>
+    /// This field is required.
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
         self.package_source = ::std::option::Option::Some(input);
         self

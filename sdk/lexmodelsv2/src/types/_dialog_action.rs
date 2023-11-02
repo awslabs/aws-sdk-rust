@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogAction {
     /// <p>The action that the bot should execute. </p>
-    pub r#type: ::std::option::Option<crate::types::DialogActionType>,
+    pub r#type: crate::types::DialogActionType,
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
     pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>When true the next message for the intent is not used.</p>
@@ -13,8 +13,8 @@ pub struct DialogAction {
 }
 impl DialogAction {
     /// <p>The action that the bot should execute. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DialogActionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DialogActionType {
+        &self.r#type
     }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
     pub fn slot_to_elicit(&self) -> ::std::option::Option<&str> {
@@ -42,6 +42,7 @@ pub struct DialogActionBuilder {
 }
 impl DialogActionBuilder {
     /// <p>The action that the bot should execute. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl DialogActionBuilder {
         &self.suppress_next_message
     }
     /// Consumes the builder and constructs a [`DialogAction`](crate::types::DialogAction).
-    pub fn build(self) -> crate::types::DialogAction {
-        crate::types::DialogAction {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::DialogActionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DialogAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DialogAction {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DialogAction",
+                )
+            })?,
             slot_to_elicit: self.slot_to_elicit,
             suppress_next_message: self.suppress_next_message,
-        }
+        })
     }
 }

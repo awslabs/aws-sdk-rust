@@ -20,8 +20,10 @@ impl CreateSipMediaApplicationInput {
         self.name.as_deref()
     }
     /// <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::SipMediaApplicationEndpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
 }
 impl CreateSipMediaApplicationInput {
@@ -41,6 +43,7 @@ pub struct CreateSipMediaApplicationInputBuilder {
 }
 impl CreateSipMediaApplicationInputBuilder {
     /// <p>The AWS Region assigned to the SIP media application.</p>
+    /// This field is required.
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateSipMediaApplicationInputBuilder {
         &self.aws_region
     }
     /// <p>The SIP media application name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -6,17 +6,17 @@ pub fn ser_tool(
     if let Some(var_1) = &input.stream_ui {
         object.key("streamUI").boolean(*var_1);
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.command {
-        object.key("command").string(var_3.as_str());
+    {
+        object.key("command").string(input.command.as_str());
     }
-    if let Some(var_4) = &input.stream_output_to_cloud_watch {
-        object.key("streamOutputToCloudWatch").boolean(*var_4);
+    if let Some(var_2) = &input.stream_output_to_cloud_watch {
+        object.key("streamOutputToCloudWatch").boolean(*var_2);
     }
-    if let Some(var_5) = &input.exit_behavior {
-        object.key("exitBehavior").string(var_5.as_str());
+    if let Some(var_3) = &input.exit_behavior {
+        object.key("exitBehavior").string(var_3.as_str());
     }
     Ok(())
 }
@@ -74,7 +74,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::tool_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

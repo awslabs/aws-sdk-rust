@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeploymentStrategy`](crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_strategy_id(impl Into<String>)`](crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyFluentBuilder::deployment_strategy_id) / [`set_deployment_strategy_id(Option<String>)`](crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyFluentBuilder::set_deployment_strategy_id): <p>The ID of the deployment strategy to get.</p>
+    ///   - [`deployment_strategy_id(impl Into<String>)`](crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyFluentBuilder::deployment_strategy_id) / [`set_deployment_strategy_id(Option<String>)`](crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyFluentBuilder::set_deployment_strategy_id):<br>required: **true**<br><p>The ID of the deployment strategy to get.</p><br>
     /// - On success, responds with [`GetDeploymentStrategyOutput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput::id): <p>The deployment strategy ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput::name): <p>The name of the deployment strategy.</p>

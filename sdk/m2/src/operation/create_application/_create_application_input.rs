@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
     /// <p>The unique identifier of the application.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the application.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the target platform for this application.</p>
-    pub engine_type: ::std::option::Option<crate::types::EngineType>,
+    pub engine_type: crate::types::EngineType,
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub definition: ::std::option::Option<crate::types::Definition>,
     /// <p>A list of tags to apply to the application.</p>
@@ -22,16 +22,17 @@ pub struct CreateApplicationInput {
 }
 impl CreateApplicationInput {
     /// <p>The unique identifier of the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of the target platform for this application.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
-        self.engine_type.as_ref()
+    pub fn engine_type(&self) -> &crate::types::EngineType {
+        &self.engine_type
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::Definition> {
@@ -76,6 +77,7 @@ pub struct CreateApplicationInputBuilder {
 }
 impl CreateApplicationInputBuilder {
     /// <p>The unique identifier of the application.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl CreateApplicationInputBuilder {
         &self.description
     }
     /// <p>The type of the target platform for this application.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl CreateApplicationInputBuilder {
         &self.engine_type
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
@@ -194,13 +198,26 @@ impl CreateApplicationInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_application::builders::CreateApplicationInputBuilder::name)
+    /// - [`engine_type`](crate::operation::create_application::builders::CreateApplicationInputBuilder::engine_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateApplicationInput",
+                )
+            })?,
             description: self.description,
-            engine_type: self.engine_type,
+            engine_type: self.engine_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engine_type",
+                    "engine_type was not specified but it is required when building CreateApplicationInput",
+                )
+            })?,
             definition: self.definition,
             tags: self.tags,
             client_token: self.client_token,

@@ -27,6 +27,7 @@ pub fn ser_launch_template_overrides(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_overrides(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LaunchTemplateOverrides, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -202,130 +202,91 @@ pub(crate) fn reflens_list_time_series_output_next_token(
 pub(crate) fn lens_get_asset_property_aggregates_output_aggregated_values(
     input: crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>> {
-    let input = match input.aggregated_values {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.aggregated_values;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_asset_property_value_history_output_asset_property_value_history(
     input: crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
-    let input = match input.asset_property_value_history {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_property_value_history;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_get_interpolated_asset_property_values_output_interpolated_asset_property_values(
     input: crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>> {
-    let input = match input.interpolated_asset_property_values {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.interpolated_asset_property_values;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_access_policies_output_access_policy_summaries(
     input: crate::operation::list_access_policies::ListAccessPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>> {
-    let input = match input.access_policy_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.access_policy_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_asset_model_properties_output_asset_model_property_summaries(
     input: crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertySummary>> {
-    let input = match input.asset_model_property_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_model_property_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_asset_models_output_asset_model_summaries(
     input: crate::operation::list_asset_models::ListAssetModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetModelSummary>> {
-    let input = match input.asset_model_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_model_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_asset_properties_output_asset_property_summaries(
     input: crate::operation::list_asset_properties::ListAssetPropertiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertySummary>> {
-    let input = match input.asset_property_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_property_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_asset_relationships_output_asset_relationship_summaries(
     input: crate::operation::list_asset_relationships::ListAssetRelationshipsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetRelationshipSummary>> {
-    let input = match input.asset_relationship_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_relationship_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_assets_output_asset_summaries(
     input: crate::operation::list_assets::ListAssetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetSummary>> {
-    let input = match input.asset_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_associated_assets_output_asset_summaries(
     input: crate::operation::list_associated_assets::ListAssociatedAssetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAssetsSummary>> {
-    let input = match input.asset_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_bulk_import_jobs_output_job_summaries(
     input: crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
-    let input = match input.job_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.job_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_dashboards_output_dashboard_summaries(
     input: crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>> {
-    let input = match input.dashboard_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.dashboard_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_gateways_output_gateway_summaries(
     input: crate::operation::list_gateways::ListGatewaysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
-    let input = match input.gateway_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.gateway_summaries;
     ::std::option::Option::Some(input)
 }
 
@@ -342,29 +303,20 @@ pub(crate) fn lens_list_portals_output_portal_summaries(
 pub(crate) fn lens_list_project_assets_output_asset_ids(
     input: crate::operation::list_project_assets::ListProjectAssetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.asset_ids {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.asset_ids;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_projects_output_project_summaries(
     input: crate::operation::list_projects::ListProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
-    let input = match input.project_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.project_summaries;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_time_series_output_time_series_summaries(
     input: crate::operation::list_time_series::ListTimeSeriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>> {
-    let input = match input.time_series_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.time_series_summaries;
     ::std::option::Option::Some(input)
 }

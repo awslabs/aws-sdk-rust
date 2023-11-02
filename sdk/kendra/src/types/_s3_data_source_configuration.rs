@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataSourceConfiguration {
     /// <p>The name of the bucket that contains the documents.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
     pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
@@ -31,12 +31,15 @@ pub struct S3DataSourceConfiguration {
 }
 impl S3DataSourceConfiguration {
     /// <p>The name of the bucket that contains the documents.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
-    pub fn inclusion_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_prefixes.is_none()`.
+    pub fn inclusion_prefixes(&self) -> &[::std::string::String] {
+        self.inclusion_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -45,8 +48,10 @@ impl S3DataSourceConfiguration {
     /// <li> <p> <i>**/*.txt</i> will include all text files in a directory and its subdirectories.</p> </li>
     /// <li> <p> <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p> </li>
     /// </ul>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -55,8 +60,10 @@ impl S3DataSourceConfiguration {
     /// <li> <p> <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as 'internal', 'internal_only', 'company_internal'.</p> </li>
     /// <li> <p> <i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p> </li>
     /// </ul>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
     pub fn documents_metadata_configuration(&self) -> ::std::option::Option<&crate::types::DocumentsMetadataConfiguration> {
@@ -87,6 +94,7 @@ pub struct S3DataSourceConfigurationBuilder {
 }
 impl S3DataSourceConfigurationBuilder {
     /// <p>The name of the bucket that contains the documents.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -225,14 +233,21 @@ impl S3DataSourceConfigurationBuilder {
         &self.access_control_list_configuration
     }
     /// Consumes the builder and constructs a [`S3DataSourceConfiguration`](crate::types::S3DataSourceConfiguration).
-    pub fn build(self) -> crate::types::S3DataSourceConfiguration {
-        crate::types::S3DataSourceConfiguration {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3DataSourceConfigurationBuilder::bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DataSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DataSourceConfiguration {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3DataSourceConfiguration",
+                )
+            })?,
             inclusion_prefixes: self.inclusion_prefixes,
             inclusion_patterns: self.inclusion_patterns,
             exclusion_patterns: self.exclusion_patterns,
             documents_metadata_configuration: self.documents_metadata_configuration,
             access_control_list_configuration: self.access_control_list_configuration,
-        }
+        })
     }
 }

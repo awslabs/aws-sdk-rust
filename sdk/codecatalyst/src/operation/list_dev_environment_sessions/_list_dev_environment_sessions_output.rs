@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevEnvironmentSessionsOutput {
     /// <p>Information about each session retrieved in the list.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>>,
+    pub items: ::std::vec::Vec<crate::types::DevEnvironmentSessionSummary>,
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevEnvironmentSessionsOutput {
     /// <p>Information about each session retrieved in the list.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::DevEnvironmentSessionSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::DevEnvironmentSessionSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListDevEnvironmentSessionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDevEnvironmentSessionsOutput`](crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput).
-    pub fn build(self) -> crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput {
-        crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_dev_environment_sessions::builders::ListDevEnvironmentSessionsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListDevEnvironmentSessionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

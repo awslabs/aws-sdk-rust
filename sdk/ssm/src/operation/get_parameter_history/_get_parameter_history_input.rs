@@ -48,6 +48,7 @@ pub struct GetParameterHistoryInputBuilder {
 }
 impl GetParameterHistoryInputBuilder {
     /// <p>The name of the parameter for which you want to review history.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

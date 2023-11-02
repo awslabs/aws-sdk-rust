@@ -13,14 +13,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertyTimestamp {
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
-    pub time_in_seconds: ::std::option::Option<::std::string::String>,
+    pub time_in_seconds: ::std::string::String,
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
     pub offset_in_nanos: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyTimestamp {
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
-    pub fn time_in_seconds(&self) -> ::std::option::Option<&str> {
-        self.time_in_seconds.as_deref()
+    pub fn time_in_seconds(&self) -> &str {
+        use std::ops::Deref;
+        self.time_in_seconds.deref()
     }
     /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is between 0-999999999.</p>
     pub fn offset_in_nanos(&self) -> ::std::option::Option<&str> {
@@ -43,6 +44,7 @@ pub struct AssetPropertyTimestampBuilder {
 }
 impl AssetPropertyTimestampBuilder {
     /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between 1-31556889864403199.</p>
+    /// This field is required.
     pub fn time_in_seconds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_in_seconds = ::std::option::Option::Some(input.into());
         self
@@ -71,10 +73,17 @@ impl AssetPropertyTimestampBuilder {
         &self.offset_in_nanos
     }
     /// Consumes the builder and constructs a [`AssetPropertyTimestamp`](crate::types::AssetPropertyTimestamp).
-    pub fn build(self) -> crate::types::AssetPropertyTimestamp {
-        crate::types::AssetPropertyTimestamp {
-            time_in_seconds: self.time_in_seconds,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`time_in_seconds`](crate::types::builders::AssetPropertyTimestampBuilder::time_in_seconds)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetPropertyTimestamp, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetPropertyTimestamp {
+            time_in_seconds: self.time_in_seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_in_seconds",
+                    "time_in_seconds was not specified but it is required when building AssetPropertyTimestamp",
+                )
+            })?,
             offset_in_nanos: self.offset_in_nanos,
-        }
+        })
     }
 }

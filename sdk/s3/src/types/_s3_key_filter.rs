@@ -9,8 +9,10 @@ pub struct S3KeyFilter {
 }
 impl S3KeyFilter {
     /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
-    pub fn filter_rules(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.filter_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_rules.is_none()`.
+    pub fn filter_rules(&self) -> &[crate::types::FilterRule] {
+        self.filter_rules.as_deref().unwrap_or_default()
     }
 }
 impl S3KeyFilter {

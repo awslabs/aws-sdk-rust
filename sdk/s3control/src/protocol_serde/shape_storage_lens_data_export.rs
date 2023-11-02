@@ -17,6 +17,7 @@ pub fn ser_storage_lens_data_export(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_data_export(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StorageLensDataExport, ::aws_smithy_xml::decode::XmlDecodeError> {

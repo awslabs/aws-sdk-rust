@@ -12,7 +12,7 @@ pub struct CheckpointConfiguration {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    pub configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
+    pub configuration_type: crate::types::ConfigurationType,
     /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
@@ -35,8 +35,8 @@ impl CheckpointConfiguration {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
-    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
-        self.configuration_type.as_ref()
+    pub fn configuration_type(&self) -> &crate::types::ConfigurationType {
+        &self.configuration_type
     }
     /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p> <note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
@@ -82,6 +82,7 @@ impl CheckpointConfigurationBuilder {
     /// <li> <p> <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li>
     /// </ul>
     /// </note>
+    /// This field is required.
     pub fn configuration_type(mut self, input: crate::types::ConfigurationType) -> Self {
         self.configuration_type = ::std::option::Option::Some(input);
         self
@@ -170,12 +171,19 @@ impl CheckpointConfigurationBuilder {
         &self.min_pause_between_checkpoints
     }
     /// Consumes the builder and constructs a [`CheckpointConfiguration`](crate::types::CheckpointConfiguration).
-    pub fn build(self) -> crate::types::CheckpointConfiguration {
-        crate::types::CheckpointConfiguration {
-            configuration_type: self.configuration_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration_type`](crate::types::builders::CheckpointConfigurationBuilder::configuration_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CheckpointConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CheckpointConfiguration {
+            configuration_type: self.configuration_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configuration_type",
+                    "configuration_type was not specified but it is required when building CheckpointConfiguration",
+                )
+            })?,
             checkpointing_enabled: self.checkpointing_enabled,
             checkpoint_interval: self.checkpoint_interval,
             min_pause_between_checkpoints: self.min_pause_between_checkpoints,
-        }
+        })
     }
 }

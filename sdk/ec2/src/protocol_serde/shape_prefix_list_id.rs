@@ -17,6 +17,7 @@ pub fn ser_prefix_list_id(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_prefix_list_id(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PrefixListId, ::aws_smithy_xml::decode::XmlDecodeError> {

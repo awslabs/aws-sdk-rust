@@ -34,6 +34,7 @@ pub struct GetSuiteRunInputBuilder {
 }
 impl GetSuiteRunInputBuilder {
     /// <p>Suite definition ID for the test suite run.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSuiteRunInputBuilder {
         &self.suite_definition_id
     }
     /// <p>Suite run ID for the test suite run.</p>
+    /// This field is required.
     pub fn suite_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_run_id = ::std::option::Option::Some(input.into());
         self

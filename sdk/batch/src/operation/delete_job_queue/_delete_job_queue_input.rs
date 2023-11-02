@@ -28,6 +28,7 @@ pub struct DeleteJobQueueInputBuilder {
 }
 impl DeleteJobQueueInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
+    /// This field is required.
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue = ::std::option::Option::Some(input.into());
         self

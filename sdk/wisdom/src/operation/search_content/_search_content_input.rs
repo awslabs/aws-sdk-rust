@@ -8,7 +8,7 @@ pub struct SearchContentInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub knowledge_base_id: ::std::string::String,
     /// <p>The search expression to filter results.</p>
     pub search_expression: ::std::option::Option<crate::types::SearchExpression>,
 }
@@ -22,8 +22,9 @@ impl SearchContentInput {
         self.max_results
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
-        self.knowledge_base_id.as_deref()
+    pub fn knowledge_base_id(&self) -> &str {
+        use std::ops::Deref;
+        self.knowledge_base_id.deref()
     }
     /// <p>The search expression to filter results.</p>
     pub fn search_expression(&self) -> ::std::option::Option<&crate::types::SearchExpression> {
@@ -76,6 +77,7 @@ impl SearchContentInputBuilder {
         &self.max_results
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl SearchContentInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The search expression to filter results.</p>
+    /// This field is required.
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
         self.search_expression = ::std::option::Option::Some(input);
         self
@@ -104,13 +107,20 @@ impl SearchContentInputBuilder {
         &self.search_expression
     }
     /// Consumes the builder and constructs a [`SearchContentInput`](crate::operation::search_content::SearchContentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`knowledge_base_id`](crate::operation::search_content::builders::SearchContentInputBuilder::knowledge_base_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::search_content::SearchContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_content::SearchContentInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            knowledge_base_id: self.knowledge_base_id,
+            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "knowledge_base_id",
+                    "knowledge_base_id was not specified but it is required when building SearchContentInput",
+                )
+            })?,
             search_expression: self.search_expression,
         })
     }

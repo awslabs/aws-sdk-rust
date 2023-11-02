@@ -55,6 +55,7 @@ pub struct CreateKxDatabaseInputBuilder {
 }
 impl CreateKxDatabaseInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateKxDatabaseInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the kdb database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +119,7 @@ impl CreateKxDatabaseInputBuilder {
         &self.tags
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

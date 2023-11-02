@@ -3,17 +3,17 @@ pub fn ser_create_watchlist_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_watchlist::CreateWatchlistInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain_id {
-        object.key("DomainId").string(var_1.as_str());
+    {
+        object.key("DomainId").string(input.domain_id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("ClientToken").string(var_4.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("ClientToken").string(var_2.as_str());
     }
     Ok(())
 }

@@ -12,8 +12,10 @@ pub struct ListReceiptRuleSetsOutput {
 }
 impl ListReceiptRuleSetsOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
-    pub fn rule_sets(&self) -> ::std::option::Option<&[crate::types::ReceiptRuleSetMetadata]> {
-        self.rule_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_sets.is_none()`.
+    pub fn rule_sets(&self) -> &[crate::types::ReceiptRuleSetMetadata] {
+        self.rule_sets.as_deref().unwrap_or_default()
     }
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentsOutput {
     /// <p>Returns a list of Amazon MWAA environments.</p>
-    pub environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub environments: ::std::vec::Vec<::std::string::String>,
     /// <p>Retrieves the next page of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentsOutput {
     /// <p>Returns a list of Amazon MWAA environments.</p>
-    pub fn environments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.environments.as_deref()
+    pub fn environments(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.environments.deref()
     }
     /// <p>Retrieves the next page of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListEnvironmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn build(self) -> crate::operation::list_environments::ListEnvironmentsOutput {
-        crate::operation::list_environments::ListEnvironmentsOutput {
-            environments: self.environments,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environments`](crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::environments)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsOutput {
+            environments: self.environments.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environments",
+                    "environments was not specified but it is required when building ListEnvironmentsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

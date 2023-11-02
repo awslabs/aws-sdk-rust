@@ -57,8 +57,10 @@ impl AwsCloudWatchAlarmDetails {
         self.actions_enabled
     }
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
-    pub fn alarm_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
+    pub fn alarm_actions(&self) -> &[::std::string::String] {
+        self.alarm_actions.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the alarm. </p>
     pub fn alarm_arn(&self) -> ::std::option::Option<&str> {
@@ -85,8 +87,10 @@ impl AwsCloudWatchAlarmDetails {
         self.datapoints_to_alarm
     }
     /// <p>The dimensions for the metric associated with the alarm. </p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::AwsCloudWatchAlarmDimensionsDetails]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::AwsCloudWatchAlarmDimensionsDetails] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
     pub fn evaluate_low_sample_count_percentile(&self) -> ::std::option::Option<&str> {
@@ -101,8 +105,10 @@ impl AwsCloudWatchAlarmDetails {
         self.extended_statistic.as_deref()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn insufficient_data_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.insufficient_data_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insufficient_data_actions.is_none()`.
+    pub fn insufficient_data_actions(&self) -> &[::std::string::String] {
+        self.insufficient_data_actions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you use <code>Metrics</code> instead and you can't specify <code>MetricName</code>. </p>
     pub fn metric_name(&self) -> ::std::option::Option<&str> {
@@ -113,8 +119,10 @@ impl AwsCloudWatchAlarmDetails {
         self.namespace.as_deref()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn ok_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ok_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ok_actions.is_none()`.
+    pub fn ok_actions(&self) -> &[::std::string::String] {
+        self.ok_actions.as_deref().unwrap_or_default()
     }
     /// <p>The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. </p>
     pub fn period(&self) -> ::std::option::Option<i32> {

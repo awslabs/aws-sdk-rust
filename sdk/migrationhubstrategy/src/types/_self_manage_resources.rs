@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfManageResources {
     /// <p> Self-managed resources target destination. </p>
-    pub target_destination: ::std::option::Option<::std::vec::Vec<crate::types::SelfManageTargetDestination>>,
+    pub target_destination: ::std::vec::Vec<crate::types::SelfManageTargetDestination>,
 }
 impl SelfManageResources {
     /// <p> Self-managed resources target destination. </p>
-    pub fn target_destination(&self) -> ::std::option::Option<&[crate::types::SelfManageTargetDestination]> {
-        self.target_destination.as_deref()
+    pub fn target_destination(&self) -> &[crate::types::SelfManageTargetDestination] {
+        use std::ops::Deref;
+        self.target_destination.deref()
     }
 }
 impl SelfManageResources {
@@ -48,9 +49,16 @@ impl SelfManageResourcesBuilder {
         &self.target_destination
     }
     /// Consumes the builder and constructs a [`SelfManageResources`](crate::types::SelfManageResources).
-    pub fn build(self) -> crate::types::SelfManageResources {
-        crate::types::SelfManageResources {
-            target_destination: self.target_destination,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_destination`](crate::types::builders::SelfManageResourcesBuilder::target_destination)
+    pub fn build(self) -> ::std::result::Result<crate::types::SelfManageResources, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SelfManageResources {
+            target_destination: self.target_destination.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_destination",
+                    "target_destination was not specified but it is required when building SelfManageResources",
+                )
+            })?,
+        })
     }
 }

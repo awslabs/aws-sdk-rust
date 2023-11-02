@@ -34,6 +34,7 @@ pub struct ReleasePhoneNumberInputBuilder {
 }
 impl ReleasePhoneNumberInputBuilder {
     /// <p>A unique identifier for the phone number.</p>
+    /// This field is required.
     pub fn phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number_id = ::std::option::Option::Some(input.into());
         self

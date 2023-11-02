@@ -3,16 +3,16 @@ pub fn ser_sampling_statistics_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SamplingStatisticsDocument,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.rule_name {
-        object.key("RuleName").string(var_1.as_str());
+    {
+        object.key("RuleName").string(input.rule_name.as_str());
     }
-    if let Some(var_2) = &input.client_id {
-        object.key("ClientID").string(var_2.as_str());
+    {
+        object.key("ClientID").string(input.client_id.as_str());
     }
-    if let Some(var_3) = &input.timestamp {
+    {
         object
             .key("Timestamp")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.timestamp, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("RequestCount").number(

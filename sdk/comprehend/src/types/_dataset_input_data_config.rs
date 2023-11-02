@@ -17,8 +17,10 @@ pub struct DatasetInputDataConfig {
 }
 impl DatasetInputDataConfig {
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth. </p>
-    pub fn augmented_manifests(&self) -> ::std::option::Option<&[crate::types::DatasetAugmentedManifestsListItem]> {
-        self.augmented_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.augmented_manifests.is_none()`.
+    pub fn augmented_manifests(&self) -> &[crate::types::DatasetAugmentedManifestsListItem] {
+        self.augmented_manifests.as_deref().unwrap_or_default()
     }
     /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p>
     /// <p> <code>AUGMENTED_MANIFEST</code>: The data format </p>

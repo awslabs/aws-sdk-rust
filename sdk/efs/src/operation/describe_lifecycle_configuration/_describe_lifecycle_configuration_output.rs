@@ -9,8 +9,10 @@ pub struct DescribeLifecycleConfigurationOutput {
 }
 impl DescribeLifecycleConfigurationOutput {
     /// <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
-    pub fn lifecycle_policies(&self) -> ::std::option::Option<&[crate::types::LifecyclePolicy]> {
-        self.lifecycle_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policies.is_none()`.
+    pub fn lifecycle_policies(&self) -> &[crate::types::LifecyclePolicy] {
+        self.lifecycle_policies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeLifecycleConfigurationOutput {

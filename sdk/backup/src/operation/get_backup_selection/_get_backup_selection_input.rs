@@ -34,6 +34,7 @@ pub struct GetBackupSelectionInputBuilder {
 }
 impl GetBackupSelectionInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
+    /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetBackupSelectionInputBuilder {
         &self.backup_plan_id
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// This field is required.
     pub fn selection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_id = ::std::option::Option::Some(input.into());
         self

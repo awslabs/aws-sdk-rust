@@ -41,6 +41,7 @@ pub struct GetOpsMetadataInputBuilder {
 }
 impl GetOpsMetadataInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
+    /// This field is required.
     pub fn ops_metadata_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_metadata_arn = ::std::option::Option::Some(input.into());
         self

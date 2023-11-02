@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Position {
     /// <p>The line of the position, starting from 1.</p>
-    pub line: ::std::option::Option<i32>,
+    pub line: i32,
     /// <p>The column of the position, starting from 0.</p>
-    pub column: ::std::option::Option<i32>,
+    pub column: i32,
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
-    pub offset: ::std::option::Option<i32>,
+    pub offset: i32,
 }
 impl Position {
     /// <p>The line of the position, starting from 1.</p>
-    pub fn line(&self) -> ::std::option::Option<i32> {
+    pub fn line(&self) -> i32 {
         self.line
     }
     /// <p>The column of the position, starting from 0.</p>
-    pub fn column(&self) -> ::std::option::Option<i32> {
+    pub fn column(&self) -> i32 {
         self.column
     }
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
-    pub fn offset(&self) -> ::std::option::Option<i32> {
+    pub fn offset(&self) -> i32 {
         self.offset
     }
 }
@@ -42,6 +42,7 @@ pub struct PositionBuilder {
 }
 impl PositionBuilder {
     /// <p>The line of the position, starting from 1.</p>
+    /// This field is required.
     pub fn line(mut self, input: i32) -> Self {
         self.line = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl PositionBuilder {
         &self.line
     }
     /// <p>The column of the position, starting from 0.</p>
+    /// This field is required.
     pub fn column(mut self, input: i32) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl PositionBuilder {
         &self.column
     }
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
+    /// This field is required.
     pub fn offset(mut self, input: i32) -> Self {
         self.offset = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,30 @@ impl PositionBuilder {
         &self.offset
     }
     /// Consumes the builder and constructs a [`Position`](crate::types::Position).
-    pub fn build(self) -> crate::types::Position {
-        crate::types::Position {
-            line: self.line,
-            column: self.column,
-            offset: self.offset,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`line`](crate::types::builders::PositionBuilder::line)
+    /// - [`column`](crate::types::builders::PositionBuilder::column)
+    /// - [`offset`](crate::types::builders::PositionBuilder::offset)
+    pub fn build(self) -> ::std::result::Result<crate::types::Position, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Position {
+            line: self.line.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "line",
+                    "line was not specified but it is required when building Position",
+                )
+            })?,
+            column: self.column.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column",
+                    "column was not specified but it is required when building Position",
+                )
+            })?,
+            offset: self.offset.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "offset",
+                    "offset was not specified but it is required when building Position",
+                )
+            })?,
+        })
     }
 }

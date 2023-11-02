@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ContentBaseLocationDescription {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub bucket_arn: ::std::option::Option<::std::string::String>,
+    pub bucket_arn: ::std::string::String,
     /// <p>The base path for the S3 bucket.</p>
     pub base_path: ::std::option::Option<::std::string::String>,
 }
 impl S3ContentBaseLocationDescription {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.bucket_arn.as_deref()
+    pub fn bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_arn.deref()
     }
     /// <p>The base path for the S3 bucket.</p>
     pub fn base_path(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct S3ContentBaseLocationDescriptionBuilder {
 }
 impl S3ContentBaseLocationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    /// This field is required.
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl S3ContentBaseLocationDescriptionBuilder {
         &self.base_path
     }
     /// Consumes the builder and constructs a [`S3ContentBaseLocationDescription`](crate::types::S3ContentBaseLocationDescription).
-    pub fn build(self) -> crate::types::S3ContentBaseLocationDescription {
-        crate::types::S3ContentBaseLocationDescription {
-            bucket_arn: self.bucket_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_arn`](crate::types::builders::S3ContentBaseLocationDescriptionBuilder::bucket_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ContentBaseLocationDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3ContentBaseLocationDescription {
+            bucket_arn: self.bucket_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_arn",
+                    "bucket_arn was not specified but it is required when building S3ContentBaseLocationDescription",
+                )
+            })?,
             base_path: self.base_path,
-        }
+        })
     }
 }

@@ -69,6 +69,7 @@ pub struct StartRxNormInferenceJobInputBuilder {
 }
 impl StartRxNormInferenceJobInputBuilder {
     /// <p>Specifies the format and location of the input data for the job.</p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -83,6 +84,7 @@ impl StartRxNormInferenceJobInputBuilder {
         &self.input_data_config
     }
     /// <p>Specifies where to send the output files.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl StartRxNormInferenceJobInputBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +156,7 @@ impl StartRxNormInferenceJobInputBuilder {
         &self.kms_key
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self

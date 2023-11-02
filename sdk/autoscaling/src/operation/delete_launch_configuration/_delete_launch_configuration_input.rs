@@ -27,6 +27,7 @@ pub struct DeleteLaunchConfigurationInputBuilder {
 }
 impl DeleteLaunchConfigurationInputBuilder {
     /// <p>The name of the launch configuration.</p>
+    /// This field is required.
     pub fn launch_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_configuration_name = ::std::option::Option::Some(input.into());
         self

@@ -15,8 +15,10 @@ impl RetrieveOutput {
         self.query_id.as_deref()
     }
     /// <p>The results of the retrieved relevant passages for the search.</p>
-    pub fn result_items(&self) -> ::std::option::Option<&[crate::types::RetrieveResultItem]> {
-        self.result_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_items.is_none()`.
+    pub fn result_items(&self) -> &[crate::types::RetrieveResultItem] {
+        self.result_items.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RetrieveOutput {

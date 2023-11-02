@@ -13,8 +13,10 @@ pub struct DescribeTapesOutput {
 }
 impl DescribeTapesOutput {
     /// <p>An array of virtual tape descriptions.</p>
-    pub fn tapes(&self) -> ::std::option::Option<&[crate::types::Tape]> {
-        self.tapes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tapes.is_none()`.
+    pub fn tapes(&self) -> &[crate::types::Tape] {
+        self.tapes.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>

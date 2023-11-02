@@ -6,9 +6,9 @@ pub struct CreateSessionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
     /// <p>The name of the session.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -20,12 +20,14 @@ impl CreateSessionInput {
         self.client_token.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
     /// <p>The name of the session.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ impl CreateSessionInputBuilder {
         &self.client_token
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateSessionInputBuilder {
         &self.assistant_id
     }
     /// <p>The name of the session.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -131,13 +135,26 @@ impl CreateSessionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_id`](crate::operation::create_session::builders::CreateSessionInputBuilder::assistant_id)
+    /// - [`name`](crate::operation::create_session::builders::CreateSessionInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_session::CreateSessionInput {
             client_token: self.client_token,
-            assistant_id: self.assistant_id,
-            name: self.name,
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building CreateSessionInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateSessionInput",
+                )
+            })?,
             description: self.description,
             tags: self.tags,
         })

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBatchJobExecutionInput {
     /// <p>The identifier of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The unique identifier of the batch job execution.</p>
-    pub execution_id: ::std::option::Option<::std::string::String>,
+    pub execution_id: ::std::string::String,
 }
 impl GetBatchJobExecutionInput {
     /// <p>The identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The unique identifier of the batch job execution.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
-        self.execution_id.as_deref()
+    pub fn execution_id(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_id.deref()
     }
 }
 impl GetBatchJobExecutionInput {
@@ -34,6 +36,7 @@ pub struct GetBatchJobExecutionInputBuilder {
 }
 impl GetBatchJobExecutionInputBuilder {
     /// <p>The identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetBatchJobExecutionInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier of the batch job execution.</p>
+    /// This field is required.
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl GetBatchJobExecutionInputBuilder {
         &self.execution_id
     }
     /// Consumes the builder and constructs a [`GetBatchJobExecutionInput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionInputBuilder::application_id)
+    /// - [`execution_id`](crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionInputBuilder::execution_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_batch_job_execution::GetBatchJobExecutionInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_batch_job_execution::GetBatchJobExecutionInput {
-            application_id: self.application_id,
-            execution_id: self.execution_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building GetBatchJobExecutionInput",
+                )
+            })?,
+            execution_id: self.execution_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_id",
+                    "execution_id was not specified but it is required when building GetBatchJobExecutionInput",
+                )
+            })?,
         })
     }
 }

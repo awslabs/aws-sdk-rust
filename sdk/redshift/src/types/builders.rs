@@ -57,6 +57,8 @@ pub use crate::types::_parameter::ParameterBuilder;
 
 pub use crate::types::_data_share_association::DataShareAssociationBuilder;
 
+pub use crate::types::_resource_policy::ResourcePolicyBuilder;
+
 pub use crate::types::_reserved_node::ReservedNodeBuilder;
 
 pub use crate::types::_recurring_charge::RecurringChargeBuilder;
@@ -104,6 +106,10 @@ pub use crate::types::_orderable_cluster_option::OrderableClusterOptionBuilder;
 pub use crate::types::_node_configuration_option::NodeConfigurationOptionBuilder;
 
 pub use crate::types::_node_configuration_options_filter::NodeConfigurationOptionsFilterBuilder;
+
+pub use crate::types::_inbound_integration::InboundIntegrationBuilder;
+
+pub use crate::types::_integration_error::IntegrationErrorBuilder;
 
 pub use crate::types::_hsm_configuration::HsmConfigurationBuilder;
 

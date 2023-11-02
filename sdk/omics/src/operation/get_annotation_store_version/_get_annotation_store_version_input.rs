@@ -34,6 +34,7 @@ pub struct GetAnnotationStoreVersionInputBuilder {
 }
 impl GetAnnotationStoreVersionInputBuilder {
     /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAnnotationStoreVersionInputBuilder {
         &self.name
     }
     /// <p> The name given to an annotation store version to distinguish it from others. </p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self

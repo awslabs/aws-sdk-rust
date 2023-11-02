@@ -43,6 +43,7 @@ pub struct PivotTableFieldCollapseStateOptionBuilder {
 }
 impl PivotTableFieldCollapseStateOptionBuilder {
     /// <p>A tagged-union object that sets the collapse state.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::PivotTableFieldCollapseStateTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
         self

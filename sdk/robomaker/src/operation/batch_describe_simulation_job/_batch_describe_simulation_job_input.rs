@@ -8,8 +8,10 @@ pub struct BatchDescribeSimulationJobInput {
 }
 impl BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
+    pub fn jobs(&self) -> &[::std::string::String] {
+        self.jobs.as_deref().unwrap_or_default()
     }
 }
 impl BatchDescribeSimulationJobInput {

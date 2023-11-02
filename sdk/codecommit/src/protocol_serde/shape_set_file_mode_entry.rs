@@ -3,11 +3,11 @@ pub fn ser_set_file_mode_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SetFileModeEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.file_path {
-        object.key("filePath").string(var_1.as_str());
+    {
+        object.key("filePath").string(input.file_path.as_str());
     }
-    if let Some(var_2) = &input.file_mode {
-        object.key("fileMode").string(var_2.as_str());
+    {
+        object.key("fileMode").string(input.file_mode.as_str());
     }
     Ok(())
 }

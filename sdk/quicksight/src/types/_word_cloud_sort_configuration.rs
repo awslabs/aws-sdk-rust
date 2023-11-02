@@ -15,8 +15,10 @@ impl WordCloudSortConfiguration {
         self.category_items_limit.as_ref()
     }
     /// <p>The sort configuration of group by fields.</p>
-    pub fn category_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
-        self.category_sort.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_sort.is_none()`.
+    pub fn category_sort(&self) -> &[crate::types::FieldSortOptions] {
+        self.category_sort.as_deref().unwrap_or_default()
     }
 }
 impl WordCloudSortConfiguration {

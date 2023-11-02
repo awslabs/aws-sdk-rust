@@ -34,6 +34,7 @@ pub struct DeleteApiMappingInputBuilder {
 }
 impl DeleteApiMappingInputBuilder {
     /// <p>The API mapping identifier.</p>
+    /// This field is required.
     pub fn api_mapping_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_mapping_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteApiMappingInputBuilder {
         &self.api_mapping_id
     }
     /// <p>The domain name.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

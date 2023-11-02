@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatetimeRange {
     /// <p>Start of the time range.</p>
-    pub begin: ::std::option::Option<::std::string::String>,
+    pub begin: ::std::string::String,
     /// <p>End of the time range.</p>
     pub end: ::std::option::Option<::std::string::String>,
 }
 impl DatetimeRange {
     /// <p>Start of the time range.</p>
-    pub fn begin(&self) -> ::std::option::Option<&str> {
-        self.begin.as_deref()
+    pub fn begin(&self) -> &str {
+        use std::ops::Deref;
+        self.begin.deref()
     }
     /// <p>End of the time range.</p>
     pub fn end(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct DatetimeRangeBuilder {
 }
 impl DatetimeRangeBuilder {
     /// <p>Start of the time range.</p>
+    /// This field is required.
     pub fn begin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.begin = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DatetimeRangeBuilder {
         &self.end
     }
     /// Consumes the builder and constructs a [`DatetimeRange`](crate::types::DatetimeRange).
-    pub fn build(self) -> crate::types::DatetimeRange {
-        crate::types::DatetimeRange {
-            begin: self.begin,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`begin`](crate::types::builders::DatetimeRangeBuilder::begin)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatetimeRange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatetimeRange {
+            begin: self.begin.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "begin",
+                    "begin was not specified but it is required when building DatetimeRange",
+                )
+            })?,
             end: self.end,
-        }
+        })
     }
 }

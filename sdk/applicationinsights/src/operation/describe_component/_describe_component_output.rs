@@ -15,8 +15,10 @@ impl DescribeComponentOutput {
         self.application_component.as_ref()
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn resource_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_list.is_none()`.
+    pub fn resource_list(&self) -> &[::std::string::String] {
+        self.resource_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeComponentOutput {

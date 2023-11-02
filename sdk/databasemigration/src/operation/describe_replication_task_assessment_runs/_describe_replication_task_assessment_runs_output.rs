@@ -16,8 +16,10 @@ impl DescribeReplicationTaskAssessmentRunsOutput {
         self.marker.as_deref()
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub fn replication_task_assessment_runs(&self) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentRun]> {
-        self.replication_task_assessment_runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_task_assessment_runs.is_none()`.
+    pub fn replication_task_assessment_runs(&self) -> &[crate::types::ReplicationTaskAssessmentRun] {
+        self.replication_task_assessment_runs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentRunsOutput {

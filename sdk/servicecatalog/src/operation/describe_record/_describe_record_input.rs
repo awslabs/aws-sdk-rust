@@ -82,6 +82,7 @@ impl DescribeRecordInputBuilder {
         &self.accept_language
     }
     /// <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

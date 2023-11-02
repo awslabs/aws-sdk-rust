@@ -8,9 +8,9 @@ pub struct GetSolFunctionPackageMetadata {
     /// <p>Metadata related to the function package descriptor of the function package.</p>
     pub vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
     /// <p>The date that the resource was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date that the resource was last modified.</p>
-    pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified: ::aws_smithy_types::DateTime,
 }
 impl GetSolFunctionPackageMetadata {
     /// <p>Metadata related to the function package descriptor of the function package.</p>
@@ -18,12 +18,12 @@ impl GetSolFunctionPackageMetadata {
         self.vnfd.as_ref()
     }
     /// <p>The date that the resource was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date that the resource was last modified.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified.as_ref()
+    pub fn last_modified(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified
     }
 }
 impl GetSolFunctionPackageMetadata {
@@ -57,6 +57,7 @@ impl GetSolFunctionPackageMetadataBuilder {
         &self.vnfd
     }
     /// <p>The date that the resource was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -71,6 +72,7 @@ impl GetSolFunctionPackageMetadataBuilder {
         &self.created_at
     }
     /// <p>The date that the resource was last modified.</p>
+    /// This field is required.
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
         self
@@ -85,11 +87,24 @@ impl GetSolFunctionPackageMetadataBuilder {
         &self.last_modified
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageMetadata`](crate::types::GetSolFunctionPackageMetadata).
-    pub fn build(self) -> crate::types::GetSolFunctionPackageMetadata {
-        crate::types::GetSolFunctionPackageMetadata {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created_at`](crate::types::builders::GetSolFunctionPackageMetadataBuilder::created_at)
+    /// - [`last_modified`](crate::types::builders::GetSolFunctionPackageMetadataBuilder::last_modified)
+    pub fn build(self) -> ::std::result::Result<crate::types::GetSolFunctionPackageMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GetSolFunctionPackageMetadata {
             vnfd: self.vnfd,
-            created_at: self.created_at,
-            last_modified: self.last_modified,
-        }
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetSolFunctionPackageMetadata",
+                )
+            })?,
+            last_modified: self.last_modified.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_modified",
+                    "last_modified was not specified but it is required when building GetSolFunctionPackageMetadata",
+                )
+            })?,
+        })
     }
 }

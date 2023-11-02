@@ -27,32 +27,46 @@ pub struct Filters {
 }
 impl Filters {
     /// <p>Filters by the locale of the content or comment.</p>
-    pub fn text_locales(&self) -> ::std::option::Option<&[crate::types::LanguageCodeType]> {
-        self.text_locales.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_locales.is_none()`.
+    pub fn text_locales(&self) -> &[crate::types::LanguageCodeType] {
+        self.text_locales.as_deref().unwrap_or_default()
     }
     /// <p>Filters by content category.</p>
-    pub fn content_categories(&self) -> ::std::option::Option<&[crate::types::ContentCategoryType]> {
-        self.content_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_categories.is_none()`.
+    pub fn content_categories(&self) -> &[crate::types::ContentCategoryType] {
+        self.content_categories.as_deref().unwrap_or_default()
     }
     /// <p>Filters based on entity type.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::SearchResourceType]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::SearchResourceType] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>Filter by labels using exact match.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>Filter based on UserIds or GroupIds.</p>
-    pub fn principals(&self) -> ::std::option::Option<&[crate::types::SearchPrincipalType]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[crate::types::SearchPrincipalType] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>Filter based on resource’s path.</p>
-    pub fn ancestor_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ancestor_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ancestor_ids.is_none()`.
+    pub fn ancestor_ids(&self) -> &[::std::string::String] {
+        self.ancestor_ids.as_deref().unwrap_or_default()
     }
     /// <p>Filter based on file groupings.</p>
-    pub fn search_collection_types(&self) -> ::std::option::Option<&[crate::types::SearchCollectionType]> {
-        self.search_collection_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.search_collection_types.is_none()`.
+    pub fn search_collection_types(&self) -> &[crate::types::SearchCollectionType] {
+        self.search_collection_types.as_deref().unwrap_or_default()
     }
     /// <p>Filter based on size (in bytes).</p>
     pub fn size_range(&self) -> ::std::option::Option<&crate::types::LongRangeType> {

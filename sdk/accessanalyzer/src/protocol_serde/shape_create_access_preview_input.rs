@@ -3,24 +3,24 @@ pub fn ser_create_access_preview_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_access_preview::CreateAccessPreviewInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.analyzer_arn {
-        object.key("analyzerArn").string(var_1.as_str());
+    {
+        object.key("analyzerArn").string(input.analyzer_arn.as_str());
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("clientToken").string(var_2.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.configurations {
+    {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("configurations").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_2 = object.key("configurations").start_object();
+        for (key_3, value_4) in &input.configurations {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_7, value_6)?;
-                object_7.finish();
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_5, value_4)?;
+                object_5.finish();
             }
         }
-        object_4.finish();
+        object_2.finish();
     }
     Ok(())
 }

@@ -13,16 +13,22 @@ pub struct KpiFieldWells {
 }
 impl KpiFieldWells {
     /// <p>The value field wells of a KPI visual.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The target value field wells of a KPI visual.</p>
-    pub fn target_values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.target_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_values.is_none()`.
+    pub fn target_values(&self) -> &[crate::types::MeasureField] {
+        self.target_values.as_deref().unwrap_or_default()
     }
     /// <p>The trend group field wells of a KPI visual.</p>
-    pub fn trend_groups(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.trend_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trend_groups.is_none()`.
+    pub fn trend_groups(&self) -> &[crate::types::DimensionField] {
+        self.trend_groups.as_deref().unwrap_or_default()
     }
 }
 impl KpiFieldWells {

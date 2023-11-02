@@ -63,6 +63,7 @@ pub struct CreateApprovalRuleTemplateInputBuilder {
 }
 impl CreateApprovalRuleTemplateInputBuilder {
     /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +89,7 @@ impl CreateApprovalRuleTemplateInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
+    /// This field is required.
     pub fn approval_rule_template_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_content = ::std::option::Option::Some(input.into());
         self

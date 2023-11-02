@@ -56,6 +56,7 @@ pub struct CreateTrafficPolicyInstanceInputBuilder {
 }
 impl CreateTrafficPolicyInstanceInputBuilder {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         &self.name
     }
     /// <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the resource record sets that it creates in the specified hosted zone.</p>
+    /// This field is required.
     pub fn ttl(mut self, input: i64) -> Self {
         self.ttl = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         &self.ttl
     }
     /// <p>The ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    /// This field is required.
     pub fn traffic_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         &self.traffic_policy_id
     }
     /// <p>The version of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    /// This field is required.
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
         self.traffic_policy_version = ::std::option::Option::Some(input);
         self

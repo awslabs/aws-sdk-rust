@@ -5,39 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebhookDefinition {
     /// <p>The name of the webhook.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
-    pub target_pipeline: ::std::option::Option<::std::string::String>,
+    pub target_pipeline: ::std::string::String,
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-    pub target_action: ::std::option::Option<::std::string::String>,
+    pub target_action: ::std::string::String,
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::WebhookFilterRule>>,
+    pub filters: ::std::vec::Vec<crate::types::WebhookFilterRule>,
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
     /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
     /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
-    pub authentication: ::std::option::Option<crate::types::WebhookAuthenticationType>,
+    pub authentication: crate::types::WebhookAuthenticationType,
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::WebhookAuthConfiguration>,
 }
 impl WebhookDefinition {
     /// <p>The name of the webhook.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
-    pub fn target_pipeline(&self) -> ::std::option::Option<&str> {
-        self.target_pipeline.as_deref()
+    pub fn target_pipeline(&self) -> &str {
+        use std::ops::Deref;
+        self.target_pipeline.deref()
     }
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-    pub fn target_action(&self) -> ::std::option::Option<&str> {
-        self.target_action.as_deref()
+    pub fn target_action(&self) -> &str {
+        use std::ops::Deref;
+        self.target_action.deref()
     }
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::WebhookFilterRule]> {
-        self.filters.as_deref()
+    pub fn filters(&self) -> &[crate::types::WebhookFilterRule] {
+        use std::ops::Deref;
+        self.filters.deref()
     }
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
@@ -45,8 +49,8 @@ impl WebhookDefinition {
     /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
-    pub fn authentication(&self) -> ::std::option::Option<&crate::types::WebhookAuthenticationType> {
-        self.authentication.as_ref()
+    pub fn authentication(&self) -> &crate::types::WebhookAuthenticationType {
+        &self.authentication
     }
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
     pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::WebhookAuthConfiguration> {
@@ -73,6 +77,7 @@ pub struct WebhookDefinitionBuilder {
 }
 impl WebhookDefinitionBuilder {
     /// <p>The name of the webhook.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +92,7 @@ impl WebhookDefinitionBuilder {
         &self.name
     }
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
+    /// This field is required.
     pub fn target_pipeline(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_pipeline = ::std::option::Option::Some(input.into());
         self
@@ -101,6 +107,7 @@ impl WebhookDefinitionBuilder {
         &self.target_pipeline
     }
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
+    /// This field is required.
     pub fn target_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_action = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +147,7 @@ impl WebhookDefinitionBuilder {
     /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn authentication(mut self, input: crate::types::WebhookAuthenticationType) -> Self {
         self.authentication = ::std::option::Option::Some(input);
         self
@@ -164,6 +172,7 @@ impl WebhookDefinitionBuilder {
         &self.authentication
     }
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
+    /// This field is required.
     pub fn authentication_configuration(mut self, input: crate::types::WebhookAuthConfiguration) -> Self {
         self.authentication_configuration = ::std::option::Option::Some(input);
         self
@@ -178,14 +187,45 @@ impl WebhookDefinitionBuilder {
         &self.authentication_configuration
     }
     /// Consumes the builder and constructs a [`WebhookDefinition`](crate::types::WebhookDefinition).
-    pub fn build(self) -> crate::types::WebhookDefinition {
-        crate::types::WebhookDefinition {
-            name: self.name,
-            target_pipeline: self.target_pipeline,
-            target_action: self.target_action,
-            filters: self.filters,
-            authentication: self.authentication,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::WebhookDefinitionBuilder::name)
+    /// - [`target_pipeline`](crate::types::builders::WebhookDefinitionBuilder::target_pipeline)
+    /// - [`target_action`](crate::types::builders::WebhookDefinitionBuilder::target_action)
+    /// - [`filters`](crate::types::builders::WebhookDefinitionBuilder::filters)
+    /// - [`authentication`](crate::types::builders::WebhookDefinitionBuilder::authentication)
+    pub fn build(self) -> ::std::result::Result<crate::types::WebhookDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WebhookDefinition {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building WebhookDefinition",
+                )
+            })?,
+            target_pipeline: self.target_pipeline.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_pipeline",
+                    "target_pipeline was not specified but it is required when building WebhookDefinition",
+                )
+            })?,
+            target_action: self.target_action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_action",
+                    "target_action was not specified but it is required when building WebhookDefinition",
+                )
+            })?,
+            filters: self.filters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filters",
+                    "filters was not specified but it is required when building WebhookDefinition",
+                )
+            })?,
+            authentication: self.authentication.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "authentication",
+                    "authentication was not specified but it is required when building WebhookDefinition",
+                )
+            })?,
             authentication_configuration: self.authentication_configuration,
-        }
+        })
     }
 }

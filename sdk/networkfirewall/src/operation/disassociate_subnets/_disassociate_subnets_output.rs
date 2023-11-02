@@ -25,8 +25,10 @@ impl DisassociateSubnetsOutput {
         self.firewall_name.as_deref()
     }
     /// <p>The IDs of the subnets that are associated with the firewall. </p>
-    pub fn subnet_mappings(&self) -> ::std::option::Option<&[crate::types::SubnetMapping]> {
-        self.subnet_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_mappings.is_none()`.
+    pub fn subnet_mappings(&self) -> &[crate::types::SubnetMapping] {
+        self.subnet_mappings.as_deref().unwrap_or_default()
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>

@@ -34,6 +34,7 @@ pub struct AssumeImpersonationRoleInputBuilder {
 }
 impl AssumeImpersonationRoleInputBuilder {
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssumeImpersonationRoleInputBuilder {
         &self.organization_id
     }
     /// <p>The impersonation role ID to assume.</p>
+    /// This field is required.
     pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self

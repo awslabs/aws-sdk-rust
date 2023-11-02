@@ -9,8 +9,10 @@ pub struct GetIdentityDkimAttributesInput {
 }
 impl GetIdentityDkimAttributesInput {
     /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
-    pub fn identities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identities.is_none()`.
+    pub fn identities(&self) -> &[::std::string::String] {
+        self.identities.as_deref().unwrap_or_default()
     }
 }
 impl GetIdentityDkimAttributesInput {

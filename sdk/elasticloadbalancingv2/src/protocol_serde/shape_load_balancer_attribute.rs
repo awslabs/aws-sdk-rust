@@ -17,6 +17,7 @@ pub fn ser_load_balancer_attribute(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer_attribute(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LoadBalancerAttribute, ::aws_smithy_xml::decode::XmlDecodeError> {

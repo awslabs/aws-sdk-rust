@@ -27,6 +27,7 @@ pub struct DescribeDomainInputBuilder {
 }
 impl DescribeDomainInputBuilder {
     /// <p>The domain ID.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self

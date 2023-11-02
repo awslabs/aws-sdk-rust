@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedItemEventIncludedData {
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub include_content: ::std::option::Option<bool>,
+    pub include_content: bool,
 }
 impl RelatedItemEventIncludedData {
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub fn include_content(&self) -> ::std::option::Option<bool> {
+    pub fn include_content(&self) -> bool {
         self.include_content
     }
 }
@@ -28,6 +28,7 @@ pub struct RelatedItemEventIncludedDataBuilder {
 }
 impl RelatedItemEventIncludedDataBuilder {
     /// <p>Details of what related item data is published through the case event stream.</p>
+    /// This field is required.
     pub fn include_content(mut self, input: bool) -> Self {
         self.include_content = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl RelatedItemEventIncludedDataBuilder {
         &self.include_content
     }
     /// Consumes the builder and constructs a [`RelatedItemEventIncludedData`](crate::types::RelatedItemEventIncludedData).
-    pub fn build(self) -> crate::types::RelatedItemEventIncludedData {
-        crate::types::RelatedItemEventIncludedData {
-            include_content: self.include_content,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`include_content`](crate::types::builders::RelatedItemEventIncludedDataBuilder::include_content)
+    pub fn build(self) -> ::std::result::Result<crate::types::RelatedItemEventIncludedData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RelatedItemEventIncludedData {
+            include_content: self.include_content.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "include_content",
+                    "include_content was not specified but it is required when building RelatedItemEventIncludedData",
+                )
+            })?,
+        })
     }
 }

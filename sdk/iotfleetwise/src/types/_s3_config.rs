@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
-    pub bucket_arn: ::std::option::Option<::std::string::String>,
+    pub bucket_arn: ::std::string::String,
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
     /// <li> <p>Parquet - Store data in a columnar storage file format. Parquet is optimal for fast data retrieval and can reduce costs. This option is selected by default.</p> </li>
@@ -20,8 +20,9 @@ pub struct S3Config {
 }
 impl S3Config {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
-    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.bucket_arn.as_deref()
+    pub fn bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_arn.deref()
     }
     /// <p>Specify the format that files are saved in the Amazon S3 bucket. You can save files in an Apache Parquet or JSON format.</p>
     /// <ul>
@@ -59,6 +60,7 @@ pub struct S3ConfigBuilder {
 }
 impl S3ConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -130,12 +132,19 @@ impl S3ConfigBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
-    pub fn build(self) -> crate::types::S3Config {
-        crate::types::S3Config {
-            bucket_arn: self.bucket_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_arn`](crate::types::builders::S3ConfigBuilder::bucket_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Config {
+            bucket_arn: self.bucket_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_arn",
+                    "bucket_arn was not specified but it is required when building S3Config",
+                )
+            })?,
             data_format: self.data_format,
             storage_compression_format: self.storage_compression_format,
             prefix: self.prefix,
-        }
+        })
     }
 }

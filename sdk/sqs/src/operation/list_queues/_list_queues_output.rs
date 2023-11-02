@@ -16,8 +16,10 @@ impl ListQueuesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.</p>
-    pub fn queue_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.queue_urls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_urls.is_none()`.
+    pub fn queue_urls(&self) -> &[::std::string::String] {
+        self.queue_urls.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListQueuesOutput {

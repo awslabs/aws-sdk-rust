@@ -7,11 +7,11 @@ pub struct RedshiftDataSpec {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     pub database_information: ::std::option::Option<crate::types::RedshiftDatabase>,
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
-    pub select_sql_query: ::std::option::Option<::std::string::String>,
+    pub select_sql_query: ::std::string::String,
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
     pub database_credentials: ::std::option::Option<crate::types::RedshiftDatabaseCredentials>,
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
-    pub s3_staging_location: ::std::option::Option<::std::string::String>,
+    pub s3_staging_location: ::std::string::String,
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
     /// <ul>
@@ -43,16 +43,18 @@ impl RedshiftDataSpec {
         self.database_information.as_ref()
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn select_sql_query(&self) -> ::std::option::Option<&str> {
-        self.select_sql_query.as_deref()
+    pub fn select_sql_query(&self) -> &str {
+        use std::ops::Deref;
+        self.select_sql_query.deref()
     }
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
     pub fn database_credentials(&self) -> ::std::option::Option<&crate::types::RedshiftDatabaseCredentials> {
         self.database_credentials.as_ref()
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
-    pub fn s3_staging_location(&self) -> ::std::option::Option<&str> {
-        self.s3_staging_location.as_deref()
+    pub fn s3_staging_location(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_staging_location.deref()
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
@@ -106,6 +108,7 @@ pub struct RedshiftDataSpecBuilder {
 }
 impl RedshiftDataSpecBuilder {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn database_information(mut self, input: crate::types::RedshiftDatabase) -> Self {
         self.database_information = ::std::option::Option::Some(input);
         self
@@ -120,6 +123,7 @@ impl RedshiftDataSpecBuilder {
         &self.database_information
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn select_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.select_sql_query = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +138,7 @@ impl RedshiftDataSpecBuilder {
         &self.select_sql_query
     }
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
+    /// This field is required.
     pub fn database_credentials(mut self, input: crate::types::RedshiftDatabaseCredentials) -> Self {
         self.database_credentials = ::std::option::Option::Some(input);
         self
@@ -148,6 +153,7 @@ impl RedshiftDataSpecBuilder {
         &self.database_credentials
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
+    /// This field is required.
     pub fn s3_staging_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_staging_location = ::std::option::Option::Some(input.into());
         self
@@ -258,15 +264,28 @@ impl RedshiftDataSpecBuilder {
         &self.data_schema_uri
     }
     /// Consumes the builder and constructs a [`RedshiftDataSpec`](crate::types::RedshiftDataSpec).
-    pub fn build(self) -> crate::types::RedshiftDataSpec {
-        crate::types::RedshiftDataSpec {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`select_sql_query`](crate::types::builders::RedshiftDataSpecBuilder::select_sql_query)
+    /// - [`s3_staging_location`](crate::types::builders::RedshiftDataSpecBuilder::s3_staging_location)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataSpec, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftDataSpec {
             database_information: self.database_information,
-            select_sql_query: self.select_sql_query,
+            select_sql_query: self.select_sql_query.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "select_sql_query",
+                    "select_sql_query was not specified but it is required when building RedshiftDataSpec",
+                )
+            })?,
             database_credentials: self.database_credentials,
-            s3_staging_location: self.s3_staging_location,
+            s3_staging_location: self.s3_staging_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_staging_location",
+                    "s3_staging_location was not specified but it is required when building RedshiftDataSpec",
+                )
+            })?,
             data_rearrangement: self.data_rearrangement,
             data_schema: self.data_schema,
             data_schema_uri: self.data_schema_uri,
-        }
+        })
     }
 }

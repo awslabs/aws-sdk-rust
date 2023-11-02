@@ -62,6 +62,7 @@ impl DescribeEventAggregatesInputBuilder {
         &self.filter
     }
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
+    /// This field is required.
     pub fn aggregate_field(mut self, input: crate::types::EventAggregateField) -> Self {
         self.aggregate_field = ::std::option::Option::Some(input);
         self

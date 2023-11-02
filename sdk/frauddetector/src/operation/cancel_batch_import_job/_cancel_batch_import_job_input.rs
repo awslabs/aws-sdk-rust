@@ -30,6 +30,7 @@ pub struct CancelBatchImportJobInputBuilder {
 impl CancelBatchImportJobInputBuilder {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
     /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

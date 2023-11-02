@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddBridgeOutputs`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::set_bridge_arn): The ARN of the bridge that you want to update.
-    ///   - [`outputs(AddBridgeOutputRequest)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::outputs) / [`set_outputs(Option<Vec<AddBridgeOutputRequest>>)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::set_outputs): The outputs that you want to add to this bridge.
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to update.<br>
+    ///   - [`outputs(AddBridgeOutputRequest)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::outputs) / [`set_outputs(Option<Vec<AddBridgeOutputRequest>>)`](crate::operation::add_bridge_outputs::builders::AddBridgeOutputsFluentBuilder::set_outputs):<br>required: **true**<br>The outputs that you want to add to this bridge.<br>
     /// - On success, responds with [`AddBridgeOutputsOutput`](crate::operation::add_bridge_outputs::AddBridgeOutputsOutput) with field(s):
     ///   - [`bridge_arn(Option<String>)`](crate::operation::add_bridge_outputs::AddBridgeOutputsOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
     ///   - [`outputs(Option<Vec<BridgeOutput>>)`](crate::operation::add_bridge_outputs::AddBridgeOutputsOutput::outputs): The outputs that you added to this bridge.

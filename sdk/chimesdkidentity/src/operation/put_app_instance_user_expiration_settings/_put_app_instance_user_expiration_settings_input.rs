@@ -34,6 +34,7 @@ pub struct PutAppInstanceUserExpirationSettingsInputBuilder {
 }
 impl PutAppInstanceUserExpirationSettingsInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self

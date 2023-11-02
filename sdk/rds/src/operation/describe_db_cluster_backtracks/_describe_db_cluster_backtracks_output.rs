@@ -16,8 +16,10 @@ impl DescribeDbClusterBacktracksOutput {
         self.marker.as_deref()
     }
     /// <p>Contains a list of backtracks for the user.</p>
-    pub fn db_cluster_backtracks(&self) -> ::std::option::Option<&[crate::types::DbClusterBacktrack]> {
-        self.db_cluster_backtracks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_backtracks.is_none()`.
+    pub fn db_cluster_backtracks(&self) -> &[crate::types::DbClusterBacktrack] {
+        self.db_cluster_backtracks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDbClusterBacktracksOutput {

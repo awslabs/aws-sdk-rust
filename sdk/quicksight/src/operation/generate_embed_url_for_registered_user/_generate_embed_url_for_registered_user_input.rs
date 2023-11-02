@@ -34,8 +34,10 @@ impl GenerateEmbedUrlForRegisteredUserInput {
     }
     /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
     /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
-    pub fn allowed_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_domains.is_none()`.
+    pub fn allowed_domains(&self) -> &[::std::string::String] {
+        self.allowed_domains.as_deref().unwrap_or_default()
     }
 }
 impl GenerateEmbedUrlForRegisteredUserInput {
@@ -57,6 +59,7 @@ pub struct GenerateEmbedUrlForRegisteredUserInputBuilder {
 }
 impl GenerateEmbedUrlForRegisteredUserInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
         &self.session_lifetime_in_minutes
     }
     /// <p>The Amazon Resource Name for the registered user.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +103,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
         &self.user_arn
     }
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.</p>
+    /// This field is required.
     pub fn experience_configuration(mut self, input: crate::types::RegisteredUserEmbeddingExperienceConfiguration) -> Self {
         self.experience_configuration = ::std::option::Option::Some(input);
         self

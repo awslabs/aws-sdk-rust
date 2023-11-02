@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PaginationConfiguration {
     /// <p>Indicates how many items render in one page.</p>
-    pub page_size: ::std::option::Option<i64>,
+    pub page_size: i64,
     /// <p>Indicates the page number.</p>
-    pub page_number: ::std::option::Option<i64>,
+    pub page_number: i64,
 }
 impl PaginationConfiguration {
     /// <p>Indicates how many items render in one page.</p>
-    pub fn page_size(&self) -> ::std::option::Option<i64> {
+    pub fn page_size(&self) -> i64 {
         self.page_size
     }
     /// <p>Indicates the page number.</p>
-    pub fn page_number(&self) -> ::std::option::Option<i64> {
+    pub fn page_number(&self) -> i64 {
         self.page_number
     }
 }
@@ -35,6 +35,7 @@ pub struct PaginationConfigurationBuilder {
 }
 impl PaginationConfigurationBuilder {
     /// <p>Indicates how many items render in one page.</p>
+    /// This field is required.
     pub fn page_size(mut self, input: i64) -> Self {
         self.page_size = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PaginationConfigurationBuilder {
         &self.page_size
     }
     /// <p>Indicates the page number.</p>
+    /// This field is required.
     pub fn page_number(mut self, input: i64) -> Self {
         self.page_number = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl PaginationConfigurationBuilder {
         &self.page_number
     }
     /// Consumes the builder and constructs a [`PaginationConfiguration`](crate::types::PaginationConfiguration).
-    pub fn build(self) -> crate::types::PaginationConfiguration {
-        crate::types::PaginationConfiguration {
-            page_size: self.page_size,
-            page_number: self.page_number,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`page_size`](crate::types::builders::PaginationConfigurationBuilder::page_size)
+    /// - [`page_number`](crate::types::builders::PaginationConfigurationBuilder::page_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::PaginationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PaginationConfiguration {
+            page_size: self.page_size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "page_size",
+                    "page_size was not specified but it is required when building PaginationConfiguration",
+                )
+            })?,
+            page_number: self.page_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "page_number",
+                    "page_number was not specified but it is required when building PaginationConfiguration",
+                )
+            })?,
+        })
     }
 }

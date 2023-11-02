@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestoreEventDataStore`](crate::operation::restore_event_data_store::builders::RestoreEventDataStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_data_store(impl Into<String>)`](crate::operation::restore_event_data_store::builders::RestoreEventDataStoreFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::restore_event_data_store::builders::RestoreEventDataStoreFluentBuilder::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+    ///   - [`event_data_store(impl Into<String>)`](crate::operation::restore_event_data_store::builders::RestoreEventDataStoreFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::restore_event_data_store::builders::RestoreEventDataStoreFluentBuilder::set_event_data_store):<br>required: **true**<br><p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p><br>
     /// - On success, responds with [`RestoreEventDataStoreOutput`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput) with field(s):
     ///   - [`event_data_store_arn(Option<String>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::event_data_store_arn): <p>The event data store ARN.</p>
     ///   - [`name(Option<String>)`](crate::operation::restore_event_data_store::RestoreEventDataStoreOutput::name): <p>The name of the event data store.</p>

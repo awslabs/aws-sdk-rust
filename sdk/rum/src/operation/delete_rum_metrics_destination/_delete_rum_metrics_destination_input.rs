@@ -4,20 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRumMetricsDestinationInput {
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
-    pub app_monitor_name: ::std::option::Option<::std::string::String>,
+    pub app_monitor_name: ::std::string::String,
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub destination: ::std::option::Option<crate::types::MetricDestination>,
+    pub destination: crate::types::MetricDestination,
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRumMetricsDestinationInput {
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
-    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
-        self.app_monitor_name.as_deref()
+    pub fn app_monitor_name(&self) -> &str {
+        use std::ops::Deref;
+        self.app_monitor_name.deref()
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
-        self.destination.as_ref()
+    pub fn destination(&self) -> &crate::types::MetricDestination {
+        &self.destination
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
     pub fn destination_arn(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct DeleteRumMetricsDestinationInputBuilder {
 }
 impl DeleteRumMetricsDestinationInputBuilder {
     /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
+    /// This field is required.
     pub fn app_monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl DeleteRumMetricsDestinationInputBuilder {
         &self.app_monitor_name
     }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,9 @@ impl DeleteRumMetricsDestinationInputBuilder {
         &self.destination_arn
     }
     /// Consumes the builder and constructs a [`DeleteRumMetricsDestinationInput`](crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_monitor_name`](crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder::app_monitor_name)
+    /// - [`destination`](crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder::destination)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -90,8 +96,18 @@ impl DeleteRumMetricsDestinationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput {
-            app_monitor_name: self.app_monitor_name,
-            destination: self.destination,
+            app_monitor_name: self.app_monitor_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_monitor_name",
+                    "app_monitor_name was not specified but it is required when building DeleteRumMetricsDestinationInput",
+                )
+            })?,
+            destination: self.destination.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination",
+                    "destination was not specified but it is required when building DeleteRumMetricsDestinationInput",
+                )
+            })?,
             destination_arn: self.destination_arn,
         })
     }

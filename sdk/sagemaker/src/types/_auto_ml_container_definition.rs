@@ -42,6 +42,7 @@ pub struct AutoMlContainerDefinitionBuilder {
 }
 impl AutoMlContainerDefinitionBuilder {
     /// <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html"> ContainerDefinition</a>.</p>
+    /// This field is required.
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl AutoMlContainerDefinitionBuilder {
         &self.image
     }
     /// <p>The location of the model artifacts. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html"> ContainerDefinition</a>.</p>
+    /// This field is required.
     pub fn model_data_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_data_url = ::std::option::Option::Some(input.into());
         self

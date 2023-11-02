@@ -41,6 +41,7 @@ pub struct UpdateContactChannelInputBuilder {
 }
 impl UpdateContactChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
+    /// This field is required.
     pub fn contact_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_channel_id = ::std::option::Option::Some(input.into());
         self

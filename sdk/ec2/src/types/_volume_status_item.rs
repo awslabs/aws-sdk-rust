@@ -21,8 +21,10 @@ pub struct VolumeStatusItem {
 }
 impl VolumeStatusItem {
     /// <p>The details of the operation.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VolumeStatusAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::VolumeStatusAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone of the volume.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -33,8 +35,10 @@ impl VolumeStatusItem {
         self.outpost_arn.as_deref()
     }
     /// <p>A list of events associated with the volume.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::VolumeStatusEvent]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::VolumeStatusEvent] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p>The volume ID.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
@@ -45,8 +49,10 @@ impl VolumeStatusItem {
         self.volume_status.as_ref()
     }
     /// <p>Information about the instances to which the volume is attached.</p>
-    pub fn attachment_statuses(&self) -> ::std::option::Option<&[crate::types::VolumeStatusAttachmentStatus]> {
-        self.attachment_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_statuses.is_none()`.
+    pub fn attachment_statuses(&self) -> &[crate::types::VolumeStatusAttachmentStatus] {
+        self.attachment_statuses.as_deref().unwrap_or_default()
     }
 }
 impl VolumeStatusItem {

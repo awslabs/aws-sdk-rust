@@ -30,6 +30,7 @@ pub struct CancelHandshakeInputBuilder {
 impl CancelHandshakeInputBuilder {
     /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    /// This field is required.
     pub fn handshake_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.handshake_id = ::std::option::Option::Some(input.into());
         self

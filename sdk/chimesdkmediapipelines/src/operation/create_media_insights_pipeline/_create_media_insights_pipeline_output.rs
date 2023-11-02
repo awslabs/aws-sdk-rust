@@ -34,6 +34,7 @@ pub struct CreateMediaInsightsPipelineOutputBuilder {
 }
 impl CreateMediaInsightsPipelineOutputBuilder {
     /// <p>The media insights pipeline object.</p>
+    /// This field is required.
     pub fn media_insights_pipeline(mut self, input: crate::types::MediaInsightsPipeline) -> Self {
         self.media_insights_pipeline = ::std::option::Option::Some(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTags`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arns(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_resource_arns): <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
+    ///   - [`resource_arns(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_resource_arns):<br>required: **true**<br><p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p><br>
     /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
     ///   - [`tag_descriptions(Option<Vec<TagDescription>>)`](crate::operation::describe_tags::DescribeTagsOutput::tag_descriptions): <p>Information about the tags.</p>
     /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::operation::describe_tags::DescribeTagsError)

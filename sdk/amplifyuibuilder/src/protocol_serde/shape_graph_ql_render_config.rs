@@ -3,20 +3,20 @@ pub fn ser_graph_ql_render_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GraphQlRenderConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.types_file_path {
-        object.key("typesFilePath").string(var_1.as_str());
+    {
+        object.key("typesFilePath").string(input.types_file_path.as_str());
     }
-    if let Some(var_2) = &input.queries_file_path {
-        object.key("queriesFilePath").string(var_2.as_str());
+    {
+        object.key("queriesFilePath").string(input.queries_file_path.as_str());
     }
-    if let Some(var_3) = &input.mutations_file_path {
-        object.key("mutationsFilePath").string(var_3.as_str());
+    {
+        object.key("mutationsFilePath").string(input.mutations_file_path.as_str());
     }
-    if let Some(var_4) = &input.subscriptions_file_path {
-        object.key("subscriptionsFilePath").string(var_4.as_str());
+    {
+        object.key("subscriptionsFilePath").string(input.subscriptions_file_path.as_str());
     }
-    if let Some(var_5) = &input.fragments_file_path {
-        object.key("fragmentsFilePath").string(var_5.as_str());
+    {
+        object.key("fragmentsFilePath").string(input.fragments_file_path.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::graph_ql_render_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

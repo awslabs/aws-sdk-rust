@@ -3,24 +3,24 @@ pub fn ser_metric_query(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricQuery,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.metric {
-        object.key("Metric").string(var_1.as_str());
+    {
+        object.key("Metric").string(input.metric.as_str());
     }
-    if let Some(var_2) = &input.group_by {
+    if let Some(var_1) = &input.group_by {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("GroupBy").start_object();
-        crate::protocol_serde::shape_dimension_group::ser_dimension_group(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("GroupBy").start_object();
+        crate::protocol_serde::shape_dimension_group::ser_dimension_group(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.filter {
+    if let Some(var_3) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Filter").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("Filter").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
     Ok(())
 }

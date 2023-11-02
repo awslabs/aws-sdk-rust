@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnPremConfig {
     /// <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.</p>
-    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_arns: ::std::vec::Vec<::std::string::String>,
 }
 impl OnPremConfig {
     /// <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.agent_arns.deref()
     }
 }
 impl OnPremConfig {
@@ -48,7 +49,16 @@ impl OnPremConfigBuilder {
         &self.agent_arns
     }
     /// Consumes the builder and constructs a [`OnPremConfig`](crate::types::OnPremConfig).
-    pub fn build(self) -> crate::types::OnPremConfig {
-        crate::types::OnPremConfig { agent_arns: self.agent_arns }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_arns`](crate::types::builders::OnPremConfigBuilder::agent_arns)
+    pub fn build(self) -> ::std::result::Result<crate::types::OnPremConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OnPremConfig {
+            agent_arns: self.agent_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "agent_arns",
+                    "agent_arns was not specified but it is required when building OnPremConfig",
+                )
+            })?,
+        })
     }
 }

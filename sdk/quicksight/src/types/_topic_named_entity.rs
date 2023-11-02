@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicNamedEntity {
     /// <p>The name of the named entity.</p>
-    pub entity_name: ::std::option::Option<::std::string::String>,
+    pub entity_name: ::std::string::String,
     /// <p>The description of the named entity.</p>
     pub entity_description: ::std::option::Option<::std::string::String>,
     /// <p>The other names or aliases for the named entity.</p>
@@ -17,24 +17,29 @@ pub struct TopicNamedEntity {
 }
 impl TopicNamedEntity {
     /// <p>The name of the named entity.</p>
-    pub fn entity_name(&self) -> ::std::option::Option<&str> {
-        self.entity_name.as_deref()
+    pub fn entity_name(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_name.deref()
     }
     /// <p>The description of the named entity.</p>
     pub fn entity_description(&self) -> ::std::option::Option<&str> {
         self.entity_description.as_deref()
     }
     /// <p>The other names or aliases for the named entity.</p>
-    pub fn entity_synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_synonyms.is_none()`.
+    pub fn entity_synonyms(&self) -> &[::std::string::String] {
+        self.entity_synonyms.as_deref().unwrap_or_default()
     }
     /// <p>The type of named entity that a topic represents.</p>
     pub fn semantic_entity_type(&self) -> ::std::option::Option<&crate::types::SemanticEntityType> {
         self.semantic_entity_type.as_ref()
     }
     /// <p>The definition of a named entity.</p>
-    pub fn definition(&self) -> ::std::option::Option<&[crate::types::NamedEntityDefinition]> {
-        self.definition.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.definition.is_none()`.
+    pub fn definition(&self) -> &[crate::types::NamedEntityDefinition] {
+        self.definition.as_deref().unwrap_or_default()
     }
 }
 impl TopicNamedEntity {
@@ -56,6 +61,7 @@ pub struct TopicNamedEntityBuilder {
 }
 impl TopicNamedEntityBuilder {
     /// <p>The name of the named entity.</p>
+    /// This field is required.
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_name = ::std::option::Option::Some(input.into());
         self
@@ -138,13 +144,20 @@ impl TopicNamedEntityBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`TopicNamedEntity`](crate::types::TopicNamedEntity).
-    pub fn build(self) -> crate::types::TopicNamedEntity {
-        crate::types::TopicNamedEntity {
-            entity_name: self.entity_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_name`](crate::types::builders::TopicNamedEntityBuilder::entity_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicNamedEntity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicNamedEntity {
+            entity_name: self.entity_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_name",
+                    "entity_name was not specified but it is required when building TopicNamedEntity",
+                )
+            })?,
             entity_description: self.entity_description,
             entity_synonyms: self.entity_synonyms,
             semantic_entity_type: self.semantic_entity_type,
             definition: self.definition,
-        }
+        })
     }
 }

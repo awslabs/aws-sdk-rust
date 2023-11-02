@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Runbook {
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
-    pub document_name: ::std::option::Option<::std::string::String>,
+    pub document_name: ::std::string::String,
     /// <p>The version of the Automation runbook used in a runbook workflow.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>
@@ -28,8 +28,9 @@ pub struct Runbook {
 }
 impl Runbook {
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
-        self.document_name.as_deref()
+    pub fn document_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_name.deref()
     }
     /// <p>The version of the Automation runbook used in a runbook workflow.</p>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
@@ -44,14 +45,16 @@ impl Runbook {
         self.target_parameter_name.as_deref()
     }
     /// <p>A key-value mapping to target resources that the runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>A key-value mapping of runbook parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
-    pub fn target_maps(
-        &self,
-    ) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>]> {
-        self.target_maps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
+    pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
+        self.target_maps.as_deref().unwrap_or_default()
     }
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>
     pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
@@ -62,8 +65,10 @@ impl Runbook {
         self.max_errors.as_deref()
     }
     /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook operation.</p>
-    pub fn target_locations(&self) -> ::std::option::Option<&[crate::types::TargetLocation]> {
-        self.target_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_locations.is_none()`.
+    pub fn target_locations(&self) -> &[crate::types::TargetLocation] {
+        self.target_locations.as_deref().unwrap_or_default()
     }
 }
 impl Runbook {
@@ -90,6 +95,7 @@ pub struct RunbookBuilder {
 }
 impl RunbookBuilder {
     /// <p>The name of the Automation runbook used in a runbook workflow.</p>
+    /// This field is required.
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
@@ -250,9 +256,16 @@ impl RunbookBuilder {
         &self.target_locations
     }
     /// Consumes the builder and constructs a [`Runbook`](crate::types::Runbook).
-    pub fn build(self) -> crate::types::Runbook {
-        crate::types::Runbook {
-            document_name: self.document_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_name`](crate::types::builders::RunbookBuilder::document_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Runbook, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Runbook {
+            document_name: self.document_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_name",
+                    "document_name was not specified but it is required when building Runbook",
+                )
+            })?,
             document_version: self.document_version,
             parameters: self.parameters,
             target_parameter_name: self.target_parameter_name,
@@ -261,6 +274,6 @@ impl RunbookBuilder {
             max_concurrency: self.max_concurrency,
             max_errors: self.max_errors,
             target_locations: self.target_locations,
-        }
+        })
     }
 }

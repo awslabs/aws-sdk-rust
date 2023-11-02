@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DnisEmergencyCallingConfiguration {
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
-    pub emergency_phone_number: ::std::option::Option<::std::string::String>,
+    pub emergency_phone_number: ::std::string::String,
     /// <p>The DNIS phone number for routing test emergency calls to, in E.164 format.</p>
     pub test_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub calling_country: ::std::option::Option<::std::string::String>,
+    pub calling_country: ::std::string::String,
 }
 impl DnisEmergencyCallingConfiguration {
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
-    pub fn emergency_phone_number(&self) -> ::std::option::Option<&str> {
-        self.emergency_phone_number.as_deref()
+    pub fn emergency_phone_number(&self) -> &str {
+        use std::ops::Deref;
+        self.emergency_phone_number.deref()
     }
     /// <p>The DNIS phone number for routing test emergency calls to, in E.164 format.</p>
     pub fn test_phone_number(&self) -> ::std::option::Option<&str> {
         self.test_phone_number.as_deref()
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub fn calling_country(&self) -> ::std::option::Option<&str> {
-        self.calling_country.as_deref()
+    pub fn calling_country(&self) -> &str {
+        use std::ops::Deref;
+        self.calling_country.deref()
     }
 }
 impl ::std::fmt::Debug for DnisEmergencyCallingConfiguration {
@@ -51,6 +53,7 @@ pub struct DnisEmergencyCallingConfigurationBuilder {
 }
 impl DnisEmergencyCallingConfigurationBuilder {
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
+    /// This field is required.
     pub fn emergency_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.emergency_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +82,7 @@ impl DnisEmergencyCallingConfigurationBuilder {
         &self.test_phone_number
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
+    /// This field is required.
     pub fn calling_country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calling_country = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +97,25 @@ impl DnisEmergencyCallingConfigurationBuilder {
         &self.calling_country
     }
     /// Consumes the builder and constructs a [`DnisEmergencyCallingConfiguration`](crate::types::DnisEmergencyCallingConfiguration).
-    pub fn build(self) -> crate::types::DnisEmergencyCallingConfiguration {
-        crate::types::DnisEmergencyCallingConfiguration {
-            emergency_phone_number: self.emergency_phone_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`emergency_phone_number`](crate::types::builders::DnisEmergencyCallingConfigurationBuilder::emergency_phone_number)
+    /// - [`calling_country`](crate::types::builders::DnisEmergencyCallingConfigurationBuilder::calling_country)
+    pub fn build(self) -> ::std::result::Result<crate::types::DnisEmergencyCallingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DnisEmergencyCallingConfiguration {
+            emergency_phone_number: self.emergency_phone_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "emergency_phone_number",
+                    "emergency_phone_number was not specified but it is required when building DnisEmergencyCallingConfiguration",
+                )
+            })?,
             test_phone_number: self.test_phone_number,
-            calling_country: self.calling_country,
-        }
+            calling_country: self.calling_country.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "calling_country",
+                    "calling_country was not specified but it is required when building DnisEmergencyCallingConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for DnisEmergencyCallingConfigurationBuilder {

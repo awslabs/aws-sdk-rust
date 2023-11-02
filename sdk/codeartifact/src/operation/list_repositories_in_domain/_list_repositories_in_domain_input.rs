@@ -62,6 +62,7 @@ pub struct ListRepositoriesInDomainInputBuilder {
 }
 impl ListRepositoriesInDomainInputBuilder {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self

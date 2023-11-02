@@ -14,8 +14,10 @@ impl SuspendGameServerGroupInput {
         self.game_server_group_name.as_deref()
     }
     /// <p>The activity to suspend for this game server group.</p>
-    pub fn suspend_actions(&self) -> ::std::option::Option<&[crate::types::GameServerGroupAction]> {
-        self.suspend_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suspend_actions.is_none()`.
+    pub fn suspend_actions(&self) -> &[crate::types::GameServerGroupAction] {
+        self.suspend_actions.as_deref().unwrap_or_default()
     }
 }
 impl SuspendGameServerGroupInput {
@@ -34,6 +36,7 @@ pub struct SuspendGameServerGroupInputBuilder {
 }
 impl SuspendGameServerGroupInputBuilder {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self

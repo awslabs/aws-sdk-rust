@@ -27,6 +27,7 @@ pub struct DescribeClientBrandingInputBuilder {
 }
 impl DescribeClientBrandingInputBuilder {
     /// <p>The directory identifier of the WorkSpace for which you want to view client branding information.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

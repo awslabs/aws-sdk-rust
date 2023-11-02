@@ -48,6 +48,7 @@ pub struct ExportVectorEnrichmentJobInputBuilder {
 }
 impl ExportVectorEnrichmentJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
         &self.execution_role_arn
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::ExportVectorEnrichmentJobOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

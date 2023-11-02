@@ -10,8 +10,10 @@ pub struct AttachLoadBalancerToSubnetsOutput {
 }
 impl AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {

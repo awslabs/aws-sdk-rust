@@ -82,6 +82,7 @@ impl DescribeProvisionedProductPlanInputBuilder {
         &self.accept_language
     }
     /// <p>The plan identifier.</p>
+    /// This field is required.
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_id = ::std::option::Option::Some(input.into());
         self

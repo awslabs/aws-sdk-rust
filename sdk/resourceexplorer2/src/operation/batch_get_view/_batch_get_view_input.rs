@@ -8,8 +8,10 @@ pub struct BatchGetViewInput {
 }
 impl BatchGetViewInput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    pub fn view_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.view_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.view_arns.is_none()`.
+    pub fn view_arns(&self) -> &[::std::string::String] {
+        self.view_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetViewInput {

@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::set_next_token): <p>A token that indicates the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::set_max_results): <p>The maximum number of repositories to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next repository in the array of repositories, after the list of repositories previously requested.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of repositories to list.</p><br>
     /// - On success, responds with [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_repositories::ListRepositoriesOutput::next_token): <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
-    ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::operation::list_repositories::ListRepositoriesOutput::repositories): <p>An array of repository links.</p>
+    ///   - [`repositories(Vec<RepositorySummary>)`](crate::operation::list_repositories::ListRepositoriesOutput::repositories): <p>An array of repository links.</p>
     /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::operation::list_repositories::ListRepositoriesError)
     pub fn list_repositories(&self) -> crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder {
         crate::operation::list_repositories::builders::ListRepositoriesFluentBuilder::new(self.handle.clone())

@@ -42,6 +42,7 @@ pub struct CountClosedWorkflowExecutionsOutputBuilder {
 }
 impl CountClosedWorkflowExecutionsOutputBuilder {
     /// <p>The number of workflow executions.</p>
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self

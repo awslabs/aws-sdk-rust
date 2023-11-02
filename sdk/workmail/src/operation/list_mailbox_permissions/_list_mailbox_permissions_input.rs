@@ -60,6 +60,7 @@ pub struct ListMailboxPermissionsInputBuilder {
 }
 impl ListMailboxPermissionsInputBuilder {
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl ListMailboxPermissionsInputBuilder {
     /// <li> <p>Email address: entity@domain.tld</p> </li>
     /// <li> <p>Entity name: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self

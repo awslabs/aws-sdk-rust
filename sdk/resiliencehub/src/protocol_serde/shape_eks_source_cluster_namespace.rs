@@ -3,11 +3,11 @@ pub fn ser_eks_source_cluster_namespace(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksSourceClusterNamespace,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.eks_cluster_arn {
-        object.key("eksClusterArn").string(var_1.as_str());
+    {
+        object.key("eksClusterArn").string(input.eks_cluster_arn.as_str());
     }
-    if let Some(var_2) = &input.namespace {
-        object.key("namespace").string(var_2.as_str());
+    {
+        object.key("namespace").string(input.namespace.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::eks_source_cluster_namespace_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

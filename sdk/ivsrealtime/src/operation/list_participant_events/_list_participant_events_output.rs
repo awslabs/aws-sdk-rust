@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListParticipantEventsOutput {
     /// <p>List of the matching events.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::vec::Vec<crate::types::Event>,
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListParticipantEventsOutput {
     /// <p>List of the matching events.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::Event] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListParticipantEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListParticipantEventsOutput`](crate::operation::list_participant_events::ListParticipantEventsOutput).
-    pub fn build(self) -> crate::operation::list_participant_events::ListParticipantEventsOutput {
-        crate::operation::list_participant_events::ListParticipantEventsOutput {
-            events: self.events,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`events`](crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder::events)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_participant_events::ListParticipantEventsOutput {
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building ListParticipantEventsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

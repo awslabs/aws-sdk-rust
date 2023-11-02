@@ -34,6 +34,7 @@ pub struct DeleteVpcPeeringConnectionInputBuilder {
 }
 impl DeleteVpcPeeringConnectionInputBuilder {
     /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteVpcPeeringConnectionInputBuilder {
         &self.fleet_id
     }
     /// <p>A unique identifier for a VPC peering connection.</p>
+    /// This field is required.
     pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self

@@ -55,6 +55,7 @@ pub struct UpdateDetectorModelInputBuilder {
 }
 impl UpdateDetectorModelInputBuilder {
     /// <p>The name of the detector model that is updated.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateDetectorModelInputBuilder {
         &self.detector_model_name
     }
     /// <p>Information that defines how a detector operates.</p>
+    /// This field is required.
     pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.detector_model_definition = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl UpdateDetectorModelInputBuilder {
         &self.detector_model_description
     }
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

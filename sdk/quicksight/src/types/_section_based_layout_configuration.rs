@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionBasedLayoutConfiguration {
     /// <p>A list of header section configurations.</p>
-    pub header_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
+    pub header_sections: ::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>,
     /// <p>A list of body section configurations.</p>
-    pub body_sections: ::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>>,
+    pub body_sections: ::std::vec::Vec<crate::types::BodySectionConfiguration>,
     /// <p>A list of footer section configurations.</p>
-    pub footer_sections: ::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>,
+    pub footer_sections: ::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>,
     /// <p>The options for the canvas of a section-based layout.</p>
     pub canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
 impl SectionBasedLayoutConfiguration {
     /// <p>A list of header section configurations.</p>
-    pub fn header_sections(&self) -> ::std::option::Option<&[crate::types::HeaderFooterSectionConfiguration]> {
-        self.header_sections.as_deref()
+    pub fn header_sections(&self) -> &[crate::types::HeaderFooterSectionConfiguration] {
+        use std::ops::Deref;
+        self.header_sections.deref()
     }
     /// <p>A list of body section configurations.</p>
-    pub fn body_sections(&self) -> ::std::option::Option<&[crate::types::BodySectionConfiguration]> {
-        self.body_sections.as_deref()
+    pub fn body_sections(&self) -> &[crate::types::BodySectionConfiguration] {
+        use std::ops::Deref;
+        self.body_sections.deref()
     }
     /// <p>A list of footer section configurations.</p>
-    pub fn footer_sections(&self) -> ::std::option::Option<&[crate::types::HeaderFooterSectionConfiguration]> {
-        self.footer_sections.as_deref()
+    pub fn footer_sections(&self) -> &[crate::types::HeaderFooterSectionConfiguration] {
+        use std::ops::Deref;
+        self.footer_sections.deref()
     }
     /// <p>The options for the canvas of a section-based layout.</p>
     pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::SectionBasedLayoutCanvasSizeOptions> {
@@ -109,6 +112,7 @@ impl SectionBasedLayoutConfigurationBuilder {
         &self.footer_sections
     }
     /// <p>The options for the canvas of a section-based layout.</p>
+    /// This field is required.
     pub fn canvas_size_options(mut self, input: crate::types::SectionBasedLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
         self
@@ -123,12 +127,31 @@ impl SectionBasedLayoutConfigurationBuilder {
         &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`SectionBasedLayoutConfiguration`](crate::types::SectionBasedLayoutConfiguration).
-    pub fn build(self) -> crate::types::SectionBasedLayoutConfiguration {
-        crate::types::SectionBasedLayoutConfiguration {
-            header_sections: self.header_sections,
-            body_sections: self.body_sections,
-            footer_sections: self.footer_sections,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`header_sections`](crate::types::builders::SectionBasedLayoutConfigurationBuilder::header_sections)
+    /// - [`body_sections`](crate::types::builders::SectionBasedLayoutConfigurationBuilder::body_sections)
+    /// - [`footer_sections`](crate::types::builders::SectionBasedLayoutConfigurationBuilder::footer_sections)
+    pub fn build(self) -> ::std::result::Result<crate::types::SectionBasedLayoutConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SectionBasedLayoutConfiguration {
+            header_sections: self.header_sections.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "header_sections",
+                    "header_sections was not specified but it is required when building SectionBasedLayoutConfiguration",
+                )
+            })?,
+            body_sections: self.body_sections.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "body_sections",
+                    "body_sections was not specified but it is required when building SectionBasedLayoutConfiguration",
+                )
+            })?,
+            footer_sections: self.footer_sections.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "footer_sections",
+                    "footer_sections was not specified but it is required when building SectionBasedLayoutConfiguration",
+                )
+            })?,
             canvas_size_options: self.canvas_size_options,
-        }
+        })
     }
 }

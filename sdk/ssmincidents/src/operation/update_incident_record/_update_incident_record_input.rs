@@ -6,7 +6,7 @@ pub struct UpdateIncidentRecordInput {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A brief description of the incident.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>A longer description of what occurred during the incident.</p>
@@ -35,8 +35,9 @@ impl UpdateIncidentRecordInput {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A brief description of the incident.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
@@ -68,8 +69,10 @@ impl UpdateIncidentRecordInput {
     }
     /// <p>The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
-    pub fn notification_targets(&self) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
-        self.notification_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_targets.is_none()`.
+    pub fn notification_targets(&self) -> &[crate::types::NotificationTargetItem] {
+        self.notification_targets.as_deref().unwrap_or_default()
     }
 }
 impl UpdateIncidentRecordInput {
@@ -108,6 +111,7 @@ impl UpdateIncidentRecordInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -239,13 +243,20 @@ impl UpdateIncidentRecordInputBuilder {
         &self.notification_targets
     }
     /// Consumes the builder and constructs a [`UpdateIncidentRecordInput`](crate::operation::update_incident_record::UpdateIncidentRecordInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_incident_record::UpdateIncidentRecordInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_incident_record::UpdateIncidentRecordInput {
             client_token: self.client_token,
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateIncidentRecordInput",
+                )
+            })?,
             title: self.title,
             summary: self.summary,
             impact: self.impact,

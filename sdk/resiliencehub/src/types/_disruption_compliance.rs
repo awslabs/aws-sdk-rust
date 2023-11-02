@@ -19,7 +19,7 @@ pub struct DisruptionCompliance {
     /// <p>The RPO description.</p>
     pub rpo_description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
+    pub compliance_status: crate::types::ComplianceStatus,
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
     pub achievable_rpo_in_secs: i32,
     /// <p>The disruption compliance message.</p>
@@ -55,8 +55,8 @@ impl DisruptionCompliance {
         self.rpo_description.as_deref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
-        self.compliance_status.as_ref()
+    pub fn compliance_status(&self) -> &crate::types::ComplianceStatus {
+        &self.compliance_status
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
     pub fn achievable_rpo_in_secs(&self) -> i32 {
@@ -189,6 +189,7 @@ impl DisruptionComplianceBuilder {
         &self.rpo_description
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
+    /// This field is required.
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.compliance_status = ::std::option::Option::Some(input);
         self
@@ -231,8 +232,10 @@ impl DisruptionComplianceBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`DisruptionCompliance`](crate::types::DisruptionCompliance).
-    pub fn build(self) -> crate::types::DisruptionCompliance {
-        crate::types::DisruptionCompliance {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`compliance_status`](crate::types::builders::DisruptionComplianceBuilder::compliance_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::DisruptionCompliance, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DisruptionCompliance {
             achievable_rto_in_secs: self.achievable_rto_in_secs.unwrap_or_default(),
             current_rto_in_secs: self.current_rto_in_secs.unwrap_or_default(),
             rto_reference_id: self.rto_reference_id,
@@ -240,9 +243,14 @@ impl DisruptionComplianceBuilder {
             current_rpo_in_secs: self.current_rpo_in_secs.unwrap_or_default(),
             rpo_reference_id: self.rpo_reference_id,
             rpo_description: self.rpo_description,
-            compliance_status: self.compliance_status,
+            compliance_status: self.compliance_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "compliance_status",
+                    "compliance_status was not specified but it is required when building DisruptionCompliance",
+                )
+            })?,
             achievable_rpo_in_secs: self.achievable_rpo_in_secs.unwrap_or_default(),
             message: self.message,
-        }
+        })
     }
 }

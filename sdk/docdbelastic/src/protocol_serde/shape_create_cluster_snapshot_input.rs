@@ -3,21 +3,21 @@ pub fn ser_create_cluster_snapshot_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.cluster_arn {
-        object.key("clusterArn").string(var_1.as_str());
+    {
+        object.key("clusterArn").string(input.cluster_arn.as_str());
     }
-    if let Some(var_2) = &input.snapshot_name {
-        object.key("snapshotName").string(var_2.as_str());
+    {
+        object.key("snapshotName").string(input.snapshot_name.as_str());
     }
-    if let Some(var_3) = &input.tags {
+    if let Some(var_1) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("tags").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_2 = object.key("tags").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_4.finish();
+        object_2.finish();
     }
     Ok(())
 }

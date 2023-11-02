@@ -27,6 +27,7 @@ pub struct DeleteResolverQueryLogConfigInputBuilder {
 }
 impl DeleteResolverQueryLogConfigInputBuilder {
     /// <p>The ID of the query logging configuration that you want to delete.</p>
+    /// This field is required.
     pub fn resolver_query_log_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_id = ::std::option::Option::Some(input.into());
         self

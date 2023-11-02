@@ -14,8 +14,10 @@ impl UpdateGlobalTableInput {
         self.global_table_name.as_deref()
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub fn replica_updates(&self) -> ::std::option::Option<&[crate::types::ReplicaUpdate]> {
-        self.replica_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_updates.is_none()`.
+    pub fn replica_updates(&self) -> &[crate::types::ReplicaUpdate] {
+        self.replica_updates.as_deref().unwrap_or_default()
     }
 }
 impl UpdateGlobalTableInput {
@@ -34,6 +36,7 @@ pub struct UpdateGlobalTableInputBuilder {
 }
 impl UpdateGlobalTableInputBuilder {
     /// <p>The global table name.</p>
+    /// This field is required.
     pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_table_name = ::std::option::Option::Some(input.into());
         self

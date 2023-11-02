@@ -27,6 +27,7 @@ pub struct DeleteStoredQueryInputBuilder {
 }
 impl DeleteStoredQueryInputBuilder {
     /// <p>The name of the query that you want to delete.</p>
+    /// This field is required.
     pub fn query_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_name = ::std::option::Option::Some(input.into());
         self

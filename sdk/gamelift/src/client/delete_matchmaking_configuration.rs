@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMatchmakingConfiguration`](crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationFluentBuilder::set_name): <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationFluentBuilder::set_name):<br>required: **true**<br><p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p><br>
     /// - On success, responds with [`DeleteMatchmakingConfigurationOutput`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteMatchmakingConfigurationError>`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError)
     pub fn delete_matchmaking_configuration(

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewStudioMember {
     /// <p>The persona.</p>
-    pub persona: ::std::option::Option<crate::types::StudioPersona>,
+    pub persona: crate::types::StudioPersona,
     /// <p>The principal ID.</p>
-    pub principal_id: ::std::option::Option<::std::string::String>,
+    pub principal_id: ::std::string::String,
 }
 impl NewStudioMember {
     /// <p>The persona.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::StudioPersona> {
-        self.persona.as_ref()
+    pub fn persona(&self) -> &crate::types::StudioPersona {
+        &self.persona
     }
     /// <p>The principal ID.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
-        self.principal_id.as_deref()
+    pub fn principal_id(&self) -> &str {
+        use std::ops::Deref;
+        self.principal_id.deref()
     }
 }
 impl NewStudioMember {
@@ -35,6 +36,7 @@ pub struct NewStudioMemberBuilder {
 }
 impl NewStudioMemberBuilder {
     /// <p>The persona.</p>
+    /// This field is required.
     pub fn persona(mut self, input: crate::types::StudioPersona) -> Self {
         self.persona = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl NewStudioMemberBuilder {
         &self.persona
     }
     /// <p>The principal ID.</p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl NewStudioMemberBuilder {
         &self.principal_id
     }
     /// Consumes the builder and constructs a [`NewStudioMember`](crate::types::NewStudioMember).
-    pub fn build(self) -> crate::types::NewStudioMember {
-        crate::types::NewStudioMember {
-            persona: self.persona,
-            principal_id: self.principal_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`persona`](crate::types::builders::NewStudioMemberBuilder::persona)
+    /// - [`principal_id`](crate::types::builders::NewStudioMemberBuilder::principal_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::NewStudioMember, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NewStudioMember {
+            persona: self.persona.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "persona",
+                    "persona was not specified but it is required when building NewStudioMember",
+                )
+            })?,
+            principal_id: self.principal_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "principal_id",
+                    "principal_id was not specified but it is required when building NewStudioMember",
+                )
+            })?,
+        })
     }
 }

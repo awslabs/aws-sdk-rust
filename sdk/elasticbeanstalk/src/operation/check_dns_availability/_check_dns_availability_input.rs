@@ -28,6 +28,7 @@ pub struct CheckDnsAvailabilityInputBuilder {
 }
 impl CheckDnsAvailabilityInputBuilder {
     /// <p>The prefix used when this CNAME is reserved.</p>
+    /// This field is required.
     pub fn cname_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cname_prefix = ::std::option::Option::Some(input.into());
         self

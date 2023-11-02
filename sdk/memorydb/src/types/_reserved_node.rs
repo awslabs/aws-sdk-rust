@@ -65,8 +65,10 @@ impl ReservedNode {
         self.state.as_deref()
     }
     /// <p>The recurring price charged to run this reserved node.</p>
-    pub fn recurring_charges(&self) -> ::std::option::Option<&[crate::types::RecurringCharge]> {
-        self.recurring_charges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recurring_charges.is_none()`.
+    pub fn recurring_charges(&self) -> &[crate::types::RecurringCharge] {
+        self.recurring_charges.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the reserved node.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {

@@ -35,6 +35,7 @@ pub struct GetGeoLocationOutputBuilder {
 }
 impl GetGeoLocationOutputBuilder {
     /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
+    /// This field is required.
     pub fn geo_location_details(mut self, input: crate::types::GeoLocationDetails) -> Self {
         self.geo_location_details = ::std::option::Option::Some(input);
         self

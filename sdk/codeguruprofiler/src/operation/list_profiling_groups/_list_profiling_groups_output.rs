@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfilingGroupsOutput {
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
-    pub profiling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub profiling_group_names: ::std::vec::Vec<::std::string::String>,
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
     pub profiling_groups: ::std::option::Option<::std::vec::Vec<crate::types::ProfilingGroupDescription>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
@@ -14,12 +14,15 @@ pub struct ListProfilingGroupsOutput {
 }
 impl ListProfilingGroupsOutput {
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
-    pub fn profiling_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.profiling_group_names.as_deref()
+    pub fn profiling_group_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.profiling_group_names.deref()
     }
     /// <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
-    pub fn profiling_groups(&self) -> ::std::option::Option<&[crate::types::ProfilingGroupDescription]> {
-        self.profiling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiling_groups.is_none()`.
+    pub fn profiling_groups(&self) -> &[crate::types::ProfilingGroupDescription] {
+        self.profiling_groups.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -112,12 +115,22 @@ impl ListProfilingGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProfilingGroupsOutput`](crate::operation::list_profiling_groups::ListProfilingGroupsOutput).
-    pub fn build(self) -> crate::operation::list_profiling_groups::ListProfilingGroupsOutput {
-        crate::operation::list_profiling_groups::ListProfilingGroupsOutput {
-            profiling_group_names: self.profiling_group_names,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_names`](crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder::profiling_group_names)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_profiling_groups::ListProfilingGroupsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_profiling_groups::ListProfilingGroupsOutput {
+            profiling_group_names: self.profiling_group_names.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_names",
+                    "profiling_group_names was not specified but it is required when building ListProfilingGroupsOutput",
+                )
+            })?,
             profiling_groups: self.profiling_groups,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

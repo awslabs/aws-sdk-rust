@@ -49,6 +49,7 @@ pub struct ListElasticsearchInstanceTypesInputBuilder {
 }
 impl ListElasticsearchInstanceTypesInputBuilder {
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
+    /// This field is required.
     pub fn elasticsearch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elasticsearch_version = ::std::option::Option::Some(input.into());
         self

@@ -34,8 +34,10 @@ pub struct ListRepositoryAssociationsInput {
 }
 impl ListRepositoryAssociationsInput {
     /// <p>List of provider types to use as a filter.</p>
-    pub fn provider_types(&self) -> ::std::option::Option<&[crate::types::ProviderType]> {
-        self.provider_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_types.is_none()`.
+    pub fn provider_types(&self) -> &[crate::types::ProviderType] {
+        self.provider_types.as_deref().unwrap_or_default()
     }
     /// <p>List of repository association states to use as a filter.</p>
     /// <p>The valid repository association states are:</p>
@@ -52,16 +54,22 @@ impl ListRepositoryAssociationsInput {
     /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li>
     /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li>
     /// </ul>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::RepositoryAssociationState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::RepositoryAssociationState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>List of repository names to use as a filter.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
-    pub fn owners(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.owners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
+    pub fn owners(&self) -> &[::std::string::String] {
+        self.owners.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

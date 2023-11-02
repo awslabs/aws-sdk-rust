@@ -11,8 +11,10 @@ pub struct SpeakerSearchDetails {
 }
 impl SpeakerSearchDetails {
     /// <p>The result value in the speaker search details.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::SpeakerSearchResult]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::SpeakerSearchResult] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
     pub fn voiceprint_generation_status(&self) -> ::std::option::Option<&str> {

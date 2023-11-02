@@ -17,8 +17,10 @@ impl ListChannelMembershipsOutput {
         self.channel_arn.as_deref()
     }
     /// <p>The information for the requested channel memberships.</p>
-    pub fn channel_memberships(&self) -> ::std::option::Option<&[crate::types::ChannelMembershipSummary]> {
-        self.channel_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_memberships.is_none()`.
+    pub fn channel_memberships(&self) -> &[crate::types::ChannelMembershipSummary] {
+        self.channel_memberships.as_deref().unwrap_or_default()
     }
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

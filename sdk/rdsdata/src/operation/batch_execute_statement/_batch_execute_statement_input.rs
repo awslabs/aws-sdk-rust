@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
-    pub sql: ::std::option::Option<::std::string::String>,
+    pub sql: ::std::string::String,
     /// <p>The name of the database.</p>
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database schema.</p> <note>
@@ -32,17 +32,20 @@ pub struct BatchExecuteStatementInput {
 }
 impl BatchExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
-    pub fn sql(&self) -> ::std::option::Option<&str> {
-        self.sql.as_deref()
+    pub fn sql(&self) -> &str {
+        use std::ops::Deref;
+        self.sql.deref()
     }
     /// <p>The name of the database.</p>
     pub fn database(&self) -> ::std::option::Option<&str> {
@@ -62,8 +65,10 @@ impl BatchExecuteStatementInput {
     /// </ul> <note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn parameter_sets(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::SqlParameter>]> {
-        self.parameter_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_sets.is_none()`.
+    pub fn parameter_sets(&self) -> &[::std::vec::Vec<crate::types::SqlParameter>] {
+        self.parameter_sets.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
@@ -92,6 +97,7 @@ pub struct BatchExecuteStatementInputBuilder {
 }
 impl BatchExecuteStatementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +113,7 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +130,7 @@ impl BatchExecuteStatementInputBuilder {
         &self.secret_arn
     }
     /// <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
+    /// This field is required.
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
         self
@@ -229,14 +237,33 @@ impl BatchExecuteStatementInputBuilder {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::resource_arn)
+    /// - [`secret_arn`](crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::secret_arn)
+    /// - [`sql`](crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::sql)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_execute_statement::BatchExecuteStatementInput {
-            resource_arn: self.resource_arn,
-            secret_arn: self.secret_arn,
-            sql: self.sql,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building BatchExecuteStatementInput",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building BatchExecuteStatementInput",
+                )
+            })?,
+            sql: self.sql.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sql",
+                    "sql was not specified but it is required when building BatchExecuteStatementInput",
+                )
+            })?,
             database: self.database,
             schema: self.schema,
             parameter_sets: self.parameter_sets,

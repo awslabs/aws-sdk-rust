@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InvokeModelOutput {
     /// <p>Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
-    pub body: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub body: ::aws_smithy_types::Blob,
     /// <p>The MIME type of the inference result.</p>
-    pub content_type: ::std::option::Option<::std::string::String>,
+    pub content_type: ::std::string::String,
     _request_id: Option<String>,
 }
 impl InvokeModelOutput {
     /// <p>Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
-    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.body.as_ref()
+    pub fn body(&self) -> &::aws_smithy_types::Blob {
+        &self.body
     }
     /// <p>The MIME type of the inference result.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
-        self.content_type.as_deref()
+    pub fn content_type(&self) -> &str {
+        use std::ops::Deref;
+        self.content_type.deref()
     }
 }
 impl ::std::fmt::Debug for InvokeModelOutput {
@@ -50,6 +51,7 @@ pub struct InvokeModelOutputBuilder {
 }
 impl InvokeModelOutputBuilder {
     /// <p>Inference response from the model in the format specified in the content-type header field. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -64,6 +66,7 @@ impl InvokeModelOutputBuilder {
         &self.body
     }
     /// <p>The MIME type of the inference result.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -87,12 +90,25 @@ impl InvokeModelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InvokeModelOutput`](crate::operation::invoke_model::InvokeModelOutput).
-    pub fn build(self) -> crate::operation::invoke_model::InvokeModelOutput {
-        crate::operation::invoke_model::InvokeModelOutput {
-            body: self.body,
-            content_type: self.content_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`body`](crate::operation::invoke_model::builders::InvokeModelOutputBuilder::body)
+    /// - [`content_type`](crate::operation::invoke_model::builders::InvokeModelOutputBuilder::content_type)
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::invoke_model::InvokeModelOutput {
+            body: self.body.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "body",
+                    "body was not specified but it is required when building InvokeModelOutput",
+                )
+            })?,
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building InvokeModelOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for InvokeModelOutputBuilder {

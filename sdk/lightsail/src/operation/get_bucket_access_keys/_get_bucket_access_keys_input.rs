@@ -27,6 +27,7 @@ pub struct GetBucketAccessKeysInputBuilder {
 }
 impl GetBucketAccessKeysInputBuilder {
     /// <p>The name of the bucket for which to return access keys.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self

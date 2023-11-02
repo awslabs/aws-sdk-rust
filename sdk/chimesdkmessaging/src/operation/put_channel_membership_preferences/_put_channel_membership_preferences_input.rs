@@ -48,6 +48,7 @@ pub struct PutChannelMembershipPreferencesInputBuilder {
 }
 impl PutChannelMembershipPreferencesInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutChannelMembershipPreferencesInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the member setting the preferences.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl PutChannelMembershipPreferencesInputBuilder {
         &self.member_arn
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl PutChannelMembershipPreferencesInputBuilder {
         &self.chime_bearer
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+    /// This field is required.
     pub fn preferences(mut self, input: crate::types::ChannelMembershipPreferences) -> Self {
         self.preferences = ::std::option::Option::Some(input);
         self

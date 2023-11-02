@@ -34,6 +34,7 @@ pub struct DescribeObservationInputBuilder {
 }
 impl DescribeObservationInputBuilder {
     /// <p>The ID of the observation.</p>
+    /// This field is required.
     pub fn observation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observation_id = ::std::option::Option::Some(input.into());
         self

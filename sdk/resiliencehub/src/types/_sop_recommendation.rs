@@ -5,26 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SopRecommendation {
     /// <p>The service type.</p>
-    pub service_type: ::std::option::Option<crate::types::SopServiceType>,
+    pub service_type: crate::types::SopServiceType,
     /// <p>Name of the Application Component.</p>
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the SOP recommendation.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Identifier for the SOP recommendation.</p>
-    pub recommendation_id: ::std::option::Option<::std::string::String>,
+    pub recommendation_id: ::std::string::String,
     /// <p>Name of the SOP recommendation.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation items.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationItem>>,
     /// <p>Reference identifier for the SOP recommendation.</p>
-    pub reference_id: ::std::option::Option<::std::string::String>,
+    pub reference_id: ::std::string::String,
     /// <p>Prerequisite for the SOP recommendation.</p>
     pub prerequisite: ::std::option::Option<::std::string::String>,
 }
 impl SopRecommendation {
     /// <p>The service type.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::SopServiceType> {
-        self.service_type.as_ref()
+    pub fn service_type(&self) -> &crate::types::SopServiceType {
+        &self.service_type
     }
     /// <p>Name of the Application Component.</p>
     pub fn app_component_name(&self) -> ::std::option::Option<&str> {
@@ -35,20 +35,24 @@ impl SopRecommendation {
         self.description.as_deref()
     }
     /// <p>Identifier for the SOP recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
-        self.recommendation_id.as_deref()
+    pub fn recommendation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.recommendation_id.deref()
     }
     /// <p>Name of the SOP recommendation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The recommendation items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::RecommendationItem]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::RecommendationItem] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Reference identifier for the SOP recommendation.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
-        self.reference_id.as_deref()
+    pub fn reference_id(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_id.deref()
     }
     /// <p>Prerequisite for the SOP recommendation.</p>
     pub fn prerequisite(&self) -> ::std::option::Option<&str> {
@@ -77,6 +81,7 @@ pub struct SopRecommendationBuilder {
 }
 impl SopRecommendationBuilder {
     /// <p>The service type.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::SopServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -119,6 +124,7 @@ impl SopRecommendationBuilder {
         &self.description
     }
     /// <p>Identifier for the SOP recommendation.</p>
+    /// This field is required.
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +173,7 @@ impl SopRecommendationBuilder {
         &self.items
     }
     /// <p>Reference identifier for the SOP recommendation.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
@@ -195,16 +202,35 @@ impl SopRecommendationBuilder {
         &self.prerequisite
     }
     /// Consumes the builder and constructs a [`SopRecommendation`](crate::types::SopRecommendation).
-    pub fn build(self) -> crate::types::SopRecommendation {
-        crate::types::SopRecommendation {
-            service_type: self.service_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_type`](crate::types::builders::SopRecommendationBuilder::service_type)
+    /// - [`recommendation_id`](crate::types::builders::SopRecommendationBuilder::recommendation_id)
+    /// - [`reference_id`](crate::types::builders::SopRecommendationBuilder::reference_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SopRecommendation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SopRecommendation {
+            service_type: self.service_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_type",
+                    "service_type was not specified but it is required when building SopRecommendation",
+                )
+            })?,
             app_component_name: self.app_component_name,
             description: self.description,
-            recommendation_id: self.recommendation_id,
+            recommendation_id: self.recommendation_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recommendation_id",
+                    "recommendation_id was not specified but it is required when building SopRecommendation",
+                )
+            })?,
             name: self.name,
             items: self.items,
-            reference_id: self.reference_id,
+            reference_id: self.reference_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reference_id",
+                    "reference_id was not specified but it is required when building SopRecommendation",
+                )
+            })?,
             prerequisite: self.prerequisite,
-        }
+        })
     }
 }

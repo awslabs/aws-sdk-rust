@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
-    pub function_arn: ::std::option::Option<::std::string::String>,
+    pub function_arn: ::std::string::String,
 }
 impl LambdaAction {
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
-        self.function_arn.as_deref()
+    pub fn function_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.function_arn.deref()
     }
 }
 impl LambdaAction {
@@ -28,6 +29,7 @@ pub struct LambdaActionBuilder {
 }
 impl LambdaActionBuilder {
     /// <p>The ARN of the Lambda function.</p>
+    /// This field is required.
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl LambdaActionBuilder {
         &self.function_arn
     }
     /// Consumes the builder and constructs a [`LambdaAction`](crate::types::LambdaAction).
-    pub fn build(self) -> crate::types::LambdaAction {
-        crate::types::LambdaAction {
-            function_arn: self.function_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_arn`](crate::types::builders::LambdaActionBuilder::function_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaAction {
+            function_arn: self.function_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "function_arn",
+                    "function_arn was not specified but it is required when building LambdaAction",
+                )
+            })?,
+        })
     }
 }

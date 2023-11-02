@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The name of the gateway route.</p>
-    pub gateway_route_name: ::std::option::Option<::std::string::String>,
+    pub gateway_route_name: ::std::string::String,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub virtual_gateway_name: ::std::string::String,
     /// <p>The specifications of the gateway route.</p>
     pub spec: ::std::option::Option<crate::types::GatewayRouteSpec>,
     /// <p>An object that represents metadata for a resource.</p>
@@ -19,16 +19,19 @@ pub struct GatewayRouteData {
 }
 impl GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The name of the gateway route.</p>
-    pub fn gateway_route_name(&self) -> ::std::option::Option<&str> {
-        self.gateway_route_name.as_deref()
+    pub fn gateway_route_name(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_route_name.deref()
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_gateway_name.as_deref()
+    pub fn virtual_gateway_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_gateway_name.deref()
     }
     /// <p>The specifications of the gateway route.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::GatewayRouteSpec> {
@@ -63,6 +66,7 @@ pub struct GatewayRouteDataBuilder {
 }
 impl GatewayRouteDataBuilder {
     /// <p>The name of the service mesh that the resource resides in. </p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl GatewayRouteDataBuilder {
         &self.mesh_name
     }
     /// <p>The name of the gateway route.</p>
+    /// This field is required.
     pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl GatewayRouteDataBuilder {
         &self.gateway_route_name
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl GatewayRouteDataBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The specifications of the gateway route.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::GatewayRouteSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -119,6 +126,7 @@ impl GatewayRouteDataBuilder {
         &self.spec
     }
     /// <p>An object that represents metadata for a resource.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -133,6 +141,7 @@ impl GatewayRouteDataBuilder {
         &self.metadata
     }
     /// <p>The status of the gateway route.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::GatewayRouteStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -147,14 +156,33 @@ impl GatewayRouteDataBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`GatewayRouteData`](crate::types::GatewayRouteData).
-    pub fn build(self) -> crate::types::GatewayRouteData {
-        crate::types::GatewayRouteData {
-            mesh_name: self.mesh_name,
-            gateway_route_name: self.gateway_route_name,
-            virtual_gateway_name: self.virtual_gateway_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mesh_name`](crate::types::builders::GatewayRouteDataBuilder::mesh_name)
+    /// - [`gateway_route_name`](crate::types::builders::GatewayRouteDataBuilder::gateway_route_name)
+    /// - [`virtual_gateway_name`](crate::types::builders::GatewayRouteDataBuilder::virtual_gateway_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewayRouteData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GatewayRouteData {
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building GatewayRouteData",
+                )
+            })?,
+            gateway_route_name: self.gateway_route_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_route_name",
+                    "gateway_route_name was not specified but it is required when building GatewayRouteData",
+                )
+            })?,
+            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_gateway_name",
+                    "virtual_gateway_name was not specified but it is required when building GatewayRouteData",
+                )
+            })?,
             spec: self.spec,
             metadata: self.metadata,
             status: self.status,
-        }
+        })
     }
 }

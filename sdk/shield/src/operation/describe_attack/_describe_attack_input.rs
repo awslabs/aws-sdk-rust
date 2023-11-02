@@ -27,6 +27,7 @@ pub struct DescribeAttackInputBuilder {
 }
 impl DescribeAttackInputBuilder {
     /// <p>The unique identifier (ID) for the attack.</p>
+    /// This field is required.
     pub fn attack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attack_id = ::std::option::Option::Some(input.into());
         self

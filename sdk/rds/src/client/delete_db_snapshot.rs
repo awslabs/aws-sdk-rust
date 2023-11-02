@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDBSnapshot`](crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_snapshot_identifier(impl Into<String>)`](crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder::db_snapshot_identifier) / [`set_db_snapshot_identifier(Option<String>)`](crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder::set_db_snapshot_identifier): <p>The DB snapshot identifier.</p>  <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
+    ///   - [`db_snapshot_identifier(impl Into<String>)`](crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder::db_snapshot_identifier) / [`set_db_snapshot_identifier(Option<String>)`](crate::operation::delete_db_snapshot::builders::DeleteDBSnapshotFluentBuilder::set_db_snapshot_identifier):<br>required: **true**<br><p>The DB snapshot identifier.</p>  <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p><br>
     /// - On success, responds with [`DeleteDbSnapshotOutput`](crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput) with field(s):
     ///   - [`db_snapshot(Option<DbSnapshot>)`](crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput::db_snapshot): <p>Contains the details of an Amazon RDS DB snapshot.</p>  <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     /// - On failure, responds with [`SdkError<DeleteDBSnapshotError>`](crate::operation::delete_db_snapshot::DeleteDBSnapshotError)

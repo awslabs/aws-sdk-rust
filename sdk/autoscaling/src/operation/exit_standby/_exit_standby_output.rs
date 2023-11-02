@@ -9,8 +9,10 @@ pub struct ExitStandbyOutput {
 }
 impl ExitStandbyOutput {
     /// <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
-    pub fn activities(&self) -> ::std::option::Option<&[crate::types::Activity]> {
-        self.activities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activities.is_none()`.
+    pub fn activities(&self) -> &[crate::types::Activity] {
+        self.activities.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ExitStandbyOutput {

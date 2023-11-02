@@ -89,8 +89,10 @@ impl Scan {
         self.file_count
     }
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
-    pub fn attached_volumes(&self) -> ::std::option::Option<&[crate::types::VolumeDetail]> {
-        self.attached_volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_volumes.is_none()`.
+    pub fn attached_volumes(&self) -> &[crate::types::VolumeDetail] {
+        self.attached_volumes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the scan type that invoked the malware scan.</p>
     pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {

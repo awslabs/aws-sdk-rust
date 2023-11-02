@@ -89,6 +89,7 @@ pub struct CreateDataSourceFromRedshiftInputBuilder {
 }
 impl CreateDataSourceFromRedshiftInputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +131,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn data_spec(mut self, input: crate::types::RedshiftDataSpec) -> Self {
         self.data_spec = ::std::option::Option::Some(input);
         self
@@ -174,6 +176,7 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
     /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

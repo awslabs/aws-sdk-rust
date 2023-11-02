@@ -21,8 +21,10 @@ impl GetCellReadinessSummaryOutput {
         self.readiness.as_ref()
     }
     /// <p>Summaries for the readiness checks that make up the cell.</p>
-    pub fn readiness_checks(&self) -> ::std::option::Option<&[crate::types::ReadinessCheckSummary]> {
-        self.readiness_checks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readiness_checks.is_none()`.
+    pub fn readiness_checks(&self) -> &[crate::types::ReadinessCheckSummary] {
+        self.readiness_checks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCellReadinessSummaryOutput {

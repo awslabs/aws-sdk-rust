@@ -58,6 +58,7 @@ pub struct CreateConnectorInputBuilder {
 }
 impl CreateConnectorInputBuilder {
     /// <p>Create Connector request name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl CreateConnectorInputBuilder {
         &self.name
     }
     /// <p>Create Connector request SSM instance ID.</p>
+    /// This field is required.
     pub fn ssm_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssm_instance_id = ::std::option::Option::Some(input.into());
         self

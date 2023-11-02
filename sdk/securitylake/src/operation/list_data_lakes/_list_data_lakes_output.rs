@@ -9,8 +9,10 @@ pub struct ListDataLakesOutput {
 }
 impl ListDataLakesOutput {
     /// <p>Retrieves the Security Lake configuration object.</p>
-    pub fn data_lakes(&self) -> ::std::option::Option<&[crate::types::DataLakeResource]> {
-        self.data_lakes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_lakes.is_none()`.
+    pub fn data_lakes(&self) -> &[crate::types::DataLakeResource] {
+        self.data_lakes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDataLakesOutput {

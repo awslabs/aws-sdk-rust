@@ -82,6 +82,7 @@ pub struct SendChannelMessageInputBuilder {
 }
 impl SendChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl SendChannelMessageInputBuilder {
         &self.channel_arn
     }
     /// <p>The content of the message.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +112,7 @@ impl SendChannelMessageInputBuilder {
         &self.content
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -124,6 +127,7 @@ impl SendChannelMessageInputBuilder {
         &self.r#type
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    /// This field is required.
     pub fn persistence(mut self, input: crate::types::ChannelMessagePersistenceType) -> Self {
         self.persistence = ::std::option::Option::Some(input);
         self
@@ -152,6 +156,7 @@ impl SendChannelMessageInputBuilder {
         &self.metadata
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

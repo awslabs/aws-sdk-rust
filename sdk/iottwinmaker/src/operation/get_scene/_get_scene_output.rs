@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSceneOutput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ID of the scene.</p>
-    pub scene_id: ::std::option::Option<::std::string::String>,
+    pub scene_id: ::std::string::String,
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub content_location: ::std::option::Option<::std::string::String>,
+    pub content_location: ::std::string::String,
     /// <p>The ARN of the scene.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time when the scene was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the scene was last updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
     /// <p>The description of the scene.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of capabilities that the scene uses to render.</p>
@@ -29,36 +29,42 @@ pub struct GetSceneOutput {
 }
 impl GetSceneOutput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> ::std::option::Option<&str> {
-        self.scene_id.as_deref()
+    pub fn scene_id(&self) -> &str {
+        use std::ops::Deref;
+        self.scene_id.deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(&self) -> ::std::option::Option<&str> {
-        self.content_location.as_deref()
+    pub fn content_location(&self) -> &str {
+        use std::ops::Deref;
+        self.content_location.deref()
     }
     /// <p>The ARN of the scene.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time when the scene was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The date and time when the scene was last updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
     /// <p>The description of the scene.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[::std::string::String] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The response metadata.</p>
     pub fn scene_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -104,6 +110,7 @@ pub struct GetSceneOutputBuilder {
 }
 impl GetSceneOutputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +125,7 @@ impl GetSceneOutputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the scene.</p>
+    /// This field is required.
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +140,7 @@ impl GetSceneOutputBuilder {
         &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
+    /// This field is required.
     pub fn content_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_location = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +155,7 @@ impl GetSceneOutputBuilder {
         &self.content_location
     }
     /// <p>The ARN of the scene.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +170,7 @@ impl GetSceneOutputBuilder {
         &self.arn
     }
     /// <p>The date and time when the scene was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -174,6 +185,7 @@ impl GetSceneOutputBuilder {
         &self.creation_date_time
     }
     /// <p>The date and time when the scene was last updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -299,20 +311,57 @@ impl GetSceneOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSceneOutput`](crate::operation::get_scene::GetSceneOutput).
-    pub fn build(self) -> crate::operation::get_scene::GetSceneOutput {
-        crate::operation::get_scene::GetSceneOutput {
-            workspace_id: self.workspace_id,
-            scene_id: self.scene_id,
-            content_location: self.content_location,
-            arn: self.arn,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::get_scene::builders::GetSceneOutputBuilder::workspace_id)
+    /// - [`scene_id`](crate::operation::get_scene::builders::GetSceneOutputBuilder::scene_id)
+    /// - [`content_location`](crate::operation::get_scene::builders::GetSceneOutputBuilder::content_location)
+    /// - [`arn`](crate::operation::get_scene::builders::GetSceneOutputBuilder::arn)
+    /// - [`creation_date_time`](crate::operation::get_scene::builders::GetSceneOutputBuilder::creation_date_time)
+    /// - [`update_date_time`](crate::operation::get_scene::builders::GetSceneOutputBuilder::update_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_scene::GetSceneOutput {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building GetSceneOutput",
+                )
+            })?,
+            scene_id: self.scene_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scene_id",
+                    "scene_id was not specified but it is required when building GetSceneOutput",
+                )
+            })?,
+            content_location: self.content_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_location",
+                    "content_location was not specified but it is required when building GetSceneOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetSceneOutput",
+                )
+            })?,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building GetSceneOutput",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building GetSceneOutput",
+                )
+            })?,
             description: self.description,
             capabilities: self.capabilities,
             scene_metadata: self.scene_metadata,
             generated_scene_metadata: self.generated_scene_metadata,
             error: self.error,
             _request_id: self._request_id,
-        }
+        })
     }
 }

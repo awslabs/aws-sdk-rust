@@ -27,6 +27,7 @@ pub struct GetDomainInputBuilder {
 }
 impl GetDomainInputBuilder {
     /// <p>The identifier of the specified Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

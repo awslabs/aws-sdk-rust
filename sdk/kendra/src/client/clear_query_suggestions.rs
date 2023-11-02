@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ClearQuerySuggestions`](crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsFluentBuilder::set_index_id): <p>The identifier of the index you want to clear query suggestions from.</p>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index you want to clear query suggestions from.</p><br>
     /// - On success, responds with [`ClearQuerySuggestionsOutput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput)
     /// - On failure, responds with [`SdkError<ClearQuerySuggestionsError>`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsError)
     pub fn clear_query_suggestions(&self) -> crate::operation::clear_query_suggestions::builders::ClearQuerySuggestionsFluentBuilder {

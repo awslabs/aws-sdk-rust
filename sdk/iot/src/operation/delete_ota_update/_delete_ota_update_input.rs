@@ -41,6 +41,7 @@ pub struct DeleteOtaUpdateInputBuilder {
 }
 impl DeleteOtaUpdateInputBuilder {
     /// <p>The ID of the OTA update to delete.</p>
+    /// This field is required.
     pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_id = ::std::option::Option::Some(input.into());
         self

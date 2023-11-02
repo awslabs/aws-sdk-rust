@@ -15,8 +15,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
-    pub fn resource_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arn_list.is_none()`.
+    pub fn resource_arn_list(&self) -> &[::std::string::String] {
+        self.resource_arn_list.as_deref().unwrap_or_default()
     }
 }
 impl ListTagsForResourceInput {

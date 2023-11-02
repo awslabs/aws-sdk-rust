@@ -27,6 +27,7 @@ pub struct DeleteBridgeInputBuilder {
 }
 impl DeleteBridgeInputBuilder {
     /// The ARN of the bridge that you want to delete.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self

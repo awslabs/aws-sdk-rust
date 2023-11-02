@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFleet`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet(impl Into<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`fleet(impl Into<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::describe_fleet::builders::DescribeFleetFluentBuilder::set_fleet):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the fleet.</p><br>
     /// - On success, responds with [`DescribeFleetOutput`](crate::operation::describe_fleet::DescribeFleetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_fleet::DescribeFleetOutput::name): <p>The name of the fleet.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_fleet::DescribeFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>

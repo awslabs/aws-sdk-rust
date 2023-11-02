@@ -14,8 +14,10 @@ impl DeregisterTargetsInput {
         self.target_group_arn.as_deref()
     }
     /// <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::TargetDescription]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::TargetDescription] {
+        self.targets.as_deref().unwrap_or_default()
     }
 }
 impl DeregisterTargetsInput {
@@ -34,6 +36,7 @@ pub struct DeregisterTargetsInputBuilder {
 }
 impl DeregisterTargetsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self

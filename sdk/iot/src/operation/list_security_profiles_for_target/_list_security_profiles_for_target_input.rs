@@ -90,6 +90,7 @@ impl ListSecurityProfilesForTargetInputBuilder {
         &self.recursive
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
+    /// This field is required.
     pub fn security_profile_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_profile_target_arn = ::std::option::Option::Some(input.into());
         self

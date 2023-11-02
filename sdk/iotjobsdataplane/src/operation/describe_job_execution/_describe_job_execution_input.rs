@@ -48,6 +48,7 @@ pub struct DescribeJobExecutionInputBuilder {
 }
 impl DescribeJobExecutionInputBuilder {
     /// <p>The unique identifier assigned to this job when it was created.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeJobExecutionInputBuilder {
         &self.job_id
     }
     /// <p>The thing name associated with the device the job execution is running on.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self

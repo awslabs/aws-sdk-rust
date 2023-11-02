@@ -41,6 +41,7 @@ pub struct DeleteBucketInventoryConfigurationInputBuilder {
 }
 impl DeleteBucketInventoryConfigurationInputBuilder {
     /// <p>The name of the bucket containing the inventory configuration to delete.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteBucketInventoryConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID used to identify the inventory configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

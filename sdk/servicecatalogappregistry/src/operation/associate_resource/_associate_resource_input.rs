@@ -41,6 +41,7 @@ pub struct AssociateResourceInputBuilder {
 }
 impl AssociateResourceInputBuilder {
     /// <p> The name, ID, or ARN of the application. </p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateResourceInputBuilder {
         &self.application
     }
     /// <p>The type of resource of which the application will be associated.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl AssociateResourceInputBuilder {
         &self.resource_type
     }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self

@@ -22,8 +22,10 @@ impl CreateSpaceInput {
         self.space_name.as_deref()
     }
     /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A collection of space settings.</p>
     pub fn space_settings(&self) -> ::std::option::Option<&crate::types::SpaceSettings> {
@@ -48,6 +50,7 @@ pub struct CreateSpaceInputBuilder {
 }
 impl CreateSpaceInputBuilder {
     /// <p>The ID of the associated Domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateSpaceInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self

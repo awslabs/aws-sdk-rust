@@ -4,19 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was modified.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteRecipeVersionOutput {
     /// <p>The name of the recipe that was modified.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::RecipeVersionErrorDetail]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::RecipeVersionErrorDetail] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteRecipeVersionOutput {
@@ -41,6 +44,7 @@ pub struct BatchDeleteRecipeVersionOutputBuilder {
 }
 impl BatchDeleteRecipeVersionOutputBuilder {
     /// <p>The name of the recipe that was modified.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,23 @@ impl BatchDeleteRecipeVersionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteRecipeVersionOutput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput).
-    pub fn build(self) -> crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
-        crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building BatchDeleteRecipeVersionOutput",
+                )
+            })?,
             errors: self.errors,
             _request_id: self._request_id,
-        }
+        })
     }
 }

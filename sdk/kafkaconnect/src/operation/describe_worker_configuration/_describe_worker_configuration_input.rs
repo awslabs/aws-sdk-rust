@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkerConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub worker_configuration_arn: ::std::string::String,
 }
 impl DescribeWorkerConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    pub fn worker_configuration_arn(&self) -> ::std::option::Option<&str> {
-        self.worker_configuration_arn.as_deref()
+    pub fn worker_configuration_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.worker_configuration_arn.deref()
     }
 }
 impl DescribeWorkerConfigurationInput {
@@ -27,6 +28,7 @@ pub struct DescribeWorkerConfigurationInputBuilder {
 }
 impl DescribeWorkerConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
+    /// This field is required.
     pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl DescribeWorkerConfigurationInputBuilder {
         &self.worker_configuration_arn
     }
     /// Consumes the builder and constructs a [`DescribeWorkerConfigurationInput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`worker_configuration_arn`](crate::operation::describe_worker_configuration::builders::DescribeWorkerConfigurationInputBuilder::worker_configuration_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl DescribeWorkerConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput {
-            worker_configuration_arn: self.worker_configuration_arn,
+            worker_configuration_arn: self.worker_configuration_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "worker_configuration_arn",
+                    "worker_configuration_arn was not specified but it is required when building DescribeWorkerConfigurationInput",
+                )
+            })?,
         })
     }
 }

@@ -7,7 +7,7 @@ pub struct NetworkReachabilityDetails {
     /// <p>An object that contains details about the open port range associated with a finding.</p>
     pub open_port_range: ::std::option::Option<crate::types::PortRange>,
     /// <p>The protocol associated with a finding.</p>
-    pub protocol: ::std::option::Option<crate::types::NetworkProtocol>,
+    pub protocol: crate::types::NetworkProtocol,
     /// <p>An object that contains details about a network path associated with a finding.</p>
     pub network_path: ::std::option::Option<crate::types::NetworkPath>,
 }
@@ -17,8 +17,8 @@ impl NetworkReachabilityDetails {
         self.open_port_range.as_ref()
     }
     /// <p>The protocol associated with a finding.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::NetworkProtocol> {
-        self.protocol.as_ref()
+    pub fn protocol(&self) -> &crate::types::NetworkProtocol {
+        &self.protocol
     }
     /// <p>An object that contains details about a network path associated with a finding.</p>
     pub fn network_path(&self) -> ::std::option::Option<&crate::types::NetworkPath> {
@@ -42,6 +42,7 @@ pub struct NetworkReachabilityDetailsBuilder {
 }
 impl NetworkReachabilityDetailsBuilder {
     /// <p>An object that contains details about the open port range associated with a finding.</p>
+    /// This field is required.
     pub fn open_port_range(mut self, input: crate::types::PortRange) -> Self {
         self.open_port_range = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl NetworkReachabilityDetailsBuilder {
         &self.open_port_range
     }
     /// <p>The protocol associated with a finding.</p>
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::NetworkProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl NetworkReachabilityDetailsBuilder {
         &self.protocol
     }
     /// <p>An object that contains details about a network path associated with a finding.</p>
+    /// This field is required.
     pub fn network_path(mut self, input: crate::types::NetworkPath) -> Self {
         self.network_path = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl NetworkReachabilityDetailsBuilder {
         &self.network_path
     }
     /// Consumes the builder and constructs a [`NetworkReachabilityDetails`](crate::types::NetworkReachabilityDetails).
-    pub fn build(self) -> crate::types::NetworkReachabilityDetails {
-        crate::types::NetworkReachabilityDetails {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`protocol`](crate::types::builders::NetworkReachabilityDetailsBuilder::protocol)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkReachabilityDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkReachabilityDetails {
             open_port_range: self.open_port_range,
-            protocol: self.protocol,
+            protocol: self.protocol.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protocol",
+                    "protocol was not specified but it is required when building NetworkReachabilityDetails",
+                )
+            })?,
             network_path: self.network_path,
-        }
+        })
     }
 }

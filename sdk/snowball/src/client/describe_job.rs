@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJob`](crate::operation::describe_job::builders::DescribeJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_job_id): <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p><br>
     /// - On success, responds with [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput) with field(s):
     ///   - [`job_metadata(Option<JobMetadata>)`](crate::operation::describe_job::DescribeJobOutput::job_metadata): <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     ///   - [`sub_job_metadata(Option<Vec<JobMetadata>>)`](crate::operation::describe_job::DescribeJobOutput::sub_job_metadata): <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>

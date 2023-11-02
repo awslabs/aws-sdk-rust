@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRowData {
     /// <p> The id of the row that needs to be updated. </p>
-    pub row_id: ::std::option::Option<::std::string::String>,
+    pub row_id: ::std::string::String,
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub cells_to_update: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CellInput>>,
+    pub cells_to_update: ::std::collections::HashMap<::std::string::String, crate::types::CellInput>,
 }
 impl UpdateRowData {
     /// <p> The id of the row that needs to be updated. </p>
-    pub fn row_id(&self) -> ::std::option::Option<&str> {
-        self.row_id.as_deref()
+    pub fn row_id(&self) -> &str {
+        use std::ops::Deref;
+        self.row_id.deref()
     }
     /// <p> A map representing the cells to update in the given row. The key is the column id of the cell and the value is the CellInput object that represents the data to set in that cell. </p>
-    pub fn cells_to_update(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CellInput>> {
-        self.cells_to_update.as_ref()
+    pub fn cells_to_update(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CellInput> {
+        &self.cells_to_update
     }
 }
 impl UpdateRowData {
@@ -35,6 +36,7 @@ pub struct UpdateRowDataBuilder {
 }
 impl UpdateRowDataBuilder {
     /// <p> The id of the row that needs to be updated. </p>
+    /// This field is required.
     pub fn row_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.row_id = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +74,23 @@ impl UpdateRowDataBuilder {
         &self.cells_to_update
     }
     /// Consumes the builder and constructs a [`UpdateRowData`](crate::types::UpdateRowData).
-    pub fn build(self) -> crate::types::UpdateRowData {
-        crate::types::UpdateRowData {
-            row_id: self.row_id,
-            cells_to_update: self.cells_to_update,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`row_id`](crate::types::builders::UpdateRowDataBuilder::row_id)
+    /// - [`cells_to_update`](crate::types::builders::UpdateRowDataBuilder::cells_to_update)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateRowData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateRowData {
+            row_id: self.row_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "row_id",
+                    "row_id was not specified but it is required when building UpdateRowData",
+                )
+            })?,
+            cells_to_update: self.cells_to_update.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cells_to_update",
+                    "cells_to_update was not specified but it is required when building UpdateRowData",
+                )
+            })?,
+        })
     }
 }

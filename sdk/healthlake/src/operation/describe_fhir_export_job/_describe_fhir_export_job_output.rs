@@ -34,6 +34,7 @@ pub struct DescribeFhirExportJobOutputBuilder {
 }
 impl DescribeFhirExportJobOutputBuilder {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
+    /// This field is required.
     pub fn export_job_properties(mut self, input: crate::types::ExportJobProperties) -> Self {
         self.export_job_properties = ::std::option::Option::Some(input);
         self

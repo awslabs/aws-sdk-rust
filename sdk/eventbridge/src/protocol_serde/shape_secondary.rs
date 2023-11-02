@@ -31,7 +31,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::secondary_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -43,8 +45,8 @@ pub fn ser_secondary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Secondary,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.route {
-        object.key("Route").string(var_1.as_str());
+    {
+        object.key("Route").string(input.route.as_str());
     }
     Ok(())
 }

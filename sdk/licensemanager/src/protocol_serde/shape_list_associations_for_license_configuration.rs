@@ -36,8 +36,8 @@ pub fn de_list_associations_for_license_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AuthorizationException" => crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError::AuthorizationException({
@@ -52,8 +52,8 @@ pub fn de_list_associations_for_license_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "FilterLimitExceededException" => crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError::FilterLimitExceededException({
@@ -68,8 +68,8 @@ pub fn de_list_associations_for_license_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError::InvalidParameterValueException({
@@ -84,8 +84,8 @@ pub fn de_list_associations_for_license_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RateLimitExceededException" => crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError::RateLimitExceededException({
@@ -100,8 +100,8 @@ pub fn de_list_associations_for_license_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServerInternalException" => crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError::ServerInternalException({
@@ -116,8 +116,8 @@ pub fn de_list_associations_for_license_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError::generic(generic)

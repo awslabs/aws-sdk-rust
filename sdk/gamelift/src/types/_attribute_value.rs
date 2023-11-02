@@ -23,8 +23,10 @@ impl AttributeValue {
         self.n
     }
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
-    pub fn sl(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sl.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sl.is_none()`.
+    pub fn sl(&self) -> &[::std::string::String] {
+        self.sl.as_deref().unwrap_or_default()
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn sdm(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {

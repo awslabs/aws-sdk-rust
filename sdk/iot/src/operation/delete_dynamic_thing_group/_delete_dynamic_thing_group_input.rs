@@ -34,6 +34,7 @@ pub struct DeleteDynamicThingGroupInputBuilder {
 }
 impl DeleteDynamicThingGroupInputBuilder {
     /// <p>The name of the dynamic thing group to delete.</p>
+    /// This field is required.
     pub fn thing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_group_name = ::std::option::Option::Some(input.into());
         self

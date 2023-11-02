@@ -11,8 +11,10 @@ pub struct ListTagsOutput {
 }
 impl ListTagsOutput {
     /// <p>An array of <code>Tag</code> objects, each with a tag key and a value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> If response is truncated, SageMaker includes a token in the response. You can use this token in your subsequent request to fetch next set of tokens. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

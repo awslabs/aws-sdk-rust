@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferIcd10CmOutput {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>>,
+    pub entities: ::std::vec::Vec<crate::types::Icd10CmEntity>,
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
@@ -13,8 +13,9 @@ pub struct InferIcd10CmOutput {
 }
 impl InferIcd10CmOutput {
     /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Icd10CmEntity]> {
-        self.entities.as_deref()
+    pub fn entities(&self) -> &[crate::types::Icd10CmEntity] {
+        use std::ops::Deref;
+        self.entities.deref()
     }
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
@@ -105,12 +106,21 @@ impl InferIcd10CmOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InferIcd10CmOutput`](crate::operation::infer_icd10_cm::InferIcd10CmOutput).
-    pub fn build(self) -> crate::operation::infer_icd10_cm::InferIcd10CmOutput {
-        crate::operation::infer_icd10_cm::InferIcd10CmOutput {
-            entities: self.entities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entities`](crate::operation::infer_icd10_cm::builders::InferIcd10CmOutputBuilder::entities)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::infer_icd10_cm::InferIcd10CmOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::infer_icd10_cm::InferIcd10CmOutput {
+            entities: self.entities.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entities",
+                    "entities was not specified but it is required when building InferIcd10CmOutput",
+                )
+            })?,
             pagination_token: self.pagination_token,
             model_version: self.model_version,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl ListAvailableManagedRuleGroupsOutput {
         self.next_marker.as_deref()
     }
     /// <p>Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn managed_rule_groups(&self) -> ::std::option::Option<&[crate::types::ManagedRuleGroupSummary]> {
-        self.managed_rule_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rule_groups.is_none()`.
+    pub fn managed_rule_groups(&self) -> &[crate::types::ManagedRuleGroupSummary] {
+        self.managed_rule_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAvailableManagedRuleGroupsOutput {

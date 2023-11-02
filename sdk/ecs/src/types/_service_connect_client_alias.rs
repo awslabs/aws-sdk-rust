@@ -8,7 +8,7 @@
 pub struct ServiceConnectClientAlias {
     /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
     /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
     /// <p>The <code>dnsName</code> is the name that you use in the applications of client tasks to connect to this service. The name must be a valid DNS name but doesn't need to be fully-qualified. The name can include up to 127 characters. The name can include lowercase letters, numbers, underscores (_), hyphens (-), and periods (.). The name can't start with a hyphen.</p>
     /// <p>If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in <code>portName.namespace</code>.</p>
     /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same name that the client application uses by default. For example, a few common names are <code>database</code>, <code>db</code>, or the lowercase name of a database, such as <code>mysql</code> or <code>redis</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -17,7 +17,7 @@ pub struct ServiceConnectClientAlias {
 impl ServiceConnectClientAlias {
     /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
     /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The <code>dnsName</code> is the name that you use in the applications of client tasks to connect to this service. The name must be a valid DNS name but doesn't need to be fully-qualified. The name can include up to 127 characters. The name can include lowercase letters, numbers, underscores (_), hyphens (-), and periods (.). The name can't start with a hyphen.</p>
@@ -44,6 +44,7 @@ pub struct ServiceConnectClientAliasBuilder {
 impl ServiceConnectClientAliasBuilder {
     /// <p>The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.</p>
     /// <p>To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -80,10 +81,17 @@ impl ServiceConnectClientAliasBuilder {
         &self.dns_name
     }
     /// Consumes the builder and constructs a [`ServiceConnectClientAlias`](crate::types::ServiceConnectClientAlias).
-    pub fn build(self) -> crate::types::ServiceConnectClientAlias {
-        crate::types::ServiceConnectClientAlias {
-            port: self.port,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`port`](crate::types::builders::ServiceConnectClientAliasBuilder::port)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceConnectClientAlias, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceConnectClientAlias {
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building ServiceConnectClientAlias",
+                )
+            })?,
             dns_name: self.dns_name,
-        }
+        })
     }
 }

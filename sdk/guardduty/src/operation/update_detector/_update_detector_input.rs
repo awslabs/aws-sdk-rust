@@ -36,8 +36,10 @@ impl UpdateDetectorInput {
         self.data_sources.as_ref()
     }
     /// <p>Provides the features that will be updated for the detector.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::DetectorFeatureConfiguration]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::DetectorFeatureConfiguration] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDetectorInput {
@@ -59,6 +61,7 @@ pub struct UpdateDetectorInputBuilder {
 }
 impl UpdateDetectorInputBuilder {
     /// <p>The unique ID of the detector to update.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self

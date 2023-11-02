@@ -210,6 +210,7 @@ pub struct CreatePipelineInputBuilder {
 impl CreatePipelineInputBuilder {
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -226,6 +227,7 @@ impl CreatePipelineInputBuilder {
         &self.name
     }
     /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
+    /// This field is required.
     pub fn input_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_bucket = ::std::option::Option::Some(input.into());
         self
@@ -284,6 +286,7 @@ impl CreatePipelineInputBuilder {
         &self.output_bucket
     }
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self

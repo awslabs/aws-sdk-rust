@@ -13,8 +13,10 @@ pub struct DescribeTapeArchivesInput {
 }
 impl DescribeTapeArchivesInput {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn tape_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tape_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_ar_ns.is_none()`.
+    pub fn tape_ar_ns(&self) -> &[::std::string::String] {
+        self.tape_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

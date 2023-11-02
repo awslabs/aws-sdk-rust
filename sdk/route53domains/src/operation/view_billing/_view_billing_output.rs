@@ -16,8 +16,10 @@ impl ViewBillingOutput {
         self.next_page_marker.as_deref()
     }
     /// <p>A summary of billing records.</p>
-    pub fn billing_records(&self) -> ::std::option::Option<&[crate::types::BillingRecord]> {
-        self.billing_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_records.is_none()`.
+    pub fn billing_records(&self) -> &[crate::types::BillingRecord] {
+        self.billing_records.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ViewBillingOutput {

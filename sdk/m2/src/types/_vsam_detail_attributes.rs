@@ -39,8 +39,10 @@ impl VsamDetailAttributes {
         self.primary_key.as_ref()
     }
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
-    pub fn alternate_keys(&self) -> ::std::option::Option<&[crate::types::AlternateKey]> {
-        self.alternate_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternate_keys.is_none()`.
+    pub fn alternate_keys(&self) -> &[crate::types::AlternateKey] {
+        self.alternate_keys.as_deref().unwrap_or_default()
     }
 }
 impl VsamDetailAttributes {

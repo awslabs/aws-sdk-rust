@@ -28,6 +28,7 @@ pub struct DeleteReceiptFilterInputBuilder {
 }
 impl DeleteReceiptFilterInputBuilder {
     /// <p>The name of the IP address filter to delete.</p>
+    /// This field is required.
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
         self

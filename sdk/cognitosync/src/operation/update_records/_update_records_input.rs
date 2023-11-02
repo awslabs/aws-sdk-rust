@@ -37,8 +37,10 @@ impl UpdateRecordsInput {
         self.device_id.as_deref()
     }
     /// A list of patch operations.
-    pub fn record_patches(&self) -> ::std::option::Option<&[crate::types::RecordPatch]> {
-        self.record_patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record_patches.is_none()`.
+    pub fn record_patches(&self) -> &[crate::types::RecordPatch] {
+        self.record_patches.as_deref().unwrap_or_default()
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     pub fn sync_session_token(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct UpdateRecordsInputBuilder {
 }
 impl UpdateRecordsInputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl UpdateRecordsInputBuilder {
         &self.identity_pool_id
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    /// This field is required.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl UpdateRecordsInputBuilder {
         &self.identity_id
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +151,7 @@ impl UpdateRecordsInputBuilder {
         &self.record_patches
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+    /// This field is required.
     pub fn sync_session_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_session_token = ::std::option::Option::Some(input.into());
         self

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The ID of the job run.</p>
-    pub job_run_id: ::std::option::Option<::std::string::String>,
+    pub job_run_id: ::std::string::String,
 }
 impl GetDashboardForJobRunInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The ID of the job run.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
-        self.job_run_id.as_deref()
+    pub fn job_run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_run_id.deref()
     }
 }
 impl GetDashboardForJobRunInput {
@@ -34,6 +36,7 @@ pub struct GetDashboardForJobRunInputBuilder {
 }
 impl GetDashboardForJobRunInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetDashboardForJobRunInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the job run.</p>
+    /// This field is required.
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl GetDashboardForJobRunInputBuilder {
         &self.job_run_id
     }
     /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder::application_id)
+    /// - [`job_run_id`](crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunInputBuilder::job_run_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput {
-            application_id: self.application_id,
-            job_run_id: self.job_run_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building GetDashboardForJobRunInput",
+                )
+            })?,
+            job_run_id: self.job_run_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_run_id",
+                    "job_run_id was not specified but it is required when building GetDashboardForJobRunInput",
+                )
+            })?,
         })
     }
 }

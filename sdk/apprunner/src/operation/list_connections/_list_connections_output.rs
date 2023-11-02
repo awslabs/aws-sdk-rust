@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectionsOutput {
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub connection_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionSummary>>,
+    pub connection_summary_list: ::std::vec::Vec<crate::types::ConnectionSummary>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListConnectionsOutput {
     /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn connection_summary_list(&self) -> ::std::option::Option<&[crate::types::ConnectionSummary]> {
-        self.connection_summary_list.as_deref()
+    pub fn connection_summary_list(&self) -> &[crate::types::ConnectionSummary] {
+        use std::ops::Deref;
+        self.connection_summary_list.deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListConnectionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput).
-    pub fn build(self) -> crate::operation::list_connections::ListConnectionsOutput {
-        crate::operation::list_connections::ListConnectionsOutput {
-            connection_summary_list: self.connection_summary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connection_summary_list`](crate::operation::list_connections::builders::ListConnectionsOutputBuilder::connection_summary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_connections::ListConnectionsOutput {
+            connection_summary_list: self.connection_summary_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connection_summary_list",
+                    "connection_summary_list was not specified but it is required when building ListConnectionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

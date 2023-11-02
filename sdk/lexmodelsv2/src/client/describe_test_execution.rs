@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTestExecution`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`test_execution_id(impl Into<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::test_execution_id) / [`set_test_execution_id(Option<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::set_test_execution_id): <p>The execution Id of the test set execution.</p>
+    ///   - [`test_execution_id(impl Into<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::test_execution_id) / [`set_test_execution_id(Option<String>)`](crate::operation::describe_test_execution::builders::DescribeTestExecutionFluentBuilder::set_test_execution_id):<br>required: **true**<br><p>The execution Id of the test set execution.</p><br>
     /// - On success, responds with [`DescribeTestExecutionOutput`](crate::operation::describe_test_execution::DescribeTestExecutionOutput) with field(s):
     ///   - [`test_execution_id(Option<String>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::test_execution_id): <p>The execution Id for the test set execution.</p>
     ///   - [`creation_date_time(Option<DateTime>)`](crate::operation::describe_test_execution::DescribeTestExecutionOutput::creation_date_time): <p>The execution creation date and time for the test set execution.</p>

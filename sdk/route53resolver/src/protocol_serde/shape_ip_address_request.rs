@@ -3,14 +3,14 @@ pub fn ser_ip_address_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpAddressRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.subnet_id {
-        object.key("SubnetId").string(var_1.as_str());
+    {
+        object.key("SubnetId").string(input.subnet_id.as_str());
     }
-    if let Some(var_2) = &input.ip {
-        object.key("Ip").string(var_2.as_str());
+    if let Some(var_1) = &input.ip {
+        object.key("Ip").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.ipv6 {
-        object.key("Ipv6").string(var_3.as_str());
+    if let Some(var_2) = &input.ipv6 {
+        object.key("Ipv6").string(var_2.as_str());
     }
     Ok(())
 }

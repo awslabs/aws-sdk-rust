@@ -56,6 +56,7 @@ pub struct CreateNetworkInterfacePermissionInputBuilder {
 }
 impl CreateNetworkInterfacePermissionInputBuilder {
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl CreateNetworkInterfacePermissionInputBuilder {
         &self.aws_service
     }
     /// <p>The type of permission to grant.</p>
+    /// This field is required.
     pub fn permission(mut self, input: crate::types::InterfacePermissionType) -> Self {
         self.permission = ::std::option::Option::Some(input);
         self

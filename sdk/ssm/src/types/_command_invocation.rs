@@ -111,8 +111,10 @@ impl CommandInvocation {
         self.standard_error_url.as_deref()
     }
     /// <p>Plugins processed by the command.</p>
-    pub fn command_plugins(&self) -> ::std::option::Option<&[crate::types::CommandPlugin]> {
-        self.command_plugins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_plugins.is_none()`.
+    pub fn command_plugins(&self) -> &[crate::types::CommandPlugin] {
+        self.command_plugins.as_deref().unwrap_or_default()
     }
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes on a per managed node basis.</p>
     pub fn service_role(&self) -> ::std::option::Option<&str> {

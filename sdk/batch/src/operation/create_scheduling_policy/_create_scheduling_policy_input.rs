@@ -44,6 +44,7 @@ pub struct CreateSchedulingPolicyInputBuilder {
 }
 impl CreateSchedulingPolicyInputBuilder {
     /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

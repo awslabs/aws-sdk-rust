@@ -11,8 +11,10 @@ pub struct ListExperimentsOutput {
 }
 impl ListExperimentsOutput {
     /// <p>The experiments.</p>
-    pub fn experiments(&self) -> ::std::option::Option<&[crate::types::ExperimentSummary]> {
-        self.experiments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.experiments.is_none()`.
+    pub fn experiments(&self) -> &[crate::types::ExperimentSummary] {
+        self.experiments.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

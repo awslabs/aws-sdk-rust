@@ -103,6 +103,8 @@ pub use crate::types::error::_invalid_db_subnet_group_state_fault::InvalidDbSubn
 
 pub use crate::types::error::_invalid_db_parameter_group_state_fault::InvalidDbParameterGroupStateFaultBuilder;
 
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFaultBuilder;
+
 pub use crate::types::error::_db_proxy_target_group_not_found_fault::DbProxyTargetGroupNotFoundFaultBuilder;
 
 pub use crate::types::error::_db_proxy_not_found_fault::DbProxyNotFoundFaultBuilder;
@@ -179,6 +181,10 @@ pub use crate::types::error::_db_proxy_target_not_found_fault::DbProxyTargetNotF
 
 pub use crate::types::error::_db_cluster_backtrack_not_found_fault::DbClusterBacktrackNotFoundFaultBuilder;
 
+pub use crate::types::error::_invalid_integration_state_fault::InvalidIntegrationStateFaultBuilder;
+
+pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFaultBuilder;
+
 pub use crate::types::error::_invalid_event_subscription_state_fault::InvalidEventSubscriptionStateFaultBuilder;
 
 pub use crate::types::error::_invalid_db_subnet_state_fault::InvalidDbSubnetStateFaultBuilder;
@@ -194,6 +200,10 @@ pub use crate::types::error::_db_cluster_automated_backup_quota_exceeded_fault::
 pub use crate::types::error::_option_group_quota_exceeded_fault::OptionGroupQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_option_group_already_exists_fault::OptionGroupAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_integration_quota_exceeded_fault::IntegrationQuotaExceededFaultBuilder;
+
+pub use crate::types::error::_integration_already_exists_fault::IntegrationAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_global_cluster_quota_exceeded_fault::GlobalClusterQuotaExceededFaultBuilder;
 

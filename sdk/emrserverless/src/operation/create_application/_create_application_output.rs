@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
     /// <p>The output contains the application ID.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The output contains the name of the application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The output contains the ARN of the application.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
     /// <p>The output contains the application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The output contains the name of the application.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The output contains the ARN of the application.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateApplicationOutput {
@@ -48,6 +50,7 @@ pub struct CreateApplicationOutputBuilder {
 }
 impl CreateApplicationOutputBuilder {
     /// <p>The output contains the application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateApplicationOutputBuilder {
         &self.name
     }
     /// <p>The output contains the ARN of the application.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -99,12 +103,27 @@ impl CreateApplicationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
-    pub fn build(self) -> crate::operation::create_application::CreateApplicationOutput {
-        crate::operation::create_application::CreateApplicationOutput {
-            application_id: self.application_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::create_application::builders::CreateApplicationOutputBuilder::application_id)
+    /// - [`arn`](crate::operation::create_application::builders::CreateApplicationOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationOutput {
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building CreateApplicationOutput",
+                )
+            })?,
             name: self.name,
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateApplicationOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

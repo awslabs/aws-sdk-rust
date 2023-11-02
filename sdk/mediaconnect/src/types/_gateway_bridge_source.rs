@@ -35,6 +35,7 @@ pub struct GatewayBridgeSourceBuilder {
 }
 impl GatewayBridgeSourceBuilder {
     /// The ARN of the bridge feeding this flow.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self

@@ -83,6 +83,7 @@ impl UpdateSmsTemplateInputBuilder {
         &self.create_new_version
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
+    /// This field is required.
     pub fn sms_template_request(mut self, input: crate::types::SmsTemplateRequest) -> Self {
         self.sms_template_request = ::std::option::Option::Some(input);
         self
@@ -97,6 +98,7 @@ impl UpdateSmsTemplateInputBuilder {
         &self.sms_template_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

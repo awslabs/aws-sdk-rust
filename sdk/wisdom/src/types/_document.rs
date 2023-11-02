@@ -42,6 +42,7 @@ pub struct DocumentBuilder {
 }
 impl DocumentBuilder {
     /// <p>A reference to the content resource.</p>
+    /// This field is required.
     pub fn content_reference(mut self, input: crate::types::ContentReference) -> Self {
         self.content_reference = ::std::option::Option::Some(input);
         self

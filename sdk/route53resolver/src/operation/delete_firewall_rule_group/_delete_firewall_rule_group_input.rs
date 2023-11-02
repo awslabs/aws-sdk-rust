@@ -27,6 +27,7 @@ pub struct DeleteFirewallRuleGroupInputBuilder {
 }
 impl DeleteFirewallRuleGroupInputBuilder {
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
+    /// This field is required.
     pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
         self

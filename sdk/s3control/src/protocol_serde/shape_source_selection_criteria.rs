@@ -17,6 +17,7 @@ pub fn ser_source_selection_criteria(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_source_selection_criteria(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SourceSelectionCriteria, ::aws_smithy_xml::decode::XmlDecodeError> {

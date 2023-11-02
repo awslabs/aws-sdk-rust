@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    pub updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
+    pub updates: ::std::vec::Vec<crate::types::DevicePositionUpdate>,
 }
 impl BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
     /// <p>Contains the position update details for each device, up to 10 devices.</p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::DevicePositionUpdate]> {
-        self.updates.as_deref()
+    pub fn updates(&self) -> &[crate::types::DevicePositionUpdate] {
+        use std::ops::Deref;
+        self.updates.deref()
     }
 }
 impl BatchUpdateDevicePositionInput {
@@ -34,6 +36,7 @@ pub struct BatchUpdateDevicePositionInputBuilder {
 }
 impl BatchUpdateDevicePositionInputBuilder {
     /// <p>The name of the tracker resource to update.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +71,9 @@ impl BatchUpdateDevicePositionInputBuilder {
         &self.updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionInput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder::tracker_name)
+    /// - [`updates`](crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder::updates)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -75,8 +81,18 @@ impl BatchUpdateDevicePositionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput {
-            tracker_name: self.tracker_name,
-            updates: self.updates,
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building BatchUpdateDevicePositionInput",
+                )
+            })?,
+            updates: self.updates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updates",
+                    "updates was not specified but it is required when building BatchUpdateDevicePositionInput",
+                )
+            })?,
         })
     }
 }

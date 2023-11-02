@@ -34,6 +34,7 @@ pub struct DeleteGlossaryTermInputBuilder {
 }
 impl DeleteGlossaryTermInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the business glossary term is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteGlossaryTermInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the business glossary term that is deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

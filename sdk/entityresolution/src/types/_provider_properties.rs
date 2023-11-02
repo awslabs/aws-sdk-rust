@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProviderProperties {
     /// <p>The ARN of the provider service.</p>
-    pub provider_service_arn: ::std::option::Option<::std::string::String>,
+    pub provider_service_arn: ::std::string::String,
     /// <p>The required configuration fields to use with the provider service.</p>
     pub provider_configuration: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The Amazon S3 location that temporarily stores your data while it processes. Your information won't be saved permanently.</p>
@@ -13,8 +13,9 @@ pub struct ProviderProperties {
 }
 impl ProviderProperties {
     /// <p>The ARN of the provider service.</p>
-    pub fn provider_service_arn(&self) -> ::std::option::Option<&str> {
-        self.provider_service_arn.as_deref()
+    pub fn provider_service_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.provider_service_arn.deref()
     }
     /// <p>The required configuration fields to use with the provider service.</p>
     pub fn provider_configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
@@ -42,6 +43,7 @@ pub struct ProviderPropertiesBuilder {
 }
 impl ProviderPropertiesBuilder {
     /// <p>The ARN of the provider service.</p>
+    /// This field is required.
     pub fn provider_service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_service_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ProviderPropertiesBuilder {
         &self.intermediate_source_configuration
     }
     /// Consumes the builder and constructs a [`ProviderProperties`](crate::types::ProviderProperties).
-    pub fn build(self) -> crate::types::ProviderProperties {
-        crate::types::ProviderProperties {
-            provider_service_arn: self.provider_service_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provider_service_arn`](crate::types::builders::ProviderPropertiesBuilder::provider_service_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProviderProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProviderProperties {
+            provider_service_arn: self.provider_service_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider_service_arn",
+                    "provider_service_arn was not specified but it is required when building ProviderProperties",
+                )
+            })?,
             provider_configuration: self.provider_configuration,
             intermediate_source_configuration: self.intermediate_source_configuration,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct UndeprecateActivityTypeInputBuilder {
 }
 impl UndeprecateActivityTypeInputBuilder {
     /// <p>The name of the domain of the deprecated activity type.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UndeprecateActivityTypeInputBuilder {
         &self.domain
     }
     /// <p>The activity type to undeprecate.</p>
+    /// This field is required.
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.activity_type = ::std::option::Option::Some(input);
         self

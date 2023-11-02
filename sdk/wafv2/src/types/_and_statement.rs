@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AndStatement {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
-    pub statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
+    pub statements: ::std::vec::Vec<crate::types::Statement>,
 }
 impl AndStatement {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
-    pub fn statements(&self) -> ::std::option::Option<&[crate::types::Statement]> {
-        self.statements.as_deref()
+    pub fn statements(&self) -> &[crate::types::Statement] {
+        use std::ops::Deref;
+        self.statements.deref()
     }
 }
 impl AndStatement {
@@ -48,7 +49,16 @@ impl AndStatementBuilder {
         &self.statements
     }
     /// Consumes the builder and constructs a [`AndStatement`](crate::types::AndStatement).
-    pub fn build(self) -> crate::types::AndStatement {
-        crate::types::AndStatement { statements: self.statements }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statements`](crate::types::builders::AndStatementBuilder::statements)
+    pub fn build(self) -> ::std::result::Result<crate::types::AndStatement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AndStatement {
+            statements: self.statements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "statements",
+                    "statements was not specified but it is required when building AndStatement",
+                )
+            })?,
+        })
     }
 }

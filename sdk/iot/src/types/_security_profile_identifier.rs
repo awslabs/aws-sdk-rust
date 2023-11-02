@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityProfileIdentifier {
     /// <p>The name you've given to the security profile.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ARN of the security profile.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl SecurityProfileIdentifier {
     /// <p>The name you've given to the security profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ARN of the security profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl SecurityProfileIdentifier {
@@ -35,6 +37,7 @@ pub struct SecurityProfileIdentifierBuilder {
 }
 impl SecurityProfileIdentifierBuilder {
     /// <p>The name you've given to the security profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SecurityProfileIdentifierBuilder {
         &self.name
     }
     /// <p>The ARN of the security profile.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SecurityProfileIdentifierBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`SecurityProfileIdentifier`](crate::types::SecurityProfileIdentifier).
-    pub fn build(self) -> crate::types::SecurityProfileIdentifier {
-        crate::types::SecurityProfileIdentifier {
-            name: self.name,
-            arn: self.arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SecurityProfileIdentifierBuilder::name)
+    /// - [`arn`](crate::types::builders::SecurityProfileIdentifierBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SecurityProfileIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SecurityProfileIdentifier {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SecurityProfileIdentifier",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building SecurityProfileIdentifier",
+                )
+            })?,
+        })
     }
 }

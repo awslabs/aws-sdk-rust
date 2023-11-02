@@ -4,39 +4,44 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentOutput {
     /// <p>Function package ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Function package descriptor ID.</p>
-    pub vnfd_id: ::std::option::Option<::std::string::String>,
+    pub vnfd_id: ::std::string::String,
     /// <p>Network function product name.</p>
-    pub vnf_product_name: ::std::option::Option<::std::string::String>,
+    pub vnf_product_name: ::std::string::String,
     /// <p>Network function provider.</p>
-    pub vnf_provider: ::std::option::Option<::std::string::String>,
+    pub vnf_provider: ::std::string::String,
     /// <p>Function package descriptor version.</p>
-    pub vnfd_version: ::std::option::Option<::std::string::String>,
+    pub vnfd_version: ::std::string::String,
     /// <p>Function package metadata.</p>
     pub metadata: ::std::option::Option<crate::types::ValidateSolFunctionPackageContentMetadata>,
     _request_id: Option<String>,
 }
 impl ValidateSolFunctionPackageContentOutput {
     /// <p>Function package ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Function package descriptor ID.</p>
-    pub fn vnfd_id(&self) -> ::std::option::Option<&str> {
-        self.vnfd_id.as_deref()
+    pub fn vnfd_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vnfd_id.deref()
     }
     /// <p>Network function product name.</p>
-    pub fn vnf_product_name(&self) -> ::std::option::Option<&str> {
-        self.vnf_product_name.as_deref()
+    pub fn vnf_product_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vnf_product_name.deref()
     }
     /// <p>Network function provider.</p>
-    pub fn vnf_provider(&self) -> ::std::option::Option<&str> {
-        self.vnf_provider.as_deref()
+    pub fn vnf_provider(&self) -> &str {
+        use std::ops::Deref;
+        self.vnf_provider.deref()
     }
     /// <p>Function package descriptor version.</p>
-    pub fn vnfd_version(&self) -> ::std::option::Option<&str> {
-        self.vnfd_version.as_deref()
+    pub fn vnfd_version(&self) -> &str {
+        use std::ops::Deref;
+        self.vnfd_version.deref()
     }
     /// <p>Function package metadata.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::ValidateSolFunctionPackageContentMetadata> {
@@ -69,6 +74,7 @@ pub struct ValidateSolFunctionPackageContentOutputBuilder {
 }
 impl ValidateSolFunctionPackageContentOutputBuilder {
     /// <p>Function package ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,7 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         &self.id
     }
     /// <p>Function package descriptor ID.</p>
+    /// This field is required.
     pub fn vnfd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         &self.vnfd_id
     }
     /// <p>Network function product name.</p>
+    /// This field is required.
     pub fn vnf_product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_product_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +119,7 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         &self.vnf_product_name
     }
     /// <p>Network function provider.</p>
+    /// This field is required.
     pub fn vnf_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_provider = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +134,7 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         &self.vnf_provider
     }
     /// <p>Function package descriptor version.</p>
+    /// This field is required.
     pub fn vnfd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_version = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +149,7 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         &self.vnfd_version
     }
     /// <p>Function package metadata.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::ValidateSolFunctionPackageContentMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -162,15 +173,53 @@ impl ValidateSolFunctionPackageContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidateSolFunctionPackageContentOutput`](crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput).
-    pub fn build(self) -> crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput {
-        crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput {
-            id: self.id,
-            vnfd_id: self.vnfd_id,
-            vnf_product_name: self.vnf_product_name,
-            vnf_provider: self.vnf_provider,
-            vnfd_version: self.vnfd_version,
-            metadata: self.metadata,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder::id)
+    /// - [`vnfd_id`](crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder::vnfd_id)
+    /// - [`vnf_product_name`](crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder::vnf_product_name)
+    /// - [`vnf_provider`](crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder::vnf_provider)
+    /// - [`vnfd_version`](crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder::vnfd_version)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput {
+                id: self.id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "id was not specified but it is required when building ValidateSolFunctionPackageContentOutput",
+                    )
+                })?,
+                vnfd_id: self.vnfd_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vnfd_id",
+                        "vnfd_id was not specified but it is required when building ValidateSolFunctionPackageContentOutput",
+                    )
+                })?,
+                vnf_product_name: self.vnf_product_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vnf_product_name",
+                        "vnf_product_name was not specified but it is required when building ValidateSolFunctionPackageContentOutput",
+                    )
+                })?,
+                vnf_provider: self.vnf_provider.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vnf_provider",
+                        "vnf_provider was not specified but it is required when building ValidateSolFunctionPackageContentOutput",
+                    )
+                })?,
+                vnfd_version: self.vnfd_version.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vnfd_version",
+                        "vnfd_version was not specified but it is required when building ValidateSolFunctionPackageContentOutput",
+                    )
+                })?,
+                metadata: self.metadata,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

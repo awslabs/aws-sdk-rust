@@ -3,14 +3,14 @@ pub fn ser_failure_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FailureDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.message {
-        object.key("message").string(var_2.as_str());
+    {
+        object.key("message").string(input.message.as_str());
     }
-    if let Some(var_3) = &input.external_execution_id {
-        object.key("externalExecutionId").string(var_3.as_str());
+    if let Some(var_1) = &input.external_execution_id {
+        object.key("externalExecutionId").string(var_1.as_str());
     }
     Ok(())
 }

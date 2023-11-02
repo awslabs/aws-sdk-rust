@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataSourceRunOutput {
     /// <p>The ID of the domain in which this data source run was performed.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The ID of the data source for this data source run.</p>
-    pub data_source_id: ::std::option::Option<::std::string::String>,
+    pub data_source_id: ::std::string::String,
     /// <p>The ID of the data source run.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ID of the project in which this data source run occured.</p>
-    pub project_id: ::std::option::Option<::std::string::String>,
+    pub project_id: ::std::string::String,
     /// <p>The status of this data source run.</p>
-    pub status: ::std::option::Option<crate::types::DataSourceRunStatus>,
+    pub status: crate::types::DataSourceRunStatus,
     /// <p>The type of this data source run.</p>
-    pub r#type: ::std::option::Option<crate::types::DataSourceRunType>,
+    pub r#type: crate::types::DataSourceRunType,
     /// <p>The configuration snapshot of the data source run.</p>
     pub data_source_configuration_snapshot: ::std::option::Option<::std::string::String>,
     /// <p>The asset statistics from this data source run.</p>
@@ -22,9 +22,9 @@ pub struct GetDataSourceRunOutput {
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub error_message: ::std::option::Option<crate::types::DataSourceErrorMessage>,
     /// <p>The timestamp of when the data source run was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when this data source run was updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when this data source run started.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when this data source run stopped.</p>
@@ -33,28 +33,32 @@ pub struct GetDataSourceRunOutput {
 }
 impl GetDataSourceRunOutput {
     /// <p>The ID of the domain in which this data source run was performed.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The ID of the data source for this data source run.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
-        self.data_source_id.as_deref()
+    pub fn data_source_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source_id.deref()
     }
     /// <p>The ID of the data source run.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ID of the project in which this data source run occured.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
-        self.project_id.as_deref()
+    pub fn project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.project_id.deref()
     }
     /// <p>The status of this data source run.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceRunStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DataSourceRunStatus {
+        &self.status
     }
     /// <p>The type of this data source run.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceRunType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DataSourceRunType {
+        &self.r#type
     }
     /// <p>The configuration snapshot of the data source run.</p>
     pub fn data_source_configuration_snapshot(&self) -> ::std::option::Option<&str> {
@@ -69,12 +73,12 @@ impl GetDataSourceRunOutput {
         self.error_message.as_ref()
     }
     /// <p>The timestamp of when the data source run was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The timestamp of when this data source run was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>The timestamp of when this data source run started.</p>
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -118,6 +122,7 @@ pub struct GetDataSourceRunOutputBuilder {
 }
 impl GetDataSourceRunOutputBuilder {
     /// <p>The ID of the domain in which this data source run was performed.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl GetDataSourceRunOutputBuilder {
         &self.domain_id
     }
     /// <p>The ID of the data source for this data source run.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +152,7 @@ impl GetDataSourceRunOutputBuilder {
         &self.data_source_id
     }
     /// <p>The ID of the data source run.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +167,7 @@ impl GetDataSourceRunOutputBuilder {
         &self.id
     }
     /// <p>The ID of the project in which this data source run occured.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +182,7 @@ impl GetDataSourceRunOutputBuilder {
         &self.project_id
     }
     /// <p>The status of this data source run.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DataSourceRunStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -188,6 +197,7 @@ impl GetDataSourceRunOutputBuilder {
         &self.status
     }
     /// <p>The type of this data source run.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataSourceRunType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -244,6 +254,7 @@ impl GetDataSourceRunOutputBuilder {
         &self.error_message
     }
     /// <p>The timestamp of when the data source run was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -258,6 +269,7 @@ impl GetDataSourceRunOutputBuilder {
         &self.created_at
     }
     /// <p>The timestamp of when this data source run was updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -309,22 +321,73 @@ impl GetDataSourceRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDataSourceRunOutput`](crate::operation::get_data_source_run::GetDataSourceRunOutput).
-    pub fn build(self) -> crate::operation::get_data_source_run::GetDataSourceRunOutput {
-        crate::operation::get_data_source_run::GetDataSourceRunOutput {
-            domain_id: self.domain_id,
-            data_source_id: self.data_source_id,
-            id: self.id,
-            project_id: self.project_id,
-            status: self.status,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::domain_id)
+    /// - [`data_source_id`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::data_source_id)
+    /// - [`id`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::id)
+    /// - [`project_id`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::project_id)
+    /// - [`status`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::status)
+    /// - [`r#type`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::r#type)
+    /// - [`created_at`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::created_at)
+    /// - [`updated_at`](crate::operation::get_data_source_run::builders::GetDataSourceRunOutputBuilder::updated_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_data_source_run::GetDataSourceRunOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_data_source_run::GetDataSourceRunOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
+            data_source_id: self.data_source_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source_id",
+                    "data_source_id was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
+            project_id: self.project_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_id",
+                    "project_id was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
             data_source_configuration_snapshot: self.data_source_configuration_snapshot,
             run_statistics_for_assets: self.run_statistics_for_assets,
             error_message: self.error_message,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building GetDataSourceRunOutput",
+                )
+            })?,
             started_at: self.started_at,
             stopped_at: self.stopped_at,
             _request_id: self._request_id,
-        }
+        })
     }
 }

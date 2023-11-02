@@ -34,6 +34,7 @@ pub struct GetAliasOutputBuilder {
 }
 impl GetAliasOutputBuilder {
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
+    /// This field is required.
     pub fn alias(mut self, input: crate::types::Alias) -> Self {
         self.alias = ::std::option::Option::Some(input);
         self

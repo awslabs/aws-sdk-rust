@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunStateChange {
     /// <p>The last time the assessment run state changed.</p>
-    pub state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub state_changed_at: ::aws_smithy_types::DateTime,
     /// <p>The assessment run state.</p>
-    pub state: ::std::option::Option<crate::types::AssessmentRunState>,
+    pub state: crate::types::AssessmentRunState,
 }
 impl AssessmentRunStateChange {
     /// <p>The last time the assessment run state changed.</p>
-    pub fn state_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.state_changed_at.as_ref()
+    pub fn state_changed_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.state_changed_at
     }
     /// <p>The assessment run state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AssessmentRunState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::AssessmentRunState {
+        &self.state
     }
 }
 impl AssessmentRunStateChange {
@@ -35,6 +35,7 @@ pub struct AssessmentRunStateChangeBuilder {
 }
 impl AssessmentRunStateChangeBuilder {
     /// <p>The last time the assessment run state changed.</p>
+    /// This field is required.
     pub fn state_changed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.state_changed_at = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AssessmentRunStateChangeBuilder {
         &self.state_changed_at
     }
     /// <p>The assessment run state.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AssessmentRunState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl AssessmentRunStateChangeBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`AssessmentRunStateChange`](crate::types::AssessmentRunStateChange).
-    pub fn build(self) -> crate::types::AssessmentRunStateChange {
-        crate::types::AssessmentRunStateChange {
-            state_changed_at: self.state_changed_at,
-            state: self.state,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_changed_at`](crate::types::builders::AssessmentRunStateChangeBuilder::state_changed_at)
+    /// - [`state`](crate::types::builders::AssessmentRunStateChangeBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunStateChange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssessmentRunStateChange {
+            state_changed_at: self.state_changed_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_changed_at",
+                    "state_changed_at was not specified but it is required when building AssessmentRunStateChange",
+                )
+            })?,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building AssessmentRunStateChange",
+                )
+            })?,
+        })
     }
 }

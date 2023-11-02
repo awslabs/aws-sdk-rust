@@ -86,6 +86,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         &self.software_token_mfa_settings
     }
     /// <p>The user pool username or alias.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +101,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         &self.username
     }
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self

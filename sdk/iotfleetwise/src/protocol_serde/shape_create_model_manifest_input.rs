@@ -3,35 +3,35 @@ pub fn ser_create_model_manifest_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_model_manifest::CreateModelManifestInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.nodes {
-        let mut array_4 = object.key("nodes").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_2 = object.key("nodes").start_array();
+        for item_3 in &input.nodes {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.signal_catalog_arn {
-        object.key("signalCatalogArn").string(var_6.as_str());
+    {
+        object.key("signalCatalogArn").string(input.signal_catalog_arn.as_str());
     }
-    if let Some(var_7) = &input.tags {
-        let mut array_8 = object.key("tags").start_array();
-        for item_9 in var_7 {
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("tags").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_8.finish();
+        array_5.finish();
     }
     Ok(())
 }

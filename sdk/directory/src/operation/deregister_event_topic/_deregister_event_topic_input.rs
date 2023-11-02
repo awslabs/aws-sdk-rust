@@ -35,6 +35,7 @@ pub struct DeregisterEventTopicInputBuilder {
 }
 impl DeregisterEventTopicInputBuilder {
     /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeregisterEventTopicInputBuilder {
         &self.directory_id
     }
     /// <p>The name of the Amazon SNS topic from which to remove the directory as a publisher.</p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self

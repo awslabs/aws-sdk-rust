@@ -9,8 +9,10 @@ pub struct AwsEksClusterLoggingDetails {
 }
 impl AwsEksClusterLoggingDetails {
     /// <p>Cluster logging configurations.</p>
-    pub fn cluster_logging(&self) -> ::std::option::Option<&[crate::types::AwsEksClusterLoggingClusterLoggingDetails]> {
-        self.cluster_logging.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_logging.is_none()`.
+    pub fn cluster_logging(&self) -> &[crate::types::AwsEksClusterLoggingClusterLoggingDetails] {
+        self.cluster_logging.as_deref().unwrap_or_default()
     }
 }
 impl AwsEksClusterLoggingDetails {

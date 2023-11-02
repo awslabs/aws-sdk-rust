@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRolePoliciesOutput {
     /// <p>A list of policy names.</p>
-    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_names: ::std::vec::Vec<::std::string::String>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListRolePoliciesOutput {
 }
 impl ListRolePoliciesOutput {
     /// <p>A list of policy names.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names.as_deref()
+    pub fn policy_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.policy_names.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,21 @@ impl ListRolePoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRolePoliciesOutput`](crate::operation::list_role_policies::ListRolePoliciesOutput).
-    pub fn build(self) -> crate::operation::list_role_policies::ListRolePoliciesOutput {
-        crate::operation::list_role_policies::ListRolePoliciesOutput {
-            policy_names: self.policy_names,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_names`](crate::operation::list_role_policies::builders::ListRolePoliciesOutputBuilder::policy_names)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_role_policies::ListRolePoliciesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_role_policies::ListRolePoliciesOutput {
+            policy_names: self.policy_names.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_names",
+                    "policy_names was not specified but it is required when building ListRolePoliciesOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

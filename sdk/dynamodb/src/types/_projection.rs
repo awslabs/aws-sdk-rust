@@ -27,8 +27,10 @@ impl Projection {
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    pub fn non_key_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.non_key_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_key_attributes.is_none()`.
+    pub fn non_key_attributes(&self) -> &[::std::string::String] {
+        self.non_key_attributes.as_deref().unwrap_or_default()
     }
 }
 impl Projection {

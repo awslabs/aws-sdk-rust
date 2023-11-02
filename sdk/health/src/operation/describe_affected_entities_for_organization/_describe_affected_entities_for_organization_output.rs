@@ -13,12 +13,16 @@ pub struct DescribeAffectedEntitiesForOrganizationOutput {
 }
 impl DescribeAffectedEntitiesForOrganizationOutput {
     /// <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::AffectedEntity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::AffectedEntity] {
+        self.entities.as_deref().unwrap_or_default()
     }
     /// <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
-    pub fn failed_set(&self) -> ::std::option::Option<&[crate::types::OrganizationAffectedEntitiesErrorItem]> {
-        self.failed_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_set.is_none()`.
+    pub fn failed_set(&self) -> &[crate::types::OrganizationAffectedEntitiesErrorItem] {
+        self.failed_set.as_deref().unwrap_or_default()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -24,8 +24,10 @@ impl NewGatingRule {
         self.control_panel_arn.as_deref()
     }
     /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
-    pub fn gating_controls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.gating_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gating_controls.is_none()`.
+    pub fn gating_controls(&self) -> &[::std::string::String] {
+        self.gating_controls.as_deref().unwrap_or_default()
     }
     /// <p>The name for the new gating rule.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -37,8 +39,10 @@ impl NewGatingRule {
     }
     /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
     /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
-    pub fn target_controls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_controls.is_none()`.
+    pub fn target_controls(&self) -> &[::std::string::String] {
+        self.target_controls.as_deref().unwrap_or_default()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> ::std::option::Option<i32> {
@@ -65,6 +69,7 @@ pub struct NewGatingRuleBuilder {
 }
 impl NewGatingRuleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +104,7 @@ impl NewGatingRuleBuilder {
         &self.gating_controls
     }
     /// <p>The name for the new gating rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +119,7 @@ impl NewGatingRuleBuilder {
         &self.name
     }
     /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
+    /// This field is required.
     pub fn rule_config(mut self, input: crate::types::RuleConfig) -> Self {
         self.rule_config = ::std::option::Option::Some(input);
         self
@@ -150,6 +157,7 @@ impl NewGatingRuleBuilder {
         &self.target_controls
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    /// This field is required.
     pub fn wait_period_ms(mut self, input: i32) -> Self {
         self.wait_period_ms = ::std::option::Option::Some(input);
         self

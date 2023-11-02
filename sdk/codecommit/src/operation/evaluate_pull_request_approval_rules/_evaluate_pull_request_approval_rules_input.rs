@@ -34,6 +34,7 @@ pub struct EvaluatePullRequestApprovalRulesInputBuilder {
 }
 impl EvaluatePullRequestApprovalRulesInputBuilder {
     /// <p>The system-generated ID of the pull request you want to evaluate.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl EvaluatePullRequestApprovalRulesInputBuilder {
         &self.pull_request_id
     }
     /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self

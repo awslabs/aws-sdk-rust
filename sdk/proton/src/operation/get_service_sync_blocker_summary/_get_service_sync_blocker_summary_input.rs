@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSyncBlockerSummaryInput {
     /// <p>The name of the service that you want to get the service sync blocker summary for. If given only the service name, all instances are blocked.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
     pub service_instance_name: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceSyncBlockerSummaryInput {
     /// <p>The name of the service that you want to get the service sync blocker summary for. If given only the service name, all instances are blocked.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
     pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct GetServiceSyncBlockerSummaryInputBuilder {
 }
 impl GetServiceSyncBlockerSummaryInputBuilder {
     /// <p>The name of the service that you want to get the service sync blocker summary for. If given only the service name, all instances are blocked.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,8 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
         &self.service_instance_name
     }
     /// Consumes the builder and constructs a [`GetServiceSyncBlockerSummaryInput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_name`](crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,7 +73,12 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput {
-            service_name: self.service_name,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building GetServiceSyncBlockerSummaryInput",
+                )
+            })?,
             service_instance_name: self.service_instance_name,
         })
     }

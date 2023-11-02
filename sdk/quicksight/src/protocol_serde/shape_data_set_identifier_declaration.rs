@@ -3,11 +3,11 @@ pub fn ser_data_set_identifier_declaration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSetIdentifierDeclaration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identifier {
-        object.key("Identifier").string(var_1.as_str());
+    {
+        object.key("Identifier").string(input.identifier.as_str());
     }
-    if let Some(var_2) = &input.data_set_arn {
-        object.key("DataSetArn").string(var_2.as_str());
+    {
+        object.key("DataSetArn").string(input.data_set_arn.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::data_set_identifier_declaration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

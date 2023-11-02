@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelOutput {
     /// <p> The ID of the added notification channel. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AddNotificationChannelOutput {
     /// <p> The ID of the added notification channel. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AddNotificationChannelOutput {
@@ -34,6 +35,7 @@ pub struct AddNotificationChannelOutputBuilder {
 }
 impl AddNotificationChannelOutputBuilder {
     /// <p> The ID of the added notification channel. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl AddNotificationChannelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddNotificationChannelOutput`](crate::operation::add_notification_channel::AddNotificationChannelOutput).
-    pub fn build(self) -> crate::operation::add_notification_channel::AddNotificationChannelOutput {
-        crate::operation::add_notification_channel::AddNotificationChannelOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::add_notification_channel::builders::AddNotificationChannelOutputBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::add_notification_channel::AddNotificationChannelOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::add_notification_channel::AddNotificationChannelOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AddNotificationChannelOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

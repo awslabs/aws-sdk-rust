@@ -48,6 +48,7 @@ pub struct PutOriginEndpointPolicyInputBuilder {
 }
 impl PutOriginEndpointPolicyInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutOriginEndpointPolicyInputBuilder {
         &self.channel_group_name
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl PutOriginEndpointPolicyInputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
+    /// This field is required.
     pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl PutOriginEndpointPolicyInputBuilder {
         &self.origin_endpoint_name
     }
     /// <p>The policy to attach to the specified origin endpoint.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

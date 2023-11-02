@@ -14,8 +14,10 @@ impl PutAppsListInput {
         self.apps_list.as_ref()
     }
     /// <p>The tags associated with the resource.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl PutAppsListInput {
@@ -34,6 +36,7 @@ pub struct PutAppsListInputBuilder {
 }
 impl PutAppsListInputBuilder {
     /// <p>The details of the Firewall Manager applications list to be created.</p>
+    /// This field is required.
     pub fn apps_list(mut self, input: crate::types::AppsListData) -> Self {
         self.apps_list = ::std::option::Option::Some(input);
         self

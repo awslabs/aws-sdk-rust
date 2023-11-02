@@ -43,8 +43,10 @@ impl CreateApiKeyInput {
         self.value.as_deref()
     }
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-    pub fn stage_keys(&self) -> ::std::option::Option<&[crate::types::StageKey]> {
-        self.stage_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stage_keys.is_none()`.
+    pub fn stage_keys(&self) -> &[crate::types::StageKey] {
+        self.stage_keys.as_deref().unwrap_or_default()
     }
     /// <p>An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.</p>
     pub fn customer_id(&self) -> ::std::option::Option<&str> {

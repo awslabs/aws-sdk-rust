@@ -31,8 +31,10 @@ impl SecurityGroup {
         self.group_name.as_deref()
     }
     /// <p>The inbound rules associated with the security group.</p>
-    pub fn ip_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions.is_none()`.
+    pub fn ip_permissions(&self) -> &[crate::types::IpPermission] {
+        self.ip_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {
@@ -43,12 +45,16 @@ impl SecurityGroup {
         self.group_id.as_deref()
     }
     /// <p>The outbound rules associated with the security group.</p>
-    pub fn ip_permissions_egress(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.ip_permissions_egress.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions_egress.is_none()`.
+    pub fn ip_permissions_egress(&self) -> &[crate::types::IpPermission] {
+        self.ip_permissions_egress.as_deref().unwrap_or_default()
     }
     /// <p>Any tags assigned to the security group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC for the security group.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

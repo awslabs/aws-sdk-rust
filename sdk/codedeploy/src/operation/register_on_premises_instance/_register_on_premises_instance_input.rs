@@ -42,6 +42,7 @@ pub struct RegisterOnPremisesInstanceInputBuilder {
 }
 impl RegisterOnPremisesInstanceInputBuilder {
     /// <p>The name of the on-premises instance to register.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

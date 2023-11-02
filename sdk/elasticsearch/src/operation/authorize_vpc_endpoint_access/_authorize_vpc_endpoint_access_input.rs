@@ -35,6 +35,7 @@ pub struct AuthorizeVpcEndpointAccessInputBuilder {
 }
 impl AuthorizeVpcEndpointAccessInputBuilder {
     /// <p>The name of the OpenSearch Service domain to provide access to.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
         &self.domain_name
     }
     /// <p>The account ID to grant access to.</p>
+    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self

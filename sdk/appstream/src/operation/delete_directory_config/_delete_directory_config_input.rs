@@ -27,6 +27,7 @@ pub struct DeleteDirectoryConfigInputBuilder {
 }
 impl DeleteDirectoryConfigInputBuilder {
     /// <p>The name of the directory configuration.</p>
+    /// This field is required.
     pub fn directory_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_name = ::std::option::Option::Some(input.into());
         self

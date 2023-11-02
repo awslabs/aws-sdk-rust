@@ -12,12 +12,16 @@ pub struct GetCampaignStateBatchOutput {
 }
 impl GetCampaignStateBatchOutput {
     /// List of successful response of campaign state
-    pub fn successful_requests(&self) -> ::std::option::Option<&[crate::types::SuccessfulCampaignStateResponse]> {
-        self.successful_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_requests.is_none()`.
+    pub fn successful_requests(&self) -> &[crate::types::SuccessfulCampaignStateResponse] {
+        self.successful_requests.as_deref().unwrap_or_default()
     }
     /// List of failed requests of campaign state
-    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedCampaignStateResponse]> {
-        self.failed_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
+    pub fn failed_requests(&self) -> &[crate::types::FailedCampaignStateResponse] {
+        self.failed_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCampaignStateBatchOutput {

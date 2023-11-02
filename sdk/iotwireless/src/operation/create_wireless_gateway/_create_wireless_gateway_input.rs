@@ -28,8 +28,10 @@ impl CreateWirelessGatewayInput {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -83,6 +85,7 @@ impl CreateWirelessGatewayInputBuilder {
         &self.description
     }
     /// <p>The gateway configuration information to use to create the wireless gateway.</p>
+    /// This field is required.
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanGateway) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
         self

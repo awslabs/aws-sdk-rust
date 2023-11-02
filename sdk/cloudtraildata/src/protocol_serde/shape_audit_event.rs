@@ -3,14 +3,14 @@ pub fn ser_audit_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AuditEvent,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.event_data {
-        object.key("eventData").string(var_2.as_str());
+    {
+        object.key("eventData").string(input.event_data.as_str());
     }
-    if let Some(var_3) = &input.event_data_checksum {
-        object.key("eventDataChecksum").string(var_3.as_str());
+    if let Some(var_1) = &input.event_data_checksum {
+        object.key("eventDataChecksum").string(var_1.as_str());
     }
     Ok(())
 }

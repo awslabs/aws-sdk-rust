@@ -157,8 +157,10 @@ impl TransformJob {
         self.experiment_config.as_ref()
     }
     /// <p>A list of tags associated with the transform job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
     pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::BatchDataCaptureConfig> {

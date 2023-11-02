@@ -34,6 +34,7 @@ pub struct UpdateCustomMetricInputBuilder {
 }
 impl UpdateCustomMetricInputBuilder {
     /// <p> The name of the custom metric. Cannot be updated. </p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateCustomMetricInputBuilder {
         &self.metric_name
     }
     /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self

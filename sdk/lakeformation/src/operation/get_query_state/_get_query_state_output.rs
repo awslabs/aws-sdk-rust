@@ -13,7 +13,7 @@ pub struct GetQueryStateOutput {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
-    pub state: ::std::option::Option<crate::types::QueryStateString>,
+    pub state: crate::types::QueryStateString,
     _request_id: Option<String>,
 }
 impl GetQueryStateOutput {
@@ -28,8 +28,8 @@ impl GetQueryStateOutput {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::QueryStateString> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::QueryStateString {
+        &self.state
     }
 }
 impl ::aws_http::request_id::RequestId for GetQueryStateOutput {
@@ -74,6 +74,7 @@ impl GetQueryStateOutputBuilder {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::QueryStateString) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -109,11 +110,20 @@ impl GetQueryStateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetQueryStateOutput`](crate::operation::get_query_state::GetQueryStateOutput).
-    pub fn build(self) -> crate::operation::get_query_state::GetQueryStateOutput {
-        crate::operation::get_query_state::GetQueryStateOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::operation::get_query_state::builders::GetQueryStateOutputBuilder::state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_query_state::GetQueryStateOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_query_state::GetQueryStateOutput {
             error: self.error,
-            state: self.state,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building GetQueryStateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

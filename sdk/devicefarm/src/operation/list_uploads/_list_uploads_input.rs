@@ -112,6 +112,7 @@ pub struct ListUploadsInputBuilder {
 }
 impl ListUploadsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

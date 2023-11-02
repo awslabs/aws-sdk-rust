@@ -9,7 +9,7 @@ pub struct ServiceLimitExceededException {
     /// <p>The value of the exceeded limit.</p>
     pub limit_value: f64,
     /// <p>The request has exceeded the quotas imposed by the service.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceLimitExceededException {
@@ -24,17 +24,15 @@ impl ServiceLimitExceededException {
 }
 impl ServiceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ServiceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceLimitExceededException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -97,6 +95,7 @@ impl ServiceLimitExceededExceptionBuilder {
         &self.limit_value
     }
     /// <p>The request has exceeded the quotas imposed by the service.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +121,19 @@ impl ServiceLimitExceededExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ServiceLimitExceededException`](crate::types::error::ServiceLimitExceededException).
-    pub fn build(self) -> crate::types::error::ServiceLimitExceededException {
-        crate::types::error::ServiceLimitExceededException {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ServiceLimitExceededExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceLimitExceededException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ServiceLimitExceededException {
             limit_name: self.limit_name,
             limit_value: self.limit_value.unwrap_or_default(),
-            message: self.message,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ServiceLimitExceededException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

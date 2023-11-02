@@ -14,12 +14,16 @@ pub struct ValidatePipelineDefinitionOutput {
 }
 impl ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
-    pub fn validation_errors(&self) -> ::std::option::Option<&[crate::types::ValidationError]> {
-        self.validation_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_errors.is_none()`.
+    pub fn validation_errors(&self) -> &[crate::types::ValidationError] {
+        self.validation_errors.as_deref().unwrap_or_default()
     }
     /// <p>Any validation warnings that were found.</p>
-    pub fn validation_warnings(&self) -> ::std::option::Option<&[crate::types::ValidationWarning]> {
-        self.validation_warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_warnings.is_none()`.
+    pub fn validation_warnings(&self) -> &[crate::types::ValidationWarning] {
+        self.validation_warnings.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether there were validation errors.</p>
     pub fn errored(&self) -> bool {
@@ -89,6 +93,7 @@ impl ValidatePipelineDefinitionOutputBuilder {
         &self.validation_warnings
     }
     /// <p>Indicates whether there were validation errors.</p>
+    /// This field is required.
     pub fn errored(mut self, input: bool) -> Self {
         self.errored = ::std::option::Option::Some(input);
         self

@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`state(TaskState)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::state) / [`set_state(Option<TaskState>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_state): <p>A structure used to filter the list of tasks.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_max_results): <p>The maximum number of tasks per page.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_next_token): <p>A pagination token to continue to the next page of tasks.</p>
+    ///   - [`state(TaskState)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::state) / [`set_state(Option<TaskState>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_state):<br>required: **false**<br><p>A structure used to filter the list of tasks.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tasks per page.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tasks::builders::ListTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to continue to the next page of tasks.</p><br>
     /// - On success, responds with [`ListTasksOutput`](crate::operation::list_tasks::ListTasksOutput) with field(s):
     ///   - [`tasks(Option<Vec<TaskSummary>>)`](crate::operation::list_tasks::ListTasksOutput::tasks): <p>A list of task structures containing details about each task.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tasks::ListTasksOutput::next_token): <p>A pagination token to continue to the next page of tasks.</p>

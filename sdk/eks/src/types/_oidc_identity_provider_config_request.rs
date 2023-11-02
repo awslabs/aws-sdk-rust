@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OidcIdentityProviderConfigRequest {
     /// <p>The name of the OIDC provider configuration.</p>
-    pub identity_provider_config_name: ::std::option::Option<::std::string::String>,
+    pub identity_provider_config_name: ::std::string::String,
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
-    pub issuer_url: ::std::option::Option<::std::string::String>,
+    pub issuer_url: ::std::string::String,
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
-    pub client_id: ::std::option::Option<::std::string::String>,
+    pub client_id: ::std::string::String,
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
     pub username_claim: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
@@ -23,16 +23,19 @@ pub struct OidcIdentityProviderConfigRequest {
 }
 impl OidcIdentityProviderConfigRequest {
     /// <p>The name of the OIDC provider configuration.</p>
-    pub fn identity_provider_config_name(&self) -> ::std::option::Option<&str> {
-        self.identity_provider_config_name.as_deref()
+    pub fn identity_provider_config_name(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_provider_config_name.deref()
     }
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
-    pub fn issuer_url(&self) -> ::std::option::Option<&str> {
-        self.issuer_url.as_deref()
+    pub fn issuer_url(&self) -> &str {
+        use std::ops::Deref;
+        self.issuer_url.deref()
     }
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
-        self.client_id.as_deref()
+    pub fn client_id(&self) -> &str {
+        use std::ops::Deref;
+        self.client_id.deref()
     }
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
     pub fn username_claim(&self) -> ::std::option::Option<&str> {
@@ -77,6 +80,7 @@ pub struct OidcIdentityProviderConfigRequestBuilder {
 }
 impl OidcIdentityProviderConfigRequestBuilder {
     /// <p>The name of the OIDC provider configuration.</p>
+    /// This field is required.
     pub fn identity_provider_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_config_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl OidcIdentityProviderConfigRequestBuilder {
         &self.identity_provider_config_name
     }
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
+    /// This field is required.
     pub fn issuer_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer_url = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl OidcIdentityProviderConfigRequestBuilder {
         &self.issuer_url
     }
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -202,16 +208,35 @@ impl OidcIdentityProviderConfigRequestBuilder {
         &self.required_claims
     }
     /// Consumes the builder and constructs a [`OidcIdentityProviderConfigRequest`](crate::types::OidcIdentityProviderConfigRequest).
-    pub fn build(self) -> crate::types::OidcIdentityProviderConfigRequest {
-        crate::types::OidcIdentityProviderConfigRequest {
-            identity_provider_config_name: self.identity_provider_config_name,
-            issuer_url: self.issuer_url,
-            client_id: self.client_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_provider_config_name`](crate::types::builders::OidcIdentityProviderConfigRequestBuilder::identity_provider_config_name)
+    /// - [`issuer_url`](crate::types::builders::OidcIdentityProviderConfigRequestBuilder::issuer_url)
+    /// - [`client_id`](crate::types::builders::OidcIdentityProviderConfigRequestBuilder::client_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::OidcIdentityProviderConfigRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OidcIdentityProviderConfigRequest {
+            identity_provider_config_name: self.identity_provider_config_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_provider_config_name",
+                    "identity_provider_config_name was not specified but it is required when building OidcIdentityProviderConfigRequest",
+                )
+            })?,
+            issuer_url: self.issuer_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "issuer_url",
+                    "issuer_url was not specified but it is required when building OidcIdentityProviderConfigRequest",
+                )
+            })?,
+            client_id: self.client_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_id",
+                    "client_id was not specified but it is required when building OidcIdentityProviderConfigRequest",
+                )
+            })?,
             username_claim: self.username_claim,
             username_prefix: self.username_prefix,
             groups_claim: self.groups_claim,
             groups_prefix: self.groups_prefix,
             required_claims: self.required_claims,
-        }
+        })
     }
 }

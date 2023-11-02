@@ -11,8 +11,10 @@ pub struct ListImageVersionsOutput {
 }
 impl ListImageVersionsOutput {
     /// <p>A list of versions and their properties.</p>
-    pub fn image_versions(&self) -> ::std::option::Option<&[crate::types::ImageVersion]> {
-        self.image_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_versions.is_none()`.
+    pub fn image_versions(&self) -> &[crate::types::ImageVersion] {
+        self.image_versions.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of versions, if there are any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

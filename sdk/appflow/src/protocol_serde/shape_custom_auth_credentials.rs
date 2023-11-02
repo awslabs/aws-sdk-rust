@@ -3,18 +3,18 @@ pub fn ser_custom_auth_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomAuthCredentials,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.custom_authentication_type {
-        object.key("customAuthenticationType").string(var_1.as_str());
+    {
+        object.key("customAuthenticationType").string(input.custom_authentication_type.as_str());
     }
-    if let Some(var_2) = &input.credentials_map {
+    if let Some(var_1) = &input.credentials_map {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("credentialsMap").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("credentialsMap").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
     Ok(())
 }

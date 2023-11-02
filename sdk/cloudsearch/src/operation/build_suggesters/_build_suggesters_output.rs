@@ -10,8 +10,10 @@ pub struct BuildSuggestersOutput {
 }
 impl BuildSuggestersOutput {
     /// <p>A list of field names.</p>
-    pub fn field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.field_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_names.is_none()`.
+    pub fn field_names(&self) -> &[::std::string::String] {
+        self.field_names.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BuildSuggestersOutput {

@@ -6,11 +6,11 @@ pub fn ser_s3_bucket_log_destination(
     if let Some(var_1) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.s3_bucket_arn {
-        object.key("s3BucketArn").string(var_2.as_str());
+    {
+        object.key("s3BucketArn").string(input.s3_bucket_arn.as_str());
     }
-    if let Some(var_3) = &input.log_prefix {
-        object.key("logPrefix").string(var_3.as_str());
+    {
+        object.key("logPrefix").string(input.log_prefix.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::s3_bucket_log_destination_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

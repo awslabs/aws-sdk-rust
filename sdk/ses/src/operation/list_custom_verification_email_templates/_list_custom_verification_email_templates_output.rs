@@ -12,8 +12,10 @@ pub struct ListCustomVerificationEmailTemplatesOutput {
 }
 impl ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
-    pub fn custom_verification_email_templates(&self) -> ::std::option::Option<&[crate::types::CustomVerificationEmailTemplate]> {
-        self.custom_verification_email_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_verification_email_templates.is_none()`.
+    pub fn custom_verification_email_templates(&self) -> &[crate::types::CustomVerificationEmailTemplate] {
+        self.custom_verification_email_templates.as_deref().unwrap_or_default()
     }
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

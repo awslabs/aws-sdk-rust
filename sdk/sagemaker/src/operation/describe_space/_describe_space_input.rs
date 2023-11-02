@@ -34,6 +34,7 @@ pub struct DescribeSpaceInputBuilder {
 }
 impl DescribeSpaceInputBuilder {
     /// <p>The ID of the associated Domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeSpaceInputBuilder {
         &self.domain_id
     }
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self

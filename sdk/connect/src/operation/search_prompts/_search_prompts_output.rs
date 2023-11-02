@@ -13,8 +13,10 @@ pub struct SearchPromptsOutput {
 }
 impl SearchPromptsOutput {
     /// <p>Information about the prompts.</p>
-    pub fn prompts(&self) -> ::std::option::Option<&[crate::types::Prompt]> {
-        self.prompts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prompts.is_none()`.
+    pub fn prompts(&self) -> &[crate::types::Prompt] {
+        self.prompts.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

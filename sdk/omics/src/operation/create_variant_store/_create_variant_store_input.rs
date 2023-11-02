@@ -55,6 +55,7 @@ pub struct CreateVariantStoreInputBuilder {
 }
 impl CreateVariantStoreInputBuilder {
     /// <p>The genome reference for the store's variants.</p>
+    /// This field is required.
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.reference = ::std::option::Option::Some(input);
         self

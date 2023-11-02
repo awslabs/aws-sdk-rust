@@ -26,8 +26,10 @@ pub struct DescribeBundleTasksInput {
 impl DescribeBundleTasksInput {
     /// <p>The bundle task IDs.</p>
     /// <p>Default: Describes all your bundle tasks.</p>
-    pub fn bundle_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bundle_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_ids.is_none()`.
+    pub fn bundle_ids(&self) -> &[::std::string::String] {
+        self.bundle_ids.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -42,8 +44,10 @@ impl DescribeBundleTasksInput {
     /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
     /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {

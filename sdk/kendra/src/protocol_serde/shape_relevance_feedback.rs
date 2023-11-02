@@ -3,11 +3,11 @@ pub fn ser_relevance_feedback(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelevanceFeedback,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.result_id {
-        object.key("ResultId").string(var_1.as_str());
+    {
+        object.key("ResultId").string(input.result_id.as_str());
     }
-    if let Some(var_2) = &input.relevance_value {
-        object.key("RelevanceValue").string(var_2.as_str());
+    {
+        object.key("RelevanceValue").string(input.relevance_value.as_str());
     }
     Ok(())
 }

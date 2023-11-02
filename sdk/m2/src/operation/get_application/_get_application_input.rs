@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationInput {
     /// <p>The identifier of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
 }
 impl GetApplicationInput {
     /// <p>The identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
 }
 impl GetApplicationInput {
@@ -27,6 +28,7 @@ pub struct GetApplicationInputBuilder {
 }
 impl GetApplicationInputBuilder {
     /// <p>The identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl GetApplicationInputBuilder {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::get_application::builders::GetApplicationInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_application::GetApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_application::GetApplicationInput {
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building GetApplicationInput",
+                )
+            })?,
         })
     }
 }

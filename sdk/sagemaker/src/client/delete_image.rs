@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteImage`](crate::operation::delete_image::builders::DeleteImageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_name(impl Into<String>)`](crate::operation::delete_image::builders::DeleteImageFluentBuilder::image_name) / [`set_image_name(Option<String>)`](crate::operation::delete_image::builders::DeleteImageFluentBuilder::set_image_name): <p>The name of the image to delete.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::operation::delete_image::builders::DeleteImageFluentBuilder::image_name) / [`set_image_name(Option<String>)`](crate::operation::delete_image::builders::DeleteImageFluentBuilder::set_image_name):<br>required: **true**<br><p>The name of the image to delete.</p><br>
     /// - On success, responds with [`DeleteImageOutput`](crate::operation::delete_image::DeleteImageOutput)
     /// - On failure, responds with [`SdkError<DeleteImageError>`](crate::operation::delete_image::DeleteImageError)
     pub fn delete_image(&self) -> crate::operation::delete_image::builders::DeleteImageFluentBuilder {

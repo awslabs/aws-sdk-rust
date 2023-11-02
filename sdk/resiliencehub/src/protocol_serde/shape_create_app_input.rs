@@ -24,27 +24,27 @@ pub fn ser_create_app_input(
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_9) = &input.permission_model {
+    if let Some(var_8) = &input.permission_model {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("permissionModel").start_object();
-        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("permissionModel").start_object();
+        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_11) = &input.policy_arn {
-        object.key("policyArn").string(var_11.as_str());
+    if let Some(var_10) = &input.policy_arn {
+        object.key("policyArn").string(var_10.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_13.finish();
+        object_12.finish();
     }
     Ok(())
 }

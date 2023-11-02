@@ -11,8 +11,10 @@ pub struct ListPeeringsOutput {
 }
 impl ListPeeringsOutput {
     /// <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
-    pub fn peerings(&self) -> ::std::option::Option<&[crate::types::Peering]> {
-        self.peerings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.peerings.is_none()`.
+    pub fn peerings(&self) -> &[crate::types::Peering] {
+        self.peerings.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

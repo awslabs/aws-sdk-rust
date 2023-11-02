@@ -41,6 +41,7 @@ pub struct GetQueryResultsInputBuilder {
 }
 impl GetQueryResultsInputBuilder {
     /// <p>The unique ID of the query execution.</p>
+    /// This field is required.
     pub fn query_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_execution_id = ::std::option::Option::Some(input.into());
         self

@@ -28,6 +28,7 @@ pub struct PublicDnsNamespacePropertiesBuilder {
 }
 impl PublicDnsNamespacePropertiesBuilder {
     /// <p>DNS properties for the public DNS namespace.</p>
+    /// This field is required.
     pub fn dns_properties(mut self, input: crate::types::PublicDnsPropertiesMutable) -> Self {
         self.dns_properties = ::std::option::Option::Some(input);
         self

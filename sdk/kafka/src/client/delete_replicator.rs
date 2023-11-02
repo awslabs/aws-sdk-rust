@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReplicator`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`current_version(impl Into<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::set_current_version): <p>The current version of the replicator.</p>
-    ///   - [`replicator_arn(impl Into<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::replicator_arn) / [`set_replicator_arn(Option<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::set_replicator_arn): <p>The Amazon Resource Name (ARN) of the replicator to be deleted.</p>
+    ///   - [`current_version(impl Into<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::set_current_version):<br>required: **false**<br><p>The current version of the replicator.</p><br>
+    ///   - [`replicator_arn(impl Into<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::replicator_arn) / [`set_replicator_arn(Option<String>)`](crate::operation::delete_replicator::builders::DeleteReplicatorFluentBuilder::set_replicator_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replicator to be deleted.</p><br>
     /// - On success, responds with [`DeleteReplicatorOutput`](crate::operation::delete_replicator::DeleteReplicatorOutput) with field(s):
     ///   - [`replicator_arn(Option<String>)`](crate::operation::delete_replicator::DeleteReplicatorOutput::replicator_arn): <p>The Amazon Resource Name (ARN) of the replicator.</p>
     ///   - [`replicator_state(Option<ReplicatorState>)`](crate::operation::delete_replicator::DeleteReplicatorOutput::replicator_state): <p>The state of the replicator.</p>

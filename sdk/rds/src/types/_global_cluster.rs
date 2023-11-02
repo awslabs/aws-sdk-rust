@@ -65,8 +65,10 @@ impl GlobalCluster {
         self.deletion_protection
     }
     /// <p>The list of primary and secondary clusters within the global database cluster.</p>
-    pub fn global_cluster_members(&self) -> ::std::option::Option<&[crate::types::GlobalClusterMember]> {
-        self.global_cluster_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_cluster_members.is_none()`.
+    pub fn global_cluster_members(&self) -> &[crate::types::GlobalClusterMember] {
+        self.global_cluster_members.as_deref().unwrap_or_default()
     }
     /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Aurora global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn failover_state(&self) -> ::std::option::Option<&crate::types::FailoverState> {

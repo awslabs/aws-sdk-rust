@@ -4,31 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteOutput {
     /// Site ARN.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// Filters access by the site's identifier
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// Human friendly name of the resource.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
     pub country_code: ::std::option::Option<::std::string::String>,
     /// A high-level description of the site.
     pub description: ::std::option::Option<::std::string::String>,
     /// Timestamp at which the resource was last updated.
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateSiteOutput {
     /// Site ARN.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// Filters access by the site's identifier
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
     pub fn country_code(&self) -> ::std::option::Option<&str> {
@@ -39,8 +42,8 @@ impl UpdateSiteOutput {
         self.description.as_deref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateSiteOutput {
@@ -69,6 +72,7 @@ pub struct UpdateSiteOutputBuilder {
 }
 impl UpdateSiteOutputBuilder {
     /// Site ARN.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl UpdateSiteOutputBuilder {
         &self.arn
     }
     /// Filters access by the site's identifier
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl UpdateSiteOutputBuilder {
         &self.id
     }
     /// Human friendly name of the resource.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +145,7 @@ impl UpdateSiteOutputBuilder {
         &self.description
     }
     /// Timestamp at which the resource was last updated.
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -162,15 +169,40 @@ impl UpdateSiteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateSiteOutput`](crate::operation::update_site::UpdateSiteOutput).
-    pub fn build(self) -> crate::operation::update_site::UpdateSiteOutput {
-        crate::operation::update_site::UpdateSiteOutput {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_site::builders::UpdateSiteOutputBuilder::arn)
+    /// - [`id`](crate::operation::update_site::builders::UpdateSiteOutputBuilder::id)
+    /// - [`name`](crate::operation::update_site::builders::UpdateSiteOutputBuilder::name)
+    /// - [`updated_at`](crate::operation::update_site::builders::UpdateSiteOutputBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_site::UpdateSiteOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateSiteOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateSiteOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateSiteOutput",
+                )
+            })?,
             country_code: self.country_code,
             description: self.description,
-            updated_at: self.updated_at,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building UpdateSiteOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

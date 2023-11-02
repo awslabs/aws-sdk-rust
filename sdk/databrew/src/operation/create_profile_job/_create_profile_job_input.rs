@@ -78,8 +78,10 @@ impl CreateProfileJobInput {
         self.configuration.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn validation_configurations(&self) -> ::std::option::Option<&[crate::types::ValidationConfiguration]> {
-        self.validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_configurations.is_none()`.
+    pub fn validation_configurations(&self) -> &[crate::types::ValidationConfiguration] {
+        self.validation_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -126,6 +128,7 @@ pub struct CreateProfileJobInputBuilder {
 }
 impl CreateProfileJobInputBuilder {
     /// <p>The name of the dataset that this job is to act upon.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -180,6 +183,7 @@ impl CreateProfileJobInputBuilder {
         &self.encryption_mode
     }
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -236,6 +240,7 @@ impl CreateProfileJobInputBuilder {
         &self.max_retries
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
+    /// This field is required.
     pub fn output_location(mut self, input: crate::types::S3Location) -> Self {
         self.output_location = ::std::option::Option::Some(input);
         self
@@ -284,6 +289,7 @@ impl CreateProfileJobInputBuilder {
         &self.validation_configurations
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

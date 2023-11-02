@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResponsePlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateResponsePlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateResponsePlanOutput {
@@ -34,6 +35,7 @@ pub struct CreateResponsePlanOutputBuilder {
 }
 impl CreateResponsePlanOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl CreateResponsePlanOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateResponsePlanOutput`](crate::operation::create_response_plan::CreateResponsePlanOutput).
-    pub fn build(self) -> crate::operation::create_response_plan::CreateResponsePlanOutput {
-        crate::operation::create_response_plan::CreateResponsePlanOutput {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::create_response_plan::builders::CreateResponsePlanOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_response_plan::CreateResponsePlanOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateResponsePlanOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

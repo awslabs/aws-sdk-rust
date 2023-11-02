@@ -39,16 +39,20 @@ impl NodeGroupConfiguration {
         self.primary_availability_zone.as_deref()
     }
     /// <p>A list of Availability Zones to be used for the read replicas. The number of Availability Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code> if not specified.</p>
-    pub fn replica_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replica_availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_availability_zones.is_none()`.
+    pub fn replica_availability_zones(&self) -> &[::std::string::String] {
+        self.replica_availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The outpost ARN of the primary node.</p>
     pub fn primary_outpost_arn(&self) -> ::std::option::Option<&str> {
         self.primary_outpost_arn.as_deref()
     }
     /// <p>The outpost ARN of the node replicas.</p>
-    pub fn replica_outpost_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replica_outpost_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_outpost_arns.is_none()`.
+    pub fn replica_outpost_arns(&self) -> &[::std::string::String] {
+        self.replica_outpost_arns.as_deref().unwrap_or_default()
     }
 }
 impl NodeGroupConfiguration {

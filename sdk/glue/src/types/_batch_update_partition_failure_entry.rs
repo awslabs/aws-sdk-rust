@@ -11,8 +11,10 @@ pub struct BatchUpdatePartitionFailureEntry {
 }
 impl BatchUpdatePartitionFailureEntry {
     /// <p>A list of values defining the partitions.</p>
-    pub fn partition_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_value_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_value_list.is_none()`.
+    pub fn partition_value_list(&self) -> &[::std::string::String] {
+        self.partition_value_list.as_deref().unwrap_or_default()
     }
     /// <p>The details about the batch update partition error.</p>
     pub fn error_detail(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {

@@ -11,8 +11,10 @@ pub struct ListStatementsOutput {
 }
 impl ListStatementsOutput {
     /// <p>Returns the list of statements.</p>
-    pub fn statements(&self) -> ::std::option::Option<&[crate::types::Statement]> {
-        self.statements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statements.is_none()`.
+    pub fn statements(&self) -> &[crate::types::Statement] {
+        self.statements.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if not all statements have yet been returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

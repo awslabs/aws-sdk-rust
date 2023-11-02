@@ -7,7 +7,7 @@ pub struct DataPathColor {
     /// <p>The element that the color needs to be applied to.</p>
     pub element: ::std::option::Option<crate::types::DataPathValue>,
     /// <p>The color that needs to be applied to the element.</p>
-    pub color: ::std::option::Option<::std::string::String>,
+    pub color: ::std::string::String,
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
     pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
 }
@@ -17,8 +17,9 @@ impl DataPathColor {
         self.element.as_ref()
     }
     /// <p>The color that needs to be applied to the element.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
-        self.color.as_deref()
+    pub fn color(&self) -> &str {
+        use std::ops::Deref;
+        self.color.deref()
     }
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
     pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
@@ -42,6 +43,7 @@ pub struct DataPathColorBuilder {
 }
 impl DataPathColorBuilder {
     /// <p>The element that the color needs to be applied to.</p>
+    /// This field is required.
     pub fn element(mut self, input: crate::types::DataPathValue) -> Self {
         self.element = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl DataPathColorBuilder {
         &self.element
     }
     /// <p>The color that needs to be applied to the element.</p>
+    /// This field is required.
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,18 @@ impl DataPathColorBuilder {
         &self.time_granularity
     }
     /// Consumes the builder and constructs a [`DataPathColor`](crate::types::DataPathColor).
-    pub fn build(self) -> crate::types::DataPathColor {
-        crate::types::DataPathColor {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`color`](crate::types::builders::DataPathColorBuilder::color)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataPathColor, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataPathColor {
             element: self.element,
-            color: self.color,
+            color: self.color.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "color",
+                    "color was not specified but it is required when building DataPathColor",
+                )
+            })?,
             time_granularity: self.time_granularity,
-        }
+        })
     }
 }

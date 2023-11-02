@@ -9,8 +9,10 @@ pub struct DescribeAutoScalingNotificationTypesOutput {
 }
 impl DescribeAutoScalingNotificationTypesOutput {
     /// <p>The notification types.</p>
-    pub fn auto_scaling_notification_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_scaling_notification_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_notification_types.is_none()`.
+    pub fn auto_scaling_notification_types(&self) -> &[::std::string::String] {
+        self.auto_scaling_notification_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAutoScalingNotificationTypesOutput {

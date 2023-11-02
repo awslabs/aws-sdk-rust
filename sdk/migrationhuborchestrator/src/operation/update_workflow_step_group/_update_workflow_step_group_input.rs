@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The ID of the step group.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the step group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the step group.</p>
@@ -18,12 +18,14 @@ pub struct UpdateWorkflowStepGroupInput {
 }
 impl UpdateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the step group.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -34,12 +36,16 @@ impl UpdateWorkflowStepGroupInput {
         self.description.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.next.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[::std::string::String] {
+        self.next.as_deref().unwrap_or_default()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.previous.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
+    pub fn previous(&self) -> &[::std::string::String] {
+        self.previous.as_deref().unwrap_or_default()
     }
 }
 impl UpdateWorkflowStepGroupInput {
@@ -62,6 +68,7 @@ pub struct UpdateWorkflowStepGroupInputBuilder {
 }
 impl UpdateWorkflowStepGroupInputBuilder {
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +83,7 @@ impl UpdateWorkflowStepGroupInputBuilder {
         &self.workflow_id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +166,9 @@ impl UpdateWorkflowStepGroupInputBuilder {
         &self.previous
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowStepGroupInput`](crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupInputBuilder::workflow_id)
+    /// - [`id`](crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -165,8 +176,18 @@ impl UpdateWorkflowStepGroupInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_workflow_step_group::UpdateWorkflowStepGroupInput {
-            workflow_id: self.workflow_id,
-            id: self.id,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building UpdateWorkflowStepGroupInput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateWorkflowStepGroupInput",
+                )
+            })?,
             name: self.name,
             description: self.description,
             next: self.next,

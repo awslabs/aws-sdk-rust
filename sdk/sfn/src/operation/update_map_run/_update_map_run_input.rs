@@ -48,6 +48,7 @@ pub struct UpdateMapRunInputBuilder {
 }
 impl UpdateMapRunInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
+    /// This field is required.
     pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_run_arn = ::std::option::Option::Some(input.into());
         self

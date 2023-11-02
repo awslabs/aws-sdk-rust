@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub cluster_arn: ::std::option::Option<::std::string::String>,
+    pub cluster_arn: ::std::string::String,
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub auth_type: ::std::option::Option<crate::types::Auth>,
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
@@ -29,8 +29,9 @@ pub struct UpdateClusterInput {
 }
 impl UpdateClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
-        self.cluster_arn.as_deref()
+    pub fn cluster_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_arn.deref()
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::Auth> {
@@ -45,12 +46,16 @@ impl UpdateClusterInput {
         self.shard_count
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
@@ -108,6 +113,7 @@ pub struct UpdateClusterInputBuilder {
 }
 impl UpdateClusterInputBuilder {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -261,11 +267,18 @@ impl UpdateClusterInputBuilder {
         &self.preferred_maintenance_window
     }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cluster_arn`](crate::operation::update_cluster::builders::UpdateClusterInputBuilder::cluster_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
-            cluster_arn: self.cluster_arn,
+            cluster_arn: self.cluster_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cluster_arn",
+                    "cluster_arn was not specified but it is required when building UpdateClusterInput",
+                )
+            })?,
             auth_type: self.auth_type,
             shard_capacity: self.shard_capacity,
             shard_count: self.shard_count,

@@ -19,8 +19,10 @@ pub struct GetSimilarProfilesOutput {
 }
 impl GetSimilarProfilesOutput {
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    pub fn profile_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.profile_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_ids.is_none()`.
+    pub fn profile_ids(&self) -> &[::std::string::String] {
+        self.profile_ids.as_deref().unwrap_or_default()
     }
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
     pub fn match_id(&self) -> ::std::option::Option<&str> {

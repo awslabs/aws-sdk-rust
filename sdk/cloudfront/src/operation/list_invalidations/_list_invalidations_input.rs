@@ -42,6 +42,7 @@ pub struct ListInvalidationsInputBuilder {
 }
 impl ListInvalidationsInputBuilder {
     /// <p>The distribution's ID.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct MetricDefinitionBuilder {
 }
 impl MetricDefinitionBuilder {
     /// <p>The name of the metric.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl MetricDefinitionBuilder {
         &self.name
     }
     /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Defining metrics and environment variables</a>.</p>
+    /// This field is required.
     pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex = ::std::option::Option::Some(input.into());
         self

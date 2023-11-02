@@ -15,8 +15,10 @@ impl DetachLoadBalancerFromSubnetsInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
 }
 impl DetachLoadBalancerFromSubnetsInput {
@@ -35,6 +37,7 @@ pub struct DetachLoadBalancerFromSubnetsInputBuilder {
 }
 impl DetachLoadBalancerFromSubnetsInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self

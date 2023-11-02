@@ -34,6 +34,7 @@ pub struct DeauthorizeDataShareInputBuilder {
 }
 impl DeauthorizeDataShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeauthorizeDataShareInputBuilder {
         &self.data_share_arn
     }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    /// This field is required.
     pub fn consumer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_identifier = ::std::option::Option::Some(input.into());
         self

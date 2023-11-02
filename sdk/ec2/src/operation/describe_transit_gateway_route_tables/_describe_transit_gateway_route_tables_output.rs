@@ -11,8 +11,10 @@ pub struct DescribeTransitGatewayRouteTablesOutput {
 }
 impl DescribeTransitGatewayRouteTablesOutput {
     /// <p>Information about the transit gateway route tables.</p>
-    pub fn transit_gateway_route_tables(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTable]> {
-        self.transit_gateway_route_tables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_route_tables.is_none()`.
+    pub fn transit_gateway_route_tables(&self) -> &[crate::types::TransitGatewayRouteTable] {
+        self.transit_gateway_route_tables.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

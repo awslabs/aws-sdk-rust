@@ -41,6 +41,7 @@ pub struct ListExclusionsInputBuilder {
 }
 impl ListExclusionsInputBuilder {
     /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
+    /// This field is required.
     pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self

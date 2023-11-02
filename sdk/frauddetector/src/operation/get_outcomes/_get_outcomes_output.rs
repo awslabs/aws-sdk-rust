@@ -11,8 +11,10 @@ pub struct GetOutcomesOutput {
 }
 impl GetOutcomesOutput {
     /// <p>The outcomes. </p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[crate::types::Outcome]> {
-        self.outcomes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
+    pub fn outcomes(&self) -> &[crate::types::Outcome] {
+        self.outcomes.as_deref().unwrap_or_default()
     }
     /// <p>The next page token for subsequent requests.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

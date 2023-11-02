@@ -34,6 +34,7 @@ pub struct GetEnvironmentBlueprintInputBuilder {
 }
 impl GetEnvironmentBlueprintInputBuilder {
     /// <p>The identifier of the domain in which this blueprint exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetEnvironmentBlueprintInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of this Amazon DataZone blueprint.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

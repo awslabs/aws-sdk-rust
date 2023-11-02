@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppMonitorDataInput {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
@@ -16,16 +16,19 @@ pub struct GetAppMonitorDataInput {
 }
 impl GetAppMonitorDataInput {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
     pub fn time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {
         self.time_range.as_ref()
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::QueryFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::QueryFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in one operation. </p>
     pub fn max_results(&self) -> i32 {
@@ -55,6 +58,7 @@ pub struct GetAppMonitorDataInputBuilder {
 }
 impl GetAppMonitorDataInputBuilder {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl GetAppMonitorDataInputBuilder {
         &self.name
     }
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
+    /// This field is required.
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
         self
@@ -131,11 +136,18 @@ impl GetAppMonitorDataInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_app_monitor_data::GetAppMonitorDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_app_monitor_data::GetAppMonitorDataInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetAppMonitorDataInput",
+                )
+            })?,
             time_range: self.time_range,
             filters: self.filters,
             max_results: self.max_results.unwrap_or_default(),

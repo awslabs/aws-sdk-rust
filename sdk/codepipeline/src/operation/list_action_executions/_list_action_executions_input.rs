@@ -52,6 +52,7 @@ pub struct ListActionExecutionsInputBuilder {
 }
 impl ListActionExecutionsInputBuilder {
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self

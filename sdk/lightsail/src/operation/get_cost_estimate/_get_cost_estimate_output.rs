@@ -9,8 +9,10 @@ pub struct GetCostEstimateOutput {
 }
 impl GetCostEstimateOutput {
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub fn resources_budget_estimate(&self) -> ::std::option::Option<&[crate::types::ResourceBudgetEstimate]> {
-        self.resources_budget_estimate.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_budget_estimate.is_none()`.
+    pub fn resources_budget_estimate(&self) -> &[crate::types::ResourceBudgetEstimate] {
+        self.resources_budget_estimate.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCostEstimateOutput {

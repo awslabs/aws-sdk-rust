@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEphemeris`](crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ephemeris_id(impl Into<String>)`](crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder::ephemeris_id) / [`set_ephemeris_id(Option<String>)`](crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder::set_ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
+    ///   - [`ephemeris_id(impl Into<String>)`](crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder::ephemeris_id) / [`set_ephemeris_id(impl Into<String>)`](crate::operation::delete_ephemeris::builders::DeleteEphemerisFluentBuilder::set_ephemeris_id):<br>required: **true**<br><p>The AWS Ground Station ephemeris ID.</p><br>
     /// - On success, responds with [`DeleteEphemerisOutput`](crate::operation::delete_ephemeris::DeleteEphemerisOutput) with field(s):
     ///   - [`ephemeris_id(Option<String>)`](crate::operation::delete_ephemeris::DeleteEphemerisOutput::ephemeris_id): <p>The AWS Ground Station ephemeris ID.</p>
     /// - On failure, responds with [`SdkError<DeleteEphemerisError>`](crate::operation::delete_ephemeris::DeleteEphemerisError)

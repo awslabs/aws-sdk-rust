@@ -27,6 +27,7 @@ pub struct DeleteSinkInputBuilder {
 }
 impl DeleteSinkInputBuilder {
     /// <p>The ARN of the sink to delete.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

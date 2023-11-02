@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateGatewaySoftwareNow`](crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
+    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowFluentBuilder::gateway_arn) / [`set_gateway_arn(impl Into<String>)`](crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowFluentBuilder::set_gateway_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the gateway to be updated.</p><br>
     /// - On success, responds with [`UpdateGatewaySoftwareNowOutput`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateGatewaySoftwareNowError>`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowError)

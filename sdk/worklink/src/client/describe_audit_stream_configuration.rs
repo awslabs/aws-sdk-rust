@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAuditStreamConfiguration`](crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_audit_stream_configuration::builders::DescribeAuditStreamConfigurationFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
     /// - On success, responds with [`DescribeAuditStreamConfigurationOutput`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationOutput) with field(s):
     ///   - [`audit_stream_arn(Option<String>)`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationOutput::audit_stream_arn): <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditStreamConfigurationError>`](crate::operation::describe_audit_stream_configuration::DescribeAuditStreamConfigurationError)

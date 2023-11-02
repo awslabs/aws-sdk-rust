@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Sets the value for the named component parameter.</p>
-    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value: ::std::vec::Vec<::std::string::String>,
 }
 impl ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Sets the value for the named component parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    pub fn value(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ComponentParameter {
@@ -35,6 +37,7 @@ pub struct ComponentParameterBuilder {
 }
 impl ComponentParameterBuilder {
     /// <p>The name of the component parameter to set.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl ComponentParameterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ComponentParameter`](crate::types::ComponentParameter).
-    pub fn build(self) -> crate::types::ComponentParameter {
-        crate::types::ComponentParameter {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ComponentParameterBuilder::name)
+    /// - [`value`](crate::types::builders::ComponentParameterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ComponentParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ComponentParameter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ComponentParameter",
+                )
+            })?,
+        })
     }
 }

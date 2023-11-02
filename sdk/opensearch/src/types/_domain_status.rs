@@ -5,17 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainStatus {
     /// <p>Unique identifier for the domain.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is still in progress.</p>
     pub created: ::std::option::Option<bool>,
     /// <p>Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.</p>
     pub deleted: ::std::option::Option<bool>,
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    pub endpoint_v2: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
@@ -30,6 +32,8 @@ pub struct DomainStatus {
     pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
     pub access_policies: ::std::option::Option<::std::string::String>,
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>The VPC configuration for the domain.</p>
@@ -61,16 +65,19 @@ pub struct DomainStatus {
 }
 impl DomainStatus {
     /// <p>Unique identifier for the domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is still in progress.</p>
     pub fn created(&self) -> ::std::option::Option<bool> {
@@ -83,6 +90,10 @@ impl DomainStatus {
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
+    }
+    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    pub fn endpoint_v2(&self) -> ::std::option::Option<&str> {
+        self.endpoint_v2.as_deref()
     }
     /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn endpoints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -111,6 +122,10 @@ impl DomainStatus {
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
     pub fn access_policies(&self) -> ::std::option::Option<&str> {
         self.access_policies.as_deref()
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
@@ -188,6 +203,7 @@ pub struct DomainStatusBuilder {
     pub(crate) created: ::std::option::Option<bool>,
     pub(crate) deleted: ::std::option::Option<bool>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_v2: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) processing: ::std::option::Option<bool>,
     pub(crate) upgrade_processing: ::std::option::Option<bool>,
@@ -195,6 +211,7 @@ pub struct DomainStatusBuilder {
     pub(crate) cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
     pub(crate) ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     pub(crate) access_policies: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcDerivedInfo>,
     pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
@@ -212,6 +229,7 @@ pub struct DomainStatusBuilder {
 }
 impl DomainStatusBuilder {
     /// <p>Unique identifier for the domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -226,6 +244,7 @@ impl DomainStatusBuilder {
         &self.domain_id
     }
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -240,6 +259,7 @@ impl DomainStatusBuilder {
         &self.domain_name
     }
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -294,6 +314,20 @@ impl DomainStatusBuilder {
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
+    }
+    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    pub fn endpoint_v2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_v2 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    pub fn set_endpoint_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_v2 = input;
+        self
+    }
+    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    pub fn get_endpoint_v2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_v2
     }
     /// Adds a key-value pair to `endpoints`.
     ///
@@ -358,6 +392,7 @@ impl DomainStatusBuilder {
         &self.engine_version
     }
     /// <p>Container for the cluster configuration of the domain.</p>
+    /// This field is required.
     pub fn cluster_config(mut self, input: crate::types::ClusterConfig) -> Self {
         self.cluster_config = ::std::option::Option::Some(input);
         self
@@ -398,6 +433,20 @@ impl DomainStatusBuilder {
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_policies
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
@@ -620,14 +669,34 @@ impl DomainStatusBuilder {
         &self.software_update_options
     }
     /// Consumes the builder and constructs a [`DomainStatus`](crate::types::DomainStatus).
-    pub fn build(self) -> crate::types::DomainStatus {
-        crate::types::DomainStatus {
-            domain_id: self.domain_id,
-            domain_name: self.domain_name,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::DomainStatusBuilder::domain_id)
+    /// - [`domain_name`](crate::types::builders::DomainStatusBuilder::domain_name)
+    /// - [`arn`](crate::types::builders::DomainStatusBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DomainStatus {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DomainStatus",
+                )
+            })?,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building DomainStatus",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DomainStatus",
+                )
+            })?,
             created: self.created,
             deleted: self.deleted,
             endpoint: self.endpoint,
+            endpoint_v2: self.endpoint_v2,
             endpoints: self.endpoints,
             processing: self.processing,
             upgrade_processing: self.upgrade_processing,
@@ -635,6 +704,7 @@ impl DomainStatusBuilder {
             cluster_config: self.cluster_config,
             ebs_options: self.ebs_options,
             access_policies: self.access_policies,
+            ip_address_type: self.ip_address_type,
             snapshot_options: self.snapshot_options,
             vpc_options: self.vpc_options,
             cognito_options: self.cognito_options,
@@ -649,6 +719,6 @@ impl DomainStatusBuilder {
             change_progress_details: self.change_progress_details,
             off_peak_window_options: self.off_peak_window_options,
             software_update_options: self.software_update_options,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct UpdateNotificationSettingsInputBuilder {
 }
 impl UpdateNotificationSettingsInputBuilder {
     /// <p> The ID of the HIT type whose notification specification is being updated. </p>
+    /// This field is required.
     pub fn hit_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_type_id = ::std::option::Option::Some(input.into());
         self

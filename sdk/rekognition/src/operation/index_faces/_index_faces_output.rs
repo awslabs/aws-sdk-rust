@@ -21,8 +21,10 @@ pub struct IndexFacesOutput {
 }
 impl IndexFacesOutput {
     /// <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
-    pub fn face_records(&self) -> ::std::option::Option<&[crate::types::FaceRecord]> {
-        self.face_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_records.is_none()`.
+    pub fn face_records(&self) -> &[crate::types::FaceRecord] {
+        self.face_records.as_deref().unwrap_or_default()
     }
     /// <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>
     /// <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>
@@ -39,8 +41,10 @@ impl IndexFacesOutput {
         self.face_model_version.as_deref()
     }
     /// <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
-    pub fn unindexed_faces(&self) -> ::std::option::Option<&[crate::types::UnindexedFace]> {
-        self.unindexed_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unindexed_faces.is_none()`.
+    pub fn unindexed_faces(&self) -> &[crate::types::UnindexedFace] {
+        self.unindexed_faces.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for IndexFacesOutput {

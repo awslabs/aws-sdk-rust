@@ -27,6 +27,7 @@ pub struct GetKeyInputBuilder {
 }
 impl GetKeyInputBuilder {
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct State {
     /// <p>The name of the state.</p>
-    pub state_name: ::std::option::Option<::std::string::String>,
+    pub state_name: ::std::string::String,
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
     pub on_input: ::std::option::Option<crate::types::OnInputLifecycle>,
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
@@ -15,8 +15,9 @@ pub struct State {
 }
 impl State {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> ::std::option::Option<&str> {
-        self.state_name.as_deref()
+    pub fn state_name(&self) -> &str {
+        use std::ops::Deref;
+        self.state_name.deref()
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
     pub fn on_input(&self) -> ::std::option::Option<&crate::types::OnInputLifecycle> {
@@ -49,6 +50,7 @@ pub struct StateBuilder {
 }
 impl StateBuilder {
     /// <p>The name of the state.</p>
+    /// This field is required.
     pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl StateBuilder {
         &self.on_exit
     }
     /// Consumes the builder and constructs a [`State`](crate::types::State).
-    pub fn build(self) -> crate::types::State {
-        crate::types::State {
-            state_name: self.state_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_name`](crate::types::builders::StateBuilder::state_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::State {
+            state_name: self.state_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_name",
+                    "state_name was not specified but it is required when building State",
+                )
+            })?,
             on_input: self.on_input,
             on_enter: self.on_enter,
             on_exit: self.on_exit,
-        }
+        })
     }
 }

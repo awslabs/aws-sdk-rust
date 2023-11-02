@@ -32,11 +32,10 @@ pub fn de_create_application_instance_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_application_instance::CreateApplicationInstanceError::InternalServerException({
@@ -54,11 +53,10 @@ pub fn de_create_application_instance_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => {
@@ -73,11 +71,10 @@ pub fn de_create_application_instance_http_error(
                     )
                     .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -89,11 +86,10 @@ pub fn de_create_application_instance_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_application_instance::CreateApplicationInstanceError::generic(generic),
@@ -115,7 +111,9 @@ pub fn de_create_application_instance_http_response(
         output = crate::protocol_serde::shape_create_application_instance::de_create_application_instance(_response_body, output)
             .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_application_instance_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_application_instance::CreateApplicationInstanceError::unhandled)?
     })
 }
 

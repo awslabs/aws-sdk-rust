@@ -44,20 +44,26 @@ impl CreateStudioComponentInput {
         self.description.as_deref()
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_group_ids.is_none()`.
+    pub fn ec2_security_group_ids(&self) -> &[::std::string::String] {
+        self.ec2_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn initialization_scripts(&self) -> ::std::option::Option<&[crate::types::StudioComponentInitializationScript]> {
-        self.initialization_scripts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.initialization_scripts.is_none()`.
+    pub fn initialization_scripts(&self) -> &[crate::types::StudioComponentInitializationScript] {
+        self.initialization_scripts.as_deref().unwrap_or_default()
     }
     /// <p>The name for the studio component.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn script_parameters(&self) -> ::std::option::Option<&[crate::types::ScriptParameterKeyValue]> {
-        self.script_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.script_parameters.is_none()`.
+    pub fn script_parameters(&self) -> &[crate::types::ScriptParameterKeyValue] {
+        self.script_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> ::std::option::Option<&str> {
@@ -215,6 +221,7 @@ impl CreateStudioComponentInputBuilder {
         &self.initialization_scripts
     }
     /// <p>The name for the studio component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -249,6 +256,7 @@ impl CreateStudioComponentInputBuilder {
         &self.script_parameters
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self
@@ -297,6 +305,7 @@ impl CreateStudioComponentInputBuilder {
         &self.tags
     }
     /// <p>The type of the studio component.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::StudioComponentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVehicle`](crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vehicle_name(impl Into<String>)`](crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder::vehicle_name) / [`set_vehicle_name(Option<String>)`](crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder::set_vehicle_name): <p>The ID of the vehicle to delete. </p>
+    ///   - [`vehicle_name(impl Into<String>)`](crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder::vehicle_name) / [`set_vehicle_name(impl Into<String>)`](crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder::set_vehicle_name):<br>required: **true**<br><p>The ID of the vehicle to delete. </p><br>
     /// - On success, responds with [`DeleteVehicleOutput`](crate::operation::delete_vehicle::DeleteVehicleOutput) with field(s):
-    ///   - [`vehicle_name(Option<String>)`](crate::operation::delete_vehicle::DeleteVehicleOutput::vehicle_name): <p>The ID of the deleted vehicle.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::delete_vehicle::DeleteVehicleOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
+    ///   - [`vehicle_name(String)`](crate::operation::delete_vehicle::DeleteVehicleOutput::vehicle_name): <p>The ID of the deleted vehicle.</p>
+    ///   - [`arn(String)`](crate::operation::delete_vehicle::DeleteVehicleOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
     /// - On failure, responds with [`SdkError<DeleteVehicleError>`](crate::operation::delete_vehicle::DeleteVehicleError)
     pub fn delete_vehicle(&self) -> crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder {
         crate::operation::delete_vehicle::builders::DeleteVehicleFluentBuilder::new(self.handle.clone())

@@ -41,8 +41,10 @@ impl UpdateSecurityProfileOutput {
         self.security_profile_description.as_deref()
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn behaviors(&self) -> ::std::option::Option<&[crate::types::Behavior]> {
-        self.behaviors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.behaviors.is_none()`.
+    pub fn behaviors(&self) -> &[crate::types::Behavior] {
+        self.behaviors.as_deref().unwrap_or_default()
     }
     /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
     pub fn alert_targets(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>> {
@@ -50,13 +52,17 @@ impl UpdateSecurityProfileOutput {
     }
     /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_metrics_to_retain.is_none()`.
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn additional_metrics_to_retain(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_metrics_to_retain.as_deref()
+    pub fn additional_metrics_to_retain(&self) -> &[::std::string::String] {
+        self.additional_metrics_to_retain.as_deref().unwrap_or_default()
     }
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    pub fn additional_metrics_to_retain_v2(&self) -> ::std::option::Option<&[crate::types::MetricToRetain]> {
-        self.additional_metrics_to_retain_v2.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_metrics_to_retain_v2.is_none()`.
+    pub fn additional_metrics_to_retain_v2(&self) -> &[crate::types::MetricToRetain] {
+        self.additional_metrics_to_retain_v2.as_deref().unwrap_or_default()
     }
     /// <p>The updated version of the security profile.</p>
     pub fn version(&self) -> i64 {

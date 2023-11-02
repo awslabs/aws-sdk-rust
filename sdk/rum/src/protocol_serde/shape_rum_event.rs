@@ -3,22 +3,22 @@ pub fn ser_rum_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RumEvent,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.timestamp {
+    {
         object
             .key("timestamp")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.timestamp, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("type").string(var_3.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_4) = &input.metadata {
-        object.key("metadata").string(var_4.as_str());
+    if let Some(var_1) = &input.metadata {
+        object.key("metadata").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.details {
-        object.key("details").string(var_5.as_str());
+    {
+        object.key("details").string(input.details.as_str());
     }
     Ok(())
 }

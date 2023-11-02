@@ -111,8 +111,10 @@ impl CaseDetails {
         self.recent_communications.as_ref()
     }
     /// <p>The email addresses that receive copies of communication about the case.</p>
-    pub fn cc_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cc_email_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cc_email_addresses.is_none()`.
+    pub fn cc_email_addresses(&self) -> &[::std::string::String] {
+        self.cc_email_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {

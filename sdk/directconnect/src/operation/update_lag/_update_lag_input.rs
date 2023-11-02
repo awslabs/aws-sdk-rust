@@ -50,6 +50,7 @@ pub struct UpdateLagInputBuilder {
 }
 impl UpdateLagInputBuilder {
     /// <p>The ID of the LAG.</p>
+    /// This field is required.
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
         self

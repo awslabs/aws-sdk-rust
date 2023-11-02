@@ -11,8 +11,10 @@ pub struct ListVpcEndpointsOutput {
 }
 impl ListVpcEndpointsOutput {
     /// <p>Details about each VPC endpoint, including the name and current status.</p>
-    pub fn vpc_endpoint_summaries(&self) -> ::std::option::Option<&[crate::types::VpcEndpointSummary]> {
-        self.vpc_endpoint_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_summaries.is_none()`.
+    pub fn vpc_endpoint_summaries(&self) -> &[crate::types::VpcEndpointSummary] {
+        self.vpc_endpoint_summaries.as_deref().unwrap_or_default()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

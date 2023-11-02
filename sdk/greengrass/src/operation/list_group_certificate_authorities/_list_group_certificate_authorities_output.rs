@@ -9,8 +9,10 @@ pub struct ListGroupCertificateAuthoritiesOutput {
 }
 impl ListGroupCertificateAuthoritiesOutput {
     /// A list of certificate authorities associated with the group.
-    pub fn group_certificate_authorities(&self) -> ::std::option::Option<&[crate::types::GroupCertificateAuthorityProperties]> {
-        self.group_certificate_authorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_certificate_authorities.is_none()`.
+    pub fn group_certificate_authorities(&self) -> &[crate::types::GroupCertificateAuthorityProperties] {
+        self.group_certificate_authorities.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListGroupCertificateAuthoritiesOutput {

@@ -6,7 +6,7 @@ pub struct ListDatabasesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
@@ -24,8 +24,9 @@ impl ListDatabasesInput {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
@@ -83,6 +84,7 @@ impl ListDatabasesInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -167,12 +169,19 @@ impl ListDatabasesInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database`](crate::operation::list_databases::builders::ListDatabasesInputBuilder::database)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_databases::ListDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_databases::ListDatabasesInput {
             cluster_identifier: self.cluster_identifier,
-            database: self.database,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building ListDatabasesInput",
+                )
+            })?,
             secret_arn: self.secret_arn,
             db_user: self.db_user,
             next_token: self.next_token,

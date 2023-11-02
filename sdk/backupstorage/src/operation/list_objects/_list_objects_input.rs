@@ -69,6 +69,7 @@ pub struct ListObjectsInputBuilder {
 }
 impl ListObjectsInputBuilder {
     /// Storage job id
+    /// This field is required.
     pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self

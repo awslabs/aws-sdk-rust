@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
-    pub attendee_id: ::std::option::Option<::std::string::String>,
+    pub attendee_id: ::std::string::String,
 }
 impl AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
-    pub fn attendee_id(&self) -> ::std::option::Option<&str> {
-        self.attendee_id.as_deref()
+    pub fn attendee_id(&self) -> &str {
+        use std::ops::Deref;
+        self.attendee_id.deref()
     }
 }
 impl AttendeeIdItem {
@@ -28,6 +29,7 @@ pub struct AttendeeIdItemBuilder {
 }
 impl AttendeeIdItemBuilder {
     /// <p>A list of one or more attendee IDs.</p>
+    /// This field is required.
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl AttendeeIdItemBuilder {
         &self.attendee_id
     }
     /// Consumes the builder and constructs a [`AttendeeIdItem`](crate::types::AttendeeIdItem).
-    pub fn build(self) -> crate::types::AttendeeIdItem {
-        crate::types::AttendeeIdItem {
-            attendee_id: self.attendee_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attendee_id`](crate::types::builders::AttendeeIdItemBuilder::attendee_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttendeeIdItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttendeeIdItem {
+            attendee_id: self.attendee_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attendee_id",
+                    "attendee_id was not specified but it is required when building AttendeeIdItem",
+                )
+            })?,
+        })
     }
 }

@@ -16,8 +16,10 @@ impl UpdateLabelGroupInput {
     }
     /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fault_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fault_codes.is_none()`.
+    pub fn fault_codes(&self) -> &[::std::string::String] {
+        self.fault_codes.as_deref().unwrap_or_default()
     }
 }
 impl UpdateLabelGroupInput {
@@ -36,6 +38,7 @@ pub struct UpdateLabelGroupInputBuilder {
 }
 impl UpdateLabelGroupInputBuilder {
     /// <p> The name of the label group to be updated. </p>
+    /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self

@@ -32,11 +32,10 @@ pub fn de_delete_geofence_collection_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::InternalServerException({
@@ -47,11 +46,10 @@ pub fn de_delete_geofence_collection_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ResourceNotFoundException({
@@ -62,11 +60,10 @@ pub fn de_delete_geofence_collection_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ThrottlingException({
@@ -77,11 +74,10 @@ pub fn de_delete_geofence_collection_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::ValidationException({
@@ -92,11 +88,10 @@ pub fn de_delete_geofence_collection_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::delete_geofence_collection::DeleteGeofenceCollectionError::generic(generic),

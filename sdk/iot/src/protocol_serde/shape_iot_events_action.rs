@@ -48,7 +48,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::iot_events_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -60,17 +62,17 @@ pub fn ser_iot_events_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotEventsAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.input_name {
-        object.key("inputName").string(var_1.as_str());
+    {
+        object.key("inputName").string(input.input_name.as_str());
     }
-    if let Some(var_2) = &input.message_id {
-        object.key("messageId").string(var_2.as_str());
+    if let Some(var_1) = &input.message_id {
+        object.key("messageId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.batch_mode {
-        object.key("batchMode").boolean(*var_3);
+    if let Some(var_2) = &input.batch_mode {
+        object.key("batchMode").boolean(*var_2);
     }
-    if let Some(var_4) = &input.role_arn {
-        object.key("roleArn").string(var_4.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
     Ok(())
 }

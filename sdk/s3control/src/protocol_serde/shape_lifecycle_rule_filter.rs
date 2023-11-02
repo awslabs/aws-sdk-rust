@@ -29,6 +29,7 @@ pub fn ser_lifecycle_rule_filter(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_rule_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LifecycleRuleFilter, ::aws_smithy_xml::decode::XmlDecodeError> {

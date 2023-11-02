@@ -9,11 +9,11 @@ pub fn ser_transition(
             ::aws_smithy_types::Number::NegInt((input.duration_millis).into()),
         );
     }
-    if let Some(var_1) = &input.relative_position {
-        object.key("RelativePosition").string(var_1.as_str());
+    {
+        object.key("RelativePosition").string(input.relative_position.as_str());
     }
-    if let Some(var_2) = &input.relative_program {
-        object.key("RelativeProgram").string(var_2.as_str());
+    if let Some(var_1) = &input.relative_program {
+        object.key("RelativeProgram").string(var_1.as_str());
     }
     if input.scheduled_start_time_millis != 0 {
         object.key("ScheduledStartTimeMillis").number(
@@ -21,8 +21,8 @@ pub fn ser_transition(
             ::aws_smithy_types::Number::NegInt((input.scheduled_start_time_millis).into()),
         );
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("Type").string(var_3.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
     Ok(())
 }

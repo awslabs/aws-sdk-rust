@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ssekms {
     /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
-    pub key_id: ::std::option::Option<::std::string::String>,
+    pub key_id: ::std::string::String,
 }
 impl Ssekms {
     /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
-        self.key_id.as_deref()
+    pub fn key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.key_id.deref()
     }
 }
 impl Ssekms {
@@ -28,6 +29,7 @@ pub struct SsekmsBuilder {
 }
 impl SsekmsBuilder {
     /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SsekmsBuilder {
         &self.key_id
     }
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
-    pub fn build(self) -> crate::types::Ssekms {
-        crate::types::Ssekms { key_id: self.key_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_id`](crate::types::builders::SsekmsBuilder::key_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ssekms, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ssekms {
+            key_id: self.key_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_id",
+                    "key_id was not specified but it is required when building Ssekms",
+                )
+            })?,
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ListChannelsOutput {
 }
 impl ListChannelsOutput {
     /// A list of Channel records.
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[crate::types::Channel] {
+        self.channels.as_deref().unwrap_or_default()
     }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

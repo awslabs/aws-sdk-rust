@@ -27,6 +27,7 @@ pub struct GetTableRestoreStatusInputBuilder {
 }
 impl GetTableRestoreStatusInputBuilder {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+    /// This field is required.
     pub fn table_restore_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_restore_request_id = ::std::option::Option::Some(input.into());
         self

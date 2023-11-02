@@ -19,8 +19,10 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
         self.gateway_id.as_deref()
     }
     /// <p>The routes that are in violation.</p>
-    pub fn violating_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.violating_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violating_routes.is_none()`.
+    pub fn violating_routes(&self) -> &[crate::types::Route] {
+        self.violating_routes.as_deref().unwrap_or_default()
     }
     /// <p>Information about the route table.</p>
     pub fn route_table_id(&self) -> ::std::option::Option<&str> {

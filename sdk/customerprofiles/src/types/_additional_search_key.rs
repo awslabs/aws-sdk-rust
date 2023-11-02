@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalSearchKey {
     /// <p>A searchable identifier of a customer profile.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>A list of key values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl AdditionalSearchKey {
     /// <p>A searchable identifier of a customer profile.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl AdditionalSearchKey {
@@ -35,6 +37,7 @@ pub struct AdditionalSearchKeyBuilder {
 }
 impl AdditionalSearchKeyBuilder {
     /// <p>A searchable identifier of a customer profile.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl AdditionalSearchKeyBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`AdditionalSearchKey`](crate::types::AdditionalSearchKey).
-    pub fn build(self) -> crate::types::AdditionalSearchKey {
-        crate::types::AdditionalSearchKey {
-            key_name: self.key_name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::types::builders::AdditionalSearchKeyBuilder::key_name)
+    /// - [`values`](crate::types::builders::AdditionalSearchKeyBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::AdditionalSearchKey, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AdditionalSearchKey {
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building AdditionalSearchKey",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building AdditionalSearchKey",
+                )
+            })?,
+        })
     }
 }

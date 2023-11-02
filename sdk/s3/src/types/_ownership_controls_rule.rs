@@ -8,15 +8,15 @@ pub struct OwnershipControlsRule {
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
-    pub object_ownership: ::std::option::Option<crate::types::ObjectOwnership>,
+    pub object_ownership: crate::types::ObjectOwnership,
 }
 impl OwnershipControlsRule {
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
-    pub fn object_ownership(&self) -> ::std::option::Option<&crate::types::ObjectOwnership> {
-        self.object_ownership.as_ref()
+    pub fn object_ownership(&self) -> &crate::types::ObjectOwnership {
+        &self.object_ownership
     }
 }
 impl OwnershipControlsRule {
@@ -37,6 +37,7 @@ impl OwnershipControlsRuleBuilder {
     /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    /// This field is required.
     pub fn object_ownership(mut self, input: crate::types::ObjectOwnership) -> Self {
         self.object_ownership = ::std::option::Option::Some(input);
         self
@@ -57,9 +58,16 @@ impl OwnershipControlsRuleBuilder {
         &self.object_ownership
     }
     /// Consumes the builder and constructs a [`OwnershipControlsRule`](crate::types::OwnershipControlsRule).
-    pub fn build(self) -> crate::types::OwnershipControlsRule {
-        crate::types::OwnershipControlsRule {
-            object_ownership: self.object_ownership,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_ownership`](crate::types::builders::OwnershipControlsRuleBuilder::object_ownership)
+    pub fn build(self) -> ::std::result::Result<crate::types::OwnershipControlsRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OwnershipControlsRule {
+            object_ownership: self.object_ownership.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object_ownership",
+                    "object_ownership was not specified but it is required when building OwnershipControlsRule",
+                )
+            })?,
+        })
     }
 }

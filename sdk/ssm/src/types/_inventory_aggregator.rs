@@ -17,12 +17,16 @@ impl InventoryAggregator {
         self.expression.as_deref()
     }
     /// <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-    pub fn aggregators(&self) -> ::std::option::Option<&[crate::types::InventoryAggregator]> {
-        self.aggregators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregators.is_none()`.
+    pub fn aggregators(&self) -> &[crate::types::InventoryAggregator] {
+        self.aggregators.as_deref().unwrap_or_default()
     }
     /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::InventoryGroup]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::InventoryGroup] {
+        self.groups.as_deref().unwrap_or_default()
     }
 }
 impl InventoryAggregator {

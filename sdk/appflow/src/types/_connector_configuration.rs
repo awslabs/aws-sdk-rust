@@ -85,12 +85,16 @@ impl ConnectorConfiguration {
         self.can_use_as_destination
     }
     /// <p> Lists the connectors that are available for use as destinations. </p>
-    pub fn supported_destination_connectors(&self) -> ::std::option::Option<&[crate::types::ConnectorType]> {
-        self.supported_destination_connectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_destination_connectors.is_none()`.
+    pub fn supported_destination_connectors(&self) -> &[crate::types::ConnectorType] {
+        self.supported_destination_connectors.as_deref().unwrap_or_default()
     }
     /// <p> Specifies the supported flow frequency for that connector. </p>
-    pub fn supported_scheduling_frequencies(&self) -> ::std::option::Option<&[crate::types::ScheduleFrequencyType]> {
-        self.supported_scheduling_frequencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_scheduling_frequencies.is_none()`.
+    pub fn supported_scheduling_frequencies(&self) -> &[crate::types::ScheduleFrequencyType] {
+        self.supported_scheduling_frequencies.as_deref().unwrap_or_default()
     }
     /// <p> Specifies if PrivateLink is enabled for that connector. </p>
     pub fn is_private_link_enabled(&self) -> bool {
@@ -101,8 +105,10 @@ impl ConnectorConfiguration {
         self.is_private_link_endpoint_url_required
     }
     /// <p> Specifies the supported trigger types for the flow. </p>
-    pub fn supported_trigger_types(&self) -> ::std::option::Option<&[crate::types::TriggerType]> {
-        self.supported_trigger_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_trigger_types.is_none()`.
+    pub fn supported_trigger_types(&self) -> &[crate::types::TriggerType] {
+        self.supported_trigger_types.as_deref().unwrap_or_default()
     }
     /// <p> Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on. </p>
     pub fn connector_metadata(&self) -> ::std::option::Option<&crate::types::ConnectorMetadata> {
@@ -137,28 +143,38 @@ impl ConnectorConfiguration {
         self.connector_arn.as_deref()
     }
     /// <p>The connection modes that the connector supports.</p>
-    pub fn connector_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connector_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_modes.is_none()`.
+    pub fn connector_modes(&self) -> &[::std::string::String] {
+        self.connector_modes.as_deref().unwrap_or_default()
     }
     /// <p>The authentication config required for the connector.</p>
     pub fn authentication_config(&self) -> ::std::option::Option<&crate::types::AuthenticationConfig> {
         self.authentication_config.as_ref()
     }
     /// <p>The required connector runtime settings.</p>
-    pub fn connector_runtime_settings(&self) -> ::std::option::Option<&[crate::types::ConnectorRuntimeSetting]> {
-        self.connector_runtime_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_runtime_settings.is_none()`.
+    pub fn connector_runtime_settings(&self) -> &[crate::types::ConnectorRuntimeSetting] {
+        self.connector_runtime_settings.as_deref().unwrap_or_default()
     }
     /// <p>A list of API versions that are supported by the connector.</p>
-    pub fn supported_api_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_api_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_api_versions.is_none()`.
+    pub fn supported_api_versions(&self) -> &[::std::string::String] {
+        self.supported_api_versions.as_deref().unwrap_or_default()
     }
     /// <p>A list of operators supported by the connector.</p>
-    pub fn supported_operators(&self) -> ::std::option::Option<&[crate::types::Operators]> {
-        self.supported_operators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_operators.is_none()`.
+    pub fn supported_operators(&self) -> &[crate::types::Operators] {
+        self.supported_operators.as_deref().unwrap_or_default()
     }
     /// <p>A list of write operations supported by the connector.</p>
-    pub fn supported_write_operations(&self) -> ::std::option::Option<&[crate::types::WriteOperationType]> {
-        self.supported_write_operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_write_operations.is_none()`.
+    pub fn supported_write_operations(&self) -> &[crate::types::WriteOperationType] {
+        self.supported_write_operations.as_deref().unwrap_or_default()
     }
     /// <p>The provisioning type used to register the connector.</p>
     pub fn connector_provisioning_type(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningType> {
@@ -195,12 +211,16 @@ impl ConnectorConfiguration {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub fn supported_data_transfer_types(&self) -> ::std::option::Option<&[crate::types::SupportedDataTransferType]> {
-        self.supported_data_transfer_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_data_transfer_types.is_none()`.
+    pub fn supported_data_transfer_types(&self) -> &[crate::types::SupportedDataTransferType] {
+        self.supported_data_transfer_types.as_deref().unwrap_or_default()
     }
     /// <p>The APIs of the connector application that Amazon AppFlow can use to transfer your data.</p>
-    pub fn supported_data_transfer_apis(&self) -> ::std::option::Option<&[crate::types::DataTransferApi]> {
-        self.supported_data_transfer_apis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_data_transfer_apis.is_none()`.
+    pub fn supported_data_transfer_apis(&self) -> &[crate::types::DataTransferApi] {
+        self.supported_data_transfer_apis.as_deref().unwrap_or_default()
     }
 }
 impl ConnectorConfiguration {

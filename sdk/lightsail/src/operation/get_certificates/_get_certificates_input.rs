@@ -21,8 +21,10 @@ impl GetCertificatesInput {
     /// <p>The status of the certificates for which to return information.</p>
     /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
-    pub fn certificate_statuses(&self) -> ::std::option::Option<&[crate::types::CertificateStatus]> {
-        self.certificate_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_statuses.is_none()`.
+    pub fn certificate_statuses(&self) -> &[crate::types::CertificateStatus] {
+        self.certificate_statuses.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>

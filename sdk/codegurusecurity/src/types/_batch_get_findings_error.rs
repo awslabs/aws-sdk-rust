@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFindingsError {
     /// <p>The name of the scan that generated the finding.</p>
-    pub scan_name: ::std::option::Option<::std::string::String>,
+    pub scan_name: ::std::string::String,
     /// <p>The finding ID of the finding that was not fetched.</p>
-    pub finding_id: ::std::option::Option<::std::string::String>,
+    pub finding_id: ::std::string::String,
     /// <p>A code associated with the type of error.</p>
-    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub error_code: crate::types::ErrorCode,
     /// <p>Describes the error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl BatchGetFindingsError {
     /// <p>The name of the scan that generated the finding.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
-        self.scan_name.as_deref()
+    pub fn scan_name(&self) -> &str {
+        use std::ops::Deref;
+        self.scan_name.deref()
     }
     /// <p>The finding ID of the finding that was not fetched.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
-        self.finding_id.as_deref()
+    pub fn finding_id(&self) -> &str {
+        use std::ops::Deref;
+        self.finding_id.deref()
     }
     /// <p>A code associated with the type of error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
-        self.error_code.as_ref()
+    pub fn error_code(&self) -> &crate::types::ErrorCode {
+        &self.error_code
     }
     /// <p>Describes the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl BatchGetFindingsError {
@@ -49,6 +52,7 @@ pub struct BatchGetFindingsErrorBuilder {
 }
 impl BatchGetFindingsErrorBuilder {
     /// <p>The name of the scan that generated the finding.</p>
+    /// This field is required.
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl BatchGetFindingsErrorBuilder {
         &self.scan_name
     }
     /// <p>The finding ID of the finding that was not fetched.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl BatchGetFindingsErrorBuilder {
         &self.finding_id
     }
     /// <p>A code associated with the type of error.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -91,6 +97,7 @@ impl BatchGetFindingsErrorBuilder {
         &self.error_code
     }
     /// <p>Describes the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +112,37 @@ impl BatchGetFindingsErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`BatchGetFindingsError`](crate::types::BatchGetFindingsError).
-    pub fn build(self) -> crate::types::BatchGetFindingsError {
-        crate::types::BatchGetFindingsError {
-            scan_name: self.scan_name,
-            finding_id: self.finding_id,
-            error_code: self.error_code,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scan_name`](crate::types::builders::BatchGetFindingsErrorBuilder::scan_name)
+    /// - [`finding_id`](crate::types::builders::BatchGetFindingsErrorBuilder::finding_id)
+    /// - [`error_code`](crate::types::builders::BatchGetFindingsErrorBuilder::error_code)
+    /// - [`message`](crate::types::builders::BatchGetFindingsErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetFindingsError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetFindingsError {
+            scan_name: self.scan_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scan_name",
+                    "scan_name was not specified but it is required when building BatchGetFindingsError",
+                )
+            })?,
+            finding_id: self.finding_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "finding_id",
+                    "finding_id was not specified but it is required when building BatchGetFindingsError",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchGetFindingsError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building BatchGetFindingsError",
+                )
+            })?,
+        })
     }
 }

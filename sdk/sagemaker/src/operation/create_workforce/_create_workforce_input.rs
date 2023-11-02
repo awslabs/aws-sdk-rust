@@ -38,8 +38,10 @@ impl CreateWorkforceInput {
         self.workforce_name.as_deref()
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Use this parameter to configure a workforce using VPC.</p>
     pub fn workforce_vpc_config(&self) -> ::std::option::Option<&crate::types::WorkforceVpcConfigRequest> {
@@ -114,6 +116,7 @@ impl CreateWorkforceInputBuilder {
         &self.source_ip_config
     }
     /// <p>The name of the private workforce.</p>
+    /// This field is required.
     pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self

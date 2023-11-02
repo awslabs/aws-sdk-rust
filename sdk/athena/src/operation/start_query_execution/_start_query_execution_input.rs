@@ -44,8 +44,10 @@ impl StartQueryExecutionInput {
         self.work_group.as_deref()
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    pub fn execution_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.execution_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_parameters.is_none()`.
+    pub fn execution_parameters(&self) -> &[::std::string::String] {
+        self.execution_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the query result reuse behavior for the query.</p>
     pub fn result_reuse_configuration(&self) -> ::std::option::Option<&crate::types::ResultReuseConfiguration> {
@@ -73,6 +75,7 @@ pub struct StartQueryExecutionInputBuilder {
 }
 impl StartQueryExecutionInputBuilder {
     /// <p>The SQL query statements to be executed.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self

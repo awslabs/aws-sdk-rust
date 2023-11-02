@@ -34,6 +34,7 @@ pub struct RemoveBridgeSourceInputBuilder {
 }
 impl RemoveBridgeSourceInputBuilder {
     /// The ARN of the bridge that you want to update.
+    /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveBridgeSourceInputBuilder {
         &self.bridge_arn
     }
     /// The name of the bridge source that you want to remove.
+    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self

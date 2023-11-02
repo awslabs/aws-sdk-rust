@@ -27,6 +27,7 @@ pub struct GetIamPortalLoginUrlInputBuilder {
 }
 impl GetIamPortalLoginUrlInputBuilder {
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRulePayload {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
-    pub sql: ::std::option::Option<::std::string::String>,
+    pub sql: ::std::string::String,
     /// <p>The description of the rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions associated with the rule.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::vec::Vec<crate::types::Action>,
     /// <p>Specifies whether the rule is disabled.</p>
     pub rule_disabled: ::std::option::Option<bool>,
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
@@ -19,16 +19,18 @@ pub struct TopicRulePayload {
 }
 impl TopicRulePayload {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
-    pub fn sql(&self) -> ::std::option::Option<&str> {
-        self.sql.as_deref()
+    pub fn sql(&self) -> &str {
+        use std::ops::Deref;
+        self.sql.deref()
     }
     /// <p>The description of the rule.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    pub fn actions(&self) -> &[crate::types::Action] {
+        use std::ops::Deref;
+        self.actions.deref()
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(&self) -> ::std::option::Option<bool> {
@@ -63,6 +65,7 @@ pub struct TopicRulePayloadBuilder {
 }
 impl TopicRulePayloadBuilder {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
+    /// This field is required.
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
         self
@@ -153,14 +156,27 @@ impl TopicRulePayloadBuilder {
         &self.error_action
     }
     /// Consumes the builder and constructs a [`TopicRulePayload`](crate::types::TopicRulePayload).
-    pub fn build(self) -> crate::types::TopicRulePayload {
-        crate::types::TopicRulePayload {
-            sql: self.sql,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sql`](crate::types::builders::TopicRulePayloadBuilder::sql)
+    /// - [`actions`](crate::types::builders::TopicRulePayloadBuilder::actions)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicRulePayload, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicRulePayload {
+            sql: self.sql.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sql",
+                    "sql was not specified but it is required when building TopicRulePayload",
+                )
+            })?,
             description: self.description,
-            actions: self.actions,
+            actions: self.actions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "actions",
+                    "actions was not specified but it is required when building TopicRulePayload",
+                )
+            })?,
             rule_disabled: self.rule_disabled,
             aws_iot_sql_version: self.aws_iot_sql_version,
             error_action: self.error_action,
-        }
+        })
     }
 }

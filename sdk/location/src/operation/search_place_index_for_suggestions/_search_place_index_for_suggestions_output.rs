@@ -6,7 +6,7 @@ pub struct SearchPlaceIndexForSuggestionsOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
     pub summary: ::std::option::Option<crate::types::SearchPlaceIndexForSuggestionsSummary>,
     /// <p>A list of place suggestions that best match the search text.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::SearchForSuggestionsResult>>,
+    pub results: ::std::vec::Vec<crate::types::SearchForSuggestionsResult>,
     _request_id: Option<String>,
 }
 impl SearchPlaceIndexForSuggestionsOutput {
@@ -15,8 +15,9 @@ impl SearchPlaceIndexForSuggestionsOutput {
         self.summary.as_ref()
     }
     /// <p>A list of place suggestions that best match the search text.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::SearchForSuggestionsResult]> {
-        self.results.as_deref()
+    pub fn results(&self) -> &[crate::types::SearchForSuggestionsResult] {
+        use std::ops::Deref;
+        self.results.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchPlaceIndexForSuggestionsOutput {
@@ -41,6 +42,7 @@ pub struct SearchPlaceIndexForSuggestionsOutputBuilder {
 }
 impl SearchPlaceIndexForSuggestionsOutputBuilder {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
+    /// This field is required.
     pub fn summary(mut self, input: crate::types::SearchPlaceIndexForSuggestionsSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,25 @@ impl SearchPlaceIndexForSuggestionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsOutput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput).
-    pub fn build(self) -> crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput {
-        crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput {
-            summary: self.summary,
-            results: self.results,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsOutput {
+                summary: self.summary,
+                results: self.results.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "results",
+                        "results was not specified but it is required when building SearchPlaceIndexForSuggestionsOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

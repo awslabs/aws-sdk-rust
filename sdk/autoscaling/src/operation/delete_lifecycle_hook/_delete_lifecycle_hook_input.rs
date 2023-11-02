@@ -34,6 +34,7 @@ pub struct DeleteLifecycleHookInputBuilder {
 }
 impl DeleteLifecycleHookInputBuilder {
     /// <p>The name of the lifecycle hook.</p>
+    /// This field is required.
     pub fn lifecycle_hook_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_hook_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLifecycleHookInputBuilder {
         &self.lifecycle_hook_name
     }
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self

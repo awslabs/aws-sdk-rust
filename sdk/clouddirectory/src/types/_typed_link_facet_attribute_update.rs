@@ -7,7 +7,7 @@ pub struct TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
     pub attribute: ::std::option::Option<crate::types::TypedLinkAttributeDefinition>,
     /// <p>The action to perform when updating the attribute.</p>
-    pub action: ::std::option::Option<crate::types::UpdateActionType>,
+    pub action: crate::types::UpdateActionType,
 }
 impl TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
@@ -15,8 +15,8 @@ impl TypedLinkFacetAttributeUpdate {
         self.attribute.as_ref()
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::UpdateActionType> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::UpdateActionType {
+        &self.action
     }
 }
 impl TypedLinkFacetAttributeUpdate {
@@ -35,6 +35,7 @@ pub struct TypedLinkFacetAttributeUpdateBuilder {
 }
 impl TypedLinkFacetAttributeUpdateBuilder {
     /// <p>The attribute to update.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::TypedLinkAttributeDefinition) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TypedLinkFacetAttributeUpdateBuilder {
         &self.attribute
     }
     /// <p>The action to perform when updating the attribute.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::UpdateActionType) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl TypedLinkFacetAttributeUpdateBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`TypedLinkFacetAttributeUpdate`](crate::types::TypedLinkFacetAttributeUpdate).
-    pub fn build(self) -> crate::types::TypedLinkFacetAttributeUpdate {
-        crate::types::TypedLinkFacetAttributeUpdate {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::TypedLinkFacetAttributeUpdateBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkFacetAttributeUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TypedLinkFacetAttributeUpdate {
             attribute: self.attribute,
-            action: self.action,
-        }
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building TypedLinkFacetAttributeUpdate",
+                )
+            })?,
+        })
     }
 }

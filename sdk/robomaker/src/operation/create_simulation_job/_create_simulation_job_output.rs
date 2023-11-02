@@ -263,16 +263,22 @@ impl CreateSimulationJobOutput {
         self.iam_role.as_deref()
     }
     /// <p>The robot application used by the simulation job.</p>
-    pub fn robot_applications(&self) -> ::std::option::Option<&[crate::types::RobotApplicationConfig]> {
-        self.robot_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robot_applications.is_none()`.
+    pub fn robot_applications(&self) -> &[crate::types::RobotApplicationConfig] {
+        self.robot_applications.as_deref().unwrap_or_default()
     }
     /// <p>The simulation application used by the simulation job.</p>
-    pub fn simulation_applications(&self) -> ::std::option::Option<&[crate::types::SimulationApplicationConfig]> {
-        self.simulation_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.simulation_applications.is_none()`.
+    pub fn simulation_applications(&self) -> &[crate::types::SimulationApplicationConfig] {
+        self.simulation_applications.as_deref().unwrap_or_default()
     }
     /// <p>The data sources for the simulation job.</p>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSource]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::DataSource] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>The list of all tags added to the simulation job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

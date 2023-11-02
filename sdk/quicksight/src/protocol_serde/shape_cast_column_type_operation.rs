@@ -3,14 +3,14 @@ pub fn ser_cast_column_type_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CastColumnTypeOperation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.column_name {
-        object.key("ColumnName").string(var_1.as_str());
+    {
+        object.key("ColumnName").string(input.column_name.as_str());
     }
-    if let Some(var_2) = &input.new_column_type {
-        object.key("NewColumnType").string(var_2.as_str());
+    {
+        object.key("NewColumnType").string(input.new_column_type.as_str());
     }
-    if let Some(var_3) = &input.format {
-        object.key("Format").string(var_3.as_str());
+    if let Some(var_1) = &input.format {
+        object.key("Format").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::cast_column_type_operation_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

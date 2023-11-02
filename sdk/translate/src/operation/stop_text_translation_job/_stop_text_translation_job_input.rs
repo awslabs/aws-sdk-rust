@@ -27,6 +27,7 @@ pub struct StopTextTranslationJobInputBuilder {
 }
 impl StopTextTranslationJobInputBuilder {
     /// <p>The job ID of the job to be stopped.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

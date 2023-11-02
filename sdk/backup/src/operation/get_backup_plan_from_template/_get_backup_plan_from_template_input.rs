@@ -27,6 +27,7 @@ pub struct GetBackupPlanFromTemplateInputBuilder {
 }
 impl GetBackupPlanFromTemplateInputBuilder {
     /// <p>Uniquely identifies a stored backup plan template.</p>
+    /// This field is required.
     pub fn backup_plan_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_template_id = ::std::option::Option::Some(input.into());
         self

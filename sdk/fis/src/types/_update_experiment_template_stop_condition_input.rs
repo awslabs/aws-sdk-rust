@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct UpdateExperimentTemplateStopConditionInputBuilder {
 }
 impl UpdateExperimentTemplateStopConditionInputBuilder {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl UpdateExperimentTemplateStopConditionInputBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateStopConditionInput`](crate::types::UpdateExperimentTemplateStopConditionInput).
-    pub fn build(self) -> crate::types::UpdateExperimentTemplateStopConditionInput {
-        crate::types::UpdateExperimentTemplateStopConditionInput {
-            source: self.source,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::UpdateExperimentTemplateStopConditionInputBuilder::source)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::UpdateExperimentTemplateStopConditionInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateExperimentTemplateStopConditionInput {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building UpdateExperimentTemplateStopConditionInput",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

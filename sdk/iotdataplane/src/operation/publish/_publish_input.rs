@@ -103,6 +103,7 @@ pub struct PublishInputBuilder {
 }
 impl PublishInputBuilder {
     /// <p>The name of the MQTT topic.</p>
+    /// This field is required.
     pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic = ::std::option::Option::Some(input.into());
         self

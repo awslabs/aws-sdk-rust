@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub execution_arn: ::std::option::Option<::std::string::String>,
+    pub execution_arn: ::std::string::String,
     /// <p>The date the execution is started.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl StartExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_arn.as_deref()
+    pub fn execution_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_arn.deref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
 }
 impl ::aws_http::request_id::RequestId for StartExecutionOutput {
@@ -41,6 +42,7 @@ pub struct StartExecutionOutputBuilder {
 }
 impl StartExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl StartExecutionOutputBuilder {
         &self.execution_arn
     }
     /// <p>The date the execution is started.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,26 @@ impl StartExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartExecutionOutput`](crate::operation::start_execution::StartExecutionOutput).
-    pub fn build(self) -> crate::operation::start_execution::StartExecutionOutput {
-        crate::operation::start_execution::StartExecutionOutput {
-            execution_arn: self.execution_arn,
-            start_date: self.start_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`execution_arn`](crate::operation::start_execution::builders::StartExecutionOutputBuilder::execution_arn)
+    /// - [`start_date`](crate::operation::start_execution::builders::StartExecutionOutputBuilder::start_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_execution::StartExecutionOutput {
+            execution_arn: self.execution_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_arn",
+                    "execution_arn was not specified but it is required when building StartExecutionOutput",
+                )
+            })?,
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building StartExecutionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct UpdateUsageLimitInputBuilder {
 }
 impl UpdateUsageLimitInputBuilder {
     /// <p>The identifier of the usage limit to update.</p>
+    /// This field is required.
     pub fn usage_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_limit_id = ::std::option::Option::Some(input.into());
         self

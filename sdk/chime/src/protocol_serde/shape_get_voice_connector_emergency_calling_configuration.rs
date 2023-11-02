@@ -38,8 +38,8 @@ pub fn de_get_voice_connector_emergency_calling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::ForbiddenException({
@@ -54,8 +54,8 @@ pub fn de_get_voice_connector_emergency_calling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::NotFoundException({
@@ -70,8 +70,8 @@ pub fn de_get_voice_connector_emergency_calling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::ServiceFailureException({
@@ -86,8 +86,8 @@ pub fn de_get_voice_connector_emergency_calling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::ServiceUnavailableException({
@@ -102,8 +102,8 @@ pub fn de_get_voice_connector_emergency_calling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::ThrottledClientException({
@@ -118,8 +118,8 @@ pub fn de_get_voice_connector_emergency_calling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::UnauthorizedClientException({
@@ -134,8 +134,8 @@ pub fn de_get_voice_connector_emergency_calling_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationError::generic(generic)

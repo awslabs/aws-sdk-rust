@@ -28,6 +28,7 @@ pub struct S3SetObjectLegalHoldOperationBuilder {
 }
 impl S3SetObjectLegalHoldOperationBuilder {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    /// This field is required.
     pub fn legal_hold(mut self, input: crate::types::S3ObjectLockLegalHold) -> Self {
         self.legal_hold = ::std::option::Option::Some(input);
         self

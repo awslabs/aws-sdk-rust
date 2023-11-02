@@ -25,16 +25,22 @@ impl ClusterSecurityGroup {
         self.description.as_deref()
     }
     /// <p>A list of EC2 security groups that are permitted to access clusters associated with this cluster security group.</p>
-    pub fn ec2_security_groups(&self) -> ::std::option::Option<&[crate::types::Ec2SecurityGroup]> {
-        self.ec2_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_groups.is_none()`.
+    pub fn ec2_security_groups(&self) -> &[crate::types::Ec2SecurityGroup] {
+        self.ec2_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters associated with this cluster security group.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[crate::types::IpRange]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[crate::types::IpRange] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The list of tags for the cluster security group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ClusterSecurityGroup {

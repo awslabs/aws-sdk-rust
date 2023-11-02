@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalApplicationInstanceNodeInstancesOutput {
     /// <p>An application instance ID.</p>
-    pub application_instance_id: ::std::option::Option<::std::string::String>,
+    pub application_instance_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl SignalApplicationInstanceNodeInstancesOutput {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(&self) -> ::std::option::Option<&str> {
-        self.application_instance_id.as_deref()
+    pub fn application_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_instance_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SignalApplicationInstanceNodeInstancesOutput {
@@ -34,6 +35,7 @@ pub struct SignalApplicationInstanceNodeInstancesOutputBuilder {
 }
 impl SignalApplicationInstanceNodeInstancesOutputBuilder {
     /// <p>An application instance ID.</p>
+    /// This field is required.
     pub fn application_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,24 @@ impl SignalApplicationInstanceNodeInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesOutput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput).
-    pub fn build(self) -> crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput {
-        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput {
-            application_instance_id: self.application_instance_id,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_instance_id`](crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder::application_instance_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput {
+                application_instance_id: self.application_instance_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "application_instance_id",
+                        "application_instance_id was not specified but it is required when building SignalApplicationInstanceNodeInstancesOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

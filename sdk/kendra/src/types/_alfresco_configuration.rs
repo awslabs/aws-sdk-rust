@@ -7,15 +7,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlfrescoConfiguration {
     /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
-    pub site_url: ::std::option::Option<::std::string::String>,
+    pub site_url: ::std::string::String,
     /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
-    pub site_id: ::std::option::Option<::std::string::String>,
+    pub site_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>username—The user name of the Alfresco account.</p> </li>
     /// <li> <p>password—The password of the Alfresco account.</p> </li>
     /// </ul>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub ssl_certificate_s3_path: ::std::option::Option<crate::types::S3Path>,
@@ -40,20 +40,23 @@ pub struct AlfrescoConfiguration {
 }
 impl AlfrescoConfiguration {
     /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
-    pub fn site_url(&self) -> ::std::option::Option<&str> {
-        self.site_url.as_deref()
+    pub fn site_url(&self) -> &str {
+        use std::ops::Deref;
+        self.site_url.deref()
     }
     /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
-    pub fn site_id(&self) -> ::std::option::Option<&str> {
-        self.site_id.as_deref()
+    pub fn site_id(&self) -> &str {
+        use std::ops::Deref;
+        self.site_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Alfresco data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>username—The user name of the Alfresco account.</p> </li>
     /// <li> <p>password—The password of the Alfresco account.</p> </li>
     /// </ul>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
@@ -69,28 +72,40 @@ impl AlfrescoConfiguration {
         self.crawl_comments
     }
     /// <p>Specify whether to index document libraries, wikis, or blogs. You can specify one or more of these options.</p>
-    pub fn entity_filter(&self) -> ::std::option::Option<&[crate::types::AlfrescoEntity]> {
-        self.entity_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_filter.is_none()`.
+    pub fn entity_filter(&self) -> &[crate::types::AlfrescoEntity] {
+        self.entity_filter.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco document libraries to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
-    pub fn document_library_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.document_library_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_library_field_mappings.is_none()`.
+    pub fn document_library_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.document_library_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
-    pub fn blog_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.blog_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blog_field_mappings.is_none()`.
+    pub fn blog_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.blog_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Alfresco wikis to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Alfresco data source field names must exist in your Alfresco custom metadata.</p>
-    pub fn wiki_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.wiki_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wiki_field_mappings.is_none()`.
+    pub fn wiki_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.wiki_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to include certain files in your Alfresco data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain files in your Alfresco data source. Files that match the patterns are excluded from the index. Files that don't match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Alfresco. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
@@ -124,6 +139,7 @@ pub struct AlfrescoConfigurationBuilder {
 }
 impl AlfrescoConfigurationBuilder {
     /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
+    /// This field is required.
     pub fn site_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_url = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +154,7 @@ impl AlfrescoConfigurationBuilder {
         &self.site_url
     }
     /// <p>The identifier of the Alfresco site. For example, <i>my-site</i>.</p>
+    /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +173,7 @@ impl AlfrescoConfigurationBuilder {
     /// <li> <p>username—The user name of the Alfresco account.</p> </li>
     /// <li> <p>password—The password of the Alfresco account.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +197,7 @@ impl AlfrescoConfigurationBuilder {
     }
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to Alfresco if you require a secure SSL connection.</p>
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
+    /// This field is required.
     pub fn ssl_certificate_s3_path(mut self, input: crate::types::S3Path) -> Self {
         self.ssl_certificate_s3_path = ::std::option::Option::Some(input);
         self
@@ -360,11 +379,30 @@ impl AlfrescoConfigurationBuilder {
         &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`AlfrescoConfiguration`](crate::types::AlfrescoConfiguration).
-    pub fn build(self) -> crate::types::AlfrescoConfiguration {
-        crate::types::AlfrescoConfiguration {
-            site_url: self.site_url,
-            site_id: self.site_id,
-            secret_arn: self.secret_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`site_url`](crate::types::builders::AlfrescoConfigurationBuilder::site_url)
+    /// - [`site_id`](crate::types::builders::AlfrescoConfigurationBuilder::site_id)
+    /// - [`secret_arn`](crate::types::builders::AlfrescoConfigurationBuilder::secret_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::AlfrescoConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AlfrescoConfiguration {
+            site_url: self.site_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "site_url",
+                    "site_url was not specified but it is required when building AlfrescoConfiguration",
+                )
+            })?,
+            site_id: self.site_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "site_id",
+                    "site_id was not specified but it is required when building AlfrescoConfiguration",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building AlfrescoConfiguration",
+                )
+            })?,
             ssl_certificate_s3_path: self.ssl_certificate_s3_path,
             crawl_system_folders: self.crawl_system_folders.unwrap_or_default(),
             crawl_comments: self.crawl_comments.unwrap_or_default(),
@@ -375,6 +413,6 @@ impl AlfrescoConfigurationBuilder {
             inclusion_patterns: self.inclusion_patterns,
             exclusion_patterns: self.exclusion_patterns,
             vpc_configuration: self.vpc_configuration,
-        }
+        })
     }
 }

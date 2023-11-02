@@ -68,12 +68,16 @@ impl CreateIndexInput {
         self.client_token.as_deref()
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(&self) -> ::std::option::Option<&[crate::types::UserTokenConfiguration]> {
-        self.user_token_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_token_configurations.is_none()`.
+    pub fn user_token_configurations(&self) -> &[crate::types::UserTokenConfiguration] {
+        self.user_token_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The user context policy.</p>
     /// <dl>
@@ -122,6 +126,7 @@ pub struct CreateIndexInputBuilder {
 }
 impl CreateIndexInputBuilder {
     /// <p>A name for the index.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +161,7 @@ impl CreateIndexInputBuilder {
         &self.edition
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

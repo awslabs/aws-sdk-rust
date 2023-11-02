@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGrant`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`grant_arn(impl Into<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::grant_arn) / [`set_grant_arn(Option<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
-    ///   - [`status_reason(impl Into<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::status_reason) / [`set_status_reason(Option<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::set_status_reason): <p>The Status reason for the delete request.</p>
-    ///   - [`version(impl Into<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::set_version): <p>Current version of the grant.</p>
+    ///   - [`grant_arn(impl Into<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::grant_arn) / [`set_grant_arn(Option<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::set_grant_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the grant.</p><br>
+    ///   - [`status_reason(impl Into<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::status_reason) / [`set_status_reason(Option<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::set_status_reason):<br>required: **false**<br><p>The Status reason for the delete request.</p><br>
+    ///   - [`version(impl Into<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::delete_grant::builders::DeleteGrantFluentBuilder::set_version):<br>required: **true**<br><p>Current version of the grant.</p><br>
     /// - On success, responds with [`DeleteGrantOutput`](crate::operation::delete_grant::DeleteGrantOutput) with field(s):
     ///   - [`grant_arn(Option<String>)`](crate::operation::delete_grant::DeleteGrantOutput::grant_arn): <p>Grant ARN.</p>
     ///   - [`status(Option<GrantStatus>)`](crate::operation::delete_grant::DeleteGrantOutput::status): <p>Grant status.</p>

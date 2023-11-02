@@ -34,8 +34,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AWSServiceAccessNotEnabledException" => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::AwsServiceAccessNotEnabledException({
@@ -50,8 +50,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DependencyAccessDeniedException" => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::DependencyAccessDeniedException({
@@ -66,8 +66,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoAvailableOrganizationException" => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::NoAvailableOrganizationException({
@@ -82,8 +82,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceException" => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::ServiceException({
@@ -98,8 +98,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceQuotaTemplateNotInUseException" => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::ServiceQuotaTemplateNotInUseException({
@@ -114,8 +114,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TemplatesNotAvailableInRegionException" => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::TemplatesNotAvailableInRegionException({
@@ -130,8 +130,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::TooManyRequestsException({
@@ -146,8 +146,8 @@ pub fn de_get_association_for_service_quota_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError::generic(generic)

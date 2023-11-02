@@ -43,8 +43,10 @@ impl UpdateSnapshotScheduleInput {
     /// <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSnapshotScheduleInput {
@@ -66,6 +68,7 @@ pub struct UpdateSnapshotScheduleInputBuilder {
 }
 impl UpdateSnapshotScheduleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    /// This field is required.
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl UpdateSnapshotScheduleInputBuilder {
         &self.volume_arn
     }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    /// This field is required.
     pub fn start_at(mut self, input: i32) -> Self {
         self.start_at = ::std::option::Option::Some(input);
         self
@@ -94,6 +98,7 @@ impl UpdateSnapshotScheduleInputBuilder {
         &self.start_at
     }
     /// <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
+    /// This field is required.
     pub fn recurrence_in_hours(mut self, input: i32) -> Self {
         self.recurrence_in_hours = ::std::option::Option::Some(input);
         self

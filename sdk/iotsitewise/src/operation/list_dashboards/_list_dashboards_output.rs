@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDashboardsOutput {
     /// <p>A list that summarizes each dashboard in the project.</p>
-    pub dashboard_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DashboardSummary>>,
+    pub dashboard_summaries: ::std::vec::Vec<crate::types::DashboardSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDashboardsOutput {
     /// <p>A list that summarizes each dashboard in the project.</p>
-    pub fn dashboard_summaries(&self) -> ::std::option::Option<&[crate::types::DashboardSummary]> {
-        self.dashboard_summaries.as_deref()
+    pub fn dashboard_summaries(&self) -> &[crate::types::DashboardSummary] {
+        use std::ops::Deref;
+        self.dashboard_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListDashboardsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput).
-    pub fn build(self) -> crate::operation::list_dashboards::ListDashboardsOutput {
-        crate::operation::list_dashboards::ListDashboardsOutput {
-            dashboard_summaries: self.dashboard_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dashboard_summaries`](crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder::dashboard_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_dashboards::ListDashboardsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_dashboards::ListDashboardsOutput {
+            dashboard_summaries: self.dashboard_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dashboard_summaries",
+                    "dashboard_summaries was not specified but it is required when building ListDashboardsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

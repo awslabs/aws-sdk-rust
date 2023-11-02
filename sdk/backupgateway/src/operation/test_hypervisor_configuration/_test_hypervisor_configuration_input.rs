@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TestHypervisorConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
-    pub gateway_arn: ::std::option::Option<::std::string::String>,
+    pub gateway_arn: ::std::string::String,
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>The username for the hypervisor.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the hypervisor.</p>
@@ -14,12 +14,14 @@ pub struct TestHypervisorConfigurationInput {
 }
 impl TestHypervisorConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
-        self.gateway_arn.as_deref()
+    pub fn gateway_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_arn.deref()
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
@@ -58,6 +60,7 @@ pub struct TestHypervisorConfigurationInputBuilder {
 }
 impl TestHypervisorConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl TestHypervisorConfigurationInputBuilder {
         &self.gateway_arn
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +118,9 @@ impl TestHypervisorConfigurationInputBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`TestHypervisorConfigurationInput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_arn`](crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder::gateway_arn)
+    /// - [`host`](crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder::host)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -121,8 +128,18 @@ impl TestHypervisorConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput {
-            gateway_arn: self.gateway_arn,
-            host: self.host,
+            gateway_arn: self.gateway_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_arn",
+                    "gateway_arn was not specified but it is required when building TestHypervisorConfigurationInput",
+                )
+            })?,
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building TestHypervisorConfigurationInput",
+                )
+            })?,
             username: self.username,
             password: self.password,
         })

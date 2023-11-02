@@ -72,8 +72,10 @@ pub struct DbCluster {
 }
 impl DbCluster {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
@@ -149,16 +151,22 @@ impl DbCluster {
         self.replication_source_identifier.as_deref()
     }
     /// <p>Contains one or more identifiers of the secondary clusters that are associated with this cluster.</p>
-    pub fn read_replica_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.read_replica_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_identifiers.is_none()`.
+    pub fn read_replica_identifiers(&self) -> &[::std::string::String] {
+        self.read_replica_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>Provides the list of instances that make up the cluster.</p>
-    pub fn db_cluster_members(&self) -> ::std::option::Option<&[crate::types::DbClusterMember]> {
-        self.db_cluster_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_members.is_none()`.
+    pub fn db_cluster_members(&self) -> &[crate::types::DbClusterMember] {
+        self.db_cluster_members.as_deref().unwrap_or_default()
     }
     /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
@@ -181,8 +189,10 @@ impl DbCluster {
         self.db_cluster_arn.as_deref()
     }
     /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
-    pub fn associated_roles(&self) -> ::std::option::Option<&[crate::types::DbClusterRole]> {
-        self.associated_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
+    pub fn associated_roles(&self) -> &[crate::types::DbClusterRole] {
+        self.associated_roles.as_deref().unwrap_or_default()
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
     pub fn clone_group_id(&self) -> ::std::option::Option<&str> {
@@ -193,8 +203,10 @@ impl DbCluster {
         self.cluster_create_time.as_ref()
     }
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
-    pub fn enabled_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
+    pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enabled_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {

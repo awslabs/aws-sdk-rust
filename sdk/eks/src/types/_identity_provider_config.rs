@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderConfig {
     /// <p>The type of the identity provider configuration. The only type available is <code>oidc</code>.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The name of the identity provider configuration.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl IdentityProviderConfig {
     /// <p>The type of the identity provider configuration. The only type available is <code>oidc</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The name of the identity provider configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl IdentityProviderConfig {
@@ -35,6 +37,7 @@ pub struct IdentityProviderConfigBuilder {
 }
 impl IdentityProviderConfigBuilder {
     /// <p>The type of the identity provider configuration. The only type available is <code>oidc</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl IdentityProviderConfigBuilder {
         &self.r#type
     }
     /// <p>The name of the identity provider configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl IdentityProviderConfigBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`IdentityProviderConfig`](crate::types::IdentityProviderConfig).
-    pub fn build(self) -> crate::types::IdentityProviderConfig {
-        crate::types::IdentityProviderConfig {
-            r#type: self.r#type,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::IdentityProviderConfigBuilder::r#type)
+    /// - [`name`](crate::types::builders::IdentityProviderConfigBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdentityProviderConfig {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building IdentityProviderConfig",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building IdentityProviderConfig",
+                )
+            })?,
+        })
     }
 }

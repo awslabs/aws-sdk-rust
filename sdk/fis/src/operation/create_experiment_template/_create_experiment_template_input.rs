@@ -30,8 +30,10 @@ impl CreateExperimentTemplateInput {
         self.description.as_deref()
     }
     /// <p>The stop conditions.</p>
-    pub fn stop_conditions(&self) -> ::std::option::Option<&[crate::types::CreateExperimentTemplateStopConditionInput]> {
-        self.stop_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stop_conditions.is_none()`.
+    pub fn stop_conditions(&self) -> &[crate::types::CreateExperimentTemplateStopConditionInput] {
+        self.stop_conditions.as_deref().unwrap_or_default()
     }
     /// <p>The targets for the experiment.</p>
     pub fn targets(
@@ -80,6 +82,7 @@ pub struct CreateExperimentTemplateInputBuilder {
 }
 impl CreateExperimentTemplateInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +97,7 @@ impl CreateExperimentTemplateInputBuilder {
         &self.client_token
     }
     /// <p>A description for the experiment template.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +185,7 @@ impl CreateExperimentTemplateInputBuilder {
         &self.actions
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

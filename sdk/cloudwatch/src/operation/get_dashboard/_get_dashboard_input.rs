@@ -27,6 +27,7 @@ pub struct GetDashboardInputBuilder {
 }
 impl GetDashboardInputBuilder {
     /// <p>The name of the dashboard to be described.</p>
+    /// This field is required.
     pub fn dashboard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_name = ::std::option::Option::Some(input.into());
         self

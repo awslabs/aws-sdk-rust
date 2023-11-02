@@ -28,6 +28,7 @@ pub struct UploaderConfigBuilder {
 }
 impl UploaderConfigBuilder {
     /// <p>The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> details that specify the scheduling to record from a camera, or local media file, onto the Edge Agent. If the <code>ScheduleConfig</code> is not provided in this <code>UploaderConfig</code>, then the Edge Agent will upload at regular intervals (every 1 hour).</p>
+    /// This field is required.
     pub fn schedule_config(mut self, input: crate::types::ScheduleConfig) -> Self {
         self.schedule_config = ::std::option::Option::Some(input);
         self

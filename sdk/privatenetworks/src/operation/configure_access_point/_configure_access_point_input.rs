@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConfigureAccessPointInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub access_point_arn: ::std::option::Option<::std::string::String>,
+    pub access_point_arn: ::std::string::String,
     /// <p>The position of the network resource.</p>
     pub position: ::std::option::Option<crate::types::Position>,
     /// <p>The CPI user name of the CPI user who is certifying the coordinates of the radio unit.</p>
@@ -18,8 +18,9 @@ pub struct ConfigureAccessPointInput {
 }
 impl ConfigureAccessPointInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
-        self.access_point_arn.as_deref()
+    pub fn access_point_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.access_point_arn.deref()
     }
     /// <p>The position of the network resource.</p>
     pub fn position(&self) -> ::std::option::Option<&crate::types::Position> {
@@ -74,6 +75,7 @@ pub struct ConfigureAccessPointInputBuilder {
 }
 impl ConfigureAccessPointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
+    /// This field is required.
     pub fn access_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_point_arn = ::std::option::Option::Some(input.into());
         self
@@ -158,12 +160,19 @@ impl ConfigureAccessPointInputBuilder {
         &self.cpi_secret_key
     }
     /// Consumes the builder and constructs a [`ConfigureAccessPointInput`](crate::operation::configure_access_point::ConfigureAccessPointInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_point_arn`](crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder::access_point_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::configure_access_point::ConfigureAccessPointInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::configure_access_point::ConfigureAccessPointInput {
-            access_point_arn: self.access_point_arn,
+            access_point_arn: self.access_point_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access_point_arn",
+                    "access_point_arn was not specified but it is required when building ConfigureAccessPointInput",
+                )
+            })?,
             position: self.position,
             cpi_username: self.cpi_username,
             cpi_user_id: self.cpi_user_id,

@@ -23,6 +23,7 @@ pub fn ser_network_bandwidth_gbps(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_network_bandwidth_gbps(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::NetworkBandwidthGbps, ::aws_smithy_xml::decode::XmlDecodeError> {

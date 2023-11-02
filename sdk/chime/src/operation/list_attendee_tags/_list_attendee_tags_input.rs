@@ -34,6 +34,7 @@ pub struct ListAttendeeTagsInputBuilder {
 }
 impl ListAttendeeTagsInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ListAttendeeTagsInputBuilder {
         &self.meeting_id
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    /// This field is required.
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
         self

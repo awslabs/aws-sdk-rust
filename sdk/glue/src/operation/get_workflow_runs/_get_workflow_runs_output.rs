@@ -11,8 +11,10 @@ pub struct GetWorkflowRunsOutput {
 }
 impl GetWorkflowRunsOutput {
     /// <p>A list of workflow run metadata objects.</p>
-    pub fn runs(&self) -> ::std::option::Option<&[crate::types::WorkflowRun]> {
-        self.runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runs.is_none()`.
+    pub fn runs(&self) -> &[crate::types::WorkflowRun] {
+        self.runs.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if not all requested workflow runs have been returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

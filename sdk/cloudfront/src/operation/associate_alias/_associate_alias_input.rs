@@ -34,6 +34,7 @@ pub struct AssociateAliasInputBuilder {
 }
 impl AssociateAliasInputBuilder {
     /// <p>The ID of the distribution that you're associating the alias with.</p>
+    /// This field is required.
     pub fn target_distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateAliasInputBuilder {
         &self.target_distribution_id
     }
     /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+    /// This field is required.
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
         self

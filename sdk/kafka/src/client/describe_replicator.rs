@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReplicator`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replicator_arn(impl Into<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::replicator_arn) / [`set_replicator_arn(Option<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::set_replicator_arn): <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
+    ///   - [`replicator_arn(impl Into<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::replicator_arn) / [`set_replicator_arn(Option<String>)`](crate::operation::describe_replicator::builders::DescribeReplicatorFluentBuilder::set_replicator_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replicator to be described.</p><br>
     /// - On success, responds with [`DescribeReplicatorOutput`](crate::operation::describe_replicator::DescribeReplicatorOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::creation_time): <p>The time when the replicator was created.</p>
     ///   - [`current_version(Option<String>)`](crate::operation::describe_replicator::DescribeReplicatorOutput::current_version): <p>The current version number of the replicator.</p>

@@ -29,16 +29,22 @@ impl LoRaWanGateway {
         self.rf_region.as_deref()
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn join_eui_filters(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.join_eui_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.join_eui_filters.is_none()`.
+    pub fn join_eui_filters(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.join_eui_filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn net_id_filters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.net_id_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.net_id_filters.is_none()`.
+    pub fn net_id_filters(&self) -> &[::std::string::String] {
+        self.net_id_filters.as_deref().unwrap_or_default()
     }
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
-    pub fn sub_bands(&self) -> ::std::option::Option<&[i32]> {
-        self.sub_bands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_bands.is_none()`.
+    pub fn sub_bands(&self) -> &[i32] {
+        self.sub_bands.as_deref().unwrap_or_default()
     }
     /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
     pub fn beaconing(&self) -> ::std::option::Option<&crate::types::Beaconing> {

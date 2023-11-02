@@ -20,8 +20,10 @@ pub struct ListLicensesInput {
 }
 impl ListLicensesInput {
     /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
-    pub fn license_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.license_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_arns.is_none()`.
+    pub fn license_arns(&self) -> &[::std::string::String] {
+        self.license_arns.as_deref().unwrap_or_default()
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
@@ -30,8 +32,10 @@ impl ListLicensesInput {
     /// <li> <p> <code>Fingerprint</code> </p> </li>
     /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

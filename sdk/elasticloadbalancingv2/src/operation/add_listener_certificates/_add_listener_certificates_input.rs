@@ -14,8 +14,10 @@ impl AddListenerCertificatesInput {
         self.listener_arn.as_deref()
     }
     /// <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
 }
 impl AddListenerCertificatesInput {
@@ -34,6 +36,7 @@ pub struct AddListenerCertificatesInputBuilder {
 }
 impl AddListenerCertificatesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self

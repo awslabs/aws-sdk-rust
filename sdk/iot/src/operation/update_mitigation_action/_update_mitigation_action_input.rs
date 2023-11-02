@@ -41,6 +41,7 @@ pub struct UpdateMitigationActionInputBuilder {
 }
 impl UpdateMitigationActionInputBuilder {
     /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self

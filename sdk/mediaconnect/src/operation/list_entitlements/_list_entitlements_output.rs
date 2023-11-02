@@ -11,8 +11,10 @@ pub struct ListEntitlementsOutput {
 }
 impl ListEntitlementsOutput {
     /// A list of entitlements that have been granted to you from other AWS accounts.
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::ListedEntitlement]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::ListedEntitlement] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

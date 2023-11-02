@@ -34,6 +34,7 @@ pub struct CreateAssessmentTargetInputBuilder {
 }
 impl CreateAssessmentTargetInputBuilder {
     /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
+    /// This field is required.
     pub fn assessment_target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_name = ::std::option::Option::Some(input.into());
         self

@@ -3,23 +3,23 @@ pub fn ser_update_access_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_access_policy::UpdateAccessPolicyInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.policy_version {
-        object.key("policyVersion").string(var_3.as_str());
+    {
+        object.key("policyVersion").string(input.policy_version.as_str());
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.policy {
-        object.key("policy").string(var_5.as_str());
+    if let Some(var_2) = &input.policy {
+        object.key("policy").string(var_2.as_str());
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("clientToken").string(var_6.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
     }
     Ok(())
 }

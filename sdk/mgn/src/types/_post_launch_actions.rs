@@ -33,8 +33,10 @@ impl PostLaunchActions {
         self.cloud_watch_log_group_name.as_deref()
     }
     /// <p>AWS Systems Manager Documents.</p>
-    pub fn ssm_documents(&self) -> ::std::option::Option<&[crate::types::SsmDocument]> {
-        self.ssm_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssm_documents.is_none()`.
+    pub fn ssm_documents(&self) -> &[crate::types::SsmDocument] {
+        self.ssm_documents.as_deref().unwrap_or_default()
     }
 }
 impl PostLaunchActions {

@@ -27,6 +27,7 @@ pub struct DeleteDiscovererInputBuilder {
 }
 impl DeleteDiscovererInputBuilder {
     /// <p>The ID of the discoverer.</p>
+    /// This field is required.
     pub fn discoverer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discoverer_id = ::std::option::Option::Some(input.into());
         self

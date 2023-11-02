@@ -39,8 +39,10 @@ impl DescribeConfigurationOptionsInput {
         self.platform_arn.as_deref()
     }
     /// <p>If specified, restricts the descriptions to only the specified options.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::OptionSpecification]> {
-        self.options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
+    pub fn options(&self) -> &[crate::types::OptionSpecification] {
+        self.options.as_deref().unwrap_or_default()
     }
 }
 impl DescribeConfigurationOptionsInput {

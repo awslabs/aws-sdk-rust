@@ -28,6 +28,7 @@ pub struct TargetConfigurationBuilder {
 }
 impl TargetConfigurationBuilder {
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
+    /// This field is required.
     pub fn timestream_configuration(mut self, input: crate::types::TimestreamConfiguration) -> Self {
         self.timestream_configuration = ::std::option::Option::Some(input);
         self

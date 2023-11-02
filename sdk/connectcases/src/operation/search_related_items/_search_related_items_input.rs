@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchRelatedItemsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>A unique identifier of the case.</p>
-    pub case_id: ::std::option::Option<::std::string::String>,
+    pub case_id: ::std::string::String,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -16,12 +16,14 @@ pub struct SearchRelatedItemsInput {
 }
 impl SearchRelatedItemsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
-        self.case_id.as_deref()
+    pub fn case_id(&self) -> &str {
+        use std::ops::Deref;
+        self.case_id.deref()
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -32,8 +34,10 @@ impl SearchRelatedItemsInput {
         self.next_token.as_deref()
     }
     /// <p>The list of types of related items and their parameters to use for filtering.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::RelatedItemTypeFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::RelatedItemTypeFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl SearchRelatedItemsInput {
@@ -55,6 +59,7 @@ pub struct SearchRelatedItemsInputBuilder {
 }
 impl SearchRelatedItemsInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl SearchRelatedItemsInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -131,12 +137,25 @@ impl SearchRelatedItemsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchRelatedItemsInput`](crate::operation::search_related_items::SearchRelatedItemsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::search_related_items::builders::SearchRelatedItemsInputBuilder::domain_id)
+    /// - [`case_id`](crate::operation::search_related_items::builders::SearchRelatedItemsInputBuilder::case_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_related_items::SearchRelatedItemsInput {
-            domain_id: self.domain_id,
-            case_id: self.case_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building SearchRelatedItemsInput",
+                )
+            })?,
+            case_id: self.case_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "case_id",
+                    "case_id was not specified but it is required when building SearchRelatedItemsInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
             filters: self.filters,

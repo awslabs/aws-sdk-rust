@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableDirectoryOutput {
     /// <p>The ARN of the enabled directory.</p>
-    pub directory_arn: ::std::option::Option<::std::string::String>,
+    pub directory_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl EnableDirectoryOutput {
     /// <p>The ARN of the enabled directory.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
-        self.directory_arn.as_deref()
+    pub fn directory_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.directory_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for EnableDirectoryOutput {
@@ -34,6 +35,7 @@ pub struct EnableDirectoryOutputBuilder {
 }
 impl EnableDirectoryOutputBuilder {
     /// <p>The ARN of the enabled directory.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl EnableDirectoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableDirectoryOutput`](crate::operation::enable_directory::EnableDirectoryOutput).
-    pub fn build(self) -> crate::operation::enable_directory::EnableDirectoryOutput {
-        crate::operation::enable_directory::EnableDirectoryOutput {
-            directory_arn: self.directory_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`directory_arn`](crate::operation::enable_directory::builders::EnableDirectoryOutputBuilder::directory_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::enable_directory::EnableDirectoryOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::enable_directory::EnableDirectoryOutput {
+            directory_arn: self.directory_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "directory_arn",
+                    "directory_arn was not specified but it is required when building EnableDirectoryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

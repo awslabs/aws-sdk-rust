@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Row {
     /// <p>List of data points in a single row of the result set.</p>
-    pub data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
+    pub data: ::std::vec::Vec<crate::types::Datum>,
 }
 impl Row {
     /// <p>List of data points in a single row of the result set.</p>
-    pub fn data(&self) -> ::std::option::Option<&[crate::types::Datum]> {
-        self.data.as_deref()
+    pub fn data(&self) -> &[crate::types::Datum] {
+        use std::ops::Deref;
+        self.data.deref()
     }
 }
 impl Row {
@@ -48,7 +49,13 @@ impl RowBuilder {
         &self.data
     }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
-    pub fn build(self) -> crate::types::Row {
-        crate::types::Row { data: self.data }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data`](crate::types::builders::RowBuilder::data)
+    pub fn build(self) -> ::std::result::Result<crate::types::Row, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Row {
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("data", "data was not specified but it is required when building Row")
+            })?,
+        })
     }
 }

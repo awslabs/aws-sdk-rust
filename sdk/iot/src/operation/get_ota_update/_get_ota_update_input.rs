@@ -27,6 +27,7 @@ pub struct GetOtaUpdateInputBuilder {
 }
 impl GetOtaUpdateInputBuilder {
     /// <p>The OTA update ID.</p>
+    /// This field is required.
     pub fn ota_update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ota_update_id = ::std::option::Option::Some(input.into());
         self

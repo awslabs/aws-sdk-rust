@@ -17,8 +17,10 @@ impl FinishedWorldsSummary {
         self.finished_count
     }
     /// <p>A list of worlds that succeeded.</p>
-    pub fn succeeded_worlds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.succeeded_worlds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.succeeded_worlds.is_none()`.
+    pub fn succeeded_worlds(&self) -> &[::std::string::String] {
+        self.succeeded_worlds.as_deref().unwrap_or_default()
     }
     /// <p>Information about worlds that failed.</p>
     pub fn failure_summary(&self) -> ::std::option::Option<&crate::types::FailureSummary> {

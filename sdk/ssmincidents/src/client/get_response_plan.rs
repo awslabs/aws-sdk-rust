@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResponsePlan`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the response plan.</p><br>
     /// - On success, responds with [`GetResponsePlanOutput`](crate::operation::get_response_plan::GetResponsePlanOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::get_response_plan::GetResponsePlanOutput::arn): <p>The ARN of the response plan.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_response_plan::GetResponsePlanOutput::name): <p>The short format name of the response plan. The name can't contain spaces.</p>
+    ///   - [`arn(String)`](crate::operation::get_response_plan::GetResponsePlanOutput::arn): <p>The ARN of the response plan.</p>
+    ///   - [`name(String)`](crate::operation::get_response_plan::GetResponsePlanOutput::name): <p>The short format name of the response plan. The name can't contain spaces.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::get_response_plan::GetResponsePlanOutput::display_name): <p>The long format name of the response plan. Can contain spaces.</p>
     ///   - [`incident_template(Option<IncidentTemplate>)`](crate::operation::get_response_plan::GetResponsePlanOutput::incident_template): <p>Details used to create the incident when using this response plan.</p>
     ///   - [`chat_channel(Option<ChatChannel>)`](crate::operation::get_response_plan::GetResponsePlanOutput::chat_channel): <p>The Chatbot chat channel used for collaboration during an incident.</p>

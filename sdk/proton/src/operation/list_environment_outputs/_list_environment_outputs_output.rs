@@ -6,7 +6,7 @@ pub struct ListEnvironmentOutputsOutput {
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment outputs with detail data.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub outputs: ::std::vec::Vec<crate::types::Output>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentOutputsOutput {
@@ -15,8 +15,9 @@ impl ListEnvironmentOutputsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of environment outputs with detail data.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        use std::ops::Deref;
+        self.outputs.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEnvironmentOutputsOutput {
@@ -84,11 +85,23 @@ impl ListEnvironmentOutputsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput).
-    pub fn build(self) -> crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput {
-        crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`outputs`](crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder::outputs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput {
             next_token: self.next_token,
-            outputs: self.outputs,
+            outputs: self.outputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "outputs",
+                    "outputs was not specified but it is required when building ListEnvironmentOutputsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

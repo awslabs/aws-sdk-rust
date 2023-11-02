@@ -150,6 +150,7 @@ pub struct DescribeModelCardOutputBuilder {
 }
 impl DescribeModelCardOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+    /// This field is required.
     pub fn model_card_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_arn = ::std::option::Option::Some(input.into());
         self
@@ -164,6 +165,7 @@ impl DescribeModelCardOutputBuilder {
         &self.model_card_arn
     }
     /// <p>The name of the model card.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +180,7 @@ impl DescribeModelCardOutputBuilder {
         &self.model_card_name
     }
     /// <p>The version of the model card.</p>
+    /// This field is required.
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.model_card_version = ::std::option::Option::Some(input);
         self
@@ -192,6 +195,7 @@ impl DescribeModelCardOutputBuilder {
         &self.model_card_version
     }
     /// <p>The content of the model card.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +216,7 @@ impl DescribeModelCardOutputBuilder {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = ::std::option::Option::Some(input);
         self
@@ -252,6 +257,7 @@ impl DescribeModelCardOutputBuilder {
         &self.security_config
     }
     /// <p>The date and time the model card was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -266,6 +272,7 @@ impl DescribeModelCardOutputBuilder {
         &self.creation_time
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
         self

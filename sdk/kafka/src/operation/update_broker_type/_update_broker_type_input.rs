@@ -41,6 +41,7 @@ pub struct UpdateBrokerTypeInputBuilder {
 }
 impl UpdateBrokerTypeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateBrokerTypeInputBuilder {
         &self.cluster_arn
     }
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateBrokerTypeInputBuilder {
         &self.current_version
     }
     /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    /// This field is required.
     pub fn target_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_instance_type = ::std::option::Option::Some(input.into());
         self

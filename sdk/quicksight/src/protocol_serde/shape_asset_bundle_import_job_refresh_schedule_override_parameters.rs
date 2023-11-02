@@ -3,16 +3,16 @@ pub fn ser_asset_bundle_import_job_refresh_schedule_override_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_set_id {
-        object.key("DataSetId").string(var_1.as_str());
+    {
+        object.key("DataSetId").string(input.data_set_id.as_str());
     }
-    if let Some(var_2) = &input.schedule_id {
-        object.key("ScheduleId").string(var_2.as_str());
+    {
+        object.key("ScheduleId").string(input.schedule_id.as_str());
     }
-    if let Some(var_3) = &input.start_after_date_time {
+    if let Some(var_1) = &input.start_after_date_time {
         object
             .key("StartAfterDateTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -62,7 +62,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::asset_bundle_import_job_refresh_schedule_override_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

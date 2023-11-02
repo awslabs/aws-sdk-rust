@@ -7,7 +7,7 @@ pub struct MediaStorageConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the media storage configuration.</p>
-    pub status: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
+    pub status: crate::types::MediaStorageConfigurationStatus,
 }
 impl MediaStorageConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
@@ -15,8 +15,8 @@ impl MediaStorageConfiguration {
         self.stream_arn.as_deref()
     }
     /// <p>The status of the media storage configuration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MediaStorageConfigurationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::MediaStorageConfigurationStatus {
+        &self.status
     }
 }
 impl MediaStorageConfiguration {
@@ -49,6 +49,7 @@ impl MediaStorageConfigurationBuilder {
         &self.stream_arn
     }
     /// <p>The status of the media storage configuration.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MediaStorageConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl MediaStorageConfigurationBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`MediaStorageConfiguration`](crate::types::MediaStorageConfiguration).
-    pub fn build(self) -> crate::types::MediaStorageConfiguration {
-        crate::types::MediaStorageConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::MediaStorageConfigurationBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaStorageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MediaStorageConfiguration {
             stream_arn: self.stream_arn,
-            status: self.status,
-        }
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building MediaStorageConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -15,8 +15,10 @@ impl ServiceCatalogProvisioningUpdateDetails {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>A list of key value pairs that you specify when you provision a product.</p>
-    pub fn provisioning_parameters(&self) -> ::std::option::Option<&[crate::types::ProvisioningParameter]> {
-        self.provisioning_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
+    pub fn provisioning_parameters(&self) -> &[crate::types::ProvisioningParameter] {
+        self.provisioning_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ServiceCatalogProvisioningUpdateDetails {

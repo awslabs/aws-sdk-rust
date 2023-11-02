@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResumeReplication`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::set_source_server_id): <p>Resume Replication Request source server ID.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::set_account_id): <p>Resume Replication Request account ID.</p>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>Resume Replication Request source server ID.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::resume_replication::builders::ResumeReplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Resume Replication Request account ID.</p><br>
     /// - On success, responds with [`ResumeReplicationOutput`](crate::operation::resume_replication::ResumeReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::resume_replication::ResumeReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::resume_replication::ResumeReplicationOutput::arn): <p>Source server ARN.</p>

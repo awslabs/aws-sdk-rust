@@ -3,32 +3,32 @@ pub fn ser_start_import_file_task_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_import_file_task::StartImportFileTaskInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_1.as_str());
+    {
+        object.key("S3Bucket").string(input.s3_bucket.as_str());
     }
-    if let Some(var_2) = &input.data_source_type {
-        object.key("dataSourceType").string(var_2.as_str());
+    if let Some(var_1) = &input.data_source_type {
+        object.key("dataSourceType").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.group_id {
-        let mut array_4 = object.key("groupId").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.group_id {
+        let mut array_3 = object.key("groupId").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_group::ser_group(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_group::ser_group(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_8) = &input.s3bucket_for_report_data {
-        object.key("s3bucketForReportData").string(var_8.as_str());
+    if let Some(var_6) = &input.s3bucket_for_report_data {
+        object.key("s3bucketForReportData").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.s3key {
-        object.key("s3key").string(var_9.as_str());
+    {
+        object.key("s3key").string(input.s3key.as_str());
     }
     Ok(())
 }

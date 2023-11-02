@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelActivity {
     /// <p>The name of the channel activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the channel from which the messages are processed.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl ChannelActivity {
     /// <p>The name of the channel activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the channel from which the messages are processed.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct ChannelActivityBuilder {
 }
 impl ChannelActivityBuilder {
     /// <p>The name of the channel activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ChannelActivityBuilder {
         &self.name
     }
     /// <p>The name of the channel from which the messages are processed.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl ChannelActivityBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`ChannelActivity`](crate::types::ChannelActivity).
-    pub fn build(self) -> crate::types::ChannelActivity {
-        crate::types::ChannelActivity {
-            name: self.name,
-            channel_name: self.channel_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ChannelActivityBuilder::name)
+    /// - [`channel_name`](crate::types::builders::ChannelActivityBuilder::channel_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelActivity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChannelActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ChannelActivity",
+                )
+            })?,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building ChannelActivity",
+                )
+            })?,
             next: self.next,
-        }
+        })
     }
 }

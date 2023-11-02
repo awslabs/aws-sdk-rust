@@ -12,8 +12,10 @@ pub struct GetGatewayResponsesOutput {
 }
 impl GetGatewayResponsesOutput {
     /// <p>Returns the entire collection, because of no pagination support.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::GatewayResponse]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::GatewayResponse] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     pub fn position(&self) -> ::std::option::Option<&str> {

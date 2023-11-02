@@ -27,6 +27,7 @@ pub struct DeleteProfileInputBuilder {
 }
 impl DeleteProfileInputBuilder {
     /// <p>The identifier of the profile that you are deleting.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self

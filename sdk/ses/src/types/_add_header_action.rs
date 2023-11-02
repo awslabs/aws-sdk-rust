@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddHeaderAction {
     /// <p>The name of the header to add to the incoming message. The name must contain at least one character, and can contain up to 50 characters. It consists of alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
-    pub header_name: ::std::option::Option<::std::string::String>,
+    pub header_name: ::std::string::String,
     /// <p>The content to include in the header. This value can contain up to 2048 characters. It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.</p>
-    pub header_value: ::std::option::Option<::std::string::String>,
+    pub header_value: ::std::string::String,
 }
 impl AddHeaderAction {
     /// <p>The name of the header to add to the incoming message. The name must contain at least one character, and can contain up to 50 characters. It consists of alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
-    pub fn header_name(&self) -> ::std::option::Option<&str> {
-        self.header_name.as_deref()
+    pub fn header_name(&self) -> &str {
+        use std::ops::Deref;
+        self.header_name.deref()
     }
     /// <p>The content to include in the header. This value can contain up to 2048 characters. It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.</p>
-    pub fn header_value(&self) -> ::std::option::Option<&str> {
-        self.header_value.as_deref()
+    pub fn header_value(&self) -> &str {
+        use std::ops::Deref;
+        self.header_value.deref()
     }
 }
 impl AddHeaderAction {
@@ -36,6 +38,7 @@ pub struct AddHeaderActionBuilder {
 }
 impl AddHeaderActionBuilder {
     /// <p>The name of the header to add to the incoming message. The name must contain at least one character, and can contain up to 50 characters. It consists of alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
+    /// This field is required.
     pub fn header_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header_name = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +53,7 @@ impl AddHeaderActionBuilder {
         &self.header_name
     }
     /// <p>The content to include in the header. This value can contain up to 2048 characters. It can't contain newline (<code>\n</code>) or carriage return (<code>\r</code>) characters.</p>
+    /// This field is required.
     pub fn header_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header_value = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +68,23 @@ impl AddHeaderActionBuilder {
         &self.header_value
     }
     /// Consumes the builder and constructs a [`AddHeaderAction`](crate::types::AddHeaderAction).
-    pub fn build(self) -> crate::types::AddHeaderAction {
-        crate::types::AddHeaderAction {
-            header_name: self.header_name,
-            header_value: self.header_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`header_name`](crate::types::builders::AddHeaderActionBuilder::header_name)
+    /// - [`header_value`](crate::types::builders::AddHeaderActionBuilder::header_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::AddHeaderAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AddHeaderAction {
+            header_name: self.header_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "header_name",
+                    "header_name was not specified but it is required when building AddHeaderAction",
+                )
+            })?,
+            header_value: self.header_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "header_value",
+                    "header_value was not specified but it is required when building AddHeaderAction",
+                )
+            })?,
+        })
     }
 }

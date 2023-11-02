@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The name of the resource that is associated with the error.</p>
-    pub resource_name: ::std::option::Option<::std::string::String>,
+    pub resource_name: ::std::string::String,
     /// <p>The type of the resource that is associated with the error.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
     /// <p>The name of the resource that is associated with the error.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
-        self.resource_name.as_deref()
+    pub fn resource_name(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_name.deref()
     }
     /// <p>The type of the resource that is associated with the error.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
@@ -24,17 +25,15 @@ impl ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ResourceNotFoundException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -69,6 +68,7 @@ pub struct ResourceNotFoundExceptionBuilder {
 }
 impl ResourceNotFoundExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +83,7 @@ impl ResourceNotFoundExceptionBuilder {
         &self.message
     }
     /// <p>The name of the resource that is associated with the error.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +123,25 @@ impl ResourceNotFoundExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
-    pub fn build(self) -> crate::types::error::ResourceNotFoundException {
-        crate::types::error::ResourceNotFoundException {
-            message: self.message,
-            resource_name: self.resource_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ResourceNotFoundExceptionBuilder::message)
+    /// - [`resource_name`](crate::types::error::builders::ResourceNotFoundExceptionBuilder::resource_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ResourceNotFoundException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ResourceNotFoundException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ResourceNotFoundException",
+                )
+            })?,
+            resource_name: self.resource_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_name",
+                    "resource_name was not specified but it is required when building ResourceNotFoundException",
+                )
+            })?,
             resource_type: self.resource_type,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

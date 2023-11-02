@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsOutput {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
-    pub https: ::std::option::Option<::std::string::String>,
+    pub https: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetSourceRepositoryCloneUrlsOutput {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
-    pub fn https(&self) -> ::std::option::Option<&str> {
-        self.https.as_deref()
+    pub fn https(&self) -> &str {
+        use std::ops::Deref;
+        self.https.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSourceRepositoryCloneUrlsOutput {
@@ -34,6 +35,7 @@ pub struct GetSourceRepositoryCloneUrlsOutputBuilder {
 }
 impl GetSourceRepositoryCloneUrlsOutputBuilder {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
+    /// This field is required.
     pub fn https(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.https = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl GetSourceRepositoryCloneUrlsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSourceRepositoryCloneUrlsOutput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput).
-    pub fn build(self) -> crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
-        crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
-            https: self.https,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`https`](crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder::https)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
+            https: self.https.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "https",
+                    "https was not specified but it is required when building GetSourceRepositoryCloneUrlsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

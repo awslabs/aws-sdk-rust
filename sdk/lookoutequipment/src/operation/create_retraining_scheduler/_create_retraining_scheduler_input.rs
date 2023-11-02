@@ -72,6 +72,7 @@ pub struct CreateRetrainingSchedulerInputBuilder {
 }
 impl CreateRetrainingSchedulerInputBuilder {
     /// <p>The name of the model to add the retraining scheduler to. </p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl CreateRetrainingSchedulerInputBuilder {
     /// <li> <p>P2M – Every 2 months</p> </li>
     /// <li> <p>P150D – Every 150 days</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn retraining_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retraining_frequency = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +131,7 @@ impl CreateRetrainingSchedulerInputBuilder {
         &self.retraining_frequency
     }
     /// <p>The number of past days of data that will be used for retraining.</p>
+    /// This field is required.
     pub fn lookback_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lookback_window = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +160,7 @@ impl CreateRetrainingSchedulerInputBuilder {
         &self.promote_mode
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

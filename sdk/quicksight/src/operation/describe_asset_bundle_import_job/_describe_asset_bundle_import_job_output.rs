@@ -52,13 +52,17 @@ impl DescribeAssetBundleImportJobOutput {
     }
     /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
     /// <p>Error records accumulate while the job is still running. The complete set of error records is available after the job has completed and failed.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::AssetBundleImportJobError] {
+        self.errors.as_deref().unwrap_or_default()
     }
     /// <p>An array of error records that describes any failures that occurred while an import job was attempting a rollback.</p>
     /// <p>Error records accumulate while the job is still running. The complete set of error records is available after the job has completed and failed.</p>
-    pub fn rollback_errors(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobError]> {
-        self.rollback_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rollback_errors.is_none()`.
+    pub fn rollback_errors(&self) -> &[crate::types::AssetBundleImportJobError] {
+        self.rollback_errors.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the import job.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {

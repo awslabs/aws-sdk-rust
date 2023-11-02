@@ -13,8 +13,10 @@ pub struct GetDistributionsOutput {
 }
 impl GetDistributionsOutput {
     /// <p>An array of objects that describe your distributions.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::LightsailDistribution]> {
-        self.distributions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distributions.is_none()`.
+    pub fn distributions(&self) -> &[crate::types::LightsailDistribution] {
+        self.distributions.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

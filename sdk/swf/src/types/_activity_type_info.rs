@@ -7,11 +7,11 @@ pub struct ActivityTypeInfo {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
     pub activity_type: ::std::option::Option<crate::types::ActivityType>,
     /// <p>The current status of the activity type.</p>
-    pub status: ::std::option::Option<crate::types::RegistrationStatus>,
+    pub status: crate::types::RegistrationStatus,
     /// <p>The description of the activity type provided in <code>RegisterActivityType</code>.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
     pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -21,16 +21,16 @@ impl ActivityTypeInfo {
         self.activity_type.as_ref()
     }
     /// <p>The current status of the activity type.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::RegistrationStatus {
+        &self.status
     }
     /// <p>The description of the activity type provided in <code>RegisterActivityType</code>.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>If DEPRECATED, the date and time <code>DeprecateActivityType</code> was called.</p>
     pub fn deprecation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -56,6 +56,7 @@ pub struct ActivityTypeInfoBuilder {
 }
 impl ActivityTypeInfoBuilder {
     /// <p>The <code>ActivityType</code> type structure representing the activity type.</p>
+    /// This field is required.
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.activity_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl ActivityTypeInfoBuilder {
         &self.activity_type
     }
     /// <p>The current status of the activity type.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl ActivityTypeInfoBuilder {
         &self.description
     }
     /// <p>The date and time this activity type was created through <code>RegisterActivityType</code>.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,26 @@ impl ActivityTypeInfoBuilder {
         &self.deprecation_date
     }
     /// Consumes the builder and constructs a [`ActivityTypeInfo`](crate::types::ActivityTypeInfo).
-    pub fn build(self) -> crate::types::ActivityTypeInfo {
-        crate::types::ActivityTypeInfo {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ActivityTypeInfoBuilder::status)
+    /// - [`creation_date`](crate::types::builders::ActivityTypeInfoBuilder::creation_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivityTypeInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActivityTypeInfo {
             activity_type: self.activity_type,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ActivityTypeInfo",
+                )
+            })?,
             description: self.description,
-            creation_date: self.creation_date,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building ActivityTypeInfo",
+                )
+            })?,
             deprecation_date: self.deprecation_date,
-        }
+        })
     }
 }

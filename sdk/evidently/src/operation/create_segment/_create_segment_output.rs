@@ -34,6 +34,7 @@ pub struct CreateSegmentOutputBuilder {
 }
 impl CreateSegmentOutputBuilder {
     /// <p>A structure that contains the complete information about the segment that was just created.</p>
+    /// This field is required.
     pub fn segment(mut self, input: crate::types::Segment) -> Self {
         self.segment = ::std::option::Option::Some(input);
         self

@@ -22,7 +22,7 @@ impl ListDomainMaintenancesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDomainMaintenances`.
 ///
-/// <p>Get the list of the maintenance action.</p>
+/// <p>A list of maintenance actions for the domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDomainMaintenancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +92,14 @@ impl ListDomainMaintenancesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::list_domain_maintenances::ListDomainMaintenancesOutput,
             crate::operation::list_domain_maintenances::ListDomainMaintenancesError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_domain_maintenances::ListDomainMaintenancesError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +112,7 @@ impl ListDomainMaintenancesFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_domain_maintenances::paginator::ListDomainMaintenancesPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_domain_maintenances::paginator::ListDomainMaintenancesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_domain_maintenances::paginator::ListDomainMaintenancesPaginator {
         crate::operation::list_domain_maintenances::paginator::ListDomainMaintenancesPaginator::new(self.handle, self.inner)
     }
@@ -172,17 +172,17 @@ impl ListDomainMaintenancesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
+    /// <p>If your initial <code>ListDomainMaintenances</code> operation returns a <code>nextToken</code>, include the returned <code>nextToken</code> in subsequent <code>ListDomainMaintenances</code> operations, which returns results in the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

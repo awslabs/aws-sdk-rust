@@ -27,6 +27,7 @@ pub struct DeleteGameSessionQueueInputBuilder {
 }
 impl DeleteGameSessionQueueInputBuilder {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -48,6 +48,7 @@ pub struct DescribeUpdateDirectoryInputBuilder {
 }
 impl DescribeUpdateDirectoryInputBuilder {
     /// <p> The unique identifier of the directory. </p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DescribeUpdateDirectoryInputBuilder {
         &self.directory_id
     }
     /// <p> The type of updates you want to describe for the directory. </p>
+    /// This field is required.
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct CreateLakeFormationOptInInputBuilder {
 }
 impl CreateLakeFormationOptInInputBuilder {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
+    /// This field is required.
     pub fn principal(mut self, input: crate::types::DataLakePrincipal) -> Self {
         self.principal = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl CreateLakeFormationOptInInputBuilder {
         &self.principal
     }
     /// <p>A structure for the resource.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self

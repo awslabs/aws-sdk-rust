@@ -41,6 +41,7 @@ pub struct GetTaskTemplateInputBuilder {
 }
 impl GetTaskTemplateInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetTaskTemplateInputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the task template.</p>
+    /// This field is required.
     pub fn task_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_template_id = ::std::option::Option::Some(input.into());
         self

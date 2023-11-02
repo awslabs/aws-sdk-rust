@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMetadataFlagBody {
     /// <p>The new information to store.</p>
-    pub new_value: ::std::option::Option<::std::string::String>,
+    pub new_value: ::std::string::String,
 }
 impl PutMetadataFlagBody {
     /// <p>The new information to store.</p>
-    pub fn new_value(&self) -> ::std::option::Option<&str> {
-        self.new_value.as_deref()
+    pub fn new_value(&self) -> &str {
+        use std::ops::Deref;
+        self.new_value.deref()
     }
 }
 impl PutMetadataFlagBody {
@@ -28,6 +29,7 @@ pub struct PutMetadataFlagBodyBuilder {
 }
 impl PutMetadataFlagBodyBuilder {
     /// <p>The new information to store.</p>
+    /// This field is required.
     pub fn new_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_value = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl PutMetadataFlagBodyBuilder {
         &self.new_value
     }
     /// Consumes the builder and constructs a [`PutMetadataFlagBody`](crate::types::PutMetadataFlagBody).
-    pub fn build(self) -> crate::types::PutMetadataFlagBody {
-        crate::types::PutMetadataFlagBody { new_value: self.new_value }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`new_value`](crate::types::builders::PutMetadataFlagBodyBuilder::new_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::PutMetadataFlagBody, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PutMetadataFlagBody {
+            new_value: self.new_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "new_value",
+                    "new_value was not specified but it is required when building PutMetadataFlagBody",
+                )
+            })?,
+        })
     }
 }

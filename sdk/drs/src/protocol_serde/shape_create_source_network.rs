@@ -50,11 +50,10 @@ pub fn de_create_source_network_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_source_network::CreateSourceNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_source_network::CreateSourceNetworkError::ResourceNotFoundException({
@@ -105,11 +104,10 @@ pub fn de_create_source_network_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_source_network::CreateSourceNetworkError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::create_source_network::CreateSourceNetworkError::UninitializedAccountException({

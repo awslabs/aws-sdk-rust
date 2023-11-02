@@ -11,8 +11,10 @@ pub struct DescribeInstanceInformationOutput {
 }
 impl DescribeInstanceInformationOutput {
     /// <p>The managed node information list.</p>
-    pub fn instance_information_list(&self) -> ::std::option::Option<&[crate::types::InstanceInformation]> {
-        self.instance_information_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_information_list.is_none()`.
+    pub fn instance_information_list(&self) -> &[crate::types::InstanceInformation] {
+        self.instance_information_list.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

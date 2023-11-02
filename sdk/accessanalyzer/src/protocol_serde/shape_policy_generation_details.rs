@@ -3,8 +3,8 @@ pub fn ser_policy_generation_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolicyGenerationDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.principal_arn {
-        object.key("principalArn").string(var_1.as_str());
+    {
+        object.key("principalArn").string(input.principal_arn.as_str());
     }
     Ok(())
 }

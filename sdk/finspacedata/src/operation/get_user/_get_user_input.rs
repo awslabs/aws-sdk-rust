@@ -27,6 +27,7 @@ pub struct GetUserInputBuilder {
 }
 impl GetUserInputBuilder {
     /// <p>The unique identifier of the user to get data for.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

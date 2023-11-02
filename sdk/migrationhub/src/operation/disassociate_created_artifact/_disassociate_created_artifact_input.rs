@@ -48,6 +48,7 @@ pub struct DisassociateCreatedArtifactInputBuilder {
 }
 impl DisassociateCreatedArtifactInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DisassociateCreatedArtifactInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DisassociateCreatedArtifactInputBuilder {
         &self.migration_task_name
     }
     /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    /// This field is required.
     pub fn created_artifact_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_artifact_name = ::std::option::Option::Some(input.into());
         self

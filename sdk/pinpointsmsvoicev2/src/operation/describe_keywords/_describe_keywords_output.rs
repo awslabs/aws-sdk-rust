@@ -23,8 +23,10 @@ impl DescribeKeywordsOutput {
         self.origination_identity.as_deref()
     }
     /// <p>An array of KeywordInformation objects that contain the results.</p>
-    pub fn keywords(&self) -> ::std::option::Option<&[crate::types::KeywordInformation]> {
-        self.keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keywords.is_none()`.
+    pub fn keywords(&self) -> &[crate::types::KeywordInformation] {
+        self.keywords.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

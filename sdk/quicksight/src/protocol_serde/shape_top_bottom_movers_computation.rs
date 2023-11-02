@@ -3,41 +3,41 @@ pub fn ser_top_bottom_movers_computation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopBottomMoversComputation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.computation_id {
-        object.key("ComputationId").string(var_1.as_str());
+    {
+        object.key("ComputationId").string(input.computation_id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("Name").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.time {
+    if let Some(var_2) = &input.time {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Time").start_object();
-        crate::protocol_serde::shape_dimension_field::ser_dimension_field(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("Time").start_object();
+        crate::protocol_serde::shape_dimension_field::ser_dimension_field(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.category {
+    if let Some(var_4) = &input.category {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Category").start_object();
-        crate::protocol_serde::shape_dimension_field::ser_dimension_field(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("Category").start_object();
+        crate::protocol_serde::shape_dimension_field::ser_dimension_field(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.value {
+    if let Some(var_6) = &input.value {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Value").start_object();
-        crate::protocol_serde::shape_measure_field::ser_measure_field(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("Value").start_object();
+        crate::protocol_serde::shape_measure_field::ser_measure_field(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.mover_size {
+    if let Some(var_8) = &input.mover_size {
         object.key("MoverSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_10) = &input.sort_order {
-        object.key("SortOrder").string(var_10.as_str());
+    if let Some(var_9) = &input.sort_order {
+        object.key("SortOrder").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.r#type {
-        object.key("Type").string(var_11.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
     Ok(())
 }
@@ -111,7 +111,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::top_bottom_movers_computation_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

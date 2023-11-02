@@ -3,8 +3,10 @@ pub fn ser_what_if_point_scenario(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WhatIfPointScenario,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.date {
-        object.key("Date").date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    {
+        object
+            .key("Date")
+            .date_time(&input.date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     {
         object.key("Value").number(
@@ -50,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::what_if_point_scenario_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

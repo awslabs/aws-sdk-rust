@@ -27,6 +27,7 @@ pub struct DeleteLunaClientInputBuilder {
 }
 impl DeleteLunaClientInputBuilder {
     /// <p>The ARN of the client to delete.</p>
+    /// This field is required.
     pub fn client_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_arn = ::std::option::Option::Some(input.into());
         self

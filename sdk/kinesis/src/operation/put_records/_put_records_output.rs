@@ -7,7 +7,7 @@ pub struct PutRecordsOutput {
     /// <p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>
     pub failed_record_count: ::std::option::Option<i32>,
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsResultEntry>>,
+    pub records: ::std::vec::Vec<crate::types::PutRecordsResultEntry>,
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li>
@@ -22,8 +22,9 @@ impl PutRecordsOutput {
         self.failed_record_count
     }
     /// <p>An array of successfully and unsuccessfully processed record results. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::PutRecordsResultEntry]> {
-        self.records.as_deref()
+    pub fn records(&self) -> &[crate::types::PutRecordsResultEntry] {
+        use std::ops::Deref;
+        self.records.deref()
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
@@ -126,12 +127,19 @@ impl PutRecordsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutRecordsOutput`](crate::operation::put_records::PutRecordsOutput).
-    pub fn build(self) -> crate::operation::put_records::PutRecordsOutput {
-        crate::operation::put_records::PutRecordsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`records`](crate::operation::put_records::builders::PutRecordsOutputBuilder::records)
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_records::PutRecordsOutput {
             failed_record_count: self.failed_record_count,
-            records: self.records,
+            records: self.records.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "records",
+                    "records was not specified but it is required when building PutRecordsOutput",
+                )
+            })?,
             encryption_type: self.encryption_type,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteResourcePolicyInputBuilder {
 }
 impl DeleteResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

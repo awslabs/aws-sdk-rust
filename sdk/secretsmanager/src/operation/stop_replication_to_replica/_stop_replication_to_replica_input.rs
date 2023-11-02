@@ -27,6 +27,7 @@ pub struct StopReplicationToReplicaInputBuilder {
 }
 impl StopReplicationToReplicaInputBuilder {
     /// <p>The ARN of the primary secret. </p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self

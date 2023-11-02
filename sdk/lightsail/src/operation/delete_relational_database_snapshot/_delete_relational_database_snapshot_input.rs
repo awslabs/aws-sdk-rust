@@ -27,6 +27,7 @@ pub struct DeleteRelationalDatabaseSnapshotInputBuilder {
 }
 impl DeleteRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name of the database snapshot that you are deleting.</p>
+    /// This field is required.
     pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = ::std::option::Option::Some(input.into());
         self

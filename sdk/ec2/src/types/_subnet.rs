@@ -105,12 +105,16 @@ impl Subnet {
         self.assign_ipv6_address_on_creation
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    pub fn ipv6_cidr_block_association_set(&self) -> ::std::option::Option<&[crate::types::SubnetIpv6CidrBlockAssociation]> {
-        self.ipv6_cidr_block_association_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_cidr_block_association_set.is_none()`.
+    pub fn ipv6_cidr_block_association_set(&self) -> &[crate::types::SubnetIpv6CidrBlockAssociation] {
+        self.ipv6_cidr_block_association_set.as_deref().unwrap_or_default()
     }
     /// <p>Any tags assigned to the subnet.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the subnet.</p>
     pub fn subnet_arn(&self) -> ::std::option::Option<&str> {

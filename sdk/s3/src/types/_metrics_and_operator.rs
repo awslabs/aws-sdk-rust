@@ -17,8 +17,10 @@ impl MetricsAndOperator {
         self.prefix.as_deref()
     }
     /// <p>The list of tags used when evaluating an AND predicate.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub fn access_point_arn(&self) -> ::std::option::Option<&str> {

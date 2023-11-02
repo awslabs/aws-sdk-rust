@@ -35,6 +35,7 @@ pub struct TestConnectionInputBuilder {
 }
 impl TestConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl TestConnectionInputBuilder {
         &self.replication_instance_arn
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self

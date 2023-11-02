@@ -41,6 +41,7 @@ pub struct CreateChannelBanInputBuilder {
 }
 impl CreateChannelBanInputBuilder {
     /// <p>The ARN of the ban request.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateChannelBanInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the member being banned.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self

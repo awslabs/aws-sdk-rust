@@ -34,6 +34,7 @@ pub struct ImportKeyPairInputBuilder {
 }
 impl ImportKeyPairInputBuilder {
     /// <p>The name of the key pair for which you want to import the public key.</p>
+    /// This field is required.
     pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ImportKeyPairInputBuilder {
         &self.key_pair_name
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    /// This field is required.
     pub fn public_key_base64(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_base64 = ::std::option::Option::Some(input.into());
         self

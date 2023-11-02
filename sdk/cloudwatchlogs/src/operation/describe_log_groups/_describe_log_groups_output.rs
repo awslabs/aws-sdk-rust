@@ -13,8 +13,10 @@ pub struct DescribeLogGroupsOutput {
 impl DescribeLogGroupsOutput {
     /// <p>The log groups.</p>
     /// <p>If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not expire.</p>
-    pub fn log_groups(&self) -> ::std::option::Option<&[crate::types::LogGroup]> {
-        self.log_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_groups.is_none()`.
+    pub fn log_groups(&self) -> &[crate::types::LogGroup] {
+        self.log_groups.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

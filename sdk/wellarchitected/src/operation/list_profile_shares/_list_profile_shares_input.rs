@@ -55,6 +55,7 @@ pub struct ListProfileSharesInputBuilder {
 }
 impl ListProfileSharesInputBuilder {
     /// <p>The profile ARN.</p>
+    /// This field is required.
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
         self

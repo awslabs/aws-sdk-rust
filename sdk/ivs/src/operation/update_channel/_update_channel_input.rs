@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Channel name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
@@ -22,8 +22,9 @@ pub struct UpdateChannelInput {
 }
 impl UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Channel name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -76,6 +77,7 @@ pub struct UpdateChannelInputBuilder {
 }
 impl UpdateChannelInputBuilder {
     /// <p>ARN of the channel to be updated.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -188,11 +190,18 @@ impl UpdateChannelInputBuilder {
         &self.preset
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_channel::builders::UpdateChannelInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateChannelInput",
+                )
+            })?,
             name: self.name,
             latency_mode: self.latency_mode,
             r#type: self.r#type,

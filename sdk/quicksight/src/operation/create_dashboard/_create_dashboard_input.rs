@@ -59,8 +59,10 @@ impl CreateDashboardInput {
     }
     /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>
     /// <p>To specify no permissions, omit the permissions list.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
@@ -69,8 +71,10 @@ impl CreateDashboardInput {
         self.source_entity.as_ref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A description for the first version of the dashboard being created.</p>
     pub fn version_description(&self) -> ::std::option::Option<&str> {
@@ -100,8 +104,10 @@ impl CreateDashboardInput {
         self.validation_strategy.as_ref()
     }
     /// <p>When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.</p>
-    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.folder_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
+    pub fn folder_arns(&self) -> &[::std::string::String] {
+        self.folder_arns.as_deref().unwrap_or_default()
     }
 }
 impl CreateDashboardInput {
@@ -131,6 +137,7 @@ pub struct CreateDashboardInputBuilder {
 }
 impl CreateDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +152,7 @@ impl CreateDashboardInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +167,7 @@ impl CreateDashboardInputBuilder {
         &self.dashboard_id
     }
     /// <p>The display name of the dashboard.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

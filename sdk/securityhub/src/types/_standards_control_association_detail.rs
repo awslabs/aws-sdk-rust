@@ -43,8 +43,10 @@ impl StandardsControlAssociationDetail {
         self.association_status.as_ref()
     }
     /// <p> The requirement that underlies a control in the compliance framework related to the standard. </p>
-    pub fn related_requirements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.related_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_requirements.is_none()`.
+    pub fn related_requirements(&self) -> &[::std::string::String] {
+        self.related_requirements.as_deref().unwrap_or_default()
     }
     /// <p> The time at which the enablement status of the control in the specified standard was last updated. </p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -63,8 +65,10 @@ impl StandardsControlAssociationDetail {
         self.standards_control_description.as_deref()
     }
     /// <p> Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard. </p>
-    pub fn standards_control_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.standards_control_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_arns.is_none()`.
+    pub fn standards_control_arns(&self) -> &[::std::string::String] {
+        self.standards_control_arns.as_deref().unwrap_or_default()
     }
 }
 impl StandardsControlAssociationDetail {
@@ -91,6 +95,7 @@ pub struct StandardsControlAssociationDetailBuilder {
 }
 impl StandardsControlAssociationDetailBuilder {
     /// <p> The Amazon Resource Name (ARN) of a security standard. </p>
+    /// This field is required.
     pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl StandardsControlAssociationDetailBuilder {
         &self.standards_arn
     }
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
+    /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +125,7 @@ impl StandardsControlAssociationDetailBuilder {
         &self.security_control_id
     }
     /// <p> The ARN of a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
+    /// This field is required.
     pub fn security_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +140,7 @@ impl StandardsControlAssociationDetailBuilder {
         &self.security_control_arn
     }
     /// <p> Specifies whether a control is enabled or disabled in a specified standard. </p>
+    /// This field is required.
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
         self

@@ -58,6 +58,7 @@ pub struct CreateMeetingDialOutInputBuilder {
 }
 impl CreateMeetingDialOutInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl CreateMeetingDialOutInputBuilder {
         &self.meeting_id
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
+    /// This field is required.
     pub fn from_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl CreateMeetingDialOutInputBuilder {
         &self.from_phone_number
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
+    /// This field is required.
     pub fn to_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +103,7 @@ impl CreateMeetingDialOutInputBuilder {
         &self.to_phone_number
     }
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
+    /// This field is required.
     pub fn join_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.join_token = ::std::option::Option::Some(input.into());
         self

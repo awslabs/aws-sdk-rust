@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskActionDefinition {
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
-    pub contact_flow_id: ::std::option::Option<::std::string::String>,
+    pub contact_flow_id: ::std::string::String,
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
 }
 impl TaskActionDefinition {
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
-        self.contact_flow_id.as_deref()
+    pub fn contact_flow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_flow_id.deref()
     }
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
     pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
@@ -49,6 +51,7 @@ pub struct TaskActionDefinitionBuilder {
 }
 impl TaskActionDefinitionBuilder {
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +80,7 @@ impl TaskActionDefinitionBuilder {
         &self.description
     }
     /// <p>The identifier of the flow.</p>
+    /// This field is required.
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -114,12 +118,25 @@ impl TaskActionDefinitionBuilder {
         &self.references
     }
     /// Consumes the builder and constructs a [`TaskActionDefinition`](crate::types::TaskActionDefinition).
-    pub fn build(self) -> crate::types::TaskActionDefinition {
-        crate::types::TaskActionDefinition {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TaskActionDefinitionBuilder::name)
+    /// - [`contact_flow_id`](crate::types::builders::TaskActionDefinitionBuilder::contact_flow_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskActionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskActionDefinition {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TaskActionDefinition",
+                )
+            })?,
             description: self.description,
-            contact_flow_id: self.contact_flow_id,
+            contact_flow_id: self.contact_flow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_flow_id",
+                    "contact_flow_id was not specified but it is required when building TaskActionDefinition",
+                )
+            })?,
             references: self.references,
-        }
+        })
     }
 }

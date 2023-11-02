@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-    pub language: ::std::option::Option<crate::types::DefinitionLanguage>,
+    pub language: crate::types::DefinitionLanguage,
     /// <p>The GraphQL text that defines the entity.</p>
-    pub text: ::std::option::Option<::std::string::String>,
+    pub text: ::std::string::String,
 }
 impl DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-    pub fn language(&self) -> ::std::option::Option<&crate::types::DefinitionLanguage> {
-        self.language.as_ref()
+    pub fn language(&self) -> &crate::types::DefinitionLanguage {
+        &self.language
     }
     /// <p>The GraphQL text that defines the entity.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
-        self.text.as_deref()
+    pub fn text(&self) -> &str {
+        use std::ops::Deref;
+        self.text.deref()
     }
 }
 impl DefinitionDocument {
@@ -35,6 +36,7 @@ pub struct DefinitionDocumentBuilder {
 }
 impl DefinitionDocumentBuilder {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
+    /// This field is required.
     pub fn language(mut self, input: crate::types::DefinitionLanguage) -> Self {
         self.language = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl DefinitionDocumentBuilder {
         &self.language
     }
     /// <p>The GraphQL text that defines the entity.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl DefinitionDocumentBuilder {
         &self.text
     }
     /// Consumes the builder and constructs a [`DefinitionDocument`](crate::types::DefinitionDocument).
-    pub fn build(self) -> crate::types::DefinitionDocument {
-        crate::types::DefinitionDocument {
-            language: self.language,
-            text: self.text,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`language`](crate::types::builders::DefinitionDocumentBuilder::language)
+    /// - [`text`](crate::types::builders::DefinitionDocumentBuilder::text)
+    pub fn build(self) -> ::std::result::Result<crate::types::DefinitionDocument, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DefinitionDocument {
+            language: self.language.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "language",
+                    "language was not specified but it is required when building DefinitionDocument",
+                )
+            })?,
+            text: self.text.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text",
+                    "text was not specified but it is required when building DefinitionDocument",
+                )
+            })?,
+        })
     }
 }

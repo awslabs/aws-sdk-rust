@@ -3,23 +3,23 @@ pub fn ser_snowflake_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnowflakeTarget,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.data {
+    if let Some(var_1) = &input.data {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Data").start_object();
-        crate::protocol_serde::shape_snowflake_node_data::ser_snowflake_node_data(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Data").start_object();
+        crate::protocol_serde::shape_snowflake_node_data::ser_snowflake_node_data(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.inputs {
-        let mut array_5 = object.key("Inputs").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.inputs {
+        let mut array_4 = object.key("Inputs").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::snowflake_target_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

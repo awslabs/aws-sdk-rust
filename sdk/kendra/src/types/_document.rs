@@ -6,7 +6,7 @@
 pub struct Document {
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The title of the document.</p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the document. </p>
@@ -30,8 +30,9 @@ pub struct Document {
 impl Document {
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The title of the document.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
@@ -48,16 +49,22 @@ impl Document {
     }
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::DocumentAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn access_control_list(&self) -> ::std::option::Option<&[crate::types::Principal]> {
-        self.access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
+    pub fn access_control_list(&self) -> &[crate::types::Principal] {
+        self.access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(&self) -> ::std::option::Option<&[crate::types::HierarchicalPrincipal]> {
-        self.hierarchical_access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchical_access_control_list.is_none()`.
+    pub fn hierarchical_access_control_list(&self) -> &[crate::types::HierarchicalPrincipal] {
+        self.hierarchical_access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
@@ -93,6 +100,7 @@ pub struct DocumentBuilder {
 impl DocumentBuilder {
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -251,9 +259,13 @@ impl DocumentBuilder {
         &self.access_control_configuration_id
     }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
-    pub fn build(self) -> crate::types::Document {
-        crate::types::Document {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::DocumentBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Document {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Document")
+            })?,
             title: self.title,
             blob: self.blob,
             s3_path: self.s3_path,
@@ -262,6 +274,6 @@ impl DocumentBuilder {
             hierarchical_access_control_list: self.hierarchical_access_control_list,
             content_type: self.content_type,
             access_control_configuration_id: self.access_control_configuration_id,
-        }
+        })
     }
 }

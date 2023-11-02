@@ -41,6 +41,7 @@ pub struct ListPagesByContactInputBuilder {
 }
 impl ListPagesByContactInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact you are retrieving engagements for.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self

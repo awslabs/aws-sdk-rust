@@ -17,8 +17,10 @@ impl DescribeMigrationProjectsOutput {
         self.marker.as_deref()
     }
     /// <p>A description of migration projects.</p>
-    pub fn migration_projects(&self) -> ::std::option::Option<&[crate::types::MigrationProject]> {
-        self.migration_projects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.migration_projects.is_none()`.
+    pub fn migration_projects(&self) -> &[crate::types::MigrationProject] {
+        self.migration_projects.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMigrationProjectsOutput {

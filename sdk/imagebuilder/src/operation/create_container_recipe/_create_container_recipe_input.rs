@@ -84,8 +84,10 @@ impl CreateContainerRecipeInput {
         self.semantic_version.as_deref()
     }
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn components(&self) -> ::std::option::Option<&[crate::types::ComponentConfiguration]> {
-        self.components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
+    pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
+        self.components.as_deref().unwrap_or_default()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
     pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
@@ -162,6 +164,7 @@ pub struct CreateContainerRecipeInputBuilder {
 }
 impl CreateContainerRecipeInputBuilder {
     /// <p>The type of container to create.</p>
+    /// This field is required.
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.container_type = ::std::option::Option::Some(input);
         self
@@ -176,6 +179,7 @@ impl CreateContainerRecipeInputBuilder {
         &self.container_type
     }
     /// <p>The name of the container recipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -219,6 +223,7 @@ impl CreateContainerRecipeInputBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
+    /// This field is required.
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
@@ -353,6 +358,7 @@ impl CreateContainerRecipeInputBuilder {
         &self.image_os_version_override
     }
     /// <p>The base image for the container recipe.</p>
+    /// This field is required.
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
         self
@@ -401,6 +407,7 @@ impl CreateContainerRecipeInputBuilder {
         &self.working_directory
     }
     /// <p>The destination repository for the container image.</p>
+    /// This field is required.
     pub fn target_repository(mut self, input: crate::types::TargetContainerRepository) -> Self {
         self.target_repository = ::std::option::Option::Some(input);
         self
@@ -429,6 +436,7 @@ impl CreateContainerRecipeInputBuilder {
         &self.kms_key_id
     }
     /// <p>The client token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

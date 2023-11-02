@@ -6,11 +6,11 @@ pub struct CreateApplicationInput {
     /// <p>The name of the application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub release_label: ::std::option::Option<::std::string::String>,
+    pub release_label: ::std::string::String,
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
+    pub client_token: ::std::string::String,
     /// <p>The capacity to initialize when the application is created.</p>
     pub initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
     /// <p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>
@@ -41,16 +41,19 @@ impl CreateApplicationInput {
         self.name.as_deref()
     }
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
-        self.release_label.as_deref()
+    pub fn release_label(&self) -> &str {
+        use std::ops::Deref;
+        self.release_label.deref()
     }
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
+    pub fn client_token(&self) -> &str {
+        use std::ops::Deref;
+        self.client_token.deref()
     }
     /// <p>The capacity to initialize when the application is created.</p>
     pub fn initial_capacity(
@@ -93,8 +96,10 @@ impl CreateApplicationInput {
         self.worker_type_specifications.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>
-    pub fn runtime_configuration(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.runtime_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_configuration.is_none()`.
+    pub fn runtime_configuration(&self) -> &[crate::types::Configuration] {
+        self.runtime_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
@@ -145,6 +150,7 @@ impl CreateApplicationInputBuilder {
         &self.name
     }
     /// <p>The Amazon EMR release associated with the application.</p>
+    /// This field is required.
     pub fn release_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_label = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +165,7 @@ impl CreateApplicationInputBuilder {
         &self.release_label
     }
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +180,7 @@ impl CreateApplicationInputBuilder {
         &self.r#type
     }
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -379,14 +387,33 @@ impl CreateApplicationInputBuilder {
         &self.monitoring_configuration
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`release_label`](crate::operation::create_application::builders::CreateApplicationInputBuilder::release_label)
+    /// - [`r#type`](crate::operation::create_application::builders::CreateApplicationInputBuilder::r#type)
+    /// - [`client_token`](crate::operation::create_application::builders::CreateApplicationInputBuilder::client_token)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
             name: self.name,
-            release_label: self.release_label,
-            r#type: self.r#type,
-            client_token: self.client_token,
+            release_label: self.release_label.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "release_label",
+                    "release_label was not specified but it is required when building CreateApplicationInput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building CreateApplicationInput",
+                )
+            })?,
+            client_token: self.client_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_token",
+                    "client_token was not specified but it is required when building CreateApplicationInput",
+                )
+            })?,
             initial_capacity: self.initial_capacity,
             maximum_capacity: self.maximum_capacity,
             tags: self.tags,

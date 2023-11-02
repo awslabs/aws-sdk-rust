@@ -24,8 +24,10 @@ impl CreateDistributionConfigurationInput {
         self.description.as_deref()
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::Distribution]> {
-        self.distributions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distributions.is_none()`.
+    pub fn distributions(&self) -> &[crate::types::Distribution] {
+        self.distributions.as_deref().unwrap_or_default()
     }
     /// <p>The tags of the distribution configuration.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -55,6 +57,7 @@ pub struct CreateDistributionConfigurationInputBuilder {
 }
 impl CreateDistributionConfigurationInputBuilder {
     /// <p>The name of the distribution configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +126,7 @@ impl CreateDistributionConfigurationInputBuilder {
         &self.tags
     }
     /// <p>The idempotency token of the distribution configuration.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

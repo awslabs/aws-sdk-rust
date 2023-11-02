@@ -39,8 +39,10 @@ impl Order {
         self.network_site_arn.as_deref()
     }
     /// <p>The tracking information of the order.</p>
-    pub fn tracking_information(&self) -> ::std::option::Option<&[crate::types::TrackingInformation]> {
-        self.tracking_information.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tracking_information.is_none()`.
+    pub fn tracking_information(&self) -> &[crate::types::TrackingInformation] {
+        self.tracking_information.as_deref().unwrap_or_default()
     }
     /// <p>The acknowledgement status of the order.</p>
     pub fn acknowledgment_status(&self) -> ::std::option::Option<&crate::types::AcknowledgmentStatus> {
@@ -51,8 +53,10 @@ impl Order {
         self.created_at.as_ref()
     }
     /// <p>A list of the network resources placed in the order.</p>
-    pub fn ordered_resources(&self) -> ::std::option::Option<&[crate::types::OrderedResourceDefinition]> {
-        self.ordered_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ordered_resources.is_none()`.
+    pub fn ordered_resources(&self) -> &[crate::types::OrderedResourceDefinition] {
+        self.ordered_resources.as_deref().unwrap_or_default()
     }
 }
 impl Order {

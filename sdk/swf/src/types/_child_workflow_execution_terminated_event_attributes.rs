@@ -49,6 +49,7 @@ pub struct ChildWorkflowExecutionTerminatedEventAttributesBuilder {
 }
 impl ChildWorkflowExecutionTerminatedEventAttributesBuilder {
     /// <p>The child workflow execution that was terminated.</p>
+    /// This field is required.
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.workflow_execution = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl ChildWorkflowExecutionTerminatedEventAttributesBuilder {
         &self.workflow_execution
     }
     /// <p>The type of the child workflow execution.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl ChildWorkflowExecutionTerminatedEventAttributesBuilder {
         &self.workflow_type
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn initiated_event_id(mut self, input: i64) -> Self {
         self.initiated_event_id = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl ChildWorkflowExecutionTerminatedEventAttributesBuilder {
         &self.initiated_event_id
     }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
         self

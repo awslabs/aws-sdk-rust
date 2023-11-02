@@ -15,8 +15,10 @@ impl DescribeProductViewOutput {
         self.product_view_summary.as_ref()
     }
     /// <p>Information about the provisioning artifacts for the product.</p>
-    pub fn provisioning_artifacts(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifact]> {
-        self.provisioning_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifacts.is_none()`.
+    pub fn provisioning_artifacts(&self) -> &[crate::types::ProvisioningArtifact] {
+        self.provisioning_artifacts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeProductViewOutput {

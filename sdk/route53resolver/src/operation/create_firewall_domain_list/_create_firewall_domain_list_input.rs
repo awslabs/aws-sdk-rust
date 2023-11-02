@@ -20,8 +20,10 @@ impl CreateFirewallDomainListInput {
         self.name.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFirewallDomainListInput {
@@ -41,6 +43,7 @@ pub struct CreateFirewallDomainListInputBuilder {
 }
 impl CreateFirewallDomainListInputBuilder {
     /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    /// This field is required.
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateFirewallDomainListInputBuilder {
         &self.creator_request_id
     }
     /// <p>A name that lets you identify the domain list to manage and use it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

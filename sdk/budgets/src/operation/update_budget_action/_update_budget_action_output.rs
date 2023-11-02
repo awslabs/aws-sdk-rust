@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub budget_name: ::std::option::Option<::std::string::String>,
+    pub budget_name: ::std::string::String,
     /// <p> The previous action resource information. </p>
     pub old_action: ::std::option::Option<crate::types::Action>,
     /// <p> The updated action resource information. </p>
@@ -15,12 +15,14 @@ pub struct UpdateBudgetActionOutput {
 }
 impl UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
-        self.budget_name.as_deref()
+    pub fn budget_name(&self) -> &str {
+        use std::ops::Deref;
+        self.budget_name.deref()
     }
     /// <p> The previous action resource information. </p>
     pub fn old_action(&self) -> ::std::option::Option<&crate::types::Action> {
@@ -55,6 +57,7 @@ pub struct UpdateBudgetActionOutputBuilder {
 }
 impl UpdateBudgetActionOutputBuilder {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl UpdateBudgetActionOutputBuilder {
         &self.account_id
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl UpdateBudgetActionOutputBuilder {
         &self.budget_name
     }
     /// <p> The previous action resource information. </p>
+    /// This field is required.
     pub fn old_action(mut self, input: crate::types::Action) -> Self {
         self.old_action = ::std::option::Option::Some(input);
         self
@@ -97,6 +102,7 @@ impl UpdateBudgetActionOutputBuilder {
         &self.old_action
     }
     /// <p> The updated action resource information. </p>
+    /// This field is required.
     pub fn new_action(mut self, input: crate::types::Action) -> Self {
         self.new_action = ::std::option::Option::Some(input);
         self
@@ -120,13 +126,29 @@ impl UpdateBudgetActionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateBudgetActionOutput`](crate::operation::update_budget_action::UpdateBudgetActionOutput).
-    pub fn build(self) -> crate::operation::update_budget_action::UpdateBudgetActionOutput {
-        crate::operation::update_budget_action::UpdateBudgetActionOutput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::operation::update_budget_action::builders::UpdateBudgetActionOutputBuilder::account_id)
+    /// - [`budget_name`](crate::operation::update_budget_action::builders::UpdateBudgetActionOutputBuilder::budget_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_budget_action::UpdateBudgetActionOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_budget_action::UpdateBudgetActionOutput {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building UpdateBudgetActionOutput",
+                )
+            })?,
+            budget_name: self.budget_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "budget_name",
+                    "budget_name was not specified but it is required when building UpdateBudgetActionOutput",
+                )
+            })?,
             old_action: self.old_action,
             new_action: self.new_action,
             _request_id: self._request_id,
-        }
+        })
     }
 }

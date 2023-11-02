@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The name of the experiment to update.</p>
-    pub experiment: ::std::option::Option<::std::string::String>,
+    pub experiment: ::std::string::String,
     /// <p>An optional description of the experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
@@ -27,24 +27,30 @@ pub struct UpdateExperimentInput {
 }
 impl UpdateExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The name of the experiment to update.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
-        self.experiment.as_deref()
+    pub fn experiment(&self) -> &str {
+        use std::ops::Deref;
+        self.experiment.deref()
     }
     /// <p>An optional description of the experiment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
-    pub fn treatments(&self) -> ::std::option::Option<&[crate::types::TreatmentConfig]> {
-        self.treatments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatments.is_none()`.
+    pub fn treatments(&self) -> &[crate::types::TreatmentConfig] {
+        self.treatments.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn metric_goals(&self) -> ::std::option::Option<&[crate::types::MetricGoalConfig]> {
-        self.metric_goals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_goals.is_none()`.
+    pub fn metric_goals(&self) -> &[crate::types::MetricGoalConfig] {
+        self.metric_goals.as_deref().unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
@@ -92,6 +98,7 @@ pub struct UpdateExperimentInputBuilder {
 }
 impl UpdateExperimentInputBuilder {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +113,7 @@ impl UpdateExperimentInputBuilder {
         &self.project
     }
     /// <p>The name of the experiment to update.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
         self
@@ -247,12 +255,25 @@ impl UpdateExperimentInputBuilder {
         &self.online_ab_config
     }
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::update_experiment::builders::UpdateExperimentInputBuilder::project)
+    /// - [`experiment`](crate::operation::update_experiment::builders::UpdateExperimentInputBuilder::experiment)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
-            project: self.project,
-            experiment: self.experiment,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building UpdateExperimentInput",
+                )
+            })?,
+            experiment: self.experiment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "experiment",
+                    "experiment was not specified but it is required when building UpdateExperimentInput",
+                )
+            })?,
             description: self.description,
             treatments: self.treatments,
             metric_goals: self.metric_goals,

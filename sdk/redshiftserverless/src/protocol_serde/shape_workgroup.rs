@@ -89,6 +89,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "customDomainName" => {
+                            builder = builder.set_custom_domain_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "customDomainCertificateArn" => {
+                            builder = builder.set_custom_domain_certificate_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "customDomainCertificateExpiryTime" => {
+                            builder =
+                                builder.set_custom_domain_certificate_expiry_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                                )?);
+                        }
                         "workgroupVersion" => {
                             builder = builder.set_workgroup_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

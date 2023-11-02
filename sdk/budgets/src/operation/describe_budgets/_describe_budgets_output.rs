@@ -12,8 +12,10 @@ pub struct DescribeBudgetsOutput {
 }
 impl DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
-    pub fn budgets(&self) -> ::std::option::Option<&[crate::types::Budget]> {
-        self.budgets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.budgets.is_none()`.
+    pub fn budgets(&self) -> &[crate::types::Budget] {
+        self.budgets.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

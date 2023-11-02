@@ -5,36 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotationOverride {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
-    pub rotation_override_id: ::std::option::Option<::std::string::String>,
+    pub rotation_override_id: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub new_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub new_contact_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The time a rotation override begins.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The time a rotation override ends.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The time a rotation override was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
 }
 impl RotationOverride {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
-    pub fn rotation_override_id(&self) -> ::std::option::Option<&str> {
-        self.rotation_override_id.as_deref()
+    pub fn rotation_override_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rotation_override_id.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub fn new_contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.new_contact_ids.as_deref()
+    pub fn new_contact_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.new_contact_ids.deref()
     }
     /// <p>The time a rotation override begins.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>The time a rotation override ends.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p>The time a rotation override was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
 }
 impl RotationOverride {
@@ -56,6 +58,7 @@ pub struct RotationOverrideBuilder {
 }
 impl RotationOverrideBuilder {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
+    /// This field is required.
     pub fn rotation_override_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_override_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl RotationOverrideBuilder {
         &self.new_contact_ids
     }
     /// <p>The time a rotation override begins.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -104,6 +108,7 @@ impl RotationOverrideBuilder {
         &self.start_time
     }
     /// <p>The time a rotation override ends.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -118,6 +123,7 @@ impl RotationOverrideBuilder {
         &self.end_time
     }
     /// <p>The time a rotation override was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -132,13 +138,44 @@ impl RotationOverrideBuilder {
         &self.create_time
     }
     /// Consumes the builder and constructs a [`RotationOverride`](crate::types::RotationOverride).
-    pub fn build(self) -> crate::types::RotationOverride {
-        crate::types::RotationOverride {
-            rotation_override_id: self.rotation_override_id,
-            new_contact_ids: self.new_contact_ids,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            create_time: self.create_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rotation_override_id`](crate::types::builders::RotationOverrideBuilder::rotation_override_id)
+    /// - [`new_contact_ids`](crate::types::builders::RotationOverrideBuilder::new_contact_ids)
+    /// - [`start_time`](crate::types::builders::RotationOverrideBuilder::start_time)
+    /// - [`end_time`](crate::types::builders::RotationOverrideBuilder::end_time)
+    /// - [`create_time`](crate::types::builders::RotationOverrideBuilder::create_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::RotationOverride, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RotationOverride {
+            rotation_override_id: self.rotation_override_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rotation_override_id",
+                    "rotation_override_id was not specified but it is required when building RotationOverride",
+                )
+            })?,
+            new_contact_ids: self.new_contact_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "new_contact_ids",
+                    "new_contact_ids was not specified but it is required when building RotationOverride",
+                )
+            })?,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building RotationOverride",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building RotationOverride",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building RotationOverride",
+                )
+            })?,
+        })
     }
 }

@@ -5,37 +5,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Branch {
     /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
-    pub branch_arn: ::std::option::Option<::std::string::String>,
+    pub branch_arn: ::std::string::String,
     /// <p> The name for the branch that is part of an Amplify app. </p>
-    pub branch_name: ::std::option::Option<::std::string::String>,
+    pub branch_name: ::std::string::String,
     /// <p> The description for the branch that is part of an Amplify app. </p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p> The tag for the branch of an Amplify app. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The current stage for the branch that is part of an Amplify app. </p>
-    pub stage: ::std::option::Option<crate::types::Stage>,
+    pub stage: crate::types::Stage,
     /// <p> The display name for the branch. This is used as the default domain prefix. </p>
-    pub display_name: ::std::option::Option<::std::string::String>,
+    pub display_name: ::std::string::String,
     /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
-    pub enable_notification: ::std::option::Option<bool>,
+    pub enable_notification: bool,
     /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p> The environment variables specific to a branch of an Amplify app. </p>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment_variables: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p> Enables auto-building on push for a branch of an Amplify app. </p>
-    pub enable_auto_build: ::std::option::Option<bool>,
+    pub enable_auto_build: bool,
     /// <p> The custom domains for a branch of an Amplify app. </p>
-    pub custom_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub custom_domains: ::std::vec::Vec<::std::string::String>,
     /// <p> The framework for a branch of an Amplify app. </p>
-    pub framework: ::std::option::Option<::std::string::String>,
+    pub framework: ::std::string::String,
     /// <p> The ID of the active job for a branch of an Amplify app. </p>
-    pub active_job_id: ::std::option::Option<::std::string::String>,
+    pub active_job_id: ::std::string::String,
     /// <p> The total number of jobs that are part of an Amplify app. </p>
-    pub total_number_of_jobs: ::std::option::Option<::std::string::String>,
+    pub total_number_of_jobs: ::std::string::String,
     /// <p> Enables basic authorization for a branch of an Amplify app. </p>
-    pub enable_basic_auth: ::std::option::Option<bool>,
+    pub enable_basic_auth: bool,
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub enable_performance_mode: ::std::option::Option<bool>,
@@ -46,11 +46,11 @@ pub struct Branch {
     /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
     pub build_spec: ::std::option::Option<::std::string::String>,
     /// <p> The content Time to Live (TTL) for the website in seconds. </p>
-    pub ttl: ::std::option::Option<::std::string::String>,
+    pub ttl: ::std::string::String,
     /// <p> A list of custom resources that are linked to this branch. </p>
     pub associated_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Enables pull request previews for the branch. </p>
-    pub enable_pull_request_preview: ::std::option::Option<bool>,
+    pub enable_pull_request_preview: bool,
     /// <p> The Amplify environment name for the pull request. </p>
     pub pull_request_environment_name: ::std::option::Option<::std::string::String>,
     /// <p> The destination branch if the branch is a pull request branch. </p>
@@ -62,67 +62,75 @@ pub struct Branch {
 }
 impl Branch {
     /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
-    pub fn branch_arn(&self) -> ::std::option::Option<&str> {
-        self.branch_arn.as_deref()
+    pub fn branch_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.branch_arn.deref()
     }
     /// <p> The name for the branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
-        self.branch_name.as_deref()
+    pub fn branch_name(&self) -> &str {
+        use std::ops::Deref;
+        self.branch_name.deref()
     }
     /// <p> The description for the branch that is part of an Amplify app. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p> The tag for the branch of an Amplify app. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The current stage for the branch that is part of an Amplify app. </p>
-    pub fn stage(&self) -> ::std::option::Option<&crate::types::Stage> {
-        self.stage.as_ref()
+    pub fn stage(&self) -> &crate::types::Stage {
+        &self.stage
     }
     /// <p> The display name for the branch. This is used as the default domain prefix. </p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
-        self.display_name.as_deref()
+    pub fn display_name(&self) -> &str {
+        use std::ops::Deref;
+        self.display_name.deref()
     }
     /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
-    pub fn enable_notification(&self) -> ::std::option::Option<bool> {
+    pub fn enable_notification(&self) -> bool {
         self.enable_notification
     }
     /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p> The environment variables specific to a branch of an Amplify app. </p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.environment_variables.as_ref()
+    pub fn environment_variables(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.environment_variables
     }
     /// <p> Enables auto-building on push for a branch of an Amplify app. </p>
-    pub fn enable_auto_build(&self) -> ::std::option::Option<bool> {
+    pub fn enable_auto_build(&self) -> bool {
         self.enable_auto_build
     }
     /// <p> The custom domains for a branch of an Amplify app. </p>
-    pub fn custom_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_domains.as_deref()
+    pub fn custom_domains(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.custom_domains.deref()
     }
     /// <p> The framework for a branch of an Amplify app. </p>
-    pub fn framework(&self) -> ::std::option::Option<&str> {
-        self.framework.as_deref()
+    pub fn framework(&self) -> &str {
+        use std::ops::Deref;
+        self.framework.deref()
     }
     /// <p> The ID of the active job for a branch of an Amplify app. </p>
-    pub fn active_job_id(&self) -> ::std::option::Option<&str> {
-        self.active_job_id.as_deref()
+    pub fn active_job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.active_job_id.deref()
     }
     /// <p> The total number of jobs that are part of an Amplify app. </p>
-    pub fn total_number_of_jobs(&self) -> ::std::option::Option<&str> {
-        self.total_number_of_jobs.as_deref()
+    pub fn total_number_of_jobs(&self) -> &str {
+        use std::ops::Deref;
+        self.total_number_of_jobs.deref()
     }
     /// <p> Enables basic authorization for a branch of an Amplify app. </p>
-    pub fn enable_basic_auth(&self) -> ::std::option::Option<bool> {
+    pub fn enable_basic_auth(&self) -> bool {
         self.enable_basic_auth
     }
     /// <p>Enables performance mode for the branch.</p>
@@ -143,15 +151,18 @@ impl Branch {
         self.build_spec.as_deref()
     }
     /// <p> The content Time to Live (TTL) for the website in seconds. </p>
-    pub fn ttl(&self) -> ::std::option::Option<&str> {
-        self.ttl.as_deref()
+    pub fn ttl(&self) -> &str {
+        use std::ops::Deref;
+        self.ttl.deref()
     }
     /// <p> A list of custom resources that are linked to this branch. </p>
-    pub fn associated_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.associated_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resources.is_none()`.
+    pub fn associated_resources(&self) -> &[::std::string::String] {
+        self.associated_resources.as_deref().unwrap_or_default()
     }
     /// <p> Enables pull request previews for the branch. </p>
-    pub fn enable_pull_request_preview(&self) -> ::std::option::Option<bool> {
+    pub fn enable_pull_request_preview(&self) -> bool {
         self.enable_pull_request_preview
     }
     /// <p> The Amplify environment name for the pull request. </p>
@@ -245,6 +256,7 @@ pub struct BranchBuilder {
 }
 impl BranchBuilder {
     /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn branch_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_arn = ::std::option::Option::Some(input.into());
         self
@@ -259,6 +271,7 @@ impl BranchBuilder {
         &self.branch_arn
     }
     /// <p> The name for the branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -273,6 +286,7 @@ impl BranchBuilder {
         &self.branch_name
     }
     /// <p> The description for the branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -307,6 +321,7 @@ impl BranchBuilder {
         &self.tags
     }
     /// <p> The current stage for the branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn stage(mut self, input: crate::types::Stage) -> Self {
         self.stage = ::std::option::Option::Some(input);
         self
@@ -321,6 +336,7 @@ impl BranchBuilder {
         &self.stage
     }
     /// <p> The display name for the branch. This is used as the default domain prefix. </p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -335,6 +351,7 @@ impl BranchBuilder {
         &self.display_name
     }
     /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn enable_notification(mut self, input: bool) -> Self {
         self.enable_notification = ::std::option::Option::Some(input);
         self
@@ -349,6 +366,7 @@ impl BranchBuilder {
         &self.enable_notification
     }
     /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -363,6 +381,7 @@ impl BranchBuilder {
         &self.create_time
     }
     /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -404,6 +423,7 @@ impl BranchBuilder {
         &self.environment_variables
     }
     /// <p> Enables auto-building on push for a branch of an Amplify app. </p>
+    /// This field is required.
     pub fn enable_auto_build(mut self, input: bool) -> Self {
         self.enable_auto_build = ::std::option::Option::Some(input);
         self
@@ -438,6 +458,7 @@ impl BranchBuilder {
         &self.custom_domains
     }
     /// <p> The framework for a branch of an Amplify app. </p>
+    /// This field is required.
     pub fn framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework = ::std::option::Option::Some(input.into());
         self
@@ -452,6 +473,7 @@ impl BranchBuilder {
         &self.framework
     }
     /// <p> The ID of the active job for a branch of an Amplify app. </p>
+    /// This field is required.
     pub fn active_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_job_id = ::std::option::Option::Some(input.into());
         self
@@ -466,6 +488,7 @@ impl BranchBuilder {
         &self.active_job_id
     }
     /// <p> The total number of jobs that are part of an Amplify app. </p>
+    /// This field is required.
     pub fn total_number_of_jobs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_number_of_jobs = ::std::option::Option::Some(input.into());
         self
@@ -480,6 +503,7 @@ impl BranchBuilder {
         &self.total_number_of_jobs
     }
     /// <p> Enables basic authorization for a branch of an Amplify app. </p>
+    /// This field is required.
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
         self.enable_basic_auth = ::std::option::Option::Some(input);
         self
@@ -553,6 +577,7 @@ impl BranchBuilder {
         &self.build_spec
     }
     /// <p> The content Time to Live (TTL) for the website in seconds. </p>
+    /// This field is required.
     pub fn ttl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ttl = ::std::option::Option::Some(input.into());
         self
@@ -587,6 +612,7 @@ impl BranchBuilder {
         &self.associated_resources
     }
     /// <p> Enables pull request previews for the branch. </p>
+    /// This field is required.
     pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
         self.enable_pull_request_preview = ::std::option::Option::Some(input);
         self
@@ -657,36 +683,136 @@ impl BranchBuilder {
         &self.backend_environment_arn
     }
     /// Consumes the builder and constructs a [`Branch`](crate::types::Branch).
-    pub fn build(self) -> crate::types::Branch {
-        crate::types::Branch {
-            branch_arn: self.branch_arn,
-            branch_name: self.branch_name,
-            description: self.description,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`branch_arn`](crate::types::builders::BranchBuilder::branch_arn)
+    /// - [`branch_name`](crate::types::builders::BranchBuilder::branch_name)
+    /// - [`description`](crate::types::builders::BranchBuilder::description)
+    /// - [`stage`](crate::types::builders::BranchBuilder::stage)
+    /// - [`display_name`](crate::types::builders::BranchBuilder::display_name)
+    /// - [`enable_notification`](crate::types::builders::BranchBuilder::enable_notification)
+    /// - [`create_time`](crate::types::builders::BranchBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::BranchBuilder::update_time)
+    /// - [`environment_variables`](crate::types::builders::BranchBuilder::environment_variables)
+    /// - [`enable_auto_build`](crate::types::builders::BranchBuilder::enable_auto_build)
+    /// - [`custom_domains`](crate::types::builders::BranchBuilder::custom_domains)
+    /// - [`framework`](crate::types::builders::BranchBuilder::framework)
+    /// - [`active_job_id`](crate::types::builders::BranchBuilder::active_job_id)
+    /// - [`total_number_of_jobs`](crate::types::builders::BranchBuilder::total_number_of_jobs)
+    /// - [`enable_basic_auth`](crate::types::builders::BranchBuilder::enable_basic_auth)
+    /// - [`ttl`](crate::types::builders::BranchBuilder::ttl)
+    /// - [`enable_pull_request_preview`](crate::types::builders::BranchBuilder::enable_pull_request_preview)
+    pub fn build(self) -> ::std::result::Result<crate::types::Branch, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Branch {
+            branch_arn: self.branch_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "branch_arn",
+                    "branch_arn was not specified but it is required when building Branch",
+                )
+            })?,
+            branch_name: self.branch_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "branch_name",
+                    "branch_name was not specified but it is required when building Branch",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building Branch",
+                )
+            })?,
             tags: self.tags,
-            stage: self.stage,
-            display_name: self.display_name,
-            enable_notification: self.enable_notification,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            environment_variables: self.environment_variables,
-            enable_auto_build: self.enable_auto_build,
-            custom_domains: self.custom_domains,
-            framework: self.framework,
-            active_job_id: self.active_job_id,
-            total_number_of_jobs: self.total_number_of_jobs,
-            enable_basic_auth: self.enable_basic_auth,
+            stage: self.stage.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "stage",
+                    "stage was not specified but it is required when building Branch",
+                )
+            })?,
+            display_name: self.display_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "display_name",
+                    "display_name was not specified but it is required when building Branch",
+                )
+            })?,
+            enable_notification: self.enable_notification.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enable_notification",
+                    "enable_notification was not specified but it is required when building Branch",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building Branch",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building Branch",
+                )
+            })?,
+            environment_variables: self.environment_variables.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_variables",
+                    "environment_variables was not specified but it is required when building Branch",
+                )
+            })?,
+            enable_auto_build: self.enable_auto_build.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enable_auto_build",
+                    "enable_auto_build was not specified but it is required when building Branch",
+                )
+            })?,
+            custom_domains: self.custom_domains.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "custom_domains",
+                    "custom_domains was not specified but it is required when building Branch",
+                )
+            })?,
+            framework: self.framework.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "framework",
+                    "framework was not specified but it is required when building Branch",
+                )
+            })?,
+            active_job_id: self.active_job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "active_job_id",
+                    "active_job_id was not specified but it is required when building Branch",
+                )
+            })?,
+            total_number_of_jobs: self.total_number_of_jobs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "total_number_of_jobs",
+                    "total_number_of_jobs was not specified but it is required when building Branch",
+                )
+            })?,
+            enable_basic_auth: self.enable_basic_auth.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enable_basic_auth",
+                    "enable_basic_auth was not specified but it is required when building Branch",
+                )
+            })?,
             enable_performance_mode: self.enable_performance_mode,
             thumbnail_url: self.thumbnail_url,
             basic_auth_credentials: self.basic_auth_credentials,
             build_spec: self.build_spec,
-            ttl: self.ttl,
+            ttl: self.ttl.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("ttl", "ttl was not specified but it is required when building Branch")
+            })?,
             associated_resources: self.associated_resources,
-            enable_pull_request_preview: self.enable_pull_request_preview,
+            enable_pull_request_preview: self.enable_pull_request_preview.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enable_pull_request_preview",
+                    "enable_pull_request_preview was not specified but it is required when building Branch",
+                )
+            })?,
             pull_request_environment_name: self.pull_request_environment_name,
             destination_branch: self.destination_branch,
             source_branch: self.source_branch,
             backend_environment_arn: self.backend_environment_arn,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for BranchBuilder {

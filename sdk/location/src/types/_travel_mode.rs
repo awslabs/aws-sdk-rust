@@ -15,6 +15,13 @@ impl TravelMode {
         &["Bicycle", "Car", "Motorcycle", "Truck", "Walking"]
     }
 }
+impl ::std::str::FromStr for TravelMode {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TravelMode::from(s))
+    }
+}
 impl<T> ::std::convert::From<T> for TravelMode
 where
     T: ::std::convert::AsRef<str>,

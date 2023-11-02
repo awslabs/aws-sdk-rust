@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DropFields {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>A JSON path to a variable in the data structure.</p>
-    pub paths: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub paths: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
 }
 impl DropFields {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>A JSON path to a variable in the data structure.</p>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.paths.as_deref()
+    pub fn paths(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        use std::ops::Deref;
+        self.paths.deref()
     }
 }
 impl DropFields {
@@ -42,6 +45,7 @@ pub struct DropFieldsBuilder {
 }
 impl DropFieldsBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +100,30 @@ impl DropFieldsBuilder {
         &self.paths
     }
     /// Consumes the builder and constructs a [`DropFields`](crate::types::DropFields).
-    pub fn build(self) -> crate::types::DropFields {
-        crate::types::DropFields {
-            name: self.name,
-            inputs: self.inputs,
-            paths: self.paths,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DropFieldsBuilder::name)
+    /// - [`inputs`](crate::types::builders::DropFieldsBuilder::inputs)
+    /// - [`paths`](crate::types::builders::DropFieldsBuilder::paths)
+    pub fn build(self) -> ::std::result::Result<crate::types::DropFields, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DropFields {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DropFields",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building DropFields",
+                )
+            })?,
+            paths: self.paths.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "paths",
+                    "paths was not specified but it is required when building DropFields",
+                )
+            })?,
+        })
     }
 }

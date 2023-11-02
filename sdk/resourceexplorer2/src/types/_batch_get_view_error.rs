@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetViewError {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
-    pub view_arn: ::std::option::Option<::std::string::String>,
+    pub view_arn: ::std::string::String,
     /// <p>The description of the error for the specified view.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl BatchGetViewError {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
-    pub fn view_arn(&self) -> ::std::option::Option<&str> {
-        self.view_arn.as_deref()
+    pub fn view_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.view_arn.deref()
     }
     /// <p>The description of the error for the specified view.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl BatchGetViewError {
@@ -35,6 +37,7 @@ pub struct BatchGetViewErrorBuilder {
 }
 impl BatchGetViewErrorBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
+    /// This field is required.
     pub fn view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl BatchGetViewErrorBuilder {
         &self.view_arn
     }
     /// <p>The description of the error for the specified view.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl BatchGetViewErrorBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchGetViewError`](crate::types::BatchGetViewError).
-    pub fn build(self) -> crate::types::BatchGetViewError {
-        crate::types::BatchGetViewError {
-            view_arn: self.view_arn,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`view_arn`](crate::types::builders::BatchGetViewErrorBuilder::view_arn)
+    /// - [`error_message`](crate::types::builders::BatchGetViewErrorBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetViewError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetViewError {
+            view_arn: self.view_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "view_arn",
+                    "view_arn was not specified but it is required when building BatchGetViewError",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchGetViewError",
+                )
+            })?,
+        })
     }
 }

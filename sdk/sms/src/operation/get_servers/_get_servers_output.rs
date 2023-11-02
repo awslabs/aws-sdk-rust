@@ -23,8 +23,10 @@ impl GetServersOutput {
         self.server_catalog_status.as_ref()
     }
     /// <p>Information about the servers.</p>
-    pub fn server_list(&self) -> ::std::option::Option<&[crate::types::Server]> {
-        self.server_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_list.is_none()`.
+    pub fn server_list(&self) -> &[crate::types::Server] {
+        self.server_list.as_deref().unwrap_or_default()
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

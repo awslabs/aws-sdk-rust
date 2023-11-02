@@ -6,12 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetEntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
 }
 impl DatasetEntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
 }
 impl DatasetEntityRecognizerEntityList {
@@ -29,6 +30,7 @@ pub struct DatasetEntityRecognizerEntityListBuilder {
 }
 impl DatasetEntityRecognizerEntityListBuilder {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -43,7 +45,16 @@ impl DatasetEntityRecognizerEntityListBuilder {
         &self.s3_uri
     }
     /// Consumes the builder and constructs a [`DatasetEntityRecognizerEntityList`](crate::types::DatasetEntityRecognizerEntityList).
-    pub fn build(self) -> crate::types::DatasetEntityRecognizerEntityList {
-        crate::types::DatasetEntityRecognizerEntityList { s3_uri: self.s3_uri }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_uri`](crate::types::builders::DatasetEntityRecognizerEntityListBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetEntityRecognizerEntityList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatasetEntityRecognizerEntityList {
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building DatasetEntityRecognizerEntityList",
+                )
+            })?,
+        })
     }
 }

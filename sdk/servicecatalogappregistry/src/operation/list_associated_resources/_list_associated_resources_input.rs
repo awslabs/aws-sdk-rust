@@ -41,6 +41,7 @@ pub struct ListAssociatedResourcesInputBuilder {
 }
 impl ListAssociatedResourcesInputBuilder {
     /// <p> The name, ID, or ARN of the application. </p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self

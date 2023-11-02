@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsManagedResources {
     /// <p> The choice of application destination that you specify. </p>
-    pub target_destination: ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>,
+    pub target_destination: ::std::vec::Vec<crate::types::AwsManagedTargetDestination>,
 }
 impl AwsManagedResources {
     /// <p> The choice of application destination that you specify. </p>
-    pub fn target_destination(&self) -> ::std::option::Option<&[crate::types::AwsManagedTargetDestination]> {
-        self.target_destination.as_deref()
+    pub fn target_destination(&self) -> &[crate::types::AwsManagedTargetDestination] {
+        use std::ops::Deref;
+        self.target_destination.deref()
     }
 }
 impl AwsManagedResources {
@@ -48,9 +49,16 @@ impl AwsManagedResourcesBuilder {
         &self.target_destination
     }
     /// Consumes the builder and constructs a [`AwsManagedResources`](crate::types::AwsManagedResources).
-    pub fn build(self) -> crate::types::AwsManagedResources {
-        crate::types::AwsManagedResources {
-            target_destination: self.target_destination,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_destination`](crate::types::builders::AwsManagedResourcesBuilder::target_destination)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedResources, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsManagedResources {
+            target_destination: self.target_destination.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_destination",
+                    "target_destination was not specified but it is required when building AwsManagedResources",
+                )
+            })?,
+        })
     }
 }

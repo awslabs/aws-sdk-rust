@@ -25,11 +25,11 @@ pub fn ser_list_network_sites_input(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.network_arn {
-        object.key("networkArn").string(var_8.as_str());
+    {
+        object.key("networkArn").string(input.network_arn.as_str());
     }
-    if let Some(var_9) = &input.start_token {
-        object.key("startToken").string(var_9.as_str());
+    if let Some(var_8) = &input.start_token {
+        object.key("startToken").string(var_8.as_str());
     }
     Ok(())
 }

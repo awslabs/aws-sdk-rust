@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDeviceJob`](crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder::job_id) / [`set_job_id(impl Into<String>)`](crate::operation::describe_device_job::builders::DescribeDeviceJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job's ID.</p><br>
     /// - On success, responds with [`DescribeDeviceJobOutput`](crate::operation::describe_device_job::DescribeDeviceJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::describe_device_job::DescribeDeviceJobOutput::job_id): <p>The job's ID.</p>
     ///   - [`device_id(Option<String>)`](crate::operation::describe_device_job::DescribeDeviceJobOutput::device_id): <p>The device's ID.</p>

@@ -28,6 +28,7 @@ pub struct OpenMonitoringBuilder {
 }
 impl OpenMonitoringBuilder {
     /// <p>Prometheus settings.</p>
+    /// This field is required.
     pub fn prometheus(mut self, input: crate::types::Prometheus) -> Self {
         self.prometheus = ::std::option::Option::Some(input);
         self

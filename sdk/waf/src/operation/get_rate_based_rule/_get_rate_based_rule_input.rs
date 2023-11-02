@@ -27,6 +27,7 @@ pub struct GetRateBasedRuleInputBuilder {
 }
 impl GetRateBasedRuleInputBuilder {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self

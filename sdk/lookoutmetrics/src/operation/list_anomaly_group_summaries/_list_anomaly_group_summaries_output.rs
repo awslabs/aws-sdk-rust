@@ -13,8 +13,10 @@ pub struct ListAnomalyGroupSummariesOutput {
 }
 impl ListAnomalyGroupSummariesOutput {
     /// <p>A list of anomaly group summaries.</p>
-    pub fn anomaly_group_summary_list(&self) -> ::std::option::Option<&[crate::types::AnomalyGroupSummary]> {
-        self.anomaly_group_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_group_summary_list.is_none()`.
+    pub fn anomaly_group_summary_list(&self) -> &[crate::types::AnomalyGroupSummary] {
+        self.anomaly_group_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>Aggregated details about the anomaly groups.</p>
     pub fn anomaly_group_statistics(&self) -> ::std::option::Option<&crate::types::AnomalyGroupStatistics> {

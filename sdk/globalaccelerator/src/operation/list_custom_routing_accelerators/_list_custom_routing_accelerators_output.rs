@@ -11,8 +11,10 @@ pub struct ListCustomRoutingAcceleratorsOutput {
 }
 impl ListCustomRoutingAcceleratorsOutput {
     /// <p>The list of custom routing accelerators for a customer account.</p>
-    pub fn accelerators(&self) -> ::std::option::Option<&[crate::types::CustomRoutingAccelerator]> {
-        self.accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerators.is_none()`.
+    pub fn accelerators(&self) -> &[crate::types::CustomRoutingAccelerator] {
+        self.accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

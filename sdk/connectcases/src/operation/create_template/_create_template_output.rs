@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-    pub template_arn: ::std::option::Option<::std::string::String>,
+    pub template_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateTemplateOutput {
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
-        self.template_arn.as_deref()
+    pub fn template_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.template_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateTemplateOutput {
@@ -41,6 +43,7 @@ pub struct CreateTemplateOutputBuilder {
 }
 impl CreateTemplateOutputBuilder {
     /// <p>A unique identifier of a template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateTemplateOutputBuilder {
         &self.template_id
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created template.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,26 @@ impl CreateTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTemplateOutput`](crate::operation::create_template::CreateTemplateOutput).
-    pub fn build(self) -> crate::operation::create_template::CreateTemplateOutput {
-        crate::operation::create_template::CreateTemplateOutput {
-            template_id: self.template_id,
-            template_arn: self.template_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_id`](crate::operation::create_template::builders::CreateTemplateOutputBuilder::template_id)
+    /// - [`template_arn`](crate::operation::create_template::builders::CreateTemplateOutputBuilder::template_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateOutput {
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building CreateTemplateOutput",
+                )
+            })?,
+            template_arn: self.template_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_arn",
+                    "template_arn was not specified but it is required when building CreateTemplateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -32,8 +32,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::InconsistentQuantities({
@@ -48,8 +48,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::InvalidArgument({
@@ -64,8 +64,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchFieldLevelEncryptionProfile" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionProfile({
@@ -80,8 +80,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "QueryArgProfileEmpty" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::QueryArgProfileEmpty({
@@ -96,8 +96,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyFieldLevelEncryptionConfigs" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionConfigs({
@@ -112,8 +112,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyFieldLevelEncryptionContentTypeProfiles" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionContentTypeProfiles({
@@ -128,8 +128,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyFieldLevelEncryptionQueryArgProfiles" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionQueryArgProfiles({
@@ -144,8 +144,8 @@ pub fn de_create_field_level_encryption_config_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::generic(generic)

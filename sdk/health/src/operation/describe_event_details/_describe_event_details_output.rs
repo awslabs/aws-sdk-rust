@@ -11,12 +11,16 @@ pub struct DescribeEventDetailsOutput {
 }
 impl DescribeEventDetailsOutput {
     /// <p>Information about the events that could be retrieved.</p>
-    pub fn successful_set(&self) -> ::std::option::Option<&[crate::types::EventDetails]> {
-        self.successful_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_set.is_none()`.
+    pub fn successful_set(&self) -> &[crate::types::EventDetails] {
+        self.successful_set.as_deref().unwrap_or_default()
     }
     /// <p>Error messages for any events that could not be retrieved.</p>
-    pub fn failed_set(&self) -> ::std::option::Option<&[crate::types::EventDetailsErrorItem]> {
-        self.failed_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_set.is_none()`.
+    pub fn failed_set(&self) -> &[crate::types::EventDetailsErrorItem] {
+        self.failed_set.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEventDetailsOutput {

@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub mode: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
+    pub mode: crate::types::FlexibleTimeWindowMode,
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub maximum_window_in_minutes: ::std::option::Option<i32>,
 }
 impl FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::FlexibleTimeWindowMode> {
-        self.mode.as_ref()
+    pub fn mode(&self) -> &crate::types::FlexibleTimeWindowMode {
+        &self.mode
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub fn maximum_window_in_minutes(&self) -> ::std::option::Option<i32> {
@@ -35,6 +35,7 @@ pub struct FlexibleTimeWindowBuilder {
 }
 impl FlexibleTimeWindowBuilder {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::FlexibleTimeWindowMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl FlexibleTimeWindowBuilder {
         &self.maximum_window_in_minutes
     }
     /// Consumes the builder and constructs a [`FlexibleTimeWindow`](crate::types::FlexibleTimeWindow).
-    pub fn build(self) -> crate::types::FlexibleTimeWindow {
-        crate::types::FlexibleTimeWindow {
-            mode: self.mode,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mode`](crate::types::builders::FlexibleTimeWindowBuilder::mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::FlexibleTimeWindow, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FlexibleTimeWindow {
+            mode: self.mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mode",
+                    "mode was not specified but it is required when building FlexibleTimeWindow",
+                )
+            })?,
             maximum_window_in_minutes: self.maximum_window_in_minutes,
-        }
+        })
     }
 }

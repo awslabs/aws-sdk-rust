@@ -5,30 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveRuleSummary {
     /// <p>The name of the archive rule.</p>
-    pub rule_name: ::std::option::Option<::std::string::String>,
+    pub rule_name: ::std::string::String,
     /// <p>A filter used to define the archive rule.</p>
-    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
+    pub filter: ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
     /// <p>The time at which the archive rule was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the archive rule was last updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
 }
 impl ArchiveRuleSummary {
     /// <p>The name of the archive rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
-        self.rule_name.as_deref()
+    pub fn rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_name.deref()
     }
     /// <p>A filter used to define the archive rule.</p>
-    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
-        self.filter.as_ref()
+    pub fn filter(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::Criterion> {
+        &self.filter
     }
     /// <p>The time at which the archive rule was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time at which the archive rule was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
 }
 impl ArchiveRuleSummary {
@@ -49,6 +50,7 @@ pub struct ArchiveRuleSummaryBuilder {
 }
 impl ArchiveRuleSummaryBuilder {
     /// <p>The name of the archive rule.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl ArchiveRuleSummaryBuilder {
         &self.filter
     }
     /// <p>The time at which the archive rule was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl ArchiveRuleSummaryBuilder {
         &self.created_at
     }
     /// <p>The time at which the archive rule was last updated.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -111,12 +115,37 @@ impl ArchiveRuleSummaryBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`ArchiveRuleSummary`](crate::types::ArchiveRuleSummary).
-    pub fn build(self) -> crate::types::ArchiveRuleSummary {
-        crate::types::ArchiveRuleSummary {
-            rule_name: self.rule_name,
-            filter: self.filter,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_name`](crate::types::builders::ArchiveRuleSummaryBuilder::rule_name)
+    /// - [`filter`](crate::types::builders::ArchiveRuleSummaryBuilder::filter)
+    /// - [`created_at`](crate::types::builders::ArchiveRuleSummaryBuilder::created_at)
+    /// - [`updated_at`](crate::types::builders::ArchiveRuleSummaryBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::ArchiveRuleSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ArchiveRuleSummary {
+            rule_name: self.rule_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_name",
+                    "rule_name was not specified but it is required when building ArchiveRuleSummary",
+                )
+            })?,
+            filter: self.filter.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter",
+                    "filter was not specified but it is required when building ArchiveRuleSummary",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building ArchiveRuleSummary",
+                )
+            })?,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building ArchiveRuleSummary",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DescribeIndexInputBuilder {
 }
 impl DescribeIndexInputBuilder {
     /// <p>The index name.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self

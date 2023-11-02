@@ -30,6 +30,7 @@ pub struct DescribeObservabilityConfigurationInputBuilder {
 impl DescribeObservabilityConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    /// This field is required.
     pub fn observability_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_configuration_arn = ::std::option::Option::Some(input.into());
         self

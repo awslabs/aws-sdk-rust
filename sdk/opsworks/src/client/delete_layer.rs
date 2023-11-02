@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLayer`](crate::operation::delete_layer::builders::DeleteLayerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`layer_id(impl Into<String>)`](crate::operation::delete_layer::builders::DeleteLayerFluentBuilder::layer_id) / [`set_layer_id(Option<String>)`](crate::operation::delete_layer::builders::DeleteLayerFluentBuilder::set_layer_id): <p>The layer ID.</p>
+    ///   - [`layer_id(impl Into<String>)`](crate::operation::delete_layer::builders::DeleteLayerFluentBuilder::layer_id) / [`set_layer_id(Option<String>)`](crate::operation::delete_layer::builders::DeleteLayerFluentBuilder::set_layer_id):<br>required: **true**<br><p>The layer ID.</p><br>
     /// - On success, responds with [`DeleteLayerOutput`](crate::operation::delete_layer::DeleteLayerOutput)
     /// - On failure, responds with [`SdkError<DeleteLayerError>`](crate::operation::delete_layer::DeleteLayerError)
     pub fn delete_layer(&self) -> crate::operation::delete_layer::builders::DeleteLayerFluentBuilder {

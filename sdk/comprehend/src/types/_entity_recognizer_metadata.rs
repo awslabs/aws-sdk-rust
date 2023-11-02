@@ -27,8 +27,10 @@ impl EntityRecognizerMetadata {
         self.evaluation_metrics.as_ref()
     }
     /// <p>Entity types from the metadata of an entity recognizer.</p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[crate::types::EntityRecognizerMetadataEntityTypesListItem]> {
-        self.entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_types.is_none()`.
+    pub fn entity_types(&self) -> &[crate::types::EntityRecognizerMetadataEntityTypesListItem] {
+        self.entity_types.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for EntityRecognizerMetadata {

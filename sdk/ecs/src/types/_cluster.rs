@@ -186,8 +186,10 @@ impl Cluster {
     /// <li> <p>drainingEC2ServiceCount</p> </li>
     /// <li> <p>drainingFargateServiceCount</p> </li>
     /// </ul>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
+    pub fn statistics(&self) -> &[crate::types::KeyValuePair] {
+        self.statistics.as_deref().unwrap_or_default()
     }
     /// <p>The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -200,24 +202,34 @@ impl Cluster {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a cluster.</p>
-    pub fn settings(&self) -> ::std::option::Option<&[crate::types::ClusterSetting]> {
-        self.settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
+    pub fn settings(&self) -> &[crate::types::ClusterSetting] {
+        self.settings.as_deref().unwrap_or_default()
     }
     /// <p>The capacity providers associated with the cluster.</p>
-    pub fn capacity_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capacity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_providers.is_none()`.
+    pub fn capacity_providers(&self) -> &[::std::string::String] {
+        self.capacity_providers.as_deref().unwrap_or_default()
     }
     /// <p>The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no launch type or capacity provider strategy specified, the default capacity provider strategy is used.</p>
-    pub fn default_capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
-        self.default_capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_capacity_provider_strategy.is_none()`.
+    pub fn default_capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
+        self.default_capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The resources attached to a cluster. When using a capacity provider with a cluster, the capacity provider and associated resources are returned as cluster attachments.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::Attachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::Attachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The status of the capacity providers associated with the cluster. The following are the states that are returned.</p>
     /// <dl>

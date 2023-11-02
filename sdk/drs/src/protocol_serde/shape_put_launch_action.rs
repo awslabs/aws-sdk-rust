@@ -47,11 +47,10 @@ pub fn de_put_launch_action_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_launch_action::PutLaunchActionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::put_launch_action::PutLaunchActionError::ResourceNotFoundException({
@@ -84,11 +83,10 @@ pub fn de_put_launch_action_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::put_launch_action::PutLaunchActionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::put_launch_action::PutLaunchActionError::UninitializedAccountException({

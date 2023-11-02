@@ -42,10 +42,7 @@ pub(crate) fn reflens_list_user_associations_output_next_token(
 pub(crate) fn lens_list_identity_providers_output_identity_provider_summaries(
     input: crate::operation::list_identity_providers::ListIdentityProvidersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>> {
-    let input = match input.identity_provider_summaries {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.identity_provider_summaries;
     ::std::option::Option::Some(input)
 }
 

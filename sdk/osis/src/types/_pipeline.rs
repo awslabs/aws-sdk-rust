@@ -67,16 +67,20 @@ impl Pipeline {
         self.last_updated_at.as_ref()
     }
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
-    pub fn ingest_endpoint_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ingest_endpoint_urls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ingest_endpoint_urls.is_none()`.
+    pub fn ingest_endpoint_urls(&self) -> &[::std::string::String] {
+        self.ingest_endpoint_urls.as_deref().unwrap_or_default()
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
     pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
         self.log_publishing_options.as_ref()
     }
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
-    pub fn vpc_endpoints(&self) -> ::std::option::Option<&[crate::types::VpcEndpoint]> {
-        self.vpc_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoints.is_none()`.
+    pub fn vpc_endpoints(&self) -> &[crate::types::VpcEndpoint] {
+        self.vpc_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl Pipeline {

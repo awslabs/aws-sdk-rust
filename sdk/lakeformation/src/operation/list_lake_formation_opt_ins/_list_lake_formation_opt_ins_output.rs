@@ -11,8 +11,10 @@ pub struct ListLakeFormationOptInsOutput {
 }
 impl ListLakeFormationOptInsOutput {
     /// <p>A list of principal-resource pairs that have Lake Formation permissins enforced.</p>
-    pub fn lake_formation_opt_ins_info_list(&self) -> ::std::option::Option<&[crate::types::LakeFormationOptInsInfo]> {
-        self.lake_formation_opt_ins_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lake_formation_opt_ins_info_list.is_none()`.
+    pub fn lake_formation_opt_ins_info_list(&self) -> &[crate::types::LakeFormationOptInsInfo] {
+        self.lake_formation_opt_ins_info_list.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

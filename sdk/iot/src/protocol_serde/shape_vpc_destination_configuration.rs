@@ -3,29 +3,29 @@ pub fn ser_vpc_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcDestinationConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.subnet_ids {
-        let mut array_2 = object.key("subnetIds").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("subnetIds").start_array();
+        for item_2 in &input.subnet_ids {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.security_groups {
-        let mut array_5 = object.key("securityGroups").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.security_groups {
+        let mut array_4 = object.key("securityGroups").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_7) = &input.vpc_id {
-        object.key("vpcId").string(var_7.as_str());
+    {
+        object.key("vpcId").string(input.vpc_id.as_str());
     }
-    if let Some(var_8) = &input.role_arn {
-        object.key("roleArn").string(var_8.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
     Ok(())
 }

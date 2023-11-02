@@ -17,8 +17,10 @@ impl LocationAttributes {
         self.location_state.as_ref()
     }
     /// <p>A list of fleet actions that have been suspended in the fleet location.</p>
-    pub fn stopped_actions(&self) -> ::std::option::Option<&[crate::types::FleetAction]> {
-        self.stopped_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stopped_actions.is_none()`.
+    pub fn stopped_actions(&self) -> &[crate::types::FleetAction] {
+        self.stopped_actions.as_deref().unwrap_or_default()
     }
     /// <p>The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet been completed for the location.</p>
     pub fn update_status(&self) -> ::std::option::Option<&crate::types::LocationUpdateStatus> {

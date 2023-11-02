@@ -34,6 +34,7 @@ pub struct GetTokenInputBuilder {
 }
 impl GetTokenInputBuilder {
     /// <p>The app ID.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetTokenInputBuilder {
         &self.app_id
     }
     /// <p>The session ID.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

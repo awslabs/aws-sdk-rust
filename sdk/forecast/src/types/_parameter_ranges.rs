@@ -13,16 +13,22 @@ pub struct ParameterRanges {
 }
 impl ParameterRanges {
     /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
-    pub fn categorical_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::CategoricalParameterRange]> {
-        self.categorical_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categorical_parameter_ranges.is_none()`.
+    pub fn categorical_parameter_ranges(&self) -> &[crate::types::CategoricalParameterRange] {
+        self.categorical_parameter_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
-    pub fn continuous_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::ContinuousParameterRange]> {
-        self.continuous_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.continuous_parameter_ranges.is_none()`.
+    pub fn continuous_parameter_ranges(&self) -> &[crate::types::ContinuousParameterRange] {
+        self.continuous_parameter_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the tunable range for each integer hyperparameter.</p>
-    pub fn integer_parameter_ranges(&self) -> ::std::option::Option<&[crate::types::IntegerParameterRange]> {
-        self.integer_parameter_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_parameter_ranges.is_none()`.
+    pub fn integer_parameter_ranges(&self) -> &[crate::types::IntegerParameterRange] {
+        self.integer_parameter_ranges.as_deref().unwrap_or_default()
     }
 }
 impl ParameterRanges {

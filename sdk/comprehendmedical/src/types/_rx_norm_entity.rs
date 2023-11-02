@@ -55,16 +55,22 @@ impl RxNormEntity {
         self.end_offset
     }
     /// <p>The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>, <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::RxNormAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::RxNormAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>Contextual information for the entity.</p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::RxNormTrait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::RxNormTrait] {
+        self.traits.as_deref().unwrap_or_default()
     }
     /// <p>The RxNorm concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    pub fn rx_norm_concepts(&self) -> ::std::option::Option<&[crate::types::RxNormConcept]> {
-        self.rx_norm_concepts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rx_norm_concepts.is_none()`.
+    pub fn rx_norm_concepts(&self) -> &[crate::types::RxNormConcept] {
+        self.rx_norm_concepts.as_deref().unwrap_or_default()
     }
 }
 impl RxNormEntity {

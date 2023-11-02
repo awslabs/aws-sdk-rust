@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataProductSummary {
     /// <p></p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p></p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p></p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p></p>
-    pub owning_project_id: ::std::option::Option<::std::string::String>,
+    pub owning_project_id: ::std::string::String,
     /// <p></p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -29,32 +29,40 @@ pub struct DataProductSummary {
 }
 impl DataProductSummary {
     /// <p></p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p></p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p></p>
-    pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
-        self.owning_project_id.as_deref()
+    pub fn owning_project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owning_project_id.deref()
     }
     /// <p></p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p></p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p></p>
-    pub fn data_product_items(&self) -> ::std::option::Option<&[crate::types::DataProductItem]> {
-        self.data_product_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_product_items.is_none()`.
+    pub fn data_product_items(&self) -> &[crate::types::DataProductItem] {
+        self.data_product_items.as_deref().unwrap_or_default()
     }
     /// <p></p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -115,6 +123,7 @@ pub struct DataProductSummaryBuilder {
 }
 impl DataProductSummaryBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +138,7 @@ impl DataProductSummaryBuilder {
         &self.domain_id
     }
     /// <p></p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +153,7 @@ impl DataProductSummaryBuilder {
         &self.id
     }
     /// <p></p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +168,7 @@ impl DataProductSummaryBuilder {
         &self.name
     }
     /// <p></p>
+    /// This field is required.
     pub fn owning_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_id = ::std::option::Option::Some(input.into());
         self
@@ -281,12 +293,37 @@ impl DataProductSummaryBuilder {
         &self.updated_by
     }
     /// Consumes the builder and constructs a [`DataProductSummary`](crate::types::DataProductSummary).
-    pub fn build(self) -> crate::types::DataProductSummary {
-        crate::types::DataProductSummary {
-            domain_id: self.domain_id,
-            id: self.id,
-            name: self.name,
-            owning_project_id: self.owning_project_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::DataProductSummaryBuilder::domain_id)
+    /// - [`id`](crate::types::builders::DataProductSummaryBuilder::id)
+    /// - [`name`](crate::types::builders::DataProductSummaryBuilder::name)
+    /// - [`owning_project_id`](crate::types::builders::DataProductSummaryBuilder::owning_project_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataProductSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataProductSummary {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DataProductSummary",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DataProductSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DataProductSummary",
+                )
+            })?,
+            owning_project_id: self.owning_project_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "owning_project_id",
+                    "owning_project_id was not specified but it is required when building DataProductSummary",
+                )
+            })?,
             description: self.description,
             glossary_terms: self.glossary_terms,
             data_product_items: self.data_product_items,
@@ -294,7 +331,7 @@ impl DataProductSummaryBuilder {
             created_by: self.created_by,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DataProductSummaryBuilder {

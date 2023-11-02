@@ -99,7 +99,7 @@ impl NotifyProvisionProductEngineWorkflowResultFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput,
             crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError,
             Self,
@@ -108,7 +108,7 @@ impl NotifyProvisionProductEngineWorkflowResultFluentBuilder {
             crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

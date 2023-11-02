@@ -27,8 +27,10 @@ impl ProtocolsListDataSummary {
         self.list_name.as_deref()
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.protocols_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols_list.is_none()`.
+    pub fn protocols_list(&self) -> &[::std::string::String] {
+        self.protocols_list.as_deref().unwrap_or_default()
     }
 }
 impl ProtocolsListDataSummary {

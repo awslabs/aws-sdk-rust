@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DependentEntity {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
-    pub relation_type: ::std::option::Option<::std::string::String>,
+    pub relation_type: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub dependent_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dependent_resource_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl DependentEntity {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
-    pub fn relation_type(&self) -> ::std::option::Option<&str> {
-        self.relation_type.as_deref()
+    pub fn relation_type(&self) -> &str {
+        use std::ops::Deref;
+        self.relation_type.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub fn dependent_resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dependent_resource_ids.as_deref()
+    pub fn dependent_resource_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.dependent_resource_ids.deref()
     }
 }
 impl DependentEntity {
@@ -36,6 +38,7 @@ pub struct DependentEntityBuilder {
 }
 impl DependentEntityBuilder {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
+    /// This field is required.
     pub fn relation_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relation_type = ::std::option::Option::Some(input.into());
         self
@@ -70,10 +73,23 @@ impl DependentEntityBuilder {
         &self.dependent_resource_ids
     }
     /// Consumes the builder and constructs a [`DependentEntity`](crate::types::DependentEntity).
-    pub fn build(self) -> crate::types::DependentEntity {
-        crate::types::DependentEntity {
-            relation_type: self.relation_type,
-            dependent_resource_ids: self.dependent_resource_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`relation_type`](crate::types::builders::DependentEntityBuilder::relation_type)
+    /// - [`dependent_resource_ids`](crate::types::builders::DependentEntityBuilder::dependent_resource_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::DependentEntity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DependentEntity {
+            relation_type: self.relation_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "relation_type",
+                    "relation_type was not specified but it is required when building DependentEntity",
+                )
+            })?,
+            dependent_resource_ids: self.dependent_resource_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dependent_resource_ids",
+                    "dependent_resource_ids was not specified but it is required when building DependentEntity",
+                )
+            })?,
+        })
     }
 }

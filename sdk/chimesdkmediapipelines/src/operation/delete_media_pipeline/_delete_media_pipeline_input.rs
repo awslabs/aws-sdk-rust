@@ -27,6 +27,7 @@ pub struct DeleteMediaPipelineInputBuilder {
 }
 impl DeleteMediaPipelineInputBuilder {
     /// <p>The ID of the media pipeline to delete.</p>
+    /// This field is required.
     pub fn media_pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_pipeline_id = ::std::option::Option::Some(input.into());
         self

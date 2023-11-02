@@ -3,26 +3,26 @@ pub fn ser_raster_data_collection_query_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RasterDataCollectionQueryInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.raster_data_collection_arn {
-        object.key("RasterDataCollectionArn").string(var_1.as_str());
+    {
+        object.key("RasterDataCollectionArn").string(input.raster_data_collection_arn.as_str());
     }
-    if let Some(var_2) = &input.time_range_filter {
+    if let Some(var_1) = &input.time_range_filter {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("TimeRangeFilter").start_object();
-        crate::protocol_serde::shape_time_range_filter_input::ser_time_range_filter_input(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("TimeRangeFilter").start_object();
+        crate::protocol_serde::shape_time_range_filter_input::ser_time_range_filter_input(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.area_of_interest {
+    if let Some(var_3) = &input.area_of_interest {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AreaOfInterest").start_object();
-        crate::protocol_serde::shape_area_of_interest::ser_area_of_interest(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("AreaOfInterest").start_object();
+        crate::protocol_serde::shape_area_of_interest::ser_area_of_interest(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.property_filters {
+    if let Some(var_5) = &input.property_filters {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("PropertyFilters").start_object();
-        crate::protocol_serde::shape_property_filters::ser_property_filters(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("PropertyFilters").start_object();
+        crate::protocol_serde::shape_property_filters::ser_property_filters(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

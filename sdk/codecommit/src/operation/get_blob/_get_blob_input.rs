@@ -35,6 +35,7 @@ pub struct GetBlobInputBuilder {
 }
 impl GetBlobInputBuilder {
     /// <p>The name of the repository that contains the blob.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetBlobInputBuilder {
         &self.repository_name
     }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    /// This field is required.
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blob_id = ::std::option::Option::Some(input.into());
         self

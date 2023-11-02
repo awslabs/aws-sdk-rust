@@ -34,24 +34,32 @@ impl CreateVpcEndpointServiceConfigurationInput {
         self.private_dns_name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
-    pub fn network_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_load_balancer_arns.is_none()`.
+    pub fn network_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.network_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
-    pub fn gateway_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.gateway_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_load_balancer_arns.is_none()`.
+    pub fn gateway_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.gateway_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
-    pub fn supported_ip_address_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_ip_address_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ip_address_types.is_none()`.
+    pub fn supported_ip_address_types(&self) -> &[::std::string::String] {
+        self.supported_ip_address_types.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The tags to associate with the service.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateVpcEndpointServiceConfigurationInput {

@@ -31,8 +31,10 @@ impl SidewalkListDevice {
         self.sidewalk_manufacturing_sn.as_deref()
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn device_certificates(&self) -> ::std::option::Option<&[crate::types::CertificateList]> {
-        self.device_certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_certificates.is_none()`.
+    pub fn device_certificates(&self) -> &[crate::types::CertificateList] {
+        self.device_certificates.as_deref().unwrap_or_default()
     }
     /// <p>Sidewalk object used by list functions.</p>
     pub fn device_profile_id(&self) -> ::std::option::Option<&str> {

@@ -110,7 +110,9 @@ pub fn de_create_event_stream_http_response(
         output = crate::protocol_serde::shape_create_event_stream::de_create_event_stream(_response_body, output)
             .map_err(crate::operation::create_event_stream::CreateEventStreamError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_event_stream_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_event_stream::CreateEventStreamError::unhandled)?
     })
 }
 

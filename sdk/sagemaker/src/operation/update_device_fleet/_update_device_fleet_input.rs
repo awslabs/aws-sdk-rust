@@ -57,6 +57,7 @@ pub struct UpdateDeviceFleetInputBuilder {
 }
 impl UpdateDeviceFleetInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +100,7 @@ impl UpdateDeviceFleetInputBuilder {
         &self.description
     }
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

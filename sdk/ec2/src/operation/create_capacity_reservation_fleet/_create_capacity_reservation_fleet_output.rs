@@ -65,12 +65,16 @@ impl CreateCapacityReservationFleetOutput {
         self.tenancy.as_ref()
     }
     /// <p>Information about the individual Capacity Reservations in the Capacity Reservation Fleet.</p>
-    pub fn fleet_capacity_reservations(&self) -> ::std::option::Option<&[crate::types::FleetCapacityReservation]> {
-        self.fleet_capacity_reservations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_capacity_reservations.is_none()`.
+    pub fn fleet_capacity_reservations(&self) -> &[crate::types::FleetCapacityReservation] {
+        self.fleet_capacity_reservations.as_deref().unwrap_or_default()
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCapacityReservationFleetOutput {

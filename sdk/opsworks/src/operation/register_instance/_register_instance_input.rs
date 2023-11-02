@@ -69,6 +69,7 @@ pub struct RegisterInstanceInputBuilder {
 }
 impl RegisterInstanceInputBuilder {
     /// <p>The ID of the stack that the instance is to be registered with.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self

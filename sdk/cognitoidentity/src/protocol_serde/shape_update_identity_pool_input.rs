@@ -3,72 +3,72 @@ pub fn ser_update_identity_pool_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_identity_pool::UpdateIdentityPoolInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identity_pool_id {
-        object.key("IdentityPoolId").string(var_1.as_str());
+    {
+        object.key("IdentityPoolId").string(input.identity_pool_id.as_str());
     }
-    if let Some(var_2) = &input.identity_pool_name {
-        object.key("IdentityPoolName").string(var_2.as_str());
+    {
+        object.key("IdentityPoolName").string(input.identity_pool_name.as_str());
     }
     {
         object
             .key("AllowUnauthenticatedIdentities")
             .boolean(input.allow_unauthenticated_identities);
     }
-    if let Some(var_3) = &input.allow_classic_flow {
-        object.key("AllowClassicFlow").boolean(*var_3);
+    if let Some(var_1) = &input.allow_classic_flow {
+        object.key("AllowClassicFlow").boolean(*var_1);
     }
-    if let Some(var_4) = &input.supported_login_providers {
+    if let Some(var_2) = &input.supported_login_providers {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("SupportedLoginProviders").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_3 = object.key("SupportedLoginProviders").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_5.finish();
+        object_3.finish();
     }
-    if let Some(var_8) = &input.developer_provider_name {
-        object.key("DeveloperProviderName").string(var_8.as_str());
+    if let Some(var_6) = &input.developer_provider_name {
+        object.key("DeveloperProviderName").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.open_id_connect_provider_ar_ns {
-        let mut array_10 = object.key("OpenIdConnectProviderARNs").start_array();
-        for item_11 in var_9 {
+    if let Some(var_7) = &input.open_id_connect_provider_ar_ns {
+        let mut array_8 = object.key("OpenIdConnectProviderARNs").start_array();
+        for item_9 in var_7 {
             {
-                array_10.value().string(item_11.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_10.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.cognito_identity_providers {
-        let mut array_13 = object.key("CognitoIdentityProviders").start_array();
-        for item_14 in var_12 {
+    if let Some(var_10) = &input.cognito_identity_providers {
+        let mut array_11 = object.key("CognitoIdentityProviders").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_cognito_identity_provider::ser_cognito_identity_provider(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_cognito_identity_provider::ser_cognito_identity_provider(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_13.finish();
+        array_11.finish();
     }
-    if let Some(var_16) = &input.saml_provider_ar_ns {
-        let mut array_17 = object.key("SamlProviderARNs").start_array();
-        for item_18 in var_16 {
+    if let Some(var_14) = &input.saml_provider_ar_ns {
+        let mut array_15 = object.key("SamlProviderARNs").start_array();
+        for item_16 in var_14 {
             {
-                array_17.value().string(item_18.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_17.finish();
+        array_15.finish();
     }
-    if let Some(var_19) = &input.identity_pool_tags {
+    if let Some(var_17) = &input.identity_pool_tags {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("IdentityPoolTags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_18 = object.key("IdentityPoolTags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_20.finish();
+        object_18.finish();
     }
     Ok(())
 }

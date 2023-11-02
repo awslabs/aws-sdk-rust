@@ -50,12 +50,16 @@ impl S3DataSource {
         self.s3_data_distribution_type.as_ref()
     }
     /// <p>A list of one or more attribute names to use that are found in a specified augmented manifest file.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[::std::string::String] {
+        self.attribute_names.as_deref().unwrap_or_default()
     }
     /// <p>A list of names of instance groups that get data from the S3 data source.</p>
-    pub fn instance_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_group_names.is_none()`.
+    pub fn instance_group_names(&self) -> &[::std::string::String] {
+        self.instance_group_names.as_deref().unwrap_or_default()
     }
 }
 impl S3DataSource {
@@ -79,6 +83,7 @@ impl S3DataSourceBuilder {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training. </p>
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want SageMaker to use for model training. </p>
     /// <p>If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that is an augmented manifest file in JSON lines format. This file contains the data you want to use for model training. <code>AugmentedManifestFile</code> can only be used if the Channel's input mode is <code>Pipe</code>.</p>
+    /// This field is required.
     pub fn s3_data_type(mut self, input: crate::types::S3DataType) -> Self {
         self.s3_data_type = ::std::option::Option::Some(input);
         self
@@ -102,6 +107,7 @@ impl S3DataSourceBuilder {
     /// <li> <p> A manifest might look like this: <code>s3://bucketname/example.manifest</code> </p> <p> A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p> <p> The following code example shows a valid manifest format: </p> <p> <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> </p> <p> <code> "relative/path/to/custdata-1",</code> </p> <p> <code> "relative/path/custdata-2",</code> </p> <p> <code> ...</code> </p> <p> <code> "relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> This JSON is equivalent to the following <code>S3Uri</code> list:</p> <p> <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p> <p> <code>...</code> </p> <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> </p> <p>The complete set of <code>S3Uri</code> in this manifest is the input data for the channel for this data source. The object that each <code>S3Uri</code> points to must be readable by the IAM role that SageMaker uses to perform tasks on your behalf. </p> </li>
     /// </ul>
     /// <p>Your input bucket must be located in same Amazon Web Services region as your training job.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self

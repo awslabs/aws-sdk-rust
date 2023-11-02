@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTimeSeriesOutput {
     /// <p>One or more time series summaries to list.</p>
-    pub time_series_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>>,
+    pub time_series_summaries: ::std::vec::Vec<crate::types::TimeSeriesSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTimeSeriesOutput {
     /// <p>One or more time series summaries to list.</p>
-    pub fn time_series_summaries(&self) -> ::std::option::Option<&[crate::types::TimeSeriesSummary]> {
-        self.time_series_summaries.as_deref()
+    pub fn time_series_summaries(&self) -> &[crate::types::TimeSeriesSummary] {
+        use std::ops::Deref;
+        self.time_series_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListTimeSeriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTimeSeriesOutput`](crate::operation::list_time_series::ListTimeSeriesOutput).
-    pub fn build(self) -> crate::operation::list_time_series::ListTimeSeriesOutput {
-        crate::operation::list_time_series::ListTimeSeriesOutput {
-            time_series_summaries: self.time_series_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`time_series_summaries`](crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder::time_series_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_time_series::ListTimeSeriesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_time_series::ListTimeSeriesOutput {
+            time_series_summaries: self.time_series_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_series_summaries",
+                    "time_series_summaries was not specified but it is required when building ListTimeSeriesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

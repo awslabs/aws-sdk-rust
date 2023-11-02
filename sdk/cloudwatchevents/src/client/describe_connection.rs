@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConnection`](crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder::set_name): <p>The name of the connection to retrieve.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_connection::builders::DescribeConnectionFluentBuilder::set_name):<br>required: **true**<br><p>The name of the connection to retrieve.</p><br>
     /// - On success, responds with [`DescribeConnectionOutput`](crate::operation::describe_connection::DescribeConnectionOutput) with field(s):
     ///   - [`connection_arn(Option<String>)`](crate::operation::describe_connection::DescribeConnectionOutput::connection_arn): <p>The ARN of the connection retrieved.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_connection::DescribeConnectionOutput::name): <p>The name of the connection retrieved.</p>

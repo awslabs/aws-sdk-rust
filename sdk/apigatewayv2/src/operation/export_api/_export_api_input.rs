@@ -62,6 +62,7 @@ pub struct ExportApiInputBuilder {
 }
 impl ExportApiInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl ExportApiInputBuilder {
         &self.include_extensions
     }
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
+    /// This field is required.
     pub fn output_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_type = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +120,7 @@ impl ExportApiInputBuilder {
         &self.output_type
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
+    /// This field is required.
     pub fn specification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.specification = ::std::option::Option::Some(input.into());
         self

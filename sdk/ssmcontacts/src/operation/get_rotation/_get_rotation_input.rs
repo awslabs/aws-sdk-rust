@@ -27,6 +27,7 @@ pub struct GetRotationInputBuilder {
 }
 impl GetRotationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct GetTransitGatewayRouteTableAttachmentInputBuilder {
 }
 impl GetTransitGatewayRouteTableAttachmentInputBuilder {
     /// <p>The ID of the transit gateway route table attachment.</p>
+    /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self

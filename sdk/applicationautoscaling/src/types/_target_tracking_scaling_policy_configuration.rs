@@ -8,7 +8,7 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
-    pub target_value: ::std::option::Option<f64>,
+    pub target_value: f64,
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
@@ -24,7 +24,7 @@ impl TargetTrackingScalingPolicyConfiguration {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
-    pub fn target_value(&self) -> ::std::option::Option<f64> {
+    pub fn target_value(&self) -> f64 {
         self.target_value
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
@@ -70,6 +70,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
+    /// This field is required.
     pub fn target_value(mut self, input: f64) -> Self {
         self.target_value = ::std::option::Option::Some(input);
         self
@@ -158,14 +159,23 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         &self.disable_scale_in
     }
     /// Consumes the builder and constructs a [`TargetTrackingScalingPolicyConfiguration`](crate::types::TargetTrackingScalingPolicyConfiguration).
-    pub fn build(self) -> crate::types::TargetTrackingScalingPolicyConfiguration {
-        crate::types::TargetTrackingScalingPolicyConfiguration {
-            target_value: self.target_value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_value`](crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder::target_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::TargetTrackingScalingPolicyConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TargetTrackingScalingPolicyConfiguration {
+            target_value: self.target_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_value",
+                    "target_value was not specified but it is required when building TargetTrackingScalingPolicyConfiguration",
+                )
+            })?,
             predefined_metric_specification: self.predefined_metric_specification,
             customized_metric_specification: self.customized_metric_specification,
             scale_out_cooldown: self.scale_out_cooldown,
             scale_in_cooldown: self.scale_in_cooldown,
             disable_scale_in: self.disable_scale_in,
-        }
+        })
     }
 }

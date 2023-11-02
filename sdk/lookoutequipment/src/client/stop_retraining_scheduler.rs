@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopRetrainingScheduler`](crate::operation::stop_retraining_scheduler::builders::StopRetrainingSchedulerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_name(impl Into<String>)`](crate::operation::stop_retraining_scheduler::builders::StopRetrainingSchedulerFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::stop_retraining_scheduler::builders::StopRetrainingSchedulerFluentBuilder::set_model_name): <p>The name of the model whose retraining scheduler you want to stop.</p>
+    ///   - [`model_name(impl Into<String>)`](crate::operation::stop_retraining_scheduler::builders::StopRetrainingSchedulerFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::stop_retraining_scheduler::builders::StopRetrainingSchedulerFluentBuilder::set_model_name):<br>required: **true**<br><p>The name of the model whose retraining scheduler you want to stop.</p><br>
     /// - On success, responds with [`StopRetrainingSchedulerOutput`](crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerOutput) with field(s):
     ///   - [`model_name(Option<String>)`](crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerOutput::model_name): <p>The name of the model whose retraining scheduler is being stopped. </p>
     ///   - [`model_arn(Option<String>)`](crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerOutput::model_arn): <p>The ARN of the model whose retraining scheduler is being stopped. </p>

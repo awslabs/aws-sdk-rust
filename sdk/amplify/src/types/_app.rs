@@ -5,35 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct App {
     /// <p> The unique ID of the Amplify app. </p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
-    pub app_arn: ::std::option::Option<::std::string::String>,
+    pub app_arn: ::std::string::String,
     /// <p> The name for the Amplify app. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The tag for the Amplify app. </p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> The description for the Amplify app. </p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p> The Git repository for the Amplify app. </p>
-    pub repository: ::std::option::Option<::std::string::String>,
+    pub repository: ::std::string::String,
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    pub platform: ::std::option::Option<crate::types::Platform>,
+    pub platform: crate::types::Platform,
     /// <p> Creates a date and time for the Amplify app. </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p> Updates the date and time for the Amplify app. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
     pub iam_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The environment variables for the Amplify app. </p>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment_variables: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p> The default domain for the Amplify app. </p>
-    pub default_domain: ::std::option::Option<::std::string::String>,
+    pub default_domain: ::std::string::String,
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
-    pub enable_branch_auto_build: ::std::option::Option<bool>,
+    pub enable_branch_auto_build: bool,
     /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub enable_branch_auto_deletion: ::std::option::Option<bool>,
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
-    pub enable_basic_auth: ::std::option::Option<bool>,
+    pub enable_basic_auth: bool,
     /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
@@ -58,55 +58,61 @@ pub struct App {
 }
 impl App {
     /// <p> The unique ID of the Amplify app. </p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
-        self.app_arn.as_deref()
+    pub fn app_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.app_arn.deref()
     }
     /// <p> The name for the Amplify app. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The tag for the Amplify app. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The description for the Amplify app. </p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p> The Git repository for the Amplify app. </p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
-        self.repository.as_deref()
+    pub fn repository(&self) -> &str {
+        use std::ops::Deref;
+        self.repository.deref()
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
-        self.platform.as_ref()
+    pub fn platform(&self) -> &crate::types::Platform {
+        &self.platform
     }
     /// <p> Creates a date and time for the Amplify app. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p> Updates the date and time for the Amplify app. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
     pub fn iam_service_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_service_role_arn.as_deref()
     }
     /// <p> The environment variables for the Amplify app. </p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.environment_variables.as_ref()
+    pub fn environment_variables(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.environment_variables
     }
     /// <p> The default domain for the Amplify app. </p>
-    pub fn default_domain(&self) -> ::std::option::Option<&str> {
-        self.default_domain.as_deref()
+    pub fn default_domain(&self) -> &str {
+        use std::ops::Deref;
+        self.default_domain.deref()
     }
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
-    pub fn enable_branch_auto_build(&self) -> ::std::option::Option<bool> {
+    pub fn enable_branch_auto_build(&self) -> bool {
         self.enable_branch_auto_build
     }
     /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
@@ -114,7 +120,7 @@ impl App {
         self.enable_branch_auto_deletion
     }
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
-    pub fn enable_basic_auth(&self) -> ::std::option::Option<bool> {
+    pub fn enable_basic_auth(&self) -> bool {
         self.enable_basic_auth
     }
     /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
@@ -122,8 +128,10 @@ impl App {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
-    pub fn custom_rules(&self) -> ::std::option::Option<&[crate::types::CustomRule]> {
-        self.custom_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_rules.is_none()`.
+    pub fn custom_rules(&self) -> &[crate::types::CustomRule] {
+        self.custom_rules.as_deref().unwrap_or_default()
     }
     /// <p> Describes the information about a production branch of the Amplify app. </p>
     pub fn production_branch(&self) -> ::std::option::Option<&crate::types::ProductionBranch> {
@@ -142,8 +150,10 @@ impl App {
         self.enable_auto_branch_creation
     }
     /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
-    pub fn auto_branch_creation_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auto_branch_creation_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_branch_creation_patterns.is_none()`.
+    pub fn auto_branch_creation_patterns(&self) -> &[::std::string::String] {
+        self.auto_branch_creation_patterns.as_deref().unwrap_or_default()
     }
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
     pub fn auto_branch_creation_config(&self) -> ::std::option::Option<&crate::types::AutoBranchCreationConfig> {
@@ -225,6 +235,7 @@ pub struct AppBuilder {
 }
 impl AppBuilder {
     /// <p> The unique ID of the Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -239,6 +250,7 @@ impl AppBuilder {
         &self.app_id
     }
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
+    /// This field is required.
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
@@ -253,6 +265,7 @@ impl AppBuilder {
         &self.app_arn
     }
     /// <p> The name for the Amplify app. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -287,6 +300,7 @@ impl AppBuilder {
         &self.tags
     }
     /// <p> The description for the Amplify app. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -301,6 +315,7 @@ impl AppBuilder {
         &self.description
     }
     /// <p> The Git repository for the Amplify app. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self
@@ -315,6 +330,7 @@ impl AppBuilder {
         &self.repository
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -329,6 +345,7 @@ impl AppBuilder {
         &self.platform
     }
     /// <p> Creates a date and time for the Amplify app. </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -343,6 +360,7 @@ impl AppBuilder {
         &self.create_time
     }
     /// <p> Updates the date and time for the Amplify app. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -398,6 +416,7 @@ impl AppBuilder {
         &self.environment_variables
     }
     /// <p> The default domain for the Amplify app. </p>
+    /// This field is required.
     pub fn default_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_domain = ::std::option::Option::Some(input.into());
         self
@@ -412,6 +431,7 @@ impl AppBuilder {
         &self.default_domain
     }
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
+    /// This field is required.
     pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
         self.enable_branch_auto_build = ::std::option::Option::Some(input);
         self
@@ -440,6 +460,7 @@ impl AppBuilder {
         &self.enable_branch_auto_deletion
     }
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
+    /// This field is required.
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
         self.enable_basic_auth = ::std::option::Option::Some(input);
         self
@@ -601,23 +622,93 @@ impl AppBuilder {
         &self.repository_clone_method
     }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
-    pub fn build(self) -> crate::types::App {
-        crate::types::App {
-            app_id: self.app_id,
-            app_arn: self.app_arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_id`](crate::types::builders::AppBuilder::app_id)
+    /// - [`app_arn`](crate::types::builders::AppBuilder::app_arn)
+    /// - [`name`](crate::types::builders::AppBuilder::name)
+    /// - [`description`](crate::types::builders::AppBuilder::description)
+    /// - [`repository`](crate::types::builders::AppBuilder::repository)
+    /// - [`platform`](crate::types::builders::AppBuilder::platform)
+    /// - [`create_time`](crate::types::builders::AppBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::AppBuilder::update_time)
+    /// - [`environment_variables`](crate::types::builders::AppBuilder::environment_variables)
+    /// - [`default_domain`](crate::types::builders::AppBuilder::default_domain)
+    /// - [`enable_branch_auto_build`](crate::types::builders::AppBuilder::enable_branch_auto_build)
+    /// - [`enable_basic_auth`](crate::types::builders::AppBuilder::enable_basic_auth)
+    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::App {
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building App",
+                )
+            })?,
+            app_arn: self.app_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_arn",
+                    "app_arn was not specified but it is required when building App",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building App")
+            })?,
             tags: self.tags,
-            description: self.description,
-            repository: self.repository,
-            platform: self.platform,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building App",
+                )
+            })?,
+            repository: self.repository.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository",
+                    "repository was not specified but it is required when building App",
+                )
+            })?,
+            platform: self.platform.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "platform",
+                    "platform was not specified but it is required when building App",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building App",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building App",
+                )
+            })?,
             iam_service_role_arn: self.iam_service_role_arn,
-            environment_variables: self.environment_variables,
-            default_domain: self.default_domain,
-            enable_branch_auto_build: self.enable_branch_auto_build,
+            environment_variables: self.environment_variables.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_variables",
+                    "environment_variables was not specified but it is required when building App",
+                )
+            })?,
+            default_domain: self.default_domain.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "default_domain",
+                    "default_domain was not specified but it is required when building App",
+                )
+            })?,
+            enable_branch_auto_build: self.enable_branch_auto_build.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enable_branch_auto_build",
+                    "enable_branch_auto_build was not specified but it is required when building App",
+                )
+            })?,
             enable_branch_auto_deletion: self.enable_branch_auto_deletion,
-            enable_basic_auth: self.enable_basic_auth,
+            enable_basic_auth: self.enable_basic_auth.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enable_basic_auth",
+                    "enable_basic_auth was not specified but it is required when building App",
+                )
+            })?,
             basic_auth_credentials: self.basic_auth_credentials,
             custom_rules: self.custom_rules,
             production_branch: self.production_branch,
@@ -627,7 +718,7 @@ impl AppBuilder {
             auto_branch_creation_patterns: self.auto_branch_creation_patterns,
             auto_branch_creation_config: self.auto_branch_creation_config,
             repository_clone_method: self.repository_clone_method,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for AppBuilder {

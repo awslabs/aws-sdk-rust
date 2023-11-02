@@ -94,6 +94,7 @@ pub struct InvokeEndpointAsyncInputBuilder {
 }
 impl InvokeEndpointAsyncInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +171,7 @@ impl InvokeEndpointAsyncInputBuilder {
         &self.inference_id
     }
     /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
+    /// This field is required.
     pub fn input_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_location = ::std::option::Option::Some(input.into());
         self

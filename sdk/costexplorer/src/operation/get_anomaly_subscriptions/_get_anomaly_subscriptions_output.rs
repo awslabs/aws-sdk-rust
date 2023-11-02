@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-    pub anomaly_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::AnomalySubscription>>,
+    pub anomaly_subscriptions: ::std::vec::Vec<crate::types::AnomalySubscription>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-    pub fn anomaly_subscriptions(&self) -> ::std::option::Option<&[crate::types::AnomalySubscription]> {
-        self.anomaly_subscriptions.as_deref()
+    pub fn anomaly_subscriptions(&self) -> &[crate::types::AnomalySubscription] {
+        use std::ops::Deref;
+        self.anomaly_subscriptions.deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl GetAnomalySubscriptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAnomalySubscriptionsOutput`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput).
-    pub fn build(self) -> crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput {
-        crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput {
-            anomaly_subscriptions: self.anomaly_subscriptions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`anomaly_subscriptions`](crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsOutputBuilder::anomaly_subscriptions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput {
+            anomaly_subscriptions: self.anomaly_subscriptions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "anomaly_subscriptions",
+                    "anomaly_subscriptions was not specified but it is required when building GetAnomalySubscriptionsOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTimelineEventOutput {
     /// <p>The ARN of the incident record that you added the event to.</p>
-    pub incident_record_arn: ::std::option::Option<::std::string::String>,
+    pub incident_record_arn: ::std::string::String,
     /// <p>The ID of the event for easy reference later. </p>
-    pub event_id: ::std::option::Option<::std::string::String>,
+    pub event_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateTimelineEventOutput {
     /// <p>The ARN of the incident record that you added the event to.</p>
-    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
-        self.incident_record_arn.as_deref()
+    pub fn incident_record_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.incident_record_arn.deref()
     }
     /// <p>The ID of the event for easy reference later. </p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
-        self.event_id.as_deref()
+    pub fn event_id(&self) -> &str {
+        use std::ops::Deref;
+        self.event_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateTimelineEventOutput {
@@ -41,6 +43,7 @@ pub struct CreateTimelineEventOutputBuilder {
 }
 impl CreateTimelineEventOutputBuilder {
     /// <p>The ARN of the incident record that you added the event to.</p>
+    /// This field is required.
     pub fn incident_record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_record_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateTimelineEventOutputBuilder {
         &self.incident_record_arn
     }
     /// <p>The ID of the event for easy reference later. </p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,27 @@ impl CreateTimelineEventOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
-    pub fn build(self) -> crate::operation::create_timeline_event::CreateTimelineEventOutput {
-        crate::operation::create_timeline_event::CreateTimelineEventOutput {
-            incident_record_arn: self.incident_record_arn,
-            event_id: self.event_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`incident_record_arn`](crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::incident_record_arn)
+    /// - [`event_id`](crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::event_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::create_timeline_event::CreateTimelineEventOutput {
+            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "incident_record_arn",
+                    "incident_record_arn was not specified but it is required when building CreateTimelineEventOutput",
+                )
+            })?,
+            event_id: self.event_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_id",
+                    "event_id was not specified but it is required when building CreateTimelineEventOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

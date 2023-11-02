@@ -27,20 +27,26 @@ impl MetricDataResult {
         self.label.as_deref()
     }
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    pub fn timestamps(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.timestamps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
+    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref().unwrap_or_default()
     }
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
-    pub fn values(&self) -> ::std::option::Option<&[f64]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[f64] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::StatusCode> {
         self.status_code.as_ref()
     }
     /// <p>A list of messages with additional information about the data returned.</p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::MessageData]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::MessageData] {
+        self.messages.as_deref().unwrap_or_default()
     }
 }
 impl MetricDataResult {

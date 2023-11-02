@@ -35,6 +35,7 @@ pub struct ExportTaskS3LocationRequestBuilder {
 }
 impl ExportTaskS3LocationRequestBuilder {
     /// <p>The destination Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self

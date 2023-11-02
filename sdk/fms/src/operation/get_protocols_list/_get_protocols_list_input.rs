@@ -34,6 +34,7 @@ pub struct GetProtocolsListInputBuilder {
 }
 impl GetProtocolsListInputBuilder {
     /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
+    /// This field is required.
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_id = ::std::option::Option::Some(input.into());
         self

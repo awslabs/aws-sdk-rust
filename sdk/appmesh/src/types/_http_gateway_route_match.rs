@@ -29,8 +29,10 @@ impl HttpGatewayRouteMatch {
         self.path.as_ref()
     }
     /// <p>The query parameter to match on.</p>
-    pub fn query_parameters(&self) -> ::std::option::Option<&[crate::types::HttpQueryParameter]> {
-        self.query_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_parameters.is_none()`.
+    pub fn query_parameters(&self) -> &[crate::types::HttpQueryParameter] {
+        self.query_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The method to match on.</p>
     pub fn method(&self) -> ::std::option::Option<&crate::types::HttpMethod> {
@@ -41,8 +43,10 @@ impl HttpGatewayRouteMatch {
         self.hostname.as_ref()
     }
     /// <p>The client request headers to match on.</p>
-    pub fn headers(&self) -> ::std::option::Option<&[crate::types::HttpGatewayRouteHeader]> {
-        self.headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::HttpGatewayRouteHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {

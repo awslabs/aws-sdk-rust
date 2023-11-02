@@ -12,20 +12,20 @@ pub fn ser_describe_table_input(
     if let Some(var_3) = &input.db_user {
         object.key("DbUser").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.database {
-        object.key("Database").string(var_4.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_5) = &input.connected_database {
-        object.key("ConnectedDatabase").string(var_5.as_str());
+    if let Some(var_4) = &input.connected_database {
+        object.key("ConnectedDatabase").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.schema {
-        object.key("Schema").string(var_6.as_str());
+    if let Some(var_5) = &input.schema {
+        object.key("Schema").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.table {
-        object.key("Table").string(var_7.as_str());
+    if let Some(var_6) = &input.table {
+        object.key("Table").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("NextToken").string(var_8.as_str());
+    if let Some(var_7) = &input.next_token {
+        object.key("NextToken").string(var_7.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -33,8 +33,8 @@ pub fn ser_describe_table_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_9) = &input.workgroup_name {
-        object.key("WorkgroupName").string(var_9.as_str());
+    if let Some(var_8) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_8.as_str());
     }
     Ok(())
 }

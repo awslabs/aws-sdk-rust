@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnlockRule`](crate::operation::unlock_rule::builders::UnlockRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::unlock_rule::builders::UnlockRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::unlock_rule::builders::UnlockRuleFluentBuilder::set_identifier): <p>The unique ID of the retention rule.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::unlock_rule::builders::UnlockRuleFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::unlock_rule::builders::UnlockRuleFluentBuilder::set_identifier):<br>required: **true**<br><p>The unique ID of the retention rule.</p><br>
     /// - On success, responds with [`UnlockRuleOutput`](crate::operation::unlock_rule::UnlockRuleOutput) with field(s):
     ///   - [`identifier(Option<String>)`](crate::operation::unlock_rule::UnlockRuleOutput::identifier): <p>The unique ID of the retention rule.</p>
     ///   - [`description(Option<String>)`](crate::operation::unlock_rule::UnlockRuleOutput::description): <p>The retention rule description.</p>

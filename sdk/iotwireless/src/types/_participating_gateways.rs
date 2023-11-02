@@ -5,23 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipatingGateways {
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
-    pub downlink_mode: ::std::option::Option<crate::types::DownlinkMode>,
+    pub downlink_mode: crate::types::DownlinkMode,
     /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
-    pub gateway_list: ::std::option::Option<::std::vec::Vec<crate::types::GatewayListItem>>,
+    pub gateway_list: ::std::vec::Vec<crate::types::GatewayListItem>,
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
-    pub transmission_interval: ::std::option::Option<i32>,
+    pub transmission_interval: i32,
 }
 impl ParticipatingGateways {
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
-    pub fn downlink_mode(&self) -> ::std::option::Option<&crate::types::DownlinkMode> {
-        self.downlink_mode.as_ref()
+    pub fn downlink_mode(&self) -> &crate::types::DownlinkMode {
+        &self.downlink_mode
     }
     /// <p>The list of gateways that you want to use for sending the downlink data traffic.</p>
-    pub fn gateway_list(&self) -> ::std::option::Option<&[crate::types::GatewayListItem]> {
-        self.gateway_list.as_deref()
+    pub fn gateway_list(&self) -> &[crate::types::GatewayListItem] {
+        use std::ops::Deref;
+        self.gateway_list.deref()
     }
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
-    pub fn transmission_interval(&self) -> ::std::option::Option<i32> {
+    pub fn transmission_interval(&self) -> i32 {
         self.transmission_interval
     }
 }
@@ -42,6 +43,7 @@ pub struct ParticipatingGatewaysBuilder {
 }
 impl ParticipatingGatewaysBuilder {
     /// <p>Indicates whether to send the downlink message in sequential mode or concurrent mode, or to use only the chosen gateways from the previous uplink message transmission.</p>
+    /// This field is required.
     pub fn downlink_mode(mut self, input: crate::types::DownlinkMode) -> Self {
         self.downlink_mode = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl ParticipatingGatewaysBuilder {
         &self.gateway_list
     }
     /// <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before transmitting the payload to the next gateway.</p>
+    /// This field is required.
     pub fn transmission_interval(mut self, input: i32) -> Self {
         self.transmission_interval = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl ParticipatingGatewaysBuilder {
         &self.transmission_interval
     }
     /// Consumes the builder and constructs a [`ParticipatingGateways`](crate::types::ParticipatingGateways).
-    pub fn build(self) -> crate::types::ParticipatingGateways {
-        crate::types::ParticipatingGateways {
-            downlink_mode: self.downlink_mode,
-            gateway_list: self.gateway_list,
-            transmission_interval: self.transmission_interval,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`downlink_mode`](crate::types::builders::ParticipatingGatewaysBuilder::downlink_mode)
+    /// - [`gateway_list`](crate::types::builders::ParticipatingGatewaysBuilder::gateway_list)
+    /// - [`transmission_interval`](crate::types::builders::ParticipatingGatewaysBuilder::transmission_interval)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipatingGateways, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParticipatingGateways {
+            downlink_mode: self.downlink_mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "downlink_mode",
+                    "downlink_mode was not specified but it is required when building ParticipatingGateways",
+                )
+            })?,
+            gateway_list: self.gateway_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_list",
+                    "gateway_list was not specified but it is required when building ParticipatingGateways",
+                )
+            })?,
+            transmission_interval: self.transmission_interval.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transmission_interval",
+                    "transmission_interval was not specified but it is required when building ParticipatingGateways",
+                )
+            })?,
+        })
     }
 }

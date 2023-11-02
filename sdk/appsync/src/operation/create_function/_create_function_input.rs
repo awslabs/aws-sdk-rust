@@ -99,6 +99,7 @@ pub struct CreateFunctionInputBuilder {
 }
 impl CreateFunctionInputBuilder {
     /// <p>The GraphQL API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +114,7 @@ impl CreateFunctionInputBuilder {
         &self.api_id
     }
     /// <p>The <code>Function</code> name. The function name does not have to be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +143,7 @@ impl CreateFunctionInputBuilder {
         &self.description
     }
     /// <p>The <code>Function</code> <code>DataSource</code> name.</p>
+    /// This field is required.
     pub fn data_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_name = ::std::option::Option::Some(input.into());
         self

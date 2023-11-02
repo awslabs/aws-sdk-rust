@@ -5,15 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
-    pub blacklist_report: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::BlacklistEntry>>>,
+    pub blacklist_report: ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::BlacklistEntry>>,
     _request_id: Option<String>,
 }
 impl GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
-    pub fn blacklist_report(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::BlacklistEntry>>> {
-        self.blacklist_report.as_ref()
+    pub fn blacklist_report(&self) -> &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::BlacklistEntry>> {
+        &self.blacklist_report
     }
 }
 impl ::aws_http::request_id::RequestId for GetBlacklistReportsOutput {
@@ -72,10 +70,20 @@ impl GetBlacklistReportsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetBlacklistReportsOutput`](crate::operation::get_blacklist_reports::GetBlacklistReportsOutput).
-    pub fn build(self) -> crate::operation::get_blacklist_reports::GetBlacklistReportsOutput {
-        crate::operation::get_blacklist_reports::GetBlacklistReportsOutput {
-            blacklist_report: self.blacklist_report,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`blacklist_report`](crate::operation::get_blacklist_reports::builders::GetBlacklistReportsOutputBuilder::blacklist_report)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_blacklist_reports::GetBlacklistReportsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_blacklist_reports::GetBlacklistReportsOutput {
+            blacklist_report: self.blacklist_report.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "blacklist_report",
+                    "blacklist_report was not specified but it is required when building GetBlacklistReportsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

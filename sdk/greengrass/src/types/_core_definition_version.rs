@@ -9,8 +9,10 @@ pub struct CoreDefinitionVersion {
 }
 impl CoreDefinitionVersion {
     /// A list of cores in the core definition version.
-    pub fn cores(&self) -> ::std::option::Option<&[crate::types::Core]> {
-        self.cores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cores.is_none()`.
+    pub fn cores(&self) -> &[crate::types::Core] {
+        self.cores.as_deref().unwrap_or_default()
     }
 }
 impl CoreDefinitionVersion {

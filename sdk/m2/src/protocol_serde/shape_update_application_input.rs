@@ -3,20 +3,20 @@ pub fn ser_update_application_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_application::UpdateApplicationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.current_application_version {
+    {
         object.key("currentApplicationVersion").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.current_application_version).into()),
         );
     }
-    if let Some(var_2) = &input.definition {
+    if let Some(var_1) = &input.definition {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("definition").start_object();
-        crate::protocol_serde::shape_definition::ser_definition(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("definition").start_object();
+        crate::protocol_serde::shape_definition::ser_definition(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
     Ok(())
 }

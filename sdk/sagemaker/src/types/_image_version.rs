@@ -70,6 +70,7 @@ pub struct ImageVersionBuilder {
 }
 impl ImageVersionBuilder {
     /// <p>When the version was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl ImageVersionBuilder {
         &self.failure_reason
     }
     /// <p>The ARN of the image the version is based on.</p>
+    /// This field is required.
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl ImageVersionBuilder {
         &self.image_arn
     }
     /// <p>The ARN of the version.</p>
+    /// This field is required.
     pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl ImageVersionBuilder {
         &self.image_version_arn
     }
     /// <p>The status of the version.</p>
+    /// This field is required.
     pub fn image_version_status(mut self, input: crate::types::ImageVersionStatus) -> Self {
         self.image_version_status = ::std::option::Option::Some(input);
         self
@@ -140,6 +144,7 @@ impl ImageVersionBuilder {
         &self.image_version_status
     }
     /// <p>When the version was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -154,6 +159,7 @@ impl ImageVersionBuilder {
         &self.last_modified_time
     }
     /// <p>The version number.</p>
+    /// This field is required.
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
         self

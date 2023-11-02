@@ -11,8 +11,10 @@ pub struct DescribeScalableTargetsOutput {
 }
 impl DescribeScalableTargetsOutput {
     /// <p>The scalable targets that match the request parameters.</p>
-    pub fn scalable_targets(&self) -> ::std::option::Option<&[crate::types::ScalableTarget]> {
-        self.scalable_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scalable_targets.is_none()`.
+    pub fn scalable_targets(&self) -> &[crate::types::ScalableTarget] {
+        self.scalable_targets.as_deref().unwrap_or_default()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

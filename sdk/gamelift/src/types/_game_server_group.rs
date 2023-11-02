@@ -59,8 +59,10 @@ impl GameServerGroup {
         self.role_arn.as_deref()
     }
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group. </p>
-    pub fn instance_definitions(&self) -> ::std::option::Option<&[crate::types::InstanceDefinition]> {
-        self.instance_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_definitions.is_none()`.
+    pub fn instance_definitions(&self) -> &[crate::types::InstanceDefinition] {
+        self.instance_definitions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -97,8 +99,10 @@ impl GameServerGroup {
         self.status_reason.as_deref()
     }
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    pub fn suspended_actions(&self) -> ::std::option::Option<&[crate::types::GameServerGroupAction]> {
-        self.suspended_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suspended_actions.is_none()`.
+    pub fn suspended_actions(&self) -> &[crate::types::GameServerGroupAction] {
+        self.suspended_actions.as_deref().unwrap_or_default()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

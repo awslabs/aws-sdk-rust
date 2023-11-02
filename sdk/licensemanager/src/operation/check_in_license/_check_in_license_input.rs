@@ -34,6 +34,7 @@ pub struct CheckInLicenseInputBuilder {
 }
 impl CheckInLicenseInputBuilder {
     /// <p>License consumption token.</p>
+    /// This field is required.
     pub fn license_consumption_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_consumption_token = ::std::option::Option::Some(input.into());
         self

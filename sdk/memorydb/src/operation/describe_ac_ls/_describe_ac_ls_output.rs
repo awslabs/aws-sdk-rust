@@ -11,8 +11,10 @@ pub struct DescribeAcLsOutput {
 }
 impl DescribeAcLsOutput {
     /// <p>The list of ACLs</p>
-    pub fn ac_ls(&self) -> ::std::option::Option<&[crate::types::Acl]> {
-        self.ac_ls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ac_ls.is_none()`.
+    pub fn ac_ls(&self) -> &[crate::types::Acl] {
+        self.ac_ls.as_deref().unwrap_or_default()
     }
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

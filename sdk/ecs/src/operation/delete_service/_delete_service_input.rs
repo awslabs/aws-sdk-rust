@@ -55,6 +55,7 @@ impl DeleteServiceInputBuilder {
         &self.cluster
     }
     /// <p>The name of the service to delete.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self

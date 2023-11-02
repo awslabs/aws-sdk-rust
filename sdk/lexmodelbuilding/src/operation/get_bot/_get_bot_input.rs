@@ -34,6 +34,7 @@ pub struct GetBotInputBuilder {
 }
 impl GetBotInputBuilder {
     /// <p>The name of the bot. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetBotInputBuilder {
         &self.name
     }
     /// <p>The version or alias of the bot.</p>
+    /// This field is required.
     pub fn version_or_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_or_alias = ::std::option::Option::Some(input.into());
         self

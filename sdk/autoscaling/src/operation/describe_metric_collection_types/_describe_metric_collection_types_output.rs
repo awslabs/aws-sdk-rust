@@ -11,12 +11,16 @@ pub struct DescribeMetricCollectionTypesOutput {
 }
 impl DescribeMetricCollectionTypesOutput {
     /// <p>The metrics.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::MetricCollectionType]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::MetricCollectionType] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>The granularities for the metrics.</p>
-    pub fn granularities(&self) -> ::std::option::Option<&[crate::types::MetricGranularityType]> {
-        self.granularities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.granularities.is_none()`.
+    pub fn granularities(&self) -> &[crate::types::MetricGranularityType] {
+        self.granularities.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeMetricCollectionTypesOutput {

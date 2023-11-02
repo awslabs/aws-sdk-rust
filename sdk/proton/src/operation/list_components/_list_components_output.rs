@@ -6,7 +6,7 @@ pub struct ListComponentsOutput {
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of components with summary data.</p>
-    pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
+    pub components: ::std::vec::Vec<crate::types::ComponentSummary>,
     _request_id: Option<String>,
 }
 impl ListComponentsOutput {
@@ -15,8 +15,9 @@ impl ListComponentsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of components with summary data.</p>
-    pub fn components(&self) -> ::std::option::Option<&[crate::types::ComponentSummary]> {
-        self.components.as_deref()
+    pub fn components(&self) -> &[crate::types::ComponentSummary] {
+        use std::ops::Deref;
+        self.components.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListComponentsOutput {
@@ -84,11 +85,20 @@ impl ListComponentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
-    pub fn build(self) -> crate::operation::list_components::ListComponentsOutput {
-        crate::operation::list_components::ListComponentsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`components`](crate::operation::list_components::builders::ListComponentsOutputBuilder::components)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_components::ListComponentsOutput {
             next_token: self.next_token,
-            components: self.components,
+            components: self.components.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "components",
+                    "components was not specified but it is required when building ListComponentsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

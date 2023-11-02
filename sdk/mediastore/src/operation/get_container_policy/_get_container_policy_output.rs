@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetContainerPolicyOutput {
     /// <p>The contents of the access policy.</p>
-    pub policy: ::std::option::Option<::std::string::String>,
+    pub policy: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetContainerPolicyOutput {
     /// <p>The contents of the access policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
-        self.policy.as_deref()
+    pub fn policy(&self) -> &str {
+        use std::ops::Deref;
+        self.policy.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetContainerPolicyOutput {
@@ -34,6 +35,7 @@ pub struct GetContainerPolicyOutputBuilder {
 }
 impl GetContainerPolicyOutputBuilder {
     /// <p>The contents of the access policy.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl GetContainerPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
-    pub fn build(self) -> crate::operation::get_container_policy::GetContainerPolicyOutput {
-        crate::operation::get_container_policy::GetContainerPolicyOutput {
-            policy: self.policy,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy`](crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder::policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_container_policy::GetContainerPolicyOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_container_policy::GetContainerPolicyOutput {
+            policy: self.policy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy",
+                    "policy was not specified but it is required when building GetContainerPolicyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

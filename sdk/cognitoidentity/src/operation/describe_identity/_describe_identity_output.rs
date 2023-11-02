@@ -20,8 +20,10 @@ impl DescribeIdentityOutput {
         self.identity_id.as_deref()
     }
     /// <p>The provider names.</p>
-    pub fn logins(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.logins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logins.is_none()`.
+    pub fn logins(&self) -> &[::std::string::String] {
+        self.logins.as_deref().unwrap_or_default()
     }
     /// <p>Date on which the identity was created.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

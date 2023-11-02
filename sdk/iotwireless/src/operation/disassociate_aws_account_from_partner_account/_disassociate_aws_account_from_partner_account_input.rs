@@ -35,6 +35,7 @@ pub struct DisassociateAwsAccountFromPartnerAccountInputBuilder {
 }
 impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
     /// <p>The partner account ID to disassociate from the AWS account.</p>
+    /// This field is required.
     pub fn partner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
         &self.partner_account_id
     }
     /// <p>The partner type.</p>
+    /// This field is required.
     pub fn partner_type(mut self, input: crate::types::PartnerType) -> Self {
         self.partner_type = ::std::option::Option::Some(input);
         self

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceAccelerator {
     /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
-    pub device_name: ::std::option::Option<::std::string::String>,
+    pub device_name: ::std::string::String,
     /// <p>The Elastic Inference accelerator type to use.</p>
-    pub device_type: ::std::option::Option<::std::string::String>,
+    pub device_type: ::std::string::String,
 }
 impl InferenceAccelerator {
     /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
-        self.device_name.as_deref()
+    pub fn device_name(&self) -> &str {
+        use std::ops::Deref;
+        self.device_name.deref()
     }
     /// <p>The Elastic Inference accelerator type to use.</p>
-    pub fn device_type(&self) -> ::std::option::Option<&str> {
-        self.device_type.as_deref()
+    pub fn device_type(&self) -> &str {
+        use std::ops::Deref;
+        self.device_type.deref()
     }
 }
 impl InferenceAccelerator {
@@ -35,6 +37,7 @@ pub struct InferenceAcceleratorBuilder {
 }
 impl InferenceAcceleratorBuilder {
     /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl InferenceAcceleratorBuilder {
         &self.device_name
     }
     /// <p>The Elastic Inference accelerator type to use.</p>
+    /// This field is required.
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_type = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl InferenceAcceleratorBuilder {
         &self.device_type
     }
     /// Consumes the builder and constructs a [`InferenceAccelerator`](crate::types::InferenceAccelerator).
-    pub fn build(self) -> crate::types::InferenceAccelerator {
-        crate::types::InferenceAccelerator {
-            device_name: self.device_name,
-            device_type: self.device_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_name`](crate::types::builders::InferenceAcceleratorBuilder::device_name)
+    /// - [`device_type`](crate::types::builders::InferenceAcceleratorBuilder::device_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::InferenceAccelerator, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InferenceAccelerator {
+            device_name: self.device_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_name",
+                    "device_name was not specified but it is required when building InferenceAccelerator",
+                )
+            })?,
+            device_type: self.device_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_type",
+                    "device_type was not specified but it is required when building InferenceAccelerator",
+                )
+            })?,
+        })
     }
 }

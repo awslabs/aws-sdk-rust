@@ -27,8 +27,10 @@ impl DescribeProvisioningArtifactOutput {
         self.status.as_ref()
     }
     /// <p>Information about the parameters used to provision the product. </p>
-    pub fn provisioning_artifact_parameters(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifactParameter]> {
-        self.provisioning_artifact_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifact_parameters.is_none()`.
+    pub fn provisioning_artifact_parameters(&self) -> &[crate::types::ProvisioningArtifactParameter] {
+        self.provisioning_artifact_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeProvisioningArtifactOutput {

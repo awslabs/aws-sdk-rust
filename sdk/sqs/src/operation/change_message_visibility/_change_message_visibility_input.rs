@@ -44,6 +44,7 @@ pub struct ChangeMessageVisibilityInputBuilder {
 impl ChangeMessageVisibilityInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +61,7 @@ impl ChangeMessageVisibilityInputBuilder {
         &self.queue_url
     }
     /// <p>The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
+    /// This field is required.
     pub fn receipt_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.receipt_handle = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +76,7 @@ impl ChangeMessageVisibilityInputBuilder {
         &self.receipt_handle
     }
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+    /// This field is required.
     pub fn visibility_timeout(mut self, input: i32) -> Self {
         self.visibility_timeout = ::std::option::Option::Some(input);
         self

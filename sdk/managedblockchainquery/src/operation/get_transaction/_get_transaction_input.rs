@@ -34,6 +34,7 @@ pub struct GetTransactionInputBuilder {
 }
 impl GetTransactionInputBuilder {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetTransactionInputBuilder {
         &self.transaction_hash
     }
     /// <p>The blockchain network where the transaction occurred.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self

@@ -74,6 +74,7 @@ pub struct CreateGlossaryInputBuilder {
 }
 impl CreateGlossaryInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +89,7 @@ impl CreateGlossaryInputBuilder {
         &self.domain_identifier
     }
     /// <p>The name of this business glossary.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl CreateGlossaryInputBuilder {
         &self.name
     }
     /// <p>The ID of the project that currently owns business glossary.</p>
+    /// This field is required.
     pub fn owning_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owning_project_identifier = ::std::option::Option::Some(input.into());
         self

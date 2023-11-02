@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartTrigger`](crate::operation::start_trigger::builders::StartTriggerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_trigger::builders::StartTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_trigger::builders::StartTriggerFluentBuilder::set_name): <p>The name of the trigger to start.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::start_trigger::builders::StartTriggerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_trigger::builders::StartTriggerFluentBuilder::set_name):<br>required: **true**<br><p>The name of the trigger to start.</p><br>
     /// - On success, responds with [`StartTriggerOutput`](crate::operation::start_trigger::StartTriggerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::start_trigger::StartTriggerOutput::name): <p>The name of the trigger that was started.</p>
     /// - On failure, responds with [`SdkError<StartTriggerError>`](crate::operation::start_trigger::StartTriggerError)

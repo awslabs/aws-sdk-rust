@@ -6,7 +6,7 @@ pub struct InvokeModelWithResponseStreamOutput {
     /// <p>Inference response from the model in the format specified by Content-Type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub body: ::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
     /// <p>The MIME type of the inference result.</p>
-    pub content_type: ::std::option::Option<::std::string::String>,
+    pub content_type: ::std::string::String,
     _request_id: Option<String>,
 }
 impl InvokeModelWithResponseStreamOutput {
@@ -15,8 +15,9 @@ impl InvokeModelWithResponseStreamOutput {
         &self.body
     }
     /// <p>The MIME type of the inference result.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
-        self.content_type.as_deref()
+    pub fn content_type(&self) -> &str {
+        use std::ops::Deref;
+        self.content_type.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for InvokeModelWithResponseStreamOutput {
@@ -42,6 +43,7 @@ pub struct InvokeModelWithResponseStreamOutputBuilder {
 }
 impl InvokeModelWithResponseStreamOutputBuilder {
     /// <p>Inference response from the model in the format specified by Content-Type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
+    /// This field is required.
     pub fn body(
         mut self,
         input: ::aws_smithy_http::event_stream::Receiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>,
@@ -67,6 +69,7 @@ impl InvokeModelWithResponseStreamOutputBuilder {
         &self.body
     }
     /// <p>The MIME type of the inference result.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,9 @@ impl InvokeModelWithResponseStreamOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`InvokeModelWithResponseStreamOutput`](crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`body`](crate::operation::invoke_model_with_response_stream::builders::InvokeModelWithResponseStreamOutputBuilder::body)
+    /// - [`content_type`](crate::operation::invoke_model_with_response_stream::builders::InvokeModelWithResponseStreamOutputBuilder::content_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -103,7 +109,12 @@ impl InvokeModelWithResponseStreamOutputBuilder {
                     "body was not specified but it is required when building InvokeModelWithResponseStreamOutput",
                 )
             })?,
-            content_type: self.content_type,
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building InvokeModelWithResponseStreamOutput",
+                )
+            })?,
             _request_id: self._request_id,
         })
     }

@@ -27,6 +27,7 @@ pub struct DeleteImageInputBuilder {
 }
 impl DeleteImageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
+    /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self

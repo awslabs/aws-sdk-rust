@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl LambdaEndpointInput {
@@ -28,6 +29,7 @@ pub struct LambdaEndpointInputBuilder {
 }
 impl LambdaEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl LambdaEndpointInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`LambdaEndpointInput`](crate::types::LambdaEndpointInput).
-    pub fn build(self) -> crate::types::LambdaEndpointInput {
-        crate::types::LambdaEndpointInput { arn: self.arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::LambdaEndpointInputBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaEndpointInput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building LambdaEndpointInput",
+                )
+            })?,
+        })
     }
 }

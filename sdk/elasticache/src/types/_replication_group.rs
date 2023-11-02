@@ -102,12 +102,16 @@ impl ReplicationGroup {
         self.pending_modified_values.as_ref()
     }
     /// <p>The names of all the cache clusters that are part of this replication group.</p>
-    pub fn member_clusters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.member_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_clusters.is_none()`.
+    pub fn member_clusters(&self) -> &[::std::string::String] {
+        self.member_clusters.as_deref().unwrap_or_default()
     }
     /// <p>A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each node group (shard).</p>
-    pub fn node_groups(&self) -> ::std::option::Option<&[crate::types::NodeGroup]> {
-        self.node_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_groups.is_none()`.
+    pub fn node_groups(&self) -> &[crate::types::NodeGroup] {
+        self.node_groups.as_deref().unwrap_or_default()
     }
     /// <p>The cluster ID that is used as the daily snapshot source for the replication group.</p>
     pub fn snapshotting_cluster_id(&self) -> ::std::option::Option<&str> {
@@ -171,8 +175,10 @@ impl ReplicationGroup {
         self.at_rest_encryption_enabled
     }
     /// <p>The outpost ARNs of the replication group's member clusters.</p>
-    pub fn member_clusters_outpost_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.member_clusters_outpost_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_clusters_outpost_arns.is_none()`.
+    pub fn member_clusters_outpost_arns(&self) -> &[::std::string::String] {
+        self.member_clusters_outpost_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -183,12 +189,16 @@ impl ReplicationGroup {
         self.arn.as_deref()
     }
     /// <p>The ID of the user group associated to the replication group.</p>
-    pub fn user_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_group_ids.is_none()`.
+    pub fn user_group_ids(&self) -> &[::std::string::String] {
+        self.user_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Returns the destination, format and type of the logs. </p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfiguration]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfiguration] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the cluster was created.</p>
     pub fn replication_group_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

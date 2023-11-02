@@ -45,6 +45,7 @@ pub struct DeleteModelInputBuilder {
 }
 impl DeleteModelInputBuilder {
     /// <p>The name of the project that contains the model that you want to delete.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +60,7 @@ impl DeleteModelInputBuilder {
         &self.project_name
     }
     /// <p>The version of the model that you want to delete.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self

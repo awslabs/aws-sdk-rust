@@ -93,7 +93,7 @@ pub fn de_describe_stream_http_response(
         output = crate::protocol_serde::shape_describe_stream::de_describe_stream(_response_body, output)
             .map_err(crate::operation::describe_stream::DescribeStreamError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_stream_output_correct_errors(output).build()
     })
 }
 

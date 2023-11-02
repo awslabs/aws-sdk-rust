@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceInstanceOutputsInput {
     /// <p>The name of the service instance whose outputs you want.</p>
-    pub service_instance_name: ::std::option::Option<::std::string::String>,
+    pub service_instance_name: ::std::string::String,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment whose outputs you want.</p>
@@ -14,12 +14,14 @@ pub struct ListServiceInstanceOutputsInput {
 }
 impl ListServiceInstanceOutputsInput {
     /// <p>The name of the service instance whose outputs you want.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
-        self.service_instance_name.as_deref()
+    pub fn service_instance_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_instance_name.deref()
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListServiceInstanceOutputsInputBuilder {
 }
 impl ListServiceInstanceOutputsInputBuilder {
     /// <p>The name of the service instance whose outputs you want.</p>
+    /// This field is required.
     pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl ListServiceInstanceOutputsInputBuilder {
         &self.service_instance_name
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,9 @@ impl ListServiceInstanceOutputsInputBuilder {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`ListServiceInstanceOutputsInput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_instance_name`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder::service_instance_name)
+    /// - [`service_name`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -111,8 +118,18 @@ impl ListServiceInstanceOutputsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput {
-            service_instance_name: self.service_instance_name,
-            service_name: self.service_name,
+            service_instance_name: self.service_instance_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_instance_name",
+                    "service_instance_name was not specified but it is required when building ListServiceInstanceOutputsInput",
+                )
+            })?,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building ListServiceInstanceOutputsInput",
+                )
+            })?,
             next_token: self.next_token,
             deployment_id: self.deployment_id,
         })

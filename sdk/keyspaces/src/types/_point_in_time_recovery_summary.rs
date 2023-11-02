@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointInTimeRecoverySummary {
     /// <p>Shows if point-in-time recovery is enabled or disabled for the specified table.</p>
-    pub status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
+    pub status: crate::types::PointInTimeRecoveryStatus,
     /// <p>Specifies the earliest possible restore point of the table in ISO 8601 format.</p>
     pub earliest_restorable_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PointInTimeRecoverySummary {
     /// <p>Shows if point-in-time recovery is enabled or disabled for the specified table.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PointInTimeRecoveryStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::PointInTimeRecoveryStatus {
+        &self.status
     }
     /// <p>Specifies the earliest possible restore point of the table in ISO 8601 format.</p>
     pub fn earliest_restorable_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -35,6 +35,7 @@ pub struct PointInTimeRecoverySummaryBuilder {
 }
 impl PointInTimeRecoverySummaryBuilder {
     /// <p>Shows if point-in-time recovery is enabled or disabled for the specified table.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PointInTimeRecoveryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl PointInTimeRecoverySummaryBuilder {
         &self.earliest_restorable_timestamp
     }
     /// Consumes the builder and constructs a [`PointInTimeRecoverySummary`](crate::types::PointInTimeRecoverySummary).
-    pub fn build(self) -> crate::types::PointInTimeRecoverySummary {
-        crate::types::PointInTimeRecoverySummary {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::PointInTimeRecoverySummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::PointInTimeRecoverySummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PointInTimeRecoverySummary {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building PointInTimeRecoverySummary",
+                )
+            })?,
             earliest_restorable_timestamp: self.earliest_restorable_timestamp,
-        }
+        })
     }
 }

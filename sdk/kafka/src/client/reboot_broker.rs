@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RebootBroker`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`broker_ids(impl Into<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::broker_ids) / [`set_broker_ids(Option<Vec<String>>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::set_broker_ids): <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    ///   - [`broker_ids(impl Into<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::broker_ids) / [`set_broker_ids(Option<Vec<String>>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::set_broker_ids):<br>required: **true**<br><p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p><br>
+    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::reboot_broker::builders::RebootBrokerFluentBuilder::set_cluster_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the cluster to be updated.</p><br>
     /// - On success, responds with [`RebootBrokerOutput`](crate::operation::reboot_broker::RebootBrokerOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::operation::reboot_broker::RebootBrokerOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`cluster_operation_arn(Option<String>)`](crate::operation::reboot_broker::RebootBrokerOutput::cluster_operation_arn): <p>The Amazon Resource Name (ARN) of the cluster operation.</p>

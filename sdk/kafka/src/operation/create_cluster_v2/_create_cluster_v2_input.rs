@@ -48,6 +48,7 @@ pub struct CreateClusterV2InputBuilder {
 }
 impl CreateClusterV2InputBuilder {
     /// <p>The name of the cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self

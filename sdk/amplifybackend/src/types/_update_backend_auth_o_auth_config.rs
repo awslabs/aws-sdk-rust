@@ -27,16 +27,22 @@ impl UpdateBackendAuthOAuthConfig {
         self.o_auth_grant_type.as_ref()
     }
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-    pub fn o_auth_scopes(&self) -> ::std::option::Option<&[crate::types::OAuthScopesElement]> {
-        self.o_auth_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.o_auth_scopes.is_none()`.
+    pub fn o_auth_scopes(&self) -> &[crate::types::OAuthScopesElement] {
+        self.o_auth_scopes.as_deref().unwrap_or_default()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn redirect_sign_in_ur_is(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.redirect_sign_in_ur_is.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redirect_sign_in_ur_is.is_none()`.
+    pub fn redirect_sign_in_ur_is(&self) -> &[::std::string::String] {
+        self.redirect_sign_in_ur_is.as_deref().unwrap_or_default()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn redirect_sign_out_ur_is(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.redirect_sign_out_ur_is.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redirect_sign_out_ur_is.is_none()`.
+    pub fn redirect_sign_out_ur_is(&self) -> &[::std::string::String] {
+        self.redirect_sign_out_ur_is.as_deref().unwrap_or_default()
     }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
     pub fn social_provider_settings(&self) -> ::std::option::Option<&crate::types::SocialProviderSettings> {

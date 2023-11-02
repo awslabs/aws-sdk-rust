@@ -11,8 +11,10 @@ pub struct BatchListPolicyAttachmentsResponse {
 }
 impl BatchListPolicyAttachmentsResponse {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn object_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.object_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_identifiers.is_none()`.
+    pub fn object_identifiers(&self) -> &[::std::string::String] {
+        self.object_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

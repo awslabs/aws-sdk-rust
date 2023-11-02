@@ -166,6 +166,7 @@ impl CreateAnnotationStoreInputBuilder {
         &self.sse_config
     }
     /// <p>The annotation file format of the store.</p>
+    /// This field is required.
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
         self.store_format = ::std::option::Option::Some(input);
         self

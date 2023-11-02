@@ -3,29 +3,29 @@ pub fn ser_list_operations_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_operations::ListOperationsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_id {
-        object.key("ApplicationId").string(var_1.as_str());
+    {
+        object.key("ApplicationId").string(input.application_id.as_str());
     }
-    if let Some(var_2) = &input.filters {
-        let mut array_3 = object.key("Filters").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.filters {
+        let mut array_2 = object.key("Filters").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_filter::ser_filter(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_filter::ser_filter(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.max_results {
+    if let Some(var_5) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_7) = &input.next_token {
-        object.key("NextToken").string(var_7.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
     }
     Ok(())
 }

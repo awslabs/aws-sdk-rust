@@ -34,6 +34,7 @@ pub struct GetIpSetInputBuilder {
 }
 impl GetIpSetInputBuilder {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetIpSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID of the IPSet to retrieve.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self

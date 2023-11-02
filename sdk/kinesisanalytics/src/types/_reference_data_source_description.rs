@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceDataSourceDescription {
     /// <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.</p>
-    pub reference_id: ::std::option::Option<::std::string::String>,
+    pub reference_id: ::std::string::String,
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
     pub s3_reference_data_source_description: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
@@ -15,12 +15,14 @@ pub struct ReferenceDataSourceDescription {
 }
 impl ReferenceDataSourceDescription {
     /// <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
-        self.reference_id.as_deref()
+    pub fn reference_id(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_id.deref()
     }
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
     pub fn s3_reference_data_source_description(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSourceDescription> {
@@ -49,6 +51,7 @@ pub struct ReferenceDataSourceDescriptionBuilder {
 }
 impl ReferenceDataSourceDescriptionBuilder {
     /// <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a> operation.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl ReferenceDataSourceDescriptionBuilder {
         &self.reference_id
     }
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl ReferenceDataSourceDescriptionBuilder {
         &self.table_name
     }
     /// <p>Provides the S3 bucket name, the object key name that contains the reference data. It also provides the Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application reference table.</p>
+    /// This field is required.
     pub fn s3_reference_data_source_description(mut self, input: crate::types::S3ReferenceDataSourceDescription) -> Self {
         self.s3_reference_data_source_description = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,25 @@ impl ReferenceDataSourceDescriptionBuilder {
         &self.reference_schema
     }
     /// Consumes the builder and constructs a [`ReferenceDataSourceDescription`](crate::types::ReferenceDataSourceDescription).
-    pub fn build(self) -> crate::types::ReferenceDataSourceDescription {
-        crate::types::ReferenceDataSourceDescription {
-            reference_id: self.reference_id,
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reference_id`](crate::types::builders::ReferenceDataSourceDescriptionBuilder::reference_id)
+    /// - [`table_name`](crate::types::builders::ReferenceDataSourceDescriptionBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSourceDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReferenceDataSourceDescription {
+            reference_id: self.reference_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reference_id",
+                    "reference_id was not specified but it is required when building ReferenceDataSourceDescription",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building ReferenceDataSourceDescription",
+                )
+            })?,
             s3_reference_data_source_description: self.s3_reference_data_source_description,
             reference_schema: self.reference_schema,
-        }
+        })
     }
 }

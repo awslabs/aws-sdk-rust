@@ -50,6 +50,7 @@ pub struct TargetPlatformBuilder {
 }
 impl TargetPlatformBuilder {
     /// <p>The target operating system for the model. Linux is the only operating system that is currently supported. </p>
+    /// This field is required.
     pub fn os(mut self, input: crate::types::TargetPlatformOs) -> Self {
         self.os = ::std::option::Option::Some(input);
         self
@@ -64,6 +65,7 @@ impl TargetPlatformBuilder {
         &self.os
     }
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
+    /// This field is required.
     pub fn arch(mut self, input: crate::types::TargetPlatformArch) -> Self {
         self.arch = ::std::option::Option::Some(input);
         self

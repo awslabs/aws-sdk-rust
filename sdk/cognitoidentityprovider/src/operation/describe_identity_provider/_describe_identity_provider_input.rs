@@ -34,6 +34,7 @@ pub struct DescribeIdentityProviderInputBuilder {
 }
 impl DescribeIdentityProviderInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeIdentityProviderInputBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP name.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self

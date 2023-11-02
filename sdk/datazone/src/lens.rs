@@ -220,40 +220,28 @@ pub(crate) fn lens_list_asset_revisions_output_items(
 pub(crate) fn lens_list_data_source_run_activities_output_items(
     input: crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSourceRunActivity>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_source_runs_output_items(
     input: crate::operation::list_data_source_runs::ListDataSourceRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSourceRunSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_sources_output_items(
     input: crate::operation::list_data_sources::ListDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_domains_output_items(
     input: crate::operation::list_domains::ListDomainsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
@@ -270,30 +258,21 @@ pub(crate) fn lens_list_environment_blueprint_configurations_output_items(
 pub(crate) fn lens_list_environment_blueprints_output_items(
     input: crate::operation::list_environment_blueprints::ListEnvironmentBlueprintsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentBlueprintSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environment_profiles_output_items(
     input: crate::operation::list_environment_profiles::ListEnvironmentProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentProfileSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environments_output_items(
     input: crate::operation::list_environments::ListEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
@@ -310,10 +289,7 @@ pub(crate) fn lens_list_notifications_output_notifications(
 pub(crate) fn lens_list_project_memberships_output_members(
     input: crate::operation::list_project_memberships::ListProjectMembershipsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectMember>> {
-    let input = match input.members {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.members;
     ::std::option::Option::Some(input)
 }
 
@@ -330,40 +306,28 @@ pub(crate) fn lens_list_projects_output_items(
 pub(crate) fn lens_list_subscription_grants_output_items(
     input: crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionGrantSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_subscription_requests_output_items(
     input: crate::operation::list_subscription_requests::ListSubscriptionRequestsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionRequestSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_subscription_targets_output_items(
     input: crate::operation::list_subscription_targets::ListSubscriptionTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_subscriptions_output_items(
     input: crate::operation::list_subscriptions::ListSubscriptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionSummary>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

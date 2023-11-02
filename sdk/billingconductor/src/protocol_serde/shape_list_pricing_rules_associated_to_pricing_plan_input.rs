@@ -15,8 +15,8 @@ pub fn ser_list_pricing_rules_associated_to_pricing_plan_input(
     if let Some(var_3) = &input.next_token {
         object.key("NextToken").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.pricing_plan_arn {
-        object.key("PricingPlanArn").string(var_4.as_str());
+    {
+        object.key("PricingPlanArn").string(input.pricing_plan_arn.as_str());
     }
     Ok(())
 }

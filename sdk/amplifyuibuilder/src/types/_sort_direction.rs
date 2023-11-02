@@ -15,6 +15,13 @@ impl SortDirection {
         &["ASC", "DESC"]
     }
 }
+impl ::std::str::FromStr for SortDirection {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SortDirection::from(s))
+    }
+}
 impl<T> ::std::convert::From<T> for SortDirection
 where
     T: ::std::convert::AsRef<str>,

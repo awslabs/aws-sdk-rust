@@ -36,8 +36,10 @@ impl CreateUserProfileInput {
     }
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A collection of settings.</p>
     pub fn user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
@@ -64,6 +66,7 @@ pub struct CreateUserProfileInputBuilder {
 }
 impl CreateUserProfileInputBuilder {
     /// <p>The ID of the associated Domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl CreateUserProfileInputBuilder {
         &self.domain_id
     }
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
+    /// This field is required.
     pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self

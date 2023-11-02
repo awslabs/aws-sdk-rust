@@ -22,7 +22,8 @@ impl CreateLocationFsxOntapInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocationFsxOntap`.
 ///
-/// <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating a location for FSx for ONTAP</a>.</p>
+/// <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can use for a data transfer.</p>
+/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses an FSx for ONTAP file system</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOntapFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +93,14 @@ impl CreateLocationFsxOntapFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput,
             crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

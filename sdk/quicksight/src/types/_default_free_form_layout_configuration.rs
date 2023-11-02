@@ -28,6 +28,7 @@ pub struct DefaultFreeFormLayoutConfigurationBuilder {
 }
 impl DefaultFreeFormLayoutConfigurationBuilder {
     /// <p>Determines the screen canvas size options for a free-form layout.</p>
+    /// This field is required.
     pub fn canvas_size_options(mut self, input: crate::types::FreeFormLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
         self

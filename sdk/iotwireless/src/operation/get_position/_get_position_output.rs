@@ -20,8 +20,10 @@ pub struct GetPositionOutput {
 }
 impl GetPositionOutput {
     /// <p>The position information of the resource.</p>
-    pub fn position(&self) -> ::std::option::Option<&[f32]> {
-        self.position.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
+    pub fn position(&self) -> &[f32] {
+        self.position.as_deref().unwrap_or_default()
     }
     /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
     pub fn accuracy(&self) -> ::std::option::Option<&crate::types::Accuracy> {

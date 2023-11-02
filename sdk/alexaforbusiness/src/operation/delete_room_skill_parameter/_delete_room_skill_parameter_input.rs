@@ -55,6 +55,7 @@ impl DeleteRoomSkillParameterInputBuilder {
         &self.room_arn
     }
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteRoomSkillParameterInputBuilder {
         &self.skill_id
     }
     /// <p>The room skill parameter key for which to remove details.</p>
+    /// This field is required.
     pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self

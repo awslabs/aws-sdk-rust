@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub parameter_value_type: ::std::option::Option<crate::types::ParameterValueType>,
+    pub parameter_value_type: crate::types::ParameterValueType,
     /// <p>The name of the parameter that is being declared.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub default_values: ::std::option::Option<crate::types::IntegerDefaultValues>,
     /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
@@ -17,12 +17,13 @@ pub struct IntegerParameterDeclaration {
 }
 impl IntegerParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn parameter_value_type(&self) -> ::std::option::Option<&crate::types::ParameterValueType> {
-        self.parameter_value_type.as_ref()
+    pub fn parameter_value_type(&self) -> &crate::types::ParameterValueType {
+        &self.parameter_value_type
     }
     /// <p>The name of the parameter that is being declared.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn default_values(&self) -> ::std::option::Option<&crate::types::IntegerDefaultValues> {
@@ -33,8 +34,10 @@ impl IntegerParameterDeclaration {
         self.value_when_unset.as_ref()
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(&self) -> ::std::option::Option<&[crate::types::MappedDataSetParameter]> {
-        self.mapped_data_set_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mapped_data_set_parameters.is_none()`.
+    pub fn mapped_data_set_parameters(&self) -> &[crate::types::MappedDataSetParameter] {
+        self.mapped_data_set_parameters.as_deref().unwrap_or_default()
     }
 }
 impl IntegerParameterDeclaration {
@@ -56,6 +59,7 @@ pub struct IntegerParameterDeclarationBuilder {
 }
 impl IntegerParameterDeclarationBuilder {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
+    /// This field is required.
     pub fn parameter_value_type(mut self, input: crate::types::ParameterValueType) -> Self {
         self.parameter_value_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl IntegerParameterDeclarationBuilder {
         &self.parameter_value_type
     }
     /// <p>The name of the parameter that is being declared.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +137,26 @@ impl IntegerParameterDeclarationBuilder {
         &self.mapped_data_set_parameters
     }
     /// Consumes the builder and constructs a [`IntegerParameterDeclaration`](crate::types::IntegerParameterDeclaration).
-    pub fn build(self) -> crate::types::IntegerParameterDeclaration {
-        crate::types::IntegerParameterDeclaration {
-            parameter_value_type: self.parameter_value_type,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_value_type`](crate::types::builders::IntegerParameterDeclarationBuilder::parameter_value_type)
+    /// - [`name`](crate::types::builders::IntegerParameterDeclarationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerParameterDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntegerParameterDeclaration {
+            parameter_value_type: self.parameter_value_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameter_value_type",
+                    "parameter_value_type was not specified but it is required when building IntegerParameterDeclaration",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building IntegerParameterDeclaration",
+                )
+            })?,
             default_values: self.default_values,
             value_when_unset: self.value_when_unset,
             mapped_data_set_parameters: self.mapped_data_set_parameters,
-        }
+        })
     }
 }

@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventDestinationInput {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub configuration_set_name: ::std::string::String,
     /// <p>The name that identifies the event destination.</p>
-    pub event_destination_name: ::std::option::Option<::std::string::String>,
+    pub event_destination_name: ::std::string::String,
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub matching_event_types: ::std::vec::Vec<crate::types::EventType>,
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
     pub cloud_watch_logs_destination: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
@@ -20,16 +20,19 @@ pub struct CreateEventDestinationInput {
 }
 impl CreateEventDestinationInput {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
-        self.configuration_set_name.as_deref()
+    pub fn configuration_set_name(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration_set_name.deref()
     }
     /// <p>The name that identifies the event destination.</p>
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
-        self.event_destination_name.as_deref()
+    pub fn event_destination_name(&self) -> &str {
+        use std::ops::Deref;
+        self.event_destination_name.deref()
     }
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.matching_event_types.as_deref()
+    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
+        use std::ops::Deref;
+        self.matching_event_types.deref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
     pub fn cloud_watch_logs_destination(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsDestination> {
@@ -69,6 +72,7 @@ pub struct CreateEventDestinationInputBuilder {
 }
 impl CreateEventDestinationInputBuilder {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl CreateEventDestinationInputBuilder {
         &self.configuration_set_name
     }
     /// <p>The name that identifies the event destination.</p>
+    /// This field is required.
     pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
@@ -173,14 +178,33 @@ impl CreateEventDestinationInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateEventDestinationInput`](crate::operation::create_event_destination::CreateEventDestinationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration_set_name`](crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder::configuration_set_name)
+    /// - [`event_destination_name`](crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder::event_destination_name)
+    /// - [`matching_event_types`](crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder::matching_event_types)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_event_destination::CreateEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_event_destination::CreateEventDestinationInput {
-            configuration_set_name: self.configuration_set_name,
-            event_destination_name: self.event_destination_name,
-            matching_event_types: self.matching_event_types,
+            configuration_set_name: self.configuration_set_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configuration_set_name",
+                    "configuration_set_name was not specified but it is required when building CreateEventDestinationInput",
+                )
+            })?,
+            event_destination_name: self.event_destination_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_destination_name",
+                    "event_destination_name was not specified but it is required when building CreateEventDestinationInput",
+                )
+            })?,
+            matching_event_types: self.matching_event_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "matching_event_types",
+                    "matching_event_types was not specified but it is required when building CreateEventDestinationInput",
+                )
+            })?,
             cloud_watch_logs_destination: self.cloud_watch_logs_destination,
             kinesis_firehose_destination: self.kinesis_firehose_destination,
             sns_destination: self.sns_destination,

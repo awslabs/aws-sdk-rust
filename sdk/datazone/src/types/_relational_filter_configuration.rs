@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalFilterConfiguration {
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>The schema name specified in the relational filter configuration for the data source.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The filter expressions specified in the relational filter configuration for the data source.</p>
@@ -13,16 +13,19 @@ pub struct RelationalFilterConfiguration {
 }
 impl RelationalFilterConfiguration {
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>The schema name specified in the relational filter configuration for the data source.</p>
     pub fn schema_name(&self) -> ::std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The filter expressions specified in the relational filter configuration for the data source.</p>
-    pub fn filter_expressions(&self) -> ::std::option::Option<&[crate::types::FilterExpression]> {
-        self.filter_expressions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_expressions.is_none()`.
+    pub fn filter_expressions(&self) -> &[crate::types::FilterExpression] {
+        self.filter_expressions.as_deref().unwrap_or_default()
     }
 }
 impl RelationalFilterConfiguration {
@@ -42,6 +45,7 @@ pub struct RelationalFilterConfigurationBuilder {
 }
 impl RelationalFilterConfigurationBuilder {
     /// <p>The database name specified in the relational filter configuration for the data source.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,18 @@ impl RelationalFilterConfigurationBuilder {
         &self.filter_expressions
     }
     /// Consumes the builder and constructs a [`RelationalFilterConfiguration`](crate::types::RelationalFilterConfiguration).
-    pub fn build(self) -> crate::types::RelationalFilterConfiguration {
-        crate::types::RelationalFilterConfiguration {
-            database_name: self.database_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::RelationalFilterConfigurationBuilder::database_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RelationalFilterConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RelationalFilterConfiguration {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building RelationalFilterConfiguration",
+                )
+            })?,
             schema_name: self.schema_name,
             filter_expressions: self.filter_expressions,
-        }
+        })
     }
 }

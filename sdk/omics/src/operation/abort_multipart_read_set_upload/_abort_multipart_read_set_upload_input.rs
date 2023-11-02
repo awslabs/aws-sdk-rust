@@ -34,6 +34,7 @@ pub struct AbortMultipartReadSetUploadInputBuilder {
 }
 impl AbortMultipartReadSetUploadInputBuilder {
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AbortMultipartReadSetUploadInputBuilder {
         &self.sequence_store_id
     }
     /// <p> The ID for the multipart upload. </p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self

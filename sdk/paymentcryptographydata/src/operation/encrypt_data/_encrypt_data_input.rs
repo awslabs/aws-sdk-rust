@@ -50,6 +50,7 @@ pub struct EncryptDataInputBuilder {
 }
 impl EncryptDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl EncryptDataInputBuilder {
         &self.key_identifier
     }
     /// <p>The plaintext to be encrypted.</p>
+    /// This field is required.
     pub fn plain_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plain_text = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl EncryptDataInputBuilder {
         &self.plain_text
     }
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
+    /// This field is required.
     pub fn encryption_attributes(mut self, input: crate::types::EncryptionDecryptionAttributes) -> Self {
         self.encryption_attributes = ::std::option::Option::Some(input);
         self

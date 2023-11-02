@@ -34,6 +34,7 @@ pub struct DescribeJournalKinesisStreamInputBuilder {
 }
 impl DescribeJournalKinesisStreamInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ledger_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeJournalKinesisStreamInputBuilder {
         &self.ledger_name
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
+    /// This field is required.
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
         self

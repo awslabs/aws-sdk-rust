@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DukptEncryptionAttributes {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub key_serial_number: ::std::option::Option<::std::string::String>,
+    pub key_serial_number: ::std::string::String,
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size, for example, 128 bits. The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
     /// <p>The default is CBC.</p>
     pub mode: ::std::option::Option<crate::types::DukptEncryptionMode>,
@@ -18,8 +18,9 @@ pub struct DukptEncryptionAttributes {
 }
 impl DukptEncryptionAttributes {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
-    pub fn key_serial_number(&self) -> ::std::option::Option<&str> {
-        self.key_serial_number.as_deref()
+    pub fn key_serial_number(&self) -> &str {
+        use std::ops::Deref;
+        self.key_serial_number.deref()
     }
     /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size, for example, 128 bits. The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
     /// <p>The default is CBC.</p>
@@ -69,6 +70,7 @@ pub struct DukptEncryptionAttributesBuilder {
 }
 impl DukptEncryptionAttributesBuilder {
     /// <p>The unique identifier known as Key Serial Number (KSN) that comes from an encrypting device using DUKPT encryption method. The KSN is derived from the encrypting device unique identifier and an internal transaction counter.</p>
+    /// This field is required.
     pub fn key_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_serial_number = ::std::option::Option::Some(input.into());
         self
@@ -142,14 +144,21 @@ impl DukptEncryptionAttributesBuilder {
         &self.initialization_vector
     }
     /// Consumes the builder and constructs a [`DukptEncryptionAttributes`](crate::types::DukptEncryptionAttributes).
-    pub fn build(self) -> crate::types::DukptEncryptionAttributes {
-        crate::types::DukptEncryptionAttributes {
-            key_serial_number: self.key_serial_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_serial_number`](crate::types::builders::DukptEncryptionAttributesBuilder::key_serial_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::DukptEncryptionAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DukptEncryptionAttributes {
+            key_serial_number: self.key_serial_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_serial_number",
+                    "key_serial_number was not specified but it is required when building DukptEncryptionAttributes",
+                )
+            })?,
             mode: self.mode,
             dukpt_key_derivation_type: self.dukpt_key_derivation_type,
             dukpt_key_variant: self.dukpt_key_variant,
             initialization_vector: self.initialization_vector,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DukptEncryptionAttributesBuilder {

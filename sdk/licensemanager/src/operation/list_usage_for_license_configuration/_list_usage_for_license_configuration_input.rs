@@ -36,8 +36,10 @@ impl ListUsageForLicenseConfigurationInput {
     /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListUsageForLicenseConfigurationInput {
@@ -58,6 +60,7 @@ pub struct ListUsageForLicenseConfigurationInputBuilder {
 }
 impl ListUsageForLicenseConfigurationInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    /// This field is required.
     pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self

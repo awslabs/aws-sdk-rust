@@ -34,6 +34,7 @@ pub struct UpdatePullRequestApprovalRuleContentOutputBuilder {
 }
 impl UpdatePullRequestApprovalRuleContentOutputBuilder {
     /// <p>Information about the updated approval rule.</p>
+    /// This field is required.
     pub fn approval_rule(mut self, input: crate::types::ApprovalRule) -> Self {
         self.approval_rule = ::std::option::Option::Some(input);
         self

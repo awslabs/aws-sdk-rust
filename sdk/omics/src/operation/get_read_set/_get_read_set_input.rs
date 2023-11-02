@@ -48,6 +48,7 @@ pub struct GetReadSetInputBuilder {
 }
 impl GetReadSetInputBuilder {
     /// <p>The read set's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetReadSetInputBuilder {
         &self.id
     }
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl GetReadSetInputBuilder {
         &self.file
     }
     /// <p>The part number to retrieve.</p>
+    /// This field is required.
     pub fn part_number(mut self, input: i32) -> Self {
         self.part_number = ::std::option::Option::Some(input);
         self

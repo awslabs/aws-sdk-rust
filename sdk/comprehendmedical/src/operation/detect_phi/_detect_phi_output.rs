@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectPhiOutput {
     /// <p>The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in its detection.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
+    pub entities: ::std::vec::Vec<crate::types::Entity>,
     /// <p>If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub model_version: ::std::option::Option<::std::string::String>,
+    pub model_version: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DetectPhiOutput {
     /// <p>The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in its detection.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
-        self.entities.as_deref()
+    pub fn entities(&self) -> &[crate::types::Entity] {
+        use std::ops::Deref;
+        self.entities.deref()
     }
     /// <p>If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
-        self.model_version.as_deref()
+    pub fn model_version(&self) -> &str {
+        use std::ops::Deref;
+        self.model_version.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DetectPhiOutput {
@@ -82,6 +84,7 @@ impl DetectPhiOutputBuilder {
         &self.pagination_token
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,25 @@ impl DetectPhiOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DetectPhiOutput`](crate::operation::detect_phi::DetectPhiOutput).
-    pub fn build(self) -> crate::operation::detect_phi::DetectPhiOutput {
-        crate::operation::detect_phi::DetectPhiOutput {
-            entities: self.entities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entities`](crate::operation::detect_phi::builders::DetectPhiOutputBuilder::entities)
+    /// - [`model_version`](crate::operation::detect_phi::builders::DetectPhiOutputBuilder::model_version)
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::detect_phi::DetectPhiOutput {
+            entities: self.entities.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entities",
+                    "entities was not specified but it is required when building DetectPhiOutput",
+                )
+            })?,
             pagination_token: self.pagination_token,
-            model_version: self.model_version,
+            model_version: self.model_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "model_version",
+                    "model_version was not specified but it is required when building DetectPhiOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

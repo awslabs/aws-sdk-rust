@@ -13,12 +13,16 @@ pub struct DescribeComplianceByConfigRuleInput {
 }
 impl DescribeComplianceByConfigRuleInput {
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn config_rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.config_rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
+    pub fn config_rule_names(&self) -> &[::std::string::String] {
+        self.config_rule_names.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn compliance_types(&self) -> ::std::option::Option<&[crate::types::ComplianceType]> {
-        self.compliance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_types.is_none()`.
+    pub fn compliance_types(&self) -> &[crate::types::ComplianceType] {
+        self.compliance_types.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

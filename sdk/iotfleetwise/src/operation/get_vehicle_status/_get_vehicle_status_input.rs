@@ -9,7 +9,7 @@ pub struct GetVehicleStatusInput {
     /// <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
     pub max_results: ::std::option::Option<i32>,
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    pub vehicle_name: ::std::option::Option<::std::string::String>,
+    pub vehicle_name: ::std::string::String,
 }
 impl GetVehicleStatusInput {
     /// <p>A pagination token for the next set of results.</p>
@@ -22,8 +22,9 @@ impl GetVehicleStatusInput {
         self.max_results
     }
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
-        self.vehicle_name.as_deref()
+    pub fn vehicle_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vehicle_name.deref()
     }
 }
 impl GetVehicleStatusInput {
@@ -74,6 +75,7 @@ impl GetVehicleStatusInputBuilder {
         &self.max_results
     }
     /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -88,13 +90,20 @@ impl GetVehicleStatusInputBuilder {
         &self.vehicle_name
     }
     /// Consumes the builder and constructs a [`GetVehicleStatusInput`](crate::operation::get_vehicle_status::GetVehicleStatusInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicle_name`](crate::operation::get_vehicle_status::builders::GetVehicleStatusInputBuilder::vehicle_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_vehicle_status::GetVehicleStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vehicle_status::GetVehicleStatusInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            vehicle_name: self.vehicle_name,
+            vehicle_name: self.vehicle_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicle_name",
+                    "vehicle_name was not specified but it is required when building GetVehicleStatusInput",
+                )
+            })?,
         })
     }
 }

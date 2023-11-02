@@ -15,8 +15,10 @@ impl DeleteLoadBalancerListenersInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The client port numbers of the listeners.</p>
-    pub fn load_balancer_ports(&self) -> ::std::option::Option<&[i32]> {
-        self.load_balancer_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_ports.is_none()`.
+    pub fn load_balancer_ports(&self) -> &[i32] {
+        self.load_balancer_ports.as_deref().unwrap_or_default()
     }
 }
 impl DeleteLoadBalancerListenersInput {
@@ -35,6 +37,7 @@ pub struct DeleteLoadBalancerListenersInputBuilder {
 }
 impl DeleteLoadBalancerListenersInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self

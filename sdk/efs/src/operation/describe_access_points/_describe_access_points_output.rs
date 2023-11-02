@@ -11,8 +11,10 @@ pub struct DescribeAccessPointsOutput {
 }
 impl DescribeAccessPointsOutput {
     /// <p>An array of access point descriptions.</p>
-    pub fn access_points(&self) -> ::std::option::Option<&[crate::types::AccessPointDescription]> {
-        self.access_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
+    pub fn access_points(&self) -> &[crate::types::AccessPointDescription] {
+        self.access_points.as_deref().unwrap_or_default()
     }
     /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

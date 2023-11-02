@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfiguredTableAssociationsOutput {
     /// <p>The retrieved list of configured table associations.</p>
-    pub configured_table_association_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>>,
+    pub configured_table_association_summaries: ::std::vec::Vec<crate::types::ConfiguredTableAssociationSummary>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListConfiguredTableAssociationsOutput {
     /// <p>The retrieved list of configured table associations.</p>
-    pub fn configured_table_association_summaries(&self) -> ::std::option::Option<&[crate::types::ConfiguredTableAssociationSummary]> {
-        self.configured_table_association_summaries.as_deref()
+    pub fn configured_table_association_summaries(&self) -> &[crate::types::ConfiguredTableAssociationSummary] {
+        use std::ops::Deref;
+        self.configured_table_association_summaries.deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -89,11 +90,25 @@ impl ListConfiguredTableAssociationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConfiguredTableAssociationsOutput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput {
-        crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput {
-            configured_table_association_summaries: self.configured_table_association_summaries,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configured_table_association_summaries`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsOutputBuilder::configured_table_association_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput {
+                configured_table_association_summaries: self.configured_table_association_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_summaries", "configured_table_association_summaries was not specified but it is required when building ListConfiguredTableAssociationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

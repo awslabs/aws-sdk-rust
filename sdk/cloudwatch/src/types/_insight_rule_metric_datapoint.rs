@@ -92,6 +92,7 @@ pub struct InsightRuleMetricDatapointBuilder {
 }
 impl InsightRuleMetricDatapointBuilder {
     /// <p>The timestamp of the data point.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self

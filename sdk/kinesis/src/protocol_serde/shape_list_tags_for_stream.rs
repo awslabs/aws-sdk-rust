@@ -99,7 +99,9 @@ pub fn de_list_tags_for_stream_http_response(
         output = crate::protocol_serde::shape_list_tags_for_stream::de_list_tags_for_stream(_response_body, output)
             .map_err(crate::operation::list_tags_for_stream::ListTagsForStreamError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_tags_for_stream_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_tags_for_stream::ListTagsForStreamError::unhandled)?
     })
 }
 

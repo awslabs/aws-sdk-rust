@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApiKey`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_key(impl Into<String>)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::api_key) / [`set_api_key(Option<String>)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::set_api_key): <p>The identifier of the ApiKey resource.</p>
-    ///   - [`include_value(bool)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::include_value) / [`set_include_value(Option<bool>)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::set_include_value): <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
+    ///   - [`api_key(impl Into<String>)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::api_key) / [`set_api_key(Option<String>)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::set_api_key):<br>required: **true**<br><p>The identifier of the ApiKey resource.</p><br>
+    ///   - [`include_value(bool)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::include_value) / [`set_include_value(Option<bool>)`](crate::operation::get_api_key::builders::GetApiKeyFluentBuilder::set_include_value):<br>required: **false**<br><p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p><br>
     /// - On success, responds with [`GetApiKeyOutput`](crate::operation::get_api_key::GetApiKeyOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::id): <p>The identifier of the API Key.</p>
     ///   - [`value(Option<String>)`](crate::operation::get_api_key::GetApiKeyOutput::value): <p>The value of the API Key.</p>

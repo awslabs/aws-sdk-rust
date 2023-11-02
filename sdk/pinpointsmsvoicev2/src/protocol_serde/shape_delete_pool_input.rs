@@ -3,8 +3,8 @@ pub fn ser_delete_pool_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_pool::DeletePoolInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pool_id {
-        object.key("PoolId").string(var_1.as_str());
+    {
+        object.key("PoolId").string(input.pool_id.as_str());
     }
     Ok(())
 }

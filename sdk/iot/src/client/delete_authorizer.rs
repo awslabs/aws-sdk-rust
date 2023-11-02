@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAuthorizer`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`authorizer_name(impl Into<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::set_authorizer_name): <p>The name of the authorizer to delete.</p>
+    ///   - [`authorizer_name(impl Into<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder::set_authorizer_name):<br>required: **true**<br><p>The name of the authorizer to delete.</p><br>
     /// - On success, responds with [`DeleteAuthorizerOutput`](crate::operation::delete_authorizer::DeleteAuthorizerOutput)
     /// - On failure, responds with [`SdkError<DeleteAuthorizerError>`](crate::operation::delete_authorizer::DeleteAuthorizerError)
     pub fn delete_authorizer(&self) -> crate::operation::delete_authorizer::builders::DeleteAuthorizerFluentBuilder {

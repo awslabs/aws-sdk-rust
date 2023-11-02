@@ -18,8 +18,10 @@ impl ListContactFlowsInput {
         self.instance_id.as_deref()
     }
     /// <p>The type of flow.</p>
-    pub fn contact_flow_types(&self) -> ::std::option::Option<&[crate::types::ContactFlowType]> {
-        self.contact_flow_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_flow_types.is_none()`.
+    pub fn contact_flow_types(&self) -> &[crate::types::ContactFlowType] {
+        self.contact_flow_types.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListContactFlowsInputBuilder {
 }
 impl ListContactFlowsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

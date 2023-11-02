@@ -11,8 +11,10 @@ pub struct GetVariablesOutput {
 }
 impl GetVariablesOutput {
     /// <p>The names of the variables returned. </p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::Variable]> {
-        self.variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
+    pub fn variables(&self) -> &[crate::types::Variable] {
+        self.variables.as_deref().unwrap_or_default()
     }
     /// <p>The next page token to be used in subsequent requests. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

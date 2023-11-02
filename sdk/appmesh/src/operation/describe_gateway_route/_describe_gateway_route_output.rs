@@ -34,6 +34,7 @@ pub struct DescribeGatewayRouteOutputBuilder {
 }
 impl DescribeGatewayRouteOutputBuilder {
     /// <p>The full description of your gateway route.</p>
+    /// This field is required.
     pub fn gateway_route(mut self, input: crate::types::GatewayRouteData) -> Self {
         self.gateway_route = ::std::option::Option::Some(input);
         self

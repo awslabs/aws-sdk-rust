@@ -41,6 +41,7 @@ pub struct GetRepositoryPermissionsPolicyInputBuilder {
 }
 impl GetRepositoryPermissionsPolicyInputBuilder {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetRepositoryPermissionsPolicyInputBuilder {
         &self.domain_owner
     }
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
+    /// This field is required.
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
         self

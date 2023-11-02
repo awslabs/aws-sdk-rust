@@ -15,8 +15,10 @@ impl BatchGetApplicationRevisionsInput {
         self.application_name.as_deref()
     }
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-    pub fn revisions(&self) -> ::std::option::Option<&[crate::types::RevisionLocation]> {
-        self.revisions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revisions.is_none()`.
+    pub fn revisions(&self) -> &[crate::types::RevisionLocation] {
+        self.revisions.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetApplicationRevisionsInput {
@@ -35,6 +37,7 @@ pub struct BatchGetApplicationRevisionsInputBuilder {
 }
 impl BatchGetApplicationRevisionsInputBuilder {
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

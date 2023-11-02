@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGrant`](crate::operation::get_grant::builders::GetGrantFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`grant_arn(impl Into<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::grant_arn) / [`set_grant_arn(Option<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
-    ///   - [`version(impl Into<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::set_version): <p>Grant version.</p>
+    ///   - [`grant_arn(impl Into<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::grant_arn) / [`set_grant_arn(Option<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::set_grant_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the grant.</p><br>
+    ///   - [`version(impl Into<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_grant::builders::GetGrantFluentBuilder::set_version):<br>required: **false**<br><p>Grant version.</p><br>
     /// - On success, responds with [`GetGrantOutput`](crate::operation::get_grant::GetGrantOutput) with field(s):
     ///   - [`grant(Option<Grant>)`](crate::operation::get_grant::GetGrantOutput::grant): <p>Grant details.</p>
     /// - On failure, responds with [`SdkError<GetGrantError>`](crate::operation::get_grant::GetGrantError)

@@ -27,6 +27,7 @@ pub struct GetRequestedServiceQuotaChangeInputBuilder {
 }
 impl GetRequestedServiceQuotaChangeInputBuilder {
     /// <p>Specifies the ID of the quota increase request.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self

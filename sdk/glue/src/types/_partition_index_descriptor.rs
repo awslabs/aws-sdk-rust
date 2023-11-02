@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub keys: ::std::vec::Vec<crate::types::KeySchemaElement>,
     /// <p>The status of the partition index. </p>
     /// <p>The possible statuses are:</p>
     /// <ul>
@@ -16,18 +16,20 @@ pub struct PartitionIndexDescriptor {
     /// <li> <p>FAILED: The index creation fails. </p> </li>
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
-    pub index_status: ::std::option::Option<crate::types::PartitionIndexStatus>,
+    pub index_status: crate::types::PartitionIndexStatus,
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
     pub backfill_errors: ::std::option::Option<::std::vec::Vec<crate::types::BackfillError>>,
 }
 impl PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
-        self.keys.as_deref()
+    pub fn keys(&self) -> &[crate::types::KeySchemaElement] {
+        use std::ops::Deref;
+        self.keys.deref()
     }
     /// <p>The status of the partition index. </p>
     /// <p>The possible statuses are:</p>
@@ -37,12 +39,14 @@ impl PartitionIndexDescriptor {
     /// <li> <p>FAILED: The index creation fails. </p> </li>
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
-    pub fn index_status(&self) -> ::std::option::Option<&crate::types::PartitionIndexStatus> {
-        self.index_status.as_ref()
+    pub fn index_status(&self) -> &crate::types::PartitionIndexStatus {
+        &self.index_status
     }
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
-    pub fn backfill_errors(&self) -> ::std::option::Option<&[crate::types::BackfillError]> {
-        self.backfill_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backfill_errors.is_none()`.
+    pub fn backfill_errors(&self) -> &[crate::types::BackfillError] {
+        self.backfill_errors.as_deref().unwrap_or_default()
     }
 }
 impl PartitionIndexDescriptor {
@@ -63,6 +67,7 @@ pub struct PartitionIndexDescriptorBuilder {
 }
 impl PartitionIndexDescriptorBuilder {
     /// <p>The name of the partition index.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl PartitionIndexDescriptorBuilder {
     /// <li> <p>FAILED: The index creation fails. </p> </li>
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn index_status(mut self, input: crate::types::PartitionIndexStatus) -> Self {
         self.index_status = ::std::option::Option::Some(input);
         self
@@ -152,12 +158,31 @@ impl PartitionIndexDescriptorBuilder {
         &self.backfill_errors
     }
     /// Consumes the builder and constructs a [`PartitionIndexDescriptor`](crate::types::PartitionIndexDescriptor).
-    pub fn build(self) -> crate::types::PartitionIndexDescriptor {
-        crate::types::PartitionIndexDescriptor {
-            index_name: self.index_name,
-            keys: self.keys,
-            index_status: self.index_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::types::builders::PartitionIndexDescriptorBuilder::index_name)
+    /// - [`keys`](crate::types::builders::PartitionIndexDescriptorBuilder::keys)
+    /// - [`index_status`](crate::types::builders::PartitionIndexDescriptorBuilder::index_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::PartitionIndexDescriptor, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PartitionIndexDescriptor {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building PartitionIndexDescriptor",
+                )
+            })?,
+            keys: self.keys.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keys",
+                    "keys was not specified but it is required when building PartitionIndexDescriptor",
+                )
+            })?,
+            index_status: self.index_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_status",
+                    "index_status was not specified but it is required when building PartitionIndexDescriptor",
+                )
+            })?,
             backfill_errors: self.backfill_errors,
-        }
+        })
     }
 }

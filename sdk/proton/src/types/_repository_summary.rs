@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The repository provider.</p>
-    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub connection_arn: ::std::option::Option<::std::string::String>,
+    pub connection_arn: ::std::string::String,
 }
 impl RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+        &self.provider
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
-        self.connection_arn.as_deref()
+    pub fn connection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_arn.deref()
     }
 }
 impl RepositorySummary {
@@ -49,6 +52,7 @@ pub struct RepositorySummaryBuilder {
 }
 impl RepositorySummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl RepositorySummaryBuilder {
         &self.arn
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -77,6 +82,7 @@ impl RepositorySummaryBuilder {
         &self.provider
     }
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl RepositorySummaryBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +112,37 @@ impl RepositorySummaryBuilder {
         &self.connection_arn
     }
     /// Consumes the builder and constructs a [`RepositorySummary`](crate::types::RepositorySummary).
-    pub fn build(self) -> crate::types::RepositorySummary {
-        crate::types::RepositorySummary {
-            arn: self.arn,
-            provider: self.provider,
-            name: self.name,
-            connection_arn: self.connection_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RepositorySummaryBuilder::arn)
+    /// - [`provider`](crate::types::builders::RepositorySummaryBuilder::provider)
+    /// - [`name`](crate::types::builders::RepositorySummaryBuilder::name)
+    /// - [`connection_arn`](crate::types::builders::RepositorySummaryBuilder::connection_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositorySummary {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RepositorySummary",
+                )
+            })?,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building RepositorySummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RepositorySummary",
+                )
+            })?,
+            connection_arn: self.connection_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connection_arn",
+                    "connection_arn was not specified but it is required when building RepositorySummary",
+                )
+            })?,
+        })
     }
 }

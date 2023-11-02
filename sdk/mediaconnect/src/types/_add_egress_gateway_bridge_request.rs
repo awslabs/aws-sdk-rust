@@ -27,6 +27,7 @@ pub struct AddEgressGatewayBridgeRequestBuilder {
 }
 impl AddEgressGatewayBridgeRequestBuilder {
     /// The maximum expected bitrate (in bps).
+    /// This field is required.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = ::std::option::Option::Some(input);
         self

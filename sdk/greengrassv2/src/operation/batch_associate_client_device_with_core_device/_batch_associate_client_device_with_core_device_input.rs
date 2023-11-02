@@ -10,8 +10,10 @@ pub struct BatchAssociateClientDeviceWithCoreDeviceInput {
 }
 impl BatchAssociateClientDeviceWithCoreDeviceInput {
     /// <p>The list of client devices to associate.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::AssociateClientDeviceWithCoreDeviceEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::AssociateClientDeviceWithCoreDeviceEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn core_device_thing_name(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
         &self.entries
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// This field is required.
     pub fn core_device_thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self

@@ -31,14 +31,18 @@ impl RepositoryCatalogData {
     /// <p>The architecture tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn architectures(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[::std::string::String] {
+        self.architectures.as_deref().unwrap_or_default()
     }
     /// <p>The operating system tags that are associated with the repository.</p> <note>
     /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
     /// </note>
-    pub fn operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.operating_systems.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_systems.is_none()`.
+    pub fn operating_systems(&self) -> &[::std::string::String] {
+        self.operating_systems.as_deref().unwrap_or_default()
     }
     /// <p>The URL that contains the logo that's associated with the repository.</p>
     pub fn logo_url(&self) -> ::std::option::Option<&str> {

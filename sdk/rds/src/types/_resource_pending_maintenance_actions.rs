@@ -15,8 +15,10 @@ impl ResourcePendingMaintenanceActions {
         self.resource_identifier.as_deref()
     }
     /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
-    pub fn pending_maintenance_action_details(&self) -> ::std::option::Option<&[crate::types::PendingMaintenanceAction]> {
-        self.pending_maintenance_action_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_maintenance_action_details.is_none()`.
+    pub fn pending_maintenance_action_details(&self) -> &[crate::types::PendingMaintenanceAction] {
+        self.pending_maintenance_action_details.as_deref().unwrap_or_default()
     }
 }
 impl ResourcePendingMaintenanceActions {

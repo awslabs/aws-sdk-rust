@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsOutput {
     /// <p>The results of the <code>ListDomains</code> action.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
+    pub items: ::std::vec::Vec<crate::types::DomainSummary>,
     /// <p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDomainsOutput {
     /// <p>The results of the <code>ListDomains</code> action.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::DomainSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::DomainSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>When the number of domains is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of domains, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to list the next set of domains.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
-    pub fn build(self) -> crate::operation::list_domains::ListDomainsOutput {
-        crate::operation::list_domains::ListDomainsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_domains::builders::ListDomainsOutputBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListDomainsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

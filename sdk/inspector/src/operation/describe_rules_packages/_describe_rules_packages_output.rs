@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRulesPackagesOutput {
     /// <p>Information about the rules package.</p>
-    pub rules_packages: ::std::option::Option<::std::vec::Vec<crate::types::RulesPackage>>,
+    pub rules_packages: ::std::vec::Vec<crate::types::RulesPackage>,
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
-    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
+    pub failed_items: ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
     _request_id: Option<String>,
 }
 impl DescribeRulesPackagesOutput {
     /// <p>Information about the rules package.</p>
-    pub fn rules_packages(&self) -> ::std::option::Option<&[crate::types::RulesPackage]> {
-        self.rules_packages.as_deref()
+    pub fn rules_packages(&self) -> &[crate::types::RulesPackage] {
+        use std::ops::Deref;
+        self.rules_packages.deref()
     }
     /// <p>Rules package details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
-        self.failed_items.as_ref()
+    pub fn failed_items(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails> {
+        &self.failed_items
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeRulesPackagesOutput {
@@ -93,11 +94,27 @@ impl DescribeRulesPackagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRulesPackagesOutput`](crate::operation::describe_rules_packages::DescribeRulesPackagesOutput).
-    pub fn build(self) -> crate::operation::describe_rules_packages::DescribeRulesPackagesOutput {
-        crate::operation::describe_rules_packages::DescribeRulesPackagesOutput {
-            rules_packages: self.rules_packages,
-            failed_items: self.failed_items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rules_packages`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder::rules_packages)
+    /// - [`failed_items`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder::failed_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_rules_packages::DescribeRulesPackagesOutput {
+            rules_packages: self.rules_packages.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules_packages",
+                    "rules_packages was not specified but it is required when building DescribeRulesPackagesOutput",
+                )
+            })?,
+            failed_items: self.failed_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failed_items",
+                    "failed_items was not specified but it is required when building DescribeRulesPackagesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

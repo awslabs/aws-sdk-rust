@@ -23,8 +23,10 @@ impl PillarMetric {
         self.risk_counts.as_ref()
     }
     /// <p>The questions that have been identified as risks in the pillar.</p>
-    pub fn questions(&self) -> ::std::option::Option<&[crate::types::QuestionMetric]> {
-        self.questions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.questions.is_none()`.
+    pub fn questions(&self) -> &[crate::types::QuestionMetric] {
+        self.questions.as_deref().unwrap_or_default()
     }
 }
 impl PillarMetric {

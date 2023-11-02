@@ -53,12 +53,16 @@ impl UpdateComponentData {
         self.properties.as_ref()
     }
     /// <p>The components that are instances of the main component.</p>
-    pub fn children(&self) -> ::std::option::Option<&[crate::types::ComponentChild]> {
-        self.children.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
+    pub fn children(&self) -> &[crate::types::ComponentChild] {
+        self.children.as_deref().unwrap_or_default()
     }
     /// <p>A list of the unique variants of the main component being updated.</p>
-    pub fn variants(&self) -> ::std::option::Option<&[crate::types::ComponentVariant]> {
-        self.variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variants.is_none()`.
+    pub fn variants(&self) -> &[crate::types::ComponentVariant] {
+        self.variants.as_deref().unwrap_or_default()
     }
     /// <p>Describes the properties that can be overriden to customize the component.</p>
     pub fn overrides(

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metric {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
-    pub frame_name: ::std::option::Option<::std::string::String>,
+    pub frame_name: ::std::string::String,
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
-    pub r#type: ::std::option::Option<crate::types::MetricType>,
+    pub r#type: crate::types::MetricType,
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
-    pub thread_states: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub thread_states: ::std::vec::Vec<::std::string::String>,
 }
 impl Metric {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
-    pub fn frame_name(&self) -> ::std::option::Option<&str> {
-        self.frame_name.as_deref()
+    pub fn frame_name(&self) -> &str {
+        use std::ops::Deref;
+        self.frame_name.deref()
     }
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MetricType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::MetricType {
+        &self.r#type
     }
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
-    pub fn thread_states(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.thread_states.as_deref()
+    pub fn thread_states(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.thread_states.deref()
     }
 }
 impl Metric {
@@ -42,6 +44,7 @@ pub struct MetricBuilder {
 }
 impl MetricBuilder {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
+    /// This field is required.
     pub fn frame_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.frame_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl MetricBuilder {
         &self.frame_name
     }
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::MetricType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl MetricBuilder {
         &self.thread_states
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
-    pub fn build(self) -> crate::types::Metric {
-        crate::types::Metric {
-            frame_name: self.frame_name,
-            r#type: self.r#type,
-            thread_states: self.thread_states,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`frame_name`](crate::types::builders::MetricBuilder::frame_name)
+    /// - [`r#type`](crate::types::builders::MetricBuilder::r#type)
+    /// - [`thread_states`](crate::types::builders::MetricBuilder::thread_states)
+    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Metric {
+            frame_name: self.frame_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "frame_name",
+                    "frame_name was not specified but it is required when building Metric",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Metric",
+                )
+            })?,
+            thread_states: self.thread_states.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "thread_states",
+                    "thread_states was not specified but it is required when building Metric",
+                )
+            })?,
+        })
     }
 }

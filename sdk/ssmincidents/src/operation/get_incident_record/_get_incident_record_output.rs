@@ -34,6 +34,7 @@ pub struct GetIncidentRecordOutputBuilder {
 }
 impl GetIncidentRecordOutputBuilder {
     /// <p>Details the structure of the incident record.</p>
+    /// This field is required.
     pub fn incident_record(mut self, input: crate::types::IncidentRecord) -> Self {
         self.incident_record = ::std::option::Option::Some(input);
         self

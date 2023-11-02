@@ -11,8 +11,10 @@ pub struct ListRetainedMessagesOutput {
 }
 impl ListRetainedMessagesOutput {
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
-    pub fn retained_topics(&self) -> ::std::option::Option<&[crate::types::RetainedMessageSummary]> {
-        self.retained_topics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retained_topics.is_none()`.
+    pub fn retained_topics(&self) -> &[crate::types::RetainedMessageSummary] {
+        self.retained_topics.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

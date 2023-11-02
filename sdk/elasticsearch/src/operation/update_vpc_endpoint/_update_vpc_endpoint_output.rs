@@ -35,6 +35,7 @@ pub struct UpdateVpcEndpointOutputBuilder {
 }
 impl UpdateVpcEndpointOutputBuilder {
     /// <p>The endpoint to be updated.</p>
+    /// This field is required.
     pub fn vpc_endpoint(mut self, input: crate::types::VpcEndpoint) -> Self {
         self.vpc_endpoint = ::std::option::Option::Some(input);
         self

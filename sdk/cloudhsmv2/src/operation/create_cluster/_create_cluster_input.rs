@@ -36,12 +36,16 @@ impl CreateClusterInput {
     /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
     /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
     /// </ul>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl CreateClusterInput {
@@ -77,6 +81,7 @@ impl CreateClusterInputBuilder {
         &self.backup_retention_policy
     }
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    /// This field is required.
     pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_type = ::std::option::Option::Some(input.into());
         self

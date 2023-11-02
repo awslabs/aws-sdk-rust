@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TerminologyData {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    pub file: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub file: ::aws_smithy_types::Blob,
     /// <p>The data format of the custom terminology.</p>
-    pub format: ::std::option::Option<crate::types::TerminologyDataFormat>,
+    pub format: crate::types::TerminologyDataFormat,
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
     /// <dt>
@@ -28,12 +28,12 @@ pub struct TerminologyData {
 }
 impl TerminologyData {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    pub fn file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.file.as_ref()
+    pub fn file(&self) -> &::aws_smithy_types::Blob {
+        &self.file
     }
     /// <p>The data format of the custom terminology.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::TerminologyDataFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::TerminologyDataFormat {
+        &self.format
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
@@ -81,6 +81,7 @@ pub struct TerminologyDataBuilder {
 }
 impl TerminologyDataBuilder {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
+    /// This field is required.
     pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.file = ::std::option::Option::Some(input);
         self
@@ -95,6 +96,7 @@ impl TerminologyDataBuilder {
         &self.file
     }
     /// <p>The data format of the custom terminology.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::TerminologyDataFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -168,12 +170,25 @@ impl TerminologyDataBuilder {
         &self.directionality
     }
     /// Consumes the builder and constructs a [`TerminologyData`](crate::types::TerminologyData).
-    pub fn build(self) -> crate::types::TerminologyData {
-        crate::types::TerminologyData {
-            file: self.file,
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file`](crate::types::builders::TerminologyDataBuilder::file)
+    /// - [`format`](crate::types::builders::TerminologyDataBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::TerminologyData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TerminologyData {
+            file: self.file.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file",
+                    "file was not specified but it is required when building TerminologyData",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building TerminologyData",
+                )
+            })?,
             directionality: self.directionality,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for TerminologyDataBuilder {

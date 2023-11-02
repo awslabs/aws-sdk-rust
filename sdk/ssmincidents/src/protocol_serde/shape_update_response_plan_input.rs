@@ -15,78 +15,78 @@ pub fn ser_update_response_plan_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.arn {
-        object.key("arn").string(var_5.as_str());
+    {
+        object.key("arn").string(input.arn.as_str());
     }
-    if let Some(var_6) = &input.chat_channel {
+    if let Some(var_5) = &input.chat_channel {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("chatChannel").start_object();
-        crate::protocol_serde::shape_chat_channel::ser_chat_channel(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("chatChannel").start_object();
+        crate::protocol_serde::shape_chat_channel::ser_chat_channel(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("clientToken").string(var_8.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.display_name {
-        object.key("displayName").string(var_9.as_str());
+    if let Some(var_8) = &input.display_name {
+        object.key("displayName").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.engagements {
-        let mut array_11 = object.key("engagements").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.engagements {
+        let mut array_10 = object.key("engagements").start_array();
+        for item_11 in var_9 {
             {
-                array_11.value().string(item_12.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
-    if let Some(var_13) = &input.incident_template_dedupe_string {
-        object.key("incidentTemplateDedupeString").string(var_13.as_str());
+    if let Some(var_12) = &input.incident_template_dedupe_string {
+        object.key("incidentTemplateDedupeString").string(var_12.as_str());
     }
-    if let Some(var_14) = &input.incident_template_impact {
+    if let Some(var_13) = &input.incident_template_impact {
         object.key("incidentTemplateImpact").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_15) = &input.incident_template_notification_targets {
-        let mut array_16 = object.key("incidentTemplateNotificationTargets").start_array();
-        for item_17 in var_15 {
+    if let Some(var_14) = &input.incident_template_notification_targets {
+        let mut array_15 = object.key("incidentTemplateNotificationTargets").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_notification_target_item::ser_notification_target_item(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_notification_target_item::ser_notification_target_item(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_16.finish();
+        array_15.finish();
     }
-    if let Some(var_19) = &input.incident_template_summary {
-        object.key("incidentTemplateSummary").string(var_19.as_str());
+    if let Some(var_18) = &input.incident_template_summary {
+        object.key("incidentTemplateSummary").string(var_18.as_str());
     }
-    if let Some(var_20) = &input.incident_template_tags {
+    if let Some(var_19) = &input.incident_template_tags {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("incidentTemplateTags").start_object();
-        for (key_22, value_23) in var_20 {
+        let mut object_20 = object.key("incidentTemplateTags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_21.finish();
+        object_20.finish();
     }
-    if let Some(var_24) = &input.incident_template_title {
-        object.key("incidentTemplateTitle").string(var_24.as_str());
+    if let Some(var_23) = &input.incident_template_title {
+        object.key("incidentTemplateTitle").string(var_23.as_str());
     }
-    if let Some(var_25) = &input.integrations {
-        let mut array_26 = object.key("integrations").start_array();
-        for item_27 in var_25 {
+    if let Some(var_24) = &input.integrations {
+        let mut array_25 = object.key("integrations").start_array();
+        for item_26 in var_24 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_integration::ser_integration(&mut object_28, item_27)?;
-                object_28.finish();
+                let mut object_27 = array_25.value().start_object();
+                crate::protocol_serde::shape_integration::ser_integration(&mut object_27, item_26)?;
+                object_27.finish();
             }
         }
-        array_26.finish();
+        array_25.finish();
     }
     Ok(())
 }

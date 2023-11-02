@@ -3,14 +3,14 @@ pub fn ser_map_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MapFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.comparison {
-        object.key("comparison").string(var_1.as_str());
+    {
+        object.key("comparison").string(input.comparison.as_str());
     }
-    if let Some(var_2) = &input.key {
-        object.key("key").string(var_2.as_str());
+    {
+        object.key("key").string(input.key.as_str());
     }
-    if let Some(var_3) = &input.value {
-        object.key("value").string(var_3.as_str());
+    if let Some(var_1) = &input.value {
+        object.key("value").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::map_filter_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

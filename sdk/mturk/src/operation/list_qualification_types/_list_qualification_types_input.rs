@@ -69,6 +69,7 @@ impl ListQualificationTypesInputBuilder {
         &self.query
     }
     /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
+    /// This field is required.
     pub fn must_be_requestable(mut self, input: bool) -> Self {
         self.must_be_requestable = ::std::option::Option::Some(input);
         self

@@ -42,8 +42,10 @@ impl StartSpeechSynthesisTaskInput {
         self.language_code.as_ref()
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
-    pub fn lexicon_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lexicon_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lexicon_names.is_none()`.
+    pub fn lexicon_names(&self) -> &[::std::string::String] {
+        self.lexicon_names.as_deref().unwrap_or_default()
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
@@ -68,8 +70,10 @@ impl StartSpeechSynthesisTaskInput {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn speech_mark_types(&self) -> ::std::option::Option<&[crate::types::SpeechMarkType]> {
-        self.speech_mark_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.speech_mark_types.is_none()`.
+    pub fn speech_mark_types(&self) -> &[crate::types::SpeechMarkType] {
+        self.speech_mark_types.as_deref().unwrap_or_default()
     }
     /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>
     pub fn text(&self) -> ::std::option::Option<&str> {
@@ -161,6 +165,7 @@ impl StartSpeechSynthesisTaskInputBuilder {
         &self.lexicon_names
     }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
+    /// This field is required.
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
@@ -175,6 +180,7 @@ impl StartSpeechSynthesisTaskInputBuilder {
         &self.output_format
     }
     /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
+    /// This field is required.
     pub fn output_s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -257,6 +263,7 @@ impl StartSpeechSynthesisTaskInputBuilder {
         &self.speech_mark_types
     }
     /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -285,6 +292,7 @@ impl StartSpeechSynthesisTaskInputBuilder {
         &self.text_type
     }
     /// <p>Voice ID to use for the synthesis. </p>
+    /// This field is required.
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.voice_id = ::std::option::Option::Some(input);
         self

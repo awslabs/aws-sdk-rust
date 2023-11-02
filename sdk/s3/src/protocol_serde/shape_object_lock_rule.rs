@@ -13,6 +13,7 @@ pub fn ser_object_lock_rule(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_object_lock_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ObjectLockRule, ::aws_smithy_xml::decode::XmlDecodeError> {

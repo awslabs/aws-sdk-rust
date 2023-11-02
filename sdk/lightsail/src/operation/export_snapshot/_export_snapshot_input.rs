@@ -27,6 +27,7 @@ pub struct ExportSnapshotInputBuilder {
 }
 impl ExportSnapshotInputBuilder {
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
+    /// This field is required.
     pub fn source_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_snapshot_name = ::std::option::Option::Some(input.into());
         self

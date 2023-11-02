@@ -27,6 +27,7 @@ pub struct StopDominantLanguageDetectionJobInputBuilder {
 }
 impl StopDominantLanguageDetectionJobInputBuilder {
     /// <p>The identifier of the dominant language detection job to stop.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

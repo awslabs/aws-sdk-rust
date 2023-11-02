@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdMappingTechniques {
     /// <p>The type of ID mapping.</p>
-    pub id_mapping_type: ::std::option::Option<crate::types::IdMappingType>,
+    pub id_mapping_type: crate::types::IdMappingType,
     /// <p>An object which defines any additional configurations required by the provider service.</p>
     pub provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
 impl IdMappingTechniques {
     /// <p>The type of ID mapping.</p>
-    pub fn id_mapping_type(&self) -> ::std::option::Option<&crate::types::IdMappingType> {
-        self.id_mapping_type.as_ref()
+    pub fn id_mapping_type(&self) -> &crate::types::IdMappingType {
+        &self.id_mapping_type
     }
     /// <p>An object which defines any additional configurations required by the provider service.</p>
     pub fn provider_properties(&self) -> ::std::option::Option<&crate::types::ProviderProperties> {
@@ -35,6 +35,7 @@ pub struct IdMappingTechniquesBuilder {
 }
 impl IdMappingTechniquesBuilder {
     /// <p>The type of ID mapping.</p>
+    /// This field is required.
     pub fn id_mapping_type(mut self, input: crate::types::IdMappingType) -> Self {
         self.id_mapping_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl IdMappingTechniquesBuilder {
         &self.id_mapping_type
     }
     /// <p>An object which defines any additional configurations required by the provider service.</p>
+    /// This field is required.
     pub fn provider_properties(mut self, input: crate::types::ProviderProperties) -> Self {
         self.provider_properties = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl IdMappingTechniquesBuilder {
         &self.provider_properties
     }
     /// Consumes the builder and constructs a [`IdMappingTechniques`](crate::types::IdMappingTechniques).
-    pub fn build(self) -> crate::types::IdMappingTechniques {
-        crate::types::IdMappingTechniques {
-            id_mapping_type: self.id_mapping_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id_mapping_type`](crate::types::builders::IdMappingTechniquesBuilder::id_mapping_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingTechniques, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdMappingTechniques {
+            id_mapping_type: self.id_mapping_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id_mapping_type",
+                    "id_mapping_type was not specified but it is required when building IdMappingTechniques",
+                )
+            })?,
             provider_properties: self.provider_properties,
-        }
+        })
     }
 }

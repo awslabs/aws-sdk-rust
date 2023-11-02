@@ -48,6 +48,7 @@ pub struct ListDeviceEventsInputBuilder {
 }
 impl ListDeviceEventsInputBuilder {
     /// <p>The ARN of a device.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self

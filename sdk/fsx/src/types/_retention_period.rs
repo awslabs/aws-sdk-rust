@@ -52,6 +52,7 @@ pub struct RetentionPeriodBuilder {
 }
 impl RetentionPeriodBuilder {
     /// <p>Defines the type of time for the retention period of an FSx for ONTAP SnapLock volume. Set it to one of the valid types. If you set it to <code>INFINITE</code>, the files are retained forever. If you set it to <code>UNSPECIFIED</code>, the files are retained until you set an explicit retention period. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RetentionPeriodType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

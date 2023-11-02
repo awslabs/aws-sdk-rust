@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceGroup {
     /// <p>The identifier of the group you want to add to your list of groups. This is for filtering search results based on the groups' access to documents.</p>
-    pub group_id: ::std::option::Option<::std::string::String>,
+    pub group_id: ::std::string::String,
     /// <p>The identifier of the data source group you want to add to your list of data source groups. This is for filtering search results based on the groups' access to documents in that data source.</p>
-    pub data_source_id: ::std::option::Option<::std::string::String>,
+    pub data_source_id: ::std::string::String,
 }
 impl DataSourceGroup {
     /// <p>The identifier of the group you want to add to your list of groups. This is for filtering search results based on the groups' access to documents.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
-        self.group_id.as_deref()
+    pub fn group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.group_id.deref()
     }
     /// <p>The identifier of the data source group you want to add to your list of data source groups. This is for filtering search results based on the groups' access to documents in that data source.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
-        self.data_source_id.as_deref()
+    pub fn data_source_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source_id.deref()
     }
 }
 impl DataSourceGroup {
@@ -35,6 +37,7 @@ pub struct DataSourceGroupBuilder {
 }
 impl DataSourceGroupBuilder {
     /// <p>The identifier of the group you want to add to your list of groups. This is for filtering search results based on the groups' access to documents.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl DataSourceGroupBuilder {
         &self.group_id
     }
     /// <p>The identifier of the data source group you want to add to your list of data source groups. This is for filtering search results based on the groups' access to documents in that data source.</p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl DataSourceGroupBuilder {
         &self.data_source_id
     }
     /// Consumes the builder and constructs a [`DataSourceGroup`](crate::types::DataSourceGroup).
-    pub fn build(self) -> crate::types::DataSourceGroup {
-        crate::types::DataSourceGroup {
-            group_id: self.group_id,
-            data_source_id: self.data_source_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_id`](crate::types::builders::DataSourceGroupBuilder::group_id)
+    /// - [`data_source_id`](crate::types::builders::DataSourceGroupBuilder::data_source_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceGroup, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceGroup {
+            group_id: self.group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "group_id",
+                    "group_id was not specified but it is required when building DataSourceGroup",
+                )
+            })?,
+            data_source_id: self.data_source_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source_id",
+                    "data_source_id was not specified but it is required when building DataSourceGroup",
+                )
+            })?,
+        })
     }
 }

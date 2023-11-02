@@ -41,8 +41,10 @@ impl HoursOfOperation {
         self.time_zone.as_deref()
     }
     /// <p>Configuration information for the hours of operation.</p>
-    pub fn config(&self) -> ::std::option::Option<&[crate::types::HoursOfOperationConfig]> {
-        self.config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config.is_none()`.
+    pub fn config(&self) -> &[crate::types::HoursOfOperationConfig] {
+        self.config.as_deref().unwrap_or_default()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

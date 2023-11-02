@@ -13,16 +13,22 @@ pub struct UngroupResourcesOutput {
 }
 impl UngroupResourcesOutput {
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
-    pub fn succeeded(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.succeeded.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.succeeded.is_none()`.
+    pub fn succeeded(&self) -> &[::std::string::String] {
+        self.succeeded.as_deref().unwrap_or_default()
     }
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
-    pub fn failed(&self) -> ::std::option::Option<&[crate::types::FailedResource]> {
-        self.failed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
+    pub fn failed(&self) -> &[crate::types::FailedResource] {
+        self.failed.as_deref().unwrap_or_default()
     }
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
-    pub fn pending(&self) -> ::std::option::Option<&[crate::types::PendingResource]> {
-        self.pending.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending.is_none()`.
+    pub fn pending(&self) -> &[crate::types::PendingResource] {
+        self.pending.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UngroupResourcesOutput {

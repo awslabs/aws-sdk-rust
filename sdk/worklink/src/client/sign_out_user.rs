@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SignOutUser`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`username(impl Into<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::set_username): <p>The name of the user.</p>
+    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
+    ///   - [`username(impl Into<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::sign_out_user::builders::SignOutUserFluentBuilder::set_username):<br>required: **true**<br><p>The name of the user.</p><br>
     /// - On success, responds with [`SignOutUserOutput`](crate::operation::sign_out_user::SignOutUserOutput)
     /// - On failure, responds with [`SdkError<SignOutUserError>`](crate::operation::sign_out_user::SignOutUserError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]

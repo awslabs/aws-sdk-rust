@@ -41,6 +41,7 @@ pub struct ListUsersInputBuilder {
 }
 impl ListUsersInputBuilder {
     /// <p>The ID of an existing collection.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self

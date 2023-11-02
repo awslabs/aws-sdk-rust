@@ -536,6 +536,8 @@ impl StartStreamTranscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::operation::start_stream_transcription::StartStreamTranscriptionOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transcript_result_stream`](crate::operation::start_stream_transcription::builders::StartStreamTranscriptionOutputBuilder::transcript_result_stream)
     pub fn build(
         self,
     ) -> ::std::result::Result<

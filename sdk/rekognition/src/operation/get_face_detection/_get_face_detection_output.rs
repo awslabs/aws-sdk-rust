@@ -39,8 +39,10 @@ impl GetFaceDetectionOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
-    pub fn faces(&self) -> ::std::option::Option<&[crate::types::FaceDetection]> {
-        self.faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faces.is_none()`.
+    pub fn faces(&self) -> &[crate::types::FaceDetection] {
+        self.faces.as_deref().unwrap_or_default()
     }
     /// <p>Job identifier for the face detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceDetection.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {

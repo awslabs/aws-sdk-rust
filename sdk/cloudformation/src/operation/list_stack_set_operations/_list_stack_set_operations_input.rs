@@ -58,6 +58,7 @@ pub struct ListStackSetOperationsInputBuilder {
 }
 impl ListStackSetOperationsInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self

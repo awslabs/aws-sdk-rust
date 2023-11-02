@@ -8,8 +8,10 @@ pub struct BatchEnableStandardsInput {
 }
 impl BatchEnableStandardsInput {
     /// <p>The list of standards checks to enable.</p>
-    pub fn standards_subscription_requests(&self) -> ::std::option::Option<&[crate::types::StandardsSubscriptionRequest]> {
-        self.standards_subscription_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_subscription_requests.is_none()`.
+    pub fn standards_subscription_requests(&self) -> &[crate::types::StandardsSubscriptionRequest] {
+        self.standards_subscription_requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchEnableStandardsInput {

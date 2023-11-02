@@ -60,8 +60,10 @@ impl PutBotOutput {
         self.description.as_deref()
     }
     /// <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
-    pub fn intents(&self) -> ::std::option::Option<&[crate::types::Intent]> {
-        self.intents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intents.is_none()`.
+    pub fn intents(&self) -> &[crate::types::Intent] {
+        self.intents.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
     pub fn enable_model_improvements(&self) -> ::std::option::Option<bool> {
@@ -133,8 +135,10 @@ impl PutBotOutput {
         self.detect_sentiment
     }
     /// <p>A list of tags associated with the bot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutBotOutput {

@@ -49,7 +49,7 @@ where
     O: FnOnce(s3::Client) -> F,
     F: TestOperation,
 {
-    let creds = Credentials::for_tests();
+    let creds = Credentials::for_tests_with_session_token();
     let config = s3::Config::builder()
         .credentials_provider(creds)
         .region(Region::new("us-east-1"))

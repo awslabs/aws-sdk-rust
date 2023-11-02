@@ -27,6 +27,7 @@ pub struct DescribeScriptInputBuilder {
 }
 impl DescribeScriptInputBuilder {
     /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
+    /// This field is required.
     pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_id = ::std::option::Option::Some(input.into());
         self

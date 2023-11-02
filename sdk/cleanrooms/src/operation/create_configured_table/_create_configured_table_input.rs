@@ -4,22 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfiguredTableInput {
     /// <p>The name of the configured table.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description for the configured table.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the Glue table being configured.</p>
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_columns: ::std::vec::Vec<::std::string::String>,
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    pub analysis_method: crate::types::AnalysisMethod,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfiguredTableInput {
     /// <p>The name of the configured table.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description for the configured table.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -30,12 +31,13 @@ impl CreateConfiguredTableInput {
         self.table_reference.as_ref()
     }
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn allowed_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_columns.as_deref()
+    pub fn allowed_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allowed_columns.deref()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
-        self.analysis_method.as_ref()
+    pub fn analysis_method(&self) -> &crate::types::AnalysisMethod {
+        &self.analysis_method
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +64,7 @@ pub struct CreateConfiguredTableInputBuilder {
 }
 impl CreateConfiguredTableInputBuilder {
     /// <p>The name of the configured table.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateConfiguredTableInputBuilder {
         &self.description
     }
     /// <p>A reference to the Glue table being configured.</p>
+    /// This field is required.
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
         self.table_reference = ::std::option::Option::Some(input);
         self
@@ -124,6 +128,7 @@ impl CreateConfiguredTableInputBuilder {
         &self.allowed_columns
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// This field is required.
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
         self
@@ -158,16 +163,35 @@ impl CreateConfiguredTableInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfiguredTableInput`](crate::operation::create_configured_table::CreateConfiguredTableInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder::name)
+    /// - [`allowed_columns`](crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder::allowed_columns)
+    /// - [`analysis_method`](crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder::analysis_method)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_configured_table::CreateConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_configured_table::CreateConfiguredTableInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateConfiguredTableInput",
+                )
+            })?,
             description: self.description,
             table_reference: self.table_reference,
-            allowed_columns: self.allowed_columns,
-            analysis_method: self.analysis_method,
+            allowed_columns: self.allowed_columns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allowed_columns",
+                    "allowed_columns was not specified but it is required when building CreateConfiguredTableInput",
+                )
+            })?,
+            analysis_method: self.analysis_method.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analysis_method",
+                    "analysis_method was not specified but it is required when building CreateConfiguredTableInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

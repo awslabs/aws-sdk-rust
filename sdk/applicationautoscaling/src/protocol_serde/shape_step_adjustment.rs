@@ -15,10 +15,10 @@ pub fn ser_step_adjustment(
             ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.scaling_adjustment {
+    {
         object.key("ScalingAdjustment").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.scaling_adjustment).into()),
         );
     }
     Ok(())
@@ -66,7 +66,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::step_adjustment_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

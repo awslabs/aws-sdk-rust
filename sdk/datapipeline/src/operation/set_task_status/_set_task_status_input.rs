@@ -56,6 +56,7 @@ pub struct SetTaskStatusInputBuilder {
 }
 impl SetTaskStatusInputBuilder {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl SetTaskStatusInputBuilder {
         &self.task_id
     }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+    /// This field is required.
     pub fn task_status(mut self, input: crate::types::TaskStatus) -> Self {
         self.task_status = ::std::option::Option::Some(input);
         self

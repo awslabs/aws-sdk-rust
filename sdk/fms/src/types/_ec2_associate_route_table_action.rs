@@ -63,6 +63,7 @@ impl Ec2AssociateRouteTableActionBuilder {
         &self.description
     }
     /// <p>The ID of the EC2 route table that is associated with the remediation action.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
         self

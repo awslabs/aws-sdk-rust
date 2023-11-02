@@ -11,12 +11,16 @@ pub struct RuleGroupSourceStatelessRulesAndCustomActionsDetails {
 }
 impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
     /// <p>Custom actions for the rule group.</p>
-    pub fn custom_actions(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceCustomActionsDetails]> {
-        self.custom_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_actions.is_none()`.
+    pub fn custom_actions(&self) -> &[crate::types::RuleGroupSourceCustomActionsDetails] {
+        self.custom_actions.as_deref().unwrap_or_default()
     }
     /// <p>Stateless rules for the rule group.</p>
-    pub fn stateless_rules(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatelessRulesDetails]> {
-        self.stateless_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_rules.is_none()`.
+    pub fn stateless_rules(&self) -> &[crate::types::RuleGroupSourceStatelessRulesDetails] {
+        self.stateless_rules.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {

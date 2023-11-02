@@ -3,27 +3,27 @@ pub fn ser_deployment_launch_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentLaunchConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.package_name {
-        object.key("packageName").string(var_1.as_str());
+    {
+        object.key("packageName").string(input.package_name.as_str());
     }
-    if let Some(var_2) = &input.pre_launch_file {
-        object.key("preLaunchFile").string(var_2.as_str());
+    if let Some(var_1) = &input.pre_launch_file {
+        object.key("preLaunchFile").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.launch_file {
-        object.key("launchFile").string(var_3.as_str());
+    {
+        object.key("launchFile").string(input.launch_file.as_str());
     }
-    if let Some(var_4) = &input.post_launch_file {
-        object.key("postLaunchFile").string(var_4.as_str());
+    if let Some(var_2) = &input.post_launch_file {
+        object.key("postLaunchFile").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.environment_variables {
+    if let Some(var_3) = &input.environment_variables {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("environmentVariables").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_4 = object.key("environmentVariables").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_6.finish();
+        object_4.finish();
     }
     Ok(())
 }
@@ -86,7 +86,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::deployment_launch_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -41,6 +41,7 @@ pub struct CreateApiKeyInputBuilder {
 }
 impl CreateApiKeyInputBuilder {
     /// <p>The ID for your GraphQL API.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self

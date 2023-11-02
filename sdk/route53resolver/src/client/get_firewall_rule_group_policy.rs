@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFirewallRuleGroupPolicy`](crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder::set_arn): <p>The ARN (Amazon Resource Name) for the rule group.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_firewall_rule_group_policy::builders::GetFirewallRuleGroupPolicyFluentBuilder::set_arn):<br>required: **true**<br><p>The ARN (Amazon Resource Name) for the rule group.</p><br>
     /// - On success, responds with [`GetFirewallRuleGroupPolicyOutput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput) with field(s):
     ///   - [`firewall_rule_group_policy(Option<String>)`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyOutput::firewall_rule_group_policy): <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     /// - On failure, responds with [`SdkError<GetFirewallRuleGroupPolicyError>`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyError)

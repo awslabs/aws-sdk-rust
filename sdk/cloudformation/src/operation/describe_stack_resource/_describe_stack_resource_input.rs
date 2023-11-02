@@ -52,6 +52,7 @@ impl DescribeStackResourceInputBuilder {
     /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl DescribeStackResourceInputBuilder {
     }
     /// <p>The logical name of the resource as specified in the template.</p>
     /// <p>Default: There is no default value.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self

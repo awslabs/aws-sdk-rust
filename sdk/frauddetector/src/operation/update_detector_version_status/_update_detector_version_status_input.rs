@@ -43,6 +43,7 @@ pub struct UpdateDetectorVersionStatusInputBuilder {
 }
 impl UpdateDetectorVersionStatusInputBuilder {
     /// <p>The detector ID. </p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl UpdateDetectorVersionStatusInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID. </p>
+    /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +74,7 @@ impl UpdateDetectorVersionStatusInputBuilder {
     }
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

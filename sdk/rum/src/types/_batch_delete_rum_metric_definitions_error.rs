@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsError {
     /// <p>The ID of the metric definition that caused this error.</p>
-    pub metric_definition_id: ::std::option::Option<::std::string::String>,
+    pub metric_definition_id: ::std::string::String,
     /// <p>The error code.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The error message for this metric definition.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl BatchDeleteRumMetricDefinitionsError {
     /// <p>The ID of the metric definition that caused this error.</p>
-    pub fn metric_definition_id(&self) -> ::std::option::Option<&str> {
-        self.metric_definition_id.as_deref()
+    pub fn metric_definition_id(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_definition_id.deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The error message for this metric definition.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl BatchDeleteRumMetricDefinitionsError {
@@ -42,6 +45,7 @@ pub struct BatchDeleteRumMetricDefinitionsErrorBuilder {
 }
 impl BatchDeleteRumMetricDefinitionsErrorBuilder {
     /// <p>The ID of the metric definition that caused this error.</p>
+    /// This field is required.
     pub fn metric_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_definition_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
         &self.metric_definition_id
     }
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
         &self.error_code
     }
     /// <p>The error message for this metric definition.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsError`](crate::types::BatchDeleteRumMetricDefinitionsError).
-    pub fn build(self) -> crate::types::BatchDeleteRumMetricDefinitionsError {
-        crate::types::BatchDeleteRumMetricDefinitionsError {
-            metric_definition_id: self.metric_definition_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric_definition_id`](crate::types::builders::BatchDeleteRumMetricDefinitionsErrorBuilder::metric_definition_id)
+    /// - [`error_code`](crate::types::builders::BatchDeleteRumMetricDefinitionsErrorBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::BatchDeleteRumMetricDefinitionsErrorBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteRumMetricDefinitionsError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchDeleteRumMetricDefinitionsError {
+            metric_definition_id: self.metric_definition_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_definition_id",
+                    "metric_definition_id was not specified but it is required when building BatchDeleteRumMetricDefinitionsError",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchDeleteRumMetricDefinitionsError",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchDeleteRumMetricDefinitionsError",
+                )
+            })?,
+        })
     }
 }

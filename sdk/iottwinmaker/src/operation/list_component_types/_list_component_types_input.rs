@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentTypesInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>A list of objects that filter the request.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
     /// <p>The string that specifies the next page of results.</p>
@@ -15,12 +15,15 @@ pub struct ListComponentTypesInput {
 }
 impl ListComponentTypesInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ListComponentTypesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ListComponentTypesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -50,6 +53,7 @@ pub struct ListComponentTypesInputBuilder {
 }
 impl ListComponentTypesInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -115,11 +119,18 @@ impl ListComponentTypesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListComponentTypesInput`](crate::operation::list_component_types::ListComponentTypesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::list_component_types::builders::ListComponentTypesInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building ListComponentTypesInput",
+                )
+            })?,
             filters: self.filters,
             next_token: self.next_token,
             max_results: self.max_results,

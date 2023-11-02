@@ -8,7 +8,7 @@ pub struct ListTablesInput {
     /// <p>The total number of tables to return in the output. If the total number of tables available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name of the keyspace.</p>
-    pub keyspace_name: ::std::option::Option<::std::string::String>,
+    pub keyspace_name: ::std::string::String,
 }
 impl ListTablesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
@@ -20,8 +20,9 @@ impl ListTablesInput {
         self.max_results
     }
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
-        self.keyspace_name.as_deref()
+    pub fn keyspace_name(&self) -> &str {
+        use std::ops::Deref;
+        self.keyspace_name.deref()
     }
 }
 impl ListTablesInput {
@@ -69,6 +70,7 @@ impl ListTablesInputBuilder {
         &self.max_results
     }
     /// <p>The name of the keyspace.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +85,18 @@ impl ListTablesInputBuilder {
         &self.keyspace_name
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyspace_name`](crate::operation::list_tables::builders::ListTablesInputBuilder::keyspace_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            keyspace_name: self.keyspace_name,
+            keyspace_name: self.keyspace_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyspace_name",
+                    "keyspace_name was not specified but it is required when building ListTablesInput",
+                )
+            })?,
         })
     }
 }

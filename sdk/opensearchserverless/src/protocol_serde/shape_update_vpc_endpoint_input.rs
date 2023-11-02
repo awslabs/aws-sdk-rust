@@ -3,47 +3,47 @@ pub fn ser_update_vpc_endpoint_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.add_subnet_ids {
-        let mut array_3 = object.key("addSubnetIds").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.add_subnet_ids {
+        let mut array_2 = object.key("addSubnetIds").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.remove_subnet_ids {
-        let mut array_6 = object.key("removeSubnetIds").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.remove_subnet_ids {
+        let mut array_5 = object.key("removeSubnetIds").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.add_security_group_ids {
-        let mut array_9 = object.key("addSecurityGroupIds").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.add_security_group_ids {
+        let mut array_8 = object.key("addSecurityGroupIds").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_11) = &input.remove_security_group_ids {
-        let mut array_12 = object.key("removeSecurityGroupIds").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.remove_security_group_ids {
+        let mut array_11 = object.key("removeSecurityGroupIds").start_array();
+        for item_12 in var_10 {
             {
-                array_12.value().string(item_13.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_14) = &input.client_token {
-        object.key("clientToken").string(var_14.as_str());
+    if let Some(var_13) = &input.client_token {
+        object.key("clientToken").string(var_13.as_str());
     }
     Ok(())
 }

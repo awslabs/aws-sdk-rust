@@ -18,24 +18,34 @@ pub struct Recipes {
 }
 impl Recipes {
     /// <p>An array of custom recipe names to be run following a <code>setup</code> event.</p>
-    pub fn setup(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.setup.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.setup.is_none()`.
+    pub fn setup(&self) -> &[::std::string::String] {
+        self.setup.as_deref().unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>configure</code> event.</p>
-    pub fn configure(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configure.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configure.is_none()`.
+    pub fn configure(&self) -> &[::std::string::String] {
+        self.configure.as_deref().unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>deploy</code> event.</p>
-    pub fn deploy(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deploy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deploy.is_none()`.
+    pub fn deploy(&self) -> &[::std::string::String] {
+        self.deploy.as_deref().unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>undeploy</code> event.</p>
-    pub fn undeploy(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.undeploy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.undeploy.is_none()`.
+    pub fn undeploy(&self) -> &[::std::string::String] {
+        self.undeploy.as_deref().unwrap_or_default()
     }
     /// <p>An array of custom recipe names to be run following a <code>shutdown</code> event.</p>
-    pub fn shutdown(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.shutdown.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shutdown.is_none()`.
+    pub fn shutdown(&self) -> &[::std::string::String] {
+        self.shutdown.as_deref().unwrap_or_default()
     }
 }
 impl Recipes {

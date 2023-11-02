@@ -5,30 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcDestinationConfiguration {
     /// <p>The subnet IDs of the VPC destination.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The security groups of the VPC destination.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the VPC.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
+    pub vpc_id: ::std::string::String,
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl VpcDestinationConfiguration {
     /// <p>The subnet IDs of the VPC destination.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>The security groups of the VPC destination.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
+    pub fn vpc_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_id.deref()
     }
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl VpcDestinationConfiguration {
@@ -89,6 +94,7 @@ impl VpcDestinationConfigurationBuilder {
         &self.security_groups
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +109,7 @@ impl VpcDestinationConfigurationBuilder {
         &self.vpc_id
     }
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -117,12 +124,31 @@ impl VpcDestinationConfigurationBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`VpcDestinationConfiguration`](crate::types::VpcDestinationConfiguration).
-    pub fn build(self) -> crate::types::VpcDestinationConfiguration {
-        crate::types::VpcDestinationConfiguration {
-            subnet_ids: self.subnet_ids,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`subnet_ids`](crate::types::builders::VpcDestinationConfigurationBuilder::subnet_ids)
+    /// - [`vpc_id`](crate::types::builders::VpcDestinationConfigurationBuilder::vpc_id)
+    /// - [`role_arn`](crate::types::builders::VpcDestinationConfigurationBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VpcDestinationConfiguration {
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building VpcDestinationConfiguration",
+                )
+            })?,
             security_groups: self.security_groups,
-            vpc_id: self.vpc_id,
-            role_arn: self.role_arn,
-        }
+            vpc_id: self.vpc_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vpc_id",
+                    "vpc_id was not specified but it is required when building VpcDestinationConfiguration",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building VpcDestinationConfiguration",
+                )
+            })?,
+        })
     }
 }

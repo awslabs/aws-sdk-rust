@@ -39,7 +39,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::resolution_techniques_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -51,20 +53,20 @@ pub fn ser_resolution_techniques(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResolutionTechniques,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resolution_type {
-        object.key("resolutionType").string(var_1.as_str());
+    {
+        object.key("resolutionType").string(input.resolution_type.as_str());
     }
-    if let Some(var_2) = &input.rule_based_properties {
+    if let Some(var_1) = &input.rule_based_properties {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("ruleBasedProperties").start_object();
-        crate::protocol_serde::shape_rule_based_properties::ser_rule_based_properties(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("ruleBasedProperties").start_object();
+        crate::protocol_serde::shape_rule_based_properties::ser_rule_based_properties(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.provider_properties {
+    if let Some(var_3) = &input.provider_properties {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("providerProperties").start_object();
-        crate::protocol_serde::shape_provider_properties::ser_provider_properties(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("providerProperties").start_object();
+        crate::protocol_serde::shape_provider_properties::ser_provider_properties(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

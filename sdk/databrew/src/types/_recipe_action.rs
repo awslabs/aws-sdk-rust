@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub operation: ::std::option::Option<::std::string::String>,
+    pub operation: ::std::string::String,
     /// <p>Contextual parameters for the transformation.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
-        self.operation.as_deref()
+    pub fn operation(&self) -> &str {
+        use std::ops::Deref;
+        self.operation.deref()
     }
     /// <p>Contextual parameters for the transformation.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -35,6 +36,7 @@ pub struct RecipeActionBuilder {
 }
 impl RecipeActionBuilder {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
+    /// This field is required.
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +71,17 @@ impl RecipeActionBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`RecipeAction`](crate::types::RecipeAction).
-    pub fn build(self) -> crate::types::RecipeAction {
-        crate::types::RecipeAction {
-            operation: self.operation,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`operation`](crate::types::builders::RecipeActionBuilder::operation)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecipeAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecipeAction {
+            operation: self.operation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operation",
+                    "operation was not specified but it is required when building RecipeAction",
+                )
+            })?,
             parameters: self.parameters,
-        }
+        })
     }
 }

@@ -80,16 +80,22 @@ impl CreateLayerInput {
         self.custom_json.as_deref()
     }
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn custom_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_security_group_ids.is_none()`.
+    pub fn custom_security_group_ids(&self) -> &[::std::string::String] {
+        self.custom_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-    pub fn packages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.packages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.packages.is_none()`.
+    pub fn packages(&self) -> &[::std::string::String] {
+        self.packages.as_deref().unwrap_or_default()
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn volume_configurations(&self) -> ::std::option::Option<&[crate::types::VolumeConfiguration]> {
-        self.volume_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_configurations.is_none()`.
+    pub fn volume_configurations(&self) -> &[crate::types::VolumeConfiguration] {
+        self.volume_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Whether to disable auto healing for the layer.</p>
     pub fn enable_auto_healing(&self) -> ::std::option::Option<bool> {
@@ -154,6 +160,7 @@ pub struct CreateLayerInputBuilder {
 }
 impl CreateLayerInputBuilder {
     /// <p>The layer stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +175,7 @@ impl CreateLayerInputBuilder {
         &self.stack_id
     }
     /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::LayerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -182,6 +190,7 @@ impl CreateLayerInputBuilder {
         &self.r#type
     }
     /// <p>The layer name, which is used by the console.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -197,6 +206,7 @@ impl CreateLayerInputBuilder {
     }
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
+    /// This field is required.
     pub fn shortname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shortname = ::std::option::Option::Some(input.into());
         self

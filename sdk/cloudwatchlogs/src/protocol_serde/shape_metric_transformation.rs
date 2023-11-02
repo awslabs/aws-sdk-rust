@@ -3,33 +3,33 @@ pub fn ser_metric_transformation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricTransformation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.metric_name {
-        object.key("metricName").string(var_1.as_str());
+    {
+        object.key("metricName").string(input.metric_name.as_str());
     }
-    if let Some(var_2) = &input.metric_namespace {
-        object.key("metricNamespace").string(var_2.as_str());
+    {
+        object.key("metricNamespace").string(input.metric_namespace.as_str());
     }
-    if let Some(var_3) = &input.metric_value {
-        object.key("metricValue").string(var_3.as_str());
+    {
+        object.key("metricValue").string(input.metric_value.as_str());
     }
-    if let Some(var_4) = &input.default_value {
+    if let Some(var_1) = &input.default_value {
         object.key("defaultValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_4).into()),
+            ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if let Some(var_5) = &input.dimensions {
+    if let Some(var_2) = &input.dimensions {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("dimensions").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_3 = object.key("dimensions").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_6.finish();
+        object_3.finish();
     }
-    if let Some(var_9) = &input.unit {
-        object.key("unit").string(var_9.as_str());
+    if let Some(var_6) = &input.unit {
+        object.key("unit").string(var_6.as_str());
     }
     Ok(())
 }
@@ -95,7 +95,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::metric_transformation_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

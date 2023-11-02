@@ -3,14 +3,14 @@ pub fn ser_specifications(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Specifications,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.slot_type_id {
-        object.key("slotTypeId").string(var_1.as_str());
+    {
+        object.key("slotTypeId").string(input.slot_type_id.as_str());
     }
-    if let Some(var_2) = &input.value_elicitation_setting {
+    if let Some(var_1) = &input.value_elicitation_setting {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("valueElicitationSetting").start_object();
-        crate::protocol_serde::shape_sub_slot_value_elicitation_setting::ser_sub_slot_value_elicitation_setting(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("valueElicitationSetting").start_object();
+        crate::protocol_serde::shape_sub_slot_value_elicitation_setting::ser_sub_slot_value_elicitation_setting(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::specifications_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

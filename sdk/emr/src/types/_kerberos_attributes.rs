@@ -56,6 +56,7 @@ pub struct KerberosAttributesBuilder {
 }
 impl KerberosAttributesBuilder {
     /// <p>The name of the Kerberos realm to which all nodes in a cluster belong. For example, <code>EC2.INTERNAL</code>. </p>
+    /// This field is required.
     pub fn realm(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.realm = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl KerberosAttributesBuilder {
         &self.realm
     }
     /// <p>The password used within the cluster for the kadmin service on the cluster-dedicated KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</p>
+    /// This field is required.
     pub fn kdc_admin_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kdc_admin_password = ::std::option::Option::Some(input.into());
         self

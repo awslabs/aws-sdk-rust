@@ -34,6 +34,7 @@ pub struct CreateServiceTemplateOutputBuilder {
 }
 impl CreateServiceTemplateOutputBuilder {
     /// <p>The service template detail data that's returned by Proton.</p>
+    /// This field is required.
     pub fn service_template(mut self, input: crate::types::ServiceTemplate) -> Self {
         self.service_template = ::std::option::Option::Some(input);
         self

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub ephemeris_id: ::std::option::Option<::std::string::String>,
+    pub ephemeris_id: ::std::string::String,
 }
 impl DeleteEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
-        self.ephemeris_id.as_deref()
+    pub fn ephemeris_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ephemeris_id.deref()
     }
 }
 impl DeleteEphemerisInput {
@@ -27,6 +28,7 @@ pub struct DeleteEphemerisInputBuilder {
 }
 impl DeleteEphemerisInputBuilder {
     /// <p>The AWS Ground Station ephemeris ID.</p>
+    /// This field is required.
     pub fn ephemeris_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ephemeris_id = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteEphemerisInputBuilder {
         &self.ephemeris_id
     }
     /// Consumes the builder and constructs a [`DeleteEphemerisInput`](crate::operation::delete_ephemeris::DeleteEphemerisInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ephemeris_id`](crate::operation::delete_ephemeris::builders::DeleteEphemerisInputBuilder::ephemeris_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_ephemeris::DeleteEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ephemeris::DeleteEphemerisInput {
-            ephemeris_id: self.ephemeris_id,
+            ephemeris_id: self.ephemeris_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ephemeris_id",
+                    "ephemeris_id was not specified but it is required when building DeleteEphemerisInput",
+                )
+            })?,
         })
     }
 }

@@ -6,7 +6,7 @@ pub struct CreateReusableDelegationSetOutput {
     /// <p>A complex type that contains name server information.</p>
     pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     /// <p>The unique URL representing the new reusable delegation set.</p>
-    pub location: ::std::option::Option<::std::string::String>,
+    pub location: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateReusableDelegationSetOutput {
@@ -15,8 +15,9 @@ impl CreateReusableDelegationSetOutput {
         self.delegation_set.as_ref()
     }
     /// <p>The unique URL representing the new reusable delegation set.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
-        self.location.as_deref()
+    pub fn location(&self) -> &str {
+        use std::ops::Deref;
+        self.location.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateReusableDelegationSetOutput {
@@ -41,6 +42,7 @@ pub struct CreateReusableDelegationSetOutputBuilder {
 }
 impl CreateReusableDelegationSetOutputBuilder {
     /// <p>A complex type that contains name server information.</p>
+    /// This field is required.
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
         self.delegation_set = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl CreateReusableDelegationSetOutputBuilder {
         &self.delegation_set
     }
     /// <p>The unique URL representing the new reusable delegation set.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +81,23 @@ impl CreateReusableDelegationSetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateReusableDelegationSetOutput`](crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput).
-    pub fn build(self) -> crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput {
-        crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`location`](crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetOutputBuilder::location)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput {
             delegation_set: self.delegation_set,
-            location: self.location,
+            location: self.location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "location",
+                    "location was not specified but it is required when building CreateReusableDelegationSetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

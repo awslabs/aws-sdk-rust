@@ -3,11 +3,11 @@ pub fn ser_metric_policy_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricPolicyRule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.object_group {
-        object.key("ObjectGroup").string(var_1.as_str());
+    {
+        object.key("ObjectGroup").string(input.object_group.as_str());
     }
-    if let Some(var_2) = &input.object_group_name {
-        object.key("ObjectGroupName").string(var_2.as_str());
+    {
+        object.key("ObjectGroupName").string(input.object_group_name.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::metric_policy_rule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

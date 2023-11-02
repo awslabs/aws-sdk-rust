@@ -49,6 +49,7 @@ pub struct ListPolicyPrincipalsInputBuilder {
 }
 impl ListPolicyPrincipalsInputBuilder {
     /// <p>The policy name.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self

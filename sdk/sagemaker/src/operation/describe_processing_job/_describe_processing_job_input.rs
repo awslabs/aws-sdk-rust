@@ -27,6 +27,7 @@ pub struct DescribeProcessingJobInputBuilder {
 }
 impl DescribeProcessingJobInputBuilder {
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDomainConfiguration`](crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_configuration_name(impl Into<String>)`](crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationFluentBuilder::domain_configuration_name) / [`set_domain_configuration_name(Option<String>)`](crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationFluentBuilder::set_domain_configuration_name): <p>The name of the domain configuration.</p>
+    ///   - [`domain_configuration_name(impl Into<String>)`](crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationFluentBuilder::domain_configuration_name) / [`set_domain_configuration_name(Option<String>)`](crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationFluentBuilder::set_domain_configuration_name):<br>required: **true**<br><p>The name of the domain configuration.</p><br>
     /// - On success, responds with [`DescribeDomainConfigurationOutput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput) with field(s):
     ///   - [`domain_configuration_name(Option<String>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::domain_configuration_name): <p>The name of the domain configuration.</p>
     ///   - [`domain_configuration_arn(Option<String>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::domain_configuration_arn): <p>The ARN of the domain configuration.</p>

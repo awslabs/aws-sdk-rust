@@ -11,8 +11,10 @@ pub struct DescribeInstanceEventWindowsOutput {
 }
 impl DescribeInstanceEventWindowsOutput {
     /// <p>Information about the event windows.</p>
-    pub fn instance_event_windows(&self) -> ::std::option::Option<&[crate::types::InstanceEventWindow]> {
-        self.instance_event_windows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_event_windows.is_none()`.
+    pub fn instance_event_windows(&self) -> &[crate::types::InstanceEventWindow] {
+        self.instance_event_windows.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

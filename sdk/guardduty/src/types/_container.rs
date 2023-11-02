@@ -41,8 +41,10 @@ impl Container {
         self.image_prefix.as_deref()
     }
     /// <p>Container volume mounts.</p>
-    pub fn volume_mounts(&self) -> ::std::option::Option<&[crate::types::VolumeMount]> {
-        self.volume_mounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_mounts.is_none()`.
+    pub fn volume_mounts(&self) -> &[crate::types::VolumeMount] {
+        self.volume_mounts.as_deref().unwrap_or_default()
     }
     /// <p>Container security context.</p>
     pub fn security_context(&self) -> ::std::option::Option<&crate::types::SecurityContext> {

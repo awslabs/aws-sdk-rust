@@ -3,18 +3,18 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePackageImportJob`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::job_id) / [`set_job_id(impl Into<String>)`](crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job's ID.</p><br>
     /// - On success, responds with [`DescribePackageImportJobOutput`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_id): <p>The job's ID.</p>
+    ///   - [`job_id(String)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_id): <p>The job's ID.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::client_token): <p>The job's client token.</p>
-    ///   - [`job_type(Option<PackageImportJobType>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_type): <p>The job's type.</p>
+    ///   - [`job_type(PackageImportJobType)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_type): <p>The job's type.</p>
     ///   - [`input_config(Option<PackageImportJobInputConfig>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::input_config): <p>The job's input config.</p>
     ///   - [`output_config(Option<PackageImportJobOutputConfig>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::output_config): <p>The job's output config.</p>
     ///   - [`output(Option<PackageImportJobOutput>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::output): <p>The job's output.</p>
-    ///   - [`created_time(Option<DateTime>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::created_time): <p>When the job was created.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::last_updated_time): <p>When the job was updated.</p>
-    ///   - [`status(Option<PackageImportJobStatus>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::status): <p>The job's status.</p>
-    ///   - [`status_message(Option<String>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::status_message): <p>The job's status message.</p>
+    ///   - [`created_time(DateTime)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::created_time): <p>When the job was created.</p>
+    ///   - [`last_updated_time(DateTime)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::last_updated_time): <p>When the job was updated.</p>
+    ///   - [`status(PackageImportJobStatus)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::status): <p>The job's status.</p>
+    ///   - [`status_message(String)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::status_message): <p>The job's status message.</p>
     ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::operation::describe_package_import_job::DescribePackageImportJobOutput::job_tags): <p>The job's tags.</p>
     /// - On failure, responds with [`SdkError<DescribePackageImportJobError>`](crate::operation::describe_package_import_job::DescribePackageImportJobError)
     pub fn describe_package_import_job(&self) -> crate::operation::describe_package_import_job::builders::DescribePackageImportJobFluentBuilder {

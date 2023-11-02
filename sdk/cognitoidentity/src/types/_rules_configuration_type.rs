@@ -6,13 +6,14 @@
 pub struct RulesConfigurationType {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
+    pub rules: ::std::vec::Vec<crate::types::MappingRule>,
 }
 impl RulesConfigurationType {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::MappingRule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::MappingRule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
 }
 impl RulesConfigurationType {
@@ -53,7 +54,16 @@ impl RulesConfigurationTypeBuilder {
         &self.rules
     }
     /// Consumes the builder and constructs a [`RulesConfigurationType`](crate::types::RulesConfigurationType).
-    pub fn build(self) -> crate::types::RulesConfigurationType {
-        crate::types::RulesConfigurationType { rules: self.rules }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rules`](crate::types::builders::RulesConfigurationTypeBuilder::rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::RulesConfigurationType, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RulesConfigurationType {
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building RulesConfigurationType",
+                )
+            })?,
+        })
     }
 }

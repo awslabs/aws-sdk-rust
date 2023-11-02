@@ -11,8 +11,10 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>The Applications associated with this account.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::ApplicationSummary]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::ApplicationSummary] {
+        self.applications.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

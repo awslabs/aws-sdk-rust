@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Template {
     /// <p>The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The subject line of the email.</p>
     pub subject_part: ::std::option::Option<::std::string::String>,
     /// <p>The email body that is visible to recipients whose email clients do not display HTML content.</p>
@@ -15,8 +15,9 @@ pub struct Template {
 }
 impl Template {
     /// <p>The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The subject line of the email.</p>
     pub fn subject_part(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct TemplateBuilder {
 }
 impl TemplateBuilder {
     /// <p>The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl TemplateBuilder {
         &self.html_part
     }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
-    pub fn build(self) -> crate::types::Template {
-        crate::types::Template {
-            template_name: self.template_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::types::builders::TemplateBuilder::template_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Template, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Template {
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building Template",
+                )
+            })?,
             subject_part: self.subject_part,
             text_part: self.text_part,
             html_part: self.html_part,
-        }
+        })
     }
 }

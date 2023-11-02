@@ -11,8 +11,10 @@ pub struct ListApplicationStatesOutput {
 }
 impl ListApplicationStatesOutput {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub fn application_state_list(&self) -> ::std::option::Option<&[crate::types::ApplicationState]> {
-        self.application_state_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_state_list.is_none()`.
+    pub fn application_state_list(&self) -> &[crate::types::ApplicationState] {
+        self.application_state_list.as_deref().unwrap_or_default()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

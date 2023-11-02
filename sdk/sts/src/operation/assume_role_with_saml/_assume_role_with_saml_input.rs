@@ -47,8 +47,10 @@ impl AssumeRoleWithSamlInput {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn policy_arns(&self) -> ::std::option::Option<&[crate::types::PolicyDescriptorType]> {
-        self.policy_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_arns.is_none()`.
+    pub fn policy_arns(&self) -> &[crate::types::PolicyDescriptorType] {
+        self.policy_arns.as_deref().unwrap_or_default()
     }
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
     /// <p>This parameter is optional. Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>. </p>
@@ -98,6 +100,7 @@ pub struct AssumeRoleWithSamlInputBuilder {
 }
 impl AssumeRoleWithSamlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl AssumeRoleWithSamlInputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the IdP.</p>
+    /// This field is required.
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +131,7 @@ impl AssumeRoleWithSamlInputBuilder {
     }
     /// <p>The base64 encoded SAML authentication response provided by the IdP.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn saml_assertion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_assertion = ::std::option::Option::Some(input.into());
         self

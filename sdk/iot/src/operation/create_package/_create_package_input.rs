@@ -58,6 +58,7 @@ pub struct CreatePackageInputBuilder {
 }
 impl CreatePackageInputBuilder {
     /// <p>The name of the new software package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self

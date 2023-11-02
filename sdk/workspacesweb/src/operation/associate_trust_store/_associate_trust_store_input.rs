@@ -34,6 +34,7 @@ pub struct AssociateTrustStoreInputBuilder {
 }
 impl AssociateTrustStoreInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateTrustStoreInputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the trust store.</p>
+    /// This field is required.
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self

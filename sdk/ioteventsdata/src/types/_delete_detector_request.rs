@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDetectorRequest {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     /// <p>The name of the detector model that was used to create the detector instance.</p>
-    pub detector_model_name: ::std::option::Option<::std::string::String>,
+    pub detector_model_name: ::std::string::String,
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
     pub key_value: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDetectorRequest {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
     /// <p>The name of the detector model that was used to create the detector instance.</p>
-    pub fn detector_model_name(&self) -> ::std::option::Option<&str> {
-        self.detector_model_name.as_deref()
+    pub fn detector_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.detector_model_name.deref()
     }
     /// <p>The value of the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html#iotevents-CreateDetectorModel-request-key">key</a> used to identify the detector. </p>
     pub fn key_value(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct DeleteDetectorRequestBuilder {
 }
 impl DeleteDetectorRequestBuilder {
     /// <p>The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl DeleteDetectorRequestBuilder {
         &self.message_id
     }
     /// <p>The name of the detector model that was used to create the detector instance.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl DeleteDetectorRequestBuilder {
         &self.key_value
     }
     /// Consumes the builder and constructs a [`DeleteDetectorRequest`](crate::types::DeleteDetectorRequest).
-    pub fn build(self) -> crate::types::DeleteDetectorRequest {
-        crate::types::DeleteDetectorRequest {
-            message_id: self.message_id,
-            detector_model_name: self.detector_model_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_id`](crate::types::builders::DeleteDetectorRequestBuilder::message_id)
+    /// - [`detector_model_name`](crate::types::builders::DeleteDetectorRequestBuilder::detector_model_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteDetectorRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeleteDetectorRequest {
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building DeleteDetectorRequest",
+                )
+            })?,
+            detector_model_name: self.detector_model_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "detector_model_name",
+                    "detector_model_name was not specified but it is required when building DeleteDetectorRequest",
+                )
+            })?,
             key_value: self.key_value,
-        }
+        })
     }
 }

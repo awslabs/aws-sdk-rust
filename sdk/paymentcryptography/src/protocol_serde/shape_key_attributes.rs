@@ -3,20 +3,20 @@ pub fn ser_key_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key_usage {
-        object.key("KeyUsage").string(var_1.as_str());
+    {
+        object.key("KeyUsage").string(input.key_usage.as_str());
     }
-    if let Some(var_2) = &input.key_class {
-        object.key("KeyClass").string(var_2.as_str());
+    {
+        object.key("KeyClass").string(input.key_class.as_str());
     }
-    if let Some(var_3) = &input.key_algorithm {
-        object.key("KeyAlgorithm").string(var_3.as_str());
+    {
+        object.key("KeyAlgorithm").string(input.key_algorithm.as_str());
     }
-    if let Some(var_4) = &input.key_modes_of_use {
+    if let Some(var_1) = &input.key_modes_of_use {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("KeyModesOfUse").start_object();
-        crate::protocol_serde::shape_key_modes_of_use::ser_key_modes_of_use(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("KeyModesOfUse").start_object();
+        crate::protocol_serde::shape_key_modes_of_use::ser_key_modes_of_use(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::key_attributes_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

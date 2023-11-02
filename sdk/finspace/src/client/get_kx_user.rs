@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKxUser`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_name(impl Into<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::set_user_name): <p>A unique identifier for the user.</p>
-    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::set_environment_id): <p>A unique identifier for the kdb environment.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::set_user_name):<br>required: **true**<br><p>A unique identifier for the user.</p><br>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_kx_user::builders::GetKxUserFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
     /// - On success, responds with [`GetKxUserOutput`](crate::operation::get_kx_user::GetKxUserOutput) with field(s):
     ///   - [`user_name(Option<String>)`](crate::operation::get_kx_user::GetKxUserOutput::user_name): <p>A unique identifier for the user.</p>
     ///   - [`user_arn(Option<String>)`](crate::operation::get_kx_user::GetKxUserOutput::user_arn): <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>

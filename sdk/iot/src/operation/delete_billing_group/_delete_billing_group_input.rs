@@ -34,6 +34,7 @@ pub struct DeleteBillingGroupInputBuilder {
 }
 impl DeleteBillingGroupInputBuilder {
     /// <p>The name of the billing group.</p>
+    /// This field is required.
     pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_group_name = ::std::option::Option::Some(input.into());
         self

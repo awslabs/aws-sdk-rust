@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
-    pub webhooks: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>,
+    pub webhooks: ::std::vec::Vec<crate::types::Webhook>,
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
-    pub fn webhooks(&self) -> ::std::option::Option<&[crate::types::Webhook]> {
-        self.webhooks.as_deref()
+    pub fn webhooks(&self) -> &[crate::types::Webhook] {
+        use std::ops::Deref;
+        self.webhooks.deref()
     }
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListWebhooksOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput).
-    pub fn build(self) -> crate::operation::list_webhooks::ListWebhooksOutput {
-        crate::operation::list_webhooks::ListWebhooksOutput {
-            webhooks: self.webhooks,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`webhooks`](crate::operation::list_webhooks::builders::ListWebhooksOutputBuilder::webhooks)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_webhooks::ListWebhooksOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_webhooks::ListWebhooksOutput {
+            webhooks: self.webhooks.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "webhooks",
+                    "webhooks was not specified but it is required when building ListWebhooksOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

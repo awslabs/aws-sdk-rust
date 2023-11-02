@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub license_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub license_configuration_arn: ::std::string::String,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub ami_association_scope: ::std::option::Option<::std::string::String>,
 }
 impl LicenseSpecification {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
-        self.license_configuration_arn.as_deref()
+    pub fn license_configuration_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.license_configuration_arn.deref()
     }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn ami_association_scope(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct LicenseSpecificationBuilder {
 }
 impl LicenseSpecificationBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    /// This field is required.
     pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl LicenseSpecificationBuilder {
         &self.ami_association_scope
     }
     /// Consumes the builder and constructs a [`LicenseSpecification`](crate::types::LicenseSpecification).
-    pub fn build(self) -> crate::types::LicenseSpecification {
-        crate::types::LicenseSpecification {
-            license_configuration_arn: self.license_configuration_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`license_configuration_arn`](crate::types::builders::LicenseSpecificationBuilder::license_configuration_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LicenseSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LicenseSpecification {
+            license_configuration_arn: self.license_configuration_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "license_configuration_arn",
+                    "license_configuration_arn was not specified but it is required when building LicenseSpecification",
+                )
+            })?,
             ami_association_scope: self.ami_association_scope,
-        }
+        })
     }
 }

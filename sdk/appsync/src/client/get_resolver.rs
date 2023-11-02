@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResolver`](crate::operation::get_resolver::builders::GetResolverFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::set_api_id): <p>The API ID.</p>
-    ///   - [`type_name(impl Into<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::set_type_name): <p>The resolver type name.</p>
-    ///   - [`field_name(impl Into<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::field_name) / [`set_field_name(Option<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::set_field_name): <p>The resolver field name.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::set_api_id):<br>required: **true**<br><p>The API ID.</p><br>
+    ///   - [`type_name(impl Into<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::set_type_name):<br>required: **true**<br><p>The resolver type name.</p><br>
+    ///   - [`field_name(impl Into<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::field_name) / [`set_field_name(Option<String>)`](crate::operation::get_resolver::builders::GetResolverFluentBuilder::set_field_name):<br>required: **true**<br><p>The resolver field name.</p><br>
     /// - On success, responds with [`GetResolverOutput`](crate::operation::get_resolver::GetResolverOutput) with field(s):
     ///   - [`resolver(Option<Resolver>)`](crate::operation::get_resolver::GetResolverOutput::resolver): <p>The <code>Resolver</code> object.</p>
     /// - On failure, responds with [`SdkError<GetResolverError>`](crate::operation::get_resolver::GetResolverError)

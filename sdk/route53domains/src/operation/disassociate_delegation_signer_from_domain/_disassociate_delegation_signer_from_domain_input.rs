@@ -34,6 +34,7 @@ pub struct DisassociateDelegationSignerFromDomainInputBuilder {
 }
 impl DisassociateDelegationSignerFromDomainInputBuilder {
     /// <p>Name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateDelegationSignerFromDomainInputBuilder {
         &self.domain_name
     }
     /// <p>An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html">GetDomainDetail</a>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

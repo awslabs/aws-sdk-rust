@@ -100,6 +100,7 @@ pub struct QueryInputBuilder {
 }
 impl QueryInputBuilder {
     /// <p> The query to be run by Timestream. </p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self

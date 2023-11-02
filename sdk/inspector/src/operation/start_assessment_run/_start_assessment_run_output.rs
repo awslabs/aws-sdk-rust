@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAssessmentRunOutput {
     /// <p>The ARN of the assessment run that has been started.</p>
-    pub assessment_run_arn: ::std::option::Option<::std::string::String>,
+    pub assessment_run_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartAssessmentRunOutput {
     /// <p>The ARN of the assessment run that has been started.</p>
-    pub fn assessment_run_arn(&self) -> ::std::option::Option<&str> {
-        self.assessment_run_arn.as_deref()
+    pub fn assessment_run_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assessment_run_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartAssessmentRunOutput {
@@ -34,6 +35,7 @@ pub struct StartAssessmentRunOutputBuilder {
 }
 impl StartAssessmentRunOutputBuilder {
     /// <p>The ARN of the assessment run that has been started.</p>
+    /// This field is required.
     pub fn assessment_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl StartAssessmentRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartAssessmentRunOutput`](crate::operation::start_assessment_run::StartAssessmentRunOutput).
-    pub fn build(self) -> crate::operation::start_assessment_run::StartAssessmentRunOutput {
-        crate::operation::start_assessment_run::StartAssessmentRunOutput {
-            assessment_run_arn: self.assessment_run_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_run_arn`](crate::operation::start_assessment_run::builders::StartAssessmentRunOutputBuilder::assessment_run_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_assessment_run::StartAssessmentRunOutput {
+            assessment_run_arn: self.assessment_run_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assessment_run_arn",
+                    "assessment_run_arn was not specified but it is required when building StartAssessmentRunOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

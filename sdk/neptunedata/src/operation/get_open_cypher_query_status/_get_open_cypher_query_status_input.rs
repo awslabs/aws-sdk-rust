@@ -27,6 +27,7 @@ pub struct GetOpenCypherQueryStatusInputBuilder {
 }
 impl GetOpenCypherQueryStatusInputBuilder {
     /// <p>The unique ID of the openCypher query for which to retrieve the query status.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self

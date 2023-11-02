@@ -5,30 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitionEvent {
     /// <p>The name of the transition event.</p>
-    pub event_name: ::std::option::Option<::std::string::String>,
+    pub event_name: ::std::string::String,
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
-    pub condition: ::std::option::Option<::std::string::String>,
+    pub condition: ::std::string::String,
     /// <p>The actions to be performed.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>The next state to enter.</p>
-    pub next_state: ::std::option::Option<::std::string::String>,
+    pub next_state: ::std::string::String,
 }
 impl TransitionEvent {
     /// <p>The name of the transition event.</p>
-    pub fn event_name(&self) -> ::std::option::Option<&str> {
-        self.event_name.as_deref()
+    pub fn event_name(&self) -> &str {
+        use std::ops::Deref;
+        self.event_name.deref()
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
-    pub fn condition(&self) -> ::std::option::Option<&str> {
-        self.condition.as_deref()
+    pub fn condition(&self) -> &str {
+        use std::ops::Deref;
+        self.condition.deref()
     }
     /// <p>The actions to be performed.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The next state to enter.</p>
-    pub fn next_state(&self) -> ::std::option::Option<&str> {
-        self.next_state.as_deref()
+    pub fn next_state(&self) -> &str {
+        use std::ops::Deref;
+        self.next_state.deref()
     }
 }
 impl TransitionEvent {
@@ -49,6 +54,7 @@ pub struct TransitionEventBuilder {
 }
 impl TransitionEventBuilder {
     /// <p>The name of the transition event.</p>
+    /// This field is required.
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +69,7 @@ impl TransitionEventBuilder {
         &self.event_name
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
+    /// This field is required.
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl TransitionEventBuilder {
         &self.actions
     }
     /// <p>The next state to enter.</p>
+    /// This field is required.
     pub fn next_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_state = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +119,31 @@ impl TransitionEventBuilder {
         &self.next_state
     }
     /// Consumes the builder and constructs a [`TransitionEvent`](crate::types::TransitionEvent).
-    pub fn build(self) -> crate::types::TransitionEvent {
-        crate::types::TransitionEvent {
-            event_name: self.event_name,
-            condition: self.condition,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_name`](crate::types::builders::TransitionEventBuilder::event_name)
+    /// - [`condition`](crate::types::builders::TransitionEventBuilder::condition)
+    /// - [`next_state`](crate::types::builders::TransitionEventBuilder::next_state)
+    pub fn build(self) -> ::std::result::Result<crate::types::TransitionEvent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TransitionEvent {
+            event_name: self.event_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_name",
+                    "event_name was not specified but it is required when building TransitionEvent",
+                )
+            })?,
+            condition: self.condition.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition",
+                    "condition was not specified but it is required when building TransitionEvent",
+                )
+            })?,
             actions: self.actions,
-            next_state: self.next_state,
-        }
+            next_state: self.next_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "next_state",
+                    "next_state was not specified but it is required when building TransitionEvent",
+                )
+            })?,
+        })
     }
 }

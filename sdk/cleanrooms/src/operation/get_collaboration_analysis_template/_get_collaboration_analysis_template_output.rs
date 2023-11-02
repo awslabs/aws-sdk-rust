@@ -34,6 +34,7 @@ pub struct GetCollaborationAnalysisTemplateOutputBuilder {
 }
 impl GetCollaborationAnalysisTemplateOutputBuilder {
     /// <p>The analysis template within a collaboration.</p>
+    /// This field is required.
     pub fn collaboration_analysis_template(mut self, input: crate::types::CollaborationAnalysisTemplate) -> Self {
         self.collaboration_analysis_template = ::std::option::Option::Some(input);
         self

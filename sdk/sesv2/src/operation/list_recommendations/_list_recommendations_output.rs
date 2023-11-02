@@ -12,8 +12,10 @@ pub struct ListRecommendationsOutput {
 }
 impl ListRecommendationsOutput {
     /// <p>The recommendations applicable to your account.</p>
-    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::Recommendation]> {
-        self.recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
+    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
+        self.recommendations.as_deref().unwrap_or_default()
     }
     /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

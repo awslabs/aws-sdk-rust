@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChildShard {
     /// <p>The shard ID of the existing child shard of the current shard.</p>
-    pub shard_id: ::std::option::Option<::std::string::String>,
+    pub shard_id: ::std::string::String,
     /// <p>The current shard that is the parent of the existing child shard.</p>
-    pub parent_shards: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub parent_shards: ::std::vec::Vec<::std::string::String>,
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
     pub hash_key_range: ::std::option::Option<crate::types::HashKeyRange>,
 }
 impl ChildShard {
     /// <p>The shard ID of the existing child shard of the current shard.</p>
-    pub fn shard_id(&self) -> ::std::option::Option<&str> {
-        self.shard_id.as_deref()
+    pub fn shard_id(&self) -> &str {
+        use std::ops::Deref;
+        self.shard_id.deref()
     }
     /// <p>The current shard that is the parent of the existing child shard.</p>
-    pub fn parent_shards(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parent_shards.as_deref()
+    pub fn parent_shards(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.parent_shards.deref()
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
     pub fn hash_key_range(&self) -> ::std::option::Option<&crate::types::HashKeyRange> {
@@ -42,6 +44,7 @@ pub struct ChildShardBuilder {
 }
 impl ChildShardBuilder {
     /// <p>The shard ID of the existing child shard of the current shard.</p>
+    /// This field is required.
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl ChildShardBuilder {
         &self.parent_shards
     }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
+    /// This field is required.
     pub fn hash_key_range(mut self, input: crate::types::HashKeyRange) -> Self {
         self.hash_key_range = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl ChildShardBuilder {
         &self.hash_key_range
     }
     /// Consumes the builder and constructs a [`ChildShard`](crate::types::ChildShard).
-    pub fn build(self) -> crate::types::ChildShard {
-        crate::types::ChildShard {
-            shard_id: self.shard_id,
-            parent_shards: self.parent_shards,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`shard_id`](crate::types::builders::ChildShardBuilder::shard_id)
+    /// - [`parent_shards`](crate::types::builders::ChildShardBuilder::parent_shards)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChildShard, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChildShard {
+            shard_id: self.shard_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "shard_id",
+                    "shard_id was not specified but it is required when building ChildShard",
+                )
+            })?,
+            parent_shards: self.parent_shards.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parent_shards",
+                    "parent_shards was not specified but it is required when building ChildShard",
+                )
+            })?,
             hash_key_range: self.hash_key_range,
-        }
+        })
     }
 }

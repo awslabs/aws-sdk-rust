@@ -32,8 +32,10 @@ impl UpdateActionInput {
         self.properties.as_ref()
     }
     /// <p>A list of properties to remove.</p>
-    pub fn properties_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.properties_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties_to_remove.is_none()`.
+    pub fn properties_to_remove(&self) -> &[::std::string::String] {
+        self.properties_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateActionInput {
@@ -55,6 +57,7 @@ pub struct UpdateActionInputBuilder {
 }
 impl UpdateActionInputBuilder {
     /// <p>The name of the action to update.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self

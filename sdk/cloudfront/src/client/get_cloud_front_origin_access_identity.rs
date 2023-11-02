@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCloudFrontOriginAccessIdentity`](crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityFluentBuilder::set_id): <p>The identity's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityFluentBuilder::set_id):<br>required: **true**<br><p>The identity's ID.</p><br>
     /// - On success, responds with [`GetCloudFrontOriginAccessIdentityOutput`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput) with field(s):
     ///   - [`cloud_front_origin_access_identity(Option<CloudFrontOriginAccessIdentity>)`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput::cloud_front_origin_access_identity): <p>The origin access identity's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>

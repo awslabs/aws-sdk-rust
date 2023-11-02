@@ -41,6 +41,7 @@ pub struct PreviewAgentsInputBuilder {
 }
 impl PreviewAgentsInputBuilder {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
+    /// This field is required.
     pub fn preview_agents_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preview_agents_arn = ::std::option::Option::Some(input.into());
         self

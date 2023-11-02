@@ -238,6 +238,7 @@ impl Mpeg2SettingsBuilder {
         &self.fixed_afd
     }
     /// description": "The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
+    /// This field is required.
     pub fn framerate_denominator(mut self, input: i32) -> Self {
         self.framerate_denominator = ::std::option::Option::Some(input);
         self
@@ -252,6 +253,7 @@ impl Mpeg2SettingsBuilder {
         &self.framerate_denominator
     }
     /// The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
+    /// This field is required.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
         self.framerate_numerator = ::std::option::Option::Some(input);
         self

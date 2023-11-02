@@ -49,6 +49,7 @@ impl DataReplicationMetadataOutputBuilder {
         &self.data_replication_counterpart
     }
     /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
+    /// This field is required.
     pub fn data_replication_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_replication_role = ::std::option::Option::Some(input.into());
         self

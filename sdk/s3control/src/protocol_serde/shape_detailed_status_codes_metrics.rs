@@ -13,6 +13,7 @@ pub fn ser_detailed_status_codes_metrics(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_detailed_status_codes_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DetailedStatusCodesMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {

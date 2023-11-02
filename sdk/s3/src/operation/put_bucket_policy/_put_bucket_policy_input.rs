@@ -66,6 +66,7 @@ pub struct PutBucketPolicyInputBuilder {
 }
 impl PutBucketPolicyInputBuilder {
     /// <p>The name of the bucket.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl PutBucketPolicyInputBuilder {
         &self.confirm_remove_self_bucket_access
     }
     /// <p>The bucket policy as a JSON document.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

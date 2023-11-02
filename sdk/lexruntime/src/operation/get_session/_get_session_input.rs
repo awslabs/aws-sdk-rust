@@ -50,6 +50,7 @@ pub struct GetSessionInputBuilder {
 }
 impl GetSessionInputBuilder {
     /// <p>The name of the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl GetSessionInputBuilder {
         &self.bot_name
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
+    /// This field is required.
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl GetSessionInputBuilder {
         &self.bot_alias
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

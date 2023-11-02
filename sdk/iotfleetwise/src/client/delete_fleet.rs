@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFleet`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet_id): <p> The ID of the fleet to delete. </p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet_id) / [`set_fleet_id(impl Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p> The ID of the fleet to delete. </p><br>
     /// - On success, responds with [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_fleet::DeleteFleetOutput::id): <p>The ID of the deleted fleet.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_fleet::DeleteFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted fleet.</p>

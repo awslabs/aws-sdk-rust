@@ -30,8 +30,10 @@ impl UpdateReportGroupInput {
     }
     /// <p> An updated list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UpdateReportGroupInput {
@@ -51,6 +53,7 @@ pub struct UpdateReportGroupInputBuilder {
 }
 impl UpdateReportGroupInputBuilder {
     /// <p> The ARN of the report group to update. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

@@ -78,7 +78,7 @@ pub fn de_get_health_check_http_response(
         output = crate::protocol_serde::shape_get_health_check::de_get_health_check(_response_body, output)
             .map_err(crate::operation::get_health_check::GetHealthCheckError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_health_check_output_correct_errors(output).build()
     })
 }
 

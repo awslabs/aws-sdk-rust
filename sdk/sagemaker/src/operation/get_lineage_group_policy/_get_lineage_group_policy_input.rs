@@ -27,6 +27,7 @@ pub struct GetLineageGroupPolicyInputBuilder {
 }
 impl GetLineageGroupPolicyInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    /// This field is required.
     pub fn lineage_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lineage_group_name = ::std::option::Option::Some(input.into());
         self

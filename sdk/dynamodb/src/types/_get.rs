@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Get {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
-    pub key: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
+    pub key: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     /// <p>The name of the table from which to retrieve the specified item.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
     pub projection_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more substitution tokens for attribute names in the ProjectionExpression parameter.</p>
@@ -15,12 +15,13 @@ pub struct Get {
 }
 impl Get {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
-    pub fn key(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
-        self.key.as_ref()
+    pub fn key(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue> {
+        &self.key
     }
     /// <p>The name of the table from which to retrieve the specified item.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
     pub fn projection_expression(&self) -> ::std::option::Option<&str> {
@@ -69,6 +70,7 @@ impl GetBuilder {
         &self.key
     }
     /// <p>The name of the table from which to retrieve the specified item.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -126,12 +128,22 @@ impl GetBuilder {
         &self.expression_attribute_names
     }
     /// Consumes the builder and constructs a [`Get`](crate::types::Get).
-    pub fn build(self) -> crate::types::Get {
-        crate::types::Get {
-            key: self.key,
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::GetBuilder::key)
+    /// - [`table_name`](crate::types::builders::GetBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Get, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Get {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("key", "key was not specified but it is required when building Get")
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building Get",
+                )
+            })?,
             projection_expression: self.projection_expression,
             expression_attribute_names: self.expression_attribute_names,
-        }
+        })
     }
 }

@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApplication`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::set_application_id): <p>The unique Id of the web application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique Id of the web application.</p><br>
     /// - On success, responds with [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::application_id): <p>The unique Id of the web application.</p>
-    ///   - [`application_arn(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::application_arn): <p>The ARN of the web application.</p>
-    ///   - [`application_name(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::application_name): <p>The name of the web application.</p>
+    ///   - [`application_id(String)`](crate::operation::describe_application::DescribeApplicationOutput::application_id): <p>The unique Id of the web application.</p>
+    ///   - [`application_arn(String)`](crate::operation::describe_application::DescribeApplicationOutput::application_arn): <p>The ARN of the web application.</p>
+    ///   - [`application_name(String)`](crate::operation::describe_application::DescribeApplicationOutput::application_name): <p>The name of the web application.</p>
     ///   - [`application_description(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::application_description): <p>An optional description of the web application.</p>
-    ///   - [`application_url(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::application_url): <p>The URL of the web application.</p>
-    ///   - [`application_state(Option<ApplicationState>)`](crate::operation::describe_application::DescribeApplicationOutput::application_state): <p>The current state of the web application.</p>
+    ///   - [`application_url(String)`](crate::operation::describe_application::DescribeApplicationOutput::application_url): <p>The URL of the web application.</p>
+    ///   - [`application_state(ApplicationState)`](crate::operation::describe_application::DescribeApplicationOutput::application_state): <p>The current state of the web application.</p>
     ///   - [`application_creation_date(i64)`](crate::operation::describe_application::DescribeApplicationOutput::application_creation_date): <p>The date (in Unix epoch time) when the application was created.</p>
     ///   - [`application_last_update_date(i64)`](crate::operation::describe_application::DescribeApplicationOutput::application_last_update_date): <p>The date (in Unix epoch time) when the application was last updated.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::role_arn): <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
+    ///   - [`role_arn(String)`](crate::operation::describe_application::DescribeApplicationOutput::role_arn): <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
     ///   - [`sso_client_id(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::sso_client_id): <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::error_message): <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_application::DescribeApplicationOutput::tags): <p>A set of key/value pairs that you can use to manage the web application resource.</p>

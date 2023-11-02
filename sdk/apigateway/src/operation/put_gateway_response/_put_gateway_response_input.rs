@@ -56,6 +56,7 @@ pub struct PutGatewayResponseInputBuilder {
 }
 impl PutGatewayResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl PutGatewayResponseInputBuilder {
         &self.rest_api_id
     }
     /// <p>The response type of the associated GatewayResponse</p>
+    /// This field is required.
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.response_type = ::std::option::Option::Some(input);
         self

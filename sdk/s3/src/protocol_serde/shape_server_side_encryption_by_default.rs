@@ -5,18 +5,19 @@ pub fn ser_server_side_encryption_by_default(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.sse_algorithm {
+    {
         let mut inner_writer = scope.start_el("SSEAlgorithm").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.sse_algorithm.as_str());
     }
-    if let Some(var_2) = &input.kms_master_key_id {
+    if let Some(var_1) = &input.kms_master_key_id {
         let mut inner_writer = scope.start_el("KMSMasterKeyID").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(var_1.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_server_side_encryption_by_default(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ServerSideEncryptionByDefault, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_server_side_encryption_by_default(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SSEAlgorithm") /* SSEAlgorithm com.amazonaws.s3#ServerSideEncryptionByDefault$SSEAlgorithm */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<crate::types::ServerSideEncryption, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ServerSideEncryption::from(
@@ -35,11 +36,11 @@ pub fn de_server_side_encryption_by_default(
                         ?
                     )
                 ;
-                builder = builder.set_sse_algorithm(var_3);
+                builder = builder.set_sse_algorithm(var_2);
             }
             ,
             s if s.matches("KMSMasterKeyID") /* KMSMasterKeyID com.amazonaws.s3#ServerSideEncryptionByDefault$KMSMasterKeyID */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -48,11 +49,13 @@ pub fn de_server_side_encryption_by_default(
                         ?
                     )
                 ;
-                builder = builder.set_kms_master_key_id(var_4);
+                builder = builder.set_kms_master_key_id(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::server_side_encryption_by_default_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCustomDataIdentifier`](crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_custom_data_identifier::builders::GetCustomDataIdentifierFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier for the Amazon Macie resource that the request applies to.</p><br>
     /// - On success, responds with [`GetCustomDataIdentifierOutput`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput::arn): <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>

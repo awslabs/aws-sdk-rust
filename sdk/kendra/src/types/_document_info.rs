@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentInfo {
     /// <p>The identifier of the document.</p>
-    pub document_id: ::std::option::Option<::std::string::String>,
+    pub document_id: ::std::string::String,
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
     /// <ul>
@@ -23,8 +23,9 @@ pub struct DocumentInfo {
 }
 impl DocumentInfo {
     /// <p>The identifier of the document.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
-        self.document_id.as_deref()
+    pub fn document_id(&self) -> &str {
+        use std::ops::Deref;
+        self.document_id.deref()
     }
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
@@ -39,8 +40,10 @@ impl DocumentInfo {
     /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
     /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::DocumentAttribute] {
+        self.attributes.as_deref().unwrap_or_default()
     }
 }
 impl DocumentInfo {
@@ -59,6 +62,7 @@ pub struct DocumentInfoBuilder {
 }
 impl DocumentInfoBuilder {
     /// <p>The identifier of the document.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self
@@ -129,10 +133,17 @@ impl DocumentInfoBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`DocumentInfo`](crate::types::DocumentInfo).
-    pub fn build(self) -> crate::types::DocumentInfo {
-        crate::types::DocumentInfo {
-            document_id: self.document_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_id`](crate::types::builders::DocumentInfoBuilder::document_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentInfo {
+            document_id: self.document_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_id",
+                    "document_id was not specified but it is required when building DocumentInfo",
+                )
+            })?,
             attributes: self.attributes,
-        }
+        })
     }
 }

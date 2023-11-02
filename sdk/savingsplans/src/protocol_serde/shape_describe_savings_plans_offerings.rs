@@ -29,11 +29,10 @@ pub fn de_describe_savings_plans_offerings_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                         .map_err(crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -45,11 +44,10 @@ pub fn de_describe_savings_plans_offerings_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError::generic(generic),

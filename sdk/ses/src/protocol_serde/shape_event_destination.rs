@@ -6,43 +6,44 @@ pub fn ser_event_destination(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
-    if let Some(var_2) = &input.name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.name);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Enabled");
+    let mut scope_2 = writer.prefix("Enabled");
     if input.enabled {
-        scope_3.boolean(input.enabled);
+        scope_2.boolean(input.enabled);
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("MatchingEventTypes");
-    if let Some(var_5) = &input.matching_event_types {
-        let mut list_7 = scope_4.start_list(false, None);
-        for item_6 in var_5 {
+    let mut scope_3 = writer.prefix("MatchingEventTypes");
+    {
+        let mut list_5 = scope_3.start_list(false, None);
+        for item_4 in &input.matching_event_types {
             #[allow(unused_mut)]
-            let mut entry_8 = list_7.entry();
-            entry_8.string(item_6.as_str());
+            let mut entry_6 = list_5.entry();
+            entry_6.string(item_4.as_str());
         }
-        list_7.finish();
+        list_5.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("KinesisFirehoseDestination");
-    if let Some(var_10) = &input.kinesis_firehose_destination {
-        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(scope_9, var_10)?;
+    let mut scope_7 = writer.prefix("KinesisFirehoseDestination");
+    if let Some(var_8) = &input.kinesis_firehose_destination {
+        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(scope_7, var_8)?;
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("CloudWatchDestination");
-    if let Some(var_12) = &input.cloud_watch_destination {
-        crate::protocol_serde::shape_cloud_watch_destination::ser_cloud_watch_destination(scope_11, var_12)?;
+    let mut scope_9 = writer.prefix("CloudWatchDestination");
+    if let Some(var_10) = &input.cloud_watch_destination {
+        crate::protocol_serde::shape_cloud_watch_destination::ser_cloud_watch_destination(scope_9, var_10)?;
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("SNSDestination");
-    if let Some(var_14) = &input.sns_destination {
-        crate::protocol_serde::shape_sns_destination::ser_sns_destination(scope_13, var_14)?;
+    let mut scope_11 = writer.prefix("SNSDestination");
+    if let Some(var_12) = &input.sns_destination {
+        crate::protocol_serde::shape_sns_destination::ser_sns_destination(scope_11, var_12)?;
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_event_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::EventDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -51,7 +52,7 @@ pub fn de_event_destination(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.ses#EventDestination$Name */ =>  {
-                let var_15 =
+                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -60,11 +61,11 @@ pub fn de_event_destination(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_15);
+                builder = builder.set_name(var_13);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.ses#EventDestination$Enabled */ =>  {
-                let var_16 =
+                let var_14 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -75,51 +76,53 @@ pub fn de_event_destination(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_16);
+                builder = builder.set_enabled(var_14);
             }
             ,
             s if s.matches("MatchingEventTypes") /* MatchingEventTypes com.amazonaws.ses#EventDestination$MatchingEventTypes */ =>  {
-                let var_17 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_event_types::de_event_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_matching_event_types(var_17);
+                builder = builder.set_matching_event_types(var_15);
             }
             ,
             s if s.matches("KinesisFirehoseDestination") /* KinesisFirehoseDestination com.amazonaws.ses#EventDestination$KinesisFirehoseDestination */ =>  {
-                let var_18 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_kinesis_firehose_destination::de_kinesis_firehose_destination(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_kinesis_firehose_destination(var_18);
+                builder = builder.set_kinesis_firehose_destination(var_16);
             }
             ,
             s if s.matches("CloudWatchDestination") /* CloudWatchDestination com.amazonaws.ses#EventDestination$CloudWatchDestination */ =>  {
-                let var_19 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_cloud_watch_destination::de_cloud_watch_destination(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cloud_watch_destination(var_19);
+                builder = builder.set_cloud_watch_destination(var_17);
             }
             ,
             s if s.matches("SNSDestination") /* SNSDestination com.amazonaws.ses#EventDestination$SNSDestination */ =>  {
-                let var_20 =
+                let var_18 =
                     Some(
                         crate::protocol_serde::shape_sns_destination::de_sns_destination(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_sns_destination(var_20);
+                builder = builder.set_sns_destination(var_18);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::event_destination_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

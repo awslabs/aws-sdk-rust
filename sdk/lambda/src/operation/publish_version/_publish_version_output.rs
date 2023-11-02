@@ -156,8 +156,10 @@ impl PublishVersionOutput {
         self.revision_id.as_deref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    pub fn layers(&self) -> ::std::option::Option<&[crate::types::Layer]> {
-        self.layers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layers.is_none()`.
+    pub fn layers(&self) -> &[crate::types::Layer] {
+        self.layers.as_deref().unwrap_or_default()
     }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
@@ -184,8 +186,10 @@ impl PublishVersionOutput {
         self.last_update_status_reason_code.as_ref()
     }
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    pub fn file_system_configs(&self) -> ::std::option::Option<&[crate::types::FileSystemConfig]> {
-        self.file_system_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_configs.is_none()`.
+    pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
+        self.file_system_configs.as_deref().unwrap_or_default()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub fn package_type(&self) -> ::std::option::Option<&crate::types::PackageType> {
@@ -204,8 +208,10 @@ impl PublishVersionOutput {
         self.signing_job_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> ::std::option::Option<&[crate::types::Architecture]> {
-        self.architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
+    pub fn architectures(&self) -> &[crate::types::Architecture] {
+        self.architectures.as_deref().unwrap_or_default()
     }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {

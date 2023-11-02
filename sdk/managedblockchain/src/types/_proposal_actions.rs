@@ -12,12 +12,16 @@ pub struct ProposalActions {
 }
 impl ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
-    pub fn invitations(&self) -> ::std::option::Option<&[crate::types::InviteAction]> {
-        self.invitations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invitations.is_none()`.
+    pub fn invitations(&self) -> &[crate::types::InviteAction] {
+        self.invitations.as_deref().unwrap_or_default()
     }
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
-    pub fn removals(&self) -> ::std::option::Option<&[crate::types::RemoveAction]> {
-        self.removals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.removals.is_none()`.
+    pub fn removals(&self) -> &[crate::types::RemoveAction] {
+        self.removals.as_deref().unwrap_or_default()
     }
 }
 impl ProposalActions {

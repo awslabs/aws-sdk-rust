@@ -3,17 +3,17 @@ pub fn ser_new_custom_vocabulary_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NewCustomVocabularyItem,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.phrase {
-        object.key("phrase").string(var_1.as_str());
+    {
+        object.key("phrase").string(input.phrase.as_str());
     }
-    if let Some(var_2) = &input.weight {
+    if let Some(var_1) = &input.weight {
         object.key("weight").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.display_as {
-        object.key("displayAs").string(var_3.as_str());
+    if let Some(var_2) = &input.display_as {
+        object.key("displayAs").string(var_2.as_str());
     }
     Ok(())
 }

@@ -5,25 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
-    pub snapshot_name: ::std::option::Option<::std::string::String>,
+    pub snapshot_name: ::std::string::String,
     /// <p>The status of the application snapshot.</p>
-    pub snapshot_status: ::std::option::Option<crate::types::SnapshotStatus>,
+    pub snapshot_status: crate::types::SnapshotStatus,
     /// <p>The current application version ID when the snapshot was created.</p>
-    pub application_version_id: ::std::option::Option<i64>,
+    pub application_version_id: i64,
     /// <p>The timestamp of the application snapshot.</p>
     pub snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
-        self.snapshot_name.as_deref()
+    pub fn snapshot_name(&self) -> &str {
+        use std::ops::Deref;
+        self.snapshot_name.deref()
     }
     /// <p>The status of the application snapshot.</p>
-    pub fn snapshot_status(&self) -> ::std::option::Option<&crate::types::SnapshotStatus> {
-        self.snapshot_status.as_ref()
+    pub fn snapshot_status(&self) -> &crate::types::SnapshotStatus {
+        &self.snapshot_status
     }
     /// <p>The current application version ID when the snapshot was created.</p>
-    pub fn application_version_id(&self) -> ::std::option::Option<i64> {
+    pub fn application_version_id(&self) -> i64 {
         self.application_version_id
     }
     /// <p>The timestamp of the application snapshot.</p>
@@ -49,6 +50,7 @@ pub struct SnapshotDetailsBuilder {
 }
 impl SnapshotDetailsBuilder {
     /// <p>The identifier for the application snapshot.</p>
+    /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl SnapshotDetailsBuilder {
         &self.snapshot_name
     }
     /// <p>The status of the application snapshot.</p>
+    /// This field is required.
     pub fn snapshot_status(mut self, input: crate::types::SnapshotStatus) -> Self {
         self.snapshot_status = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl SnapshotDetailsBuilder {
         &self.snapshot_status
     }
     /// <p>The current application version ID when the snapshot was created.</p>
+    /// This field is required.
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,31 @@ impl SnapshotDetailsBuilder {
         &self.snapshot_creation_timestamp
     }
     /// Consumes the builder and constructs a [`SnapshotDetails`](crate::types::SnapshotDetails).
-    pub fn build(self) -> crate::types::SnapshotDetails {
-        crate::types::SnapshotDetails {
-            snapshot_name: self.snapshot_name,
-            snapshot_status: self.snapshot_status,
-            application_version_id: self.application_version_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`snapshot_name`](crate::types::builders::SnapshotDetailsBuilder::snapshot_name)
+    /// - [`snapshot_status`](crate::types::builders::SnapshotDetailsBuilder::snapshot_status)
+    /// - [`application_version_id`](crate::types::builders::SnapshotDetailsBuilder::application_version_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SnapshotDetails {
+            snapshot_name: self.snapshot_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshot_name",
+                    "snapshot_name was not specified but it is required when building SnapshotDetails",
+                )
+            })?,
+            snapshot_status: self.snapshot_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "snapshot_status",
+                    "snapshot_status was not specified but it is required when building SnapshotDetails",
+                )
+            })?,
+            application_version_id: self.application_version_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version_id",
+                    "application_version_id was not specified but it is required when building SnapshotDetails",
+                )
+            })?,
             snapshot_creation_timestamp: self.snapshot_creation_timestamp,
-        }
+        })
     }
 }

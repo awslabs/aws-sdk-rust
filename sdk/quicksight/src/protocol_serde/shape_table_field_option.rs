@@ -3,23 +3,23 @@ pub fn ser_table_field_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableFieldOption,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.width {
-        object.key("Width").string(var_2.as_str());
+    if let Some(var_1) = &input.width {
+        object.key("Width").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.custom_label {
-        object.key("CustomLabel").string(var_3.as_str());
+    if let Some(var_2) = &input.custom_label {
+        object.key("CustomLabel").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.visibility {
-        object.key("Visibility").string(var_4.as_str());
+    if let Some(var_3) = &input.visibility {
+        object.key("Visibility").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.url_styling {
+    if let Some(var_4) = &input.url_styling {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("URLStyling").start_object();
-        crate::protocol_serde::shape_table_field_url_configuration::ser_table_field_url_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("URLStyling").start_object();
+        crate::protocol_serde::shape_table_field_url_configuration::ser_table_field_url_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -82,7 +82,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::table_field_option_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

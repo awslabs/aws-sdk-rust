@@ -34,6 +34,7 @@ pub struct ListTemplatesOutputBuilder {
 }
 impl ListTemplatesOutputBuilder {
     /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
+    /// This field is required.
     pub fn templates_response(mut self, input: crate::types::TemplatesResponse) -> Self {
         self.templates_response = ::std::option::Option::Some(input);
         self

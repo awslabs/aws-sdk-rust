@@ -9,21 +9,21 @@ pub fn ser_compliance_item_entry(
     if let Some(var_2) = &input.title {
         object.key("Title").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.severity {
-        object.key("Severity").string(var_3.as_str());
+    {
+        object.key("Severity").string(input.severity.as_str());
     }
-    if let Some(var_4) = &input.status {
-        object.key("Status").string(var_4.as_str());
+    {
+        object.key("Status").string(input.status.as_str());
     }
-    if let Some(var_5) = &input.details {
+    if let Some(var_3) = &input.details {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Details").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_4 = object.key("Details").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_6.finish();
+        object_4.finish();
     }
     Ok(())
 }

@@ -16,8 +16,10 @@ impl DescribeReplicationTaskIndividualAssessmentsOutput {
         self.marker.as_deref()
     }
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
-    pub fn replication_task_individual_assessments(&self) -> ::std::option::Option<&[crate::types::ReplicationTaskIndividualAssessment]> {
-        self.replication_task_individual_assessments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_task_individual_assessments.is_none()`.
+    pub fn replication_task_individual_assessments(&self) -> &[crate::types::ReplicationTaskIndividualAssessment] {
+        self.replication_task_individual_assessments.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationTaskIndividualAssessmentsOutput {

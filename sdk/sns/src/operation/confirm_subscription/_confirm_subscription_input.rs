@@ -42,6 +42,7 @@ pub struct ConfirmSubscriptionInputBuilder {
 }
 impl ConfirmSubscriptionInputBuilder {
     /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ConfirmSubscriptionInputBuilder {
         &self.topic_arn
     }
     /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self

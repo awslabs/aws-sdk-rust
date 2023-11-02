@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfiguredTableInput {
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub configured_table_identifier: ::std::option::Option<::std::string::String>,
+    pub configured_table_identifier: ::std::string::String,
 }
 impl GetConfiguredTableInput {
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
-        self.configured_table_identifier.as_deref()
+    pub fn configured_table_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.configured_table_identifier.deref()
     }
 }
 impl GetConfiguredTableInput {
@@ -27,6 +28,7 @@ pub struct GetConfiguredTableInputBuilder {
 }
 impl GetConfiguredTableInputBuilder {
     /// <p>The unique ID for the configured table to retrieve.</p>
+    /// This field is required.
     pub fn configured_table_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configured_table_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl GetConfiguredTableInputBuilder {
         &self.configured_table_identifier
     }
     /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configured_table_identifier`](crate::operation::get_configured_table::builders::GetConfiguredTableInputBuilder::configured_table_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_configured_table::GetConfiguredTableInput {
-            configured_table_identifier: self.configured_table_identifier,
+            configured_table_identifier: self.configured_table_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configured_table_identifier",
+                    "configured_table_identifier was not specified but it is required when building GetConfiguredTableInput",
+                )
+            })?,
         })
     }
 }

@@ -48,6 +48,7 @@ pub struct CreateTemplateAliasInputBuilder {
 }
 impl CreateTemplateAliasInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateTemplateAliasInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateTemplateAliasInputBuilder {
         &self.template_id
     }
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
+    /// This field is required.
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateTemplateAliasInputBuilder {
         &self.alias_name
     }
     /// <p>The version number of the template.</p>
+    /// This field is required.
     pub fn template_version_number(mut self, input: i64) -> Self {
         self.template_version_number = ::std::option::Option::Some(input);
         self

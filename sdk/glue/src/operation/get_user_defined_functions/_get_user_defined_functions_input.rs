@@ -83,6 +83,7 @@ impl GetUserDefinedFunctionsInputBuilder {
         &self.database_name
     }
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
+    /// This field is required.
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
         self

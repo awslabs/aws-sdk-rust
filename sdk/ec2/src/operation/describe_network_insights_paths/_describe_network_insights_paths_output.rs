@@ -11,8 +11,10 @@ pub struct DescribeNetworkInsightsPathsOutput {
 }
 impl DescribeNetworkInsightsPathsOutput {
     /// <p>Information about the paths.</p>
-    pub fn network_insights_paths(&self) -> ::std::option::Option<&[crate::types::NetworkInsightsPath]> {
-        self.network_insights_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_insights_paths.is_none()`.
+    pub fn network_insights_paths(&self) -> &[crate::types::NetworkInsightsPath] {
+        self.network_insights_paths.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct DeleteRolePermissionsBoundaryInputBuilder {
 }
 impl DeleteRolePermissionsBoundaryInputBuilder {
     /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self

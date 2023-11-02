@@ -10,8 +10,10 @@ pub struct ValidateConfigurationSettingsOutput {
 }
 impl ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::ValidationMessage]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::ValidationMessage] {
+        self.messages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ValidateConfigurationSettingsOutput {

@@ -81,16 +81,22 @@ impl ProvisionedProductPlanDetails {
         self.updated_time.as_ref()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(&self) -> ::std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
-        self.provisioning_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
+    pub fn provisioning_parameters(&self) -> &[crate::types::UpdateProvisioningParameter] {
+        self.provisioning_parameters.as_deref().unwrap_or_default()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The status message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {

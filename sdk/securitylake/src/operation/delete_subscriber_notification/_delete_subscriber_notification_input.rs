@@ -27,6 +27,7 @@ pub struct DeleteSubscriberNotificationInputBuilder {
 }
 impl DeleteSubscriberNotificationInputBuilder {
     /// <p>The ID of the Security Lake subscriber account.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self

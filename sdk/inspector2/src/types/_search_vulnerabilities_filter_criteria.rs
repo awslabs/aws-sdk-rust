@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesFilterCriteria {
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub vulnerability_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vulnerability_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl SearchVulnerabilitiesFilterCriteria {
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn vulnerability_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vulnerability_ids.as_deref()
+    pub fn vulnerability_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.vulnerability_ids.deref()
     }
 }
 impl SearchVulnerabilitiesFilterCriteria {
@@ -48,9 +49,16 @@ impl SearchVulnerabilitiesFilterCriteriaBuilder {
         &self.vulnerability_ids
     }
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).
-    pub fn build(self) -> crate::types::SearchVulnerabilitiesFilterCriteria {
-        crate::types::SearchVulnerabilitiesFilterCriteria {
-            vulnerability_ids: self.vulnerability_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vulnerability_ids`](crate::types::builders::SearchVulnerabilitiesFilterCriteriaBuilder::vulnerability_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchVulnerabilitiesFilterCriteria, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchVulnerabilitiesFilterCriteria {
+            vulnerability_ids: self.vulnerability_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vulnerability_ids",
+                    "vulnerability_ids was not specified but it is required when building SearchVulnerabilitiesFilterCriteria",
+                )
+            })?,
+        })
     }
 }

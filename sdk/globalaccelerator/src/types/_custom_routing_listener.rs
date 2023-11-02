@@ -17,8 +17,10 @@ impl CustomRoutingListener {
     }
     /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
+    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
+        self.port_ranges.as_deref().unwrap_or_default()
     }
 }
 impl CustomRoutingListener {

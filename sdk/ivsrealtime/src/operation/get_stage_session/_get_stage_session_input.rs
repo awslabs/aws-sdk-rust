@@ -34,6 +34,7 @@ pub struct GetStageSessionInputBuilder {
 }
 impl GetStageSessionInputBuilder {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetStageSessionInputBuilder {
         &self.stage_arn
     }
     /// <p>ID of a session within the stage.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

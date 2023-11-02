@@ -41,6 +41,7 @@ pub struct ListEdgeAgentConfigurationsInputBuilder {
 }
 impl ListEdgeAgentConfigurationsInputBuilder {
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
+    /// This field is required.
     pub fn hub_device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_device_arn = ::std::option::Option::Some(input.into());
         self

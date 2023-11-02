@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl GetPlaybackConfigurationInput {
     /// <p>The identifier for the playback configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl GetPlaybackConfigurationInput {
@@ -27,6 +28,7 @@ pub struct GetPlaybackConfigurationInputBuilder {
 }
 impl GetPlaybackConfigurationInputBuilder {
     /// <p>The identifier for the playback configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,21 @@ impl GetPlaybackConfigurationInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetPlaybackConfigurationInput`](crate::operation::get_playback_configuration::GetPlaybackConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_playback_configuration::GetPlaybackConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::get_playback_configuration::GetPlaybackConfigurationInput { name: self.name })
+        ::std::result::Result::Ok(crate::operation::get_playback_configuration::GetPlaybackConfigurationInput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetPlaybackConfigurationInput",
+                )
+            })?,
+        })
     }
 }

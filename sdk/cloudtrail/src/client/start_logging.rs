@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartLogging`](crate::operation::start_logging::builders::StartLoggingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_logging::builders::StartLoggingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_logging::builders::StartLoggingFluentBuilder::set_name): <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`name(impl Into<String>)`](crate::operation::start_logging::builders::StartLoggingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_logging::builders::StartLoggingFluentBuilder::set_name):<br>required: **true**<br><p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p><br>
     /// - On success, responds with [`StartLoggingOutput`](crate::operation::start_logging::StartLoggingOutput)
     /// - On failure, responds with [`SdkError<StartLoggingError>`](crate::operation::start_logging::StartLoggingError)
     pub fn start_logging(&self) -> crate::operation::start_logging::builders::StartLoggingFluentBuilder {

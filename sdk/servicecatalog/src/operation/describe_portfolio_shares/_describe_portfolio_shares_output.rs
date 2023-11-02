@@ -15,8 +15,10 @@ impl DescribePortfolioSharesOutput {
         self.next_page_token.as_deref()
     }
     /// <p>Summaries about each of the portfolio shares.</p>
-    pub fn portfolio_share_details(&self) -> ::std::option::Option<&[crate::types::PortfolioShareDetail]> {
-        self.portfolio_share_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.portfolio_share_details.is_none()`.
+    pub fn portfolio_share_details(&self) -> &[crate::types::PortfolioShareDetail] {
+        self.portfolio_share_details.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePortfolioSharesOutput {

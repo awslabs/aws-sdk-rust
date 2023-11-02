@@ -28,12 +28,16 @@ impl UpdateFeatureMetadataInput {
         self.description.as_deref()
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn parameter_additions(&self) -> ::std::option::Option<&[crate::types::FeatureParameter]> {
-        self.parameter_additions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_additions.is_none()`.
+    pub fn parameter_additions(&self) -> &[crate::types::FeatureParameter] {
+        self.parameter_additions.as_deref().unwrap_or_default()
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn parameter_removals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parameter_removals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_removals.is_none()`.
+    pub fn parameter_removals(&self) -> &[::std::string::String] {
+        self.parameter_removals.as_deref().unwrap_or_default()
     }
 }
 impl UpdateFeatureMetadataInput {
@@ -55,6 +59,7 @@ pub struct UpdateFeatureMetadataInputBuilder {
 }
 impl UpdateFeatureMetadataInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl UpdateFeatureMetadataInputBuilder {
         &self.feature_group_name
     }
     /// <p>The name of the feature that you're updating.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self

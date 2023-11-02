@@ -3,17 +3,17 @@ pub fn ser_role_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoleMapping,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.ambiguous_role_resolution {
-        object.key("AmbiguousRoleResolution").string(var_2.as_str());
+    if let Some(var_1) = &input.ambiguous_role_resolution {
+        object.key("AmbiguousRoleResolution").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.rules_configuration {
+    if let Some(var_2) = &input.rules_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("RulesConfiguration").start_object();
-        crate::protocol_serde::shape_rules_configuration_type::ser_rules_configuration_type(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("RulesConfiguration").start_object();
+        crate::protocol_serde::shape_rules_configuration_type::ser_rules_configuration_type(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::role_mapping_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

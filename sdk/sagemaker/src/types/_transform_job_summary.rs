@@ -70,6 +70,7 @@ pub struct TransformJobSummaryBuilder {
 }
 impl TransformJobSummaryBuilder {
     /// <p>The name of the transform job.</p>
+    /// This field is required.
     pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl TransformJobSummaryBuilder {
         &self.transform_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
+    /// This field is required.
     pub fn transform_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +100,7 @@ impl TransformJobSummaryBuilder {
         &self.transform_job_arn
     }
     /// <p>A timestamp that shows when the transform Job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -140,6 +143,7 @@ impl TransformJobSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The status of the transform job.</p>
+    /// This field is required.
     pub fn transform_job_status(mut self, input: crate::types::TransformJobStatus) -> Self {
         self.transform_job_status = ::std::option::Option::Some(input);
         self

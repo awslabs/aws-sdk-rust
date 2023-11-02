@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGeofenceCollectionInput {
     /// <p>The name of the geofence collection to be deleted.</p>
-    pub collection_name: ::std::option::Option<::std::string::String>,
+    pub collection_name: ::std::string::String,
 }
 impl DeleteGeofenceCollectionInput {
     /// <p>The name of the geofence collection to be deleted.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
-        self.collection_name.as_deref()
+    pub fn collection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.collection_name.deref()
     }
 }
 impl DeleteGeofenceCollectionInput {
@@ -27,6 +28,7 @@ pub struct DeleteGeofenceCollectionInputBuilder {
 }
 impl DeleteGeofenceCollectionInputBuilder {
     /// <p>The name of the geofence collection to be deleted.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl DeleteGeofenceCollectionInputBuilder {
         &self.collection_name
     }
     /// Consumes the builder and constructs a [`DeleteGeofenceCollectionInput`](crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collection_name`](crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionInputBuilder::collection_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl DeleteGeofenceCollectionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_geofence_collection::DeleteGeofenceCollectionInput {
-            collection_name: self.collection_name,
+            collection_name: self.collection_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collection_name",
+                    "collection_name was not specified but it is required when building DeleteGeofenceCollectionInput",
+                )
+            })?,
         })
     }
 }

@@ -3,11 +3,11 @@ pub fn ser_order_by_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OrderByElement,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_name {
-        object.key("fieldName").string(var_1.as_str());
+    {
+        object.key("fieldName").string(input.field_name.as_str());
     }
-    if let Some(var_2) = &input.sort_order {
-        object.key("sortOrder").string(var_2.as_str());
+    if let Some(var_1) = &input.sort_order {
+        object.key("sortOrder").string(var_1.as_str());
     }
     Ok(())
 }

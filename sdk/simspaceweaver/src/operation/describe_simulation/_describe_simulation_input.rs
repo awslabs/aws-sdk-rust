@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSimulationInput {
     /// <p>The name of the simulation.</p>
-    pub simulation: ::std::option::Option<::std::string::String>,
+    pub simulation: ::std::string::String,
 }
 impl DescribeSimulationInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
-        self.simulation.as_deref()
+    pub fn simulation(&self) -> &str {
+        use std::ops::Deref;
+        self.simulation.deref()
     }
 }
 impl DescribeSimulationInput {
@@ -27,6 +28,7 @@ pub struct DescribeSimulationInputBuilder {
 }
 impl DescribeSimulationInputBuilder {
     /// <p>The name of the simulation.</p>
+    /// This field is required.
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,18 @@ impl DescribeSimulationInputBuilder {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`DescribeSimulationInput`](crate::operation::describe_simulation::DescribeSimulationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`simulation`](crate::operation::describe_simulation::builders::DescribeSimulationInputBuilder::simulation)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_simulation::DescribeSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_simulation::DescribeSimulationInput { simulation: self.simulation })
+        ::std::result::Result::Ok(crate::operation::describe_simulation::DescribeSimulationInput {
+            simulation: self.simulation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "simulation",
+                    "simulation was not specified but it is required when building DescribeSimulationInput",
+                )
+            })?,
+        })
     }
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModelTemplate`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
-    ///   - [`model_name(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_model_name): <p>The name of the model for which to generate a template.</p>
+    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_rest_api_id):<br>required: **true**<br><p>The string identifier of the associated RestApi.</p><br>
+    ///   - [`model_name(impl Into<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::get_model_template::builders::GetModelTemplateFluentBuilder::set_model_name):<br>required: **true**<br><p>The name of the model for which to generate a template.</p><br>
     /// - On success, responds with [`GetModelTemplateOutput`](crate::operation::get_model_template::GetModelTemplateOutput) with field(s):
     ///   - [`value(Option<String>)`](crate::operation::get_model_template::GetModelTemplateOutput::value): <p>The Apache Velocity Template Language (VTL) template content used for the template resource.</p>
     /// - On failure, responds with [`SdkError<GetModelTemplateError>`](crate::operation::get_model_template::GetModelTemplateError)

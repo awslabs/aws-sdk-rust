@@ -11,8 +11,10 @@ pub struct ListAppInstancesOutput {
 }
 impl ListAppInstancesOutput {
     /// <p>The information for each <code>AppInstance</code>.</p>
-    pub fn app_instances(&self) -> ::std::option::Option<&[crate::types::AppInstanceSummary]> {
-        self.app_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_instances.is_none()`.
+    pub fn app_instances(&self) -> &[crate::types::AppInstanceSummary] {
+        self.app_instances.as_deref().unwrap_or_default()
     }
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

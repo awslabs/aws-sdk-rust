@@ -5,27 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Exception {
     /// <p>A detailed message describing the problem.</p>
-    pub detailed_message: ::std::option::Option<::std::string::String>,
+    pub detailed_message: ::std::string::String,
     /// <p>The ID of the request in question.</p>
-    pub request_id: ::std::option::Option<::std::string::String>,
+    pub request_id: ::std::string::String,
     /// <p>The HTTP status code returned with the exception.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl S3Exception {
     /// <p>A detailed message describing the problem.</p>
-    pub fn detailed_message(&self) -> ::std::option::Option<&str> {
-        self.detailed_message.as_deref()
+    pub fn detailed_message(&self) -> &str {
+        use std::ops::Deref;
+        self.detailed_message.deref()
     }
     /// <p>The ID of the request in question.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
-        self.request_id.as_deref()
+    pub fn request_id(&self) -> &str {
+        use std::ops::Deref;
+        self.request_id.deref()
     }
     /// <p>The HTTP status code returned with the exception.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
 }
 impl S3Exception {
@@ -80,6 +83,7 @@ pub struct S3ExceptionBuilder {
 }
 impl S3ExceptionBuilder {
     /// <p>A detailed message describing the problem.</p>
+    /// This field is required.
     pub fn detailed_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_message = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +98,7 @@ impl S3ExceptionBuilder {
         &self.detailed_message
     }
     /// <p>The ID of the request in question.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +113,7 @@ impl S3ExceptionBuilder {
         &self.request_id
     }
     /// <p>The HTTP status code returned with the exception.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -147,13 +153,32 @@ impl S3ExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`S3Exception`](crate::types::error::S3Exception).
-    pub fn build(self) -> crate::types::error::S3Exception {
-        crate::types::error::S3Exception {
-            detailed_message: self.detailed_message,
-            request_id: self.request_id,
-            code: self.code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`detailed_message`](crate::types::error::builders::S3ExceptionBuilder::detailed_message)
+    /// - [`request_id`](crate::types::error::builders::S3ExceptionBuilder::request_id)
+    /// - [`code`](crate::types::error::builders::S3ExceptionBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::S3Exception, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::S3Exception {
+            detailed_message: self.detailed_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "detailed_message",
+                    "detailed_message was not specified but it is required when building S3Exception",
+                )
+            })?,
+            request_id: self.request_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "request_id",
+                    "request_id was not specified but it is required when building S3Exception",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building S3Exception",
+                )
+            })?,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

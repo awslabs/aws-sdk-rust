@@ -9,8 +9,10 @@ pub struct AlarmNotification {
 }
 impl AlarmNotification {
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
-    pub fn notification_actions(&self) -> ::std::option::Option<&[crate::types::NotificationAction]> {
-        self.notification_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_actions.is_none()`.
+    pub fn notification_actions(&self) -> &[crate::types::NotificationAction] {
+        self.notification_actions.as_deref().unwrap_or_default()
     }
 }
 impl AlarmNotification {

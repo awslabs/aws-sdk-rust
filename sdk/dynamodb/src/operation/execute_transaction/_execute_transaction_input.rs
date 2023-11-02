@@ -12,8 +12,10 @@ pub struct ExecuteTransactionInput {
 }
 impl ExecuteTransactionInput {
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
-    pub fn transact_statements(&self) -> ::std::option::Option<&[crate::types::ParameterizedStatement]> {
-        self.transact_statements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transact_statements.is_none()`.
+    pub fn transact_statements(&self) -> &[crate::types::ParameterizedStatement] {
+        self.transact_statements.as_deref().unwrap_or_default()
     }
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {

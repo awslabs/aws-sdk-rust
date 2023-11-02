@@ -50,8 +50,10 @@ impl CreateTriggerInput {
         self.predicate.as_ref()
     }
     /// <p>The actions initiated by this trigger when it fires.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>A description of the new trigger.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -94,6 +96,7 @@ pub struct CreateTriggerInputBuilder {
 }
 impl CreateTriggerInputBuilder {
     /// <p>The name of the trigger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +125,7 @@ impl CreateTriggerInputBuilder {
         &self.workflow_name
     }
     /// <p>The type of the new trigger.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TriggerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

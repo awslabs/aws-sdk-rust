@@ -34,6 +34,7 @@ pub struct CreateInferenceExperimentOutputBuilder {
 }
 impl CreateInferenceExperimentOutputBuilder {
     /// <p>The ARN for your inference experiment.</p>
+    /// This field is required.
     pub fn inference_experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_experiment_arn = ::std::option::Option::Some(input.into());
         self

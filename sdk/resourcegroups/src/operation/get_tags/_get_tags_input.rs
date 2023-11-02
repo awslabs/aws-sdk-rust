@@ -27,6 +27,7 @@ pub struct GetTagsInputBuilder {
 }
 impl GetTagsInputBuilder {
     /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

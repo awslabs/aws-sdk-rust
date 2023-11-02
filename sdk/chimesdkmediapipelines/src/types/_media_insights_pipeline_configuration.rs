@@ -39,8 +39,10 @@ impl MediaInsightsPipelineConfiguration {
         self.real_time_alert_configuration.as_ref()
     }
     /// <p>The elements in the configuration.</p>
-    pub fn elements(&self) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationElement]> {
-        self.elements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elements.is_none()`.
+    pub fn elements(&self) -> &[crate::types::MediaInsightsPipelineConfigurationElement] {
+        self.elements.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the configuration.</p>
     pub fn media_insights_pipeline_configuration_id(&self) -> ::std::option::Option<&str> {

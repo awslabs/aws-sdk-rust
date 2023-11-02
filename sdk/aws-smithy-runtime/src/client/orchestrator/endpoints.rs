@@ -24,21 +24,22 @@ use tracing::trace;
 /// An endpoint resolver that uses a static URI.
 #[derive(Clone, Debug)]
 pub struct StaticUriEndpointResolver {
-    endpoint: Uri,
+    endpoint: String,
 }
 
 impl StaticUriEndpointResolver {
     /// Create a resolver that resolves to `http://localhost:{port}`.
     pub fn http_localhost(port: u16) -> Self {
         Self {
-            endpoint: Uri::from_str(&format!("http://localhost:{port}"))
-                .expect("all u16 values are valid ports"),
+            endpoint: format!("http://localhost:{port}"),
         }
     }
 
     /// Create a resolver that resolves to the given URI.
-    pub fn uri(endpoint: Uri) -> Self {
-        Self { endpoint }
+    pub fn uri(endpoint: impl Into<String>) -> Self {
+        Self {
+            endpoint: endpoint.into(),
+        }
     }
 }
 
@@ -121,6 +122,7 @@ pub(super) async fn orchestrate_endpoint(
         .load::<EndpointResolverParams>()
         .expect("endpoint resolver params must be set");
     let endpoint_prefix = cfg.load::<EndpointPrefix>();
+    tracing::debug!(endpoint_params = ?params, endpoint_prefix = ?endpoint_prefix, "resolving endpoint");
     let request = ctx.request_mut().expect("set during serialization");
 
     let endpoint = runtime_components

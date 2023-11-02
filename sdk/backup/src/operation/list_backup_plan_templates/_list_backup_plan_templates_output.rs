@@ -15,8 +15,10 @@ impl ListBackupPlanTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of template list items containing metadata about your saved templates.</p>
-    pub fn backup_plan_templates_list(&self) -> ::std::option::Option<&[crate::types::BackupPlanTemplatesListMember]> {
-        self.backup_plan_templates_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_plan_templates_list.is_none()`.
+    pub fn backup_plan_templates_list(&self) -> &[crate::types::BackupPlanTemplatesListMember] {
+        self.backup_plan_templates_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListBackupPlanTemplatesOutput {

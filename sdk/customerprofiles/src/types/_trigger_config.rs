@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TriggerConfig {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
-    pub trigger_type: ::std::option::Option<crate::types::TriggerType>,
+    pub trigger_type: crate::types::TriggerType,
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub trigger_properties: ::std::option::Option<crate::types::TriggerProperties>,
 }
 impl TriggerConfig {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
-    pub fn trigger_type(&self) -> ::std::option::Option<&crate::types::TriggerType> {
-        self.trigger_type.as_ref()
+    pub fn trigger_type(&self) -> &crate::types::TriggerType {
+        &self.trigger_type
     }
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub fn trigger_properties(&self) -> ::std::option::Option<&crate::types::TriggerProperties> {
@@ -35,6 +35,7 @@ pub struct TriggerConfigBuilder {
 }
 impl TriggerConfigBuilder {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
+    /// This field is required.
     pub fn trigger_type(mut self, input: crate::types::TriggerType) -> Self {
         self.trigger_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl TriggerConfigBuilder {
         &self.trigger_properties
     }
     /// Consumes the builder and constructs a [`TriggerConfig`](crate::types::TriggerConfig).
-    pub fn build(self) -> crate::types::TriggerConfig {
-        crate::types::TriggerConfig {
-            trigger_type: self.trigger_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`trigger_type`](crate::types::builders::TriggerConfigBuilder::trigger_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TriggerConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TriggerConfig {
+            trigger_type: self.trigger_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "trigger_type",
+                    "trigger_type was not specified but it is required when building TriggerConfig",
+                )
+            })?,
             trigger_properties: self.trigger_properties,
-        }
+        })
     }
 }

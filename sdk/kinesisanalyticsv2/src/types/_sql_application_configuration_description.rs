@@ -13,16 +13,22 @@ pub struct SqlApplicationConfigurationDescription {
 }
 impl SqlApplicationConfigurationDescription {
     /// <p>The array of <code>InputDescription</code> objects describing the input streams used by the application.</p>
-    pub fn input_descriptions(&self) -> ::std::option::Option<&[crate::types::InputDescription]> {
-        self.input_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_descriptions.is_none()`.
+    pub fn input_descriptions(&self) -> &[crate::types::InputDescription] {
+        self.input_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The array of <code>OutputDescription</code> objects describing the destination streams used by the application.</p>
-    pub fn output_descriptions(&self) -> ::std::option::Option<&[crate::types::OutputDescription]> {
-        self.output_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_descriptions.is_none()`.
+    pub fn output_descriptions(&self) -> &[crate::types::OutputDescription] {
+        self.output_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The array of <code>ReferenceDataSourceDescription</code> objects describing the reference data sources used by the application.</p>
-    pub fn reference_data_source_descriptions(&self) -> ::std::option::Option<&[crate::types::ReferenceDataSourceDescription]> {
-        self.reference_data_source_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_descriptions.is_none()`.
+    pub fn reference_data_source_descriptions(&self) -> &[crate::types::ReferenceDataSourceDescription] {
+        self.reference_data_source_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl SqlApplicationConfigurationDescription {

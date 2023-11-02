@@ -27,6 +27,7 @@ pub struct GetReportDefinitionInputBuilder {
 }
 impl GetReportDefinitionInputBuilder {
     /// <p>ID of the report to retrieve.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self

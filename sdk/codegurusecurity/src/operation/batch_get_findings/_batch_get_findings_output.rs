@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFindingsOutput {
     /// <p> A list of all requested findings.</p>
-    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::Finding>>,
+    pub findings: ::std::vec::Vec<crate::types::Finding>,
     /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
-    pub failed_findings: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetFindingsError>>,
+    pub failed_findings: ::std::vec::Vec<crate::types::BatchGetFindingsError>,
     _request_id: Option<String>,
 }
 impl BatchGetFindingsOutput {
     /// <p> A list of all requested findings.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::Finding]> {
-        self.findings.as_deref()
+    pub fn findings(&self) -> &[crate::types::Finding] {
+        use std::ops::Deref;
+        self.findings.deref()
     }
     /// <p>A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.</p>
-    pub fn failed_findings(&self) -> ::std::option::Option<&[crate::types::BatchGetFindingsError]> {
-        self.failed_findings.as_deref()
+    pub fn failed_findings(&self) -> &[crate::types::BatchGetFindingsError] {
+        use std::ops::Deref;
+        self.failed_findings.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetFindingsOutput {
@@ -90,11 +92,26 @@ impl BatchGetFindingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetFindingsOutput`](crate::operation::batch_get_findings::BatchGetFindingsOutput).
-    pub fn build(self) -> crate::operation::batch_get_findings::BatchGetFindingsOutput {
-        crate::operation::batch_get_findings::BatchGetFindingsOutput {
-            findings: self.findings,
-            failed_findings: self.failed_findings,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`findings`](crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder::findings)
+    /// - [`failed_findings`](crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder::failed_findings)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::batch_get_findings::BatchGetFindingsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_get_findings::BatchGetFindingsOutput {
+            findings: self.findings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "findings",
+                    "findings was not specified but it is required when building BatchGetFindingsOutput",
+                )
+            })?,
+            failed_findings: self.failed_findings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failed_findings",
+                    "failed_findings was not specified but it is required when building BatchGetFindingsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

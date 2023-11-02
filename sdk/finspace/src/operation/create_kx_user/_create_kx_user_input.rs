@@ -55,6 +55,7 @@ pub struct CreateKxUserInputBuilder {
 }
 impl CreateKxUserInputBuilder {
     /// <p>A unique identifier for the kdb environment where you want to create a user.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateKxUserInputBuilder {
         &self.environment_id
     }
     /// <p>A unique identifier for the user.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateKxUserInputBuilder {
         &self.user_name
     }
     /// <p>The IAM role ARN that will be associated with the user.</p>
+    /// This field is required.
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
         self

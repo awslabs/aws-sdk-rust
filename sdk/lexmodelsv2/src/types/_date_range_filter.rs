@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
-    pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date_time: ::aws_smithy_types::DateTime,
     /// <p>A timestamp indicating the end date for the date range filter.</p>
-    pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_date_time: ::aws_smithy_types::DateTime,
 }
 impl DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date_time.as_ref()
+    pub fn start_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date_time
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_date_time.as_ref()
+    pub fn end_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_date_time
     }
 }
 impl DateRangeFilter {
@@ -35,6 +35,7 @@ pub struct DateRangeFilterBuilder {
 }
 impl DateRangeFilterBuilder {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
+    /// This field is required.
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl DateRangeFilterBuilder {
         &self.start_date_time
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
+    /// This field is required.
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl DateRangeFilterBuilder {
         &self.end_date_time
     }
     /// Consumes the builder and constructs a [`DateRangeFilter`](crate::types::DateRangeFilter).
-    pub fn build(self) -> crate::types::DateRangeFilter {
-        crate::types::DateRangeFilter {
-            start_date_time: self.start_date_time,
-            end_date_time: self.end_date_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_date_time`](crate::types::builders::DateRangeFilterBuilder::start_date_time)
+    /// - [`end_date_time`](crate::types::builders::DateRangeFilterBuilder::end_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::DateRangeFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DateRangeFilter {
+            start_date_time: self.start_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_date_time",
+                    "start_date_time was not specified but it is required when building DateRangeFilter",
+                )
+            })?,
+            end_date_time: self.end_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_date_time",
+                    "end_date_time was not specified but it is required when building DateRangeFilter",
+                )
+            })?,
+        })
     }
 }

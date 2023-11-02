@@ -27,6 +27,7 @@ pub struct GetResourcePolicyInputBuilder {
 }
 impl GetResourcePolicyInputBuilder {
     /// <p> The ARN of the resource that is associated with the resource policy. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

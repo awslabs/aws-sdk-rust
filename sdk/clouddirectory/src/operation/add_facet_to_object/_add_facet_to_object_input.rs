@@ -22,8 +22,10 @@ impl AddFacetToObjectInput {
         self.schema_facet.as_ref()
     }
     /// <p>Attributes on the facet that you are adding to the object.</p>
-    pub fn object_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
-        self.object_attribute_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_attribute_list.is_none()`.
+    pub fn object_attribute_list(&self) -> &[crate::types::AttributeKeyAndValue] {
+        self.object_attribute_list.as_deref().unwrap_or_default()
     }
     /// <p>A reference to the object you are adding the specified facet to.</p>
     pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
@@ -48,6 +50,7 @@ pub struct AddFacetToObjectInputBuilder {
 }
 impl AddFacetToObjectInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl AddFacetToObjectInputBuilder {
         &self.directory_arn
     }
     /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
+    /// This field is required.
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
         self
@@ -96,6 +100,7 @@ impl AddFacetToObjectInputBuilder {
         &self.object_attribute_list
     }
     /// <p>A reference to the object you are adding the specified facet to.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

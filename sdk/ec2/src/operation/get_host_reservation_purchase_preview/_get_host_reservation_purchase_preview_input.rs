@@ -10,8 +10,10 @@ pub struct GetHostReservationPurchasePreviewInput {
 }
 impl GetHostReservationPurchasePreviewInput {
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    pub fn host_id_set(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.host_id_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_id_set.is_none()`.
+    pub fn host_id_set(&self) -> &[::std::string::String] {
+        self.host_id_set.as_deref().unwrap_or_default()
     }
     /// <p>The offering ID of the reservation.</p>
     pub fn offering_id(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl GetHostReservationPurchasePreviewInputBuilder {
         &self.host_id_set
     }
     /// <p>The offering ID of the reservation.</p>
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self

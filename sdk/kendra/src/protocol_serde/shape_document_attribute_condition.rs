@@ -3,17 +3,19 @@ pub fn ser_document_attribute_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentAttributeCondition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.condition_document_attribute_key {
-        object.key("ConditionDocumentAttributeKey").string(var_1.as_str());
+    {
+        object
+            .key("ConditionDocumentAttributeKey")
+            .string(input.condition_document_attribute_key.as_str());
     }
-    if let Some(var_2) = &input.operator {
-        object.key("Operator").string(var_2.as_str());
+    {
+        object.key("Operator").string(input.operator.as_str());
     }
-    if let Some(var_3) = &input.condition_on_value {
+    if let Some(var_1) = &input.condition_on_value {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ConditionOnValue").start_object();
-        crate::protocol_serde::shape_document_attribute_value::ser_document_attribute_value(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("ConditionOnValue").start_object();
+        crate::protocol_serde::shape_document_attribute_value::ser_document_attribute_value(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -62,7 +64,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::document_attribute_condition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

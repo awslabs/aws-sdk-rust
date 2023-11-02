@@ -49,6 +49,7 @@ impl UpdateGatewayInstanceInputBuilder {
         &self.bridge_placement
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
+    /// This field is required.
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct CreateConfigurationSetEventDestinationInputBuilder {
 }
 impl CreateConfigurationSetEventDestinationInputBuilder {
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         &self.configuration_set_name
     }
     /// <p>An object that describes the Amazon Web Services service that email sending event where information is published.</p>
+    /// This field is required.
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
         self.event_destination = ::std::option::Option::Some(input);
         self

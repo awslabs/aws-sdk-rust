@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestartSimulationJob`](crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job(impl Into<String>)`](crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::set_job): <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    ///   - [`job(impl Into<String>)`](crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder::set_job):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the simulation job.</p><br>
     /// - On success, responds with [`RestartSimulationJobOutput`](crate::operation::restart_simulation_job::RestartSimulationJobOutput)
     /// - On failure, responds with [`SdkError<RestartSimulationJobError>`](crate::operation::restart_simulation_job::RestartSimulationJobError)
     pub fn restart_simulation_job(&self) -> crate::operation::restart_simulation_job::builders::RestartSimulationJobFluentBuilder {

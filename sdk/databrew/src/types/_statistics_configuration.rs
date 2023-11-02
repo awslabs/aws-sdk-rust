@@ -11,12 +11,16 @@ pub struct StatisticsConfiguration {
 }
 impl StatisticsConfiguration {
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
-    pub fn included_statistics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.included_statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_statistics.is_none()`.
+    pub fn included_statistics(&self) -> &[::std::string::String] {
+        self.included_statistics.as_deref().unwrap_or_default()
     }
     /// <p>List of overrides for evaluations.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::StatisticOverride]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::StatisticOverride] {
+        self.overrides.as_deref().unwrap_or_default()
     }
 }
 impl StatisticsConfiguration {

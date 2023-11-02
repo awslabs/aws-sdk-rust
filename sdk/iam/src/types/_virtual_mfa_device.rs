@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VirtualMfaDevice {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
-    pub serial_number: ::std::option::Option<::std::string::String>,
+    pub serial_number: ::std::string::String,
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base32-encoded. </p>
     pub base32_string_seed: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p> A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code> value is base64-encoded. </p>
@@ -19,8 +19,9 @@ pub struct VirtualMfaDevice {
 }
 impl VirtualMfaDevice {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
-        self.serial_number.as_deref()
+    pub fn serial_number(&self) -> &str {
+        use std::ops::Deref;
+        self.serial_number.deref()
     }
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base32-encoded. </p>
     pub fn base32_string_seed(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
@@ -39,8 +40,10 @@ impl VirtualMfaDevice {
         self.enable_date.as_ref()
     }
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for VirtualMfaDevice {
@@ -75,6 +78,7 @@ pub struct VirtualMfaDeviceBuilder {
 }
 impl VirtualMfaDeviceBuilder {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
+    /// This field is required.
     pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serial_number = ::std::option::Option::Some(input.into());
         self
@@ -165,15 +169,22 @@ impl VirtualMfaDeviceBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`VirtualMfaDevice`](crate::types::VirtualMfaDevice).
-    pub fn build(self) -> crate::types::VirtualMfaDevice {
-        crate::types::VirtualMfaDevice {
-            serial_number: self.serial_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`serial_number`](crate::types::builders::VirtualMfaDeviceBuilder::serial_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualMfaDevice, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualMfaDevice {
+            serial_number: self.serial_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "serial_number",
+                    "serial_number was not specified but it is required when building VirtualMfaDevice",
+                )
+            })?,
             base32_string_seed: self.base32_string_seed,
             qr_code_png: self.qr_code_png,
             user: self.user,
             enable_date: self.enable_date,
             tags: self.tags,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for VirtualMfaDeviceBuilder {

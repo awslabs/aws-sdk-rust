@@ -50,6 +50,7 @@ pub struct DescribeServiceActionExecutionParametersInputBuilder {
 }
 impl DescribeServiceActionExecutionParametersInputBuilder {
     /// <p>The identifier of the provisioned product.</p>
+    /// This field is required.
     pub fn provisioned_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
         &self.provisioned_product_id
     }
     /// <p>The self-service action identifier.</p>
+    /// This field is required.
     pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_action_id = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct ListInstanceStorageConfigsOutput {
 }
 impl ListInstanceStorageConfigsOutput {
     /// <p>A valid storage type.</p>
-    pub fn storage_configs(&self) -> ::std::option::Option<&[crate::types::InstanceStorageConfig]> {
-        self.storage_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_configs.is_none()`.
+    pub fn storage_configs(&self) -> &[crate::types::InstanceStorageConfig] {
+        self.storage_configs.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

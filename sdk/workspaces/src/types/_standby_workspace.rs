@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandbyWorkspace {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub primary_workspace_id: ::std::option::Option<::std::string::String>,
+    pub primary_workspace_id: ::std::string::String,
     /// <p>The volume encryption key of the standby WorkSpace.</p>
     pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub directory_id: ::std::option::Option<::std::string::String>,
+    pub directory_id: ::std::string::String,
     /// <p>The tags associated with the standby WorkSpace.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StandbyWorkspace {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn primary_workspace_id(&self) -> ::std::option::Option<&str> {
-        self.primary_workspace_id.as_deref()
+    pub fn primary_workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.primary_workspace_id.deref()
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
     pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
         self.volume_encryption_key.as_deref()
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
-        self.directory_id.as_deref()
+    pub fn directory_id(&self) -> &str {
+        use std::ops::Deref;
+        self.directory_id.deref()
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl StandbyWorkspace {
@@ -49,6 +53,7 @@ pub struct StandbyWorkspaceBuilder {
 }
 impl StandbyWorkspaceBuilder {
     /// <p>The identifier of the standby WorkSpace.</p>
+    /// This field is required.
     pub fn primary_workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl StandbyWorkspaceBuilder {
         &self.volume_encryption_key
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +117,25 @@ impl StandbyWorkspaceBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StandbyWorkspace`](crate::types::StandbyWorkspace).
-    pub fn build(self) -> crate::types::StandbyWorkspace {
-        crate::types::StandbyWorkspace {
-            primary_workspace_id: self.primary_workspace_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`primary_workspace_id`](crate::types::builders::StandbyWorkspaceBuilder::primary_workspace_id)
+    /// - [`directory_id`](crate::types::builders::StandbyWorkspaceBuilder::directory_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::StandbyWorkspace, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StandbyWorkspace {
+            primary_workspace_id: self.primary_workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "primary_workspace_id",
+                    "primary_workspace_id was not specified but it is required when building StandbyWorkspace",
+                )
+            })?,
             volume_encryption_key: self.volume_encryption_key,
-            directory_id: self.directory_id,
+            directory_id: self.directory_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "directory_id",
+                    "directory_id was not specified but it is required when building StandbyWorkspace",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

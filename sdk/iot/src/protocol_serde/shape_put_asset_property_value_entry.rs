@@ -15,17 +15,17 @@ pub fn ser_put_asset_property_value_entry(
     if let Some(var_4) = &input.property_alias {
         object.key("propertyAlias").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.property_values {
-        let mut array_6 = object.key("propertyValues").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_5 = object.key("propertyValues").start_array();
+        for item_6 in &input.property_values {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_asset_property_value::ser_asset_property_value(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_asset_property_value::ser_asset_property_value(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
     Ok(())
 }
@@ -88,7 +88,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::put_asset_property_value_entry_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

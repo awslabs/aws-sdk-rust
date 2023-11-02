@@ -3,29 +3,29 @@ pub fn ser_update_pricing_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_pricing_rule::UpdatePricingRuleInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.modifier_percentage {
+    if let Some(var_2) = &input.modifier_percentage {
         object.key("ModifierPercentage").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_3).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("Name").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.tiering {
+    if let Some(var_4) = &input.tiering {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Tiering").start_object();
-        crate::protocol_serde::shape_update_tiering_input::ser_update_tiering_input(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("Tiering").start_object();
+        crate::protocol_serde::shape_update_tiering_input::ser_update_tiering_input(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("Type").string(var_7.as_str());
+    if let Some(var_6) = &input.r#type {
+        object.key("Type").string(var_6.as_str());
     }
     Ok(())
 }

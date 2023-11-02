@@ -78,7 +78,9 @@ pub fn de_search_content_http_response(
         output = crate::protocol_serde::shape_search_content::de_search_content(_response_body, output)
             .map_err(crate::operation::search_content::SearchContentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::search_content_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::search_content::SearchContentError::unhandled)?
     })
 }
 

@@ -33,8 +33,10 @@ impl UpdateServiceSettingsOutput {
         self.status_message.as_ref()
     }
     /// <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
-    pub fn home_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.home_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.home_regions.is_none()`.
+    pub fn home_regions(&self) -> &[::std::string::String] {
+        self.home_regions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateServiceSettingsOutput {

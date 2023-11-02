@@ -49,6 +49,7 @@ impl Scte35SpliceInsertScheduleActionSettingsBuilder {
         &self.duration
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
+    /// This field is required.
     pub fn splice_event_id(mut self, input: i64) -> Self {
         self.splice_event_id = ::std::option::Option::Some(input);
         self

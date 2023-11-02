@@ -153,8 +153,10 @@ impl WriteJourneyRequest {
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
-    pub fn timezone_estimation_methods(&self) -> ::std::option::Option<&[crate::types::TimezoneEstimationMethodsElement]> {
-        self.timezone_estimation_methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timezone_estimation_methods.is_none()`.
+    pub fn timezone_estimation_methods(&self) -> &[crate::types::TimezoneEstimationMethodsElement] {
+        self.timezone_estimation_methods.as_deref().unwrap_or_default()
     }
 }
 impl WriteJourneyRequest {
@@ -269,6 +271,7 @@ impl WriteJourneyRequestBuilder {
         &self.local_time
     }
     /// <p>The name of the journey. A journey name can contain a maximum of 150 characters. The characters can be alphanumeric characters or symbols, such as underscores (_) or hyphens (-). A journey name can't contain any spaces.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

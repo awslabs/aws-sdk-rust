@@ -25,11 +25,10 @@ pub fn de_create_preset_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "IncompatibleVersionException" => crate::operation::create_preset::CreatePresetError::IncompatibleVersionException({
@@ -41,11 +40,10 @@ pub fn de_create_preset_http_error(
                     crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(_response_body, output)
                         .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::incompatible_version_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServiceException" => crate::operation::create_preset::CreatePresetError::InternalServiceException({
@@ -56,11 +54,10 @@ pub fn de_create_preset_http_error(
                 output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "LimitExceededException" => crate::operation::create_preset::CreatePresetError::LimitExceededException({
@@ -71,11 +68,10 @@ pub fn de_create_preset_http_error(
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::limit_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_preset::CreatePresetError::ValidationException({
@@ -86,11 +82,10 @@ pub fn de_create_preset_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_preset::CreatePresetError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_preset::CreatePresetError::generic(generic),

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePrefetchScheduleInput {
     /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
-    pub playback_configuration_name: ::std::option::Option<::std::string::String>,
+    pub playback_configuration_name: ::std::string::String,
 }
 impl DeletePrefetchScheduleInput {
     /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
-    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
+    pub fn playback_configuration_name(&self) -> &str {
+        use std::ops::Deref;
+        self.playback_configuration_name.deref()
     }
 }
 impl DeletePrefetchScheduleInput {
@@ -34,6 +36,7 @@ pub struct DeletePrefetchScheduleInputBuilder {
 }
 impl DeletePrefetchScheduleInputBuilder {
     /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeletePrefetchScheduleInputBuilder {
         &self.name
     }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
+    /// This field is required.
     pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl DeletePrefetchScheduleInputBuilder {
         &self.playback_configuration_name
     }
     /// Consumes the builder and constructs a [`DeletePrefetchScheduleInput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder::name)
+    /// - [`playback_configuration_name`](crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder::playback_configuration_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput {
-            name: self.name,
-            playback_configuration_name: self.playback_configuration_name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeletePrefetchScheduleInput",
+                )
+            })?,
+            playback_configuration_name: self.playback_configuration_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "playback_configuration_name",
+                    "playback_configuration_name was not specified but it is required when building DeletePrefetchScheduleInput",
+                )
+            })?,
         })
     }
 }

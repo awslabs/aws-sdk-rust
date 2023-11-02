@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricAttribution {
     /// <p>The source of the event, such as a third party.</p>
-    pub event_attribution_source: ::std::option::Option<::std::string::String>,
+    pub event_attribution_source: ::std::string::String,
 }
 impl MetricAttribution {
     /// <p>The source of the event, such as a third party.</p>
-    pub fn event_attribution_source(&self) -> ::std::option::Option<&str> {
-        self.event_attribution_source.as_deref()
+    pub fn event_attribution_source(&self) -> &str {
+        use std::ops::Deref;
+        self.event_attribution_source.deref()
     }
 }
 impl MetricAttribution {
@@ -28,6 +29,7 @@ pub struct MetricAttributionBuilder {
 }
 impl MetricAttributionBuilder {
     /// <p>The source of the event, such as a third party.</p>
+    /// This field is required.
     pub fn event_attribution_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_attribution_source = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl MetricAttributionBuilder {
         &self.event_attribution_source
     }
     /// Consumes the builder and constructs a [`MetricAttribution`](crate::types::MetricAttribution).
-    pub fn build(self) -> crate::types::MetricAttribution {
-        crate::types::MetricAttribution {
-            event_attribution_source: self.event_attribution_source,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_attribution_source`](crate::types::builders::MetricAttributionBuilder::event_attribution_source)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricAttribution, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricAttribution {
+            event_attribution_source: self.event_attribution_source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_attribution_source",
+                    "event_attribution_source was not specified but it is required when building MetricAttribution",
+                )
+            })?,
+        })
     }
 }

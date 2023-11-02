@@ -11,8 +11,10 @@ pub struct BandMathConfigInput {
 }
 impl BandMathConfigInput {
     /// <p>One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
-    pub fn predefined_indices(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.predefined_indices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predefined_indices.is_none()`.
+    pub fn predefined_indices(&self) -> &[::std::string::String] {
+        self.predefined_indices.as_deref().unwrap_or_default()
     }
     /// <p>CustomIndices that are computed.</p>
     pub fn custom_indices(&self) -> ::std::option::Option<&crate::types::CustomIndicesInput> {

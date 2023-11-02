@@ -42,8 +42,10 @@ impl CreateEnvironmentProfileInput {
         self.project_identifier.as_deref()
     }
     /// <p>The user parameters of this Amazon DataZone environment profile.</p>
-    pub fn user_parameters(&self) -> ::std::option::Option<&[crate::types::EnvironmentParameter]> {
-        self.user_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::EnvironmentParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services account in which the Amazon DataZone environment is created.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
@@ -90,6 +92,7 @@ pub struct CreateEnvironmentProfileInputBuilder {
 }
 impl CreateEnvironmentProfileInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this environment profile is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl CreateEnvironmentProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The name of this Amazon DataZone environment profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +136,7 @@ impl CreateEnvironmentProfileInputBuilder {
         &self.description
     }
     /// <p>The ID of the blueprint with which this environment profile is created.</p>
+    /// This field is required.
     pub fn environment_blueprint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_blueprint_identifier = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +151,7 @@ impl CreateEnvironmentProfileInputBuilder {
         &self.environment_blueprint_identifier
     }
     /// <p>The identifier of the project in which to create the environment profile.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self

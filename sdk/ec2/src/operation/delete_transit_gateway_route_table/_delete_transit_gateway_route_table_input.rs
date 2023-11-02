@@ -34,6 +34,7 @@ pub struct DeleteTransitGatewayRouteTableInputBuilder {
 }
 impl DeleteTransitGatewayRouteTableInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
+    /// This field is required.
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self

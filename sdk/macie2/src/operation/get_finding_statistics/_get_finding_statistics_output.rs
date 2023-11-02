@@ -9,8 +9,10 @@ pub struct GetFindingStatisticsOutput {
 }
 impl GetFindingStatisticsOutput {
     /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
-    pub fn counts_by_group(&self) -> ::std::option::Option<&[crate::types::GroupCount]> {
-        self.counts_by_group.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.counts_by_group.is_none()`.
+    pub fn counts_by_group(&self) -> &[crate::types::GroupCount] {
+        self.counts_by_group.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetFindingStatisticsOutput {

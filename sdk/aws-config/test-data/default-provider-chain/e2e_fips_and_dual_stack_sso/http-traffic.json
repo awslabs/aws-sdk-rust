@@ -1,0 +1,93 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://portal.sso-fips.us-east-2.api.aws/federation/credentials?account_id=123456789&role_name=MySsoRole",
+            "headers": {
+              "x-amz-sso_bearer_token": [
+                "a-token"
+              ],
+              "Host": [
+                "portal.sso-fips.us-east-2.api.aws"
+              ]
+            },
+            "method": "GET"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "Date": [
+                  "Mon, 03 Jan 2022 19:13:54 GMT"
+                ],
+                "Content-Type": [
+                  "application/json"
+                ],
+                "Content-Length": [
+                  "144"
+                ],
+                "Connection": [
+                  "keep-alive"
+                ],
+                "Access-Control-Expose-Headers": [
+                  "RequestId"
+                ],
+                "Cache-Control": [
+                  "no-cache"
+                ],
+                "RequestId": [
+                  "b339b807-25d1-474c-a476-b070e9f350e4"
+                ],
+                "Server": [
+                  "AWS SSO"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"roleCredentials\":{\"accessKeyId\":\"ASIARCORRECT\",\"secretAccessKey\":\"secretkeycorrect\",\"sessionToken\":\"tokencorrect\",\"expiration\":1234567890000}}"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "Load SSO credentials",
+  "version": "V0"
+}

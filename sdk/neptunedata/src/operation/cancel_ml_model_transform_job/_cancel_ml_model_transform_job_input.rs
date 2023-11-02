@@ -41,6 +41,7 @@ pub struct CancelMlModelTransformJobInputBuilder {
 }
 impl CancelMlModelTransformJobInputBuilder {
     /// <p>The unique ID of the model transform job to be canceled.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

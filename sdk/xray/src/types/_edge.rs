@@ -39,20 +39,26 @@ impl Edge {
         self.summary_statistics.as_ref()
     }
     /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
-    pub fn response_time_histogram(&self) -> ::std::option::Option<&[crate::types::HistogramEntry]> {
-        self.response_time_histogram.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.response_time_histogram.is_none()`.
+    pub fn response_time_histogram(&self) -> &[crate::types::HistogramEntry] {
+        self.response_time_histogram.as_deref().unwrap_or_default()
     }
     /// <p>Aliases for the edge.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::Alias]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[crate::types::Alias] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
     pub fn edge_type(&self) -> ::std::option::Option<&str> {
         self.edge_type.as_deref()
     }
     /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
-    pub fn received_event_age_histogram(&self) -> ::std::option::Option<&[crate::types::HistogramEntry]> {
-        self.received_event_age_histogram.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.received_event_age_histogram.is_none()`.
+    pub fn received_event_age_histogram(&self) -> &[crate::types::HistogramEntry] {
+        self.received_event_age_histogram.as_deref().unwrap_or_default()
     }
 }
 impl Edge {

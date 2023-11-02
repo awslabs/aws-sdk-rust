@@ -15,8 +15,10 @@ impl ListAppMonitorsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of structures that contain information about the returned app monitors.</p>
-    pub fn app_monitor_summaries(&self) -> ::std::option::Option<&[crate::types::AppMonitorSummary]> {
-        self.app_monitor_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_monitor_summaries.is_none()`.
+    pub fn app_monitor_summaries(&self) -> &[crate::types::AppMonitorSummary] {
+        self.app_monitor_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAppMonitorsOutput {

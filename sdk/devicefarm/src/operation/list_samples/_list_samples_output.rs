@@ -12,8 +12,10 @@ pub struct ListSamplesOutput {
 }
 impl ListSamplesOutput {
     /// <p>Information about the samples.</p>
-    pub fn samples(&self) -> ::std::option::Option<&[crate::types::Sample]> {
-        self.samples.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.samples.is_none()`.
+    pub fn samples(&self) -> &[crate::types::Sample] {
+        self.samples.as_deref().unwrap_or_default()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

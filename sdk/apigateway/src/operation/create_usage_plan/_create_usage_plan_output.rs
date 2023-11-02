@@ -36,8 +36,10 @@ impl CreateUsagePlanOutput {
         self.description.as_deref()
     }
     /// <p>The associated API stages of a usage plan.</p>
-    pub fn api_stages(&self) -> ::std::option::Option<&[crate::types::ApiStage]> {
-        self.api_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_stages.is_none()`.
+    pub fn api_stages(&self) -> &[crate::types::ApiStage] {
+        self.api_stages.as_deref().unwrap_or_default()
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
     pub fn throttle(&self) -> ::std::option::Option<&crate::types::ThrottleSettings> {

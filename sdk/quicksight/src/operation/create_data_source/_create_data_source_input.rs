@@ -54,8 +54,10 @@ impl CreateDataSourceInput {
         self.credentials.as_ref()
     }
     /// <p>A list of resource permissions on the data source.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::ResourcePermission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(&self) -> ::std::option::Option<&crate::types::VpcConnectionProperties> {
@@ -66,12 +68,16 @@ impl CreateDataSourceInput {
         self.ssl_properties.as_ref()
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the data source.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>When you create the data source, Amazon QuickSight adds the data source to these folders.</p>
-    pub fn folder_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.folder_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_arns.is_none()`.
+    pub fn folder_arns(&self) -> &[::std::string::String] {
+        self.folder_arns.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateDataSourceInput {
@@ -116,6 +122,7 @@ pub struct CreateDataSourceInputBuilder {
 }
 impl CreateDataSourceInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +137,7 @@ impl CreateDataSourceInputBuilder {
         &self.aws_account_id
     }
     /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +152,7 @@ impl CreateDataSourceInputBuilder {
         &self.data_source_id
     }
     /// <p>A display name for the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +168,7 @@ impl CreateDataSourceInputBuilder {
     }
     /// <p>The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.</p>
     /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

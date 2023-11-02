@@ -34,6 +34,7 @@ pub struct UpdateResolverRuleInputBuilder {
 }
 impl UpdateResolverRuleInputBuilder {
     /// <p>The ID of the Resolver rule that you want to update.</p>
+    /// This field is required.
     pub fn resolver_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateResolverRuleInputBuilder {
         &self.resolver_rule_id
     }
     /// <p>The new settings for the Resolver rule.</p>
+    /// This field is required.
     pub fn config(mut self, input: crate::types::ResolverRuleConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
         self

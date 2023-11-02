@@ -4,35 +4,36 @@ pub fn ser_grantee(
     writer: ::aws_smithy_xml::encode::ElWriter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     let mut writer = writer;
-    if let Some(var_1) = &input.r#type {
-        writer.write_attribute("xsi:type", var_1.as_str());
+    {
+        writer.write_attribute("xsi:type", input.r#type.as_str());
     }
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_2) = &input.display_name {
+    if let Some(var_1) = &input.display_name {
         let mut inner_writer = scope.start_el("DisplayName").finish();
+        inner_writer.data(var_1.as_str());
+    }
+    if let Some(var_2) = &input.email_address {
+        let mut inner_writer = scope.start_el("EmailAddress").finish();
         inner_writer.data(var_2.as_str());
     }
-    if let Some(var_3) = &input.email_address {
-        let mut inner_writer = scope.start_el("EmailAddress").finish();
+    if let Some(var_3) = &input.id {
+        let mut inner_writer = scope.start_el("ID").finish();
         inner_writer.data(var_3.as_str());
     }
-    if let Some(var_4) = &input.id {
-        let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_4.as_str());
-    }
-    if let Some(var_5) = &input.uri {
+    if let Some(var_4) = &input.uri {
         let mut inner_writer = scope.start_el("URI").finish();
-        inner_writer.data(var_5.as_str());
+        inner_writer.data(var_4.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Grantee, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Grantee::builder();
-    let attrib_6 = {
+    let attrib_5 = {
         let s = decoder.start_el().attr("xsi:type");
         match s {
             None => None,
@@ -41,10 +42,23 @@ pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
             )?),
         }
     };
-    builder.r#type = attrib_6;
+    builder.r#type = attrib_5;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DisplayName") /* DisplayName com.amazonaws.s3#Grantee$DisplayName */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_display_name(var_6);
+            }
+            ,
+            s if s.matches("EmailAddress") /* EmailAddress com.amazonaws.s3#Grantee$EmailAddress */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -54,10 +68,10 @@ pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_display_name(var_7);
+                builder = builder.set_email_address(var_7);
             }
             ,
-            s if s.matches("EmailAddress") /* EmailAddress com.amazonaws.s3#Grantee$EmailAddress */ =>  {
+            s if s.matches("ID") /* ID com.amazonaws.s3#Grantee$ID */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -67,10 +81,10 @@ pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_email_address(var_8);
+                builder = builder.set_id(var_8);
             }
             ,
-            s if s.matches("ID") /* ID com.amazonaws.s3#Grantee$ID */ =>  {
+            s if s.matches("URI") /* URI com.amazonaws.s3#Grantee$URI */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -80,24 +94,13 @@ pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
                         ?
                     )
                 ;
-                builder = builder.set_id(var_9);
-            }
-            ,
-            s if s.matches("URI") /* URI com.amazonaws.s3#Grantee$URI */ =>  {
-                let var_10 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_uri(var_10);
+                builder = builder.set_uri(var_9);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::grantee_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

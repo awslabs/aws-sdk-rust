@@ -26,10 +26,10 @@ impl GetQueryResultsOutput {
         self.query_statistics.as_ref()
     }
     /// <p>Contains the individual event results of the query.</p>
-    pub fn query_result_rows(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>]> {
-        self.query_result_rows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_result_rows.is_none()`.
+    pub fn query_result_rows(&self) -> &[::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>] {
+        self.query_result_rows.as_deref().unwrap_or_default()
     }
     /// <p>A token you can use to get the next page of query results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

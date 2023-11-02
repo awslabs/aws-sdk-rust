@@ -35,6 +35,7 @@ pub struct UpdateHostedZoneCommentOutputBuilder {
 }
 impl UpdateHostedZoneCommentOutputBuilder {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
+    /// This field is required.
     pub fn hosted_zone(mut self, input: crate::types::HostedZone) -> Self {
         self.hosted_zone = ::std::option::Option::Some(input);
         self

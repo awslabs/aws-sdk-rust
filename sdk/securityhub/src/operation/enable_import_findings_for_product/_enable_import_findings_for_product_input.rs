@@ -27,6 +27,7 @@ pub struct EnableImportFindingsForProductInputBuilder {
 }
 impl EnableImportFindingsForProductInputBuilder {
     /// <p>The ARN of the product to enable the integration for.</p>
+    /// This field is required.
     pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_arn = ::std::option::Option::Some(input.into());
         self

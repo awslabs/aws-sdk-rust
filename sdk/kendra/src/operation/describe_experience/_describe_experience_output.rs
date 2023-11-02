@@ -41,8 +41,10 @@ impl DescribeExperienceOutput {
         self.name.as_deref()
     }
     /// <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::ExperienceEndpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::ExperienceEndpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::ExperienceConfiguration> {

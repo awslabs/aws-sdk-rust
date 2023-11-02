@@ -35,6 +35,7 @@ pub struct DeleteHostedZoneOutputBuilder {
 }
 impl DeleteHostedZoneOutputBuilder {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
+    /// This field is required.
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
         self.change_info = ::std::option::Option::Some(input);
         self

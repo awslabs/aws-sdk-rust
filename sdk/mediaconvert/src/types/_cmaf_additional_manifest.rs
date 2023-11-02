@@ -15,8 +15,10 @@ impl CmafAdditionalManifest {
         self.manifest_name_modifier.as_deref()
     }
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn selected_outputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_outputs.is_none()`.
+    pub fn selected_outputs(&self) -> &[::std::string::String] {
+        self.selected_outputs.as_deref().unwrap_or_default()
     }
 }
 impl CmafAdditionalManifest {

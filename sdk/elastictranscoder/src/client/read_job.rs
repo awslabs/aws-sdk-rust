@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ReadJob`](crate::operation::read_job::builders::ReadJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::read_job::builders::ReadJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::read_job::builders::ReadJobFluentBuilder::set_id): <p>The identifier of the job for which you want to get detailed information.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::read_job::builders::ReadJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::read_job::builders::ReadJobFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the job for which you want to get detailed information.</p><br>
     /// - On success, responds with [`ReadJobOutput`](crate::operation::read_job::ReadJobOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::read_job::ReadJobOutput::job): <p>A section of the response body that provides information about the job.</p>
     /// - On failure, responds with [`SdkError<ReadJobError>`](crate::operation::read_job::ReadJobError)

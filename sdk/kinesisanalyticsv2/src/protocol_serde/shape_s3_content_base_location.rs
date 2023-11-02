@@ -3,11 +3,11 @@ pub fn ser_s3_content_base_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ContentBaseLocation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_arn {
-        object.key("BucketARN").string(var_1.as_str());
+    {
+        object.key("BucketARN").string(input.bucket_arn.as_str());
     }
-    if let Some(var_2) = &input.base_path {
-        object.key("BasePath").string(var_2.as_str());
+    if let Some(var_1) = &input.base_path {
+        object.key("BasePath").string(var_1.as_str());
     }
     Ok(())
 }

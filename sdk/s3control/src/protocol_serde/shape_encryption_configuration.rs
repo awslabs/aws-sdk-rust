@@ -13,6 +13,7 @@ pub fn ser_encryption_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_encryption_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::EncryptionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {

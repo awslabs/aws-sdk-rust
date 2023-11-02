@@ -37,6 +37,7 @@ pub struct RetrieveTapeArchiveInputBuilder {
 }
 impl RetrieveTapeArchiveInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
+    /// This field is required.
     pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_arn = ::std::option::Option::Some(input.into());
         self
@@ -52,6 +53,7 @@ impl RetrieveTapeArchiveInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self

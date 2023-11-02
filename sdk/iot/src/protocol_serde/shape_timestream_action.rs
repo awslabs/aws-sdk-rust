@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::timestream_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -65,32 +67,32 @@ pub fn ser_timestream_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestreamAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("databaseName").string(var_2.as_str());
+    {
+        object.key("databaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.table_name {
-        object.key("tableName").string(var_3.as_str());
+    {
+        object.key("tableName").string(input.table_name.as_str());
     }
-    if let Some(var_4) = &input.dimensions {
-        let mut array_5 = object.key("dimensions").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_1 = object.key("dimensions").start_array();
+        for item_2 in &input.dimensions {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_timestream_dimension::ser_timestream_dimension(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_timestream_dimension::ser_timestream_dimension(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_5.finish();
+        array_1.finish();
     }
-    if let Some(var_8) = &input.timestamp {
+    if let Some(var_4) = &input.timestamp {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("timestamp").start_object();
-        crate::protocol_serde::shape_timestream_timestamp::ser_timestream_timestamp(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_5 = object.key("timestamp").start_object();
+        crate::protocol_serde::shape_timestream_timestamp::ser_timestream_timestamp(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

@@ -11,8 +11,10 @@ pub struct ListNodegroupsOutput {
 }
 impl ListNodegroupsOutput {
     /// <p>A list of all of the node groups associated with the specified cluster.</p>
-    pub fn nodegroups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.nodegroups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodegroups.is_none()`.
+    pub fn nodegroups(&self) -> &[::std::string::String] {
+        self.nodegroups.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

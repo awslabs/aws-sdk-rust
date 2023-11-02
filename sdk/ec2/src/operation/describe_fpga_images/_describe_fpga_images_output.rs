@@ -11,8 +11,10 @@ pub struct DescribeFpgaImagesOutput {
 }
 impl DescribeFpgaImagesOutput {
     /// <p>Information about the FPGA images.</p>
-    pub fn fpga_images(&self) -> ::std::option::Option<&[crate::types::FpgaImage]> {
-        self.fpga_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fpga_images.is_none()`.
+    pub fn fpga_images(&self) -> &[crate::types::FpgaImage] {
+        self.fpga_images.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct ListRotationOverridesOutput {
 }
 impl ListRotationOverridesOutput {
     /// <p>A list of rotation overrides in the specified time range.</p>
-    pub fn rotation_overrides(&self) -> ::std::option::Option<&[crate::types::RotationOverride]> {
-        self.rotation_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rotation_overrides.is_none()`.
+    pub fn rotation_overrides(&self) -> &[crate::types::RotationOverride] {
+        self.rotation_overrides.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -76,6 +76,7 @@ impl CreateLocalGatewayRouteInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the local gateway route table.</p>
+    /// This field is required.
     pub fn local_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self

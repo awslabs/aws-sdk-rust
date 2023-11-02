@@ -43,6 +43,7 @@ pub struct StartPolicyGenerationInputBuilder {
 }
 impl StartPolicyGenerationInputBuilder {
     /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
+    /// This field is required.
     pub fn policy_generation_details(mut self, input: crate::types::PolicyGenerationDetails) -> Self {
         self.policy_generation_details = ::std::option::Option::Some(input);
         self

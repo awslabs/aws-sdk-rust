@@ -6,17 +6,17 @@ pub fn ser_table_resource(
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("Name").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.table_wildcard {
+    if let Some(var_3) = &input.table_wildcard {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("TableWildcard").start_object();
-        crate::protocol_serde::shape_table_wildcard::ser_table_wildcard(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("TableWildcard").start_object();
+        crate::protocol_serde::shape_table_wildcard::ser_table_wildcard(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::table_resource_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

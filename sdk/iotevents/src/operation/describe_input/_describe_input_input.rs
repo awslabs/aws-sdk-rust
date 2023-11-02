@@ -27,6 +27,7 @@ pub struct DescribeInputInputBuilder {
 }
 impl DescribeInputInputBuilder {
     /// <p>The name of the input.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self

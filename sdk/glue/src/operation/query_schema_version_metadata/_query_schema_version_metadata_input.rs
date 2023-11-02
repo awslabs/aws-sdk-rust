@@ -30,8 +30,10 @@ impl QuerySchemaVersionMetadataInput {
         self.schema_version_id.as_deref()
     }
     /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-    pub fn metadata_list(&self) -> ::std::option::Option<&[crate::types::MetadataKeyValuePair]> {
-        self.metadata_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_list.is_none()`.
+    pub fn metadata_list(&self) -> &[crate::types::MetadataKeyValuePair] {
+        self.metadata_list.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

@@ -63,6 +63,7 @@ pub fn ser_s3_object_metadata(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_object_metadata(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3ObjectMetadata, ::aws_smithy_xml::decode::XmlDecodeError> {

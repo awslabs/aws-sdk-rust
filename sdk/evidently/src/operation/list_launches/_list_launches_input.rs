@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLaunchesInput {
     /// <p>The name or ARN of the project to return the launch list from.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p>
@@ -14,8 +14,9 @@ pub struct ListLaunchesInput {
 }
 impl ListLaunchesInput {
     /// <p>The name or ARN of the project to return the launch list from.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -48,6 +49,7 @@ pub struct ListLaunchesInputBuilder {
 }
 impl ListLaunchesInputBuilder {
     /// <p>The name or ARN of the project to return the launch list from.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -104,9 +106,16 @@ impl ListLaunchesInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListLaunchesInput`](crate::operation::list_launches::ListLaunchesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::list_launches::builders::ListLaunchesInputBuilder::project)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_launches::ListLaunchesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_launches::ListLaunchesInput {
-            project: self.project,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building ListLaunchesInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
             status: self.status,

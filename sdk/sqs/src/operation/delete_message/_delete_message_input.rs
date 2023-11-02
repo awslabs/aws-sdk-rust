@@ -38,6 +38,7 @@ pub struct DeleteMessageInputBuilder {
 impl DeleteMessageInputBuilder {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl DeleteMessageInputBuilder {
         &self.queue_url
     }
     /// <p>The receipt handle associated with the message to delete.</p>
+    /// This field is required.
     pub fn receipt_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.receipt_handle = ::std::option::Option::Some(input.into());
         self

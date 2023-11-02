@@ -12,8 +12,10 @@ pub struct DescribeReservedInstancesOfferingsOutput {
 }
 impl DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
-    pub fn reserved_instances_offerings(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesOffering]> {
-        self.reserved_instances_offerings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_offerings.is_none()`.
+    pub fn reserved_instances_offerings(&self) -> &[crate::types::ReservedInstancesOffering] {
+        self.reserved_instances_offerings.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

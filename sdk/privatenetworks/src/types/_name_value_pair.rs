@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NameValuePair {
     /// <p>The name of the pair.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value of the pair.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl NameValuePair {
     /// <p>The name of the pair.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value of the pair.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct NameValuePairBuilder {
 }
 impl NameValuePairBuilder {
     /// <p>The name of the pair.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl NameValuePairBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`NameValuePair`](crate::types::NameValuePair).
-    pub fn build(self) -> crate::types::NameValuePair {
-        crate::types::NameValuePair {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::NameValuePairBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::NameValuePair, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NameValuePair {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building NameValuePair",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

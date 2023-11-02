@@ -9,11 +9,11 @@ pub fn ser_regex_match_tuple(
         crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.text_transformation {
-        object.key("TextTransformation").string(var_3.as_str());
+    {
+        object.key("TextTransformation").string(input.text_transformation.as_str());
     }
-    if let Some(var_4) = &input.regex_pattern_set_id {
-        object.key("RegexPatternSetId").string(var_4.as_str());
+    {
+        object.key("RegexPatternSetId").string(input.regex_pattern_set_id.as_str());
     }
     Ok(())
 }
@@ -60,7 +60,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::regex_match_tuple_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -27,6 +27,7 @@ pub struct DescribeClusterOperationInputBuilder {
 }
 impl DescribeClusterOperationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
+    /// This field is required.
     pub fn cluster_operation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_operation_arn = ::std::option::Option::Some(input.into());
         self

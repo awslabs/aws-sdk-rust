@@ -27,6 +27,7 @@ pub struct DescribePortfolioShareStatusInputBuilder {
 }
 impl DescribePortfolioShareStatusInputBuilder {
     /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
+    /// This field is required.
     pub fn portfolio_share_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_share_token = ::std::option::Option::Some(input.into());
         self

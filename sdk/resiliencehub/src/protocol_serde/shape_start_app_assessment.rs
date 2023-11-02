@@ -147,7 +147,7 @@ pub fn de_start_app_assessment_http_response(
         output = crate::protocol_serde::shape_start_app_assessment::de_start_app_assessment(_response_body, output)
             .map_err(crate::operation::start_app_assessment::StartAppAssessmentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_app_assessment_output_correct_errors(output).build()
     })
 }
 

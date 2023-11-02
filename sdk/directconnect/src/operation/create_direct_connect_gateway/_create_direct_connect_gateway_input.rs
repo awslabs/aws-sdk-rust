@@ -34,6 +34,7 @@ pub struct CreateDirectConnectGatewayInputBuilder {
 }
 impl CreateDirectConnectGatewayInputBuilder {
     /// <p>The name of the Direct Connect gateway.</p>
+    /// This field is required.
     pub fn direct_connect_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.direct_connect_gateway_name = ::std::option::Option::Some(input.into());
         self

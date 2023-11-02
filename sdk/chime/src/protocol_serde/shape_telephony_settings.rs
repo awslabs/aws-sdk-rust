@@ -33,7 +33,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::telephony_settings_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -45,14 +47,14 @@ pub fn ser_telephony_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TelephonySettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.inbound_calling {
-        object.key("InboundCalling").boolean(*var_1);
+    {
+        object.key("InboundCalling").boolean(input.inbound_calling);
     }
-    if let Some(var_2) = &input.outbound_calling {
-        object.key("OutboundCalling").boolean(*var_2);
+    {
+        object.key("OutboundCalling").boolean(input.outbound_calling);
     }
-    if let Some(var_3) = &input.sms {
-        object.key("SMS").boolean(*var_3);
+    {
+        object.key("SMS").boolean(input.sms);
     }
     Ok(())
 }

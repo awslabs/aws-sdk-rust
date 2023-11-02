@@ -11,12 +11,16 @@ pub struct BatchGetViewOutput {
 }
 impl BatchGetViewOutput {
     /// <p>A structure with a list of objects with details for each of the specified views.</p>
-    pub fn views(&self) -> ::std::option::Option<&[crate::types::View]> {
-        self.views.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.views.is_none()`.
+    pub fn views(&self) -> &[crate::types::View] {
+        self.views.as_deref().unwrap_or_default()
     }
     /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchGetViewError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchGetViewError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetViewOutput {

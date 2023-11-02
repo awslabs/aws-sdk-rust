@@ -11,12 +11,16 @@ pub struct BatchGetPreparedStatementOutput {
 }
 impl BatchGetPreparedStatementOutput {
     /// <p>The list of prepared statements returned.</p>
-    pub fn prepared_statements(&self) -> ::std::option::Option<&[crate::types::PreparedStatement]> {
-        self.prepared_statements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prepared_statements.is_none()`.
+    pub fn prepared_statements(&self) -> &[crate::types::PreparedStatement] {
+        self.prepared_statements.as_deref().unwrap_or_default()
     }
     /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
-    pub fn unprocessed_prepared_statement_names(&self) -> ::std::option::Option<&[crate::types::UnprocessedPreparedStatementName]> {
-        self.unprocessed_prepared_statement_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_prepared_statement_names.is_none()`.
+    pub fn unprocessed_prepared_statement_names(&self) -> &[crate::types::UnprocessedPreparedStatementName] {
+        self.unprocessed_prepared_statement_names.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetPreparedStatementOutput {

@@ -35,6 +35,7 @@ pub struct CreateBackendAuthIdentityPoolConfigBuilder {
 }
 impl CreateBackendAuthIdentityPoolConfigBuilder {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
+    /// This field is required.
     pub fn identity_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateBackendAuthIdentityPoolConfigBuilder {
         &self.identity_pool_name
     }
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
+    /// This field is required.
     pub fn unauthenticated_login(mut self, input: bool) -> Self {
         self.unauthenticated_login = ::std::option::Option::Some(input);
         self

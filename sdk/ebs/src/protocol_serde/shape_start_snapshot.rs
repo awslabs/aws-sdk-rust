@@ -25,7 +25,9 @@ pub fn de_start_snapshot_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_snapshot::StartSnapshotError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_snapshot::StartSnapshotError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

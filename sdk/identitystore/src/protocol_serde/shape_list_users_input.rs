@@ -3,29 +3,29 @@ pub fn ser_list_users_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_users::ListUsersInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identity_store_id {
-        object.key("IdentityStoreId").string(var_1.as_str());
+    {
+        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
     }
-    if let Some(var_2) = &input.max_results {
+    if let Some(var_1) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3.as_str());
+    if let Some(var_2) = &input.next_token {
+        object.key("NextToken").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.filters {
-        let mut array_5 = object.key("Filters").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.filters {
+        let mut array_4 = object.key("Filters").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_filter::ser_filter(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_filter::ser_filter(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }

@@ -34,6 +34,7 @@ pub struct DescribeViewInputBuilder {
 }
 impl DescribeViewInputBuilder {
     /// <p>An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.</p>
+    /// This field is required.
     pub fn view_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_token = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeViewInputBuilder {
         &self.view_token
     }
     /// <p>The connection token.</p>
+    /// This field is required.
     pub fn connection_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_token = ::std::option::Option::Some(input.into());
         self

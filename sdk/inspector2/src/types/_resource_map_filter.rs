@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceMapFilter {
     /// <p>The filter's comparison.</p>
-    pub comparison: ::std::option::Option<crate::types::ResourceMapComparison>,
+    pub comparison: crate::types::ResourceMapComparison,
     /// <p>The filter's key.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The filter's value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMapFilter {
     /// <p>The filter's comparison.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::ResourceMapComparison> {
-        self.comparison.as_ref()
+    pub fn comparison(&self) -> &crate::types::ResourceMapComparison {
+        &self.comparison
     }
     /// <p>The filter's key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The filter's value.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ResourceMapFilterBuilder {
 }
 impl ResourceMapFilterBuilder {
     /// <p>The filter's comparison.</p>
+    /// This field is required.
     pub fn comparison(mut self, input: crate::types::ResourceMapComparison) -> Self {
         self.comparison = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl ResourceMapFilterBuilder {
         &self.comparison
     }
     /// <p>The filter's key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl ResourceMapFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ResourceMapFilter`](crate::types::ResourceMapFilter).
-    pub fn build(self) -> crate::types::ResourceMapFilter {
-        crate::types::ResourceMapFilter {
-            comparison: self.comparison,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`comparison`](crate::types::builders::ResourceMapFilterBuilder::comparison)
+    /// - [`key`](crate::types::builders::ResourceMapFilterBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceMapFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceMapFilter {
+            comparison: self.comparison.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "comparison",
+                    "comparison was not specified but it is required when building ResourceMapFilter",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building ResourceMapFilter",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

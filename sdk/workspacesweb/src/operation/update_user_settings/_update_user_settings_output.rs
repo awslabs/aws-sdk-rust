@@ -34,6 +34,7 @@ pub struct UpdateUserSettingsOutputBuilder {
 }
 impl UpdateUserSettingsOutputBuilder {
     /// <p>The user settings.</p>
+    /// This field is required.
     pub fn user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.user_settings = ::std::option::Option::Some(input);
         self

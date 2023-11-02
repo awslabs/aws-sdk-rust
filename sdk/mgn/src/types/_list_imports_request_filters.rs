@@ -9,8 +9,10 @@ pub struct ListImportsRequestFilters {
 }
 impl ListImportsRequestFilters {
     /// <p>List imports request filters import IDs.</p>
-    pub fn import_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.import_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_i_ds.is_none()`.
+    pub fn import_i_ds(&self) -> &[::std::string::String] {
+        self.import_i_ds.as_deref().unwrap_or_default()
     }
 }
 impl ListImportsRequestFilters {

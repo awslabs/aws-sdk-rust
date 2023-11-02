@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBackend`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::set_app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(impl Into<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::set_app_id):<br>required: **true**<br><p>The app ID.</p><br>
+    ///   - [`backend_environment_name(impl Into<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::operation::delete_backend::builders::DeleteBackendFluentBuilder::set_backend_environment_name):<br>required: **true**<br><p>The name of the backend environment.</p><br>
     /// - On success, responds with [`DeleteBackendOutput`](crate::operation::delete_backend::DeleteBackendOutput) with field(s):
     ///   - [`app_id(Option<String>)`](crate::operation::delete_backend::DeleteBackendOutput::app_id): <p>The app ID.</p>
     ///   - [`backend_environment_name(Option<String>)`](crate::operation::delete_backend::DeleteBackendOutput::backend_environment_name): <p>The name of the backend environment.</p>

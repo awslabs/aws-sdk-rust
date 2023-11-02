@@ -12,8 +12,8 @@ pub fn ser_update_pricing_plan_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.pricing_mode {
-        object.key("pricingMode").string(var_4.as_str());
+    {
+        object.key("pricingMode").string(input.pricing_mode.as_str());
     }
     Ok(())
 }

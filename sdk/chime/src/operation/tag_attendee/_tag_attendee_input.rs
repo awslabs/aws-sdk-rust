@@ -20,8 +20,10 @@ impl TagAttendeeInput {
         self.attendee_id.as_deref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl TagAttendeeInput {
@@ -41,6 +43,7 @@ pub struct TagAttendeeInputBuilder {
 }
 impl TagAttendeeInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl TagAttendeeInputBuilder {
         &self.meeting_id
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    /// This field is required.
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
         self

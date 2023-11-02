@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamConfiguration {
     /// <p>The Amazon Web Services Region of the video stream.</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>The amount of time that data is retained.</p>
     pub data_retention_in_hours: ::std::option::Option<i32>,
 }
 impl KinesisVideoStreamConfiguration {
     /// <p>The Amazon Web Services Region of the video stream.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>The amount of time that data is retained.</p>
     pub fn data_retention_in_hours(&self) -> ::std::option::Option<i32> {
@@ -35,6 +36,7 @@ pub struct KinesisVideoStreamConfigurationBuilder {
 }
 impl KinesisVideoStreamConfigurationBuilder {
     /// <p>The Amazon Web Services Region of the video stream.</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl KinesisVideoStreamConfigurationBuilder {
         &self.data_retention_in_hours
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamConfiguration`](crate::types::KinesisVideoStreamConfiguration).
-    pub fn build(self) -> crate::types::KinesisVideoStreamConfiguration {
-        crate::types::KinesisVideoStreamConfiguration {
-            region: self.region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region`](crate::types::builders::KinesisVideoStreamConfigurationBuilder::region)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisVideoStreamConfiguration {
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building KinesisVideoStreamConfiguration",
+                )
+            })?,
             data_retention_in_hours: self.data_retention_in_hours,
-        }
+        })
     }
 }

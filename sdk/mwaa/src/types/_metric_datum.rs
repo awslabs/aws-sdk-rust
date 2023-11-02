@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDatum {
     /// <p> <b>Internal only</b>. The name of the metric.</p>
-    pub metric_name: ::std::option::Option<::std::string::String>,
+    pub metric_name: ::std::string::String,
     /// <p> <b>Internal only</b>. The time the metric data was received.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p> <b>Internal only</b>. The value for the metric.</p>
@@ -19,16 +19,19 @@ pub struct MetricDatum {
 }
 impl MetricDatum {
     /// <p> <b>Internal only</b>. The name of the metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
-        self.metric_name.as_deref()
+    pub fn metric_name(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_name.deref()
     }
     /// <p> <b>Internal only</b>. The time the metric data was received.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p> <b>Internal only</b>. The value for the metric.</p>
     pub fn value(&self) -> ::std::option::Option<f64> {
@@ -63,6 +66,7 @@ pub struct MetricDatumBuilder {
 }
 impl MetricDatumBuilder {
     /// <p> <b>Internal only</b>. The name of the metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl MetricDatumBuilder {
         &self.metric_name
     }
     /// <p> <b>Internal only</b>. The time the metric data was received.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -153,14 +158,27 @@ impl MetricDatumBuilder {
         &self.statistic_values
     }
     /// Consumes the builder and constructs a [`MetricDatum`](crate::types::MetricDatum).
-    pub fn build(self) -> crate::types::MetricDatum {
-        crate::types::MetricDatum {
-            metric_name: self.metric_name,
-            timestamp: self.timestamp,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric_name`](crate::types::builders::MetricDatumBuilder::metric_name)
+    /// - [`timestamp`](crate::types::builders::MetricDatumBuilder::timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricDatum, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricDatum {
+            metric_name: self.metric_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_name",
+                    "metric_name was not specified but it is required when building MetricDatum",
+                )
+            })?,
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building MetricDatum",
+                )
+            })?,
             dimensions: self.dimensions,
             value: self.value,
             unit: self.unit,
             statistic_values: self.statistic_values,
-        }
+        })
     }
 }

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVirtualNodeInput {
     /// <p>The name to use for the virtual node.</p>
-    pub virtual_node_name: ::std::option::Option<::std::string::String>,
+    pub virtual_node_name: ::std::string::String,
     /// <p>The name of the service mesh to create the virtual node in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The virtual node specification to apply.</p>
     pub spec: ::std::option::Option<crate::types::VirtualNodeSpec>,
     /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
@@ -18,20 +18,24 @@ pub struct CreateVirtualNodeInput {
 }
 impl CreateVirtualNodeInput {
     /// <p>The name to use for the virtual node.</p>
-    pub fn virtual_node_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_node_name.as_deref()
+    pub fn virtual_node_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_node_name.deref()
     }
     /// <p>The name of the service mesh to create the virtual node in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The virtual node specification to apply.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::VirtualNodeSpec> {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagRef]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagRef] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +66,7 @@ pub struct CreateVirtualNodeInputBuilder {
 }
 impl CreateVirtualNodeInputBuilder {
     /// <p>The name to use for the virtual node.</p>
+    /// This field is required.
     pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl CreateVirtualNodeInputBuilder {
         &self.virtual_node_name
     }
     /// <p>The name of the service mesh to create the virtual node in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl CreateVirtualNodeInputBuilder {
         &self.mesh_name
     }
     /// <p>The virtual node specification to apply.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::VirtualNodeSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -152,12 +159,25 @@ impl CreateVirtualNodeInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`CreateVirtualNodeInput`](crate::operation::create_virtual_node::CreateVirtualNodeInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_node_name`](crate::operation::create_virtual_node::builders::CreateVirtualNodeInputBuilder::virtual_node_name)
+    /// - [`mesh_name`](crate::operation::create_virtual_node::builders::CreateVirtualNodeInputBuilder::mesh_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_virtual_node::CreateVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_virtual_node::CreateVirtualNodeInput {
-            virtual_node_name: self.virtual_node_name,
-            mesh_name: self.mesh_name,
+            virtual_node_name: self.virtual_node_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_node_name",
+                    "virtual_node_name was not specified but it is required when building CreateVirtualNodeInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building CreateVirtualNodeInput",
+                )
+            })?,
             spec: self.spec,
             tags: self.tags,
             client_token: self.client_token,

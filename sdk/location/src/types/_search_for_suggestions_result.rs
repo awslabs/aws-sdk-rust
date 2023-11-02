@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
-    pub text: ::std::option::Option<::std::string::String>,
+    pub text: ::std::string::String,
     /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p>
     /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note>
     /// <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p>
@@ -19,8 +19,9 @@ pub struct SearchForSuggestionsResult {
 }
 impl SearchForSuggestionsResult {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
-        self.text.as_deref()
+    pub fn text(&self) -> &str {
+        use std::ops::Deref;
+        self.text.deref()
     }
     /// <p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p>
     /// <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note>
@@ -31,12 +32,16 @@ impl SearchForSuggestionsResult {
     }
     /// <p>The Amazon Location categories that describe the Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[::std::string::String] {
+        self.categories.as_deref().unwrap_or_default()
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn supplemental_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supplemental_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplemental_categories.is_none()`.
+    pub fn supplemental_categories(&self) -> &[::std::string::String] {
+        self.supplemental_categories.as_deref().unwrap_or_default()
     }
 }
 impl SearchForSuggestionsResult {
@@ -57,6 +62,7 @@ pub struct SearchForSuggestionsResultBuilder {
 }
 impl SearchForSuggestionsResultBuilder {
     /// <p>The text of the place suggestion, typically formatted as an address string.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -137,12 +143,19 @@ impl SearchForSuggestionsResultBuilder {
         &self.supplemental_categories
     }
     /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
-    pub fn build(self) -> crate::types::SearchForSuggestionsResult {
-        crate::types::SearchForSuggestionsResult {
-            text: self.text,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text`](crate::types::builders::SearchForSuggestionsResultBuilder::text)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchForSuggestionsResult, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchForSuggestionsResult {
+            text: self.text.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text",
+                    "text was not specified but it is required when building SearchForSuggestionsResult",
+                )
+            })?,
             place_id: self.place_id,
             categories: self.categories,
             supplemental_categories: self.supplemental_categories,
-        }
+        })
     }
 }

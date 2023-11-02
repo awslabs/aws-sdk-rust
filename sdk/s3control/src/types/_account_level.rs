@@ -71,6 +71,7 @@ impl AccountLevelBuilder {
         &self.activity_metrics
     }
     /// <p>A container for the S3 Storage Lens bucket-level configuration.</p>
+    /// This field is required.
     pub fn bucket_level(mut self, input: crate::types::BucketLevel) -> Self {
         self.bucket_level = ::std::option::Option::Some(input);
         self

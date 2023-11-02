@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateResource`](crate::operation::create_resource::builders::CreateResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
-    ///   - [`parent_id(impl Into<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::parent_id) / [`set_parent_id(Option<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::set_parent_id): <p>The parent resource's identifier.</p>
-    ///   - [`path_part(impl Into<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::path_part) / [`set_path_part(Option<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::set_path_part): <p>The last path segment for this resource.</p>
+    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::set_rest_api_id):<br>required: **true**<br><p>The string identifier of the associated RestApi.</p><br>
+    ///   - [`parent_id(impl Into<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::parent_id) / [`set_parent_id(Option<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::set_parent_id):<br>required: **true**<br><p>The parent resource's identifier.</p><br>
+    ///   - [`path_part(impl Into<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::path_part) / [`set_path_part(Option<String>)`](crate::operation::create_resource::builders::CreateResourceFluentBuilder::set_path_part):<br>required: **true**<br><p>The last path segment for this resource.</p><br>
     /// - On success, responds with [`CreateResourceOutput`](crate::operation::create_resource::CreateResourceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_resource::CreateResourceOutput::id): <p>The resource's identifier.</p>
     ///   - [`parent_id(Option<String>)`](crate::operation::create_resource::CreateResourceOutput::parent_id): <p>The parent resource's identifier.</p>

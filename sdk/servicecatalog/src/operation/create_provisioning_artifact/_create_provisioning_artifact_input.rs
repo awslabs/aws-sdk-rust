@@ -82,6 +82,7 @@ impl CreateProvisioningArtifactInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +97,7 @@ impl CreateProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The configuration for the provisioning artifact.</p>
+    /// This field is required.
     pub fn parameters(mut self, input: crate::types::ProvisioningArtifactProperties) -> Self {
         self.parameters = ::std::option::Option::Some(input);
         self
@@ -110,6 +112,7 @@ impl CreateProvisioningArtifactInputBuilder {
         &self.parameters
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self

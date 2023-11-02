@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutPolicy`](crate::operation::put_policy::builders::PutPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`policy(Policy)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::policy) / [`set_policy(Option<Policy>)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::set_policy): <p>The details of the Firewall Manager policy to be created.</p>
-    ///   - [`tag_list(Tag)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::set_tag_list): <p>The tags to add to the Amazon Web Services resource.</p>
+    ///   - [`policy(Policy)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::policy) / [`set_policy(Option<Policy>)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::set_policy):<br>required: **true**<br><p>The details of the Firewall Manager policy to be created.</p><br>
+    ///   - [`tag_list(Tag)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::put_policy::builders::PutPolicyFluentBuilder::set_tag_list):<br>required: **false**<br><p>The tags to add to the Amazon Web Services resource.</p><br>
     /// - On success, responds with [`PutPolicyOutput`](crate::operation::put_policy::PutPolicyOutput) with field(s):
     ///   - [`policy(Option<Policy>)`](crate::operation::put_policy::PutPolicyOutput::policy): <p>The details of the Firewall Manager policy.</p>
     ///   - [`policy_arn(Option<String>)`](crate::operation::put_policy::PutPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the policy.</p>

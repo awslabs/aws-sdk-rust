@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutGeofenceOutput {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
-    pub successes: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceSuccess>>,
+    pub successes: ::std::vec::Vec<crate::types::BatchPutGeofenceSuccess>,
     /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchPutGeofenceError>,
     _request_id: Option<String>,
 }
 impl BatchPutGeofenceOutput {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
-    pub fn successes(&self) -> ::std::option::Option<&[crate::types::BatchPutGeofenceSuccess]> {
-        self.successes.as_deref()
+    pub fn successes(&self) -> &[crate::types::BatchPutGeofenceSuccess] {
+        use std::ops::Deref;
+        self.successes.deref()
     }
     /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchPutGeofenceError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchPutGeofenceError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchPutGeofenceOutput {
@@ -90,11 +92,26 @@ impl BatchPutGeofenceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchPutGeofenceOutput`](crate::operation::batch_put_geofence::BatchPutGeofenceOutput).
-    pub fn build(self) -> crate::operation::batch_put_geofence::BatchPutGeofenceOutput {
-        crate::operation::batch_put_geofence::BatchPutGeofenceOutput {
-            successes: self.successes,
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`successes`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceOutputBuilder::successes)
+    /// - [`errors`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::batch_put_geofence::BatchPutGeofenceOutput {
+            successes: self.successes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "successes",
+                    "successes was not specified but it is required when building BatchPutGeofenceOutput",
+                )
+            })?,
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchPutGeofenceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

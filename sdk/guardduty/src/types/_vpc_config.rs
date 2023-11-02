@@ -13,16 +13,20 @@ pub struct VpcConfig {
 }
 impl VpcConfig {
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The identifier of the security group attached to the Lambda function.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroup]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::SecurityGroup] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl VpcConfig {

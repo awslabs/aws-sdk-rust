@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFileSystemOutput {
     /// <p>The Amazon Web Services account that created the file system.</p>
-    pub owner_id: ::std::option::Option<::std::string::String>,
+    pub owner_id: ::std::string::String,
     /// <p>The opaque string specified in the request.</p>
-    pub creation_token: ::std::option::Option<::std::string::String>,
+    pub creation_token: ::std::string::String,
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-    pub file_system_id: ::std::option::Option<::std::string::String>,
+    pub file_system_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
     pub file_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The lifecycle phase of the file system.</p>
-    pub life_cycle_state: ::std::option::Option<crate::types::LifeCycleState>,
+    pub life_cycle_state: crate::types::LifeCycleState,
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
@@ -23,7 +23,7 @@ pub struct UpdateFileSystemOutput {
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
     pub size_in_bytes: ::std::option::Option<crate::types::FileSystemSize>,
     /// <p>The performance mode of the file system.</p>
-    pub performance_mode: ::std::option::Option<crate::types::PerformanceMode>,
+    pub performance_mode: crate::types::PerformanceMode,
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
@@ -37,33 +37,36 @@ pub struct UpdateFileSystemOutput {
     /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::vec::Vec<crate::types::Tag>,
     _request_id: Option<String>,
 }
 impl UpdateFileSystemOutput {
     /// <p>The Amazon Web Services account that created the file system.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
-        self.owner_id.as_deref()
+    pub fn owner_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owner_id.deref()
     }
     /// <p>The opaque string specified in the request.</p>
-    pub fn creation_token(&self) -> ::std::option::Option<&str> {
-        self.creation_token.as_deref()
+    pub fn creation_token(&self) -> &str {
+        use std::ops::Deref;
+        self.creation_token.deref()
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
-        self.file_system_id.as_deref()
+    pub fn file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.file_system_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
     pub fn file_system_arn(&self) -> ::std::option::Option<&str> {
         self.file_system_arn.as_deref()
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The lifecycle phase of the file system.</p>
-    pub fn life_cycle_state(&self) -> ::std::option::Option<&crate::types::LifeCycleState> {
-        self.life_cycle_state.as_ref()
+    pub fn life_cycle_state(&self) -> &crate::types::LifeCycleState {
+        &self.life_cycle_state
     }
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -78,8 +81,8 @@ impl UpdateFileSystemOutput {
         self.size_in_bytes.as_ref()
     }
     /// <p>The performance mode of the file system.</p>
-    pub fn performance_mode(&self) -> ::std::option::Option<&crate::types::PerformanceMode> {
-        self.performance_mode.as_ref()
+    pub fn performance_mode(&self) -> &crate::types::PerformanceMode {
+        &self.performance_mode
     }
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
@@ -106,8 +109,9 @@ impl UpdateFileSystemOutput {
         self.availability_zone_id.as_deref()
     }
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tags.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateFileSystemOutput {
@@ -147,6 +151,7 @@ pub struct UpdateFileSystemOutputBuilder {
 }
 impl UpdateFileSystemOutputBuilder {
     /// <p>The Amazon Web Services account that created the file system.</p>
+    /// This field is required.
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +166,7 @@ impl UpdateFileSystemOutputBuilder {
         &self.owner_id
     }
     /// <p>The opaque string specified in the request.</p>
+    /// This field is required.
     pub fn creation_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_token = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +181,7 @@ impl UpdateFileSystemOutputBuilder {
         &self.creation_token
     }
     /// <p>The ID of the file system, assigned by Amazon EFS.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -203,6 +210,7 @@ impl UpdateFileSystemOutputBuilder {
         &self.file_system_arn
     }
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -217,6 +225,7 @@ impl UpdateFileSystemOutputBuilder {
         &self.creation_time
     }
     /// <p>The lifecycle phase of the file system.</p>
+    /// This field is required.
     pub fn life_cycle_state(mut self, input: crate::types::LifeCycleState) -> Self {
         self.life_cycle_state = ::std::option::Option::Some(input);
         self
@@ -245,6 +254,7 @@ impl UpdateFileSystemOutputBuilder {
         &self.name
     }
     /// <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
+    /// This field is required.
     pub fn number_of_mount_targets(mut self, input: i32) -> Self {
         self.number_of_mount_targets = ::std::option::Option::Some(input);
         self
@@ -259,6 +269,7 @@ impl UpdateFileSystemOutputBuilder {
         &self.number_of_mount_targets
     }
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
+    /// This field is required.
     pub fn size_in_bytes(mut self, input: crate::types::FileSystemSize) -> Self {
         self.size_in_bytes = ::std::option::Option::Some(input);
         self
@@ -273,6 +284,7 @@ impl UpdateFileSystemOutputBuilder {
         &self.size_in_bytes
     }
     /// <p>The performance mode of the file system.</p>
+    /// This field is required.
     pub fn performance_mode(mut self, input: crate::types::PerformanceMode) -> Self {
         self.performance_mode = ::std::option::Option::Some(input);
         self
@@ -400,26 +412,71 @@ impl UpdateFileSystemOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateFileSystemOutput`](crate::operation::update_file_system::UpdateFileSystemOutput).
-    pub fn build(self) -> crate::operation::update_file_system::UpdateFileSystemOutput {
-        crate::operation::update_file_system::UpdateFileSystemOutput {
-            owner_id: self.owner_id,
-            creation_token: self.creation_token,
-            file_system_id: self.file_system_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`owner_id`](crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::owner_id)
+    /// - [`creation_token`](crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::creation_token)
+    /// - [`file_system_id`](crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::file_system_id)
+    /// - [`creation_time`](crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::creation_time)
+    /// - [`life_cycle_state`](crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::life_cycle_state)
+    /// - [`performance_mode`](crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::performance_mode)
+    /// - [`tags`](crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::tags)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_file_system::UpdateFileSystemOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_file_system::UpdateFileSystemOutput {
+            owner_id: self.owner_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "owner_id",
+                    "owner_id was not specified but it is required when building UpdateFileSystemOutput",
+                )
+            })?,
+            creation_token: self.creation_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_token",
+                    "creation_token was not specified but it is required when building UpdateFileSystemOutput",
+                )
+            })?,
+            file_system_id: self.file_system_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file_system_id",
+                    "file_system_id was not specified but it is required when building UpdateFileSystemOutput",
+                )
+            })?,
             file_system_arn: self.file_system_arn,
-            creation_time: self.creation_time,
-            life_cycle_state: self.life_cycle_state,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building UpdateFileSystemOutput",
+                )
+            })?,
+            life_cycle_state: self.life_cycle_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "life_cycle_state",
+                    "life_cycle_state was not specified but it is required when building UpdateFileSystemOutput",
+                )
+            })?,
             name: self.name,
             number_of_mount_targets: self.number_of_mount_targets.unwrap_or_default(),
             size_in_bytes: self.size_in_bytes,
-            performance_mode: self.performance_mode,
+            performance_mode: self.performance_mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "performance_mode",
+                    "performance_mode was not specified but it is required when building UpdateFileSystemOutput",
+                )
+            })?,
             encrypted: self.encrypted,
             kms_key_id: self.kms_key_id,
             throughput_mode: self.throughput_mode,
             provisioned_throughput_in_mibps: self.provisioned_throughput_in_mibps,
             availability_zone_name: self.availability_zone_name,
             availability_zone_id: self.availability_zone_id,
-            tags: self.tags,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building UpdateFileSystemOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -48,6 +48,7 @@ pub struct ListSharesInputBuilder {
 }
 impl ListSharesInputBuilder {
     /// <p> The account that owns the analytics store shared. </p>
+    /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.resource_owner = ::std::option::Option::Some(input);
         self

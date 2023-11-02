@@ -15,8 +15,10 @@ impl MetricSetDimensionFilter {
         self.name.as_deref()
     }
     /// <p>The list of filters that you are applying.</p>
-    pub fn filter_list(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_list.is_none()`.
+    pub fn filter_list(&self) -> &[crate::types::Filter] {
+        self.filter_list.as_deref().unwrap_or_default()
     }
 }
 impl MetricSetDimensionFilter {

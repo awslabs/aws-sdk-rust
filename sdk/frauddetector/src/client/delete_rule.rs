@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRule`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule(Rule)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::rule) / [`set_rule(Option<Rule>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::set_rule): <p>A rule.</p>
+    ///   - [`rule(Rule)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::rule) / [`set_rule(Option<Rule>)`](crate::operation::delete_rule::builders::DeleteRuleFluentBuilder::set_rule):<br>required: **true**<br><p>A rule.</p><br>
     /// - On success, responds with [`DeleteRuleOutput`](crate::operation::delete_rule::DeleteRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::operation::delete_rule::DeleteRuleError)
     pub fn delete_rule(&self) -> crate::operation::delete_rule::builders::DeleteRuleFluentBuilder {

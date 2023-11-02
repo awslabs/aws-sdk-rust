@@ -41,8 +41,10 @@ impl InstanceTarget {
         self.last_updated_at.as_ref()
     }
     /// <p> The lifecycle events of the deployment to this target instance. </p>
-    pub fn lifecycle_events(&self) -> ::std::option::Option<&[crate::types::LifecycleEvent]> {
-        self.lifecycle_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_events.is_none()`.
+    pub fn lifecycle_events(&self) -> &[crate::types::LifecycleEvent] {
+        self.lifecycle_events.as_deref().unwrap_or_default()
     }
     /// <p> A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     pub fn instance_label(&self) -> ::std::option::Option<&crate::types::TargetLabel> {

@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MySqlCatalogSource {
     /// <p>The name of the data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name of the database to read from.</p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>The name of the table in the database to read from.</p>
-    pub table: ::std::option::Option<::std::string::String>,
+    pub table: ::std::string::String,
 }
 impl MySqlCatalogSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
-        self.table.as_deref()
+    pub fn table(&self) -> &str {
+        use std::ops::Deref;
+        self.table.deref()
     }
 }
 impl MySqlCatalogSource {
@@ -42,6 +45,7 @@ pub struct MySqlCatalogSourceBuilder {
 }
 impl MySqlCatalogSourceBuilder {
     /// <p>The name of the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl MySqlCatalogSourceBuilder {
         &self.name
     }
     /// <p>The name of the database to read from.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl MySqlCatalogSourceBuilder {
         &self.database
     }
     /// <p>The name of the table in the database to read from.</p>
+    /// This field is required.
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl MySqlCatalogSourceBuilder {
         &self.table
     }
     /// Consumes the builder and constructs a [`MySqlCatalogSource`](crate::types::MySqlCatalogSource).
-    pub fn build(self) -> crate::types::MySqlCatalogSource {
-        crate::types::MySqlCatalogSource {
-            name: self.name,
-            database: self.database,
-            table: self.table,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::MySqlCatalogSourceBuilder::name)
+    /// - [`database`](crate::types::builders::MySqlCatalogSourceBuilder::database)
+    /// - [`table`](crate::types::builders::MySqlCatalogSourceBuilder::table)
+    pub fn build(self) -> ::std::result::Result<crate::types::MySqlCatalogSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MySqlCatalogSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building MySqlCatalogSource",
+                )
+            })?,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building MySqlCatalogSource",
+                )
+            })?,
+            table: self.table.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table",
+                    "table was not specified but it is required when building MySqlCatalogSource",
+                )
+            })?,
+        })
     }
 }

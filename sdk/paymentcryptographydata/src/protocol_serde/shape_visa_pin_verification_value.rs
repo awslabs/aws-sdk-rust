@@ -3,13 +3,13 @@ pub fn ser_visa_pin_verification_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisaPinVerificationValue,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.encrypted_pin_block {
-        object.key("EncryptedPinBlock").string(var_1.as_str());
+    {
+        object.key("EncryptedPinBlock").string(input.encrypted_pin_block.as_str());
     }
-    if let Some(var_2) = &input.pin_verification_key_index {
+    {
         object.key("PinVerificationKeyIndex").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.pin_verification_key_index).into()),
         );
     }
     Ok(())

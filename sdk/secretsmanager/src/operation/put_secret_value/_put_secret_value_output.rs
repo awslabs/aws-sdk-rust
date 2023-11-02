@@ -27,8 +27,10 @@ impl PutSecretValueOutput {
         self.version_id.as_deref()
     }
     /// <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
-    pub fn version_stages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_stages.is_none()`.
+    pub fn version_stages(&self) -> &[::std::string::String] {
+        self.version_stages.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutSecretValueOutput {

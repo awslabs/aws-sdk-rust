@@ -27,6 +27,7 @@ pub struct DeleteSlotTypeInputBuilder {
 }
 impl DeleteSlotTypeInputBuilder {
     /// <p>The name of the slot type. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVcenterClientInput {
     /// <p>ID of resource to be deleted.</p>
-    pub vcenter_client_id: ::std::option::Option<::std::string::String>,
+    pub vcenter_client_id: ::std::string::String,
 }
 impl DeleteVcenterClientInput {
     /// <p>ID of resource to be deleted.</p>
-    pub fn vcenter_client_id(&self) -> ::std::option::Option<&str> {
-        self.vcenter_client_id.as_deref()
+    pub fn vcenter_client_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vcenter_client_id.deref()
     }
 }
 impl DeleteVcenterClientInput {
@@ -27,6 +28,7 @@ pub struct DeleteVcenterClientInputBuilder {
 }
 impl DeleteVcenterClientInputBuilder {
     /// <p>ID of resource to be deleted.</p>
+    /// This field is required.
     pub fn vcenter_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vcenter_client_id = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,19 @@ impl DeleteVcenterClientInputBuilder {
         &self.vcenter_client_id
     }
     /// Consumes the builder and constructs a [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vcenter_client_id`](crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder::vcenter_client_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_vcenter_client::DeleteVcenterClientInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_vcenter_client::DeleteVcenterClientInput {
-            vcenter_client_id: self.vcenter_client_id,
+            vcenter_client_id: self.vcenter_client_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vcenter_client_id",
+                    "vcenter_client_id was not specified but it is required when building DeleteVcenterClientInput",
+                )
+            })?,
         })
     }
 }

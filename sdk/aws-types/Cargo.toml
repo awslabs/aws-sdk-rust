@@ -13,7 +13,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-examples = ["dep:hyper-rustls", "aws-smithy-client/client-hyper", "aws-smithy-client/rustls"]
+examples = ["dep:hyper-rustls", "aws-smithy-runtime/client", "aws-smithy-runtime/connector-hyper-0-14-x", "aws-smithy-runtime/tls-rustls"]
 
 [dependencies]
 tracing = "0.1"
@@ -31,8 +31,14 @@ version = "0.56.1"
 path = "../aws-smithy-types"
 version = "0.56.1"
 
-[dependencies.aws-smithy-client]
-path = "../aws-smithy-client"
+[dependencies.aws-smithy-runtime]
+path = "../aws-smithy-runtime"
+optional = true
+version = "0.56.1"
+
+[dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["client"]
 version = "0.56.1"
 
 [dependencies.aws-smithy-http]

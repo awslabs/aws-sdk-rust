@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceApiKeyOutput {
     /// <p>The name of the key that was deleted.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>The ID of the workspace where the key was deleted.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteWorkspaceApiKeyOutput {
     /// <p>The name of the key that was deleted.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>The ID of the workspace where the key was deleted.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteWorkspaceApiKeyOutput {
@@ -41,6 +43,7 @@ pub struct DeleteWorkspaceApiKeyOutputBuilder {
 }
 impl DeleteWorkspaceApiKeyOutputBuilder {
     /// <p>The name of the key that was deleted.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DeleteWorkspaceApiKeyOutputBuilder {
         &self.key_name
     }
     /// <p>The ID of the workspace where the key was deleted.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,27 @@ impl DeleteWorkspaceApiKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyOutput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput).
-    pub fn build(self) -> crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput {
-        crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput {
-            key_name: self.key_name,
-            workspace_id: self.workspace_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder::key_name)
+    /// - [`workspace_id`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder::workspace_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput {
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building DeleteWorkspaceApiKeyOutput",
+                )
+            })?,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building DeleteWorkspaceApiKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

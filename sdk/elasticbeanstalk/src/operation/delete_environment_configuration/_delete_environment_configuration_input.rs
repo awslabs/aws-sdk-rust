@@ -35,6 +35,7 @@ pub struct DeleteEnvironmentConfigurationInputBuilder {
 }
 impl DeleteEnvironmentConfigurationInputBuilder {
     /// <p>The name of the application the environment is associated with.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteEnvironmentConfigurationInputBuilder {
         &self.application_name
     }
     /// <p>The name of the environment to delete the draft configuration from.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self

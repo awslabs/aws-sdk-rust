@@ -27,6 +27,7 @@ pub struct DescribeMetricSetInputBuilder {
 }
 impl DescribeMetricSetInputBuilder {
     /// <p>The ARN of the dataset.</p>
+    /// This field is required.
     pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_arn = ::std::option::Option::Some(input.into());
         self

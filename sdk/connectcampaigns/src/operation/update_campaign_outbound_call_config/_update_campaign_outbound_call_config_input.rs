@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignOutboundCallConfigInput {
     /// Identifier representing a Campaign
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// The identifier of the contact flow for the outbound call.
     pub connect_contact_flow_id: ::std::option::Option<::std::string::String>,
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
@@ -15,8 +15,9 @@ pub struct UpdateCampaignOutboundCallConfigInput {
 }
 impl UpdateCampaignOutboundCallConfigInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// The identifier of the contact flow for the outbound call.
     pub fn connect_contact_flow_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct UpdateCampaignOutboundCallConfigInputBuilder {
 }
 impl UpdateCampaignOutboundCallConfigInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,8 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
         &self.answer_machine_detection_config
     }
     /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigInput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_campaign_outbound_call_config::builders::UpdateCampaignOutboundCallConfigInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -113,7 +117,12 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput {
-                id: self.id,
+                id: self.id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "id was not specified but it is required when building UpdateCampaignOutboundCallConfigInput",
+                    )
+                })?,
                 connect_contact_flow_id: self.connect_contact_flow_id,
                 connect_source_phone_number: self.connect_source_phone_number,
                 answer_machine_detection_config: self.answer_machine_detection_config,

@@ -12,7 +12,7 @@ pub struct S3Action {
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket for incoming email.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that enables you to store similar data under the same directory in a bucket.</p>
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The customer master key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket. You can use the default master key or a custom master key that you created in Amazon Web Services KMS as follows:</p>
@@ -32,8 +32,9 @@ impl S3Action {
         self.topic_arn.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket for incoming email.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>The key prefix of the Amazon S3 bucket. The key prefix is similar to a directory name that enables you to store similar data under the same directory in a bucket.</p>
     pub fn object_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -86,6 +87,7 @@ impl S3ActionBuilder {
         &self.topic_arn
     }
     /// <p>The name of the Amazon S3 bucket for incoming email.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -149,12 +151,19 @@ impl S3ActionBuilder {
         &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`S3Action`](crate::types::S3Action).
-    pub fn build(self) -> crate::types::S3Action {
-        crate::types::S3Action {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::S3ActionBuilder::bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Action, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3Action {
             topic_arn: self.topic_arn,
-            bucket_name: self.bucket_name,
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building S3Action",
+                )
+            })?,
             object_key_prefix: self.object_key_prefix,
             kms_key_arn: self.kms_key_arn,
-        }
+        })
     }
 }

@@ -48,7 +48,7 @@ pub struct XssMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
+    pub text_transformation: crate::types::TextTransformation,
 }
 impl XssMatchTuple {
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
@@ -93,8 +93,8 @@ impl XssMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> ::std::option::Option<&crate::types::TextTransformation> {
-        self.text_transformation.as_ref()
+    pub fn text_transformation(&self) -> &crate::types::TextTransformation {
+        &self.text_transformation
     }
 }
 impl XssMatchTuple {
@@ -113,6 +113,7 @@ pub struct XssMatchTupleBuilder {
 }
 impl XssMatchTupleBuilder {
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
+    /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
@@ -164,6 +165,7 @@ impl XssMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
+    /// This field is required.
     pub fn text_transformation(mut self, input: crate::types::TextTransformation) -> Self {
         self.text_transformation = ::std::option::Option::Some(input);
         self
@@ -252,10 +254,17 @@ impl XssMatchTupleBuilder {
         &self.text_transformation
     }
     /// Consumes the builder and constructs a [`XssMatchTuple`](crate::types::XssMatchTuple).
-    pub fn build(self) -> crate::types::XssMatchTuple {
-        crate::types::XssMatchTuple {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text_transformation`](crate::types::builders::XssMatchTupleBuilder::text_transformation)
+    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchTuple, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::XssMatchTuple {
             field_to_match: self.field_to_match,
-            text_transformation: self.text_transformation,
-        }
+            text_transformation: self.text_transformation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text_transformation",
+                    "text_transformation was not specified but it is required when building XssMatchTuple",
+                )
+            })?,
+        })
     }
 }

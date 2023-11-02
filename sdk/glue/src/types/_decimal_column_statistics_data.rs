@@ -77,6 +77,7 @@ impl DecimalColumnStatisticsDataBuilder {
         &self.maximum_value
     }
     /// <p>The number of null values in the column.</p>
+    /// This field is required.
     pub fn number_of_nulls(mut self, input: i64) -> Self {
         self.number_of_nulls = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl DecimalColumnStatisticsDataBuilder {
         &self.number_of_nulls
     }
     /// <p>The number of distinct values in a column.</p>
+    /// This field is required.
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
         self.number_of_distinct_values = ::std::option::Option::Some(input);
         self

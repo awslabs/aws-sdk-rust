@@ -97,8 +97,10 @@ pub struct TransactionCanceledException {
 }
 impl TransactionCanceledException {
     /// <p>A list of cancellation reasons.</p>
-    pub fn cancellation_reasons(&self) -> ::std::option::Option<&[crate::types::CancellationReason]> {
-        self.cancellation_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cancellation_reasons.is_none()`.
+    pub fn cancellation_reasons(&self) -> &[crate::types::CancellationReason] {
+        self.cancellation_reasons.as_deref().unwrap_or_default()
     }
 }
 impl TransactionCanceledException {

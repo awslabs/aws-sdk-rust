@@ -69,12 +69,16 @@ impl CertificateDetail {
         self.domain_name.as_deref()
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
-    pub fn subject_alternative_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subject_alternative_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
+    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
+        self.subject_alternative_names.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about the initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
-    pub fn domain_validation_options(&self) -> ::std::option::Option<&[crate::types::DomainValidation]> {
-        self.domain_validation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_options.is_none()`.
+    pub fn domain_validation_options(&self) -> &[crate::types::DomainValidation] {
+        self.domain_validation_options.as_deref().unwrap_or_default()
     }
     /// <p>The serial number of the certificate.</p>
     pub fn serial(&self) -> ::std::option::Option<&str> {
@@ -130,8 +134,10 @@ impl CertificateDetail {
         self.signature_algorithm.as_deref()
     }
     /// <p>A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can be used by multiple Amazon Web Services resources. </p>
-    pub fn in_use_by(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.in_use_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_use_by.is_none()`.
+    pub fn in_use_by(&self) -> &[::std::string::String] {
+        self.in_use_by.as_deref().unwrap_or_default()
     }
     /// <p>The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate Request Failed</a> in the <i>Certificate Manager User Guide</i>. </p>
     pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::FailureReason> {
@@ -146,12 +152,16 @@ impl CertificateDetail {
         self.renewal_summary.as_ref()
     }
     /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
-    pub fn key_usages(&self) -> ::std::option::Option<&[crate::types::KeyUsage]> {
-        self.key_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_usages.is_none()`.
+    pub fn key_usages(&self) -> &[crate::types::KeyUsage] {
+        self.key_usages.as_deref().unwrap_or_default()
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
-    pub fn extended_key_usages(&self) -> ::std::option::Option<&[crate::types::ExtendedKeyUsage]> {
-        self.extended_key_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extended_key_usages.is_none()`.
+    pub fn extended_key_usages(&self) -> &[crate::types::ExtendedKeyUsage] {
+        self.extended_key_usages.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that issued the certificate. This has the following format: </p>
     /// <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>

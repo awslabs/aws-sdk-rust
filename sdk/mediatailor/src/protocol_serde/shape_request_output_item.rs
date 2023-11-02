@@ -15,11 +15,11 @@ pub fn ser_request_output_item(
         crate::protocol_serde::shape_hls_playlist_settings::ser_hls_playlist_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.manifest_name {
-        object.key("ManifestName").string(var_5.as_str());
+    {
+        object.key("ManifestName").string(input.manifest_name.as_str());
     }
-    if let Some(var_6) = &input.source_group {
-        object.key("SourceGroup").string(var_6.as_str());
+    {
+        object.key("SourceGroup").string(input.source_group.as_str());
     }
     Ok(())
 }

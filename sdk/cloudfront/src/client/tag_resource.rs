@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource): <p>An ARN of a CloudFront resource.</p>
-    ///   - [`tags(Tags)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Tags>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    ///   - [`resource(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource):<br>required: **true**<br><p>An ARN of a CloudFront resource.</p><br>
+    ///   - [`tags(Tags)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Tags>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags):<br>required: **true**<br><p>A complex type that contains zero or more <code>Tag</code> elements.</p><br>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     pub fn tag_resource(&self) -> crate::operation::tag_resource::builders::TagResourceFluentBuilder {

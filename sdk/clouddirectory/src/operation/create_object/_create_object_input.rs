@@ -20,12 +20,16 @@ impl CreateObjectInput {
         self.directory_arn.as_deref()
     }
     /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facets(&self) -> ::std::option::Option<&[crate::types::SchemaFacet]> {
-        self.schema_facets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_facets.is_none()`.
+    pub fn schema_facets(&self) -> &[crate::types::SchemaFacet] {
+        self.schema_facets.as_deref().unwrap_or_default()
     }
     /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
-    pub fn object_attribute_list(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
-        self.object_attribute_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_attribute_list.is_none()`.
+    pub fn object_attribute_list(&self) -> &[crate::types::AttributeKeyAndValue] {
+        self.object_attribute_list.as_deref().unwrap_or_default()
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
@@ -55,6 +59,7 @@ pub struct CreateObjectInputBuilder {
 }
 impl CreateObjectInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self

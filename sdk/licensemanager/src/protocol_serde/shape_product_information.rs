@@ -3,20 +3,20 @@ pub fn ser_product_information(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProductInformation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_type {
-        object.key("ResourceType").string(var_1.as_str());
+    {
+        object.key("ResourceType").string(input.resource_type.as_str());
     }
-    if let Some(var_2) = &input.product_information_filter_list {
-        let mut array_3 = object.key("ProductInformationFilterList").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("ProductInformationFilterList").start_array();
+        for item_2 in &input.product_information_filter_list {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_product_information_filter::ser_product_information_filter(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_product_information_filter::ser_product_information_filter(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -58,7 +58,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::product_information_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -78,8 +78,10 @@ impl CreateTrialComponentInput {
         self.metadata_properties.as_ref()
     }
     /// <p>A list of tags to associate with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateTrialComponentInput {
@@ -106,6 +108,7 @@ pub struct CreateTrialComponentInputBuilder {
 }
 impl CreateTrialComponentInputBuilder {
     /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self

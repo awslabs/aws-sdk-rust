@@ -27,8 +27,10 @@ impl OrganizationEntityAggregate {
         self.statuses.as_ref()
     }
     /// <p>A list of entity aggregates for each of the specified accounts in your organization that are affected by a specific event. If there are no <code>awsAccountIds</code> provided in the request, this field will be empty in the response.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[crate::types::AccountEntityAggregate]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[crate::types::AccountEntityAggregate] {
+        self.accounts.as_deref().unwrap_or_default()
     }
 }
 impl OrganizationEntityAggregate {

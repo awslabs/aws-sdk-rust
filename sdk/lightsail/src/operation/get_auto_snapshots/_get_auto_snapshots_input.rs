@@ -27,6 +27,7 @@ pub struct GetAutoSnapshotsInputBuilder {
 }
 impl GetAutoSnapshotsInputBuilder {
     /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self

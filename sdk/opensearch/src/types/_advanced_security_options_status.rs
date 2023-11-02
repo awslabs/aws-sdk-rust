@@ -35,6 +35,7 @@ pub struct AdvancedSecurityOptionsStatusBuilder {
 }
 impl AdvancedSecurityOptionsStatusBuilder {
     /// <p>Container for fine-grained access control settings.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::AdvancedSecurityOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AdvancedSecurityOptionsStatusBuilder {
         &self.options
     }
     /// <p>Status of the fine-grained access control settings for a domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

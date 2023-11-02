@@ -11,12 +11,16 @@ pub struct ExecutionResults {
 }
 impl ExecutionResults {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::ExecutionStepResult]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::ExecutionStepResult] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    pub fn on_exception_steps(&self) -> ::std::option::Option<&[crate::types::ExecutionStepResult]> {
-        self.on_exception_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_exception_steps.is_none()`.
+    pub fn on_exception_steps(&self) -> &[crate::types::ExecutionStepResult] {
+        self.on_exception_steps.as_deref().unwrap_or_default()
     }
 }
 impl ExecutionResults {

@@ -35,8 +35,10 @@ impl InferredWorkloadSaving {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    pub fn inferred_workload_types(&self) -> ::std::option::Option<&[crate::types::InferredWorkloadType]> {
-        self.inferred_workload_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_types.is_none()`.
+    pub fn inferred_workload_types(&self) -> &[crate::types::InferredWorkloadType] {
+        self.inferred_workload_types.as_deref().unwrap_or_default()
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
     pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&crate::types::EstimatedMonthlySavings> {

@@ -48,6 +48,7 @@ impl DeleteRepositoryPolicyInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that's associated with the repository policy to delete.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

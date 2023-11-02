@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VendorProperties {
     /// The worker ID defined by the vendor FMS.
-    pub vendor_worker_id: ::std::option::Option<::std::string::String>,
+    pub vendor_worker_id: ::std::string::String,
     /// The worker IP address defined by the vendor FMS.
     pub vendor_worker_ip_address: ::std::option::Option<::std::string::String>,
     /// JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
@@ -15,8 +15,9 @@ pub struct VendorProperties {
 }
 impl VendorProperties {
     /// The worker ID defined by the vendor FMS.
-    pub fn vendor_worker_id(&self) -> ::std::option::Option<&str> {
-        self.vendor_worker_id.as_deref()
+    pub fn vendor_worker_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vendor_worker_id.deref()
     }
     /// The worker IP address defined by the vendor FMS.
     pub fn vendor_worker_ip_address(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct VendorPropertiesBuilder {
 }
 impl VendorPropertiesBuilder {
     /// The worker ID defined by the vendor FMS.
+    /// This field is required.
     pub fn vendor_worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor_worker_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl VendorPropertiesBuilder {
         &self.vendor_additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`VendorProperties`](crate::types::VendorProperties).
-    pub fn build(self) -> crate::types::VendorProperties {
-        crate::types::VendorProperties {
-            vendor_worker_id: self.vendor_worker_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vendor_worker_id`](crate::types::builders::VendorPropertiesBuilder::vendor_worker_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::VendorProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VendorProperties {
+            vendor_worker_id: self.vendor_worker_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vendor_worker_id",
+                    "vendor_worker_id was not specified but it is required when building VendorProperties",
+                )
+            })?,
             vendor_worker_ip_address: self.vendor_worker_ip_address,
             vendor_additional_transient_properties: self.vendor_additional_transient_properties,
             vendor_additional_fixed_properties: self.vendor_additional_fixed_properties,
-        }
+        })
     }
 }

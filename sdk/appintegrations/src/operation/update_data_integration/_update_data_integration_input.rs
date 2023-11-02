@@ -41,6 +41,7 @@ pub struct UpdateDataIntegrationInputBuilder {
 }
 impl UpdateDataIntegrationInputBuilder {
     /// <p>A unique identifier for the DataIntegration.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

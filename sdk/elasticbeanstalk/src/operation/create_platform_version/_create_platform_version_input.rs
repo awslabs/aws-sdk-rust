@@ -36,13 +36,17 @@ impl CreatePlatformVersionInput {
         self.environment_name.as_deref()
     }
     /// <p>The configuration option settings to apply to the builder environment.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the tags applied to the new platform version.</p>
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePlatformVersionInput {
@@ -65,6 +69,7 @@ pub struct CreatePlatformVersionInputBuilder {
 }
 impl CreatePlatformVersionInputBuilder {
     /// <p>The name of your custom platform.</p>
+    /// This field is required.
     pub fn platform_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +84,7 @@ impl CreatePlatformVersionInputBuilder {
         &self.platform_name
     }
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
+    /// This field is required.
     pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_version = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +99,7 @@ impl CreatePlatformVersionInputBuilder {
         &self.platform_version
     }
     /// <p>The location of the platform definition archive in Amazon S3.</p>
+    /// This field is required.
     pub fn platform_definition_bundle(mut self, input: crate::types::S3Location) -> Self {
         self.platform_definition_bundle = ::std::option::Option::Some(input);
         self

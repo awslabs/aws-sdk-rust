@@ -51,6 +51,7 @@ pub struct RevokeClusterSecurityGroupIngressInputBuilder {
 }
 impl RevokeClusterSecurityGroupIngressInputBuilder {
     /// <p>The name of the security Group from which to revoke the ingress rule.</p>
+    /// This field is required.
     pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self

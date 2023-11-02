@@ -52,8 +52,10 @@ impl CreateQuerySuggestionsBlockListInput {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateQuerySuggestionsBlockListInput {
@@ -77,6 +79,7 @@ pub struct CreateQuerySuggestionsBlockListInputBuilder {
 }
 impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +95,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>A name for the block list.</p>
     /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +131,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>The S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
+    /// This field is required.
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
         self.source_s3_path = ::std::option::Option::Some(input);
         self
@@ -159,6 +164,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

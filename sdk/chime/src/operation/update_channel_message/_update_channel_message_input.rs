@@ -66,6 +66,7 @@ pub struct UpdateChannelMessageInputBuilder {
 }
 impl UpdateChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl UpdateChannelMessageInputBuilder {
         &self.channel_arn
     }
     /// <p>The ID string of the message being updated.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self

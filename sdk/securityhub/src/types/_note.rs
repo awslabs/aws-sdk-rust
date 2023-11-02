@@ -44,6 +44,7 @@ pub struct NoteBuilder {
 }
 impl NoteBuilder {
     /// <p>The text of a note.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl NoteBuilder {
         &self.text
     }
     /// <p>The principal that created a note.</p>
+    /// This field is required.
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +75,7 @@ impl NoteBuilder {
     }
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_at = ::std::option::Option::Some(input.into());
         self

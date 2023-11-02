@@ -41,6 +41,7 @@ pub struct ListMonitoringAlertsInputBuilder {
 }
 impl ListMonitoringAlertsInputBuilder {
     /// <p>The name of a monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self

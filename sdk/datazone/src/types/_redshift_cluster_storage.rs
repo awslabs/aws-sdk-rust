@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftClusterStorage {
     /// <p>The name of an Amazon Redshift cluster.</p>
-    pub cluster_name: ::std::option::Option<::std::string::String>,
+    pub cluster_name: ::std::string::String,
 }
 impl RedshiftClusterStorage {
     /// <p>The name of an Amazon Redshift cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
-        self.cluster_name.as_deref()
+    pub fn cluster_name(&self) -> &str {
+        use std::ops::Deref;
+        self.cluster_name.deref()
     }
 }
 impl RedshiftClusterStorage {
@@ -28,6 +29,7 @@ pub struct RedshiftClusterStorageBuilder {
 }
 impl RedshiftClusterStorageBuilder {
     /// <p>The name of an Amazon Redshift cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl RedshiftClusterStorageBuilder {
         &self.cluster_name
     }
     /// Consumes the builder and constructs a [`RedshiftClusterStorage`](crate::types::RedshiftClusterStorage).
-    pub fn build(self) -> crate::types::RedshiftClusterStorage {
-        crate::types::RedshiftClusterStorage {
-            cluster_name: self.cluster_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cluster_name`](crate::types::builders::RedshiftClusterStorageBuilder::cluster_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftClusterStorage, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftClusterStorage {
+            cluster_name: self.cluster_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cluster_name",
+                    "cluster_name was not specified but it is required when building RedshiftClusterStorage",
+                )
+            })?,
+        })
     }
 }

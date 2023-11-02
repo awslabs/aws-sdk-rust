@@ -69,6 +69,7 @@ impl ListHostKeysInputBuilder {
         &self.next_token
     }
     /// <p>The identifier of the server that contains the host keys that you want to view.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self

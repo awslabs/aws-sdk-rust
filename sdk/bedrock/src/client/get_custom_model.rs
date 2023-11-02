@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCustomModel`](crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_identifier(impl Into<String>)`](crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder::model_identifier) / [`set_model_identifier(Option<String>)`](crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder::set_model_identifier): <p>Name or ARN of the custom model.</p>
+    ///   - [`model_identifier(impl Into<String>)`](crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder::model_identifier) / [`set_model_identifier(Option<String>)`](crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder::set_model_identifier):<br>required: **true**<br><p>Name or ARN of the custom model.</p><br>
     /// - On success, responds with [`GetCustomModelOutput`](crate::operation::get_custom_model::GetCustomModelOutput) with field(s):
-    ///   - [`model_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::model_arn): <p>ARN associated with this model.</p>
-    ///   - [`model_name(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::model_name): <p>Model name associated with this model.</p>
+    ///   - [`model_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::model_arn): <p>ARN associated with this model.</p>
+    ///   - [`model_name(String)`](crate::operation::get_custom_model::GetCustomModelOutput::model_name): <p>Model name associated with this model.</p>
     ///   - [`job_name(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::job_name): <p>Job name associated with this model.</p>
-    ///   - [`job_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::job_arn): <p>Job ARN associated with this model.</p>
-    ///   - [`base_model_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::base_model_arn): <p>ARN of the base model.</p>
+    ///   - [`job_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::job_arn): <p>Job ARN associated with this model.</p>
+    ///   - [`base_model_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::base_model_arn): <p>ARN of the base model.</p>
     ///   - [`model_kms_key_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::model_kms_key_arn): <p>The custom model is encrypted at rest using this key.</p>
     ///   - [`hyper_parameters(Option<HashMap<String, String>>)`](crate::operation::get_custom_model::GetCustomModelOutput::hyper_parameters): <p>Hyperparameter values associated with this model.</p>
     ///   - [`training_data_config(Option<TrainingDataConfig>)`](crate::operation::get_custom_model::GetCustomModelOutput::training_data_config): <p>Information about the training dataset.</p>
@@ -17,7 +17,7 @@ impl super::Client {
     ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::operation::get_custom_model::GetCustomModelOutput::output_data_config): <p>Output data configuration associated with this custom model.</p>
     ///   - [`training_metrics(Option<TrainingMetrics>)`](crate::operation::get_custom_model::GetCustomModelOutput::training_metrics): <p>The training metrics from the job creation.</p>
     ///   - [`validation_metrics(Option<Vec<ValidatorMetric>>)`](crate::operation::get_custom_model::GetCustomModelOutput::validation_metrics): <p>The validation metrics from the job creation.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_custom_model::GetCustomModelOutput::creation_time): <p>Creation time of the model.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_custom_model::GetCustomModelOutput::creation_time): <p>Creation time of the model.</p>
     /// - On failure, responds with [`SdkError<GetCustomModelError>`](crate::operation::get_custom_model::GetCustomModelError)
     pub fn get_custom_model(&self) -> crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder {
         crate::operation::get_custom_model::builders::GetCustomModelFluentBuilder::new(self.handle.clone())

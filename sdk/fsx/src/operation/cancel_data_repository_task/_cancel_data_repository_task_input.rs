@@ -28,6 +28,7 @@ pub struct CancelDataRepositoryTaskInputBuilder {
 }
 impl CancelDataRepositoryTaskInputBuilder {
     /// <p>Specifies the data repository task to cancel.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self

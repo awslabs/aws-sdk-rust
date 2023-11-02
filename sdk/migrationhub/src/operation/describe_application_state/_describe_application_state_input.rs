@@ -27,6 +27,7 @@ pub struct DescribeApplicationStateInputBuilder {
 }
 impl DescribeApplicationStateInputBuilder {
     /// <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

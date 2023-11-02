@@ -41,6 +41,7 @@ pub struct UpdateOriginAccessControlInputBuilder {
 }
 impl UpdateOriginAccessControlInputBuilder {
     /// <p>An origin access control.</p>
+    /// This field is required.
     pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
         self.origin_access_control_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateOriginAccessControlInputBuilder {
         &self.origin_access_control_config
     }
     /// <p>The unique identifier of the origin access control that you are updating.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

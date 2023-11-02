@@ -77,6 +77,7 @@ pub struct BatchDescribeModelPackageSummaryBuilder {
 }
 impl BatchDescribeModelPackageSummaryBuilder {
     /// <p>The group name for the model package</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
         &self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    /// This field is required.
     pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +135,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
         &self.model_package_description
     }
     /// <p>The creation time of the mortgage package summary.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -147,6 +150,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
         &self.creation_time
     }
     /// <p>Defines how to perform inference generation after a training job is run.</p>
+    /// This field is required.
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
         self.inference_specification = ::std::option::Option::Some(input);
         self
@@ -161,6 +165,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
         &self.inference_specification
     }
     /// <p>The status of the mortgage package.</p>
+    /// This field is required.
     pub fn model_package_status(mut self, input: crate::types::ModelPackageStatus) -> Self {
         self.model_package_status = ::std::option::Option::Some(input);
         self

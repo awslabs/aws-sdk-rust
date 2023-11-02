@@ -3,20 +3,20 @@ pub fn ser_update_environment_template_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.template_name {
-        object.key("templateName").string(var_1.as_str());
+    {
+        object.key("templateName").string(input.template_name.as_str());
     }
-    if let Some(var_2) = &input.major_version {
-        object.key("majorVersion").string(var_2.as_str());
+    {
+        object.key("majorVersion").string(input.major_version.as_str());
     }
-    if let Some(var_3) = &input.minor_version {
-        object.key("minorVersion").string(var_3.as_str());
+    {
+        object.key("minorVersion").string(input.minor_version.as_str());
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.status {
-        object.key("status").string(var_5.as_str());
+    if let Some(var_2) = &input.status {
+        object.key("status").string(var_2.as_str());
     }
     Ok(())
 }

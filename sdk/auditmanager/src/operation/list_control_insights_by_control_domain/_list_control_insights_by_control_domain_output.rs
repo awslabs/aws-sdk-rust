@@ -11,8 +11,10 @@ pub struct ListControlInsightsByControlDomainOutput {
 }
 impl ListControlInsightsByControlDomainOutput {
     /// <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
-    pub fn control_insights_metadata(&self) -> ::std::option::Option<&[crate::types::ControlInsightsMetadataItem]> {
-        self.control_insights_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_insights_metadata.is_none()`.
+    pub fn control_insights_metadata(&self) -> &[crate::types::ControlInsightsMetadataItem] {
+        self.control_insights_metadata.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

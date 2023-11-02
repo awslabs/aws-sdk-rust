@@ -106,8 +106,10 @@ impl DataRepositoryTask {
         self.resource_arn.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The globally unique ID of the file system.</p>
     pub fn file_system_id(&self) -> ::std::option::Option<&str> {
@@ -115,8 +117,10 @@ impl DataRepositoryTask {
     }
     /// <p>An array of paths that specify the data for the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
     /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
+    pub fn paths(&self) -> &[::std::string::String] {
+        self.paths.as_deref().unwrap_or_default()
     }
     /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
     pub fn failure_details(&self) -> ::std::option::Option<&crate::types::DataRepositoryTaskFailureDetails> {
@@ -173,6 +177,7 @@ pub struct DataRepositoryTaskBuilder {
 }
 impl DataRepositoryTaskBuilder {
     /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -197,6 +202,7 @@ impl DataRepositoryTaskBuilder {
     /// </ul> <note>
     /// <p>You cannot delete an FSx for Lustre file system if there are data repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states. Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
     /// </note>
+    /// This field is required.
     pub fn lifecycle(mut self, input: crate::types::DataRepositoryTaskLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
         self
@@ -237,6 +243,7 @@ impl DataRepositoryTaskBuilder {
     /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataRepositoryTaskType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -263,6 +270,7 @@ impl DataRepositoryTaskBuilder {
         &self.r#type
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

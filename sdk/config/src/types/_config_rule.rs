@@ -100,8 +100,10 @@ impl ConfigRule {
         self.created_by.as_deref()
     }
     /// <p>The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is Detective evaluation mode only.</p>
-    pub fn evaluation_modes(&self) -> ::std::option::Option<&[crate::types::EvaluationModeConfiguration]> {
-        self.evaluation_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluation_modes.is_none()`.
+    pub fn evaluation_modes(&self) -> &[crate::types::EvaluationModeConfiguration] {
+        self.evaluation_modes.as_deref().unwrap_or_default()
     }
 }
 impl ConfigRule {
@@ -205,6 +207,7 @@ impl ConfigRuleBuilder {
         &self.scope
     }
     /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
         self

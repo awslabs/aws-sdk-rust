@@ -27,6 +27,7 @@ pub struct DeleteExperimentTemplateInputBuilder {
 }
 impl DeleteExperimentTemplateInputBuilder {
     /// <p>The ID of the experiment template.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

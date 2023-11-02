@@ -42,6 +42,7 @@ pub struct CandidateArtifactLocationsBuilder {
 }
 impl CandidateArtifactLocationsBuilder {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
+    /// This field is required.
     pub fn explainability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability = ::std::option::Option::Some(input.into());
         self

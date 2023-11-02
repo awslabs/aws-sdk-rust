@@ -42,8 +42,10 @@ impl ListMonitorEvaluationsInput {
     /// </ul>
     /// <p>For example, to list only successful monitor evaluations, you would specify:</p>
     /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]</code> </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListMonitorEvaluationsInput {
@@ -92,6 +94,7 @@ impl ListMonitorEvaluationsInputBuilder {
         &self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource to get results from.</p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self

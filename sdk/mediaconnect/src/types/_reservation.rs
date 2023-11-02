@@ -112,6 +112,7 @@ pub struct ReservationBuilder {
 }
 impl ReservationBuilder {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
+    /// This field is required.
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl ReservationBuilder {
         &self.currency_code
     }
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
+    /// This field is required.
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
@@ -140,6 +142,7 @@ impl ReservationBuilder {
         &self.duration
     }
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
+    /// This field is required.
     pub fn duration_units(mut self, input: crate::types::DurationUnits) -> Self {
         self.duration_units = ::std::option::Option::Some(input);
         self
@@ -154,6 +157,7 @@ impl ReservationBuilder {
         &self.duration_units
     }
     /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
+    /// This field is required.
     pub fn end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +172,7 @@ impl ReservationBuilder {
         &self.end
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+    /// This field is required.
     pub fn offering_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_arn = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +187,7 @@ impl ReservationBuilder {
         &self.offering_arn
     }
     /// A description of the offering. MediaConnect defines this value in the offering.
+    /// This field is required.
     pub fn offering_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_description = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +202,7 @@ impl ReservationBuilder {
         &self.offering_description
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
+    /// This field is required.
     pub fn price_per_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price_per_unit = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +217,7 @@ impl ReservationBuilder {
         &self.price_per_unit
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
+    /// This field is required.
     pub fn price_units(mut self, input: crate::types::PriceUnits) -> Self {
         self.price_units = ::std::option::Option::Some(input);
         self
@@ -224,6 +232,7 @@ impl ReservationBuilder {
         &self.price_units
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
+    /// This field is required.
     pub fn reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_arn = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +247,7 @@ impl ReservationBuilder {
         &self.reservation_arn
     }
     /// The name that you assigned to the reservation when you purchased the offering.
+    /// This field is required.
     pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_name = ::std::option::Option::Some(input.into());
         self
@@ -252,6 +262,7 @@ impl ReservationBuilder {
         &self.reservation_name
     }
     /// The status of your reservation.
+    /// This field is required.
     pub fn reservation_state(mut self, input: crate::types::ReservationState) -> Self {
         self.reservation_state = ::std::option::Option::Some(input);
         self
@@ -266,6 +277,7 @@ impl ReservationBuilder {
         &self.reservation_state
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
+    /// This field is required.
     pub fn resource_specification(mut self, input: crate::types::ResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self
@@ -280,6 +292,7 @@ impl ReservationBuilder {
         &self.resource_specification
     }
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
+    /// This field is required.
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start = ::std::option::Option::Some(input.into());
         self

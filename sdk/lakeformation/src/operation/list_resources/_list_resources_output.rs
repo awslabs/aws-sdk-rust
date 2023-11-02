@@ -11,8 +11,10 @@ pub struct ListResourcesOutput {
 }
 impl ListResourcesOutput {
     /// <p>A summary of the data lake resources.</p>
-    pub fn resource_info_list(&self) -> ::std::option::Option<&[crate::types::ResourceInfo]> {
-        self.resource_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_info_list.is_none()`.
+    pub fn resource_info_list(&self) -> &[crate::types::ResourceInfo] {
+        self.resource_info_list.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -24,16 +24,22 @@ impl ListSitesInput {
         self.max_results
     }
     /// <p>Filters the results by country code.</p>
-    pub fn operating_address_country_code_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.operating_address_country_code_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_address_country_code_filter.is_none()`.
+    pub fn operating_address_country_code_filter(&self) -> &[::std::string::String] {
+        self.operating_address_country_code_filter.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by state or region.</p>
-    pub fn operating_address_state_or_region_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.operating_address_state_or_region_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_address_state_or_region_filter.is_none()`.
+    pub fn operating_address_state_or_region_filter(&self) -> &[::std::string::String] {
+        self.operating_address_state_or_region_filter.as_deref().unwrap_or_default()
     }
     /// <p>Filters the results by city.</p>
-    pub fn operating_address_city_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.operating_address_city_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_address_city_filter.is_none()`.
+    pub fn operating_address_city_filter(&self) -> &[::std::string::String] {
+        self.operating_address_city_filter.as_deref().unwrap_or_default()
     }
 }
 impl ListSitesInput {

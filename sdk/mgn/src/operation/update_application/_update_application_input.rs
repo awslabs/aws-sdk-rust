@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>Application ID.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>Application name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Application description.</p>
@@ -14,8 +14,9 @@ pub struct UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>Application name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -48,6 +49,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>Application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -104,11 +106,18 @@ impl UpdateApplicationInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::update_application::builders::UpdateApplicationInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building UpdateApplicationInput",
+                )
+            })?,
             name: self.name,
             description: self.description,
             account_id: self.account_id,

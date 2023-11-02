@@ -65,8 +65,10 @@ impl BoxPlotChartConfiguration {
         self.tooltip.as_ref()
     }
     /// <p>The reference line setup of the visual.</p>
-    pub fn reference_lines(&self) -> ::std::option::Option<&[crate::types::ReferenceLine]> {
-        self.reference_lines.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_lines.is_none()`.
+    pub fn reference_lines(&self) -> &[crate::types::ReferenceLine] {
+        self.reference_lines.as_deref().unwrap_or_default()
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {

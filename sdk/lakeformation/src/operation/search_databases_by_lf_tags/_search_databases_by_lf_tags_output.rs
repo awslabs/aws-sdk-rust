@@ -15,8 +15,10 @@ impl SearchDatabasesByLfTagsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of databases that meet the LF-tag conditions.</p>
-    pub fn database_list(&self) -> ::std::option::Option<&[crate::types::TaggedDatabase]> {
-        self.database_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_list.is_none()`.
+    pub fn database_list(&self) -> &[crate::types::TaggedDatabase] {
+        self.database_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchDatabasesByLfTagsOutput {

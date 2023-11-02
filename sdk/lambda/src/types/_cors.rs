@@ -24,21 +24,29 @@ impl Cors {
         self.allow_credentials
     }
     /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn allow_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_headers.is_none()`.
+    pub fn allow_headers(&self) -> &[::std::string::String] {
+        self.allow_headers.as_deref().unwrap_or_default()
     }
     /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
-    pub fn allow_methods(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_methods.is_none()`.
+    pub fn allow_methods(&self) -> &[::std::string::String] {
+        self.allow_methods.as_deref().unwrap_or_default()
     }
     /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
     /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
-    pub fn allow_origins(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_origins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_origins.is_none()`.
+    pub fn allow_origins(&self) -> &[::std::string::String] {
+        self.allow_origins.as_deref().unwrap_or_default()
     }
     /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn expose_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.expose_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expose_headers.is_none()`.
+    pub fn expose_headers(&self) -> &[::std::string::String] {
+        self.expose_headers.as_deref().unwrap_or_default()
     }
     /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
     pub fn max_age(&self) -> ::std::option::Option<i32> {

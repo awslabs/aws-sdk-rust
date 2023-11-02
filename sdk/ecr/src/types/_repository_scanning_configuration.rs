@@ -33,8 +33,10 @@ impl RepositoryScanningConfiguration {
         self.scan_frequency.as_ref()
     }
     /// <p>The scan filters applied to the repository.</p>
-    pub fn applied_scan_filters(&self) -> ::std::option::Option<&[crate::types::ScanningRepositoryFilter]> {
-        self.applied_scan_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applied_scan_filters.is_none()`.
+    pub fn applied_scan_filters(&self) -> &[crate::types::ScanningRepositoryFilter] {
+        self.applied_scan_filters.as_deref().unwrap_or_default()
     }
 }
 impl RepositoryScanningConfiguration {

@@ -28,6 +28,7 @@ pub struct DeleteSnapshotInputBuilder {
 }
 impl DeleteSnapshotInputBuilder {
     /// <p>The identifier of the directory snapshot to be deleted.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self

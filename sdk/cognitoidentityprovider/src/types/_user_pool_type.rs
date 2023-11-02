@@ -135,20 +135,28 @@ impl UserPoolType {
     }
     /// <p>A list of the user attributes and their properties in your user pool. The attribute schema contains standard attributes, custom attributes with a <code>custom:</code> prefix, and developer attributes with a <code>dev:</code> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User pool attributes</a>.</p>
     /// <p>Developer-only attributes are a legacy feature of user pools, are read-only to all app clients. You can create and update developer-only attributes only with IAM-authenticated API operations. Use app client read/write permissions instead.</p>
-    pub fn schema_attributes(&self) -> ::std::option::Option<&[crate::types::SchemaAttributeType]> {
-        self.schema_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_attributes.is_none()`.
+    pub fn schema_attributes(&self) -> &[crate::types::SchemaAttributeType] {
+        self.schema_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The attributes that are auto-verified in a user pool.</p>
-    pub fn auto_verified_attributes(&self) -> ::std::option::Option<&[crate::types::VerifiedAttributeType]> {
-        self.auto_verified_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_verified_attributes.is_none()`.
+    pub fn auto_verified_attributes(&self) -> &[crate::types::VerifiedAttributeType] {
+        self.auto_verified_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The attributes that are aliased in a user pool.</p>
-    pub fn alias_attributes(&self) -> ::std::option::Option<&[crate::types::AliasAttributeType]> {
-        self.alias_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_attributes.is_none()`.
+    pub fn alias_attributes(&self) -> &[crate::types::AliasAttributeType] {
+        self.alias_attributes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether a user can use an email address or phone number as a username when they sign up.</p>
-    pub fn username_attributes(&self) -> ::std::option::Option<&[crate::types::UsernameAttributeType]> {
-        self.username_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.username_attributes.is_none()`.
+    pub fn username_attributes(&self) -> &[crate::types::UsernameAttributeType] {
+        self.username_attributes.as_deref().unwrap_or_default()
     }
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn sms_verification_message(&self) -> ::std::option::Option<&str> {

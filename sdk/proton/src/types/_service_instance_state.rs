@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceInstanceState {
     /// <p>The service spec that was used to create the service instance.</p>
-    pub spec: ::std::option::Option<::std::string::String>,
+    pub spec: ::std::string::String,
     /// <p>The name of the service template that was used to create the service instance.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub template_major_version: ::std::option::Option<::std::string::String>,
+    pub template_major_version: ::std::string::String,
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub template_minor_version: ::std::option::Option<::std::string::String>,
+    pub template_minor_version: ::std::string::String,
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
     pub last_successful_component_deployment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
@@ -21,24 +21,30 @@ pub struct ServiceInstanceState {
 }
 impl ServiceInstanceState {
     /// <p>The service spec that was used to create the service instance.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
-        self.spec.as_deref()
+    pub fn spec(&self) -> &str {
+        use std::ops::Deref;
+        self.spec.deref()
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn template_major_version(&self) -> ::std::option::Option<&str> {
-        self.template_major_version.as_deref()
+    pub fn template_major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_major_version.deref()
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn template_minor_version(&self) -> ::std::option::Option<&str> {
-        self.template_minor_version.as_deref()
+    pub fn template_minor_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_minor_version.deref()
     }
     /// <p>The IDs for the last successful components deployed for this service instance.</p>
-    pub fn last_successful_component_deployment_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.last_successful_component_deployment_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_successful_component_deployment_ids.is_none()`.
+    pub fn last_successful_component_deployment_ids(&self) -> &[::std::string::String] {
+        self.last_successful_component_deployment_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID for the last successful environment deployed for this service instance.</p>
     pub fn last_successful_environment_deployment_id(&self) -> ::std::option::Option<&str> {
@@ -89,6 +95,7 @@ pub struct ServiceInstanceStateBuilder {
 }
 impl ServiceInstanceStateBuilder {
     /// <p>The service spec that was used to create the service instance.</p>
+    /// This field is required.
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +110,7 @@ impl ServiceInstanceStateBuilder {
         &self.spec
     }
     /// <p>The name of the service template that was used to create the service instance.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +125,7 @@ impl ServiceInstanceStateBuilder {
         &self.template_name
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
+    /// This field is required.
     pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +140,7 @@ impl ServiceInstanceStateBuilder {
         &self.template_major_version
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
+    /// This field is required.
     pub fn template_minor_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_minor_version = ::std::option::Option::Some(input.into());
         self
@@ -193,16 +203,41 @@ impl ServiceInstanceStateBuilder {
         &self.last_successful_service_pipeline_deployment_id
     }
     /// Consumes the builder and constructs a [`ServiceInstanceState`](crate::types::ServiceInstanceState).
-    pub fn build(self) -> crate::types::ServiceInstanceState {
-        crate::types::ServiceInstanceState {
-            spec: self.spec,
-            template_name: self.template_name,
-            template_major_version: self.template_major_version,
-            template_minor_version: self.template_minor_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`spec`](crate::types::builders::ServiceInstanceStateBuilder::spec)
+    /// - [`template_name`](crate::types::builders::ServiceInstanceStateBuilder::template_name)
+    /// - [`template_major_version`](crate::types::builders::ServiceInstanceStateBuilder::template_major_version)
+    /// - [`template_minor_version`](crate::types::builders::ServiceInstanceStateBuilder::template_minor_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceInstanceState, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceInstanceState {
+            spec: self.spec.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "spec",
+                    "spec was not specified but it is required when building ServiceInstanceState",
+                )
+            })?,
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building ServiceInstanceState",
+                )
+            })?,
+            template_major_version: self.template_major_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_major_version",
+                    "template_major_version was not specified but it is required when building ServiceInstanceState",
+                )
+            })?,
+            template_minor_version: self.template_minor_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_minor_version",
+                    "template_minor_version was not specified but it is required when building ServiceInstanceState",
+                )
+            })?,
             last_successful_component_deployment_ids: self.last_successful_component_deployment_ids,
             last_successful_environment_deployment_id: self.last_successful_environment_deployment_id,
             last_successful_service_pipeline_deployment_id: self.last_successful_service_pipeline_deployment_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ServiceInstanceStateBuilder {

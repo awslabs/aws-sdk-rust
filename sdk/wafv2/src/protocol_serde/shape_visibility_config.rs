@@ -9,8 +9,8 @@ pub fn ser_visibility_config(
     {
         object.key("CloudWatchMetricsEnabled").boolean(input.cloud_watch_metrics_enabled);
     }
-    if let Some(var_1) = &input.metric_name {
-        object.key("MetricName").string(var_1.as_str());
+    {
+        object.key("MetricName").string(input.metric_name.as_str());
     }
     Ok(())
 }
@@ -55,7 +55,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::visibility_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p>The identifier of the transaction to end and commit.</p>
-    pub transaction_id: ::std::option::Option<::std::string::String>,
+    pub transaction_id: ::std::string::String,
 }
 impl CommitTransactionInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p>The identifier of the transaction to end and commit.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
-        self.transaction_id.as_deref()
+    pub fn transaction_id(&self) -> &str {
+        use std::ops::Deref;
+        self.transaction_id.deref()
     }
 }
 impl CommitTransactionInput {
@@ -42,6 +45,7 @@ pub struct CommitTransactionInputBuilder {
 }
 impl CommitTransactionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl CommitTransactionInputBuilder {
         &self.resource_arn
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl CommitTransactionInputBuilder {
         &self.secret_arn
     }
     /// <p>The identifier of the transaction to end and commit.</p>
+    /// This field is required.
     pub fn transaction_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_id = ::std::option::Option::Some(input.into());
         self
@@ -84,13 +90,32 @@ impl CommitTransactionInputBuilder {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::operation::commit_transaction::builders::CommitTransactionInputBuilder::resource_arn)
+    /// - [`secret_arn`](crate::operation::commit_transaction::builders::CommitTransactionInputBuilder::secret_arn)
+    /// - [`transaction_id`](crate::operation::commit_transaction::builders::CommitTransactionInputBuilder::transaction_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::commit_transaction::CommitTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::commit_transaction::CommitTransactionInput {
-            resource_arn: self.resource_arn,
-            secret_arn: self.secret_arn,
-            transaction_id: self.transaction_id,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building CommitTransactionInput",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building CommitTransactionInput",
+                )
+            })?,
+            transaction_id: self.transaction_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transaction_id",
+                    "transaction_id was not specified but it is required when building CommitTransactionInput",
+                )
+            })?,
         })
     }
 }

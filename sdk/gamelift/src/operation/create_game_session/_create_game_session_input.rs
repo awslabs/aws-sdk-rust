@@ -53,8 +53,10 @@ impl CreateGameSessionInput {
         self.name.as_deref()
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_properties(&self) -> ::std::option::Option<&[crate::types::GameProperty]> {
-        self.game_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
+    pub fn game_properties(&self) -> &[crate::types::GameProperty] {
+        self.game_properties.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for a player or entity creating the game session. </p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
@@ -140,6 +142,7 @@ impl CreateGameSessionInputBuilder {
         &self.alias_id
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    /// This field is required.
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
         self.maximum_player_session_count = ::std::option::Option::Some(input);
         self

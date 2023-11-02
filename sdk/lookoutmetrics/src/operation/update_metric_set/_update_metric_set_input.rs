@@ -32,8 +32,10 @@ impl UpdateMetricSetInput {
         self.metric_set_description.as_deref()
     }
     /// <p>The metric list.</p>
-    pub fn metric_list(&self) -> ::std::option::Option<&[crate::types::Metric]> {
-        self.metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_list.is_none()`.
+    pub fn metric_list(&self) -> &[crate::types::Metric] {
+        self.metric_list.as_deref().unwrap_or_default()
     }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(&self) -> ::std::option::Option<i32> {
@@ -44,8 +46,10 @@ impl UpdateMetricSetInput {
         self.timestamp_column.as_ref()
     }
     /// <p>The dimension list.</p>
-    pub fn dimension_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimension_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_list.is_none()`.
+    pub fn dimension_list(&self) -> &[::std::string::String] {
+        self.dimension_list.as_deref().unwrap_or_default()
     }
     /// <p>The dataset's interval.</p>
     pub fn metric_set_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
@@ -56,8 +60,10 @@ impl UpdateMetricSetInput {
         self.metric_source.as_ref()
     }
     /// <p>Describes a list of filters for choosing specific dimensions and specific values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.</p>
-    pub fn dimension_filter_list(&self) -> ::std::option::Option<&[crate::types::MetricSetDimensionFilter]> {
-        self.dimension_filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_filter_list.is_none()`.
+    pub fn dimension_filter_list(&self) -> &[crate::types::MetricSetDimensionFilter] {
+        self.dimension_filter_list.as_deref().unwrap_or_default()
     }
 }
 impl UpdateMetricSetInput {
@@ -83,6 +89,7 @@ pub struct UpdateMetricSetInputBuilder {
 }
 impl UpdateMetricSetInputBuilder {
     /// <p>The ARN of the dataset to update.</p>
+    /// This field is required.
     pub fn metric_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_set_arn = ::std::option::Option::Some(input.into());
         self

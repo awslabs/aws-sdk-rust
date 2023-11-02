@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServicePipelineProvisionedResourcesInput {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListServicePipelineProvisionedResourcesInput {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct ListServicePipelineProvisionedResourcesInputBuilder {
 }
 impl ListServicePipelineProvisionedResourcesInputBuilder {
     /// <p>The name of the service whose pipeline's provisioned resources you want.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,8 @@ impl ListServicePipelineProvisionedResourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServicePipelineProvisionedResourcesInput`](crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_name`](crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,7 +74,12 @@ impl ListServicePipelineProvisionedResourcesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesInput {
-                service_name: self.service_name,
+                service_name: self.service_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_name",
+                        "service_name was not specified but it is required when building ListServicePipelineProvisionedResourcesInput",
+                    )
+                })?,
                 next_token: self.next_token,
             },
         )

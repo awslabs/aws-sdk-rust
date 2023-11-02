@@ -8,7 +8,7 @@
 
 use crate::presigning::PresigningConfig;
 use crate::serialization_settings::HeaderSerializationSettings;
-use aws_runtime::auth::sigv4::{HttpSignatureType, SigV4OperationSigningConfig};
+use aws_runtime::auth::{HttpSignatureType, SigV4OperationSigningConfig};
 use aws_runtime::invocation_id::InvocationIdInterceptor;
 use aws_runtime::request_info::RequestInfoInterceptor;
 use aws_runtime::user_agent::UserAgentInterceptor;
@@ -104,7 +104,7 @@ impl RuntimePlugin for SigV4PresigningRuntimePlugin {
         Some(layer.freeze())
     }
 
-    fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+    fn runtime_components(&self, _: &RuntimeComponentsBuilder) -> Cow<'_, RuntimeComponentsBuilder> {
         Cow::Borrowed(&self.runtime_components)
     }
 }

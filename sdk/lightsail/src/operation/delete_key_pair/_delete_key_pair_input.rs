@@ -38,6 +38,7 @@ pub struct DeleteKeyPairInputBuilder {
 }
 impl DeleteKeyPairInputBuilder {
     /// <p>The name of the key pair to delete.</p>
+    /// This field is required.
     pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self

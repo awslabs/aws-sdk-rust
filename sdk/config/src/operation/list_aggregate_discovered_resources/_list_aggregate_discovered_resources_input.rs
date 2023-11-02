@@ -55,6 +55,7 @@ pub struct ListAggregateDiscoveredResourcesInputBuilder {
 }
 impl ListAggregateDiscoveredResourcesInputBuilder {
     /// <p>The name of the configuration aggregator. </p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         &self.configuration_aggregator_name
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

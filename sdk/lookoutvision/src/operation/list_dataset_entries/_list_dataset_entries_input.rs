@@ -83,6 +83,7 @@ pub struct ListDatasetEntriesInputBuilder {
 }
 impl ListDatasetEntriesInputBuilder {
     /// <p>The name of the project that contains the dataset that you want to list.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl ListDatasetEntriesInputBuilder {
         &self.project_name
     }
     /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+    /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
         self

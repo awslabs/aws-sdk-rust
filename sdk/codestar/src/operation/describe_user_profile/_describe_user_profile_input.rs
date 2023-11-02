@@ -27,6 +27,7 @@ pub struct DescribeUserProfileInputBuilder {
 }
 impl DescribeUserProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self

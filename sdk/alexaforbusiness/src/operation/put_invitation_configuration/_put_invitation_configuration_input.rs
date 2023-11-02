@@ -20,8 +20,10 @@ impl PutInvitationConfigurationInput {
         self.contact_email.as_deref()
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn private_skill_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.private_skill_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_skill_ids.is_none()`.
+    pub fn private_skill_ids(&self) -> &[::std::string::String] {
+        self.private_skill_ids.as_deref().unwrap_or_default()
     }
 }
 impl PutInvitationConfigurationInput {
@@ -41,6 +43,7 @@ pub struct PutInvitationConfigurationInputBuilder {
 }
 impl PutInvitationConfigurationInputBuilder {
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
+    /// This field is required.
     pub fn organization_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_name = ::std::option::Option::Some(input.into());
         self

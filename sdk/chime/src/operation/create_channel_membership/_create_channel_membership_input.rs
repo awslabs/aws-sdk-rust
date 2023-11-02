@@ -48,6 +48,7 @@ pub struct CreateChannelMembershipInputBuilder {
 }
 impl CreateChannelMembershipInputBuilder {
     /// <p>The ARN of the channel to which you're adding users.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl CreateChannelMembershipInputBuilder {
         &self.channel_arn
     }
     /// <p>The ARN of the member you want to add to the channel.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl CreateChannelMembershipInputBuilder {
         &self.member_arn
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

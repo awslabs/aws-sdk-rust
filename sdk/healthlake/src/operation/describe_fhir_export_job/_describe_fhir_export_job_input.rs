@@ -34,6 +34,7 @@ pub struct DescribeFhirExportJobInputBuilder {
 }
 impl DescribeFhirExportJobInputBuilder {
     /// <p>The AWS generated ID for the data store from which files are being exported from for an export job.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFhirExportJobInputBuilder {
         &self.datastore_id
     }
     /// <p>The AWS generated ID for an export job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

@@ -6,7 +6,7 @@ pub struct DomainInformation {
     #[allow(missing_docs)] // documentation missing in model
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub domain_name: ::std::option::Option<::std::string::String>,
+    pub domain_name: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub region: ::std::option::Option<::std::string::String>,
 }
@@ -16,8 +16,9 @@ impl DomainInformation {
         self.owner_id.as_deref()
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
-        self.domain_name.as_deref()
+    pub fn domain_name(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_name.deref()
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn region(&self) -> ::std::option::Option<&str> {
@@ -55,6 +56,7 @@ impl DomainInformationBuilder {
         &self.owner_id
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +85,18 @@ impl DomainInformationBuilder {
         &self.region
     }
     /// Consumes the builder and constructs a [`DomainInformation`](crate::types::DomainInformation).
-    pub fn build(self) -> crate::types::DomainInformation {
-        crate::types::DomainInformation {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_name`](crate::types::builders::DomainInformationBuilder::domain_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainInformation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DomainInformation {
             owner_id: self.owner_id,
-            domain_name: self.domain_name,
+            domain_name: self.domain_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_name",
+                    "domain_name was not specified but it is required when building DomainInformation",
+                )
+            })?,
             region: self.region,
-        }
+        })
     }
 }

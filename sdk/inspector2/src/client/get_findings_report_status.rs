@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFindingsReportStatus`](crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder::set_report_id): <p>The ID of the report to retrieve the status of.</p>
+    ///   - [`report_id(impl Into<String>)`](crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::get_findings_report_status::builders::GetFindingsReportStatusFluentBuilder::set_report_id):<br>required: **false**<br><p>The ID of the report to retrieve the status of.</p><br>
     /// - On success, responds with [`GetFindingsReportStatusOutput`](crate::operation::get_findings_report_status::GetFindingsReportStatusOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::get_findings_report_status::GetFindingsReportStatusOutput::report_id): <p>The ID of the report.</p>
     ///   - [`status(Option<ExternalReportStatus>)`](crate::operation::get_findings_report_status::GetFindingsReportStatusOutput::status): <p>The status of the report.</p>

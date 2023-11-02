@@ -27,6 +27,7 @@ pub struct GetResolverQueryLogConfigAssociationInputBuilder {
 }
 impl GetResolverQueryLogConfigAssociationInputBuilder {
     /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
+    /// This field is required.
     pub fn resolver_query_log_config_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_association_id = ::std::option::Option::Some(input.into());
         self

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMlTransformsOutput {
     /// <p>A list of machine learning transforms.</p>
-    pub transforms: ::std::option::Option<::std::vec::Vec<crate::types::MlTransform>>,
+    pub transforms: ::std::vec::Vec<crate::types::MlTransform>,
     /// <p>A pagination token, if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetMlTransformsOutput {
     /// <p>A list of machine learning transforms.</p>
-    pub fn transforms(&self) -> ::std::option::Option<&[crate::types::MlTransform]> {
-        self.transforms.as_deref()
+    pub fn transforms(&self) -> &[crate::types::MlTransform] {
+        use std::ops::Deref;
+        self.transforms.deref()
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl GetMlTransformsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput).
-    pub fn build(self) -> crate::operation::get_ml_transforms::GetMlTransformsOutput {
-        crate::operation::get_ml_transforms::GetMlTransformsOutput {
-            transforms: self.transforms,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transforms`](crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder::transforms)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_ml_transforms::GetMlTransformsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_ml_transforms::GetMlTransformsOutput {
+            transforms: self.transforms.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transforms",
+                    "transforms was not specified but it is required when building GetMlTransformsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

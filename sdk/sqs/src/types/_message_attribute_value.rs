@@ -15,7 +15,7 @@ pub struct MessageAttributeValue {
     pub binary_list_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub data_type: ::std::option::Option<::std::string::String>,
+    pub data_type: ::std::string::String,
 }
 impl MessageAttributeValue {
     /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
@@ -27,17 +27,22 @@ impl MessageAttributeValue {
         self.binary_value.as_ref()
     }
     /// <p>Not implemented. Reserved for future use.</p>
-    pub fn string_list_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_list_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_list_values.is_none()`.
+    pub fn string_list_values(&self) -> &[::std::string::String] {
+        self.string_list_values.as_deref().unwrap_or_default()
     }
     /// <p>Not implemented. Reserved for future use.</p>
-    pub fn binary_list_values(&self) -> ::std::option::Option<&[::aws_smithy_types::Blob]> {
-        self.binary_list_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.binary_list_values.is_none()`.
+    pub fn binary_list_values(&self) -> &[::aws_smithy_types::Blob] {
+        self.binary_list_values.as_deref().unwrap_or_default()
     }
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&str> {
-        self.data_type.as_deref()
+    pub fn data_type(&self) -> &str {
+        use std::ops::Deref;
+        self.data_type.deref()
     }
 }
 impl MessageAttributeValue {
@@ -128,6 +133,7 @@ impl MessageAttributeValueBuilder {
     }
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
     /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
         self
@@ -144,13 +150,20 @@ impl MessageAttributeValueBuilder {
         &self.data_type
     }
     /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::types::MessageAttributeValue).
-    pub fn build(self) -> crate::types::MessageAttributeValue {
-        crate::types::MessageAttributeValue {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_type`](crate::types::builders::MessageAttributeValueBuilder::data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageAttributeValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MessageAttributeValue {
             string_value: self.string_value,
             binary_value: self.binary_value,
             string_list_values: self.string_list_values,
             binary_list_values: self.binary_list_values,
-            data_type: self.data_type,
-        }
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building MessageAttributeValue",
+                )
+            })?,
+        })
     }
 }

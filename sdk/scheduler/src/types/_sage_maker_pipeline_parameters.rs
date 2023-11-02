@@ -9,8 +9,10 @@ pub struct SageMakerPipelineParameters {
 }
 impl SageMakerPipelineParameters {
     /// <p>List of parameter names and values to use when executing the SageMaker Model Building Pipeline.</p>
-    pub fn pipeline_parameter_list(&self) -> ::std::option::Option<&[crate::types::SageMakerPipelineParameter]> {
-        self.pipeline_parameter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_parameter_list.is_none()`.
+    pub fn pipeline_parameter_list(&self) -> &[crate::types::SageMakerPipelineParameter] {
+        self.pipeline_parameter_list.as_deref().unwrap_or_default()
     }
 }
 impl SageMakerPipelineParameters {

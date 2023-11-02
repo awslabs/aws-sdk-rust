@@ -34,6 +34,7 @@ pub struct UpdateProjectDataDeliveryOutputBuilder {
 }
 impl UpdateProjectDataDeliveryOutputBuilder {
     /// <p>A structure containing details about the project that you updated.</p>
+    /// This field is required.
     pub fn project(mut self, input: crate::types::Project) -> Self {
         self.project = ::std::option::Option::Some(input);
         self

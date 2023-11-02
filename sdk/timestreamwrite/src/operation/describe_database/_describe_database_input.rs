@@ -27,6 +27,7 @@ pub struct DescribeDatabaseInputBuilder {
 }
 impl DescribeDatabaseInputBuilder {
     /// <p>The name of the Timestream database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self

@@ -22,7 +22,7 @@ impl UpdateAgentInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAgent`.
 ///
-/// <p>Updates the name of an agent.</p>
+/// <p>Updates the name of an DataSync agent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +92,14 @@ impl UpdateAgentFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::update_agent::UpdateAgentOutput,
             crate::operation::update_agent::UpdateAgentError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_agent::UpdateAgentError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

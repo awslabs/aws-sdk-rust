@@ -7,21 +7,21 @@
 pub struct DateRange {
     /// <p>This value is the beginning date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    pub from_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub from_date: ::aws_smithy_types::DateTime,
     /// <p>This value is the end date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    pub to_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub to_date: ::aws_smithy_types::DateTime,
 }
 impl DateRange {
     /// <p>This value is the beginning date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    pub fn from_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.from_date.as_ref()
+    pub fn from_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.from_date
     }
     /// <p>This value is the end date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
-    pub fn to_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.to_date.as_ref()
+    pub fn to_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.to_date
     }
 }
 impl DateRange {
@@ -41,6 +41,7 @@ pub struct DateRangeBuilder {
 impl DateRangeBuilder {
     /// <p>This value is the beginning date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
+    /// This field is required.
     pub fn from_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_date = ::std::option::Option::Some(input);
         self
@@ -58,6 +59,7 @@ impl DateRangeBuilder {
     }
     /// <p>This value is the end date, inclusive.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds (milliseconds are optional).</p>
+    /// This field is required.
     pub fn to_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_date = ::std::option::Option::Some(input);
         self
@@ -74,10 +76,23 @@ impl DateRangeBuilder {
         &self.to_date
     }
     /// Consumes the builder and constructs a [`DateRange`](crate::types::DateRange).
-    pub fn build(self) -> crate::types::DateRange {
-        crate::types::DateRange {
-            from_date: self.from_date,
-            to_date: self.to_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`from_date`](crate::types::builders::DateRangeBuilder::from_date)
+    /// - [`to_date`](crate::types::builders::DateRangeBuilder::to_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::DateRange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DateRange {
+            from_date: self.from_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "from_date",
+                    "from_date was not specified but it is required when building DateRange",
+                )
+            })?,
+            to_date: self.to_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "to_date",
+                    "to_date was not specified but it is required when building DateRange",
+                )
+            })?,
+        })
     }
 }

@@ -10,8 +10,10 @@ pub struct UpdateEmergencyContactSettingsInput {
 impl UpdateEmergencyContactSettingsInput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
-    pub fn emergency_contact_list(&self) -> ::std::option::Option<&[crate::types::EmergencyContact]> {
-        self.emergency_contact_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emergency_contact_list.is_none()`.
+    pub fn emergency_contact_list(&self) -> &[crate::types::EmergencyContact] {
+        self.emergency_contact_list.as_deref().unwrap_or_default()
     }
 }
 impl UpdateEmergencyContactSettingsInput {

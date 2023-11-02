@@ -6,12 +6,13 @@ pub fn ser_configuration_set(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
-    if let Some(var_2) = &input.name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.name);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_configuration_set(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ConfigurationSet, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -20,7 +21,7 @@ pub fn de_configuration_set(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.ses#ConfigurationSet$Name */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -29,11 +30,13 @@ pub fn de_configuration_set(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_3);
+                builder = builder.set_name(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::configuration_set_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

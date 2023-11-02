@@ -11,8 +11,10 @@ pub struct ListConfigurationsOutput {
 }
 impl ListConfigurationsOutput {
     /// <p>An array of MSK configurations.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

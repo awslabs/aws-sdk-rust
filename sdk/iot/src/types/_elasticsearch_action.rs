@@ -7,36 +7,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchAction {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The endpoint of your OpenSearch domain.</p>
-    pub endpoint: ::std::option::Option<::std::string::String>,
+    pub endpoint: ::std::string::String,
     /// <p>The index where you want to store your data.</p>
-    pub index: ::std::option::Option<::std::string::String>,
+    pub index: ::std::string::String,
     /// <p>The type of document you are storing.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>The unique identifier for the document you are storing.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl ElasticsearchAction {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The endpoint of your OpenSearch domain.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
-        self.endpoint.as_deref()
+    pub fn endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.endpoint.deref()
     }
     /// <p>The index where you want to store your data.</p>
-    pub fn index(&self) -> ::std::option::Option<&str> {
-        self.index.as_deref()
+    pub fn index(&self) -> &str {
+        use std::ops::Deref;
+        self.index.deref()
     }
     /// <p>The type of document you are storing.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>The unique identifier for the document you are storing.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ElasticsearchAction {
@@ -58,6 +63,7 @@ pub struct ElasticsearchActionBuilder {
 }
 impl ElasticsearchActionBuilder {
     /// <p>The IAM role ARN that has access to OpenSearch.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +78,7 @@ impl ElasticsearchActionBuilder {
         &self.role_arn
     }
     /// <p>The endpoint of your OpenSearch domain.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +93,7 @@ impl ElasticsearchActionBuilder {
         &self.endpoint
     }
     /// <p>The index where you want to store your data.</p>
+    /// This field is required.
     pub fn index(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +108,7 @@ impl ElasticsearchActionBuilder {
         &self.index
     }
     /// <p>The type of document you are storing.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +123,7 @@ impl ElasticsearchActionBuilder {
         &self.r#type
     }
     /// <p>The unique identifier for the document you are storing.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -128,13 +138,44 @@ impl ElasticsearchActionBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ElasticsearchAction`](crate::types::ElasticsearchAction).
-    pub fn build(self) -> crate::types::ElasticsearchAction {
-        crate::types::ElasticsearchAction {
-            role_arn: self.role_arn,
-            endpoint: self.endpoint,
-            index: self.index,
-            r#type: self.r#type,
-            id: self.id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::ElasticsearchActionBuilder::role_arn)
+    /// - [`endpoint`](crate::types::builders::ElasticsearchActionBuilder::endpoint)
+    /// - [`index`](crate::types::builders::ElasticsearchActionBuilder::index)
+    /// - [`r#type`](crate::types::builders::ElasticsearchActionBuilder::r#type)
+    /// - [`id`](crate::types::builders::ElasticsearchActionBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ElasticsearchAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building ElasticsearchAction",
+                )
+            })?,
+            endpoint: self.endpoint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "endpoint",
+                    "endpoint was not specified but it is required when building ElasticsearchAction",
+                )
+            })?,
+            index: self.index.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index",
+                    "index was not specified but it is required when building ElasticsearchAction",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ElasticsearchAction",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ElasticsearchAction",
+                )
+            })?,
+        })
     }
 }

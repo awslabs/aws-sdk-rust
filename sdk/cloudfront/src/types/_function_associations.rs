@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
 }
 impl FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::FunctionAssociation]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::FunctionAssociation] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl FunctionAssociations {
@@ -35,6 +37,7 @@ pub struct FunctionAssociationsBuilder {
 }
 impl FunctionAssociationsBuilder {
     /// <p>The number of CloudFront functions in the list.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,17 @@ impl FunctionAssociationsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`FunctionAssociations`](crate::types::FunctionAssociations).
-    pub fn build(self) -> crate::types::FunctionAssociations {
-        crate::types::FunctionAssociations {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::FunctionAssociationsBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionAssociations, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FunctionAssociations {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building FunctionAssociations",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

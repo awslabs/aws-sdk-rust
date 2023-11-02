@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartVirtualMachinesMetadataSync`](crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hypervisor_arn(impl Into<String>)`](crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder::hypervisor_arn) / [`set_hypervisor_arn(impl Into<String>)`](crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncFluentBuilder::set_hypervisor_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the hypervisor.</p><br>
     /// - On success, responds with [`StartVirtualMachinesMetadataSyncOutput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     /// - On failure, responds with [`SdkError<StartVirtualMachinesMetadataSyncError>`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncError)

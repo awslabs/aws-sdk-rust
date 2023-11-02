@@ -6,7 +6,7 @@ pub struct CreateRevisionInput {
     /// <p>An optional comment about the revision.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a data set.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -16,8 +16,9 @@ impl CreateRevisionInput {
         self.comment.as_deref()
     }
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -55,6 +56,7 @@ impl CreateRevisionInputBuilder {
         &self.comment
     }
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -89,12 +91,19 @@ impl CreateRevisionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRevisionInput`](crate::operation::create_revision::CreateRevisionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_id`](crate::operation::create_revision::builders::CreateRevisionInputBuilder::data_set_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_revision::CreateRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_revision::CreateRevisionInput {
             comment: self.comment,
-            data_set_id: self.data_set_id,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building CreateRevisionInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

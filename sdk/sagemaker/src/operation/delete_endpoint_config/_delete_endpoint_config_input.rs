@@ -27,6 +27,7 @@ pub struct DeleteEndpointConfigInputBuilder {
 }
 impl DeleteEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration that you want to delete.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self

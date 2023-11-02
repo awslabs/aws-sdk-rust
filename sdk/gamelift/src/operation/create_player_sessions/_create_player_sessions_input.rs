@@ -16,8 +16,10 @@ impl CreatePlayerSessionsInput {
         self.game_session_id.as_deref()
     }
     /// <p>List of unique identifiers for the players to be added.</p>
-    pub fn player_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.player_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_ids.is_none()`.
+    pub fn player_ids(&self) -> &[::std::string::String] {
+        self.player_ids.as_deref().unwrap_or_default()
     }
     /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
     pub fn player_data_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -41,6 +43,7 @@ pub struct CreatePlayerSessionsInputBuilder {
 }
 impl CreatePlayerSessionsInputBuilder {
     /// <p>A unique identifier for the game session to add players to.</p>
+    /// This field is required.
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self

@@ -42,6 +42,7 @@ pub struct UnprocessedStandardsControlAssociationBuilder {
 }
 impl UnprocessedStandardsControlAssociationBuilder {
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
+    /// This field is required.
     pub fn standards_control_association_id(mut self, input: crate::types::StandardsControlAssociationId) -> Self {
         self.standards_control_association_id = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl UnprocessedStandardsControlAssociationBuilder {
         &self.standards_control_association_id
     }
     /// <p>The error code for the unprocessed standard and control association. </p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self

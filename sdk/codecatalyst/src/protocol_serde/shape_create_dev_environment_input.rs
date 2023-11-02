@@ -27,26 +27,26 @@ pub fn ser_create_dev_environment_input(
             ::aws_smithy_types::Number::NegInt((input.inactivity_timeout_minutes).into()),
         );
     }
-    if let Some(var_7) = &input.instance_type {
-        object.key("instanceType").string(var_7.as_str());
+    {
+        object.key("instanceType").string(input.instance_type.as_str());
     }
-    if let Some(var_8) = &input.persistent_storage {
+    if let Some(var_7) = &input.persistent_storage {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("persistentStorage").start_object();
-        crate::protocol_serde::shape_persistent_storage_configuration::ser_persistent_storage_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("persistentStorage").start_object();
+        crate::protocol_serde::shape_persistent_storage_configuration::ser_persistent_storage_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.repositories {
-        let mut array_11 = object.key("repositories").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.repositories {
+        let mut array_10 = object.key("repositories").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_repository_input::ser_repository_input(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_repository_input::ser_repository_input(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
     Ok(())
 }

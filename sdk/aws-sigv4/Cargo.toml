@@ -3,6 +3,11 @@
 name = "hmac"
 harness = false
 
+[[bench]]
+name = "sigv4a"
+harness = false
+required-features = ["sigv4a"]
+
 [package]
 name = "aws-sigv4"
 version = "0.56.1"
@@ -18,18 +23,25 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-sign-http = ["http", "percent-encoding", "form_urlencoded"]
-sign-eventstream = ["aws-smithy-eventstream", "bytes"]
 default = ["sign-http"]
+http0-compat = ["dep:http"]
+sign-http = ["dep:http", "dep:percent-encoding", "dep:form_urlencoded"]
+sign-eventstream = ["dep:aws-smithy-eventstream"]
+sigv4a = ["dep:p256", "dep:num-bigint", "dep:zeroize", "dep:ring"]
 
 [dependencies]
+bytes = "1"
 hex = "0.4"
+hmac = "0.12"
 once_cell = "1.8"
 regex = "1.5"
+sha2 = "0.10"
 time = "0.3.5"
 tracing = "0.1"
-hmac = "0.12"
-sha2 = "0.10"
+
+[dependencies.aws-credential-types]
+path = "../aws-credential-types"
+version = "0.56.1"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
@@ -40,9 +52,10 @@ version = "0.56.1"
 path = "../aws-smithy-http"
 version = "0.56.1"
 
-[dependencies.bytes]
-version = "1"
-optional = true
+[dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["client"]
+version = "0.56.1"
 
 [dependencies.form_urlencoded]
 version = "1.0"
@@ -52,19 +65,51 @@ optional = true
 version = "0.2"
 optional = true
 
+[dependencies.num-bigint]
+version = "0.4"
+optional = true
+
+[dependencies.p256]
+version = "0.11"
+features = ["ecdsa"]
+optional = true
+
 [dependencies.percent-encoding]
 version = "2.1"
 optional = true
 
+[dependencies.ring]
+version = "0.16"
+optional = true
+
+[dependencies.zeroize]
+version = "^1"
+optional = true
+
 [dev-dependencies]
-criterion = "0.4"
 bytes = "1"
-httparse = "1.5"
+criterion = "0.4"
+hex-literal = "0.4.1"
+httparse = "1.8"
+libfuzzer-sys = "0.4.6"
 pretty_assertions = "1.3"
 proptest = "1.2"
+serde = "1.0.180"
+serde_derive = "1.0.180"
+serde_json = "1.0.104"
+
+[dev-dependencies.aws-credential-types]
+path = "../aws-credential-types"
+features = ["test-util", "hardcoded-credentials"]
+version = "0.56.1"
+
+[dev-dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["client", "test-util"]
+version = "0.56.1"
 
 [dev-dependencies.time]
-version = "0.3.4"
+version = "0.3.5"
 features = ["parsing"]
 [target."cfg(not(any(target_arch = \"powerpc\", target_arch = \"powerpc64\")))".dev-dependencies]
 ring = "0.16"

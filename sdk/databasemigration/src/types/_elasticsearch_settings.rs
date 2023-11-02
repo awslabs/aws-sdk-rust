@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub service_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub service_access_role_arn: ::std::string::String,
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
-    pub endpoint_uri: ::std::option::Option<::std::string::String>,
+    pub endpoint_uri: ::std::string::String,
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub full_load_error_percentage: ::std::option::Option<i32>,
@@ -18,12 +18,14 @@ pub struct ElasticsearchSettings {
 }
 impl ElasticsearchSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
-        self.service_access_role_arn.as_deref()
+    pub fn service_access_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.service_access_role_arn.deref()
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
-    pub fn endpoint_uri(&self) -> ::std::option::Option<&str> {
-        self.endpoint_uri.as_deref()
+    pub fn endpoint_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.endpoint_uri.deref()
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
@@ -58,6 +60,7 @@ pub struct ElasticsearchSettingsBuilder {
 }
 impl ElasticsearchSettingsBuilder {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// This field is required.
     pub fn service_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl ElasticsearchSettingsBuilder {
         &self.service_access_role_arn
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
+    /// This field is required.
     pub fn endpoint_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_uri = ::std::option::Option::Some(input.into());
         self
@@ -131,13 +135,26 @@ impl ElasticsearchSettingsBuilder {
         &self.use_new_mapping_type
     }
     /// Consumes the builder and constructs a [`ElasticsearchSettings`](crate::types::ElasticsearchSettings).
-    pub fn build(self) -> crate::types::ElasticsearchSettings {
-        crate::types::ElasticsearchSettings {
-            service_access_role_arn: self.service_access_role_arn,
-            endpoint_uri: self.endpoint_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_access_role_arn`](crate::types::builders::ElasticsearchSettingsBuilder::service_access_role_arn)
+    /// - [`endpoint_uri`](crate::types::builders::ElasticsearchSettingsBuilder::endpoint_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ElasticsearchSettings {
+            service_access_role_arn: self.service_access_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_access_role_arn",
+                    "service_access_role_arn was not specified but it is required when building ElasticsearchSettings",
+                )
+            })?,
+            endpoint_uri: self.endpoint_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "endpoint_uri",
+                    "endpoint_uri was not specified but it is required when building ElasticsearchSettings",
+                )
+            })?,
             full_load_error_percentage: self.full_load_error_percentage,
             error_retry_duration: self.error_retry_duration,
             use_new_mapping_type: self.use_new_mapping_type,
-        }
+        })
     }
 }

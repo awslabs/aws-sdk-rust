@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataProvider`](crate::operation::delete_data_provider::builders::DeleteDataProviderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_provider_identifier(impl Into<String>)`](crate::operation::delete_data_provider::builders::DeleteDataProviderFluentBuilder::data_provider_identifier) / [`set_data_provider_identifier(Option<String>)`](crate::operation::delete_data_provider::builders::DeleteDataProviderFluentBuilder::set_data_provider_identifier): <p>The identifier of the data provider to delete.</p>
+    ///   - [`data_provider_identifier(impl Into<String>)`](crate::operation::delete_data_provider::builders::DeleteDataProviderFluentBuilder::data_provider_identifier) / [`set_data_provider_identifier(Option<String>)`](crate::operation::delete_data_provider::builders::DeleteDataProviderFluentBuilder::set_data_provider_identifier):<br>required: **true**<br><p>The identifier of the data provider to delete.</p><br>
     /// - On success, responds with [`DeleteDataProviderOutput`](crate::operation::delete_data_provider::DeleteDataProviderOutput) with field(s):
     ///   - [`data_provider(Option<DataProvider>)`](crate::operation::delete_data_provider::DeleteDataProviderOutput::data_provider): <p>The data provider that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteDataProviderError>`](crate::operation::delete_data_provider::DeleteDataProviderError)

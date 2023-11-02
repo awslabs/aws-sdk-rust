@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    pub application_version_id: ::std::option::Option<i64>,
+    pub application_version_id: i64,
     /// <p>The status of the application.</p>
-    pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
+    pub application_status: crate::types::ApplicationStatus,
 }
 impl ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    pub fn application_version_id(&self) -> ::std::option::Option<i64> {
+    pub fn application_version_id(&self) -> i64 {
         self.application_version_id
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
-        self.application_status.as_ref()
+    pub fn application_status(&self) -> &crate::types::ApplicationStatus {
+        &self.application_status
     }
 }
 impl ApplicationVersionSummary {
@@ -35,6 +35,7 @@ pub struct ApplicationVersionSummaryBuilder {
 }
 impl ApplicationVersionSummaryBuilder {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    /// This field is required.
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ApplicationVersionSummaryBuilder {
         &self.application_version_id
     }
     /// <p>The status of the application.</p>
+    /// This field is required.
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl ApplicationVersionSummaryBuilder {
         &self.application_status
     }
     /// Consumes the builder and constructs a [`ApplicationVersionSummary`](crate::types::ApplicationVersionSummary).
-    pub fn build(self) -> crate::types::ApplicationVersionSummary {
-        crate::types::ApplicationVersionSummary {
-            application_version_id: self.application_version_id,
-            application_status: self.application_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_version_id`](crate::types::builders::ApplicationVersionSummaryBuilder::application_version_id)
+    /// - [`application_status`](crate::types::builders::ApplicationVersionSummaryBuilder::application_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationVersionSummary {
+            application_version_id: self.application_version_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version_id",
+                    "application_version_id was not specified but it is required when building ApplicationVersionSummary",
+                )
+            })?,
+            application_status: self.application_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_status",
+                    "application_status was not specified but it is required when building ApplicationVersionSummary",
+                )
+            })?,
+        })
     }
 }

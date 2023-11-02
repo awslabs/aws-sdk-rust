@@ -62,8 +62,10 @@ impl StackInstance {
         self.stack_id.as_deref()
     }
     /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
-    pub fn parameter_overrides(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameter_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_overrides.is_none()`.
+    pub fn parameter_overrides(&self) -> &[crate::types::Parameter] {
+        self.parameter_overrides.as_deref().unwrap_or_default()
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>

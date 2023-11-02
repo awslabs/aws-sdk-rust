@@ -49,6 +49,7 @@ impl TensorBoardOutputConfigBuilder {
         &self.local_path
     }
     /// <p>Path to Amazon S3 storage location for TensorBoard output.</p>
+    /// This field is required.
     pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self

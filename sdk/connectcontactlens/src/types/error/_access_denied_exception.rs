@@ -53,6 +53,7 @@ pub struct AccessDeniedExceptionBuilder {
 }
 impl AccessDeniedExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

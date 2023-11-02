@@ -13,7 +13,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
@@ -21,8 +21,9 @@ pub struct RequestCancelExternalWorkflowExecutionDecisionAttributes {
 }
 impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
     pub fn run_id(&self) -> ::std::option::Option<&str> {
@@ -50,6 +51,7 @@ pub struct RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
 }
 impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
     /// <p> The <code>workflowId</code> of the external workflow execution to cancel.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -92,11 +94,21 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder {
         &self.control
     }
     /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes).
-    pub fn build(self) -> crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes {
-        crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes {
-            workflow_id: self.workflow_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::types::builders::RequestCancelExternalWorkflowExecutionDecisionAttributesBuilder::workflow_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building RequestCancelExternalWorkflowExecutionDecisionAttributes",
+                )
+            })?,
             run_id: self.run_id,
             control: self.control,
-        }
+        })
     }
 }

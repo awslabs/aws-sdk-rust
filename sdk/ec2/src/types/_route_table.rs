@@ -21,24 +21,32 @@ pub struct RouteTable {
 }
 impl RouteTable {
     /// <p>The associations between the route table and one or more subnets or a gateway.</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::RouteTableAssociation]> {
-        self.associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::RouteTableAssociation] {
+        self.associations.as_deref().unwrap_or_default()
     }
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
-    pub fn propagating_vgws(&self) -> ::std::option::Option<&[crate::types::PropagatingVgw]> {
-        self.propagating_vgws.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.propagating_vgws.is_none()`.
+    pub fn propagating_vgws(&self) -> &[crate::types::PropagatingVgw] {
+        self.propagating_vgws.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
     /// <p>The routes in the route table.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::Route] {
+        self.routes.as_deref().unwrap_or_default()
     }
     /// <p>Any tags assigned to the route table.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

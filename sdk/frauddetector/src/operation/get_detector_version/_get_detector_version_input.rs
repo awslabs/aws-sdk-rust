@@ -34,6 +34,7 @@ pub struct GetDetectorVersionInputBuilder {
 }
 impl GetDetectorVersionInputBuilder {
     /// <p>The detector ID.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDetectorVersionInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID.</p>
+    /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self

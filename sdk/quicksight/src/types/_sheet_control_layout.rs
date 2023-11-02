@@ -28,6 +28,7 @@ pub struct SheetControlLayoutBuilder {
 }
 impl SheetControlLayoutBuilder {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::SheetControlLayoutConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

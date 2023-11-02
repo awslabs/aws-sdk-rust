@@ -15,51 +15,51 @@ pub fn ser_create_mission_profile_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.dataflow_edges {
-        let mut array_4 = object.key("dataflowEdges").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("dataflowEdges").start_array();
+        for item_4 in &input.dataflow_edges {
             {
-                let mut array_6 = array_4.value().start_array();
-                for item_7 in item_5 {
+                let mut array_5 = array_3.value().start_array();
+                for item_6 in item_4 {
                     {
-                        array_6.value().string(item_7.as_str());
+                        array_5.value().string(item_6.as_str());
                     }
                 }
-                array_6.finish();
+                array_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_8) = &input.minimum_viable_contact_duration_seconds {
+    {
         object.key("minimumViableContactDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((input.minimum_viable_contact_duration_seconds).into()),
         );
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_10) = &input.streams_kms_key {
+    if let Some(var_7) = &input.streams_kms_key {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("streamsKmsKey").start_object();
-        crate::protocol_serde::shape_kms_key::ser_kms_key(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_8 = object.key("streamsKmsKey").start_object();
+        crate::protocol_serde::shape_kms_key::ser_kms_key(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_12) = &input.streams_kms_role {
-        object.key("streamsKmsRole").string(var_12.as_str());
+    if let Some(var_9) = &input.streams_kms_role {
+        object.key("streamsKmsRole").string(var_9.as_str());
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_14.finish();
+        object_11.finish();
     }
-    if let Some(var_17) = &input.tracking_config_arn {
-        object.key("trackingConfigArn").string(var_17.as_str());
+    {
+        object.key("trackingConfigArn").string(input.tracking_config_arn.as_str());
     }
     Ok(())
 }

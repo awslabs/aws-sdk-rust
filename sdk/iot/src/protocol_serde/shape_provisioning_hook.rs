@@ -6,8 +6,8 @@ pub fn ser_provisioning_hook(
     if let Some(var_1) = &input.payload_version {
         object.key("payloadVersion").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.target_arn {
-        object.key("targetArn").string(var_2.as_str());
+    {
+        object.key("targetArn").string(input.target_arn.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::provisioning_hook_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

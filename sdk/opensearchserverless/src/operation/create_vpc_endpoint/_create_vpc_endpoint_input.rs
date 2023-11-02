@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointInput {
     /// <p>The name of the interface endpoint.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ID of the VPC from which you'll access OpenSearch Serverless.</p>
-    pub vpc_id: ::std::option::Option<::std::string::String>,
+    pub vpc_id: ::std::string::String,
     /// <p>The ID of one or more subnets from which you'll access OpenSearch Serverless.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
@@ -16,20 +16,25 @@ pub struct CreateVpcEndpointInput {
 }
 impl CreateVpcEndpointInput {
     /// <p>The name of the interface endpoint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ID of the VPC from which you'll access OpenSearch Serverless.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
-        self.vpc_id.as_deref()
+    pub fn vpc_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_id.deref()
     }
     /// <p>The ID of one or more subnets from which you'll access OpenSearch Serverless.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.subnet_ids.deref()
     }
     /// <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +60,7 @@ pub struct CreateVpcEndpointInputBuilder {
 }
 impl CreateVpcEndpointInputBuilder {
     /// <p>The name of the interface endpoint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +75,7 @@ impl CreateVpcEndpointInputBuilder {
         &self.name
     }
     /// <p>The ID of the VPC from which you'll access OpenSearch Serverless.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -137,13 +144,32 @@ impl CreateVpcEndpointInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder::name)
+    /// - [`vpc_id`](crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder::vpc_id)
+    /// - [`subnet_ids`](crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder::subnet_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_vpc_endpoint::CreateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpc_endpoint::CreateVpcEndpointInput {
-            name: self.name,
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateVpcEndpointInput",
+                )
+            })?,
+            vpc_id: self.vpc_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vpc_id",
+                    "vpc_id was not specified but it is required when building CreateVpcEndpointInput",
+                )
+            })?,
+            subnet_ids: self.subnet_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subnet_ids",
+                    "subnet_ids was not specified but it is required when building CreateVpcEndpointInput",
+                )
+            })?,
             security_group_ids: self.security_group_ids,
             client_token: self.client_token,
         })

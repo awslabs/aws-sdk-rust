@@ -27,6 +27,7 @@ pub struct DeleteMessagingStreamingConfigurationsInputBuilder {
 }
 impl DeleteMessagingStreamingConfigurationsInputBuilder {
     /// <p>The ARN of the streaming configurations being deleted.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self

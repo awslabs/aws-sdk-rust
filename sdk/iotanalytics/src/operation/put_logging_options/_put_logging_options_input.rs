@@ -27,6 +27,7 @@ pub struct PutLoggingOptionsInputBuilder {
 }
 impl PutLoggingOptionsInputBuilder {
     /// <p>The new values of the IoT Analytics logging options.</p>
+    /// This field is required.
     pub fn logging_options(mut self, input: crate::types::LoggingOptions) -> Self {
         self.logging_options = ::std::option::Option::Some(input);
         self

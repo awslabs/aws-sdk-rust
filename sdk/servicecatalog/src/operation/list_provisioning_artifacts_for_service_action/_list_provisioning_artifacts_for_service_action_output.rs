@@ -11,8 +11,10 @@ pub struct ListProvisioningArtifactsForServiceActionOutput {
 }
 impl ListProvisioningArtifactsForServiceActionOutput {
     /// <p>An array of objects with information about product views and provisioning artifacts.</p>
-    pub fn provisioning_artifact_views(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifactView]> {
-        self.provisioning_artifact_views.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifact_views.is_none()`.
+    pub fn provisioning_artifact_views(&self) -> &[crate::types::ProvisioningArtifactView] {
+        self.provisioning_artifact_views.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

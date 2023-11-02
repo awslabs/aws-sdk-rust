@@ -48,6 +48,7 @@ impl DeleteLfTagInputBuilder {
         &self.catalog_id
     }
     /// <p>The key-name for the LF-tag to delete.</p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self

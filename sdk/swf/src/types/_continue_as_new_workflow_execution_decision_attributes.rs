@@ -92,8 +92,10 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
         self.child_policy.as_ref()
     }
     /// <p>The list of tags to associate with the new workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[::std::string::String] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>The version of the workflow to start.</p>
     pub fn workflow_type_version(&self) -> ::std::option::Option<&str> {

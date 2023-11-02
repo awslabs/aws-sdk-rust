@@ -21,8 +21,10 @@ impl ClusterPendingUpdates {
         self.ac_ls.as_ref()
     }
     /// <p>A list of service updates being applied to the cluster</p>
-    pub fn service_updates(&self) -> ::std::option::Option<&[crate::types::PendingModifiedServiceUpdate]> {
-        self.service_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_updates.is_none()`.
+    pub fn service_updates(&self) -> &[crate::types::PendingModifiedServiceUpdate] {
+        self.service_updates.as_deref().unwrap_or_default()
     }
 }
 impl ClusterPendingUpdates {

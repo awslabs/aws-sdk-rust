@@ -16,8 +16,10 @@ impl ListPublicKeysOutput {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
-    pub fn public_key_list(&self) -> ::std::option::Option<&[crate::types::PublicKey]> {
-        self.public_key_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_key_list.is_none()`.
+    pub fn public_key_list(&self) -> &[crate::types::PublicKey] {
+        self.public_key_list.as_deref().unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

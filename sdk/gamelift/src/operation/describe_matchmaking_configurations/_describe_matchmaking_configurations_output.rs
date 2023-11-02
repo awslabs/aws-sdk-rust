@@ -11,8 +11,10 @@ pub struct DescribeMatchmakingConfigurationsOutput {
 }
 impl DescribeMatchmakingConfigurationsOutput {
     /// <p>A collection of requested matchmaking configurations.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::MatchmakingConfiguration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::MatchmakingConfiguration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResolveRoom`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_id(impl Into<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::set_user_id): <p>The ARN of the user. Required.</p>
-    ///   - [`skill_id(impl Into<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::set_skill_id): <p>The ARN of the skill that was requested. Required.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::set_user_id):<br>required: **true**<br><p>The ARN of the user. Required.</p><br>
+    ///   - [`skill_id(impl Into<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::skill_id) / [`set_skill_id(Option<String>)`](crate::operation::resolve_room::builders::ResolveRoomFluentBuilder::set_skill_id):<br>required: **true**<br><p>The ARN of the skill that was requested. Required.</p><br>
     /// - On success, responds with [`ResolveRoomOutput`](crate::operation::resolve_room::ResolveRoomOutput) with field(s):
     ///   - [`room_arn(Option<String>)`](crate::operation::resolve_room::ResolveRoomOutput::room_arn): <p>The ARN of the room from which the skill request was invoked.</p>
     ///   - [`room_name(Option<String>)`](crate::operation::resolve_room::ResolveRoomOutput::room_name): <p>The name of the room from which the skill request was invoked.</p>

@@ -3,39 +3,39 @@ pub fn ser_batch_get_asset_property_value_history_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetAssetPropertyValueHistoryEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.entry_id {
-        object.key("entryId").string(var_1.as_str());
+    {
+        object.key("entryId").string(input.entry_id.as_str());
     }
-    if let Some(var_2) = &input.asset_id {
-        object.key("assetId").string(var_2.as_str());
+    if let Some(var_1) = &input.asset_id {
+        object.key("assetId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.property_id {
-        object.key("propertyId").string(var_3.as_str());
+    if let Some(var_2) = &input.property_id {
+        object.key("propertyId").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.property_alias {
-        object.key("propertyAlias").string(var_4.as_str());
+    if let Some(var_3) = &input.property_alias {
+        object.key("propertyAlias").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.start_date {
+    if let Some(var_4) = &input.start_date {
         object
             .key("startDate")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.end_date {
+    if let Some(var_5) = &input.end_date {
         object
             .key("endDate")
-            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_7) = &input.qualities {
-        let mut array_8 = object.key("qualities").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.qualities {
+        let mut array_7 = object.key("qualities").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_10) = &input.time_ordering {
-        object.key("timeOrdering").string(var_10.as_str());
+    if let Some(var_9) = &input.time_ordering {
+        object.key("timeOrdering").string(var_9.as_str());
     }
     Ok(())
 }

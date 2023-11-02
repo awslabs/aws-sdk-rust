@@ -41,6 +41,7 @@ pub struct SendDataToMulticastGroupInputBuilder {
 }
 impl SendDataToMulticastGroupInputBuilder {
     /// <p>The ID of the multicast group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl SendDataToMulticastGroupInputBuilder {
         &self.id
     }
     /// <p>The binary to be sent to the end device, encoded in base64.</p>
+    /// This field is required.
     pub fn payload_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_data = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl SendDataToMulticastGroupInputBuilder {
         &self.payload_data
     }
     /// <p>Wireless metadata that is to be sent to multicast group.</p>
+    /// This field is required.
     pub fn wireless_metadata(mut self, input: crate::types::MulticastWirelessMetadata) -> Self {
         self.wireless_metadata = ::std::option::Option::Some(input);
         self

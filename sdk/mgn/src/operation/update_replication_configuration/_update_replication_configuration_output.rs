@@ -55,8 +55,10 @@ impl UpdateReplicationConfigurationOutput {
         self.associate_default_security_group
     }
     /// <p>Replication Configuration Replication Server Security Group IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_servers_security_groups_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_i_ds.is_none()`.
+    pub fn replication_servers_security_groups_i_ds(&self) -> &[::std::string::String] {
+        self.replication_servers_security_groups_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>Replication Configuration Replication Server instance type.</p>
     pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
@@ -71,8 +73,10 @@ impl UpdateReplicationConfigurationOutput {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration replicated disks.</p>
-    pub fn replicated_disks(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationReplicatedDisk]> {
-        self.replicated_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
+    pub fn replicated_disks(&self) -> &[crate::types::ReplicationConfigurationReplicatedDisk] {
+        self.replicated_disks.as_deref().unwrap_or_default()
     }
     /// <p>Replication Configuration EBS encryption.</p>
     pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {

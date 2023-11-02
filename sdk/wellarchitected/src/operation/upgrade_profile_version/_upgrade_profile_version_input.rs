@@ -56,6 +56,7 @@ pub struct UpgradeProfileVersionInputBuilder {
 }
 impl UpgradeProfileVersionInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl UpgradeProfileVersionInputBuilder {
         &self.workload_id
     }
     /// <p>The profile ARN.</p>
+    /// This field is required.
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
         self

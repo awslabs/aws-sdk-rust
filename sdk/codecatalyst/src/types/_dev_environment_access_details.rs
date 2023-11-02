@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub stream_url: ::std::option::Option<::std::string::String>,
+    pub stream_url: ::std::string::String,
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub token_value: ::std::option::Option<::std::string::String>,
+    pub token_value: ::std::string::String,
 }
 impl DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub fn stream_url(&self) -> ::std::option::Option<&str> {
-        self.stream_url.as_deref()
+    pub fn stream_url(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_url.deref()
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub fn token_value(&self) -> ::std::option::Option<&str> {
-        self.token_value.as_deref()
+    pub fn token_value(&self) -> &str {
+        use std::ops::Deref;
+        self.token_value.deref()
     }
 }
 impl ::std::fmt::Debug for DevEnvironmentAccessDetails {
@@ -43,6 +45,7 @@ pub struct DevEnvironmentAccessDetailsBuilder {
 }
 impl DevEnvironmentAccessDetailsBuilder {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
+    /// This field is required.
     pub fn stream_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_url = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl DevEnvironmentAccessDetailsBuilder {
         &self.stream_url
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
+    /// This field is required.
     pub fn token_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_value = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl DevEnvironmentAccessDetailsBuilder {
         &self.token_value
     }
     /// Consumes the builder and constructs a [`DevEnvironmentAccessDetails`](crate::types::DevEnvironmentAccessDetails).
-    pub fn build(self) -> crate::types::DevEnvironmentAccessDetails {
-        crate::types::DevEnvironmentAccessDetails {
-            stream_url: self.stream_url,
-            token_value: self.token_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stream_url`](crate::types::builders::DevEnvironmentAccessDetailsBuilder::stream_url)
+    /// - [`token_value`](crate::types::builders::DevEnvironmentAccessDetailsBuilder::token_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentAccessDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DevEnvironmentAccessDetails {
+            stream_url: self.stream_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "stream_url",
+                    "stream_url was not specified but it is required when building DevEnvironmentAccessDetails",
+                )
+            })?,
+            token_value: self.token_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "token_value",
+                    "token_value was not specified but it is required when building DevEnvironmentAccessDetails",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for DevEnvironmentAccessDetailsBuilder {

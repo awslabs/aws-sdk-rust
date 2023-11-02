@@ -14,8 +14,10 @@ impl UpdateDimensionInput {
         self.name.as_deref()
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn string_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.string_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.string_values.is_none()`.
+    pub fn string_values(&self) -> &[::std::string::String] {
+        self.string_values.as_deref().unwrap_or_default()
     }
 }
 impl UpdateDimensionInput {
@@ -34,6 +36,7 @@ pub struct UpdateDimensionInputBuilder {
 }
 impl UpdateDimensionInputBuilder {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

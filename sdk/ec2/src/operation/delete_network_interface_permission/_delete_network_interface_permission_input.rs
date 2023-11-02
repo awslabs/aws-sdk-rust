@@ -42,6 +42,7 @@ pub struct DeleteNetworkInterfacePermissionInputBuilder {
 }
 impl DeleteNetworkInterfacePermissionInputBuilder {
     /// <p>The ID of the network interface permission.</p>
+    /// This field is required.
     pub fn network_interface_permission_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_permission_id = ::std::option::Option::Some(input.into());
         self

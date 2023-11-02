@@ -15,8 +15,10 @@ impl FailedDeleteRemediationExceptionsBatch {
         self.failure_message.as_deref()
     }
     /// <p>Returns remediation exception resource key object of the failed items.</p>
-    pub fn failed_items(&self) -> ::std::option::Option<&[crate::types::RemediationExceptionResourceKey]> {
-        self.failed_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_items.is_none()`.
+    pub fn failed_items(&self) -> &[crate::types::RemediationExceptionResourceKey] {
+        self.failed_items.as_deref().unwrap_or_default()
     }
 }
 impl FailedDeleteRemediationExceptionsBatch {

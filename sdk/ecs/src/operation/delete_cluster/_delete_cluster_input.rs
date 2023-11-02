@@ -27,6 +27,7 @@ pub struct DeleteClusterInputBuilder {
 }
 impl DeleteClusterInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self

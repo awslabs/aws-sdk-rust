@@ -15,20 +15,20 @@ pub fn ser_resource_mapping(
     if let Some(var_4) = &input.resource_group_name {
         object.key("resourceGroupName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.mapping_type {
-        object.key("mappingType").string(var_5.as_str());
+    {
+        object.key("mappingType").string(input.mapping_type.as_str());
     }
-    if let Some(var_6) = &input.physical_resource_id {
+    if let Some(var_5) = &input.physical_resource_id {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("physicalResourceId").start_object();
-        crate::protocol_serde::shape_physical_resource_id::ser_physical_resource_id(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("physicalResourceId").start_object();
+        crate::protocol_serde::shape_physical_resource_id::ser_physical_resource_id(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.terraform_source_name {
-        object.key("terraformSourceName").string(var_8.as_str());
+    if let Some(var_7) = &input.terraform_source_name {
+        object.key("terraformSourceName").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.eks_source_name {
-        object.key("eksSourceName").string(var_9.as_str());
+    if let Some(var_8) = &input.eks_source_name {
+        object.key("eksSourceName").string(var_8.as_str());
     }
     Ok(())
 }
@@ -111,7 +111,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::resource_mapping_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -41,6 +41,7 @@ pub struct GetGeneratedPolicyOutputBuilder {
 }
 impl GetGeneratedPolicyOutputBuilder {
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
+    /// This field is required.
     pub fn job_details(mut self, input: crate::types::JobDetails) -> Self {
         self.job_details = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl GetGeneratedPolicyOutputBuilder {
         &self.job_details
     }
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
+    /// This field is required.
     pub fn generated_policy_result(mut self, input: crate::types::GeneratedPolicyResult) -> Self {
         self.generated_policy_result = ::std::option::Option::Some(input);
         self

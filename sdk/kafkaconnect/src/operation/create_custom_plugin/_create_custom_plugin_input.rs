@@ -4,18 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
-    pub content_type: ::std::option::Option<crate::types::CustomPluginContentType>,
+    pub content_type: crate::types::CustomPluginContentType,
     /// <p>A summary description of the custom plugin.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location of a custom plugin.</p>
     pub location: ::std::option::Option<crate::types::CustomPluginLocation>,
     /// <p>The name of the custom plugin.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::CustomPluginContentType> {
-        self.content_type.as_ref()
+    pub fn content_type(&self) -> &crate::types::CustomPluginContentType {
+        &self.content_type
     }
     /// <p>A summary description of the custom plugin.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -26,8 +26,9 @@ impl CreateCustomPluginInput {
         self.location.as_ref()
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl CreateCustomPluginInput {
@@ -48,6 +49,7 @@ pub struct CreateCustomPluginInputBuilder {
 }
 impl CreateCustomPluginInputBuilder {
     /// <p>The type of the plugin file.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: crate::types::CustomPluginContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl CreateCustomPluginInputBuilder {
         &self.description
     }
     /// <p>Information about the location of a custom plugin.</p>
+    /// This field is required.
     pub fn location(mut self, input: crate::types::CustomPluginLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl CreateCustomPluginInputBuilder {
         &self.location
     }
     /// <p>The name of the custom plugin.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,14 +108,27 @@ impl CreateCustomPluginInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content_type`](crate::operation::create_custom_plugin::builders::CreateCustomPluginInputBuilder::content_type)
+    /// - [`name`](crate::operation::create_custom_plugin::builders::CreateCustomPluginInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_custom_plugin::CreateCustomPluginInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_custom_plugin::CreateCustomPluginInput {
-            content_type: self.content_type,
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building CreateCustomPluginInput",
+                )
+            })?,
             description: self.description,
             location: self.location,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateCustomPluginInput",
+                )
+            })?,
         })
     }
 }

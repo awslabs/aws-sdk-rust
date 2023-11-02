@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesOutput {
     /// <p>A list of devices.</p>
-    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
+    pub devices: ::std::vec::Vec<crate::types::Device>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevicesOutput {
     /// <p>A list of devices.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::Device]> {
-        self.devices.as_deref()
+    pub fn devices(&self) -> &[crate::types::Device] {
+        use std::ops::Deref;
+        self.devices.deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListDevicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput).
-    pub fn build(self) -> crate::operation::list_devices::ListDevicesOutput {
-        crate::operation::list_devices::ListDevicesOutput {
-            devices: self.devices,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`devices`](crate::operation::list_devices::builders::ListDevicesOutputBuilder::devices)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesOutput {
+            devices: self.devices.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "devices",
+                    "devices was not specified but it is required when building ListDevicesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

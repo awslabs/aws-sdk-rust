@@ -27,6 +27,7 @@ pub struct GetKeyPairInputBuilder {
 }
 impl GetKeyPairInputBuilder {
     /// <p>The name of the key pair for which you are requesting information.</p>
+    /// This field is required.
     pub fn key_pair_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pair_name = ::std::option::Option::Some(input.into());
         self

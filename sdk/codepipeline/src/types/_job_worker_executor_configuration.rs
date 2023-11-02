@@ -11,12 +11,16 @@ pub struct JobWorkerExecutorConfiguration {
 }
 impl JobWorkerExecutorConfiguration {
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn polling_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.polling_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polling_accounts.is_none()`.
+    pub fn polling_accounts(&self) -> &[::std::string::String] {
+        self.polling_accounts.as_deref().unwrap_or_default()
     }
     /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn polling_service_principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.polling_service_principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polling_service_principals.is_none()`.
+    pub fn polling_service_principals(&self) -> &[::std::string::String] {
+        self.polling_service_principals.as_deref().unwrap_or_default()
     }
 }
 impl JobWorkerExecutorConfiguration {

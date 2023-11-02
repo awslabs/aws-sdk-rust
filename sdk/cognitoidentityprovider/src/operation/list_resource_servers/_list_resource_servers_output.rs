@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceServersOutput {
     /// <p>The resource servers.</p>
-    pub resource_servers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>>,
+    pub resource_servers: ::std::vec::Vec<crate::types::ResourceServerType>,
     /// <p>A pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResourceServersOutput {
     /// <p>The resource servers.</p>
-    pub fn resource_servers(&self) -> ::std::option::Option<&[crate::types::ResourceServerType]> {
-        self.resource_servers.as_deref()
+    pub fn resource_servers(&self) -> &[crate::types::ResourceServerType] {
+        use std::ops::Deref;
+        self.resource_servers.deref()
     }
     /// <p>A pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListResourceServersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListResourceServersOutput`](crate::operation::list_resource_servers::ListResourceServersOutput).
-    pub fn build(self) -> crate::operation::list_resource_servers::ListResourceServersOutput {
-        crate::operation::list_resource_servers::ListResourceServersOutput {
-            resource_servers: self.resource_servers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_servers`](crate::operation::list_resource_servers::builders::ListResourceServersOutputBuilder::resource_servers)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_resource_servers::ListResourceServersOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_resource_servers::ListResourceServersOutput {
+            resource_servers: self.resource_servers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_servers",
+                    "resource_servers was not specified but it is required when building ListResourceServersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

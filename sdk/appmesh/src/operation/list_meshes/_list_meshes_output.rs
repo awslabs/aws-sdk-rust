@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMeshesOutput {
     /// <p>The list of existing service meshes.</p>
-    pub meshes: ::std::option::Option<::std::vec::Vec<crate::types::MeshRef>>,
+    pub meshes: ::std::vec::Vec<crate::types::MeshRef>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMeshesOutput {
     /// <p>The list of existing service meshes.</p>
-    pub fn meshes(&self) -> ::std::option::Option<&[crate::types::MeshRef]> {
-        self.meshes.as_deref()
+    pub fn meshes(&self) -> &[crate::types::MeshRef] {
+        use std::ops::Deref;
+        self.meshes.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListMeshesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMeshesOutput`](crate::operation::list_meshes::ListMeshesOutput).
-    pub fn build(self) -> crate::operation::list_meshes::ListMeshesOutput {
-        crate::operation::list_meshes::ListMeshesOutput {
-            meshes: self.meshes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`meshes`](crate::operation::list_meshes::builders::ListMeshesOutputBuilder::meshes)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_meshes::ListMeshesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_meshes::ListMeshesOutput {
+            meshes: self.meshes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "meshes",
+                    "meshes was not specified but it is required when building ListMeshesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

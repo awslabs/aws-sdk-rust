@@ -27,6 +27,7 @@ pub struct GetConnectionStatusInputBuilder {
 }
 impl GetConnectionStatusInputBuilder {
     /// <p>The managed node ID.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self

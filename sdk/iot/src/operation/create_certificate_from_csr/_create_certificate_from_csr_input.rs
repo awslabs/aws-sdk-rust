@@ -35,6 +35,7 @@ pub struct CreateCertificateFromCsrInputBuilder {
 }
 impl CreateCertificateFromCsrInputBuilder {
     /// <p>The certificate signing request (CSR).</p>
+    /// This field is required.
     pub fn certificate_signing_request(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_signing_request = ::std::option::Option::Some(input.into());
         self

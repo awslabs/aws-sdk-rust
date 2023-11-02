@@ -14,8 +14,10 @@ impl BatchDeleteFeaturedResultsSetInput {
         self.index_id.as_deref()
     }
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn featured_results_set_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.featured_results_set_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_results_set_ids.is_none()`.
+    pub fn featured_results_set_ids(&self) -> &[::std::string::String] {
+        self.featured_results_set_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteFeaturedResultsSetInput {
@@ -34,6 +36,7 @@ pub struct BatchDeleteFeaturedResultsSetInputBuilder {
 }
 impl BatchDeleteFeaturedResultsSetInputBuilder {
     /// <p>The identifier of the index used for featuring results.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

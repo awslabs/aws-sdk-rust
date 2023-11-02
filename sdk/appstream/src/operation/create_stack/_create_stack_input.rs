@@ -46,8 +46,10 @@ impl CreateStackInput {
         self.display_name.as_deref()
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn storage_connectors(&self) -> ::std::option::Option<&[crate::types::StorageConnector]> {
-        self.storage_connectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_connectors.is_none()`.
+    pub fn storage_connectors(&self) -> &[crate::types::StorageConnector] {
+        self.storage_connectors.as_deref().unwrap_or_default()
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     pub fn redirect_url(&self) -> ::std::option::Option<&str> {
@@ -58,8 +60,10 @@ impl CreateStackInput {
         self.feedback_url.as_deref()
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-    pub fn user_settings(&self) -> ::std::option::Option<&[crate::types::UserSetting]> {
-        self.user_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_settings.is_none()`.
+    pub fn user_settings(&self) -> &[crate::types::UserSetting] {
+        self.user_settings.as_deref().unwrap_or_default()
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub fn application_settings(&self) -> ::std::option::Option<&crate::types::ApplicationSettings> {
@@ -74,12 +78,16 @@ impl CreateStackInput {
         self.tags.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn access_endpoints(&self) -> ::std::option::Option<&[crate::types::AccessEndpoint]> {
-        self.access_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
+    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn embed_host_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.embed_host_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.embed_host_domains.is_none()`.
+    pub fn embed_host_domains(&self) -> &[::std::string::String] {
+        self.embed_host_domains.as_deref().unwrap_or_default()
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn streaming_experience_settings(&self) -> ::std::option::Option<&crate::types::StreamingExperienceSettings> {
@@ -112,6 +120,7 @@ pub struct CreateStackInputBuilder {
 }
 impl CreateStackInputBuilder {
     /// <p>The name of the stack.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

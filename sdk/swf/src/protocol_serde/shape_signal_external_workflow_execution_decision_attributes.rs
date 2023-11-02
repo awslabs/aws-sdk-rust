@@ -3,20 +3,20 @@ pub fn ser_signal_external_workflow_execution_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SignalExternalWorkflowExecutionDecisionAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.workflow_id {
-        object.key("workflowId").string(var_1.as_str());
+    {
+        object.key("workflowId").string(input.workflow_id.as_str());
     }
-    if let Some(var_2) = &input.run_id {
-        object.key("runId").string(var_2.as_str());
+    if let Some(var_1) = &input.run_id {
+        object.key("runId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.signal_name {
-        object.key("signalName").string(var_3.as_str());
+    {
+        object.key("signalName").string(input.signal_name.as_str());
     }
-    if let Some(var_4) = &input.input {
-        object.key("input").string(var_4.as_str());
+    if let Some(var_2) = &input.input {
+        object.key("input").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.control {
-        object.key("control").string(var_5.as_str());
+    if let Some(var_3) = &input.control {
+        object.key("control").string(var_3.as_str());
     }
     Ok(())
 }

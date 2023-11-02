@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestInspection {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-    pub payload_type: ::std::option::Option<crate::types::PayloadType>,
+    pub payload_type: crate::types::PayloadType,
     /// <p>The name of the field in the request payload that contains your customer's username. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -25,8 +25,8 @@ pub struct RequestInspection {
 }
 impl RequestInspection {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-    pub fn payload_type(&self) -> ::std::option::Option<&crate::types::PayloadType> {
-        self.payload_type.as_ref()
+    pub fn payload_type(&self) -> &crate::types::PayloadType {
+        &self.payload_type
     }
     /// <p>The name of the field in the request payload that contains your customer's username. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -64,6 +64,7 @@ pub struct RequestInspectionBuilder {
 }
 impl RequestInspectionBuilder {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
+    /// This field is required.
     pub fn payload_type(mut self, input: crate::types::PayloadType) -> Self {
         self.payload_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +84,7 @@ impl RequestInspectionBuilder {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>. </p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn username_field(mut self, input: crate::types::UsernameField) -> Self {
         self.username_field = ::std::option::Option::Some(input);
         self
@@ -112,6 +114,7 @@ impl RequestInspectionBuilder {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn password_field(mut self, input: crate::types::PasswordField) -> Self {
         self.password_field = ::std::option::Option::Some(input);
         self
@@ -136,11 +139,18 @@ impl RequestInspectionBuilder {
         &self.password_field
     }
     /// Consumes the builder and constructs a [`RequestInspection`](crate::types::RequestInspection).
-    pub fn build(self) -> crate::types::RequestInspection {
-        crate::types::RequestInspection {
-            payload_type: self.payload_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`payload_type`](crate::types::builders::RequestInspectionBuilder::payload_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestInspection, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RequestInspection {
+            payload_type: self.payload_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "payload_type",
+                    "payload_type was not specified but it is required when building RequestInspection",
+                )
+            })?,
             username_field: self.username_field,
             password_field: self.password_field,
-        }
+        })
     }
 }

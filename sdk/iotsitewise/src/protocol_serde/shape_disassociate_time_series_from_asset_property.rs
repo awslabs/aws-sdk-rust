@@ -32,12 +32,9 @@ pub fn de_disassociate_time_series_from_asset_property_http_error(
                     let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
                     output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::conflicting_operation_exception_correct_errors(output).build().map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "InternalFailureException" => crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::InternalFailureException({
@@ -48,12 +45,9 @@ pub fn de_disassociate_time_series_from_asset_property_http_error(
                     let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_failure_exception_correct_errors(output).build().map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "InvalidRequestException" => crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::InvalidRequestException({
@@ -64,12 +58,9 @@ pub fn de_disassociate_time_series_from_asset_property_http_error(
                     let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_request_exception_correct_errors(output).build().map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::ResourceNotFoundException({
@@ -80,12 +71,9 @@ pub fn de_disassociate_time_series_from_asset_property_http_error(
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output).build().map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         "ThrottlingException" => crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::ThrottlingException({
@@ -96,12 +84,9 @@ pub fn de_disassociate_time_series_from_asset_property_http_error(
                     let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::unhandled)?
                 }
             ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
             tmp
         }),
         _ => crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError::generic(generic)

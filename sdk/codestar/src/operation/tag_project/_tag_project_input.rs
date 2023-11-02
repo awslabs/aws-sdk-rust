@@ -34,6 +34,7 @@ pub struct TagProjectInputBuilder {
 }
 impl TagProjectInputBuilder {
     /// <p>The ID of the project you want to add a tag to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

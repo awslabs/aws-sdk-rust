@@ -16,12 +16,16 @@ impl ModifyRuleInput {
         self.rule_arn.as_deref()
     }
     /// <p>The conditions.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::RuleCondition]> {
-        self.conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
+    pub fn conditions(&self) -> &[crate::types::RuleCondition] {
+        self.conditions.as_deref().unwrap_or_default()
     }
     /// <p>The actions.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::Action] {
+        self.actions.as_deref().unwrap_or_default()
     }
 }
 impl ModifyRuleInput {
@@ -41,6 +45,7 @@ pub struct ModifyRuleInputBuilder {
 }
 impl ModifyRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
         self

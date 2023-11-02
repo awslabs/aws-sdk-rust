@@ -28,6 +28,7 @@ pub struct RegisterOrganizationDelegatedAdminInputBuilder {
 }
 impl RegisterOrganizationDelegatedAdminInputBuilder {
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
+    /// This field is required.
     pub fn member_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_account_id = ::std::option::Option::Some(input.into());
         self

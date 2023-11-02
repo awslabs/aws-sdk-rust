@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzerInput {
     /// <p>The name of the analyzer retrieved.</p>
-    pub analyzer_name: ::std::option::Option<::std::string::String>,
+    pub analyzer_name: ::std::string::String,
 }
 impl GetAnalyzerInput {
     /// <p>The name of the analyzer retrieved.</p>
-    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
-        self.analyzer_name.as_deref()
+    pub fn analyzer_name(&self) -> &str {
+        use std::ops::Deref;
+        self.analyzer_name.deref()
     }
 }
 impl GetAnalyzerInput {
@@ -28,6 +29,7 @@ pub struct GetAnalyzerInputBuilder {
 }
 impl GetAnalyzerInputBuilder {
     /// <p>The name of the analyzer retrieved.</p>
+    /// This field is required.
     pub fn analyzer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl GetAnalyzerInputBuilder {
         &self.analyzer_name
     }
     /// Consumes the builder and constructs a [`GetAnalyzerInput`](crate::operation::get_analyzer::GetAnalyzerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzer_name`](crate::operation::get_analyzer::builders::GetAnalyzerInputBuilder::analyzer_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_analyzer::GetAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_analyzer::GetAnalyzerInput {
-            analyzer_name: self.analyzer_name,
+            analyzer_name: self.analyzer_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzer_name",
+                    "analyzer_name was not specified but it is required when building GetAnalyzerInput",
+                )
+            })?,
         })
     }
 }

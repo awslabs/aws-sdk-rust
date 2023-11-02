@@ -12,8 +12,10 @@ pub struct ListDeploymentsOutput {
 }
 impl ListDeploymentsOutput {
     /// <p>A list of deployment IDs.</p>
-    pub fn deployments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deployments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments.is_none()`.
+    pub fn deployments(&self) -> &[::std::string::String] {
+        self.deployments.as_deref().unwrap_or_default()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

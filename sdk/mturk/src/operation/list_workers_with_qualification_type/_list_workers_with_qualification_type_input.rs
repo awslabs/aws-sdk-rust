@@ -48,6 +48,7 @@ pub struct ListWorkersWithQualificationTypeInputBuilder {
 }
 impl ListWorkersWithQualificationTypeInputBuilder {
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self

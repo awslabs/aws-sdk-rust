@@ -35,6 +35,7 @@ pub struct LastUpdateStatusBuilder {
 }
 impl LastUpdateStatusBuilder {
     /// <p>A value that indicates whether the update was made successful.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LastUpdateStatusValue) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

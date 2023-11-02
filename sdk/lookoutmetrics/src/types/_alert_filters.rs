@@ -11,12 +11,16 @@ pub struct AlertFilters {
 }
 impl AlertFilters {
     /// <p>The list of measures that you want to get alerts for.</p>
-    pub fn metric_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_list.is_none()`.
+    pub fn metric_list(&self) -> &[::std::string::String] {
+        self.metric_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of DimensionFilter objects that are used for dimension-based filtering.</p>
-    pub fn dimension_filter_list(&self) -> ::std::option::Option<&[crate::types::DimensionFilter]> {
-        self.dimension_filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_filter_list.is_none()`.
+    pub fn dimension_filter_list(&self) -> &[crate::types::DimensionFilter] {
+        self.dimension_filter_list.as_deref().unwrap_or_default()
     }
 }
 impl AlertFilters {

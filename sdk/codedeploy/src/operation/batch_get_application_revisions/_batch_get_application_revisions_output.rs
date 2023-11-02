@@ -22,8 +22,10 @@ impl BatchGetApplicationRevisionsOutput {
         self.error_message.as_deref()
     }
     /// <p>Additional information about the revisions, including the type and location.</p>
-    pub fn revisions(&self) -> ::std::option::Option<&[crate::types::RevisionInfo]> {
-        self.revisions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revisions.is_none()`.
+    pub fn revisions(&self) -> &[crate::types::RevisionInfo] {
+        self.revisions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetApplicationRevisionsOutput {

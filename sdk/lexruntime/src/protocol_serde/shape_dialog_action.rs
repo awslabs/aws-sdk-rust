@@ -69,7 +69,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dialog_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -81,33 +83,33 @@ pub fn ser_dialog_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DialogAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.intent_name {
-        object.key("intentName").string(var_2.as_str());
+    if let Some(var_1) = &input.intent_name {
+        object.key("intentName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.slots {
+    if let Some(var_2) = &input.slots {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("slots").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("slots").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_4.finish();
+        object_3.finish();
     }
-    if let Some(var_7) = &input.slot_to_elicit {
-        object.key("slotToElicit").string(var_7.as_str());
+    if let Some(var_6) = &input.slot_to_elicit {
+        object.key("slotToElicit").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.fulfillment_state {
-        object.key("fulfillmentState").string(var_8.as_str());
+    if let Some(var_7) = &input.fulfillment_state {
+        object.key("fulfillmentState").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.message {
-        object.key("message").string(var_9.as_str());
+    if let Some(var_8) = &input.message {
+        object.key("message").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.message_format {
-        object.key("messageFormat").string(var_10.as_str());
+    if let Some(var_9) = &input.message_format {
+        object.key("messageFormat").string(var_9.as_str());
     }
     Ok(())
 }

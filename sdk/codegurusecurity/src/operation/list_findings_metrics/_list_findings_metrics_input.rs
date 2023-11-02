@@ -76,6 +76,7 @@ impl ListFindingsMetricsInputBuilder {
         &self.max_results
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -90,6 +91,7 @@ impl ListFindingsMetricsInputBuilder {
         &self.start_date
     }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self

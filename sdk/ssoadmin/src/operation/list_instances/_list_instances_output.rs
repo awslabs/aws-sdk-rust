@@ -11,8 +11,10 @@ pub struct ListInstancesOutput {
 }
 impl ListInstancesOutput {
     /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::InstanceMetadata]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::InstanceMetadata] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

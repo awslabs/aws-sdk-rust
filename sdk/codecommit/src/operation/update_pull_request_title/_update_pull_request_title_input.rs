@@ -34,6 +34,7 @@ pub struct UpdatePullRequestTitleInputBuilder {
 }
 impl UpdatePullRequestTitleInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdatePullRequestTitleInputBuilder {
         &self.pull_request_id
     }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self

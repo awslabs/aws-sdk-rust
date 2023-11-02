@@ -41,6 +41,7 @@ pub struct UpdateFieldLevelEncryptionConfigInputBuilder {
 }
 impl UpdateFieldLevelEncryptionConfigInputBuilder {
     /// <p>Request to update a field-level encryption configuration.</p>
+    /// This field is required.
     pub fn field_level_encryption_config(mut self, input: crate::types::FieldLevelEncryptionConfig) -> Self {
         self.field_level_encryption_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
         &self.field_level_encryption_config
     }
     /// <p>The ID of the configuration you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

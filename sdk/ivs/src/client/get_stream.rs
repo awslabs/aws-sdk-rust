@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStream`](crate::operation::get_stream::builders::GetStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::operation::get_stream::builders::GetStreamFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::get_stream::builders::GetStreamFluentBuilder::set_channel_arn): <p>Channel ARN for stream to be accessed.</p>
+    ///   - [`channel_arn(impl Into<String>)`](crate::operation::get_stream::builders::GetStreamFluentBuilder::channel_arn) / [`set_channel_arn(impl Into<String>)`](crate::operation::get_stream::builders::GetStreamFluentBuilder::set_channel_arn):<br>required: **true**<br><p>Channel ARN for stream to be accessed.</p><br>
     /// - On success, responds with [`GetStreamOutput`](crate::operation::get_stream::GetStreamOutput) with field(s):
     ///   - [`stream(Option<Stream>)`](crate::operation::get_stream::GetStreamOutput::stream): <p></p>
     /// - On failure, responds with [`SdkError<GetStreamError>`](crate::operation::get_stream::GetStreamError)

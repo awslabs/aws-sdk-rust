@@ -20,20 +20,28 @@ pub struct GetAccountAuthorizationDetailsOutput {
 }
 impl GetAccountAuthorizationDetailsOutput {
     /// <p>A list containing information about IAM users.</p>
-    pub fn user_detail_list(&self) -> ::std::option::Option<&[crate::types::UserDetail]> {
-        self.user_detail_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_detail_list.is_none()`.
+    pub fn user_detail_list(&self) -> &[crate::types::UserDetail] {
+        self.user_detail_list.as_deref().unwrap_or_default()
     }
     /// <p>A list containing information about IAM groups.</p>
-    pub fn group_detail_list(&self) -> ::std::option::Option<&[crate::types::GroupDetail]> {
-        self.group_detail_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_detail_list.is_none()`.
+    pub fn group_detail_list(&self) -> &[crate::types::GroupDetail] {
+        self.group_detail_list.as_deref().unwrap_or_default()
     }
     /// <p>A list containing information about IAM roles.</p>
-    pub fn role_detail_list(&self) -> ::std::option::Option<&[crate::types::RoleDetail]> {
-        self.role_detail_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_detail_list.is_none()`.
+    pub fn role_detail_list(&self) -> &[crate::types::RoleDetail] {
+        self.role_detail_list.as_deref().unwrap_or_default()
     }
     /// <p>A list containing information about managed policies.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::ManagedPolicyDetail]> {
-        self.policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
+    pub fn policies(&self) -> &[crate::types::ManagedPolicyDetail] {
+        self.policies.as_deref().unwrap_or_default()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {

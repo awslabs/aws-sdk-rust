@@ -164,24 +164,32 @@ impl CreateEventSourceMappingInput {
         self.tumbling_window_in_seconds
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn topics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.topics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics.is_none()`.
+    pub fn topics(&self) -> &[::std::string::String] {
+        self.topics.as_deref().unwrap_or_default()
     }
     /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
-    pub fn queues(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
+    pub fn queues(&self) -> &[::std::string::String] {
+        self.queues.as_deref().unwrap_or_default()
     }
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
-    pub fn source_access_configurations(&self) -> ::std::option::Option<&[crate::types::SourceAccessConfiguration]> {
-        self.source_access_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_access_configurations.is_none()`.
+    pub fn source_access_configurations(&self) -> &[crate::types::SourceAccessConfiguration] {
+        self.source_access_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
     pub fn self_managed_event_source(&self) -> ::std::option::Option<&crate::types::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn function_response_types(&self) -> ::std::option::Option<&[crate::types::FunctionResponseType]> {
-        self.function_response_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_response_types.is_none()`.
+    pub fn function_response_types(&self) -> &[crate::types::FunctionResponseType] {
+        self.function_response_types.as_deref().unwrap_or_default()
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     pub fn amazon_managed_kafka_event_source_config(&self) -> ::std::option::Option<&crate::types::AmazonManagedKafkaEventSourceConfig> {
@@ -283,6 +291,7 @@ impl CreateEventSourceMappingInputBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self

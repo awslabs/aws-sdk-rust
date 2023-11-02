@@ -22,20 +22,26 @@ impl GetOpenIdConnectProviderOutput {
         self.url.as_deref()
     }
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn client_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_id_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_id_list.is_none()`.
+    pub fn client_id_list(&self) -> &[::std::string::String] {
+        self.client_id_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn thumbprint_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.thumbprint_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thumbprint_list.is_none()`.
+    pub fn thumbprint_list(&self) -> &[::std::string::String] {
+        self.thumbprint_list.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetOpenIdConnectProviderOutput {

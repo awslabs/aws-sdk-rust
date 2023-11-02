@@ -23,12 +23,16 @@ impl QueryStagePlanNode {
         self.identifier.as_deref()
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
-    pub fn children(&self) -> ::std::option::Option<&[crate::types::QueryStagePlanNode]> {
-        self.children.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
+    pub fn children(&self) -> &[crate::types::QueryStagePlanNode] {
+        self.children.as_deref().unwrap_or_default()
     }
     /// <p>Source plan node IDs.</p>
-    pub fn remote_sources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remote_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remote_sources.is_none()`.
+    pub fn remote_sources(&self) -> &[::std::string::String] {
+        self.remote_sources.as_deref().unwrap_or_default()
     }
 }
 impl QueryStagePlanNode {

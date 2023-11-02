@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateContactOutput {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateContactOutput {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateContactOutput {
@@ -34,6 +35,7 @@ pub struct CreateContactOutputBuilder {
 }
 impl CreateContactOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateContactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateContactOutput`](crate::operation::create_contact::CreateContactOutput).
-    pub fn build(self) -> crate::operation::create_contact::CreateContactOutput {
-        crate::operation::create_contact::CreateContactOutput {
-            contact_arn: self.contact_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_arn`](crate::operation::create_contact::builders::CreateContactOutputBuilder::contact_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_contact::CreateContactOutput {
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building CreateContactOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

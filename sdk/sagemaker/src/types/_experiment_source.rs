@@ -35,6 +35,7 @@ pub struct ExperimentSourceBuilder {
 }
 impl ExperimentSourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self

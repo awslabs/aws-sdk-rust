@@ -22,15 +22,13 @@
 //! - `exec` which contains a chain representation of providers to implement passing bootstrapped credentials
 //! through a series of providers.
 
-use crate::profile::credentials::exec::named::NamedProviderFactory;
-use crate::profile::credentials::exec::ProviderChain;
 use crate::profile::parser::ProfileFileLoadError;
 use crate::profile::profile_file::ProfileFiles;
 use crate::profile::Profile;
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
-use aws_sdk_sts::config::Builder as StsConfigBuilder;
 use aws_smithy_types::error::display::DisplayErrorContext;
+use aws_types::SdkConfig;
 use std::borrow::Cow;
 use std::collections::HashMap;
 use std::error::Error;
@@ -141,8 +139,8 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 #[doc = include_str!("location_of_profile_files.md")]
 #[derive(Debug)]
 pub struct ProfileFileCredentialsProvider {
-    factory: NamedProviderFactory,
-    sts_config: StsConfigBuilder,
+    factory: exec::named::NamedProviderFactory,
+    sdk_config: SdkConfig,
     provider_config: ProviderConfig,
 }
 
@@ -182,7 +180,7 @@ impl ProfileFileCredentialsProvider {
         };
         for provider in inner_provider.chain().iter() {
             let next_creds = provider
-                .credentials(creds, &self.sts_config)
+                .credentials(creds, &self.sdk_config)
                 .instrument(tracing::debug_span!("load_assume_role", provider = ?provider))
                 .await;
             match next_creds {
@@ -444,7 +442,7 @@ impl Builder {
 
         ProfileFileCredentialsProvider {
             factory,
-            sts_config: conf.sts_client_config(),
+            sdk_config: conf.client_config(),
             provider_config: conf,
         }
     }
@@ -452,8 +450,8 @@ impl Builder {
 
 async fn build_provider_chain(
     provider_config: &ProviderConfig,
-    factory: &NamedProviderFactory,
-) -> Result<ProviderChain, ProfileFileError> {
+    factory: &exec::named::NamedProviderFactory,
+) -> Result<exec::ProviderChain, ProfileFileError> {
     let profile_set = provider_config
         .try_profile()
         .await
@@ -485,6 +483,7 @@ mod test {
     }
 
     make_test!(e2e_assume_role);
+    make_test!(e2e_fips_and_dual_stack_sts);
     make_test!(empty_config);
     make_test!(retry_on_error);
     make_test!(invalid_config);

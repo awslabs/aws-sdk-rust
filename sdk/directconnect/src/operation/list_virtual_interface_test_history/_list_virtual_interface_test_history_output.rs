@@ -11,8 +11,10 @@ pub struct ListVirtualInterfaceTestHistoryOutput {
 }
 impl ListVirtualInterfaceTestHistoryOutput {
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn virtual_interface_test_history(&self) -> ::std::option::Option<&[crate::types::VirtualInterfaceTestHistory]> {
-        self.virtual_interface_test_history.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.virtual_interface_test_history.is_none()`.
+    pub fn virtual_interface_test_history(&self) -> &[crate::types::VirtualInterfaceTestHistory] {
+        self.virtual_interface_test_history.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

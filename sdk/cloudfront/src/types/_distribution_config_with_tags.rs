@@ -35,6 +35,7 @@ pub struct DistributionConfigWithTagsBuilder {
 }
 impl DistributionConfigWithTagsBuilder {
     /// <p>A distribution configuration.</p>
+    /// This field is required.
     pub fn distribution_config(mut self, input: crate::types::DistributionConfig) -> Self {
         self.distribution_config = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl DistributionConfigWithTagsBuilder {
         &self.distribution_config
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    /// This field is required.
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
         self.tags = ::std::option::Option::Some(input);
         self

@@ -9,8 +9,10 @@ pub struct CreateLoadBalancerOutput {
 }
 impl CreateLoadBalancerOutput {
     /// <p>Information about the load balancer.</p>
-    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::LoadBalancer]> {
-        self.load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
+    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
+        self.load_balancers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateLoadBalancerOutput {

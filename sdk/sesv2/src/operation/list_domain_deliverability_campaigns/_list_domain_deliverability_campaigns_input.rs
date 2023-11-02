@@ -56,6 +56,7 @@ pub struct ListDomainDeliverabilityCampaignsInputBuilder {
 }
 impl ListDomainDeliverabilityCampaignsInputBuilder {
     /// <p>The first day that you want to obtain deliverability data for.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         &self.start_date
     }
     /// <p>The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl ListDomainDeliverabilityCampaignsInputBuilder {
         &self.end_date
     }
     /// <p>The domain to obtain deliverability data for.</p>
+    /// This field is required.
     pub fn subscribed_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscribed_domain = ::std::option::Option::Some(input.into());
         self

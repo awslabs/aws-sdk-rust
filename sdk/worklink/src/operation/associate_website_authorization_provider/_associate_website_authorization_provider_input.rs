@@ -41,6 +41,7 @@ pub struct AssociateWebsiteAuthorizationProviderInputBuilder {
 }
 impl AssociateWebsiteAuthorizationProviderInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
         &self.fleet_arn
     }
     /// <p>The authorization provider type.</p>
+    /// This field is required.
     pub fn authorization_provider_type(mut self, input: crate::types::AuthorizationProviderType) -> Self {
         self.authorization_provider_type = ::std::option::Option::Some(input);
         self

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseLfTagPolicyAndPermissions {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
+    pub expression: ::std::vec::Vec<crate::types::LfTag>,
     /// <p>The permissions granted to subscribers on database resources.</p>
-    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>,
+    pub permissions: ::std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>,
 }
 impl DatabaseLfTagPolicyAndPermissions {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &[crate::types::LfTag] {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>The permissions granted to subscribers on database resources.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::DatabaseLfTagPolicyPermission]> {
-        self.permissions.as_deref()
+    pub fn permissions(&self) -> &[crate::types::DatabaseLfTagPolicyPermission] {
+        use std::ops::Deref;
+        self.permissions.deref()
     }
 }
 impl DatabaseLfTagPolicyAndPermissions {
@@ -75,10 +77,23 @@ impl DatabaseLfTagPolicyAndPermissionsBuilder {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`DatabaseLfTagPolicyAndPermissions`](crate::types::DatabaseLfTagPolicyAndPermissions).
-    pub fn build(self) -> crate::types::DatabaseLfTagPolicyAndPermissions {
-        crate::types::DatabaseLfTagPolicyAndPermissions {
-            expression: self.expression,
-            permissions: self.permissions,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::DatabaseLfTagPolicyAndPermissionsBuilder::expression)
+    /// - [`permissions`](crate::types::builders::DatabaseLfTagPolicyAndPermissionsBuilder::permissions)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseLfTagPolicyAndPermissions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatabaseLfTagPolicyAndPermissions {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building DatabaseLfTagPolicyAndPermissions",
+                )
+            })?,
+            permissions: self.permissions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "permissions",
+                    "permissions was not specified but it is required when building DatabaseLfTagPolicyAndPermissions",
+                )
+            })?,
+        })
     }
 }

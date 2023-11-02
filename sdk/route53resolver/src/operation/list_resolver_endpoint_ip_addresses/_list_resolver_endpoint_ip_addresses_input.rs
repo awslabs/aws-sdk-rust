@@ -43,6 +43,7 @@ pub struct ListResolverEndpointIpAddressesInputBuilder {
 }
 impl ListResolverEndpointIpAddressesInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
+    /// This field is required.
     pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self

@@ -9,8 +9,10 @@ pub struct DescribeTerminationPolicyTypesOutput {
 }
 impl DescribeTerminationPolicyTypesOutput {
     /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
-    pub fn termination_policy_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.termination_policy_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.termination_policy_types.is_none()`.
+    pub fn termination_policy_types(&self) -> &[::std::string::String] {
+        self.termination_policy_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTerminationPolicyTypesOutput {

@@ -14,8 +14,10 @@ impl BatchPutMetricsInput {
         self.trial_component_name.as_deref()
     }
     /// <p>A list of raw metric values to put.</p>
-    pub fn metric_data(&self) -> ::std::option::Option<&[crate::types::RawMetricData]> {
-        self.metric_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data.is_none()`.
+    pub fn metric_data(&self) -> &[crate::types::RawMetricData] {
+        self.metric_data.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutMetricsInput {
@@ -34,6 +36,7 @@ pub struct BatchPutMetricsInputBuilder {
 }
 impl BatchPutMetricsInputBuilder {
     /// <p>The name of the Trial Component to associate with the metrics.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self

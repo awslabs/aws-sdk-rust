@@ -48,6 +48,7 @@ impl DeleteNatGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the NAT gateway.</p>
+    /// This field is required.
     pub fn nat_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self

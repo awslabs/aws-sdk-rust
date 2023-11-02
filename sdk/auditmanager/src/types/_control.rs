@@ -73,8 +73,10 @@ impl Control {
         self.control_sources.as_deref()
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn control_mapping_sources(&self) -> ::std::option::Option<&[crate::types::ControlMappingSource]> {
-        self.control_mapping_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_mapping_sources.is_none()`.
+    pub fn control_mapping_sources(&self) -> &[crate::types::ControlMappingSource] {
+        self.control_mapping_sources.as_deref().unwrap_or_default()
     }
     /// <p> The time when the control was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

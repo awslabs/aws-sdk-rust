@@ -55,6 +55,7 @@ pub struct GetServiceGraphInputBuilder {
 }
 impl GetServiceGraphInputBuilder {
     /// <p>The start of the time frame for which to generate a graph.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl GetServiceGraphInputBuilder {
         &self.start_time
     }
     /// <p>The end of the timeframe for which to generate a graph.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

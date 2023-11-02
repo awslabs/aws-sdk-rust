@@ -48,6 +48,7 @@ pub struct UpdateResourceInputBuilder {
 }
 impl UpdateResourceInputBuilder {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateResourceInputBuilder {
         &self.role_arn
     }
     /// <p>The resource ARN.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

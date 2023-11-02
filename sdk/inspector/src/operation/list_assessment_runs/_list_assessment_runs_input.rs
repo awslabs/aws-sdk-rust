@@ -15,8 +15,10 @@ pub struct ListAssessmentRunsInput {
 }
 impl ListAssessmentRunsInput {
     /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
-    pub fn assessment_template_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assessment_template_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_template_arns.is_none()`.
+    pub fn assessment_template_arns(&self) -> &[::std::string::String] {
+        self.assessment_template_arns.as_deref().unwrap_or_default()
     }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>

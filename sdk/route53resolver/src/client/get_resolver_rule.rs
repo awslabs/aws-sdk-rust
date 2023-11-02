@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResolverRule`](crate::operation::get_resolver_rule::builders::GetResolverRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resolver_rule_id(impl Into<String>)`](crate::operation::get_resolver_rule::builders::GetResolverRuleFluentBuilder::resolver_rule_id) / [`set_resolver_rule_id(Option<String>)`](crate::operation::get_resolver_rule::builders::GetResolverRuleFluentBuilder::set_resolver_rule_id): <p>The ID of the Resolver rule that you want to get information about.</p>
+    ///   - [`resolver_rule_id(impl Into<String>)`](crate::operation::get_resolver_rule::builders::GetResolverRuleFluentBuilder::resolver_rule_id) / [`set_resolver_rule_id(Option<String>)`](crate::operation::get_resolver_rule::builders::GetResolverRuleFluentBuilder::set_resolver_rule_id):<br>required: **true**<br><p>The ID of the Resolver rule that you want to get information about.</p><br>
     /// - On success, responds with [`GetResolverRuleOutput`](crate::operation::get_resolver_rule::GetResolverRuleOutput) with field(s):
     ///   - [`resolver_rule(Option<ResolverRule>)`](crate::operation::get_resolver_rule::GetResolverRuleOutput::resolver_rule): <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverRuleError>`](crate::operation::get_resolver_rule::GetResolverRuleError)

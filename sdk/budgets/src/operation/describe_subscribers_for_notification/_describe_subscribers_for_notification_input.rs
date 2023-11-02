@@ -56,6 +56,7 @@ pub struct DescribeSubscribersForNotificationInputBuilder {
 }
 impl DescribeSubscribersForNotificationInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl DescribeSubscribersForNotificationInputBuilder {
         &self.budget_name
     }
     /// <p>The notification whose subscribers you want to list.</p>
+    /// This field is required.
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self

@@ -36,8 +36,10 @@ impl UpdateInstanceProfileInput {
     }
     /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn exclude_app_packages_from_cleanup(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_app_packages_from_cleanup.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_app_packages_from_cleanup.is_none()`.
+    pub fn exclude_app_packages_from_cleanup(&self) -> &[::std::string::String] {
+        self.exclude_app_packages_from_cleanup.as_deref().unwrap_or_default()
     }
     /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
     pub fn reboot_after_use(&self) -> ::std::option::Option<bool> {
@@ -64,6 +66,7 @@ pub struct UpdateInstanceProfileInputBuilder {
 }
 impl UpdateInstanceProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

@@ -27,7 +27,7 @@ pub struct EntityDetectorConfiguration {
     /// <li> <p>DATE</p> </li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entity_types: ::std::vec::Vec<::std::string::String>,
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
     pub allowed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,
 }
@@ -55,12 +55,15 @@ impl EntityDetectorConfiguration {
     /// <li> <p>DATE</p> </li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_types.as_deref()
+    pub fn entity_types(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.entity_types.deref()
     }
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    pub fn allowed_statistics(&self) -> ::std::option::Option<&[crate::types::AllowedStatistics]> {
-        self.allowed_statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_statistics.is_none()`.
+    pub fn allowed_statistics(&self) -> &[crate::types::AllowedStatistics] {
+        self.allowed_statistics.as_deref().unwrap_or_default()
     }
 }
 impl EntityDetectorConfiguration {
@@ -185,10 +188,17 @@ impl EntityDetectorConfigurationBuilder {
         &self.allowed_statistics
     }
     /// Consumes the builder and constructs a [`EntityDetectorConfiguration`](crate::types::EntityDetectorConfiguration).
-    pub fn build(self) -> crate::types::EntityDetectorConfiguration {
-        crate::types::EntityDetectorConfiguration {
-            entity_types: self.entity_types,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_types`](crate::types::builders::EntityDetectorConfigurationBuilder::entity_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityDetectorConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntityDetectorConfiguration {
+            entity_types: self.entity_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_types",
+                    "entity_types was not specified but it is required when building EntityDetectorConfiguration",
+                )
+            })?,
             allowed_statistics: self.allowed_statistics,
-        }
+        })
     }
 }

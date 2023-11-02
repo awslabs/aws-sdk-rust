@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyGroupTimeSeries {
     /// <p>The ID of the anomaly group.</p>
-    pub anomaly_group_id: ::std::option::Option<::std::string::String>,
+    pub anomaly_group_id: ::std::string::String,
     /// <p>The ID of the metric.</p>
     pub time_series_id: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyGroupTimeSeries {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> ::std::option::Option<&str> {
-        self.anomaly_group_id.as_deref()
+    pub fn anomaly_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.anomaly_group_id.deref()
     }
     /// <p>The ID of the metric.</p>
     pub fn time_series_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AnomalyGroupTimeSeriesBuilder {
 }
 impl AnomalyGroupTimeSeriesBuilder {
     /// <p>The ID of the anomaly group.</p>
+    /// This field is required.
     pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AnomalyGroupTimeSeriesBuilder {
         &self.time_series_id
     }
     /// Consumes the builder and constructs a [`AnomalyGroupTimeSeries`](crate::types::AnomalyGroupTimeSeries).
-    pub fn build(self) -> crate::types::AnomalyGroupTimeSeries {
-        crate::types::AnomalyGroupTimeSeries {
-            anomaly_group_id: self.anomaly_group_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`anomaly_group_id`](crate::types::builders::AnomalyGroupTimeSeriesBuilder::anomaly_group_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyGroupTimeSeries, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnomalyGroupTimeSeries {
+            anomaly_group_id: self.anomaly_group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "anomaly_group_id",
+                    "anomaly_group_id was not specified but it is required when building AnomalyGroupTimeSeries",
+                )
+            })?,
             time_series_id: self.time_series_id,
-        }
+        })
     }
 }

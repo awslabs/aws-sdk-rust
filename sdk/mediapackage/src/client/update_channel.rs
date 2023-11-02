@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateChannel`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`description(impl Into<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::set_description): A short text description of the Channel.
-    ///   - [`id(impl Into<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::set_id): The ID of the Channel to update.
+    ///   - [`description(impl Into<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::set_description):<br>required: **false**<br>A short text description of the Channel.<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_channel::builders::UpdateChannelFluentBuilder::set_id):<br>required: **true**<br>The ID of the Channel to update.<br>
     /// - On success, responds with [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`created_at(Option<String>)`](crate::operation::update_channel::UpdateChannelOutput::created_at): The date and time the Channel was created.

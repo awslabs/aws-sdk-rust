@@ -41,20 +41,26 @@ impl Compliance {
         self.status.as_ref()
     }
     /// <p>For a control, the industry or regulatory framework requirements that are related to the control. The check for that control is aligned with these requirements.</p>
-    pub fn related_requirements(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.related_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_requirements.is_none()`.
+    pub fn related_requirements(&self) -> &[::std::string::String] {
+        self.related_requirements.as_deref().unwrap_or_default()
     }
     /// <p>For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn status_reasons(&self) -> ::std::option::Option<&[crate::types::StatusReason]> {
-        self.status_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_reasons.is_none()`.
+    pub fn status_reasons(&self) -> &[crate::types::StatusReason] {
+        self.status_reasons.as_deref().unwrap_or_default()
     }
     /// <p> The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web Service and a number, such as APIGateway.5. </p>
     pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
     /// <p>The enabled security standards in which a security control is currently enabled. </p>
-    pub fn associated_standards(&self) -> ::std::option::Option<&[crate::types::AssociatedStandard]> {
-        self.associated_standards.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_standards.is_none()`.
+    pub fn associated_standards(&self) -> &[crate::types::AssociatedStandard] {
+        self.associated_standards.as_deref().unwrap_or_default()
     }
 }
 impl Compliance {

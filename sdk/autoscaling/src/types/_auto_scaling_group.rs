@@ -116,16 +116,22 @@ impl AutoScalingGroup {
         self.default_cooldown
     }
     /// <p>One or more Availability Zones for the group.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>One or more load balancers associated with the group.</p>
-    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.load_balancer_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_names.is_none()`.
+    pub fn load_balancer_names(&self) -> &[::std::string::String] {
+        self.load_balancer_names.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
-    pub fn target_group_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_group_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_ar_ns.is_none()`.
+    pub fn target_group_ar_ns(&self) -> &[::std::string::String] {
+        self.target_group_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
     pub fn health_check_type(&self) -> ::std::option::Option<&str> {
@@ -136,16 +142,20 @@ impl AutoScalingGroup {
         self.health_check_grace_period
     }
     /// <p>The EC2 instances associated with the group.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The date and time the group was created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The suspended processes associated with the group.</p>
-    pub fn suspended_processes(&self) -> ::std::option::Option<&[crate::types::SuspendedProcess]> {
-        self.suspended_processes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suspended_processes.is_none()`.
+    pub fn suspended_processes(&self) -> &[crate::types::SuspendedProcess] {
+        self.suspended_processes.as_deref().unwrap_or_default()
     }
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
     pub fn placement_group(&self) -> ::std::option::Option<&str> {
@@ -156,20 +166,26 @@ impl AutoScalingGroup {
         self.vpc_zone_identifier.as_deref()
     }
     /// <p>The metrics enabled for the group.</p>
-    pub fn enabled_metrics(&self) -> ::std::option::Option<&[crate::types::EnabledMetric]> {
-        self.enabled_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_metrics.is_none()`.
+    pub fn enabled_metrics(&self) -> &[crate::types::EnabledMetric] {
+        self.enabled_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The current state of the group when the <code>DeleteAutoScalingGroup</code> operation is in progress.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The tags for the group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagDescription]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagDescription] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The termination policies for the group.</p>
-    pub fn termination_policies(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.termination_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.termination_policies.is_none()`.
+    pub fn termination_policies(&self) -> &[::std::string::String] {
+        self.termination_policies.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn new_instances_protected_from_scale_in(&self) -> ::std::option::Option<bool> {
@@ -209,8 +225,10 @@ impl AutoScalingGroup {
         self.default_instance_warmup
     }
     /// <p>The traffic sources associated with this Auto Scaling group.</p>
-    pub fn traffic_sources(&self) -> ::std::option::Option<&[crate::types::TrafficSourceIdentifier]> {
-        self.traffic_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traffic_sources.is_none()`.
+    pub fn traffic_sources(&self) -> &[crate::types::TrafficSourceIdentifier] {
+        self.traffic_sources.as_deref().unwrap_or_default()
     }
 }
 impl AutoScalingGroup {
@@ -261,6 +279,7 @@ pub struct AutoScalingGroupBuilder {
 }
 impl AutoScalingGroupBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -331,6 +350,7 @@ impl AutoScalingGroupBuilder {
         &self.mixed_instances_policy
     }
     /// <p>The minimum size of the group.</p>
+    /// This field is required.
     pub fn min_size(mut self, input: i32) -> Self {
         self.min_size = ::std::option::Option::Some(input);
         self
@@ -345,6 +365,7 @@ impl AutoScalingGroupBuilder {
         &self.min_size
     }
     /// <p>The maximum size of the group.</p>
+    /// This field is required.
     pub fn max_size(mut self, input: i32) -> Self {
         self.max_size = ::std::option::Option::Some(input);
         self
@@ -359,6 +380,7 @@ impl AutoScalingGroupBuilder {
         &self.max_size
     }
     /// <p>The desired size of the group.</p>
+    /// This field is required.
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
         self
@@ -387,6 +409,7 @@ impl AutoScalingGroupBuilder {
         &self.predicted_capacity
     }
     /// <p>The duration of the default cooldown period, in seconds.</p>
+    /// This field is required.
     pub fn default_cooldown(mut self, input: i32) -> Self {
         self.default_cooldown = ::std::option::Option::Some(input);
         self
@@ -461,6 +484,7 @@ impl AutoScalingGroupBuilder {
         &self.target_group_ar_ns
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
+    /// This field is required.
     pub fn health_check_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_type = ::std::option::Option::Some(input.into());
         self
@@ -509,6 +533,7 @@ impl AutoScalingGroupBuilder {
         &self.instances
     }
     /// <p>The date and time the group was created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self

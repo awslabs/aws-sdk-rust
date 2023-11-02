@@ -58,8 +58,10 @@ impl GetItemInput {
         self.key.as_ref()
     }
     /// <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn attributes_to_get(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attributes_to_get.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
+    pub fn attributes_to_get(&self) -> &[::std::string::String] {
+        self.attributes_to_get.as_deref().unwrap_or_default()
     }
     /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
     pub fn consistent_read(&self) -> ::std::option::Option<bool> {
@@ -126,6 +128,7 @@ pub struct GetItemInputBuilder {
 }
 impl GetItemInputBuilder {
     /// <p>The name of the table containing the requested item.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct GetSolNetworkPackageInputBuilder {
 }
 impl GetSolNetworkPackageInputBuilder {
     /// <p>ID of the network service descriptor in the network package.</p>
+    /// This field is required.
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
         self

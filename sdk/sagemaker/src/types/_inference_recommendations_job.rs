@@ -112,6 +112,7 @@ pub struct InferenceRecommendationsJobBuilder {
 }
 impl InferenceRecommendationsJobBuilder {
     /// <p>The name of the job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl InferenceRecommendationsJobBuilder {
         &self.job_name
     }
     /// <p>The job description.</p>
+    /// This field is required.
     pub fn job_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_description = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +142,7 @@ impl InferenceRecommendationsJobBuilder {
         &self.job_description
     }
     /// <p>The recommendation job type.</p>
+    /// This field is required.
     pub fn job_type(mut self, input: crate::types::RecommendationJobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
@@ -154,6 +157,7 @@ impl InferenceRecommendationsJobBuilder {
         &self.job_type
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +172,7 @@ impl InferenceRecommendationsJobBuilder {
         &self.job_arn
     }
     /// <p>The status of the job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RecommendationJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -182,6 +187,7 @@ impl InferenceRecommendationsJobBuilder {
         &self.status
     }
     /// <p>A timestamp that shows when the job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -210,6 +216,7 @@ impl InferenceRecommendationsJobBuilder {
         &self.completion_time
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -224,6 +231,7 @@ impl InferenceRecommendationsJobBuilder {
         &self.role_arn
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

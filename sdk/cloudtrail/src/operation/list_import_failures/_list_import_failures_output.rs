@@ -11,8 +11,10 @@ pub struct ListImportFailuresOutput {
 }
 impl ListImportFailuresOutput {
     /// <p> Contains information about the import failures. </p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::ImportFailureListItem]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::ImportFailureListItem] {
+        self.failures.as_deref().unwrap_or_default()
     }
     /// <p> A token you can use to get the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

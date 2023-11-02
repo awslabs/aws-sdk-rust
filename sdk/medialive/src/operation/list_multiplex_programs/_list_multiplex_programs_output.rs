@@ -12,8 +12,10 @@ pub struct ListMultiplexProgramsOutput {
 }
 impl ListMultiplexProgramsOutput {
     /// List of multiplex programs.
-    pub fn multiplex_programs(&self) -> ::std::option::Option<&[crate::types::MultiplexProgramSummary]> {
-        self.multiplex_programs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multiplex_programs.is_none()`.
+    pub fn multiplex_programs(&self) -> &[crate::types::MultiplexProgramSummary] {
+        self.multiplex_programs.as_deref().unwrap_or_default()
     }
     /// Token for the next ListMultiplexProgram request.
     pub fn next_token(&self) -> ::std::option::Option<&str> {

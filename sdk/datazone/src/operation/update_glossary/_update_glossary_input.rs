@@ -74,6 +74,7 @@ pub struct UpdateGlossaryInputBuilder {
 }
 impl UpdateGlossaryInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary is to be updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +89,7 @@ impl UpdateGlossaryInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the business glossary to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

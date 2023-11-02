@@ -11,8 +11,10 @@ pub struct DescribeFleetAdvisorSchemasOutput {
 }
 impl DescribeFleetAdvisorSchemasOutput {
     /// <p>A collection of <code>SchemaResponse</code> objects.</p>
-    pub fn fleet_advisor_schemas(&self) -> ::std::option::Option<&[crate::types::SchemaResponse]> {
-        self.fleet_advisor_schemas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_advisor_schemas.is_none()`.
+    pub fn fleet_advisor_schemas(&self) -> &[crate::types::SchemaResponse] {
+        self.fleet_advisor_schemas.as_deref().unwrap_or_default()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

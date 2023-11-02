@@ -48,6 +48,7 @@ pub struct StartSessionInputBuilder {
 }
 impl StartSessionInputBuilder {
     /// <p>The managed node to connect to for the session.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self

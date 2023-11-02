@@ -29,8 +29,10 @@ impl PillarDifference {
         self.difference_status.as_ref()
     }
     /// <p>List of question differences.</p>
-    pub fn question_differences(&self) -> ::std::option::Option<&[crate::types::QuestionDifference]> {
-        self.question_differences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.question_differences.is_none()`.
+    pub fn question_differences(&self) -> &[crate::types::QuestionDifference] {
+        self.question_differences.as_deref().unwrap_or_default()
     }
 }
 impl PillarDifference {

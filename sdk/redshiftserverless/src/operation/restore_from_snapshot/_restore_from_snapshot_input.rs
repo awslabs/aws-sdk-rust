@@ -71,6 +71,7 @@ pub struct RestoreFromSnapshotInputBuilder {
 }
 impl RestoreFromSnapshotInputBuilder {
     /// <p>The name of the namespace to restore the snapshot to.</p>
+    /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl RestoreFromSnapshotInputBuilder {
         &self.namespace_name
     }
     /// <p>The name of the workgroup used to restore the snapshot.</p>
+    /// This field is required.
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self

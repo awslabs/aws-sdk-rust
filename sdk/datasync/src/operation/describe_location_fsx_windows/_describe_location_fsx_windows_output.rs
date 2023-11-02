@@ -27,8 +27,10 @@ impl DescribeLocationFsxWindowsOutput {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        self.security_group_arns.as_deref().unwrap_or_default()
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

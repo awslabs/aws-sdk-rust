@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
-    pub opt_out_list_name: ::std::option::Option<::std::string::String>,
+    pub opt_out_list_name: ::std::string::String,
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
@@ -12,12 +12,15 @@ pub struct CreateOptOutListInput {
 }
 impl CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
-        self.opt_out_list_name.as_deref()
+    pub fn opt_out_list_name(&self) -> &str {
+        use std::ops::Deref;
+        self.opt_out_list_name.deref()
     }
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +44,7 @@ pub struct CreateOptOutListInputBuilder {
 }
 impl CreateOptOutListInputBuilder {
     /// <p>The name of the new OptOutList.</p>
+    /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
@@ -89,11 +93,18 @@ impl CreateOptOutListInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`opt_out_list_name`](crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder::opt_out_list_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_opt_out_list::CreateOptOutListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_opt_out_list::CreateOptOutListInput {
-            opt_out_list_name: self.opt_out_list_name,
+            opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "opt_out_list_name",
+                    "opt_out_list_name was not specified but it is required when building CreateOptOutListInput",
+                )
+            })?,
             tags: self.tags,
             client_token: self.client_token,
         })

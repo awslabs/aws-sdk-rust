@@ -48,6 +48,7 @@ pub struct ListTestExecutionResultItemsInputBuilder {
 }
 impl ListTestExecutionResultItemsInputBuilder {
     /// <p>The unique identifier of the test execution to list the result items.</p>
+    /// This field is required.
     pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListTestExecutionResultItemsInputBuilder {
         &self.test_execution_id
     }
     /// <p>The filter for the list of results from the test set execution.</p>
+    /// This field is required.
     pub fn result_filter_by(mut self, input: crate::types::TestExecutionResultFilterBy) -> Self {
         self.result_filter_by = ::std::option::Option::Some(input);
         self

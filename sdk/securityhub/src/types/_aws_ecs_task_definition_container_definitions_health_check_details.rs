@@ -17,8 +17,10 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
     /// <p>The command that the container runs to determine whether it is healthy.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
     pub fn interval(&self) -> ::std::option::Option<i32> {

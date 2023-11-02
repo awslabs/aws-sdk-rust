@@ -34,6 +34,7 @@ pub struct DeleteVpcIngressConnectionOutputBuilder {
 }
 impl DeleteVpcIngressConnectionOutputBuilder {
     /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
+    /// This field is required.
     pub fn vpc_ingress_connection(mut self, input: crate::types::VpcIngressConnection) -> Self {
         self.vpc_ingress_connection = ::std::option::Option::Some(input);
         self

@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCaseInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>A unique identifier of the case.</p>
-    pub case_id: ::std::option::Option<::std::string::String>,
+    pub case_id: ::std::string::String,
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub fields: ::std::vec::Vec<crate::types::FieldValue>,
 }
 impl UpdateCaseInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
-        self.case_id.as_deref()
+    pub fn case_id(&self) -> &str {
+        use std::ops::Deref;
+        self.case_id.deref()
     }
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldValue]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::FieldValue] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
 }
 impl UpdateCaseInput {
@@ -41,6 +44,7 @@ pub struct UpdateCaseInputBuilder {
 }
 impl UpdateCaseInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl UpdateCaseInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -89,11 +94,30 @@ impl UpdateCaseInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::update_case::builders::UpdateCaseInputBuilder::domain_id)
+    /// - [`case_id`](crate::operation::update_case::builders::UpdateCaseInputBuilder::case_id)
+    /// - [`fields`](crate::operation::update_case::builders::UpdateCaseInputBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_case::UpdateCaseInput {
-            domain_id: self.domain_id,
-            case_id: self.case_id,
-            fields: self.fields,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building UpdateCaseInput",
+                )
+            })?,
+            case_id: self.case_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "case_id",
+                    "case_id was not specified but it is required when building UpdateCaseInput",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building UpdateCaseInput",
+                )
+            })?,
         })
     }
 }

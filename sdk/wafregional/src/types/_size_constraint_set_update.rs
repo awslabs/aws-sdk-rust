@@ -9,14 +9,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SizeConstraintSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SizeConstraintSetUpdate</code> to a <code>SizeConstraintSet</code>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-    pub action: ::std::option::Option<crate::types::ChangeAction>,
+    pub action: crate::types::ChangeAction,
     /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     pub size_constraint: ::std::option::Option<crate::types::SizeConstraint>,
 }
 impl SizeConstraintSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SizeConstraintSetUpdate</code> to a <code>SizeConstraintSet</code>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::ChangeAction {
+        &self.action
     }
     /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     pub fn size_constraint(&self) -> ::std::option::Option<&crate::types::SizeConstraint> {
@@ -39,6 +39,7 @@ pub struct SizeConstraintSetUpdateBuilder {
 }
 impl SizeConstraintSetUpdateBuilder {
     /// <p>Specify <code>INSERT</code> to add a <code>SizeConstraintSetUpdate</code> to a <code>SizeConstraintSet</code>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -53,6 +54,7 @@ impl SizeConstraintSetUpdateBuilder {
         &self.action
     }
     /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
+    /// This field is required.
     pub fn size_constraint(mut self, input: crate::types::SizeConstraint) -> Self {
         self.size_constraint = ::std::option::Option::Some(input);
         self
@@ -67,10 +69,17 @@ impl SizeConstraintSetUpdateBuilder {
         &self.size_constraint
     }
     /// Consumes the builder and constructs a [`SizeConstraintSetUpdate`](crate::types::SizeConstraintSetUpdate).
-    pub fn build(self) -> crate::types::SizeConstraintSetUpdate {
-        crate::types::SizeConstraintSetUpdate {
-            action: self.action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::SizeConstraintSetUpdateBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintSetUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SizeConstraintSetUpdate {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building SizeConstraintSetUpdate",
+                )
+            })?,
             size_constraint: self.size_constraint,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DescribeOrganizationConfigurationInputBuilder {
 }
 impl DescribeOrganizationConfigurationInputBuilder {
     /// <p>The ARN of the organization behavior graph.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self

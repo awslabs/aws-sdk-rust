@@ -11,12 +11,16 @@ pub struct BatchGetBlueprintsOutput {
 }
 impl BatchGetBlueprintsOutput {
     /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
-    pub fn blueprints(&self) -> ::std::option::Option<&[crate::types::Blueprint]> {
-        self.blueprints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprints.is_none()`.
+    pub fn blueprints(&self) -> &[crate::types::Blueprint] {
+        self.blueprints.as_deref().unwrap_or_default()
     }
     /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
-    pub fn missing_blueprints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.missing_blueprints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.missing_blueprints.is_none()`.
+    pub fn missing_blueprints(&self) -> &[::std::string::String] {
+        self.missing_blueprints.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetBlueprintsOutput {

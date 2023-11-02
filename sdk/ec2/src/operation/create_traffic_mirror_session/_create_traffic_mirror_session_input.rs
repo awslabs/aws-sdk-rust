@@ -60,8 +60,10 @@ impl CreateTrafficMirrorSessionInput {
         self.description.as_deref()
     }
     /// <p>The tags to assign to a Traffic Mirror session.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -96,6 +98,7 @@ pub struct CreateTrafficMirrorSessionInputBuilder {
 }
 impl CreateTrafficMirrorSessionInputBuilder {
     /// <p>The ID of the source network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +113,7 @@ impl CreateTrafficMirrorSessionInputBuilder {
         &self.network_interface_id
     }
     /// <p>The ID of the Traffic Mirror target.</p>
+    /// This field is required.
     pub fn traffic_mirror_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_target_id = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +128,7 @@ impl CreateTrafficMirrorSessionInputBuilder {
         &self.traffic_mirror_target_id
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
+    /// This field is required.
     pub fn traffic_mirror_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_id = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +164,7 @@ impl CreateTrafficMirrorSessionInputBuilder {
     }
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
+    /// This field is required.
     pub fn session_number(mut self, input: i32) -> Self {
         self.session_number = ::std::option::Option::Some(input);
         self

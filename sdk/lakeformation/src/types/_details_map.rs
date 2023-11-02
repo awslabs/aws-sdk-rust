@@ -10,8 +10,10 @@ pub struct DetailsMap {
 }
 impl DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn resource_share(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_share.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share.is_none()`.
+    pub fn resource_share(&self) -> &[::std::string::String] {
+        self.resource_share.as_deref().unwrap_or_default()
     }
 }
 impl DetailsMap {

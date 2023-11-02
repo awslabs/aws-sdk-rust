@@ -15,18 +15,18 @@ pub fn ser_create_service_input(
     if let Some(var_4) = &input.custom_domain_name {
         object.key("customDomainName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_7.finish();
+        object_6.finish();
     }
     Ok(())
 }

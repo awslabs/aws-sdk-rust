@@ -11,8 +11,10 @@ pub struct ListDeviceInstancesOutput {
 }
 impl ListDeviceInstancesOutput {
     /// <p>An object that contains information about your device instances.</p>
-    pub fn device_instances(&self) -> ::std::option::Option<&[crate::types::DeviceInstance]> {
-        self.device_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_instances.is_none()`.
+    pub fn device_instances(&self) -> &[crate::types::DeviceInstance] {
+        self.device_instances.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

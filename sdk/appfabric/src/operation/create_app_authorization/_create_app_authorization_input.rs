@@ -80,8 +80,10 @@ impl CreateAppAuthorizationInput {
         self.client_token.as_deref()
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateAppAuthorizationInput {
@@ -105,6 +107,7 @@ pub struct CreateAppAuthorizationInputBuilder {
 }
 impl CreateAppAuthorizationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -134,6 +137,7 @@ impl CreateAppAuthorizationInputBuilder {
     /// <li> <p> <code>SMARTSHEET</code> </p> </li>
     /// <li> <p> <code>CISCO</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +183,7 @@ impl CreateAppAuthorizationInputBuilder {
     }
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
     /// <p>Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (<code>oauth2</code>), then you should provide only the OAuth2 credentials.</p>
+    /// This field is required.
     pub fn credential(mut self, input: crate::types::Credential) -> Self {
         self.credential = ::std::option::Option::Some(input);
         self
@@ -195,6 +200,7 @@ impl CreateAppAuthorizationInputBuilder {
         &self.credential
     }
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
+    /// This field is required.
     pub fn tenant(mut self, input: crate::types::Tenant) -> Self {
         self.tenant = ::std::option::Option::Some(input);
         self
@@ -209,6 +215,7 @@ impl CreateAppAuthorizationInputBuilder {
         &self.tenant
     }
     /// <p>The authorization type for the app authorization.</p>
+    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self

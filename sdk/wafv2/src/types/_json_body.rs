@@ -9,8 +9,9 @@
 pub struct JsonBody {
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
     pub match_pattern: ::std::option::Option<crate::types::JsonMatchPattern>,
-    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
-    pub match_scope: ::std::option::Option<crate::types::JsonMatchScope>,
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values. </p>
+    /// <p> <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values. </p>
+    pub match_scope: crate::types::JsonMatchScope,
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
     /// <li> <p> <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the text transformations and inspection criteria that you defined for the JSON inspection to the body text string.</p> </li>
@@ -43,9 +44,10 @@ impl JsonBody {
     pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::JsonMatchPattern> {
         self.match_pattern.as_ref()
     }
-    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
-    pub fn match_scope(&self) -> ::std::option::Option<&crate::types::JsonMatchScope> {
-        self.match_scope.as_ref()
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values. </p>
+    /// <p> <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values. </p>
+    pub fn match_scope(&self) -> &crate::types::JsonMatchScope {
+        &self.match_scope
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
@@ -96,6 +98,7 @@ pub struct JsonBodyBuilder {
 }
 impl JsonBodyBuilder {
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. </p>
+    /// This field is required.
     pub fn match_pattern(mut self, input: crate::types::JsonMatchPattern) -> Self {
         self.match_pattern = ::std::option::Option::Some(input);
         self
@@ -109,17 +112,21 @@ impl JsonBodyBuilder {
     pub fn get_match_pattern(&self) -> &::std::option::Option<crate::types::JsonMatchPattern> {
         &self.match_pattern
     }
-    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values. </p>
+    /// <p> <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values. </p>
+    /// This field is required.
     pub fn match_scope(mut self, input: crate::types::JsonMatchScope) -> Self {
         self.match_scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values. </p>
+    /// <p> <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values. </p>
     pub fn set_match_scope(mut self, input: ::std::option::Option<crate::types::JsonMatchScope>) -> Self {
         self.match_scope = input;
         self
     }
-    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>All</code>, WAF matches against keys and values. </p>
+    /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values. </p>
+    /// <p> <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values. </p>
     pub fn get_match_scope(&self) -> &::std::option::Option<crate::types::JsonMatchScope> {
         &self.match_scope
     }
@@ -218,12 +225,19 @@ impl JsonBodyBuilder {
         &self.oversize_handling
     }
     /// Consumes the builder and constructs a [`JsonBody`](crate::types::JsonBody).
-    pub fn build(self) -> crate::types::JsonBody {
-        crate::types::JsonBody {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`match_scope`](crate::types::builders::JsonBodyBuilder::match_scope)
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonBody, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::JsonBody {
             match_pattern: self.match_pattern,
-            match_scope: self.match_scope,
+            match_scope: self.match_scope.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "match_scope",
+                    "match_scope was not specified but it is required when building JsonBody",
+                )
+            })?,
             invalid_fallback_behavior: self.invalid_fallback_behavior,
             oversize_handling: self.oversize_handling,
-        }
+        })
     }
 }

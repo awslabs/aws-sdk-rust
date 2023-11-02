@@ -3,17 +3,17 @@ pub fn ser_sqs_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SqsAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.queue_url {
-        object.key("queueUrl").string(var_1.as_str());
+    {
+        object.key("queueUrl").string(input.queue_url.as_str());
     }
-    if let Some(var_2) = &input.use_base64 {
-        object.key("useBase64").boolean(*var_2);
+    if let Some(var_1) = &input.use_base64 {
+        object.key("useBase64").boolean(*var_1);
     }
-    if let Some(var_3) = &input.payload {
+    if let Some(var_2) = &input.payload {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("payload").start_object();
-        crate::protocol_serde::shape_payload::ser_payload(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("payload").start_object();
+        crate::protocol_serde::shape_payload::ser_payload(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -56,7 +56,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sqs_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

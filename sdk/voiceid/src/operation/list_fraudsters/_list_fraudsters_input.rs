@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFraudstersInput {
     /// <p>The identifier of the domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the watchlist. If provided, all fraudsters in the watchlist are listed. If not provided, all fraudsters in the domain are listed.</p>
     pub watchlist_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
@@ -14,8 +14,9 @@ pub struct ListFraudstersInput {
 }
 impl ListFraudstersInput {
     /// <p>The identifier of the domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the watchlist. If provided, all fraudsters in the watchlist are listed. If not provided, all fraudsters in the domain are listed.</p>
     pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
@@ -48,6 +49,7 @@ pub struct ListFraudstersInputBuilder {
 }
 impl ListFraudstersInputBuilder {
     /// <p>The identifier of the domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -104,11 +106,18 @@ impl ListFraudstersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFraudstersInput`](crate::operation::list_fraudsters::ListFraudstersInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::list_fraudsters::builders::ListFraudstersInputBuilder::domain_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_fraudsters::ListFraudstersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fraudsters::ListFraudstersInput {
-            domain_id: self.domain_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building ListFraudstersInput",
+                )
+            })?,
             watchlist_id: self.watchlist_id,
             max_results: self.max_results,
             next_token: self.next_token,

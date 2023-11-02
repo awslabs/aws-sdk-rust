@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
-    pub entity_name: ::std::option::Option<::std::string::String>,
+    pub entity_name: ::std::string::String,
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
     pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
@@ -13,8 +13,9 @@ pub struct CustomConnectorSourceProperties {
 }
 impl CustomConnectorSourceProperties {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
-    pub fn entity_name(&self) -> ::std::option::Option<&str> {
-        self.entity_name.as_deref()
+    pub fn entity_name(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_name.deref()
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
     pub fn custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -42,6 +43,7 @@ pub struct CustomConnectorSourcePropertiesBuilder {
 }
 impl CustomConnectorSourcePropertiesBuilder {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
+    /// This field is required.
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_name = ::std::option::Option::Some(input.into());
         self
@@ -97,11 +99,18 @@ impl CustomConnectorSourcePropertiesBuilder {
         &self.data_transfer_api
     }
     /// Consumes the builder and constructs a [`CustomConnectorSourceProperties`](crate::types::CustomConnectorSourceProperties).
-    pub fn build(self) -> crate::types::CustomConnectorSourceProperties {
-        crate::types::CustomConnectorSourceProperties {
-            entity_name: self.entity_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_name`](crate::types::builders::CustomConnectorSourcePropertiesBuilder::entity_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorSourceProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomConnectorSourceProperties {
+            entity_name: self.entity_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_name",
+                    "entity_name was not specified but it is required when building CustomConnectorSourceProperties",
+                )
+            })?,
             custom_properties: self.custom_properties,
             data_transfer_api: self.data_transfer_api,
-        }
+        })
     }
 }

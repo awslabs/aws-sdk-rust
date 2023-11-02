@@ -3,11 +3,11 @@ pub fn ser_disassociate_vehicle_fleet_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vehicle_name {
-        object.key("vehicleName").string(var_1.as_str());
+    {
+        object.key("vehicleName").string(input.vehicle_name.as_str());
     }
-    if let Some(var_2) = &input.fleet_id {
-        object.key("fleetId").string(var_2.as_str());
+    {
+        object.key("fleetId").string(input.fleet_id.as_str());
     }
     Ok(())
 }

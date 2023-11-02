@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOutpost`](crate::operation::get_outpost::builders::GetOutpostFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`outpost_id(impl Into<String>)`](crate::operation::get_outpost::builders::GetOutpostFluentBuilder::outpost_id) / [`set_outpost_id(Option<String>)`](crate::operation::get_outpost::builders::GetOutpostFluentBuilder::set_outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    ///   - [`outpost_id(impl Into<String>)`](crate::operation::get_outpost::builders::GetOutpostFluentBuilder::outpost_id) / [`set_outpost_id(Option<String>)`](crate::operation::get_outpost::builders::GetOutpostFluentBuilder::set_outpost_id):<br>required: **true**<br><p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p><br>
     /// - On success, responds with [`GetOutpostOutput`](crate::operation::get_outpost::GetOutpostOutput) with field(s):
     ///   - [`outpost(Option<Outpost>)`](crate::operation::get_outpost::GetOutpostOutput::outpost): <p>Information about an Outpost.</p>
     /// - On failure, responds with [`SdkError<GetOutpostError>`](crate::operation::get_outpost::GetOutpostError)

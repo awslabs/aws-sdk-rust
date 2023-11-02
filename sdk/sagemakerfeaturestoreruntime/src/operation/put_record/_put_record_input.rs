@@ -28,12 +28,16 @@ impl PutRecordInput {
     /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
     /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
     /// </ul>
-    pub fn record(&self) -> ::std::option::Option<&[crate::types::FeatureValue]> {
-        self.record.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record.is_none()`.
+    pub fn record(&self) -> &[crate::types::FeatureValue] {
+        self.record.as_deref().unwrap_or_default()
     }
     /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
-    pub fn target_stores(&self) -> ::std::option::Option<&[crate::types::TargetStore]> {
-        self.target_stores.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_stores.is_none()`.
+    pub fn target_stores(&self) -> &[crate::types::TargetStore] {
+        self.target_stores.as_deref().unwrap_or_default()
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn ttl_duration(&self) -> ::std::option::Option<&crate::types::TtlDuration> {
@@ -58,6 +62,7 @@ pub struct PutRecordInputBuilder {
 }
 impl PutRecordInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self

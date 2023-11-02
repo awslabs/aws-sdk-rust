@@ -14,8 +14,10 @@ pub struct ListJournalS3ExportsForLedgerOutput {
 }
 impl ListJournalS3ExportsForLedgerOutput {
     /// <p>The journal export jobs that are currently associated with the specified ledger.</p>
-    pub fn journal_s3_exports(&self) -> ::std::option::Option<&[crate::types::JournalS3ExportDescription]> {
-        self.journal_s3_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.journal_s3_exports.is_none()`.
+    pub fn journal_s3_exports(&self) -> &[crate::types::JournalS3ExportDescription] {
+        self.journal_s3_exports.as_deref().unwrap_or_default()
     }
     /// <ul>
     /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>

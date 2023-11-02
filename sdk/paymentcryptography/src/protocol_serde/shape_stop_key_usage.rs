@@ -157,7 +157,7 @@ pub fn de_stop_key_usage_http_response(
         output = crate::protocol_serde::shape_stop_key_usage::de_stop_key_usage(_response_body, output)
             .map_err(crate::operation::stop_key_usage::StopKeyUsageError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::stop_key_usage_output_correct_errors(output).build()
     })
 }
 

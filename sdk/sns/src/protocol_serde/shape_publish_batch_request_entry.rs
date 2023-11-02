@@ -6,46 +6,46 @@ pub fn ser_publish_batch_request_entry(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
-    if let Some(var_2) = &input.id {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.id);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Message");
-    if let Some(var_4) = &input.message {
+    let mut scope_2 = writer.prefix("Message");
+    {
+        scope_2.string(&input.message);
+    }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("Subject");
+    if let Some(var_4) = &input.subject {
         scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("Subject");
-    if let Some(var_6) = &input.subject {
+    let mut scope_5 = writer.prefix("MessageStructure");
+    if let Some(var_6) = &input.message_structure {
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("MessageStructure");
-    if let Some(var_8) = &input.message_structure {
-        scope_7.string(var_8);
-    }
-    #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("MessageAttributes");
-    if let Some(var_10) = &input.message_attributes {
-        let mut map_11 = scope_9.start_map(false, "Name", "Value");
-        for (key_12, value_13) in var_10 {
+    let mut scope_7 = writer.prefix("MessageAttributes");
+    if let Some(var_8) = &input.message_attributes {
+        let mut map_9 = scope_7.start_map(false, "Name", "Value");
+        for (key_10, value_11) in var_8 {
             #[allow(unused_mut)]
-            let mut entry_14 = map_11.entry(key_12);
+            let mut entry_12 = map_9.entry(key_10);
             {
-                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(entry_14, value_13)?;
+                crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(entry_12, value_11)?;
             }
         }
-        map_11.finish();
+        map_9.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("MessageDeduplicationId");
-    if let Some(var_16) = &input.message_deduplication_id {
+    let mut scope_13 = writer.prefix("MessageDeduplicationId");
+    if let Some(var_14) = &input.message_deduplication_id {
+        scope_13.string(var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("MessageGroupId");
+    if let Some(var_16) = &input.message_group_id {
         scope_15.string(var_16);
-    }
-    #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("MessageGroupId");
-    if let Some(var_18) = &input.message_group_id {
-        scope_17.string(var_18);
     }
     Ok(())
 }

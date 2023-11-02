@@ -7,7 +7,7 @@ pub struct Source {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
     /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
     /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the <i>Config developer guide</i>.</p>
-    pub owner: ::std::option::Option<crate::types::Owner>,
+    pub owner: crate::types::Owner,
     /// <p>For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
     /// <p>For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
     /// <p>For Config Custom Policy rules, this field will be ignored.</p>
@@ -22,8 +22,8 @@ impl Source {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
     /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
     /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the <i>Config developer guide</i>.</p>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
-        self.owner.as_ref()
+    pub fn owner(&self) -> &crate::types::Owner {
+        &self.owner
     }
     /// <p>For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
     /// <p>For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
@@ -33,8 +33,10 @@ impl Source {
     }
     /// <p>Provides the source and the message types that cause Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
     /// <p>If the owner is set to <code>CUSTOM_POLICY</code>, the only acceptable values for the Config rule trigger message type are <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.</p>
-    pub fn source_details(&self) -> ::std::option::Option<&[crate::types::SourceDetail]> {
-        self.source_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_details.is_none()`.
+    pub fn source_details(&self) -> &[crate::types::SourceDetail] {
+        self.source_details.as_deref().unwrap_or_default()
     }
     /// <p>Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to <code>CUSTOM_POLICY</code>.</p>
     pub fn custom_policy_details(&self) -> ::std::option::Option<&crate::types::CustomPolicyDetails> {
@@ -61,6 +63,7 @@ impl SourceBuilder {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
     /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
     /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the <i>Config developer guide</i>.</p>
+    /// This field is required.
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
@@ -136,12 +139,19 @@ impl SourceBuilder {
         &self.custom_policy_details
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
-    pub fn build(self) -> crate::types::Source {
-        crate::types::Source {
-            owner: self.owner,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`owner`](crate::types::builders::SourceBuilder::owner)
+    pub fn build(self) -> ::std::result::Result<crate::types::Source, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Source {
+            owner: self.owner.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "owner",
+                    "owner was not specified but it is required when building Source",
+                )
+            })?,
             source_identifier: self.source_identifier,
             source_details: self.source_details,
             custom_policy_details: self.custom_policy_details,
-        }
+        })
     }
 }

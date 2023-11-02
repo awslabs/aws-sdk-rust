@@ -27,6 +27,7 @@ pub struct DescribeSimulationJobInputBuilder {
 }
 impl DescribeSimulationJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
+    /// This field is required.
     pub fn job(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job = ::std::option::Option::Some(input.into());
         self

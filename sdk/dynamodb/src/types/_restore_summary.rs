@@ -9,9 +9,9 @@ pub struct RestoreSummary {
     /// <p>The ARN of the source table of the backup that is being restored.</p>
     pub source_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Point in time or source backup time.</p>
-    pub restore_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub restore_date_time: ::aws_smithy_types::DateTime,
     /// <p>Indicates if a restore is in progress or not.</p>
-    pub restore_in_progress: ::std::option::Option<bool>,
+    pub restore_in_progress: bool,
 }
 impl RestoreSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
@@ -23,11 +23,11 @@ impl RestoreSummary {
         self.source_table_arn.as_deref()
     }
     /// <p>Point in time or source backup time.</p>
-    pub fn restore_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.restore_date_time.as_ref()
+    pub fn restore_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.restore_date_time
     }
     /// <p>Indicates if a restore is in progress or not.</p>
-    pub fn restore_in_progress(&self) -> ::std::option::Option<bool> {
+    pub fn restore_in_progress(&self) -> bool {
         self.restore_in_progress
     }
 }
@@ -77,6 +77,7 @@ impl RestoreSummaryBuilder {
         &self.source_table_arn
     }
     /// <p>Point in time or source backup time.</p>
+    /// This field is required.
     pub fn restore_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_date_time = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl RestoreSummaryBuilder {
         &self.restore_date_time
     }
     /// <p>Indicates if a restore is in progress or not.</p>
+    /// This field is required.
     pub fn restore_in_progress(mut self, input: bool) -> Self {
         self.restore_in_progress = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl RestoreSummaryBuilder {
         &self.restore_in_progress
     }
     /// Consumes the builder and constructs a [`RestoreSummary`](crate::types::RestoreSummary).
-    pub fn build(self) -> crate::types::RestoreSummary {
-        crate::types::RestoreSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`restore_date_time`](crate::types::builders::RestoreSummaryBuilder::restore_date_time)
+    /// - [`restore_in_progress`](crate::types::builders::RestoreSummaryBuilder::restore_in_progress)
+    pub fn build(self) -> ::std::result::Result<crate::types::RestoreSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RestoreSummary {
             source_backup_arn: self.source_backup_arn,
             source_table_arn: self.source_table_arn,
-            restore_date_time: self.restore_date_time,
-            restore_in_progress: self.restore_in_progress,
-        }
+            restore_date_time: self.restore_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "restore_date_time",
+                    "restore_date_time was not specified but it is required when building RestoreSummary",
+                )
+            })?,
+            restore_in_progress: self.restore_in_progress.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "restore_in_progress",
+                    "restore_in_progress was not specified but it is required when building RestoreSummary",
+                )
+            })?,
+        })
     }
 }

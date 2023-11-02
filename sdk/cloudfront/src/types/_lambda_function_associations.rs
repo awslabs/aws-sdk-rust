@@ -7,18 +7,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionAssociation]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::LambdaFunctionAssociation] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl LambdaFunctionAssociations {
@@ -37,6 +39,7 @@ pub struct LambdaFunctionAssociationsBuilder {
 }
 impl LambdaFunctionAssociationsBuilder {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -71,10 +74,17 @@ impl LambdaFunctionAssociationsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAssociations`](crate::types::LambdaFunctionAssociations).
-    pub fn build(self) -> crate::types::LambdaFunctionAssociations {
-        crate::types::LambdaFunctionAssociations {
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantity`](crate::types::builders::LambdaFunctionAssociationsBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionAssociations, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaFunctionAssociations {
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building LambdaFunctionAssociations",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

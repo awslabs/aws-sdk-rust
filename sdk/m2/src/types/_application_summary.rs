@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The name of the application.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the application.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub application_arn: ::std::option::Option<::std::string::String>,
+    pub application_arn: ::std::string::String,
     /// <p>The version of the application.</p>
-    pub application_version: ::std::option::Option<i32>,
+    pub application_version: i32,
     /// <p>The status of the application.</p>
-    pub status: ::std::option::Option<crate::types::ApplicationLifecycle>,
+    pub status: crate::types::ApplicationLifecycle,
     /// <p>The type of the target platform for this application.</p>
-    pub engine_type: ::std::option::Option<crate::types::EngineType>,
+    pub engine_type: crate::types::EngineType,
     /// <p>The timestamp when the application was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
@@ -33,36 +33,39 @@ pub struct ApplicationSummary {
 }
 impl ApplicationSummary {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the application.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
-        self.application_arn.as_deref()
+    pub fn application_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.application_arn.deref()
     }
     /// <p>The version of the application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<i32> {
+    pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationLifecycle> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ApplicationLifecycle {
+        &self.status
     }
     /// <p>The type of the target platform for this application.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
-        self.engine_type.as_ref()
+    pub fn engine_type(&self) -> &crate::types::EngineType {
+        &self.engine_type
     }
     /// <p>The timestamp when the application was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The unique identifier of the runtime environment that hosts this application.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
@@ -112,6 +115,7 @@ pub struct ApplicationSummaryBuilder {
 }
 impl ApplicationSummaryBuilder {
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl ApplicationSummaryBuilder {
         &self.description
     }
     /// <p>The unique identifier of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +159,7 @@ impl ApplicationSummaryBuilder {
         &self.application_id
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +174,7 @@ impl ApplicationSummaryBuilder {
         &self.application_arn
     }
     /// <p>The version of the application.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: i32) -> Self {
         self.application_version = ::std::option::Option::Some(input);
         self
@@ -182,6 +189,7 @@ impl ApplicationSummaryBuilder {
         &self.application_version
     }
     /// <p>The status of the application.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ApplicationLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -196,6 +204,7 @@ impl ApplicationSummaryBuilder {
         &self.status
     }
     /// <p>The type of the target platform for this application.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -210,6 +219,7 @@ impl ApplicationSummaryBuilder {
         &self.engine_type
     }
     /// <p>The timestamp when the application was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -294,21 +304,64 @@ impl ApplicationSummaryBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
-    pub fn build(self) -> crate::types::ApplicationSummary {
-        crate::types::ApplicationSummary {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ApplicationSummaryBuilder::name)
+    /// - [`application_id`](crate::types::builders::ApplicationSummaryBuilder::application_id)
+    /// - [`application_arn`](crate::types::builders::ApplicationSummaryBuilder::application_arn)
+    /// - [`application_version`](crate::types::builders::ApplicationSummaryBuilder::application_version)
+    /// - [`status`](crate::types::builders::ApplicationSummaryBuilder::status)
+    /// - [`engine_type`](crate::types::builders::ApplicationSummaryBuilder::engine_type)
+    /// - [`creation_time`](crate::types::builders::ApplicationSummaryBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationSummary {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
             description: self.description,
-            application_id: self.application_id,
-            application_arn: self.application_arn,
-            application_version: self.application_version,
-            status: self.status,
-            engine_type: self.engine_type,
-            creation_time: self.creation_time,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            application_arn: self.application_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_arn",
+                    "application_arn was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            engine_type: self.engine_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engine_type",
+                    "engine_type was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ApplicationSummary",
+                )
+            })?,
             environment_id: self.environment_id,
             last_start_time: self.last_start_time,
             version_status: self.version_status,
             deployment_status: self.deployment_status,
             role_arn: self.role_arn,
-        }
+        })
     }
 }

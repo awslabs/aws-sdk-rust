@@ -40,8 +40,10 @@ impl MeterUsageInput {
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    pub fn usage_allocations(&self) -> ::std::option::Option<&[crate::types::UsageAllocation]> {
-        self.usage_allocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_allocations.is_none()`.
+    pub fn usage_allocations(&self) -> &[crate::types::UsageAllocation] {
+        self.usage_allocations.as_deref().unwrap_or_default()
     }
 }
 impl MeterUsageInput {
@@ -64,6 +66,7 @@ pub struct MeterUsageInputBuilder {
 }
 impl MeterUsageInputBuilder {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl MeterUsageInputBuilder {
         &self.product_code
     }
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -92,6 +96,7 @@ impl MeterUsageInputBuilder {
         &self.timestamp
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
+    /// This field is required.
     pub fn usage_dimension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_dimension = ::std::option::Option::Some(input.into());
         self

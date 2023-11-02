@@ -20,8 +20,10 @@ impl PutGroupConfigurationInput {
     /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
-    pub fn configuration(&self) -> ::std::option::Option<&[crate::types::GroupConfigurationItem]> {
-        self.configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration.is_none()`.
+    pub fn configuration(&self) -> &[crate::types::GroupConfigurationItem] {
+        self.configuration.as_deref().unwrap_or_default()
     }
 }
 impl PutGroupConfigurationInput {

@@ -28,6 +28,7 @@ pub struct DeleteIdentityInputBuilder {
 }
 impl DeleteIdentityInputBuilder {
     /// <p>The identity to be removed from the list of identities for the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self

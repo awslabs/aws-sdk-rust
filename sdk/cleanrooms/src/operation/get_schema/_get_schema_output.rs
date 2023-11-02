@@ -34,6 +34,7 @@ pub struct GetSchemaOutputBuilder {
 }
 impl GetSchemaOutputBuilder {
     /// <p>The entire schema object.</p>
+    /// This field is required.
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self

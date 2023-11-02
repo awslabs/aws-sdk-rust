@@ -10,8 +10,10 @@ pub struct RetrieveEnvironmentInfoOutput {
 }
 impl RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
-    pub fn environment_info(&self) -> ::std::option::Option<&[crate::types::EnvironmentInfoDescription]> {
-        self.environment_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_info.is_none()`.
+    pub fn environment_info(&self) -> &[crate::types::EnvironmentInfoDescription] {
+        self.environment_info.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RetrieveEnvironmentInfoOutput {

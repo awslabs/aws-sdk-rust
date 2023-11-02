@@ -8,8 +8,10 @@ pub struct BatchGetTokenBalanceInput {
 }
 impl BatchGetTokenBalanceInput {
     /// <p>An array of <code>BatchGetTokenBalanceInputItem</code> objects whose balance is being requested.</p>
-    pub fn get_token_balance_inputs(&self) -> ::std::option::Option<&[crate::types::BatchGetTokenBalanceInputItem]> {
-        self.get_token_balance_inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.get_token_balance_inputs.is_none()`.
+    pub fn get_token_balance_inputs(&self) -> &[crate::types::BatchGetTokenBalanceInputItem] {
+        self.get_token_balance_inputs.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetTokenBalanceInput {

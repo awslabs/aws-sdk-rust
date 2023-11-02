@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the pricing plan. </p>
@@ -12,8 +12,9 @@ pub struct UpdatePricingPlanInput {
 }
 impl UpdatePricingPlanInput {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -50,6 +51,7 @@ pub struct UpdatePricingPlanInputBuilder {
 }
 impl UpdatePricingPlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -92,11 +94,18 @@ impl UpdatePricingPlanInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdatePricingPlanInput",
+                )
+            })?,
             name: self.name,
             description: self.description,
         })

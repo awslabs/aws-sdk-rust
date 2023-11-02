@@ -15,20 +15,26 @@ pub struct SslPolicy {
 }
 impl SslPolicy {
     /// <p>The protocols.</p>
-    pub fn ssl_protocols(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ssl_protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssl_protocols.is_none()`.
+    pub fn ssl_protocols(&self) -> &[::std::string::String] {
+        self.ssl_protocols.as_deref().unwrap_or_default()
     }
     /// <p>The ciphers.</p>
-    pub fn ciphers(&self) -> ::std::option::Option<&[crate::types::Cipher]> {
-        self.ciphers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ciphers.is_none()`.
+    pub fn ciphers(&self) -> &[crate::types::Cipher] {
+        self.ciphers.as_deref().unwrap_or_default()
     }
     /// <p>The name of the policy.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The supported load balancers. </p>
-    pub fn supported_load_balancer_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_load_balancer_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_load_balancer_types.is_none()`.
+    pub fn supported_load_balancer_types(&self) -> &[::std::string::String] {
+        self.supported_load_balancer_types.as_deref().unwrap_or_default()
     }
 }
 impl SslPolicy {

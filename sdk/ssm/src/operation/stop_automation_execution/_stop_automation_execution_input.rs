@@ -34,6 +34,7 @@ pub struct StopAutomationExecutionInputBuilder {
 }
 impl StopAutomationExecutionInputBuilder {
     /// <p>The execution ID of the Automation to stop.</p>
+    /// This field is required.
     pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self

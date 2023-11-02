@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutReportDefinition`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_definition(ReportDefinition)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::report_definition) / [`set_report_definition(Option<ReportDefinition>)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::set_report_definition): <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
+    ///   - [`report_definition(ReportDefinition)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::report_definition) / [`set_report_definition(Option<ReportDefinition>)`](crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder::set_report_definition):<br>required: **true**<br><p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p><br>
     /// - On success, responds with [`PutReportDefinitionOutput`](crate::operation::put_report_definition::PutReportDefinitionOutput)
     /// - On failure, responds with [`SdkError<PutReportDefinitionError>`](crate::operation::put_report_definition::PutReportDefinitionError)
     pub fn put_report_definition(&self) -> crate::operation::put_report_definition::builders::PutReportDefinitionFluentBuilder {

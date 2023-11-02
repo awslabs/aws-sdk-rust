@@ -78,7 +78,9 @@ pub fn de_query_assistant_http_response(
         output = crate::protocol_serde::shape_query_assistant::de_query_assistant(_response_body, output)
             .map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::query_assistant_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::query_assistant::QueryAssistantError::unhandled)?
     })
 }
 

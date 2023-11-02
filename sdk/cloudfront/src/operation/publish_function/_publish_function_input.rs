@@ -34,6 +34,7 @@ pub struct PublishFunctionInputBuilder {
 }
 impl PublishFunctionInputBuilder {
     /// <p>The name of the function that you are publishing.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PublishFunctionInputBuilder {
         &self.name
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
+    /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
         self

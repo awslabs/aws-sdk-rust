@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteOpenCypherQueryOutput {
     /// <p>The openCypherquery results.</p>
-    pub results: ::std::option::Option<::aws_smithy_types::Document>,
+    pub results: ::aws_smithy_types::Document,
     _request_id: Option<String>,
 }
 impl ExecuteOpenCypherQueryOutput {
     /// <p>The openCypherquery results.</p>
-    pub fn results(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
-        self.results.as_ref()
+    pub fn results(&self) -> &::aws_smithy_types::Document {
+        &self.results
     }
 }
 impl ::aws_http::request_id::RequestId for ExecuteOpenCypherQueryOutput {
@@ -34,6 +34,7 @@ pub struct ExecuteOpenCypherQueryOutputBuilder {
 }
 impl ExecuteOpenCypherQueryOutputBuilder {
     /// <p>The openCypherquery results.</p>
+    /// This field is required.
     pub fn results(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.results = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,22 @@ impl ExecuteOpenCypherQueryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ExecuteOpenCypherQueryOutput`](crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput).
-    pub fn build(self) -> crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput {
-        crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput {
-            results: self.results,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::execute_open_cypher_query::builders::ExecuteOpenCypherQueryOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput {
+            results: self.results.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "results",
+                    "results was not specified but it is required when building ExecuteOpenCypherQueryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

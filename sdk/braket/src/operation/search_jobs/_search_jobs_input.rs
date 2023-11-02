@@ -8,7 +8,7 @@ pub struct SearchJobsInput {
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The filter values to use when searching for a job.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchJobsFilter>>,
+    pub filters: ::std::vec::Vec<crate::types::SearchJobsFilter>,
 }
 impl SearchJobsInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
@@ -20,8 +20,9 @@ impl SearchJobsInput {
         self.max_results
     }
     /// <p>The filter values to use when searching for a job.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SearchJobsFilter]> {
-        self.filters.as_deref()
+    pub fn filters(&self) -> &[crate::types::SearchJobsFilter] {
+        use std::ops::Deref;
+        self.filters.deref()
     }
 }
 impl SearchJobsInput {
@@ -89,11 +90,18 @@ impl SearchJobsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchJobsInput`](crate::operation::search_jobs::SearchJobsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filters`](crate::operation::search_jobs::builders::SearchJobsInputBuilder::filters)
     pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            filters: self.filters,
+            filters: self.filters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filters",
+                    "filters was not specified but it is required when building SearchJobsInput",
+                )
+            })?,
         })
     }
 }

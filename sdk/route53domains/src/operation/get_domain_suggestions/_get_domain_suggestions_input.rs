@@ -65,6 +65,7 @@ impl GetDomainSuggestionsInputBuilder {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +96,7 @@ impl GetDomainSuggestionsInputBuilder {
         &self.domain_name
     }
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    /// This field is required.
     pub fn suggestion_count(mut self, input: i32) -> Self {
         self.suggestion_count = ::std::option::Option::Some(input);
         self
@@ -109,6 +111,7 @@ impl GetDomainSuggestionsInputBuilder {
         &self.suggestion_count
     }
     /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// This field is required.
     pub fn only_available(mut self, input: bool) -> Self {
         self.only_available = ::std::option::Option::Some(input);
         self

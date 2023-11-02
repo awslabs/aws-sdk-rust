@@ -7,7 +7,7 @@ pub struct DatabaseResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl DatabaseResource {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
@@ -15,8 +15,9 @@ impl DatabaseResource {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl DatabaseResource {
@@ -49,6 +50,7 @@ impl DatabaseResourceBuilder {
         &self.catalog_id
     }
     /// <p>The name of the database resource. Unique to the Data Catalog.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DatabaseResourceBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DatabaseResource`](crate::types::DatabaseResource).
-    pub fn build(self) -> crate::types::DatabaseResource {
-        crate::types::DatabaseResource {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DatabaseResourceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseResource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatabaseResource {
             catalog_id: self.catalog_id,
-            name: self.name,
-        }
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DatabaseResource",
+                )
+            })?,
+        })
     }
 }

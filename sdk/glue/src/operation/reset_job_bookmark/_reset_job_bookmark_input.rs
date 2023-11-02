@@ -34,6 +34,7 @@ pub struct ResetJobBookmarkInputBuilder {
 }
 impl ResetJobBookmarkInputBuilder {
     /// <p>The name of the job in question.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self

@@ -3,20 +3,22 @@ pub fn ser_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Message,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.message_id {
-        object.key("messageId").string(var_1.as_str());
+    {
+        object.key("messageId").string(input.message_id.as_str());
     }
-    if let Some(var_2) = &input.input_name {
-        object.key("inputName").string(var_2.as_str());
+    {
+        object.key("inputName").string(input.input_name.as_str());
     }
-    if let Some(var_3) = &input.payload {
-        object.key("payload").string_unchecked(&::aws_smithy_types::base64::encode(var_3));
+    {
+        object
+            .key("payload")
+            .string_unchecked(&::aws_smithy_types::base64::encode(&input.payload));
     }
-    if let Some(var_4) = &input.timestamp {
+    if let Some(var_1) = &input.timestamp {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("timestamp").start_object();
-        crate::protocol_serde::shape_timestamp_value::ser_timestamp_value(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("timestamp").start_object();
+        crate::protocol_serde::shape_timestamp_value::ser_timestamp_value(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

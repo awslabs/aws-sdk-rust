@@ -20,8 +20,10 @@ impl BatchDisassociateAssessmentReportEvidenceInput {
         self.evidence_folder_id.as_deref()
     }
     /// <p> The list of evidence identifiers. </p>
-    pub fn evidence_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.evidence_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_ids.is_none()`.
+    pub fn evidence_ids(&self) -> &[::std::string::String] {
+        self.evidence_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDisassociateAssessmentReportEvidenceInput {
@@ -42,6 +44,7 @@ pub struct BatchDisassociateAssessmentReportEvidenceInputBuilder {
 }
 impl BatchDisassociateAssessmentReportEvidenceInputBuilder {
     /// <p> The identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl BatchDisassociateAssessmentReportEvidenceInputBuilder {
         &self.assessment_id
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
+    /// This field is required.
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricToRetain {
     /// <p>What is measured by the behavior.</p>
-    pub metric: ::std::option::Option<::std::string::String>,
+    pub metric: ::std::string::String,
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
 }
 impl MetricToRetain {
     /// <p>What is measured by the behavior.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
-        self.metric.as_deref()
+    pub fn metric(&self) -> &str {
+        use std::ops::Deref;
+        self.metric.deref()
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub fn metric_dimension(&self) -> ::std::option::Option<&crate::types::MetricDimension> {
@@ -35,6 +36,7 @@ pub struct MetricToRetainBuilder {
 }
 impl MetricToRetainBuilder {
     /// <p>What is measured by the behavior.</p>
+    /// This field is required.
     pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl MetricToRetainBuilder {
         &self.metric_dimension
     }
     /// Consumes the builder and constructs a [`MetricToRetain`](crate::types::MetricToRetain).
-    pub fn build(self) -> crate::types::MetricToRetain {
-        crate::types::MetricToRetain {
-            metric: self.metric,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric`](crate::types::builders::MetricToRetainBuilder::metric)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricToRetain, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricToRetain {
+            metric: self.metric.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric",
+                    "metric was not specified but it is required when building MetricToRetain",
+                )
+            })?,
             metric_dimension: self.metric_dimension,
-        }
+        })
     }
 }

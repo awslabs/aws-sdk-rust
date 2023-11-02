@@ -3,11 +3,11 @@ pub fn ser_session_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key {
-        object.key("key").string(var_1.as_str());
+    {
+        object.key("key").string(input.key.as_str());
     }
-    if let Some(var_2) = &input.value {
-        object.key("value").string(var_2.as_str());
+    {
+        object.key("value").string(input.value.as_str());
     }
     Ok(())
 }

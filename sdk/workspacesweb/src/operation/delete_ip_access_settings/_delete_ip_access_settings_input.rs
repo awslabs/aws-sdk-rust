@@ -27,6 +27,7 @@ pub struct DeleteIpAccessSettingsInputBuilder {
 }
 impl DeleteIpAccessSettingsInputBuilder {
     /// <p>The ARN of the IP access settings.</p>
+    /// This field is required.
     pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self

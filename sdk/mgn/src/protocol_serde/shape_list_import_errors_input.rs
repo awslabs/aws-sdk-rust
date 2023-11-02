@@ -3,8 +3,8 @@ pub fn ser_list_import_errors_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_import_errors::ListImportErrorsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.import_id {
-        object.key("importID").string(var_1.as_str());
+    {
+        object.key("importID").string(input.import_id.as_str());
     }
     if input.max_results != 0 {
         object.key("maxResults").number(
@@ -12,8 +12,8 @@ pub fn ser_list_import_errors_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_1) = &input.next_token {
+        object.key("nextToken").string(var_1.as_str());
     }
     Ok(())
 }

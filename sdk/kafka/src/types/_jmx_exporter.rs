@@ -28,6 +28,7 @@ pub struct JmxExporterBuilder {
 }
 impl JmxExporterBuilder {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
+    /// This field is required.
     pub fn enabled_in_broker(mut self, input: bool) -> Self {
         self.enabled_in_broker = ::std::option::Option::Some(input);
         self

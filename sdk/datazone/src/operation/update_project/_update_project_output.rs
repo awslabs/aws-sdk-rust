@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateProjectOutput {
     /// <p>The identifier of the Amazon DataZone domain in which a project is updated.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the project that is to be updated.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the project that is to be updated.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the project that is to be updated.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon DataZone user who created the project.</p>
-    pub created_by: ::std::option::Option<::std::string::String>,
+    pub created_by: ::std::string::String,
     /// <p>The timestamp of when the project was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the project was last updated.</p>
@@ -23,24 +23,28 @@ pub struct UpdateProjectOutput {
 }
 impl UpdateProjectOutput {
     /// <p>The identifier of the Amazon DataZone domain in which a project is updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the project that is to be updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the project that is to be updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the project that is to be updated.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon DataZone user who created the project.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
-        self.created_by.as_deref()
+    pub fn created_by(&self) -> &str {
+        use std::ops::Deref;
+        self.created_by.deref()
     }
     /// <p>The timestamp of when the project was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -51,8 +55,10 @@ impl UpdateProjectOutput {
         self.last_updated_at.as_ref()
     }
     /// <p>The glossary terms of the project that are to be updated.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateProjectOutput {
@@ -98,6 +104,7 @@ pub struct UpdateProjectOutputBuilder {
 }
 impl UpdateProjectOutputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a project is updated.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl UpdateProjectOutputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the project that is to be updated.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +134,7 @@ impl UpdateProjectOutputBuilder {
         &self.id
     }
     /// <p>The name of the project that is to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +163,7 @@ impl UpdateProjectOutputBuilder {
         &self.description
     }
     /// <p>The Amazon DataZone user who created the project.</p>
+    /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
@@ -225,18 +235,45 @@ impl UpdateProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput).
-    pub fn build(self) -> crate::operation::update_project::UpdateProjectOutput {
-        crate::operation::update_project::UpdateProjectOutput {
-            domain_id: self.domain_id,
-            id: self.id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::update_project::builders::UpdateProjectOutputBuilder::domain_id)
+    /// - [`id`](crate::operation::update_project::builders::UpdateProjectOutputBuilder::id)
+    /// - [`name`](crate::operation::update_project::builders::UpdateProjectOutputBuilder::name)
+    /// - [`created_by`](crate::operation::update_project::builders::UpdateProjectOutputBuilder::created_by)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building UpdateProjectOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateProjectOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateProjectOutput",
+                )
+            })?,
             description: self.description,
-            created_by: self.created_by,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building UpdateProjectOutput",
+                )
+            })?,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             glossary_terms: self.glossary_terms,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for UpdateProjectOutputBuilder {

@@ -57,6 +57,7 @@ pub struct ExportJobRequestBuilder {
 }
 impl ExportJobRequestBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl ExportJobRequestBuilder {
     /// </replaceable>/<replaceable>
     /// folder-name
     /// </replaceable>/.</p>
+    /// This field is required.
     pub fn s3_url_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url_prefix = ::std::option::Option::Some(input.into());
         self

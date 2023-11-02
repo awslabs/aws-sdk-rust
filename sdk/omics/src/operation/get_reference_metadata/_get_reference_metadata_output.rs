@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReferenceMetadataOutput {
     /// <p>The reference's ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The reference's ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The reference's reference store ID.</p>
-    pub reference_store_id: ::std::option::Option<::std::string::String>,
+    pub reference_store_id: ::std::string::String,
     /// <p>The reference's MD5 checksum.</p>
-    pub md5: ::std::option::Option<::std::string::String>,
+    pub md5: ::std::string::String,
     /// <p>The reference's status.</p>
     pub status: ::std::option::Option<crate::types::ReferenceStatus>,
     /// <p>The reference's name.</p>
@@ -18,29 +18,33 @@ pub struct GetReferenceMetadataOutput {
     /// <p>The reference's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the reference was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>When the reference was updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The reference's files.</p>
     pub files: ::std::option::Option<crate::types::ReferenceFiles>,
     _request_id: Option<String>,
 }
 impl GetReferenceMetadataOutput {
     /// <p>The reference's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The reference's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The reference's reference store ID.</p>
-    pub fn reference_store_id(&self) -> ::std::option::Option<&str> {
-        self.reference_store_id.as_deref()
+    pub fn reference_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_store_id.deref()
     }
     /// <p>The reference's MD5 checksum.</p>
-    pub fn md5(&self) -> ::std::option::Option<&str> {
-        self.md5.as_deref()
+    pub fn md5(&self) -> &str {
+        use std::ops::Deref;
+        self.md5.deref()
     }
     /// <p>The reference's status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
@@ -55,12 +59,12 @@ impl GetReferenceMetadataOutput {
         self.description.as_deref()
     }
     /// <p>When the reference was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>When the reference was updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The reference's files.</p>
     pub fn files(&self) -> ::std::option::Option<&crate::types::ReferenceFiles> {
@@ -97,6 +101,7 @@ pub struct GetReferenceMetadataOutputBuilder {
 }
 impl GetReferenceMetadataOutputBuilder {
     /// <p>The reference's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl GetReferenceMetadataOutputBuilder {
         &self.id
     }
     /// <p>The reference's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl GetReferenceMetadataOutputBuilder {
         &self.arn
     }
     /// <p>The reference's reference store ID.</p>
+    /// This field is required.
     pub fn reference_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_store_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +146,7 @@ impl GetReferenceMetadataOutputBuilder {
         &self.reference_store_id
     }
     /// <p>The reference's MD5 checksum.</p>
+    /// This field is required.
     pub fn md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.md5 = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +203,7 @@ impl GetReferenceMetadataOutputBuilder {
         &self.description
     }
     /// <p>When the reference was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -209,6 +218,7 @@ impl GetReferenceMetadataOutputBuilder {
         &self.creation_time
     }
     /// <p>When the reference was updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -246,19 +256,59 @@ impl GetReferenceMetadataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReferenceMetadataOutput`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput).
-    pub fn build(self) -> crate::operation::get_reference_metadata::GetReferenceMetadataOutput {
-        crate::operation::get_reference_metadata::GetReferenceMetadataOutput {
-            id: self.id,
-            arn: self.arn,
-            reference_store_id: self.reference_store_id,
-            md5: self.md5,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder::id)
+    /// - [`arn`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder::arn)
+    /// - [`reference_store_id`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder::reference_store_id)
+    /// - [`md5`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder::md5)
+    /// - [`creation_time`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder::creation_time)
+    /// - [`update_time`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_reference_metadata::GetReferenceMetadataOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_reference_metadata::GetReferenceMetadataOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetReferenceMetadataOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetReferenceMetadataOutput",
+                )
+            })?,
+            reference_store_id: self.reference_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reference_store_id",
+                    "reference_store_id was not specified but it is required when building GetReferenceMetadataOutput",
+                )
+            })?,
+            md5: self.md5.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "md5",
+                    "md5 was not specified but it is required when building GetReferenceMetadataOutput",
+                )
+            })?,
             status: self.status,
             name: self.name,
             description: self.description,
-            creation_time: self.creation_time,
-            update_time: self.update_time,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetReferenceMetadataOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building GetReferenceMetadataOutput",
+                )
+            })?,
             files: self.files,
             _request_id: self._request_id,
-        }
+        })
     }
 }

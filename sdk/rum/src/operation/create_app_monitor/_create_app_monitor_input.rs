@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppMonitorInput {
     /// <p>A name for the app monitor.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-    pub domain: ::std::option::Option<::std::string::String>,
+    pub domain: ::std::string::String,
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
@@ -25,12 +25,14 @@ pub struct CreateAppMonitorInput {
 }
 impl CreateAppMonitorInput {
     /// <p>A name for the app monitor.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
-        self.domain.as_deref()
+    pub fn domain(&self) -> &str {
+        use std::ops::Deref;
+        self.domain.deref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
@@ -76,6 +78,7 @@ pub struct CreateAppMonitorInputBuilder {
 }
 impl CreateAppMonitorInputBuilder {
     /// <p>A name for the app monitor.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateAppMonitorInputBuilder {
         &self.name
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -187,12 +191,25 @@ impl CreateAppMonitorInputBuilder {
         &self.custom_events
     }
     /// Consumes the builder and constructs a [`CreateAppMonitorInput`](crate::operation::create_app_monitor::CreateAppMonitorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_app_monitor::builders::CreateAppMonitorInputBuilder::name)
+    /// - [`domain`](crate::operation::create_app_monitor::builders::CreateAppMonitorInputBuilder::domain)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_app_monitor::CreateAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_monitor::CreateAppMonitorInput {
-            name: self.name,
-            domain: self.domain,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateAppMonitorInput",
+                )
+            })?,
+            domain: self.domain.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain",
+                    "domain was not specified but it is required when building CreateAppMonitorInput",
+                )
+            })?,
             tags: self.tags,
             app_monitor_configuration: self.app_monitor_configuration,
             cw_log_enabled: self.cw_log_enabled,

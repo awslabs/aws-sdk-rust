@@ -3,31 +3,31 @@ pub fn ser_put_maintenance_start_time_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.gateway_arn {
-        object.key("GatewayArn").string(var_1.as_str());
+    {
+        object.key("GatewayArn").string(input.gateway_arn.as_str());
     }
-    if let Some(var_2) = &input.hour_of_day {
+    {
         object.key("HourOfDay").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.hour_of_day).into()),
         );
     }
-    if let Some(var_3) = &input.minute_of_hour {
+    {
         object.key("MinuteOfHour").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.minute_of_hour).into()),
         );
     }
-    if let Some(var_4) = &input.day_of_week {
+    if let Some(var_1) = &input.day_of_week {
         object.key("DayOfWeek").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_5) = &input.day_of_month {
+    if let Some(var_2) = &input.day_of_month {
         object.key("DayOfMonth").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

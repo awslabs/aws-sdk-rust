@@ -41,6 +41,7 @@ pub struct DescribeRegionsInputBuilder {
 }
 impl DescribeRegionsInputBuilder {
     /// <p>The identifier of the directory.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

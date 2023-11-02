@@ -17,12 +17,16 @@ impl GetEcsServiceRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
-    pub fn ecs_service_recommendations(&self) -> ::std::option::Option<&[crate::types::EcsServiceRecommendation]> {
-        self.ecs_service_recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecs_service_recommendations.is_none()`.
+    pub fn ecs_service_recommendations(&self) -> &[crate::types::EcsServiceRecommendation] {
+        self.ecs_service_recommendations.as_deref().unwrap_or_default()
     }
     /// <p> An array of objects that describe errors of the request. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::GetRecommendationError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::GetRecommendationError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetEcsServiceRecommendationsOutput {

@@ -100,7 +100,7 @@ impl Client {
         if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
             panic!(
                 "An async sleep implementation is required for retries or timeouts to work. \
-                                        Set the `sleep_impl` on the Config passed into this function to fix this panic."
+                                    Set the `sleep_impl` on the Config passed into this function to fix this panic."
             );
         }
 
@@ -114,22 +114,6 @@ impl Client {
 
     /// Returns the client's configuration.
     pub fn config(&self) -> &crate::Config {
-        &self.handle.conf
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Creates a client with the given service configuration.
-    pub fn with_config<C, M, R>(_client: ::aws_smithy_client::Client<C, M, R>, conf: crate::Config) -> Self {
-        Self::from_conf(conf)
-    }
-
-    #[doc(hidden)]
-    // TODO(enableNewSmithyRuntimeCleanup): Delete this function when cleaning up middleware
-    // This is currently kept around so the tests still compile in both modes
-    /// Returns the client's configuration.
-    pub fn conf(&self) -> &crate::Config {
         &self.handle.conf
     }
 }
@@ -256,6 +240,8 @@ mod delete_hsm_configuration;
 
 mod delete_partner;
 
+mod delete_resource_policy;
+
 mod delete_scheduled_action;
 
 mod delete_snapshot_copy_grant;
@@ -312,6 +298,8 @@ mod describe_hsm_client_certificates;
 
 mod describe_hsm_configurations;
 
+mod describe_inbound_integrations;
+
 mod describe_logging_status;
 
 mod describe_node_configuration_options;
@@ -360,6 +348,8 @@ mod get_reserved_node_exchange_configuration_options;
 
 mod get_reserved_node_exchange_offerings;
 
+mod get_resource_policy;
+
 mod modify_aqua_configuration;
 
 mod modify_authentication_profile;
@@ -397,6 +387,8 @@ mod modify_usage_limit;
 mod pause_cluster;
 
 mod purchase_reserved_node_offering;
+
+mod put_resource_policy;
 
 mod reboot_cluster;
 

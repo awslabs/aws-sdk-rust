@@ -16,8 +16,10 @@ impl ListAssociationsInput {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
     /// </note>
-    pub fn association_filter_list(&self) -> ::std::option::Option<&[crate::types::AssociationFilter]> {
-        self.association_filter_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_filter_list.is_none()`.
+    pub fn association_filter_list(&self) -> &[crate::types::AssociationFilter] {
+        self.association_filter_list.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

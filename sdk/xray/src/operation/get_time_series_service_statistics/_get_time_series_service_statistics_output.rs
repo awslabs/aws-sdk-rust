@@ -13,8 +13,10 @@ pub struct GetTimeSeriesServiceStatisticsOutput {
 }
 impl GetTimeSeriesServiceStatisticsOutput {
     /// <p>The collection of statistics.</p>
-    pub fn time_series_service_statistics(&self) -> ::std::option::Option<&[crate::types::TimeSeriesServiceStatistics]> {
-        self.time_series_service_statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_service_statistics.is_none()`.
+    pub fn time_series_service_statistics(&self) -> &[crate::types::TimeSeriesServiceStatistics] {
+        self.time_series_service_statistics.as_deref().unwrap_or_default()
     }
     /// <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
     pub fn contains_old_group_versions(&self) -> bool {

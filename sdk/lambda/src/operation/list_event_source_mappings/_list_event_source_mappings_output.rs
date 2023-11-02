@@ -15,8 +15,10 @@ impl ListEventSourceMappingsOutput {
         self.next_marker.as_deref()
     }
     /// <p>A list of event source mappings.</p>
-    pub fn event_source_mappings(&self) -> ::std::option::Option<&[crate::types::EventSourceMappingConfiguration]> {
-        self.event_source_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_source_mappings.is_none()`.
+    pub fn event_source_mappings(&self) -> &[crate::types::EventSourceMappingConfiguration] {
+        self.event_source_mappings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEventSourceMappingsOutput {

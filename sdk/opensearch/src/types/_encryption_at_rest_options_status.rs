@@ -35,6 +35,7 @@ pub struct EncryptionAtRestOptionsStatusBuilder {
 }
 impl EncryptionAtRestOptionsStatusBuilder {
     /// <p>Encryption at rest options for the specified domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl EncryptionAtRestOptionsStatusBuilder {
         &self.options
     }
     /// <p>The status of the encryption at rest options for the specified domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

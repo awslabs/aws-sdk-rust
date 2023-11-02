@@ -40,16 +40,22 @@ impl DescribeAddonVersionsInput {
         self.addon_name.as_deref()
     }
     /// <p>The type of the add-on. For valid <code>types</code>, don't specify a value for this property.</p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.</p>
-    pub fn publishers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.publishers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publishers.is_none()`.
+    pub fn publishers(&self) -> &[::std::string::String] {
+        self.publishers.as_deref().unwrap_or_default()
     }
     /// <p>The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.</p>
-    pub fn owners(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.owners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
+    pub fn owners(&self) -> &[::std::string::String] {
+        self.owners.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAddonVersionsInput {

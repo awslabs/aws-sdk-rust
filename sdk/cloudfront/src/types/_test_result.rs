@@ -25,8 +25,10 @@ impl TestResult {
         self.compute_utilization.as_deref()
     }
     /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
-    pub fn function_execution_logs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.function_execution_logs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_execution_logs.is_none()`.
+    pub fn function_execution_logs(&self) -> &[::std::string::String] {
+        self.function_execution_logs.as_deref().unwrap_or_default()
     }
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
     pub fn function_error_message(&self) -> ::std::option::Option<&str> {

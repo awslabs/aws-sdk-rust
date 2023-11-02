@@ -67,6 +67,7 @@ impl ListDomainsInputBuilder {
         &self.next_page_token
     }
     /// <p>Specifies the registration status of the domains to list.</p>
+    /// This field is required.
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.registration_status = ::std::option::Option::Some(input);
         self

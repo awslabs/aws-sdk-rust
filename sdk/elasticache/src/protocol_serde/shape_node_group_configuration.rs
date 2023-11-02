@@ -57,6 +57,7 @@ pub fn ser_node_group_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_node_group_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::NodeGroupConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -55,6 +55,7 @@ impl AcceptInvitationInputBuilder {
         &self.administrator_account_id
     }
     /// <p>The unique identifier for the invitation to accept.</p>
+    /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self

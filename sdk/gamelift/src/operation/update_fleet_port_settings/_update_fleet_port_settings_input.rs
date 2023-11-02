@@ -16,12 +16,16 @@ impl UpdateFleetPortSettingsInput {
         self.fleet_id.as_deref()
     }
     /// <p>A collection of port settings to be added to the fleet resource.</p>
-    pub fn inbound_permission_authorizations(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.inbound_permission_authorizations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inbound_permission_authorizations.is_none()`.
+    pub fn inbound_permission_authorizations(&self) -> &[crate::types::IpPermission] {
+        self.inbound_permission_authorizations.as_deref().unwrap_or_default()
     }
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
-    pub fn inbound_permission_revocations(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.inbound_permission_revocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inbound_permission_revocations.is_none()`.
+    pub fn inbound_permission_revocations(&self) -> &[crate::types::IpPermission] {
+        self.inbound_permission_revocations.as_deref().unwrap_or_default()
     }
 }
 impl UpdateFleetPortSettingsInput {
@@ -41,6 +45,7 @@ pub struct UpdateFleetPortSettingsInputBuilder {
 }
 impl UpdateFleetPortSettingsInputBuilder {
     /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self

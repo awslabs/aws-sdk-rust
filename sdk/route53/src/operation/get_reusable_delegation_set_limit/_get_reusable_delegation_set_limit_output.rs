@@ -42,6 +42,7 @@ pub struct GetReusableDelegationSetLimitOutputBuilder {
 }
 impl GetReusableDelegationSetLimitOutputBuilder {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
+    /// This field is required.
     pub fn limit(mut self, input: crate::types::ReusableDelegationSetLimit) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl GetReusableDelegationSetLimitOutputBuilder {
         &self.limit
     }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    /// This field is required.
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
         self

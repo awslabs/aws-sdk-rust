@@ -3,8 +3,8 @@ pub fn ser_ip(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ip,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ip_address {
-        object.key("IpAddress").string(var_1.as_str());
+    {
+        object.key("IpAddress").string(input.ip_address.as_str());
     }
     Ok(())
 }

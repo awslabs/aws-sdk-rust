@@ -88,6 +88,7 @@ impl CreateInstanceInputBuilder {
         &self.client_token
     }
     /// <p>The type of identity management for your Amazon Connect users.</p>
+    /// This field is required.
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
         self.identity_management_type = ::std::option::Option::Some(input);
         self
@@ -130,6 +131,7 @@ impl CreateInstanceInputBuilder {
         &self.directory_id
     }
     /// <p>Your contact center handles incoming contacts.</p>
+    /// This field is required.
     pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
         self.inbound_calls_enabled = ::std::option::Option::Some(input);
         self
@@ -144,6 +146,7 @@ impl CreateInstanceInputBuilder {
         &self.inbound_calls_enabled
     }
     /// <p>Your contact center allows outbound calls.</p>
+    /// This field is required.
     pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
         self.outbound_calls_enabled = ::std::option::Option::Some(input);
         self

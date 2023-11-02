@@ -6,12 +6,12 @@
 pub struct CapacityUnitsConfiguration {
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
-    pub rescore_capacity_units: ::std::option::Option<i32>,
+    pub rescore_capacity_units: i32,
 }
 impl CapacityUnitsConfiguration {
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
-    pub fn rescore_capacity_units(&self) -> ::std::option::Option<i32> {
+    pub fn rescore_capacity_units(&self) -> i32 {
         self.rescore_capacity_units
     }
 }
@@ -31,6 +31,7 @@ pub struct CapacityUnitsConfigurationBuilder {
 impl CapacityUnitsConfigurationBuilder {
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
+    /// This field is required.
     pub fn rescore_capacity_units(mut self, input: i32) -> Self {
         self.rescore_capacity_units = ::std::option::Option::Some(input);
         self
@@ -47,9 +48,16 @@ impl CapacityUnitsConfigurationBuilder {
         &self.rescore_capacity_units
     }
     /// Consumes the builder and constructs a [`CapacityUnitsConfiguration`](crate::types::CapacityUnitsConfiguration).
-    pub fn build(self) -> crate::types::CapacityUnitsConfiguration {
-        crate::types::CapacityUnitsConfiguration {
-            rescore_capacity_units: self.rescore_capacity_units,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rescore_capacity_units`](crate::types::builders::CapacityUnitsConfigurationBuilder::rescore_capacity_units)
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityUnitsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CapacityUnitsConfiguration {
+            rescore_capacity_units: self.rescore_capacity_units.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rescore_capacity_units",
+                    "rescore_capacity_units was not specified but it is required when building CapacityUnitsConfiguration",
+                )
+            })?,
+        })
     }
 }

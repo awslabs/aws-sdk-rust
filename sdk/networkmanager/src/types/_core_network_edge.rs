@@ -21,8 +21,10 @@ impl CoreNetworkEdge {
         self.asn
     }
     /// <p>The inside IP addresses used for core network edges.</p>
-    pub fn inside_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inside_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
+    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
+        self.inside_cidr_blocks.as_deref().unwrap_or_default()
     }
 }
 impl CoreNetworkEdge {

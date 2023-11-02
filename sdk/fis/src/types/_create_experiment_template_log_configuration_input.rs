@@ -9,7 +9,7 @@ pub struct CreateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub s3_configuration: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>,
     /// <p>The schema version.</p>
-    pub log_schema_version: ::std::option::Option<i32>,
+    pub log_schema_version: i32,
 }
 impl CreateExperimentTemplateLogConfigurationInput {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
@@ -21,7 +21,7 @@ impl CreateExperimentTemplateLogConfigurationInput {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
-    pub fn log_schema_version(&self) -> ::std::option::Option<i32> {
+    pub fn log_schema_version(&self) -> i32 {
         self.log_schema_version
     }
 }
@@ -73,6 +73,7 @@ impl CreateExperimentTemplateLogConfigurationInputBuilder {
         &self.s3_configuration
     }
     /// <p>The schema version.</p>
+    /// This field is required.
     pub fn log_schema_version(mut self, input: i32) -> Self {
         self.log_schema_version = ::std::option::Option::Some(input);
         self
@@ -87,11 +88,20 @@ impl CreateExperimentTemplateLogConfigurationInputBuilder {
         &self.log_schema_version
     }
     /// Consumes the builder and constructs a [`CreateExperimentTemplateLogConfigurationInput`](crate::types::CreateExperimentTemplateLogConfigurationInput).
-    pub fn build(self) -> crate::types::CreateExperimentTemplateLogConfigurationInput {
-        crate::types::CreateExperimentTemplateLogConfigurationInput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_schema_version`](crate::types::builders::CreateExperimentTemplateLogConfigurationInputBuilder::log_schema_version)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CreateExperimentTemplateLogConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateExperimentTemplateLogConfigurationInput {
             cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
             s3_configuration: self.s3_configuration,
-            log_schema_version: self.log_schema_version,
-        }
+            log_schema_version: self.log_schema_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_schema_version",
+                    "log_schema_version was not specified but it is required when building CreateExperimentTemplateLogConfigurationInput",
+                )
+            })?,
+        })
     }
 }

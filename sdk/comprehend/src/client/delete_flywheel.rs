@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFlywheel`](crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flywheel_arn(impl Into<String>)`](crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::flywheel_arn) / [`set_flywheel_arn(Option<String>)`](crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::set_flywheel_arn): <p>The Amazon Resource Number (ARN) of the flywheel to delete.</p>
+    ///   - [`flywheel_arn(impl Into<String>)`](crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::flywheel_arn) / [`set_flywheel_arn(Option<String>)`](crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder::set_flywheel_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the flywheel to delete.</p><br>
     /// - On success, responds with [`DeleteFlywheelOutput`](crate::operation::delete_flywheel::DeleteFlywheelOutput)
     /// - On failure, responds with [`SdkError<DeleteFlywheelError>`](crate::operation::delete_flywheel::DeleteFlywheelError)
     pub fn delete_flywheel(&self) -> crate::operation::delete_flywheel::builders::DeleteFlywheelFluentBuilder {

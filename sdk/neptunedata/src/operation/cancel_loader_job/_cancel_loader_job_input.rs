@@ -27,6 +27,7 @@ pub struct CancelLoaderJobInputBuilder {
 }
 impl CancelLoaderJobInputBuilder {
     /// <p>The ID of the load job to be deleted.</p>
+    /// This field is required.
     pub fn load_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_id = ::std::option::Option::Some(input.into());
         self

@@ -48,6 +48,7 @@ pub struct TestAvailabilityConfigurationInputBuilder {
 }
 impl TestAvailabilityConfigurationInputBuilder {
     /// <p>The WorkMail organization where the availability provider will be tested.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

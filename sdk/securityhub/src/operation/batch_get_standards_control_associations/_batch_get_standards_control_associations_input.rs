@@ -8,8 +8,10 @@ pub struct BatchGetStandardsControlAssociationsInput {
 }
 impl BatchGetStandardsControlAssociationsInput {
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
-    pub fn standards_control_association_ids(&self) -> ::std::option::Option<&[crate::types::StandardsControlAssociationId]> {
-        self.standards_control_association_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_ids.is_none()`.
+    pub fn standards_control_association_ids(&self) -> &[crate::types::StandardsControlAssociationId] {
+        self.standards_control_association_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetStandardsControlAssociationsInput {

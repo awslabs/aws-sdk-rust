@@ -34,6 +34,7 @@ pub struct DeleteTrafficMirrorFilterRuleInputBuilder {
 }
 impl DeleteTrafficMirrorFilterRuleInputBuilder {
     /// <p>The ID of the Traffic Mirror rule.</p>
+    /// This field is required.
     pub fn traffic_mirror_filter_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_mirror_filter_rule_id = ::std::option::Option::Some(input.into());
         self

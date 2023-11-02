@@ -30,8 +30,10 @@ impl UpdateEndpointInput {
         self.retain_all_variant_properties
     }
     /// <p>When you are updating endpoint resources with <code>RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties are overridden. </p>
-    pub fn exclude_retained_variant_properties(&self) -> ::std::option::Option<&[crate::types::VariantProperty]> {
-        self.exclude_retained_variant_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_retained_variant_properties.is_none()`.
+    pub fn exclude_retained_variant_properties(&self) -> &[crate::types::VariantProperty] {
+        self.exclude_retained_variant_properties.as_deref().unwrap_or_default()
     }
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
     pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
@@ -62,6 +64,7 @@ pub struct UpdateEndpointInputBuilder {
 }
 impl UpdateEndpointInputBuilder {
     /// <p>The name of the endpoint whose configuration you want to update.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl UpdateEndpointInputBuilder {
         &self.endpoint_name
     }
     /// <p>The name of the new endpoint configuration.</p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self

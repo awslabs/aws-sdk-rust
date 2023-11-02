@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTags`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_resource_arn): Placeholder documentation for __string
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tag_keys): An array of tag keys to delete
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_resource_arn):<br>required: **true**<br>Placeholder documentation for __string<br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::delete_tags::builders::DeleteTagsFluentBuilder::set_tag_keys):<br>required: **true**<br>An array of tag keys to delete<br>
     /// - On success, responds with [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput)
     /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::operation::delete_tags::DeleteTagsError)
     pub fn delete_tags(&self) -> crate::operation::delete_tags::builders::DeleteTagsFluentBuilder {

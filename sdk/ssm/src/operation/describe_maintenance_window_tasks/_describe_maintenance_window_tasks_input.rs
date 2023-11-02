@@ -18,8 +18,10 @@ impl DescribeMaintenanceWindowTasksInput {
         self.window_id.as_deref()
     }
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::MaintenanceWindowFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct DescribeMaintenanceWindowTasksInputBuilder {
 }
 impl DescribeMaintenanceWindowTasksInputBuilder {
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self

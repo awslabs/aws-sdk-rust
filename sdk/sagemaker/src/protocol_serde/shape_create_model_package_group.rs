@@ -58,7 +58,7 @@ pub fn de_create_model_package_group_http_response(
         output = crate::protocol_serde::shape_create_model_package_group::de_create_model_package_group(_response_body, output)
             .map_err(crate::operation::create_model_package_group::CreateModelPackageGroupError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_model_package_group_output_correct_errors(output).build()
     })
 }
 

@@ -35,6 +35,7 @@ pub struct ScheduleConfigurationBuilder {
 }
 impl ScheduleConfigurationBuilder {
     /// <p>Program transition configurations.</p>
+    /// This field is required.
     pub fn transition(mut self, input: crate::types::Transition) -> Self {
         self.transition = ::std::option::Option::Some(input);
         self

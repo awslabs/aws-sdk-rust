@@ -33,8 +33,10 @@ impl InsightEvent {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service during the event that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> ::std::option::Option<&[crate::types::AnomalousService]> {
-        self.top_anomalous_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.top_anomalous_services.is_none()`.
+    pub fn top_anomalous_services(&self) -> &[crate::types::AnomalousService] {
+        self.top_anomalous_services.as_deref().unwrap_or_default()
     }
 }
 impl InsightEvent {

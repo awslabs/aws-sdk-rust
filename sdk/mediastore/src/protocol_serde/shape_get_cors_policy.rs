@@ -95,7 +95,9 @@ pub fn de_get_cors_policy_http_response(
         output = crate::protocol_serde::shape_get_cors_policy::de_get_cors_policy(_response_body, output)
             .map_err(crate::operation::get_cors_policy::GetCorsPolicyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_cors_policy_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_cors_policy::GetCorsPolicyError::unhandled)?
     })
 }
 

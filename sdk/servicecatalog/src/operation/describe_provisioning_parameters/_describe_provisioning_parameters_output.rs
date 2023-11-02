@@ -24,35 +24,47 @@ pub struct DescribeProvisioningParametersOutput {
 }
 impl DescribeProvisioningParametersOutput {
     /// <p>Information about the parameters used to provision the product.</p>
-    pub fn provisioning_artifact_parameters(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifactParameter]> {
-        self.provisioning_artifact_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifact_parameters.is_none()`.
+    pub fn provisioning_artifact_parameters(&self) -> &[crate::types::ProvisioningArtifactParameter] {
+        self.provisioning_artifact_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Information about the constraints used to provision the product.</p>
-    pub fn constraint_summaries(&self) -> ::std::option::Option<&[crate::types::ConstraintSummary]> {
-        self.constraint_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.constraint_summaries.is_none()`.
+    pub fn constraint_summaries(&self) -> &[crate::types::ConstraintSummary] {
+        self.constraint_summaries.as_deref().unwrap_or_default()
     }
     /// <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
-    pub fn usage_instructions(&self) -> ::std::option::Option<&[crate::types::UsageInstruction]> {
-        self.usage_instructions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_instructions.is_none()`.
+    pub fn usage_instructions(&self) -> &[crate::types::UsageInstruction] {
+        self.usage_instructions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the TagOptions associated with the resource.</p>
-    pub fn tag_options(&self) -> ::std::option::Option<&[crate::types::TagOptionSummary]> {
-        self.tag_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_options.is_none()`.
+    pub fn tag_options(&self) -> &[crate::types::TagOptionSummary] {
+        self.tag_options.as_deref().unwrap_or_default()
     }
     /// <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
     pub fn provisioning_artifact_preferences(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactPreferences> {
         self.provisioning_artifact_preferences.as_ref()
     }
     /// <p>The output of the provisioning artifact.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifact_outputs.is_none()`.
     #[deprecated(
         note = "This property is deprecated and returns the Id and Description of the Provisioning Artifact. Use ProvisioningArtifactOutputKeys instead to get the Keys and Descriptions of the outputs."
     )]
-    pub fn provisioning_artifact_outputs(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifactOutput]> {
-        self.provisioning_artifact_outputs.as_deref()
+    pub fn provisioning_artifact_outputs(&self) -> &[crate::types::ProvisioningArtifactOutput] {
+        self.provisioning_artifact_outputs.as_deref().unwrap_or_default()
     }
     /// <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
-    pub fn provisioning_artifact_output_keys(&self) -> ::std::option::Option<&[crate::types::ProvisioningArtifactOutput]> {
-        self.provisioning_artifact_output_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_artifact_output_keys.is_none()`.
+    pub fn provisioning_artifact_output_keys(&self) -> &[crate::types::ProvisioningArtifactOutput] {
+        self.provisioning_artifact_output_keys.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeProvisioningParametersOutput {

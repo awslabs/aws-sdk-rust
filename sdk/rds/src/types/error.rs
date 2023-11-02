@@ -103,6 +103,8 @@ pub use crate::types::error::_invalid_db_subnet_group_state_fault::InvalidDbSubn
 
 pub use crate::types::error::_invalid_db_parameter_group_state_fault::InvalidDbParameterGroupStateFault;
 
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
+
 pub use crate::types::error::_db_proxy_target_group_not_found_fault::DbProxyTargetGroupNotFoundFault;
 
 pub use crate::types::error::_db_proxy_not_found_fault::DbProxyNotFoundFault;
@@ -179,6 +181,10 @@ pub use crate::types::error::_db_proxy_target_not_found_fault::DbProxyTargetNotF
 
 pub use crate::types::error::_db_cluster_backtrack_not_found_fault::DbClusterBacktrackNotFoundFault;
 
+pub use crate::types::error::_invalid_integration_state_fault::InvalidIntegrationStateFault;
+
+pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFault;
+
 pub use crate::types::error::_invalid_event_subscription_state_fault::InvalidEventSubscriptionStateFault;
 
 pub use crate::types::error::_invalid_db_subnet_state_fault::InvalidDbSubnetStateFault;
@@ -194,6 +200,10 @@ pub use crate::types::error::_db_cluster_automated_backup_quota_exceeded_fault::
 pub use crate::types::error::_option_group_quota_exceeded_fault::OptionGroupQuotaExceededFault;
 
 pub use crate::types::error::_option_group_already_exists_fault::OptionGroupAlreadyExistsFault;
+
+pub use crate::types::error::_integration_quota_exceeded_fault::IntegrationQuotaExceededFault;
+
+pub use crate::types::error::_integration_already_exists_fault::IntegrationAlreadyExistsFault;
 
 pub use crate::types::error::_global_cluster_quota_exceeded_fault::GlobalClusterQuotaExceededFault;
 
@@ -407,6 +417,14 @@ mod _insufficient_db_instance_capacity_fault;
 
 mod _insufficient_storage_cluster_capacity_fault;
 
+mod _integration_already_exists_fault;
+
+mod _integration_conflict_operation_fault;
+
+mod _integration_not_found_fault;
+
+mod _integration_quota_exceeded_fault;
+
 mod _invalid_blue_green_deployment_state_fault;
 
 mod _invalid_custom_db_engine_version_state_fault;
@@ -450,6 +468,8 @@ mod _invalid_export_source_state_fault;
 mod _invalid_export_task_state_fault;
 
 mod _invalid_global_cluster_state_fault;
+
+mod _invalid_integration_state_fault;
 
 mod _invalid_option_group_state_fault;
 

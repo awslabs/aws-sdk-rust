@@ -11,8 +11,10 @@ pub struct ListDataCellsFilterOutput {
 }
 impl ListDataCellsFilterOutput {
     /// <p>A list of <code>DataCellFilter</code> structures.</p>
-    pub fn data_cells_filters(&self) -> ::std::option::Option<&[crate::types::DataCellsFilter]> {
-        self.data_cells_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_cells_filters.is_none()`.
+    pub fn data_cells_filters(&self) -> &[crate::types::DataCellsFilter] {
+        self.data_cells_filters.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if not all requested data cell filters have been returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

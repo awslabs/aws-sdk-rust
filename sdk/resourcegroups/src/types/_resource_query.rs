@@ -14,7 +14,7 @@ pub struct ResourceQuery {
     /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> Specifies that you want the group to contain the members of an CloudFormation stack. The <code>Query</code> contains a <code>StackIdentifier</code> element with an ARN for a CloudFormation stack.</p> </li>
     /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include resource that have tags that match the query. </p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::QueryType>,
+    pub r#type: crate::types::QueryType,
     /// <p>The query that defines a group or a search. The contents depends on the value of the <code>Type</code> element.</p>
     /// <ul>
     /// <li> <p> <code>ResourceTypeFilters</code> – Applies to all <code>ResourceQuery</code> objects of either <code>Type</code>. This element contains one of the following two items:</p>
@@ -33,7 +33,7 @@ pub struct ResourceQuery {
     /// </ul> <p>Example: <code>"TagFilters": [ { "Key": "Stage", "Values": [ "Gamma", "Beta" ] }</code> </p> </li>
     /// <li> <p> <code>StackIdentifier</code> – applicable only if <code>Type</code> = <code>CLOUDFORMATION_STACK_1_0</code>. The value of this parameter is the Amazon Resource Name (ARN) of the CloudFormation stack whose resources you want included in the group.</p> </li>
     /// </ul>
-    pub query: ::std::option::Option<::std::string::String>,
+    pub query: ::std::string::String,
 }
 impl ResourceQuery {
     /// <p>The type of the query to perform. This can have one of two values:</p>
@@ -41,8 +41,8 @@ impl ResourceQuery {
     /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> Specifies that you want the group to contain the members of an CloudFormation stack. The <code>Query</code> contains a <code>StackIdentifier</code> element with an ARN for a CloudFormation stack.</p> </li>
     /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include resource that have tags that match the query. </p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::QueryType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::QueryType {
+        &self.r#type
     }
     /// <p>The query that defines a group or a search. The contents depends on the value of the <code>Type</code> element.</p>
     /// <ul>
@@ -62,8 +62,9 @@ impl ResourceQuery {
     /// </ul> <p>Example: <code>"TagFilters": [ { "Key": "Stage", "Values": [ "Gamma", "Beta" ] }</code> </p> </li>
     /// <li> <p> <code>StackIdentifier</code> – applicable only if <code>Type</code> = <code>CLOUDFORMATION_STACK_1_0</code>. The value of this parameter is the Amazon Resource Name (ARN) of the CloudFormation stack whose resources you want included in the group.</p> </li>
     /// </ul>
-    pub fn query(&self) -> ::std::option::Option<&str> {
-        self.query.as_deref()
+    pub fn query(&self) -> &str {
+        use std::ops::Deref;
+        self.query.deref()
     }
 }
 impl ResourceQuery {
@@ -86,6 +87,7 @@ impl ResourceQueryBuilder {
     /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> Specifies that you want the group to contain the members of an CloudFormation stack. The <code>Query</code> contains a <code>StackIdentifier</code> element with an ARN for a CloudFormation stack.</p> </li>
     /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include resource that have tags that match the query. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::QueryType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -125,6 +127,7 @@ impl ResourceQueryBuilder {
     /// </ul> <p>Example: <code>"TagFilters": [ { "Key": "Stage", "Values": [ "Gamma", "Beta" ] }</code> </p> </li>
     /// <li> <p> <code>StackIdentifier</code> – applicable only if <code>Type</code> = <code>CLOUDFORMATION_STACK_1_0</code>. The value of this parameter is the Amazon Resource Name (ARN) of the CloudFormation stack whose resources you want included in the group.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query = ::std::option::Option::Some(input.into());
         self
@@ -173,10 +176,23 @@ impl ResourceQueryBuilder {
         &self.query
     }
     /// Consumes the builder and constructs a [`ResourceQuery`](crate::types::ResourceQuery).
-    pub fn build(self) -> crate::types::ResourceQuery {
-        crate::types::ResourceQuery {
-            r#type: self.r#type,
-            query: self.query,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ResourceQueryBuilder::r#type)
+    /// - [`query`](crate::types::builders::ResourceQueryBuilder::query)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceQuery, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceQuery {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResourceQuery",
+                )
+            })?,
+            query: self.query.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "query",
+                    "query was not specified but it is required when building ResourceQuery",
+                )
+            })?,
+        })
     }
 }

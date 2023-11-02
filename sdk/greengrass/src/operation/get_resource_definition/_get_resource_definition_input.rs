@@ -27,6 +27,7 @@ pub struct GetResourceDefinitionInputBuilder {
 }
 impl GetResourceDefinitionInputBuilder {
     /// The ID of the resource definition.
+    /// This field is required.
     pub fn resource_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_definition_id = ::std::option::Option::Some(input.into());
         self

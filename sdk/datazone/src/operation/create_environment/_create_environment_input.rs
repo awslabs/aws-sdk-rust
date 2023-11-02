@@ -40,12 +40,16 @@ impl CreateEnvironmentInput {
         self.environment_profile_identifier.as_deref()
     }
     /// <p>The user parameters of this Amazon DataZone environment.</p>
-    pub fn user_parameters(&self) -> ::std::option::Option<&[crate::types::EnvironmentParameter]> {
-        self.user_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::EnvironmentParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone environment.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[::std::string::String] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
 }
 impl CreateEnvironmentInput {
@@ -69,6 +73,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The identifier of the Amazon DataZone project in which this environment is created.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl CreateEnvironmentInputBuilder {
         &self.project_identifier
     }
     /// <p>The identifier of the Amazon DataZone domain in which the environment is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl CreateEnvironmentInputBuilder {
         &self.description
     }
     /// <p>The name of the Amazon DataZone environment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl CreateEnvironmentInputBuilder {
         &self.name
     }
     /// <p>The identifier of the environment profile that is used to create this Amazon DataZone environment.</p>
+    /// This field is required.
     pub fn environment_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_profile_identifier = ::std::option::Option::Some(input.into());
         self

@@ -24,8 +24,8 @@ pub fn ser_create_virtual_gateway_input(
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.virtual_gateway_name {
-        object.key("virtualGatewayName").string(var_8.as_str());
+    {
+        object.key("virtualGatewayName").string(input.virtual_gateway_name.as_str());
     }
     Ok(())
 }

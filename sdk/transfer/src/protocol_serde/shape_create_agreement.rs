@@ -25,11 +25,10 @@ pub fn de_create_agreement_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::create_agreement::CreateAgreementError::InvalidRequestException({
@@ -40,11 +39,10 @@ pub fn de_create_agreement_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceExistsException" => crate::operation::create_agreement::CreateAgreementError::ResourceExistsException({
@@ -55,11 +53,10 @@ pub fn de_create_agreement_http_error(
                 output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_exists_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_agreement::CreateAgreementError::ResourceNotFoundException({
@@ -70,11 +67,10 @@ pub fn de_create_agreement_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::create_agreement::CreateAgreementError::ServiceUnavailableException({
@@ -124,7 +120,9 @@ pub fn de_create_agreement_http_response(
         output = crate::protocol_serde::shape_create_agreement::de_create_agreement(_response_body, output)
             .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_agreement_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_agreement::CreateAgreementError::unhandled)?
     })
 }
 

@@ -40,8 +40,10 @@ impl CreateControlInput {
         self.action_plan_instructions.as_deref()
     }
     /// <p> The data mapping sources for the control. </p>
-    pub fn control_mapping_sources(&self) -> ::std::option::Option<&[crate::types::CreateControlMappingSource]> {
-        self.control_mapping_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_mapping_sources.is_none()`.
+    pub fn control_mapping_sources(&self) -> &[crate::types::CreateControlMappingSource] {
+        self.control_mapping_sources.as_deref().unwrap_or_default()
     }
     /// <p> The tags that are associated with the control. </p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -82,6 +84,7 @@ pub struct CreateControlInputBuilder {
 }
 impl CreateControlInputBuilder {
     /// <p> The name of the control. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -21,8 +21,10 @@ impl CreateAccessPointInput {
         self.client_token.as_deref()
     }
     /// <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
     pub fn file_system_id(&self) -> ::std::option::Option<&str> {
@@ -57,6 +59,7 @@ pub struct CreateAccessPointInputBuilder {
 }
 impl CreateAccessPointInputBuilder {
     /// <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl CreateAccessPointInputBuilder {
         &self.tags
     }
     /// <p>The ID of the EFS file system that the access point provides access to.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self

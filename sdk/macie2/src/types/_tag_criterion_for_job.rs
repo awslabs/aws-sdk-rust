@@ -15,8 +15,10 @@ impl TagCriterionForJob {
         self.comparator.as_ref()
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[crate::types::TagCriterionPairForJob]> {
-        self.tag_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
+    pub fn tag_values(&self) -> &[crate::types::TagCriterionPairForJob] {
+        self.tag_values.as_deref().unwrap_or_default()
     }
 }
 impl TagCriterionForJob {

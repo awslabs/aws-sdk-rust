@@ -27,8 +27,10 @@ impl DescribeLocationFsxOpenZfsOutput {
         self.location_uri.as_deref()
     }
     /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        self.security_group_arns.as_deref().unwrap_or_default()
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::FsxProtocol> {

@@ -14,8 +14,10 @@ impl CreateEdgeDeploymentStageInput {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub fn stages(&self) -> ::std::option::Option<&[crate::types::DeploymentStage]> {
-        self.stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stages.is_none()`.
+    pub fn stages(&self) -> &[crate::types::DeploymentStage] {
+        self.stages.as_deref().unwrap_or_default()
     }
 }
 impl CreateEdgeDeploymentStageInput {
@@ -34,6 +36,7 @@ pub struct CreateEdgeDeploymentStageInputBuilder {
 }
 impl CreateEdgeDeploymentStageInputBuilder {
     /// <p>The name of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self

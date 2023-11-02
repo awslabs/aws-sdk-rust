@@ -12,11 +12,11 @@ pub fn ser_list_environment_template_versions_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.template_name {
-        object.key("templateName").string(var_3.as_str());
+    {
+        object.key("templateName").string(input.template_name.as_str());
     }
-    if let Some(var_4) = &input.major_version {
-        object.key("majorVersion").string(var_4.as_str());
+    if let Some(var_3) = &input.major_version {
+        object.key("majorVersion").string(var_3.as_str());
     }
     Ok(())
 }

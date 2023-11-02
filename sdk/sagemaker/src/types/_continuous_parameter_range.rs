@@ -105,6 +105,7 @@ pub struct ContinuousParameterRangeBuilder {
 }
 impl ContinuousParameterRangeBuilder {
     /// <p>The name of the continuous hyperparameter to tune.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl ContinuousParameterRangeBuilder {
         &self.name
     }
     /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
+    /// This field is required.
     pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.min_value = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +135,7 @@ impl ContinuousParameterRangeBuilder {
         &self.min_value
     }
     /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
+    /// This field is required.
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_value = ::std::option::Option::Some(input.into());
         self

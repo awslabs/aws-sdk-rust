@@ -17,16 +17,22 @@ pub struct ImageLayerAggregation {
 }
 impl ImageLayerAggregation {
     /// <p>The repository associated with the container image hosting the layers.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories.is_none()`.
+    pub fn repositories(&self) -> &[crate::types::StringFilter] {
+        self.repositories.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the container image layer.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[crate::types::StringFilter] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The hashes associated with the layers.</p>
-    pub fn layer_hashes(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.layer_hashes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_hashes.is_none()`.
+    pub fn layer_hashes(&self) -> &[crate::types::StringFilter] {
+        self.layer_hashes.as_deref().unwrap_or_default()
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {

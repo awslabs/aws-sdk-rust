@@ -55,6 +55,7 @@ pub struct ModifyVpnConnectionInputBuilder {
 }
 impl ModifyVpnConnectionInputBuilder {
     /// <p>The ID of the VPN connection.</p>
+    /// This field is required.
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self

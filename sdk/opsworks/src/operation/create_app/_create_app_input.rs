@@ -49,8 +49,10 @@ impl CreateAppInput {
         self.description.as_deref()
     }
     /// <p>The app's data source.</p>
-    pub fn data_sources(&self) -> ::std::option::Option<&[crate::types::DataSource]> {
-        self.data_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::DataSource] {
+        self.data_sources.as_deref().unwrap_or_default()
     }
     /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AppType> {
@@ -61,8 +63,10 @@ impl CreateAppInput {
         self.app_source.as_ref()
     }
     /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-    pub fn domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[::std::string::String] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p>Whether to enable SSL for the app.</p>
     pub fn enable_ssl(&self) -> ::std::option::Option<bool> {
@@ -80,8 +84,10 @@ impl CreateAppInput {
     /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
     /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
     /// </note>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::EnvironmentVariable]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment.as_deref().unwrap_or_default()
     }
 }
 impl CreateAppInput {
@@ -110,6 +116,7 @@ pub struct CreateAppInputBuilder {
 }
 impl CreateAppInputBuilder {
     /// <p>The stack ID.</p>
+    /// This field is required.
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +145,7 @@ impl CreateAppInputBuilder {
         &self.shortname
     }
     /// <p>The app name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -186,6 +194,7 @@ impl CreateAppInputBuilder {
         &self.data_sources
     }
     /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AppType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

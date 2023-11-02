@@ -40,6 +40,7 @@ pub struct DeleteContainerImageInputBuilder {
 }
 impl DeleteContainerImageInputBuilder {
     /// <p>The name of the container service for which to delete a registered container image.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl DeleteContainerImageInputBuilder {
     /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
         self

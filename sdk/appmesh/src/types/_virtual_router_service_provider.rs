@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
-    pub virtual_router_name: ::std::option::Option<::std::string::String>,
+    pub virtual_router_name: ::std::string::String,
 }
 impl VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
-    pub fn virtual_router_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_router_name.as_deref()
+    pub fn virtual_router_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_router_name.deref()
     }
 }
 impl VirtualRouterServiceProvider {
@@ -28,6 +29,7 @@ pub struct VirtualRouterServiceProviderBuilder {
 }
 impl VirtualRouterServiceProviderBuilder {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl VirtualRouterServiceProviderBuilder {
         &self.virtual_router_name
     }
     /// Consumes the builder and constructs a [`VirtualRouterServiceProvider`](crate::types::VirtualRouterServiceProvider).
-    pub fn build(self) -> crate::types::VirtualRouterServiceProvider {
-        crate::types::VirtualRouterServiceProvider {
-            virtual_router_name: self.virtual_router_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_router_name`](crate::types::builders::VirtualRouterServiceProviderBuilder::virtual_router_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualRouterServiceProvider, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualRouterServiceProvider {
+            virtual_router_name: self.virtual_router_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_router_name",
+                    "virtual_router_name was not specified but it is required when building VirtualRouterServiceProvider",
+                )
+            })?,
+        })
     }
 }

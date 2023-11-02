@@ -42,6 +42,7 @@ pub struct CreateBranchInputBuilder {
 }
 impl CreateBranchInputBuilder {
     /// <p>The name of the repository in which you want to create the new branch.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateBranchInputBuilder {
         &self.repository_name
     }
     /// <p>The name of the new branch to create.</p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CreateBranchInputBuilder {
         &self.branch_name
     }
     /// <p>The ID of the commit to point the new branch to.</p>
+    /// This field is required.
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
         self

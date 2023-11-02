@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    pub r#type: ::std::option::Option<crate::types::FeedbackType>,
+    pub r#type: crate::types::FeedbackType,
 }
 impl UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FeedbackType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FeedbackType {
+        &self.r#type
     }
 }
 impl UserFeedback {
@@ -28,6 +28,7 @@ pub struct UserFeedbackBuilder {
 }
 impl UserFeedbackBuilder {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl UserFeedbackBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`UserFeedback`](crate::types::UserFeedback).
-    pub fn build(self) -> crate::types::UserFeedback {
-        crate::types::UserFeedback { r#type: self.r#type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::UserFeedbackBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserFeedback, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserFeedback {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building UserFeedback",
+                )
+            })?,
+        })
     }
 }

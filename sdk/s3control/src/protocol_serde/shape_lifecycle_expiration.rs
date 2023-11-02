@@ -21,6 +21,7 @@ pub fn ser_lifecycle_expiration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_expiration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LifecycleExpiration, ::aws_smithy_xml::decode::XmlDecodeError> {

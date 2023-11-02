@@ -3,20 +3,20 @@ pub fn ser_snowflake_destination_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnowflakeDestinationProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.object {
-        object.key("object").string(var_1.as_str());
+    {
+        object.key("object").string(input.object.as_str());
     }
-    if let Some(var_2) = &input.intermediate_bucket_name {
-        object.key("intermediateBucketName").string(var_2.as_str());
+    {
+        object.key("intermediateBucketName").string(input.intermediate_bucket_name.as_str());
     }
-    if let Some(var_3) = &input.bucket_prefix {
-        object.key("bucketPrefix").string(var_3.as_str());
+    if let Some(var_1) = &input.bucket_prefix {
+        object.key("bucketPrefix").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.error_handling_config {
+    if let Some(var_2) = &input.error_handling_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("errorHandlingConfig").start_object();
-        crate::protocol_serde::shape_error_handling_config::ser_error_handling_config(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("errorHandlingConfig").start_object();
+        crate::protocol_serde::shape_error_handling_config::ser_error_handling_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -71,7 +71,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::snowflake_destination_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

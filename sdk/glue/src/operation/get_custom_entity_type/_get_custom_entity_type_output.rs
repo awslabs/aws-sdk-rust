@@ -21,8 +21,10 @@ impl GetCustomEntityTypeOutput {
         self.regex_string.as_deref()
     }
     /// <p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
-    pub fn context_words(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.context_words.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_words.is_none()`.
+    pub fn context_words(&self) -> &[::std::string::String] {
+        self.context_words.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetCustomEntityTypeOutput {

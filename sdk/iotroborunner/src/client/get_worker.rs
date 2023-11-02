@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorker`](crate::operation::get_worker::builders::GetWorkerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_id): Full ARN of the worker.
+    ///   - [`id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_id):<br>required: **true**<br>Full ARN of the worker.<br>
     /// - On success, responds with [`GetWorkerOutput`](crate::operation::get_worker::GetWorkerOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::arn): Full ARN of the worker.
-    ///   - [`id(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::id): Filters access by the workers identifier
-    ///   - [`fleet(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::fleet): Full ARN of the worker fleet.
-    ///   - [`site(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::site): Site ARN.
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_worker::GetWorkerOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_worker::GetWorkerOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`name(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::name): Human friendly name of the resource.
+    ///   - [`arn(String)`](crate::operation::get_worker::GetWorkerOutput::arn): Full ARN of the worker.
+    ///   - [`id(String)`](crate::operation::get_worker::GetWorkerOutput::id): Filters access by the workers identifier
+    ///   - [`fleet(String)`](crate::operation::get_worker::GetWorkerOutput::fleet): Full ARN of the worker fleet.
+    ///   - [`site(String)`](crate::operation::get_worker::GetWorkerOutput::site): Site ARN.
+    ///   - [`created_at(DateTime)`](crate::operation::get_worker::GetWorkerOutput::created_at): Timestamp at which the resource was created.
+    ///   - [`updated_at(DateTime)`](crate::operation::get_worker::GetWorkerOutput::updated_at): Timestamp at which the resource was last updated.
+    ///   - [`name(String)`](crate::operation::get_worker::GetWorkerOutput::name): Human friendly name of the resource.
     ///   - [`additional_transient_properties(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::additional_transient_properties): JSON blob containing unstructured worker properties that are transient and may change during regular operation.
     ///   - [`additional_fixed_properties(Option<String>)`](crate::operation::get_worker::GetWorkerOutput::additional_fixed_properties): JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
     ///   - [`vendor_properties(Option<VendorProperties>)`](crate::operation::get_worker::GetWorkerOutput::vendor_properties): Properties of the worker that are provided by the vendor FMS.

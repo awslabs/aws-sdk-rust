@@ -30,8 +30,10 @@ pub struct DescribeCarrierGatewaysInput {
 }
 impl DescribeCarrierGatewaysInput {
     /// <p>One or more carrier gateway IDs.</p>
-    pub fn carrier_gateway_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.carrier_gateway_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.carrier_gateway_ids.is_none()`.
+    pub fn carrier_gateway_ids(&self) -> &[::std::string::String] {
+        self.carrier_gateway_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -48,8 +50,10 @@ impl DescribeCarrierGatewaysInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC associated with the carrier gateway.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

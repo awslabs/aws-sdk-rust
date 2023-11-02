@@ -15,15 +15,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDBv2Action {
     /// <p>The name of the DynamoDB table.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl DynamoDBv2Action {
     /// <p>The name of the DynamoDB table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
@@ -47,6 +48,7 @@ pub struct DynamoDBv2ActionBuilder {
 }
 impl DynamoDBv2ActionBuilder {
     /// <p>The name of the DynamoDB table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -78,10 +80,17 @@ impl DynamoDBv2ActionBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
-    pub fn build(self) -> crate::types::DynamoDBv2Action {
-        crate::types::DynamoDBv2Action {
-            table_name: self.table_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::DynamoDBv2ActionBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDBv2Action, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DynamoDBv2Action {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building DynamoDBv2Action",
+                )
+            })?,
             payload: self.payload,
-        }
+        })
     }
 }

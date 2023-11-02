@@ -73,12 +73,16 @@ impl CreateOpenZfsVolumeConfiguration {
         self.read_only
     }
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
-    pub fn nfs_exports(&self) -> ::std::option::Option<&[crate::types::OpenZfsNfsExport]> {
-        self.nfs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nfs_exports.is_none()`.
+    pub fn nfs_exports(&self) -> &[crate::types::OpenZfsNfsExport] {
+        self.nfs_exports.as_deref().unwrap_or_default()
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
-    pub fn user_and_group_quotas(&self) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
-        self.user_and_group_quotas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_and_group_quotas.is_none()`.
+    pub fn user_and_group_quotas(&self) -> &[crate::types::OpenZfsUserOrGroupQuota] {
+        self.user_and_group_quotas.as_deref().unwrap_or_default()
     }
 }
 impl CreateOpenZfsVolumeConfiguration {
@@ -105,6 +109,7 @@ pub struct CreateOpenZfsVolumeConfigurationBuilder {
 }
 impl CreateOpenZfsVolumeConfigurationBuilder {
     /// <p>The ID of the volume to use as the parent volume of the volume that you are creating.</p>
+    /// This field is required.
     pub fn parent_volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_volume_id = ::std::option::Option::Some(input.into());
         self

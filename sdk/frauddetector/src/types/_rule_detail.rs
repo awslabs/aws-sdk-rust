@@ -51,8 +51,10 @@ impl RuleDetail {
         self.language.as_ref()
     }
     /// <p>The rule outcomes.</p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.outcomes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
+    pub fn outcomes(&self) -> &[::std::string::String] {
+        self.outcomes.as_deref().unwrap_or_default()
     }
     /// <p>Timestamp of the last time the rule was updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&str> {

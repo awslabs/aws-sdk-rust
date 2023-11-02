@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFieldOptionsOutput {
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
+    pub options: ::std::vec::Vec<crate::types::FieldOption>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFieldOptionsOutput {
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::FieldOption]> {
-        self.options.as_deref()
+    pub fn options(&self) -> &[crate::types::FieldOption] {
+        use std::ops::Deref;
+        self.options.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListFieldOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
-    pub fn build(self) -> crate::operation::list_field_options::ListFieldOptionsOutput {
-        crate::operation::list_field_options::ListFieldOptionsOutput {
-            options: self.options,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`options`](crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder::options)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_field_options::ListFieldOptionsOutput {
+            options: self.options.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "options",
+                    "options was not specified but it is required when building ListFieldOptionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

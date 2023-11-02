@@ -35,6 +35,7 @@ pub struct VCpuCountRangeRequestBuilder {
 }
 impl VCpuCountRangeRequestBuilder {
     /// <p>The minimum number of vCPUs. To specify no minimum limit, specify <code>0</code>.</p>
+    /// This field is required.
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
         self

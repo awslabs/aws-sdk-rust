@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
     /// <p>The error message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The limit code.</p>
-    pub limit_code: ::std::option::Option<::std::string::String>,
+    pub limit_code: ::std::string::String,
     /// <p>The service code.</p>
-    pub service_code: ::std::option::Option<::std::string::String>,
+    pub service_code: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceQuotaExceededException {
@@ -26,27 +26,27 @@ impl ServiceQuotaExceededException {
         self.resource_type.as_deref()
     }
     /// <p>The limit code.</p>
-    pub fn limit_code(&self) -> ::std::option::Option<&str> {
-        self.limit_code.as_deref()
+    pub fn limit_code(&self) -> &str {
+        use std::ops::Deref;
+        self.limit_code.deref()
     }
     /// <p>The service code.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
-        self.service_code.as_deref()
+    pub fn service_code(&self) -> &str {
+        use std::ops::Deref;
+        self.service_code.deref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceQuotaExceededException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -83,6 +83,7 @@ pub struct ServiceQuotaExceededExceptionBuilder {
 }
 impl ServiceQuotaExceededExceptionBuilder {
     /// <p>The error message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +126,7 @@ impl ServiceQuotaExceededExceptionBuilder {
         &self.resource_type
     }
     /// <p>The limit code.</p>
+    /// This field is required.
     pub fn limit_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.limit_code = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +141,7 @@ impl ServiceQuotaExceededExceptionBuilder {
         &self.limit_code
     }
     /// <p>The service code.</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -164,14 +167,33 @@ impl ServiceQuotaExceededExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
-    pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
-        crate::types::error::ServiceQuotaExceededException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::message)
+    /// - [`limit_code`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::limit_code)
+    /// - [`service_code`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::service_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ServiceQuotaExceededException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ServiceQuotaExceededException",
+                )
+            })?,
             resource_id: self.resource_id,
             resource_type: self.resource_type,
-            limit_code: self.limit_code,
-            service_code: self.service_code,
+            limit_code: self.limit_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "limit_code",
+                    "limit_code was not specified but it is required when building ServiceQuotaExceededException",
+                )
+            })?,
+            service_code: self.service_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_code",
+                    "service_code was not specified but it is required when building ServiceQuotaExceededException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

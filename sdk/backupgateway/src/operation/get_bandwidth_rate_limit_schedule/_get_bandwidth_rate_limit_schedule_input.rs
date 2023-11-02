@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub gateway_arn: ::std::option::Option<::std::string::String>,
+    pub gateway_arn: ::std::string::String,
 }
 impl GetBandwidthRateLimitScheduleInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
-        self.gateway_arn.as_deref()
+    pub fn gateway_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_arn.deref()
     }
 }
 impl GetBandwidthRateLimitScheduleInput {
@@ -27,6 +28,7 @@ pub struct GetBandwidthRateLimitScheduleInputBuilder {
 }
 impl GetBandwidthRateLimitScheduleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl GetBandwidthRateLimitScheduleInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`GetBandwidthRateLimitScheduleInput`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_arn`](crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleInputBuilder::gateway_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl GetBandwidthRateLimitScheduleInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleInput {
-            gateway_arn: self.gateway_arn,
+            gateway_arn: self.gateway_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_arn",
+                    "gateway_arn was not specified but it is required when building GetBandwidthRateLimitScheduleInput",
+                )
+            })?,
         })
     }
 }

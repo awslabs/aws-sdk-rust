@@ -93,7 +93,9 @@ pub fn de_create_launch_configuration_template_http_response(
         output = crate::protocol_serde::shape_create_launch_configuration_template::de_create_launch_configuration_template(_response_body, output)
             .map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_launch_configuration_template_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::unhandled)?
     })
 }
 

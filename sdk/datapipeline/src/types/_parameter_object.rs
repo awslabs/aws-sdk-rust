@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterObject {
     /// <p>The ID of the parameter object. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The attributes of the parameter object.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
+    pub attributes: ::std::vec::Vec<crate::types::ParameterAttribute>,
 }
 impl ParameterObject {
     /// <p>The ID of the parameter object. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::ParameterAttribute]> {
-        self.attributes.as_deref()
+    pub fn attributes(&self) -> &[crate::types::ParameterAttribute] {
+        use std::ops::Deref;
+        self.attributes.deref()
     }
 }
 impl ParameterObject {
@@ -35,6 +37,7 @@ pub struct ParameterObjectBuilder {
 }
 impl ParameterObjectBuilder {
     /// <p>The ID of the parameter object. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl ParameterObjectBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`ParameterObject`](crate::types::ParameterObject).
-    pub fn build(self) -> crate::types::ParameterObject {
-        crate::types::ParameterObject {
-            id: self.id,
-            attributes: self.attributes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ParameterObjectBuilder::id)
+    /// - [`attributes`](crate::types::builders::ParameterObjectBuilder::attributes)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterObject, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParameterObject {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ParameterObject",
+                )
+            })?,
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building ParameterObject",
+                )
+            })?,
+        })
     }
 }

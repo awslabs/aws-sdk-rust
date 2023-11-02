@@ -48,6 +48,7 @@ pub struct RestoreServerInputBuilder {
 }
 impl RestoreServerInputBuilder {
     /// <p> The ID of the backup that you want to use to restore a server. </p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RestoreServerInputBuilder {
         &self.backup_id
     }
     /// <p> The name of the server that you want to restore. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self

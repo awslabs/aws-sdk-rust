@@ -53,6 +53,7 @@ pub fn ser_rule_condition(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_rule_condition(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::RuleCondition, ::aws_smithy_xml::decode::XmlDecodeError> {

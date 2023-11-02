@@ -37,12 +37,16 @@ impl ReplicatorSummary {
         self.is_replicator_reference
     }
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    pub fn kafka_clusters_summary(&self) -> ::std::option::Option<&[crate::types::KafkaClusterSummary]> {
-        self.kafka_clusters_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_clusters_summary.is_none()`.
+    pub fn kafka_clusters_summary(&self) -> &[crate::types::KafkaClusterSummary] {
+        self.kafka_clusters_summary.as_deref().unwrap_or_default()
     }
     /// <p>A list of summarized information of replications between clusters.</p>
-    pub fn replication_info_summary_list(&self) -> ::std::option::Option<&[crate::types::ReplicationInfoSummary]> {
-        self.replication_info_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_info_summary_list.is_none()`.
+    pub fn replication_info_summary_list(&self) -> &[crate::types::ReplicationInfoSummary] {
+        self.replication_info_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn replicator_arn(&self) -> ::std::option::Option<&str> {

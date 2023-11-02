@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryItemSchema {
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
-    pub type_name: ::std::option::Option<::std::string::String>,
+    pub type_name: ::std::string::String,
     /// <p>The schema version for the inventory item.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>>,
+    pub attributes: ::std::vec::Vec<crate::types::InventoryItemAttribute>,
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl InventoryItemSchema {
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
-        self.type_name.as_deref()
+    pub fn type_name(&self) -> &str {
+        use std::ops::Deref;
+        self.type_name.deref()
     }
     /// <p>The schema version for the inventory item.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::InventoryItemAttribute]> {
-        self.attributes.as_deref()
+    pub fn attributes(&self) -> &[crate::types::InventoryItemAttribute] {
+        use std::ops::Deref;
+        self.attributes.deref()
     }
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct InventoryItemSchemaBuilder {
 }
 impl InventoryItemSchemaBuilder {
     /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
+    /// This field is required.
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +114,25 @@ impl InventoryItemSchemaBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`InventoryItemSchema`](crate::types::InventoryItemSchema).
-    pub fn build(self) -> crate::types::InventoryItemSchema {
-        crate::types::InventoryItemSchema {
-            type_name: self.type_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`type_name`](crate::types::builders::InventoryItemSchemaBuilder::type_name)
+    /// - [`attributes`](crate::types::builders::InventoryItemSchemaBuilder::attributes)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryItemSchema, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryItemSchema {
+            type_name: self.type_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "type_name",
+                    "type_name was not specified but it is required when building InventoryItemSchema",
+                )
+            })?,
             version: self.version,
-            attributes: self.attributes,
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building InventoryItemSchema",
+                )
+            })?,
             display_name: self.display_name,
-        }
+        })
     }
 }

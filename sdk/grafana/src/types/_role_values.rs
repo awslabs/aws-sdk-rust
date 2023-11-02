@@ -11,12 +11,16 @@ pub struct RoleValues {
 }
 impl RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
-    pub fn editor(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.editor.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.editor.is_none()`.
+    pub fn editor(&self) -> &[::std::string::String] {
+        self.editor.as_deref().unwrap_or_default()
     }
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
-    pub fn admin(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.admin.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin.is_none()`.
+    pub fn admin(&self) -> &[::std::string::String] {
+        self.admin.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for RoleValues {

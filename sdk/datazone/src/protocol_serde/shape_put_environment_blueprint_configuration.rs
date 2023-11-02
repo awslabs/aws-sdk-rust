@@ -29,11 +29,10 @@ pub fn de_put_environment_blueprint_configuration_http_error(
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                         .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -46,11 +45,10 @@ pub fn de_put_environment_blueprint_configuration_http_error(
                     output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                         .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::conflict_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -63,11 +61,10 @@ pub fn de_put_environment_blueprint_configuration_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                         .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -83,11 +80,10 @@ pub fn de_put_environment_blueprint_configuration_http_error(
                     )
                     .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -100,11 +96,10 @@ pub fn de_put_environment_blueprint_configuration_http_error(
                     output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -117,11 +112,10 @@ pub fn de_put_environment_blueprint_configuration_http_error(
                     output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                         .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -134,11 +128,10 @@ pub fn de_put_environment_blueprint_configuration_http_error(
                     output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
                         .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::unauthorized_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -163,7 +156,9 @@ pub fn de_put_environment_blueprint_configuration_http_response(
             crate::protocol_serde::shape_put_environment_blueprint_configuration::de_put_environment_blueprint_configuration(_response_body, output)
                 .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::put_environment_blueprint_configuration_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::put_environment_blueprint_configuration::PutEnvironmentBlueprintConfigurationError::unhandled)?
     })
 }
 

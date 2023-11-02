@@ -48,6 +48,7 @@ impl PutDataLakeSettingsInputBuilder {
         &self.catalog_id
     }
     /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators.</p>
+    /// This field is required.
     pub fn data_lake_settings(mut self, input: crate::types::DataLakeSettings) -> Self {
         self.data_lake_settings = ::std::option::Option::Some(input);
         self

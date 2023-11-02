@@ -27,6 +27,7 @@ pub struct DescribeImportInputBuilder {
 }
 impl DescribeImportInputBuilder {
     /// <p>The unique identifier of the import to describe.</p>
+    /// This field is required.
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self

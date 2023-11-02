@@ -27,6 +27,7 @@ pub struct GetLogDeliveryConfigurationInputBuilder {
 }
 impl GetLogDeliveryConfigurationInputBuilder {
     /// <p>The ID of the user pool where you want to view detailed activity logging configuration.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self

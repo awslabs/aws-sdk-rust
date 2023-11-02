@@ -62,6 +62,7 @@ pub struct ModifyVerifiedAccessTrustProviderInputBuilder {
 }
 impl ModifyVerifiedAccessTrustProviderInputBuilder {
     /// <p>The ID of the Verified Access trust provider.</p>
+    /// This field is required.
     pub fn verified_access_trust_provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_trust_provider_id = ::std::option::Option::Some(input.into());
         self

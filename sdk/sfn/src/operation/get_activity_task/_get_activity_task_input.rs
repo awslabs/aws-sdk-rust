@@ -34,6 +34,7 @@ pub struct GetActivityTaskInputBuilder {
 }
 impl GetActivityTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
+    /// This field is required.
     pub fn activity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_arn = ::std::option::Option::Some(input.into());
         self

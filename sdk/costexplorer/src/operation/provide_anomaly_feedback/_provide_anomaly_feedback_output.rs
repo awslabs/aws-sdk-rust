@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
-    pub anomaly_id: ::std::option::Option<::std::string::String>,
+    pub anomaly_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
-    pub fn anomaly_id(&self) -> ::std::option::Option<&str> {
-        self.anomaly_id.as_deref()
+    pub fn anomaly_id(&self) -> &str {
+        use std::ops::Deref;
+        self.anomaly_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ProvideAnomalyFeedbackOutput {
@@ -34,6 +35,7 @@ pub struct ProvideAnomalyFeedbackOutputBuilder {
 }
 impl ProvideAnomalyFeedbackOutputBuilder {
     /// <p>The ID of the modified cost anomaly. </p>
+    /// This field is required.
     pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl ProvideAnomalyFeedbackOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackOutput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput).
-    pub fn build(self) -> crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput {
-        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput {
-            anomaly_id: self.anomaly_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`anomaly_id`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackOutputBuilder::anomaly_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput {
+            anomaly_id: self.anomaly_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "anomaly_id",
+                    "anomaly_id was not specified but it is required when building ProvideAnomalyFeedbackOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

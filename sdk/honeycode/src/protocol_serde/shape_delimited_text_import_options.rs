@@ -3,8 +3,8 @@ pub fn ser_delimited_text_import_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DelimitedTextImportOptions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.delimiter {
-        object.key("delimiter").string(var_1.as_str());
+    {
+        object.key("delimiter").string(input.delimiter.as_str());
     }
     if input.has_header_row {
         object.key("hasHeaderRow").boolean(input.has_header_row);
@@ -12,8 +12,8 @@ pub fn ser_delimited_text_import_options(
     if input.ignore_empty_rows {
         object.key("ignoreEmptyRows").boolean(input.ignore_empty_rows);
     }
-    if let Some(var_2) = &input.data_character_encoding {
-        object.key("dataCharacterEncoding").string(var_2.as_str());
+    if let Some(var_1) = &input.data_character_encoding {
+        object.key("dataCharacterEncoding").string(var_1.as_str());
     }
     Ok(())
 }
@@ -63,7 +63,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::delimited_text_import_options_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

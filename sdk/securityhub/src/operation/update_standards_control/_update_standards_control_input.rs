@@ -41,6 +41,7 @@ pub struct UpdateStandardsControlInputBuilder {
 }
 impl UpdateStandardsControlInputBuilder {
     /// <p>The ARN of the security standard control to enable or disable.</p>
+    /// This field is required.
     pub fn standards_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_control_arn = ::std::option::Option::Some(input.into());
         self

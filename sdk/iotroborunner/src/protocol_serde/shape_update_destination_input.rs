@@ -6,14 +6,14 @@ pub fn ser_update_destination_input(
     if let Some(var_1) = &input.additional_fixed_properties {
         object.key("additionalFixedProperties").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.id {
-        object.key("id").string(var_2.as_str());
+    {
+        object.key("id").string(input.id.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.state {
-        object.key("state").string(var_4.as_str());
+    if let Some(var_3) = &input.state {
+        object.key("state").string(var_3.as_str());
     }
     Ok(())
 }

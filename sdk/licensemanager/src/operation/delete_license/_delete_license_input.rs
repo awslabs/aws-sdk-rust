@@ -34,6 +34,7 @@ pub struct DeleteLicenseInputBuilder {
 }
 impl DeleteLicenseInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLicenseInputBuilder {
         &self.license_arn
     }
     /// <p>Current version of the license.</p>
+    /// This field is required.
     pub fn source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_version = ::std::option::Option::Some(input.into());
         self

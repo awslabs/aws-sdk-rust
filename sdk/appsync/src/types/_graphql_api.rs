@@ -82,8 +82,10 @@ impl GraphqlApi {
         self.tags.as_ref()
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
-    pub fn additional_authentication_providers(&self) -> ::std::option::Option<&[crate::types::AdditionalAuthenticationProvider]> {
-        self.additional_authentication_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_authentication_providers.is_none()`.
+    pub fn additional_authentication_providers(&self) -> &[crate::types::AdditionalAuthenticationProvider] {
+        self.additional_authentication_providers.as_deref().unwrap_or_default()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(&self) -> bool {

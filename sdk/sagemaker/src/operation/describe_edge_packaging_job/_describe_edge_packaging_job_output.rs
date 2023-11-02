@@ -132,6 +132,7 @@ pub struct DescribeEdgePackagingJobOutputBuilder {
 }
 impl DescribeEdgePackagingJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
+    /// This field is required.
     pub fn edge_packaging_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +147,7 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.edge_packaging_job_arn
     }
     /// <p>The name of the edge packaging job.</p>
+    /// This field is required.
     pub fn edge_packaging_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
@@ -244,6 +246,7 @@ impl DescribeEdgePackagingJobOutputBuilder {
         &self.resource_key
     }
     /// <p>The current status of the packaging job.</p>
+    /// This field is required.
     pub fn edge_packaging_job_status(mut self, input: crate::types::EdgePackagingJobStatus) -> Self {
         self.edge_packaging_job_status = ::std::option::Option::Some(input);
         self

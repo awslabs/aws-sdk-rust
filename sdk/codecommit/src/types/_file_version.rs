@@ -27,8 +27,10 @@ impl FileVersion {
         self.path.as_deref()
     }
     /// <p>An array of commit IDs that contain more recent versions of this file. If there are no additional versions of the file, this array will be empty.</p>
-    pub fn revision_children(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.revision_children.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revision_children.is_none()`.
+    pub fn revision_children(&self) -> &[::std::string::String] {
+        self.revision_children.as_deref().unwrap_or_default()
     }
 }
 impl FileVersion {

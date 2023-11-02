@@ -13,8 +13,10 @@ pub struct SearchDevicesOutput {
 }
 impl SearchDevicesOutput {
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::DeviceData]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::DeviceData] {
+        self.devices.as_deref().unwrap_or_default()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

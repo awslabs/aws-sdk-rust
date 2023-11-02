@@ -23,14 +23,18 @@ impl KernelGatewayAppSettings {
         self.default_resource_spec.as_ref()
     }
     /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
-    pub fn custom_images(&self) -> ::std::option::Option<&[crate::types::CustomImage]> {
-        self.custom_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_images.is_none()`.
+    pub fn custom_images(&self) -> &[crate::types::CustomImage] {
+        self.custom_images.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
-    pub fn lifecycle_config_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lifecycle_config_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_config_arns.is_none()`.
+    pub fn lifecycle_config_arns(&self) -> &[::std::string::String] {
+        self.lifecycle_config_arns.as_deref().unwrap_or_default()
     }
 }
 impl KernelGatewayAppSettings {

@@ -72,10 +72,7 @@ pub(crate) fn lens_describe_table_output_column_list(
 pub(crate) fn lens_get_statement_result_output_records(
     input: crate::operation::get_statement_result::GetStatementResultOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
-    let input = match input.records {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.records;
     ::std::option::Option::Some(input)
 }
 
@@ -102,10 +99,7 @@ pub(crate) fn lens_list_schemas_output_schemas(
 pub(crate) fn lens_list_statements_output_statements(
     input: crate::operation::list_statements::ListStatementsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StatementData>> {
-    let input = match input.statements {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.statements;
     ::std::option::Option::Some(input)
 }
 

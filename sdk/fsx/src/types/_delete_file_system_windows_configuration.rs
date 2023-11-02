@@ -15,8 +15,10 @@ impl DeleteFileSystemWindowsConfiguration {
         self.skip_final_backup
     }
     /// <p>A set of tags for your final backup.</p>
-    pub fn final_backup_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.final_backup_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_backup_tags.is_none()`.
+    pub fn final_backup_tags(&self) -> &[crate::types::Tag] {
+        self.final_backup_tags.as_deref().unwrap_or_default()
     }
 }
 impl DeleteFileSystemWindowsConfiguration {

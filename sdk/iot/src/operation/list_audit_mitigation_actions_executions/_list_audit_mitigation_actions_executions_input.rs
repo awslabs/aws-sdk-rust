@@ -55,6 +55,7 @@ pub struct ListAuditMitigationActionsExecutionsInputBuilder {
 }
 impl ListAuditMitigationActionsExecutionsInputBuilder {
     /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
         &self.action_status
     }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self

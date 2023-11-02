@@ -34,6 +34,7 @@ pub struct DescribeIdentityProviderConfigInputBuilder {
 }
 impl DescribeIdentityProviderConfigInputBuilder {
     /// <p>The cluster name that the identity provider configuration is associated to.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeIdentityProviderConfigInputBuilder {
         &self.cluster_name
     }
     /// <p>An object representing an identity provider configuration.</p>
+    /// This field is required.
     pub fn identity_provider_config(mut self, input: crate::types::IdentityProviderConfig) -> Self {
         self.identity_provider_config = ::std::option::Option::Some(input);
         self

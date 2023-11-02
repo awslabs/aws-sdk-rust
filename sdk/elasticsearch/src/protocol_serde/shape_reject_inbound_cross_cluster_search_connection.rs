@@ -36,8 +36,8 @@ pub fn de_reject_inbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionError::ResourceNotFoundException({
@@ -52,8 +52,8 @@ pub fn de_reject_inbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionError::generic(generic)

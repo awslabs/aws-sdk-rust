@@ -35,6 +35,7 @@ pub struct UpdateLoggingConfigurationOutputBuilder {
 }
 impl UpdateLoggingConfigurationOutputBuilder {
     /// The status of the logging configuration.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LoggingConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

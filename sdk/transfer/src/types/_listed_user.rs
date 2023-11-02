@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedUser {
     /// <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p> <note>
     /// <p>The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p>
@@ -27,8 +27,9 @@ pub struct ListedUser {
 }
 impl ListedUser {
     /// <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p> <note>
@@ -79,6 +80,7 @@ pub struct ListedUserBuilder {
 }
 impl ListedUserBuilder {
     /// <p>Provides the unique Amazon Resource Name (ARN) for the user that you want to learn about.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -187,14 +189,21 @@ impl ListedUserBuilder {
         &self.user_name
     }
     /// Consumes the builder and constructs a [`ListedUser`](crate::types::ListedUser).
-    pub fn build(self) -> crate::types::ListedUser {
-        crate::types::ListedUser {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ListedUserBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListedUser, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListedUser {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListedUser",
+                )
+            })?,
             home_directory: self.home_directory,
             home_directory_type: self.home_directory_type,
             role: self.role,
             ssh_public_key_count: self.ssh_public_key_count,
             user_name: self.user_name,
-        }
+        })
     }
 }

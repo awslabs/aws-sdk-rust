@@ -19,8 +19,10 @@ impl RecipeStep {
     /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
     /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
     /// </note>
-    pub fn condition_expressions(&self) -> ::std::option::Option<&[crate::types::ConditionExpression]> {
-        self.condition_expressions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.condition_expressions.is_none()`.
+    pub fn condition_expressions(&self) -> &[crate::types::ConditionExpression] {
+        self.condition_expressions.as_deref().unwrap_or_default()
     }
 }
 impl RecipeStep {
@@ -39,6 +41,7 @@ pub struct RecipeStepBuilder {
 }
 impl RecipeStepBuilder {
     /// <p>The particular action to be performed in the recipe step.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::RecipeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

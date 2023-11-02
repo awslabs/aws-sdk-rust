@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRevisionInput {
     /// <p>The unique identifier for a data set.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The unique identifier for a revision.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
 }
 impl GetRevisionInput {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl GetRevisionInput {
@@ -34,6 +36,7 @@ pub struct GetRevisionInputBuilder {
 }
 impl GetRevisionInputBuilder {
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetRevisionInputBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -62,10 +66,23 @@ impl GetRevisionInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`GetRevisionInput`](crate::operation::get_revision::GetRevisionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_id`](crate::operation::get_revision::builders::GetRevisionInputBuilder::data_set_id)
+    /// - [`revision_id`](crate::operation::get_revision::builders::GetRevisionInputBuilder::revision_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_revision::GetRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_revision::GetRevisionInput {
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building GetRevisionInput",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building GetRevisionInput",
+                )
+            })?,
         })
     }
 }

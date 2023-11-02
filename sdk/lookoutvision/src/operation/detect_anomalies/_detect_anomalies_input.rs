@@ -48,6 +48,7 @@ pub struct DetectAnomaliesInputBuilder {
 }
 impl DetectAnomaliesInputBuilder {
     /// <p>The name of the project that contains the model version that you want to use.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DetectAnomaliesInputBuilder {
         &self.project_name
     }
     /// <p>The version of the model that you want to use.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DetectAnomaliesInputBuilder {
         &self.model_version
     }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
+    /// This field is required.
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl DetectAnomaliesInputBuilder {
         &self.body
     }
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self

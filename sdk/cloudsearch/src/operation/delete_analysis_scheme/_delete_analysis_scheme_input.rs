@@ -35,6 +35,7 @@ pub struct DeleteAnalysisSchemeInputBuilder {
 }
 impl DeleteAnalysisSchemeInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteAnalysisSchemeInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the analysis scheme you want to delete.</p>
+    /// This field is required.
     pub fn analysis_scheme_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_scheme_name = ::std::option::Option::Some(input.into());
         self

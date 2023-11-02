@@ -5,21 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProfileOutput {
     /// <p>Information about the profile.</p>
-    pub profile: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub profile: ::aws_smithy_types::Blob,
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
-    pub content_type: ::std::option::Option<::std::string::String>,
+    pub content_type: ::std::string::String,
     /// <p>The content encoding of the profile.</p>
     pub content_encoding: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetProfileOutput {
     /// <p>Information about the profile.</p>
-    pub fn profile(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.profile.as_ref()
+    pub fn profile(&self) -> &::aws_smithy_types::Blob {
+        &self.profile
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
-        self.content_type.as_deref()
+    pub fn content_type(&self) -> &str {
+        use std::ops::Deref;
+        self.content_type.deref()
     }
     /// <p>The content encoding of the profile.</p>
     pub fn content_encoding(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct GetProfileOutputBuilder {
 }
 impl GetProfileOutputBuilder {
     /// <p>Information about the profile.</p>
+    /// This field is required.
     pub fn profile(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.profile = ::std::option::Option::Some(input);
         self
@@ -63,6 +65,7 @@ impl GetProfileOutputBuilder {
         &self.profile
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -100,12 +103,25 @@ impl GetProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
-    pub fn build(self) -> crate::operation::get_profile::GetProfileOutput {
-        crate::operation::get_profile::GetProfileOutput {
-            profile: self.profile,
-            content_type: self.content_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profile`](crate::operation::get_profile::builders::GetProfileOutputBuilder::profile)
+    /// - [`content_type`](crate::operation::get_profile::builders::GetProfileOutputBuilder::content_type)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_profile::GetProfileOutput {
+            profile: self.profile.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profile",
+                    "profile was not specified but it is required when building GetProfileOutput",
+                )
+            })?,
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building GetProfileOutput",
+                )
+            })?,
             content_encoding: self.content_encoding,
             _request_id: self._request_id,
-        }
+        })
     }
 }

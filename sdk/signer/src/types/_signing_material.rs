@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
-    pub certificate_arn: ::std::option::Option<::std::string::String>,
+    pub certificate_arn: ::std::string::String,
 }
 impl SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
-        self.certificate_arn.as_deref()
+    pub fn certificate_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_arn.deref()
     }
 }
 impl SigningMaterial {
@@ -28,6 +29,7 @@ pub struct SigningMaterialBuilder {
 }
 impl SigningMaterialBuilder {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl SigningMaterialBuilder {
         &self.certificate_arn
     }
     /// Consumes the builder and constructs a [`SigningMaterial`](crate::types::SigningMaterial).
-    pub fn build(self) -> crate::types::SigningMaterial {
-        crate::types::SigningMaterial {
-            certificate_arn: self.certificate_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_arn`](crate::types::builders::SigningMaterialBuilder::certificate_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SigningMaterial, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SigningMaterial {
+            certificate_arn: self.certificate_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate_arn",
+                    "certificate_arn was not specified but it is required when building SigningMaterial",
+                )
+            })?,
+        })
     }
 }

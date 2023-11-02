@@ -17,6 +17,7 @@ pub fn ser_predefined_metric_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_predefined_metric_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PredefinedMetricSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -54,5 +55,5 @@ pub fn de_predefined_metric_specification(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::predefined_metric_specification_correct_errors(builder).build())
 }

@@ -80,7 +80,7 @@ pub fn de_update_trust_anchor_http_response(
         output = crate::protocol_serde::shape_update_trust_anchor::de_update_trust_anchor(_response_body, output)
             .map_err(crate::operation::update_trust_anchor::UpdateTrustAnchorError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_trust_anchor_output_correct_errors(output).build()
     })
 }
 

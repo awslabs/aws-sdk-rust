@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
+    pub instance_id: ::std::string::String,
     /// <p>The status of an EC2 instance resource.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>A list of provided user-based subscription products.</p>
-    pub products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub products: ::std::vec::Vec<::std::string::String>,
     /// <p>The date of the last status check.</p>
     pub last_status_check_date: ::std::option::Option<::std::string::String>,
     /// <p>The status message for an EC2 instance.</p>
@@ -17,16 +17,19 @@ pub struct InstanceSummary {
 }
 impl InstanceSummary {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
+    pub fn instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_id.deref()
     }
     /// <p>The status of an EC2 instance resource.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>A list of provided user-based subscription products.</p>
-    pub fn products(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.products.as_deref()
+    pub fn products(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.products.deref()
     }
     /// <p>The date of the last status check.</p>
     pub fn last_status_check_date(&self) -> ::std::option::Option<&str> {
@@ -56,6 +59,7 @@ pub struct InstanceSummaryBuilder {
 }
 impl InstanceSummaryBuilder {
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl InstanceSummaryBuilder {
         &self.instance_id
     }
     /// <p>The status of an EC2 instance resource.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +137,32 @@ impl InstanceSummaryBuilder {
         &self.status_message
     }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
-    pub fn build(self) -> crate::types::InstanceSummary {
-        crate::types::InstanceSummary {
-            instance_id: self.instance_id,
-            status: self.status,
-            products: self.products,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_id`](crate::types::builders::InstanceSummaryBuilder::instance_id)
+    /// - [`status`](crate::types::builders::InstanceSummaryBuilder::status)
+    /// - [`products`](crate::types::builders::InstanceSummaryBuilder::products)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceSummary {
+            instance_id: self.instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_id",
+                    "instance_id was not specified but it is required when building InstanceSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building InstanceSummary",
+                )
+            })?,
+            products: self.products.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "products",
+                    "products was not specified but it is required when building InstanceSummary",
+                )
+            })?,
             last_status_check_date: self.last_status_check_date,
             status_message: self.status_message,
-        }
+        })
     }
 }

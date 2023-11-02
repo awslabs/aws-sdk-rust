@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableImportFindingsForProduct`](crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`product_subscription_arn(impl Into<String>)`](crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductFluentBuilder::product_subscription_arn) / [`set_product_subscription_arn(Option<String>)`](crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductFluentBuilder::set_product_subscription_arn): <p>The ARN of the integrated product to disable the integration for.</p>
+    ///   - [`product_subscription_arn(impl Into<String>)`](crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductFluentBuilder::product_subscription_arn) / [`set_product_subscription_arn(Option<String>)`](crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductFluentBuilder::set_product_subscription_arn):<br>required: **true**<br><p>The ARN of the integrated product to disable the integration for.</p><br>
     /// - On success, responds with [`DisableImportFindingsForProductOutput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductOutput)
     /// - On failure, responds with [`SdkError<DisableImportFindingsForProductError>`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductError)
     pub fn disable_import_findings_for_product(

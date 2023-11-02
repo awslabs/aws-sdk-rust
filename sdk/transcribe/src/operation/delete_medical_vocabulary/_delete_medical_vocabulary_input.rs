@@ -27,6 +27,7 @@ pub struct DeleteMedicalVocabularyInputBuilder {
 }
 impl DeleteMedicalVocabularyInputBuilder {
     /// <p>The name of the custom medical vocabulary you want to delete. Custom medical vocabulary names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self

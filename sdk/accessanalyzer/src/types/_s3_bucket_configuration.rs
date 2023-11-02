@@ -19,8 +19,10 @@ impl S3BucketConfiguration {
         self.bucket_policy.as_deref()
     }
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
-    pub fn bucket_acl_grants(&self) -> ::std::option::Option<&[crate::types::S3BucketAclGrantConfiguration]> {
-        self.bucket_acl_grants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_acl_grants.is_none()`.
+    pub fn bucket_acl_grants(&self) -> &[crate::types::S3BucketAclGrantConfiguration] {
+        self.bucket_acl_grants.as_deref().unwrap_or_default()
     }
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
     pub fn bucket_public_access_block(&self) -> ::std::option::Option<&crate::types::S3PublicAccessBlockConfiguration> {

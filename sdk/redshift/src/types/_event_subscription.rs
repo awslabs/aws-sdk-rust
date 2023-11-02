@@ -65,13 +65,17 @@ impl EventSubscription {
         self.source_type.as_deref()
     }
     /// <p>A list of the sources that publish events to the Amazon Redshift event notification subscription.</p>
-    pub fn source_ids_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ids_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids_list.is_none()`.
+    pub fn source_ids_list(&self) -> &[::std::string::String] {
+        self.source_ids_list.as_deref().unwrap_or_default()
     }
     /// <p>The list of Amazon Redshift event categories specified in the event notification subscription.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn event_categories_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories_list.is_none()`.
+    pub fn event_categories_list(&self) -> &[::std::string::String] {
+        self.event_categories_list.as_deref().unwrap_or_default()
     }
     /// <p>The event severity specified in the Amazon Redshift event notification subscription.</p>
     /// <p>Values: ERROR, INFO</p>
@@ -83,8 +87,10 @@ impl EventSubscription {
         self.enabled
     }
     /// <p>The list of tags for the event subscription.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl EventSubscription {

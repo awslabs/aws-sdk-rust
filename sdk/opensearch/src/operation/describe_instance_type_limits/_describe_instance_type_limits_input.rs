@@ -56,6 +56,7 @@ impl DescribeInstanceTypeLimitsInputBuilder {
         &self.domain_name
     }
     /// <p>The OpenSearch Service instance type for which you need limit information.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::OpenSearchPartitionInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl DescribeInstanceTypeLimitsInputBuilder {
         &self.instance_type
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// This field is required.
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self

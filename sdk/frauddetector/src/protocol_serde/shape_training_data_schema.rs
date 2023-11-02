@@ -3,20 +3,20 @@ pub fn ser_training_data_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrainingDataSchema,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.model_variables {
-        let mut array_2 = object.key("modelVariables").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("modelVariables").start_array();
+        for item_2 in &input.model_variables {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.label_schema {
+    if let Some(var_3) = &input.label_schema {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("labelSchema").start_object();
-        crate::protocol_serde::shape_label_schema::ser_label_schema(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("labelSchema").start_object();
+        crate::protocol_serde::shape_label_schema::ser_label_schema(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::training_data_schema_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -33,56 +33,82 @@ pub struct CoverageFilterCriteria {
 }
 impl CoverageFilterCriteria {
     /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
-    pub fn scan_status_code(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.scan_status_code.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_status_code.is_none()`.
+    pub fn scan_status_code(&self) -> &[crate::types::CoverageStringFilter] {
+        self.scan_status_code.as_deref().unwrap_or_default()
     }
     /// <p>The scan status reason to filter on.</p>
-    pub fn scan_status_reason(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.scan_status_reason.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_status_reason.is_none()`.
+    pub fn scan_status_reason(&self) -> &[crate::types::CoverageStringFilter] {
+        self.scan_status_reason.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.account_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_id.is_none()`.
+    pub fn account_id(&self) -> &[crate::types::CoverageStringFilter] {
+        self.account_id.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.resource_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id.is_none()`.
+    pub fn resource_id(&self) -> &[crate::types::CoverageStringFilter] {
+        self.resource_id.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.resource_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
+    pub fn resource_type(&self) -> &[crate::types::CoverageStringFilter] {
+        self.resource_type.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
-    pub fn scan_type(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.scan_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_type.is_none()`.
+    pub fn scan_type(&self) -> &[crate::types::CoverageStringFilter] {
+        self.scan_type.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon ECR repository name to filter on.</p>
-    pub fn ecr_repository_name(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.ecr_repository_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_repository_name.is_none()`.
+    pub fn ecr_repository_name(&self) -> &[crate::types::CoverageStringFilter] {
+        self.ecr_repository_name.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon ECR image tags to filter on.</p>
-    pub fn ecr_image_tags(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.ecr_image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_tags.is_none()`.
+    pub fn ecr_image_tags(&self) -> &[crate::types::CoverageStringFilter] {
+        self.ecr_image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instance tags to filter on.</p>
-    pub fn ec2_instance_tags(&self) -> ::std::option::Option<&[crate::types::CoverageMapFilter]> {
-        self.ec2_instance_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_tags.is_none()`.
+    pub fn ec2_instance_tags(&self) -> &[crate::types::CoverageMapFilter] {
+        self.ec2_instance_tags.as_deref().unwrap_or_default()
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
-    pub fn lambda_function_name(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.lambda_function_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
+    pub fn lambda_function_name(&self) -> &[crate::types::CoverageStringFilter] {
+        self.lambda_function_name.as_deref().unwrap_or_default()
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
-    pub fn lambda_function_tags(&self) -> ::std::option::Option<&[crate::types::CoverageMapFilter]> {
-        self.lambda_function_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_tags.is_none()`.
+    pub fn lambda_function_tags(&self) -> &[crate::types::CoverageMapFilter] {
+        self.lambda_function_tags.as_deref().unwrap_or_default()
     }
     /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
-    pub fn lambda_function_runtime(&self) -> ::std::option::Option<&[crate::types::CoverageStringFilter]> {
-        self.lambda_function_runtime.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_runtime.is_none()`.
+    pub fn lambda_function_runtime(&self) -> &[crate::types::CoverageStringFilter] {
+        self.lambda_function_runtime.as_deref().unwrap_or_default()
     }
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
-    pub fn last_scanned_at(&self) -> ::std::option::Option<&[crate::types::CoverageDateFilter]> {
-        self.last_scanned_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_scanned_at.is_none()`.
+    pub fn last_scanned_at(&self) -> &[crate::types::CoverageDateFilter] {
+        self.last_scanned_at.as_deref().unwrap_or_default()
     }
 }
 impl CoverageFilterCriteria {

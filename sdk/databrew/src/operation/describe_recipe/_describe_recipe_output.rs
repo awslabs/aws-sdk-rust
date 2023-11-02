@@ -20,7 +20,7 @@ pub struct DescribeRecipeOutput {
     /// <p>The description of the recipe.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recipe.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
     /// <p>Metadata tags associated with this project.</p>
@@ -65,12 +65,15 @@ impl DescribeRecipeOutput {
         self.description.as_deref()
     }
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::RecipeStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::RecipeStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>Metadata tags associated with this project.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -230,6 +233,7 @@ impl DescribeRecipeOutputBuilder {
         &self.description
     }
     /// <p>The name of the recipe.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -321,8 +325,12 @@ impl DescribeRecipeOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeRecipeOutput`](crate::operation::describe_recipe::DescribeRecipeOutput).
-    pub fn build(self) -> crate::operation::describe_recipe::DescribeRecipeOutput {
-        crate::operation::describe_recipe::DescribeRecipeOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::describe_recipe::builders::DescribeRecipeOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeOutput {
             created_by: self.created_by,
             create_date: self.create_date,
             last_modified_by: self.last_modified_by,
@@ -331,12 +339,17 @@ impl DescribeRecipeOutputBuilder {
             published_by: self.published_by,
             published_date: self.published_date,
             description: self.description,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeRecipeOutput",
+                )
+            })?,
             steps: self.steps,
             tags: self.tags,
             resource_arn: self.resource_arn,
             recipe_version: self.recipe_version,
             _request_id: self._request_id,
-        }
+        })
     }
 }

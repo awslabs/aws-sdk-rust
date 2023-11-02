@@ -130,8 +130,10 @@ impl RegisterUserInput {
         self.external_login_id.as_deref()
     }
     /// <p>The tags to associate with the user.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl RegisterUserInput {
@@ -165,6 +167,7 @@ impl RegisterUserInputBuilder {
     /// <li> <p> <code>IAM</code>: A user whose identity maps to an existing IAM user or role. </p> </li>
     /// <li> <p> <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
         self
@@ -187,6 +190,7 @@ impl RegisterUserInputBuilder {
         &self.identity_type
     }
     /// <p>The email address of the user that you want to register.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self
@@ -208,6 +212,7 @@ impl RegisterUserInputBuilder {
     /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
     /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
         self.user_role = ::std::option::Option::Some(input);
         self
@@ -264,6 +269,7 @@ impl RegisterUserInputBuilder {
         &self.session_name
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -278,6 +284,7 @@ impl RegisterUserInputBuilder {
         &self.aws_account_id
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self

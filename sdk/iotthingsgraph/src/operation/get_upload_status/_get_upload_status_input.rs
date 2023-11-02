@@ -27,6 +27,7 @@ pub struct GetUploadStatusInputBuilder {
 }
 impl GetUploadStatusInputBuilder {
     /// <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self

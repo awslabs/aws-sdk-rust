@@ -48,12 +48,16 @@ impl UpdatePortfolioInput {
         self.provider_name.as_deref()
     }
     /// <p>The tags to add.</p>
-    pub fn add_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.add_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_tags.is_none()`.
+    pub fn add_tags(&self) -> &[crate::types::Tag] {
+        self.add_tags.as_deref().unwrap_or_default()
     }
     /// <p>The tags to remove.</p>
-    pub fn remove_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_tags.is_none()`.
+    pub fn remove_tags(&self) -> &[::std::string::String] {
+        self.remove_tags.as_deref().unwrap_or_default()
     }
 }
 impl UpdatePortfolioInput {
@@ -103,6 +107,7 @@ impl UpdatePortfolioInputBuilder {
         &self.accept_language
     }
     /// <p>The portfolio identifier.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

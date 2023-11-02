@@ -34,6 +34,7 @@ pub struct DisassociateBudgetFromResourceInputBuilder {
 }
 impl DisassociateBudgetFromResourceInputBuilder {
     /// <p>The name of the budget you want to disassociate.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateBudgetFromResourceInputBuilder {
         &self.budget_name
     }
     /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingDataSchema {
     /// <p>The training data schema variables.</p>
-    pub model_variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub model_variables: ::std::vec::Vec<::std::string::String>,
     /// <p>The label schema.</p>
     pub label_schema: ::std::option::Option<crate::types::LabelSchema>,
 }
 impl TrainingDataSchema {
     /// <p>The training data schema variables.</p>
-    pub fn model_variables(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.model_variables.as_deref()
+    pub fn model_variables(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.model_variables.deref()
     }
     /// <p>The label schema.</p>
     pub fn label_schema(&self) -> ::std::option::Option<&crate::types::LabelSchema> {
@@ -69,10 +70,17 @@ impl TrainingDataSchemaBuilder {
         &self.label_schema
     }
     /// Consumes the builder and constructs a [`TrainingDataSchema`](crate::types::TrainingDataSchema).
-    pub fn build(self) -> crate::types::TrainingDataSchema {
-        crate::types::TrainingDataSchema {
-            model_variables: self.model_variables,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`model_variables`](crate::types::builders::TrainingDataSchemaBuilder::model_variables)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrainingDataSchema, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrainingDataSchema {
+            model_variables: self.model_variables.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "model_variables",
+                    "model_variables was not specified but it is required when building TrainingDataSchema",
+                )
+            })?,
             label_schema: self.label_schema,
-        }
+        })
     }
 }

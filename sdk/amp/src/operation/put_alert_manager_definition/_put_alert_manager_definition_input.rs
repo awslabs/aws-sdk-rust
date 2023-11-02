@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAlertManagerDefinitionInput {
     /// The ID of the workspace in which to update the alert manager definition.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// The alert manager definition data.
-    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub data: ::aws_smithy_types::Blob,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutAlertManagerDefinitionInput {
     /// The ID of the workspace in which to update the alert manager definition.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// The alert manager definition data.
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.data.as_ref()
+    pub fn data(&self) -> &::aws_smithy_types::Blob {
+        &self.data
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct PutAlertManagerDefinitionInputBuilder {
 }
 impl PutAlertManagerDefinitionInputBuilder {
     /// The ID of the workspace in which to update the alert manager definition.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl PutAlertManagerDefinitionInputBuilder {
         &self.workspace_id
     }
     /// The alert manager definition data.
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -84,6 +87,9 @@ impl PutAlertManagerDefinitionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`PutAlertManagerDefinitionInput`](crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionInputBuilder::workspace_id)
+    /// - [`data`](crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionInputBuilder::data)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,8 +97,18 @@ impl PutAlertManagerDefinitionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_alert_manager_definition::PutAlertManagerDefinitionInput {
-            workspace_id: self.workspace_id,
-            data: self.data,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building PutAlertManagerDefinitionInput",
+                )
+            })?,
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building PutAlertManagerDefinitionInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

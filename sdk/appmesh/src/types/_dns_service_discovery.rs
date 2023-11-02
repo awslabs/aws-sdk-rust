@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
-    pub hostname: ::std::option::Option<::std::string::String>,
+    pub hostname: ::std::string::String,
     /// <p>Specifies the DNS response type for the virtual node.</p>
     pub response_type: ::std::option::Option<crate::types::DnsResponseType>,
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
@@ -13,8 +13,9 @@ pub struct DnsServiceDiscovery {
 }
 impl DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
-        self.hostname.as_deref()
+    pub fn hostname(&self) -> &str {
+        use std::ops::Deref;
+        self.hostname.deref()
     }
     /// <p>Specifies the DNS response type for the virtual node.</p>
     pub fn response_type(&self) -> ::std::option::Option<&crate::types::DnsResponseType> {
@@ -42,6 +43,7 @@ pub struct DnsServiceDiscoveryBuilder {
 }
 impl DnsServiceDiscoveryBuilder {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+    /// This field is required.
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl DnsServiceDiscoveryBuilder {
         &self.ip_preference
     }
     /// Consumes the builder and constructs a [`DnsServiceDiscovery`](crate::types::DnsServiceDiscovery).
-    pub fn build(self) -> crate::types::DnsServiceDiscovery {
-        crate::types::DnsServiceDiscovery {
-            hostname: self.hostname,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hostname`](crate::types::builders::DnsServiceDiscoveryBuilder::hostname)
+    pub fn build(self) -> ::std::result::Result<crate::types::DnsServiceDiscovery, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DnsServiceDiscovery {
+            hostname: self.hostname.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hostname",
+                    "hostname was not specified but it is required when building DnsServiceDiscovery",
+                )
+            })?,
             response_type: self.response_type,
             ip_preference: self.ip_preference,
-        }
+        })
     }
 }

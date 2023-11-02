@@ -18,8 +18,10 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
         self.global_network_id.as_deref()
     }
     /// <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
-    pub fn transit_gateway_connect_peer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transit_gateway_connect_peer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_connect_peer_arns.is_none()`.
+    pub fn transit_gateway_connect_peer_arns(&self) -> &[::std::string::String] {
+        self.transit_gateway_connect_peer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -49,6 +51,7 @@ pub struct GetTransitGatewayConnectPeerAssociationsInputBuilder {
 }
 impl GetTransitGatewayConnectPeerAssociationsInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self

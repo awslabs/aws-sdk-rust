@@ -13,16 +13,20 @@ pub struct DescribeSourceServersRequestFilters {
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>An array of Source Servers IDs that should be returned. An empty array means all Source Servers.</p>
-    pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_server_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_i_ds.is_none()`.
+    pub fn source_server_i_ds(&self) -> &[::std::string::String] {
+        self.source_server_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>An ID that describes the hardware of the Source Server. This is either an EC2 instance id, a VMware uuid or a mac address.</p>
     pub fn hardware_id(&self) -> ::std::option::Option<&str> {
         self.hardware_id.as_deref()
     }
     /// <p>An array of staging account IDs that extended source servers belong to. An empty array means all source servers will be shown.</p>
-    pub fn staging_account_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.staging_account_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.staging_account_i_ds.is_none()`.
+    pub fn staging_account_i_ds(&self) -> &[::std::string::String] {
+        self.staging_account_i_ds.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSourceServersRequestFilters {

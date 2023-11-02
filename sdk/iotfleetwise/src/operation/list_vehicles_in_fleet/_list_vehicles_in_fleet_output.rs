@@ -11,8 +11,10 @@ pub struct ListVehiclesInFleetOutput {
 }
 impl ListVehiclesInFleetOutput {
     /// <p> A list of vehicles associated with the fleet. </p>
-    pub fn vehicles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vehicles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
+    pub fn vehicles(&self) -> &[::std::string::String] {
+        self.vehicles.as_deref().unwrap_or_default()
     }
     /// <p> The token to retrieve the next set of results, or <code>null</code> if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

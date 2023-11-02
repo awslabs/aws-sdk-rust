@@ -3,11 +3,11 @@ pub fn ser_lambda_event_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaEventSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.topic {
-        object.key("topic").string(var_1.as_str());
+    {
+        object.key("topic").string(input.topic.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }

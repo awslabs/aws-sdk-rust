@@ -41,6 +41,7 @@ pub struct CreateGatewayInputBuilder {
 }
 impl CreateGatewayInputBuilder {
     /// <p>A unique, friendly name for the gateway.</p>
+    /// This field is required.
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateGatewayInputBuilder {
         &self.gateway_name
     }
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
+    /// This field is required.
     pub fn gateway_platform(mut self, input: crate::types::GatewayPlatform) -> Self {
         self.gateway_platform = ::std::option::Option::Some(input);
         self

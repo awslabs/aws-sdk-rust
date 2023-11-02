@@ -41,6 +41,7 @@ pub struct UpdateUserRoutingProfileInputBuilder {
 }
 impl UpdateUserRoutingProfileInputBuilder {
     /// <p>The identifier of the routing profile for the user.</p>
+    /// This field is required.
     pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateUserRoutingProfileInputBuilder {
         &self.routing_profile_id
     }
     /// <p>The identifier of the user account.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateUserRoutingProfileInputBuilder {
         &self.user_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

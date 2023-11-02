@@ -72,6 +72,7 @@ impl GetActionTypeInputBuilder {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
@@ -102,6 +103,7 @@ impl GetActionTypeInputBuilder {
         &self.category
     }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    /// This field is required.
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +118,7 @@ impl GetActionTypeInputBuilder {
         &self.owner
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +133,7 @@ impl GetActionTypeInputBuilder {
         &self.provider
     }
     /// <p>A string that describes the action type version.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self

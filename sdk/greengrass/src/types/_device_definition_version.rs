@@ -9,8 +9,10 @@ pub struct DeviceDefinitionVersion {
 }
 impl DeviceDefinitionVersion {
     /// A list of devices in the definition version.
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::Device]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::Device] {
+        self.devices.as_deref().unwrap_or_default()
     }
 }
 impl DeviceDefinitionVersion {

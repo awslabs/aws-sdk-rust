@@ -34,6 +34,7 @@ pub struct GetDataSourceRunInputBuilder {
 }
 impl GetDataSourceRunInputBuilder {
     /// <p>The ID of the domain in which this data source run was performed.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDataSourceRunInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the data source run.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

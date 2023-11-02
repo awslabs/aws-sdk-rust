@@ -11,8 +11,10 @@ pub struct ListTypesByAssociationOutput {
 }
 impl ListTypesByAssociationOutput {
     /// <p>The <code>Type</code> objects.</p>
-    pub fn types(&self) -> ::std::option::Option<&[crate::types::Type]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[crate::types::Type] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

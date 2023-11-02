@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeView`](crate::operation::describe_view::builders::DescribeViewFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`view_token(impl Into<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::view_token) / [`set_view_token(Option<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::set_view_token): <p>An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.</p>
-    ///   - [`connection_token(impl Into<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::connection_token) / [`set_connection_token(Option<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::set_connection_token): <p>The connection token.</p>
+    ///   - [`view_token(impl Into<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::view_token) / [`set_view_token(Option<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::set_view_token):<br>required: **true**<br><p>An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.</p><br>
+    ///   - [`connection_token(impl Into<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::connection_token) / [`set_connection_token(Option<String>)`](crate::operation::describe_view::builders::DescribeViewFluentBuilder::set_connection_token):<br>required: **true**<br><p>The connection token.</p><br>
     /// - On success, responds with [`DescribeViewOutput`](crate::operation::describe_view::DescribeViewOutput) with field(s):
     ///   - [`view(Option<View>)`](crate::operation::describe_view::DescribeViewOutput::view): <p>A view resource object. Contains metadata and content necessary to render the view.</p>
     /// - On failure, responds with [`SdkError<DescribeViewError>`](crate::operation::describe_view::DescribeViewError)

@@ -81,7 +81,7 @@ pub fn de_get_revision_http_response(
         output = crate::protocol_serde::shape_get_revision::de_get_revision(_response_body, output)
             .map_err(crate::operation::get_revision::GetRevisionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_revision_output_correct_errors(output).build()
     })
 }
 

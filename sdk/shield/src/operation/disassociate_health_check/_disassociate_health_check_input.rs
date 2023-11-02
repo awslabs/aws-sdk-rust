@@ -34,6 +34,7 @@ pub struct DisassociateHealthCheckInputBuilder {
 }
 impl DisassociateHealthCheckInputBuilder {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
+    /// This field is required.
     pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateHealthCheckInputBuilder {
         &self.protection_id
     }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
+    /// This field is required.
     pub fn health_check_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_arn = ::std::option::Option::Some(input.into());
         self

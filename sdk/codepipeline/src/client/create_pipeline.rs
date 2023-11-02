@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreatePipeline`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline(PipelineDeclaration)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::pipeline) / [`set_pipeline(Option<PipelineDeclaration>)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::set_pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    ///   - [`tags(Tag)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::set_tags): <p>The tags for the pipeline.</p>
+    ///   - [`pipeline(PipelineDeclaration)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::pipeline) / [`set_pipeline(Option<PipelineDeclaration>)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::set_pipeline):<br>required: **true**<br><p>Represents the structure of actions and stages to be performed in the pipeline. </p><br>
+    ///   - [`tags(Tag)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_pipeline::builders::CreatePipelineFluentBuilder::set_tags):<br>required: **false**<br><p>The tags for the pipeline.</p><br>
     /// - On success, responds with [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput) with field(s):
     ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::operation::create_pipeline::CreatePipelineOutput::pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::operation::create_pipeline::CreatePipelineOutput::tags): <p>Specifies the tags applied to the pipeline.</p>

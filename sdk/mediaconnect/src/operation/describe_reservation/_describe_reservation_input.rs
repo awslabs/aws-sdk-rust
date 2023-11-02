@@ -27,6 +27,7 @@ pub struct DescribeReservationInputBuilder {
 }
 impl DescribeReservationInputBuilder {
     /// The Amazon Resource Name (ARN) of the reservation.
+    /// This field is required.
     pub fn reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_arn = ::std::option::Option::Some(input.into());
         self

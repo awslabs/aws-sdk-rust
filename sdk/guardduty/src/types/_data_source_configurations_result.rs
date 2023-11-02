@@ -63,6 +63,7 @@ pub struct DataSourceConfigurationsResultBuilder {
 }
 impl DataSourceConfigurationsResultBuilder {
     /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
+    /// This field is required.
     pub fn cloud_trail(mut self, input: crate::types::CloudTrailConfigurationResult) -> Self {
         self.cloud_trail = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl DataSourceConfigurationsResultBuilder {
         &self.cloud_trail
     }
     /// <p>An object that contains information on the status of DNS logs as a data source.</p>
+    /// This field is required.
     pub fn dns_logs(mut self, input: crate::types::DnsLogsConfigurationResult) -> Self {
         self.dns_logs = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl DataSourceConfigurationsResultBuilder {
         &self.dns_logs
     }
     /// <p>An object that contains information on the status of VPC flow logs as a data source.</p>
+    /// This field is required.
     pub fn flow_logs(mut self, input: crate::types::FlowLogsConfigurationResult) -> Self {
         self.flow_logs = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl DataSourceConfigurationsResultBuilder {
         &self.flow_logs
     }
     /// <p>An object that contains information on the status of S3 Data event logs as a data source.</p>
+    /// This field is required.
     pub fn s3_logs(mut self, input: crate::types::S3LogsConfigurationResult) -> Self {
         self.s3_logs = ::std::option::Option::Some(input);
         self

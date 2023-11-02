@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelRun`](crate::operation::cancel_run::builders::CancelRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::cancel_run::builders::CancelRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::cancel_run::builders::CancelRunFluentBuilder::set_id): <p>The run's ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::cancel_run::builders::CancelRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::cancel_run::builders::CancelRunFluentBuilder::set_id):<br>required: **true**<br><p>The run's ID.</p><br>
     /// - On success, responds with [`CancelRunOutput`](crate::operation::cancel_run::CancelRunOutput)
     /// - On failure, responds with [`SdkError<CancelRunError>`](crate::operation::cancel_run::CancelRunError)
     pub fn cancel_run(&self) -> crate::operation::cancel_run::builders::CancelRunFluentBuilder {

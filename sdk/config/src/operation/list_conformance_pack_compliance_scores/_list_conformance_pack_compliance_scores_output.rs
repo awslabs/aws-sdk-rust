@@ -6,7 +6,7 @@ pub struct ListConformancePackComplianceScoresOutput {
     /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
-    pub conformance_pack_compliance_scores: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackComplianceScore>>,
+    pub conformance_pack_compliance_scores: ::std::vec::Vec<crate::types::ConformancePackComplianceScore>,
     _request_id: Option<String>,
 }
 impl ListConformancePackComplianceScoresOutput {
@@ -15,8 +15,9 @@ impl ListConformancePackComplianceScoresOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
-    pub fn conformance_pack_compliance_scores(&self) -> ::std::option::Option<&[crate::types::ConformancePackComplianceScore]> {
-        self.conformance_pack_compliance_scores.as_deref()
+    pub fn conformance_pack_compliance_scores(&self) -> &[crate::types::ConformancePackComplianceScore] {
+        use std::ops::Deref;
+        self.conformance_pack_compliance_scores.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListConformancePackComplianceScoresOutput {
@@ -87,11 +88,25 @@ impl ListConformancePackComplianceScoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConformancePackComplianceScoresOutput`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput).
-    pub fn build(self) -> crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput {
-        crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput {
-            next_token: self.next_token,
-            conformance_pack_compliance_scores: self.conformance_pack_compliance_scores,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`conformance_pack_compliance_scores`](crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresOutputBuilder::conformance_pack_compliance_scores)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput {
+                next_token: self.next_token
+                ,
+                conformance_pack_compliance_scores: self.conformance_pack_compliance_scores
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("conformance_pack_compliance_scores", "conformance_pack_compliance_scores was not specified but it is required when building ListConformancePackComplianceScoresOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

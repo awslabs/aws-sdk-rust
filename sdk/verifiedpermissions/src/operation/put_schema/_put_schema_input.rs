@@ -34,6 +34,7 @@ pub struct PutSchemaInputBuilder {
 }
 impl PutSchemaInputBuilder {
     /// <p>Specifies the ID of the policy store in which to place the schema.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutSchemaInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::SchemaDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

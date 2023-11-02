@@ -41,6 +41,7 @@ pub struct UpdateExperimentInputBuilder {
 }
 impl UpdateExperimentInputBuilder {
     /// <p>The name of the experiment to update.</p>
+    /// This field is required.
     pub fn experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_name = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct DeleteVpnGatewayInputBuilder {
 }
 impl DeleteVpnGatewayInputBuilder {
     /// <p>The ID of the virtual private gateway.</p>
+    /// This field is required.
     pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self

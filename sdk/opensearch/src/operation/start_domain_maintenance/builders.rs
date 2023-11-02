@@ -22,7 +22,7 @@ impl StartDomainMaintenanceInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDomainMaintenance`.
 ///
-/// <p>Starts the node maintenance (Node restart, Node reboot, Opensearch/Elasticsearch process restart, Dashboard/kibana restart) on the data node.</p>
+/// <p>Starts the node maintenance process on the data node. These processes can include a node reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or Kibana restart.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDomainMaintenanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +92,14 @@ impl StartDomainMaintenanceFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::start_domain_maintenance::StartDomainMaintenanceOutput,
             crate::operation::start_domain_maintenance::StartDomainMaintenanceError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::start_domain_maintenance::StartDomainMaintenanceError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -138,17 +138,17 @@ impl StartDomainMaintenanceFluentBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
         self.inner.get_action()
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
     }
-    /// <p>Id of the data node.</p>
+    /// <p>The ID of the data node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_node_id()
     }

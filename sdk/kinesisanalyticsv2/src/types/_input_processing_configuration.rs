@@ -28,6 +28,7 @@ pub struct InputProcessingConfigurationBuilder {
 }
 impl InputProcessingConfigurationBuilder {
     /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
+    /// This field is required.
     pub fn input_lambda_processor(mut self, input: crate::types::InputLambdaProcessor) -> Self {
         self.input_lambda_processor = ::std::option::Option::Some(input);
         self

@@ -42,16 +42,22 @@ impl CreateFeaturedResultsSetInput {
         self.status.as_ref()
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn query_texts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_texts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_texts.is_none()`.
+    pub fn query_texts(&self) -> &[::std::string::String] {
+        self.query_texts.as_deref().unwrap_or_default()
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn featured_documents(&self) -> ::std::option::Option<&[crate::types::FeaturedDocument]> {
-        self.featured_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_documents.is_none()`.
+    pub fn featured_documents(&self) -> &[crate::types::FeaturedDocument] {
+        self.featured_documents.as_deref().unwrap_or_default()
     }
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFeaturedResultsSetInput {
@@ -76,6 +82,7 @@ pub struct CreateFeaturedResultsSetInputBuilder {
 }
 impl CreateFeaturedResultsSetInputBuilder {
     /// <p>The identifier of the index that you want to use for featuring results.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl CreateFeaturedResultsSetInputBuilder {
         &self.index_id
     }
     /// <p>A name for the set of featured results.</p>
+    /// This field is required.
     pub fn featured_results_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.featured_results_set_name = ::std::option::Option::Some(input.into());
         self

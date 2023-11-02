@@ -48,6 +48,7 @@ pub struct CreateModelCardExportJobInputBuilder {
 }
 impl CreateModelCardExportJobInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model card to export.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateModelCardExportJobInputBuilder {
         &self.model_card_version
     }
     /// <p>The name of the model card export job.</p>
+    /// This field is required.
     pub fn model_card_export_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_export_job_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateModelCardExportJobInputBuilder {
         &self.model_card_export_job_name
     }
     /// <p>The model card output configuration that specifies the Amazon S3 path for exporting.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::ModelCardExportOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

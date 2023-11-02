@@ -5,27 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserPolicyOutput {
     /// <p>The user the policy is associated with.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     /// <p>The name of the policy.</p>
-    pub policy_name: ::std::option::Option<::std::string::String>,
+    pub policy_name: ::std::string::String,
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub policy_document: ::std::option::Option<::std::string::String>,
+    pub policy_document: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetUserPolicyOutput {
     /// <p>The user the policy is associated with.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
-        self.policy_name.as_deref()
+    pub fn policy_name(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_name.deref()
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
-        self.policy_document.as_deref()
+    pub fn policy_document(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_document.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetUserPolicyOutput {
@@ -51,6 +54,7 @@ pub struct GetUserPolicyOutputBuilder {
 }
 impl GetUserPolicyOutputBuilder {
     /// <p>The user the policy is associated with.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +69,7 @@ impl GetUserPolicyOutputBuilder {
         &self.user_name
     }
     /// <p>The name of the policy.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +85,7 @@ impl GetUserPolicyOutputBuilder {
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +111,33 @@ impl GetUserPolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetUserPolicyOutput`](crate::operation::get_user_policy::GetUserPolicyOutput).
-    pub fn build(self) -> crate::operation::get_user_policy::GetUserPolicyOutput {
-        crate::operation::get_user_policy::GetUserPolicyOutput {
-            user_name: self.user_name,
-            policy_name: self.policy_name,
-            policy_document: self.policy_document,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_name`](crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder::user_name)
+    /// - [`policy_name`](crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder::policy_name)
+    /// - [`policy_document`](crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder::policy_document)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_user_policy::GetUserPolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_user_policy::GetUserPolicyOutput {
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building GetUserPolicyOutput",
+                )
+            })?,
+            policy_name: self.policy_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_name",
+                    "policy_name was not specified but it is required when building GetUserPolicyOutput",
+                )
+            })?,
+            policy_document: self.policy_document.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_document",
+                    "policy_document was not specified but it is required when building GetUserPolicyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

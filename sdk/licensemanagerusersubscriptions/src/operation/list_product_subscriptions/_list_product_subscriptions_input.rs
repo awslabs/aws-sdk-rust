@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
-    pub product: ::std::option::Option<::std::string::String>,
+    pub product: ::std::string::String,
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>Maximum number of results to return in a single call.</p>
@@ -16,8 +16,9 @@ pub struct ListProductSubscriptionsInput {
 }
 impl ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> ::std::option::Option<&str> {
-        self.product.as_deref()
+    pub fn product(&self) -> &str {
+        use std::ops::Deref;
+        self.product.deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
@@ -28,8 +29,10 @@ impl ListProductSubscriptionsInput {
         self.max_results
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +58,7 @@ pub struct ListProductSubscriptionsInputBuilder {
 }
 impl ListProductSubscriptionsInputBuilder {
     /// <p>The name of the user-based subscription product.</p>
+    /// This field is required.
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl ListProductSubscriptionsInputBuilder {
         &self.product
     }
     /// <p>An object that specifies details for the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
@@ -131,6 +136,8 @@ impl ListProductSubscriptionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProductSubscriptionsInput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`product`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder::product)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -138,7 +145,12 @@ impl ListProductSubscriptionsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_product_subscriptions::ListProductSubscriptionsInput {
-            product: self.product,
+            product: self.product.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "product",
+                    "product was not specified but it is required when building ListProductSubscriptionsInput",
+                )
+            })?,
             identity_provider: self.identity_provider,
             max_results: self.max_results,
             filters: self.filters,

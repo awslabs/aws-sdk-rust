@@ -47,8 +47,10 @@ impl ChangeSetSummaryListItem {
         self.status.as_ref()
     }
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    pub fn entity_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_id_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_id_list.is_none()`.
+    pub fn entity_id_list(&self) -> &[::std::string::String] {
+        self.entity_id_list.as_deref().unwrap_or_default()
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn failure_code(&self) -> ::std::option::Option<&crate::types::FailureCode> {

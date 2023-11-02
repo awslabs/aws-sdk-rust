@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleBasedProperties {
     /// <p>A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub rules: ::std::vec::Vec<crate::types::Rule>,
     /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
-    pub attribute_matching_model: ::std::option::Option<crate::types::AttributeMatchingModel>,
+    pub attribute_matching_model: crate::types::AttributeMatchingModel,
 }
 impl RuleBasedProperties {
     /// <p>A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
     /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
-    pub fn attribute_matching_model(&self) -> ::std::option::Option<&crate::types::AttributeMatchingModel> {
-        self.attribute_matching_model.as_ref()
+    pub fn attribute_matching_model(&self) -> &crate::types::AttributeMatchingModel {
+        &self.attribute_matching_model
     }
 }
 impl RuleBasedProperties {
@@ -55,6 +56,7 @@ impl RuleBasedPropertiesBuilder {
         &self.rules
     }
     /// <p>The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attributes across the sub-types of an attribute type. For example, if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types are exact matches. For example, only when the value of the <code>Email</code> field of Profile A and the value of the <code>Email</code> field of Profile B matches, the two profiles are matched on the <code>Email</code> type.</p>
+    /// This field is required.
     pub fn attribute_matching_model(mut self, input: crate::types::AttributeMatchingModel) -> Self {
         self.attribute_matching_model = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl RuleBasedPropertiesBuilder {
         &self.attribute_matching_model
     }
     /// Consumes the builder and constructs a [`RuleBasedProperties`](crate::types::RuleBasedProperties).
-    pub fn build(self) -> crate::types::RuleBasedProperties {
-        crate::types::RuleBasedProperties {
-            rules: self.rules,
-            attribute_matching_model: self.attribute_matching_model,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rules`](crate::types::builders::RuleBasedPropertiesBuilder::rules)
+    /// - [`attribute_matching_model`](crate::types::builders::RuleBasedPropertiesBuilder::attribute_matching_model)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleBasedProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleBasedProperties {
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building RuleBasedProperties",
+                )
+            })?,
+            attribute_matching_model: self.attribute_matching_model.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_matching_model",
+                    "attribute_matching_model was not specified but it is required when building RuleBasedProperties",
+                )
+            })?,
+        })
     }
 }

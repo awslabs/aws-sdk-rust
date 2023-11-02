@@ -10,12 +10,16 @@ pub struct DisableInput {
 }
 impl DisableInput {
     /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The resource scan types you want to disable.</p>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceScanType]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ResourceScanType] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
 }
 impl DisableInput {

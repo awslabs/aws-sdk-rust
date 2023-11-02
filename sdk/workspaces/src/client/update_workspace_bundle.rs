@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWorkspaceBundle`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bundle_id(impl Into<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::set_bundle_id): <p>The identifier of the bundle.</p>
-    ///   - [`image_id(impl Into<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::image_id) / [`set_image_id(Option<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::set_image_id): <p>The identifier of the image.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::set_bundle_id):<br>required: **false**<br><p>The identifier of the bundle.</p><br>
+    ///   - [`image_id(impl Into<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::image_id) / [`set_image_id(Option<String>)`](crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder::set_image_id):<br>required: **false**<br><p>The identifier of the image.</p><br>
     /// - On success, responds with [`UpdateWorkspaceBundleOutput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkspaceBundleError>`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError)
     pub fn update_workspace_bundle(&self) -> crate::operation::update_workspace_bundle::builders::UpdateWorkspaceBundleFluentBuilder {

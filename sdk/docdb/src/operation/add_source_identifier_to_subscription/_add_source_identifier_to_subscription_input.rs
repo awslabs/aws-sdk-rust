@@ -47,6 +47,7 @@ pub struct AddSourceIdentifierToSubscriptionInputBuilder {
 }
 impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <li> <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p> </li>
     /// <li> <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_identifier = ::std::option::Option::Some(input.into());
         self

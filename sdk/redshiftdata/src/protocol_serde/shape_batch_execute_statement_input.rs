@@ -3,38 +3,38 @@ pub fn ser_batch_execute_statement_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_execute_statement::BatchExecuteStatementInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.sqls {
-        let mut array_2 = object.key("Sqls").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("Sqls").start_array();
+        for item_2 in &input.sqls {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_4.as_str());
+    if let Some(var_3) = &input.cluster_identifier {
+        object.key("ClusterIdentifier").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.secret_arn {
-        object.key("SecretArn").string(var_5.as_str());
+    if let Some(var_4) = &input.secret_arn {
+        object.key("SecretArn").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.db_user {
-        object.key("DbUser").string(var_6.as_str());
+    if let Some(var_5) = &input.db_user {
+        object.key("DbUser").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.database {
-        object.key("Database").string(var_7.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_8) = &input.with_event {
-        object.key("WithEvent").boolean(*var_8);
+    if let Some(var_6) = &input.with_event {
+        object.key("WithEvent").boolean(*var_6);
     }
-    if let Some(var_9) = &input.statement_name {
-        object.key("StatementName").string(var_9.as_str());
+    if let Some(var_7) = &input.statement_name {
+        object.key("StatementName").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.workgroup_name {
-        object.key("WorkgroupName").string(var_10.as_str());
+    if let Some(var_8) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_8.as_str());
     }
-    if let Some(var_11) = &input.client_token {
-        object.key("ClientToken").string(var_11.as_str());
+    if let Some(var_9) = &input.client_token {
+        object.key("ClientToken").string(var_9.as_str());
     }
     Ok(())
 }

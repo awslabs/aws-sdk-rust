@@ -14,16 +14,22 @@ pub struct GetPipelineDefinitionOutput {
 }
 impl GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
-    pub fn pipeline_objects(&self) -> ::std::option::Option<&[crate::types::PipelineObject]> {
-        self.pipeline_objects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_objects.is_none()`.
+    pub fn pipeline_objects(&self) -> &[crate::types::PipelineObject] {
+        self.pipeline_objects.as_deref().unwrap_or_default()
     }
     /// <p>The parameter objects used in the pipeline definition.</p>
-    pub fn parameter_objects(&self) -> ::std::option::Option<&[crate::types::ParameterObject]> {
-        self.parameter_objects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_objects.is_none()`.
+    pub fn parameter_objects(&self) -> &[crate::types::ParameterObject] {
+        self.parameter_objects.as_deref().unwrap_or_default()
     }
     /// <p>The parameter values used in the pipeline definition.</p>
-    pub fn parameter_values(&self) -> ::std::option::Option<&[crate::types::ParameterValue]> {
-        self.parameter_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_values.is_none()`.
+    pub fn parameter_values(&self) -> &[crate::types::ParameterValue] {
+        self.parameter_values.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPipelineDefinitionOutput {

@@ -16,12 +16,16 @@ impl ModifyUserGroupInput {
         self.user_group_id.as_deref()
     }
     /// <p>The list of user IDs to add to the user group.</p>
-    pub fn user_ids_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids_to_add.is_none()`.
+    pub fn user_ids_to_add(&self) -> &[::std::string::String] {
+        self.user_ids_to_add.as_deref().unwrap_or_default()
     }
     /// <p>The list of user IDs to remove from the user group.</p>
-    pub fn user_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids_to_remove.is_none()`.
+    pub fn user_ids_to_remove(&self) -> &[::std::string::String] {
+        self.user_ids_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl ModifyUserGroupInput {
@@ -41,6 +45,7 @@ pub struct ModifyUserGroupInputBuilder {
 }
 impl ModifyUserGroupInputBuilder {
     /// <p>The ID of the user group.</p>
+    /// This field is required.
     pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self

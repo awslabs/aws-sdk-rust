@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowParameters {
     /// <p>URL of the base site.</p>
-    pub site_base_url: ::std::option::Option<::std::string::String>,
+    pub site_base_url: ::std::string::String,
 }
 impl ServiceNowParameters {
     /// <p>URL of the base site.</p>
-    pub fn site_base_url(&self) -> ::std::option::Option<&str> {
-        self.site_base_url.as_deref()
+    pub fn site_base_url(&self) -> &str {
+        use std::ops::Deref;
+        self.site_base_url.deref()
     }
 }
 impl ServiceNowParameters {
@@ -28,6 +29,7 @@ pub struct ServiceNowParametersBuilder {
 }
 impl ServiceNowParametersBuilder {
     /// <p>URL of the base site.</p>
+    /// This field is required.
     pub fn site_base_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_base_url = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ServiceNowParametersBuilder {
         &self.site_base_url
     }
     /// Consumes the builder and constructs a [`ServiceNowParameters`](crate::types::ServiceNowParameters).
-    pub fn build(self) -> crate::types::ServiceNowParameters {
-        crate::types::ServiceNowParameters {
-            site_base_url: self.site_base_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`site_base_url`](crate::types::builders::ServiceNowParametersBuilder::site_base_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceNowParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceNowParameters {
+            site_base_url: self.site_base_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "site_base_url",
+                    "site_base_url was not specified but it is required when building ServiceNowParameters",
+                )
+            })?,
+        })
     }
 }

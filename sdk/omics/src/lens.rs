@@ -282,10 +282,7 @@ pub(crate) fn lens_list_read_set_upload_parts_output_parts(
 pub(crate) fn lens_list_read_sets_output_read_sets(
     input: crate::operation::list_read_sets::ListReadSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReadSetListItem>> {
-    let input = match input.read_sets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.read_sets;
     ::std::option::Option::Some(input)
 }
 
@@ -302,20 +299,14 @@ pub(crate) fn lens_list_reference_import_jobs_output_import_jobs(
 pub(crate) fn lens_list_reference_stores_output_reference_stores(
     input: crate::operation::list_reference_stores::ListReferenceStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReferenceStoreDetail>> {
-    let input = match input.reference_stores {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.reference_stores;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_references_output_references(
     input: crate::operation::list_references::ListReferencesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>> {
-    let input = match input.references {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.references;
     ::std::option::Option::Some(input)
 }
 
@@ -352,20 +343,14 @@ pub(crate) fn lens_list_runs_output_items(
 pub(crate) fn lens_list_sequence_stores_output_sequence_stores(
     input: crate::operation::list_sequence_stores::ListSequenceStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>> {
-    let input = match input.sequence_stores {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.sequence_stores;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_shares_output_shares(
     input: crate::operation::list_shares::ListSharesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>> {
-    let input = match input.shares {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.shares;
     ::std::option::Option::Some(input)
 }
 

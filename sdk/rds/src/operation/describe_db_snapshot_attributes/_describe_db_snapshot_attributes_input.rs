@@ -28,6 +28,7 @@ pub struct DescribeDbSnapshotAttributesInputBuilder {
 }
 impl DescribeDbSnapshotAttributesInputBuilder {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
+    /// This field is required.
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self

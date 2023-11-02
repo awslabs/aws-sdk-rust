@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    pub log_type: ::std::option::Option<crate::types::LogType>,
+    pub log_type: crate::types::LogType,
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
-        self.log_type.as_ref()
+    pub fn log_type(&self) -> &crate::types::LogType {
+        &self.log_type
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct CloudWatchLogDeliveryOptionsBuilder {
 }
 impl CloudWatchLogDeliveryOptionsBuilder {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
+    /// This field is required.
     pub fn log_type(mut self, input: crate::types::LogType) -> Self {
         self.log_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl CloudWatchLogDeliveryOptionsBuilder {
         &self.log_group_name
     }
     /// Consumes the builder and constructs a [`CloudWatchLogDeliveryOptions`](crate::types::CloudWatchLogDeliveryOptions).
-    pub fn build(self) -> crate::types::CloudWatchLogDeliveryOptions {
-        crate::types::CloudWatchLogDeliveryOptions {
-            log_type: self.log_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_type`](crate::types::builders::CloudWatchLogDeliveryOptionsBuilder::log_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogDeliveryOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLogDeliveryOptions {
+            log_type: self.log_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_type",
+                    "log_type was not specified but it is required when building CloudWatchLogDeliveryOptions",
+                )
+            })?,
             log_group_name: self.log_group_name,
-        }
+        })
     }
 }

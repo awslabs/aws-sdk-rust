@@ -26,8 +26,10 @@ impl GetTemporaryGluePartitionCredentialsInput {
         self.partition.as_ref()
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[crate::types::Permission] {
+        self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.</p>
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
@@ -38,8 +40,10 @@ impl GetTemporaryGluePartitionCredentialsInput {
         self.audit_context.as_ref()
     }
     /// <p>A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
-        self.supported_permission_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_permission_types.is_none()`.
+    pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
+        self.supported_permission_types.as_deref().unwrap_or_default()
     }
 }
 impl GetTemporaryGluePartitionCredentialsInput {
@@ -62,6 +66,7 @@ pub struct GetTemporaryGluePartitionCredentialsInputBuilder {
 }
 impl GetTemporaryGluePartitionCredentialsInputBuilder {
     /// <p>The ARN of the partitions' table.</p>
+    /// This field is required.
     pub fn table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl GetTemporaryGluePartitionCredentialsInputBuilder {
         &self.table_arn
     }
     /// <p>A list of partition values identifying a single partition.</p>
+    /// This field is required.
     pub fn partition(mut self, input: crate::types::PartitionValueList) -> Self {
         self.partition = ::std::option::Option::Some(input);
         self

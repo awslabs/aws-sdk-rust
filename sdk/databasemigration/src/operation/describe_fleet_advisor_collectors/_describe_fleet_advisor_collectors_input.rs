@@ -22,8 +22,10 @@ impl DescribeFleetAdvisorCollectorsInput {
     /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {

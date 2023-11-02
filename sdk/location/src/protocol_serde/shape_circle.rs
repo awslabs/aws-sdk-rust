@@ -31,7 +31,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::circle_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -43,22 +45,22 @@ pub fn ser_circle(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Circle,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.center {
-        let mut array_2 = object.key("Center").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("Center").start_array();
+        for item_2 in &input.center {
             {
-                array_2.value().number(
+                array_1.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_3).into()),
+                    ::aws_smithy_types::Number::Float((*item_2).into()),
                 );
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.radius {
+    {
         object.key("Radius").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_4).into()),
+            ::aws_smithy_types::Number::Float((input.radius).into()),
         );
     }
     Ok(())

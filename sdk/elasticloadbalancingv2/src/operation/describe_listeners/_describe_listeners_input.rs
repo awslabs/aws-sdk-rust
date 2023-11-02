@@ -18,8 +18,10 @@ impl DescribeListenersInput {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn listener_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.listener_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listener_arns.is_none()`.
+    pub fn listener_arns(&self) -> &[::std::string::String] {
+        self.listener_arns.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

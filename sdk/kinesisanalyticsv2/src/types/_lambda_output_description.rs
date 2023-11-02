@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
@@ -13,8 +13,9 @@ pub struct LambdaOutputDescription {
 }
 impl LambdaOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
@@ -39,6 +40,7 @@ pub struct LambdaOutputDescriptionBuilder {
 }
 impl LambdaOutputDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -73,10 +75,17 @@ impl LambdaOutputDescriptionBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`LambdaOutputDescription`](crate::types::LambdaOutputDescription).
-    pub fn build(self) -> crate::types::LambdaOutputDescription {
-        crate::types::LambdaOutputDescription {
-            resource_arn: self.resource_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::LambdaOutputDescriptionBuilder::resource_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaOutputDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaOutputDescription {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building LambdaOutputDescription",
+                )
+            })?,
             role_arn: self.role_arn,
-        }
+        })
     }
 }

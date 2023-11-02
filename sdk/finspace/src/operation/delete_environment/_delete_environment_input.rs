@@ -27,6 +27,7 @@ pub struct DeleteEnvironmentInputBuilder {
 }
 impl DeleteEnvironmentInputBuilder {
     /// <p>The identifier for the FinSpace environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self

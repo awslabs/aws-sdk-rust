@@ -72,16 +72,22 @@ impl UpdateLayerInput {
         self.custom_json.as_deref()
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn custom_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_security_group_ids.is_none()`.
+    pub fn custom_security_group_ids(&self) -> &[::std::string::String] {
+        self.custom_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    pub fn packages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.packages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.packages.is_none()`.
+    pub fn packages(&self) -> &[::std::string::String] {
+        self.packages.as_deref().unwrap_or_default()
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-    pub fn volume_configurations(&self) -> ::std::option::Option<&[crate::types::VolumeConfiguration]> {
-        self.volume_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_configurations.is_none()`.
+    pub fn volume_configurations(&self) -> &[crate::types::VolumeConfiguration] {
+        self.volume_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Whether to disable auto healing for the layer.</p>
     pub fn enable_auto_healing(&self) -> ::std::option::Option<bool> {
@@ -145,6 +151,7 @@ pub struct UpdateLayerInputBuilder {
 }
 impl UpdateLayerInputBuilder {
     /// <p>The layer ID.</p>
+    /// This field is required.
     pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_id = ::std::option::Option::Some(input.into());
         self

@@ -49,6 +49,7 @@ pub struct CreatePackageInputBuilder {
 }
 impl CreatePackageInputBuilder {
     /// <p>Unique name for the package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreatePackageInputBuilder {
         &self.package_name
     }
     /// <p>The type of package.</p>
+    /// This field is required.
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
         self.package_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl CreatePackageInputBuilder {
         &self.package_description
     }
     /// <p>The Amazon S3 location from which to import the package.</p>
+    /// This field is required.
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
         self.package_source = ::std::option::Option::Some(input);
         self

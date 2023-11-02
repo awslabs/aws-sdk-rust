@@ -51,12 +51,16 @@ impl NetworkInsightsAnalysis {
         self.network_insights_path_id.as_deref()
     }
     /// <p>The member accounts that contain resources that the path can traverse.</p>
-    pub fn additional_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_accounts.is_none()`.
+    pub fn additional_accounts(&self) -> &[::std::string::String] {
+        self.additional_accounts.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
-    pub fn filter_in_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.filter_in_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_in_arns.is_none()`.
+    pub fn filter_in_arns(&self) -> &[::std::string::String] {
+        self.filter_in_arns.as_deref().unwrap_or_default()
     }
     /// <p>The time the analysis started.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -79,28 +83,40 @@ impl NetworkInsightsAnalysis {
         self.network_path_found
     }
     /// <p>The components in the path from source to destination.</p>
-    pub fn forward_path_components(&self) -> ::std::option::Option<&[crate::types::PathComponent]> {
-        self.forward_path_components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forward_path_components.is_none()`.
+    pub fn forward_path_components(&self) -> &[crate::types::PathComponent] {
+        self.forward_path_components.as_deref().unwrap_or_default()
     }
     /// <p>The components in the path from destination to source.</p>
-    pub fn return_path_components(&self) -> ::std::option::Option<&[crate::types::PathComponent]> {
-        self.return_path_components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.return_path_components.is_none()`.
+    pub fn return_path_components(&self) -> &[crate::types::PathComponent] {
+        self.return_path_components.as_deref().unwrap_or_default()
     }
     /// <p>The explanations. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/explanation-codes.html">Reachability Analyzer explanation codes</a>.</p>
-    pub fn explanations(&self) -> ::std::option::Option<&[crate::types::Explanation]> {
-        self.explanations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.explanations.is_none()`.
+    pub fn explanations(&self) -> &[crate::types::Explanation] {
+        self.explanations.as_deref().unwrap_or_default()
     }
     /// <p>Potential intermediate components.</p>
-    pub fn alternate_path_hints(&self) -> ::std::option::Option<&[crate::types::AlternatePathHint]> {
-        self.alternate_path_hints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternate_path_hints.is_none()`.
+    pub fn alternate_path_hints(&self) -> &[crate::types::AlternatePathHint] {
+        self.alternate_path_hints.as_deref().unwrap_or_default()
     }
     /// <p>Potential intermediate accounts.</p>
-    pub fn suggested_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.suggested_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggested_accounts.is_none()`.
+    pub fn suggested_accounts(&self) -> &[::std::string::String] {
+        self.suggested_accounts.as_deref().unwrap_or_default()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl NetworkInsightsAnalysis {

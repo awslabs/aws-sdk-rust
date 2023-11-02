@@ -35,6 +35,7 @@ pub struct ModelMetadataFilterBuilder {
 }
 impl ModelMetadataFilterBuilder {
     /// <p>The name of the of the model to filter by.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ModelMetadataFilterType) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ModelMetadataFilterBuilder {
         &self.name
     }
     /// <p>The value to filter the model metadata.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

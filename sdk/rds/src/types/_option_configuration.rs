@@ -31,16 +31,22 @@ impl OptionConfiguration {
         self.option_version.as_deref()
     }
     /// <p>A list of DBSecurityGroupMembership name strings used for this option.</p>
-    pub fn db_security_group_memberships(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_security_group_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_group_memberships.is_none()`.
+    pub fn db_security_group_memberships(&self) -> &[::std::string::String] {
+        self.db_security_group_memberships.as_deref().unwrap_or_default()
     }
     /// <p>A list of VpcSecurityGroupMembership name strings used for this option.</p>
-    pub fn vpc_security_group_memberships(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_memberships.is_none()`.
+    pub fn vpc_security_group_memberships(&self) -> &[::std::string::String] {
+        self.vpc_security_group_memberships.as_deref().unwrap_or_default()
     }
     /// <p>The option settings to include in an option group.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::OptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::OptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
 }
 impl OptionConfiguration {
@@ -63,6 +69,7 @@ pub struct OptionConfigurationBuilder {
 }
 impl OptionConfigurationBuilder {
     /// <p>The configuration of options to include in a group.</p>
+    /// This field is required.
     pub fn option_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_name = ::std::option::Option::Some(input.into());
         self

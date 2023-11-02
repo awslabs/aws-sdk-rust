@@ -9,17 +9,17 @@ pub fn ser_select_parameters(
         let inner_writer = scope.start_el("InputSerialization");
         crate::protocol_serde::shape_input_serialization::ser_input_serialization(var_1, inner_writer)?
     }
-    if let Some(var_2) = &input.expression_type {
+    {
         let mut inner_writer = scope.start_el("ExpressionType").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.expression_type.as_str());
     }
-    if let Some(var_3) = &input.expression {
+    {
         let mut inner_writer = scope.start_el("Expression").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.expression.as_str());
     }
-    if let Some(var_4) = &input.output_serialization {
+    if let Some(var_2) = &input.output_serialization {
         let inner_writer = scope.start_el("OutputSerialization");
-        crate::protocol_serde::shape_output_serialization::ser_output_serialization(var_4, inner_writer)?
+        crate::protocol_serde::shape_output_serialization::ser_output_serialization(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())

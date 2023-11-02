@@ -131,6 +131,9 @@ pub(crate) fn de_describe_agent(
                 "PrivateLinkConfig" => {
                     builder = builder.set_private_link_config(crate::protocol_serde::shape_private_link_config::de_private_link_config(tokens)?);
                 }
+                "Platform" => {
+                    builder = builder.set_platform(crate::protocol_serde::shape_platform::de_platform(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

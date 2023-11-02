@@ -46,6 +46,7 @@ pub struct ListRoleTagsInputBuilder {
 impl ListRoleTagsInputBuilder {
     /// <p>The name of the IAM role for which you want to see the list of tags.</p>
     /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self

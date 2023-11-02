@@ -50,6 +50,7 @@ pub struct UpdateSubscriptionRequestInputBuilder {
 }
 impl UpdateSubscriptionRequestInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription request is to be updated.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl UpdateSubscriptionRequestInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the subscription request that is to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl UpdateSubscriptionRequestInputBuilder {
         &self.identifier
     }
     /// <p>The reason for the <code>UpdateSubscriptionRequest</code> action.</p>
+    /// This field is required.
     pub fn request_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_reason = ::std::option::Option::Some(input.into());
         self

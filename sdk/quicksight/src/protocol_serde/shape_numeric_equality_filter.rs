@@ -3,38 +3,38 @@ pub fn ser_numeric_equality_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumericEqualityFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.filter_id {
-        object.key("FilterId").string(var_1.as_str());
+    {
+        object.key("FilterId").string(input.filter_id.as_str());
     }
-    if let Some(var_2) = &input.column {
+    if let Some(var_1) = &input.column {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Column").start_object();
-        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Column").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.value {
+    if let Some(var_3) = &input.value {
         object.key("Value").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_4).into()),
+            ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    if let Some(var_5) = &input.select_all_options {
-        object.key("SelectAllOptions").string(var_5.as_str());
+    if let Some(var_4) = &input.select_all_options {
+        object.key("SelectAllOptions").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.match_operator {
-        object.key("MatchOperator").string(var_6.as_str());
+    {
+        object.key("MatchOperator").string(input.match_operator.as_str());
     }
-    if let Some(var_7) = &input.aggregation_function {
+    if let Some(var_5) = &input.aggregation_function {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("AggregationFunction").start_object();
-        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_6 = object.key("AggregationFunction").start_object();
+        crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_9) = &input.parameter_name {
-        object.key("ParameterName").string(var_9.as_str());
+    if let Some(var_7) = &input.parameter_name {
+        object.key("ParameterName").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.null_option {
-        object.key("NullOption").string(var_10.as_str());
+    {
+        object.key("NullOption").string(input.null_option.as_str());
     }
     Ok(())
 }
@@ -110,7 +110,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::numeric_equality_filter_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -34,6 +34,7 @@ pub struct CloseTunnelInputBuilder {
 }
 impl CloseTunnelInputBuilder {
     /// <p>The ID of the tunnel to close.</p>
+    /// This field is required.
     pub fn tunnel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_id = ::std::option::Option::Some(input.into());
         self

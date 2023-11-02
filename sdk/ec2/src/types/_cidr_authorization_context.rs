@@ -35,6 +35,7 @@ pub struct CidrAuthorizationContextBuilder {
 }
 impl CidrAuthorizationContextBuilder {
     /// <p>The plain-text authorization message for the prefix and account.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CidrAuthorizationContextBuilder {
         &self.message
     }
     /// <p>The signed authorization message for the prefix and account.</p>
+    /// This field is required.
     pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature = ::std::option::Option::Some(input.into());
         self

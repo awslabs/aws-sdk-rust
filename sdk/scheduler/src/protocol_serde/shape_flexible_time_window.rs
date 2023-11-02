@@ -3,13 +3,13 @@ pub fn ser_flexible_time_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FlexibleTimeWindow,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mode {
-        object.key("Mode").string(var_1.as_str());
+    {
+        object.key("Mode").string(input.mode.as_str());
     }
-    if let Some(var_2) = &input.maximum_window_in_minutes {
+    if let Some(var_1) = &input.maximum_window_in_minutes {
         object.key("MaximumWindowInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())
@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::flexible_time_window_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

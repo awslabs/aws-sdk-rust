@@ -11,8 +11,10 @@ pub struct ListStudiosOutput {
 }
 impl ListStudiosOutput {
     /// <p>The list of Studio summary objects.</p>
-    pub fn studios(&self) -> ::std::option::Option<&[crate::types::StudioSummary]> {
-        self.studios.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.studios.is_none()`.
+    pub fn studios(&self) -> &[crate::types::StudioSummary] {
+        self.studios.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

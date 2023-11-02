@@ -34,6 +34,7 @@ pub struct GetBucketWebsiteInputBuilder {
 }
 impl GetBucketWebsiteInputBuilder {
     /// <p>The bucket name for which to get the website configuration.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

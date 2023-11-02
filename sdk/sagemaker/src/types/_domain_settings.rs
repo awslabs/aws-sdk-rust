@@ -13,8 +13,10 @@ pub struct DomainSettings {
 }
 impl DomainSettings {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
     pub fn r_studio_server_pro_domain_settings(&self) -> ::std::option::Option<&crate::types::RStudioServerProDomainSettings> {

@@ -76,6 +76,7 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         &self.next_token
     }
     /// <p>Name of a readiness check.</p>
+    /// This field is required.
     pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         &self.readiness_check_name
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self

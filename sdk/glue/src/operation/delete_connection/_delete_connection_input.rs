@@ -48,6 +48,7 @@ impl DeleteConnectionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the connection to delete.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct CreateBackendEnvironmentOutputBuilder {
 }
 impl CreateBackendEnvironmentOutputBuilder {
     /// <p> Describes the backend environment for an Amplify app. </p>
+    /// This field is required.
     pub fn backend_environment(mut self, input: crate::types::BackendEnvironment) -> Self {
         self.backend_environment = ::std::option::Option::Some(input);
         self

@@ -41,6 +41,7 @@ pub struct StartExperimentInputBuilder {
 }
 impl StartExperimentInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartExperimentInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the experiment template.</p>
+    /// This field is required.
     pub fn experiment_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment_template_id = ::std::option::Option::Some(input.into());
         self

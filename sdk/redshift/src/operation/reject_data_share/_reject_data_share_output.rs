@@ -29,8 +29,10 @@ impl RejectDataShareOutput {
         self.allow_publicly_accessible_consumers
     }
     /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
-    pub fn data_share_associations(&self) -> ::std::option::Option<&[crate::types::DataShareAssociation]> {
-        self.data_share_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_share_associations.is_none()`.
+    pub fn data_share_associations(&self) -> &[crate::types::DataShareAssociation] {
+        self.data_share_associations.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of a datashare to show its managing entity.</p>
     pub fn managed_by(&self) -> ::std::option::Option<&str> {

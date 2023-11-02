@@ -12,6 +12,7 @@ pub fn ser_cross_zone_load_balancing(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cross_zone_load_balancing(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CrossZoneLoadBalancing, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -37,5 +38,5 @@ pub fn de_cross_zone_load_balancing(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cross_zone_load_balancing_correct_errors(builder).build())
 }

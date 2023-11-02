@@ -58,8 +58,10 @@ impl CertificateSummary {
     }
     /// <p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website. </p>
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, this parameter will only return the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
-    pub fn subject_alternative_name_summaries(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subject_alternative_name_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_name_summaries.is_none()`.
+    pub fn subject_alternative_name_summaries(&self) -> &[::std::string::String] {
+        self.subject_alternative_name_summaries.as_deref().unwrap_or_default()
     }
     /// <p>When called by <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_ListCertificates.html">ListCertificates</a>, indicates whether the full list of subject alternative names has been included in the response. If false, the response includes all of the subject alternative names included in the certificate. If true, the response only includes the first 100 subject alternative names included in the certificate. To display the full list of subject alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.</p>
     pub fn has_additional_subject_alternative_names(&self) -> ::std::option::Option<bool> {
@@ -79,12 +81,16 @@ impl CertificateSummary {
         self.key_algorithm.as_ref()
     }
     /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
-    pub fn key_usages(&self) -> ::std::option::Option<&[crate::types::KeyUsageName]> {
-        self.key_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_usages.is_none()`.
+    pub fn key_usages(&self) -> &[crate::types::KeyUsageName] {
+        self.key_usages.as_deref().unwrap_or_default()
     }
     /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the certificate public key can be used and consists of a name and an object identifier (OID). </p>
-    pub fn extended_key_usages(&self) -> ::std::option::Option<&[crate::types::ExtendedKeyUsageName]> {
-        self.extended_key_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extended_key_usages.is_none()`.
+    pub fn extended_key_usages(&self) -> &[crate::types::ExtendedKeyUsageName] {
+        self.extended_key_usages.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the certificate is currently in use by any Amazon Web Services resources.</p>
     pub fn in_use(&self) -> ::std::option::Option<bool> {

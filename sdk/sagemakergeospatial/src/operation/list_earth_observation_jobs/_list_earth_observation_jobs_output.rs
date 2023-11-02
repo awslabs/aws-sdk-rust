@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListEarthObservationJobsOutput {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
-    pub earth_observation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
+    pub earth_observation_job_summaries: ::std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEarthObservationJobsOutput {
     /// <p>Contains summary information about the Earth Observation jobs.</p>
-    pub fn earth_observation_job_summaries(&self) -> ::std::option::Option<&[crate::types::ListEarthObservationJobOutputConfig]> {
-        self.earth_observation_job_summaries.as_deref()
+    pub fn earth_observation_job_summaries(&self) -> &[crate::types::ListEarthObservationJobOutputConfig] {
+        use std::ops::Deref;
+        self.earth_observation_job_summaries.deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -96,12 +97,24 @@ impl ListEarthObservationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEarthObservationJobsOutput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput).
-    pub fn build(self) -> crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput {
-        crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput {
-            earth_observation_job_summaries: self.earth_observation_job_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`earth_observation_job_summaries`](crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsOutputBuilder::earth_observation_job_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput {
+            earth_observation_job_summaries: self.earth_observation_job_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "earth_observation_job_summaries",
+                    "earth_observation_job_summaries was not specified but it is required when building ListEarthObservationJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ListEarthObservationJobsOutputBuilder {

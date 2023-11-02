@@ -65,8 +65,10 @@ impl CreateClientVpnEndpointInput {
         self.server_certificate_arn.as_deref()
     }
     /// <p>Information about the authentication method to be used to authenticate clients.</p>
-    pub fn authentication_options(&self) -> ::std::option::Option<&[crate::types::ClientVpnAuthenticationRequest]> {
-        self.authentication_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authentication_options.is_none()`.
+    pub fn authentication_options(&self) -> &[crate::types::ClientVpnAuthenticationRequest] {
+        self.authentication_options.as_deref().unwrap_or_default()
     }
     /// <p>Information about the client connection logging options.</p>
     /// <p>If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:</p>
@@ -80,8 +82,10 @@ impl CreateClientVpnEndpointInput {
         self.connection_log_options.as_ref()
     }
     /// <p>Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.</p>
-    pub fn dns_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_servers.is_none()`.
+    pub fn dns_servers(&self) -> &[::std::string::String] {
+        self.dns_servers.as_deref().unwrap_or_default()
     }
     /// <p>The transport protocol to be used by the VPN session.</p>
     /// <p>Default value: <code>udp</code> </p>
@@ -113,12 +117,16 @@ impl CreateClientVpnEndpointInput {
         self.client_token.as_deref()
     }
     /// <p>The tags to apply to the Client VPN endpoint during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC that contains the security groups.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the request, the default security group for the VPC is applied.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
@@ -176,6 +184,7 @@ pub struct CreateClientVpnEndpointInputBuilder {
 }
 impl CreateClientVpnEndpointInputBuilder {
     /// <p>The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. Client CIDR range must have a size of at least /22 and must not be greater than /12.</p>
+    /// This field is required.
     pub fn client_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +199,7 @@ impl CreateClientVpnEndpointInputBuilder {
         &self.client_cidr_block
     }
     /// <p>The ARN of the server certificate. For more information, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager User Guide</a>.</p>
+    /// This field is required.
     pub fn server_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -231,6 +241,7 @@ impl CreateClientVpnEndpointInputBuilder {
     /// <li> <p>Reasons for unsuccessful client connection requests</p> </li>
     /// <li> <p>Client connection termination time</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn connection_log_options(mut self, input: crate::types::ConnectionLogOptions) -> Self {
         self.connection_log_options = ::std::option::Option::Some(input);
         self

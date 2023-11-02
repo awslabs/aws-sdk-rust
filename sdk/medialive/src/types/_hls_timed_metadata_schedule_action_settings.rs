@@ -28,6 +28,7 @@ pub struct HlsTimedMetadataScheduleActionSettingsBuilder {
 }
 impl HlsTimedMetadataScheduleActionSettingsBuilder {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+    /// This field is required.
     pub fn id3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id3 = ::std::option::Option::Some(input.into());
         self

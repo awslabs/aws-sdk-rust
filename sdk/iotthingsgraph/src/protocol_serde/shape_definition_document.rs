@@ -3,11 +3,11 @@ pub fn ser_definition_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DefinitionDocument,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.language {
-        object.key("language").string(var_1.as_str());
+    {
+        object.key("language").string(input.language.as_str());
     }
-    if let Some(var_2) = &input.text {
-        object.key("text").string(var_2.as_str());
+    {
+        object.key("text").string(input.text.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::definition_document_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

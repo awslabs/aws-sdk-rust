@@ -15,8 +15,10 @@ impl ReorderReceiptRuleSetInput {
         self.rule_set_name.as_deref()
     }
     /// <p>The specified receipt rule set's receipt rules, in order.</p>
-    pub fn rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_names.is_none()`.
+    pub fn rule_names(&self) -> &[::std::string::String] {
+        self.rule_names.as_deref().unwrap_or_default()
     }
 }
 impl ReorderReceiptRuleSetInput {
@@ -35,6 +37,7 @@ pub struct ReorderReceiptRuleSetInputBuilder {
 }
 impl ReorderReceiptRuleSetInputBuilder {
     /// <p>The name of the receipt rule set to reorder.</p>
+    /// This field is required.
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self

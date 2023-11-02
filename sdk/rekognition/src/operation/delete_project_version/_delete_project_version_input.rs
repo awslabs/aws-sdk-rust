@@ -27,6 +27,7 @@ pub struct DeleteProjectVersionInputBuilder {
 }
 impl DeleteProjectVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project version that you want to delete.</p>
+    /// This field is required.
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self

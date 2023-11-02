@@ -54,6 +54,7 @@ pub struct DeletePrincipalMappingInputBuilder {
 }
 impl DeletePrincipalMappingInputBuilder {
     /// <p>The identifier of the index you want to delete a group from.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl DeletePrincipalMappingInputBuilder {
         &self.data_source_id
     }
     /// <p>The identifier of the group you want to delete.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self

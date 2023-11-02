@@ -27,6 +27,7 @@ pub struct DeleteWorkspaceImageInputBuilder {
 }
 impl DeleteWorkspaceImageInputBuilder {
     /// <p>The identifier of the image.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self

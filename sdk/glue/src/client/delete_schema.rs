@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSchema`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_id(SchemaId)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::set_schema_id): <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    ///   - [`schema_id(SchemaId)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::operation::delete_schema::builders::DeleteSchemaFluentBuilder::set_schema_id):<br>required: **true**<br><p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p><br>
     /// - On success, responds with [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::operation::delete_schema::DeleteSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
     ///   - [`schema_name(Option<String>)`](crate::operation::delete_schema::DeleteSchemaOutput::schema_name): <p>The name of the schema being deleted.</p>

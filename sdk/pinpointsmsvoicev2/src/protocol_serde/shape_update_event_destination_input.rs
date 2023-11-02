@@ -3,41 +3,41 @@ pub fn ser_update_event_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_event_destination::UpdateEventDestinationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1.as_str());
+    {
+        object.key("ConfigurationSetName").string(input.configuration_set_name.as_str());
     }
-    if let Some(var_2) = &input.event_destination_name {
-        object.key("EventDestinationName").string(var_2.as_str());
+    {
+        object.key("EventDestinationName").string(input.event_destination_name.as_str());
     }
-    if let Some(var_3) = &input.enabled {
-        object.key("Enabled").boolean(*var_3);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
-    if let Some(var_4) = &input.matching_event_types {
-        let mut array_5 = object.key("MatchingEventTypes").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.matching_event_types {
+        let mut array_3 = object.key("MatchingEventTypes").start_array();
+        for item_4 in var_2 {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.cloud_watch_logs_destination {
+    if let Some(var_5) = &input.cloud_watch_logs_destination {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("CloudWatchLogsDestination").start_object();
-        crate::protocol_serde::shape_cloud_watch_logs_destination::ser_cloud_watch_logs_destination(&mut object_8, var_7)?;
+        let mut object_6 = object.key("CloudWatchLogsDestination").start_object();
+        crate::protocol_serde::shape_cloud_watch_logs_destination::ser_cloud_watch_logs_destination(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.kinesis_firehose_destination {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("KinesisFirehoseDestination").start_object();
+        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.kinesis_firehose_destination {
+    if let Some(var_9) = &input.sns_destination {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("KinesisFirehoseDestination").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(&mut object_10, var_9)?;
+        let mut object_10 = object.key("SnsDestination").start_object();
+        crate::protocol_serde::shape_sns_destination::ser_sns_destination(&mut object_10, var_9)?;
         object_10.finish();
-    }
-    if let Some(var_11) = &input.sns_destination {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("SnsDestination").start_object();
-        crate::protocol_serde::shape_sns_destination::ser_sns_destination(&mut object_12, var_11)?;
-        object_12.finish();
     }
     Ok(())
 }

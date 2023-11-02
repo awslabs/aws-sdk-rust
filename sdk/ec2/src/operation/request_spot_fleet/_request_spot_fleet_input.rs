@@ -49,6 +49,7 @@ impl RequestSpotFleetInputBuilder {
         &self.dry_run
     }
     /// <p>The configuration for the Spot Fleet request.</p>
+    /// This field is required.
     pub fn spot_fleet_request_config(mut self, input: crate::types::SpotFleetRequestConfigData) -> Self {
         self.spot_fleet_request_config = ::std::option::Option::Some(input);
         self

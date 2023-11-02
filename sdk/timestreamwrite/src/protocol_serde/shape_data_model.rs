@@ -9,38 +9,38 @@ pub fn ser_data_model(
     if let Some(var_2) = &input.time_unit {
         object.key("TimeUnit").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.dimension_mappings {
-        let mut array_4 = object.key("DimensionMappings").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("DimensionMappings").start_array();
+        for item_4 in &input.dimension_mappings {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_dimension_mapping::ser_dimension_mapping(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_dimension_mapping::ser_dimension_mapping(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.multi_measure_mappings {
+    if let Some(var_6) = &input.multi_measure_mappings {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("MultiMeasureMappings").start_object();
-        crate::protocol_serde::shape_multi_measure_mappings::ser_multi_measure_mappings(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("MultiMeasureMappings").start_object();
+        crate::protocol_serde::shape_multi_measure_mappings::ser_multi_measure_mappings(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.mixed_measure_mappings {
-        let mut array_10 = object.key("MixedMeasureMappings").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.mixed_measure_mappings {
+        let mut array_9 = object.key("MixedMeasureMappings").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_mixed_measure_mapping::ser_mixed_measure_mapping(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_mixed_measure_mapping::ser_mixed_measure_mapping(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.measure_name_column {
-        object.key("MeasureNameColumn").string(var_13.as_str());
+    if let Some(var_12) = &input.measure_name_column {
+        object.key("MeasureNameColumn").string(var_12.as_str());
     }
     Ok(())
 }
@@ -103,7 +103,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_model_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

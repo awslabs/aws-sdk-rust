@@ -25,6 +25,7 @@ pub fn ser_instance_metadata_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instance_metadata_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::InstanceMetadataOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

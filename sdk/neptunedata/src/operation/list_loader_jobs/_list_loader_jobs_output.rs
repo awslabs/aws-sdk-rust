@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLoaderJobsOutput {
     /// <p>Returns the status of the job list request.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The requested list of job IDs.</p>
     pub payload: ::std::option::Option<crate::types::LoaderIdResult>,
     _request_id: Option<String>,
 }
 impl ListLoaderJobsOutput {
     /// <p>Returns the status of the job list request.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The requested list of job IDs.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::LoaderIdResult> {
@@ -41,6 +42,7 @@ pub struct ListLoaderJobsOutputBuilder {
 }
 impl ListLoaderJobsOutputBuilder {
     /// <p>Returns the status of the job list request.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl ListLoaderJobsOutputBuilder {
         &self.status
     }
     /// <p>The requested list of job IDs.</p>
+    /// This field is required.
     pub fn payload(mut self, input: crate::types::LoaderIdResult) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,20 @@ impl ListLoaderJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLoaderJobsOutput`](crate::operation::list_loader_jobs::ListLoaderJobsOutput).
-    pub fn build(self) -> crate::operation::list_loader_jobs::ListLoaderJobsOutput {
-        crate::operation::list_loader_jobs::ListLoaderJobsOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::list_loader_jobs::builders::ListLoaderJobsOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_loader_jobs::ListLoaderJobsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_loader_jobs::ListLoaderJobsOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ListLoaderJobsOutput",
+                )
+            })?,
             payload: self.payload,
             _request_id: self._request_id,
-        }
+        })
     }
 }

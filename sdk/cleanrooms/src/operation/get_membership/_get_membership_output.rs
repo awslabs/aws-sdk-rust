@@ -34,6 +34,7 @@ pub struct GetMembershipOutputBuilder {
 }
 impl GetMembershipOutputBuilder {
     /// <p>The membership retrieved for the provided identifier.</p>
+    /// This field is required.
     pub fn membership(mut self, input: crate::types::Membership) -> Self {
         self.membership = ::std::option::Option::Some(input);
         self

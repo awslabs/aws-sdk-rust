@@ -8,8 +8,10 @@ pub struct BatchStartRecommendationsInput {
 }
 impl BatchStartRecommendationsInput {
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub fn data(&self) -> ::std::option::Option<&[crate::types::StartRecommendationsRequestEntry]> {
-        self.data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data.is_none()`.
+    pub fn data(&self) -> &[crate::types::StartRecommendationsRequestEntry] {
+        self.data.as_deref().unwrap_or_default()
     }
 }
 impl BatchStartRecommendationsInput {

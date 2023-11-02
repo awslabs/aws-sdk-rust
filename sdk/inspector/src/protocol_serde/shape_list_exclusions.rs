@@ -25,11 +25,10 @@ pub fn de_list_exclusions_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalException" => crate::operation::list_exclusions::ListExclusionsError::InternalException({
@@ -40,11 +39,10 @@ pub fn de_list_exclusions_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidInputException" => crate::operation::list_exclusions::ListExclusionsError::InvalidInputException({
@@ -55,11 +53,10 @@ pub fn de_list_exclusions_http_error(
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_input_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NoSuchEntityException" => crate::operation::list_exclusions::ListExclusionsError::NoSuchEntityException({
@@ -70,11 +67,10 @@ pub fn de_list_exclusions_http_error(
                 output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::no_such_entity_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_exclusions::ListExclusionsError::generic(generic),
@@ -93,7 +89,9 @@ pub fn de_list_exclusions_http_response(
         output = crate::protocol_serde::shape_list_exclusions::de_list_exclusions(_response_body, output)
             .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_exclusions_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_exclusions::ListExclusionsError::unhandled)?
     })
 }
 

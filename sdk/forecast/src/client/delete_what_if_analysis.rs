@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWhatIfAnalysis`](crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`what_if_analysis_arn(impl Into<String>)`](crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisFluentBuilder::what_if_analysis_arn) / [`set_what_if_analysis_arn(Option<String>)`](crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisFluentBuilder::set_what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+    ///   - [`what_if_analysis_arn(impl Into<String>)`](crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisFluentBuilder::what_if_analysis_arn) / [`set_what_if_analysis_arn(Option<String>)`](crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisFluentBuilder::set_what_if_analysis_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p><br>
     /// - On success, responds with [`DeleteWhatIfAnalysisOutput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput)
     /// - On failure, responds with [`SdkError<DeleteWhatIfAnalysisError>`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisError)
     pub fn delete_what_if_analysis(&self) -> crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisFluentBuilder {

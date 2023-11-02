@@ -12,8 +12,10 @@ pub struct ListOfferingTransactionsOutput {
 }
 impl ListOfferingTransactionsOutput {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
-    pub fn offering_transactions(&self) -> ::std::option::Option<&[crate::types::OfferingTransaction]> {
-        self.offering_transactions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offering_transactions.is_none()`.
+    pub fn offering_transactions(&self) -> &[crate::types::OfferingTransaction] {
+        self.offering_transactions.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

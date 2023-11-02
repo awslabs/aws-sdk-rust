@@ -36,8 +36,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidCacheClusterState" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidCacheClusterStateFault({
@@ -52,8 +52,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidKMSKeyFault" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidKmsKeyFault({
@@ -68,8 +68,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterCombination" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidParameterCombinationException({
@@ -84,8 +84,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValue" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidParameterValueException({
@@ -100,8 +100,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidReplicationGroupState" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidReplicationGroupStateFault({
@@ -116,8 +116,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidVPCNetworkStateFault" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::InvalidVpcNetworkStateFault({
@@ -132,8 +132,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::NodeGroupsPerReplicationGroupQuotaExceededFault({
@@ -148,8 +148,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NodeQuotaForCustomerExceeded" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::NodeQuotaForCustomerExceededFault({
@@ -164,8 +164,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ReplicationGroupNotFoundFault" => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::ReplicationGroupNotFoundFault({
@@ -180,8 +180,8 @@ pub fn de_modify_replication_group_shard_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError::generic(generic)

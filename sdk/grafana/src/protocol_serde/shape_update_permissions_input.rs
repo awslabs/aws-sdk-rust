@@ -3,17 +3,17 @@ pub fn ser_update_permissions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_permissions::UpdatePermissionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.update_instruction_batch {
-        let mut array_2 = object.key("updateInstructionBatch").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("updateInstructionBatch").start_array();
+        for item_2 in &input.update_instruction_batch {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_update_instruction::ser_update_instruction(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_update_instruction::ser_update_instruction(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
     Ok(())
 }

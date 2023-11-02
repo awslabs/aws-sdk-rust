@@ -35,6 +35,7 @@ pub struct OfflineStoreStatusBuilder {
 }
 impl OfflineStoreStatusBuilder {
     /// <p>An <code>OfflineStore</code> status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OfflineStoreStatusValue) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

@@ -48,6 +48,7 @@ impl RestoreAddressToClassicInputBuilder {
         &self.dry_run
     }
     /// <p>The Elastic IP address.</p>
+    /// This field is required.
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
         self

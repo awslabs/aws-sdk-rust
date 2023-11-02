@@ -84,6 +84,7 @@ pub struct RestoreTableFromClusterSnapshotInputBuilder {
 }
 impl RestoreTableFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
+    /// This field is required.
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         &self.snapshot_identifier
     }
     /// <p>The name of the source database that contains the table to restore from.</p>
+    /// This field is required.
     pub fn source_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_database_name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +143,7 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         &self.source_schema_name
     }
     /// <p>The name of the source table to restore from.</p>
+    /// This field is required.
     pub fn source_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_table_name = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +186,7 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         &self.target_schema_name
     }
     /// <p>The name of the table to create as a result of the current request.</p>
+    /// This field is required.
     pub fn new_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_table_name = ::std::option::Option::Some(input.into());
         self

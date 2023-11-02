@@ -9,5 +9,11 @@ pub fn ser_compute_capacity(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.desired_sessions {
+        object.key("DesiredSessions").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
     Ok(())
 }

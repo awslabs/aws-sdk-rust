@@ -37,6 +37,7 @@ pub fn ser_text_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_text_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TextOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

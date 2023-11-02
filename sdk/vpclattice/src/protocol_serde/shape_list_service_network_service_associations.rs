@@ -33,11 +33,10 @@ pub fn de_list_service_network_service_associations_http_error(
                             crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -59,11 +58,10 @@ pub fn de_list_service_network_service_associations_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -84,11 +82,10 @@ pub fn de_list_service_network_service_associations_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -102,11 +99,10 @@ pub fn de_list_service_network_service_associations_http_error(
                         crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -133,7 +129,9 @@ pub fn de_list_service_network_service_associations_http_response(
         )
         .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_service_network_service_associations_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError::unhandled)?
     })
 }
 

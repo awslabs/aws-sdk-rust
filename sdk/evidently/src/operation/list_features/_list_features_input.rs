@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFeaturesInput {
     /// <p>The name or ARN of the project to return the feature list from.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
@@ -12,8 +12,9 @@ pub struct ListFeaturesInput {
 }
 impl ListFeaturesInput {
     /// <p>The name or ARN of the project to return the feature list from.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -41,6 +42,7 @@ pub struct ListFeaturesInputBuilder {
 }
 impl ListFeaturesInputBuilder {
     /// <p>The name or ARN of the project to return the feature list from.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -83,9 +85,16 @@ impl ListFeaturesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFeaturesInput`](crate::operation::list_features::ListFeaturesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::list_features::builders::ListFeaturesInputBuilder::project)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_features::ListFeaturesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_features::ListFeaturesInput {
-            project: self.project,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building ListFeaturesInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
         })

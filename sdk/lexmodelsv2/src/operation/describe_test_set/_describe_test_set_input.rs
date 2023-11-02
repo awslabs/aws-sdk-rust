@@ -27,6 +27,7 @@ pub struct DescribeTestSetInputBuilder {
 }
 impl DescribeTestSetInputBuilder {
     /// <p>The test set Id for the test set request.</p>
+    /// This field is required.
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
         self

@@ -59,12 +59,16 @@ impl WorkspaceDirectory {
         self.registration_code.as_deref()
     }
     /// <p>The identifiers of the subnets used with the directory.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IP addresses of the DNS servers for the directory.</p>
-    pub fn dns_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addresses.is_none()`.
+    pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
+        self.dns_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The user name for the service account.</p>
     pub fn customer_user_name(&self) -> ::std::option::Option<&str> {
@@ -91,8 +95,10 @@ impl WorkspaceDirectory {
         self.workspace_creation_properties.as_ref()
     }
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
-    pub fn ip_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_group_ids.is_none()`.
+    pub fn ip_group_ids(&self) -> &[::std::string::String] {
+        self.ip_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
     pub fn workspace_access_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceAccessProperties> {

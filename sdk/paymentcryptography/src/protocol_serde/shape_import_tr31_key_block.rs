@@ -3,11 +3,11 @@ pub fn ser_import_tr31_key_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportTr31KeyBlock,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.wrapping_key_identifier {
-        object.key("WrappingKeyIdentifier").string(var_1.as_str());
+    {
+        object.key("WrappingKeyIdentifier").string(input.wrapping_key_identifier.as_str());
     }
-    if let Some(var_2) = &input.wrapped_key_block {
-        object.key("WrappedKeyBlock").string(var_2.as_str());
+    {
+        object.key("WrappedKeyBlock").string(input.wrapped_key_block.as_str());
     }
     Ok(())
 }

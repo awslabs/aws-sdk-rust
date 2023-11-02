@@ -35,6 +35,7 @@ pub struct PortRangeBuilder {
 }
 impl PortRangeBuilder {
     /// <p> The first port in the range. </p>
+    /// This field is required.
     pub fn from(mut self, input: i32) -> Self {
         self.from = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PortRangeBuilder {
         &self.from
     }
     /// <p> The last port in the range. </p>
+    /// This field is required.
     pub fn to(mut self, input: i32) -> Self {
         self.to = ::std::option::Option::Some(input);
         self

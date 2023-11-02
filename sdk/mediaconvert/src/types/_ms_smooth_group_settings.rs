@@ -23,8 +23,10 @@ pub struct MsSmoothGroupSettings {
 }
 impl MsSmoothGroupSettings {
     /// By default, the service creates one .ism Microsoft Smooth Streaming manifest for each Microsoft Smooth Streaming output group in your job. This default manifest references every output in the output group. To create additional manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn additional_manifests(&self) -> ::std::option::Option<&[crate::types::MsSmoothAdditionalManifest]> {
-        self.additional_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_manifests.is_none()`.
+    pub fn additional_manifests(&self) -> &[crate::types::MsSmoothAdditionalManifest] {
+        self.additional_manifests.as_deref().unwrap_or_default()
     }
     /// COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream.
     pub fn audio_deduplication(&self) -> ::std::option::Option<&crate::types::MsSmoothAudioDeduplication> {

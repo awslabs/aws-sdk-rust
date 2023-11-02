@@ -11,12 +11,16 @@ pub struct SelfManagedKafkaAccessConfigurationVpc {
 }
 impl SelfManagedKafkaAccessConfigurationVpc {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn security_group(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group.is_none()`.
+    pub fn security_group(&self) -> &[::std::string::String] {
+        self.security_group.as_deref().unwrap_or_default()
     }
 }
 impl SelfManagedKafkaAccessConfigurationVpc {

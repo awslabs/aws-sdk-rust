@@ -6,11 +6,11 @@ pub struct DeregisterPackageVersionInput {
     /// <p>An owner account.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>A package ID.</p>
-    pub package_id: ::std::option::Option<::std::string::String>,
+    pub package_id: ::std::string::String,
     /// <p>A package version.</p>
-    pub package_version: ::std::option::Option<::std::string::String>,
+    pub package_version: ::std::string::String,
     /// <p>A patch version.</p>
-    pub patch_version: ::std::option::Option<::std::string::String>,
+    pub patch_version: ::std::string::String,
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
     pub updated_latest_patch_version: ::std::option::Option<::std::string::String>,
 }
@@ -20,16 +20,19 @@ impl DeregisterPackageVersionInput {
         self.owner_account.as_deref()
     }
     /// <p>A package ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
-        self.package_id.as_deref()
+    pub fn package_id(&self) -> &str {
+        use std::ops::Deref;
+        self.package_id.deref()
     }
     /// <p>A package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
-        self.package_version.as_deref()
+    pub fn package_version(&self) -> &str {
+        use std::ops::Deref;
+        self.package_version.deref()
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
-        self.patch_version.as_deref()
+    pub fn patch_version(&self) -> &str {
+        use std::ops::Deref;
+        self.patch_version.deref()
     }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
     pub fn updated_latest_patch_version(&self) -> ::std::option::Option<&str> {
@@ -69,6 +72,7 @@ impl DeregisterPackageVersionInputBuilder {
         &self.owner_account
     }
     /// <p>A package ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl DeregisterPackageVersionInputBuilder {
         &self.package_id
     }
     /// <p>A package version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl DeregisterPackageVersionInputBuilder {
         &self.package_version
     }
     /// <p>A patch version.</p>
+    /// This field is required.
     pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,10 @@ impl DeregisterPackageVersionInputBuilder {
         &self.updated_latest_patch_version
     }
     /// Consumes the builder and constructs a [`DeregisterPackageVersionInput`](crate::operation::deregister_package_version::DeregisterPackageVersionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_id`](crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder::package_id)
+    /// - [`package_version`](crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder::package_version)
+    /// - [`patch_version`](crate::operation::deregister_package_version::builders::DeregisterPackageVersionInputBuilder::patch_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -133,9 +143,24 @@ impl DeregisterPackageVersionInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::deregister_package_version::DeregisterPackageVersionInput {
             owner_account: self.owner_account,
-            package_id: self.package_id,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
+            package_id: self.package_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_id",
+                    "package_id was not specified but it is required when building DeregisterPackageVersionInput",
+                )
+            })?,
+            package_version: self.package_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_version",
+                    "package_version was not specified but it is required when building DeregisterPackageVersionInput",
+                )
+            })?,
+            patch_version: self.patch_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "patch_version",
+                    "patch_version was not specified but it is required when building DeregisterPackageVersionInput",
+                )
+            })?,
             updated_latest_patch_version: self.updated_latest_patch_version,
         })
     }

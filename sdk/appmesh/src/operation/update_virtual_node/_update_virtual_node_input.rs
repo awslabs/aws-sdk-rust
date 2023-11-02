@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVirtualNodeInput {
     /// <p>The name of the virtual node to update.</p>
-    pub virtual_node_name: ::std::option::Option<::std::string::String>,
+    pub virtual_node_name: ::std::string::String,
     /// <p>The name of the service mesh that the virtual node resides in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
     pub spec: ::std::option::Option<crate::types::VirtualNodeSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
@@ -16,12 +16,14 @@ pub struct UpdateVirtualNodeInput {
 }
 impl UpdateVirtualNodeInput {
     /// <p>The name of the virtual node to update.</p>
-    pub fn virtual_node_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_node_name.as_deref()
+    pub fn virtual_node_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_node_name.deref()
     }
     /// <p>The name of the service mesh that the virtual node resides in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::VirtualNodeSpec> {
@@ -55,6 +57,7 @@ pub struct UpdateVirtualNodeInputBuilder {
 }
 impl UpdateVirtualNodeInputBuilder {
     /// <p>The name of the virtual node to update.</p>
+    /// This field is required.
     pub fn virtual_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl UpdateVirtualNodeInputBuilder {
         &self.virtual_node_name
     }
     /// <p>The name of the service mesh that the virtual node resides in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,7 @@ impl UpdateVirtualNodeInputBuilder {
         &self.mesh_name
     }
     /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::VirtualNodeSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -125,12 +130,25 @@ impl UpdateVirtualNodeInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`UpdateVirtualNodeInput`](crate::operation::update_virtual_node::UpdateVirtualNodeInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_node_name`](crate::operation::update_virtual_node::builders::UpdateVirtualNodeInputBuilder::virtual_node_name)
+    /// - [`mesh_name`](crate::operation::update_virtual_node::builders::UpdateVirtualNodeInputBuilder::mesh_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_virtual_node::UpdateVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_virtual_node::UpdateVirtualNodeInput {
-            virtual_node_name: self.virtual_node_name,
-            mesh_name: self.mesh_name,
+            virtual_node_name: self.virtual_node_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_node_name",
+                    "virtual_node_name was not specified but it is required when building UpdateVirtualNodeInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building UpdateVirtualNodeInput",
+                )
+            })?,
             spec: self.spec,
             client_token: self.client_token,
             mesh_owner: self.mesh_owner,

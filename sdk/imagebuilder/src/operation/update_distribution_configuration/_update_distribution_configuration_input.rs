@@ -22,8 +22,10 @@ impl UpdateDistributionConfigurationInput {
         self.description.as_deref()
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::Distribution]> {
-        self.distributions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distributions.is_none()`.
+    pub fn distributions(&self) -> &[crate::types::Distribution] {
+        self.distributions.as_deref().unwrap_or_default()
     }
     /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct UpdateDistributionConfigurationInputBuilder {
 }
 impl UpdateDistributionConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
+    /// This field is required.
     pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl UpdateDistributionConfigurationInputBuilder {
         &self.distributions
     }
     /// <p>The idempotency token of the distribution configuration.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

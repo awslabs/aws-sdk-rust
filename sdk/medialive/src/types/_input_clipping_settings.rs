@@ -42,6 +42,7 @@ pub struct InputClippingSettingsBuilder {
 }
 impl InputClippingSettingsBuilder {
     /// The source of the timecodes in the source being clipped.
+    /// This field is required.
     pub fn input_timecode_source(mut self, input: crate::types::InputTimecodeSource) -> Self {
         self.input_timecode_source = ::std::option::Option::Some(input);
         self

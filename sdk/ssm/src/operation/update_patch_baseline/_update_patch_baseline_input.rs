@@ -53,8 +53,10 @@ impl UpdatePatchBaselineInput {
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn approved_patches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.approved_patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approved_patches.is_none()`.
+    pub fn approved_patches(&self) -> &[::std::string::String] {
+        self.approved_patches.as_deref().unwrap_or_default()
     }
     /// <p>Assigns a new compliance severity level to an existing patch baseline.</p>
     pub fn approved_patches_compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
@@ -66,8 +68,10 @@ impl UpdatePatchBaselineInput {
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn rejected_patches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rejected_patches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rejected_patches.is_none()`.
+    pub fn rejected_patches(&self) -> &[::std::string::String] {
+        self.rejected_patches.as_deref().unwrap_or_default()
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
@@ -82,8 +86,10 @@ impl UpdatePatchBaselineInput {
         self.description.as_deref()
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::PatchSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::PatchSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>If True, then all fields that are required by the <code>CreatePatchBaseline</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
     pub fn replace(&self) -> ::std::option::Option<bool> {
@@ -116,6 +122,7 @@ pub struct UpdatePatchBaselineInputBuilder {
 }
 impl UpdatePatchBaselineInputBuilder {
     /// <p>The ID of the patch baseline to update.</p>
+    /// This field is required.
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_id = ::std::option::Option::Some(input.into());
         self

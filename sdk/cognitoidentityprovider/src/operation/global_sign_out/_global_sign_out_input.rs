@@ -35,6 +35,7 @@ pub struct GlobalSignOutInputBuilder {
 }
 impl GlobalSignOutInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self

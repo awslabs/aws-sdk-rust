@@ -3,26 +3,26 @@ pub fn ser_update_custom_line_item_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_custom_line_item::UpdateCustomLineItemInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.billing_period_range {
+    if let Some(var_1) = &input.billing_period_range {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("BillingPeriodRange").start_object();
-        crate::protocol_serde::shape_custom_line_item_billing_period_range::ser_custom_line_item_billing_period_range(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("BillingPeriodRange").start_object();
+        crate::protocol_serde::shape_custom_line_item_billing_period_range::ser_custom_line_item_billing_period_range(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.charge_details {
+    if let Some(var_3) = &input.charge_details {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ChargeDetails").start_object();
-        crate::protocol_serde::shape_update_custom_line_item_charge_details::ser_update_custom_line_item_charge_details(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("ChargeDetails").start_object();
+        crate::protocol_serde::shape_update_custom_line_item_charge_details::ser_update_custom_line_item_charge_details(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("Description").string(var_6.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("Description").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.name {
-        object.key("Name").string(var_7.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("Name").string(var_6.as_str());
     }
     Ok(())
 }

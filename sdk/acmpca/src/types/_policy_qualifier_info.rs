@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyQualifierInfo {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
-    pub policy_qualifier_id: ::std::option::Option<crate::types::PolicyQualifierId>,
+    pub policy_qualifier_id: crate::types::PolicyQualifierId,
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub qualifier: ::std::option::Option<crate::types::Qualifier>,
 }
 impl PolicyQualifierInfo {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
-    pub fn policy_qualifier_id(&self) -> ::std::option::Option<&crate::types::PolicyQualifierId> {
-        self.policy_qualifier_id.as_ref()
+    pub fn policy_qualifier_id(&self) -> &crate::types::PolicyQualifierId {
+        &self.policy_qualifier_id
     }
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
     pub fn qualifier(&self) -> ::std::option::Option<&crate::types::Qualifier> {
@@ -35,6 +35,7 @@ pub struct PolicyQualifierInfoBuilder {
 }
 impl PolicyQualifierInfoBuilder {
     /// <p>Identifies the qualifier modifying a <code>CertPolicyId</code>.</p>
+    /// This field is required.
     pub fn policy_qualifier_id(mut self, input: crate::types::PolicyQualifierId) -> Self {
         self.policy_qualifier_id = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl PolicyQualifierInfoBuilder {
         &self.policy_qualifier_id
     }
     /// <p>Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this field.</p>
+    /// This field is required.
     pub fn qualifier(mut self, input: crate::types::Qualifier) -> Self {
         self.qualifier = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl PolicyQualifierInfoBuilder {
         &self.qualifier
     }
     /// Consumes the builder and constructs a [`PolicyQualifierInfo`](crate::types::PolicyQualifierInfo).
-    pub fn build(self) -> crate::types::PolicyQualifierInfo {
-        crate::types::PolicyQualifierInfo {
-            policy_qualifier_id: self.policy_qualifier_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_qualifier_id`](crate::types::builders::PolicyQualifierInfoBuilder::policy_qualifier_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyQualifierInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PolicyQualifierInfo {
+            policy_qualifier_id: self.policy_qualifier_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_qualifier_id",
+                    "policy_qualifier_id was not specified but it is required when building PolicyQualifierInfo",
+                )
+            })?,
             qualifier: self.qualifier,
-        }
+        })
     }
 }

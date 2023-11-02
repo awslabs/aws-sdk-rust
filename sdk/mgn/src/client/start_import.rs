@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartImport`](crate::operation::start_import::builders::StartImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::operation::start_import::builders::StartImportFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::start_import::builders::StartImportFluentBuilder::set_client_token): <p>Start import request client token.</p>
-    ///   - [`s3_bucket_source(S3BucketSource)`](crate::operation::start_import::builders::StartImportFluentBuilder::s3_bucket_source) / [`set_s3_bucket_source(Option<S3BucketSource>)`](crate::operation::start_import::builders::StartImportFluentBuilder::set_s3_bucket_source): <p>Start import request s3 bucket source.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::start_import::builders::StartImportFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::start_import::builders::StartImportFluentBuilder::set_client_token):<br>required: **false**<br><p>Start import request client token.</p><br>
+    ///   - [`s3_bucket_source(S3BucketSource)`](crate::operation::start_import::builders::StartImportFluentBuilder::s3_bucket_source) / [`set_s3_bucket_source(Option<S3BucketSource>)`](crate::operation::start_import::builders::StartImportFluentBuilder::set_s3_bucket_source):<br>required: **true**<br><p>Start import request s3 bucket source.</p><br>
     /// - On success, responds with [`StartImportOutput`](crate::operation::start_import::StartImportOutput) with field(s):
     ///   - [`import_task(Option<ImportTask>)`](crate::operation::start_import::StartImportOutput::import_task): <p>Start import response import task.</p>
     /// - On failure, responds with [`SdkError<StartImportError>`](crate::operation::start_import::StartImportError)

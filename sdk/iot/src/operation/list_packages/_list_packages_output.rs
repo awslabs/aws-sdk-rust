@@ -11,8 +11,10 @@ pub struct ListPackagesOutput {
 }
 impl ListPackagesOutput {
     /// <p>The software package summary.</p>
-    pub fn package_summaries(&self) -> ::std::option::Option<&[crate::types::PackageSummary]> {
-        self.package_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_summaries.is_none()`.
+    pub fn package_summaries(&self) -> &[crate::types::PackageSummary] {
+        self.package_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

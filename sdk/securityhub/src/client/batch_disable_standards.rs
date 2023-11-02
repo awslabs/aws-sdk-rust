@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchDisableStandards`](crate::operation::batch_disable_standards::builders::BatchDisableStandardsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`standards_subscription_arns(impl Into<String>)`](crate::operation::batch_disable_standards::builders::BatchDisableStandardsFluentBuilder::standards_subscription_arns) / [`set_standards_subscription_arns(Option<Vec<String>>)`](crate::operation::batch_disable_standards::builders::BatchDisableStandardsFluentBuilder::set_standards_subscription_arns): <p>The ARNs of the standards subscriptions to disable.</p>
+    ///   - [`standards_subscription_arns(impl Into<String>)`](crate::operation::batch_disable_standards::builders::BatchDisableStandardsFluentBuilder::standards_subscription_arns) / [`set_standards_subscription_arns(Option<Vec<String>>)`](crate::operation::batch_disable_standards::builders::BatchDisableStandardsFluentBuilder::set_standards_subscription_arns):<br>required: **true**<br><p>The ARNs of the standards subscriptions to disable.</p><br>
     /// - On success, responds with [`BatchDisableStandardsOutput`](crate::operation::batch_disable_standards::BatchDisableStandardsOutput) with field(s):
     ///   - [`standards_subscriptions(Option<Vec<StandardsSubscription>>)`](crate::operation::batch_disable_standards::BatchDisableStandardsOutput::standards_subscriptions): <p>The details of the standards subscriptions that were disabled.</p>
     /// - On failure, responds with [`SdkError<BatchDisableStandardsError>`](crate::operation::batch_disable_standards::BatchDisableStandardsError)

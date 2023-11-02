@@ -29,8 +29,10 @@ impl ZeppelinApplicationConfigurationDescription {
         self.deploy_as_application_configuration_description.as_ref()
     }
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub fn custom_artifacts_configuration_description(&self) -> ::std::option::Option<&[crate::types::CustomArtifactConfigurationDescription]> {
-        self.custom_artifacts_configuration_description.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_artifacts_configuration_description.is_none()`.
+    pub fn custom_artifacts_configuration_description(&self) -> &[crate::types::CustomArtifactConfigurationDescription] {
+        self.custom_artifacts_configuration_description.as_deref().unwrap_or_default()
     }
 }
 impl ZeppelinApplicationConfigurationDescription {
@@ -52,6 +54,7 @@ pub struct ZeppelinApplicationConfigurationDescriptionBuilder {
 }
 impl ZeppelinApplicationConfigurationDescriptionBuilder {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+    /// This field is required.
     pub fn monitoring_configuration_description(mut self, input: crate::types::ZeppelinMonitoringConfigurationDescription) -> Self {
         self.monitoring_configuration_description = ::std::option::Option::Some(input);
         self

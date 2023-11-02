@@ -52,8 +52,10 @@ impl CreateTokenInput {
         self.refresh_token.as_deref()
     }
     /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
-    pub fn scope(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scope.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scope.is_none()`.
+    pub fn scope(&self) -> &[::std::string::String] {
+        self.scope.as_deref().unwrap_or_default()
     }
     /// <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
     pub fn redirect_uri(&self) -> ::std::option::Option<&str> {
@@ -82,6 +84,7 @@ pub struct CreateTokenInputBuilder {
 }
 impl CreateTokenInputBuilder {
     /// <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl CreateTokenInputBuilder {
         &self.client_id
     }
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
+    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl CreateTokenInputBuilder {
     /// <p>Supports grant types for the authorization code, refresh token, and device code request. For device code requests, specify the following value:</p>
     /// <p> <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p>
     /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
+    /// This field is required.
     pub fn grant_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_type = ::std::option::Option::Some(input.into());
         self

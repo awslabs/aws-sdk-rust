@@ -46,6 +46,7 @@ pub struct RelatedItemBuilder {
 }
 impl RelatedItemBuilder {
     /// <p>Details about the related item.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: crate::types::ItemIdentifier) -> Self {
         self.identifier = ::std::option::Option::Some(input);
         self

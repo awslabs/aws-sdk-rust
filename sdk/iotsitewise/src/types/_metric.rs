@@ -8,9 +8,9 @@
 pub struct Metric {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>The list of variables used in the expression.</p>
-    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
+    pub variables: ::std::vec::Vec<crate::types::ExpressionVariable>,
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
     pub window: ::std::option::Option<crate::types::MetricWindow>,
     /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
@@ -19,12 +19,14 @@ pub struct Metric {
 impl Metric {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::ExpressionVariable]> {
-        self.variables.as_deref()
+    pub fn variables(&self) -> &[crate::types::ExpressionVariable] {
+        use std::ops::Deref;
+        self.variables.deref()
     }
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
     pub fn window(&self) -> ::std::option::Option<&crate::types::MetricWindow> {
@@ -54,6 +56,7 @@ pub struct MetricBuilder {
 impl MetricBuilder {
     /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl MetricBuilder {
         &self.variables
     }
     /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
+    /// This field is required.
     pub fn window(mut self, input: crate::types::MetricWindow) -> Self {
         self.window = ::std::option::Option::Some(input);
         self
@@ -118,12 +122,25 @@ impl MetricBuilder {
         &self.processing_config
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
-    pub fn build(self) -> crate::types::Metric {
-        crate::types::Metric {
-            expression: self.expression,
-            variables: self.variables,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::MetricBuilder::expression)
+    /// - [`variables`](crate::types::builders::MetricBuilder::variables)
+    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Metric {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building Metric",
+                )
+            })?,
+            variables: self.variables.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "variables",
+                    "variables was not specified but it is required when building Metric",
+                )
+            })?,
             window: self.window,
             processing_config: self.processing_config,
-        }
+        })
     }
 }

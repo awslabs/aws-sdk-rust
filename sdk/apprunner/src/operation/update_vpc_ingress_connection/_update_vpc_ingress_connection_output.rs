@@ -34,6 +34,7 @@ pub struct UpdateVpcIngressConnectionOutputBuilder {
 }
 impl UpdateVpcIngressConnectionOutputBuilder {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
+    /// This field is required.
     pub fn vpc_ingress_connection(mut self, input: crate::types::VpcIngressConnection) -> Self {
         self.vpc_ingress_connection = ::std::option::Option::Some(input);
         self

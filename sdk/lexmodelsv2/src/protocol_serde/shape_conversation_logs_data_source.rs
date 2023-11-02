@@ -52,7 +52,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::conversation_logs_data_source_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -64,20 +68,20 @@ pub fn ser_conversation_logs_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConversationLogsDataSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bot_id {
-        object.key("botId").string(var_1.as_str());
+    {
+        object.key("botId").string(input.bot_id.as_str());
     }
-    if let Some(var_2) = &input.bot_alias_id {
-        object.key("botAliasId").string(var_2.as_str());
+    {
+        object.key("botAliasId").string(input.bot_alias_id.as_str());
     }
-    if let Some(var_3) = &input.locale_id {
-        object.key("localeId").string(var_3.as_str());
+    {
+        object.key("localeId").string(input.locale_id.as_str());
     }
-    if let Some(var_4) = &input.filter {
+    if let Some(var_1) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("filter").start_object();
-        crate::protocol_serde::shape_conversation_logs_data_source_filter_by::ser_conversation_logs_data_source_filter_by(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("filter").start_object();
+        crate::protocol_serde::shape_conversation_logs_data_source_filter_by::ser_conversation_logs_data_source_filter_by(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

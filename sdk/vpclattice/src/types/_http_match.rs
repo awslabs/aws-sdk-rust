@@ -21,8 +21,10 @@ impl HttpMatch {
         self.path_match.as_ref()
     }
     /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
-    pub fn header_matches(&self) -> ::std::option::Option<&[crate::types::HeaderMatch]> {
-        self.header_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.header_matches.is_none()`.
+    pub fn header_matches(&self) -> &[crate::types::HeaderMatch] {
+        self.header_matches.as_deref().unwrap_or_default()
     }
 }
 impl HttpMatch {

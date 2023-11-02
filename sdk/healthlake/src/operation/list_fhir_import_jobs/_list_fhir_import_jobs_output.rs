@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub import_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>,
+    pub import_job_properties_list: ::std::vec::Vec<crate::types::ImportJobProperties>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn import_job_properties_list(&self) -> ::std::option::Option<&[crate::types::ImportJobProperties]> {
-        self.import_job_properties_list.as_deref()
+    pub fn import_job_properties_list(&self) -> &[crate::types::ImportJobProperties] {
+        use std::ops::Deref;
+        self.import_job_properties_list.deref()
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListFhirImportJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput).
-    pub fn build(self) -> crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput {
-        crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput {
-            import_job_properties_list: self.import_job_properties_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`import_job_properties_list`](crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder::import_job_properties_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput {
+            import_job_properties_list: self.import_job_properties_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "import_job_properties_list",
+                    "import_job_properties_list was not specified but it is required when building ListFhirImportJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

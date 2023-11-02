@@ -56,8 +56,10 @@ impl PutConformancePackInput {
         self.delivery_s3_key_prefix.as_deref()
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn conformance_pack_input_parameters(&self) -> ::std::option::Option<&[crate::types::ConformancePackInputParameter]> {
-        self.conformance_pack_input_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_input_parameters.is_none()`.
+    pub fn conformance_pack_input_parameters(&self) -> &[crate::types::ConformancePackInputParameter] {
+        self.conformance_pack_input_parameters.as_deref().unwrap_or_default()
     }
     /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
     pub fn template_ssm_document_details(&self) -> ::std::option::Option<&crate::types::TemplateSsmDocumentDetails> {
@@ -85,6 +87,7 @@ pub struct PutConformancePackInputBuilder {
 }
 impl PutConformancePackInputBuilder {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self

@@ -41,6 +41,7 @@ pub struct CreateSecurityConfigurationOutputBuilder {
 }
 impl CreateSecurityConfigurationOutputBuilder {
     /// <p>The name of the security configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateSecurityConfigurationOutputBuilder {
         &self.name
     }
     /// <p>The date and time the security configuration was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self

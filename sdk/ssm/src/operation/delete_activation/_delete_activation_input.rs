@@ -27,6 +27,7 @@ pub struct DeleteActivationInputBuilder {
 }
 impl DeleteActivationInputBuilder {
     /// <p>The ID of the activation that you want to delete.</p>
+    /// This field is required.
     pub fn activation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_id = ::std::option::Option::Some(input.into());
         self

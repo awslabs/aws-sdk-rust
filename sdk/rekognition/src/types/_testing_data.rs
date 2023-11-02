@@ -11,8 +11,10 @@ pub struct TestingData {
 }
 impl TestingData {
     /// <p>The assets used for testing.</p>
-    pub fn assets(&self) -> ::std::option::Option<&[crate::types::Asset]> {
-        self.assets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
+    pub fn assets(&self) -> &[crate::types::Asset] {
+        self.assets.as_deref().unwrap_or_default()
     }
     /// <p>If specified, Rekognition splits training dataset to create a test dataset for the training job.</p>
     pub fn auto_create(&self) -> bool {

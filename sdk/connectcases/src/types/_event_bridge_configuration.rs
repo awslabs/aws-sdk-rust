@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeConfiguration {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>Details of what case and related item data is published through the case event stream.</p>
     pub included_data: ::std::option::Option<crate::types::EventIncludedData>,
 }
 impl EventBridgeConfiguration {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
@@ -35,6 +35,7 @@ pub struct EventBridgeConfigurationBuilder {
 }
 impl EventBridgeConfigurationBuilder {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl EventBridgeConfigurationBuilder {
         &self.included_data
     }
     /// Consumes the builder and constructs a [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
-    pub fn build(self) -> crate::types::EventBridgeConfiguration {
-        crate::types::EventBridgeConfiguration {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::EventBridgeConfigurationBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventBridgeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventBridgeConfiguration {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building EventBridgeConfiguration",
+                )
+            })?,
             included_data: self.included_data,
-        }
+        })
     }
 }

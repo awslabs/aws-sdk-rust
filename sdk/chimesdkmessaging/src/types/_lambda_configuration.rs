@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>Controls how the Lambda function is invoked.</p>
-    pub invocation_type: ::std::option::Option<crate::types::InvocationType>,
+    pub invocation_type: crate::types::InvocationType,
 }
 impl LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>Controls how the Lambda function is invoked.</p>
-    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::InvocationType> {
-        self.invocation_type.as_ref()
+    pub fn invocation_type(&self) -> &crate::types::InvocationType {
+        &self.invocation_type
     }
 }
 impl LambdaConfiguration {
@@ -35,6 +36,7 @@ pub struct LambdaConfigurationBuilder {
 }
 impl LambdaConfigurationBuilder {
     /// <p>The ARN of the Lambda message processing function.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl LambdaConfigurationBuilder {
         &self.resource_arn
     }
     /// <p>Controls how the Lambda function is invoked.</p>
+    /// This field is required.
     pub fn invocation_type(mut self, input: crate::types::InvocationType) -> Self {
         self.invocation_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl LambdaConfigurationBuilder {
         &self.invocation_type
     }
     /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::types::LambdaConfiguration).
-    pub fn build(self) -> crate::types::LambdaConfiguration {
-        crate::types::LambdaConfiguration {
-            resource_arn: self.resource_arn,
-            invocation_type: self.invocation_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::LambdaConfigurationBuilder::resource_arn)
+    /// - [`invocation_type`](crate::types::builders::LambdaConfigurationBuilder::invocation_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaConfiguration {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building LambdaConfiguration",
+                )
+            })?,
+            invocation_type: self.invocation_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "invocation_type",
+                    "invocation_type was not specified but it is required when building LambdaConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -9,25 +9,25 @@ pub struct SamplingRule {
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The priority of the sampling rule.</p>
-    pub priority: ::std::option::Option<i32>,
+    pub priority: i32,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fixed_rate: f64,
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub reservoir_size: i32,
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
-    pub service_type: ::std::option::Option<::std::string::String>,
+    pub service_type: ::std::string::String,
     /// <p>Matches the hostname from a request URL.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>Matches the HTTP method of a request.</p>
-    pub http_method: ::std::option::Option<::std::string::String>,
+    pub http_method: ::std::string::String,
     /// <p>Matches the path from a request URL.</p>
-    pub url_path: ::std::option::Option<::std::string::String>,
+    pub url_path: ::std::string::String,
     /// <p>The version of the sampling rule format (<code>1</code>).</p>
-    pub version: ::std::option::Option<i32>,
+    pub version: i32,
     /// <p>Matches attributes derived from the request.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -41,11 +41,12 @@ impl SamplingRule {
         self.rule_arn.as_deref()
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The priority of the sampling rule.</p>
-    pub fn priority(&self) -> ::std::option::Option<i32> {
+    pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
@@ -57,27 +58,32 @@ impl SamplingRule {
         self.reservoir_size
     }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&str> {
-        self.service_type.as_deref()
+    pub fn service_type(&self) -> &str {
+        use std::ops::Deref;
+        self.service_type.deref()
     }
     /// <p>Matches the hostname from a request URL.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>Matches the HTTP method of a request.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&str> {
-        self.http_method.as_deref()
+    pub fn http_method(&self) -> &str {
+        use std::ops::Deref;
+        self.http_method.deref()
     }
     /// <p>Matches the path from a request URL.</p>
-    pub fn url_path(&self) -> ::std::option::Option<&str> {
-        self.url_path.as_deref()
+    pub fn url_path(&self) -> &str {
+        use std::ops::Deref;
+        self.url_path.deref()
     }
     /// <p>The version of the sampling rule format (<code>1</code>).</p>
-    pub fn version(&self) -> ::std::option::Option<i32> {
+    pub fn version(&self) -> i32 {
         self.version
     }
     /// <p>Matches attributes derived from the request.</p>
@@ -140,6 +146,7 @@ impl SamplingRuleBuilder {
         &self.rule_arn
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +161,7 @@ impl SamplingRuleBuilder {
         &self.resource_arn
     }
     /// <p>The priority of the sampling rule.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -168,6 +176,7 @@ impl SamplingRuleBuilder {
         &self.priority
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
+    /// This field is required.
     pub fn fixed_rate(mut self, input: f64) -> Self {
         self.fixed_rate = ::std::option::Option::Some(input);
         self
@@ -182,6 +191,7 @@ impl SamplingRuleBuilder {
         &self.fixed_rate
     }
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    /// This field is required.
     pub fn reservoir_size(mut self, input: i32) -> Self {
         self.reservoir_size = ::std::option::Option::Some(input);
         self
@@ -196,6 +206,7 @@ impl SamplingRuleBuilder {
         &self.reservoir_size
     }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +221,7 @@ impl SamplingRuleBuilder {
         &self.service_name
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_type = ::std::option::Option::Some(input.into());
         self
@@ -224,6 +236,7 @@ impl SamplingRuleBuilder {
         &self.service_type
     }
     /// <p>Matches the hostname from a request URL.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +251,7 @@ impl SamplingRuleBuilder {
         &self.host
     }
     /// <p>Matches the HTTP method of a request.</p>
+    /// This field is required.
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
         self
@@ -252,6 +266,7 @@ impl SamplingRuleBuilder {
         &self.http_method
     }
     /// <p>Matches the path from a request URL.</p>
+    /// This field is required.
     pub fn url_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url_path = ::std::option::Option::Some(input.into());
         self
@@ -266,6 +281,7 @@ impl SamplingRuleBuilder {
         &self.url_path
     }
     /// <p>The version of the sampling rule format (<code>1</code>).</p>
+    /// This field is required.
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
@@ -300,21 +316,70 @@ impl SamplingRuleBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SamplingRule`](crate::types::SamplingRule).
-    pub fn build(self) -> crate::types::SamplingRule {
-        crate::types::SamplingRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::SamplingRuleBuilder::resource_arn)
+    /// - [`priority`](crate::types::builders::SamplingRuleBuilder::priority)
+    /// - [`service_name`](crate::types::builders::SamplingRuleBuilder::service_name)
+    /// - [`service_type`](crate::types::builders::SamplingRuleBuilder::service_type)
+    /// - [`host`](crate::types::builders::SamplingRuleBuilder::host)
+    /// - [`http_method`](crate::types::builders::SamplingRuleBuilder::http_method)
+    /// - [`url_path`](crate::types::builders::SamplingRuleBuilder::url_path)
+    /// - [`version`](crate::types::builders::SamplingRuleBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::SamplingRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SamplingRule {
             rule_name: self.rule_name,
             rule_arn: self.rule_arn,
-            resource_arn: self.resource_arn,
-            priority: self.priority,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building SamplingRule",
+                )
+            })?,
+            priority: self.priority.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "priority",
+                    "priority was not specified but it is required when building SamplingRule",
+                )
+            })?,
             fixed_rate: self.fixed_rate.unwrap_or_default(),
             reservoir_size: self.reservoir_size.unwrap_or_default(),
-            service_name: self.service_name,
-            service_type: self.service_type,
-            host: self.host,
-            http_method: self.http_method,
-            url_path: self.url_path,
-            version: self.version,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building SamplingRule",
+                )
+            })?,
+            service_type: self.service_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_type",
+                    "service_type was not specified but it is required when building SamplingRule",
+                )
+            })?,
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building SamplingRule",
+                )
+            })?,
+            http_method: self.http_method.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "http_method",
+                    "http_method was not specified but it is required when building SamplingRule",
+                )
+            })?,
+            url_path: self.url_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url_path",
+                    "url_path was not specified but it is required when building SamplingRule",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building SamplingRule",
+                )
+            })?,
             attributes: self.attributes,
-        }
+        })
     }
 }

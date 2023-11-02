@@ -16,8 +16,10 @@ impl DescribeCacheClustersOutput {
         self.marker.as_deref()
     }
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    pub fn cache_clusters(&self) -> ::std::option::Option<&[crate::types::CacheCluster]> {
-        self.cache_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_clusters.is_none()`.
+    pub fn cache_clusters(&self) -> &[crate::types::CacheCluster] {
+        self.cache_clusters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCacheClustersOutput {

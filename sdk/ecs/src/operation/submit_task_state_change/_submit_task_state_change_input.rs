@@ -42,16 +42,22 @@ impl SubmitTaskStateChangeInput {
         self.reason.as_deref()
     }
     /// <p>Any containers that's associated with the state change request.</p>
-    pub fn containers(&self) -> ::std::option::Option<&[crate::types::ContainerStateChange]> {
-        self.containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
+    pub fn containers(&self) -> &[crate::types::ContainerStateChange] {
+        self.containers.as_deref().unwrap_or_default()
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::AttachmentStateChange]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::AttachmentStateChange] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The details for the managed agent that's associated with the task.</p>
-    pub fn managed_agents(&self) -> ::std::option::Option<&[crate::types::ManagedAgentStateChange]> {
-        self.managed_agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_agents.is_none()`.
+    pub fn managed_agents(&self) -> &[crate::types::ManagedAgentStateChange] {
+        self.managed_agents.as_deref().unwrap_or_default()
     }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
     pub fn pull_started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -34,6 +34,7 @@ pub struct UpdateBackupPlanInputBuilder {
 }
 impl UpdateBackupPlanInputBuilder {
     /// <p>Uniquely identifies a backup plan.</p>
+    /// This field is required.
     pub fn backup_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateBackupPlanInputBuilder {
         &self.backup_plan_id
     }
     /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// This field is required.
     pub fn backup_plan(mut self, input: crate::types::BackupPlanInput) -> Self {
         self.backup_plan = ::std::option::Option::Some(input);
         self

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFleetsForVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    pub vehicle_name: ::std::option::Option<::std::string::String>,
+    pub vehicle_name: ::std::string::String,
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,8 +13,9 @@ pub struct ListFleetsForVehicleInput {
 }
 impl ListFleetsForVehicleInput {
     /// <p> The ID of the vehicle to retrieve information about. </p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
-        self.vehicle_name.as_deref()
+    pub fn vehicle_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vehicle_name.deref()
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -43,6 +44,7 @@ pub struct ListFleetsForVehicleInputBuilder {
 }
 impl ListFleetsForVehicleInputBuilder {
     /// <p> The ID of the vehicle to retrieve information about. </p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -88,12 +90,19 @@ impl ListFleetsForVehicleInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFleetsForVehicleInput`](crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicle_name`](crate::operation::list_fleets_for_vehicle::builders::ListFleetsForVehicleInputBuilder::vehicle_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleInput {
-            vehicle_name: self.vehicle_name,
+            vehicle_name: self.vehicle_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicle_name",
+                    "vehicle_name was not specified but it is required when building ListFleetsForVehicleInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
         })

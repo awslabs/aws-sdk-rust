@@ -3,13 +3,13 @@ pub fn ser_channel_target_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChannelTargetInfo,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_1.as_str());
+    {
+        object.key("ContactChannelId").string(input.contact_channel_id.as_str());
     }
-    if let Some(var_2) = &input.retry_interval_in_minutes {
+    if let Some(var_1) = &input.retry_interval_in_minutes {
         object.key("RetryIntervalInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())
@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::channel_target_info_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

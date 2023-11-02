@@ -16,7 +16,7 @@ pub struct AdvancedEventSelector {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub field_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedFieldSelector>>,
+    pub field_selectors: ::std::vec::Vec<crate::types::AdvancedFieldSelector>,
 }
 impl AdvancedEventSelector {
     /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
@@ -24,8 +24,9 @@ impl AdvancedEventSelector {
         self.name.as_deref()
     }
     /// <p>Contains all selector statements in an advanced event selector.</p>
-    pub fn field_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedFieldSelector]> {
-        self.field_selectors.as_deref()
+    pub fn field_selectors(&self) -> &[crate::types::AdvancedFieldSelector] {
+        use std::ops::Deref;
+        self.field_selectors.deref()
     }
 }
 impl AdvancedEventSelector {
@@ -78,10 +79,17 @@ impl AdvancedEventSelectorBuilder {
         &self.field_selectors
     }
     /// Consumes the builder and constructs a [`AdvancedEventSelector`](crate::types::AdvancedEventSelector).
-    pub fn build(self) -> crate::types::AdvancedEventSelector {
-        crate::types::AdvancedEventSelector {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_selectors`](crate::types::builders::AdvancedEventSelectorBuilder::field_selectors)
+    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedEventSelector, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AdvancedEventSelector {
             name: self.name,
-            field_selectors: self.field_selectors,
-        }
+            field_selectors: self.field_selectors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_selectors",
+                    "field_selectors was not specified but it is required when building AdvancedEventSelector",
+                )
+            })?,
+        })
     }
 }

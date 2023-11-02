@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIdentity {
     /// <p>The AWS identity principal.</p>
-    pub principal: ::std::option::Option<::std::string::String>,
+    pub principal: ::std::string::String,
     /// <p>The external ID used to estalish trust relationship with the AWS identity.</p>
-    pub external_id: ::std::option::Option<::std::string::String>,
+    pub external_id: ::std::string::String,
 }
 impl AwsIdentity {
     /// <p>The AWS identity principal.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
-        self.principal.as_deref()
+    pub fn principal(&self) -> &str {
+        use std::ops::Deref;
+        self.principal.deref()
     }
     /// <p>The external ID used to estalish trust relationship with the AWS identity.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
-        self.external_id.as_deref()
+    pub fn external_id(&self) -> &str {
+        use std::ops::Deref;
+        self.external_id.deref()
     }
 }
 impl AwsIdentity {
@@ -35,6 +37,7 @@ pub struct AwsIdentityBuilder {
 }
 impl AwsIdentityBuilder {
     /// <p>The AWS identity principal.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl AwsIdentityBuilder {
         &self.principal
     }
     /// <p>The external ID used to estalish trust relationship with the AWS identity.</p>
+    /// This field is required.
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl AwsIdentityBuilder {
         &self.external_id
     }
     /// Consumes the builder and constructs a [`AwsIdentity`](crate::types::AwsIdentity).
-    pub fn build(self) -> crate::types::AwsIdentity {
-        crate::types::AwsIdentity {
-            principal: self.principal,
-            external_id: self.external_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`principal`](crate::types::builders::AwsIdentityBuilder::principal)
+    /// - [`external_id`](crate::types::builders::AwsIdentityBuilder::external_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsIdentity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsIdentity {
+            principal: self.principal.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "principal",
+                    "principal was not specified but it is required when building AwsIdentity",
+                )
+            })?,
+            external_id: self.external_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "external_id",
+                    "external_id was not specified but it is required when building AwsIdentity",
+                )
+            })?,
+        })
     }
 }

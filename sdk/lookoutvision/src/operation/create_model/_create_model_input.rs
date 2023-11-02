@@ -42,8 +42,10 @@ impl CreateModelInput {
         self.kms_key_id.as_deref()
     }
     /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateModelInput {
@@ -66,6 +68,7 @@ pub struct CreateModelInputBuilder {
 }
 impl CreateModelInputBuilder {
     /// <p>The name of the project in which you want to create a model version.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +117,7 @@ impl CreateModelInputBuilder {
         &self.client_token
     }
     /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

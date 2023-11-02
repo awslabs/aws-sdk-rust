@@ -24,8 +24,10 @@ impl CreateContactInput {
         self.email_address.as_deref()
     }
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-    pub fn topic_preferences(&self) -> ::std::option::Option<&[crate::types::TopicPreference]> {
-        self.topic_preferences.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_preferences.is_none()`.
+    pub fn topic_preferences(&self) -> &[crate::types::TopicPreference] {
+        self.topic_preferences.as_deref().unwrap_or_default()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(&self) -> ::std::option::Option<bool> {
@@ -55,6 +57,7 @@ pub struct CreateContactInputBuilder {
 }
 impl CreateContactInputBuilder {
     /// <p>The name of the contact list to which the contact should be added.</p>
+    /// This field is required.
     pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateContactInputBuilder {
         &self.contact_list_name
     }
     /// <p>The contact's email address.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self

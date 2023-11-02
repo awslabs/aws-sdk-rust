@@ -3,18 +3,18 @@ pub fn ser_recipe_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecipeAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.operation {
-        object.key("Operation").string(var_1.as_str());
+    {
+        object.key("Operation").string(input.operation.as_str());
     }
-    if let Some(var_2) = &input.parameters {
+    if let Some(var_1) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Parameters").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("Parameters").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
     Ok(())
 }
@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::recipe_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

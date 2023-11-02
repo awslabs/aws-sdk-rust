@@ -34,6 +34,7 @@ pub struct GetReplicationSetOutputBuilder {
 }
 impl GetReplicationSetOutputBuilder {
     /// <p>Details of the replication set.</p>
+    /// This field is required.
     pub fn replication_set(mut self, input: crate::types::ReplicationSet) -> Self {
         self.replication_set = ::std::option::Option::Some(input);
         self

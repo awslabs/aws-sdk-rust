@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelIntentClassificationResultItem {
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
-    pub intent_name: ::std::option::Option<::std::string::String>,
+    pub intent_name: ::std::string::String,
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
-    pub match_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
+    pub match_result: crate::types::TestResultMatchStatus,
 }
 impl ConversationLevelIntentClassificationResultItem {
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
-    pub fn intent_name(&self) -> ::std::option::Option<&str> {
-        self.intent_name.as_deref()
+    pub fn intent_name(&self) -> &str {
+        use std::ops::Deref;
+        self.intent_name.deref()
     }
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
-    pub fn match_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
-        self.match_result.as_ref()
+    pub fn match_result(&self) -> &crate::types::TestResultMatchStatus {
+        &self.match_result
     }
 }
 impl ConversationLevelIntentClassificationResultItem {
@@ -35,6 +36,7 @@ pub struct ConversationLevelIntentClassificationResultItemBuilder {
 }
 impl ConversationLevelIntentClassificationResultItemBuilder {
     /// <p>The intent name used in the evaluation of intent level success or failure.</p>
+    /// This field is required.
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
         &self.intent_name
     }
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
+    /// This field is required.
     pub fn match_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.match_result = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,25 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
         &self.match_result
     }
     /// Consumes the builder and constructs a [`ConversationLevelIntentClassificationResultItem`](crate::types::ConversationLevelIntentClassificationResultItem).
-    pub fn build(self) -> crate::types::ConversationLevelIntentClassificationResultItem {
-        crate::types::ConversationLevelIntentClassificationResultItem {
-            intent_name: self.intent_name,
-            match_result: self.match_result,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intent_name`](crate::types::builders::ConversationLevelIntentClassificationResultItemBuilder::intent_name)
+    /// - [`match_result`](crate::types::builders::ConversationLevelIntentClassificationResultItemBuilder::match_result)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ConversationLevelIntentClassificationResultItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConversationLevelIntentClassificationResultItem {
+            intent_name: self.intent_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "intent_name",
+                    "intent_name was not specified but it is required when building ConversationLevelIntentClassificationResultItem",
+                )
+            })?,
+            match_result: self.match_result.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "match_result",
+                    "match_result was not specified but it is required when building ConversationLevelIntentClassificationResultItem",
+                )
+            })?,
+        })
     }
 }

@@ -15,8 +15,10 @@ impl DescribeCustomDomainAssociationsOutput {
         self.marker.as_deref()
     }
     /// <p>The associations for the custom domain.</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::Association]> {
-        self.associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::Association] {
+        self.associations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCustomDomainAssociationsOutput {

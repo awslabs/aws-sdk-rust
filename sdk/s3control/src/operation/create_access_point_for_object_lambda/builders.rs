@@ -98,14 +98,14 @@ impl CreateAccessPointForObjectLambdaFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput,
             crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

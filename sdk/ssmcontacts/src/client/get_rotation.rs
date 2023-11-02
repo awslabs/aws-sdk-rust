@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRotation`](crate::operation::get_rotation::builders::GetRotationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rotation_id(impl Into<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::set_rotation_id): <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
+    ///   - [`rotation_id(impl Into<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::set_rotation_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p><br>
     /// - On success, responds with [`GetRotationOutput`](crate::operation::get_rotation::GetRotationOutput) with field(s):
-    ///   - [`rotation_arn(Option<String>)`](crate::operation::get_rotation::GetRotationOutput::rotation_arn): <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_rotation::GetRotationOutput::name): <p>The name of the on-call rotation.</p>
-    ///   - [`contact_ids(Option<Vec<String>>)`](crate::operation::get_rotation::GetRotationOutput::contact_ids): <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::operation::get_rotation::GetRotationOutput::start_time): <p>The specified start time for the on-call rotation.</p>
-    ///   - [`time_zone_id(Option<String>)`](crate::operation::get_rotation::GetRotationOutput::time_zone_id): <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
+    ///   - [`rotation_arn(String)`](crate::operation::get_rotation::GetRotationOutput::rotation_arn): <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
+    ///   - [`name(String)`](crate::operation::get_rotation::GetRotationOutput::name): <p>The name of the on-call rotation.</p>
+    ///   - [`contact_ids(Vec<String>)`](crate::operation::get_rotation::GetRotationOutput::contact_ids): <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
+    ///   - [`start_time(DateTime)`](crate::operation::get_rotation::GetRotationOutput::start_time): <p>The specified start time for the on-call rotation.</p>
+    ///   - [`time_zone_id(String)`](crate::operation::get_rotation::GetRotationOutput::time_zone_id): <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     ///   - [`recurrence(Option<RecurrenceSettings>)`](crate::operation::get_rotation::GetRotationOutput::recurrence): <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
     /// - On failure, responds with [`SdkError<GetRotationError>`](crate::operation::get_rotation::GetRotationError)
     pub fn get_rotation(&self) -> crate::operation::get_rotation::builders::GetRotationFluentBuilder {

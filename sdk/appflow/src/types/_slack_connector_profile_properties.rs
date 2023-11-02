@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
-    pub instance_url: ::std::option::Option<::std::string::String>,
+    pub instance_url: ::std::string::String,
 }
 impl SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
-    pub fn instance_url(&self) -> ::std::option::Option<&str> {
-        self.instance_url.as_deref()
+    pub fn instance_url(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_url.deref()
     }
 }
 impl SlackConnectorProfileProperties {
@@ -28,6 +29,7 @@ pub struct SlackConnectorProfilePropertiesBuilder {
 }
 impl SlackConnectorProfilePropertiesBuilder {
     /// <p> The location of the Slack resource. </p>
+    /// This field is required.
     pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_url = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl SlackConnectorProfilePropertiesBuilder {
         &self.instance_url
     }
     /// Consumes the builder and constructs a [`SlackConnectorProfileProperties`](crate::types::SlackConnectorProfileProperties).
-    pub fn build(self) -> crate::types::SlackConnectorProfileProperties {
-        crate::types::SlackConnectorProfileProperties {
-            instance_url: self.instance_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_url`](crate::types::builders::SlackConnectorProfilePropertiesBuilder::instance_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlackConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlackConnectorProfileProperties {
+            instance_url: self.instance_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_url",
+                    "instance_url was not specified but it is required when building SlackConnectorProfileProperties",
+                )
+            })?,
+        })
     }
 }

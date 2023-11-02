@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSetOverrideParameters {
     /// <p>The ID of the dataset to apply overrides to.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>A new name for the dataset.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobDataSetOverrideParameters {
     /// <p>The ID of the dataset to apply overrides to.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>A new name for the dataset.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AssetBundleImportJobDataSetOverrideParametersBuilder {
 }
 impl AssetBundleImportJobDataSetOverrideParametersBuilder {
     /// <p>The ID of the dataset to apply overrides to.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl AssetBundleImportJobDataSetOverrideParametersBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSetOverrideParameters`](crate::types::AssetBundleImportJobDataSetOverrideParameters).
-    pub fn build(self) -> crate::types::AssetBundleImportJobDataSetOverrideParameters {
-        crate::types::AssetBundleImportJobDataSetOverrideParameters {
-            data_set_id: self.data_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_id`](crate::types::builders::AssetBundleImportJobDataSetOverrideParametersBuilder::data_set_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSetOverrideParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDataSetOverrideParameters {
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building AssetBundleImportJobDataSetOverrideParameters",
+                )
+            })?,
             name: self.name,
-        }
+        })
     }
 }

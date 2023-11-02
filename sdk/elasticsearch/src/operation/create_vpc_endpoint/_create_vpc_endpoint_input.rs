@@ -42,6 +42,7 @@ pub struct CreateVpcEndpointInputBuilder {
 }
 impl CreateVpcEndpointInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the domain to grant access to.</p>
+    /// This field is required.
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateVpcEndpointInputBuilder {
         &self.domain_arn
     }
     /// <p>Options to specify the subnets and security groups for the endpoint.</p>
+    /// This field is required.
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
         self

@@ -6,13 +6,14 @@
 pub struct ForwardAction {
     /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p>
     /// <p>The default value is 1. This means that if only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.</p>
-    pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTargetGroup>>,
+    pub target_groups: ::std::vec::Vec<crate::types::WeightedTargetGroup>,
 }
 impl ForwardAction {
     /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p>
     /// <p>The default value is 1. This means that if only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.</p>
-    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::WeightedTargetGroup]> {
-        self.target_groups.as_deref()
+    pub fn target_groups(&self) -> &[crate::types::WeightedTargetGroup] {
+        use std::ops::Deref;
+        self.target_groups.deref()
     }
 }
 impl ForwardAction {
@@ -53,9 +54,16 @@ impl ForwardActionBuilder {
         &self.target_groups
     }
     /// Consumes the builder and constructs a [`ForwardAction`](crate::types::ForwardAction).
-    pub fn build(self) -> crate::types::ForwardAction {
-        crate::types::ForwardAction {
-            target_groups: self.target_groups,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_groups`](crate::types::builders::ForwardActionBuilder::target_groups)
+    pub fn build(self) -> ::std::result::Result<crate::types::ForwardAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ForwardAction {
+            target_groups: self.target_groups.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_groups",
+                    "target_groups was not specified but it is required when building ForwardAction",
+                )
+            })?,
+        })
     }
 }

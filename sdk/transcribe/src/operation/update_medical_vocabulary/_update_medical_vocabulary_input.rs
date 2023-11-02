@@ -43,6 +43,7 @@ pub struct UpdateMedicalVocabularyInputBuilder {
 }
 impl UpdateMedicalVocabularyInputBuilder {
     /// <p>The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl UpdateMedicalVocabularyInputBuilder {
         &self.vocabulary_name
     }
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -72,6 +74,7 @@ impl UpdateMedicalVocabularyInputBuilder {
     }
     /// <p>The Amazon S3 location of the text file that contains your custom medical vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
+    /// This field is required.
     pub fn vocabulary_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_file_uri = ::std::option::Option::Some(input.into());
         self

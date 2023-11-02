@@ -27,6 +27,7 @@ pub struct CreateOriginAccessControlInputBuilder {
 }
 impl CreateOriginAccessControlInputBuilder {
     /// <p>Contains the origin access control.</p>
+    /// This field is required.
     pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
         self.origin_access_control_config = ::std::option::Option::Some(input);
         self

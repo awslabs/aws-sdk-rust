@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonotonicValues {
     /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
-    pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub status: crate::types::StatisticalIssueStatus,
     /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
     pub monotonicity: ::std::option::Option<crate::types::Monotonicity>,
 }
 impl MonotonicValues {
     /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatisticalIssueStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+        &self.status
     }
     /// <p> Indicates the monotonicity of values. Can be INCREASING, DECREASING, or STATIC. </p>
     pub fn monotonicity(&self) -> ::std::option::Option<&crate::types::Monotonicity> {
@@ -35,6 +35,7 @@ pub struct MonotonicValuesBuilder {
 }
 impl MonotonicValuesBuilder {
     /// <p> Indicates whether there is a potential data issue related to having monotonic values. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatisticalIssueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl MonotonicValuesBuilder {
         &self.monotonicity
     }
     /// Consumes the builder and constructs a [`MonotonicValues`](crate::types::MonotonicValues).
-    pub fn build(self) -> crate::types::MonotonicValues {
-        crate::types::MonotonicValues {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::MonotonicValuesBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::MonotonicValues, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MonotonicValues {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building MonotonicValues",
+                )
+            })?,
             monotonicity: self.monotonicity,
-        }
+        })
     }
 }

@@ -3,23 +3,23 @@ pub fn ser_facet_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FacetAttribute,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.attribute_definition {
+    if let Some(var_1) = &input.attribute_definition {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("AttributeDefinition").start_object();
-        crate::protocol_serde::shape_facet_attribute_definition::ser_facet_attribute_definition(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("AttributeDefinition").start_object();
+        crate::protocol_serde::shape_facet_attribute_definition::ser_facet_attribute_definition(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.attribute_reference {
+    if let Some(var_3) = &input.attribute_reference {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AttributeReference").start_object();
-        crate::protocol_serde::shape_facet_attribute_reference::ser_facet_attribute_reference(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("AttributeReference").start_object();
+        crate::protocol_serde::shape_facet_attribute_reference::ser_facet_attribute_reference(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.required_behavior {
-        object.key("RequiredBehavior").string(var_6.as_str());
+    if let Some(var_5) = &input.required_behavior {
+        object.key("RequiredBehavior").string(var_5.as_str());
     }
     Ok(())
 }
@@ -73,7 +73,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::facet_attribute_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

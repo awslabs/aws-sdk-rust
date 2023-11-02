@@ -30,12 +30,16 @@ impl CreateVpcConnectionInput {
         self.vpc_id.as_deref()
     }
     /// <p>The list of client subnets.</p>
-    pub fn client_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_subnets.is_none()`.
+    pub fn client_subnets(&self) -> &[::std::string::String] {
+        self.client_subnets.as_deref().unwrap_or_default()
     }
     /// <p>The list of security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A map of tags for the VPC connection.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +66,7 @@ pub struct CreateVpcConnectionInputBuilder {
 }
 impl CreateVpcConnectionInputBuilder {
     /// <p>The cluster Amazon Resource Name (ARN) for the VPC connection.</p>
+    /// This field is required.
     pub fn target_cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_cluster_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl CreateVpcConnectionInputBuilder {
         &self.target_cluster_arn
     }
     /// <p>The authentication type of VPC connection.</p>
+    /// This field is required.
     pub fn authentication(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl CreateVpcConnectionInputBuilder {
         &self.authentication
     }
     /// <p>The VPC ID of VPC connection.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

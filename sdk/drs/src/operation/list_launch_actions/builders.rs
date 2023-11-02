@@ -92,14 +92,14 @@ impl ListLaunchActionsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::list_launch_actions::ListLaunchActionsOutput,
             crate::operation::list_launch_actions::ListLaunchActionsError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_launch_actions::ListLaunchActionsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +112,7 @@ impl ListLaunchActionsFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_launch_actions::paginator::ListLaunchActionsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_launch_actions::paginator::ListLaunchActionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_launch_actions::paginator::ListLaunchActionsPaginator {
         crate::operation::list_launch_actions::paginator::ListLaunchActionsPaginator::new(self.handle, self.inner)
     }

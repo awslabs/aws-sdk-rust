@@ -41,6 +41,7 @@ pub struct DescribeEndpointSettingsInputBuilder {
 }
 impl DescribeEndpointSettingsInputBuilder {
     /// <p>The database engine used for your source or target endpoint.</p>
+    /// This field is required.
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct DescribeClientVpnRoutesOutput {
 }
 impl DescribeClientVpnRoutesOutput {
     /// <p>Information about the Client VPN endpoint routes.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::ClientVpnRoute]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::ClientVpnRoute] {
+        self.routes.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

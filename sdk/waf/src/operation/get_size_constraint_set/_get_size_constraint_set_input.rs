@@ -27,6 +27,7 @@ pub struct GetSizeConstraintSetInputBuilder {
 }
 impl GetSizeConstraintSetInputBuilder {
     /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    /// This field is required.
     pub fn size_constraint_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.size_constraint_set_id = ::std::option::Option::Some(input.into());
         self

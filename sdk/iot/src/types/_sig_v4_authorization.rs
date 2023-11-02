@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigV4Authorization {
     /// <p>The signing region.</p>
-    pub signing_region: ::std::option::Option<::std::string::String>,
+    pub signing_region: ::std::string::String,
     /// <p>The service name to use while signing with Sig V4.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The ARN of the signing role.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl SigV4Authorization {
     /// <p>The signing region.</p>
-    pub fn signing_region(&self) -> ::std::option::Option<&str> {
-        self.signing_region.as_deref()
+    pub fn signing_region(&self) -> &str {
+        use std::ops::Deref;
+        self.signing_region.deref()
     }
     /// <p>The service name to use while signing with Sig V4.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The ARN of the signing role.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl SigV4Authorization {
@@ -42,6 +45,7 @@ pub struct SigV4AuthorizationBuilder {
 }
 impl SigV4AuthorizationBuilder {
     /// <p>The signing region.</p>
+    /// This field is required.
     pub fn signing_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_region = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl SigV4AuthorizationBuilder {
         &self.signing_region
     }
     /// <p>The service name to use while signing with Sig V4.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl SigV4AuthorizationBuilder {
         &self.service_name
     }
     /// <p>The ARN of the signing role.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl SigV4AuthorizationBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`SigV4Authorization`](crate::types::SigV4Authorization).
-    pub fn build(self) -> crate::types::SigV4Authorization {
-        crate::types::SigV4Authorization {
-            signing_region: self.signing_region,
-            service_name: self.service_name,
-            role_arn: self.role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`signing_region`](crate::types::builders::SigV4AuthorizationBuilder::signing_region)
+    /// - [`service_name`](crate::types::builders::SigV4AuthorizationBuilder::service_name)
+    /// - [`role_arn`](crate::types::builders::SigV4AuthorizationBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SigV4Authorization, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SigV4Authorization {
+            signing_region: self.signing_region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "signing_region",
+                    "signing_region was not specified but it is required when building SigV4Authorization",
+                )
+            })?,
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building SigV4Authorization",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building SigV4Authorization",
+                )
+            })?,
+        })
     }
 }

@@ -55,6 +55,7 @@ pub fn ser_placement(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_placement(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Placement, ::aws_smithy_xml::decode::XmlDecodeError> {

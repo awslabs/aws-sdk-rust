@@ -27,6 +27,7 @@ pub struct DeleteJobTemplateInputBuilder {
 }
 impl DeleteJobTemplateInputBuilder {
     /// The name of the job template to be deleted.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

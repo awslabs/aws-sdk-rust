@@ -3,11 +3,11 @@ pub fn ser_external_events_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExternalEventsDetail,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_location {
-        object.key("dataLocation").string(var_1.as_str());
+    {
+        object.key("dataLocation").string(input.data_location.as_str());
     }
-    if let Some(var_2) = &input.data_access_role_arn {
-        object.key("dataAccessRoleArn").string(var_2.as_str());
+    {
+        object.key("dataAccessRoleArn").string(input.data_access_role_arn.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::external_events_detail_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

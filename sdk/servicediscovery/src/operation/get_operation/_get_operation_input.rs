@@ -27,6 +27,7 @@ pub struct GetOperationInputBuilder {
 }
 impl GetOperationInputBuilder {
     /// <p>The ID of the operation that you want to get more information about.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self

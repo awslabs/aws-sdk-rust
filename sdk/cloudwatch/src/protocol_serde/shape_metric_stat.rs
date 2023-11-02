@@ -30,6 +30,7 @@ pub fn ser_metric_stat(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_metric_stat(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MetricStat, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -92,5 +93,5 @@ pub fn de_metric_stat(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::metric_stat_correct_errors(builder).build())
 }

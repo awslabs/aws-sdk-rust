@@ -27,6 +27,7 @@ pub struct DeleteSchemaInputBuilder {
 }
 impl DeleteSchemaInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the schema to delete.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self

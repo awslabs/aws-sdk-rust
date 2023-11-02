@@ -41,6 +41,7 @@ pub struct UpdateContactScheduleInputBuilder {
 }
 impl UpdateContactScheduleInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateContactScheduleInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the contact.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateContactScheduleInputBuilder {
         &self.contact_id
     }
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    /// This field is required.
     pub fn scheduled_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.scheduled_time = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DeleteBackupInputBuilder {
 }
 impl DeleteBackupInputBuilder {
     /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self

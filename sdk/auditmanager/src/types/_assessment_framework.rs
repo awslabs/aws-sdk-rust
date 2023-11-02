@@ -27,8 +27,10 @@ impl AssessmentFramework {
         self.metadata.as_ref()
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(&self) -> ::std::option::Option<&[crate::types::AssessmentControlSet]> {
-        self.control_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sets.is_none()`.
+    pub fn control_sets(&self) -> &[crate::types::AssessmentControlSet] {
+        self.control_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AssessmentFramework {

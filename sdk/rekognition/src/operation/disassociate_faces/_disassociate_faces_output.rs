@@ -13,12 +13,16 @@ pub struct DisassociateFacesOutput {
 }
 impl DisassociateFacesOutput {
     /// <p>An array of DissociatedFace objects containing FaceIds that are successfully disassociated with the UserID is returned. Returned if the DisassociatedFaces action is successful.</p>
-    pub fn disassociated_faces(&self) -> ::std::option::Option<&[crate::types::DisassociatedFace]> {
-        self.disassociated_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disassociated_faces.is_none()`.
+    pub fn disassociated_faces(&self) -> &[crate::types::DisassociatedFace] {
+        self.disassociated_faces.as_deref().unwrap_or_default()
     }
     /// <p>An array of UnsuccessfulDisassociation objects containing FaceIds that are not successfully associated, along with the reasons for the failure to associate. Returned if the DisassociateFaces action is successful.</p>
-    pub fn unsuccessful_face_disassociations(&self) -> ::std::option::Option<&[crate::types::UnsuccessfulFaceDisassociation]> {
-        self.unsuccessful_face_disassociations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful_face_disassociations.is_none()`.
+    pub fn unsuccessful_face_disassociations(&self) -> &[crate::types::UnsuccessfulFaceDisassociation] {
+        self.unsuccessful_face_disassociations.as_deref().unwrap_or_default()
     }
     /// <p>The status of an update made to a User. Reflects if the User has been updated for every requested change.</p>
     pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatus> {

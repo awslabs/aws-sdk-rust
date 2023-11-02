@@ -70,6 +70,7 @@ pub struct TemplateVersionResponseBuilder {
 }
 impl TemplateVersionResponseBuilder {
     /// <p>The date, in ISO 8601 format, when the version of the message template was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl TemplateVersionResponseBuilder {
         &self.default_substitutions
     }
     /// <p>The date, in ISO 8601 format, when the version of the message template was last modified.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +128,7 @@ impl TemplateVersionResponseBuilder {
         &self.template_description
     }
     /// <p>The name of the message template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +143,7 @@ impl TemplateVersionResponseBuilder {
         &self.template_name
     }
     /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_type = ::std::option::Option::Some(input.into());
         self

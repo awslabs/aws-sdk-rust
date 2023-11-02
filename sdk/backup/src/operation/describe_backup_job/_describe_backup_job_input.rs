@@ -27,6 +27,7 @@ pub struct DescribeBackupJobInputBuilder {
 }
 impl DescribeBackupJobInputBuilder {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    /// This field is required.
     pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self

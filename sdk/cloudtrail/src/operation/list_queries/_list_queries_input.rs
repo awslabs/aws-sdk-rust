@@ -62,6 +62,7 @@ pub struct ListQueriesInputBuilder {
 }
 impl ListQueriesInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+    /// This field is required.
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self

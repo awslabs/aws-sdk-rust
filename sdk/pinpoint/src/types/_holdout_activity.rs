@@ -52,6 +52,7 @@ impl HoldoutActivityBuilder {
     }
     /// <p>The percentage of participants who shouldn't continue the journey.</p>
     /// <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
+    /// This field is required.
     pub fn percentage(mut self, input: i32) -> Self {
         self.percentage = ::std::option::Option::Some(input);
         self

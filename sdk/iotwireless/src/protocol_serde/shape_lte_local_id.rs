@@ -3,16 +3,16 @@ pub fn ser_lte_local_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LteLocalId,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pci {
+    {
         object.key("Pci").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.pci).into()),
         );
     }
-    if let Some(var_2) = &input.earfcn {
+    {
         object.key("Earfcn").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.earfcn).into()),
         );
     }
     Ok(())

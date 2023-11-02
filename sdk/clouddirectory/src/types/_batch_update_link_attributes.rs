@@ -7,7 +7,7 @@ pub struct BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     /// <p>The attributes update structure.</p>
-    pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>>,
+    pub attribute_updates: ::std::vec::Vec<crate::types::LinkAttributeUpdate>,
 }
 impl BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -15,8 +15,9 @@ impl BatchUpdateLinkAttributes {
         self.typed_link_specifier.as_ref()
     }
     /// <p>The attributes update structure.</p>
-    pub fn attribute_updates(&self) -> ::std::option::Option<&[crate::types::LinkAttributeUpdate]> {
-        self.attribute_updates.as_deref()
+    pub fn attribute_updates(&self) -> &[crate::types::LinkAttributeUpdate] {
+        use std::ops::Deref;
+        self.attribute_updates.deref()
     }
 }
 impl BatchUpdateLinkAttributes {
@@ -35,6 +36,7 @@ pub struct BatchUpdateLinkAttributesBuilder {
 }
 impl BatchUpdateLinkAttributesBuilder {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    /// This field is required.
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl BatchUpdateLinkAttributesBuilder {
         &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateLinkAttributes`](crate::types::BatchUpdateLinkAttributes).
-    pub fn build(self) -> crate::types::BatchUpdateLinkAttributes {
-        crate::types::BatchUpdateLinkAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_updates`](crate::types::builders::BatchUpdateLinkAttributesBuilder::attribute_updates)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateLinkAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchUpdateLinkAttributes {
             typed_link_specifier: self.typed_link_specifier,
-            attribute_updates: self.attribute_updates,
-        }
+            attribute_updates: self.attribute_updates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_updates",
+                    "attribute_updates was not specified but it is required when building BatchUpdateLinkAttributes",
+                )
+            })?,
+        })
     }
 }

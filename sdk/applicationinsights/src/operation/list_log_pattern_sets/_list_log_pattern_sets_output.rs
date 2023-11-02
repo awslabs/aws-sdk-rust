@@ -23,8 +23,10 @@ impl ListLogPatternSetsOutput {
         self.account_id.as_deref()
     }
     /// <p>The list of log pattern sets.</p>
-    pub fn log_pattern_sets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_pattern_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_pattern_sets.is_none()`.
+    pub fn log_pattern_sets(&self) -> &[::std::string::String] {
+        self.log_pattern_sets.as_deref().unwrap_or_default()
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

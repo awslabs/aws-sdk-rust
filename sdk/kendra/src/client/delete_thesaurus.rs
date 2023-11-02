@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteThesaurus`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::set_id): <p>The identifier of the thesaurus you want to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::set_index_id): <p>The identifier of the index for the thesaurus.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::set_id):<br>required: **true**<br><p>The identifier of the thesaurus you want to delete.</p><br>
+    ///   - [`index_id(impl Into<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for the thesaurus.</p><br>
     /// - On success, responds with [`DeleteThesaurusOutput`](crate::operation::delete_thesaurus::DeleteThesaurusOutput)
     /// - On failure, responds with [`SdkError<DeleteThesaurusError>`](crate::operation::delete_thesaurus::DeleteThesaurusError)
     pub fn delete_thesaurus(&self) -> crate::operation::delete_thesaurus::builders::DeleteThesaurusFluentBuilder {

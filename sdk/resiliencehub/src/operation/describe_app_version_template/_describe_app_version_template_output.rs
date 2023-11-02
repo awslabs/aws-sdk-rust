@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppVersionTemplateOutput {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub app_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub app_arn: ::std::string::String,
     /// <p>The version of the application.</p>
-    pub app_version: ::std::option::Option<::std::string::String>,
+    pub app_version: ::std::string::String,
     /// <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p>
     /// <p>The <code>appTemplateBody</code> JSON string has the following structure:</p>
     /// <ul>
@@ -73,17 +73,19 @@ pub struct DescribeAppVersionTemplateOutput {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
-    pub app_template_body: ::std::option::Option<::std::string::String>,
+    pub app_template_body: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DescribeAppVersionTemplateOutput {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
-        self.app_arn.as_deref()
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn app_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.app_arn.deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
-        self.app_version.as_deref()
+    pub fn app_version(&self) -> &str {
+        use std::ops::Deref;
+        self.app_version.deref()
     }
     /// <p>A JSON string that provides information about your application structure. To learn more about the <code>appTemplateBody</code> template, see the sample template provided in the <i>Examples</i> section.</p>
     /// <p>The <code>appTemplateBody</code> JSON string has the following structure:</p>
@@ -151,8 +153,9 @@ impl DescribeAppVersionTemplateOutput {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
-    pub fn app_template_body(&self) -> ::std::option::Option<&str> {
-        self.app_template_body.as_deref()
+    pub fn app_template_body(&self) -> &str {
+        use std::ops::Deref;
+        self.app_template_body.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAppVersionTemplateOutput {
@@ -177,21 +180,23 @@ pub struct DescribeAppVersionTemplateOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAppVersionTemplateOutputBuilder {
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    /// This field is required.
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
     /// <p>The version of the application.</p>
+    /// This field is required.
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
         self
@@ -271,6 +276,7 @@ impl DescribeAppVersionTemplateOutputBuilder {
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note> </li>
     /// </ul>
+    /// This field is required.
     pub fn app_template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_template_body = ::std::option::Option::Some(input.into());
         self
@@ -424,12 +430,36 @@ impl DescribeAppVersionTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAppVersionTemplateOutput`](crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput).
-    pub fn build(self) -> crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
-        crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
-            app_arn: self.app_arn,
-            app_version: self.app_version,
-            app_template_body: self.app_template_body,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_arn`](crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder::app_arn)
+    /// - [`app_version`](crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder::app_version)
+    /// - [`app_template_body`](crate::operation::describe_app_version_template::builders::DescribeAppVersionTemplateOutputBuilder::app_template_body)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
+            app_arn: self.app_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_arn",
+                    "app_arn was not specified but it is required when building DescribeAppVersionTemplateOutput",
+                )
+            })?,
+            app_version: self.app_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_version",
+                    "app_version was not specified but it is required when building DescribeAppVersionTemplateOutput",
+                )
+            })?,
+            app_template_body: self.app_template_body.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_template_body",
+                    "app_template_body was not specified but it is required when building DescribeAppVersionTemplateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

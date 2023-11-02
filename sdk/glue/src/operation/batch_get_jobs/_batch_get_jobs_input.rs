@@ -8,8 +8,10 @@ pub struct BatchGetJobsInput {
 }
 impl BatchGetJobsInput {
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
-    pub fn job_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
+    pub fn job_names(&self) -> &[::std::string::String] {
+        self.job_names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetJobsInput {

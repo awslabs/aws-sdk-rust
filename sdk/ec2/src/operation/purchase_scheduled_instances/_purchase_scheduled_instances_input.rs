@@ -21,8 +21,10 @@ impl PurchaseScheduledInstancesInput {
         self.dry_run
     }
     /// <p>The purchase requests.</p>
-    pub fn purchase_requests(&self) -> ::std::option::Option<&[crate::types::PurchaseRequest]> {
-        self.purchase_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.purchase_requests.is_none()`.
+    pub fn purchase_requests(&self) -> &[crate::types::PurchaseRequest] {
+        self.purchase_requests.as_deref().unwrap_or_default()
     }
 }
 impl PurchaseScheduledInstancesInput {

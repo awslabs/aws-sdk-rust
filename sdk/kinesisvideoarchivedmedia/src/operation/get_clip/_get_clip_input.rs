@@ -79,6 +79,7 @@ impl GetClipInputBuilder {
         &self.stream_arn
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
+    /// This field is required.
     pub fn clip_fragment_selector(mut self, input: crate::types::ClipFragmentSelector) -> Self {
         self.clip_fragment_selector = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct ListObjectAttributesOutput {
 }
 impl ListObjectAttributesOutput {
     /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::AttributeKeyAndValue] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

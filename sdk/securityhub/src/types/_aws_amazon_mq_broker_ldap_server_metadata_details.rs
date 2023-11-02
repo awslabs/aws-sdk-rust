@@ -27,8 +27,10 @@ pub struct AwsAmazonMqBrokerLdapServerMetadataDetails {
 }
 impl AwsAmazonMqBrokerLdapServerMetadataDetails {
     /// <p> Specifies the location of the LDAP server, such as Amazon Web Services Directory Service for Microsoft Active Directory. </p>
-    pub fn hosts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hosts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hosts.is_none()`.
+    pub fn hosts(&self) -> &[::std::string::String] {
+        self.hosts.as_deref().unwrap_or_default()
     }
     /// <p> The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. </p>
     pub fn role_base(&self) -> ::std::option::Option<&str> {

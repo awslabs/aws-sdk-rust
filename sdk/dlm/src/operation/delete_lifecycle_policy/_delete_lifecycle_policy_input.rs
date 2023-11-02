@@ -27,6 +27,7 @@ pub struct DeleteLifecyclePolicyInputBuilder {
 }
 impl DeleteLifecyclePolicyInputBuilder {
     /// <p>The identifier of the lifecycle policy.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self

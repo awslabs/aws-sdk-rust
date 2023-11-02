@@ -50,6 +50,7 @@ pub struct DescribeRootFoldersInputBuilder {
 }
 impl DescribeRootFoldersInputBuilder {
     /// <p>Amazon WorkDocs authentication token.</p>
+    /// This field is required.
     pub fn authentication_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_token = ::std::option::Option::Some(input.into());
         self

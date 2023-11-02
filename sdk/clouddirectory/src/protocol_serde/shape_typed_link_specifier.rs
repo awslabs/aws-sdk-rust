@@ -42,7 +42,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::typed_link_specifier_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -72,17 +74,17 @@ pub fn ser_typed_link_specifier(
         crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.identity_attribute_values {
-        let mut array_8 = object.key("IdentityAttributeValues").start_array();
-        for item_9 in var_7 {
+    {
+        let mut array_7 = object.key("IdentityAttributeValues").start_array();
+        for item_8 in &input.identity_attribute_values {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_attribute_name_and_value::ser_attribute_name_and_value(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_attribute_name_and_value::ser_attribute_name_and_value(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
     Ok(())
 }

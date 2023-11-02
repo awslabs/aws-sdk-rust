@@ -72,16 +72,22 @@ impl CreateRecipeJobInput {
         self.max_retries
     }
     /// <p>One or more artifacts that represent the output from running the job.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
-        self.data_catalog_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_catalog_outputs.is_none()`.
+    pub fn data_catalog_outputs(&self) -> &[crate::types::DataCatalogOutput] {
+        self.data_catalog_outputs.as_deref().unwrap_or_default()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
-    pub fn database_outputs(&self) -> ::std::option::Option<&[crate::types::DatabaseOutput]> {
-        self.database_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_outputs.is_none()`.
+    pub fn database_outputs(&self) -> &[crate::types::DatabaseOutput] {
+        self.database_outputs.as_deref().unwrap_or_default()
     }
     /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
     pub fn project_name(&self) -> ::std::option::Option<&str> {
@@ -187,6 +193,7 @@ impl CreateRecipeJobInputBuilder {
         &self.encryption_mode
     }
     /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -331,6 +338,7 @@ impl CreateRecipeJobInputBuilder {
         &self.recipe_reference
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

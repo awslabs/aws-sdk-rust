@@ -67,6 +67,7 @@ pub struct ListGroupsForEntityInputBuilder {
 }
 impl ListGroupsForEntityInputBuilder {
     /// <p>The identifier for the organization under which the entity exists.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +88,7 @@ impl ListGroupsForEntityInputBuilder {
     /// <li> <p>Email address: entity@domain.tld</p> </li>
     /// <li> <p>Entity name: entity</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self

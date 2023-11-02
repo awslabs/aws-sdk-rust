@@ -57,8 +57,10 @@ impl ListPrincipalsInput {
     /// </ul> <note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
+    pub fn principals(&self) -> &[::std::string::String] {
+        self.principals.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
     /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
@@ -66,8 +68,10 @@ impl ListPrincipalsInput {
         self.resource_type.as_deref()
     }
     /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn resource_share_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_share_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
+    pub fn resource_share_arns(&self) -> &[::std::string::String] {
+        self.resource_share_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -103,6 +107,7 @@ impl ListPrincipalsInputBuilder {
     /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
     /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.resource_owner = ::std::option::Option::Some(input);
         self

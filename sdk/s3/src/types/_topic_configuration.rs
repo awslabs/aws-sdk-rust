@@ -7,9 +7,9 @@ pub struct TopicConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
-    pub topic_arn: ::std::option::Option<::std::string::String>,
+    pub topic_arn: ::std::string::String,
     /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::vec::Vec<crate::types::Event>,
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: ::std::option::Option<crate::types::NotificationConfigurationFilter>,
 }
@@ -19,12 +19,14 @@ impl TopicConfiguration {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
-        self.topic_arn.as_deref()
+    pub fn topic_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.topic_arn.deref()
     }
     /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::Event] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::NotificationConfigurationFilter> {
@@ -63,6 +65,7 @@ impl TopicConfigurationBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +114,25 @@ impl TopicConfigurationBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`TopicConfiguration`](crate::types::TopicConfiguration).
-    pub fn build(self) -> crate::types::TopicConfiguration {
-        crate::types::TopicConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`topic_arn`](crate::types::builders::TopicConfigurationBuilder::topic_arn)
+    /// - [`events`](crate::types::builders::TopicConfigurationBuilder::events)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicConfiguration {
             id: self.id,
-            topic_arn: self.topic_arn,
-            events: self.events,
+            topic_arn: self.topic_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "topic_arn",
+                    "topic_arn was not specified but it is required when building TopicConfiguration",
+                )
+            })?,
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building TopicConfiguration",
+                )
+            })?,
             filter: self.filter,
-        }
+        })
     }
 }

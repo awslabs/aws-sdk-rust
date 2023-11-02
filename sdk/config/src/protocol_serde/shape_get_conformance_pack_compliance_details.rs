@@ -32,8 +32,8 @@ pub fn de_get_conformance_pack_compliance_details_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::InvalidNextTokenException({
@@ -48,8 +48,8 @@ pub fn de_get_conformance_pack_compliance_details_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::InvalidParameterValueException({
@@ -64,8 +64,8 @@ pub fn de_get_conformance_pack_compliance_details_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchConfigRuleInConformancePackException" => crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::NoSuchConfigRuleInConformancePackException({
@@ -80,8 +80,8 @@ pub fn de_get_conformance_pack_compliance_details_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchConformancePackException" => crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::NoSuchConformancePackException({
@@ -96,8 +96,8 @@ pub fn de_get_conformance_pack_compliance_details_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::generic(generic)
@@ -121,7 +121,9 @@ pub fn de_get_conformance_pack_compliance_details_http_response(
             crate::protocol_serde::shape_get_conformance_pack_compliance_details::de_get_conformance_pack_compliance_details(_response_body, output)
                 .map_err(crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_conformance_pack_compliance_details_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::unhandled)?
     })
 }
 

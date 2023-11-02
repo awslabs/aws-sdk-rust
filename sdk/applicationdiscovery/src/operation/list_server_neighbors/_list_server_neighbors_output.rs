@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServerNeighborsOutput {
     /// <p>List of distinct servers that are one hop away from the given server.</p>
-    pub neighbors: ::std::option::Option<::std::vec::Vec<crate::types::NeighborConnectionDetail>>,
+    pub neighbors: ::std::vec::Vec<crate::types::NeighborConnectionDetail>,
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Count of distinct servers that are one hop away from the given server.</p>
@@ -13,8 +13,9 @@ pub struct ListServerNeighborsOutput {
 }
 impl ListServerNeighborsOutput {
     /// <p>List of distinct servers that are one hop away from the given server.</p>
-    pub fn neighbors(&self) -> ::std::option::Option<&[crate::types::NeighborConnectionDetail]> {
-        self.neighbors.as_deref()
+    pub fn neighbors(&self) -> &[crate::types::NeighborConnectionDetail] {
+        use std::ops::Deref;
+        self.neighbors.deref()
     }
     /// <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -105,12 +106,22 @@ impl ListServerNeighborsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServerNeighborsOutput`](crate::operation::list_server_neighbors::ListServerNeighborsOutput).
-    pub fn build(self) -> crate::operation::list_server_neighbors::ListServerNeighborsOutput {
-        crate::operation::list_server_neighbors::ListServerNeighborsOutput {
-            neighbors: self.neighbors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`neighbors`](crate::operation::list_server_neighbors::builders::ListServerNeighborsOutputBuilder::neighbors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_server_neighbors::ListServerNeighborsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_server_neighbors::ListServerNeighborsOutput {
+            neighbors: self.neighbors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "neighbors",
+                    "neighbors was not specified but it is required when building ListServerNeighborsOutput",
+                )
+            })?,
             next_token: self.next_token,
             known_dependency_count: self.known_dependency_count.unwrap_or_default(),
             _request_id: self._request_id,
-        }
+        })
     }
 }

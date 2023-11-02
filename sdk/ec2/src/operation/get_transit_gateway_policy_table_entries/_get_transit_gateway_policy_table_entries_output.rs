@@ -9,8 +9,10 @@ pub struct GetTransitGatewayPolicyTableEntriesOutput {
 }
 impl GetTransitGatewayPolicyTableEntriesOutput {
     /// <p>The entries for the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_entries(&self) -> ::std::option::Option<&[crate::types::TransitGatewayPolicyTableEntry]> {
-        self.transit_gateway_policy_table_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_policy_table_entries.is_none()`.
+    pub fn transit_gateway_policy_table_entries(&self) -> &[crate::types::TransitGatewayPolicyTableEntry] {
+        self.transit_gateway_policy_table_entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTransitGatewayPolicyTableEntriesOutput {

@@ -35,6 +35,7 @@ pub struct DeleteRequestValidatorInputBuilder {
 }
 impl DeleteRequestValidatorInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteRequestValidatorInputBuilder {
         &self.rest_api_id
     }
     /// <p>The identifier of the RequestValidator to be deleted.</p>
+    /// This field is required.
     pub fn request_validator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_validator_id = ::std::option::Option::Some(input.into());
         self

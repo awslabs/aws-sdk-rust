@@ -49,6 +49,7 @@ pub struct CreateEnvironmentMembershipInputBuilder {
 }
 impl CreateEnvironmentMembershipInputBuilder {
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreateEnvironmentMembershipInputBuilder {
         &self.environment_id
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +83,7 @@ impl CreateEnvironmentMembershipInputBuilder {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn permissions(mut self, input: crate::types::MemberPermissions) -> Self {
         self.permissions = ::std::option::Option::Some(input);
         self

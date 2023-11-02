@@ -50,6 +50,7 @@ pub struct RollbackStackInputBuilder {
 }
 impl RollbackStackInputBuilder {
     /// <p>The name that's associated with the stack.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self

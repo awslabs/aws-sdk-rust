@@ -11,8 +11,10 @@ pub struct ListAvailabilityConfigurationsOutput {
 }
 impl ListAvailabilityConfigurationsOutput {
     /// <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.</p>
-    pub fn availability_configurations(&self) -> ::std::option::Option<&[crate::types::AvailabilityConfiguration]> {
-        self.availability_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_configurations.is_none()`.
+    pub fn availability_configurations(&self) -> &[crate::types::AvailabilityConfiguration] {
+        self.availability_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no further results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

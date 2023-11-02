@@ -24,8 +24,10 @@ impl ListDatasetEntriesInput {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
-    pub fn contains_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.contains_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contains_labels.is_none()`.
+    pub fn contains_labels(&self) -> &[::std::string::String] {
+        self.contains_labels.as_deref().unwrap_or_default()
     }
     /// <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
     pub fn labeled(&self) -> ::std::option::Option<bool> {
@@ -69,6 +71,7 @@ pub struct ListDatasetEntriesInputBuilder {
 }
 impl ListDatasetEntriesInputBuilder {
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self

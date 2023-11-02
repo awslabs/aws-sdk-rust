@@ -6,13 +6,14 @@
 pub struct TagFilter {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub tag: ::std::option::Option<::std::string::String>,
+    pub tag: ::std::string::String,
 }
 impl TagFilter {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tag(&self) -> ::std::option::Option<&str> {
-        self.tag.as_deref()
+    pub fn tag(&self) -> &str {
+        use std::ops::Deref;
+        self.tag.deref()
     }
 }
 impl TagFilter {
@@ -31,6 +32,7 @@ pub struct TagFilterBuilder {
 impl TagFilterBuilder {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    /// This field is required.
     pub fn tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag = ::std::option::Option::Some(input.into());
         self
@@ -47,7 +49,16 @@ impl TagFilterBuilder {
         &self.tag
     }
     /// Consumes the builder and constructs a [`TagFilter`](crate::types::TagFilter).
-    pub fn build(self) -> crate::types::TagFilter {
-        crate::types::TagFilter { tag: self.tag }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag`](crate::types::builders::TagFilterBuilder::tag)
+    pub fn build(self) -> ::std::result::Result<crate::types::TagFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TagFilter {
+            tag: self.tag.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tag",
+                    "tag was not specified but it is required when building TagFilter",
+                )
+            })?,
+        })
     }
 }

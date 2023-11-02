@@ -3,8 +3,8 @@ pub fn ser_list_tags_for_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_tags_for_resource::ListTagsForResourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn {
-        object.key("resourceArn").string(var_1.as_str());
+    {
+        object.key("resourceArn").string(input.resource_arn.as_str());
     }
     Ok(())
 }

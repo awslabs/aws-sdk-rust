@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobError {
     /// <p>The code for the job error.</p>
-    pub code: ::std::option::Option<crate::types::Code>,
+    pub code: crate::types::Code,
     /// <p>The details about the job error.</p>
     pub details: ::std::option::Option<crate::types::Details>,
     /// <p>The name of the limit that was reached.</p>
@@ -13,7 +13,7 @@ pub struct JobError {
     /// <p>The value of the exceeded limit.</p>
     pub limit_value: f64,
     /// <p>The message related to the job error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The unique identifier for the resource related to the error.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource related to the error.</p>
@@ -21,8 +21,8 @@ pub struct JobError {
 }
 impl JobError {
     /// <p>The code for the job error.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::Code> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::Code {
+        &self.code
     }
     /// <p>The details about the job error.</p>
     pub fn details(&self) -> ::std::option::Option<&crate::types::Details> {
@@ -37,8 +37,9 @@ impl JobError {
         self.limit_value
     }
     /// <p>The message related to the job error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>The unique identifier for the resource related to the error.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
@@ -70,6 +71,7 @@ pub struct JobErrorBuilder {
 }
 impl JobErrorBuilder {
     /// <p>The code for the job error.</p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::Code) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -126,6 +128,7 @@ impl JobErrorBuilder {
         &self.limit_value
     }
     /// <p>The message related to the job error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -168,15 +171,28 @@ impl JobErrorBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`JobError`](crate::types::JobError).
-    pub fn build(self) -> crate::types::JobError {
-        crate::types::JobError {
-            code: self.code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::JobErrorBuilder::code)
+    /// - [`message`](crate::types::builders::JobErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobError {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building JobError",
+                )
+            })?,
             details: self.details,
             limit_name: self.limit_name,
             limit_value: self.limit_value.unwrap_or_default(),
-            message: self.message,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building JobError",
+                )
+            })?,
             resource_id: self.resource_id,
             resource_type: self.resource_type,
-        }
+        })
     }
 }

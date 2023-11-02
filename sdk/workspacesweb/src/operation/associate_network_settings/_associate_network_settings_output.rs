@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateNetworkSettingsOutput {
     /// <p>The ARN of the web portal.</p>
-    pub portal_arn: ::std::option::Option<::std::string::String>,
+    pub portal_arn: ::std::string::String,
     /// <p>The ARN of the network settings.</p>
-    pub network_settings_arn: ::std::option::Option<::std::string::String>,
+    pub network_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AssociateNetworkSettingsOutput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
-        self.portal_arn.as_deref()
+    pub fn portal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_arn.deref()
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.network_settings_arn.as_deref()
+    pub fn network_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_settings_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateNetworkSettingsOutput {
@@ -41,6 +43,7 @@ pub struct AssociateNetworkSettingsOutputBuilder {
 }
 impl AssociateNetworkSettingsOutputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl AssociateNetworkSettingsOutputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the network settings.</p>
+    /// This field is required.
     pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,29 @@ impl AssociateNetworkSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateNetworkSettingsOutput`](crate::operation::associate_network_settings::AssociateNetworkSettingsOutput).
-    pub fn build(self) -> crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
-        crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
-            portal_arn: self.portal_arn,
-            network_settings_arn: self.network_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`portal_arn`](crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder::portal_arn)
+    /// - [`network_settings_arn`](crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder::network_settings_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_network_settings::AssociateNetworkSettingsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::associate_network_settings::AssociateNetworkSettingsOutput {
+            portal_arn: self.portal_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "portal_arn",
+                    "portal_arn was not specified but it is required when building AssociateNetworkSettingsOutput",
+                )
+            })?,
+            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_settings_arn",
+                    "network_settings_arn was not specified but it is required when building AssociateNetworkSettingsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

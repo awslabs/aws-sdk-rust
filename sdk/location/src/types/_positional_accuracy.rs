@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
-    pub horizontal: ::std::option::Option<f64>,
+    pub horizontal: f64,
 }
 impl PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
-    pub fn horizontal(&self) -> ::std::option::Option<f64> {
+    pub fn horizontal(&self) -> f64 {
         self.horizontal
     }
 }
@@ -28,6 +28,7 @@ pub struct PositionalAccuracyBuilder {
 }
 impl PositionalAccuracyBuilder {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
+    /// This field is required.
     pub fn horizontal(mut self, input: f64) -> Self {
         self.horizontal = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl PositionalAccuracyBuilder {
         &self.horizontal
     }
     /// Consumes the builder and constructs a [`PositionalAccuracy`](crate::types::PositionalAccuracy).
-    pub fn build(self) -> crate::types::PositionalAccuracy {
-        crate::types::PositionalAccuracy { horizontal: self.horizontal }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`horizontal`](crate::types::builders::PositionalAccuracyBuilder::horizontal)
+    pub fn build(self) -> ::std::result::Result<crate::types::PositionalAccuracy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PositionalAccuracy {
+            horizontal: self.horizontal.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "horizontal",
+                    "horizontal was not specified but it is required when building PositionalAccuracy",
+                )
+            })?,
+        })
     }
 }

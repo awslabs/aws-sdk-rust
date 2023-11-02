@@ -34,6 +34,7 @@ pub struct CreateSuiteDefinitionInputBuilder {
 }
 impl CreateSuiteDefinitionInputBuilder {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
+    /// This field is required.
     pub fn suite_definition_configuration(mut self, input: crate::types::SuiteDefinitionConfiguration) -> Self {
         self.suite_definition_configuration = ::std::option::Option::Some(input);
         self

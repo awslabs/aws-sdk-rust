@@ -53,7 +53,9 @@ where
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringValue' cannot be null")
+                                })?,
                         )),
                         "BinaryValue" => Some(crate::types::TypedAttributeValue::BinaryValue(
                             ::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?.ok_or_else(|| {
@@ -61,13 +63,17 @@ where
                             })?,
                         )),
                         "BooleanValue" => Some(crate::types::TypedAttributeValue::BooleanValue(
-                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BooleanValue' cannot be null")
+                            })?,
                         )),
                         "NumberValue" => Some(crate::types::TypedAttributeValue::NumberValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NumberValue' cannot be null")
+                                })?,
                         )),
                         "DatetimeValue" => Some(crate::types::TypedAttributeValue::DatetimeValue(
                             ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

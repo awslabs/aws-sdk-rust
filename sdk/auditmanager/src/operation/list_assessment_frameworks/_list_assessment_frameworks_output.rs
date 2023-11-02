@@ -11,8 +11,10 @@ pub struct ListAssessmentFrameworksOutput {
 }
 impl ListAssessmentFrameworksOutput {
     /// <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for each framework.</p>
-    pub fn framework_metadata_list(&self) -> ::std::option::Option<&[crate::types::AssessmentFrameworkMetadata]> {
-        self.framework_metadata_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.framework_metadata_list.is_none()`.
+    pub fn framework_metadata_list(&self) -> &[crate::types::AssessmentFrameworkMetadata] {
+        self.framework_metadata_list.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

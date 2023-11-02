@@ -64,6 +64,7 @@ pub struct TransformResourcesBuilder {
 }
 impl TransformResourcesBuilder {
     /// <p>The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::TransformInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -78,6 +79,7 @@ impl TransformResourcesBuilder {
         &self.instance_type
     }
     /// <p>The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self

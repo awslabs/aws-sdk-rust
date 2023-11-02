@@ -36,6 +36,7 @@ pub struct CreateSystemTemplateInputBuilder {
 }
 impl CreateSystemTemplateInputBuilder {
     /// <p>The <code>DefinitionDocument</code> used to create the system.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

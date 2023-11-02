@@ -35,6 +35,7 @@ pub struct AccountDetailBuilder {
 }
 impl AccountDetailBuilder {
     /// <p>The member account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AccountDetailBuilder {
         &self.account_id
     }
     /// <p>The email address of the member account.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self

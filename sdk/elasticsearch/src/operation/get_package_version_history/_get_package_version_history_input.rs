@@ -42,6 +42,7 @@ pub struct GetPackageVersionHistoryInputBuilder {
 }
 impl GetPackageVersionHistoryInputBuilder {
     /// <p>Returns an audit history of versions of the package.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self

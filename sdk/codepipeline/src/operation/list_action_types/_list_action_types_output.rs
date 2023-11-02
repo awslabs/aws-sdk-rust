@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActionTypesOutput {
     /// <p>Provides details of the action types.</p>
-    pub action_types: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
+    pub action_types: ::std::vec::Vec<crate::types::ActionType>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListActionTypesOutput {
     /// <p>Provides details of the action types.</p>
-    pub fn action_types(&self) -> ::std::option::Option<&[crate::types::ActionType]> {
-        self.action_types.as_deref()
+    pub fn action_types(&self) -> &[crate::types::ActionType] {
+        use std::ops::Deref;
+        self.action_types.deref()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListActionTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput).
-    pub fn build(self) -> crate::operation::list_action_types::ListActionTypesOutput {
-        crate::operation::list_action_types::ListActionTypesOutput {
-            action_types: self.action_types,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_types`](crate::operation::list_action_types::builders::ListActionTypesOutputBuilder::action_types)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_action_types::ListActionTypesOutput {
+            action_types: self.action_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_types",
+                    "action_types was not specified but it is required when building ListActionTypesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

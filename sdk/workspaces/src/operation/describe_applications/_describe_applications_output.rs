@@ -11,8 +11,10 @@ pub struct DescribeApplicationsOutput {
 }
 impl DescribeApplicationsOutput {
     /// <p>List of information about the specified applications.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::WorkSpaceApplication]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::WorkSpaceApplication] {
+        self.applications.as_deref().unwrap_or_default()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

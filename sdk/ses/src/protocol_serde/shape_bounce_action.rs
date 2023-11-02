@@ -11,27 +11,28 @@ pub fn ser_bounce_action(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("SmtpReplyCode");
-    if let Some(var_4) = &input.smtp_reply_code {
-        scope_3.string(var_4);
+    {
+        scope_3.string(&input.smtp_reply_code);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("StatusCode");
-    if let Some(var_6) = &input.status_code {
-        scope_5.string(var_6);
+    let mut scope_4 = writer.prefix("StatusCode");
+    if let Some(var_5) = &input.status_code {
+        scope_4.string(var_5);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("Message");
-    if let Some(var_8) = &input.message {
-        scope_7.string(var_8);
+    let mut scope_6 = writer.prefix("Message");
+    {
+        scope_6.string(&input.message);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("Sender");
-    if let Some(var_10) = &input.sender {
-        scope_9.string(var_10);
+    let mut scope_7 = writer.prefix("Sender");
+    {
+        scope_7.string(&input.sender);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_bounce_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::BounceAction, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -40,6 +41,45 @@ pub fn de_bounce_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#BounceAction$TopicArn */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_topic_arn(var_8);
+            }
+            ,
+            s if s.matches("SmtpReplyCode") /* SmtpReplyCode com.amazonaws.ses#BounceAction$SmtpReplyCode */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_smtp_reply_code(var_9);
+            }
+            ,
+            s if s.matches("StatusCode") /* StatusCode com.amazonaws.ses#BounceAction$StatusCode */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status_code(var_10);
+            }
+            ,
+            s if s.matches("Message") /* Message com.amazonaws.ses#BounceAction$Message */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -49,10 +89,10 @@ pub fn de_bounce_action(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_11);
+                builder = builder.set_message(var_11);
             }
             ,
-            s if s.matches("SmtpReplyCode") /* SmtpReplyCode com.amazonaws.ses#BounceAction$SmtpReplyCode */ =>  {
+            s if s.matches("Sender") /* Sender com.amazonaws.ses#BounceAction$Sender */ =>  {
                 let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -62,50 +102,13 @@ pub fn de_bounce_action(
                         ?
                     )
                 ;
-                builder = builder.set_smtp_reply_code(var_12);
-            }
-            ,
-            s if s.matches("StatusCode") /* StatusCode com.amazonaws.ses#BounceAction$StatusCode */ =>  {
-                let var_13 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status_code(var_13);
-            }
-            ,
-            s if s.matches("Message") /* Message com.amazonaws.ses#BounceAction$Message */ =>  {
-                let var_14 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_message(var_14);
-            }
-            ,
-            s if s.matches("Sender") /* Sender com.amazonaws.ses#BounceAction$Sender */ =>  {
-                let var_15 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_sender(var_15);
+                builder = builder.set_sender(var_12);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::bounce_action_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

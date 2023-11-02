@@ -27,6 +27,7 @@ pub struct DeleteNetworkAnalyzerConfigurationInputBuilder {
 }
 impl DeleteNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
+    /// This field is required.
     pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_name = ::std::option::Option::Some(input.into());
         self

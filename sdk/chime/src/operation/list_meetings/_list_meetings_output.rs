@@ -11,8 +11,10 @@ pub struct ListMeetingsOutput {
 }
 impl ListMeetingsOutput {
     /// <p>The Amazon Chime SDK meeting information.</p>
-    pub fn meetings(&self) -> ::std::option::Option<&[crate::types::Meeting]> {
-        self.meetings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.meetings.is_none()`.
+    pub fn meetings(&self) -> &[crate::types::Meeting] {
+        self.meetings.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

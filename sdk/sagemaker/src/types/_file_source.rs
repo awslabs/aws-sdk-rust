@@ -70,6 +70,7 @@ impl FileSourceBuilder {
         &self.content_digest
     }
     /// <p>The Amazon S3 URI for the file source.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self

@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentApplicationConfig {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    pub application: ::std::option::Option<::std::string::String>,
+    pub application: ::std::string::String,
     /// <p>The version of the application.</p>
-    pub application_version: ::std::option::Option<::std::string::String>,
+    pub application_version: ::std::string::String,
     /// <p>The launch configuration.</p>
     pub launch_config: ::std::option::Option<crate::types::DeploymentLaunchConfig>,
 }
 impl DeploymentApplicationConfig {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
-        self.application.as_deref()
+    pub fn application(&self) -> &str {
+        use std::ops::Deref;
+        self.application.deref()
     }
     /// <p>The version of the application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<&str> {
-        self.application_version.as_deref()
+    pub fn application_version(&self) -> &str {
+        use std::ops::Deref;
+        self.application_version.deref()
     }
     /// <p>The launch configuration.</p>
     pub fn launch_config(&self) -> ::std::option::Option<&crate::types::DeploymentLaunchConfig> {
@@ -42,6 +44,7 @@ pub struct DeploymentApplicationConfigBuilder {
 }
 impl DeploymentApplicationConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl DeploymentApplicationConfigBuilder {
         &self.application
     }
     /// <p>The version of the application.</p>
+    /// This field is required.
     pub fn application_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_version = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl DeploymentApplicationConfigBuilder {
         &self.application_version
     }
     /// <p>The launch configuration.</p>
+    /// This field is required.
     pub fn launch_config(mut self, input: crate::types::DeploymentLaunchConfig) -> Self {
         self.launch_config = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,24 @@ impl DeploymentApplicationConfigBuilder {
         &self.launch_config
     }
     /// Consumes the builder and constructs a [`DeploymentApplicationConfig`](crate::types::DeploymentApplicationConfig).
-    pub fn build(self) -> crate::types::DeploymentApplicationConfig {
-        crate::types::DeploymentApplicationConfig {
-            application: self.application,
-            application_version: self.application_version,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application`](crate::types::builders::DeploymentApplicationConfigBuilder::application)
+    /// - [`application_version`](crate::types::builders::DeploymentApplicationConfigBuilder::application_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentApplicationConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeploymentApplicationConfig {
+            application: self.application.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application",
+                    "application was not specified but it is required when building DeploymentApplicationConfig",
+                )
+            })?,
+            application_version: self.application_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_version",
+                    "application_version was not specified but it is required when building DeploymentApplicationConfig",
+                )
+            })?,
             launch_config: self.launch_config,
-        }
+        })
     }
 }

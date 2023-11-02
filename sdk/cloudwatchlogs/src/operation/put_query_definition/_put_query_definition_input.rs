@@ -28,8 +28,10 @@ impl PutQueryDefinitionInput {
     }
     /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
     /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
-    pub fn log_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_names.is_none()`.
+    pub fn log_group_names(&self) -> &[::std::string::String] {
+        self.log_group_names.as_deref().unwrap_or_default()
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn query_string(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct PutQueryDefinitionInputBuilder {
 }
 impl PutQueryDefinitionInputBuilder {
     /// <p>A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +116,7 @@ impl PutQueryDefinitionInputBuilder {
         &self.log_group_names
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self

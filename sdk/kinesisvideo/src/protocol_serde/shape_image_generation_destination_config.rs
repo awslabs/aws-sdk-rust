@@ -38,7 +38,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::image_generation_destination_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,11 +54,11 @@ pub fn ser_image_generation_destination_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageGenerationDestinationConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.uri {
-        object.key("Uri").string(var_1.as_str());
+    {
+        object.key("Uri").string(input.uri.as_str());
     }
-    if let Some(var_2) = &input.destination_region {
-        object.key("DestinationRegion").string(var_2.as_str());
+    {
+        object.key("DestinationRegion").string(input.destination_region.as_str());
     }
     Ok(())
 }

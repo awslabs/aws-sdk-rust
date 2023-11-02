@@ -14,8 +14,10 @@ pub struct DescribeSnapshotsOutput {
 impl DescribeSnapshotsOutput {
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn snapshots(&self) -> ::std::option::Option<&[crate::types::Snapshot]> {
-        self.snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
+    pub fn snapshots(&self) -> &[crate::types::Snapshot] {
+        self.snapshots.as_deref().unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

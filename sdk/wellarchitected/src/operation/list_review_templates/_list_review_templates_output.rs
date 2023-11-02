@@ -11,8 +11,10 @@ pub struct ListReviewTemplatesOutput {
 }
 impl ListReviewTemplatesOutput {
     /// <p>List of review templates.</p>
-    pub fn review_templates(&self) -> ::std::option::Option<&[crate::types::ReviewTemplateSummary]> {
-        self.review_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.review_templates.is_none()`.
+    pub fn review_templates(&self) -> &[crate::types::ReviewTemplateSummary] {
+        self.review_templates.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

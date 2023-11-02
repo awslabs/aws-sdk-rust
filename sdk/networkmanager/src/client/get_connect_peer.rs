@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConnectPeer`](crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connect_peer_id(impl Into<String>)`](crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder::connect_peer_id) / [`set_connect_peer_id(Option<String>)`](crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder::set_connect_peer_id): <p>The ID of the Connect peer.</p>
+    ///   - [`connect_peer_id(impl Into<String>)`](crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder::connect_peer_id) / [`set_connect_peer_id(Option<String>)`](crate::operation::get_connect_peer::builders::GetConnectPeerFluentBuilder::set_connect_peer_id):<br>required: **true**<br><p>The ID of the Connect peer.</p><br>
     /// - On success, responds with [`GetConnectPeerOutput`](crate::operation::get_connect_peer::GetConnectPeerOutput) with field(s):
     ///   - [`connect_peer(Option<ConnectPeer>)`](crate::operation::get_connect_peer::GetConnectPeerOutput::connect_peer): <p>Returns information about a core network Connect peer.</p>
     /// - On failure, responds with [`SdkError<GetConnectPeerError>`](crate::operation::get_connect_peer::GetConnectPeerError)

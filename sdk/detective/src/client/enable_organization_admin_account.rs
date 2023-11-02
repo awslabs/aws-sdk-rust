@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableOrganizationAdminAccount`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::set_account_id): <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p><br>
     /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountOutput)
     /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError)
     pub fn enable_organization_admin_account(

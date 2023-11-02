@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericalDimensionField {
     /// <p>The custom field ID.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The custom hierarchy ID.</p>
@@ -15,8 +15,9 @@ pub struct NumericalDimensionField {
 }
 impl NumericalDimensionField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
     pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
@@ -49,6 +50,7 @@ pub struct NumericalDimensionFieldBuilder {
 }
 impl NumericalDimensionFieldBuilder {
     /// <p>The custom field ID.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl NumericalDimensionFieldBuilder {
         &self.field_id
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,19 @@ impl NumericalDimensionFieldBuilder {
         &self.format_configuration
     }
     /// Consumes the builder and constructs a [`NumericalDimensionField`](crate::types::NumericalDimensionField).
-    pub fn build(self) -> crate::types::NumericalDimensionField {
-        crate::types::NumericalDimensionField {
-            field_id: self.field_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field_id`](crate::types::builders::NumericalDimensionFieldBuilder::field_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::NumericalDimensionField, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NumericalDimensionField {
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building NumericalDimensionField",
+                )
+            })?,
             column: self.column,
             hierarchy_id: self.hierarchy_id,
             format_configuration: self.format_configuration,
-        }
+        })
     }
 }

@@ -50,6 +50,7 @@ pub struct PutResolverRulePolicyInputBuilder {
 }
 impl PutResolverRulePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl PutResolverRulePolicyInputBuilder {
     /// <li> <p> <code>route53resolver:ListResolverRuleAssociations</code> </p> </li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN that you specified in <code>Arn</code>.</p>
+    /// This field is required.
     pub fn resolver_rule_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_policy = ::std::option::Option::Some(input.into());
         self

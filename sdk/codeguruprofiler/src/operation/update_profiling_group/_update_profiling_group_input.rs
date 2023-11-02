@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
     pub agent_orchestration_config: ::std::option::Option<crate::types::AgentOrchestrationConfig>,
 }
 impl UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
     pub fn agent_orchestration_config(&self) -> ::std::option::Option<&crate::types::AgentOrchestrationConfig> {
@@ -35,6 +36,7 @@ pub struct UpdateProfilingGroupInputBuilder {
 }
 impl UpdateProfilingGroupInputBuilder {
     /// <p>The name of the profiling group to update.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl UpdateProfilingGroupInputBuilder {
         &self.profiling_group_name
     }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// This field is required.
     pub fn agent_orchestration_config(mut self, input: crate::types::AgentOrchestrationConfig) -> Self {
         self.agent_orchestration_config = ::std::option::Option::Some(input);
         self
@@ -63,12 +66,19 @@ impl UpdateProfilingGroupInputBuilder {
         &self.agent_orchestration_config
     }
     /// Consumes the builder and constructs a [`UpdateProfilingGroupInput`](crate::operation::update_profiling_group::UpdateProfilingGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::update_profiling_group::builders::UpdateProfilingGroupInputBuilder::profiling_group_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_profiling_group::UpdateProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_profiling_group::UpdateProfilingGroupInput {
-            profiling_group_name: self.profiling_group_name,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building UpdateProfilingGroupInput",
+                )
+            })?,
             agent_orchestration_config: self.agent_orchestration_config,
         })
     }

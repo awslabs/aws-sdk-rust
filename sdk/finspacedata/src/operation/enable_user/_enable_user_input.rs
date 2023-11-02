@@ -34,6 +34,7 @@ pub struct EnableUserInputBuilder {
 }
 impl EnableUserInputBuilder {
     /// <p>The unique identifier for the user that you want to activate.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

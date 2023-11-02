@@ -28,11 +28,10 @@ pub fn de_create_ingestion_destination_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::create_ingestion_destination::CreateIngestionDestinationError::ConflictException({
@@ -43,11 +42,10 @@ pub fn de_create_ingestion_destination_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_ingestion_destination::CreateIngestionDestinationError::InternalServerException({
@@ -65,11 +63,10 @@ pub fn de_create_ingestion_destination_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceQuotaExceededException" => {
@@ -84,11 +81,10 @@ pub fn de_create_ingestion_destination_http_error(
                     )
                     .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -107,11 +103,10 @@ pub fn de_create_ingestion_destination_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_ingestion_destination::CreateIngestionDestinationError::ValidationException({
@@ -122,11 +117,10 @@ pub fn de_create_ingestion_destination_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_ingestion_destination::CreateIngestionDestinationError::generic(generic),
@@ -148,7 +142,7 @@ pub fn de_create_ingestion_destination_http_response(
         output = crate::protocol_serde::shape_create_ingestion_destination::de_create_ingestion_destination(_response_body, output)
             .map_err(crate::operation::create_ingestion_destination::CreateIngestionDestinationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_ingestion_destination_output_correct_errors(output).build()
     })
 }
 

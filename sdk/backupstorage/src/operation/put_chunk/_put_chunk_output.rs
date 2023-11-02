@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutChunkOutput {
     /// Chunk checksum
-    pub chunk_checksum: ::std::option::Option<::std::string::String>,
+    pub chunk_checksum: ::std::string::String,
     /// Checksum algorithm
-    pub chunk_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub chunk_checksum_algorithm: crate::types::DataChecksumAlgorithm,
     _request_id: Option<String>,
 }
 impl PutChunkOutput {
     /// Chunk checksum
-    pub fn chunk_checksum(&self) -> ::std::option::Option<&str> {
-        self.chunk_checksum.as_deref()
+    pub fn chunk_checksum(&self) -> &str {
+        use std::ops::Deref;
+        self.chunk_checksum.deref()
     }
     /// Checksum algorithm
-    pub fn chunk_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
-        self.chunk_checksum_algorithm.as_ref()
+    pub fn chunk_checksum_algorithm(&self) -> &crate::types::DataChecksumAlgorithm {
+        &self.chunk_checksum_algorithm
     }
 }
 impl ::aws_http::request_id::RequestId for PutChunkOutput {
@@ -41,6 +42,7 @@ pub struct PutChunkOutputBuilder {
 }
 impl PutChunkOutputBuilder {
     /// Chunk checksum
+    /// This field is required.
     pub fn chunk_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chunk_checksum = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl PutChunkOutputBuilder {
         &self.chunk_checksum
     }
     /// Checksum algorithm
+    /// This field is required.
     pub fn chunk_checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
         self.chunk_checksum_algorithm = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,24 @@ impl PutChunkOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutChunkOutput`](crate::operation::put_chunk::PutChunkOutput).
-    pub fn build(self) -> crate::operation::put_chunk::PutChunkOutput {
-        crate::operation::put_chunk::PutChunkOutput {
-            chunk_checksum: self.chunk_checksum,
-            chunk_checksum_algorithm: self.chunk_checksum_algorithm,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`chunk_checksum`](crate::operation::put_chunk::builders::PutChunkOutputBuilder::chunk_checksum)
+    /// - [`chunk_checksum_algorithm`](crate::operation::put_chunk::builders::PutChunkOutputBuilder::chunk_checksum_algorithm)
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_chunk::PutChunkOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_chunk::PutChunkOutput {
+            chunk_checksum: self.chunk_checksum.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "chunk_checksum",
+                    "chunk_checksum was not specified but it is required when building PutChunkOutput",
+                )
+            })?,
+            chunk_checksum_algorithm: self.chunk_checksum_algorithm.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "chunk_checksum_algorithm",
+                    "chunk_checksum_algorithm was not specified but it is required when building PutChunkOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

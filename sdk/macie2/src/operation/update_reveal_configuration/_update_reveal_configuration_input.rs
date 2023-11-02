@@ -27,6 +27,7 @@ pub struct UpdateRevealConfigurationInputBuilder {
 }
 impl UpdateRevealConfigurationInputBuilder {
     /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::RevealConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

@@ -37,8 +37,10 @@ impl GetBackendOutput {
         self.app_name.as_deref()
     }
     /// <p>A list of backend environments in an array.</p>
-    pub fn backend_environment_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.backend_environment_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backend_environment_list.is_none()`.
+    pub fn backend_environment_list(&self) -> &[::std::string::String] {
+        self.backend_environment_list.as_deref().unwrap_or_default()
     }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {

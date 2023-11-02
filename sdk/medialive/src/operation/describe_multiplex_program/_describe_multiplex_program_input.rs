@@ -35,6 +35,7 @@ pub struct DescribeMultiplexProgramInputBuilder {
 }
 impl DescribeMultiplexProgramInputBuilder {
     /// The ID of the multiplex that the program belongs to.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DescribeMultiplexProgramInputBuilder {
         &self.multiplex_id
     }
     /// The name of the program.
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self

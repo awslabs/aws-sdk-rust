@@ -131,7 +131,9 @@ pub fn de_create_traffic_policy_instance_http_response(
             })?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_traffic_policy_instance_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceError::unhandled)?
     })
 }
 

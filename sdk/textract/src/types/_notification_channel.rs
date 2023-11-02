@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationChannel {
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
-    pub sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub sns_topic_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic. </p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl NotificationChannel {
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
-        self.sns_topic_arn.as_deref()
+    pub fn sns_topic_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.sns_topic_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic. </p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl NotificationChannel {
@@ -35,6 +37,7 @@ pub struct NotificationChannelBuilder {
 }
 impl NotificationChannelBuilder {
     /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl NotificationChannelBuilder {
         &self.sns_topic_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic. </p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl NotificationChannelBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`NotificationChannel`](crate::types::NotificationChannel).
-    pub fn build(self) -> crate::types::NotificationChannel {
-        crate::types::NotificationChannel {
-            sns_topic_arn: self.sns_topic_arn,
-            role_arn: self.role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sns_topic_arn`](crate::types::builders::NotificationChannelBuilder::sns_topic_arn)
+    /// - [`role_arn`](crate::types::builders::NotificationChannelBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationChannel, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NotificationChannel {
+            sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sns_topic_arn",
+                    "sns_topic_arn was not specified but it is required when building NotificationChannel",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building NotificationChannel",
+                )
+            })?,
+        })
     }
 }

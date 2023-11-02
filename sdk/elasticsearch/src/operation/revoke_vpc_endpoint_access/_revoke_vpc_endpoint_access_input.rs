@@ -35,6 +35,7 @@ pub struct RevokeVpcEndpointAccessInputBuilder {
 }
 impl RevokeVpcEndpointAccessInputBuilder {
     /// <p>The name of the OpenSearch Service domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl RevokeVpcEndpointAccessInputBuilder {
         &self.domain_name
     }
     /// <p>The account ID to revoke access from.</p>
+    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self

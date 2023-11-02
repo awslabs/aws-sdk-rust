@@ -71,6 +71,7 @@ pub struct CreateIpSetInputBuilder {
 }
 impl CreateIpSetInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl CreateIpSetInputBuilder {
     }
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl CreateIpSetInputBuilder {
         &self.name
     }
     /// <p>The format of the file that contains the IPSet.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::IpSetFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -116,6 +119,7 @@ impl CreateIpSetInputBuilder {
         &self.format
     }
     /// <p>The URI of the file that contains the IPSet. </p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +134,7 @@ impl CreateIpSetInputBuilder {
         &self.location
     }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
+    /// This field is required.
     pub fn activate(mut self, input: bool) -> Self {
         self.activate = ::std::option::Option::Some(input);
         self

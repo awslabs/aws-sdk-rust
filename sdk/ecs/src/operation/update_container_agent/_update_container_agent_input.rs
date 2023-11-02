@@ -48,6 +48,7 @@ impl UpdateContainerAgentInputBuilder {
         &self.cluster
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
+    /// This field is required.
     pub fn container_instance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_instance = ::std::option::Option::Some(input.into());
         self

@@ -50,8 +50,10 @@ impl ListObjectsOutput {
         self.next_marker.as_deref()
     }
     /// <p>Metadata about each object returned.</p>
-    pub fn contents(&self) -> ::std::option::Option<&[crate::types::Object]> {
-        self.contents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contents.is_none()`.
+    pub fn contents(&self) -> &[crate::types::Object] {
+        self.contents.as_deref().unwrap_or_default()
     }
     /// <p>The bucket name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -74,8 +76,10 @@ impl ListObjectsOutput {
     /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
     /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>), as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
-    pub fn common_prefixes(&self) -> ::std::option::Option<&[crate::types::CommonPrefix]> {
-        self.common_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.common_prefixes.is_none()`.
+    pub fn common_prefixes(&self) -> &[crate::types::CommonPrefix] {
+        self.common_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {

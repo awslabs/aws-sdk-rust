@@ -18,8 +18,10 @@ impl RemoveTagsFromCertificateInput {
         self.certificate_arn.as_deref()
     }
     /// <p>The key-value pair that defines the tag to remove.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsFromCertificateInput {
@@ -40,6 +42,7 @@ impl RemoveTagsFromCertificateInputBuilder {
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>
     /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self

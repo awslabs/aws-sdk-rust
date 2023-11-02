@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableDirectory`](crate::operation::disable_directory::builders::DisableDirectoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_arn(impl Into<String>)`](crate::operation::disable_directory::builders::DisableDirectoryFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::disable_directory::builders::DisableDirectoryFluentBuilder::set_directory_arn): <p>The ARN of the directory to disable.</p>
+    ///   - [`directory_arn(impl Into<String>)`](crate::operation::disable_directory::builders::DisableDirectoryFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::disable_directory::builders::DisableDirectoryFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The ARN of the directory to disable.</p><br>
     /// - On success, responds with [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput) with field(s):
-    ///   - [`directory_arn(Option<String>)`](crate::operation::disable_directory::DisableDirectoryOutput::directory_arn): <p>The ARN of the directory that has been disabled.</p>
+    ///   - [`directory_arn(String)`](crate::operation::disable_directory::DisableDirectoryOutput::directory_arn): <p>The ARN of the directory that has been disabled.</p>
     /// - On failure, responds with [`SdkError<DisableDirectoryError>`](crate::operation::disable_directory::DisableDirectoryError)
     pub fn disable_directory(&self) -> crate::operation::disable_directory::builders::DisableDirectoryFluentBuilder {
         crate::operation::disable_directory::builders::DisableDirectoryFluentBuilder::new(self.handle.clone())

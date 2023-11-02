@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSolutionVersion`](crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`solution_version_arn(impl Into<String>)`](crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder::set_solution_version_arn): <p>The Amazon Resource Name (ARN) of the solution version.</p>
+    ///   - [`solution_version_arn(impl Into<String>)`](crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::operation::describe_solution_version::builders::DescribeSolutionVersionFluentBuilder::set_solution_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the solution version.</p><br>
     /// - On success, responds with [`DescribeSolutionVersionOutput`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput) with field(s):
     ///   - [`solution_version(Option<SolutionVersion>)`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput::solution_version): <p>The solution version.</p>
     /// - On failure, responds with [`SdkError<DescribeSolutionVersionError>`](crate::operation::describe_solution_version::DescribeSolutionVersionError)

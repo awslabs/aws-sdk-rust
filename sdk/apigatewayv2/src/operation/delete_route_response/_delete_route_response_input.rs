@@ -41,6 +41,7 @@ pub struct DeleteRouteResponseInputBuilder {
 }
 impl DeleteRouteResponseInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteRouteResponseInputBuilder {
         &self.api_id
     }
     /// <p>The route ID.</p>
+    /// This field is required.
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteRouteResponseInputBuilder {
         &self.route_id
     }
     /// <p>The route response ID.</p>
+    /// This field is required.
     pub fn route_response_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_response_id = ::std::option::Option::Some(input.into());
         self

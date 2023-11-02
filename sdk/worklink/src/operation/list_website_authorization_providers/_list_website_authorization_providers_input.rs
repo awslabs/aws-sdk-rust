@@ -41,6 +41,7 @@ pub struct ListWebsiteAuthorizationProvidersInputBuilder {
 }
 impl ListWebsiteAuthorizationProvidersInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DeleteVpcEndpointOutputBuilder {
 }
 impl DeleteVpcEndpointOutputBuilder {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
+    /// This field is required.
     pub fn vpc_endpoint_summary(mut self, input: crate::types::VpcEndpointSummary) -> Self {
         self.vpc_endpoint_summary = ::std::option::Option::Some(input);
         self

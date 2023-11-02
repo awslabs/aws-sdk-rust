@@ -55,6 +55,7 @@ pub struct DescribeSlotInputBuilder {
 }
 impl DescribeSlotInputBuilder {
     /// <p>The unique identifier for the slot.</p>
+    /// This field is required.
     pub fn slot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DescribeSlotInputBuilder {
         &self.slot_id
     }
     /// <p>The identifier of the bot associated with the slot.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl DescribeSlotInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot associated with the slot.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl DescribeSlotInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl DescribeSlotInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the intent that contains the slot.</p>
+    /// This field is required.
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
         self

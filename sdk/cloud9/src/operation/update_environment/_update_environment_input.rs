@@ -70,6 +70,7 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The ID of the environment to change settings.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self

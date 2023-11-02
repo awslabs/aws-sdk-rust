@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemerisMetaData {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-    pub source: ::std::option::Option<crate::types::EphemerisSource>,
+    pub source: crate::types::EphemerisSource,
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
@@ -18,8 +18,8 @@ pub struct EphemerisMetaData {
 }
 impl EphemerisMetaData {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::EphemerisSource> {
-        self.source.as_ref()
+    pub fn source(&self) -> &crate::types::EphemerisSource {
+        &self.source
     }
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
@@ -55,6 +55,7 @@ pub struct EphemerisMetaDataBuilder {
 }
 impl EphemerisMetaDataBuilder {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::EphemerisSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -120,12 +121,19 @@ impl EphemerisMetaDataBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`EphemerisMetaData`](crate::types::EphemerisMetaData).
-    pub fn build(self) -> crate::types::EphemerisMetaData {
-        crate::types::EphemerisMetaData {
-            source: self.source,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::EphemerisMetaDataBuilder::source)
+    pub fn build(self) -> ::std::result::Result<crate::types::EphemerisMetaData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EphemerisMetaData {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building EphemerisMetaData",
+                )
+            })?,
             ephemeris_id: self.ephemeris_id,
             epoch: self.epoch,
             name: self.name,
-        }
+        })
     }
 }

@@ -11,12 +11,16 @@ pub struct BatchGetPartitionOutput {
 }
 impl BatchGetPartitionOutput {
     /// <p>A list of the requested partitions.</p>
-    pub fn partitions(&self) -> ::std::option::Option<&[crate::types::Partition]> {
-        self.partitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partitions.is_none()`.
+    pub fn partitions(&self) -> &[crate::types::Partition] {
+        self.partitions.as_deref().unwrap_or_default()
     }
     /// <p>A list of the partition values in the request for which partitions were not returned.</p>
-    pub fn unprocessed_keys(&self) -> ::std::option::Option<&[crate::types::PartitionValueList]> {
-        self.unprocessed_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_keys.is_none()`.
+    pub fn unprocessed_keys(&self) -> &[crate::types::PartitionValueList] {
+        self.unprocessed_keys.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetPartitionOutput {

@@ -33,12 +33,16 @@ impl GetDocumentTextDetectionOutput {
         self.next_token.as_deref()
     }
     /// <p>The results of the text-detection operation.</p>
-    pub fn blocks(&self) -> ::std::option::Option<&[crate::types::Block]> {
-        self.blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
+    pub fn blocks(&self) -> &[crate::types::Block] {
+        self.blocks.as_deref().unwrap_or_default()
     }
     /// <p>A list of warnings that occurred during the text-detection operation for the document.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::Warning]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::Warning] {
+        self.warnings.as_deref().unwrap_or_default()
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {

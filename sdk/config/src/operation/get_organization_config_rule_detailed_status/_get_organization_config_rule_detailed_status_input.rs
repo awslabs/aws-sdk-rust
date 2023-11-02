@@ -49,6 +49,7 @@ pub struct GetOrganizationConfigRuleDetailedStatusInputBuilder {
 }
 impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
+    /// This field is required.
     pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_name = ::std::option::Option::Some(input.into());
         self

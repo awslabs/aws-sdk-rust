@@ -34,6 +34,7 @@ pub struct UpdateMonitoringScheduleInputBuilder {
 }
 impl UpdateMonitoringScheduleInputBuilder {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateMonitoringScheduleInputBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    /// This field is required.
     pub fn monitoring_schedule_config(mut self, input: crate::types::MonitoringScheduleConfig) -> Self {
         self.monitoring_schedule_config = ::std::option::Option::Some(input);
         self

@@ -56,6 +56,7 @@ pub struct ModelDashboardEndpointBuilder {
 }
 impl ModelDashboardEndpointBuilder {
     /// <p>The endpoint name.</p>
+    /// This field is required.
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ModelDashboardEndpointBuilder {
         &self.endpoint_name
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl ModelDashboardEndpointBuilder {
         &self.endpoint_arn
     }
     /// <p>A timestamp that indicates when the endpoint was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl ModelDashboardEndpointBuilder {
         &self.creation_time
     }
     /// <p>The last time the endpoint was modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl ModelDashboardEndpointBuilder {
         &self.last_modified_time
     }
     /// <p>The endpoint status.</p>
+    /// This field is required.
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input);
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMinuteUsage`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`month(i32)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::month) / [`set_month(Option<i32>)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::set_month): <p>The month being requested, with a value of 1-12.</p>
-    ///   - [`year(i32)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::year) / [`set_year(Option<i32>)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::set_year): <p>The year being requested, in the format of YYYY.</p>
+    ///   - [`month(i32)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::month) / [`set_month(i32)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::set_month):<br>required: **true**<br><p>The month being requested, with a value of 1-12.</p><br>
+    ///   - [`year(i32)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::year) / [`set_year(i32)`](crate::operation::get_minute_usage::builders::GetMinuteUsageFluentBuilder::set_year):<br>required: **true**<br><p>The year being requested, in the format of YYYY.</p><br>
     /// - On success, responds with [`GetMinuteUsageOutput`](crate::operation::get_minute_usage::GetMinuteUsageOutput) with field(s):
     ///   - [`is_reserved_minutes_customer(Option<bool>)`](crate::operation::get_minute_usage::GetMinuteUsageOutput::is_reserved_minutes_customer): <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     ///   - [`total_reserved_minute_allocation(Option<i32>)`](crate::operation::get_minute_usage::GetMinuteUsageOutput::total_reserved_minute_allocation): <p>Total number of reserved minutes allocated, specific to the month being requested.</p>

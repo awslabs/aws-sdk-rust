@@ -28,6 +28,7 @@ pub struct DataSetRefreshPropertiesBuilder {
 }
 impl DataSetRefreshPropertiesBuilder {
     /// <p>The refresh configuration for a dataset.</p>
+    /// This field is required.
     pub fn refresh_configuration(mut self, input: crate::types::RefreshConfiguration) -> Self {
         self.refresh_configuration = ::std::option::Option::Some(input);
         self

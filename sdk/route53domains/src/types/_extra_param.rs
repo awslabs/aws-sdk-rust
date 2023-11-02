@@ -263,9 +263,9 @@ pub struct ExtraParam {
     /// </dd>
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-    pub name: ::std::option::Option<crate::types::ExtraParamName>,
+    pub name: crate::types::ExtraParamName,
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl ExtraParam {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
@@ -527,12 +527,13 @@ impl ExtraParam {
     /// </dd>
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ExtraParamName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ExtraParamName {
+        &self.name
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl ::std::fmt::Debug for ExtraParam {
@@ -817,6 +818,7 @@ impl ExtraParamBuilder {
     /// </dd>
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ExtraParamName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -1347,6 +1349,7 @@ impl ExtraParamBuilder {
         &self.name
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -1361,11 +1364,24 @@ impl ExtraParamBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ExtraParam`](crate::types::ExtraParam).
-    pub fn build(self) -> crate::types::ExtraParam {
-        crate::types::ExtraParam {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ExtraParamBuilder::name)
+    /// - [`value`](crate::types::builders::ExtraParamBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExtraParam, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExtraParam {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ExtraParam",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building ExtraParam",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ExtraParamBuilder {

@@ -34,7 +34,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::fulfillment_activity_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -46,14 +48,14 @@ pub fn ser_fulfillment_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FulfillmentActivity,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.code_hook {
+    if let Some(var_1) = &input.code_hook {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("codeHook").start_object();
-        crate::protocol_serde::shape_code_hook::ser_code_hook(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("codeHook").start_object();
+        crate::protocol_serde::shape_code_hook::ser_code_hook(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

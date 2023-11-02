@@ -44,12 +44,16 @@ pub struct AwsElbLoadBalancerDetails {
 }
 impl AwsElbLoadBalancerDetails {
     /// <p>The list of Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>Information about the configuration of the EC2 instances.</p>
-    pub fn backend_server_descriptions(&self) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerBackendServerDescription]> {
-        self.backend_server_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backend_server_descriptions.is_none()`.
+    pub fn backend_server_descriptions(&self) -> &[crate::types::AwsElbLoadBalancerBackendServerDescription] {
+        self.backend_server_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
     pub fn canonical_hosted_zone_name(&self) -> ::std::option::Option<&str> {
@@ -73,12 +77,16 @@ impl AwsElbLoadBalancerDetails {
         self.health_check.as_ref()
     }
     /// <p>List of EC2 instances for the load balancer.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerInstance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::AwsElbLoadBalancerInstance] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The policies that are enabled for the load balancer listeners.</p>
-    pub fn listener_descriptions(&self) -> ::std::option::Option<&[crate::types::AwsElbLoadBalancerListenerDescription]> {
-        self.listener_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listener_descriptions.is_none()`.
+    pub fn listener_descriptions(&self) -> &[crate::types::AwsElbLoadBalancerListenerDescription] {
+        self.listener_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The attributes for a load balancer.</p>
     pub fn load_balancer_attributes(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerAttributes> {
@@ -99,16 +107,20 @@ impl AwsElbLoadBalancerDetails {
         self.scheme.as_deref()
     }
     /// <p>The security groups for the load balancer. Only provided if the load balancer is in a VPC.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Information about the security group for the load balancer. This is the security group that is used for inbound rules.</p>
     pub fn source_security_group(&self) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerSourceSecurityGroup> {
         self.source_security_group.as_ref()
     }
     /// <p>The list of subnet identifiers for the load balancer.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the VPC for the load balancer.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

@@ -33,6 +33,7 @@ impl PutRetentionConfigurationInputBuilder {
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
+    /// This field is required.
     pub fn retention_period_in_days(mut self, input: i32) -> Self {
         self.retention_period_in_days = ::std::option::Option::Some(input);
         self

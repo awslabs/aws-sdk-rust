@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>Room name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
@@ -18,8 +18,9 @@ pub struct UpdateRoomInput {
 }
 impl UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>Room name. The value does not need to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -38,8 +39,10 @@ impl UpdateRoomInput {
         self.message_review_handler.as_ref()
     }
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
-    pub fn logging_configuration_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.logging_configuration_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logging_configuration_identifiers.is_none()`.
+    pub fn logging_configuration_identifiers(&self) -> &[::std::string::String] {
+        self.logging_configuration_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRoomInput {
@@ -62,6 +65,7 @@ pub struct UpdateRoomInputBuilder {
 }
 impl UpdateRoomInputBuilder {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -152,9 +156,16 @@ impl UpdateRoomInputBuilder {
         &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::operation::update_room::builders::UpdateRoomInputBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_room::UpdateRoomInput {
-            identifier: self.identifier,
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building UpdateRoomInput",
+                )
+            })?,
             name: self.name,
             maximum_message_rate_per_second: self.maximum_message_rate_per_second.unwrap_or_default(),
             maximum_message_length: self.maximum_message_length.unwrap_or_default(),

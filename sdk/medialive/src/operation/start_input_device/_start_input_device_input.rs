@@ -28,6 +28,7 @@ pub struct StartInputDeviceInputBuilder {
 }
 impl StartInputDeviceInputBuilder {
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// This field is required.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self

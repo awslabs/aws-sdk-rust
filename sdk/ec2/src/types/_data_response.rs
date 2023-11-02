@@ -45,8 +45,10 @@ impl DataResponse {
         self.period.as_ref()
     }
     /// <p>A list of <code>MetricPoint</code> objects.</p>
-    pub fn metric_points(&self) -> ::std::option::Option<&[crate::types::MetricPoint]> {
-        self.metric_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_points.is_none()`.
+    pub fn metric_points(&self) -> &[crate::types::MetricPoint] {
+        self.metric_points.as_deref().unwrap_or_default()
     }
 }
 impl DataResponse {

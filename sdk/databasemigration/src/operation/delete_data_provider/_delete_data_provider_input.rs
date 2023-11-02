@@ -27,6 +27,7 @@ pub struct DeleteDataProviderInputBuilder {
 }
 impl DeleteDataProviderInputBuilder {
     /// <p>The identifier of the data provider to delete.</p>
+    /// This field is required.
     pub fn data_provider_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_provider_identifier = ::std::option::Option::Some(input.into());
         self

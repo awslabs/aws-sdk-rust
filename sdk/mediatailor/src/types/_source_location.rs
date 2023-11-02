@@ -7,7 +7,7 @@ pub struct SourceLocation {
     /// <p>The access configuration for the source location.</p>
     pub access_configuration: ::std::option::Option<crate::types::AccessConfiguration>,
     /// <p>The ARN of the SourceLocation.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The timestamp that indicates when the source location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The default segment delivery configuration.</p>
@@ -19,7 +19,7 @@ pub struct SourceLocation {
     /// <p>The segment delivery configurations for the source location.</p>
     pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
     /// <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -29,8 +29,9 @@ impl SourceLocation {
         self.access_configuration.as_ref()
     }
     /// <p>The ARN of the SourceLocation.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The timestamp that indicates when the source location was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -49,12 +50,15 @@ impl SourceLocation {
         self.last_modified_time.as_ref()
     }
     /// <p>The segment delivery configurations for the source location.</p>
-    pub fn segment_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_delivery_configurations.is_none()`.
+    pub fn segment_delivery_configurations(&self) -> &[crate::types::SegmentDeliveryConfiguration] {
+        self.segment_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
     /// <p>The tags assigned to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -98,6 +102,7 @@ impl SourceLocationBuilder {
         &self.access_configuration
     }
     /// <p>The ARN of the SourceLocation.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +148,7 @@ impl SourceLocationBuilder {
         &self.default_segment_delivery_configuration
     }
     /// <p>The HTTP configuration for the source location.</p>
+    /// This field is required.
     pub fn http_configuration(mut self, input: crate::types::HttpConfiguration) -> Self {
         self.http_configuration = ::std::option::Option::Some(input);
         self
@@ -194,6 +200,7 @@ impl SourceLocationBuilder {
         &self.segment_delivery_configurations
     }
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -228,17 +235,30 @@ impl SourceLocationBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SourceLocation`](crate::types::SourceLocation).
-    pub fn build(self) -> crate::types::SourceLocation {
-        crate::types::SourceLocation {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::SourceLocationBuilder::arn)
+    /// - [`source_location_name`](crate::types::builders::SourceLocationBuilder::source_location_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceLocation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceLocation {
             access_configuration: self.access_configuration,
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building SourceLocation",
+                )
+            })?,
             creation_time: self.creation_time,
             default_segment_delivery_configuration: self.default_segment_delivery_configuration,
             http_configuration: self.http_configuration,
             last_modified_time: self.last_modified_time,
             segment_delivery_configurations: self.segment_delivery_configurations,
-            source_location_name: self.source_location_name,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building SourceLocation",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

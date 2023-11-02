@@ -3,11 +3,11 @@ pub fn ser_delete_event_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_event_destination::DeleteEventDestinationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1.as_str());
+    {
+        object.key("ConfigurationSetName").string(input.configuration_set_name.as_str());
     }
-    if let Some(var_2) = &input.event_destination_name {
-        object.key("EventDestinationName").string(var_2.as_str());
+    {
+        object.key("EventDestinationName").string(input.event_destination_name.as_str());
     }
     Ok(())
 }

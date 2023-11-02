@@ -27,6 +27,7 @@ pub struct PutLoggingConfigurationInputBuilder {
 }
 impl PutLoggingConfigurationInputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self

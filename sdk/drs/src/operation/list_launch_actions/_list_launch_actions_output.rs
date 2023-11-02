@@ -11,8 +11,10 @@ pub struct ListLaunchActionsOutput {
 }
 impl ListLaunchActionsOutput {
     /// <p>List of resource launch actions.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::LaunchAction]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::LaunchAction] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Next token returned when listing resource launch actions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

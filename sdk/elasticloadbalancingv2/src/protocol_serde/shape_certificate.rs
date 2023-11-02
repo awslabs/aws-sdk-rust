@@ -17,6 +17,7 @@ pub fn ser_certificate(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_certificate(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Certificate, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -77,6 +77,7 @@ pub struct OfferingBuilder {
 }
 impl OfferingBuilder {
     /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
+    /// This field is required.
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl OfferingBuilder {
         &self.currency_code
     }
     /// The length of time that your reservation would be active.
+    /// This field is required.
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl OfferingBuilder {
         &self.duration
     }
     /// The unit of measurement for the duration of the offering.
+    /// This field is required.
     pub fn duration_units(mut self, input: crate::types::DurationUnits) -> Self {
         self.duration_units = ::std::option::Option::Some(input);
         self
@@ -119,6 +122,7 @@ impl OfferingBuilder {
         &self.duration_units
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
+    /// This field is required.
     pub fn offering_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +137,7 @@ impl OfferingBuilder {
         &self.offering_arn
     }
     /// A description of the offering.
+    /// This field is required.
     pub fn offering_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_description = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +152,7 @@ impl OfferingBuilder {
         &self.offering_description
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
+    /// This field is required.
     pub fn price_per_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price_per_unit = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +167,7 @@ impl OfferingBuilder {
         &self.price_per_unit
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
+    /// This field is required.
     pub fn price_units(mut self, input: crate::types::PriceUnits) -> Self {
         self.price_units = ::std::option::Option::Some(input);
         self
@@ -175,6 +182,7 @@ impl OfferingBuilder {
         &self.price_units
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
+    /// This field is required.
     pub fn resource_specification(mut self, input: crate::types::ResourceSpecification) -> Self {
         self.resource_specification = ::std::option::Option::Some(input);
         self

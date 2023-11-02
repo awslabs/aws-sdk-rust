@@ -15,8 +15,10 @@ impl DescribeGlobalClustersOutput {
         self.marker.as_deref()
     }
     /// <p>The list of global clusters and instances returned by this request.</p>
-    pub fn global_clusters(&self) -> ::std::option::Option<&[crate::types::GlobalCluster]> {
-        self.global_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_clusters.is_none()`.
+    pub fn global_clusters(&self) -> &[crate::types::GlobalCluster] {
+        self.global_clusters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeGlobalClustersOutput {

@@ -67,6 +67,7 @@ impl GetQueryResultsInputBuilder {
         &self.event_data_store
     }
     /// <p>The ID of the query for which you want to get results.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self

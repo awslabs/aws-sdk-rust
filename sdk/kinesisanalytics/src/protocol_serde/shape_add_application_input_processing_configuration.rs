@@ -36,8 +36,8 @@ pub fn de_add_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError::InvalidArgumentException({
@@ -52,8 +52,8 @@ pub fn de_add_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceInUseException" => crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError::ResourceInUseException({
@@ -68,8 +68,8 @@ pub fn de_add_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError::ResourceNotFoundException({
@@ -84,8 +84,8 @@ pub fn de_add_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedOperationException" => crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError::UnsupportedOperationException({
@@ -100,8 +100,8 @@ pub fn de_add_application_input_processing_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError::generic(generic)

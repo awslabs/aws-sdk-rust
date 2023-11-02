@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
 }
 impl SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
@@ -28,6 +28,7 @@ pub struct SseSpecificationBuilder {
 }
 impl SseSpecificationBuilder {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl SseSpecificationBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`SseSpecification`](crate::types::SseSpecification).
-    pub fn build(self) -> crate::types::SseSpecification {
-        crate::types::SseSpecification { enabled: self.enabled }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::SseSpecificationBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::SseSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SseSpecification {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building SseSpecification",
+                )
+            })?,
+        })
     }
 }

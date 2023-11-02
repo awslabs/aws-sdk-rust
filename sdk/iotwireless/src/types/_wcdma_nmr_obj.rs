@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WcdmaNmrObj {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-    pub uarfcndl: ::std::option::Option<i32>,
+    pub uarfcndl: i32,
     /// <p>Primary Scrambling Code.</p>
-    pub psc: ::std::option::Option<i32>,
+    pub psc: i32,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub utran_cid: ::std::option::Option<i32>,
+    pub utran_cid: i32,
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
     pub rscp: ::std::option::Option<i32>,
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
@@ -17,15 +17,15 @@ pub struct WcdmaNmrObj {
 }
 impl WcdmaNmrObj {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
-    pub fn uarfcndl(&self) -> ::std::option::Option<i32> {
+    pub fn uarfcndl(&self) -> i32 {
         self.uarfcndl
     }
     /// <p>Primary Scrambling Code.</p>
-    pub fn psc(&self) -> ::std::option::Option<i32> {
+    pub fn psc(&self) -> i32 {
         self.psc
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub fn utran_cid(&self) -> ::std::option::Option<i32> {
+    pub fn utran_cid(&self) -> i32 {
         self.utran_cid
     }
     /// <p>Received Signal Code Power (signal power) (dBm)</p>
@@ -56,6 +56,7 @@ pub struct WcdmaNmrObjBuilder {
 }
 impl WcdmaNmrObjBuilder {
     /// <p>WCDMA UTRA Absolute RF Channel Number downlink.</p>
+    /// This field is required.
     pub fn uarfcndl(mut self, input: i32) -> Self {
         self.uarfcndl = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl WcdmaNmrObjBuilder {
         &self.uarfcndl
     }
     /// <p>Primary Scrambling Code.</p>
+    /// This field is required.
     pub fn psc(mut self, input: i32) -> Self {
         self.psc = ::std::option::Option::Some(input);
         self
@@ -84,6 +86,7 @@ impl WcdmaNmrObjBuilder {
         &self.psc
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    /// This field is required.
     pub fn utran_cid(mut self, input: i32) -> Self {
         self.utran_cid = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,32 @@ impl WcdmaNmrObjBuilder {
         &self.path_loss
     }
     /// Consumes the builder and constructs a [`WcdmaNmrObj`](crate::types::WcdmaNmrObj).
-    pub fn build(self) -> crate::types::WcdmaNmrObj {
-        crate::types::WcdmaNmrObj {
-            uarfcndl: self.uarfcndl,
-            psc: self.psc,
-            utran_cid: self.utran_cid,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uarfcndl`](crate::types::builders::WcdmaNmrObjBuilder::uarfcndl)
+    /// - [`psc`](crate::types::builders::WcdmaNmrObjBuilder::psc)
+    /// - [`utran_cid`](crate::types::builders::WcdmaNmrObjBuilder::utran_cid)
+    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaNmrObj, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WcdmaNmrObj {
+            uarfcndl: self.uarfcndl.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uarfcndl",
+                    "uarfcndl was not specified but it is required when building WcdmaNmrObj",
+                )
+            })?,
+            psc: self.psc.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "psc",
+                    "psc was not specified but it is required when building WcdmaNmrObj",
+                )
+            })?,
+            utran_cid: self.utran_cid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "utran_cid",
+                    "utran_cid was not specified but it is required when building WcdmaNmrObj",
+                )
+            })?,
             rscp: self.rscp,
             path_loss: self.path_loss,
-        }
+        })
     }
 }

@@ -3,11 +3,11 @@ pub fn ser_user_quick_connect_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserQuickConnectConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.user_id {
-        object.key("UserId").string(var_1.as_str());
+    {
+        object.key("UserId").string(input.user_id.as_str());
     }
-    if let Some(var_2) = &input.contact_flow_id {
-        object.key("ContactFlowId").string(var_2.as_str());
+    {
+        object.key("ContactFlowId").string(input.contact_flow_id.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::user_quick_connect_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

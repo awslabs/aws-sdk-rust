@@ -27,6 +27,7 @@ pub struct DescribeRetrainingSchedulerInputBuilder {
 }
 impl DescribeRetrainingSchedulerInputBuilder {
     /// <p>The name of the model that the retraining scheduler is attached to. </p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self

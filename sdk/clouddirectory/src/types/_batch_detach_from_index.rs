@@ -35,6 +35,7 @@ pub struct BatchDetachFromIndexBuilder {
 }
 impl BatchDetachFromIndexBuilder {
     /// <p>A reference to the index object.</p>
+    /// This field is required.
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BatchDetachFromIndexBuilder {
         &self.index_reference
     }
     /// <p>A reference to the object being detached from the index.</p>
+    /// This field is required.
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_reference = ::std::option::Option::Some(input);
         self

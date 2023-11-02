@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmParameterStoreParameter {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-    pub parameter_type: ::std::option::Option<crate::types::SsmParameterStoreParameterType>,
+    pub parameter_type: crate::types::SsmParameterStoreParameterType,
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    pub parameter_name: ::std::option::Option<::std::string::String>,
+    pub parameter_name: ::std::string::String,
 }
 impl SsmParameterStoreParameter {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-    pub fn parameter_type(&self) -> ::std::option::Option<&crate::types::SsmParameterStoreParameterType> {
-        self.parameter_type.as_ref()
+    pub fn parameter_type(&self) -> &crate::types::SsmParameterStoreParameterType {
+        &self.parameter_type
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
-        self.parameter_name.as_deref()
+    pub fn parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_name.deref()
     }
 }
 impl SsmParameterStoreParameter {
@@ -35,6 +36,7 @@ pub struct SsmParameterStoreParameterBuilder {
 }
 impl SsmParameterStoreParameterBuilder {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
+    /// This field is required.
     pub fn parameter_type(mut self, input: crate::types::SsmParameterStoreParameterType) -> Self {
         self.parameter_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl SsmParameterStoreParameterBuilder {
         &self.parameter_type
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
+    /// This field is required.
     pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl SsmParameterStoreParameterBuilder {
         &self.parameter_name
     }
     /// Consumes the builder and constructs a [`SsmParameterStoreParameter`](crate::types::SsmParameterStoreParameter).
-    pub fn build(self) -> crate::types::SsmParameterStoreParameter {
-        crate::types::SsmParameterStoreParameter {
-            parameter_type: self.parameter_type,
-            parameter_name: self.parameter_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_type`](crate::types::builders::SsmParameterStoreParameterBuilder::parameter_type)
+    /// - [`parameter_name`](crate::types::builders::SsmParameterStoreParameterBuilder::parameter_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SsmParameterStoreParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SsmParameterStoreParameter {
+            parameter_type: self.parameter_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameter_type",
+                    "parameter_type was not specified but it is required when building SsmParameterStoreParameter",
+                )
+            })?,
+            parameter_name: self.parameter_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameter_name",
+                    "parameter_name was not specified but it is required when building SsmParameterStoreParameter",
+                )
+            })?,
+        })
     }
 }

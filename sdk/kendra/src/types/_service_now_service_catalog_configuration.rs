@@ -13,7 +13,7 @@ pub struct ServiceNowServiceCatalogConfiguration {
     /// <p>The regex is applied to the file name of the attachment.</p>
     pub exclude_attachment_file_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
-    pub document_data_field_name: ::std::option::Option<::std::string::String>,
+    pub document_data_field_name: ::std::string::String,
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps attributes or field names of catalogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
@@ -26,25 +26,32 @@ impl ServiceNowServiceCatalogConfiguration {
     }
     /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
-    pub fn include_attachment_file_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.include_attachment_file_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_attachment_file_patterns.is_none()`.
+    pub fn include_attachment_file_patterns(&self) -> &[::std::string::String] {
+        self.include_attachment_file_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain attachments of catalogs in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
-    pub fn exclude_attachment_file_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_attachment_file_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_attachment_file_patterns.is_none()`.
+    pub fn exclude_attachment_file_patterns(&self) -> &[::std::string::String] {
+        self.exclude_attachment_file_patterns.as_deref().unwrap_or_default()
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
-    pub fn document_data_field_name(&self) -> ::std::option::Option<&str> {
-        self.document_data_field_name.as_deref()
+    pub fn document_data_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_data_field_name.deref()
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
     pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps attributes or field names of catalogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
 }
 impl ServiceNowServiceCatalogConfiguration {
@@ -127,6 +134,7 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
         &self.exclude_attachment_file_patterns
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
+    /// This field is required.
     pub fn document_data_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_data_field_name = ::std::option::Option::Some(input.into());
         self
@@ -175,14 +183,23 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
         &self.field_mappings
     }
     /// Consumes the builder and constructs a [`ServiceNowServiceCatalogConfiguration`](crate::types::ServiceNowServiceCatalogConfiguration).
-    pub fn build(self) -> crate::types::ServiceNowServiceCatalogConfiguration {
-        crate::types::ServiceNowServiceCatalogConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_data_field_name`](crate::types::builders::ServiceNowServiceCatalogConfigurationBuilder::document_data_field_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ServiceNowServiceCatalogConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceNowServiceCatalogConfiguration {
             crawl_attachments: self.crawl_attachments.unwrap_or_default(),
             include_attachment_file_patterns: self.include_attachment_file_patterns,
             exclude_attachment_file_patterns: self.exclude_attachment_file_patterns,
-            document_data_field_name: self.document_data_field_name,
+            document_data_field_name: self.document_data_field_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_data_field_name",
+                    "document_data_field_name was not specified but it is required when building ServiceNowServiceCatalogConfiguration",
+                )
+            })?,
             document_title_field_name: self.document_title_field_name,
             field_mappings: self.field_mappings,
-        }
+        })
     }
 }

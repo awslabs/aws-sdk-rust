@@ -11,8 +11,10 @@ pub struct ListAccessPointsOutput {
 }
 impl ListAccessPointsOutput {
     /// <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
-    pub fn access_point_list(&self) -> ::std::option::Option<&[crate::types::AccessPoint]> {
-        self.access_point_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_point_list.is_none()`.
+    pub fn access_point_list(&self) -> &[crate::types::AccessPoint] {
+        self.access_point_list.as_deref().unwrap_or_default()
     }
     /// <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

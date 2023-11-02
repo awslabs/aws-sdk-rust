@@ -27,6 +27,7 @@ pub struct GetInstanceStateInputBuilder {
 }
 impl GetInstanceStateInputBuilder {
     /// <p>The name of the instance to get state information about.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecurityConfigInput {
     /// <p>The unique identifier of the security configuration.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetSecurityConfigInput {
     /// <p>The unique identifier of the security configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetSecurityConfigInput {
@@ -27,6 +28,7 @@ pub struct GetSecurityConfigInputBuilder {
 }
 impl GetSecurityConfigInputBuilder {
     /// <p>The unique identifier of the security configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,18 @@ impl GetSecurityConfigInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSecurityConfigInput`](crate::operation::get_security_config::GetSecurityConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_security_config::builders::GetSecurityConfigInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_security_config::GetSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_security_config::GetSecurityConfigInput { id: self.id })
+        ::std::result::Result::Ok(crate::operation::get_security_config::GetSecurityConfigInput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetSecurityConfigInput",
+                )
+            })?,
+        })
     }
 }

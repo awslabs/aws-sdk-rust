@@ -35,6 +35,7 @@ pub struct TrainingImageConfigBuilder {
 }
 impl TrainingImageConfigBuilder {
     /// <p>The method that your training job will use to gain access to the images in your private Docker registry. For access to an image in a private Docker registry, set to <code>Vpc</code>.</p>
+    /// This field is required.
     pub fn training_repository_access_mode(mut self, input: crate::types::TrainingRepositoryAccessMode) -> Self {
         self.training_repository_access_mode = ::std::option::Option::Some(input);
         self

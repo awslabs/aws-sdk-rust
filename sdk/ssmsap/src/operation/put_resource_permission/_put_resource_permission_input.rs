@@ -4,24 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePermissionInput {
     /// <p></p>
-    pub action_type: ::std::option::Option<crate::types::PermissionActionType>,
+    pub action_type: crate::types::PermissionActionType,
     /// <p></p>
-    pub source_resource_arn: ::std::option::Option<::std::string::String>,
+    pub source_resource_arn: ::std::string::String,
     /// <p></p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
 }
 impl PutResourcePermissionInput {
     /// <p></p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::PermissionActionType> {
-        self.action_type.as_ref()
+    pub fn action_type(&self) -> &crate::types::PermissionActionType {
+        &self.action_type
     }
     /// <p></p>
-    pub fn source_resource_arn(&self) -> ::std::option::Option<&str> {
-        self.source_resource_arn.as_deref()
+    pub fn source_resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.source_resource_arn.deref()
     }
     /// <p></p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
 }
 impl PutResourcePermissionInput {
@@ -41,6 +43,7 @@ pub struct PutResourcePermissionInputBuilder {
 }
 impl PutResourcePermissionInputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::PermissionActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -55,6 +58,7 @@ impl PutResourcePermissionInputBuilder {
         &self.action_type
     }
     /// <p></p>
+    /// This field is required.
     pub fn source_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl PutResourcePermissionInputBuilder {
         &self.source_resource_arn
     }
     /// <p></p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,14 +88,33 @@ impl PutResourcePermissionInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_type`](crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder::action_type)
+    /// - [`source_resource_arn`](crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder::source_resource_arn)
+    /// - [`resource_arn`](crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_resource_permission::PutResourcePermissionInput {
-            action_type: self.action_type,
-            source_resource_arn: self.source_resource_arn,
-            resource_arn: self.resource_arn,
+            action_type: self.action_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_type",
+                    "action_type was not specified but it is required when building PutResourcePermissionInput",
+                )
+            })?,
+            source_resource_arn: self.source_resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_resource_arn",
+                    "source_resource_arn was not specified but it is required when building PutResourcePermissionInput",
+                )
+            })?,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building PutResourcePermissionInput",
+                )
+            })?,
         })
     }
 }

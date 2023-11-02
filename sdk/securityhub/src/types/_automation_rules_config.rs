@@ -59,8 +59,10 @@ impl AutomationRulesConfig {
         self.criteria.as_ref()
     }
     /// <p> One or more actions to update finding fields if a finding matches the defined criteria of the rule. </p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::AutomationRulesAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::AutomationRulesAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p> A timestamp that indicates when the rule was created. </p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>

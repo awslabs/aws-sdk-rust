@@ -27,6 +27,7 @@ pub struct GetMaintenanceWindowInputBuilder {
 }
 impl GetMaintenanceWindowInputBuilder {
     /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self

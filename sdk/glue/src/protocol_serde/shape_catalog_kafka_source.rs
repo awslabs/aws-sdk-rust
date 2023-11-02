@@ -3,35 +3,35 @@ pub fn ser_catalog_kafka_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CatalogKafkaSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.window_size {
+    if let Some(var_1) = &input.window_size {
         object.key("WindowSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.detect_schema {
-        object.key("DetectSchema").boolean(*var_3);
+    if let Some(var_2) = &input.detect_schema {
+        object.key("DetectSchema").boolean(*var_2);
     }
-    if let Some(var_4) = &input.table {
-        object.key("Table").string(var_4.as_str());
+    {
+        object.key("Table").string(input.table.as_str());
     }
-    if let Some(var_5) = &input.database {
-        object.key("Database").string(var_5.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_6) = &input.streaming_options {
+    if let Some(var_3) = &input.streaming_options {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("StreamingOptions").start_object();
-        crate::protocol_serde::shape_kafka_streaming_source_options::ser_kafka_streaming_source_options(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("StreamingOptions").start_object();
+        crate::protocol_serde::shape_kafka_streaming_source_options::ser_kafka_streaming_source_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_8) = &input.data_preview_options {
+    if let Some(var_5) = &input.data_preview_options {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("DataPreviewOptions").start_object();
-        crate::protocol_serde::shape_streaming_data_preview_options::ser_streaming_data_preview_options(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_6 = object.key("DataPreviewOptions").start_object();
+        crate::protocol_serde::shape_streaming_data_preview_options::ser_streaming_data_preview_options(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -102,7 +102,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::catalog_kafka_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

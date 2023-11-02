@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBranchesOutput {
     /// <p> A list of branches for an Amplify app. </p>
-    pub branches: ::std::option::Option<::std::vec::Vec<crate::types::Branch>>,
+    pub branches: ::std::vec::Vec<crate::types::Branch>,
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListBranchesOutput {
     /// <p> A list of branches for an Amplify app. </p>
-    pub fn branches(&self) -> ::std::option::Option<&[crate::types::Branch]> {
-        self.branches.as_deref()
+    pub fn branches(&self) -> &[crate::types::Branch] {
+        use std::ops::Deref;
+        self.branches.deref()
     }
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListBranchesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListBranchesOutput`](crate::operation::list_branches::ListBranchesOutput).
-    pub fn build(self) -> crate::operation::list_branches::ListBranchesOutput {
-        crate::operation::list_branches::ListBranchesOutput {
-            branches: self.branches,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`branches`](crate::operation::list_branches::builders::ListBranchesOutputBuilder::branches)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_branches::ListBranchesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_branches::ListBranchesOutput {
+            branches: self.branches.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "branches",
+                    "branches was not specified but it is required when building ListBranchesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

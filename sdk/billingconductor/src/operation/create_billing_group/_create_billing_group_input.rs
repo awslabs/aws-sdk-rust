@@ -6,7 +6,7 @@ pub struct CreateBillingGroupInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The billing group name. The names must be unique. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub account_grouping: ::std::option::Option<crate::types::AccountGrouping>,
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
@@ -24,8 +24,9 @@ impl CreateBillingGroupInput {
         self.client_token.as_deref()
     }
     /// <p> The billing group name. The names must be unique. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
     pub fn account_grouping(&self) -> ::std::option::Option<&crate::types::AccountGrouping> {
@@ -96,6 +97,7 @@ impl CreateBillingGroupInputBuilder {
         &self.client_token
     }
     /// <p> The billing group name. The names must be unique. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +112,7 @@ impl CreateBillingGroupInputBuilder {
         &self.name
     }
     /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family. </p>
+    /// This field is required.
     pub fn account_grouping(mut self, input: crate::types::AccountGrouping) -> Self {
         self.account_grouping = ::std::option::Option::Some(input);
         self
@@ -124,6 +127,7 @@ impl CreateBillingGroupInputBuilder {
         &self.account_grouping
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    /// This field is required.
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
         self.computation_preference = ::std::option::Option::Some(input);
         self
@@ -186,12 +190,19 @@ impl CreateBillingGroupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_billing_group::CreateBillingGroupInput {
             client_token: self.client_token,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateBillingGroupInput",
+                )
+            })?,
             account_grouping: self.account_grouping,
             computation_preference: self.computation_preference,
             primary_account_id: self.primary_account_id,

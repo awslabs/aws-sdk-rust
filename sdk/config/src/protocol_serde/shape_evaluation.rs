@@ -3,22 +3,22 @@ pub fn ser_evaluation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Evaluation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.compliance_resource_type {
-        object.key("ComplianceResourceType").string(var_1.as_str());
+    {
+        object.key("ComplianceResourceType").string(input.compliance_resource_type.as_str());
     }
-    if let Some(var_2) = &input.compliance_resource_id {
-        object.key("ComplianceResourceId").string(var_2.as_str());
+    {
+        object.key("ComplianceResourceId").string(input.compliance_resource_id.as_str());
     }
-    if let Some(var_3) = &input.compliance_type {
-        object.key("ComplianceType").string(var_3.as_str());
+    {
+        object.key("ComplianceType").string(input.compliance_type.as_str());
     }
-    if let Some(var_4) = &input.annotation {
-        object.key("Annotation").string(var_4.as_str());
+    if let Some(var_1) = &input.annotation {
+        object.key("Annotation").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.ordering_timestamp {
+    {
         object
             .key("OrderingTimestamp")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.ordering_timestamp, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -82,7 +82,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::evaluation_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

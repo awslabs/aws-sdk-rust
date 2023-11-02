@@ -35,24 +35,32 @@ impl GetSegmentDetectionOutput {
         self.status_message.as_deref()
     }
     /// <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
-    pub fn video_metadata(&self) -> ::std::option::Option<&[crate::types::VideoMetadata]> {
-        self.video_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.video_metadata.is_none()`.
+    pub fn video_metadata(&self) -> &[crate::types::VideoMetadata] {
+        self.video_metadata.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
-    pub fn audio_metadata(&self) -> ::std::option::Option<&[crate::types::AudioMetadata]> {
-        self.audio_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_metadata.is_none()`.
+    pub fn audio_metadata(&self) -> &[crate::types::AudioMetadata] {
+        self.audio_metadata.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
-    pub fn segments(&self) -> ::std::option::Option<&[crate::types::SegmentDetection]> {
-        self.segments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
+    pub fn segments(&self) -> &[crate::types::SegmentDetection] {
+        self.segments.as_deref().unwrap_or_default()
     }
     /// <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
-    pub fn selected_segment_types(&self) -> ::std::option::Option<&[crate::types::SegmentTypeInfo]> {
-        self.selected_segment_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_segment_types.is_none()`.
+    pub fn selected_segment_types(&self) -> &[crate::types::SegmentTypeInfo] {
+        self.selected_segment_types.as_deref().unwrap_or_default()
     }
     /// <p>Job identifier for the segment detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartSegmentDetection.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {

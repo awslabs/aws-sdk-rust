@@ -6,17 +6,17 @@ pub fn ser_row_level_permission_data_set(
     if let Some(var_1) = &input.namespace {
         object.key("Namespace").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.arn {
-        object.key("Arn").string(var_2.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_3) = &input.permission_policy {
-        object.key("PermissionPolicy").string(var_3.as_str());
+    {
+        object.key("PermissionPolicy").string(input.permission_policy.as_str());
     }
-    if let Some(var_4) = &input.format_version {
-        object.key("FormatVersion").string(var_4.as_str());
+    if let Some(var_2) = &input.format_version {
+        object.key("FormatVersion").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.status {
-        object.key("Status").string(var_5.as_str());
+    if let Some(var_3) = &input.status {
+        object.key("Status").string(var_3.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::row_level_permission_data_set_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

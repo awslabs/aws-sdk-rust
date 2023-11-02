@@ -109,6 +109,7 @@ impl UpdateProvisioningArtifactInputBuilder {
         &self.accept_language
     }
     /// <p>The product identifier.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +124,7 @@ impl UpdateProvisioningArtifactInputBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact.</p>
+    /// This field is required.
     pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self

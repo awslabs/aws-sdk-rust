@@ -44,6 +44,7 @@ pub struct SetIdentityMailFromDomainInputBuilder {
 }
 impl SetIdentityMailFromDomainInputBuilder {
     /// <p>The verified identity.</p>
+    /// This field is required.
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity = ::std::option::Option::Some(input.into());
         self

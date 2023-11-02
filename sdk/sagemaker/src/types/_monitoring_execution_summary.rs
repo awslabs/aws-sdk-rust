@@ -91,6 +91,7 @@ pub struct MonitoringExecutionSummaryBuilder {
 }
 impl MonitoringExecutionSummaryBuilder {
     /// <p>The name of the monitoring schedule.</p>
+    /// This field is required.
     pub fn monitoring_schedule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl MonitoringExecutionSummaryBuilder {
         &self.monitoring_schedule_name
     }
     /// <p>The time the monitoring job was scheduled.</p>
+    /// This field is required.
     pub fn scheduled_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.scheduled_time = ::std::option::Option::Some(input);
         self
@@ -119,6 +121,7 @@ impl MonitoringExecutionSummaryBuilder {
         &self.scheduled_time
     }
     /// <p>The time at which the monitoring job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +136,7 @@ impl MonitoringExecutionSummaryBuilder {
         &self.creation_time
     }
     /// <p>A timestamp that indicates the last time the monitoring job was modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -147,6 +151,7 @@ impl MonitoringExecutionSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The status of the monitoring job.</p>
+    /// This field is required.
     pub fn monitoring_execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.monitoring_execution_status = ::std::option::Option::Some(input);
         self

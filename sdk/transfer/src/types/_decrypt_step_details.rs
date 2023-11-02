@@ -7,7 +7,7 @@ pub struct DecryptStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::EncryptionType>,
+    pub r#type: crate::types::EncryptionType,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
@@ -36,8 +36,8 @@ impl DecryptStepDetails {
         self.name.as_deref()
     }
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::EncryptionType {
+        &self.r#type
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
@@ -100,6 +100,7 @@ impl DecryptStepDetailsBuilder {
         &self.name
     }
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -175,6 +176,7 @@ impl DecryptStepDetailsBuilder {
     /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
     /// </note> </li>
     /// </ul>
+    /// This field is required.
     pub fn destination_file_location(mut self, input: crate::types::InputFileLocation) -> Self {
         self.destination_file_location = ::std::option::Option::Some(input);
         self
@@ -201,13 +203,20 @@ impl DecryptStepDetailsBuilder {
         &self.destination_file_location
     }
     /// Consumes the builder and constructs a [`DecryptStepDetails`](crate::types::DecryptStepDetails).
-    pub fn build(self) -> crate::types::DecryptStepDetails {
-        crate::types::DecryptStepDetails {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::DecryptStepDetailsBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DecryptStepDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DecryptStepDetails {
             name: self.name,
-            r#type: self.r#type,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DecryptStepDetails",
+                )
+            })?,
             source_file_location: self.source_file_location,
             overwrite_existing: self.overwrite_existing,
             destination_file_location: self.destination_file_location,
-        }
+        })
     }
 }

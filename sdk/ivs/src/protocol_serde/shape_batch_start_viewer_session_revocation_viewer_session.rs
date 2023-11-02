@@ -3,11 +3,11 @@ pub fn ser_batch_start_viewer_session_revocation_viewer_session(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchStartViewerSessionRevocationViewerSession,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.channel_arn {
-        object.key("channelArn").string(var_1.as_str());
+    {
+        object.key("channelArn").string(input.channel_arn.as_str());
     }
-    if let Some(var_2) = &input.viewer_id {
-        object.key("viewerId").string(var_2.as_str());
+    {
+        object.key("viewerId").string(input.viewer_id.as_str());
     }
     if input.viewer_session_versions_less_than_or_equal_to != 0 {
         object.key("viewerSessionVersionsLessThanOrEqualTo").number(

@@ -6,29 +6,29 @@ pub fn ser_anomaly_monitor(
     if let Some(var_1) = &input.monitor_arn {
         object.key("MonitorArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.monitor_name {
-        object.key("MonitorName").string(var_2.as_str());
+    {
+        object.key("MonitorName").string(input.monitor_name.as_str());
     }
-    if let Some(var_3) = &input.creation_date {
-        object.key("CreationDate").string(var_3.as_str());
+    if let Some(var_2) = &input.creation_date {
+        object.key("CreationDate").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.last_updated_date {
-        object.key("LastUpdatedDate").string(var_4.as_str());
+    if let Some(var_3) = &input.last_updated_date {
+        object.key("LastUpdatedDate").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.last_evaluated_date {
-        object.key("LastEvaluatedDate").string(var_5.as_str());
+    if let Some(var_4) = &input.last_evaluated_date {
+        object.key("LastEvaluatedDate").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.monitor_type {
-        object.key("MonitorType").string(var_6.as_str());
+    {
+        object.key("MonitorType").string(input.monitor_type.as_str());
     }
-    if let Some(var_7) = &input.monitor_dimension {
-        object.key("MonitorDimension").string(var_7.as_str());
+    if let Some(var_5) = &input.monitor_dimension {
+        object.key("MonitorDimension").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.monitor_specification {
+    if let Some(var_6) = &input.monitor_specification {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("MonitorSpecification").start_object();
-        crate::protocol_serde::shape_expression::ser_expression(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_7 = object.key("MonitorSpecification").start_object();
+        crate::protocol_serde::shape_expression::ser_expression(&mut object_7, var_6)?;
+        object_7.finish();
     }
     if input.dimensional_value_count != 0 {
         object.key("DimensionalValueCount").number(
@@ -123,7 +123,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::anomaly_monitor_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

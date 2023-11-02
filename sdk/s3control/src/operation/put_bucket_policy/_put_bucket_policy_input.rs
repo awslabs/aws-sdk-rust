@@ -76,6 +76,7 @@ pub struct PutBucketPolicyInputBuilder {
 }
 impl PutBucketPolicyInputBuilder {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +103,7 @@ impl PutBucketPolicyInputBuilder {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +162,7 @@ impl PutBucketPolicyInputBuilder {
         &self.confirm_remove_self_bucket_access
     }
     /// <p>The bucket policy as a JSON document.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

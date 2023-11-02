@@ -30,8 +30,10 @@ impl ChangeCidrCollectionInput {
         self.collection_version
     }
     /// <p> Information about changes to a CIDR collection.</p>
-    pub fn changes(&self) -> ::std::option::Option<&[crate::types::CidrCollectionChange]> {
-        self.changes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changes.is_none()`.
+    pub fn changes(&self) -> &[crate::types::CidrCollectionChange] {
+        self.changes.as_deref().unwrap_or_default()
     }
 }
 impl ChangeCidrCollectionInput {
@@ -51,6 +53,7 @@ pub struct ChangeCidrCollectionInputBuilder {
 }
 impl ChangeCidrCollectionInputBuilder {
     /// <p>The UUID of the CIDR collection to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

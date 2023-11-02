@@ -34,8 +34,8 @@ pub fn de_update_approval_rule_template_description_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ApprovalRuleTemplateNameRequiredException" => crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::ApprovalRuleTemplateNameRequiredException({
@@ -50,8 +50,8 @@ pub fn de_update_approval_rule_template_description_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleTemplateDescriptionException" => crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::InvalidApprovalRuleTemplateDescriptionException({
@@ -66,8 +66,8 @@ pub fn de_update_approval_rule_template_description_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleTemplateNameException" => crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::InvalidApprovalRuleTemplateNameException({
@@ -82,8 +82,8 @@ pub fn de_update_approval_rule_template_description_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::generic(generic)
@@ -109,7 +109,7 @@ pub fn de_update_approval_rule_template_description_http_response(
         )
         .map_err(crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_approval_rule_template_description_output_correct_errors(output).build()
     })
 }
 

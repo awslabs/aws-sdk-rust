@@ -319,6 +319,7 @@ impl CreateRouteInputBuilder {
         &self.network_interface_id
     }
     /// <p>The ID of the route table for the route.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self

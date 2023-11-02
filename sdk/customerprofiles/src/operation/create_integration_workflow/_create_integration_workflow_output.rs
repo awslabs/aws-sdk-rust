@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>A message indicating create request was received.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateIntegrationWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>A message indicating create request was received.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateIntegrationWorkflowOutput {
@@ -41,6 +43,7 @@ pub struct CreateIntegrationWorkflowOutputBuilder {
 }
 impl CreateIntegrationWorkflowOutputBuilder {
     /// <p>Unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateIntegrationWorkflowOutputBuilder {
         &self.workflow_id
     }
     /// <p>A message indicating create request was received.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,29 @@ impl CreateIntegrationWorkflowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateIntegrationWorkflowOutput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput).
-    pub fn build(self) -> crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
-        crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
-            workflow_id: self.workflow_id,
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder::workflow_id)
+    /// - [`message`](crate::operation::create_integration_workflow::builders::CreateIntegrationWorkflowOutputBuilder::message)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building CreateIntegrationWorkflowOutput",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building CreateIntegrationWorkflowOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -8,8 +8,10 @@ pub struct SetRulePrioritiesInput {
 }
 impl SetRulePrioritiesInput {
     /// <p>The rule priorities.</p>
-    pub fn rule_priorities(&self) -> ::std::option::Option<&[crate::types::RulePriorityPair]> {
-        self.rule_priorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_priorities.is_none()`.
+    pub fn rule_priorities(&self) -> &[crate::types::RulePriorityPair] {
+        self.rule_priorities.as_deref().unwrap_or_default()
     }
 }
 impl SetRulePrioritiesInput {

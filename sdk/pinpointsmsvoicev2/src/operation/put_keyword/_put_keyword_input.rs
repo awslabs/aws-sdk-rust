@@ -4,27 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub origination_identity: ::std::option::Option<::std::string::String>,
+    pub origination_identity: ::std::string::String,
     /// <p>The new keyword to add.</p>
-    pub keyword: ::std::option::Option<::std::string::String>,
+    pub keyword: ::std::string::String,
     /// <p>The message associated with the keyword.</p>
     /// <ul>
     /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
-    pub keyword_message: ::std::option::Option<::std::string::String>,
+    pub keyword_message: ::std::string::String,
     /// <p>The action to perform for the new keyword when it is received.</p>
     pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
 }
 impl PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
-        self.origination_identity.as_deref()
+    pub fn origination_identity(&self) -> &str {
+        use std::ops::Deref;
+        self.origination_identity.deref()
     }
     /// <p>The new keyword to add.</p>
-    pub fn keyword(&self) -> ::std::option::Option<&str> {
-        self.keyword.as_deref()
+    pub fn keyword(&self) -> &str {
+        use std::ops::Deref;
+        self.keyword.deref()
     }
     /// <p>The message associated with the keyword.</p>
     /// <ul>
@@ -32,8 +34,9 @@ impl PutKeywordInput {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
-    pub fn keyword_message(&self) -> ::std::option::Option<&str> {
-        self.keyword_message.as_deref()
+    pub fn keyword_message(&self) -> &str {
+        use std::ops::Deref;
+        self.keyword_message.deref()
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     pub fn keyword_action(&self) -> ::std::option::Option<&crate::types::KeywordAction> {
@@ -58,6 +61,7 @@ pub struct PutKeywordInputBuilder {
 }
 impl PutKeywordInputBuilder {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    /// This field is required.
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_identity = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +76,7 @@ impl PutKeywordInputBuilder {
         &self.origination_identity
     }
     /// <p>The new keyword to add.</p>
+    /// This field is required.
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl PutKeywordInputBuilder {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn keyword_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword_message = ::std::option::Option::Some(input.into());
         self
@@ -129,11 +135,30 @@ impl PutKeywordInputBuilder {
         &self.keyword_action
     }
     /// Consumes the builder and constructs a [`PutKeywordInput`](crate::operation::put_keyword::PutKeywordInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`origination_identity`](crate::operation::put_keyword::builders::PutKeywordInputBuilder::origination_identity)
+    /// - [`keyword`](crate::operation::put_keyword::builders::PutKeywordInputBuilder::keyword)
+    /// - [`keyword_message`](crate::operation::put_keyword::builders::PutKeywordInputBuilder::keyword_message)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_keyword::PutKeywordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_keyword::PutKeywordInput {
-            origination_identity: self.origination_identity,
-            keyword: self.keyword,
-            keyword_message: self.keyword_message,
+            origination_identity: self.origination_identity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "origination_identity",
+                    "origination_identity was not specified but it is required when building PutKeywordInput",
+                )
+            })?,
+            keyword: self.keyword.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyword",
+                    "keyword was not specified but it is required when building PutKeywordInput",
+                )
+            })?,
+            keyword_message: self.keyword_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyword_message",
+                    "keyword_message was not specified but it is required when building PutKeywordInput",
+                )
+            })?,
             keyword_action: self.keyword_action,
         })
     }

@@ -29,11 +29,10 @@ pub fn de_batch_get_asset_property_value_history_http_error(
                     output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                         .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_failure_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -46,11 +45,10 @@ pub fn de_batch_get_asset_property_value_history_http_error(
                     output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                         .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_request_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -64,11 +62,10 @@ pub fn de_batch_get_asset_property_value_history_http_error(
                         crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                             .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -81,11 +78,10 @@ pub fn de_batch_get_asset_property_value_history_http_error(
                     output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                         .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -110,7 +106,9 @@ pub fn de_batch_get_asset_property_value_history_http_response(
             crate::protocol_serde::shape_batch_get_asset_property_value_history::de_batch_get_asset_property_value_history(_response_body, output)
                 .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_get_asset_property_value_history_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError::unhandled)?
     })
 }
 

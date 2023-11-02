@@ -51,6 +51,7 @@ impl BundleInstanceInputBuilder {
     /// <p>Type: String</p>
     /// <p>Default: None</p>
     /// <p>Required: Yes</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl BundleInstanceInputBuilder {
         &self.instance_id
     }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
+    /// This field is required.
     pub fn storage(mut self, input: crate::types::Storage) -> Self {
         self.storage = ::std::option::Option::Some(input);
         self

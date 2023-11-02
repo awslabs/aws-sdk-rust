@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataLake`](crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`regions(impl Into<String>)`](crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::regions) / [`set_regions(Option<Vec<String>>)`](crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::set_regions): <p>The list of Regions where Security Lake is enabled.</p>
+    ///   - [`regions(impl Into<String>)`](crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::regions) / [`set_regions(Option<Vec<String>>)`](crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder::set_regions):<br>required: **true**<br><p>The list of Regions where Security Lake is enabled.</p><br>
     /// - On success, responds with [`DeleteDataLakeOutput`](crate::operation::delete_data_lake::DeleteDataLakeOutput)
     /// - On failure, responds with [`SdkError<DeleteDataLakeError>`](crate::operation::delete_data_lake::DeleteDataLakeError)
     pub fn delete_data_lake(&self) -> crate::operation::delete_data_lake::builders::DeleteDataLakeFluentBuilder {

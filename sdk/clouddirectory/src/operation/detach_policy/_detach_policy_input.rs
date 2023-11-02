@@ -41,6 +41,7 @@ pub struct DetachPolicyInputBuilder {
 }
 impl DetachPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DetachPolicyInputBuilder {
         &self.directory_arn
     }
     /// <p>Reference that identifies the policy object.</p>
+    /// This field is required.
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.policy_reference = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl DetachPolicyInputBuilder {
         &self.policy_reference
     }
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self

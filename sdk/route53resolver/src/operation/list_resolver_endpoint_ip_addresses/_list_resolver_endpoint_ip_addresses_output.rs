@@ -21,8 +21,10 @@ impl ListResolverEndpointIpAddressesOutput {
         self.max_results
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn ip_addresses(&self) -> ::std::option::Option<&[crate::types::IpAddressResponse]> {
-        self.ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
+    pub fn ip_addresses(&self) -> &[crate::types::IpAddressResponse] {
+        self.ip_addresses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResolverEndpointIpAddressesOutput {

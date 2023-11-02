@@ -34,6 +34,7 @@ pub struct GetAppsListInputBuilder {
 }
 impl GetAppsListInputBuilder {
     /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
+    /// This field is required.
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_id = ::std::option::Option::Some(input.into());
         self

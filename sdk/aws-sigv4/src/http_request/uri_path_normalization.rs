@@ -20,7 +20,7 @@ pub(super) fn normalize_uri_path(uri_path: &str) -> Cow<'_, str> {
         Cow::Owned(format!("/{uri_path}"))
     };
 
-    if !result.contains('.') {
+    if !(result.contains('.') || result.contains("//")) {
         return result;
     }
 
@@ -37,7 +37,8 @@ fn normalize_path_segment(uri_path: &str) -> String {
 
     for segment in uri_path.split('/') {
         match segment {
-            "." => {}
+            // Segments that are empty or contain only a single period should not be preserved
+            "" | "." => {}
             ".." => {
                 normalized.pop();
             }
@@ -229,6 +230,15 @@ mod tests {
         assert_eq!(
             normalize_uri_path("mid/content=5/../6"),
             Cow::<'_, str>::Owned("/mid/6".to_owned())
+        );
+    }
+
+    // The CRT does this so I figured we should too. - Zelda
+    #[test]
+    fn normalize_uri_path_should_merge_multiple_subsequent_slashes_into_one() {
+        assert_eq!(
+            normalize_uri_path("//foo//"),
+            Cow::<'_, str>::Owned("/foo/".to_owned())
         );
     }
 

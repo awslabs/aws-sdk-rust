@@ -15,12 +15,16 @@ pub struct GroupConfiguration {
 }
 impl GroupConfiguration {
     /// <p>The configuration currently associated with the group and in effect.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&[crate::types::GroupConfigurationItem]> {
-        self.configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration.is_none()`.
+    pub fn configuration(&self) -> &[crate::types::GroupConfigurationItem] {
+        self.configuration.as_deref().unwrap_or_default()
     }
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
-    pub fn proposed_configuration(&self) -> ::std::option::Option<&[crate::types::GroupConfigurationItem]> {
-        self.proposed_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proposed_configuration.is_none()`.
+    pub fn proposed_configuration(&self) -> &[crate::types::GroupConfigurationItem] {
+        self.proposed_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The current status of an attempt to update the group configuration.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::GroupConfigurationStatus> {

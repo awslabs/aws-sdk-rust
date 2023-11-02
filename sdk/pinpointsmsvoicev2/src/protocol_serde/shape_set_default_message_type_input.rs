@@ -3,11 +3,11 @@ pub fn ser_set_default_message_type_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_default_message_type::SetDefaultMessageTypeInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1.as_str());
+    {
+        object.key("ConfigurationSetName").string(input.configuration_set_name.as_str());
     }
-    if let Some(var_2) = &input.message_type {
-        object.key("MessageType").string(var_2.as_str());
+    {
+        object.key("MessageType").string(input.message_type.as_str());
     }
     Ok(())
 }

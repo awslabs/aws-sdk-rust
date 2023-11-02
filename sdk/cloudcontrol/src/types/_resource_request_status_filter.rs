@@ -19,8 +19,10 @@ pub struct ResourceRequestStatusFilter {
 }
 impl ResourceRequestStatusFilter {
     /// <p>The operation types to include in the filter.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::Operation]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::Operation] {
+        self.operations.as_deref().unwrap_or_default()
     }
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
@@ -31,8 +33,10 @@ impl ResourceRequestStatusFilter {
     /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
-    pub fn operation_statuses(&self) -> ::std::option::Option<&[crate::types::OperationStatus]> {
-        self.operation_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_statuses.is_none()`.
+    pub fn operation_statuses(&self) -> &[crate::types::OperationStatus] {
+        self.operation_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ResourceRequestStatusFilter {

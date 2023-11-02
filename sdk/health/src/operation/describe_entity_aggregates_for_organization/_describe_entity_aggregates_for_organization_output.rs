@@ -9,8 +9,10 @@ pub struct DescribeEntityAggregatesForOrganizationOutput {
 }
 impl DescribeEntityAggregatesForOrganizationOutput {
     /// <p>The list of entity aggregates for each of the specified accounts that are affected by each of the specified events.</p>
-    pub fn organization_entity_aggregates(&self) -> ::std::option::Option<&[crate::types::OrganizationEntityAggregate]> {
-        self.organization_entity_aggregates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_entity_aggregates.is_none()`.
+    pub fn organization_entity_aggregates(&self) -> &[crate::types::OrganizationEntityAggregate] {
+        self.organization_entity_aggregates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEntityAggregatesForOrganizationOutput {

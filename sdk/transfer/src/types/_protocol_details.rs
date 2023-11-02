@@ -61,8 +61,10 @@ impl ProtocolDetails {
         self.set_stat_option.as_ref()
     }
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
-    pub fn as2_transports(&self) -> ::std::option::Option<&[crate::types::As2Transport]> {
-        self.as2_transports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.as2_transports.is_none()`.
+    pub fn as2_transports(&self) -> &[crate::types::As2Transport] {
+        self.as2_transports.as_deref().unwrap_or_default()
     }
 }
 impl ProtocolDetails {

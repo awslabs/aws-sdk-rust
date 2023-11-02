@@ -508,6 +508,21 @@ pub fn de_delete_custom_db_engine_version(
                 builder = builder.set_supports_local_write_forwarding(var_32);
             }
             ,
+            s if s.matches("SupportsIntegrations") /* SupportsIntegrations com.amazonaws.rds.synthetic#DeleteCustomDBEngineVersionOutput$SupportsIntegrations */ =>  {
+                let var_33 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_integrations(var_33);
+            }
+            ,
             _ => {}
         }
         }

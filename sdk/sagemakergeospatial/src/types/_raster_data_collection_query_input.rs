@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RasterDataCollectionQueryInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub raster_data_collection_arn: ::std::option::Option<::std::string::String>,
+    pub raster_data_collection_arn: ::std::string::String,
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
     pub time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterInput>,
     /// <p>The area of interest being queried for the raster data collection.</p>
@@ -15,8 +15,9 @@ pub struct RasterDataCollectionQueryInput {
 }
 impl RasterDataCollectionQueryInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn raster_data_collection_arn(&self) -> ::std::option::Option<&str> {
-        self.raster_data_collection_arn.as_deref()
+    pub fn raster_data_collection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.raster_data_collection_arn.deref()
     }
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
     pub fn time_range_filter(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterInput> {
@@ -59,6 +60,7 @@ pub struct RasterDataCollectionQueryInputBuilder {
 }
 impl RasterDataCollectionQueryInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    /// This field is required.
     pub fn raster_data_collection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raster_data_collection_arn = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +75,7 @@ impl RasterDataCollectionQueryInputBuilder {
         &self.raster_data_collection_arn
     }
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
+    /// This field is required.
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterInput) -> Self {
         self.time_range_filter = ::std::option::Option::Some(input);
         self
@@ -115,13 +118,20 @@ impl RasterDataCollectionQueryInputBuilder {
         &self.property_filters
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionQueryInput`](crate::types::RasterDataCollectionQueryInput).
-    pub fn build(self) -> crate::types::RasterDataCollectionQueryInput {
-        crate::types::RasterDataCollectionQueryInput {
-            raster_data_collection_arn: self.raster_data_collection_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`raster_data_collection_arn`](crate::types::builders::RasterDataCollectionQueryInputBuilder::raster_data_collection_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RasterDataCollectionQueryInput {
+            raster_data_collection_arn: self.raster_data_collection_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "raster_data_collection_arn",
+                    "raster_data_collection_arn was not specified but it is required when building RasterDataCollectionQueryInput",
+                )
+            })?,
             time_range_filter: self.time_range_filter,
             area_of_interest: self.area_of_interest,
             property_filters: self.property_filters,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for RasterDataCollectionQueryInputBuilder {

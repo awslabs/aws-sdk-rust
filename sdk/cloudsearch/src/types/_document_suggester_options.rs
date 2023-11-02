@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentSuggesterOptions {
     /// <p>The name of the index field you want to use for suggestions. </p>
-    pub source_field: ::std::option::Option<::std::string::String>,
+    pub source_field: ::std::string::String,
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
     pub fuzzy_matching: ::std::option::Option<crate::types::SuggesterFuzzyMatching>,
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
@@ -13,8 +13,9 @@ pub struct DocumentSuggesterOptions {
 }
 impl DocumentSuggesterOptions {
     /// <p>The name of the index field you want to use for suggestions. </p>
-    pub fn source_field(&self) -> ::std::option::Option<&str> {
-        self.source_field.as_deref()
+    pub fn source_field(&self) -> &str {
+        use std::ops::Deref;
+        self.source_field.deref()
     }
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
     pub fn fuzzy_matching(&self) -> ::std::option::Option<&crate::types::SuggesterFuzzyMatching> {
@@ -42,6 +43,7 @@ pub struct DocumentSuggesterOptionsBuilder {
 }
 impl DocumentSuggesterOptionsBuilder {
     /// <p>The name of the index field you want to use for suggestions. </p>
+    /// This field is required.
     pub fn source_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_field = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl DocumentSuggesterOptionsBuilder {
         &self.sort_expression
     }
     /// Consumes the builder and constructs a [`DocumentSuggesterOptions`](crate::types::DocumentSuggesterOptions).
-    pub fn build(self) -> crate::types::DocumentSuggesterOptions {
-        crate::types::DocumentSuggesterOptions {
-            source_field: self.source_field,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_field`](crate::types::builders::DocumentSuggesterOptionsBuilder::source_field)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentSuggesterOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentSuggesterOptions {
+            source_field: self.source_field.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_field",
+                    "source_field was not specified but it is required when building DocumentSuggesterOptions",
+                )
+            })?,
             fuzzy_matching: self.fuzzy_matching,
             sort_expression: self.sort_expression,
-        }
+        })
     }
 }

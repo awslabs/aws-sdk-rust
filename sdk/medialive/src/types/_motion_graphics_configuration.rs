@@ -49,6 +49,7 @@ impl MotionGraphicsConfigurationBuilder {
         &self.motion_graphics_insertion
     }
     /// Motion Graphics Settings
+    /// This field is required.
     pub fn motion_graphics_settings(mut self, input: crate::types::MotionGraphicsSettings) -> Self {
         self.motion_graphics_settings = ::std::option::Option::Some(input);
         self

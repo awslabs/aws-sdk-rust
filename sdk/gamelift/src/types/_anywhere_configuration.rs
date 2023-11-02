@@ -28,6 +28,7 @@ pub struct AnywhereConfigurationBuilder {
 }
 impl AnywhereConfigurationBuilder {
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
+    /// This field is required.
     pub fn cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost = ::std::option::Option::Some(input.into());
         self

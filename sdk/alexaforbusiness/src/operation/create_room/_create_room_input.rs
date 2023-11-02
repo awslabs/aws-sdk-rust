@@ -38,8 +38,10 @@ impl CreateRoomInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the room.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateRoomInput {
@@ -62,6 +64,7 @@ pub struct CreateRoomInputBuilder {
 }
 impl CreateRoomInputBuilder {
     /// <p>The name for the room.</p>
+    /// This field is required.
     pub fn room_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_name = ::std::option::Option::Some(input.into());
         self

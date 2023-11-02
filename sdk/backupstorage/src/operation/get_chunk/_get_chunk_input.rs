@@ -34,6 +34,7 @@ pub struct GetChunkInputBuilder {
 }
 impl GetChunkInputBuilder {
     /// Storage job id
+    /// This field is required.
     pub fn storage_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_job_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetChunkInputBuilder {
         &self.storage_job_id
     }
     /// Chunk token
+    /// This field is required.
     pub fn chunk_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chunk_token = ::std::option::Option::Some(input.into());
         self

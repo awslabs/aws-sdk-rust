@@ -41,6 +41,7 @@ pub struct AllocatePrivateVirtualInterfaceInputBuilder {
 }
 impl AllocatePrivateVirtualInterfaceInputBuilder {
     /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AllocatePrivateVirtualInterfaceInputBuilder {
         &self.connection_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
+    /// This field is required.
     pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl AllocatePrivateVirtualInterfaceInputBuilder {
         &self.owner_account
     }
     /// <p>Information about the private virtual interface.</p>
+    /// This field is required.
     pub fn new_private_virtual_interface_allocation(mut self, input: crate::types::NewPrivateVirtualInterfaceAllocation) -> Self {
         self.new_private_virtual_interface_allocation = ::std::option::Option::Some(input);
         self

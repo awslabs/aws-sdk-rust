@@ -26,8 +26,10 @@ impl GetColumnStatisticsForTableInput {
         self.table_name.as_deref()
     }
     /// <p>A list of the column names.</p>
-    pub fn column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_names.is_none()`.
+    pub fn column_names(&self) -> &[::std::string::String] {
+        self.column_names.as_deref().unwrap_or_default()
     }
 }
 impl GetColumnStatisticsForTableInput {
@@ -62,6 +64,7 @@ impl GetColumnStatisticsForTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl GetColumnStatisticsForTableInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partitions' table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

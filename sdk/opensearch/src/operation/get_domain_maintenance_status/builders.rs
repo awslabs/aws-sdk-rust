@@ -22,7 +22,7 @@ impl GetDomainMaintenanceStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDomainMaintenanceStatus`.
 ///
-/// <p>Get the status of the maintenance action.</p>
+/// <p>The status of the maintenance action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDomainMaintenanceStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +92,14 @@ impl GetDomainMaintenanceStatusFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusOutput,
             crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -124,17 +124,17 @@ impl GetDomainMaintenanceStatusFluentBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
     pub fn maintenance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.maintenance_id(input.into());
         self
     }
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
     pub fn set_maintenance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_maintenance_id(input);
         self
     }
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
     pub fn get_maintenance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_maintenance_id()
     }

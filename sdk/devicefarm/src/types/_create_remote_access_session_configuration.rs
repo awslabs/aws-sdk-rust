@@ -15,8 +15,10 @@ impl CreateRemoteAccessSessionConfiguration {
         self.billing_method.as_ref()
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub fn vpce_configuration_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpce_configuration_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpce_configuration_arns.is_none()`.
+    pub fn vpce_configuration_arns(&self) -> &[::std::string::String] {
+        self.vpce_configuration_arns.as_deref().unwrap_or_default()
     }
 }
 impl CreateRemoteAccessSessionConfiguration {

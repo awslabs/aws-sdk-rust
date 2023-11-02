@@ -14,16 +14,20 @@ pub struct DeleteObjectsOutput {
 }
 impl DeleteObjectsOutput {
     /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
-    pub fn deleted(&self) -> ::std::option::Option<&[crate::types::DeletedObject]> {
-        self.deleted.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deleted.is_none()`.
+    pub fn deleted(&self) -> &[crate::types::DeletedObject] {
+        self.deleted.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
     /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::Error]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::Error] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl crate::s3_request_id::RequestIdExt for DeleteObjectsOutput {

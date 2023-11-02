@@ -86,8 +86,10 @@ impl NetAppOntapVolume {
         self.max_p95_performance.as_ref()
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the volume. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::Recommendation]> {
-        self.recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
+    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
+        self.recommendations.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the volume are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>

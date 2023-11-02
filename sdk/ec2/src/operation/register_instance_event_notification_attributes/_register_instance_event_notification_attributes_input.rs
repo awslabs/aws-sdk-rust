@@ -50,6 +50,7 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
         &self.dry_run
     }
     /// <p>Information about the tag keys to register.</p>
+    /// This field is required.
     pub fn instance_tag_attribute(mut self, input: crate::types::RegisterInstanceTagAttributeRequest) -> Self {
         self.instance_tag_attribute = ::std::option::Option::Some(input);
         self

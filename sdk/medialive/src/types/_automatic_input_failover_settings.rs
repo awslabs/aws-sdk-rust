@@ -19,8 +19,10 @@ impl AutomaticInputFailoverSettings {
         self.error_clear_time_msec
     }
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
-    pub fn failover_conditions(&self) -> ::std::option::Option<&[crate::types::FailoverCondition]> {
-        self.failover_conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failover_conditions.is_none()`.
+    pub fn failover_conditions(&self) -> &[crate::types::FailoverCondition] {
+        self.failover_conditions.as_deref().unwrap_or_default()
     }
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
     pub fn input_preference(&self) -> ::std::option::Option<&crate::types::InputPreference> {
@@ -97,6 +99,7 @@ impl AutomaticInputFailoverSettingsBuilder {
         &self.input_preference
     }
     /// The input ID of the secondary input in the automatic input failover pair.
+    /// This field is required.
     pub fn secondary_input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secondary_input_id = ::std::option::Option::Some(input.into());
         self

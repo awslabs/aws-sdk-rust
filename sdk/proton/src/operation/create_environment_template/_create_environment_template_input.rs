@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateInput {
     /// <p>The name of the environment template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment template.</p>
@@ -19,8 +19,9 @@ pub struct CreateEnvironmentTemplateInput {
 }
 impl CreateEnvironmentTemplateInput {
     /// <p>The name of the environment template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -40,8 +41,10 @@ impl CreateEnvironmentTemplateInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentTemplateInput {
@@ -76,6 +79,7 @@ pub struct CreateEnvironmentTemplateInputBuilder {
 }
 impl CreateEnvironmentTemplateInputBuilder {
     /// <p>The name of the environment template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -169,6 +173,8 @@ impl CreateEnvironmentTemplateInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateInput`](crate::operation::create_environment_template::CreateEnvironmentTemplateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_environment_template::builders::CreateEnvironmentTemplateInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -176,7 +182,12 @@ impl CreateEnvironmentTemplateInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_environment_template::CreateEnvironmentTemplateInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateEnvironmentTemplateInput",
+                )
+            })?,
             display_name: self.display_name,
             description: self.description,
             encryption_key: self.encryption_key,

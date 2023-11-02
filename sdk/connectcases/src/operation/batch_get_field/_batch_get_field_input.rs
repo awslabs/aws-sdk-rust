@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>A list of unique field identifiers. </p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
+    pub fields: ::std::vec::Vec<crate::types::FieldIdentifier>,
 }
 impl BatchGetFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>A list of unique field identifiers. </p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldIdentifier]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
 }
 impl BatchGetFieldInput {
@@ -34,6 +36,7 @@ pub struct BatchGetFieldInputBuilder {
 }
 impl BatchGetFieldInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl BatchGetFieldInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::batch_get_field::builders::BatchGetFieldInputBuilder::domain_id)
+    /// - [`fields`](crate::operation::batch_get_field::builders::BatchGetFieldInputBuilder::fields)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_field::BatchGetFieldInput {
-            domain_id: self.domain_id,
-            fields: self.fields,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building BatchGetFieldInput",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building BatchGetFieldInput",
+                )
+            })?,
         })
     }
 }

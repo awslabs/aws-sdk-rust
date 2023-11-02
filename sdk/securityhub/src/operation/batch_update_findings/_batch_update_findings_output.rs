@@ -11,12 +11,16 @@ pub struct BatchUpdateFindingsOutput {
 }
 impl BatchUpdateFindingsOutput {
     /// <p>The list of findings that were updated successfully.</p>
-    pub fn processed_findings(&self) -> ::std::option::Option<&[crate::types::AwsSecurityFindingIdentifier]> {
-        self.processed_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_findings.is_none()`.
+    pub fn processed_findings(&self) -> &[crate::types::AwsSecurityFindingIdentifier] {
+        self.processed_findings.as_deref().unwrap_or_default()
     }
     /// <p>The list of findings that were not updated.</p>
-    pub fn unprocessed_findings(&self) -> ::std::option::Option<&[crate::types::BatchUpdateFindingsUnprocessedFinding]> {
-        self.unprocessed_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_findings.is_none()`.
+    pub fn unprocessed_findings(&self) -> &[crate::types::BatchUpdateFindingsUnprocessedFinding] {
+        self.unprocessed_findings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateFindingsOutput {

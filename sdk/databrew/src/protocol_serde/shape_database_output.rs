@@ -3,17 +3,17 @@ pub fn ser_database_output(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatabaseOutput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.glue_connection_name {
-        object.key("GlueConnectionName").string(var_1.as_str());
+    {
+        object.key("GlueConnectionName").string(input.glue_connection_name.as_str());
     }
-    if let Some(var_2) = &input.database_options {
+    if let Some(var_1) = &input.database_options {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DatabaseOptions").start_object();
-        crate::protocol_serde::shape_database_table_output_options::ser_database_table_output_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("DatabaseOptions").start_object();
+        crate::protocol_serde::shape_database_table_output_options::ser_database_table_output_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.database_output_mode {
-        object.key("DatabaseOutputMode").string(var_4.as_str());
+    if let Some(var_3) = &input.database_output_mode {
+        object.key("DatabaseOutputMode").string(var_3.as_str());
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::database_output_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

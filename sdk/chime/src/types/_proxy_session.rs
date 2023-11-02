@@ -53,8 +53,10 @@ impl ProxySession {
         self.expiry_minutes
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The created time stamp, in ISO 8601 format.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -69,8 +71,10 @@ impl ProxySession {
         self.ended_timestamp.as_ref()
     }
     /// <p>The proxy session participants.</p>
-    pub fn participants(&self) -> ::std::option::Option<&[crate::types::Participant]> {
-        self.participants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.participants.is_none()`.
+    pub fn participants(&self) -> &[crate::types::Participant] {
+        self.participants.as_deref().unwrap_or_default()
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn number_selection_behavior(&self) -> ::std::option::Option<&crate::types::NumberSelectionBehavior> {

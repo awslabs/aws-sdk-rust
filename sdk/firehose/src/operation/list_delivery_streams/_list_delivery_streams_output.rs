@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeliveryStreamsOutput {
     /// <p>The names of the delivery streams.</p>
-    pub delivery_stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub delivery_stream_names: ::std::vec::Vec<::std::string::String>,
     /// <p>Indicates whether there are more delivery streams available to list.</p>
-    pub has_more_delivery_streams: ::std::option::Option<bool>,
+    pub has_more_delivery_streams: bool,
     _request_id: Option<String>,
 }
 impl ListDeliveryStreamsOutput {
     /// <p>The names of the delivery streams.</p>
-    pub fn delivery_stream_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.delivery_stream_names.as_deref()
+    pub fn delivery_stream_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.delivery_stream_names.deref()
     }
     /// <p>Indicates whether there are more delivery streams available to list.</p>
-    pub fn has_more_delivery_streams(&self) -> ::std::option::Option<bool> {
+    pub fn has_more_delivery_streams(&self) -> bool {
         self.has_more_delivery_streams
     }
 }
@@ -61,6 +62,7 @@ impl ListDeliveryStreamsOutputBuilder {
         &self.delivery_stream_names
     }
     /// <p>Indicates whether there are more delivery streams available to list.</p>
+    /// This field is required.
     pub fn has_more_delivery_streams(mut self, input: bool) -> Self {
         self.has_more_delivery_streams = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,27 @@ impl ListDeliveryStreamsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDeliveryStreamsOutput`](crate::operation::list_delivery_streams::ListDeliveryStreamsOutput).
-    pub fn build(self) -> crate::operation::list_delivery_streams::ListDeliveryStreamsOutput {
-        crate::operation::list_delivery_streams::ListDeliveryStreamsOutput {
-            delivery_stream_names: self.delivery_stream_names,
-            has_more_delivery_streams: self.has_more_delivery_streams,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`delivery_stream_names`](crate::operation::list_delivery_streams::builders::ListDeliveryStreamsOutputBuilder::delivery_stream_names)
+    /// - [`has_more_delivery_streams`](crate::operation::list_delivery_streams::builders::ListDeliveryStreamsOutputBuilder::has_more_delivery_streams)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_delivery_streams::ListDeliveryStreamsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_delivery_streams::ListDeliveryStreamsOutput {
+            delivery_stream_names: self.delivery_stream_names.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "delivery_stream_names",
+                    "delivery_stream_names was not specified but it is required when building ListDeliveryStreamsOutput",
+                )
+            })?,
+            has_more_delivery_streams: self.has_more_delivery_streams.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "has_more_delivery_streams",
+                    "has_more_delivery_streams was not specified but it is required when building ListDeliveryStreamsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -35,6 +35,7 @@ pub struct PutDedicatedIpInPoolInputBuilder {
 }
 impl PutDedicatedIpInPoolInputBuilder {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl PutDedicatedIpInPoolInputBuilder {
         &self.ip
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
+    /// This field is required.
     pub fn destination_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_pool_name = ::std::option::Option::Some(input.into());
         self

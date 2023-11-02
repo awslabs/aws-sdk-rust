@@ -37,6 +37,7 @@ pub struct CampaignEventFilterBuilder {
 }
 impl CampaignEventFilterBuilder {
     /// <p>The dimension settings of the event filter for the campaign.</p>
+    /// This field is required.
     pub fn dimensions(mut self, input: crate::types::EventDimensions) -> Self {
         self.dimensions = ::std::option::Option::Some(input);
         self
@@ -52,6 +53,7 @@ impl CampaignEventFilterBuilder {
     }
     /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
+    /// This field is required.
     pub fn filter_type(mut self, input: crate::types::FilterType) -> Self {
         self.filter_type = ::std::option::Option::Some(input);
         self

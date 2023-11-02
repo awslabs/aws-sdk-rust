@@ -34,6 +34,7 @@ pub struct GetInsightResultsOutputBuilder {
 }
 impl GetInsightResultsOutputBuilder {
     /// <p>The insight results returned by the operation.</p>
+    /// This field is required.
     pub fn insight_results(mut self, input: crate::types::InsightResults) -> Self {
         self.insight_results = ::std::option::Option::Some(input);
         self

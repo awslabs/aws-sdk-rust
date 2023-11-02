@@ -151,8 +151,10 @@ impl ModifyCacheClusterInput {
     }
     /// <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.</p>
     /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
-    pub fn cache_node_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_node_ids_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_ids_to_remove.is_none()`.
+    pub fn cache_node_ids_to_remove(&self) -> &[::std::string::String] {
+        self.cache_node_ids_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>
     /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
@@ -205,19 +207,25 @@ impl ModifyCacheClusterInput {
     /// </important> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn new_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.new_availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.new_availability_zones.is_none()`.
+    pub fn new_availability_zones(&self) -> &[::std::string::String] {
+        self.new_availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>A list of cache security group names to authorize on this cluster. This change is asynchronously applied as soon as possible.</p>
     /// <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
-    pub fn cache_security_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_security_group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_security_group_names.is_none()`.
+    pub fn cache_security_group_names(&self) -> &[::std::string::String] {
+        self.cache_security_group_names.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
     /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -301,8 +309,10 @@ impl ModifyCacheClusterInput {
         self.auth_token_update_strategy.as_ref()
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn log_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
-        self.log_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
+    pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfigurationRequest] {
+        self.log_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(&self) -> ::std::option::Option<&crate::types::IpDiscovery> {
@@ -344,6 +354,7 @@ pub struct ModifyCacheClusterInputBuilder {
 }
 impl ModifyCacheClusterInputBuilder {
     /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self

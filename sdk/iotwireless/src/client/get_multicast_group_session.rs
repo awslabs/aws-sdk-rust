@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMulticastGroupSession`](crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionFluentBuilder::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the multicast group.</p><br>
     /// - On success, responds with [`GetMulticastGroupSessionOutput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput) with field(s):
     ///   - [`lo_ra_wan(Option<LoRaWanMulticastSession>)`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput::lo_ra_wan): <p>The LoRaWAN information used with the multicast session.</p>
     /// - On failure, responds with [`SdkError<GetMulticastGroupSessionError>`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionError)

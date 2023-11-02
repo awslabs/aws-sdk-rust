@@ -35,6 +35,7 @@ pub struct ExternalWorkflowExecutionSignaledEventAttributesBuilder {
 }
 impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
     /// <p>The external workflow execution that the signal was delivered to.</p>
+    /// This field is required.
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.workflow_execution = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ExternalWorkflowExecutionSignaledEventAttributesBuilder {
         &self.workflow_execution
     }
     /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn initiated_event_id(mut self, input: i64) -> Self {
         self.initiated_event_id = ::std::option::Option::Some(input);
         self

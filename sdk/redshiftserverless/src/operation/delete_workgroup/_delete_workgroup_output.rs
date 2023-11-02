@@ -34,6 +34,7 @@ pub struct DeleteWorkgroupOutputBuilder {
 }
 impl DeleteWorkgroupOutputBuilder {
     /// <p>The deleted workgroup object.</p>
+    /// This field is required.
     pub fn workgroup(mut self, input: crate::types::Workgroup) -> Self {
         self.workgroup = ::std::option::Option::Some(input);
         self

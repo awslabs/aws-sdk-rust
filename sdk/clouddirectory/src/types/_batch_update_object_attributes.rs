@@ -7,7 +7,7 @@ pub struct BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Attributes update structure.</p>
-    pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+    pub attribute_updates: ::std::vec::Vec<crate::types::ObjectAttributeUpdate>,
 }
 impl BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
@@ -15,8 +15,9 @@ impl BatchUpdateObjectAttributes {
         self.object_reference.as_ref()
     }
     /// <p>Attributes update structure.</p>
-    pub fn attribute_updates(&self) -> ::std::option::Option<&[crate::types::ObjectAttributeUpdate]> {
-        self.attribute_updates.as_deref()
+    pub fn attribute_updates(&self) -> &[crate::types::ObjectAttributeUpdate] {
+        use std::ops::Deref;
+        self.attribute_updates.deref()
     }
 }
 impl BatchUpdateObjectAttributes {
@@ -35,6 +36,7 @@ pub struct BatchUpdateObjectAttributesBuilder {
 }
 impl BatchUpdateObjectAttributesBuilder {
     /// <p>Reference that identifies the object.</p>
+    /// This field is required.
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl BatchUpdateObjectAttributesBuilder {
         &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::types::BatchUpdateObjectAttributes).
-    pub fn build(self) -> crate::types::BatchUpdateObjectAttributes {
-        crate::types::BatchUpdateObjectAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_updates`](crate::types::builders::BatchUpdateObjectAttributesBuilder::attribute_updates)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateObjectAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchUpdateObjectAttributes {
             object_reference: self.object_reference,
-            attribute_updates: self.attribute_updates,
-        }
+            attribute_updates: self.attribute_updates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_updates",
+                    "attribute_updates was not specified but it is required when building BatchUpdateObjectAttributes",
+                )
+            })?,
+        })
     }
 }

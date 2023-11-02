@@ -14,8 +14,10 @@ pub struct BatchModifyClusterSnapshotsInput {
 }
 impl BatchModifyClusterSnapshotsInput {
     /// <p>A list of snapshot identifiers you want to modify.</p>
-    pub fn snapshot_identifier_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshot_identifier_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_identifier_list.is_none()`.
+    pub fn snapshot_identifier_list(&self) -> &[::std::string::String] {
+        self.snapshot_identifier_list.as_deref().unwrap_or_default()
     }
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>

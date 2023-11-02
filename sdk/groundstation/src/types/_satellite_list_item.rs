@@ -29,8 +29,10 @@ impl SatelliteListItem {
         self.norad_satellite_id
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn ground_stations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ground_stations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ground_stations.is_none()`.
+    pub fn ground_stations(&self) -> &[::std::string::String] {
+        self.ground_stations.as_deref().unwrap_or_default()
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
     pub fn current_ephemeris(&self) -> ::std::option::Option<&crate::types::EphemerisMetaData> {

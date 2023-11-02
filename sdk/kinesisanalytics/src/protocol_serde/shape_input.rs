@@ -3,38 +3,38 @@ pub fn ser_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Input,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name_prefix {
-        object.key("NamePrefix").string(var_1.as_str());
+    {
+        object.key("NamePrefix").string(input.name_prefix.as_str());
     }
-    if let Some(var_2) = &input.input_processing_configuration {
+    if let Some(var_1) = &input.input_processing_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("InputProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_input_processing_configuration::ser_input_processing_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("InputProcessingConfiguration").start_object();
+        crate::protocol_serde::shape_input_processing_configuration::ser_input_processing_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.kinesis_streams_input {
+    if let Some(var_3) = &input.kinesis_streams_input {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("KinesisStreamsInput").start_object();
-        crate::protocol_serde::shape_kinesis_streams_input::ser_kinesis_streams_input(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("KinesisStreamsInput").start_object();
+        crate::protocol_serde::shape_kinesis_streams_input::ser_kinesis_streams_input(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.kinesis_firehose_input {
+    if let Some(var_5) = &input.kinesis_firehose_input {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("KinesisFirehoseInput").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_input::ser_kinesis_firehose_input(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("KinesisFirehoseInput").start_object();
+        crate::protocol_serde::shape_kinesis_firehose_input::ser_kinesis_firehose_input(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.input_parallelism {
+    if let Some(var_7) = &input.input_parallelism {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("InputParallelism").start_object();
-        crate::protocol_serde::shape_input_parallelism::ser_input_parallelism(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("InputParallelism").start_object();
+        crate::protocol_serde::shape_input_parallelism::ser_input_parallelism(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.input_schema {
+    if let Some(var_9) = &input.input_schema {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("InputSchema").start_object();
-        crate::protocol_serde::shape_source_schema::ser_source_schema(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("InputSchema").start_object();
+        crate::protocol_serde::shape_source_schema::ser_source_schema(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

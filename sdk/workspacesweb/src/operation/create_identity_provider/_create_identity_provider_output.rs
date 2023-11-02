@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIdentityProviderOutput {
     /// <p>The ARN of the identity provider.</p>
-    pub identity_provider_arn: ::std::option::Option<::std::string::String>,
+    pub identity_provider_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateIdentityProviderOutput {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> ::std::option::Option<&str> {
-        self.identity_provider_arn.as_deref()
+    pub fn identity_provider_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_provider_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateIdentityProviderOutput {
@@ -34,6 +35,7 @@ pub struct CreateIdentityProviderOutputBuilder {
 }
 impl CreateIdentityProviderOutputBuilder {
     /// <p>The ARN of the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateIdentityProviderOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput).
-    pub fn build(self) -> crate::operation::create_identity_provider::CreateIdentityProviderOutput {
-        crate::operation::create_identity_provider::CreateIdentityProviderOutput {
-            identity_provider_arn: self.identity_provider_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_provider_arn`](crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder::identity_provider_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_identity_provider::CreateIdentityProviderOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_identity_provider::CreateIdentityProviderOutput {
+            identity_provider_arn: self.identity_provider_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_provider_arn",
+                    "identity_provider_arn was not specified but it is required when building CreateIdentityProviderOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

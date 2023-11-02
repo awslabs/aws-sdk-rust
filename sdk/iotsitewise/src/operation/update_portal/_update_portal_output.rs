@@ -34,6 +34,7 @@ pub struct UpdatePortalOutputBuilder {
 }
 impl UpdatePortalOutputBuilder {
     /// <p>The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
+    /// This field is required.
     pub fn portal_status(mut self, input: crate::types::PortalStatus) -> Self {
         self.portal_status = ::std::option::Option::Some(input);
         self

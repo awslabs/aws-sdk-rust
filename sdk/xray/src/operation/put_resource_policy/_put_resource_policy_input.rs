@@ -58,6 +58,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl PutResourcePolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self

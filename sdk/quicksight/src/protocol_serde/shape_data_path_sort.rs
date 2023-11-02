@@ -3,20 +3,20 @@ pub fn ser_data_path_sort(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataPathSort,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.direction {
-        object.key("Direction").string(var_1.as_str());
+    {
+        object.key("Direction").string(input.direction.as_str());
     }
-    if let Some(var_2) = &input.sort_paths {
-        let mut array_3 = object.key("SortPaths").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("SortPaths").start_array();
+        for item_2 in &input.sort_paths {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_data_path_value::ser_data_path_value(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_data_path_value::ser_data_path_value(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }
@@ -56,7 +56,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::data_path_sort_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

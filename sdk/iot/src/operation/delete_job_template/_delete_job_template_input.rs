@@ -27,6 +27,7 @@ pub struct DeleteJobTemplateInputBuilder {
 }
 impl DeleteJobTemplateInputBuilder {
     /// <p>The unique identifier of the job template to delete.</p>
+    /// This field is required.
     pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_id = ::std::option::Option::Some(input.into());
         self

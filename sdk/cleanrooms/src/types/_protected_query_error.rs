@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryError {
     /// <p>A description of why the query failed.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>An error code for the error.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
 }
 impl ProtectedQueryError {
     /// <p>A description of why the query failed.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>An error code for the error.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
 }
 impl ProtectedQueryError {
@@ -35,6 +37,7 @@ pub struct ProtectedQueryErrorBuilder {
 }
 impl ProtectedQueryErrorBuilder {
     /// <p>A description of why the query failed.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ProtectedQueryErrorBuilder {
         &self.message
     }
     /// <p>An error code for the error.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ProtectedQueryErrorBuilder {
         &self.code
     }
     /// Consumes the builder and constructs a [`ProtectedQueryError`](crate::types::ProtectedQueryError).
-    pub fn build(self) -> crate::types::ProtectedQueryError {
-        crate::types::ProtectedQueryError {
-            message: self.message,
-            code: self.code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::builders::ProtectedQueryErrorBuilder::message)
+    /// - [`code`](crate::types::builders::ProtectedQueryErrorBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectedQueryError {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ProtectedQueryError",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building ProtectedQueryError",
+                )
+            })?,
+        })
     }
 }

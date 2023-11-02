@@ -34,6 +34,7 @@ pub struct UpdateEvaluationInputBuilder {
 }
 impl UpdateEvaluationInputBuilder {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+    /// This field is required.
     pub fn evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateEvaluationInputBuilder {
         &self.evaluation_id
     }
     /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// This field is required.
     pub fn evaluation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_name = ::std::option::Option::Some(input.into());
         self

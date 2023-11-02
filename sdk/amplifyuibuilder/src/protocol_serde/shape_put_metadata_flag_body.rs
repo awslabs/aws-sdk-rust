@@ -3,8 +3,8 @@ pub fn ser_put_metadata_flag_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutMetadataFlagBody,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.new_value {
-        object.key("newValue").string(var_1.as_str());
+    {
+        object.key("newValue").string(input.new_value.as_str());
     }
     Ok(())
 }

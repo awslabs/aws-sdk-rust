@@ -34,6 +34,7 @@ pub struct ListProfilePermissionsInputBuilder {
 }
 impl ListProfilePermissionsInputBuilder {
     /// <p>Name of the signing profile containing the cross-account permissions.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self

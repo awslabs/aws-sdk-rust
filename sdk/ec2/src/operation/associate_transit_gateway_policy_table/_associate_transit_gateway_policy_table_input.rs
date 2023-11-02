@@ -41,6 +41,7 @@ pub struct AssociateTransitGatewayPolicyTableInputBuilder {
 }
 impl AssociateTransitGatewayPolicyTableInputBuilder {
     /// <p>The ID of the transit gateway policy table to associate with the transit gateway attachment.</p>
+    /// This field is required.
     pub fn transit_gateway_policy_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateTransitGatewayPolicyTableInputBuilder {
         &self.transit_gateway_policy_table_id
     }
     /// <p>The ID of the transit gateway attachment to associate with the policy table.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self

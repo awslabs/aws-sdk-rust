@@ -27,6 +27,7 @@ pub struct DisassociateDrtLogBucketInputBuilder {
 }
 impl DisassociateDrtLogBucketInputBuilder {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    /// This field is required.
     pub fn log_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_bucket = ::std::option::Option::Some(input.into());
         self

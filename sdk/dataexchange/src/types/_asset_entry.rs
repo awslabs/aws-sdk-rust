@@ -5,66 +5,71 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetEntry {
     /// <p>The ARN for the asset.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Details about the asset.</p>
     pub asset_details: ::std::option::Option<crate::types::AssetDetails>,
     /// <p>The type of asset that is added to a data set.</p>
-    pub asset_type: ::std::option::Option<crate::types::AssetType>,
+    pub asset_type: crate::types::AssetType,
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier for the data set associated with this asset.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The unique identifier for the asset.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The unique identifier for the revision associated with this asset.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
 }
 impl AssetEntry {
     /// <p>The ARN for the asset.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Details about the asset.</p>
     pub fn asset_details(&self) -> ::std::option::Option<&crate::types::AssetDetails> {
         self.asset_details.as_ref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> ::std::option::Option<&crate::types::AssetType> {
-        self.asset_type.as_ref()
+    pub fn asset_type(&self) -> &crate::types::AssetType {
+        &self.asset_type
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The unique identifier for the asset.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
 }
 impl AssetEntry {
@@ -91,6 +96,7 @@ pub struct AssetEntryBuilder {
 }
 impl AssetEntryBuilder {
     /// <p>The ARN for the asset.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +111,7 @@ impl AssetEntryBuilder {
         &self.arn
     }
     /// <p>Details about the asset.</p>
+    /// This field is required.
     pub fn asset_details(mut self, input: crate::types::AssetDetails) -> Self {
         self.asset_details = ::std::option::Option::Some(input);
         self
@@ -119,6 +126,7 @@ impl AssetEntryBuilder {
         &self.asset_details
     }
     /// <p>The type of asset that is added to a data set.</p>
+    /// This field is required.
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
         self.asset_type = ::std::option::Option::Some(input);
         self
@@ -133,6 +141,7 @@ impl AssetEntryBuilder {
         &self.asset_type
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -147,6 +156,7 @@ impl AssetEntryBuilder {
         &self.created_at
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +171,7 @@ impl AssetEntryBuilder {
         &self.data_set_id
     }
     /// <p>The unique identifier for the asset.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +186,7 @@ impl AssetEntryBuilder {
         &self.id
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +201,7 @@ impl AssetEntryBuilder {
         &self.name
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -217,6 +230,7 @@ impl AssetEntryBuilder {
         &self.source_id
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -231,18 +245,67 @@ impl AssetEntryBuilder {
         &self.updated_at
     }
     /// Consumes the builder and constructs a [`AssetEntry`](crate::types::AssetEntry).
-    pub fn build(self) -> crate::types::AssetEntry {
-        crate::types::AssetEntry {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::AssetEntryBuilder::arn)
+    /// - [`asset_type`](crate::types::builders::AssetEntryBuilder::asset_type)
+    /// - [`created_at`](crate::types::builders::AssetEntryBuilder::created_at)
+    /// - [`data_set_id`](crate::types::builders::AssetEntryBuilder::data_set_id)
+    /// - [`id`](crate::types::builders::AssetEntryBuilder::id)
+    /// - [`name`](crate::types::builders::AssetEntryBuilder::name)
+    /// - [`revision_id`](crate::types::builders::AssetEntryBuilder::revision_id)
+    /// - [`updated_at`](crate::types::builders::AssetEntryBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetEntry {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AssetEntry",
+                )
+            })?,
             asset_details: self.asset_details,
-            asset_type: self.asset_type,
-            created_at: self.created_at,
-            data_set_id: self.data_set_id,
-            id: self.id,
-            name: self.name,
-            revision_id: self.revision_id,
+            asset_type: self.asset_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_type",
+                    "asset_type was not specified but it is required when building AssetEntry",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building AssetEntry",
+                )
+            })?,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building AssetEntry",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AssetEntry",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssetEntry",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building AssetEntry",
+                )
+            })?,
             source_id: self.source_id,
-            updated_at: self.updated_at,
-        }
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building AssetEntry",
+                )
+            })?,
+        })
     }
 }

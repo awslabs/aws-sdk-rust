@@ -264,12 +264,16 @@ impl RestoreDbInstanceFromS3Input {
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>Default: The default DB security group for the database engine.</p>
-    pub fn db_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
+    pub fn db_security_groups(&self) -> &[::std::string::String] {
+        self.db_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of VPC security groups to associate with this DB instance.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
@@ -355,8 +359,10 @@ impl RestoreDbInstanceFromS3Input {
         self.publicly_accessible
     }
     /// <p>A list of tags to associate with this DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p>
@@ -448,12 +454,16 @@ impl RestoreDbInstanceFromS3Input {
         self.performance_insights_retention_period
     }
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn enable_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enable_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
+    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::ProcessorFeature]> {
-        self.processor_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
+    pub fn processor_features(&self) -> &[crate::types::ProcessorFeature] {
+        self.processor_features.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the DB instance class of the DB instance uses its default processor features.</p>
     pub fn use_default_processor_features(&self) -> ::std::option::Option<bool> {
@@ -590,6 +600,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -639,6 +650,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.</p>
+    /// This field is required.
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
@@ -656,6 +668,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Valid Values: <code>mysql</code> </p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -1220,6 +1233,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     }
     /// <p>The name of the engine of your source database.</p>
     /// <p>Valid Values: <code>mysql</code> </p>
+    /// This field is required.
     pub fn source_engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_engine = ::std::option::Option::Some(input.into());
         self
@@ -1238,6 +1252,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The version of the database that the backup files were created from.</p>
     /// <p>MySQL versions 5.6 and 5.7 are supported.</p>
     /// <p>Example: <code>5.6.40</code> </p>
+    /// This field is required.
     pub fn source_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_engine_version = ::std::option::Option::Some(input.into());
         self
@@ -1256,6 +1271,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
         &self.source_engine_version
     }
     /// <p>The name of your Amazon S3 bucket that contains your database backup file.</p>
+    /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -1284,6 +1300,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
         &self.s3_prefix
     }
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn s3_ingestion_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_ingestion_role_arn = ::std::option::Option::Some(input.into());
         self

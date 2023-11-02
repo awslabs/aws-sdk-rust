@@ -41,6 +41,7 @@ pub struct FailoverGlobalReplicationGroupInputBuilder {
 }
 impl FailoverGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
+    /// This field is required.
     pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
+    /// This field is required.
     pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_region = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         &self.primary_region
     }
     /// <p>The name of the primary replication group</p>
+    /// This field is required.
     pub fn primary_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_replication_group_id = ::std::option::Option::Some(input.into());
         self

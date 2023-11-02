@@ -18,8 +18,10 @@ impl AddInstanceGroupsOutput {
         self.job_flow_id.as_deref()
     }
     /// <p>Instance group IDs of the newly created instance groups.</p>
-    pub fn instance_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_group_ids.is_none()`.
+    pub fn instance_group_ids(&self) -> &[::std::string::String] {
+        self.instance_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {

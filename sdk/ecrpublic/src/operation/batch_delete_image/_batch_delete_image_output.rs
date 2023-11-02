@@ -11,12 +11,16 @@ pub struct BatchDeleteImageOutput {
 }
 impl BatchDeleteImageOutput {
     /// <p>The image IDs of the deleted images.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[crate::types::ImageIdentifier]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[crate::types::ImageIdentifier] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::ImageFailure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::ImageFailure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteImageOutput {

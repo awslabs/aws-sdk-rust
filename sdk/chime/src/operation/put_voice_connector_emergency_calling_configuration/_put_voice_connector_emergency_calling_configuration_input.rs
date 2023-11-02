@@ -36,6 +36,7 @@ pub struct PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
 }
 impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +51,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The emergency calling configuration details.</p>
+    /// This field is required.
     pub fn emergency_calling_configuration(mut self, input: crate::types::EmergencyCallingConfiguration) -> Self {
         self.emergency_calling_configuration = ::std::option::Option::Some(input);
         self

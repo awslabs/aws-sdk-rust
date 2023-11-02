@@ -27,6 +27,7 @@ pub struct DeleteControlPanelInputBuilder {
 }
 impl DeleteControlPanelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self

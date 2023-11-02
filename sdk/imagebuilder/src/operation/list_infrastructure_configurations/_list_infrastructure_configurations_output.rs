@@ -17,8 +17,10 @@ impl ListInfrastructureConfigurationsOutput {
         self.request_id.as_deref()
     }
     /// <p>The list of infrastructure configurations.</p>
-    pub fn infrastructure_configuration_summary_list(&self) -> ::std::option::Option<&[crate::types::InfrastructureConfigurationSummary]> {
-        self.infrastructure_configuration_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.infrastructure_configuration_summary_list.is_none()`.
+    pub fn infrastructure_configuration_summary_list(&self) -> &[crate::types::InfrastructureConfigurationSummary] {
+        self.infrastructure_configuration_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

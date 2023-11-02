@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>Error: TPS has been limited to protect against intentional or unintentional high request volumes.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
     /// <p>Error: TPS has been limited to protect against intentional or unintentional high request volumes.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
 }
 impl ThrottlingException {
@@ -62,6 +63,7 @@ pub struct ThrottlingExceptionBuilder {
 }
 impl ThrottlingExceptionBuilder {
     /// <p>Error: TPS has been limited to protect against intentional or unintentional high request volumes.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -101,11 +103,18 @@ impl ThrottlingExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ThrottlingException`](crate::types::error::ThrottlingException).
-    pub fn build(self) -> crate::types::error::ThrottlingException {
-        crate::types::error::ThrottlingException {
-            error_code: self.error_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_code`](crate::types::error::builders::ThrottlingExceptionBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ThrottlingException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ThrottlingException {
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building ThrottlingException",
+                )
+            })?,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -14,8 +14,10 @@ impl DetectStackDriftInput {
         self.stack_name.as_deref()
     }
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn logical_resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.logical_resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logical_resource_ids.is_none()`.
+    pub fn logical_resource_ids(&self) -> &[::std::string::String] {
+        self.logical_resource_ids.as_deref().unwrap_or_default()
     }
 }
 impl DetectStackDriftInput {
@@ -34,6 +36,7 @@ pub struct DetectStackDriftInputBuilder {
 }
 impl DetectStackDriftInputBuilder {
     /// <p>The name of the stack for which you want to detect drift.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self

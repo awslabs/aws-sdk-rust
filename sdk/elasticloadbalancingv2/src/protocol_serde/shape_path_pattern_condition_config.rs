@@ -18,6 +18,7 @@ pub fn ser_path_pattern_condition_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_path_pattern_condition_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PathPatternConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

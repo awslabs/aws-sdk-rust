@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your Amazon Web Services account</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>,
+    pub entries: ::std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>,
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your Amazon Web Services account</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::ListPlaceIndexesResponseEntry]> {
-        self.entries.as_deref()
+    pub fn entries(&self) -> &[crate::types::ListPlaceIndexesResponseEntry] {
+        use std::ops::Deref;
+        self.entries.deref()
     }
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListPlaceIndexesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPlaceIndexesOutput`](crate::operation::list_place_indexes::ListPlaceIndexesOutput).
-    pub fn build(self) -> crate::operation::list_place_indexes::ListPlaceIndexesOutput {
-        crate::operation::list_place_indexes::ListPlaceIndexesOutput {
-            entries: self.entries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entries`](crate::operation::list_place_indexes::builders::ListPlaceIndexesOutputBuilder::entries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_place_indexes::ListPlaceIndexesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_place_indexes::ListPlaceIndexesOutput {
+            entries: self.entries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entries",
+                    "entries was not specified but it is required when building ListPlaceIndexesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

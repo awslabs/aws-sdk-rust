@@ -37,8 +37,10 @@ impl View {
         self.scope.as_deref()
     }
     /// <p>A structure that contains additional information about the view.</p>
-    pub fn included_properties(&self) -> ::std::option::Option<&[crate::types::IncludedProperty]> {
-        self.included_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.included_properties.is_none()`.
+    pub fn included_properties(&self) -> &[crate::types::IncludedProperty] {
+        self.included_properties.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>SearchFilter</code> objects that specify which resources can be included in the results of queries made using this view.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::SearchFilter> {

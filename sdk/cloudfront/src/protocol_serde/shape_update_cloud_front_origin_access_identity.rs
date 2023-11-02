@@ -34,8 +34,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalUpdate" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::IllegalUpdate({
@@ -50,8 +50,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::InconsistentQuantities({
@@ -66,8 +66,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::InvalidArgument({
@@ -82,8 +82,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidIfMatchVersion" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::InvalidIfMatchVersion({
@@ -98,8 +98,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "MissingBody" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::MissingBody({
@@ -114,8 +114,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchCloudFrontOriginAccessIdentity" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::NoSuchCloudFrontOriginAccessIdentity({
@@ -130,8 +130,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PreconditionFailed" => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::PreconditionFailed({
@@ -146,8 +146,8 @@ pub fn de_update_cloud_front_origin_access_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::generic(generic)

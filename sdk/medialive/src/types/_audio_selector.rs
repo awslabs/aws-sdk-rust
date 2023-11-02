@@ -35,6 +35,7 @@ pub struct AudioSelectorBuilder {
 }
 impl AudioSelectorBuilder {
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
-    pub analyzer_arn: ::std::option::Option<::std::string::String>,
+    pub analyzer_arn: ::std::string::String,
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
-    pub status: ::std::option::Option<crate::types::FindingStatusUpdate>,
+    pub status: crate::types::FindingStatusUpdate,
     /// <p>The IDs of the findings to update.</p>
     pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the resource identified in the finding.</p>
@@ -17,16 +17,19 @@ pub struct UpdateFindingsInput {
 }
 impl UpdateFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
-        self.analyzer_arn.as_deref()
+    pub fn analyzer_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.analyzer_arn.deref()
     }
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FindingStatusUpdate> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::FindingStatusUpdate {
+        &self.status
     }
     /// <p>The IDs of the findings to update.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the resource identified in the finding.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -56,6 +59,7 @@ pub struct UpdateFindingsInputBuilder {
 }
 impl UpdateFindingsInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
+    /// This field is required.
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl UpdateFindingsInputBuilder {
         &self.analyzer_arn
     }
     /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::FindingStatusUpdate) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -132,12 +137,25 @@ impl UpdateFindingsInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzer_arn`](crate::operation::update_findings::builders::UpdateFindingsInputBuilder::analyzer_arn)
+    /// - [`status`](crate::operation::update_findings::builders::UpdateFindingsInputBuilder::status)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_findings::UpdateFindingsInput {
-            analyzer_arn: self.analyzer_arn,
-            status: self.status,
+            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzer_arn",
+                    "analyzer_arn was not specified but it is required when building UpdateFindingsInput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building UpdateFindingsInput",
+                )
+            })?,
             ids: self.ids,
             resource_arn: self.resource_arn,
             client_token: self.client_token,

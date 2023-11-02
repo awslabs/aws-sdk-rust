@@ -35,6 +35,7 @@ pub struct WarningGroupBuilder {
 }
 impl WarningGroupBuilder {
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+    /// This field is required.
     pub fn code(mut self, input: i32) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl WarningGroupBuilder {
         &self.code
     }
     /// The number of times this warning occurred in the job.
+    /// This field is required.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
         self

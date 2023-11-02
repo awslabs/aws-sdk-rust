@@ -37,12 +37,16 @@ impl ModifyManagedPrefixListInput {
         self.prefix_list_name.as_deref()
     }
     /// <p>One or more entries to add to the prefix list.</p>
-    pub fn add_entries(&self) -> ::std::option::Option<&[crate::types::AddPrefixListEntry]> {
-        self.add_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_entries.is_none()`.
+    pub fn add_entries(&self) -> &[crate::types::AddPrefixListEntry] {
+        self.add_entries.as_deref().unwrap_or_default()
     }
     /// <p>One or more entries to remove from the prefix list.</p>
-    pub fn remove_entries(&self) -> ::std::option::Option<&[crate::types::RemovePrefixListEntry]> {
-        self.remove_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_entries.is_none()`.
+    pub fn remove_entries(&self) -> &[crate::types::RemovePrefixListEntry] {
+        self.remove_entries.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
@@ -85,6 +89,7 @@ impl ModifyManagedPrefixListInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
+    /// This field is required.
     pub fn prefix_list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_id = ::std::option::Option::Some(input.into());
         self

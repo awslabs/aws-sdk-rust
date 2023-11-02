@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSecurityConfiguration`](crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder::set_name): <p>The name of the security configuration.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationFluentBuilder::set_name):<br>required: **true**<br><p>The name of the security configuration.</p><br>
     /// - On success, responds with [`DescribeSecurityConfigurationOutput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput::name): <p>The name of the security configuration.</p>
     ///   - [`security_configuration(Option<String>)`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput::security_configuration): <p>The security configuration details in JSON format.</p>

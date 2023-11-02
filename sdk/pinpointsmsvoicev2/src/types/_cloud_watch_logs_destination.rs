@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsDestination {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
-    pub iam_role_arn: ::std::option::Option<::std::string::String>,
+    pub iam_role_arn: ::std::string::String,
     /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
-    pub log_group_arn: ::std::option::Option<::std::string::String>,
+    pub log_group_arn: ::std::string::String,
 }
 impl CloudWatchLogsDestination {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
-        self.iam_role_arn.as_deref()
+    pub fn iam_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.iam_role_arn.deref()
     }
     /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
-    pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
-        self.log_group_arn.as_deref()
+    pub fn log_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_arn.deref()
     }
 }
 impl CloudWatchLogsDestination {
@@ -35,6 +37,7 @@ pub struct CloudWatchLogsDestinationBuilder {
 }
 impl CloudWatchLogsDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CloudWatchLogsDestinationBuilder {
         &self.iam_role_arn
     }
     /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
+    /// This field is required.
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CloudWatchLogsDestinationBuilder {
         &self.log_group_arn
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsDestination`](crate::types::CloudWatchLogsDestination).
-    pub fn build(self) -> crate::types::CloudWatchLogsDestination {
-        crate::types::CloudWatchLogsDestination {
-            iam_role_arn: self.iam_role_arn,
-            log_group_arn: self.log_group_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`iam_role_arn`](crate::types::builders::CloudWatchLogsDestinationBuilder::iam_role_arn)
+    /// - [`log_group_arn`](crate::types::builders::CloudWatchLogsDestinationBuilder::log_group_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogsDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLogsDestination {
+            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "iam_role_arn",
+                    "iam_role_arn was not specified but it is required when building CloudWatchLogsDestination",
+                )
+            })?,
+            log_group_arn: self.log_group_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_group_arn",
+                    "log_group_arn was not specified but it is required when building CloudWatchLogsDestination",
+                )
+            })?,
+        })
     }
 }

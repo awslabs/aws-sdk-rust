@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReceiptRuleSet`](crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_set_name(impl Into<String>)`](crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetFluentBuilder::set_rule_set_name): <p>The name of the receipt rule set to delete.</p>
+    ///   - [`rule_set_name(impl Into<String>)`](crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetFluentBuilder::set_rule_set_name):<br>required: **true**<br><p>The name of the receipt rule set to delete.</p><br>
     /// - On success, responds with [`DeleteReceiptRuleSetOutput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetOutput)
     /// - On failure, responds with [`SdkError<DeleteReceiptRuleSetError>`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError)
     pub fn delete_receipt_rule_set(&self) -> crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetFluentBuilder {

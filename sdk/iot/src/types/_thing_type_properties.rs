@@ -15,8 +15,10 @@ impl ThingTypeProperties {
         self.thing_type_description.as_deref()
     }
     /// <p>A list of searchable thing attribute names.</p>
-    pub fn searchable_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.searchable_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.searchable_attributes.is_none()`.
+    pub fn searchable_attributes(&self) -> &[::std::string::String] {
+        self.searchable_attributes.as_deref().unwrap_or_default()
     }
 }
 impl ThingTypeProperties {

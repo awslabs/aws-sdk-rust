@@ -23,6 +23,7 @@ pub fn ser_accelerator_count_request(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_accelerator_count_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AcceleratorCountRequest, ::aws_smithy_xml::decode::XmlDecodeError> {

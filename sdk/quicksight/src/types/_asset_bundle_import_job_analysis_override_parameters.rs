@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobAnalysisOverrideParameters {
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
-    pub analysis_id: ::std::option::Option<::std::string::String>,
+    pub analysis_id: ::std::string::String,
     /// <p>A new name for the analysis.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobAnalysisOverrideParameters {
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
-    pub fn analysis_id(&self) -> ::std::option::Option<&str> {
-        self.analysis_id.as_deref()
+    pub fn analysis_id(&self) -> &str {
+        use std::ops::Deref;
+        self.analysis_id.deref()
     }
     /// <p>A new name for the analysis.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AssetBundleImportJobAnalysisOverrideParametersBuilder {
 }
 impl AssetBundleImportJobAnalysisOverrideParametersBuilder {
     /// <p>The ID of the analysis that you ant to apply overrides to.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl AssetBundleImportJobAnalysisOverrideParametersBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobAnalysisOverrideParameters`](crate::types::AssetBundleImportJobAnalysisOverrideParameters).
-    pub fn build(self) -> crate::types::AssetBundleImportJobAnalysisOverrideParameters {
-        crate::types::AssetBundleImportJobAnalysisOverrideParameters {
-            analysis_id: self.analysis_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analysis_id`](crate::types::builders::AssetBundleImportJobAnalysisOverrideParametersBuilder::analysis_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobAnalysisOverrideParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleImportJobAnalysisOverrideParameters {
+            analysis_id: self.analysis_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analysis_id",
+                    "analysis_id was not specified but it is required when building AssetBundleImportJobAnalysisOverrideParameters",
+                )
+            })?,
             name: self.name,
-        }
+        })
     }
 }

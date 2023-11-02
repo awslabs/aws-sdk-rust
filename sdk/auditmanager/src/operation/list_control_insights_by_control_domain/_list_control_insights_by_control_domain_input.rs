@@ -41,6 +41,7 @@ pub struct ListControlInsightsByControlDomainInputBuilder {
 }
 impl ListControlInsightsByControlDomainInputBuilder {
     /// <p>The unique identifier for the control domain. </p>
+    /// This field is required.
     pub fn control_domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_domain_id = ::std::option::Option::Some(input.into());
         self

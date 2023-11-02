@@ -9,8 +9,10 @@ pub struct ListServiceSpecificCredentialsOutput {
 }
 impl ListServiceSpecificCredentialsOutput {
     /// <p>A list of structures that each contain details about a service-specific credential.</p>
-    pub fn service_specific_credentials(&self) -> ::std::option::Option<&[crate::types::ServiceSpecificCredentialMetadata]> {
-        self.service_specific_credentials.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_specific_credentials.is_none()`.
+    pub fn service_specific_credentials(&self) -> &[crate::types::ServiceSpecificCredentialMetadata] {
+        self.service_specific_credentials.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServiceSpecificCredentialsOutput {

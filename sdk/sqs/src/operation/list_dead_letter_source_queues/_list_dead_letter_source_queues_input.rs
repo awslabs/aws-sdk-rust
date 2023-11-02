@@ -45,6 +45,7 @@ pub struct ListDeadLetterSourceQueuesInputBuilder {
 impl ListDeadLetterSourceQueuesInputBuilder {
     /// <p>The URL of a dead-letter queue.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self

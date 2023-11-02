@@ -23,7 +23,7 @@ impl AddInstanceFleetInputBuilder {
 /// Fluent builder constructing a request to `AddInstanceFleet`.
 ///
 /// <p>Adds an instance fleet to a running cluster.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x.</p>
+/// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddInstanceFleetFluentBuilder {
@@ -94,14 +94,14 @@ impl AddInstanceFleetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::add_instance_fleet::AddInstanceFleetOutput,
             crate::operation::add_instance_fleet::AddInstanceFleetError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::add_instance_fleet::AddInstanceFleetError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::set_max_results): The maximum number of items to return.
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::set_next_token): The token to retrieve the next page of results.
+    ///   - [`max_results(i32)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of items to return.<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_multiplexes::builders::ListMultiplexesFluentBuilder::set_next_token):<br>required: **false**<br>The token to retrieve the next page of results.<br>
     /// - On success, responds with [`ListMultiplexesOutput`](crate::operation::list_multiplexes::ListMultiplexesOutput) with field(s):
     ///   - [`multiplexes(Option<Vec<MultiplexSummary>>)`](crate::operation::list_multiplexes::ListMultiplexesOutput::multiplexes): List of multiplexes.
     ///   - [`next_token(Option<String>)`](crate::operation::list_multiplexes::ListMultiplexesOutput::next_token): Token for the next ListMultiplexes request.

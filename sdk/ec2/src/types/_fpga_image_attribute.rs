@@ -29,12 +29,16 @@ impl FpgaImageAttribute {
         self.description.as_deref()
     }
     /// <p>The load permissions.</p>
-    pub fn load_permissions(&self) -> ::std::option::Option<&[crate::types::LoadPermission]> {
-        self.load_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_permissions.is_none()`.
+    pub fn load_permissions(&self) -> &[crate::types::LoadPermission] {
+        self.load_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The product codes.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
 }
 impl FpgaImageAttribute {

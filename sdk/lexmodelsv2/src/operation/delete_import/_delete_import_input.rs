@@ -27,6 +27,7 @@ pub struct DeleteImportInputBuilder {
 }
 impl DeleteImportInputBuilder {
     /// <p>The unique identifier of the import to delete.</p>
+    /// This field is required.
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self

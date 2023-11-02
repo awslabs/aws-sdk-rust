@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
-    pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
+    pub message_groups: ::std::vec::Vec<crate::types::MessageGroup>,
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
-    pub max_retries: ::std::option::Option<i32>,
+    pub max_retries: i32,
     /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
     pub allow_interrupt: ::std::option::Option<bool>,
     /// <p>Indicates how a message is selected from a message group among retries.</p>
@@ -18,11 +18,12 @@ pub struct PromptSpecification {
 }
 impl PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
-    pub fn message_groups(&self) -> ::std::option::Option<&[crate::types::MessageGroup]> {
-        self.message_groups.as_deref()
+    pub fn message_groups(&self) -> &[crate::types::MessageGroup] {
+        use std::ops::Deref;
+        self.message_groups.deref()
     }
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
-    pub fn max_retries(&self) -> ::std::option::Option<i32> {
+    pub fn max_retries(&self) -> i32 {
         self.max_retries
     }
     /// <p>Indicates whether the user can interrupt a speech prompt from the bot.</p>
@@ -80,6 +81,7 @@ impl PromptSpecificationBuilder {
         &self.message_groups
     }
     /// <p>The maximum number of times the bot tries to elicit a response from the user using this prompt.</p>
+    /// This field is required.
     pub fn max_retries(mut self, input: i32) -> Self {
         self.max_retries = ::std::option::Option::Some(input);
         self
@@ -147,13 +149,26 @@ impl PromptSpecificationBuilder {
         &self.prompt_attempts_specification
     }
     /// Consumes the builder and constructs a [`PromptSpecification`](crate::types::PromptSpecification).
-    pub fn build(self) -> crate::types::PromptSpecification {
-        crate::types::PromptSpecification {
-            message_groups: self.message_groups,
-            max_retries: self.max_retries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_groups`](crate::types::builders::PromptSpecificationBuilder::message_groups)
+    /// - [`max_retries`](crate::types::builders::PromptSpecificationBuilder::max_retries)
+    pub fn build(self) -> ::std::result::Result<crate::types::PromptSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PromptSpecification {
+            message_groups: self.message_groups.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message_groups",
+                    "message_groups was not specified but it is required when building PromptSpecification",
+                )
+            })?,
+            max_retries: self.max_retries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_retries",
+                    "max_retries was not specified but it is required when building PromptSpecification",
+                )
+            })?,
             allow_interrupt: self.allow_interrupt,
             message_selection_strategy: self.message_selection_strategy,
             prompt_attempts_specification: self.prompt_attempts_specification,
-        }
+        })
     }
 }

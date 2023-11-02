@@ -10,8 +10,10 @@ pub struct BatchGetApplicationsOutput {
 }
 impl BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
-    pub fn applications_info(&self) -> ::std::option::Option<&[crate::types::ApplicationInfo]> {
-        self.applications_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications_info.is_none()`.
+    pub fn applications_info(&self) -> &[crate::types::ApplicationInfo] {
+        self.applications_info.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetApplicationsOutput {

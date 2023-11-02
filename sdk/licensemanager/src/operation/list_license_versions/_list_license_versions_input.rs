@@ -41,6 +41,7 @@ pub struct ListLicenseVersionsInputBuilder {
 }
 impl ListLicenseVersionsInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self

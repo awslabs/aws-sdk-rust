@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub comparison: ::std::option::Option<crate::types::MapComparison>,
+    pub comparison: crate::types::MapComparison,
     /// <p>The tag key used in the filter.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The tag value used in the filter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl MapFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::MapComparison> {
-        self.comparison.as_ref()
+    pub fn comparison(&self) -> &crate::types::MapComparison {
+        &self.comparison
     }
     /// <p>The tag key used in the filter.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The tag value used in the filter.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct MapFilterBuilder {
 }
 impl MapFilterBuilder {
     /// <p>The operator to use when comparing values in the filter.</p>
+    /// This field is required.
     pub fn comparison(mut self, input: crate::types::MapComparison) -> Self {
         self.comparison = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl MapFilterBuilder {
         &self.comparison
     }
     /// <p>The tag key used in the filter.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl MapFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`MapFilter`](crate::types::MapFilter).
-    pub fn build(self) -> crate::types::MapFilter {
-        crate::types::MapFilter {
-            comparison: self.comparison,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`comparison`](crate::types::builders::MapFilterBuilder::comparison)
+    /// - [`key`](crate::types::builders::MapFilterBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::MapFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MapFilter {
+            comparison: self.comparison.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "comparison",
+                    "comparison was not specified but it is required when building MapFilter",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building MapFilter",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

@@ -3,14 +3,14 @@ pub fn ser_pivot_field_sort_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotFieldSortOptions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.sort_by {
+    if let Some(var_1) = &input.sort_by {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("SortBy").start_object();
-        crate::protocol_serde::shape_pivot_table_sort_by::ser_pivot_table_sort_by(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("SortBy").start_object();
+        crate::protocol_serde::shape_pivot_table_sort_by::ser_pivot_table_sort_by(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -50,7 +50,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pivot_field_sort_options_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

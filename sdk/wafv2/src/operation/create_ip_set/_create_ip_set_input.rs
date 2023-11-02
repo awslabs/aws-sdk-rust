@@ -74,12 +74,16 @@ impl CreateIpSetInput {
     /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
     /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
     /// </ul>
-    pub fn addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[::std::string::String] {
+        self.addresses.as_deref().unwrap_or_default()
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateIpSetInput {
@@ -102,6 +106,7 @@ pub struct CreateIpSetInputBuilder {
 }
 impl CreateIpSetInputBuilder {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +126,7 @@ impl CreateIpSetInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -159,6 +165,7 @@ impl CreateIpSetInputBuilder {
         &self.description
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
+    /// This field is required.
     pub fn ip_address_version(mut self, input: crate::types::IpAddressVersion) -> Self {
         self.ip_address_version = ::std::option::Option::Some(input);
         self

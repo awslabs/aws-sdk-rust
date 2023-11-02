@@ -62,6 +62,7 @@ pub struct GetApplicationDateRangeKpiInputBuilder {
 }
 impl GetApplicationDateRangeKpiInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl GetApplicationDateRangeKpiInputBuilder {
         &self.end_time
     }
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    /// This field is required.
     pub fn kpi_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kpi_name = ::std::option::Option::Some(input.into());
         self

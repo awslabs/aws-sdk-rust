@@ -43,6 +43,7 @@ pub struct GetNodeInputBuilder {
 }
 impl GetNodeInputBuilder {
     /// <p>The unique identifier of the network that the node is on.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +75,7 @@ impl GetNodeInputBuilder {
         &self.member_id
     }
     /// <p>The unique identifier of the node.</p>
+    /// This field is required.
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self

@@ -7,7 +7,7 @@ pub struct ApplicationCodeConfiguration {
     /// <p>The location and type of the application code.</p>
     pub code_content: ::std::option::Option<crate::types::CodeContent>,
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub code_content_type: ::std::option::Option<crate::types::CodeContentType>,
+    pub code_content_type: crate::types::CodeContentType,
 }
 impl ApplicationCodeConfiguration {
     /// <p>The location and type of the application code.</p>
@@ -15,8 +15,8 @@ impl ApplicationCodeConfiguration {
         self.code_content.as_ref()
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn code_content_type(&self) -> ::std::option::Option<&crate::types::CodeContentType> {
-        self.code_content_type.as_ref()
+    pub fn code_content_type(&self) -> &crate::types::CodeContentType {
+        &self.code_content_type
     }
 }
 impl ApplicationCodeConfiguration {
@@ -49,6 +49,7 @@ impl ApplicationCodeConfigurationBuilder {
         &self.code_content
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
+    /// This field is required.
     pub fn code_content_type(mut self, input: crate::types::CodeContentType) -> Self {
         self.code_content_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ApplicationCodeConfigurationBuilder {
         &self.code_content_type
     }
     /// Consumes the builder and constructs a [`ApplicationCodeConfiguration`](crate::types::ApplicationCodeConfiguration).
-    pub fn build(self) -> crate::types::ApplicationCodeConfiguration {
-        crate::types::ApplicationCodeConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code_content_type`](crate::types::builders::ApplicationCodeConfigurationBuilder::code_content_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationCodeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationCodeConfiguration {
             code_content: self.code_content,
-            code_content_type: self.code_content_type,
-        }
+            code_content_type: self.code_content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code_content_type",
+                    "code_content_type was not specified but it is required when building ApplicationCodeConfiguration",
+                )
+            })?,
+        })
     }
 }

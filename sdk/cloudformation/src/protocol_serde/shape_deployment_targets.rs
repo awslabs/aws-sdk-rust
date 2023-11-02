@@ -39,6 +39,7 @@ pub fn ser_deployment_targets(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_deployment_targets(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DeploymentTargets, ::aws_smithy_xml::decode::XmlDecodeError> {

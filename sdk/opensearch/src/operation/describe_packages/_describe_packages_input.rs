@@ -13,8 +13,10 @@ pub struct DescribePackagesInput {
 }
 impl DescribePackagesInput {
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DescribePackagesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::DescribePackagesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

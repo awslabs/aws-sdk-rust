@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
-    pub mount_point: ::std::option::Option<::std::string::String>,
+    pub mount_point: ::std::string::String,
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     pub raid_level: ::std::option::Option<i32>,
     /// <p>The number of disks in the volume.</p>
-    pub number_of_disks: ::std::option::Option<i32>,
+    pub number_of_disks: i32,
     /// <p>The volume size.</p>
-    pub size: ::std::option::Option<i32>,
+    pub size: i32,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
     /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
@@ -28,19 +28,20 @@ pub struct VolumeConfiguration {
 }
 impl VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
-    pub fn mount_point(&self) -> ::std::option::Option<&str> {
-        self.mount_point.as_deref()
+    pub fn mount_point(&self) -> &str {
+        use std::ops::Deref;
+        self.mount_point.deref()
     }
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     pub fn raid_level(&self) -> ::std::option::Option<i32> {
         self.raid_level
     }
     /// <p>The number of disks in the volume.</p>
-    pub fn number_of_disks(&self) -> ::std::option::Option<i32> {
+    pub fn number_of_disks(&self) -> i32 {
         self.number_of_disks
     }
     /// <p>The volume size.</p>
-    pub fn size(&self) -> ::std::option::Option<i32> {
+    pub fn size(&self) -> i32 {
         self.size
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
@@ -84,6 +85,7 @@ pub struct VolumeConfigurationBuilder {
 }
 impl VolumeConfigurationBuilder {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
+    /// This field is required.
     pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_point = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl VolumeConfigurationBuilder {
         &self.raid_level
     }
     /// <p>The number of disks in the volume.</p>
+    /// This field is required.
     pub fn number_of_disks(mut self, input: i32) -> Self {
         self.number_of_disks = ::std::option::Option::Some(input);
         self
@@ -126,6 +129,7 @@ impl VolumeConfigurationBuilder {
         &self.number_of_disks
     }
     /// <p>The volume size.</p>
+    /// This field is required.
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -203,15 +207,34 @@ impl VolumeConfigurationBuilder {
         &self.encrypted
     }
     /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::types::VolumeConfiguration).
-    pub fn build(self) -> crate::types::VolumeConfiguration {
-        crate::types::VolumeConfiguration {
-            mount_point: self.mount_point,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mount_point`](crate::types::builders::VolumeConfigurationBuilder::mount_point)
+    /// - [`number_of_disks`](crate::types::builders::VolumeConfigurationBuilder::number_of_disks)
+    /// - [`size`](crate::types::builders::VolumeConfigurationBuilder::size)
+    pub fn build(self) -> ::std::result::Result<crate::types::VolumeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VolumeConfiguration {
+            mount_point: self.mount_point.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mount_point",
+                    "mount_point was not specified but it is required when building VolumeConfiguration",
+                )
+            })?,
             raid_level: self.raid_level,
-            number_of_disks: self.number_of_disks,
-            size: self.size,
+            number_of_disks: self.number_of_disks.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "number_of_disks",
+                    "number_of_disks was not specified but it is required when building VolumeConfiguration",
+                )
+            })?,
+            size: self.size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size",
+                    "size was not specified but it is required when building VolumeConfiguration",
+                )
+            })?,
             volume_type: self.volume_type,
             iops: self.iops,
             encrypted: self.encrypted,
-        }
+        })
     }
 }

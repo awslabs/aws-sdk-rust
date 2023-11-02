@@ -3,8 +3,8 @@ pub fn ser_cancel_findings_report_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_findings_report::CancelFindingsReportInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.report_id {
-        object.key("reportId").string(var_1.as_str());
+    {
+        object.key("reportId").string(input.report_id.as_str());
     }
     Ok(())
 }

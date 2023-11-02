@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamKeysInput {
     /// <p>Channel ARN used to filter the list.</p>
-    pub channel_arn: ::std::option::Option<::std::string::String>,
+    pub channel_arn: ::std::string::String,
     /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of streamKeys to return. Default: 1.</p>
@@ -12,8 +12,9 @@ pub struct ListStreamKeysInput {
 }
 impl ListStreamKeysInput {
     /// <p>Channel ARN used to filter the list.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
-        self.channel_arn.as_deref()
+    pub fn channel_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_arn.deref()
     }
     /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct ListStreamKeysInputBuilder {
 }
 impl ListStreamKeysInputBuilder {
     /// <p>Channel ARN used to filter the list.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +85,18 @@ impl ListStreamKeysInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListStreamKeysInput`](crate::operation::list_stream_keys::ListStreamKeysInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_arn`](crate::operation::list_stream_keys::builders::ListStreamKeysInputBuilder::channel_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stream_keys::ListStreamKeysInput {
-            channel_arn: self.channel_arn,
+            channel_arn: self.channel_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_arn",
+                    "channel_arn was not specified but it is required when building ListStreamKeysInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results.unwrap_or_default(),
         })

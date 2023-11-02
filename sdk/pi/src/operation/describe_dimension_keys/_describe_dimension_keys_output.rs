@@ -25,12 +25,16 @@ impl DescribeDimensionKeysOutput {
         self.aligned_end_time.as_ref()
     }
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[crate::types::ResponsePartitionKey]> {
-        self.partition_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[crate::types::ResponsePartitionKey] {
+        self.partition_keys.as_deref().unwrap_or_default()
     }
     /// <p>The dimension keys that were requested.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[crate::types::DimensionKeyDescription]> {
-        self.keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
+    pub fn keys(&self) -> &[crate::types::DimensionKeyDescription] {
+        self.keys.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

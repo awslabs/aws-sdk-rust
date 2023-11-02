@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionInput {
     /// The ID of the workspace in which to delete the alert manager definition.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAlertManagerDefinitionInput {
     /// The ID of the workspace in which to delete the alert manager definition.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct DeleteAlertManagerDefinitionInputBuilder {
 }
 impl DeleteAlertManagerDefinitionInputBuilder {
     /// The ID of the workspace in which to delete the alert manager definition.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,8 @@ impl DeleteAlertManagerDefinitionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAlertManagerDefinitionInput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,7 +74,12 @@ impl DeleteAlertManagerDefinitionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building DeleteAlertManagerDefinitionInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

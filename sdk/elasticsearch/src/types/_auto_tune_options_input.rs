@@ -15,8 +15,10 @@ impl AutoTuneOptionsInput {
         self.desired_state.as_ref()
     }
     /// <p>Specifies list of maitenance schedules. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    pub fn maintenance_schedules(&self) -> ::std::option::Option<&[crate::types::AutoTuneMaintenanceSchedule]> {
-        self.maintenance_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_schedules.is_none()`.
+    pub fn maintenance_schedules(&self) -> &[crate::types::AutoTuneMaintenanceSchedule] {
+        self.maintenance_schedules.as_deref().unwrap_or_default()
     }
 }
 impl AutoTuneOptionsInput {

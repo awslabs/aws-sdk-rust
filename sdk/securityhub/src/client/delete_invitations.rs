@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInvitations`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(impl Into<String>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::set_account_ids): <p>The list of member account IDs that received the invitations you want to delete.</p>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::delete_invitations::builders::DeleteInvitationsFluentBuilder::set_account_ids):<br>required: **true**<br><p>The list of member account IDs that received the invitations you want to delete.</p><br>
     /// - On success, responds with [`DeleteInvitationsOutput`](crate::operation::delete_invitations::DeleteInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<Result>>)`](crate::operation::delete_invitations::DeleteInvitationsOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::operation::delete_invitations::DeleteInvitationsError)

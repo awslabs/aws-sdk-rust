@@ -12,8 +12,10 @@ pub struct ListMultipartUploadsOutput {
 }
 impl ListMultipartUploadsOutput {
     /// <p>A list of in-progress multipart uploads.</p>
-    pub fn uploads_list(&self) -> ::std::option::Option<&[crate::types::UploadListElement]> {
-        self.uploads_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uploads_list.is_none()`.
+    pub fn uploads_list(&self) -> &[crate::types::UploadListElement] {
+        self.uploads_list.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

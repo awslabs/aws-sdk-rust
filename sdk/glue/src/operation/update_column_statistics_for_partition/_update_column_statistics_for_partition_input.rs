@@ -28,12 +28,16 @@ impl UpdateColumnStatisticsForPartitionInput {
         self.table_name.as_deref()
     }
     /// <p>A list of partition values identifying the partition.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
+    pub fn partition_values(&self) -> &[::std::string::String] {
+        self.partition_values.as_deref().unwrap_or_default()
     }
     /// <p>A list of the column statistics.</p>
-    pub fn column_statistics_list(&self) -> ::std::option::Option<&[crate::types::ColumnStatistics]> {
-        self.column_statistics_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_statistics_list.is_none()`.
+    pub fn column_statistics_list(&self) -> &[crate::types::ColumnStatistics] {
+        self.column_statistics_list.as_deref().unwrap_or_default()
     }
 }
 impl UpdateColumnStatisticsForPartitionInput {
@@ -69,6 +73,7 @@ impl UpdateColumnStatisticsForPartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl UpdateColumnStatisticsForPartitionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partitions' table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

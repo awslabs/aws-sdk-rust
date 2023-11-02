@@ -3,11 +3,11 @@ pub fn ser_audit_log_processing_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AuditLogProcessingConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.schema {
-        object.key("schema").string(var_1.as_str());
+    {
+        object.key("schema").string(input.schema.as_str());
     }
-    if let Some(var_2) = &input.format {
-        object.key("format").string(var_2.as_str());
+    {
+        object.key("format").string(input.format.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::audit_log_processing_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

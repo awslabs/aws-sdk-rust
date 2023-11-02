@@ -6,12 +6,12 @@
 pub struct ImmunityTimeProperty {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
     /// <p>For the Challenge action, the minimum setting is 300. </p>
-    pub immunity_time: ::std::option::Option<i64>,
+    pub immunity_time: i64,
 }
 impl ImmunityTimeProperty {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
     /// <p>For the Challenge action, the minimum setting is 300. </p>
-    pub fn immunity_time(&self) -> ::std::option::Option<i64> {
+    pub fn immunity_time(&self) -> i64 {
         self.immunity_time
     }
 }
@@ -31,6 +31,7 @@ pub struct ImmunityTimePropertyBuilder {
 impl ImmunityTimePropertyBuilder {
     /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
     /// <p>For the Challenge action, the minimum setting is 300. </p>
+    /// This field is required.
     pub fn immunity_time(mut self, input: i64) -> Self {
         self.immunity_time = ::std::option::Option::Some(input);
         self
@@ -47,9 +48,16 @@ impl ImmunityTimePropertyBuilder {
         &self.immunity_time
     }
     /// Consumes the builder and constructs a [`ImmunityTimeProperty`](crate::types::ImmunityTimeProperty).
-    pub fn build(self) -> crate::types::ImmunityTimeProperty {
-        crate::types::ImmunityTimeProperty {
-            immunity_time: self.immunity_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`immunity_time`](crate::types::builders::ImmunityTimePropertyBuilder::immunity_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImmunityTimeProperty, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImmunityTimeProperty {
+            immunity_time: self.immunity_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "immunity_time",
+                    "immunity_time was not specified but it is required when building ImmunityTimeProperty",
+                )
+            })?,
+        })
     }
 }

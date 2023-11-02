@@ -5,26 +5,27 @@ pub fn ser_response_headers_policy_strict_transport_security(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.r#override {
+    {
         let mut inner_writer = scope.start_el("Override").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.r#override).encode());
+    }
+    if let Some(var_1) = &input.include_subdomains {
+        let mut inner_writer = scope.start_el("IncludeSubdomains").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
-    if let Some(var_2) = &input.include_subdomains {
-        let mut inner_writer = scope.start_el("IncludeSubdomains").finish();
+    if let Some(var_2) = &input.preload {
+        let mut inner_writer = scope.start_el("Preload").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
-    if let Some(var_3) = &input.preload {
-        let mut inner_writer = scope.start_el("Preload").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
-    }
-    if let Some(var_4) = &input.access_control_max_age_sec {
+    {
         let mut inner_writer = scope.start_el("AccessControlMaxAgeSec").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.access_control_max_age_sec).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_strict_transport_security(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyStrictTransportSecurity, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,6 +34,36 @@ pub fn de_response_headers_policy_strict_transport_security(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Override") /* Override com.amazonaws.cloudfront#ResponseHeadersPolicyStrictTransportSecurity$Override */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_override(var_3);
+            }
+            ,
+            s if s.matches("IncludeSubdomains") /* IncludeSubdomains com.amazonaws.cloudfront#ResponseHeadersPolicyStrictTransportSecurity$IncludeSubdomains */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_include_subdomains(var_4);
+            }
+            ,
+            s if s.matches("Preload") /* Preload com.amazonaws.cloudfront#ResponseHeadersPolicyStrictTransportSecurity$Preload */ =>  {
                 let var_5 =
                     Some(
                          {
@@ -44,41 +75,11 @@ pub fn de_response_headers_policy_strict_transport_security(
                         ?
                     )
                 ;
-                builder = builder.set_override(var_5);
-            }
-            ,
-            s if s.matches("IncludeSubdomains") /* IncludeSubdomains com.amazonaws.cloudfront#ResponseHeadersPolicyStrictTransportSecurity$IncludeSubdomains */ =>  {
-                let var_6 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_include_subdomains(var_6);
-            }
-            ,
-            s if s.matches("Preload") /* Preload com.amazonaws.cloudfront#ResponseHeadersPolicyStrictTransportSecurity$Preload */ =>  {
-                let var_7 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudfront#boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_preload(var_7);
+                builder = builder.set_preload(var_5);
             }
             ,
             s if s.matches("AccessControlMaxAgeSec") /* AccessControlMaxAgeSec com.amazonaws.cloudfront#ResponseHeadersPolicyStrictTransportSecurity$AccessControlMaxAgeSec */ =>  {
-                let var_8 =
+                let var_6 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -89,11 +90,15 @@ pub fn de_response_headers_policy_strict_transport_security(
                         ?
                     )
                 ;
-                builder = builder.set_access_control_max_age_sec(var_8);
+                builder = builder.set_access_control_max_age_sec(var_6);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(
+        crate::serde_util::response_headers_policy_strict_transport_security_correct_errors(builder)
+            .build()
+            .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?,
+    )
 }

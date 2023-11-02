@@ -6,9 +6,9 @@
 pub struct RecommendationTemplate {
     /// <p>The file location of the template.</p>
     pub templates_location: ::std::option::Option<crate::types::S3Location>,
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub assessment_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub assessment_arn: ::std::string::String,
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
     pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -33,7 +33,7 @@ pub struct RecommendationTemplate {
     /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
-    pub recommendation_types: ::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>>,
+    pub recommendation_types: ::std::vec::Vec<crate::types::RenderRecommendationType>,
     /// <p>Format of the recommendation template.</p>
     /// <dl>
     /// <dt>
@@ -49,15 +49,15 @@ pub struct RecommendationTemplate {
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
     /// </dl>
-    pub format: ::std::option::Option<crate::types::TemplateFormat>,
+    pub format: crate::types::TemplateFormat,
     /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
-    pub recommendation_template_arn: ::std::option::Option<::std::string::String>,
+    pub recommendation_template_arn: ::std::string::String,
     /// <p>Message for the recommendation template.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Status of the action.</p>
-    pub status: ::std::option::Option<crate::types::RecommendationTemplateStatus>,
+    pub status: crate::types::RecommendationTemplateStatus,
     /// <p>Name for the recommendation template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The start time for the action.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
@@ -72,17 +72,20 @@ impl RecommendationTemplate {
     pub fn templates_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.templates_location.as_ref()
     }
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
-        self.assessment_arn.as_deref()
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    pub fn assessment_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assessment_arn.deref()
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
-    pub fn recommendation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recommendation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_ids.is_none()`.
+    pub fn recommendation_ids(&self) -> &[::std::string::String] {
+        self.recommendation_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
@@ -105,8 +108,9 @@ impl RecommendationTemplate {
     /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
-    pub fn recommendation_types(&self) -> ::std::option::Option<&[crate::types::RenderRecommendationType]> {
-        self.recommendation_types.as_deref()
+    pub fn recommendation_types(&self) -> &[crate::types::RenderRecommendationType] {
+        use std::ops::Deref;
+        self.recommendation_types.deref()
     }
     /// <p>Format of the recommendation template.</p>
     /// <dl>
@@ -123,24 +127,26 @@ impl RecommendationTemplate {
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
     /// </dl>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::TemplateFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::TemplateFormat {
+        &self.format
     }
     /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
-    pub fn recommendation_template_arn(&self) -> ::std::option::Option<&str> {
-        self.recommendation_template_arn.as_deref()
+    pub fn recommendation_template_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.recommendation_template_arn.deref()
     }
     /// <p>Message for the recommendation template.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationTemplateStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::RecommendationTemplateStatus {
+        &self.status
     }
     /// <p>Name for the recommendation template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The start time for the action.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -220,31 +226,32 @@ impl RecommendationTemplateBuilder {
     pub fn get_templates_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.templates_location
     }
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
+    /// This field is required.
     pub fn assessment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assessment_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_arn
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_arn
     }
@@ -363,6 +370,7 @@ impl RecommendationTemplateBuilder {
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::TemplateFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -405,6 +413,7 @@ impl RecommendationTemplateBuilder {
         &self.format
     }
     /// <p>Amazon Resource Name (ARN) for the recommendation template.</p>
+    /// This field is required.
     pub fn recommendation_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -433,6 +442,7 @@ impl RecommendationTemplateBuilder {
         &self.message
     }
     /// <p>Status of the action.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RecommendationTemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -447,6 +457,7 @@ impl RecommendationTemplateBuilder {
         &self.status
     }
     /// <p>Name for the recommendation template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -523,23 +534,60 @@ impl RecommendationTemplateBuilder {
         &self.needs_replacements
     }
     /// Consumes the builder and constructs a [`RecommendationTemplate`](crate::types::RecommendationTemplate).
-    pub fn build(self) -> crate::types::RecommendationTemplate {
-        crate::types::RecommendationTemplate {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_arn`](crate::types::builders::RecommendationTemplateBuilder::assessment_arn)
+    /// - [`recommendation_types`](crate::types::builders::RecommendationTemplateBuilder::recommendation_types)
+    /// - [`format`](crate::types::builders::RecommendationTemplateBuilder::format)
+    /// - [`recommendation_template_arn`](crate::types::builders::RecommendationTemplateBuilder::recommendation_template_arn)
+    /// - [`status`](crate::types::builders::RecommendationTemplateBuilder::status)
+    /// - [`name`](crate::types::builders::RecommendationTemplateBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationTemplate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecommendationTemplate {
             templates_location: self.templates_location,
-            assessment_arn: self.assessment_arn,
+            assessment_arn: self.assessment_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assessment_arn",
+                    "assessment_arn was not specified but it is required when building RecommendationTemplate",
+                )
+            })?,
             app_arn: self.app_arn,
             recommendation_ids: self.recommendation_ids,
-            recommendation_types: self.recommendation_types,
-            format: self.format,
-            recommendation_template_arn: self.recommendation_template_arn,
+            recommendation_types: self.recommendation_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recommendation_types",
+                    "recommendation_types was not specified but it is required when building RecommendationTemplate",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building RecommendationTemplate",
+                )
+            })?,
+            recommendation_template_arn: self.recommendation_template_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recommendation_template_arn",
+                    "recommendation_template_arn was not specified but it is required when building RecommendationTemplate",
+                )
+            })?,
             message: self.message,
-            status: self.status,
-            name: self.name,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building RecommendationTemplate",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RecommendationTemplate",
+                )
+            })?,
             start_time: self.start_time,
             end_time: self.end_time,
             tags: self.tags,
             needs_replacements: self.needs_replacements,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for RecommendationTemplateBuilder {

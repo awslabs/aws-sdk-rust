@@ -34,6 +34,7 @@ pub struct StopInferenceExperimentOutputBuilder {
 }
 impl StopInferenceExperimentOutputBuilder {
     /// <p>The ARN of the stopped inference experiment.</p>
+    /// This field is required.
     pub fn inference_experiment_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_experiment_arn = ::std::option::Option::Some(input.into());
         self

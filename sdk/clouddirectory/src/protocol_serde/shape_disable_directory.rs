@@ -153,7 +153,9 @@ pub fn de_disable_directory_http_response(
         output = crate::protocol_serde::shape_disable_directory::de_disable_directory(_response_body, output)
             .map_err(crate::operation::disable_directory::DisableDirectoryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::disable_directory_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::disable_directory::DisableDirectoryError::unhandled)?
     })
 }
 

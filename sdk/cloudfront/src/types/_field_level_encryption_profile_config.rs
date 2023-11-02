@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileConfig {
     /// <p>Profile name for the field-level encryption profile.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique number that ensures that the request can't be replayed.</p>
-    pub caller_reference: ::std::option::Option<::std::string::String>,
+    pub caller_reference: ::std::string::String,
     /// <p>An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
@@ -15,12 +15,14 @@ pub struct FieldLevelEncryptionProfileConfig {
 }
 impl FieldLevelEncryptionProfileConfig {
     /// <p>Profile name for the field-level encryption profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique number that ensures that the request can't be replayed.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
-        self.caller_reference.as_deref()
+    pub fn caller_reference(&self) -> &str {
+        use std::ops::Deref;
+        self.caller_reference.deref()
     }
     /// <p>An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct FieldLevelEncryptionProfileConfigBuilder {
 }
 impl FieldLevelEncryptionProfileConfigBuilder {
     /// <p>Profile name for the field-level encryption profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl FieldLevelEncryptionProfileConfigBuilder {
         &self.name
     }
     /// <p>A unique number that ensures that the request can't be replayed.</p>
+    /// This field is required.
     pub fn caller_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.caller_reference = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl FieldLevelEncryptionProfileConfigBuilder {
         &self.comment
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
+    /// This field is required.
     pub fn encryption_entities(mut self, input: crate::types::EncryptionEntities) -> Self {
         self.encryption_entities = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,25 @@ impl FieldLevelEncryptionProfileConfigBuilder {
         &self.encryption_entities
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileConfig`](crate::types::FieldLevelEncryptionProfileConfig).
-    pub fn build(self) -> crate::types::FieldLevelEncryptionProfileConfig {
-        crate::types::FieldLevelEncryptionProfileConfig {
-            name: self.name,
-            caller_reference: self.caller_reference,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FieldLevelEncryptionProfileConfigBuilder::name)
+    /// - [`caller_reference`](crate::types::builders::FieldLevelEncryptionProfileConfigBuilder::caller_reference)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionProfileConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldLevelEncryptionProfileConfig {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FieldLevelEncryptionProfileConfig",
+                )
+            })?,
+            caller_reference: self.caller_reference.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "caller_reference",
+                    "caller_reference was not specified but it is required when building FieldLevelEncryptionProfileConfig",
+                )
+            })?,
             comment: self.comment,
             encryption_entities: self.encryption_entities,
-        }
+        })
     }
 }

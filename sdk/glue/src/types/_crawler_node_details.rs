@@ -9,8 +9,10 @@ pub struct CrawlerNodeDetails {
 }
 impl CrawlerNodeDetails {
     /// <p>A list of crawls represented by the crawl node.</p>
-    pub fn crawls(&self) -> ::std::option::Option<&[crate::types::Crawl]> {
-        self.crawls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawls.is_none()`.
+    pub fn crawls(&self) -> &[crate::types::Crawl] {
+        self.crawls.as_deref().unwrap_or_default()
     }
 }
 impl CrawlerNodeDetails {

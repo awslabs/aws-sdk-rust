@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
-    pub forward_when_query_arg_profile_is_unknown: ::std::option::Option<bool>,
+    pub forward_when_query_arg_profile_is_unknown: bool,
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
     pub query_arg_profiles: ::std::option::Option<crate::types::QueryArgProfiles>,
 }
 impl QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
-    pub fn forward_when_query_arg_profile_is_unknown(&self) -> ::std::option::Option<bool> {
+    pub fn forward_when_query_arg_profile_is_unknown(&self) -> bool {
         self.forward_when_query_arg_profile_is_unknown
     }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
@@ -35,6 +35,7 @@ pub struct QueryArgProfileConfigBuilder {
 }
 impl QueryArgProfileConfigBuilder {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
+    /// This field is required.
     pub fn forward_when_query_arg_profile_is_unknown(mut self, input: bool) -> Self {
         self.forward_when_query_arg_profile_is_unknown = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl QueryArgProfileConfigBuilder {
         &self.query_arg_profiles
     }
     /// Consumes the builder and constructs a [`QueryArgProfileConfig`](crate::types::QueryArgProfileConfig).
-    pub fn build(self) -> crate::types::QueryArgProfileConfig {
-        crate::types::QueryArgProfileConfig {
-            forward_when_query_arg_profile_is_unknown: self.forward_when_query_arg_profile_is_unknown,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`forward_when_query_arg_profile_is_unknown`](crate::types::builders::QueryArgProfileConfigBuilder::forward_when_query_arg_profile_is_unknown)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryArgProfileConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueryArgProfileConfig {
+            forward_when_query_arg_profile_is_unknown: self.forward_when_query_arg_profile_is_unknown.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "forward_when_query_arg_profile_is_unknown",
+                    "forward_when_query_arg_profile_is_unknown was not specified but it is required when building QueryArgProfileConfig",
+                )
+            })?,
             query_arg_profiles: self.query_arg_profiles,
-        }
+        })
     }
 }

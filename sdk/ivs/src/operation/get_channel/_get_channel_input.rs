@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelInput {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl GetChannelInput {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl GetChannelInput {
@@ -27,6 +28,7 @@ pub struct GetChannelInputBuilder {
 }
 impl GetChannelInputBuilder {
     /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl GetChannelInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetChannelInput`](crate::operation::get_channel::GetChannelInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_channel::builders::GetChannelInputBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_channel::GetChannelInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_channel::GetChannelInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::get_channel::GetChannelInput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetChannelInput",
+                )
+            })?,
+        })
     }
 }

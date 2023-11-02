@@ -132,7 +132,9 @@ pub fn de_describe_conformance_pack_compliance_http_response(
         output = crate::protocol_serde::shape_describe_conformance_pack_compliance::de_describe_conformance_pack_compliance(_response_body, output)
             .map_err(crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_conformance_pack_compliance_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::unhandled)?
     })
 }
 

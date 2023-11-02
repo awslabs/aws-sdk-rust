@@ -48,6 +48,7 @@ pub struct GetFaceSearchInputBuilder {
 }
 impl GetFaceSearchInputBuilder {
     /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

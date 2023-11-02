@@ -34,6 +34,7 @@ pub struct GetStorageLensConfigurationInputBuilder {
 }
 impl GetStorageLensConfigurationInputBuilder {
     /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    /// This field is required.
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetStorageLensConfigurationInputBuilder {
         &self.config_id
     }
     /// <p>The account ID of the requester.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

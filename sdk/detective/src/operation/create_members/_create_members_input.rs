@@ -28,8 +28,10 @@ impl CreateMembersInput {
         self.disable_email_notification
     }
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[crate::types::Account]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[crate::types::Account] {
+        self.accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateMembersInput {
@@ -60,6 +62,7 @@ pub struct CreateMembersInputBuilder {
 }
 impl CreateMembersInputBuilder {
     /// <p>The ARN of the behavior graph.</p>
+    /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self

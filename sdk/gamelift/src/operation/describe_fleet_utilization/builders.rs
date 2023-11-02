@@ -104,14 +104,14 @@ impl DescribeFleetUtilizationFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput,
             crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -124,7 +124,7 @@ impl DescribeFleetUtilizationFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator {
         crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::new(self.handle, self.inner)
     }

@@ -27,6 +27,7 @@ pub struct DeleteReplicationConfigurationInputBuilder {
 }
 impl DeleteReplicationConfigurationInputBuilder {
     /// <p>The ID of the source file system in the replication configuration.</p>
+    /// This field is required.
     pub fn source_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_id = ::std::option::Option::Some(input.into());
         self

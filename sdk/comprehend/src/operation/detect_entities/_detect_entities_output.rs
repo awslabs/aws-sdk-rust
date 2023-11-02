@@ -21,26 +21,34 @@ pub struct DetectEntitiesOutput {
 impl DetectEntitiesOutput {
     /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
     /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::Entity] {
+        self.entities.as_deref().unwrap_or_default()
     }
     /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     pub fn document_metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    pub fn document_type(&self) -> ::std::option::Option<&[crate::types::DocumentTypeListItem]> {
-        self.document_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_type.is_none()`.
+    pub fn document_type(&self) -> &[crate::types::DocumentTypeListItem] {
+        self.document_type.as_deref().unwrap_or_default()
     }
     /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
     /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
-    pub fn blocks(&self) -> ::std::option::Option<&[crate::types::Block]> {
-        self.blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
+    pub fn blocks(&self) -> &[crate::types::Block] {
+        self.blocks.as_deref().unwrap_or_default()
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::ErrorsListItem]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::ErrorsListItem] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for DetectEntitiesOutput {

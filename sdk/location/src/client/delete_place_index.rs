@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePlaceIndex`](crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::index_name) / [`set_index_name(Option<String>)`](crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::set_index_name): <p>The name of the place index resource to be deleted.</p>
+    ///   - [`index_name(impl Into<String>)`](crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::index_name) / [`set_index_name(impl Into<String>)`](crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder::set_index_name):<br>required: **true**<br><p>The name of the place index resource to be deleted.</p><br>
     /// - On success, responds with [`DeletePlaceIndexOutput`](crate::operation::delete_place_index::DeletePlaceIndexOutput)
     /// - On failure, responds with [`SdkError<DeletePlaceIndexError>`](crate::operation::delete_place_index::DeletePlaceIndexError)
     pub fn delete_place_index(&self) -> crate::operation::delete_place_index::builders::DeletePlaceIndexFluentBuilder {

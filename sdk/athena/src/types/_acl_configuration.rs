@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AclConfiguration {
     /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub s3_acl_option: ::std::option::Option<crate::types::S3AclOption>,
+    pub s3_acl_option: crate::types::S3AclOption,
 }
 impl AclConfiguration {
     /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn s3_acl_option(&self) -> ::std::option::Option<&crate::types::S3AclOption> {
-        self.s3_acl_option.as_ref()
+    pub fn s3_acl_option(&self) -> &crate::types::S3AclOption {
+        &self.s3_acl_option
     }
 }
 impl AclConfiguration {
@@ -28,6 +28,7 @@ pub struct AclConfigurationBuilder {
 }
 impl AclConfigurationBuilder {
     /// <p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// This field is required.
     pub fn s3_acl_option(mut self, input: crate::types::S3AclOption) -> Self {
         self.s3_acl_option = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl AclConfigurationBuilder {
         &self.s3_acl_option
     }
     /// Consumes the builder and constructs a [`AclConfiguration`](crate::types::AclConfiguration).
-    pub fn build(self) -> crate::types::AclConfiguration {
-        crate::types::AclConfiguration {
-            s3_acl_option: self.s3_acl_option,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_acl_option`](crate::types::builders::AclConfigurationBuilder::s3_acl_option)
+    pub fn build(self) -> ::std::result::Result<crate::types::AclConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AclConfiguration {
+            s3_acl_option: self.s3_acl_option.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_acl_option",
+                    "s3_acl_option was not specified but it is required when building AclConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -84,7 +84,9 @@ pub fn de_list_world_export_jobs_http_response(
         output = crate::protocol_serde::shape_list_world_export_jobs::de_list_world_export_jobs(_response_body, output)
             .map_err(crate::operation::list_world_export_jobs::ListWorldExportJobsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_world_export_jobs_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_world_export_jobs::ListWorldExportJobsError::unhandled)?
     })
 }
 

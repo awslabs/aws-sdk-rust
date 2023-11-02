@@ -72,6 +72,7 @@ pub struct PredictiveScalingPredefinedLoadMetricBuilder {
 }
 impl PredictiveScalingPredefinedLoadMetricBuilder {
     /// <p>The metric type.</p>
+    /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::PredefinedLoadMetricType) -> Self {
         self.predefined_metric_type = ::std::option::Option::Some(input);
         self

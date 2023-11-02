@@ -14,12 +14,16 @@ pub struct SearchAddressBooksInput {
 }
 impl SearchAddressBooksInput {
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&[crate::types::Sort]> {
-        self.sort_criteria.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_criteria.is_none()`.
+    pub fn sort_criteria(&self) -> &[crate::types::Sort] {
+        self.sort_criteria.as_deref().unwrap_or_default()
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

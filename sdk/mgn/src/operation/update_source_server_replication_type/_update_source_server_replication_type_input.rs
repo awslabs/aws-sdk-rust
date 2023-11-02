@@ -4,20 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSourceServerReplicationTypeInput {
     /// <p>ID of source server on which to update replication type.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Replication type to which to update source server.</p>
-    pub replication_type: ::std::option::Option<crate::types::ReplicationType>,
+    pub replication_type: crate::types::ReplicationType,
     /// <p>Account ID on which to update replication type.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSourceServerReplicationTypeInput {
     /// <p>ID of source server on which to update replication type.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Replication type to which to update source server.</p>
-    pub fn replication_type(&self) -> ::std::option::Option<&crate::types::ReplicationType> {
-        self.replication_type.as_ref()
+    pub fn replication_type(&self) -> &crate::types::ReplicationType {
+        &self.replication_type
     }
     /// <p>Account ID on which to update replication type.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct UpdateSourceServerReplicationTypeInputBuilder {
 }
 impl UpdateSourceServerReplicationTypeInputBuilder {
     /// <p>ID of source server on which to update replication type.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         &self.source_server_id
     }
     /// <p>Replication type to which to update source server.</p>
+    /// This field is required.
     pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
         self.replication_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,9 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateSourceServerReplicationTypeInput`](crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeInputBuilder::source_server_id)
+    /// - [`replication_type`](crate::operation::update_source_server_replication_type::builders::UpdateSourceServerReplicationTypeInputBuilder::replication_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,8 +97,18 @@ impl UpdateSourceServerReplicationTypeInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeInput {
-                source_server_id: self.source_server_id,
-                replication_type: self.replication_type,
+                source_server_id: self.source_server_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "source_server_id",
+                        "source_server_id was not specified but it is required when building UpdateSourceServerReplicationTypeInput",
+                    )
+                })?,
+                replication_type: self.replication_type.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "replication_type",
+                        "replication_type was not specified but it is required when building UpdateSourceServerReplicationTypeInput",
+                    )
+                })?,
                 account_id: self.account_id,
             },
         )

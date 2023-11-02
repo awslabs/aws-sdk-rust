@@ -34,6 +34,7 @@ pub struct DescribeConnectorOutputBuilder {
 }
 impl DescribeConnectorOutputBuilder {
     /// <p>The structure that contains the details of the connector.</p>
+    /// This field is required.
     pub fn connector(mut self, input: crate::types::DescribedConnector) -> Self {
         self.connector = ::std::option::Option::Some(input);
         self

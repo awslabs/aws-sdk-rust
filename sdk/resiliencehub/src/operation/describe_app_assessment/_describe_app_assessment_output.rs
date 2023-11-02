@@ -34,6 +34,7 @@ pub struct DescribeAppAssessmentOutputBuilder {
 }
 impl DescribeAppAssessmentOutputBuilder {
     /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
+    /// This field is required.
     pub fn assessment(mut self, input: crate::types::AppAssessment) -> Self {
         self.assessment = ::std::option::Option::Some(input);
         self

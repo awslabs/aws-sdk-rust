@@ -14,8 +14,10 @@ impl DescribeImageAssociationsInput {
         self.image_id.as_deref()
     }
     /// <p>The resource types of the associated resource.</p>
-    pub fn associated_resource_types(&self) -> ::std::option::Option<&[crate::types::ImageAssociatedResourceType]> {
-        self.associated_resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resource_types.is_none()`.
+    pub fn associated_resource_types(&self) -> &[crate::types::ImageAssociatedResourceType] {
+        self.associated_resource_types.as_deref().unwrap_or_default()
     }
 }
 impl DescribeImageAssociationsInput {
@@ -34,6 +36,7 @@ pub struct DescribeImageAssociationsInputBuilder {
 }
 impl DescribeImageAssociationsInputBuilder {
     /// <p>The identifier of the image.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self

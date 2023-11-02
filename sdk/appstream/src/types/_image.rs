@@ -85,8 +85,10 @@ impl Image {
         self.state_change_reason.as_ref()
     }
     /// <p>The applications associated with the image.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::Application]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::Application] {
+        self.applications.as_deref().unwrap_or_default()
     }
     /// <p>The time the image was created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -105,8 +107,10 @@ impl Image {
         self.image_permissions.as_ref()
     }
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
-    pub fn image_errors(&self) -> ::std::option::Option<&[crate::types::ResourceError]> {
-        self.image_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_errors.is_none()`.
+    pub fn image_errors(&self) -> &[crate::types::ResourceError] {
+        self.image_errors.as_deref().unwrap_or_default()
     }
 }
 impl Image {
@@ -140,6 +144,7 @@ pub struct ImageBuilder {
 }
 impl ImageBuilder {
     /// <p>The name of the image.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

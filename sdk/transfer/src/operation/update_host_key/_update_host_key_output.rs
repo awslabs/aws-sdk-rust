@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHostKeyOutput {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p>Returns the host key identifier for the updated host key.</p>
-    pub host_key_id: ::std::option::Option<::std::string::String>,
+    pub host_key_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateHostKeyOutput {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p>Returns the host key identifier for the updated host key.</p>
-    pub fn host_key_id(&self) -> ::std::option::Option<&str> {
-        self.host_key_id.as_deref()
+    pub fn host_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.host_key_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateHostKeyOutput {
@@ -41,6 +43,7 @@ pub struct UpdateHostKeyOutputBuilder {
 }
 impl UpdateHostKeyOutputBuilder {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UpdateHostKeyOutputBuilder {
         &self.server_id
     }
     /// <p>Returns the host key identifier for the updated host key.</p>
+    /// This field is required.
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,26 @@ impl UpdateHostKeyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateHostKeyOutput`](crate::operation::update_host_key::UpdateHostKeyOutput).
-    pub fn build(self) -> crate::operation::update_host_key::UpdateHostKeyOutput {
-        crate::operation::update_host_key::UpdateHostKeyOutput {
-            server_id: self.server_id,
-            host_key_id: self.host_key_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::update_host_key::builders::UpdateHostKeyOutputBuilder::server_id)
+    /// - [`host_key_id`](crate::operation::update_host_key::builders::UpdateHostKeyOutputBuilder::host_key_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_host_key::UpdateHostKeyOutput {
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building UpdateHostKeyOutput",
+                )
+            })?,
+            host_key_id: self.host_key_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host_key_id",
+                    "host_key_id was not specified but it is required when building UpdateHostKeyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

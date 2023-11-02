@@ -6,26 +6,26 @@ pub fn ser_query_planning_context(
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    {
+        object.key("DatabaseName").string(input.database_name.as_str());
     }
-    if let Some(var_3) = &input.query_as_of_time {
+    if let Some(var_2) = &input.query_as_of_time {
         object
             .key("QueryAsOfTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.query_parameters {
+    if let Some(var_3) = &input.query_parameters {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("QueryParameters").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("QueryParameters").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
-    if let Some(var_8) = &input.transaction_id {
-        object.key("TransactionId").string(var_8.as_str());
+    if let Some(var_7) = &input.transaction_id {
+        object.key("TransactionId").string(var_7.as_str());
     }
     Ok(())
 }

@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartContentUpload`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    ///   - [`content_type(impl Into<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::content_type) / [`set_content_type(Option<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::set_content_type): <p>The type of content to upload.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(impl Into<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
+    ///   - [`content_type(impl Into<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::content_type) / [`set_content_type(impl Into<String>)`](crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::set_content_type):<br>required: **true**<br><p>The type of content to upload.</p><br>
     /// - On success, responds with [`StartContentUploadOutput`](crate::operation::start_content_upload::StartContentUploadOutput) with field(s):
-    ///   - [`upload_id(Option<String>)`](crate::operation::start_content_upload::StartContentUploadOutput::upload_id): <p>The identifier of the upload.</p>
-    ///   - [`url(Option<String>)`](crate::operation::start_content_upload::StartContentUploadOutput::url): <p>The URL of the upload.</p>
-    ///   - [`url_expiry(Option<DateTime>)`](crate::operation::start_content_upload::StartContentUploadOutput::url_expiry): <p>The expiration time of the URL as an epoch timestamp.</p>
-    ///   - [`headers_to_include(Option<HashMap<String, String>>)`](crate::operation::start_content_upload::StartContentUploadOutput::headers_to_include): <p>The headers to include in the upload.</p>
+    ///   - [`upload_id(String)`](crate::operation::start_content_upload::StartContentUploadOutput::upload_id): <p>The identifier of the upload.</p>
+    ///   - [`url(String)`](crate::operation::start_content_upload::StartContentUploadOutput::url): <p>The URL of the upload.</p>
+    ///   - [`url_expiry(DateTime)`](crate::operation::start_content_upload::StartContentUploadOutput::url_expiry): <p>The expiration time of the URL as an epoch timestamp.</p>
+    ///   - [`headers_to_include(HashMap<String, String>)`](crate::operation::start_content_upload::StartContentUploadOutput::headers_to_include): <p>The headers to include in the upload.</p>
     /// - On failure, responds with [`SdkError<StartContentUploadError>`](crate::operation::start_content_upload::StartContentUploadError)
     pub fn start_content_upload(&self) -> crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder {
         crate::operation::start_content_upload::builders::StartContentUploadFluentBuilder::new(self.handle.clone())

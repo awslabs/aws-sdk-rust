@@ -56,6 +56,7 @@ pub struct QueryObjectsInputBuilder {
 }
 impl QueryObjectsInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl QueryObjectsInputBuilder {
         &self.query
     }
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+    /// This field is required.
     pub fn sphere(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sphere = ::std::option::Option::Some(input.into());
         self

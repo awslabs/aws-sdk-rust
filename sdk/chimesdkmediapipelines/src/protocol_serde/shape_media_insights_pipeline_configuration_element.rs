@@ -3,62 +3,62 @@ pub fn ser_media_insights_pipeline_configuration_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaInsightsPipelineConfigurationElement,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.amazon_transcribe_call_analytics_processor_configuration {
+    if let Some(var_1) = &input.amazon_transcribe_call_analytics_processor_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("AmazonTranscribeCallAnalyticsProcessorConfiguration").start_object();
-        crate::protocol_serde::shape_amazon_transcribe_call_analytics_processor_configuration::ser_amazon_transcribe_call_analytics_processor_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("AmazonTranscribeCallAnalyticsProcessorConfiguration").start_object();
+        crate::protocol_serde::shape_amazon_transcribe_call_analytics_processor_configuration::ser_amazon_transcribe_call_analytics_processor_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.amazon_transcribe_processor_configuration {
+    if let Some(var_3) = &input.amazon_transcribe_processor_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AmazonTranscribeProcessorConfiguration").start_object();
-        crate::protocol_serde::shape_amazon_transcribe_processor_configuration::ser_amazon_transcribe_processor_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("AmazonTranscribeProcessorConfiguration").start_object();
+        crate::protocol_serde::shape_amazon_transcribe_processor_configuration::ser_amazon_transcribe_processor_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.kinesis_data_stream_sink_configuration {
+    if let Some(var_5) = &input.kinesis_data_stream_sink_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("KinesisDataStreamSinkConfiguration").start_object();
-        crate::protocol_serde::shape_kinesis_data_stream_sink_configuration::ser_kinesis_data_stream_sink_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("KinesisDataStreamSinkConfiguration").start_object();
+        crate::protocol_serde::shape_kinesis_data_stream_sink_configuration::ser_kinesis_data_stream_sink_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.s3_recording_sink_configuration {
+    if let Some(var_7) = &input.s3_recording_sink_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("S3RecordingSinkConfiguration").start_object();
-        crate::protocol_serde::shape_s3_recording_sink_configuration::ser_s3_recording_sink_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("S3RecordingSinkConfiguration").start_object();
+        crate::protocol_serde::shape_s3_recording_sink_configuration::ser_s3_recording_sink_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.voice_analytics_processor_configuration {
+    if let Some(var_9) = &input.voice_analytics_processor_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("VoiceAnalyticsProcessorConfiguration").start_object();
-        crate::protocol_serde::shape_voice_analytics_processor_configuration::ser_voice_analytics_processor_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("VoiceAnalyticsProcessorConfiguration").start_object();
+        crate::protocol_serde::shape_voice_analytics_processor_configuration::ser_voice_analytics_processor_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.lambda_function_sink_configuration {
+    if let Some(var_11) = &input.lambda_function_sink_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("LambdaFunctionSinkConfiguration").start_object();
-        crate::protocol_serde::shape_lambda_function_sink_configuration::ser_lambda_function_sink_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_12 = object.key("LambdaFunctionSinkConfiguration").start_object();
+        crate::protocol_serde::shape_lambda_function_sink_configuration::ser_lambda_function_sink_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_14) = &input.sqs_queue_sink_configuration {
+    if let Some(var_13) = &input.sqs_queue_sink_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("SqsQueueSinkConfiguration").start_object();
-        crate::protocol_serde::shape_sqs_queue_sink_configuration::ser_sqs_queue_sink_configuration(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_14 = object.key("SqsQueueSinkConfiguration").start_object();
+        crate::protocol_serde::shape_sqs_queue_sink_configuration::ser_sqs_queue_sink_configuration(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_16) = &input.sns_topic_sink_configuration {
+    if let Some(var_15) = &input.sns_topic_sink_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("SnsTopicSinkConfiguration").start_object();
-        crate::protocol_serde::shape_sns_topic_sink_configuration::ser_sns_topic_sink_configuration(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_16 = object.key("SnsTopicSinkConfiguration").start_object();
+        crate::protocol_serde::shape_sns_topic_sink_configuration::ser_sns_topic_sink_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_18) = &input.voice_enhancement_sink_configuration {
+    if let Some(var_17) = &input.voice_enhancement_sink_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("VoiceEnhancementSinkConfiguration").start_object();
-        crate::protocol_serde::shape_voice_enhancement_sink_configuration::ser_voice_enhancement_sink_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_18 = object.key("VoiceEnhancementSinkConfiguration").start_object();
+        crate::protocol_serde::shape_voice_enhancement_sink_configuration::ser_voice_enhancement_sink_configuration(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }
@@ -149,7 +149,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::media_insights_pipeline_configuration_element_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

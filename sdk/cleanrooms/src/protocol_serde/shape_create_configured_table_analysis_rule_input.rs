@@ -9,8 +9,8 @@ pub fn ser_create_configured_table_analysis_rule_input(
         crate::protocol_serde::shape_configured_table_analysis_rule_policy::ser_configured_table_analysis_rule_policy(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.analysis_rule_type {
-        object.key("analysisRuleType").string(var_3.as_str());
+    {
+        object.key("analysisRuleType").string(input.analysis_rule_type.as_str());
     }
     Ok(())
 }

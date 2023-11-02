@@ -3,11 +3,11 @@ pub fn ser_iot_site_wise_customer_managed_datastore_s3_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket {
-        object.key("bucket").string(var_1.as_str());
+    {
+        object.key("bucket").string(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.key_prefix {
-        object.key("keyPrefix").string(var_2.as_str());
+    if let Some(var_1) = &input.key_prefix {
+        object.key("keyPrefix").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::iot_site_wise_customer_managed_datastore_s3_storage_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

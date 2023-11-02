@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelManifestInput {
     /// <p> The name of the vehicle model to update. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> A brief description of the vehicle model. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
@@ -16,20 +16,25 @@ pub struct UpdateModelManifestInput {
 }
 impl UpdateModelManifestInput {
     /// <p> The name of the vehicle model to update. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> A brief description of the vehicle model. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model. </p>
-    pub fn nodes_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.nodes_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_add.is_none()`.
+    pub fn nodes_to_add(&self) -> &[::std::string::String] {
+        self.nodes_to_add.as_deref().unwrap_or_default()
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model. </p>
-    pub fn nodes_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.nodes_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_remove.is_none()`.
+    pub fn nodes_to_remove(&self) -> &[::std::string::String] {
+        self.nodes_to_remove.as_deref().unwrap_or_default()
     }
     /// <p> The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManifestStatus> {
@@ -55,6 +60,7 @@ pub struct UpdateModelManifestInputBuilder {
 }
 impl UpdateModelManifestInputBuilder {
     /// <p> The name of the vehicle model to update. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -137,12 +143,19 @@ impl UpdateModelManifestInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateModelManifestInput`](crate::operation::update_model_manifest::UpdateModelManifestInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_model_manifest::UpdateModelManifestInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateModelManifestInput",
+                )
+            })?,
             description: self.description,
             nodes_to_add: self.nodes_to_add,
             nodes_to_remove: self.nodes_to_remove,

@@ -3,18 +3,18 @@ pub fn ser_put_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.item {
+    {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Item").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_1 = object.key("Item").start_object();
+        for (key_2, value_3) in &input.item {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_5, value_4)?;
-                object_5.finish();
+                let mut object_4 = object_1.key(key_2.as_str()).start_object();
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_4, value_3)?;
+                object_4.finish();
             }
         }
-        object_2.finish();
+        object_1.finish();
     }
     Ok(())
 }
@@ -48,7 +48,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::put_request_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

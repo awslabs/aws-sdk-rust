@@ -50,8 +50,10 @@ impl CreateInferenceRecommendationsJobInput {
         self.output_config.as_ref()
     }
     /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateInferenceRecommendationsJobInput {
@@ -76,6 +78,7 @@ pub struct CreateInferenceRecommendationsJobInputBuilder {
 }
 impl CreateInferenceRecommendationsJobInputBuilder {
     /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with the job name are truncated at 40 characters.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         &self.job_name
     }
     /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+    /// This field is required.
     pub fn job_type(mut self, input: crate::types::RecommendationJobType) -> Self {
         self.job_type = ::std::option::Option::Some(input);
         self
@@ -104,6 +108,7 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         &self.job_type
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl CreateInferenceRecommendationsJobInputBuilder {
         &self.role_arn
     }
     /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::RecommendationJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self

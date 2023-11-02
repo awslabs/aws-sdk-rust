@@ -27,6 +27,7 @@ pub struct CancelMessageMoveTaskInputBuilder {
 }
 impl CancelMessageMoveTaskInputBuilder {
     /// <p>An identifier associated with a message movement task.</p>
+    /// This field is required.
     pub fn task_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_handle = ::std::option::Option::Some(input.into());
         self

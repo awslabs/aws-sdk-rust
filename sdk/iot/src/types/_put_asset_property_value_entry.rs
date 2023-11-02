@@ -13,7 +13,7 @@ pub struct PutAssetPropertyValueEntry {
     /// <p>The name of the property alias associated with your asset property. You must specify either a <code>propertyAlias</code> or both an <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.</p>
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
-    pub property_values: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub property_values: ::std::vec::Vec<crate::types::AssetPropertyValue>,
 }
 impl PutAssetPropertyValueEntry {
     /// <p>Optional. A unique identifier for this entry that you can define to better track which message caused an error in case of failure. Accepts substitution templates. Defaults to a new UUID.</p>
@@ -33,8 +33,9 @@ impl PutAssetPropertyValueEntry {
         self.property_alias.as_deref()
     }
     /// <p>A list of property values to insert that each contain timestamp, quality, and value (TQV) information.</p>
-    pub fn property_values(&self) -> ::std::option::Option<&[crate::types::AssetPropertyValue]> {
-        self.property_values.as_deref()
+    pub fn property_values(&self) -> &[crate::types::AssetPropertyValue] {
+        use std::ops::Deref;
+        self.property_values.deref()
     }
 }
 impl PutAssetPropertyValueEntry {
@@ -132,13 +133,20 @@ impl PutAssetPropertyValueEntryBuilder {
         &self.property_values
     }
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
-    pub fn build(self) -> crate::types::PutAssetPropertyValueEntry {
-        crate::types::PutAssetPropertyValueEntry {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property_values`](crate::types::builders::PutAssetPropertyValueEntryBuilder::property_values)
+    pub fn build(self) -> ::std::result::Result<crate::types::PutAssetPropertyValueEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PutAssetPropertyValueEntry {
             entry_id: self.entry_id,
             asset_id: self.asset_id,
             property_id: self.property_id,
             property_alias: self.property_alias,
-            property_values: self.property_values,
-        }
+            property_values: self.property_values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "property_values",
+                    "property_values was not specified but it is required when building PutAssetPropertyValueEntry",
+                )
+            })?,
+        })
     }
 }

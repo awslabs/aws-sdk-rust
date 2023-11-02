@@ -55,6 +55,7 @@ pub struct ExecuteGremlinProfileQueryInputBuilder {
 }
 impl ExecuteGremlinProfileQueryInputBuilder {
     /// <p>The Gremlin query string to profile.</p>
+    /// This field is required.
     pub fn gremlin_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gremlin_query = ::std::option::Option::Some(input.into());
         self

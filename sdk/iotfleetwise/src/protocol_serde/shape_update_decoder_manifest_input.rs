@@ -3,80 +3,80 @@ pub fn ser_update_decoder_manifest_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_decoder_manifest::UpdateDecoderManifestInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.signal_decoders_to_add {
-        let mut array_4 = object.key("signalDecodersToAdd").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.signal_decoders_to_add {
+        let mut array_3 = object.key("signalDecodersToAdd").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.signal_decoders_to_update {
-        let mut array_8 = object.key("signalDecodersToUpdate").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.signal_decoders_to_update {
+        let mut array_7 = object.key("signalDecodersToUpdate").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.signal_decoders_to_remove {
-        let mut array_12 = object.key("signalDecodersToRemove").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.signal_decoders_to_remove {
+        let mut array_11 = object.key("signalDecodersToRemove").start_array();
+        for item_12 in var_10 {
             {
-                array_12.value().string(item_13.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_14) = &input.network_interfaces_to_add {
-        let mut array_15 = object.key("networkInterfacesToAdd").start_array();
-        for item_16 in var_14 {
-            {
-                #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_17, item_16)?;
-                object_17.finish();
-            }
-        }
-        array_15.finish();
-    }
-    if let Some(var_18) = &input.network_interfaces_to_update {
-        let mut array_19 = object.key("networkInterfacesToUpdate").start_array();
-        for item_20 in var_18 {
+    if let Some(var_13) = &input.network_interfaces_to_add {
+        let mut array_14 = object.key("networkInterfacesToAdd").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_19.finish();
+        array_14.finish();
     }
-    if let Some(var_22) = &input.network_interfaces_to_remove {
-        let mut array_23 = object.key("networkInterfacesToRemove").start_array();
-        for item_24 in var_22 {
+    if let Some(var_17) = &input.network_interfaces_to_update {
+        let mut array_18 = object.key("networkInterfacesToUpdate").start_array();
+        for item_19 in var_17 {
             {
-                array_23.value().string(item_24.as_str());
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_23.finish();
+        array_18.finish();
     }
-    if let Some(var_25) = &input.status {
-        object.key("status").string(var_25.as_str());
+    if let Some(var_21) = &input.network_interfaces_to_remove {
+        let mut array_22 = object.key("networkInterfacesToRemove").start_array();
+        for item_23 in var_21 {
+            {
+                array_22.value().string(item_23.as_str());
+            }
+        }
+        array_22.finish();
+    }
+    if let Some(var_24) = &input.status {
+        object.key("status").string(var_24.as_str());
     }
     Ok(())
 }

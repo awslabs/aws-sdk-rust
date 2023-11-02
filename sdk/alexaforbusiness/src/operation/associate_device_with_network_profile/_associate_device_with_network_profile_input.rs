@@ -34,6 +34,7 @@ pub struct AssociateDeviceWithNetworkProfileInputBuilder {
 }
 impl AssociateDeviceWithNetworkProfileInputBuilder {
     /// <p>The device ARN.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateDeviceWithNetworkProfileInputBuilder {
         &self.device_arn
     }
     /// <p>The ARN of the network profile to associate with a device.</p>
+    /// This field is required.
     pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self

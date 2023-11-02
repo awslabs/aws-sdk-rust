@@ -20,20 +20,26 @@ impl CreateEdgeDeploymentPlanInput {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>List of models associated with the edge deployment plan.</p>
-    pub fn model_configs(&self) -> ::std::option::Option<&[crate::types::EdgeDeploymentModelConfig]> {
-        self.model_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_configs.is_none()`.
+    pub fn model_configs(&self) -> &[crate::types::EdgeDeploymentModelConfig] {
+        self.model_configs.as_deref().unwrap_or_default()
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
     pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
-    pub fn stages(&self) -> ::std::option::Option<&[crate::types::DeploymentStage]> {
-        self.stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stages.is_none()`.
+    pub fn stages(&self) -> &[crate::types::DeploymentStage] {
+        self.stages.as_deref().unwrap_or_default()
     }
     /// <p>List of tags with which to tag the edge deployment plan.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateEdgeDeploymentPlanInput {
@@ -55,6 +61,7 @@ pub struct CreateEdgeDeploymentPlanInputBuilder {
 }
 impl CreateEdgeDeploymentPlanInputBuilder {
     /// <p>The name of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +96,7 @@ impl CreateEdgeDeploymentPlanInputBuilder {
         &self.model_configs
     }
     /// <p>The device fleet used for this edge deployment plan.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

@@ -62,6 +62,7 @@ pub struct StartFaceSearchInputBuilder {
 }
 impl StartFaceSearchInputBuilder {
     /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -104,6 +105,7 @@ impl StartFaceSearchInputBuilder {
         &self.face_match_threshold
     }
     /// <p>ID of the collection that contains the faces you want to search for.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self

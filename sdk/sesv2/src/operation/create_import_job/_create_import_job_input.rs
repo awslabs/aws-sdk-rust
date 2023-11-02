@@ -35,6 +35,7 @@ pub struct CreateImportJobInputBuilder {
 }
 impl CreateImportJobInputBuilder {
     /// <p>The destination for the import job.</p>
+    /// This field is required.
     pub fn import_destination(mut self, input: crate::types::ImportDestination) -> Self {
         self.import_destination = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CreateImportJobInputBuilder {
         &self.import_destination
     }
     /// <p>The data source for the import job.</p>
+    /// This field is required.
     pub fn import_data_source(mut self, input: crate::types::ImportDataSource) -> Self {
         self.import_data_source = ::std::option::Option::Some(input);
         self

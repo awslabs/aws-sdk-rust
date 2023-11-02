@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlResponseDetails {
     /// <p>The name for the asset associated with this import job.</p>
-    pub asset_name: ::std::option::Option<::std::string::String>,
+    pub asset_name: ::std::string::String,
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
     pub md5_hash: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this import response.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
     /// <p>The signed URL.</p>
     pub signed_url: ::std::option::Option<::std::string::String>,
     /// <p>The time and date at which the signed URL expires, in ISO 8601 format.</p>
@@ -19,20 +19,23 @@ pub struct ImportAssetFromSignedUrlResponseDetails {
 }
 impl ImportAssetFromSignedUrlResponseDetails {
     /// <p>The name for the asset associated with this import job.</p>
-    pub fn asset_name(&self) -> ::std::option::Option<&str> {
-        self.asset_name.as_deref()
+    pub fn asset_name(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_name.deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
     pub fn md5_hash(&self) -> ::std::option::Option<&str> {
         self.md5_hash.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this import response.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
     /// <p>The signed URL.</p>
     pub fn signed_url(&self) -> ::std::option::Option<&str> {
@@ -63,6 +66,7 @@ pub struct ImportAssetFromSignedUrlResponseDetailsBuilder {
 }
 impl ImportAssetFromSignedUrlResponseDetailsBuilder {
     /// <p>The name for the asset associated with this import job.</p>
+    /// This field is required.
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl ImportAssetFromSignedUrlResponseDetailsBuilder {
         &self.asset_name
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl ImportAssetFromSignedUrlResponseDetailsBuilder {
         &self.md5_hash
     }
     /// <p>The unique identifier for the revision associated with this import response.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +153,35 @@ impl ImportAssetFromSignedUrlResponseDetailsBuilder {
         &self.signed_url_expires_at
     }
     /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlResponseDetails`](crate::types::ImportAssetFromSignedUrlResponseDetails).
-    pub fn build(self) -> crate::types::ImportAssetFromSignedUrlResponseDetails {
-        crate::types::ImportAssetFromSignedUrlResponseDetails {
-            asset_name: self.asset_name,
-            data_set_id: self.data_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_name`](crate::types::builders::ImportAssetFromSignedUrlResponseDetailsBuilder::asset_name)
+    /// - [`data_set_id`](crate::types::builders::ImportAssetFromSignedUrlResponseDetailsBuilder::data_set_id)
+    /// - [`revision_id`](crate::types::builders::ImportAssetFromSignedUrlResponseDetailsBuilder::revision_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ImportAssetFromSignedUrlResponseDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportAssetFromSignedUrlResponseDetails {
+            asset_name: self.asset_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_name",
+                    "asset_name was not specified but it is required when building ImportAssetFromSignedUrlResponseDetails",
+                )
+            })?,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building ImportAssetFromSignedUrlResponseDetails",
+                )
+            })?,
             md5_hash: self.md5_hash,
-            revision_id: self.revision_id,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building ImportAssetFromSignedUrlResponseDetails",
+                )
+            })?,
             signed_url: self.signed_url,
             signed_url_expires_at: self.signed_url_expires_at,
-        }
+        })
     }
 }

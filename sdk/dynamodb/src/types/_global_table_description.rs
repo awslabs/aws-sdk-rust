@@ -23,8 +23,10 @@ pub struct GlobalTableDescription {
 }
 impl GlobalTableDescription {
     /// <p>The Regions where the global table has replicas.</p>
-    pub fn replication_group(&self) -> ::std::option::Option<&[crate::types::ReplicaDescription]> {
-        self.replication_group.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group.is_none()`.
+    pub fn replication_group(&self) -> &[crate::types::ReplicaDescription] {
+        self.replication_group.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of the global table.</p>
     pub fn global_table_arn(&self) -> ::std::option::Option<&str> {

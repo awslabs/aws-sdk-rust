@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
     pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags for the target resources.</p>
@@ -13,30 +13,36 @@ pub struct UpdateExperimentTemplateTargetInput {
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    pub selection_mode: ::std::option::Option<::std::string::String>,
+    pub selection_mode: ::std::string::String,
     /// <p>The resource type parameters.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        self.resource_arns.as_deref().unwrap_or_default()
     }
     /// <p>The tags for the target resources.</p>
     pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ExperimentTemplateTargetInputFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ExperimentTemplateTargetInputFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    pub fn selection_mode(&self) -> ::std::option::Option<&str> {
-        self.selection_mode.as_deref()
+    pub fn selection_mode(&self) -> &str {
+        use std::ops::Deref;
+        self.selection_mode.deref()
     }
     /// <p>The resource type parameters.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -63,6 +69,7 @@ pub struct UpdateExperimentTemplateTargetInputBuilder {
 }
 impl UpdateExperimentTemplateTargetInputBuilder {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +147,7 @@ impl UpdateExperimentTemplateTargetInputBuilder {
         &self.filters
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
+    /// This field is required.
     pub fn selection_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_mode = ::std::option::Option::Some(input.into());
         self
@@ -174,14 +182,27 @@ impl UpdateExperimentTemplateTargetInputBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateTargetInput`](crate::types::UpdateExperimentTemplateTargetInput).
-    pub fn build(self) -> crate::types::UpdateExperimentTemplateTargetInput {
-        crate::types::UpdateExperimentTemplateTargetInput {
-            resource_type: self.resource_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::UpdateExperimentTemplateTargetInputBuilder::resource_type)
+    /// - [`selection_mode`](crate::types::builders::UpdateExperimentTemplateTargetInputBuilder::selection_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateExperimentTemplateTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateExperimentTemplateTargetInput {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building UpdateExperimentTemplateTargetInput",
+                )
+            })?,
             resource_arns: self.resource_arns,
             resource_tags: self.resource_tags,
             filters: self.filters,
-            selection_mode: self.selection_mode,
+            selection_mode: self.selection_mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "selection_mode",
+                    "selection_mode was not specified but it is required when building UpdateExperimentTemplateTargetInput",
+                )
+            })?,
             parameters: self.parameters,
-        }
+        })
     }
 }

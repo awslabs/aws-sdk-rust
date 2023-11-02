@@ -3,17 +3,17 @@ pub fn ser_cognito_user_pool_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CognitoUserPoolConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.user_pool_arn {
-        object.key("userPoolArn").string(var_1.as_str());
+    {
+        object.key("userPoolArn").string(input.user_pool_arn.as_str());
     }
-    if let Some(var_2) = &input.client_ids {
-        let mut array_3 = object.key("clientIds").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.client_ids {
+        let mut array_2 = object.key("clientIds").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }

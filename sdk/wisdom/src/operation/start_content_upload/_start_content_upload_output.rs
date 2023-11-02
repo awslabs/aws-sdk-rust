@@ -4,31 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartContentUploadOutput {
     /// <p>The identifier of the upload.</p>
-    pub upload_id: ::std::option::Option<::std::string::String>,
+    pub upload_id: ::std::string::String,
     /// <p>The URL of the upload.</p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub url_expiry: ::aws_smithy_types::DateTime,
     /// <p>The headers to include in the upload.</p>
-    pub headers_to_include: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub headers_to_include: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartContentUploadOutput {
     /// <p>The identifier of the upload.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
-        self.upload_id.as_deref()
+    pub fn upload_id(&self) -> &str {
+        use std::ops::Deref;
+        self.upload_id.deref()
     }
     /// <p>The URL of the upload.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.url_expiry.as_ref()
+    pub fn url_expiry(&self) -> &::aws_smithy_types::DateTime {
+        &self.url_expiry
     }
     /// <p>The headers to include in the upload.</p>
-    pub fn headers_to_include(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.headers_to_include.as_ref()
+    pub fn headers_to_include(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.headers_to_include
     }
 }
 impl ::std::fmt::Debug for StartContentUploadOutput {
@@ -66,6 +68,7 @@ pub struct StartContentUploadOutputBuilder {
 }
 impl StartContentUploadOutputBuilder {
     /// <p>The identifier of the upload.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl StartContentUploadOutputBuilder {
         &self.upload_id
     }
     /// <p>The URL of the upload.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +98,7 @@ impl StartContentUploadOutputBuilder {
         &self.url
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    /// This field is required.
     pub fn url_expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.url_expiry = ::std::option::Option::Some(input);
         self
@@ -144,14 +149,42 @@ impl StartContentUploadOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartContentUploadOutput`](crate::operation::start_content_upload::StartContentUploadOutput).
-    pub fn build(self) -> crate::operation::start_content_upload::StartContentUploadOutput {
-        crate::operation::start_content_upload::StartContentUploadOutput {
-            upload_id: self.upload_id,
-            url: self.url,
-            url_expiry: self.url_expiry,
-            headers_to_include: self.headers_to_include,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`upload_id`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::upload_id)
+    /// - [`url`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::url)
+    /// - [`url_expiry`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::url_expiry)
+    /// - [`headers_to_include`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::headers_to_include)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_content_upload::StartContentUploadOutput {
+            upload_id: self.upload_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upload_id",
+                    "upload_id was not specified but it is required when building StartContentUploadOutput",
+                )
+            })?,
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building StartContentUploadOutput",
+                )
+            })?,
+            url_expiry: self.url_expiry.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url_expiry",
+                    "url_expiry was not specified but it is required when building StartContentUploadOutput",
+                )
+            })?,
+            headers_to_include: self.headers_to_include.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "headers_to_include",
+                    "headers_to_include was not specified but it is required when building StartContentUploadOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for StartContentUploadOutputBuilder {

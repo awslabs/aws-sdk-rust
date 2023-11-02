@@ -34,6 +34,7 @@ pub struct DeleteModelInputBuilder {
 }
 impl DeleteModelInputBuilder {
     /// <p>The model ID of the model to delete.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteModelInputBuilder {
         &self.model_id
     }
     /// <p>The model type of the model to delete.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self

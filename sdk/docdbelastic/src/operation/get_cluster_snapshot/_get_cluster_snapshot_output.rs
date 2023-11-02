@@ -34,6 +34,7 @@ pub struct GetClusterSnapshotOutputBuilder {
 }
 impl GetClusterSnapshotOutputBuilder {
     /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+    /// This field is required.
     pub fn snapshot(mut self, input: crate::types::ClusterSnapshot) -> Self {
         self.snapshot = ::std::option::Option::Some(input);
         self

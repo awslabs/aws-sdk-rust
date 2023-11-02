@@ -41,6 +41,7 @@ pub struct RemoveProfilePermissionInputBuilder {
 }
 impl RemoveProfilePermissionInputBuilder {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RemoveProfilePermissionInputBuilder {
         &self.profile_name
     }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl RemoveProfilePermissionInputBuilder {
         &self.revision_id
     }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
+    /// This field is required.
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
         self

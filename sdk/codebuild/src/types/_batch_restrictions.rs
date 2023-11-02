@@ -15,8 +15,10 @@ impl BatchRestrictions {
         self.maximum_builds_allowed
     }
     /// <p>An array of strings that specify the compute types that are allowed for the batch build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild User Guide</i> for these values. </p>
-    pub fn compute_types_allowed(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.compute_types_allowed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_types_allowed.is_none()`.
+    pub fn compute_types_allowed(&self) -> &[::std::string::String] {
+        self.compute_types_allowed.as_deref().unwrap_or_default()
     }
 }
 impl BatchRestrictions {

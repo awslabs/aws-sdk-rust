@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NullValueFormatConfiguration {
     /// <p>Determines the null string of null values.</p>
-    pub null_string: ::std::option::Option<::std::string::String>,
+    pub null_string: ::std::string::String,
 }
 impl NullValueFormatConfiguration {
     /// <p>Determines the null string of null values.</p>
-    pub fn null_string(&self) -> ::std::option::Option<&str> {
-        self.null_string.as_deref()
+    pub fn null_string(&self) -> &str {
+        use std::ops::Deref;
+        self.null_string.deref()
     }
 }
 impl ::std::fmt::Debug for NullValueFormatConfiguration {
@@ -35,6 +36,7 @@ pub struct NullValueFormatConfigurationBuilder {
 }
 impl NullValueFormatConfigurationBuilder {
     /// <p>Determines the null string of null values.</p>
+    /// This field is required.
     pub fn null_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.null_string = ::std::option::Option::Some(input.into());
         self
@@ -49,10 +51,17 @@ impl NullValueFormatConfigurationBuilder {
         &self.null_string
     }
     /// Consumes the builder and constructs a [`NullValueFormatConfiguration`](crate::types::NullValueFormatConfiguration).
-    pub fn build(self) -> crate::types::NullValueFormatConfiguration {
-        crate::types::NullValueFormatConfiguration {
-            null_string: self.null_string,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`null_string`](crate::types::builders::NullValueFormatConfigurationBuilder::null_string)
+    pub fn build(self) -> ::std::result::Result<crate::types::NullValueFormatConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NullValueFormatConfiguration {
+            null_string: self.null_string.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "null_string",
+                    "null_string was not specified but it is required when building NullValueFormatConfiguration",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for NullValueFormatConfigurationBuilder {

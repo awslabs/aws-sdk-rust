@@ -3,26 +3,26 @@ pub fn ser_entitlement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Entitlement,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.value {
-        object.key("Value").string(var_2.as_str());
+    if let Some(var_1) = &input.value {
+        object.key("Value").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.max_count {
+    if let Some(var_2) = &input.max_count {
         object.key("MaxCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_4) = &input.overage {
-        object.key("Overage").boolean(*var_4);
+    if let Some(var_3) = &input.overage {
+        object.key("Overage").boolean(*var_3);
     }
-    if let Some(var_5) = &input.unit {
-        object.key("Unit").string(var_5.as_str());
+    {
+        object.key("Unit").string(input.unit.as_str());
     }
-    if let Some(var_6) = &input.allow_check_in {
-        object.key("AllowCheckIn").boolean(*var_6);
+    if let Some(var_4) = &input.allow_check_in {
+        object.key("AllowCheckIn").boolean(*var_4);
     }
     Ok(())
 }
@@ -86,7 +86,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::entitlement_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

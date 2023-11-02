@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub target_group_identifier: ::std::option::Option<::std::string::String>,
+    pub target_group_identifier: ::std::string::String,
 }
 impl DeleteTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
-        self.target_group_identifier.as_deref()
+    pub fn target_group_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.target_group_identifier.deref()
     }
 }
 impl DeleteTargetGroupInput {
@@ -27,6 +28,7 @@ pub struct DeleteTargetGroupInputBuilder {
 }
 impl DeleteTargetGroupInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteTargetGroupInputBuilder {
         &self.target_group_identifier
     }
     /// Consumes the builder and constructs a [`DeleteTargetGroupInput`](crate::operation::delete_target_group::DeleteTargetGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_group_identifier`](crate::operation::delete_target_group::builders::DeleteTargetGroupInputBuilder::target_group_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_target_group::DeleteTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_target_group::DeleteTargetGroupInput {
-            target_group_identifier: self.target_group_identifier,
+            target_group_identifier: self.target_group_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_group_identifier",
+                    "target_group_identifier was not specified but it is required when building DeleteTargetGroupInput",
+                )
+            })?,
         })
     }
 }

@@ -41,6 +41,7 @@ pub struct ListNodegroupsInputBuilder {
 }
 impl ListNodegroupsInputBuilder {
     /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self

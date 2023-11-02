@@ -131,20 +131,26 @@ impl StepExecution {
         self.is_critical
     }
     /// <p>Strategies used when step fails, we support Continue and Abort. Abort will fail the automation when the step fails. Continue will ignore the failure of current step and allow automation to run the next step. With conditional branching, we add step:stepName to support the automation to go to another specific step.</p>
-    pub fn valid_next_steps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.valid_next_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_next_steps.is_none()`.
+    pub fn valid_next_steps(&self) -> &[::std::string::String] {
+        self.valid_next_steps.as_deref().unwrap_or_default()
     }
     /// <p>The targets for the step execution.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
     pub fn target_location(&self) -> ::std::option::Option<&crate::types::TargetLocation> {
         self.target_location.as_ref()
     }
     /// <p>The CloudWatch alarms that were invoked by the automation.</p>
-    pub fn triggered_alarms(&self) -> ::std::option::Option<&[crate::types::AlarmStateInformation]> {
-        self.triggered_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
+    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref().unwrap_or_default()
     }
 }
 impl StepExecution {

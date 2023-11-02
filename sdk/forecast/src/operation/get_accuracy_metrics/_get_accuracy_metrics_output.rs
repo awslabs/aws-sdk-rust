@@ -19,8 +19,10 @@ pub struct GetAccuracyMetricsOutput {
 }
 impl GetAccuracyMetricsOutput {
     /// <p>An array of results from evaluating the predictor.</p>
-    pub fn predictor_evaluation_results(&self) -> ::std::option::Option<&[crate::types::EvaluationResult]> {
-        self.predictor_evaluation_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predictor_evaluation_results.is_none()`.
+    pub fn predictor_evaluation_results(&self) -> &[crate::types::EvaluationResult] {
+        self.predictor_evaluation_results.as_deref().unwrap_or_default()
     }
     /// <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
     pub fn is_auto_predictor(&self) -> ::std::option::Option<bool> {

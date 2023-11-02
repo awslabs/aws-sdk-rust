@@ -34,6 +34,7 @@ pub struct SearchVulnerabilitiesInputBuilder {
 }
 impl SearchVulnerabilitiesInputBuilder {
     /// <p>The criteria used to filter the results of a vulnerability search.</p>
+    /// This field is required.
     pub fn filter_criteria(mut self, input: crate::types::SearchVulnerabilitiesFilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
         self

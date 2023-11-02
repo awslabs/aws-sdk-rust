@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNetworkConfigurationInput {
     /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl UpdateNetworkConfigurationInput {
     /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
 }
 impl UpdateNetworkConfigurationInput {
@@ -48,9 +49,16 @@ impl UpdateNetworkConfigurationInputBuilder {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`UpdateNetworkConfigurationInput`](crate::types::UpdateNetworkConfigurationInput).
-    pub fn build(self) -> crate::types::UpdateNetworkConfigurationInput {
-        crate::types::UpdateNetworkConfigurationInput {
-            security_group_ids: self.security_group_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`security_group_ids`](crate::types::builders::UpdateNetworkConfigurationInputBuilder::security_group_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateNetworkConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateNetworkConfigurationInput {
+            security_group_ids: self.security_group_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "security_group_ids",
+                    "security_group_ids was not specified but it is required when building UpdateNetworkConfigurationInput",
+                )
+            })?,
+        })
     }
 }

@@ -51,6 +51,7 @@ pub struct ProductionVariantCoreDumpConfigBuilder {
 }
 impl ProductionVariantCoreDumpConfigBuilder {
     /// <p>The Amazon S3 bucket to send the core dump to.</p>
+    /// This field is required.
     pub fn destination_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self

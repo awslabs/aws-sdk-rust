@@ -35,6 +35,7 @@ pub struct AudioLogSettingBuilder {
 }
 impl AudioLogSettingBuilder {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AudioLogSettingBuilder {
         &self.enabled
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::AudioLogDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

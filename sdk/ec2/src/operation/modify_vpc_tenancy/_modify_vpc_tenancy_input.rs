@@ -41,6 +41,7 @@ pub struct ModifyVpcTenancyInputBuilder {
 }
 impl ModifyVpcTenancyInputBuilder {
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ModifyVpcTenancyInputBuilder {
         &self.vpc_id
     }
     /// <p>The instance tenancy attribute for the VPC. </p>
+    /// This field is required.
     pub fn instance_tenancy(mut self, input: crate::types::VpcTenancy) -> Self {
         self.instance_tenancy = ::std::option::Option::Some(input);
         self

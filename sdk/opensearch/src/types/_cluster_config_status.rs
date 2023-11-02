@@ -35,6 +35,7 @@ pub struct ClusterConfigStatusBuilder {
 }
 impl ClusterConfigStatusBuilder {
     /// <p>Cluster configuration options for the specified domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::ClusterConfig) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ClusterConfigStatusBuilder {
         &self.options
     }
     /// <p>The status of cluster configuration options for the specified domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DescribeAutoMlJobInputBuilder {
 }
 impl DescribeAutoMlJobInputBuilder {
     /// <p>Requests information about an AutoML job using its unique name.</p>
+    /// This field is required.
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self

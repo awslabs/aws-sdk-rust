@@ -75,8 +75,10 @@ impl DescribeIndexOutput {
         self.updated_at.as_ref()
     }
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn document_metadata_configurations(&self) -> ::std::option::Option<&[crate::types::DocumentMetadataConfiguration]> {
-        self.document_metadata_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_metadata_configurations.is_none()`.
+    pub fn document_metadata_configurations(&self) -> &[crate::types::DocumentMetadataConfiguration] {
+        self.document_metadata_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
     pub fn index_statistics(&self) -> ::std::option::Option<&crate::types::IndexStatistics> {
@@ -91,8 +93,10 @@ impl DescribeIndexOutput {
         self.capacity_units.as_ref()
     }
     /// <p>The user token configuration for the Amazon Kendra index.</p>
-    pub fn user_token_configurations(&self) -> ::std::option::Option<&[crate::types::UserTokenConfiguration]> {
-        self.user_token_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_token_configurations.is_none()`.
+    pub fn user_token_configurations(&self) -> &[crate::types::UserTokenConfiguration] {
+        self.user_token_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub fn user_context_policy(&self) -> ::std::option::Option<&crate::types::UserContextPolicy> {

@@ -27,6 +27,7 @@ pub struct DescribeScheduledAuditInputBuilder {
 }
 impl DescribeScheduledAuditInputBuilder {
     /// <p>The name of the scheduled audit whose information you want to get.</p>
+    /// This field is required.
     pub fn scheduled_audit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_audit_name = ::std::option::Option::Some(input.into());
         self

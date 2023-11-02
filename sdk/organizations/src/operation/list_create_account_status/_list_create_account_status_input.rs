@@ -12,8 +12,10 @@ pub struct ListCreateAccountStatusInput {
 }
 impl ListCreateAccountStatusInput {
     /// <p>A list of one or more states that you want included in the response. If this parameter isn't present, all requests are included in the response.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::CreateAccountState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::CreateAccountState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

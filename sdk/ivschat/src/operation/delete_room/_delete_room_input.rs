@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRoomInput {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
 }
 impl DeleteRoomInput {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
 }
 impl DeleteRoomInput {
@@ -27,6 +28,7 @@ pub struct DeleteRoomInputBuilder {
 }
 impl DeleteRoomInputBuilder {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl DeleteRoomInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteRoomInput`](crate::operation::delete_room::DeleteRoomInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::operation::delete_room::builders::DeleteRoomInputBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_room::DeleteRoomInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_room::DeleteRoomInput { identifier: self.identifier })
+        ::std::result::Result::Ok(crate::operation::delete_room::DeleteRoomInput {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building DeleteRoomInput",
+                )
+            })?,
+        })
     }
 }

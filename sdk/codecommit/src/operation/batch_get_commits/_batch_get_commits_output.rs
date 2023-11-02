@@ -11,12 +11,16 @@ pub struct BatchGetCommitsOutput {
 }
 impl BatchGetCommitsOutput {
     /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
-    pub fn commits(&self) -> ::std::option::Option<&[crate::types::Commit]> {
-        self.commits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commits.is_none()`.
+    pub fn commits(&self) -> &[crate::types::Commit] {
+        self.commits.as_deref().unwrap_or_default()
     }
     /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchGetCommitsError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchGetCommitsError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetCommitsOutput {

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledQuery {
     /// <p>The Amazon Resource Name.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the scheduled query.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The creation time of the scheduled query.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>State of scheduled query. </p>
-    pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
+    pub state: crate::types::ScheduledQueryState,
     /// <p>The last time the scheduled query was run.</p>
     pub previous_invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The next time the scheduled query is to be run.</p>
@@ -25,20 +25,22 @@ pub struct ScheduledQuery {
 }
 impl ScheduledQuery {
     /// <p>The Amazon Resource Name.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the scheduled query.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The creation time of the scheduled query.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>State of scheduled query. </p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::ScheduledQueryState {
+        &self.state
     }
     /// <p>The last time the scheduled query was run.</p>
     pub fn previous_invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -84,6 +86,7 @@ pub struct ScheduledQueryBuilder {
 }
 impl ScheduledQueryBuilder {
     /// <p>The Amazon Resource Name.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl ScheduledQueryBuilder {
         &self.arn
     }
     /// <p>The name of the scheduled query.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl ScheduledQueryBuilder {
         &self.creation_time
     }
     /// <p>State of scheduled query. </p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -210,17 +215,36 @@ impl ScheduledQueryBuilder {
         &self.last_run_status
     }
     /// Consumes the builder and constructs a [`ScheduledQuery`](crate::types::ScheduledQuery).
-    pub fn build(self) -> crate::types::ScheduledQuery {
-        crate::types::ScheduledQuery {
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ScheduledQueryBuilder::arn)
+    /// - [`name`](crate::types::builders::ScheduledQueryBuilder::name)
+    /// - [`state`](crate::types::builders::ScheduledQueryBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledQuery, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduledQuery {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ScheduledQuery",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ScheduledQuery",
+                )
+            })?,
             creation_time: self.creation_time,
-            state: self.state,
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building ScheduledQuery",
+                )
+            })?,
             previous_invocation_time: self.previous_invocation_time,
             next_invocation_time: self.next_invocation_time,
             error_report_configuration: self.error_report_configuration,
             target_destination: self.target_destination,
             last_run_status: self.last_run_status,
-        }
+        })
     }
 }

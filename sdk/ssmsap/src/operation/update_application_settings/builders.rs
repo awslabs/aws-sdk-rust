@@ -92,14 +92,14 @@ impl UpdateApplicationSettingsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::update_application_settings::UpdateApplicationSettingsOutput,
             crate::operation::update_application_settings::UpdateApplicationSettingsError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::update_application_settings::UpdateApplicationSettingsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -173,5 +173,19 @@ impl UpdateApplicationSettingsFluentBuilder {
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub fn get_backint(&self) -> &::std::option::Option<crate::types::BackintConfig> {
         self.inner.get_backint()
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.database_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_database_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_arn()
     }
 }

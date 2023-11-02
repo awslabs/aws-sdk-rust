@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub team_id: ::std::option::Option<::std::string::String>,
+    pub team_id: ::std::string::String,
     /// <p>The name of the Slack workspace.</p>
     pub team_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
@@ -13,8 +13,9 @@ pub struct SlackWorkspaceConfiguration {
 }
 impl SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
-        self.team_id.as_deref()
+    pub fn team_id(&self) -> &str {
+        use std::ops::Deref;
+        self.team_id.deref()
     }
     /// <p>The name of the Slack workspace.</p>
     pub fn team_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct SlackWorkspaceConfigurationBuilder {
 }
 impl SlackWorkspaceConfigurationBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    /// This field is required.
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl SlackWorkspaceConfigurationBuilder {
         &self.allow_organization_member_account
     }
     /// Consumes the builder and constructs a [`SlackWorkspaceConfiguration`](crate::types::SlackWorkspaceConfiguration).
-    pub fn build(self) -> crate::types::SlackWorkspaceConfiguration {
-        crate::types::SlackWorkspaceConfiguration {
-            team_id: self.team_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`team_id`](crate::types::builders::SlackWorkspaceConfigurationBuilder::team_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlackWorkspaceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlackWorkspaceConfiguration {
+            team_id: self.team_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "team_id",
+                    "team_id was not specified but it is required when building SlackWorkspaceConfiguration",
+                )
+            })?,
             team_name: self.team_name,
             allow_organization_member_account: self.allow_organization_member_account,
-        }
+        })
     }
 }

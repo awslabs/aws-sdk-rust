@@ -52,6 +52,7 @@ pub struct StopPipelineExecutionInputBuilder {
 }
 impl StopPipelineExecutionInputBuilder {
     /// <p>The name of the pipeline to stop.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl StopPipelineExecutionInputBuilder {
         &self.pipeline_name
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
+    /// This field is required.
     pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self

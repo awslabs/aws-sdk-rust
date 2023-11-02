@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
-    pub dataset_name: ::std::option::Option<::std::string::String>,
+    pub dataset_name: ::std::string::String,
 }
 impl DatasetContentVersionValue {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
-        self.dataset_name.as_deref()
+    pub fn dataset_name(&self) -> &str {
+        use std::ops::Deref;
+        self.dataset_name.deref()
     }
 }
 impl DatasetContentVersionValue {
@@ -28,6 +29,7 @@ pub struct DatasetContentVersionValueBuilder {
 }
 impl DatasetContentVersionValueBuilder {
     /// <p>The name of the dataset whose latest contents are used as input to the notebook or application.</p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl DatasetContentVersionValueBuilder {
         &self.dataset_name
     }
     /// Consumes the builder and constructs a [`DatasetContentVersionValue`](crate::types::DatasetContentVersionValue).
-    pub fn build(self) -> crate::types::DatasetContentVersionValue {
-        crate::types::DatasetContentVersionValue {
-            dataset_name: self.dataset_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dataset_name`](crate::types::builders::DatasetContentVersionValueBuilder::dataset_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetContentVersionValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatasetContentVersionValue {
+            dataset_name: self.dataset_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dataset_name",
+                    "dataset_name was not specified but it is required when building DatasetContentVersionValue",
+                )
+            })?,
+        })
     }
 }

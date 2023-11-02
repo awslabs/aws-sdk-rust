@@ -57,12 +57,16 @@ impl EventSubscription {
         self.source_type.as_deref()
     }
     /// <p>A list of source IDs for the Amazon DocumentDB event notification subscription.</p>
-    pub fn source_ids_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ids_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids_list.is_none()`.
+    pub fn source_ids_list(&self) -> &[::std::string::String] {
+        self.source_ids_list.as_deref().unwrap_or_default()
     }
     /// <p>A list of event categories for the Amazon DocumentDB event notification subscription.</p>
-    pub fn event_categories_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories_list.is_none()`.
+    pub fn event_categories_list(&self) -> &[::std::string::String] {
+        self.event_categories_list.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean value indicating whether the subscription is enabled. A value of <code>true</code> indicates that the subscription is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {

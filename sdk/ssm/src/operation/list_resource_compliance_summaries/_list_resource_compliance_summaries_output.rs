@@ -11,8 +11,10 @@ pub struct ListResourceComplianceSummariesOutput {
 }
 impl ListResourceComplianceSummariesOutput {
     /// <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
-    pub fn resource_compliance_summary_items(&self) -> ::std::option::Option<&[crate::types::ResourceComplianceSummaryItem]> {
-        self.resource_compliance_summary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_compliance_summary_items.is_none()`.
+    pub fn resource_compliance_summary_items(&self) -> &[crate::types::ResourceComplianceSummaryItem] {
+        self.resource_compliance_summary_items.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

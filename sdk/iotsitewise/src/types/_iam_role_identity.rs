@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamRoleIdentity {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl IamRoleIdentity {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl IamRoleIdentity {
@@ -28,6 +29,7 @@ pub struct IamRoleIdentityBuilder {
 }
 impl IamRoleIdentityBuilder {
     /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl IamRoleIdentityBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`IamRoleIdentity`](crate::types::IamRoleIdentity).
-    pub fn build(self) -> crate::types::IamRoleIdentity {
-        crate::types::IamRoleIdentity { arn: self.arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::IamRoleIdentityBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IamRoleIdentity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IamRoleIdentity {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building IamRoleIdentity",
+                )
+            })?,
+        })
     }
 }

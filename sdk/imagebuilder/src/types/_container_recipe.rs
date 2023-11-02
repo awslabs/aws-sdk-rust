@@ -127,8 +127,10 @@ impl ContainerRecipe {
         self.version.as_deref()
     }
     /// <p>Build and test components that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn components(&self) -> ::std::option::Option<&[crate::types::ComponentConfiguration]> {
-        self.components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
+    pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
+        self.components.as_deref().unwrap_or_default()
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
     pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {

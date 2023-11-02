@@ -3,14 +3,14 @@ pub fn ser_symmetric_encryption_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SymmetricEncryptionAttributes,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mode {
-        object.key("Mode").string(var_1.as_str());
+    {
+        object.key("Mode").string(input.mode.as_str());
     }
-    if let Some(var_2) = &input.initialization_vector {
-        object.key("InitializationVector").string(var_2.as_str());
+    if let Some(var_1) = &input.initialization_vector {
+        object.key("InitializationVector").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.padding_type {
-        object.key("PaddingType").string(var_3.as_str());
+    if let Some(var_2) = &input.padding_type {
+        object.key("PaddingType").string(var_2.as_str());
     }
     Ok(())
 }

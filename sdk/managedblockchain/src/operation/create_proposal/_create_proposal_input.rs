@@ -66,6 +66,7 @@ pub struct CreateProposalInputBuilder {
 }
 impl CreateProposalInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +81,7 @@ impl CreateProposalInputBuilder {
         &self.client_request_token
     }
     /// <p> The unique identifier of the network for which the proposal is made.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl CreateProposalInputBuilder {
         &self.network_id
     }
     /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.</p>
+    /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +111,7 @@ impl CreateProposalInputBuilder {
         &self.member_id
     }
     /// <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
+    /// This field is required.
     pub fn actions(mut self, input: crate::types::ProposalActions) -> Self {
         self.actions = ::std::option::Option::Some(input);
         self

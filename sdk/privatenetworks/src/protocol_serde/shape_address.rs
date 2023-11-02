@@ -3,38 +3,38 @@ pub fn ser_address(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Address,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.city {
-        object.key("city").string(var_1.as_str());
+    {
+        object.key("city").string(input.city.as_str());
     }
-    if let Some(var_2) = &input.company {
-        object.key("company").string(var_2.as_str());
+    if let Some(var_1) = &input.company {
+        object.key("company").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.country {
-        object.key("country").string(var_3.as_str());
+    {
+        object.key("country").string(input.country.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_5) = &input.phone_number {
-        object.key("phoneNumber").string(var_5.as_str());
+    if let Some(var_2) = &input.phone_number {
+        object.key("phoneNumber").string(var_2.as_str());
     }
-    if let Some(var_6) = &input.postal_code {
-        object.key("postalCode").string(var_6.as_str());
+    {
+        object.key("postalCode").string(input.postal_code.as_str());
     }
-    if let Some(var_7) = &input.state_or_province {
-        object.key("stateOrProvince").string(var_7.as_str());
+    {
+        object.key("stateOrProvince").string(input.state_or_province.as_str());
     }
-    if let Some(var_8) = &input.street1 {
-        object.key("street1").string(var_8.as_str());
+    {
+        object.key("street1").string(input.street1.as_str());
     }
-    if let Some(var_9) = &input.street2 {
-        object.key("street2").string(var_9.as_str());
+    if let Some(var_3) = &input.street2 {
+        object.key("street2").string(var_3.as_str());
     }
-    if let Some(var_10) = &input.street3 {
-        object.key("street3").string(var_10.as_str());
+    if let Some(var_4) = &input.street3 {
+        object.key("street3").string(var_4.as_str());
     }
-    if let Some(var_11) = &input.email_address {
-        object.key("emailAddress").string(var_11.as_str());
+    if let Some(var_5) = &input.email_address {
+        object.key("emailAddress").string(var_5.as_str());
     }
     Ok(())
 }
@@ -141,7 +141,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::address_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

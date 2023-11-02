@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Account {
     /// <p>The AWS account ID.</p>
-    pub aws_account_id: ::std::option::Option<::std::string::String>,
+    pub aws_account_id: ::std::string::String,
     /// <p>The Amazon Chime account ID.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The Amazon Chime account name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     pub account_type: ::std::option::Option<crate::types::AccountType>,
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
@@ -25,16 +25,19 @@ pub struct Account {
 }
 impl Account {
     /// <p>The AWS account ID.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
-        self.aws_account_id.as_deref()
+    pub fn aws_account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.aws_account_id.deref()
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The Amazon Chime account name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     pub fn account_type(&self) -> ::std::option::Option<&crate::types::AccountType> {
@@ -49,16 +52,20 @@ impl Account {
         self.default_license.as_ref()
     }
     /// <p>Supported licenses for the Amazon Chime account.</p>
-    pub fn supported_licenses(&self) -> ::std::option::Option<&[crate::types::License]> {
-        self.supported_licenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_licenses.is_none()`.
+    pub fn supported_licenses(&self) -> &[crate::types::License] {
+        self.supported_licenses.as_deref().unwrap_or_default()
     }
     /// <p>The status of the account.</p>
     pub fn account_status(&self) -> ::std::option::Option<&crate::types::AccountStatus> {
         self.account_status.as_ref()
     }
     /// <p>The sign-in delegate groups associated with the account.</p>
-    pub fn signin_delegate_groups(&self) -> ::std::option::Option<&[crate::types::SigninDelegateGroup]> {
-        self.signin_delegate_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signin_delegate_groups.is_none()`.
+    pub fn signin_delegate_groups(&self) -> &[crate::types::SigninDelegateGroup] {
+        self.signin_delegate_groups.as_deref().unwrap_or_default()
     }
 }
 impl Account {
@@ -84,6 +91,7 @@ pub struct AccountBuilder {
 }
 impl AccountBuilder {
     /// <p>The AWS account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +106,7 @@ impl AccountBuilder {
         &self.aws_account_id
     }
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +121,7 @@ impl AccountBuilder {
         &self.account_id
     }
     /// <p>The Amazon Chime account name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -222,17 +232,36 @@ impl AccountBuilder {
         &self.signin_delegate_groups
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
-    pub fn build(self) -> crate::types::Account {
-        crate::types::Account {
-            aws_account_id: self.aws_account_id,
-            account_id: self.account_id,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`aws_account_id`](crate::types::builders::AccountBuilder::aws_account_id)
+    /// - [`account_id`](crate::types::builders::AccountBuilder::account_id)
+    /// - [`name`](crate::types::builders::AccountBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Account {
+            aws_account_id: self.aws_account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aws_account_id",
+                    "aws_account_id was not specified but it is required when building Account",
+                )
+            })?,
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building Account",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Account",
+                )
+            })?,
             account_type: self.account_type,
             created_timestamp: self.created_timestamp,
             default_license: self.default_license,
             supported_licenses: self.supported_licenses,
             account_status: self.account_status,
             signin_delegate_groups: self.signin_delegate_groups,
-        }
+        })
     }
 }

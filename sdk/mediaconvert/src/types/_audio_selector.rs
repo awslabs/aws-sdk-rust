@@ -59,8 +59,10 @@ impl AudioSelector {
         self.offset
     }
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
-    pub fn pids(&self) -> ::std::option::Option<&[i32]> {
-        self.pids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pids.is_none()`.
+    pub fn pids(&self) -> &[i32] {
+        self.pids.as_deref().unwrap_or_default()
     }
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
     pub fn program_selection(&self) -> ::std::option::Option<i32> {
@@ -75,8 +77,10 @@ impl AudioSelector {
         self.selector_type.as_ref()
     }
     /// Identify a track from the input audio to include in this selector by entering the track index number. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
-    pub fn tracks(&self) -> ::std::option::Option<&[i32]> {
-        self.tracks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tracks.is_none()`.
+    pub fn tracks(&self) -> &[i32] {
+        self.tracks.as_deref().unwrap_or_default()
     }
 }
 impl AudioSelector {

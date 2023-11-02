@@ -49,6 +49,7 @@ pub struct Scte35DeliveryRestrictionsBuilder {
 }
 impl Scte35DeliveryRestrictionsBuilder {
     /// Corresponds to SCTE-35 archive_allowed_flag.
+    /// This field is required.
     pub fn archive_allowed_flag(mut self, input: crate::types::Scte35ArchiveAllowedFlag) -> Self {
         self.archive_allowed_flag = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl Scte35DeliveryRestrictionsBuilder {
         &self.archive_allowed_flag
     }
     /// Corresponds to SCTE-35 device_restrictions parameter.
+    /// This field is required.
     pub fn device_restrictions(mut self, input: crate::types::Scte35DeviceRestrictions) -> Self {
         self.device_restrictions = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl Scte35DeliveryRestrictionsBuilder {
         &self.device_restrictions
     }
     /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
+    /// This field is required.
     pub fn no_regional_blackout_flag(mut self, input: crate::types::Scte35NoRegionalBlackoutFlag) -> Self {
         self.no_regional_blackout_flag = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl Scte35DeliveryRestrictionsBuilder {
         &self.no_regional_blackout_flag
     }
     /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
+    /// This field is required.
     pub fn web_delivery_allowed_flag(mut self, input: crate::types::Scte35WebDeliveryAllowedFlag) -> Self {
         self.web_delivery_allowed_flag = ::std::option::Option::Some(input);
         self

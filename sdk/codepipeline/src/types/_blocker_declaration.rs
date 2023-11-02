@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockerDeclaration {
     /// <p>Reserved for future use.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Reserved for future use.</p>
-    pub r#type: ::std::option::Option<crate::types::BlockerType>,
+    pub r#type: crate::types::BlockerType,
 }
 impl BlockerDeclaration {
     /// <p>Reserved for future use.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BlockerType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::BlockerType {
+        &self.r#type
     }
 }
 impl BlockerDeclaration {
@@ -35,6 +36,7 @@ pub struct BlockerDeclarationBuilder {
 }
 impl BlockerDeclarationBuilder {
     /// <p>Reserved for future use.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl BlockerDeclarationBuilder {
         &self.name
     }
     /// <p>Reserved for future use.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::BlockerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl BlockerDeclarationBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`BlockerDeclaration`](crate::types::BlockerDeclaration).
-    pub fn build(self) -> crate::types::BlockerDeclaration {
-        crate::types::BlockerDeclaration {
-            name: self.name,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::BlockerDeclarationBuilder::name)
+    /// - [`r#type`](crate::types::builders::BlockerDeclarationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::BlockerDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BlockerDeclaration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building BlockerDeclaration",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building BlockerDeclaration",
+                )
+            })?,
+        })
     }
 }

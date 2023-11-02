@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateCachePolicy`](crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cache_policy_config(CachePolicyConfig)`](crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder::cache_policy_config) / [`set_cache_policy_config(Option<CachePolicyConfig>)`](crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder::set_cache_policy_config): <p>A cache policy configuration.</p>
+    ///   - [`cache_policy_config(CachePolicyConfig)`](crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder::cache_policy_config) / [`set_cache_policy_config(Option<CachePolicyConfig>)`](crate::operation::create_cache_policy::builders::CreateCachePolicyFluentBuilder::set_cache_policy_config):<br>required: **true**<br><p>A cache policy configuration.</p><br>
     /// - On success, responds with [`CreateCachePolicyOutput`](crate::operation::create_cache_policy::CreateCachePolicyOutput) with field(s):
     ///   - [`cache_policy(Option<CachePolicy>)`](crate::operation::create_cache_policy::CreateCachePolicyOutput::cache_policy): <p>A cache policy.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_cache_policy::CreateCachePolicyOutput::location): <p>The fully qualified URI of the cache policy just created.</p>

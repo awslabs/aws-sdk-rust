@@ -9,8 +9,10 @@ pub struct DescribeJobsOutput {
 }
 impl DescribeJobsOutput {
     /// <p>The list of jobs.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::JobDetail]> {
-        self.jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
+    pub fn jobs(&self) -> &[crate::types::JobDetail] {
+        self.jobs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeJobsOutput {

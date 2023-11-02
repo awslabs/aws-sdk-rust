@@ -27,6 +27,7 @@ pub struct DeleteDbClusterEndpointInputBuilder {
 }
 impl DeleteDbClusterEndpointInputBuilder {
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = ::std::option::Option::Some(input.into());
         self

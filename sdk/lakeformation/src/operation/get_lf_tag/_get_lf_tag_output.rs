@@ -21,8 +21,10 @@ impl GetLfTagOutput {
         self.tag_key.as_deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
+    pub fn tag_values(&self) -> &[::std::string::String] {
+        self.tag_values.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLfTagOutput {

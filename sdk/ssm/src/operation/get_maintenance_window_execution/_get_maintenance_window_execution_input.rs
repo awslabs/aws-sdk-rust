@@ -27,6 +27,7 @@ pub struct GetMaintenanceWindowExecutionInputBuilder {
 }
 impl GetMaintenanceWindowExecutionInputBuilder {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
+    /// This field is required.
     pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self

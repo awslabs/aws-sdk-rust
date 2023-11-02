@@ -102,6 +102,7 @@ impl UpdateChangesetInputBuilder {
         &self.client_token
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +117,7 @@ impl UpdateChangesetInputBuilder {
         &self.dataset_id
     }
     /// <p>The unique identifier for the Changeset to update.</p>
+    /// This field is required.
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
         self

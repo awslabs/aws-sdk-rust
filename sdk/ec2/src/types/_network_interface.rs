@@ -75,16 +75,20 @@ impl NetworkInterface {
         self.description.as_deref()
     }
     /// <p>Any security groups for the network interface.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The type of network interface.</p>
     pub fn interface_type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
         self.interface_type.as_ref()
     }
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::NetworkInterfaceIpv6Address]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::NetworkInterfaceIpv6Address] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The MAC address.</p>
     pub fn mac_address(&self) -> ::std::option::Option<&str> {
@@ -111,16 +115,22 @@ impl NetworkInterface {
         self.private_ip_address.as_deref()
     }
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::NetworkInterfacePrivateIpAddress]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::NetworkInterfacePrivateIpAddress] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
-    pub fn ipv4_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv4PrefixSpecification]> {
-        self.ipv4_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[crate::types::Ipv4PrefixSpecification] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    pub fn ipv6_prefixes(&self) -> ::std::option::Option<&[crate::types::Ipv6PrefixSpecification]> {
-        self.ipv6_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
+    pub fn ipv6_prefixes(&self) -> &[crate::types::Ipv6PrefixSpecification] {
+        self.ipv6_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p>
     pub fn requester_id(&self) -> ::std::option::Option<&str> {
@@ -143,8 +153,10 @@ impl NetworkInterface {
         self.subnet_id.as_deref()
     }
     /// <p>Any tags assigned to the network interface.</p>
-    pub fn tag_set(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_set.is_none()`.
+    pub fn tag_set(&self) -> &[crate::types::Tag] {
+        self.tag_set.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

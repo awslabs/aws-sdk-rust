@@ -6,7 +6,7 @@ pub struct ListProtectedQueriesOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of protected queries.</p>
-    pub protected_queries: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>>,
+    pub protected_queries: ::std::vec::Vec<crate::types::ProtectedQuerySummary>,
     _request_id: Option<String>,
 }
 impl ListProtectedQueriesOutput {
@@ -15,8 +15,9 @@ impl ListProtectedQueriesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of protected queries.</p>
-    pub fn protected_queries(&self) -> ::std::option::Option<&[crate::types::ProtectedQuerySummary]> {
-        self.protected_queries.as_deref()
+    pub fn protected_queries(&self) -> &[crate::types::ProtectedQuerySummary] {
+        use std::ops::Deref;
+        self.protected_queries.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListProtectedQueriesOutput {
@@ -84,11 +85,21 @@ impl ListProtectedQueriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListProtectedQueriesOutput`](crate::operation::list_protected_queries::ListProtectedQueriesOutput).
-    pub fn build(self) -> crate::operation::list_protected_queries::ListProtectedQueriesOutput {
-        crate::operation::list_protected_queries::ListProtectedQueriesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`protected_queries`](crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder::protected_queries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_protected_queries::ListProtectedQueriesOutput {
             next_token: self.next_token,
-            protected_queries: self.protected_queries,
+            protected_queries: self.protected_queries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protected_queries",
+                    "protected_queries was not specified but it is required when building ListProtectedQueriesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

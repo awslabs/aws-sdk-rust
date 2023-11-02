@@ -27,8 +27,10 @@ impl ListUsersOutput {
         self.next_token.as_deref()
     }
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::UserSummary]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::UserSummary] {
+        self.users.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListUsersOutput {

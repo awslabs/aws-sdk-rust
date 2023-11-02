@@ -134,7 +134,9 @@ pub fn de_create_rescore_execution_plan_http_response(
         output = crate::protocol_serde::shape_create_rescore_execution_plan::de_create_rescore_execution_plan(_response_body, output)
             .map_err(crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_rescore_execution_plan_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanError::unhandled)?
     })
 }
 

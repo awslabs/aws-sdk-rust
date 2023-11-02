@@ -55,8 +55,10 @@ impl GrantListEntry {
         self.issuing_account.as_deref()
     }
     /// <p>The list of operations permitted by the grant.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[crate::types::GrantOperation]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[crate::types::GrantOperation] {
+        self.operations.as_deref().unwrap_or_default()
     }
     /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
     pub fn constraints(&self) -> ::std::option::Option<&crate::types::GrantConstraints> {

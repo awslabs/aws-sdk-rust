@@ -70,6 +70,7 @@ pub struct ListJobExecutionsForThingInputBuilder {
 }
 impl ListJobExecutionsForThingInputBuilder {
     /// <p>The thing name.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self

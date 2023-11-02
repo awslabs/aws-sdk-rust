@@ -5,42 +5,47 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub source_file_system_id: ::std::option::Option<::std::string::String>,
+    pub source_file_system_id: ::std::string::String,
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub source_file_system_region: ::std::option::Option<::std::string::String>,
+    pub source_file_system_region: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub source_file_system_arn: ::std::option::Option<::std::string::String>,
+    pub source_file_system_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub original_source_file_system_arn: ::std::option::Option<::std::string::String>,
+    pub original_source_file_system_arn: ::std::string::String,
     /// <p>Describes when the replication configuration was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Destination>>,
+    pub destinations: ::std::vec::Vec<crate::types::Destination>,
 }
 impl ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub fn source_file_system_id(&self) -> ::std::option::Option<&str> {
-        self.source_file_system_id.as_deref()
+    pub fn source_file_system_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_file_system_id.deref()
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub fn source_file_system_region(&self) -> ::std::option::Option<&str> {
-        self.source_file_system_region.as_deref()
+    pub fn source_file_system_region(&self) -> &str {
+        use std::ops::Deref;
+        self.source_file_system_region.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub fn source_file_system_arn(&self) -> ::std::option::Option<&str> {
-        self.source_file_system_arn.as_deref()
+    pub fn source_file_system_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.source_file_system_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn original_source_file_system_arn(&self) -> ::std::option::Option<&str> {
-        self.original_source_file_system_arn.as_deref()
+    pub fn original_source_file_system_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.original_source_file_system_arn.deref()
     }
     /// <p>Describes when the replication configuration was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::Destination]> {
-        self.destinations.as_deref()
+    pub fn destinations(&self) -> &[crate::types::Destination] {
+        use std::ops::Deref;
+        self.destinations.deref()
     }
 }
 impl ReplicationConfigurationDescription {
@@ -63,6 +68,7 @@ pub struct ReplicationConfigurationDescriptionBuilder {
 }
 impl ReplicationConfigurationDescriptionBuilder {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+    /// This field is required.
     pub fn source_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.source_file_system_id
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    /// This field is required.
     pub fn source_file_system_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_region = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.source_file_system_region
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
+    /// This field is required.
     pub fn source_file_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_arn = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +113,7 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.source_file_system_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    /// This field is required.
     pub fn original_source_file_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_source_file_system_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +128,7 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.original_source_file_system_arn
     }
     /// <p>Describes when the replication configuration was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -153,14 +163,51 @@ impl ReplicationConfigurationDescriptionBuilder {
         &self.destinations
     }
     /// Consumes the builder and constructs a [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).
-    pub fn build(self) -> crate::types::ReplicationConfigurationDescription {
-        crate::types::ReplicationConfigurationDescription {
-            source_file_system_id: self.source_file_system_id,
-            source_file_system_region: self.source_file_system_region,
-            source_file_system_arn: self.source_file_system_arn,
-            original_source_file_system_arn: self.original_source_file_system_arn,
-            creation_time: self.creation_time,
-            destinations: self.destinations,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_file_system_id`](crate::types::builders::ReplicationConfigurationDescriptionBuilder::source_file_system_id)
+    /// - [`source_file_system_region`](crate::types::builders::ReplicationConfigurationDescriptionBuilder::source_file_system_region)
+    /// - [`source_file_system_arn`](crate::types::builders::ReplicationConfigurationDescriptionBuilder::source_file_system_arn)
+    /// - [`original_source_file_system_arn`](crate::types::builders::ReplicationConfigurationDescriptionBuilder::original_source_file_system_arn)
+    /// - [`creation_time`](crate::types::builders::ReplicationConfigurationDescriptionBuilder::creation_time)
+    /// - [`destinations`](crate::types::builders::ReplicationConfigurationDescriptionBuilder::destinations)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfigurationDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationConfigurationDescription {
+            source_file_system_id: self.source_file_system_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_file_system_id",
+                    "source_file_system_id was not specified but it is required when building ReplicationConfigurationDescription",
+                )
+            })?,
+            source_file_system_region: self.source_file_system_region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_file_system_region",
+                    "source_file_system_region was not specified but it is required when building ReplicationConfigurationDescription",
+                )
+            })?,
+            source_file_system_arn: self.source_file_system_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_file_system_arn",
+                    "source_file_system_arn was not specified but it is required when building ReplicationConfigurationDescription",
+                )
+            })?,
+            original_source_file_system_arn: self.original_source_file_system_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "original_source_file_system_arn",
+                    "original_source_file_system_arn was not specified but it is required when building ReplicationConfigurationDescription",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ReplicationConfigurationDescription",
+                )
+            })?,
+            destinations: self.destinations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destinations",
+                    "destinations was not specified but it is required when building ReplicationConfigurationDescription",
+                )
+            })?,
+        })
     }
 }

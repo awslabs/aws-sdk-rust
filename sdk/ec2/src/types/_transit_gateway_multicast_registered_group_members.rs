@@ -17,8 +17,10 @@ impl TransitGatewayMulticastRegisteredGroupMembers {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The ID of the registered network interfaces.</p>
-    pub fn registered_network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.registered_network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registered_network_interface_ids.is_none()`.
+    pub fn registered_network_interface_ids(&self) -> &[::std::string::String] {
+        self.registered_network_interface_ids.as_deref().unwrap_or_default()
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn group_ip_address(&self) -> ::std::option::Option<&str> {

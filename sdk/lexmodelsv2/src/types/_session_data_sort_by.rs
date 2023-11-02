@@ -10,9 +10,9 @@ pub struct SessionDataSortBy {
     /// <li> <p> <code>numberOfTurns</code> – The number of turns that the session took.</p> </li>
     /// <li> <p> <code>conversationDurationSeconds</code> – The duration of the conversation in seconds.</p> </li>
     /// </ul>
-    pub name: ::std::option::Option<crate::types::AnalyticsSessionSortByName>,
+    pub name: crate::types::AnalyticsSessionSortByName,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    pub order: ::std::option::Option<crate::types::AnalyticsSortOrder>,
+    pub order: crate::types::AnalyticsSortOrder,
 }
 impl SessionDataSortBy {
     /// <p>The measure by which to sort the session analytics data.</p>
@@ -21,12 +21,12 @@ impl SessionDataSortBy {
     /// <li> <p> <code>numberOfTurns</code> – The number of turns that the session took.</p> </li>
     /// <li> <p> <code>conversationDurationSeconds</code> – The duration of the conversation in seconds.</p> </li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsSessionSortByName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsSessionSortByName {
+        &self.name
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::AnalyticsSortOrder> {
-        self.order.as_ref()
+    pub fn order(&self) -> &crate::types::AnalyticsSortOrder {
+        &self.order
     }
 }
 impl SessionDataSortBy {
@@ -50,6 +50,7 @@ impl SessionDataSortByBuilder {
     /// <li> <p> <code>numberOfTurns</code> – The number of turns that the session took.</p> </li>
     /// <li> <p> <code>conversationDurationSeconds</code> – The duration of the conversation in seconds.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsSessionSortByName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -74,6 +75,7 @@ impl SessionDataSortByBuilder {
         &self.name
     }
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
+    /// This field is required.
     pub fn order(mut self, input: crate::types::AnalyticsSortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -88,10 +90,23 @@ impl SessionDataSortByBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`SessionDataSortBy`](crate::types::SessionDataSortBy).
-    pub fn build(self) -> crate::types::SessionDataSortBy {
-        crate::types::SessionDataSortBy {
-            name: self.name,
-            order: self.order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SessionDataSortByBuilder::name)
+    /// - [`order`](crate::types::builders::SessionDataSortByBuilder::order)
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionDataSortBy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SessionDataSortBy {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SessionDataSortBy",
+                )
+            })?,
+            order: self.order.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "order",
+                    "order was not specified but it is required when building SessionDataSortBy",
+                )
+            })?,
+        })
     }
 }

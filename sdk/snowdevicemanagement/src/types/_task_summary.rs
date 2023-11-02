@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskSummary {
     /// <p>The task ID.</p>
-    pub task_id: ::std::option::Option<::std::string::String>,
+    pub task_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the task assigned to one or many devices.</p>
@@ -15,8 +15,9 @@ pub struct TaskSummary {
 }
 impl TaskSummary {
     /// <p>The task ID.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
-        self.task_id.as_deref()
+    pub fn task_id(&self) -> &str {
+        use std::ops::Deref;
+        self.task_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct TaskSummaryBuilder {
 }
 impl TaskSummaryBuilder {
     /// <p>The task ID.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +113,19 @@ impl TaskSummaryBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TaskSummary`](crate::types::TaskSummary).
-    pub fn build(self) -> crate::types::TaskSummary {
-        crate::types::TaskSummary {
-            task_id: self.task_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_id`](crate::types::builders::TaskSummaryBuilder::task_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskSummary {
+            task_id: self.task_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_id",
+                    "task_id was not specified but it is required when building TaskSummary",
+                )
+            })?,
             task_arn: self.task_arn,
             state: self.state,
             tags: self.tags,
-        }
+        })
     }
 }

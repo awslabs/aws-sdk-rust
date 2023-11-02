@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingsInput {
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub linux_subscriptions_discovery: ::std::option::Option<crate::types::LinuxSubscriptionsDiscovery>,
+    pub linux_subscriptions_discovery: crate::types::LinuxSubscriptionsDiscovery,
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
     pub linux_subscriptions_discovery_settings: ::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings>,
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
@@ -12,8 +12,8 @@ pub struct UpdateServiceSettingsInput {
 }
 impl UpdateServiceSettingsInput {
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    pub fn linux_subscriptions_discovery(&self) -> ::std::option::Option<&crate::types::LinuxSubscriptionsDiscovery> {
-        self.linux_subscriptions_discovery.as_ref()
+    pub fn linux_subscriptions_discovery(&self) -> &crate::types::LinuxSubscriptionsDiscovery {
+        &self.linux_subscriptions_discovery
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
     pub fn linux_subscriptions_discovery_settings(&self) -> ::std::option::Option<&crate::types::LinuxSubscriptionsDiscoverySettings> {
@@ -41,6 +41,7 @@ pub struct UpdateServiceSettingsInputBuilder {
 }
 impl UpdateServiceSettingsInputBuilder {
     /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
+    /// This field is required.
     pub fn linux_subscriptions_discovery(mut self, input: crate::types::LinuxSubscriptionsDiscovery) -> Self {
         self.linux_subscriptions_discovery = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateServiceSettingsInputBuilder {
         &self.linux_subscriptions_discovery
     }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
+    /// This field is required.
     pub fn linux_subscriptions_discovery_settings(mut self, input: crate::types::LinuxSubscriptionsDiscoverySettings) -> Self {
         self.linux_subscriptions_discovery_settings = ::std::option::Option::Some(input);
         self
@@ -86,12 +88,19 @@ impl UpdateServiceSettingsInputBuilder {
         &self.allow_update
     }
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`linux_subscriptions_discovery`](crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder::linux_subscriptions_discovery)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_service_settings::UpdateServiceSettingsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_settings::UpdateServiceSettingsInput {
-            linux_subscriptions_discovery: self.linux_subscriptions_discovery,
+            linux_subscriptions_discovery: self.linux_subscriptions_discovery.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "linux_subscriptions_discovery",
+                    "linux_subscriptions_discovery was not specified but it is required when building UpdateServiceSettingsInput",
+                )
+            })?,
             linux_subscriptions_discovery_settings: self.linux_subscriptions_discovery_settings,
             allow_update: self.allow_update,
         })

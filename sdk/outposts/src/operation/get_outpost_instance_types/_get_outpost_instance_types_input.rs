@@ -41,6 +41,7 @@ pub struct GetOutpostInstanceTypesInputBuilder {
 }
 impl GetOutpostInstanceTypesInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self

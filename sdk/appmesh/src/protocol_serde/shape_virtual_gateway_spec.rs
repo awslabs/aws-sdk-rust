@@ -9,23 +9,23 @@ pub fn ser_virtual_gateway_spec(
         crate::protocol_serde::shape_virtual_gateway_backend_defaults::ser_virtual_gateway_backend_defaults(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.listeners {
-        let mut array_4 = object.key("listeners").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("listeners").start_array();
+        for item_4 in &input.listeners {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_virtual_gateway_listener::ser_virtual_gateway_listener(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_virtual_gateway_listener::ser_virtual_gateway_listener(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.logging {
+    if let Some(var_6) = &input.logging {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("logging").start_object();
-        crate::protocol_serde::shape_virtual_gateway_logging::ser_virtual_gateway_logging(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("logging").start_object();
+        crate::protocol_serde::shape_virtual_gateway_logging::ser_virtual_gateway_logging(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }
@@ -68,7 +68,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::virtual_gateway_spec_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -11,23 +11,25 @@ use std::fmt::Write;
 ///
 /// This will normalize documents and attempts to determine if it is OK to sort members or not by
 /// using a heuristic to determine if the tag represents a list (which should not be reordered)
-pub(crate) fn try_xml_equivalent(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> {
-    if actual == expected {
+pub(crate) fn try_xml_equivalent(expected: &str, actual: &str) -> Result<(), ProtocolTestFailure> {
+    if expected == actual {
         return Ok(());
     }
-    let norm_1 = normalize_xml(actual).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
-        expected: "actual document to be valid XML".to_string(),
-        found: format!("{}\n{}", e, actual),
-    })?;
-    let norm_2 = normalize_xml(expected).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
-        expected: "expected document to be valid XML".to_string(),
-        found: format!("{}", e),
-    })?;
-    if norm_1 == norm_2 {
+    let norm_expected =
+        normalize_xml(expected).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
+            expected: "expected document to be valid XML".to_string(),
+            found: format!("{}", e),
+        })?;
+    let norm_actual =
+        normalize_xml(actual).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
+            expected: "actual document to be valid XML".to_string(),
+            found: format!("{}\n{}", e, actual),
+        })?;
+    if norm_expected == norm_actual {
         Ok(())
     } else {
         Err(ProtocolTestFailure::BodyDidNotMatch {
-            comparison: pretty_comparison(&norm_1, &norm_2),
+            comparison: pretty_comparison(&norm_expected, &norm_actual),
             hint: "".to_string(),
         })
     }

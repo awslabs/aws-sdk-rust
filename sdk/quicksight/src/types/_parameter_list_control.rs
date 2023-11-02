@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterListControl {
     /// <p>The ID of the <code>ParameterListControl</code>.</p>
-    pub parameter_control_id: ::std::option::Option<::std::string::String>,
+    pub parameter_control_id: ::std::string::String,
     /// <p>The title of the <code>ParameterListControl</code>.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The source parameter name of the <code>ParameterListControl</code>.</p>
-    pub source_parameter_name: ::std::option::Option<::std::string::String>,
+    pub source_parameter_name: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::ListControlDisplayOptions>,
     /// <p>The type of <code>ParameterListControl</code>.</p>
@@ -21,16 +21,19 @@ pub struct ParameterListControl {
 }
 impl ParameterListControl {
     /// <p>The ID of the <code>ParameterListControl</code>.</p>
-    pub fn parameter_control_id(&self) -> ::std::option::Option<&str> {
-        self.parameter_control_id.as_deref()
+    pub fn parameter_control_id(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_control_id.deref()
     }
     /// <p>The title of the <code>ParameterListControl</code>.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The source parameter name of the <code>ParameterListControl</code>.</p>
-    pub fn source_parameter_name(&self) -> ::std::option::Option<&str> {
-        self.source_parameter_name.as_deref()
+    pub fn source_parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_parameter_name.deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::ListControlDisplayOptions> {
@@ -70,6 +73,7 @@ pub struct ParameterListControlBuilder {
 }
 impl ParameterListControlBuilder {
     /// <p>The ID of the <code>ParameterListControl</code>.</p>
+    /// This field is required.
     pub fn parameter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_control_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl ParameterListControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterListControl</code>.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl ParameterListControlBuilder {
         &self.title
     }
     /// <p>The source parameter name of the <code>ParameterListControl</code>.</p>
+    /// This field is required.
     pub fn source_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -168,15 +174,34 @@ impl ParameterListControlBuilder {
         &self.cascading_control_configuration
     }
     /// Consumes the builder and constructs a [`ParameterListControl`](crate::types::ParameterListControl).
-    pub fn build(self) -> crate::types::ParameterListControl {
-        crate::types::ParameterListControl {
-            parameter_control_id: self.parameter_control_id,
-            title: self.title,
-            source_parameter_name: self.source_parameter_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_control_id`](crate::types::builders::ParameterListControlBuilder::parameter_control_id)
+    /// - [`title`](crate::types::builders::ParameterListControlBuilder::title)
+    /// - [`source_parameter_name`](crate::types::builders::ParameterListControlBuilder::source_parameter_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterListControl, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParameterListControl {
+            parameter_control_id: self.parameter_control_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameter_control_id",
+                    "parameter_control_id was not specified but it is required when building ParameterListControl",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building ParameterListControl",
+                )
+            })?,
+            source_parameter_name: self.source_parameter_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_parameter_name",
+                    "source_parameter_name was not specified but it is required when building ParameterListControl",
+                )
+            })?,
             display_options: self.display_options,
             r#type: self.r#type,
             selectable_values: self.selectable_values,
             cascading_control_configuration: self.cascading_control_configuration,
-        }
+        })
     }
 }

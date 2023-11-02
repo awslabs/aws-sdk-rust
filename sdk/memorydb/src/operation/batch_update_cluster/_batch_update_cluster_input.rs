@@ -10,8 +10,10 @@ pub struct BatchUpdateClusterInput {
 }
 impl BatchUpdateClusterInput {
     /// <p>The cluster names to apply the updates.</p>
-    pub fn cluster_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cluster_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_names.is_none()`.
+    pub fn cluster_names(&self) -> &[::std::string::String] {
+        self.cluster_names.as_deref().unwrap_or_default()
     }
     /// <p>The unique ID of the service update</p>
     pub fn service_update(&self) -> ::std::option::Option<&crate::types::ServiceUpdateRequest> {

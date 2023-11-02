@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOpenCypherQueryStatus`](crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_id(impl Into<String>)`](crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusFluentBuilder::set_query_id): <p>The unique ID of the openCypher query for which to retrieve the query status.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusFluentBuilder::set_query_id):<br>required: **true**<br><p>The unique ID of the openCypher query for which to retrieve the query status.</p><br>
     /// - On success, responds with [`GetOpenCypherQueryStatusOutput`](crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput) with field(s):
     ///   - [`query_id(Option<String>)`](crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput::query_id): <p>The unique ID of the query for which status is being returned.</p>
     ///   - [`query_string(Option<String>)`](crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusOutput::query_string): <p>The openCypher query string.</p>

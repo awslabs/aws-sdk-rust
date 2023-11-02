@@ -27,6 +27,7 @@ pub struct GetChangeTokenStatusInputBuilder {
 }
 impl GetChangeTokenStatusInputBuilder {
     /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

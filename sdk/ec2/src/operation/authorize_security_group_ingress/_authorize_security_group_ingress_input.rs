@@ -51,8 +51,10 @@ impl AuthorizeSecurityGroupIngressInput {
         self.group_name.as_deref()
     }
     /// <p>The sets of IP permissions.</p>
-    pub fn ip_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_permissions.is_none()`.
+    pub fn ip_permissions(&self) -> &[crate::types::IpPermission] {
+        self.ip_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
     /// <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>
@@ -78,8 +80,10 @@ impl AuthorizeSecurityGroupIngressInput {
         self.dry_run
     }
     /// <p>[VPC Only] The tags applied to the security group rule.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl AuthorizeSecurityGroupIngressInput {

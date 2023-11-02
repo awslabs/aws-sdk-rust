@@ -12,7 +12,7 @@ pub struct ProjectArtifacts {
     /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::ArtifactsType>,
+    pub r#type: crate::types::ArtifactsType,
     /// <p>Information about the build output artifact location:</p>
     /// <ul>
     /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li>
@@ -117,8 +117,8 @@ impl ProjectArtifacts {
     /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactsType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ArtifactsType {
+        &self.r#type
     }
     /// <p>Information about the build output artifact location:</p>
     /// <ul>
@@ -264,6 +264,7 @@ impl ProjectArtifactsBuilder {
     /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ArtifactsType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -646,9 +647,16 @@ impl ProjectArtifactsBuilder {
         &self.bucket_owner_access
     }
     /// Consumes the builder and constructs a [`ProjectArtifacts`](crate::types::ProjectArtifacts).
-    pub fn build(self) -> crate::types::ProjectArtifacts {
-        crate::types::ProjectArtifacts {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ProjectArtifactsBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectArtifacts, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectArtifacts {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ProjectArtifacts",
+                )
+            })?,
             location: self.location,
             path: self.path,
             namespace_type: self.namespace_type,
@@ -658,6 +666,6 @@ impl ProjectArtifactsBuilder {
             encryption_disabled: self.encryption_disabled,
             artifact_identifier: self.artifact_identifier,
             bucket_owner_access: self.bucket_owner_access,
-        }
+        })
     }
 }

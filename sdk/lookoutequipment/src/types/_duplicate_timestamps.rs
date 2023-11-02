@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DuplicateTimestamps {
     /// <p> Indicates the total number of duplicate timestamps. </p>
-    pub total_number_of_duplicate_timestamps: ::std::option::Option<i32>,
+    pub total_number_of_duplicate_timestamps: i32,
 }
 impl DuplicateTimestamps {
     /// <p> Indicates the total number of duplicate timestamps. </p>
-    pub fn total_number_of_duplicate_timestamps(&self) -> ::std::option::Option<i32> {
+    pub fn total_number_of_duplicate_timestamps(&self) -> i32 {
         self.total_number_of_duplicate_timestamps
     }
 }
@@ -28,6 +28,7 @@ pub struct DuplicateTimestampsBuilder {
 }
 impl DuplicateTimestampsBuilder {
     /// <p> Indicates the total number of duplicate timestamps. </p>
+    /// This field is required.
     pub fn total_number_of_duplicate_timestamps(mut self, input: i32) -> Self {
         self.total_number_of_duplicate_timestamps = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl DuplicateTimestampsBuilder {
         &self.total_number_of_duplicate_timestamps
     }
     /// Consumes the builder and constructs a [`DuplicateTimestamps`](crate::types::DuplicateTimestamps).
-    pub fn build(self) -> crate::types::DuplicateTimestamps {
-        crate::types::DuplicateTimestamps {
-            total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`total_number_of_duplicate_timestamps`](crate::types::builders::DuplicateTimestampsBuilder::total_number_of_duplicate_timestamps)
+    pub fn build(self) -> ::std::result::Result<crate::types::DuplicateTimestamps, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DuplicateTimestamps {
+            total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "total_number_of_duplicate_timestamps",
+                    "total_number_of_duplicate_timestamps was not specified but it is required when building DuplicateTimestamps",
+                )
+            })?,
+        })
     }
 }

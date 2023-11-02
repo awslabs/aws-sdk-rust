@@ -42,6 +42,7 @@ pub struct ListUserImportJobsInputBuilder {
 }
 impl ListUserImportJobsInputBuilder {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ListUserImportJobsInputBuilder {
         &self.user_pool_id
     }
     /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self

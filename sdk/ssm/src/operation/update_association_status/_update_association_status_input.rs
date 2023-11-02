@@ -41,6 +41,7 @@ pub struct UpdateAssociationStatusInputBuilder {
 }
 impl UpdateAssociationStatusInputBuilder {
     /// <p>The name of the SSM document.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateAssociationStatusInputBuilder {
         &self.name
     }
     /// <p>The managed node ID.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateAssociationStatusInputBuilder {
         &self.instance_id
     }
     /// <p>The association status.</p>
+    /// This field is required.
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
         self

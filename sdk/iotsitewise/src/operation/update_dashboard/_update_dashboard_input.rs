@@ -55,6 +55,7 @@ pub struct UpdateDashboardInputBuilder {
 }
 impl UpdateDashboardInputBuilder {
     /// <p>The ID of the dashboard to update.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateDashboardInputBuilder {
         &self.dashboard_id
     }
     /// <p>A new friendly name for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl UpdateDashboardInputBuilder {
         &self.dashboard_description
     }
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// This field is required.
     pub fn dashboard_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_definition = ::std::option::Option::Some(input.into());
         self

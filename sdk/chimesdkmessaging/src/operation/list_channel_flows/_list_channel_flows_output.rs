@@ -11,8 +11,10 @@ pub struct ListChannelFlowsOutput {
 }
 impl ListChannelFlowsOutput {
     /// <p>The information about each channel flow.</p>
-    pub fn channel_flows(&self) -> ::std::option::Option<&[crate::types::ChannelFlowSummary]> {
-        self.channel_flows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_flows.is_none()`.
+    pub fn channel_flows(&self) -> &[crate::types::ChannelFlowSummary] {
+        self.channel_flows.as_deref().unwrap_or_default()
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

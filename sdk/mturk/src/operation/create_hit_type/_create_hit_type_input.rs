@@ -44,8 +44,10 @@ impl CreateHitTypeInput {
         self.description.as_deref()
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(&self) -> ::std::option::Option<&[crate::types::QualificationRequirement]> {
-        self.qualification_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.qualification_requirements.is_none()`.
+    pub fn qualification_requirements(&self) -> &[crate::types::QualificationRequirement] {
+        self.qualification_requirements.as_deref().unwrap_or_default()
     }
 }
 impl CreateHitTypeInput {
@@ -83,6 +85,7 @@ impl CreateHitTypeInputBuilder {
         &self.auto_approval_delay_in_seconds
     }
     /// <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    /// This field is required.
     pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
         self.assignment_duration_in_seconds = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl CreateHitTypeInputBuilder {
         &self.assignment_duration_in_seconds
     }
     /// <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    /// This field is required.
     pub fn reward(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reward = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl CreateHitTypeInputBuilder {
         &self.reward
     }
     /// <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +144,7 @@ impl CreateHitTypeInputBuilder {
         &self.keywords
     }
     /// <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

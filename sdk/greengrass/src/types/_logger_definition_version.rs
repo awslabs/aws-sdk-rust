@@ -9,8 +9,10 @@ pub struct LoggerDefinitionVersion {
 }
 impl LoggerDefinitionVersion {
     /// A list of loggers.
-    pub fn loggers(&self) -> ::std::option::Option<&[crate::types::Logger]> {
-        self.loggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.loggers.is_none()`.
+    pub fn loggers(&self) -> &[crate::types::Logger] {
+        self.loggers.as_deref().unwrap_or_default()
     }
 }
 impl LoggerDefinitionVersion {

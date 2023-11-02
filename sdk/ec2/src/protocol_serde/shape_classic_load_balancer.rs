@@ -12,6 +12,7 @@ pub fn ser_classic_load_balancer(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_classic_load_balancer(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ClassicLoadBalancer, ::aws_smithy_xml::decode::XmlDecodeError> {

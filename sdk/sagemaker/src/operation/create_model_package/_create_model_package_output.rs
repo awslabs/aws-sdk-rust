@@ -34,6 +34,7 @@ pub struct CreateModelPackageOutputBuilder {
 }
 impl CreateModelPackageOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
+    /// This field is required.
     pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self

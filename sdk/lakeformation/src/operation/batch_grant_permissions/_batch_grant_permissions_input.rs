@@ -14,8 +14,10 @@ impl BatchGrantPermissionsInput {
         self.catalog_id.as_deref()
     }
     /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::BatchPermissionsRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::BatchPermissionsRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl BatchGrantPermissionsInput {

@@ -111,7 +111,7 @@ pub fn de_update_feature_http_response(
         output = crate::protocol_serde::shape_update_feature::de_update_feature(_response_body, output)
             .map_err(crate::operation::update_feature::UpdateFeatureError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_feature_output_correct_errors(output).build()
     })
 }
 

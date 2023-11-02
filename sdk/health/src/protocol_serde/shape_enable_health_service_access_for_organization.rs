@@ -36,8 +36,8 @@ pub fn de_enable_health_service_access_for_organization_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError::generic(generic)

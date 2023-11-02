@@ -25,6 +25,7 @@ pub fn ser_public_access_block_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_public_access_block_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PublicAccessBlockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {

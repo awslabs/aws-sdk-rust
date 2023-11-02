@@ -4,31 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
-    pub dns_target: ::std::option::Option<::std::string::String>,
+    pub dns_target: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
-    pub service_arn: ::std::option::Option<::std::string::String>,
+    pub service_arn: ::std::string::String,
     /// <p>A description of the domain name that's being disassociated.</p>
     pub custom_domain: ::std::option::Option<crate::types::CustomDomain>,
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub vpc_dns_targets: ::std::option::Option<::std::vec::Vec<crate::types::VpcDnsTarget>>,
+    pub vpc_dns_targets: ::std::vec::Vec<crate::types::VpcDnsTarget>,
     _request_id: Option<String>,
 }
 impl DisassociateCustomDomainOutput {
     /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
-    pub fn dns_target(&self) -> ::std::option::Option<&str> {
-        self.dns_target.as_deref()
+    pub fn dns_target(&self) -> &str {
+        use std::ops::Deref;
+        self.dns_target.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
-        self.service_arn.as_deref()
+    pub fn service_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.service_arn.deref()
     }
     /// <p>A description of the domain name that's being disassociated.</p>
     pub fn custom_domain(&self) -> ::std::option::Option<&crate::types::CustomDomain> {
         self.custom_domain.as_ref()
     }
     /// <p>DNS Target records for the custom domains of this Amazon VPC. </p>
-    pub fn vpc_dns_targets(&self) -> ::std::option::Option<&[crate::types::VpcDnsTarget]> {
-        self.vpc_dns_targets.as_deref()
+    pub fn vpc_dns_targets(&self) -> &[crate::types::VpcDnsTarget] {
+        use std::ops::Deref;
+        self.vpc_dns_targets.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DisassociateCustomDomainOutput {
@@ -55,6 +58,7 @@ pub struct DisassociateCustomDomainOutputBuilder {
 }
 impl DisassociateCustomDomainOutputBuilder {
     /// <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
+    /// This field is required.
     pub fn dns_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_target = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl DisassociateCustomDomainOutputBuilder {
         &self.dns_target
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
+    /// This field is required.
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl DisassociateCustomDomainOutputBuilder {
         &self.service_arn
     }
     /// <p>A description of the domain name that's being disassociated.</p>
+    /// This field is required.
     pub fn custom_domain(mut self, input: crate::types::CustomDomain) -> Self {
         self.custom_domain = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,37 @@ impl DisassociateCustomDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateCustomDomainOutput`](crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput).
-    pub fn build(self) -> crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput {
-        crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput {
-            dns_target: self.dns_target,
-            service_arn: self.service_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dns_target`](crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder::dns_target)
+    /// - [`service_arn`](crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder::service_arn)
+    /// - [`vpc_dns_targets`](crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder::vpc_dns_targets)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput {
+            dns_target: self.dns_target.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dns_target",
+                    "dns_target was not specified but it is required when building DisassociateCustomDomainOutput",
+                )
+            })?,
+            service_arn: self.service_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_arn",
+                    "service_arn was not specified but it is required when building DisassociateCustomDomainOutput",
+                )
+            })?,
             custom_domain: self.custom_domain,
-            vpc_dns_targets: self.vpc_dns_targets,
+            vpc_dns_targets: self.vpc_dns_targets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vpc_dns_targets",
+                    "vpc_dns_targets was not specified but it is required when building DisassociateCustomDomainOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

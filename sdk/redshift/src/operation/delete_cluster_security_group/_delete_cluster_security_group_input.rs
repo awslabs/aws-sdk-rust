@@ -28,6 +28,7 @@ pub struct DeleteClusterSecurityGroupInputBuilder {
 }
 impl DeleteClusterSecurityGroupInputBuilder {
     /// <p>The name of the cluster security group to be deleted.</p>
+    /// This field is required.
     pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self

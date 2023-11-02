@@ -39,8 +39,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
     /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
     /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
     /// </ul>
-    pub fn organization_config_rule_trigger_types(&self) -> ::std::option::Option<&[crate::types::OrganizationConfigRuleTriggerTypeNoSn]> {
-        self.organization_config_rule_trigger_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_config_rule_trigger_types.is_none()`.
+    pub fn organization_config_rule_trigger_types(&self) -> &[crate::types::OrganizationConfigRuleTriggerTypeNoSn] {
+        self.organization_config_rule_trigger_types.as_deref().unwrap_or_default()
     }
     /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
     pub fn input_parameters(&self) -> ::std::option::Option<&str> {
@@ -51,8 +53,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
         self.maximum_execution_frequency.as_ref()
     }
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_types_scope(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_types_scope.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types_scope.is_none()`.
+    pub fn resource_types_scope(&self) -> &[::std::string::String] {
+        self.resource_types_scope.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_id_scope(&self) -> ::std::option::Option<&str> {
@@ -71,8 +75,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
         self.policy_runtime.as_deref()
     }
     /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
-    pub fn debug_log_delivery_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.debug_log_delivery_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.debug_log_delivery_accounts.is_none()`.
+    pub fn debug_log_delivery_accounts(&self) -> &[::std::string::String] {
+        self.debug_log_delivery_accounts.as_deref().unwrap_or_default()
     }
 }
 impl OrganizationCustomPolicyRuleMetadataNoPolicy {

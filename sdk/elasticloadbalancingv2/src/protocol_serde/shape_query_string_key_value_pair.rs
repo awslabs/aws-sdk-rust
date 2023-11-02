@@ -17,6 +17,7 @@ pub fn ser_query_string_key_value_pair(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_query_string_key_value_pair(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::QueryStringKeyValuePair, ::aws_smithy_xml::decode::XmlDecodeError> {

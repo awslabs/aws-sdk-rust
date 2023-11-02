@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExecutionHistoryOutput {
     /// <p>The list of events that occurred in the execution.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
+    pub events: ::std::vec::Vec<crate::types::HistoryEvent>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetExecutionHistoryOutput {
     /// <p>The list of events that occurred in the execution.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::HistoryEvent]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::HistoryEvent] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl GetExecutionHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetExecutionHistoryOutput`](crate::operation::get_execution_history::GetExecutionHistoryOutput).
-    pub fn build(self) -> crate::operation::get_execution_history::GetExecutionHistoryOutput {
-        crate::operation::get_execution_history::GetExecutionHistoryOutput {
-            events: self.events,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`events`](crate::operation::get_execution_history::builders::GetExecutionHistoryOutputBuilder::events)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_execution_history::GetExecutionHistoryOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_execution_history::GetExecutionHistoryOutput {
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building GetExecutionHistoryOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

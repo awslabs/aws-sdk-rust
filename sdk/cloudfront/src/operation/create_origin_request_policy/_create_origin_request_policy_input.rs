@@ -27,6 +27,7 @@ pub struct CreateOriginRequestPolicyInputBuilder {
 }
 impl CreateOriginRequestPolicyInputBuilder {
     /// <p>An origin request policy configuration.</p>
+    /// This field is required.
     pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.origin_request_policy_config = ::std::option::Option::Some(input);
         self

@@ -20,8 +20,10 @@ impl DescribeServiceErrorsInput {
         self.instance_id.as_deref()
     }
     /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
-    pub fn service_error_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.service_error_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_error_ids.is_none()`.
+    pub fn service_error_ids(&self) -> &[::std::string::String] {
+        self.service_error_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeServiceErrorsInput {

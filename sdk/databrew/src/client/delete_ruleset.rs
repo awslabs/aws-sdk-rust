@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRuleset`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::set_name): <p>The name of the ruleset to be deleted.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::set_name):<br>required: **true**<br><p>The name of the ruleset to be deleted.</p><br>
     /// - On success, responds with [`DeleteRulesetOutput`](crate::operation::delete_ruleset::DeleteRulesetOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::delete_ruleset::DeleteRulesetOutput::name): <p>The name of the deleted ruleset.</p>
+    ///   - [`name(String)`](crate::operation::delete_ruleset::DeleteRulesetOutput::name): <p>The name of the deleted ruleset.</p>
     /// - On failure, responds with [`SdkError<DeleteRulesetError>`](crate::operation::delete_ruleset::DeleteRulesetError)
     pub fn delete_ruleset(&self) -> crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder {
         crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::new(self.handle.clone())

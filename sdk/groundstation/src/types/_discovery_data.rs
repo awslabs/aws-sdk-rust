@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiscoveryData {
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub public_ip_addresses: ::std::vec::Vec<::std::string::String>,
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub private_ip_addresses: ::std::vec::Vec<::std::string::String>,
     /// <p>List of capabilities to associate with agent.</p>
-    pub capability_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capability_arns: ::std::vec::Vec<::std::string::String>,
 }
 impl DiscoveryData {
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub fn public_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.public_ip_addresses.as_deref()
+    pub fn public_ip_addresses(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.public_ip_addresses.deref()
     }
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.private_ip_addresses.as_deref()
+    pub fn private_ip_addresses(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.private_ip_addresses.deref()
     }
     /// <p>List of capabilities to associate with agent.</p>
-    pub fn capability_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capability_arns.as_deref()
+    pub fn capability_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.capability_arns.deref()
     }
 }
 impl DiscoveryData {
@@ -102,11 +105,30 @@ impl DiscoveryDataBuilder {
         &self.capability_arns
     }
     /// Consumes the builder and constructs a [`DiscoveryData`](crate::types::DiscoveryData).
-    pub fn build(self) -> crate::types::DiscoveryData {
-        crate::types::DiscoveryData {
-            public_ip_addresses: self.public_ip_addresses,
-            private_ip_addresses: self.private_ip_addresses,
-            capability_arns: self.capability_arns,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`public_ip_addresses`](crate::types::builders::DiscoveryDataBuilder::public_ip_addresses)
+    /// - [`private_ip_addresses`](crate::types::builders::DiscoveryDataBuilder::private_ip_addresses)
+    /// - [`capability_arns`](crate::types::builders::DiscoveryDataBuilder::capability_arns)
+    pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DiscoveryData {
+            public_ip_addresses: self.public_ip_addresses.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "public_ip_addresses",
+                    "public_ip_addresses was not specified but it is required when building DiscoveryData",
+                )
+            })?,
+            private_ip_addresses: self.private_ip_addresses.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "private_ip_addresses",
+                    "private_ip_addresses was not specified but it is required when building DiscoveryData",
+                )
+            })?,
+            capability_arns: self.capability_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "capability_arns",
+                    "capability_arns was not specified but it is required when building DiscoveryData",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteWorldTemplateInputBuilder {
 }
 impl DeleteWorldTemplateInputBuilder {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
+    /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelLoaderJob`](crate::operation::cancel_loader_job::builders::CancelLoaderJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_id(impl Into<String>)`](crate::operation::cancel_loader_job::builders::CancelLoaderJobFluentBuilder::load_id) / [`set_load_id(Option<String>)`](crate::operation::cancel_loader_job::builders::CancelLoaderJobFluentBuilder::set_load_id): <p>The ID of the load job to be deleted.</p>
+    ///   - [`load_id(impl Into<String>)`](crate::operation::cancel_loader_job::builders::CancelLoaderJobFluentBuilder::load_id) / [`set_load_id(Option<String>)`](crate::operation::cancel_loader_job::builders::CancelLoaderJobFluentBuilder::set_load_id):<br>required: **true**<br><p>The ID of the load job to be deleted.</p><br>
     /// - On success, responds with [`CancelLoaderJobOutput`](crate::operation::cancel_loader_job::CancelLoaderJobOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::cancel_loader_job::CancelLoaderJobOutput::status): <p>The cancellation status.</p>
     /// - On failure, responds with [`SdkError<CancelLoaderJobError>`](crate::operation::cancel_loader_job::CancelLoaderJobError)

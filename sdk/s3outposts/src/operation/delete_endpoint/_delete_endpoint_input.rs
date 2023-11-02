@@ -34,6 +34,7 @@ pub struct DeleteEndpointInputBuilder {
 }
 impl DeleteEndpointInputBuilder {
     /// <p>The ID of the endpoint.</p>
+    /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEndpointInputBuilder {
         &self.endpoint_id
     }
     /// <p>The ID of the Outposts. </p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self

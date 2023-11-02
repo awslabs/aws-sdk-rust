@@ -65,8 +65,10 @@ impl TerminologyProperties {
         self.source_language_code.as_deref()
     }
     /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
-    pub fn target_language_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_language_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_language_codes.is_none()`.
+    pub fn target_language_codes(&self) -> &[::std::string::String] {
+        self.target_language_codes.as_deref().unwrap_or_default()
     }
     /// <p>The encryption key for the custom terminology.</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {

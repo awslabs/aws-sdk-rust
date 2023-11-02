@@ -10,8 +10,10 @@ pub struct BatchDeleteReadSetInput {
 }
 impl BatchDeleteReadSetInput {
     /// <p>The read sets' IDs.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>The read sets' sequence store ID.</p>
     pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl BatchDeleteReadSetInputBuilder {
         &self.ids
     }
     /// <p>The read sets' sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self

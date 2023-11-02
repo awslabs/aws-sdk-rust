@@ -9,17 +9,17 @@ pub fn ser_batch_associate_resources_to_custom_line_item_input(
         crate::protocol_serde::shape_custom_line_item_billing_period_range::ser_custom_line_item_billing_period_range(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.resource_arns {
-        let mut array_4 = object.key("ResourceArns").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("ResourceArns").start_array();
+        for item_4 in &input.resource_arns {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.target_arn {
-        object.key("TargetArn").string(var_6.as_str());
+    {
+        object.key("TargetArn").string(input.target_arn.as_str());
     }
     Ok(())
 }

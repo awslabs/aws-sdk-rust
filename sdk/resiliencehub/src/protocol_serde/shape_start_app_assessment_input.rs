@@ -3,27 +3,27 @@ pub fn ser_start_app_assessment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_app_assessment::StartAppAssessmentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.app_version {
-        object.key("appVersion").string(var_2.as_str());
+    {
+        object.key("appVersion").string(input.app_version.as_str());
     }
-    if let Some(var_3) = &input.assessment_name {
-        object.key("assessmentName").string(var_3.as_str());
+    {
+        object.key("assessmentName").string(input.assessment_name.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_2) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_3 = object.key("tags").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_6.finish();
+        object_3.finish();
     }
     Ok(())
 }

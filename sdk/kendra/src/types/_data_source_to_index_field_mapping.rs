@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceToIndexFieldMapping {
     /// <p>The name of the field in the data source. You must first create the index field using the <code>UpdateIndex</code> API.</p>
-    pub data_source_field_name: ::std::option::Option<::std::string::String>,
+    pub data_source_field_name: ::std::string::String,
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field, you must specify the date format. If the field is not a date field, an exception is thrown.</p>
     pub date_field_format: ::std::option::Option<::std::string::String>,
     /// <p>The name of the index field to map to the data source field. The index field type must match the data source field type.</p>
-    pub index_field_name: ::std::option::Option<::std::string::String>,
+    pub index_field_name: ::std::string::String,
 }
 impl DataSourceToIndexFieldMapping {
     /// <p>The name of the field in the data source. You must first create the index field using the <code>UpdateIndex</code> API.</p>
-    pub fn data_source_field_name(&self) -> ::std::option::Option<&str> {
-        self.data_source_field_name.as_deref()
+    pub fn data_source_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source_field_name.deref()
     }
     /// <p>The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a date field, you must specify the date format. If the field is not a date field, an exception is thrown.</p>
     pub fn date_field_format(&self) -> ::std::option::Option<&str> {
         self.date_field_format.as_deref()
     }
     /// <p>The name of the index field to map to the data source field. The index field type must match the data source field type.</p>
-    pub fn index_field_name(&self) -> ::std::option::Option<&str> {
-        self.index_field_name.as_deref()
+    pub fn index_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_field_name.deref()
     }
 }
 impl DataSourceToIndexFieldMapping {
@@ -42,6 +44,7 @@ pub struct DataSourceToIndexFieldMappingBuilder {
 }
 impl DataSourceToIndexFieldMappingBuilder {
     /// <p>The name of the field in the data source. You must first create the index field using the <code>UpdateIndex</code> API.</p>
+    /// This field is required.
     pub fn data_source_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_field_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl DataSourceToIndexFieldMappingBuilder {
         &self.date_field_format
     }
     /// <p>The name of the index field to map to the data source field. The index field type must match the data source field type.</p>
+    /// This field is required.
     pub fn index_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_field_name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl DataSourceToIndexFieldMappingBuilder {
         &self.index_field_name
     }
     /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::types::DataSourceToIndexFieldMapping).
-    pub fn build(self) -> crate::types::DataSourceToIndexFieldMapping {
-        crate::types::DataSourceToIndexFieldMapping {
-            data_source_field_name: self.data_source_field_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_source_field_name`](crate::types::builders::DataSourceToIndexFieldMappingBuilder::data_source_field_name)
+    /// - [`index_field_name`](crate::types::builders::DataSourceToIndexFieldMappingBuilder::index_field_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceToIndexFieldMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataSourceToIndexFieldMapping {
+            data_source_field_name: self.data_source_field_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source_field_name",
+                    "data_source_field_name was not specified but it is required when building DataSourceToIndexFieldMapping",
+                )
+            })?,
             date_field_format: self.date_field_format,
-            index_field_name: self.index_field_name,
-        }
+            index_field_name: self.index_field_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_field_name",
+                    "index_field_name was not specified but it is required when building DataSourceToIndexFieldMapping",
+                )
+            })?,
+        })
     }
 }

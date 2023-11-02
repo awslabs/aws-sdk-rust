@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUserProfile`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::set_domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(impl Into<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::set_user_profile_name): <p>The user profile name. This value is not case sensitive.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::set_domain_id):<br>required: **true**<br><p>The domain ID.</p><br>
+    ///   - [`user_profile_name(impl Into<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::operation::describe_user_profile::builders::DescribeUserProfileFluentBuilder::set_user_profile_name):<br>required: **true**<br><p>The user profile name. This value is not case sensitive.</p><br>
     /// - On success, responds with [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput) with field(s):
     ///   - [`domain_id(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::domain_id): <p>The ID of the domain that contains the profile.</p>
     ///   - [`user_profile_arn(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::user_profile_arn): <p>The user profile Amazon Resource Name (ARN).</p>

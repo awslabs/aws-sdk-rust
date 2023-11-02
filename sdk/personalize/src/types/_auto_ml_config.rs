@@ -15,8 +15,10 @@ impl AutoMlConfig {
         self.metric_name.as_deref()
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn recipe_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recipe_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recipe_list.is_none()`.
+    pub fn recipe_list(&self) -> &[::std::string::String] {
+        self.recipe_list.as_deref().unwrap_or_default()
     }
 }
 impl AutoMlConfig {

@@ -42,6 +42,7 @@ pub struct ListVpcAssociationAuthorizationsInputBuilder {
 }
 impl ListVpcAssociationAuthorizationsInputBuilder {
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self

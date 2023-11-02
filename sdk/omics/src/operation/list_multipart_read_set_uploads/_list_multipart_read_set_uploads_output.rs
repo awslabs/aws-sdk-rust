@@ -15,8 +15,10 @@ impl ListMultipartReadSetUploadsOutput {
         self.next_token.as_deref()
     }
     /// <p> An array of multipart uploads. </p>
-    pub fn uploads(&self) -> ::std::option::Option<&[crate::types::MultipartReadSetUploadListItem]> {
-        self.uploads.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uploads.is_none()`.
+    pub fn uploads(&self) -> &[crate::types::MultipartReadSetUploadListItem] {
+        self.uploads.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMultipartReadSetUploadsOutput {

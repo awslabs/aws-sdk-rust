@@ -11,8 +11,10 @@ pub struct ListFindingsOutput {
 }
 impl ListFindingsOutput {
     /// <p>An array of strings, where each string is the unique identifier for a finding that matches the filter criteria specified in the request.</p>
-    pub fn finding_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.finding_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_ids.is_none()`.
+    pub fn finding_ids(&self) -> &[::std::string::String] {
+        self.finding_ids.as_deref().unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

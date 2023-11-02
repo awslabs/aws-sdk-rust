@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::resource_details_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -64,17 +66,17 @@ pub fn ser_resource_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_id {
-        object.key("ResourceId").string(var_1.as_str());
+    {
+        object.key("ResourceId").string(input.resource_id.as_str());
     }
-    if let Some(var_2) = &input.resource_type {
-        object.key("ResourceType").string(var_2.as_str());
+    {
+        object.key("ResourceType").string(input.resource_type.as_str());
     }
-    if let Some(var_3) = &input.resource_configuration {
-        object.key("ResourceConfiguration").string(var_3.as_str());
+    {
+        object.key("ResourceConfiguration").string(input.resource_configuration.as_str());
     }
-    if let Some(var_4) = &input.resource_configuration_schema_type {
-        object.key("ResourceConfigurationSchemaType").string(var_4.as_str());
+    if let Some(var_1) = &input.resource_configuration_schema_type {
+        object.key("ResourceConfigurationSchemaType").string(var_1.as_str());
     }
     Ok(())
 }

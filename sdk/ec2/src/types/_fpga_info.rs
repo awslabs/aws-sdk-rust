@@ -11,8 +11,10 @@ pub struct FpgaInfo {
 }
 impl FpgaInfo {
     /// <p>Describes the FPGAs for the instance type.</p>
-    pub fn fpgas(&self) -> ::std::option::Option<&[crate::types::FpgaDeviceInfo]> {
-        self.fpgas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fpgas.is_none()`.
+    pub fn fpgas(&self) -> &[crate::types::FpgaDeviceInfo] {
+        self.fpgas.as_deref().unwrap_or_default()
     }
     /// <p>The total memory of all FPGA accelerators for the instance type.</p>
     pub fn total_fpga_memory_in_mi_b(&self) -> ::std::option::Option<i32> {

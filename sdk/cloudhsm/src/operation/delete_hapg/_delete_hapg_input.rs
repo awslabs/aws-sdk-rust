@@ -28,6 +28,7 @@ pub struct DeleteHapgInputBuilder {
 }
 impl DeleteHapgInputBuilder {
     /// <p>The ARN of the high-availability partition group to delete.</p>
+    /// This field is required.
     pub fn hapg_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hapg_arn = ::std::option::Option::Some(input.into());
         self

@@ -35,6 +35,7 @@ pub struct GetAssociatedEnclaveCertificateIamRolesInputBuilder {
 }
 impl GetAssociatedEnclaveCertificateIamRolesInputBuilder {
     /// <p>The ARN of the ACM certificate for which to view the associated IAM roles, encryption keys, and Amazon S3 object information.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self

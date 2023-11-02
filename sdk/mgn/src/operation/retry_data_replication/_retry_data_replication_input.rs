@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryDataReplicationInput {
     /// <p>Retry data replication for Source Server ID.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Retry data replication for Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RetryDataReplicationInput {
     /// <p>Retry data replication for Source Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Retry data replication for Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct RetryDataReplicationInputBuilder {
 }
 impl RetryDataReplicationInputBuilder {
     /// <p>Retry data replication for Source Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +64,19 @@ impl RetryDataReplicationInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`RetryDataReplicationInput`](crate::operation::retry_data_replication::RetryDataReplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::retry_data_replication::builders::RetryDataReplicationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::retry_data_replication::RetryDataReplicationInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building RetryDataReplicationInput",
+                )
+            })?,
             account_id: self.account_id,
         })
     }

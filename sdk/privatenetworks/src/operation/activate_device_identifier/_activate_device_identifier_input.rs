@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub device_identifier_arn: ::std::option::Option<::std::string::String>,
+    pub device_identifier_arn: ::std::string::String,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ActivateDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(&self) -> ::std::option::Option<&str> {
-        self.device_identifier_arn.as_deref()
+    pub fn device_identifier_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.device_identifier_arn.deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct ActivateDeviceIdentifierInputBuilder {
 }
 impl ActivateDeviceIdentifierInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
+    /// This field is required.
     pub fn device_identifier_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_identifier_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,8 @@ impl ActivateDeviceIdentifierInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ActivateDeviceIdentifierInput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_identifier_arn`](crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierInputBuilder::device_identifier_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,7 +73,12 @@ impl ActivateDeviceIdentifierInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput {
-            device_identifier_arn: self.device_identifier_arn,
+            device_identifier_arn: self.device_identifier_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_identifier_arn",
+                    "device_identifier_arn was not specified but it is required when building ActivateDeviceIdentifierInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

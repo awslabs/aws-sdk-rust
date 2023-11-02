@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DropNullFields {
     /// <p>The name of the transform node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
     pub null_check_box_list: ::std::option::Option<crate::types::NullCheckBoxList>,
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
@@ -16,12 +16,14 @@ pub struct DropNullFields {
 }
 impl DropNullFields {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>A structure that represents whether certain values are recognized as null values for removal.</p>
     pub fn null_check_box_list(&self) -> ::std::option::Option<&crate::types::NullCheckBoxList> {
@@ -29,8 +31,10 @@ impl DropNullFields {
     }
     /// <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p>
     /// <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
-    pub fn null_text_list(&self) -> ::std::option::Option<&[crate::types::NullValueField]> {
-        self.null_text_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.null_text_list.is_none()`.
+    pub fn null_text_list(&self) -> &[crate::types::NullValueField] {
+        self.null_text_list.as_deref().unwrap_or_default()
     }
 }
 impl DropNullFields {
@@ -51,6 +55,7 @@ pub struct DropNullFieldsBuilder {
 }
 impl DropNullFieldsBuilder {
     /// <p>The name of the transform node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +127,25 @@ impl DropNullFieldsBuilder {
         &self.null_text_list
     }
     /// Consumes the builder and constructs a [`DropNullFields`](crate::types::DropNullFields).
-    pub fn build(self) -> crate::types::DropNullFields {
-        crate::types::DropNullFields {
-            name: self.name,
-            inputs: self.inputs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DropNullFieldsBuilder::name)
+    /// - [`inputs`](crate::types::builders::DropNullFieldsBuilder::inputs)
+    pub fn build(self) -> ::std::result::Result<crate::types::DropNullFields, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DropNullFields {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DropNullFields",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building DropNullFields",
+                )
+            })?,
             null_check_box_list: self.null_check_box_list,
             null_text_list: self.null_text_list,
-        }
+        })
     }
 }

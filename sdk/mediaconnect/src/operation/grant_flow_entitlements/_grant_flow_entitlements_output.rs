@@ -11,8 +11,10 @@ pub struct GrantFlowEntitlementsOutput {
 }
 impl GrantFlowEntitlementsOutput {
     /// The entitlements that were just granted.
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::Entitlement]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// The ARN of the flow that these entitlements were granted to.
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {

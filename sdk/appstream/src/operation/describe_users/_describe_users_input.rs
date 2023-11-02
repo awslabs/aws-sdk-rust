@@ -41,6 +41,7 @@ pub struct DescribeUsersInputBuilder {
 }
 impl DescribeUsersInputBuilder {
     /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self

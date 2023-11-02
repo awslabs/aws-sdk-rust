@@ -73,6 +73,7 @@ impl ListImagesInputBuilder {
         &self.registry_id
     }
     /// <p>The repository with image IDs to be listed.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

@@ -3,14 +3,14 @@ pub fn ser_get_user_id_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_user_id::GetUserIdInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identity_store_id {
-        object.key("IdentityStoreId").string(var_1.as_str());
+    {
+        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
     }
-    if let Some(var_2) = &input.alternate_identifier {
+    if let Some(var_1) = &input.alternate_identifier {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("AlternateIdentifier").start_object();
-        crate::protocol_serde::shape_alternate_identifier::ser_alternate_identifier(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("AlternateIdentifier").start_object();
+        crate::protocol_serde::shape_alternate_identifier::ser_alternate_identifier(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

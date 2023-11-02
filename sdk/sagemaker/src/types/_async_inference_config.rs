@@ -49,6 +49,7 @@ impl AsyncInferenceConfigBuilder {
         &self.client_config
     }
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::AsyncInferenceOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

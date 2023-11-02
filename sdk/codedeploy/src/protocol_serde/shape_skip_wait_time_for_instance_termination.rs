@@ -32,8 +32,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DeploymentDoesNotExistException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::DeploymentDoesNotExistException({
@@ -48,8 +48,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DeploymentIdRequiredException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::DeploymentIdRequiredException({
@@ -64,8 +64,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "DeploymentNotStartedException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::DeploymentNotStartedException({
@@ -80,8 +80,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidDeploymentIdException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::InvalidDeploymentIdException({
@@ -96,8 +96,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedActionForDeploymentTypeException" => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::UnsupportedActionForDeploymentTypeException({
@@ -112,8 +112,8 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError::generic(generic)

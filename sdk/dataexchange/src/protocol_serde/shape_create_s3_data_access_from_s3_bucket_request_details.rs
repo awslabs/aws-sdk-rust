@@ -9,11 +9,11 @@ pub fn ser_create_s3_data_access_from_s3_bucket_request_details(
         crate::protocol_serde::shape_s3_data_access_asset_source_entry::ser_s3_data_access_asset_source_entry(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.data_set_id {
-        object.key("DataSetId").string(var_3.as_str());
+    {
+        object.key("DataSetId").string(input.data_set_id.as_str());
     }
-    if let Some(var_4) = &input.revision_id {
-        object.key("RevisionId").string(var_4.as_str());
+    {
+        object.key("RevisionId").string(input.revision_id.as_str());
     }
     Ok(())
 }

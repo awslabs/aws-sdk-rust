@@ -69,6 +69,7 @@ impl GetMediaInputBuilder {
         &self.stream_arn
     }
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    /// This field is required.
     pub fn start_selector(mut self, input: crate::types::StartSelector) -> Self {
         self.start_selector = ::std::option::Option::Some(input);
         self

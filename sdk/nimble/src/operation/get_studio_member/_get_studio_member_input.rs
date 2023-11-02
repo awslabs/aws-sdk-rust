@@ -34,6 +34,7 @@ pub struct GetStudioMemberInputBuilder {
 }
 impl GetStudioMemberInputBuilder {
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    /// This field is required.
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetStudioMemberInputBuilder {
         &self.principal_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

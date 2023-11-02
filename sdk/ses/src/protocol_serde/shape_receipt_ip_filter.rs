@@ -6,17 +6,18 @@ pub fn ser_receipt_ip_filter(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Policy");
-    if let Some(var_2) = &input.policy {
-        scope_1.string(var_2.as_str());
+    {
+        scope_1.string(input.policy.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Cidr");
-    if let Some(var_4) = &input.cidr {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("Cidr");
+    {
+        scope_2.string(&input.cidr);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_receipt_ip_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ReceiptIpFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_receipt_ip_filter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Policy") /* Policy com.amazonaws.ses#ReceiptIpFilter$Policy */ =>  {
-                let var_5 =
+                let var_3 =
                     Some(
                         Result::<crate::types::ReceiptFilterPolicy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ReceiptFilterPolicy::from(
@@ -35,11 +36,11 @@ pub fn de_receipt_ip_filter(
                         ?
                     )
                 ;
-                builder = builder.set_policy(var_5);
+                builder = builder.set_policy(var_3);
             }
             ,
             s if s.matches("Cidr") /* Cidr com.amazonaws.ses#ReceiptIpFilter$Cidr */ =>  {
-                let var_6 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -48,11 +49,13 @@ pub fn de_receipt_ip_filter(
                         ?
                     )
                 ;
-                builder = builder.set_cidr(var_6);
+                builder = builder.set_cidr(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::receipt_ip_filter_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

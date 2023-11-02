@@ -3,32 +3,32 @@ pub fn ser_sapo_data_connector_profile_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataConnectorProfileProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_host_url {
-        object.key("applicationHostUrl").string(var_1.as_str());
+    {
+        object.key("applicationHostUrl").string(input.application_host_url.as_str());
     }
-    if let Some(var_2) = &input.application_service_path {
-        object.key("applicationServicePath").string(var_2.as_str());
+    {
+        object.key("applicationServicePath").string(input.application_service_path.as_str());
     }
-    if let Some(var_3) = &input.port_number {
+    {
         object.key("portNumber").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.port_number).into()),
         );
     }
-    if let Some(var_4) = &input.client_number {
-        object.key("clientNumber").string(var_4.as_str());
+    {
+        object.key("clientNumber").string(input.client_number.as_str());
     }
-    if let Some(var_5) = &input.logon_language {
-        object.key("logonLanguage").string(var_5.as_str());
+    if let Some(var_1) = &input.logon_language {
+        object.key("logonLanguage").string(var_1.as_str());
     }
-    if let Some(var_6) = &input.private_link_service_name {
-        object.key("privateLinkServiceName").string(var_6.as_str());
+    if let Some(var_2) = &input.private_link_service_name {
+        object.key("privateLinkServiceName").string(var_2.as_str());
     }
-    if let Some(var_7) = &input.o_auth_properties {
+    if let Some(var_3) = &input.o_auth_properties {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("oAuthProperties").start_object();
-        crate::protocol_serde::shape_o_auth_properties::ser_o_auth_properties(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_4 = object.key("oAuthProperties").start_object();
+        crate::protocol_serde::shape_o_auth_properties::ser_o_auth_properties(&mut object_4, var_3)?;
+        object_4.finish();
     }
     if input.disable_sso {
         object.key("disableSSO").boolean(input.disable_sso);
@@ -109,7 +109,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::sapo_data_connector_profile_properties_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

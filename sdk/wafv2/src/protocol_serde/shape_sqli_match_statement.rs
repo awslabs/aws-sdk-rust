@@ -9,20 +9,20 @@ pub fn ser_sqli_match_statement(
         crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.text_transformations {
-        let mut array_4 = object.key("TextTransformations").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("TextTransformations").start_array();
+        for item_4 in &input.text_transformations {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_text_transformation::ser_text_transformation(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_text_transformation::ser_text_transformation(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.sensitivity_level {
-        object.key("SensitivityLevel").string(var_7.as_str());
+    if let Some(var_6) = &input.sensitivity_level {
+        object.key("SensitivityLevel").string(var_6.as_str());
     }
     Ok(())
 }
@@ -66,7 +66,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sqli_match_statement_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -15,8 +15,10 @@ impl EvaluateCodeErrorDetail {
         self.message.as_deref()
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub fn code_errors(&self) -> ::std::option::Option<&[crate::types::CodeError]> {
-        self.code_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_errors.is_none()`.
+    pub fn code_errors(&self) -> &[crate::types::CodeError] {
+        self.code_errors.as_deref().unwrap_or_default()
     }
 }
 impl EvaluateCodeErrorDetail {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDirectoriesOutput {
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
-    pub directories: ::std::option::Option<::std::vec::Vec<crate::types::Directory>>,
+    pub directories: ::std::vec::Vec<crate::types::Directory>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDirectoriesOutput {
     /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
-    pub fn directories(&self) -> ::std::option::Option<&[crate::types::Directory]> {
-        self.directories.as_deref()
+    pub fn directories(&self) -> &[crate::types::Directory] {
+        use std::ops::Deref;
+        self.directories.deref()
     }
     /// <p>The pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListDirectoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDirectoriesOutput`](crate::operation::list_directories::ListDirectoriesOutput).
-    pub fn build(self) -> crate::operation::list_directories::ListDirectoriesOutput {
-        crate::operation::list_directories::ListDirectoriesOutput {
-            directories: self.directories,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`directories`](crate::operation::list_directories::builders::ListDirectoriesOutputBuilder::directories)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_directories::ListDirectoriesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_directories::ListDirectoriesOutput {
+            directories: self.directories.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "directories",
+                    "directories was not specified but it is required when building ListDirectoriesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSolution`](crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`solution_arn(impl Into<String>)`](crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::solution_arn) / [`set_solution_arn(Option<String>)`](crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::set_solution_arn): <p>The ARN of the solution to delete.</p>
+    ///   - [`solution_arn(impl Into<String>)`](crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::solution_arn) / [`set_solution_arn(Option<String>)`](crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder::set_solution_arn):<br>required: **true**<br><p>The ARN of the solution to delete.</p><br>
     /// - On success, responds with [`DeleteSolutionOutput`](crate::operation::delete_solution::DeleteSolutionOutput)
     /// - On failure, responds with [`SdkError<DeleteSolutionError>`](crate::operation::delete_solution::DeleteSolutionError)
     pub fn delete_solution(&self) -> crate::operation::delete_solution::builders::DeleteSolutionFluentBuilder {

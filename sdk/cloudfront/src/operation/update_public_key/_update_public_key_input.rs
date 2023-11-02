@@ -41,6 +41,7 @@ pub struct UpdatePublicKeyInputBuilder {
 }
 impl UpdatePublicKeyInputBuilder {
     /// <p>A public key configuration.</p>
+    /// This field is required.
     pub fn public_key_config(mut self, input: crate::types::PublicKeyConfig) -> Self {
         self.public_key_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdatePublicKeyInputBuilder {
         &self.public_key_config
     }
     /// <p>The identifier of the public key that you are updating.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

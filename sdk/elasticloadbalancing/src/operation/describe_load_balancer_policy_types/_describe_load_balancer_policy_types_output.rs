@@ -10,8 +10,10 @@ pub struct DescribeLoadBalancerPolicyTypesOutput {
 }
 impl DescribeLoadBalancerPolicyTypesOutput {
     /// <p>Information about the policy types.</p>
-    pub fn policy_type_descriptions(&self) -> ::std::option::Option<&[crate::types::PolicyTypeDescription]> {
-        self.policy_type_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_type_descriptions.is_none()`.
+    pub fn policy_type_descriptions(&self) -> &[crate::types::PolicyTypeDescription] {
+        self.policy_type_descriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeLoadBalancerPolicyTypesOutput {

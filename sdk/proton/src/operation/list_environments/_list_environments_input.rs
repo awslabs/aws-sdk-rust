@@ -20,8 +20,10 @@ impl ListEnvironmentsInput {
         self.max_results
     }
     /// <p>An array of the versions of the environment template.</p>
-    pub fn environment_templates(&self) -> ::std::option::Option<&[crate::types::EnvironmentTemplateFilter]> {
-        self.environment_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_templates.is_none()`.
+    pub fn environment_templates(&self) -> &[crate::types::EnvironmentTemplateFilter] {
+        self.environment_templates.as_deref().unwrap_or_default()
     }
 }
 impl ListEnvironmentsInput {

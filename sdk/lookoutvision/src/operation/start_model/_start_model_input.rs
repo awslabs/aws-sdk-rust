@@ -59,6 +59,7 @@ pub struct StartModelInputBuilder {
 }
 impl StartModelInputBuilder {
     /// <p>The name of the project that contains the model that you want to start.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl StartModelInputBuilder {
         &self.project_name
     }
     /// <p>The version of the model that you want to start.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl StartModelInputBuilder {
         &self.model_version
     }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    /// This field is required.
     pub fn min_inference_units(mut self, input: i32) -> Self {
         self.min_inference_units = ::std::option::Option::Some(input);
         self

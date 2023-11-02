@@ -108,7 +108,9 @@ pub fn de_put_integration_http_response(
         output = crate::protocol_serde::shape_put_integration::de_put_integration(_response_body, output)
             .map_err(crate::operation::put_integration::PutIntegrationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::put_integration_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::put_integration::PutIntegrationError::unhandled)?
     })
 }
 

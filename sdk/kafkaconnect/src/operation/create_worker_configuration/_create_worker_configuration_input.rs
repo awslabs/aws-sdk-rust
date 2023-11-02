@@ -6,9 +6,9 @@ pub struct CreateWorkerConfigurationInput {
     /// <p>A summary description of the worker configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the worker configuration.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub properties_file_content: ::std::option::Option<::std::string::String>,
+    pub properties_file_content: ::std::string::String,
 }
 impl CreateWorkerConfigurationInput {
     /// <p>A summary description of the worker configuration.</p>
@@ -16,12 +16,14 @@ impl CreateWorkerConfigurationInput {
         self.description.as_deref()
     }
     /// <p>The name of the worker configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-    pub fn properties_file_content(&self) -> ::std::option::Option<&str> {
-        self.properties_file_content.as_deref()
+    pub fn properties_file_content(&self) -> &str {
+        use std::ops::Deref;
+        self.properties_file_content.deref()
     }
 }
 impl ::std::fmt::Debug for CreateWorkerConfigurationInput {
@@ -64,6 +66,7 @@ impl CreateWorkerConfigurationInputBuilder {
         &self.description
     }
     /// <p>The name of the worker configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl CreateWorkerConfigurationInputBuilder {
         &self.name
     }
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
+    /// This field is required.
     pub fn properties_file_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties_file_content = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +96,9 @@ impl CreateWorkerConfigurationInputBuilder {
         &self.properties_file_content
     }
     /// Consumes the builder and constructs a [`CreateWorkerConfigurationInput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder::name)
+    /// - [`properties_file_content`](crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder::properties_file_content)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -100,8 +107,18 @@ impl CreateWorkerConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
             description: self.description,
-            name: self.name,
-            properties_file_content: self.properties_file_content,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateWorkerConfigurationInput",
+                )
+            })?,
+            properties_file_content: self.properties_file_content.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "properties_file_content",
+                    "properties_file_content was not specified but it is required when building CreateWorkerConfigurationInput",
+                )
+            })?,
         })
     }
 }

@@ -48,7 +48,7 @@ pub fn de_describe_device_http_response(
         output = crate::protocol_serde::shape_describe_device::de_describe_device(_response_body, output)
             .map_err(crate::operation::describe_device::DescribeDeviceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_device_output_correct_errors(output).build()
     })
 }
 

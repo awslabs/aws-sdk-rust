@@ -16,8 +16,10 @@ impl DescribeReservedNodesOutput {
         self.marker.as_deref()
     }
     /// <p>The list of <code>ReservedNode</code> objects.</p>
-    pub fn reserved_nodes(&self) -> ::std::option::Option<&[crate::types::ReservedNode]> {
-        self.reserved_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_nodes.is_none()`.
+    pub fn reserved_nodes(&self) -> &[crate::types::ReservedNode] {
+        self.reserved_nodes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedNodesOutput {

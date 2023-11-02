@@ -35,6 +35,7 @@ pub struct GetCommitOutputBuilder {
 }
 impl GetCommitOutputBuilder {
     /// <p>A commit data type object that contains information about the specified commit.</p>
+    /// This field is required.
     pub fn commit(mut self, input: crate::types::Commit) -> Self {
         self.commit = ::std::option::Option::Some(input);
         self

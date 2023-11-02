@@ -6,13 +6,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificateMetadata {
     /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The name that identifies the server certificate.</p>
-    pub server_certificate_name: ::std::option::Option<::std::string::String>,
+    pub server_certificate_name: ::std::string::String,
     /// <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub server_certificate_id: ::std::option::Option<::std::string::String>,
+    pub server_certificate_id: ::std::string::String,
     /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date when the server certificate was uploaded.</p>
     pub upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date on which the certificate is set to expire.</p>
@@ -20,20 +20,24 @@ pub struct ServerCertificateMetadata {
 }
 impl ServerCertificateMetadata {
     /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The name that identifies the server certificate.</p>
-    pub fn server_certificate_name(&self) -> ::std::option::Option<&str> {
-        self.server_certificate_name.as_deref()
+    pub fn server_certificate_name(&self) -> &str {
+        use std::ops::Deref;
+        self.server_certificate_name.deref()
     }
     /// <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn server_certificate_id(&self) -> ::std::option::Option<&str> {
-        self.server_certificate_id.as_deref()
+    pub fn server_certificate_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_certificate_id.deref()
     }
     /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date when the server certificate was uploaded.</p>
     pub fn upload_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -64,6 +68,7 @@ pub struct ServerCertificateMetadataBuilder {
 }
 impl ServerCertificateMetadataBuilder {
     /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +83,7 @@ impl ServerCertificateMetadataBuilder {
         &self.path
     }
     /// <p>The name that identifies the server certificate.</p>
+    /// This field is required.
     pub fn server_certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_certificate_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +98,7 @@ impl ServerCertificateMetadataBuilder {
         &self.server_certificate_name
     }
     /// <p> The stable and unique string identifying the server certificate. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn server_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +113,7 @@ impl ServerCertificateMetadataBuilder {
         &self.server_certificate_id
     }
     /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -148,14 +156,39 @@ impl ServerCertificateMetadataBuilder {
         &self.expiration
     }
     /// Consumes the builder and constructs a [`ServerCertificateMetadata`](crate::types::ServerCertificateMetadata).
-    pub fn build(self) -> crate::types::ServerCertificateMetadata {
-        crate::types::ServerCertificateMetadata {
-            path: self.path,
-            server_certificate_name: self.server_certificate_name,
-            server_certificate_id: self.server_certificate_id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::ServerCertificateMetadataBuilder::path)
+    /// - [`server_certificate_name`](crate::types::builders::ServerCertificateMetadataBuilder::server_certificate_name)
+    /// - [`server_certificate_id`](crate::types::builders::ServerCertificateMetadataBuilder::server_certificate_id)
+    /// - [`arn`](crate::types::builders::ServerCertificateMetadataBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServerCertificateMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServerCertificateMetadata {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building ServerCertificateMetadata",
+                )
+            })?,
+            server_certificate_name: self.server_certificate_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_certificate_name",
+                    "server_certificate_name was not specified but it is required when building ServerCertificateMetadata",
+                )
+            })?,
+            server_certificate_id: self.server_certificate_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_certificate_id",
+                    "server_certificate_id was not specified but it is required when building ServerCertificateMetadata",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ServerCertificateMetadata",
+                )
+            })?,
             upload_date: self.upload_date,
             expiration: self.expiration,
-        }
+        })
     }
 }

@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Monitor {
     /// <p>The name of the monitor.</p>
-    pub monitor_name: ::std::option::Option<::std::string::String>,
+    pub monitor_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub monitor_arn: ::std::option::Option<::std::string::String>,
+    pub monitor_arn: ::std::string::String,
     /// <p>The status of a monitor.</p>
-    pub status: ::std::option::Option<crate::types::MonitorConfigState>,
+    pub status: crate::types::MonitorConfigState,
     /// <p>The health of data processing for the monitor.</p>
     pub processing_status: ::std::option::Option<crate::types::MonitorProcessingStatusCode>,
 }
 impl Monitor {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
-        self.monitor_name.as_deref()
+    pub fn monitor_name(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
-        self.monitor_arn.as_deref()
+    pub fn monitor_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_arn.deref()
     }
     /// <p>The status of a monitor.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MonitorConfigState> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::MonitorConfigState {
+        &self.status
     }
     /// <p>The health of data processing for the monitor.</p>
     pub fn processing_status(&self) -> ::std::option::Option<&crate::types::MonitorProcessingStatusCode> {
@@ -49,6 +51,7 @@ pub struct MonitorBuilder {
 }
 impl MonitorBuilder {
     /// <p>The name of the monitor.</p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl MonitorBuilder {
         &self.monitor_name
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl MonitorBuilder {
         &self.monitor_arn
     }
     /// <p>The status of a monitor.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,31 @@ impl MonitorBuilder {
         &self.processing_status
     }
     /// Consumes the builder and constructs a [`Monitor`](crate::types::Monitor).
-    pub fn build(self) -> crate::types::Monitor {
-        crate::types::Monitor {
-            monitor_name: self.monitor_name,
-            monitor_arn: self.monitor_arn,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitor_name`](crate::types::builders::MonitorBuilder::monitor_name)
+    /// - [`monitor_arn`](crate::types::builders::MonitorBuilder::monitor_arn)
+    /// - [`status`](crate::types::builders::MonitorBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::Monitor, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Monitor {
+            monitor_name: self.monitor_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitor_name",
+                    "monitor_name was not specified but it is required when building Monitor",
+                )
+            })?,
+            monitor_arn: self.monitor_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitor_arn",
+                    "monitor_arn was not specified but it is required when building Monitor",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Monitor",
+                )
+            })?,
             processing_status: self.processing_status,
-        }
+        })
     }
 }

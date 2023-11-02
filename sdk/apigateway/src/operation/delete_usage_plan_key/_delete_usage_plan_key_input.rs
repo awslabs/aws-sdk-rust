@@ -35,6 +35,7 @@ pub struct DeleteUsagePlanKeyInputBuilder {
 }
 impl DeleteUsagePlanKeyInputBuilder {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DeleteUsagePlanKeyInputBuilder {
         &self.usage_plan_id
     }
     /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
+    /// This field is required.
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self

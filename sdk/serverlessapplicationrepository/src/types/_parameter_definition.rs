@@ -49,8 +49,10 @@ impl ParameterDefinition {
         self.allowed_pattern.as_deref()
     }
     /// <p>An array containing the list of values allowed for the parameter.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
+    pub fn allowed_values(&self) -> &[::std::string::String] {
+        self.allowed_values.as_deref().unwrap_or_default()
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
@@ -92,8 +94,10 @@ impl ParameterDefinition {
         self.no_echo
     }
     /// <p>A list of AWS SAM resources that use this parameter.</p>
-    pub fn referenced_by_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.referenced_by_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.referenced_by_resources.is_none()`.
+    pub fn referenced_by_resources(&self) -> &[::std::string::String] {
+        self.referenced_by_resources.as_deref().unwrap_or_default()
     }
     /// <p>The type of the parameter.</p>
     /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
@@ -277,6 +281,7 @@ impl ParameterDefinitionBuilder {
         &self.min_value
     }
     /// <p>The name of the parameter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

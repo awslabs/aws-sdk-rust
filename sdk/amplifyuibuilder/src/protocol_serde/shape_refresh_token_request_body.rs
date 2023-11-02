@@ -3,11 +3,11 @@ pub fn ser_refresh_token_request_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RefreshTokenRequestBody,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.token {
-        object.key("token").string(var_1.as_str());
+    {
+        object.key("token").string(input.token.as_str());
     }
-    if let Some(var_2) = &input.client_id {
-        object.key("clientId").string(var_2.as_str());
+    if let Some(var_1) = &input.client_id {
+        object.key("clientId").string(var_1.as_str());
     }
     Ok(())
 }

@@ -9,8 +9,10 @@ pub struct Csv {
 }
 impl Csv {
     /// <p>The column names specified in the .csv file.</p>
-    pub fn column_names(&self) -> ::std::option::Option<&[crate::types::ColumnName]> {
-        self.column_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_names.is_none()`.
+    pub fn column_names(&self) -> &[crate::types::ColumnName] {
+        self.column_names.as_deref().unwrap_or_default()
     }
 }
 impl Csv {

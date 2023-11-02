@@ -57,12 +57,16 @@ impl DataViewSummary {
         self.as_of_timestamp
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_columns.is_none()`.
+    pub fn partition_columns(&self) -> &[::std::string::String] {
+        self.partition_columns.as_deref().unwrap_or_default()
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn sort_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sort_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_columns.is_none()`.
+    pub fn sort_columns(&self) -> &[::std::string::String] {
+        self.sort_columns.as_deref().unwrap_or_default()
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>

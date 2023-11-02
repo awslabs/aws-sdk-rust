@@ -37,8 +37,10 @@ impl CustomizedMetricSpecification {
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling policy.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::MetricDimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::MetricDimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The statistic of the metric.</p>
     pub fn statistic(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
@@ -49,8 +51,10 @@ impl CustomizedMetricSpecification {
         self.unit.as_deref()
     }
     /// <p>The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw metric and metric math expressions.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::TargetTrackingMetricDataQuery]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::TargetTrackingMetricDataQuery] {
+        self.metrics.as_deref().unwrap_or_default()
     }
 }
 impl CustomizedMetricSpecification {

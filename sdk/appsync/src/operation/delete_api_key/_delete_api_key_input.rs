@@ -34,6 +34,7 @@ pub struct DeleteApiKeyInputBuilder {
 }
 impl DeleteApiKeyInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteApiKeyInputBuilder {
         &self.api_id
     }
     /// <p>The ID for the API key.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

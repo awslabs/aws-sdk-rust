@@ -3,38 +3,41 @@ pub fn ser_list_phone_numbers_v2_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.max_results {
+    if let Some(var_1) = &input.instance_id {
+        object.key("InstanceId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("NextToken").string(var_2.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("NextToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.phone_number_country_codes {
-        let mut array_4 = object.key("PhoneNumberCountryCodes").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.phone_number_country_codes {
+        let mut array_5 = object.key("PhoneNumberCountryCodes").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.phone_number_prefix {
-        object.key("PhoneNumberPrefix").string(var_6.as_str());
+    if let Some(var_7) = &input.phone_number_prefix {
+        object.key("PhoneNumberPrefix").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.phone_number_types {
-        let mut array_8 = object.key("PhoneNumberTypes").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.phone_number_types {
+        let mut array_9 = object.key("PhoneNumberTypes").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.target_arn {
-        object.key("TargetArn").string(var_10.as_str());
+    if let Some(var_11) = &input.target_arn {
+        object.key("TargetArn").string(var_11.as_str());
     }
     Ok(())
 }

@@ -16,8 +16,10 @@ impl DescribeEndpointTypesOutput {
         self.marker.as_deref()
     }
     /// <p>The types of endpoints that are supported.</p>
-    pub fn supported_endpoint_types(&self) -> ::std::option::Option<&[crate::types::SupportedEndpointType]> {
-        self.supported_endpoint_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_endpoint_types.is_none()`.
+    pub fn supported_endpoint_types(&self) -> &[crate::types::SupportedEndpointType] {
+        self.supported_endpoint_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEndpointTypesOutput {

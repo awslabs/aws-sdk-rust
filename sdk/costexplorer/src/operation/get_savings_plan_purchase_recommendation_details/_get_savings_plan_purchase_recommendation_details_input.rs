@@ -29,6 +29,7 @@ pub struct GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
 }
 impl GetSavingsPlanPurchaseRecommendationDetailsInputBuilder {
     /// <p>The ID that is associated with the Savings Plan recommendation.</p>
+    /// This field is required.
     pub fn recommendation_detail_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_detail_id = ::std::option::Option::Some(input.into());
         self

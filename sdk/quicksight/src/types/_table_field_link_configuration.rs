@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldLinkConfiguration {
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
-    pub target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
+    pub target: crate::types::UrlTargetConfiguration,
     /// <p>The URL content (text, icon) for the table link configuration.</p>
     pub content: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
 }
 impl TableFieldLinkConfiguration {
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::UrlTargetConfiguration> {
-        self.target.as_ref()
+    pub fn target(&self) -> &crate::types::UrlTargetConfiguration {
+        &self.target
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::TableFieldLinkContentConfiguration> {
@@ -35,6 +35,7 @@ pub struct TableFieldLinkConfigurationBuilder {
 }
 impl TableFieldLinkConfigurationBuilder {
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
+    /// This field is required.
     pub fn target(mut self, input: crate::types::UrlTargetConfiguration) -> Self {
         self.target = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TableFieldLinkConfigurationBuilder {
         &self.target
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::TableFieldLinkContentConfiguration) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl TableFieldLinkConfigurationBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`TableFieldLinkConfiguration`](crate::types::TableFieldLinkConfiguration).
-    pub fn build(self) -> crate::types::TableFieldLinkConfiguration {
-        crate::types::TableFieldLinkConfiguration {
-            target: self.target,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target`](crate::types::builders::TableFieldLinkConfigurationBuilder::target)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableFieldLinkConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableFieldLinkConfiguration {
+            target: self.target.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target",
+                    "target was not specified but it is required when building TableFieldLinkConfiguration",
+                )
+            })?,
             content: self.content,
-        }
+        })
     }
 }

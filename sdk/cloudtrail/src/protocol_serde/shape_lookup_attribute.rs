@@ -3,11 +3,11 @@ pub fn ser_lookup_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LookupAttribute,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute_key {
-        object.key("AttributeKey").string(var_1.as_str());
+    {
+        object.key("AttributeKey").string(input.attribute_key.as_str());
     }
-    if let Some(var_2) = &input.attribute_value {
-        object.key("AttributeValue").string(var_2.as_str());
+    {
+        object.key("AttributeValue").string(input.attribute_value.as_str());
     }
     Ok(())
 }

@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduleGroupInput {
     /// <p>The name of the schedule group to delete.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduleGroupInput {
     /// <p>The name of the schedule group to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct DeleteScheduleGroupInputBuilder {
 }
 impl DeleteScheduleGroupInputBuilder {
     /// <p>The name of the schedule group to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +64,19 @@ impl DeleteScheduleGroupInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteScheduleGroupInput`](crate::operation::delete_schedule_group::DeleteScheduleGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::delete_schedule_group::builders::DeleteScheduleGroupInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_schedule_group::DeleteScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_schedule_group::DeleteScheduleGroupInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteScheduleGroupInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

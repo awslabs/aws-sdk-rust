@@ -27,6 +27,7 @@ pub struct DescribeTestSetDiscrepancyReportInputBuilder {
 }
 impl DescribeTestSetDiscrepancyReportInputBuilder {
     /// <p>The unique identifier of the test set discrepancy report.</p>
+    /// This field is required.
     pub fn test_set_discrepancy_report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_discrepancy_report_id = ::std::option::Option::Some(input.into());
         self

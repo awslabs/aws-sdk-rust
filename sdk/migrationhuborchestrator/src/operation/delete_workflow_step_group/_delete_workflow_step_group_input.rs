@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The ID of the step group you want to delete.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl DeleteWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The ID of the step group you want to delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl DeleteWorkflowStepGroupInput {
@@ -34,6 +36,7 @@ pub struct DeleteWorkflowStepGroupInputBuilder {
 }
 impl DeleteWorkflowStepGroupInputBuilder {
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteWorkflowStepGroupInputBuilder {
         &self.workflow_id
     }
     /// <p>The ID of the step group you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl DeleteWorkflowStepGroupInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteWorkflowStepGroupInput`](crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder::workflow_id)
+    /// - [`id`](crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,8 +76,18 @@ impl DeleteWorkflowStepGroupInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput {
-            workflow_id: self.workflow_id,
-            id: self.id,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building DeleteWorkflowStepGroupInput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building DeleteWorkflowStepGroupInput",
+                )
+            })?,
         })
     }
 }

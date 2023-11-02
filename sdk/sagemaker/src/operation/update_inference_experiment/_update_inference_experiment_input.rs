@@ -30,8 +30,10 @@ impl UpdateInferenceExperimentInput {
         self.description.as_deref()
     }
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
-    pub fn model_variants(&self) -> ::std::option::Option<&[crate::types::ModelVariantConfig]> {
-        self.model_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_variants.is_none()`.
+    pub fn model_variants(&self) -> &[crate::types::ModelVariantConfig] {
+        self.model_variants.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn data_storage_config(&self) -> ::std::option::Option<&crate::types::InferenceExperimentDataStorageConfig> {
@@ -62,6 +64,7 @@ pub struct UpdateInferenceExperimentInputBuilder {
 }
 impl UpdateInferenceExperimentInputBuilder {
     /// <p>The name of the inference experiment to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

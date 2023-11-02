@@ -27,6 +27,7 @@ pub struct CreateFieldLevelEncryptionConfigInputBuilder {
 }
 impl CreateFieldLevelEncryptionConfigInputBuilder {
     /// <p>The request to create a new field-level encryption configuration.</p>
+    /// This field is required.
     pub fn field_level_encryption_config(mut self, input: crate::types::FieldLevelEncryptionConfig) -> Self {
         self.field_level_encryption_config = ::std::option::Option::Some(input);
         self

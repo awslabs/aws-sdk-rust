@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub key_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
 }
 impl RevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub fn key_pattern(&self) -> ::std::option::Option<&str> {
         self.key_pattern.as_deref()
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl RevisionDestinationEntry {
@@ -42,6 +44,7 @@ pub struct RevisionDestinationEntryBuilder {
 }
 impl RevisionDestinationEntryBuilder {
     /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl RevisionDestinationEntryBuilder {
         &self.key_pattern
     }
     /// <p>The unique identifier for the revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl RevisionDestinationEntryBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`RevisionDestinationEntry`](crate::types::RevisionDestinationEntry).
-    pub fn build(self) -> crate::types::RevisionDestinationEntry {
-        crate::types::RevisionDestinationEntry {
-            bucket: self.bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::RevisionDestinationEntryBuilder::bucket)
+    /// - [`revision_id`](crate::types::builders::RevisionDestinationEntryBuilder::revision_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RevisionDestinationEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RevisionDestinationEntry {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building RevisionDestinationEntry",
+                )
+            })?,
             key_pattern: self.key_pattern,
-            revision_id: self.revision_id,
-        }
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building RevisionDestinationEntry",
+                )
+            })?,
+        })
     }
 }

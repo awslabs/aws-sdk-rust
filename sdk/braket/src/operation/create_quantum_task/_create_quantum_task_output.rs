@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQuantumTaskOutput {
     /// <p>The ARN of the task created by the request.</p>
-    pub quantum_task_arn: ::std::option::Option<::std::string::String>,
+    pub quantum_task_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateQuantumTaskOutput {
     /// <p>The ARN of the task created by the request.</p>
-    pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
-        self.quantum_task_arn.as_deref()
+    pub fn quantum_task_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.quantum_task_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateQuantumTaskOutput {
@@ -34,6 +35,7 @@ pub struct CreateQuantumTaskOutputBuilder {
 }
 impl CreateQuantumTaskOutputBuilder {
     /// <p>The ARN of the task created by the request.</p>
+    /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateQuantumTaskOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateQuantumTaskOutput`](crate::operation::create_quantum_task::CreateQuantumTaskOutput).
-    pub fn build(self) -> crate::operation::create_quantum_task::CreateQuantumTaskOutput {
-        crate::operation::create_quantum_task::CreateQuantumTaskOutput {
-            quantum_task_arn: self.quantum_task_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantum_task_arn`](crate::operation::create_quantum_task::builders::CreateQuantumTaskOutputBuilder::quantum_task_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_quantum_task::CreateQuantumTaskOutput {
+            quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantum_task_arn",
+                    "quantum_task_arn was not specified but it is required when building CreateQuantumTaskOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

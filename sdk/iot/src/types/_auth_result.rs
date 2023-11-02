@@ -33,8 +33,10 @@ impl AuthResult {
         self.auth_decision.as_ref()
     }
     /// <p>Contains any missing context values found while evaluating policy.</p>
-    pub fn missing_context_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.missing_context_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.missing_context_values.is_none()`.
+    pub fn missing_context_values(&self) -> &[::std::string::String] {
+        self.missing_context_values.as_deref().unwrap_or_default()
     }
 }
 impl AuthResult {

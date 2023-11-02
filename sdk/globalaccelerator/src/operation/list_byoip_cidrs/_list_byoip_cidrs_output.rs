@@ -11,8 +11,10 @@ pub struct ListByoipCidrsOutput {
 }
 impl ListByoipCidrsOutput {
     /// <p>Information about your address ranges.</p>
-    pub fn byoip_cidrs(&self) -> ::std::option::Option<&[crate::types::ByoipCidr]> {
-        self.byoip_cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.byoip_cidrs.is_none()`.
+    pub fn byoip_cidrs(&self) -> &[crate::types::ByoipCidr] {
+        self.byoip_cidrs.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

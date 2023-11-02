@@ -3,11 +3,11 @@ pub fn ser_approval_result(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApprovalResult,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.summary {
-        object.key("summary").string(var_1.as_str());
+    {
+        object.key("summary").string(input.summary.as_str());
     }
-    if let Some(var_2) = &input.status {
-        object.key("status").string(var_2.as_str());
+    {
+        object.key("status").string(input.status.as_str());
     }
     Ok(())
 }

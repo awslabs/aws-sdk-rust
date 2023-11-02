@@ -79,6 +79,7 @@ pub struct TestInvokeAuthorizerInputBuilder {
 }
 impl TestInvokeAuthorizerInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +94,7 @@ impl TestInvokeAuthorizerInputBuilder {
         &self.rest_api_id
     }
     /// <p>Specifies a test invoke authorizer request's Authorizer ID.</p>
+    /// This field is required.
     pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self

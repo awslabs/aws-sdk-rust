@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIpAccessSettingsOutput {
     /// <p>The ARN of the IP access settings resource.</p>
-    pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
+    pub ip_access_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateIpAccessSettingsOutput {
     /// <p>The ARN of the IP access settings resource.</p>
-    pub fn ip_access_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.ip_access_settings_arn.as_deref()
+    pub fn ip_access_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_access_settings_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateIpAccessSettingsOutput {
@@ -34,6 +35,7 @@ pub struct CreateIpAccessSettingsOutputBuilder {
 }
 impl CreateIpAccessSettingsOutputBuilder {
     /// <p>The ARN of the IP access settings resource.</p>
+    /// This field is required.
     pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateIpAccessSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateIpAccessSettingsOutput`](crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput).
-    pub fn build(self) -> crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput {
-        crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput {
-            ip_access_settings_arn: self.ip_access_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_access_settings_arn`](crate::operation::create_ip_access_settings::builders::CreateIpAccessSettingsOutputBuilder::ip_access_settings_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput {
+            ip_access_settings_arn: self.ip_access_settings_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ip_access_settings_arn",
+                    "ip_access_settings_arn was not specified but it is required when building CreateIpAccessSettingsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

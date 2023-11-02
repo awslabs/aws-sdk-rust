@@ -27,6 +27,7 @@ pub struct GetAdminScopeInputBuilder {
 }
 impl GetAdminScopeInputBuilder {
     /// <p>The administator account that you want to get the details for.</p>
+    /// This field is required.
     pub fn admin_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account = ::std::option::Option::Some(input.into());
         self

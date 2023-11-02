@@ -60,6 +60,7 @@ pub struct CreateDataSourceFromS3InputBuilder {
 }
 impl CreateDataSourceFromS3InputBuilder {
     /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
+    /// This field is required.
     pub fn data_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_id = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl CreateDataSourceFromS3InputBuilder {
     /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
     /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn data_spec(mut self, input: crate::types::S3DataSpec) -> Self {
         self.data_spec = ::std::option::Option::Some(input);
         self

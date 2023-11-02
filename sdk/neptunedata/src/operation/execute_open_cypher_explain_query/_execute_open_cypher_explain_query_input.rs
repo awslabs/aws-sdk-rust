@@ -41,6 +41,7 @@ pub struct ExecuteOpenCypherExplainQueryInputBuilder {
 }
 impl ExecuteOpenCypherExplainQueryInputBuilder {
     /// <p>The openCypher query string.</p>
+    /// This field is required.
     pub fn open_cypher_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_cypher_query = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ExecuteOpenCypherExplainQueryInputBuilder {
         &self.parameters
     }
     /// <p>The openCypher <code>explain</code> mode. Can be one of: <code>static</code>, <code>dynamic</code>, or <code>details</code>.</p>
+    /// This field is required.
     pub fn explain_mode(mut self, input: crate::types::OpenCypherExplainMode) -> Self {
         self.explain_mode = ::std::option::Option::Some(input);
         self

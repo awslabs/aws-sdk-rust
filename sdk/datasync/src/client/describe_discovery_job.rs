@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDiscoveryJob`](crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`discovery_job_arn(impl Into<String>)`](crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder::discovery_job_arn) / [`set_discovery_job_arn(Option<String>)`](crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder::set_discovery_job_arn): <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p>
+    ///   - [`discovery_job_arn(impl Into<String>)`](crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder::discovery_job_arn) / [`set_discovery_job_arn(Option<String>)`](crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobFluentBuilder::set_discovery_job_arn):<br>required: **true**<br><p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p><br>
     /// - On success, responds with [`DescribeDiscoveryJobOutput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput) with field(s):
     ///   - [`storage_system_arn(Option<String>)`](crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput::storage_system_arn): <p>The ARN of the on-premises storage system you're running the discovery job on.</p>
     ///   - [`discovery_job_arn(Option<String>)`](crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput::discovery_job_arn): <p>The ARN of the discovery job.</p>

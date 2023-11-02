@@ -12,8 +12,10 @@ pub struct DescribeLaunchConfigurationTemplatesInput {
 }
 impl DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_configuration_template_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_configuration_template_i_ds.is_none()`.
+    pub fn launch_configuration_template_i_ds(&self) -> &[::std::string::String] {
+        self.launch_configuration_template_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
     pub fn max_results(&self) -> i32 {

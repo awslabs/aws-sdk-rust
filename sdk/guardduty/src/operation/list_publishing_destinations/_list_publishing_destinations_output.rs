@@ -11,8 +11,10 @@ pub struct ListPublishingDestinationsOutput {
 }
 impl ListPublishingDestinationsOutput {
     /// <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::Destination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::Destination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

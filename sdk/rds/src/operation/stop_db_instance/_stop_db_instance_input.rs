@@ -34,6 +34,7 @@ pub struct StopDbInstanceInputBuilder {
 }
 impl StopDbInstanceInputBuilder {
     /// <p>The user-supplied instance identifier.</p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self

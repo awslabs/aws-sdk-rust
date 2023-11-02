@@ -27,6 +27,7 @@ pub struct AcceptGrantInputBuilder {
 }
 impl AcceptGrantInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// This field is required.
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_arn = ::std::option::Option::Some(input.into());
         self

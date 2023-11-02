@@ -27,6 +27,7 @@ pub struct PutReplicationConfigurationInputBuilder {
 }
 impl PutReplicationConfigurationInputBuilder {
     /// <p>An object representing the replication configuration for a registry.</p>
+    /// This field is required.
     pub fn replication_configuration(mut self, input: crate::types::ReplicationConfiguration) -> Self {
         self.replication_configuration = ::std::option::Option::Some(input);
         self

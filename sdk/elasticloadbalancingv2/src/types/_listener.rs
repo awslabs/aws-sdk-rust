@@ -39,20 +39,26 @@ impl Listener {
         self.protocol.as_ref()
     }
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn ssl_policy(&self) -> ::std::option::Option<&str> {
         self.ssl_policy.as_deref()
     }
     /// <p>The default actions for the listener.</p>
-    pub fn default_actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
-        self.default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_actions.is_none()`.
+    pub fn default_actions(&self) -> &[crate::types::Action] {
+        self.default_actions.as_deref().unwrap_or_default()
     }
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
-    pub fn alpn_policy(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alpn_policy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alpn_policy.is_none()`.
+    pub fn alpn_policy(&self) -> &[::std::string::String] {
+        self.alpn_policy.as_deref().unwrap_or_default()
     }
 }
 impl Listener {

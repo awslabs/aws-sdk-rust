@@ -27,6 +27,7 @@ pub struct DeletePredictorInputBuilder {
 }
 impl DeletePredictorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
+    /// This field is required.
     pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self

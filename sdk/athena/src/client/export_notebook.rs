@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExportNotebook`](crate::operation::export_notebook::builders::ExportNotebookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notebook_id(impl Into<String>)`](crate::operation::export_notebook::builders::ExportNotebookFluentBuilder::notebook_id) / [`set_notebook_id(Option<String>)`](crate::operation::export_notebook::builders::ExportNotebookFluentBuilder::set_notebook_id): <p>The ID of the notebook to export.</p>
+    ///   - [`notebook_id(impl Into<String>)`](crate::operation::export_notebook::builders::ExportNotebookFluentBuilder::notebook_id) / [`set_notebook_id(Option<String>)`](crate::operation::export_notebook::builders::ExportNotebookFluentBuilder::set_notebook_id):<br>required: **true**<br><p>The ID of the notebook to export.</p><br>
     /// - On success, responds with [`ExportNotebookOutput`](crate::operation::export_notebook::ExportNotebookOutput) with field(s):
     ///   - [`notebook_metadata(Option<NotebookMetadata>)`](crate::operation::export_notebook::ExportNotebookOutput::notebook_metadata): <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
     ///   - [`payload(Option<String>)`](crate::operation::export_notebook::ExportNotebookOutput::payload): <p>The content of the exported notebook.</p>

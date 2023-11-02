@@ -28,6 +28,7 @@ pub struct AnalyticsExportDestinationBuilder {
 }
 impl AnalyticsExportDestinationBuilder {
     /// <p>A destination signifying output to an S3 bucket.</p>
+    /// This field is required.
     pub fn s3_bucket_destination(mut self, input: crate::types::AnalyticsS3BucketDestination) -> Self {
         self.s3_bucket_destination = ::std::option::Option::Some(input);
         self

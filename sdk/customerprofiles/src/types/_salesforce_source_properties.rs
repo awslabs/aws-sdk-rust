@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
-    pub object: ::std::option::Option<::std::string::String>,
+    pub object: ::std::string::String,
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub enable_dynamic_field_update: bool,
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
@@ -13,8 +13,9 @@ pub struct SalesforceSourceProperties {
 }
 impl SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
-    pub fn object(&self) -> ::std::option::Option<&str> {
-        self.object.as_deref()
+    pub fn object(&self) -> &str {
+        use std::ops::Deref;
+        self.object.deref()
     }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn enable_dynamic_field_update(&self) -> bool {
@@ -42,6 +43,7 @@ pub struct SalesforceSourcePropertiesBuilder {
 }
 impl SalesforceSourcePropertiesBuilder {
     /// <p>The object specified in the Salesforce flow source.</p>
+    /// This field is required.
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl SalesforceSourcePropertiesBuilder {
         &self.include_deleted_records
     }
     /// Consumes the builder and constructs a [`SalesforceSourceProperties`](crate::types::SalesforceSourceProperties).
-    pub fn build(self) -> crate::types::SalesforceSourceProperties {
-        crate::types::SalesforceSourceProperties {
-            object: self.object,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object`](crate::types::builders::SalesforceSourcePropertiesBuilder::object)
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceSourceProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SalesforceSourceProperties {
+            object: self.object.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object",
+                    "object was not specified but it is required when building SalesforceSourceProperties",
+                )
+            })?,
             enable_dynamic_field_update: self.enable_dynamic_field_update.unwrap_or_default(),
             include_deleted_records: self.include_deleted_records.unwrap_or_default(),
-        }
+        })
     }
 }

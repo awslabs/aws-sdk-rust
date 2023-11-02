@@ -92,29 +92,20 @@ pub(crate) fn lens_list_cidr_locations_output_cidr_locations(
 pub(crate) fn lens_list_health_checks_output_health_checks(
     input: crate::operation::list_health_checks::ListHealthChecksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>> {
-    let input = match input.health_checks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.health_checks;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_hosted_zones_output_hosted_zones(
     input: crate::operation::list_hosted_zones::ListHostedZonesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
-    let input = match input.hosted_zones {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.hosted_zones;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_query_logging_configs_output_query_logging_configs(
     input: crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>> {
-    let input = match input.query_logging_configs {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.query_logging_configs;
     ::std::option::Option::Some(input)
 }

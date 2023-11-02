@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteLocalId {
     /// <p>Physical cell ID.</p>
-    pub pci: ::std::option::Option<i32>,
+    pub pci: i32,
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
-    pub earfcn: ::std::option::Option<i32>,
+    pub earfcn: i32,
 }
 impl LteLocalId {
     /// <p>Physical cell ID.</p>
-    pub fn pci(&self) -> ::std::option::Option<i32> {
+    pub fn pci(&self) -> i32 {
         self.pci
     }
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
-    pub fn earfcn(&self) -> ::std::option::Option<i32> {
+    pub fn earfcn(&self) -> i32 {
         self.earfcn
     }
 }
@@ -35,6 +35,7 @@ pub struct LteLocalIdBuilder {
 }
 impl LteLocalIdBuilder {
     /// <p>Physical cell ID.</p>
+    /// This field is required.
     pub fn pci(mut self, input: i32) -> Self {
         self.pci = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl LteLocalIdBuilder {
         &self.pci
     }
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
+    /// This field is required.
     pub fn earfcn(mut self, input: i32) -> Self {
         self.earfcn = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl LteLocalIdBuilder {
         &self.earfcn
     }
     /// Consumes the builder and constructs a [`LteLocalId`](crate::types::LteLocalId).
-    pub fn build(self) -> crate::types::LteLocalId {
-        crate::types::LteLocalId {
-            pci: self.pci,
-            earfcn: self.earfcn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pci`](crate::types::builders::LteLocalIdBuilder::pci)
+    /// - [`earfcn`](crate::types::builders::LteLocalIdBuilder::earfcn)
+    pub fn build(self) -> ::std::result::Result<crate::types::LteLocalId, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LteLocalId {
+            pci: self.pci.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pci",
+                    "pci was not specified but it is required when building LteLocalId",
+                )
+            })?,
+            earfcn: self.earfcn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "earfcn",
+                    "earfcn was not specified but it is required when building LteLocalId",
+                )
+            })?,
+        })
     }
 }

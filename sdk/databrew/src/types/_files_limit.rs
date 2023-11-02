@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilesLimit {
     /// <p>The number of Amazon S3 files to select.</p>
-    pub max_files: ::std::option::Option<i32>,
+    pub max_files: i32,
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
     pub ordered_by: ::std::option::Option<crate::types::OrderedBy>,
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
@@ -13,7 +13,7 @@ pub struct FilesLimit {
 }
 impl FilesLimit {
     /// <p>The number of Amazon S3 files to select.</p>
-    pub fn max_files(&self) -> ::std::option::Option<i32> {
+    pub fn max_files(&self) -> i32 {
         self.max_files
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
@@ -42,6 +42,7 @@ pub struct FilesLimitBuilder {
 }
 impl FilesLimitBuilder {
     /// <p>The number of Amazon S3 files to select.</p>
+    /// This field is required.
     pub fn max_files(mut self, input: i32) -> Self {
         self.max_files = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl FilesLimitBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`FilesLimit`](crate::types::FilesLimit).
-    pub fn build(self) -> crate::types::FilesLimit {
-        crate::types::FilesLimit {
-            max_files: self.max_files,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_files`](crate::types::builders::FilesLimitBuilder::max_files)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilesLimit, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilesLimit {
+            max_files: self.max_files.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_files",
+                    "max_files was not specified but it is required when building FilesLimit",
+                )
+            })?,
             ordered_by: self.ordered_by,
             order: self.order,
-        }
+        })
     }
 }

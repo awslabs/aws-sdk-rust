@@ -40,6 +40,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing instance.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self

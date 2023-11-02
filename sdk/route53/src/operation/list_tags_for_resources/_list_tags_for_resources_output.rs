@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourcesOutput {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub resource_tag_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
+    pub resource_tag_sets: ::std::vec::Vec<crate::types::ResourceTagSet>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourcesOutput {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub fn resource_tag_sets(&self) -> ::std::option::Option<&[crate::types::ResourceTagSet]> {
-        self.resource_tag_sets.as_deref()
+    pub fn resource_tag_sets(&self) -> &[crate::types::ResourceTagSet] {
+        use std::ops::Deref;
+        self.resource_tag_sets.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTagsForResourcesOutput {
@@ -64,10 +65,20 @@ impl ListTagsForResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput).
-    pub fn build(self) -> crate::operation::list_tags_for_resources::ListTagsForResourcesOutput {
-        crate::operation::list_tags_for_resources::ListTagsForResourcesOutput {
-            resource_tag_sets: self.resource_tag_sets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_tag_sets`](crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder::resource_tag_sets)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_tags_for_resources::ListTagsForResourcesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_tags_for_resources::ListTagsForResourcesOutput {
+            resource_tag_sets: self.resource_tag_sets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_tag_sets",
+                    "resource_tag_sets was not specified but it is required when building ListTagsForResourcesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

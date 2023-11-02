@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJobRun`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_name): <p>The name of the job being processed during this run.</p>
-    ///   - [`run_id(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_run_id): <p>The unique identifier of the job run.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_name):<br>required: **true**<br><p>The name of the job being processed during this run.</p><br>
+    ///   - [`run_id(impl Into<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::describe_job_run::builders::DescribeJobRunFluentBuilder::set_run_id):<br>required: **true**<br><p>The unique identifier of the job run.</p><br>
     /// - On success, responds with [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput) with field(s):
     ///   - [`attempt(i32)`](crate::operation::describe_job_run::DescribeJobRunOutput::attempt): <p>The number of times that DataBrew has attempted to run the job.</p>
     ///   - [`completed_on(Option<DateTime>)`](crate::operation::describe_job_run::DescribeJobRunOutput::completed_on): <p>The date and time when the job completed processing.</p>
     ///   - [`dataset_name(Option<String>)`](crate::operation::describe_job_run::DescribeJobRunOutput::dataset_name): <p>The name of the dataset for the job to process.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_job_run::DescribeJobRunOutput::error_message): <p>A message indicating an error (if any) that was encountered when the job ran.</p>
     ///   - [`execution_time(i32)`](crate::operation::describe_job_run::DescribeJobRunOutput::execution_time): <p>The amount of time, in seconds, during which the job run consumed resources.</p>
-    ///   - [`job_name(Option<String>)`](crate::operation::describe_job_run::DescribeJobRunOutput::job_name): <p>The name of the job being processed during this run.</p>
+    ///   - [`job_name(String)`](crate::operation::describe_job_run::DescribeJobRunOutput::job_name): <p>The name of the job being processed during this run.</p>
     ///   - [`profile_configuration(Option<ProfileConfiguration>)`](crate::operation::describe_job_run::DescribeJobRunOutput::profile_configuration): <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     ///   - [`validation_configurations(Option<Vec<ValidationConfiguration>>)`](crate::operation::describe_job_run::DescribeJobRunOutput::validation_configurations): <p>List of validation configurations that are applied to the profile job.</p>
     ///   - [`run_id(Option<String>)`](crate::operation::describe_job_run::DescribeJobRunOutput::run_id): <p>The unique identifier of the job run.</p>

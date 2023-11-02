@@ -34,6 +34,7 @@ pub struct DescribeMigrationTaskInputBuilder {
 }
 impl DescribeMigrationTaskInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeMigrationTaskInputBuilder {
         &self.progress_update_stream
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self

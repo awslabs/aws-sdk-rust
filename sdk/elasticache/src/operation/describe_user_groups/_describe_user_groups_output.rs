@@ -11,8 +11,10 @@ pub struct DescribeUserGroupsOutput {
 }
 impl DescribeUserGroupsOutput {
     /// <p>Returns a list of user groups.</p>
-    pub fn user_groups(&self) -> ::std::option::Option<&[crate::types::UserGroup]> {
-        self.user_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_groups.is_none()`.
+    pub fn user_groups(&self) -> &[crate::types::UserGroup] {
+        self.user_groups.as_deref().unwrap_or_default()
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

@@ -31,8 +31,10 @@ impl OrganizationFeatureConfigurationResult {
         self.auto_enable.as_ref()
     }
     /// <p>The additional configuration that is configured for the member accounts within the organization.</p>
-    pub fn additional_configuration(&self) -> ::std::option::Option<&[crate::types::OrganizationAdditionalConfigurationResult]> {
-        self.additional_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_configuration.is_none()`.
+    pub fn additional_configuration(&self) -> &[crate::types::OrganizationAdditionalConfigurationResult] {
+        self.additional_configuration.as_deref().unwrap_or_default()
     }
 }
 impl OrganizationFeatureConfigurationResult {

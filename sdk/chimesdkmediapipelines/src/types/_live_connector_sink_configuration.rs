@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveConnectorSinkConfiguration {
     /// <p>The sink configuration's sink type.</p>
-    pub sink_type: ::std::option::Option<crate::types::LiveConnectorSinkType>,
+    pub sink_type: crate::types::LiveConnectorSinkType,
     /// <p>The sink configuration's RTMP configuration settings.</p>
     pub rtmp_configuration: ::std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
 }
 impl LiveConnectorSinkConfiguration {
     /// <p>The sink configuration's sink type.</p>
-    pub fn sink_type(&self) -> ::std::option::Option<&crate::types::LiveConnectorSinkType> {
-        self.sink_type.as_ref()
+    pub fn sink_type(&self) -> &crate::types::LiveConnectorSinkType {
+        &self.sink_type
     }
     /// <p>The sink configuration's RTMP configuration settings.</p>
     pub fn rtmp_configuration(&self) -> ::std::option::Option<&crate::types::LiveConnectorRtmpConfiguration> {
@@ -35,6 +35,7 @@ pub struct LiveConnectorSinkConfigurationBuilder {
 }
 impl LiveConnectorSinkConfigurationBuilder {
     /// <p>The sink configuration's sink type.</p>
+    /// This field is required.
     pub fn sink_type(mut self, input: crate::types::LiveConnectorSinkType) -> Self {
         self.sink_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl LiveConnectorSinkConfigurationBuilder {
         &self.sink_type
     }
     /// <p>The sink configuration's RTMP configuration settings.</p>
+    /// This field is required.
     pub fn rtmp_configuration(mut self, input: crate::types::LiveConnectorRtmpConfiguration) -> Self {
         self.rtmp_configuration = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl LiveConnectorSinkConfigurationBuilder {
         &self.rtmp_configuration
     }
     /// Consumes the builder and constructs a [`LiveConnectorSinkConfiguration`](crate::types::LiveConnectorSinkConfiguration).
-    pub fn build(self) -> crate::types::LiveConnectorSinkConfiguration {
-        crate::types::LiveConnectorSinkConfiguration {
-            sink_type: self.sink_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sink_type`](crate::types::builders::LiveConnectorSinkConfigurationBuilder::sink_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::LiveConnectorSinkConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LiveConnectorSinkConfiguration {
+            sink_type: self.sink_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sink_type",
+                    "sink_type was not specified but it is required when building LiveConnectorSinkConfiguration",
+                )
+            })?,
             rtmp_configuration: self.rtmp_configuration,
-        }
+        })
     }
 }

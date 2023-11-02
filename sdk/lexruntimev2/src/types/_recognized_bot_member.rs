@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecognizedBotMember {
     /// <p>The identifier of the bot member that processes the request.</p>
-    pub bot_id: ::std::option::Option<::std::string::String>,
+    pub bot_id: ::std::string::String,
     /// <p>The name of the bot member that processes the request.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
 }
 impl RecognizedBotMember {
     /// <p>The identifier of the bot member that processes the request.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
-        self.bot_id.as_deref()
+    pub fn bot_id(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_id.deref()
     }
     /// <p>The name of the bot member that processes the request.</p>
     pub fn bot_name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct RecognizedBotMemberBuilder {
 }
 impl RecognizedBotMemberBuilder {
     /// <p>The identifier of the bot member that processes the request.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl RecognizedBotMemberBuilder {
         &self.bot_name
     }
     /// Consumes the builder and constructs a [`RecognizedBotMember`](crate::types::RecognizedBotMember).
-    pub fn build(self) -> crate::types::RecognizedBotMember {
-        crate::types::RecognizedBotMember {
-            bot_id: self.bot_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bot_id`](crate::types::builders::RecognizedBotMemberBuilder::bot_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecognizedBotMember, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecognizedBotMember {
+            bot_id: self.bot_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bot_id",
+                    "bot_id was not specified but it is required when building RecognizedBotMember",
+                )
+            })?,
             bot_name: self.bot_name,
-        }
+        })
     }
 }

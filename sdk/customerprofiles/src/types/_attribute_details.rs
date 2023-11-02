@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AttributeDetails {
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>,
+    pub attributes: ::std::vec::Vec<crate::types::AttributeItem>,
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
 }
 impl AttributeDetails {
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AttributeItem]> {
-        self.attributes.as_deref()
+    pub fn attributes(&self) -> &[crate::types::AttributeItem] {
+        use std::ops::Deref;
+        self.attributes.deref()
     }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
 }
 impl ::std::fmt::Debug for AttributeDetails {
@@ -63,6 +65,7 @@ impl AttributeDetailsBuilder {
         &self.attributes
     }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -77,11 +80,24 @@ impl AttributeDetailsBuilder {
         &self.expression
     }
     /// Consumes the builder and constructs a [`AttributeDetails`](crate::types::AttributeDetails).
-    pub fn build(self) -> crate::types::AttributeDetails {
-        crate::types::AttributeDetails {
-            attributes: self.attributes,
-            expression: self.expression,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attributes`](crate::types::builders::AttributeDetailsBuilder::attributes)
+    /// - [`expression`](crate::types::builders::AttributeDetailsBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttributeDetails {
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building AttributeDetails",
+                )
+            })?,
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building AttributeDetails",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for AttributeDetailsBuilder {

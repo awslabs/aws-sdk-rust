@@ -26,8 +26,10 @@ impl BatchDeleteCustomVocabularyItemInput {
         self.locale_id.as_deref()
     }
     /// <p>A list of custom vocabulary items requested to be deleted. Each entry must contain the unique custom vocabulary entry identifier.</p>
-    pub fn custom_vocabulary_item_list(&self) -> ::std::option::Option<&[crate::types::CustomVocabularyEntryId]> {
-        self.custom_vocabulary_item_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_vocabulary_item_list.is_none()`.
+    pub fn custom_vocabulary_item_list(&self) -> &[crate::types::CustomVocabularyEntryId] {
+        self.custom_vocabulary_item_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteCustomVocabularyItemInput {
@@ -48,6 +50,7 @@ pub struct BatchDeleteCustomVocabularyItemInputBuilder {
 }
 impl BatchDeleteCustomVocabularyItemInputBuilder {
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl BatchDeleteCustomVocabularyItemInputBuilder {
         &self.bot_id
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl BatchDeleteCustomVocabularyItemInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self

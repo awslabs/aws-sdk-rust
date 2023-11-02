@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderConfiguration {
     /// <p>The authorization strategy that you selected when you created the data store.</p>
-    pub authorization_strategy: ::std::option::Option<crate::types::AuthorizationStrategy>,
+    pub authorization_strategy: crate::types::AuthorizationStrategy,
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
     pub fine_grained_authorization_enabled: bool,
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
@@ -20,8 +20,8 @@ pub struct IdentityProviderConfiguration {
 }
 impl IdentityProviderConfiguration {
     /// <p>The authorization strategy that you selected when you created the data store.</p>
-    pub fn authorization_strategy(&self) -> ::std::option::Option<&crate::types::AuthorizationStrategy> {
-        self.authorization_strategy.as_ref()
+    pub fn authorization_strategy(&self) -> &crate::types::AuthorizationStrategy {
+        &self.authorization_strategy
     }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
     pub fn fine_grained_authorization_enabled(&self) -> bool {
@@ -59,6 +59,7 @@ pub struct IdentityProviderConfigurationBuilder {
 }
 impl IdentityProviderConfigurationBuilder {
     /// <p>The authorization strategy that you selected when you created the data store.</p>
+    /// This field is required.
     pub fn authorization_strategy(mut self, input: crate::types::AuthorizationStrategy) -> Self {
         self.authorization_strategy = ::std::option::Option::Some(input);
         self
@@ -130,12 +131,19 @@ impl IdentityProviderConfigurationBuilder {
         &self.idp_lambda_arn
     }
     /// Consumes the builder and constructs a [`IdentityProviderConfiguration`](crate::types::IdentityProviderConfiguration).
-    pub fn build(self) -> crate::types::IdentityProviderConfiguration {
-        crate::types::IdentityProviderConfiguration {
-            authorization_strategy: self.authorization_strategy,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`authorization_strategy`](crate::types::builders::IdentityProviderConfigurationBuilder::authorization_strategy)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdentityProviderConfiguration {
+            authorization_strategy: self.authorization_strategy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "authorization_strategy",
+                    "authorization_strategy was not specified but it is required when building IdentityProviderConfiguration",
+                )
+            })?,
             fine_grained_authorization_enabled: self.fine_grained_authorization_enabled.unwrap_or_default(),
             metadata: self.metadata,
             idp_lambda_arn: self.idp_lambda_arn,
-        }
+        })
     }
 }

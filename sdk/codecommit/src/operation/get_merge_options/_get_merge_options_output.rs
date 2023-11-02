@@ -4,31 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMergeOptionsOutput {
     /// <p>The merge option or strategy used to merge the code.</p>
-    pub merge_options: ::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>>,
+    pub merge_options: ::std::vec::Vec<crate::types::MergeOptionTypeEnum>,
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub source_commit_id: ::std::option::Option<::std::string::String>,
+    pub source_commit_id: ::std::string::String,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub destination_commit_id: ::std::option::Option<::std::string::String>,
+    pub destination_commit_id: ::std::string::String,
     /// <p>The commit ID of the merge base.</p>
-    pub base_commit_id: ::std::option::Option<::std::string::String>,
+    pub base_commit_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetMergeOptionsOutput {
     /// <p>The merge option or strategy used to merge the code.</p>
-    pub fn merge_options(&self) -> ::std::option::Option<&[crate::types::MergeOptionTypeEnum]> {
-        self.merge_options.as_deref()
+    pub fn merge_options(&self) -> &[crate::types::MergeOptionTypeEnum] {
+        use std::ops::Deref;
+        self.merge_options.deref()
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(&self) -> ::std::option::Option<&str> {
-        self.source_commit_id.as_deref()
+    pub fn source_commit_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_commit_id.deref()
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(&self) -> ::std::option::Option<&str> {
-        self.destination_commit_id.as_deref()
+    pub fn destination_commit_id(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_commit_id.deref()
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn base_commit_id(&self) -> ::std::option::Option<&str> {
-        self.base_commit_id.as_deref()
+    pub fn base_commit_id(&self) -> &str {
+        use std::ops::Deref;
+        self.base_commit_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMergeOptionsOutput {
@@ -75,6 +79,7 @@ impl GetMergeOptionsOutputBuilder {
         &self.merge_options
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    /// This field is required.
     pub fn source_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +94,7 @@ impl GetMergeOptionsOutputBuilder {
         &self.source_commit_id
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    /// This field is required.
     pub fn destination_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +109,7 @@ impl GetMergeOptionsOutputBuilder {
         &self.destination_commit_id
     }
     /// <p>The commit ID of the merge base.</p>
+    /// This field is required.
     pub fn base_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +133,40 @@ impl GetMergeOptionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMergeOptionsOutput`](crate::operation::get_merge_options::GetMergeOptionsOutput).
-    pub fn build(self) -> crate::operation::get_merge_options::GetMergeOptionsOutput {
-        crate::operation::get_merge_options::GetMergeOptionsOutput {
-            merge_options: self.merge_options,
-            source_commit_id: self.source_commit_id,
-            destination_commit_id: self.destination_commit_id,
-            base_commit_id: self.base_commit_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`merge_options`](crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder::merge_options)
+    /// - [`source_commit_id`](crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder::source_commit_id)
+    /// - [`destination_commit_id`](crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder::destination_commit_id)
+    /// - [`base_commit_id`](crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder::base_commit_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_merge_options::GetMergeOptionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_merge_options::GetMergeOptionsOutput {
+            merge_options: self.merge_options.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "merge_options",
+                    "merge_options was not specified but it is required when building GetMergeOptionsOutput",
+                )
+            })?,
+            source_commit_id: self.source_commit_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_commit_id",
+                    "source_commit_id was not specified but it is required when building GetMergeOptionsOutput",
+                )
+            })?,
+            destination_commit_id: self.destination_commit_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_commit_id",
+                    "destination_commit_id was not specified but it is required when building GetMergeOptionsOutput",
+                )
+            })?,
+            base_commit_id: self.base_commit_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "base_commit_id",
+                    "base_commit_id was not specified but it is required when building GetMergeOptionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

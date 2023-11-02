@@ -208,6 +208,7 @@ pub struct RegisterInstanceInputBuilder {
 }
 impl RegisterInstanceInputBuilder {
     /// <p>The ID of the service that you want to use for settings for the instance.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self
@@ -232,6 +233,7 @@ impl RegisterInstanceInputBuilder {
     /// </ul> <note>
     /// <p>Do not include sensitive information in <code>InstanceId</code> if the namespace is discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code> for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable by public DNS queries.</p>
     /// </note>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

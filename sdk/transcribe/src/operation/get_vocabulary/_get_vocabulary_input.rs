@@ -27,6 +27,7 @@ pub struct GetVocabularyInputBuilder {
 }
 impl GetVocabularyInputBuilder {
     /// <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self

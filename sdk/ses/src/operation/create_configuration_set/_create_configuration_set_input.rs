@@ -28,6 +28,7 @@ pub struct CreateConfigurationSetInputBuilder {
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>A data structure that contains the name of the configuration set.</p>
+    /// This field is required.
     pub fn configuration_set(mut self, input: crate::types::ConfigurationSet) -> Self {
         self.configuration_set = ::std::option::Option::Some(input);
         self

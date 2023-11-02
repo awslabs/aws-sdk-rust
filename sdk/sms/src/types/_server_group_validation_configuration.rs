@@ -15,8 +15,10 @@ impl ServerGroupValidationConfiguration {
         self.server_group_id.as_deref()
     }
     /// <p>The validation configuration.</p>
-    pub fn server_validation_configurations(&self) -> ::std::option::Option<&[crate::types::ServerValidationConfiguration]> {
-        self.server_validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_validation_configurations.is_none()`.
+    pub fn server_validation_configurations(&self) -> &[crate::types::ServerValidationConfiguration] {
+        self.server_validation_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ServerGroupValidationConfiguration {

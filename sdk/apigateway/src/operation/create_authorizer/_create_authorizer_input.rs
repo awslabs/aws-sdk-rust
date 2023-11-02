@@ -39,8 +39,10 @@ impl CreateAuthorizerInput {
         self.r#type.as_ref()
     }
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub fn provider_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.provider_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_ar_ns.is_none()`.
+    pub fn provider_ar_ns(&self) -> &[::std::string::String] {
+        self.provider_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&str> {
@@ -91,6 +93,7 @@ pub struct CreateAuthorizerInputBuilder {
 }
 impl CreateAuthorizerInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl CreateAuthorizerInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the authorizer.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +123,7 @@ impl CreateAuthorizerInputBuilder {
         &self.name
     }
     /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AuthorizerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct GetDeleteEventsByEventTypeStatusInputBuilder {
 }
 impl GetDeleteEventsByEventTypeStatusInputBuilder {
     /// <p>Name of event type for which to get the deletion status.</p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self

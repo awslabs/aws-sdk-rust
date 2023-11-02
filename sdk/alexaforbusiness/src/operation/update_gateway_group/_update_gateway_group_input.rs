@@ -41,6 +41,7 @@ pub struct UpdateGatewayGroupInputBuilder {
 }
 impl UpdateGatewayGroupInputBuilder {
     /// <p>The ARN of the gateway group to update.</p>
+    /// This field is required.
     pub fn gateway_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_group_arn = ::std::option::Option::Some(input.into());
         self

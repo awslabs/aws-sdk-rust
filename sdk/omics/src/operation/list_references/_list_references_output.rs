@@ -6,7 +6,7 @@ pub struct ListReferencesOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of references.</p>
-    pub references: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>>,
+    pub references: ::std::vec::Vec<crate::types::ReferenceListItem>,
     _request_id: Option<String>,
 }
 impl ListReferencesOutput {
@@ -15,8 +15,9 @@ impl ListReferencesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of references.</p>
-    pub fn references(&self) -> ::std::option::Option<&[crate::types::ReferenceListItem]> {
-        self.references.as_deref()
+    pub fn references(&self) -> &[crate::types::ReferenceListItem] {
+        use std::ops::Deref;
+        self.references.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListReferencesOutput {
@@ -84,11 +85,20 @@ impl ListReferencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput).
-    pub fn build(self) -> crate::operation::list_references::ListReferencesOutput {
-        crate::operation::list_references::ListReferencesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`references`](crate::operation::list_references::builders::ListReferencesOutputBuilder::references)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_references::ListReferencesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_references::ListReferencesOutput {
             next_token: self.next_token,
-            references: self.references,
+            references: self.references.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "references",
+                    "references was not specified but it is required when building ListReferencesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

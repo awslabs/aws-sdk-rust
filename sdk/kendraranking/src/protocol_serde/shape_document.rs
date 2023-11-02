@@ -3,40 +3,40 @@ pub fn ser_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Document,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("Id").string(var_1.as_str());
+    {
+        object.key("Id").string(input.id.as_str());
     }
-    if let Some(var_2) = &input.group_id {
-        object.key("GroupId").string(var_2.as_str());
+    if let Some(var_1) = &input.group_id {
+        object.key("GroupId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.title {
-        object.key("Title").string(var_3.as_str());
+    if let Some(var_2) = &input.title {
+        object.key("Title").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.body {
-        object.key("Body").string(var_4.as_str());
+    if let Some(var_3) = &input.body {
+        object.key("Body").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.tokenized_title {
-        let mut array_6 = object.key("TokenizedTitle").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.tokenized_title {
+        let mut array_5 = object.key("TokenizedTitle").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.tokenized_body {
-        let mut array_9 = object.key("TokenizedBody").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.tokenized_body {
+        let mut array_8 = object.key("TokenizedBody").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_11) = &input.original_score {
+    {
         object.key("OriginalScore").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_11).into()),
+            ::aws_smithy_types::Number::Float((input.original_score).into()),
         );
     }
     Ok(())

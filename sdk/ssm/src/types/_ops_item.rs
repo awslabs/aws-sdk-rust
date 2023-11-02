@@ -90,16 +90,20 @@ impl OpsItem {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::OpsItemNotification]> {
-        self.notifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notifications.is_none()`.
+    pub fn notifications(&self) -> &[crate::types::OpsItemNotification] {
+        self.notifications.as_deref().unwrap_or_default()
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn related_ops_items(&self) -> ::std::option::Option<&[crate::types::RelatedOpsItem]> {
-        self.related_ops_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_ops_items.is_none()`.
+    pub fn related_ops_items(&self) -> &[crate::types::RelatedOpsItem] {
+        self.related_ops_items.as_deref().unwrap_or_default()
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OpsItemStatus> {

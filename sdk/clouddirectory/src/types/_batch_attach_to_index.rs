@@ -35,6 +35,7 @@ pub struct BatchAttachToIndexBuilder {
 }
 impl BatchAttachToIndexBuilder {
     /// <p>A reference to the index that you are attaching the object to.</p>
+    /// This field is required.
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BatchAttachToIndexBuilder {
         &self.index_reference
     }
     /// <p>A reference to the object that you are attaching to the index.</p>
+    /// This field is required.
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_reference = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DeleteQualificationTypeInputBuilder {
 }
 impl DeleteQualificationTypeInputBuilder {
     /// <p>The ID of the QualificationType to dispose.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self

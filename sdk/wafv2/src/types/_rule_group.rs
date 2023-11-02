@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroup {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
-    pub capacity: ::std::option::Option<i64>,
+    pub capacity: i64,
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A description of the rule group that helps with identification. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
@@ -43,30 +43,35 @@ pub struct RuleGroup {
 }
 impl RuleGroup {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn capacity(&self) -> ::std::option::Option<i64> {
+    pub fn capacity(&self) -> i64 {
         self.capacity
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A description of the rule group that helps with identification. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
@@ -95,12 +100,16 @@ impl RuleGroup {
         self.custom_response_bodies.as_ref()
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn available_labels(&self) -> ::std::option::Option<&[crate::types::LabelSummary]> {
-        self.available_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_labels.is_none()`.
+    pub fn available_labels(&self) -> &[crate::types::LabelSummary] {
+        self.available_labels.as_deref().unwrap_or_default()
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    pub fn consumed_labels(&self) -> ::std::option::Option<&[crate::types::LabelSummary]> {
-        self.consumed_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_labels.is_none()`.
+    pub fn consumed_labels(&self) -> &[crate::types::LabelSummary] {
+        self.consumed_labels.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroup {
@@ -128,6 +137,7 @@ pub struct RuleGroupBuilder {
 }
 impl RuleGroupBuilder {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +152,7 @@ impl RuleGroupBuilder {
         &self.name
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +169,7 @@ impl RuleGroupBuilder {
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
+    /// This field is required.
     pub fn capacity(mut self, input: i64) -> Self {
         self.capacity = ::std::option::Option::Some(input);
         self
@@ -176,6 +188,7 @@ impl RuleGroupBuilder {
         &self.capacity
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -224,6 +237,7 @@ impl RuleGroupBuilder {
         &self.rules
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    /// This field is required.
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
         self
@@ -353,12 +367,37 @@ impl RuleGroupBuilder {
         &self.consumed_labels
     }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
-    pub fn build(self) -> crate::types::RuleGroup {
-        crate::types::RuleGroup {
-            name: self.name,
-            id: self.id,
-            capacity: self.capacity,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RuleGroupBuilder::name)
+    /// - [`id`](crate::types::builders::RuleGroupBuilder::id)
+    /// - [`capacity`](crate::types::builders::RuleGroupBuilder::capacity)
+    /// - [`arn`](crate::types::builders::RuleGroupBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroup, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleGroup {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RuleGroup",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building RuleGroup",
+                )
+            })?,
+            capacity: self.capacity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "capacity",
+                    "capacity was not specified but it is required when building RuleGroup",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RuleGroup",
+                )
+            })?,
             description: self.description,
             rules: self.rules,
             visibility_config: self.visibility_config,
@@ -366,6 +405,6 @@ impl RuleGroupBuilder {
             custom_response_bodies: self.custom_response_bodies,
             available_labels: self.available_labels,
             consumed_labels: self.consumed_labels,
-        }
+        })
     }
 }

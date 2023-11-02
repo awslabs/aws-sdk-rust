@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::set_max_results): <p>The size of the list to return (optional).</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::set_next_token): <p>An optional continuation token.</p>
+    ///   - [`max_results(i32)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::set_max_results):<br>required: **false**<br><p>The size of the list to return (optional).</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_classifiers::builders::GetClassifiersFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional continuation token.</p><br>
     /// - On success, responds with [`GetClassifiersOutput`](crate::operation::get_classifiers::GetClassifiersOutput) with field(s):
     ///   - [`classifiers(Option<Vec<Classifier>>)`](crate::operation::get_classifiers::GetClassifiersOutput::classifiers): <p>The requested list of classifier objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_classifiers::GetClassifiersOutput::next_token): <p>A continuation token.</p>

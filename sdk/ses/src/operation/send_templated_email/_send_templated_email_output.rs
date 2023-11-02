@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
-    pub message_id: ::std::option::Option<::std::string::String>,
+    pub message_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl SendTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
-        self.message_id.as_deref()
+    pub fn message_id(&self) -> &str {
+        use std::ops::Deref;
+        self.message_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SendTemplatedEmailOutput {
@@ -34,6 +35,7 @@ pub struct SendTemplatedEmailOutputBuilder {
 }
 impl SendTemplatedEmailOutputBuilder {
     /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,20 @@ impl SendTemplatedEmailOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SendTemplatedEmailOutput`](crate::operation::send_templated_email::SendTemplatedEmailOutput).
-    pub fn build(self) -> crate::operation::send_templated_email::SendTemplatedEmailOutput {
-        crate::operation::send_templated_email::SendTemplatedEmailOutput {
-            message_id: self.message_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message_id`](crate::operation::send_templated_email::builders::SendTemplatedEmailOutputBuilder::message_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::send_templated_email::SendTemplatedEmailOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::send_templated_email::SendTemplatedEmailOutput {
+            message_id: self.message_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message_id",
+                    "message_id was not specified but it is required when building SendTemplatedEmailOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

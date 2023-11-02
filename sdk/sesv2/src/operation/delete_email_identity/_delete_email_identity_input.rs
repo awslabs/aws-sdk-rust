@@ -28,6 +28,7 @@ pub struct DeleteEmailIdentityInputBuilder {
 }
 impl DeleteEmailIdentityInputBuilder {
     /// <p>The identity (that is, the email address or domain) to delete.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self

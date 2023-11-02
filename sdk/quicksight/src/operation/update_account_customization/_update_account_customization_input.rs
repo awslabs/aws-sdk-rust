@@ -41,6 +41,7 @@ pub struct UpdateAccountCustomizationInputBuilder {
 }
 impl UpdateAccountCustomizationInputBuilder {
     /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateAccountCustomizationInputBuilder {
         &self.namespace
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    /// This field is required.
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
         self.account_customization = ::std::option::Option::Some(input);
         self

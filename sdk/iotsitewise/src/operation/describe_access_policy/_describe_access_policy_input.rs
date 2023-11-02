@@ -27,6 +27,7 @@ pub struct DescribeAccessPolicyInputBuilder {
 }
 impl DescribeAccessPolicyInputBuilder {
     /// <p>The ID of the access policy.</p>
+    /// This field is required.
     pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self

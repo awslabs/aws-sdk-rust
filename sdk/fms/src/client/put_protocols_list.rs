@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutProtocolsList`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`protocols_list(ProtocolsListData)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::protocols_list) / [`set_protocols_list(Option<ProtocolsListData>)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::set_protocols_list): <p>The details of the Firewall Manager protocols list to be created.</p>
-    ///   - [`tag_list(Tag)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::set_tag_list): <p>The tags associated with the resource.</p>
+    ///   - [`protocols_list(ProtocolsListData)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::protocols_list) / [`set_protocols_list(Option<ProtocolsListData>)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::set_protocols_list):<br>required: **true**<br><p>The details of the Firewall Manager protocols list to be created.</p><br>
+    ///   - [`tag_list(Tag)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::put_protocols_list::builders::PutProtocolsListFluentBuilder::set_tag_list):<br>required: **false**<br><p>The tags associated with the resource.</p><br>
     /// - On success, responds with [`PutProtocolsListOutput`](crate::operation::put_protocols_list::PutProtocolsListOutput) with field(s):
     ///   - [`protocols_list(Option<ProtocolsListData>)`](crate::operation::put_protocols_list::PutProtocolsListOutput::protocols_list): <p>The details of the Firewall Manager protocols list.</p>
     ///   - [`protocols_list_arn(Option<String>)`](crate::operation::put_protocols_list::PutProtocolsListOutput::protocols_list_arn): <p>The Amazon Resource Name (ARN) of the protocols list.</p>

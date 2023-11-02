@@ -92,14 +92,14 @@ impl DescribeSessionsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::describe_sessions::DescribeSessionsOutput,
             crate::operation::describe_sessions::DescribeSessionsError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_sessions::DescribeSessionsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -193,5 +193,19 @@ impl DescribeSessionsFluentBuilder {
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
         self.inner.get_authentication_type()
+    }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.instance_id(input.into());
+        self
+    }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_instance_id(input);
+        self
+    }
+    /// <p>The identifier for the instance hosting the session.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
 }

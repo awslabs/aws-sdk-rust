@@ -41,6 +41,7 @@ pub struct UpdateFileCacheInputBuilder {
 }
 impl UpdateFileCacheInputBuilder {
     /// <p>The ID of the cache that you are updating.</p>
+    /// This field is required.
     pub fn file_cache_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_cache_id = ::std::option::Option::Some(input.into());
         self

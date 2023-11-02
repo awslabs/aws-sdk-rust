@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorldGenerationJobsOutput {
     /// <p>Summary information for world generator jobs.</p>
-    pub world_generation_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::WorldGenerationJobSummary>>,
+    pub world_generation_job_summaries: ::std::vec::Vec<crate::types::WorldGenerationJobSummary>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorldGenerationJobsOutput {
     /// <p>Summary information for world generator jobs.</p>
-    pub fn world_generation_job_summaries(&self) -> ::std::option::Option<&[crate::types::WorldGenerationJobSummary]> {
-        self.world_generation_job_summaries.as_deref()
+    pub fn world_generation_job_summaries(&self) -> &[crate::types::WorldGenerationJobSummary] {
+        use std::ops::Deref;
+        self.world_generation_job_summaries.deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,23 @@ impl ListWorldGenerationJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorldGenerationJobsOutput`](crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput).
-    pub fn build(self) -> crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput {
-        crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput {
-            world_generation_job_summaries: self.world_generation_job_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`world_generation_job_summaries`](crate::operation::list_world_generation_jobs::builders::ListWorldGenerationJobsOutputBuilder::world_generation_job_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput {
+            world_generation_job_summaries: self.world_generation_job_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "world_generation_job_summaries",
+                    "world_generation_job_summaries was not specified but it is required when building ListWorldGenerationJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

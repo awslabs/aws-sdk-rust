@@ -76,6 +76,7 @@ impl UploadLayerPartInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository that you're uploading layer parts to.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl UploadLayerPartInputBuilder {
         &self.repository_name
     }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl UploadLayerPartInputBuilder {
         &self.upload_id
     }
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
+    /// This field is required.
     pub fn part_first_byte(mut self, input: i64) -> Self {
         self.part_first_byte = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl UploadLayerPartInputBuilder {
         &self.part_first_byte
     }
     /// <p>The position of the last byte of the layer part within the overall image layer.</p>
+    /// This field is required.
     pub fn part_last_byte(mut self, input: i64) -> Self {
         self.part_last_byte = ::std::option::Option::Some(input);
         self
@@ -132,6 +136,7 @@ impl UploadLayerPartInputBuilder {
         &self.part_last_byte
     }
     /// <p>The base64-encoded layer part payload.</p>
+    /// This field is required.
     pub fn layer_part_blob(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.layer_part_blob = ::std::option::Option::Some(input);
         self

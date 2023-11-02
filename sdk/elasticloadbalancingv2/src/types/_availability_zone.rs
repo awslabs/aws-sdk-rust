@@ -27,8 +27,10 @@ impl AvailabilityZone {
         self.outpost_id.as_deref()
     }
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
-    pub fn load_balancer_addresses(&self) -> ::std::option::Option<&[crate::types::LoadBalancerAddress]> {
-        self.load_balancer_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_addresses.is_none()`.
+    pub fn load_balancer_addresses(&self) -> &[crate::types::LoadBalancerAddress] {
+        self.load_balancer_addresses.as_deref().unwrap_or_default()
     }
 }
 impl AvailabilityZone {

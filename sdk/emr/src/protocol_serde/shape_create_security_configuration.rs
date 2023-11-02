@@ -69,7 +69,7 @@ pub fn de_create_security_configuration_http_response(
         output = crate::protocol_serde::shape_create_security_configuration::de_create_security_configuration(_response_body, output)
             .map_err(crate::operation::create_security_configuration::CreateSecurityConfigurationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_security_configuration_output_correct_errors(output).build()
     })
 }
 

@@ -15,8 +15,10 @@ impl Predicate {
         self.logical.as_ref()
     }
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::Condition]> {
-        self.conditions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditions.is_none()`.
+    pub fn conditions(&self) -> &[crate::types::Condition] {
+        self.conditions.as_deref().unwrap_or_default()
     }
 }
 impl Predicate {

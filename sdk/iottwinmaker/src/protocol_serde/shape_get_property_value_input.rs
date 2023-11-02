@@ -24,20 +24,20 @@ pub fn ser_get_property_value_input(
     if let Some(var_6) = &input.property_group_name {
         object.key("propertyGroupName").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.selected_properties {
-        let mut array_8 = object.key("selectedProperties").start_array();
-        for item_9 in var_7 {
+    {
+        let mut array_7 = object.key("selectedProperties").start_array();
+        for item_8 in &input.selected_properties {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_10) = &input.tabular_conditions {
+    if let Some(var_9) = &input.tabular_conditions {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tabularConditions").start_object();
-        crate::protocol_serde::shape_tabular_conditions::ser_tabular_conditions(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("tabularConditions").start_object();
+        crate::protocol_serde::shape_tabular_conditions::ser_tabular_conditions(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

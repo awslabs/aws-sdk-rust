@@ -3,35 +3,35 @@ pub fn ser_scheduled_trigger_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduledTriggerProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.schedule_expression {
-        object.key("ScheduleExpression").string(var_1.as_str());
+    {
+        object.key("ScheduleExpression").string(input.schedule_expression.as_str());
     }
-    if let Some(var_2) = &input.data_pull_mode {
-        object.key("DataPullMode").string(var_2.as_str());
+    if let Some(var_1) = &input.data_pull_mode {
+        object.key("DataPullMode").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.schedule_start_time {
+    if let Some(var_2) = &input.schedule_start_time {
         object
             .key("ScheduleStartTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.schedule_end_time {
+    if let Some(var_3) = &input.schedule_end_time {
         object
             .key("ScheduleEndTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_5) = &input.timezone {
-        object.key("Timezone").string(var_5.as_str());
+    if let Some(var_4) = &input.timezone {
+        object.key("Timezone").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.schedule_offset {
+    if let Some(var_5) = &input.schedule_offset {
         object.key("ScheduleOffset").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_7) = &input.first_execution_from {
+    if let Some(var_6) = &input.first_execution_from {
         object
             .key("FirstExecutionFrom")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

@@ -3,35 +3,35 @@ pub fn ser_athena_connector_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AthenaConnectorSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.connection_name {
-        object.key("ConnectionName").string(var_2.as_str());
+    {
+        object.key("ConnectionName").string(input.connection_name.as_str());
     }
-    if let Some(var_3) = &input.connector_name {
-        object.key("ConnectorName").string(var_3.as_str());
+    {
+        object.key("ConnectorName").string(input.connector_name.as_str());
     }
-    if let Some(var_4) = &input.connection_type {
-        object.key("ConnectionType").string(var_4.as_str());
+    {
+        object.key("ConnectionType").string(input.connection_type.as_str());
     }
-    if let Some(var_5) = &input.connection_table {
-        object.key("ConnectionTable").string(var_5.as_str());
+    if let Some(var_1) = &input.connection_table {
+        object.key("ConnectionTable").string(var_1.as_str());
     }
-    if let Some(var_6) = &input.schema_name {
-        object.key("SchemaName").string(var_6.as_str());
+    {
+        object.key("SchemaName").string(input.schema_name.as_str());
     }
-    if let Some(var_7) = &input.output_schemas {
-        let mut array_8 = object.key("OutputSchemas").start_array();
-        for item_9 in var_7 {
+    if let Some(var_2) = &input.output_schemas {
+        let mut array_3 = object.key("OutputSchemas").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_8.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -106,7 +106,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::athena_connector_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

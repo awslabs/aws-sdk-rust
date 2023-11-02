@@ -35,11 +35,10 @@ pub fn de_describe_source_servers_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_source_servers::DescribeSourceServersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_source_servers::DescribeSourceServersError::ThrottlingException({
@@ -57,11 +56,10 @@ pub fn de_describe_source_servers_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_source_servers::DescribeSourceServersError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UninitializedAccountException" => crate::operation::describe_source_servers::DescribeSourceServersError::UninitializedAccountException({

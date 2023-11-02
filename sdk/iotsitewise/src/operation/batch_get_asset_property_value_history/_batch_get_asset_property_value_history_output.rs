@@ -4,27 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry>>,
+    pub error_entries: ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry>,
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-    pub success_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistorySuccessEntry>>,
+    pub success_entries: ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistorySuccessEntry>,
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-    pub skipped_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistorySkippedEntry>>,
+    pub skipped_entries: ::std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistorySkippedEntry>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl BatchGetAssetPropertyValueHistoryOutput {
     /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
-    pub fn error_entries(&self) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyValueHistoryErrorEntry]> {
-        self.error_entries.as_deref()
+    pub fn error_entries(&self) -> &[crate::types::BatchGetAssetPropertyValueHistoryErrorEntry] {
+        use std::ops::Deref;
+        self.error_entries.deref()
     }
     /// <p>A list of entries that were processed successfully by this batch request. Each success entry contains the <code>entryId</code> of the entry that succeeded and the latest query result.</p>
-    pub fn success_entries(&self) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyValueHistorySuccessEntry]> {
-        self.success_entries.as_deref()
+    pub fn success_entries(&self) -> &[crate::types::BatchGetAssetPropertyValueHistorySuccessEntry] {
+        use std::ops::Deref;
+        self.success_entries.deref()
     }
     /// <p>A list of entries that were not processed by this batch request. because these entries had been completely processed by previous paginated requests. Each skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
-    pub fn skipped_entries(&self) -> ::std::option::Option<&[crate::types::BatchGetAssetPropertyValueHistorySkippedEntry]> {
-        self.skipped_entries.as_deref()
+    pub fn skipped_entries(&self) -> &[crate::types::BatchGetAssetPropertyValueHistorySkippedEntry] {
+        use std::ops::Deref;
+        self.skipped_entries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -147,13 +150,39 @@ impl BatchGetAssetPropertyValueHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistoryOutput`](crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput).
-    pub fn build(self) -> crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput {
-        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput {
-            error_entries: self.error_entries,
-            success_entries: self.success_entries,
-            skipped_entries: self.skipped_entries,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`error_entries`](crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder::error_entries)
+    /// - [`success_entries`](crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder::success_entries)
+    /// - [`skipped_entries`](crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder::skipped_entries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput {
+                error_entries: self.error_entries.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "error_entries",
+                        "error_entries was not specified but it is required when building BatchGetAssetPropertyValueHistoryOutput",
+                    )
+                })?,
+                success_entries: self.success_entries.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "success_entries",
+                        "success_entries was not specified but it is required when building BatchGetAssetPropertyValueHistoryOutput",
+                    )
+                })?,
+                skipped_entries: self.skipped_entries.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "skipped_entries",
+                        "skipped_entries was not specified but it is required when building BatchGetAssetPropertyValueHistoryOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

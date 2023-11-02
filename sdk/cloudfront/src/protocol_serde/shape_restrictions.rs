@@ -13,6 +13,7 @@ pub fn ser_restrictions(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_restrictions(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Restrictions, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,5 +34,5 @@ pub fn de_restrictions(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::restrictions_correct_errors(builder).build())
 }

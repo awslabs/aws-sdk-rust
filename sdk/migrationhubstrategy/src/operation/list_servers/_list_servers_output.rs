@@ -11,8 +11,10 @@ pub struct ListServersOutput {
 }
 impl ListServersOutput {
     /// <p> The list of servers with detailed information about each server. </p>
-    pub fn server_infos(&self) -> ::std::option::Option<&[crate::types::ServerDetail]> {
-        self.server_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_infos.is_none()`.
+    pub fn server_infos(&self) -> &[crate::types::ServerDetail] {
+        self.server_infos.as_deref().unwrap_or_default()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

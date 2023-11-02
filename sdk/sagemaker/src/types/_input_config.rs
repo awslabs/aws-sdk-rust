@@ -257,6 +257,7 @@ pub struct InputConfigBuilder {
 }
 impl InputConfigBuilder {
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -594,6 +595,7 @@ impl InputConfigBuilder {
         &self.data_input_config
     }
     /// <p>Identifies the framework in which the model was trained. For example: TENSORFLOW.</p>
+    /// This field is required.
     pub fn framework(mut self, input: crate::types::Framework) -> Self {
         self.framework = ::std::option::Option::Some(input);
         self

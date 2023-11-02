@@ -48,6 +48,7 @@ pub struct ListGameServersInputBuilder {
 }
 impl ListGameServersInputBuilder {
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self

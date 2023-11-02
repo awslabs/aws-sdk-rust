@@ -28,6 +28,7 @@ pub struct ProtectionGroupArbitraryPatternLimitsBuilder {
 }
 impl ProtectionGroupArbitraryPatternLimitsBuilder {
     /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
+    /// This field is required.
     pub fn max_members(mut self, input: i64) -> Self {
         self.max_members = ::std::option::Option::Some(input);
         self

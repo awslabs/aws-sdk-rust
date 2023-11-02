@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculatedColumn {
     /// <p>Column name.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
-    pub column_id: ::std::option::Option<::std::string::String>,
+    pub column_id: ::std::string::String,
     /// <p>An expression that defines the calculated column.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
 }
 impl CalculatedColumn {
     /// <p>Column name.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
-    pub fn column_id(&self) -> ::std::option::Option<&str> {
-        self.column_id.as_deref()
+    pub fn column_id(&self) -> &str {
+        use std::ops::Deref;
+        self.column_id.deref()
     }
     /// <p>An expression that defines the calculated column.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
 }
 impl ::std::fmt::Debug for CalculatedColumn {
@@ -51,6 +54,7 @@ pub struct CalculatedColumnBuilder {
 }
 impl CalculatedColumnBuilder {
     /// <p>Column name.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +69,7 @@ impl CalculatedColumnBuilder {
         &self.column_name
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    /// This field is required.
     pub fn column_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +84,7 @@ impl CalculatedColumnBuilder {
         &self.column_id
     }
     /// <p>An expression that defines the calculated column.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +99,31 @@ impl CalculatedColumnBuilder {
         &self.expression
     }
     /// Consumes the builder and constructs a [`CalculatedColumn`](crate::types::CalculatedColumn).
-    pub fn build(self) -> crate::types::CalculatedColumn {
-        crate::types::CalculatedColumn {
-            column_name: self.column_name,
-            column_id: self.column_id,
-            expression: self.expression,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_name`](crate::types::builders::CalculatedColumnBuilder::column_name)
+    /// - [`column_id`](crate::types::builders::CalculatedColumnBuilder::column_id)
+    /// - [`expression`](crate::types::builders::CalculatedColumnBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::CalculatedColumn, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CalculatedColumn {
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building CalculatedColumn",
+                )
+            })?,
+            column_id: self.column_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_id",
+                    "column_id was not specified but it is required when building CalculatedColumn",
+                )
+            })?,
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building CalculatedColumn",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for CalculatedColumnBuilder {

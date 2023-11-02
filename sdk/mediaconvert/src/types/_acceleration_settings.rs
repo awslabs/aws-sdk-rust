@@ -28,6 +28,7 @@ pub struct AccelerationSettingsBuilder {
 }
 impl AccelerationSettingsBuilder {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::AccelerationMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self

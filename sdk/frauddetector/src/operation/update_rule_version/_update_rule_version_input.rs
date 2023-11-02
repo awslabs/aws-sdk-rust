@@ -34,12 +34,16 @@ impl UpdateRuleVersionInput {
         self.language.as_ref()
     }
     /// <p>The outcomes.</p>
-    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.outcomes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
+    pub fn outcomes(&self) -> &[::std::string::String] {
+        self.outcomes.as_deref().unwrap_or_default()
     }
     /// <p>The tags to assign to the rule version.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateRuleVersionInput {
@@ -74,6 +78,7 @@ pub struct UpdateRuleVersionInputBuilder {
 }
 impl UpdateRuleVersionInputBuilder {
     /// <p>The rule to update.</p>
+    /// This field is required.
     pub fn rule(mut self, input: crate::types::Rule) -> Self {
         self.rule = ::std::option::Option::Some(input);
         self
@@ -102,6 +107,7 @@ impl UpdateRuleVersionInputBuilder {
         &self.description
     }
     /// <p>The rule expression.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +122,7 @@ impl UpdateRuleVersionInputBuilder {
         &self.expression
     }
     /// <p>The language.</p>
+    /// This field is required.
     pub fn language(mut self, input: crate::types::Language) -> Self {
         self.language = ::std::option::Option::Some(input);
         self

@@ -22,8 +22,10 @@ impl CreateStoreImageTaskInput {
         self.bucket.as_deref()
     }
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
-    pub fn s3_object_tags(&self) -> ::std::option::Option<&[crate::types::S3ObjectTag]> {
-        self.s3_object_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_object_tags.is_none()`.
+    pub fn s3_object_tags(&self) -> &[crate::types::S3ObjectTag] {
+        self.s3_object_tags.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -48,6 +50,7 @@ pub struct CreateStoreImageTaskInputBuilder {
 }
 impl CreateStoreImageTaskInputBuilder {
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateStoreImageTaskInputBuilder {
         &self.image_id
     }
     /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

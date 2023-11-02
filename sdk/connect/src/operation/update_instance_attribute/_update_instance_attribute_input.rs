@@ -45,6 +45,7 @@ pub struct UpdateInstanceAttributeInputBuilder {
 }
 impl UpdateInstanceAttributeInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl UpdateInstanceAttributeInputBuilder {
     /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
+    /// This field is required.
     pub fn attribute_type(mut self, input: crate::types::InstanceAttributeType) -> Self {
         self.attribute_type = ::std::option::Option::Some(input);
         self
@@ -79,6 +81,7 @@ impl UpdateInstanceAttributeInputBuilder {
         &self.attribute_type
     }
     /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

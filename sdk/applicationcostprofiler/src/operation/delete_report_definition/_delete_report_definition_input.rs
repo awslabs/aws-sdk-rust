@@ -27,6 +27,7 @@ pub struct DeleteReportDefinitionInputBuilder {
 }
 impl DeleteReportDefinitionInputBuilder {
     /// <p>Required. ID of the report to delete.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self

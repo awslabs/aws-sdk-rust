@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportPlaybackKeyPairInput {
     /// <p>The public portion of a customer-generated key pair.</p>
-    pub public_key_material: ::std::option::Option<::std::string::String>,
+    pub public_key_material: ::std::string::String,
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
@@ -12,8 +12,9 @@ pub struct ImportPlaybackKeyPairInput {
 }
 impl ImportPlaybackKeyPairInput {
     /// <p>The public portion of a customer-generated key pair.</p>
-    pub fn public_key_material(&self) -> ::std::option::Option<&str> {
-        self.public_key_material.as_deref()
+    pub fn public_key_material(&self) -> &str {
+        use std::ops::Deref;
+        self.public_key_material.deref()
     }
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct ImportPlaybackKeyPairInputBuilder {
 }
 impl ImportPlaybackKeyPairInputBuilder {
     /// <p>The public portion of a customer-generated key pair.</p>
+    /// This field is required.
     pub fn public_key_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key_material = ::std::option::Option::Some(input.into());
         self
@@ -89,12 +91,19 @@ impl ImportPlaybackKeyPairInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportPlaybackKeyPairInput`](crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`public_key_material`](crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairInputBuilder::public_key_material)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput {
-            public_key_material: self.public_key_material,
+            public_key_material: self.public_key_material.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "public_key_material",
+                    "public_key_material was not specified but it is required when building ImportPlaybackKeyPairInput",
+                )
+            })?,
             name: self.name,
             tags: self.tags,
         })

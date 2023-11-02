@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossChannelBehavior {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
-    pub behavior_type: ::std::option::Option<crate::types::BehaviorType>,
+    pub behavior_type: crate::types::BehaviorType,
 }
 impl CrossChannelBehavior {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
-    pub fn behavior_type(&self) -> ::std::option::Option<&crate::types::BehaviorType> {
-        self.behavior_type.as_ref()
+    pub fn behavior_type(&self) -> &crate::types::BehaviorType {
+        &self.behavior_type
     }
 }
 impl CrossChannelBehavior {
@@ -28,6 +28,7 @@ pub struct CrossChannelBehaviorBuilder {
 }
 impl CrossChannelBehaviorBuilder {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
+    /// This field is required.
     pub fn behavior_type(mut self, input: crate::types::BehaviorType) -> Self {
         self.behavior_type = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl CrossChannelBehaviorBuilder {
         &self.behavior_type
     }
     /// Consumes the builder and constructs a [`CrossChannelBehavior`](crate::types::CrossChannelBehavior).
-    pub fn build(self) -> crate::types::CrossChannelBehavior {
-        crate::types::CrossChannelBehavior {
-            behavior_type: self.behavior_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`behavior_type`](crate::types::builders::CrossChannelBehaviorBuilder::behavior_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CrossChannelBehavior, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CrossChannelBehavior {
+            behavior_type: self.behavior_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "behavior_type",
+                    "behavior_type was not specified but it is required when building CrossChannelBehavior",
+                )
+            })?,
+        })
     }
 }

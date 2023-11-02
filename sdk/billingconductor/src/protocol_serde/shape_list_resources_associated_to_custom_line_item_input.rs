@@ -3,29 +3,29 @@ pub fn ser_list_resources_associated_to_custom_line_item_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_resources_associated_to_custom_line_item::ListResourcesAssociatedToCustomLineItemInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("Arn").string(var_1.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.billing_period {
-        object.key("BillingPeriod").string(var_2.as_str());
+    if let Some(var_1) = &input.billing_period {
+        object.key("BillingPeriod").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.filters {
+    if let Some(var_2) = &input.filters {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Filters").start_object();
+        let mut object_3 = object.key("Filters").start_object();
         crate::protocol_serde::shape_list_resources_associated_to_custom_line_item_filter::ser_list_resources_associated_to_custom_line_item_filter(
-            &mut object_4,
-            var_3,
+            &mut object_3,
+            var_2,
         )?;
-        object_4.finish();
+        object_3.finish();
     }
-    if let Some(var_5) = &input.max_results {
+    if let Some(var_4) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("NextToken").string(var_6.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("NextToken").string(var_5.as_str());
     }
     Ok(())
 }

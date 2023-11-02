@@ -39,6 +39,7 @@ pub struct RawMessageContentBuilder {
 }
 impl RawMessageContentBuilder {
     /// <p>The S3 reference of an email message.</p>
+    /// This field is required.
     pub fn s3_reference(mut self, input: crate::types::S3Reference) -> Self {
         self.s3_reference = ::std::option::Option::Some(input);
         self

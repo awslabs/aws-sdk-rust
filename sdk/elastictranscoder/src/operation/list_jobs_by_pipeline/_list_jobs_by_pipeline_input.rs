@@ -42,6 +42,7 @@ pub struct ListJobsByPipelineInputBuilder {
 }
 impl ListJobsByPipelineInputBuilder {
     /// <p>The ID of the pipeline for which you want to get job information.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self

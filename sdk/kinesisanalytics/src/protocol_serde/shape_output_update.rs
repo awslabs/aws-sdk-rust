@@ -3,35 +3,35 @@ pub fn ser_output_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputUpdate,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.output_id {
-        object.key("OutputId").string(var_1.as_str());
+    {
+        object.key("OutputId").string(input.output_id.as_str());
     }
-    if let Some(var_2) = &input.name_update {
-        object.key("NameUpdate").string(var_2.as_str());
+    if let Some(var_1) = &input.name_update {
+        object.key("NameUpdate").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.kinesis_streams_output_update {
+    if let Some(var_2) = &input.kinesis_streams_output_update {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("KinesisStreamsOutputUpdate").start_object();
-        crate::protocol_serde::shape_kinesis_streams_output_update::ser_kinesis_streams_output_update(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("KinesisStreamsOutputUpdate").start_object();
+        crate::protocol_serde::shape_kinesis_streams_output_update::ser_kinesis_streams_output_update(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.kinesis_firehose_output_update {
+    if let Some(var_4) = &input.kinesis_firehose_output_update {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("KinesisFirehoseOutputUpdate").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_output_update::ser_kinesis_firehose_output_update(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("KinesisFirehoseOutputUpdate").start_object();
+        crate::protocol_serde::shape_kinesis_firehose_output_update::ser_kinesis_firehose_output_update(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.lambda_output_update {
+    if let Some(var_6) = &input.lambda_output_update {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("LambdaOutputUpdate").start_object();
-        crate::protocol_serde::shape_lambda_output_update::ser_lambda_output_update(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("LambdaOutputUpdate").start_object();
+        crate::protocol_serde::shape_lambda_output_update::ser_lambda_output_update(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.destination_schema_update {
+    if let Some(var_8) = &input.destination_schema_update {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("DestinationSchemaUpdate").start_object();
-        crate::protocol_serde::shape_destination_schema::ser_destination_schema(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("DestinationSchemaUpdate").start_object();
+        crate::protocol_serde::shape_destination_schema::ser_destination_schema(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

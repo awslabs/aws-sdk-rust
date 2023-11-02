@@ -27,6 +27,7 @@ pub struct DescribeStudioInputBuilder {
 }
 impl DescribeStudioInputBuilder {
     /// <p>The Amazon EMR Studio ID.</p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

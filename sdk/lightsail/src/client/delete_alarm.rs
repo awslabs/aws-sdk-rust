@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAlarm`](crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alarm_name(impl Into<String>)`](crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder::alarm_name) / [`set_alarm_name(Option<String>)`](crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder::set_alarm_name): <p>The name of the alarm to delete.</p>
+    ///   - [`alarm_name(impl Into<String>)`](crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder::alarm_name) / [`set_alarm_name(Option<String>)`](crate::operation::delete_alarm::builders::DeleteAlarmFluentBuilder::set_alarm_name):<br>required: **true**<br><p>The name of the alarm to delete.</p><br>
     /// - On success, responds with [`DeleteAlarmOutput`](crate::operation::delete_alarm::DeleteAlarmOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_alarm::DeleteAlarmOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteAlarmError>`](crate::operation::delete_alarm::DeleteAlarmError)

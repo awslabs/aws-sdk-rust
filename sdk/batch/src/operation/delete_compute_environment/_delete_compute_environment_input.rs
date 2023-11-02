@@ -28,6 +28,7 @@ pub struct DeleteComputeEnvironmentInputBuilder {
 }
 impl DeleteComputeEnvironmentInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
+    /// This field is required.
     pub fn compute_environment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_environment = ::std::option::Option::Some(input.into());
         self

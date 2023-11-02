@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateComponentInput {
     /// <p>The name of the component to update.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
     /// <dl>
     /// <dt></dt>
@@ -18,7 +18,7 @@ pub struct UpdateComponentInput {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub deployment_type: ::std::option::Option<crate::types::ComponentDeploymentUpdateType>,
+    pub deployment_type: crate::types::ComponentDeploymentUpdateType,
     /// <p>An optional customer-provided description of the component.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Don't specify to keep the component's current service instance attachment. Specify an empty string to detach the component from the service instance it's attached to. Specify non-empty values for both <code>serviceInstanceName</code> and <code>serviceName</code> or for neither of them.</p>
@@ -36,8 +36,9 @@ pub struct UpdateComponentInput {
 }
 impl UpdateComponentInput {
     /// <p>The name of the component to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The deployment type. It defines the mode for updating a component, as follows:</p>
     /// <dl>
@@ -52,8 +53,8 @@ impl UpdateComponentInput {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::ComponentDeploymentUpdateType> {
-        self.deployment_type.as_ref()
+    pub fn deployment_type(&self) -> &crate::types::ComponentDeploymentUpdateType {
+        &self.deployment_type
     }
     /// <p>An optional customer-provided description of the component.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -118,6 +119,7 @@ pub struct UpdateComponentInputBuilder {
 }
 impl UpdateComponentInputBuilder {
     /// <p>The name of the component to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +146,7 @@ impl UpdateComponentInputBuilder {
     /// <p>In this mode, the component is deployed and updated with the new <code>serviceSpec</code>, <code>templateSource</code>, and/or <code>type</code> that you provide. Only requested parameters are updated.</p>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn deployment_type(mut self, input: crate::types::ComponentDeploymentUpdateType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
         self
@@ -272,12 +275,25 @@ impl UpdateComponentInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::update_component::builders::UpdateComponentInputBuilder::name)
+    /// - [`deployment_type`](crate::operation::update_component::builders::UpdateComponentInputBuilder::deployment_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_component::UpdateComponentInput {
-            name: self.name,
-            deployment_type: self.deployment_type,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateComponentInput",
+                )
+            })?,
+            deployment_type: self.deployment_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "deployment_type",
+                    "deployment_type was not specified but it is required when building UpdateComponentInput",
+                )
+            })?,
             description: self.description,
             service_name: self.service_name,
             service_instance_name: self.service_instance_name,

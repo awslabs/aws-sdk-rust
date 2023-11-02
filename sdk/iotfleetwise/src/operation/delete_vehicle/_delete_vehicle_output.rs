@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVehicleOutput {
     /// <p>The ID of the deleted vehicle.</p>
-    pub vehicle_name: ::std::option::Option<::std::string::String>,
+    pub vehicle_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DeleteVehicleOutput {
     /// <p>The ID of the deleted vehicle.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
-        self.vehicle_name.as_deref()
+    pub fn vehicle_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vehicle_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteVehicleOutput {
@@ -41,6 +43,7 @@ pub struct DeleteVehicleOutputBuilder {
 }
 impl DeleteVehicleOutputBuilder {
     /// <p>The ID of the deleted vehicle.</p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DeleteVehicleOutputBuilder {
         &self.vehicle_name
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted vehicle.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,26 @@ impl DeleteVehicleOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteVehicleOutput`](crate::operation::delete_vehicle::DeleteVehicleOutput).
-    pub fn build(self) -> crate::operation::delete_vehicle::DeleteVehicleOutput {
-        crate::operation::delete_vehicle::DeleteVehicleOutput {
-            vehicle_name: self.vehicle_name,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicle_name`](crate::operation::delete_vehicle::builders::DeleteVehicleOutputBuilder::vehicle_name)
+    /// - [`arn`](crate::operation::delete_vehicle::builders::DeleteVehicleOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_vehicle::DeleteVehicleOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::delete_vehicle::DeleteVehicleOutput {
+            vehicle_name: self.vehicle_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicle_name",
+                    "vehicle_name was not specified but it is required when building DeleteVehicleOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DeleteVehicleOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

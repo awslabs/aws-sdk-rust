@@ -186,6 +186,7 @@ pub struct DescribeTransformJobOutputBuilder {
 }
 impl DescribeTransformJobOutputBuilder {
     /// <p>The name of the transform job.</p>
+    /// This field is required.
     pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +201,7 @@ impl DescribeTransformJobOutputBuilder {
         &self.transform_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
+    /// This field is required.
     pub fn transform_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -214,6 +216,7 @@ impl DescribeTransformJobOutputBuilder {
         &self.transform_job_arn
     }
     /// <p>The status of the transform job. If the transform job failed, the reason is returned in the <code>FailureReason</code> field.</p>
+    /// This field is required.
     pub fn transform_job_status(mut self, input: crate::types::TransformJobStatus) -> Self {
         self.transform_job_status = ::std::option::Option::Some(input);
         self
@@ -242,6 +245,7 @@ impl DescribeTransformJobOutputBuilder {
         &self.failure_reason
     }
     /// <p>The name of the model used in the transform job.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -338,6 +342,7 @@ impl DescribeTransformJobOutputBuilder {
         &self.environment
     }
     /// <p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
+    /// This field is required.
     pub fn transform_input(mut self, input: crate::types::TransformInput) -> Self {
         self.transform_input = ::std::option::Option::Some(input);
         self
@@ -380,6 +385,7 @@ impl DescribeTransformJobOutputBuilder {
         &self.data_capture_config
     }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
+    /// This field is required.
     pub fn transform_resources(mut self, input: crate::types::TransformResources) -> Self {
         self.transform_resources = ::std::option::Option::Some(input);
         self
@@ -394,6 +400,7 @@ impl DescribeTransformJobOutputBuilder {
         &self.transform_resources
     }
     /// <p>A timestamp that shows when the transform Job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

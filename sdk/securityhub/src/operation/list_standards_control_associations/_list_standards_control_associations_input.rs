@@ -41,6 +41,7 @@ pub struct ListStandardsControlAssociationsInputBuilder {
 }
 impl ListStandardsControlAssociationsInputBuilder {
     /// <p> The identifier of the control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard. </p>
+    /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self

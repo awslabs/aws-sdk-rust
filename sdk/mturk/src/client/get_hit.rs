@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetHIT`](crate::operation::get_hit::builders::GetHITFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hit_id(impl Into<String>)`](crate::operation::get_hit::builders::GetHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::get_hit::builders::GetHITFluentBuilder::set_hit_id): <p>The ID of the HIT to be retrieved.</p>
+    ///   - [`hit_id(impl Into<String>)`](crate::operation::get_hit::builders::GetHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::get_hit::builders::GetHITFluentBuilder::set_hit_id):<br>required: **true**<br><p>The ID of the HIT to be retrieved.</p><br>
     /// - On success, responds with [`GetHitOutput`](crate::operation::get_hit::GetHitOutput) with field(s):
     ///   - [`hit(Option<Hit>)`](crate::operation::get_hit::GetHitOutput::hit): <p> Contains the requested HIT data.</p>
     /// - On failure, responds with [`SdkError<GetHITError>`](crate::operation::get_hit::GetHITError)

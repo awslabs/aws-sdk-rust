@@ -11,8 +11,10 @@ pub struct ListTopicRuleDestinationsOutput {
 }
 impl ListTopicRuleDestinationsOutput {
     /// <p>Information about a topic rule destination.</p>
-    pub fn destination_summaries(&self) -> ::std::option::Option<&[crate::types::TopicRuleDestinationSummary]> {
-        self.destination_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_summaries.is_none()`.
+    pub fn destination_summaries(&self) -> &[crate::types::TopicRuleDestinationSummary] {
+        self.destination_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

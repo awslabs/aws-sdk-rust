@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePullRequestEventsOutput {
     /// <p>Information about the pull request events.</p>
-    pub pull_request_events: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestEvent>>,
+    pub pull_request_events: ::std::vec::Vec<crate::types::PullRequestEvent>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePullRequestEventsOutput {
     /// <p>Information about the pull request events.</p>
-    pub fn pull_request_events(&self) -> ::std::option::Option<&[crate::types::PullRequestEvent]> {
-        self.pull_request_events.as_deref()
+    pub fn pull_request_events(&self) -> &[crate::types::PullRequestEvent] {
+        use std::ops::Deref;
+        self.pull_request_events.deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl DescribePullRequestEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePullRequestEventsOutput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput).
-    pub fn build(self) -> crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput {
-        crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput {
-            pull_request_events: self.pull_request_events,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pull_request_events`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsOutputBuilder::pull_request_events)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput {
+            pull_request_events: self.pull_request_events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pull_request_events",
+                    "pull_request_events was not specified but it is required when building DescribePullRequestEventsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

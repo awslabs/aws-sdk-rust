@@ -45,8 +45,10 @@ impl ResetDbParameterGroupInput {
     /// <p>You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters, and changes are applied when DB instance reboots.</p>
     /// <p> <b>Oracle</b> </p>
     /// <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ResetDbParameterGroupInput {
@@ -70,6 +72,7 @@ impl ResetDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self

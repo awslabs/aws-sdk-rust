@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRun`](crate::operation::get_run::builders::GetRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_id): <p>The run's ID.</p>
-    ///   - [`export(RunExport)`](crate::operation::get_run::builders::GetRunFluentBuilder::export) / [`set_export(Option<Vec<RunExport>>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_export): <p>The run's export format.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_id):<br>required: **true**<br><p>The run's ID.</p><br>
+    ///   - [`export(RunExport)`](crate::operation::get_run::builders::GetRunFluentBuilder::export) / [`set_export(Option<Vec<RunExport>>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_export):<br>required: **false**<br><p>The run's export format.</p><br>
     /// - On success, responds with [`GetRunOutput`](crate::operation::get_run::GetRunOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_run::GetRunOutput::arn): <p>The run's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_run::GetRunOutput::id): <p>The run's ID.</p>

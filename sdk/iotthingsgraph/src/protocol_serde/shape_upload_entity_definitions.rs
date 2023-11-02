@@ -88,7 +88,9 @@ pub fn de_upload_entity_definitions_http_response(
         output = crate::protocol_serde::shape_upload_entity_definitions::de_upload_entity_definitions(_response_body, output)
             .map_err(crate::operation::upload_entity_definitions::UploadEntityDefinitionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::upload_entity_definitions_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::upload_entity_definitions::UploadEntityDefinitionsError::unhandled)?
     })
 }
 

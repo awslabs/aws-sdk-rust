@@ -57,8 +57,10 @@ impl DescribeAutoMlJobOutput {
         self.auto_ml_job_arn.as_deref()
     }
     /// <p>Returns the input data configuration for the AutoML job.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::AutoMlChannel]> {
-        self.input_data_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_data_config.is_none()`.
+    pub fn input_data_config(&self) -> &[crate::types::AutoMlChannel] {
+        self.input_data_config.as_deref().unwrap_or_default()
     }
     /// <p>Returns the job's output data config.</p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::AutoMlOutputDataConfig> {
@@ -97,8 +99,10 @@ impl DescribeAutoMlJobOutput {
         self.failure_reason.as_deref()
     }
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
-    pub fn partial_failure_reasons(&self) -> ::std::option::Option<&[crate::types::AutoMlPartialFailureReason]> {
-        self.partial_failure_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partial_failure_reasons.is_none()`.
+    pub fn partial_failure_reasons(&self) -> &[crate::types::AutoMlPartialFailureReason] {
+        self.partial_failure_reasons.as_deref().unwrap_or_default()
     }
     /// <p>The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for an experiment.</p>
     pub fn best_candidate(&self) -> ::std::option::Option<&crate::types::AutoMlCandidate> {
@@ -174,6 +178,7 @@ pub struct DescribeAutoMlJobOutputBuilder {
 }
 impl DescribeAutoMlJobOutputBuilder {
     /// <p>Returns the name of the AutoML job.</p>
+    /// This field is required.
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +193,7 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.auto_ml_job_name
     }
     /// <p>Returns the ARN of the AutoML job.</p>
+    /// This field is required.
     pub fn auto_ml_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -222,6 +228,7 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.input_data_config
     }
     /// <p>Returns the job's output data config.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::AutoMlOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -236,6 +243,7 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -292,6 +300,7 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.auto_ml_job_config
     }
     /// <p>Returns the creation time of the AutoML job.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -320,6 +329,7 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.end_time
     }
     /// <p>Returns the job's last modified time.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -382,6 +392,7 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.best_candidate
     }
     /// <p>Returns the status of the AutoML job.</p>
+    /// This field is required.
     pub fn auto_ml_job_status(mut self, input: crate::types::AutoMlJobStatus) -> Self {
         self.auto_ml_job_status = ::std::option::Option::Some(input);
         self
@@ -396,6 +407,7 @@ impl DescribeAutoMlJobOutputBuilder {
         &self.auto_ml_job_status
     }
     /// <p>Returns the secondary status of the AutoML job.</p>
+    /// This field is required.
     pub fn auto_ml_job_secondary_status(mut self, input: crate::types::AutoMlJobSecondaryStatus) -> Self {
         self.auto_ml_job_secondary_status = ::std::option::Option::Some(input);
         self

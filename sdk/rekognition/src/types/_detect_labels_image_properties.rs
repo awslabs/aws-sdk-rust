@@ -19,8 +19,10 @@ impl DetectLabelsImageProperties {
         self.quality.as_ref()
     }
     /// <p>Information about the dominant colors found in an image, described with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn dominant_colors(&self) -> ::std::option::Option<&[crate::types::DominantColor]> {
-        self.dominant_colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dominant_colors.is_none()`.
+    pub fn dominant_colors(&self) -> &[crate::types::DominantColor] {
+        self.dominant_colors.as_deref().unwrap_or_default()
     }
     /// <p>Information about the properties of an image’s foreground, including the foreground’s quality and dominant colors, including the quality and dominant colors of the image.</p>
     pub fn foreground(&self) -> ::std::option::Option<&crate::types::DetectLabelsImageForeground> {

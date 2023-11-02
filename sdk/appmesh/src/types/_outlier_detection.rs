@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
-    pub max_server_errors: ::std::option::Option<i64>,
+    pub max_server_errors: i64,
     /// <p>The time interval between ejection sweep analysis.</p>
     pub interval: ::std::option::Option<crate::types::Duration>,
     /// <p>The base amount of time for which a host is ejected.</p>
     pub base_ejection_duration: ::std::option::Option<crate::types::Duration>,
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
-    pub max_ejection_percent: ::std::option::Option<i32>,
+    pub max_ejection_percent: i32,
 }
 impl OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
-    pub fn max_server_errors(&self) -> ::std::option::Option<i64> {
+    pub fn max_server_errors(&self) -> i64 {
         self.max_server_errors
     }
     /// <p>The time interval between ejection sweep analysis.</p>
@@ -27,7 +27,7 @@ impl OutlierDetection {
         self.base_ejection_duration.as_ref()
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
-    pub fn max_ejection_percent(&self) -> ::std::option::Option<i32> {
+    pub fn max_ejection_percent(&self) -> i32 {
         self.max_ejection_percent
     }
 }
@@ -49,6 +49,7 @@ pub struct OutlierDetectionBuilder {
 }
 impl OutlierDetectionBuilder {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
+    /// This field is required.
     pub fn max_server_errors(mut self, input: i64) -> Self {
         self.max_server_errors = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl OutlierDetectionBuilder {
         &self.max_server_errors
     }
     /// <p>The time interval between ejection sweep analysis.</p>
+    /// This field is required.
     pub fn interval(mut self, input: crate::types::Duration) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl OutlierDetectionBuilder {
         &self.interval
     }
     /// <p>The base amount of time for which a host is ejected.</p>
+    /// This field is required.
     pub fn base_ejection_duration(mut self, input: crate::types::Duration) -> Self {
         self.base_ejection_duration = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl OutlierDetectionBuilder {
         &self.base_ejection_duration
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
+    /// This field is required.
     pub fn max_ejection_percent(mut self, input: i32) -> Self {
         self.max_ejection_percent = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,25 @@ impl OutlierDetectionBuilder {
         &self.max_ejection_percent
     }
     /// Consumes the builder and constructs a [`OutlierDetection`](crate::types::OutlierDetection).
-    pub fn build(self) -> crate::types::OutlierDetection {
-        crate::types::OutlierDetection {
-            max_server_errors: self.max_server_errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_server_errors`](crate::types::builders::OutlierDetectionBuilder::max_server_errors)
+    /// - [`max_ejection_percent`](crate::types::builders::OutlierDetectionBuilder::max_ejection_percent)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutlierDetection, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutlierDetection {
+            max_server_errors: self.max_server_errors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_server_errors",
+                    "max_server_errors was not specified but it is required when building OutlierDetection",
+                )
+            })?,
             interval: self.interval,
             base_ejection_duration: self.base_ejection_duration,
-            max_ejection_percent: self.max_ejection_percent,
-        }
+            max_ejection_percent: self.max_ejection_percent.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_ejection_percent",
+                    "max_ejection_percent was not specified but it is required when building OutlierDetection",
+                )
+            })?,
+        })
     }
 }

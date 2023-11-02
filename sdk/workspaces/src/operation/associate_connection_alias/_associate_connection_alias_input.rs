@@ -34,6 +34,7 @@ pub struct AssociateConnectionAliasInputBuilder {
 }
 impl AssociateConnectionAliasInputBuilder {
     /// <p>The identifier of the connection alias.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateConnectionAliasInputBuilder {
         &self.alias_id
     }
     /// <p>The identifier of the directory to associate the connection alias with.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

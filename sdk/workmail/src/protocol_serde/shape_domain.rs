@@ -3,11 +3,11 @@ pub fn ser_domain(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Domain,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain_name {
-        object.key("DomainName").string(var_1.as_str());
+    {
+        object.key("DomainName").string(input.domain_name.as_str());
     }
-    if let Some(var_2) = &input.hosted_zone_id {
-        object.key("HostedZoneId").string(var_2.as_str());
+    if let Some(var_1) = &input.hosted_zone_id {
+        object.key("HostedZoneId").string(var_1.as_str());
     }
     Ok(())
 }

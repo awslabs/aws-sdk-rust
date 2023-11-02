@@ -17,8 +17,10 @@ impl InstanceHardware {
         self.cpu_count
     }
     /// <p>The disks attached to the instance.</p>
-    pub fn disks(&self) -> ::std::option::Option<&[crate::types::Disk]> {
-        self.disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disks.is_none()`.
+    pub fn disks(&self) -> &[crate::types::Disk] {
+        self.disks.as_deref().unwrap_or_default()
     }
     /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
     pub fn ram_size_in_gb(&self) -> ::std::option::Option<f32> {

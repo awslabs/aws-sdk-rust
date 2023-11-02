@@ -258,7 +258,9 @@ pub fn de_list_pull_requests_http_response(
         output = crate::protocol_serde::shape_list_pull_requests::de_list_pull_requests(_response_body, output)
             .map_err(crate::operation::list_pull_requests::ListPullRequestsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_pull_requests_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_pull_requests::ListPullRequestsError::unhandled)?
     })
 }
 

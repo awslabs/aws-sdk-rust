@@ -27,6 +27,7 @@ pub struct DeleteVpcEndpointInputBuilder {
 }
 impl DeleteVpcEndpointInputBuilder {
     /// <p>The unique identifier of the endpoint.</p>
+    /// This field is required.
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self

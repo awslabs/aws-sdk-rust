@@ -20,8 +20,10 @@ impl ResetParameterGroupInput {
         self.all_parameters
     }
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
-    pub fn parameter_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parameter_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_names.is_none()`.
+    pub fn parameter_names(&self) -> &[::std::string::String] {
+        self.parameter_names.as_deref().unwrap_or_default()
     }
 }
 impl ResetParameterGroupInput {
@@ -41,6 +43,7 @@ pub struct ResetParameterGroupInputBuilder {
 }
 impl ResetParameterGroupInputBuilder {
     /// <p>The name of the parameter group to reset.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self

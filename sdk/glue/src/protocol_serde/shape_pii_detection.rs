@@ -3,47 +3,47 @@ pub fn ser_pii_detection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PiiDetection,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.inputs {
-        let mut array_3 = object.key("Inputs").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Inputs").start_array();
+        for item_2 in &input.inputs {
+            {
+                array_1.value().string(item_2.as_str());
+            }
+        }
+        array_1.finish();
+    }
+    {
+        object.key("PiiType").string(input.pii_type.as_str());
+    }
+    {
+        let mut array_3 = object.key("EntityTypesToDetect").start_array();
+        for item_4 in &input.entity_types_to_detect {
             {
                 array_3.value().string(item_4.as_str());
             }
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.pii_type {
-        object.key("PiiType").string(var_5.as_str());
+    if let Some(var_5) = &input.output_column_name {
+        object.key("OutputColumnName").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.entity_types_to_detect {
-        let mut array_7 = object.key("EntityTypesToDetect").start_array();
-        for item_8 in var_6 {
-            {
-                array_7.value().string(item_8.as_str());
-            }
-        }
-        array_7.finish();
-    }
-    if let Some(var_9) = &input.output_column_name {
-        object.key("OutputColumnName").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.sample_fraction {
+    if let Some(var_6) = &input.sample_fraction {
         object.key("SampleFraction").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_10).into()),
+            ::aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
-    if let Some(var_11) = &input.threshold_fraction {
+    if let Some(var_7) = &input.threshold_fraction {
         object.key("ThresholdFraction").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_11).into()),
+            ::aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
-    if let Some(var_12) = &input.mask_value {
-        object.key("MaskValue").string(var_12.as_str());
+    if let Some(var_8) = &input.mask_value {
+        object.key("MaskValue").string(var_8.as_str());
     }
     Ok(())
 }
@@ -119,7 +119,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::pii_detection_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

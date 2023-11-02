@@ -26,8 +26,10 @@ impl CreateVpnGatewayInput {
         self.r#type.as_ref()
     }
     /// <p>The tags to apply to the virtual private gateway.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294 range.</p>
     /// <p>Default: 64512</p>
@@ -72,6 +74,7 @@ impl CreateVpnGatewayInputBuilder {
         &self.availability_zone
     }
     /// <p>The type of VPN connection this virtual private gateway supports.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::GatewayType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

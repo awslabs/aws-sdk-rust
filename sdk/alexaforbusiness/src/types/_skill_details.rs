@@ -44,20 +44,28 @@ impl SkillDetails {
         self.end_user_license_agreement.as_deref()
     }
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
-    pub fn generic_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.generic_keywords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generic_keywords.is_none()`.
+    pub fn generic_keywords(&self) -> &[::std::string::String] {
+        self.generic_keywords.as_deref().unwrap_or_default()
     }
     /// <p>The details about what the skill supports organized as bullet points.</p>
-    pub fn bullet_points(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bullet_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bullet_points.is_none()`.
+    pub fn bullet_points(&self) -> &[::std::string::String] {
+        self.bullet_points.as_deref().unwrap_or_default()
     }
     /// <p>The updates added in bullet points.</p>
-    pub fn new_in_this_version_bullet_points(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.new_in_this_version_bullet_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.new_in_this_version_bullet_points.is_none()`.
+    pub fn new_in_this_version_bullet_points(&self) -> &[::std::string::String] {
+        self.new_in_this_version_bullet_points.as_deref().unwrap_or_default()
     }
     /// <p>The types of skills.</p>
-    pub fn skill_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.skill_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.skill_types.is_none()`.
+    pub fn skill_types(&self) -> &[::std::string::String] {
+        self.skill_types.as_deref().unwrap_or_default()
     }
     /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>

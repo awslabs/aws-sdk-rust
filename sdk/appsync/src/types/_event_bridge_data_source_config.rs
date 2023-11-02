@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeDataSourceConfig {
     /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
-    pub event_bus_arn: ::std::option::Option<::std::string::String>,
+    pub event_bus_arn: ::std::string::String,
 }
 impl EventBridgeDataSourceConfig {
     /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
-    pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
-        self.event_bus_arn.as_deref()
+    pub fn event_bus_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.event_bus_arn.deref()
     }
 }
 impl EventBridgeDataSourceConfig {
@@ -28,6 +29,7 @@ pub struct EventBridgeDataSourceConfigBuilder {
 }
 impl EventBridgeDataSourceConfigBuilder {
     /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
+    /// This field is required.
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl EventBridgeDataSourceConfigBuilder {
         &self.event_bus_arn
     }
     /// Consumes the builder and constructs a [`EventBridgeDataSourceConfig`](crate::types::EventBridgeDataSourceConfig).
-    pub fn build(self) -> crate::types::EventBridgeDataSourceConfig {
-        crate::types::EventBridgeDataSourceConfig {
-            event_bus_arn: self.event_bus_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`event_bus_arn`](crate::types::builders::EventBridgeDataSourceConfigBuilder::event_bus_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventBridgeDataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventBridgeDataSourceConfig {
+            event_bus_arn: self.event_bus_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_bus_arn",
+                    "event_bus_arn was not specified but it is required when building EventBridgeDataSourceConfig",
+                )
+            })?,
+        })
     }
 }

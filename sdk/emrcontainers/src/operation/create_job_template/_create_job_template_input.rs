@@ -55,6 +55,7 @@ pub struct CreateJobTemplateInputBuilder {
 }
 impl CreateJobTemplateInputBuilder {
     /// <p>The specified name of the job template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateJobTemplateInputBuilder {
         &self.name
     }
     /// <p>The client token of the job template.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl CreateJobTemplateInputBuilder {
         &self.client_token
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
+    /// This field is required.
     pub fn job_template_data(mut self, input: crate::types::JobTemplateData) -> Self {
         self.job_template_data = ::std::option::Option::Some(input);
         self

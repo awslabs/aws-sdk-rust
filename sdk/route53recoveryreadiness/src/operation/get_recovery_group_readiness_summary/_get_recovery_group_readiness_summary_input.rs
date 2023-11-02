@@ -69,6 +69,7 @@ impl GetRecoveryGroupReadinessSummaryInputBuilder {
         &self.next_token
     }
     /// <p>The name of a recovery group.</p>
+    /// This field is required.
     pub fn recovery_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_group_name = ::std::option::Option::Some(input.into());
         self

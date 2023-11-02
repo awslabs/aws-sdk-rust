@@ -21,13 +21,17 @@ impl GetSessionOutput {
         self.session_id.as_deref()
     }
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
-    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
+    pub fn messages(&self) -> &[crate::types::Message] {
+        self.messages.as_deref().unwrap_or_default()
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn interpretations(&self) -> ::std::option::Option<&[crate::types::Interpretation]> {
-        self.interpretations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interpretations.is_none()`.
+    pub fn interpretations(&self) -> &[crate::types::Interpretation] {
+        self.interpretations.as_deref().unwrap_or_default()
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>

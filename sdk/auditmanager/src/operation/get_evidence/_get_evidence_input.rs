@@ -48,6 +48,7 @@ pub struct GetEvidenceInputBuilder {
 }
 impl GetEvidenceInputBuilder {
     /// <p> The unique identifier for the assessment. </p>
+    /// This field is required.
     pub fn assessment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetEvidenceInputBuilder {
         &self.assessment_id
     }
     /// <p> The unique identifier for the control set. </p>
+    /// This field is required.
     pub fn control_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_set_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl GetEvidenceInputBuilder {
         &self.control_set_id
     }
     /// <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// This field is required.
     pub fn evidence_folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_folder_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetEvidenceInputBuilder {
         &self.evidence_folder_id
     }
     /// <p> The unique identifier for the evidence. </p>
+    /// This field is required.
     pub fn evidence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evidence_id = ::std::option::Option::Some(input.into());
         self

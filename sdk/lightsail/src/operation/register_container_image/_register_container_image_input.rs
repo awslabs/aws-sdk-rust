@@ -63,6 +63,7 @@ pub struct RegisterContainerImageInputBuilder {
 }
 impl RegisterContainerImageInputBuilder {
     /// <p>The name of the container service for which to register a container image.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +89,7 @@ impl RegisterContainerImageInputBuilder {
     /// </ul>
     /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
     /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
+    /// This field is required.
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +126,7 @@ impl RegisterContainerImageInputBuilder {
         &self.label
     }
     /// <p>The digest of the container image to be registered.</p>
+    /// This field is required.
     pub fn digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.digest = ::std::option::Option::Some(input.into());
         self

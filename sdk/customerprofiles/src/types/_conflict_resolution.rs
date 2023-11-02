@@ -9,7 +9,7 @@ pub struct ConflictResolution {
     /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
     /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
-    pub conflict_resolving_model: ::std::option::Option<crate::types::ConflictResolvingModel>,
+    pub conflict_resolving_model: crate::types::ConflictResolvingModel,
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
 }
@@ -19,8 +19,8 @@ impl ConflictResolution {
     /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
     /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
-    pub fn conflict_resolving_model(&self) -> ::std::option::Option<&crate::types::ConflictResolvingModel> {
-        self.conflict_resolving_model.as_ref()
+    pub fn conflict_resolving_model(&self) -> &crate::types::ConflictResolvingModel {
+        &self.conflict_resolving_model
     }
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub fn source_name(&self) -> ::std::option::Option<&str> {
@@ -47,6 +47,7 @@ impl ConflictResolutionBuilder {
     /// <li> <p> <code>RECENCY</code>: Uses the data that was most recently updated.</p> </li>
     /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn conflict_resolving_model(mut self, input: crate::types::ConflictResolvingModel) -> Self {
         self.conflict_resolving_model = ::std::option::Option::Some(input);
         self
@@ -83,10 +84,17 @@ impl ConflictResolutionBuilder {
         &self.source_name
     }
     /// Consumes the builder and constructs a [`ConflictResolution`](crate::types::ConflictResolution).
-    pub fn build(self) -> crate::types::ConflictResolution {
-        crate::types::ConflictResolution {
-            conflict_resolving_model: self.conflict_resolving_model,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`conflict_resolving_model`](crate::types::builders::ConflictResolutionBuilder::conflict_resolving_model)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConflictResolution, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConflictResolution {
+            conflict_resolving_model: self.conflict_resolving_model.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conflict_resolving_model",
+                    "conflict_resolving_model was not specified but it is required when building ConflictResolution",
+                )
+            })?,
             source_name: self.source_name,
-        }
+        })
     }
 }

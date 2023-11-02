@@ -34,6 +34,7 @@ pub struct DeletePlacementInputBuilder {
 }
 impl DeletePlacementInputBuilder {
     /// <p>The name of the empty placement to delete.</p>
+    /// This field is required.
     pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeletePlacementInputBuilder {
         &self.placement_name
     }
     /// <p>The project containing the empty placement to delete.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self

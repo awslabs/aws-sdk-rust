@@ -7,7 +7,7 @@ pub struct ChangeBatch {
     /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>Information about the changes to make to the record sets.</p>
-    pub changes: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
+    pub changes: ::std::vec::Vec<crate::types::Change>,
 }
 impl ChangeBatch {
     /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
@@ -15,8 +15,9 @@ impl ChangeBatch {
         self.comment.as_deref()
     }
     /// <p>Information about the changes to make to the record sets.</p>
-    pub fn changes(&self) -> ::std::option::Option<&[crate::types::Change]> {
-        self.changes.as_deref()
+    pub fn changes(&self) -> &[crate::types::Change] {
+        use std::ops::Deref;
+        self.changes.deref()
     }
 }
 impl ChangeBatch {
@@ -69,10 +70,17 @@ impl ChangeBatchBuilder {
         &self.changes
     }
     /// Consumes the builder and constructs a [`ChangeBatch`](crate::types::ChangeBatch).
-    pub fn build(self) -> crate::types::ChangeBatch {
-        crate::types::ChangeBatch {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`changes`](crate::types::builders::ChangeBatchBuilder::changes)
+    pub fn build(self) -> ::std::result::Result<crate::types::ChangeBatch, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ChangeBatch {
             comment: self.comment,
-            changes: self.changes,
-        }
+            changes: self.changes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "changes",
+                    "changes was not specified but it is required when building ChangeBatch",
+                )
+            })?,
+        })
     }
 }

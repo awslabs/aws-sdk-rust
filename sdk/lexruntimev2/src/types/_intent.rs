@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Intent {
     /// <p>The name of the intent.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Slot>>,
     /// <p>Contains fulfillment information for the intent. </p>
@@ -15,8 +15,9 @@ pub struct Intent {
 }
 impl Intent {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A map of all of the slots for the intent. The name of the slot maps to the value of the slot. If a slot has not been filled, the value is null.</p>
     pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Slot>> {
@@ -49,6 +50,7 @@ pub struct IntentBuilder {
 }
 impl IntentBuilder {
     /// <p>The name of the intent.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +113,19 @@ impl IntentBuilder {
         &self.confirmation_state
     }
     /// Consumes the builder and constructs a [`Intent`](crate::types::Intent).
-    pub fn build(self) -> crate::types::Intent {
-        crate::types::Intent {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::IntentBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Intent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Intent {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Intent",
+                )
+            })?,
             slots: self.slots,
             state: self.state,
             confirmation_state: self.confirmation_state,
-        }
+        })
     }
 }

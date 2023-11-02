@@ -11,8 +11,10 @@ pub struct SetTerminationProtectionInput {
 }
 impl SetTerminationProtectionInput {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
-    pub fn job_flow_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_flow_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
+    pub fn job_flow_ids(&self) -> &[::std::string::String] {
+        self.job_flow_ids.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn termination_protected(&self) -> ::std::option::Option<bool> {
@@ -55,6 +57,7 @@ impl SetTerminationProtectionInputBuilder {
         &self.job_flow_ids
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
+    /// This field is required.
     pub fn termination_protected(mut self, input: bool) -> Self {
         self.termination_protected = ::std::option::Option::Some(input);
         self

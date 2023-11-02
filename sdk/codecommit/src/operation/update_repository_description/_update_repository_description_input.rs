@@ -35,6 +35,7 @@ pub struct UpdateRepositoryDescriptionInputBuilder {
 }
 impl UpdateRepositoryDescriptionInputBuilder {
     /// <p>The name of the repository to set or change the comment or description for.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

@@ -48,6 +48,7 @@ pub struct RevokeSigningProfileInputBuilder {
 }
 impl RevokeSigningProfileInputBuilder {
     /// <p>The name of the signing profile to be revoked.</p>
+    /// This field is required.
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl RevokeSigningProfileInputBuilder {
         &self.profile_name
     }
     /// <p>The version of the signing profile to be revoked.</p>
+    /// This field is required.
     pub fn profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl RevokeSigningProfileInputBuilder {
         &self.profile_version
     }
     /// <p>The reason for revoking a signing profile.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl RevokeSigningProfileInputBuilder {
         &self.reason
     }
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
+    /// This field is required.
     pub fn effective_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.effective_time = ::std::option::Option::Some(input);
         self

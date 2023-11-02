@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
+    pub r#type: crate::types::SecurityPolicyType,
     /// <p>The name of the security policy.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl GetSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::SecurityPolicyType {
+        &self.r#type
     }
     /// <p>The name of the security policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl GetSecurityPolicyInput {
@@ -34,6 +35,7 @@ pub struct GetSecurityPolicyInputBuilder {
 }
 impl GetSecurityPolicyInputBuilder {
     /// <p>The type of security policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -48,6 +50,7 @@ impl GetSecurityPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the security policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +65,25 @@ impl GetSecurityPolicyInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder::r#type)
+    /// - [`name`](crate::operation::get_security_policy::builders::GetSecurityPolicyInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_security_policy::GetSecurityPolicyInput {
-            r#type: self.r#type,
-            name: self.name,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building GetSecurityPolicyInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetSecurityPolicyInput",
+                )
+            })?,
         })
     }
 }

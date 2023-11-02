@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateResiliencyPolicyInput {
     /// <p>The name of the policy</p>
-    pub policy_name: ::std::option::Option<::std::string::String>,
+    pub policy_name: ::std::string::String,
     /// <p>The description for the policy.</p>
     pub policy_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub data_location_constraint: ::std::option::Option<crate::types::DataLocationConstraint>,
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub tier: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
+    pub tier: crate::types::ResiliencyPolicyTier,
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub policy: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
+    pub policy: ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
@@ -20,8 +20,9 @@ pub struct CreateResiliencyPolicyInput {
 }
 impl CreateResiliencyPolicyInput {
     /// <p>The name of the policy</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
-        self.policy_name.as_deref()
+    pub fn policy_name(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_name.deref()
     }
     /// <p>The description for the policy.</p>
     pub fn policy_description(&self) -> ::std::option::Option<&str> {
@@ -32,12 +33,12 @@ impl CreateResiliencyPolicyInput {
         self.data_location_constraint.as_ref()
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::ResiliencyPolicyTier> {
-        self.tier.as_ref()
+    pub fn tier(&self) -> &crate::types::ResiliencyPolicyTier {
+        &self.tier
     }
     /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
-    pub fn policy(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
-        self.policy.as_ref()
+    pub fn policy(&self) -> &::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy> {
+        &self.policy
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -82,6 +83,7 @@ pub struct CreateResiliencyPolicyInputBuilder {
 }
 impl CreateResiliencyPolicyInputBuilder {
     /// <p>The name of the policy</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -124,6 +126,7 @@ impl CreateResiliencyPolicyInputBuilder {
         &self.data_location_constraint
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// This field is required.
     pub fn tier(mut self, input: crate::types::ResiliencyPolicyTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
         self
@@ -195,16 +198,35 @@ impl CreateResiliencyPolicyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateResiliencyPolicyInput`](crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_name`](crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder::policy_name)
+    /// - [`tier`](crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder::tier)
+    /// - [`policy`](crate::operation::create_resiliency_policy::builders::CreateResiliencyPolicyInputBuilder::policy)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput {
-            policy_name: self.policy_name,
+            policy_name: self.policy_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_name",
+                    "policy_name was not specified but it is required when building CreateResiliencyPolicyInput",
+                )
+            })?,
             policy_description: self.policy_description,
             data_location_constraint: self.data_location_constraint,
-            tier: self.tier,
-            policy: self.policy,
+            tier: self.tier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tier",
+                    "tier was not specified but it is required when building CreateResiliencyPolicyInput",
+                )
+            })?,
+            policy: self.policy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy",
+                    "policy was not specified but it is required when building CreateResiliencyPolicyInput",
+                )
+            })?,
             client_token: self.client_token,
             tags: self.tags,
         })

@@ -6,15 +6,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackageInfo {
     /// <p>ID of the function package.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Function package ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Onboarding state of the function package.</p>
-    pub onboarding_state: ::std::option::Option<crate::types::OnboardingState>,
+    pub onboarding_state: crate::types::OnboardingState,
     /// <p>Operational state of the function package.</p>
-    pub operational_state: ::std::option::Option<crate::types::OperationalState>,
+    pub operational_state: crate::types::OperationalState,
     /// <p>Usage state of the function package.</p>
-    pub usage_state: ::std::option::Option<crate::types::UsageState>,
+    pub usage_state: crate::types::UsageState,
     /// <p>Identifies the function package and the function package descriptor.</p>
     pub vnfd_id: ::std::option::Option<::std::string::String>,
     /// <p>Provider of the function package and the function package descriptor.</p>
@@ -28,24 +28,26 @@ pub struct ListSolFunctionPackageInfo {
 }
 impl ListSolFunctionPackageInfo {
     /// <p>ID of the function package.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Function package ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Onboarding state of the function package.</p>
-    pub fn onboarding_state(&self) -> ::std::option::Option<&crate::types::OnboardingState> {
-        self.onboarding_state.as_ref()
+    pub fn onboarding_state(&self) -> &crate::types::OnboardingState {
+        &self.onboarding_state
     }
     /// <p>Operational state of the function package.</p>
-    pub fn operational_state(&self) -> ::std::option::Option<&crate::types::OperationalState> {
-        self.operational_state.as_ref()
+    pub fn operational_state(&self) -> &crate::types::OperationalState {
+        &self.operational_state
     }
     /// <p>Usage state of the function package.</p>
-    pub fn usage_state(&self) -> ::std::option::Option<&crate::types::UsageState> {
-        self.usage_state.as_ref()
+    pub fn usage_state(&self) -> &crate::types::UsageState {
+        &self.usage_state
     }
     /// <p>Identifies the function package and the function package descriptor.</p>
     pub fn vnfd_id(&self) -> ::std::option::Option<&str> {
@@ -92,6 +94,7 @@ pub struct ListSolFunctionPackageInfoBuilder {
 }
 impl ListSolFunctionPackageInfoBuilder {
     /// <p>ID of the function package.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +109,7 @@ impl ListSolFunctionPackageInfoBuilder {
         &self.id
     }
     /// <p>Function package ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +124,7 @@ impl ListSolFunctionPackageInfoBuilder {
         &self.arn
     }
     /// <p>Onboarding state of the function package.</p>
+    /// This field is required.
     pub fn onboarding_state(mut self, input: crate::types::OnboardingState) -> Self {
         self.onboarding_state = ::std::option::Option::Some(input);
         self
@@ -134,6 +139,7 @@ impl ListSolFunctionPackageInfoBuilder {
         &self.onboarding_state
     }
     /// <p>Operational state of the function package.</p>
+    /// This field is required.
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
         self.operational_state = ::std::option::Option::Some(input);
         self
@@ -148,6 +154,7 @@ impl ListSolFunctionPackageInfoBuilder {
         &self.operational_state
     }
     /// <p>Usage state of the function package.</p>
+    /// This field is required.
     pub fn usage_state(mut self, input: crate::types::UsageState) -> Self {
         self.usage_state = ::std::option::Option::Some(input);
         self
@@ -232,18 +239,49 @@ impl ListSolFunctionPackageInfoBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolFunctionPackageInfo`](crate::types::ListSolFunctionPackageInfo).
-    pub fn build(self) -> crate::types::ListSolFunctionPackageInfo {
-        crate::types::ListSolFunctionPackageInfo {
-            id: self.id,
-            arn: self.arn,
-            onboarding_state: self.onboarding_state,
-            operational_state: self.operational_state,
-            usage_state: self.usage_state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ListSolFunctionPackageInfoBuilder::id)
+    /// - [`arn`](crate::types::builders::ListSolFunctionPackageInfoBuilder::arn)
+    /// - [`onboarding_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::onboarding_state)
+    /// - [`operational_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::operational_state)
+    /// - [`usage_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::usage_state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolFunctionPackageInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListSolFunctionPackageInfo {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ListSolFunctionPackageInfo",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListSolFunctionPackageInfo",
+                )
+            })?,
+            onboarding_state: self.onboarding_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "onboarding_state",
+                    "onboarding_state was not specified but it is required when building ListSolFunctionPackageInfo",
+                )
+            })?,
+            operational_state: self.operational_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operational_state",
+                    "operational_state was not specified but it is required when building ListSolFunctionPackageInfo",
+                )
+            })?,
+            usage_state: self.usage_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "usage_state",
+                    "usage_state was not specified but it is required when building ListSolFunctionPackageInfo",
+                )
+            })?,
             vnfd_id: self.vnfd_id,
             vnf_provider: self.vnf_provider,
             vnf_product_name: self.vnf_product_name,
             vnfd_version: self.vnfd_version,
             metadata: self.metadata,
-        }
+        })
     }
 }

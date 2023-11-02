@@ -3,29 +3,29 @@ pub fn ser_variable(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Variable,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.string_value {
-        object.key("stringValue").string(var_2.as_str());
+    if let Some(var_1) = &input.string_value {
+        object.key("stringValue").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.double_value {
+    if let Some(var_2) = &input.double_value {
         object.key("doubleValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_3).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_4) = &input.dataset_content_version_value {
+    if let Some(var_3) = &input.dataset_content_version_value {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("datasetContentVersionValue").start_object();
-        crate::protocol_serde::shape_dataset_content_version_value::ser_dataset_content_version_value(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("datasetContentVersionValue").start_object();
+        crate::protocol_serde::shape_dataset_content_version_value::ser_dataset_content_version_value(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.output_file_uri_value {
+    if let Some(var_5) = &input.output_file_uri_value {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("outputFileUriValue").start_object();
-        crate::protocol_serde::shape_output_file_uri_value::ser_output_file_uri_value(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("outputFileUriValue").start_object();
+        crate::protocol_serde::shape_output_file_uri_value::ser_output_file_uri_value(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }
@@ -83,7 +83,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::variable_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

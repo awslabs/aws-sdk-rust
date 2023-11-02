@@ -85,8 +85,10 @@ impl RelationalDatabase {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a database.</p>
     pub fn relational_database_blueprint_id(&self) -> ::std::option::Option<&str> {
@@ -159,8 +161,10 @@ impl RelationalDatabase {
         self.master_endpoint.as_ref()
     }
     /// <p>Describes the pending maintenance actions for the database.</p>
-    pub fn pending_maintenance_actions(&self) -> ::std::option::Option<&[crate::types::PendingMaintenanceAction]> {
-        self.pending_maintenance_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_maintenance_actions.is_none()`.
+    pub fn pending_maintenance_actions(&self) -> &[crate::types::PendingMaintenanceAction] {
+        self.pending_maintenance_actions.as_deref().unwrap_or_default()
     }
     /// <p>The certificate associated with the database.</p>
     pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {

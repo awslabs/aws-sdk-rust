@@ -50,8 +50,10 @@ impl DescribeWhatIfForecastExportOutput {
         self.what_if_forecast_export_name.as_deref()
     }
     /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
-    pub fn what_if_forecast_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.what_if_forecast_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.what_if_forecast_arns.is_none()`.
+    pub fn what_if_forecast_arns(&self) -> &[::std::string::String] {
+        self.what_if_forecast_arns.as_deref().unwrap_or_default()
     }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::DataDestination> {

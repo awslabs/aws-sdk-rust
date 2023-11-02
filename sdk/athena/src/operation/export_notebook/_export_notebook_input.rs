@@ -27,6 +27,7 @@ pub struct ExportNotebookInputBuilder {
 }
 impl ExportNotebookInputBuilder {
     /// <p>The ID of the notebook to export.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self

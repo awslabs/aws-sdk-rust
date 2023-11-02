@@ -13,8 +13,10 @@ pub struct ListBuiltInSlotTypesOutput {
 }
 impl ListBuiltInSlotTypesOutput {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn built_in_slot_type_summaries(&self) -> ::std::option::Option<&[crate::types::BuiltInSlotTypeSummary]> {
-        self.built_in_slot_type_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.built_in_slot_type_summaries.is_none()`.
+    pub fn built_in_slot_type_summaries(&self) -> &[crate::types::BuiltInSlotTypeSummary] {
+        self.built_in_slot_type_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

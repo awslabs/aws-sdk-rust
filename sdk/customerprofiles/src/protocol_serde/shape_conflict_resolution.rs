@@ -3,11 +3,11 @@ pub fn ser_conflict_resolution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConflictResolution,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.conflict_resolving_model {
-        object.key("ConflictResolvingModel").string(var_1.as_str());
+    {
+        object.key("ConflictResolvingModel").string(input.conflict_resolving_model.as_str());
     }
-    if let Some(var_2) = &input.source_name {
-        object.key("SourceName").string(var_2.as_str());
+    if let Some(var_1) = &input.source_name {
+        object.key("SourceName").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::conflict_resolution_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

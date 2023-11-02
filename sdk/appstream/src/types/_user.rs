@@ -234,6 +234,7 @@ impl UserBuilder {
         &self.created_time
     }
     /// <p>The authentication type for the user.</p>
+    /// This field is required.
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
         self

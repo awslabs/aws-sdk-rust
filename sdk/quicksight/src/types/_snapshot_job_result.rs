@@ -9,8 +9,10 @@ pub struct SnapshotJobResult {
 }
 impl SnapshotJobResult {
     /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
-    pub fn anonymous_users(&self) -> ::std::option::Option<&[crate::types::AnonymousUserSnapshotJobResult]> {
-        self.anonymous_users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anonymous_users.is_none()`.
+    pub fn anonymous_users(&self) -> &[crate::types::AnonymousUserSnapshotJobResult] {
+        self.anonymous_users.as_deref().unwrap_or_default()
     }
 }
 impl SnapshotJobResult {

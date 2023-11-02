@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryCriteria {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
-    pub failure_type: ::std::option::Option<crate::types::RetryableFailureType>,
+    pub failure_type: crate::types::RetryableFailureType,
     /// <p>The number of retries allowed for a failure type for the job.</p>
-    pub number_of_retries: ::std::option::Option<i32>,
+    pub number_of_retries: i32,
 }
 impl RetryCriteria {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
-    pub fn failure_type(&self) -> ::std::option::Option<&crate::types::RetryableFailureType> {
-        self.failure_type.as_ref()
+    pub fn failure_type(&self) -> &crate::types::RetryableFailureType {
+        &self.failure_type
     }
     /// <p>The number of retries allowed for a failure type for the job.</p>
-    pub fn number_of_retries(&self) -> ::std::option::Option<i32> {
+    pub fn number_of_retries(&self) -> i32 {
         self.number_of_retries
     }
 }
@@ -35,6 +35,7 @@ pub struct RetryCriteriaBuilder {
 }
 impl RetryCriteriaBuilder {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
+    /// This field is required.
     pub fn failure_type(mut self, input: crate::types::RetryableFailureType) -> Self {
         self.failure_type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl RetryCriteriaBuilder {
         &self.failure_type
     }
     /// <p>The number of retries allowed for a failure type for the job.</p>
+    /// This field is required.
     pub fn number_of_retries(mut self, input: i32) -> Self {
         self.number_of_retries = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl RetryCriteriaBuilder {
         &self.number_of_retries
     }
     /// Consumes the builder and constructs a [`RetryCriteria`](crate::types::RetryCriteria).
-    pub fn build(self) -> crate::types::RetryCriteria {
-        crate::types::RetryCriteria {
-            failure_type: self.failure_type,
-            number_of_retries: self.number_of_retries,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`failure_type`](crate::types::builders::RetryCriteriaBuilder::failure_type)
+    /// - [`number_of_retries`](crate::types::builders::RetryCriteriaBuilder::number_of_retries)
+    pub fn build(self) -> ::std::result::Result<crate::types::RetryCriteria, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RetryCriteria {
+            failure_type: self.failure_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failure_type",
+                    "failure_type was not specified but it is required when building RetryCriteria",
+                )
+            })?,
+            number_of_retries: self.number_of_retries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "number_of_retries",
+                    "number_of_retries was not specified but it is required when building RetryCriteria",
+                )
+            })?,
+        })
     }
 }

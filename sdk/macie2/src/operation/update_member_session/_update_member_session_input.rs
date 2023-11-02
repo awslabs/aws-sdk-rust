@@ -34,6 +34,7 @@ pub struct UpdateMemberSessionInputBuilder {
 }
 impl UpdateMemberSessionInputBuilder {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateMemberSessionInputBuilder {
         &self.id
     }
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MacieStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

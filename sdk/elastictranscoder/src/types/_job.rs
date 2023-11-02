@@ -62,8 +62,10 @@ impl Job {
         self.input.as_ref()
     }
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::JobInput]> {
-        self.inputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inputs.is_none()`.
+    pub fn inputs(&self) -> &[crate::types::JobInput] {
+        self.inputs.as_deref().unwrap_or_default()
     }
     /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p> <important>
     /// <p>Outputs recommended instead.</p>
@@ -74,8 +76,10 @@ impl Job {
     }
     /// <p>Information about the output files. We recommend that you use the <code>Outputs</code> syntax for all jobs, even when you want Elastic Transcoder to transcode a file into only one format. Do not use both the <code>Outputs</code> and <code>Output</code> syntaxes in the same request. You can create a maximum of 30 outputs per job. </p>
     /// <p>If you specify more than one output for a job, Elastic Transcoder creates the files for each output in the order in which you specify them in the job.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::JobOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::JobOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists. We recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.</p>
     pub fn output_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -86,8 +90,10 @@ impl Job {
     /// </important>
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information about the master playlists that you want Elastic Transcoder to create.</p>
     /// <p>The maximum number of master playlists in a job is 30.</p>
-    pub fn playlists(&self) -> ::std::option::Option<&[crate::types::Playlist]> {
-        self.playlists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.playlists.is_none()`.
+    pub fn playlists(&self) -> &[crate::types::Playlist] {
+        self.playlists.as_deref().unwrap_or_default()
     }
     /// <p> The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>. </p>
     pub fn status(&self) -> ::std::option::Option<&str> {

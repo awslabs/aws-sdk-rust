@@ -9,8 +9,10 @@ pub struct DescribeNfsFileSharesInput {
 }
 impl DescribeNfsFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn file_share_arn_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.file_share_arn_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_share_arn_list.is_none()`.
+    pub fn file_share_arn_list(&self) -> &[::std::string::String] {
+        self.file_share_arn_list.as_deref().unwrap_or_default()
     }
 }
 impl DescribeNfsFileSharesInput {

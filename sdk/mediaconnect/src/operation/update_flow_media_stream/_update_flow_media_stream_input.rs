@@ -112,6 +112,7 @@ impl UpdateFlowMediaStreamInputBuilder {
         &self.description
     }
     /// The Amazon Resource Name (ARN) of the flow.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl UpdateFlowMediaStreamInputBuilder {
         &self.flow_arn
     }
     /// The name of the media stream that you want to update.
+    /// This field is required.
     pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_stream_name = ::std::option::Option::Some(input.into());
         self

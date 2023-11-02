@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMessageInsights`](crate::operation::get_message_insights::builders::GetMessageInsightsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`message_id(impl Into<String>)`](crate::operation::get_message_insights::builders::GetMessageInsightsFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::get_message_insights::builders::GetMessageInsightsFluentBuilder::set_message_id): <p> A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES. </p>
+    ///   - [`message_id(impl Into<String>)`](crate::operation::get_message_insights::builders::GetMessageInsightsFluentBuilder::message_id) / [`set_message_id(Option<String>)`](crate::operation::get_message_insights::builders::GetMessageInsightsFluentBuilder::set_message_id):<br>required: **true**<br><p> A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES. </p><br>
     /// - On success, responds with [`GetMessageInsightsOutput`](crate::operation::get_message_insights::GetMessageInsightsOutput) with field(s):
     ///   - [`message_id(Option<String>)`](crate::operation::get_message_insights::GetMessageInsightsOutput::message_id): <p>A unique identifier for the message.</p>
     ///   - [`from_email_address(Option<String>)`](crate::operation::get_message_insights::GetMessageInsightsOutput::from_email_address): <p>The from address used to send the message.</p>

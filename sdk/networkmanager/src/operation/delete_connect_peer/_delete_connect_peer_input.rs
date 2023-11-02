@@ -27,6 +27,7 @@ pub struct DeleteConnectPeerInputBuilder {
 }
 impl DeleteConnectPeerInputBuilder {
     /// <p>The ID of the deleted Connect peer.</p>
+    /// This field is required.
     pub fn connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_peer_id = ::std::option::Option::Some(input.into());
         self

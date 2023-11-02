@@ -31,8 +31,10 @@ impl ValidateConfigurationSettingsInput {
         self.environment_name.as_deref()
     }
     /// <p>A list of the options and desired values to evaluate.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
 }
 impl ValidateConfigurationSettingsInput {
@@ -53,6 +55,7 @@ pub struct ValidateConfigurationSettingsInputBuilder {
 }
 impl ValidateConfigurationSettingsInputBuilder {
     /// <p>The name of the application that the configuration template or environment belongs to.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

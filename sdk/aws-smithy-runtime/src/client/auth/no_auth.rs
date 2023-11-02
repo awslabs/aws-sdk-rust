@@ -51,7 +51,10 @@ impl NoAuthRuntimePlugin {
 }
 
 impl RuntimePlugin for NoAuthRuntimePlugin {
-    fn runtime_components(&self) -> Cow<'_, RuntimeComponentsBuilder> {
+    fn runtime_components(
+        &self,
+        _: &RuntimeComponentsBuilder,
+    ) -> Cow<'_, RuntimeComponentsBuilder> {
         Cow::Borrowed(&self.0)
     }
 }

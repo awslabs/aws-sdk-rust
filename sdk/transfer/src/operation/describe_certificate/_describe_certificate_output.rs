@@ -34,6 +34,7 @@ pub struct DescribeCertificateOutputBuilder {
 }
 impl DescribeCertificateOutputBuilder {
     /// <p>The details for the specified certificate, returned as an object.</p>
+    /// This field is required.
     pub fn certificate(mut self, input: crate::types::DescribedCertificate) -> Self {
         self.certificate = ::std::option::Option::Some(input);
         self

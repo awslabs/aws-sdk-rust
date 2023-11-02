@@ -385,6 +385,8 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartCallAnalyticsStreamTranscriptionOutput`](crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`call_analytics_transcript_result_stream`](crate::operation::start_call_analytics_stream_transcription::builders::StartCallAnalyticsStreamTranscriptionOutputBuilder::call_analytics_transcript_result_stream)
     pub fn build(
         self,
     ) -> ::std::result::Result<

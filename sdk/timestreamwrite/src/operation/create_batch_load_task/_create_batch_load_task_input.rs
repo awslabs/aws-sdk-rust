@@ -110,6 +110,7 @@ impl CreateBatchLoadTaskInputBuilder {
         &self.data_model_configuration
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
+    /// This field is required.
     pub fn data_source_configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
         self.data_source_configuration = ::std::option::Option::Some(input);
         self
@@ -124,6 +125,7 @@ impl CreateBatchLoadTaskInputBuilder {
         &self.data_source_configuration
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
+    /// This field is required.
     pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
         self.report_configuration = ::std::option::Option::Some(input);
         self
@@ -138,6 +140,7 @@ impl CreateBatchLoadTaskInputBuilder {
         &self.report_configuration
     }
     /// <p>Target Timestream database for a batch load task.</p>
+    /// This field is required.
     pub fn target_database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_database_name = ::std::option::Option::Some(input.into());
         self
@@ -152,6 +155,7 @@ impl CreateBatchLoadTaskInputBuilder {
         &self.target_database_name
     }
     /// <p>Target Timestream table for a batch load task.</p>
+    /// This field is required.
     pub fn target_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_table_name = ::std::option::Option::Some(input.into());
         self

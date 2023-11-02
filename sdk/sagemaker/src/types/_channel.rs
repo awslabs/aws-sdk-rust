@@ -78,6 +78,7 @@ pub struct ChannelBuilder {
 }
 impl ChannelBuilder {
     /// <p>The name of the channel. </p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl ChannelBuilder {
         &self.channel_name
     }
     /// <p>The location of the channel data.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self

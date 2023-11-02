@@ -3,20 +3,20 @@ pub fn ser_date_time_hierarchy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateTimeHierarchy,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hierarchy_id {
-        object.key("HierarchyId").string(var_1.as_str());
+    {
+        object.key("HierarchyId").string(input.hierarchy_id.as_str());
     }
-    if let Some(var_2) = &input.drill_down_filters {
-        let mut array_3 = object.key("DrillDownFilters").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.drill_down_filters {
+        let mut array_2 = object.key("DrillDownFilters").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_drill_down_filter::ser_drill_down_filter(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_drill_down_filter::ser_drill_down_filter(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -57,7 +57,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::date_time_hierarchy_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -11,12 +11,16 @@ pub struct GetParametersOutput {
 }
 impl GetParametersOutput {
     /// <p>A list of details for a parameter.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
-    pub fn invalid_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.invalid_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_parameters.is_none()`.
+    pub fn invalid_parameters(&self) -> &[::std::string::String] {
+        self.invalid_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetParametersOutput {

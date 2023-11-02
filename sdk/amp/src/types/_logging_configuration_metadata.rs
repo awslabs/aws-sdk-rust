@@ -7,13 +7,13 @@ pub struct LoggingConfigurationMetadata {
     /// The status of the logging configuration.
     pub status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     /// The workspace where the logging configuration exists.
-    pub workspace: ::std::option::Option<::std::string::String>,
+    pub workspace: ::std::string::String,
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub log_group_arn: ::std::option::Option<::std::string::String>,
+    pub log_group_arn: ::std::string::String,
     /// The time when the logging configuration was created.
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// The time when the logging configuration was modified.
-    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub modified_at: ::aws_smithy_types::DateTime,
 }
 impl LoggingConfigurationMetadata {
     /// The status of the logging configuration.
@@ -21,20 +21,22 @@ impl LoggingConfigurationMetadata {
         self.status.as_ref()
     }
     /// The workspace where the logging configuration exists.
-    pub fn workspace(&self) -> ::std::option::Option<&str> {
-        self.workspace.as_deref()
+    pub fn workspace(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace.deref()
     }
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
-        self.log_group_arn.as_deref()
+    pub fn log_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_arn.deref()
     }
     /// The time when the logging configuration was created.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// The time when the logging configuration was modified.
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.modified_at.as_ref()
+    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.modified_at
     }
 }
 impl LoggingConfigurationMetadata {
@@ -56,6 +58,7 @@ pub struct LoggingConfigurationMetadataBuilder {
 }
 impl LoggingConfigurationMetadataBuilder {
     /// The status of the logging configuration.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LoggingConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl LoggingConfigurationMetadataBuilder {
         &self.status
     }
     /// The workspace where the logging configuration exists.
+    /// This field is required.
     pub fn workspace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl LoggingConfigurationMetadataBuilder {
         &self.workspace
     }
     /// The ARN of the CW log group to which the vended log data will be published.
+    /// This field is required.
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl LoggingConfigurationMetadataBuilder {
         &self.log_group_arn
     }
     /// The time when the logging configuration was created.
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -112,6 +118,7 @@ impl LoggingConfigurationMetadataBuilder {
         &self.created_at
     }
     /// The time when the logging configuration was modified.
+    /// This field is required.
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
         self
@@ -126,13 +133,38 @@ impl LoggingConfigurationMetadataBuilder {
         &self.modified_at
     }
     /// Consumes the builder and constructs a [`LoggingConfigurationMetadata`](crate::types::LoggingConfigurationMetadata).
-    pub fn build(self) -> crate::types::LoggingConfigurationMetadata {
-        crate::types::LoggingConfigurationMetadata {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace`](crate::types::builders::LoggingConfigurationMetadataBuilder::workspace)
+    /// - [`log_group_arn`](crate::types::builders::LoggingConfigurationMetadataBuilder::log_group_arn)
+    /// - [`created_at`](crate::types::builders::LoggingConfigurationMetadataBuilder::created_at)
+    /// - [`modified_at`](crate::types::builders::LoggingConfigurationMetadataBuilder::modified_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfigurationMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingConfigurationMetadata {
             status: self.status,
-            workspace: self.workspace,
-            log_group_arn: self.log_group_arn,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
-        }
+            workspace: self.workspace.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace",
+                    "workspace was not specified but it is required when building LoggingConfigurationMetadata",
+                )
+            })?,
+            log_group_arn: self.log_group_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_group_arn",
+                    "log_group_arn was not specified but it is required when building LoggingConfigurationMetadata",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building LoggingConfigurationMetadata",
+                )
+            })?,
+            modified_at: self.modified_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "modified_at",
+                    "modified_at was not specified but it is required when building LoggingConfigurationMetadata",
+                )
+            })?,
+        })
     }
 }

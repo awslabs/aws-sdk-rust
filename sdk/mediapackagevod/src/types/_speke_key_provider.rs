@@ -23,8 +23,10 @@ impl SpekeKeyProvider {
         self.role_arn.as_deref()
     }
     /// The system IDs to include in key requests.
-    pub fn system_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.system_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_ids.is_none()`.
+    pub fn system_ids(&self) -> &[::std::string::String] {
+        self.system_ids.as_deref().unwrap_or_default()
     }
     /// The URL of the external key provider service.
     pub fn url(&self) -> ::std::option::Option<&str> {
@@ -63,6 +65,7 @@ impl SpekeKeyProviderBuilder {
         &self.encryption_contract_configuration
     }
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl SpekeKeyProviderBuilder {
         &self.system_ids
     }
     /// The URL of the external key provider service.
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self

@@ -20,8 +20,10 @@ impl PutAggregationAuthorizationInput {
         self.authorized_aws_region.as_deref()
     }
     /// <p>An array of tag object.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutAggregationAuthorizationInput {
@@ -41,6 +43,7 @@ pub struct PutAggregationAuthorizationInputBuilder {
 }
 impl PutAggregationAuthorizationInputBuilder {
     /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    /// This field is required.
     pub fn authorized_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl PutAggregationAuthorizationInputBuilder {
         &self.authorized_account_id
     }
     /// <p>The region authorized to collect aggregated data.</p>
+    /// This field is required.
     pub fn authorized_aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorized_aws_region = ::std::option::Option::Some(input.into());
         self

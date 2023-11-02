@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceInput {
     /// <p>The ID of the device that you are checking the information of.</p>
-    pub managed_device_id: ::std::option::Option<::std::string::String>,
+    pub managed_device_id: ::std::string::String,
 }
 impl DescribeDeviceInput {
     /// <p>The ID of the device that you are checking the information of.</p>
-    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
-        self.managed_device_id.as_deref()
+    pub fn managed_device_id(&self) -> &str {
+        use std::ops::Deref;
+        self.managed_device_id.deref()
     }
 }
 impl DescribeDeviceInput {
@@ -27,6 +28,7 @@ pub struct DescribeDeviceInputBuilder {
 }
 impl DescribeDeviceInputBuilder {
     /// <p>The ID of the device that you are checking the information of.</p>
+    /// This field is required.
     pub fn managed_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_device_id = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DescribeDeviceInputBuilder {
         &self.managed_device_id
     }
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`managed_device_id`](crate::operation::describe_device::builders::DescribeDeviceInputBuilder::managed_device_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput {
-            managed_device_id: self.managed_device_id,
+            managed_device_id: self.managed_device_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "managed_device_id",
+                    "managed_device_id was not specified but it is required when building DescribeDeviceInput",
+                )
+            })?,
         })
     }
 }

@@ -20,8 +20,10 @@ impl CreateConnectionInput {
         self.provider_type.as_ref()
     }
     /// <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateConnectionInput {
@@ -41,6 +43,7 @@ pub struct CreateConnectionInputBuilder {
 }
 impl CreateConnectionInputBuilder {
     /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateConnectionInputBuilder {
         &self.connection_name
     }
     /// <p>The source repository provider.</p>
+    /// This field is required.
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
         self

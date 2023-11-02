@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableDirectoryOutput {
     /// <p>The ARN of the directory that has been disabled.</p>
-    pub directory_arn: ::std::option::Option<::std::string::String>,
+    pub directory_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DisableDirectoryOutput {
     /// <p>The ARN of the directory that has been disabled.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
-        self.directory_arn.as_deref()
+    pub fn directory_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.directory_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DisableDirectoryOutput {
@@ -34,6 +35,7 @@ pub struct DisableDirectoryOutputBuilder {
 }
 impl DisableDirectoryOutputBuilder {
     /// <p>The ARN of the directory that has been disabled.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DisableDirectoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput).
-    pub fn build(self) -> crate::operation::disable_directory::DisableDirectoryOutput {
-        crate::operation::disable_directory::DisableDirectoryOutput {
-            directory_arn: self.directory_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`directory_arn`](crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder::directory_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::disable_directory::DisableDirectoryOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disable_directory::DisableDirectoryOutput {
+            directory_arn: self.directory_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "directory_arn",
+                    "directory_arn was not specified but it is required when building DisableDirectoryOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

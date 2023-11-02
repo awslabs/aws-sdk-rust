@@ -14,8 +14,10 @@ impl CreateFleetLocationsInput {
         self.fleet_id.as_deref()
     }
     /// <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn locations(&self) -> ::std::option::Option<&[crate::types::LocationConfiguration]> {
-        self.locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
+    pub fn locations(&self) -> &[crate::types::LocationConfiguration] {
+        self.locations.as_deref().unwrap_or_default()
     }
 }
 impl CreateFleetLocationsInput {
@@ -34,6 +36,7 @@ pub struct CreateFleetLocationsInputBuilder {
 }
 impl CreateFleetLocationsInputBuilder {
     /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self

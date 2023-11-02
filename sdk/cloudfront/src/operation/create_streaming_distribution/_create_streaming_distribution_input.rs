@@ -28,6 +28,7 @@ pub struct CreateStreamingDistributionInputBuilder {
 }
 impl CreateStreamingDistributionInputBuilder {
     /// <p>The streaming distribution's configuration information.</p>
+    /// This field is required.
     pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.streaming_distribution_config = ::std::option::Option::Some(input);
         self

@@ -50,6 +50,7 @@ pub struct CreateCodeReviewInputBuilder {
 }
 impl CreateCodeReviewInputBuilder {
     /// <p>The name of the code review. The name of each code review in your Amazon Web Services account must be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl CreateCodeReviewInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     /// <p>A code review can only be created on an associated repository. This is the ARN of the associated repository.</p>
+    /// This field is required.
     pub fn repository_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_association_arn = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +83,7 @@ impl CreateCodeReviewInputBuilder {
         &self.repository_association_arn
     }
     /// <p>The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a> object. You can create a code review only of type <code>RepositoryAnalysis</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::CodeReviewType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

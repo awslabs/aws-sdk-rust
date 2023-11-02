@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleAction {
     /// <p>The type of action that creates a rule.</p>
-    pub action_type: ::std::option::Option<crate::types::ActionType>,
+    pub action_type: crate::types::ActionType,
     /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
     pub task_action: ::std::option::Option<crate::types::TaskActionDefinition>,
     /// <p>Information about the EventBridge action.</p>
@@ -20,8 +20,8 @@ pub struct RuleAction {
 }
 impl RuleAction {
     /// <p>The type of action that creates a rule.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionType> {
-        self.action_type.as_ref()
+    pub fn action_type(&self) -> &crate::types::ActionType {
+        &self.action_type
     }
     /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
     pub fn task_action(&self) -> ::std::option::Option<&crate::types::TaskActionDefinition> {
@@ -62,6 +62,7 @@ pub struct RuleActionBuilder {
 }
 impl RuleActionBuilder {
     /// <p>The type of action that creates a rule.</p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -141,13 +142,20 @@ impl RuleActionBuilder {
         &self.send_notification_action
     }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
-    pub fn build(self) -> crate::types::RuleAction {
-        crate::types::RuleAction {
-            action_type: self.action_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_type`](crate::types::builders::RuleActionBuilder::action_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleAction {
+            action_type: self.action_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_type",
+                    "action_type was not specified but it is required when building RuleAction",
+                )
+            })?,
             task_action: self.task_action,
             event_bridge_action: self.event_bridge_action,
             assign_contact_category_action: self.assign_contact_category_action,
             send_notification_action: self.send_notification_action,
-        }
+        })
     }
 }

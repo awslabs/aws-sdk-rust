@@ -36,6 +36,7 @@ pub struct CreateFlowTemplateInputBuilder {
 }
 impl CreateFlowTemplateInputBuilder {
     /// <p>The workflow <code>DefinitionDocument</code>.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

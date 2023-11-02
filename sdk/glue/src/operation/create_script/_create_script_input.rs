@@ -12,12 +12,16 @@ pub struct CreateScriptInput {
 }
 impl CreateScriptInput {
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn dag_nodes(&self) -> ::std::option::Option<&[crate::types::CodeGenNode]> {
-        self.dag_nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dag_nodes.is_none()`.
+    pub fn dag_nodes(&self) -> &[crate::types::CodeGenNode] {
+        self.dag_nodes.as_deref().unwrap_or_default()
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn dag_edges(&self) -> ::std::option::Option<&[crate::types::CodeGenEdge]> {
-        self.dag_edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dag_edges.is_none()`.
+    pub fn dag_edges(&self) -> &[crate::types::CodeGenEdge] {
+        self.dag_edges.as_deref().unwrap_or_default()
     }
     /// <p>The programming language of the resulting code from the DAG.</p>
     pub fn language(&self) -> ::std::option::Option<&crate::types::Language> {

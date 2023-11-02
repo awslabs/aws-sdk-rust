@@ -34,8 +34,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::InvalidNextTokenException({
@@ -50,8 +50,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchConfigurationAggregatorException" => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::NoSuchConfigurationAggregatorException({
@@ -66,8 +66,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ValidationException" => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::ValidationException({
@@ -82,8 +82,8 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::generic(generic)
@@ -109,7 +109,7 @@ pub fn de_get_aggregate_discovered_resource_counts_http_response(
         )
         .map_err(crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_aggregate_discovered_resource_counts_output_correct_errors(output).build()
     })
 }
 

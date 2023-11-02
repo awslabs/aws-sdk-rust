@@ -70,6 +70,7 @@ pub struct AutoMlChannelBuilder {
 }
 impl AutoMlChannelBuilder {
     /// <p>The data source for an AutoML channel.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::AutoMlDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl AutoMlChannelBuilder {
         &self.compression_type
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
+    /// This field is required.
     pub fn target_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_attribute_name = ::std::option::Option::Some(input.into());
         self

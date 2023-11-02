@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteServiceSyncConfig`](crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigFluentBuilder::set_service_name): <p>The name of the service that you want to delete the service sync configuration for.</p>
+    ///   - [`service_name(impl Into<String>)`](crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigFluentBuilder::service_name) / [`set_service_name(impl Into<String>)`](crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigFluentBuilder::set_service_name):<br>required: **true**<br><p>The name of the service that you want to delete the service sync configuration for.</p><br>
     /// - On success, responds with [`DeleteServiceSyncConfigOutput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput) with field(s):
     ///   - [`service_sync_config(Option<ServiceSyncConfig>)`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput::service_sync_config): <p>The detailed data for the service sync config.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceSyncConfigError>`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError)

@@ -15,8 +15,10 @@ pub struct DescribeComputeEnvironmentsInput {
 }
 impl DescribeComputeEnvironmentsInput {
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn compute_environments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.compute_environments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_environments.is_none()`.
+    pub fn compute_environments(&self) -> &[::std::string::String] {
+        self.compute_environments.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

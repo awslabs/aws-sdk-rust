@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceAggregationResponse {
     /// <p>The Amazon EC2 instance ID.</p>
-    pub instance_id: ::std::option::Option<::std::string::String>,
+    pub instance_id: ::std::string::String,
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
     pub ami: ::std::option::Option<::std::string::String>,
     /// <p>The operating system of the Amazon EC2 instance.</p>
@@ -21,8 +21,9 @@ pub struct Ec2InstanceAggregationResponse {
 }
 impl Ec2InstanceAggregationResponse {
     /// <p>The Amazon EC2 instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
-        self.instance_id.as_deref()
+    pub fn instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_id.deref()
     }
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
     pub fn ami(&self) -> ::std::option::Option<&str> {
@@ -70,6 +71,7 @@ pub struct Ec2InstanceAggregationResponseBuilder {
 }
 impl Ec2InstanceAggregationResponseBuilder {
     /// <p>The Amazon EC2 instance ID.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -177,15 +179,22 @@ impl Ec2InstanceAggregationResponseBuilder {
         &self.network_findings
     }
     /// Consumes the builder and constructs a [`Ec2InstanceAggregationResponse`](crate::types::Ec2InstanceAggregationResponse).
-    pub fn build(self) -> crate::types::Ec2InstanceAggregationResponse {
-        crate::types::Ec2InstanceAggregationResponse {
-            instance_id: self.instance_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`instance_id`](crate::types::builders::Ec2InstanceAggregationResponseBuilder::instance_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ec2InstanceAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ec2InstanceAggregationResponse {
+            instance_id: self.instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_id",
+                    "instance_id was not specified but it is required when building Ec2InstanceAggregationResponse",
+                )
+            })?,
             ami: self.ami,
             operating_system: self.operating_system,
             instance_tags: self.instance_tags,
             account_id: self.account_id,
             severity_counts: self.severity_counts,
             network_findings: self.network_findings,
-        }
+        })
     }
 }

@@ -6,11 +6,11 @@ pub struct GetTaskTemplateOutput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the task template.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the task template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the task template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
@@ -37,16 +37,19 @@ impl GetTaskTemplateOutput {
         self.instance_id.as_deref()
     }
     /// <p>A unique identifier for the task template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the task template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the task template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -65,8 +68,10 @@ impl GetTaskTemplateOutput {
         self.defaults.as_ref()
     }
     /// <p>Fields that are part of the template.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::TaskTemplateField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::TaskTemplateField] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskTemplateStatus> {
@@ -132,6 +137,7 @@ impl GetTaskTemplateOutputBuilder {
         &self.instance_id
     }
     /// <p>A unique identifier for the task template.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +152,7 @@ impl GetTaskTemplateOutputBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +167,7 @@ impl GetTaskTemplateOutputBuilder {
         &self.arn
     }
     /// <p>The name of the task template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -321,12 +329,33 @@ impl GetTaskTemplateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetTaskTemplateOutput`](crate::operation::get_task_template::GetTaskTemplateOutput).
-    pub fn build(self) -> crate::operation::get_task_template::GetTaskTemplateOutput {
-        crate::operation::get_task_template::GetTaskTemplateOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder::id)
+    /// - [`arn`](crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder::arn)
+    /// - [`name`](crate::operation::get_task_template::builders::GetTaskTemplateOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_task_template::GetTaskTemplateOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_task_template::GetTaskTemplateOutput {
             instance_id: self.instance_id,
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetTaskTemplateOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetTaskTemplateOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetTaskTemplateOutput",
+                )
+            })?,
             description: self.description,
             contact_flow_id: self.contact_flow_id,
             constraints: self.constraints,
@@ -337,6 +366,6 @@ impl GetTaskTemplateOutputBuilder {
             created_time: self.created_time,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

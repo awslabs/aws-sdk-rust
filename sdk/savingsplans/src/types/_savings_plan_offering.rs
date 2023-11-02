@@ -33,8 +33,10 @@ impl SavingsPlanOffering {
         self.offering_id.as_deref()
     }
     /// <p>The product type.</p>
-    pub fn product_types(&self) -> ::std::option::Option<&[crate::types::SavingsPlanProductType]> {
-        self.product_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_types.is_none()`.
+    pub fn product_types(&self) -> &[crate::types::SavingsPlanProductType] {
+        self.product_types.as_deref().unwrap_or_default()
     }
     /// <p>The plan type.</p>
     pub fn plan_type(&self) -> ::std::option::Option<&crate::types::SavingsPlanType> {
@@ -69,8 +71,10 @@ impl SavingsPlanOffering {
         self.operation.as_deref()
     }
     /// <p>The properties.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::SavingsPlanOfferingProperty]> {
-        self.properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
+    pub fn properties(&self) -> &[crate::types::SavingsPlanOfferingProperty] {
+        self.properties.as_deref().unwrap_or_default()
     }
 }
 impl SavingsPlanOffering {

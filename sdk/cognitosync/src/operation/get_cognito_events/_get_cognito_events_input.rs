@@ -28,6 +28,7 @@ pub struct GetCognitoEventsInputBuilder {
 }
 impl GetCognitoEventsInputBuilder {
     /// <p>The Cognito Identity Pool ID for the request</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self

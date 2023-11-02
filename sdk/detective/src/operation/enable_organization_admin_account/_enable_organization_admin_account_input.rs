@@ -27,6 +27,7 @@ pub struct EnableOrganizationAdminAccountInputBuilder {
 }
 impl EnableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

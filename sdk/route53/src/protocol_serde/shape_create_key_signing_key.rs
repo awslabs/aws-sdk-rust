@@ -196,7 +196,9 @@ pub fn de_create_key_signing_key_http_response(
             })?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_key_signing_key_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_key_signing_key::CreateKeySigningKeyError::unhandled)?
     })
 }
 

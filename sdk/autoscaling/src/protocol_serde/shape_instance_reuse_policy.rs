@@ -12,6 +12,7 @@ pub fn ser_instance_reuse_policy(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instance_reuse_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::InstanceReusePolicy, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -62,6 +62,7 @@ pub struct ModifyVerifiedAccessGroupPolicyInputBuilder {
 }
 impl ModifyVerifiedAccessGroupPolicyInputBuilder {
     /// <p>The ID of the Verified Access group.</p>
+    /// This field is required.
     pub fn verified_access_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_group_id = ::std::option::Option::Some(input.into());
         self

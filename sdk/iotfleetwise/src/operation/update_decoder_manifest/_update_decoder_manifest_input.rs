@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDecoderManifestInput {
     /// <p> The name of the decoder manifest to update.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> A brief description of the decoder manifest to update. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about decoding additional signals to add to the decoder manifest. </p>
@@ -24,36 +24,49 @@ pub struct UpdateDecoderManifestInput {
 }
 impl UpdateDecoderManifestInput {
     /// <p> The name of the decoder manifest to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> A brief description of the decoder manifest to update. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of information about decoding additional signals to add to the decoder manifest. </p>
-    pub fn signal_decoders_to_add(&self) -> ::std::option::Option<&[crate::types::SignalDecoder]> {
-        self.signal_decoders_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signal_decoders_to_add.is_none()`.
+    pub fn signal_decoders_to_add(&self) -> &[crate::types::SignalDecoder] {
+        self.signal_decoders_to_add.as_deref().unwrap_or_default()
     }
     /// <p> A list of updated information about decoding signals to update in the decoder manifest. </p>
-    pub fn signal_decoders_to_update(&self) -> ::std::option::Option<&[crate::types::SignalDecoder]> {
-        self.signal_decoders_to_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signal_decoders_to_update.is_none()`.
+    pub fn signal_decoders_to_update(&self) -> &[crate::types::SignalDecoder] {
+        self.signal_decoders_to_update.as_deref().unwrap_or_default()
     }
     /// <p> A list of signal decoders to remove from the decoder manifest. </p>
-    pub fn signal_decoders_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.signal_decoders_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.signal_decoders_to_remove.is_none()`.
+    pub fn signal_decoders_to_remove(&self) -> &[::std::string::String] {
+        self.signal_decoders_to_remove.as_deref().unwrap_or_default()
     }
     /// <p> A list of information about the network interfaces to add to the decoder manifest. </p>
-    pub fn network_interfaces_to_add(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces_to_add.is_none()`.
+    pub fn network_interfaces_to_add(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces_to_add.as_deref().unwrap_or_default()
     }
     /// <p> A list of information about the network interfaces to update in the decoder manifest. </p>
-    pub fn network_interfaces_to_update(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces_to_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces_to_update.is_none()`.
+    pub fn network_interfaces_to_update(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces_to_update.as_deref().unwrap_or_default()
     }
     /// <p> A list of network interfaces to remove from the decoder manifest.</p>
-    pub fn network_interfaces_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interfaces_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces_to_remove.is_none()`.
+    pub fn network_interfaces_to_remove(&self) -> &[::std::string::String] {
+        self.network_interfaces_to_remove.as_deref().unwrap_or_default()
     }
     /// <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is <code>DRAFT</code>, you can edit the decoder manifest. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManifestStatus> {
@@ -83,6 +96,7 @@ pub struct UpdateDecoderManifestInputBuilder {
 }
 impl UpdateDecoderManifestInputBuilder {
     /// <p> The name of the decoder manifest to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -245,12 +259,19 @@ impl UpdateDecoderManifestInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateDecoderManifestInput`](crate::operation::update_decoder_manifest::UpdateDecoderManifestInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_decoder_manifest::UpdateDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_decoder_manifest::UpdateDecoderManifestInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateDecoderManifestInput",
+                )
+            })?,
             description: self.description,
             signal_decoders_to_add: self.signal_decoders_to_add,
             signal_decoders_to_update: self.signal_decoders_to_update,

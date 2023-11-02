@@ -28,6 +28,7 @@ pub struct GetDeploymentInputBuilder {
 }
 impl GetDeploymentInputBuilder {
     /// <p> The unique ID of a deployment associated with the user or Amazon Web Services account. </p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct PhoneNumberValidateInputBuilder {
 }
 impl PhoneNumberValidateInputBuilder {
     /// <p>Specifies a phone number to validate and retrieve information about.</p>
+    /// This field is required.
     pub fn number_validate_request(mut self, input: crate::types::NumberValidateRequest) -> Self {
         self.number_validate_request = ::std::option::Option::Some(input);
         self

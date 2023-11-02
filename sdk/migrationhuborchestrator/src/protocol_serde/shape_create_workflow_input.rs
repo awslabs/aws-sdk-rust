@@ -3,49 +3,51 @@ pub fn ser_create_workflow_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_workflow::CreateWorkflowInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_configuration_id {
-        object.key("applicationConfigurationId").string(var_1.as_str());
+    {
+        object
+            .key("applicationConfigurationId")
+            .string(input.application_configuration_id.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.input_parameters {
+    {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("inputParameters").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_2 = object.key("inputParameters").start_object();
+        for (key_3, value_4) in &input.input_parameters {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = object_4.key(key_5.as_str()).start_object();
-                crate::protocol_serde::shape_step_input::ser_step_input(&mut object_7, value_6)?;
-                object_7.finish();
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_step_input::ser_step_input(&mut object_5, value_4)?;
+                object_5.finish();
             }
         }
-        object_4.finish();
+        object_2.finish();
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_9) = &input.step_targets {
-        let mut array_10 = object.key("stepTargets").start_array();
-        for item_11 in var_9 {
+    if let Some(var_6) = &input.step_targets {
+        let mut array_7 = object.key("stepTargets").start_array();
+        for item_8 in var_6 {
             {
-                array_10.value().string(item_11.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_10.finish();
+        array_7.finish();
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_13.finish();
+        object_10.finish();
     }
-    if let Some(var_16) = &input.template_id {
-        object.key("templateId").string(var_16.as_str());
+    {
+        object.key("templateId").string(input.template_id.as_str());
     }
     Ok(())
 }

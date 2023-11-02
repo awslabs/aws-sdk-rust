@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceApiKeyInput {
     /// <p>The name of the API key to delete.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>The ID of the workspace to delete.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
 }
 impl DeleteWorkspaceApiKeyInput {
     /// <p>The name of the API key to delete.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>The ID of the workspace to delete.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl DeleteWorkspaceApiKeyInput {
@@ -34,6 +36,7 @@ pub struct DeleteWorkspaceApiKeyInputBuilder {
 }
 impl DeleteWorkspaceApiKeyInputBuilder {
     /// <p>The name of the API key to delete.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteWorkspaceApiKeyInputBuilder {
         &self.key_name
     }
     /// <p>The ID of the workspace to delete.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl DeleteWorkspaceApiKeyInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder::key_name)
+    /// - [`workspace_id`](crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput {
-            key_name: self.key_name,
-            workspace_id: self.workspace_id,
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building DeleteWorkspaceApiKeyInput",
+                )
+            })?,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building DeleteWorkspaceApiKeyInput",
+                )
+            })?,
         })
     }
 }

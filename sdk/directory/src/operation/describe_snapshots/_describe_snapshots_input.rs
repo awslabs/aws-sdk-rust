@@ -19,8 +19,10 @@ impl DescribeSnapshotsInput {
         self.directory_id.as_deref()
     }
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    pub fn snapshot_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.snapshot_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
+    pub fn snapshot_ids(&self) -> &[::std::string::String] {
+        self.snapshot_ids.as_deref().unwrap_or_default()
     }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

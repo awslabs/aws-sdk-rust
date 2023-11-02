@@ -29,6 +29,7 @@ pub struct ShuffleConfigBuilder {
 }
 impl ShuffleConfigBuilder {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
+    /// This field is required.
     pub fn seed(mut self, input: i64) -> Self {
         self.seed = ::std::option::Option::Some(input);
         self

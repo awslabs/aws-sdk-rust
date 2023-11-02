@@ -12,6 +12,7 @@ pub fn ser_tracking_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_tracking_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TrackingOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

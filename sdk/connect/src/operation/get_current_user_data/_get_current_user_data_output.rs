@@ -17,8 +17,10 @@ impl GetCurrentUserDataOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of the user data that is returned.</p>
-    pub fn user_data_list(&self) -> ::std::option::Option<&[crate::types::UserData]> {
-        self.user_data_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_data_list.is_none()`.
+    pub fn user_data_list(&self) -> &[crate::types::UserData] {
+        self.user_data_list.as_deref().unwrap_or_default()
     }
     /// <p>The total count of the result, regardless of the current page size.</p>
     pub fn approximate_total_count(&self) -> ::std::option::Option<i64> {

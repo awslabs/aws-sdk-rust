@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance.</p>
-    pub recovery_instance_id: ::std::option::Option<::std::string::String>,
+    pub recovery_instance_id: ::std::string::String,
     /// <p>The name of the Failback Replication Configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
@@ -14,8 +14,9 @@ pub struct UpdateFailbackReplicationConfigurationInput {
 }
 impl UpdateFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance.</p>
-    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
-        self.recovery_instance_id.as_deref()
+    pub fn recovery_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.recovery_instance_id.deref()
     }
     /// <p>The name of the Failback Replication Configuration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -48,6 +49,7 @@ pub struct UpdateFailbackReplicationConfigurationInputBuilder {
 }
 impl UpdateFailbackReplicationConfigurationInputBuilder {
     /// <p>The ID of the Recovery Instance.</p>
+    /// This field is required.
     pub fn recovery_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recovery_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,8 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
         &self.use_private_ip
     }
     /// Consumes the builder and constructs a [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recovery_instance_id`](crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder::recovery_instance_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -112,7 +116,12 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput {
-                recovery_instance_id: self.recovery_instance_id,
+                recovery_instance_id: self.recovery_instance_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "recovery_instance_id",
+                        "recovery_instance_id was not specified but it is required when building UpdateFailbackReplicationConfigurationInput",
+                    )
+                })?,
                 name: self.name,
                 bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
                 use_private_ip: self.use_private_ip,

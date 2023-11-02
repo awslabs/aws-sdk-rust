@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroupInput {
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    pub endpoint_details: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>,
+    pub endpoint_details: ::std::vec::Vec<crate::types::EndpointDetails>,
     /// <p>Tags of a dataflow endpoint group.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
@@ -15,8 +15,9 @@ pub struct CreateDataflowEndpointGroupInput {
 }
 impl CreateDataflowEndpointGroupInput {
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    pub fn endpoint_details(&self) -> ::std::option::Option<&[crate::types::EndpointDetails]> {
-        self.endpoint_details.as_deref()
+    pub fn endpoint_details(&self) -> &[crate::types::EndpointDetails] {
+        use std::ops::Deref;
+        self.endpoint_details.deref()
     }
     /// <p>Tags of a dataflow endpoint group.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -117,6 +118,8 @@ impl CreateDataflowEndpointGroupInputBuilder {
         &self.contact_post_pass_duration_seconds
     }
     /// Consumes the builder and constructs a [`CreateDataflowEndpointGroupInput`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`endpoint_details`](crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder::endpoint_details)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -124,7 +127,12 @@ impl CreateDataflowEndpointGroupInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput {
-            endpoint_details: self.endpoint_details,
+            endpoint_details: self.endpoint_details.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "endpoint_details",
+                    "endpoint_details was not specified but it is required when building CreateDataflowEndpointGroupInput",
+                )
+            })?,
             tags: self.tags,
             contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds,
             contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds,

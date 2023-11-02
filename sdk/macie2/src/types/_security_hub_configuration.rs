@@ -35,6 +35,7 @@ pub struct SecurityHubConfigurationBuilder {
 }
 impl SecurityHubConfigurationBuilder {
     /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
+    /// This field is required.
     pub fn publish_classification_findings(mut self, input: bool) -> Self {
         self.publish_classification_findings = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl SecurityHubConfigurationBuilder {
         &self.publish_classification_findings
     }
     /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
+    /// This field is required.
     pub fn publish_policy_findings(mut self, input: bool) -> Self {
         self.publish_policy_findings = ::std::option::Option::Some(input);
         self

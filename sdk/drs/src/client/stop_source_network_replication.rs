@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopSourceNetworkReplication`](crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_network_id(impl Into<String>)`](crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder::source_network_id) / [`set_source_network_id(Option<String>)`](crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder::set_source_network_id): <p>ID of the Source Network to stop replication.</p>
+    ///   - [`source_network_id(impl Into<String>)`](crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder::source_network_id) / [`set_source_network_id(Option<String>)`](crate::operation::stop_source_network_replication::builders::StopSourceNetworkReplicationFluentBuilder::set_source_network_id):<br>required: **true**<br><p>ID of the Source Network to stop replication.</p><br>
     /// - On success, responds with [`StopSourceNetworkReplicationOutput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput) with field(s):
     ///   - [`source_network(Option<SourceNetwork>)`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput::source_network): <p>Source Network which was requested to stop replication.</p>
     /// - On failure, responds with [`SdkError<StopSourceNetworkReplicationError>`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError)

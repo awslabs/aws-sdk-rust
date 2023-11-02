@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeaderMatch {
     /// <p>The name of the header.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The header match type.</p>
     pub r#match: ::std::option::Option<crate::types::HeaderMatchType>,
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
@@ -13,8 +13,9 @@ pub struct HeaderMatch {
 }
 impl HeaderMatch {
     /// <p>The name of the header.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The header match type.</p>
     pub fn r#match(&self) -> ::std::option::Option<&crate::types::HeaderMatchType> {
@@ -42,6 +43,7 @@ pub struct HeaderMatchBuilder {
 }
 impl HeaderMatchBuilder {
     /// <p>The name of the header.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl HeaderMatchBuilder {
         &self.name
     }
     /// <p>The header match type.</p>
+    /// This field is required.
     pub fn r#match(mut self, input: crate::types::HeaderMatchType) -> Self {
         self.r#match = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl HeaderMatchBuilder {
         &self.case_sensitive
     }
     /// Consumes the builder and constructs a [`HeaderMatch`](crate::types::HeaderMatch).
-    pub fn build(self) -> crate::types::HeaderMatch {
-        crate::types::HeaderMatch {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::HeaderMatchBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::HeaderMatch, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HeaderMatch {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building HeaderMatch",
+                )
+            })?,
             r#match: self.r#match,
             case_sensitive: self.case_sensitive,
-        }
+        })
     }
 }

@@ -14,6 +14,7 @@
 /// match fleetattribute {
 ///     FleetAttribute::DomainJoinInfo => { /* ... */ },
 ///     FleetAttribute::IamRoleArn => { /* ... */ },
+///     FleetAttribute::MaxSessionsPerInstance => { /* ... */ },
 ///     FleetAttribute::SessionScriptS3Location => { /* ... */ },
 ///     FleetAttribute::UsbDeviceFilterStrings => { /* ... */ },
 ///     FleetAttribute::VpcConfiguration => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum FleetAttribute {
     #[allow(missing_docs)] // documentation missing in model
     IamRoleArn,
     #[allow(missing_docs)] // documentation missing in model
+    MaxSessionsPerInstance,
+    #[allow(missing_docs)] // documentation missing in model
     SessionScriptS3Location,
     #[allow(missing_docs)] // documentation missing in model
     UsbDeviceFilterStrings,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for FleetAttribute {
         match s {
             "DOMAIN_JOIN_INFO" => FleetAttribute::DomainJoinInfo,
             "IAM_ROLE_ARN" => FleetAttribute::IamRoleArn,
+            "MAX_SESSIONS_PER_INSTANCE" => FleetAttribute::MaxSessionsPerInstance,
             "SESSION_SCRIPT_S3_LOCATION" => FleetAttribute::SessionScriptS3Location,
             "USB_DEVICE_FILTER_STRINGS" => FleetAttribute::UsbDeviceFilterStrings,
             "VPC_CONFIGURATION" => FleetAttribute::VpcConfiguration,
@@ -86,6 +90,7 @@ impl FleetAttribute {
         match self {
             FleetAttribute::DomainJoinInfo => "DOMAIN_JOIN_INFO",
             FleetAttribute::IamRoleArn => "IAM_ROLE_ARN",
+            FleetAttribute::MaxSessionsPerInstance => "MAX_SESSIONS_PER_INSTANCE",
             FleetAttribute::SessionScriptS3Location => "SESSION_SCRIPT_S3_LOCATION",
             FleetAttribute::UsbDeviceFilterStrings => "USB_DEVICE_FILTER_STRINGS",
             FleetAttribute::VpcConfiguration => "VPC_CONFIGURATION",
@@ -98,6 +103,7 @@ impl FleetAttribute {
         &[
             "DOMAIN_JOIN_INFO",
             "IAM_ROLE_ARN",
+            "MAX_SESSIONS_PER_INSTANCE",
             "SESSION_SCRIPT_S3_LOCATION",
             "USB_DEVICE_FILTER_STRINGS",
             "VPC_CONFIGURATION",

@@ -17,8 +17,10 @@ impl GetReplicationRunsOutput {
         self.replication_job.as_ref()
     }
     /// <p>Information about the replication runs.</p>
-    pub fn replication_run_list(&self) -> ::std::option::Option<&[crate::types::ReplicationRun]> {
-        self.replication_run_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_run_list.is_none()`.
+    pub fn replication_run_list(&self) -> &[crate::types::ReplicationRun] {
+        self.replication_run_list.as_deref().unwrap_or_default()
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

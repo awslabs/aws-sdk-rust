@@ -13,6 +13,7 @@ pub fn ser_activity_metrics(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_activity_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ActivityMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {

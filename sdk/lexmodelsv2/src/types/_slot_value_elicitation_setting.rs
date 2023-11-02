@@ -7,7 +7,7 @@ pub struct SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
     pub default_value_specification: ::std::option::Option<crate::types::SlotDefaultValueSpecification>,
     /// <p>Specifies whether the slot is required or optional.</p>
-    pub slot_constraint: ::std::option::Option<crate::types::SlotConstraint>,
+    pub slot_constraint: crate::types::SlotConstraint,
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
     pub prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
@@ -23,16 +23,18 @@ impl SlotValueElicitationSetting {
         self.default_value_specification.as_ref()
     }
     /// <p>Specifies whether the slot is required or optional.</p>
-    pub fn slot_constraint(&self) -> ::std::option::Option<&crate::types::SlotConstraint> {
-        self.slot_constraint.as_ref()
+    pub fn slot_constraint(&self) -> &crate::types::SlotConstraint {
+        &self.slot_constraint
     }
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
     pub fn prompt_specification(&self) -> ::std::option::Option<&crate::types::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
     /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
-    pub fn sample_utterances(&self) -> ::std::option::Option<&[crate::types::SampleUtterance]> {
-        self.sample_utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
+    pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
+        self.sample_utterances.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
     pub fn wait_and_continue_specification(&self) -> ::std::option::Option<&crate::types::WaitAndContinueSpecification> {
@@ -77,6 +79,7 @@ impl SlotValueElicitationSettingBuilder {
         &self.default_value_specification
     }
     /// <p>Specifies whether the slot is required or optional.</p>
+    /// This field is required.
     pub fn slot_constraint(mut self, input: crate::types::SlotConstraint) -> Self {
         self.slot_constraint = ::std::option::Option::Some(input);
         self
@@ -153,14 +156,21 @@ impl SlotValueElicitationSettingBuilder {
         &self.slot_capture_setting
     }
     /// Consumes the builder and constructs a [`SlotValueElicitationSetting`](crate::types::SlotValueElicitationSetting).
-    pub fn build(self) -> crate::types::SlotValueElicitationSetting {
-        crate::types::SlotValueElicitationSetting {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`slot_constraint`](crate::types::builders::SlotValueElicitationSettingBuilder::slot_constraint)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueElicitationSetting, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlotValueElicitationSetting {
             default_value_specification: self.default_value_specification,
-            slot_constraint: self.slot_constraint,
+            slot_constraint: self.slot_constraint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "slot_constraint",
+                    "slot_constraint was not specified but it is required when building SlotValueElicitationSetting",
+                )
+            })?,
             prompt_specification: self.prompt_specification,
             sample_utterances: self.sample_utterances,
             wait_and_continue_specification: self.wait_and_continue_specification,
             slot_capture_setting: self.slot_capture_setting,
-        }
+        })
     }
 }

@@ -49,6 +49,7 @@ impl AttackStatisticsDataItemBuilder {
         &self.attack_volume
     }
     /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
+    /// This field is required.
     pub fn attack_count(mut self, input: i64) -> Self {
         self.attack_count = ::std::option::Option::Some(input);
         self

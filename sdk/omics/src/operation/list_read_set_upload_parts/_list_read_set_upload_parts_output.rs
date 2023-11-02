@@ -15,8 +15,10 @@ impl ListReadSetUploadPartsOutput {
         self.next_token.as_deref()
     }
     /// <p> An array of upload parts. </p>
-    pub fn parts(&self) -> ::std::option::Option<&[crate::types::ReadSetUploadPartListItem]> {
-        self.parts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
+    pub fn parts(&self) -> &[crate::types::ReadSetUploadPartListItem] {
+        self.parts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListReadSetUploadPartsOutput {

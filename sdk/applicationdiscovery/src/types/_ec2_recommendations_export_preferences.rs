@@ -37,8 +37,10 @@ impl Ec2RecommendationsExportPreferences {
         self.tenancy.as_ref()
     }
     /// <p> An array of instance types to exclude from recommendations. </p>
-    pub fn excluded_instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_instance_types.is_none()`.
+    pub fn excluded_instance_types(&self) -> &[::std::string::String] {
+        self.excluded_instance_types.as_deref().unwrap_or_default()
     }
     /// <p> The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>. </p>
     pub fn preferred_region(&self) -> ::std::option::Option<&str> {

@@ -17,8 +17,10 @@ impl ListApiKeysOutput {
         self.next_marker.as_deref()
     }
     /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn api_key_summaries(&self) -> ::std::option::Option<&[crate::types::ApiKeySummary]> {
-        self.api_key_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_key_summaries.is_none()`.
+    pub fn api_key_summaries(&self) -> &[crate::types::ApiKeySummary] {
+        self.api_key_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
     pub fn application_integration_url(&self) -> ::std::option::Option<&str> {

@@ -27,11 +27,13 @@ pub enum Error {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::types::error::InvalidSecurityException),
+    /// <p>Indicates that the specified state is not a valid state for an event source.</p>
+    InvalidStateException(crate::types::error::InvalidStateException),
     /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
     KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
-    /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
+    /// <p>The request was rejected because the specified Amazon Web Services KMS key isn't enabled.</p>
     KmsDisabledException(crate::types::error::KmsDisabledException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
@@ -45,6 +47,8 @@ pub enum Error {
     OptedOutException(crate::types::error::OptedOutException),
     /// <p>Exception error indicating platform application disabled.</p>
     PlatformApplicationDisabledException(crate::types::error::PlatformApplicationDisabledException),
+    /// <p>Indicates that the request parameter has exceeded the maximum number of concurrent message replays.</p>
+    ReplayLimitExceededException(crate::types::error::ReplayLimitExceededException),
     /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
@@ -85,6 +89,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidSecurityException(inner) => inner.fmt(f),
+            Error::InvalidStateException(inner) => inner.fmt(f),
             Error::KmsAccessDeniedException(inner) => inner.fmt(f),
             Error::KmsDisabledException(inner) => inner.fmt(f),
             Error::KmsInvalidStateException(inner) => inner.fmt(f),
@@ -94,6 +99,7 @@ impl ::std::fmt::Display for Error {
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::OptedOutException(inner) => inner.fmt(f),
             Error::PlatformApplicationDisabledException(inner) => inner.fmt(f),
+            Error::ReplayLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::StaleTagException(inner) => inner.fmt(f),
             Error::SubscriptionLimitExceededException(inner) => inner.fmt(f),
@@ -204,6 +210,9 @@ impl From<crate::operation::confirm_subscription::ConfirmSubscriptionError> for 
                 Error::InvalidParameterException(inner)
             }
             crate::operation::confirm_subscription::ConfirmSubscriptionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::confirm_subscription::ConfirmSubscriptionError::ReplayLimitExceededException(inner) => {
+                Error::ReplayLimitExceededException(inner)
+            }
             crate::operation::confirm_subscription::ConfirmSubscriptionError::SubscriptionLimitExceededException(inner) => {
                 Error::SubscriptionLimitExceededException(inner)
             }
@@ -475,6 +484,7 @@ impl From<crate::operation::delete_topic::DeleteTopicError> for Error {
             crate::operation::delete_topic::DeleteTopicError::ConcurrentAccessException(inner) => Error::ConcurrentAccessException(inner),
             crate::operation::delete_topic::DeleteTopicError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::delete_topic::DeleteTopicError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_topic::DeleteTopicError::InvalidStateException(inner) => Error::InvalidStateException(inner),
             crate::operation::delete_topic::DeleteTopicError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_topic::DeleteTopicError::StaleTagException(inner) => Error::StaleTagException(inner),
             crate::operation::delete_topic::DeleteTopicError::TagPolicyException(inner) => Error::TagPolicyException(inner),
@@ -1342,6 +1352,9 @@ impl From<crate::operation::set_subscription_attributes::SetSubscriptionAttribut
             crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
+            crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::ReplayLimitExceededException(inner) => {
+                Error::ReplayLimitExceededException(inner)
+            }
             crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1407,6 +1420,7 @@ impl From<crate::operation::subscribe::SubscribeError> for Error {
             crate::operation::subscribe::SubscribeError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::subscribe::SubscribeError::InvalidSecurityException(inner) => Error::InvalidSecurityException(inner),
             crate::operation::subscribe::SubscribeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::subscribe::SubscribeError::ReplayLimitExceededException(inner) => Error::ReplayLimitExceededException(inner),
             crate::operation::subscribe::SubscribeError::SubscriptionLimitExceededException(inner) => {
                 Error::SubscriptionLimitExceededException(inner)
             }
@@ -1560,6 +1574,7 @@ impl ::std::error::Error for Error {
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::InvalidSecurityException(inner) => inner.source(),
+            Error::InvalidStateException(inner) => inner.source(),
             Error::KmsAccessDeniedException(inner) => inner.source(),
             Error::KmsDisabledException(inner) => inner.source(),
             Error::KmsInvalidStateException(inner) => inner.source(),
@@ -1569,6 +1584,7 @@ impl ::std::error::Error for Error {
             Error::NotFoundException(inner) => inner.source(),
             Error::OptedOutException(inner) => inner.source(),
             Error::PlatformApplicationDisabledException(inner) => inner.source(),
+            Error::ReplayLimitExceededException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::StaleTagException(inner) => inner.source(),
             Error::SubscriptionLimitExceededException(inner) => inner.source(),
@@ -1599,6 +1615,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::InvalidSecurityException(e) => e.request_id(),
+            Self::InvalidStateException(e) => e.request_id(),
             Self::KmsAccessDeniedException(e) => e.request_id(),
             Self::KmsDisabledException(e) => e.request_id(),
             Self::KmsInvalidStateException(e) => e.request_id(),
@@ -1608,6 +1625,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::NotFoundException(e) => e.request_id(),
             Self::OptedOutException(e) => e.request_id(),
             Self::PlatformApplicationDisabledException(e) => e.request_id(),
+            Self::ReplayLimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::StaleTagException(e) => e.request_id(),
             Self::SubscriptionLimitExceededException(e) => e.request_id(),

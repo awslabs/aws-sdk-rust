@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ReleaseHosts`](crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`host_ids(impl Into<String>)`](crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder::host_ids) / [`set_host_ids(Option<Vec<String>>)`](crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder::set_host_ids): <p>The IDs of the Dedicated Hosts to release.</p>
+    ///   - [`host_ids(impl Into<String>)`](crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder::host_ids) / [`set_host_ids(Option<Vec<String>>)`](crate::operation::release_hosts::builders::ReleaseHostsFluentBuilder::set_host_ids):<br>required: **true**<br><p>The IDs of the Dedicated Hosts to release.</p><br>
     /// - On success, responds with [`ReleaseHostsOutput`](crate::operation::release_hosts::ReleaseHostsOutput) with field(s):
     ///   - [`successful(Option<Vec<String>>)`](crate::operation::release_hosts::ReleaseHostsOutput::successful): <p>The IDs of the Dedicated Hosts that were successfully released.</p>
     ///   - [`unsuccessful(Option<Vec<UnsuccessfulItem>>)`](crate::operation::release_hosts::ReleaseHostsOutput::unsuccessful): <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>

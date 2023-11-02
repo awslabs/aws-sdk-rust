@@ -27,6 +27,7 @@ pub struct StopSourceNetworkReplicationInputBuilder {
 }
 impl StopSourceNetworkReplicationInputBuilder {
     /// <p>ID of the Source Network to stop replication.</p>
+    /// This field is required.
     pub fn source_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_network_id = ::std::option::Option::Some(input.into());
         self

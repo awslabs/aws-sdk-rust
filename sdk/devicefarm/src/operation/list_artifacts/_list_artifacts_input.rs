@@ -54,6 +54,7 @@ pub struct ListArtifactsInputBuilder {
 }
 impl ListArtifactsInputBuilder {
     /// <p>The run, job, suite, or test ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +75,7 @@ impl ListArtifactsInputBuilder {
     /// <li> <p>LOG</p> </li>
     /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ArtifactCategory) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

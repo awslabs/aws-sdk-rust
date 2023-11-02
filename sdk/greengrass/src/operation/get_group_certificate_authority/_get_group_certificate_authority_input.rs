@@ -34,6 +34,7 @@ pub struct GetGroupCertificateAuthorityInputBuilder {
 }
 impl GetGroupCertificateAuthorityInputBuilder {
     /// The ID of the certificate authority.
+    /// This field is required.
     pub fn certificate_authority_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetGroupCertificateAuthorityInputBuilder {
         &self.certificate_authority_id
     }
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self

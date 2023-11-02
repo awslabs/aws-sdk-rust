@@ -27,6 +27,7 @@ pub struct DeleteSolutionInputBuilder {
 }
 impl DeleteSolutionInputBuilder {
     /// <p>The ARN of the solution to delete.</p>
+    /// This field is required.
     pub fn solution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.solution_arn = ::std::option::Option::Some(input.into());
         self

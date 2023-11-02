@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInferenceExperiment`](crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder::set_name): <p>The name of the inference experiment you want to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentFluentBuilder::set_name):<br>required: **true**<br><p>The name of the inference experiment you want to delete.</p><br>
     /// - On success, responds with [`DeleteInferenceExperimentOutput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput) with field(s):
     ///   - [`inference_experiment_arn(Option<String>)`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the deleted inference experiment.</p>
     /// - On failure, responds with [`SdkError<DeleteInferenceExperimentError>`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentError)

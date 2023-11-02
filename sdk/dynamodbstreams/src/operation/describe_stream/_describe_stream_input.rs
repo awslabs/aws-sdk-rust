@@ -42,6 +42,7 @@ pub struct DescribeStreamInputBuilder {
 }
 impl DescribeStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self

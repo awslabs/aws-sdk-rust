@@ -27,6 +27,7 @@ pub struct GetApplicationInputBuilder {
 }
 impl GetApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

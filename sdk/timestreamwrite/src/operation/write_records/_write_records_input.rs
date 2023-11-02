@@ -26,8 +26,10 @@ impl WriteRecordsInput {
         self.common_attributes.as_ref()
     }
     /// <p>An array of records that contain the unique measure, dimension, time, and version attributes for each time-series data point. </p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::Record] {
+        self.records.as_deref().unwrap_or_default()
     }
 }
 impl WriteRecordsInput {
@@ -48,6 +50,7 @@ pub struct WriteRecordsInputBuilder {
 }
 impl WriteRecordsInputBuilder {
     /// <p>The name of the Timestream database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl WriteRecordsInputBuilder {
         &self.database_name
     }
     /// <p>The name of the Timestream table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

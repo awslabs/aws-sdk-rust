@@ -41,6 +41,7 @@ pub struct ListMultiRegionAccessPointsInputBuilder {
 }
 impl ListMultiRegionAccessPointsInputBuilder {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

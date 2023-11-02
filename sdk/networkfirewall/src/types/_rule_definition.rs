@@ -17,7 +17,7 @@ pub struct RuleDefinition {
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>. </p>
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
-    pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub actions: ::std::vec::Vec<::std::string::String>,
 }
 impl RuleDefinition {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
@@ -35,8 +35,9 @@ impl RuleDefinition {
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>. </p>
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
-    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.actions.as_deref()
+    pub fn actions(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.actions.deref()
     }
 }
 impl RuleDefinition {
@@ -55,6 +56,7 @@ pub struct RuleDefinitionBuilder {
 }
 impl RuleDefinitionBuilder {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
+    /// This field is required.
     pub fn match_attributes(mut self, input: crate::types::MatchAttributes) -> Self {
         self.match_attributes = ::std::option::Option::Some(input);
         self
@@ -119,10 +121,17 @@ impl RuleDefinitionBuilder {
         &self.actions
     }
     /// Consumes the builder and constructs a [`RuleDefinition`](crate::types::RuleDefinition).
-    pub fn build(self) -> crate::types::RuleDefinition {
-        crate::types::RuleDefinition {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`actions`](crate::types::builders::RuleDefinitionBuilder::actions)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleDefinition {
             match_attributes: self.match_attributes,
-            actions: self.actions,
-        }
+            actions: self.actions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "actions",
+                    "actions was not specified but it is required when building RuleDefinition",
+                )
+            })?,
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStateMachineAlias`](crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`state_machine_alias_arn(impl Into<String>)`](crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasFluentBuilder::state_machine_alias_arn) / [`set_state_machine_alias_arn(Option<String>)`](crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasFluentBuilder::set_state_machine_alias_arn): <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
+    ///   - [`state_machine_alias_arn(impl Into<String>)`](crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasFluentBuilder::state_machine_alias_arn) / [`set_state_machine_alias_arn(Option<String>)`](crate::operation::describe_state_machine_alias::builders::DescribeStateMachineAliasFluentBuilder::set_state_machine_alias_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the state machine alias.</p><br>
     /// - On success, responds with [`DescribeStateMachineAliasOutput`](crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput) with field(s):
     ///   - [`state_machine_alias_arn(Option<String>)`](crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput::state_machine_alias_arn): <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput::name): <p>The name of the state machine alias.</p>

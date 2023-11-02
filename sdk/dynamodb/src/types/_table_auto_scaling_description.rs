@@ -33,8 +33,10 @@ impl TableAutoScalingDescription {
         self.table_status.as_ref()
     }
     /// <p>Represents replicas of the global table.</p>
-    pub fn replicas(&self) -> ::std::option::Option<&[crate::types::ReplicaAutoScalingDescription]> {
-        self.replicas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicas.is_none()`.
+    pub fn replicas(&self) -> &[crate::types::ReplicaAutoScalingDescription] {
+        self.replicas.as_deref().unwrap_or_default()
     }
 }
 impl TableAutoScalingDescription {

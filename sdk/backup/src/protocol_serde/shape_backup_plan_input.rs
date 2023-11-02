@@ -3,32 +3,32 @@ pub fn ser_backup_plan_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackupPlanInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.backup_plan_name {
-        object.key("BackupPlanName").string(var_1.as_str());
+    {
+        object.key("BackupPlanName").string(input.backup_plan_name.as_str());
     }
-    if let Some(var_2) = &input.rules {
-        let mut array_3 = object.key("Rules").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Rules").start_array();
+        for item_2 in &input.rules {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_backup_rule_input::ser_backup_rule_input(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_backup_rule_input::ser_backup_rule_input(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.advanced_backup_settings {
-        let mut array_7 = object.key("AdvancedBackupSettings").start_array();
-        for item_8 in var_6 {
+    if let Some(var_4) = &input.advanced_backup_settings {
+        let mut array_5 = object.key("AdvancedBackupSettings").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_advanced_backup_setting::ser_advanced_backup_setting(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_advanced_backup_setting::ser_advanced_backup_setting(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
     Ok(())
 }

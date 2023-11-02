@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ID of the scene.</p>
-    pub scene_id: ::std::option::Option<::std::string::String>,
+    pub scene_id: ::std::string::String,
 }
 impl GetSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> ::std::option::Option<&str> {
-        self.scene_id.as_deref()
+    pub fn scene_id(&self) -> &str {
+        use std::ops::Deref;
+        self.scene_id.deref()
     }
 }
 impl GetSceneInput {
@@ -34,6 +36,7 @@ pub struct GetSceneInputBuilder {
 }
 impl GetSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetSceneInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the scene.</p>
+    /// This field is required.
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
         self
@@ -62,10 +66,23 @@ impl GetSceneInputBuilder {
         &self.scene_id
     }
     /// Consumes the builder and constructs a [`GetSceneInput`](crate::operation::get_scene::GetSceneInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::get_scene::builders::GetSceneInputBuilder::workspace_id)
+    /// - [`scene_id`](crate::operation::get_scene::builders::GetSceneInputBuilder::scene_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scene::GetSceneInput {
-            workspace_id: self.workspace_id,
-            scene_id: self.scene_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building GetSceneInput",
+                )
+            })?,
+            scene_id: self.scene_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scene_id",
+                    "scene_id was not specified but it is required when building GetSceneInput",
+                )
+            })?,
         })
     }
 }

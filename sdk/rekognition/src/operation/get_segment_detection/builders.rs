@@ -97,14 +97,14 @@ impl GetSegmentDetectionFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::get_segment_detection::GetSegmentDetectionOutput,
             crate::operation::get_segment_detection::GetSegmentDetectionError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_segment_detection::GetSegmentDetectionError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -117,7 +117,7 @@ impl GetSegmentDetectionFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator {
         crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::new(self.handle, self.inner)
     }

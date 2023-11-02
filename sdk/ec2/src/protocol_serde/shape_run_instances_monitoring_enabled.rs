@@ -12,6 +12,7 @@ pub fn ser_run_instances_monitoring_enabled(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_run_instances_monitoring_enabled(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::RunInstancesMonitoringEnabled, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -37,5 +38,5 @@ pub fn de_run_instances_monitoring_enabled(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::run_instances_monitoring_enabled_correct_errors(builder).build())
 }

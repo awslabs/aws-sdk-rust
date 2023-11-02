@@ -63,6 +63,7 @@ pub struct GetUsageInputBuilder {
 }
 impl GetUsageInputBuilder {
     /// <p>The Id of the usage plan associated with the usage data.</p>
+    /// This field is required.
     pub fn usage_plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl GetUsageInputBuilder {
         &self.key_id
     }
     /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl GetUsageInputBuilder {
         &self.start_date
     }
     /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date = ::std::option::Option::Some(input.into());
         self

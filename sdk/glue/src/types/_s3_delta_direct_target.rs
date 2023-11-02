@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeltaDirectTarget {
     /// <p>The name of the data target.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     pub partition_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub compression: ::std::option::Option<crate::types::DeltaTargetCompressionType>,
+    pub compression: crate::types::DeltaTargetCompressionType,
     /// <p>Specifies the data output format for the target.</p>
-    pub format: ::std::option::Option<crate::types::TargetFormat>,
+    pub format: crate::types::TargetFormat,
     /// <p>Specifies additional connection options for the connector.</p>
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
@@ -23,28 +23,33 @@ pub struct S3DeltaDirectTarget {
 }
 impl S3DeltaDirectTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.partition_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.partition_keys.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn compression(&self) -> ::std::option::Option<&crate::types::DeltaTargetCompressionType> {
-        self.compression.as_ref()
+    pub fn compression(&self) -> &crate::types::DeltaTargetCompressionType {
+        &self.compression
     }
     /// <p>Specifies the data output format for the target.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::TargetFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::TargetFormat {
+        &self.format
     }
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -77,6 +82,7 @@ pub struct S3DeltaDirectTargetBuilder {
 }
 impl S3DeltaDirectTargetBuilder {
     /// <p>The name of the data target.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +137,7 @@ impl S3DeltaDirectTargetBuilder {
         &self.partition_keys
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +152,7 @@ impl S3DeltaDirectTargetBuilder {
         &self.path
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    /// This field is required.
     pub fn compression(mut self, input: crate::types::DeltaTargetCompressionType) -> Self {
         self.compression = ::std::option::Option::Some(input);
         self
@@ -159,6 +167,7 @@ impl S3DeltaDirectTargetBuilder {
         &self.compression
     }
     /// <p>Specifies the data output format for the target.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::TargetFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -214,16 +223,47 @@ impl S3DeltaDirectTargetBuilder {
         &self.schema_change_policy
     }
     /// Consumes the builder and constructs a [`S3DeltaDirectTarget`](crate::types::S3DeltaDirectTarget).
-    pub fn build(self) -> crate::types::S3DeltaDirectTarget {
-        crate::types::S3DeltaDirectTarget {
-            name: self.name,
-            inputs: self.inputs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::S3DeltaDirectTargetBuilder::name)
+    /// - [`inputs`](crate::types::builders::S3DeltaDirectTargetBuilder::inputs)
+    /// - [`path`](crate::types::builders::S3DeltaDirectTargetBuilder::path)
+    /// - [`compression`](crate::types::builders::S3DeltaDirectTargetBuilder::compression)
+    /// - [`format`](crate::types::builders::S3DeltaDirectTargetBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaDirectTarget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DeltaDirectTarget {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building S3DeltaDirectTarget",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building S3DeltaDirectTarget",
+                )
+            })?,
             partition_keys: self.partition_keys,
-            path: self.path,
-            compression: self.compression,
-            format: self.format,
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building S3DeltaDirectTarget",
+                )
+            })?,
+            compression: self.compression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "compression",
+                    "compression was not specified but it is required when building S3DeltaDirectTarget",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building S3DeltaDirectTarget",
+                )
+            })?,
             additional_options: self.additional_options,
             schema_change_policy: self.schema_change_policy,
-        }
+        })
     }
 }

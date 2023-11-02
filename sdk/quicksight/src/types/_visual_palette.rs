@@ -15,8 +15,10 @@ impl VisualPalette {
         self.chart_color.as_deref()
     }
     /// <p>The color map options for the visual palette.</p>
-    pub fn color_map(&self) -> ::std::option::Option<&[crate::types::DataPathColor]> {
-        self.color_map.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color_map.is_none()`.
+    pub fn color_map(&self) -> &[crate::types::DataPathColor] {
+        self.color_map.as_deref().unwrap_or_default()
     }
 }
 impl VisualPalette {

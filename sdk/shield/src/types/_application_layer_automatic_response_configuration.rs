@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-    pub status: ::std::option::Option<crate::types::ApplicationLayerAutomaticResponseStatus>,
+    pub status: crate::types::ApplicationLayerAutomaticResponseStatus,
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub action: ::std::option::Option<crate::types::ResponseAction>,
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationLayerAutomaticResponseStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ApplicationLayerAutomaticResponseStatus {
+        &self.status
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::ResponseAction> {
@@ -35,6 +35,7 @@ pub struct ApplicationLayerAutomaticResponseConfigurationBuilder {
 }
 impl ApplicationLayerAutomaticResponseConfigurationBuilder {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ApplicationLayerAutomaticResponseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ApplicationLayerAutomaticResponseConfigurationBuilder {
         &self.status
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ResponseAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,19 @@ impl ApplicationLayerAutomaticResponseConfigurationBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`ApplicationLayerAutomaticResponseConfiguration`](crate::types::ApplicationLayerAutomaticResponseConfiguration).
-    pub fn build(self) -> crate::types::ApplicationLayerAutomaticResponseConfiguration {
-        crate::types::ApplicationLayerAutomaticResponseConfiguration {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::ApplicationLayerAutomaticResponseConfigurationBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ApplicationLayerAutomaticResponseConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationLayerAutomaticResponseConfiguration {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ApplicationLayerAutomaticResponseConfiguration",
+                )
+            })?,
             action: self.action,
-        }
+        })
     }
 }

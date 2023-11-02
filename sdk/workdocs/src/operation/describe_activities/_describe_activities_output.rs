@@ -11,8 +11,10 @@ pub struct DescribeActivitiesOutput {
 }
 impl DescribeActivitiesOutput {
     /// <p>The list of activities for the specified user and time period.</p>
-    pub fn user_activities(&self) -> ::std::option::Option<&[crate::types::Activity]> {
-        self.user_activities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_activities.is_none()`.
+    pub fn user_activities(&self) -> &[crate::types::Activity] {
+        self.user_activities.as_deref().unwrap_or_default()
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

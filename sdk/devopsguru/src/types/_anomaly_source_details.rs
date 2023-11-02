@@ -11,12 +11,16 @@ pub struct AnomalySourceDetails {
 }
 impl AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
-    pub fn cloud_watch_metrics(&self) -> ::std::option::Option<&[crate::types::CloudWatchMetricsDetail]> {
-        self.cloud_watch_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_metrics.is_none()`.
+    pub fn cloud_watch_metrics(&self) -> &[crate::types::CloudWatchMetricsDetail] {
+        self.cloud_watch_metrics.as_deref().unwrap_or_default()
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
-    pub fn performance_insights_metrics(&self) -> ::std::option::Option<&[crate::types::PerformanceInsightsMetricsDetail]> {
-        self.performance_insights_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.performance_insights_metrics.is_none()`.
+    pub fn performance_insights_metrics(&self) -> &[crate::types::PerformanceInsightsMetricsDetail] {
+        self.performance_insights_metrics.as_deref().unwrap_or_default()
     }
 }
 impl AnomalySourceDetails {

@@ -29,8 +29,10 @@ impl ListCustomVocabularyItemsOutput {
         self.locale_id.as_deref()
     }
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    pub fn custom_vocabulary_items(&self) -> ::std::option::Option<&[crate::types::CustomVocabularyItem]> {
-        self.custom_vocabulary_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_vocabulary_items.is_none()`.
+    pub fn custom_vocabulary_items(&self) -> &[crate::types::CustomVocabularyItem] {
+        self.custom_vocabulary_items.as_deref().unwrap_or_default()
     }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

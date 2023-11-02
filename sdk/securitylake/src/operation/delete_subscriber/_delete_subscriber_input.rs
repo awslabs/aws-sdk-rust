@@ -27,6 +27,7 @@ pub struct DeleteSubscriberInputBuilder {
 }
 impl DeleteSubscriberInputBuilder {
     /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request.</p>
+    /// This field is required.
     pub fn subscriber_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_id = ::std::option::Option::Some(input.into());
         self

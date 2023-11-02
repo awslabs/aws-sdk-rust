@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AddTagsToResourceOutput {
@@ -34,6 +35,7 @@ pub struct AddTagsToResourceOutputBuilder {
 }
 impl AddTagsToResourceOutputBuilder {
     /// <p>The status of the operation.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl AddTagsToResourceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput).
-    pub fn build(self) -> crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
-        crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building AddTagsToResourceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

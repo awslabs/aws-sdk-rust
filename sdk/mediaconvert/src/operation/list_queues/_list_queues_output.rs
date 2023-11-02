@@ -15,8 +15,10 @@ impl ListQueuesOutput {
         self.next_token.as_deref()
     }
     /// List of queues.
-    pub fn queues(&self) -> ::std::option::Option<&[crate::types::Queue]> {
-        self.queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queues.is_none()`.
+    pub fn queues(&self) -> &[crate::types::Queue] {
+        self.queues.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListQueuesOutput {

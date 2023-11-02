@@ -78,7 +78,9 @@ pub fn de_delete_luna_client_http_response(
         output = crate::protocol_serde::shape_delete_luna_client::de_delete_luna_client(_response_body, output)
             .map_err(crate::operation::delete_luna_client::DeleteLunaClientError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_luna_client_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::delete_luna_client::DeleteLunaClientError::unhandled)?
     })
 }
 

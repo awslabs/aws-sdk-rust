@@ -3,11 +3,11 @@ pub fn ser_labels_s3_input_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LabelsS3InputConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket {
-        object.key("Bucket").string(var_1.as_str());
+    {
+        object.key("Bucket").string(input.bucket.as_str());
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("Prefix").string(var_2.as_str());
+    if let Some(var_1) = &input.prefix {
+        object.key("Prefix").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::labels_s3_input_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

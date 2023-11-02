@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
 }
 impl Partition {
     /// <p> The name of the attribute that defines a partition dimension. </p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
 }
 impl Partition {
@@ -28,6 +29,7 @@ pub struct PartitionBuilder {
 }
 impl PartitionBuilder {
     /// <p> The name of the attribute that defines a partition dimension. </p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl PartitionBuilder {
         &self.attribute_name
     }
     /// Consumes the builder and constructs a [`Partition`](crate::types::Partition).
-    pub fn build(self) -> crate::types::Partition {
-        crate::types::Partition {
-            attribute_name: self.attribute_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::PartitionBuilder::attribute_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Partition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Partition {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building Partition",
+                )
+            })?,
+        })
     }
 }

@@ -12,20 +12,20 @@ pub fn ser_aws_log_source_configuration(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.regions {
-        let mut array_5 = object.key("regions").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_4 = object.key("regions").start_array();
+        for item_5 in &input.regions {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_7) = &input.source_name {
-        object.key("sourceName").string(var_7.as_str());
+    {
+        object.key("sourceName").string(input.source_name.as_str());
     }
-    if let Some(var_8) = &input.source_version {
-        object.key("sourceVersion").string(var_8.as_str());
+    {
+        object.key("sourceVersion").string(input.source_version.as_str());
     }
     Ok(())
 }

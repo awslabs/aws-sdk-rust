@@ -23,8 +23,10 @@ impl DeviceSelectionConfig {
         self.percentage
     }
     /// <p>List of devices chosen to deploy.</p>
-    pub fn device_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_names.is_none()`.
+    pub fn device_names(&self) -> &[::std::string::String] {
+        self.device_names.as_deref().unwrap_or_default()
     }
     /// <p>A filter to select devices with names containing this name.</p>
     pub fn device_name_contains(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct DeviceSelectionConfigBuilder {
 }
 impl DeviceSelectionConfigBuilder {
     /// <p>Type of device subsets to deploy to the current stage.</p>
+    /// This field is required.
     pub fn device_subset_type(mut self, input: crate::types::DeviceSubsetType) -> Self {
         self.device_subset_type = ::std::option::Option::Some(input);
         self

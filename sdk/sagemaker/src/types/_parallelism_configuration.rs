@@ -28,6 +28,7 @@ pub struct ParallelismConfigurationBuilder {
 }
 impl ParallelismConfigurationBuilder {
     /// <p>The max number of steps that can be executed in parallel. </p>
+    /// This field is required.
     pub fn max_parallel_execution_steps(mut self, input: i32) -> Self {
         self.max_parallel_execution_steps = ::std::option::Option::Some(input);
         self

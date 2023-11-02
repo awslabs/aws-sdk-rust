@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRuleGroupsNamespaceInput {
     /// The ID of the workspace to delete rule group definition.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// The rule groups namespace name.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRuleGroupsNamespaceInput {
     /// The ID of the workspace to delete rule group definition.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct DeleteRuleGroupsNamespaceInputBuilder {
 }
 impl DeleteRuleGroupsNamespaceInputBuilder {
     /// The ID of the workspace to delete rule group definition.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
         &self.workspace_id
     }
     /// The rule groups namespace name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,9 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteRuleGroupsNamespaceInput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder::workspace_id)
+    /// - [`name`](crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,8 +98,18 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput {
-            workspace_id: self.workspace_id,
-            name: self.name,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building DeleteRuleGroupsNamespaceInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteRuleGroupsNamespaceInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

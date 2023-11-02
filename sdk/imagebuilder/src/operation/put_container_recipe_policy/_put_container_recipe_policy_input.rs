@@ -34,6 +34,7 @@ pub struct PutContainerRecipePolicyInputBuilder {
 }
 impl PutContainerRecipePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
+    /// This field is required.
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutContainerRecipePolicyInputBuilder {
         &self.container_recipe_arn
     }
     /// <p>The policy to apply to the container recipe.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

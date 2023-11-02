@@ -35,6 +35,7 @@ pub struct GpsPointDimensionBuilder {
 }
 impl GpsPointDimensionBuilder {
     /// <p>The GPS coordinates to measure distance from.</p>
+    /// This field is required.
     pub fn coordinates(mut self, input: crate::types::GpsCoordinates) -> Self {
         self.coordinates = ::std::option::Option::Some(input);
         self

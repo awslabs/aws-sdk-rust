@@ -63,6 +63,7 @@ impl GetBackendStorageResourceConfigBuilder {
         &self.bucket_name
     }
     /// <p>Returns True if the storage resource has been imported.</p>
+    /// This field is required.
     pub fn imported(mut self, input: bool) -> Self {
         self.imported = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl GetBackendStorageResourceConfigBuilder {
         &self.permissions
     }
     /// <p>The name of the storage service.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
         self

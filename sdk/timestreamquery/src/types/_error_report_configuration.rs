@@ -28,6 +28,7 @@ pub struct ErrorReportConfigurationBuilder {
 }
 impl ErrorReportConfigurationBuilder {
     /// <p>The S3 configuration for the error reports.</p>
+    /// This field is required.
     pub fn s3_configuration(mut self, input: crate::types::S3Configuration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self

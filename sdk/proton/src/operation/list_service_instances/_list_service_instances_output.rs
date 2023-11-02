@@ -6,7 +6,7 @@ pub struct ListServiceInstancesOutput {
     /// <p>A token that indicates the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service instances with summary data.</p>
-    pub service_instances: ::std::option::Option<::std::vec::Vec<crate::types::ServiceInstanceSummary>>,
+    pub service_instances: ::std::vec::Vec<crate::types::ServiceInstanceSummary>,
     _request_id: Option<String>,
 }
 impl ListServiceInstancesOutput {
@@ -15,8 +15,9 @@ impl ListServiceInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of service instances with summary data.</p>
-    pub fn service_instances(&self) -> ::std::option::Option<&[crate::types::ServiceInstanceSummary]> {
-        self.service_instances.as_deref()
+    pub fn service_instances(&self) -> &[crate::types::ServiceInstanceSummary] {
+        use std::ops::Deref;
+        self.service_instances.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServiceInstancesOutput {
@@ -84,11 +85,21 @@ impl ListServiceInstancesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceInstancesOutput`](crate::operation::list_service_instances::ListServiceInstancesOutput).
-    pub fn build(self) -> crate::operation::list_service_instances::ListServiceInstancesOutput {
-        crate::operation::list_service_instances::ListServiceInstancesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_instances`](crate::operation::list_service_instances::builders::ListServiceInstancesOutputBuilder::service_instances)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_service_instances::ListServiceInstancesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_service_instances::ListServiceInstancesOutput {
             next_token: self.next_token,
-            service_instances: self.service_instances,
+            service_instances: self.service_instances.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_instances",
+                    "service_instances was not specified but it is required when building ListServiceInstancesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

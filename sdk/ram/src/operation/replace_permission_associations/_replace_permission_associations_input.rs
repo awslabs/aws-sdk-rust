@@ -54,6 +54,7 @@ pub struct ReplacePermissionAssociationsInputBuilder {
 }
 impl ReplacePermissionAssociationsInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission that you want to replace.</p>
+    /// This field is required.
     pub fn from_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_permission_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ReplacePermissionAssociationsInputBuilder {
     }
     /// <p>Specifies the ARN of the managed permission that you want to associate with resource shares in place of the one specified by <code>fromPerssionArn</code> and <code>fromPermissionVersion</code>.</p>
     /// <p>The operation always associates the version that is currently the default for the specified managed permission.</p>
+    /// This field is required.
     pub fn to_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_permission_arn = ::std::option::Option::Some(input.into());
         self

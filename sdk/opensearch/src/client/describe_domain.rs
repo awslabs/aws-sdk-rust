@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDomain`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_name): <p>The name of the domain that you want information about.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain that you want information about.</p><br>
     /// - On success, responds with [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput) with field(s):
     ///   - [`domain_status(Option<DomainStatus>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_status): <p>List that contains the status of each specified OpenSearch Service domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::operation::describe_domain::DescribeDomainError)

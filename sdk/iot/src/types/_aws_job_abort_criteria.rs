@@ -5,31 +5,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsJobAbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub failure_type: ::std::option::Option<crate::types::AwsJobAbortCriteriaFailureType>,
+    pub failure_type: crate::types::AwsJobAbortCriteriaFailureType,
     /// <p>The type of job action to take to initiate the job abort.</p>
-    pub action: ::std::option::Option<crate::types::AwsJobAbortCriteriaAbortAction>,
+    pub action: crate::types::AwsJobAbortCriteriaAbortAction,
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
-    pub threshold_percentage: ::std::option::Option<f64>,
+    pub threshold_percentage: f64,
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
-    pub min_number_of_executed_things: ::std::option::Option<i32>,
+    pub min_number_of_executed_things: i32,
 }
 impl AwsJobAbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn failure_type(&self) -> ::std::option::Option<&crate::types::AwsJobAbortCriteriaFailureType> {
-        self.failure_type.as_ref()
+    pub fn failure_type(&self) -> &crate::types::AwsJobAbortCriteriaFailureType {
+        &self.failure_type
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::AwsJobAbortCriteriaAbortAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::AwsJobAbortCriteriaAbortAction {
+        &self.action
     }
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
-    pub fn threshold_percentage(&self) -> ::std::option::Option<f64> {
+    pub fn threshold_percentage(&self) -> f64 {
         self.threshold_percentage
     }
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
-    pub fn min_number_of_executed_things(&self) -> ::std::option::Option<i32> {
+    pub fn min_number_of_executed_things(&self) -> i32 {
         self.min_number_of_executed_things
     }
 }
@@ -51,6 +51,7 @@ pub struct AwsJobAbortCriteriaBuilder {
 }
 impl AwsJobAbortCriteriaBuilder {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
+    /// This field is required.
     pub fn failure_type(mut self, input: crate::types::AwsJobAbortCriteriaFailureType) -> Self {
         self.failure_type = ::std::option::Option::Some(input);
         self
@@ -65,6 +66,7 @@ impl AwsJobAbortCriteriaBuilder {
         &self.failure_type
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::AwsJobAbortCriteriaAbortAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -80,6 +82,7 @@ impl AwsJobAbortCriteriaBuilder {
     }
     /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+    /// This field is required.
     pub fn threshold_percentage(mut self, input: f64) -> Self {
         self.threshold_percentage = ::std::option::Option::Some(input);
         self
@@ -96,6 +99,7 @@ impl AwsJobAbortCriteriaBuilder {
         &self.threshold_percentage
     }
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
+    /// This field is required.
     pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
         self.min_number_of_executed_things = ::std::option::Option::Some(input);
         self
@@ -110,12 +114,37 @@ impl AwsJobAbortCriteriaBuilder {
         &self.min_number_of_executed_things
     }
     /// Consumes the builder and constructs a [`AwsJobAbortCriteria`](crate::types::AwsJobAbortCriteria).
-    pub fn build(self) -> crate::types::AwsJobAbortCriteria {
-        crate::types::AwsJobAbortCriteria {
-            failure_type: self.failure_type,
-            action: self.action,
-            threshold_percentage: self.threshold_percentage,
-            min_number_of_executed_things: self.min_number_of_executed_things,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`failure_type`](crate::types::builders::AwsJobAbortCriteriaBuilder::failure_type)
+    /// - [`action`](crate::types::builders::AwsJobAbortCriteriaBuilder::action)
+    /// - [`threshold_percentage`](crate::types::builders::AwsJobAbortCriteriaBuilder::threshold_percentage)
+    /// - [`min_number_of_executed_things`](crate::types::builders::AwsJobAbortCriteriaBuilder::min_number_of_executed_things)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsJobAbortCriteria, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsJobAbortCriteria {
+            failure_type: self.failure_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failure_type",
+                    "failure_type was not specified but it is required when building AwsJobAbortCriteria",
+                )
+            })?,
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building AwsJobAbortCriteria",
+                )
+            })?,
+            threshold_percentage: self.threshold_percentage.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "threshold_percentage",
+                    "threshold_percentage was not specified but it is required when building AwsJobAbortCriteria",
+                )
+            })?,
+            min_number_of_executed_things: self.min_number_of_executed_things.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "min_number_of_executed_things",
+                    "min_number_of_executed_things was not specified but it is required when building AwsJobAbortCriteria",
+                )
+            })?,
+        })
     }
 }

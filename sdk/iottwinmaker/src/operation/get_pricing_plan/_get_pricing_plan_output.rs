@@ -41,6 +41,7 @@ pub struct GetPricingPlanOutputBuilder {
 }
 impl GetPricingPlanOutputBuilder {
     /// <p>The chosen pricing plan for the current billing cycle.</p>
+    /// This field is required.
     pub fn current_pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.current_pricing_plan = ::std::option::Option::Some(input);
         self

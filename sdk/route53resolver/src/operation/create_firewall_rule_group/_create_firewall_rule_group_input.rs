@@ -20,8 +20,10 @@ impl CreateFirewallRuleGroupInput {
         self.name.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the rule group. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFirewallRuleGroupInput {
@@ -41,6 +43,7 @@ pub struct CreateFirewallRuleGroupInputBuilder {
 }
 impl CreateFirewallRuleGroupInputBuilder {
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
+    /// This field is required.
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreateFirewallRuleGroupInputBuilder {
         &self.creator_request_id
     }
     /// <p>A name that lets you identify the rule group, to manage and use it.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

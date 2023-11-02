@@ -104,6 +104,7 @@ pub struct CreateNetworkProfileInputBuilder {
 }
 impl CreateNetworkProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl CreateNetworkProfileInputBuilder {
         &self.project_arn
     }
     /// <p>The name for the new network profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

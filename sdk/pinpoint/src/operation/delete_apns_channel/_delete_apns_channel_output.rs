@@ -34,6 +34,7 @@ pub struct DeleteApnsChannelOutputBuilder {
 }
 impl DeleteApnsChannelOutputBuilder {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
+    /// This field is required.
     pub fn apns_channel_response(mut self, input: crate::types::ApnsChannelResponse) -> Self {
         self.apns_channel_response = ::std::option::Option::Some(input);
         self

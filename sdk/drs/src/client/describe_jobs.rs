@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filters(DescribeJobsRequestFilters)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::filters) / [`set_filters(Option<DescribeJobsRequestFilters>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_filters): <p>A set of filters by which to return Jobs.</p>
-    ///   - [`max_results(i32)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_max_results): <p>Maximum number of Jobs to retrieve.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_next_token): <p>The token of the next Job to retrieve.</p>
+    ///   - [`filters(DescribeJobsRequestFilters)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::filters) / [`set_filters(Option<DescribeJobsRequestFilters>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_filters):<br>required: **false**<br><p>A set of filters by which to return Jobs.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of Jobs to retrieve.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Job to retrieve.</p><br>
     /// - On success, responds with [`DescribeJobsOutput`](crate::operation::describe_jobs::DescribeJobsOutput) with field(s):
     ///   - [`items(Option<Vec<Job>>)`](crate::operation::describe_jobs::DescribeJobsOutput::items): <p>An array of Jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_jobs::DescribeJobsOutput::next_token): <p>The token of the next Job to retrieve.</p>

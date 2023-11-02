@@ -82,6 +82,7 @@ impl ListBudgetsForResourceInputBuilder {
         &self.accept_language
     }
     /// <p>The resource identifier.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

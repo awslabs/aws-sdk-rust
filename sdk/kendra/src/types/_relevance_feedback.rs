@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelevanceFeedback {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    pub result_id: ::std::option::Option<::std::string::String>,
+    pub result_id: ::std::string::String,
     /// <p>Whether the document was relevant or not relevant to the search.</p>
-    pub relevance_value: ::std::option::Option<crate::types::RelevanceType>,
+    pub relevance_value: crate::types::RelevanceType,
 }
 impl RelevanceFeedback {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    pub fn result_id(&self) -> ::std::option::Option<&str> {
-        self.result_id.as_deref()
+    pub fn result_id(&self) -> &str {
+        use std::ops::Deref;
+        self.result_id.deref()
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
-    pub fn relevance_value(&self) -> ::std::option::Option<&crate::types::RelevanceType> {
-        self.relevance_value.as_ref()
+    pub fn relevance_value(&self) -> &crate::types::RelevanceType {
+        &self.relevance_value
     }
 }
 impl RelevanceFeedback {
@@ -35,6 +36,7 @@ pub struct RelevanceFeedbackBuilder {
 }
 impl RelevanceFeedbackBuilder {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
+    /// This field is required.
     pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl RelevanceFeedbackBuilder {
         &self.result_id
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
+    /// This field is required.
     pub fn relevance_value(mut self, input: crate::types::RelevanceType) -> Self {
         self.relevance_value = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl RelevanceFeedbackBuilder {
         &self.relevance_value
     }
     /// Consumes the builder and constructs a [`RelevanceFeedback`](crate::types::RelevanceFeedback).
-    pub fn build(self) -> crate::types::RelevanceFeedback {
-        crate::types::RelevanceFeedback {
-            result_id: self.result_id,
-            relevance_value: self.relevance_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`result_id`](crate::types::builders::RelevanceFeedbackBuilder::result_id)
+    /// - [`relevance_value`](crate::types::builders::RelevanceFeedbackBuilder::relevance_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::RelevanceFeedback, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RelevanceFeedback {
+            result_id: self.result_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "result_id",
+                    "result_id was not specified but it is required when building RelevanceFeedback",
+                )
+            })?,
+            relevance_value: self.relevance_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "relevance_value",
+                    "relevance_value was not specified but it is required when building RelevanceFeedback",
+                )
+            })?,
+        })
     }
 }

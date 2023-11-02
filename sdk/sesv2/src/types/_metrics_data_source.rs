@@ -5,38 +5,37 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricsDataSource {
     /// <p>An object that contains a mapping between a <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by. Must contain a least 1 dimension but no more than 3 unique ones.</p>
-    pub dimensions: ::std::option::Option<::std::collections::HashMap<crate::types::MetricDimensionName, ::std::vec::Vec<::std::string::String>>>,
+    pub dimensions: ::std::collections::HashMap<crate::types::MetricDimensionName, ::std::vec::Vec<::std::string::String>>,
     /// <p>The metrics namespace - e.g., <code>VDM</code>.</p>
-    pub namespace: ::std::option::Option<crate::types::MetricNamespace>,
+    pub namespace: crate::types::MetricNamespace,
     /// <p>A list of <code>ExportMetric</code> objects to export.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::ExportMetric>>,
+    pub metrics: ::std::vec::Vec<crate::types::ExportMetric>,
     /// <p>Represents the start date for the export interval as a timestamp.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     /// <p>Represents the end date for the export interval as a timestamp.</p>
-    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_date: ::aws_smithy_types::DateTime,
 }
 impl MetricsDataSource {
     /// <p>An object that contains a mapping between a <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by. Must contain a least 1 dimension but no more than 3 unique ones.</p>
-    pub fn dimensions(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::MetricDimensionName, ::std::vec::Vec<::std::string::String>>> {
-        self.dimensions.as_ref()
+    pub fn dimensions(&self) -> &::std::collections::HashMap<crate::types::MetricDimensionName, ::std::vec::Vec<::std::string::String>> {
+        &self.dimensions
     }
     /// <p>The metrics namespace - e.g., <code>VDM</code>.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&crate::types::MetricNamespace> {
-        self.namespace.as_ref()
+    pub fn namespace(&self) -> &crate::types::MetricNamespace {
+        &self.namespace
     }
     /// <p>A list of <code>ExportMetric</code> objects to export.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::ExportMetric]> {
-        self.metrics.as_deref()
+    pub fn metrics(&self) -> &[crate::types::ExportMetric] {
+        use std::ops::Deref;
+        self.metrics.deref()
     }
     /// <p>Represents the start date for the export interval as a timestamp.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
     /// <p>Represents the end date for the export interval as a timestamp.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_date.as_ref()
+    pub fn end_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_date
     }
 }
 impl MetricsDataSource {
@@ -84,6 +83,7 @@ impl MetricsDataSourceBuilder {
         &self.dimensions
     }
     /// <p>The metrics namespace - e.g., <code>VDM</code>.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: crate::types::MetricNamespace) -> Self {
         self.namespace = ::std::option::Option::Some(input);
         self
@@ -118,6 +118,7 @@ impl MetricsDataSourceBuilder {
         &self.metrics
     }
     /// <p>Represents the start date for the export interval as a timestamp.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -132,6 +133,7 @@ impl MetricsDataSourceBuilder {
         &self.start_date
     }
     /// <p>Represents the end date for the export interval as a timestamp.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self
@@ -146,13 +148,44 @@ impl MetricsDataSourceBuilder {
         &self.end_date
     }
     /// Consumes the builder and constructs a [`MetricsDataSource`](crate::types::MetricsDataSource).
-    pub fn build(self) -> crate::types::MetricsDataSource {
-        crate::types::MetricsDataSource {
-            dimensions: self.dimensions,
-            namespace: self.namespace,
-            metrics: self.metrics,
-            start_date: self.start_date,
-            end_date: self.end_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dimensions`](crate::types::builders::MetricsDataSourceBuilder::dimensions)
+    /// - [`namespace`](crate::types::builders::MetricsDataSourceBuilder::namespace)
+    /// - [`metrics`](crate::types::builders::MetricsDataSourceBuilder::metrics)
+    /// - [`start_date`](crate::types::builders::MetricsDataSourceBuilder::start_date)
+    /// - [`end_date`](crate::types::builders::MetricsDataSourceBuilder::end_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricsDataSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricsDataSource {
+            dimensions: self.dimensions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimensions",
+                    "dimensions was not specified but it is required when building MetricsDataSource",
+                )
+            })?,
+            namespace: self.namespace.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "namespace",
+                    "namespace was not specified but it is required when building MetricsDataSource",
+                )
+            })?,
+            metrics: self.metrics.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metrics",
+                    "metrics was not specified but it is required when building MetricsDataSource",
+                )
+            })?,
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building MetricsDataSource",
+                )
+            })?,
+            end_date: self.end_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_date",
+                    "end_date was not specified but it is required when building MetricsDataSource",
+                )
+            })?,
+        })
     }
 }

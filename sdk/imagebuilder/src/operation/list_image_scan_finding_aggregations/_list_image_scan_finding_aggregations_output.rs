@@ -39,8 +39,10 @@ impl ListImageScanFindingAggregationsOutput {
         self.aggregation_type.as_deref()
     }
     /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
-    pub fn responses(&self) -> ::std::option::Option<&[crate::types::ImageScanFindingAggregation]> {
-        self.responses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.responses.is_none()`.
+    pub fn responses(&self) -> &[crate::types::ImageScanFindingAggregation] {
+        self.responses.as_deref().unwrap_or_default()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

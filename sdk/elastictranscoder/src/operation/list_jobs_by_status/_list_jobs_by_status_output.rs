@@ -12,8 +12,10 @@ pub struct ListJobsByStatusOutput {
 }
 impl ListJobsByStatusOutput {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::Job]> {
-        self.jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
+    pub fn jobs(&self) -> &[crate::types::Job] {
+        self.jobs.as_deref().unwrap_or_default()
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

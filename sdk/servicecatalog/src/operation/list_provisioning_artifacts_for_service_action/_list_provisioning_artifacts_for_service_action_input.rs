@@ -57,6 +57,7 @@ pub struct ListProvisioningArtifactsForServiceActionInputBuilder {
 }
 impl ListProvisioningArtifactsForServiceActionInputBuilder {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    /// This field is required.
     pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_action_id = ::std::option::Option::Some(input.into());
         self

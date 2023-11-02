@@ -25,16 +25,22 @@ impl CreateCommitOutput {
         self.tree_id.as_deref()
     }
     /// <p>The files added as part of the committed file changes.</p>
-    pub fn files_added(&self) -> ::std::option::Option<&[crate::types::FileMetadata]> {
-        self.files_added.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files_added.is_none()`.
+    pub fn files_added(&self) -> &[crate::types::FileMetadata] {
+        self.files_added.as_deref().unwrap_or_default()
     }
     /// <p>The files updated as part of the commited file changes.</p>
-    pub fn files_updated(&self) -> ::std::option::Option<&[crate::types::FileMetadata]> {
-        self.files_updated.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files_updated.is_none()`.
+    pub fn files_updated(&self) -> &[crate::types::FileMetadata] {
+        self.files_updated.as_deref().unwrap_or_default()
     }
     /// <p>The files deleted as part of the committed file changes.</p>
-    pub fn files_deleted(&self) -> ::std::option::Option<&[crate::types::FileMetadata]> {
-        self.files_deleted.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files_deleted.is_none()`.
+    pub fn files_deleted(&self) -> &[crate::types::FileMetadata] {
+        self.files_deleted.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCommitOutput {

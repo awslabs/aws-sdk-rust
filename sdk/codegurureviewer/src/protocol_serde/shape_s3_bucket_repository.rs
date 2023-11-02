@@ -34,7 +34,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_bucket_repository_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -46,14 +48,14 @@ pub fn ser_s3_bucket_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3BucketRepository,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.details {
+    if let Some(var_1) = &input.details {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Details").start_object();
-        crate::protocol_serde::shape_s3_repository_details::ser_s3_repository_details(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Details").start_object();
+        crate::protocol_serde::shape_s3_repository_details::ser_s3_repository_details(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

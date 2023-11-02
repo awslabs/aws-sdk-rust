@@ -3,23 +3,23 @@ pub fn ser_asset_model_property_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetModelPropertyDefinition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.data_type {
-        object.key("dataType").string(var_2.as_str());
+    {
+        object.key("dataType").string(input.data_type.as_str());
     }
-    if let Some(var_3) = &input.data_type_spec {
-        object.key("dataTypeSpec").string(var_3.as_str());
+    if let Some(var_1) = &input.data_type_spec {
+        object.key("dataTypeSpec").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.unit {
-        object.key("unit").string(var_4.as_str());
+    if let Some(var_2) = &input.unit {
+        object.key("unit").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.r#type {
+    if let Some(var_3) = &input.r#type {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("type").start_object();
-        crate::protocol_serde::shape_property_type::ser_property_type(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("type").start_object();
+        crate::protocol_serde::shape_property_type::ser_property_type(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

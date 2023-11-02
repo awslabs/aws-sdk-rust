@@ -210,6 +210,11 @@ pub fn ser_restore_from_cluster_snapshot_input_input(
     if let Some(var_79) = &input.master_password_secret_kms_key_id {
         scope_78.string(var_79);
     }
+    #[allow(unused_mut)]
+    let mut scope_80 = writer.prefix("IpAddressType");
+    if let Some(var_81) = &input.ip_address_type {
+        scope_80.string(var_81);
+    }
     writer.finish();
     Ok(::aws_smithy_http::body::SdkBody::from(out))
 }

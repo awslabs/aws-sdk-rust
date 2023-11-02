@@ -91,6 +91,7 @@ impl UpdateServiceSettingInputBuilder {
     /// </ul> <note>
     /// <p>Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should only be provided to administrators. Implement least privilege access when allowing individuals to configure or modify the Default Host Management Configuration.</p>
     /// </note>
+    /// This field is required.
     pub fn setting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.setting_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +140,7 @@ impl UpdateServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn setting_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.setting_value = ::std::option::Option::Some(input.into());
         self

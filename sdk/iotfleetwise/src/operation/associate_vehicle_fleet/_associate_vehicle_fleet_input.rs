@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to associate with the fleet. </p>
-    pub vehicle_name: ::std::option::Option<::std::string::String>,
+    pub vehicle_name: ::std::string::String,
     /// <p> The ID of a fleet. </p>
-    pub fleet_id: ::std::option::Option<::std::string::String>,
+    pub fleet_id: ::std::string::String,
 }
 impl AssociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to associate with the fleet. </p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
-        self.vehicle_name.as_deref()
+    pub fn vehicle_name(&self) -> &str {
+        use std::ops::Deref;
+        self.vehicle_name.deref()
     }
     /// <p> The ID of a fleet. </p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
-        self.fleet_id.as_deref()
+    pub fn fleet_id(&self) -> &str {
+        use std::ops::Deref;
+        self.fleet_id.deref()
     }
 }
 impl AssociateVehicleFleetInput {
@@ -34,6 +36,7 @@ pub struct AssociateVehicleFleetInputBuilder {
 }
 impl AssociateVehicleFleetInputBuilder {
     /// <p> The unique ID of the vehicle to associate with the fleet. </p>
+    /// This field is required.
     pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vehicle_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl AssociateVehicleFleetInputBuilder {
         &self.vehicle_name
     }
     /// <p> The ID of a fleet. </p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl AssociateVehicleFleetInputBuilder {
         &self.fleet_id
     }
     /// Consumes the builder and constructs a [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vehicle_name`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder::vehicle_name)
+    /// - [`fleet_id`](crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder::fleet_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput {
-            vehicle_name: self.vehicle_name,
-            fleet_id: self.fleet_id,
+            vehicle_name: self.vehicle_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vehicle_name",
+                    "vehicle_name was not specified but it is required when building AssociateVehicleFleetInput",
+                )
+            })?,
+            fleet_id: self.fleet_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fleet_id",
+                    "fleet_id was not specified but it is required when building AssociateVehicleFleetInput",
+                )
+            })?,
         })
     }
 }

@@ -39,8 +39,10 @@ impl GetContentModerationOutput {
         self.video_metadata.as_ref()
     }
     /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
-    pub fn moderation_labels(&self) -> ::std::option::Option<&[crate::types::ContentModerationDetection]> {
-        self.moderation_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.moderation_labels.is_none()`.
+    pub fn moderation_labels(&self) -> &[crate::types::ContentModerationDetection] {
+        self.moderation_labels.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

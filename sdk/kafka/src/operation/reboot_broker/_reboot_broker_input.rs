@@ -11,8 +11,10 @@ pub struct RebootBrokerInput {
 }
 impl RebootBrokerInput {
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
-    pub fn broker_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.broker_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.broker_ids.is_none()`.
+    pub fn broker_ids(&self) -> &[::std::string::String] {
+        self.broker_ids.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ impl RebootBrokerInputBuilder {
         &self.broker_ids
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self

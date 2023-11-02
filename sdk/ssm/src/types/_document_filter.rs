@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentFilter {
     /// <p>The name of the filter.</p>
-    pub key: ::std::option::Option<crate::types::DocumentFilterKey>,
+    pub key: crate::types::DocumentFilterKey,
     /// <p>The value of the filter.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl DocumentFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::DocumentFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::DocumentFilterKey {
+        &self.key
     }
     /// <p>The value of the filter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl DocumentFilter {
@@ -35,6 +36,7 @@ pub struct DocumentFilterBuilder {
 }
 impl DocumentFilterBuilder {
     /// <p>The name of the filter.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::DocumentFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl DocumentFilterBuilder {
         &self.key
     }
     /// <p>The value of the filter.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl DocumentFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`DocumentFilter`](crate::types::DocumentFilter).
-    pub fn build(self) -> crate::types::DocumentFilter {
-        crate::types::DocumentFilter {
-            key: self.key,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::DocumentFilterBuilder::key)
+    /// - [`value`](crate::types::builders::DocumentFilterBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DocumentFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building DocumentFilter",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building DocumentFilter",
+                )
+            })?,
+        })
     }
 }

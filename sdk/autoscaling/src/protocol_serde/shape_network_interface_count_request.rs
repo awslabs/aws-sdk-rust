@@ -23,6 +23,7 @@ pub fn ser_network_interface_count_request(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_network_interface_count_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::NetworkInterfaceCountRequest, ::aws_smithy_xml::decode::XmlDecodeError> {

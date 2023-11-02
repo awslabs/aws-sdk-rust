@@ -11,8 +11,10 @@ pub struct ListModelCardsOutput {
 }
 impl ListModelCardsOutput {
     /// <p>The summaries of the listed model cards.</p>
-    pub fn model_card_summaries(&self) -> ::std::option::Option<&[crate::types::ModelCardSummary]> {
-        self.model_card_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_card_summaries.is_none()`.
+    pub fn model_card_summaries(&self) -> &[crate::types::ModelCardSummary] {
+        self.model_card_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model cards, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

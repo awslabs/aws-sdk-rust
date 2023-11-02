@@ -92,8 +92,10 @@ impl GetIntegrationOutput {
         self.cache_namespace.as_deref()
     }
     /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
-    pub fn cache_key_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cache_key_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_key_parameters.is_none()`.
+    pub fn cache_key_parameters(&self) -> &[::std::string::String] {
+        self.cache_key_parameters.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the integration's responses.</p>
     pub fn integration_responses(

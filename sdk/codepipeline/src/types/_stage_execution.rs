@@ -5,22 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageExecution {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
+    pub pipeline_execution_id: ::std::string::String,
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
-    pub status: ::std::option::Option<crate::types::StageExecutionStatus>,
+    pub status: crate::types::StageExecutionStatus,
 }
 impl StageExecution {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
-        self.pipeline_execution_id.as_deref()
+    pub fn pipeline_execution_id(&self) -> &str {
+        use std::ops::Deref;
+        self.pipeline_execution_id.deref()
     }
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StageExecutionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StageExecutionStatus {
+        &self.status
     }
 }
 impl StageExecution {
@@ -39,6 +40,7 @@ pub struct StageExecutionBuilder {
 }
 impl StageExecutionBuilder {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
+    /// This field is required.
     pub fn pipeline_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl StageExecutionBuilder {
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StageExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -73,10 +76,23 @@ impl StageExecutionBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`StageExecution`](crate::types::StageExecution).
-    pub fn build(self) -> crate::types::StageExecution {
-        crate::types::StageExecution {
-            pipeline_execution_id: self.pipeline_execution_id,
-            status: self.status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pipeline_execution_id`](crate::types::builders::StageExecutionBuilder::pipeline_execution_id)
+    /// - [`status`](crate::types::builders::StageExecutionBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::StageExecution, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StageExecution {
+            pipeline_execution_id: self.pipeline_execution_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pipeline_execution_id",
+                    "pipeline_execution_id was not specified but it is required when building StageExecution",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building StageExecution",
+                )
+            })?,
+        })
     }
 }

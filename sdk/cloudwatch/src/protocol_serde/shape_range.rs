@@ -17,6 +17,7 @@ pub fn ser_range(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Range, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Range::builder();
@@ -53,5 +54,5 @@ pub fn de_range(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::range_correct_errors(builder).build())
 }

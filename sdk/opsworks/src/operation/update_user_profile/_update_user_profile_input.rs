@@ -48,6 +48,7 @@ pub struct UpdateUserProfileInputBuilder {
 }
 impl UpdateUserProfileInputBuilder {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
+    /// This field is required.
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_user_arn = ::std::option::Option::Some(input.into());
         self

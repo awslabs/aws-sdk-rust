@@ -72,24 +72,24 @@ pub fn ser_update_replication_configuration_input(
         }
         array_19.finish();
     }
-    if let Some(var_21) = &input.source_server_id {
-        object.key("sourceServerID").string(var_21.as_str());
+    {
+        object.key("sourceServerID").string(input.source_server_id.as_str());
     }
-    if let Some(var_22) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_22.as_str());
+    if let Some(var_21) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_21.as_str());
     }
-    if let Some(var_23) = &input.staging_area_tags {
+    if let Some(var_22) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("stagingAreaTags").start_object();
-        for (key_25, value_26) in var_23 {
+        let mut object_23 = object.key("stagingAreaTags").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_24.key(key_25.as_str()).string(value_26.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_24.finish();
+        object_23.finish();
     }
-    if let Some(var_27) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_27);
+    if let Some(var_26) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_26);
     }
     Ok(())
 }

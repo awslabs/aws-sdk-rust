@@ -13,12 +13,16 @@ pub struct DataColorPalette {
 }
 impl DataColorPalette {
     /// <p>The hexadecimal codes for the colors.</p>
-    pub fn colors(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.colors.is_none()`.
+    pub fn colors(&self) -> &[::std::string::String] {
+        self.colors.as_deref().unwrap_or_default()
     }
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
-    pub fn min_max_gradient(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.min_max_gradient.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.min_max_gradient.is_none()`.
+    pub fn min_max_gradient(&self) -> &[::std::string::String] {
+        self.min_max_gradient.as_deref().unwrap_or_default()
     }
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
     pub fn empty_fill_color(&self) -> ::std::option::Option<&str> {

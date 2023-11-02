@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDevice`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_id): <p>The device's ID.</p>
+    ///   - [`device_id(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::device_id) / [`set_device_id(impl Into<String>)`](crate::operation::describe_device::builders::DescribeDeviceFluentBuilder::set_device_id):<br>required: **true**<br><p>The device's ID.</p><br>
     /// - On success, responds with [`DescribeDeviceOutput`](crate::operation::describe_device::DescribeDeviceOutput) with field(s):
     ///   - [`device_id(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::device_id): <p>The device's ID.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_device::DescribeDeviceOutput::name): <p>The device's name.</p>

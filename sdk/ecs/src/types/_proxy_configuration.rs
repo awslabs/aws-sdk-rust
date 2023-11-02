@@ -8,7 +8,7 @@ pub struct ProxyConfiguration {
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ProxyConfigurationType>,
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    pub container_name: ::std::option::Option<::std::string::String>,
+    pub container_name: ::std::string::String,
     /// <p>The set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     /// <ul>
     /// <li> <p> <code>IgnoredUID</code> - (Required) The user ID (UID) of the proxy container as defined by the <code>user</code> parameter in a container definition. This is used to ensure the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this field can be empty.</p> </li>
@@ -27,8 +27,9 @@ impl ProxyConfiguration {
         self.r#type.as_ref()
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
-        self.container_name.as_deref()
+    pub fn container_name(&self) -> &str {
+        use std::ops::Deref;
+        self.container_name.deref()
     }
     /// <p>The set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     /// <ul>
@@ -40,8 +41,10 @@ impl ProxyConfiguration {
     /// <li> <p> <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified ports is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// <li> <p> <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p> </li>
     /// </ul>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
+    pub fn properties(&self) -> &[crate::types::KeyValuePair] {
+        self.properties.as_deref().unwrap_or_default()
     }
 }
 impl ProxyConfiguration {
@@ -75,6 +78,7 @@ impl ProxyConfigurationBuilder {
         &self.r#type
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -136,11 +140,18 @@ impl ProxyConfigurationBuilder {
         &self.properties
     }
     /// Consumes the builder and constructs a [`ProxyConfiguration`](crate::types::ProxyConfiguration).
-    pub fn build(self) -> crate::types::ProxyConfiguration {
-        crate::types::ProxyConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`container_name`](crate::types::builders::ProxyConfigurationBuilder::container_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProxyConfiguration {
             r#type: self.r#type,
-            container_name: self.container_name,
+            container_name: self.container_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "container_name",
+                    "container_name was not specified but it is required when building ProxyConfiguration",
+                )
+            })?,
             properties: self.properties,
-        }
+        })
     }
 }

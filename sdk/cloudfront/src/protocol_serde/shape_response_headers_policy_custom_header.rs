@@ -5,22 +5,23 @@ pub fn ser_response_headers_policy_custom_header(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.header {
+    {
         let mut inner_writer = scope.start_el("Header").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.header.as_str());
     }
-    if let Some(var_2) = &input.value {
+    {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.value.as_str());
     }
-    if let Some(var_3) = &input.r#override {
+    {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.r#override).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_custom_header(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyCustomHeader, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,7 +30,7 @@ pub fn de_response_headers_policy_custom_header(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Header") /* Header com.amazonaws.cloudfront#ResponseHeadersPolicyCustomHeader$Header */ =>  {
-                let var_4 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -38,11 +39,11 @@ pub fn de_response_headers_policy_custom_header(
                         ?
                     )
                 ;
-                builder = builder.set_header(var_4);
+                builder = builder.set_header(var_1);
             }
             ,
             s if s.matches("Value") /* Value com.amazonaws.cloudfront#ResponseHeadersPolicyCustomHeader$Value */ =>  {
-                let var_5 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -51,11 +52,11 @@ pub fn de_response_headers_policy_custom_header(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_5);
+                builder = builder.set_value(var_2);
             }
             ,
             s if s.matches("Override") /* Override com.amazonaws.cloudfront#ResponseHeadersPolicyCustomHeader$Override */ =>  {
-                let var_6 =
+                let var_3 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -66,11 +67,13 @@ pub fn de_response_headers_policy_custom_header(
                         ?
                     )
                 ;
-                builder = builder.set_override(var_6);
+                builder = builder.set_override(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::response_headers_policy_custom_header_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -24,16 +24,20 @@ impl UpdateStreamProcessorInput {
         self.settings_for_update.as_ref()
     }
     /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
-    pub fn regions_of_interest_for_update(&self) -> ::std::option::Option<&[crate::types::RegionOfInterest]> {
-        self.regions_of_interest_for_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest_for_update.is_none()`.
+    pub fn regions_of_interest_for_update(&self) -> &[crate::types::RegionOfInterest] {
+        self.regions_of_interest_for_update.as_deref().unwrap_or_default()
     }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference_for_update(&self) -> ::std::option::Option<&crate::types::StreamProcessorDataSharingPreference> {
         self.data_sharing_preference_for_update.as_ref()
     }
     /// <p> A list of parameters you want to delete from the stream processor. </p>
-    pub fn parameters_to_delete(&self) -> ::std::option::Option<&[crate::types::StreamProcessorParameterToDelete]> {
-        self.parameters_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters_to_delete.is_none()`.
+    pub fn parameters_to_delete(&self) -> &[crate::types::StreamProcessorParameterToDelete] {
+        self.parameters_to_delete.as_deref().unwrap_or_default()
     }
 }
 impl UpdateStreamProcessorInput {
@@ -55,6 +59,7 @@ pub struct UpdateStreamProcessorInputBuilder {
 }
 impl UpdateStreamProcessorInputBuilder {
     /// <p> Name of the stream processor that you want to update. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -41,6 +41,7 @@ pub struct ListImpersonationRolesInputBuilder {
 }
 impl ListImpersonationRolesInputBuilder {
     /// <p>The WorkMail organization to which the listed impersonation roles belong.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

@@ -93,8 +93,10 @@ impl ContainerDetail {
         self.memory
     }
     /// <p>The command that's passed to the container.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
     pub fn job_role_arn(&self) -> ::std::option::Option<&str> {
@@ -105,18 +107,24 @@ impl ContainerDetail {
         self.execution_role_arn.as_deref()
     }
     /// <p>A list of volumes that are associated with the job.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::Volume]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::Volume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::KeyValuePair] {
+        self.environment.as_deref().unwrap_or_default()
     }
     /// <p>The mount points for data volumes in your container.</p>
-    pub fn mount_points(&self) -> ::std::option::Option<&[crate::types::MountPoint]> {
-        self.mount_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_points.is_none()`.
+    pub fn mount_points(&self) -> &[crate::types::MountPoint] {
+        self.mount_points.as_deref().unwrap_or_default()
     }
     /// <p>When this parameter is true, the container is given read-only access to its root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>.</p>
     pub fn readonly_root_filesystem(&self) -> ::std::option::Option<bool> {
@@ -125,8 +133,10 @@ impl ContainerDetail {
     /// <p>A list of <code>ulimit</code> values to set in the container. This parameter maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
     /// </note>
-    pub fn ulimits(&self) -> ::std::option::Option<&[crate::types::Ulimit]> {
-        self.ulimits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ulimits.is_none()`.
+    pub fn ulimits(&self) -> &[crate::types::Ulimit] {
+        self.ulimits.as_deref().unwrap_or_default()
     }
     /// <p>When this parameter is true, the container is given elevated permissions on the host container instance (similar to the <code>root</code> user). The default value is <code>false</code>.</p> <note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources and shouldn't be provided, or specified as <code>false</code>.</p>
@@ -165,12 +175,16 @@ impl ContainerDetail {
         self.instance_type.as_deref()
     }
     /// <p>The network interfaces that are associated with the job.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn resource_requirements(&self) -> ::std::option::Option<&[crate::types::ResourceRequirement]> {
-        self.resource_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
+    pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
+        self.resource_requirements.as_deref().unwrap_or_default()
     }
     /// <p>Linux-specific modifications that are applied to the container, such as details for device mappings.</p>
     pub fn linux_parameters(&self) -> ::std::option::Option<&crate::types::LinuxParameters> {
@@ -187,8 +201,10 @@ impl ContainerDetail {
         self.log_configuration.as_ref()
     }
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
-    pub fn secrets(&self) -> ::std::option::Option<&[crate::types::Secret]> {
-        self.secrets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secrets.is_none()`.
+    pub fn secrets(&self) -> &[crate::types::Secret] {
+        self.secrets.as_deref().unwrap_or_default()
     }
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {

@@ -25,16 +25,22 @@ impl MetricsSummary {
         self.open_findings.as_ref()
     }
     /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
-    pub fn categories_with_most_findings(&self) -> ::std::option::Option<&[crate::types::CategoryWithFindingNum]> {
-        self.categories_with_most_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories_with_most_findings.is_none()`.
+    pub fn categories_with_most_findings(&self) -> &[crate::types::CategoryWithFindingNum] {
+        self.categories_with_most_findings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
-    pub fn scans_with_most_open_findings(&self) -> ::std::option::Option<&[crate::types::ScanNameWithFindingNum]> {
-        self.scans_with_most_open_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scans_with_most_open_findings.is_none()`.
+    pub fn scans_with_most_open_findings(&self) -> &[crate::types::ScanNameWithFindingNum] {
+        self.scans_with_most_open_findings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.</p>
-    pub fn scans_with_most_open_critical_findings(&self) -> ::std::option::Option<&[crate::types::ScanNameWithFindingNum]> {
-        self.scans_with_most_open_critical_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scans_with_most_open_critical_findings.is_none()`.
+    pub fn scans_with_most_open_critical_findings(&self) -> &[crate::types::ScanNameWithFindingNum] {
+        self.scans_with_most_open_critical_findings.as_deref().unwrap_or_default()
     }
 }
 impl MetricsSummary {

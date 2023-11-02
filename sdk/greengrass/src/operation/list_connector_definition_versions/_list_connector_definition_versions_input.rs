@@ -41,6 +41,7 @@ pub struct ListConnectorDefinitionVersionsInputBuilder {
 }
 impl ListConnectorDefinitionVersionsInputBuilder {
     /// The ID of the connector definition.
+    /// This field is required.
     pub fn connector_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_definition_id = ::std::option::Option::Some(input.into());
         self

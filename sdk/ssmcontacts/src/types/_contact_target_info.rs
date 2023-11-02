@@ -7,7 +7,7 @@ pub struct ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
-    pub is_essential: ::std::option::Option<bool>,
+    pub is_essential: bool,
 }
 impl ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -15,7 +15,7 @@ impl ContactTargetInfo {
         self.contact_id.as_deref()
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
-    pub fn is_essential(&self) -> ::std::option::Option<bool> {
+    pub fn is_essential(&self) -> bool {
         self.is_essential
     }
 }
@@ -49,6 +49,7 @@ impl ContactTargetInfoBuilder {
         &self.contact_id
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
+    /// This field is required.
     pub fn is_essential(mut self, input: bool) -> Self {
         self.is_essential = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl ContactTargetInfoBuilder {
         &self.is_essential
     }
     /// Consumes the builder and constructs a [`ContactTargetInfo`](crate::types::ContactTargetInfo).
-    pub fn build(self) -> crate::types::ContactTargetInfo {
-        crate::types::ContactTargetInfo {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`is_essential`](crate::types::builders::ContactTargetInfoBuilder::is_essential)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactTargetInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContactTargetInfo {
             contact_id: self.contact_id,
-            is_essential: self.is_essential,
-        }
+            is_essential: self.is_essential.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "is_essential",
+                    "is_essential was not specified but it is required when building ContactTargetInfo",
+                )
+            })?,
+        })
     }
 }

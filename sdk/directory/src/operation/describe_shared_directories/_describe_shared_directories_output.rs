@@ -11,8 +11,10 @@ pub struct DescribeSharedDirectoriesOutput {
 }
 impl DescribeSharedDirectoriesOutput {
     /// <p>A list of all shared directories in your account.</p>
-    pub fn shared_directories(&self) -> ::std::option::Option<&[crate::types::SharedDirectory]> {
-        self.shared_directories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_directories.is_none()`.
+    pub fn shared_directories(&self) -> &[crate::types::SharedDirectory] {
+        self.shared_directories.as_deref().unwrap_or_default()
     }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

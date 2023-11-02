@@ -66,7 +66,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::cloudwatch_metric_action_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -78,23 +82,23 @@ pub fn ser_cloudwatch_metric_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudwatchMetricAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.metric_namespace {
-        object.key("metricNamespace").string(var_2.as_str());
+    {
+        object.key("metricNamespace").string(input.metric_namespace.as_str());
     }
-    if let Some(var_3) = &input.metric_name {
-        object.key("metricName").string(var_3.as_str());
+    {
+        object.key("metricName").string(input.metric_name.as_str());
     }
-    if let Some(var_4) = &input.metric_value {
-        object.key("metricValue").string(var_4.as_str());
+    {
+        object.key("metricValue").string(input.metric_value.as_str());
     }
-    if let Some(var_5) = &input.metric_unit {
-        object.key("metricUnit").string(var_5.as_str());
+    {
+        object.key("metricUnit").string(input.metric_unit.as_str());
     }
-    if let Some(var_6) = &input.metric_timestamp {
-        object.key("metricTimestamp").string(var_6.as_str());
+    if let Some(var_1) = &input.metric_timestamp {
+        object.key("metricTimestamp").string(var_1.as_str());
     }
     Ok(())
 }

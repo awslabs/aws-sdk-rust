@@ -43,6 +43,7 @@ pub struct StartProjectVersionInputBuilder {
 }
 impl StartProjectVersionInputBuilder {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
+    /// This field is required.
     pub fn project_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +59,7 @@ impl StartProjectVersionInputBuilder {
     }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
     /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    /// This field is required.
     pub fn min_inference_units(mut self, input: i32) -> Self {
         self.min_inference_units = ::std::option::Option::Some(input);
         self

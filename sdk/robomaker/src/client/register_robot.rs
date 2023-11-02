@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterRobot`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet(impl Into<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    ///   - [`robot(impl Into<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::set_robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    ///   - [`fleet(impl Into<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::set_fleet):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the fleet.</p><br>
+    ///   - [`robot(impl Into<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::robot) / [`set_robot(Option<String>)`](crate::operation::register_robot::builders::RegisterRobotFluentBuilder::set_robot):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the robot.</p><br>
     /// - On success, responds with [`RegisterRobotOutput`](crate::operation::register_robot::RegisterRobotOutput) with field(s):
     ///   - [`fleet(Option<String>)`](crate::operation::register_robot::RegisterRobotOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet that the robot will join.</p>
     ///   - [`robot(Option<String>)`](crate::operation::register_robot::RegisterRobotOutput::robot): <p>Information about the robot registration.</p>

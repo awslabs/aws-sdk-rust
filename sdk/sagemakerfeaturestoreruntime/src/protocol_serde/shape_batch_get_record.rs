@@ -93,7 +93,7 @@ pub fn de_batch_get_record_http_response(
         output = crate::protocol_serde::shape_batch_get_record::de_batch_get_record(_response_body, output)
             .map_err(crate::operation::batch_get_record::BatchGetRecordError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_get_record_output_correct_errors(output).build()
     })
 }
 

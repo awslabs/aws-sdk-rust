@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationFsxLustre`](crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
+    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_fsx_lustre::builders::DescribeLocationFsxLustreFluentBuilder::set_location_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p><br>
     /// - On success, responds with [`DescribeLocationFsxLustreOutput`](crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreOutput::location_uri): <p>The URI of the FSx for Lustre location that was described.</p>

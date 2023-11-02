@@ -11,8 +11,10 @@ pub struct ListRecoveryPointsOutput {
 }
 impl ListRecoveryPointsOutput {
     /// <p>The returned recovery point objects.</p>
-    pub fn recovery_points(&self) -> ::std::option::Option<&[crate::types::RecoveryPoint]> {
-        self.recovery_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_points.is_none()`.
+    pub fn recovery_points(&self) -> &[crate::types::RecoveryPoint] {
+        self.recovery_points.as_deref().unwrap_or_default()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

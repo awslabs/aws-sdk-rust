@@ -27,6 +27,7 @@ pub struct ExpireSessionInputBuilder {
 }
 impl ExpireSessionInputBuilder {
     /// <p>The identifier of the streaming session.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

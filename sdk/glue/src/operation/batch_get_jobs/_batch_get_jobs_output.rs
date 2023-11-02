@@ -11,12 +11,16 @@ pub struct BatchGetJobsOutput {
 }
 impl BatchGetJobsOutput {
     /// <p>A list of job definitions.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::Job]> {
-        self.jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
+    pub fn jobs(&self) -> &[crate::types::Job] {
+        self.jobs.as_deref().unwrap_or_default()
     }
     /// <p>A list of names of jobs not found.</p>
-    pub fn jobs_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.jobs_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs_not_found.is_none()`.
+    pub fn jobs_not_found(&self) -> &[::std::string::String] {
+        self.jobs_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetJobsOutput {

@@ -12,8 +12,10 @@ pub struct DescribeOrderableDbInstanceOptionsOutput {
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-    pub fn orderable_db_instance_options(&self) -> ::std::option::Option<&[crate::types::OrderableDbInstanceOption]> {
-        self.orderable_db_instance_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orderable_db_instance_options.is_none()`.
+    pub fn orderable_db_instance_options(&self) -> &[crate::types::OrderableDbInstanceOption] {
+        self.orderable_db_instance_options.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

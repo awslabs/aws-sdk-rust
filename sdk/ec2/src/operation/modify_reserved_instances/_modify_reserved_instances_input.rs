@@ -13,16 +13,20 @@ pub struct ModifyReservedInstancesInput {
 }
 impl ModifyReservedInstancesInput {
     /// <p>The IDs of the Reserved Instances to modify.</p>
-    pub fn reserved_instances_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reserved_instances_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_ids.is_none()`.
+    pub fn reserved_instances_ids(&self) -> &[::std::string::String] {
+        self.reserved_instances_ids.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The configuration settings for the Reserved Instances to modify.</p>
-    pub fn target_configurations(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesConfiguration]> {
-        self.target_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_configurations.is_none()`.
+    pub fn target_configurations(&self) -> &[crate::types::ReservedInstancesConfiguration] {
+        self.target_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ModifyReservedInstancesInput {

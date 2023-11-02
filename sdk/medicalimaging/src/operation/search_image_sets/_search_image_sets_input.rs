@@ -58,6 +58,7 @@ pub struct SearchImageSetsInputBuilder {
 }
 impl SearchImageSetsInputBuilder {
     /// <p>The identifier of the data store where the image sets reside.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self

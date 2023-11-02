@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataView`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_view_id(impl Into<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::data_view_id) / [`set_data_view_id(Option<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::set_data_view_id): <p>The unique identifier for the Dataview.</p>
-    ///   - [`dataset_id(impl Into<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::set_dataset_id): <p>The unique identifier for the Dataset used in the Dataview.</p>
+    ///   - [`data_view_id(impl Into<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::data_view_id) / [`set_data_view_id(Option<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::set_data_view_id):<br>required: **true**<br><p>The unique identifier for the Dataview.</p><br>
+    ///   - [`dataset_id(impl Into<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::get_data_view::builders::GetDataViewFluentBuilder::set_dataset_id):<br>required: **true**<br><p>The unique identifier for the Dataset used in the Dataview.</p><br>
     /// - On success, responds with [`GetDataViewOutput`](crate::operation::get_data_view::GetDataViewOutput) with field(s):
     ///   - [`auto_update(bool)`](crate::operation::get_data_view::GetDataViewOutput::auto_update): <p>Flag to indicate Dataview should be updated automatically.</p>
     ///   - [`partition_columns(Option<Vec<String>>)`](crate::operation::get_data_view::GetDataViewOutput::partition_columns): <p>Ordered set of column names used to partition data.</p>

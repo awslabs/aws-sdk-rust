@@ -7,19 +7,20 @@
 pub struct UpdateSolNetworkModify {
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub vnf_instance_id: ::std::option::Option<::std::string::String>,
+    pub vnf_instance_id: ::std::string::String,
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
-    pub vnf_configurable_properties: ::std::option::Option<::aws_smithy_types::Document>,
+    pub vnf_configurable_properties: ::aws_smithy_types::Document,
 }
 impl UpdateSolNetworkModify {
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn vnf_instance_id(&self) -> ::std::option::Option<&str> {
-        self.vnf_instance_id.as_deref()
+    pub fn vnf_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vnf_instance_id.deref()
     }
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
-    pub fn vnf_configurable_properties(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
-        self.vnf_configurable_properties.as_ref()
+    pub fn vnf_configurable_properties(&self) -> &::aws_smithy_types::Document {
+        &self.vnf_configurable_properties
     }
 }
 impl UpdateSolNetworkModify {
@@ -39,6 +40,7 @@ pub struct UpdateSolNetworkModifyBuilder {
 impl UpdateSolNetworkModifyBuilder {
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
+    /// This field is required.
     pub fn vnf_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl UpdateSolNetworkModifyBuilder {
         &self.vnf_instance_id
     }
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
+    /// This field is required.
     pub fn vnf_configurable_properties(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.vnf_configurable_properties = ::std::option::Option::Some(input);
         self
@@ -69,10 +72,23 @@ impl UpdateSolNetworkModifyBuilder {
         &self.vnf_configurable_properties
     }
     /// Consumes the builder and constructs a [`UpdateSolNetworkModify`](crate::types::UpdateSolNetworkModify).
-    pub fn build(self) -> crate::types::UpdateSolNetworkModify {
-        crate::types::UpdateSolNetworkModify {
-            vnf_instance_id: self.vnf_instance_id,
-            vnf_configurable_properties: self.vnf_configurable_properties,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vnf_instance_id`](crate::types::builders::UpdateSolNetworkModifyBuilder::vnf_instance_id)
+    /// - [`vnf_configurable_properties`](crate::types::builders::UpdateSolNetworkModifyBuilder::vnf_configurable_properties)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateSolNetworkModify, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateSolNetworkModify {
+            vnf_instance_id: self.vnf_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vnf_instance_id",
+                    "vnf_instance_id was not specified but it is required when building UpdateSolNetworkModify",
+                )
+            })?,
+            vnf_configurable_properties: self.vnf_configurable_properties.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vnf_configurable_properties",
+                    "vnf_configurable_properties was not specified but it is required when building UpdateSolNetworkModify",
+                )
+            })?,
+        })
     }
 }

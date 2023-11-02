@@ -5,25 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Feature {
     /// <p>The ARN of the feature.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the feature.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the feature.</p>
-    pub status: ::std::option::Option<crate::types::FeatureStatus>,
+    pub status: crate::types::FeatureStatus,
     /// <p>The date and time that the feature is created.</p>
-    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the feature was most recently updated.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The description of the feature.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
+    pub evaluation_strategy: crate::types::FeatureEvaluationStrategy,
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
-    pub value_type: ::std::option::Option<crate::types::VariationValueType>,
+    pub value_type: crate::types::VariationValueType,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub variations: ::std::option::Option<::std::vec::Vec<crate::types::Variation>>,
+    pub variations: ::std::vec::Vec<crate::types::Variation>,
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
@@ -38,44 +38,47 @@ pub struct Feature {
 }
 impl Feature {
     /// <p>The ARN of the feature.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the feature.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub fn project(&self) -> ::std::option::Option<&str> {
         self.project.as_deref()
     }
     /// <p>The current state of the feature.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::FeatureStatus {
+        &self.status
     }
     /// <p>The date and time that the feature is created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_time.as_ref()
+    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_time
     }
     /// <p>The date and time that the feature was most recently updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>The description of the feature.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub fn evaluation_strategy(&self) -> ::std::option::Option<&crate::types::FeatureEvaluationStrategy> {
-        self.evaluation_strategy.as_ref()
+    pub fn evaluation_strategy(&self) -> &crate::types::FeatureEvaluationStrategy {
+        &self.evaluation_strategy
     }
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
-    pub fn value_type(&self) -> ::std::option::Option<&crate::types::VariationValueType> {
-        self.value_type.as_ref()
+    pub fn value_type(&self) -> &crate::types::VariationValueType {
+        &self.value_type
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn variations(&self) -> ::std::option::Option<&[crate::types::Variation]> {
-        self.variations.as_deref()
+    pub fn variations(&self) -> &[crate::types::Variation] {
+        use std::ops::Deref;
+        self.variations.deref()
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
@@ -84,8 +87,10 @@ impl Feature {
         self.default_variation.as_deref()
     }
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
-    pub fn evaluation_rules(&self) -> ::std::option::Option<&[crate::types::EvaluationRule]> {
-        self.evaluation_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluation_rules.is_none()`.
+    pub fn evaluation_rules(&self) -> &[crate::types::EvaluationRule] {
+        self.evaluation_rules.as_deref().unwrap_or_default()
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -125,6 +130,7 @@ pub struct FeatureBuilder {
 }
 impl FeatureBuilder {
     /// <p>The ARN of the feature.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +145,7 @@ impl FeatureBuilder {
         &self.arn
     }
     /// <p>The name of the feature.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +174,7 @@ impl FeatureBuilder {
         &self.project
     }
     /// <p>The current state of the feature.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -181,6 +189,7 @@ impl FeatureBuilder {
         &self.status
     }
     /// <p>The date and time that the feature is created.</p>
+    /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
@@ -195,6 +204,7 @@ impl FeatureBuilder {
         &self.created_time
     }
     /// <p>The date and time that the feature was most recently updated.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -223,6 +233,7 @@ impl FeatureBuilder {
         &self.description
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
+    /// This field is required.
     pub fn evaluation_strategy(mut self, input: crate::types::FeatureEvaluationStrategy) -> Self {
         self.evaluation_strategy = ::std::option::Option::Some(input);
         self
@@ -237,6 +248,7 @@ impl FeatureBuilder {
         &self.evaluation_strategy
     }
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
+    /// This field is required.
     pub fn value_type(mut self, input: crate::types::VariationValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
         self
@@ -361,22 +373,71 @@ impl FeatureBuilder {
         &self.entity_overrides
     }
     /// Consumes the builder and constructs a [`Feature`](crate::types::Feature).
-    pub fn build(self) -> crate::types::Feature {
-        crate::types::Feature {
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::FeatureBuilder::arn)
+    /// - [`name`](crate::types::builders::FeatureBuilder::name)
+    /// - [`status`](crate::types::builders::FeatureBuilder::status)
+    /// - [`created_time`](crate::types::builders::FeatureBuilder::created_time)
+    /// - [`last_updated_time`](crate::types::builders::FeatureBuilder::last_updated_time)
+    /// - [`evaluation_strategy`](crate::types::builders::FeatureBuilder::evaluation_strategy)
+    /// - [`value_type`](crate::types::builders::FeatureBuilder::value_type)
+    /// - [`variations`](crate::types::builders::FeatureBuilder::variations)
+    pub fn build(self) -> ::std::result::Result<crate::types::Feature, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Feature {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Feature",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Feature",
+                )
+            })?,
             project: self.project,
-            status: self.status,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Feature",
+                )
+            })?,
+            created_time: self.created_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_time",
+                    "created_time was not specified but it is required when building Feature",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building Feature",
+                )
+            })?,
             description: self.description,
-            evaluation_strategy: self.evaluation_strategy,
-            value_type: self.value_type,
-            variations: self.variations,
+            evaluation_strategy: self.evaluation_strategy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "evaluation_strategy",
+                    "evaluation_strategy was not specified but it is required when building Feature",
+                )
+            })?,
+            value_type: self.value_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value_type",
+                    "value_type was not specified but it is required when building Feature",
+                )
+            })?,
+            variations: self.variations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "variations",
+                    "variations was not specified but it is required when building Feature",
+                )
+            })?,
             default_variation: self.default_variation,
             evaluation_rules: self.evaluation_rules,
             tags: self.tags,
             entity_overrides: self.entity_overrides,
-        }
+        })
     }
 }

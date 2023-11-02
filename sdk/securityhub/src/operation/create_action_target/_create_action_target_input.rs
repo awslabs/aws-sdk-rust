@@ -41,6 +41,7 @@ pub struct CreateActionTargetInputBuilder {
 }
 impl CreateActionTargetInputBuilder {
     /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateActionTargetInputBuilder {
         &self.name
     }
     /// <p>The description for the custom action target.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateActionTargetInputBuilder {
         &self.description
     }
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

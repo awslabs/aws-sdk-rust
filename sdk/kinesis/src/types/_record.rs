@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// <p>The unique identifier of the record within its shard.</p>
-    pub sequence_number: ::std::option::Option<::std::string::String>,
+    pub sequence_number: ::std::string::String,
     /// <p>The approximate time that the record was inserted into the stream.</p>
     pub approximate_arrival_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub data: ::aws_smithy_types::Blob,
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub partition_key: ::std::option::Option<::std::string::String>,
+    pub partition_key: ::std::string::String,
     /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
@@ -21,20 +21,22 @@ pub struct Record {
 }
 impl Record {
     /// <p>The unique identifier of the record within its shard.</p>
-    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
-        self.sequence_number.as_deref()
+    pub fn sequence_number(&self) -> &str {
+        use std::ops::Deref;
+        self.sequence_number.deref()
     }
     /// <p>The approximate time that the record was inserted into the stream.</p>
     pub fn approximate_arrival_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.approximate_arrival_timestamp.as_ref()
     }
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.data.as_ref()
+    pub fn data(&self) -> &::aws_smithy_types::Blob {
+        &self.data
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub fn partition_key(&self) -> ::std::option::Option<&str> {
-        self.partition_key.as_deref()
+    pub fn partition_key(&self) -> &str {
+        use std::ops::Deref;
+        self.partition_key.deref()
     }
     /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
     /// <ul>
@@ -64,6 +66,7 @@ pub struct RecordBuilder {
 }
 impl RecordBuilder {
     /// <p>The unique identifier of the record within its shard.</p>
+    /// This field is required.
     pub fn sequence_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_number = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +95,7 @@ impl RecordBuilder {
         &self.approximate_arrival_timestamp
     }
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
+    /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
@@ -106,6 +110,7 @@ impl RecordBuilder {
         &self.data
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+    /// This field is required.
     pub fn partition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_key = ::std::option::Option::Some(input.into());
         self
@@ -146,13 +151,32 @@ impl RecordBuilder {
         &self.encryption_type
     }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
-    pub fn build(self) -> crate::types::Record {
-        crate::types::Record {
-            sequence_number: self.sequence_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sequence_number`](crate::types::builders::RecordBuilder::sequence_number)
+    /// - [`data`](crate::types::builders::RecordBuilder::data)
+    /// - [`partition_key`](crate::types::builders::RecordBuilder::partition_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::Record, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Record {
+            sequence_number: self.sequence_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sequence_number",
+                    "sequence_number was not specified but it is required when building Record",
+                )
+            })?,
             approximate_arrival_timestamp: self.approximate_arrival_timestamp,
-            data: self.data,
-            partition_key: self.partition_key,
+            data: self.data.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data",
+                    "data was not specified but it is required when building Record",
+                )
+            })?,
+            partition_key: self.partition_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "partition_key",
+                    "partition_key was not specified but it is required when building Record",
+                )
+            })?,
             encryption_type: self.encryption_type,
-        }
+        })
     }
 }

@@ -42,8 +42,10 @@ impl ProvisionByoipCidrInput {
         self.dry_run
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn pool_tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.pool_tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_tag_specifications.is_none()`.
+    pub fn pool_tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.pool_tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Reserved.</p>
     pub fn multi_region(&self) -> ::std::option::Option<bool> {
@@ -71,6 +73,7 @@ pub struct ProvisionByoipCidrInputBuilder {
 }
 impl ProvisionByoipCidrInputBuilder {
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self

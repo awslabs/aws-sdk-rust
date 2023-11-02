@@ -27,6 +27,7 @@ pub struct GetNetworkInputBuilder {
 }
 impl GetNetworkInputBuilder {
     /// <p>The unique identifier of the network to get information about.</p>
+    /// This field is required.
     pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_id = ::std::option::Option::Some(input.into());
         self

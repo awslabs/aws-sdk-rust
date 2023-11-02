@@ -16,8 +16,10 @@ pub struct AwsDynamoDbTableProjection {
 }
 impl AwsDynamoDbTableProjection {
     /// <p>The nonkey attributes that are projected into the index. For each attribute, provide the attribute name.</p>
-    pub fn non_key_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.non_key_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_key_attributes.is_none()`.
+    pub fn non_key_attributes(&self) -> &[::std::string::String] {
+        self.non_key_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The types of attributes that are projected into the index. Valid values are as follows:</p>
     /// <ul>

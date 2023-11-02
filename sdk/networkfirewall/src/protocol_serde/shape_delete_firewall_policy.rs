@@ -130,7 +130,7 @@ pub fn de_delete_firewall_policy_http_response(
         output = crate::protocol_serde::shape_delete_firewall_policy::de_delete_firewall_policy(_response_body, output)
             .map_err(crate::operation::delete_firewall_policy::DeleteFirewallPolicyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_firewall_policy_output_correct_errors(output).build()
     })
 }
 

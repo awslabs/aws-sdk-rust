@@ -13,12 +13,16 @@ pub struct ExecuteQueryOutput {
 }
 impl ExecuteQueryOutput {
     /// <p>A list of ColumnDescription objects.</p>
-    pub fn column_descriptions(&self) -> ::std::option::Option<&[crate::types::ColumnDescription]> {
-        self.column_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_descriptions.is_none()`.
+    pub fn column_descriptions(&self) -> &[crate::types::ColumnDescription] {
+        self.column_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>Represents a single row in the query results.</p>
-    pub fn rows(&self) -> ::std::option::Option<&[crate::types::Row]> {
-        self.rows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
+    pub fn rows(&self) -> &[crate::types::Row] {
+        self.rows.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

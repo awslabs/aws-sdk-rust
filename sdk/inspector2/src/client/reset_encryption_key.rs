@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResetEncryptionKey`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scan_type(ScanType)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::scan_type) / [`set_scan_type(Option<ScanType>)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::set_scan_type): <p>The scan type the key encrypts.</p>
-    ///   - [`resource_type(ResourceType)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::set_resource_type): <p>The resource type the key encrypts.</p>
+    ///   - [`scan_type(ScanType)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::scan_type) / [`set_scan_type(Option<ScanType>)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::set_scan_type):<br>required: **true**<br><p>The scan type the key encrypts.</p><br>
+    ///   - [`resource_type(ResourceType)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder::set_resource_type):<br>required: **true**<br><p>The resource type the key encrypts.</p><br>
     /// - On success, responds with [`ResetEncryptionKeyOutput`](crate::operation::reset_encryption_key::ResetEncryptionKeyOutput)
     /// - On failure, responds with [`SdkError<ResetEncryptionKeyError>`](crate::operation::reset_encryption_key::ResetEncryptionKeyError)
     pub fn reset_encryption_key(&self) -> crate::operation::reset_encryption_key::builders::ResetEncryptionKeyFluentBuilder {

@@ -8,8 +8,10 @@ pub struct StartOnDemandAuditTaskInput {
 }
 impl StartOnDemandAuditTaskInput {
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
-    pub fn target_check_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_check_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_check_names.is_none()`.
+    pub fn target_check_names(&self) -> &[::std::string::String] {
+        self.target_check_names.as_deref().unwrap_or_default()
     }
 }
 impl StartOnDemandAuditTaskInput {

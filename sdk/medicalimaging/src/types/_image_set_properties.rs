@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageSetProperties {
     /// <p>The image set identifier.</p>
-    pub image_set_id: ::std::option::Option<::std::string::String>,
+    pub image_set_id: ::std::string::String,
     /// <p>The image set version identifier.</p>
-    pub version_id: ::std::option::Option<::std::string::String>,
+    pub version_id: ::std::string::String,
     /// <p>The image set state.</p>
-    pub image_set_state: ::std::option::Option<crate::types::ImageSetState>,
+    pub image_set_state: crate::types::ImageSetState,
     /// <p>The image set workflow status.</p>
     pub image_set_workflow_status: ::std::option::Option<crate::types::ImageSetWorkflowStatus>,
     /// <p>The timestamp when the image set properties were created.</p>
@@ -23,16 +23,18 @@ pub struct ImageSetProperties {
 }
 impl ImageSetProperties {
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
-        self.image_set_id.as_deref()
+    pub fn image_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.image_set_id.deref()
     }
     /// <p>The image set version identifier.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
-        self.version_id.as_deref()
+    pub fn version_id(&self) -> &str {
+        use std::ops::Deref;
+        self.version_id.deref()
     }
     /// <p>The image set state.</p>
-    pub fn image_set_state(&self) -> ::std::option::Option<&crate::types::ImageSetState> {
-        self.image_set_state.as_ref()
+    pub fn image_set_state(&self) -> &crate::types::ImageSetState {
+        &self.image_set_state
     }
     /// <p>The image set workflow status.</p>
     pub fn image_set_workflow_status(&self) -> ::std::option::Option<&crate::types::ImageSetWorkflowStatus> {
@@ -77,6 +79,7 @@ pub struct ImageSetPropertiesBuilder {
 }
 impl ImageSetPropertiesBuilder {
     /// <p>The image set identifier.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl ImageSetPropertiesBuilder {
         &self.image_set_id
     }
     /// <p>The image set version identifier.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +109,7 @@ impl ImageSetPropertiesBuilder {
         &self.version_id
     }
     /// <p>The image set state.</p>
+    /// This field is required.
     pub fn image_set_state(mut self, input: crate::types::ImageSetState) -> Self {
         self.image_set_state = ::std::option::Option::Some(input);
         self
@@ -189,16 +194,35 @@ impl ImageSetPropertiesBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`ImageSetProperties`](crate::types::ImageSetProperties).
-    pub fn build(self) -> crate::types::ImageSetProperties {
-        crate::types::ImageSetProperties {
-            image_set_id: self.image_set_id,
-            version_id: self.version_id,
-            image_set_state: self.image_set_state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_set_id`](crate::types::builders::ImageSetPropertiesBuilder::image_set_id)
+    /// - [`version_id`](crate::types::builders::ImageSetPropertiesBuilder::version_id)
+    /// - [`image_set_state`](crate::types::builders::ImageSetPropertiesBuilder::image_set_state)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageSetProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImageSetProperties {
+            image_set_id: self.image_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "image_set_id",
+                    "image_set_id was not specified but it is required when building ImageSetProperties",
+                )
+            })?,
+            version_id: self.version_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "version_id",
+                    "version_id was not specified but it is required when building ImageSetProperties",
+                )
+            })?,
+            image_set_state: self.image_set_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "image_set_state",
+                    "image_set_state was not specified but it is required when building ImageSetProperties",
+                )
+            })?,
             image_set_workflow_status: self.image_set_workflow_status,
             created_at: self.created_at,
             updated_at: self.updated_at,
             deleted_at: self.deleted_at,
             message: self.message,
-        }
+        })
     }
 }

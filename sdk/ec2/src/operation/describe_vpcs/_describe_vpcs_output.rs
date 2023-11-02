@@ -11,8 +11,10 @@ pub struct DescribeVpcsOutput {
 }
 impl DescribeVpcsOutput {
     /// <p>Information about one or more VPCs.</p>
-    pub fn vpcs(&self) -> ::std::option::Option<&[crate::types::Vpc]> {
-        self.vpcs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpcs.is_none()`.
+    pub fn vpcs(&self) -> &[crate::types::Vpc] {
+        self.vpcs.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

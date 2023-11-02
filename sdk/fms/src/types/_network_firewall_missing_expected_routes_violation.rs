@@ -17,8 +17,10 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
         self.violation_target.as_deref()
     }
     /// <p>The expected routes.</p>
-    pub fn expected_routes(&self) -> ::std::option::Option<&[crate::types::ExpectedRoute]> {
-        self.expected_routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expected_routes.is_none()`.
+    pub fn expected_routes(&self) -> &[crate::types::ExpectedRoute] {
+        self.expected_routes.as_deref().unwrap_or_default()
     }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {

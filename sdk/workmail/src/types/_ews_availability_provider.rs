@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub ews_endpoint: ::std::option::Option<::std::string::String>,
+    pub ews_endpoint: ::std::string::String,
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub ews_username: ::std::option::Option<::std::string::String>,
+    pub ews_username: ::std::string::String,
     /// <p>The password used to authenticate the remote EWS server.</p>
-    pub ews_password: ::std::option::Option<::std::string::String>,
+    pub ews_password: ::std::string::String,
 }
 impl EwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn ews_endpoint(&self) -> ::std::option::Option<&str> {
-        self.ews_endpoint.as_deref()
+    pub fn ews_endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.ews_endpoint.deref()
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn ews_username(&self) -> ::std::option::Option<&str> {
-        self.ews_username.as_deref()
+    pub fn ews_username(&self) -> &str {
+        use std::ops::Deref;
+        self.ews_username.deref()
     }
     /// <p>The password used to authenticate the remote EWS server.</p>
-    pub fn ews_password(&self) -> ::std::option::Option<&str> {
-        self.ews_password.as_deref()
+    pub fn ews_password(&self) -> &str {
+        use std::ops::Deref;
+        self.ews_password.deref()
     }
 }
 impl ::std::fmt::Debug for EwsAvailabilityProvider {
@@ -51,6 +54,7 @@ pub struct EwsAvailabilityProviderBuilder {
 }
 impl EwsAvailabilityProviderBuilder {
     /// <p>The endpoint of the remote EWS server.</p>
+    /// This field is required.
     pub fn ews_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ews_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +69,7 @@ impl EwsAvailabilityProviderBuilder {
         &self.ews_endpoint
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
+    /// This field is required.
     pub fn ews_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ews_username = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +84,7 @@ impl EwsAvailabilityProviderBuilder {
         &self.ews_username
     }
     /// <p>The password used to authenticate the remote EWS server.</p>
+    /// This field is required.
     pub fn ews_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ews_password = ::std::option::Option::Some(input.into());
         self
@@ -93,12 +99,31 @@ impl EwsAvailabilityProviderBuilder {
         &self.ews_password
     }
     /// Consumes the builder and constructs a [`EwsAvailabilityProvider`](crate::types::EwsAvailabilityProvider).
-    pub fn build(self) -> crate::types::EwsAvailabilityProvider {
-        crate::types::EwsAvailabilityProvider {
-            ews_endpoint: self.ews_endpoint,
-            ews_username: self.ews_username,
-            ews_password: self.ews_password,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ews_endpoint`](crate::types::builders::EwsAvailabilityProviderBuilder::ews_endpoint)
+    /// - [`ews_username`](crate::types::builders::EwsAvailabilityProviderBuilder::ews_username)
+    /// - [`ews_password`](crate::types::builders::EwsAvailabilityProviderBuilder::ews_password)
+    pub fn build(self) -> ::std::result::Result<crate::types::EwsAvailabilityProvider, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EwsAvailabilityProvider {
+            ews_endpoint: self.ews_endpoint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ews_endpoint",
+                    "ews_endpoint was not specified but it is required when building EwsAvailabilityProvider",
+                )
+            })?,
+            ews_username: self.ews_username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ews_username",
+                    "ews_username was not specified but it is required when building EwsAvailabilityProvider",
+                )
+            })?,
+            ews_password: self.ews_password.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ews_password",
+                    "ews_password was not specified but it is required when building EwsAvailabilityProvider",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for EwsAvailabilityProviderBuilder {

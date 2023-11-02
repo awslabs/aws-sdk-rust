@@ -35,6 +35,7 @@ pub struct ElasticsearchClusterConfigStatusBuilder {
 }
 impl ElasticsearchClusterConfigStatusBuilder {
     /// <p> Specifies the cluster configuration for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::ElasticsearchClusterConfig) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ElasticsearchClusterConfigStatusBuilder {
         &self.options
     }
     /// <p> Specifies the status of the configuration for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

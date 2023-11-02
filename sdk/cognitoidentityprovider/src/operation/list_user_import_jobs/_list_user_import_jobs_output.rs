@@ -12,8 +12,10 @@ pub struct ListUserImportJobsOutput {
 }
 impl ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
-    pub fn user_import_jobs(&self) -> ::std::option::Option<&[crate::types::UserImportJobType]> {
-        self.user_import_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_import_jobs.is_none()`.
+    pub fn user_import_jobs(&self) -> &[crate::types::UserImportJobType] {
+        self.user_import_jobs.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {

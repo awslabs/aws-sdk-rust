@@ -5,29 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AnalysisTemplate {
     /// <p>The identifier for the analysis template.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The unique ID for the associated collaboration of the analysis template.</p>
-    pub collaboration_id: ::std::option::Option<::std::string::String>,
+    pub collaboration_id: ::std::string::String,
     /// <p>The unique ARN for the analysis template’s associated collaboration.</p>
-    pub collaboration_arn: ::std::option::Option<::std::string::String>,
+    pub collaboration_arn: ::std::string::String,
     /// <p>The identifier of a member who created the analysis template.</p>
-    pub membership_id: ::std::option::Option<::std::string::String>,
+    pub membership_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the member who created the analysis template.</p>
-    pub membership_arn: ::std::option::Option<::std::string::String>,
+    pub membership_arn: ::std::string::String,
     /// <p>The description of the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the analysis template.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The time that the analysis template was created.</p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time that the analysis template was last updated.</p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The entire schema object.</p>
     pub schema: ::std::option::Option<crate::types::AnalysisSchema>,
     /// <p>The format of the analysis template.</p>
-    pub format: ::std::option::Option<crate::types::AnalysisFormat>,
+    pub format: crate::types::AnalysisFormat,
     /// <p>The source of the analysis template.</p>
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
     /// <p>The parameters of the analysis template.</p>
@@ -35,60 +35,69 @@ pub struct AnalysisTemplate {
 }
 impl AnalysisTemplate {
     /// <p>The identifier for the analysis template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The unique ID for the associated collaboration of the analysis template.</p>
-    pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
-        self.collaboration_id.as_deref()
+    pub fn collaboration_id(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_id.deref()
     }
     /// <p>The unique ARN for the analysis template’s associated collaboration.</p>
-    pub fn collaboration_arn(&self) -> ::std::option::Option<&str> {
-        self.collaboration_arn.as_deref()
+    pub fn collaboration_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_arn.deref()
     }
     /// <p>The identifier of a member who created the analysis template.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
-        self.membership_id.as_deref()
+    pub fn membership_id(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the analysis template.</p>
-    pub fn membership_arn(&self) -> ::std::option::Option<&str> {
-        self.membership_arn.as_deref()
+    pub fn membership_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_arn.deref()
     }
     /// <p>The description of the analysis template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the analysis template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The time that the analysis template was created.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The time that the analysis template was last updated.</p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>The entire schema object.</p>
     pub fn schema(&self) -> ::std::option::Option<&crate::types::AnalysisSchema> {
         self.schema.as_ref()
     }
     /// <p>The format of the analysis template.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::AnalysisFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::AnalysisFormat {
+        &self.format
     }
     /// <p>The source of the analysis template.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::AnalysisSource> {
         self.source.as_ref()
     }
     /// <p>The parameters of the analysis template.</p>
-    pub fn analysis_parameters(&self) -> ::std::option::Option<&[crate::types::AnalysisParameter]> {
-        self.analysis_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_parameters.is_none()`.
+    pub fn analysis_parameters(&self) -> &[crate::types::AnalysisParameter] {
+        self.analysis_parameters.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AnalysisTemplate {
@@ -139,6 +148,7 @@ pub struct AnalysisTemplateBuilder {
 }
 impl AnalysisTemplateBuilder {
     /// <p>The identifier for the analysis template.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +163,7 @@ impl AnalysisTemplateBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +178,7 @@ impl AnalysisTemplateBuilder {
         &self.arn
     }
     /// <p>The unique ID for the associated collaboration of the analysis template.</p>
+    /// This field is required.
     pub fn collaboration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_id = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +193,7 @@ impl AnalysisTemplateBuilder {
         &self.collaboration_id
     }
     /// <p>The unique ARN for the analysis template’s associated collaboration.</p>
+    /// This field is required.
     pub fn collaboration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_arn = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +208,7 @@ impl AnalysisTemplateBuilder {
         &self.collaboration_arn
     }
     /// <p>The identifier of a member who created the analysis template.</p>
+    /// This field is required.
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +223,7 @@ impl AnalysisTemplateBuilder {
         &self.membership_id
     }
     /// <p>The Amazon Resource Name (ARN) of the member who created the analysis template.</p>
+    /// This field is required.
     pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_arn = ::std::option::Option::Some(input.into());
         self
@@ -237,6 +252,7 @@ impl AnalysisTemplateBuilder {
         &self.description
     }
     /// <p>The name of the analysis template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +267,7 @@ impl AnalysisTemplateBuilder {
         &self.name
     }
     /// <p>The time that the analysis template was created.</p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -265,6 +282,7 @@ impl AnalysisTemplateBuilder {
         &self.create_time
     }
     /// <p>The time that the analysis template was last updated.</p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -279,6 +297,7 @@ impl AnalysisTemplateBuilder {
         &self.update_time
     }
     /// <p>The entire schema object.</p>
+    /// This field is required.
     pub fn schema(mut self, input: crate::types::AnalysisSchema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self
@@ -293,6 +312,7 @@ impl AnalysisTemplateBuilder {
         &self.schema
     }
     /// <p>The format of the analysis template.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::AnalysisFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -307,6 +327,7 @@ impl AnalysisTemplateBuilder {
         &self.format
     }
     /// <p>The source of the analysis template.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::AnalysisSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -341,23 +362,84 @@ impl AnalysisTemplateBuilder {
         &self.analysis_parameters
     }
     /// Consumes the builder and constructs a [`AnalysisTemplate`](crate::types::AnalysisTemplate).
-    pub fn build(self) -> crate::types::AnalysisTemplate {
-        crate::types::AnalysisTemplate {
-            id: self.id,
-            arn: self.arn,
-            collaboration_id: self.collaboration_id,
-            collaboration_arn: self.collaboration_arn,
-            membership_id: self.membership_id,
-            membership_arn: self.membership_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AnalysisTemplateBuilder::id)
+    /// - [`arn`](crate::types::builders::AnalysisTemplateBuilder::arn)
+    /// - [`collaboration_id`](crate::types::builders::AnalysisTemplateBuilder::collaboration_id)
+    /// - [`collaboration_arn`](crate::types::builders::AnalysisTemplateBuilder::collaboration_arn)
+    /// - [`membership_id`](crate::types::builders::AnalysisTemplateBuilder::membership_id)
+    /// - [`membership_arn`](crate::types::builders::AnalysisTemplateBuilder::membership_arn)
+    /// - [`name`](crate::types::builders::AnalysisTemplateBuilder::name)
+    /// - [`create_time`](crate::types::builders::AnalysisTemplateBuilder::create_time)
+    /// - [`update_time`](crate::types::builders::AnalysisTemplateBuilder::update_time)
+    /// - [`format`](crate::types::builders::AnalysisTemplateBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisTemplate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisTemplate {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
+            collaboration_id: self.collaboration_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collaboration_id",
+                    "collaboration_id was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
+            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collaboration_arn",
+                    "collaboration_arn was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
+            membership_id: self.membership_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_id",
+                    "membership_id was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
+            membership_arn: self.membership_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_arn",
+                    "membership_arn was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
             description: self.description,
-            name: self.name,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
             schema: self.schema,
-            format: self.format,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building AnalysisTemplate",
+                )
+            })?,
             source: self.source,
             analysis_parameters: self.analysis_parameters,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for AnalysisTemplateBuilder {

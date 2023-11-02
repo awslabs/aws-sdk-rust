@@ -6,9 +6,9 @@ pub struct CreateAccessLogSubscriptionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub resource_identifier: ::std::option::Option<::std::string::String>,
+    pub resource_identifier: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
-    pub destination_arn: ::std::option::Option<::std::string::String>,
+    pub destination_arn: ::std::string::String,
     /// <p>The tags for the access log subscription.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -18,12 +18,14 @@ impl CreateAccessLogSubscriptionInput {
         self.client_token.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
-        self.resource_identifier.as_deref()
+    pub fn resource_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_identifier.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
-        self.destination_arn.as_deref()
+    pub fn destination_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_arn.deref()
     }
     /// <p>The tags for the access log subscription.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +64,7 @@ impl CreateAccessLogSubscriptionInputBuilder {
         &self.client_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+    /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateAccessLogSubscriptionInputBuilder {
         &self.resource_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +114,9 @@ impl CreateAccessLogSubscriptionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_identifier`](crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder::resource_identifier)
+    /// - [`destination_arn`](crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder::destination_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -118,8 +125,18 @@ impl CreateAccessLogSubscriptionInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput {
             client_token: self.client_token,
-            resource_identifier: self.resource_identifier,
-            destination_arn: self.destination_arn,
+            resource_identifier: self.resource_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_identifier",
+                    "resource_identifier was not specified but it is required when building CreateAccessLogSubscriptionInput",
+                )
+            })?,
+            destination_arn: self.destination_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_arn",
+                    "destination_arn was not specified but it is required when building CreateAccessLogSubscriptionInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

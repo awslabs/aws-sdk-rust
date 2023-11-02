@@ -32,6 +32,7 @@ pub fn ser_type_configuration_identifier(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_type_configuration_identifier(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TypeConfigurationIdentifier, ::aws_smithy_xml::decode::XmlDecodeError> {

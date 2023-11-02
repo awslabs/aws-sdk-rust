@@ -27,6 +27,7 @@ pub struct GetTestExecutionArtifactsUrlInputBuilder {
 }
 impl GetTestExecutionArtifactsUrlInputBuilder {
     /// <p>The unique identifier of the completed test execution.</p>
+    /// This field is required.
     pub fn test_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_execution_id = ::std::option::Option::Some(input.into());
         self

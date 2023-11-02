@@ -197,8 +197,10 @@ impl DeploymentInfo {
         self.file_exists_behavior.as_ref()
     }
     /// <p>Messages that contain information about the status of a deployment.</p>
-    pub fn deployment_status_messages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.deployment_status_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_status_messages.is_none()`.
+    pub fn deployment_status_messages(&self) -> &[::std::string::String] {
+        self.deployment_status_messages.as_deref().unwrap_or_default()
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {

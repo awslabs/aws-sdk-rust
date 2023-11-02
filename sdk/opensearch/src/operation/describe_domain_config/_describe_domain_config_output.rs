@@ -35,6 +35,7 @@ pub struct DescribeDomainConfigOutputBuilder {
 }
 impl DescribeDomainConfigOutputBuilder {
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
+    /// This field is required.
     pub fn domain_config(mut self, input: crate::types::DomainConfig) -> Self {
         self.domain_config = ::std::option::Option::Some(input);
         self

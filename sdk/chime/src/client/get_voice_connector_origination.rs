@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVoiceConnectorOrigination`](crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
+    ///   - [`voice_connector_id(impl Into<String>)`](crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationFluentBuilder::set_voice_connector_id):<br>required: **true**<br><p>The Amazon Chime Voice Connector ID.</p><br>
     /// - On success, responds with [`GetVoiceConnectorOriginationOutput`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput) with field(s):
     ///   - [`origination(Option<Origination>)`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationOutput::origination): <p>The origination setting details.</p>
     /// - On failure, responds with [`SdkError<GetVoiceConnectorOriginationError>`](crate::operation::get_voice_connector_origination::GetVoiceConnectorOriginationError)

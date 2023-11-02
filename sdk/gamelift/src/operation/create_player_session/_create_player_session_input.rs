@@ -41,6 +41,7 @@ pub struct CreatePlayerSessionInputBuilder {
 }
 impl CreatePlayerSessionInputBuilder {
     /// <p>A unique identifier for the game session to add a player to.</p>
+    /// This field is required.
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreatePlayerSessionInputBuilder {
         &self.game_session_id
     }
     /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
+    /// This field is required.
     pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_id = ::std::option::Option::Some(input.into());
         self

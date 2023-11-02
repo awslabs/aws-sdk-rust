@@ -30,16 +30,20 @@ impl GetUnfilteredPartitionMetadataInput {
         self.table_name.as_deref()
     }
     /// <p>(Required) A list of partition key values.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
+    pub fn partition_values(&self) -> &[::std::string::String] {
+        self.partition_values.as_deref().unwrap_or_default()
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
     /// <p>(Required) A list of supported permission types. </p>
-    pub fn supported_permission_types(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
-        self.supported_permission_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_permission_types.is_none()`.
+    pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
+        self.supported_permission_types.as_deref().unwrap_or_default()
     }
 }
 impl GetUnfilteredPartitionMetadataInput {
@@ -62,6 +66,7 @@ pub struct GetUnfilteredPartitionMetadataInputBuilder {
 }
 impl GetUnfilteredPartitionMetadataInputBuilder {
     /// <p>The catalog ID where the partition resides.</p>
+    /// This field is required.
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         &self.catalog_id
     }
     /// <p>(Required) Specifies the name of a database that contains the partition.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         &self.database_name
     }
     /// <p>(Required) Specifies the name of a table that contains the partition.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

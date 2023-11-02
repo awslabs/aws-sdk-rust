@@ -42,6 +42,7 @@ pub struct ReferenceLineDynamicDataConfigurationBuilder {
 }
 impl ReferenceLineDynamicDataConfigurationBuilder {
     /// <p>The column that the dynamic data targets.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl ReferenceLineDynamicDataConfigurationBuilder {
         &self.measure_aggregation_function
     }
     /// <p>The calculation that is used in the dynamic data.</p>
+    /// This field is required.
     pub fn calculation(mut self, input: crate::types::NumericalAggregationFunction) -> Self {
         self.calculation = ::std::option::Option::Some(input);
         self

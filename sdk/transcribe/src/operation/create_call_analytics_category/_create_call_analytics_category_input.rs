@@ -21,8 +21,10 @@ impl CreateCallAnalyticsCategoryInput {
         self.category_name.as_deref()
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::Rule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
     /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
@@ -50,6 +52,7 @@ pub struct CreateCallAnalyticsCategoryInputBuilder {
 impl CreateCallAnalyticsCategoryInputBuilder {
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
+    /// This field is required.
     pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category_name = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKnowledgeBase`](crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(Option<String>)`](crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder::set_knowledge_base_id): <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(impl Into<String>)`](crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder::knowledge_base_id) / [`set_knowledge_base_id(impl Into<String>)`](crate::operation::get_knowledge_base::builders::GetKnowledgeBaseFluentBuilder::set_knowledge_base_id):<br>required: **true**<br><p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     /// - On success, responds with [`GetKnowledgeBaseOutput`](crate::operation::get_knowledge_base::GetKnowledgeBaseOutput) with field(s):
     ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::operation::get_knowledge_base::GetKnowledgeBaseOutput::knowledge_base): <p>The knowledge base.</p>
     /// - On failure, responds with [`SdkError<GetKnowledgeBaseError>`](crate::operation::get_knowledge_base::GetKnowledgeBaseError)

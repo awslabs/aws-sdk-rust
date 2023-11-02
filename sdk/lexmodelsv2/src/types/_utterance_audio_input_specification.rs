@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceAudioInputSpecification {
     /// <p>Amazon S3 file pointing to the audio.</p>
-    pub audio_file_s3_location: ::std::option::Option<::std::string::String>,
+    pub audio_file_s3_location: ::std::string::String,
 }
 impl UtteranceAudioInputSpecification {
     /// <p>Amazon S3 file pointing to the audio.</p>
-    pub fn audio_file_s3_location(&self) -> ::std::option::Option<&str> {
-        self.audio_file_s3_location.as_deref()
+    pub fn audio_file_s3_location(&self) -> &str {
+        use std::ops::Deref;
+        self.audio_file_s3_location.deref()
     }
 }
 impl UtteranceAudioInputSpecification {
@@ -28,6 +29,7 @@ pub struct UtteranceAudioInputSpecificationBuilder {
 }
 impl UtteranceAudioInputSpecificationBuilder {
     /// <p>Amazon S3 file pointing to the audio.</p>
+    /// This field is required.
     pub fn audio_file_s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_file_s3_location = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl UtteranceAudioInputSpecificationBuilder {
         &self.audio_file_s3_location
     }
     /// Consumes the builder and constructs a [`UtteranceAudioInputSpecification`](crate::types::UtteranceAudioInputSpecification).
-    pub fn build(self) -> crate::types::UtteranceAudioInputSpecification {
-        crate::types::UtteranceAudioInputSpecification {
-            audio_file_s3_location: self.audio_file_s3_location,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`audio_file_s3_location`](crate::types::builders::UtteranceAudioInputSpecificationBuilder::audio_file_s3_location)
+    pub fn build(self) -> ::std::result::Result<crate::types::UtteranceAudioInputSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UtteranceAudioInputSpecification {
+            audio_file_s3_location: self.audio_file_s3_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "audio_file_s3_location",
+                    "audio_file_s3_location was not specified but it is required when building UtteranceAudioInputSpecification",
+                )
+            })?,
+        })
     }
 }

@@ -4,30 +4,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInput {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>The credentials to be added or updated.</p>
     pub credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>The credentials to be removed.</p>
     pub credentials_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub backint: ::std::option::Option<crate::types::BackintConfig>,
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub database_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationSettingsInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>The credentials to be added or updated.</p>
-    pub fn credentials_to_add_or_update(&self) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
-        self.credentials_to_add_or_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials_to_add_or_update.is_none()`.
+    pub fn credentials_to_add_or_update(&self) -> &[crate::types::ApplicationCredential] {
+        self.credentials_to_add_or_update.as_deref().unwrap_or_default()
     }
     /// <p>The credentials to be removed.</p>
-    pub fn credentials_to_remove(&self) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
-        self.credentials_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials_to_remove.is_none()`.
+    pub fn credentials_to_remove(&self) -> &[crate::types::ApplicationCredential] {
+        self.credentials_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Installation of AWS Backint Agent for SAP HANA.</p>
     pub fn backint(&self) -> ::std::option::Option<&crate::types::BackintConfig> {
         self.backint.as_ref()
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+        self.database_arn.as_deref()
     }
 }
 impl UpdateApplicationSettingsInput {
@@ -45,9 +56,11 @@ pub struct UpdateApplicationSettingsInputBuilder {
     pub(crate) credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     pub(crate) credentials_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     pub(crate) backint: ::std::option::Option<crate::types::BackintConfig>,
+    pub(crate) database_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationSettingsInputBuilder {
     /// <p>The ID of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -115,7 +128,23 @@ impl UpdateApplicationSettingsInputBuilder {
     pub fn get_backint(&self) -> &::std::option::Option<crate::types::BackintConfig> {
         &self.backint
     }
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_arn
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -123,10 +152,16 @@ impl UpdateApplicationSettingsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_application_settings::UpdateApplicationSettingsInput {
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building UpdateApplicationSettingsInput",
+                )
+            })?,
             credentials_to_add_or_update: self.credentials_to_add_or_update,
             credentials_to_remove: self.credentials_to_remove,
             backint: self.backint,
+            database_arn: self.database_arn,
         })
     }
 }

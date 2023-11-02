@@ -32,12 +32,16 @@ impl ListManagedEndpointsInput {
         self.created_after.as_ref()
     }
     /// <p>The types of the managed endpoints.</p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>The states of the managed endpoints.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::EndpointState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::EndpointState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of managed endpoints that can be listed.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -69,6 +73,7 @@ pub struct ListManagedEndpointsInputBuilder {
 }
 impl ListManagedEndpointsInputBuilder {
     /// <p>The ID of the virtual cluster.</p>
+    /// This field is required.
     pub fn virtual_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_cluster_id = ::std::option::Option::Some(input.into());
         self

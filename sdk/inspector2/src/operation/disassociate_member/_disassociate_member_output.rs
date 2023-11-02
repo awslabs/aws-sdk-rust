@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateMemberOutput {
     /// <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DisassociateMemberOutput {
     /// <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DisassociateMemberOutput {
@@ -34,6 +35,7 @@ pub struct DisassociateMemberOutputBuilder {
 }
 impl DisassociateMemberOutputBuilder {
     /// <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl DisassociateMemberOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DisassociateMemberOutput`](crate::operation::disassociate_member::DisassociateMemberOutput).
-    pub fn build(self) -> crate::operation::disassociate_member::DisassociateMemberOutput {
-        crate::operation::disassociate_member::DisassociateMemberOutput {
-            account_id: self.account_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::operation::disassociate_member::builders::DisassociateMemberOutputBuilder::account_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::disassociate_member::DisassociateMemberOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::disassociate_member::DisassociateMemberOutput {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building DisassociateMemberOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

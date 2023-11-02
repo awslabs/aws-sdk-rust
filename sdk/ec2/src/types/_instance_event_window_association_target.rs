@@ -13,16 +13,22 @@ pub struct InstanceEventWindowAssociationTarget {
 }
 impl InstanceEventWindowAssociationTarget {
     /// <p>The IDs of the instances associated with the event window.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
-    pub fn dedicated_host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dedicated_host_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dedicated_host_ids.is_none()`.
+    pub fn dedicated_host_ids(&self) -> &[::std::string::String] {
+        self.dedicated_host_ids.as_deref().unwrap_or_default()
     }
 }
 impl InstanceEventWindowAssociationTarget {

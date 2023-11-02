@@ -16,8 +16,10 @@ pub struct GetPositionEstimateInput {
 }
 impl GetPositionEstimateInput {
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn wi_fi_access_points(&self) -> ::std::option::Option<&[crate::types::WiFiAccessPoint]> {
-        self.wi_fi_access_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wi_fi_access_points.is_none()`.
+    pub fn wi_fi_access_points(&self) -> &[crate::types::WiFiAccessPoint] {
+        self.wi_fi_access_points.as_deref().unwrap_or_default()
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
     pub fn cell_towers(&self) -> ::std::option::Option<&crate::types::CellTowers> {

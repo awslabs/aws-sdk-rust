@@ -35,6 +35,7 @@ pub struct CopyImageSetInformationBuilder {
 }
 impl CopyImageSetInformationBuilder {
     /// <p>The source image set.</p>
+    /// This field is required.
     pub fn source_image_set(mut self, input: crate::types::CopySourceImageSetInformation) -> Self {
         self.source_image_set = ::std::option::Option::Some(input);
         self

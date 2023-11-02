@@ -6,9 +6,9 @@ pub struct CreateServiceNetworkServiceAssociationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::option::Option<::std::string::String>,
+    pub service_identifier: ::std::string::String,
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
-    pub service_network_identifier: ::std::option::Option<::std::string::String>,
+    pub service_network_identifier: ::std::string::String,
     /// <p>The tags for the association.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -18,12 +18,14 @@ impl CreateServiceNetworkServiceAssociationInput {
         self.client_token.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_identifier.as_deref()
+    pub fn service_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_identifier.deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
-    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_network_identifier.as_deref()
+    pub fn service_network_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_network_identifier.deref()
     }
     /// <p>The tags for the association.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +64,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
         &self.client_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.</p>
+    /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +114,9 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkServiceAssociationInput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_identifier`](crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder::service_identifier)
+    /// - [`service_network_identifier`](crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder::service_network_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -119,8 +126,18 @@ impl CreateServiceNetworkServiceAssociationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationInput {
                 client_token: self.client_token,
-                service_identifier: self.service_identifier,
-                service_network_identifier: self.service_network_identifier,
+                service_identifier: self.service_identifier.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_identifier",
+                        "service_identifier was not specified but it is required when building CreateServiceNetworkServiceAssociationInput",
+                    )
+                })?,
+                service_network_identifier: self.service_network_identifier.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_network_identifier",
+                        "service_network_identifier was not specified but it is required when building CreateServiceNetworkServiceAssociationInput",
+                    )
+                })?,
                 tags: self.tags,
             },
         )

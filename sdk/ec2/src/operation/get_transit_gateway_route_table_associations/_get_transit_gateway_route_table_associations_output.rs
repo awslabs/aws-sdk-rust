@@ -11,8 +11,10 @@ pub struct GetTransitGatewayRouteTableAssociationsOutput {
 }
 impl GetTransitGatewayRouteTableAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::TransitGatewayRouteTableAssociation]> {
-        self.associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::TransitGatewayRouteTableAssociation] {
+        self.associations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

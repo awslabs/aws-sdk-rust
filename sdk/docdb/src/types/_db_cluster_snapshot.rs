@@ -41,8 +41,10 @@ pub struct DbClusterSnapshot {
 }
 impl DbClusterSnapshot {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the identifier for the cluster snapshot.</p>
     pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {

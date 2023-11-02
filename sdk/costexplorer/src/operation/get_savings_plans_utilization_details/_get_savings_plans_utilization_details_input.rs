@@ -53,8 +53,10 @@ impl GetSavingsPlansUtilizationDetailsInput {
         self.filter.as_ref()
     }
     /// <p>The data type.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&[crate::types::SavingsPlansDataType]> {
-        self.data_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_type.is_none()`.
+    pub fn data_type(&self) -> &[crate::types::SavingsPlansDataType] {
+        self.data_type.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -100,6 +102,7 @@ pub struct GetSavingsPlansUtilizationDetailsInputBuilder {
 }
 impl GetSavingsPlansUtilizationDetailsInputBuilder {
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self

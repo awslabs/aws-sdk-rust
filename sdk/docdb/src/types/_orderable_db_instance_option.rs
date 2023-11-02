@@ -35,8 +35,10 @@ impl OrderableDbInstanceOption {
         self.license_model.as_deref()
     }
     /// <p>A list of Availability Zones for an instance.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
     pub fn vpc(&self) -> ::std::option::Option<bool> {

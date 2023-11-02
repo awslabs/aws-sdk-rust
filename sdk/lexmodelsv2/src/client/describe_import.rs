@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImport`](crate::operation::describe_import::builders::DescribeImportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl Into<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::set_import_id): <p>The unique identifier of the import to describe.</p>
+    ///   - [`import_id(impl Into<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::describe_import::builders::DescribeImportFluentBuilder::set_import_id):<br>required: **true**<br><p>The unique identifier of the import to describe.</p><br>
     /// - On success, responds with [`DescribeImportOutput`](crate::operation::describe_import::DescribeImportOutput) with field(s):
     ///   - [`import_id(Option<String>)`](crate::operation::describe_import::DescribeImportOutput::import_id): <p>The unique identifier of the described import.</p>
     ///   - [`resource_specification(Option<ImportResourceSpecification>)`](crate::operation::describe_import::DescribeImportOutput::resource_specification): <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>

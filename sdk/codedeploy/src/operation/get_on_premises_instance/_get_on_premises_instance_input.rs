@@ -28,6 +28,7 @@ pub struct GetOnPremisesInstanceInputBuilder {
 }
 impl GetOnPremisesInstanceInputBuilder {
     /// <p> The name of the on-premises instance about which to get information. </p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

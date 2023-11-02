@@ -20,8 +20,10 @@ impl AssociateRoutingProfileQueuesInput {
         self.routing_profile_id.as_deref()
     }
     /// <p>The queues to associate with this routing profile.</p>
-    pub fn queue_configs(&self) -> ::std::option::Option<&[crate::types::RoutingProfileQueueConfig]> {
-        self.queue_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_configs.is_none()`.
+    pub fn queue_configs(&self) -> &[crate::types::RoutingProfileQueueConfig] {
+        self.queue_configs.as_deref().unwrap_or_default()
     }
 }
 impl AssociateRoutingProfileQueuesInput {
@@ -41,6 +43,7 @@ pub struct AssociateRoutingProfileQueuesInputBuilder {
 }
 impl AssociateRoutingProfileQueuesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl AssociateRoutingProfileQueuesInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier of the routing profile.</p>
+    /// This field is required.
     pub fn routing_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_profile_id = ::std::option::Option::Some(input.into());
         self

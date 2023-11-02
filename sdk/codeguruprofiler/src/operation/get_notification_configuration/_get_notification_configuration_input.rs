@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetNotificationConfigurationInput {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
 }
 impl GetNotificationConfigurationInput {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
 }
 impl GetNotificationConfigurationInput {
@@ -28,6 +29,7 @@ pub struct GetNotificationConfigurationInputBuilder {
 }
 impl GetNotificationConfigurationInputBuilder {
     /// <p>The name of the profiling group we want to get the notification configuration for.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -42,6 +44,8 @@ impl GetNotificationConfigurationInputBuilder {
         &self.profiling_group_name
     }
     /// Consumes the builder and constructs a [`GetNotificationConfigurationInput`](crate::operation::get_notification_configuration::GetNotificationConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::get_notification_configuration::builders::GetNotificationConfigurationInputBuilder::profiling_group_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +53,12 @@ impl GetNotificationConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_notification_configuration::GetNotificationConfigurationInput {
-            profiling_group_name: self.profiling_group_name,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building GetNotificationConfigurationInput",
+                )
+            })?,
         })
     }
 }

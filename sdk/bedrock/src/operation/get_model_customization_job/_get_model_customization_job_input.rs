@@ -27,6 +27,7 @@ pub struct GetModelCustomizationJobInputBuilder {
 }
 impl GetModelCustomizationJobInputBuilder {
     /// <p>Identifier for the customization job.</p>
+    /// This field is required.
     pub fn job_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_identifier = ::std::option::Option::Some(input.into());
         self

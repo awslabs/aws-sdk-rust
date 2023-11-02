@@ -28,11 +28,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_service_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidNextTokenException({
@@ -43,11 +42,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_next_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException({
@@ -58,11 +56,10 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException({

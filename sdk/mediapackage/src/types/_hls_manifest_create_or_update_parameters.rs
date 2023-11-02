@@ -29,8 +29,10 @@ impl HlsManifestCreateOrUpdateParameters {
         self.ad_markers.as_ref()
     }
     /// A list of SCTE-35 message types that are treated as ad markers in the output. If empty, no ad markers are output. Specify multiple items to create ad markers for all of the included message types.
-    pub fn ad_triggers(&self) -> ::std::option::Option<&[crate::types::AdTriggersElement]> {
-        self.ad_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_triggers.is_none()`.
+    pub fn ad_triggers(&self) -> &[crate::types::AdTriggersElement] {
+        self.ad_triggers.as_deref().unwrap_or_default()
     }
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to determine whether a message signals an ad. Choosing "NONE" means no SCTE-35 messages become ads. Choosing "RESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that contain delivery restrictions will be treated as ads. Choosing "UNRESTRICTED" means SCTE-35 messages of the types specified in AdTriggers that do not contain delivery restrictions will be treated as ads. Choosing "BOTH" means all SCTE-35 messages of the types specified in AdTriggers will be treated as ads. Note that Splice Insert messages do not have these flags and are always treated as ads if specified in AdTriggers.
     pub fn ads_on_delivery_restrictions(&self) -> ::std::option::Option<&crate::types::AdsOnDeliveryRestrictions> {
@@ -132,6 +134,7 @@ impl HlsManifestCreateOrUpdateParametersBuilder {
         &self.ads_on_delivery_restrictions
     }
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

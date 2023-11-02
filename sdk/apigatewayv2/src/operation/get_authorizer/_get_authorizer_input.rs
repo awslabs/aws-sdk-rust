@@ -34,6 +34,7 @@ pub struct GetAuthorizerInputBuilder {
 }
 impl GetAuthorizerInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAuthorizerInputBuilder {
         &self.api_id
     }
     /// <p>The authorizer identifier.</p>
+    /// This field is required.
     pub fn authorizer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_id = ::std::option::Option::Some(input.into());
         self

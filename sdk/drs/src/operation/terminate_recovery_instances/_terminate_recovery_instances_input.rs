@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub recovery_instance_i_ds: ::std::vec::Vec<::std::string::String>,
 }
 impl TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recovery_instance_i_ds.as_deref()
+    pub fn recovery_instance_i_ds(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.recovery_instance_i_ds.deref()
     }
 }
 impl TerminateRecoveryInstancesInput {
@@ -47,6 +48,8 @@ impl TerminateRecoveryInstancesInputBuilder {
         &self.recovery_instance_i_ds
     }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recovery_instance_i_ds`](crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder::recovery_instance_i_ds)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -54,7 +57,12 @@ impl TerminateRecoveryInstancesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
-            recovery_instance_i_ds: self.recovery_instance_i_ds,
+            recovery_instance_i_ds: self.recovery_instance_i_ds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recovery_instance_i_ds",
+                    "recovery_instance_i_ds was not specified but it is required when building TerminateRecoveryInstancesInput",
+                )
+            })?,
         })
     }
 }

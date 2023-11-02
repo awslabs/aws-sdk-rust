@@ -48,6 +48,7 @@ pub struct EvaluateCodeInputBuilder {
 }
 impl EvaluateCodeInputBuilder {
     /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+    /// This field is required.
     pub fn runtime(mut self, input: crate::types::AppSyncRuntime) -> Self {
         self.runtime = ::std::option::Option::Some(input);
         self
@@ -62,6 +63,7 @@ impl EvaluateCodeInputBuilder {
         &self.runtime
     }
     /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl EvaluateCodeInputBuilder {
         &self.code
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    /// This field is required.
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context = ::std::option::Option::Some(input.into());
         self

@@ -54,9 +54,11 @@ impl ResourceShareInvitation {
         self.status.as_ref()
     }
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_associations.is_none()`.
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-    pub fn resource_share_associations(&self) -> ::std::option::Option<&[crate::types::ResourceShareAssociation]> {
-        self.resource_share_associations.as_deref()
+    pub fn resource_share_associations(&self) -> &[crate::types::ResourceShareAssociation] {
+        self.resource_share_associations.as_deref().unwrap_or_default()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the IAM user or role that received the invitation.</p>
     pub fn receiver_arn(&self) -> ::std::option::Option<&str> {

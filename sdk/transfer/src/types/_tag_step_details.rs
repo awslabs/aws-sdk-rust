@@ -22,8 +22,10 @@ impl TagStepDetails {
         self.name.as_deref()
     }
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::S3Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>

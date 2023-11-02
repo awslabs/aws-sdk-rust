@@ -28,6 +28,7 @@ pub struct DeleteSnapshotCopyGrantInputBuilder {
 }
 impl DeleteSnapshotCopyGrantInputBuilder {
     /// <p>The name of the snapshot copy grant to delete.</p>
+    /// This field is required.
     pub fn snapshot_copy_grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self

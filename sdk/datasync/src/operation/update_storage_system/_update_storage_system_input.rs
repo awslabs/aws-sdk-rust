@@ -26,8 +26,10 @@ impl UpdateStorageSystemInput {
         self.server_configuration.as_ref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
-    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
+    pub fn agent_arns(&self) -> &[::std::string::String] {
+        self.agent_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a familiar name for your on-premises storage system.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct UpdateStorageSystemInputBuilder {
 }
 impl UpdateStorageSystemInputBuilder {
     /// <p>Specifies the ARN of the on-premises storage system that you want reconfigure.</p>
+    /// This field is required.
     pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self

@@ -28,6 +28,7 @@ pub struct ContinuousDeploymentPolicySummaryBuilder {
 }
 impl ContinuousDeploymentPolicySummaryBuilder {
     /// <p>The continuous deployment policy.</p>
+    /// This field is required.
     pub fn continuous_deployment_policy(mut self, input: crate::types::ContinuousDeploymentPolicy) -> Self {
         self.continuous_deployment_policy = ::std::option::Option::Some(input);
         self

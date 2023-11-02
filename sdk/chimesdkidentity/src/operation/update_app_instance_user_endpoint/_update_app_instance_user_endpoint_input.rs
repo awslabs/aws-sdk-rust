@@ -58,6 +58,7 @@ pub struct UpdateAppInstanceUserEndpointInputBuilder {
 }
 impl UpdateAppInstanceUserEndpointInputBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         &self.app_instance_user_arn
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self

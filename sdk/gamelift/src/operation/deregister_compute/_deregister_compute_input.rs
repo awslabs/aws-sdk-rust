@@ -34,6 +34,7 @@ pub struct DeregisterComputeInputBuilder {
 }
 impl DeregisterComputeInputBuilder {
     /// <p>A unique identifier for the fleet the compute resource is currently registered to.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeregisterComputeInputBuilder {
         &self.fleet_id
     }
     /// <p>The name of the compute resource to remove from the specified Anywhere fleet.</p>
+    /// This field is required.
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self

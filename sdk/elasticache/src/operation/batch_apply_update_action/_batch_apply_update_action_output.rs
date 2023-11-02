@@ -11,12 +11,16 @@ pub struct BatchApplyUpdateActionOutput {
 }
 impl BatchApplyUpdateActionOutput {
     /// <p>Update actions that have been processed successfully</p>
-    pub fn processed_update_actions(&self) -> ::std::option::Option<&[crate::types::ProcessedUpdateAction]> {
-        self.processed_update_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_update_actions.is_none()`.
+    pub fn processed_update_actions(&self) -> &[crate::types::ProcessedUpdateAction] {
+        self.processed_update_actions.as_deref().unwrap_or_default()
     }
     /// <p>Update actions that haven't been processed successfully</p>
-    pub fn unprocessed_update_actions(&self) -> ::std::option::Option<&[crate::types::UnprocessedUpdateAction]> {
-        self.unprocessed_update_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_update_actions.is_none()`.
+    pub fn unprocessed_update_actions(&self) -> &[crate::types::UnprocessedUpdateAction] {
+        self.unprocessed_update_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchApplyUpdateActionOutput {

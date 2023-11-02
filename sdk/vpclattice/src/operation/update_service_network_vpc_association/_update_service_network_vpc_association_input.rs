@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
+    pub service_network_vpc_association_identifier: ::std::string::String,
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl UpdateServiceNetworkVpcAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_vpc_association_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_network_vpc_association_identifier.as_deref()
+    pub fn service_network_vpc_association_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_network_vpc_association_identifier.deref()
     }
     /// <p>The IDs of the security groups. Once you add a security group, it cannot be removed.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.security_group_ids.deref()
     }
 }
 impl UpdateServiceNetworkVpcAssociationInput {
@@ -34,6 +36,7 @@ pub struct UpdateServiceNetworkVpcAssociationInputBuilder {
 }
 impl UpdateServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+    /// This field is required.
     pub fn service_network_vpc_association_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_vpc_association_identifier = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +71,9 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkVpcAssociationInput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_network_vpc_association_identifier`](crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationInputBuilder::service_network_vpc_association_identifier)
+    /// - [`security_group_ids`](crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationInputBuilder::security_group_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,9 +82,17 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput {
-                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier,
-                security_group_ids: self.security_group_ids,
-            },
+                service_network_vpc_association_identifier: self.service_network_vpc_association_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("service_network_vpc_association_identifier", "service_network_vpc_association_identifier was not specified but it is required when building UpdateServiceNetworkVpcAssociationInput")
+                    )?
+                ,
+                security_group_ids: self.security_group_ids
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("security_group_ids", "security_group_ids was not specified but it is required when building UpdateServiceNetworkVpcAssociationInput")
+                    )?
+                ,
+            }
         )
     }
 }

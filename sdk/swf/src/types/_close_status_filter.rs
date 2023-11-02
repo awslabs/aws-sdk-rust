@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
-    pub status: ::std::option::Option<crate::types::CloseStatus>,
+    pub status: crate::types::CloseStatus,
 }
 impl CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CloseStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::CloseStatus {
+        &self.status
     }
 }
 impl CloseStatusFilter {
@@ -28,6 +28,7 @@ pub struct CloseStatusFilterBuilder {
 }
 impl CloseStatusFilterBuilder {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::CloseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl CloseStatusFilterBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`CloseStatusFilter`](crate::types::CloseStatusFilter).
-    pub fn build(self) -> crate::types::CloseStatusFilter {
-        crate::types::CloseStatusFilter { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::CloseStatusFilterBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloseStatusFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloseStatusFilter {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building CloseStatusFilter",
+                )
+            })?,
+        })
     }
 }

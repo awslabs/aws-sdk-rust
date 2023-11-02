@@ -6,13 +6,13 @@ pub fn ser_extension_field(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
-    if let Some(var_2) = &input.name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.name);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Value");
-    if let Some(var_4) = &input.value {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("Value");
+    {
+        scope_2.string(&input.value);
     }
     Ok(())
 }

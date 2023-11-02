@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateComponentTypeInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub is_singleton: ::std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
-    pub component_type_id: ::std::option::Option<::std::string::String>,
+    pub component_type_id: ::std::string::String,
     /// <p>The description of the component type.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
@@ -24,16 +24,18 @@ pub struct UpdateComponentTypeInput {
 }
 impl UpdateComponentTypeInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub fn is_singleton(&self) -> ::std::option::Option<bool> {
         self.is_singleton
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
-        self.component_type_id.as_deref()
+    pub fn component_type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.component_type_id.deref()
     }
     /// <p>The description of the component type.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -46,8 +48,10 @@ impl UpdateComponentTypeInput {
         self.property_definitions.as_ref()
     }
     /// <p>Specifies the component type that this component type extends.</p>
-    pub fn extends_from(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.extends_from.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extends_from.is_none()`.
+    pub fn extends_from(&self) -> &[::std::string::String] {
+        self.extends_from.as_deref().unwrap_or_default()
     }
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn functions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>> {
@@ -86,6 +90,7 @@ pub struct UpdateComponentTypeInputBuilder {
 }
 impl UpdateComponentTypeInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +119,7 @@ impl UpdateComponentTypeInputBuilder {
         &self.is_singleton
     }
     /// <p>The ID of the component type.</p>
+    /// This field is required.
     pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type_id = ::std::option::Option::Some(input.into());
         self
@@ -249,14 +255,27 @@ impl UpdateComponentTypeInputBuilder {
         &self.component_type_name
     }
     /// Consumes the builder and constructs a [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder::workspace_id)
+    /// - [`component_type_id`](crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder::component_type_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_component_type::UpdateComponentTypeInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_component_type::UpdateComponentTypeInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building UpdateComponentTypeInput",
+                )
+            })?,
             is_singleton: self.is_singleton,
-            component_type_id: self.component_type_id,
+            component_type_id: self.component_type_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "component_type_id",
+                    "component_type_id was not specified but it is required when building UpdateComponentTypeInput",
+                )
+            })?,
             description: self.description,
             property_definitions: self.property_definitions,
             extends_from: self.extends_from,

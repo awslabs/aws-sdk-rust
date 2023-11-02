@@ -3,11 +3,11 @@ pub fn ser_conformance_pack_input_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConformancePackInputParameter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.parameter_name {
-        object.key("ParameterName").string(var_1.as_str());
+    {
+        object.key("ParameterName").string(input.parameter_name.as_str());
     }
-    if let Some(var_2) = &input.parameter_value {
-        object.key("ParameterValue").string(var_2.as_str());
+    {
+        object.key("ParameterValue").string(input.parameter_value.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::conformance_pack_input_parameter_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

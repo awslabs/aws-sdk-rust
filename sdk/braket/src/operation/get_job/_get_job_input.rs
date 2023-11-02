@@ -4,18 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
-    pub job_arn: ::std::option::Option<::std::string::String>,
+    pub job_arn: ::std::string::String,
     /// <p>A list of attributes to return information for.</p>
     pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
 }
 impl GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
-        self.job_arn.as_deref()
+    pub fn job_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.job_arn.deref()
     }
     /// <p>A list of attributes to return information for.</p>
-    pub fn additional_attribute_names(&self) -> ::std::option::Option<&[crate::types::HybridJobAdditionalAttributeName]> {
-        self.additional_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attribute_names.is_none()`.
+    pub fn additional_attribute_names(&self) -> &[crate::types::HybridJobAdditionalAttributeName] {
+        self.additional_attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl GetJobInput {
@@ -34,6 +37,7 @@ pub struct GetJobInputBuilder {
 }
 impl GetJobInputBuilder {
     /// <p>The ARN of the job to retrieve.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,9 +75,16 @@ impl GetJobInputBuilder {
         &self.additional_attribute_names
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_arn`](crate::operation::get_job::builders::GetJobInputBuilder::job_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job::GetJobInput {
-            job_arn: self.job_arn,
+            job_arn: self.job_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_arn",
+                    "job_arn was not specified but it is required when building GetJobInput",
+                )
+            })?,
             additional_attribute_names: self.additional_attribute_names,
         })
     }

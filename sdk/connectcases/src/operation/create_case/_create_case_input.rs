@@ -4,26 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCaseInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>A unique identifier of a template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub fields: ::std::vec::Vec<crate::types::FieldValue>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCaseInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>An array of objects with field ID (matching ListFields/DescribeField) and value union data.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldValue]> {
-        self.fields.as_deref()
+    pub fn fields(&self) -> &[crate::types::FieldValue] {
+        use std::ops::Deref;
+        self.fields.deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +51,7 @@ pub struct CreateCaseInputBuilder {
 }
 impl CreateCaseInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,7 @@ impl CreateCaseInputBuilder {
         &self.domain_id
     }
     /// <p>A unique identifier of a template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -110,11 +115,30 @@ impl CreateCaseInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::create_case::builders::CreateCaseInputBuilder::domain_id)
+    /// - [`template_id`](crate::operation::create_case::builders::CreateCaseInputBuilder::template_id)
+    /// - [`fields`](crate::operation::create_case::builders::CreateCaseInputBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
-            domain_id: self.domain_id,
-            template_id: self.template_id,
-            fields: self.fields,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building CreateCaseInput",
+                )
+            })?,
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building CreateCaseInput",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building CreateCaseInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

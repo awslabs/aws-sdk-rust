@@ -9,8 +9,10 @@ pub struct DetectPiiEntitiesOutput {
 }
 impl DetectPiiEntitiesOutput {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::PiiEntity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::PiiEntity] {
+        self.entities.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DetectPiiEntitiesOutput {

@@ -6,9 +6,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    pub interface_id: ::std::option::Option<::std::string::String>,
+    pub interface_id: ::std::string::String,
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub r#type: ::std::option::Option<crate::types::NetworkInterfaceType>,
+    pub r#type: crate::types::NetworkInterfaceType,
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub can_interface: ::std::option::Option<crate::types::CanInterface>,
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
@@ -16,12 +16,13 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    pub fn interface_id(&self) -> ::std::option::Option<&str> {
-        self.interface_id.as_deref()
+    pub fn interface_id(&self) -> &str {
+        use std::ops::Deref;
+        self.interface_id.deref()
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::NetworkInterfaceType {
+        &self.r#type
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub fn can_interface(&self) -> ::std::option::Option<&crate::types::CanInterface> {
@@ -50,6 +51,7 @@ pub struct NetworkInterfaceBuilder {
 }
 impl NetworkInterfaceBuilder {
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +66,7 @@ impl NetworkInterfaceBuilder {
         &self.interface_id
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::NetworkInterfaceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -106,12 +109,25 @@ impl NetworkInterfaceBuilder {
         &self.obd_interface
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
-    pub fn build(self) -> crate::types::NetworkInterface {
-        crate::types::NetworkInterface {
-            interface_id: self.interface_id,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`interface_id`](crate::types::builders::NetworkInterfaceBuilder::interface_id)
+    /// - [`r#type`](crate::types::builders::NetworkInterfaceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkInterface, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkInterface {
+            interface_id: self.interface_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "interface_id",
+                    "interface_id was not specified but it is required when building NetworkInterface",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building NetworkInterface",
+                )
+            })?,
             can_interface: self.can_interface,
             obd_interface: self.obd_interface,
-        }
+        })
     }
 }

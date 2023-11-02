@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineVariableDeclaration {
     /// <p>The name of a pipeline-level variable.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value of a pipeline-level variable.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The description of a pipeline-level variable. It's used to add additional context about the variable, and not being used at time when pipeline executes.</p>
@@ -13,8 +13,9 @@ pub struct PipelineVariableDeclaration {
 }
 impl PipelineVariableDeclaration {
     /// <p>The name of a pipeline-level variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value of a pipeline-level variable.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct PipelineVariableDeclarationBuilder {
 }
 impl PipelineVariableDeclarationBuilder {
     /// <p>The name of a pipeline-level variable.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl PipelineVariableDeclarationBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`PipelineVariableDeclaration`](crate::types::PipelineVariableDeclaration).
-    pub fn build(self) -> crate::types::PipelineVariableDeclaration {
-        crate::types::PipelineVariableDeclaration {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PipelineVariableDeclarationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipelineVariableDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipelineVariableDeclaration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PipelineVariableDeclaration",
+                )
+            })?,
             default_value: self.default_value,
             description: self.description,
-        }
+        })
     }
 }

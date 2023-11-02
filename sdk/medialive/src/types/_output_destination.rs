@@ -19,16 +19,20 @@ impl OutputDestination {
         self.id.as_deref()
     }
     /// Destination settings for a MediaPackage output; one destination for both encoders.
-    pub fn media_package_settings(&self) -> ::std::option::Option<&[crate::types::MediaPackageOutputDestinationSettings]> {
-        self.media_package_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_package_settings.is_none()`.
+    pub fn media_package_settings(&self) -> &[crate::types::MediaPackageOutputDestinationSettings] {
+        self.media_package_settings.as_deref().unwrap_or_default()
     }
     /// Destination settings for a Multiplex output; one destination for both encoders.
     pub fn multiplex_settings(&self) -> ::std::option::Option<&crate::types::MultiplexProgramChannelDestinationSettings> {
         self.multiplex_settings.as_ref()
     }
     /// Destination settings for a standard output; one destination for each redundant encoder.
-    pub fn settings(&self) -> ::std::option::Option<&[crate::types::OutputDestinationSettings]> {
-        self.settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
+    pub fn settings(&self) -> &[crate::types::OutputDestinationSettings] {
+        self.settings.as_deref().unwrap_or_default()
     }
 }
 impl OutputDestination {

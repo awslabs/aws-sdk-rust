@@ -41,6 +41,7 @@ pub struct UpdateEncryptionKeyInputBuilder {
 }
 impl UpdateEncryptionKeyInputBuilder {
     /// <p>A KMS key ID for the encryption key.</p>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateEncryptionKeyInputBuilder {
         &self.kms_key_id
     }
     /// <p>The scan type for the encryption key.</p>
+    /// This field is required.
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
         self.scan_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UpdateEncryptionKeyInputBuilder {
         &self.scan_type
     }
     /// <p>The resource type for the encryption key.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

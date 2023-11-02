@@ -8,8 +8,10 @@ pub struct StartDataCollectionByAgentIdsInput {
 }
 impl StartDataCollectionByAgentIdsInput {
     /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
-    pub fn agent_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.agent_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_ids.is_none()`.
+    pub fn agent_ids(&self) -> &[::std::string::String] {
+        self.agent_ids.as_deref().unwrap_or_default()
     }
 }
 impl StartDataCollectionByAgentIdsInput {

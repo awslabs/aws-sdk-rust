@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageInput {
     /// <p>A name for the package.</p>
-    pub package_name: ::std::option::Option<::std::string::String>,
+    pub package_name: ::std::string::String,
     /// <p>Tags for the package.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePackageInput {
     /// <p>A name for the package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
-        self.package_name.as_deref()
+    pub fn package_name(&self) -> &str {
+        use std::ops::Deref;
+        self.package_name.deref()
     }
     /// <p>Tags for the package.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -34,6 +35,7 @@ pub struct CreatePackageInputBuilder {
 }
 impl CreatePackageInputBuilder {
     /// <p>A name for the package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -68,11 +70,18 @@ impl CreatePackageInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_name`](crate::operation::create_package::builders::CreatePackageInputBuilder::package_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_package::CreatePackageInput {
-            package_name: self.package_name,
+            package_name: self.package_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_name",
+                    "package_name was not specified but it is required when building CreatePackageInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

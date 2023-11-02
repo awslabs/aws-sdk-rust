@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-    pub db_cluster_or_instance_arn: ::std::option::Option<::std::string::String>,
+    pub db_cluster_or_instance_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub aws_secret_store_arn: ::std::option::Option<::std::string::String>,
+    pub aws_secret_store_arn: ::std::string::String,
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
-    pub sql_statements: ::std::option::Option<::std::string::String>,
+    pub sql_statements: ::std::string::String,
     /// <p>The name of the database.</p>
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database schema.</p>
@@ -19,18 +19,21 @@ pub struct ExecuteSqlInput {
 }
 impl ExecuteSqlInput {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-    pub fn db_cluster_or_instance_arn(&self) -> ::std::option::Option<&str> {
-        self.db_cluster_or_instance_arn.as_deref()
+    pub fn db_cluster_or_instance_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.db_cluster_or_instance_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn aws_secret_store_arn(&self) -> ::std::option::Option<&str> {
-        self.aws_secret_store_arn.as_deref()
+    pub fn aws_secret_store_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.aws_secret_store_arn.deref()
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
-    pub fn sql_statements(&self) -> ::std::option::Option<&str> {
-        self.sql_statements.as_deref()
+    pub fn sql_statements(&self) -> &str {
+        use std::ops::Deref;
+        self.sql_statements.deref()
     }
     /// <p>The name of the database.</p>
     pub fn database(&self) -> ::std::option::Option<&str> {
@@ -60,6 +63,7 @@ pub struct ExecuteSqlInputBuilder {
 }
 impl ExecuteSqlInputBuilder {
     /// <p>The ARN of the Aurora Serverless DB cluster.</p>
+    /// This field is required.
     pub fn db_cluster_or_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_or_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +79,7 @@ impl ExecuteSqlInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
+    /// This field is required.
     pub fn aws_secret_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_secret_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +97,7 @@ impl ExecuteSqlInputBuilder {
     }
     /// <p>One or more SQL statements to run on the DB cluster.</p>
     /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
+    /// This field is required.
     pub fn sql_statements(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_statements = ::std::option::Option::Some(input.into());
         self
@@ -136,11 +142,30 @@ impl ExecuteSqlInputBuilder {
         &self.schema
     }
     /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::operation::execute_sql::ExecuteSqlInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`db_cluster_or_instance_arn`](crate::operation::execute_sql::builders::ExecuteSqlInputBuilder::db_cluster_or_instance_arn)
+    /// - [`aws_secret_store_arn`](crate::operation::execute_sql::builders::ExecuteSqlInputBuilder::aws_secret_store_arn)
+    /// - [`sql_statements`](crate::operation::execute_sql::builders::ExecuteSqlInputBuilder::sql_statements)
     pub fn build(self) -> ::std::result::Result<crate::operation::execute_sql::ExecuteSqlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_sql::ExecuteSqlInput {
-            db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
-            aws_secret_store_arn: self.aws_secret_store_arn,
-            sql_statements: self.sql_statements,
+            db_cluster_or_instance_arn: self.db_cluster_or_instance_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "db_cluster_or_instance_arn",
+                    "db_cluster_or_instance_arn was not specified but it is required when building ExecuteSqlInput",
+                )
+            })?,
+            aws_secret_store_arn: self.aws_secret_store_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aws_secret_store_arn",
+                    "aws_secret_store_arn was not specified but it is required when building ExecuteSqlInput",
+                )
+            })?,
+            sql_statements: self.sql_statements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sql_statements",
+                    "sql_statements was not specified but it is required when building ExecuteSqlInput",
+                )
+            })?,
             database: self.database,
             schema: self.schema,
         })

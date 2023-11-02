@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetDevEnvironmentInput {
@@ -41,6 +44,7 @@ pub struct GetDevEnvironmentInputBuilder {
 }
 impl GetDevEnvironmentInputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl GetDevEnvironmentInputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl GetDevEnvironmentInputBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -83,13 +89,32 @@ impl GetDevEnvironmentInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetDevEnvironmentInput`](crate::operation::get_dev_environment::GetDevEnvironmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder::space_name)
+    /// - [`project_name`](crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder::project_name)
+    /// - [`id`](crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_dev_environment::GetDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dev_environment::GetDevEnvironmentInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            id: self.id,
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building GetDevEnvironmentInput",
+                )
+            })?,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building GetDevEnvironmentInput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetDevEnvironmentInput",
+                )
+            })?,
         })
     }
 }

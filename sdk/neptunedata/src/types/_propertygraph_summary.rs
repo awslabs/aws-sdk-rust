@@ -51,12 +51,16 @@ impl PropertygraphSummary {
         self.num_edge_labels
     }
     /// <p>A list of the distinct node labels in the graph.</p>
-    pub fn node_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_labels.is_none()`.
+    pub fn node_labels(&self) -> &[::std::string::String] {
+        self.node_labels.as_deref().unwrap_or_default()
     }
     /// <p>A list of the distinct edge labels in the graph.</p>
-    pub fn edge_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.edge_labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_labels.is_none()`.
+    pub fn edge_labels(&self) -> &[::std::string::String] {
+        self.edge_labels.as_deref().unwrap_or_default()
     }
     /// <p>A list of the distinct node properties in the graph, along with the count of nodes where each property is used.</p>
     pub fn num_node_properties(&self) -> ::std::option::Option<i64> {
@@ -67,12 +71,16 @@ impl PropertygraphSummary {
         self.num_edge_properties
     }
     /// <p>The number of distinct node properties in the graph.</p>
-    pub fn node_properties(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, i64>]> {
-        self.node_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_properties.is_none()`.
+    pub fn node_properties(&self) -> &[::std::collections::HashMap<::std::string::String, i64>] {
+        self.node_properties.as_deref().unwrap_or_default()
     }
     /// <p>A list of the distinct edge properties in the graph, along with the count of edges where each property is used.</p>
-    pub fn edge_properties(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, i64>]> {
-        self.edge_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_properties.is_none()`.
+    pub fn edge_properties(&self) -> &[::std::collections::HashMap<::std::string::String, i64>] {
+        self.edge_properties.as_deref().unwrap_or_default()
     }
     /// <p>The total number of usages of all node properties.</p>
     pub fn total_node_property_values(&self) -> ::std::option::Option<i64> {
@@ -83,12 +91,16 @@ impl PropertygraphSummary {
         self.total_edge_property_values
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of node structures.</p>
-    pub fn node_structures(&self) -> ::std::option::Option<&[crate::types::NodeStructure]> {
-        self.node_structures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_structures.is_none()`.
+    pub fn node_structures(&self) -> &[crate::types::NodeStructure] {
+        self.node_structures.as_deref().unwrap_or_default()
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of edge structures.</p>
-    pub fn edge_structures(&self) -> ::std::option::Option<&[crate::types::EdgeStructure]> {
-        self.edge_structures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_structures.is_none()`.
+    pub fn edge_structures(&self) -> &[crate::types::EdgeStructure] {
+        self.edge_structures.as_deref().unwrap_or_default()
     }
 }
 impl PropertygraphSummary {

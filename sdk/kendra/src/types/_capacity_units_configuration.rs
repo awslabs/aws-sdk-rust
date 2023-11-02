@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityUnitsConfiguration {
     /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
-    pub storage_capacity_units: ::std::option::Option<i32>,
+    pub storage_capacity_units: i32,
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
     /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
-    pub query_capacity_units: ::std::option::Option<i32>,
+    pub query_capacity_units: i32,
 }
 impl CapacityUnitsConfiguration {
     /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
-    pub fn storage_capacity_units(&self) -> ::std::option::Option<i32> {
+    pub fn storage_capacity_units(&self) -> i32 {
         self.storage_capacity_units
     }
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
     /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
-    pub fn query_capacity_units(&self) -> ::std::option::Option<i32> {
+    pub fn query_capacity_units(&self) -> i32 {
         self.query_capacity_units
     }
 }
@@ -39,6 +39,7 @@ pub struct CapacityUnitsConfigurationBuilder {
 }
 impl CapacityUnitsConfigurationBuilder {
     /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
+    /// This field is required.
     pub fn storage_capacity_units(mut self, input: i32) -> Self {
         self.storage_capacity_units = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl CapacityUnitsConfigurationBuilder {
     /// <p>The amount of extra query capacity for an index and <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a> capacity.</p>
     /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately 8,000 queries per day. You can add up to 100 extra capacity units.</p>
     /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
+    /// This field is required.
     pub fn query_capacity_units(mut self, input: i32) -> Self {
         self.query_capacity_units = ::std::option::Option::Some(input);
         self
@@ -73,10 +75,23 @@ impl CapacityUnitsConfigurationBuilder {
         &self.query_capacity_units
     }
     /// Consumes the builder and constructs a [`CapacityUnitsConfiguration`](crate::types::CapacityUnitsConfiguration).
-    pub fn build(self) -> crate::types::CapacityUnitsConfiguration {
-        crate::types::CapacityUnitsConfiguration {
-            storage_capacity_units: self.storage_capacity_units,
-            query_capacity_units: self.query_capacity_units,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`storage_capacity_units`](crate::types::builders::CapacityUnitsConfigurationBuilder::storage_capacity_units)
+    /// - [`query_capacity_units`](crate::types::builders::CapacityUnitsConfigurationBuilder::query_capacity_units)
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityUnitsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CapacityUnitsConfiguration {
+            storage_capacity_units: self.storage_capacity_units.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "storage_capacity_units",
+                    "storage_capacity_units was not specified but it is required when building CapacityUnitsConfiguration",
+                )
+            })?,
+            query_capacity_units: self.query_capacity_units.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "query_capacity_units",
+                    "query_capacity_units was not specified but it is required when building CapacityUnitsConfiguration",
+                )
+            })?,
+        })
     }
 }

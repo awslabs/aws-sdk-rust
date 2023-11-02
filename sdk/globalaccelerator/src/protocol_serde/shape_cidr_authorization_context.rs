@@ -3,11 +3,11 @@ pub fn ser_cidr_authorization_context(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CidrAuthorizationContext,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.message {
-        object.key("Message").string(var_1.as_str());
+    {
+        object.key("Message").string(input.message.as_str());
     }
-    if let Some(var_2) = &input.signature {
-        object.key("Signature").string(var_2.as_str());
+    {
+        object.key("Signature").string(input.signature.as_str());
     }
     Ok(())
 }

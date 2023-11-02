@@ -63,6 +63,7 @@ pub struct EdgeModelStatBuilder {
 }
 impl EdgeModelStatBuilder {
     /// <p>The name of the model.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl EdgeModelStatBuilder {
         &self.model_name
     }
     /// <p>The model version.</p>
+    /// This field is required.
     pub fn model_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl EdgeModelStatBuilder {
         &self.model_version
     }
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
+    /// This field is required.
     pub fn offline_device_count(mut self, input: i64) -> Self {
         self.offline_device_count = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl EdgeModelStatBuilder {
         &self.offline_device_count
     }
     /// <p>The number of devices that have this model version and have a heart beat. </p>
+    /// This field is required.
     pub fn connected_device_count(mut self, input: i64) -> Self {
         self.connected_device_count = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl EdgeModelStatBuilder {
         &self.connected_device_count
     }
     /// <p>The number of devices that have this model version, a heart beat, and are currently running.</p>
+    /// This field is required.
     pub fn active_device_count(mut self, input: i64) -> Self {
         self.active_device_count = ::std::option::Option::Some(input);
         self
@@ -133,6 +138,7 @@ impl EdgeModelStatBuilder {
         &self.active_device_count
     }
     /// <p>The number of devices with this model version and are producing sample data.</p>
+    /// This field is required.
     pub fn sampling_device_count(mut self, input: i64) -> Self {
         self.sampling_device_count = ::std::option::Option::Some(input);
         self

@@ -20,8 +20,10 @@ impl UpdateSipMediaApplicationInput {
         self.name.as_deref()
     }
     /// <p>The new set of endpoints for the specified SIP media application.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::SipMediaApplicationEndpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSipMediaApplicationInput {
@@ -41,6 +43,7 @@ pub struct UpdateSipMediaApplicationInputBuilder {
 }
 impl UpdateSipMediaApplicationInputBuilder {
     /// <p>The SIP media application ID.</p>
+    /// This field is required.
     pub fn sip_media_application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self

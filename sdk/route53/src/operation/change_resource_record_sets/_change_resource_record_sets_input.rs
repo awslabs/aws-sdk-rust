@@ -35,6 +35,7 @@ pub struct ChangeResourceRecordSetsInputBuilder {
 }
 impl ChangeResourceRecordSetsInputBuilder {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ChangeResourceRecordSetsInputBuilder {
         &self.hosted_zone_id
     }
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
+    /// This field is required.
     pub fn change_batch(mut self, input: crate::types::ChangeBatch) -> Self {
         self.change_batch = ::std::option::Option::Some(input);
         self

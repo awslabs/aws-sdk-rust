@@ -63,6 +63,7 @@ impl FinalAutoMlJobObjectiveMetricBuilder {
         &self.r#type
     }
     /// <p>The name of the metric with the best result. For a description of the possible objective metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: crate::types::AutoMlMetricEnum) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl FinalAutoMlJobObjectiveMetricBuilder {
         &self.metric_name
     }
     /// <p>The value of the metric with the best result.</p>
+    /// This field is required.
     pub fn value(mut self, input: f32) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

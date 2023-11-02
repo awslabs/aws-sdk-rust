@@ -9,44 +9,44 @@ pub fn ser_anomaly_subscription(
     if let Some(var_2) = &input.account_id {
         object.key("AccountId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.monitor_arn_list {
-        let mut array_4 = object.key("MonitorArnList").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("MonitorArnList").start_array();
+        for item_4 in &input.monitor_arn_list {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.subscribers {
-        let mut array_7 = object.key("Subscribers").start_array();
-        for item_8 in var_6 {
+    {
+        let mut array_5 = object.key("Subscribers").start_array();
+        for item_6 in &input.subscribers {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_subscriber::ser_subscriber(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_subscriber::ser_subscriber(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_7.finish();
+        array_5.finish();
     }
-    if let Some(var_10) = &input.threshold {
+    if let Some(var_8) = &input.threshold {
         object.key("Threshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_10).into()),
+            ::aws_smithy_types::Number::Float((*var_8).into()),
         );
     }
-    if let Some(var_11) = &input.frequency {
-        object.key("Frequency").string(var_11.as_str());
+    {
+        object.key("Frequency").string(input.frequency.as_str());
     }
-    if let Some(var_12) = &input.subscription_name {
-        object.key("SubscriptionName").string(var_12.as_str());
+    {
+        object.key("SubscriptionName").string(input.subscription_name.as_str());
     }
-    if let Some(var_13) = &input.threshold_expression {
+    if let Some(var_9) = &input.threshold_expression {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("ThresholdExpression").start_object();
-        crate::protocol_serde::shape_expression::ser_expression(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_10 = object.key("ThresholdExpression").start_object();
+        crate::protocol_serde::shape_expression::ser_expression(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }
@@ -118,7 +118,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::anomaly_subscription_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

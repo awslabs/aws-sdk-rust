@@ -5,11 +5,11 @@ pub fn ser_delete(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.objects {
-        for list_item_2 in var_1 {
+    {
+        for list_item_1 in &input.objects {
             {
                 let inner_writer = scope.start_el("Object");
-                crate::protocol_serde::shape_object_identifier::ser_object_identifier(list_item_2, inner_writer)?
+                crate::protocol_serde::shape_object_identifier::ser_object_identifier(list_item_1, inner_writer)?
             }
         }
     }

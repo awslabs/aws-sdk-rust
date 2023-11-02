@@ -24,8 +24,10 @@ impl Parameters {
     }
     /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
     /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    pub fn exclude_data_volume_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.exclude_data_volume_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_data_volume_tags.is_none()`.
+    pub fn exclude_data_volume_tags(&self) -> &[crate::types::Tag] {
+        self.exclude_data_volume_tags.as_deref().unwrap_or_default()
     }
 }
 impl Parameters {

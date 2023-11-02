@@ -28,6 +28,7 @@ pub struct CatalogConfigurationDescriptionBuilder {
 }
 impl CatalogConfigurationDescriptionBuilder {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    /// This field is required.
     pub fn glue_data_catalog_configuration_description(mut self, input: crate::types::GlueDataCatalogConfigurationDescription) -> Self {
         self.glue_data_catalog_configuration_description = ::std::option::Option::Some(input);
         self

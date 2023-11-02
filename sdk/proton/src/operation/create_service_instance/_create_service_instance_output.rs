@@ -34,6 +34,7 @@ pub struct CreateServiceInstanceOutputBuilder {
 }
 impl CreateServiceInstanceOutputBuilder {
     /// <p>The detailed data of the service instance being created.</p>
+    /// This field is required.
     pub fn service_instance(mut self, input: crate::types::ServiceInstance) -> Self {
         self.service_instance = ::std::option::Option::Some(input);
         self

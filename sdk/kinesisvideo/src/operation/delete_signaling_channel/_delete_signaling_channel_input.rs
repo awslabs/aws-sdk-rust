@@ -34,6 +34,7 @@ pub struct DeleteSignalingChannelInputBuilder {
 }
 impl DeleteSignalingChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self

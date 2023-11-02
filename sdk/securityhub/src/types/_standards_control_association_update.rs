@@ -49,6 +49,7 @@ pub struct StandardsControlAssociationUpdateBuilder {
 }
 impl StandardsControlAssociationUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
+    /// This field is required.
     pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl StandardsControlAssociationUpdateBuilder {
         &self.standards_arn
     }
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
+    /// This field is required.
     pub fn security_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_control_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl StandardsControlAssociationUpdateBuilder {
         &self.security_control_id
     }
     /// <p>The desired enablement status of the control in the standard.</p>
+    /// This field is required.
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
         self

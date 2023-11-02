@@ -27,6 +27,7 @@ pub struct DeleteFrameworkInputBuilder {
 }
 impl DeleteFrameworkInputBuilder {
     /// <p>The unique name of a framework.</p>
+    /// This field is required.
     pub fn framework_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_name = ::std::option::Option::Some(input.into());
         self

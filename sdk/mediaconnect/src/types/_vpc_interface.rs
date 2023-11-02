@@ -23,8 +23,10 @@ impl VpcInterface {
         self.name.as_deref()
     }
     /// IDs of the network interfaces created in customer's account by MediaConnect.
-    pub fn network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
+    pub fn network_interface_ids(&self) -> &[::std::string::String] {
+        self.network_interface_ids.as_deref().unwrap_or_default()
     }
     /// The type of network interface.
     pub fn network_interface_type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
@@ -35,8 +37,10 @@ impl VpcInterface {
         self.role_arn.as_deref()
     }
     /// Security Group IDs to be used on ENI.
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// Subnet must be in the AZ of the Flow
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -63,6 +67,7 @@ pub struct VpcInterfaceBuilder {
 }
 impl VpcInterfaceBuilder {
     /// Immutable and has to be a unique against other VpcInterfaces in this Flow.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl VpcInterfaceBuilder {
         &self.network_interface_ids
     }
     /// The type of network interface.
+    /// This field is required.
     pub fn network_interface_type(mut self, input: crate::types::NetworkInterfaceType) -> Self {
         self.network_interface_type = ::std::option::Option::Some(input);
         self
@@ -111,6 +117,7 @@ impl VpcInterfaceBuilder {
         &self.network_interface_type
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +152,7 @@ impl VpcInterfaceBuilder {
         &self.security_group_ids
     }
     /// Subnet must be in the AZ of the Flow
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self

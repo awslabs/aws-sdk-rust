@@ -9,8 +9,10 @@ pub struct DescribeSecurityGroupReferencesOutput {
 }
 impl DescribeSecurityGroupReferencesOutput {
     /// <p>Information about the VPCs with the referencing security groups.</p>
-    pub fn security_group_reference_set(&self) -> ::std::option::Option<&[crate::types::SecurityGroupReference]> {
-        self.security_group_reference_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_reference_set.is_none()`.
+    pub fn security_group_reference_set(&self) -> &[crate::types::SecurityGroupReference] {
+        self.security_group_reference_set.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSecurityGroupReferencesOutput {

@@ -35,6 +35,7 @@ pub struct AccessEndpointBuilder {
 }
 impl AccessEndpointBuilder {
     /// <p>The type of interface endpoint.</p>
+    /// This field is required.
     pub fn endpoint_type(mut self, input: crate::types::AccessEndpointType) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input);
         self

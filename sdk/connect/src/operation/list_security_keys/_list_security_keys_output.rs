@@ -11,8 +11,10 @@ pub struct ListSecurityKeysOutput {
 }
 impl ListSecurityKeysOutput {
     /// <p>The security keys.</p>
-    pub fn security_keys(&self) -> ::std::option::Option<&[crate::types::SecurityKey]> {
-        self.security_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_keys.is_none()`.
+    pub fn security_keys(&self) -> &[crate::types::SecurityKey] {
+        self.security_keys.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

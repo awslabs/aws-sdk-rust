@@ -55,6 +55,7 @@ pub struct StartActivityStreamInputBuilder {
 }
 impl StartActivityStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartActivityStreamInputBuilder {
         &self.resource_arn
     }
     /// <p>Specifies the mode of the database activity stream. Database events such as a change or access generate an activity stream event. The database session can handle these events either synchronously or asynchronously.</p>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::ActivityStreamMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl StartActivityStreamInputBuilder {
         &self.mode
     }
     /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self

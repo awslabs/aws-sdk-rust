@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationConfiguration {
     /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-    pub ruleset_arn: ::std::option::Option<::std::string::String>,
+    pub ruleset_arn: ::std::string::String,
     /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
 }
 impl ValidationConfiguration {
     /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-    pub fn ruleset_arn(&self) -> ::std::option::Option<&str> {
-        self.ruleset_arn.as_deref()
+    pub fn ruleset_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.ruleset_arn.deref()
     }
     /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
     pub fn validation_mode(&self) -> ::std::option::Option<&crate::types::ValidationMode> {
@@ -35,6 +36,7 @@ pub struct ValidationConfigurationBuilder {
 }
 impl ValidationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
+    /// This field is required.
     pub fn ruleset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ValidationConfigurationBuilder {
         &self.validation_mode
     }
     /// Consumes the builder and constructs a [`ValidationConfiguration`](crate::types::ValidationConfiguration).
-    pub fn build(self) -> crate::types::ValidationConfiguration {
-        crate::types::ValidationConfiguration {
-            ruleset_arn: self.ruleset_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ruleset_arn`](crate::types::builders::ValidationConfigurationBuilder::ruleset_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValidationConfiguration {
+            ruleset_arn: self.ruleset_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ruleset_arn",
+                    "ruleset_arn was not specified but it is required when building ValidationConfiguration",
+                )
+            })?,
             validation_mode: self.validation_mode,
-        }
+        })
     }
 }

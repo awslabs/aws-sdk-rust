@@ -15,8 +15,10 @@ impl S3BucketDefinitionForJob {
         self.account_id.as_deref()
     }
     /// <p>An array that lists the names of the buckets.</p>
-    pub fn buckets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.buckets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
+    pub fn buckets(&self) -> &[::std::string::String] {
+        self.buckets.as_deref().unwrap_or_default()
     }
 }
 impl S3BucketDefinitionForJob {
@@ -35,6 +37,7 @@ pub struct S3BucketDefinitionForJobBuilder {
 }
 impl S3BucketDefinitionForJobBuilder {
     /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

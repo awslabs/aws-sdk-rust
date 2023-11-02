@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldItem {
     /// <p>Unique identifier of a field.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl FieldItem {
     /// <p>Unique identifier of a field.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl FieldItem {
@@ -28,6 +29,7 @@ pub struct FieldItemBuilder {
 }
 impl FieldItemBuilder {
     /// <p>Unique identifier of a field.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl FieldItemBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`FieldItem`](crate::types::FieldItem).
-    pub fn build(self) -> crate::types::FieldItem {
-        crate::types::FieldItem { id: self.id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::FieldItemBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldItem {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building FieldItem",
+                )
+            })?,
+        })
     }
 }

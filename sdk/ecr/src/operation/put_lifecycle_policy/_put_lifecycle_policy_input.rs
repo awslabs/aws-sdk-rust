@@ -55,6 +55,7 @@ impl PutLifecyclePolicyInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository to receive the policy.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutLifecyclePolicyInputBuilder {
         &self.repository_name
     }
     /// <p>The JSON repository policy text to apply to the repository.</p>
+    /// This field is required.
     pub fn lifecycle_policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self

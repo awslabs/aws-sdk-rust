@@ -5,7 +5,7 @@
 pub struct DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    pub state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub state_machine_arn: ::std::string::String,
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -16,18 +16,18 @@ pub struct DescribeStateMachineOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The current status of the state machine.</p>
     pub status: ::std::option::Option<crate::types::StateMachineStatus>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub definition: ::std::option::Option<::std::string::String>,
+    pub definition: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
-    pub r#type: ::std::option::Option<crate::types::StateMachineType>,
+    pub r#type: crate::types::StateMachineType,
     /// <p>The date the state machine is created.</p>
     /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
-    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>Selects whether X-Ray tracing is enabled.</p>
@@ -44,8 +44,9 @@ pub struct DescribeStateMachineOutput {
 impl DescribeStateMachineOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
-        self.state_machine_arn.as_deref()
+    pub fn state_machine_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.state_machine_arn.deref()
     }
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -57,29 +58,32 @@ impl DescribeStateMachineOutput {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The current status of the state machine.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::StateMachineStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> ::std::option::Option<&str> {
-        self.definition.as_deref()
+    pub fn definition(&self) -> &str {
+        use std::ops::Deref;
+        self.definition.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StateMachineType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::StateMachineType {
+        &self.r#type
     }
     /// <p>The date the state machine is created.</p>
     /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date.as_ref()
+    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
@@ -155,6 +159,7 @@ pub struct DescribeStateMachineOutputBuilder {
 impl DescribeStateMachineOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
+    /// This field is required.
     pub fn state_machine_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
@@ -180,6 +185,7 @@ impl DescribeStateMachineOutputBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -226,6 +232,7 @@ impl DescribeStateMachineOutputBuilder {
         &self.status
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    /// This field is required.
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
         self
@@ -240,6 +247,7 @@ impl DescribeStateMachineOutputBuilder {
         &self.definition
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -254,6 +262,7 @@ impl DescribeStateMachineOutputBuilder {
         &self.role_arn
     }
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::StateMachineType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -269,6 +278,7 @@ impl DescribeStateMachineOutputBuilder {
     }
     /// <p>The date the state machine is created.</p>
     /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
+    /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
@@ -367,22 +377,62 @@ impl DescribeStateMachineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeStateMachineOutput`](crate::operation::describe_state_machine::DescribeStateMachineOutput).
-    pub fn build(self) -> crate::operation::describe_state_machine::DescribeStateMachineOutput {
-        crate::operation::describe_state_machine::DescribeStateMachineOutput {
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state_machine_arn`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::state_machine_arn)
+    /// - [`name`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::name)
+    /// - [`definition`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::definition)
+    /// - [`role_arn`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::role_arn)
+    /// - [`r#type`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::r#type)
+    /// - [`creation_date`](crate::operation::describe_state_machine::builders::DescribeStateMachineOutputBuilder::creation_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_state_machine::DescribeStateMachineOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_state_machine::DescribeStateMachineOutput {
+            state_machine_arn: self.state_machine_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_machine_arn",
+                    "state_machine_arn was not specified but it is required when building DescribeStateMachineOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DescribeStateMachineOutput",
+                )
+            })?,
             status: self.status,
-            definition: self.definition,
-            role_arn: self.role_arn,
-            r#type: self.r#type,
-            creation_date: self.creation_date,
+            definition: self.definition.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "definition",
+                    "definition was not specified but it is required when building DescribeStateMachineOutput",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building DescribeStateMachineOutput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DescribeStateMachineOutput",
+                )
+            })?,
+            creation_date: self.creation_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date",
+                    "creation_date was not specified but it is required when building DescribeStateMachineOutput",
+                )
+            })?,
             logging_configuration: self.logging_configuration,
             tracing_configuration: self.tracing_configuration,
             label: self.label,
             revision_id: self.revision_id,
             description: self.description,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeStateMachineOutputBuilder {

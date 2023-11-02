@@ -53,6 +53,7 @@ pub struct OfflineStoreConfigBuilder {
 }
 impl OfflineStoreConfigBuilder {
     /// <p>The Amazon Simple Storage (Amazon S3) location of <code>OfflineStore</code>.</p>
+    /// This field is required.
     pub fn s3_storage_config(mut self, input: crate::types::S3StorageConfig) -> Self {
         self.s3_storage_config = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct DescribeModelVersionsOutput {
 }
 impl DescribeModelVersionsOutput {
     /// <p>The model version details.</p>
-    pub fn model_version_details(&self) -> ::std::option::Option<&[crate::types::ModelVersionDetail]> {
-        self.model_version_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_version_details.is_none()`.
+    pub fn model_version_details(&self) -> &[crate::types::ModelVersionDetail] {
+        self.model_version_details.as_deref().unwrap_or_default()
     }
     /// <p>The next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

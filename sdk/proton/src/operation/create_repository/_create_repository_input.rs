@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRepositoryInput {
     /// <p>The repository provider.</p>
-    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
-    pub connection_arn: ::std::option::Option<::std::string::String>,
+    pub connection_arn: ::std::string::String,
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
@@ -17,16 +17,18 @@ pub struct CreateRepositoryInput {
 }
 impl CreateRepositoryInput {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+        &self.provider
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
-        self.connection_arn.as_deref()
+    pub fn connection_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.connection_arn.deref()
     }
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&str> {
@@ -34,8 +36,10 @@ impl CreateRepositoryInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateRepositoryInput {
@@ -57,6 +61,7 @@ pub struct CreateRepositoryInputBuilder {
 }
 impl CreateRepositoryInputBuilder {
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -71,6 +76,7 @@ impl CreateRepositoryInputBuilder {
         &self.provider
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +91,7 @@ impl CreateRepositoryInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self
@@ -136,13 +143,32 @@ impl CreateRepositoryInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provider`](crate::operation::create_repository::builders::CreateRepositoryInputBuilder::provider)
+    /// - [`name`](crate::operation::create_repository::builders::CreateRepositoryInputBuilder::name)
+    /// - [`connection_arn`](crate::operation::create_repository::builders::CreateRepositoryInputBuilder::connection_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_repository::CreateRepositoryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_repository::CreateRepositoryInput {
-            provider: self.provider,
-            name: self.name,
-            connection_arn: self.connection_arn,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building CreateRepositoryInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateRepositoryInput",
+                )
+            })?,
+            connection_arn: self.connection_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connection_arn",
+                    "connection_arn was not specified but it is required when building CreateRepositoryInput",
+                )
+            })?,
             encryption_key: self.encryption_key,
             tags: self.tags,
         })

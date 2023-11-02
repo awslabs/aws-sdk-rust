@@ -40,8 +40,10 @@ impl CreateDestinationInput {
         self.role_arn.as_deref()
     }
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct CreateDestinationInputBuilder {
 }
 impl CreateDestinationInputBuilder {
     /// <p>The name of the new resource.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateDestinationInputBuilder {
         &self.name
     }
     /// <p>The type of value in <code>Expression</code>.</p>
+    /// This field is required.
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
         self.expression_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl CreateDestinationInputBuilder {
         &self.expression_type
     }
     /// <p>The rule name or topic rule to send messages to.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +130,7 @@ impl CreateDestinationInputBuilder {
         &self.description
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

@@ -57,8 +57,10 @@ impl OrderableReplicationInstance {
         self.included_allocated_storage
     }
     /// <p>List of Availability Zones for this replication instance.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>

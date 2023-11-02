@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetRevisionsInput {
     /// <p>The unique identifier for a data set.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The maximum number of results returned by a single call.</p>
     pub max_results: i32,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -12,8 +12,9 @@ pub struct ListDataSetRevisionsInput {
 }
 impl ListDataSetRevisionsInput {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The maximum number of results returned by a single call.</p>
     pub fn max_results(&self) -> i32 {
@@ -41,6 +42,7 @@ pub struct ListDataSetRevisionsInputBuilder {
 }
 impl ListDataSetRevisionsInputBuilder {
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -83,12 +85,19 @@ impl ListDataSetRevisionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_id`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsInputBuilder::data_set_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_data_set_revisions::ListDataSetRevisionsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_data_set_revisions::ListDataSetRevisionsInput {
-            data_set_id: self.data_set_id,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building ListDataSetRevisionsInput",
+                )
+            })?,
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,
         })

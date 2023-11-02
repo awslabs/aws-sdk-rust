@@ -43,12 +43,16 @@ impl ApplicationDescription {
         self.date_updated.as_ref()
     }
     /// <p>The names of the versions for this application.</p>
-    pub fn versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[::std::string::String] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p>The names of the configuration templates associated with this application.</p>
-    pub fn configuration_templates(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_templates.is_none()`.
+    pub fn configuration_templates(&self) -> &[::std::string::String] {
+        self.configuration_templates.as_deref().unwrap_or_default()
     }
     /// <p>The lifecycle settings for the application.</p>
     pub fn resource_lifecycle_config(&self) -> ::std::option::Option<&crate::types::ApplicationResourceLifecycleConfig> {

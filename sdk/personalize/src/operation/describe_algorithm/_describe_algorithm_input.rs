@@ -27,6 +27,7 @@ pub struct DescribeAlgorithmInputBuilder {
 }
 impl DescribeAlgorithmInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
+    /// This field is required.
     pub fn algorithm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.algorithm_arn = ::std::option::Option::Some(input.into());
         self

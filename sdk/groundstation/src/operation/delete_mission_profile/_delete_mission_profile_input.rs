@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub mission_profile_id: ::std::option::Option<::std::string::String>,
+    pub mission_profile_id: ::std::string::String,
 }
 impl DeleteMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
-        self.mission_profile_id.as_deref()
+    pub fn mission_profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.mission_profile_id.deref()
     }
 }
 impl DeleteMissionProfileInput {
@@ -28,6 +29,7 @@ pub struct DeleteMissionProfileInputBuilder {
 }
 impl DeleteMissionProfileInputBuilder {
     /// <p>UUID of a mission profile.</p>
+    /// This field is required.
     pub fn mission_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -42,12 +44,19 @@ impl DeleteMissionProfileInputBuilder {
         &self.mission_profile_id
     }
     /// Consumes the builder and constructs a [`DeleteMissionProfileInput`](crate::operation::delete_mission_profile::DeleteMissionProfileInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mission_profile_id`](crate::operation::delete_mission_profile::builders::DeleteMissionProfileInputBuilder::mission_profile_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_mission_profile::DeleteMissionProfileInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_mission_profile::DeleteMissionProfileInput {
-            mission_profile_id: self.mission_profile_id,
+            mission_profile_id: self.mission_profile_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mission_profile_id",
+                    "mission_profile_id was not specified but it is required when building DeleteMissionProfileInput",
+                )
+            })?,
         })
     }
 }

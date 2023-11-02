@@ -28,8 +28,10 @@ impl PutOrganizationConfigRuleInput {
         self.organization_custom_rule_metadata.as_ref()
     }
     /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
-    pub fn excluded_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_accounts.is_none()`.
+    pub fn excluded_accounts(&self) -> &[::std::string::String] {
+        self.excluded_accounts.as_deref().unwrap_or_default()
     }
     /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
     pub fn organization_custom_policy_rule_metadata(&self) -> ::std::option::Option<&crate::types::OrganizationCustomPolicyRuleMetadata> {
@@ -55,6 +57,7 @@ pub struct PutOrganizationConfigRuleInputBuilder {
 }
 impl PutOrganizationConfigRuleInputBuilder {
     /// <p>The name that you assign to an organization Config rule.</p>
+    /// This field is required.
     pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_name = ::std::option::Option::Some(input.into());
         self

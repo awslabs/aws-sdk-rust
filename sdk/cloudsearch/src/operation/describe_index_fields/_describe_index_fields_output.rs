@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
-    pub index_fields: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
+    pub index_fields: ::std::vec::Vec<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
 }
 impl DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
-    pub fn index_fields(&self) -> ::std::option::Option<&[crate::types::IndexFieldStatus]> {
-        self.index_fields.as_deref()
+    pub fn index_fields(&self) -> &[crate::types::IndexFieldStatus] {
+        use std::ops::Deref;
+        self.index_fields.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeIndexFieldsOutput {
@@ -64,10 +65,20 @@ impl DescribeIndexFieldsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
-    pub fn build(self) -> crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
-        crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
-            index_fields: self.index_fields,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_fields`](crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder::index_fields)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
+            index_fields: self.index_fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_fields",
+                    "index_fields was not specified but it is required when building DescribeIndexFieldsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

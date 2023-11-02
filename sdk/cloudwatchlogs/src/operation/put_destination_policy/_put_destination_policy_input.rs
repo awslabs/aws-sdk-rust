@@ -43,6 +43,7 @@ pub struct PutDestinationPolicyInputBuilder {
 }
 impl PutDestinationPolicyInputBuilder {
     /// <p>A name for an existing destination.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl PutDestinationPolicyInputBuilder {
         &self.destination_name
     }
     /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
+    /// This field is required.
     pub fn access_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy = ::std::option::Option::Some(input.into());
         self

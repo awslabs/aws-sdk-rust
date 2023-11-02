@@ -3,8 +3,8 @@ pub fn ser_search_in_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchInItem,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.attribute {
-        object.key("attribute").string(var_1.as_str());
+    {
+        object.key("attribute").string(input.attribute.as_str());
     }
     Ok(())
 }

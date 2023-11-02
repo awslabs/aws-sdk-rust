@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestorePhoneNumber`](crate::operation::restore_phone_number::builders::RestorePhoneNumberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`phone_number_id(impl Into<String>)`](crate::operation::restore_phone_number::builders::RestorePhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::restore_phone_number::builders::RestorePhoneNumberFluentBuilder::set_phone_number_id): <p>The ID of the phone number being restored.</p>
+    ///   - [`phone_number_id(impl Into<String>)`](crate::operation::restore_phone_number::builders::RestorePhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::restore_phone_number::builders::RestorePhoneNumberFluentBuilder::set_phone_number_id):<br>required: **true**<br><p>The ID of the phone number being restored.</p><br>
     /// - On success, responds with [`RestorePhoneNumberOutput`](crate::operation::restore_phone_number::RestorePhoneNumberOutput) with field(s):
     ///   - [`phone_number(Option<PhoneNumber>)`](crate::operation::restore_phone_number::RestorePhoneNumberOutput::phone_number): <p>The restored phone number.</p>
     /// - On failure, responds with [`SdkError<RestorePhoneNumberError>`](crate::operation::restore_phone_number::RestorePhoneNumberError)

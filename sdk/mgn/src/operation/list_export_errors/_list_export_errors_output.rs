@@ -12,8 +12,10 @@ pub struct ListExportErrorsOutput {
 }
 impl ListExportErrorsOutput {
     /// <p>List export errors response items.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ExportTaskError]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ExportTaskError] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>List export errors response next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

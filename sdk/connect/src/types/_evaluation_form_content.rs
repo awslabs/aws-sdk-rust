@@ -7,15 +7,15 @@ pub struct EvaluationFormContent {
     /// <p>A version of the evaluation form.</p>
     pub evaluation_form_version: i32,
     /// <p>The unique identifier for the evaluation form.</p>
-    pub evaluation_form_id: ::std::option::Option<::std::string::String>,
+    pub evaluation_form_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub evaluation_form_arn: ::std::option::Option<::std::string::String>,
+    pub evaluation_form_arn: ::std::string::String,
     /// <p>A title of the evaluation form.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The description of the evaluation form.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
+    pub items: ::std::vec::Vec<crate::types::EvaluationFormItem>,
     /// <p>A scoring strategy of the evaluation form.</p>
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
 }
@@ -25,24 +25,28 @@ impl EvaluationFormContent {
         self.evaluation_form_version
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> ::std::option::Option<&str> {
-        self.evaluation_form_id.as_deref()
+    pub fn evaluation_form_id(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_form_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn evaluation_form_arn(&self) -> ::std::option::Option<&str> {
-        self.evaluation_form_arn.as_deref()
+    pub fn evaluation_form_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.evaluation_form_arn.deref()
     }
     /// <p>A title of the evaluation form.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The description of the evaluation form.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EvaluationFormItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::EvaluationFormItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>A scoring strategy of the evaluation form.</p>
     pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
@@ -70,6 +74,7 @@ pub struct EvaluationFormContentBuilder {
 }
 impl EvaluationFormContentBuilder {
     /// <p>A version of the evaluation form.</p>
+    /// This field is required.
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.evaluation_form_version = ::std::option::Option::Some(input);
         self
@@ -84,6 +89,7 @@ impl EvaluationFormContentBuilder {
         &self.evaluation_form_version
     }
     /// <p>The unique identifier for the evaluation form.</p>
+    /// This field is required.
     pub fn evaluation_form_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl EvaluationFormContentBuilder {
         &self.evaluation_form_id
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
+    /// This field is required.
     pub fn evaluation_form_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_form_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +119,7 @@ impl EvaluationFormContentBuilder {
         &self.evaluation_form_arn
     }
     /// <p>A title of the evaluation form.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -174,15 +182,40 @@ impl EvaluationFormContentBuilder {
         &self.scoring_strategy
     }
     /// Consumes the builder and constructs a [`EvaluationFormContent`](crate::types::EvaluationFormContent).
-    pub fn build(self) -> crate::types::EvaluationFormContent {
-        crate::types::EvaluationFormContent {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluation_form_id`](crate::types::builders::EvaluationFormContentBuilder::evaluation_form_id)
+    /// - [`evaluation_form_arn`](crate::types::builders::EvaluationFormContentBuilder::evaluation_form_arn)
+    /// - [`title`](crate::types::builders::EvaluationFormContentBuilder::title)
+    /// - [`items`](crate::types::builders::EvaluationFormContentBuilder::items)
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormContent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EvaluationFormContent {
             evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
-            evaluation_form_id: self.evaluation_form_id,
-            evaluation_form_arn: self.evaluation_form_arn,
-            title: self.title,
+            evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "evaluation_form_id",
+                    "evaluation_form_id was not specified but it is required when building EvaluationFormContent",
+                )
+            })?,
+            evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "evaluation_form_arn",
+                    "evaluation_form_arn was not specified but it is required when building EvaluationFormContent",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building EvaluationFormContent",
+                )
+            })?,
             description: self.description,
-            items: self.items,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building EvaluationFormContent",
+                )
+            })?,
             scoring_strategy: self.scoring_strategy,
-        }
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualMfaDevicesOutput {
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
-    pub virtual_mfa_devices: ::std::option::Option<::std::vec::Vec<crate::types::VirtualMfaDevice>>,
+    pub virtual_mfa_devices: ::std::vec::Vec<crate::types::VirtualMfaDevice>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListVirtualMfaDevicesOutput {
 }
 impl ListVirtualMfaDevicesOutput {
     /// <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
-    pub fn virtual_mfa_devices(&self) -> ::std::option::Option<&[crate::types::VirtualMfaDevice]> {
-        self.virtual_mfa_devices.as_deref()
+    pub fn virtual_mfa_devices(&self) -> &[crate::types::VirtualMfaDevice] {
+        use std::ops::Deref;
+        self.virtual_mfa_devices.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,22 @@ impl ListVirtualMfaDevicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVirtualMfaDevicesOutput`](crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput).
-    pub fn build(self) -> crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput {
-        crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput {
-            virtual_mfa_devices: self.virtual_mfa_devices,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_mfa_devices`](crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesOutputBuilder::virtual_mfa_devices)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput {
+            virtual_mfa_devices: self.virtual_mfa_devices.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_mfa_devices",
+                    "virtual_mfa_devices was not specified but it is required when building ListVirtualMfaDevicesOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

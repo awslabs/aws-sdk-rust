@@ -55,16 +55,20 @@ impl ServerDetail {
         self.status_message.as_deref()
     }
     /// <p> A list of anti-pattern severity summaries. </p>
-    pub fn list_antipattern_severity_summary(&self) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
-        self.list_antipattern_severity_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.list_antipattern_severity_summary.is_none()`.
+    pub fn list_antipattern_severity_summary(&self) -> &[crate::types::AntipatternSeveritySummary] {
+        self.list_antipattern_severity_summary.as_deref().unwrap_or_default()
     }
     /// <p> System information about the server. </p>
     pub fn system_info(&self) -> ::std::option::Option<&crate::types::SystemInfo> {
         self.system_info.as_ref()
     }
     /// <p> A list of strategy summaries. </p>
-    pub fn application_component_strategy_summary(&self) -> ::std::option::Option<&[crate::types::StrategySummary]> {
-        self.application_component_strategy_summary.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_component_strategy_summary.is_none()`.
+    pub fn application_component_strategy_summary(&self) -> &[crate::types::StrategySummary] {
+        self.application_component_strategy_summary.as_deref().unwrap_or_default()
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
     pub fn antipattern_report_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {

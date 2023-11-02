@@ -26,8 +26,10 @@ impl CreateResourceServerInput {
         self.name.as_deref()
     }
     /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
-    pub fn scopes(&self) -> ::std::option::Option<&[crate::types::ResourceServerScopeType]> {
-        self.scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
+    pub fn scopes(&self) -> &[crate::types::ResourceServerScopeType] {
+        self.scopes.as_deref().unwrap_or_default()
     }
 }
 impl CreateResourceServerInput {
@@ -48,6 +50,7 @@ pub struct CreateResourceServerInputBuilder {
 }
 impl CreateResourceServerInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateResourceServerInputBuilder {
         &self.user_pool_id
     }
     /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateResourceServerInputBuilder {
         &self.identifier
     }
     /// <p>A friendly name for the resource server.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

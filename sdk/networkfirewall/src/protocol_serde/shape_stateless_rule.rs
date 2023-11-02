@@ -9,10 +9,10 @@ pub fn ser_stateless_rule(
         crate::protocol_serde::shape_rule_definition::ser_rule_definition(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.priority {
+    {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.priority).into()),
         );
     }
     Ok(())
@@ -53,7 +53,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::stateless_rule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

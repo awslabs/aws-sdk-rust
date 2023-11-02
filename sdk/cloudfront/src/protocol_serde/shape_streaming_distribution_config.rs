@@ -5,42 +5,43 @@ pub fn ser_streaming_distribution_config(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.caller_reference {
+    {
         let mut inner_writer = scope.start_el("CallerReference").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.caller_reference.as_str());
     }
-    if let Some(var_2) = &input.s3_origin {
+    if let Some(var_1) = &input.s3_origin {
         let inner_writer = scope.start_el("S3Origin");
-        crate::protocol_serde::shape_s3_origin::ser_s3_origin(var_2, inner_writer)?
+        crate::protocol_serde::shape_s3_origin::ser_s3_origin(var_1, inner_writer)?
     }
-    if let Some(var_3) = &input.aliases {
+    if let Some(var_2) = &input.aliases {
         let inner_writer = scope.start_el("Aliases");
-        crate::protocol_serde::shape_aliases::ser_aliases(var_3, inner_writer)?
+        crate::protocol_serde::shape_aliases::ser_aliases(var_2, inner_writer)?
     }
-    if let Some(var_4) = &input.comment {
+    {
         let mut inner_writer = scope.start_el("Comment").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(input.comment.as_str());
     }
-    if let Some(var_5) = &input.logging {
+    if let Some(var_3) = &input.logging {
         let inner_writer = scope.start_el("Logging");
-        crate::protocol_serde::shape_streaming_logging_config::ser_streaming_logging_config(var_5, inner_writer)?
+        crate::protocol_serde::shape_streaming_logging_config::ser_streaming_logging_config(var_3, inner_writer)?
     }
-    if let Some(var_6) = &input.trusted_signers {
+    if let Some(var_4) = &input.trusted_signers {
         let inner_writer = scope.start_el("TrustedSigners");
-        crate::protocol_serde::shape_trusted_signers::ser_trusted_signers(var_6, inner_writer)?
+        crate::protocol_serde::shape_trusted_signers::ser_trusted_signers(var_4, inner_writer)?
     }
-    if let Some(var_7) = &input.price_class {
+    if let Some(var_5) = &input.price_class {
         let mut inner_writer = scope.start_el("PriceClass").finish();
-        inner_writer.data(var_7.as_str());
+        inner_writer.data(var_5.as_str());
     }
-    if let Some(var_8) = &input.enabled {
+    {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_8).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_streaming_distribution_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::StreamingDistributionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -49,6 +50,39 @@ pub fn de_streaming_distribution_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CallerReference") /* CallerReference com.amazonaws.cloudfront#StreamingDistributionConfig$CallerReference */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_caller_reference(var_6);
+            }
+            ,
+            s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionConfig$S3Origin */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_s3_origin::de_s3_origin(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_s3_origin(var_7);
+            }
+            ,
+            s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionConfig$Aliases */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_aliases(var_8);
+            }
+            ,
+            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#StreamingDistributionConfig$Comment */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -58,64 +92,31 @@ pub fn de_streaming_distribution_config(
                         ?
                     )
                 ;
-                builder = builder.set_caller_reference(var_9);
-            }
-            ,
-            s if s.matches("S3Origin") /* S3Origin com.amazonaws.cloudfront#StreamingDistributionConfig$S3Origin */ =>  {
-                let var_10 =
-                    Some(
-                        crate::protocol_serde::shape_s3_origin::de_s3_origin(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_s3_origin(var_10);
-            }
-            ,
-            s if s.matches("Aliases") /* Aliases com.amazonaws.cloudfront#StreamingDistributionConfig$Aliases */ =>  {
-                let var_11 =
-                    Some(
-                        crate::protocol_serde::shape_aliases::de_aliases(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_aliases(var_11);
-            }
-            ,
-            s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#StreamingDistributionConfig$Comment */ =>  {
-                let var_12 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_comment(var_12);
+                builder = builder.set_comment(var_9);
             }
             ,
             s if s.matches("Logging") /* Logging com.amazonaws.cloudfront#StreamingDistributionConfig$Logging */ =>  {
-                let var_13 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_streaming_logging_config::de_streaming_logging_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_logging(var_13);
+                builder = builder.set_logging(var_10);
             }
             ,
             s if s.matches("TrustedSigners") /* TrustedSigners com.amazonaws.cloudfront#StreamingDistributionConfig$TrustedSigners */ =>  {
-                let var_14 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_trusted_signers::de_trusted_signers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_trusted_signers(var_14);
+                builder = builder.set_trusted_signers(var_11);
             }
             ,
             s if s.matches("PriceClass") /* PriceClass com.amazonaws.cloudfront#StreamingDistributionConfig$PriceClass */ =>  {
-                let var_15 =
+                let var_12 =
                     Some(
                         Result::<crate::types::PriceClass, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::PriceClass::from(
@@ -125,11 +126,11 @@ pub fn de_streaming_distribution_config(
                         ?
                     )
                 ;
-                builder = builder.set_price_class(var_15);
+                builder = builder.set_price_class(var_12);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#StreamingDistributionConfig$Enabled */ =>  {
-                let var_16 =
+                let var_13 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -140,11 +141,13 @@ pub fn de_streaming_distribution_config(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_16);
+                builder = builder.set_enabled(var_13);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::streaming_distribution_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

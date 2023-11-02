@@ -34,11 +34,10 @@ pub fn de_list_replace_permission_associations_work_http_error(
                             crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_next_token_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -54,11 +53,10 @@ pub fn de_list_replace_permission_associations_work_http_error(
                                 crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled,
                             )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -73,11 +71,10 @@ pub fn de_list_replace_permission_associations_work_http_error(
                             crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled,
                         )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::server_internal_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -93,11 +90,10 @@ pub fn de_list_replace_permission_associations_work_http_error(
                                 crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled,
                             )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

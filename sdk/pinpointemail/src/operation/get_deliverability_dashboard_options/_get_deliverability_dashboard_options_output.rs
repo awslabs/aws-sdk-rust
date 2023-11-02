@@ -30,12 +30,16 @@ impl GetDeliverabilityDashboardOptionsOutput {
         self.account_status.as_ref()
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
-    pub fn active_subscribed_domains(&self) -> ::std::option::Option<&[crate::types::DomainDeliverabilityTrackingOption]> {
-        self.active_subscribed_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_subscribed_domains.is_none()`.
+    pub fn active_subscribed_domains(&self) -> &[crate::types::DomainDeliverabilityTrackingOption] {
+        self.active_subscribed_domains.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
-    pub fn pending_expiration_subscribed_domains(&self) -> ::std::option::Option<&[crate::types::DomainDeliverabilityTrackingOption]> {
-        self.pending_expiration_subscribed_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_expiration_subscribed_domains.is_none()`.
+    pub fn pending_expiration_subscribed_domains(&self) -> &[crate::types::DomainDeliverabilityTrackingOption] {
+        self.pending_expiration_subscribed_domains.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDeliverabilityDashboardOptionsOutput {
@@ -63,6 +67,7 @@ pub struct GetDeliverabilityDashboardOptionsOutputBuilder {
 }
 impl GetDeliverabilityDashboardOptionsOutputBuilder {
     /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
+    /// This field is required.
     pub fn dashboard_enabled(mut self, input: bool) -> Self {
         self.dashboard_enabled = ::std::option::Option::Some(input);
         self

@@ -65,8 +65,10 @@ pub struct DbClusterSnapshot {
 }
 impl DbClusterSnapshot {
     /// <p>The list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The identifier for the DB cluster snapshot.</p>
     pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -155,8 +157,10 @@ impl DbClusterSnapshot {
         self.iam_database_authentication_enabled
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(&self) -> ::std::option::Option<&str> {

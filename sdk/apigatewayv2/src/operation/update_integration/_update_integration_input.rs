@@ -208,6 +208,7 @@ pub struct UpdateIntegrationInputBuilder {
 }
 impl UpdateIntegrationInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -301,6 +302,7 @@ impl UpdateIntegrationInputBuilder {
         &self.description
     }
     /// <p>The integration ID.</p>
+    /// This field is required.
     pub fn integration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_id = ::std::option::Option::Some(input.into());
         self

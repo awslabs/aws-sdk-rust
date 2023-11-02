@@ -3,32 +3,32 @@ pub fn ser_collapse_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CollapseConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.document_attribute_key {
-        object.key("DocumentAttributeKey").string(var_1.as_str());
+    {
+        object.key("DocumentAttributeKey").string(input.document_attribute_key.as_str());
     }
-    if let Some(var_2) = &input.sorting_configurations {
-        let mut array_3 = object.key("SortingConfigurations").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.sorting_configurations {
+        let mut array_2 = object.key("SortingConfigurations").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_sorting_configuration::ser_sorting_configuration(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_sorting_configuration::ser_sorting_configuration(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.missing_attribute_key_strategy {
-        object.key("MissingAttributeKeyStrategy").string(var_6.as_str());
+    if let Some(var_5) = &input.missing_attribute_key_strategy {
+        object.key("MissingAttributeKeyStrategy").string(var_5.as_str());
     }
     if input.expand {
         object.key("Expand").boolean(input.expand);
     }
-    if let Some(var_7) = &input.expand_configuration {
+    if let Some(var_6) = &input.expand_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ExpandConfiguration").start_object();
-        crate::protocol_serde::shape_expand_configuration::ser_expand_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("ExpandConfiguration").start_object();
+        crate::protocol_serde::shape_expand_configuration::ser_expand_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

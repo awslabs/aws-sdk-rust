@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>The ARN for a Kinesis data stream.</p>
-    pub stream_arn: ::std::option::Option<::std::string::String>,
+    pub stream_arn: ::std::string::String,
 }
 impl EnableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>The ARN for a Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
-        self.stream_arn.as_deref()
+    pub fn stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.stream_arn.deref()
     }
 }
 impl EnableKinesisStreamingDestinationInput {
@@ -34,6 +36,7 @@ pub struct EnableKinesisStreamingDestinationInputBuilder {
 }
 impl EnableKinesisStreamingDestinationInputBuilder {
     /// <p>The name of the DynamoDB table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl EnableKinesisStreamingDestinationInputBuilder {
         &self.table_name
     }
     /// <p>The ARN for a Kinesis data stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl EnableKinesisStreamingDestinationInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`EnableKinesisStreamingDestinationInput`](crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::operation::enable_kinesis_streaming_destination::builders::EnableKinesisStreamingDestinationInputBuilder::table_name)
+    /// - [`stream_arn`](crate::operation::enable_kinesis_streaming_destination::builders::EnableKinesisStreamingDestinationInputBuilder::stream_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,8 +77,18 @@ impl EnableKinesisStreamingDestinationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationInput {
-                table_name: self.table_name,
-                stream_arn: self.stream_arn,
+                table_name: self.table_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "table_name",
+                        "table_name was not specified but it is required when building EnableKinesisStreamingDestinationInput",
+                    )
+                })?,
+                stream_arn: self.stream_arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "stream_arn",
+                        "stream_arn was not specified but it is required when building EnableKinesisStreamingDestinationInput",
+                    )
+                })?,
             },
         )
     }

@@ -47,8 +47,10 @@ impl HttpRequest {
         self.http_version.as_deref()
     }
     /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
-    pub fn headers(&self) -> ::std::option::Option<&[crate::types::HttpHeader]> {
-        self.headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::HttpHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
 }
 impl HttpRequest {

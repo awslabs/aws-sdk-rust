@@ -3,14 +3,14 @@ pub fn ser_dev_environment_session_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DevEnvironmentSessionConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.session_type {
-        object.key("sessionType").string(var_1.as_str());
+    {
+        object.key("sessionType").string(input.session_type.as_str());
     }
-    if let Some(var_2) = &input.execute_command_session_configuration {
+    if let Some(var_1) = &input.execute_command_session_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("executeCommandSessionConfiguration").start_object();
-        crate::protocol_serde::shape_execute_command_session_configuration::ser_execute_command_session_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("executeCommandSessionConfiguration").start_object();
+        crate::protocol_serde::shape_execute_command_session_configuration::ser_execute_command_session_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

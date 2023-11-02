@@ -3,14 +3,14 @@ pub fn ser_custom_extension(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomExtension,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.object_identifier {
-        object.key("ObjectIdentifier").string(var_1.as_str());
+    {
+        object.key("ObjectIdentifier").string(input.object_identifier.as_str());
     }
-    if let Some(var_2) = &input.value {
-        object.key("Value").string(var_2.as_str());
+    {
+        object.key("Value").string(input.value.as_str());
     }
-    if let Some(var_3) = &input.critical {
-        object.key("Critical").boolean(*var_3);
+    if let Some(var_1) = &input.critical {
+        object.key("Critical").boolean(*var_1);
     }
     Ok(())
 }

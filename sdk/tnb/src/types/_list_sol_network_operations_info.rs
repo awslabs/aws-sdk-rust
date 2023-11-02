@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkOperationsInfo {
     /// <p>ID of this network operation.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Network operation ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The state of the network operation.</p>
-    pub operation_state: ::std::option::Option<crate::types::NsLcmOperationState>,
+    pub operation_state: crate::types::NsLcmOperationState,
     /// <p>ID of the network instance related to this operation.</p>
-    pub ns_instance_id: ::std::option::Option<::std::string::String>,
+    pub ns_instance_id: ::std::string::String,
     /// <p>Type of lifecycle management network operation.</p>
-    pub lcm_operation_type: ::std::option::Option<crate::types::LcmOperationType>,
+    pub lcm_operation_type: crate::types::LcmOperationType,
     /// <p>Error related to this specific network operation.</p>
     pub error: ::std::option::Option<crate::types::ProblemDetails>,
     /// <p>Metadata related to this network operation.</p>
@@ -21,24 +21,27 @@ pub struct ListSolNetworkOperationsInfo {
 }
 impl ListSolNetworkOperationsInfo {
     /// <p>ID of this network operation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Network operation ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The state of the network operation.</p>
-    pub fn operation_state(&self) -> ::std::option::Option<&crate::types::NsLcmOperationState> {
-        self.operation_state.as_ref()
+    pub fn operation_state(&self) -> &crate::types::NsLcmOperationState {
+        &self.operation_state
     }
     /// <p>ID of the network instance related to this operation.</p>
-    pub fn ns_instance_id(&self) -> ::std::option::Option<&str> {
-        self.ns_instance_id.as_deref()
+    pub fn ns_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ns_instance_id.deref()
     }
     /// <p>Type of lifecycle management network operation.</p>
-    pub fn lcm_operation_type(&self) -> ::std::option::Option<&crate::types::LcmOperationType> {
-        self.lcm_operation_type.as_ref()
+    pub fn lcm_operation_type(&self) -> &crate::types::LcmOperationType {
+        &self.lcm_operation_type
     }
     /// <p>Error related to this specific network operation.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ProblemDetails> {
@@ -70,6 +73,7 @@ pub struct ListSolNetworkOperationsInfoBuilder {
 }
 impl ListSolNetworkOperationsInfoBuilder {
     /// <p>ID of this network operation.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl ListSolNetworkOperationsInfoBuilder {
         &self.id
     }
     /// <p>Network operation ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl ListSolNetworkOperationsInfoBuilder {
         &self.arn
     }
     /// <p>The state of the network operation.</p>
+    /// This field is required.
     pub fn operation_state(mut self, input: crate::types::NsLcmOperationState) -> Self {
         self.operation_state = ::std::option::Option::Some(input);
         self
@@ -112,6 +118,7 @@ impl ListSolNetworkOperationsInfoBuilder {
         &self.operation_state
     }
     /// <p>ID of the network instance related to this operation.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +133,7 @@ impl ListSolNetworkOperationsInfoBuilder {
         &self.ns_instance_id
     }
     /// <p>Type of lifecycle management network operation.</p>
+    /// This field is required.
     pub fn lcm_operation_type(mut self, input: crate::types::LcmOperationType) -> Self {
         self.lcm_operation_type = ::std::option::Option::Some(input);
         self
@@ -168,15 +176,46 @@ impl ListSolNetworkOperationsInfoBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolNetworkOperationsInfo`](crate::types::ListSolNetworkOperationsInfo).
-    pub fn build(self) -> crate::types::ListSolNetworkOperationsInfo {
-        crate::types::ListSolNetworkOperationsInfo {
-            id: self.id,
-            arn: self.arn,
-            operation_state: self.operation_state,
-            ns_instance_id: self.ns_instance_id,
-            lcm_operation_type: self.lcm_operation_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::id)
+    /// - [`arn`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::arn)
+    /// - [`operation_state`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::operation_state)
+    /// - [`ns_instance_id`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::ns_instance_id)
+    /// - [`lcm_operation_type`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::lcm_operation_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkOperationsInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListSolNetworkOperationsInfo {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ListSolNetworkOperationsInfo",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListSolNetworkOperationsInfo",
+                )
+            })?,
+            operation_state: self.operation_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operation_state",
+                    "operation_state was not specified but it is required when building ListSolNetworkOperationsInfo",
+                )
+            })?,
+            ns_instance_id: self.ns_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ns_instance_id",
+                    "ns_instance_id was not specified but it is required when building ListSolNetworkOperationsInfo",
+                )
+            })?,
+            lcm_operation_type: self.lcm_operation_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lcm_operation_type",
+                    "lcm_operation_type was not specified but it is required when building ListSolNetworkOperationsInfo",
+                )
+            })?,
             error: self.error,
             metadata: self.metadata,
-        }
+        })
     }
 }

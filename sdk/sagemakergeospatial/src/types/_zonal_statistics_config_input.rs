@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZonalStatisticsConfigInput {
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
-    pub zone_s3_path: ::std::option::Option<::std::string::String>,
+    pub zone_s3_path: ::std::string::String,
     /// <p>List of zonal statistics to compute.</p>
-    pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::ZonalStatistics>>,
+    pub statistics: ::std::vec::Vec<crate::types::ZonalStatistics>,
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
     pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
@@ -21,16 +21,20 @@ pub struct ZonalStatisticsConfigInput {
 }
 impl ZonalStatisticsConfigInput {
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
-    pub fn zone_s3_path(&self) -> ::std::option::Option<&str> {
-        self.zone_s3_path.as_deref()
+    pub fn zone_s3_path(&self) -> &str {
+        use std::ops::Deref;
+        self.zone_s3_path.deref()
     }
     /// <p>List of zonal statistics to compute.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&[crate::types::ZonalStatistics]> {
-        self.statistics.as_deref()
+    pub fn statistics(&self) -> &[crate::types::ZonalStatistics] {
+        use std::ops::Deref;
+        self.statistics.deref()
     }
     /// <p>Bands used in the operation. If no target bands are specified, it uses all bands available input.</p>
-    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_bands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
+    pub fn target_bands(&self) -> &[::std::string::String] {
+        self.target_bands.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) or an ID of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to decrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
@@ -61,6 +65,7 @@ pub struct ZonalStatisticsConfigInputBuilder {
 }
 impl ZonalStatisticsConfigInputBuilder {
     /// <p>The Amazon S3 path pointing to the GeoJSON containing the polygonal zones.</p>
+    /// This field is required.
     pub fn zone_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zone_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -147,12 +152,25 @@ impl ZonalStatisticsConfigInputBuilder {
         &self.zone_s3_path_kms_key_id
     }
     /// Consumes the builder and constructs a [`ZonalStatisticsConfigInput`](crate::types::ZonalStatisticsConfigInput).
-    pub fn build(self) -> crate::types::ZonalStatisticsConfigInput {
-        crate::types::ZonalStatisticsConfigInput {
-            zone_s3_path: self.zone_s3_path,
-            statistics: self.statistics,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`zone_s3_path`](crate::types::builders::ZonalStatisticsConfigInputBuilder::zone_s3_path)
+    /// - [`statistics`](crate::types::builders::ZonalStatisticsConfigInputBuilder::statistics)
+    pub fn build(self) -> ::std::result::Result<crate::types::ZonalStatisticsConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ZonalStatisticsConfigInput {
+            zone_s3_path: self.zone_s3_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "zone_s3_path",
+                    "zone_s3_path was not specified but it is required when building ZonalStatisticsConfigInput",
+                )
+            })?,
+            statistics: self.statistics.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "statistics",
+                    "statistics was not specified but it is required when building ZonalStatisticsConfigInput",
+                )
+            })?,
             target_bands: self.target_bands,
             zone_s3_path_kms_key_id: self.zone_s3_path_kms_key_id,
-        }
+        })
     }
 }

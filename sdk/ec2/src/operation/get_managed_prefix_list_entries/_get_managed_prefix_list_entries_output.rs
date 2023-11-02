@@ -11,8 +11,10 @@ pub struct GetManagedPrefixListEntriesOutput {
 }
 impl GetManagedPrefixListEntriesOutput {
     /// <p>Information about the prefix list entries.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PrefixListEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::PrefixListEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

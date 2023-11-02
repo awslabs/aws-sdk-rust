@@ -9,17 +9,17 @@ pub fn ser_notification_with_subscribers(
         crate::protocol_serde::shape_notification::ser_notification(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.subscribers {
-        let mut array_4 = object.key("Subscribers").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("Subscribers").start_array();
+        for item_4 in &input.subscribers {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_subscriber::ser_subscriber(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_subscriber::ser_subscriber(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
     Ok(())
 }

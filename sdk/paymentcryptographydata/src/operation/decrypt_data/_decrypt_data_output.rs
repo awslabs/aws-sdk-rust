@@ -4,25 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DecryptDataOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    pub key_arn: ::std::option::Option<::std::string::String>,
+    pub key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub key_check_value: ::std::option::Option<::std::string::String>,
+    pub key_check_value: ::std::string::String,
     /// <p>The decrypted plaintext data.</p>
-    pub plain_text: ::std::option::Option<::std::string::String>,
+    pub plain_text: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DecryptDataOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
-        self.key_arn.as_deref()
+    pub fn key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
-    pub fn key_check_value(&self) -> ::std::option::Option<&str> {
-        self.key_check_value.as_deref()
+    pub fn key_check_value(&self) -> &str {
+        use std::ops::Deref;
+        self.key_check_value.deref()
     }
     /// <p>The decrypted plaintext data.</p>
-    pub fn plain_text(&self) -> ::std::option::Option<&str> {
-        self.plain_text.as_deref()
+    pub fn plain_text(&self) -> &str {
+        use std::ops::Deref;
+        self.plain_text.deref()
     }
 }
 impl ::std::fmt::Debug for DecryptDataOutput {
@@ -58,6 +61,7 @@ pub struct DecryptDataOutputBuilder {
 }
 impl DecryptDataOutputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
+    /// This field is required.
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +76,7 @@ impl DecryptDataOutputBuilder {
         &self.key_arn
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// This field is required.
     pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +91,7 @@ impl DecryptDataOutputBuilder {
         &self.key_check_value
     }
     /// <p>The decrypted plaintext data.</p>
+    /// This field is required.
     pub fn plain_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plain_text = ::std::option::Option::Some(input.into());
         self
@@ -109,13 +115,32 @@ impl DecryptDataOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DecryptDataOutput`](crate::operation::decrypt_data::DecryptDataOutput).
-    pub fn build(self) -> crate::operation::decrypt_data::DecryptDataOutput {
-        crate::operation::decrypt_data::DecryptDataOutput {
-            key_arn: self.key_arn,
-            key_check_value: self.key_check_value,
-            plain_text: self.plain_text,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_arn`](crate::operation::decrypt_data::builders::DecryptDataOutputBuilder::key_arn)
+    /// - [`key_check_value`](crate::operation::decrypt_data::builders::DecryptDataOutputBuilder::key_check_value)
+    /// - [`plain_text`](crate::operation::decrypt_data::builders::DecryptDataOutputBuilder::plain_text)
+    pub fn build(self) -> ::std::result::Result<crate::operation::decrypt_data::DecryptDataOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::decrypt_data::DecryptDataOutput {
+            key_arn: self.key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_arn",
+                    "key_arn was not specified but it is required when building DecryptDataOutput",
+                )
+            })?,
+            key_check_value: self.key_check_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_check_value",
+                    "key_check_value was not specified but it is required when building DecryptDataOutput",
+                )
+            })?,
+            plain_text: self.plain_text.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "plain_text",
+                    "plain_text was not specified but it is required when building DecryptDataOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DecryptDataOutputBuilder {

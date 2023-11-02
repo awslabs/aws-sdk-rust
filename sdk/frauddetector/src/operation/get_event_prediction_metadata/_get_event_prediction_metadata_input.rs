@@ -57,6 +57,7 @@ pub struct GetEventPredictionMetadataInputBuilder {
 }
 impl GetEventPredictionMetadataInputBuilder {
     /// <p> The event ID. </p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl GetEventPredictionMetadataInputBuilder {
         &self.event_id
     }
     /// <p> The event type associated with the detector specified for the prediction. </p>
+    /// This field is required.
     pub fn event_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +87,7 @@ impl GetEventPredictionMetadataInputBuilder {
         &self.event_type_name
     }
     /// <p> The detector ID. </p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +102,7 @@ impl GetEventPredictionMetadataInputBuilder {
         &self.detector_id
     }
     /// <p> The detector version ID. </p>
+    /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +118,7 @@ impl GetEventPredictionMetadataInputBuilder {
     }
     /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
+    /// This field is required.
     pub fn prediction_timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prediction_timestamp = ::std::option::Option::Some(input.into());
         self

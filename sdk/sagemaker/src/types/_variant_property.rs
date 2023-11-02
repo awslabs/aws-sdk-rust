@@ -44,6 +44,7 @@ impl VariantPropertyBuilder {
     /// <li> <p> <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code> values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.</p> </li>
     /// <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn variant_property_type(mut self, input: crate::types::VariantPropertyType) -> Self {
         self.variant_property_type = ::std::option::Option::Some(input);
         self

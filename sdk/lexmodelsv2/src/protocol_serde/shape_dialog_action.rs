@@ -41,7 +41,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dialog_action_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -53,14 +55,14 @@ pub fn ser_dialog_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DialogAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.slot_to_elicit {
-        object.key("slotToElicit").string(var_2.as_str());
+    if let Some(var_1) = &input.slot_to_elicit {
+        object.key("slotToElicit").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.suppress_next_message {
-        object.key("suppressNextMessage").boolean(*var_3);
+    if let Some(var_2) = &input.suppress_next_message {
+        object.key("suppressNextMessage").boolean(*var_2);
     }
     Ok(())
 }

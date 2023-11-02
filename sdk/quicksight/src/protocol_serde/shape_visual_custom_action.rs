@@ -3,29 +3,29 @@ pub fn ser_visual_custom_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisualCustomAction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.custom_action_id {
-        object.key("CustomActionId").string(var_1.as_str());
+    {
+        object.key("CustomActionId").string(input.custom_action_id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.status {
-        object.key("Status").string(var_3.as_str());
+    if let Some(var_1) = &input.status {
+        object.key("Status").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.trigger {
-        object.key("Trigger").string(var_4.as_str());
+    {
+        object.key("Trigger").string(input.trigger.as_str());
     }
-    if let Some(var_5) = &input.action_operations {
-        let mut array_6 = object.key("ActionOperations").start_array();
-        for item_7 in var_5 {
+    {
+        let mut array_2 = object.key("ActionOperations").start_array();
+        for item_3 in &input.action_operations {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_visual_custom_action_operation::ser_visual_custom_action_operation(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_visual_custom_action_operation::ser_visual_custom_action_operation(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_6.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -88,7 +88,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::visual_custom_action_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -9,8 +9,10 @@ pub struct PointsOfInterest {
 }
 impl PointsOfInterest {
     /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
-    pub fn timestamp_ranges(&self) -> ::std::option::Option<&[crate::types::TimestampRange]> {
-        self.timestamp_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamp_ranges.is_none()`.
+    pub fn timestamp_ranges(&self) -> &[crate::types::TimestampRange] {
+        self.timestamp_ranges.as_deref().unwrap_or_default()
     }
 }
 impl PointsOfInterest {

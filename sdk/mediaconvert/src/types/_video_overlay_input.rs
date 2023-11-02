@@ -19,8 +19,10 @@ impl VideoOverlayInput {
         self.file_input.as_deref()
     }
     /// Specify one or more clips to use from your video overlay. When you include an input clip, you must also specify its start timecode, end timecode, or both start and end timecode.
-    pub fn input_clippings(&self) -> ::std::option::Option<&[crate::types::VideoOverlayInputClipping]> {
-        self.input_clippings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_clippings.is_none()`.
+    pub fn input_clippings(&self) -> &[crate::types::VideoOverlayInputClipping] {
+        self.input_clippings.as_deref().unwrap_or_default()
     }
     /// Specify the starting timecode for your video overlay. To use the timecode present in your video overlay: Choose Embedded. To use a zerobased timecode: Choose Start at 0. To choose a timecode: Choose Specified start. When you do, enter the starting timecode in Start timecode. If you don't specify a value for Timecode source, MediaConvert uses Embedded by default.
     pub fn timecode_source(&self) -> ::std::option::Option<&crate::types::InputTimecodeSource> {

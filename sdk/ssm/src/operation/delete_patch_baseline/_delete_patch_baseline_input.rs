@@ -27,6 +27,7 @@ pub struct DeletePatchBaselineInputBuilder {
 }
 impl DeletePatchBaselineInputBuilder {
     /// <p>The ID of the patch baseline to delete.</p>
+    /// This field is required.
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_id = ::std::option::Option::Some(input.into());
         self

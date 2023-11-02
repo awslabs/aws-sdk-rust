@@ -45,20 +45,28 @@ impl AwsEc2SecurityGroupIpPermission {
         self.to_port
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn user_id_group_pairs(&self) -> ::std::option::Option<&[crate::types::AwsEc2SecurityGroupUserIdGroupPair]> {
-        self.user_id_group_pairs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_id_group_pairs.is_none()`.
+    pub fn user_id_group_pairs(&self) -> &[crate::types::AwsEc2SecurityGroupUserIdGroupPair] {
+        self.user_id_group_pairs.as_deref().unwrap_or_default()
     }
     /// <p>The IPv4 ranges.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[crate::types::AwsEc2SecurityGroupIpRange]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[crate::types::AwsEc2SecurityGroupIpRange] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 ranges.</p>
-    pub fn ipv6_ranges(&self) -> ::std::option::Option<&[crate::types::AwsEc2SecurityGroupIpv6Range]> {
-        self.ipv6_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_ranges.is_none()`.
+    pub fn ipv6_ranges(&self) -> &[crate::types::AwsEc2SecurityGroupIpv6Range] {
+        self.ipv6_ranges.as_deref().unwrap_or_default()
     }
     /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services service to access through a VPC endpoint from instances associated with the security group.</p>
-    pub fn prefix_list_ids(&self) -> ::std::option::Option<&[crate::types::AwsEc2SecurityGroupPrefixListId]> {
-        self.prefix_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
+    pub fn prefix_list_ids(&self) -> &[crate::types::AwsEc2SecurityGroupPrefixListId] {
+        self.prefix_list_ids.as_deref().unwrap_or_default()
     }
 }
 impl AwsEc2SecurityGroupIpPermission {

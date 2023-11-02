@@ -3,25 +3,25 @@ pub fn ser_topic_refresh_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicRefreshSchedule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.is_enabled {
-        object.key("IsEnabled").boolean(*var_1);
+    {
+        object.key("IsEnabled").boolean(input.is_enabled);
     }
     {
         object.key("BasedOnSpiceSchedule").boolean(input.based_on_spice_schedule);
     }
-    if let Some(var_2) = &input.starting_at {
+    if let Some(var_1) = &input.starting_at {
         object
             .key("StartingAt")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_3) = &input.timezone {
-        object.key("Timezone").string(var_3.as_str());
+    if let Some(var_2) = &input.timezone {
+        object.key("Timezone").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.repeat_at {
-        object.key("RepeatAt").string(var_4.as_str());
+    if let Some(var_3) = &input.repeat_at {
+        object.key("RepeatAt").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.topic_schedule_type {
-        object.key("TopicScheduleType").string(var_5.as_str());
+    if let Some(var_4) = &input.topic_schedule_type {
+        object.key("TopicScheduleType").string(var_4.as_str());
     }
     Ok(())
 }
@@ -84,7 +84,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::topic_refresh_schedule_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

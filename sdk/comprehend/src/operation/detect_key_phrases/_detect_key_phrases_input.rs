@@ -42,6 +42,7 @@ pub struct DetectKeyPhrasesInputBuilder {
 }
 impl DetectKeyPhrasesInputBuilder {
     /// <p>A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DetectKeyPhrasesInputBuilder {
         &self.text
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self

@@ -5,18 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleOption {
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
-    pub keyword: ::std::option::Option<::std::string::String>,
+    pub keyword: ::std::string::String,
     /// <p>The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the number of possible and required settings depends on the <code>Keyword</code>. For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.</p>
     pub settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleOption {
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
-    pub fn keyword(&self) -> ::std::option::Option<&str> {
-        self.keyword.as_deref()
+    pub fn keyword(&self) -> &str {
+        use std::ops::Deref;
+        self.keyword.deref()
     }
     /// <p>The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the number of possible and required settings depends on the <code>Keyword</code>. For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.</p>
-    pub fn settings(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
+    pub fn settings(&self) -> &[::std::string::String] {
+        self.settings.as_deref().unwrap_or_default()
     }
 }
 impl RuleOption {
@@ -35,6 +38,7 @@ pub struct RuleOptionBuilder {
 }
 impl RuleOptionBuilder {
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
+    /// This field is required.
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyword = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +73,17 @@ impl RuleOptionBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`RuleOption`](crate::types::RuleOption).
-    pub fn build(self) -> crate::types::RuleOption {
-        crate::types::RuleOption {
-            keyword: self.keyword,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyword`](crate::types::builders::RuleOptionBuilder::keyword)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleOption, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleOption {
+            keyword: self.keyword.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyword",
+                    "keyword was not specified but it is required when building RuleOption",
+                )
+            })?,
             settings: self.settings,
-        }
+        })
     }
 }

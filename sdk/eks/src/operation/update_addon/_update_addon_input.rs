@@ -83,6 +83,7 @@ pub struct UpdateAddonInputBuilder {
 }
 impl UpdateAddonInputBuilder {
     /// <p>The name of the cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl UpdateAddonInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    /// This field is required.
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_name = ::std::option::Option::Some(input.into());
         self

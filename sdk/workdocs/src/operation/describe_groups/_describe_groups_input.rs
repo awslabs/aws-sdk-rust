@@ -80,6 +80,7 @@ impl DescribeGroupsInputBuilder {
         &self.authentication_token
     }
     /// <p>A query to describe groups by group name.</p>
+    /// This field is required.
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_query = ::std::option::Option::Some(input.into());
         self

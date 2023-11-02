@@ -28,6 +28,7 @@ pub struct ProcessingStoppingConditionBuilder {
 }
 impl ProcessingStoppingConditionBuilder {
     /// <p>Specifies the maximum runtime in seconds.</p>
+    /// This field is required.
     pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
         self.max_runtime_in_seconds = ::std::option::Option::Some(input);
         self

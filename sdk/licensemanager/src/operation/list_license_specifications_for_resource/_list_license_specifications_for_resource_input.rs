@@ -41,6 +41,7 @@ pub struct ListLicenseSpecificationsForResourceInputBuilder {
 }
 impl ListLicenseSpecificationsForResourceInputBuilder {
     /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

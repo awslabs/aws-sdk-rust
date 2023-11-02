@@ -40,8 +40,10 @@ impl CreateAppInstanceUserInput {
         self.client_request_token.as_deref()
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn expiration_settings(&self) -> ::std::option::Option<&crate::types::ExpirationSettings> {
@@ -82,6 +84,7 @@ pub struct CreateAppInstanceUserInputBuilder {
 }
 impl CreateAppInstanceUserInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl CreateAppInstanceUserInputBuilder {
         &self.app_instance_arn
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn app_instance_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_user_id = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +114,7 @@ impl CreateAppInstanceUserInputBuilder {
         &self.app_instance_user_id
     }
     /// <p>The user's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +143,7 @@ impl CreateAppInstanceUserInputBuilder {
         &self.metadata
     }
     /// <p>The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

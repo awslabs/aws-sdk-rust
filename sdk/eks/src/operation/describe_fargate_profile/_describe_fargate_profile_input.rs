@@ -34,6 +34,7 @@ pub struct DescribeFargateProfileInputBuilder {
 }
 impl DescribeFargateProfileInputBuilder {
     /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeFargateProfileInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the Fargate profile to describe.</p>
+    /// This field is required.
     pub fn fargate_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fargate_profile_name = ::std::option::Option::Some(input.into());
         self

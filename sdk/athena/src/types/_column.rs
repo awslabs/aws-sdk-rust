@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Column {
     /// <p>The name of the column.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data type of the column.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Optional information about the column.</p>
@@ -13,8 +13,9 @@ pub struct Column {
 }
 impl Column {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data type of the column.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ColumnBuilder {
 }
 impl ColumnBuilder {
     /// <p>The name of the column.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ColumnBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`Column`](crate::types::Column).
-    pub fn build(self) -> crate::types::Column {
-        crate::types::Column {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ColumnBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Column, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Column {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Column",
+                )
+            })?,
             r#type: self.r#type,
             comment: self.comment,
-        }
+        })
     }
 }

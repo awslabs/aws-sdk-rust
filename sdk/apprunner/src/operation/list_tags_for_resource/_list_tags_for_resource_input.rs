@@ -30,6 +30,7 @@ pub struct ListTagsForResourceInputBuilder {
 impl ListTagsForResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

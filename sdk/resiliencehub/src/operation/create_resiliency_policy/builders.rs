@@ -22,7 +22,9 @@ impl CreateResiliencyPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateResiliencyPolicy`.
 ///
-/// <p>Creates a resiliency policy for an application.</p>
+/// <p>Creates a resiliency policy for an application.</p> <note>
+/// <p>Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of your resiliency policy. But, while assessing your application, the lowest possible assessment result is near zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your application will be set to <b>Policy breached</b>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResiliencyPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -92,14 +94,14 @@ impl CreateResiliencyPolicyFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::create_resiliency_policy::CreateResiliencyPolicyOutput,
             crate::operation::create_resiliency_policy::CreateResiliencyPolicyError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::create_resiliency_policy::CreateResiliencyPolicyError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

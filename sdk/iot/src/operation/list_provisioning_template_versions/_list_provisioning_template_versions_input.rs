@@ -41,6 +41,7 @@ pub struct ListProvisioningTemplateVersionsInputBuilder {
 }
 impl ListProvisioningTemplateVersionsInputBuilder {
     /// <p>The name of the provisioning template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

@@ -28,6 +28,7 @@ pub struct CreateHapgInputBuilder {
 }
 impl CreateHapgInputBuilder {
     /// <p>The label of the new high-availability partition group.</p>
+    /// This field is required.
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
         self

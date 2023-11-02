@@ -34,6 +34,7 @@ pub struct DeletePortalInputBuilder {
 }
 impl DeletePortalInputBuilder {
     /// <p>The ID of the portal to delete.</p>
+    /// This field is required.
     pub fn portal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_id = ::std::option::Option::Some(input.into());
         self

@@ -86,6 +86,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+    /// This field is required.
     pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self

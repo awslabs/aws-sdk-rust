@@ -12,6 +12,7 @@ pub fn ser_delivery_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_delivery_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DeliveryOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

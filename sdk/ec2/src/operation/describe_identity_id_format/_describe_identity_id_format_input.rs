@@ -34,6 +34,7 @@ pub struct DescribeIdentityIdFormatInputBuilder {
 }
 impl DescribeIdentityIdFormatInputBuilder {
     /// <p>The ARN of the principal, which can be an IAM role, IAM user, or the root user.</p>
+    /// This field is required.
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_arn = ::std::option::Option::Some(input.into());
         self

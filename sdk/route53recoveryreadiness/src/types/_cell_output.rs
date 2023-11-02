@@ -25,12 +25,16 @@ impl CellOutput {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell ARNs.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[::std::string::String] {
+        self.cells.as_deref().unwrap_or_default()
     }
     /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    pub fn parent_readiness_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parent_readiness_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_readiness_scopes.is_none()`.
+    pub fn parent_readiness_scopes(&self) -> &[::std::string::String] {
+        self.parent_readiness_scopes.as_deref().unwrap_or_default()
     }
     /// <p>Tags on the resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -56,6 +60,7 @@ pub struct CellOutputBuilder {
 }
 impl CellOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the cell.</p>
+    /// This field is required.
     pub fn cell_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl CellOutputBuilder {
         &self.cell_arn
     }
     /// <p>The name of the cell.</p>
+    /// This field is required.
     pub fn cell_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_name = ::std::option::Option::Some(input.into());
         self

@@ -28,24 +28,34 @@ pub struct NetworkFirewallPolicyDescription {
 }
 impl NetworkFirewallPolicyDescription {
     /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
-    pub fn stateless_rule_groups(&self) -> ::std::option::Option<&[crate::types::StatelessRuleGroup]> {
-        self.stateless_rule_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_rule_groups.is_none()`.
+    pub fn stateless_rule_groups(&self) -> &[crate::types::StatelessRuleGroup] {
+        self.stateless_rule_groups.as_deref().unwrap_or_default()
     }
     /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
-    pub fn stateless_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateless_default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_default_actions.is_none()`.
+    pub fn stateless_default_actions(&self) -> &[::std::string::String] {
+        self.stateless_default_actions.as_deref().unwrap_or_default()
     }
     /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
-    pub fn stateless_fragment_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateless_fragment_default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_fragment_default_actions.is_none()`.
+    pub fn stateless_fragment_default_actions(&self) -> &[::std::string::String] {
+        self.stateless_fragment_default_actions.as_deref().unwrap_or_default()
     }
     /// <p>Names of custom actions that are available for use in the stateless default actions settings.</p>
-    pub fn stateless_custom_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateless_custom_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateless_custom_actions.is_none()`.
+    pub fn stateless_custom_actions(&self) -> &[::std::string::String] {
+        self.stateless_custom_actions.as_deref().unwrap_or_default()
     }
     /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
-    pub fn stateful_rule_groups(&self) -> ::std::option::Option<&[crate::types::StatefulRuleGroup]> {
-        self.stateful_rule_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_rule_groups.is_none()`.
+    pub fn stateful_rule_groups(&self) -> &[crate::types::StatefulRuleGroup] {
+        self.stateful_rule_groups.as_deref().unwrap_or_default()
     }
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p> Valid values of the stateful default action: </p>
@@ -55,8 +65,10 @@ impl NetworkFirewallPolicyDescription {
     /// <li> <p>aws:alert_strict</p> </li>
     /// <li> <p>aws:alert_established</p> </li>
     /// </ul>
-    pub fn stateful_default_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stateful_default_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_default_actions.is_none()`.
+    pub fn stateful_default_actions(&self) -> &[::std::string::String] {
+        self.stateful_default_actions.as_deref().unwrap_or_default()
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
     pub fn stateful_engine_options(&self) -> ::std::option::Option<&crate::types::StatefulEngineOptions> {

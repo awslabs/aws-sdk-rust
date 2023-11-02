@@ -63,6 +63,7 @@ pub struct ListenerBuilder {
 }
 impl ListenerBuilder {
     /// <p>The port mapping information for the listener.</p>
+    /// This field is required.
     pub fn port_mapping(mut self, input: crate::types::PortMapping) -> Self {
         self.port_mapping = ::std::option::Option::Some(input);
         self

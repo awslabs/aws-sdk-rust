@@ -22,8 +22,10 @@ impl AutoExportPolicy {
     /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::EventType] {
+        self.events.as_deref().unwrap_or_default()
     }
 }
 impl AutoExportPolicy {

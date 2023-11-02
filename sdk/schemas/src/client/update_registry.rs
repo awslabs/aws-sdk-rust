@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRegistry`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`description(impl Into<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::set_description): <p>The description of the registry to update.</p>
-    ///   - [`registry_name(impl Into<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::set_description):<br>required: **false**<br><p>The description of the registry to update.</p><br>
+    ///   - [`registry_name(impl Into<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::update_registry::builders::UpdateRegistryFluentBuilder::set_registry_name):<br>required: **true**<br><p>The name of the registry.</p><br>
     /// - On success, responds with [`UpdateRegistryOutput`](crate::operation::update_registry::UpdateRegistryOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::operation::update_registry::UpdateRegistryOutput::description): <p>The description of the registry.</p>
     ///   - [`registry_arn(Option<String>)`](crate::operation::update_registry::UpdateRegistryOutput::registry_arn): <p>The ARN of the registry.</p>

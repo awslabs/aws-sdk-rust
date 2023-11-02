@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub analysis_scheme_name: ::std::option::Option<::std::string::String>,
+    pub analysis_scheme_name: ::std::string::String,
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
-    pub analysis_scheme_language: ::std::option::Option<crate::types::AnalysisSchemeLanguage>,
+    pub analysis_scheme_language: crate::types::AnalysisSchemeLanguage,
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub analysis_options: ::std::option::Option<crate::types::AnalysisOptions>,
 }
 impl AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn analysis_scheme_name(&self) -> ::std::option::Option<&str> {
-        self.analysis_scheme_name.as_deref()
+    pub fn analysis_scheme_name(&self) -> &str {
+        use std::ops::Deref;
+        self.analysis_scheme_name.deref()
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
-    pub fn analysis_scheme_language(&self) -> ::std::option::Option<&crate::types::AnalysisSchemeLanguage> {
-        self.analysis_scheme_language.as_ref()
+    pub fn analysis_scheme_language(&self) -> &crate::types::AnalysisSchemeLanguage {
+        &self.analysis_scheme_language
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub fn analysis_options(&self) -> ::std::option::Option<&crate::types::AnalysisOptions> {
@@ -42,6 +43,7 @@ pub struct AnalysisSchemeBuilder {
 }
 impl AnalysisSchemeBuilder {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// This field is required.
     pub fn analysis_scheme_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_scheme_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl AnalysisSchemeBuilder {
         &self.analysis_scheme_name
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
+    /// This field is required.
     pub fn analysis_scheme_language(mut self, input: crate::types::AnalysisSchemeLanguage) -> Self {
         self.analysis_scheme_language = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl AnalysisSchemeBuilder {
         &self.analysis_options
     }
     /// Consumes the builder and constructs a [`AnalysisScheme`](crate::types::AnalysisScheme).
-    pub fn build(self) -> crate::types::AnalysisScheme {
-        crate::types::AnalysisScheme {
-            analysis_scheme_name: self.analysis_scheme_name,
-            analysis_scheme_language: self.analysis_scheme_language,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analysis_scheme_name`](crate::types::builders::AnalysisSchemeBuilder::analysis_scheme_name)
+    /// - [`analysis_scheme_language`](crate::types::builders::AnalysisSchemeBuilder::analysis_scheme_language)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisScheme, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalysisScheme {
+            analysis_scheme_name: self.analysis_scheme_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analysis_scheme_name",
+                    "analysis_scheme_name was not specified but it is required when building AnalysisScheme",
+                )
+            })?,
+            analysis_scheme_language: self.analysis_scheme_language.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analysis_scheme_language",
+                    "analysis_scheme_language was not specified but it is required when building AnalysisScheme",
+                )
+            })?,
             analysis_options: self.analysis_options,
-        }
+        })
     }
 }

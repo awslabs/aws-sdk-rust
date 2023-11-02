@@ -11,8 +11,10 @@ pub struct ListExperimentsOutput {
 }
 impl ListExperimentsOutput {
     /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
-    pub fn experiments(&self) -> ::std::option::Option<&[crate::types::Experiment]> {
-        self.experiments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.experiments.is_none()`.
+    pub fn experiments(&self) -> &[crate::types::Experiment] {
+        self.experiments.as_deref().unwrap_or_default()
     }
     /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

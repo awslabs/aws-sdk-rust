@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityNotificationAttributes {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
-    pub bounce_topic: ::std::option::Option<::std::string::String>,
+    pub bounce_topic: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
-    pub complaint_topic: ::std::option::Option<::std::string::String>,
+    pub complaint_topic: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
-    pub delivery_topic: ::std::option::Option<::std::string::String>,
+    pub delivery_topic: ::std::string::String,
     /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub forwarding_enabled: bool,
     /// <p>Describes whether Amazon SES includes the original email headers in Amazon SNS notifications of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES includes headers in bounce notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in bounce notifications.</p>
@@ -21,16 +21,19 @@ pub struct IdentityNotificationAttributes {
 }
 impl IdentityNotificationAttributes {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
-    pub fn bounce_topic(&self) -> ::std::option::Option<&str> {
-        self.bounce_topic.as_deref()
+    pub fn bounce_topic(&self) -> &str {
+        use std::ops::Deref;
+        self.bounce_topic.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
-    pub fn complaint_topic(&self) -> ::std::option::Option<&str> {
-        self.complaint_topic.as_deref()
+    pub fn complaint_topic(&self) -> &str {
+        use std::ops::Deref;
+        self.complaint_topic.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
-    pub fn delivery_topic(&self) -> ::std::option::Option<&str> {
-        self.delivery_topic.as_deref()
+    pub fn delivery_topic(&self) -> &str {
+        use std::ops::Deref;
+        self.delivery_topic.deref()
     }
     /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
     pub fn forwarding_enabled(&self) -> bool {
@@ -70,6 +73,7 @@ pub struct IdentityNotificationAttributesBuilder {
 }
 impl IdentityNotificationAttributesBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes bounce notifications.</p>
+    /// This field is required.
     pub fn bounce_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bounce_topic = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl IdentityNotificationAttributesBuilder {
         &self.bounce_topic
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes complaint notifications.</p>
+    /// This field is required.
     pub fn complaint_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.complaint_topic = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl IdentityNotificationAttributesBuilder {
         &self.complaint_topic
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES publishes delivery notifications.</p>
+    /// This field is required.
     pub fn delivery_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_topic = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +118,7 @@ impl IdentityNotificationAttributesBuilder {
         &self.delivery_topic
     }
     /// <p>Describes whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications as email, while <code>false</code> indicates that bounce and complaint notifications are published only to the specified bounce and complaint Amazon SNS topics.</p>
+    /// This field is required.
     pub fn forwarding_enabled(mut self, input: bool) -> Self {
         self.forwarding_enabled = ::std::option::Option::Some(input);
         self
@@ -168,15 +175,34 @@ impl IdentityNotificationAttributesBuilder {
         &self.headers_in_delivery_notifications_enabled
     }
     /// Consumes the builder and constructs a [`IdentityNotificationAttributes`](crate::types::IdentityNotificationAttributes).
-    pub fn build(self) -> crate::types::IdentityNotificationAttributes {
-        crate::types::IdentityNotificationAttributes {
-            bounce_topic: self.bounce_topic,
-            complaint_topic: self.complaint_topic,
-            delivery_topic: self.delivery_topic,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bounce_topic`](crate::types::builders::IdentityNotificationAttributesBuilder::bounce_topic)
+    /// - [`complaint_topic`](crate::types::builders::IdentityNotificationAttributesBuilder::complaint_topic)
+    /// - [`delivery_topic`](crate::types::builders::IdentityNotificationAttributesBuilder::delivery_topic)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityNotificationAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdentityNotificationAttributes {
+            bounce_topic: self.bounce_topic.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bounce_topic",
+                    "bounce_topic was not specified but it is required when building IdentityNotificationAttributes",
+                )
+            })?,
+            complaint_topic: self.complaint_topic.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "complaint_topic",
+                    "complaint_topic was not specified but it is required when building IdentityNotificationAttributes",
+                )
+            })?,
+            delivery_topic: self.delivery_topic.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "delivery_topic",
+                    "delivery_topic was not specified but it is required when building IdentityNotificationAttributes",
+                )
+            })?,
             forwarding_enabled: self.forwarding_enabled.unwrap_or_default(),
             headers_in_bounce_notifications_enabled: self.headers_in_bounce_notifications_enabled.unwrap_or_default(),
             headers_in_complaint_notifications_enabled: self.headers_in_complaint_notifications_enabled.unwrap_or_default(),
             headers_in_delivery_notifications_enabled: self.headers_in_delivery_notifications_enabled.unwrap_or_default(),
-        }
+        })
     }
 }

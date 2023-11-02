@@ -13,8 +13,10 @@ pub struct ListAliasesOutput {
 }
 impl ListAliasesOutput {
     /// <p>A list of aliases.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::AliasListEntry]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[crate::types::AliasListEntry] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

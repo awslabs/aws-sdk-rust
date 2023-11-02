@@ -34,6 +34,7 @@ pub struct DetachTypedLinkInputBuilder {
 }
 impl DetachTypedLinkInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetachTypedLinkInputBuilder {
         &self.directory_arn
     }
     /// <p>Used to accept a typed link specifier as input.</p>
+    /// This field is required.
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
         self

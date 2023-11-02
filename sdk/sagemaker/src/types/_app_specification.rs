@@ -17,12 +17,16 @@ impl AppSpecification {
         self.image_uri.as_deref()
     }
     /// <p>The entrypoint for a container used to run a processing job.</p>
-    pub fn container_entrypoint(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_entrypoint.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_entrypoint.is_none()`.
+    pub fn container_entrypoint(&self) -> &[::std::string::String] {
+        self.container_entrypoint.as_deref().unwrap_or_default()
     }
     /// <p>The arguments for a container used to run a processing job.</p>
-    pub fn container_arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_arguments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_arguments.is_none()`.
+    pub fn container_arguments(&self) -> &[::std::string::String] {
+        self.container_arguments.as_deref().unwrap_or_default()
     }
 }
 impl AppSpecification {
@@ -42,6 +46,7 @@ pub struct AppSpecificationBuilder {
 }
 impl AppSpecificationBuilder {
     /// <p>The container image to be run by the processing job.</p>
+    /// This field is required.
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
         self

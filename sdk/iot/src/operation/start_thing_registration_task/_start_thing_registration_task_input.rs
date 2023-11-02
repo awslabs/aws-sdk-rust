@@ -48,6 +48,7 @@ pub struct StartThingRegistrationTaskInputBuilder {
 }
 impl StartThingRegistrationTaskInputBuilder {
     /// <p>The provisioning template.</p>
+    /// This field is required.
     pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl StartThingRegistrationTaskInputBuilder {
         &self.template_body
     }
     /// <p>The S3 bucket that contains the input file.</p>
+    /// This field is required.
     pub fn input_file_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_bucket = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl StartThingRegistrationTaskInputBuilder {
         &self.input_file_bucket
     }
     /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
+    /// This field is required.
     pub fn input_file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_file_key = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl StartThingRegistrationTaskInputBuilder {
         &self.input_file_key
     }
     /// <p>The IAM role ARN that grants permission the input file.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

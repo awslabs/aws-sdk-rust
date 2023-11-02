@@ -127,7 +127,9 @@ pub fn de_detect_entities_v2_http_response(
         output = crate::protocol_serde::shape_detect_entities_v2::de_detect_entities_v2(_response_body, output)
             .map_err(crate::operation::detect_entities_v2::DetectEntitiesV2Error::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::detect_entities_v2_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::detect_entities_v2::DetectEntitiesV2Error::unhandled)?
     })
 }
 

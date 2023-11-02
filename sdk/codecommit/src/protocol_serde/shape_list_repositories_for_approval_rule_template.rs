@@ -36,8 +36,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ApprovalRuleTemplateNameRequiredException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException({
@@ -52,8 +52,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionIntegrityChecksFailedException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionIntegrityChecksFailedException({
@@ -68,8 +68,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyAccessDeniedException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyAccessDeniedException({
@@ -84,8 +84,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyDisabledException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyDisabledException({
@@ -100,8 +100,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyNotFoundException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyNotFoundException({
@@ -116,8 +116,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "EncryptionKeyUnavailableException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyUnavailableException({
@@ -132,8 +132,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleTemplateNameException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException({
@@ -148,8 +148,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidContinuationTokenException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::InvalidContinuationTokenException({
@@ -164,8 +164,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidMaxResultsException" => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::InvalidMaxResultsException({
@@ -180,8 +180,8 @@ pub fn de_list_repositories_for_approval_rule_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::generic(generic)

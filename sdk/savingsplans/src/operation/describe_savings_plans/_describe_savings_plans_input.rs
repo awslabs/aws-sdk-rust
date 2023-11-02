@@ -18,12 +18,16 @@ pub struct DescribeSavingsPlansInput {
 }
 impl DescribeSavingsPlansInput {
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub fn savings_plan_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.savings_plan_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_arns.is_none()`.
+    pub fn savings_plan_arns(&self) -> &[::std::string::String] {
+        self.savings_plan_arns.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the Savings Plans.</p>
-    pub fn savings_plan_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.savings_plan_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_ids.is_none()`.
+    pub fn savings_plan_ids(&self) -> &[::std::string::String] {
+        self.savings_plan_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -34,12 +38,16 @@ impl DescribeSavingsPlansInput {
         self.max_results
     }
     /// <p>The states.</p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::SavingsPlanState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::SavingsPlanState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SavingsPlanFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SavingsPlanFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSavingsPlansInput {

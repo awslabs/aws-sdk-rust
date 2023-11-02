@@ -41,6 +41,7 @@ pub struct ConfirmProductInstanceInputBuilder {
 }
 impl ConfirmProductInstanceInputBuilder {
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ConfirmProductInstanceInputBuilder {
         &self.instance_id
     }
     /// <p>The product code. This must be a product code that you own.</p>
+    /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self

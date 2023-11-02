@@ -36,8 +36,10 @@ impl CreateDomainConfigurationInput {
         self.domain_name.as_deref()
     }
     /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
-    pub fn server_certificate_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.server_certificate_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_certificate_arns.is_none()`.
+    pub fn server_certificate_arns(&self) -> &[::std::string::String] {
+        self.server_certificate_arns.as_deref().unwrap_or_default()
     }
     /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn validation_certificate_arn(&self) -> ::std::option::Option<&str> {
@@ -58,8 +60,10 @@ impl CreateDomainConfigurationInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
@@ -88,6 +92,7 @@ pub struct CreateDomainConfigurationInputBuilder {
 }
 impl CreateDomainConfigurationInputBuilder {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
+    /// This field is required.
     pub fn domain_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_configuration_name = ::std::option::Option::Some(input.into());
         self

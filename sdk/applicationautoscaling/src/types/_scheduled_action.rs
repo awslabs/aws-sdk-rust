@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledAction {
     /// <p>The name of the scheduled action.</p>
-    pub scheduled_action_name: ::std::option::Option<::std::string::String>,
+    pub scheduled_action_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub scheduled_action_arn: ::std::option::Option<::std::string::String>,
+    pub scheduled_action_arn: ::std::string::String,
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: crate::types::ServiceNamespace,
     /// <p>The schedule for this action. The following formats are supported:</p>
     /// <ul>
     /// <li> <p>At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p> </li>
@@ -21,7 +21,7 @@ pub struct ScheduledAction {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub schedule: ::std::option::Option<::std::string::String>,
+    pub schedule: ::std::string::String,
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
@@ -44,7 +44,7 @@ pub struct ScheduledAction {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p> </li>
@@ -77,20 +77,22 @@ pub struct ScheduledAction {
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub scalable_target_action: ::std::option::Option<crate::types::ScalableTargetAction>,
     /// <p>The date and time that the scheduled action was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
 }
 impl ScheduledAction {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
-        self.scheduled_action_name.as_deref()
+    pub fn scheduled_action_name(&self) -> &str {
+        use std::ops::Deref;
+        self.scheduled_action_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub fn scheduled_action_arn(&self) -> ::std::option::Option<&str> {
-        self.scheduled_action_arn.as_deref()
+    pub fn scheduled_action_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.scheduled_action_arn.deref()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
-        self.service_namespace.as_ref()
+    pub fn service_namespace(&self) -> &crate::types::ServiceNamespace {
+        &self.service_namespace
     }
     /// <p>The schedule for this action. The following formats are supported:</p>
     /// <ul>
@@ -103,8 +105,9 @@ impl ScheduledAction {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
-        self.schedule.as_deref()
+    pub fn schedule(&self) -> &str {
+        use std::ops::Deref;
+        self.schedule.deref()
     }
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
     pub fn timezone(&self) -> ::std::option::Option<&str> {
@@ -130,8 +133,9 @@ impl ScheduledAction {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -173,8 +177,8 @@ impl ScheduledAction {
         self.scalable_target_action.as_ref()
     }
     /// <p>The date and time that the scheduled action was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
 }
 impl ScheduledAction {
@@ -202,6 +206,7 @@ pub struct ScheduledActionBuilder {
 }
 impl ScheduledActionBuilder {
     /// <p>The name of the scheduled action.</p>
+    /// This field is required.
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
@@ -216,6 +221,7 @@ impl ScheduledActionBuilder {
         &self.scheduled_action_name
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
+    /// This field is required.
     pub fn scheduled_action_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_arn = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +236,7 @@ impl ScheduledActionBuilder {
         &self.scheduled_action_arn
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.service_namespace = ::std::option::Option::Some(input);
         self
@@ -254,6 +261,7 @@ impl ScheduledActionBuilder {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// This field is required.
     pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule = ::std::option::Option::Some(input.into());
         self
@@ -321,6 +329,7 @@ impl ScheduledActionBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -498,6 +507,7 @@ impl ScheduledActionBuilder {
         &self.scalable_target_action
     }
     /// <p>The date and time that the scheduled action was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -512,19 +522,56 @@ impl ScheduledActionBuilder {
         &self.creation_time
     }
     /// Consumes the builder and constructs a [`ScheduledAction`](crate::types::ScheduledAction).
-    pub fn build(self) -> crate::types::ScheduledAction {
-        crate::types::ScheduledAction {
-            scheduled_action_name: self.scheduled_action_name,
-            scheduled_action_arn: self.scheduled_action_arn,
-            service_namespace: self.service_namespace,
-            schedule: self.schedule,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`scheduled_action_name`](crate::types::builders::ScheduledActionBuilder::scheduled_action_name)
+    /// - [`scheduled_action_arn`](crate::types::builders::ScheduledActionBuilder::scheduled_action_arn)
+    /// - [`service_namespace`](crate::types::builders::ScheduledActionBuilder::service_namespace)
+    /// - [`schedule`](crate::types::builders::ScheduledActionBuilder::schedule)
+    /// - [`resource_id`](crate::types::builders::ScheduledActionBuilder::resource_id)
+    /// - [`creation_time`](crate::types::builders::ScheduledActionBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduledAction {
+            scheduled_action_name: self.scheduled_action_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scheduled_action_name",
+                    "scheduled_action_name was not specified but it is required when building ScheduledAction",
+                )
+            })?,
+            scheduled_action_arn: self.scheduled_action_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scheduled_action_arn",
+                    "scheduled_action_arn was not specified but it is required when building ScheduledAction",
+                )
+            })?,
+            service_namespace: self.service_namespace.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_namespace",
+                    "service_namespace was not specified but it is required when building ScheduledAction",
+                )
+            })?,
+            schedule: self.schedule.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "schedule",
+                    "schedule was not specified but it is required when building ScheduledAction",
+                )
+            })?,
             timezone: self.timezone,
-            resource_id: self.resource_id,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ScheduledAction",
+                )
+            })?,
             scalable_dimension: self.scalable_dimension,
             start_time: self.start_time,
             end_time: self.end_time,
             scalable_target_action: self.scalable_target_action,
-            creation_time: self.creation_time,
-        }
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ScheduledAction",
+                )
+            })?,
+        })
     }
 }

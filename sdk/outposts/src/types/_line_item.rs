@@ -43,8 +43,10 @@ impl LineItem {
         self.shipment_information.as_ref()
     }
     /// <p> Information about assets. </p>
-    pub fn asset_information_list(&self) -> ::std::option::Option<&[crate::types::LineItemAssetInformation]> {
-        self.asset_information_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_information_list.is_none()`.
+    pub fn asset_information_list(&self) -> &[crate::types::LineItemAssetInformation] {
+        self.asset_information_list.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the previous line item.</p>
     pub fn previous_line_item_id(&self) -> ::std::option::Option<&str> {

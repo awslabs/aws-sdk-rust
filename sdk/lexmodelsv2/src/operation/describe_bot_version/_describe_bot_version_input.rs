@@ -34,6 +34,7 @@ pub struct DescribeBotVersionInputBuilder {
 }
 impl DescribeBotVersionInputBuilder {
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeBotVersionInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot to return metadata for.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self

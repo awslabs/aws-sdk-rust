@@ -34,6 +34,7 @@ pub struct UpdateFeatureOutputBuilder {
 }
 impl UpdateFeatureOutputBuilder {
     /// <p>A structure that contains information about the updated feature.</p>
+    /// This field is required.
     pub fn feature(mut self, input: crate::types::Feature) -> Self {
         self.feature = ::std::option::Option::Some(input);
         self

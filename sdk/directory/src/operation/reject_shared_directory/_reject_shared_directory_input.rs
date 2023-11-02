@@ -27,6 +27,7 @@ pub struct RejectSharedDirectoryInputBuilder {
 }
 impl RejectSharedDirectoryInputBuilder {
     /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
+    /// This field is required.
     pub fn shared_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_directory_id = ::std::option::Option::Some(input.into());
         self

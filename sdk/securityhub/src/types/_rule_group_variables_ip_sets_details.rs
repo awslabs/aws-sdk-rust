@@ -9,8 +9,10 @@ pub struct RuleGroupVariablesIpSetsDetails {
 }
 impl RuleGroupVariablesIpSetsDetails {
     /// <p>The list of IP addresses and ranges.</p>
-    pub fn definition(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.definition.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.definition.is_none()`.
+    pub fn definition(&self) -> &[::std::string::String] {
+        self.definition.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupVariablesIpSetsDetails {

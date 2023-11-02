@@ -28,6 +28,7 @@ pub struct DeletePackageInputBuilder {
 }
 impl DeletePackageInputBuilder {
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self

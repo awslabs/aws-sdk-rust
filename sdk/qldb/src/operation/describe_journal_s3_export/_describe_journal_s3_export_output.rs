@@ -34,6 +34,7 @@ pub struct DescribeJournalS3ExportOutputBuilder {
 }
 impl DescribeJournalS3ExportOutputBuilder {
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
+    /// This field is required.
     pub fn export_description(mut self, input: crate::types::JournalS3ExportDescription) -> Self {
         self.export_description = ::std::option::Option::Some(input);
         self

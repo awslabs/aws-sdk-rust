@@ -3,47 +3,47 @@ pub fn ser_s3_data_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DataSourceConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_name {
-        object.key("BucketName").string(var_1.as_str());
+    {
+        object.key("BucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_2) = &input.inclusion_prefixes {
-        let mut array_3 = object.key("InclusionPrefixes").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.inclusion_prefixes {
+        let mut array_2 = object.key("InclusionPrefixes").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.inclusion_patterns {
-        let mut array_6 = object.key("InclusionPatterns").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.inclusion_patterns {
+        let mut array_5 = object.key("InclusionPatterns").start_array();
+        for item_6 in var_4 {
             {
-                array_6.value().string(item_7.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.exclusion_patterns {
-        let mut array_9 = object.key("ExclusionPatterns").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.exclusion_patterns {
+        let mut array_8 = object.key("ExclusionPatterns").start_array();
+        for item_9 in var_7 {
             {
-                array_9.value().string(item_10.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_11) = &input.documents_metadata_configuration {
+    if let Some(var_10) = &input.documents_metadata_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("DocumentsMetadataConfiguration").start_object();
-        crate::protocol_serde::shape_documents_metadata_configuration::ser_documents_metadata_configuration(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_11 = object.key("DocumentsMetadataConfiguration").start_object();
+        crate::protocol_serde::shape_documents_metadata_configuration::ser_documents_metadata_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_13) = &input.access_control_list_configuration {
+    if let Some(var_12) = &input.access_control_list_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("AccessControlListConfiguration").start_object();
-        crate::protocol_serde::shape_access_control_list_configuration::ser_access_control_list_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_13 = object.key("AccessControlListConfiguration").start_object();
+        crate::protocol_serde::shape_access_control_list_configuration::ser_access_control_list_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }
@@ -107,7 +107,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::s3_data_source_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

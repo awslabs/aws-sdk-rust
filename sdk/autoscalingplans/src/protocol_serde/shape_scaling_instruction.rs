@@ -3,74 +3,74 @@ pub fn ser_scaling_instruction(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScalingInstruction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.service_namespace {
-        object.key("ServiceNamespace").string(var_1.as_str());
+    {
+        object.key("ServiceNamespace").string(input.service_namespace.as_str());
     }
-    if let Some(var_2) = &input.resource_id {
-        object.key("ResourceId").string(var_2.as_str());
+    {
+        object.key("ResourceId").string(input.resource_id.as_str());
     }
-    if let Some(var_3) = &input.scalable_dimension {
-        object.key("ScalableDimension").string(var_3.as_str());
+    {
+        object.key("ScalableDimension").string(input.scalable_dimension.as_str());
     }
-    if let Some(var_4) = &input.min_capacity {
+    {
         object.key("MinCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.min_capacity).into()),
         );
     }
-    if let Some(var_5) = &input.max_capacity {
+    {
         object.key("MaxCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((input.max_capacity).into()),
         );
     }
-    if let Some(var_6) = &input.target_tracking_configurations {
-        let mut array_7 = object.key("TargetTrackingConfigurations").start_array();
-        for item_8 in var_6 {
+    {
+        let mut array_1 = object.key("TargetTrackingConfigurations").start_array();
+        for item_2 in &input.target_tracking_configurations {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_target_tracking_configuration::ser_target_tracking_configuration(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_target_tracking_configuration::ser_target_tracking_configuration(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_7.finish();
+        array_1.finish();
     }
-    if let Some(var_10) = &input.predefined_load_metric_specification {
+    if let Some(var_4) = &input.predefined_load_metric_specification {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("PredefinedLoadMetricSpecification").start_object();
-        crate::protocol_serde::shape_predefined_load_metric_specification::ser_predefined_load_metric_specification(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_5 = object.key("PredefinedLoadMetricSpecification").start_object();
+        crate::protocol_serde::shape_predefined_load_metric_specification::ser_predefined_load_metric_specification(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_12) = &input.customized_load_metric_specification {
+    if let Some(var_6) = &input.customized_load_metric_specification {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("CustomizedLoadMetricSpecification").start_object();
-        crate::protocol_serde::shape_customized_load_metric_specification::ser_customized_load_metric_specification(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_7 = object.key("CustomizedLoadMetricSpecification").start_object();
+        crate::protocol_serde::shape_customized_load_metric_specification::ser_customized_load_metric_specification(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_14) = &input.scheduled_action_buffer_time {
+    if let Some(var_8) = &input.scheduled_action_buffer_time {
         object.key("ScheduledActionBufferTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_15) = &input.predictive_scaling_max_capacity_behavior {
-        object.key("PredictiveScalingMaxCapacityBehavior").string(var_15.as_str());
+    if let Some(var_9) = &input.predictive_scaling_max_capacity_behavior {
+        object.key("PredictiveScalingMaxCapacityBehavior").string(var_9.as_str());
     }
-    if let Some(var_16) = &input.predictive_scaling_max_capacity_buffer {
+    if let Some(var_10) = &input.predictive_scaling_max_capacity_buffer {
         object.key("PredictiveScalingMaxCapacityBuffer").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_17) = &input.predictive_scaling_mode {
-        object.key("PredictiveScalingMode").string(var_17.as_str());
+    if let Some(var_11) = &input.predictive_scaling_mode {
+        object.key("PredictiveScalingMode").string(var_11.as_str());
     }
-    if let Some(var_18) = &input.scaling_policy_update_behavior {
-        object.key("ScalingPolicyUpdateBehavior").string(var_18.as_str());
+    if let Some(var_12) = &input.scaling_policy_update_behavior {
+        object.key("ScalingPolicyUpdateBehavior").string(var_12.as_str());
     }
-    if let Some(var_19) = &input.disable_dynamic_scaling {
-        object.key("DisableDynamicScaling").boolean(*var_19);
+    if let Some(var_13) = &input.disable_dynamic_scaling {
+        object.key("DisableDynamicScaling").boolean(*var_13);
     }
     Ok(())
 }
@@ -191,7 +191,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::scaling_instruction_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

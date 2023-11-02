@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplateS3LogConfigurationInput {
     /// <p>The name of the destination bucket.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>The bucket prefix.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentTemplateS3LogConfigurationInput {
     /// <p>The name of the destination bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>The bucket prefix.</p>
     pub fn prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ExperimentTemplateS3LogConfigurationInputBuilder {
 }
 impl ExperimentTemplateS3LogConfigurationInputBuilder {
     /// <p>The name of the destination bucket.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl ExperimentTemplateS3LogConfigurationInputBuilder {
         &self.prefix
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateS3LogConfigurationInput`](crate::types::ExperimentTemplateS3LogConfigurationInput).
-    pub fn build(self) -> crate::types::ExperimentTemplateS3LogConfigurationInput {
-        crate::types::ExperimentTemplateS3LogConfigurationInput {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::ExperimentTemplateS3LogConfigurationInputBuilder::bucket_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ExperimentTemplateS3LogConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExperimentTemplateS3LogConfigurationInput {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building ExperimentTemplateS3LogConfigurationInput",
+                )
+            })?,
             prefix: self.prefix,
-        }
+        })
     }
 }

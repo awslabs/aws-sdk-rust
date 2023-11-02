@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssetPropertyValueHistoryOutput {
     /// <p>The asset property's value history.</p>
-    pub asset_property_value_history: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub asset_property_value_history: ::std::vec::Vec<crate::types::AssetPropertyValue>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAssetPropertyValueHistoryOutput {
     /// <p>The asset property's value history.</p>
-    pub fn asset_property_value_history(&self) -> ::std::option::Option<&[crate::types::AssetPropertyValue]> {
-        self.asset_property_value_history.as_deref()
+    pub fn asset_property_value_history(&self) -> &[crate::types::AssetPropertyValue] {
+        use std::ops::Deref;
+        self.asset_property_value_history.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl GetAssetPropertyValueHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput).
-    pub fn build(self) -> crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput {
-        crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput {
-            asset_property_value_history: self.asset_property_value_history,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_property_value_history`](crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder::asset_property_value_history)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput {
+            asset_property_value_history: self.asset_property_value_history.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_property_value_history",
+                    "asset_property_value_history was not specified but it is required when building GetAssetPropertyValueHistoryOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

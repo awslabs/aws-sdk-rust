@@ -19,20 +19,20 @@ pub fn ser_create_app_version_app_component_input(
         }
         object_2.finish();
     }
-    if let Some(var_7) = &input.app_arn {
-        object.key("appArn").string(var_7.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("clientToken").string(var_8.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.id {
-        object.key("id").string(var_9.as_str());
+    if let Some(var_8) = &input.id {
+        object.key("id").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_11) = &input.r#type {
-        object.key("type").string(var_11.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }

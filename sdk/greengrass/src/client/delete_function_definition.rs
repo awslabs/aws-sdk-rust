@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFunctionDefinition`](crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`function_definition_id(impl Into<String>)`](crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder::function_definition_id) / [`set_function_definition_id(Option<String>)`](crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder::set_function_definition_id): The ID of the Lambda function definition.
+    ///   - [`function_definition_id(impl Into<String>)`](crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder::function_definition_id) / [`set_function_definition_id(Option<String>)`](crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder::set_function_definition_id):<br>required: **true**<br>The ID of the Lambda function definition.<br>
     /// - On success, responds with [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteFunctionDefinitionError>`](crate::operation::delete_function_definition::DeleteFunctionDefinitionError)
     pub fn delete_function_definition(&self) -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionFluentBuilder {

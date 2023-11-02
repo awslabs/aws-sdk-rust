@@ -35,6 +35,7 @@ pub struct UpdateRoutingControlInputBuilder {
 }
 impl UpdateRoutingControlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateRoutingControlInputBuilder {
         &self.routing_control_arn
     }
     /// <p>The name of the routing control.</p>
+    /// This field is required.
     pub fn routing_control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_name = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ pub fn ser_disassociate_client_device_from_core_device_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DisassociateClientDeviceFromCoreDeviceEntry,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.thing_name {
-        object.key("thingName").string(var_1.as_str());
+    {
+        object.key("thingName").string(input.thing_name.as_str());
     }
     Ok(())
 }

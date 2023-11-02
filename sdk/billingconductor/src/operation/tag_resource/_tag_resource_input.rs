@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p> The tags to add to the resource as a list of key-value pairs. </p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p> The tags to add to the resource as a list of key-value pairs. </p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.tags.as_ref()
+    pub fn tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.tags
     }
 }
 impl TagResourceInput {
@@ -34,6 +35,7 @@ pub struct TagResourceInputBuilder {
 }
 impl TagResourceInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the resource to which to add tags. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -68,10 +70,23 @@ impl TagResourceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::operation::tag_resource::builders::TagResourceInputBuilder::resource_arn)
+    /// - [`tags`](crate::operation::tag_resource::builders::TagResourceInputBuilder::tags)
     pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
-            resource_arn: self.resource_arn,
-            tags: self.tags,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building TagResourceInput",
+                )
+            })?,
+            tags: self.tags.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tags",
+                    "tags was not specified but it is required when building TagResourceInput",
+                )
+            })?,
         })
     }
 }

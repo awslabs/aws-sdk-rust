@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLicenseConfiguration`](crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`license_configuration_arn(impl Into<String>)`](crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder::set_license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder::set_license_configuration_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the license configuration.</p><br>
     /// - On success, responds with [`GetLicenseConfigurationOutput`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput) with field(s):
     ///   - [`license_configuration_id(Option<String>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_configuration_id): <p>Unique ID for the license configuration.</p>
     ///   - [`license_configuration_arn(Option<String>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>

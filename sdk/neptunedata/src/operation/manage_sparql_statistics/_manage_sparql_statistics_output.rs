@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManageSparqlStatisticsOutput {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>This is only returned for refresh mode.</p>
     pub payload: ::std::option::Option<crate::types::RefreshStatisticsIdMap>,
     _request_id: Option<String>,
 }
 impl ManageSparqlStatisticsOutput {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>This is only returned for refresh mode.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::RefreshStatisticsIdMap> {
@@ -41,6 +42,7 @@ pub struct ManageSparqlStatisticsOutputBuilder {
 }
 impl ManageSparqlStatisticsOutputBuilder {
     /// <p>The HTTP return code of the request. If the request succeeded, the code is 200.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +80,23 @@ impl ManageSparqlStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ManageSparqlStatisticsOutput`](crate::operation::manage_sparql_statistics::ManageSparqlStatisticsOutput).
-    pub fn build(self) -> crate::operation::manage_sparql_statistics::ManageSparqlStatisticsOutput {
-        crate::operation::manage_sparql_statistics::ManageSparqlStatisticsOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::manage_sparql_statistics::builders::ManageSparqlStatisticsOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::manage_sparql_statistics::ManageSparqlStatisticsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::manage_sparql_statistics::ManageSparqlStatisticsOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ManageSparqlStatisticsOutput",
+                )
+            })?,
             payload: self.payload,
             _request_id: self._request_id,
-        }
+        })
     }
 }

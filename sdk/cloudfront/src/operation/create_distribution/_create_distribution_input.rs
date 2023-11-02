@@ -28,6 +28,7 @@ pub struct CreateDistributionInputBuilder {
 }
 impl CreateDistributionInputBuilder {
     /// <p>The distribution's configuration information.</p>
+    /// This field is required.
     pub fn distribution_config(mut self, input: crate::types::DistributionConfig) -> Self {
         self.distribution_config = ::std::option::Option::Some(input);
         self

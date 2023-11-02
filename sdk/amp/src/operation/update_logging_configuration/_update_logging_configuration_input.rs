@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub log_group_arn: ::std::option::Option<::std::string::String>,
+    pub log_group_arn: ::std::string::String,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// The ARN of the CW log group to which the vended log data will be published.
-    pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
-        self.log_group_arn.as_deref()
+    pub fn log_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_arn.deref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct UpdateLoggingConfigurationInputBuilder {
 }
 impl UpdateLoggingConfigurationInputBuilder {
     /// The ID of the workspace to vend logs to.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl UpdateLoggingConfigurationInputBuilder {
         &self.workspace_id
     }
     /// The ARN of the CW log group to which the vended log data will be published.
+    /// This field is required.
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,9 @@ impl UpdateLoggingConfigurationInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder::workspace_id)
+    /// - [`log_group_arn`](crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder::log_group_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,8 +98,18 @@ impl UpdateLoggingConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput {
-            workspace_id: self.workspace_id,
-            log_group_arn: self.log_group_arn,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building UpdateLoggingConfigurationInput",
+                )
+            })?,
+            log_group_arn: self.log_group_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_group_arn",
+                    "log_group_arn was not specified but it is required when building UpdateLoggingConfigurationInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

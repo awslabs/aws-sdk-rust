@@ -94,6 +94,7 @@ pub struct ModifyTargetGroupInputBuilder {
 }
 impl ModifyTargetGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self

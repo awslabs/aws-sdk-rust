@@ -34,6 +34,7 @@ pub struct GetRouteAnalysisInputBuilder {
 }
 impl GetRouteAnalysisInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetRouteAnalysisInputBuilder {
         &self.global_network_id
     }
     /// <p>The ID of the route analysis.</p>
+    /// This field is required.
     pub fn route_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_analysis_id = ::std::option::Option::Some(input.into());
         self

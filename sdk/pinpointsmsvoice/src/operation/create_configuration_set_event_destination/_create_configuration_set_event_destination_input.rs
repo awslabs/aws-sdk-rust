@@ -42,6 +42,7 @@ pub struct CreateConfigurationSetEventDestinationInputBuilder {
 }
 impl CreateConfigurationSetEventDestinationInputBuilder {
     /// ConfigurationSetName
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self

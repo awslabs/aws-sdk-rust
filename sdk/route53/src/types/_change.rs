@@ -12,7 +12,7 @@ pub struct Change {
     /// </important> </li>
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
-    pub action: ::std::option::Option<crate::types::ChangeAction>,
+    pub action: crate::types::ChangeAction,
     /// <p>Information about the resource record set to create, delete, or update.</p>
     pub resource_record_set: ::std::option::Option<crate::types::ResourceRecordSet>,
 }
@@ -25,8 +25,8 @@ impl Change {
     /// </important> </li>
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::ChangeAction {
+        &self.action
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
     pub fn resource_record_set(&self) -> ::std::option::Option<&crate::types::ResourceRecordSet> {
@@ -56,6 +56,7 @@ impl ChangeBuilder {
     /// </important> </li>
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -84,6 +85,7 @@ impl ChangeBuilder {
         &self.action
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
+    /// This field is required.
     pub fn resource_record_set(mut self, input: crate::types::ResourceRecordSet) -> Self {
         self.resource_record_set = ::std::option::Option::Some(input);
         self
@@ -98,10 +100,17 @@ impl ChangeBuilder {
         &self.resource_record_set
     }
     /// Consumes the builder and constructs a [`Change`](crate::types::Change).
-    pub fn build(self) -> crate::types::Change {
-        crate::types::Change {
-            action: self.action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::ChangeBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::Change, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Change {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building Change",
+                )
+            })?,
             resource_record_set: self.resource_record_set,
-        }
+        })
     }
 }

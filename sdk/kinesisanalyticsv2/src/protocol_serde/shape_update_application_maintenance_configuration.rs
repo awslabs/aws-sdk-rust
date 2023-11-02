@@ -36,8 +36,8 @@ pub fn de_update_application_maintenance_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError::InvalidArgumentException({
@@ -52,8 +52,8 @@ pub fn de_update_application_maintenance_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceInUseException" => crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError::ResourceInUseException({
@@ -68,8 +68,8 @@ pub fn de_update_application_maintenance_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError::ResourceNotFoundException({
@@ -84,8 +84,8 @@ pub fn de_update_application_maintenance_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedOperationException" => crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError::UnsupportedOperationException({
@@ -100,8 +100,8 @@ pub fn de_update_application_maintenance_configuration_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError::generic(generic)

@@ -3,11 +3,11 @@ pub fn ser_xks_proxy_authentication_credential_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::XksProxyAuthenticationCredentialType,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.access_key_id {
-        object.key("AccessKeyId").string(var_1.as_str());
+    {
+        object.key("AccessKeyId").string(input.access_key_id.as_str());
     }
-    if let Some(var_2) = &input.raw_secret_access_key {
-        object.key("RawSecretAccessKey").string(var_2.as_str());
+    {
+        object.key("RawSecretAccessKey").string(input.raw_secret_access_key.as_str());
     }
     Ok(())
 }

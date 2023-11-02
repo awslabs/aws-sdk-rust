@@ -9,23 +9,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transaction {
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub network: ::std::option::Option<crate::types::QueryNetwork>,
+    pub network: crate::types::QueryNetwork,
     /// <p>The block hash is a unique identifier for a block. It is a fixed-size string that is calculated by using the information in the block. The block hash is used to verify the integrity of the data in the block.</p>
     pub block_hash: ::std::option::Option<::std::string::String>,
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub transaction_hash: ::std::option::Option<::std::string::String>,
+    pub transaction_hash: ::std::string::String,
     /// <p>The block number in which the transaction is recorded.</p>
     pub block_number: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Timestamp</code> of the transaction. </p>
-    pub transaction_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub transaction_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The index of the transaction within a blockchain.</p>
-    pub transaction_index: ::std::option::Option<i64>,
+    pub transaction_index: i64,
     /// <p>The number of transactions in the block.</p>
-    pub number_of_transactions: ::std::option::Option<i64>,
+    pub number_of_transactions: i64,
     /// <p>The status of the transaction.</p>
-    pub status: ::std::option::Option<crate::types::QueryTransactionStatus>,
+    pub status: crate::types::QueryTransactionStatus,
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub to: ::std::option::Option<::std::string::String>,
+    pub to: ::std::string::String,
     /// <p>The initiator of the transaction. It is either in the form a public key or a contract address.</p>
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain address for the contract.</p>
@@ -49,40 +49,42 @@ pub struct Transaction {
 }
 impl Transaction {
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
-        self.network.as_ref()
+    pub fn network(&self) -> &crate::types::QueryNetwork {
+        &self.network
     }
     /// <p>The block hash is a unique identifier for a block. It is a fixed-size string that is calculated by using the information in the block. The block hash is used to verify the integrity of the data in the block.</p>
     pub fn block_hash(&self) -> ::std::option::Option<&str> {
         self.block_hash.as_deref()
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(&self) -> ::std::option::Option<&str> {
-        self.transaction_hash.as_deref()
+    pub fn transaction_hash(&self) -> &str {
+        use std::ops::Deref;
+        self.transaction_hash.deref()
     }
     /// <p>The block number in which the transaction is recorded.</p>
     pub fn block_number(&self) -> ::std::option::Option<&str> {
         self.block_number.as_deref()
     }
     /// <p>The <code>Timestamp</code> of the transaction. </p>
-    pub fn transaction_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.transaction_timestamp.as_ref()
+    pub fn transaction_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.transaction_timestamp
     }
     /// <p>The index of the transaction within a blockchain.</p>
-    pub fn transaction_index(&self) -> ::std::option::Option<i64> {
+    pub fn transaction_index(&self) -> i64 {
         self.transaction_index
     }
     /// <p>The number of transactions in the block.</p>
-    pub fn number_of_transactions(&self) -> ::std::option::Option<i64> {
+    pub fn number_of_transactions(&self) -> i64 {
         self.number_of_transactions
     }
     /// <p>The status of the transaction.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QueryTransactionStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::QueryTransactionStatus {
+        &self.status
     }
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn to(&self) -> ::std::option::Option<&str> {
-        self.to.as_deref()
+    pub fn to(&self) -> &str {
+        use std::ops::Deref;
+        self.to.deref()
     }
     /// <p>The initiator of the transaction. It is either in the form a public key or a contract address.</p>
     pub fn from(&self) -> ::std::option::Option<&str> {
@@ -158,6 +160,7 @@ pub struct TransactionBuilder {
 }
 impl TransactionBuilder {
     /// <p>The blockchain network where the transaction occurred.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -186,6 +189,7 @@ impl TransactionBuilder {
         &self.block_hash
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
@@ -214,6 +218,7 @@ impl TransactionBuilder {
         &self.block_number
     }
     /// <p>The <code>Timestamp</code> of the transaction. </p>
+    /// This field is required.
     pub fn transaction_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.transaction_timestamp = ::std::option::Option::Some(input);
         self
@@ -228,6 +233,7 @@ impl TransactionBuilder {
         &self.transaction_timestamp
     }
     /// <p>The index of the transaction within a blockchain.</p>
+    /// This field is required.
     pub fn transaction_index(mut self, input: i64) -> Self {
         self.transaction_index = ::std::option::Option::Some(input);
         self
@@ -242,6 +248,7 @@ impl TransactionBuilder {
         &self.transaction_index
     }
     /// <p>The number of transactions in the block.</p>
+    /// This field is required.
     pub fn number_of_transactions(mut self, input: i64) -> Self {
         self.number_of_transactions = ::std::option::Option::Some(input);
         self
@@ -256,6 +263,7 @@ impl TransactionBuilder {
         &self.number_of_transactions
     }
     /// <p>The status of the transaction.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::QueryTransactionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -270,6 +278,7 @@ impl TransactionBuilder {
         &self.status
     }
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// This field is required.
     pub fn to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to = ::std::option::Option::Some(input.into());
         self
@@ -424,17 +433,60 @@ impl TransactionBuilder {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`Transaction`](crate::types::Transaction).
-    pub fn build(self) -> crate::types::Transaction {
-        crate::types::Transaction {
-            network: self.network,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network`](crate::types::builders::TransactionBuilder::network)
+    /// - [`transaction_hash`](crate::types::builders::TransactionBuilder::transaction_hash)
+    /// - [`transaction_timestamp`](crate::types::builders::TransactionBuilder::transaction_timestamp)
+    /// - [`transaction_index`](crate::types::builders::TransactionBuilder::transaction_index)
+    /// - [`number_of_transactions`](crate::types::builders::TransactionBuilder::number_of_transactions)
+    /// - [`status`](crate::types::builders::TransactionBuilder::status)
+    /// - [`to`](crate::types::builders::TransactionBuilder::to)
+    pub fn build(self) -> ::std::result::Result<crate::types::Transaction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Transaction {
+            network: self.network.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network",
+                    "network was not specified but it is required when building Transaction",
+                )
+            })?,
             block_hash: self.block_hash,
-            transaction_hash: self.transaction_hash,
+            transaction_hash: self.transaction_hash.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transaction_hash",
+                    "transaction_hash was not specified but it is required when building Transaction",
+                )
+            })?,
             block_number: self.block_number,
-            transaction_timestamp: self.transaction_timestamp,
-            transaction_index: self.transaction_index,
-            number_of_transactions: self.number_of_transactions,
-            status: self.status,
-            to: self.to,
+            transaction_timestamp: self.transaction_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transaction_timestamp",
+                    "transaction_timestamp was not specified but it is required when building Transaction",
+                )
+            })?,
+            transaction_index: self.transaction_index.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transaction_index",
+                    "transaction_index was not specified but it is required when building Transaction",
+                )
+            })?,
+            number_of_transactions: self.number_of_transactions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "number_of_transactions",
+                    "number_of_transactions was not specified but it is required when building Transaction",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Transaction",
+                )
+            })?,
+            to: self.to.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "to",
+                    "to was not specified but it is required when building Transaction",
+                )
+            })?,
             from: self.from,
             contract_address: self.contract_address,
             gas_used: self.gas_used,
@@ -445,6 +497,6 @@ impl TransactionBuilder {
             signature_s: self.signature_s,
             transaction_fee: self.transaction_fee,
             transaction_id: self.transaction_id,
-        }
+        })
     }
 }

@@ -12,21 +12,21 @@ pub fn ser_create_target_group_input(
         crate::protocol_serde::shape_target_group_config::ser_target_group_config(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_4) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("tags").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_6.finish();
+        object_5.finish();
     }
-    if let Some(var_9) = &input.r#type {
-        object.key("type").string(var_9.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }

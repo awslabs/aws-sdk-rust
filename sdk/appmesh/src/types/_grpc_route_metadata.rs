@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcRouteMetadata {
     /// <p>The name of the route.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub invert: ::std::option::Option<bool>,
     /// <p>An object that represents the data to match from the request.</p>
@@ -13,8 +13,9 @@ pub struct GrpcRouteMetadata {
 }
 impl GrpcRouteMetadata {
     /// <p>The name of the route.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn invert(&self) -> ::std::option::Option<bool> {
@@ -42,6 +43,7 @@ pub struct GrpcRouteMetadataBuilder {
 }
 impl GrpcRouteMetadataBuilder {
     /// <p>The name of the route.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl GrpcRouteMetadataBuilder {
         &self.r#match
     }
     /// Consumes the builder and constructs a [`GrpcRouteMetadata`](crate::types::GrpcRouteMetadata).
-    pub fn build(self) -> crate::types::GrpcRouteMetadata {
-        crate::types::GrpcRouteMetadata {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::GrpcRouteMetadataBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GrpcRouteMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GrpcRouteMetadata {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GrpcRouteMetadata",
+                )
+            })?,
             invert: self.invert,
             r#match: self.r#match,
-        }
+        })
     }
 }

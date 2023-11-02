@@ -34,6 +34,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutResourcePolicyInputBuilder {
         &self.resource_arn
     }
     /// <p>The policy document to set; formatted in JSON.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

@@ -60,8 +60,10 @@ impl CreateApiKeyOutput {
         self.last_updated_date.as_ref()
     }
     /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
-    pub fn stage_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.stage_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stage_keys.is_none()`.
+    pub fn stage_keys(&self) -> &[::std::string::String] {
+        self.stage_keys.as_deref().unwrap_or_default()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

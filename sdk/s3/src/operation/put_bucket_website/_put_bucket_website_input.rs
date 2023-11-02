@@ -59,6 +59,7 @@ pub struct PutBucketWebsiteInputBuilder {
 }
 impl PutBucketWebsiteInputBuilder {
     /// <p>The bucket name.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +108,7 @@ impl PutBucketWebsiteInputBuilder {
         &self.checksum_algorithm
     }
     /// <p>Container for the request.</p>
+    /// This field is required.
     pub fn website_configuration(mut self, input: crate::types::WebsiteConfiguration) -> Self {
         self.website_configuration = ::std::option::Option::Some(input);
         self

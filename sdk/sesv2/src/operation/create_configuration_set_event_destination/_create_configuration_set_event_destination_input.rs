@@ -42,6 +42,7 @@ pub struct CreateConfigurationSetEventDestinationInputBuilder {
 }
 impl CreateConfigurationSetEventDestinationInputBuilder {
     /// <p>The name of the configuration set .</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         &self.configuration_set_name
     }
     /// <p>A name that identifies the event destination within the configuration set.</p>
+    /// This field is required.
     pub fn event_destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_destination_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         &self.event_destination_name
     }
     /// <p>An object that defines the event destination.</p>
+    /// This field is required.
     pub fn event_destination(mut self, input: crate::types::EventDestinationDefinition) -> Self {
         self.event_destination = ::std::option::Option::Some(input);
         self

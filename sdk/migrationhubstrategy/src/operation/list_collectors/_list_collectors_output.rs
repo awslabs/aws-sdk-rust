@@ -11,8 +11,10 @@ pub struct ListCollectorsOutput {
 }
 impl ListCollectorsOutput {
     /// <p> The list of all the installed collectors. </p>
-    pub fn collectors(&self) -> ::std::option::Option<&[crate::types::Collector]> {
-        self.collectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collectors.is_none()`.
+    pub fn collectors(&self) -> &[crate::types::Collector] {
+        self.collectors.as_deref().unwrap_or_default()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

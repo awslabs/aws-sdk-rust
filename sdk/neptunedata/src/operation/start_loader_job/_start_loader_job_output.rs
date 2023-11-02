@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartLoaderJobOutput {
     /// <p>The HTTP return code indicating the status of the load job.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>Contains a <code>loadId</code> name-value pair that provides an identifier for the load operation.</p>
-    pub payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub payload: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartLoaderJobOutput {
     /// <p>The HTTP return code indicating the status of the load job.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>Contains a <code>loadId</code> name-value pair that provides an identifier for the load operation.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.payload.as_ref()
+    pub fn payload(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.payload
     }
 }
 impl ::aws_http::request_id::RequestId for StartLoaderJobOutput {
@@ -41,6 +42,7 @@ pub struct StartLoaderJobOutputBuilder {
 }
 impl StartLoaderJobOutputBuilder {
     /// <p>The HTTP return code indicating the status of the load job.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,26 @@ impl StartLoaderJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartLoaderJobOutput`](crate::operation::start_loader_job::StartLoaderJobOutput).
-    pub fn build(self) -> crate::operation::start_loader_job::StartLoaderJobOutput {
-        crate::operation::start_loader_job::StartLoaderJobOutput {
-            status: self.status,
-            payload: self.payload,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder::status)
+    /// - [`payload`](crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder::payload)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_loader_job::StartLoaderJobOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building StartLoaderJobOutput",
+                )
+            })?,
+            payload: self.payload.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "payload",
+                    "payload was not specified but it is required when building StartLoaderJobOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

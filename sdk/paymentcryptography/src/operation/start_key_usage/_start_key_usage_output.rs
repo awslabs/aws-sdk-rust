@@ -34,6 +34,7 @@ pub struct StartKeyUsageOutputBuilder {
 }
 impl StartKeyUsageOutputBuilder {
     /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated for use.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::Key) -> Self {
         self.key = ::std::option::Option::Some(input);
         self

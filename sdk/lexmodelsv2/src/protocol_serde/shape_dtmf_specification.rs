@@ -3,23 +3,23 @@ pub fn ser_dtmf_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DtmfSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.max_length {
+    {
         object.key("maxLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.max_length).into()),
         );
     }
-    if let Some(var_2) = &input.end_timeout_ms {
+    {
         object.key("endTimeoutMs").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.end_timeout_ms).into()),
         );
     }
-    if let Some(var_3) = &input.deletion_character {
-        object.key("deletionCharacter").string(var_3.as_str());
+    {
+        object.key("deletionCharacter").string(input.deletion_character.as_str());
     }
-    if let Some(var_4) = &input.end_character {
-        object.key("endCharacter").string(var_4.as_str());
+    {
+        object.key("endCharacter").string(input.end_character.as_str());
     }
     Ok(())
 }
@@ -77,7 +77,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::dtmf_specification_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

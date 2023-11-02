@@ -3,14 +3,14 @@ pub fn ser_publication(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Publication,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.event {
-        object.key("Event").string(var_1.as_str());
+    {
+        object.key("Event").string(input.event.as_str());
     }
-    if let Some(var_2) = &input.schema {
-        object.key("Schema").string(var_2.as_str());
+    {
+        object.key("Schema").string(input.schema.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("Description").string(var_1.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::publication_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGrokClassifierRequest {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The grok pattern used by this classifier.</p>
@@ -15,8 +15,9 @@ pub struct UpdateGrokClassifierRequest {
 }
 impl UpdateGrokClassifierRequest {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub fn classification(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct UpdateGrokClassifierRequestBuilder {
 }
 impl UpdateGrokClassifierRequestBuilder {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl UpdateGrokClassifierRequestBuilder {
         &self.custom_patterns
     }
     /// Consumes the builder and constructs a [`UpdateGrokClassifierRequest`](crate::types::UpdateGrokClassifierRequest).
-    pub fn build(self) -> crate::types::UpdateGrokClassifierRequest {
-        crate::types::UpdateGrokClassifierRequest {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::UpdateGrokClassifierRequestBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateGrokClassifierRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpdateGrokClassifierRequest {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateGrokClassifierRequest",
+                )
+            })?,
             classification: self.classification,
             grok_pattern: self.grok_pattern,
             custom_patterns: self.custom_patterns,
-        }
+        })
     }
 }

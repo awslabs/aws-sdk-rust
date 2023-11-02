@@ -95,14 +95,14 @@ impl GetCredentialsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::get_credentials::GetCredentialsOutput,
             crate::operation::get_credentials::GetCredentialsError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::get_credentials::GetCredentialsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,20 +112,6 @@ impl GetCredentialsFluentBuilder {
     pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
-    }
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.workgroup_name(input.into());
-        self
-    }
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_workgroup_name(input);
-        self
-    }
-    /// <p>The name of the workgroup associated with the database.</p>
-    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_workgroup_name()
     }
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
@@ -178,5 +164,33 @@ impl GetCredentialsFluentBuilder {
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_seconds()
+    }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workgroup_name(input.into());
+        self
+    }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workgroup_name(input);
+        self
+    }
+    /// <p>The name of the workgroup associated with the database.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
+    }
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.custom_domain_name(input.into());
+        self
+    }
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_custom_domain_name(input);
+        self
+    }
+    /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_domain_name()
     }
 }

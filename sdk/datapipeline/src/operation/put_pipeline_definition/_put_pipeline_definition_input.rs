@@ -19,16 +19,22 @@ impl PutPipelineDefinitionInput {
         self.pipeline_id.as_deref()
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn pipeline_objects(&self) -> ::std::option::Option<&[crate::types::PipelineObject]> {
-        self.pipeline_objects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_objects.is_none()`.
+    pub fn pipeline_objects(&self) -> &[crate::types::PipelineObject] {
+        self.pipeline_objects.as_deref().unwrap_or_default()
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn parameter_objects(&self) -> ::std::option::Option<&[crate::types::ParameterObject]> {
-        self.parameter_objects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_objects.is_none()`.
+    pub fn parameter_objects(&self) -> &[crate::types::ParameterObject] {
+        self.parameter_objects.as_deref().unwrap_or_default()
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn parameter_values(&self) -> ::std::option::Option<&[crate::types::ParameterValue]> {
-        self.parameter_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_values.is_none()`.
+    pub fn parameter_values(&self) -> &[crate::types::ParameterValue] {
+        self.parameter_values.as_deref().unwrap_or_default()
     }
 }
 impl PutPipelineDefinitionInput {
@@ -49,6 +55,7 @@ pub struct PutPipelineDefinitionInputBuilder {
 }
 impl PutPipelineDefinitionInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self

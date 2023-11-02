@@ -110,6 +110,7 @@ impl UpdateFirewallPolicyChangeProtectionInputBuilder {
         &self.firewall_name
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    /// This field is required.
     pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
         self.firewall_policy_change_protection = ::std::option::Option::Some(input);
         self

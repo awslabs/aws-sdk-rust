@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamSettings {
     /// <p>Database name for the endpoint.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>Set this attribute to specify the length of time to store all of the tables in memory that are migrated into Amazon Timestream from the source database. Time is measured in units of hours. When Timestream data comes in, it first resides in memory for the specified duration, which allows quick access to it.</p>
-    pub memory_duration: ::std::option::Option<i32>,
+    pub memory_duration: i32,
     /// <p>Set this attribute to specify the default magnetic duration applied to the Amazon Timestream tables in days. This is the number of days that records remain in magnetic store before being discarded. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a> in the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon Timestream Developer Guide</a>.</p>
-    pub magnetic_duration: ::std::option::Option<i32>,
+    pub magnetic_duration: i32,
     /// <p>Set this attribute to <code>true</code> to specify that DMS only applies inserts and updates, and not deletes. Amazon Timestream does not allow deleting records, so if this value is <code>false</code>, DMS nulls out the corresponding record in the Timestream database rather than deleting it.</p>
     pub cdc_inserts_and_updates: ::std::option::Option<bool>,
     /// <p>Set this attribute to <code>true</code> to enable memory store writes. When this value is <code>false</code>, DMS does not write records that are older in days than the value specified in <code>MagneticDuration</code>, because Amazon Timestream does not allow memory writes by default. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a> in the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon Timestream Developer Guide</a>.</p>
@@ -17,15 +17,16 @@ pub struct TimestreamSettings {
 }
 impl TimestreamSettings {
     /// <p>Database name for the endpoint.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>Set this attribute to specify the length of time to store all of the tables in memory that are migrated into Amazon Timestream from the source database. Time is measured in units of hours. When Timestream data comes in, it first resides in memory for the specified duration, which allows quick access to it.</p>
-    pub fn memory_duration(&self) -> ::std::option::Option<i32> {
+    pub fn memory_duration(&self) -> i32 {
         self.memory_duration
     }
     /// <p>Set this attribute to specify the default magnetic duration applied to the Amazon Timestream tables in days. This is the number of days that records remain in magnetic store before being discarded. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a> in the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon Timestream Developer Guide</a>.</p>
-    pub fn magnetic_duration(&self) -> ::std::option::Option<i32> {
+    pub fn magnetic_duration(&self) -> i32 {
         self.magnetic_duration
     }
     /// <p>Set this attribute to <code>true</code> to specify that DMS only applies inserts and updates, and not deletes. Amazon Timestream does not allow deleting records, so if this value is <code>false</code>, DMS nulls out the corresponding record in the Timestream database rather than deleting it.</p>
@@ -56,6 +57,7 @@ pub struct TimestreamSettingsBuilder {
 }
 impl TimestreamSettingsBuilder {
     /// <p>Database name for the endpoint.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl TimestreamSettingsBuilder {
         &self.database_name
     }
     /// <p>Set this attribute to specify the length of time to store all of the tables in memory that are migrated into Amazon Timestream from the source database. Time is measured in units of hours. When Timestream data comes in, it first resides in memory for the specified duration, which allows quick access to it.</p>
+    /// This field is required.
     pub fn memory_duration(mut self, input: i32) -> Self {
         self.memory_duration = ::std::option::Option::Some(input);
         self
@@ -84,6 +87,7 @@ impl TimestreamSettingsBuilder {
         &self.memory_duration
     }
     /// <p>Set this attribute to specify the default magnetic duration applied to the Amazon Timestream tables in days. This is the number of days that records remain in magnetic store before being discarded. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a> in the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon Timestream Developer Guide</a>.</p>
+    /// This field is required.
     pub fn magnetic_duration(mut self, input: i32) -> Self {
         self.magnetic_duration = ::std::option::Option::Some(input);
         self
@@ -126,13 +130,32 @@ impl TimestreamSettingsBuilder {
         &self.enable_magnetic_store_writes
     }
     /// Consumes the builder and constructs a [`TimestreamSettings`](crate::types::TimestreamSettings).
-    pub fn build(self) -> crate::types::TimestreamSettings {
-        crate::types::TimestreamSettings {
-            database_name: self.database_name,
-            memory_duration: self.memory_duration,
-            magnetic_duration: self.magnetic_duration,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::TimestreamSettingsBuilder::database_name)
+    /// - [`memory_duration`](crate::types::builders::TimestreamSettingsBuilder::memory_duration)
+    /// - [`magnetic_duration`](crate::types::builders::TimestreamSettingsBuilder::magnetic_duration)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestreamSettings {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building TimestreamSettings",
+                )
+            })?,
+            memory_duration: self.memory_duration.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "memory_duration",
+                    "memory_duration was not specified but it is required when building TimestreamSettings",
+                )
+            })?,
+            magnetic_duration: self.magnetic_duration.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "magnetic_duration",
+                    "magnetic_duration was not specified but it is required when building TimestreamSettings",
+                )
+            })?,
             cdc_inserts_and_updates: self.cdc_inserts_and_updates,
             enable_magnetic_store_writes: self.enable_magnetic_store_writes,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DeleteTransitGatewayConnectPeerInputBuilder {
 }
 impl DeleteTransitGatewayConnectPeerInputBuilder {
     /// <p>The ID of the Connect peer.</p>
+    /// This field is required.
     pub fn transit_gateway_connect_peer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_connect_peer_id = ::std::option::Option::Some(input.into());
         self

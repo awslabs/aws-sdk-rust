@@ -69,8 +69,10 @@ impl PieChartConfiguration {
         self.visual_palette.as_ref()
     }
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    pub fn contribution_analysis_defaults(&self) -> ::std::option::Option<&[crate::types::ContributionAnalysisDefault]> {
-        self.contribution_analysis_defaults.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contribution_analysis_defaults.is_none()`.
+    pub fn contribution_analysis_defaults(&self) -> &[crate::types::ContributionAnalysisDefault] {
+        self.contribution_analysis_defaults.as_deref().unwrap_or_default()
     }
 }
 impl PieChartConfiguration {

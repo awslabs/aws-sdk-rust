@@ -23,6 +23,7 @@ pub fn ser_v_cpu_count_range(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_v_cpu_count_range(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::VCpuCountRange, ::aws_smithy_xml::decode::XmlDecodeError> {

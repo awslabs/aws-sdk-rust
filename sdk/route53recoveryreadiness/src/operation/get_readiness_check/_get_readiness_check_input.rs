@@ -27,6 +27,7 @@ pub struct GetReadinessCheckInputBuilder {
 }
 impl GetReadinessCheckInputBuilder {
     /// <p>Name of a readiness check.</p>
+    /// This field is required.
     pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self

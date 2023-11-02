@@ -35,6 +35,7 @@ pub struct CreateInvalidationInputBuilder {
 }
 impl CreateInvalidationInputBuilder {
     /// <p>The distribution's id.</p>
+    /// This field is required.
     pub fn distribution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateInvalidationInputBuilder {
         &self.distribution_id
     }
     /// <p>The batch information for the invalidation.</p>
+    /// This field is required.
     pub fn invalidation_batch(mut self, input: crate::types::InvalidationBatch) -> Self {
         self.invalidation_batch = ::std::option::Option::Some(input);
         self

@@ -97,6 +97,7 @@ pub struct ListEnvironmentsInputBuilder {
 }
 impl ListEnvironmentsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +154,7 @@ impl ListEnvironmentsInputBuilder {
         &self.aws_account_region
     }
     /// <p>The identifier of the Amazon DataZone project.</p>
+    /// This field is required.
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_identifier = ::std::option::Option::Some(input.into());
         self

@@ -79,6 +79,7 @@ pub struct UpdateBotAliasInputBuilder {
 }
 impl UpdateBotAliasInputBuilder {
     /// <p>The unique identifier of the bot alias.</p>
+    /// This field is required.
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +94,7 @@ impl UpdateBotAliasInputBuilder {
         &self.bot_alias_id
     }
     /// <p>The new name to assign to the bot alias.</p>
+    /// This field is required.
     pub fn bot_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_name = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +190,7 @@ impl UpdateBotAliasInputBuilder {
         &self.sentiment_analysis_settings
     }
     /// <p>The identifier of the bot with the updated alias.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CryptogramVerificationArpcMethod1 {
     /// <p>The auth code used to calculate APRC after ARQC verification is successful. This is the same auth code used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub auth_response_code: ::std::option::Option<::std::string::String>,
+    pub auth_response_code: ::std::string::String,
 }
 impl CryptogramVerificationArpcMethod1 {
     /// <p>The auth code used to calculate APRC after ARQC verification is successful. This is the same auth code used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
-    pub fn auth_response_code(&self) -> ::std::option::Option<&str> {
-        self.auth_response_code.as_deref()
+    pub fn auth_response_code(&self) -> &str {
+        use std::ops::Deref;
+        self.auth_response_code.deref()
     }
 }
 impl CryptogramVerificationArpcMethod1 {
@@ -28,6 +29,7 @@ pub struct CryptogramVerificationArpcMethod1Builder {
 }
 impl CryptogramVerificationArpcMethod1Builder {
     /// <p>The auth code used to calculate APRC after ARQC verification is successful. This is the same auth code used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn auth_response_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_response_code = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl CryptogramVerificationArpcMethod1Builder {
         &self.auth_response_code
     }
     /// Consumes the builder and constructs a [`CryptogramVerificationArpcMethod1`](crate::types::CryptogramVerificationArpcMethod1).
-    pub fn build(self) -> crate::types::CryptogramVerificationArpcMethod1 {
-        crate::types::CryptogramVerificationArpcMethod1 {
-            auth_response_code: self.auth_response_code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`auth_response_code`](crate::types::builders::CryptogramVerificationArpcMethod1Builder::auth_response_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::CryptogramVerificationArpcMethod1, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CryptogramVerificationArpcMethod1 {
+            auth_response_code: self.auth_response_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "auth_response_code",
+                    "auth_response_code was not specified but it is required when building CryptogramVerificationArpcMethod1",
+                )
+            })?,
+        })
     }
 }

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerImage {
     /// <p>The URI locating the container image.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
 }
 impl ContainerImage {
     /// <p>The URI locating the container image.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
 }
 impl ContainerImage {
@@ -28,6 +29,7 @@ pub struct ContainerImageBuilder {
 }
 impl ContainerImageBuilder {
     /// <p>The URI locating the container image.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl ContainerImageBuilder {
         &self.uri
     }
     /// Consumes the builder and constructs a [`ContainerImage`](crate::types::ContainerImage).
-    pub fn build(self) -> crate::types::ContainerImage {
-        crate::types::ContainerImage { uri: self.uri }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::ContainerImageBuilder::uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContainerImage, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContainerImage {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building ContainerImage",
+                )
+            })?,
+        })
     }
 }

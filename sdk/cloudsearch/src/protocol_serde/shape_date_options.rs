@@ -37,6 +37,7 @@ pub fn ser_date_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_date_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DateOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

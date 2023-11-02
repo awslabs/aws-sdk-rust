@@ -15,8 +15,10 @@ pub struct ListIamPolicyAssignmentsOutput {
 }
 impl ListIamPolicyAssignmentsOutput {
     /// <p>Information describing the IAM policy assignments.</p>
-    pub fn iam_policy_assignments(&self) -> ::std::option::Option<&[crate::types::IamPolicyAssignmentSummary]> {
-        self.iam_policy_assignments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_policy_assignments.is_none()`.
+    pub fn iam_policy_assignments(&self) -> &[crate::types::IamPolicyAssignmentSummary] {
+        self.iam_policy_assignments.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

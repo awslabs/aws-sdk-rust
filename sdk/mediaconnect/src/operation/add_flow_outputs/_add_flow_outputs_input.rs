@@ -15,8 +15,10 @@ impl AddFlowOutputsInput {
         self.flow_arn.as_deref()
     }
     /// A list of outputs that you want to add.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::AddOutputRequest]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::AddOutputRequest] {
+        self.outputs.as_deref().unwrap_or_default()
     }
 }
 impl AddFlowOutputsInput {
@@ -35,6 +37,7 @@ pub struct AddFlowOutputsInputBuilder {
 }
 impl AddFlowOutputsInputBuilder {
     /// The flow that you want to add outputs to.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self

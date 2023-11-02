@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetailedError {
     /// <p>The error code. </p>
-    pub code: ::std::option::Option<crate::types::DetailedErrorCode>,
+    pub code: crate::types::DetailedErrorCode,
     /// <p>The error message. </p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl DetailedError {
     /// <p>The error code. </p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::DetailedErrorCode> {
-        self.code.as_ref()
+    pub fn code(&self) -> &crate::types::DetailedErrorCode {
+        &self.code
     }
     /// <p>The error message. </p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl DetailedError {
@@ -35,6 +36,7 @@ pub struct DetailedErrorBuilder {
 }
 impl DetailedErrorBuilder {
     /// <p>The error code. </p>
+    /// This field is required.
     pub fn code(mut self, input: crate::types::DetailedErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl DetailedErrorBuilder {
         &self.code
     }
     /// <p>The error message. </p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl DetailedErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`DetailedError`](crate::types::DetailedError).
-    pub fn build(self) -> crate::types::DetailedError {
-        crate::types::DetailedError {
-            code: self.code,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code`](crate::types::builders::DetailedErrorBuilder::code)
+    /// - [`message`](crate::types::builders::DetailedErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::DetailedError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DetailedError {
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building DetailedError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building DetailedError",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteInterconnectInputBuilder {
 }
 impl DeleteInterconnectInputBuilder {
     /// <p>The ID of the interconnect.</p>
+    /// This field is required.
     pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self

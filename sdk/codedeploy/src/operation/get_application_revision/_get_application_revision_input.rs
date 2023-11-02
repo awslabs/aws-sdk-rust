@@ -35,6 +35,7 @@ pub struct GetApplicationRevisionInputBuilder {
 }
 impl GetApplicationRevisionInputBuilder {
     /// <p>The name of the application that corresponds to the revision.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetApplicationRevisionInputBuilder {
         &self.application_name
     }
     /// <p>Information about the application revision to get, including type and location.</p>
+    /// This field is required.
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
         self.revision = ::std::option::Option::Some(input);
         self

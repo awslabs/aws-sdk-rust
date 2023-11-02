@@ -55,6 +55,7 @@ pub struct ListDataSourceRunActivitiesInputBuilder {
 }
 impl ListDataSourceRunActivitiesInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which to list data source run activities.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListDataSourceRunActivitiesInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the data source run.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

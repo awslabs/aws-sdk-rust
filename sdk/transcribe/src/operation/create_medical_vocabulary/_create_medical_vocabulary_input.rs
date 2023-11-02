@@ -32,8 +32,10 @@ impl CreateMedicalVocabularyInput {
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom medical vocabulary at the time you create this new custom vocabulary.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateMedicalVocabularyInput {
@@ -55,6 +57,7 @@ pub struct CreateMedicalVocabularyInputBuilder {
 impl CreateMedicalVocabularyInputBuilder {
     /// <p>A unique name, chosen by you, for your new custom medical vocabulary.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new custom medical vocabulary with the same name as an existing custom medical vocabulary, you get a <code>ConflictException</code> error.</p>
+    /// This field is required.
     pub fn vocabulary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +74,7 @@ impl CreateMedicalVocabularyInputBuilder {
         &self.vocabulary_name
     }
     /// <p>The language code that represents the language of the entries in your custom vocabulary. US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
@@ -86,6 +90,7 @@ impl CreateMedicalVocabularyInputBuilder {
     }
     /// <p>The Amazon S3 location (URI) of the text file that contains your custom medical vocabulary. The URI must be in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code> </p>
+    /// This field is required.
     pub fn vocabulary_file_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vocabulary_file_uri = ::std::option::Option::Some(input.into());
         self

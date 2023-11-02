@@ -9,8 +9,8 @@ pub fn ser_metric_attribution_output(
         crate::protocol_serde::shape_s3_data_config::ser_s3_data_config(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("roleArn").string(var_3.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
     Ok(())
 }
@@ -50,7 +50,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::metric_attribution_output_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

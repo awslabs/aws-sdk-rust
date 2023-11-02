@@ -103,8 +103,10 @@ impl CreateReplicationTaskInput {
         self.cdc_stop_position.as_deref()
     }
     /// <p>One or more tags to be assigned to the replication task.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn task_data(&self) -> ::std::option::Option<&str> {
@@ -148,6 +150,7 @@ impl CreateReplicationTaskInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn replication_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_identifier = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +177,7 @@ impl CreateReplicationTaskInputBuilder {
         &self.replication_task_identifier
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
+    /// This field is required.
     pub fn source_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +192,7 @@ impl CreateReplicationTaskInputBuilder {
         &self.source_endpoint_arn
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
+    /// This field is required.
     pub fn target_endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_endpoint_arn = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +207,7 @@ impl CreateReplicationTaskInputBuilder {
         &self.target_endpoint_arn
     }
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
+    /// This field is required.
     pub fn replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -216,6 +222,7 @@ impl CreateReplicationTaskInputBuilder {
         &self.replication_instance_arn
     }
     /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
+    /// This field is required.
     pub fn migration_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
         self.migration_type = ::std::option::Option::Some(input);
         self
@@ -230,6 +237,7 @@ impl CreateReplicationTaskInputBuilder {
         &self.migration_type
     }
     /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
+    /// This field is required.
     pub fn table_mappings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_mappings = ::std::option::Option::Some(input.into());
         self

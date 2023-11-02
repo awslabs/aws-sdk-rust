@@ -51,6 +51,7 @@ pub struct GetImpersonationRoleEffectInputBuilder {
 }
 impl GetImpersonationRoleEffectInputBuilder {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl GetImpersonationRoleEffectInputBuilder {
         &self.organization_id
     }
     /// <p>The impersonation role ID to test.</p>
+    /// This field is required.
     pub fn impersonation_role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl GetImpersonationRoleEffectInputBuilder {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn target_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_user = ::std::option::Option::Some(input.into());
         self

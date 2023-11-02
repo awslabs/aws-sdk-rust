@@ -9,8 +9,10 @@ pub struct GetDistributionBundlesOutput {
 }
 impl GetDistributionBundlesOutput {
     /// <p>An object that describes a distribution bundle.</p>
-    pub fn bundles(&self) -> ::std::option::Option<&[crate::types::DistributionBundle]> {
-        self.bundles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundles.is_none()`.
+    pub fn bundles(&self) -> &[crate::types::DistributionBundle] {
+        self.bundles.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDistributionBundlesOutput {

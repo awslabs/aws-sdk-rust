@@ -42,6 +42,7 @@ pub struct RuleConfigBuilder {
 }
 impl RuleConfigBuilder {
     /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
+    /// This field is required.
     pub fn inverted(mut self, input: bool) -> Self {
         self.inverted = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl RuleConfigBuilder {
         &self.inverted
     }
     /// <p>The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.</p>
+    /// This field is required.
     pub fn threshold(mut self, input: i32) -> Self {
         self.threshold = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl RuleConfigBuilder {
         &self.threshold
     }
     /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

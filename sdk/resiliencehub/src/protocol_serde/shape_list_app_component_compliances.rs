@@ -117,7 +117,9 @@ pub fn de_list_app_component_compliances_http_response(
         output = crate::protocol_serde::shape_list_app_component_compliances::de_list_app_component_compliances(_response_body, output)
             .map_err(crate::operation::list_app_component_compliances::ListAppComponentCompliancesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_app_component_compliances_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_app_component_compliances::ListAppComponentCompliancesError::unhandled)?
     })
 }
 

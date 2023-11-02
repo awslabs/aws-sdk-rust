@@ -32,8 +32,8 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalErrorException" => crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError::InternalErrorException({
@@ -48,8 +48,8 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterException" => crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError::InvalidParameterException({
@@ -64,8 +64,8 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotAuthorizedException" => crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError::NotAuthorizedException({
@@ -80,8 +80,8 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceConflictException" => crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError::ResourceConflictException({
@@ -96,8 +96,8 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError::ResourceNotFoundException({
@@ -112,8 +112,8 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError::TooManyRequestsException({
@@ -128,8 +128,8 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError::generic(generic)

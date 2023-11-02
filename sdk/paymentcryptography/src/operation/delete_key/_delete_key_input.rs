@@ -34,6 +34,7 @@ pub struct DeleteKeyInputBuilder {
 }
 impl DeleteKeyInputBuilder {
     /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self

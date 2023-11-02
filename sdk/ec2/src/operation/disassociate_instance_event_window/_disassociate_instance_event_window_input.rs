@@ -55,6 +55,7 @@ impl DisassociateInstanceEventWindowInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the event window.</p>
+    /// This field is required.
     pub fn instance_event_window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DisassociateInstanceEventWindowInputBuilder {
         &self.instance_event_window_id
     }
     /// <p>One or more targets to disassociate from the specified event window.</p>
+    /// This field is required.
     pub fn association_target(mut self, input: crate::types::InstanceEventWindowDisassociationRequest) -> Self {
         self.association_target = ::std::option::Option::Some(input);
         self

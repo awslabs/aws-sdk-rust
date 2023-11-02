@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEntityInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ID of the entity.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
 }
 impl GetEntityInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
 }
 impl GetEntityInput {
@@ -34,6 +36,7 @@ pub struct GetEntityInputBuilder {
 }
 impl GetEntityInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetEntityInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the entity.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -62,10 +66,23 @@ impl GetEntityInputBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`GetEntityInput`](crate::operation::get_entity::GetEntityInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::get_entity::builders::GetEntityInputBuilder::workspace_id)
+    /// - [`entity_id`](crate::operation::get_entity::builders::GetEntityInputBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_entity::GetEntityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entity::GetEntityInput {
-            workspace_id: self.workspace_id,
-            entity_id: self.entity_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building GetEntityInput",
+                )
+            })?,
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building GetEntityInput",
+                )
+            })?,
         })
     }
 }

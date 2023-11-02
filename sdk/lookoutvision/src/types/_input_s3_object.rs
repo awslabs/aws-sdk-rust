@@ -42,6 +42,7 @@ pub struct InputS3ObjectBuilder {
 }
 impl InputS3ObjectBuilder {
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl InputS3ObjectBuilder {
         &self.bucket
     }
     /// <p>The name and location of the manifest file withiin the bucket.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self

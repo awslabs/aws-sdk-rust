@@ -22,12 +22,16 @@ impl DecreaseReplicationFactorInput {
         self.new_replication_factor
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn node_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_ids_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids_to_remove.is_none()`.
+    pub fn node_ids_to_remove(&self) -> &[::std::string::String] {
+        self.node_ids_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl DecreaseReplicationFactorInput {
@@ -48,6 +52,7 @@ pub struct DecreaseReplicationFactorInputBuilder {
 }
 impl DecreaseReplicationFactorInputBuilder {
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +67,7 @@ impl DecreaseReplicationFactorInputBuilder {
         &self.cluster_name
     }
     /// <p>The new number of nodes for the DAX cluster.</p>
+    /// This field is required.
     pub fn new_replication_factor(mut self, input: i32) -> Self {
         self.new_replication_factor = ::std::option::Option::Some(input);
         self

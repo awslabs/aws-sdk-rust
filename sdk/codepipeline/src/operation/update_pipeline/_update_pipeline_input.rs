@@ -28,6 +28,7 @@ pub struct UpdatePipelineInputBuilder {
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to be updated.</p>
+    /// This field is required.
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
         self.pipeline = ::std::option::Option::Some(input);
         self

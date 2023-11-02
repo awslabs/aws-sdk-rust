@@ -27,6 +27,7 @@ pub struct GetComponentPolicyInputBuilder {
 }
 impl GetComponentPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
+    /// This field is required.
     pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_arn = ::std::option::Option::Some(input.into());
         self

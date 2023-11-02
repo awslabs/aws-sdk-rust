@@ -27,6 +27,7 @@ pub struct GetResolverConfigInputBuilder {
 }
 impl GetResolverConfigInputBuilder {
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

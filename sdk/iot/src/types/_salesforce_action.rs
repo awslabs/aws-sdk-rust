@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceAction {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub token: ::std::option::Option<::std::string::String>,
+    pub token: ::std::string::String,
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
 }
 impl SalesforceAction {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
-        self.token.as_deref()
+    pub fn token(&self) -> &str {
+        use std::ops::Deref;
+        self.token.deref()
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
 }
 impl SalesforceAction {
@@ -35,6 +37,7 @@ pub struct SalesforceActionBuilder {
 }
 impl SalesforceActionBuilder {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl SalesforceActionBuilder {
         &self.token
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl SalesforceActionBuilder {
         &self.url
     }
     /// Consumes the builder and constructs a [`SalesforceAction`](crate::types::SalesforceAction).
-    pub fn build(self) -> crate::types::SalesforceAction {
-        crate::types::SalesforceAction {
-            token: self.token,
-            url: self.url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`token`](crate::types::builders::SalesforceActionBuilder::token)
+    /// - [`url`](crate::types::builders::SalesforceActionBuilder::url)
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SalesforceAction {
+            token: self.token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "token",
+                    "token was not specified but it is required when building SalesforceAction",
+                )
+            })?,
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building SalesforceAction",
+                )
+            })?,
+        })
     }
 }

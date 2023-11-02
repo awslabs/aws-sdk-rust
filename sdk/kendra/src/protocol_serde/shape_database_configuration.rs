@@ -3,38 +3,38 @@ pub fn ser_database_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatabaseConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.database_engine_type {
-        object.key("DatabaseEngineType").string(var_1.as_str());
+    {
+        object.key("DatabaseEngineType").string(input.database_engine_type.as_str());
     }
-    if let Some(var_2) = &input.connection_configuration {
+    if let Some(var_1) = &input.connection_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("ConnectionConfiguration").start_object();
-        crate::protocol_serde::shape_connection_configuration::ser_connection_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("ConnectionConfiguration").start_object();
+        crate::protocol_serde::shape_connection_configuration::ser_connection_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.vpc_configuration {
+    if let Some(var_3) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.column_configuration {
+    if let Some(var_5) = &input.column_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ColumnConfiguration").start_object();
-        crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ColumnConfiguration").start_object();
+        crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.acl_configuration {
+    if let Some(var_7) = &input.acl_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("AclConfiguration").start_object();
-        crate::protocol_serde::shape_acl_configuration::ser_acl_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("AclConfiguration").start_object();
+        crate::protocol_serde::shape_acl_configuration::ser_acl_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.sql_configuration {
+    if let Some(var_9) = &input.sql_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("SqlConfiguration").start_object();
-        crate::protocol_serde::shape_sql_configuration::ser_sql_configuration(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("SqlConfiguration").start_object();
+        crate::protocol_serde::shape_sql_configuration::ser_sql_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }
@@ -91,7 +91,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::database_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

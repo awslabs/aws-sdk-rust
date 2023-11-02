@@ -15,8 +15,10 @@ impl UntagLogGroupInput {
         self.log_group_name.as_deref()
     }
     /// <p>The tag keys. The corresponding tags are removed from the log group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[::std::string::String] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl UntagLogGroupInput {
@@ -35,6 +37,7 @@ pub struct UntagLogGroupInputBuilder {
 }
 impl UntagLogGroupInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self

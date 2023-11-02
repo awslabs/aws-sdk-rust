@@ -52,6 +52,7 @@ pub struct LabelingJobOutputConfigBuilder {
 }
 impl LabelingJobOutputConfigBuilder {
     /// <p>The Amazon S3 location to write output data.</p>
+    /// This field is required.
     pub fn s3_output_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_path = ::std::option::Option::Some(input.into());
         self

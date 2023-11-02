@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub request_id: ::std::option::Option<::std::string::String>,
+    pub request_id: ::std::string::String,
     /// <p>The name of the alarm model.</p>
-    pub alarm_model_name: ::std::option::Option<::std::string::String>,
+    pub alarm_model_name: ::std::string::String,
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: ::std::option::Option<::std::string::String>,
     /// <p>The note that you can leave when you disable the alarm.</p>
@@ -15,12 +15,14 @@ pub struct DisableAlarmActionRequest {
 }
 impl DisableAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
-        self.request_id.as_deref()
+    pub fn request_id(&self) -> &str {
+        use std::ops::Deref;
+        self.request_id.deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
-        self.alarm_model_name.as_deref()
+    pub fn alarm_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.alarm_model_name.deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct DisableAlarmActionRequestBuilder {
 }
 impl DisableAlarmActionRequestBuilder {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl DisableAlarmActionRequestBuilder {
         &self.request_id
     }
     /// <p>The name of the alarm model.</p>
+    /// This field is required.
     pub fn alarm_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_model_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,25 @@ impl DisableAlarmActionRequestBuilder {
         &self.note
     }
     /// Consumes the builder and constructs a [`DisableAlarmActionRequest`](crate::types::DisableAlarmActionRequest).
-    pub fn build(self) -> crate::types::DisableAlarmActionRequest {
-        crate::types::DisableAlarmActionRequest {
-            request_id: self.request_id,
-            alarm_model_name: self.alarm_model_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`request_id`](crate::types::builders::DisableAlarmActionRequestBuilder::request_id)
+    /// - [`alarm_model_name`](crate::types::builders::DisableAlarmActionRequestBuilder::alarm_model_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DisableAlarmActionRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DisableAlarmActionRequest {
+            request_id: self.request_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "request_id",
+                    "request_id was not specified but it is required when building DisableAlarmActionRequest",
+                )
+            })?,
+            alarm_model_name: self.alarm_model_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "alarm_model_name",
+                    "alarm_model_name was not specified but it is required when building DisableAlarmActionRequest",
+                )
+            })?,
             key_value: self.key_value,
             note: self.note,
-        }
+        })
     }
 }

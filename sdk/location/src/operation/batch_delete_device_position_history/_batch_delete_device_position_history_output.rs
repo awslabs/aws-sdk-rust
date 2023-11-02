@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchDeleteDevicePositionHistoryError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchDeleteDevicePositionHistoryError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteDevicePositionHistoryOutput {
@@ -63,10 +64,24 @@ impl BatchDeleteDevicePositionHistoryOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryOutput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput).
-    pub fn build(self) -> crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput {
-        crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput {
-            errors: self.errors,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput {
+                errors: self.errors.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "errors",
+                        "errors was not specified but it is required when building BatchDeleteDevicePositionHistoryOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

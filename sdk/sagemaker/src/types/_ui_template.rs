@@ -28,6 +28,7 @@ pub struct UiTemplateBuilder {
 }
 impl UiTemplateBuilder {
     /// <p>The content of the Liquid template for the worker user interface.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self

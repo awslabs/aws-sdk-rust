@@ -31,16 +31,22 @@ impl AttributeValue {
         self.b.as_deref()
     }
     /// <p>A list of strings.</p>
-    pub fn ss(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ss.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ss.is_none()`.
+    pub fn ss(&self) -> &[::std::string::String] {
+        self.ss.as_deref().unwrap_or_default()
     }
     /// <p>A list of numbers.</p>
-    pub fn ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ns.is_none()`.
+    pub fn ns(&self) -> &[::std::string::String] {
+        self.ns.as_deref().unwrap_or_default()
     }
     /// <p>A list of binary values.</p>
-    pub fn bs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.bs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bs.is_none()`.
+    pub fn bs(&self) -> &[::std::string::String] {
+        self.bs.as_deref().unwrap_or_default()
     }
 }
 impl AttributeValue {

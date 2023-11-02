@@ -47,6 +47,7 @@ impl ImageConfigBuilder {
     /// <li> <p> <code>Platform</code> - The model image is hosted in Amazon ECR.</p> </li>
     /// <li> <p> <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn repository_access_mode(mut self, input: crate::types::RepositoryAccessMode) -> Self {
         self.repository_access_mode = ::std::option::Option::Some(input);
         self

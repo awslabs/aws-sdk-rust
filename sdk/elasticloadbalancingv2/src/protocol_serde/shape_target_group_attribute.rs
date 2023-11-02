@@ -17,6 +17,7 @@ pub fn ser_target_group_attribute(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_target_group_attribute(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TargetGroupAttribute, ::aws_smithy_xml::decode::XmlDecodeError> {

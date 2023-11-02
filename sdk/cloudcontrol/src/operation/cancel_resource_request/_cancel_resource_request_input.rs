@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    pub request_token: ::std::option::Option<::std::string::String>,
+    pub request_token: ::std::string::String,
 }
 impl CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    pub fn request_token(&self) -> ::std::option::Option<&str> {
-        self.request_token.as_deref()
+    pub fn request_token(&self) -> &str {
+        use std::ops::Deref;
+        self.request_token.deref()
     }
 }
 impl CancelResourceRequestInput {
@@ -27,6 +28,7 @@ pub struct CancelResourceRequestInputBuilder {
 }
 impl CancelResourceRequestInputBuilder {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
+    /// This field is required.
     pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,19 @@ impl CancelResourceRequestInputBuilder {
         &self.request_token
     }
     /// Consumes the builder and constructs a [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`request_token`](crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder::request_token)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_resource_request::CancelResourceRequestInput {
-            request_token: self.request_token,
+            request_token: self.request_token.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "request_token",
+                    "request_token was not specified but it is required when building CancelResourceRequestInput",
+                )
+            })?,
         })
     }
 }

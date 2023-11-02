@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateSolFunctionPackage`](crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder::set_tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder::set_tags):<br>required: **false**<br><p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p><br>
     /// - On success, responds with [`CreateSolFunctionPackageOutput`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::id): <p>ID of the function package.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::arn): <p>Function package ARN.</p>
-    ///   - [`onboarding_state(Option<OnboardingState>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::onboarding_state): <p>Onboarding state of the function package.</p>
-    ///   - [`operational_state(Option<OperationalState>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::operational_state): <p>Operational state of the function package.</p>
-    ///   - [`usage_state(Option<UsageState>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::usage_state): <p>Usage state of the function package.</p>
+    ///   - [`id(String)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::id): <p>ID of the function package.</p>
+    ///   - [`arn(String)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::arn): <p>Function package ARN.</p>
+    ///   - [`onboarding_state(OnboardingState)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::onboarding_state): <p>Onboarding state of the function package.</p>
+    ///   - [`operational_state(OperationalState)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::operational_state): <p>Operational state of the function package.</p>
+    ///   - [`usage_state(UsageState)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::usage_state): <p>Usage state of the function package.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput::tags): <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     /// - On failure, responds with [`SdkError<CreateSolFunctionPackageError>`](crate::operation::create_sol_function_package::CreateSolFunctionPackageError)
     pub fn create_sol_function_package(&self) -> crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageFluentBuilder {

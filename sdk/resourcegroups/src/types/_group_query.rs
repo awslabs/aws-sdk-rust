@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupQuery {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
-    pub group_name: ::std::option::Option<::std::string::String>,
+    pub group_name: ::std::string::String,
     /// <p>The resource query that determines which Amazon Web Services resources are members of the associated resource group.</p>
     pub resource_query: ::std::option::Option<crate::types::ResourceQuery>,
 }
 impl GroupQuery {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
-        self.group_name.as_deref()
+    pub fn group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.group_name.deref()
     }
     /// <p>The resource query that determines which Amazon Web Services resources are members of the associated resource group.</p>
     pub fn resource_query(&self) -> ::std::option::Option<&crate::types::ResourceQuery> {
@@ -35,6 +36,7 @@ pub struct GroupQueryBuilder {
 }
 impl GroupQueryBuilder {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl GroupQueryBuilder {
         &self.group_name
     }
     /// <p>The resource query that determines which Amazon Web Services resources are members of the associated resource group.</p>
+    /// This field is required.
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.resource_query = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl GroupQueryBuilder {
         &self.resource_query
     }
     /// Consumes the builder and constructs a [`GroupQuery`](crate::types::GroupQuery).
-    pub fn build(self) -> crate::types::GroupQuery {
-        crate::types::GroupQuery {
-            group_name: self.group_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_name`](crate::types::builders::GroupQueryBuilder::group_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupQuery, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GroupQuery {
+            group_name: self.group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "group_name",
+                    "group_name was not specified but it is required when building GroupQuery",
+                )
+            })?,
             resource_query: self.resource_query,
-        }
+        })
     }
 }

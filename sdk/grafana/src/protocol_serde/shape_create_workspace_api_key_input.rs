@@ -3,16 +3,16 @@ pub fn ser_create_workspace_api_key_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key_name {
-        object.key("keyName").string(var_1.as_str());
+    {
+        object.key("keyName").string(input.key_name.as_str());
     }
-    if let Some(var_2) = &input.key_role {
-        object.key("keyRole").string(var_2.as_str());
+    {
+        object.key("keyRole").string(input.key_role.as_str());
     }
-    if let Some(var_3) = &input.seconds_to_live {
+    {
         object.key("secondsToLive").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.seconds_to_live).into()),
         );
     }
     Ok(())

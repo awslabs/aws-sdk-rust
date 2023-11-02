@@ -26,11 +26,10 @@ pub fn de_list_rules_packages_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalException" => crate::operation::list_rules_packages::ListRulesPackagesError::InternalException({
@@ -41,11 +40,10 @@ pub fn de_list_rules_packages_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidInputException" => crate::operation::list_rules_packages::ListRulesPackagesError::InvalidInputException({
@@ -56,11 +54,10 @@ pub fn de_list_rules_packages_http_error(
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_input_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_rules_packages::ListRulesPackagesError::generic(generic),
@@ -80,7 +77,9 @@ pub fn de_list_rules_packages_http_response(
         output = crate::protocol_serde::shape_list_rules_packages::de_list_rules_packages(_response_body, output)
             .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_rules_packages_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_rules_packages::ListRulesPackagesError::unhandled)?
     })
 }
 

@@ -34,6 +34,7 @@ pub struct CreateCampaignInputBuilder {
 }
 impl CreateCampaignInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateCampaignInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
+    /// This field is required.
     pub fn write_campaign_request(mut self, input: crate::types::WriteCampaignRequest) -> Self {
         self.write_campaign_request = ::std::option::Option::Some(input);
         self

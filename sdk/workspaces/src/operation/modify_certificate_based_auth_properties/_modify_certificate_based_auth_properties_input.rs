@@ -20,8 +20,10 @@ impl ModifyCertificateBasedAuthPropertiesInput {
         self.certificate_based_auth_properties.as_ref()
     }
     /// <p>The properties of the certificate-based authentication you want to delete.</p>
-    pub fn properties_to_delete(&self) -> ::std::option::Option<&[crate::types::DeletableCertificateBasedAuthProperty]> {
-        self.properties_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties_to_delete.is_none()`.
+    pub fn properties_to_delete(&self) -> &[crate::types::DeletableCertificateBasedAuthProperty] {
+        self.properties_to_delete.as_deref().unwrap_or_default()
     }
 }
 impl ModifyCertificateBasedAuthPropertiesInput {
@@ -41,6 +43,7 @@ pub struct ModifyCertificateBasedAuthPropertiesInputBuilder {
 }
 impl ModifyCertificateBasedAuthPropertiesInputBuilder {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

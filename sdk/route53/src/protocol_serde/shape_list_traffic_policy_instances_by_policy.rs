@@ -93,7 +93,9 @@ pub fn de_list_traffic_policy_instances_by_policy_http_response(
             crate::protocol_serde::shape_list_traffic_policy_instances_by_policy::de_list_traffic_policy_instances_by_policy(_response_body, output)
                 .map_err(crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_traffic_policy_instances_by_policy_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyError::unhandled)?
     })
 }
 

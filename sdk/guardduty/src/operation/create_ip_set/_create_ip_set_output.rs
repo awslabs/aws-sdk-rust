@@ -34,6 +34,7 @@ pub struct CreateIpSetOutputBuilder {
 }
 impl CreateIpSetOutputBuilder {
     /// <p>The ID of the IPSet resource.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self

@@ -5,14 +5,15 @@ pub fn ser_resource_record(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.value {
+    {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.value.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_resource_record(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResourceRecord, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -21,7 +22,7 @@ pub fn de_resource_record(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Value") /* Value com.amazonaws.route53#ResourceRecord$Value */ =>  {
-                let var_2 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -30,11 +31,13 @@ pub fn de_resource_record(
                         ?
                     )
                 ;
-                builder = builder.set_value(var_2);
+                builder = builder.set_value(var_1);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::resource_record_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

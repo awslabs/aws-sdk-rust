@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsJobExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
-    pub base_rate_per_minute: ::std::option::Option<i32>,
+    pub base_rate_per_minute: i32,
     /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
     pub increment_factor: f64,
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
@@ -14,7 +14,7 @@ pub struct AwsJobExponentialRolloutRate {
 }
 impl AwsJobExponentialRolloutRate {
     /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
-    pub fn base_rate_per_minute(&self) -> ::std::option::Option<i32> {
+    pub fn base_rate_per_minute(&self) -> i32 {
         self.base_rate_per_minute
     }
     /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
@@ -44,6 +44,7 @@ pub struct AwsJobExponentialRolloutRateBuilder {
 }
 impl AwsJobExponentialRolloutRateBuilder {
     /// <p>The minimum number of things that will be notified of a pending job, per minute, at the start of the job rollout. This is the initial rate of the rollout.</p>
+    /// This field is required.
     pub fn base_rate_per_minute(mut self, input: i32) -> Self {
         self.base_rate_per_minute = ::std::option::Option::Some(input);
         self
@@ -58,6 +59,7 @@ impl AwsJobExponentialRolloutRateBuilder {
         &self.base_rate_per_minute
     }
     /// <p>The rate of increase for a job rollout. The number of things notified is multiplied by this factor.</p>
+    /// This field is required.
     pub fn increment_factor(mut self, input: f64) -> Self {
         self.increment_factor = ::std::option::Option::Some(input);
         self
@@ -73,6 +75,7 @@ impl AwsJobExponentialRolloutRateBuilder {
     }
     /// <p>The criteria to initiate the increase in rate of rollout for a job.</p>
     /// <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
+    /// This field is required.
     pub fn rate_increase_criteria(mut self, input: crate::types::AwsJobRateIncreaseCriteria) -> Self {
         self.rate_increase_criteria = ::std::option::Option::Some(input);
         self
@@ -89,11 +92,18 @@ impl AwsJobExponentialRolloutRateBuilder {
         &self.rate_increase_criteria
     }
     /// Consumes the builder and constructs a [`AwsJobExponentialRolloutRate`](crate::types::AwsJobExponentialRolloutRate).
-    pub fn build(self) -> crate::types::AwsJobExponentialRolloutRate {
-        crate::types::AwsJobExponentialRolloutRate {
-            base_rate_per_minute: self.base_rate_per_minute,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`base_rate_per_minute`](crate::types::builders::AwsJobExponentialRolloutRateBuilder::base_rate_per_minute)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsJobExponentialRolloutRate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsJobExponentialRolloutRate {
+            base_rate_per_minute: self.base_rate_per_minute.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "base_rate_per_minute",
+                    "base_rate_per_minute was not specified but it is required when building AwsJobExponentialRolloutRate",
+                )
+            })?,
             increment_factor: self.increment_factor.unwrap_or_default(),
             rate_increase_criteria: self.rate_increase_criteria,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetInstance`](crate::operation::get_instance::builders::GetInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_name(impl Into<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_instance_name): <p>The name of the instance.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::get_instance::builders::GetInstanceFluentBuilder::set_instance_name):<br>required: **true**<br><p>The name of the instance.</p><br>
     /// - On success, responds with [`GetInstanceOutput`](crate::operation::get_instance::GetInstanceOutput) with field(s):
     ///   - [`instance(Option<Instance>)`](crate::operation::get_instance::GetInstanceOutput::instance): <p>An array of key-value pairs containing information about the specified instance.</p>
     /// - On failure, responds with [`SdkError<GetInstanceError>`](crate::operation::get_instance::GetInstanceError)

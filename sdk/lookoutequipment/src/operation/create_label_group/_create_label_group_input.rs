@@ -23,8 +23,10 @@ impl CreateLabelGroupInput {
     }
     /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fault_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fault_codes.is_none()`.
+    pub fn fault_codes(&self) -> &[::std::string::String] {
+        self.fault_codes.as_deref().unwrap_or_default()
     }
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -32,8 +34,10 @@ impl CreateLabelGroupInput {
     }
     /// <p> Tags that provide metadata about the label group you are creating. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLabelGroupInput {
@@ -55,6 +59,7 @@ pub struct CreateLabelGroupInputBuilder {
 impl CreateLabelGroupInputBuilder {
     /// <p> Names a group of labels.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +99,7 @@ impl CreateLabelGroupInputBuilder {
         &self.fault_codes
     }
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

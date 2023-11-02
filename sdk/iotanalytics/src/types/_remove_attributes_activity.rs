@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAttributesActivity {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of 1-50 attributes to remove from the message.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attributes: ::std::vec::Vec<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAttributesActivity {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of 1-50 attributes to remove from the message.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attributes.as_deref()
+    pub fn attributes(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.attributes.deref()
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct RemoveAttributesActivityBuilder {
 }
 impl RemoveAttributesActivityBuilder {
     /// <p>The name of the <code>removeAttributes</code> activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +93,24 @@ impl RemoveAttributesActivityBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`RemoveAttributesActivity`](crate::types::RemoveAttributesActivity).
-    pub fn build(self) -> crate::types::RemoveAttributesActivity {
-        crate::types::RemoveAttributesActivity {
-            name: self.name,
-            attributes: self.attributes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RemoveAttributesActivityBuilder::name)
+    /// - [`attributes`](crate::types::builders::RemoveAttributesActivityBuilder::attributes)
+    pub fn build(self) -> ::std::result::Result<crate::types::RemoveAttributesActivity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RemoveAttributesActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RemoveAttributesActivity",
+                )
+            })?,
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building RemoveAttributesActivity",
+                )
+            })?,
             next: self.next,
-        }
+        })
     }
 }

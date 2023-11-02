@@ -28,12 +28,16 @@ impl CreateIdMappingWorkflowInput {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn input_source_config(&self) -> ::std::option::Option<&[crate::types::IdMappingWorkflowInputSource]> {
-        self.input_source_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_source_config.is_none()`.
+    pub fn input_source_config(&self) -> &[crate::types::IdMappingWorkflowInputSource] {
+        self.input_source_config.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
-    pub fn output_source_config(&self) -> ::std::option::Option<&[crate::types::IdMappingWorkflowOutputSource]> {
-        self.output_source_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_source_config.is_none()`.
+    pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
+        self.output_source_config.as_deref().unwrap_or_default()
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
@@ -69,6 +73,7 @@ pub struct CreateIdMappingWorkflowInputBuilder {
 }
 impl CreateIdMappingWorkflowInputBuilder {
     /// <p>The name of the workflow. There can't be multiple <code>IdMappingWorkflows</code> with the same name.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +142,7 @@ impl CreateIdMappingWorkflowInputBuilder {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
+    /// This field is required.
     pub fn id_mapping_techniques(mut self, input: crate::types::IdMappingTechniques) -> Self {
         self.id_mapping_techniques = ::std::option::Option::Some(input);
         self
@@ -151,6 +157,7 @@ impl CreateIdMappingWorkflowInputBuilder {
         &self.id_mapping_techniques
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

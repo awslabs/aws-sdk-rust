@@ -107,8 +107,10 @@ impl DescribeInferenceExperimentOutput {
         self.endpoint_metadata.as_ref()
     }
     /// <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for each variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object in the array describes the infrastructure configuration for deploying the corresponding variant. </p>
-    pub fn model_variants(&self) -> ::std::option::Option<&[crate::types::ModelVariantConfigSummary]> {
-        self.model_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_variants.is_none()`.
+    pub fn model_variants(&self) -> &[crate::types::ModelVariantConfigSummary] {
+        self.model_variants.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn data_storage_config(&self) -> ::std::option::Option<&crate::types::InferenceExperimentDataStorageConfig> {
@@ -159,6 +161,7 @@ pub struct DescribeInferenceExperimentOutputBuilder {
 }
 impl DescribeInferenceExperimentOutputBuilder {
     /// <p>The ARN of the inference experiment being described.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +176,7 @@ impl DescribeInferenceExperimentOutputBuilder {
         &self.arn
     }
     /// <p>The name of the inference experiment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -187,6 +191,7 @@ impl DescribeInferenceExperimentOutputBuilder {
         &self.name
     }
     /// <p>The type of the inference experiment.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InferenceExperimentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -225,6 +230,7 @@ impl DescribeInferenceExperimentOutputBuilder {
     /// <li> <p> <code>Completed</code> - Your experiment has completed. </p> </li>
     /// <li> <p> <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::InferenceExperimentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -343,6 +349,7 @@ impl DescribeInferenceExperimentOutputBuilder {
         &self.role_arn
     }
     /// <p>The metadata of the endpoint on which the inference experiment ran.</p>
+    /// This field is required.
     pub fn endpoint_metadata(mut self, input: crate::types::EndpointMetadata) -> Self {
         self.endpoint_metadata = ::std::option::Option::Some(input);
         self

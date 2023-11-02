@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKxDatabase`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::set_environment_id): <p>A unique identifier for the kdb environment.</p>
-    ///   - [`database_name(impl Into<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::set_database_name): <p>The name of the kdb database.</p>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
+    ///   - [`database_name(impl Into<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_kx_database::builders::GetKxDatabaseFluentBuilder::set_database_name):<br>required: **true**<br><p>The name of the kdb database.</p><br>
     /// - On success, responds with [`GetKxDatabaseOutput`](crate::operation::get_kx_database::GetKxDatabaseOutput) with field(s):
     ///   - [`database_name(Option<String>)`](crate::operation::get_kx_database::GetKxDatabaseOutput::database_name): <p>The name of the kdb database for which the information is retrieved.</p>
     ///   - [`database_arn(Option<String>)`](crate::operation::get_kx_database::GetKxDatabaseOutput::database_arn): <p>The ARN identifier of the database.</p>

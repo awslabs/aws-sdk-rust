@@ -16,8 +16,10 @@ impl DescribeReplicationGroupsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-    pub fn replication_groups(&self) -> ::std::option::Option<&[crate::types::ReplicationGroup]> {
-        self.replication_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_groups.is_none()`.
+    pub fn replication_groups(&self) -> &[crate::types::ReplicationGroup] {
+        self.replication_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReplicationGroupsOutput {

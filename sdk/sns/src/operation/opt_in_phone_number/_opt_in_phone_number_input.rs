@@ -28,6 +28,7 @@ pub struct OptInPhoneNumberInputBuilder {
 }
 impl OptInPhoneNumberInputBuilder {
     /// <p>The phone number to opt in. Use E.164 format.</p>
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self

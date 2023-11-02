@@ -41,6 +41,7 @@ pub struct DeleteSshPublicKeyInputBuilder {
 }
 impl DeleteSshPublicKeyInputBuilder {
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteSshPublicKeyInputBuilder {
         &self.server_id
     }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
+    /// This field is required.
     pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DeleteSshPublicKeyInputBuilder {
         &self.ssh_public_key_id
     }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self

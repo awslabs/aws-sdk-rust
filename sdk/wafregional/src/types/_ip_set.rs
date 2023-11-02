@@ -11,25 +11,27 @@
 pub struct IpSet {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
     /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    pub ip_set_id: ::std::option::Option<::std::string::String>,
+    pub ip_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.</p>
-    pub ip_set_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::IpSetDescriptor>>,
+    pub ip_set_descriptors: ::std::vec::Vec<crate::types::IpSetDescriptor>,
 }
 impl IpSet {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
     /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    pub fn ip_set_id(&self) -> ::std::option::Option<&str> {
-        self.ip_set_id.as_deref()
+    pub fn ip_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.</p>
-    pub fn ip_set_descriptors(&self) -> ::std::option::Option<&[crate::types::IpSetDescriptor]> {
-        self.ip_set_descriptors.as_deref()
+    pub fn ip_set_descriptors(&self) -> &[crate::types::IpSetDescriptor] {
+        use std::ops::Deref;
+        self.ip_set_descriptors.deref()
     }
 }
 impl IpSet {
@@ -50,6 +52,7 @@ pub struct IpSetBuilder {
 impl IpSetBuilder {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
     /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    /// This field is required.
     pub fn ip_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_set_id = ::std::option::Option::Some(input.into());
         self
@@ -100,11 +103,24 @@ impl IpSetBuilder {
         &self.ip_set_descriptors
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
-    pub fn build(self) -> crate::types::IpSet {
-        crate::types::IpSet {
-            ip_set_id: self.ip_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_set_id`](crate::types::builders::IpSetBuilder::ip_set_id)
+    /// - [`ip_set_descriptors`](crate::types::builders::IpSetBuilder::ip_set_descriptors)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpSet {
+            ip_set_id: self.ip_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ip_set_id",
+                    "ip_set_id was not specified but it is required when building IpSet",
+                )
+            })?,
             name: self.name,
-            ip_set_descriptors: self.ip_set_descriptors,
-        }
+            ip_set_descriptors: self.ip_set_descriptors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ip_set_descriptors",
+                    "ip_set_descriptors was not specified but it is required when building IpSet",
+                )
+            })?,
+        })
     }
 }

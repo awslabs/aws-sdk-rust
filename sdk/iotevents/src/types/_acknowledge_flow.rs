@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeFlow {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
 }
 impl AcknowledgeFlow {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
@@ -28,6 +28,7 @@ pub struct AcknowledgeFlowBuilder {
 }
 impl AcknowledgeFlowBuilder {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AcknowledgeFlowBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`AcknowledgeFlow`](crate::types::AcknowledgeFlow).
-    pub fn build(self) -> crate::types::AcknowledgeFlow {
-        crate::types::AcknowledgeFlow { enabled: self.enabled }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::AcknowledgeFlowBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::AcknowledgeFlow, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AcknowledgeFlow {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building AcknowledgeFlow",
+                )
+            })?,
+        })
     }
 }

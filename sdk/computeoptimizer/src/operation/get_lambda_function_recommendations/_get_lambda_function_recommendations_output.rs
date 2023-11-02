@@ -17,8 +17,10 @@ impl GetLambdaFunctionRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe function recommendations.</p>
-    pub fn lambda_function_recommendations(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendation]> {
-        self.lambda_function_recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_recommendations.is_none()`.
+    pub fn lambda_function_recommendations(&self) -> &[crate::types::LambdaFunctionRecommendation] {
+        self.lambda_function_recommendations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetLambdaFunctionRecommendationsOutput {

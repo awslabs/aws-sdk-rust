@@ -9,8 +9,10 @@ pub struct DeleteFleetAdvisorDatabasesOutput {
 }
 impl DeleteFleetAdvisorDatabasesOutput {
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn database_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.database_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_ids.is_none()`.
+    pub fn database_ids(&self) -> &[::std::string::String] {
+        self.database_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteFleetAdvisorDatabasesOutput {

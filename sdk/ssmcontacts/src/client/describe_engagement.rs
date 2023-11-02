@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEngagement`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`engagement_id(impl Into<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::engagement_id) / [`set_engagement_id(Option<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    ///   - [`engagement_id(impl Into<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::engagement_id) / [`set_engagement_id(Option<String>)`](crate::operation::describe_engagement::builders::DescribeEngagementFluentBuilder::set_engagement_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p><br>
     /// - On success, responds with [`DescribeEngagementOutput`](crate::operation::describe_engagement::DescribeEngagementOutput) with field(s):
-    ///   - [`contact_arn(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::contact_arn): <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
-    ///   - [`engagement_arn(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::engagement_arn): <p>The ARN of the engagement.</p>
-    ///   - [`sender(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::sender): <p>The user that started the engagement.</p>
-    ///   - [`subject(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::subject): <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    ///   - [`content(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::content): <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    ///   - [`contact_arn(String)`](crate::operation::describe_engagement::DescribeEngagementOutput::contact_arn): <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
+    ///   - [`engagement_arn(String)`](crate::operation::describe_engagement::DescribeEngagementOutput::engagement_arn): <p>The ARN of the engagement.</p>
+    ///   - [`sender(String)`](crate::operation::describe_engagement::DescribeEngagementOutput::sender): <p>The user that started the engagement.</p>
+    ///   - [`subject(String)`](crate::operation::describe_engagement::DescribeEngagementOutput::subject): <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    ///   - [`content(String)`](crate::operation::describe_engagement::DescribeEngagementOutput::content): <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     ///   - [`public_subject(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::public_subject): <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     ///   - [`public_content(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::public_content): <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     ///   - [`incident_id(Option<String>)`](crate::operation::describe_engagement::DescribeEngagementOutput::incident_id): <p>The ARN of the incident in which the engagement occurred.</p>

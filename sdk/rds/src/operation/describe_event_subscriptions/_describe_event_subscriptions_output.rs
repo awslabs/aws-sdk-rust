@@ -16,8 +16,10 @@ impl DescribeEventSubscriptionsOutput {
         self.marker.as_deref()
     }
     /// <p>A list of EventSubscriptions data types.</p>
-    pub fn event_subscriptions_list(&self) -> ::std::option::Option<&[crate::types::EventSubscription]> {
-        self.event_subscriptions_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_subscriptions_list.is_none()`.
+    pub fn event_subscriptions_list(&self) -> &[crate::types::EventSubscription] {
+        self.event_subscriptions_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEventSubscriptionsOutput {

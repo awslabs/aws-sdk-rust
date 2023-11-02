@@ -70,6 +70,7 @@ impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
         &self.max_items
     }
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
+    /// This field is required.
     pub fn origin_request_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_request_policy_id = ::std::option::Option::Some(input.into());
         self

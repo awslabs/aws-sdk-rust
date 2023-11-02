@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentTargetOutput {
     /// <p>The ARN that specifies the assessment target that is created.</p>
-    pub assessment_target_arn: ::std::option::Option<::std::string::String>,
+    pub assessment_target_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateAssessmentTargetOutput {
     /// <p>The ARN that specifies the assessment target that is created.</p>
-    pub fn assessment_target_arn(&self) -> ::std::option::Option<&str> {
-        self.assessment_target_arn.as_deref()
+    pub fn assessment_target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assessment_target_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAssessmentTargetOutput {
@@ -34,6 +35,7 @@ pub struct CreateAssessmentTargetOutputBuilder {
 }
 impl CreateAssessmentTargetOutputBuilder {
     /// <p>The ARN that specifies the assessment target that is created.</p>
+    /// This field is required.
     pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl CreateAssessmentTargetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAssessmentTargetOutput`](crate::operation::create_assessment_target::CreateAssessmentTargetOutput).
-    pub fn build(self) -> crate::operation::create_assessment_target::CreateAssessmentTargetOutput {
-        crate::operation::create_assessment_target::CreateAssessmentTargetOutput {
-            assessment_target_arn: self.assessment_target_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_target_arn`](crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder::assessment_target_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_assessment_target::CreateAssessmentTargetOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_assessment_target::CreateAssessmentTargetOutput {
+            assessment_target_arn: self.assessment_target_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assessment_target_arn",
+                    "assessment_target_arn was not specified but it is required when building CreateAssessmentTargetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

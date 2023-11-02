@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiMeasureAttributeMapping {
     /// <p>Source column from where the attribute value is to be read.</p>
-    pub source_column: ::std::option::Option<::std::string::String>,
+    pub source_column: ::std::string::String,
     /// <p>Custom name to be used for attribute name in derived table. If not provided, source column name would be used.</p>
     pub target_multi_measure_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>Type of the attribute to be read from the source column.</p>
-    pub measure_value_type: ::std::option::Option<crate::types::ScalarMeasureValueType>,
+    pub measure_value_type: crate::types::ScalarMeasureValueType,
 }
 impl MultiMeasureAttributeMapping {
     /// <p>Source column from where the attribute value is to be read.</p>
-    pub fn source_column(&self) -> ::std::option::Option<&str> {
-        self.source_column.as_deref()
+    pub fn source_column(&self) -> &str {
+        use std::ops::Deref;
+        self.source_column.deref()
     }
     /// <p>Custom name to be used for attribute name in derived table. If not provided, source column name would be used.</p>
     pub fn target_multi_measure_attribute_name(&self) -> ::std::option::Option<&str> {
         self.target_multi_measure_attribute_name.as_deref()
     }
     /// <p>Type of the attribute to be read from the source column.</p>
-    pub fn measure_value_type(&self) -> ::std::option::Option<&crate::types::ScalarMeasureValueType> {
-        self.measure_value_type.as_ref()
+    pub fn measure_value_type(&self) -> &crate::types::ScalarMeasureValueType {
+        &self.measure_value_type
     }
 }
 impl MultiMeasureAttributeMapping {
@@ -42,6 +43,7 @@ pub struct MultiMeasureAttributeMappingBuilder {
 }
 impl MultiMeasureAttributeMappingBuilder {
     /// <p>Source column from where the attribute value is to be read.</p>
+    /// This field is required.
     pub fn source_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_column = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl MultiMeasureAttributeMappingBuilder {
         &self.target_multi_measure_attribute_name
     }
     /// <p>Type of the attribute to be read from the source column.</p>
+    /// This field is required.
     pub fn measure_value_type(mut self, input: crate::types::ScalarMeasureValueType) -> Self {
         self.measure_value_type = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl MultiMeasureAttributeMappingBuilder {
         &self.measure_value_type
     }
     /// Consumes the builder and constructs a [`MultiMeasureAttributeMapping`](crate::types::MultiMeasureAttributeMapping).
-    pub fn build(self) -> crate::types::MultiMeasureAttributeMapping {
-        crate::types::MultiMeasureAttributeMapping {
-            source_column: self.source_column,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_column`](crate::types::builders::MultiMeasureAttributeMappingBuilder::source_column)
+    /// - [`measure_value_type`](crate::types::builders::MultiMeasureAttributeMappingBuilder::measure_value_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::MultiMeasureAttributeMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MultiMeasureAttributeMapping {
+            source_column: self.source_column.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_column",
+                    "source_column was not specified but it is required when building MultiMeasureAttributeMapping",
+                )
+            })?,
             target_multi_measure_attribute_name: self.target_multi_measure_attribute_name,
-            measure_value_type: self.measure_value_type,
-        }
+            measure_value_type: self.measure_value_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "measure_value_type",
+                    "measure_value_type was not specified but it is required when building MultiMeasureAttributeMapping",
+                )
+            })?,
+        })
     }
 }

@@ -3,19 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_credential_types::Credentials;
+use crate::middleware::Signature;
+pub use aws_sigv4::http_request::SignableBody;
 use aws_sigv4::http_request::{
     sign, PayloadChecksumKind, PercentEncodingMode, SessionTokenMode, SignableRequest,
     SignatureLocation, SigningParams, SigningSettings, UriPathNormalizationMode,
 };
+use aws_sigv4::sign::v4;
 use aws_smithy_http::body::SdkBody;
+use aws_smithy_runtime_api::client::identity::Identity;
 use aws_types::region::SigningRegion;
-use aws_types::SigningService;
+use aws_types::SigningName;
 use std::fmt;
 use std::time::{Duration, SystemTime};
 
-use crate::middleware::Signature;
-pub use aws_sigv4::http_request::SignableBody;
 pub type SigningError = aws_sigv4::http_request::SigningError;
 
 const EXPIRATION_WARNING: &str = "Presigned request will expire before the given \
@@ -101,7 +102,7 @@ pub struct SigningOptions {
 pub struct RequestConfig<'a> {
     pub request_ts: SystemTime,
     pub region: &'a SigningRegion,
-    pub service: &'a SigningService,
+    pub name: &'a SigningName,
     pub payload_override: Option<&'a SignableBody<'static>>,
 }
 
@@ -158,11 +159,11 @@ impl SigV4Signer {
 
     fn signing_params<'a>(
         settings: SigningSettings,
-        credentials: &'a Credentials,
+        identity: &'a Identity,
         request_config: &'a RequestConfig<'a>,
     ) -> SigningParams<'a> {
         if let Some(expires_in) = settings.expires_in {
-            if let Some(creds_expires_time) = credentials.expiry() {
+            if let Some(creds_expires_time) = identity.expiration().cloned() {
                 let presigned_expires_time = request_config.request_ts + expires_in;
                 if presigned_expires_time > creds_expires_time {
                     tracing::warn!(EXPIRATION_WARNING);
@@ -170,15 +171,13 @@ impl SigV4Signer {
             }
         }
 
-        let mut builder = SigningParams::builder()
-            .access_key(credentials.access_key_id())
-            .secret_key(credentials.secret_access_key())
+        let builder = v4::SigningParams::builder()
+            .identity(identity)
             .region(request_config.region.as_ref())
-            .service_name(request_config.service.as_ref())
+            .name(request_config.name.as_ref())
             .time(request_config.request_ts)
             .settings(settings);
-        builder.set_security_token(credentials.session_token());
-        builder.build().expect("all required fields set")
+        builder.build().expect("all required fields set").into()
     }
 
     /// Sign a request using the SigV4 Protocol
@@ -189,11 +188,11 @@ impl SigV4Signer {
         &self,
         operation_config: &OperationSigningConfig,
         request_config: &RequestConfig<'_>,
-        credentials: &Credentials,
+        identity: &Identity,
         request: &mut http::Request<SdkBody>,
     ) -> Result<Signature, SigningError> {
         let settings = Self::settings(operation_config);
-        let signing_params = Self::signing_params(settings, credentials, request_config);
+        let signing_params = Self::signing_params(settings, identity, request_config);
 
         let (signing_instructions, signature) = {
             // A body that is already in memory can be signed directly. A body that is not in memory
@@ -212,11 +211,17 @@ impl SigV4Signer {
                 });
 
             let signable_request = SignableRequest::new(
-                request.method(),
-                request.uri(),
-                request.headers(),
+                request.method().as_str(),
+                request.uri().to_string(),
+                request.headers().iter().map(|(k, v)| {
+                    (
+                        k.as_str(),
+                        std::str::from_utf8(v.as_bytes())
+                            .expect("only string headers are signable"),
+                    )
+                }),
                 signable_body,
-            );
+            )?;
             sign(signable_request, &signing_params)?
         }
         .into_parts();
@@ -232,8 +237,9 @@ mod tests {
     use super::{RequestConfig, SigV4Signer, EXPIRATION_WARNING};
     use aws_credential_types::Credentials;
     use aws_sigv4::http_request::SigningSettings;
+
     use aws_types::region::SigningRegion;
-    use aws_types::SigningService;
+    use aws_types::SigningName;
     use std::time::{Duration, SystemTime};
     use tracing_test::traced_test;
 
@@ -246,26 +252,27 @@ mod tests {
         let mut settings = SigningSettings::default();
         settings.expires_in = Some(creds_expire_in - Duration::from_secs(10));
 
-        let credentials = Credentials::new(
+        let identity = Credentials::new(
             "test-access-key",
             "test-secret-key",
             Some("test-session-token".into()),
             Some(now + creds_expire_in),
             "test",
-        );
+        )
+        .into();
         let request_config = RequestConfig {
             request_ts: now,
             region: &SigningRegion::from_static("test"),
-            service: &SigningService::from_static("test"),
+            name: &SigningName::from_static("test"),
             payload_override: None,
         };
-        SigV4Signer::signing_params(settings, &credentials, &request_config);
+        SigV4Signer::signing_params(settings, &identity, &request_config);
         assert!(!logs_contain(EXPIRATION_WARNING));
 
         let mut settings = SigningSettings::default();
         settings.expires_in = Some(creds_expire_in + Duration::from_secs(10));
 
-        SigV4Signer::signing_params(settings, &credentials, &request_config);
+        SigV4Signer::signing_params(settings, &identity, &request_config);
         assert!(logs_contain(EXPIRATION_WARNING));
     }
 }

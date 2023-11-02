@@ -11,8 +11,10 @@ pub struct DescribeAssociationExecutionTargetsOutput {
 }
 impl DescribeAssociationExecutionTargetsOutput {
     /// <p>Information about the execution.</p>
-    pub fn association_execution_targets(&self) -> ::std::option::Option<&[crate::types::AssociationExecutionTarget]> {
-        self.association_execution_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_execution_targets.is_none()`.
+    pub fn association_execution_targets(&self) -> &[crate::types::AssociationExecutionTarget] {
+        self.association_execution_targets.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

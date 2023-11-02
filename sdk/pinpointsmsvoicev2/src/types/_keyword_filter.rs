@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeywordFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub name: ::std::option::Option<crate::types::KeywordFilterName>,
+    pub name: crate::types::KeywordFilterName,
     /// <p>An array values to filter for.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl KeywordFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::KeywordFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::KeywordFilterName {
+        &self.name
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl KeywordFilter {
@@ -35,6 +36,7 @@ pub struct KeywordFilterBuilder {
 }
 impl KeywordFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::KeywordFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl KeywordFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`KeywordFilter`](crate::types::KeywordFilter).
-    pub fn build(self) -> crate::types::KeywordFilter {
-        crate::types::KeywordFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::KeywordFilterBuilder::name)
+    /// - [`values`](crate::types::builders::KeywordFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeywordFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeywordFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building KeywordFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building KeywordFilter",
+                )
+            })?,
+        })
     }
 }

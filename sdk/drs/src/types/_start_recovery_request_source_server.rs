@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRecoveryRequestSourceServer {
     /// <p>The ID of the Source Server you want to recover.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub recovery_snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl StartRecoveryRequestSourceServer {
     /// <p>The ID of the Source Server you want to recover.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub fn recovery_snapshot_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct StartRecoveryRequestSourceServerBuilder {
 }
 impl StartRecoveryRequestSourceServerBuilder {
     /// <p>The ID of the Source Server you want to recover.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl StartRecoveryRequestSourceServerBuilder {
         &self.recovery_snapshot_id
     }
     /// Consumes the builder and constructs a [`StartRecoveryRequestSourceServer`](crate::types::StartRecoveryRequestSourceServer).
-    pub fn build(self) -> crate::types::StartRecoveryRequestSourceServer {
-        crate::types::StartRecoveryRequestSourceServer {
-            source_server_id: self.source_server_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::types::builders::StartRecoveryRequestSourceServerBuilder::source_server_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::StartRecoveryRequestSourceServer, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartRecoveryRequestSourceServer {
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building StartRecoveryRequestSourceServer",
+                )
+            })?,
             recovery_snapshot_id: self.recovery_snapshot_id,
-        }
+        })
     }
 }

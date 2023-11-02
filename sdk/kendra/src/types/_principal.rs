@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
     /// <p>The name of the user or group.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of principal.</p>
-    pub r#type: ::std::option::Option<crate::types::PrincipalType>,
+    pub r#type: crate::types::PrincipalType,
     /// <p>Whether to allow or deny document access to the principal.</p>
-    pub access: ::std::option::Option<crate::types::ReadAccessType>,
+    pub access: crate::types::ReadAccessType,
     /// <p>The identifier of the data source the principal should access documents from.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl Principal {
     /// <p>The name of the user or group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of principal.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PrincipalType {
+        &self.r#type
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
-    pub fn access(&self) -> ::std::option::Option<&crate::types::ReadAccessType> {
-        self.access.as_ref()
+    pub fn access(&self) -> &crate::types::ReadAccessType {
+        &self.access
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
     pub fn data_source_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct PrincipalBuilder {
 }
 impl PrincipalBuilder {
     /// <p>The name of the user or group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl PrincipalBuilder {
         &self.name
     }
     /// <p>The type of principal.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl PrincipalBuilder {
         &self.r#type
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
+    /// This field is required.
     pub fn access(mut self, input: crate::types::ReadAccessType) -> Self {
         self.access = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,31 @@ impl PrincipalBuilder {
         &self.data_source_id
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
-    pub fn build(self) -> crate::types::Principal {
-        crate::types::Principal {
-            name: self.name,
-            r#type: self.r#type,
-            access: self.access,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PrincipalBuilder::name)
+    /// - [`r#type`](crate::types::builders::PrincipalBuilder::r#type)
+    /// - [`access`](crate::types::builders::PrincipalBuilder::access)
+    pub fn build(self) -> ::std::result::Result<crate::types::Principal, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Principal {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Principal",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Principal",
+                )
+            })?,
+            access: self.access.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access",
+                    "access was not specified but it is required when building Principal",
+                )
+            })?,
             data_source_id: self.data_source_id,
-        }
+        })
     }
 }

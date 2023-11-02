@@ -148,7 +148,7 @@ pub fn de_create_identity_provider_http_response(
         output = crate::protocol_serde::shape_create_identity_provider::de_create_identity_provider(_response_body, output)
             .map_err(crate::operation::create_identity_provider::CreateIdentityProviderError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_identity_provider_output_correct_errors(output).build()
     })
 }
 

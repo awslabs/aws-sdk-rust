@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
-    pub input_name: ::std::option::Option<::std::string::String>,
+    pub input_name: ::std::string::String,
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
-        self.input_name.as_deref()
+    pub fn input_name(&self) -> &str {
+        use std::ops::Deref;
+        self.input_name.deref()
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl IotEventsDestinationConfiguration {
@@ -35,6 +37,7 @@ pub struct IotEventsDestinationConfigurationBuilder {
 }
 impl IotEventsDestinationConfigurationBuilder {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl IotEventsDestinationConfigurationBuilder {
         &self.input_name
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl IotEventsDestinationConfigurationBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`IotEventsDestinationConfiguration`](crate::types::IotEventsDestinationConfiguration).
-    pub fn build(self) -> crate::types::IotEventsDestinationConfiguration {
-        crate::types::IotEventsDestinationConfiguration {
-            input_name: self.input_name,
-            role_arn: self.role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_name`](crate::types::builders::IotEventsDestinationConfigurationBuilder::input_name)
+    /// - [`role_arn`](crate::types::builders::IotEventsDestinationConfigurationBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IotEventsDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IotEventsDestinationConfiguration {
+            input_name: self.input_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "input_name",
+                    "input_name was not specified but it is required when building IotEventsDestinationConfiguration",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building IotEventsDestinationConfiguration",
+                )
+            })?,
+        })
     }
 }

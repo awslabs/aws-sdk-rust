@@ -36,7 +36,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::vector_enrichment_job_input_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -48,17 +52,17 @@ pub fn ser_vector_enrichment_job_input_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VectorEnrichmentJobInputConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.document_type {
-        object.key("DocumentType").string(var_1.as_str());
+    {
+        object.key("DocumentType").string(input.document_type.as_str());
     }
-    if let Some(var_2) = &input.data_source_config {
+    if let Some(var_1) = &input.data_source_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DataSourceConfig").start_object();
+        let mut object_2 = object.key("DataSourceConfig").start_object();
         crate::protocol_serde::shape_vector_enrichment_job_data_source_config_input::ser_vector_enrichment_job_data_source_config_input(
-            &mut object_3,
-            var_2,
+            &mut object_2,
+            var_1,
         )?;
-        object_3.finish();
+        object_2.finish();
     }
     Ok(())
 }

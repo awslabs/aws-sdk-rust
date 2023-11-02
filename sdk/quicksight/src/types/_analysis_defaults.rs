@@ -28,6 +28,7 @@ pub struct AnalysisDefaultsBuilder {
 }
 impl AnalysisDefaultsBuilder {
     /// <p>The configuration for default new sheet settings.</p>
+    /// This field is required.
     pub fn default_new_sheet_configuration(mut self, input: crate::types::DefaultNewSheetConfiguration) -> Self {
         self.default_new_sheet_configuration = ::std::option::Option::Some(input);
         self

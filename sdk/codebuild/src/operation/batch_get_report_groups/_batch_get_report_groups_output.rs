@@ -11,12 +11,16 @@ pub struct BatchGetReportGroupsOutput {
 }
 impl BatchGetReportGroupsOutput {
     /// <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
-    pub fn report_groups(&self) -> ::std::option::Option<&[crate::types::ReportGroup]> {
-        self.report_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_groups.is_none()`.
+    pub fn report_groups(&self) -> &[crate::types::ReportGroup] {
+        self.report_groups.as_deref().unwrap_or_default()
     }
     /// <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
-    pub fn report_groups_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.report_groups_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_groups_not_found.is_none()`.
+    pub fn report_groups_not_found(&self) -> &[::std::string::String] {
+        self.report_groups_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetReportGroupsOutput {

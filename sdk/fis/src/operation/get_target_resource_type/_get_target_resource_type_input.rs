@@ -27,6 +27,7 @@ pub struct GetTargetResourceTypeInputBuilder {
 }
 impl GetTargetResourceTypeInputBuilder {
     /// <p>The resource type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self

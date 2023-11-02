@@ -10,8 +10,10 @@ pub struct DescribeSmbFileSharesOutput {
 }
 impl DescribeSmbFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
-    pub fn smb_file_share_info_list(&self) -> ::std::option::Option<&[crate::types::SmbFileShareInfo]> {
-        self.smb_file_share_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.smb_file_share_info_list.is_none()`.
+    pub fn smb_file_share_info_list(&self) -> &[crate::types::SmbFileShareInfo] {
+        self.smb_file_share_info_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSmbFileSharesOutput {

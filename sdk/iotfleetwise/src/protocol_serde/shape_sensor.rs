@@ -3,44 +3,44 @@ pub fn ser_sensor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Sensor,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.fully_qualified_name {
-        object.key("fullyQualifiedName").string(var_1.as_str());
+    {
+        object.key("fullyQualifiedName").string(input.fully_qualified_name.as_str());
     }
-    if let Some(var_2) = &input.data_type {
-        object.key("dataType").string(var_2.as_str());
+    {
+        object.key("dataType").string(input.data_type.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.unit {
-        object.key("unit").string(var_4.as_str());
+    if let Some(var_2) = &input.unit {
+        object.key("unit").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.allowed_values {
-        let mut array_6 = object.key("allowedValues").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.allowed_values {
+        let mut array_4 = object.key("allowedValues").start_array();
+        for item_5 in var_3 {
             {
-                array_6.value().string(item_7.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.min {
+    if let Some(var_6) = &input.min {
         object.key("min").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_8).into()),
+            ::aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
-    if let Some(var_9) = &input.max {
+    if let Some(var_7) = &input.max {
         object.key("max").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_9).into()),
+            ::aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
-    if let Some(var_10) = &input.deprecation_message {
-        object.key("deprecationMessage").string(var_10.as_str());
+    if let Some(var_8) = &input.deprecation_message {
+        object.key("deprecationMessage").string(var_8.as_str());
     }
-    if let Some(var_11) = &input.comment {
-        object.key("comment").string(var_11.as_str());
+    if let Some(var_9) = &input.comment {
+        object.key("comment").string(var_9.as_str());
     }
     Ok(())
 }
@@ -123,7 +123,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::sensor_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

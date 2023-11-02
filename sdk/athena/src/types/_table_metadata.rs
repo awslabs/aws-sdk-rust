@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableMetadata {
     /// <p>The name of the table.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The time that the table was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the table was accessed.</p>
@@ -21,8 +21,9 @@ pub struct TableMetadata {
 }
 impl TableMetadata {
     /// <p>The name of the table.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The time that the table was created.</p>
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -37,12 +38,16 @@ impl TableMetadata {
         self.table_type.as_deref()
     }
     /// <p>A list of the columns in the table.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::Column]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[crate::types::Column] {
+        self.columns.as_deref().unwrap_or_default()
     }
     /// <p>A list of the partition keys in the table.</p>
-    pub fn partition_keys(&self) -> ::std::option::Option<&[crate::types::Column]> {
-        self.partition_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_keys.is_none()`.
+    pub fn partition_keys(&self) -> &[crate::types::Column] {
+        self.partition_keys.as_deref().unwrap_or_default()
     }
     /// <p>A set of custom key/value pairs for table properties.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,6 +75,7 @@ pub struct TableMetadataBuilder {
 }
 impl TableMetadataBuilder {
     /// <p>The name of the table.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -186,15 +192,22 @@ impl TableMetadataBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`TableMetadata`](crate::types::TableMetadata).
-    pub fn build(self) -> crate::types::TableMetadata {
-        crate::types::TableMetadata {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TableMetadataBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableMetadata {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TableMetadata",
+                )
+            })?,
             create_time: self.create_time,
             last_access_time: self.last_access_time,
             table_type: self.table_type,
             columns: self.columns,
             partition_keys: self.partition_keys,
             parameters: self.parameters,
-        }
+        })
     }
 }

@@ -11,12 +11,16 @@ pub struct WorkflowGraph {
 }
 impl WorkflowGraph {
     /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
-    pub fn nodes(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
+    pub fn nodes(&self) -> &[crate::types::Node] {
+        self.nodes.as_deref().unwrap_or_default()
     }
     /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
-    pub fn edges(&self) -> ::std::option::Option<&[crate::types::Edge]> {
-        self.edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edges.is_none()`.
+    pub fn edges(&self) -> &[crate::types::Edge] {
+        self.edges.as_deref().unwrap_or_default()
     }
 }
 impl WorkflowGraph {

@@ -56,6 +56,7 @@ impl CreateChannelInputBuilder {
         &self.description
     }
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

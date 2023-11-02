@@ -68,8 +68,10 @@ impl PutSecretValueInput {
     /// <p>A list of staging labels to attach to this version of the secret. Secrets Manager uses staging labels to track versions of a secret through the rotation process.</p>
     /// <p>If you specify a staging label that's already associated with a different version of the same secret, then Secrets Manager removes the label from the other version and attaches it to this version. If you specify <code>AWSCURRENT</code>, and it is already attached to another version, then Secrets Manager also moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
-    pub fn version_stages(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_stages.is_none()`.
+    pub fn version_stages(&self) -> &[::std::string::String] {
+        self.version_stages.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for PutSecretValueInput {
@@ -104,6 +106,7 @@ impl PutSecretValueInputBuilder {
     /// <p>The ARN or name of the secret to add a new version to.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+    /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self

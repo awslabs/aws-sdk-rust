@@ -34,6 +34,7 @@ pub struct UpdateAppImageConfigInputBuilder {
 }
 impl UpdateAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig to update.</p>
+    /// This field is required.
     pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_name = ::std::option::Option::Some(input.into());
         self

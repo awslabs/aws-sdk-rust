@@ -19,8 +19,12 @@ pub use crate::types::_database::DatabaseBuilder;
 
 pub use crate::types::_component::ComponentBuilder;
 
+pub use crate::types::_database_connection::DatabaseConnectionBuilder;
+
 pub use crate::types::_host::HostBuilder;
 
 pub use crate::types::_associated_host::AssociatedHostBuilder;
+
+pub use crate::types::_ip_address_member::IpAddressMemberBuilder;
 
 pub use crate::types::_resilience::ResilienceBuilder;

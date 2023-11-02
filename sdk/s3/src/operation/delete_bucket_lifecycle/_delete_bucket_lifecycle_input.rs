@@ -34,6 +34,7 @@ pub struct DeleteBucketLifecycleInputBuilder {
 }
 impl DeleteBucketLifecycleInputBuilder {
     /// <p>The bucket name of the lifecycle to delete.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

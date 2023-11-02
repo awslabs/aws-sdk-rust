@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDefined {
     /// <p>The value for output resolution of the result.</p>
-    pub value: ::std::option::Option<f32>,
+    pub value: f32,
     /// <p>The units for output resolution of the result.</p>
-    pub unit: ::std::option::Option<crate::types::Unit>,
+    pub unit: crate::types::Unit,
 }
 impl UserDefined {
     /// <p>The value for output resolution of the result.</p>
-    pub fn value(&self) -> ::std::option::Option<f32> {
+    pub fn value(&self) -> f32 {
         self.value
     }
     /// <p>The units for output resolution of the result.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
-        self.unit.as_ref()
+    pub fn unit(&self) -> &crate::types::Unit {
+        &self.unit
     }
 }
 impl UserDefined {
@@ -35,6 +35,7 @@ pub struct UserDefinedBuilder {
 }
 impl UserDefinedBuilder {
     /// <p>The value for output resolution of the result.</p>
+    /// This field is required.
     pub fn value(mut self, input: f32) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl UserDefinedBuilder {
         &self.value
     }
     /// <p>The units for output resolution of the result.</p>
+    /// This field is required.
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl UserDefinedBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`UserDefined`](crate::types::UserDefined).
-    pub fn build(self) -> crate::types::UserDefined {
-        crate::types::UserDefined {
-            value: self.value,
-            unit: self.unit,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`value`](crate::types::builders::UserDefinedBuilder::value)
+    /// - [`unit`](crate::types::builders::UserDefinedBuilder::unit)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserDefined, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserDefined {
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building UserDefined",
+                )
+            })?,
+            unit: self.unit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "unit",
+                    "unit was not specified but it is required when building UserDefined",
+                )
+            })?,
+        })
     }
 }

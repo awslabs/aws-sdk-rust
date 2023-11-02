@@ -41,6 +41,7 @@ pub struct UpdateContributorInsightsInputBuilder {
 }
 impl UpdateContributorInsightsInputBuilder {
     /// <p>The name of the table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateContributorInsightsInputBuilder {
         &self.index_name
     }
     /// <p>Represents the contributor insights action.</p>
+    /// This field is required.
     pub fn contributor_insights_action(mut self, input: crate::types::ContributorInsightsAction) -> Self {
         self.contributor_insights_action = ::std::option::Option::Some(input);
         self

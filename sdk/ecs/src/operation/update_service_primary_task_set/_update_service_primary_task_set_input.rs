@@ -41,6 +41,7 @@ pub struct UpdateServicePrimaryTaskSetInputBuilder {
 }
 impl UpdateServicePrimaryTaskSetInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
         &self.cluster
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
         &self.service
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
+    /// This field is required.
     pub fn primary_task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_task_set = ::std::option::Option::Some(input.into());
         self

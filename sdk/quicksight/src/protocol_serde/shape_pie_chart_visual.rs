@@ -3,50 +3,50 @@ pub fn ser_pie_chart_visual(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PieChartVisual,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.visual_id {
-        object.key("VisualId").string(var_1.as_str());
+    {
+        object.key("VisualId").string(input.visual_id.as_str());
     }
-    if let Some(var_2) = &input.title {
+    if let Some(var_1) = &input.title {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Title").start_object();
-        crate::protocol_serde::shape_visual_title_label_options::ser_visual_title_label_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("Title").start_object();
+        crate::protocol_serde::shape_visual_title_label_options::ser_visual_title_label_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.subtitle {
+    if let Some(var_3) = &input.subtitle {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Subtitle").start_object();
-        crate::protocol_serde::shape_visual_subtitle_label_options::ser_visual_subtitle_label_options(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("Subtitle").start_object();
+        crate::protocol_serde::shape_visual_subtitle_label_options::ser_visual_subtitle_label_options(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.chart_configuration {
+    if let Some(var_5) = &input.chart_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ChartConfiguration").start_object();
-        crate::protocol_serde::shape_pie_chart_configuration::ser_pie_chart_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ChartConfiguration").start_object();
+        crate::protocol_serde::shape_pie_chart_configuration::ser_pie_chart_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.actions {
-        let mut array_9 = object.key("Actions").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.actions {
+        let mut array_8 = object.key("Actions").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_visual_custom_action::ser_visual_custom_action(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_visual_custom_action::ser_visual_custom_action(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
     }
-    if let Some(var_12) = &input.column_hierarchies {
-        let mut array_13 = object.key("ColumnHierarchies").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.column_hierarchies {
+        let mut array_12 = object.key("ColumnHierarchies").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_column_hierarchy::ser_column_hierarchy(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_column_hierarchy::ser_column_hierarchy(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
     Ok(())
 }
@@ -105,7 +105,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::pie_chart_visual_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

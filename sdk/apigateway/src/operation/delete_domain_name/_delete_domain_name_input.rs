@@ -28,6 +28,7 @@ pub struct DeleteDomainNameInputBuilder {
 }
 impl DeleteDomainNameInputBuilder {
     /// <p>The name of the DomainName resource to be deleted.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

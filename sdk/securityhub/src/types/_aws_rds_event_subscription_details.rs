@@ -41,8 +41,10 @@ impl AwsRdsEventSubscriptionDetails {
         self.enabled
     }
     /// <p>The list of event categories for the event notification subscription.</p>
-    pub fn event_categories_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories_list.is_none()`.
+    pub fn event_categories_list(&self) -> &[::std::string::String] {
+        self.event_categories_list.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the event notification subscription.</p>
     pub fn event_subscription_arn(&self) -> ::std::option::Option<&str> {
@@ -53,8 +55,10 @@ impl AwsRdsEventSubscriptionDetails {
         self.sns_topic_arn.as_deref()
     }
     /// <p>A list of source identifiers for the event notification subscription.</p>
-    pub fn source_ids_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_ids_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids_list.is_none()`.
+    pub fn source_ids_list(&self) -> &[::std::string::String] {
+        self.source_ids_list.as_deref().unwrap_or_default()
     }
     /// <p>The source type for the event notification subscription.</p>
     pub fn source_type(&self) -> ::std::option::Option<&str> {

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultData {
     /// <p>The identifier of the result data.</p>
-    pub result_id: ::std::option::Option<::std::string::String>,
+    pub result_id: ::std::string::String,
     /// <p>The document.</p>
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>The relevance score of the results.</p>
@@ -13,8 +13,9 @@ pub struct ResultData {
 }
 impl ResultData {
     /// <p>The identifier of the result data.</p>
-    pub fn result_id(&self) -> ::std::option::Option<&str> {
-        self.result_id.as_deref()
+    pub fn result_id(&self) -> &str {
+        use std::ops::Deref;
+        self.result_id.deref()
     }
     /// <p>The document.</p>
     pub fn document(&self) -> ::std::option::Option<&crate::types::Document> {
@@ -42,6 +43,7 @@ pub struct ResultDataBuilder {
 }
 impl ResultDataBuilder {
     /// <p>The identifier of the result data.</p>
+    /// This field is required.
     pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl ResultDataBuilder {
         &self.result_id
     }
     /// <p>The document.</p>
+    /// This field is required.
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.document = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl ResultDataBuilder {
         &self.relevance_score
     }
     /// Consumes the builder and constructs a [`ResultData`](crate::types::ResultData).
-    pub fn build(self) -> crate::types::ResultData {
-        crate::types::ResultData {
-            result_id: self.result_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`result_id`](crate::types::builders::ResultDataBuilder::result_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResultData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResultData {
+            result_id: self.result_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "result_id",
+                    "result_id was not specified but it is required when building ResultData",
+                )
+            })?,
             document: self.document,
             relevance_score: self.relevance_score.unwrap_or_default(),
-        }
+        })
     }
 }

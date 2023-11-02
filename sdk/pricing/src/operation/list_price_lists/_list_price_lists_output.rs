@@ -11,8 +11,10 @@ pub struct ListPriceListsOutput {
 }
 impl ListPriceListsOutput {
     /// <p>The type of price list references that match your request. </p>
-    pub fn price_lists(&self) -> ::std::option::Option<&[crate::types::PriceList]> {
-        self.price_lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.price_lists.is_none()`.
+    pub fn price_lists(&self) -> &[crate::types::PriceList] {
+        self.price_lists.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

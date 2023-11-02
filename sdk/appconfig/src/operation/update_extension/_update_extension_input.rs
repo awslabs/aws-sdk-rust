@@ -55,6 +55,7 @@ pub struct UpdateExtensionInputBuilder {
 }
 impl UpdateExtensionInputBuilder {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    /// This field is required.
     pub fn extension_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension_identifier = ::std::option::Option::Some(input.into());
         self

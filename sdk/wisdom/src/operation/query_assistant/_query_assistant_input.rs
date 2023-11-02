@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct QueryAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
     /// <p>The text to search for.</p>
-    pub query_text: ::std::option::Option<::std::string::String>,
+    pub query_text: ::std::string::String,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -14,12 +14,14 @@ pub struct QueryAssistantInput {
 }
 impl QueryAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
     /// <p>The text to search for.</p>
-    pub fn query_text(&self) -> ::std::option::Option<&str> {
-        self.query_text.as_deref()
+    pub fn query_text(&self) -> &str {
+        use std::ops::Deref;
+        self.query_text.deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -58,6 +60,7 @@ pub struct QueryAssistantInputBuilder {
 }
 impl QueryAssistantInputBuilder {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl QueryAssistantInputBuilder {
         &self.assistant_id
     }
     /// <p>The text to search for.</p>
+    /// This field is required.
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self
@@ -114,12 +118,25 @@ impl QueryAssistantInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_id`](crate::operation::query_assistant::builders::QueryAssistantInputBuilder::assistant_id)
+    /// - [`query_text`](crate::operation::query_assistant::builders::QueryAssistantInputBuilder::query_text)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_assistant::QueryAssistantInput {
-            assistant_id: self.assistant_id,
-            query_text: self.query_text,
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building QueryAssistantInput",
+                )
+            })?,
+            query_text: self.query_text.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "query_text",
+                    "query_text was not specified but it is required when building QueryAssistantInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
         })

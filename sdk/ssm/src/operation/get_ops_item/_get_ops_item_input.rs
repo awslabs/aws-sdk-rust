@@ -34,6 +34,7 @@ pub struct GetOpsItemInputBuilder {
 }
 impl GetOpsItemInputBuilder {
     /// <p>The ID of the OpsItem that you want to get.</p>
+    /// This field is required.
     pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_id = ::std::option::Option::Some(input.into());
         self

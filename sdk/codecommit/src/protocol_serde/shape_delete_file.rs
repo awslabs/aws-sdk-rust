@@ -406,7 +406,9 @@ pub fn de_delete_file_http_response(
         output = crate::protocol_serde::shape_delete_file::de_delete_file(_response_body, output)
             .map_err(crate::operation::delete_file::DeleteFileError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_file_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::delete_file::DeleteFileError::unhandled)?
     })
 }
 

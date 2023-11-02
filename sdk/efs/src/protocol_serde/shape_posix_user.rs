@@ -41,7 +41,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::posix_user_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -53,29 +55,29 @@ pub fn ser_posix_user(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PosixUser,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.uid {
+    {
         object.key("Uid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.uid).into()),
         );
     }
-    if let Some(var_2) = &input.gid {
+    {
         object.key("Gid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.gid).into()),
         );
     }
-    if let Some(var_3) = &input.secondary_gids {
-        let mut array_4 = object.key("SecondaryGids").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.secondary_gids {
+        let mut array_2 = object.key("SecondaryGids").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().number(
+                array_2.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_5).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_3).into()),
                 );
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }

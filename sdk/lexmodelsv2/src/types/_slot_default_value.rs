@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotDefaultValue {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
-    pub default_value: ::std::option::Option<::std::string::String>,
+    pub default_value: ::std::string::String,
 }
 impl SlotDefaultValue {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
-        self.default_value.as_deref()
+    pub fn default_value(&self) -> &str {
+        use std::ops::Deref;
+        self.default_value.deref()
     }
 }
 impl SlotDefaultValue {
@@ -28,6 +29,7 @@ pub struct SlotDefaultValueBuilder {
 }
 impl SlotDefaultValueBuilder {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
+    /// This field is required.
     pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl SlotDefaultValueBuilder {
         &self.default_value
     }
     /// Consumes the builder and constructs a [`SlotDefaultValue`](crate::types::SlotDefaultValue).
-    pub fn build(self) -> crate::types::SlotDefaultValue {
-        crate::types::SlotDefaultValue {
-            default_value: self.default_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`default_value`](crate::types::builders::SlotDefaultValueBuilder::default_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotDefaultValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlotDefaultValue {
+            default_value: self.default_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "default_value",
+                    "default_value was not specified but it is required when building SlotDefaultValue",
+                )
+            })?,
+        })
     }
 }

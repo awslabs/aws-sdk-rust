@@ -69,6 +69,7 @@ pub struct UpdateNodegroupConfigInputBuilder {
 }
 impl UpdateNodegroupConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl UpdateNodegroupConfigInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the managed node group to update.</p>
+    /// This field is required.
     pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self

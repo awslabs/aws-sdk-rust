@@ -75,8 +75,10 @@ impl Attachment {
         self.segment_name.as_deref()
     }
     /// <p>The tags associated with the attachment.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The attachment to move from one segment to another.</p>
     pub fn proposed_segment_change(&self) -> ::std::option::Option<&crate::types::ProposedSegmentChange> {

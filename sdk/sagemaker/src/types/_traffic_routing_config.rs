@@ -64,6 +64,7 @@ impl TrafficRoutingConfigBuilder {
     /// <li> <p> <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first step is the canary, which is a small portion of the traffic. The second step is the remainder of the traffic. </p> </li>
     /// <li> <p> <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TrafficRoutingConfigType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -88,6 +89,7 @@ impl TrafficRoutingConfigBuilder {
         &self.r#type
     }
     /// <p>The waiting time (in seconds) between incremental steps to turn on traffic on the new endpoint fleet.</p>
+    /// This field is required.
     pub fn wait_interval_in_seconds(mut self, input: i32) -> Self {
         self.wait_interval_in_seconds = ::std::option::Option::Some(input);
         self

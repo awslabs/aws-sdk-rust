@@ -3,8 +3,8 @@ pub fn ser_update_knowledge_base_template_uri_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.template_uri {
-        object.key("templateUri").string(var_1.as_str());
+    {
+        object.key("templateUri").string(input.template_uri.as_str());
     }
     Ok(())
 }

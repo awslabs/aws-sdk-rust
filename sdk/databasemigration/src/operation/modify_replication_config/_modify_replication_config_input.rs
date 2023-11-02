@@ -84,6 +84,7 @@ pub struct ModifyReplicationConfigInputBuilder {
 }
 impl ModifyReplicationConfigInputBuilder {
     /// <p>The Amazon Resource Name of the replication to modify.</p>
+    /// This field is required.
     pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self

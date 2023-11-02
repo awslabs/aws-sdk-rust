@@ -28,6 +28,7 @@ pub struct NotificationConfigurationBuilder {
 }
 impl NotificationConfigurationBuilder {
     /// <p>Details on SNS configuration. </p>
+    /// This field is required.
     pub fn sns_configuration(mut self, input: crate::types::SnsConfiguration) -> Self {
         self.sns_configuration = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct SearchResourcesOutput {
 }
 impl SearchResourcesOutput {
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
-    pub fn matching_resources(&self) -> ::std::option::Option<&[crate::types::MatchingResource]> {
-        self.matching_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_resources.is_none()`.
+    pub fn matching_resources(&self) -> &[crate::types::MatchingResource] {
+        self.matching_resources.as_deref().unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

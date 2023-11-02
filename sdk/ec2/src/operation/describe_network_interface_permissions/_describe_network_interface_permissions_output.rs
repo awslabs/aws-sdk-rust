@@ -12,8 +12,10 @@ pub struct DescribeNetworkInterfacePermissionsOutput {
 }
 impl DescribeNetworkInterfacePermissionsOutput {
     /// <p>The network interface permissions.</p>
-    pub fn network_interface_permissions(&self) -> ::std::option::Option<&[crate::types::NetworkInterfacePermission]> {
-        self.network_interface_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_permissions.is_none()`.
+    pub fn network_interface_permissions(&self) -> &[crate::types::NetworkInterfacePermission] {
+        self.network_interface_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

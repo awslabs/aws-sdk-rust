@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub pipeline_description_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
+    pub pipeline_description_list: ::std::vec::Vec<crate::types::PipelineDescription>,
     _request_id: Option<String>,
 }
 impl DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn pipeline_description_list(&self) -> ::std::option::Option<&[crate::types::PipelineDescription]> {
-        self.pipeline_description_list.as_deref()
+    pub fn pipeline_description_list(&self) -> &[crate::types::PipelineDescription] {
+        use std::ops::Deref;
+        self.pipeline_description_list.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePipelinesOutput {
@@ -64,10 +65,19 @@ impl DescribePipelinesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput).
-    pub fn build(self) -> crate::operation::describe_pipelines::DescribePipelinesOutput {
-        crate::operation::describe_pipelines::DescribePipelinesOutput {
-            pipeline_description_list: self.pipeline_description_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pipeline_description_list`](crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder::pipeline_description_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_pipelines::DescribePipelinesOutput {
+            pipeline_description_list: self.pipeline_description_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pipeline_description_list",
+                    "pipeline_description_list was not specified but it is required when building DescribePipelinesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -168,11 +168,10 @@ pub fn de_export_auto_scaling_group_recommendations_http_error(
                         crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

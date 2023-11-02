@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEngagementOutput {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The ARN of the engagement.</p>
-    pub engagement_arn: ::std::option::Option<::std::string::String>,
+    pub engagement_arn: ::std::string::String,
     /// <p>The user that started the engagement.</p>
-    pub sender: ::std::option::Option<::std::string::String>,
+    pub sender: ::std::string::String,
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub subject: ::std::option::Option<::std::string::String>,
+    pub subject: ::std::string::String,
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub content: ::std::option::Option<::std::string::String>,
+    pub content: ::std::string::String,
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_subject: ::std::option::Option<::std::string::String>,
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
@@ -27,24 +27,29 @@ pub struct DescribeEngagementOutput {
 }
 impl DescribeEngagementOutput {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The ARN of the engagement.</p>
-    pub fn engagement_arn(&self) -> ::std::option::Option<&str> {
-        self.engagement_arn.as_deref()
+    pub fn engagement_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.engagement_arn.deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> ::std::option::Option<&str> {
-        self.sender.as_deref()
+    pub fn sender(&self) -> &str {
+        use std::ops::Deref;
+        self.sender.deref()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
-        self.subject.as_deref()
+    pub fn subject(&self) -> &str {
+        use std::ops::Deref;
+        self.subject.deref()
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
-        self.content.as_deref()
+    pub fn content(&self) -> &str {
+        use std::ops::Deref;
+        self.content.deref()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(&self) -> ::std::option::Option<&str> {
@@ -97,6 +102,7 @@ pub struct DescribeEngagementOutputBuilder {
 }
 impl DescribeEngagementOutputBuilder {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl DescribeEngagementOutputBuilder {
         &self.contact_arn
     }
     /// <p>The ARN of the engagement.</p>
+    /// This field is required.
     pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl DescribeEngagementOutputBuilder {
         &self.engagement_arn
     }
     /// <p>The user that started the engagement.</p>
+    /// This field is required.
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +147,7 @@ impl DescribeEngagementOutputBuilder {
         &self.sender
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// This field is required.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +162,7 @@ impl DescribeEngagementOutputBuilder {
         &self.subject
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -246,19 +256,52 @@ impl DescribeEngagementOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeEngagementOutput`](crate::operation::describe_engagement::DescribeEngagementOutput).
-    pub fn build(self) -> crate::operation::describe_engagement::DescribeEngagementOutput {
-        crate::operation::describe_engagement::DescribeEngagementOutput {
-            contact_arn: self.contact_arn,
-            engagement_arn: self.engagement_arn,
-            sender: self.sender,
-            subject: self.subject,
-            content: self.content,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`contact_arn`](crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder::contact_arn)
+    /// - [`engagement_arn`](crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder::engagement_arn)
+    /// - [`sender`](crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder::sender)
+    /// - [`subject`](crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder::subject)
+    /// - [`content`](crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder::content)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_engagement::DescribeEngagementOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_engagement::DescribeEngagementOutput {
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building DescribeEngagementOutput",
+                )
+            })?,
+            engagement_arn: self.engagement_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engagement_arn",
+                    "engagement_arn was not specified but it is required when building DescribeEngagementOutput",
+                )
+            })?,
+            sender: self.sender.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sender",
+                    "sender was not specified but it is required when building DescribeEngagementOutput",
+                )
+            })?,
+            subject: self.subject.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subject",
+                    "subject was not specified but it is required when building DescribeEngagementOutput",
+                )
+            })?,
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building DescribeEngagementOutput",
+                )
+            })?,
             public_subject: self.public_subject,
             public_content: self.public_content,
             incident_id: self.incident_id,
             start_time: self.start_time,
             stop_time: self.stop_time,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub config_id: ::std::option::Option<::std::string::String>,
+    pub config_id: ::std::string::String,
     /// <p>Name of a <code>Config</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Type of a <code>Config</code>.</p>
-    pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
+    pub config_type: crate::types::ConfigCapabilityType,
     /// <p>Parameters of a <code>Config</code>.</p>
     pub config_data: ::std::option::Option<crate::types::ConfigTypeData>,
 }
 impl UpdateConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> ::std::option::Option<&str> {
-        self.config_id.as_deref()
+    pub fn config_id(&self) -> &str {
+        use std::ops::Deref;
+        self.config_id.deref()
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
-        self.config_type.as_ref()
+    pub fn config_type(&self) -> &crate::types::ConfigCapabilityType {
+        &self.config_type
     }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn config_data(&self) -> ::std::option::Option<&crate::types::ConfigTypeData> {
@@ -49,6 +51,7 @@ pub struct UpdateConfigInputBuilder {
 }
 impl UpdateConfigInputBuilder {
     /// <p>UUID of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl UpdateConfigInputBuilder {
         &self.config_id
     }
     /// <p>Name of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl UpdateConfigInputBuilder {
         &self.name
     }
     /// <p>Type of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
         self.config_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl UpdateConfigInputBuilder {
         &self.config_type
     }
     /// <p>Parameters of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
         self.config_data = ::std::option::Option::Some(input);
         self
@@ -105,11 +111,30 @@ impl UpdateConfigInputBuilder {
         &self.config_data
     }
     /// Consumes the builder and constructs a [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`config_id`](crate::operation::update_config::builders::UpdateConfigInputBuilder::config_id)
+    /// - [`name`](crate::operation::update_config::builders::UpdateConfigInputBuilder::name)
+    /// - [`config_type`](crate::operation::update_config::builders::UpdateConfigInputBuilder::config_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_config::UpdateConfigInput {
-            config_id: self.config_id,
-            name: self.name,
-            config_type: self.config_type,
+            config_id: self.config_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "config_id",
+                    "config_id was not specified but it is required when building UpdateConfigInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateConfigInput",
+                )
+            })?,
+            config_type: self.config_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "config_type",
+                    "config_type was not specified but it is required when building UpdateConfigInput",
+                )
+            })?,
             config_data: self.config_data,
         })
     }

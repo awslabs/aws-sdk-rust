@@ -31,8 +31,10 @@ pub struct MutableClusterInfo {
 }
 impl MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
-    pub fn broker_ebs_volume_info(&self) -> ::std::option::Option<&[crate::types::BrokerEbsVolumeInfo]> {
-        self.broker_ebs_volume_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.broker_ebs_volume_info.is_none()`.
+    pub fn broker_ebs_volume_info(&self) -> &[crate::types::BrokerEbsVolumeInfo] {
+        self.broker_ebs_volume_info.as_deref().unwrap_or_default()
     }
     /// <p>Information about the changes in the configuration of the brokers.</p>
     pub fn configuration_info(&self) -> ::std::option::Option<&crate::types::ConfigurationInfo> {

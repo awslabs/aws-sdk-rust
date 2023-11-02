@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>Name of the filter.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Condition of the filter.</p>
-    pub condition: ::std::option::Option<crate::types::InventoryFilterCondition>,
+    pub condition: crate::types::InventoryFilterCondition,
     /// <p>Value of the filter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl InventoryFilter {
     /// <p>Name of the filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Condition of the filter.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::InventoryFilterCondition> {
-        self.condition.as_ref()
+    pub fn condition(&self) -> &crate::types::InventoryFilterCondition {
+        &self.condition
     }
     /// <p>Value of the filter.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct InventoryFilterBuilder {
 }
 impl InventoryFilterBuilder {
     /// <p>Name of the filter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl InventoryFilterBuilder {
         &self.name
     }
     /// <p>Condition of the filter.</p>
+    /// This field is required.
     pub fn condition(mut self, input: crate::types::InventoryFilterCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl InventoryFilterBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
-    pub fn build(self) -> crate::types::InventoryFilter {
-        crate::types::InventoryFilter {
-            name: self.name,
-            condition: self.condition,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::InventoryFilterBuilder::name)
+    /// - [`condition`](crate::types::builders::InventoryFilterBuilder::condition)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building InventoryFilter",
+                )
+            })?,
+            condition: self.condition.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition",
+                    "condition was not specified but it is required when building InventoryFilter",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DeleteAnomalyMonitorInputBuilder {
 }
 impl DeleteAnomalyMonitorInputBuilder {
     /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self

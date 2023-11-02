@@ -59,7 +59,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::grantee_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -71,20 +73,20 @@ pub fn ser_grantee(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Grantee,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.display_name {
-        object.key("DisplayName").string(var_2.as_str());
+    if let Some(var_1) = &input.display_name {
+        object.key("DisplayName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.uri {
-        object.key("URI").string(var_3.as_str());
+    if let Some(var_2) = &input.uri {
+        object.key("URI").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.id {
-        object.key("ID").string(var_4.as_str());
+    if let Some(var_3) = &input.id {
+        object.key("ID").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.email_address {
-        object.key("EmailAddress").string(var_5.as_str());
+    if let Some(var_4) = &input.email_address {
+        object.key("EmailAddress").string(var_4.as_str());
     }
     Ok(())
 }

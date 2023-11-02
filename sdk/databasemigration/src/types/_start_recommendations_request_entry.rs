@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRecommendationsRequestEntry {
     /// <p>The identifier of the source database.</p>
-    pub database_id: ::std::option::Option<::std::string::String>,
+    pub database_id: ::std::string::String,
     /// <p>The required target engine settings.</p>
     pub settings: ::std::option::Option<crate::types::RecommendationSettings>,
 }
 impl StartRecommendationsRequestEntry {
     /// <p>The identifier of the source database.</p>
-    pub fn database_id(&self) -> ::std::option::Option<&str> {
-        self.database_id.as_deref()
+    pub fn database_id(&self) -> &str {
+        use std::ops::Deref;
+        self.database_id.deref()
     }
     /// <p>The required target engine settings.</p>
     pub fn settings(&self) -> ::std::option::Option<&crate::types::RecommendationSettings> {
@@ -35,6 +36,7 @@ pub struct StartRecommendationsRequestEntryBuilder {
 }
 impl StartRecommendationsRequestEntryBuilder {
     /// <p>The identifier of the source database.</p>
+    /// This field is required.
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl StartRecommendationsRequestEntryBuilder {
         &self.database_id
     }
     /// <p>The required target engine settings.</p>
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::RecommendationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl StartRecommendationsRequestEntryBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`StartRecommendationsRequestEntry`](crate::types::StartRecommendationsRequestEntry).
-    pub fn build(self) -> crate::types::StartRecommendationsRequestEntry {
-        crate::types::StartRecommendationsRequestEntry {
-            database_id: self.database_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_id`](crate::types::builders::StartRecommendationsRequestEntryBuilder::database_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::StartRecommendationsRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartRecommendationsRequestEntry {
+            database_id: self.database_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_id",
+                    "database_id was not specified but it is required when building StartRecommendationsRequestEntry",
+                )
+            })?,
             settings: self.settings,
-        }
+        })
     }
 }

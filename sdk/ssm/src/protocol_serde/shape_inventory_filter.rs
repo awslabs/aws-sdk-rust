@@ -3,20 +3,20 @@ pub fn ser_inventory_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InventoryFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key {
-        object.key("Key").string(var_1.as_str());
+    {
+        object.key("Key").string(input.key.as_str());
     }
-    if let Some(var_2) = &input.values {
-        let mut array_3 = object.key("Values").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("Values").start_array();
+        for item_2 in &input.values {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("Type").string(var_5.as_str());
+    if let Some(var_3) = &input.r#type {
+        object.key("Type").string(var_3.as_str());
     }
     Ok(())
 }

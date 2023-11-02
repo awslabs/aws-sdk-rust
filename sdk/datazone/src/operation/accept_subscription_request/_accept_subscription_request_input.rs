@@ -50,6 +50,7 @@ pub struct AcceptSubscriptionRequestInputBuilder {
 }
 impl AcceptSubscriptionRequestInputBuilder {
     /// <p>The Amazon DataZone domain where the specified subscription request is being accepted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl AcceptSubscriptionRequestInputBuilder {
         &self.domain_identifier
     }
     /// <p>The unique identifier of the subscription request that is to be accepted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

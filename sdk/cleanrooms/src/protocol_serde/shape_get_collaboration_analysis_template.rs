@@ -64,11 +64,10 @@ pub fn de_get_collaboration_analysis_template_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -121,7 +120,7 @@ pub fn de_get_collaboration_analysis_template_http_response(
         output = crate::protocol_serde::shape_get_collaboration_analysis_template::de_get_collaboration_analysis_template(_response_body, output)
             .map_err(crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_collaboration_analysis_template_output_correct_errors(output).build()
     })
 }
 

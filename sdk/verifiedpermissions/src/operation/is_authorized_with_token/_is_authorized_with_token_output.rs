@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsAuthorizedWithTokenOutput {
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
-    pub decision: ::std::option::Option<crate::types::Decision>,
+    pub decision: crate::types::Decision,
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
-    pub determining_policies: ::std::option::Option<::std::vec::Vec<crate::types::DeterminingPolicyItem>>,
+    pub determining_policies: ::std::vec::Vec<crate::types::DeterminingPolicyItem>,
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationErrorItem>>,
+    pub errors: ::std::vec::Vec<crate::types::EvaluationErrorItem>,
     _request_id: Option<String>,
 }
 impl IsAuthorizedWithTokenOutput {
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
-    pub fn decision(&self) -> ::std::option::Option<&crate::types::Decision> {
-        self.decision.as_ref()
+    pub fn decision(&self) -> &crate::types::Decision {
+        &self.decision
     }
     /// <p>The list of determining policies used to make the authorization decision. For example, if there are multiple matching policies, where at least one is a forbid policy, then because forbid always overrides permit the forbid policies are the determining policies. If all matching policies are permit policies, then those policies are the determining policies. When no policies match and the response is the default DENY, there are no determining policies.</p>
-    pub fn determining_policies(&self) -> ::std::option::Option<&[crate::types::DeterminingPolicyItem]> {
-        self.determining_policies.as_deref()
+    pub fn determining_policies(&self) -> &[crate::types::DeterminingPolicyItem] {
+        use std::ops::Deref;
+        self.determining_policies.deref()
     }
     /// <p>Errors that occurred while making an authorization decision. For example, a policy references an entity or entity attribute that does not exist in the slice.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::EvaluationErrorItem]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::EvaluationErrorItem] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for IsAuthorizedWithTokenOutput {
@@ -48,6 +50,7 @@ pub struct IsAuthorizedWithTokenOutputBuilder {
 }
 impl IsAuthorizedWithTokenOutputBuilder {
     /// <p>An authorization decision that indicates if the authorization request should be allowed or denied.</p>
+    /// This field is required.
     pub fn decision(mut self, input: crate::types::Decision) -> Self {
         self.decision = ::std::option::Option::Some(input);
         self
@@ -111,12 +114,34 @@ impl IsAuthorizedWithTokenOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`IsAuthorizedWithTokenOutput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput).
-    pub fn build(self) -> crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput {
-        crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput {
-            decision: self.decision,
-            determining_policies: self.determining_policies,
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`decision`](crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder::decision)
+    /// - [`determining_policies`](crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder::determining_policies)
+    /// - [`errors`](crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput {
+            decision: self.decision.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "decision",
+                    "decision was not specified but it is required when building IsAuthorizedWithTokenOutput",
+                )
+            })?,
+            determining_policies: self.determining_policies.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "determining_policies",
+                    "determining_policies was not specified but it is required when building IsAuthorizedWithTokenOutput",
+                )
+            })?,
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building IsAuthorizedWithTokenOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

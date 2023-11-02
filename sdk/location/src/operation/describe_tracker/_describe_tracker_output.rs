@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    pub tracker_arn: ::std::option::Option<::std::string::String>,
+    pub tracker_arn: ::std::string::String,
     /// <p>The optional description for the tracker resource.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -21,9 +21,9 @@ pub struct DescribeTrackerOutput {
     /// <p>The tags associated with the tracker resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The position filtering method of the tracker resource.</p>
@@ -40,19 +40,22 @@ pub struct DescribeTrackerOutput {
 }
 impl DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    pub fn tracker_arn(&self) -> ::std::option::Option<&str> {
-        self.tracker_arn.as_deref()
+    pub fn tracker_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_arn.deref()
     }
     /// <p>The optional description for the tracker resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
@@ -69,12 +72,12 @@ impl DescribeTrackerOutput {
         self.tags.as_ref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -129,6 +132,7 @@ pub struct DescribeTrackerOutputBuilder {
 }
 impl DescribeTrackerOutputBuilder {
     /// <p>The name of the tracker resource.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +150,7 @@ impl DescribeTrackerOutputBuilder {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn tracker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_arn = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +171,7 @@ impl DescribeTrackerOutputBuilder {
         &self.tracker_arn
     }
     /// <p>The optional description for the tracker resource.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -234,6 +240,7 @@ impl DescribeTrackerOutputBuilder {
         &self.tags
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -248,6 +255,7 @@ impl DescribeTrackerOutputBuilder {
         &self.create_time
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -339,21 +347,54 @@ impl DescribeTrackerOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrackerOutput`](crate::operation::describe_tracker::DescribeTrackerOutput).
-    pub fn build(self) -> crate::operation::describe_tracker::DescribeTrackerOutput {
-        crate::operation::describe_tracker::DescribeTrackerOutput {
-            tracker_name: self.tracker_name,
-            tracker_arn: self.tracker_arn,
-            description: self.description,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder::tracker_name)
+    /// - [`tracker_arn`](crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder::tracker_arn)
+    /// - [`description`](crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder::description)
+    /// - [`create_time`](crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder::create_time)
+    /// - [`update_time`](crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder::update_time)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_tracker::DescribeTrackerOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_tracker::DescribeTrackerOutput {
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building DescribeTrackerOutput",
+                )
+            })?,
+            tracker_arn: self.tracker_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_arn",
+                    "tracker_arn was not specified but it is required when building DescribeTrackerOutput",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building DescribeTrackerOutput",
+                )
+            })?,
             pricing_plan: self.pricing_plan,
             pricing_plan_data_source: self.pricing_plan_data_source,
             tags: self.tags,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building DescribeTrackerOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building DescribeTrackerOutput",
+                )
+            })?,
             kms_key_id: self.kms_key_id,
             position_filtering: self.position_filtering,
             event_bridge_enabled: self.event_bridge_enabled,
             kms_key_enable_geospatial_queries: self.kms_key_enable_geospatial_queries,
             _request_id: self._request_id,
-        }
+        })
     }
 }

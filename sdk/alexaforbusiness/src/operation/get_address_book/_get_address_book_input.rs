@@ -27,6 +27,7 @@ pub struct GetAddressBookInputBuilder {
 }
 impl GetAddressBookInputBuilder {
     /// <p>The ARN of the address book for which to request details.</p>
+    /// This field is required.
     pub fn address_book_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_book_arn = ::std::option::Option::Some(input.into());
         self

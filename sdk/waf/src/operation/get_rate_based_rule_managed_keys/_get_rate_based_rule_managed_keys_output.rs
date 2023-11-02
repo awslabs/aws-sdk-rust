@@ -11,8 +11,10 @@ pub struct GetRateBasedRuleManagedKeysOutput {
 }
 impl GetRateBasedRuleManagedKeysOutput {
     /// <p>An array of IP addresses that currently are blocked by the specified <code>RateBasedRule</code>. </p>
-    pub fn managed_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_keys.is_none()`.
+    pub fn managed_keys(&self) -> &[::std::string::String] {
+        self.managed_keys.as_deref().unwrap_or_default()
     }
     /// <p>A null value and not currently used.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterSlackWorkspaceForOrganizationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
-    pub team_id: ::std::option::Option<::std::string::String>,
+    pub team_id: ::std::string::String,
 }
 impl RegisterSlackWorkspaceForOrganizationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
-        self.team_id.as_deref()
+    pub fn team_id(&self) -> &str {
+        use std::ops::Deref;
+        self.team_id.deref()
     }
 }
 impl RegisterSlackWorkspaceForOrganizationInput {
@@ -27,6 +28,7 @@ pub struct RegisterSlackWorkspaceForOrganizationInputBuilder {
 }
 impl RegisterSlackWorkspaceForOrganizationInputBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+    /// This field is required.
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl RegisterSlackWorkspaceForOrganizationInputBuilder {
         &self.team_id
     }
     /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationInput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`team_id`](crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationInputBuilder::team_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,14 @@ impl RegisterSlackWorkspaceForOrganizationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput { team_id: self.team_id },
+            crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput {
+                team_id: self.team_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "team_id",
+                        "team_id was not specified but it is required when building RegisterSlackWorkspaceForOrganizationInput",
+                    )
+                })?,
+            },
         )
     }
 }

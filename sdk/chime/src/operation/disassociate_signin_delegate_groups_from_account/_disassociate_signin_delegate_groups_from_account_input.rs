@@ -14,8 +14,10 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
         self.account_id.as_deref()
     }
     /// <p>The sign-in delegate group names.</p>
-    pub fn group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.group_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
+    pub fn group_names(&self) -> &[::std::string::String] {
+        self.group_names.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateSigninDelegateGroupsFromAccountInput {
@@ -36,6 +38,7 @@ pub struct DisassociateSigninDelegateGroupsFromAccountInputBuilder {
 }
 impl DisassociateSigninDelegateGroupsFromAccountInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

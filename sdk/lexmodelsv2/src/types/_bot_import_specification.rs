@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotImportSpecification {
     /// <p>The name that Amazon Lex should use for the bot.</p>
-    pub bot_name: ::std::option::Option<::std::string::String>,
+    pub bot_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
@@ -21,12 +21,14 @@ pub struct BotImportSpecification {
 }
 impl BotImportSpecification {
     /// <p>The name that Amazon Lex should use for the bot.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
-        self.bot_name.as_deref()
+    pub fn bot_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
     pub fn data_privacy(&self) -> ::std::option::Option<&crate::types::DataPrivacy> {
@@ -67,6 +69,7 @@ pub struct BotImportSpecificationBuilder {
 }
 impl BotImportSpecificationBuilder {
     /// <p>The name that Amazon Lex should use for the bot.</p>
+    /// This field is required.
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl BotImportSpecificationBuilder {
         &self.bot_name
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to build and run the bot.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +99,7 @@ impl BotImportSpecificationBuilder {
         &self.role_arn
     }
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
+    /// This field is required.
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
         self.data_privacy = ::std::option::Option::Some(input);
         self
@@ -176,14 +181,27 @@ impl BotImportSpecificationBuilder {
         &self.test_bot_alias_tags
     }
     /// Consumes the builder and constructs a [`BotImportSpecification`](crate::types::BotImportSpecification).
-    pub fn build(self) -> crate::types::BotImportSpecification {
-        crate::types::BotImportSpecification {
-            bot_name: self.bot_name,
-            role_arn: self.role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bot_name`](crate::types::builders::BotImportSpecificationBuilder::bot_name)
+    /// - [`role_arn`](crate::types::builders::BotImportSpecificationBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::BotImportSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BotImportSpecification {
+            bot_name: self.bot_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bot_name",
+                    "bot_name was not specified but it is required when building BotImportSpecification",
+                )
+            })?,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building BotImportSpecification",
+                )
+            })?,
             data_privacy: self.data_privacy,
             idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
             bot_tags: self.bot_tags,
             test_bot_alias_tags: self.test_bot_alias_tags,
-        }
+        })
     }
 }

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedItemDetails {
     /// <p>The status code of a failed item.</p>
-    pub failure_code: ::std::option::Option<crate::types::FailedItemErrorCode>,
+    pub failure_code: crate::types::FailedItemErrorCode,
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
-    pub retryable: ::std::option::Option<bool>,
+    pub retryable: bool,
 }
 impl FailedItemDetails {
     /// <p>The status code of a failed item.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::FailedItemErrorCode> {
-        self.failure_code.as_ref()
+    pub fn failure_code(&self) -> &crate::types::FailedItemErrorCode {
+        &self.failure_code
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
-    pub fn retryable(&self) -> ::std::option::Option<bool> {
+    pub fn retryable(&self) -> bool {
         self.retryable
     }
 }
@@ -35,6 +35,7 @@ pub struct FailedItemDetailsBuilder {
 }
 impl FailedItemDetailsBuilder {
     /// <p>The status code of a failed item.</p>
+    /// This field is required.
     pub fn failure_code(mut self, input: crate::types::FailedItemErrorCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl FailedItemDetailsBuilder {
         &self.failure_code
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
+    /// This field is required.
     pub fn retryable(mut self, input: bool) -> Self {
         self.retryable = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl FailedItemDetailsBuilder {
         &self.retryable
     }
     /// Consumes the builder and constructs a [`FailedItemDetails`](crate::types::FailedItemDetails).
-    pub fn build(self) -> crate::types::FailedItemDetails {
-        crate::types::FailedItemDetails {
-            failure_code: self.failure_code,
-            retryable: self.retryable,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`failure_code`](crate::types::builders::FailedItemDetailsBuilder::failure_code)
+    /// - [`retryable`](crate::types::builders::FailedItemDetailsBuilder::retryable)
+    pub fn build(self) -> ::std::result::Result<crate::types::FailedItemDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FailedItemDetails {
+            failure_code: self.failure_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failure_code",
+                    "failure_code was not specified but it is required when building FailedItemDetails",
+                )
+            })?,
+            retryable: self.retryable.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "retryable",
+                    "retryable was not specified but it is required when building FailedItemDetails",
+                )
+            })?,
+        })
     }
 }

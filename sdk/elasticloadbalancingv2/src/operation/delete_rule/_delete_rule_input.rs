@@ -27,6 +27,7 @@ pub struct DeleteRuleInputBuilder {
 }
 impl DeleteRuleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
         self

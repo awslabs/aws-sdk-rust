@@ -60,8 +60,10 @@ impl GetReservationUtilizationInput {
         self.time_period.as_ref()
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::GroupDefinition]> {
-        self.group_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
+    pub fn group_by(&self) -> &[crate::types::GroupDefinition] {
+        self.group_by.as_deref().unwrap_or_default()
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -141,6 +143,7 @@ pub struct GetReservationUtilizationInputBuilder {
 }
 impl GetReservationUtilizationInputBuilder {
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct TagResourceInputBuilder {
 }
 impl TagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl TagResourceInputBuilder {
         &self.resource_arn
     }
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    /// This field is required.
     pub fn tags_model(mut self, input: crate::types::TagsModel) -> Self {
         self.tags_model = ::std::option::Option::Some(input);
         self

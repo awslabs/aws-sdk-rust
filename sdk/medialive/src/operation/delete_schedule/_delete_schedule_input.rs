@@ -28,6 +28,7 @@ pub struct DeleteScheduleInputBuilder {
 }
 impl DeleteScheduleInputBuilder {
     /// Id of the channel whose schedule is being deleted.
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self

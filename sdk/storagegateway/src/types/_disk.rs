@@ -53,8 +53,10 @@ impl Disk {
         self.disk_allocation_resource.as_deref()
     }
     /// <p>A list of values that represents attributes of a local disk.</p>
-    pub fn disk_attribute_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disk_attribute_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_attribute_list.is_none()`.
+    pub fn disk_attribute_list(&self) -> &[::std::string::String] {
+        self.disk_attribute_list.as_deref().unwrap_or_default()
     }
 }
 impl Disk {

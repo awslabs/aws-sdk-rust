@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteComponent`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_name): <p>The name of the component to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_name):<br>required: **true**<br><p>The name of the component to delete.</p><br>
     /// - On success, responds with [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::delete_component::DeleteComponentOutput::component): <p>The detailed data of the component being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::operation::delete_component::DeleteComponentError)

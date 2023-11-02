@@ -15,27 +15,27 @@ pub fn ser_create_dataflow_endpoint_group_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.endpoint_details {
-        let mut array_4 = object.key("endpointDetails").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_3 = object.key("endpointDetails").start_array();
+        for item_4 in &input.endpoint_details {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_endpoint_details::ser_endpoint_details(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_endpoint_details::ser_endpoint_details(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_8.finish();
+        object_7.finish();
     }
     Ok(())
 }

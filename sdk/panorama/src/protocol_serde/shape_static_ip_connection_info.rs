@@ -48,7 +48,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::static_ip_connection_info_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -60,23 +64,23 @@ pub fn ser_static_ip_connection_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticIpConnectionInfo,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ip_address {
-        object.key("IpAddress").string(var_1.as_str());
+    {
+        object.key("IpAddress").string(input.ip_address.as_str());
     }
-    if let Some(var_2) = &input.mask {
-        object.key("Mask").string(var_2.as_str());
+    {
+        object.key("Mask").string(input.mask.as_str());
     }
-    if let Some(var_3) = &input.dns {
-        let mut array_4 = object.key("Dns").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("Dns").start_array();
+        for item_2 in &input.dns {
             {
-                array_4.value().string(item_5.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.default_gateway {
-        object.key("DefaultGateway").string(var_6.as_str());
+    {
+        object.key("DefaultGateway").string(input.default_gateway.as_str());
     }
     Ok(())
 }

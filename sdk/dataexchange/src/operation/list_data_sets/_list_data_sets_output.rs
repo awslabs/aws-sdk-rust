@@ -11,8 +11,10 @@ pub struct ListDataSetsOutput {
 }
 impl ListDataSetsOutput {
     /// <p>The data set objects listed by the request.</p>
-    pub fn data_sets(&self) -> ::std::option::Option<&[crate::types::DataSetEntry]> {
-        self.data_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sets.is_none()`.
+    pub fn data_sets(&self) -> &[crate::types::DataSetEntry] {
+        self.data_sets.as_deref().unwrap_or_default()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

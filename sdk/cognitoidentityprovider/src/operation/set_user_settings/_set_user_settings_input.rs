@@ -15,8 +15,10 @@ impl SetUserSettingsInput {
         self.access_token.as_deref()
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn mfa_options(&self) -> ::std::option::Option<&[crate::types::MfaOptionType]> {
-        self.mfa_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
+    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
+        self.mfa_options.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for SetUserSettingsInput {
@@ -43,6 +45,7 @@ pub struct SetUserSettingsInputBuilder {
 }
 impl SetUserSettingsInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self

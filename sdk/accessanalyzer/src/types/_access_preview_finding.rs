@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPreviewFinding {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
     pub existing_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The existing status of the finding, provided only for existing findings.</p>
@@ -21,9 +21,9 @@ pub struct AccessPreviewFinding {
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub is_public: ::std::option::Option<bool>,
     /// <p>The type of the resource that can be accessed in the finding.</p>
-    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub resource_type: crate::types::ResourceType,
     /// <p>The time at which the access preview finding was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
     /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
@@ -31,11 +31,11 @@ pub struct AccessPreviewFinding {
     /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    pub change_type: ::std::option::Option<crate::types::FindingChangeType>,
+    pub change_type: crate::types::FindingChangeType,
     /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    pub status: ::std::option::Option<crate::types::FindingStatus>,
+    pub status: crate::types::FindingStatus,
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub resource_owner_account: ::std::option::Option<::std::string::String>,
+    pub resource_owner_account: ::std::string::String,
     /// <p>An error.</p>
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
@@ -43,8 +43,9 @@ pub struct AccessPreviewFinding {
 }
 impl AccessPreviewFinding {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
     pub fn existing_finding_id(&self) -> ::std::option::Option<&str> {
@@ -59,8 +60,10 @@ impl AccessPreviewFinding {
         self.principal.as_ref()
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
-    pub fn action(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.action.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action.is_none()`.
+    pub fn action(&self) -> &[::std::string::String] {
+        self.action.as_deref().unwrap_or_default()
     }
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
     pub fn condition(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -75,12 +78,12 @@ impl AccessPreviewFinding {
         self.is_public
     }
     /// <p>The type of the resource that can be accessed in the finding.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::ResourceType {
+        &self.resource_type
     }
     /// <p>The time at which the access preview finding was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
@@ -89,24 +92,27 @@ impl AccessPreviewFinding {
     /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    pub fn change_type(&self) -> ::std::option::Option<&crate::types::FindingChangeType> {
-        self.change_type.as_ref()
+    pub fn change_type(&self) -> &crate::types::FindingChangeType {
+        &self.change_type
     }
     /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FindingStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::FindingStatus {
+        &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn resource_owner_account(&self) -> ::std::option::Option<&str> {
-        self.resource_owner_account.as_deref()
+    pub fn resource_owner_account(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_owner_account.deref()
     }
     /// <p>An error.</p>
     pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::FindingSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::FindingSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
 }
 impl AccessPreviewFinding {
@@ -138,6 +144,7 @@ pub struct AccessPreviewFindingBuilder {
 }
 impl AccessPreviewFindingBuilder {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -268,6 +275,7 @@ impl AccessPreviewFindingBuilder {
         &self.is_public
     }
     /// <p>The type of the resource that can be accessed in the finding.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -282,6 +290,7 @@ impl AccessPreviewFindingBuilder {
         &self.resource_type
     }
     /// <p>The time at which the access preview finding was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -302,6 +311,7 @@ impl AccessPreviewFindingBuilder {
     /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    /// This field is required.
     pub fn change_type(mut self, input: crate::types::FindingChangeType) -> Self {
         self.change_type = ::std::option::Option::Some(input);
         self
@@ -328,6 +338,7 @@ impl AccessPreviewFindingBuilder {
         &self.change_type
     }
     /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -342,6 +353,7 @@ impl AccessPreviewFindingBuilder {
         &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
+    /// This field is required.
     pub fn resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_owner_account = ::std::option::Option::Some(input.into());
         self
@@ -390,9 +402,21 @@ impl AccessPreviewFindingBuilder {
         &self.sources
     }
     /// Consumes the builder and constructs a [`AccessPreviewFinding`](crate::types::AccessPreviewFinding).
-    pub fn build(self) -> crate::types::AccessPreviewFinding {
-        crate::types::AccessPreviewFinding {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AccessPreviewFindingBuilder::id)
+    /// - [`resource_type`](crate::types::builders::AccessPreviewFindingBuilder::resource_type)
+    /// - [`created_at`](crate::types::builders::AccessPreviewFindingBuilder::created_at)
+    /// - [`change_type`](crate::types::builders::AccessPreviewFindingBuilder::change_type)
+    /// - [`status`](crate::types::builders::AccessPreviewFindingBuilder::status)
+    /// - [`resource_owner_account`](crate::types::builders::AccessPreviewFindingBuilder::resource_owner_account)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessPreviewFinding, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessPreviewFinding {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AccessPreviewFinding",
+                )
+            })?,
             existing_finding_id: self.existing_finding_id,
             existing_finding_status: self.existing_finding_status,
             principal: self.principal,
@@ -400,13 +424,38 @@ impl AccessPreviewFindingBuilder {
             condition: self.condition,
             resource: self.resource,
             is_public: self.is_public,
-            resource_type: self.resource_type,
-            created_at: self.created_at,
-            change_type: self.change_type,
-            status: self.status,
-            resource_owner_account: self.resource_owner_account,
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building AccessPreviewFinding",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building AccessPreviewFinding",
+                )
+            })?,
+            change_type: self.change_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "change_type",
+                    "change_type was not specified but it is required when building AccessPreviewFinding",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building AccessPreviewFinding",
+                )
+            })?,
+            resource_owner_account: self.resource_owner_account.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_owner_account",
+                    "resource_owner_account was not specified but it is required when building AccessPreviewFinding",
+                )
+            })?,
             error: self.error,
             sources: self.sources,
-        }
+        })
     }
 }

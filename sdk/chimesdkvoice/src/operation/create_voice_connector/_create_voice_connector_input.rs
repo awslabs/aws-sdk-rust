@@ -26,8 +26,10 @@ impl CreateVoiceConnectorInput {
         self.require_encryption
     }
     /// <p>The tags assigned to the Voice Connector.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateVoiceConnectorInput {
@@ -48,6 +50,7 @@ pub struct CreateVoiceConnectorInputBuilder {
 }
 impl CreateVoiceConnectorInputBuilder {
     /// <p>The name of the Voice Connector.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateVoiceConnectorInputBuilder {
         &self.aws_region
     }
     /// <p>Enables or disables encryption for the Voice Connector.</p>
+    /// This field is required.
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.require_encryption = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct CreateRouteOutputBuilder {
 }
 impl CreateRouteOutputBuilder {
     /// <p>The full description of your mesh following the create call.</p>
+    /// This field is required.
     pub fn route(mut self, input: crate::types::RouteData) -> Self {
         self.route = ::std::option::Option::Some(input);
         self

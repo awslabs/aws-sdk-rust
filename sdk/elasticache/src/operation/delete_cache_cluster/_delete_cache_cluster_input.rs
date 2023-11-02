@@ -35,6 +35,7 @@ pub struct DeleteCacheClusterInputBuilder {
 }
 impl DeleteCacheClusterInputBuilder {
     /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    /// This field is required.
     pub fn cache_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self

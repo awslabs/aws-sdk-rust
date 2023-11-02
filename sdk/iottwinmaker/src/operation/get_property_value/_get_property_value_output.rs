@@ -22,10 +22,10 @@ impl GetPropertyValueOutput {
         self.next_token.as_deref()
     }
     /// <p>A table of property values.</p>
-    pub fn tabular_property_values(
-        &self,
-    ) -> ::std::option::Option<&[::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>]> {
-        self.tabular_property_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tabular_property_values.is_none()`.
+    pub fn tabular_property_values(&self) -> &[::std::vec::Vec<::std::collections::HashMap<::std::string::String, crate::types::DataValue>>] {
+        self.tabular_property_values.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPropertyValueOutput {

@@ -30,6 +30,7 @@ pub struct DeleteCertificateInputBuilder {
 impl DeleteCertificateInputBuilder {
     /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
+    /// This field is required.
     pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self

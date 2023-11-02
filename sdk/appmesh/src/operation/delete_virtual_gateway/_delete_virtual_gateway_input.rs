@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVirtualGatewayInput {
     /// <p>The name of the virtual gateway to delete.</p>
-    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub virtual_gateway_name: ::std::string::String,
     /// <p>The name of the service mesh to delete the virtual gateway from.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVirtualGatewayInput {
     /// <p>The name of the virtual gateway to delete.</p>
-    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_gateway_name.as_deref()
+    pub fn virtual_gateway_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_gateway_name.deref()
     }
     /// <p>The name of the service mesh to delete the virtual gateway from.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct DeleteVirtualGatewayInputBuilder {
 }
 impl DeleteVirtualGatewayInputBuilder {
     /// <p>The name of the virtual gateway to delete.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DeleteVirtualGatewayInputBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The name of the service mesh to delete the virtual gateway from.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -83,13 +87,26 @@ impl DeleteVirtualGatewayInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DeleteVirtualGatewayInput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_gateway_name`](crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder::virtual_gateway_name)
+    /// - [`mesh_name`](crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder::mesh_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput {
-            virtual_gateway_name: self.virtual_gateway_name,
-            mesh_name: self.mesh_name,
+            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_gateway_name",
+                    "virtual_gateway_name was not specified but it is required when building DeleteVirtualGatewayInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building DeleteVirtualGatewayInput",
+                )
+            })?,
             mesh_owner: self.mesh_owner,
         })
     }

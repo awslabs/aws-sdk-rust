@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddFlowOutputs`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::set_flow_arn): The flow that you want to add outputs to.
-    ///   - [`outputs(AddOutputRequest)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::outputs) / [`set_outputs(Option<Vec<AddOutputRequest>>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::set_outputs): A list of outputs that you want to add.
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to add outputs to.<br>
+    ///   - [`outputs(AddOutputRequest)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::outputs) / [`set_outputs(Option<Vec<AddOutputRequest>>)`](crate::operation::add_flow_outputs::builders::AddFlowOutputsFluentBuilder::set_outputs):<br>required: **true**<br>A list of outputs that you want to add.<br>
     /// - On success, responds with [`AddFlowOutputsOutput`](crate::operation::add_flow_outputs::AddFlowOutputsOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_outputs::AddFlowOutputsOutput::flow_arn): The ARN of the flow that these outputs were added to.
     ///   - [`outputs(Option<Vec<Output>>)`](crate::operation::add_flow_outputs::AddFlowOutputsOutput::outputs): The details of the newly added outputs.

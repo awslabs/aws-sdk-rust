@@ -24,5 +24,8 @@ pub fn ser_describe_sessions_input(
     if let Some(var_6) = &input.authentication_type {
         object.key("AuthenticationType").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.instance_id {
+        object.key("InstanceId").string(var_7.as_str());
+    }
     Ok(())
 }

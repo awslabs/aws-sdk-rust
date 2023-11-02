@@ -4,21 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p>The ID of the project.</p>
-    pub project_id: ::std::option::Option<::std::string::String>,
+    pub project_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
-    pub project_arn: ::std::option::Option<::std::string::String>,
+    pub project_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateProjectOutput {
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
-        self.project_id.as_deref()
+    pub fn project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.project_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
-        self.project_arn.as_deref()
+    pub fn project_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.project_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateProjectOutput {
@@ -43,6 +45,7 @@ pub struct CreateProjectOutputBuilder {
 }
 impl CreateProjectOutputBuilder {
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl CreateProjectOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +87,26 @@ impl CreateProjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
-    pub fn build(self) -> crate::operation::create_project::CreateProjectOutput {
-        crate::operation::create_project::CreateProjectOutput {
-            project_id: self.project_id,
-            project_arn: self.project_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project_id`](crate::operation::create_project::builders::CreateProjectOutputBuilder::project_id)
+    /// - [`project_arn`](crate::operation::create_project::builders::CreateProjectOutputBuilder::project_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectOutput {
+            project_id: self.project_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_id",
+                    "project_id was not specified but it is required when building CreateProjectOutput",
+                )
+            })?,
+            project_arn: self.project_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_arn",
+                    "project_arn was not specified but it is required when building CreateProjectOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

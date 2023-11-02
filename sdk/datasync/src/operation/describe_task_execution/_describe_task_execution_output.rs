@@ -39,9 +39,11 @@ pub struct DescribeTaskExecutionOutput {
     pub files_deleted: i64,
     /// <p>The number of files, objects, and directories that DataSync skipped during your transfer.</p>
     pub files_skipped: i64,
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
+    /// </note>
     pub files_verified: i64,
-    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task report</a> for your transfer.</p>
+    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
     pub report_result: ::std::option::Option<crate::types::ReportResult>,
     /// <p>The expected number of files, objects, and directories that DataSync will delete in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
     pub estimated_files_to_delete: i64,
@@ -63,12 +65,16 @@ impl DescribeTaskExecutionOutput {
         self.options.as_ref()
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.excludes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
+    pub fn excludes(&self) -> &[crate::types::FilterRule] {
+        self.excludes.as_deref().unwrap_or_default()
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn includes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.includes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
+    pub fn includes(&self) -> &[crate::types::FilterRule] {
+        self.includes.as_deref().unwrap_or_default()
     }
     /// <p>The time when the task execution started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -115,11 +121,13 @@ impl DescribeTaskExecutionOutput {
     pub fn files_skipped(&self) -> i64 {
         self.files_skipped
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
+    /// </note>
     pub fn files_verified(&self) -> i64 {
         self.files_verified
     }
-    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task report</a> for your transfer.</p>
+    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
     pub fn report_result(&self) -> ::std::option::Option<&crate::types::ReportResult> {
         self.report_result.as_ref()
     }
@@ -411,31 +419,37 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_files_skipped(&self) -> &::std::option::Option<i64> {
         &self.files_skipped
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
+    /// </note>
     pub fn files_verified(mut self, input: i64) -> Self {
         self.files_verified = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
+    /// </note>
     pub fn set_files_verified(mut self, input: ::std::option::Option<i64>) -> Self {
         self.files_verified = input;
         self
     }
-    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p>
+    /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p> <note>
+    /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
+    /// </note>
     pub fn get_files_verified(&self) -> &::std::option::Option<i64> {
         &self.files_verified
     }
-    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task report</a> for your transfer.</p>
+    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
     pub fn report_result(mut self, input: crate::types::ReportResult) -> Self {
         self.report_result = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task report</a> for your transfer.</p>
+    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
     pub fn set_report_result(mut self, input: ::std::option::Option<crate::types::ReportResult>) -> Self {
         self.report_result = input;
         self
     }
-    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-task-reports.html">task report</a> for your transfer.</p>
+    /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
     pub fn get_report_result(&self) -> &::std::option::Option<crate::types::ReportResult> {
         &self.report_result
     }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleBasedMatchingRequest {
     /// <p>The flag that enables the rule-based matching process of duplicate profiles.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>Configures how the rule-based matching process should match profiles. You can have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
     pub matching_rules: ::std::option::Option<::std::vec::Vec<crate::types::MatchingRule>>,
     /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
@@ -23,12 +23,14 @@ pub struct RuleBasedMatchingRequest {
 }
 impl RuleBasedMatchingRequest {
     /// <p>The flag that enables the rule-based matching process of duplicate profiles.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Configures how the rule-based matching process should match profiles. You can have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
-    pub fn matching_rules(&self) -> ::std::option::Option<&[crate::types::MatchingRule]> {
-        self.matching_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_rules.is_none()`.
+    pub fn matching_rules(&self) -> &[crate::types::MatchingRule] {
+        self.matching_rules.as_deref().unwrap_or_default()
     }
     /// <p> <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a> </p>
     pub fn max_allowed_rule_level_for_merging(&self) -> ::std::option::Option<i32> {
@@ -74,6 +76,7 @@ pub struct RuleBasedMatchingRequestBuilder {
 }
 impl RuleBasedMatchingRequestBuilder {
     /// <p>The flag that enables the rule-based matching process of duplicate profiles.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -184,15 +187,22 @@ impl RuleBasedMatchingRequestBuilder {
         &self.exporting_config
     }
     /// Consumes the builder and constructs a [`RuleBasedMatchingRequest`](crate::types::RuleBasedMatchingRequest).
-    pub fn build(self) -> crate::types::RuleBasedMatchingRequest {
-        crate::types::RuleBasedMatchingRequest {
-            enabled: self.enabled,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::RuleBasedMatchingRequestBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleBasedMatchingRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleBasedMatchingRequest {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building RuleBasedMatchingRequest",
+                )
+            })?,
             matching_rules: self.matching_rules,
             max_allowed_rule_level_for_merging: self.max_allowed_rule_level_for_merging,
             max_allowed_rule_level_for_matching: self.max_allowed_rule_level_for_matching,
             attribute_types_selector: self.attribute_types_selector,
             conflict_resolution: self.conflict_resolution,
             exporting_config: self.exporting_config,
-        }
+        })
     }
 }

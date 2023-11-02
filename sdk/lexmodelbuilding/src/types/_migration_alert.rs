@@ -31,12 +31,16 @@ impl MigrationAlert {
         self.message.as_deref()
     }
     /// <p>Additional details about the alert.</p>
-    pub fn details(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[::std::string::String] {
+        self.details.as_deref().unwrap_or_default()
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn reference_ur_ls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.reference_ur_ls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_ur_ls.is_none()`.
+    pub fn reference_ur_ls(&self) -> &[::std::string::String] {
+        self.reference_ur_ls.as_deref().unwrap_or_default()
     }
 }
 impl MigrationAlert {

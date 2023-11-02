@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub cost_category_arn: ::std::option::Option<::std::string::String>,
+    pub cost_category_arn: ::std::string::String,
     /// <p>The effective start date of your Cost Category.</p>
-    pub effective_start: ::std::option::Option<::std::string::String>,
+    pub effective_start: ::std::string::String,
     /// <p>The effective end date of your Cost Category.</p>
     pub effective_end: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
+    pub rule_version: crate::types::CostCategoryRuleVersion,
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
+    pub rules: ::std::vec::Vec<crate::types::CostCategoryRule>,
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
     pub split_charge_rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
@@ -25,36 +25,44 @@ pub struct CostCategory {
 }
 impl CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
-        self.cost_category_arn.as_deref()
+    pub fn cost_category_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.cost_category_arn.deref()
     }
     /// <p>The effective start date of your Cost Category.</p>
-    pub fn effective_start(&self) -> ::std::option::Option<&str> {
-        self.effective_start.as_deref()
+    pub fn effective_start(&self) -> &str {
+        use std::ops::Deref;
+        self.effective_start.deref()
     }
     /// <p>The effective end date of your Cost Category.</p>
     pub fn effective_end(&self) -> ::std::option::Option<&str> {
         self.effective_end.as_deref()
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn rule_version(&self) -> ::std::option::Option<&crate::types::CostCategoryRuleVersion> {
-        self.rule_version.as_ref()
+    pub fn rule_version(&self) -> &crate::types::CostCategoryRuleVersion {
+        &self.rule_version
     }
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::CostCategoryRule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::CostCategoryRule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
-    pub fn split_charge_rules(&self) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
-        self.split_charge_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.split_charge_rules.is_none()`.
+    pub fn split_charge_rules(&self) -> &[crate::types::CostCategorySplitChargeRule] {
+        self.split_charge_rules.as_deref().unwrap_or_default()
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
-    pub fn processing_status(&self) -> ::std::option::Option<&[crate::types::CostCategoryProcessingStatus]> {
-        self.processing_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_status.is_none()`.
+    pub fn processing_status(&self) -> &[crate::types::CostCategoryProcessingStatus] {
+        self.processing_status.as_deref().unwrap_or_default()
     }
     /// <p>The default value for the cost category.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
@@ -84,6 +92,7 @@ pub struct CostCategoryBuilder {
 }
 impl CostCategoryBuilder {
     /// <p>The unique identifier for your Cost Category. </p>
+    /// This field is required.
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +107,7 @@ impl CostCategoryBuilder {
         &self.cost_category_arn
     }
     /// <p>The effective start date of your Cost Category.</p>
+    /// This field is required.
     pub fn effective_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_start = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +136,7 @@ impl CostCategoryBuilder {
         &self.effective_end
     }
     /// <p>The unique name of the Cost Category.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +151,7 @@ impl CostCategoryBuilder {
         &self.name
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
+    /// This field is required.
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
         self.rule_version = ::std::option::Option::Some(input);
         self
@@ -228,17 +240,48 @@ impl CostCategoryBuilder {
         &self.default_value
     }
     /// Consumes the builder and constructs a [`CostCategory`](crate::types::CostCategory).
-    pub fn build(self) -> crate::types::CostCategory {
-        crate::types::CostCategory {
-            cost_category_arn: self.cost_category_arn,
-            effective_start: self.effective_start,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cost_category_arn`](crate::types::builders::CostCategoryBuilder::cost_category_arn)
+    /// - [`effective_start`](crate::types::builders::CostCategoryBuilder::effective_start)
+    /// - [`name`](crate::types::builders::CostCategoryBuilder::name)
+    /// - [`rule_version`](crate::types::builders::CostCategoryBuilder::rule_version)
+    /// - [`rules`](crate::types::builders::CostCategoryBuilder::rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::CostCategory, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CostCategory {
+            cost_category_arn: self.cost_category_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cost_category_arn",
+                    "cost_category_arn was not specified but it is required when building CostCategory",
+                )
+            })?,
+            effective_start: self.effective_start.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "effective_start",
+                    "effective_start was not specified but it is required when building CostCategory",
+                )
+            })?,
             effective_end: self.effective_end,
-            name: self.name,
-            rule_version: self.rule_version,
-            rules: self.rules,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CostCategory",
+                )
+            })?,
+            rule_version: self.rule_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_version",
+                    "rule_version was not specified but it is required when building CostCategory",
+                )
+            })?,
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building CostCategory",
+                )
+            })?,
             split_charge_rules: self.split_charge_rules,
             processing_status: self.processing_status,
             default_value: self.default_value,
-        }
+        })
     }
 }

@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::set_max_results): Placeholder documentation for MaxResults
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::set_next_token): Placeholder documentation for __string
+    ///   - [`max_results(i32)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::set_max_results):<br>required: **false**<br>Placeholder documentation for MaxResults<br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_input_devices::builders::ListInputDevicesFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
     /// - On success, responds with [`ListInputDevicesOutput`](crate::operation::list_input_devices::ListInputDevicesOutput) with field(s):
     ///   - [`input_devices(Option<Vec<InputDeviceSummary>>)`](crate::operation::list_input_devices::ListInputDevicesOutput::input_devices): The list of input devices.
     ///   - [`next_token(Option<String>)`](crate::operation::list_input_devices::ListInputDevicesOutput::next_token): A token to get additional list results.

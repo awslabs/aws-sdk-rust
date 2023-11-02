@@ -27,6 +27,7 @@ pub struct DeleteSnapshotScheduleInputBuilder {
 }
 impl DeleteSnapshotScheduleInputBuilder {
     /// <p>The volume which snapshot schedule to delete.</p>
+    /// This field is required.
     pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_arn = ::std::option::Option::Some(input.into());
         self

@@ -3,48 +3,51 @@ pub fn ser_register_application_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_application::RegisterApplicationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_id {
-        object.key("ApplicationId").string(var_1.as_str());
+    {
+        object.key("ApplicationId").string(input.application_id.as_str());
     }
-    if let Some(var_2) = &input.application_type {
-        object.key("ApplicationType").string(var_2.as_str());
+    {
+        object.key("ApplicationType").string(input.application_type.as_str());
     }
-    if let Some(var_3) = &input.credentials {
-        let mut array_4 = object.key("Credentials").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("Credentials").start_array();
+        for item_2 in &input.credentials {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
-    if let Some(var_7) = &input.instances {
-        let mut array_8 = object.key("Instances").start_array();
-        for item_9 in var_7 {
+    if let Some(var_4) = &input.database_arn {
+        object.key("DatabaseArn").string(var_4.as_str());
+    }
+    {
+        let mut array_5 = object.key("Instances").start_array();
+        for item_6 in &input.instances {
             {
-                array_8.value().string(item_9.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_8.finish();
+        array_5.finish();
     }
-    if let Some(var_10) = &input.sap_instance_number {
-        object.key("SapInstanceNumber").string(var_10.as_str());
+    if let Some(var_7) = &input.sap_instance_number {
+        object.key("SapInstanceNumber").string(var_7.as_str());
     }
-    if let Some(var_11) = &input.sid {
-        object.key("Sid").string(var_11.as_str());
+    if let Some(var_8) = &input.sid {
+        object.key("Sid").string(var_8.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_10 = object.key("Tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_13.finish();
+        object_10.finish();
     }
     Ok(())
 }

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateStepGroupInput {
     /// <p>The ID of the template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
     /// <p>The ID of the step group.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetTemplateStepGroupInput {
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetTemplateStepGroupInput {
@@ -34,6 +36,7 @@ pub struct GetTemplateStepGroupInputBuilder {
 }
 impl GetTemplateStepGroupInputBuilder {
     /// <p>The ID of the template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetTemplateStepGroupInputBuilder {
         &self.template_id
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl GetTemplateStepGroupInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_id`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder::template_id)
+    /// - [`id`](crate::operation::get_template_step_group::builders::GetTemplateStepGroupInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_template_step_group::GetTemplateStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_template_step_group::GetTemplateStepGroupInput {
-            template_id: self.template_id,
-            id: self.id,
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building GetTemplateStepGroupInput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetTemplateStepGroupInput",
+                )
+            })?,
         })
     }
 }

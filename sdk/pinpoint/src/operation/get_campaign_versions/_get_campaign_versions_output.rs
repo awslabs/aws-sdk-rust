@@ -34,6 +34,7 @@ pub struct GetCampaignVersionsOutputBuilder {
 }
 impl GetCampaignVersionsOutputBuilder {
     /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
+    /// This field is required.
     pub fn campaigns_response(mut self, input: crate::types::CampaignsResponse) -> Self {
         self.campaigns_response = ::std::option::Option::Some(input);
         self

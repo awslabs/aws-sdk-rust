@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReviewTemplate`](crate::operation::get_review_template::builders::GetReviewTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_arn(impl Into<String>)`](crate::operation::get_review_template::builders::GetReviewTemplateFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::get_review_template::builders::GetReviewTemplateFluentBuilder::set_template_arn): <p>The review template ARN.</p>
+    ///   - [`template_arn(impl Into<String>)`](crate::operation::get_review_template::builders::GetReviewTemplateFluentBuilder::template_arn) / [`set_template_arn(Option<String>)`](crate::operation::get_review_template::builders::GetReviewTemplateFluentBuilder::set_template_arn):<br>required: **true**<br><p>The review template ARN.</p><br>
     /// - On success, responds with [`GetReviewTemplateOutput`](crate::operation::get_review_template::GetReviewTemplateOutput) with field(s):
     ///   - [`review_template(Option<ReviewTemplate>)`](crate::operation::get_review_template::GetReviewTemplateOutput::review_template): <p>The review template.</p>
     /// - On failure, responds with [`SdkError<GetReviewTemplateError>`](crate::operation::get_review_template::GetReviewTemplateError)

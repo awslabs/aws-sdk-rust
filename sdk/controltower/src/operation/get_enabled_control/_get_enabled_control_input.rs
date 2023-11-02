@@ -27,6 +27,7 @@ pub struct GetEnabledControlInputBuilder {
 }
 impl GetEnabledControlInputBuilder {
     /// <p> The ARN of the enabled control. </p>
+    /// This field is required.
     pub fn enabled_control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enabled_control_identifier = ::std::option::Option::Some(input.into());
         self

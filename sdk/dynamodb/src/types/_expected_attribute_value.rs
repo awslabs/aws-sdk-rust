@@ -108,8 +108,10 @@ impl ExpectedAttributeValue {
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     /// <p>For information on specifying data types in JSON, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn attribute_value_list(&self) -> ::std::option::Option<&[crate::types::AttributeValue]> {
-        self.attribute_value_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_value_list.is_none()`.
+    pub fn attribute_value_list(&self) -> &[crate::types::AttributeValue] {
+        self.attribute_value_list.as_deref().unwrap_or_default()
     }
 }
 impl ExpectedAttributeValue {

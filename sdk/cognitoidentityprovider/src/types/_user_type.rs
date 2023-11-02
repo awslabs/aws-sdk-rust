@@ -33,8 +33,10 @@ impl UserType {
         self.username.as_deref()
     }
     /// <p>A container with information about the user type attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
+    pub fn attributes(&self) -> &[crate::types::AttributeType] {
+        self.attributes.as_deref().unwrap_or_default()
     }
     /// <p>The creation date of the user.</p>
     pub fn user_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -61,8 +63,10 @@ impl UserType {
         self.user_status.as_ref()
     }
     /// <p>The MFA options for the user.</p>
-    pub fn mfa_options(&self) -> ::std::option::Option<&[crate::types::MfaOptionType]> {
-        self.mfa_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
+    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
+        self.mfa_options.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UserType {

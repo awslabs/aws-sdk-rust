@@ -5,19 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserOutput {
     /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateUserOutput {
     /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateUserOutput {
@@ -42,6 +44,7 @@ pub struct UpdateUserOutputBuilder {
 }
 impl UpdateUserOutputBuilder {
     /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl UpdateUserOutputBuilder {
         &self.server_id
     }
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -79,11 +83,24 @@ impl UpdateUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
-    pub fn build(self) -> crate::operation::update_user::UpdateUserOutput {
-        crate::operation::update_user::UpdateUserOutput {
-            server_id: self.server_id,
-            user_name: self.user_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::update_user::builders::UpdateUserOutputBuilder::server_id)
+    /// - [`user_name`](crate::operation::update_user::builders::UpdateUserOutputBuilder::user_name)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserOutput {
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building UpdateUserOutput",
+                )
+            })?,
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building UpdateUserOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

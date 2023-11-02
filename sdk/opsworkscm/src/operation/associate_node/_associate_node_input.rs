@@ -38,8 +38,10 @@ impl AssociateNodeInput {
     /// <ul>
     /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
     /// </ul>
-    pub fn engine_attributes(&self) -> ::std::option::Option<&[crate::types::EngineAttribute]> {
-        self.engine_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
+    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref().unwrap_or_default()
     }
 }
 impl AssociateNodeInput {
@@ -59,6 +61,7 @@ pub struct AssociateNodeInputBuilder {
 }
 impl AssociateNodeInputBuilder {
     /// <p>The name of the server with which to associate the node. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl AssociateNodeInputBuilder {
         &self.server_name
     }
     /// <p>The name of the node. </p>
+    /// This field is required.
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
         self

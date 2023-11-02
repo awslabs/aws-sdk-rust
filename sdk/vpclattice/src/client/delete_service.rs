@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteService`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`service_identifier(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::service_identifier) / [`set_service_identifier(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_service_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service.</p><br>
     /// - On success, responds with [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::id): <p>The ID of the service.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_service::DeleteServiceOutput::arn): <p>The Amazon Resource Name (ARN) of the service.</p>

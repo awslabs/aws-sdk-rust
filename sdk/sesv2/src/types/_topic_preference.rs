@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicPreference {
     /// <p>The name of the topic.</p>
-    pub topic_name: ::std::option::Option<::std::string::String>,
+    pub topic_name: ::std::string::String,
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    pub subscription_status: ::std::option::Option<crate::types::SubscriptionStatus>,
+    pub subscription_status: crate::types::SubscriptionStatus,
 }
 impl TopicPreference {
     /// <p>The name of the topic.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
-        self.topic_name.as_deref()
+    pub fn topic_name(&self) -> &str {
+        use std::ops::Deref;
+        self.topic_name.deref()
     }
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    pub fn subscription_status(&self) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
-        self.subscription_status.as_ref()
+    pub fn subscription_status(&self) -> &crate::types::SubscriptionStatus {
+        &self.subscription_status
     }
 }
 impl TopicPreference {
@@ -35,6 +36,7 @@ pub struct TopicPreferenceBuilder {
 }
 impl TopicPreferenceBuilder {
     /// <p>The name of the topic.</p>
+    /// This field is required.
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl TopicPreferenceBuilder {
         &self.topic_name
     }
     /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
+    /// This field is required.
     pub fn subscription_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
         self.subscription_status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl TopicPreferenceBuilder {
         &self.subscription_status
     }
     /// Consumes the builder and constructs a [`TopicPreference`](crate::types::TopicPreference).
-    pub fn build(self) -> crate::types::TopicPreference {
-        crate::types::TopicPreference {
-            topic_name: self.topic_name,
-            subscription_status: self.subscription_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`topic_name`](crate::types::builders::TopicPreferenceBuilder::topic_name)
+    /// - [`subscription_status`](crate::types::builders::TopicPreferenceBuilder::subscription_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicPreference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicPreference {
+            topic_name: self.topic_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "topic_name",
+                    "topic_name was not specified but it is required when building TopicPreference",
+                )
+            })?,
+            subscription_status: self.subscription_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "subscription_status",
+                    "subscription_status was not specified but it is required when building TopicPreference",
+                )
+            })?,
+        })
     }
 }

@@ -57,8 +57,10 @@ impl ImportModelVersionInput {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>The tags associated with the machine learning model to be created. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
@@ -93,6 +95,7 @@ pub struct ImportModelVersionInputBuilder {
 }
 impl ImportModelVersionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model version to import.</p>
+    /// This field is required.
     pub fn source_model_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_model_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +124,7 @@ impl ImportModelVersionInputBuilder {
         &self.model_name
     }
     /// <p>The name of the dataset for the machine learning model being imported. </p>
+    /// This field is required.
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
         self
@@ -149,6 +153,7 @@ impl ImportModelVersionInputBuilder {
         &self.labels_input_configuration
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

@@ -62,6 +62,7 @@ pub struct PutBackupVaultLockConfigurationInputBuilder {
 }
 impl PutBackupVaultLockConfigurationInputBuilder {
     /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self

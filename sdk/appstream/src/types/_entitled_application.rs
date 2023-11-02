@@ -28,6 +28,7 @@ pub struct EntitledApplicationBuilder {
 }
 impl EntitledApplicationBuilder {
     /// <p>The identifier of the application.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self

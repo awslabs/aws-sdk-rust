@@ -35,12 +35,16 @@ impl ReservedInstancesListing {
         self.create_date.as_ref()
     }
     /// <p>The number of instances in this state.</p>
-    pub fn instance_counts(&self) -> ::std::option::Option<&[crate::types::InstanceCount]> {
-        self.instance_counts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_counts.is_none()`.
+    pub fn instance_counts(&self) -> &[crate::types::InstanceCount] {
+        self.instance_counts.as_deref().unwrap_or_default()
     }
     /// <p>The price of the Reserved Instance listing.</p>
-    pub fn price_schedules(&self) -> ::std::option::Option<&[crate::types::PriceSchedule]> {
-        self.price_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.price_schedules.is_none()`.
+    pub fn price_schedules(&self) -> &[crate::types::PriceSchedule] {
+        self.price_schedules.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
@@ -59,8 +63,10 @@ impl ReservedInstancesListing {
         self.status_message.as_deref()
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The last modified timestamp of the listing.</p>
     pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

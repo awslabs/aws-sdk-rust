@@ -34,6 +34,7 @@ pub struct CancelImageCreationInputBuilder {
 }
 impl CancelImageCreationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
+    /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CancelImageCreationInputBuilder {
         &self.image_build_version_arn
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

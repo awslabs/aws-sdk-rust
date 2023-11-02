@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalBranch {
     /// <p>The name of the branch. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>The next step in the conversation.</p>
@@ -15,8 +15,9 @@ pub struct ConditionalBranch {
 }
 impl ConditionalBranch {
     /// <p>The name of the branch. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
@@ -49,6 +50,7 @@ pub struct ConditionalBranchBuilder {
 }
 impl ConditionalBranchBuilder {
     /// <p>The name of the branch. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl ConditionalBranchBuilder {
         &self.name
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
+    /// This field is required.
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
         self.condition = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl ConditionalBranchBuilder {
         &self.condition
     }
     /// <p>The next step in the conversation.</p>
+    /// This field is required.
     pub fn next_step(mut self, input: crate::types::DialogState) -> Self {
         self.next_step = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,19 @@ impl ConditionalBranchBuilder {
         &self.response
     }
     /// Consumes the builder and constructs a [`ConditionalBranch`](crate::types::ConditionalBranch).
-    pub fn build(self) -> crate::types::ConditionalBranch {
-        crate::types::ConditionalBranch {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ConditionalBranchBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionalBranch, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConditionalBranch {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ConditionalBranch",
+                )
+            })?,
             condition: self.condition,
             next_step: self.next_step,
             response: self.response,
-        }
+        })
     }
 }

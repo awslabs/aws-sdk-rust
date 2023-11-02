@@ -38,14 +38,18 @@ impl RetrieveInput {
         self.attribute_filter.as_ref()
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn requested_document_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requested_document_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_document_attributes.is_none()`.
+    pub fn requested_document_attributes(&self) -> &[::std::string::String] {
+        self.requested_document_attributes.as_deref().unwrap_or_default()
     }
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn document_relevance_override_configurations(&self) -> ::std::option::Option<&[crate::types::DocumentRelevanceConfiguration]> {
-        self.document_relevance_override_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_relevance_override_configurations.is_none()`.
+    pub fn document_relevance_override_configurations(&self) -> &[crate::types::DocumentRelevanceConfiguration] {
+        self.document_relevance_override_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn page_number(&self) -> ::std::option::Option<i32> {
@@ -82,6 +86,7 @@ pub struct RetrieveInputBuilder {
 }
 impl RetrieveInputBuilder {
     /// <p>The identifier of the index to retrieve relevant passages for the search.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +101,7 @@ impl RetrieveInputBuilder {
         &self.index_id
     }
     /// <p>The input query text to retrieve relevant passages for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
+    /// This field is required.
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self

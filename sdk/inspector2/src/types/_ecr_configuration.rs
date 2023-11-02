@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
-    pub rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
+    pub rescan_duration: crate::types::EcrRescanDuration,
 }
 impl EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
-    pub fn rescan_duration(&self) -> ::std::option::Option<&crate::types::EcrRescanDuration> {
-        self.rescan_duration.as_ref()
+    pub fn rescan_duration(&self) -> &crate::types::EcrRescanDuration {
+        &self.rescan_duration
     }
 }
 impl EcrConfiguration {
@@ -28,6 +28,7 @@ pub struct EcrConfigurationBuilder {
 }
 impl EcrConfigurationBuilder {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
+    /// This field is required.
     pub fn rescan_duration(mut self, input: crate::types::EcrRescanDuration) -> Self {
         self.rescan_duration = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl EcrConfigurationBuilder {
         &self.rescan_duration
     }
     /// Consumes the builder and constructs a [`EcrConfiguration`](crate::types::EcrConfiguration).
-    pub fn build(self) -> crate::types::EcrConfiguration {
-        crate::types::EcrConfiguration {
-            rescan_duration: self.rescan_duration,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rescan_duration`](crate::types::builders::EcrConfigurationBuilder::rescan_duration)
+    pub fn build(self) -> ::std::result::Result<crate::types::EcrConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EcrConfiguration {
+            rescan_duration: self.rescan_duration.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rescan_duration",
+                    "rescan_duration was not specified but it is required when building EcrConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -4,31 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The status of the Dev Environment. </p>
-    pub status: ::std::option::Option<crate::types::DevEnvironmentStatus>,
+    pub status: crate::types::DevEnvironmentStatus,
     _request_id: Option<String>,
 }
 impl StartDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DevEnvironmentStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DevEnvironmentStatus {
+        &self.status
     }
 }
 impl ::aws_http::request_id::RequestId for StartDevEnvironmentOutput {
@@ -55,6 +58,7 @@ pub struct StartDevEnvironmentOutputBuilder {
 }
 impl StartDevEnvironmentOutputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl StartDevEnvironmentOutputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl StartDevEnvironmentOutputBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +103,7 @@ impl StartDevEnvironmentOutputBuilder {
         &self.id
     }
     /// <p>The status of the Dev Environment. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DevEnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -120,13 +127,41 @@ impl StartDevEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartDevEnvironmentOutput`](crate::operation::start_dev_environment::StartDevEnvironmentOutput).
-    pub fn build(self) -> crate::operation::start_dev_environment::StartDevEnvironmentOutput {
-        crate::operation::start_dev_environment::StartDevEnvironmentOutput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            id: self.id,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::space_name)
+    /// - [`project_name`](crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::project_name)
+    /// - [`id`](crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::id)
+    /// - [`status`](crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::start_dev_environment::StartDevEnvironmentOutput {
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building StartDevEnvironmentOutput",
+                )
+            })?,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building StartDevEnvironmentOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building StartDevEnvironmentOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building StartDevEnvironmentOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

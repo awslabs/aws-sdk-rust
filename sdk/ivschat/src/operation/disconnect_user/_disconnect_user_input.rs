@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectUserInput {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    pub room_identifier: ::std::option::Option<::std::string::String>,
+    pub room_identifier: ::std::string::String,
     /// <p>ID of the user (connection) to disconnect from the room.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p>Reason for disconnecting the user.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectUserInput {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    pub fn room_identifier(&self) -> ::std::option::Option<&str> {
-        self.room_identifier.as_deref()
+    pub fn room_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.room_identifier.deref()
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p>Reason for disconnecting the user.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct DisconnectUserInputBuilder {
 }
 impl DisconnectUserInputBuilder {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
+    /// This field is required.
     pub fn room_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DisconnectUserInputBuilder {
         &self.room_identifier
     }
     /// <p>ID of the user (connection) to disconnect from the room.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -83,12 +87,25 @@ impl DisconnectUserInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`room_identifier`](crate::operation::disconnect_user::builders::DisconnectUserInputBuilder::room_identifier)
+    /// - [`user_id`](crate::operation::disconnect_user::builders::DisconnectUserInputBuilder::user_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disconnect_user::DisconnectUserInput {
-            room_identifier: self.room_identifier,
-            user_id: self.user_id,
+            room_identifier: self.room_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "room_identifier",
+                    "room_identifier was not specified but it is required when building DisconnectUserInput",
+                )
+            })?,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building DisconnectUserInput",
+                )
+            })?,
             reason: self.reason,
         })
     }

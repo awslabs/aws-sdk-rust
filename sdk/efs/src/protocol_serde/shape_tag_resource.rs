@@ -25,7 +25,9 @@ pub fn de_tag_resource_http_error(
                 output = crate::protocol_serde::shape_access_point_not_found::de_access_point_not_found_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_point_not_found_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -40,7 +42,9 @@ pub fn de_tag_resource_http_error(
                 output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::bad_request_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -55,7 +59,9 @@ pub fn de_tag_resource_http_error(
                 output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::file_system_not_found_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -70,7 +76,9 @@ pub fn de_tag_resource_http_error(
                 output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_error_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

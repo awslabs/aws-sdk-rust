@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDestination {
     /// <p>A name that identifies the event destination.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     pub enabled: bool,
@@ -22,7 +22,7 @@ pub struct EventDestination {
     /// <li> <p> <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p> </li>
     /// <li> <p> <code>SUBSCRIPTION</code> - The email was successfully delivered, but the recipient updated their subscription preferences by clicking on an <i>unsubscribe</i> link as part of your <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription management</a>.</p> </li>
     /// </ul>
-    pub matching_event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
+    pub matching_event_types: ::std::vec::Vec<crate::types::EventType>,
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
     pub kinesis_firehose_destination: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
@@ -34,8 +34,9 @@ pub struct EventDestination {
 }
 impl EventDestination {
     /// <p>A name that identifies the event destination.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
@@ -55,8 +56,9 @@ impl EventDestination {
     /// <li> <p> <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p> </li>
     /// <li> <p> <code>SUBSCRIPTION</code> - The email was successfully delivered, but the recipient updated their subscription preferences by clicking on an <i>unsubscribe</i> link as part of your <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription management</a>.</p> </li>
     /// </ul>
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.matching_event_types.as_deref()
+    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
+        use std::ops::Deref;
+        self.matching_event_types.deref()
     }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
     pub fn kinesis_firehose_destination(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseDestination> {
@@ -96,6 +98,7 @@ pub struct EventDestinationBuilder {
 }
 impl EventDestinationBuilder {
     /// <p>A name that identifies the event destination.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -239,15 +242,28 @@ impl EventDestinationBuilder {
         &self.pinpoint_destination
     }
     /// Consumes the builder and constructs a [`EventDestination`](crate::types::EventDestination).
-    pub fn build(self) -> crate::types::EventDestination {
-        crate::types::EventDestination {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::EventDestinationBuilder::name)
+    /// - [`matching_event_types`](crate::types::builders::EventDestinationBuilder::matching_event_types)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventDestination {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building EventDestination",
+                )
+            })?,
             enabled: self.enabled.unwrap_or_default(),
-            matching_event_types: self.matching_event_types,
+            matching_event_types: self.matching_event_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "matching_event_types",
+                    "matching_event_types was not specified but it is required when building EventDestination",
+                )
+            })?,
             kinesis_firehose_destination: self.kinesis_firehose_destination,
             cloud_watch_destination: self.cloud_watch_destination,
             sns_destination: self.sns_destination,
             pinpoint_destination: self.pinpoint_destination,
-        }
+        })
     }
 }

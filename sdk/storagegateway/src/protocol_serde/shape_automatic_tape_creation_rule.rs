@@ -3,22 +3,22 @@ pub fn ser_automatic_tape_creation_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutomaticTapeCreationRule,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.tape_barcode_prefix {
-        object.key("TapeBarcodePrefix").string(var_1.as_str());
+    {
+        object.key("TapeBarcodePrefix").string(input.tape_barcode_prefix.as_str());
     }
-    if let Some(var_2) = &input.pool_id {
-        object.key("PoolId").string(var_2.as_str());
+    {
+        object.key("PoolId").string(input.pool_id.as_str());
     }
-    if let Some(var_3) = &input.tape_size_in_bytes {
+    {
         object.key("TapeSizeInBytes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((input.tape_size_in_bytes).into()),
         );
     }
-    if let Some(var_4) = &input.minimum_num_tapes {
+    {
         object.key("MinimumNumTapes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((input.minimum_num_tapes).into()),
         );
     }
     if input.worm {
@@ -83,7 +83,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::automatic_tape_creation_rule_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

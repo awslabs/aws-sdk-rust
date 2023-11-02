@@ -50,7 +50,9 @@ pub fn de_delete_user_profile_http_response(
         output = crate::protocol_serde::shape_delete_user_profile::de_delete_user_profile(_response_body, output)
             .map_err(crate::operation::delete_user_profile::DeleteUserProfileError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_user_profile_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::delete_user_profile::DeleteUserProfileError::unhandled)?
     })
 }
 

@@ -20,8 +20,10 @@ impl LabelParameterVersionInput {
         self.parameter_version
     }
     /// <p>One or more labels to attach to the specified parameter version.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
 }
 impl LabelParameterVersionInput {
@@ -41,6 +43,7 @@ pub struct LabelParameterVersionInputBuilder {
 }
 impl LabelParameterVersionInputBuilder {
     /// <p>The parameter name on which you want to attach one or more labels.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

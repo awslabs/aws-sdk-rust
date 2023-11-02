@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObservabilityConfigurationsOutput {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub observability_configuration_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>>,
+    pub observability_configuration_summary_list: ::std::vec::Vec<crate::types::ObservabilityConfigurationSummary>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListObservabilityConfigurationsOutput {
     /// <p>A list of summary information records for observability configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn observability_configuration_summary_list(&self) -> ::std::option::Option<&[crate::types::ObservabilityConfigurationSummary]> {
-        self.observability_configuration_summary_list.as_deref()
+    pub fn observability_configuration_summary_list(&self) -> &[crate::types::ObservabilityConfigurationSummary] {
+        use std::ops::Deref;
+        self.observability_configuration_summary_list.deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -89,11 +90,25 @@ impl ListObservabilityConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListObservabilityConfigurationsOutput`](crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput {
-        crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput {
-            observability_configuration_summary_list: self.observability_configuration_summary_list,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`observability_configuration_summary_list`](crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsOutputBuilder::observability_configuration_summary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_observability_configurations::ListObservabilityConfigurationsOutput {
+                observability_configuration_summary_list: self.observability_configuration_summary_list
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("observability_configuration_summary_list", "observability_configuration_summary_list was not specified but it is required when building ListObservabilityConfigurationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

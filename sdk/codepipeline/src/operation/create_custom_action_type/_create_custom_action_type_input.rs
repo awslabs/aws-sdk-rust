@@ -43,8 +43,10 @@ impl CreateCustomActionTypeInput {
     /// <p>The configuration properties for the custom action.</p> <note>
     /// <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>
     /// </note>
-    pub fn configuration_properties(&self) -> ::std::option::Option<&[crate::types::ActionConfigurationProperty]> {
-        self.configuration_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_properties.is_none()`.
+    pub fn configuration_properties(&self) -> &[crate::types::ActionConfigurationProperty] {
+        self.configuration_properties.as_deref().unwrap_or_default()
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
     pub fn input_artifact_details(&self) -> ::std::option::Option<&crate::types::ArtifactDetails> {
@@ -55,8 +57,10 @@ impl CreateCustomActionTypeInput {
         self.output_artifact_details.as_ref()
     }
     /// <p>The tags for the custom action.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCustomActionTypeInput {
@@ -81,6 +85,7 @@ pub struct CreateCustomActionTypeInputBuilder {
 }
 impl CreateCustomActionTypeInputBuilder {
     /// <p>The category of the custom action, such as a build action or a test action.</p>
+    /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.category = ::std::option::Option::Some(input);
         self
@@ -95,6 +100,7 @@ impl CreateCustomActionTypeInputBuilder {
         &self.category
     }
     /// <p>The provider of the service used in the custom action, such as CodeDeploy.</p>
+    /// This field is required.
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +115,7 @@ impl CreateCustomActionTypeInputBuilder {
         &self.provider
     }
     /// <p>The version identifier of the custom action.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -163,6 +170,7 @@ impl CreateCustomActionTypeInputBuilder {
         &self.configuration_properties
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
+    /// This field is required.
     pub fn input_artifact_details(mut self, input: crate::types::ArtifactDetails) -> Self {
         self.input_artifact_details = ::std::option::Option::Some(input);
         self
@@ -177,6 +185,7 @@ impl CreateCustomActionTypeInputBuilder {
         &self.input_artifact_details
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
+    /// This field is required.
     pub fn output_artifact_details(mut self, input: crate::types::ArtifactDetails) -> Self {
         self.output_artifact_details = ::std::option::Option::Some(input);
         self

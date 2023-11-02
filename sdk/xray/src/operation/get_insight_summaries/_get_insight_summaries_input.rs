@@ -20,8 +20,10 @@ pub struct GetInsightSummariesInput {
 }
 impl GetInsightSummariesInput {
     /// <p>The list of insight states. </p>
-    pub fn states(&self) -> ::std::option::Option<&[crate::types::InsightState]> {
-        self.states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
+    pub fn states(&self) -> &[crate::types::InsightState] {
+        self.states.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
     pub fn group_arn(&self) -> ::std::option::Option<&str> {
@@ -117,6 +119,7 @@ impl GetInsightSummariesInputBuilder {
         &self.group_name
     }
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -131,6 +134,7 @@ impl GetInsightSummariesInputBuilder {
         &self.start_time
     }
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

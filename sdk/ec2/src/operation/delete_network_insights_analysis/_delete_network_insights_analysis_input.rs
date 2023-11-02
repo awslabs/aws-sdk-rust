@@ -48,6 +48,7 @@ impl DeleteNetworkInsightsAnalysisInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the network insights analysis.</p>
+    /// This field is required.
     pub fn network_insights_analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_insights_analysis_id = ::std::option::Option::Some(input.into());
         self

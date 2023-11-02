@@ -34,6 +34,7 @@ pub struct RebalanceSlotsInGlobalReplicationGroupInputBuilder {
 }
 impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
     /// <p>The name of the Global datastore</p>
+    /// This field is required.
     pub fn global_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
         &self.global_replication_group_id
     }
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
+    /// This field is required.
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct ReplaceIamInstanceProfileAssociationInputBuilder {
 }
 impl ReplaceIamInstanceProfileAssociationInputBuilder {
     /// <p>The IAM instance profile.</p>
+    /// This field is required.
     pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.iam_instance_profile = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl ReplaceIamInstanceProfileAssociationInputBuilder {
         &self.iam_instance_profile
     }
     /// <p>The ID of the existing IAM instance profile association.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self

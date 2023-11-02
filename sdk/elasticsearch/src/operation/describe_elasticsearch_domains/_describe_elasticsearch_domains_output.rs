@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
+    pub domain_status_list: ::std::vec::Vec<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub fn domain_status_list(&self) -> ::std::option::Option<&[crate::types::ElasticsearchDomainStatus]> {
-        self.domain_status_list.as_deref()
+    pub fn domain_status_list(&self) -> &[crate::types::ElasticsearchDomainStatus] {
+        use std::ops::Deref;
+        self.domain_status_list.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeElasticsearchDomainsOutput {
@@ -64,10 +65,22 @@ impl DescribeElasticsearchDomainsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
-    pub fn build(self) -> crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
-        crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
-            domain_status_list: self.domain_status_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_status_list`](crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsOutputBuilder::domain_status_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
+            domain_status_list: self.domain_status_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_status_list",
+                    "domain_status_list was not specified but it is required when building DescribeElasticsearchDomainsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

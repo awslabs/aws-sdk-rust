@@ -28,6 +28,7 @@ pub struct KubernetesAuditLogsConfigurationBuilder {
 }
 impl KubernetesAuditLogsConfigurationBuilder {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
+    /// This field is required.
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
         self

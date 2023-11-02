@@ -34,6 +34,7 @@ pub struct UpdateCapacityProviderInputBuilder {
 }
 impl UpdateCapacityProviderInputBuilder {
     /// <p>The name of the capacity provider to update.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateCapacityProviderInputBuilder {
         &self.name
     }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
+    /// This field is required.
     pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProviderUpdate) -> Self {
         self.auto_scaling_group_provider = ::std::option::Option::Some(input);
         self

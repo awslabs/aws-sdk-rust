@@ -41,6 +41,7 @@ pub struct UpdateBlueprintInputBuilder {
 }
 impl UpdateBlueprintInputBuilder {
     /// <p>The name of the blueprint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateBlueprintInputBuilder {
         &self.description
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    /// This field is required.
     pub fn blueprint_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_location = ::std::option::Option::Some(input.into());
         self

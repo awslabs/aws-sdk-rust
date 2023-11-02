@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
-    pub payer: ::std::option::Option<crate::types::Payer>,
+    pub payer: crate::types::Payer,
 }
 impl RequestPaymentConfiguration {
     /// <p>Specifies who pays for the download and request fees.</p>
-    pub fn payer(&self) -> ::std::option::Option<&crate::types::Payer> {
-        self.payer.as_ref()
+    pub fn payer(&self) -> &crate::types::Payer {
+        &self.payer
     }
 }
 impl RequestPaymentConfiguration {
@@ -28,6 +28,7 @@ pub struct RequestPaymentConfigurationBuilder {
 }
 impl RequestPaymentConfigurationBuilder {
     /// <p>Specifies who pays for the download and request fees.</p>
+    /// This field is required.
     pub fn payer(mut self, input: crate::types::Payer) -> Self {
         self.payer = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl RequestPaymentConfigurationBuilder {
         &self.payer
     }
     /// Consumes the builder and constructs a [`RequestPaymentConfiguration`](crate::types::RequestPaymentConfiguration).
-    pub fn build(self) -> crate::types::RequestPaymentConfiguration {
-        crate::types::RequestPaymentConfiguration { payer: self.payer }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`payer`](crate::types::builders::RequestPaymentConfigurationBuilder::payer)
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestPaymentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RequestPaymentConfiguration {
+            payer: self.payer.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "payer",
+                    "payer was not specified but it is required when building RequestPaymentConfiguration",
+                )
+            })?,
+        })
     }
 }

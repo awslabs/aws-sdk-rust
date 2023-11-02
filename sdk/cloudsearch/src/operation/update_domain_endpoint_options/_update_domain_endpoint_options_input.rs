@@ -35,6 +35,7 @@ pub struct UpdateDomainEndpointOptionsInputBuilder {
 }
 impl UpdateDomainEndpointOptionsInputBuilder {
     /// <p>A string that represents the name of a domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateDomainEndpointOptionsInputBuilder {
         &self.domain_name
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
+    /// This field is required.
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
         self.domain_endpoint_options = ::std::option::Option::Some(input);
         self

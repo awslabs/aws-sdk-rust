@@ -27,6 +27,7 @@ pub struct DescribeStateMachineForExecutionInputBuilder {
 }
 impl DescribeStateMachineForExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
+    /// This field is required.
     pub fn execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_arn = ::std::option::Option::Some(input.into());
         self

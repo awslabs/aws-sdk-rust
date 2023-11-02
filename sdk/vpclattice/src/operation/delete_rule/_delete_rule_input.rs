@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::option::Option<::std::string::String>,
+    pub service_identifier: ::std::string::String,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub listener_identifier: ::std::option::Option<::std::string::String>,
+    pub listener_identifier: ::std::string::String,
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub rule_identifier: ::std::option::Option<::std::string::String>,
+    pub rule_identifier: ::std::string::String,
 }
 impl DeleteRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_identifier.as_deref()
+    pub fn service_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_identifier.deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
-        self.listener_identifier.as_deref()
+    pub fn listener_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.listener_identifier.deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
-        self.rule_identifier.as_deref()
+    pub fn rule_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_identifier.deref()
     }
 }
 impl DeleteRuleInput {
@@ -41,6 +44,7 @@ pub struct DeleteRuleInputBuilder {
 }
 impl DeleteRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    /// This field is required.
     pub fn service_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl DeleteRuleInputBuilder {
         &self.service_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    /// This field is required.
     pub fn listener_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl DeleteRuleInputBuilder {
         &self.listener_identifier
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    /// This field is required.
     pub fn rule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +89,30 @@ impl DeleteRuleInputBuilder {
         &self.rule_identifier
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_identifier`](crate::operation::delete_rule::builders::DeleteRuleInputBuilder::service_identifier)
+    /// - [`listener_identifier`](crate::operation::delete_rule::builders::DeleteRuleInputBuilder::listener_identifier)
+    /// - [`rule_identifier`](crate::operation::delete_rule::builders::DeleteRuleInputBuilder::rule_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rule::DeleteRuleInput {
-            service_identifier: self.service_identifier,
-            listener_identifier: self.listener_identifier,
-            rule_identifier: self.rule_identifier,
+            service_identifier: self.service_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_identifier",
+                    "service_identifier was not specified but it is required when building DeleteRuleInput",
+                )
+            })?,
+            listener_identifier: self.listener_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "listener_identifier",
+                    "listener_identifier was not specified but it is required when building DeleteRuleInput",
+                )
+            })?,
+            rule_identifier: self.rule_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_identifier",
+                    "rule_identifier was not specified but it is required when building DeleteRuleInput",
+                )
+            })?,
         })
     }
 }

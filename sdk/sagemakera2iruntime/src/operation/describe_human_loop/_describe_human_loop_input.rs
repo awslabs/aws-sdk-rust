@@ -27,6 +27,7 @@ pub struct DescribeHumanLoopInputBuilder {
 }
 impl DescribeHumanLoopInputBuilder {
     /// <p>The name of the human loop that you want information about.</p>
+    /// This field is required.
     pub fn human_loop_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_loop_name = ::std::option::Option::Some(input.into());
         self

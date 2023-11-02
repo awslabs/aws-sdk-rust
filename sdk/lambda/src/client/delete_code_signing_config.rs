@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCodeSigningConfig`](crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`code_signing_config_arn(impl Into<String>)`](crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigFluentBuilder::code_signing_config_arn) / [`set_code_signing_config_arn(Option<String>)`](crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigFluentBuilder::set_code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    ///   - [`code_signing_config_arn(impl Into<String>)`](crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigFluentBuilder::code_signing_config_arn) / [`set_code_signing_config_arn(Option<String>)`](crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigFluentBuilder::set_code_signing_config_arn):<br>required: **true**<br><p>The The Amazon Resource Name (ARN) of the code signing configuration.</p><br>
     /// - On success, responds with [`DeleteCodeSigningConfigOutput`](crate::operation::delete_code_signing_config::DeleteCodeSigningConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteCodeSigningConfigError>`](crate::operation::delete_code_signing_config::DeleteCodeSigningConfigError)
     pub fn delete_code_signing_config(&self) -> crate::operation::delete_code_signing_config::builders::DeleteCodeSigningConfigFluentBuilder {

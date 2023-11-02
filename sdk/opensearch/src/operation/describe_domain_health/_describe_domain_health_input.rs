@@ -28,6 +28,7 @@ pub struct DescribeDomainHealthInputBuilder {
 }
 impl DescribeDomainHealthInputBuilder {
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

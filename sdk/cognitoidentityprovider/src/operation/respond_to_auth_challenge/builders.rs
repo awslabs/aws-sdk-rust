@@ -97,14 +97,14 @@ impl RespondToAuthChallengeFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput,
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

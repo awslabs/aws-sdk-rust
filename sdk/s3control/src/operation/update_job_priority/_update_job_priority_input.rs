@@ -41,6 +41,7 @@ pub struct UpdateJobPriorityInputBuilder {
 }
 impl UpdateJobPriorityInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateJobPriorityInputBuilder {
         &self.account_id
     }
     /// <p>The ID for the job whose priority you want to update.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateJobPriorityInputBuilder {
         &self.job_id
     }
     /// <p>The priority you want to assign to this job.</p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self

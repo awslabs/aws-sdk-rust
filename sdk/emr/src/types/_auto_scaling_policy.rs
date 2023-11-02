@@ -15,8 +15,10 @@ impl AutoScalingPolicy {
         self.constraints.as_ref()
     }
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ScalingRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::ScalingRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl AutoScalingPolicy {
@@ -35,6 +37,7 @@ pub struct AutoScalingPolicyBuilder {
 }
 impl AutoScalingPolicyBuilder {
     /// <p>The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
+    /// This field is required.
     pub fn constraints(mut self, input: crate::types::ScalingConstraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct GetSlotTypeVersionsOutput {
 }
 impl GetSlotTypeVersionsOutput {
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    pub fn slot_types(&self) -> ::std::option::Option<&[crate::types::SlotTypeMetadata]> {
-        self.slot_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_types.is_none()`.
+    pub fn slot_types(&self) -> &[crate::types::SlotTypeMetadata] {
+        self.slot_types.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

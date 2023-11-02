@@ -32,8 +32,10 @@ impl CreateSipRuleInput {
         self.disabled
     }
     /// <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub fn target_applications(&self) -> ::std::option::Option<&[crate::types::SipRuleTargetApplication]> {
-        self.target_applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_applications.is_none()`.
+    pub fn target_applications(&self) -> &[crate::types::SipRuleTargetApplication] {
+        self.target_applications.as_deref().unwrap_or_default()
     }
 }
 impl CreateSipRuleInput {
@@ -55,6 +57,7 @@ pub struct CreateSipRuleInputBuilder {
 }
 impl CreateSipRuleInputBuilder {
     /// <p>The name of the SIP rule.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateSipRuleInputBuilder {
         &self.name
     }
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
+    /// This field is required.
     pub fn trigger_type(mut self, input: crate::types::SipRuleTriggerType) -> Self {
         self.trigger_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +87,7 @@ impl CreateSipRuleInputBuilder {
         &self.trigger_type
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
+    /// This field is required.
     pub fn trigger_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trigger_value = ::std::option::Option::Some(input.into());
         self

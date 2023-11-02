@@ -13,6 +13,7 @@ pub fn ser_abort_incomplete_multipart_upload(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_abort_incomplete_multipart_upload(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AbortIncompleteMultipartUpload, ::aws_smithy_xml::decode::XmlDecodeError> {

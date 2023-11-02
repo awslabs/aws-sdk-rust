@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowDetail {
     /// <p>A unique identifier for the workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
-    pub execution_role: ::std::option::Option<::std::string::String>,
+    pub execution_role: ::std::string::String,
 }
 impl WorkflowDetail {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
-        self.execution_role.as_deref()
+    pub fn execution_role(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role.deref()
     }
 }
 impl WorkflowDetail {
@@ -36,6 +38,7 @@ pub struct WorkflowDetailBuilder {
 }
 impl WorkflowDetailBuilder {
     /// <p>A unique identifier for the workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +53,7 @@ impl WorkflowDetailBuilder {
         &self.workflow_id
     }
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
+    /// This field is required.
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +68,23 @@ impl WorkflowDetailBuilder {
         &self.execution_role
     }
     /// Consumes the builder and constructs a [`WorkflowDetail`](crate::types::WorkflowDetail).
-    pub fn build(self) -> crate::types::WorkflowDetail {
-        crate::types::WorkflowDetail {
-            workflow_id: self.workflow_id,
-            execution_role: self.execution_role,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::types::builders::WorkflowDetailBuilder::workflow_id)
+    /// - [`execution_role`](crate::types::builders::WorkflowDetailBuilder::execution_role)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowDetail, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowDetail {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building WorkflowDetail",
+                )
+            })?,
+            execution_role: self.execution_role.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_role",
+                    "execution_role was not specified but it is required when building WorkflowDetail",
+                )
+            })?,
+        })
     }
 }

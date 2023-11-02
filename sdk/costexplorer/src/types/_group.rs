@@ -11,8 +11,10 @@ pub struct Group {
 }
 impl Group {
     /// <p>The keys that are included in this group.</p>
-    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
+    pub fn keys(&self) -> &[::std::string::String] {
+        self.keys.as_deref().unwrap_or_default()
     }
     /// <p>The metrics that are included in this group.</p>
     pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetricValue>> {

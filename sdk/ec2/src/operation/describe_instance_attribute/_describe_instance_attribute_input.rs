@@ -44,6 +44,7 @@ pub struct DescribeInstanceAttributeInputBuilder {
 impl DescribeInstanceAttributeInputBuilder {
     /// <p>The instance attribute.</p>
     /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -74,6 +75,7 @@ impl DescribeInstanceAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

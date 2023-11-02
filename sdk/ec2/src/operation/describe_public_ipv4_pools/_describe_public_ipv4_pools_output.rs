@@ -11,8 +11,10 @@ pub struct DescribePublicIpv4PoolsOutput {
 }
 impl DescribePublicIpv4PoolsOutput {
     /// <p>Information about the address pools.</p>
-    pub fn public_ipv4_pools(&self) -> ::std::option::Option<&[crate::types::PublicIpv4Pool]> {
-        self.public_ipv4_pools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_ipv4_pools.is_none()`.
+    pub fn public_ipv4_pools(&self) -> &[crate::types::PublicIpv4Pool] {
+        self.public_ipv4_pools.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

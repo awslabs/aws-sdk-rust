@@ -21,8 +21,10 @@ impl BatchGetDeploymentTargetsOutput {
     /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
     /// <li> <p> <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment. </p> </li>
     /// </ul>
-    pub fn deployment_targets(&self) -> ::std::option::Option<&[crate::types::DeploymentTarget]> {
-        self.deployment_targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_targets.is_none()`.
+    pub fn deployment_targets(&self) -> &[crate::types::DeploymentTarget] {
+        self.deployment_targets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetDeploymentTargetsOutput {

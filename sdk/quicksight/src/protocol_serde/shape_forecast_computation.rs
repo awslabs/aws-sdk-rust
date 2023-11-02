@@ -3,61 +3,61 @@ pub fn ser_forecast_computation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ForecastComputation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.computation_id {
-        object.key("ComputationId").string(var_1.as_str());
+    {
+        object.key("ComputationId").string(input.computation_id.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("Name").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.time {
+    if let Some(var_2) = &input.time {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Time").start_object();
-        crate::protocol_serde::shape_dimension_field::ser_dimension_field(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("Time").start_object();
+        crate::protocol_serde::shape_dimension_field::ser_dimension_field(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.value {
+    if let Some(var_4) = &input.value {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Value").start_object();
-        crate::protocol_serde::shape_measure_field::ser_measure_field(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("Value").start_object();
+        crate::protocol_serde::shape_measure_field::ser_measure_field(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.periods_forward {
+    if let Some(var_6) = &input.periods_forward {
         object.key("PeriodsForward").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
+    if let Some(var_7) = &input.periods_backward {
+        object.key("PeriodsBackward").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.periods_backward {
-        object.key("PeriodsBackward").number(
+    if let Some(var_8) = &input.upper_boundary {
+        object.key("UpperBoundary").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::Float((*var_8).into()),
         );
     }
-    if let Some(var_9) = &input.upper_boundary {
-        object.key("UpperBoundary").number(
+    if let Some(var_9) = &input.lower_boundary {
+        object.key("LowerBoundary").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::Float((*var_9).into()),
         );
     }
-    if let Some(var_10) = &input.lower_boundary {
-        object.key("LowerBoundary").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_10).into()),
-        );
-    }
-    if let Some(var_11) = &input.prediction_interval {
+    if let Some(var_10) = &input.prediction_interval {
         object.key("PredictionInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_12) = &input.seasonality {
-        object.key("Seasonality").string(var_12.as_str());
+    if let Some(var_11) = &input.seasonality {
+        object.key("Seasonality").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.custom_seasonality_value {
+    if let Some(var_12) = &input.custom_seasonality_value {
         object.key("CustomSeasonalityValue").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     Ok(())
@@ -153,7 +153,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::forecast_computation_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

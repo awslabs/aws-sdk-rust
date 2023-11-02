@@ -41,6 +41,7 @@ pub struct RedactConversationMessageInputBuilder {
 }
 impl RedactConversationMessageInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RedactConversationMessageInputBuilder {
         &self.account_id
     }
     /// <p>The conversation ID.</p>
+    /// This field is required.
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl RedactConversationMessageInputBuilder {
         &self.conversation_id
     }
     /// <p>The message ID.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self

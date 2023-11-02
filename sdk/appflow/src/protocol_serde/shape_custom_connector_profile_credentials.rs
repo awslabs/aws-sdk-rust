@@ -3,32 +3,32 @@ pub fn ser_custom_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomConnectorProfileCredentials,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.authentication_type {
-        object.key("authenticationType").string(var_1.as_str());
+    {
+        object.key("authenticationType").string(input.authentication_type.as_str());
     }
-    if let Some(var_2) = &input.basic {
+    if let Some(var_1) = &input.basic {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("basic").start_object();
-        crate::protocol_serde::shape_basic_auth_credentials::ser_basic_auth_credentials(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("basic").start_object();
+        crate::protocol_serde::shape_basic_auth_credentials::ser_basic_auth_credentials(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.oauth2 {
+    if let Some(var_3) = &input.oauth2 {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("oauth2").start_object();
-        crate::protocol_serde::shape_o_auth2_credentials::ser_o_auth2_credentials(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("oauth2").start_object();
+        crate::protocol_serde::shape_o_auth2_credentials::ser_o_auth2_credentials(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.api_key {
+    if let Some(var_5) = &input.api_key {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("apiKey").start_object();
-        crate::protocol_serde::shape_api_key_credentials::ser_api_key_credentials(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("apiKey").start_object();
+        crate::protocol_serde::shape_api_key_credentials::ser_api_key_credentials(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.custom {
+    if let Some(var_7) = &input.custom {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("custom").start_object();
-        crate::protocol_serde::shape_custom_auth_credentials::ser_custom_auth_credentials(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("custom").start_object();
+        crate::protocol_serde::shape_custom_auth_credentials::ser_custom_auth_credentials(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

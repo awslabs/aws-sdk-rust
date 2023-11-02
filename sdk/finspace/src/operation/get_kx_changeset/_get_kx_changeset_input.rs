@@ -41,6 +41,7 @@ pub struct GetKxChangesetInputBuilder {
 }
 impl GetKxChangesetInputBuilder {
     /// <p>A unique identifier for the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetKxChangesetInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the kdb database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetKxChangesetInputBuilder {
         &self.database_name
     }
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
+    /// This field is required.
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
         self

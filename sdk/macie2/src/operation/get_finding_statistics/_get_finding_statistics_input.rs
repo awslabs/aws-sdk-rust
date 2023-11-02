@@ -80,6 +80,7 @@ impl GetFindingStatisticsInputBuilder {
     /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn group_by(mut self, input: crate::types::GroupBy) -> Self {
         self.group_by = ::std::option::Option::Some(input);
         self

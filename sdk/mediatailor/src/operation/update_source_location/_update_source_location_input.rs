@@ -12,7 +12,7 @@ pub struct UpdateSourceLocationInput {
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
 }
 impl UpdateSourceLocationInput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -28,12 +28,15 @@ impl UpdateSourceLocationInput {
         self.http_configuration.as_ref()
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_delivery_configurations.is_none()`.
+    pub fn segment_delivery_configurations(&self) -> &[crate::types::SegmentDeliveryConfiguration] {
+        self.segment_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
 }
 impl UpdateSourceLocationInput {
@@ -86,6 +89,7 @@ impl UpdateSourceLocationInputBuilder {
         &self.default_segment_delivery_configuration
     }
     /// <p>The HTTP configuration for the source location.</p>
+    /// This field is required.
     pub fn http_configuration(mut self, input: crate::types::HttpConfiguration) -> Self {
         self.http_configuration = ::std::option::Option::Some(input);
         self
@@ -123,6 +127,7 @@ impl UpdateSourceLocationInputBuilder {
         &self.segment_delivery_configurations
     }
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +142,8 @@ impl UpdateSourceLocationInputBuilder {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`UpdateSourceLocationInput`](crate::operation::update_source_location::UpdateSourceLocationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_location_name`](crate::operation::update_source_location::builders::UpdateSourceLocationInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_source_location::UpdateSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
@@ -146,7 +153,12 @@ impl UpdateSourceLocationInputBuilder {
             default_segment_delivery_configuration: self.default_segment_delivery_configuration,
             http_configuration: self.http_configuration,
             segment_delivery_configurations: self.segment_delivery_configurations,
-            source_location_name: self.source_location_name,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building UpdateSourceLocationInput",
+                )
+            })?,
         })
     }
 }

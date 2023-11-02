@@ -10,6 +10,8 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 use zeroize::Zeroizing;
 
+use aws_smithy_runtime_api::client::identity::Identity;
+
 /// AWS SDK Credentials
 ///
 /// An opaque struct representing credentials that may be used in an AWS SDK, modeled on
@@ -140,18 +142,6 @@ impl Credentials {
         )
     }
 
-    /// Creates a test `Credentials`.
-    #[cfg(feature = "test-util")]
-    pub fn for_tests() -> Self {
-        Self::new(
-            "ANOTREAL",
-            "notrealrnrELgWzOk3IfjzDKtFBhDby",
-            Some("notarealsessiontoken".to_string()),
-            None,
-            "test",
-        )
-    }
-
     /// Returns the access key ID.
     pub fn access_key_id(&self) -> &str {
         &self.0.access_key_id
@@ -175,6 +165,38 @@ impl Credentials {
     /// Returns the session token.
     pub fn session_token(&self) -> Option<&str> {
         self.0.session_token.as_deref()
+    }
+}
+
+#[cfg(feature = "test-util")]
+impl Credentials {
+    /// Creates a test `Credentials` with no session token.
+    pub fn for_tests() -> Self {
+        Self::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            None,
+            None,
+            "test",
+        )
+    }
+
+    /// Creates a test `Credentials` that include a session token.
+    pub fn for_tests_with_session_token() -> Self {
+        Self::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            Some("notarealsessiontoken".to_string()),
+            None,
+            "test",
+        )
+    }
+}
+
+impl From<Credentials> for Identity {
+    fn from(val: Credentials) -> Self {
+        let expiry = val.expiry();
+        Identity::new(val, expiry)
     }
 }
 

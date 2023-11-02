@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
     pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a group in the identity store.</p>
@@ -15,8 +15,9 @@ pub struct GroupMembership {
 }
 impl GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
     pub fn membership_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct GroupMembershipBuilder {
 }
 impl GroupMembershipBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl GroupMembershipBuilder {
         &self.member_id
     }
     /// Consumes the builder and constructs a [`GroupMembership`](crate::types::GroupMembership).
-    pub fn build(self) -> crate::types::GroupMembership {
-        crate::types::GroupMembership {
-            identity_store_id: self.identity_store_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::types::builders::GroupMembershipBuilder::identity_store_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupMembership, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GroupMembership {
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building GroupMembership",
+                )
+            })?,
             membership_id: self.membership_id,
             group_id: self.group_id,
             member_id: self.member_id,
-        }
+        })
     }
 }

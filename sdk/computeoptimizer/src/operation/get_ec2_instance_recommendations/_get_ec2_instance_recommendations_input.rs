@@ -21,8 +21,10 @@ pub struct GetEc2InstanceRecommendationsInput {
 }
 impl GetEc2InstanceRecommendationsInput {
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
-    pub fn instance_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_arns.is_none()`.
+    pub fn instance_arns(&self) -> &[::std::string::String] {
+        self.instance_arns.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of instance recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -34,14 +36,18 @@ impl GetEc2InstanceRecommendationsInput {
         self.max_results
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
     pub fn recommendation_preferences(&self) -> ::std::option::Option<&crate::types::RecommendationPreferences> {

@@ -14,8 +14,10 @@ impl BatchDeleteRecipeVersionInput {
         self.name.as_deref()
     }
     /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
-    pub fn recipe_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recipe_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recipe_versions.is_none()`.
+    pub fn recipe_versions(&self) -> &[::std::string::String] {
+        self.recipe_versions.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteRecipeVersionInput {
@@ -34,6 +36,7 @@ pub struct BatchDeleteRecipeVersionInputBuilder {
 }
 impl BatchDeleteRecipeVersionInputBuilder {
     /// <p>The name of the recipe whose versions are to be deleted.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

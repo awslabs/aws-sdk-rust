@@ -14,11 +14,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_destination_configs: ::std::vec::Vec<::std::string::String>,
     /// <p>The parts of the request that you want to keep out of the logs.</p>
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting. </p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p> <note>
@@ -32,22 +32,26 @@ pub struct LoggingConfiguration {
 }
 impl LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub fn log_destination_configs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_destination_configs.as_deref()
+    pub fn log_destination_configs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.log_destination_configs.deref()
     }
     /// <p>The parts of the request that you want to keep out of the logs.</p>
     /// <p>For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code> for all rules that use the <code>SingleHeader</code> <code>FieldToMatch</code> setting. </p>
     /// <p>Redaction applies only to the component that's specified in the rule's <code>FieldToMatch</code> setting, so the <code>SingleHeader</code> redaction doesn't apply to rules that use the <code>Headers</code> <code>FieldToMatch</code>.</p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.</p>
     /// </note>
-    pub fn redacted_fields(&self) -> ::std::option::Option<&[crate::types::FieldToMatch]> {
-        self.redacted_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redacted_fields.is_none()`.
+    pub fn redacted_fields(&self) -> &[crate::types::FieldToMatch] {
+        self.redacted_fields.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
     pub fn managed_by_firewall_manager(&self) -> bool {
@@ -77,6 +81,7 @@ pub struct LoggingConfigurationBuilder {
 }
 impl LoggingConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -177,13 +182,26 @@ impl LoggingConfigurationBuilder {
         &self.logging_filter
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
-    pub fn build(self) -> crate::types::LoggingConfiguration {
-        crate::types::LoggingConfiguration {
-            resource_arn: self.resource_arn,
-            log_destination_configs: self.log_destination_configs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::LoggingConfigurationBuilder::resource_arn)
+    /// - [`log_destination_configs`](crate::types::builders::LoggingConfigurationBuilder::log_destination_configs)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingConfiguration {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building LoggingConfiguration",
+                )
+            })?,
+            log_destination_configs: self.log_destination_configs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_destination_configs",
+                    "log_destination_configs was not specified but it is required when building LoggingConfiguration",
+                )
+            })?,
             redacted_fields: self.redacted_fields,
             managed_by_firewall_manager: self.managed_by_firewall_manager.unwrap_or_default(),
             logging_filter: self.logging_filter,
-        }
+        })
     }
 }

@@ -12,8 +12,10 @@ pub struct AddTagsInput {
 }
 impl AddTagsInput {
     /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
@@ -61,6 +63,7 @@ impl AddTagsInputBuilder {
         &self.tags
     }
     /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl AddTagsInputBuilder {
         &self.resource_id
     }
     /// <p>The type of the ML object to tag.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self

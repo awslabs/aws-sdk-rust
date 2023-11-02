@@ -17,8 +17,10 @@ impl LensMetric {
         self.lens_arn.as_deref()
     }
     /// <p>The metrics for the pillars in a lens.</p>
-    pub fn pillars(&self) -> ::std::option::Option<&[crate::types::PillarMetric]> {
-        self.pillars.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillars.is_none()`.
+    pub fn pillars(&self) -> &[crate::types::PillarMetric] {
+        self.pillars.as_deref().unwrap_or_default()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {

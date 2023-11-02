@@ -17,6 +17,7 @@ pub fn ser_predictive_scaling_predefined_metric_pair(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_predictive_scaling_predefined_metric_pair(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::PredictiveScalingPredefinedMetricPair, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -54,5 +55,5 @@ pub fn de_predictive_scaling_predefined_metric_pair(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::predictive_scaling_predefined_metric_pair_correct_errors(builder).build())
 }

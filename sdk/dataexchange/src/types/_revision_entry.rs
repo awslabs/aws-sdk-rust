@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevisionEntry {
     /// <p>The ARN for the revision.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>An optional comment about the revision.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub finalized: bool,
     /// <p>The unique identifier for the revision.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub revocation_comment: ::std::option::Option<::std::string::String>,
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
@@ -29,36 +29,39 @@ pub struct RevisionEntry {
 }
 impl RevisionEntry {
     /// <p>The ARN for the revision.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>An optional comment about the revision.</p>
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.updated_at.as_ref()
+    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.updated_at
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub fn revocation_comment(&self) -> ::std::option::Option<&str> {
@@ -98,6 +101,7 @@ pub struct RevisionEntryBuilder {
 }
 impl RevisionEntryBuilder {
     /// <p>The ARN for the revision.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl RevisionEntryBuilder {
         &self.comment
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl RevisionEntryBuilder {
         &self.created_at
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +174,7 @@ impl RevisionEntryBuilder {
         &self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -196,6 +203,7 @@ impl RevisionEntryBuilder {
         &self.source_id
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -252,19 +260,50 @@ impl RevisionEntryBuilder {
         &self.revoked_at
     }
     /// Consumes the builder and constructs a [`RevisionEntry`](crate::types::RevisionEntry).
-    pub fn build(self) -> crate::types::RevisionEntry {
-        crate::types::RevisionEntry {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RevisionEntryBuilder::arn)
+    /// - [`created_at`](crate::types::builders::RevisionEntryBuilder::created_at)
+    /// - [`data_set_id`](crate::types::builders::RevisionEntryBuilder::data_set_id)
+    /// - [`id`](crate::types::builders::RevisionEntryBuilder::id)
+    /// - [`updated_at`](crate::types::builders::RevisionEntryBuilder::updated_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::RevisionEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RevisionEntry {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RevisionEntry",
+                )
+            })?,
             comment: self.comment,
-            created_at: self.created_at,
-            data_set_id: self.data_set_id,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building RevisionEntry",
+                )
+            })?,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building RevisionEntry",
+                )
+            })?,
             finalized: self.finalized.unwrap_or_default(),
-            id: self.id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building RevisionEntry",
+                )
+            })?,
             source_id: self.source_id,
-            updated_at: self.updated_at,
+            updated_at: self.updated_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "updated_at",
+                    "updated_at was not specified but it is required when building RevisionEntry",
+                )
+            })?,
             revocation_comment: self.revocation_comment,
             revoked: self.revoked.unwrap_or_default(),
             revoked_at: self.revoked_at,
-        }
+        })
     }
 }

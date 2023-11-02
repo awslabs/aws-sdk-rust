@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReferenceImportJob`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_id): <p>The job's ID.</p>
-    ///   - [`reference_store_id(impl Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_reference_store_id): <p>The job's reference store ID.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_id):<br>required: **true**<br><p>The job's ID.</p><br>
+    ///   - [`reference_store_id(impl Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_reference_store_id):<br>required: **true**<br><p>The job's reference store ID.</p><br>
     /// - On success, responds with [`GetReferenceImportJobOutput`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::id): <p>The job's ID.</p>
-    ///   - [`reference_store_id(Option<String>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::reference_store_id): <p>The job's reference store ID.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::role_arn): <p>The job's service role ARN.</p>
-    ///   - [`status(Option<ReferenceImportJobStatus>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::status): <p>The job's status.</p>
+    ///   - [`id(String)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::id): <p>The job's ID.</p>
+    ///   - [`reference_store_id(String)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::reference_store_id): <p>The job's reference store ID.</p>
+    ///   - [`role_arn(String)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::role_arn): <p>The job's service role ARN.</p>
+    ///   - [`status(ReferenceImportJobStatus)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::status): <p>The job's status.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::status_message): <p>The job's status message.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::creation_time): <p>When the job was created.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::creation_time): <p>When the job was created.</p>
     ///   - [`completion_time(Option<DateTime>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::completion_time): <p>When the job completed.</p>
-    ///   - [`sources(Option<Vec<ImportReferenceSourceItem>>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::sources): <p>The job's source files.</p>
+    ///   - [`sources(Vec<ImportReferenceSourceItem>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::sources): <p>The job's source files.</p>
     /// - On failure, responds with [`SdkError<GetReferenceImportJobError>`](crate::operation::get_reference_import_job::GetReferenceImportJobError)
     pub fn get_reference_import_job(&self) -> crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder {
         crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::new(self.handle.clone())

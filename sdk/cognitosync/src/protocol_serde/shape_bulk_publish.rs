@@ -25,11 +25,10 @@ pub fn de_bulk_publish_http_error(
                 output = crate::protocol_serde::shape_already_streamed_exception::de_already_streamed_exception_json_err(_response_body, output)
                     .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::already_streamed_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "DuplicateRequestException" => crate::operation::bulk_publish::BulkPublishError::DuplicateRequestException({
@@ -40,11 +39,10 @@ pub fn de_bulk_publish_http_error(
                 output = crate::protocol_serde::shape_duplicate_request_exception::de_duplicate_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::duplicate_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalErrorException" => crate::operation::bulk_publish::BulkPublishError::InternalErrorException({
@@ -55,11 +53,10 @@ pub fn de_bulk_publish_http_error(
                 output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output)
                     .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_error_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::bulk_publish::BulkPublishError::InvalidParameterException({
@@ -70,11 +67,10 @@ pub fn de_bulk_publish_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "NotAuthorizedException" => crate::operation::bulk_publish::BulkPublishError::NotAuthorizedException({
@@ -85,11 +81,10 @@ pub fn de_bulk_publish_http_error(
                 output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_authorized_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::bulk_publish::BulkPublishError::ResourceNotFoundException({
@@ -100,11 +95,10 @@ pub fn de_bulk_publish_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::bulk_publish::BulkPublishError::generic(generic),

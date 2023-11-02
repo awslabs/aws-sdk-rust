@@ -6,32 +6,32 @@ pub fn ser_instance_storage_config(
     if let Some(var_1) = &input.association_id {
         object.key("AssociationId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.storage_type {
-        object.key("StorageType").string(var_2.as_str());
+    {
+        object.key("StorageType").string(input.storage_type.as_str());
     }
-    if let Some(var_3) = &input.s3_config {
+    if let Some(var_2) = &input.s3_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("S3Config").start_object();
-        crate::protocol_serde::shape_s3_config::ser_s3_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("S3Config").start_object();
+        crate::protocol_serde::shape_s3_config::ser_s3_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.kinesis_video_stream_config {
+    if let Some(var_4) = &input.kinesis_video_stream_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("KinesisVideoStreamConfig").start_object();
-        crate::protocol_serde::shape_kinesis_video_stream_config::ser_kinesis_video_stream_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("KinesisVideoStreamConfig").start_object();
+        crate::protocol_serde::shape_kinesis_video_stream_config::ser_kinesis_video_stream_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.kinesis_stream_config {
+    if let Some(var_6) = &input.kinesis_stream_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("KinesisStreamConfig").start_object();
-        crate::protocol_serde::shape_kinesis_stream_config::ser_kinesis_stream_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("KinesisStreamConfig").start_object();
+        crate::protocol_serde::shape_kinesis_stream_config::ser_kinesis_stream_config(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.kinesis_firehose_config {
+    if let Some(var_8) = &input.kinesis_firehose_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("KinesisFirehoseConfig").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_config::ser_kinesis_firehose_config(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("KinesisFirehoseConfig").start_object();
+        crate::protocol_serde::shape_kinesis_firehose_config::ser_kinesis_firehose_config(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }
@@ -92,7 +92,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::instance_storage_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

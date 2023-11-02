@@ -38,8 +38,10 @@ impl CreateLocationEfsInput {
         self.ec2_config.as_ref()
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
     pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
@@ -96,6 +98,7 @@ impl CreateLocationEfsInputBuilder {
         &self.subdirectory
     }
     /// <p>Specifies the ARN for the Amazon EFS file system.</p>
+    /// This field is required.
     pub fn efs_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.efs_filesystem_arn = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +113,7 @@ impl CreateLocationEfsInputBuilder {
         &self.efs_filesystem_arn
     }
     /// <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
+    /// This field is required.
     pub fn ec2_config(mut self, input: crate::types::Ec2Config) -> Self {
         self.ec2_config = ::std::option::Option::Some(input);
         self

@@ -3,23 +3,23 @@ pub fn ser_vpc_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.subnet_ids {
-        let mut array_2 = object.key("SubnetIds").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("SubnetIds").start_array();
+        for item_2 in &input.subnet_ids {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.security_group_ids {
-        let mut array_5 = object.key("SecurityGroupIds").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_3 = object.key("SecurityGroupIds").start_array();
+        for item_4 in &input.security_group_ids {
             {
-                array_5.value().string(item_6.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
     Ok(())
 }

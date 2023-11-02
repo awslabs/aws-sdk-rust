@@ -17,8 +17,10 @@ impl GetReservationPurchaseRecommendationOutput {
         self.metadata.as_ref()
     }
     /// <p>Recommendations for reservations to purchase.</p>
-    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::ReservationPurchaseRecommendation]> {
-        self.recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
+    pub fn recommendations(&self) -> &[crate::types::ReservationPurchaseRecommendation] {
+        self.recommendations.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token for the next set of retrievable results.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

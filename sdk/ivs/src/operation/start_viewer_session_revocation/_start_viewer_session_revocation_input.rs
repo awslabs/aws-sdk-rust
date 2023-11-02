@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartViewerSessionRevocationInput {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
-    pub channel_arn: ::std::option::Option<::std::string::String>,
+    pub channel_arn: ::std::string::String,
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
-    pub viewer_id: ::std::option::Option<::std::string::String>,
+    pub viewer_id: ::std::string::String,
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub viewer_session_versions_less_than_or_equal_to: i32,
 }
 impl StartViewerSessionRevocationInput {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
-        self.channel_arn.as_deref()
+    pub fn channel_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_arn.deref()
     }
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
-    pub fn viewer_id(&self) -> ::std::option::Option<&str> {
-        self.viewer_id.as_deref()
+    pub fn viewer_id(&self) -> &str {
+        use std::ops::Deref;
+        self.viewer_id.deref()
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub fn viewer_session_versions_less_than_or_equal_to(&self) -> i32 {
@@ -41,6 +43,7 @@ pub struct StartViewerSessionRevocationInputBuilder {
 }
 impl StartViewerSessionRevocationInputBuilder {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl StartViewerSessionRevocationInputBuilder {
         &self.channel_arn
     }
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
+    /// This field is required.
     pub fn viewer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.viewer_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,9 @@ impl StartViewerSessionRevocationInputBuilder {
         &self.viewer_session_versions_less_than_or_equal_to
     }
     /// Consumes the builder and constructs a [`StartViewerSessionRevocationInput`](crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_arn`](crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationInputBuilder::channel_arn)
+    /// - [`viewer_id`](crate::operation::start_viewer_session_revocation::builders::StartViewerSessionRevocationInputBuilder::viewer_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -90,8 +97,18 @@ impl StartViewerSessionRevocationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput {
-            channel_arn: self.channel_arn,
-            viewer_id: self.viewer_id,
+            channel_arn: self.channel_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_arn",
+                    "channel_arn was not specified but it is required when building StartViewerSessionRevocationInput",
+                )
+            })?,
+            viewer_id: self.viewer_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "viewer_id",
+                    "viewer_id was not specified but it is required when building StartViewerSessionRevocationInput",
+                )
+            })?,
             viewer_session_versions_less_than_or_equal_to: self.viewer_session_versions_less_than_or_equal_to.unwrap_or_default(),
         })
     }

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
-    pub calculator_name: ::std::option::Option<::std::string::String>,
+    pub calculator_name: ::std::string::String,
 }
 impl DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
-    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
-        self.calculator_name.as_deref()
+    pub fn calculator_name(&self) -> &str {
+        use std::ops::Deref;
+        self.calculator_name.deref()
     }
 }
 impl DescribeRouteCalculatorInput {
@@ -27,6 +28,7 @@ pub struct DescribeRouteCalculatorInputBuilder {
 }
 impl DescribeRouteCalculatorInputBuilder {
     /// <p>The name of the route calculator resource.</p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl DescribeRouteCalculatorInputBuilder {
         &self.calculator_name
     }
     /// Consumes the builder and constructs a [`DescribeRouteCalculatorInput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`calculator_name`](crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder::calculator_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -48,7 +52,12 @@ impl DescribeRouteCalculatorInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_route_calculator::DescribeRouteCalculatorInput {
-            calculator_name: self.calculator_name,
+            calculator_name: self.calculator_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "calculator_name",
+                    "calculator_name was not specified but it is required when building DescribeRouteCalculatorInput",
+                )
+            })?,
         })
     }
 }

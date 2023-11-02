@@ -46,8 +46,10 @@ impl ImportModelInput {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ImportModelInput {
@@ -70,6 +72,7 @@ pub struct ImportModelInputBuilder {
 }
 impl ImportModelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+    /// This field is required.
     pub fn source_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_model_arn = ::std::option::Option::Some(input.into());
         self

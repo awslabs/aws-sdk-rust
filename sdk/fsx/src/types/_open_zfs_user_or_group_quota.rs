@@ -42,6 +42,7 @@ pub struct OpenZfsUserOrGroupQuotaBuilder {
 }
 impl OpenZfsUserOrGroupQuotaBuilder {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::OpenZfsQuotaType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl OpenZfsUserOrGroupQuotaBuilder {
         &self.r#type
     }
     /// <p>The ID of the user or group.</p>
+    /// This field is required.
     pub fn id(mut self, input: i32) -> Self {
         self.id = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl OpenZfsUserOrGroupQuotaBuilder {
         &self.id
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
+    /// This field is required.
     pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
         self.storage_capacity_quota_gi_b = ::std::option::Option::Some(input);
         self

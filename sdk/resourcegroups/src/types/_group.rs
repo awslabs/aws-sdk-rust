@@ -9,20 +9,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Group {
     /// <p>The ARN of the resource group.</p>
-    pub group_arn: ::std::option::Option<::std::string::String>,
+    pub group_arn: ::std::string::String,
     /// <p>The name of the resource group.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the resource group.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl Group {
     /// <p>The ARN of the resource group.</p>
-    pub fn group_arn(&self) -> ::std::option::Option<&str> {
-        self.group_arn.as_deref()
+    pub fn group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.group_arn.deref()
     }
     /// <p>The name of the resource group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the resource group.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -46,6 +48,7 @@ pub struct GroupBuilder {
 }
 impl GroupBuilder {
     /// <p>The ARN of the resource group.</p>
+    /// This field is required.
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
         self
@@ -60,6 +63,7 @@ impl GroupBuilder {
         &self.group_arn
     }
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -88,11 +92,24 @@ impl GroupBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
-    pub fn build(self) -> crate::types::Group {
-        crate::types::Group {
-            group_arn: self.group_arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_arn`](crate::types::builders::GroupBuilder::group_arn)
+    /// - [`name`](crate::types::builders::GroupBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Group, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Group {
+            group_arn: self.group_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "group_arn",
+                    "group_arn was not specified but it is required when building Group",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Group",
+                )
+            })?,
             description: self.description,
-        }
+        })
     }
 }

@@ -11,11 +11,11 @@ pub struct RulesSourceList {
     /// <li> <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p> </li>
     /// <li> <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p> </li>
     /// </ul>
-    pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub targets: ::std::vec::Vec<::std::string::String>,
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
-    pub target_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>,
+    pub target_types: ::std::vec::Vec<crate::types::TargetType>,
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
-    pub generated_rules_type: ::std::option::Option<crate::types::GeneratedRulesType>,
+    pub generated_rules_type: crate::types::GeneratedRulesType,
 }
 impl RulesSourceList {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
@@ -23,16 +23,18 @@ impl RulesSourceList {
     /// <li> <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p> </li>
     /// <li> <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p> </li>
     /// </ul>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    pub fn targets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.targets.deref()
     }
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
-    pub fn target_types(&self) -> ::std::option::Option<&[crate::types::TargetType]> {
-        self.target_types.as_deref()
+    pub fn target_types(&self) -> &[crate::types::TargetType] {
+        use std::ops::Deref;
+        self.target_types.deref()
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
-    pub fn generated_rules_type(&self) -> ::std::option::Option<&crate::types::GeneratedRulesType> {
-        self.generated_rules_type.as_ref()
+    pub fn generated_rules_type(&self) -> &crate::types::GeneratedRulesType {
+        &self.generated_rules_type
     }
 }
 impl RulesSourceList {
@@ -104,6 +106,7 @@ impl RulesSourceListBuilder {
         &self.target_types
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    /// This field is required.
     pub fn generated_rules_type(mut self, input: crate::types::GeneratedRulesType) -> Self {
         self.generated_rules_type = ::std::option::Option::Some(input);
         self
@@ -118,11 +121,30 @@ impl RulesSourceListBuilder {
         &self.generated_rules_type
     }
     /// Consumes the builder and constructs a [`RulesSourceList`](crate::types::RulesSourceList).
-    pub fn build(self) -> crate::types::RulesSourceList {
-        crate::types::RulesSourceList {
-            targets: self.targets,
-            target_types: self.target_types,
-            generated_rules_type: self.generated_rules_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`targets`](crate::types::builders::RulesSourceListBuilder::targets)
+    /// - [`target_types`](crate::types::builders::RulesSourceListBuilder::target_types)
+    /// - [`generated_rules_type`](crate::types::builders::RulesSourceListBuilder::generated_rules_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RulesSourceList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RulesSourceList {
+            targets: self.targets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "targets",
+                    "targets was not specified but it is required when building RulesSourceList",
+                )
+            })?,
+            target_types: self.target_types.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_types",
+                    "target_types was not specified but it is required when building RulesSourceList",
+                )
+            })?,
+            generated_rules_type: self.generated_rules_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "generated_rules_type",
+                    "generated_rules_type was not specified but it is required when building RulesSourceList",
+                )
+            })?,
+        })
     }
 }

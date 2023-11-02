@@ -22,8 +22,10 @@ impl UpdateFacetInput {
         self.name.as_deref()
     }
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
-    pub fn attribute_updates(&self) -> ::std::option::Option<&[crate::types::FacetAttributeUpdate]> {
-        self.attribute_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_updates.is_none()`.
+    pub fn attribute_updates(&self) -> &[crate::types::FacetAttributeUpdate] {
+        self.attribute_updates.as_deref().unwrap_or_default()
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn object_type(&self) -> ::std::option::Option<&crate::types::ObjectType> {
@@ -48,6 +50,7 @@ pub struct UpdateFacetInputBuilder {
 }
 impl UpdateFacetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl UpdateFacetInputBuilder {
         &self.schema_arn
     }
     /// <p>The name of the facet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

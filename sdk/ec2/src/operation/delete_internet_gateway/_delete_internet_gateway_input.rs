@@ -48,6 +48,7 @@ impl DeleteInternetGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the internet gateway.</p>
+    /// This field is required.
     pub fn internet_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.internet_gateway_id = ::std::option::Option::Some(input.into());
         self

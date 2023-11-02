@@ -11,8 +11,10 @@ pub struct GetSamplingRulesOutput {
 }
 impl GetSamplingRulesOutput {
     /// <p>Rule definitions and metadata.</p>
-    pub fn sampling_rule_records(&self) -> ::std::option::Option<&[crate::types::SamplingRuleRecord]> {
-        self.sampling_rule_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sampling_rule_records.is_none()`.
+    pub fn sampling_rule_records(&self) -> &[crate::types::SamplingRuleRecord] {
+        self.sampling_rule_records.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

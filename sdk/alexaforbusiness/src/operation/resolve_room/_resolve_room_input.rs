@@ -34,6 +34,7 @@ pub struct ResolveRoomInputBuilder {
 }
 impl ResolveRoomInputBuilder {
     /// <p>The ARN of the user. Required.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ResolveRoomInputBuilder {
         &self.user_id
     }
     /// <p>The ARN of the skill that was requested. Required.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self

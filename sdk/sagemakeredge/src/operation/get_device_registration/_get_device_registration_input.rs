@@ -34,6 +34,7 @@ pub struct GetDeviceRegistrationInputBuilder {
 }
 impl GetDeviceRegistrationInputBuilder {
     /// <p>The unique name of the device you want to get the registration status from.</p>
+    /// This field is required.
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDeviceRegistrationInputBuilder {
         &self.device_name
     }
     /// <p>The name of the fleet that the device belongs to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

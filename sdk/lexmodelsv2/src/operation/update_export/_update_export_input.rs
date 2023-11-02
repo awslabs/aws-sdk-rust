@@ -42,6 +42,7 @@ pub struct UpdateExportInputBuilder {
 }
 impl UpdateExportInputBuilder {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct UpdateWorkspaceAuthenticationOutputBuilder {
 }
 impl UpdateWorkspaceAuthenticationOutputBuilder {
     /// <p>A structure that describes the user authentication for this workspace after the update is made.</p>
+    /// This field is required.
     pub fn authentication(mut self, input: crate::types::AuthenticationDescription) -> Self {
         self.authentication = ::std::option::Option::Some(input);
         self

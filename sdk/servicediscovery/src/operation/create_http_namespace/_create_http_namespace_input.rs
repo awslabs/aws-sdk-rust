@@ -26,8 +26,10 @@ impl CreateHttpNamespaceInput {
         self.description.as_deref()
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateHttpNamespaceInput {
@@ -48,6 +50,7 @@ pub struct CreateHttpNamespaceInputBuilder {
 }
 impl CreateHttpNamespaceInputBuilder {
     /// <p>The name that you want to assign to this namespace.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -15,8 +15,10 @@ pub struct SearchDataSetsOutput {
 }
 impl SearchDataSetsOutput {
     /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
-    pub fn data_set_summaries(&self) -> ::std::option::Option<&[crate::types::DataSetSummary]> {
-        self.data_set_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_set_summaries.is_none()`.
+    pub fn data_set_summaries(&self) -> &[crate::types::DataSetSummary] {
+        self.data_set_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

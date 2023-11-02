@@ -39,8 +39,10 @@ impl UpdateFlowEntitlementInput {
         self.flow_arn.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subscribers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
+    pub fn subscribers(&self) -> &[::std::string::String] {
+        self.subscribers.as_deref().unwrap_or_default()
     }
 }
 impl UpdateFlowEntitlementInput {
@@ -91,6 +93,7 @@ impl UpdateFlowEntitlementInputBuilder {
         &self.encryption
     }
     /// The ARN of the entitlement that you want to update.
+    /// This field is required.
     pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl UpdateFlowEntitlementInputBuilder {
         &self.entitlement_status
     }
     /// The flow that is associated with the entitlement that you want to update.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self

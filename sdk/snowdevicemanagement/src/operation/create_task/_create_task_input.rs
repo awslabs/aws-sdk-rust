@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTaskInput {
     /// <p>A list of managed device IDs.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub targets: ::std::vec::Vec<::std::string::String>,
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
     pub command: ::std::option::Option<crate::types::Command>,
     /// <p>A description of the task and its targets.</p>
@@ -16,8 +16,9 @@ pub struct CreateTaskInput {
 }
 impl CreateTaskInput {
     /// <p>A list of managed device IDs.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    pub fn targets(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.targets.deref()
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
     pub fn command(&self) -> ::std::option::Option<&crate::types::Command> {
@@ -75,6 +76,7 @@ impl CreateTaskInputBuilder {
         &self.targets
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
+    /// This field is required.
     pub fn command(mut self, input: crate::types::Command) -> Self {
         self.command = ::std::option::Option::Some(input);
         self
@@ -137,9 +139,16 @@ impl CreateTaskInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`targets`](crate::operation::create_task::builders::CreateTaskInputBuilder::targets)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_task::CreateTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_task::CreateTaskInput {
-            targets: self.targets,
+            targets: self.targets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "targets",
+                    "targets was not specified but it is required when building CreateTaskInput",
+                )
+            })?,
             command: self.command,
             description: self.description,
             tags: self.tags,

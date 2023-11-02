@@ -42,6 +42,7 @@ pub struct DataQualityRulesetEvaluationRunFilterBuilder {
 }
 impl DataQualityRulesetEvaluationRunFilterBuilder {
     /// <p>Filter based on a data source (an Glue table) associated with the run.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self

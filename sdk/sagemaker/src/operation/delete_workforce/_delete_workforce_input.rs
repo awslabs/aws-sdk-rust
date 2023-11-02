@@ -27,6 +27,7 @@ pub struct DeleteWorkforceInputBuilder {
 }
 impl DeleteWorkforceInputBuilder {
     /// <p>The name of the workforce.</p>
+    /// This field is required.
     pub fn workforce_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workforce_name = ::std::option::Option::Some(input.into());
         self

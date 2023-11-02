@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpPackageConfiguration {
     /// <p>The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.</p>
-    pub source_group: ::std::option::Option<::std::string::String>,
+    pub source_group: ::std::string::String,
     /// <p>The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::Type>,
+    pub r#type: crate::types::Type,
 }
 impl HttpPackageConfiguration {
     /// <p>The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.</p>
-    pub fn source_group(&self) -> ::std::option::Option<&str> {
-        self.source_group.as_deref()
+    pub fn source_group(&self) -> &str {
+        use std::ops::Deref;
+        self.source_group.deref()
     }
     /// <p>The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::Type {
+        &self.r#type
     }
 }
 impl HttpPackageConfiguration {
@@ -42,6 +44,7 @@ pub struct HttpPackageConfigurationBuilder {
 }
 impl HttpPackageConfigurationBuilder {
     /// <p>The relative path to the URL for this VOD source. This is combined with <code>SourceLocation::HttpConfiguration::BaseUrl</code> to form a valid URL.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl HttpPackageConfigurationBuilder {
         &self.path
     }
     /// <p>The name of the source group. This has to match one of the <code>Channel::Outputs::SourceGroup</code>.</p>
+    /// This field is required.
     pub fn source_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_group = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl HttpPackageConfigurationBuilder {
         &self.source_group
     }
     /// <p>The streaming protocol for this package configuration. Supported values are <code>HLS</code> and <code>DASH</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl HttpPackageConfigurationBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`HttpPackageConfiguration`](crate::types::HttpPackageConfiguration).
-    pub fn build(self) -> crate::types::HttpPackageConfiguration {
-        crate::types::HttpPackageConfiguration {
-            path: self.path,
-            source_group: self.source_group,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::HttpPackageConfigurationBuilder::path)
+    /// - [`source_group`](crate::types::builders::HttpPackageConfigurationBuilder::source_group)
+    /// - [`r#type`](crate::types::builders::HttpPackageConfigurationBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpPackageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpPackageConfiguration {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building HttpPackageConfiguration",
+                )
+            })?,
+            source_group: self.source_group.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_group",
+                    "source_group was not specified but it is required when building HttpPackageConfiguration",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building HttpPackageConfiguration",
+                )
+            })?,
+        })
     }
 }

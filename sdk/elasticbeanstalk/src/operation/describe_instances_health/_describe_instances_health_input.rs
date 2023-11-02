@@ -23,8 +23,10 @@ impl DescribeInstancesHealthInput {
         self.environment_id.as_deref()
     }
     /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[crate::types::InstancesHealthAttribute]> {
-        self.attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[crate::types::InstancesHealthAttribute] {
+        self.attribute_names.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token returned by a previous call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -42,12 +42,16 @@ pub struct DescribeInstanceAttributeOutput {
 }
 impl DescribeInstanceAttributeOutput {
     /// <p>The security groups associated with the instance.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The block device mapping of the instance.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
     pub fn disable_api_termination(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
@@ -82,8 +86,10 @@ impl DescribeInstanceAttributeOutput {
         self.kernel_id.as_ref()
     }
     /// <p>A list of product codes.</p>
-    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
-        self.product_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
+    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
+        self.product_codes.as_deref().unwrap_or_default()
     }
     /// <p>The RAM disk ID.</p>
     pub fn ramdisk_id(&self) -> ::std::option::Option<&crate::types::AttributeValue> {

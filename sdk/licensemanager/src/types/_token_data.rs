@@ -37,12 +37,16 @@ impl TokenData {
         self.expiration_time.as_deref()
     }
     /// <p>Data specified by the caller.</p>
-    pub fn token_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_properties.is_none()`.
+    pub fn token_properties(&self) -> &[::std::string::String] {
+        self.token_properties.as_deref().unwrap_or_default()
     }
     /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
-    pub fn role_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.role_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_arns.is_none()`.
+    pub fn role_arns(&self) -> &[::std::string::String] {
+        self.role_arns.as_deref().unwrap_or_default()
     }
     /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {

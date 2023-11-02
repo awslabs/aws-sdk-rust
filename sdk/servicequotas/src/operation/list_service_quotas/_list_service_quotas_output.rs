@@ -15,8 +15,10 @@ impl ListServiceQuotasOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the quotas.</p>
-    pub fn quotas(&self) -> ::std::option::Option<&[crate::types::ServiceQuota]> {
-        self.quotas.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quotas.is_none()`.
+    pub fn quotas(&self) -> &[crate::types::ServiceQuota] {
+        self.quotas.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServiceQuotasOutput {

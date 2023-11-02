@@ -51,8 +51,10 @@ impl AwsApiGatewayRestApiDetails {
         self.version.as_deref()
     }
     /// <p>The list of binary media types supported by the REST API.</p>
-    pub fn binary_media_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.binary_media_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.binary_media_types.is_none()`.
+    pub fn binary_media_types(&self) -> &[::std::string::String] {
+        self.binary_media_types.as_deref().unwrap_or_default()
     }
     /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
     /// <p>If <code>null</code>, then compression is disabled.</p>

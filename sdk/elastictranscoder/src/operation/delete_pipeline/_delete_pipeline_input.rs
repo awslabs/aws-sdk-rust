@@ -28,6 +28,7 @@ pub struct DeletePipelineInputBuilder {
 }
 impl DeletePipelineInputBuilder {
     /// <p>The identifier of the pipeline that you want to delete.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct GetResolverEndpointInputBuilder {
 }
 impl GetResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
+    /// This field is required.
     pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self

@@ -5,23 +5,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
-    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created: ::aws_smithy_types::DateTime,
     /// <p>The customer-entered description of the workspace.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    pub endpoint: ::std::option::Option<::std::string::String>,
+    pub endpoint: ::std::string::String,
     /// <p>The Grafana version that the workspace is running.</p>
-    pub grafana_version: ::std::option::Option<::std::string::String>,
+    pub grafana_version: ::std::string::String,
     /// <p>The unique ID of the workspace.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The most recent date that the workspace was modified.</p>
-    pub modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub modified: ::aws_smithy_types::DateTime,
     /// <p>The name of the workspace.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
     pub notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     /// <p>The current status of the workspace.</p>
-    pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
+    pub status: crate::types::WorkspaceStatus,
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
@@ -29,40 +29,45 @@ pub struct WorkspaceSummary {
 }
 impl WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created.as_ref()
+    pub fn created(&self) -> &::aws_smithy_types::DateTime {
+        &self.created
     }
     /// <p>The customer-entered description of the workspace.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
-        self.endpoint.as_deref()
+    pub fn endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.endpoint.deref()
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
-        self.grafana_version.as_deref()
+    pub fn grafana_version(&self) -> &str {
+        use std::ops::Deref;
+        self.grafana_version.deref()
     }
     /// <p>The unique ID of the workspace.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.modified.as_ref()
+    pub fn modified(&self) -> &::aws_smithy_types::DateTime {
+        &self.modified
     }
     /// <p>The name of the workspace.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(&self) -> ::std::option::Option<&[crate::types::NotificationDestinationType]> {
-        self.notification_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_destinations.is_none()`.
+    pub fn notification_destinations(&self) -> &[crate::types::NotificationDestinationType] {
+        self.notification_destinations.as_deref().unwrap_or_default()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::WorkspaceStatus {
+        &self.status
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub fn authentication(&self) -> ::std::option::Option<&crate::types::AuthenticationSummary> {
@@ -115,6 +120,7 @@ pub struct WorkspaceSummaryBuilder {
 }
 impl WorkspaceSummaryBuilder {
     /// <p>The date that the workspace was created.</p>
+    /// This field is required.
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
         self
@@ -143,6 +149,7 @@ impl WorkspaceSummaryBuilder {
         &self.description
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +164,7 @@ impl WorkspaceSummaryBuilder {
         &self.endpoint
     }
     /// <p>The Grafana version that the workspace is running.</p>
+    /// This field is required.
     pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_version = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +179,7 @@ impl WorkspaceSummaryBuilder {
         &self.grafana_version
     }
     /// <p>The unique ID of the workspace.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +194,7 @@ impl WorkspaceSummaryBuilder {
         &self.id
     }
     /// <p>The most recent date that the workspace was modified.</p>
+    /// This field is required.
     pub fn modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified = ::std::option::Option::Some(input);
         self
@@ -233,6 +243,7 @@ impl WorkspaceSummaryBuilder {
         &self.notification_destinations
     }
     /// <p>The current status of the workspace.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -247,6 +258,7 @@ impl WorkspaceSummaryBuilder {
         &self.status
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
+    /// This field is required.
     pub fn authentication(mut self, input: crate::types::AuthenticationSummary) -> Self {
         self.authentication = ::std::option::Option::Some(input);
         self
@@ -281,20 +293,57 @@ impl WorkspaceSummaryBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).
-    pub fn build(self) -> crate::types::WorkspaceSummary {
-        crate::types::WorkspaceSummary {
-            created: self.created,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`created`](crate::types::builders::WorkspaceSummaryBuilder::created)
+    /// - [`endpoint`](crate::types::builders::WorkspaceSummaryBuilder::endpoint)
+    /// - [`grafana_version`](crate::types::builders::WorkspaceSummaryBuilder::grafana_version)
+    /// - [`id`](crate::types::builders::WorkspaceSummaryBuilder::id)
+    /// - [`modified`](crate::types::builders::WorkspaceSummaryBuilder::modified)
+    /// - [`status`](crate::types::builders::WorkspaceSummaryBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkspaceSummary {
+            created: self.created.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created",
+                    "created was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
             description: self.description,
-            endpoint: self.endpoint,
-            grafana_version: self.grafana_version,
-            id: self.id,
-            modified: self.modified,
+            endpoint: self.endpoint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "endpoint",
+                    "endpoint was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
+            grafana_version: self.grafana_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "grafana_version",
+                    "grafana_version was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
+            modified: self.modified.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "modified",
+                    "modified was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
             name: self.name,
             notification_destinations: self.notification_destinations,
-            status: self.status,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
             authentication: self.authentication,
             tags: self.tags,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for WorkspaceSummaryBuilder {

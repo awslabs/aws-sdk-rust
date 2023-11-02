@@ -3,11 +3,11 @@ pub fn ser_s3_exporting_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ExportingConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_1.as_str());
+    {
+        object.key("S3BucketName").string(input.s3_bucket_name.as_str());
     }
-    if let Some(var_2) = &input.s3_key_name {
-        object.key("S3KeyName").string(var_2.as_str());
+    if let Some(var_1) = &input.s3_key_name {
+        object.key("S3KeyName").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_exporting_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

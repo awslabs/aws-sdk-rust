@@ -28,6 +28,7 @@ pub struct GetUploadInputBuilder {
 }
 impl GetUploadInputBuilder {
     /// <p>The upload's ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

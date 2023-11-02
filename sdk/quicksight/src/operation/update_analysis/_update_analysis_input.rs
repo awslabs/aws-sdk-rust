@@ -78,6 +78,7 @@ pub struct UpdateAnalysisInputBuilder {
 }
 impl UpdateAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl UpdateAnalysisInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +108,7 @@ impl UpdateAnalysisInputBuilder {
         &self.analysis_id
     }
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

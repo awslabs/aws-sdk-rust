@@ -7,13 +7,13 @@ pub struct PersistentStorageConfiguration {
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub size_in_gi_b: ::std::option::Option<i32>,
+    pub size_in_gi_b: i32,
 }
 impl PersistentStorageConfiguration {
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn size_in_gi_b(&self) -> ::std::option::Option<i32> {
+    pub fn size_in_gi_b(&self) -> i32 {
         self.size_in_gi_b
     }
 }
@@ -34,6 +34,7 @@ impl PersistentStorageConfigurationBuilder {
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
+    /// This field is required.
     pub fn size_in_gi_b(mut self, input: i32) -> Self {
         self.size_in_gi_b = ::std::option::Option::Some(input);
         self
@@ -52,9 +53,16 @@ impl PersistentStorageConfigurationBuilder {
         &self.size_in_gi_b
     }
     /// Consumes the builder and constructs a [`PersistentStorageConfiguration`](crate::types::PersistentStorageConfiguration).
-    pub fn build(self) -> crate::types::PersistentStorageConfiguration {
-        crate::types::PersistentStorageConfiguration {
-            size_in_gi_b: self.size_in_gi_b,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`size_in_gi_b`](crate::types::builders::PersistentStorageConfigurationBuilder::size_in_gi_b)
+    pub fn build(self) -> ::std::result::Result<crate::types::PersistentStorageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PersistentStorageConfiguration {
+            size_in_gi_b: self.size_in_gi_b.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "size_in_gi_b",
+                    "size_in_gi_b was not specified but it is required when building PersistentStorageConfiguration",
+                )
+            })?,
+        })
     }
 }

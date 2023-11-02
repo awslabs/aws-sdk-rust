@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub data_location: ::std::option::Option<::std::string::String>,
+    pub data_location: ::std::string::String,
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub data_access_role_arn: ::std::string::String,
 }
 impl ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn data_location(&self) -> ::std::option::Option<&str> {
-        self.data_location.as_deref()
+    pub fn data_location(&self) -> &str {
+        use std::ops::Deref;
+        self.data_location.deref()
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
-        self.data_access_role_arn.as_deref()
+    pub fn data_access_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.data_access_role_arn.deref()
     }
 }
 impl ExternalEventsDetail {
@@ -35,6 +37,7 @@ pub struct ExternalEventsDetailBuilder {
 }
 impl ExternalEventsDetailBuilder {
     /// <p>The Amazon S3 bucket location for the data.</p>
+    /// This field is required.
     pub fn data_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_location = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ExternalEventsDetailBuilder {
         &self.data_location
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ExternalEventsDetailBuilder {
         &self.data_access_role_arn
     }
     /// Consumes the builder and constructs a [`ExternalEventsDetail`](crate::types::ExternalEventsDetail).
-    pub fn build(self) -> crate::types::ExternalEventsDetail {
-        crate::types::ExternalEventsDetail {
-            data_location: self.data_location,
-            data_access_role_arn: self.data_access_role_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_location`](crate::types::builders::ExternalEventsDetailBuilder::data_location)
+    /// - [`data_access_role_arn`](crate::types::builders::ExternalEventsDetailBuilder::data_access_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExternalEventsDetail, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExternalEventsDetail {
+            data_location: self.data_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_location",
+                    "data_location was not specified but it is required when building ExternalEventsDetail",
+                )
+            })?,
+            data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_access_role_arn",
+                    "data_access_role_arn was not specified but it is required when building ExternalEventsDetail",
+                )
+            })?,
+        })
     }
 }

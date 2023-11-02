@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
-    pub s3_bucket: ::std::option::Option<::std::string::String>,
+    pub s3_bucket: ::std::string::String,
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub s3_key: ::std::option::Option<::std::string::String>,
+    pub s3_key: ::std::string::String,
 }
 impl TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket.as_deref()
+    pub fn s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket.deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
-        self.s3_key.as_deref()
+    pub fn s3_key(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_key.deref()
     }
 }
 impl TemplateLocation {
@@ -35,6 +37,7 @@ pub struct TemplateLocationBuilder {
 }
 impl TemplateLocationBuilder {
     /// <p>The Amazon S3 bucket name.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TemplateLocationBuilder {
         &self.s3_bucket
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
+    /// This field is required.
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TemplateLocationBuilder {
         &self.s3_key
     }
     /// Consumes the builder and constructs a [`TemplateLocation`](crate::types::TemplateLocation).
-    pub fn build(self) -> crate::types::TemplateLocation {
-        crate::types::TemplateLocation {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket`](crate::types::builders::TemplateLocationBuilder::s3_bucket)
+    /// - [`s3_key`](crate::types::builders::TemplateLocationBuilder::s3_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateLocation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateLocation {
+            s3_bucket: self.s3_bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_bucket",
+                    "s3_bucket was not specified but it is required when building TemplateLocation",
+                )
+            })?,
+            s3_key: self.s3_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_key",
+                    "s3_key was not specified but it is required when building TemplateLocation",
+                )
+            })?,
+        })
     }
 }

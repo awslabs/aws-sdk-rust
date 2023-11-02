@@ -34,6 +34,7 @@ pub struct GetMatchingJobInputBuilder {
 }
 impl GetMatchingJobInputBuilder {
     /// <p>The name of the workflow.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMatchingJobInputBuilder {
         &self.workflow_name
     }
     /// <p>The ID of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

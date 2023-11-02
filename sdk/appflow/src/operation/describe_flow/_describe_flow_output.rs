@@ -78,8 +78,10 @@ impl DescribeFlowOutput {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(&self) -> ::std::option::Option<&[crate::types::DestinationFlowConfig]> {
-        self.destination_flow_config_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_flow_config_list.is_none()`.
+    pub fn destination_flow_config_list(&self) -> &[crate::types::DestinationFlowConfig] {
+        self.destination_flow_config_list.as_deref().unwrap_or_default()
     }
     /// <p> Describes the details of the most recent flow run. </p>
     pub fn last_run_execution_details(&self) -> ::std::option::Option<&crate::types::ExecutionDetails> {
@@ -90,8 +92,10 @@ impl DescribeFlowOutput {
         self.trigger_config.as_ref()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::Task]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::Task] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p> Specifies when the flow was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -118,8 +122,10 @@ impl DescribeFlowOutput {
         self.metadata_catalog_config.as_ref()
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn last_run_metadata_catalog_details(&self) -> ::std::option::Option<&[crate::types::MetadataCatalogDetail]> {
-        self.last_run_metadata_catalog_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_run_metadata_catalog_details.is_none()`.
+    pub fn last_run_metadata_catalog_details(&self) -> &[crate::types::MetadataCatalogDetail] {
+        self.last_run_metadata_catalog_details.as_deref().unwrap_or_default()
     }
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>

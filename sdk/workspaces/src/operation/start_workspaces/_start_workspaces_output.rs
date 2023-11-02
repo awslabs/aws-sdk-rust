@@ -9,8 +9,10 @@ pub struct StartWorkspacesOutput {
 }
 impl StartWorkspacesOutput {
     /// <p>Information about the WorkSpaces that could not be started.</p>
-    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedWorkspaceChangeRequest]> {
-        self.failed_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
+    pub fn failed_requests(&self) -> &[crate::types::FailedWorkspaceChangeRequest] {
+        self.failed_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for StartWorkspacesOutput {

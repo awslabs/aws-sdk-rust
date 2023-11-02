@@ -10,7 +10,7 @@ pub struct IotTopicPublishAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
-    pub mqtt_topic: ::std::option::Option<::std::string::String>,
+    pub mqtt_topic: ::std::string::String,
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
@@ -21,8 +21,9 @@ impl IotTopicPublishAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
-    pub fn mqtt_topic(&self) -> ::std::option::Option<&str> {
-        self.mqtt_topic.as_deref()
+    pub fn mqtt_topic(&self) -> &str {
+        use std::ops::Deref;
+        self.mqtt_topic.deref()
     }
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
@@ -50,6 +51,7 @@ impl IotTopicPublishActionBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
+    /// This field is required.
     pub fn mqtt_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mqtt_topic = ::std::option::Option::Some(input.into());
         self
@@ -88,10 +90,17 @@ impl IotTopicPublishActionBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`IotTopicPublishAction`](crate::types::IotTopicPublishAction).
-    pub fn build(self) -> crate::types::IotTopicPublishAction {
-        crate::types::IotTopicPublishAction {
-            mqtt_topic: self.mqtt_topic,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mqtt_topic`](crate::types::builders::IotTopicPublishActionBuilder::mqtt_topic)
+    pub fn build(self) -> ::std::result::Result<crate::types::IotTopicPublishAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IotTopicPublishAction {
+            mqtt_topic: self.mqtt_topic.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mqtt_topic",
+                    "mqtt_topic was not specified but it is required when building IotTopicPublishAction",
+                )
+            })?,
             payload: self.payload,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct AddApplicationCloudWatchLoggingOptionInputBuilder {
 }
 impl AddApplicationCloudWatchLoggingOptionInputBuilder {
     /// <p>The Kinesis Analytics application name.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
         &self.application_name
     }
     /// <p>The version ID of the Kinesis Analytics application.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
         &self.current_application_version_id
     }
     /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
+    /// This field is required.
     pub fn cloud_watch_logging_option(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         self.cloud_watch_logging_option = ::std::option::Option::Some(input);
         self

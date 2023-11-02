@@ -20,8 +20,10 @@ impl UpdateRecipeInput {
         self.name.as_deref()
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::RecipeStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::RecipeStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
 }
 impl UpdateRecipeInput {
@@ -55,6 +57,7 @@ impl UpdateRecipeInputBuilder {
         &self.description
     }
     /// <p>The name of the recipe to be updated.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

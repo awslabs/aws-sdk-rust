@@ -129,7 +129,9 @@ pub fn de_execute_budget_action_http_response(
         output = crate::protocol_serde::shape_execute_budget_action::de_execute_budget_action(_response_body, output)
             .map_err(crate::operation::execute_budget_action::ExecuteBudgetActionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::execute_budget_action_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::execute_budget_action::ExecuteBudgetActionError::unhandled)?
     })
 }
 

@@ -58,6 +58,7 @@ pub struct CreateSourceNetworkInputBuilder {
 }
 impl CreateSourceNetworkInputBuilder {
     /// <p>Which VPC ID to protect.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl CreateSourceNetworkInputBuilder {
         &self.vpc_id
     }
     /// <p>Account containing the VPC to protect.</p>
+    /// This field is required.
     pub fn origin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_account_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl CreateSourceNetworkInputBuilder {
         &self.origin_account_id
     }
     /// <p>Region containing the VPC to protect.</p>
+    /// This field is required.
     pub fn origin_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_region = ::std::option::Option::Some(input.into());
         self

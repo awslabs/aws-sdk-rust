@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ZendeskConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
-    pub client_id: ::std::option::Option<::std::string::String>,
+    pub client_id: ::std::string::String,
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    pub client_secret: ::std::option::Option<::std::string::String>,
+    pub client_secret: ::std::string::String,
     /// <p> The credentials used to access protected Zendesk resources. </p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
@@ -15,12 +15,14 @@ pub struct ZendeskConnectorProfileCredentials {
 }
 impl ZendeskConnectorProfileCredentials {
     /// <p> The identifier for the desired client. </p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
-        self.client_id.as_deref()
+    pub fn client_id(&self) -> &str {
+        use std::ops::Deref;
+        self.client_id.deref()
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
-        self.client_secret.as_deref()
+    pub fn client_secret(&self) -> &str {
+        use std::ops::Deref;
+        self.client_secret.deref()
     }
     /// <p> The credentials used to access protected Zendesk resources. </p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct ZendeskConnectorProfileCredentialsBuilder {
 }
 impl ZendeskConnectorProfileCredentialsBuilder {
     /// <p> The identifier for the desired client. </p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl ZendeskConnectorProfileCredentialsBuilder {
         &self.client_id
     }
     /// <p> The client secret used by the OAuth client to authenticate to the authorization server. </p>
+    /// This field is required.
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_secret = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +119,26 @@ impl ZendeskConnectorProfileCredentialsBuilder {
         &self.o_auth_request
     }
     /// Consumes the builder and constructs a [`ZendeskConnectorProfileCredentials`](crate::types::ZendeskConnectorProfileCredentials).
-    pub fn build(self) -> crate::types::ZendeskConnectorProfileCredentials {
-        crate::types::ZendeskConnectorProfileCredentials {
-            client_id: self.client_id,
-            client_secret: self.client_secret,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`client_id`](crate::types::builders::ZendeskConnectorProfileCredentialsBuilder::client_id)
+    /// - [`client_secret`](crate::types::builders::ZendeskConnectorProfileCredentialsBuilder::client_secret)
+    pub fn build(self) -> ::std::result::Result<crate::types::ZendeskConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ZendeskConnectorProfileCredentials {
+            client_id: self.client_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_id",
+                    "client_id was not specified but it is required when building ZendeskConnectorProfileCredentials",
+                )
+            })?,
+            client_secret: self.client_secret.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_secret",
+                    "client_secret was not specified but it is required when building ZendeskConnectorProfileCredentials",
+                )
+            })?,
             access_token: self.access_token,
             o_auth_request: self.o_auth_request,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ZendeskConnectorProfileCredentialsBuilder {

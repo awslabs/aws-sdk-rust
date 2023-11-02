@@ -9,8 +9,8 @@ pub fn ser_item_identifier(
         crate::protocol_serde::shape_item_value::ser_item_value(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("type").string(var_3.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }
@@ -50,7 +50,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::item_identifier_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

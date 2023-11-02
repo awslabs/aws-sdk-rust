@@ -49,7 +49,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::prompt_specification_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -61,42 +63,42 @@ pub fn ser_prompt_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PromptSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.message_groups {
-        let mut array_2 = object.key("messageGroups").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("messageGroups").start_array();
+        for item_2 in &input.message_groups {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_message_group::ser_message_group(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_message_group::ser_message_group(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.max_retries {
+    {
         object.key("maxRetries").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((input.max_retries).into()),
         );
     }
-    if let Some(var_6) = &input.allow_interrupt {
-        object.key("allowInterrupt").boolean(*var_6);
+    if let Some(var_4) = &input.allow_interrupt {
+        object.key("allowInterrupt").boolean(*var_4);
     }
-    if let Some(var_7) = &input.message_selection_strategy {
-        object.key("messageSelectionStrategy").string(var_7.as_str());
+    if let Some(var_5) = &input.message_selection_strategy {
+        object.key("messageSelectionStrategy").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.prompt_attempts_specification {
+    if let Some(var_6) = &input.prompt_attempts_specification {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("promptAttemptsSpecification").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_7 = object.key("promptAttemptsSpecification").start_object();
+        for (key_8, value_9) in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = object_9.key(key_10.as_str()).start_object();
-                crate::protocol_serde::shape_prompt_attempt_specification::ser_prompt_attempt_specification(&mut object_12, value_11)?;
-                object_12.finish();
+                let mut object_10 = object_7.key(key_8.as_str()).start_object();
+                crate::protocol_serde::shape_prompt_attempt_specification::ser_prompt_attempt_specification(&mut object_10, value_9)?;
+                object_10.finish();
             }
         }
-        object_9.finish();
+        object_7.finish();
     }
     Ok(())
 }

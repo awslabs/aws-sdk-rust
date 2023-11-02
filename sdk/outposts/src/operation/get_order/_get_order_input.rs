@@ -27,6 +27,7 @@ pub struct GetOrderInputBuilder {
 }
 impl GetOrderInputBuilder {
     /// <p>The ID of the order.</p>
+    /// This field is required.
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_id = ::std::option::Option::Some(input.into());
         self

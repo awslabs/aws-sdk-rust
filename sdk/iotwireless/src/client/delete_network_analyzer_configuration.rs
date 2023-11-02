@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNetworkAnalyzerConfiguration`](crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_name(impl Into<String>)`](crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder::configuration_name) / [`set_configuration_name(Option<String>)`](crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder::set_configuration_name): <p>Name of the network analyzer configuration.</p>
+    ///   - [`configuration_name(impl Into<String>)`](crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder::configuration_name) / [`set_configuration_name(Option<String>)`](crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationFluentBuilder::set_configuration_name):<br>required: **true**<br><p>Name of the network analyzer configuration.</p><br>
     /// - On success, responds with [`DeleteNetworkAnalyzerConfigurationOutput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteNetworkAnalyzerConfigurationError>`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationError)
     pub fn delete_network_analyzer_configuration(

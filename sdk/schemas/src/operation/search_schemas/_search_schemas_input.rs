@@ -48,6 +48,7 @@ pub struct SearchSchemasInputBuilder {
 }
 impl SearchSchemasInputBuilder {
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
+    /// This field is required.
     pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keywords = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl SearchSchemasInputBuilder {
         &self.next_token
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DetectStackResourceDriftOutputBuilder {
 }
 impl DetectStackResourceDriftOutputBuilder {
     /// <p>Information about whether the resource's actual configuration has drifted from its expected template configuration, including actual and expected property values and any differences detected.</p>
+    /// This field is required.
     pub fn stack_resource_drift(mut self, input: crate::types::StackResourceDrift) -> Self {
         self.stack_resource_drift = ::std::option::Option::Some(input);
         self

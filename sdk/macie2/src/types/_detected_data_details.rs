@@ -28,6 +28,7 @@ pub struct DetectedDataDetailsBuilder {
 }
 impl DetectedDataDetailsBuilder {
     /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

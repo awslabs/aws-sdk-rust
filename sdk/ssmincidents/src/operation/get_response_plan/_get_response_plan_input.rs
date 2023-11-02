@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResponsePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl GetResponsePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl GetResponsePlanInput {
@@ -27,6 +28,7 @@ pub struct GetResponsePlanInputBuilder {
 }
 impl GetResponsePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,18 @@ impl GetResponsePlanInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetResponsePlanInput`](crate::operation::get_response_plan::GetResponsePlanInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_response_plan::builders::GetResponsePlanInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_response_plan::GetResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_response_plan::GetResponsePlanInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::get_response_plan::GetResponsePlanInput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetResponsePlanInput",
+                )
+            })?,
+        })
     }
 }

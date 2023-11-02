@@ -131,6 +131,7 @@ impl PutBucketAclInputBuilder {
         &self.access_control_policy
     }
     /// <p>The bucket to which to apply the ACL.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct ResumeSessionInputBuilder {
 }
 impl ResumeSessionInputBuilder {
     /// <p>The ID of the disconnected session to resume.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self

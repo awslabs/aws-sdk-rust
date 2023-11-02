@@ -8,14 +8,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputConfig {
     /// <p>The name of the bucket your output will go to.</p>
-    pub s3_bucket: ::std::option::Option<::std::string::String>,
+    pub s3_bucket: ::std::string::String,
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
     pub s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl OutputConfig {
     /// <p>The name of the bucket your output will go to.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket.as_deref()
+    pub fn s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket.deref()
     }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
     pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
@@ -38,6 +39,7 @@ pub struct OutputConfigBuilder {
 }
 impl OutputConfigBuilder {
     /// <p>The name of the bucket your output will go to.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -66,10 +68,17 @@ impl OutputConfigBuilder {
         &self.s3_prefix
     }
     /// Consumes the builder and constructs a [`OutputConfig`](crate::types::OutputConfig).
-    pub fn build(self) -> crate::types::OutputConfig {
-        crate::types::OutputConfig {
-            s3_bucket: self.s3_bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket`](crate::types::builders::OutputConfigBuilder::s3_bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputConfig {
+            s3_bucket: self.s3_bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_bucket",
+                    "s3_bucket was not specified but it is required when building OutputConfig",
+                )
+            })?,
             s3_prefix: self.s3_prefix,
-        }
+        })
     }
 }

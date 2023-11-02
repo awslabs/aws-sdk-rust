@@ -11,12 +11,16 @@ pub struct Plan {
 }
 impl Plan {
     /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods.</p>
-    pub fn stages(&self) -> ::std::option::Option<&[crate::types::Stage]> {
-        self.stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stages.is_none()`.
+    pub fn stages(&self) -> &[crate::types::Stage] {
+        self.stages.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan. </p>
-    pub fn rotation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.rotation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rotation_ids.is_none()`.
+    pub fn rotation_ids(&self) -> &[::std::string::String] {
+        self.rotation_ids.as_deref().unwrap_or_default()
     }
 }
 impl Plan {

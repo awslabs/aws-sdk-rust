@@ -9,8 +9,10 @@ pub struct BatchUpdateDetectorOutput {
 }
 impl BatchUpdateDetectorOutput {
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
-    pub fn batch_update_detector_error_entries(&self) -> ::std::option::Option<&[crate::types::BatchUpdateDetectorErrorEntry]> {
-        self.batch_update_detector_error_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.batch_update_detector_error_entries.is_none()`.
+    pub fn batch_update_detector_error_entries(&self) -> &[crate::types::BatchUpdateDetectorErrorEntry] {
+        self.batch_update_detector_error_entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdateDetectorOutput {

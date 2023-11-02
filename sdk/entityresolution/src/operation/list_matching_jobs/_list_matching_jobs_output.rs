@@ -11,8 +11,10 @@ pub struct ListMatchingJobsOutput {
 }
 impl ListMatchingJobsOutput {
     /// <p>A list of <code>JobSummary</code> objects, each of which contain the ID, status, start time, and end time of a job.</p>
-    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::JobSummary]> {
-        self.jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
+    pub fn jobs(&self) -> &[crate::types::JobSummary] {
+        self.jobs.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

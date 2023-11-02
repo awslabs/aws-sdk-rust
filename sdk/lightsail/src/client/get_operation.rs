@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOperation`](crate::operation::get_operation::builders::GetOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`operation_id(impl Into<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::set_operation_id): <p>A GUID used to identify the operation.</p>
+    ///   - [`operation_id(impl Into<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::get_operation::builders::GetOperationFluentBuilder::set_operation_id):<br>required: **true**<br><p>A GUID used to identify the operation.</p><br>
     /// - On success, responds with [`GetOperationOutput`](crate::operation::get_operation::GetOperationOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::get_operation::GetOperationOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<GetOperationError>`](crate::operation::get_operation::GetOperationError)

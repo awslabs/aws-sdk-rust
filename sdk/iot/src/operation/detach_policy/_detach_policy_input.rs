@@ -34,6 +34,7 @@ pub struct DetachPolicyInputBuilder {
 }
 impl DetachPolicyInputBuilder {
     /// <p>The policy to detach.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetachPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The target from which the policy will be detached.</p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self

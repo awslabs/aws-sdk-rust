@@ -22,12 +22,16 @@ impl ModifyDbClusterEndpointInput {
         self.endpoint_type.as_deref()
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.static_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_members.is_none()`.
+    pub fn static_members(&self) -> &[::std::string::String] {
+        self.static_members.as_deref().unwrap_or_default()
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_members.is_none()`.
+    pub fn excluded_members(&self) -> &[::std::string::String] {
+        self.excluded_members.as_deref().unwrap_or_default()
     }
 }
 impl ModifyDbClusterEndpointInput {
@@ -48,6 +52,7 @@ pub struct ModifyDbClusterEndpointInputBuilder {
 }
 impl ModifyDbClusterEndpointInputBuilder {
     /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
+    /// This field is required.
     pub fn db_cluster_endpoint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_endpoint_identifier = ::std::option::Option::Some(input.into());
         self

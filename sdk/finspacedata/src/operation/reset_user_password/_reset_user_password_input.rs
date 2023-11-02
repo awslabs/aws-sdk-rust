@@ -34,6 +34,7 @@ pub struct ResetUserPasswordInputBuilder {
 }
 impl ResetUserPasswordInputBuilder {
     /// <p>The unique identifier of the user that a temporary password is requested for.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

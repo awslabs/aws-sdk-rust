@@ -54,13 +54,17 @@ where
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(i32::try_from)
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'integerValue' cannot be null")
+                                })?,
                         )),
                         "stringValue" => Some(crate::types::WorkflowStepOutputUnion::StringValue(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
-                                .unwrap_or_default(),
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringValue' cannot be null")
+                                })?,
                         )),
                         "listOfStringValue" => Some(crate::types::WorkflowStepOutputUnion::ListOfStringValue(
                             crate::protocol_serde::shape_string_list::de_string_list(tokens)?.ok_or_else(|| {

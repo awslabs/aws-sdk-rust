@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemInput {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
-    pub target_arn: ::std::option::Option<::std::string::String>,
+    pub target_arn: ::std::string::String,
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemInput {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
-        self.target_arn.as_deref()
+    pub fn target_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_arn.deref()
     }
     /// <p> A list containing the ARNs of resources to be disassociated. </p>
-    pub fn resource_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resource_arns.as_deref()
+    pub fn resource_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.resource_arns.deref()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
@@ -43,6 +45,7 @@ pub struct BatchDisassociateResourcesFromCustomLineItemInputBuilder {
 }
 impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     /// <p> A percentage custom line item ARN to disassociate the resources from. </p>
+    /// This field is required.
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,9 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
         &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_arn`](crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemInputBuilder::target_arn)
+    /// - [`resource_arns`](crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemInputBuilder::resource_arns)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -99,8 +105,18 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput {
-                target_arn: self.target_arn,
-                resource_arns: self.resource_arns,
+                target_arn: self.target_arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "target_arn",
+                        "target_arn was not specified but it is required when building BatchDisassociateResourcesFromCustomLineItemInput",
+                    )
+                })?,
+                resource_arns: self.resource_arns.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arns",
+                        "resource_arns was not specified but it is required when building BatchDisassociateResourcesFromCustomLineItemInput",
+                    )
+                })?,
                 billing_period_range: self.billing_period_range,
             },
         )

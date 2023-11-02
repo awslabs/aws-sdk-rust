@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TdscdmaObj {
     /// <p>Mobile Country Code.</p>
-    pub mcc: ::std::option::Option<i32>,
+    pub mcc: i32,
     /// <p>Mobile Network Code.</p>
-    pub mnc: ::std::option::Option<i32>,
+    pub mnc: i32,
     /// <p>Location Area Code.</p>
     pub lac: ::std::option::Option<i32>,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub utran_cid: ::std::option::Option<i32>,
+    pub utran_cid: i32,
     /// <p>TD-SCDMA local identification (local ID) information.</p>
     pub tdscdma_local_id: ::std::option::Option<crate::types::TdscdmaLocalId>,
     /// <p>TD-SCDMA Timing advance.</p>
@@ -25,11 +25,11 @@ pub struct TdscdmaObj {
 }
 impl TdscdmaObj {
     /// <p>Mobile Country Code.</p>
-    pub fn mcc(&self) -> ::std::option::Option<i32> {
+    pub fn mcc(&self) -> i32 {
         self.mcc
     }
     /// <p>Mobile Network Code.</p>
-    pub fn mnc(&self) -> ::std::option::Option<i32> {
+    pub fn mnc(&self) -> i32 {
         self.mnc
     }
     /// <p>Location Area Code.</p>
@@ -37,7 +37,7 @@ impl TdscdmaObj {
         self.lac
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
-    pub fn utran_cid(&self) -> ::std::option::Option<i32> {
+    pub fn utran_cid(&self) -> i32 {
         self.utran_cid
     }
     /// <p>TD-SCDMA local identification (local ID) information.</p>
@@ -57,8 +57,10 @@ impl TdscdmaObj {
         self.path_loss
     }
     /// <p>TD-SCDMA object for network measurement reports.</p>
-    pub fn tdscdma_nmr(&self) -> ::std::option::Option<&[crate::types::TdscdmaNmrObj]> {
-        self.tdscdma_nmr.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tdscdma_nmr.is_none()`.
+    pub fn tdscdma_nmr(&self) -> &[crate::types::TdscdmaNmrObj] {
+        self.tdscdma_nmr.as_deref().unwrap_or_default()
     }
 }
 impl TdscdmaObj {
@@ -84,6 +86,7 @@ pub struct TdscdmaObjBuilder {
 }
 impl TdscdmaObjBuilder {
     /// <p>Mobile Country Code.</p>
+    /// This field is required.
     pub fn mcc(mut self, input: i32) -> Self {
         self.mcc = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl TdscdmaObjBuilder {
         &self.mcc
     }
     /// <p>Mobile Network Code.</p>
+    /// This field is required.
     pub fn mnc(mut self, input: i32) -> Self {
         self.mnc = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl TdscdmaObjBuilder {
         &self.lac
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    /// This field is required.
     pub fn utran_cid(mut self, input: i32) -> Self {
         self.utran_cid = ::std::option::Option::Some(input);
         self
@@ -216,17 +221,36 @@ impl TdscdmaObjBuilder {
         &self.tdscdma_nmr
     }
     /// Consumes the builder and constructs a [`TdscdmaObj`](crate::types::TdscdmaObj).
-    pub fn build(self) -> crate::types::TdscdmaObj {
-        crate::types::TdscdmaObj {
-            mcc: self.mcc,
-            mnc: self.mnc,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mcc`](crate::types::builders::TdscdmaObjBuilder::mcc)
+    /// - [`mnc`](crate::types::builders::TdscdmaObjBuilder::mnc)
+    /// - [`utran_cid`](crate::types::builders::TdscdmaObjBuilder::utran_cid)
+    pub fn build(self) -> ::std::result::Result<crate::types::TdscdmaObj, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TdscdmaObj {
+            mcc: self.mcc.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mcc",
+                    "mcc was not specified but it is required when building TdscdmaObj",
+                )
+            })?,
+            mnc: self.mnc.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mnc",
+                    "mnc was not specified but it is required when building TdscdmaObj",
+                )
+            })?,
             lac: self.lac,
-            utran_cid: self.utran_cid,
+            utran_cid: self.utran_cid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "utran_cid",
+                    "utran_cid was not specified but it is required when building TdscdmaObj",
+                )
+            })?,
             tdscdma_local_id: self.tdscdma_local_id,
             tdscdma_timing_advance: self.tdscdma_timing_advance,
             rscp: self.rscp,
             path_loss: self.path_loss,
             tdscdma_nmr: self.tdscdma_nmr,
-        }
+        })
     }
 }

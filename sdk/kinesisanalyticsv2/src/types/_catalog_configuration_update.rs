@@ -28,6 +28,7 @@ pub struct CatalogConfigurationUpdateBuilder {
 }
 impl CatalogConfigurationUpdateBuilder {
     /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
+    /// This field is required.
     pub fn glue_data_catalog_configuration_update(mut self, input: crate::types::GlueDataCatalogConfigurationUpdate) -> Self {
         self.glue_data_catalog_configuration_update = ::std::option::Option::Some(input);
         self

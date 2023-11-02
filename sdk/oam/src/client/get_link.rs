@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLink`](crate::operation::get_link::builders::GetLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_link::builders::GetLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_link::builders::GetLinkFluentBuilder::set_identifier): <p>The ARN of the link to retrieve information for.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_link::builders::GetLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_link::builders::GetLinkFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN of the link to retrieve information for.</p><br>
     /// - On success, responds with [`GetLinkOutput`](crate::operation::get_link::GetLinkOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_link::GetLinkOutput::arn): <p>The ARN of the link.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_link::GetLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>

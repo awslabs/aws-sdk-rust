@@ -148,6 +148,7 @@ pub struct UpdateIdentityProviderInputBuilder {
 }
 impl UpdateIdentityProviderInputBuilder {
     /// <p>The ARN of the identity provider.</p>
+    /// This field is required.
     pub fn identity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self

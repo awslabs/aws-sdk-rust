@@ -15,8 +15,10 @@ impl UpdateFPorts {
         self.positioning.as_ref()
     }
     /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[crate::types::ApplicationConfig]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[crate::types::ApplicationConfig] {
+        self.applications.as_deref().unwrap_or_default()
     }
 }
 impl UpdateFPorts {

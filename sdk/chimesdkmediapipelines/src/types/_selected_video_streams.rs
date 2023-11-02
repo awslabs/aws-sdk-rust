@@ -11,12 +11,16 @@ pub struct SelectedVideoStreams {
 }
 impl SelectedVideoStreams {
     /// <p>The attendee IDs of the streams selected for a media pipeline. </p>
-    pub fn attendee_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attendee_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendee_ids.is_none()`.
+    pub fn attendee_ids(&self) -> &[::std::string::String] {
+        self.attendee_ids.as_deref().unwrap_or_default()
     }
     /// <p>The external user IDs of the streams selected for a media pipeline.</p>
-    pub fn external_user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.external_user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_user_ids.is_none()`.
+    pub fn external_user_ids(&self) -> &[::std::string::String] {
+        self.external_user_ids.as_deref().unwrap_or_default()
     }
 }
 impl SelectedVideoStreams {

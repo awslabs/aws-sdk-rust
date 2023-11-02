@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRealtimeLogConfig`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::set_name): <p>The name of the real-time log configuration to delete.</p>
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::set_name):<br>required: **false**<br><p>The name of the real-time log configuration to delete.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder::set_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p><br>
     /// - On success, responds with [`DeleteRealtimeLogConfigOutput`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteRealtimeLogConfigError>`](crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError)
     pub fn delete_realtime_log_config(&self) -> crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigFluentBuilder {

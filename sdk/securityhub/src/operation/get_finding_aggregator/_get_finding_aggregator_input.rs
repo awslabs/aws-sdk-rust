@@ -27,6 +27,7 @@ pub struct GetFindingAggregatorInputBuilder {
 }
 impl GetFindingAggregatorInputBuilder {
     /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    /// This field is required.
     pub fn finding_aggregator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_aggregator_arn = ::std::option::Option::Some(input.into());
         self

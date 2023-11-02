@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
@@ -15,12 +15,14 @@ pub struct InventoryFilter {
 }
 impl InventoryFilter {
     /// <p>The name of the filter key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>Inventory filter values. Example: inventory filter where managed node IDs are specified as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>. </p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The type of filter.</p> <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -46,6 +48,7 @@ pub struct InventoryFilterBuilder {
 }
 impl InventoryFilterBuilder {
     /// <p>The name of the filter key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -100,11 +103,24 @@ impl InventoryFilterBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
-    pub fn build(self) -> crate::types::InventoryFilter {
-        crate::types::InventoryFilter {
-            key: self.key,
-            values: self.values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::InventoryFilterBuilder::key)
+    /// - [`values`](crate::types::builders::InventoryFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building InventoryFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building InventoryFilter",
+                )
+            })?,
             r#type: self.r#type,
-        }
+        })
     }
 }

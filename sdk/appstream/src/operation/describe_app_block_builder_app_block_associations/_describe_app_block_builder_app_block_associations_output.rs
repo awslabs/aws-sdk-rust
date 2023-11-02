@@ -11,8 +11,10 @@ pub struct DescribeAppBlockBuilderAppBlockAssociationsOutput {
 }
 impl DescribeAppBlockBuilderAppBlockAssociationsOutput {
     /// <p>This list of app block builders associated with app blocks.</p>
-    pub fn app_block_builder_app_block_associations(&self) -> ::std::option::Option<&[crate::types::AppBlockBuilderAppBlockAssociation]> {
-        self.app_block_builder_app_block_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_block_builder_app_block_associations.is_none()`.
+    pub fn app_block_builder_app_block_associations(&self) -> &[crate::types::AppBlockBuilderAppBlockAssociation] {
+        self.app_block_builder_app_block_associations.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

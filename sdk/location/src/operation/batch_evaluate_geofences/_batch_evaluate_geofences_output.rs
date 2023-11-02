@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesOutput {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchEvaluateGeofencesError>,
     _request_id: Option<String>,
 }
 impl BatchEvaluateGeofencesOutput {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchEvaluateGeofencesError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchEvaluateGeofencesError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchEvaluateGeofencesOutput {
@@ -63,10 +64,22 @@ impl BatchEvaluateGeofencesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesOutput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput).
-    pub fn build(self) -> crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput {
-        crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput {
-            errors: self.errors,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`errors`](crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesOutputBuilder::errors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput {
+            errors: self.errors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "errors",
+                    "errors was not specified but it is required when building BatchEvaluateGeofencesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

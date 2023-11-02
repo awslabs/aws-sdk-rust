@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSigningJob`](crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder::set_job_id): <p>The ID of the signing job on input.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_signing_job::builders::DescribeSigningJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The ID of the signing job on input.</p><br>
     /// - On success, responds with [`DescribeSigningJobOutput`](crate::operation::describe_signing_job::DescribeSigningJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::describe_signing_job::DescribeSigningJobOutput::job_id): <p>The ID of the signing job on output.</p>
     ///   - [`source(Option<Source>)`](crate::operation::describe_signing_job::DescribeSigningJobOutput::source): <p>The object that contains the name of your S3 bucket or your raw code.</p>

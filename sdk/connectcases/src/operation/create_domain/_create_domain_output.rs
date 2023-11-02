@@ -4,25 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    pub domain_arn: ::std::option::Option<::std::string::String>,
+    pub domain_arn: ::std::string::String,
     /// <p>The status of the domain.</p>
-    pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
+    pub domain_status: crate::types::DomainStatus,
     _request_id: Option<String>,
 }
 impl CreateDomainOutput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
-    pub fn domain_arn(&self) -> ::std::option::Option<&str> {
-        self.domain_arn.as_deref()
+    pub fn domain_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_arn.deref()
     }
     /// <p>The status of the domain.</p>
-    pub fn domain_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
-        self.domain_status.as_ref()
+    pub fn domain_status(&self) -> &crate::types::DomainStatus {
+        &self.domain_status
     }
 }
 impl ::aws_http::request_id::RequestId for CreateDomainOutput {
@@ -48,6 +50,7 @@ pub struct CreateDomainOutputBuilder {
 }
 impl CreateDomainOutputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateDomainOutputBuilder {
         &self.domain_id
     }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
+    /// This field is required.
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl CreateDomainOutputBuilder {
         &self.domain_arn
     }
     /// <p>The status of the domain.</p>
+    /// This field is required.
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.domain_status = ::std::option::Option::Some(input);
         self
@@ -99,12 +104,33 @@ impl CreateDomainOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
-    pub fn build(self) -> crate::operation::create_domain::CreateDomainOutput {
-        crate::operation::create_domain::CreateDomainOutput {
-            domain_id: self.domain_id,
-            domain_arn: self.domain_arn,
-            domain_status: self.domain_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::create_domain::builders::CreateDomainOutputBuilder::domain_id)
+    /// - [`domain_arn`](crate::operation::create_domain::builders::CreateDomainOutputBuilder::domain_arn)
+    /// - [`domain_status`](crate::operation::create_domain::builders::CreateDomainOutputBuilder::domain_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainOutput {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building CreateDomainOutput",
+                )
+            })?,
+            domain_arn: self.domain_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_arn",
+                    "domain_arn was not specified but it is required when building CreateDomainOutput",
+                )
+            })?,
+            domain_status: self.domain_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_status",
+                    "domain_status was not specified but it is required when building CreateDomainOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

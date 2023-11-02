@@ -4,18 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetDefaultMessageTypeInput {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub configuration_set_name: ::std::string::String,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub message_type: ::std::option::Option<crate::types::MessageType>,
+    pub message_type: crate::types::MessageType,
 }
 impl SetDefaultMessageTypeInput {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
-        self.configuration_set_name.as_deref()
+    pub fn configuration_set_name(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration_set_name.deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
-        self.message_type.as_ref()
+    pub fn message_type(&self) -> &crate::types::MessageType {
+        &self.message_type
     }
 }
 impl SetDefaultMessageTypeInput {
@@ -34,6 +35,7 @@ pub struct SetDefaultMessageTypeInputBuilder {
 }
 impl SetDefaultMessageTypeInputBuilder {
     /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +50,7 @@ impl SetDefaultMessageTypeInputBuilder {
         &self.configuration_set_name
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    /// This field is required.
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
         self
@@ -62,13 +65,26 @@ impl SetDefaultMessageTypeInputBuilder {
         &self.message_type
     }
     /// Consumes the builder and constructs a [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration_set_name`](crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder::configuration_set_name)
+    /// - [`message_type`](crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder::message_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::set_default_message_type::SetDefaultMessageTypeInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_default_message_type::SetDefaultMessageTypeInput {
-            configuration_set_name: self.configuration_set_name,
-            message_type: self.message_type,
+            configuration_set_name: self.configuration_set_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configuration_set_name",
+                    "configuration_set_name was not specified but it is required when building SetDefaultMessageTypeInput",
+                )
+            })?,
+            message_type: self.message_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message_type",
+                    "message_type was not specified but it is required when building SetDefaultMessageTypeInput",
+                )
+            })?,
         })
     }
 }

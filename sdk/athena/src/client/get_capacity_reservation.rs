@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCapacityReservation`](crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_capacity_reservation::builders::GetCapacityReservationFluentBuilder::set_name):<br>required: **true**<br><p>The name of the capacity reservation.</p><br>
     /// - On success, responds with [`GetCapacityReservationOutput`](crate::operation::get_capacity_reservation::GetCapacityReservationOutput) with field(s):
     ///   - [`capacity_reservation(Option<CapacityReservation>)`](crate::operation::get_capacity_reservation::GetCapacityReservationOutput::capacity_reservation): <p>The requested capacity reservation structure.</p>
     /// - On failure, responds with [`SdkError<GetCapacityReservationError>`](crate::operation::get_capacity_reservation::GetCapacityReservationError)

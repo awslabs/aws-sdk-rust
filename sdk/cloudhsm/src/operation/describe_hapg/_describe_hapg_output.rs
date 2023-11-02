@@ -34,16 +34,22 @@ impl DescribeHapgOutput {
         self.hapg_serial.as_deref()
     }
     /// <p></p>
-    pub fn hsms_last_action_failed(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hsms_last_action_failed.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hsms_last_action_failed.is_none()`.
+    pub fn hsms_last_action_failed(&self) -> &[::std::string::String] {
+        self.hsms_last_action_failed.as_deref().unwrap_or_default()
     }
     /// <p></p>
-    pub fn hsms_pending_deletion(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hsms_pending_deletion.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hsms_pending_deletion.is_none()`.
+    pub fn hsms_pending_deletion(&self) -> &[::std::string::String] {
+        self.hsms_pending_deletion.as_deref().unwrap_or_default()
     }
     /// <p></p>
-    pub fn hsms_pending_registration(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hsms_pending_registration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hsms_pending_registration.is_none()`.
+    pub fn hsms_pending_registration(&self) -> &[::std::string::String] {
+        self.hsms_pending_registration.as_deref().unwrap_or_default()
     }
     /// <p>The label for the high-availability partition group.</p>
     pub fn label(&self) -> ::std::option::Option<&str> {
@@ -54,8 +60,10 @@ impl DescribeHapgOutput {
         self.last_modified_timestamp.as_deref()
     }
     /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
-    pub fn partition_serial_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_serial_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_serial_list.is_none()`.
+    pub fn partition_serial_list(&self) -> &[::std::string::String] {
+        self.partition_serial_list.as_deref().unwrap_or_default()
     }
     /// <p>The state of the high-availability partition group.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CloudHsmObjectState> {

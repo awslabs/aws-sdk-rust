@@ -27,6 +27,7 @@ pub struct DescribeArtifactInputBuilder {
 }
 impl DescribeArtifactInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    /// This field is required.
     pub fn artifact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_arn = ::std::option::Option::Some(input.into());
         self

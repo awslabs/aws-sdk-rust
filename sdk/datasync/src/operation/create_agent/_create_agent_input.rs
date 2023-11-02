@@ -29,8 +29,10 @@ impl CreateAgentInput {
         self.agent_name.as_deref()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least one tag for your agent.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p> <important>
     /// <p>The VPC endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
@@ -39,12 +41,16 @@ impl CreateAgentInput {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the subnet where DataSync creates and manages the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for your transfer. You can only specify one ARN.</p>
-    pub fn subnet_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
+    pub fn subnet_arns(&self) -> &[::std::string::String] {
+        self.subnet_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        self.security_group_arns.as_deref().unwrap_or_default()
     }
 }
 impl CreateAgentInput {
@@ -67,6 +73,7 @@ pub struct CreateAgentInputBuilder {
 }
 impl CreateAgentInputBuilder {
     /// <p>Specifies your DataSync agent's activation key. If you don't have an activation key, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.</p>
+    /// This field is required.
     pub fn activation_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_key = ::std::option::Option::Some(input.into());
         self

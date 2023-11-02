@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePackagingGroup`](crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder::set_id):<br>required: **true**<br>The ID of a MediaPackage VOD PackagingGroup resource.<br>
     /// - On success, responds with [`DescribePackagingGroupOutput`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput) with field(s):
     ///   - [`approximate_asset_count(Option<i32>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
     ///   - [`arn(Option<String>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::arn): The ARN of the PackagingGroup.

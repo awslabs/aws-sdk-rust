@@ -27,6 +27,7 @@ pub struct DeleteSnapshotScheduleInputBuilder {
 }
 impl DeleteSnapshotScheduleInputBuilder {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
+    /// This field is required.
     pub fn schedule_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_identifier = ::std::option::Option::Some(input.into());
         self

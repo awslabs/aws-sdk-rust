@@ -90,6 +90,7 @@ pub struct PutObjectInputBuilder {
 }
 impl PutObjectInputBuilder {
     /// Backup job Id for the in-progress backup.
+    /// This field is required.
     pub fn backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_job_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl PutObjectInputBuilder {
         &self.backup_job_id
     }
     /// The name of the Object to be uploaded.
+    /// This field is required.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_name = ::std::option::Option::Some(input.into());
         self

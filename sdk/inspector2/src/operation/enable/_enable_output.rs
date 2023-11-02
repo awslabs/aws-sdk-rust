@@ -4,19 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableOutput {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
+    pub accounts: ::std::vec::Vec<crate::types::Account>,
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
     pub failed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>>,
     _request_id: Option<String>,
 }
 impl EnableOutput {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[crate::types::Account]> {
-        self.accounts.as_deref()
+    pub fn accounts(&self) -> &[crate::types::Account] {
+        use std::ops::Deref;
+        self.accounts.deref()
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>
-    pub fn failed_accounts(&self) -> ::std::option::Option<&[crate::types::FailedAccount]> {
-        self.failed_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_accounts.is_none()`.
+    pub fn failed_accounts(&self) -> &[crate::types::FailedAccount] {
+        self.failed_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for EnableOutput {
@@ -90,11 +93,18 @@ impl EnableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`EnableOutput`](crate::operation::enable::EnableOutput).
-    pub fn build(self) -> crate::operation::enable::EnableOutput {
-        crate::operation::enable::EnableOutput {
-            accounts: self.accounts,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`accounts`](crate::operation::enable::builders::EnableOutputBuilder::accounts)
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable::EnableOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::enable::EnableOutput {
+            accounts: self.accounts.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "accounts",
+                    "accounts was not specified but it is required when building EnableOutput",
+                )
+            })?,
             failed_accounts: self.failed_accounts,
             _request_id: self._request_id,
-        }
+        })
     }
 }

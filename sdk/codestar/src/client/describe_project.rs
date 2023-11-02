@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProject`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_id): <p>The ID of the project.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the project.</p><br>
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::name): <p>The display name for the project.</p>
     ///   - [`id(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::id): <p>The ID of the project.</p>

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewFrame {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
-    pub start_column_index: ::std::option::Option<i32>,
+    pub start_column_index: i32,
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
     pub column_range: ::std::option::Option<i32>,
     /// <p>A list of columns to hide in the view frame.</p>
@@ -19,7 +19,7 @@ pub struct ViewFrame {
 }
 impl ViewFrame {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
-    pub fn start_column_index(&self) -> ::std::option::Option<i32> {
+    pub fn start_column_index(&self) -> i32 {
         self.start_column_index
     }
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
@@ -27,8 +27,10 @@ impl ViewFrame {
         self.column_range
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn hidden_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.hidden_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hidden_columns.is_none()`.
+    pub fn hidden_columns(&self) -> &[::std::string::String] {
+        self.hidden_columns.as_deref().unwrap_or_default()
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     pub fn start_row_index(&self) -> ::std::option::Option<i32> {
@@ -63,6 +65,7 @@ pub struct ViewFrameBuilder {
 }
 impl ViewFrameBuilder {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
+    /// This field is required.
     pub fn start_column_index(mut self, input: i32) -> Self {
         self.start_column_index = ::std::option::Option::Some(input);
         self
@@ -153,14 +156,21 @@ impl ViewFrameBuilder {
         &self.analytics
     }
     /// Consumes the builder and constructs a [`ViewFrame`](crate::types::ViewFrame).
-    pub fn build(self) -> crate::types::ViewFrame {
-        crate::types::ViewFrame {
-            start_column_index: self.start_column_index,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_column_index`](crate::types::builders::ViewFrameBuilder::start_column_index)
+    pub fn build(self) -> ::std::result::Result<crate::types::ViewFrame, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ViewFrame {
+            start_column_index: self.start_column_index.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_column_index",
+                    "start_column_index was not specified but it is required when building ViewFrame",
+                )
+            })?,
             column_range: self.column_range,
             hidden_columns: self.hidden_columns,
             start_row_index: self.start_row_index,
             row_range: self.row_range,
             analytics: self.analytics,
-        }
+        })
     }
 }

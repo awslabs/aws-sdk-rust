@@ -114,6 +114,7 @@ pub struct DiscoverInstancesInputBuilder {
 }
 impl DiscoverInstancesInputBuilder {
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    /// This field is required.
     pub fn namespace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_name = ::std::option::Option::Some(input.into());
         self
@@ -128,6 +129,7 @@ impl DiscoverInstancesInputBuilder {
         &self.namespace_name
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self

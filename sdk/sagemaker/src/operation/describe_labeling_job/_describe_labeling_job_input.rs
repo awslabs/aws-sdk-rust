@@ -27,6 +27,7 @@ pub struct DescribeLabelingJobInputBuilder {
 }
 impl DescribeLabelingJobInputBuilder {
     /// <p>The name of the labeling job to return information for.</p>
+    /// This field is required.
     pub fn labeling_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_name = ::std::option::Option::Some(input.into());
         self

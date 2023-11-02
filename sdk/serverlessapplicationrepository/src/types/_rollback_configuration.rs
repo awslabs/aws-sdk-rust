@@ -15,8 +15,10 @@ impl RollbackConfiguration {
         self.monitoring_time_in_minutes
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn rollback_triggers(&self) -> ::std::option::Option<&[crate::types::RollbackTrigger]> {
-        self.rollback_triggers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rollback_triggers.is_none()`.
+    pub fn rollback_triggers(&self) -> &[crate::types::RollbackTrigger] {
+        self.rollback_triggers.as_deref().unwrap_or_default()
     }
 }
 impl RollbackConfiguration {

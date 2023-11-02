@@ -15,8 +15,10 @@ impl ListPackagingGroupsOutput {
         self.next_token.as_deref()
     }
     /// A list of MediaPackage VOD PackagingGroup resources.
-    pub fn packaging_groups(&self) -> ::std::option::Option<&[crate::types::PackagingGroup]> {
-        self.packaging_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.packaging_groups.is_none()`.
+    pub fn packaging_groups(&self) -> &[crate::types::PackagingGroup] {
+        self.packaging_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPackagingGroupsOutput {

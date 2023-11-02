@@ -11,8 +11,10 @@ pub struct DescribeStorageVirtualMachinesOutput {
 }
 impl DescribeStorageVirtualMachinesOutput {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
-    pub fn storage_virtual_machines(&self) -> ::std::option::Option<&[crate::types::StorageVirtualMachine]> {
-        self.storage_virtual_machines.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_virtual_machines.is_none()`.
+    pub fn storage_virtual_machines(&self) -> &[crate::types::StorageVirtualMachine] {
+        self.storage_virtual_machines.as_deref().unwrap_or_default()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

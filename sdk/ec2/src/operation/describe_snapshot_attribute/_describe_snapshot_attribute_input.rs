@@ -41,6 +41,7 @@ pub struct DescribeSnapshotAttributeInputBuilder {
 }
 impl DescribeSnapshotAttributeInputBuilder {
     /// <p>The snapshot attribute you would like to view.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::SnapshotAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DescribeSnapshotAttributeInputBuilder {
         &self.attribute
     }
     /// <p>The ID of the EBS snapshot.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self

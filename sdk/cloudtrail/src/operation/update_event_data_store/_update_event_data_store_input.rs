@@ -42,8 +42,10 @@ impl UpdateEventDataStoreInput {
         self.name.as_deref()
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn advanced_event_selectors(&self) -> ::std::option::Option<&[crate::types::AdvancedEventSelector]> {
-        self.advanced_event_selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
+    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
@@ -100,6 +102,7 @@ pub struct UpdateEventDataStoreInputBuilder {
 }
 impl UpdateEventDataStoreInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+    /// This field is required.
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self

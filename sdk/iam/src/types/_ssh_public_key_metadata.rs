@@ -6,30 +6,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SshPublicKeyMetadata {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
-    pub user_name: ::std::option::Option<::std::string::String>,
+    pub user_name: ::std::string::String,
     /// <p>The unique identifier for the SSH public key.</p>
-    pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
+    pub ssh_public_key_id: ::std::string::String,
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
-    pub status: ::std::option::Option<crate::types::StatusType>,
+    pub status: crate::types::StatusType,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
-    pub upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub upload_date: ::aws_smithy_types::DateTime,
 }
 impl SshPublicKeyMetadata {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
-        self.user_name.as_deref()
+    pub fn user_name(&self) -> &str {
+        use std::ops::Deref;
+        self.user_name.deref()
     }
     /// <p>The unique identifier for the SSH public key.</p>
-    pub fn ssh_public_key_id(&self) -> ::std::option::Option<&str> {
-        self.ssh_public_key_id.as_deref()
+    pub fn ssh_public_key_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ssh_public_key_id.deref()
     }
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StatusType {
+        &self.status
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
-    pub fn upload_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.upload_date.as_ref()
+    pub fn upload_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.upload_date
     }
 }
 impl SshPublicKeyMetadata {
@@ -50,6 +52,7 @@ pub struct SshPublicKeyMetadataBuilder {
 }
 impl SshPublicKeyMetadataBuilder {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +67,7 @@ impl SshPublicKeyMetadataBuilder {
         &self.user_name
     }
     /// <p>The unique identifier for the SSH public key.</p>
+    /// This field is required.
     pub fn ssh_public_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +82,7 @@ impl SshPublicKeyMetadataBuilder {
         &self.ssh_public_key_id
     }
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -92,6 +97,7 @@ impl SshPublicKeyMetadataBuilder {
         &self.status
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
+    /// This field is required.
     pub fn upload_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.upload_date = ::std::option::Option::Some(input);
         self
@@ -106,12 +112,37 @@ impl SshPublicKeyMetadataBuilder {
         &self.upload_date
     }
     /// Consumes the builder and constructs a [`SshPublicKeyMetadata`](crate::types::SshPublicKeyMetadata).
-    pub fn build(self) -> crate::types::SshPublicKeyMetadata {
-        crate::types::SshPublicKeyMetadata {
-            user_name: self.user_name,
-            ssh_public_key_id: self.ssh_public_key_id,
-            status: self.status,
-            upload_date: self.upload_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_name`](crate::types::builders::SshPublicKeyMetadataBuilder::user_name)
+    /// - [`ssh_public_key_id`](crate::types::builders::SshPublicKeyMetadataBuilder::ssh_public_key_id)
+    /// - [`status`](crate::types::builders::SshPublicKeyMetadataBuilder::status)
+    /// - [`upload_date`](crate::types::builders::SshPublicKeyMetadataBuilder::upload_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKeyMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SshPublicKeyMetadata {
+            user_name: self.user_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_name",
+                    "user_name was not specified but it is required when building SshPublicKeyMetadata",
+                )
+            })?,
+            ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ssh_public_key_id",
+                    "ssh_public_key_id was not specified but it is required when building SshPublicKeyMetadata",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building SshPublicKeyMetadata",
+                )
+            })?,
+            upload_date: self.upload_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upload_date",
+                    "upload_date was not specified but it is required when building SshPublicKeyMetadata",
+                )
+            })?,
+        })
     }
 }

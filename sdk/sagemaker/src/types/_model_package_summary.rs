@@ -87,6 +87,7 @@ pub struct ModelPackageSummaryBuilder {
 }
 impl ModelPackageSummaryBuilder {
     /// <p>The name of the model package.</p>
+    /// This field is required.
     pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +130,7 @@ impl ModelPackageSummaryBuilder {
         &self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    /// This field is required.
     pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
@@ -157,6 +159,7 @@ impl ModelPackageSummaryBuilder {
         &self.model_package_description
     }
     /// <p>A timestamp that shows when the model package was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -171,6 +174,7 @@ impl ModelPackageSummaryBuilder {
         &self.creation_time
     }
     /// <p>The overall status of the model package.</p>
+    /// This field is required.
     pub fn model_package_status(mut self, input: crate::types::ModelPackageStatus) -> Self {
         self.model_package_status = ::std::option::Option::Some(input);
         self

@@ -42,6 +42,7 @@ pub struct UpgradeElasticsearchDomainInputBuilder {
 }
 impl UpgradeElasticsearchDomainInputBuilder {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UpgradeElasticsearchDomainInputBuilder {
         &self.domain_name
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    /// This field is required.
     pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self

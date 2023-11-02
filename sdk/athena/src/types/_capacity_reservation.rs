@@ -5,35 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservation {
     /// <p>The name of the capacity reservation.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The status of the capacity reservation.</p>
-    pub status: ::std::option::Option<crate::types::CapacityReservationStatus>,
+    pub status: crate::types::CapacityReservationStatus,
     /// <p>The number of data processing units requested.</p>
-    pub target_dpus: ::std::option::Option<i32>,
+    pub target_dpus: i32,
     /// <p>The number of data processing units currently allocated.</p>
-    pub allocated_dpus: ::std::option::Option<i32>,
+    pub allocated_dpus: i32,
     /// <p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>
     pub last_allocation: ::std::option::Option<crate::types::CapacityAllocation>,
     /// <p>The time of the most recent capacity allocation that succeeded.</p>
     pub last_successful_allocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time in UTC epoch millis when the capacity reservation was created.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
 }
 impl CapacityReservation {
     /// <p>The name of the capacity reservation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The status of the capacity reservation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CapacityReservationStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::CapacityReservationStatus {
+        &self.status
     }
     /// <p>The number of data processing units requested.</p>
-    pub fn target_dpus(&self) -> ::std::option::Option<i32> {
+    pub fn target_dpus(&self) -> i32 {
         self.target_dpus
     }
     /// <p>The number of data processing units currently allocated.</p>
-    pub fn allocated_dpus(&self) -> ::std::option::Option<i32> {
+    pub fn allocated_dpus(&self) -> i32 {
         self.allocated_dpus
     }
     /// <p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>
@@ -45,8 +46,8 @@ impl CapacityReservation {
         self.last_successful_allocation_time.as_ref()
     }
     /// <p>The time in UTC epoch millis when the capacity reservation was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
 }
 impl CapacityReservation {
@@ -70,6 +71,7 @@ pub struct CapacityReservationBuilder {
 }
 impl CapacityReservationBuilder {
     /// <p>The name of the capacity reservation.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl CapacityReservationBuilder {
         &self.name
     }
     /// <p>The status of the capacity reservation.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::CapacityReservationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl CapacityReservationBuilder {
         &self.status
     }
     /// <p>The number of data processing units requested.</p>
+    /// This field is required.
     pub fn target_dpus(mut self, input: i32) -> Self {
         self.target_dpus = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl CapacityReservationBuilder {
         &self.target_dpus
     }
     /// <p>The number of data processing units currently allocated.</p>
+    /// This field is required.
     pub fn allocated_dpus(mut self, input: i32) -> Self {
         self.allocated_dpus = ::std::option::Option::Some(input);
         self
@@ -154,6 +159,7 @@ impl CapacityReservationBuilder {
         &self.last_successful_allocation_time
     }
     /// <p>The time in UTC epoch millis when the capacity reservation was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -168,15 +174,46 @@ impl CapacityReservationBuilder {
         &self.creation_time
     }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
-    pub fn build(self) -> crate::types::CapacityReservation {
-        crate::types::CapacityReservation {
-            name: self.name,
-            status: self.status,
-            target_dpus: self.target_dpus,
-            allocated_dpus: self.allocated_dpus,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CapacityReservationBuilder::name)
+    /// - [`status`](crate::types::builders::CapacityReservationBuilder::status)
+    /// - [`target_dpus`](crate::types::builders::CapacityReservationBuilder::target_dpus)
+    /// - [`allocated_dpus`](crate::types::builders::CapacityReservationBuilder::allocated_dpus)
+    /// - [`creation_time`](crate::types::builders::CapacityReservationBuilder::creation_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityReservation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CapacityReservation {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CapacityReservation",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building CapacityReservation",
+                )
+            })?,
+            target_dpus: self.target_dpus.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_dpus",
+                    "target_dpus was not specified but it is required when building CapacityReservation",
+                )
+            })?,
+            allocated_dpus: self.allocated_dpus.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allocated_dpus",
+                    "allocated_dpus was not specified but it is required when building CapacityReservation",
+                )
+            })?,
             last_allocation: self.last_allocation,
             last_successful_allocation_time: self.last_successful_allocation_time,
-            creation_time: self.creation_time,
-        }
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building CapacityReservation",
+                )
+            })?,
+        })
     }
 }

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListVectorEnrichmentJobsOutput {
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-    pub vector_enrichment_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>,
+    pub vector_enrichment_job_summaries: ::std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVectorEnrichmentJobsOutput {
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-    pub fn vector_enrichment_job_summaries(&self) -> ::std::option::Option<&[crate::types::ListVectorEnrichmentJobOutputConfig]> {
-        self.vector_enrichment_job_summaries.as_deref()
+    pub fn vector_enrichment_job_summaries(&self) -> &[crate::types::ListVectorEnrichmentJobOutputConfig] {
+        use std::ops::Deref;
+        self.vector_enrichment_job_summaries.deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -96,12 +97,24 @@ impl ListVectorEnrichmentJobsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVectorEnrichmentJobsOutput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput).
-    pub fn build(self) -> crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput {
-        crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput {
-            vector_enrichment_job_summaries: self.vector_enrichment_job_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`vector_enrichment_job_summaries`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsOutputBuilder::vector_enrichment_job_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput {
+            vector_enrichment_job_summaries: self.vector_enrichment_job_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vector_enrichment_job_summaries",
+                    "vector_enrichment_job_summaries was not specified but it is required when building ListVectorEnrichmentJobsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ListVectorEnrichmentJobsOutputBuilder {

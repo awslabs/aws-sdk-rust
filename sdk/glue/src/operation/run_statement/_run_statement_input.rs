@@ -41,6 +41,7 @@ pub struct RunStatementInputBuilder {
 }
 impl RunStatementInputBuilder {
     /// <p>The Session Id of the statement to be run.</p>
+    /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RunStatementInputBuilder {
         &self.session_id
     }
     /// <p>The statement code to be run.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self

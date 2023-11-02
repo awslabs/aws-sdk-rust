@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrestoParameters {
     /// <p>Host.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>Port.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
     /// <p>Catalog.</p>
-    pub catalog: ::std::option::Option<::std::string::String>,
+    pub catalog: ::std::string::String,
 }
 impl PrestoParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>Port.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>Catalog.</p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
-        self.catalog.as_deref()
+    pub fn catalog(&self) -> &str {
+        use std::ops::Deref;
+        self.catalog.deref()
     }
 }
 impl PrestoParameters {
@@ -42,6 +44,7 @@ pub struct PrestoParametersBuilder {
 }
 impl PrestoParametersBuilder {
     /// <p>Host.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl PrestoParametersBuilder {
         &self.host
     }
     /// <p>Port.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl PrestoParametersBuilder {
         &self.port
     }
     /// <p>Catalog.</p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl PrestoParametersBuilder {
         &self.catalog
     }
     /// Consumes the builder and constructs a [`PrestoParameters`](crate::types::PrestoParameters).
-    pub fn build(self) -> crate::types::PrestoParameters {
-        crate::types::PrestoParameters {
-            host: self.host,
-            port: self.port,
-            catalog: self.catalog,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::PrestoParametersBuilder::host)
+    /// - [`port`](crate::types::builders::PrestoParametersBuilder::port)
+    /// - [`catalog`](crate::types::builders::PrestoParametersBuilder::catalog)
+    pub fn build(self) -> ::std::result::Result<crate::types::PrestoParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PrestoParameters {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building PrestoParameters",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building PrestoParameters",
+                )
+            })?,
+            catalog: self.catalog.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "catalog",
+                    "catalog was not specified but it is required when building PrestoParameters",
+                )
+            })?,
+        })
     }
 }

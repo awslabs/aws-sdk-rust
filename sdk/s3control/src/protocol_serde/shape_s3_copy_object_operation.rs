@@ -91,6 +91,7 @@ pub fn ser_s3_copy_object_operation(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_copy_object_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3CopyObjectOperation, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -11,8 +11,10 @@ pub struct ListFragmentsOutput {
 }
 impl ListFragmentsOutput {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
-    pub fn fragments(&self) -> ::std::option::Option<&[crate::types::Fragment]> {
-        self.fragments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fragments.is_none()`.
+    pub fn fragments(&self) -> &[crate::types::Fragment] {
+        self.fragments.as_deref().unwrap_or_default()
     }
     /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

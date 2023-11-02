@@ -62,6 +62,7 @@ pub struct CreateAgentStatusInputBuilder {
 }
 impl CreateAgentStatusInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateAgentStatusInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the status.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl CreateAgentStatusInputBuilder {
         &self.description
     }
     /// <p>The state of the status.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AgentStatusState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self

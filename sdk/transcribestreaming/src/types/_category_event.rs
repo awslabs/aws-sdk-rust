@@ -11,8 +11,10 @@ pub struct CategoryEvent {
 }
 impl CategoryEvent {
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn matched_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.matched_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_categories.is_none()`.
+    pub fn matched_categories(&self) -> &[::std::string::String] {
+        self.matched_categories.as_deref().unwrap_or_default()
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     pub fn matched_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>> {

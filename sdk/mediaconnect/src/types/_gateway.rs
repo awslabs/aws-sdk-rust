@@ -19,16 +19,20 @@ pub struct Gateway {
 }
 impl Gateway {
     /// The range of IP addresses that contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn egress_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.egress_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.egress_cidr_blocks.is_none()`.
+    pub fn egress_cidr_blocks(&self) -> &[::std::string::String] {
+        self.egress_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// The Amazon Resource Name (ARN) of the gateway.
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn gateway_messages(&self) -> ::std::option::Option<&[crate::types::MessageDetail]> {
-        self.gateway_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_messages.is_none()`.
+    pub fn gateway_messages(&self) -> &[crate::types::MessageDetail] {
+        self.gateway_messages.as_deref().unwrap_or_default()
     }
     /// The current status of the gateway.
     pub fn gateway_state(&self) -> ::std::option::Option<&crate::types::GatewayState> {
@@ -39,8 +43,10 @@ impl Gateway {
         self.name.as_deref()
     }
     /// The list of networks in the gateway.
-    pub fn networks(&self) -> ::std::option::Option<&[crate::types::GatewayNetwork]> {
-        self.networks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.networks.is_none()`.
+    pub fn networks(&self) -> &[crate::types::GatewayNetwork] {
+        self.networks.as_deref().unwrap_or_default()
     }
 }
 impl Gateway {
@@ -83,6 +89,7 @@ impl GatewayBuilder {
         &self.egress_cidr_blocks
     }
     /// The Amazon Resource Name (ARN) of the gateway.
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -130,6 +137,7 @@ impl GatewayBuilder {
         &self.gateway_state
     }
     /// The name of the gateway. This name can not be modified after the gateway is created.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

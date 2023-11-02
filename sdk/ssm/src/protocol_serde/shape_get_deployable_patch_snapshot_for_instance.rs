@@ -34,8 +34,8 @@ pub fn de_get_deployable_patch_snapshot_for_instance_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedFeatureRequiredException" => crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::UnsupportedFeatureRequiredException({
@@ -50,8 +50,8 @@ pub fn de_get_deployable_patch_snapshot_for_instance_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnsupportedOperatingSystem" => crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::UnsupportedOperatingSystem({
@@ -66,8 +66,8 @@ pub fn de_get_deployable_patch_snapshot_for_instance_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError::generic(generic)

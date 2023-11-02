@@ -75,8 +75,10 @@ impl CreateOptionGroupInput {
         self.option_group_description.as_deref()
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateOptionGroupInput {
@@ -105,6 +107,7 @@ impl CreateOptionGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
+    /// This field is required.
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +150,7 @@ impl CreateOptionGroupInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +193,7 @@ impl CreateOptionGroupInputBuilder {
         &self.engine_name
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
+    /// This field is required.
     pub fn major_engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.major_engine_version = ::std::option::Option::Some(input.into());
         self
@@ -203,6 +208,7 @@ impl CreateOptionGroupInputBuilder {
         &self.major_engine_version
     }
     /// <p>The description of the option group.</p>
+    /// This field is required.
     pub fn option_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_description = ::std::option::Option::Some(input.into());
         self

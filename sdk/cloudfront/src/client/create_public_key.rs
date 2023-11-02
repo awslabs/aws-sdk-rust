@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreatePublicKey`](crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`public_key_config(PublicKeyConfig)`](crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder::public_key_config) / [`set_public_key_config(Option<PublicKeyConfig>)`](crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder::set_public_key_config): <p>A CloudFront public key configuration.</p>
+    ///   - [`public_key_config(PublicKeyConfig)`](crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder::public_key_config) / [`set_public_key_config(Option<PublicKeyConfig>)`](crate::operation::create_public_key::builders::CreatePublicKeyFluentBuilder::set_public_key_config):<br>required: **true**<br><p>A CloudFront public key configuration.</p><br>
     /// - On success, responds with [`CreatePublicKeyOutput`](crate::operation::create_public_key::CreatePublicKeyOutput) with field(s):
     ///   - [`public_key(Option<PublicKey>)`](crate::operation::create_public_key::CreatePublicKeyOutput::public_key): <p>The public key.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_public_key::CreatePublicKeyOutput::location): <p>The URL of the public key.</p>

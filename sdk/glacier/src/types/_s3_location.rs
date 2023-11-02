@@ -39,8 +39,10 @@ impl S3Location {
         self.canned_acl.as_ref()
     }
     /// <p>A list of grants that control access to the staged results.</p>
-    pub fn access_control_list(&self) -> ::std::option::Option<&[crate::types::Grant]> {
-        self.access_control_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
+    pub fn access_control_list(&self) -> &[crate::types::Grant] {
+        self.access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The tag-set that is applied to the job results.</p>
     pub fn tagging(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

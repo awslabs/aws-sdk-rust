@@ -30,6 +30,7 @@ pub struct GetCertificateAuthorityCertificateInputBuilder {
 impl GetCertificateAuthorityCertificateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self

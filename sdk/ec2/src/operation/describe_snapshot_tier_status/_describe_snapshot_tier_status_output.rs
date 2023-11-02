@@ -11,8 +11,10 @@ pub struct DescribeSnapshotTierStatusOutput {
 }
 impl DescribeSnapshotTierStatusOutput {
     /// <p>Information about the snapshot's storage tier.</p>
-    pub fn snapshot_tier_statuses(&self) -> ::std::option::Option<&[crate::types::SnapshotTierStatus]> {
-        self.snapshot_tier_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_tier_statuses.is_none()`.
+    pub fn snapshot_tier_statuses(&self) -> &[crate::types::SnapshotTierStatus] {
+        self.snapshot_tier_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

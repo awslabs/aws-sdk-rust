@@ -12,8 +12,10 @@ pub struct ListStacksOutput {
 }
 impl ListStacksOutput {
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
-    pub fn stack_summaries(&self) -> ::std::option::Option<&[crate::types::StackSummary]> {
-        self.stack_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_summaries.is_none()`.
+    pub fn stack_summaries(&self) -> &[crate::types::StackSummary] {
+        self.stack_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

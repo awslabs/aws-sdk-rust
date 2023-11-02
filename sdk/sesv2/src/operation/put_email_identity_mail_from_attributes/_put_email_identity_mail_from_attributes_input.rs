@@ -54,6 +54,7 @@ pub struct PutEmailIdentityMailFromAttributesInputBuilder {
 }
 impl PutEmailIdentityMailFromAttributesInputBuilder {
     /// <p>The verified email identity.</p>
+    /// This field is required.
     pub fn email_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_identity = ::std::option::Option::Some(input.into());
         self

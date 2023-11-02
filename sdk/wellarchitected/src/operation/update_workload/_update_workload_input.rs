@@ -91,20 +91,28 @@ impl UpdateWorkloadInput {
         self.environment.as_ref()
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn aws_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aws_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_regions.is_none()`.
+    pub fn aws_regions(&self) -> &[::std::string::String] {
+        self.aws_regions.as_deref().unwrap_or_default()
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.non_aws_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_aws_regions.is_none()`.
+    pub fn non_aws_regions(&self) -> &[::std::string::String] {
+        self.non_aws_regions.as_deref().unwrap_or_default()
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pillar_priorities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillar_priorities.is_none()`.
+    pub fn pillar_priorities(&self) -> &[::std::string::String] {
+        self.pillar_priorities.as_deref().unwrap_or_default()
     }
     /// <p>The URL of the architectural design for the workload.</p>
     pub fn architectural_design(&self) -> ::std::option::Option<&str> {
@@ -171,8 +179,10 @@ impl UpdateWorkloadInput {
         self.discovery_config.as_ref()
     }
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
-    pub fn applications(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.applications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
+    pub fn applications(&self) -> &[::std::string::String] {
+        self.applications.as_deref().unwrap_or_default()
     }
 }
 impl UpdateWorkloadInput {
@@ -206,6 +216,7 @@ pub struct UpdateWorkloadInputBuilder {
 }
 impl UpdateWorkloadInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self

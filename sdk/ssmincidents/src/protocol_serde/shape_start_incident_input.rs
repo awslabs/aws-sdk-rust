@@ -24,17 +24,17 @@ pub fn ser_start_incident_input(
         }
         array_4.finish();
     }
-    if let Some(var_7) = &input.response_plan_arn {
-        object.key("responsePlanArn").string(var_7.as_str());
+    {
+        object.key("responsePlanArn").string(input.response_plan_arn.as_str());
     }
-    if let Some(var_8) = &input.title {
-        object.key("title").string(var_8.as_str());
+    if let Some(var_7) = &input.title {
+        object.key("title").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.trigger_details {
+    if let Some(var_8) = &input.trigger_details {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("triggerDetails").start_object();
-        crate::protocol_serde::shape_trigger_details::ser_trigger_details(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("triggerDetails").start_object();
+        crate::protocol_serde::shape_trigger_details::ser_trigger_details(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

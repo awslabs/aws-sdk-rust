@@ -14,13 +14,13 @@ use aws_smithy_types::endpoint::Endpoint as SmithyEndpoint;
 use aws_smithy_types::Document;
 
 use aws_types::region::{Region, SigningRegion};
-use aws_types::SigningService;
+use aws_types::SigningName;
 
 /// Middleware Stage to add authentication information from a Smithy endpoint into the property bag
 ///
 /// AwsAuthStage implements [`MapRequest`](MapRequest). It will:
 /// 1. Load an endpoint from the property bag
-/// 2. Set the `SigningRegion` and `SigningService` in the property bag to drive downstream
+/// 2. Set the `SigningRegion` and `SigningName` in the property bag to drive downstream
 /// signing middleware.
 #[derive(Clone, Debug)]
 pub struct AwsAuthStage;
@@ -74,21 +74,21 @@ impl MapRequest for AwsAuthStage {
             let endpoint = props
                 .get::<aws_smithy_types::endpoint::Endpoint>()
                 .ok_or(AwsAuthStageErrorKind::NoEndpointResolver)?;
-            let (signing_scope_override, signing_service_override) = smithy_to_aws(endpoint)
+            let (signing_region_override, signing_name_override) = smithy_to_aws(endpoint)
                 .map_err(|err| AwsAuthStageErrorKind::EndpointResolutionError(err))?;
 
-            if let Some(signing_scope) = signing_scope_override {
-                props.insert(signing_scope);
+            if let Some(signing_region) = signing_region_override {
+                props.insert(signing_region);
             }
-            if let Some(signing_service) = signing_service_override {
-                props.insert(signing_service);
+            if let Some(signing_name) = signing_name_override {
+                props.insert(signing_name);
             }
             Ok(http_req)
         })
     }
 }
 
-type EndpointMetadata = (Option<SigningRegion>, Option<SigningService>);
+type EndpointMetadata = (Option<SigningRegion>, Option<SigningName>);
 
 fn smithy_to_aws(value: &SmithyEndpoint) -> Result<EndpointMetadata, Box<dyn Error + Send + Sync>> {
     // look for v4 as an auth scheme
@@ -127,12 +127,12 @@ fn smithy_to_aws(value: &SmithyEndpoint) -> Result<EndpointMetadata, Box<dyn Err
         None => None,
         _ => return Err("unexpected type".into()),
     };
-    let signing_service = match v4.get("signingName") {
-        Some(Document::String(s)) => Some(SigningService::from(s.to_string())),
+    let signing_name = match v4.get("signingName") {
+        Some(Document::String(s)) => Some(SigningName::from(s.to_string())),
         None => None,
         _ => return Err("unexpected type".into()),
     };
-    Ok((signing_scope, signing_service))
+    Ok((signing_scope, signing_name))
 }
 
 #[cfg(test)]
@@ -147,7 +147,7 @@ mod test {
     use http::header::HOST;
 
     use aws_types::region::{Region, SigningRegion};
-    use aws_types::SigningService;
+    use aws_types::SigningName;
 
     use crate::AwsAuthStage;
 
@@ -162,14 +162,14 @@ mod test {
         {
             let mut props = req.properties_mut();
             props.insert(SigningRegion::from(region.clone()));
-            props.insert(SigningService::from_static("kinesis"));
+            props.insert(SigningName::from_static("kinesis"));
             props.insert(endpoint);
         };
         let req = AwsAuthStage.apply(req).expect("should succeed");
         assert_eq!(req.properties().get(), Some(&SigningRegion::from(region)));
         assert_eq!(
             req.properties().get(),
-            Some(&SigningService::from_static("kinesis"))
+            Some(&SigningName::from_static("kinesis"))
         );
 
         assert!(req.http().headers().get(HOST).is_none());
@@ -206,17 +206,17 @@ mod test {
         {
             let mut props = req.properties_mut();
             props.insert(region);
-            props.insert(SigningService::from_static("qldb"));
+            props.insert(SigningName::from_static("qldb"));
             props.insert(endpoint);
         };
         let req = AwsAuthStage.apply(req).expect("should succeed");
         assert_eq!(
             req.properties().get(),
-            Some(&SigningRegion::from(Region::new("us-east-override")))
+            Some(&SigningRegion::from_static("us-east-override"))
         );
         assert_eq!(
             req.properties().get(),
-            Some(&SigningService::from_static("qldb-override"))
+            Some(&SigningName::from_static("qldb-override"))
         );
     }
 
@@ -229,14 +229,14 @@ mod test {
         {
             let mut props = req.properties_mut();
             props.insert(region.clone());
-            props.insert(SigningService::from_static("qldb"));
+            props.insert(SigningName::from_static("qldb"));
             props.insert(endpoint);
         };
         let req = AwsAuthStage.apply(req).expect("should succeed");
         assert_eq!(req.properties().get(), Some(&region));
         assert_eq!(
             req.properties().get(),
-            Some(&SigningService::from_static("qldb"))
+            Some(&SigningName::from_static("qldb"))
         );
     }
 }

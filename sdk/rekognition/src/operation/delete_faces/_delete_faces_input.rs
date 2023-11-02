@@ -14,8 +14,10 @@ impl DeleteFacesInput {
         self.collection_id.as_deref()
     }
     /// <p>An array of face IDs to delete.</p>
-    pub fn face_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.face_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
+    pub fn face_ids(&self) -> &[::std::string::String] {
+        self.face_ids.as_deref().unwrap_or_default()
     }
 }
 impl DeleteFacesInput {
@@ -34,6 +36,7 @@ pub struct DeleteFacesInputBuilder {
 }
 impl DeleteFacesInputBuilder {
     /// <p>Collection from which to remove the specific faces.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self

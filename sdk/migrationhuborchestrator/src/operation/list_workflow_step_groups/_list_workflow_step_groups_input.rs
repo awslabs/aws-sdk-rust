@@ -8,7 +8,7 @@ pub struct ListWorkflowStepGroupsInput {
     /// <p>The maximum number of results that can be returned.</p>
     pub max_results: i32,
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
 }
 impl ListWorkflowStepGroupsInput {
     /// <p>The pagination token.</p>
@@ -20,8 +20,9 @@ impl ListWorkflowStepGroupsInput {
         self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
 }
 impl ListWorkflowStepGroupsInput {
@@ -69,6 +70,7 @@ impl ListWorkflowStepGroupsInputBuilder {
         &self.max_results
     }
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,8 @@ impl ListWorkflowStepGroupsInputBuilder {
         &self.workflow_id
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepGroupsInput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsInputBuilder::workflow_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -92,7 +96,12 @@ impl ListWorkflowStepGroupsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput {
             next_token: self.next_token,
             max_results: self.max_results.unwrap_or_default(),
-            workflow_id: self.workflow_id,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building ListWorkflowStepGroupsInput",
+                )
+            })?,
         })
     }
 }

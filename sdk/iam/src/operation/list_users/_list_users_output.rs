@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsersOutput {
     /// <p>A list of users.</p>
-    pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub users: ::std::vec::Vec<crate::types::User>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
@@ -14,8 +14,9 @@ pub struct ListUsersOutput {
 }
 impl ListUsersOutput {
     /// <p>A list of users.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
-        self.users.as_deref()
+    pub fn users(&self) -> &[crate::types::User] {
+        use std::ops::Deref;
+        self.users.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
@@ -106,12 +107,19 @@ impl ListUsersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
-    pub fn build(self) -> crate::operation::list_users::ListUsersOutput {
-        crate::operation::list_users::ListUsersOutput {
-            users: self.users,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`users`](crate::operation::list_users::builders::ListUsersOutputBuilder::users)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_users::ListUsersOutput {
+            users: self.users.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "users",
+                    "users was not specified but it is required when building ListUsersOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             marker: self.marker,
             _request_id: self._request_id,
-        }
+        })
     }
 }

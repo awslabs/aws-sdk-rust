@@ -63,7 +63,9 @@ pub fn de_list_action_types_http_response(
         output = crate::protocol_serde::shape_list_action_types::de_list_action_types(_response_body, output)
             .map_err(crate::operation::list_action_types::ListActionTypesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_action_types_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_action_types::ListActionTypesError::unhandled)?
     })
 }
 

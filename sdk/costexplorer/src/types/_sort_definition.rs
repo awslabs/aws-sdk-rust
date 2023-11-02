@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortDefinition {
     /// <p>The key that's used to sort the data.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The order that's used to sort the data.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SortDefinition {
     /// <p>The key that's used to sort the data.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The order that's used to sort the data.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
@@ -35,6 +36,7 @@ pub struct SortDefinitionBuilder {
 }
 impl SortDefinitionBuilder {
     /// <p>The key that's used to sort the data.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl SortDefinitionBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`SortDefinition`](crate::types::SortDefinition).
-    pub fn build(self) -> crate::types::SortDefinition {
-        crate::types::SortDefinition {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::SortDefinitionBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::SortDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SortDefinition {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building SortDefinition",
+                )
+            })?,
             sort_order: self.sort_order,
-        }
+        })
     }
 }

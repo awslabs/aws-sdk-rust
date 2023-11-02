@@ -46,7 +46,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::logging_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -58,38 +60,38 @@ pub fn ser_logging_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn {
-        object.key("ResourceArn").string(var_1.as_str());
+    {
+        object.key("ResourceArn").string(input.resource_arn.as_str());
     }
-    if let Some(var_2) = &input.log_destination_configs {
-        let mut array_3 = object.key("LogDestinationConfigs").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("LogDestinationConfigs").start_array();
+        for item_2 in &input.log_destination_configs {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.redacted_fields {
-        let mut array_6 = object.key("RedactedFields").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.redacted_fields {
+        let mut array_4 = object.key("RedactedFields").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_field_to_match::ser_field_to_match(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
     }
     if input.managed_by_firewall_manager {
         object.key("ManagedByFirewallManager").boolean(input.managed_by_firewall_manager);
     }
-    if let Some(var_9) = &input.logging_filter {
+    if let Some(var_7) = &input.logging_filter {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("LoggingFilter").start_object();
-        crate::protocol_serde::shape_logging_filter::ser_logging_filter(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_8 = object.key("LoggingFilter").start_object();
+        crate::protocol_serde::shape_logging_filter::ser_logging_filter(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

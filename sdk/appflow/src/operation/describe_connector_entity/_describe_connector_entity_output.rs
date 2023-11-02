@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityOutput {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-    pub connector_entity_fields: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
+    pub connector_entity_fields: ::std::vec::Vec<crate::types::ConnectorEntityField>,
     _request_id: Option<String>,
 }
 impl DescribeConnectorEntityOutput {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-    pub fn connector_entity_fields(&self) -> ::std::option::Option<&[crate::types::ConnectorEntityField]> {
-        self.connector_entity_fields.as_deref()
+    pub fn connector_entity_fields(&self) -> &[crate::types::ConnectorEntityField] {
+        use std::ops::Deref;
+        self.connector_entity_fields.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeConnectorEntityOutput {
@@ -63,10 +64,22 @@ impl DescribeConnectorEntityOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput).
-    pub fn build(self) -> crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
-        crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
-            connector_entity_fields: self.connector_entity_fields,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connector_entity_fields`](crate::operation::describe_connector_entity::builders::DescribeConnectorEntityOutputBuilder::connector_entity_fields)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_connector_entity::DescribeConnectorEntityOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
+            connector_entity_fields: self.connector_entity_fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connector_entity_fields",
+                    "connector_entity_fields was not specified but it is required when building DescribeConnectorEntityOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

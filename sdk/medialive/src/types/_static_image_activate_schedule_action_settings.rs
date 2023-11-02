@@ -147,6 +147,7 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
         &self.height
     }
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
+    /// This field is required.
     pub fn image(mut self, input: crate::types::InputLocation) -> Self {
         self.image = ::std::option::Option::Some(input);
         self

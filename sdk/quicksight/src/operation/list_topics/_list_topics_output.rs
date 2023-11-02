@@ -15,8 +15,10 @@ pub struct ListTopicsOutput {
 }
 impl ListTopicsOutput {
     /// <p>A list of topic summaries.</p>
-    pub fn topics_summaries(&self) -> ::std::option::Option<&[crate::types::TopicSummary]> {
-        self.topics_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_summaries.is_none()`.
+    pub fn topics_summaries(&self) -> &[crate::types::TopicSummary] {
+        self.topics_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct GetCustomModelInputBuilder {
 }
 impl GetCustomModelInputBuilder {
     /// <p>Name or ARN of the custom model.</p>
+    /// This field is required.
     pub fn model_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_identifier = ::std::option::Option::Some(input.into());
         self

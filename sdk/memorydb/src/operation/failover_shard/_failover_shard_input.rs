@@ -34,6 +34,7 @@ pub struct FailoverShardInputBuilder {
 }
 impl FailoverShardInputBuilder {
     /// <p>The cluster being failed over</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl FailoverShardInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the shard</p>
+    /// This field is required.
     pub fn shard_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_name = ::std::option::Option::Some(input.into());
         self

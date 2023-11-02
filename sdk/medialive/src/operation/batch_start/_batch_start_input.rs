@@ -11,12 +11,16 @@ pub struct BatchStartInput {
 }
 impl BatchStartInput {
     /// List of channel IDs
-    pub fn channel_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.channel_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_ids.is_none()`.
+    pub fn channel_ids(&self) -> &[::std::string::String] {
+        self.channel_ids.as_deref().unwrap_or_default()
     }
     /// List of multiplex IDs
-    pub fn multiplex_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.multiplex_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multiplex_ids.is_none()`.
+    pub fn multiplex_ids(&self) -> &[::std::string::String] {
+        self.multiplex_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchStartInput {

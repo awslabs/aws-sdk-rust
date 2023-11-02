@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormBindingElement {
     /// <p>The name of the component to retrieve a value from.</p>
-    pub element: ::std::option::Option<::std::string::String>,
+    pub element: ::std::string::String,
     /// <p>The property to retrieve a value from.</p>
-    pub property: ::std::option::Option<::std::string::String>,
+    pub property: ::std::string::String,
 }
 impl FormBindingElement {
     /// <p>The name of the component to retrieve a value from.</p>
-    pub fn element(&self) -> ::std::option::Option<&str> {
-        self.element.as_deref()
+    pub fn element(&self) -> &str {
+        use std::ops::Deref;
+        self.element.deref()
     }
     /// <p>The property to retrieve a value from.</p>
-    pub fn property(&self) -> ::std::option::Option<&str> {
-        self.property.as_deref()
+    pub fn property(&self) -> &str {
+        use std::ops::Deref;
+        self.property.deref()
     }
 }
 impl FormBindingElement {
@@ -35,6 +37,7 @@ pub struct FormBindingElementBuilder {
 }
 impl FormBindingElementBuilder {
     /// <p>The name of the component to retrieve a value from.</p>
+    /// This field is required.
     pub fn element(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.element = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl FormBindingElementBuilder {
         &self.element
     }
     /// <p>The property to retrieve a value from.</p>
+    /// This field is required.
     pub fn property(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl FormBindingElementBuilder {
         &self.property
     }
     /// Consumes the builder and constructs a [`FormBindingElement`](crate::types::FormBindingElement).
-    pub fn build(self) -> crate::types::FormBindingElement {
-        crate::types::FormBindingElement {
-            element: self.element,
-            property: self.property,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`element`](crate::types::builders::FormBindingElementBuilder::element)
+    /// - [`property`](crate::types::builders::FormBindingElementBuilder::property)
+    pub fn build(self) -> ::std::result::Result<crate::types::FormBindingElement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FormBindingElement {
+            element: self.element.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "element",
+                    "element was not specified but it is required when building FormBindingElement",
+                )
+            })?,
+            property: self.property.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "property",
+                    "property was not specified but it is required when building FormBindingElement",
+                )
+            })?,
+        })
     }
 }

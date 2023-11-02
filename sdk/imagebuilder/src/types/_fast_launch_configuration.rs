@@ -56,6 +56,7 @@ pub struct FastLaunchConfigurationBuilder {
 }
 impl FastLaunchConfigurationBuilder {
     /// <p>A Boolean that represents the current state of faster launching for the Windows AMI. Set to <code>true</code> to start using Windows faster launching, or <code>false</code> to stop using it.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

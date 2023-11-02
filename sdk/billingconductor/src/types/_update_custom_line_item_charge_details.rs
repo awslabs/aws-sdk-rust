@@ -21,8 +21,10 @@ impl UpdateCustomLineItemChargeDetails {
         self.percentage.as_ref()
     }
     /// <p>A representation of the line item filter.</p>
-    pub fn line_item_filters(&self) -> ::std::option::Option<&[crate::types::LineItemFilter]> {
-        self.line_item_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_item_filters.is_none()`.
+    pub fn line_item_filters(&self) -> &[crate::types::LineItemFilter] {
+        self.line_item_filters.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCustomLineItemChargeDetails {

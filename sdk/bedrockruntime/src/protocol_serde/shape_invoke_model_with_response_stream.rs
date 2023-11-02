@@ -26,7 +26,7 @@ pub fn de_invoke_model_with_response_stream_http_response(
             })?,
         );
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output
+        crate::serde_util::invoke_model_with_response_stream_output_correct_errors(output)
             .build()
             .map_err(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled)?
     })

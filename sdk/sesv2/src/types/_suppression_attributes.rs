@@ -17,8 +17,10 @@ impl SuppressionAttributes {
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn suppressed_reasons(&self) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
-        self.suppressed_reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suppressed_reasons.is_none()`.
+    pub fn suppressed_reasons(&self) -> &[crate::types::SuppressionListReason] {
+        self.suppressed_reasons.as_deref().unwrap_or_default()
     }
 }
 impl SuppressionAttributes {

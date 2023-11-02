@@ -27,6 +27,7 @@ pub struct DeregisterRdsDbInstanceInputBuilder {
 }
 impl DeregisterRdsDbInstanceInputBuilder {
     /// <p>The Amazon RDS instance's ARN.</p>
+    /// This field is required.
     pub fn rds_db_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rds_db_instance_arn = ::std::option::Option::Some(input.into());
         self

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminGetUser`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool where you want to get information about the user.</p>
-    ///   - [`username(impl Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_username): <p>The user name of the user you want to retrieve.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool where you want to get information about the user.</p><br>
+    ///   - [`username(impl Into<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_get_user::builders::AdminGetUserFluentBuilder::set_username):<br>required: **true**<br><p>The user name of the user you want to retrieve.</p><br>
     /// - On success, responds with [`AdminGetUserOutput`](crate::operation::admin_get_user::AdminGetUserOutput) with field(s):
-    ///   - [`username(Option<String>)`](crate::operation::admin_get_user::AdminGetUserOutput::username): <p>The username of the user that you requested.</p>
+    ///   - [`username(String)`](crate::operation::admin_get_user::AdminGetUserOutput::username): <p>The username of the user that you requested.</p>
     ///   - [`user_attributes(Option<Vec<AttributeType>>)`](crate::operation::admin_get_user::AdminGetUserOutput::user_attributes): <p>An array of name-value pairs representing user attributes.</p>
     ///   - [`user_create_date(Option<DateTime>)`](crate::operation::admin_get_user::AdminGetUserOutput::user_create_date): <p>The date the user was created.</p>
     ///   - [`user_last_modified_date(Option<DateTime>)`](crate::operation::admin_get_user::AdminGetUserOutput::user_last_modified_date): <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>

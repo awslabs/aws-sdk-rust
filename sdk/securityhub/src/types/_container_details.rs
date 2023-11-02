@@ -43,8 +43,10 @@ impl ContainerDetails {
         self.launched_at.as_deref()
     }
     /// <p>Provides information about the mounting of a volume in a container. </p>
-    pub fn volume_mounts(&self) -> ::std::option::Option<&[crate::types::VolumeMount]> {
-        self.volume_mounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_mounts.is_none()`.
+    pub fn volume_mounts(&self) -> &[crate::types::VolumeMount] {
+        self.volume_mounts.as_deref().unwrap_or_default()
     }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user). </p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {

@@ -11,8 +11,10 @@ pub struct GetDetectorsOutput {
 }
 impl GetDetectorsOutput {
     /// <p>The detectors.</p>
-    pub fn detectors(&self) -> ::std::option::Option<&[crate::types::Detector]> {
-        self.detectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detectors.is_none()`.
+    pub fn detectors(&self) -> &[crate::types::Detector] {
+        self.detectors.as_deref().unwrap_or_default()
     }
     /// <p>The next page token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

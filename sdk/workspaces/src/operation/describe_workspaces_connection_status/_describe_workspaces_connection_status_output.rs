@@ -11,8 +11,10 @@ pub struct DescribeWorkspacesConnectionStatusOutput {
 }
 impl DescribeWorkspacesConnectionStatusOutput {
     /// <p>Information about the connection status of the WorkSpace.</p>
-    pub fn workspaces_connection_status(&self) -> ::std::option::Option<&[crate::types::WorkspaceConnectionStatus]> {
-        self.workspaces_connection_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspaces_connection_status.is_none()`.
+    pub fn workspaces_connection_status(&self) -> &[crate::types::WorkspaceConnectionStatus] {
+        self.workspaces_connection_status.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

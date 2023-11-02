@@ -10,8 +10,10 @@ pub struct DescribeConfigurationSettingsOutput {
 }
 impl DescribeConfigurationSettingsOutput {
     /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
-    pub fn configuration_settings(&self) -> ::std::option::Option<&[crate::types::ConfigurationSettingsDescription]> {
-        self.configuration_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_settings.is_none()`.
+    pub fn configuration_settings(&self) -> &[crate::types::ConfigurationSettingsDescription] {
+        self.configuration_settings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeConfigurationSettingsOutput {

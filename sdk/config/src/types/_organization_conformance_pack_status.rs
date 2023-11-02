@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConformancePackStatus {
     /// <p>The name that you assign to organization conformance pack.</p>
-    pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
+    pub organization_conformance_pack_name: ::std::string::String,
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct OrganizationConformancePackStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<crate::types::OrganizationResourceStatus>,
+    pub status: crate::types::OrganizationResourceStatus,
     /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
@@ -29,8 +29,9 @@ pub struct OrganizationConformancePackStatus {
 }
 impl OrganizationConformancePackStatus {
     /// <p>The name that you assign to organization conformance pack.</p>
-    pub fn organization_conformance_pack_name(&self) -> ::std::option::Option<&str> {
-        self.organization_conformance_pack_name.as_deref()
+    pub fn organization_conformance_pack_name(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_conformance_pack_name.deref()
     }
     /// <p>Indicates deployment status of an organization conformance pack. When management account calls PutOrganizationConformancePack for the first time, conformance pack status is created in all the member accounts. When management account calls PutOrganizationConformancePack for the second time, conformance pack status is updated in all the member accounts. Additionally, conformance pack status is updated when one or more member accounts join or leave an organization. Conformance pack status is deleted when the management account deletes OrganizationConformancePack in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the conformance pack to:</p>
@@ -45,8 +46,8 @@ impl OrganizationConformancePackStatus {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OrganizationResourceStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::OrganizationResourceStatus {
+        &self.status
     }
     /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
     pub fn error_code(&self) -> ::std::option::Option<&str> {
@@ -80,6 +81,7 @@ pub struct OrganizationConformancePackStatusBuilder {
 }
 impl OrganizationConformancePackStatusBuilder {
     /// <p>The name that you assign to organization conformance pack.</p>
+    /// This field is required.
     pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +108,7 @@ impl OrganizationConformancePackStatusBuilder {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OrganizationResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -186,13 +189,26 @@ impl OrganizationConformancePackStatusBuilder {
         &self.last_update_time
     }
     /// Consumes the builder and constructs a [`OrganizationConformancePackStatus`](crate::types::OrganizationConformancePackStatus).
-    pub fn build(self) -> crate::types::OrganizationConformancePackStatus {
-        crate::types::OrganizationConformancePackStatus {
-            organization_conformance_pack_name: self.organization_conformance_pack_name,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`organization_conformance_pack_name`](crate::types::builders::OrganizationConformancePackStatusBuilder::organization_conformance_pack_name)
+    /// - [`status`](crate::types::builders::OrganizationConformancePackStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConformancePackStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationConformancePackStatus {
+            organization_conformance_pack_name: self.organization_conformance_pack_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "organization_conformance_pack_name",
+                    "organization_conformance_pack_name was not specified but it is required when building OrganizationConformancePackStatus",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building OrganizationConformancePackStatus",
+                )
+            })?,
             error_code: self.error_code,
             error_message: self.error_message,
             last_update_time: self.last_update_time,
-        }
+        })
     }
 }

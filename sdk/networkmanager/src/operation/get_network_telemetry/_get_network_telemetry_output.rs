@@ -11,8 +11,10 @@ pub struct GetNetworkTelemetryOutput {
 }
 impl GetNetworkTelemetryOutput {
     /// <p>The network telemetry.</p>
-    pub fn network_telemetry(&self) -> ::std::option::Option<&[crate::types::NetworkTelemetry]> {
-        self.network_telemetry.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_telemetry.is_none()`.
+    pub fn network_telemetry(&self) -> &[crate::types::NetworkTelemetry] {
+        self.network_telemetry.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

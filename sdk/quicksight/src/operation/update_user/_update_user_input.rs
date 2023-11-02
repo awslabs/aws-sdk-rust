@@ -130,6 +130,7 @@ pub struct UpdateUserInputBuilder {
 }
 impl UpdateUserInputBuilder {
     /// <p>The Amazon QuickSight user name that you want to update.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +145,7 @@ impl UpdateUserInputBuilder {
         &self.user_name
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +160,7 @@ impl UpdateUserInputBuilder {
         &self.aws_account_id
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +175,7 @@ impl UpdateUserInputBuilder {
         &self.namespace
     }
     /// <p>The email address of the user that you want to update.</p>
+    /// This field is required.
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
         self
@@ -192,6 +196,7 @@ impl UpdateUserInputBuilder {
     /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p> </li>
     /// </ul>
     /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console screens dealing with permissions.</p>
+    /// This field is required.
     pub fn role(mut self, input: crate::types::UserRole) -> Self {
         self.role = ::std::option::Option::Some(input);
         self

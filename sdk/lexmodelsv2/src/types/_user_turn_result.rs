@@ -84,6 +84,7 @@ pub struct UserTurnResultBuilder {
 }
 impl UserTurnResultBuilder {
     /// <p>Contains information about the user messages in the turn in the input.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::UserTurnInputSpecification) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl UserTurnResultBuilder {
         &self.input
     }
     /// <p>Contains information about the expected output for the user turn.</p>
+    /// This field is required.
     pub fn expected_output(mut self, input: crate::types::UserTurnOutputSpecification) -> Self {
         self.expected_output = ::std::option::Option::Some(input);
         self

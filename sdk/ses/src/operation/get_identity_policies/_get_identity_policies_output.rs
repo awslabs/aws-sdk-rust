@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
-    pub policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub policies: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.policies.as_ref()
+    pub fn policies(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.policies
     }
 }
 impl ::aws_http::request_id::RequestId for GetIdentityPoliciesOutput {
@@ -64,10 +64,20 @@ impl GetIdentityPoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput).
-    pub fn build(self) -> crate::operation::get_identity_policies::GetIdentityPoliciesOutput {
-        crate::operation::get_identity_policies::GetIdentityPoliciesOutput {
-            policies: self.policies,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policies`](crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder::policies)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_identity_policies::GetIdentityPoliciesOutput {
+            policies: self.policies.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policies",
+                    "policies was not specified but it is required when building GetIdentityPoliciesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

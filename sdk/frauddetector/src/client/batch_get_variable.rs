@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetVariable`](crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder::set_names): <p>The list of variable names to get.</p>
+    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_variable::builders::BatchGetVariableFluentBuilder::set_names):<br>required: **true**<br><p>The list of variable names to get.</p><br>
     /// - On success, responds with [`BatchGetVariableOutput`](crate::operation::batch_get_variable::BatchGetVariableOutput) with field(s):
     ///   - [`variables(Option<Vec<Variable>>)`](crate::operation::batch_get_variable::BatchGetVariableOutput::variables): <p>The returned variables.</p>
     ///   - [`errors(Option<Vec<BatchGetVariableError>>)`](crate::operation::batch_get_variable::BatchGetVariableOutput::errors): <p>The errors from the request.</p>

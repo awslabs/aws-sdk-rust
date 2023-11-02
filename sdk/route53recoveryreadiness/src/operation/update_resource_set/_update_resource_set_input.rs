@@ -23,8 +23,10 @@ impl UpdateResourceSetInput {
         self.resource_set_type.as_deref()
     }
     /// <p>A list of resource objects.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::Resource] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl UpdateResourceSetInput {
@@ -44,6 +46,7 @@ pub struct UpdateResourceSetInputBuilder {
 }
 impl UpdateResourceSetInputBuilder {
     /// <p>Name of a resource set.</p>
+    /// This field is required.
     pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +62,7 @@ impl UpdateResourceSetInputBuilder {
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    /// This field is required.
     pub fn resource_set_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_type = ::std::option::Option::Some(input.into());
         self

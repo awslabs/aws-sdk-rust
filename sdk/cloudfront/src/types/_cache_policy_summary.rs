@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub r#type: ::std::option::Option<crate::types::CachePolicyType>,
+    pub r#type: crate::types::CachePolicyType,
     /// <p>The cache policy.</p>
     pub cache_policy: ::std::option::Option<crate::types::CachePolicy>,
 }
 impl CachePolicySummary {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CachePolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::CachePolicyType {
+        &self.r#type
     }
     /// <p>The cache policy.</p>
     pub fn cache_policy(&self) -> ::std::option::Option<&crate::types::CachePolicy> {
@@ -35,6 +35,7 @@ pub struct CachePolicySummaryBuilder {
 }
 impl CachePolicySummaryBuilder {
     /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::CachePolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CachePolicySummaryBuilder {
         &self.r#type
     }
     /// <p>The cache policy.</p>
+    /// This field is required.
     pub fn cache_policy(mut self, input: crate::types::CachePolicy) -> Self {
         self.cache_policy = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl CachePolicySummaryBuilder {
         &self.cache_policy
     }
     /// Consumes the builder and constructs a [`CachePolicySummary`](crate::types::CachePolicySummary).
-    pub fn build(self) -> crate::types::CachePolicySummary {
-        crate::types::CachePolicySummary {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::CachePolicySummaryBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicySummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CachePolicySummary {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building CachePolicySummary",
+                )
+            })?,
             cache_policy: self.cache_policy,
-        }
+        })
     }
 }

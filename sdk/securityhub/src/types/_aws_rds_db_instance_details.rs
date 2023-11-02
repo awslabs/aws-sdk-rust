@@ -146,8 +146,10 @@ pub struct AwsRdsDbInstanceDetails {
 }
 impl AwsRdsDbInstanceDetails {
     /// <p>The IAM roles associated with the DB instance.</p>
-    pub fn associated_roles(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbInstanceAssociatedRole]> {
-        self.associated_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
+    pub fn associated_roles(&self) -> &[crate::types::AwsRdsDbInstanceAssociatedRole] {
+        self.associated_roles.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
@@ -232,8 +234,10 @@ impl AwsRdsDbInstanceDetails {
         self.tde_credential_arn.as_deref()
     }
     /// <p>A list of VPC security groups that the DB instance belongs to.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbInstanceVpcSecurityGroup]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::AwsRdsDbInstanceVpcSecurityGroup] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Whether the DB instance is a multiple Availability Zone deployment.</p>
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
@@ -265,12 +269,16 @@ impl AwsRdsDbInstanceDetails {
         self.backup_retention_period
     }
     /// <p>A list of the DB security groups to assign to the DB instance.</p>
-    pub fn db_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.db_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
+    pub fn db_security_groups(&self) -> &[::std::string::String] {
+        self.db_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of the DB parameter groups to assign to the DB instance.</p>
-    pub fn db_parameter_groups(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbParameterGroup]> {
-        self.db_parameter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_parameter_groups.is_none()`.
+    pub fn db_parameter_groups(&self) -> &[crate::types::AwsRdsDbParameterGroup] {
+        self.db_parameter_groups.as_deref().unwrap_or_default()
     }
     /// <p>The Availability Zone where the DB instance will be created.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -311,12 +319,16 @@ impl AwsRdsDbInstanceDetails {
         self.read_replica_source_db_instance_identifier.as_deref()
     }
     /// <p>List of identifiers of the read replicas associated with this DB instance.</p>
-    pub fn read_replica_db_instance_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.read_replica_db_instance_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_db_instance_identifiers.is_none()`.
+    pub fn read_replica_db_instance_identifiers(&self) -> &[::std::string::String] {
+        self.read_replica_db_instance_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>List of identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read replica.</p>
-    pub fn read_replica_db_cluster_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.read_replica_db_cluster_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_db_cluster_identifiers.is_none()`.
+    pub fn read_replica_db_cluster_identifiers(&self) -> &[::std::string::String] {
+        self.read_replica_db_cluster_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>License model information for this DB instance.</p>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
@@ -327,8 +339,10 @@ impl AwsRdsDbInstanceDetails {
         self.iops
     }
     /// <p>The list of option group memberships for this DB instance.</p>
-    pub fn option_group_memberships(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbOptionGroupMembership]> {
-        self.option_group_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_group_memberships.is_none()`.
+    pub fn option_group_memberships(&self) -> &[crate::types::AwsRdsDbOptionGroupMembership] {
+        self.option_group_memberships.as_deref().unwrap_or_default()
     }
     /// <p>The name of the character set that this DB instance is associated with.</p>
     pub fn character_set_name(&self) -> ::std::option::Option<&str> {
@@ -339,16 +353,20 @@ impl AwsRdsDbInstanceDetails {
         self.secondary_availability_zone.as_deref()
     }
     /// <p>The status of a read replica. If the instance isn't a read replica, this is empty.</p>
-    pub fn status_infos(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbStatusInfo]> {
-        self.status_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_infos.is_none()`.
+    pub fn status_infos(&self) -> &[crate::types::AwsRdsDbStatusInfo] {
+        self.status_infos.as_deref().unwrap_or_default()
     }
     /// <p>The storage type for the DB instance.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
     /// <p>The Active Directory domain membership records associated with the DB instance.</p>
-    pub fn domain_memberships(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbDomainMembership]> {
-        self.domain_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_memberships.is_none()`.
+    pub fn domain_memberships(&self) -> &[crate::types::AwsRdsDbDomainMembership] {
+        self.domain_memberships.as_deref().unwrap_or_default()
     }
     /// <p>Whether to copy resource tags to snapshots of the DB instance.</p>
     pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
@@ -383,12 +401,16 @@ impl AwsRdsDbInstanceDetails {
         self.performance_insights_retention_period
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    pub fn enabled_cloud_watch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_cloud_watch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloud_watch_logs_exports.is_none()`.
+    pub fn enabled_cloud_watch_logs_exports(&self) -> &[::std::string::String] {
+        self.enabled_cloud_watch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
-    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbProcessorFeature]> {
-        self.processor_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
+    pub fn processor_features(&self) -> &[crate::types::AwsRdsDbProcessorFeature] {
+        self.processor_features.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the connection endpoint.</p>
     pub fn listener_endpoint(&self) -> ::std::option::Option<&crate::types::AwsRdsDbInstanceEndpoint> {

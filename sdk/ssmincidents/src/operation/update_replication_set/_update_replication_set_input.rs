@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>An action to add or delete a Region.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>>,
+    pub actions: ::std::vec::Vec<crate::types::UpdateReplicationSetAction>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReplicationSetInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>An action to add or delete a Region.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::UpdateReplicationSetAction]> {
-        self.actions.as_deref()
+    pub fn actions(&self) -> &[crate::types::UpdateReplicationSetAction] {
+        use std::ops::Deref;
+        self.actions.deref()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct UpdateReplicationSetInputBuilder {
 }
 impl UpdateReplicationSetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -89,13 +92,26 @@ impl UpdateReplicationSetInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder::arn)
+    /// - [`actions`](crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder::actions)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_replication_set::UpdateReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_replication_set::UpdateReplicationSetInput {
-            arn: self.arn,
-            actions: self.actions,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateReplicationSetInput",
+                )
+            })?,
+            actions: self.actions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "actions",
+                    "actions was not specified but it is required when building UpdateReplicationSetInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

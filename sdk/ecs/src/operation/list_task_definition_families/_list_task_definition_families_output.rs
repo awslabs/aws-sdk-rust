@@ -11,8 +11,10 @@ pub struct ListTaskDefinitionFamiliesOutput {
 }
 impl ListTaskDefinitionFamiliesOutput {
     /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
-    pub fn families(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.families.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.families.is_none()`.
+    pub fn families(&self) -> &[::std::string::String] {
+        self.families.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

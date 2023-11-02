@@ -15,8 +15,10 @@ impl AssociateMacSecKeyOutput {
         self.connection_id.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
-    pub fn mac_sec_keys(&self) -> ::std::option::Option<&[crate::types::MacSecKey]> {
-        self.mac_sec_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_sec_keys.is_none()`.
+    pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
+        self.mac_sec_keys.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateMacSecKeyOutput {

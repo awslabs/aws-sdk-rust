@@ -34,6 +34,7 @@ pub struct UpdateResourceCollectionInputBuilder {
 }
 impl UpdateResourceCollectionInputBuilder {
     /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::UpdateResourceCollectionAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl UpdateResourceCollectionInputBuilder {
         &self.action
     }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    /// This field is required.
     pub fn resource_collection(mut self, input: crate::types::UpdateResourceCollectionFilter) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
         self

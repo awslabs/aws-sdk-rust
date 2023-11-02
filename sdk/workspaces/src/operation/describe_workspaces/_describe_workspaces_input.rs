@@ -20,8 +20,10 @@ pub struct DescribeWorkspacesInput {
 impl DescribeWorkspacesInput {
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn workspace_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.workspace_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_ids.is_none()`.
+    pub fn workspace_ids(&self) -> &[::std::string::String] {
+        self.workspace_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {

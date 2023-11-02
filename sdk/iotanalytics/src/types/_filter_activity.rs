@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterActivity {
     /// <p>The name of the filter activity.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
-    pub filter: ::std::option::Option<::std::string::String>,
+    pub filter: ::std::string::String,
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
 impl FilterActivity {
     /// <p>The name of the filter activity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
-    pub fn filter(&self) -> ::std::option::Option<&str> {
-        self.filter.as_deref()
+    pub fn filter(&self) -> &str {
+        use std::ops::Deref;
+        self.filter.deref()
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct FilterActivityBuilder {
 }
 impl FilterActivityBuilder {
     /// <p>The name of the filter activity.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FilterActivityBuilder {
         &self.name
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    /// This field is required.
     pub fn filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl FilterActivityBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`FilterActivity`](crate::types::FilterActivity).
-    pub fn build(self) -> crate::types::FilterActivity {
-        crate::types::FilterActivity {
-            name: self.name,
-            filter: self.filter,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FilterActivityBuilder::name)
+    /// - [`filter`](crate::types::builders::FilterActivityBuilder::filter)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterActivity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterActivity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FilterActivity",
+                )
+            })?,
+            filter: self.filter.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter",
+                    "filter was not specified but it is required when building FilterActivity",
+                )
+            })?,
             next: self.next,
-        }
+        })
     }
 }

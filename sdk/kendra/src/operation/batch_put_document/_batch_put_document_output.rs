@@ -11,8 +11,10 @@ pub struct BatchPutDocumentOutput {
 impl BatchPutDocumentOutput {
     /// <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>
     /// <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch logs</a>.</p>
-    pub fn failed_documents(&self) -> ::std::option::Option<&[crate::types::BatchPutDocumentResponseFailedDocument]> {
-        self.failed_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_documents.is_none()`.
+    pub fn failed_documents(&self) -> &[crate::types::BatchPutDocumentResponseFailedDocument] {
+        self.failed_documents.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchPutDocumentOutput {

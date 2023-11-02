@@ -48,7 +48,7 @@ pub fn de_render_ui_template_http_response(
         output = crate::protocol_serde::shape_render_ui_template::de_render_ui_template(_response_body, output)
             .map_err(crate::operation::render_ui_template::RenderUiTemplateError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::render_ui_template_output_correct_errors(output).build()
     })
 }
 

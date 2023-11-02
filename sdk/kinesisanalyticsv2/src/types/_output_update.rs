@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
-    pub output_id: ::std::option::Option<::std::string::String>,
+    pub output_id: ::std::string::String,
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
     pub name_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes a Kinesis data stream as the destination for the output.</p>
@@ -19,8 +19,9 @@ pub struct OutputUpdate {
 }
 impl OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
-    pub fn output_id(&self) -> ::std::option::Option<&str> {
-        self.output_id.as_deref()
+    pub fn output_id(&self) -> &str {
+        use std::ops::Deref;
+        self.output_id.deref()
     }
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
     pub fn name_update(&self) -> ::std::option::Option<&str> {
@@ -63,6 +64,7 @@ pub struct OutputUpdateBuilder {
 }
 impl OutputUpdateBuilder {
     /// <p>Identifies the specific output configuration that you want to update.</p>
+    /// This field is required.
     pub fn output_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_id = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +149,21 @@ impl OutputUpdateBuilder {
         &self.destination_schema_update
     }
     /// Consumes the builder and constructs a [`OutputUpdate`](crate::types::OutputUpdate).
-    pub fn build(self) -> crate::types::OutputUpdate {
-        crate::types::OutputUpdate {
-            output_id: self.output_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`output_id`](crate::types::builders::OutputUpdateBuilder::output_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputUpdate {
+            output_id: self.output_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_id",
+                    "output_id was not specified but it is required when building OutputUpdate",
+                )
+            })?,
             name_update: self.name_update,
             kinesis_streams_output_update: self.kinesis_streams_output_update,
             kinesis_firehose_output_update: self.kinesis_firehose_output_update,
             lambda_output_update: self.lambda_output_update,
             destination_schema_update: self.destination_schema_update,
-        }
+        })
     }
 }

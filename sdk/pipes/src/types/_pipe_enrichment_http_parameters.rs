@@ -13,8 +13,10 @@ pub struct PipeEnrichmentHttpParameters {
 }
 impl PipeEnrichmentHttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-    pub fn path_parameter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.path_parameter_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path_parameter_values.is_none()`.
+    pub fn path_parameter_values(&self) -> &[::std::string::String] {
+        self.path_parameter_values.as_deref().unwrap_or_default()
     }
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     pub fn header_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

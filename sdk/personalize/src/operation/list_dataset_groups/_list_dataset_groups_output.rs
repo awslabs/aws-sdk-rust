@@ -11,8 +11,10 @@ pub struct ListDatasetGroupsOutput {
 }
 impl ListDatasetGroupsOutput {
     /// <p>The list of your dataset groups.</p>
-    pub fn dataset_groups(&self) -> ::std::option::Option<&[crate::types::DatasetGroupSummary]> {
-        self.dataset_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_groups.is_none()`.
+    pub fn dataset_groups(&self) -> &[crate::types::DatasetGroupSummary] {
+        self.dataset_groups.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of dataset groups (if they exist).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

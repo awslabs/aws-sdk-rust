@@ -73,8 +73,10 @@ impl DescribeChangeSetOutput {
         self.description.as_deref()
     }
     /// <p>A list of <code>Parameter</code> structures that describes the input parameters and their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The start time when the change set was created, in UTC.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -93,24 +95,32 @@ impl DescribeChangeSetOutput {
         self.status_reason.as_deref()
     }
     /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
-    pub fn notification_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.notification_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_ar_ns.is_none()`.
+    pub fn notification_ar_ns(&self) -> &[::std::string::String] {
+        self.notification_ar_ns.as_deref().unwrap_or_default()
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
-    pub fn capabilities(&self) -> ::std::option::Option<&[crate::types::Capability]> {
-        self.capabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
+    pub fn capabilities(&self) -> &[crate::types::Capability] {
+        self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
-    pub fn changes(&self) -> ::std::option::Option<&[crate::types::Change]> {
-        self.changes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changes.is_none()`.
+    pub fn changes(&self) -> &[crate::types::Change] {
+        self.changes.as_deref().unwrap_or_default()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

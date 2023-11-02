@@ -42,13 +42,13 @@ pub fn ser_pipe_source_kinesis_stream_parameters(
             ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_9) = &input.starting_position {
-        object.key("StartingPosition").string(var_9.as_str());
+    {
+        object.key("StartingPosition").string(input.starting_position.as_str());
     }
-    if let Some(var_10) = &input.starting_position_timestamp {
+    if let Some(var_9) = &input.starting_position_timestamp {
         object
             .key("StartingPositionTimestamp")
-            .date_time(var_10, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_9, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -136,7 +136,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pipe_source_kinesis_stream_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

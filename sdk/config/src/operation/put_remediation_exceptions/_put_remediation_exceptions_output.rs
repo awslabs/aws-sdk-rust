@@ -9,8 +9,10 @@ pub struct PutRemediationExceptionsOutput {
 }
 impl PutRemediationExceptionsOutput {
     /// <p>Returns a list of failed remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
-    pub fn failed_batches(&self) -> ::std::option::Option<&[crate::types::FailedRemediationExceptionBatch]> {
-        self.failed_batches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_batches.is_none()`.
+    pub fn failed_batches(&self) -> &[crate::types::FailedRemediationExceptionBatch] {
+        self.failed_batches.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutRemediationExceptionsOutput {

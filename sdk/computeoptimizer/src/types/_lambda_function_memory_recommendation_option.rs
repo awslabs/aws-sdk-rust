@@ -25,8 +25,10 @@ impl LambdaFunctionMemoryRecommendationOption {
         self.memory_size
     }
     /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
-    pub fn projected_utilization_metrics(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionMemoryProjectedMetric]> {
-        self.projected_utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_utilization_metrics.is_none()`.
+    pub fn projected_utilization_metrics(&self) -> &[crate::types::LambdaFunctionMemoryProjectedMetric] {
+        self.projected_utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {

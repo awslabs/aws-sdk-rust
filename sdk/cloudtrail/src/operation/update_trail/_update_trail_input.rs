@@ -147,6 +147,7 @@ impl UpdateTrailInputBuilder {
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnectionAlias`](crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alias_id(impl Into<String>)`](crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::set_alias_id): <p>The identifier of the connection alias to delete.</p>
+    ///   - [`alias_id(impl Into<String>)`](crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder::set_alias_id):<br>required: **true**<br><p>The identifier of the connection alias to delete.</p><br>
     /// - On success, responds with [`DeleteConnectionAliasOutput`](crate::operation::delete_connection_alias::DeleteConnectionAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectionAliasError>`](crate::operation::delete_connection_alias::DeleteConnectionAliasError)
     pub fn delete_connection_alias(&self) -> crate::operation::delete_connection_alias::builders::DeleteConnectionAliasFluentBuilder {

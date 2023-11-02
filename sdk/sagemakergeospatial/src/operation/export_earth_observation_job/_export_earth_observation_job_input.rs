@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportEarthObservationJobInput {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub execution_role_arn: ::std::string::String,
     /// <p>An object containing information about the output file.</p>
     pub output_config: ::std::option::Option<crate::types::OutputConfigInput>,
     /// <p>The source images provided to the Earth Observation job being exported.</p>
@@ -16,16 +16,18 @@ pub struct ExportEarthObservationJobInput {
 }
 impl ExportEarthObservationJobInput {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_role_arn.as_deref()
+    pub fn execution_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role_arn.deref()
     }
     /// <p>An object containing information about the output file.</p>
     pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfigInput> {
@@ -55,6 +57,7 @@ pub struct ExportEarthObservationJobInputBuilder {
 }
 impl ExportEarthObservationJobInputBuilder {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl ExportEarthObservationJobInputBuilder {
         &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +101,7 @@ impl ExportEarthObservationJobInputBuilder {
         &self.execution_role_arn
     }
     /// <p>An object containing information about the output file.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfigInput) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self
@@ -125,6 +130,9 @@ impl ExportEarthObservationJobInputBuilder {
         &self.export_source_images
     }
     /// Consumes the builder and constructs a [`ExportEarthObservationJobInput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder::arn)
+    /// - [`execution_role_arn`](crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder::execution_role_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -132,9 +140,19 @@ impl ExportEarthObservationJobInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ExportEarthObservationJobInput",
+                )
+            })?,
             client_token: self.client_token,
-            execution_role_arn: self.execution_role_arn,
+            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_role_arn",
+                    "execution_role_arn was not specified but it is required when building ExportEarthObservationJobInput",
+                )
+            })?,
             output_config: self.output_config,
             export_source_images: self.export_source_images,
         })

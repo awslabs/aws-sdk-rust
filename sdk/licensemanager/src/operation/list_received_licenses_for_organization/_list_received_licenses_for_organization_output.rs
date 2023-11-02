@@ -11,8 +11,10 @@ pub struct ListReceivedLicensesForOrganizationOutput {
 }
 impl ListReceivedLicensesForOrganizationOutput {
     /// <p>Lists the licenses the organization has received.</p>
-    pub fn licenses(&self) -> ::std::option::Option<&[crate::types::GrantedLicense]> {
-        self.licenses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.licenses.is_none()`.
+    pub fn licenses(&self) -> &[crate::types::GrantedLicense] {
+        self.licenses.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

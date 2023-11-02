@@ -34,6 +34,7 @@ pub struct ReleaseFileSystemNfsV3LocksInputBuilder {
 }
 impl ReleaseFileSystemNfsV3LocksInputBuilder {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self

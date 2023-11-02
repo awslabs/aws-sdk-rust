@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortalStatus {
     /// <p>The current state of the portal.</p>
-    pub state: ::std::option::Option<crate::types::PortalState>,
+    pub state: crate::types::PortalState,
     /// <p>Contains associated error information, if any.</p>
     pub error: ::std::option::Option<crate::types::MonitorErrorDetails>,
 }
 impl PortalStatus {
     /// <p>The current state of the portal.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PortalState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::PortalState {
+        &self.state
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::MonitorErrorDetails> {
@@ -35,6 +35,7 @@ pub struct PortalStatusBuilder {
 }
 impl PortalStatusBuilder {
     /// <p>The current state of the portal.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::PortalState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl PortalStatusBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`PortalStatus`](crate::types::PortalStatus).
-    pub fn build(self) -> crate::types::PortalStatus {
-        crate::types::PortalStatus {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::PortalStatusBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::PortalStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PortalStatus {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building PortalStatus",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

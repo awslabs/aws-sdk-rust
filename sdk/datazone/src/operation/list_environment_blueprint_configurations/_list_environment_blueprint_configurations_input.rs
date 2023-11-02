@@ -41,6 +41,7 @@ pub struct ListEnvironmentBlueprintConfigurationsInputBuilder {
 }
 impl ListEnvironmentBlueprintConfigurationsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self

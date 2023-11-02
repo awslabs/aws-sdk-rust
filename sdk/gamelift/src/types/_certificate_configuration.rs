@@ -43,6 +43,7 @@ impl CertificateConfigurationBuilder {
     /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn certificate_type(mut self, input: crate::types::CertificateType) -> Self {
         self.certificate_type = ::std::option::Option::Some(input);
         self

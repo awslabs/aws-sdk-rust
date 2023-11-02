@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisParameters {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    pub partition_key: ::std::option::Option<::std::string::String>,
+    pub partition_key: ::std::string::String,
 }
 impl KinesisParameters {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    pub fn partition_key(&self) -> ::std::option::Option<&str> {
-        self.partition_key.as_deref()
+    pub fn partition_key(&self) -> &str {
+        use std::ops::Deref;
+        self.partition_key.deref()
     }
 }
 impl KinesisParameters {
@@ -28,6 +29,7 @@ pub struct KinesisParametersBuilder {
 }
 impl KinesisParametersBuilder {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+    /// This field is required.
     pub fn partition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_key = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl KinesisParametersBuilder {
         &self.partition_key
     }
     /// Consumes the builder and constructs a [`KinesisParameters`](crate::types::KinesisParameters).
-    pub fn build(self) -> crate::types::KinesisParameters {
-        crate::types::KinesisParameters {
-            partition_key: self.partition_key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`partition_key`](crate::types::builders::KinesisParametersBuilder::partition_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisParameters {
+            partition_key: self.partition_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "partition_key",
+                    "partition_key was not specified but it is required when building KinesisParameters",
+                )
+            })?,
+        })
     }
 }

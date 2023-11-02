@@ -3,36 +3,36 @@ pub fn ser_create_analyzer_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_analyzer::CreateAnalyzerInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.analyzer_name {
-        object.key("analyzerName").string(var_1.as_str());
+    {
+        object.key("analyzerName").string(input.analyzer_name.as_str());
     }
-    if let Some(var_2) = &input.archive_rules {
-        let mut array_3 = object.key("archiveRules").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.archive_rules {
+        let mut array_2 = object.key("archiveRules").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_inline_archive_rule::ser_inline_archive_rule(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_inline_archive_rule::ser_inline_archive_rule(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("clientToken").string(var_6.as_str());
+    if let Some(var_5) = &input.client_token {
+        object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_8.finish();
+        object_7.finish();
     }
-    if let Some(var_11) = &input.r#type {
-        object.key("type").string(var_11.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }

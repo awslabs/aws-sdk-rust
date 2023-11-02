@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteOrganizationConfigRule`](crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder::set_organization_config_rule_name): <p>The name of organization Config rule that you want to delete.</p>
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::operation::delete_organization_config_rule::builders::DeleteOrganizationConfigRuleFluentBuilder::set_organization_config_rule_name):<br>required: **true**<br><p>The name of organization Config rule that you want to delete.</p><br>
     /// - On success, responds with [`DeleteOrganizationConfigRuleOutput`](crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteOrganizationConfigRuleError>`](crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError)
     pub fn delete_organization_config_rule(

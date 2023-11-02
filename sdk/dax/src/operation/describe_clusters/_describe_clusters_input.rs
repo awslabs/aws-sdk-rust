@@ -13,8 +13,10 @@ pub struct DescribeClustersInput {
 }
 impl DescribeClustersInput {
     /// <p>The names of the DAX clusters being described.</p>
-    pub fn cluster_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cluster_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_names.is_none()`.
+    pub fn cluster_names(&self) -> &[::std::string::String] {
+        self.cluster_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>

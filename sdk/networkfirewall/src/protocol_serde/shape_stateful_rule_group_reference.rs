@@ -3,20 +3,20 @@ pub fn ser_stateful_rule_group_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StatefulRuleGroupReference,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_arn {
-        object.key("ResourceArn").string(var_1.as_str());
+    {
+        object.key("ResourceArn").string(input.resource_arn.as_str());
     }
-    if let Some(var_2) = &input.priority {
+    if let Some(var_1) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_3) = &input.r#override {
+    if let Some(var_2) = &input.r#override {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Override").start_object();
-        crate::protocol_serde::shape_stateful_rule_group_override::ser_stateful_rule_group_override(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("Override").start_object();
+        crate::protocol_serde::shape_stateful_rule_group_override::ser_stateful_rule_group_override(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -64,7 +64,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::stateful_rule_group_reference_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

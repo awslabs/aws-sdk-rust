@@ -62,6 +62,7 @@ impl MoveByoipCidrToIpamInputBuilder {
         &self.dry_run
     }
     /// <p>The BYOIP CIDR.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl MoveByoipCidrToIpamInputBuilder {
         &self.cidr
     }
     /// <p>The IPAM pool ID.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl MoveByoipCidrToIpamInputBuilder {
         &self.ipam_pool_id
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
+    /// This field is required.
     pub fn ipam_pool_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_owner = ::std::option::Option::Some(input.into());
         self

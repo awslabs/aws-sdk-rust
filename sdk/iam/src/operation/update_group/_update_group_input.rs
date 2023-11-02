@@ -48,6 +48,7 @@ pub struct UpdateGroupInputBuilder {
 impl UpdateGroupInputBuilder {
     /// <p>Name of the IAM group to update. If you're changing the name of the group, this is the original name.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self

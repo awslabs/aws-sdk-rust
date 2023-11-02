@@ -48,6 +48,7 @@ pub struct UpdateImageSetMetadataInputBuilder {
 }
 impl UpdateImageSetMetadataInputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateImageSetMetadataInputBuilder {
         &self.datastore_id
     }
     /// <p>The image set identifier.</p>
+    /// This field is required.
     pub fn image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateImageSetMetadataInputBuilder {
         &self.image_set_id
     }
     /// <p>The latest image set version identifier.</p>
+    /// This field is required.
     pub fn latest_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_version_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateImageSetMetadataInputBuilder {
         &self.latest_version_id
     }
     /// <p>Update image set metadata updates.</p>
+    /// This field is required.
     pub fn update_image_set_metadata_updates(mut self, input: crate::types::MetadataUpdates) -> Self {
         self.update_image_set_metadata_updates = ::std::option::Option::Some(input);
         self

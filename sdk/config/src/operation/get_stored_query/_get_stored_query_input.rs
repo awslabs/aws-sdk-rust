@@ -27,6 +27,7 @@ pub struct GetStoredQueryInputBuilder {
 }
 impl GetStoredQueryInputBuilder {
     /// <p>The name of the query.</p>
+    /// This field is required.
     pub fn query_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_name = ::std::option::Option::Some(input.into());
         self

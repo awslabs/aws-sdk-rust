@@ -34,6 +34,7 @@ pub struct DetectStackResourceDriftInputBuilder {
 }
 impl DetectStackResourceDriftInputBuilder {
     /// <p>The name of the stack to which the resource belongs.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DetectStackResourceDriftInputBuilder {
         &self.stack_name
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self

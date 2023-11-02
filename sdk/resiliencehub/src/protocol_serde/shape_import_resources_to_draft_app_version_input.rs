@@ -3,44 +3,44 @@ pub fn ser_import_resources_to_draft_app_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.eks_sources {
-        let mut array_3 = object.key("eksSources").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.eks_sources {
+        let mut array_2 = object.key("eksSources").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_eks_source::ser_eks_source(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_eks_source::ser_eks_source(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.import_strategy {
-        object.key("importStrategy").string(var_6.as_str());
+    if let Some(var_5) = &input.import_strategy {
+        object.key("importStrategy").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.source_arns {
-        let mut array_8 = object.key("sourceArns").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.source_arns {
+        let mut array_7 = object.key("sourceArns").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_10) = &input.terraform_sources {
-        let mut array_11 = object.key("terraformSources").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.terraform_sources {
+        let mut array_10 = object.key("terraformSources").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_terraform_source::ser_terraform_source(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_terraform_source::ser_terraform_source(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
     Ok(())
 }

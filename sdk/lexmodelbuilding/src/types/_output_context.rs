@@ -5,23 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputContext {
     /// <p>The name of the context.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
-    pub time_to_live_in_seconds: ::std::option::Option<i32>,
+    pub time_to_live_in_seconds: i32,
     /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
-    pub turns_to_live: ::std::option::Option<i32>,
+    pub turns_to_live: i32,
 }
 impl OutputContext {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
-    pub fn time_to_live_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn time_to_live_in_seconds(&self) -> i32 {
         self.time_to_live_in_seconds
     }
     /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
-    pub fn turns_to_live(&self) -> ::std::option::Option<i32> {
+    pub fn turns_to_live(&self) -> i32 {
         self.turns_to_live
     }
 }
@@ -42,6 +43,7 @@ pub struct OutputContextBuilder {
 }
 impl OutputContextBuilder {
     /// <p>The name of the context.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl OutputContextBuilder {
         &self.name
     }
     /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+    /// This field is required.
     pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
         self.time_to_live_in_seconds = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl OutputContextBuilder {
         &self.time_to_live_in_seconds
     }
     /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
+    /// This field is required.
     pub fn turns_to_live(mut self, input: i32) -> Self {
         self.turns_to_live = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,30 @@ impl OutputContextBuilder {
         &self.turns_to_live
     }
     /// Consumes the builder and constructs a [`OutputContext`](crate::types::OutputContext).
-    pub fn build(self) -> crate::types::OutputContext {
-        crate::types::OutputContext {
-            name: self.name,
-            time_to_live_in_seconds: self.time_to_live_in_seconds,
-            turns_to_live: self.turns_to_live,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OutputContextBuilder::name)
+    /// - [`time_to_live_in_seconds`](crate::types::builders::OutputContextBuilder::time_to_live_in_seconds)
+    /// - [`turns_to_live`](crate::types::builders::OutputContextBuilder::turns_to_live)
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputContext, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OutputContext {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building OutputContext",
+                )
+            })?,
+            time_to_live_in_seconds: self.time_to_live_in_seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_to_live_in_seconds",
+                    "time_to_live_in_seconds was not specified but it is required when building OutputContext",
+                )
+            })?,
+            turns_to_live: self.turns_to_live.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "turns_to_live",
+                    "turns_to_live was not specified but it is required when building OutputContext",
+                )
+            })?,
+        })
     }
 }

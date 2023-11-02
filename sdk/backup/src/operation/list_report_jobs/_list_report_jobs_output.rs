@@ -11,8 +11,10 @@ pub struct ListReportJobsOutput {
 }
 impl ListReportJobsOutput {
     /// <p>Details about your report jobs in JSON format.</p>
-    pub fn report_jobs(&self) -> ::std::option::Option<&[crate::types::ReportJob]> {
-        self.report_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_jobs.is_none()`.
+    pub fn report_jobs(&self) -> &[crate::types::ReportJob] {
+        self.report_jobs.as_deref().unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

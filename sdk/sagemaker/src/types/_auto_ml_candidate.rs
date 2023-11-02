@@ -45,16 +45,20 @@ impl AutoMlCandidate {
         self.objective_status.as_ref()
     }
     /// <p>Information about the candidate's steps.</p>
-    pub fn candidate_steps(&self) -> ::std::option::Option<&[crate::types::AutoMlCandidateStep]> {
-        self.candidate_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.candidate_steps.is_none()`.
+    pub fn candidate_steps(&self) -> &[crate::types::AutoMlCandidateStep] {
+        self.candidate_steps.as_deref().unwrap_or_default()
     }
     /// <p>The candidate's status.</p>
     pub fn candidate_status(&self) -> ::std::option::Option<&crate::types::CandidateStatus> {
         self.candidate_status.as_ref()
     }
     /// <p>Information about the recommended inference container definitions.</p>
-    pub fn inference_containers(&self) -> ::std::option::Option<&[crate::types::AutoMlContainerDefinition]> {
-        self.inference_containers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_containers.is_none()`.
+    pub fn inference_containers(&self) -> &[crate::types::AutoMlContainerDefinition] {
+        self.inference_containers.as_deref().unwrap_or_default()
     }
     /// <p>The creation time.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -113,6 +117,7 @@ pub struct AutoMlCandidateBuilder {
 }
 impl AutoMlCandidateBuilder {
     /// <p>The name of the candidate.</p>
+    /// This field is required.
     pub fn candidate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.candidate_name = ::std::option::Option::Some(input.into());
         self
@@ -141,6 +146,7 @@ impl AutoMlCandidateBuilder {
         &self.final_auto_ml_job_objective_metric
     }
     /// <p>The objective's status.</p>
+    /// This field is required.
     pub fn objective_status(mut self, input: crate::types::ObjectiveStatus) -> Self {
         self.objective_status = ::std::option::Option::Some(input);
         self
@@ -175,6 +181,7 @@ impl AutoMlCandidateBuilder {
         &self.candidate_steps
     }
     /// <p>The candidate's status.</p>
+    /// This field is required.
     pub fn candidate_status(mut self, input: crate::types::CandidateStatus) -> Self {
         self.candidate_status = ::std::option::Option::Some(input);
         self
@@ -209,6 +216,7 @@ impl AutoMlCandidateBuilder {
         &self.inference_containers
     }
     /// <p>The creation time.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -237,6 +245,7 @@ impl AutoMlCandidateBuilder {
         &self.end_time
     }
     /// <p>The last modified time.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

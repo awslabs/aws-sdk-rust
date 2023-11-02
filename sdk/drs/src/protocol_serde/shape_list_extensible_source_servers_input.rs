@@ -12,8 +12,8 @@ pub fn ser_list_extensible_source_servers_input(
     if let Some(var_1) = &input.next_token {
         object.key("nextToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.staging_account_id {
-        object.key("stagingAccountID").string(var_2.as_str());
+    {
+        object.key("stagingAccountID").string(input.staging_account_id.as_str());
     }
     Ok(())
 }

@@ -56,6 +56,7 @@ pub struct ListSnapshotBlocksInputBuilder {
 }
 impl ListSnapshotBlocksInputBuilder {
     /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self

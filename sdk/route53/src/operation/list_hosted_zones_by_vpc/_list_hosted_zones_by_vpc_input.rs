@@ -53,6 +53,7 @@ pub struct ListHostedZonesByVpcInputBuilder {
 }
 impl ListHostedZonesByVpcInputBuilder {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl ListHostedZonesByVpcInputBuilder {
         &self.vpc_id
     }
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    /// This field is required.
     pub fn vpc_region(mut self, input: crate::types::VpcRegion) -> Self {
         self.vpc_region = ::std::option::Option::Some(input);
         self

@@ -35,6 +35,7 @@ pub struct GetOpenIdTokenInputBuilder {
 }
 impl GetOpenIdTokenInputBuilder {
     /// <p>A unique identifier in the format REGION:GUID.</p>
+    /// This field is required.
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
         self

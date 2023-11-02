@@ -34,6 +34,7 @@ pub struct DeleteLabelInputBuilder {
 }
 impl DeleteLabelInputBuilder {
     /// <p> The name of the label group that contains the label that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLabelInputBuilder {
         &self.label_group_name
     }
     /// <p> The ID of the label that you want to delete. </p>
+    /// This field is required.
     pub fn label_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_id = ::std::option::Option::Some(input.into());
         self

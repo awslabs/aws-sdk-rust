@@ -37,6 +37,7 @@ pub struct ModifyClusterDbRevisionInputBuilder {
 impl ModifyClusterDbRevisionInputBuilder {
     /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
     /// <p>Example: <code>examplecluster</code> </p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -53,6 +54,7 @@ impl ModifyClusterDbRevisionInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
+    /// This field is required.
     pub fn revision_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_target = ::std::option::Option::Some(input.into());
         self

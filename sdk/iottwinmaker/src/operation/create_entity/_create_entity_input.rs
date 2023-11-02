@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ID of the entity.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entity.</p>
-    pub entity_name: ::std::option::Option<::std::string::String>,
+    pub entity_name: ::std::string::String,
     /// <p>The description of the entity.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
@@ -20,16 +20,18 @@ pub struct CreateEntityInput {
 }
 impl CreateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(&self) -> ::std::option::Option<&str> {
-        self.entity_name.as_deref()
+    pub fn entity_name(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_name.deref()
     }
     /// <p>The description of the entity.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct CreateEntityInputBuilder {
 }
 impl CreateEntityInputBuilder {
     /// <p>The ID of the workspace that contains the entity.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl CreateEntityInputBuilder {
         &self.entity_id
     }
     /// <p>The name of the entity.</p>
+    /// This field is required.
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_name = ::std::option::Option::Some(input.into());
         self
@@ -182,11 +186,24 @@ impl CreateEntityInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEntityInput`](crate::operation::create_entity::CreateEntityInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::create_entity::builders::CreateEntityInputBuilder::workspace_id)
+    /// - [`entity_name`](crate::operation::create_entity::builders::CreateEntityInputBuilder::entity_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_entity::CreateEntityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_entity::CreateEntityInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building CreateEntityInput",
+                )
+            })?,
             entity_id: self.entity_id,
-            entity_name: self.entity_name,
+            entity_name: self.entity_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_name",
+                    "entity_name was not specified but it is required when building CreateEntityInput",
+                )
+            })?,
             description: self.description,
             components: self.components,
             parent_entity_id: self.parent_entity_id,

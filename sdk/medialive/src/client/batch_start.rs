@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchStart`](crate::operation::batch_start::builders::BatchStartFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_ids(impl Into<String>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::channel_ids) / [`set_channel_ids(Option<Vec<String>>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::set_channel_ids): List of channel IDs
-    ///   - [`multiplex_ids(impl Into<String>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::multiplex_ids) / [`set_multiplex_ids(Option<Vec<String>>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::set_multiplex_ids): List of multiplex IDs
+    ///   - [`channel_ids(impl Into<String>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::channel_ids) / [`set_channel_ids(Option<Vec<String>>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::set_channel_ids):<br>required: **false**<br>List of channel IDs<br>
+    ///   - [`multiplex_ids(impl Into<String>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::multiplex_ids) / [`set_multiplex_ids(Option<Vec<String>>)`](crate::operation::batch_start::builders::BatchStartFluentBuilder::set_multiplex_ids):<br>required: **false**<br>List of multiplex IDs<br>
     /// - On success, responds with [`BatchStartOutput`](crate::operation::batch_start::BatchStartOutput) with field(s):
     ///   - [`failed(Option<Vec<BatchFailedResultModel>>)`](crate::operation::batch_start::BatchStartOutput::failed): List of failed operations
     ///   - [`successful(Option<Vec<BatchSuccessfulResultModel>>)`](crate::operation::batch_start::BatchStartOutput::successful): List of successful operations

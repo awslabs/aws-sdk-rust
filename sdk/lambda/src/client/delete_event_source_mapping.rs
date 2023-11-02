@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventSourceMapping`](crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`uuid(impl Into<String>)`](crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingFluentBuilder::uuid) / [`set_uuid(Option<String>)`](crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingFluentBuilder::set_uuid): <p>The identifier of the event source mapping.</p>
+    ///   - [`uuid(impl Into<String>)`](crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingFluentBuilder::uuid) / [`set_uuid(Option<String>)`](crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingFluentBuilder::set_uuid):<br>required: **true**<br><p>The identifier of the event source mapping.</p><br>
     /// - On success, responds with [`DeleteEventSourceMappingOutput`](crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput) with field(s):
     ///   - [`uuid(Option<String>)`](crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
     ///   - [`starting_position(Option<EventSourcePosition>)`](crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>

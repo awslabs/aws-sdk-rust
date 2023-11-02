@@ -28,8 +28,10 @@ impl ImportCertificateInput {
         self.certificate_wallet.as_ref()
     }
     /// <p>The tags associated with the certificate.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInput {
@@ -60,6 +62,7 @@ pub struct ImportCertificateInputBuilder {
 }
 impl ImportCertificateInputBuilder {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_identifier = ::std::option::Option::Some(input.into());
         self

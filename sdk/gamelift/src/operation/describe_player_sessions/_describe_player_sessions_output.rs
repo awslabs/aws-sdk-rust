@@ -11,8 +11,10 @@ pub struct DescribePlayerSessionsOutput {
 }
 impl DescribePlayerSessionsOutput {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
-    pub fn player_sessions(&self) -> ::std::option::Option<&[crate::types::PlayerSession]> {
-        self.player_sessions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_sessions.is_none()`.
+    pub fn player_sessions(&self) -> &[crate::types::PlayerSession] {
+        self.player_sessions.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

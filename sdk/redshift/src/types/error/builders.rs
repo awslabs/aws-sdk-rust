@@ -57,6 +57,8 @@ pub use crate::types::error::_number_of_nodes_per_cluster_limit_exceeded_fault::
 
 pub use crate::types::error::_limit_exceeded_fault::LimitExceededFaultBuilder;
 
+pub use crate::types::error::_ipv6_cidr_block_not_found_fault::Ipv6CidrBlockNotFoundFaultBuilder;
+
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFaultBuilder;
 
 pub use crate::types::error::_invalid_tag_fault::InvalidTagFaultBuilder;
@@ -92,6 +94,12 @@ pub use crate::types::error::_unsupported_option_fault::UnsupportedOptionFaultBu
 pub use crate::types::error::_invalid_cluster_parameter_group_state_fault::InvalidClusterParameterGroupStateFaultBuilder;
 
 pub use crate::types::error::_invalid_data_share_fault::InvalidDataShareFaultBuilder;
+
+pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFaultBuilder;
+
+pub use crate::types::error::_invalid_policy_fault::InvalidPolicyFaultBuilder;
+
+pub use crate::types::error::_conflict_policy_update_fault::ConflictPolicyUpdateFaultBuilder;
 
 pub use crate::types::error::_reserved_node_quota_exceeded_fault::ReservedNodeQuotaExceededFaultBuilder;
 
@@ -171,13 +179,13 @@ pub use crate::types::error::_invalid_namespace_fault::InvalidNamespaceFaultBuil
 
 pub use crate::types::error::_snapshot_copy_already_disabled_fault::SnapshotCopyAlreadyDisabledFaultBuilder;
 
-pub use crate::types::error::_resource_not_found_fault::ResourceNotFoundFaultBuilder;
-
 pub use crate::types::error::_table_restore_not_found_fault::TableRestoreNotFoundFaultBuilder;
 
 pub use crate::types::error::_resize_not_found_fault::ResizeNotFoundFaultBuilder;
 
 pub use crate::types::error::_reserved_node_exchange_not_found_fault::ReservedNodeExchangeNotFoundFaultBuilder;
+
+pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFaultBuilder;
 
 pub use crate::types::error::_custom_domain_association_not_found_fault::CustomDomainAssociationNotFoundFaultBuilder;
 

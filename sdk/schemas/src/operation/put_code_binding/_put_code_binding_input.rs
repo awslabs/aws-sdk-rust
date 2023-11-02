@@ -48,6 +48,7 @@ pub struct PutCodeBindingInputBuilder {
 }
 impl PutCodeBindingInputBuilder {
     /// <p>The language of the code binding.</p>
+    /// This field is required.
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PutCodeBindingInputBuilder {
         &self.language
     }
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl PutCodeBindingInputBuilder {
         &self.registry_name
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self

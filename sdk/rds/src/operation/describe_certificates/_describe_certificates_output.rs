@@ -18,8 +18,10 @@ impl DescribeCertificatesOutput {
         self.default_certificate_for_new_launches.as_deref()
     }
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

@@ -35,6 +35,7 @@ pub struct StepDetailBuilder {
 }
 impl StepDetailBuilder {
     /// <p>The step configuration.</p>
+    /// This field is required.
     pub fn step_config(mut self, input: crate::types::StepConfig) -> Self {
         self.step_config = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl StepDetailBuilder {
         &self.step_config
     }
     /// <p>The description of the step status.</p>
+    /// This field is required.
     pub fn execution_status_detail(mut self, input: crate::types::StepExecutionStatusDetail) -> Self {
         self.execution_status_detail = ::std::option::Option::Some(input);
         self

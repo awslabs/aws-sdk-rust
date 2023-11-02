@@ -27,8 +27,10 @@ impl TaskTemplateField {
         self.r#type.as_ref()
     }
     /// <p>A list of options for a single select field.</p>
-    pub fn single_select_options(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.single_select_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.single_select_options.is_none()`.
+    pub fn single_select_options(&self) -> &[::std::string::String] {
+        self.single_select_options.as_deref().unwrap_or_default()
     }
 }
 impl TaskTemplateField {
@@ -49,6 +51,7 @@ pub struct TaskTemplateFieldBuilder {
 }
 impl TaskTemplateFieldBuilder {
     /// <p>The unique identifier for the field.</p>
+    /// This field is required.
     pub fn id(mut self, input: crate::types::TaskTemplateFieldIdentifier) -> Self {
         self.id = ::std::option::Option::Some(input);
         self

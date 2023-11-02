@@ -101,6 +101,7 @@ impl CreateStreamInputBuilder {
     }
     /// <p>A name for the stream that you are creating.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+    /// This field is required.
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
         self

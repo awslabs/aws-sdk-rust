@@ -12,8 +12,10 @@ pub struct GetConformancePackComplianceSummaryInput {
 }
 impl GetConformancePackComplianceSummaryInput {
     /// <p>Names of conformance packs.</p>
-    pub fn conformance_pack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.conformance_pack_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_names.is_none()`.
+    pub fn conformance_pack_names(&self) -> &[::std::string::String] {
+        self.conformance_pack_names.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {

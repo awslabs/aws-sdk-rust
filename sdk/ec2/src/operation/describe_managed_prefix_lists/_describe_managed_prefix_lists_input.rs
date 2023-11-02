@@ -30,8 +30,10 @@ impl DescribeManagedPrefixListsInput {
     /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
     /// <li> <p> <code>prefix-list-name</code> - The name of the prefix list.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -42,8 +44,10 @@ impl DescribeManagedPrefixListsInput {
         self.next_token.as_deref()
     }
     /// <p>One or more prefix list IDs.</p>
-    pub fn prefix_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.prefix_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
+    pub fn prefix_list_ids(&self) -> &[::std::string::String] {
+        self.prefix_list_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeManagedPrefixListsInput {

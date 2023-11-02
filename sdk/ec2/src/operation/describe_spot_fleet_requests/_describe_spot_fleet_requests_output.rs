@@ -16,8 +16,10 @@ impl DescribeSpotFleetRequestsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the configuration of your Spot Fleet.</p>
-    pub fn spot_fleet_request_configs(&self) -> ::std::option::Option<&[crate::types::SpotFleetRequestConfig]> {
-        self.spot_fleet_request_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spot_fleet_request_configs.is_none()`.
+    pub fn spot_fleet_request_configs(&self) -> &[crate::types::SpotFleetRequestConfig] {
+        self.spot_fleet_request_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSpotFleetRequestsOutput {

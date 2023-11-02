@@ -78,12 +78,16 @@ impl Cluster {
         self.cluster_discovery_endpoint.as_ref()
     }
     /// <p>A list of nodes to be removed from the cluster.</p>
-    pub fn node_ids_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.node_ids_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids_to_remove.is_none()`.
+    pub fn node_ids_to_remove(&self) -> &[::std::string::String] {
+        self.node_ids_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>A list of nodes that are currently in the cluster.</p>
-    pub fn nodes(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
+    pub fn nodes(&self) -> &[crate::types::Node] {
+        self.nodes.as_deref().unwrap_or_default()
     }
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
@@ -98,8 +102,10 @@ impl Cluster {
         self.subnet_group.as_deref()
     }
     /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupMembership]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::SecurityGroupMembership] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {

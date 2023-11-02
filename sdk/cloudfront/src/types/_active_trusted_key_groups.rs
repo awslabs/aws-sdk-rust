@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveTrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The number of key groups in the list.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A list of key groups, including the identifiers of the public keys in each key group that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::KgKeyPairIds>>,
 }
 impl ActiveTrustedKeyGroups {
     /// <p>This field is <code>true</code> if any of the key groups have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The number of key groups in the list.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A list of key groups, including the identifiers of the public keys in each key group that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::KgKeyPairIds]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::KgKeyPairIds] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl ActiveTrustedKeyGroups {
@@ -42,6 +44,7 @@ pub struct ActiveTrustedKeyGroupsBuilder {
 }
 impl ActiveTrustedKeyGroupsBuilder {
     /// <p>This field is <code>true</code> if any of the key groups have public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl ActiveTrustedKeyGroupsBuilder {
         &self.enabled
     }
     /// <p>The number of key groups in the list.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl ActiveTrustedKeyGroupsBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`ActiveTrustedKeyGroups`](crate::types::ActiveTrustedKeyGroups).
-    pub fn build(self) -> crate::types::ActiveTrustedKeyGroups {
-        crate::types::ActiveTrustedKeyGroups {
-            enabled: self.enabled,
-            quantity: self.quantity,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled`](crate::types::builders::ActiveTrustedKeyGroupsBuilder::enabled)
+    /// - [`quantity`](crate::types::builders::ActiveTrustedKeyGroupsBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActiveTrustedKeyGroups, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActiveTrustedKeyGroups {
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building ActiveTrustedKeyGroups",
+                )
+            })?,
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building ActiveTrustedKeyGroups",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

@@ -39,6 +39,7 @@ pub struct CreateGroupInputBuilder {
 impl CreateGroupInputBuilder {
     /// <p>The name for the group. It can include any Unicode characters.</p>
     /// <p>The names for all groups in your account, across all Regions, must be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

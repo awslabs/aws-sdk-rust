@@ -25,11 +25,10 @@ pub fn de_create_upload_url_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_upload_url::CreateUploadUrlError::InternalServerException({
@@ -55,11 +54,10 @@ pub fn de_create_upload_url_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::create_upload_url::CreateUploadUrlError::ValidationException({
@@ -70,11 +68,10 @@ pub fn de_create_upload_url_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::create_upload_url::CreateUploadUrlError::generic(generic),
@@ -93,7 +90,9 @@ pub fn de_create_upload_url_http_response(
         output = crate::protocol_serde::shape_create_upload_url::de_create_upload_url(_response_body, output)
             .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_upload_url_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::create_upload_url::CreateUploadUrlError::unhandled)?
     })
 }
 

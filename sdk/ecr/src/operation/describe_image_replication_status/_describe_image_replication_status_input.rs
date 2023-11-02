@@ -41,6 +41,7 @@ pub struct DescribeImageReplicationStatusInputBuilder {
 }
 impl DescribeImageReplicationStatusInputBuilder {
     /// <p>The name of the repository that the image is in.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DescribeImageReplicationStatusInputBuilder {
         &self.repository_name
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
         self

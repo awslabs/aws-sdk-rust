@@ -21,8 +21,10 @@ impl ListOutpostsWithS3Output {
     /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
     /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
     /// </ul>
-    pub fn outposts(&self) -> ::std::option::Option<&[crate::types::Outpost]> {
-        self.outposts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outposts.is_none()`.
+    pub fn outposts(&self) -> &[crate::types::Outpost] {
+        self.outposts.as_deref().unwrap_or_default()
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

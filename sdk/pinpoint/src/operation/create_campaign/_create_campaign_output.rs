@@ -34,6 +34,7 @@ pub struct CreateCampaignOutputBuilder {
 }
 impl CreateCampaignOutputBuilder {
     /// <p>Provides information about the status, configuration, and other settings for a campaign.</p>
+    /// This field is required.
     pub fn campaign_response(mut self, input: crate::types::CampaignResponse) -> Self {
         self.campaign_response = ::std::option::Option::Some(input);
         self

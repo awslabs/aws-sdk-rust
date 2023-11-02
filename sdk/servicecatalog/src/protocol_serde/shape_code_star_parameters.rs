@@ -3,17 +3,17 @@ pub fn ser_code_star_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeStarParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.connection_arn {
-        object.key("ConnectionArn").string(var_1.as_str());
+    {
+        object.key("ConnectionArn").string(input.connection_arn.as_str());
     }
-    if let Some(var_2) = &input.repository {
-        object.key("Repository").string(var_2.as_str());
+    {
+        object.key("Repository").string(input.repository.as_str());
     }
-    if let Some(var_3) = &input.branch {
-        object.key("Branch").string(var_3.as_str());
+    {
+        object.key("Branch").string(input.branch.as_str());
     }
-    if let Some(var_4) = &input.artifact_path {
-        object.key("ArtifactPath").string(var_4.as_str());
+    {
+        object.key("ArtifactPath").string(input.artifact_path.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::code_star_parameters_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

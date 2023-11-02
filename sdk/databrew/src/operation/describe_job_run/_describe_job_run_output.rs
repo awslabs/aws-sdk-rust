@@ -14,7 +14,7 @@ pub struct DescribeJobRunOutput {
     /// <p>The amount of time, in seconds, during which the job run consumed resources.</p>
     pub execution_time: i32,
     /// <p>The name of the job being processed during this run.</p>
-    pub job_name: ::std::option::Option<::std::string::String>,
+    pub job_name: ::std::string::String,
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
@@ -65,16 +65,19 @@ impl DescribeJobRunOutput {
         self.execution_time
     }
     /// <p>The name of the job being processed during this run.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
-        self.job_name.as_deref()
+    pub fn job_name(&self) -> &str {
+        use std::ops::Deref;
+        self.job_name.deref()
     }
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn profile_configuration(&self) -> ::std::option::Option<&crate::types::ProfileConfiguration> {
         self.profile_configuration.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn validation_configurations(&self) -> ::std::option::Option<&[crate::types::ValidationConfiguration]> {
-        self.validation_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_configurations.is_none()`.
+    pub fn validation_configurations(&self) -> &[crate::types::ValidationConfiguration] {
+        self.validation_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of the job run.</p>
     pub fn run_id(&self) -> ::std::option::Option<&str> {
@@ -93,16 +96,22 @@ impl DescribeJobRunOutput {
         self.log_group_name.as_deref()
     }
     /// <p>One or more output artifacts from a job run.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> ::std::option::Option<&[crate::types::DataCatalogOutput]> {
-        self.data_catalog_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_catalog_outputs.is_none()`.
+    pub fn data_catalog_outputs(&self) -> &[crate::types::DataCatalogOutput] {
+        self.data_catalog_outputs.as_deref().unwrap_or_default()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> ::std::option::Option<&[crate::types::DatabaseOutput]> {
-        self.database_outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_outputs.is_none()`.
+    pub fn database_outputs(&self) -> &[crate::types::DatabaseOutput] {
+        self.database_outputs.as_deref().unwrap_or_default()
     }
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub fn recipe_reference(&self) -> ::std::option::Option<&crate::types::RecipeReference> {
@@ -230,6 +239,7 @@ impl DescribeJobRunOutputBuilder {
         &self.execution_time
     }
     /// <p>The name of the job being processed during this run.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -459,14 +469,23 @@ impl DescribeJobRunOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeJobRunOutput`](crate::operation::describe_job_run::DescribeJobRunOutput).
-    pub fn build(self) -> crate::operation::describe_job_run::DescribeJobRunOutput {
-        crate::operation::describe_job_run::DescribeJobRunOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_name`](crate::operation::describe_job_run::builders::DescribeJobRunOutputBuilder::job_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::describe_job_run::DescribeJobRunOutput {
             attempt: self.attempt.unwrap_or_default(),
             completed_on: self.completed_on,
             dataset_name: self.dataset_name,
             error_message: self.error_message,
             execution_time: self.execution_time.unwrap_or_default(),
-            job_name: self.job_name,
+            job_name: self.job_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_name",
+                    "job_name was not specified but it is required when building DescribeJobRunOutput",
+                )
+            })?,
             profile_configuration: self.profile_configuration,
             validation_configurations: self.validation_configurations,
             run_id: self.run_id,
@@ -481,6 +500,6 @@ impl DescribeJobRunOutputBuilder {
             started_on: self.started_on,
             job_sample: self.job_sample,
             _request_id: self._request_id,
-        }
+        })
     }
 }

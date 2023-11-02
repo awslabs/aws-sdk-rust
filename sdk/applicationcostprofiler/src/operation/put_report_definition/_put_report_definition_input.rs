@@ -55,6 +55,7 @@ pub struct PutReportDefinitionInputBuilder {
 }
 impl PutReportDefinitionInputBuilder {
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PutReportDefinitionInputBuilder {
         &self.report_id
     }
     /// <p>Required. Description of the report.</p>
+    /// This field is required.
     pub fn report_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_description = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl PutReportDefinitionInputBuilder {
         &self.report_description
     }
     /// <p>Required. The cadence to generate the report.</p>
+    /// This field is required.
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
         self.report_frequency = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl PutReportDefinitionInputBuilder {
         &self.report_frequency
     }
     /// <p>Required. The format to use for the generated report.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -111,6 +115,7 @@ impl PutReportDefinitionInputBuilder {
         &self.format
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+    /// This field is required.
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.destination_s3_location = ::std::option::Option::Some(input);
         self

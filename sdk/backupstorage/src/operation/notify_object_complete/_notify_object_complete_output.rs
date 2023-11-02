@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyObjectCompleteOutput {
     /// Object checksum
-    pub object_checksum: ::std::option::Option<::std::string::String>,
+    pub object_checksum: ::std::string::String,
     /// Checksum algorithm
-    pub object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
+    pub object_checksum_algorithm: crate::types::SummaryChecksumAlgorithm,
     _request_id: Option<String>,
 }
 impl NotifyObjectCompleteOutput {
     /// Object checksum
-    pub fn object_checksum(&self) -> ::std::option::Option<&str> {
-        self.object_checksum.as_deref()
+    pub fn object_checksum(&self) -> &str {
+        use std::ops::Deref;
+        self.object_checksum.deref()
     }
     /// Checksum algorithm
-    pub fn object_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::SummaryChecksumAlgorithm> {
-        self.object_checksum_algorithm.as_ref()
+    pub fn object_checksum_algorithm(&self) -> &crate::types::SummaryChecksumAlgorithm {
+        &self.object_checksum_algorithm
     }
 }
 impl ::aws_http::request_id::RequestId for NotifyObjectCompleteOutput {
@@ -41,6 +42,7 @@ pub struct NotifyObjectCompleteOutputBuilder {
 }
 impl NotifyObjectCompleteOutputBuilder {
     /// Object checksum
+    /// This field is required.
     pub fn object_checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_checksum = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl NotifyObjectCompleteOutputBuilder {
         &self.object_checksum
     }
     /// Checksum algorithm
+    /// This field is required.
     pub fn object_checksum_algorithm(mut self, input: crate::types::SummaryChecksumAlgorithm) -> Self {
         self.object_checksum_algorithm = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,27 @@ impl NotifyObjectCompleteOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`NotifyObjectCompleteOutput`](crate::operation::notify_object_complete::NotifyObjectCompleteOutput).
-    pub fn build(self) -> crate::operation::notify_object_complete::NotifyObjectCompleteOutput {
-        crate::operation::notify_object_complete::NotifyObjectCompleteOutput {
-            object_checksum: self.object_checksum,
-            object_checksum_algorithm: self.object_checksum_algorithm,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_checksum`](crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder::object_checksum)
+    /// - [`object_checksum_algorithm`](crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder::object_checksum_algorithm)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::notify_object_complete::NotifyObjectCompleteOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::notify_object_complete::NotifyObjectCompleteOutput {
+            object_checksum: self.object_checksum.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object_checksum",
+                    "object_checksum was not specified but it is required when building NotifyObjectCompleteOutput",
+                )
+            })?,
+            object_checksum_algorithm: self.object_checksum_algorithm.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object_checksum_algorithm",
+                    "object_checksum_algorithm was not specified but it is required when building NotifyObjectCompleteOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

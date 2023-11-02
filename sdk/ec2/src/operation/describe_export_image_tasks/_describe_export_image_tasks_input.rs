@@ -20,12 +20,16 @@ impl DescribeExportImageTasksInput {
         self.dry_run
     }
     /// <p>Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of the export image tasks.</p>
-    pub fn export_image_task_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.export_image_task_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_image_task_ids.is_none()`.
+    pub fn export_image_task_ids(&self) -> &[::std::string::String] {
+        self.export_image_task_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

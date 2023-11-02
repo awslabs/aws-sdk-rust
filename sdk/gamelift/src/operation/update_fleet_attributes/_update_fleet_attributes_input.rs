@@ -48,8 +48,10 @@ impl UpdateFleetAttributesInput {
         self.resource_creation_limit_policy.as_ref()
     }
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn metric_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.metric_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_groups.is_none()`.
+    pub fn metric_groups(&self) -> &[::std::string::String] {
+        self.metric_groups.as_deref().unwrap_or_default()
     }
     /// <p>Amazon GameLift Anywhere configuration options.</p>
     pub fn anywhere_configuration(&self) -> ::std::option::Option<&crate::types::AnywhereConfiguration> {
@@ -77,6 +79,7 @@ pub struct UpdateFleetAttributesInputBuilder {
 }
 impl UpdateFleetAttributesInputBuilder {
     /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self

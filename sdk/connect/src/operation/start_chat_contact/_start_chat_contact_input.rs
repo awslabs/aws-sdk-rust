@@ -66,8 +66,10 @@ impl StartChatContactInput {
     /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>. </p> <note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
-    pub fn supported_messaging_content_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.supported_messaging_content_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_messaging_content_types.is_none()`.
+    pub fn supported_messaging_content_types(&self) -> &[::std::string::String] {
+        self.supported_messaging_content_types.as_deref().unwrap_or_default()
     }
     /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
     pub fn persistent_chat(&self) -> ::std::option::Option<&crate::types::PersistentChat> {
@@ -104,6 +106,7 @@ pub struct StartChatContactInputBuilder {
 }
 impl StartChatContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl StartChatContactInputBuilder {
     }
     /// <p>The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    /// This field is required.
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_flow_id = ::std::option::Option::Some(input.into());
         self
@@ -158,6 +162,7 @@ impl StartChatContactInputBuilder {
         &self.attributes
     }
     /// <p>Information identifying the participant.</p>
+    /// This field is required.
     pub fn participant_details(mut self, input: crate::types::ParticipantDetails) -> Self {
         self.participant_details = ::std::option::Option::Some(input);
         self

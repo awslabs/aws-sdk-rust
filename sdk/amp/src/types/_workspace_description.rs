@@ -5,32 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceDescription {
     /// Unique string identifying this workspace.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// Alias of this workspace.
     pub alias: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) of this workspace.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// The status of this workspace.
     pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// Prometheus endpoint URI.
     pub prometheus_endpoint: ::std::option::Option<::std::string::String>,
     /// The time when the workspace was created.
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// The tags of this workspace.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl WorkspaceDescription {
     /// Unique string identifying this workspace.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// Alias of this workspace.
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// The Amazon Resource Name (ARN) of this workspace.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// The status of this workspace.
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
@@ -41,8 +43,8 @@ impl WorkspaceDescription {
         self.prometheus_endpoint.as_deref()
     }
     /// The time when the workspace was created.
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// The tags of this workspace.
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,6 +72,7 @@ pub struct WorkspaceDescriptionBuilder {
 }
 impl WorkspaceDescriptionBuilder {
     /// Unique string identifying this workspace.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl WorkspaceDescriptionBuilder {
         &self.alias
     }
     /// The Amazon Resource Name (ARN) of this workspace.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl WorkspaceDescriptionBuilder {
         &self.arn
     }
     /// The status of this workspace.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl WorkspaceDescriptionBuilder {
         &self.prometheus_endpoint
     }
     /// The time when the workspace was created.
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -174,15 +180,34 @@ impl WorkspaceDescriptionBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::types::WorkspaceDescription).
-    pub fn build(self) -> crate::types::WorkspaceDescription {
-        crate::types::WorkspaceDescription {
-            workspace_id: self.workspace_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::types::builders::WorkspaceDescriptionBuilder::workspace_id)
+    /// - [`arn`](crate::types::builders::WorkspaceDescriptionBuilder::arn)
+    /// - [`created_at`](crate::types::builders::WorkspaceDescriptionBuilder::created_at)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkspaceDescription {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
             alias: self.alias,
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
             status: self.status,
             prometheus_endpoint: self.prometheus_endpoint,
-            created_at: self.created_at,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building WorkspaceDescription",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

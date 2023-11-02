@@ -41,6 +41,7 @@ pub struct UpdateQueueOutboundCallerConfigInputBuilder {
 }
 impl UpdateQueueOutboundCallerConfigInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateQueueOutboundCallerConfigInputBuilder {
         &self.instance_id
     }
     /// <p>The identifier for the queue.</p>
+    /// This field is required.
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateQueueOutboundCallerConfigInputBuilder {
         &self.queue_id
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    /// This field is required.
     pub fn outbound_caller_config(mut self, input: crate::types::OutboundCallerConfig) -> Self {
         self.outbound_caller_config = ::std::option::Option::Some(input);
         self

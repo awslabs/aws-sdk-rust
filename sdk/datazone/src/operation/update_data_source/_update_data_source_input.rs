@@ -50,8 +50,10 @@ impl UpdateDataSourceInput {
         self.publish_on_import
     }
     /// <p>The asset forms to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn asset_forms_input(&self) -> ::std::option::Option<&[crate::types::FormInput]> {
-        self.asset_forms_input.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_forms_input.is_none()`.
+    pub fn asset_forms_input(&self) -> &[crate::types::FormInput] {
+        self.asset_forms_input.as_deref().unwrap_or_default()
     }
     /// <p>The schedule to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
@@ -106,6 +108,7 @@ pub struct UpdateDataSourceInputBuilder {
 }
 impl UpdateDataSourceInputBuilder {
     /// <p>The identifier of the domain in which to update a data source.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +123,7 @@ impl UpdateDataSourceInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the data source to be updated.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

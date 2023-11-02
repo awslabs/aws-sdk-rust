@@ -18,8 +18,10 @@ impl DescribePullThroughCacheRulesInput {
         self.registry_id.as_deref()
     }
     /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    pub fn ecr_repository_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ecr_repository_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_repository_prefixes.is_none()`.
+    pub fn ecr_repository_prefixes(&self) -> &[::std::string::String] {
+        self.ecr_repository_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -13,12 +13,16 @@ pub struct DescribeAlarmsOutput {
 }
 impl DescribeAlarmsOutput {
     /// <p>The information about any composite alarms returned by the operation.</p>
-    pub fn composite_alarms(&self) -> ::std::option::Option<&[crate::types::CompositeAlarm]> {
-        self.composite_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.composite_alarms.is_none()`.
+    pub fn composite_alarms(&self) -> &[crate::types::CompositeAlarm] {
+        self.composite_alarms.as_deref().unwrap_or_default()
     }
     /// <p>The information about any metric alarms returned by the operation.</p>
-    pub fn metric_alarms(&self) -> ::std::option::Option<&[crate::types::MetricAlarm]> {
-        self.metric_alarms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_alarms.is_none()`.
+    pub fn metric_alarms(&self) -> &[crate::types::MetricAlarm] {
+        self.metric_alarms.as_deref().unwrap_or_default()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

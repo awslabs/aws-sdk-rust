@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceStandardObjectConfiguration {
     /// <p>The name of the standard object.</p>
-    pub name: ::std::option::Option<crate::types::SalesforceStandardObjectName>,
+    pub name: crate::types::SalesforceStandardObjectName,
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
-    pub document_data_field_name: ::std::option::Option<::std::string::String>,
+    pub document_data_field_name: ::std::string::String,
     /// <p>The name of the field in the standard object table that contains the document title.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
@@ -15,20 +15,23 @@ pub struct SalesforceStandardObjectConfiguration {
 }
 impl SalesforceStandardObjectConfiguration {
     /// <p>The name of the standard object.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SalesforceStandardObjectName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::SalesforceStandardObjectName {
+        &self.name
     }
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
-    pub fn document_data_field_name(&self) -> ::std::option::Option<&str> {
-        self.document_data_field_name.as_deref()
+    pub fn document_data_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_data_field_name.deref()
     }
     /// <p>The name of the field in the standard object table that contains the document title.</p>
     pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
 }
 impl SalesforceStandardObjectConfiguration {
@@ -49,6 +52,7 @@ pub struct SalesforceStandardObjectConfigurationBuilder {
 }
 impl SalesforceStandardObjectConfigurationBuilder {
     /// <p>The name of the standard object.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::SalesforceStandardObjectName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -63,6 +67,7 @@ impl SalesforceStandardObjectConfigurationBuilder {
         &self.name
     }
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
+    /// This field is required.
     pub fn document_data_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_data_field_name = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +116,27 @@ impl SalesforceStandardObjectConfigurationBuilder {
         &self.field_mappings
     }
     /// Consumes the builder and constructs a [`SalesforceStandardObjectConfiguration`](crate::types::SalesforceStandardObjectConfiguration).
-    pub fn build(self) -> crate::types::SalesforceStandardObjectConfiguration {
-        crate::types::SalesforceStandardObjectConfiguration {
-            name: self.name,
-            document_data_field_name: self.document_data_field_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SalesforceStandardObjectConfigurationBuilder::name)
+    /// - [`document_data_field_name`](crate::types::builders::SalesforceStandardObjectConfigurationBuilder::document_data_field_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::SalesforceStandardObjectConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SalesforceStandardObjectConfiguration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SalesforceStandardObjectConfiguration",
+                )
+            })?,
+            document_data_field_name: self.document_data_field_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_data_field_name",
+                    "document_data_field_name was not specified but it is required when building SalesforceStandardObjectConfiguration",
+                )
+            })?,
             document_title_field_name: self.document_title_field_name,
             field_mappings: self.field_mappings,
-        }
+        })
     }
 }

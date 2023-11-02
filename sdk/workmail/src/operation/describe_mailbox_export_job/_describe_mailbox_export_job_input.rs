@@ -34,6 +34,7 @@ pub struct DescribeMailboxExportJobInputBuilder {
 }
 impl DescribeMailboxExportJobInputBuilder {
     /// <p>The mailbox export job ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeMailboxExportJobInputBuilder {
         &self.job_id
     }
     /// <p>The organization ID.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

@@ -199,8 +199,10 @@ impl DbCluster {
         self.allocated_storage
     }
     /// <p>The list of Availability Zones (AZs) where instances in the DB cluster can be created.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
@@ -252,8 +254,10 @@ impl DbCluster {
         self.reader_endpoint.as_deref()
     }
     /// <p>The custom endpoints associated with the DB cluster.</p>
-    pub fn custom_endpoints(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_endpoints.is_none()`.
+    pub fn custom_endpoints(&self) -> &[::std::string::String] {
+        self.custom_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the DB cluster has instances in multiple Availability Zones.</p>
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
@@ -280,8 +284,10 @@ impl DbCluster {
         self.master_username.as_deref()
     }
     /// <p>The list of option group memberships for this DB cluster.</p>
-    pub fn db_cluster_option_group_memberships(&self) -> ::std::option::Option<&[crate::types::DbClusterOptionGroupStatus]> {
-        self.db_cluster_option_group_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_option_group_memberships.is_none()`.
+    pub fn db_cluster_option_group_memberships(&self) -> &[crate::types::DbClusterOptionGroupStatus] {
+        self.db_cluster_option_group_memberships.as_deref().unwrap_or_default()
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
@@ -296,16 +302,22 @@ impl DbCluster {
         self.replication_source_identifier.as_deref()
     }
     /// <p>Contains one or more identifiers of the read replicas associated with this DB cluster.</p>
-    pub fn read_replica_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.read_replica_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_identifiers.is_none()`.
+    pub fn read_replica_identifiers(&self) -> &[::std::string::String] {
+        self.read_replica_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The list of DB instances that make up the DB cluster.</p>
-    pub fn db_cluster_members(&self) -> ::std::option::Option<&[crate::types::DbClusterMember]> {
-        self.db_cluster_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_members.is_none()`.
+    pub fn db_cluster_members(&self) -> &[crate::types::DbClusterMember] {
+        self.db_cluster_members.as_deref().unwrap_or_default()
     }
     /// <p>The list of VPC security groups that the DB cluster belongs to.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
@@ -329,8 +341,10 @@ impl DbCluster {
         self.db_cluster_arn.as_deref()
     }
     /// <p>A list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon Web Services on your behalf.</p>
-    pub fn associated_roles(&self) -> ::std::option::Option<&[crate::types::DbClusterRole]> {
-        self.associated_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
+    pub fn associated_roles(&self) -> &[crate::types::DbClusterRole] {
+        self.associated_roles.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
@@ -358,8 +372,10 @@ impl DbCluster {
     }
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
     /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
-    pub fn enabled_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
+    pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enabled_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>The current capacity of an Aurora Serverless v1 DB cluster. The capacity is <code>0</code> (zero) when the cluster is paused.</p>
     /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -412,12 +428,16 @@ impl DbCluster {
         self.cross_account_clone
     }
     /// <p>The Active Directory Domain membership records associated with the DB cluster.</p>
-    pub fn domain_memberships(&self) -> ::std::option::Option<&[crate::types::DomainMembership]> {
-        self.domain_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_memberships.is_none()`.
+    pub fn domain_memberships(&self) -> &[crate::types::DomainMembership] {
+        self.domain_memberships.as_deref().unwrap_or_default()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>The status of write forwarding for a secondary cluster in an Aurora global database.</p>
     pub fn global_write_forwarding_status(&self) -> ::std::option::Option<&crate::types::WriteForwardingStatus> {

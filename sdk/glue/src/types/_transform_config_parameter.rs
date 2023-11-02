@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformConfigParameter {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
-    pub r#type: ::std::option::Option<crate::types::ParamType>,
+    pub r#type: crate::types::ParamType,
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
     pub validation_rule: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the validation message in the config file of the dynamic transform.</p>
@@ -21,12 +21,13 @@ pub struct TransformConfigParameter {
 }
 impl TransformConfigParameter {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ParamType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ParamType {
+        &self.r#type
     }
     /// <p>Specifies the validation rule in the config file of the dynamic transform.</p>
     pub fn validation_rule(&self) -> ::std::option::Option<&str> {
@@ -37,8 +38,10 @@ impl TransformConfigParameter {
         self.validation_message.as_deref()
     }
     /// <p>Specifies the value of the parameter in the config file of the dynamic transform.</p>
-    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.value.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
+    pub fn value(&self) -> &[::std::string::String] {
+        self.value.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the list type of the parameter in the config file of the dynamic transform.</p>
     pub fn list_type(&self) -> ::std::option::Option<&crate::types::ParamType> {
@@ -70,6 +73,7 @@ pub struct TransformConfigParameterBuilder {
 }
 impl TransformConfigParameterBuilder {
     /// <p>Specifies the name of the parameter in the config file of the dynamic transform.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl TransformConfigParameterBuilder {
         &self.name
     }
     /// <p>Specifies the parameter type in the config file of the dynamic transform.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ParamType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -174,15 +179,28 @@ impl TransformConfigParameterBuilder {
         &self.is_optional
     }
     /// Consumes the builder and constructs a [`TransformConfigParameter`](crate::types::TransformConfigParameter).
-    pub fn build(self) -> crate::types::TransformConfigParameter {
-        crate::types::TransformConfigParameter {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TransformConfigParameterBuilder::name)
+    /// - [`r#type`](crate::types::builders::TransformConfigParameterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TransformConfigParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TransformConfigParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TransformConfigParameter",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building TransformConfigParameter",
+                )
+            })?,
             validation_rule: self.validation_rule,
             validation_message: self.validation_message,
             value: self.value,
             list_type: self.list_type,
             is_optional: self.is_optional,
-        }
+        })
     }
 }

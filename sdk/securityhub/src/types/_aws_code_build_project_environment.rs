@@ -33,8 +33,10 @@ impl AwsCodeBuildProjectEnvironment {
         self.certificate.as_deref()
     }
     /// <p>A set of environment variables to make available to builds for the build project.</p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&[crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails]> {
-        self.environment_variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
+    pub fn environment_variables(&self) -> &[crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails] {
+        self.environment_variables.as_deref().unwrap_or_default()
     }
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
     pub fn privileged_mode(&self) -> ::std::option::Option<bool> {

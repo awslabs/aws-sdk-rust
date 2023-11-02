@@ -29,6 +29,7 @@ pub struct ModelArtifactsBuilder {
 }
 impl ModelArtifactsBuilder {
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
+    /// This field is required.
     pub fn s3_model_artifacts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_model_artifacts = ::std::option::Option::Some(input.into());
         self

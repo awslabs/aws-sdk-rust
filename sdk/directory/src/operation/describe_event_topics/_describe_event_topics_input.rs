@@ -17,8 +17,10 @@ impl DescribeEventTopicsInput {
     }
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn topic_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.topic_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_names.is_none()`.
+    pub fn topic_names(&self) -> &[::std::string::String] {
+        self.topic_names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeEventTopicsInput {

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDescription {
     /// <p>The type of error that caused the failure.</p>
-    pub r#type: ::std::option::Option<crate::types::DeliveryStreamFailureType>,
+    pub r#type: crate::types::DeliveryStreamFailureType,
     /// <p>A message providing details about the error that caused the failure.</p>
-    pub details: ::std::option::Option<::std::string::String>,
+    pub details: ::std::string::String,
 }
 impl FailureDescription {
     /// <p>The type of error that caused the failure.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DeliveryStreamFailureType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DeliveryStreamFailureType {
+        &self.r#type
     }
     /// <p>A message providing details about the error that caused the failure.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
-        self.details.as_deref()
+    pub fn details(&self) -> &str {
+        use std::ops::Deref;
+        self.details.deref()
     }
 }
 impl FailureDescription {
@@ -35,6 +36,7 @@ pub struct FailureDescriptionBuilder {
 }
 impl FailureDescriptionBuilder {
     /// <p>The type of error that caused the failure.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DeliveryStreamFailureType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl FailureDescriptionBuilder {
         &self.r#type
     }
     /// <p>A message providing details about the error that caused the failure.</p>
+    /// This field is required.
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl FailureDescriptionBuilder {
         &self.details
     }
     /// Consumes the builder and constructs a [`FailureDescription`](crate::types::FailureDescription).
-    pub fn build(self) -> crate::types::FailureDescription {
-        crate::types::FailureDescription {
-            r#type: self.r#type,
-            details: self.details,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FailureDescriptionBuilder::r#type)
+    /// - [`details`](crate::types::builders::FailureDescriptionBuilder::details)
+    pub fn build(self) -> ::std::result::Result<crate::types::FailureDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FailureDescription {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FailureDescription",
+                )
+            })?,
+            details: self.details.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "details",
+                    "details was not specified but it is required when building FailureDescription",
+                )
+            })?,
+        })
     }
 }

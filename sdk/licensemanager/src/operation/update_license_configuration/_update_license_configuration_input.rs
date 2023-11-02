@@ -32,8 +32,10 @@ impl UpdateLicenseConfigurationInput {
         self.license_configuration_status.as_ref()
     }
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    pub fn license_rules(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.license_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_rules.is_none()`.
+    pub fn license_rules(&self) -> &[::std::string::String] {
+        self.license_rules.as_deref().unwrap_or_default()
     }
     /// <p>New number of licenses managed by the license configuration.</p>
     pub fn license_count(&self) -> ::std::option::Option<i64> {
@@ -52,8 +54,10 @@ impl UpdateLicenseConfigurationInput {
         self.description.as_deref()
     }
     /// <p>New product information.</p>
-    pub fn product_information_list(&self) -> ::std::option::Option<&[crate::types::ProductInformation]> {
-        self.product_information_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_information_list.is_none()`.
+    pub fn product_information_list(&self) -> &[crate::types::ProductInformation] {
+        self.product_information_list.as_deref().unwrap_or_default()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(&self) -> ::std::option::Option<bool> {
@@ -83,6 +87,7 @@ pub struct UpdateLicenseConfigurationInputBuilder {
 }
 impl UpdateLicenseConfigurationInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    /// This field is required.
     pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_configuration_arn = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DeleteLaunchActionInputBuilder {
 }
 impl DeleteLaunchActionInputBuilder {
     /// <p>Launch configuration template Id or Source Server Id</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteLaunchActionInputBuilder {
         &self.resource_id
     }
     /// <p>Launch action Id.</p>
+    /// This field is required.
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_id = ::std::option::Option::Some(input.into());
         self

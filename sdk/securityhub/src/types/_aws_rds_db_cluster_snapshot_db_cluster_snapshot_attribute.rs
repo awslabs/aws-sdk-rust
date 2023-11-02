@@ -15,8 +15,10 @@ impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {
         self.attribute_name.as_deref()
     }
     /// <p> The value(s) for the manual DB cluster snapshot attribute. If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster snapshot is public and available for any Amazon Web Services account to copy or restore. </p>
-    pub fn attribute_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attribute_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_values.is_none()`.
+    pub fn attribute_values(&self) -> &[::std::string::String] {
+        self.attribute_values.as_deref().unwrap_or_default()
     }
 }
 impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {

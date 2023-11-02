@@ -41,6 +41,7 @@ pub struct UpdateDetectorVersionMetadataInputBuilder {
 }
 impl UpdateDetectorVersionMetadataInputBuilder {
     /// <p>The detector ID.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateDetectorVersionMetadataInputBuilder {
         &self.detector_id
     }
     /// <p>The detector version ID. </p>
+    /// This field is required.
     pub fn detector_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_version_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateDetectorVersionMetadataInputBuilder {
         &self.detector_version_id
     }
     /// <p>The description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

@@ -155,6 +155,8 @@ pub struct CreateClusterInput {
     pub manage_master_password: ::std::option::Option<bool>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -224,13 +226,17 @@ impl CreateClusterInput {
     }
     /// <p>A list of security groups to be associated with this cluster.</p>
     /// <p>Default: The default cluster security group for Amazon Redshift.</p>
-    pub fn cluster_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cluster_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_security_groups.is_none()`.
+    pub fn cluster_security_groups(&self) -> &[::std::string::String] {
+        self.cluster_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>
     /// <p>Default: The default VPC security group is associated with the cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
     /// <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
@@ -326,8 +332,10 @@ impl CreateClusterInput {
         self.elastic_ip.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -345,8 +353,10 @@ impl CreateClusterInput {
     }
     /// <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. </p>
     /// <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.iam_roles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[::std::string::String] {
+        self.iam_roles.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
     pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
@@ -379,6 +389,10 @@ impl CreateClusterInput {
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>
     pub fn master_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_password_secret_kms_key_id.as_deref()
+    }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&str> {
+        self.ip_address_type.as_deref()
     }
 }
 impl ::std::fmt::Debug for CreateClusterInput {
@@ -420,6 +434,7 @@ impl ::std::fmt::Debug for CreateClusterInput {
         formatter.field("load_sample_data", &self.load_sample_data);
         formatter.field("manage_master_password", &self.manage_master_password);
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }
@@ -470,6 +485,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) load_sample_data: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_password: ::std::option::Option<bool>,
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -520,6 +536,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code> </p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -585,6 +602,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     /// <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    /// This field is required.
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
         self
@@ -609,6 +627,7 @@ impl CreateClusterInputBuilder {
     /// <li> <p>Must not contain a colon (:) or a slash (/).</p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
         self
@@ -1237,6 +1256,20 @@ impl CreateClusterInputBuilder {
     pub fn get_master_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_password_secret_kms_key_id
     }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn ip_address_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -1278,6 +1311,7 @@ impl CreateClusterInputBuilder {
             load_sample_data: self.load_sample_data,
             manage_master_password: self.manage_master_password,
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
+            ip_address_type: self.ip_address_type,
         })
     }
 }
@@ -1320,6 +1354,7 @@ impl ::std::fmt::Debug for CreateClusterInputBuilder {
         formatter.field("load_sample_data", &self.load_sample_data);
         formatter.field("manage_master_password", &self.manage_master_password);
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
+        formatter.field("ip_address_type", &self.ip_address_type);
         formatter.finish()
     }
 }

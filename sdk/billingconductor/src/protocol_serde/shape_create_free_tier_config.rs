@@ -3,8 +3,8 @@ pub fn ser_create_free_tier_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateFreeTierConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.activated {
-        object.key("Activated").boolean(*var_1);
+    {
+        object.key("Activated").boolean(input.activated);
     }
     Ok(())
 }

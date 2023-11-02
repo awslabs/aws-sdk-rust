@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConformancePack {
     /// <p>The name you assign to an organization conformance pack.</p>
-    pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
+    pub organization_conformance_pack_name: ::std::string::String,
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
-    pub organization_conformance_pack_arn: ::std::option::Option<::std::string::String>,
+    pub organization_conformance_pack_arn: ::std::string::String,
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -21,16 +21,18 @@ pub struct OrganizationConformancePack {
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
     pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Last time when organization conformation pack was updated.</p>
-    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_update_time: ::aws_smithy_types::DateTime,
 }
 impl OrganizationConformancePack {
     /// <p>The name you assign to an organization conformance pack.</p>
-    pub fn organization_conformance_pack_name(&self) -> ::std::option::Option<&str> {
-        self.organization_conformance_pack_name.as_deref()
+    pub fn organization_conformance_pack_name(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_conformance_pack_name.deref()
     }
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
-    pub fn organization_conformance_pack_arn(&self) -> ::std::option::Option<&str> {
-        self.organization_conformance_pack_arn.as_deref()
+    pub fn organization_conformance_pack_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_conformance_pack_arn.deref()
     }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p> <note>
     /// <p>This field is optional.</p>
@@ -45,16 +47,20 @@ impl OrganizationConformancePack {
         self.delivery_s3_key_prefix.as_deref()
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn conformance_pack_input_parameters(&self) -> ::std::option::Option<&[crate::types::ConformancePackInputParameter]> {
-        self.conformance_pack_input_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_input_parameters.is_none()`.
+    pub fn conformance_pack_input_parameters(&self) -> &[crate::types::ConformancePackInputParameter] {
+        self.conformance_pack_input_parameters.as_deref().unwrap_or_default()
     }
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
-    pub fn excluded_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.excluded_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_accounts.is_none()`.
+    pub fn excluded_accounts(&self) -> &[::std::string::String] {
+        self.excluded_accounts.as_deref().unwrap_or_default()
     }
     /// <p>Last time when organization conformation pack was updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_update_time.as_ref()
+    pub fn last_update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_update_time
     }
 }
 impl OrganizationConformancePack {
@@ -78,6 +84,7 @@ pub struct OrganizationConformancePackBuilder {
 }
 impl OrganizationConformancePackBuilder {
     /// <p>The name you assign to an organization conformance pack.</p>
+    /// This field is required.
     pub fn organization_conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +99,7 @@ impl OrganizationConformancePackBuilder {
         &self.organization_conformance_pack_name
     }
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
+    /// This field is required.
     pub fn organization_conformance_pack_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_conformance_pack_arn = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +197,7 @@ impl OrganizationConformancePackBuilder {
         &self.excluded_accounts
     }
     /// <p>Last time when organization conformation pack was updated.</p>
+    /// This field is required.
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
         self
@@ -203,15 +212,34 @@ impl OrganizationConformancePackBuilder {
         &self.last_update_time
     }
     /// Consumes the builder and constructs a [`OrganizationConformancePack`](crate::types::OrganizationConformancePack).
-    pub fn build(self) -> crate::types::OrganizationConformancePack {
-        crate::types::OrganizationConformancePack {
-            organization_conformance_pack_name: self.organization_conformance_pack_name,
-            organization_conformance_pack_arn: self.organization_conformance_pack_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`organization_conformance_pack_name`](crate::types::builders::OrganizationConformancePackBuilder::organization_conformance_pack_name)
+    /// - [`organization_conformance_pack_arn`](crate::types::builders::OrganizationConformancePackBuilder::organization_conformance_pack_arn)
+    /// - [`last_update_time`](crate::types::builders::OrganizationConformancePackBuilder::last_update_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConformancePack, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OrganizationConformancePack {
+            organization_conformance_pack_name: self.organization_conformance_pack_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "organization_conformance_pack_name",
+                    "organization_conformance_pack_name was not specified but it is required when building OrganizationConformancePack",
+                )
+            })?,
+            organization_conformance_pack_arn: self.organization_conformance_pack_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "organization_conformance_pack_arn",
+                    "organization_conformance_pack_arn was not specified but it is required when building OrganizationConformancePack",
+                )
+            })?,
             delivery_s3_bucket: self.delivery_s3_bucket,
             delivery_s3_key_prefix: self.delivery_s3_key_prefix,
             conformance_pack_input_parameters: self.conformance_pack_input_parameters,
             excluded_accounts: self.excluded_accounts,
-            last_update_time: self.last_update_time,
-        }
+            last_update_time: self.last_update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_update_time",
+                    "last_update_time was not specified but it is required when building OrganizationConformancePack",
+                )
+            })?,
+        })
     }
 }

@@ -49,6 +49,7 @@ pub struct ScriptDetailsBuilder {
 }
 impl ScriptDetailsBuilder {
     /// <p>The S3 object location for the script.</p>
+    /// This field is required.
     pub fn script_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.script_s3_location = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl ScriptDetailsBuilder {
         &self.script_s3_location
     }
     /// <p>The run path for the script.</p>
+    /// This field is required.
     pub fn executable_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.executable_path = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl ScriptDetailsBuilder {
         &self.executable_parameters
     }
     /// <p>The run timeout, in seconds, for the script.</p>
+    /// This field is required.
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
         self.timeout_in_seconds = ::std::option::Option::Some(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartClock`](crate::operation::start_clock::builders::StartClockFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl Into<String>)`](crate::operation::start_clock::builders::StartClockFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::start_clock::builders::StartClockFluentBuilder::set_simulation): <p>The name of the simulation.</p>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::start_clock::builders::StartClockFluentBuilder::simulation) / [`set_simulation(impl Into<String>)`](crate::operation::start_clock::builders::StartClockFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation.</p><br>
     /// - On success, responds with [`StartClockOutput`](crate::operation::start_clock::StartClockOutput)
     /// - On failure, responds with [`SdkError<StartClockError>`](crate::operation::start_clock::StartClockError)
     pub fn start_clock(&self) -> crate::operation::start_clock::builders::StartClockFluentBuilder {

@@ -21,8 +21,10 @@ impl Summary {
         self.value
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub fn reason_code_summaries(&self) -> ::std::option::Option<&[crate::types::ReasonCodeSummary]> {
-        self.reason_code_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reason_code_summaries.is_none()`.
+    pub fn reason_code_summaries(&self) -> &[crate::types::ReasonCodeSummary] {
+        self.reason_code_summaries.as_deref().unwrap_or_default()
     }
 }
 impl Summary {

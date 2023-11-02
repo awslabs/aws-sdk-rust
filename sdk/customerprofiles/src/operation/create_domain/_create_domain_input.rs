@@ -71,6 +71,7 @@ pub struct CreateDomainInputBuilder {
 }
 impl CreateDomainInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +86,7 @@ impl CreateDomainInputBuilder {
         &self.domain_name
     }
     /// <p>The default number of days until the data within the domain expires.</p>
+    /// This field is required.
     pub fn default_expiration_days(mut self, input: i32) -> Self {
         self.default_expiration_days = ::std::option::Option::Some(input);
         self

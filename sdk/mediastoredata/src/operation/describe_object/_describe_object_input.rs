@@ -45,6 +45,7 @@ impl DescribeObjectInputBuilder {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self

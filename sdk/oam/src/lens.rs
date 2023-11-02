@@ -32,29 +32,20 @@ pub(crate) fn reflens_list_sinks_output_next_token(
 pub(crate) fn lens_list_attached_links_output_items(
     input: crate::operation::list_attached_links::ListAttachedLinksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListAttachedLinksItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_links_output_items(
     input: crate::operation::list_links::ListLinksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListLinksItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_sinks_output_items(
     input: crate::operation::list_sinks::ListSinksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSinksItem>> {
-    let input = match input.items {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.items;
     ::std::option::Option::Some(input)
 }

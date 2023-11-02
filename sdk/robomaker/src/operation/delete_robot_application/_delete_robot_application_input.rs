@@ -34,6 +34,7 @@ pub struct DeleteRobotApplicationInputBuilder {
 }
 impl DeleteRobotApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
+    /// This field is required.
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
         self

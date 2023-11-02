@@ -27,6 +27,7 @@ pub struct PromoteReadReplicaDbClusterInputBuilder {
 }
 impl PromoteReadReplicaDbClusterInputBuilder {
     /// <p>Not supported.</p>
+    /// This field is required.
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self

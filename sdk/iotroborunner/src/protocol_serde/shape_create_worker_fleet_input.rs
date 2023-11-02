@@ -9,11 +9,11 @@ pub fn ser_create_worker_fleet_input(
     if let Some(var_2) = &input.client_token {
         object.key("clientToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_4) = &input.site {
-        object.key("site").string(var_4.as_str());
+    {
+        object.key("site").string(input.site.as_str());
     }
     Ok(())
 }

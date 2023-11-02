@@ -34,6 +34,7 @@ pub struct DeleteVirtualNodeOutputBuilder {
 }
 impl DeleteVirtualNodeOutputBuilder {
     /// <p>The virtual node that was deleted.</p>
+    /// This field is required.
     pub fn virtual_node(mut self, input: crate::types::VirtualNodeData) -> Self {
         self.virtual_node = ::std::option::Option::Some(input);
         self

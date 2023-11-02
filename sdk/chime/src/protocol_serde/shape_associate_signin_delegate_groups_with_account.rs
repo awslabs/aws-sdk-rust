@@ -36,8 +36,8 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError::ForbiddenException({
@@ -52,8 +52,8 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError::NotFoundException({
@@ -68,8 +68,8 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError::ServiceFailureException({
@@ -84,8 +84,8 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError::ServiceUnavailableException({
@@ -100,8 +100,8 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError::ThrottledClientException({
@@ -116,8 +116,8 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError::UnauthorizedClientException({
@@ -132,8 +132,8 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError::generic(generic)

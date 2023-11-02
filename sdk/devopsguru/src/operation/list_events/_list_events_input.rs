@@ -48,6 +48,7 @@ pub struct ListEventsInputBuilder {
 }
 impl ListEventsInputBuilder {
     /// <p> A <code>ListEventsFilters</code> object used to specify which events to return. </p>
+    /// This field is required.
     pub fn filters(mut self, input: crate::types::ListEventsFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
         self

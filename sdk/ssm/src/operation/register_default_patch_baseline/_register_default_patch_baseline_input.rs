@@ -27,6 +27,7 @@ pub struct RegisterDefaultPatchBaselineInputBuilder {
 }
 impl RegisterDefaultPatchBaselineInputBuilder {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
+    /// This field is required.
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.baseline_id = ::std::option::Option::Some(input.into());
         self

@@ -93,8 +93,10 @@ pub struct HlsGroupSettings {
 }
 impl HlsGroupSettings {
     /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
-    pub fn ad_markers(&self) -> ::std::option::Option<&[crate::types::HlsAdMarkers]> {
-        self.ad_markers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_markers.is_none()`.
+    pub fn ad_markers(&self) -> &[crate::types::HlsAdMarkers] {
+        self.ad_markers.as_deref().unwrap_or_default()
     }
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub fn base_url_content(&self) -> ::std::option::Option<&str> {
@@ -113,8 +115,10 @@ impl HlsGroupSettings {
         self.base_url_manifest1.as_deref()
     }
     /// Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to "insert".
-    pub fn caption_language_mappings(&self) -> ::std::option::Option<&[crate::types::CaptionLanguageMapping]> {
-        self.caption_language_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_language_mappings.is_none()`.
+    pub fn caption_language_mappings(&self) -> &[crate::types::CaptionLanguageMapping] {
+        self.caption_language_mappings.as_deref().unwrap_or_default()
     }
     /// Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub fn caption_language_setting(&self) -> ::std::option::Option<&crate::types::HlsCaptionLanguageSetting> {
@@ -474,6 +478,7 @@ impl HlsGroupSettingsBuilder {
         &self.constant_iv
     }
     /// A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

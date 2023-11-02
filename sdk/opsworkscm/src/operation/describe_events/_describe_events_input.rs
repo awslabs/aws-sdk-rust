@@ -41,6 +41,7 @@ pub struct DescribeEventsInputBuilder {
 }
 impl DescribeEventsInputBuilder {
     /// <p>The name of the server for which you want to view events.</p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self

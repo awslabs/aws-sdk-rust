@@ -11,12 +11,16 @@ pub struct BatchGetVariableOutput {
 }
 impl BatchGetVariableOutput {
     /// <p>The returned variables.</p>
-    pub fn variables(&self) -> ::std::option::Option<&[crate::types::Variable]> {
-        self.variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
+    pub fn variables(&self) -> &[crate::types::Variable] {
+        self.variables.as_deref().unwrap_or_default()
     }
     /// <p>The errors from the request.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchGetVariableError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchGetVariableError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetVariableOutput {

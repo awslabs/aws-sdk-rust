@@ -27,6 +27,7 @@ pub struct DeleteSuiteDefinitionInputBuilder {
 }
 impl DeleteSuiteDefinitionInputBuilder {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
+    /// This field is required.
     pub fn suite_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_definition_id = ::std::option::Option::Some(input.into());
         self

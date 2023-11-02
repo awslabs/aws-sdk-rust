@@ -28,6 +28,7 @@ pub struct TransformDataSourceBuilder {
 }
 impl TransformDataSourceBuilder {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
+    /// This field is required.
     pub fn s3_data_source(mut self, input: crate::types::TransformS3DataSource) -> Self {
         self.s3_data_source = ::std::option::Option::Some(input);
         self

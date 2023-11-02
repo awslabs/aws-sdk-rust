@@ -41,6 +41,7 @@ pub struct UpdatePublishingDestinationInputBuilder {
 }
 impl UpdatePublishingDestinationInputBuilder {
     /// <p>The ID of the detector associated with the publishing destinations to update.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdatePublishingDestinationInputBuilder {
         &self.detector_id
     }
     /// <p>The ID of the publishing destination to update.</p>
+    /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self

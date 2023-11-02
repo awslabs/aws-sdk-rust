@@ -25,8 +25,10 @@ impl CoreNetworkChangeValues {
         self.segment_name.as_deref()
     }
     /// <p>The Regions where edges are located in a core network. </p>
-    pub fn edge_locations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.edge_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_locations.is_none()`.
+    pub fn edge_locations(&self) -> &[::std::string::String] {
+        self.edge_locations.as_deref().unwrap_or_default()
     }
     /// <p>The ASN of a core network.</p>
     pub fn asn(&self) -> ::std::option::Option<i64> {
@@ -41,12 +43,16 @@ impl CoreNetworkChangeValues {
         self.destination_identifier.as_deref()
     }
     /// <p>The inside IP addresses used for core network change values.</p>
-    pub fn inside_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inside_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
+    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
+        self.inside_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>The shared segments for a core network change value. </p>
-    pub fn shared_segments(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.shared_segments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_segments.is_none()`.
+    pub fn shared_segments(&self) -> &[::std::string::String] {
+        self.shared_segments.as_deref().unwrap_or_default()
     }
 }
 impl CoreNetworkChangeValues {

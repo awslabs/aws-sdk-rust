@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSegment`](crate::operation::get_segment::builders::GetSegmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`segment(impl Into<String>)`](crate::operation::get_segment::builders::GetSegmentFluentBuilder::segment) / [`set_segment(Option<String>)`](crate::operation::get_segment::builders::GetSegmentFluentBuilder::set_segment): <p>The ARN of the segment to return information for.</p>
+    ///   - [`segment(impl Into<String>)`](crate::operation::get_segment::builders::GetSegmentFluentBuilder::segment) / [`set_segment(impl Into<String>)`](crate::operation::get_segment::builders::GetSegmentFluentBuilder::set_segment):<br>required: **true**<br><p>The ARN of the segment to return information for.</p><br>
     /// - On success, responds with [`GetSegmentOutput`](crate::operation::get_segment::GetSegmentOutput) with field(s):
     ///   - [`segment(Option<Segment>)`](crate::operation::get_segment::GetSegmentOutput::segment): <p>A structure that contains the complete information about the segment.</p>
     /// - On failure, responds with [`SdkError<GetSegmentError>`](crate::operation::get_segment::GetSegmentError)

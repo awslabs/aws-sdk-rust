@@ -24,8 +24,8 @@ pub fn ser_describe_recovery_snapshots_input(
     if let Some(var_4) = &input.order {
         object.key("order").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.source_server_id {
-        object.key("sourceServerID").string(var_5.as_str());
+    {
+        object.key("sourceServerID").string(input.source_server_id.as_str());
     }
     Ok(())
 }

@@ -6,19 +6,21 @@
 pub struct TimestreamDimension {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The value to write in this column of the database record.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl TimestreamDimension {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The value to write in this column of the database record.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl TimestreamDimension {
@@ -38,6 +40,7 @@ pub struct TimestreamDimensionBuilder {
 impl TimestreamDimensionBuilder {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +57,7 @@ impl TimestreamDimensionBuilder {
         &self.name
     }
     /// <p>The value to write in this column of the database record.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -68,10 +72,23 @@ impl TimestreamDimensionBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`TimestreamDimension`](crate::types::TimestreamDimension).
-    pub fn build(self) -> crate::types::TimestreamDimension {
-        crate::types::TimestreamDimension {
-            name: self.name,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TimestreamDimensionBuilder::name)
+    /// - [`value`](crate::types::builders::TimestreamDimensionBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamDimension, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestreamDimension {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TimestreamDimension",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building TimestreamDimension",
+                )
+            })?,
+        })
     }
 }

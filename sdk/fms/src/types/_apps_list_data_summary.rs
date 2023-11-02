@@ -27,8 +27,10 @@ impl AppsListDataSummary {
         self.list_name.as_deref()
     }
     /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
-    pub fn apps_list(&self) -> ::std::option::Option<&[crate::types::App]> {
-        self.apps_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.apps_list.is_none()`.
+    pub fn apps_list(&self) -> &[crate::types::App] {
+        self.apps_list.as_deref().unwrap_or_default()
     }
 }
 impl AppsListDataSummary {

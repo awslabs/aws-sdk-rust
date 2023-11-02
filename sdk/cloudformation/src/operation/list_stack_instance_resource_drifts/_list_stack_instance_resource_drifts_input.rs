@@ -51,8 +51,10 @@ impl ListStackInstanceResourceDriftsInput {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
     /// </ul>
-    pub fn stack_instance_resource_drift_statuses(&self) -> ::std::option::Option<&[crate::types::StackResourceDriftStatus]> {
-        self.stack_instance_resource_drift_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_instance_resource_drift_statuses.is_none()`.
+    pub fn stack_instance_resource_drift_statuses(&self) -> &[crate::types::StackResourceDriftStatus] {
+        self.stack_instance_resource_drift_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
     pub fn stack_instance_account(&self) -> ::std::option::Option<&str> {
@@ -98,6 +100,7 @@ pub struct ListStackInstanceResourceDriftsInputBuilder {
 }
 impl ListStackInstanceResourceDriftsInputBuilder {
     /// <p>The name or unique ID of the stack set that you want to list drifted resources for.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +184,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
         &self.stack_instance_resource_drift_statuses
     }
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
+    /// This field is required.
     pub fn stack_instance_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_instance_account = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +199,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
         &self.stack_instance_account
     }
     /// <p>The name of the Region where you want to list resource drifts.</p>
+    /// This field is required.
     pub fn stack_instance_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_instance_region = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +214,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
         &self.stack_instance_region
     }
     /// <p>The unique ID of the drift operation.</p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self

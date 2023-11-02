@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscriptionTargetsOutput {
     /// <p>The results of the <code>ListSubscriptionTargets</code> action.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetSummary>>,
+    pub items: ::std::vec::Vec<crate::types::SubscriptionTargetSummary>,
     /// <p>When the number of subscription targets is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription targets, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionTargets</code> to list the next set of subscription targets.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSubscriptionTargetsOutput {
     /// <p>The results of the <code>ListSubscriptionTargets</code> action.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::SubscriptionTargetSummary]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::SubscriptionTargetSummary] {
+        use std::ops::Deref;
+        self.items.deref()
     }
     /// <p>When the number of subscription targets is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription targets, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionTargets</code> to list the next set of subscription targets.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListSubscriptionTargetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSubscriptionTargetsOutput`](crate::operation::list_subscription_targets::ListSubscriptionTargetsOutput).
-    pub fn build(self) -> crate::operation::list_subscription_targets::ListSubscriptionTargetsOutput {
-        crate::operation::list_subscription_targets::ListSubscriptionTargetsOutput {
-            items: self.items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_subscription_targets::builders::ListSubscriptionTargetsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_subscription_targets::ListSubscriptionTargetsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_subscription_targets::ListSubscriptionTargetsOutput {
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListSubscriptionTargetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

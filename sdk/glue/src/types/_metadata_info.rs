@@ -21,8 +21,10 @@ impl MetadataInfo {
         self.created_time.as_deref()
     }
     /// <p>Other metadata belonging to the same metadata key.</p>
-    pub fn other_metadata_value_list(&self) -> ::std::option::Option<&[crate::types::OtherMetadataValueListItem]> {
-        self.other_metadata_value_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.other_metadata_value_list.is_none()`.
+    pub fn other_metadata_value_list(&self) -> &[crate::types::OtherMetadataValueListItem] {
+        self.other_metadata_value_list.as_deref().unwrap_or_default()
     }
 }
 impl MetadataInfo {

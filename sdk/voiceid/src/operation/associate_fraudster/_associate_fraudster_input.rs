@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssociateFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the watchlist you want to associate with the fraudster.</p>
-    pub watchlist_id: ::std::option::Option<::std::string::String>,
+    pub watchlist_id: ::std::string::String,
     /// <p>The identifier of the fraudster to be associated with the watchlist.</p>
-    pub fraudster_id: ::std::option::Option<::std::string::String>,
+    pub fraudster_id: ::std::string::String,
 }
 impl AssociateFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the watchlist you want to associate with the fraudster.</p>
-    pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
-        self.watchlist_id.as_deref()
+    pub fn watchlist_id(&self) -> &str {
+        use std::ops::Deref;
+        self.watchlist_id.deref()
     }
     /// <p>The identifier of the fraudster to be associated with the watchlist.</p>
-    pub fn fraudster_id(&self) -> ::std::option::Option<&str> {
-        self.fraudster_id.as_deref()
+    pub fn fraudster_id(&self) -> &str {
+        use std::ops::Deref;
+        self.fraudster_id.deref()
     }
 }
 impl ::std::fmt::Debug for AssociateFraudsterInput {
@@ -50,6 +53,7 @@ pub struct AssociateFraudsterInputBuilder {
 }
 impl AssociateFraudsterInputBuilder {
     /// <p>The identifier of the domain that contains the fraudster.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +68,7 @@ impl AssociateFraudsterInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the watchlist you want to associate with the fraudster.</p>
+    /// This field is required.
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.watchlist_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +83,7 @@ impl AssociateFraudsterInputBuilder {
         &self.watchlist_id
     }
     /// <p>The identifier of the fraudster to be associated with the watchlist.</p>
+    /// This field is required.
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
         self
@@ -92,13 +98,32 @@ impl AssociateFraudsterInputBuilder {
         &self.fraudster_id
     }
     /// Consumes the builder and constructs a [`AssociateFraudsterInput`](crate::operation::associate_fraudster::AssociateFraudsterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::associate_fraudster::builders::AssociateFraudsterInputBuilder::domain_id)
+    /// - [`watchlist_id`](crate::operation::associate_fraudster::builders::AssociateFraudsterInputBuilder::watchlist_id)
+    /// - [`fraudster_id`](crate::operation::associate_fraudster::builders::AssociateFraudsterInputBuilder::fraudster_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_fraudster::AssociateFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_fraudster::AssociateFraudsterInput {
-            domain_id: self.domain_id,
-            watchlist_id: self.watchlist_id,
-            fraudster_id: self.fraudster_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building AssociateFraudsterInput",
+                )
+            })?,
+            watchlist_id: self.watchlist_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "watchlist_id",
+                    "watchlist_id was not specified but it is required when building AssociateFraudsterInput",
+                )
+            })?,
+            fraudster_id: self.fraudster_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fraudster_id",
+                    "fraudster_id was not specified but it is required when building AssociateFraudsterInput",
+                )
+            })?,
         })
     }
 }

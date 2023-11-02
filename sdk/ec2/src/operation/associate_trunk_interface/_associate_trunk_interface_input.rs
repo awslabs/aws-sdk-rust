@@ -62,6 +62,7 @@ pub struct AssociateTrunkInterfaceInputBuilder {
 }
 impl AssociateTrunkInterfaceInputBuilder {
     /// <p>The ID of the branch network interface.</p>
+    /// This field is required.
     pub fn branch_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_interface_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl AssociateTrunkInterfaceInputBuilder {
         &self.branch_interface_id
     }
     /// <p>The ID of the trunk network interface.</p>
+    /// This field is required.
     pub fn trunk_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trunk_interface_id = ::std::option::Option::Some(input.into());
         self

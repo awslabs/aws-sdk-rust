@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlRunConfiguration {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
-    pub input_id: ::std::option::Option<::std::string::String>,
+    pub input_id: ::std::string::String,
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     pub input_starting_position_configuration: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfiguration {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
-    pub fn input_id(&self) -> ::std::option::Option<&str> {
-        self.input_id.as_deref()
+    pub fn input_id(&self) -> &str {
+        use std::ops::Deref;
+        self.input_id.deref()
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     pub fn input_starting_position_configuration(&self) -> ::std::option::Option<&crate::types::InputStartingPositionConfiguration> {
@@ -35,6 +36,7 @@ pub struct SqlRunConfigurationBuilder {
 }
 impl SqlRunConfigurationBuilder {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
+    /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SqlRunConfigurationBuilder {
         &self.input_id
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
+    /// This field is required.
     pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.input_starting_position_configuration = ::std::option::Option::Some(input);
         self
@@ -66,10 +69,17 @@ impl SqlRunConfigurationBuilder {
         &self.input_starting_position_configuration
     }
     /// Consumes the builder and constructs a [`SqlRunConfiguration`](crate::types::SqlRunConfiguration).
-    pub fn build(self) -> crate::types::SqlRunConfiguration {
-        crate::types::SqlRunConfiguration {
-            input_id: self.input_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_id`](crate::types::builders::SqlRunConfigurationBuilder::input_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlRunConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SqlRunConfiguration {
+            input_id: self.input_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "input_id",
+                    "input_id was not specified but it is required when building SqlRunConfiguration",
+                )
+            })?,
             input_starting_position_configuration: self.input_starting_position_configuration,
-        }
+        })
     }
 }

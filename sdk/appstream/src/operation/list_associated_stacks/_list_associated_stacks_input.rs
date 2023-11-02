@@ -34,6 +34,7 @@ pub struct ListAssociatedStacksInputBuilder {
 }
 impl ListAssociatedStacksInputBuilder {
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_name = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct DescribeContinuousExportsOutput {
 }
 impl DescribeContinuousExportsOutput {
     /// <p>A list of continuous export descriptions.</p>
-    pub fn descriptions(&self) -> ::std::option::Option<&[crate::types::ContinuousExportDescription]> {
-        self.descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.descriptions.is_none()`.
+    pub fn descriptions(&self) -> &[crate::types::ContinuousExportDescription] {
+        self.descriptions.as_deref().unwrap_or_default()
     }
     /// <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

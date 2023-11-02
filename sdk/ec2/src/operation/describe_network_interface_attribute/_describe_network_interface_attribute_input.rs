@@ -70,6 +70,7 @@ impl DescribeNetworkInterfaceAttributeInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the network interface.</p>
+    /// This field is required.
     pub fn network_interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_interface_id = ::std::option::Option::Some(input.into());
         self

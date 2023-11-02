@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeySchemaElement {
     /// <p>The name of a key attribute.</p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
     /// <p>The role that this key attribute will assume:</p>
     /// <ul>
     /// <li> <p> <code>HASH</code> - partition key</p> </li>
@@ -16,12 +16,13 @@ pub struct KeySchemaElement {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    pub key_type: ::std::option::Option<crate::types::KeyType>,
+    pub key_type: crate::types::KeyType,
 }
 impl KeySchemaElement {
     /// <p>The name of a key attribute.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
     /// <p>The role that this key attribute will assume:</p>
     /// <ul>
@@ -31,8 +32,8 @@ impl KeySchemaElement {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    pub fn key_type(&self) -> ::std::option::Option<&crate::types::KeyType> {
-        self.key_type.as_ref()
+    pub fn key_type(&self) -> &crate::types::KeyType {
+        &self.key_type
     }
 }
 impl KeySchemaElement {
@@ -51,6 +52,7 @@ pub struct KeySchemaElementBuilder {
 }
 impl KeySchemaElementBuilder {
     /// <p>The name of a key attribute.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +74,7 @@ impl KeySchemaElementBuilder {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
+    /// This field is required.
     pub fn key_type(mut self, input: crate::types::KeyType) -> Self {
         self.key_type = ::std::option::Option::Some(input);
         self
@@ -100,10 +103,23 @@ impl KeySchemaElementBuilder {
         &self.key_type
     }
     /// Consumes the builder and constructs a [`KeySchemaElement`](crate::types::KeySchemaElement).
-    pub fn build(self) -> crate::types::KeySchemaElement {
-        crate::types::KeySchemaElement {
-            attribute_name: self.attribute_name,
-            key_type: self.key_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::KeySchemaElementBuilder::attribute_name)
+    /// - [`key_type`](crate::types::builders::KeySchemaElementBuilder::key_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::KeySchemaElement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KeySchemaElement {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building KeySchemaElement",
+                )
+            })?,
+            key_type: self.key_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_type",
+                    "key_type was not specified but it is required when building KeySchemaElement",
+                )
+            })?,
+        })
     }
 }

@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_models::builders::GetModelsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
-    ///   - [`position(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_position): <p>The current pagination position in the paged result set.</p>
-    ///   - [`limit(i32)`](crate::operation::get_models::builders::GetModelsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_limit): <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_rest_api_id):<br>required: **true**<br><p>The string identifier of the associated RestApi.</p><br>
+    ///   - [`position(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
+    ///   - [`limit(i32)`](crate::operation::get_models::builders::GetModelsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     /// - On success, responds with [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput) with field(s):
     ///   - [`items(Option<Vec<Model>>)`](crate::operation::get_models::GetModelsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_models::GetModelsOutput::position): <p>The current pagination position in the paged result set.</p>

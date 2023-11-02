@@ -21,8 +21,10 @@ impl FacetResult {
         self.document_attribute_value_type.as_ref()
     }
     /// <p>An array of key/value pairs, where the key is the value of the attribute and the count is the number of documents that share the key value.</p>
-    pub fn document_attribute_value_count_pairs(&self) -> ::std::option::Option<&[crate::types::DocumentAttributeValueCountPair]> {
-        self.document_attribute_value_count_pairs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attribute_value_count_pairs.is_none()`.
+    pub fn document_attribute_value_count_pairs(&self) -> &[crate::types::DocumentAttributeValueCountPair] {
+        self.document_attribute_value_count_pairs.as_deref().unwrap_or_default()
     }
 }
 impl FacetResult {

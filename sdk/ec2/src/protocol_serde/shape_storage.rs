@@ -12,6 +12,7 @@ pub fn ser_storage(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_storage(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Storage, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Storage::builder();

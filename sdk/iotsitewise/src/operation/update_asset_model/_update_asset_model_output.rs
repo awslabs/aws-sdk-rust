@@ -34,6 +34,7 @@ pub struct UpdateAssetModelOutputBuilder {
 }
 impl UpdateAssetModelOutputBuilder {
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
+    /// This field is required.
     pub fn asset_model_status(mut self, input: crate::types::AssetModelStatus) -> Self {
         self.asset_model_status = ::std::option::Option::Some(input);
         self

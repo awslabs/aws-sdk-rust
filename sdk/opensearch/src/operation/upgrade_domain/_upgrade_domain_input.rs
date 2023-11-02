@@ -49,6 +49,7 @@ pub struct UpgradeDomainInputBuilder {
 }
 impl UpgradeDomainInputBuilder {
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpgradeDomainInputBuilder {
         &self.domain_name
     }
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
+    /// This field is required.
     pub fn target_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_version = ::std::option::Option::Some(input.into());
         self

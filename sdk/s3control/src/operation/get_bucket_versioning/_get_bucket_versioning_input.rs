@@ -34,6 +34,7 @@ pub struct GetBucketVersioningInputBuilder {
 }
 impl GetBucketVersioningInputBuilder {
     /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetBucketVersioningInputBuilder {
         &self.account_id
     }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

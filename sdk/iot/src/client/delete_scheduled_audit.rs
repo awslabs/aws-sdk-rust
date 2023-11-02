@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteScheduledAudit`](crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scheduled_audit_name(impl Into<String>)`](crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::scheduled_audit_name) / [`set_scheduled_audit_name(Option<String>)`](crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::set_scheduled_audit_name): <p>The name of the scheduled audit you want to delete.</p>
+    ///   - [`scheduled_audit_name(impl Into<String>)`](crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::scheduled_audit_name) / [`set_scheduled_audit_name(Option<String>)`](crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder::set_scheduled_audit_name):<br>required: **true**<br><p>The name of the scheduled audit you want to delete.</p><br>
     /// - On success, responds with [`DeleteScheduledAuditOutput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduledAuditError>`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditError)
     pub fn delete_scheduled_audit(&self) -> crate::operation::delete_scheduled_audit::builders::DeleteScheduledAuditFluentBuilder {

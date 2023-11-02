@@ -10,8 +10,10 @@ pub struct ListDomainNamesOutput {
 }
 impl ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
-    pub fn domain_names(&self) -> ::std::option::Option<&[crate::types::DomainInfo]> {
-        self.domain_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_names.is_none()`.
+    pub fn domain_names(&self) -> &[crate::types::DomainInfo] {
+        self.domain_names.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDomainNamesOutput {

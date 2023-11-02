@@ -33,12 +33,16 @@ impl AwsRdsDbSecurityGroupDetails {
         self.db_security_group_name.as_deref()
     }
     /// <p>Contains a list of EC2 security groups.</p>
-    pub fn ec2_security_groups(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup]> {
-        self.ec2_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_security_groups.is_none()`.
+    pub fn ec2_security_groups(&self) -> &[crate::types::AwsRdsDbSecurityGroupEc2SecurityGroup] {
+        self.ec2_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Contains a list of IP ranges.</p>
-    pub fn ip_ranges(&self) -> ::std::option::Option<&[crate::types::AwsRdsDbSecurityGroupIpRange]> {
-        self.ip_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
+    pub fn ip_ranges(&self) -> &[crate::types::AwsRdsDbSecurityGroupIpRange] {
+        self.ip_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {

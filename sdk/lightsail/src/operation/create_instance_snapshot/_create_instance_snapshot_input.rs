@@ -22,8 +22,10 @@ impl CreateInstanceSnapshotInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateInstanceSnapshotInput {
@@ -43,6 +45,7 @@ pub struct CreateInstanceSnapshotInputBuilder {
 }
 impl CreateInstanceSnapshotInputBuilder {
     /// <p>The name for your new snapshot.</p>
+    /// This field is required.
     pub fn instance_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_snapshot_name = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl CreateInstanceSnapshotInputBuilder {
         &self.instance_snapshot_name
     }
     /// <p>The Lightsail instance on which to base your snapshot.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnector`](crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connector_id(impl Into<String>)`](crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::set_connector_id): <p>Delete Connector request connector ID.</p>
+    ///   - [`connector_id(impl Into<String>)`](crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder::set_connector_id):<br>required: **true**<br><p>Delete Connector request connector ID.</p><br>
     /// - On success, responds with [`DeleteConnectorOutput`](crate::operation::delete_connector::DeleteConnectorOutput)
     /// - On failure, responds with [`SdkError<DeleteConnectorError>`](crate::operation::delete_connector::DeleteConnectorError)
     pub fn delete_connector(&self) -> crate::operation::delete_connector::builders::DeleteConnectorFluentBuilder {

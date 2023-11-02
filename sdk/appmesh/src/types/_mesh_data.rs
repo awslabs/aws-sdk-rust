@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshData {
     /// <p>The name of the service mesh.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The associated specification for the service mesh.</p>
     pub spec: ::std::option::Option<crate::types::MeshSpec>,
     /// <p>The associated metadata for the service mesh.</p>
@@ -15,8 +15,9 @@ pub struct MeshData {
 }
 impl MeshData {
     /// <p>The name of the service mesh.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The associated specification for the service mesh.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::MeshSpec> {
@@ -49,6 +50,7 @@ pub struct MeshDataBuilder {
 }
 impl MeshDataBuilder {
     /// <p>The name of the service mesh.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl MeshDataBuilder {
         &self.mesh_name
     }
     /// <p>The associated specification for the service mesh.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::MeshSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl MeshDataBuilder {
         &self.spec
     }
     /// <p>The associated metadata for the service mesh.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -91,6 +95,7 @@ impl MeshDataBuilder {
         &self.metadata
     }
     /// <p>The status of the service mesh.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MeshStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -105,12 +110,19 @@ impl MeshDataBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`MeshData`](crate::types::MeshData).
-    pub fn build(self) -> crate::types::MeshData {
-        crate::types::MeshData {
-            mesh_name: self.mesh_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mesh_name`](crate::types::builders::MeshDataBuilder::mesh_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MeshData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MeshData {
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building MeshData",
+                )
+            })?,
             spec: self.spec,
             metadata: self.metadata,
             status: self.status,
-        }
+        })
     }
 }

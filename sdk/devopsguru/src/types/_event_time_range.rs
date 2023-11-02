@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTimeRange {
     /// <p> The time when the event started. </p>
-    pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub from_time: ::aws_smithy_types::DateTime,
     /// <p> The time when the event ended. </p>
-    pub to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub to_time: ::aws_smithy_types::DateTime,
 }
 impl EventTimeRange {
     /// <p> The time when the event started. </p>
-    pub fn from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.from_time.as_ref()
+    pub fn from_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.from_time
     }
     /// <p> The time when the event ended. </p>
-    pub fn to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.to_time.as_ref()
+    pub fn to_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.to_time
     }
 }
 impl EventTimeRange {
@@ -35,6 +35,7 @@ pub struct EventTimeRangeBuilder {
 }
 impl EventTimeRangeBuilder {
     /// <p> The time when the event started. </p>
+    /// This field is required.
     pub fn from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_time = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl EventTimeRangeBuilder {
         &self.from_time
     }
     /// <p> The time when the event ended. </p>
+    /// This field is required.
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_time = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl EventTimeRangeBuilder {
         &self.to_time
     }
     /// Consumes the builder and constructs a [`EventTimeRange`](crate::types::EventTimeRange).
-    pub fn build(self) -> crate::types::EventTimeRange {
-        crate::types::EventTimeRange {
-            from_time: self.from_time,
-            to_time: self.to_time,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`from_time`](crate::types::builders::EventTimeRangeBuilder::from_time)
+    /// - [`to_time`](crate::types::builders::EventTimeRangeBuilder::to_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventTimeRange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventTimeRange {
+            from_time: self.from_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "from_time",
+                    "from_time was not specified but it is required when building EventTimeRange",
+                )
+            })?,
+            to_time: self.to_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "to_time",
+                    "to_time was not specified but it is required when building EventTimeRange",
+                )
+            })?,
+        })
     }
 }

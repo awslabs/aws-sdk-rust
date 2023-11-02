@@ -124,7 +124,7 @@ pub fn de_admin_get_device_http_response(
         output = crate::protocol_serde::shape_admin_get_device::de_admin_get_device(_response_body, output)
             .map_err(crate::operation::admin_get_device::AdminGetDeviceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::admin_get_device_output_correct_errors(output).build()
     })
 }
 

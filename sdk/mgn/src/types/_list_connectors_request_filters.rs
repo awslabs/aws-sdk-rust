@@ -9,8 +9,10 @@ pub struct ListConnectorsRequestFilters {
 }
 impl ListConnectorsRequestFilters {
     /// <p>List Connectors Request Filters connector IDs.</p>
-    pub fn connector_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connector_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_i_ds.is_none()`.
+    pub fn connector_i_ds(&self) -> &[::std::string::String] {
+        self.connector_i_ds.as_deref().unwrap_or_default()
     }
 }
 impl ListConnectorsRequestFilters {

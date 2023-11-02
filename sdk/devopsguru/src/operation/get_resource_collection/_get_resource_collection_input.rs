@@ -34,6 +34,7 @@ pub struct GetResourceCollectionInputBuilder {
 }
 impl GetResourceCollectionInputBuilder {
     /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
+    /// This field is required.
     pub fn resource_collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
         self.resource_collection_type = ::std::option::Option::Some(input);
         self

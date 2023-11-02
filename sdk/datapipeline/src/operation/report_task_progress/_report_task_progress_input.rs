@@ -15,8 +15,10 @@ impl ReportTaskProgressInput {
         self.task_id.as_deref()
     }
     /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::Field] {
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl ReportTaskProgressInput {
@@ -35,6 +37,7 @@ pub struct ReportTaskProgressInputBuilder {
 }
 impl ReportTaskProgressInputBuilder {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self

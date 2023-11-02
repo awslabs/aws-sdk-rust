@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UtteranceLevelTestResultItem {
     /// <p>The record number of the result.</p>
-    pub record_number: ::std::option::Option<i64>,
+    pub record_number: i64,
     /// <p>The unique identifier for the conversation associated with the result.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the turn associated with the result.</p>
@@ -13,7 +13,7 @@ pub struct UtteranceLevelTestResultItem {
 }
 impl UtteranceLevelTestResultItem {
     /// <p>The record number of the result.</p>
-    pub fn record_number(&self) -> ::std::option::Option<i64> {
+    pub fn record_number(&self) -> i64 {
         self.record_number
     }
     /// <p>The unique identifier for the conversation associated with the result.</p>
@@ -42,6 +42,7 @@ pub struct UtteranceLevelTestResultItemBuilder {
 }
 impl UtteranceLevelTestResultItemBuilder {
     /// <p>The record number of the result.</p>
+    /// This field is required.
     pub fn record_number(mut self, input: i64) -> Self {
         self.record_number = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl UtteranceLevelTestResultItemBuilder {
         &self.conversation_id
     }
     /// <p>Contains information about the turn associated with the result.</p>
+    /// This field is required.
     pub fn turn_result(mut self, input: crate::types::TestSetTurnResult) -> Self {
         self.turn_result = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,18 @@ impl UtteranceLevelTestResultItemBuilder {
         &self.turn_result
     }
     /// Consumes the builder and constructs a [`UtteranceLevelTestResultItem`](crate::types::UtteranceLevelTestResultItem).
-    pub fn build(self) -> crate::types::UtteranceLevelTestResultItem {
-        crate::types::UtteranceLevelTestResultItem {
-            record_number: self.record_number,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`record_number`](crate::types::builders::UtteranceLevelTestResultItemBuilder::record_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::UtteranceLevelTestResultItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UtteranceLevelTestResultItem {
+            record_number: self.record_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "record_number",
+                    "record_number was not specified but it is required when building UtteranceLevelTestResultItem",
+                )
+            })?,
             conversation_id: self.conversation_id,
             turn_result: self.turn_result,
-        }
+        })
     }
 }

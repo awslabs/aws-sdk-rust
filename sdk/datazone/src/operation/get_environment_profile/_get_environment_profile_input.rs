@@ -34,6 +34,7 @@ pub struct GetEnvironmentProfileInputBuilder {
 }
 impl GetEnvironmentProfileInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this environment profile exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetEnvironmentProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the environment profile.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

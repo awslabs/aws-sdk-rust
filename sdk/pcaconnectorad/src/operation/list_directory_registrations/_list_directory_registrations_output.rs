@@ -11,8 +11,10 @@ pub struct ListDirectoryRegistrationsOutput {
 }
 impl ListDirectoryRegistrationsOutput {
     /// <p>Summary information about each directory registration you have created.</p>
-    pub fn directory_registrations(&self) -> ::std::option::Option<&[crate::types::DirectoryRegistrationSummary]> {
-        self.directory_registrations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_registrations.is_none()`.
+    pub fn directory_registrations(&self) -> &[crate::types::DirectoryRegistrationSummary] {
+        self.directory_registrations.as_deref().unwrap_or_default()
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

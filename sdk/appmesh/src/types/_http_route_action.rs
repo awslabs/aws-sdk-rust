@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub weighted_targets: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
+    pub weighted_targets: ::std::vec::Vec<crate::types::WeightedTarget>,
 }
 impl HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub fn weighted_targets(&self) -> ::std::option::Option<&[crate::types::WeightedTarget]> {
-        self.weighted_targets.as_deref()
+    pub fn weighted_targets(&self) -> &[crate::types::WeightedTarget] {
+        use std::ops::Deref;
+        self.weighted_targets.deref()
     }
 }
 impl HttpRouteAction {
@@ -48,9 +49,16 @@ impl HttpRouteActionBuilder {
         &self.weighted_targets
     }
     /// Consumes the builder and constructs a [`HttpRouteAction`](crate::types::HttpRouteAction).
-    pub fn build(self) -> crate::types::HttpRouteAction {
-        crate::types::HttpRouteAction {
-            weighted_targets: self.weighted_targets,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`weighted_targets`](crate::types::builders::HttpRouteActionBuilder::weighted_targets)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpRouteAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpRouteAction {
+            weighted_targets: self.weighted_targets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "weighted_targets",
+                    "weighted_targets was not specified but it is required when building HttpRouteAction",
+                )
+            })?,
+        })
     }
 }

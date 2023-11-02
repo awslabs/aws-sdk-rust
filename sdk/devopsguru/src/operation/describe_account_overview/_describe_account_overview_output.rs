@@ -8,7 +8,7 @@ pub struct DescribeAccountOverviewOutput {
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
     pub proactive_insights: i32,
     /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
-    pub mean_time_to_recover_in_milliseconds: ::std::option::Option<i64>,
+    pub mean_time_to_recover_in_milliseconds: i64,
     _request_id: Option<String>,
 }
 impl DescribeAccountOverviewOutput {
@@ -21,7 +21,7 @@ impl DescribeAccountOverviewOutput {
         self.proactive_insights
     }
     /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
-    pub fn mean_time_to_recover_in_milliseconds(&self) -> ::std::option::Option<i64> {
+    pub fn mean_time_to_recover_in_milliseconds(&self) -> i64 {
         self.mean_time_to_recover_in_milliseconds
     }
 }
@@ -48,6 +48,7 @@ pub struct DescribeAccountOverviewOutputBuilder {
 }
 impl DescribeAccountOverviewOutputBuilder {
     /// <p> An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// This field is required.
     pub fn reactive_insights(mut self, input: i32) -> Self {
         self.reactive_insights = ::std::option::Option::Some(input);
         self
@@ -62,6 +63,7 @@ impl DescribeAccountOverviewOutputBuilder {
         &self.reactive_insights
     }
     /// <p> An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in. </p>
+    /// This field is required.
     pub fn proactive_insights(mut self, input: i32) -> Self {
         self.proactive_insights = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl DescribeAccountOverviewOutputBuilder {
         &self.proactive_insights
     }
     /// <p> The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in. </p>
+    /// This field is required.
     pub fn mean_time_to_recover_in_milliseconds(mut self, input: i64) -> Self {
         self.mean_time_to_recover_in_milliseconds = ::std::option::Option::Some(input);
         self
@@ -99,12 +102,24 @@ impl DescribeAccountOverviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAccountOverviewOutput`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput).
-    pub fn build(self) -> crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
-        crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mean_time_to_recover_in_milliseconds`](crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder::mean_time_to_recover_in_milliseconds)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_overview::DescribeAccountOverviewOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
             reactive_insights: self.reactive_insights.unwrap_or_default(),
             proactive_insights: self.proactive_insights.unwrap_or_default(),
-            mean_time_to_recover_in_milliseconds: self.mean_time_to_recover_in_milliseconds,
+            mean_time_to_recover_in_milliseconds: self.mean_time_to_recover_in_milliseconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mean_time_to_recover_in_milliseconds",
+                    "mean_time_to_recover_in_milliseconds was not specified but it is required when building DescribeAccountOverviewOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

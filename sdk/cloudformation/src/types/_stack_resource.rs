@@ -126,6 +126,7 @@ impl StackResourceBuilder {
         &self.stack_id
     }
     /// <p>The logical name of the resource specified in the template.</p>
+    /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +155,7 @@ impl StackResourceBuilder {
         &self.physical_resource_id
     }
     /// <p>Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +170,7 @@ impl StackResourceBuilder {
         &self.resource_type
     }
     /// <p>Time the status was updated.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -182,6 +185,7 @@ impl StackResourceBuilder {
         &self.timestamp
     }
     /// <p>Current status of the resource.</p>
+    /// This field is required.
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.resource_status = ::std::option::Option::Some(input);
         self

@@ -96,11 +96,10 @@ pub fn de_start_table_data_import_job_http_error(
                     )
                     .map_err(crate::operation::start_table_data_import_job::StartTableDataImportJobError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::start_table_data_import_job::StartTableDataImportJobError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -143,11 +142,10 @@ pub fn de_start_table_data_import_job_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_table_data_import_job::StartTableDataImportJobError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::start_table_data_import_job::StartTableDataImportJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::start_table_data_import_job::StartTableDataImportJobError::generic(generic),
@@ -169,7 +167,9 @@ pub fn de_start_table_data_import_job_http_response(
         output = crate::protocol_serde::shape_start_table_data_import_job::de_start_table_data_import_job(_response_body, output)
             .map_err(crate::operation::start_table_data_import_job::StartTableDataImportJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_table_data_import_job_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::start_table_data_import_job::StartTableDataImportJobError::unhandled)?
     })
 }
 

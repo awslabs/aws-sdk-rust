@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStateMachineAliasOutput {
     /// <p>The date and time the state machine alias was updated.</p>
-    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl UpdateStateMachineAliasOutput {
     /// <p>The date and time the state machine alias was updated.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date.as_ref()
+    pub fn update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateStateMachineAliasOutput {
@@ -34,6 +34,7 @@ pub struct UpdateStateMachineAliasOutputBuilder {
 }
 impl UpdateStateMachineAliasOutputBuilder {
     /// <p>The date and time the state machine alias was updated.</p>
+    /// This field is required.
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,22 @@ impl UpdateStateMachineAliasOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineAliasOutput`](crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput).
-    pub fn build(self) -> crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
-        crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
-            update_date: self.update_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_date`](crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasOutputBuilder::update_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
+            update_date: self.update_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date",
+                    "update_date was not specified but it is required when building UpdateStateMachineAliasOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

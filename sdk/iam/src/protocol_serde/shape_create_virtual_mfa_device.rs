@@ -122,7 +122,7 @@ pub fn de_create_virtual_mfa_device_http_response(
         output = crate::protocol_serde::shape_create_virtual_mfa_device::de_create_virtual_mfa_device(_response_body, output)
             .map_err(crate::operation::create_virtual_mfa_device::CreateVirtualMFADeviceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_virtual_mfa_device_output_correct_errors(output).build()
     })
 }
 

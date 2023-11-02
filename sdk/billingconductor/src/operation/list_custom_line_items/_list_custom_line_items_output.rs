@@ -11,8 +11,10 @@ pub struct ListCustomLineItemsOutput {
 }
 impl ListCustomLineItemsOutput {
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-    pub fn custom_line_items(&self) -> ::std::option::Option<&[crate::types::CustomLineItemListElement]> {
-        self.custom_line_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_line_items.is_none()`.
+    pub fn custom_line_items(&self) -> &[crate::types::CustomLineItemListElement] {
+        self.custom_line_items.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

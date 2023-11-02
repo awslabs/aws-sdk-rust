@@ -5,23 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateComponentData {
     /// <p>The name of the component</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
-    pub component_type: ::std::option::Option<::std::string::String>,
+    pub component_type: ::std::string::String,
     /// <p>Describes the component's properties.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>>,
+    pub properties: ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
     /// <p>A list of child components that are instances of the main component.</p>
     pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>A list of the unique variants of this component.</p>
-    pub variants: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
+    pub variants: ::std::vec::Vec<crate::types::ComponentVariant>,
     /// <p>Describes the component properties that can be overriden to customize an instance of the component.</p>
-    pub overrides: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub overrides: ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The data binding information for the component's properties.</p>
-    pub binding_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>>,
+    pub binding_properties: ::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>,
     /// <p>The data binding configuration for customizing a component's properties. Use this for a collection component.</p>
     pub collection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDataConfiguration>>,
     /// <p>One or more key-value pairs to use when tagging the component data.</p>
@@ -33,42 +31,43 @@ pub struct CreateComponentData {
 }
 impl CreateComponentData {
     /// <p>The name of the component</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
     /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(&self) -> ::std::option::Option<&str> {
-        self.component_type.as_deref()
+    pub fn component_type(&self) -> &str {
+        use std::ops::Deref;
+        self.component_type.deref()
     }
     /// <p>Describes the component's properties.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>> {
-        self.properties.as_ref()
+    pub fn properties(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty> {
+        &self.properties
     }
     /// <p>A list of child components that are instances of the main component.</p>
-    pub fn children(&self) -> ::std::option::Option<&[crate::types::ComponentChild]> {
-        self.children.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.children.is_none()`.
+    pub fn children(&self) -> &[crate::types::ComponentChild] {
+        self.children.as_deref().unwrap_or_default()
     }
     /// <p>A list of the unique variants of this component.</p>
-    pub fn variants(&self) -> ::std::option::Option<&[crate::types::ComponentVariant]> {
-        self.variants.as_deref()
+    pub fn variants(&self) -> &[crate::types::ComponentVariant] {
+        use std::ops::Deref;
+        self.variants.deref()
     }
     /// <p>Describes the component properties that can be overriden to customize an instance of the component.</p>
     pub fn overrides(
         &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
-        self.overrides.as_ref()
+    ) -> &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.overrides
     }
     /// <p>The data binding information for the component's properties.</p>
-    pub fn binding_properties(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue>> {
-        self.binding_properties.as_ref()
+    pub fn binding_properties(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::ComponentBindingPropertiesValue> {
+        &self.binding_properties
     }
     /// <p>The data binding configuration for customizing a component's properties. Use this for a collection component.</p>
     pub fn collection_properties(
@@ -119,6 +118,7 @@ pub struct CreateComponentDataBuilder {
 }
 impl CreateComponentDataBuilder {
     /// <p>The name of the component</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +147,7 @@ impl CreateComponentDataBuilder {
         &self.source_id
     }
     /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
+    /// This field is required.
     pub fn component_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_type = ::std::option::Option::Some(input.into());
         self
@@ -368,20 +369,57 @@ impl CreateComponentDataBuilder {
         &self.schema_version
     }
     /// Consumes the builder and constructs a [`CreateComponentData`](crate::types::CreateComponentData).
-    pub fn build(self) -> crate::types::CreateComponentData {
-        crate::types::CreateComponentData {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CreateComponentDataBuilder::name)
+    /// - [`component_type`](crate::types::builders::CreateComponentDataBuilder::component_type)
+    /// - [`properties`](crate::types::builders::CreateComponentDataBuilder::properties)
+    /// - [`variants`](crate::types::builders::CreateComponentDataBuilder::variants)
+    /// - [`overrides`](crate::types::builders::CreateComponentDataBuilder::overrides)
+    /// - [`binding_properties`](crate::types::builders::CreateComponentDataBuilder::binding_properties)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateComponentData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateComponentData {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateComponentData",
+                )
+            })?,
             source_id: self.source_id,
-            component_type: self.component_type,
-            properties: self.properties,
+            component_type: self.component_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "component_type",
+                    "component_type was not specified but it is required when building CreateComponentData",
+                )
+            })?,
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building CreateComponentData",
+                )
+            })?,
             children: self.children,
-            variants: self.variants,
-            overrides: self.overrides,
-            binding_properties: self.binding_properties,
+            variants: self.variants.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "variants",
+                    "variants was not specified but it is required when building CreateComponentData",
+                )
+            })?,
+            overrides: self.overrides.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "overrides",
+                    "overrides was not specified but it is required when building CreateComponentData",
+                )
+            })?,
+            binding_properties: self.binding_properties.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "binding_properties",
+                    "binding_properties was not specified but it is required when building CreateComponentData",
+                )
+            })?,
             collection_properties: self.collection_properties,
             tags: self.tags,
             events: self.events,
             schema_version: self.schema_version,
-        }
+        })
     }
 }

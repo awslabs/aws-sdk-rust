@@ -5,18 +5,19 @@ pub fn ser_cookie_preference(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.forward {
+    {
         let mut inner_writer = scope.start_el("Forward").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.forward.as_str());
     }
-    if let Some(var_2) = &input.whitelisted_names {
+    if let Some(var_1) = &input.whitelisted_names {
         let inner_writer = scope.start_el("WhitelistedNames");
-        crate::protocol_serde::shape_cookie_names::ser_cookie_names(var_2, inner_writer)?
+        crate::protocol_serde::shape_cookie_names::ser_cookie_names(var_1, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cookie_preference(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CookiePreference, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_cookie_preference(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Forward") /* Forward com.amazonaws.cloudfront#CookiePreference$Forward */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<crate::types::ItemSelection, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ItemSelection::from(
@@ -35,21 +36,23 @@ pub fn de_cookie_preference(
                         ?
                     )
                 ;
-                builder = builder.set_forward(var_3);
+                builder = builder.set_forward(var_2);
             }
             ,
             s if s.matches("WhitelistedNames") /* WhitelistedNames com.amazonaws.cloudfront#CookiePreference$WhitelistedNames */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_cookie_names::de_cookie_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_whitelisted_names(var_4);
+                builder = builder.set_whitelisted_names(var_3);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cookie_preference_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -41,6 +41,7 @@ pub struct CreateDefaultSubnetInputBuilder {
 }
 impl CreateDefaultSubnetInputBuilder {
     /// <p>The Availability Zone in which to create the default subnet.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self

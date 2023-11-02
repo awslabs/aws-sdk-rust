@@ -43,8 +43,10 @@ impl GetLabelDetectionOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
-    pub fn labels(&self) -> ::std::option::Option<&[crate::types::LabelDetection]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[crate::types::LabelDetection] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     pub fn label_model_version(&self) -> ::std::option::Option<&str> {

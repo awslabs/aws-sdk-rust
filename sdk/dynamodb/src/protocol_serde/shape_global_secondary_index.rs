@@ -3,32 +3,32 @@ pub fn ser_global_secondary_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalSecondaryIndex,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.index_name {
-        object.key("IndexName").string(var_1.as_str());
+    {
+        object.key("IndexName").string(input.index_name.as_str());
     }
-    if let Some(var_2) = &input.key_schema {
-        let mut array_3 = object.key("KeySchema").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("KeySchema").start_array();
+        for item_2 in &input.key_schema {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_key_schema_element::ser_key_schema_element(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_key_schema_element::ser_key_schema_element(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.projection {
+    if let Some(var_4) = &input.projection {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Projection").start_object();
-        crate::protocol_serde::shape_projection::ser_projection(&mut object_7, var_6)?;
+        let mut object_5 = object.key("Projection").start_object();
+        crate::protocol_serde::shape_projection::ser_projection(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.provisioned_throughput {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ProvisionedThroughput").start_object();
+        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_7, var_6)?;
         object_7.finish();
-    }
-    if let Some(var_8) = &input.provisioned_throughput {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("ProvisionedThroughput").start_object();
-        crate::protocol_serde::shape_provisioned_throughput::ser_provisioned_throughput(&mut object_9, var_8)?;
-        object_9.finish();
     }
     Ok(())
 }
@@ -75,7 +75,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::global_secondary_index_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

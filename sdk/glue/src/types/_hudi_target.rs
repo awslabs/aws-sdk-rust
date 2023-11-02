@@ -17,16 +17,20 @@ pub struct HudiTarget {
 impl HudiTarget {
     /// <p>An array of Amazon S3 location strings for Hudi, each indicating the root folder with which the metadata files for a Hudi table resides. The Hudi folder may be located in a child folder of the root folder.</p>
     /// <p>The crawler will scan all folders underneath a path for a Hudi folder.</p>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
+    pub fn paths(&self) -> &[::std::string::String] {
+        self.paths.as_deref().unwrap_or_default()
     }
     /// <p>The name of the connection to use to connect to the Hudi target. If your Hudi files are stored in buckets that require VPC authorization, you can set their connection properties here.</p>
     pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn exclusions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
+    pub fn exclusions(&self) -> &[::std::string::String] {
+        self.exclusions.as_deref().unwrap_or_default()
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn maximum_traversal_depth(&self) -> ::std::option::Option<i32> {

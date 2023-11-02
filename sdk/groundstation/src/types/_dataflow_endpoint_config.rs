@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataflowEndpointConfig {
     /// <p>Name of a dataflow endpoint.</p>
-    pub dataflow_endpoint_name: ::std::option::Option<::std::string::String>,
+    pub dataflow_endpoint_name: ::std::string::String,
     /// <p>Region of a dataflow endpoint.</p>
     pub dataflow_endpoint_region: ::std::option::Option<::std::string::String>,
 }
 impl DataflowEndpointConfig {
     /// <p>Name of a dataflow endpoint.</p>
-    pub fn dataflow_endpoint_name(&self) -> ::std::option::Option<&str> {
-        self.dataflow_endpoint_name.as_deref()
+    pub fn dataflow_endpoint_name(&self) -> &str {
+        use std::ops::Deref;
+        self.dataflow_endpoint_name.deref()
     }
     /// <p>Region of a dataflow endpoint.</p>
     pub fn dataflow_endpoint_region(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct DataflowEndpointConfigBuilder {
 }
 impl DataflowEndpointConfigBuilder {
     /// <p>Name of a dataflow endpoint.</p>
+    /// This field is required.
     pub fn dataflow_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl DataflowEndpointConfigBuilder {
         &self.dataflow_endpoint_region
     }
     /// Consumes the builder and constructs a [`DataflowEndpointConfig`](crate::types::DataflowEndpointConfig).
-    pub fn build(self) -> crate::types::DataflowEndpointConfig {
-        crate::types::DataflowEndpointConfig {
-            dataflow_endpoint_name: self.dataflow_endpoint_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dataflow_endpoint_name`](crate::types::builders::DataflowEndpointConfigBuilder::dataflow_endpoint_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataflowEndpointConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataflowEndpointConfig {
+            dataflow_endpoint_name: self.dataflow_endpoint_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dataflow_endpoint_name",
+                    "dataflow_endpoint_name was not specified but it is required when building DataflowEndpointConfig",
+                )
+            })?,
             dataflow_endpoint_region: self.dataflow_endpoint_region,
-        }
+        })
     }
 }

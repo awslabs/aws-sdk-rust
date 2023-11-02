@@ -41,6 +41,7 @@ pub struct UpdatePricingPlanOutputBuilder {
 }
 impl UpdatePricingPlanOutputBuilder {
     /// <p>Update the current pricing plan.</p>
+    /// This field is required.
     pub fn current_pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.current_pricing_plan = ::std::option::Option::Some(input);
         self

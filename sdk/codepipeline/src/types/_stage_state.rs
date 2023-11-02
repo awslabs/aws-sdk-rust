@@ -29,8 +29,10 @@ impl StageState {
         self.inbound_transition_state.as_ref()
     }
     /// <p>The state of the stage.</p>
-    pub fn action_states(&self) -> ::std::option::Option<&[crate::types::ActionState]> {
-        self.action_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_states.is_none()`.
+    pub fn action_states(&self) -> &[crate::types::ActionState] {
+        self.action_states.as_deref().unwrap_or_default()
     }
     /// <p>Information about the latest execution in the stage, including its ID and status.</p>
     pub fn latest_execution(&self) -> ::std::option::Option<&crate::types::StageExecution> {

@@ -52,6 +52,7 @@ pub fn ser_option_setting(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_option_setting(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::OptionSetting, ::aws_smithy_xml::decode::XmlDecodeError> {

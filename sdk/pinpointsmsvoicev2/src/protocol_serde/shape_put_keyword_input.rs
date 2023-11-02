@@ -3,17 +3,17 @@ pub fn ser_put_keyword_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_keyword::PutKeywordInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.origination_identity {
-        object.key("OriginationIdentity").string(var_1.as_str());
+    {
+        object.key("OriginationIdentity").string(input.origination_identity.as_str());
     }
-    if let Some(var_2) = &input.keyword {
-        object.key("Keyword").string(var_2.as_str());
+    {
+        object.key("Keyword").string(input.keyword.as_str());
     }
-    if let Some(var_3) = &input.keyword_message {
-        object.key("KeywordMessage").string(var_3.as_str());
+    {
+        object.key("KeywordMessage").string(input.keyword_message.as_str());
     }
-    if let Some(var_4) = &input.keyword_action {
-        object.key("KeywordAction").string(var_4.as_str());
+    if let Some(var_1) = &input.keyword_action {
+        object.key("KeywordAction").string(var_1.as_str());
     }
     Ok(())
 }

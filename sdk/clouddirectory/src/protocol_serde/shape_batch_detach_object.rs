@@ -9,11 +9,11 @@ pub fn ser_batch_detach_object(
         crate::protocol_serde::shape_object_reference::ser_object_reference(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.link_name {
-        object.key("LinkName").string(var_3.as_str());
+    {
+        object.key("LinkName").string(input.link_name.as_str());
     }
-    if let Some(var_4) = &input.batch_reference_name {
-        object.key("BatchReferenceName").string(var_4.as_str());
+    if let Some(var_3) = &input.batch_reference_name {
+        object.key("BatchReferenceName").string(var_3.as_str());
     }
     Ok(())
 }

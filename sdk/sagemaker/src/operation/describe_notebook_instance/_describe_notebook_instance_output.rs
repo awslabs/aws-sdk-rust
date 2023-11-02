@@ -83,8 +83,10 @@ impl DescribeNotebookInstanceOutput {
         self.subnet_id.as_deref()
     }
     /// <p>The IDs of the VPC security groups.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -121,16 +123,20 @@ impl DescribeNotebookInstanceOutput {
         self.volume_size_in_gb
     }
     /// <p>A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
-    pub fn accelerator_types(&self) -> ::std::option::Option<&[crate::types::NotebookInstanceAcceleratorType]> {
-        self.accelerator_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
+    pub fn accelerator_types(&self) -> &[crate::types::NotebookInstanceAcceleratorType] {
+        self.accelerator_types.as_deref().unwrap_or_default()
     }
     /// <p>The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
     pub fn default_code_repository(&self) -> ::std::option::Option<&str> {
         self.default_code_repository.as_deref()
     }
     /// <p>An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with SageMaker Notebook Instances</a>.</p>
-    pub fn additional_code_repositories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_code_repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_code_repositories.is_none()`.
+    pub fn additional_code_repositories(&self) -> &[::std::string::String] {
+        self.additional_code_repositories.as_deref().unwrap_or_default()
     }
     /// <p>Whether root access is enabled or disabled for users of the notebook instance.</p> <note>
     /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>

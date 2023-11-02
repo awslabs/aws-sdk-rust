@@ -36,6 +36,7 @@ pub struct DeleteBucketAccessKeyInputBuilder {
 }
 impl DeleteBucketAccessKeyInputBuilder {
     /// <p>The name of the bucket that the access key belongs to.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl DeleteBucketAccessKeyInputBuilder {
     }
     /// <p>The ID of the access key to delete.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
+    /// This field is required.
     pub fn access_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_key_id = ::std::option::Option::Some(input.into());
         self

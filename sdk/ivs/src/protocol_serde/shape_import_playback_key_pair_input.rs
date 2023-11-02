@@ -6,18 +6,18 @@ pub fn ser_import_playback_key_pair_input(
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.public_key_material {
-        object.key("publicKeyMaterial").string(var_2.as_str());
+    {
+        object.key("publicKeyMaterial").string(input.public_key_material.as_str());
     }
-    if let Some(var_3) = &input.tags {
+    if let Some(var_2) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("tags").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("tags").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_4.finish();
+        object_3.finish();
     }
     Ok(())
 }

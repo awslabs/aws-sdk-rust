@@ -12,6 +12,7 @@ pub fn ser_attribute_value(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_attribute_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AttributeValue, ::aws_smithy_xml::decode::XmlDecodeError> {

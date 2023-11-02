@@ -15,8 +15,10 @@ impl ListCertificatesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of ACM certificates.</p>
-    pub fn certificate_summary_list(&self) -> ::std::option::Option<&[crate::types::CertificateSummary]> {
-        self.certificate_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_summary_list.is_none()`.
+    pub fn certificate_summary_list(&self) -> &[crate::types::CertificateSummary] {
+        self.certificate_summary_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCertificatesOutput {

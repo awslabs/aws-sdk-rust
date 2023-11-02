@@ -12,8 +12,10 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
     /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
-    pub fn check_ids(&self) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
-        self.check_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.check_ids.is_none()`.
+    pub fn check_ids(&self) -> &[::std::option::Option<::std::string::String>] {
+        self.check_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {

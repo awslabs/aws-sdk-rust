@@ -36,8 +36,10 @@ impl UpdateJobTemplateInput {
         self.description.as_deref()
     }
     /// Optional list of hop destinations.
-    pub fn hop_destinations(&self) -> ::std::option::Option<&[crate::types::HopDestination]> {
-        self.hop_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hop_destinations.is_none()`.
+    pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
+        self.hop_destinations.as_deref().unwrap_or_default()
     }
     /// The name of the job template you are modifying
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -145,6 +147,7 @@ impl UpdateJobTemplateInputBuilder {
         &self.hop_destinations
     }
     /// The name of the job template you are modifying
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

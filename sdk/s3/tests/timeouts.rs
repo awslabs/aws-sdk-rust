@@ -13,7 +13,7 @@ use aws_sdk_s3::types::{
 use aws_sdk_s3::Client;
 use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{default_async_sleep, SharedAsyncSleep, TokioSleep};
-use aws_smithy_client::never::NeverConnector;
+use aws_smithy_runtime::client::http::test_util::NeverClient;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::future::Future;
@@ -27,7 +27,7 @@ async fn test_timeout_service_ends_request_that_never_completes() {
     let sdk_config = SdkConfig::builder()
         .region(Region::from_static("us-east-2"))
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
-        .http_connector(NeverConnector::new())
+        .http_client(NeverClient::new())
         .timeout_config(
             TimeoutConfig::builder()
                 .operation_timeout(Duration::from_secs_f32(0.5))

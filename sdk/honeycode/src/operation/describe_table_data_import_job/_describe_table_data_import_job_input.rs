@@ -48,6 +48,7 @@ pub struct DescribeTableDataImportJobInputBuilder {
 impl DescribeTableDataImportJobInputBuilder {
     /// <p>The ID of the workbook into which data was imported.</p>
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl DescribeTableDataImportJobInputBuilder {
     }
     /// <p>The ID of the table into which data was imported.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_id = ::std::option::Option::Some(input.into());
         self
@@ -82,6 +84,7 @@ impl DescribeTableDataImportJobInputBuilder {
     }
     /// <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>
     /// <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

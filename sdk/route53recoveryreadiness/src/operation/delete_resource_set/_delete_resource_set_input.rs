@@ -27,6 +27,7 @@ pub struct DeleteResourceSetInputBuilder {
 }
 impl DeleteResourceSetInputBuilder {
     /// <p>Name of a resource set.</p>
+    /// This field is required.
     pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self

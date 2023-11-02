@@ -9,8 +9,10 @@ pub struct Row {
 }
 impl Row {
     /// <p>The data that populates a row in a query result table.</p>
-    pub fn data(&self) -> ::std::option::Option<&[crate::types::Datum]> {
-        self.data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data.is_none()`.
+    pub fn data(&self) -> &[crate::types::Datum] {
+        self.data.as_deref().unwrap_or_default()
     }
 }
 impl Row {

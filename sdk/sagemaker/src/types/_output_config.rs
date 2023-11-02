@@ -168,6 +168,7 @@ pub struct OutputConfigBuilder {
 }
 impl OutputConfigBuilder {
     /// <p>Identifies the S3 bucket where you want Amazon SageMaker to store the model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    /// This field is required.
     pub fn s3_output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_output_location = ::std::option::Option::Some(input.into());
         self

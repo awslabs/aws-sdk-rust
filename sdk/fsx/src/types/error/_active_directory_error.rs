@@ -69,6 +69,7 @@ pub struct ActiveDirectoryErrorBuilder {
 }
 impl ActiveDirectoryErrorBuilder {
     /// <p>The directory ID of the directory that an error pertains to.</p>
+    /// This field is required.
     pub fn active_directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.active_directory_id = ::std::option::Option::Some(input.into());
         self

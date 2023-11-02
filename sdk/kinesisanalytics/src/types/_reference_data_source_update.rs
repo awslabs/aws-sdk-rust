@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceDataSourceUpdate {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
-    pub reference_id: ::std::option::Option<::std::string::String>,
+    pub reference_id: ::std::string::String,
     /// <p>In-application table name that is created by this update.</p>
     pub table_name_update: ::std::option::Option<::std::string::String>,
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
@@ -15,8 +15,9 @@ pub struct ReferenceDataSourceUpdate {
 }
 impl ReferenceDataSourceUpdate {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
-        self.reference_id.as_deref()
+    pub fn reference_id(&self) -> &str {
+        use std::ops::Deref;
+        self.reference_id.deref()
     }
     /// <p>In-application table name that is created by this update.</p>
     pub fn table_name_update(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct ReferenceDataSourceUpdateBuilder {
 }
 impl ReferenceDataSourceUpdateBuilder {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    /// This field is required.
     pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reference_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl ReferenceDataSourceUpdateBuilder {
         &self.reference_schema_update
     }
     /// Consumes the builder and constructs a [`ReferenceDataSourceUpdate`](crate::types::ReferenceDataSourceUpdate).
-    pub fn build(self) -> crate::types::ReferenceDataSourceUpdate {
-        crate::types::ReferenceDataSourceUpdate {
-            reference_id: self.reference_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reference_id`](crate::types::builders::ReferenceDataSourceUpdateBuilder::reference_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSourceUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReferenceDataSourceUpdate {
+            reference_id: self.reference_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reference_id",
+                    "reference_id was not specified but it is required when building ReferenceDataSourceUpdate",
+                )
+            })?,
             table_name_update: self.table_name_update,
             s3_reference_data_source_update: self.s3_reference_data_source_update,
             reference_schema_update: self.reference_schema_update,
-        }
+        })
     }
 }

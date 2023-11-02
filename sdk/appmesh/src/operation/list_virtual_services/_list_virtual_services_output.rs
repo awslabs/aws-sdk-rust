@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    pub virtual_services: ::std::option::Option<::std::vec::Vec<crate::types::VirtualServiceRef>>,
+    pub virtual_services: ::std::vec::Vec<crate::types::VirtualServiceRef>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
-    pub fn virtual_services(&self) -> ::std::option::Option<&[crate::types::VirtualServiceRef]> {
-        self.virtual_services.as_deref()
+    pub fn virtual_services(&self) -> &[crate::types::VirtualServiceRef] {
+        use std::ops::Deref;
+        self.virtual_services.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListVirtualServicesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVirtualServicesOutput`](crate::operation::list_virtual_services::ListVirtualServicesOutput).
-    pub fn build(self) -> crate::operation::list_virtual_services::ListVirtualServicesOutput {
-        crate::operation::list_virtual_services::ListVirtualServicesOutput {
-            virtual_services: self.virtual_services,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_services`](crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder::virtual_services)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_virtual_services::ListVirtualServicesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_virtual_services::ListVirtualServicesOutput {
+            virtual_services: self.virtual_services.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_services",
+                    "virtual_services was not specified but it is required when building ListVirtualServicesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

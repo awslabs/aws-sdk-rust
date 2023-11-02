@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCustomPlugin`](crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`custom_plugin_arn(impl Into<String>)`](crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder::custom_plugin_arn) / [`set_custom_plugin_arn(Option<String>)`](crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder::set_custom_plugin_arn): <p>Returns information about a custom plugin.</p>
+    ///   - [`custom_plugin_arn(impl Into<String>)`](crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder::custom_plugin_arn) / [`set_custom_plugin_arn(impl Into<String>)`](crate::operation::describe_custom_plugin::builders::DescribeCustomPluginFluentBuilder::set_custom_plugin_arn):<br>required: **true**<br><p>Returns information about a custom plugin.</p><br>
     /// - On success, responds with [`DescribeCustomPluginOutput`](crate::operation::describe_custom_plugin::DescribeCustomPluginOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_custom_plugin::DescribeCustomPluginOutput::creation_time): <p>The time that the custom plugin was created.</p>
     ///   - [`custom_plugin_arn(Option<String>)`](crate::operation::describe_custom_plugin::DescribeCustomPluginOutput::custom_plugin_arn): <p>The Amazon Resource Name (ARN) of the custom plugin.</p>

@@ -35,6 +35,7 @@ pub struct UpdateRadiusInputBuilder {
 }
 impl UpdateRadiusInputBuilder {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateRadiusInputBuilder {
         &self.directory_id
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
+    /// This field is required.
     pub fn radius_settings(mut self, input: crate::types::RadiusSettings) -> Self {
         self.radius_settings = ::std::option::Option::Some(input);
         self

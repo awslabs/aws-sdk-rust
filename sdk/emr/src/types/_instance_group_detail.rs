@@ -154,6 +154,7 @@ impl InstanceGroupDetailBuilder {
         &self.name
     }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
+    /// This field is required.
     pub fn market(mut self, input: crate::types::MarketType) -> Self {
         self.market = ::std::option::Option::Some(input);
         self
@@ -168,6 +169,7 @@ impl InstanceGroupDetailBuilder {
         &self.market
     }
     /// <p>Instance group role in the cluster</p>
+    /// This field is required.
     pub fn instance_role(mut self, input: crate::types::InstanceRoleType) -> Self {
         self.instance_role = ::std::option::Option::Some(input);
         self
@@ -196,6 +198,7 @@ impl InstanceGroupDetailBuilder {
         &self.bid_price
     }
     /// <p>Amazon EC2 instance type.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +213,7 @@ impl InstanceGroupDetailBuilder {
         &self.instance_type
     }
     /// <p>Target number of instances to run in the instance group.</p>
+    /// This field is required.
     pub fn instance_request_count(mut self, input: i32) -> Self {
         self.instance_request_count = ::std::option::Option::Some(input);
         self
@@ -224,6 +228,7 @@ impl InstanceGroupDetailBuilder {
         &self.instance_request_count
     }
     /// <p>Actual count of running instances.</p>
+    /// This field is required.
     pub fn instance_running_count(mut self, input: i32) -> Self {
         self.instance_running_count = ::std::option::Option::Some(input);
         self
@@ -238,6 +243,7 @@ impl InstanceGroupDetailBuilder {
         &self.instance_running_count
     }
     /// <p>State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::InstanceGroupState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -266,6 +272,7 @@ impl InstanceGroupDetailBuilder {
         &self.last_state_change_reason
     }
     /// <p>The date/time the instance group was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self

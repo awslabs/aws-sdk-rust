@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PeriodToDateComputation {
     /// <p>The ID for a computation.</p>
-    pub computation_id: ::std::option::Option<::std::string::String>,
+    pub computation_id: ::std::string::String,
     /// <p>The name of a computation.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
@@ -21,8 +21,9 @@ pub struct PeriodToDateComputation {
 }
 impl PeriodToDateComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> ::std::option::Option<&str> {
-        self.computation_id.as_deref()
+    pub fn computation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.computation_id.deref()
     }
     /// <p>The name of a computation.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -64,6 +65,7 @@ pub struct PeriodToDateComputationBuilder {
 }
 impl PeriodToDateComputationBuilder {
     /// <p>The ID for a computation.</p>
+    /// This field is required.
     pub fn computation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.computation_id = ::std::option::Option::Some(input.into());
         self
@@ -146,13 +148,20 @@ impl PeriodToDateComputationBuilder {
         &self.period_time_granularity
     }
     /// Consumes the builder and constructs a [`PeriodToDateComputation`](crate::types::PeriodToDateComputation).
-    pub fn build(self) -> crate::types::PeriodToDateComputation {
-        crate::types::PeriodToDateComputation {
-            computation_id: self.computation_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`computation_id`](crate::types::builders::PeriodToDateComputationBuilder::computation_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::PeriodToDateComputation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PeriodToDateComputation {
+            computation_id: self.computation_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "computation_id",
+                    "computation_id was not specified but it is required when building PeriodToDateComputation",
+                )
+            })?,
             name: self.name,
             time: self.time,
             value: self.value,
             period_time_granularity: self.period_time_granularity,
-        }
+        })
     }
 }

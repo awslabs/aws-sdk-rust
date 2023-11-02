@@ -5,36 +5,41 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnConfiguration {
     /// <p>The column that provides the document's identifier.</p>
-    pub document_id_column_name: ::std::option::Option<::std::string::String>,
+    pub document_id_column_name: ::std::string::String,
     /// <p>The column that contains the contents of the document.</p>
-    pub document_data_column_name: ::std::option::Option<::std::string::String>,
+    pub document_data_column_name: ::std::string::String,
     /// <p>The column that contains the title of the document.</p>
     pub document_title_column_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
     pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
-    pub change_detecting_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub change_detecting_columns: ::std::vec::Vec<::std::string::String>,
 }
 impl ColumnConfiguration {
     /// <p>The column that provides the document's identifier.</p>
-    pub fn document_id_column_name(&self) -> ::std::option::Option<&str> {
-        self.document_id_column_name.as_deref()
+    pub fn document_id_column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_id_column_name.deref()
     }
     /// <p>The column that contains the contents of the document.</p>
-    pub fn document_data_column_name(&self) -> ::std::option::Option<&str> {
-        self.document_data_column_name.as_deref()
+    pub fn document_data_column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_data_column_name.deref()
     }
     /// <p>The column that contains the title of the document.</p>
     pub fn document_title_column_name(&self) -> ::std::option::Option<&str> {
         self.document_title_column_name.as_deref()
     }
     /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
-    pub fn change_detecting_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.change_detecting_columns.as_deref()
+    pub fn change_detecting_columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.change_detecting_columns.deref()
     }
 }
 impl ColumnConfiguration {
@@ -56,6 +61,7 @@ pub struct ColumnConfigurationBuilder {
 }
 impl ColumnConfigurationBuilder {
     /// <p>The column that provides the document's identifier.</p>
+    /// This field is required.
     pub fn document_id_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id_column_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +76,7 @@ impl ColumnConfigurationBuilder {
         &self.document_id_column_name
     }
     /// <p>The column that contains the contents of the document.</p>
+    /// This field is required.
     pub fn document_data_column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_data_column_name = ::std::option::Option::Some(input.into());
         self
@@ -138,13 +145,32 @@ impl ColumnConfigurationBuilder {
         &self.change_detecting_columns
     }
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).
-    pub fn build(self) -> crate::types::ColumnConfiguration {
-        crate::types::ColumnConfiguration {
-            document_id_column_name: self.document_id_column_name,
-            document_data_column_name: self.document_data_column_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_id_column_name`](crate::types::builders::ColumnConfigurationBuilder::document_id_column_name)
+    /// - [`document_data_column_name`](crate::types::builders::ColumnConfigurationBuilder::document_data_column_name)
+    /// - [`change_detecting_columns`](crate::types::builders::ColumnConfigurationBuilder::change_detecting_columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ColumnConfiguration {
+            document_id_column_name: self.document_id_column_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_id_column_name",
+                    "document_id_column_name was not specified but it is required when building ColumnConfiguration",
+                )
+            })?,
+            document_data_column_name: self.document_data_column_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_data_column_name",
+                    "document_data_column_name was not specified but it is required when building ColumnConfiguration",
+                )
+            })?,
             document_title_column_name: self.document_title_column_name,
             field_mappings: self.field_mappings,
-            change_detecting_columns: self.change_detecting_columns,
-        }
+            change_detecting_columns: self.change_detecting_columns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "change_detecting_columns",
+                    "change_detecting_columns was not specified but it is required when building ColumnConfiguration",
+                )
+            })?,
+        })
     }
 }

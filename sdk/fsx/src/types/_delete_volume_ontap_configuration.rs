@@ -18,8 +18,10 @@ impl DeleteVolumeOntapConfiguration {
         self.skip_final_backup
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn final_backup_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.final_backup_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_backup_tags.is_none()`.
+    pub fn final_backup_tags(&self) -> &[crate::types::Tag] {
+        self.final_backup_tags.as_deref().unwrap_or_default()
     }
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock volume</a>. </p>

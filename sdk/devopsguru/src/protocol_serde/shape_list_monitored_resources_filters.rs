@@ -3,17 +3,17 @@ pub fn ser_list_monitored_resources_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListMonitoredResourcesFilters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.resource_permission {
-        object.key("ResourcePermission").string(var_1.as_str());
+    {
+        object.key("ResourcePermission").string(input.resource_permission.as_str());
     }
-    if let Some(var_2) = &input.resource_type_filters {
-        let mut array_3 = object.key("ResourceTypeFilters").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("ResourceTypeFilters").start_array();
+        for item_2 in &input.resource_type_filters {
             {
-                array_3.value().string(item_4.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }

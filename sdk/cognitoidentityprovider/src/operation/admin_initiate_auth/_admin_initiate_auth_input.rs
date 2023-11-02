@@ -171,6 +171,7 @@ pub struct AdminInitiateAuthInputBuilder {
 }
 impl AdminInitiateAuthInputBuilder {
     /// <p>The ID of the Amazon Cognito user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -185,6 +186,7 @@ impl AdminInitiateAuthInputBuilder {
         &self.user_pool_id
     }
     /// <p>The app client ID.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
@@ -212,6 +214,7 @@ impl AdminInitiateAuthInputBuilder {
     /// <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>
     /// <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Amazon Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn auth_flow(mut self, input: crate::types::AuthFlowType) -> Self {
         self.auth_flow = ::std::option::Option::Some(input);
         self

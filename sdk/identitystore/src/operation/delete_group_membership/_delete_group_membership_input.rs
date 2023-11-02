@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub membership_id: ::std::option::Option<::std::string::String>,
+    pub membership_id: ::std::string::String,
 }
 impl DeleteGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
-        self.membership_id.as_deref()
+    pub fn membership_id(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_id.deref()
     }
 }
 impl DeleteGroupMembershipInput {
@@ -34,6 +36,7 @@ pub struct DeleteGroupMembershipInputBuilder {
 }
 impl DeleteGroupMembershipInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteGroupMembershipInputBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    /// This field is required.
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl DeleteGroupMembershipInputBuilder {
         &self.membership_id
     }
     /// Consumes the builder and constructs a [`DeleteGroupMembershipInput`](crate::operation::delete_group_membership::DeleteGroupMembershipInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder::identity_store_id)
+    /// - [`membership_id`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder::membership_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_group_membership::DeleteGroupMembershipInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_group_membership::DeleteGroupMembershipInput {
-            identity_store_id: self.identity_store_id,
-            membership_id: self.membership_id,
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building DeleteGroupMembershipInput",
+                )
+            })?,
+            membership_id: self.membership_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_id",
+                    "membership_id was not specified but it is required when building DeleteGroupMembershipInput",
+                )
+            })?,
         })
     }
 }

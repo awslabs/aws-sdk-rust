@@ -55,6 +55,7 @@ impl CreateSbomExportInputBuilder {
         &self.resource_filter_criteria
     }
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
+    /// This field is required.
     pub fn report_format(mut self, input: crate::types::SbomReportFormat) -> Self {
         self.report_format = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl CreateSbomExportInputBuilder {
         &self.report_format
     }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    /// This field is required.
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
         self

@@ -38,8 +38,10 @@ impl CreateRule {
     }
     /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
     /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
-    pub fn times(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.times.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.times.is_none()`.
+    pub fn times(&self) -> &[::std::string::String] {
+        self.times.as_deref().unwrap_or_default()
     }
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn cron_expression(&self) -> ::std::option::Option<&str> {

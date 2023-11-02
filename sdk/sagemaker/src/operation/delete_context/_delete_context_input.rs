@@ -27,6 +27,7 @@ pub struct DeleteContextInputBuilder {
 }
 impl DeleteContextInputBuilder {
     /// <p>The name of the context to delete.</p>
+    /// This field is required.
     pub fn context_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_name = ::std::option::Option::Some(input.into());
         self

@@ -155,6 +155,7 @@ pub fn ser_instance_network_interface_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instance_network_interface_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::InstanceNetworkInterfaceSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

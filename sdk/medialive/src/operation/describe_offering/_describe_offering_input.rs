@@ -28,6 +28,7 @@ pub struct DescribeOfferingInputBuilder {
 }
 impl DescribeOfferingInputBuilder {
     /// Unique offering ID, e.g. '87654321'
+    /// This field is required.
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
         self

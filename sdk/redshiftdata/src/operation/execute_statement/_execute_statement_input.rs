@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
-    pub sql: ::std::option::Option<::std::string::String>,
+    pub sql: ::std::string::String,
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -12,7 +12,7 @@ pub struct ExecuteStatementInput {
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub database: ::std::option::Option<::std::string::String>,
+    pub database: ::std::string::String,
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
     pub with_event: ::std::option::Option<bool>,
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
@@ -26,8 +26,9 @@ pub struct ExecuteStatementInput {
 }
 impl ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
-    pub fn sql(&self) -> ::std::option::Option<&str> {
-        self.sql.as_deref()
+    pub fn sql(&self) -> &str {
+        use std::ops::Deref;
+        self.sql.deref()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -42,8 +43,9 @@ impl ExecuteStatementInput {
         self.db_user.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
-        self.database.as_deref()
+    pub fn database(&self) -> &str {
+        use std::ops::Deref;
+        self.database.deref()
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
     pub fn with_event(&self) -> ::std::option::Option<bool> {
@@ -54,8 +56,10 @@ impl ExecuteStatementInput {
         self.statement_name.as_deref()
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::SqlParameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::SqlParameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
@@ -90,6 +94,7 @@ pub struct ExecuteStatementInputBuilder {
 }
 impl ExecuteStatementInputBuilder {
     /// <p>The SQL statement text to run. </p>
+    /// This field is required.
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +151,7 @@ impl ExecuteStatementInputBuilder {
         &self.db_user
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -236,15 +242,28 @@ impl ExecuteStatementInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sql`](crate::operation::execute_statement::builders::ExecuteStatementInputBuilder::sql)
+    /// - [`database`](crate::operation::execute_statement::builders::ExecuteStatementInputBuilder::database)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
-            sql: self.sql,
+            sql: self.sql.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sql",
+                    "sql was not specified but it is required when building ExecuteStatementInput",
+                )
+            })?,
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,
             db_user: self.db_user,
-            database: self.database,
+            database: self.database.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database",
+                    "database was not specified but it is required when building ExecuteStatementInput",
+                )
+            })?,
             with_event: self.with_event,
             statement_name: self.statement_name,
             parameters: self.parameters,

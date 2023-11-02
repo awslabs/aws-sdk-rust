@@ -60,12 +60,16 @@ impl BlueGreenDeployment {
         self.target.as_deref()
     }
     /// <p>The details about each source and target resource in the blue/green deployment.</p>
-    pub fn switchover_details(&self) -> ::std::option::Option<&[crate::types::SwitchoverDetail]> {
-        self.switchover_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.switchover_details.is_none()`.
+    pub fn switchover_details(&self) -> &[crate::types::SwitchoverDetail] {
+        self.switchover_details.as_deref().unwrap_or_default()
     }
     /// <p>Either tasks to be performed or tasks that have been completed on the target database before switchover.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::BlueGreenDeploymentTask]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::BlueGreenDeploymentTask] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p>The status of the blue/green deployment.</p>
     /// <p>Valid Values:</p>
@@ -94,8 +98,10 @@ impl BlueGreenDeployment {
         self.delete_time.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl BlueGreenDeployment {

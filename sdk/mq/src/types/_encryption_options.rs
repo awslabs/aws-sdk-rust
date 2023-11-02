@@ -49,6 +49,7 @@ impl EncryptionOptionsBuilder {
         &self.kms_key_id
     }
     /// <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
+    /// This field is required.
     pub fn use_aws_owned_key(mut self, input: bool) -> Self {
         self.use_aws_owned_key = ::std::option::Option::Some(input);
         self

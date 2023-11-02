@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListingRevision {
     /// <p>An identifier of a revision of an asset published in a Amazon DataZone catalog.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The details of a revision of an asset published in a Amazon DataZone catalog.</p>
-    pub revision: ::std::option::Option<::std::string::String>,
+    pub revision: ::std::string::String,
 }
 impl ListingRevision {
     /// <p>An identifier of a revision of an asset published in a Amazon DataZone catalog.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The details of a revision of an asset published in a Amazon DataZone catalog.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
-        self.revision.as_deref()
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
 }
 impl ListingRevision {
@@ -35,6 +37,7 @@ pub struct ListingRevisionBuilder {
 }
 impl ListingRevisionBuilder {
     /// <p>An identifier of a revision of an asset published in a Amazon DataZone catalog.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ListingRevisionBuilder {
         &self.id
     }
     /// <p>The details of a revision of an asset published in a Amazon DataZone catalog.</p>
+    /// This field is required.
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ListingRevisionBuilder {
         &self.revision
     }
     /// Consumes the builder and constructs a [`ListingRevision`](crate::types::ListingRevision).
-    pub fn build(self) -> crate::types::ListingRevision {
-        crate::types::ListingRevision {
-            id: self.id,
-            revision: self.revision,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ListingRevisionBuilder::id)
+    /// - [`revision`](crate::types::builders::ListingRevisionBuilder::revision)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListingRevision, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListingRevision {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ListingRevision",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building ListingRevision",
+                )
+            })?,
+        })
     }
 }

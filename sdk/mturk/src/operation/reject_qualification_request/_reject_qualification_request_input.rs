@@ -34,6 +34,7 @@ pub struct RejectQualificationRequestInputBuilder {
 }
 impl RejectQualificationRequestInputBuilder {
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    /// This field is required.
     pub fn qualification_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_request_id = ::std::option::Option::Some(input.into());
         self

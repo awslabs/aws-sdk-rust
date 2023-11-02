@@ -9,8 +9,10 @@ pub struct BatchUpdatePhoneNumberOutput {
 }
 impl BatchUpdatePhoneNumberOutput {
     /// <p>A list of failed phone numbers and their error messages.</p>
-    pub fn phone_number_errors(&self) -> ::std::option::Option<&[crate::types::PhoneNumberError]> {
-        self.phone_number_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_errors.is_none()`.
+    pub fn phone_number_errors(&self) -> &[crate::types::PhoneNumberError] {
+        self.phone_number_errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchUpdatePhoneNumberOutput {

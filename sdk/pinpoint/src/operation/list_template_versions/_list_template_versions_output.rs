@@ -34,6 +34,7 @@ pub struct ListTemplateVersionsOutputBuilder {
 }
 impl ListTemplateVersionsOutputBuilder {
     /// <p>Provides information about all the versions of a specific message template.</p>
+    /// This field is required.
     pub fn template_versions_response(mut self, input: crate::types::TemplateVersionsResponse) -> Self {
         self.template_versions_response = ::std::option::Option::Some(input);
         self

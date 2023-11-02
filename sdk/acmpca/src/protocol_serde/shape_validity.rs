@@ -3,14 +3,14 @@ pub fn ser_validity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Validity,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.value {
+    {
         object.key("Value").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.value).into()),
         );
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("Type").string(var_2.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
     Ok(())
 }

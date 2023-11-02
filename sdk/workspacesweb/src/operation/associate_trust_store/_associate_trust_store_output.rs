@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateTrustStoreOutput {
     /// <p>The ARN of the web portal.</p>
-    pub portal_arn: ::std::option::Option<::std::string::String>,
+    pub portal_arn: ::std::string::String,
     /// <p>The ARN of the trust store.</p>
-    pub trust_store_arn: ::std::option::Option<::std::string::String>,
+    pub trust_store_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AssociateTrustStoreOutput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
-        self.portal_arn.as_deref()
+    pub fn portal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_arn.deref()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
-        self.trust_store_arn.as_deref()
+    pub fn trust_store_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.trust_store_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateTrustStoreOutput {
@@ -41,6 +43,7 @@ pub struct AssociateTrustStoreOutputBuilder {
 }
 impl AssociateTrustStoreOutputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl AssociateTrustStoreOutputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the trust store.</p>
+    /// This field is required.
     pub fn trust_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,27 @@ impl AssociateTrustStoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateTrustStoreOutput`](crate::operation::associate_trust_store::AssociateTrustStoreOutput).
-    pub fn build(self) -> crate::operation::associate_trust_store::AssociateTrustStoreOutput {
-        crate::operation::associate_trust_store::AssociateTrustStoreOutput {
-            portal_arn: self.portal_arn,
-            trust_store_arn: self.trust_store_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`portal_arn`](crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder::portal_arn)
+    /// - [`trust_store_arn`](crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder::trust_store_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::associate_trust_store::AssociateTrustStoreOutput {
+            portal_arn: self.portal_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "portal_arn",
+                    "portal_arn was not specified but it is required when building AssociateTrustStoreOutput",
+                )
+            })?,
+            trust_store_arn: self.trust_store_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "trust_store_arn",
+                    "trust_store_arn was not specified but it is required when building AssociateTrustStoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

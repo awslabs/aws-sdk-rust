@@ -34,6 +34,7 @@ pub struct ModifyClientPropertiesInputBuilder {
 }
 impl ModifyClientPropertiesInputBuilder {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyClientPropertiesInputBuilder {
         &self.resource_id
     }
     /// <p>Information about the Amazon WorkSpaces client.</p>
+    /// This field is required.
     pub fn client_properties(mut self, input: crate::types::ClientProperties) -> Self {
         self.client_properties = ::std::option::Option::Some(input);
         self

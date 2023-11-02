@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationDescription {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-    pub providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
+    pub providers: ::std::vec::Vec<crate::types::AuthenticationProviderTypes>,
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub saml: ::std::option::Option<crate::types::SamlAuthentication>,
     /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
@@ -13,8 +13,9 @@ pub struct AuthenticationDescription {
 }
 impl AuthenticationDescription {
     /// <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the Grafana console in the Amazon Managed Grafana workspace.</p>
-    pub fn providers(&self) -> ::std::option::Option<&[crate::types::AuthenticationProviderTypes]> {
-        self.providers.as_deref()
+    pub fn providers(&self) -> &[crate::types::AuthenticationProviderTypes] {
+        use std::ops::Deref;
+        self.providers.deref()
     }
     /// <p>A structure containing information about how this workspace works with SAML, including what attributes within the assertion are to be mapped to user information in the workspace. </p>
     pub fn saml(&self) -> ::std::option::Option<&crate::types::SamlAuthentication> {
@@ -90,11 +91,18 @@ impl AuthenticationDescriptionBuilder {
         &self.aws_sso
     }
     /// Consumes the builder and constructs a [`AuthenticationDescription`](crate::types::AuthenticationDescription).
-    pub fn build(self) -> crate::types::AuthenticationDescription {
-        crate::types::AuthenticationDescription {
-            providers: self.providers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`providers`](crate::types::builders::AuthenticationDescriptionBuilder::providers)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuthenticationDescription {
+            providers: self.providers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "providers",
+                    "providers was not specified but it is required when building AuthenticationDescription",
+                )
+            })?,
             saml: self.saml,
             aws_sso: self.aws_sso,
-        }
+        })
     }
 }

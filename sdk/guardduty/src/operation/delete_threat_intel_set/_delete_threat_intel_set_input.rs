@@ -34,6 +34,7 @@ pub struct DeleteThreatIntelSetInputBuilder {
 }
 impl DeleteThreatIntelSetInputBuilder {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteThreatIntelSetInputBuilder {
         &self.detector_id
     }
     /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
+    /// This field is required.
     pub fn threat_intel_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threat_intel_set_id = ::std::option::Option::Some(input.into());
         self

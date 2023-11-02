@@ -23,6 +23,7 @@ pub fn ser_v_cpu_count_request(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_v_cpu_count_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::VCpuCountRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -63,5 +64,5 @@ pub fn de_v_cpu_count_request(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::v_cpu_count_request_correct_errors(builder).build())
 }

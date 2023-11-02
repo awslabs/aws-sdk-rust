@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhysicalResourceId {
     /// <p>Identifier of the physical resource.</p>
-    pub identifier: ::std::option::Option<::std::string::String>,
+    pub identifier: ::std::string::String,
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
     /// <dt>
@@ -49,7 +49,7 @@ pub struct PhysicalResourceId {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub r#type: ::std::option::Option<crate::types::PhysicalIdentifierType>,
+    pub r#type: crate::types::PhysicalIdentifierType,
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
@@ -57,8 +57,9 @@ pub struct PhysicalResourceId {
 }
 impl PhysicalResourceId {
     /// <p>Identifier of the physical resource.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
-        self.identifier.as_deref()
+    pub fn identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.identifier.deref()
     }
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
@@ -103,8 +104,8 @@ impl PhysicalResourceId {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PhysicalIdentifierType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PhysicalIdentifierType {
+        &self.r#type
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
     pub fn aws_region(&self) -> ::std::option::Option<&str> {
@@ -133,6 +134,7 @@ pub struct PhysicalResourceIdBuilder {
 }
 impl PhysicalResourceIdBuilder {
     /// <p>Identifier of the physical resource.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +191,7 @@ impl PhysicalResourceIdBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PhysicalIdentifierType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -315,12 +318,25 @@ impl PhysicalResourceIdBuilder {
         &self.aws_account_id
     }
     /// Consumes the builder and constructs a [`PhysicalResourceId`](crate::types::PhysicalResourceId).
-    pub fn build(self) -> crate::types::PhysicalResourceId {
-        crate::types::PhysicalResourceId {
-            identifier: self.identifier,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identifier`](crate::types::builders::PhysicalResourceIdBuilder::identifier)
+    /// - [`r#type`](crate::types::builders::PhysicalResourceIdBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PhysicalResourceId, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PhysicalResourceId {
+            identifier: self.identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identifier",
+                    "identifier was not specified but it is required when building PhysicalResourceId",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building PhysicalResourceId",
+                )
+            })?,
             aws_region: self.aws_region,
             aws_account_id: self.aws_account_id,
-        }
+        })
     }
 }

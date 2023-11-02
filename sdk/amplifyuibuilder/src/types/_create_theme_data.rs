@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThemeData {
     /// <p>The name of the theme.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
+    pub values: ::std::vec::Vec<crate::types::ThemeValues>,
     /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
@@ -15,16 +15,20 @@ pub struct CreateThemeData {
 }
 impl CreateThemeData {
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[crate::types::ThemeValues] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::ThemeValues] {
+        self.overrides.as_deref().unwrap_or_default()
     }
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -49,6 +53,7 @@ pub struct CreateThemeDataBuilder {
 }
 impl CreateThemeDataBuilder {
     /// <p>The name of the theme.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -123,12 +128,25 @@ impl CreateThemeDataBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateThemeData`](crate::types::CreateThemeData).
-    pub fn build(self) -> crate::types::CreateThemeData {
-        crate::types::CreateThemeData {
-            name: self.name,
-            values: self.values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CreateThemeDataBuilder::name)
+    /// - [`values`](crate::types::builders::CreateThemeDataBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateThemeData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateThemeData {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateThemeData",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building CreateThemeData",
+                )
+            })?,
             overrides: self.overrides,
             tags: self.tags,
-        }
+        })
     }
 }

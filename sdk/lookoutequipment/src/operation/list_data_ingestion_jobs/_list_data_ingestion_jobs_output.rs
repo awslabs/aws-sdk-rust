@@ -15,8 +15,10 @@ impl ListDataIngestionJobsOutput {
         self.next_token.as_deref()
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
-    pub fn data_ingestion_job_summaries(&self) -> ::std::option::Option<&[crate::types::DataIngestionJobSummary]> {
-        self.data_ingestion_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_ingestion_job_summaries.is_none()`.
+    pub fn data_ingestion_job_summaries(&self) -> &[crate::types::DataIngestionJobSummary] {
+        self.data_ingestion_job_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListDataIngestionJobsOutput {

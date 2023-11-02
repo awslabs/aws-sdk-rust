@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateCase`](crate::operation::update_case::builders::UpdateCaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
-    ///   - [`case_id(impl Into<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::case_id) / [`set_case_id(Option<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::set_case_id): <p>A unique identifier of the case.</p>
-    ///   - [`fields(FieldValue)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::fields) / [`set_fields(Option<Vec<FieldValue>>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::set_fields): <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::domain_id) / [`set_domain_id(impl Into<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
+    ///   - [`case_id(impl Into<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::case_id) / [`set_case_id(impl Into<String>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::set_case_id):<br>required: **true**<br><p>A unique identifier of the case.</p><br>
+    ///   - [`fields(FieldValue)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::fields) / [`set_fields(Vec<FieldValue>)`](crate::operation::update_case::builders::UpdateCaseFluentBuilder::set_fields):<br>required: **true**<br><p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p><br>
     /// - On success, responds with [`UpdateCaseOutput`](crate::operation::update_case::UpdateCaseOutput)
     /// - On failure, responds with [`SdkError<UpdateCaseError>`](crate::operation::update_case::UpdateCaseError)
     pub fn update_case(&self) -> crate::operation::update_case::builders::UpdateCaseFluentBuilder {

@@ -92,89 +92,62 @@ pub(crate) fn reflens_list_environments_output_next_token(
 pub(crate) fn lens_list_application_versions_output_application_versions(
     input: crate::operation::list_application_versions::ListApplicationVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionSummary>> {
-    let input = match input.application_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.application_versions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_applications_output_applications(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
-    let input = match input.applications {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.applications;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_batch_job_definitions_output_batch_job_definitions(
     input: crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BatchJobDefinition>> {
-    let input = match input.batch_job_definitions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.batch_job_definitions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_batch_job_executions_output_batch_job_executions(
     input: crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BatchJobExecutionSummary>> {
-    let input = match input.batch_job_executions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.batch_job_executions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_set_import_history_output_data_set_import_tasks(
     input: crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>> {
-    let input = match input.data_set_import_tasks {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_set_import_tasks;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_data_sets_output_data_sets(
     input: crate::operation::list_data_sets::ListDataSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>> {
-    let input = match input.data_sets {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.data_sets;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_deployments_output_deployments(
     input: crate::operation::list_deployments::ListDeploymentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSummary>> {
-    let input = match input.deployments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.deployments;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_engine_versions_output_engine_versions(
     input: crate::operation::list_engine_versions::ListEngineVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EngineVersionsSummary>> {
-    let input = match input.engine_versions {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.engine_versions;
     ::std::option::Option::Some(input)
 }
 
 pub(crate) fn lens_list_environments_output_environments(
     input: crate::operation::list_environments::ListEnvironmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>> {
-    let input = match input.environments {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.environments;
     ::std::option::Option::Some(input)
 }

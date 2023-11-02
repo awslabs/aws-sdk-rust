@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub source_bot_version: ::std::option::Option<::std::string::String>,
+    pub source_bot_version: ::std::string::String,
 }
 impl BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn source_bot_version(&self) -> ::std::option::Option<&str> {
-        self.source_bot_version.as_deref()
+    pub fn source_bot_version(&self) -> &str {
+        use std::ops::Deref;
+        self.source_bot_version.deref()
     }
 }
 impl BotVersionLocaleDetails {
@@ -28,6 +29,7 @@ pub struct BotVersionLocaleDetailsBuilder {
 }
 impl BotVersionLocaleDetailsBuilder {
     /// <p>The version of a bot used for a bot locale.</p>
+    /// This field is required.
     pub fn source_bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_bot_version = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl BotVersionLocaleDetailsBuilder {
         &self.source_bot_version
     }
     /// Consumes the builder and constructs a [`BotVersionLocaleDetails`](crate::types::BotVersionLocaleDetails).
-    pub fn build(self) -> crate::types::BotVersionLocaleDetails {
-        crate::types::BotVersionLocaleDetails {
-            source_bot_version: self.source_bot_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_bot_version`](crate::types::builders::BotVersionLocaleDetailsBuilder::source_bot_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::BotVersionLocaleDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BotVersionLocaleDetails {
+            source_bot_version: self.source_bot_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_bot_version",
+                    "source_bot_version was not specified but it is required when building BotVersionLocaleDetails",
+                )
+            })?,
+        })
     }
 }

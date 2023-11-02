@@ -5,19 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub report_id: ::std::option::Option<::std::string::String>,
+    pub report_id: ::std::string::String,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    pub deliverability_test_status: ::std::option::Option<crate::types::DeliverabilityTestStatus>,
+    pub deliverability_test_status: crate::types::DeliverabilityTestStatus,
     _request_id: Option<String>,
 }
 impl CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
-        self.report_id.as_deref()
+    pub fn report_id(&self) -> &str {
+        use std::ops::Deref;
+        self.report_id.deref()
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    pub fn deliverability_test_status(&self) -> ::std::option::Option<&crate::types::DeliverabilityTestStatus> {
-        self.deliverability_test_status.as_ref()
+    pub fn deliverability_test_status(&self) -> &crate::types::DeliverabilityTestStatus {
+        &self.deliverability_test_status
     }
 }
 impl ::aws_http::request_id::RequestId for CreateDeliverabilityTestReportOutput {
@@ -42,6 +43,7 @@ pub struct CreateDeliverabilityTestReportOutputBuilder {
 }
 impl CreateDeliverabilityTestReportOutputBuilder {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl CreateDeliverabilityTestReportOutputBuilder {
         &self.report_id
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    /// This field is required.
     pub fn deliverability_test_status(mut self, input: crate::types::DeliverabilityTestStatus) -> Self {
         self.deliverability_test_status = ::std::option::Option::Some(input);
         self
@@ -79,11 +82,31 @@ impl CreateDeliverabilityTestReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportOutput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput).
-    pub fn build(self) -> crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput {
-        crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput {
-            report_id: self.report_id,
-            deliverability_test_status: self.deliverability_test_status,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`report_id`](crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportOutputBuilder::report_id)
+    /// - [`deliverability_test_status`](crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportOutputBuilder::deliverability_test_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput {
+                report_id: self.report_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "report_id",
+                        "report_id was not specified but it is required when building CreateDeliverabilityTestReportOutput",
+                    )
+                })?,
+                deliverability_test_status: self.deliverability_test_status.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "deliverability_test_status",
+                        "deliverability_test_status was not specified but it is required when building CreateDeliverabilityTestReportOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

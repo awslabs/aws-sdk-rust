@@ -9,8 +9,8 @@ pub fn ser_action_threshold(
             ::aws_smithy_types::Number::Float((input.action_threshold_value).into()),
         );
     }
-    if let Some(var_1) = &input.action_threshold_type {
-        object.key("ActionThresholdType").string(var_1.as_str());
+    {
+        object.key("ActionThresholdType").string(input.action_threshold_type.as_str());
     }
     Ok(())
 }
@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::action_threshold_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -87,6 +87,7 @@ impl UpdateServerInputBuilder {
         &self.backup_retention_count
     }
     /// <p>The name of the server to update. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self

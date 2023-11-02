@@ -34,6 +34,7 @@ pub struct PauseReplicationInputBuilder {
 }
 impl PauseReplicationInputBuilder {
     /// <p>Pause Replication Request source server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self

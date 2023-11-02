@@ -42,6 +42,7 @@ pub struct ArchiveOutputSettingsBuilder {
 }
 impl ArchiveOutputSettingsBuilder {
     /// Settings specific to the container type of the file.
+    /// This field is required.
     pub fn container_settings(mut self, input: crate::types::ArchiveContainerSettings) -> Self {
         self.container_settings = ::std::option::Option::Some(input);
         self

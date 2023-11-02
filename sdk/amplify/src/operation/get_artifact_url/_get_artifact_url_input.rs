@@ -28,6 +28,7 @@ pub struct GetArtifactUrlInputBuilder {
 }
 impl GetArtifactUrlInputBuilder {
     /// <p> The unique ID for an artifact. </p>
+    /// This field is required.
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
         self

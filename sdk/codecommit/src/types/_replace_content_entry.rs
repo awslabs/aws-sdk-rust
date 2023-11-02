@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceContentEntry {
     /// <p>The path of the conflicting file.</p>
-    pub file_path: ::std::option::Option<::std::string::String>,
+    pub file_path: ::std::string::String,
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-    pub replacement_type: ::std::option::Option<crate::types::ReplacementTypeEnum>,
+    pub replacement_type: crate::types::ReplacementTypeEnum,
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The file mode to apply during conflict resoltion.</p>
@@ -15,12 +15,13 @@ pub struct ReplaceContentEntry {
 }
 impl ReplaceContentEntry {
     /// <p>The path of the conflicting file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
-        self.file_path.as_deref()
+    pub fn file_path(&self) -> &str {
+        use std::ops::Deref;
+        self.file_path.deref()
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
-    pub fn replacement_type(&self) -> ::std::option::Option<&crate::types::ReplacementTypeEnum> {
-        self.replacement_type.as_ref()
+    pub fn replacement_type(&self) -> &crate::types::ReplacementTypeEnum {
+        &self.replacement_type
     }
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
     pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
@@ -49,6 +50,7 @@ pub struct ReplaceContentEntryBuilder {
 }
 impl ReplaceContentEntryBuilder {
     /// <p>The path of the conflicting file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl ReplaceContentEntryBuilder {
         &self.file_path
     }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
+    /// This field is required.
     pub fn replacement_type(mut self, input: crate::types::ReplacementTypeEnum) -> Self {
         self.replacement_type = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,25 @@ impl ReplaceContentEntryBuilder {
         &self.file_mode
     }
     /// Consumes the builder and constructs a [`ReplaceContentEntry`](crate::types::ReplaceContentEntry).
-    pub fn build(self) -> crate::types::ReplaceContentEntry {
-        crate::types::ReplaceContentEntry {
-            file_path: self.file_path,
-            replacement_type: self.replacement_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`file_path`](crate::types::builders::ReplaceContentEntryBuilder::file_path)
+    /// - [`replacement_type`](crate::types::builders::ReplaceContentEntryBuilder::replacement_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplaceContentEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplaceContentEntry {
+            file_path: self.file_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file_path",
+                    "file_path was not specified but it is required when building ReplaceContentEntry",
+                )
+            })?,
+            replacement_type: self.replacement_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "replacement_type",
+                    "replacement_type was not specified but it is required when building ReplaceContentEntry",
+                )
+            })?,
             content: self.content,
             file_mode: self.file_mode,
-        }
+        })
     }
 }

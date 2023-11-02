@@ -58,7 +58,7 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_not_service_resource_error::de_not_service_resource_error_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::not_service_resource_error_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -76,7 +76,7 @@ pub fn de_list_tags_for_resource_http_error(
                 )
                 .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_does_not_support_tagging_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;
@@ -91,7 +91,7 @@ pub fn de_list_tags_for_resource_http_error(
                 output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_json_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_correct_errors(output).build()
             };
             if tmp.message.is_none() {
                 tmp.message = _error_message;

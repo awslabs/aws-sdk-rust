@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOutpostResolver`](crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder::set_id): <p>The ID of the Resolver on the Outpost.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_outpost_resolver::builders::GetOutpostResolverFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the Resolver on the Outpost.</p><br>
     /// - On success, responds with [`GetOutpostResolverOutput`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput) with field(s):
     ///   - [`outpost_resolver(Option<OutpostResolver>)`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput::outpost_resolver): <p>Information about the <code>GetOutpostResolver</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<GetOutpostResolverError>`](crate::operation::get_outpost_resolver::GetOutpostResolverError)

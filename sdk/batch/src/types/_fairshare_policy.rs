@@ -27,8 +27,10 @@ impl FairsharePolicy {
         self.compute_reservation
     }
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    pub fn share_distribution(&self) -> ::std::option::Option<&[crate::types::ShareAttributes]> {
-        self.share_distribution.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_distribution.is_none()`.
+    pub fn share_distribution(&self) -> &[crate::types::ShareAttributes] {
+        self.share_distribution.as_deref().unwrap_or_default()
     }
 }
 impl FairsharePolicy {

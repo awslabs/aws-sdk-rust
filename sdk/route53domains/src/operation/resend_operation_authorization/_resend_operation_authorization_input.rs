@@ -27,6 +27,7 @@ pub struct ResendOperationAuthorizationInputBuilder {
 }
 impl ResendOperationAuthorizationInputBuilder {
     /// <p> Operation ID. </p>
+    /// This field is required.
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
         self

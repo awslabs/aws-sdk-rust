@@ -123,7 +123,9 @@ pub fn de_batch_detect_key_phrases_http_response(
         output = crate::protocol_serde::shape_batch_detect_key_phrases::de_batch_detect_key_phrases(_response_body, output)
             .map_err(crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_detect_key_phrases_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesError::unhandled)?
     })
 }
 

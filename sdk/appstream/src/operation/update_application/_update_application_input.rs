@@ -56,8 +56,10 @@ impl UpdateApplicationInput {
         self.app_block_arn.as_deref()
     }
     /// <p>The attributes to delete for an application.</p>
-    pub fn attributes_to_delete(&self) -> ::std::option::Option<&[crate::types::ApplicationAttribute]> {
-        self.attributes_to_delete.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_delete.is_none()`.
+    pub fn attributes_to_delete(&self) -> &[crate::types::ApplicationAttribute] {
+        self.attributes_to_delete.as_deref().unwrap_or_default()
     }
 }
 impl UpdateApplicationInput {
@@ -83,6 +85,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

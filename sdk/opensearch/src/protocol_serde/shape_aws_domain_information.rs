@@ -45,7 +45,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::aws_domain_information_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -60,11 +62,11 @@ pub fn ser_aws_domain_information(
     if let Some(var_1) = &input.owner_id {
         object.key("OwnerId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.domain_name {
-        object.key("DomainName").string(var_2.as_str());
+    {
+        object.key("DomainName").string(input.domain_name.as_str());
     }
-    if let Some(var_3) = &input.region {
-        object.key("Region").string(var_3.as_str());
+    if let Some(var_2) = &input.region {
+        object.key("Region").string(var_2.as_str());
     }
     Ok(())
 }

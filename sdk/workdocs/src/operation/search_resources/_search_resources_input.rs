@@ -32,24 +32,30 @@ impl SearchResourcesInput {
         self.query_text.as_deref()
     }
     /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
-    pub fn query_scopes(&self) -> ::std::option::Option<&[crate::types::SearchQueryScopeType]> {
-        self.query_scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_scopes.is_none()`.
+    pub fn query_scopes(&self) -> &[crate::types::SearchQueryScopeType] {
+        self.query_scopes.as_deref().unwrap_or_default()
     }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
     pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
-    pub fn additional_response_fields(&self) -> ::std::option::Option<&[crate::types::AdditionalResponseFieldType]> {
-        self.additional_response_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_response_fields.is_none()`.
+    pub fn additional_response_fields(&self) -> &[crate::types::AdditionalResponseFieldType] {
+        self.additional_response_fields.as_deref().unwrap_or_default()
     }
     /// <p>Filters results based on entity metadata.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::Filters> {
         self.filters.as_ref()
     }
     /// <p>Order by results in one or more categories.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&[crate::types::SearchSortResult]> {
-        self.order_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.order_by.is_none()`.
+    pub fn order_by(&self) -> &[crate::types::SearchSortResult] {
+        self.order_by.as_deref().unwrap_or_default()
     }
     /// <p>Max results count per page.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {

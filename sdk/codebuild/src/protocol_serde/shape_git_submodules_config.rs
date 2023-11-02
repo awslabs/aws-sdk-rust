@@ -3,8 +3,8 @@ pub fn ser_git_submodules_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitSubmodulesConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.fetch_submodules {
-        object.key("fetchSubmodules").boolean(*var_1);
+    {
+        object.key("fetchSubmodules").boolean(input.fetch_submodules);
     }
     Ok(())
 }
@@ -37,7 +37,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::git_submodules_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

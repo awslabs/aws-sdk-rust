@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchMonitoringConfiguration {
     /// <p>The name of the log group for log publishing.</p>
-    pub log_group_name: ::std::option::Option<::std::string::String>,
+    pub log_group_name: ::std::string::String,
     /// <p>The specified name prefix for log streams.</p>
     pub log_stream_name_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchMonitoringConfiguration {
     /// <p>The name of the log group for log publishing.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
-        self.log_group_name.as_deref()
+    pub fn log_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.log_group_name.deref()
     }
     /// <p>The specified name prefix for log streams.</p>
     pub fn log_stream_name_prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct CloudWatchMonitoringConfigurationBuilder {
 }
 impl CloudWatchMonitoringConfigurationBuilder {
     /// <p>The name of the log group for log publishing.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl CloudWatchMonitoringConfigurationBuilder {
         &self.log_stream_name_prefix
     }
     /// Consumes the builder and constructs a [`CloudWatchMonitoringConfiguration`](crate::types::CloudWatchMonitoringConfiguration).
-    pub fn build(self) -> crate::types::CloudWatchMonitoringConfiguration {
-        crate::types::CloudWatchMonitoringConfiguration {
-            log_group_name: self.log_group_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_group_name`](crate::types::builders::CloudWatchMonitoringConfigurationBuilder::log_group_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchMonitoringConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchMonitoringConfiguration {
+            log_group_name: self.log_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_group_name",
+                    "log_group_name was not specified but it is required when building CloudWatchMonitoringConfiguration",
+                )
+            })?,
             log_stream_name_prefix: self.log_stream_name_prefix,
-        }
+        })
     }
 }

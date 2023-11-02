@@ -15,8 +15,10 @@ pub struct ListAssetBundleImportJobsOutput {
 }
 impl ListAssetBundleImportJobsOutput {
     /// <p>A list of import job summaries.</p>
-    pub fn asset_bundle_import_job_summary_list(&self) -> ::std::option::Option<&[crate::types::AssetBundleImportJobSummary]> {
-        self.asset_bundle_import_job_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_bundle_import_job_summary_list.is_none()`.
+    pub fn asset_bundle_import_job_summary_list(&self) -> &[crate::types::AssetBundleImportJobSummary] {
+        self.asset_bundle_import_job_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

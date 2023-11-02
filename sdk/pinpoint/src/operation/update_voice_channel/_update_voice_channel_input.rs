@@ -34,6 +34,7 @@ pub struct UpdateVoiceChannelInputBuilder {
 }
 impl UpdateVoiceChannelInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateVoiceChannelInputBuilder {
         &self.application_id
     }
     /// <p>Specifies the status and settings of the voice channel for an application.</p>
+    /// This field is required.
     pub fn voice_channel_request(mut self, input: crate::types::VoiceChannelRequest) -> Self {
         self.voice_channel_request = ::std::option::Option::Some(input);
         self

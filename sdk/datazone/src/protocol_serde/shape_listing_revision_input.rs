@@ -3,11 +3,11 @@ pub fn ser_listing_revision_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListingRevisionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identifier {
-        object.key("identifier").string(var_1.as_str());
+    {
+        object.key("identifier").string(input.identifier.as_str());
     }
-    if let Some(var_2) = &input.revision {
-        object.key("revision").string(var_2.as_str());
+    {
+        object.key("revision").string(input.revision.as_str());
     }
     Ok(())
 }

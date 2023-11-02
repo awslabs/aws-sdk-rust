@@ -11,8 +11,10 @@ pub struct ListLineageGroupsOutput {
 }
 impl ListLineageGroupsOutput {
     /// <p>A list of lineage groups and their properties.</p>
-    pub fn lineage_group_summaries(&self) -> ::std::option::Option<&[crate::types::LineageGroupSummary]> {
-        self.lineage_group_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lineage_group_summaries.is_none()`.
+    pub fn lineage_group_summaries(&self) -> &[crate::types::LineageGroupSummary] {
+        self.lineage_group_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

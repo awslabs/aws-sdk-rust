@@ -8,8 +8,10 @@ pub struct BatchDeletePhoneNumberInput {
 }
 impl BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
-    pub fn phone_number_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.phone_number_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_ids.is_none()`.
+    pub fn phone_number_ids(&self) -> &[::std::string::String] {
+        self.phone_number_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeletePhoneNumberInput {

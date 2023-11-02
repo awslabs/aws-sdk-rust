@@ -175,6 +175,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
         &self.property_alias
     }
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+    /// This field is required.
     pub fn start_time_in_seconds(mut self, input: i64) -> Self {
         self.start_time_in_seconds = ::std::option::Option::Some(input);
         self
@@ -203,6 +204,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
         &self.start_time_offset_in_nanos
     }
     /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
+    /// This field is required.
     pub fn end_time_in_seconds(mut self, input: i64) -> Self {
         self.end_time_in_seconds = ::std::option::Option::Some(input);
         self
@@ -231,6 +233,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
         &self.end_time_offset_in_nanos
     }
     /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
+    /// This field is required.
     pub fn quality(mut self, input: crate::types::Quality) -> Self {
         self.quality = ::std::option::Option::Some(input);
         self
@@ -245,6 +248,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
         &self.quality
     }
     /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
+    /// This field is required.
     pub fn interval_in_seconds(mut self, input: i64) -> Self {
         self.interval_in_seconds = ::std::option::Option::Some(input);
         self
@@ -292,6 +296,7 @@ impl GetInterpolatedAssetPropertyValuesInputBuilder {
     /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
     /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

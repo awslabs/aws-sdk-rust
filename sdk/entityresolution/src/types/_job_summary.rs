@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobSummary {
     /// <p>The ID of the job.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The current status of the job.</p>
-    pub status: ::std::option::Option<crate::types::JobStatus>,
+    pub status: crate::types::JobStatus,
     /// <p>The time at which the job was started.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The time at which the job has finished.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobSummary {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The current status of the job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::JobStatus {
+        &self.status
     }
     /// <p>The time at which the job was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p>The time at which the job has finished.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -49,6 +50,7 @@ pub struct JobSummaryBuilder {
 }
 impl JobSummaryBuilder {
     /// <p>The ID of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +65,7 @@ impl JobSummaryBuilder {
         &self.job_id
     }
     /// <p>The current status of the job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -77,6 +80,7 @@ impl JobSummaryBuilder {
         &self.status
     }
     /// <p>The time at which the job was started.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,31 @@ impl JobSummaryBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
-    pub fn build(self) -> crate::types::JobSummary {
-        crate::types::JobSummary {
-            job_id: self.job_id,
-            status: self.status,
-            start_time: self.start_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::types::builders::JobSummaryBuilder::job_id)
+    /// - [`status`](crate::types::builders::JobSummaryBuilder::status)
+    /// - [`start_time`](crate::types::builders::JobSummaryBuilder::start_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::JobSummary {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building JobSummary",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building JobSummary",
+                )
+            })?,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building JobSummary",
+                )
+            })?,
             end_time: self.end_time,
-        }
+        })
     }
 }

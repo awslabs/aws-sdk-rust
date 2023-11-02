@@ -85,11 +85,10 @@ pub fn de_translate_pin_data_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::translate_pin_data::TranslatePinDataError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::translate_pin_data::TranslatePinDataError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::translate_pin_data::TranslatePinDataError::generic(generic),
@@ -108,7 +107,9 @@ pub fn de_translate_pin_data_http_response(
         output = crate::protocol_serde::shape_translate_pin_data::de_translate_pin_data(_response_body, output)
             .map_err(crate::operation::translate_pin_data::TranslatePinDataError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::translate_pin_data_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::translate_pin_data::TranslatePinDataError::unhandled)?
     })
 }
 

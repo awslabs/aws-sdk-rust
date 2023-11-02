@@ -105,6 +105,7 @@ pub struct HyperParameterTuningJobConfigBuilder {
 }
 impl HyperParameterTuningJobConfigBuilder {
     /// <p>Specifies how hyperparameter tuning chooses the combinations of hyperparameter values to use for the training job it launches. For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
+    /// This field is required.
     pub fn strategy(mut self, input: crate::types::HyperParameterTuningJobStrategyType) -> Self {
         self.strategy = ::std::option::Option::Some(input);
         self
@@ -147,6 +148,7 @@ impl HyperParameterTuningJobConfigBuilder {
         &self.hyper_parameter_tuning_job_objective
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that can be used for this hyperparameter tuning job.</p>
+    /// This field is required.
     pub fn resource_limits(mut self, input: crate::types::ResourceLimits) -> Self {
         self.resource_limits = ::std::option::Option::Some(input);
         self

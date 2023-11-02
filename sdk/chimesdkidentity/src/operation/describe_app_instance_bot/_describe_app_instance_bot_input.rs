@@ -27,6 +27,7 @@ pub struct DescribeAppInstanceBotInputBuilder {
 }
 impl DescribeAppInstanceBotInputBuilder {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
+    /// This field is required.
     pub fn app_instance_bot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_bot_arn = ::std::option::Option::Some(input.into());
         self

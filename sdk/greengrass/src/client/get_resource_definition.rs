@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResourceDefinition`](crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_definition_id(impl Into<String>)`](crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder::resource_definition_id) / [`set_resource_definition_id(Option<String>)`](crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder::set_resource_definition_id): The ID of the resource definition.
+    ///   - [`resource_definition_id(impl Into<String>)`](crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder::resource_definition_id) / [`set_resource_definition_id(Option<String>)`](crate::operation::get_resource_definition::builders::GetResourceDefinitionFluentBuilder::set_resource_definition_id):<br>required: **true**<br>The ID of the resource definition.<br>
     /// - On success, responds with [`GetResourceDefinitionOutput`](crate::operation::get_resource_definition::GetResourceDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_resource_definition::GetResourceDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

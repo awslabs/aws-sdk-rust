@@ -34,6 +34,7 @@ pub struct GetStreamingSessionBackupInputBuilder {
 }
 impl GetStreamingSessionBackupInputBuilder {
     /// <p>The ID of the backup.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetStreamingSessionBackupInputBuilder {
         &self.backup_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

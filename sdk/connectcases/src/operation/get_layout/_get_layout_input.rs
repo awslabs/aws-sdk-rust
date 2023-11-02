@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The unique identifier of the layout.</p>
-    pub layout_id: ::std::option::Option<::std::string::String>,
+    pub layout_id: ::std::string::String,
 }
 impl GetLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> ::std::option::Option<&str> {
-        self.layout_id.as_deref()
+    pub fn layout_id(&self) -> &str {
+        use std::ops::Deref;
+        self.layout_id.deref()
     }
 }
 impl GetLayoutInput {
@@ -34,6 +36,7 @@ pub struct GetLayoutInputBuilder {
 }
 impl GetLayoutInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetLayoutInputBuilder {
         &self.domain_id
     }
     /// <p>The unique identifier of the layout.</p>
+    /// This field is required.
     pub fn layout_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_id = ::std::option::Option::Some(input.into());
         self
@@ -62,10 +66,23 @@ impl GetLayoutInputBuilder {
         &self.layout_id
     }
     /// Consumes the builder and constructs a [`GetLayoutInput`](crate::operation::get_layout::GetLayoutInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::get_layout::builders::GetLayoutInputBuilder::domain_id)
+    /// - [`layout_id`](crate::operation::get_layout::builders::GetLayoutInputBuilder::layout_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_layout::GetLayoutInput {
-            domain_id: self.domain_id,
-            layout_id: self.layout_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building GetLayoutInput",
+                )
+            })?,
+            layout_id: self.layout_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "layout_id",
+                    "layout_id was not specified but it is required when building GetLayoutInput",
+                )
+            })?,
         })
     }
 }

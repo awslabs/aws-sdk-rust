@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopChannel`](crate::operation::stop_channel::builders::StopChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_id(impl Into<String>)`](crate::operation::stop_channel::builders::StopChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::stop_channel::builders::StopChannelFluentBuilder::set_channel_id): A request to stop a running channel
+    ///   - [`channel_id(impl Into<String>)`](crate::operation::stop_channel::builders::StopChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::stop_channel::builders::StopChannelFluentBuilder::set_channel_id):<br>required: **true**<br>A request to stop a running channel<br>
     /// - On success, responds with [`StopChannelOutput`](crate::operation::stop_channel::StopChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::stop_channel::StopChannelOutput::arn): The unique arn of the channel.
     ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::operation::stop_channel::StopChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel

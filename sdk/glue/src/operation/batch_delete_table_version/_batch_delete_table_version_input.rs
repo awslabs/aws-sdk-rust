@@ -26,8 +26,10 @@ impl BatchDeleteTableVersionInput {
         self.table_name.as_deref()
     }
     /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    pub fn version_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.version_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_ids.is_none()`.
+    pub fn version_ids(&self) -> &[::std::string::String] {
+        self.version_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteTableVersionInput {
@@ -62,6 +64,7 @@ impl BatchDeleteTableVersionInputBuilder {
         &self.catalog_id
     }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl BatchDeleteTableVersionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

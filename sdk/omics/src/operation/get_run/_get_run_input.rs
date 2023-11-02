@@ -14,8 +14,10 @@ impl GetRunInput {
         self.id.as_deref()
     }
     /// <p>The run's export format.</p>
-    pub fn export(&self) -> ::std::option::Option<&[crate::types::RunExport]> {
-        self.export.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export.is_none()`.
+    pub fn export(&self) -> &[crate::types::RunExport] {
+        self.export.as_deref().unwrap_or_default()
     }
 }
 impl GetRunInput {
@@ -34,6 +36,7 @@ pub struct GetRunInputBuilder {
 }
 impl GetRunInputBuilder {
     /// <p>The run's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

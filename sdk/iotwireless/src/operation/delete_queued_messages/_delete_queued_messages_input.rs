@@ -41,6 +41,7 @@ pub struct DeleteQueuedMessagesInputBuilder {
 }
 impl DeleteQueuedMessagesInputBuilder {
     /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteQueuedMessagesInputBuilder {
         &self.id
     }
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self

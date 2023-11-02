@@ -107,8 +107,10 @@ impl DescribeSecretOutput {
         self.next_rotation_date.as_ref()
     }
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>
     /// <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>
@@ -141,8 +143,10 @@ impl DescribeSecretOutput {
     /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
     /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
     /// </ul>
-    pub fn replication_status(&self) -> ::std::option::Option<&[crate::types::ReplicationStatusType]> {
-        self.replication_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_status.is_none()`.
+    pub fn replication_status(&self) -> &[crate::types::ReplicationStatusType] {
+        self.replication_status.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSecretOutput {

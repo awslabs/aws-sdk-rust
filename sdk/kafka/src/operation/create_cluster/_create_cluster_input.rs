@@ -104,6 +104,7 @@ pub struct CreateClusterInputBuilder {
 }
 impl CreateClusterInputBuilder {
     /// <p>Information about the broker nodes in the cluster.</p>
+    /// This field is required.
     pub fn broker_node_group_info(mut self, input: crate::types::BrokerNodeGroupInfo) -> Self {
         self.broker_node_group_info = ::std::option::Option::Some(input);
         self
@@ -132,6 +133,7 @@ impl CreateClusterInputBuilder {
         &self.client_authentication
     }
     /// <p>The name of the cluster.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -202,6 +204,7 @@ impl CreateClusterInputBuilder {
         &self.open_monitoring
     }
     /// <p>The version of Apache Kafka.</p>
+    /// This field is required.
     pub fn kafka_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kafka_version = ::std::option::Option::Some(input.into());
         self
@@ -230,6 +233,7 @@ impl CreateClusterInputBuilder {
         &self.logging_info
     }
     /// <p>The number of broker nodes in the cluster.</p>
+    /// This field is required.
     pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
         self.number_of_broker_nodes = ::std::option::Option::Some(input);
         self

@@ -12,6 +12,7 @@ pub fn ser_spot_fleet_monitoring(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_monitoring(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SpotFleetMonitoring, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteAgentError {
     /// <p> The ID of the agent or data collector to delete. </p>
-    pub agent_id: ::std::option::Option<::std::string::String>,
+    pub agent_id: ::std::string::String,
     /// <p> The description of the error that occurred for the delete failed agent. </p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
     /// <p> The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND | INTERNAL_SERVER_ERROR. </p>
-    pub error_code: ::std::option::Option<crate::types::DeleteAgentErrorCode>,
+    pub error_code: crate::types::DeleteAgentErrorCode,
 }
 impl BatchDeleteAgentError {
     /// <p> The ID of the agent or data collector to delete. </p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
-        self.agent_id.as_deref()
+    pub fn agent_id(&self) -> &str {
+        use std::ops::Deref;
+        self.agent_id.deref()
     }
     /// <p> The description of the error that occurred for the delete failed agent. </p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
     /// <p> The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND | INTERNAL_SERVER_ERROR. </p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::DeleteAgentErrorCode> {
-        self.error_code.as_ref()
+    pub fn error_code(&self) -> &crate::types::DeleteAgentErrorCode {
+        &self.error_code
     }
 }
 impl BatchDeleteAgentError {
@@ -42,6 +44,7 @@ pub struct BatchDeleteAgentErrorBuilder {
 }
 impl BatchDeleteAgentErrorBuilder {
     /// <p> The ID of the agent or data collector to delete. </p>
+    /// This field is required.
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl BatchDeleteAgentErrorBuilder {
         &self.agent_id
     }
     /// <p> The description of the error that occurred for the delete failed agent. </p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl BatchDeleteAgentErrorBuilder {
         &self.error_message
     }
     /// <p> The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND | INTERNAL_SERVER_ERROR. </p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::DeleteAgentErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -84,11 +89,30 @@ impl BatchDeleteAgentErrorBuilder {
         &self.error_code
     }
     /// Consumes the builder and constructs a [`BatchDeleteAgentError`](crate::types::BatchDeleteAgentError).
-    pub fn build(self) -> crate::types::BatchDeleteAgentError {
-        crate::types::BatchDeleteAgentError {
-            agent_id: self.agent_id,
-            error_message: self.error_message,
-            error_code: self.error_code,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`agent_id`](crate::types::builders::BatchDeleteAgentErrorBuilder::agent_id)
+    /// - [`error_message`](crate::types::builders::BatchDeleteAgentErrorBuilder::error_message)
+    /// - [`error_code`](crate::types::builders::BatchDeleteAgentErrorBuilder::error_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteAgentError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchDeleteAgentError {
+            agent_id: self.agent_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "agent_id",
+                    "agent_id was not specified but it is required when building BatchDeleteAgentError",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building BatchDeleteAgentError",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building BatchDeleteAgentError",
+                )
+            })?,
+        })
     }
 }

@@ -27,26 +27,26 @@ pub fn ser_execute_statement_input(
         }
         array_4.finish();
     }
-    if let Some(var_7) = &input.resource_arn {
-        object.key("resourceArn").string(var_7.as_str());
+    {
+        object.key("resourceArn").string(input.resource_arn.as_str());
     }
-    if let Some(var_8) = &input.result_set_options {
+    if let Some(var_7) = &input.result_set_options {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("resultSetOptions").start_object();
-        crate::protocol_serde::shape_result_set_options::ser_result_set_options(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("resultSetOptions").start_object();
+        crate::protocol_serde::shape_result_set_options::ser_result_set_options(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.schema {
-        object.key("schema").string(var_10.as_str());
+    if let Some(var_9) = &input.schema {
+        object.key("schema").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.secret_arn {
-        object.key("secretArn").string(var_11.as_str());
+    {
+        object.key("secretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_12) = &input.sql {
-        object.key("sql").string(var_12.as_str());
+    {
+        object.key("sql").string(input.sql.as_str());
     }
-    if let Some(var_13) = &input.transaction_id {
-        object.key("transactionId").string(var_13.as_str());
+    if let Some(var_10) = &input.transaction_id {
+        object.key("transactionId").string(var_10.as_str());
     }
     Ok(())
 }

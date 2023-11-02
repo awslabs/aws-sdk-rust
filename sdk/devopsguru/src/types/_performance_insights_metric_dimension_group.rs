@@ -86,8 +86,10 @@ impl PerformanceInsightsMetricDimensionGroup {
     /// <li> <p> <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p> </li>
     /// <li> <p> <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all engines)</p> </li>
     /// </ul>
-    pub fn dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[::std::string::String] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {

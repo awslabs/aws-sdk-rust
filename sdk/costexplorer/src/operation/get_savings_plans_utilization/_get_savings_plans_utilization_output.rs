@@ -11,8 +11,10 @@ pub struct GetSavingsPlansUtilizationOutput {
 }
 impl GetSavingsPlansUtilizationOutput {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-    pub fn savings_plans_utilizations_by_time(&self) -> ::std::option::Option<&[crate::types::SavingsPlansUtilizationByTime]> {
-        self.savings_plans_utilizations_by_time.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plans_utilizations_by_time.is_none()`.
+    pub fn savings_plans_utilizations_by_time(&self) -> &[crate::types::SavingsPlansUtilizationByTime] {
+        self.savings_plans_utilizations_by_time.as_deref().unwrap_or_default()
     }
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     pub fn total(&self) -> ::std::option::Option<&crate::types::SavingsPlansUtilizationAggregates> {
@@ -64,6 +66,7 @@ impl GetSavingsPlansUtilizationOutputBuilder {
         &self.savings_plans_utilizations_by_time
     }
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
+    /// This field is required.
     pub fn total(mut self, input: crate::types::SavingsPlansUtilizationAggregates) -> Self {
         self.total = ::std::option::Option::Some(input);
         self

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetListingDetails {
     /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-    pub listing_id: ::std::option::Option<::std::string::String>,
+    pub listing_id: ::std::string::String,
     /// <p>The status of an asset published in an Amazon DataZone catalog. </p>
-    pub listing_status: ::std::option::Option<crate::types::ListingStatus>,
+    pub listing_status: crate::types::ListingStatus,
 }
 impl AssetListingDetails {
     /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-    pub fn listing_id(&self) -> ::std::option::Option<&str> {
-        self.listing_id.as_deref()
+    pub fn listing_id(&self) -> &str {
+        use std::ops::Deref;
+        self.listing_id.deref()
     }
     /// <p>The status of an asset published in an Amazon DataZone catalog. </p>
-    pub fn listing_status(&self) -> ::std::option::Option<&crate::types::ListingStatus> {
-        self.listing_status.as_ref()
+    pub fn listing_status(&self) -> &crate::types::ListingStatus {
+        &self.listing_status
     }
 }
 impl AssetListingDetails {
@@ -35,6 +36,7 @@ pub struct AssetListingDetailsBuilder {
 }
 impl AssetListingDetailsBuilder {
     /// <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
+    /// This field is required.
     pub fn listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listing_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl AssetListingDetailsBuilder {
         &self.listing_id
     }
     /// <p>The status of an asset published in an Amazon DataZone catalog. </p>
+    /// This field is required.
     pub fn listing_status(mut self, input: crate::types::ListingStatus) -> Self {
         self.listing_status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl AssetListingDetailsBuilder {
         &self.listing_status
     }
     /// Consumes the builder and constructs a [`AssetListingDetails`](crate::types::AssetListingDetails).
-    pub fn build(self) -> crate::types::AssetListingDetails {
-        crate::types::AssetListingDetails {
-            listing_id: self.listing_id,
-            listing_status: self.listing_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`listing_id`](crate::types::builders::AssetListingDetailsBuilder::listing_id)
+    /// - [`listing_status`](crate::types::builders::AssetListingDetailsBuilder::listing_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetListingDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetListingDetails {
+            listing_id: self.listing_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "listing_id",
+                    "listing_id was not specified but it is required when building AssetListingDetails",
+                )
+            })?,
+            listing_status: self.listing_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "listing_status",
+                    "listing_status was not specified but it is required when building AssetListingDetails",
+                )
+            })?,
+        })
     }
 }

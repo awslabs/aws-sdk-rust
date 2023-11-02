@@ -58,6 +58,7 @@ pub struct AdminSetUserPasswordInputBuilder {
 }
 impl AdminSetUserPasswordInputBuilder {
     /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl AdminSetUserPasswordInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name of the user whose password you want to set.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl AdminSetUserPasswordInputBuilder {
         &self.username
     }
     /// <p>The password for the user.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self

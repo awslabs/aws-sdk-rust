@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInputDevice`](crate::operation::describe_input_device::builders::DescribeInputDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_device_id(impl Into<String>)`](crate::operation::describe_input_device::builders::DescribeInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::describe_input_device::builders::DescribeInputDeviceFluentBuilder::set_input_device_id): The unique ID of this input device. For example, hd-123456789abcdef.
+    ///   - [`input_device_id(impl Into<String>)`](crate::operation::describe_input_device::builders::DescribeInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::describe_input_device::builders::DescribeInputDeviceFluentBuilder::set_input_device_id):<br>required: **true**<br>The unique ID of this input device. For example, hd-123456789abcdef.<br>
     /// - On success, responds with [`DescribeInputDeviceOutput`](crate::operation::describe_input_device::DescribeInputDeviceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::arn): The unique ARN of the input device.
     ///   - [`connection_state(Option<InputDeviceConnectionState>)`](crate::operation::describe_input_device::DescribeInputDeviceOutput::connection_state): The state of the connection between the input device and AWS.

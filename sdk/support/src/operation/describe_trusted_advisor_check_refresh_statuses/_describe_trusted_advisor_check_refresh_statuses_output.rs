@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
-    pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
+    pub statuses: ::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
-    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::TrustedAdvisorCheckRefreshStatus]> {
-        self.statuses.as_deref()
+    pub fn statuses(&self) -> &[crate::types::TrustedAdvisorCheckRefreshStatus] {
+        use std::ops::Deref;
+        self.statuses.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
@@ -66,10 +67,24 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
-    pub fn build(self) -> crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
-        crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
-            statuses: self.statuses,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statuses`](crate::operation::describe_trusted_advisor_check_refresh_statuses::builders::DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder::statuses)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
+                statuses: self.statuses.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "statuses",
+                        "statuses was not specified but it is required when building DescribeTrustedAdvisorCheckRefreshStatusesOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

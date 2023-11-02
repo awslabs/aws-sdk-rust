@@ -27,6 +27,7 @@ pub struct DeleteAccessorInputBuilder {
 }
 impl DeleteAccessorInputBuilder {
     /// <p>The unique identifier of the accessor.</p>
+    /// This field is required.
     pub fn accessor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accessor_id = ::std::option::Option::Some(input.into());
         self

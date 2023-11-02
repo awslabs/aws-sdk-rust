@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddInstanceFleet`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::set_cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`instance_fleet(InstanceFleetConfig)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::instance_fleet) / [`set_instance_fleet(Option<InstanceFleetConfig>)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::set_instance_fleet): <p>Specifies the configuration of the instance fleet.</p>
+    ///   - [`cluster_id(impl Into<String>)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::set_cluster_id):<br>required: **true**<br><p>The unique identifier of the cluster.</p><br>
+    ///   - [`instance_fleet(InstanceFleetConfig)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::instance_fleet) / [`set_instance_fleet(Option<InstanceFleetConfig>)`](crate::operation::add_instance_fleet::builders::AddInstanceFleetFluentBuilder::set_instance_fleet):<br>required: **true**<br><p>Specifies the configuration of the instance fleet.</p><br>
     /// - On success, responds with [`AddInstanceFleetOutput`](crate::operation::add_instance_fleet::AddInstanceFleetOutput) with field(s):
     ///   - [`cluster_id(Option<String>)`](crate::operation::add_instance_fleet::AddInstanceFleetOutput::cluster_id): <p>The unique identifier of the cluster.</p>
     ///   - [`instance_fleet_id(Option<String>)`](crate::operation::add_instance_fleet::AddInstanceFleetOutput::instance_fleet_id): <p>The unique identifier of the instance fleet.</p>

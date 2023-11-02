@@ -36,6 +36,7 @@ pub struct CreateMemberInputBuilder {
 }
 impl CreateMemberInputBuilder {
     /// <p>The details of the account to associate with the administrator account.</p>
+    /// This field is required.
     pub fn account(mut self, input: crate::types::AccountDetail) -> Self {
         self.account = ::std::option::Option::Some(input);
         self

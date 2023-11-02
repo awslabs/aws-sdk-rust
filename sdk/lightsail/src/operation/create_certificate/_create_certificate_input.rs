@@ -27,13 +27,17 @@ impl CreateCertificateInput {
     /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
     /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
-    pub fn subject_alternative_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subject_alternative_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
+    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
+        self.subject_alternative_names.as_deref().unwrap_or_default()
     }
     /// <p>The tag keys and optional values to add to the certificate during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateCertificateInput {
@@ -54,6 +58,7 @@ pub struct CreateCertificateInputBuilder {
 }
 impl CreateCertificateInputBuilder {
     /// <p>The name for the certificate.</p>
+    /// This field is required.
     pub fn certificate_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_name = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +73,7 @@ impl CreateCertificateInputBuilder {
         &self.certificate_name
     }
     /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

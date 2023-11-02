@@ -129,6 +129,7 @@ pub fn ser_spot_fleet_launch_specification(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_launch_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SpotFleetLaunchSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {

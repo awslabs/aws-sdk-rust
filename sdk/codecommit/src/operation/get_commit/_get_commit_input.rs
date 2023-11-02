@@ -35,6 +35,7 @@ pub struct GetCommitInputBuilder {
 }
 impl GetCommitInputBuilder {
     /// <p>The name of the repository to which the commit was made.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetCommitInputBuilder {
         &self.repository_name
     }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
+    /// This field is required.
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_id = ::std::option::Option::Some(input.into());
         self

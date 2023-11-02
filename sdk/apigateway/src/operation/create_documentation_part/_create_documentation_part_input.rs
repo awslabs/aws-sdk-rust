@@ -42,6 +42,7 @@ pub struct CreateDocumentationPartInputBuilder {
 }
 impl CreateDocumentationPartInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateDocumentationPartInputBuilder {
         &self.rest_api_id
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
+    /// This field is required.
     pub fn location(mut self, input: crate::types::DocumentationPartLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl CreateDocumentationPartInputBuilder {
         &self.location
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
+    /// This field is required.
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties = ::std::option::Option::Some(input.into());
         self

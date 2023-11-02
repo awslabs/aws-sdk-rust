@@ -21,12 +21,16 @@ pub struct QueryFilters {
 }
 impl QueryFilters {
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
-    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[::std::string::String] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
-    pub fn lineage_types(&self) -> ::std::option::Option<&[crate::types::LineageType]> {
-        self.lineage_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lineage_types.is_none()`.
+    pub fn lineage_types(&self) -> &[crate::types::LineageType] {
+        self.lineage_types.as_deref().unwrap_or_default()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
     pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

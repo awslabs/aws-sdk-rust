@@ -35,6 +35,7 @@ pub struct CreateVpnConnectionRouteInputBuilder {
 }
 impl CreateVpnConnectionRouteInputBuilder {
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
+    /// This field is required.
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateVpnConnectionRouteInputBuilder {
         &self.destination_cidr_block
     }
     /// <p>The ID of the VPN connection.</p>
+    /// This field is required.
     pub fn vpn_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_id = ::std::option::Option::Some(input.into());
         self

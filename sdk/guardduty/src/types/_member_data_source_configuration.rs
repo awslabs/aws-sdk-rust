@@ -23,8 +23,10 @@ impl MemberDataSourceConfiguration {
         self.data_sources.as_ref()
     }
     /// <p>Contains information about the status of the features for the member account.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::MemberFeaturesConfigurationResult]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::MemberFeaturesConfigurationResult] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl MemberDataSourceConfiguration {
@@ -44,6 +46,7 @@ pub struct MemberDataSourceConfigurationBuilder {
 }
 impl MemberDataSourceConfigurationBuilder {
     /// <p>The account ID for the member account.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

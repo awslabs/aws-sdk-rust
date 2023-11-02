@@ -46,8 +46,10 @@ impl CreateChannelInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the creation request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
@@ -90,6 +92,7 @@ pub struct CreateChannelInputBuilder {
 }
 impl CreateChannelInputBuilder {
     /// <p>The ARN of the channel request.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +107,7 @@ impl CreateChannelInputBuilder {
         &self.app_instance_arn
     }
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +164,7 @@ impl CreateChannelInputBuilder {
         &self.metadata
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

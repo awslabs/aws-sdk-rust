@@ -34,6 +34,7 @@ pub struct ExecuteOpenCypherQueryInputBuilder {
 }
 impl ExecuteOpenCypherQueryInputBuilder {
     /// <p>The openCypher query string to be executed.</p>
+    /// This field is required.
     pub fn open_cypher_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_cypher_query = ::std::option::Option::Some(input.into());
         self

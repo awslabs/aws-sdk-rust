@@ -15,8 +15,10 @@ impl ListByteMatchSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>ByteMatchSetSummary</code> objects.</p>
-    pub fn byte_match_sets(&self) -> ::std::option::Option<&[crate::types::ByteMatchSetSummary]> {
-        self.byte_match_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.byte_match_sets.is_none()`.
+    pub fn byte_match_sets(&self) -> &[crate::types::ByteMatchSetSummary] {
+        self.byte_match_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListByteMatchSetsOutput {

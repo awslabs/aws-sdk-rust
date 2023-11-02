@@ -73,6 +73,7 @@ pub struct ModifyDbSnapshotInputBuilder {
 }
 impl ModifyDbSnapshotInputBuilder {
     /// <p>The identifier of the DB snapshot to modify.</p>
+    /// This field is required.
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self

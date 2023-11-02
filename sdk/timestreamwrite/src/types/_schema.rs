@@ -9,8 +9,10 @@ pub struct Schema {
 }
 impl Schema {
     /// <p>A non-empty list of partition keys defining the attributes used to partition the table data. The order of the list determines the partition hierarchy. The name and type of each partition key as well as the partition key order cannot be changed after the table is created. However, the enforcement level of each partition key can be changed. </p>
-    pub fn composite_partition_key(&self) -> ::std::option::Option<&[crate::types::PartitionKey]> {
-        self.composite_partition_key.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.composite_partition_key.is_none()`.
+    pub fn composite_partition_key(&self) -> &[crate::types::PartitionKey] {
+        self.composite_partition_key.as_deref().unwrap_or_default()
     }
 }
 impl Schema {

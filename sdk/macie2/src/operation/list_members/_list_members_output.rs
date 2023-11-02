@@ -11,8 +11,10 @@ pub struct ListMembersOutput {
 }
 impl ListMembersOutput {
     /// <p>An array of objects, one for each account that's associated with the administrator account and matches the criteria specified in the request.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::Member]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[crate::types::Member] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -69,6 +69,7 @@ impl DiscoverInputSchemaInputBuilder {
         &self.resource_arn
     }
     /// <p>The ARN of the role that is used to access the streaming source.</p>
+    /// This field is required.
     pub fn service_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_execution_role = ::std::option::Option::Some(input.into());
         self

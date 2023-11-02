@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The ETag of the Amazon S3 object.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
 impl VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The ETag of the Amazon S3 object.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct VirtualObjectBuilder {
 }
 impl VirtualObjectBuilder {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl VirtualObjectBuilder {
         &self.e_tag
     }
     /// Consumes the builder and constructs a [`VirtualObject`](crate::types::VirtualObject).
-    pub fn build(self) -> crate::types::VirtualObject {
-        crate::types::VirtualObject {
-            uri: self.uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::VirtualObjectBuilder::uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualObject, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualObject {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building VirtualObject",
+                )
+            })?,
             e_tag: self.e_tag,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct CreateAddressInputBuilder {
 }
 impl CreateAddressInputBuilder {
     /// <p>The address that you want the Snow device shipped to.</p>
+    /// This field is required.
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
         self

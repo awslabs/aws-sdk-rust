@@ -81,16 +81,20 @@ impl AppBlockBuilder {
         self.created_time.as_ref()
     }
     /// <p>The app block builder errors.</p>
-    pub fn app_block_builder_errors(&self) -> ::std::option::Option<&[crate::types::ResourceError]> {
-        self.app_block_builder_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_block_builder_errors.is_none()`.
+    pub fn app_block_builder_errors(&self) -> &[crate::types::ResourceError] {
+        self.app_block_builder_errors.as_deref().unwrap_or_default()
     }
     /// <p>The state change reason.</p>
     pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn access_endpoints(&self) -> ::std::option::Option<&[crate::types::AccessEndpoint]> {
-        self.access_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
+    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref().unwrap_or_default()
     }
 }
 impl AppBlockBuilder {
@@ -121,6 +125,7 @@ pub struct AppBlockBuilderBuilder {
 }
 impl AppBlockBuilderBuilder {
     /// <p>The ARN of the app block builder.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -135,6 +140,7 @@ impl AppBlockBuilderBuilder {
         &self.arn
     }
     /// <p>The name of the app block builder.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +184,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::AppBlockBuilderPlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -194,6 +201,7 @@ impl AppBlockBuilderBuilder {
         &self.platform
     }
     /// <p>The instance type of the app block builder.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -236,6 +244,7 @@ impl AppBlockBuilderBuilder {
         &self.iam_role_arn
     }
     /// <p>The VPC configuration for the app block builder.</p>
+    /// This field is required.
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
         self
@@ -250,6 +259,7 @@ impl AppBlockBuilderBuilder {
         &self.vpc_config
     }
     /// <p>The state of the app block builder.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AppBlockBuilderState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self

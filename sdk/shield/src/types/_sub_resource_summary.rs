@@ -23,12 +23,16 @@ impl SubResourceSummary {
         self.id.as_deref()
     }
     /// <p>The list of attack types and associated counters.</p>
-    pub fn attack_vectors(&self) -> ::std::option::Option<&[crate::types::SummarizedAttackVector]> {
-        self.attack_vectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_vectors.is_none()`.
+    pub fn attack_vectors(&self) -> &[crate::types::SummarizedAttackVector] {
+        self.attack_vectors.as_deref().unwrap_or_default()
     }
     /// <p>The counters that describe the details of the attack.</p>
-    pub fn counters(&self) -> ::std::option::Option<&[crate::types::SummarizedCounter]> {
-        self.counters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.counters.is_none()`.
+    pub fn counters(&self) -> &[crate::types::SummarizedCounter] {
+        self.counters.as_deref().unwrap_or_default()
     }
 }
 impl SubResourceSummary {

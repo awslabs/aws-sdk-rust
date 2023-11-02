@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tenant {
     /// <p>The ID of the application tenant.</p>
-    pub tenant_identifier: ::std::option::Option<::std::string::String>,
+    pub tenant_identifier: ::std::string::String,
     /// <p>The display name of the tenant.</p>
-    pub tenant_display_name: ::std::option::Option<::std::string::String>,
+    pub tenant_display_name: ::std::string::String,
 }
 impl Tenant {
     /// <p>The ID of the application tenant.</p>
-    pub fn tenant_identifier(&self) -> ::std::option::Option<&str> {
-        self.tenant_identifier.as_deref()
+    pub fn tenant_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.tenant_identifier.deref()
     }
     /// <p>The display name of the tenant.</p>
-    pub fn tenant_display_name(&self) -> ::std::option::Option<&str> {
-        self.tenant_display_name.as_deref()
+    pub fn tenant_display_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tenant_display_name.deref()
     }
 }
 impl Tenant {
@@ -35,6 +37,7 @@ pub struct TenantBuilder {
 }
 impl TenantBuilder {
     /// <p>The ID of the application tenant.</p>
+    /// This field is required.
     pub fn tenant_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TenantBuilder {
         &self.tenant_identifier
     }
     /// <p>The display name of the tenant.</p>
+    /// This field is required.
     pub fn tenant_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_display_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TenantBuilder {
         &self.tenant_display_name
     }
     /// Consumes the builder and constructs a [`Tenant`](crate::types::Tenant).
-    pub fn build(self) -> crate::types::Tenant {
-        crate::types::Tenant {
-            tenant_identifier: self.tenant_identifier,
-            tenant_display_name: self.tenant_display_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tenant_identifier`](crate::types::builders::TenantBuilder::tenant_identifier)
+    /// - [`tenant_display_name`](crate::types::builders::TenantBuilder::tenant_display_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Tenant, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Tenant {
+            tenant_identifier: self.tenant_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tenant_identifier",
+                    "tenant_identifier was not specified but it is required when building Tenant",
+                )
+            })?,
+            tenant_display_name: self.tenant_display_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tenant_display_name",
+                    "tenant_display_name was not specified but it is required when building Tenant",
+                )
+            })?,
+        })
     }
 }

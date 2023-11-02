@@ -14,8 +14,10 @@ impl PutWebhookInput {
         self.webhook.as_ref()
     }
     /// <p>The tags for the webhook.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutWebhookInput {
@@ -34,6 +36,7 @@ pub struct PutWebhookInputBuilder {
 }
 impl PutWebhookInputBuilder {
     /// <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
+    /// This field is required.
     pub fn webhook(mut self, input: crate::types::WebhookDefinition) -> Self {
         self.webhook = ::std::option::Option::Some(input);
         self

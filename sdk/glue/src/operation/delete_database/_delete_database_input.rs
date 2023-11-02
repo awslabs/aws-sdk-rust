@@ -48,6 +48,7 @@ impl DeleteDatabaseInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

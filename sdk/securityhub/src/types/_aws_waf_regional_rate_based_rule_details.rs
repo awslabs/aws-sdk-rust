@@ -39,8 +39,10 @@ impl AwsWafRegionalRateBasedRuleDetails {
         self.rule_id.as_deref()
     }
     /// <p>The predicates to include in the rate-based rule.</p>
-    pub fn match_predicates(&self) -> ::std::option::Option<&[crate::types::AwsWafRegionalRateBasedRuleMatchPredicate]> {
-        self.match_predicates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_predicates.is_none()`.
+    pub fn match_predicates(&self) -> &[crate::types::AwsWafRegionalRateBasedRuleMatchPredicate] {
+        self.match_predicates.as_deref().unwrap_or_default()
     }
 }
 impl AwsWafRegionalRateBasedRuleDetails {

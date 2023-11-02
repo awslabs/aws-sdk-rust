@@ -38,6 +38,7 @@ pub struct DeleteStreamInputBuilder {
 }
 impl DeleteStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self

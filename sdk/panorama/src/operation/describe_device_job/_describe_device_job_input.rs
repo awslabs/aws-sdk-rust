@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceJobInput {
     /// <p>The job's ID.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
 }
 impl DescribeDeviceJobInput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
 }
 impl DescribeDeviceJobInput {
@@ -27,6 +28,7 @@ pub struct DescribeDeviceJobInputBuilder {
 }
 impl DescribeDeviceJobInputBuilder {
     /// <p>The job's ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,18 @@ impl DescribeDeviceJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeDeviceJobInput`](crate::operation::describe_device_job::DescribeDeviceJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::describe_device_job::builders::DescribeDeviceJobInputBuilder::job_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_device_job::DescribeDeviceJobInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_device_job::DescribeDeviceJobInput { job_id: self.job_id })
+        ::std::result::Result::Ok(crate::operation::describe_device_job::DescribeDeviceJobInput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building DescribeDeviceJobInput",
+                )
+            })?,
+        })
     }
 }

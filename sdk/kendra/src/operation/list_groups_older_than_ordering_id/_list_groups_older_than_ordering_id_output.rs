@@ -11,8 +11,10 @@ pub struct ListGroupsOlderThanOrderingIdOutput {
 }
 impl ListGroupsOlderThanOrderingIdOutput {
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    pub fn groups_summaries(&self) -> ::std::option::Option<&[crate::types::GroupSummary]> {
-        self.groups_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups_summaries.is_none()`.
+    pub fn groups_summaries(&self) -> &[crate::types::GroupSummary] {
+        self.groups_summaries.as_deref().unwrap_or_default()
     }
     /// <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -55,6 +55,7 @@ impl GetResourceLfTagsInputBuilder {
         &self.catalog_id
     }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
+    /// This field is required.
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self

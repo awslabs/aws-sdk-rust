@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProfileObjectTypeItem {
     /// <p>The name of the profile object type.</p>
-    pub object_type_name: ::std::option::Option<::std::string::String>,
+    pub object_type_name: ::std::string::String,
     /// <p>Description of the profile object type.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
@@ -17,12 +17,14 @@ pub struct ListProfileObjectTypeItem {
 }
 impl ListProfileObjectTypeItem {
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
-        self.object_type_name.as_deref()
+    pub fn object_type_name(&self) -> &str {
+        use std::ops::Deref;
+        self.object_type_name.deref()
     }
     /// <p>Description of the profile object type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -56,6 +58,7 @@ pub struct ListProfileObjectTypeItemBuilder {
 }
 impl ListProfileObjectTypeItemBuilder {
     /// <p>The name of the profile object type.</p>
+    /// This field is required.
     pub fn object_type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_type_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl ListProfileObjectTypeItemBuilder {
         &self.object_type_name
     }
     /// <p>Description of the profile object type.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +136,26 @@ impl ListProfileObjectTypeItemBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListProfileObjectTypeItem`](crate::types::ListProfileObjectTypeItem).
-    pub fn build(self) -> crate::types::ListProfileObjectTypeItem {
-        crate::types::ListProfileObjectTypeItem {
-            object_type_name: self.object_type_name,
-            description: self.description,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`object_type_name`](crate::types::builders::ListProfileObjectTypeItemBuilder::object_type_name)
+    /// - [`description`](crate::types::builders::ListProfileObjectTypeItemBuilder::description)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListProfileObjectTypeItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListProfileObjectTypeItem {
+            object_type_name: self.object_type_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "object_type_name",
+                    "object_type_name was not specified but it is required when building ListProfileObjectTypeItem",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building ListProfileObjectTypeItem",
+                )
+            })?,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
             tags: self.tags,
-        }
+        })
     }
 }

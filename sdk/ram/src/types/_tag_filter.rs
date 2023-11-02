@@ -15,8 +15,10 @@ impl TagFilter {
         self.tag_key.as_deref()
     }
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
+    pub fn tag_values(&self) -> &[::std::string::String] {
+        self.tag_values.as_deref().unwrap_or_default()
     }
 }
 impl TagFilter {

@@ -27,6 +27,7 @@ pub struct StartExtensionPackAssociationInputBuilder {
 }
 impl StartExtensionPackAssociationInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct GetEulaInputBuilder {
 }
 impl GetEulaInputBuilder {
     /// <p>The EULA ID.</p>
+    /// This field is required.
     pub fn eula_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eula_id = ::std::option::Option::Some(input.into());
         self

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntermediateSourceConfiguration {
     /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-    pub intermediate_s3_path: ::std::option::Option<::std::string::String>,
+    pub intermediate_s3_path: ::std::string::String,
 }
 impl IntermediateSourceConfiguration {
     /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
-    pub fn intermediate_s3_path(&self) -> ::std::option::Option<&str> {
-        self.intermediate_s3_path.as_deref()
+    pub fn intermediate_s3_path(&self) -> &str {
+        use std::ops::Deref;
+        self.intermediate_s3_path.deref()
     }
 }
 impl IntermediateSourceConfiguration {
@@ -28,6 +29,7 @@ pub struct IntermediateSourceConfigurationBuilder {
 }
 impl IntermediateSourceConfigurationBuilder {
     /// <p>The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code> </p>
+    /// This field is required.
     pub fn intermediate_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intermediate_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl IntermediateSourceConfigurationBuilder {
         &self.intermediate_s3_path
     }
     /// Consumes the builder and constructs a [`IntermediateSourceConfiguration`](crate::types::IntermediateSourceConfiguration).
-    pub fn build(self) -> crate::types::IntermediateSourceConfiguration {
-        crate::types::IntermediateSourceConfiguration {
-            intermediate_s3_path: self.intermediate_s3_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`intermediate_s3_path`](crate::types::builders::IntermediateSourceConfigurationBuilder::intermediate_s3_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntermediateSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntermediateSourceConfiguration {
+            intermediate_s3_path: self.intermediate_s3_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "intermediate_s3_path",
+                    "intermediate_s3_path was not specified but it is required when building IntermediateSourceConfiguration",
+                )
+            })?,
+        })
     }
 }

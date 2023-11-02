@@ -21,11 +21,11 @@ pub struct InstancePatchStateFilter {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The type of comparison that should be performed for the value.</p>
-    pub r#type: ::std::option::Option<crate::types::InstancePatchStateOperatorType>,
+    pub r#type: crate::types::InstancePatchStateOperatorType,
 }
 impl InstancePatchStateFilter {
     /// <p>The key for the filter. Supported values include the following:</p>
@@ -39,16 +39,18 @@ impl InstancePatchStateFilter {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The type of comparison that should be performed for the value.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InstancePatchStateOperatorType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::InstancePatchStateOperatorType {
+        &self.r#type
     }
 }
 impl InstancePatchStateFilter {
@@ -78,6 +80,7 @@ impl InstancePatchStateFilterBuilder {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +135,7 @@ impl InstancePatchStateFilterBuilder {
         &self.values
     }
     /// <p>The type of comparison that should be performed for the value.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InstancePatchStateOperatorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -146,11 +150,30 @@ impl InstancePatchStateFilterBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`InstancePatchStateFilter`](crate::types::InstancePatchStateFilter).
-    pub fn build(self) -> crate::types::InstancePatchStateFilter {
-        crate::types::InstancePatchStateFilter {
-            key: self.key,
-            values: self.values,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::InstancePatchStateFilterBuilder::key)
+    /// - [`values`](crate::types::builders::InstancePatchStateFilterBuilder::values)
+    /// - [`r#type`](crate::types::builders::InstancePatchStateFilterBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstancePatchStateFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstancePatchStateFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building InstancePatchStateFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building InstancePatchStateFilter",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building InstancePatchStateFilter",
+                )
+            })?,
+        })
     }
 }

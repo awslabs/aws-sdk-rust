@@ -6,56 +6,53 @@ pub fn ser_create_service_template_version_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.template_name {
-        object.key("templateName").string(var_2.as_str());
+    {
+        object.key("templateName").string(input.template_name.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.major_version {
-        object.key("majorVersion").string(var_4.as_str());
+    if let Some(var_3) = &input.major_version {
+        object.key("majorVersion").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.source {
+    if let Some(var_4) = &input.source {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("source").start_object();
-        crate::protocol_serde::shape_template_version_source_input::ser_template_version_source_input(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("source").start_object();
+        crate::protocol_serde::shape_template_version_source_input::ser_template_version_source_input(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.compatible_environment_templates {
-        let mut array_8 = object.key("compatibleEnvironmentTemplates").start_array();
-        for item_9 in var_7 {
+    {
+        let mut array_6 = object.key("compatibleEnvironmentTemplates").start_array();
+        for item_7 in &input.compatible_environment_templates {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_compatible_environment_template_input::ser_compatible_environment_template_input(
-                    &mut object_10,
-                    item_9,
-                )?;
-                object_10.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_compatible_environment_template_input::ser_compatible_environment_template_input(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("tags").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_12.finish();
+        array_10.finish();
     }
-    if let Some(var_15) = &input.supported_component_sources {
-        let mut array_16 = object.key("supportedComponentSources").start_array();
-        for item_17 in var_15 {
+    if let Some(var_13) = &input.supported_component_sources {
+        let mut array_14 = object.key("supportedComponentSources").start_array();
+        for item_15 in var_13 {
             {
-                array_16.value().string(item_17.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_16.finish();
+        array_14.finish();
     }
     Ok(())
 }

@@ -53,6 +53,7 @@ pub struct SendAutomationSignalInputBuilder {
 }
 impl SendAutomationSignalInputBuilder {
     /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
+    /// This field is required.
     pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl SendAutomationSignalInputBuilder {
         &self.automation_execution_id
     }
     /// <p>The type of signal to send to an Automation execution. </p>
+    /// This field is required.
     pub fn signal_type(mut self, input: crate::types::SignalType) -> Self {
         self.signal_type = ::std::option::Option::Some(input);
         self

@@ -10,25 +10,27 @@
 pub struct GeoMatchSet {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
     /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub geo_match_set_id: ::std::option::Option<::std::string::String>,
+    pub geo_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>GeoMatchConstraint</code> objects, which contain the country that you want AWS WAF to search for.</p>
-    pub geo_match_constraints: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchConstraint>>,
+    pub geo_match_constraints: ::std::vec::Vec<crate::types::GeoMatchConstraint>,
 }
 impl GeoMatchSet {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
     /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn geo_match_set_id(&self) -> ::std::option::Option<&str> {
-        self.geo_match_set_id.as_deref()
+    pub fn geo_match_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.geo_match_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An array of <code>GeoMatchConstraint</code> objects, which contain the country that you want AWS WAF to search for.</p>
-    pub fn geo_match_constraints(&self) -> ::std::option::Option<&[crate::types::GeoMatchConstraint]> {
-        self.geo_match_constraints.as_deref()
+    pub fn geo_match_constraints(&self) -> &[crate::types::GeoMatchConstraint] {
+        use std::ops::Deref;
+        self.geo_match_constraints.deref()
     }
 }
 impl GeoMatchSet {
@@ -49,6 +51,7 @@ pub struct GeoMatchSetBuilder {
 impl GeoMatchSetBuilder {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
     /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    /// This field is required.
     pub fn geo_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geo_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -99,11 +102,24 @@ impl GeoMatchSetBuilder {
         &self.geo_match_constraints
     }
     /// Consumes the builder and constructs a [`GeoMatchSet`](crate::types::GeoMatchSet).
-    pub fn build(self) -> crate::types::GeoMatchSet {
-        crate::types::GeoMatchSet {
-            geo_match_set_id: self.geo_match_set_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`geo_match_set_id`](crate::types::builders::GeoMatchSetBuilder::geo_match_set_id)
+    /// - [`geo_match_constraints`](crate::types::builders::GeoMatchSetBuilder::geo_match_constraints)
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GeoMatchSet {
+            geo_match_set_id: self.geo_match_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "geo_match_set_id",
+                    "geo_match_set_id was not specified but it is required when building GeoMatchSet",
+                )
+            })?,
             name: self.name,
-            geo_match_constraints: self.geo_match_constraints,
-        }
+            geo_match_constraints: self.geo_match_constraints.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "geo_match_constraints",
+                    "geo_match_constraints was not specified but it is required when building GeoMatchSet",
+                )
+            })?,
+        })
     }
 }

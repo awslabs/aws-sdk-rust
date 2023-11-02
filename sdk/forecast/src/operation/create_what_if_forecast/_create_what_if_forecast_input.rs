@@ -27,8 +27,10 @@ impl CreateWhatIfForecastInput {
         self.what_if_analysis_arn.as_deref()
     }
     /// <p>The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.</p>
-    pub fn time_series_transformations(&self) -> ::std::option::Option<&[crate::types::TimeSeriesTransformation]> {
-        self.time_series_transformations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.time_series_transformations.is_none()`.
+    pub fn time_series_transformations(&self) -> &[crate::types::TimeSeriesTransformation] {
+        self.time_series_transformations.as_deref().unwrap_or_default()
     }
     /// <p>The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.</p>
     /// <p>This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.</p>
@@ -38,8 +40,10 @@ impl CreateWhatIfForecastInput {
         self.time_series_replacements_data_source.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateWhatIfForecastInput {
@@ -61,6 +65,7 @@ pub struct CreateWhatIfForecastInputBuilder {
 }
 impl CreateWhatIfForecastInputBuilder {
     /// <p>The name of the what-if forecast. Names must be unique within each what-if analysis.</p>
+    /// This field is required.
     pub fn what_if_forecast_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +80,7 @@ impl CreateWhatIfForecastInputBuilder {
         &self.what_if_forecast_name
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    /// This field is required.
     pub fn what_if_analysis_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_analysis_arn = ::std::option::Option::Some(input.into());
         self

@@ -48,6 +48,7 @@ pub struct ListCidrBlocksInputBuilder {
 }
 impl ListCidrBlocksInputBuilder {
     /// <p>The UUID of the CIDR collection.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self

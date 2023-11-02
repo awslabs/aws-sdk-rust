@@ -83,6 +83,7 @@ pub struct ListModelVersionsInputBuilder {
 }
 impl ListModelVersionsInputBuilder {
     /// <p>Then name of the machine learning model for which the model versions are to be listed.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self

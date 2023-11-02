@@ -48,6 +48,7 @@ pub struct UpdateTeamMemberInputBuilder {
 }
 impl UpdateTeamMemberInputBuilder {
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateTeamMemberInputBuilder {
         &self.project_id
     }
     /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self

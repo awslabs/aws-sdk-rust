@@ -26,11 +26,10 @@ pub fn de_update_gateway_http_error(
                     crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(_response_body, output)
                         .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflicting_operation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalFailureException" => crate::operation::update_gateway::UpdateGatewayError::InternalFailureException({
@@ -41,11 +40,10 @@ pub fn de_update_gateway_http_error(
                 output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_failure_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidRequestException" => crate::operation::update_gateway::UpdateGatewayError::InvalidRequestException({
@@ -56,11 +54,10 @@ pub fn de_update_gateway_http_error(
                 output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_gateway::UpdateGatewayError::ResourceNotFoundException({
@@ -71,11 +68,10 @@ pub fn de_update_gateway_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_gateway::UpdateGatewayError::ThrottlingException({
@@ -86,11 +82,10 @@ pub fn de_update_gateway_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_gateway::UpdateGatewayError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::update_gateway::UpdateGatewayError::generic(generic),

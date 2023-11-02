@@ -9,18 +9,19 @@ pub fn ser_continuous_deployment_policy_config(
         let inner_writer = scope.start_el("StagingDistributionDnsNames");
         crate::protocol_serde::shape_staging_distribution_dns_names::ser_staging_distribution_dns_names(var_1, inner_writer)?
     }
-    if let Some(var_2) = &input.enabled {
+    {
         let mut inner_writer = scope.start_el("Enabled").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
-    if let Some(var_3) = &input.traffic_config {
+    if let Some(var_2) = &input.traffic_config {
         let inner_writer = scope.start_el("TrafficConfig");
-        crate::protocol_serde::shape_traffic_config::ser_traffic_config(var_3, inner_writer)?
+        crate::protocol_serde::shape_traffic_config::ser_traffic_config(var_2, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_continuous_deployment_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -29,17 +30,17 @@ pub fn de_continuous_deployment_policy_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StagingDistributionDnsNames") /* StagingDistributionDnsNames com.amazonaws.cloudfront#ContinuousDeploymentPolicyConfig$StagingDistributionDnsNames */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_staging_distribution_dns_names::de_staging_distribution_dns_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_staging_distribution_dns_names(var_4);
+                builder = builder.set_staging_distribution_dns_names(var_3);
             }
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudfront#ContinuousDeploymentPolicyConfig$Enabled */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -50,21 +51,23 @@ pub fn de_continuous_deployment_policy_config(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_5);
+                builder = builder.set_enabled(var_4);
             }
             ,
             s if s.matches("TrafficConfig") /* TrafficConfig com.amazonaws.cloudfront#ContinuousDeploymentPolicyConfig$TrafficConfig */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_traffic_config::de_traffic_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_traffic_config(var_6);
+                builder = builder.set_traffic_config(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::continuous_deployment_policy_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

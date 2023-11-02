@@ -13,6 +13,7 @@ pub fn ser_advanced_cost_optimization_metrics(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_advanced_cost_optimization_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AdvancedCostOptimizationMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {

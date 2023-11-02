@@ -11,12 +11,16 @@ pub struct DeleteFleetsOutput {
 }
 impl DeleteFleetsOutput {
     /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
-    pub fn successful_fleet_deletions(&self) -> ::std::option::Option<&[crate::types::DeleteFleetSuccessItem]> {
-        self.successful_fleet_deletions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_fleet_deletions.is_none()`.
+    pub fn successful_fleet_deletions(&self) -> &[crate::types::DeleteFleetSuccessItem] {
+        self.successful_fleet_deletions.as_deref().unwrap_or_default()
     }
     /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
-    pub fn unsuccessful_fleet_deletions(&self) -> ::std::option::Option<&[crate::types::DeleteFleetErrorItem]> {
-        self.unsuccessful_fleet_deletions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful_fleet_deletions.is_none()`.
+    pub fn unsuccessful_fleet_deletions(&self) -> &[crate::types::DeleteFleetErrorItem] {
+        self.unsuccessful_fleet_deletions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteFleetsOutput {

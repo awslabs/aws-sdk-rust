@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
-    pub attribute: ::std::option::Option<crate::types::BotLocaleSortAttribute>,
+    pub attribute: crate::types::BotLocaleSortAttribute,
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
-    pub order: ::std::option::Option<crate::types::SortOrder>,
+    pub order: crate::types::SortOrder,
 }
 impl BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::BotLocaleSortAttribute> {
-        self.attribute.as_ref()
+    pub fn attribute(&self) -> &crate::types::BotLocaleSortAttribute {
+        &self.attribute
     }
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
-        self.order.as_ref()
+    pub fn order(&self) -> &crate::types::SortOrder {
+        &self.order
     }
 }
 impl BotLocaleSortBy {
@@ -35,6 +35,7 @@ pub struct BotLocaleSortByBuilder {
 }
 impl BotLocaleSortByBuilder {
     /// <p>The bot locale attribute to sort by.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::BotLocaleSortAttribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BotLocaleSortByBuilder {
         &self.attribute
     }
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
+    /// This field is required.
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl BotLocaleSortByBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`BotLocaleSortBy`](crate::types::BotLocaleSortBy).
-    pub fn build(self) -> crate::types::BotLocaleSortBy {
-        crate::types::BotLocaleSortBy {
-            attribute: self.attribute,
-            order: self.order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute`](crate::types::builders::BotLocaleSortByBuilder::attribute)
+    /// - [`order`](crate::types::builders::BotLocaleSortByBuilder::order)
+    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleSortBy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BotLocaleSortBy {
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building BotLocaleSortBy",
+                )
+            })?,
+            order: self.order.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "order",
+                    "order was not specified but it is required when building BotLocaleSortBy",
+                )
+            })?,
+        })
     }
 }

@@ -3,26 +3,26 @@ pub fn ser_update_pool_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_pool::UpdatePoolInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.pool_id {
-        object.key("PoolId").string(var_1.as_str());
+    {
+        object.key("PoolId").string(input.pool_id.as_str());
     }
-    if let Some(var_2) = &input.two_way_enabled {
-        object.key("TwoWayEnabled").boolean(*var_2);
+    if let Some(var_1) = &input.two_way_enabled {
+        object.key("TwoWayEnabled").boolean(*var_1);
     }
-    if let Some(var_3) = &input.two_way_channel_arn {
-        object.key("TwoWayChannelArn").string(var_3.as_str());
+    if let Some(var_2) = &input.two_way_channel_arn {
+        object.key("TwoWayChannelArn").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.self_managed_opt_outs_enabled {
-        object.key("SelfManagedOptOutsEnabled").boolean(*var_4);
+    if let Some(var_3) = &input.self_managed_opt_outs_enabled {
+        object.key("SelfManagedOptOutsEnabled").boolean(*var_3);
     }
-    if let Some(var_5) = &input.opt_out_list_name {
-        object.key("OptOutListName").string(var_5.as_str());
+    if let Some(var_4) = &input.opt_out_list_name {
+        object.key("OptOutListName").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.shared_routes_enabled {
-        object.key("SharedRoutesEnabled").boolean(*var_6);
+    if let Some(var_5) = &input.shared_routes_enabled {
+        object.key("SharedRoutesEnabled").boolean(*var_5);
     }
-    if let Some(var_7) = &input.deletion_protection_enabled {
-        object.key("DeletionProtectionEnabled").boolean(*var_7);
+    if let Some(var_6) = &input.deletion_protection_enabled {
+        object.key("DeletionProtectionEnabled").boolean(*var_6);
     }
     Ok(())
 }

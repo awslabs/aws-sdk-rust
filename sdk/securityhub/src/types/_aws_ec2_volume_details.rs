@@ -75,8 +75,10 @@ impl AwsEc2VolumeDetails {
         self.kms_key_id.as_deref()
     }
     /// <p>The volume attachments.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::AwsEc2VolumeAttachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::AwsEc2VolumeAttachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the volume. </p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {

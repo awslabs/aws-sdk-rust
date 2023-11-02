@@ -133,7 +133,9 @@ pub fn de_change_cidr_collection_http_response(
         output = crate::protocol_serde::shape_change_cidr_collection::de_change_cidr_collection(_response_body, output)
             .map_err(crate::operation::change_cidr_collection::ChangeCidrCollectionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::change_cidr_collection_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::change_cidr_collection::ChangeCidrCollectionError::unhandled)?
     })
 }
 

@@ -7,24 +7,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionExpression {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub condition: ::std::option::Option<::std::string::String>,
+    pub condition: ::std::string::String,
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A column to apply this condition to.</p>
-    pub target_column: ::std::option::Option<::std::string::String>,
+    pub target_column: ::std::string::String,
 }
 impl ConditionExpression {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn condition(&self) -> ::std::option::Option<&str> {
-        self.condition.as_deref()
+    pub fn condition(&self) -> &str {
+        use std::ops::Deref;
+        self.condition.deref()
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn target_column(&self) -> ::std::option::Option<&str> {
-        self.target_column.as_deref()
+    pub fn target_column(&self) -> &str {
+        use std::ops::Deref;
+        self.target_column.deref()
     }
 }
 impl ConditionExpression {
@@ -44,6 +46,7 @@ pub struct ConditionExpressionBuilder {
 }
 impl ConditionExpressionBuilder {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// This field is required.
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl ConditionExpressionBuilder {
         &self.value
     }
     /// <p>A column to apply this condition to.</p>
+    /// This field is required.
     pub fn target_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_column = ::std::option::Option::Some(input.into());
         self
@@ -86,11 +90,24 @@ impl ConditionExpressionBuilder {
         &self.target_column
     }
     /// Consumes the builder and constructs a [`ConditionExpression`](crate::types::ConditionExpression).
-    pub fn build(self) -> crate::types::ConditionExpression {
-        crate::types::ConditionExpression {
-            condition: self.condition,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`condition`](crate::types::builders::ConditionExpressionBuilder::condition)
+    /// - [`target_column`](crate::types::builders::ConditionExpressionBuilder::target_column)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionExpression, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConditionExpression {
+            condition: self.condition.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition",
+                    "condition was not specified but it is required when building ConditionExpression",
+                )
+            })?,
             value: self.value,
-            target_column: self.target_column,
-        }
+            target_column: self.target_column.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_column",
+                    "target_column was not specified but it is required when building ConditionExpression",
+                )
+            })?,
+        })
     }
 }

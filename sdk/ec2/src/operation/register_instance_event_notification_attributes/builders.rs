@@ -100,7 +100,7 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput,
             crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
             Self,
@@ -109,7 +109,7 @@ impl RegisterInstanceEventNotificationAttributesFluentBuilder {
             crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

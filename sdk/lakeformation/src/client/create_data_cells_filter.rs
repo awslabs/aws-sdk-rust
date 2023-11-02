@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateDataCellsFilter`](crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`table_data(DataCellsFilter)`](crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterFluentBuilder::table_data) / [`set_table_data(Option<DataCellsFilter>)`](crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterFluentBuilder::set_table_data): <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
+    ///   - [`table_data(DataCellsFilter)`](crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterFluentBuilder::table_data) / [`set_table_data(Option<DataCellsFilter>)`](crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterFluentBuilder::set_table_data):<br>required: **true**<br><p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p><br>
     /// - On success, responds with [`CreateDataCellsFilterOutput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput)
     /// - On failure, responds with [`SdkError<CreateDataCellsFilterError>`](crate::operation::create_data_cells_filter::CreateDataCellsFilterError)
     pub fn create_data_cells_filter(&self) -> crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterFluentBuilder {

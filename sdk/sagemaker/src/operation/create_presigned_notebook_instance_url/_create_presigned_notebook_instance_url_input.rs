@@ -34,6 +34,7 @@ pub struct CreatePresignedNotebookInstanceUrlInputBuilder {
 }
 impl CreatePresignedNotebookInstanceUrlInputBuilder {
     /// <p>The name of the notebook instance.</p>
+    /// This field is required.
     pub fn notebook_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_name = ::std::option::Option::Some(input.into());
         self

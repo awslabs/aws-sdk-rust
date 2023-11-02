@@ -62,10 +62,7 @@ pub(crate) fn lens_list_sol_function_instances_output_function_instances(
 pub(crate) fn lens_list_sol_function_packages_output_function_packages(
     input: crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>> {
-    let input = match input.function_packages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.function_packages;
     ::std::option::Option::Some(input)
 }
 
@@ -92,9 +89,6 @@ pub(crate) fn lens_list_sol_network_operations_output_network_operations(
 pub(crate) fn lens_list_sol_network_packages_output_network_packages(
     input: crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>> {
-    let input = match input.network_packages {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.network_packages;
     ::std::option::Option::Some(input)
 }

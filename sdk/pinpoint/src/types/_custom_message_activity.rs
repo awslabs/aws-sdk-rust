@@ -33,8 +33,10 @@ impl CustomMessageActivity {
         self.delivery_uri.as_deref()
     }
     /// <p>The types of endpoints to send the custom message to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub fn endpoint_types(&self) -> ::std::option::Option<&[crate::types::EndpointTypesElement]> {
-        self.endpoint_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_types.is_none()`.
+    pub fn endpoint_types(&self) -> &[crate::types::EndpointTypesElement] {
+        self.endpoint_types.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the message data included in a custom channel message that's sent to participants in a journey.</p>
     pub fn message_config(&self) -> ::std::option::Option<&crate::types::JourneyCustomMessage> {

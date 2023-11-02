@@ -11,8 +11,10 @@ pub struct ListSignalingChannelsOutput {
 }
 impl ListSignalingChannelsOutput {
     /// <p>An array of <code>ChannelInfo</code> objects.</p>
-    pub fn channel_info_list(&self) -> ::std::option::Option<&[crate::types::ChannelInfo]> {
-        self.channel_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_info_list.is_none()`.
+    pub fn channel_info_list(&self) -> &[crate::types::ChannelInfo] {
+        self.channel_info_list.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

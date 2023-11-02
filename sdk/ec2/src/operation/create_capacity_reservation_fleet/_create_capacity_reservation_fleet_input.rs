@@ -40,8 +40,10 @@ impl CreateCapacityReservationFleetInput {
         self.client_token.as_deref()
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn instance_type_specifications(&self) -> ::std::option::Option<&[crate::types::ReservationFleetInstanceSpecification]> {
-        self.instance_type_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_specifications.is_none()`.
+    pub fn instance_type_specifications(&self) -> &[crate::types::ReservationFleetInstanceSpecification] {
+        self.instance_type_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
     /// <ul>
@@ -66,8 +68,10 @@ impl CreateCapacityReservationFleetInput {
         self.instance_match_criteria.as_ref()
     }
     /// <p>The tags to assign to the Capacity Reservation Fleet. The tags are automatically assigned to the Capacity Reservations in the Fleet.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -177,6 +181,7 @@ impl CreateCapacityReservationFleetInputBuilder {
         &self.tenancy
     }
     /// <p>The total number of capacity units to be reserved by the Capacity Reservation Fleet. This value, together with the instance type weights that you assign to each instance type used by the Fleet determine the number of instances for which the Fleet reserves capacity. Both values are based on units that make sense for your workload. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
+    /// This field is required.
     pub fn total_target_capacity(mut self, input: i32) -> Self {
         self.total_target_capacity = ::std::option::Option::Some(input);
         self

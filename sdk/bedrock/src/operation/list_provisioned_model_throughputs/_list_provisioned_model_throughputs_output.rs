@@ -15,8 +15,10 @@ impl ListProvisionedModelThroughputsOutput {
         self.next_token.as_deref()
     }
     /// <p>List of summaries, one for each provisioned throughput in the response.</p>
-    pub fn provisioned_model_summaries(&self) -> ::std::option::Option<&[crate::types::ProvisionedModelSummary]> {
-        self.provisioned_model_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_model_summaries.is_none()`.
+    pub fn provisioned_model_summaries(&self) -> &[crate::types::ProvisionedModelSummary] {
+        self.provisioned_model_summaries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListProvisionedModelThroughputsOutput {

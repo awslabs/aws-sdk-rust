@@ -30,6 +30,7 @@ pub fn ser_job_manifest_generator_filter(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_job_manifest_generator_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::JobManifestGeneratorFilter, ::aws_smithy_xml::decode::XmlDecodeError> {

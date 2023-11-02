@@ -85,8 +85,10 @@ impl WindowsFileSystemConfiguration {
         self.throughput_capacity
     }
     /// <p>The list of maintenance operations in progress for this file system.</p>
-    pub fn maintenance_operations_in_progress(&self) -> ::std::option::Option<&[crate::types::FileSystemMaintenanceOperation]> {
-        self.maintenance_operations_in_progress.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_operations_in_progress.is_none()`.
+    pub fn maintenance_operations_in_progress(&self) -> &[crate::types::FileSystemMaintenanceOperation] {
+        self.maintenance_operations_in_progress.as_deref().unwrap_or_default()
     }
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
@@ -105,8 +107,10 @@ impl WindowsFileSystemConfiguration {
         self.copy_tags_to_backups
     }
     /// <p>An array of one or more DNS aliases that are currently associated with the Amazon FSx file system. Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request payload. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a>.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::Alias]> {
-        self.aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases.is_none()`.
+    pub fn aliases(&self) -> &[crate::types::Alias] {
+        self.aliases.as_deref().unwrap_or_default()
     }
     /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system.</p>
     pub fn audit_log_configuration(&self) -> ::std::option::Option<&crate::types::WindowsAuditLogConfiguration> {

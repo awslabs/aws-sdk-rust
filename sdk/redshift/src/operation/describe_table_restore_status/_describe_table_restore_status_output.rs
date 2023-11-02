@@ -12,8 +12,10 @@ pub struct DescribeTableRestoreStatusOutput {
 }
 impl DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
-    pub fn table_restore_status_details(&self) -> ::std::option::Option<&[crate::types::TableRestoreStatus]> {
-        self.table_restore_status_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_restore_status_details.is_none()`.
+    pub fn table_restore_status_details(&self) -> &[crate::types::TableRestoreStatus] {
+        self.table_restore_status_details.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

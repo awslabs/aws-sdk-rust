@@ -22,8 +22,10 @@ impl UpdateStateMachineAliasInput {
     }
     /// <p>The routing configuration of the state machine alias.</p>
     /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
-    pub fn routing_configuration(&self) -> ::std::option::Option<&[crate::types::RoutingConfigurationListItem]> {
-        self.routing_configuration.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_configuration.is_none()`.
+    pub fn routing_configuration(&self) -> &[crate::types::RoutingConfigurationListItem] {
+        self.routing_configuration.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateStateMachineAliasInput {
@@ -52,6 +54,7 @@ pub struct UpdateStateMachineAliasInputBuilder {
 }
 impl UpdateStateMachineAliasInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
+    /// This field is required.
     pub fn state_machine_alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_machine_alias_arn = ::std::option::Option::Some(input.into());
         self

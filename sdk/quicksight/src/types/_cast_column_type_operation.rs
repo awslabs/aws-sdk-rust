@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CastColumnTypeOperation {
     /// <p>Column name.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>New column data type.</p>
-    pub new_column_type: ::std::option::Option<crate::types::ColumnDataType>,
+    pub new_column_type: crate::types::ColumnDataType,
     /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
     pub format: ::std::option::Option<::std::string::String>,
 }
 impl CastColumnTypeOperation {
     /// <p>Column name.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>New column data type.</p>
-    pub fn new_column_type(&self) -> ::std::option::Option<&crate::types::ColumnDataType> {
-        self.new_column_type.as_ref()
+    pub fn new_column_type(&self) -> &crate::types::ColumnDataType {
+        &self.new_column_type
     }
     /// <p>When casting a column from string to datetime type, you can supply a string in a format supported by Amazon QuickSight to denote the source data format.</p>
     pub fn format(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct CastColumnTypeOperationBuilder {
 }
 impl CastColumnTypeOperationBuilder {
     /// <p>Column name.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl CastColumnTypeOperationBuilder {
         &self.column_name
     }
     /// <p>New column data type.</p>
+    /// This field is required.
     pub fn new_column_type(mut self, input: crate::types::ColumnDataType) -> Self {
         self.new_column_type = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl CastColumnTypeOperationBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`CastColumnTypeOperation`](crate::types::CastColumnTypeOperation).
-    pub fn build(self) -> crate::types::CastColumnTypeOperation {
-        crate::types::CastColumnTypeOperation {
-            column_name: self.column_name,
-            new_column_type: self.new_column_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_name`](crate::types::builders::CastColumnTypeOperationBuilder::column_name)
+    /// - [`new_column_type`](crate::types::builders::CastColumnTypeOperationBuilder::new_column_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CastColumnTypeOperation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CastColumnTypeOperation {
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building CastColumnTypeOperation",
+                )
+            })?,
+            new_column_type: self.new_column_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "new_column_type",
+                    "new_column_type was not specified but it is required when building CastColumnTypeOperation",
+                )
+            })?,
             format: self.format,
-        }
+        })
     }
 }

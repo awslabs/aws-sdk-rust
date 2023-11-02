@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutConfiguration {
     /// <p>The elements that are included in a free-form layout.</p>
-    pub elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
+    pub elements: ::std::vec::Vec<crate::types::FreeFormLayoutElement>,
     /// <p>Configuration options for the canvas of a free-form layout.</p>
     pub canvas_size_options: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
 }
 impl FreeFormLayoutConfiguration {
     /// <p>The elements that are included in a free-form layout.</p>
-    pub fn elements(&self) -> ::std::option::Option<&[crate::types::FreeFormLayoutElement]> {
-        self.elements.as_deref()
+    pub fn elements(&self) -> &[crate::types::FreeFormLayoutElement] {
+        use std::ops::Deref;
+        self.elements.deref()
     }
     /// <p>Configuration options for the canvas of a free-form layout.</p>
     pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::FreeFormLayoutCanvasSizeOptions> {
@@ -69,10 +70,17 @@ impl FreeFormLayoutConfigurationBuilder {
         &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`FreeFormLayoutConfiguration`](crate::types::FreeFormLayoutConfiguration).
-    pub fn build(self) -> crate::types::FreeFormLayoutConfiguration {
-        crate::types::FreeFormLayoutConfiguration {
-            elements: self.elements,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`elements`](crate::types::builders::FreeFormLayoutConfigurationBuilder::elements)
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeFormLayoutConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeFormLayoutConfiguration {
+            elements: self.elements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "elements",
+                    "elements was not specified but it is required when building FreeFormLayoutConfiguration",
+                )
+            })?,
             canvas_size_options: self.canvas_size_options,
-        }
+        })
     }
 }

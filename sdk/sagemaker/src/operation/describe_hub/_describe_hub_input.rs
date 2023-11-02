@@ -27,6 +27,7 @@ pub struct DescribeHubInputBuilder {
 }
 impl DescribeHubInputBuilder {
     /// <p>The name of the hub to describe.</p>
+    /// This field is required.
     pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hub_name = ::std::option::Option::Some(input.into());
         self

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStateMachineOutput {
     /// <p>The date and time the state machine was updated.</p>
-    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date: ::aws_smithy_types::DateTime,
     /// <p>The revision identifier for the updated state machine.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
@@ -14,8 +14,8 @@ pub struct UpdateStateMachineOutput {
 }
 impl UpdateStateMachineOutput {
     /// <p>The date and time the state machine was updated.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date.as_ref()
+    pub fn update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date
     }
     /// <p>The revision identifier for the updated state machine.</p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
@@ -50,6 +50,7 @@ pub struct UpdateStateMachineOutputBuilder {
 }
 impl UpdateStateMachineOutputBuilder {
     /// <p>The date and time the state machine was updated.</p>
+    /// This field is required.
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
         self
@@ -104,12 +105,22 @@ impl UpdateStateMachineOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineOutput`](crate::operation::update_state_machine::UpdateStateMachineOutput).
-    pub fn build(self) -> crate::operation::update_state_machine::UpdateStateMachineOutput {
-        crate::operation::update_state_machine::UpdateStateMachineOutput {
-            update_date: self.update_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`update_date`](crate::operation::update_state_machine::builders::UpdateStateMachineOutputBuilder::update_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::update_state_machine::UpdateStateMachineOutput {
+            update_date: self.update_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date",
+                    "update_date was not specified but it is required when building UpdateStateMachineOutput",
+                )
+            })?,
             revision_id: self.revision_id,
             state_machine_version_arn: self.state_machine_version_arn,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -23,8 +23,10 @@ pub struct RadiusSettings {
 }
 impl RadiusSettings {
     /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
-    pub fn radius_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.radius_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.radius_servers.is_none()`.
+    pub fn radius_servers(&self) -> &[::std::string::String] {
+        self.radius_servers.as_deref().unwrap_or_default()
     }
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
     pub fn radius_port(&self) -> ::std::option::Option<i32> {

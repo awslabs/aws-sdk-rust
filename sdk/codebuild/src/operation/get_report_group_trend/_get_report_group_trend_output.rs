@@ -15,8 +15,10 @@ impl GetReportGroupTrendOutput {
         self.stats.as_ref()
     }
     /// <p>An array that contains the raw data for each report.</p>
-    pub fn raw_data(&self) -> ::std::option::Option<&[crate::types::ReportWithRawData]> {
-        self.raw_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.raw_data.is_none()`.
+    pub fn raw_data(&self) -> &[crate::types::ReportWithRawData] {
+        self.raw_data.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetReportGroupTrendOutput {

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnnotationImportItemDetail {
     /// <p>The source file's location in Amazon S3.</p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
     /// <p>The item's job status.</p>
-    pub job_status: ::std::option::Option<crate::types::JobStatus>,
+    pub job_status: crate::types::JobStatus,
 }
 impl AnnotationImportItemDetail {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
     /// <p>The item's job status.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.job_status.as_ref()
+    pub fn job_status(&self) -> &crate::types::JobStatus {
+        &self.job_status
     }
 }
 impl AnnotationImportItemDetail {
@@ -35,6 +36,7 @@ pub struct AnnotationImportItemDetailBuilder {
 }
 impl AnnotationImportItemDetailBuilder {
     /// <p>The source file's location in Amazon S3.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl AnnotationImportItemDetailBuilder {
         &self.source
     }
     /// <p>The item's job status.</p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl AnnotationImportItemDetailBuilder {
         &self.job_status
     }
     /// Consumes the builder and constructs a [`AnnotationImportItemDetail`](crate::types::AnnotationImportItemDetail).
-    pub fn build(self) -> crate::types::AnnotationImportItemDetail {
-        crate::types::AnnotationImportItemDetail {
-            source: self.source,
-            job_status: self.job_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::AnnotationImportItemDetailBuilder::source)
+    /// - [`job_status`](crate::types::builders::AnnotationImportItemDetailBuilder::job_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnnotationImportItemDetail, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnnotationImportItemDetail {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building AnnotationImportItemDetail",
+                )
+            })?,
+            job_status: self.job_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_status",
+                    "job_status was not specified but it is required when building AnnotationImportItemDetail",
+                )
+            })?,
+        })
     }
 }

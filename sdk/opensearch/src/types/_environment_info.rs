@@ -9,8 +9,10 @@ pub struct EnvironmentInfo {
 }
 impl EnvironmentInfo {
     /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
-    pub fn availability_zone_information(&self) -> ::std::option::Option<&[crate::types::AvailabilityZoneInfo]> {
-        self.availability_zone_information.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_information.is_none()`.
+    pub fn availability_zone_information(&self) -> &[crate::types::AvailabilityZoneInfo] {
+        self.availability_zone_information.as_deref().unwrap_or_default()
     }
 }
 impl EnvironmentInfo {

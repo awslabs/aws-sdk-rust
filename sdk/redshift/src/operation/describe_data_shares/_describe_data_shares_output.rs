@@ -11,8 +11,10 @@ pub struct DescribeDataSharesOutput {
 }
 impl DescribeDataSharesOutput {
     /// <p>The results returned from describing datashares.</p>
-    pub fn data_shares(&self) -> ::std::option::Option<&[crate::types::DataShare]> {
-        self.data_shares.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_shares.is_none()`.
+    pub fn data_shares(&self) -> &[crate::types::DataShare] {
+        self.data_shares.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

@@ -57,6 +57,7 @@ pub struct ListInferenceRecommendationsJobStepsInputBuilder {
 }
 impl ListInferenceRecommendationsJobStepsInputBuilder {
     /// <p>The name for the Inference Recommender job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAttachment`](crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attachment_id(impl Into<String>)`](crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::attachment_id) / [`set_attachment_id(Option<String>)`](crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::set_attachment_id): <p>The ID of the attachment to delete.</p>
+    ///   - [`attachment_id(impl Into<String>)`](crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::attachment_id) / [`set_attachment_id(Option<String>)`](crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::set_attachment_id):<br>required: **true**<br><p>The ID of the attachment to delete.</p><br>
     /// - On success, responds with [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput) with field(s):
     ///   - [`attachment(Option<Attachment>)`](crate::operation::delete_attachment::DeleteAttachmentOutput::attachment): <p>Information about the deleted attachment.</p>
     /// - On failure, responds with [`SdkError<DeleteAttachmentError>`](crate::operation::delete_attachment::DeleteAttachmentError)

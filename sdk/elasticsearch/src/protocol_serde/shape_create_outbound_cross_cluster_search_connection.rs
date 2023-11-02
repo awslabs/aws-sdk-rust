@@ -38,8 +38,8 @@ pub fn de_create_outbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalException" => crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError::InternalException({
@@ -54,8 +54,8 @@ pub fn de_create_outbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "LimitExceededException" => crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError::LimitExceededException({
@@ -70,8 +70,8 @@ pub fn de_create_outbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ResourceAlreadyExistsException" => crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError::ResourceAlreadyExistsException({
@@ -86,8 +86,8 @@ pub fn de_create_outbound_cross_cluster_search_connection_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError::generic(generic)

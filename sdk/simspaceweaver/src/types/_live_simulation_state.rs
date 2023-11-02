@@ -13,14 +13,18 @@ pub struct LiveSimulationState {
 }
 impl LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-    pub fn domains(&self) -> ::std::option::Option<&[crate::types::Domain]> {
-        self.domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
+    pub fn domains(&self) -> &[crate::types::Domain] {
+        self.domains.as_deref().unwrap_or_default()
     }
     /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
-    pub fn clocks(&self) -> ::std::option::Option<&[crate::types::SimulationClock]> {
-        self.clocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clocks.is_none()`.
+    pub fn clocks(&self) -> &[crate::types::SimulationClock] {
+        self.clocks.as_deref().unwrap_or_default()
     }
 }
 impl LiveSimulationState {

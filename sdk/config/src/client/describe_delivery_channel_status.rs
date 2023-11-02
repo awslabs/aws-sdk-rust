@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDeliveryChannelStatus`](crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_channel_names(impl Into<String>)`](crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder::delivery_channel_names) / [`set_delivery_channel_names(Option<Vec<String>>)`](crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder::set_delivery_channel_names): <p>A list of delivery channel names.</p>
+    ///   - [`delivery_channel_names(impl Into<String>)`](crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder::delivery_channel_names) / [`set_delivery_channel_names(Option<Vec<String>>)`](crate::operation::describe_delivery_channel_status::builders::DescribeDeliveryChannelStatusFluentBuilder::set_delivery_channel_names):<br>required: **false**<br><p>A list of delivery channel names.</p><br>
     /// - On success, responds with [`DescribeDeliveryChannelStatusOutput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusOutput) with field(s):
     ///   - [`delivery_channels_status(Option<Vec<DeliveryChannelStatus>>)`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusOutput::delivery_channels_status): <p>A list that contains the status of a specified delivery channel.</p>
     /// - On failure, responds with [`SdkError<DescribeDeliveryChannelStatusError>`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError)

@@ -16,8 +16,10 @@ impl UpdateRegexPatternSetInput {
         self.regex_pattern_set_id.as_deref()
     }
     /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
-    pub fn updates(&self) -> ::std::option::Option<&[crate::types::RegexPatternSetUpdate]> {
-        self.updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
+    pub fn updates(&self) -> &[crate::types::RegexPatternSetUpdate] {
+        self.updates.as_deref().unwrap_or_default()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct UpdateRegexPatternSetInputBuilder {
 }
 impl UpdateRegexPatternSetInputBuilder {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    /// This field is required.
     pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_set_id = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +78,7 @@ impl UpdateRegexPatternSetInputBuilder {
         &self.updates
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

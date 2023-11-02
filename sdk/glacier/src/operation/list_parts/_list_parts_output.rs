@@ -42,8 +42,10 @@ impl ListPartsOutput {
         self.creation_date.as_deref()
     }
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
-    pub fn parts(&self) -> ::std::option::Option<&[crate::types::PartListElement]> {
-        self.parts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parts.is_none()`.
+    pub fn parts(&self) -> &[crate::types::PartListElement] {
+        self.parts.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

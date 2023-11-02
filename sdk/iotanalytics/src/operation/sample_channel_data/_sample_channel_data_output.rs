@@ -9,8 +9,10 @@ pub struct SampleChannelDataOutput {
 }
 impl SampleChannelDataOutput {
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    pub fn payloads(&self) -> ::std::option::Option<&[::aws_smithy_types::Blob]> {
-        self.payloads.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payloads.is_none()`.
+    pub fn payloads(&self) -> &[::aws_smithy_types::Blob] {
+        self.payloads.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for SampleChannelDataOutput {

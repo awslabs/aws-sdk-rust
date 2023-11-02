@@ -5,44 +5,46 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVectorEnrichmentJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of the list of the Vector Enrichment jobs.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The names of the Vector Enrichment jobs in the list.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of the list of Vector Enrichment jobs.</p>
-    pub r#type: ::std::option::Option<crate::types::VectorEnrichmentJobType>,
+    pub r#type: crate::types::VectorEnrichmentJobType,
     /// <p>The creation time.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The duration of the session, in seconds.</p>
-    pub duration_in_seconds: ::std::option::Option<i32>,
+    pub duration_in_seconds: i32,
     /// <p>The status of the Vector Enrichment jobs list. </p>
-    pub status: ::std::option::Option<crate::types::VectorEnrichmentJobStatus>,
+    pub status: crate::types::VectorEnrichmentJobStatus,
     /// <p>Each tag consists of a key and a value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListVectorEnrichmentJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of the list of the Vector Enrichment jobs.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The names of the Vector Enrichment jobs in the list.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of the list of Vector Enrichment jobs.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::VectorEnrichmentJobType {
+        &self.r#type
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The duration of the session, in seconds.</p>
-    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_seconds(&self) -> i32 {
         self.duration_in_seconds
     }
     /// <p>The status of the Vector Enrichment jobs list. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::VectorEnrichmentJobStatus {
+        &self.status
     }
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,6 +72,7 @@ pub struct ListVectorEnrichmentJobOutputConfigBuilder {
 }
 impl ListVectorEnrichmentJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the list of the Vector Enrichment jobs.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         &self.arn
     }
     /// <p>The names of the Vector Enrichment jobs in the list.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         &self.name
     }
     /// <p>The type of the list of Vector Enrichment jobs.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::VectorEnrichmentJobType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         &self.r#type
     }
     /// <p>The creation time.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -126,6 +132,7 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         &self.creation_time
     }
     /// <p>The duration of the session, in seconds.</p>
+    /// This field is required.
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
         self
@@ -140,6 +147,7 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         &self.duration_in_seconds
     }
     /// <p>The status of the Vector Enrichment jobs list. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VectorEnrichmentJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -174,15 +182,52 @@ impl ListVectorEnrichmentJobOutputConfigBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListVectorEnrichmentJobOutputConfig`](crate::types::ListVectorEnrichmentJobOutputConfig).
-    pub fn build(self) -> crate::types::ListVectorEnrichmentJobOutputConfig {
-        crate::types::ListVectorEnrichmentJobOutputConfig {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            creation_time: self.creation_time,
-            duration_in_seconds: self.duration_in_seconds,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::arn)
+    /// - [`name`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::name)
+    /// - [`r#type`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::r#type)
+    /// - [`creation_time`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::creation_time)
+    /// - [`duration_in_seconds`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::duration_in_seconds)
+    /// - [`status`](crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ListVectorEnrichmentJobOutputConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ListVectorEnrichmentJobOutputConfig {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListVectorEnrichmentJobOutputConfig",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ListVectorEnrichmentJobOutputConfig",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ListVectorEnrichmentJobOutputConfig",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building ListVectorEnrichmentJobOutputConfig",
+                )
+            })?,
+            duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "duration_in_seconds",
+                    "duration_in_seconds was not specified but it is required when building ListVectorEnrichmentJobOutputConfig",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ListVectorEnrichmentJobOutputConfig",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

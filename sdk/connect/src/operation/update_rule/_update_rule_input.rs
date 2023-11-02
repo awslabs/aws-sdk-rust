@@ -34,8 +34,10 @@ impl UpdateRuleInput {
         self.function.as_deref()
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn actions(&self) -> ::std::option::Option<&[crate::types::RuleAction]> {
-        self.actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
+    pub fn actions(&self) -> &[crate::types::RuleAction] {
+        self.actions.as_deref().unwrap_or_default()
     }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(&self) -> ::std::option::Option<&crate::types::RulePublishStatus> {
@@ -62,6 +64,7 @@ pub struct UpdateRuleInputBuilder {
 }
 impl UpdateRuleInputBuilder {
     /// <p>A unique identifier for the rule.</p>
+    /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl UpdateRuleInputBuilder {
         &self.rule_id
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl UpdateRuleInputBuilder {
         &self.instance_id
     }
     /// <p>The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl UpdateRuleInputBuilder {
         &self.name
     }
     /// <p>The conditions of the rule.</p>
+    /// This field is required.
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +144,7 @@ impl UpdateRuleInputBuilder {
         &self.actions
     }
     /// <p>The publish status of the rule.</p>
+    /// This field is required.
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
         self

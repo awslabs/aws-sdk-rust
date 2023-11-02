@@ -34,6 +34,7 @@ pub struct GetLoggingOptionsOutputBuilder {
 }
 impl GetLoggingOptionsOutputBuilder {
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
+    /// This field is required.
     pub fn cloud_watch_log_delivery(mut self, input: crate::types::CloudWatchLogDeliveryOptions) -> Self {
         self.cloud_watch_log_delivery = ::std::option::Option::Some(input);
         self

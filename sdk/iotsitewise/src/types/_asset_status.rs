@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetStatus {
     /// <p>The current status of the asset.</p>
-    pub state: ::std::option::Option<crate::types::AssetState>,
+    pub state: crate::types::AssetState,
     /// <p>Contains associated error information, if any.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl AssetStatus {
     /// <p>The current status of the asset.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AssetState> {
-        self.state.as_ref()
+    pub fn state(&self) -> &crate::types::AssetState {
+        &self.state
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
@@ -35,6 +35,7 @@ pub struct AssetStatusBuilder {
 }
 impl AssetStatusBuilder {
     /// <p>The current status of the asset.</p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::AssetState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl AssetStatusBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`AssetStatus`](crate::types::AssetStatus).
-    pub fn build(self) -> crate::types::AssetStatus {
-        crate::types::AssetStatus {
-            state: self.state,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`state`](crate::types::builders::AssetStatusBuilder::state)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetStatus {
+            state: self.state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state",
+                    "state was not specified but it is required when building AssetStatus",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

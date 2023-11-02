@@ -32,12 +32,16 @@ impl CreateDiskInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    pub fn add_ons(&self) -> ::std::option::Option<&[crate::types::AddOnRequest]> {
-        self.add_ons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_ons.is_none()`.
+    pub fn add_ons(&self) -> &[crate::types::AddOnRequest] {
+        self.add_ons.as_deref().unwrap_or_default()
     }
 }
 impl CreateDiskInput {
@@ -59,6 +63,7 @@ pub struct CreateDiskInputBuilder {
 }
 impl CreateDiskInputBuilder {
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +79,7 @@ impl CreateDiskInputBuilder {
     }
     /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl CreateDiskInputBuilder {
         &self.availability_zone
     }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// This field is required.
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
         self

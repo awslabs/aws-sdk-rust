@@ -11,8 +11,10 @@ pub struct ListContributorInsightsOutput {
 }
 impl ListContributorInsightsOutput {
     /// <p>A list of ContributorInsightsSummary.</p>
-    pub fn contributor_insights_summaries(&self) -> ::std::option::Option<&[crate::types::ContributorInsightsSummary]> {
-        self.contributor_insights_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contributor_insights_summaries.is_none()`.
+    pub fn contributor_insights_summaries(&self) -> &[crate::types::ContributorInsightsSummary] {
+        self.contributor_insights_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token to go to the next page if there is one.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

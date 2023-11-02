@@ -27,6 +27,7 @@ pub struct DeleteInputInputBuilder {
 }
 impl DeleteInputInputBuilder {
     /// <p>The name of the input to delete.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self

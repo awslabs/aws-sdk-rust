@@ -42,6 +42,7 @@ pub struct SetStackPolicyInputBuilder {
 }
 impl SetStackPolicyInputBuilder {
     /// <p>The name or unique stack ID that you want to associate a policy with.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self

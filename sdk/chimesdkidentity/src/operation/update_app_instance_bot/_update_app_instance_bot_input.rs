@@ -58,6 +58,7 @@ pub struct UpdateAppInstanceBotInputBuilder {
 }
 impl UpdateAppInstanceBotInputBuilder {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
+    /// This field is required.
     pub fn app_instance_bot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_bot_arn = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl UpdateAppInstanceBotInputBuilder {
         &self.app_instance_bot_arn
     }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl UpdateAppInstanceBotInputBuilder {
         &self.name
     }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
         self

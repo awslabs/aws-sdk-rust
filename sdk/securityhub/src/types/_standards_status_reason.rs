@@ -28,6 +28,7 @@ pub struct StandardsStatusReasonBuilder {
 }
 impl StandardsStatusReasonBuilder {
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
+    /// This field is required.
     pub fn status_reason_code(mut self, input: crate::types::StatusReasonCode) -> Self {
         self.status_reason_code = ::std::option::Option::Some(input);
         self

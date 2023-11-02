@@ -35,6 +35,7 @@ pub struct SharedImagePermissionsBuilder {
 }
 impl SharedImagePermissionsBuilder {
     /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
+    /// This field is required.
     pub fn shared_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl SharedImagePermissionsBuilder {
         &self.shared_account_id
     }
     /// <p>Describes the permissions for a shared image.</p>
+    /// This field is required.
     pub fn image_permissions(mut self, input: crate::types::ImagePermissions) -> Self {
         self.image_permissions = ::std::option::Option::Some(input);
         self

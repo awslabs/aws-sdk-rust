@@ -28,6 +28,7 @@ pub struct MediaPackageGroupSettingsBuilder {
 }
 impl MediaPackageGroupSettingsBuilder {
     /// MediaPackage channel destination.
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

@@ -128,6 +128,7 @@ impl IssueCertificateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    /// This field is required.
     pub fn certificate_authority_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +149,7 @@ impl IssueCertificateInputBuilder {
     /// <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>
     /// <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
     /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
+    /// This field is required.
     pub fn csr(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.csr = ::std::option::Option::Some(input);
         self
@@ -173,6 +175,7 @@ impl IssueCertificateInputBuilder {
     /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
+    /// This field is required.
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithm) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input);
         self
@@ -216,6 +219,7 @@ impl IssueCertificateInputBuilder {
     /// <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>
     /// <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>
     /// <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
+    /// This field is required.
     pub fn validity(mut self, input: crate::types::Validity) -> Self {
         self.validity = ::std::option::Option::Some(input);
         self

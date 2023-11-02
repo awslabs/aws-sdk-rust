@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
-    pub expressions: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
+    pub expressions: ::std::vec::Vec<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }
 impl DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
-    pub fn expressions(&self) -> ::std::option::Option<&[crate::types::ExpressionStatus]> {
-        self.expressions.as_deref()
+    pub fn expressions(&self) -> &[crate::types::ExpressionStatus] {
+        use std::ops::Deref;
+        self.expressions.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeExpressionsOutput {
@@ -64,10 +65,20 @@ impl DescribeExpressionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeExpressionsOutput`](crate::operation::describe_expressions::DescribeExpressionsOutput).
-    pub fn build(self) -> crate::operation::describe_expressions::DescribeExpressionsOutput {
-        crate::operation::describe_expressions::DescribeExpressionsOutput {
-            expressions: self.expressions,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expressions`](crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder::expressions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_expressions::DescribeExpressionsOutput {
+            expressions: self.expressions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expressions",
+                    "expressions was not specified but it is required when building DescribeExpressionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

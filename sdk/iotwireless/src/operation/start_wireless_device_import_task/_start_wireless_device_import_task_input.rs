@@ -22,8 +22,10 @@ impl StartWirelessDeviceImportTaskInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
     pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkStartImportInfo> {
@@ -48,6 +50,7 @@ pub struct StartWirelessDeviceImportTaskInputBuilder {
 }
 impl StartWirelessDeviceImportTaskInputBuilder {
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages from the devices in the import task that are onboarded to AWS IoT Wireless.</p>
+    /// This field is required.
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +99,7 @@ impl StartWirelessDeviceImportTaskInputBuilder {
         &self.tags
     }
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
+    /// This field is required.
     pub fn sidewalk(mut self, input: crate::types::SidewalkStartImportInfo) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
         self

@@ -66,6 +66,7 @@ pub struct UpdateFileSystemAssociationInputBuilder {
 }
 impl UpdateFileSystemAssociationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
+    /// This field is required.
     pub fn file_system_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_association_arn = ::std::option::Option::Some(input.into());
         self

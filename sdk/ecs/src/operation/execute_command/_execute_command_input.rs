@@ -83,6 +83,7 @@ impl ExecuteCommandInputBuilder {
         &self.container
     }
     /// <p>The command to run on the container.</p>
+    /// This field is required.
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.command = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl ExecuteCommandInputBuilder {
         &self.command
     }
     /// <p>Use this flag to run your command in interactive mode.</p>
+    /// This field is required.
     pub fn interactive(mut self, input: bool) -> Self {
         self.interactive = ::std::option::Option::Some(input);
         self
@@ -111,6 +113,7 @@ impl ExecuteCommandInputBuilder {
         &self.interactive
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
+    /// This field is required.
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task = ::std::option::Option::Some(input.into());
         self

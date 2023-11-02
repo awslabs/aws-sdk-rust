@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterListControl {
     /// <p>The ID of the <code>FilterListControl</code>.</p>
-    pub filter_control_id: ::std::option::Option<::std::string::String>,
+    pub filter_control_id: ::std::string::String,
     /// <p>The title of the <code>FilterListControl</code>.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The source filter ID of the <code>FilterListControl</code>.</p>
-    pub source_filter_id: ::std::option::Option<::std::string::String>,
+    pub source_filter_id: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::ListControlDisplayOptions>,
     /// <p>The type of <code>FilterListControl</code>. Choose one of the following options:</p>
@@ -25,16 +25,19 @@ pub struct FilterListControl {
 }
 impl FilterListControl {
     /// <p>The ID of the <code>FilterListControl</code>.</p>
-    pub fn filter_control_id(&self) -> ::std::option::Option<&str> {
-        self.filter_control_id.as_deref()
+    pub fn filter_control_id(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_control_id.deref()
     }
     /// <p>The title of the <code>FilterListControl</code>.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The source filter ID of the <code>FilterListControl</code>.</p>
-    pub fn source_filter_id(&self) -> ::std::option::Option<&str> {
-        self.source_filter_id.as_deref()
+    pub fn source_filter_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_filter_id.deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::ListControlDisplayOptions> {
@@ -78,6 +81,7 @@ pub struct FilterListControlBuilder {
 }
 impl FilterListControlBuilder {
     /// <p>The ID of the <code>FilterListControl</code>.</p>
+    /// This field is required.
     pub fn filter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_control_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +96,7 @@ impl FilterListControlBuilder {
         &self.filter_control_id
     }
     /// <p>The title of the <code>FilterListControl</code>.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +111,7 @@ impl FilterListControlBuilder {
         &self.title
     }
     /// <p>The source filter ID of the <code>FilterListControl</code>.</p>
+    /// This field is required.
     pub fn source_filter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_filter_id = ::std::option::Option::Some(input.into());
         self
@@ -188,15 +194,34 @@ impl FilterListControlBuilder {
         &self.cascading_control_configuration
     }
     /// Consumes the builder and constructs a [`FilterListControl`](crate::types::FilterListControl).
-    pub fn build(self) -> crate::types::FilterListControl {
-        crate::types::FilterListControl {
-            filter_control_id: self.filter_control_id,
-            title: self.title,
-            source_filter_id: self.source_filter_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_control_id`](crate::types::builders::FilterListControlBuilder::filter_control_id)
+    /// - [`title`](crate::types::builders::FilterListControlBuilder::title)
+    /// - [`source_filter_id`](crate::types::builders::FilterListControlBuilder::source_filter_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterListControl, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterListControl {
+            filter_control_id: self.filter_control_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter_control_id",
+                    "filter_control_id was not specified but it is required when building FilterListControl",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building FilterListControl",
+                )
+            })?,
+            source_filter_id: self.source_filter_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_filter_id",
+                    "source_filter_id was not specified but it is required when building FilterListControl",
+                )
+            })?,
             display_options: self.display_options,
             r#type: self.r#type,
             selectable_values: self.selectable_values,
             cascading_control_configuration: self.cascading_control_configuration,
-        }
+        })
     }
 }

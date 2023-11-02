@@ -6,7 +6,7 @@ pub struct ListPagesByContactOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of engagements to a contact's contact channel.</p>
-    pub pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
+    pub pages: ::std::vec::Vec<crate::types::Page>,
     _request_id: Option<String>,
 }
 impl ListPagesByContactOutput {
@@ -15,8 +15,9 @@ impl ListPagesByContactOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of engagements to a contact's contact channel.</p>
-    pub fn pages(&self) -> ::std::option::Option<&[crate::types::Page]> {
-        self.pages.as_deref()
+    pub fn pages(&self) -> &[crate::types::Page] {
+        use std::ops::Deref;
+        self.pages.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPagesByContactOutput {
@@ -84,11 +85,21 @@ impl ListPagesByContactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPagesByContactOutput`](crate::operation::list_pages_by_contact::ListPagesByContactOutput).
-    pub fn build(self) -> crate::operation::list_pages_by_contact::ListPagesByContactOutput {
-        crate::operation::list_pages_by_contact::ListPagesByContactOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`pages`](crate::operation::list_pages_by_contact::builders::ListPagesByContactOutputBuilder::pages)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_pages_by_contact::ListPagesByContactOutput {
             next_token: self.next_token,
-            pages: self.pages,
+            pages: self.pages.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "pages",
+                    "pages was not specified but it is required when building ListPagesByContactOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

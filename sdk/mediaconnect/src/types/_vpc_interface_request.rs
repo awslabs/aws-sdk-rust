@@ -29,8 +29,10 @@ impl VpcInterfaceRequest {
         self.role_arn.as_deref()
     }
     /// Security Group IDs to be used on ENI.
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// Subnet must be in the AZ of the Flow
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct VpcInterfaceRequestBuilder {
 }
 impl VpcInterfaceRequestBuilder {
     /// The name of the VPC Interface. This value must be unique within the current flow.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl VpcInterfaceRequestBuilder {
         &self.network_interface_type
     }
     /// Role Arn MediaConnect can assumes to create ENIs in customer's account
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +122,7 @@ impl VpcInterfaceRequestBuilder {
         &self.security_group_ids
     }
     /// Subnet must be in the AZ of the Flow
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self

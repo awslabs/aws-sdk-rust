@@ -34,6 +34,7 @@ pub struct GetGroupProfileInputBuilder {
 }
 impl GetGroupProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which the group profile exists.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetGroupProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the group profile.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self

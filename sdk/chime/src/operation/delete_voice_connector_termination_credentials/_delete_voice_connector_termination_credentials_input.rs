@@ -14,8 +14,10 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
         self.voice_connector_id.as_deref()
     }
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn usernames(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.usernames.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usernames.is_none()`.
+    pub fn usernames(&self) -> &[::std::string::String] {
+        self.usernames.as_deref().unwrap_or_default()
     }
 }
 impl DeleteVoiceConnectorTerminationCredentialsInput {
@@ -35,6 +37,7 @@ pub struct DeleteVoiceConnectorTerminationCredentialsInputBuilder {
 }
 impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self

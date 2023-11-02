@@ -86,6 +86,7 @@ impl VerifySoftwareTokenInputBuilder {
         &self.session
     }
     /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
+    /// This field is required.
     pub fn user_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_code = ::std::option::Option::Some(input.into());
         self

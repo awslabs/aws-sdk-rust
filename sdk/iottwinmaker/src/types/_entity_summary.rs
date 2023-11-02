@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitySummary {
     /// <p>The ID of the entity.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
     /// <p>The name of the entity.</p>
-    pub entity_name: ::std::option::Option<::std::string::String>,
+    pub entity_name: ::std::string::String,
     /// <p>The ARN of the entity.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The ID of the parent entity.</p>
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the entity.</p>
@@ -19,22 +19,25 @@ pub struct EntitySummary {
     /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
     pub has_child_entities: ::std::option::Option<bool>,
     /// <p>The date and time when the entity was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The last date and time when the entity was updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
 }
 impl EntitySummary {
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(&self) -> ::std::option::Option<&str> {
-        self.entity_name.as_deref()
+    pub fn entity_name(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_name.deref()
     }
     /// <p>The ARN of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The ID of the parent entity.</p>
     pub fn parent_entity_id(&self) -> ::std::option::Option<&str> {
@@ -53,12 +56,12 @@ impl EntitySummary {
         self.has_child_entities
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The last date and time when the entity was updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
 }
 impl EntitySummary {
@@ -84,6 +87,7 @@ pub struct EntitySummaryBuilder {
 }
 impl EntitySummaryBuilder {
     /// <p>The ID of the entity.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl EntitySummaryBuilder {
         &self.entity_id
     }
     /// <p>The name of the entity.</p>
+    /// This field is required.
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +117,7 @@ impl EntitySummaryBuilder {
         &self.entity_name
     }
     /// <p>The ARN of the entity.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +146,7 @@ impl EntitySummaryBuilder {
         &self.parent_entity_id
     }
     /// <p>The current status of the entity.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -182,6 +189,7 @@ impl EntitySummaryBuilder {
         &self.has_child_entities
     }
     /// <p>The date and time when the entity was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -196,6 +204,7 @@ impl EntitySummaryBuilder {
         &self.creation_date_time
     }
     /// <p>The last date and time when the entity was updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -210,17 +219,48 @@ impl EntitySummaryBuilder {
         &self.update_date_time
     }
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
-    pub fn build(self) -> crate::types::EntitySummary {
-        crate::types::EntitySummary {
-            entity_id: self.entity_id,
-            entity_name: self.entity_name,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entity_id`](crate::types::builders::EntitySummaryBuilder::entity_id)
+    /// - [`entity_name`](crate::types::builders::EntitySummaryBuilder::entity_name)
+    /// - [`arn`](crate::types::builders::EntitySummaryBuilder::arn)
+    /// - [`creation_date_time`](crate::types::builders::EntitySummaryBuilder::creation_date_time)
+    /// - [`update_date_time`](crate::types::builders::EntitySummaryBuilder::update_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::EntitySummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EntitySummary {
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building EntitySummary",
+                )
+            })?,
+            entity_name: self.entity_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_name",
+                    "entity_name was not specified but it is required when building EntitySummary",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building EntitySummary",
+                )
+            })?,
             parent_entity_id: self.parent_entity_id,
             status: self.status,
             description: self.description,
             has_child_entities: self.has_child_entities,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
-        }
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building EntitySummary",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building EntitySummary",
+                )
+            })?,
+        })
     }
 }

@@ -9,23 +9,23 @@ pub fn ser_update_billing_group_input(
         crate::protocol_serde::shape_update_billing_group_account_grouping::ser_update_billing_group_account_grouping(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.arn {
-        object.key("Arn").string(var_3.as_str());
+    {
+        object.key("Arn").string(input.arn.as_str());
     }
-    if let Some(var_4) = &input.computation_preference {
+    if let Some(var_3) = &input.computation_preference {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ComputationPreference").start_object();
-        crate::protocol_serde::shape_computation_preference::ser_computation_preference(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("ComputationPreference").start_object();
+        crate::protocol_serde::shape_computation_preference::ser_computation_preference(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("Description").string(var_6.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("Description").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.name {
-        object.key("Name").string(var_7.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("Name").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.status {
-        object.key("Status").string(var_8.as_str());
+    if let Some(var_7) = &input.status {
+        object.key("Status").string(var_7.as_str());
     }
     Ok(())
 }

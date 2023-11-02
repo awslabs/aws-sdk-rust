@@ -41,6 +41,7 @@ pub struct ListAssetContractsInputBuilder {
 }
 impl ListAssetContractsInputBuilder {
     /// <p>Contains the filter parameter for the request.</p>
+    /// This field is required.
     pub fn contract_filter(mut self, input: crate::types::ContractFilter) -> Self {
         self.contract_filter = ::std::option::Option::Some(input);
         self

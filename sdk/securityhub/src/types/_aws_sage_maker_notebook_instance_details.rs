@@ -47,12 +47,16 @@ pub struct AwsSageMakerNotebookInstanceDetails {
 }
 impl AwsSageMakerNotebookInstanceDetails {
     /// <p> A list of Amazon Elastic Inference instance types to associate with the notebook instance. Currently, only one instance type can be associated with a notebook instance. </p>
-    pub fn accelerator_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accelerator_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
+    pub fn accelerator_types(&self) -> &[::std::string::String] {
+        self.accelerator_types.as_deref().unwrap_or_default()
     }
     /// <p> An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
-    pub fn additional_code_repositories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_code_repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_code_repositories.is_none()`.
+    pub fn additional_code_repositories(&self) -> &[::std::string::String] {
+        self.additional_code_repositories.as_deref().unwrap_or_default()
     }
     /// <p> The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
     pub fn default_code_repository(&self) -> ::std::option::Option<&str> {
@@ -113,8 +117,10 @@ impl AwsSageMakerNotebookInstanceDetails {
         self.root_access.as_deref()
     }
     /// <p> The VPC security group IDs. </p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p> The ID of the VPC subnet to which you have a connectivity from your ML compute instance. </p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {

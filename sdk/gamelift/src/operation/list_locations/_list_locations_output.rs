@@ -11,8 +11,10 @@ pub struct ListLocationsOutput {
 }
 impl ListLocationsOutput {
     /// <p>A collection of locations.</p>
-    pub fn locations(&self) -> ::std::option::Option<&[crate::types::LocationModel]> {
-        self.locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
+    pub fn locations(&self) -> &[crate::types::LocationModel] {
+        self.locations.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -23,8 +23,10 @@ impl CustomDeliveryConfiguration {
         self.delivery_uri.as_deref()
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub fn endpoint_types(&self) -> ::std::option::Option<&[crate::types::EndpointTypesElement]> {
-        self.endpoint_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_types.is_none()`.
+    pub fn endpoint_types(&self) -> &[crate::types::EndpointTypesElement] {
+        self.endpoint_types.as_deref().unwrap_or_default()
     }
 }
 impl CustomDeliveryConfiguration {
@@ -47,6 +49,7 @@ impl CustomDeliveryConfigurationBuilder {
     /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
     /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn delivery_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_uri = ::std::option::Option::Some(input.into());
         self

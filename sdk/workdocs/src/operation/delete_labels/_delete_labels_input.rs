@@ -22,8 +22,10 @@ impl DeleteLabelsInput {
         self.authentication_token.as_deref()
     }
     /// <p>List of labels to delete from the resource.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>Flag to request removal of all labels from the specified resource.</p>
     pub fn delete_all(&self) -> ::std::option::Option<bool> {
@@ -58,6 +60,7 @@ pub struct DeleteLabelsInputBuilder {
 }
 impl DeleteLabelsInputBuilder {
     /// <p>The ID of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl GetEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl GetEnvironmentAccountConnectionInput {
@@ -27,6 +28,7 @@ pub struct GetEnvironmentAccountConnectionInputBuilder {
 }
 impl GetEnvironmentAccountConnectionInputBuilder {
     /// <p>The ID of the environment account connection that you want to get the detailed data for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,23 @@ impl GetEnvironmentAccountConnectionInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetEnvironmentAccountConnectionInput`](crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_environment_account_connection::builders::GetEnvironmentAccountConnectionInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput { id: self.id })
+        ::std::result::Result::Ok(
+            crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionInput {
+                id: self.id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "id was not specified but it is required when building GetEnvironmentAccountConnectionInput",
+                    )
+                })?,
+            },
+        )
     }
 }

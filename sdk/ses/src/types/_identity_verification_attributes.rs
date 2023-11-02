@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityVerificationAttributes {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
+    pub verification_status: crate::types::VerificationStatus,
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
     pub verification_token: ::std::option::Option<::std::string::String>,
 }
 impl IdentityVerificationAttributes {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
-    pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
-        self.verification_status.as_ref()
+    pub fn verification_status(&self) -> &crate::types::VerificationStatus {
+        &self.verification_status
     }
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
     pub fn verification_token(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct IdentityVerificationAttributesBuilder {
 }
 impl IdentityVerificationAttributesBuilder {
     /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
+    /// This field is required.
     pub fn verification_status(mut self, input: crate::types::VerificationStatus) -> Self {
         self.verification_status = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl IdentityVerificationAttributesBuilder {
         &self.verification_token
     }
     /// Consumes the builder and constructs a [`IdentityVerificationAttributes`](crate::types::IdentityVerificationAttributes).
-    pub fn build(self) -> crate::types::IdentityVerificationAttributes {
-        crate::types::IdentityVerificationAttributes {
-            verification_status: self.verification_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`verification_status`](crate::types::builders::IdentityVerificationAttributesBuilder::verification_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityVerificationAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdentityVerificationAttributes {
+            verification_status: self.verification_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "verification_status",
+                    "verification_status was not specified but it is required when building IdentityVerificationAttributes",
+                )
+            })?,
             verification_token: self.verification_token,
-        }
+        })
     }
 }

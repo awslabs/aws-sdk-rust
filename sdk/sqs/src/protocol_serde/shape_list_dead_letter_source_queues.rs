@@ -56,7 +56,9 @@ pub fn de_list_dead_letter_source_queues_http_response(
         output = crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues(_response_body, output)
             .map_err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_dead_letter_source_queues_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled)?
     })
 }
 

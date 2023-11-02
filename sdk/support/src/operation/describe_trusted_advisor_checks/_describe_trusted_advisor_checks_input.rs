@@ -69,6 +69,7 @@ impl DescribeTrustedAdvisorChecksInputBuilder {
     /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
     /// <li> <p>Spanish - <code>es</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self

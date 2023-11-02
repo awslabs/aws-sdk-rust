@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN)</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>List of tag keys.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::vec::Vec<::std::string::String>,
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN)</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>List of tag keys.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.tag_keys.deref()
     }
 }
 impl UntagResourceInput {
@@ -34,6 +36,7 @@ pub struct UntagResourceInputBuilder {
 }
 impl UntagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN)</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl UntagResourceInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::untag_resource::builders::UntagResourceInputBuilder::arn)
+    /// - [`tag_keys`](crate::operation::untag_resource::builders::UntagResourceInputBuilder::tag_keys)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::untag_resource::UntagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
-            arn: self.arn,
-            tag_keys: self.tag_keys,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UntagResourceInput",
+                )
+            })?,
+            tag_keys: self.tag_keys.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tag_keys",
+                    "tag_keys was not specified but it is required when building UntagResourceInput",
+                )
+            })?,
         })
     }
 }

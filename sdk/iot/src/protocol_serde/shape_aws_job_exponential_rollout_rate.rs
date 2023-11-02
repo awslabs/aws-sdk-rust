@@ -3,10 +3,10 @@ pub fn ser_aws_job_exponential_rollout_rate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsJobExponentialRolloutRate,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.base_rate_per_minute {
+    {
         object.key("baseRatePerMinute").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.base_rate_per_minute).into()),
         );
     }
     {
@@ -15,11 +15,11 @@ pub fn ser_aws_job_exponential_rollout_rate(
             ::aws_smithy_types::Number::Float((input.increment_factor).into()),
         );
     }
-    if let Some(var_2) = &input.rate_increase_criteria {
+    if let Some(var_1) = &input.rate_increase_criteria {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("rateIncreaseCriteria").start_object();
-        crate::protocol_serde::shape_aws_job_rate_increase_criteria::ser_aws_job_rate_increase_criteria(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("rateIncreaseCriteria").start_object();
+        crate::protocol_serde::shape_aws_job_rate_increase_criteria::ser_aws_job_rate_increase_criteria(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -66,7 +66,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::aws_job_exponential_rollout_rate_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

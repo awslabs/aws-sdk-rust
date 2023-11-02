@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub tier: ::std::option::Option<crate::types::Tier>,
+    pub tier: crate::types::Tier,
 }
 impl GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
-        self.tier.as_ref()
+    pub fn tier(&self) -> &crate::types::Tier {
+        &self.tier
     }
 }
 impl GlacierJobParameters {
@@ -28,6 +28,7 @@ pub struct GlacierJobParametersBuilder {
 }
 impl GlacierJobParametersBuilder {
     /// <p>Retrieval tier at which the restore will be processed.</p>
+    /// This field is required.
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.tier = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl GlacierJobParametersBuilder {
         &self.tier
     }
     /// Consumes the builder and constructs a [`GlacierJobParameters`](crate::types::GlacierJobParameters).
-    pub fn build(self) -> crate::types::GlacierJobParameters {
-        crate::types::GlacierJobParameters { tier: self.tier }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tier`](crate::types::builders::GlacierJobParametersBuilder::tier)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlacierJobParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlacierJobParameters {
+            tier: self.tier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tier",
+                    "tier was not specified but it is required when building GlacierJobParameters",
+                )
+            })?,
+        })
     }
 }

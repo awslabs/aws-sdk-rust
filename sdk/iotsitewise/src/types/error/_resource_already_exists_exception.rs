@@ -5,36 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The ID of the resource that already exists.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The ARN of the resource that already exists.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceAlreadyExistsException {
     /// <p>The ID of the resource that already exists.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The ARN of the resource that already exists.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
 }
 impl ResourceAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ResourceAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ResourceAlreadyExistsException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -69,6 +69,7 @@ pub struct ResourceAlreadyExistsExceptionBuilder {
 }
 impl ResourceAlreadyExistsExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ResourceAlreadyExistsExceptionBuilder {
         &self.message
     }
     /// <p>The ID of the resource that already exists.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl ResourceAlreadyExistsExceptionBuilder {
         &self.resource_id
     }
     /// <p>The ARN of the resource that already exists.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -122,12 +125,33 @@ impl ResourceAlreadyExistsExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ResourceAlreadyExistsException`](crate::types::error::ResourceAlreadyExistsException).
-    pub fn build(self) -> crate::types::error::ResourceAlreadyExistsException {
-        crate::types::error::ResourceAlreadyExistsException {
-            message: self.message,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::message)
+    /// - [`resource_id`](crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::resource_id)
+    /// - [`resource_arn`](crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::resource_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::ResourceAlreadyExistsException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ResourceAlreadyExistsException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ResourceAlreadyExistsException",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ResourceAlreadyExistsException",
+                )
+            })?,
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building ResourceAlreadyExistsException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

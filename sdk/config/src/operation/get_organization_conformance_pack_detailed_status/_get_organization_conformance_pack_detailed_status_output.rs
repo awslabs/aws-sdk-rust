@@ -12,10 +12,10 @@ pub struct GetOrganizationConformancePackDetailedStatusOutput {
 }
 impl GetOrganizationConformancePackDetailedStatusOutput {
     /// <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
-    pub fn organization_conformance_pack_detailed_statuses(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::OrganizationConformancePackDetailedStatus]> {
-        self.organization_conformance_pack_detailed_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_conformance_pack_detailed_statuses.is_none()`.
+    pub fn organization_conformance_pack_detailed_statuses(&self) -> &[crate::types::OrganizationConformancePackDetailedStatus] {
+        self.organization_conformance_pack_detailed_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

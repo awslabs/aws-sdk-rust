@@ -111,8 +111,10 @@ impl TrialComponent {
         self.output_artifacts.as_ref()
     }
     /// <p>The metrics for the component.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::TrialComponentMetricSummary]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::TrialComponentMetricSummary] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(&self) -> ::std::option::Option<&crate::types::MetadataProperties> {
@@ -127,12 +129,16 @@ impl TrialComponent {
         self.lineage_group_arn.as_deref()
     }
     /// <p>The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>An array of the parents of the component. A parent is a trial the component is associated with and the experiment the trial is part of. A component might not have any parents.</p>
-    pub fn parents(&self) -> ::std::option::Option<&[crate::types::Parent]> {
-        self.parents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
+    pub fn parents(&self) -> &[crate::types::Parent] {
+        self.parents.as_deref().unwrap_or_default()
     }
     /// <p>The name of the experiment run.</p>
     pub fn run_name(&self) -> ::std::option::Option<&str> {

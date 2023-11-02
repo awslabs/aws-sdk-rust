@@ -186,6 +186,7 @@ impl GetObjectOutputBuilder {
         &self.last_modified
     }
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
+    /// This field is required.
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self

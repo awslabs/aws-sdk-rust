@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFleet`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet_id): <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p><br>
     /// - On success, responds with [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::operation::delete_fleet::DeleteFleetError)
     pub fn delete_fleet(&self) -> crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder {

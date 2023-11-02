@@ -49,16 +49,22 @@ impl VpcEndpointConnection {
         self.creation_timestamp.as_ref()
     }
     /// <p>The DNS entries for the VPC endpoint.</p>
-    pub fn dns_entries(&self) -> ::std::option::Option<&[crate::types::DnsEntry]> {
-        self.dns_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_entries.is_none()`.
+    pub fn dns_entries(&self) -> &[crate::types::DnsEntry] {
+        self.dns_entries.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of the network load balancers for the service.</p>
-    pub fn network_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_load_balancer_arns.is_none()`.
+    pub fn network_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.network_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    pub fn gateway_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.gateway_load_balancer_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_load_balancer_arns.is_none()`.
+    pub fn gateway_load_balancer_arns(&self) -> &[::std::string::String] {
+        self.gateway_load_balancer_arns.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
@@ -69,8 +75,10 @@ impl VpcEndpointConnection {
         self.vpc_endpoint_connection_id.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl VpcEndpointConnection {

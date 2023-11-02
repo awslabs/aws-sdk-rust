@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateApplication`](crate::operation::create_application::builders::CreateApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_name): <p>Name of the application to be created.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_description): <p>Description of the application to be created.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_name):<br>required: **true**<br><p>Name of the application to be created.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_description):<br>required: **false**<br><p>Description of the application to be created.</p><br>
     /// - On success, responds with [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput) with field(s):
     ///   - [`configuration_id(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::configuration_id): <p>Configuration ID of an application to be created.</p>
     /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::operation::create_application::CreateApplicationError)

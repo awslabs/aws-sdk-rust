@@ -21,12 +21,16 @@ impl GetTaskProtectionOutput {
     /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
     /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
     /// </ul>
-    pub fn protected_tasks(&self) -> ::std::option::Option<&[crate::types::ProtectedTask]> {
-        self.protected_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protected_tasks.is_none()`.
+    pub fn protected_tasks(&self) -> &[crate::types::ProtectedTask] {
+        self.protected_tasks.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::Failure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::Failure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTaskProtectionOutput {

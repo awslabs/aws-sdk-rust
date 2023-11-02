@@ -34,6 +34,7 @@ pub struct GetFeatureOutputBuilder {
 }
 impl GetFeatureOutputBuilder {
     /// <p>A structure containing the configuration details of the feature.</p>
+    /// This field is required.
     pub fn feature(mut self, input: crate::types::Feature) -> Self {
         self.feature = ::std::option::Option::Some(input);
         self

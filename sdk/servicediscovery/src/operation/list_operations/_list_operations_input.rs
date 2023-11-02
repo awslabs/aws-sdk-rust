@@ -28,8 +28,10 @@ impl ListOperationsInput {
     }
     /// <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>
     /// <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::OperationFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::OperationFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl ListOperationsInput {

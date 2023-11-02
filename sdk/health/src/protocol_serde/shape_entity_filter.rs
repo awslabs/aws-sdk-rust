@@ -3,69 +3,69 @@ pub fn ser_entity_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.event_arns {
-        let mut array_2 = object.key("eventArns").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("eventArns").start_array();
+        for item_2 in &input.event_arns {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.entity_arns {
-        let mut array_5 = object.key("entityArns").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.entity_arns {
+        let mut array_4 = object.key("entityArns").start_array();
+        for item_5 in var_3 {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_7) = &input.entity_values {
-        let mut array_8 = object.key("entityValues").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.entity_values {
+        let mut array_7 = object.key("entityValues").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
     }
-    if let Some(var_10) = &input.last_updated_times {
-        let mut array_11 = object.key("lastUpdatedTimes").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.last_updated_times {
+        let mut array_10 = object.key("lastUpdatedTimes").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
-    if let Some(var_14) = &input.tags {
-        let mut array_15 = object.key("tags").start_array();
-        for item_16 in var_14 {
+    if let Some(var_13) = &input.tags {
+        let mut array_14 = object.key("tags").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                for (key_18, value_19) in item_16 {
+                let mut object_16 = array_14.value().start_object();
+                for (key_17, value_18) in item_15 {
                     {
-                        object_17.key(key_18.as_str()).string(value_19.as_str());
+                        object_16.key(key_17.as_str()).string(value_18.as_str());
                     }
                 }
-                object_17.finish();
+                object_16.finish();
             }
         }
-        array_15.finish();
+        array_14.finish();
     }
-    if let Some(var_20) = &input.status_codes {
-        let mut array_21 = object.key("statusCodes").start_array();
-        for item_22 in var_20 {
+    if let Some(var_19) = &input.status_codes {
+        let mut array_20 = object.key("statusCodes").start_array();
+        for item_21 in var_19 {
             {
-                array_21.value().string(item_22.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_21.finish();
+        array_20.finish();
     }
     Ok(())
 }

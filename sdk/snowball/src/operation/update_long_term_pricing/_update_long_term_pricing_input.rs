@@ -41,6 +41,7 @@ pub struct UpdateLongTermPricingInputBuilder {
 }
 impl UpdateLongTermPricingInputBuilder {
     /// <p>The ID of the long-term pricing type for the device.</p>
+    /// This field is required.
     pub fn long_term_pricing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.long_term_pricing_id = ::std::option::Option::Some(input.into());
         self

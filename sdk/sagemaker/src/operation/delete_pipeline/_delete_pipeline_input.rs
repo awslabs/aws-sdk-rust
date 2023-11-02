@@ -34,6 +34,7 @@ pub struct DeletePipelineInputBuilder {
 }
 impl DeletePipelineInputBuilder {
     /// <p>The name of the pipeline to delete.</p>
+    /// This field is required.
     pub fn pipeline_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeletePipelineInputBuilder {
         &self.pipeline_name
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self

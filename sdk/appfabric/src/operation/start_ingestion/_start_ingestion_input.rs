@@ -34,6 +34,7 @@ pub struct StartIngestionInputBuilder {
 }
 impl StartIngestionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    /// This field is required.
     pub fn ingestion_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StartIngestionInputBuilder {
         &self.ingestion_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self

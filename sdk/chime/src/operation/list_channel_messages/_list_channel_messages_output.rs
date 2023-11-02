@@ -21,8 +21,10 @@ impl ListChannelMessagesOutput {
         self.next_token.as_deref()
     }
     /// <p>The information about, and content of, each requested message.</p>
-    pub fn channel_messages(&self) -> ::std::option::Option<&[crate::types::ChannelMessageSummary]> {
-        self.channel_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_messages.is_none()`.
+    pub fn channel_messages(&self) -> &[crate::types::ChannelMessageSummary] {
+        self.channel_messages.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for ListChannelMessagesOutput {

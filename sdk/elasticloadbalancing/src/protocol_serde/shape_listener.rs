@@ -6,38 +6,39 @@ pub fn ser_listener(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Protocol");
-    if let Some(var_2) = &input.protocol {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.protocol);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("LoadBalancerPort");
+    let mut scope_2 = writer.prefix("LoadBalancerPort");
     {
-        scope_3.number(
+        scope_2.number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.load_balancer_port).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_4 = writer.prefix("InstanceProtocol");
-    if let Some(var_5) = &input.instance_protocol {
-        scope_4.string(var_5);
+    let mut scope_3 = writer.prefix("InstanceProtocol");
+    if let Some(var_4) = &input.instance_protocol {
+        scope_3.string(var_4);
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("InstancePort");
-    if let Some(var_7) = &input.instance_port {
-        scope_6.number(
+    let mut scope_5 = writer.prefix("InstancePort");
+    {
+        scope_5.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((input.instance_port).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("SSLCertificateId");
-    if let Some(var_9) = &input.ssl_certificate_id {
-        scope_8.string(var_9);
+    let mut scope_6 = writer.prefix("SSLCertificateId");
+    if let Some(var_7) = &input.ssl_certificate_id {
+        scope_6.string(var_7);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_listener(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Listener, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -46,7 +47,7 @@ pub fn de_listener(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Protocol") /* Protocol com.amazonaws.elasticloadbalancing#Listener$Protocol */ =>  {
-                let var_10 =
+                let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -55,11 +56,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_protocol(var_10);
+                builder = builder.set_protocol(var_8);
             }
             ,
             s if s.matches("LoadBalancerPort") /* LoadBalancerPort com.amazonaws.elasticloadbalancing#Listener$LoadBalancerPort */ =>  {
-                let var_11 =
+                let var_9 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -70,11 +71,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_load_balancer_port(var_11);
+                builder = builder.set_load_balancer_port(var_9);
             }
             ,
             s if s.matches("InstanceProtocol") /* InstanceProtocol com.amazonaws.elasticloadbalancing#Listener$InstanceProtocol */ =>  {
-                let var_12 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -83,11 +84,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_instance_protocol(var_12);
+                builder = builder.set_instance_protocol(var_10);
             }
             ,
             s if s.matches("InstancePort") /* InstancePort com.amazonaws.elasticloadbalancing#Listener$InstancePort */ =>  {
-                let var_13 =
+                let var_11 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -98,11 +99,11 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_instance_port(var_13);
+                builder = builder.set_instance_port(var_11);
             }
             ,
             s if s.matches("SSLCertificateId") /* SSLCertificateId com.amazonaws.elasticloadbalancing#Listener$SSLCertificateId */ =>  {
-                let var_14 =
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -111,11 +112,13 @@ pub fn de_listener(
                         ?
                     )
                 ;
-                builder = builder.set_ssl_certificate_id(var_14);
+                builder = builder.set_ssl_certificate_id(var_12);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::listener_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

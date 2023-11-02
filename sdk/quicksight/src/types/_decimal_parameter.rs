@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalParameter {
     /// <p>A display name for the decimal parameter.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The values for the decimal parameter.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub values: ::std::vec::Vec<f64>,
 }
 impl DecimalParameter {
     /// <p>A display name for the decimal parameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The values for the decimal parameter.</p>
-    pub fn values(&self) -> ::std::option::Option<&[f64]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl DecimalParameter {
@@ -35,6 +37,7 @@ pub struct DecimalParameterBuilder {
 }
 impl DecimalParameterBuilder {
     /// <p>A display name for the decimal parameter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl DecimalParameterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`DecimalParameter`](crate::types::DecimalParameter).
-    pub fn build(self) -> crate::types::DecimalParameter {
-        crate::types::DecimalParameter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DecimalParameterBuilder::name)
+    /// - [`values`](crate::types::builders::DecimalParameterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::DecimalParameter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DecimalParameter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DecimalParameter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building DecimalParameter",
+                )
+            })?,
+        })
     }
 }

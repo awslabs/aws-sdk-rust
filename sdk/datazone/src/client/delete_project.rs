@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProject`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain in which the project is deleted.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_identifier): <p>The identifier of the project that is to be deleted.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain in which the project is deleted.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the project that is to be deleted.</p><br>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput)
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
     pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {

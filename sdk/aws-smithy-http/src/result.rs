@@ -651,6 +651,11 @@ impl ConnectorError {
         }
     }
 
+    /// Grants ownership of this error's source.
+    pub fn into_source(self) -> BoxError {
+        self.source
+    }
+
     /// Returns metadata about the connection
     ///
     /// If a connection was established and provided by the internal connector, a connection will

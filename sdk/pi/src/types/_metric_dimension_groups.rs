@@ -15,8 +15,10 @@ impl MetricDimensionGroups {
         self.metric.as_deref()
     }
     /// <p>The available dimension groups for a metric type.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::DimensionGroupDetail]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::DimensionGroupDetail] {
+        self.groups.as_deref().unwrap_or_default()
     }
 }
 impl MetricDimensionGroups {

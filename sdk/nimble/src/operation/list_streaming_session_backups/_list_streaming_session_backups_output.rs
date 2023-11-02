@@ -15,8 +15,10 @@ impl ListStreamingSessionBackupsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the streaming session backups.</p>
-    pub fn streaming_session_backups(&self) -> ::std::option::Option<&[crate::types::StreamingSessionBackup]> {
-        self.streaming_session_backups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_session_backups.is_none()`.
+    pub fn streaming_session_backups(&self) -> &[crate::types::StreamingSessionBackup] {
+        self.streaming_session_backups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListStreamingSessionBackupsOutput {

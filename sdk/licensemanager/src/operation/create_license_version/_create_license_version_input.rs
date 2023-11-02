@@ -54,12 +54,16 @@ impl CreateLicenseVersionInput {
         self.validity.as_ref()
     }
     /// <p>Information about the license.</p>
-    pub fn license_metadata(&self) -> ::std::option::Option<&[crate::types::Metadata]> {
-        self.license_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_metadata.is_none()`.
+    pub fn license_metadata(&self) -> &[crate::types::Metadata] {
+        self.license_metadata.as_deref().unwrap_or_default()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::Entitlement]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn consumption_configuration(&self) -> ::std::option::Option<&crate::types::ConsumptionConfiguration> {
@@ -104,6 +108,7 @@ pub struct CreateLicenseVersionInputBuilder {
 }
 impl CreateLicenseVersionInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
+    /// This field is required.
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.license_arn
     }
     /// <p>License name.</p>
+    /// This field is required.
     pub fn license_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +138,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.license_name
     }
     /// <p>Product name.</p>
+    /// This field is required.
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +153,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.product_name
     }
     /// <p>License issuer.</p>
+    /// This field is required.
     pub fn issuer(mut self, input: crate::types::Issuer) -> Self {
         self.issuer = ::std::option::Option::Some(input);
         self
@@ -160,6 +168,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.issuer
     }
     /// <p>Home Region of the license.</p>
+    /// This field is required.
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +183,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.home_region
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    /// This field is required.
     pub fn validity(mut self, input: crate::types::DatetimeRange) -> Self {
         self.validity = ::std::option::Option::Some(input);
         self
@@ -228,6 +238,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.entitlements
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    /// This field is required.
     pub fn consumption_configuration(mut self, input: crate::types::ConsumptionConfiguration) -> Self {
         self.consumption_configuration = ::std::option::Option::Some(input);
         self
@@ -242,6 +253,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.consumption_configuration
     }
     /// <p>License status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::LicenseStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -256,6 +268,7 @@ impl CreateLicenseVersionInputBuilder {
         &self.status
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

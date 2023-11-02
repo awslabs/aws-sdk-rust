@@ -25,11 +25,10 @@ pub fn de_list_profile_times_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_profile_times::ListProfileTimesError::ResourceNotFoundException({
@@ -40,11 +39,10 @@ pub fn de_list_profile_times_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_profile_times::ListProfileTimesError::ThrottlingException({
@@ -55,11 +53,10 @@ pub fn de_list_profile_times_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::list_profile_times::ListProfileTimesError::ValidationException({
@@ -70,11 +67,10 @@ pub fn de_list_profile_times_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::list_profile_times::ListProfileTimesError::generic(generic),
@@ -93,7 +89,9 @@ pub fn de_list_profile_times_http_response(
         output = crate::protocol_serde::shape_list_profile_times::de_list_profile_times(_response_body, output)
             .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_profile_times_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?
     })
 }
 

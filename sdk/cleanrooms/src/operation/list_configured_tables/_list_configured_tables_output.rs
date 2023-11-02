@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfiguredTablesOutput {
     /// <p>The configured tables listed by the request.</p>
-    pub configured_table_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableSummary>>,
+    pub configured_table_summaries: ::std::vec::Vec<crate::types::ConfiguredTableSummary>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListConfiguredTablesOutput {
     /// <p>The configured tables listed by the request.</p>
-    pub fn configured_table_summaries(&self) -> ::std::option::Option<&[crate::types::ConfiguredTableSummary]> {
-        self.configured_table_summaries.as_deref()
+    pub fn configured_table_summaries(&self) -> &[crate::types::ConfiguredTableSummary] {
+        use std::ops::Deref;
+        self.configured_table_summaries.deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListConfiguredTablesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConfiguredTablesOutput`](crate::operation::list_configured_tables::ListConfiguredTablesOutput).
-    pub fn build(self) -> crate::operation::list_configured_tables::ListConfiguredTablesOutput {
-        crate::operation::list_configured_tables::ListConfiguredTablesOutput {
-            configured_table_summaries: self.configured_table_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configured_table_summaries`](crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder::configured_table_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_configured_tables::ListConfiguredTablesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_configured_tables::ListConfiguredTablesOutput {
+            configured_table_summaries: self.configured_table_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configured_table_summaries",
+                    "configured_table_summaries was not specified but it is required when building ListConfiguredTablesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

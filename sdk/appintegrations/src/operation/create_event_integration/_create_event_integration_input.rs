@@ -62,6 +62,7 @@ pub struct CreateEventIntegrationInputBuilder {
 }
 impl CreateEventIntegrationInputBuilder {
     /// <p>The name of the event integration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl CreateEventIntegrationInputBuilder {
         &self.description
     }
     /// <p>The event filter.</p>
+    /// This field is required.
     pub fn event_filter(mut self, input: crate::types::EventFilter) -> Self {
         self.event_filter = ::std::option::Option::Some(input);
         self
@@ -104,6 +106,7 @@ impl CreateEventIntegrationInputBuilder {
         &self.event_filter
     }
     /// <p>The EventBridge bus.</p>
+    /// This field is required.
     pub fn event_bridge_bus(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bridge_bus = ::std::option::Option::Some(input.into());
         self

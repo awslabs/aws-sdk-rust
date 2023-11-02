@@ -27,6 +27,7 @@ pub struct GetMediaAnalysisJobInputBuilder {
 }
 impl GetMediaAnalysisJobInputBuilder {
     /// <p>Unique identifier for the media analysis job for which you want to retrieve results.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

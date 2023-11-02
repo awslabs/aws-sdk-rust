@@ -55,6 +55,7 @@ pub struct AllocateConnectionOnInterconnectInputBuilder {
 }
 impl AllocateConnectionOnInterconnectInputBuilder {
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+    /// This field is required.
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.bandwidth
     }
     /// <p>The name of the provisioned connection.</p>
+    /// This field is required.
     pub fn connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.connection_name
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
+    /// This field is required.
     pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.owner_account
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
+    /// This field is required.
     pub fn interconnect_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interconnect_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         &self.interconnect_id
     }
     /// <p>The dedicated VLAN provisioned to the connection.</p>
+    /// This field is required.
     pub fn vlan(mut self, input: i32) -> Self {
         self.vlan = ::std::option::Option::Some(input);
         self

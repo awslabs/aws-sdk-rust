@@ -28,6 +28,7 @@ pub struct S3LogsConfigurationResultBuilder {
 }
 impl S3LogsConfigurationResultBuilder {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

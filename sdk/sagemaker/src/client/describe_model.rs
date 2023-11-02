@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeModel`](crate::operation::describe_model::builders::DescribeModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_name(impl Into<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::set_model_name): <p>The name of the model.</p>
+    ///   - [`model_name(impl Into<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::model_name) / [`set_model_name(Option<String>)`](crate::operation::describe_model::builders::DescribeModelFluentBuilder::set_model_name):<br>required: **true**<br><p>The name of the model.</p><br>
     /// - On success, responds with [`DescribeModelOutput`](crate::operation::describe_model::DescribeModelOutput) with field(s):
     ///   - [`model_name(Option<String>)`](crate::operation::describe_model::DescribeModelOutput::model_name): <p>Name of the SageMaker model.</p>
     ///   - [`primary_container(Option<ContainerDefinition>)`](crate::operation::describe_model::DescribeModelOutput::primary_container): <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>

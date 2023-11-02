@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationInput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>The name of the Replication Configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The subnet to be used by the replication staging area.</p>
@@ -40,8 +40,9 @@ pub struct UpdateReplicationConfigurationInput {
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>The name of the Replication Configuration.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -56,8 +57,10 @@ impl UpdateReplicationConfigurationInput {
         self.associate_default_security_group
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn replication_servers_security_groups_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_servers_security_groups_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_i_ds.is_none()`.
+    pub fn replication_servers_security_groups_i_ds(&self) -> &[::std::string::String] {
+        self.replication_servers_security_groups_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>The instance type to be used for the replication server.</p>
     pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
@@ -72,8 +75,10 @@ impl UpdateReplicationConfigurationInput {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>The configuration of the disks of the Source Server to be replicated.</p>
-    pub fn replicated_disks(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationReplicatedDisk]> {
-        self.replicated_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
+    pub fn replicated_disks(&self) -> &[crate::types::ReplicationConfigurationReplicatedDisk] {
+        self.replicated_disks.as_deref().unwrap_or_default()
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
     pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
@@ -100,8 +105,10 @@ impl UpdateReplicationConfigurationInput {
         self.staging_area_tags.as_ref()
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub fn pit_policy(&self) -> ::std::option::Option<&[crate::types::PitPolicyRule]> {
-        self.pit_policy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pit_policy.is_none()`.
+    pub fn pit_policy(&self) -> &[crate::types::PitPolicyRule] {
+        self.pit_policy.as_deref().unwrap_or_default()
     }
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     pub fn auto_replicate_new_disks(&self) -> ::std::option::Option<bool> {
@@ -162,6 +169,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -437,6 +445,8 @@ impl UpdateReplicationConfigurationInputBuilder {
         &self.auto_replicate_new_disks
     }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::update_replication_configuration::builders::UpdateReplicationConfigurationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -444,7 +454,12 @@ impl UpdateReplicationConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building UpdateReplicationConfigurationInput",
+                )
+            })?,
             name: self.name,
             staging_area_subnet_id: self.staging_area_subnet_id,
             associate_default_security_group: self.associate_default_security_group,

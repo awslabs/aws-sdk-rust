@@ -5,18 +5,19 @@ pub fn ser_cloud_front_origin_access_identity_config(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.caller_reference {
+    {
         let mut inner_writer = scope.start_el("CallerReference").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.caller_reference.as_str());
     }
-    if let Some(var_2) = &input.comment {
+    {
         let mut inner_writer = scope.start_el("Comment").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.comment.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cloud_front_origin_access_identity_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CloudFrontOriginAccessIdentityConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_cloud_front_origin_access_identity_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CallerReference") /* CallerReference com.amazonaws.cloudfront#CloudFrontOriginAccessIdentityConfig$CallerReference */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_cloud_front_origin_access_identity_config(
                         ?
                     )
                 ;
-                builder = builder.set_caller_reference(var_3);
+                builder = builder.set_caller_reference(var_1);
             }
             ,
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#CloudFrontOriginAccessIdentityConfig$Comment */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -47,11 +48,13 @@ pub fn de_cloud_front_origin_access_identity_config(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_4);
+                builder = builder.set_comment(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cloud_front_origin_access_identity_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

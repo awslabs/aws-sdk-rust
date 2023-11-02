@@ -41,6 +41,7 @@ pub struct UpdateInputInputBuilder {
 }
 impl UpdateInputInputBuilder {
     /// <p>The name of the input you want to update.</p>
+    /// This field is required.
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateInputInputBuilder {
         &self.input_description
     }
     /// <p>The definition of the input.</p>
+    /// This field is required.
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
         self.input_definition = ::std::option::Option::Some(input);
         self

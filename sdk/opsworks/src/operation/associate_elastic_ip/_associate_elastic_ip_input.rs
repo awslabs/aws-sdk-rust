@@ -34,6 +34,7 @@ pub struct AssociateElasticIpInputBuilder {
 }
 impl AssociateElasticIpInputBuilder {
     /// <p>The Elastic IP address.</p>
+    /// This field is required.
     pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.elastic_ip = ::std::option::Option::Some(input.into());
         self

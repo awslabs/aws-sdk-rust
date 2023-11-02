@@ -28,6 +28,7 @@ pub struct ElasticGpuSpecificationBuilder {
 }
 impl ElasticGpuSpecificationBuilder {
     /// <p>The type of Elastic Graphics accelerator. For more information about the values to specify for <code>Type</code>, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics">Elastic Graphics Basics</a>, specifically the Elastic Graphics accelerator column, in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

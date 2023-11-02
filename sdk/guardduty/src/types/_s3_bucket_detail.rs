@@ -43,8 +43,10 @@ impl S3BucketDetail {
         self.owner.as_ref()
     }
     /// <p>All tags attached to the S3 bucket</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Describes the server side encryption method used in the S3 bucket.</p>
     pub fn default_server_side_encryption(&self) -> ::std::option::Option<&crate::types::DefaultServerSideEncryption> {

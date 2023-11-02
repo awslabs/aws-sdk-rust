@@ -11,12 +11,16 @@ pub struct DescribeRecoveryInstancesRequestFilters {
 }
 impl DescribeRecoveryInstancesRequestFilters {
     /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
-    pub fn recovery_instance_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recovery_instance_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_instance_i_ds.is_none()`.
+    pub fn recovery_instance_i_ds(&self) -> &[::std::string::String] {
+        self.recovery_instance_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
-    pub fn source_server_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_server_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_i_ds.is_none()`.
+    pub fn source_server_i_ds(&self) -> &[::std::string::String] {
+        self.source_server_i_ds.as_deref().unwrap_or_default()
     }
 }
 impl DescribeRecoveryInstancesRequestFilters {

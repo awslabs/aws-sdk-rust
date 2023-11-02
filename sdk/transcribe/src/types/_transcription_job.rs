@@ -152,8 +152,10 @@ impl TranscriptionJob {
         self.identify_multiple_languages
     }
     /// <p>Provides the language codes you specified in your request.</p>
-    pub fn language_options(&self) -> ::std::option::Option<&[crate::types::LanguageCode]> {
-        self.language_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_options.is_none()`.
+    pub fn language_options(&self) -> &[crate::types::LanguageCode] {
+        self.language_options.as_deref().unwrap_or_default()
     }
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
@@ -161,12 +163,16 @@ impl TranscriptionJob {
         self.identified_language_score
     }
     /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification requests, refer to the singular version of this parameter, <code>LanguageCode</code>.</p>
-    pub fn language_codes(&self) -> ::std::option::Option<&[crate::types::LanguageCodeItem]> {
-        self.language_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_codes.is_none()`.
+    pub fn language_codes(&self) -> &[crate::types::LanguageCodeItem] {
+        self.language_codes.as_deref().unwrap_or_default()
     }
     /// <p>The tags, each in the form of a key:value pair, assigned to the specified transcription job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether subtitles were generated with your transcription.</p>
     pub fn subtitles(&self) -> ::std::option::Option<&crate::types::SubtitlesOutput> {
@@ -179,8 +185,10 @@ impl TranscriptionJob {
         self.language_id_settings.as_ref()
     }
     /// <p>Provides information about the toxicity detection settings applied to your transcription.</p>
-    pub fn toxicity_detection(&self) -> ::std::option::Option<&[crate::types::ToxicityDetectionSettings]> {
-        self.toxicity_detection.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.toxicity_detection.is_none()`.
+    pub fn toxicity_detection(&self) -> &[crate::types::ToxicityDetectionSettings] {
+        self.toxicity_detection.as_deref().unwrap_or_default()
     }
 }
 impl TranscriptionJob {

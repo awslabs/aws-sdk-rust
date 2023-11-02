@@ -21,8 +21,10 @@ impl Instance {
         self.confidence
     }
     /// <p>The dominant colors found in an individual instance of a label.</p>
-    pub fn dominant_colors(&self) -> ::std::option::Option<&[crate::types::DominantColor]> {
-        self.dominant_colors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dominant_colors.is_none()`.
+    pub fn dominant_colors(&self) -> &[crate::types::DominantColor] {
+        self.dominant_colors.as_deref().unwrap_or_default()
     }
 }
 impl Instance {

@@ -74,6 +74,7 @@ pub struct PutPrincipalMappingInputBuilder {
 }
 impl PutPrincipalMappingInputBuilder {
     /// <p>The identifier of the index you want to map users to their groups.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl PutPrincipalMappingInputBuilder {
         &self.data_source_id
     }
     /// <p>The identifier of the group you want to map its users to.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +123,7 @@ impl PutPrincipalMappingInputBuilder {
     /// <p>The list that contains your users or sub groups that belong the same group.</p>
     /// <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
+    /// This field is required.
     pub fn group_members(mut self, input: crate::types::GroupMembers) -> Self {
         self.group_members = ::std::option::Option::Some(input);
         self

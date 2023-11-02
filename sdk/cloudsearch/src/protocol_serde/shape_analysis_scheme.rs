@@ -6,22 +6,23 @@ pub fn ser_analysis_scheme(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AnalysisSchemeName");
-    if let Some(var_2) = &input.analysis_scheme_name {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.analysis_scheme_name);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("AnalysisSchemeLanguage");
-    if let Some(var_4) = &input.analysis_scheme_language {
-        scope_3.string(var_4.as_str());
+    let mut scope_2 = writer.prefix("AnalysisSchemeLanguage");
+    {
+        scope_2.string(input.analysis_scheme_language.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("AnalysisOptions");
-    if let Some(var_6) = &input.analysis_options {
-        crate::protocol_serde::shape_analysis_options::ser_analysis_options(scope_5, var_6)?;
+    let mut scope_3 = writer.prefix("AnalysisOptions");
+    if let Some(var_4) = &input.analysis_options {
+        crate::protocol_serde::shape_analysis_options::ser_analysis_options(scope_3, var_4)?;
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_analysis_scheme(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AnalysisScheme, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,7 +31,7 @@ pub fn de_analysis_scheme(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AnalysisSchemeName") /* AnalysisSchemeName com.amazonaws.cloudsearch#AnalysisScheme$AnalysisSchemeName */ =>  {
-                let var_7 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -39,11 +40,11 @@ pub fn de_analysis_scheme(
                         ?
                     )
                 ;
-                builder = builder.set_analysis_scheme_name(var_7);
+                builder = builder.set_analysis_scheme_name(var_5);
             }
             ,
             s if s.matches("AnalysisSchemeLanguage") /* AnalysisSchemeLanguage com.amazonaws.cloudsearch#AnalysisScheme$AnalysisSchemeLanguage */ =>  {
-                let var_8 =
+                let var_6 =
                     Some(
                         Result::<crate::types::AnalysisSchemeLanguage, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AnalysisSchemeLanguage::from(
@@ -53,21 +54,23 @@ pub fn de_analysis_scheme(
                         ?
                     )
                 ;
-                builder = builder.set_analysis_scheme_language(var_8);
+                builder = builder.set_analysis_scheme_language(var_6);
             }
             ,
             s if s.matches("AnalysisOptions") /* AnalysisOptions com.amazonaws.cloudsearch#AnalysisScheme$AnalysisOptions */ =>  {
-                let var_9 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_analysis_options::de_analysis_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_analysis_options(var_9);
+                builder = builder.set_analysis_options(var_7);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::analysis_scheme_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

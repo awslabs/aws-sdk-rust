@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTr31KeyBlock {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
-    pub wrapping_key_identifier: ::std::option::Option<::std::string::String>,
+    pub wrapping_key_identifier: ::std::string::String,
     /// <p>The TR-34 wrapped key block to import.</p>
-    pub wrapped_key_block: ::std::option::Option<::std::string::String>,
+    pub wrapped_key_block: ::std::string::String,
 }
 impl ImportTr31KeyBlock {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
-    pub fn wrapping_key_identifier(&self) -> ::std::option::Option<&str> {
-        self.wrapping_key_identifier.as_deref()
+    pub fn wrapping_key_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.wrapping_key_identifier.deref()
     }
     /// <p>The TR-34 wrapped key block to import.</p>
-    pub fn wrapped_key_block(&self) -> ::std::option::Option<&str> {
-        self.wrapped_key_block.as_deref()
+    pub fn wrapped_key_block(&self) -> &str {
+        use std::ops::Deref;
+        self.wrapped_key_block.deref()
     }
 }
 impl ImportTr31KeyBlock {
@@ -35,6 +37,7 @@ pub struct ImportTr31KeyBlockBuilder {
 }
 impl ImportTr31KeyBlockBuilder {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
+    /// This field is required.
     pub fn wrapping_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ImportTr31KeyBlockBuilder {
         &self.wrapping_key_identifier
     }
     /// <p>The TR-34 wrapped key block to import.</p>
+    /// This field is required.
     pub fn wrapped_key_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapped_key_block = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ImportTr31KeyBlockBuilder {
         &self.wrapped_key_block
     }
     /// Consumes the builder and constructs a [`ImportTr31KeyBlock`](crate::types::ImportTr31KeyBlock).
-    pub fn build(self) -> crate::types::ImportTr31KeyBlock {
-        crate::types::ImportTr31KeyBlock {
-            wrapping_key_identifier: self.wrapping_key_identifier,
-            wrapped_key_block: self.wrapped_key_block,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`wrapping_key_identifier`](crate::types::builders::ImportTr31KeyBlockBuilder::wrapping_key_identifier)
+    /// - [`wrapped_key_block`](crate::types::builders::ImportTr31KeyBlockBuilder::wrapped_key_block)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportTr31KeyBlock, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportTr31KeyBlock {
+            wrapping_key_identifier: self.wrapping_key_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "wrapping_key_identifier",
+                    "wrapping_key_identifier was not specified but it is required when building ImportTr31KeyBlock",
+                )
+            })?,
+            wrapped_key_block: self.wrapped_key_block.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "wrapped_key_block",
+                    "wrapped_key_block was not specified but it is required when building ImportTr31KeyBlock",
+                )
+            })?,
+        })
     }
 }

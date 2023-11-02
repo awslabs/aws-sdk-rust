@@ -49,6 +49,7 @@ impl ValueMappingBuilder {
         &self.display_value
     }
     /// <p>The complex object.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::FormInputValueProperty) -> Self {
         self.value = ::std::option::Option::Some(input);
         self

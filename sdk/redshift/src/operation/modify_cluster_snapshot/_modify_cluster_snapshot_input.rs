@@ -45,6 +45,7 @@ pub struct ModifyClusterSnapshotInputBuilder {
 }
 impl ModifyClusterSnapshotInputBuilder {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
+    /// This field is required.
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self

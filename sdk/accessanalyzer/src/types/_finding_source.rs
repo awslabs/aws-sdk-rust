@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
-    pub r#type: ::std::option::Option<crate::types::FindingSourceType>,
+    pub r#type: crate::types::FindingSourceType,
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub detail: ::std::option::Option<crate::types::FindingSourceDetail>,
 }
 impl FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FindingSourceType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::FindingSourceType {
+        &self.r#type
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn detail(&self) -> ::std::option::Option<&crate::types::FindingSourceDetail> {
@@ -35,6 +35,7 @@ pub struct FindingSourceBuilder {
 }
 impl FindingSourceBuilder {
     /// <p>Indicates the type of access that generated the finding.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::FindingSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl FindingSourceBuilder {
         &self.detail
     }
     /// Consumes the builder and constructs a [`FindingSource`](crate::types::FindingSource).
-    pub fn build(self) -> crate::types::FindingSource {
-        crate::types::FindingSource {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::FindingSourceBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::FindingSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FindingSource {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building FindingSource",
+                )
+            })?,
             detail: self.detail,
-        }
+        })
     }
 }

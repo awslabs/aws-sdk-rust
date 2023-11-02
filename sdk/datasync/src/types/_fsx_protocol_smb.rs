@@ -9,7 +9,7 @@ pub struct FsxProtocolSmb {
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
-    pub password: ::std::option::Option<::std::string::String>,
+    pub password: ::std::string::String,
     /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
     /// <p>If you provide a user in your Active Directory, note the following:</p>
     /// <ul>
@@ -21,7 +21,7 @@ pub struct FsxProtocolSmb {
     /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
     /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
-    pub user: ::std::option::Option<::std::string::String>,
+    pub user: ::std::string::String,
 }
 impl FsxProtocolSmb {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
@@ -33,8 +33,9 @@ impl FsxProtocolSmb {
         self.mount_options.as_ref()
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
-        self.password.as_deref()
+    pub fn password(&self) -> &str {
+        use std::ops::Deref;
+        self.password.deref()
     }
     /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
     /// <p>If you provide a user in your Active Directory, note the following:</p>
@@ -47,8 +48,9 @@ impl FsxProtocolSmb {
     /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
     /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
-    pub fn user(&self) -> ::std::option::Option<&str> {
-        self.user.as_deref()
+    pub fn user(&self) -> &str {
+        use std::ops::Deref;
+        self.user.deref()
     }
 }
 impl ::std::fmt::Debug for FsxProtocolSmb {
@@ -107,6 +109,7 @@ impl FsxProtocolSmbBuilder {
         &self.mount_options
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +134,7 @@ impl FsxProtocolSmbBuilder {
     /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
     /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
         self
@@ -165,13 +169,26 @@ impl FsxProtocolSmbBuilder {
         &self.user
     }
     /// Consumes the builder and constructs a [`FsxProtocolSmb`](crate::types::FsxProtocolSmb).
-    pub fn build(self) -> crate::types::FsxProtocolSmb {
-        crate::types::FsxProtocolSmb {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`password`](crate::types::builders::FsxProtocolSmbBuilder::password)
+    /// - [`user`](crate::types::builders::FsxProtocolSmbBuilder::user)
+    pub fn build(self) -> ::std::result::Result<crate::types::FsxProtocolSmb, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FsxProtocolSmb {
             domain: self.domain,
             mount_options: self.mount_options,
-            password: self.password,
-            user: self.user,
-        }
+            password: self.password.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "password",
+                    "password was not specified but it is required when building FsxProtocolSmb",
+                )
+            })?,
+            user: self.user.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user",
+                    "user was not specified but it is required when building FsxProtocolSmb",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for FsxProtocolSmbBuilder {

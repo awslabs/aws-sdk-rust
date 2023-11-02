@@ -27,6 +27,7 @@ pub struct UpdateAccountConfigurationInputBuilder {
 }
 impl UpdateAccountConfigurationInputBuilder {
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    /// This field is required.
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
         self

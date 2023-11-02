@@ -27,6 +27,7 @@ pub struct DeleteRoleAliasInputBuilder {
 }
 impl DeleteRoleAliasInputBuilder {
     /// <p>The role alias to delete.</p>
+    /// This field is required.
     pub fn role_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_alias = ::std::option::Option::Some(input.into());
         self

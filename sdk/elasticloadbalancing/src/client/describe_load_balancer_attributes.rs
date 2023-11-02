@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoadBalancerAttributes`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::set_load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::describe_load_balancer_attributes::builders::DescribeLoadBalancerAttributesFluentBuilder::set_load_balancer_name):<br>required: **true**<br><p>The name of the load balancer.</p><br>
     /// - On success, responds with [`DescribeLoadBalancerAttributesOutput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput) with field(s):
     ///   - [`load_balancer_attributes(Option<LoadBalancerAttributes>)`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput::load_balancer_attributes): <p>Information about the load balancer attributes.</p>
     /// - On failure, responds with [`SdkError<DescribeLoadBalancerAttributesError>`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError)

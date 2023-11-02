@@ -12,17 +12,17 @@ pub fn ser_search_place_index_for_position_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_2) = &input.position {
-        let mut array_3 = object.key("Position").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_2 = object.key("Position").start_array();
+        for item_3 in &input.position {
             {
-                array_3.value().number(
+                array_2.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_4).into()),
+                    ::aws_smithy_types::Number::Float((*item_3).into()),
                 );
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }

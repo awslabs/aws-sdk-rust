@@ -93,14 +93,14 @@ impl ResetEbsDefaultKmsKeyIdFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput,
             crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

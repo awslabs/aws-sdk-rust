@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceConfigurationInput {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub configuration: ::std::option::Option<::std::string::String>,
+    pub configuration: ::std::string::String,
     /// <p>The ID of the workspace to update.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
     /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
@@ -14,12 +14,14 @@ pub struct UpdateWorkspaceConfigurationInput {
 }
 impl UpdateWorkspaceConfigurationInput {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&str> {
-        self.configuration.as_deref()
+    pub fn configuration(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration.deref()
     }
     /// <p>The ID of the workspace to update.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
@@ -45,6 +47,7 @@ pub struct UpdateWorkspaceConfigurationInputBuilder {
 }
 impl UpdateWorkspaceConfigurationInputBuilder {
     /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self
@@ -59,6 +62,7 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         &self.configuration
     }
     /// <p>The ID of the workspace to update.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +97,9 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         &self.grafana_version
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration`](crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder::configuration)
+    /// - [`workspace_id`](crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -100,8 +107,18 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput {
-            configuration: self.configuration,
-            workspace_id: self.workspace_id,
+            configuration: self.configuration.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configuration",
+                    "configuration was not specified but it is required when building UpdateWorkspaceConfigurationInput",
+                )
+            })?,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building UpdateWorkspaceConfigurationInput",
+                )
+            })?,
             grafana_version: self.grafana_version,
         })
     }

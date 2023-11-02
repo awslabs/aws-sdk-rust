@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlackChannelConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub team_id: ::std::option::Option<::std::string::String>,
+    pub team_id: ::std::string::String,
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub channel_id: ::std::option::Option<::std::string::String>,
+    pub channel_id: ::std::string::String,
     /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -23,12 +23,14 @@ pub struct SlackChannelConfiguration {
 }
 impl SlackChannelConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
-        self.team_id.as_deref()
+    pub fn team_id(&self) -> &str {
+        use std::ops::Deref;
+        self.team_id.deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
-        self.channel_id.as_deref()
+    pub fn channel_id(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_id.deref()
     }
     /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
     pub fn channel_name(&self) -> ::std::option::Option<&str> {
@@ -77,6 +79,7 @@ pub struct SlackChannelConfigurationBuilder {
 }
 impl SlackChannelConfigurationBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    /// This field is required.
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl SlackChannelConfigurationBuilder {
         &self.team_id
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self
@@ -189,16 +193,29 @@ impl SlackChannelConfigurationBuilder {
         &self.channel_role_arn
     }
     /// Consumes the builder and constructs a [`SlackChannelConfiguration`](crate::types::SlackChannelConfiguration).
-    pub fn build(self) -> crate::types::SlackChannelConfiguration {
-        crate::types::SlackChannelConfiguration {
-            team_id: self.team_id,
-            channel_id: self.channel_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`team_id`](crate::types::builders::SlackChannelConfigurationBuilder::team_id)
+    /// - [`channel_id`](crate::types::builders::SlackChannelConfigurationBuilder::channel_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SlackChannelConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SlackChannelConfiguration {
+            team_id: self.team_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "team_id",
+                    "team_id was not specified but it is required when building SlackChannelConfiguration",
+                )
+            })?,
+            channel_id: self.channel_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_id",
+                    "channel_id was not specified but it is required when building SlackChannelConfiguration",
+                )
+            })?,
             channel_name: self.channel_name,
             notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case,
             notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case,
             notify_on_resolve_case: self.notify_on_resolve_case,
             notify_on_case_severity: self.notify_on_case_severity,
             channel_role_arn: self.channel_role_arn,
-        }
+        })
     }
 }

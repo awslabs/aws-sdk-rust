@@ -34,6 +34,7 @@ pub struct DisableClientAuthenticationInputBuilder {
 }
 impl DisableClientAuthenticationInputBuilder {
     /// <p>The identifier of the directory </p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisableClientAuthenticationInputBuilder {
         &self.directory_id
     }
     /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

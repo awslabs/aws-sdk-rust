@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAttributeGroup`](crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attribute_group(impl Into<String>)`](crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder::attribute_group) / [`set_attribute_group(Option<String>)`](crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder::set_attribute_group): <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    ///   - [`attribute_group(impl Into<String>)`](crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder::attribute_group) / [`set_attribute_group(Option<String>)`](crate::operation::delete_attribute_group::builders::DeleteAttributeGroupFluentBuilder::set_attribute_group):<br>required: **true**<br><p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p><br>
     /// - On success, responds with [`DeleteAttributeGroupOutput`](crate::operation::delete_attribute_group::DeleteAttributeGroupOutput) with field(s):
     ///   - [`attribute_group(Option<AttributeGroupSummary>)`](crate::operation::delete_attribute_group::DeleteAttributeGroupOutput::attribute_group): <p>Information about the deleted attribute group.</p>
     /// - On failure, responds with [`SdkError<DeleteAttributeGroupError>`](crate::operation::delete_attribute_group::DeleteAttributeGroupError)

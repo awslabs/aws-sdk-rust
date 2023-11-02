@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseInputDefinition {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
-    pub glue_connection_name: ::std::option::Option<::std::string::String>,
+    pub glue_connection_name: ::std::string::String,
     /// <p>The table within the target database.</p>
     pub database_table_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
@@ -15,8 +15,9 @@ pub struct DatabaseInputDefinition {
 }
 impl DatabaseInputDefinition {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
-    pub fn glue_connection_name(&self) -> ::std::option::Option<&str> {
-        self.glue_connection_name.as_deref()
+    pub fn glue_connection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.glue_connection_name.deref()
     }
     /// <p>The table within the target database.</p>
     pub fn database_table_name(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct DatabaseInputDefinitionBuilder {
 }
 impl DatabaseInputDefinitionBuilder {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
+    /// This field is required.
     pub fn glue_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.glue_connection_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl DatabaseInputDefinitionBuilder {
         &self.query_string
     }
     /// Consumes the builder and constructs a [`DatabaseInputDefinition`](crate::types::DatabaseInputDefinition).
-    pub fn build(self) -> crate::types::DatabaseInputDefinition {
-        crate::types::DatabaseInputDefinition {
-            glue_connection_name: self.glue_connection_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`glue_connection_name`](crate::types::builders::DatabaseInputDefinitionBuilder::glue_connection_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseInputDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatabaseInputDefinition {
+            glue_connection_name: self.glue_connection_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "glue_connection_name",
+                    "glue_connection_name was not specified but it is required when building DatabaseInputDefinition",
+                )
+            })?,
             database_table_name: self.database_table_name,
             temp_directory: self.temp_directory,
             query_string: self.query_string,
-        }
+        })
     }
 }

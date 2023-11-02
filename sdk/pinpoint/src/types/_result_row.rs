@@ -11,12 +11,16 @@ pub struct ResultRow {
 }
 impl ResultRow {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    pub fn grouped_bys(&self) -> ::std::option::Option<&[crate::types::ResultRowValue]> {
-        self.grouped_bys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouped_bys.is_none()`.
+    pub fn grouped_bys(&self) -> &[crate::types::ResultRowValue] {
+        self.grouped_bys.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::ResultRowValue]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::ResultRowValue] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl ResultRow {

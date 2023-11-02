@@ -5,19 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
-    pub policy: ::std::option::Option<::std::string::String>,
+    pub policy: ::std::string::String,
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl PutPermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
-        self.policy.as_deref()
+    pub fn policy(&self) -> &str {
+        use std::ops::Deref;
+        self.policy.deref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PutPermissionOutput {
@@ -42,6 +44,7 @@ pub struct PutPermissionOutputBuilder {
 }
 impl PutPermissionOutputBuilder {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl PutPermissionOutputBuilder {
         &self.policy
     }
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -79,11 +83,26 @@ impl PutPermissionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutPermissionOutput`](crate::operation::put_permission::PutPermissionOutput).
-    pub fn build(self) -> crate::operation::put_permission::PutPermissionOutput {
-        crate::operation::put_permission::PutPermissionOutput {
-            policy: self.policy,
-            revision_id: self.revision_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy`](crate::operation::put_permission::builders::PutPermissionOutputBuilder::policy)
+    /// - [`revision_id`](crate::operation::put_permission::builders::PutPermissionOutputBuilder::revision_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionOutput {
+            policy: self.policy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy",
+                    "policy was not specified but it is required when building PutPermissionOutput",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building PutPermissionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

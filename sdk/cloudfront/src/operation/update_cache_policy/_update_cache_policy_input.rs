@@ -41,6 +41,7 @@ pub struct UpdateCachePolicyInputBuilder {
 }
 impl UpdateCachePolicyInputBuilder {
     /// <p>A cache policy configuration.</p>
+    /// This field is required.
     pub fn cache_policy_config(mut self, input: crate::types::CachePolicyConfig) -> Self {
         self.cache_policy_config = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateCachePolicyInputBuilder {
         &self.cache_policy_config
     }
     /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

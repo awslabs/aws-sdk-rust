@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFilter`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filter_arn(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::filter_arn) / [`set_filter_arn(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_filter_arn): <p>The ARN of the filter to delete.</p>
+    ///   - [`filter_arn(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::filter_arn) / [`set_filter_arn(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_filter_arn):<br>required: **true**<br><p>The ARN of the filter to delete.</p><br>
     /// - On success, responds with [`DeleteFilterOutput`](crate::operation::delete_filter::DeleteFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::operation::delete_filter::DeleteFilterError)
     pub fn delete_filter(&self) -> crate::operation::delete_filter::builders::DeleteFilterFluentBuilder {

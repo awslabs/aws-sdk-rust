@@ -44,12 +44,16 @@ impl DescribeInputOutput {
         self.arn.as_deref()
     }
     /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
-    pub fn attached_channels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attached_channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_channels.is_none()`.
+    pub fn attached_channels(&self) -> &[::std::string::String] {
+        self.attached_channels.as_deref().unwrap_or_default()
     }
     /// A list of the destinations of the input (PUSH-type).
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::InputDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::InputDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// The generated ID of the input (unique for user account, immutable).
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -60,20 +64,26 @@ impl DescribeInputOutput {
         self.input_class.as_ref()
     }
     /// Settings for the input devices.
-    pub fn input_devices(&self) -> ::std::option::Option<&[crate::types::InputDeviceSettings]> {
-        self.input_devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_devices.is_none()`.
+    pub fn input_devices(&self) -> &[crate::types::InputDeviceSettings] {
+        self.input_devices.as_deref().unwrap_or_default()
     }
     /// A list of IDs for all Inputs which are partners of this one.
-    pub fn input_partner_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.input_partner_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_partner_ids.is_none()`.
+    pub fn input_partner_ids(&self) -> &[::std::string::String] {
+        self.input_partner_ids.as_deref().unwrap_or_default()
     }
     /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
     pub fn input_source_type(&self) -> ::std::option::Option<&crate::types::InputSourceType> {
         self.input_source_type.as_ref()
     }
     /// A list of MediaConnect Flows for this input.
-    pub fn media_connect_flows(&self) -> ::std::option::Option<&[crate::types::MediaConnectFlow]> {
-        self.media_connect_flows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_connect_flows.is_none()`.
+    pub fn media_connect_flows(&self) -> &[crate::types::MediaConnectFlow] {
+        self.media_connect_flows.as_deref().unwrap_or_default()
     }
     /// The user-assigned name (This is a mutable value).
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -84,12 +94,16 @@ impl DescribeInputOutput {
         self.role_arn.as_deref()
     }
     /// A list of IDs for all the Input Security Groups attached to the input.
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// A list of the sources of the input (PULL-type).
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::InputSource]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::InputSource] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// Placeholder documentation for InputState
     pub fn state(&self) -> ::std::option::Option<&crate::types::InputState> {

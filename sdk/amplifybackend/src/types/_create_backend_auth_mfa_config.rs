@@ -35,6 +35,7 @@ pub struct CreateBackendAuthMfaConfigBuilder {
 }
 impl CreateBackendAuthMfaConfigBuilder {
     /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
+    /// This field is required.
     pub fn mfa_mode(mut self, input: crate::types::MfaMode) -> Self {
         self.mfa_mode = ::std::option::Option::Some(input);
         self

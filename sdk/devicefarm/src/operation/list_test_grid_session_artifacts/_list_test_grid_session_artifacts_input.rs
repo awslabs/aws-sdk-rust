@@ -48,6 +48,7 @@ pub struct ListTestGridSessionArtifactsInputBuilder {
 }
 impl ListTestGridSessionArtifactsInputBuilder {
     /// <p>The ARN of a <code>TestGridSession</code>. </p>
+    /// This field is required.
     pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_arn = ::std::option::Option::Some(input.into());
         self

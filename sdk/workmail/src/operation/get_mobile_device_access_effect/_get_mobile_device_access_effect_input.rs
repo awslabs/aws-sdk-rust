@@ -55,6 +55,7 @@ pub struct GetMobileDeviceAccessEffectInputBuilder {
 }
 impl GetMobileDeviceAccessEffectInputBuilder {
     /// <p>The WorkMail organization to simulate the access effect for.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

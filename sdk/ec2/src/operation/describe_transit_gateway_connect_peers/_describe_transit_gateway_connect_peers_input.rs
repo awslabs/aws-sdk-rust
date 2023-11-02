@@ -21,8 +21,10 @@ pub struct DescribeTransitGatewayConnectPeersInput {
 }
 impl DescribeTransitGatewayConnectPeersInput {
     /// <p>The IDs of the Connect peers.</p>
-    pub fn transit_gateway_connect_peer_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transit_gateway_connect_peer_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_connect_peer_ids.is_none()`.
+    pub fn transit_gateway_connect_peer_ids(&self) -> &[::std::string::String] {
+        self.transit_gateway_connect_peer_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
@@ -30,8 +32,10 @@ impl DescribeTransitGatewayConnectPeersInput {
     /// <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
     /// <li> <p> <code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

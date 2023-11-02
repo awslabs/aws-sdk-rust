@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAsset`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`asset_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::asset_id) / [`set_asset_id(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_asset_id): <p>The unique identifier for an asset.</p>
-    ///   - [`data_set_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_data_set_id): <p>The unique identifier for a data set.</p>
-    ///   - [`revision_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_revision_id): <p>The unique identifier for a revision.</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::asset_id) / [`set_asset_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_asset_id):<br>required: **true**<br><p>The unique identifier for an asset.</p><br>
+    ///   - [`data_set_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::data_set_id) / [`set_data_set_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
+    ///   - [`revision_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::revision_id) / [`set_revision_id(impl Into<String>)`](crate::operation::delete_asset::builders::DeleteAssetFluentBuilder::set_revision_id):<br>required: **true**<br><p>The unique identifier for a revision.</p><br>
     /// - On success, responds with [`DeleteAssetOutput`](crate::operation::delete_asset::DeleteAssetOutput)
     /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::operation::delete_asset::DeleteAssetError)
     pub fn delete_asset(&self) -> crate::operation::delete_asset::builders::DeleteAssetFluentBuilder {

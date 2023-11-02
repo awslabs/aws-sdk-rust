@@ -9,26 +9,27 @@ pub fn ser_origin_request_policy_config(
         let mut inner_writer = scope.start_el("Comment").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
+    {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.name.as_str());
     }
-    if let Some(var_3) = &input.headers_config {
+    if let Some(var_2) = &input.headers_config {
         let inner_writer = scope.start_el("HeadersConfig");
-        crate::protocol_serde::shape_origin_request_policy_headers_config::ser_origin_request_policy_headers_config(var_3, inner_writer)?
+        crate::protocol_serde::shape_origin_request_policy_headers_config::ser_origin_request_policy_headers_config(var_2, inner_writer)?
     }
-    if let Some(var_4) = &input.cookies_config {
+    if let Some(var_3) = &input.cookies_config {
         let inner_writer = scope.start_el("CookiesConfig");
-        crate::protocol_serde::shape_origin_request_policy_cookies_config::ser_origin_request_policy_cookies_config(var_4, inner_writer)?
+        crate::protocol_serde::shape_origin_request_policy_cookies_config::ser_origin_request_policy_cookies_config(var_3, inner_writer)?
     }
-    if let Some(var_5) = &input.query_strings_config {
+    if let Some(var_4) = &input.query_strings_config {
         let inner_writer = scope.start_el("QueryStringsConfig");
-        crate::protocol_serde::shape_origin_request_policy_query_strings_config::ser_origin_request_policy_query_strings_config(var_5, inner_writer)?
+        crate::protocol_serde::shape_origin_request_policy_query_strings_config::ser_origin_request_policy_query_strings_config(var_4, inner_writer)?
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_origin_request_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::OriginRequestPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -37,6 +38,19 @@ pub fn de_origin_request_policy_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#OriginRequestPolicyConfig$Comment */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_comment(var_5);
+            }
+            ,
+            s if s.matches("Name") /* Name com.amazonaws.cloudfront#OriginRequestPolicyConfig$Name */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -46,54 +60,43 @@ pub fn de_origin_request_policy_config(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_6);
-            }
-            ,
-            s if s.matches("Name") /* Name com.amazonaws.cloudfront#OriginRequestPolicyConfig$Name */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_7);
+                builder = builder.set_name(var_6);
             }
             ,
             s if s.matches("HeadersConfig") /* HeadersConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$HeadersConfig */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_origin_request_policy_headers_config::de_origin_request_policy_headers_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_headers_config(var_8);
+                builder = builder.set_headers_config(var_7);
             }
             ,
             s if s.matches("CookiesConfig") /* CookiesConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$CookiesConfig */ =>  {
-                let var_9 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_origin_request_policy_cookies_config::de_origin_request_policy_cookies_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cookies_config(var_9);
+                builder = builder.set_cookies_config(var_8);
             }
             ,
             s if s.matches("QueryStringsConfig") /* QueryStringsConfig com.amazonaws.cloudfront#OriginRequestPolicyConfig$QueryStringsConfig */ =>  {
-                let var_10 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_origin_request_policy_query_strings_config::de_origin_request_policy_query_strings_config(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_query_strings_config(var_10);
+                builder = builder.set_query_strings_config(var_9);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::origin_request_policy_config_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

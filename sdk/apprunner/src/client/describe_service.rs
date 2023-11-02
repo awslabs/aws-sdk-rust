@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeService`](crate::operation::describe_service::builders::DescribeServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_arn(impl Into<String>)`](crate::operation::describe_service::builders::DescribeServiceFluentBuilder::service_arn) / [`set_service_arn(Option<String>)`](crate::operation::describe_service::builders::DescribeServiceFluentBuilder::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
+    ///   - [`service_arn(impl Into<String>)`](crate::operation::describe_service::builders::DescribeServiceFluentBuilder::service_arn) / [`set_service_arn(Option<String>)`](crate::operation::describe_service::builders::DescribeServiceFluentBuilder::set_service_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p><br>
     /// - On success, responds with [`DescribeServiceOutput`](crate::operation::describe_service::DescribeServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::describe_service::DescribeServiceOutput::service): <p>A full description of the App Runner service that you specified in this request.</p>
     /// - On failure, responds with [`SdkError<DescribeServiceError>`](crate::operation::describe_service::DescribeServiceError)

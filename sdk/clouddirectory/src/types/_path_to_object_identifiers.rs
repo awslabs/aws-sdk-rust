@@ -15,8 +15,10 @@ impl PathToObjectIdentifiers {
         self.path.as_deref()
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn object_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.object_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_identifiers.is_none()`.
+    pub fn object_identifiers(&self) -> &[::std::string::String] {
+        self.object_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl PathToObjectIdentifiers {

@@ -35,16 +35,20 @@ impl UpdateChannelInput {
         self.channel_id.as_deref()
     }
     /// A list of output destinations for this channel.
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::OutputDestination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::OutputDestination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// The encoder settings for this channel.
     pub fn encoder_settings(&self) -> ::std::option::Option<&crate::types::EncoderSettings> {
         self.encoder_settings.as_ref()
     }
     /// Placeholder documentation for __listOfInputAttachment
-    pub fn input_attachments(&self) -> ::std::option::Option<&[crate::types::InputAttachment]> {
-        self.input_attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_attachments.is_none()`.
+    pub fn input_attachments(&self) -> &[crate::types::InputAttachment] {
+        self.input_attachments.as_deref().unwrap_or_default()
     }
     /// Specification of network and file inputs for this channel
     pub fn input_specification(&self) -> ::std::option::Option<&crate::types::InputSpecification> {
@@ -105,6 +109,7 @@ impl UpdateChannelInputBuilder {
         &self.cdi_input_specification
     }
     /// channel ID
+    /// This field is required.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
         self

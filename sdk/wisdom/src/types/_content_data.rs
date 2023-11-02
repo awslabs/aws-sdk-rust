@@ -5,74 +5,82 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub content_arn: ::std::option::Option<::std::string::String>,
+    pub content_arn: ::std::string::String,
     /// <p>The identifier of the content.</p>
-    pub content_id: ::std::option::Option<::std::string::String>,
+    pub content_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub knowledge_base_arn: ::std::option::Option<::std::string::String>,
+    pub knowledge_base_arn: ::std::string::String,
     /// <p>The identifier of the knowledge base.</p>
-    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub knowledge_base_id: ::std::string::String,
     /// <p>The name of the content.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The identifier of the content revision.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
     /// <p>The title of the content.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The media type of the content.</p>
-    pub content_type: ::std::option::Option<::std::string::String>,
+    pub content_type: ::std::string::String,
     /// <p>The status of the content.</p>
-    pub status: ::std::option::Option<crate::types::ContentStatus>,
+    pub status: crate::types::ContentStatus,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The URI of the content.</p>
     pub link_out_uri: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the content.</p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub url_expiry: ::aws_smithy_types::DateTime,
 }
 impl ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(&self) -> ::std::option::Option<&str> {
-        self.content_arn.as_deref()
+    pub fn content_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.content_arn.deref()
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(&self) -> ::std::option::Option<&str> {
-        self.content_id.as_deref()
+    pub fn content_id(&self) -> &str {
+        use std::ops::Deref;
+        self.content_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> ::std::option::Option<&str> {
-        self.knowledge_base_arn.as_deref()
+    pub fn knowledge_base_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.knowledge_base_arn.deref()
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
-        self.knowledge_base_id.as_deref()
+    pub fn knowledge_base_id(&self) -> &str {
+        use std::ops::Deref;
+        self.knowledge_base_id.deref()
     }
     /// <p>The name of the content.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The identifier of the content revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
     /// <p>The title of the content.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The media type of the content.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
-        self.content_type.as_deref()
+    pub fn content_type(&self) -> &str {
+        use std::ops::Deref;
+        self.content_type.deref()
     }
     /// <p>The status of the content.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ContentStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ContentStatus {
+        &self.status
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.metadata.as_ref()
+    pub fn metadata(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.metadata
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -83,12 +91,13 @@ impl ContentData {
         self.link_out_uri.as_deref()
     }
     /// <p>The URL of the content.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.url_expiry.as_ref()
+    pub fn url_expiry(&self) -> &::aws_smithy_types::DateTime {
+        &self.url_expiry
     }
 }
 impl ::std::fmt::Debug for ContentData {
@@ -139,6 +148,7 @@ pub struct ContentDataBuilder {
 }
 impl ContentDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    /// This field is required.
     pub fn content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_arn = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +163,7 @@ impl ContentDataBuilder {
         &self.content_arn
     }
     /// <p>The identifier of the content.</p>
+    /// This field is required.
     pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_id = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +178,7 @@ impl ContentDataBuilder {
         &self.content_id
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    /// This field is required.
     pub fn knowledge_base_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_arn = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +193,7 @@ impl ContentDataBuilder {
         &self.knowledge_base_arn
     }
     /// <p>The identifier of the knowledge base.</p>
+    /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +208,7 @@ impl ContentDataBuilder {
         &self.knowledge_base_id
     }
     /// <p>The name of the content.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +223,7 @@ impl ContentDataBuilder {
         &self.name
     }
     /// <p>The identifier of the content revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +238,7 @@ impl ContentDataBuilder {
         &self.revision_id
     }
     /// <p>The title of the content.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -237,6 +253,7 @@ impl ContentDataBuilder {
         &self.title
     }
     /// <p>The media type of the content.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +268,7 @@ impl ContentDataBuilder {
         &self.content_type
     }
     /// <p>The status of the content.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ContentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -319,6 +337,7 @@ impl ContentDataBuilder {
         &self.link_out_uri
     }
     /// <p>The URL of the content.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -333,6 +352,7 @@ impl ContentDataBuilder {
         &self.url
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    /// This field is required.
     pub fn url_expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.url_expiry = ::std::option::Option::Some(input);
         self
@@ -347,23 +367,96 @@ impl ContentDataBuilder {
         &self.url_expiry
     }
     /// Consumes the builder and constructs a [`ContentData`](crate::types::ContentData).
-    pub fn build(self) -> crate::types::ContentData {
-        crate::types::ContentData {
-            content_arn: self.content_arn,
-            content_id: self.content_id,
-            knowledge_base_arn: self.knowledge_base_arn,
-            knowledge_base_id: self.knowledge_base_id,
-            name: self.name,
-            revision_id: self.revision_id,
-            title: self.title,
-            content_type: self.content_type,
-            status: self.status,
-            metadata: self.metadata,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content_arn`](crate::types::builders::ContentDataBuilder::content_arn)
+    /// - [`content_id`](crate::types::builders::ContentDataBuilder::content_id)
+    /// - [`knowledge_base_arn`](crate::types::builders::ContentDataBuilder::knowledge_base_arn)
+    /// - [`knowledge_base_id`](crate::types::builders::ContentDataBuilder::knowledge_base_id)
+    /// - [`name`](crate::types::builders::ContentDataBuilder::name)
+    /// - [`revision_id`](crate::types::builders::ContentDataBuilder::revision_id)
+    /// - [`title`](crate::types::builders::ContentDataBuilder::title)
+    /// - [`content_type`](crate::types::builders::ContentDataBuilder::content_type)
+    /// - [`status`](crate::types::builders::ContentDataBuilder::status)
+    /// - [`metadata`](crate::types::builders::ContentDataBuilder::metadata)
+    /// - [`url`](crate::types::builders::ContentDataBuilder::url)
+    /// - [`url_expiry`](crate::types::builders::ContentDataBuilder::url_expiry)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContentData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContentData {
+            content_arn: self.content_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_arn",
+                    "content_arn was not specified but it is required when building ContentData",
+                )
+            })?,
+            content_id: self.content_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_id",
+                    "content_id was not specified but it is required when building ContentData",
+                )
+            })?,
+            knowledge_base_arn: self.knowledge_base_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "knowledge_base_arn",
+                    "knowledge_base_arn was not specified but it is required when building ContentData",
+                )
+            })?,
+            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "knowledge_base_id",
+                    "knowledge_base_id was not specified but it is required when building ContentData",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ContentData",
+                )
+            })?,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building ContentData",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building ContentData",
+                )
+            })?,
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building ContentData",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building ContentData",
+                )
+            })?,
+            metadata: self.metadata.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metadata",
+                    "metadata was not specified but it is required when building ContentData",
+                )
+            })?,
             tags: self.tags,
             link_out_uri: self.link_out_uri,
-            url: self.url,
-            url_expiry: self.url_expiry,
-        }
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building ContentData",
+                )
+            })?,
+            url_expiry: self.url_expiry.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url_expiry",
+                    "url_expiry was not specified but it is required when building ContentData",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ContentDataBuilder {

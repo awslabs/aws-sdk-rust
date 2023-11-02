@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateList {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
-    pub signing_alg: ::std::option::Option<crate::types::SigningAlg>,
+    pub signing_alg: crate::types::SigningAlg,
     /// <p>The value of the chosen sidewalk certificate.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl CertificateList {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
-    pub fn signing_alg(&self) -> ::std::option::Option<&crate::types::SigningAlg> {
-        self.signing_alg.as_ref()
+    pub fn signing_alg(&self) -> &crate::types::SigningAlg {
+        &self.signing_alg
     }
     /// <p>The value of the chosen sidewalk certificate.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl CertificateList {
@@ -35,6 +36,7 @@ pub struct CertificateListBuilder {
 }
 impl CertificateListBuilder {
     /// <p>The certificate chain algorithm provided by sidewalk.</p>
+    /// This field is required.
     pub fn signing_alg(mut self, input: crate::types::SigningAlg) -> Self {
         self.signing_alg = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl CertificateListBuilder {
         &self.signing_alg
     }
     /// <p>The value of the chosen sidewalk certificate.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl CertificateListBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`CertificateList`](crate::types::CertificateList).
-    pub fn build(self) -> crate::types::CertificateList {
-        crate::types::CertificateList {
-            signing_alg: self.signing_alg,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`signing_alg`](crate::types::builders::CertificateListBuilder::signing_alg)
+    /// - [`value`](crate::types::builders::CertificateListBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CertificateList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CertificateList {
+            signing_alg: self.signing_alg.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "signing_alg",
+                    "signing_alg was not specified but it is required when building CertificateList",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building CertificateList",
+                )
+            })?,
+        })
     }
 }

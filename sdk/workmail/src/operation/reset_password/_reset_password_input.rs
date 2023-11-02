@@ -50,6 +50,7 @@ pub struct ResetPasswordInputBuilder {
 }
 impl ResetPasswordInputBuilder {
     /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ResetPasswordInputBuilder {
         &self.organization_id
     }
     /// <p>The identifier of the user for whom the password is reset.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl ResetPasswordInputBuilder {
         &self.user_id
     }
     /// <p>The new password for the user.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self

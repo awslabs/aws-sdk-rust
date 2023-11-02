@@ -52,8 +52,10 @@ impl CreateDataRepositoryTaskInput {
     /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
     /// </note> </li>
     /// </ul>
-    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
+    pub fn paths(&self) -> &[::std::string::String] {
+        self.paths.as_deref().unwrap_or_default()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn file_system_id(&self) -> ::std::option::Option<&str> {
@@ -68,8 +70,10 @@ impl CreateDataRepositoryTaskInput {
         self.client_request_token.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
     pub fn capacity_to_release(&self) -> ::std::option::Option<i64> {
@@ -108,6 +112,7 @@ impl CreateDataRepositoryTaskInputBuilder {
     /// <li> <p> <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx for Lustre file system that have been exported to a linked S3 bucket and that meet your specified release criteria.</p> </li>
     /// <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataRepositoryTaskType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -175,6 +180,7 @@ impl CreateDataRepositoryTaskInputBuilder {
         &self.paths
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +195,7 @@ impl CreateDataRepositoryTaskInputBuilder {
         &self.file_system_id
     }
     /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
+    /// This field is required.
     pub fn report(mut self, input: crate::types::CompletionReport) -> Self {
         self.report = ::std::option::Option::Some(input);
         self

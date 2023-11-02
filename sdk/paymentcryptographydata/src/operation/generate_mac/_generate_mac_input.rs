@@ -58,6 +58,7 @@ pub struct GenerateMacInputBuilder {
 }
 impl GenerateMacInputBuilder {
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
+    /// This field is required.
     pub fn key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_identifier = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl GenerateMacInputBuilder {
         &self.key_identifier
     }
     /// <p>The data for which a MAC is under generation.</p>
+    /// This field is required.
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_data = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl GenerateMacInputBuilder {
         &self.message_data
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
+    /// This field is required.
     pub fn generation_attributes(mut self, input: crate::types::MacAttributes) -> Self {
         self.generation_attributes = ::std::option::Option::Some(input);
         self

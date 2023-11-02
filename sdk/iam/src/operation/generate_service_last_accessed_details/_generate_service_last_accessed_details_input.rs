@@ -34,6 +34,7 @@ pub struct GenerateServiceLastAccessedDetailsInputBuilder {
 }
 impl GenerateServiceLastAccessedDetailsInputBuilder {
     /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

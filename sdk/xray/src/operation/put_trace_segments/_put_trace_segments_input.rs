@@ -8,8 +8,10 @@ pub struct PutTraceSegmentsInput {
 }
 impl PutTraceSegmentsInput {
     /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
-    pub fn trace_segment_documents(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.trace_segment_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trace_segment_documents.is_none()`.
+    pub fn trace_segment_documents(&self) -> &[::std::string::String] {
+        self.trace_segment_documents.as_deref().unwrap_or_default()
     }
 }
 impl PutTraceSegmentsInput {

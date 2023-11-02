@@ -28,11 +28,10 @@ pub fn de_instantiate_sol_network_instance_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => {
@@ -44,11 +43,10 @@ pub fn de_instantiate_sol_network_instance_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                         .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -62,11 +60,10 @@ pub fn de_instantiate_sol_network_instance_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -82,11 +79,10 @@ pub fn de_instantiate_sol_network_instance_http_error(
                     )
                     .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -98,11 +94,10 @@ pub fn de_instantiate_sol_network_instance_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::ValidationException({
@@ -113,11 +108,10 @@ pub fn de_instantiate_sol_network_instance_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::generic(generic),
@@ -139,7 +133,9 @@ pub fn de_instantiate_sol_network_instance_http_response(
         output = crate::protocol_serde::shape_instantiate_sol_network_instance::de_instantiate_sol_network_instance(_response_body, output)
             .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::instantiate_sol_network_instance_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::unhandled)?
     })
 }
 

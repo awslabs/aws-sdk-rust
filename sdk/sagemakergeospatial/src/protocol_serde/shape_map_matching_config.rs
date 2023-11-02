@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::map_matching_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -64,17 +66,17 @@ pub fn ser_map_matching_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MapMatchingConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.id_attribute_name {
-        object.key("IdAttributeName").string(var_1.as_str());
+    {
+        object.key("IdAttributeName").string(input.id_attribute_name.as_str());
     }
-    if let Some(var_2) = &input.y_attribute_name {
-        object.key("YAttributeName").string(var_2.as_str());
+    {
+        object.key("YAttributeName").string(input.y_attribute_name.as_str());
     }
-    if let Some(var_3) = &input.x_attribute_name {
-        object.key("XAttributeName").string(var_3.as_str());
+    {
+        object.key("XAttributeName").string(input.x_attribute_name.as_str());
     }
-    if let Some(var_4) = &input.timestamp_attribute_name {
-        object.key("TimestampAttributeName").string(var_4.as_str());
+    {
+        object.key("TimestampAttributeName").string(input.timestamp_attribute_name.as_str());
     }
     Ok(())
 }

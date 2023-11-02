@@ -6,17 +6,17 @@ pub fn ser_list_databases_input(
     if let Some(var_1) = &input.cluster_identifier {
         object.key("ClusterIdentifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database {
-        object.key("Database").string(var_2.as_str());
+    {
+        object.key("Database").string(input.database.as_str());
     }
-    if let Some(var_3) = &input.secret_arn {
-        object.key("SecretArn").string(var_3.as_str());
+    if let Some(var_2) = &input.secret_arn {
+        object.key("SecretArn").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.db_user {
-        object.key("DbUser").string(var_4.as_str());
+    if let Some(var_3) = &input.db_user {
+        object.key("DbUser").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("NextToken").string(var_5.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("NextToken").string(var_4.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -24,8 +24,8 @@ pub fn ser_list_databases_input(
             ::aws_smithy_types::Number::NegInt((input.max_results).into()),
         );
     }
-    if let Some(var_6) = &input.workgroup_name {
-        object.key("WorkgroupName").string(var_6.as_str());
+    if let Some(var_5) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_5.as_str());
     }
     Ok(())
 }

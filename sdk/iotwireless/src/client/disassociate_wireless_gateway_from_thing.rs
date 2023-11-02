@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateWirelessGatewayFromThing`](crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingFluentBuilder::set_id): <p>The ID of the resource to update.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the resource to update.</p><br>
     /// - On success, responds with [`DisassociateWirelessGatewayFromThingOutput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingOutput)
     /// - On failure, responds with [`SdkError<DisassociateWirelessGatewayFromThingError>`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingError)
     pub fn disassociate_wireless_gateway_from_thing(

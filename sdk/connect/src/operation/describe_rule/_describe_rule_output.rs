@@ -34,6 +34,7 @@ pub struct DescribeRuleOutputBuilder {
 }
 impl DescribeRuleOutputBuilder {
     /// <p>Information about the rule.</p>
+    /// This field is required.
     pub fn rule(mut self, input: crate::types::Rule) -> Self {
         self.rule = ::std::option::Option::Some(input);
         self

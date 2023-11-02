@@ -34,6 +34,7 @@ pub struct GetMailDomainInputBuilder {
 }
 impl GetMailDomainInputBuilder {
     /// <p>The WorkMail organization for which the domain is retrieved.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetMailDomainInputBuilder {
         &self.organization_id
     }
     /// <p>The domain from which you want to retrieve details.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

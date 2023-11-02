@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Task {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
-    pub status: ::std::option::Option<crate::types::Status>,
+    pub status: crate::types::Status,
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
     pub status_detail: ::std::option::Option<::std::string::String>,
     /// <p>Indication of the percentage completion of the task.</p>
@@ -13,8 +13,8 @@ pub struct Task {
 }
 impl Task {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::Status {
+        &self.status
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
     pub fn status_detail(&self) -> ::std::option::Option<&str> {
@@ -42,6 +42,7 @@ pub struct TaskBuilder {
 }
 impl TaskBuilder {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl TaskBuilder {
         &self.progress_percent
     }
     /// Consumes the builder and constructs a [`Task`](crate::types::Task).
-    pub fn build(self) -> crate::types::Task {
-        crate::types::Task {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::TaskBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::Task, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Task {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Task",
+                )
+            })?,
             status_detail: self.status_detail,
             progress_percent: self.progress_percent,
-        }
+        })
     }
 }

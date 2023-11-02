@@ -20,8 +20,10 @@ impl DescribeIpamResourceDiscoveriesInput {
         self.dry_run
     }
     /// <p>The IPAM resource discovery IDs.</p>
-    pub fn ipam_resource_discovery_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipam_resource_discovery_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_resource_discovery_ids.is_none()`.
+    pub fn ipam_resource_discovery_ids(&self) -> &[::std::string::String] {
+        self.ipam_resource_discovery_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -32,8 +34,10 @@ impl DescribeIpamResourceDiscoveriesInput {
         self.max_results
     }
     /// <p>The resource discovery filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl DescribeIpamResourceDiscoveriesInput {

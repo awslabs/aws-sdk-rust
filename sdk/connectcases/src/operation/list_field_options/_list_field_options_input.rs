@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The unique identifier of a field.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -16,12 +16,14 @@ pub struct ListFieldOptionsInput {
 }
 impl ListFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -32,8 +34,10 @@ impl ListFieldOptionsInput {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl ListFieldOptionsInput {
@@ -55,6 +59,7 @@ pub struct ListFieldOptionsInputBuilder {
 }
 impl ListFieldOptionsInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl ListFieldOptionsInputBuilder {
         &self.domain_id
     }
     /// <p>The unique identifier of a field.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -131,12 +137,25 @@ impl ListFieldOptionsInputBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder::domain_id)
+    /// - [`field_id`](crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder::field_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_field_options::ListFieldOptionsInput {
-            domain_id: self.domain_id,
-            field_id: self.field_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building ListFieldOptionsInput",
+                )
+            })?,
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building ListFieldOptionsInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
             values: self.values,

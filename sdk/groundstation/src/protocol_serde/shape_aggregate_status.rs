@@ -3,18 +3,18 @@ pub fn ser_aggregate_status(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateStatus,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("status").string(var_1.as_str());
+    {
+        object.key("status").string(input.status.as_str());
     }
-    if let Some(var_2) = &input.signature_map {
+    if let Some(var_1) = &input.signature_map {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("signatureMap").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("signatureMap").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_3.key(key_4.as_str()).boolean(*value_5);
+                object_2.key(key_3.as_str()).boolean(*value_4);
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
     Ok(())
 }

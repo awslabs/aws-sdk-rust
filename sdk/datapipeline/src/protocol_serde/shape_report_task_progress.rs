@@ -114,7 +114,7 @@ pub fn de_report_task_progress_http_response(
         output = crate::protocol_serde::shape_report_task_progress::de_report_task_progress(_response_body, output)
             .map_err(crate::operation::report_task_progress::ReportTaskProgressError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::report_task_progress_output_correct_errors(output).build()
     })
 }
 

@@ -3,14 +3,14 @@ pub fn ser_update_deletion_protection_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_deletion_protection::UpdateDeletionProtectionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.arn {
-        object.key("arn").string(var_1.as_str());
+    {
+        object.key("arn").string(input.arn.as_str());
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("clientToken").string(var_2.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.deletion_protected {
-        object.key("deletionProtected").boolean(*var_3);
+    {
+        object.key("deletionProtected").boolean(input.deletion_protected);
     }
     Ok(())
 }

@@ -13,16 +13,22 @@ pub struct WaterfallChartAggregatedFieldWells {
 }
 impl WaterfallChartAggregatedFieldWells {
     /// <p>The category field wells of a waterfall visual.</p>
-    pub fn categories(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
+    pub fn categories(&self) -> &[crate::types::DimensionField] {
+        self.categories.as_deref().unwrap_or_default()
     }
     /// <p>The value field wells of a waterfall visual.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    pub fn breakdowns(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.breakdowns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.breakdowns.is_none()`.
+    pub fn breakdowns(&self) -> &[crate::types::DimensionField] {
+        self.breakdowns.as_deref().unwrap_or_default()
     }
 }
 impl WaterfallChartAggregatedFieldWells {

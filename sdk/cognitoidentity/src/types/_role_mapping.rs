@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoleMapping {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
-    pub r#type: ::std::option::Option<crate::types::RoleMappingType>,
+    pub r#type: crate::types::RoleMappingType,
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
     pub ambiguous_role_resolution: ::std::option::Option<crate::types::AmbiguousRoleResolutionType>,
@@ -15,8 +15,8 @@ pub struct RoleMapping {
 }
 impl RoleMapping {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RoleMappingType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::RoleMappingType {
+        &self.r#type
     }
     /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
     /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
@@ -46,6 +46,7 @@ pub struct RoleMappingBuilder {
 }
 impl RoleMappingBuilder {
     /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RoleMappingType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -94,11 +95,18 @@ impl RoleMappingBuilder {
         &self.rules_configuration
     }
     /// Consumes the builder and constructs a [`RoleMapping`](crate::types::RoleMapping).
-    pub fn build(self) -> crate::types::RoleMapping {
-        crate::types::RoleMapping {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::RoleMappingBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RoleMapping, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RoleMapping {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building RoleMapping",
+                )
+            })?,
             ambiguous_role_resolution: self.ambiguous_role_resolution,
             rules_configuration: self.rules_configuration,
-        }
+        })
     }
 }

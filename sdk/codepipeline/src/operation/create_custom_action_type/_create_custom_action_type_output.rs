@@ -16,8 +16,10 @@ impl CreateCustomActionTypeOutput {
         self.action_type.as_ref()
     }
     /// <p>Specifies the tags applied to the custom action.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateCustomActionTypeOutput {
@@ -42,6 +44,7 @@ pub struct CreateCustomActionTypeOutputBuilder {
 }
 impl CreateCustomActionTypeOutputBuilder {
     /// <p>Returns information about the details of an action type.</p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self

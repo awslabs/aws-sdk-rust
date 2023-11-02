@@ -47,8 +47,10 @@ impl Permission {
     /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
     /// <li> <p> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
     /// </ul>
-    pub fn access(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.access.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access.is_none()`.
+    pub fn access(&self) -> &[::std::string::String] {
+        self.access.as_deref().unwrap_or_default()
     }
 }
 impl Permission {

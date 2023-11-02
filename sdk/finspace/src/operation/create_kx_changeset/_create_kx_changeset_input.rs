@@ -38,8 +38,10 @@ impl CreateKxChangesetInput {
     /// <p>Here is an example of how you can use the change request object:</p>
     /// <p> <code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}, { "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}, { "changeType": "DELETE", "dbPath": "/2020.01.01/"} ]</code> </p>
     /// <p>In this example, the first request with <i>PUT</i> change type allows you to add files in the given s3Path under the <i>2020.01.02</i> partition of the database. The second request with <i>PUT</i> change type allows you to add a single sym file at database root location. The last request with <i>DELETE</i> change type allows you to delete the files under the <i>2020.01.01</i> partition of the database. </p>
-    pub fn change_requests(&self) -> ::std::option::Option<&[crate::types::ChangeRequest]> {
-        self.change_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_requests.is_none()`.
+    pub fn change_requests(&self) -> &[crate::types::ChangeRequest] {
+        self.change_requests.as_deref().unwrap_or_default()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -64,6 +66,7 @@ pub struct CreateKxChangesetInputBuilder {
 }
 impl CreateKxChangesetInputBuilder {
     /// <p>A unique identifier of the kdb environment.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +81,7 @@ impl CreateKxChangesetInputBuilder {
         &self.environment_id
     }
     /// <p>The name of the kdb database.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +140,7 @@ impl CreateKxChangesetInputBuilder {
         &self.change_requests
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

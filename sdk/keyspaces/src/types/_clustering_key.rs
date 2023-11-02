@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    pub order_by: ::std::option::Option<crate::types::SortOrder>,
+    pub order_by: crate::types::SortOrder,
 }
 impl ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&crate::types::SortOrder> {
-        self.order_by.as_ref()
+    pub fn order_by(&self) -> &crate::types::SortOrder {
+        &self.order_by
     }
 }
 impl ClusteringKey {
@@ -35,6 +36,7 @@ pub struct ClusteringKeyBuilder {
 }
 impl ClusteringKeyBuilder {
     /// <p>The name(s) of the clustering column(s).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ClusteringKeyBuilder {
         &self.name
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
+    /// This field is required.
     pub fn order_by(mut self, input: crate::types::SortOrder) -> Self {
         self.order_by = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ClusteringKeyBuilder {
         &self.order_by
     }
     /// Consumes the builder and constructs a [`ClusteringKey`](crate::types::ClusteringKey).
-    pub fn build(self) -> crate::types::ClusteringKey {
-        crate::types::ClusteringKey {
-            name: self.name,
-            order_by: self.order_by,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ClusteringKeyBuilder::name)
+    /// - [`order_by`](crate::types::builders::ClusteringKeyBuilder::order_by)
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusteringKey, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ClusteringKey {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ClusteringKey",
+                )
+            })?,
+            order_by: self.order_by.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "order_by",
+                    "order_by was not specified but it is required when building ClusteringKey",
+                )
+            })?,
+        })
     }
 }

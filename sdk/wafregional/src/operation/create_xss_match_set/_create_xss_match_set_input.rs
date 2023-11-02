@@ -35,6 +35,7 @@ pub struct CreateXssMatchSetInputBuilder {
 }
 impl CreateXssMatchSetInputBuilder {
     /// <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl CreateXssMatchSetInputBuilder {
         &self.name
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DeleteDomainInputBuilder {
 }
 impl DeleteDomainInputBuilder {
     /// <p>The identifier of the Amazon Web Services domain that is to be deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

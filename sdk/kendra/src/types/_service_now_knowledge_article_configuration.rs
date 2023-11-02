@@ -11,7 +11,7 @@ pub struct ServiceNowKnowledgeArticleConfiguration {
     /// <p>A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     pub exclude_attachment_file_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
-    pub document_data_field_name: ::std::option::Option<::std::string::String>,
+    pub document_data_field_name: ::std::string::String,
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps attributes or field names of knoweldge articles to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
@@ -26,24 +26,31 @@ impl ServiceNowKnowledgeArticleConfiguration {
         self.crawl_attachments
     }
     /// <p>A list of regular expression patterns applied to include knowledge article attachments. Attachments that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    pub fn include_attachment_file_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.include_attachment_file_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_attachment_file_patterns.is_none()`.
+    pub fn include_attachment_file_patterns(&self) -> &[::std::string::String] {
+        self.include_attachment_file_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
-    pub fn exclude_attachment_file_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_attachment_file_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_attachment_file_patterns.is_none()`.
+    pub fn exclude_attachment_file_patterns(&self) -> &[::std::string::String] {
+        self.exclude_attachment_file_patterns.as_deref().unwrap_or_default()
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
-    pub fn document_data_field_name(&self) -> ::std::option::Option<&str> {
-        self.document_data_field_name.as_deref()
+    pub fn document_data_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.document_data_field_name.deref()
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
     pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps attributes or field names of knoweldge articles to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A query that selects the knowledge articles to index. The query can return articles from multiple knowledge bases, and the knowledge bases can be public or private.</p>
     /// <p>The query string must be one generated by the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/servicenow-query.html">Specifying documents to index with a query</a>. </p>
@@ -126,6 +133,7 @@ impl ServiceNowKnowledgeArticleConfigurationBuilder {
         &self.exclude_attachment_file_patterns
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
+    /// This field is required.
     pub fn document_data_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_data_field_name = ::std::option::Option::Some(input.into());
         self
@@ -191,15 +199,24 @@ impl ServiceNowKnowledgeArticleConfigurationBuilder {
         &self.filter_query
     }
     /// Consumes the builder and constructs a [`ServiceNowKnowledgeArticleConfiguration`](crate::types::ServiceNowKnowledgeArticleConfiguration).
-    pub fn build(self) -> crate::types::ServiceNowKnowledgeArticleConfiguration {
-        crate::types::ServiceNowKnowledgeArticleConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`document_data_field_name`](crate::types::builders::ServiceNowKnowledgeArticleConfigurationBuilder::document_data_field_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ServiceNowKnowledgeArticleConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceNowKnowledgeArticleConfiguration {
             crawl_attachments: self.crawl_attachments.unwrap_or_default(),
             include_attachment_file_patterns: self.include_attachment_file_patterns,
             exclude_attachment_file_patterns: self.exclude_attachment_file_patterns,
-            document_data_field_name: self.document_data_field_name,
+            document_data_field_name: self.document_data_field_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "document_data_field_name",
+                    "document_data_field_name was not specified but it is required when building ServiceNowKnowledgeArticleConfiguration",
+                )
+            })?,
             document_title_field_name: self.document_title_field_name,
             field_mappings: self.field_mappings,
             filter_query: self.filter_query,
-        }
+        })
     }
 }

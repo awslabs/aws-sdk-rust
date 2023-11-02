@@ -11,7 +11,7 @@ pub struct PrivateKeyFlagsV3 {
     /// <p>Reguires the PKCS #1 v2.1 signature format for certificates. You should verify that your CA, objects, and applications can accept this signature format.</p>
     pub require_alternate_signature_algorithm: ::std::option::Option<bool>,
     /// <p>Defines the minimum client compatibility.</p>
-    pub client_version: ::std::option::Option<crate::types::ClientCompatibilityV3>,
+    pub client_version: crate::types::ClientCompatibilityV3,
 }
 impl PrivateKeyFlagsV3 {
     /// <p>Allows the private key to be exported.</p>
@@ -27,8 +27,8 @@ impl PrivateKeyFlagsV3 {
         self.require_alternate_signature_algorithm
     }
     /// <p>Defines the minimum client compatibility.</p>
-    pub fn client_version(&self) -> ::std::option::Option<&crate::types::ClientCompatibilityV3> {
-        self.client_version.as_ref()
+    pub fn client_version(&self) -> &crate::types::ClientCompatibilityV3 {
+        &self.client_version
     }
 }
 impl PrivateKeyFlagsV3 {
@@ -91,6 +91,7 @@ impl PrivateKeyFlagsV3Builder {
         &self.require_alternate_signature_algorithm
     }
     /// <p>Defines the minimum client compatibility.</p>
+    /// This field is required.
     pub fn client_version(mut self, input: crate::types::ClientCompatibilityV3) -> Self {
         self.client_version = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,19 @@ impl PrivateKeyFlagsV3Builder {
         &self.client_version
     }
     /// Consumes the builder and constructs a [`PrivateKeyFlagsV3`](crate::types::PrivateKeyFlagsV3).
-    pub fn build(self) -> crate::types::PrivateKeyFlagsV3 {
-        crate::types::PrivateKeyFlagsV3 {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`client_version`](crate::types::builders::PrivateKeyFlagsV3Builder::client_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV3, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PrivateKeyFlagsV3 {
             exportable_key: self.exportable_key,
             strong_key_protection_required: self.strong_key_protection_required,
             require_alternate_signature_algorithm: self.require_alternate_signature_algorithm,
-            client_version: self.client_version,
-        }
+            client_version: self.client_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "client_version",
+                    "client_version was not specified but it is required when building PrivateKeyFlagsV3",
+                )
+            })?,
+        })
     }
 }

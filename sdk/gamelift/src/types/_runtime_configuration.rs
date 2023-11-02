@@ -14,8 +14,10 @@ pub struct RuntimeConfiguration {
 }
 impl RuntimeConfiguration {
     /// <p>A collection of server process configurations that identify what server processes to run on each instance in a fleet.</p>
-    pub fn server_processes(&self) -> ::std::option::Option<&[crate::types::ServerProcess]> {
-        self.server_processes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_processes.is_none()`.
+    pub fn server_processes(&self) -> &[crate::types::ServerProcess] {
+        self.server_processes.as_deref().unwrap_or_default()
     }
     /// <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the instance resources that can be used for new game activations at any one time.</p>
     pub fn max_concurrent_game_session_activations(&self) -> ::std::option::Option<i32> {

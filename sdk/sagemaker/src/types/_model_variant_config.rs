@@ -42,6 +42,7 @@ pub struct ModelVariantConfigBuilder {
 }
 impl ModelVariantConfigBuilder {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
+    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl ModelVariantConfigBuilder {
         &self.model_name
     }
     /// <p>The name of the variant.</p>
+    /// This field is required.
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl ModelVariantConfigBuilder {
         &self.variant_name
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
+    /// This field is required.
     pub fn infrastructure_config(mut self, input: crate::types::ModelInfrastructureConfig) -> Self {
         self.infrastructure_config = ::std::option::Option::Some(input);
         self

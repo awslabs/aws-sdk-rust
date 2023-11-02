@@ -137,11 +137,10 @@ pub fn de_delete_progress_update_stream_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnauthorizedOperation" => crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError::UnauthorizedOperation({

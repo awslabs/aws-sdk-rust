@@ -12,8 +12,8 @@ pub fn ser_change_server_life_cycle_state_input(
         crate::protocol_serde::shape_change_server_life_cycle_state_source_server_lifecycle::ser_change_server_life_cycle_state_source_server_lifecycle(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.source_server_id {
-        object.key("sourceServerID").string(var_4.as_str());
+    {
+        object.key("sourceServerID").string(input.source_server_id.as_str());
     }
     Ok(())
 }

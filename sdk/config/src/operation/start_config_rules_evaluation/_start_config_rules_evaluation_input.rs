@@ -9,8 +9,10 @@ pub struct StartConfigRulesEvaluationInput {
 }
 impl StartConfigRulesEvaluationInput {
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn config_rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.config_rule_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
+    pub fn config_rule_names(&self) -> &[::std::string::String] {
+        self.config_rule_names.as_deref().unwrap_or_default()
     }
 }
 impl StartConfigRulesEvaluationInput {

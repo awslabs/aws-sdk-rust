@@ -71,8 +71,10 @@ impl QueryExecution {
         self.engine_version.as_ref()
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur. The list of parameters is not returned in the response.</p>
-    pub fn execution_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.execution_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_parameters.is_none()`.
+    pub fn execution_parameters(&self) -> &[::std::string::String] {
+        self.execution_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The kind of query statement that was run.</p>
     pub fn substatement_type(&self) -> ::std::option::Option<&str> {

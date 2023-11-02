@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListScenesInput {
     /// <p>The ID of the workspace that contains the scenes.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>Specifies the maximum number of results to display.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
@@ -12,8 +12,9 @@ pub struct ListScenesInput {
 }
 impl ListScenesInput {
     /// <p>The ID of the workspace that contains the scenes.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -41,6 +42,7 @@ pub struct ListScenesInputBuilder {
 }
 impl ListScenesInputBuilder {
     /// <p>The ID of the workspace that contains the scenes.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -83,9 +85,16 @@ impl ListScenesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListScenesInput`](crate::operation::list_scenes::ListScenesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::list_scenes::builders::ListScenesInputBuilder::workspace_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_scenes::ListScenesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_scenes::ListScenesInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building ListScenesInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
         })

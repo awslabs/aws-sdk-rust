@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSMSSandboxPhoneNumber`](crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`phone_number(impl Into<String>)`](crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder::phone_number) / [`set_phone_number(Option<String>)`](crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder::set_phone_number): <p>The destination phone number to delete.</p>
+    ///   - [`phone_number(impl Into<String>)`](crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder::phone_number) / [`set_phone_number(Option<String>)`](crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSMSSandboxPhoneNumberFluentBuilder::set_phone_number):<br>required: **true**<br><p>The destination phone number to delete.</p><br>
     /// - On success, responds with [`DeleteSmsSandboxPhoneNumberOutput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberOutput)
     /// - On failure, responds with [`SdkError<DeleteSMSSandboxPhoneNumberError>`](crate::operation::delete_sms_sandbox_phone_number::DeleteSMSSandboxPhoneNumberError)
     pub fn delete_sms_sandbox_phone_number(

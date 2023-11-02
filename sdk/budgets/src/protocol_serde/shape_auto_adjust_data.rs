@@ -3,19 +3,19 @@ pub fn ser_auto_adjust_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoAdjustData,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.auto_adjust_type {
-        object.key("AutoAdjustType").string(var_1.as_str());
+    {
+        object.key("AutoAdjustType").string(input.auto_adjust_type.as_str());
     }
-    if let Some(var_2) = &input.historical_options {
+    if let Some(var_1) = &input.historical_options {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("HistoricalOptions").start_object();
-        crate::protocol_serde::shape_historical_options::ser_historical_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("HistoricalOptions").start_object();
+        crate::protocol_serde::shape_historical_options::ser_historical_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.last_auto_adjust_time {
+    if let Some(var_3) = &input.last_auto_adjust_time {
         object
             .key("LastAutoAdjustTime")
-            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::auto_adjust_data_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

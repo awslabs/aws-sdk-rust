@@ -34,6 +34,7 @@ pub struct DeleteScalingPolicyInputBuilder {
 }
 impl DeleteScalingPolicyInputBuilder {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteScalingPolicyInputBuilder {
         &self.name
     }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self

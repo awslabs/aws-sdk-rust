@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Step {
     /// <p> The name of the execution step. </p>
-    pub step_name: ::std::option::Option<::std::string::String>,
+    pub step_name: ::std::string::String,
     /// <p> The start date and time of the execution step. </p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::aws_smithy_types::DateTime,
     /// <p> The status of the execution step. </p>
-    pub status: ::std::option::Option<crate::types::JobStatus>,
+    pub status: crate::types::JobStatus,
     /// <p> The end date and time of the execution step. </p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::aws_smithy_types::DateTime,
     /// <p> The URL to the logs for the execution step. </p>
     pub log_url: ::std::option::Option<::std::string::String>,
     /// <p> The URL to the artifact for the execution step. </p>
@@ -29,20 +29,21 @@ pub struct Step {
 }
 impl Step {
     /// <p> The name of the execution step. </p>
-    pub fn step_name(&self) -> ::std::option::Option<&str> {
-        self.step_name.as_deref()
+    pub fn step_name(&self) -> &str {
+        use std::ops::Deref;
+        self.step_name.deref()
     }
     /// <p> The start date and time of the execution step. </p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_time
     }
     /// <p> The status of the execution step. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::JobStatus {
+        &self.status
     }
     /// <p> The end date and time of the execution step. </p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_time
     }
     /// <p> The URL to the logs for the execution step. </p>
     pub fn log_url(&self) -> ::std::option::Option<&str> {
@@ -98,6 +99,7 @@ pub struct StepBuilder {
 }
 impl StepBuilder {
     /// <p> The name of the execution step. </p>
+    /// This field is required.
     pub fn step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl StepBuilder {
         &self.step_name
     }
     /// <p> The start date and time of the execution step. </p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -126,6 +129,7 @@ impl StepBuilder {
         &self.start_time
     }
     /// <p> The status of the execution step. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -140,6 +144,7 @@ impl StepBuilder {
         &self.status
     }
     /// <p> The end date and time of the execution step. </p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
@@ -261,12 +266,37 @@ impl StepBuilder {
         &self.context
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
-    pub fn build(self) -> crate::types::Step {
-        crate::types::Step {
-            step_name: self.step_name,
-            start_time: self.start_time,
-            status: self.status,
-            end_time: self.end_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`step_name`](crate::types::builders::StepBuilder::step_name)
+    /// - [`start_time`](crate::types::builders::StepBuilder::start_time)
+    /// - [`status`](crate::types::builders::StepBuilder::status)
+    /// - [`end_time`](crate::types::builders::StepBuilder::end_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::Step, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Step {
+            step_name: self.step_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "step_name",
+                    "step_name was not specified but it is required when building Step",
+                )
+            })?,
+            start_time: self.start_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_time",
+                    "start_time was not specified but it is required when building Step",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building Step",
+                )
+            })?,
+            end_time: self.end_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_time",
+                    "end_time was not specified but it is required when building Step",
+                )
+            })?,
             log_url: self.log_url,
             artifacts_url: self.artifacts_url,
             test_artifacts_url: self.test_artifacts_url,
@@ -274,6 +304,6 @@ impl StepBuilder {
             screenshots: self.screenshots,
             status_reason: self.status_reason,
             context: self.context,
-        }
+        })
     }
 }

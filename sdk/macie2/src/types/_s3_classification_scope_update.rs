@@ -28,6 +28,7 @@ pub struct S3ClassificationScopeUpdateBuilder {
 }
 impl S3ClassificationScopeUpdateBuilder {
     /// <p>The names of the S3 buckets to add or remove from the list.</p>
+    /// This field is required.
     pub fn excludes(mut self, input: crate::types::S3ClassificationScopeExclusionUpdate) -> Self {
         self.excludes = ::std::option::Option::Some(input);
         self

@@ -4,31 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAccessTokenOutput {
     /// <p>The secret value of the personal access token.</p>
-    pub secret: ::std::option::Option<::std::string::String>,
+    pub secret: ::std::string::String,
     /// <p>The friendly name of the personal access token.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    pub expires_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub expires_time: ::aws_smithy_types::DateTime,
     /// <p>The system-generated unique ID of the access token.</p>
-    pub access_token_id: ::std::option::Option<::std::string::String>,
+    pub access_token_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateAccessTokenOutput {
     /// <p>The secret value of the personal access token.</p>
-    pub fn secret(&self) -> ::std::option::Option<&str> {
-        self.secret.as_deref()
+    pub fn secret(&self) -> &str {
+        use std::ops::Deref;
+        self.secret.deref()
     }
     /// <p>The friendly name of the personal access token.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    pub fn expires_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.expires_time.as_ref()
+    pub fn expires_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.expires_time
     }
     /// <p>The system-generated unique ID of the access token.</p>
-    pub fn access_token_id(&self) -> ::std::option::Option<&str> {
-        self.access_token_id.as_deref()
+    pub fn access_token_id(&self) -> &str {
+        use std::ops::Deref;
+        self.access_token_id.deref()
     }
 }
 impl ::std::fmt::Debug for CreateAccessTokenOutput {
@@ -66,6 +69,7 @@ pub struct CreateAccessTokenOutputBuilder {
 }
 impl CreateAccessTokenOutputBuilder {
     /// <p>The secret value of the personal access token.</p>
+    /// This field is required.
     pub fn secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +84,7 @@ impl CreateAccessTokenOutputBuilder {
         &self.secret
     }
     /// <p>The friendly name of the personal access token.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +99,7 @@ impl CreateAccessTokenOutputBuilder {
         &self.name
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
+    /// This field is required.
     pub fn expires_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_time = ::std::option::Option::Some(input);
         self
@@ -108,6 +114,7 @@ impl CreateAccessTokenOutputBuilder {
         &self.expires_time
     }
     /// <p>The system-generated unique ID of the access token.</p>
+    /// This field is required.
     pub fn access_token_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token_id = ::std::option::Option::Some(input.into());
         self
@@ -131,14 +138,41 @@ impl CreateAccessTokenOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccessTokenOutput`](crate::operation::create_access_token::CreateAccessTokenOutput).
-    pub fn build(self) -> crate::operation::create_access_token::CreateAccessTokenOutput {
-        crate::operation::create_access_token::CreateAccessTokenOutput {
-            secret: self.secret,
-            name: self.name,
-            expires_time: self.expires_time,
-            access_token_id: self.access_token_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`secret`](crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder::secret)
+    /// - [`name`](crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder::name)
+    /// - [`expires_time`](crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder::expires_time)
+    /// - [`access_token_id`](crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder::access_token_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_access_token::CreateAccessTokenOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_access_token::CreateAccessTokenOutput {
+            secret: self.secret.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret",
+                    "secret was not specified but it is required when building CreateAccessTokenOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateAccessTokenOutput",
+                )
+            })?,
+            expires_time: self.expires_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expires_time",
+                    "expires_time was not specified but it is required when building CreateAccessTokenOutput",
+                )
+            })?,
+            access_token_id: self.access_token_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access_token_id",
+                    "access_token_id was not specified but it is required when building CreateAccessTokenOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CreateAccessTokenOutputBuilder {

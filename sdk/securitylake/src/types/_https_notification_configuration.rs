@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpsNotificationConfiguration {
     /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
-    pub endpoint: ::std::option::Option<::std::string::String>,
+    pub endpoint: ::std::string::String,
     /// <p>The key name for the notification subscription.</p>
     pub authorization_api_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The key value for the notification subscription.</p>
@@ -13,12 +13,13 @@ pub struct HttpsNotificationConfiguration {
     /// <p>The HTTPS method used for the notification subscription.</p>
     pub http_method: ::std::option::Option<crate::types::HttpMethod>,
     /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
-    pub target_role_arn: ::std::option::Option<::std::string::String>,
+    pub target_role_arn: ::std::string::String,
 }
 impl HttpsNotificationConfiguration {
     /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
-        self.endpoint.as_deref()
+    pub fn endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.endpoint.deref()
     }
     /// <p>The key name for the notification subscription.</p>
     pub fn authorization_api_key_name(&self) -> ::std::option::Option<&str> {
@@ -33,8 +34,9 @@ impl HttpsNotificationConfiguration {
         self.http_method.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
-    pub fn target_role_arn(&self) -> ::std::option::Option<&str> {
-        self.target_role_arn.as_deref()
+    pub fn target_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.target_role_arn.deref()
     }
 }
 impl HttpsNotificationConfiguration {
@@ -56,6 +58,7 @@ pub struct HttpsNotificationConfigurationBuilder {
 }
 impl HttpsNotificationConfigurationBuilder {
     /// <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl HttpsNotificationConfigurationBuilder {
         &self.http_method
     }
     /// <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon Web Services Managed Policies</a> in the <i>Amazon Security Lake User Guide</i>.</p>
+    /// This field is required.
     pub fn target_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +130,26 @@ impl HttpsNotificationConfigurationBuilder {
         &self.target_role_arn
     }
     /// Consumes the builder and constructs a [`HttpsNotificationConfiguration`](crate::types::HttpsNotificationConfiguration).
-    pub fn build(self) -> crate::types::HttpsNotificationConfiguration {
-        crate::types::HttpsNotificationConfiguration {
-            endpoint: self.endpoint,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`endpoint`](crate::types::builders::HttpsNotificationConfigurationBuilder::endpoint)
+    /// - [`target_role_arn`](crate::types::builders::HttpsNotificationConfigurationBuilder::target_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpsNotificationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpsNotificationConfiguration {
+            endpoint: self.endpoint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "endpoint",
+                    "endpoint was not specified but it is required when building HttpsNotificationConfiguration",
+                )
+            })?,
             authorization_api_key_name: self.authorization_api_key_name,
             authorization_api_key_value: self.authorization_api_key_value,
             http_method: self.http_method,
-            target_role_arn: self.target_role_arn,
-        }
+            target_role_arn: self.target_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_role_arn",
+                    "target_role_arn was not specified but it is required when building HttpsNotificationConfiguration",
+                )
+            })?,
+        })
     }
 }

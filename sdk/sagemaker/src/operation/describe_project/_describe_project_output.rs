@@ -104,6 +104,7 @@ pub struct DescribeProjectOutputBuilder {
 }
 impl DescribeProjectOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl DescribeProjectOutputBuilder {
         &self.project_arn
     }
     /// <p>The name of the project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +134,7 @@ impl DescribeProjectOutputBuilder {
         &self.project_name
     }
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +163,7 @@ impl DescribeProjectOutputBuilder {
         &self.project_description
     }
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    /// This field is required.
     pub fn service_catalog_provisioning_details(mut self, input: crate::types::ServiceCatalogProvisioningDetails) -> Self {
         self.service_catalog_provisioning_details = ::std::option::Option::Some(input);
         self
@@ -191,6 +195,7 @@ impl DescribeProjectOutputBuilder {
         &self.service_catalog_provisioned_product_details
     }
     /// <p>The status of the project.</p>
+    /// This field is required.
     pub fn project_status(mut self, input: crate::types::ProjectStatus) -> Self {
         self.project_status = ::std::option::Option::Some(input);
         self
@@ -219,6 +224,7 @@ impl DescribeProjectOutputBuilder {
         &self.created_by
     }
     /// <p>The time when the project was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub fn ser_exclude(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_exclude(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Exclude, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Exclude::builder();

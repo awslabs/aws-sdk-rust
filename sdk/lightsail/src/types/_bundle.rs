@@ -73,14 +73,18 @@ impl Bundle {
         self.transfer_per_month_in_gb
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    pub fn supported_platforms(&self) -> ::std::option::Option<&[crate::types::InstancePlatform]> {
-        self.supported_platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_platforms.is_none()`.
+    pub fn supported_platforms(&self) -> &[crate::types::InstancePlatform] {
+        self.supported_platforms.as_deref().unwrap_or_default()
     }
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn supported_app_categories(&self) -> ::std::option::Option<&[crate::types::AppCategory]> {
-        self.supported_app_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_app_categories.is_none()`.
+    pub fn supported_app_categories(&self) -> &[crate::types::AppCategory] {
+        self.supported_app_categories.as_deref().unwrap_or_default()
     }
 }
 impl Bundle {

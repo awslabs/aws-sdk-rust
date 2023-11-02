@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceRevision {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
-    pub action_name: ::std::option::Option<::std::string::String>,
+    pub action_name: ::std::string::String,
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
@@ -15,8 +15,9 @@ pub struct SourceRevision {
 }
 impl SourceRevision {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
-        self.action_name.as_deref()
+    pub fn action_name(&self) -> &str {
+        use std::ops::Deref;
+        self.action_name.deref()
     }
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct SourceRevisionBuilder {
 }
 impl SourceRevisionBuilder {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
+    /// This field is required.
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl SourceRevisionBuilder {
         &self.revision_url
     }
     /// Consumes the builder and constructs a [`SourceRevision`](crate::types::SourceRevision).
-    pub fn build(self) -> crate::types::SourceRevision {
-        crate::types::SourceRevision {
-            action_name: self.action_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_name`](crate::types::builders::SourceRevisionBuilder::action_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceRevision, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SourceRevision {
+            action_name: self.action_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_name",
+                    "action_name was not specified but it is required when building SourceRevision",
+                )
+            })?,
             revision_id: self.revision_id,
             revision_summary: self.revision_summary,
             revision_url: self.revision_url,
-        }
+        })
     }
 }

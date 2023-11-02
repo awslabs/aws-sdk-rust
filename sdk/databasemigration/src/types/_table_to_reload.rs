@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableToReload {
     /// <p>The schema name of the table to be reloaded.</p>
-    pub schema_name: ::std::option::Option<::std::string::String>,
+    pub schema_name: ::std::string::String,
     /// <p>The table name of the table to be reloaded.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
 }
 impl TableToReload {
     /// <p>The schema name of the table to be reloaded.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
-        self.schema_name.as_deref()
+    pub fn schema_name(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_name.deref()
     }
     /// <p>The table name of the table to be reloaded.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
 }
 impl TableToReload {
@@ -35,6 +37,7 @@ pub struct TableToReloadBuilder {
 }
 impl TableToReloadBuilder {
     /// <p>The schema name of the table to be reloaded.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl TableToReloadBuilder {
         &self.schema_name
     }
     /// <p>The table name of the table to be reloaded.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl TableToReloadBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`TableToReload`](crate::types::TableToReload).
-    pub fn build(self) -> crate::types::TableToReload {
-        crate::types::TableToReload {
-            schema_name: self.schema_name,
-            table_name: self.table_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schema_name`](crate::types::builders::TableToReloadBuilder::schema_name)
+    /// - [`table_name`](crate::types::builders::TableToReloadBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableToReload, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableToReload {
+            schema_name: self.schema_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "schema_name",
+                    "schema_name was not specified but it is required when building TableToReload",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building TableToReload",
+                )
+            })?,
+        })
     }
 }

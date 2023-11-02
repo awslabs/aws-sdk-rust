@@ -11,8 +11,10 @@ pub struct GpuInfo {
 }
 impl GpuInfo {
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    pub fn gpus(&self) -> ::std::option::Option<&[crate::types::GpuDeviceInfo]> {
-        self.gpus.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gpus.is_none()`.
+    pub fn gpus(&self) -> &[crate::types::GpuDeviceInfo] {
+        self.gpus.as_deref().unwrap_or_default()
     }
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
     pub fn total_gpu_memory_in_mi_b(&self) -> ::std::option::Option<i32> {

@@ -85,16 +85,22 @@ impl CreateUserPoolInput {
         self.lambda_config.as_ref()
     }
     /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
-    pub fn auto_verified_attributes(&self) -> ::std::option::Option<&[crate::types::VerifiedAttributeType]> {
-        self.auto_verified_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_verified_attributes.is_none()`.
+    pub fn auto_verified_attributes(&self) -> &[crate::types::VerifiedAttributeType] {
+        self.auto_verified_attributes.as_deref().unwrap_or_default()
     }
     /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
-    pub fn alias_attributes(&self) -> ::std::option::Option<&[crate::types::AliasAttributeType]> {
-        self.alias_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_attributes.is_none()`.
+    pub fn alias_attributes(&self) -> &[crate::types::AliasAttributeType] {
+        self.alias_attributes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether a user can use an email address or phone number as a username when they sign up.</p>
-    pub fn username_attributes(&self) -> ::std::option::Option<&[crate::types::UsernameAttributeType]> {
-        self.username_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.username_attributes.is_none()`.
+    pub fn username_attributes(&self) -> &[crate::types::UsernameAttributeType] {
+        self.username_attributes.as_deref().unwrap_or_default()
     }
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
     pub fn sms_verification_message(&self) -> ::std::option::Option<&str> {
@@ -147,8 +153,10 @@ impl CreateUserPoolInput {
         self.admin_create_user_config.as_ref()
     }
     /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
-    pub fn schema(&self) -> ::std::option::Option<&[crate::types::SchemaAttributeType]> {
-        self.schema.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema.is_none()`.
+    pub fn schema(&self) -> &[crate::types::SchemaAttributeType] {
+        self.schema.as_deref().unwrap_or_default()
     }
     /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>.</p>
@@ -202,6 +210,7 @@ pub struct CreateUserPoolInputBuilder {
 }
 impl CreateUserPoolInputBuilder {
     /// <p>A string used to name the user pool.</p>
+    /// This field is required.
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
         self

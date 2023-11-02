@@ -3,21 +3,21 @@ pub fn ser_log_destination_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogDestinationConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.log_type {
-        object.key("LogType").string(var_1.as_str());
+    {
+        object.key("LogType").string(input.log_type.as_str());
     }
-    if let Some(var_2) = &input.log_destination_type {
-        object.key("LogDestinationType").string(var_2.as_str());
+    {
+        object.key("LogDestinationType").string(input.log_destination_type.as_str());
     }
-    if let Some(var_3) = &input.log_destination {
+    {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("LogDestination").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_1 = object.key("LogDestination").start_object();
+        for (key_2, value_3) in &input.log_destination {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_1.key(key_2.as_str()).string(value_3.as_str());
             }
         }
-        object_4.finish();
+        object_1.finish();
     }
     Ok(())
 }
@@ -64,7 +64,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::log_destination_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

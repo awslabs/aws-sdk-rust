@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueryResults`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_id(impl Into<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::set_query_id): <p>The ID number of the query.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::set_query_id):<br>required: **true**<br><p>The ID number of the query.</p><br>
     /// - On success, responds with [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput) with field(s):
     ///   - [`results(Option<Vec<Vec<ResultField>>>)`](crate::operation::get_query_results::GetQueryResultsOutput::results): <p>The log events that matched the query criteria during the most recent time it ran.</p>  <p>The <code>results</code> value is an array of arrays. Each log event is one object in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code> pairs.</p>
     ///   - [`statistics(Option<QueryStatistics>)`](crate::operation::get_query_results::GetQueryResultsOutput::statistics): <p>Includes the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.</p>

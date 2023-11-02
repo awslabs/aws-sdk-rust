@@ -3,47 +3,47 @@ pub fn ser_codegen_job_generic_data_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenJobGenericDataSchema,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_source_type {
-        object.key("dataSourceType").string(var_1.as_str());
+    {
+        object.key("dataSourceType").string(input.data_source_type.as_str());
     }
-    if let Some(var_2) = &input.models {
+    {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("models").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_1 = object.key("models").start_object();
+        for (key_2, value_3) in &input.models {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_codegen_generic_data_model::ser_codegen_generic_data_model(&mut object_6, value_5)?;
-                object_6.finish();
+                let mut object_4 = object_1.key(key_2.as_str()).start_object();
+                crate::protocol_serde::shape_codegen_generic_data_model::ser_codegen_generic_data_model(&mut object_4, value_3)?;
+                object_4.finish();
             }
         }
-        object_3.finish();
+        object_1.finish();
     }
-    if let Some(var_7) = &input.enums {
+    {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("enums").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_5 = object.key("enums").start_object();
+        for (key_6, value_7) in &input.enums {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = object_8.key(key_9.as_str()).start_object();
-                crate::protocol_serde::shape_codegen_generic_data_enum::ser_codegen_generic_data_enum(&mut object_11, value_10)?;
-                object_11.finish();
+                let mut object_8 = object_5.key(key_6.as_str()).start_object();
+                crate::protocol_serde::shape_codegen_generic_data_enum::ser_codegen_generic_data_enum(&mut object_8, value_7)?;
+                object_8.finish();
             }
         }
-        object_8.finish();
+        object_5.finish();
     }
-    if let Some(var_12) = &input.non_models {
+    {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("nonModels").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_9 = object.key("nonModels").start_object();
+        for (key_10, value_11) in &input.non_models {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_codegen_generic_data_non_model::ser_codegen_generic_data_non_model(&mut object_16, value_15)?;
-                object_16.finish();
+                let mut object_12 = object_9.key(key_10.as_str()).start_object();
+                crate::protocol_serde::shape_codegen_generic_data_non_model::ser_codegen_generic_data_non_model(&mut object_12, value_11)?;
+                object_12.finish();
             }
         }
-        object_13.finish();
+        object_9.finish();
     }
     Ok(())
 }
@@ -95,7 +95,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::codegen_job_generic_data_schema_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -34,8 +34,10 @@ impl CreateConnectAttachmentInput {
         self.options.as_ref()
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct CreateConnectAttachmentInputBuilder {
 }
 impl CreateConnectAttachmentInputBuilder {
     /// <p>The ID of a core network where you want to create the attachment. </p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateConnectAttachmentInputBuilder {
         &self.core_network_id
     }
     /// <p>The Region where the edge is located.</p>
+    /// This field is required.
     pub fn edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_location = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl CreateConnectAttachmentInputBuilder {
         &self.edge_location
     }
     /// <p>The ID of the attachment between the two connections.</p>
+    /// This field is required.
     pub fn transport_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transport_attachment_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl CreateConnectAttachmentInputBuilder {
         &self.transport_attachment_id
     }
     /// <p>Options for creating an attachment.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::ConnectAttachmentOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self

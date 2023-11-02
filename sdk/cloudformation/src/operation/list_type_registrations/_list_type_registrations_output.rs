@@ -13,8 +13,10 @@ pub struct ListTypeRegistrationsOutput {
 impl ListTypeRegistrationsOutput {
     /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code>DescribeTypeRegistration</code> to return detailed information about a type registration request.</p>
-    pub fn registration_token_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.registration_token_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registration_token_list.is_none()`.
+    pub fn registration_token_list(&self) -> &[::std::string::String] {
+        self.registration_token_list.as_deref().unwrap_or_default()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

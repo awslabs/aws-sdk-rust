@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishMetricsInput {
     /// <p> <b>Internal only</b>. The name of the environment.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
+    pub metric_data: ::std::vec::Vec<crate::types::MetricDatum>,
 }
 impl PublishMetricsInput {
     /// <p> <b>Internal only</b>. The name of the environment.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
-    pub fn metric_data(&self) -> ::std::option::Option<&[crate::types::MetricDatum]> {
-        self.metric_data.as_deref()
+    pub fn metric_data(&self) -> &[crate::types::MetricDatum] {
+        use std::ops::Deref;
+        self.metric_data.deref()
     }
 }
 impl PublishMetricsInput {
@@ -34,6 +36,7 @@ pub struct PublishMetricsInputBuilder {
 }
 impl PublishMetricsInputBuilder {
     /// <p> <b>Internal only</b>. The name of the environment.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -68,12 +71,25 @@ impl PublishMetricsInputBuilder {
         &self.metric_data
     }
     /// Consumes the builder and constructs a [`PublishMetricsInput`](crate::operation::publish_metrics::PublishMetricsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_name`](crate::operation::publish_metrics::builders::PublishMetricsInputBuilder::environment_name)
+    /// - [`metric_data`](crate::operation::publish_metrics::builders::PublishMetricsInputBuilder::metric_data)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::publish_metrics::PublishMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_metrics::PublishMetricsInput {
-            environment_name: self.environment_name,
-            metric_data: self.metric_data,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building PublishMetricsInput",
+                )
+            })?,
+            metric_data: self.metric_data.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_data",
+                    "metric_data was not specified but it is required when building PublishMetricsInput",
+                )
+            })?,
         })
     }
 }

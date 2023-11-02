@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetChannelPolicy`](crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::set_channel_name): <p>The name of the channel associated with this Channel Policy.</p>
+    ///   - [`channel_name(impl Into<String>)`](crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::channel_name) / [`set_channel_name(impl Into<String>)`](crate::operation::get_channel_policy::builders::GetChannelPolicyFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel associated with this Channel Policy.</p><br>
     /// - On success, responds with [`GetChannelPolicyOutput`](crate::operation::get_channel_policy::GetChannelPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_channel_policy::GetChannelPolicyOutput::policy): <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     /// - On failure, responds with [`SdkError<GetChannelPolicyError>`](crate::operation::get_channel_policy::GetChannelPolicyError)

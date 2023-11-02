@@ -13,12 +13,16 @@ pub struct ContentSourceConfiguration {
 }
 impl ContentSourceConfiguration {
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
-    pub fn data_source_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_source_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_source_ids.is_none()`.
+    pub fn data_source_ids(&self) -> &[::std::string::String] {
+        self.data_source_ids.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
-    pub fn faq_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.faq_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.faq_ids.is_none()`.
+    pub fn faq_ids(&self) -> &[::std::string::String] {
+        self.faq_ids.as_deref().unwrap_or_default()
     }
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn direct_put_content(&self) -> bool {

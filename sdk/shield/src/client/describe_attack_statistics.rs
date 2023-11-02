@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsFluentBuilder::send) it.
     /// - On success, responds with [`DescribeAttackStatisticsOutput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput) with field(s):
     ///   - [`time_range(Option<TimeRange>)`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput::time_range): <p>The time range of the attack.</p>
-    ///   - [`data_items(Option<Vec<AttackStatisticsDataItem>>)`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput::data_items): <p>The data that describes the attacks detected during the time period.</p>
+    ///   - [`data_items(Vec<AttackStatisticsDataItem>)`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput::data_items): <p>The data that describes the attacks detected during the time period.</p>
     /// - On failure, responds with [`SdkError<DescribeAttackStatisticsError>`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsError)
     pub fn describe_attack_statistics(&self) -> crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsFluentBuilder {
         crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsFluentBuilder::new(self.handle.clone())

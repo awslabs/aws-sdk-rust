@@ -5,41 +5,43 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupDetails {
     /// <p>ARN associated with the backup.</p>
-    pub backup_arn: ::std::option::Option<::std::string::String>,
+    pub backup_arn: ::std::string::String,
     /// <p>Name of the requested backup.</p>
-    pub backup_name: ::std::option::Option<::std::string::String>,
+    pub backup_name: ::std::string::String,
     /// <p>Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub backup_size_bytes: ::std::option::Option<i64>,
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
-    pub backup_status: ::std::option::Option<crate::types::BackupStatus>,
+    pub backup_status: crate::types::BackupStatus,
     /// <p>BackupType:</p>
     /// <ul>
     /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li>
     /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
     /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
     /// </ul>
-    pub backup_type: ::std::option::Option<crate::types::BackupType>,
+    pub backup_type: crate::types::BackupType,
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    pub backup_creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub backup_creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
     pub backup_expiry_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BackupDetails {
     /// <p>ARN associated with the backup.</p>
-    pub fn backup_arn(&self) -> ::std::option::Option<&str> {
-        self.backup_arn.as_deref()
+    pub fn backup_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.backup_arn.deref()
     }
     /// <p>Name of the requested backup.</p>
-    pub fn backup_name(&self) -> ::std::option::Option<&str> {
-        self.backup_name.as_deref()
+    pub fn backup_name(&self) -> &str {
+        use std::ops::Deref;
+        self.backup_name.deref()
     }
     /// <p>Size of the backup in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn backup_size_bytes(&self) -> ::std::option::Option<i64> {
         self.backup_size_bytes
     }
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
-    pub fn backup_status(&self) -> ::std::option::Option<&crate::types::BackupStatus> {
-        self.backup_status.as_ref()
+    pub fn backup_status(&self) -> &crate::types::BackupStatus {
+        &self.backup_status
     }
     /// <p>BackupType:</p>
     /// <ul>
@@ -47,12 +49,12 @@ impl BackupDetails {
     /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
     /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
     /// </ul>
-    pub fn backup_type(&self) -> ::std::option::Option<&crate::types::BackupType> {
-        self.backup_type.as_ref()
+    pub fn backup_type(&self) -> &crate::types::BackupType {
+        &self.backup_type
     }
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
-    pub fn backup_creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.backup_creation_date_time.as_ref()
+    pub fn backup_creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.backup_creation_date_time
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
     pub fn backup_expiry_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -80,6 +82,7 @@ pub struct BackupDetailsBuilder {
 }
 impl BackupDetailsBuilder {
     /// <p>ARN associated with the backup.</p>
+    /// This field is required.
     pub fn backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_arn = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +97,7 @@ impl BackupDetailsBuilder {
         &self.backup_arn
     }
     /// <p>Name of the requested backup.</p>
+    /// This field is required.
     pub fn backup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_name = ::std::option::Option::Some(input.into());
         self
@@ -122,6 +126,7 @@ impl BackupDetailsBuilder {
         &self.backup_size_bytes
     }
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED. </p>
+    /// This field is required.
     pub fn backup_status(mut self, input: crate::types::BackupStatus) -> Self {
         self.backup_status = ::std::option::Option::Some(input);
         self
@@ -141,6 +146,7 @@ impl BackupDetailsBuilder {
     /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
     /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn backup_type(mut self, input: crate::types::BackupType) -> Self {
         self.backup_type = ::std::option::Option::Some(input);
         self
@@ -165,6 +171,7 @@ impl BackupDetailsBuilder {
         &self.backup_type
     }
     /// <p>Time at which the backup was created. This is the request time of the backup. </p>
+    /// This field is required.
     pub fn backup_creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.backup_creation_date_time = ::std::option::Option::Some(input);
         self
@@ -193,15 +200,46 @@ impl BackupDetailsBuilder {
         &self.backup_expiry_date_time
     }
     /// Consumes the builder and constructs a [`BackupDetails`](crate::types::BackupDetails).
-    pub fn build(self) -> crate::types::BackupDetails {
-        crate::types::BackupDetails {
-            backup_arn: self.backup_arn,
-            backup_name: self.backup_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`backup_arn`](crate::types::builders::BackupDetailsBuilder::backup_arn)
+    /// - [`backup_name`](crate::types::builders::BackupDetailsBuilder::backup_name)
+    /// - [`backup_status`](crate::types::builders::BackupDetailsBuilder::backup_status)
+    /// - [`backup_type`](crate::types::builders::BackupDetailsBuilder::backup_type)
+    /// - [`backup_creation_date_time`](crate::types::builders::BackupDetailsBuilder::backup_creation_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BackupDetails {
+            backup_arn: self.backup_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "backup_arn",
+                    "backup_arn was not specified but it is required when building BackupDetails",
+                )
+            })?,
+            backup_name: self.backup_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "backup_name",
+                    "backup_name was not specified but it is required when building BackupDetails",
+                )
+            })?,
             backup_size_bytes: self.backup_size_bytes,
-            backup_status: self.backup_status,
-            backup_type: self.backup_type,
-            backup_creation_date_time: self.backup_creation_date_time,
+            backup_status: self.backup_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "backup_status",
+                    "backup_status was not specified but it is required when building BackupDetails",
+                )
+            })?,
+            backup_type: self.backup_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "backup_type",
+                    "backup_type was not specified but it is required when building BackupDetails",
+                )
+            })?,
+            backup_creation_date_time: self.backup_creation_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "backup_creation_date_time",
+                    "backup_creation_date_time was not specified but it is required when building BackupDetails",
+                )
+            })?,
             backup_expiry_date_time: self.backup_expiry_date_time,
-        }
+        })
     }
 }

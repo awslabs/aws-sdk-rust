@@ -46,12 +46,16 @@ impl CreateLagInput {
         self.connection_id.as_deref()
     }
     /// <p>The tags to associate with the LAG.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    pub fn child_connection_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.child_connection_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.child_connection_tags.is_none()`.
+    pub fn child_connection_tags(&self) -> &[crate::types::Tag] {
+        self.child_connection_tags.as_deref().unwrap_or_default()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn provider_name(&self) -> ::std::option::Option<&str> {
@@ -87,6 +91,7 @@ pub struct CreateLagInputBuilder {
 }
 impl CreateLagInputBuilder {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
+    /// This field is required.
     pub fn number_of_connections(mut self, input: i32) -> Self {
         self.number_of_connections = ::std::option::Option::Some(input);
         self
@@ -101,6 +106,7 @@ impl CreateLagInputBuilder {
         &self.number_of_connections
     }
     /// <p>The location for the LAG.</p>
+    /// This field is required.
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +121,7 @@ impl CreateLagInputBuilder {
         &self.location
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    /// This field is required.
     pub fn connections_bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connections_bandwidth = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +136,7 @@ impl CreateLagInputBuilder {
         &self.connections_bandwidth
     }
     /// <p>The name of the LAG.</p>
+    /// This field is required.
     pub fn lag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_name = ::std::option::Option::Some(input.into());
         self

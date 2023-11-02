@@ -34,6 +34,7 @@ pub struct UpdateDatasetInputBuilder {
 }
 impl UpdateDatasetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
+    /// This field is required.
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateDatasetInputBuilder {
         &self.dataset_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the new schema you want use.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self

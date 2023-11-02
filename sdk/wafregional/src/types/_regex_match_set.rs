@@ -38,8 +38,10 @@ impl RegexMatchSet {
     /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li>
     /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
     /// </ul>
-    pub fn regex_match_tuples(&self) -> ::std::option::Option<&[crate::types::RegexMatchTuple]> {
-        self.regex_match_tuples.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_match_tuples.is_none()`.
+    pub fn regex_match_tuples(&self) -> &[crate::types::RegexMatchTuple] {
+        self.regex_match_tuples.as_deref().unwrap_or_default()
     }
 }
 impl RegexMatchSet {

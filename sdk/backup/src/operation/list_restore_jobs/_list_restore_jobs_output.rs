@@ -11,8 +11,10 @@ pub struct ListRestoreJobsOutput {
 }
 impl ListRestoreJobsOutput {
     /// <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
-    pub fn restore_jobs(&self) -> ::std::option::Option<&[crate::types::RestoreJobsListMember]> {
-        self.restore_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restore_jobs.is_none()`.
+    pub fn restore_jobs(&self) -> &[crate::types::RestoreJobsListMember] {
+        self.restore_jobs.as_deref().unwrap_or_default()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

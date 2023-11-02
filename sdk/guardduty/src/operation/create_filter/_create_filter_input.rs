@@ -266,6 +266,7 @@ pub struct CreateFilterInputBuilder {
 }
 impl CreateFilterInputBuilder {
     /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -280,6 +281,7 @@ impl CreateFilterInputBuilder {
         &self.detector_id
     }
     /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -431,6 +433,7 @@ impl CreateFilterInputBuilder {
     /// <li> <p>resource.lambdaDetails.tags.key</p> </li>
     /// <li> <p>resource.lambdaDetails.tags.value</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.finding_criteria = ::std::option::Option::Some(input);
         self

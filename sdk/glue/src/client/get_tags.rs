@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTags`](crate::operation::get_tags::builders::GetTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p><br>
     /// - On success, responds with [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_tags::GetTagsOutput::tags): <p>The requested tags.</p>
     /// - On failure, responds with [`SdkError<GetTagsError>`](crate::operation::get_tags::GetTagsError)

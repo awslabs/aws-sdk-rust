@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.</p>
-    pub view_arn: ::std::option::Option<::std::string::String>,
+    pub view_arn: ::std::string::String,
 }
 impl DeleteViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.</p>
-    pub fn view_arn(&self) -> ::std::option::Option<&str> {
-        self.view_arn.as_deref()
+    pub fn view_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.view_arn.deref()
     }
 }
 impl DeleteViewInput {
@@ -27,6 +28,7 @@ pub struct DeleteViewInputBuilder {
 }
 impl DeleteViewInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.</p>
+    /// This field is required.
     pub fn view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.view_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl DeleteViewInputBuilder {
         &self.view_arn
     }
     /// Consumes the builder and constructs a [`DeleteViewInput`](crate::operation::delete_view::DeleteViewInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`view_arn`](crate::operation::delete_view::builders::DeleteViewInputBuilder::view_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_view::DeleteViewInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_view::DeleteViewInput { view_arn: self.view_arn })
+        ::std::result::Result::Ok(crate::operation::delete_view::DeleteViewInput {
+            view_arn: self.view_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "view_arn",
+                    "view_arn was not specified but it is required when building DeleteViewInput",
+                )
+            })?,
+        })
     }
 }

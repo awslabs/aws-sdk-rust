@@ -5,30 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsupportedFeatureException {
     #[allow(missing_docs)] // documentation missing in model
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
-    pub can_retry: ::std::option::Option<bool>,
+    pub can_retry: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedFeatureException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn can_retry(&self) -> ::std::option::Option<bool> {
+    pub fn can_retry(&self) -> bool {
         self.can_retry
     }
 }
 impl UnsupportedFeatureException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for UnsupportedFeatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "UnsupportedFeatureException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -62,6 +60,7 @@ pub struct UnsupportedFeatureExceptionBuilder {
 }
 impl UnsupportedFeatureExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +75,7 @@ impl UnsupportedFeatureExceptionBuilder {
         &self.message
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn can_retry(mut self, input: bool) -> Self {
         self.can_retry = ::std::option::Option::Some(input);
         self
@@ -101,11 +101,24 @@ impl UnsupportedFeatureExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UnsupportedFeatureException`](crate::types::error::UnsupportedFeatureException).
-    pub fn build(self) -> crate::types::error::UnsupportedFeatureException {
-        crate::types::error::UnsupportedFeatureException {
-            message: self.message,
-            can_retry: self.can_retry,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::UnsupportedFeatureExceptionBuilder::message)
+    /// - [`can_retry`](crate::types::error::builders::UnsupportedFeatureExceptionBuilder::can_retry)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::UnsupportedFeatureException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::UnsupportedFeatureException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building UnsupportedFeatureException",
+                )
+            })?,
+            can_retry: self.can_retry.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "can_retry",
+                    "can_retry was not specified but it is required when building UnsupportedFeatureException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

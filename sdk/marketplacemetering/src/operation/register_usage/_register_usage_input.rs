@@ -41,6 +41,7 @@ pub struct RegisterUsageInputBuilder {
 }
 impl RegisterUsageInputBuilder {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RegisterUsageInputBuilder {
         &self.product_code
     }
     /// <p>Public Key Version provided by AWS Marketplace</p>
+    /// This field is required.
     pub fn public_key_version(mut self, input: i32) -> Self {
         self.public_key_version = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct PutContactPolicyInputBuilder {
 }
 impl PutContactPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutContactPolicyInputBuilder {
         &self.contact_arn
     }
     /// <p>Details of the resource policy.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

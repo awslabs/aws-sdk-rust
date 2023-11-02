@@ -55,6 +55,7 @@ pub struct SearchInsightsInputBuilder {
 }
 impl SearchInsightsInputBuilder {
     /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    /// This field is required.
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
         self.start_time_range = ::std::option::Option::Some(input);
         self
@@ -111,6 +112,7 @@ impl SearchInsightsInputBuilder {
         &self.next_token
     }
     /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::InsightType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

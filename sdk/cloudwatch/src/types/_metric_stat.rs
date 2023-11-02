@@ -63,6 +63,7 @@ pub struct MetricStatBuilder {
 }
 impl MetricStatBuilder {
     /// <p>The metric to return, including the metric name, namespace, and dimensions.</p>
+    /// This field is required.
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
@@ -83,6 +84,7 @@ impl MetricStatBuilder {
     /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
     /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
         self
@@ -109,6 +111,7 @@ impl MetricStatBuilder {
         &self.period
     }
     /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>
+    /// This field is required.
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stat = ::std::option::Option::Some(input.into());
         self

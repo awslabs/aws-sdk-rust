@@ -7,14 +7,15 @@ pub struct IndexDocument {
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub suffix: ::std::option::Option<::std::string::String>,
+    pub suffix: ::std::string::String,
 }
 impl IndexDocument {
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn suffix(&self) -> ::std::option::Option<&str> {
-        self.suffix.as_deref()
+    pub fn suffix(&self) -> &str {
+        use std::ops::Deref;
+        self.suffix.deref()
     }
 }
 impl IndexDocument {
@@ -34,6 +35,7 @@ impl IndexDocumentBuilder {
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
+    /// This field is required.
     pub fn suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suffix = ::std::option::Option::Some(input.into());
         self
@@ -52,7 +54,16 @@ impl IndexDocumentBuilder {
         &self.suffix
     }
     /// Consumes the builder and constructs a [`IndexDocument`](crate::types::IndexDocument).
-    pub fn build(self) -> crate::types::IndexDocument {
-        crate::types::IndexDocument { suffix: self.suffix }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`suffix`](crate::types::builders::IndexDocumentBuilder::suffix)
+    pub fn build(self) -> ::std::result::Result<crate::types::IndexDocument, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IndexDocument {
+            suffix: self.suffix.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "suffix",
+                    "suffix was not specified but it is required when building IndexDocument",
+                )
+            })?,
+        })
     }
 }

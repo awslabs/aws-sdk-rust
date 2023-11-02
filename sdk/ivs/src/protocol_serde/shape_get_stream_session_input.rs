@@ -3,11 +3,11 @@ pub fn ser_get_stream_session_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_stream_session::GetStreamSessionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.channel_arn {
-        object.key("channelArn").string(var_1.as_str());
+    {
+        object.key("channelArn").string(input.channel_arn.as_str());
     }
-    if let Some(var_2) = &input.stream_id {
-        object.key("streamId").string(var_2.as_str());
+    if let Some(var_1) = &input.stream_id {
+        object.key("streamId").string(var_1.as_str());
     }
     Ok(())
 }

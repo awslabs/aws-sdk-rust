@@ -15,8 +15,10 @@ impl DescribePrefixListsOutput {
         self.next_token.as_deref()
     }
     /// <p>All available prefix lists.</p>
-    pub fn prefix_lists(&self) -> ::std::option::Option<&[crate::types::PrefixList]> {
-        self.prefix_lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_lists.is_none()`.
+    pub fn prefix_lists(&self) -> &[crate::types::PrefixList] {
+        self.prefix_lists.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribePrefixListsOutput {

@@ -11,8 +11,10 @@ pub struct ListEdgeDeploymentPlansOutput {
 }
 impl ListEdgeDeploymentPlansOutput {
     /// <p>List of summaries of edge deployment plans.</p>
-    pub fn edge_deployment_plan_summaries(&self) -> ::std::option::Option<&[crate::types::EdgeDeploymentPlanSummary]> {
-        self.edge_deployment_plan_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_deployment_plan_summaries.is_none()`.
+    pub fn edge_deployment_plan_summaries(&self) -> &[crate::types::EdgeDeploymentPlanSummary] {
+        self.edge_deployment_plan_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when calling the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -32,8 +32,10 @@ impl CreateVolumeFromBackupInput {
         self.ontap_configuration.as_ref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateVolumeFromBackupInput {
@@ -55,6 +57,7 @@ pub struct CreateVolumeFromBackupInputBuilder {
 }
 impl CreateVolumeFromBackupInputBuilder {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateVolumeFromBackupInputBuilder {
         &self.client_request_token
     }
     /// <p>The name of the new volume you're creating.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

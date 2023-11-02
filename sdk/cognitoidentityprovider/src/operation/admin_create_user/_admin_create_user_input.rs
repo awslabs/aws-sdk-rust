@@ -73,14 +73,18 @@ impl AdminCreateUserInput {
     /// <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
     /// <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>
     /// </ul>
-    pub fn user_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.user_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
+    pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
+        self.user_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The user's validation data. This is an array of name-value pairs that contain user attributes and attribute values that you can use for custom validation, such as restricting the types of user accounts that can be registered. For example, you might choose to allow or disallow user sign-up based on the user's domain.</p>
     /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger receives the validation data and uses it in the validation process.</p>
     /// <p>The user's validation data isn't persisted.</p>
-    pub fn validation_data(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.validation_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_data.is_none()`.
+    pub fn validation_data(&self) -> &[crate::types::AttributeType] {
+        self.validation_data.as_deref().unwrap_or_default()
     }
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
@@ -100,8 +104,10 @@ impl AdminCreateUserInput {
         self.message_action.as_ref()
     }
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
-    pub fn desired_delivery_mediums(&self) -> ::std::option::Option<&[crate::types::DeliveryMediumType]> {
-        self.desired_delivery_mediums.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.desired_delivery_mediums.is_none()`.
+    pub fn desired_delivery_mediums(&self) -> &[crate::types::DeliveryMediumType] {
+        self.desired_delivery_mediums.as_deref().unwrap_or_default()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -155,6 +161,7 @@ pub struct AdminCreateUserInputBuilder {
 }
 impl AdminCreateUserInputBuilder {
     /// <p>The user pool ID for the user pool where the user will be created.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -174,6 +181,7 @@ impl AdminCreateUserInputBuilder {
     /// <li> <p>You can't change the value of a username after you create it.</p> </li>
     /// <li> <p>You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing sign-in attributes</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self

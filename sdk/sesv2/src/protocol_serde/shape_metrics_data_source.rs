@@ -3,46 +3,46 @@ pub fn ser_metrics_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricsDataSource,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.dimensions {
+    {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Dimensions").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_1 = object.key("Dimensions").start_object();
+        for (key_2, value_3) in &input.dimensions {
             {
-                let mut array_5 = object_2.key(key_3.as_str()).start_array();
-                for item_6 in value_4 {
+                let mut array_4 = object_1.key(key_2.as_str()).start_array();
+                for item_5 in value_3 {
                     {
-                        array_5.value().string(item_6.as_str());
+                        array_4.value().string(item_5.as_str());
                     }
                 }
-                array_5.finish();
+                array_4.finish();
             }
         }
-        object_2.finish();
+        object_1.finish();
     }
-    if let Some(var_7) = &input.namespace {
-        object.key("Namespace").string(var_7.as_str());
+    {
+        object.key("Namespace").string(input.namespace.as_str());
     }
-    if let Some(var_8) = &input.metrics {
-        let mut array_9 = object.key("Metrics").start_array();
-        for item_10 in var_8 {
+    {
+        let mut array_6 = object.key("Metrics").start_array();
+        for item_7 in &input.metrics {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_export_metric::ser_export_metric(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_export_metric::ser_export_metric(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_9.finish();
+        array_6.finish();
     }
-    if let Some(var_12) = &input.start_date {
+    {
         object
             .key("StartDate")
-            .date_time(var_12, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.start_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_13) = &input.end_date {
+    {
         object
             .key("EndDate")
-            .date_time(var_13, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.end_date, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -97,7 +97,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::metrics_data_source_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

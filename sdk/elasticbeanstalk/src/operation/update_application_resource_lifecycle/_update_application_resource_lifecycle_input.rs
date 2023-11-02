@@ -34,6 +34,7 @@ pub struct UpdateApplicationResourceLifecycleInputBuilder {
 }
 impl UpdateApplicationResourceLifecycleInputBuilder {
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateApplicationResourceLifecycleInputBuilder {
         &self.application_name
     }
     /// <p>The lifecycle configuration.</p>
+    /// This field is required.
     pub fn resource_lifecycle_config(mut self, input: crate::types::ApplicationResourceLifecycleConfig) -> Self {
         self.resource_lifecycle_config = ::std::option::Option::Some(input);
         self

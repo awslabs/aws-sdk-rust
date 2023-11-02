@@ -11,8 +11,10 @@ pub struct ListEndpointsOutput {
 }
 impl ListEndpointsOutput {
     /// <p>The list of endpoints associated with the specified Outpost.</p>
-    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::Endpoint]> {
-        self.endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoints.is_none()`.
+    pub fn endpoints(&self) -> &[crate::types::Endpoint] {
+        self.endpoints.as_deref().unwrap_or_default()
     }
     /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

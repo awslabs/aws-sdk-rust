@@ -49,6 +49,7 @@ impl DeleteDatasetInputBuilder {
         &self.client_token
     }
     /// <p>The unique identifier of the Dataset to be deleted.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self

@@ -28,8 +28,10 @@ impl GetSdkTypeOutput {
         self.description.as_deref()
     }
     /// <p>A list of configuration properties of an SdkType.</p>
-    pub fn configuration_properties(&self) -> ::std::option::Option<&[crate::types::SdkConfigurationProperty]> {
-        self.configuration_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_properties.is_none()`.
+    pub fn configuration_properties(&self) -> &[crate::types::SdkConfigurationProperty] {
+        self.configuration_properties.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSdkTypeOutput {

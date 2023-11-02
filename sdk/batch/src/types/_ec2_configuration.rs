@@ -192,6 +192,7 @@ impl Ec2ConfigurationBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn image_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_type = ::std::option::Option::Some(input.into());
         self

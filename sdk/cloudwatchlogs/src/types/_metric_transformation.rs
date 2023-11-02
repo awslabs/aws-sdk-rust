@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricTransformation {
     /// <p>The name of the CloudWatch metric.</p>
-    pub metric_name: ::std::option::Option<::std::string::String>,
+    pub metric_name: ::std::string::String,
     /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
-    pub metric_namespace: ::std::option::Option<::std::string::String>,
+    pub metric_namespace: ::std::string::String,
     /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
-    pub metric_value: ::std::option::Option<::std::string::String>,
+    pub metric_value: ::std::string::String,
     /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
     pub default_value: ::std::option::Option<f64>,
     /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
@@ -23,16 +23,19 @@ pub struct MetricTransformation {
 }
 impl MetricTransformation {
     /// <p>The name of the CloudWatch metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
-        self.metric_name.as_deref()
+    pub fn metric_name(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_name.deref()
     }
     /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
-    pub fn metric_namespace(&self) -> ::std::option::Option<&str> {
-        self.metric_namespace.as_deref()
+    pub fn metric_namespace(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_namespace.deref()
     }
     /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
-    pub fn metric_value(&self) -> ::std::option::Option<&str> {
-        self.metric_value.as_deref()
+    pub fn metric_value(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_value.deref()
     }
     /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
     pub fn default_value(&self) -> ::std::option::Option<f64> {
@@ -71,6 +74,7 @@ pub struct MetricTransformationBuilder {
 }
 impl MetricTransformationBuilder {
     /// <p>The name of the CloudWatch metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +89,7 @@ impl MetricTransformationBuilder {
         &self.metric_name
     }
     /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
+    /// This field is required.
     pub fn metric_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_namespace = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +104,7 @@ impl MetricTransformationBuilder {
         &self.metric_namespace
     }
     /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
+    /// This field is required.
     pub fn metric_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_value = ::std::option::Option::Some(input.into());
         self
@@ -173,14 +179,33 @@ impl MetricTransformationBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`MetricTransformation`](crate::types::MetricTransformation).
-    pub fn build(self) -> crate::types::MetricTransformation {
-        crate::types::MetricTransformation {
-            metric_name: self.metric_name,
-            metric_namespace: self.metric_namespace,
-            metric_value: self.metric_value,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric_name`](crate::types::builders::MetricTransformationBuilder::metric_name)
+    /// - [`metric_namespace`](crate::types::builders::MetricTransformationBuilder::metric_namespace)
+    /// - [`metric_value`](crate::types::builders::MetricTransformationBuilder::metric_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricTransformation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MetricTransformation {
+            metric_name: self.metric_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_name",
+                    "metric_name was not specified but it is required when building MetricTransformation",
+                )
+            })?,
+            metric_namespace: self.metric_namespace.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_namespace",
+                    "metric_namespace was not specified but it is required when building MetricTransformation",
+                )
+            })?,
+            metric_value: self.metric_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_value",
+                    "metric_value was not specified but it is required when building MetricTransformation",
+                )
+            })?,
             default_value: self.default_value,
             dimensions: self.dimensions,
             unit: self.unit,
-        }
+        })
     }
 }

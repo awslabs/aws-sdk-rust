@@ -15,8 +15,10 @@ impl DescribeCertificatesOutput {
         self.marker.as_deref()
     }
     /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
-        self.certificates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeCertificatesOutput {

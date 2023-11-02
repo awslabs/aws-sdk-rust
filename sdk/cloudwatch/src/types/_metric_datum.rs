@@ -34,8 +34,10 @@ impl MetricDatum {
         self.metric_name.as_deref()
     }
     /// <p>The dimensions associated with the metric. </p>
-    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
-        self.dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
+    pub fn dimensions(&self) -> &[crate::types::Dimension] {
+        self.dimensions.as_deref().unwrap_or_default()
     }
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -52,13 +54,17 @@ impl MetricDatum {
     }
     /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period. You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
     /// <p>Although the <code>Values</code> array accepts numbers of type <code>Double</code>, CloudWatch rejects values that are either too small or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.</p>
-    pub fn values(&self) -> ::std::option::Option<&[f64]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[f64] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
     /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
-    pub fn counts(&self) -> ::std::option::Option<&[f64]> {
-        self.counts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.counts.is_none()`.
+    pub fn counts(&self) -> &[f64] {
+        self.counts.as_deref().unwrap_or_default()
     }
     /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
     /// <p>In a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
@@ -94,6 +100,7 @@ pub struct MetricDatumBuilder {
 }
 impl MetricDatumBuilder {
     /// <p>The name of the metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self

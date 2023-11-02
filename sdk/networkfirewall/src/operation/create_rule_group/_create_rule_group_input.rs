@@ -90,8 +90,10 @@ impl CreateRuleGroupInput {
         self.capacity
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
@@ -132,6 +134,7 @@ pub struct CreateRuleGroupInputBuilder {
 }
 impl CreateRuleGroupInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// This field is required.
     pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
@@ -189,6 +192,7 @@ impl CreateRuleGroupInputBuilder {
         &self.rules
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -231,6 +235,7 @@ impl CreateRuleGroupInputBuilder {
     /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
     /// <p> <b>Capacity for a stateful rule group</b> </p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
+    /// This field is required.
     pub fn capacity(mut self, input: i32) -> Self {
         self.capacity = ::std::option::Option::Some(input);
         self

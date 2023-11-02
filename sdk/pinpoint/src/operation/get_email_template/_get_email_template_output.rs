@@ -34,6 +34,7 @@ pub struct GetEmailTemplateOutputBuilder {
 }
 impl GetEmailTemplateOutputBuilder {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
+    /// This field is required.
     pub fn email_template_response(mut self, input: crate::types::EmailTemplateResponse) -> Self {
         self.email_template_response = ::std::option::Option::Some(input);
         self

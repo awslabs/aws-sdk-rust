@@ -25,8 +25,10 @@ impl ListTopicRefreshSchedulesOutput {
         self.topic_arn.as_deref()
     }
     /// <p>The list of topic refresh schedules.</p>
-    pub fn refresh_schedules(&self) -> ::std::option::Option<&[crate::types::TopicRefreshScheduleSummary]> {
-        self.refresh_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.refresh_schedules.is_none()`.
+    pub fn refresh_schedules(&self) -> &[crate::types::TopicRefreshScheduleSummary] {
+        self.refresh_schedules.as_deref().unwrap_or_default()
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {

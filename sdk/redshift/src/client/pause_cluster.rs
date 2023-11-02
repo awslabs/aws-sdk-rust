@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PauseCluster`](crate::operation::pause_cluster::builders::PauseClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::pause_cluster::builders::PauseClusterFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::pause_cluster::builders::PauseClusterFluentBuilder::set_cluster_identifier): <p>The identifier of the cluster to be paused.</p>
+    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::pause_cluster::builders::PauseClusterFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::pause_cluster::builders::PauseClusterFluentBuilder::set_cluster_identifier):<br>required: **true**<br><p>The identifier of the cluster to be paused.</p><br>
     /// - On success, responds with [`PauseClusterOutput`](crate::operation::pause_cluster::PauseClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::pause_cluster::PauseClusterOutput::cluster): <p>Describes a cluster.</p>
     /// - On failure, responds with [`SdkError<PauseClusterError>`](crate::operation::pause_cluster::PauseClusterError)

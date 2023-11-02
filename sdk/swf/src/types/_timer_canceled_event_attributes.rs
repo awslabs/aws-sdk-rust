@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimerCanceledEventAttributes {
     /// <p>The unique ID of the timer that was canceled.</p>
-    pub timer_id: ::std::option::Option<::std::string::String>,
+    pub timer_id: ::std::string::String,
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub started_event_id: i64,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -13,8 +13,9 @@ pub struct TimerCanceledEventAttributes {
 }
 impl TimerCanceledEventAttributes {
     /// <p>The unique ID of the timer that was canceled.</p>
-    pub fn timer_id(&self) -> ::std::option::Option<&str> {
-        self.timer_id.as_deref()
+    pub fn timer_id(&self) -> &str {
+        use std::ops::Deref;
+        self.timer_id.deref()
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
@@ -42,6 +43,7 @@ pub struct TimerCanceledEventAttributesBuilder {
 }
 impl TimerCanceledEventAttributesBuilder {
     /// <p>The unique ID of the timer that was canceled.</p>
+    /// This field is required.
     pub fn timer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timer_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl TimerCanceledEventAttributesBuilder {
         &self.timer_id
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl TimerCanceledEventAttributesBuilder {
         &self.started_event_id
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,18 @@ impl TimerCanceledEventAttributesBuilder {
         &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`TimerCanceledEventAttributes`](crate::types::TimerCanceledEventAttributes).
-    pub fn build(self) -> crate::types::TimerCanceledEventAttributes {
-        crate::types::TimerCanceledEventAttributes {
-            timer_id: self.timer_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timer_id`](crate::types::builders::TimerCanceledEventAttributesBuilder::timer_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimerCanceledEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimerCanceledEventAttributes {
+            timer_id: self.timer_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timer_id",
+                    "timer_id was not specified but it is required when building TimerCanceledEventAttributes",
+                )
+            })?,
             started_event_id: self.started_event_id.unwrap_or_default(),
             decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-        }
+        })
     }
 }

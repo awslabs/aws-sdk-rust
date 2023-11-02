@@ -20,6 +20,7 @@ pub fn ser_target_group_stickiness_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_target_group_stickiness_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TargetGroupStickinessConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

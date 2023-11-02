@@ -10,8 +10,10 @@ pub struct DescribeEventCategoriesOutput {
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of event categories descriptions.</p>
-    pub fn event_categories_map_list(&self) -> ::std::option::Option<&[crate::types::EventCategoriesMap]> {
-        self.event_categories_map_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories_map_list.is_none()`.
+    pub fn event_categories_map_list(&self) -> &[crate::types::EventCategoriesMap] {
+        self.event_categories_map_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEventCategoriesOutput {

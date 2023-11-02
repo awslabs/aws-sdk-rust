@@ -34,6 +34,7 @@ pub struct DeletePullThroughCacheRuleInputBuilder {
 }
 impl DeletePullThroughCacheRuleInputBuilder {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
+    /// This field is required.
     pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecr_repository_prefix = ::std::option::Option::Some(input.into());
         self

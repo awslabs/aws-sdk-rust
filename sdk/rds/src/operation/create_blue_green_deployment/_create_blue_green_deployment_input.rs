@@ -58,8 +58,10 @@ impl CreateBlueGreenDeploymentInput {
         self.target_db_cluster_parameter_group_name.as_deref()
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
     pub fn target_db_instance_class(&self) -> ::std::option::Option<&str> {
@@ -96,6 +98,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <ul>
     /// <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn blue_green_deployment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blue_green_deployment_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self

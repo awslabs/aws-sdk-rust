@@ -27,6 +27,7 @@ pub struct DeleteRetentionConfigurationInputBuilder {
 }
 impl DeleteRetentionConfigurationInputBuilder {
     /// <p>The name of the retention configuration to delete.</p>
+    /// This field is required.
     pub fn retention_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retention_configuration_name = ::std::option::Option::Some(input.into());
         self

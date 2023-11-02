@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTurnIntentOutput {
     /// <p>The name of the intent.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The slots associated with the intent.</p>
     pub slots: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>>,
 }
 impl UserTurnIntentOutput {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The slots associated with the intent.</p>
     pub fn slots(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::UserTurnSlotOutput>> {
@@ -35,6 +36,7 @@ pub struct UserTurnIntentOutputBuilder {
 }
 impl UserTurnIntentOutputBuilder {
     /// <p>The name of the intent.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +74,17 @@ impl UserTurnIntentOutputBuilder {
         &self.slots
     }
     /// Consumes the builder and constructs a [`UserTurnIntentOutput`](crate::types::UserTurnIntentOutput).
-    pub fn build(self) -> crate::types::UserTurnIntentOutput {
-        crate::types::UserTurnIntentOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::UserTurnIntentOutputBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::UserTurnIntentOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UserTurnIntentOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UserTurnIntentOutput",
+                )
+            })?,
             slots: self.slots,
-        }
+        })
     }
 }

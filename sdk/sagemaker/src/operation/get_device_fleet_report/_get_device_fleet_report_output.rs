@@ -47,12 +47,16 @@ impl GetDeviceFleetReportOutput {
         self.device_stats.as_ref()
     }
     /// <p>The versions of Edge Manager agent deployed on the fleet.</p>
-    pub fn agent_versions(&self) -> ::std::option::Option<&[crate::types::AgentVersion]> {
-        self.agent_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_versions.is_none()`.
+    pub fn agent_versions(&self) -> &[crate::types::AgentVersion] {
+        self.agent_versions.as_deref().unwrap_or_default()
     }
     /// <p>Status of model on device.</p>
-    pub fn model_stats(&self) -> ::std::option::Option<&[crate::types::EdgeModelStat]> {
-        self.model_stats.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_stats.is_none()`.
+    pub fn model_stats(&self) -> &[crate::types::EdgeModelStat] {
+        self.model_stats.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDeviceFleetReportOutput {
@@ -83,6 +87,7 @@ pub struct GetDeviceFleetReportOutputBuilder {
 }
 impl GetDeviceFleetReportOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    /// This field is required.
     pub fn device_fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl GetDeviceFleetReportOutputBuilder {
         &self.device_fleet_arn
     }
     /// <p>The name of the fleet.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNetworkSettings`](crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`network_settings_arn(impl Into<String>)`](crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder::network_settings_arn) / [`set_network_settings_arn(Option<String>)`](crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder::set_network_settings_arn): <p>The ARN of the network settings.</p>
+    ///   - [`network_settings_arn(impl Into<String>)`](crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder::network_settings_arn) / [`set_network_settings_arn(Option<String>)`](crate::operation::get_network_settings::builders::GetNetworkSettingsFluentBuilder::set_network_settings_arn):<br>required: **true**<br><p>The ARN of the network settings.</p><br>
     /// - On success, responds with [`GetNetworkSettingsOutput`](crate::operation::get_network_settings::GetNetworkSettingsOutput) with field(s):
     ///   - [`network_settings(Option<NetworkSettings>)`](crate::operation::get_network_settings::GetNetworkSettingsOutput::network_settings): <p>The network settings.</p>
     /// - On failure, responds with [`SdkError<GetNetworkSettingsError>`](crate::operation::get_network_settings::GetNetworkSettingsError)

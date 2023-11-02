@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePredictor`](crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`predictor_arn(impl Into<String>)`](crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
+    ///   - [`predictor_arn(impl Into<String>)`](crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::operation::describe_predictor::builders::DescribePredictorFluentBuilder::set_predictor_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p><br>
     /// - On success, responds with [`DescribePredictorOutput`](crate::operation::describe_predictor::DescribePredictorOutput) with field(s):
     ///   - [`predictor_arn(Option<String>)`](crate::operation::describe_predictor::DescribePredictorOutput::predictor_arn): <p>The ARN of the predictor.</p>
     ///   - [`predictor_name(Option<String>)`](crate::operation::describe_predictor::DescribePredictorOutput::predictor_name): <p>The name of the predictor.</p>

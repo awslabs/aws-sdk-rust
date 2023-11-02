@@ -3,17 +3,17 @@ pub fn ser_on_premise_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OnPremiseConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.host_url {
-        object.key("HostUrl").string(var_1.as_str());
+    {
+        object.key("HostUrl").string(input.host_url.as_str());
     }
-    if let Some(var_2) = &input.organization_name {
-        object.key("OrganizationName").string(var_2.as_str());
+    {
+        object.key("OrganizationName").string(input.organization_name.as_str());
     }
-    if let Some(var_3) = &input.ssl_certificate_s3_path {
+    if let Some(var_1) = &input.ssl_certificate_s3_path {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("SslCertificateS3Path").start_object();
-        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_2 = object.key("SslCertificateS3Path").start_object();
+        crate::protocol_serde::shape_s3_path::ser_s3_path(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::on_premise_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

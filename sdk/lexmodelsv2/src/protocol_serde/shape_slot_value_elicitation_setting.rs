@@ -53,7 +53,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::slot_value_elicitation_setting_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -71,38 +75,38 @@ pub fn ser_slot_value_elicitation_setting(
         crate::protocol_serde::shape_slot_default_value_specification::ser_slot_default_value_specification(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.slot_constraint {
-        object.key("slotConstraint").string(var_3.as_str());
+    {
+        object.key("slotConstraint").string(input.slot_constraint.as_str());
     }
-    if let Some(var_4) = &input.prompt_specification {
+    if let Some(var_3) = &input.prompt_specification {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("promptSpecification").start_object();
-        crate::protocol_serde::shape_prompt_specification::ser_prompt_specification(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("promptSpecification").start_object();
+        crate::protocol_serde::shape_prompt_specification::ser_prompt_specification(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.sample_utterances {
-        let mut array_7 = object.key("sampleUtterances").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.sample_utterances {
+        let mut array_6 = object.key("sampleUtterances").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
-    if let Some(var_10) = &input.wait_and_continue_specification {
+    if let Some(var_9) = &input.wait_and_continue_specification {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("waitAndContinueSpecification").start_object();
-        crate::protocol_serde::shape_wait_and_continue_specification::ser_wait_and_continue_specification(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("waitAndContinueSpecification").start_object();
+        crate::protocol_serde::shape_wait_and_continue_specification::ser_wait_and_continue_specification(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.slot_capture_setting {
+    if let Some(var_11) = &input.slot_capture_setting {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("slotCaptureSetting").start_object();
-        crate::protocol_serde::shape_slot_capture_setting::ser_slot_capture_setting(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_12 = object.key("slotCaptureSetting").start_object();
+        crate::protocol_serde::shape_slot_capture_setting::ser_slot_capture_setting(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmActionDefinition {
     /// <p>The action subType. </p>
-    pub action_sub_type: ::std::option::Option<crate::types::ActionSubType>,
+    pub action_sub_type: crate::types::ActionSubType,
     /// <p>The Region to run the SSM document. </p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>The EC2 and RDS instance IDs. </p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl SsmActionDefinition {
     /// <p>The action subType. </p>
-    pub fn action_sub_type(&self) -> ::std::option::Option<&crate::types::ActionSubType> {
-        self.action_sub_type.as_ref()
+    pub fn action_sub_type(&self) -> &crate::types::ActionSubType {
+        &self.action_sub_type
     }
     /// <p>The Region to run the SSM document. </p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>The EC2 and RDS instance IDs. </p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.instance_ids.deref()
     }
 }
 impl SsmActionDefinition {
@@ -42,6 +44,7 @@ pub struct SsmActionDefinitionBuilder {
 }
 impl SsmActionDefinitionBuilder {
     /// <p>The action subType. </p>
+    /// This field is required.
     pub fn action_sub_type(mut self, input: crate::types::ActionSubType) -> Self {
         self.action_sub_type = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl SsmActionDefinitionBuilder {
         &self.action_sub_type
     }
     /// <p>The Region to run the SSM document. </p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +94,30 @@ impl SsmActionDefinitionBuilder {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`SsmActionDefinition`](crate::types::SsmActionDefinition).
-    pub fn build(self) -> crate::types::SsmActionDefinition {
-        crate::types::SsmActionDefinition {
-            action_sub_type: self.action_sub_type,
-            region: self.region,
-            instance_ids: self.instance_ids,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_sub_type`](crate::types::builders::SsmActionDefinitionBuilder::action_sub_type)
+    /// - [`region`](crate::types::builders::SsmActionDefinitionBuilder::region)
+    /// - [`instance_ids`](crate::types::builders::SsmActionDefinitionBuilder::instance_ids)
+    pub fn build(self) -> ::std::result::Result<crate::types::SsmActionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SsmActionDefinition {
+            action_sub_type: self.action_sub_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_sub_type",
+                    "action_sub_type was not specified but it is required when building SsmActionDefinition",
+                )
+            })?,
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building SsmActionDefinition",
+                )
+            })?,
+            instance_ids: self.instance_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_ids",
+                    "instance_ids was not specified but it is required when building SsmActionDefinition",
+                )
+            })?,
+        })
     }
 }

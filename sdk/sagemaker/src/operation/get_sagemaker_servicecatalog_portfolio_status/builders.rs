@@ -99,7 +99,7 @@ impl GetSagemakerServicecatalogPortfolioStatusFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput,
             crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusError,
             Self,
@@ -108,7 +108,7 @@ impl GetSagemakerServicecatalogPortfolioStatusFluentBuilder {
             crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusError,
         >,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

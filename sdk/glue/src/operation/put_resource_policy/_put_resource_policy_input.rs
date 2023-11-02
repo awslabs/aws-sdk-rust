@@ -65,6 +65,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p>Contains the policy document to set, in JSON format.</p>
+    /// This field is required.
     pub fn policy_in_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_in_json = ::std::option::Option::Some(input.into());
         self

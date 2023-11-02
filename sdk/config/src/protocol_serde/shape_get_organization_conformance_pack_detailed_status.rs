@@ -38,8 +38,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::InvalidNextTokenException({
@@ -54,8 +54,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOrganizationConformancePackException" => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::NoSuchOrganizationConformancePackException({
@@ -70,8 +70,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationAccessDeniedException" => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::OrganizationAccessDeniedException({
@@ -86,8 +86,8 @@ pub fn de_get_organization_conformance_pack_detailed_status_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::generic(generic)

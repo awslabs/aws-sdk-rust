@@ -27,6 +27,7 @@ pub struct GetAnnotationStoreInputBuilder {
 }
 impl GetAnnotationStoreInputBuilder {
     /// <p>The store's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

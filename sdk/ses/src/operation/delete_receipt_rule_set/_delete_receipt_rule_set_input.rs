@@ -28,6 +28,7 @@ pub struct DeleteReceiptRuleSetInputBuilder {
 }
 impl DeleteReceiptRuleSetInputBuilder {
     /// <p>The name of the receipt rule set to delete.</p>
+    /// This field is required.
     pub fn rule_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_set_name = ::std::option::Option::Some(input.into());
         self

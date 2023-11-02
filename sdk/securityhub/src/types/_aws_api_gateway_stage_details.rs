@@ -76,8 +76,10 @@ impl AwsApiGatewayStageDetails {
         self.cache_cluster_status.as_deref()
     }
     /// <p>Defines the method settings for the stage.</p>
-    pub fn method_settings(&self) -> ::std::option::Option<&[crate::types::AwsApiGatewayMethodSettings]> {
-        self.method_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.method_settings.is_none()`.
+    pub fn method_settings(&self) -> &[crate::types::AwsApiGatewayMethodSettings] {
+        self.method_settings.as_deref().unwrap_or_default()
     }
     /// <p>A map that defines the stage variables for the stage.</p>
     /// <p>Variable names can have alphanumeric and underscore characters.</p>

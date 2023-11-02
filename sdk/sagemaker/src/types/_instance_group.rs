@@ -42,6 +42,7 @@ pub struct InstanceGroupBuilder {
 }
 impl InstanceGroupBuilder {
     /// <p>Specifies the instance type of the instance group.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::TrainingInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl InstanceGroupBuilder {
         &self.instance_type
     }
     /// <p>Specifies the number of instances of the instance group.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl InstanceGroupBuilder {
         &self.instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
+    /// This field is required.
     pub fn instance_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_group_name = ::std::option::Option::Some(input.into());
         self

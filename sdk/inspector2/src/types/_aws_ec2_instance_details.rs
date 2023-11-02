@@ -35,12 +35,16 @@ impl AwsEc2InstanceDetails {
         self.image_id.as_deref()
     }
     /// <p>The IPv4 addresses of the Amazon EC2 instance.</p>
-    pub fn ip_v4_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_v4_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_v4_addresses.is_none()`.
+    pub fn ip_v4_addresses(&self) -> &[::std::string::String] {
+        self.ip_v4_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 addresses of the Amazon EC2 instance.</p>
-    pub fn ip_v6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_v6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_v6_addresses.is_none()`.
+    pub fn ip_v6_addresses(&self) -> &[::std::string::String] {
+        self.ip_v6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The name of the key pair used to launch the Amazon EC2 instance.</p>
     pub fn key_name(&self) -> ::std::option::Option<&str> {

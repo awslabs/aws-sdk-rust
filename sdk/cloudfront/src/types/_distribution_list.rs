@@ -5,42 +5,45 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
-    pub marker: ::std::option::Option<::std::string::String>,
+    pub marker: ::std::string::String,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your distributions where they left off.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     /// <p>A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
-    pub is_truncated: ::std::option::Option<bool>,
+    pub is_truncated: bool,
     /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
-    pub quantity: ::std::option::Option<i32>,
+    pub quantity: i32,
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>>,
 }
 impl DistributionList {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
-        self.marker.as_deref()
+    pub fn marker(&self) -> &str {
+        use std::ops::Deref;
+        self.marker.deref()
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value you can use for the <code>Marker</code> request parameter to continue listing your distributions where they left off.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
     /// <p>A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
-    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
+    pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
     /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
-    pub fn quantity(&self) -> ::std::option::Option<i32> {
+    pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each distribution that was created by the current Amazon Web Services account.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::DistributionSummary]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::DistributionSummary] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl DistributionList {
@@ -63,6 +66,7 @@ pub struct DistributionListBuilder {
 }
 impl DistributionListBuilder {
     /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
+    /// This field is required.
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl DistributionListBuilder {
         &self.next_marker
     }
     /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -105,6 +110,7 @@ impl DistributionListBuilder {
         &self.max_items
     }
     /// <p>A flag that indicates whether more distributions remain to be listed. If your results were truncated, you can make a follow-up pagination request using the <code>Marker</code> request parameter to retrieve more distributions in the list.</p>
+    /// This field is required.
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl DistributionListBuilder {
         &self.is_truncated
     }
     /// <p>The number of distributions that were created by the current Amazon Web Services account.</p>
+    /// This field is required.
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
@@ -153,14 +160,39 @@ impl DistributionListBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`DistributionList`](crate::types::DistributionList).
-    pub fn build(self) -> crate::types::DistributionList {
-        crate::types::DistributionList {
-            marker: self.marker,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`marker`](crate::types::builders::DistributionListBuilder::marker)
+    /// - [`max_items`](crate::types::builders::DistributionListBuilder::max_items)
+    /// - [`is_truncated`](crate::types::builders::DistributionListBuilder::is_truncated)
+    /// - [`quantity`](crate::types::builders::DistributionListBuilder::quantity)
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DistributionList {
+            marker: self.marker.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "marker",
+                    "marker was not specified but it is required when building DistributionList",
+                )
+            })?,
             next_marker: self.next_marker,
-            max_items: self.max_items,
-            is_truncated: self.is_truncated,
-            quantity: self.quantity,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building DistributionList",
+                )
+            })?,
+            is_truncated: self.is_truncated.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "is_truncated",
+                    "is_truncated was not specified but it is required when building DistributionList",
+                )
+            })?,
+            quantity: self.quantity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantity",
+                    "quantity was not specified but it is required when building DistributionList",
+                )
+            })?,
             items: self.items,
-        }
+        })
     }
 }

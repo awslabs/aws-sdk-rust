@@ -69,6 +69,7 @@ pub struct ListCandidatesForAutoMlJobInputBuilder {
 }
 impl ListCandidatesForAutoMlJobInputBuilder {
     /// <p>List the candidates created for the job by providing the job's name.</p>
+    /// This field is required.
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_ml_job_name = ::std::option::Option::Some(input.into());
         self

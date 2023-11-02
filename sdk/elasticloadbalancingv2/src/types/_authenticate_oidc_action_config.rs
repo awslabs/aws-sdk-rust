@@ -119,6 +119,7 @@ pub struct AuthenticateOidcActionConfigBuilder {
 }
 impl AuthenticateOidcActionConfigBuilder {
     /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    /// This field is required.
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +134,7 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.issuer
     }
     /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    /// This field is required.
     pub fn authorization_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorization_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +149,7 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.authorization_endpoint
     }
     /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    /// This field is required.
     pub fn token_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +164,7 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.token_endpoint
     }
     /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    /// This field is required.
     pub fn user_info_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_info_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -175,6 +179,7 @@ impl AuthenticateOidcActionConfigBuilder {
         &self.user_info_endpoint
     }
     /// <p>The OAuth 2.0 client identifier.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self

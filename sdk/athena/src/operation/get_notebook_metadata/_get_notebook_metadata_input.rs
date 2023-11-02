@@ -27,6 +27,7 @@ pub struct GetNotebookMetadataInputBuilder {
 }
 impl GetNotebookMetadataInputBuilder {
     /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    /// This field is required.
     pub fn notebook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_id = ::std::option::Option::Some(input.into());
         self

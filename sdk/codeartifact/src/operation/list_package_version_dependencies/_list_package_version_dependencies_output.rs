@@ -55,8 +55,10 @@ impl ListPackageVersionDependenciesOutput {
         self.next_token.as_deref()
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
-    pub fn dependencies(&self) -> ::std::option::Option<&[crate::types::PackageDependency]> {
-        self.dependencies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependencies.is_none()`.
+    pub fn dependencies(&self) -> &[crate::types::PackageDependency] {
+        self.dependencies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPackageVersionDependenciesOutput {

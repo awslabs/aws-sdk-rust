@@ -38,7 +38,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::reverse_geocoding_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -50,11 +54,11 @@ pub fn ser_reverse_geocoding_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReverseGeocodingConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.y_attribute_name {
-        object.key("YAttributeName").string(var_1.as_str());
+    {
+        object.key("YAttributeName").string(input.y_attribute_name.as_str());
     }
-    if let Some(var_2) = &input.x_attribute_name {
-        object.key("XAttributeName").string(var_2.as_str());
+    {
+        object.key("XAttributeName").string(input.x_attribute_name.as_str());
     }
     Ok(())
 }

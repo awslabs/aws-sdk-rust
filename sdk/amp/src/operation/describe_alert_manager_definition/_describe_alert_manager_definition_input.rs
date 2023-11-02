@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinitionInput {
     /// The ID of the workspace to describe.
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
 }
 impl DescribeAlertManagerDefinitionInput {
     /// The ID of the workspace to describe.
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl DescribeAlertManagerDefinitionInput {
@@ -28,6 +29,7 @@ pub struct DescribeAlertManagerDefinitionInputBuilder {
 }
 impl DescribeAlertManagerDefinitionInputBuilder {
     /// The ID of the workspace to describe.
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -42,6 +44,8 @@ impl DescribeAlertManagerDefinitionInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`DescribeAlertManagerDefinitionInput`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +53,12 @@ impl DescribeAlertManagerDefinitionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building DescribeAlertManagerDefinitionInput",
+                )
+            })?,
         })
     }
 }

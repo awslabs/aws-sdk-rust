@@ -28,6 +28,7 @@ pub struct DeletePresetInputBuilder {
 }
 impl DeletePresetInputBuilder {
     /// <p>The identifier of the preset for which you want to get detailed information.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

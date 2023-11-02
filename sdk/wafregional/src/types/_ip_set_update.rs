@@ -9,14 +9,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetUpdate {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
-    pub action: ::std::option::Option<crate::types::ChangeAction>,
+    pub action: crate::types::ChangeAction,
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
     pub ip_set_descriptor: ::std::option::Option<crate::types::IpSetDescriptor>,
 }
 impl IpSetUpdate {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::ChangeAction {
+        &self.action
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
     pub fn ip_set_descriptor(&self) -> ::std::option::Option<&crate::types::IpSetDescriptor> {
@@ -39,6 +39,7 @@ pub struct IpSetUpdateBuilder {
 }
 impl IpSetUpdateBuilder {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -53,6 +54,7 @@ impl IpSetUpdateBuilder {
         &self.action
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
+    /// This field is required.
     pub fn ip_set_descriptor(mut self, input: crate::types::IpSetDescriptor) -> Self {
         self.ip_set_descriptor = ::std::option::Option::Some(input);
         self
@@ -67,10 +69,17 @@ impl IpSetUpdateBuilder {
         &self.ip_set_descriptor
     }
     /// Consumes the builder and constructs a [`IpSetUpdate`](crate::types::IpSetUpdate).
-    pub fn build(self) -> crate::types::IpSetUpdate {
-        crate::types::IpSetUpdate {
-            action: self.action,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::types::builders::IpSetUpdateBuilder::action)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSetUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpSetUpdate {
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building IpSetUpdate",
+                )
+            })?,
             ip_set_descriptor: self.ip_set_descriptor,
-        }
+        })
     }
 }

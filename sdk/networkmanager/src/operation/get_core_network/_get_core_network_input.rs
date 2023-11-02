@@ -27,6 +27,7 @@ pub struct GetCoreNetworkInputBuilder {
 }
 impl GetCoreNetworkInputBuilder {
     /// <p>The ID of a core network.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DisassociateTagOptionFromResourceInputBuilder {
 }
 impl DisassociateTagOptionFromResourceInputBuilder {
     /// <p>The resource identifier.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateTagOptionFromResourceInputBuilder {
         &self.resource_id
     }
     /// <p>The TagOption identifier.</p>
+    /// This field is required.
     pub fn tag_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_option_id = ::std::option::Option::Some(input.into());
         self

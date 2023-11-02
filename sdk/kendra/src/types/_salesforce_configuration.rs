@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
-    pub server_url: ::std::option::Option<::std::string::String>,
+    pub server_url: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
@@ -15,7 +15,7 @@ pub struct SalesforceConfiguration {
     /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
     pub standard_object_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>,
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
@@ -35,8 +35,9 @@ pub struct SalesforceConfiguration {
 }
 impl SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
-    pub fn server_url(&self) -> ::std::option::Option<&str> {
-        self.server_url.as_deref()
+    pub fn server_url(&self) -> &str {
+        use std::ops::Deref;
+        self.server_url.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -47,12 +48,15 @@ impl SalesforceConfiguration {
     /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
-    pub fn standard_object_configurations(&self) -> ::std::option::Option<&[crate::types::SalesforceStandardObjectConfiguration]> {
-        self.standard_object_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standard_object_configurations.is_none()`.
+    pub fn standard_object_configurations(&self) -> &[crate::types::SalesforceStandardObjectConfiguration] {
+        self.standard_object_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
     pub fn knowledge_article_configuration(&self) -> ::std::option::Option<&crate::types::SalesforceKnowledgeArticleConfiguration> {
@@ -72,13 +76,17 @@ impl SalesforceConfiguration {
     }
     /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
-    pub fn include_attachment_file_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.include_attachment_file_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_attachment_file_patterns.is_none()`.
+    pub fn include_attachment_file_patterns(&self) -> &[::std::string::String] {
+        self.include_attachment_file_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain documents in your Salesforce. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
-    pub fn exclude_attachment_file_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_attachment_file_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_attachment_file_patterns.is_none()`.
+    pub fn exclude_attachment_file_patterns(&self) -> &[::std::string::String] {
+        self.exclude_attachment_file_patterns.as_deref().unwrap_or_default()
     }
 }
 impl SalesforceConfiguration {
@@ -104,6 +112,7 @@ pub struct SalesforceConfigurationBuilder {
 }
 impl SalesforceConfigurationBuilder {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
+    /// This field is required.
     pub fn server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_url = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +135,7 @@ impl SalesforceConfigurationBuilder {
     /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -289,10 +299,23 @@ impl SalesforceConfigurationBuilder {
         &self.exclude_attachment_file_patterns
     }
     /// Consumes the builder and constructs a [`SalesforceConfiguration`](crate::types::SalesforceConfiguration).
-    pub fn build(self) -> crate::types::SalesforceConfiguration {
-        crate::types::SalesforceConfiguration {
-            server_url: self.server_url,
-            secret_arn: self.secret_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_url`](crate::types::builders::SalesforceConfigurationBuilder::server_url)
+    /// - [`secret_arn`](crate::types::builders::SalesforceConfigurationBuilder::secret_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SalesforceConfiguration {
+            server_url: self.server_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_url",
+                    "server_url was not specified but it is required when building SalesforceConfiguration",
+                )
+            })?,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building SalesforceConfiguration",
+                )
+            })?,
             standard_object_configurations: self.standard_object_configurations,
             knowledge_article_configuration: self.knowledge_article_configuration,
             chatter_feed_configuration: self.chatter_feed_configuration,
@@ -300,6 +323,6 @@ impl SalesforceConfigurationBuilder {
             standard_object_attachment_configuration: self.standard_object_attachment_configuration,
             include_attachment_file_patterns: self.include_attachment_file_patterns,
             exclude_attachment_file_patterns: self.exclude_attachment_file_patterns,
-        }
+        })
     }
 }

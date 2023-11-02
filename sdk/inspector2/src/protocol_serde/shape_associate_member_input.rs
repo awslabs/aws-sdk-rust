@@ -3,8 +3,8 @@ pub fn ser_associate_member_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_member::AssociateMemberInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.account_id {
-        object.key("accountId").string(var_1.as_str());
+    {
+        object.key("accountId").string(input.account_id.as_str());
     }
     Ok(())
 }

@@ -35,6 +35,7 @@ pub struct CreateSvmActiveDirectoryConfigurationBuilder {
 }
 impl CreateSvmActiveDirectoryConfigurationBuilder {
     /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
+    /// This field is required.
     pub fn net_bios_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.net_bios_name = ::std::option::Option::Some(input.into());
         self

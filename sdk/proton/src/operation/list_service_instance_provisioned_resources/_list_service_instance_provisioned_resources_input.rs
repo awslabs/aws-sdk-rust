@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceInstanceProvisionedResourcesInput {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The name of the service instance whose provisioned resources you want.</p>
-    pub service_instance_name: ::std::option::Option<::std::string::String>,
+    pub service_instance_name: ::std::string::String,
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceInstanceProvisionedResourcesInput {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The name of the service instance whose provisioned resources you want.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
-        self.service_instance_name.as_deref()
+    pub fn service_instance_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_instance_name.deref()
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct ListServiceInstanceProvisionedResourcesInputBuilder {
 }
 impl ListServiceInstanceProvisionedResourcesInputBuilder {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
         &self.service_name
     }
     /// <p>The name of the service instance whose provisioned resources you want.</p>
+    /// This field is required.
     pub fn service_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_instance_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +87,9 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListServiceInstanceProvisionedResourcesInput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_name`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesInputBuilder::service_name)
+    /// - [`service_instance_name`](crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesInputBuilder::service_instance_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,8 +98,18 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput {
-                service_name: self.service_name,
-                service_instance_name: self.service_instance_name,
+                service_name: self.service_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_name",
+                        "service_name was not specified but it is required when building ListServiceInstanceProvisionedResourcesInput",
+                    )
+                })?,
+                service_instance_name: self.service_instance_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_instance_name",
+                        "service_instance_name was not specified but it is required when building ListServiceInstanceProvisionedResourcesInput",
+                    )
+                })?,
                 next_token: self.next_token,
             },
         )

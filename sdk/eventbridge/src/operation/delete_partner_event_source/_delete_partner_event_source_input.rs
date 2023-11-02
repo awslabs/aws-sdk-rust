@@ -34,6 +34,7 @@ pub struct DeletePartnerEventSourceInputBuilder {
 }
 impl DeletePartnerEventSourceInputBuilder {
     /// <p>The name of the event source to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeletePartnerEventSourceInputBuilder {
         &self.name
     }
     /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
+    /// This field is required.
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
         self

@@ -11,8 +11,10 @@ pub struct ListProvisioningTemplateVersionsOutput {
 }
 impl ListProvisioningTemplateVersionsOutput {
     /// <p>The list of provisioning template versions.</p>
-    pub fn versions(&self) -> ::std::option::Option<&[crate::types::ProvisioningTemplateVersionSummary]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[crate::types::ProvisioningTemplateVersionSummary] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

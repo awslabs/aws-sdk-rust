@@ -3,20 +3,20 @@ pub fn ser_update_rum_metric_definition_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.destination {
-        object.key("Destination").string(var_1.as_str());
+    {
+        object.key("Destination").string(input.destination.as_str());
     }
-    if let Some(var_2) = &input.destination_arn {
-        object.key("DestinationArn").string(var_2.as_str());
+    if let Some(var_1) = &input.destination_arn {
+        object.key("DestinationArn").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.metric_definition {
+    if let Some(var_2) = &input.metric_definition {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("MetricDefinition").start_object();
-        crate::protocol_serde::shape_metric_definition_request::ser_metric_definition_request(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("MetricDefinition").start_object();
+        crate::protocol_serde::shape_metric_definition_request::ser_metric_definition_request(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.metric_definition_id {
-        object.key("MetricDefinitionId").string(var_5.as_str());
+    {
+        object.key("MetricDefinitionId").string(input.metric_definition_id.as_str());
     }
     Ok(())
 }

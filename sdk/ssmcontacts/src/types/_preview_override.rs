@@ -13,8 +13,10 @@ pub struct PreviewOverride {
 }
 impl PreviewOverride {
     /// <p>Information about contacts to add to an on-call rotation override.</p>
-    pub fn new_members(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.new_members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.new_members.is_none()`.
+    pub fn new_members(&self) -> &[::std::string::String] {
+        self.new_members.as_deref().unwrap_or_default()
     }
     /// <p>Information about the time a rotation override would begin.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

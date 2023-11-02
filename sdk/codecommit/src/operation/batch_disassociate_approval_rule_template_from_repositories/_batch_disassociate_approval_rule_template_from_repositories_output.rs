@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     /// <p>A list of repository names that have had their association with the template removed.</p>
-    pub disassociated_repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub disassociated_repository_names: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>>,
+    pub errors: ::std::vec::Vec<crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
     _request_id: Option<String>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     /// <p>A list of repository names that have had their association with the template removed.</p>
-    pub fn disassociated_repository_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disassociated_repository_names.as_deref()
+    pub fn disassociated_repository_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.disassociated_repository_names.deref()
     }
     /// <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError]> {
-        self.errors.as_deref()
+    pub fn errors(&self) -> &[crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError] {
+        use std::ops::Deref;
+        self.errors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
@@ -93,14 +95,29 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`disassociated_repository_names`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder::disassociated_repository_names)
+    /// - [`errors`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder::errors)
     pub fn build(
         self,
-    ) -> crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput
-    {
-        crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
-            disassociated_repository_names: self.disassociated_repository_names,
-            errors: self.errors,
-            _request_id: self._request_id,
-        }
+    ) -> ::std::result::Result<
+        crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
+                disassociated_repository_names: self.disassociated_repository_names
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("disassociated_repository_names", "disassociated_repository_names was not specified but it is required when building BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput")
+                    )?
+                ,
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

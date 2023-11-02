@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflow`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_id): <p>The workflow's ID.</p>
-    ///   - [`r#type(WorkflowType)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::type) / [`set_type(Option<WorkflowType>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_type): <p>The workflow's type.</p>
-    ///   - [`export(WorkflowExport)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::export) / [`set_export(Option<Vec<WorkflowExport>>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_export): <p>The export format for the workflow.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_id):<br>required: **true**<br><p>The workflow's ID.</p><br>
+    ///   - [`r#type(WorkflowType)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::type) / [`set_type(Option<WorkflowType>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_type):<br>required: **false**<br><p>The workflow's type.</p><br>
+    ///   - [`export(WorkflowExport)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::export) / [`set_export(Option<Vec<WorkflowExport>>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_export):<br>required: **false**<br><p>The export format for the workflow.</p><br>
     /// - On success, responds with [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::arn): <p>The workflow's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_workflow::GetWorkflowOutput::id): <p>The workflow's ID.</p>

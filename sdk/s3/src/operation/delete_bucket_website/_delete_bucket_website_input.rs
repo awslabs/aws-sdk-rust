@@ -34,6 +34,7 @@ pub struct DeleteBucketWebsiteInputBuilder {
 }
 impl DeleteBucketWebsiteInputBuilder {
     /// <p>The bucket name for which you want to remove the website configuration. </p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

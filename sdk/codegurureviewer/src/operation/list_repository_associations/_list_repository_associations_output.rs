@@ -11,8 +11,10 @@ pub struct ListRepositoryAssociationsOutput {
 }
 impl ListRepositoryAssociationsOutput {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
-    pub fn repository_association_summaries(&self) -> ::std::option::Option<&[crate::types::RepositoryAssociationSummary]> {
-        self.repository_association_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_association_summaries.is_none()`.
+    pub fn repository_association_summaries(&self) -> &[crate::types::RepositoryAssociationSummary] {
+        self.repository_association_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

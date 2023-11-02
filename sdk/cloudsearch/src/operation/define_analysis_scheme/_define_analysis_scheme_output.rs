@@ -35,6 +35,7 @@ pub struct DefineAnalysisSchemeOutputBuilder {
 }
 impl DefineAnalysisSchemeOutputBuilder {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
+    /// This field is required.
     pub fn analysis_scheme(mut self, input: crate::types::AnalysisSchemeStatus) -> Self {
         self.analysis_scheme = ::std::option::Option::Some(input);
         self

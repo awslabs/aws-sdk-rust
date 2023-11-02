@@ -34,6 +34,7 @@ pub struct GetGroupVersionInputBuilder {
 }
 impl GetGroupVersionInputBuilder {
     /// The ID of the Greengrass group.
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetGroupVersionInputBuilder {
         &self.group_id
     }
     /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
+    /// This field is required.
     pub fn group_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_version_id = ::std::option::Option::Some(input.into());
         self

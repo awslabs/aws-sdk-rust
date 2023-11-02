@@ -80,6 +80,7 @@ impl UpdateShardCountInputBuilder {
     /// <li> <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p> </li>
     /// <li> <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn target_shard_count(mut self, input: i32) -> Self {
         self.target_shard_count = ::std::option::Option::Some(input);
         self
@@ -106,6 +107,7 @@ impl UpdateShardCountInputBuilder {
         &self.target_shard_count
     }
     /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
+    /// This field is required.
     pub fn scaling_type(mut self, input: crate::types::ScalingType) -> Self {
         self.scaling_type = ::std::option::Option::Some(input);
         self

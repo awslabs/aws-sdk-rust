@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationCodeConfigurationDescription {
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub code_content_type: ::std::option::Option<crate::types::CodeContentType>,
+    pub code_content_type: crate::types::CodeContentType,
     /// <p>Describes details about the location and format of the application code.</p>
     pub code_content_description: ::std::option::Option<crate::types::CodeContentDescription>,
 }
 impl ApplicationCodeConfigurationDescription {
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn code_content_type(&self) -> ::std::option::Option<&crate::types::CodeContentType> {
-        self.code_content_type.as_ref()
+    pub fn code_content_type(&self) -> &crate::types::CodeContentType {
+        &self.code_content_type
     }
     /// <p>Describes details about the location and format of the application code.</p>
     pub fn code_content_description(&self) -> ::std::option::Option<&crate::types::CodeContentDescription> {
@@ -35,6 +35,7 @@ pub struct ApplicationCodeConfigurationDescriptionBuilder {
 }
 impl ApplicationCodeConfigurationDescriptionBuilder {
     /// <p>Specifies whether the code content is in text or zip format.</p>
+    /// This field is required.
     pub fn code_content_type(mut self, input: crate::types::CodeContentType) -> Self {
         self.code_content_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,19 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
         &self.code_content_description
     }
     /// Consumes the builder and constructs a [`ApplicationCodeConfigurationDescription`](crate::types::ApplicationCodeConfigurationDescription).
-    pub fn build(self) -> crate::types::ApplicationCodeConfigurationDescription {
-        crate::types::ApplicationCodeConfigurationDescription {
-            code_content_type: self.code_content_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`code_content_type`](crate::types::builders::ApplicationCodeConfigurationDescriptionBuilder::code_content_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ApplicationCodeConfigurationDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationCodeConfigurationDescription {
+            code_content_type: self.code_content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code_content_type",
+                    "code_content_type was not specified but it is required when building ApplicationCodeConfigurationDescription",
+                )
+            })?,
             code_content_description: self.code_content_description,
-        }
+        })
     }
 }

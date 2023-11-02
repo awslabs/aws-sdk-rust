@@ -11,8 +11,10 @@ pub struct ListFleetMetricsOutput {
 }
 impl ListFleetMetricsOutput {
     /// <p>The list of fleet metrics objects.</p>
-    pub fn fleet_metrics(&self) -> ::std::option::Option<&[crate::types::FleetMetricNameAndArn]> {
-        self.fleet_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fleet_metrics.is_none()`.
+    pub fn fleet_metrics(&self) -> &[crate::types::FleetMetricNameAndArn] {
+        self.fleet_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

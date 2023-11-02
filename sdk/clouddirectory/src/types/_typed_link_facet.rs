@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkFacet {
     /// <p>The unique name of the typed link facet.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
+    pub attributes: ::std::vec::Vec<crate::types::TypedLinkAttributeDefinition>,
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
-    pub identity_attribute_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub identity_attribute_order: ::std::vec::Vec<::std::string::String>,
 }
 impl TypedLinkFacet {
     /// <p>The unique name of the typed link facet.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::TypedLinkAttributeDefinition]> {
-        self.attributes.as_deref()
+    pub fn attributes(&self) -> &[crate::types::TypedLinkAttributeDefinition] {
+        use std::ops::Deref;
+        self.attributes.deref()
     }
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
-    pub fn identity_attribute_order(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.identity_attribute_order.as_deref()
+    pub fn identity_attribute_order(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.identity_attribute_order.deref()
     }
 }
 impl TypedLinkFacet {
@@ -42,6 +45,7 @@ pub struct TypedLinkFacetBuilder {
 }
 impl TypedLinkFacetBuilder {
     /// <p>The unique name of the typed link facet.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -96,11 +100,30 @@ impl TypedLinkFacetBuilder {
         &self.identity_attribute_order
     }
     /// Consumes the builder and constructs a [`TypedLinkFacet`](crate::types::TypedLinkFacet).
-    pub fn build(self) -> crate::types::TypedLinkFacet {
-        crate::types::TypedLinkFacet {
-            name: self.name,
-            attributes: self.attributes,
-            identity_attribute_order: self.identity_attribute_order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TypedLinkFacetBuilder::name)
+    /// - [`attributes`](crate::types::builders::TypedLinkFacetBuilder::attributes)
+    /// - [`identity_attribute_order`](crate::types::builders::TypedLinkFacetBuilder::identity_attribute_order)
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkFacet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TypedLinkFacet {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TypedLinkFacet",
+                )
+            })?,
+            attributes: self.attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attributes",
+                    "attributes was not specified but it is required when building TypedLinkFacet",
+                )
+            })?,
+            identity_attribute_order: self.identity_attribute_order.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_attribute_order",
+                    "identity_attribute_order was not specified but it is required when building TypedLinkFacet",
+                )
+            })?,
+        })
     }
 }

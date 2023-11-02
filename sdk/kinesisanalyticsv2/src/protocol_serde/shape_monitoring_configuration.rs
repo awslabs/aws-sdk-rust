@@ -3,14 +3,14 @@ pub fn ser_monitoring_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_type {
-        object.key("ConfigurationType").string(var_1.as_str());
+    {
+        object.key("ConfigurationType").string(input.configuration_type.as_str());
     }
-    if let Some(var_2) = &input.metrics_level {
-        object.key("MetricsLevel").string(var_2.as_str());
+    if let Some(var_1) = &input.metrics_level {
+        object.key("MetricsLevel").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.log_level {
-        object.key("LogLevel").string(var_3.as_str());
+    if let Some(var_2) = &input.log_level {
+        object.key("LogLevel").string(var_2.as_str());
     }
     Ok(())
 }

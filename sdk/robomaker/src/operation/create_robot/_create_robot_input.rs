@@ -51,6 +51,7 @@ pub struct CreateRobotInputBuilder {
 }
 impl CreateRobotInputBuilder {
     /// <p>The name for the robot.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl CreateRobotInputBuilder {
         &self.name
     }
     /// <p>The target architecture of the robot.</p>
+    /// This field is required.
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
         self.architecture = ::std::option::Option::Some(input);
         self
@@ -79,6 +81,7 @@ impl CreateRobotInputBuilder {
         &self.architecture
     }
     /// <p>The Greengrass group id.</p>
+    /// This field is required.
     pub fn greengrass_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.greengrass_group_id = ::std::option::Option::Some(input.into());
         self

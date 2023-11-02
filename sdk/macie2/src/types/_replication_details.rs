@@ -21,8 +21,10 @@ impl ReplicationDetails {
         self.replicated_externally
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn replication_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_accounts.is_none()`.
+    pub fn replication_accounts(&self) -> &[::std::string::String] {
+        self.replication_accounts.as_deref().unwrap_or_default()
     }
 }
 impl ReplicationDetails {

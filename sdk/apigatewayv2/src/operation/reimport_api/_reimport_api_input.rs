@@ -49,6 +49,7 @@ pub struct ReimportApiInputBuilder {
 }
 impl ReimportApiInputBuilder {
     /// <p>The API identifier.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl ReimportApiInputBuilder {
         &self.basepath
     }
     /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
+    /// This field is required.
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
         self

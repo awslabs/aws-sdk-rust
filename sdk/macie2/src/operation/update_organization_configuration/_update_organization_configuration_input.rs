@@ -27,6 +27,7 @@ pub struct UpdateOrganizationConfigurationInputBuilder {
 }
 impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// This field is required.
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
         self

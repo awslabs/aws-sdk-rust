@@ -73,8 +73,10 @@ impl Volume {
         self.resource_arn.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The system-generated, unique ID of the volume.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
@@ -89,8 +91,10 @@ impl Volume {
         self.lifecycle_transition_reason.as_ref()
     }
     /// <p>A list of administrative actions for the volume that are in process or waiting to be processed. Administrative actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.</p>
-    pub fn administrative_actions(&self) -> ::std::option::Option<&[crate::types::AdministrativeAction]> {
-        self.administrative_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.administrative_actions.is_none()`.
+    pub fn administrative_actions(&self) -> &[crate::types::AdministrativeAction] {
+        self.administrative_actions.as_deref().unwrap_or_default()
     }
     /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::OpenZfsVolumeConfiguration> {

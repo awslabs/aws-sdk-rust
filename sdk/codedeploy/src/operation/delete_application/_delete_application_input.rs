@@ -28,6 +28,7 @@ pub struct DeleteApplicationInputBuilder {
 }
 impl DeleteApplicationInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

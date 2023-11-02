@@ -8,7 +8,7 @@ pub struct ListEnvironmentTemplateVersionsInput {
     /// <p>The maximum number of major or minor versions of an environment template to list.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name of the environment template.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: ::std::option::Option<::std::string::String>,
@@ -23,8 +23,9 @@ impl ListEnvironmentTemplateVersionsInput {
         self.max_results
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
     /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
@@ -78,6 +79,7 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the environment template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +111,8 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
         &self.major_version
     }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplateVersionsInput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`template_name`](crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsInputBuilder::template_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -119,7 +123,12 @@ impl ListEnvironmentTemplateVersionsInputBuilder {
             crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
-                template_name: self.template_name,
+                template_name: self.template_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "template_name",
+                        "template_name was not specified but it is required when building ListEnvironmentTemplateVersionsInput",
+                    )
+                })?,
                 major_version: self.major_version,
             },
         )

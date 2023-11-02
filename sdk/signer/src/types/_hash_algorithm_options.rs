@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
-    pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::HashAlgorithm>>,
+    pub allowed_values: ::std::vec::Vec<crate::types::HashAlgorithm>,
     /// <p>The default hash algorithm that is used in a code signing job.</p>
-    pub default_value: ::std::option::Option<crate::types::HashAlgorithm>,
+    pub default_value: crate::types::HashAlgorithm,
 }
 impl HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&[crate::types::HashAlgorithm]> {
-        self.allowed_values.as_deref()
+    pub fn allowed_values(&self) -> &[crate::types::HashAlgorithm] {
+        use std::ops::Deref;
+        self.allowed_values.deref()
     }
     /// <p>The default hash algorithm that is used in a code signing job.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&crate::types::HashAlgorithm> {
-        self.default_value.as_ref()
+    pub fn default_value(&self) -> &crate::types::HashAlgorithm {
+        &self.default_value
     }
 }
 impl HashAlgorithmOptions {
@@ -55,6 +56,7 @@ impl HashAlgorithmOptionsBuilder {
         &self.allowed_values
     }
     /// <p>The default hash algorithm that is used in a code signing job.</p>
+    /// This field is required.
     pub fn default_value(mut self, input: crate::types::HashAlgorithm) -> Self {
         self.default_value = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl HashAlgorithmOptionsBuilder {
         &self.default_value
     }
     /// Consumes the builder and constructs a [`HashAlgorithmOptions`](crate::types::HashAlgorithmOptions).
-    pub fn build(self) -> crate::types::HashAlgorithmOptions {
-        crate::types::HashAlgorithmOptions {
-            allowed_values: self.allowed_values,
-            default_value: self.default_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allowed_values`](crate::types::builders::HashAlgorithmOptionsBuilder::allowed_values)
+    /// - [`default_value`](crate::types::builders::HashAlgorithmOptionsBuilder::default_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::HashAlgorithmOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HashAlgorithmOptions {
+            allowed_values: self.allowed_values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allowed_values",
+                    "allowed_values was not specified but it is required when building HashAlgorithmOptions",
+                )
+            })?,
+            default_value: self.default_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "default_value",
+                    "default_value was not specified but it is required when building HashAlgorithmOptions",
+                )
+            })?,
+        })
     }
 }

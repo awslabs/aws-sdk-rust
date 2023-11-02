@@ -41,6 +41,7 @@ pub struct UpdateRefreshScheduleInputBuilder {
 }
 impl UpdateRefreshScheduleInputBuilder {
     /// <p>The ID of the dataset.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateRefreshScheduleInputBuilder {
         &self.data_set_id
     }
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateRefreshScheduleInputBuilder {
         &self.aws_account_id
     }
     /// <p>The refresh schedule.</p>
+    /// This field is required.
     pub fn schedule(mut self, input: crate::types::RefreshSchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
         self

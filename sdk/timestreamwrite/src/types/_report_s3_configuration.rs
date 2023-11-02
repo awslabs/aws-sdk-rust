@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportS3Configuration {
     /// <p></p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p></p>
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -15,8 +15,9 @@ pub struct ReportS3Configuration {
 }
 impl ReportS3Configuration {
     /// <p></p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p></p>
     pub fn object_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct ReportS3ConfigurationBuilder {
 }
 impl ReportS3ConfigurationBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl ReportS3ConfigurationBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`ReportS3Configuration`](crate::types::ReportS3Configuration).
-    pub fn build(self) -> crate::types::ReportS3Configuration {
-        crate::types::ReportS3Configuration {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::ReportS3ConfigurationBuilder::bucket_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportS3Configuration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReportS3Configuration {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building ReportS3Configuration",
+                )
+            })?,
             object_key_prefix: self.object_key_prefix,
             encryption_option: self.encryption_option,
             kms_key_id: self.kms_key_id,
-        }
+        })
     }
 }

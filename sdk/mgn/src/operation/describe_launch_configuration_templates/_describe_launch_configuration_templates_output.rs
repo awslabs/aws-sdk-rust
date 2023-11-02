@@ -11,8 +11,10 @@ pub struct DescribeLaunchConfigurationTemplatesOutput {
 }
 impl DescribeLaunchConfigurationTemplatesOutput {
     /// <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::LaunchConfigurationTemplate]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::LaunchConfigurationTemplate] {
+        self.items.as_deref().unwrap_or_default()
     }
     /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

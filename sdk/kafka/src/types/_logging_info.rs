@@ -27,6 +27,7 @@ pub struct LoggingInfoBuilder {
 }
 impl LoggingInfoBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn broker_logs(mut self, input: crate::types::BrokerLogs) -> Self {
         self.broker_logs = ::std::option::Option::Some(input);
         self

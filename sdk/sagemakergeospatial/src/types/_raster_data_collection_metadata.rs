@@ -5,44 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RasterDataCollectionMetadata {
     /// <p>The name of the raster data collection.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The type of raster data collection.</p>
-    pub r#type: ::std::option::Option<crate::types::DataCollectionType>,
+    pub r#type: crate::types::DataCollectionType,
     /// <p>A description of the raster data collection.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The description URL of the raster data collection.</p>
     pub description_page_url: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub supported_filters: ::std::vec::Vec<crate::types::Filter>,
     /// <p>Each tag consists of a key and a value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RasterDataCollectionMetadata {
     /// <p>The name of the raster data collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The type of raster data collection.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCollectionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DataCollectionType {
+        &self.r#type
     }
     /// <p>A description of the raster data collection.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The description URL of the raster data collection.</p>
     pub fn description_page_url(&self) -> ::std::option::Option<&str> {
         self.description_page_url.as_deref()
     }
     /// <p>The list of filters supported by the raster data collection.</p>
-    pub fn supported_filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.supported_filters.as_deref()
+    pub fn supported_filters(&self) -> &[crate::types::Filter] {
+        use std::ops::Deref;
+        self.supported_filters.deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,6 +74,7 @@ pub struct RasterDataCollectionMetadataBuilder {
 }
 impl RasterDataCollectionMetadataBuilder {
     /// <p>The name of the raster data collection.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +89,7 @@ impl RasterDataCollectionMetadataBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +104,7 @@ impl RasterDataCollectionMetadataBuilder {
         &self.arn
     }
     /// <p>The type of raster data collection.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DataCollectionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -112,6 +119,7 @@ impl RasterDataCollectionMetadataBuilder {
         &self.r#type
     }
     /// <p>A description of the raster data collection.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -180,15 +188,46 @@ impl RasterDataCollectionMetadataBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionMetadata`](crate::types::RasterDataCollectionMetadata).
-    pub fn build(self) -> crate::types::RasterDataCollectionMetadata {
-        crate::types::RasterDataCollectionMetadata {
-            name: self.name,
-            arn: self.arn,
-            r#type: self.r#type,
-            description: self.description,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RasterDataCollectionMetadataBuilder::name)
+    /// - [`arn`](crate::types::builders::RasterDataCollectionMetadataBuilder::arn)
+    /// - [`r#type`](crate::types::builders::RasterDataCollectionMetadataBuilder::r#type)
+    /// - [`description`](crate::types::builders::RasterDataCollectionMetadataBuilder::description)
+    /// - [`supported_filters`](crate::types::builders::RasterDataCollectionMetadataBuilder::supported_filters)
+    pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RasterDataCollectionMetadata {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RasterDataCollectionMetadata",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RasterDataCollectionMetadata",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building RasterDataCollectionMetadata",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building RasterDataCollectionMetadata",
+                )
+            })?,
             description_page_url: self.description_page_url,
-            supported_filters: self.supported_filters,
+            supported_filters: self.supported_filters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "supported_filters",
+                    "supported_filters was not specified but it is required when building RasterDataCollectionMetadata",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

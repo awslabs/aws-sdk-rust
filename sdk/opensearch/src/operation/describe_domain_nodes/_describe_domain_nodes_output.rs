@@ -10,8 +10,10 @@ pub struct DescribeDomainNodesOutput {
 }
 impl DescribeDomainNodesOutput {
     /// <p>Contains nodes information list <code>DomainNodesStatusList</code> with details about the all nodes on the requested domain.</p>
-    pub fn domain_nodes_status_list(&self) -> ::std::option::Option<&[crate::types::DomainNodesStatus]> {
-        self.domain_nodes_status_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_nodes_status_list.is_none()`.
+    pub fn domain_nodes_status_list(&self) -> &[crate::types::DomainNodesStatus] {
+        self.domain_nodes_status_list.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDomainNodesOutput {

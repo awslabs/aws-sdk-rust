@@ -72,10 +72,7 @@ pub(crate) fn lens_list_action_executions_output_action_execution_details(
 pub(crate) fn lens_list_action_types_output_action_types(
     input: crate::operation::list_action_types::ListActionTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionType>> {
-    let input = match input.action_types {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.action_types;
     ::std::option::Option::Some(input)
 }
 

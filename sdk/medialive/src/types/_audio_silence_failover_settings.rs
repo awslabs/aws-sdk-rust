@@ -35,6 +35,7 @@ pub struct AudioSilenceFailoverSettingsBuilder {
 }
 impl AudioSilenceFailoverSettingsBuilder {
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
+    /// This field is required.
     pub fn audio_selector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_selector_name = ::std::option::Option::Some(input.into());
         self

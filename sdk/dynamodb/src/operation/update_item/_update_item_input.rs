@@ -264,6 +264,7 @@ pub struct UpdateItemInputBuilder {
 }
 impl UpdateItemInputBuilder {
     /// <p>The name of the table containing the item to update.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

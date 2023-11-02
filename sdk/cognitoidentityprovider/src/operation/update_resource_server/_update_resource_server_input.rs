@@ -26,8 +26,10 @@ impl UpdateResourceServerInput {
         self.name.as_deref()
     }
     /// <p>The scope values to be set for the resource server.</p>
-    pub fn scopes(&self) -> ::std::option::Option<&[crate::types::ResourceServerScopeType]> {
-        self.scopes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
+    pub fn scopes(&self) -> &[crate::types::ResourceServerScopeType] {
+        self.scopes.as_deref().unwrap_or_default()
     }
 }
 impl UpdateResourceServerInput {
@@ -48,6 +50,7 @@ pub struct UpdateResourceServerInputBuilder {
 }
 impl UpdateResourceServerInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl UpdateResourceServerInputBuilder {
         &self.user_pool_id
     }
     /// <p>The identifier for the resource server.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl UpdateResourceServerInputBuilder {
         &self.identifier
     }
     /// <p>The name of the resource server.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

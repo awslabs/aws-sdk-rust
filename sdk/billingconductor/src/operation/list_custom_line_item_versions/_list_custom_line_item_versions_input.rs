@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsInput {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The maximum number of custom line item versions to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
@@ -14,8 +14,9 @@ pub struct ListCustomLineItemVersionsInput {
 }
 impl ListCustomLineItemVersionsInput {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The maximum number of custom line item versions to retrieve.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -48,6 +49,7 @@ pub struct ListCustomLineItemVersionsInputBuilder {
 }
 impl ListCustomLineItemVersionsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,8 @@ impl ListCustomLineItemVersionsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemVersionsInput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -111,7 +115,12 @@ impl ListCustomLineItemVersionsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput {
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ListCustomLineItemVersionsInput",
+                )
+            })?,
             max_results: self.max_results,
             next_token: self.next_token,
             filters: self.filters,

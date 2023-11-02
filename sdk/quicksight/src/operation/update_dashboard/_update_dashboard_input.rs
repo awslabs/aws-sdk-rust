@@ -104,6 +104,7 @@ pub struct UpdateDashboardInputBuilder {
 }
 impl UpdateDashboardInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +119,7 @@ impl UpdateDashboardInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +134,7 @@ impl UpdateDashboardInputBuilder {
         &self.dashboard_id
     }
     /// <p>The display name of the dashboard.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -26,7 +26,7 @@ pub struct ApiKeyRestrictions {
     /// </ul> <note>
     /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
     /// </note>
-    pub allow_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allow_actions: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
     /// <ul>
     /// <li> <p>The ARN must be the correct ARN for a map, place, or route ARN. You may include wildcards in the resource-id to match multiple resources of the same type.</p> </li>
@@ -35,7 +35,7 @@ pub struct ApiKeyRestrictions {
     /// <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub allow_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allow_resources: ::std::vec::Vec<::std::string::String>,
     /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
     /// <p>Requirements:</p>
     /// <ul>
@@ -69,8 +69,9 @@ impl ApiKeyRestrictions {
     /// </ul> <note>
     /// <p>You must use these strings exactly. For example, to provide access to map rendering, the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you must list each of the Place actions separately.</p>
     /// </note>
-    pub fn allow_actions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_actions.as_deref()
+    pub fn allow_actions(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allow_actions.deref()
     }
     /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p>
     /// <ul>
@@ -80,8 +81,9 @@ impl ApiKeyRestrictions {
     /// <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn allow_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_resources.as_deref()
+    pub fn allow_resources(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.allow_resources.deref()
     }
     /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
     /// <p>Requirements:</p>
@@ -91,8 +93,10 @@ impl ApiKeyRestrictions {
     /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li>
     /// </ul>
-    pub fn allow_referers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_referers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_referers.is_none()`.
+    pub fn allow_referers(&self) -> &[::std::string::String] {
+        self.allow_referers.as_deref().unwrap_or_default()
     }
 }
 impl ApiKeyRestrictions {
@@ -277,11 +281,24 @@ impl ApiKeyRestrictionsBuilder {
         &self.allow_referers
     }
     /// Consumes the builder and constructs a [`ApiKeyRestrictions`](crate::types::ApiKeyRestrictions).
-    pub fn build(self) -> crate::types::ApiKeyRestrictions {
-        crate::types::ApiKeyRestrictions {
-            allow_actions: self.allow_actions,
-            allow_resources: self.allow_resources,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`allow_actions`](crate::types::builders::ApiKeyRestrictionsBuilder::allow_actions)
+    /// - [`allow_resources`](crate::types::builders::ApiKeyRestrictionsBuilder::allow_resources)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyRestrictions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApiKeyRestrictions {
+            allow_actions: self.allow_actions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allow_actions",
+                    "allow_actions was not specified but it is required when building ApiKeyRestrictions",
+                )
+            })?,
+            allow_resources: self.allow_resources.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "allow_resources",
+                    "allow_resources was not specified but it is required when building ApiKeyRestrictions",
+                )
+            })?,
             allow_referers: self.allow_referers,
-        }
+        })
     }
 }

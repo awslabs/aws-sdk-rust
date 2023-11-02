@@ -13,6 +13,7 @@ pub fn ser_cloud_watch_metrics(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cloud_watch_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CloudWatchMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -38,5 +39,5 @@ pub fn de_cloud_watch_metrics(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cloud_watch_metrics_correct_errors(builder).build())
 }

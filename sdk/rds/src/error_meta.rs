@@ -155,6 +155,14 @@ pub enum Error {
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
     /// <p>There is insufficient storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::types::error::InsufficientStorageClusterCapacityFault),
+    /// <p>The integration you are trying to create already exists.</p>
+    IntegrationAlreadyExistsFault(crate::types::error::IntegrationAlreadyExistsFault),
+    /// <p>A conflicting conditional operation is currently in progress against this resource. Typically occurs when there are multiple requests being made to the same resource at the same time, and these requests conflict with each other.</p>
+    IntegrationConflictOperationFault(crate::types::error::IntegrationConflictOperationFault),
+    /// <p>The specified integration could not be found.</p>
+    IntegrationNotFoundFault(crate::types::error::IntegrationNotFoundFault),
+    /// <p>You can't crate any more zero-ETL integrations because the quota has been reached.</p>
+    IntegrationQuotaExceededFault(crate::types::error::IntegrationQuotaExceededFault),
     /// <p>The blue/green deployment can't be switched over or deleted because there is an invalid configuration in the green environment.</p>
     InvalidBlueGreenDeploymentStateFault(crate::types::error::InvalidBlueGreenDeploymentStateFault),
     /// <p>You can't delete the CEV.</p>
@@ -199,6 +207,8 @@ pub enum Error {
     InvalidExportTaskStateFault(crate::types::error::InvalidExportTaskStateFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
     InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
+    /// <p>The integration is in an invalid state and can't perform the requested operation.</p>
+    InvalidIntegrationStateFault(crate::types::error::InvalidIntegrationStateFault),
     /// <p>The option group isn't in the <i>available</i> state.</p>
     InvalidOptionGroupStateFault(crate::types::error::InvalidOptionGroupStateFault),
     /// <p>Cannot restore from VPC backup to non-VPC DB instance.</p>
@@ -344,6 +354,10 @@ impl ::std::fmt::Display for Error {
             Error::InsufficientDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientDbInstanceCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientStorageClusterCapacityFault(inner) => inner.fmt(f),
+            Error::IntegrationAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::IntegrationConflictOperationFault(inner) => inner.fmt(f),
+            Error::IntegrationNotFoundFault(inner) => inner.fmt(f),
+            Error::IntegrationQuotaExceededFault(inner) => inner.fmt(f),
             Error::InvalidBlueGreenDeploymentStateFault(inner) => inner.fmt(f),
             Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterAutomatedBackupStateFault(inner) => inner.fmt(f),
@@ -366,6 +380,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidExportSourceStateFault(inner) => inner.fmt(f),
             Error::InvalidExportTaskStateFault(inner) => inner.fmt(f),
             Error::InvalidGlobalClusterStateFault(inner) => inner.fmt(f),
+            Error::InvalidIntegrationStateFault(inner) => inner.fmt(f),
             Error::InvalidOptionGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidRestoreFault(inner) => inner.fmt(f),
             Error::InvalidS3BucketFault(inner) => inner.fmt(f),
@@ -533,6 +548,7 @@ impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Er
                 Error::DbProxyTargetGroupNotFoundFault(inner)
             }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbSnapshotNotFoundFault(inner) => Error::DbSnapshotNotFoundFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::IntegrationNotFoundFault(inner) => Error::IntegrationNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1523,6 +1539,41 @@ impl From<crate::operation::create_global_cluster::CreateGlobalClusterError> for
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_integration::CreateIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::create_integration::CreateIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_integration::CreateIntegrationError> for Error {
+    fn from(err: crate::operation::create_integration::CreateIntegrationError) -> Self {
+        match err {
+            crate::operation::create_integration::CreateIntegrationError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
+            crate::operation::create_integration::CreateIntegrationError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
+            crate::operation::create_integration::CreateIntegrationError::IntegrationAlreadyExistsFault(inner) => {
+                Error::IntegrationAlreadyExistsFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::IntegrationConflictOperationFault(inner) => {
+                Error::IntegrationConflictOperationFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::IntegrationQuotaExceededFault(inner) => {
+                Error::IntegrationQuotaExceededFault(inner)
+            }
+            crate::operation::create_integration::CreateIntegrationError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+            crate::operation::create_integration::CreateIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::create_option_group::CreateOptionGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2065,6 +2116,36 @@ impl From<crate::operation::delete_global_cluster::DeleteGlobalClusterError> for
                 Error::InvalidGlobalClusterStateFault(inner)
             }
             crate::operation::delete_global_cluster::DeleteGlobalClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_integration::DeleteIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_integration::DeleteIntegrationError> for Error {
+    fn from(err: crate::operation::delete_integration::DeleteIntegrationError) -> Self {
+        match err {
+            crate::operation::delete_integration::DeleteIntegrationError::IntegrationConflictOperationFault(inner) => {
+                Error::IntegrationConflictOperationFault(inner)
+            }
+            crate::operation::delete_integration::DeleteIntegrationError::IntegrationNotFoundFault(inner) => Error::IntegrationNotFoundFault(inner),
+            crate::operation::delete_integration::DeleteIntegrationError::InvalidIntegrationStateFault(inner) => {
+                Error::InvalidIntegrationStateFault(inner)
+            }
+            crate::operation::delete_integration::DeleteIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3001,6 +3082,32 @@ impl From<crate::operation::describe_global_clusters::DescribeGlobalClustersErro
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_integrations::DescribeIntegrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_integrations::DescribeIntegrationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_integrations::DescribeIntegrationsError> for Error {
+    fn from(err: crate::operation::describe_integrations::DescribeIntegrationsError) -> Self {
+        match err {
+            crate::operation::describe_integrations::DescribeIntegrationsError::IntegrationNotFoundFault(inner) => {
+                Error::IntegrationNotFoundFault(inner)
+            }
+            crate::operation::describe_integrations::DescribeIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3359,6 +3466,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbSnapshotNotFoundFault(inner) => {
                 Error::DbSnapshotNotFoundFault(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::IntegrationNotFoundFault(inner) => {
+                Error::IntegrationNotFoundFault(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4396,6 +4506,9 @@ impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceErr
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbSnapshotNotFoundFault(inner) => {
                 Error::DbSnapshotNotFoundFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::IntegrationNotFoundFault(inner) => {
+                Error::IntegrationNotFoundFault(inner)
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -5470,6 +5583,10 @@ impl ::std::error::Error for Error {
             Error::InsufficientDbClusterCapacityFault(inner) => inner.source(),
             Error::InsufficientDbInstanceCapacityFault(inner) => inner.source(),
             Error::InsufficientStorageClusterCapacityFault(inner) => inner.source(),
+            Error::IntegrationAlreadyExistsFault(inner) => inner.source(),
+            Error::IntegrationConflictOperationFault(inner) => inner.source(),
+            Error::IntegrationNotFoundFault(inner) => inner.source(),
+            Error::IntegrationQuotaExceededFault(inner) => inner.source(),
             Error::InvalidBlueGreenDeploymentStateFault(inner) => inner.source(),
             Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.source(),
             Error::InvalidDbClusterAutomatedBackupStateFault(inner) => inner.source(),
@@ -5492,6 +5609,7 @@ impl ::std::error::Error for Error {
             Error::InvalidExportSourceStateFault(inner) => inner.source(),
             Error::InvalidExportTaskStateFault(inner) => inner.source(),
             Error::InvalidGlobalClusterStateFault(inner) => inner.source(),
+            Error::InvalidIntegrationStateFault(inner) => inner.source(),
             Error::InvalidOptionGroupStateFault(inner) => inner.source(),
             Error::InvalidRestoreFault(inner) => inner.source(),
             Error::InvalidS3BucketFault(inner) => inner.source(),
@@ -5606,6 +5724,10 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InsufficientDbClusterCapacityFault(e) => e.request_id(),
             Self::InsufficientDbInstanceCapacityFault(e) => e.request_id(),
             Self::InsufficientStorageClusterCapacityFault(e) => e.request_id(),
+            Self::IntegrationAlreadyExistsFault(e) => e.request_id(),
+            Self::IntegrationConflictOperationFault(e) => e.request_id(),
+            Self::IntegrationNotFoundFault(e) => e.request_id(),
+            Self::IntegrationQuotaExceededFault(e) => e.request_id(),
             Self::InvalidBlueGreenDeploymentStateFault(e) => e.request_id(),
             Self::InvalidCustomDbEngineVersionStateFault(e) => e.request_id(),
             Self::InvalidDbClusterAutomatedBackupStateFault(e) => e.request_id(),
@@ -5628,6 +5750,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InvalidExportSourceStateFault(e) => e.request_id(),
             Self::InvalidExportTaskStateFault(e) => e.request_id(),
             Self::InvalidGlobalClusterStateFault(e) => e.request_id(),
+            Self::InvalidIntegrationStateFault(e) => e.request_id(),
             Self::InvalidOptionGroupStateFault(e) => e.request_id(),
             Self::InvalidRestoreFault(e) => e.request_id(),
             Self::InvalidS3BucketFault(e) => e.request_id(),

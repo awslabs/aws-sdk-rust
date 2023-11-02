@@ -28,6 +28,7 @@ pub struct GetReusableDelegationSetInputBuilder {
 }
 impl GetReusableDelegationSetInputBuilder {
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

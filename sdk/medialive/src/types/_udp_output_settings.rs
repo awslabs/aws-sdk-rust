@@ -63,6 +63,7 @@ impl UdpOutputSettingsBuilder {
         &self.buffer_msec
     }
     /// Udp Container Settings
+    /// This field is required.
     pub fn container_settings(mut self, input: crate::types::UdpContainerSettings) -> Self {
         self.container_settings = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl UdpOutputSettingsBuilder {
         &self.container_settings
     }
     /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

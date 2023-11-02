@@ -15,8 +15,10 @@ impl ListRegistriesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of registry summaries.</p>
-    pub fn registries(&self) -> ::std::option::Option<&[crate::types::RegistrySummary]> {
-        self.registries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registries.is_none()`.
+    pub fn registries(&self) -> &[crate::types::RegistrySummary] {
+        self.registries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRegistriesOutput {

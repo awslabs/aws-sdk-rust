@@ -27,16 +27,20 @@ pub struct TaskOverride {
 }
 impl TaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn container_overrides(&self) -> ::std::option::Option<&[crate::types::ContainerOverride]> {
-        self.container_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_overrides.is_none()`.
+    pub fn container_overrides(&self) -> &[crate::types::ContainerOverride] {
+        self.container_overrides.as_deref().unwrap_or_default()
     }
     /// <p>The CPU override for the task.</p>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
     }
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn inference_accelerator_overrides(&self) -> ::std::option::Option<&[crate::types::InferenceAcceleratorOverride]> {
-        self.inference_accelerator_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerator_overrides.is_none()`.
+    pub fn inference_accelerator_overrides(&self) -> &[crate::types::InferenceAcceleratorOverride] {
+        self.inference_accelerator_overrides.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {

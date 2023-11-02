@@ -27,6 +27,7 @@ pub struct DescribeTunnelInputBuilder {
 }
 impl DescribeTunnelInputBuilder {
     /// <p>The tunnel to describe.</p>
+    /// This field is required.
     pub fn tunnel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_id = ::std::option::Option::Some(input.into());
         self

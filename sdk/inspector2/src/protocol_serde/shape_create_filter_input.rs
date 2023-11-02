@@ -3,33 +3,33 @@ pub fn ser_create_filter_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_filter::CreateFilterInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action {
-        object.key("action").string(var_1.as_str());
+    {
+        object.key("action").string(input.action.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.filter_criteria {
+    if let Some(var_2) = &input.filter_criteria {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("filterCriteria").start_object();
-        crate::protocol_serde::shape_filter_criteria::ser_filter_criteria(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("filterCriteria").start_object();
+        crate::protocol_serde::shape_filter_criteria::ser_filter_criteria(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_6) = &input.reason {
-        object.key("reason").string(var_6.as_str());
+    if let Some(var_4) = &input.reason {
+        object.key("reason").string(var_4.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_8.finish();
+        object_6.finish();
     }
     Ok(())
 }

@@ -55,6 +55,7 @@ pub struct ListTemplateSharesInputBuilder {
 }
 impl ListTemplateSharesInputBuilder {
     /// <p>The review template ARN.</p>
+    /// This field is required.
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
         self

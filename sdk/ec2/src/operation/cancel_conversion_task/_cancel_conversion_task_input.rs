@@ -41,6 +41,7 @@ pub struct CancelConversionTaskInputBuilder {
 }
 impl CancelConversionTaskInputBuilder {
     /// <p>The ID of the conversion task.</p>
+    /// This field is required.
     pub fn conversion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversion_task_id = ::std::option::Option::Some(input.into());
         self

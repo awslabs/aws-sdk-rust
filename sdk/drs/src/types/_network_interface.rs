@@ -17,8 +17,10 @@ impl NetworkInterface {
         self.mac_address.as_deref()
     }
     /// <p>Network interface IPs.</p>
-    pub fn ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ips.is_none()`.
+    pub fn ips(&self) -> &[::std::string::String] {
+        self.ips.as_deref().unwrap_or_default()
     }
     /// <p>Whether this is the primary network interface.</p>
     pub fn is_primary(&self) -> ::std::option::Option<bool> {

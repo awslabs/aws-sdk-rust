@@ -41,6 +41,7 @@ pub struct GetBucketAnalyticsConfigurationInputBuilder {
 }
 impl GetBucketAnalyticsConfigurationInputBuilder {
     /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetBucketAnalyticsConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID that identifies the analytics configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

@@ -15,8 +15,10 @@ impl ModifyCacheParameterGroupInput {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
-    pub fn parameter_name_values(&self) -> ::std::option::Option<&[crate::types::ParameterNameValue]> {
-        self.parameter_name_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_name_values.is_none()`.
+    pub fn parameter_name_values(&self) -> &[crate::types::ParameterNameValue] {
+        self.parameter_name_values.as_deref().unwrap_or_default()
     }
 }
 impl ModifyCacheParameterGroupInput {
@@ -35,6 +37,7 @@ pub struct ModifyCacheParameterGroupInputBuilder {
 }
 impl ModifyCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group to modify.</p>
+    /// This field is required.
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct DisassociateTeamMemberInputBuilder {
 }
 impl DisassociateTeamMemberInputBuilder {
     /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateTeamMemberInputBuilder {
         &self.project_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self

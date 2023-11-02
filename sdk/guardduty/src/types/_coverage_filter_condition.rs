@@ -11,12 +11,16 @@ pub struct CoverageFilterCondition {
 }
 impl CoverageFilterCondition {
     /// <p>Represents an equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub fn equals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.equals.is_none()`.
+    pub fn equals(&self) -> &[::std::string::String] {
+        self.equals.as_deref().unwrap_or_default()
     }
     /// <p>Represents a not equal condition that is applied to a single field while retrieving the coverage details.</p>
-    pub fn not_equals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.not_equals.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_equals.is_none()`.
+    pub fn not_equals(&self) -> &[::std::string::String] {
+        self.not_equals.as_deref().unwrap_or_default()
     }
 }
 impl CoverageFilterCondition {

@@ -35,17 +35,23 @@ impl UpdateAssetModelInput {
     }
     /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_properties(&self) -> ::std::option::Option<&[crate::types::AssetModelProperty]> {
-        self.asset_model_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_properties.is_none()`.
+    pub fn asset_model_properties(&self) -> &[crate::types::AssetModelProperty] {
+        self.asset_model_properties.as_deref().unwrap_or_default()
     }
     /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_hierarchies(&self) -> ::std::option::Option<&[crate::types::AssetModelHierarchy]> {
-        self.asset_model_hierarchies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_hierarchies.is_none()`.
+    pub fn asset_model_hierarchies(&self) -> &[crate::types::AssetModelHierarchy] {
+        self.asset_model_hierarchies.as_deref().unwrap_or_default()
     }
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
-    pub fn asset_model_composite_models(&self) -> ::std::option::Option<&[crate::types::AssetModelCompositeModel]> {
-        self.asset_model_composite_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_models.is_none()`.
+    pub fn asset_model_composite_models(&self) -> &[crate::types::AssetModelCompositeModel] {
+        self.asset_model_composite_models.as_deref().unwrap_or_default()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -73,6 +79,7 @@ pub struct UpdateAssetModelInputBuilder {
 }
 impl UpdateAssetModelInputBuilder {
     /// <p>The ID of the asset model to update.</p>
+    /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +94,7 @@ impl UpdateAssetModelInputBuilder {
         &self.asset_model_id
     }
     /// <p>A unique, friendly name for the asset model.</p>
+    /// This field is required.
     pub fn asset_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_name = ::std::option::Option::Some(input.into());
         self

@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
@@ -17,19 +17,24 @@ pub struct RuleGroupReferenceStatement {
 }
 impl RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
-    pub fn excluded_rules(&self) -> ::std::option::Option<&[crate::types::ExcludedRule]> {
-        self.excluded_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_rules.is_none()`.
+    pub fn excluded_rules(&self) -> &[crate::types::ExcludedRule] {
+        self.excluded_rules.as_deref().unwrap_or_default()
     }
     /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
-    pub fn rule_action_overrides(&self) -> ::std::option::Option<&[crate::types::RuleActionOverride]> {
-        self.rule_action_overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_action_overrides.is_none()`.
+    pub fn rule_action_overrides(&self) -> &[crate::types::RuleActionOverride] {
+        self.rule_action_overrides.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupReferenceStatement {
@@ -49,6 +54,7 @@ pub struct RuleGroupReferenceStatementBuilder {
 }
 impl RuleGroupReferenceStatementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -112,11 +118,18 @@ impl RuleGroupReferenceStatementBuilder {
         &self.rule_action_overrides
     }
     /// Consumes the builder and constructs a [`RuleGroupReferenceStatement`](crate::types::RuleGroupReferenceStatement).
-    pub fn build(self) -> crate::types::RuleGroupReferenceStatement {
-        crate::types::RuleGroupReferenceStatement {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RuleGroupReferenceStatementBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupReferenceStatement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleGroupReferenceStatement {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RuleGroupReferenceStatement",
+                )
+            })?,
             excluded_rules: self.excluded_rules,
             rule_action_overrides: self.rule_action_overrides,
-        }
+        })
     }
 }

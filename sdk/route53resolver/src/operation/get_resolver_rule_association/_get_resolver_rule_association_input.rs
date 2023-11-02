@@ -27,6 +27,7 @@ pub struct GetResolverRuleAssociationInputBuilder {
 }
 impl GetResolverRuleAssociationInputBuilder {
     /// <p>The ID of the Resolver rule association that you want to get information about.</p>
+    /// This field is required.
     pub fn resolver_rule_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_rule_association_id = ::std::option::Option::Some(input.into());
         self

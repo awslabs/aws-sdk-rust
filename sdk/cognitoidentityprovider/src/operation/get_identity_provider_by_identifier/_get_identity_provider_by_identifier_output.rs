@@ -34,6 +34,7 @@ pub struct GetIdentityProviderByIdentifierOutputBuilder {
 }
 impl GetIdentityProviderByIdentifierOutputBuilder {
     /// <p>The identity provider details.</p>
+    /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self

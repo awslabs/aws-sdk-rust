@@ -137,7 +137,9 @@ pub fn de_query_http_response(
         let mut output = crate::operation::query::builders::QueryOutputBuilder::default();
         output = crate::protocol_serde::shape_query::de_query(_response_body, output).map_err(crate::operation::query::QueryError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::query_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::query::QueryError::unhandled)?
     })
 }
 

@@ -55,6 +55,7 @@ pub struct StartRouteAnalysisInputBuilder {
 }
 impl StartRouteAnalysisInputBuilder {
     /// <p>The ID of the global network.</p>
+    /// This field is required.
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_network_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl StartRouteAnalysisInputBuilder {
         &self.global_network_id
     }
     /// <p>The source from which traffic originates.</p>
+    /// This field is required.
     pub fn source(mut self, input: crate::types::RouteAnalysisEndpointOptionsSpecification) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl StartRouteAnalysisInputBuilder {
         &self.source
     }
     /// <p>The destination.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::RouteAnalysisEndpointOptionsSpecification) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

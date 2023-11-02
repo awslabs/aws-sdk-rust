@@ -34,6 +34,7 @@ pub struct DisassociateTrialComponentInputBuilder {
 }
 impl DisassociateTrialComponentInputBuilder {
     /// <p>The name of the component to disassociate from the trial.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateTrialComponentInputBuilder {
         &self.trial_component_name
     }
     /// <p>The name of the trial to disassociate from.</p>
+    /// This field is required.
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_name = ::std::option::Option::Some(input.into());
         self

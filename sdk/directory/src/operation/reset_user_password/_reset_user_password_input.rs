@@ -50,6 +50,7 @@ pub struct ResetUserPasswordInputBuilder {
 }
 impl ResetUserPasswordInputBuilder {
     /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl ResetUserPasswordInputBuilder {
         &self.directory_id
     }
     /// <p>The user name of the user whose password will be reset.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl ResetUserPasswordInputBuilder {
         &self.user_name
     }
     /// <p>The new password that will be reset.</p>
+    /// This field is required.
     pub fn new_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_password = ::std::option::Option::Some(input.into());
         self

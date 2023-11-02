@@ -251,8 +251,10 @@ impl BuildPhase {
         self.duration_in_seconds
     }
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
-    pub fn contexts(&self) -> ::std::option::Option<&[crate::types::PhaseContext]> {
-        self.contexts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contexts.is_none()`.
+    pub fn contexts(&self) -> &[crate::types::PhaseContext] {
+        self.contexts.as_deref().unwrap_or_default()
     }
 }
 impl BuildPhase {

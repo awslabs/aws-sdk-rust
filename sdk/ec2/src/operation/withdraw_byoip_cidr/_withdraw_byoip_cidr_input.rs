@@ -34,6 +34,7 @@ pub struct WithdrawByoipCidrInputBuilder {
 }
 impl WithdrawByoipCidrInputBuilder {
     /// <p>The address range, in CIDR notation.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self

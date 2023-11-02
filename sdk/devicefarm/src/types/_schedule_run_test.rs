@@ -26,7 +26,7 @@ pub struct ScheduleRunTest {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::TestType>,
+    pub r#type: crate::types::TestType,
     /// <p>The ARN of the uploaded test to be run.</p>
     pub test_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the YAML-formatted test specification.</p>
@@ -116,8 +116,8 @@ impl ScheduleRunTest {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::TestType {
+        &self.r#type
     }
     /// <p>The ARN of the uploaded test to be run.</p>
     pub fn test_package_arn(&self) -> ::std::option::Option<&str> {
@@ -233,6 +233,7 @@ impl ScheduleRunTestBuilder {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -522,13 +523,20 @@ impl ScheduleRunTestBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ScheduleRunTest`](crate::types::ScheduleRunTest).
-    pub fn build(self) -> crate::types::ScheduleRunTest {
-        crate::types::ScheduleRunTest {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ScheduleRunTestBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleRunTest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScheduleRunTest {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ScheduleRunTest",
+                )
+            })?,
             test_package_arn: self.test_package_arn,
             test_spec_arn: self.test_spec_arn,
             filter: self.filter,
             parameters: self.parameters,
-        }
+        })
     }
 }

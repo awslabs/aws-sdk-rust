@@ -28,6 +28,12 @@ pub fn ser_auto_ml_problem_type_config(
             crate::protocol_serde::shape_time_series_forecasting_job_config::ser_time_series_forecasting_job_config(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::AutoMlProblemTypeConfig::TextGenerationJobConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_9.key("TextGenerationJobConfig").start_object();
+            crate::protocol_serde::shape_text_generation_job_config::ser_text_generation_job_config(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::AutoMlProblemTypeConfig::Unknown => {
             return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
                 "AutoMlProblemTypeConfig",
@@ -86,6 +92,11 @@ where
                                         "value for 'TimeSeriesForecastingJobConfig' cannot be null",
                                     )
                                 })?,
+                        )),
+                        "TextGenerationJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::TextGenerationJobConfig(
+                            crate::protocol_serde::shape_text_generation_job_config::de_text_generation_job_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TextGenerationJobConfig' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

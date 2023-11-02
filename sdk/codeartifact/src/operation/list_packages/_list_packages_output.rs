@@ -11,8 +11,10 @@ pub struct ListPackagesOutput {
 }
 impl ListPackagesOutput {
     /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
-    pub fn packages(&self) -> ::std::option::Option<&[crate::types::PackageSummary]> {
-        self.packages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.packages.is_none()`.
+    pub fn packages(&self) -> &[crate::types::PackageSummary] {
+        self.packages.as_deref().unwrap_or_default()
     }
     /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

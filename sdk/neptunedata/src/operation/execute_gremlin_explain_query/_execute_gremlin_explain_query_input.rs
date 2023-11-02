@@ -27,6 +27,7 @@ pub struct ExecuteGremlinExplainQueryInputBuilder {
 }
 impl ExecuteGremlinExplainQueryInputBuilder {
     /// <p>The Gremlin explain query string.</p>
+    /// This field is required.
     pub fn gremlin_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gremlin_query = ::std::option::Option::Some(input.into());
         self

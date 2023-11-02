@@ -34,6 +34,7 @@ pub struct CreateConfiguredTableOutputBuilder {
 }
 impl CreateConfiguredTableOutputBuilder {
     /// <p>The created configured table.</p>
+    /// This field is required.
     pub fn configured_table(mut self, input: crate::types::ConfiguredTable) -> Self {
         self.configured_table = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct DeleteShareInputBuilder {
 }
 impl DeleteShareInputBuilder {
     /// <p> The ID for the share request to be deleted. </p>
+    /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self

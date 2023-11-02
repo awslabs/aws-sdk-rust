@@ -34,6 +34,7 @@ pub struct GetProviderServiceInputBuilder {
 }
 impl GetProviderServiceInputBuilder {
     /// <p>The name of the provider. This name is typically the company name.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetProviderServiceInputBuilder {
         &self.provider_name
     }
     /// <p>The ARN (Amazon Resource Name) of the product that the provider service provides.</p>
+    /// This field is required.
     pub fn provider_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_service_name = ::std::option::Option::Some(input.into());
         self

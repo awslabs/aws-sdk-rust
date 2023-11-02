@@ -15,8 +15,10 @@ impl GetMultiRegionAccessPointRoutesOutput {
         self.mrap.as_deref()
     }
     /// <p>The different routes that make up the route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn routes(&self) -> ::std::option::Option<&[crate::types::MultiRegionAccessPointRoute]> {
-        self.routes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
+    pub fn routes(&self) -> &[crate::types::MultiRegionAccessPointRoute] {
+        self.routes.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMultiRegionAccessPointRoutesOutput {

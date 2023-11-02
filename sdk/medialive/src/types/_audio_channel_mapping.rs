@@ -11,8 +11,10 @@ pub struct AudioChannelMapping {
 }
 impl AudioChannelMapping {
     /// Indices and gain values for each input channel that should be remixed into this output channel.
-    pub fn input_channel_levels(&self) -> ::std::option::Option<&[crate::types::InputChannelLevel]> {
-        self.input_channel_levels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_channel_levels.is_none()`.
+    pub fn input_channel_levels(&self) -> &[crate::types::InputChannelLevel] {
+        self.input_channel_levels.as_deref().unwrap_or_default()
     }
     /// The index of the output channel being produced.
     pub fn output_channel(&self) -> ::std::option::Option<i32> {
@@ -55,6 +57,7 @@ impl AudioChannelMappingBuilder {
         &self.input_channel_levels
     }
     /// The index of the output channel being produced.
+    /// This field is required.
     pub fn output_channel(mut self, input: i32) -> Self {
         self.output_channel = ::std::option::Option::Some(input);
         self

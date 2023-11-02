@@ -21,8 +21,10 @@ pub struct SnapshotSchedule {
 }
 impl SnapshotSchedule {
     /// <p>A list of ScheduleDefinitions.</p>
-    pub fn schedule_definitions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.schedule_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_definitions.is_none()`.
+    pub fn schedule_definitions(&self) -> &[::std::string::String] {
+        self.schedule_definitions.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for the schedule.</p>
     pub fn schedule_identifier(&self) -> ::std::option::Option<&str> {
@@ -33,20 +35,26 @@ impl SnapshotSchedule {
         self.schedule_description.as_deref()
     }
     /// <p>An optional set of tags describing the schedule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p></p>
-    pub fn next_invocations(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
-        self.next_invocations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next_invocations.is_none()`.
+    pub fn next_invocations(&self) -> &[::aws_smithy_types::DateTime] {
+        self.next_invocations.as_deref().unwrap_or_default()
     }
     /// <p>The number of clusters associated with the schedule.</p>
     pub fn associated_cluster_count(&self) -> ::std::option::Option<i32> {
         self.associated_cluster_count
     }
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
-    pub fn associated_clusters(&self) -> ::std::option::Option<&[crate::types::ClusterAssociatedToSchedule]> {
-        self.associated_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_clusters.is_none()`.
+    pub fn associated_clusters(&self) -> &[crate::types::ClusterAssociatedToSchedule] {
+        self.associated_clusters.as_deref().unwrap_or_default()
     }
 }
 impl SnapshotSchedule {

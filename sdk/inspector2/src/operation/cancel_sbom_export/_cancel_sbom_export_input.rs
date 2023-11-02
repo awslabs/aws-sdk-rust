@@ -27,6 +27,7 @@ pub struct CancelSbomExportInputBuilder {
 }
 impl CancelSbomExportInputBuilder {
     /// <p>The report ID of the SBOM export to cancel.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self

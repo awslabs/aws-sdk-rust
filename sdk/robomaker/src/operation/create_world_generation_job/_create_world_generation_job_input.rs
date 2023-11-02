@@ -69,6 +69,7 @@ impl CreateWorldGenerationJobInputBuilder {
         &self.client_request_token
     }
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
+    /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl CreateWorldGenerationJobInputBuilder {
         &self.template
     }
     /// <p>Information about the world count.</p>
+    /// This field is required.
     pub fn world_count(mut self, input: crate::types::WorldCount) -> Self {
         self.world_count = ::std::option::Option::Some(input);
         self

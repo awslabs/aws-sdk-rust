@@ -5,44 +5,49 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssistantData {
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub assistant_arn: ::std::option::Option<::std::string::String>,
+    pub assistant_arn: ::std::string::String,
     /// <p>The name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of assistant.</p>
-    pub r#type: ::std::option::Option<crate::types::AssistantType>,
+    pub r#type: crate::types::AssistantType,
     /// <p>The status of the assistant.</p>
-    pub status: ::std::option::Option<crate::types::AssistantStatus>,
+    pub status: crate::types::AssistantStatus,
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The configuration information for the Wisdom assistant integration.</p>
     pub integration_configuration: ::std::option::Option<crate::types::AssistantIntegrationConfiguration>,
 }
 impl AssistantData {
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> ::std::option::Option<&str> {
-        self.assistant_arn.as_deref()
+    pub fn assistant_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_arn.deref()
     }
     /// <p>The name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of assistant.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AssistantType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::AssistantType {
+        &self.r#type
     }
     /// <p>The status of the assistant.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AssistantStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::AssistantStatus {
+        &self.status
     }
     /// <p>The description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -52,7 +57,9 @@ impl AssistantData {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
@@ -84,6 +91,7 @@ pub struct AssistantDataBuilder {
 }
 impl AssistantDataBuilder {
     /// <p>The identifier of the Wisdom assistant.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +106,7 @@ impl AssistantDataBuilder {
         &self.assistant_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    /// This field is required.
     pub fn assistant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_arn = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +121,7 @@ impl AssistantDataBuilder {
         &self.assistant_arn
     }
     /// <p>The name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +136,7 @@ impl AssistantDataBuilder {
         &self.name
     }
     /// <p>The type of assistant.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AssistantType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -140,6 +151,7 @@ impl AssistantDataBuilder {
         &self.r#type
     }
     /// <p>The status of the assistant.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::AssistantStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -187,17 +199,23 @@ impl AssistantDataBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal. </p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
@@ -216,17 +234,48 @@ impl AssistantDataBuilder {
         &self.integration_configuration
     }
     /// Consumes the builder and constructs a [`AssistantData`](crate::types::AssistantData).
-    pub fn build(self) -> crate::types::AssistantData {
-        crate::types::AssistantData {
-            assistant_id: self.assistant_id,
-            assistant_arn: self.assistant_arn,
-            name: self.name,
-            r#type: self.r#type,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_id`](crate::types::builders::AssistantDataBuilder::assistant_id)
+    /// - [`assistant_arn`](crate::types::builders::AssistantDataBuilder::assistant_arn)
+    /// - [`name`](crate::types::builders::AssistantDataBuilder::name)
+    /// - [`r#type`](crate::types::builders::AssistantDataBuilder::r#type)
+    /// - [`status`](crate::types::builders::AssistantDataBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssistantData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssistantData {
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building AssistantData",
+                )
+            })?,
+            assistant_arn: self.assistant_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_arn",
+                    "assistant_arn was not specified but it is required when building AssistantData",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AssistantData",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AssistantData",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building AssistantData",
+                )
+            })?,
             description: self.description,
             tags: self.tags,
             server_side_encryption_configuration: self.server_side_encryption_configuration,
             integration_configuration: self.integration_configuration,
-        }
+        })
     }
 }

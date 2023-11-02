@@ -3,29 +3,29 @@ pub fn ser_context_data_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContextDataType,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.ip_address {
-        object.key("IpAddress").string(var_1.as_str());
+    {
+        object.key("IpAddress").string(input.ip_address.as_str());
     }
-    if let Some(var_2) = &input.server_name {
-        object.key("ServerName").string(var_2.as_str());
+    {
+        object.key("ServerName").string(input.server_name.as_str());
     }
-    if let Some(var_3) = &input.server_path {
-        object.key("ServerPath").string(var_3.as_str());
+    {
+        object.key("ServerPath").string(input.server_path.as_str());
     }
-    if let Some(var_4) = &input.http_headers {
-        let mut array_5 = object.key("HttpHeaders").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_1 = object.key("HttpHeaders").start_array();
+        for item_2 in &input.http_headers {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_http_header::ser_http_header(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_http_header::ser_http_header(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_5.finish();
+        array_1.finish();
     }
-    if let Some(var_8) = &input.encoded_data {
-        object.key("EncodedData").string(var_8.as_str());
+    if let Some(var_4) = &input.encoded_data {
+        object.key("EncodedData").string(var_4.as_str());
     }
     Ok(())
 }

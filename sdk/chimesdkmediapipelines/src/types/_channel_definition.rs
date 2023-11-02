@@ -35,6 +35,7 @@ pub struct ChannelDefinitionBuilder {
 }
 impl ChannelDefinitionBuilder {
     /// <p>The channel ID.</p>
+    /// This field is required.
     pub fn channel_id(mut self, input: i32) -> Self {
         self.channel_id = ::std::option::Option::Some(input);
         self

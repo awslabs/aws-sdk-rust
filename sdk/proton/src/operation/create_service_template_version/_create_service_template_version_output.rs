@@ -34,6 +34,7 @@ pub struct CreateServiceTemplateVersionOutputBuilder {
 }
 impl CreateServiceTemplateVersionOutputBuilder {
     /// <p>The service template version summary of detail data that's returned by Proton.</p>
+    /// This field is required.
     pub fn service_template_version(mut self, input: crate::types::ServiceTemplateVersion) -> Self {
         self.service_template_version = ::std::option::Option::Some(input);
         self

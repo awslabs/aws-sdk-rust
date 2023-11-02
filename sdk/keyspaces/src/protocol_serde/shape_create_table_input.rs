@@ -3,71 +3,71 @@ pub fn ser_create_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_table::CreateTableInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.keyspace_name {
-        object.key("keyspaceName").string(var_1.as_str());
+    {
+        object.key("keyspaceName").string(input.keyspace_name.as_str());
     }
-    if let Some(var_2) = &input.table_name {
-        object.key("tableName").string(var_2.as_str());
+    {
+        object.key("tableName").string(input.table_name.as_str());
     }
-    if let Some(var_3) = &input.schema_definition {
+    if let Some(var_1) = &input.schema_definition {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("schemaDefinition").start_object();
-        crate::protocol_serde::shape_schema_definition::ser_schema_definition(&mut object_4, var_3)?;
+        let mut object_2 = object.key("schemaDefinition").start_object();
+        crate::protocol_serde::shape_schema_definition::ser_schema_definition(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.comment {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("comment").start_object();
+        crate::protocol_serde::shape_comment::ser_comment(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.comment {
+    if let Some(var_5) = &input.capacity_specification {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("comment").start_object();
-        crate::protocol_serde::shape_comment::ser_comment(&mut object_6, var_5)?;
+        let mut object_6 = object.key("capacitySpecification").start_object();
+        crate::protocol_serde::shape_capacity_specification::ser_capacity_specification(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.capacity_specification {
+    if let Some(var_7) = &input.encryption_specification {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("capacitySpecification").start_object();
-        crate::protocol_serde::shape_capacity_specification::ser_capacity_specification(&mut object_8, var_7)?;
+        let mut object_8 = object.key("encryptionSpecification").start_object();
+        crate::protocol_serde::shape_encryption_specification::ser_encryption_specification(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.encryption_specification {
+    if let Some(var_9) = &input.point_in_time_recovery {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("encryptionSpecification").start_object();
-        crate::protocol_serde::shape_encryption_specification::ser_encryption_specification(&mut object_10, var_9)?;
+        let mut object_10 = object.key("pointInTimeRecovery").start_object();
+        crate::protocol_serde::shape_point_in_time_recovery::ser_point_in_time_recovery(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.point_in_time_recovery {
+    if let Some(var_11) = &input.ttl {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("pointInTimeRecovery").start_object();
-        crate::protocol_serde::shape_point_in_time_recovery::ser_point_in_time_recovery(&mut object_12, var_11)?;
+        let mut object_12 = object.key("ttl").start_object();
+        crate::protocol_serde::shape_time_to_live::ser_time_to_live(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.ttl {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("ttl").start_object();
-        crate::protocol_serde::shape_time_to_live::ser_time_to_live(&mut object_14, var_13)?;
-        object_14.finish();
-    }
-    if let Some(var_15) = &input.default_time_to_live {
+    if let Some(var_13) = &input.default_time_to_live {
         object.key("defaultTimeToLive").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_16) = &input.tags {
-        let mut array_17 = object.key("tags").start_array();
-        for item_18 in var_16 {
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_17.finish();
+        array_15.finish();
     }
-    if let Some(var_20) = &input.client_side_timestamps {
+    if let Some(var_18) = &input.client_side_timestamps {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("clientSideTimestamps").start_object();
-        crate::protocol_serde::shape_client_side_timestamps::ser_client_side_timestamps(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_19 = object.key("clientSideTimestamps").start_object();
+        crate::protocol_serde::shape_client_side_timestamps::ser_client_side_timestamps(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

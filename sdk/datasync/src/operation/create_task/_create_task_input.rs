@@ -50,8 +50,10 @@ impl CreateTaskInput {
         self.options.as_ref()
     }
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.excludes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
+    pub fn excludes(&self) -> &[crate::types::FilterRule] {
+        self.excludes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::TaskSchedule> {
@@ -59,12 +61,16 @@ impl CreateTaskInput {
     }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
     /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn includes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
-        self.includes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
+    pub fn includes(&self) -> &[crate::types::FilterRule] {
+        self.includes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
     pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
@@ -95,6 +101,7 @@ pub struct CreateTaskInputBuilder {
 }
 impl CreateTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
+    /// This field is required.
     pub fn source_location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_arn = ::std::option::Option::Some(input.into());
         self
@@ -109,6 +116,7 @@ impl CreateTaskInputBuilder {
         &self.source_location_arn
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
+    /// This field is required.
     pub fn destination_location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_location_arn = ::std::option::Option::Some(input.into());
         self

@@ -14,8 +14,10 @@ impl PutApplicationPolicyInput {
         self.application_id.as_deref()
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn statements(&self) -> ::std::option::Option<&[crate::types::ApplicationPolicyStatement]> {
-        self.statements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statements.is_none()`.
+    pub fn statements(&self) -> &[crate::types::ApplicationPolicyStatement] {
+        self.statements.as_deref().unwrap_or_default()
     }
 }
 impl PutApplicationPolicyInput {
@@ -34,6 +36,7 @@ pub struct PutApplicationPolicyInputBuilder {
 }
 impl PutApplicationPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

@@ -7,25 +7,25 @@ pub struct ImportAssetFromApiGatewayApiResponseDetails {
     /// <p>The API description.</p>
     pub api_description: ::std::option::Option<::std::string::String>,
     /// <p>The API ID.</p>
-    pub api_id: ::std::option::Option<::std::string::String>,
+    pub api_id: ::std::string::String,
     /// <p>The API key.</p>
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>The API name.</p>
-    pub api_name: ::std::option::Option<::std::string::String>,
+    pub api_name: ::std::string::String,
     /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
-    pub api_specification_md5_hash: ::std::option::Option<::std::string::String>,
+    pub api_specification_md5_hash: ::std::string::String,
     /// <p>The upload URL of the API specification.</p>
-    pub api_specification_upload_url: ::std::option::Option<::std::string::String>,
+    pub api_specification_upload_url: ::std::string::String,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub api_specification_upload_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub api_specification_upload_url_expires_at: ::aws_smithy_types::DateTime,
     /// <p>The data set ID.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>The protocol type.</p>
-    pub protocol_type: ::std::option::Option<crate::types::ProtocolType>,
+    pub protocol_type: crate::types::ProtocolType,
     /// <p>The revision ID.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
     /// <p>The API stage.</p>
-    pub stage: ::std::option::Option<::std::string::String>,
+    pub stage: ::std::string::String,
 }
 impl ImportAssetFromApiGatewayApiResponseDetails {
     /// <p>The API description.</p>
@@ -33,44 +33,51 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
         self.api_description.as_deref()
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
-        self.api_id.as_deref()
+    pub fn api_id(&self) -> &str {
+        use std::ops::Deref;
+        self.api_id.deref()
     }
     /// <p>The API key.</p>
     pub fn api_key(&self) -> ::std::option::Option<&str> {
         self.api_key.as_deref()
     }
     /// <p>The API name.</p>
-    pub fn api_name(&self) -> ::std::option::Option<&str> {
-        self.api_name.as_deref()
+    pub fn api_name(&self) -> &str {
+        use std::ops::Deref;
+        self.api_name.deref()
     }
     /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
-    pub fn api_specification_md5_hash(&self) -> ::std::option::Option<&str> {
-        self.api_specification_md5_hash.as_deref()
+    pub fn api_specification_md5_hash(&self) -> &str {
+        use std::ops::Deref;
+        self.api_specification_md5_hash.deref()
     }
     /// <p>The upload URL of the API specification.</p>
-    pub fn api_specification_upload_url(&self) -> ::std::option::Option<&str> {
-        self.api_specification_upload_url.as_deref()
+    pub fn api_specification_upload_url(&self) -> &str {
+        use std::ops::Deref;
+        self.api_specification_upload_url.deref()
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
-    pub fn api_specification_upload_url_expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.api_specification_upload_url_expires_at.as_ref()
+    pub fn api_specification_upload_url_expires_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.api_specification_upload_url_expires_at
     }
     /// <p>The data set ID.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>The protocol type.</p>
-    pub fn protocol_type(&self) -> ::std::option::Option<&crate::types::ProtocolType> {
-        self.protocol_type.as_ref()
+    pub fn protocol_type(&self) -> &crate::types::ProtocolType {
+        &self.protocol_type
     }
     /// <p>The revision ID.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
     /// <p>The API stage.</p>
-    pub fn stage(&self) -> ::std::option::Option<&str> {
-        self.stage.as_deref()
+    pub fn stage(&self) -> &str {
+        use std::ops::Deref;
+        self.stage.deref()
     }
 }
 impl ImportAssetFromApiGatewayApiResponseDetails {
@@ -112,6 +119,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_description
     }
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +148,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_key
     }
     /// <p>The API name.</p>
+    /// This field is required.
     pub fn api_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_name = ::std::option::Option::Some(input.into());
         self
@@ -154,6 +163,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_name
     }
     /// <p>The Base64-encoded Md5 hash for the API asset, used to ensure the integrity of the API at that location.</p>
+    /// This field is required.
     pub fn api_specification_md5_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_specification_md5_hash = ::std::option::Option::Some(input.into());
         self
@@ -168,6 +178,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_specification_md5_hash
     }
     /// <p>The upload URL of the API specification.</p>
+    /// This field is required.
     pub fn api_specification_upload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_specification_upload_url = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +193,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_specification_upload_url
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    /// This field is required.
     pub fn api_specification_upload_url_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.api_specification_upload_url_expires_at = ::std::option::Option::Some(input);
         self
@@ -196,6 +208,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.api_specification_upload_url_expires_at
     }
     /// <p>The data set ID.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +223,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.data_set_id
     }
     /// <p>The protocol type.</p>
+    /// This field is required.
     pub fn protocol_type(mut self, input: crate::types::ProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
         self
@@ -224,6 +238,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.protocol_type
     }
     /// <p>The revision ID.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -238,6 +253,7 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.revision_id
     }
     /// <p>The API stage.</p>
+    /// This field is required.
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
         self
@@ -252,19 +268,71 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
         &self.stage
     }
     /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiResponseDetails`](crate::types::ImportAssetFromApiGatewayApiResponseDetails).
-    pub fn build(self) -> crate::types::ImportAssetFromApiGatewayApiResponseDetails {
-        crate::types::ImportAssetFromApiGatewayApiResponseDetails {
-            api_description: self.api_description,
-            api_id: self.api_id,
-            api_key: self.api_key,
-            api_name: self.api_name,
-            api_specification_md5_hash: self.api_specification_md5_hash,
-            api_specification_upload_url: self.api_specification_upload_url,
-            api_specification_upload_url_expires_at: self.api_specification_upload_url_expires_at,
-            data_set_id: self.data_set_id,
-            protocol_type: self.protocol_type,
-            revision_id: self.revision_id,
-            stage: self.stage,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`api_id`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::api_id)
+    /// - [`api_name`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::api_name)
+    /// - [`api_specification_md5_hash`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::api_specification_md5_hash)
+    /// - [`api_specification_upload_url`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::api_specification_upload_url)
+    /// - [`api_specification_upload_url_expires_at`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::api_specification_upload_url_expires_at)
+    /// - [`data_set_id`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::data_set_id)
+    /// - [`protocol_type`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::protocol_type)
+    /// - [`revision_id`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::revision_id)
+    /// - [`stage`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::stage)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ImportAssetFromApiGatewayApiResponseDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ImportAssetFromApiGatewayApiResponseDetails {
+                api_description: self.api_description
+                ,
+                api_id: self.api_id
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_id", "api_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                api_key: self.api_key
+                ,
+                api_name: self.api_name
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_name", "api_name was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                api_specification_md5_hash: self.api_specification_md5_hash
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_specification_md5_hash", "api_specification_md5_hash was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                api_specification_upload_url: self.api_specification_upload_url
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_specification_upload_url", "api_specification_upload_url was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                api_specification_upload_url_expires_at: self.api_specification_upload_url_expires_at
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_specification_upload_url_expires_at", "api_specification_upload_url_expires_at was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                protocol_type: self.protocol_type
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("protocol_type", "protocol_type was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+                stage: self.stage
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("stage", "stage was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                    )?
+                ,
+            }
+        )
     }
 }

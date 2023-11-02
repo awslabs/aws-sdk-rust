@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl DeleteRecordingConfigurationInput {
@@ -27,6 +28,7 @@ pub struct DeleteRecordingConfigurationInputBuilder {
 }
 impl DeleteRecordingConfigurationInputBuilder {
     /// <p>ARN of the recording configuration to be deleted.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,21 @@ impl DeleteRecordingConfigurationInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteRecordingConfigurationInput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DeleteRecordingConfigurationInput",
+                )
+            })?,
+        })
     }
 }

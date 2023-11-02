@@ -28,6 +28,7 @@ pub struct GetMessageInsightsInputBuilder {
 }
 impl GetMessageInsightsInputBuilder {
     /// <p> A <code>MessageId</code> is a unique identifier for a message, and is returned when sending emails through Amazon SES. </p>
+    /// This field is required.
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self

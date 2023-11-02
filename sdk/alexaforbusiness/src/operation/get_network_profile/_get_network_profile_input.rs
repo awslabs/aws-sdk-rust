@@ -27,6 +27,7 @@ pub struct GetNetworkProfileInputBuilder {
 }
 impl GetNetworkProfileInputBuilder {
     /// <p>The ARN of the network profile associated with a device.</p>
+    /// This field is required.
     pub fn network_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_profile_arn = ::std::option::Option::Some(input.into());
         self

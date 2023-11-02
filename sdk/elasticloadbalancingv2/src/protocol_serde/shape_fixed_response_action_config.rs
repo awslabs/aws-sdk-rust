@@ -22,6 +22,7 @@ pub fn ser_fixed_response_action_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_fixed_response_action_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::FixedResponseActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -71,5 +72,5 @@ pub fn de_fixed_response_action_config(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::fixed_response_action_config_correct_errors(builder).build())
 }

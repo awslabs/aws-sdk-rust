@@ -62,6 +62,7 @@ pub struct CreateSavingsPlanInputBuilder {
 }
 impl CreateSavingsPlanInputBuilder {
     /// <p>The ID of the offering.</p>
+    /// This field is required.
     pub fn savings_plan_offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.savings_plan_offering_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateSavingsPlanInputBuilder {
         &self.savings_plan_offering_id
     }
     /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// This field is required.
     pub fn commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commitment = ::std::option::Option::Some(input.into());
         self

@@ -15,8 +15,10 @@ impl ListRecommendationTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>The recommendation templates for the Resilience Hub applications.</p>
-    pub fn recommendation_templates(&self) -> ::std::option::Option<&[crate::types::RecommendationTemplate]> {
-        self.recommendation_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_templates.is_none()`.
+    pub fn recommendation_templates(&self) -> &[crate::types::RecommendationTemplate] {
+        self.recommendation_templates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRecommendationTemplatesOutput {

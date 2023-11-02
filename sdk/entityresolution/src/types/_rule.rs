@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>A name for the matching rule.</p>
-    pub rule_name: ::std::option::Option<::std::string::String>,
+    pub rule_name: ::std::string::String,
     /// <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-    pub matching_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub matching_keys: ::std::vec::Vec<::std::string::String>,
 }
 impl Rule {
     /// <p>A name for the matching rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
-        self.rule_name.as_deref()
+    pub fn rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_name.deref()
     }
     /// <p>A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been defined in the <code>SchemaMapping</code>. Two records are considered to match according to this rule if all of the <code>MatchingKeys</code> match.</p>
-    pub fn matching_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.matching_keys.as_deref()
+    pub fn matching_keys(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.matching_keys.deref()
     }
 }
 impl Rule {
@@ -35,6 +37,7 @@ pub struct RuleBuilder {
 }
 impl RuleBuilder {
     /// <p>A name for the matching rule.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl RuleBuilder {
         &self.matching_keys
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
-    pub fn build(self) -> crate::types::Rule {
-        crate::types::Rule {
-            rule_name: self.rule_name,
-            matching_keys: self.matching_keys,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_name`](crate::types::builders::RuleBuilder::rule_name)
+    /// - [`matching_keys`](crate::types::builders::RuleBuilder::matching_keys)
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Rule {
+            rule_name: self.rule_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_name",
+                    "rule_name was not specified but it is required when building Rule",
+                )
+            })?,
+            matching_keys: self.matching_keys.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "matching_keys",
+                    "matching_keys was not specified but it is required when building Rule",
+                )
+            })?,
+        })
     }
 }

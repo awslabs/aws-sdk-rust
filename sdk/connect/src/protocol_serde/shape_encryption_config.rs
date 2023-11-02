@@ -3,11 +3,11 @@ pub fn ser_encryption_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncryptionConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.encryption_type {
-        object.key("EncryptionType").string(var_1.as_str());
+    {
+        object.key("EncryptionType").string(input.encryption_type.as_str());
     }
-    if let Some(var_2) = &input.key_id {
-        object.key("KeyId").string(var_2.as_str());
+    {
+        object.key("KeyId").string(input.key_id.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::encryption_config_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

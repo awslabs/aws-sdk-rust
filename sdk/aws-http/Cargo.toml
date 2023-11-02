@@ -16,7 +16,6 @@ rustdoc-args = ["--cfg", "docsrs"]
 bytes = "1.1"
 http = "0.2.3"
 http-body = "0.4.5"
-lazy_static = "1.4.0"
 tracing = "0.1"
 percent-encoding = "2.1.0"
 pin-project-lite = "0.2.9"

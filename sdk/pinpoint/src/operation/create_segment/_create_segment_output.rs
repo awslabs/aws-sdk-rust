@@ -34,6 +34,7 @@ pub struct CreateSegmentOutputBuilder {
 }
 impl CreateSegmentOutputBuilder {
     /// <p>Provides information about the configuration, dimension, and other settings for a segment.</p>
+    /// This field is required.
     pub fn segment_response(mut self, input: crate::types::SegmentResponse) -> Self {
         self.segment_response = ::std::option::Option::Some(input);
         self

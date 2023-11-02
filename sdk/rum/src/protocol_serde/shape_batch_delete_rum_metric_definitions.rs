@@ -29,11 +29,10 @@ pub fn de_batch_delete_rum_metric_definitions_http_error(
                     output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                         .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -45,11 +44,10 @@ pub fn de_batch_delete_rum_metric_definitions_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => {
@@ -68,11 +66,10 @@ pub fn de_batch_delete_rum_metric_definitions_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -86,11 +83,10 @@ pub fn de_batch_delete_rum_metric_definitions_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -109,11 +105,10 @@ pub fn de_batch_delete_rum_metric_definitions_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::ValidationException({
@@ -124,11 +119,10 @@ pub fn de_batch_delete_rum_metric_definitions_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::generic(generic),
@@ -150,7 +144,9 @@ pub fn de_batch_delete_rum_metric_definitions_http_response(
         output = crate::protocol_serde::shape_batch_delete_rum_metric_definitions::de_batch_delete_rum_metric_definitions(_response_body, output)
             .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::batch_delete_rum_metric_definitions_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError::unhandled)?
     })
 }
 

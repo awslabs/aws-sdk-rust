@@ -16,8 +16,10 @@ impl UpdateCustomRoutingListenerInput {
     }
     /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
+    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
+        self.port_ranges.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCustomRoutingListenerInput {
@@ -36,6 +38,7 @@ pub struct UpdateCustomRoutingListenerInputBuilder {
 }
 impl UpdateCustomRoutingListenerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self

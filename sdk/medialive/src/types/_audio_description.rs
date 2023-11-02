@@ -112,6 +112,7 @@ impl AudioDescriptionBuilder {
         &self.audio_normalization_settings
     }
     /// The name of the AudioSelector used as the source for this AudioDescription.
+    /// This field is required.
     pub fn audio_selector_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.audio_selector_name = ::std::option::Option::Some(input.into());
         self
@@ -210,6 +211,7 @@ impl AudioDescriptionBuilder {
         &self.language_code_control
     }
     /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

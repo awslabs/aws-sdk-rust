@@ -7,9 +7,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostCallAnalyticsSettings {
     /// <p>The URL of the Amazon S3 bucket that contains the post-call data.</p>
-    pub output_location: ::std::option::Option<::std::string::String>,
+    pub output_location: ::std::string::String,
     /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub data_access_role_arn: ::std::string::String,
     /// <p>The content redaction output settings for a post-call analysis task.</p>
     pub content_redaction_output: ::std::option::Option<crate::types::ContentRedactionOutput>,
     /// <p>The ID of the KMS (Key Management Service) key used to encrypt the output.</p>
@@ -17,12 +17,14 @@ pub struct PostCallAnalyticsSettings {
 }
 impl PostCallAnalyticsSettings {
     /// <p>The URL of the Amazon S3 bucket that contains the post-call data.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&str> {
-        self.output_location.as_deref()
+    pub fn output_location(&self) -> &str {
+        use std::ops::Deref;
+        self.output_location.deref()
     }
     /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
-        self.data_access_role_arn.as_deref()
+    pub fn data_access_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.data_access_role_arn.deref()
     }
     /// <p>The content redaction output settings for a post-call analysis task.</p>
     pub fn content_redaction_output(&self) -> ::std::option::Option<&crate::types::ContentRedactionOutput> {
@@ -51,6 +53,7 @@ pub struct PostCallAnalyticsSettingsBuilder {
 }
 impl PostCallAnalyticsSettingsBuilder {
     /// <p>The URL of the Amazon S3 bucket that contains the post-call data.</p>
+    /// This field is required.
     pub fn output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_location = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +68,7 @@ impl PostCallAnalyticsSettingsBuilder {
         &self.output_location
     }
     /// <p>The ARN of the role used by Amazon Web Services Transcribe to upload your post call analysis. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -107,12 +111,25 @@ impl PostCallAnalyticsSettingsBuilder {
         &self.output_encryption_kms_key_id
     }
     /// Consumes the builder and constructs a [`PostCallAnalyticsSettings`](crate::types::PostCallAnalyticsSettings).
-    pub fn build(self) -> crate::types::PostCallAnalyticsSettings {
-        crate::types::PostCallAnalyticsSettings {
-            output_location: self.output_location,
-            data_access_role_arn: self.data_access_role_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`output_location`](crate::types::builders::PostCallAnalyticsSettingsBuilder::output_location)
+    /// - [`data_access_role_arn`](crate::types::builders::PostCallAnalyticsSettingsBuilder::data_access_role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::PostCallAnalyticsSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PostCallAnalyticsSettings {
+            output_location: self.output_location.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_location",
+                    "output_location was not specified but it is required when building PostCallAnalyticsSettings",
+                )
+            })?,
+            data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_access_role_arn",
+                    "data_access_role_arn was not specified but it is required when building PostCallAnalyticsSettings",
+                )
+            })?,
             content_redaction_output: self.content_redaction_output,
             output_encryption_kms_key_id: self.output_encryption_kms_key_id,
-        }
+        })
     }
 }

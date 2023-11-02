@@ -44,8 +44,10 @@ impl CreateModelCardInput {
         self.model_card_status.as_ref()
     }
     /// <p>Key-value pairs used to manage metadata for model cards.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateModelCardInput {
@@ -78,6 +80,7 @@ pub struct CreateModelCardInputBuilder {
 }
 impl CreateModelCardInputBuilder {
     /// <p>The unique name of the model card.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +109,7 @@ impl CreateModelCardInputBuilder {
         &self.security_config
     }
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +130,7 @@ impl CreateModelCardInputBuilder {
     /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
     /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = ::std::option::Option::Some(input);
         self

@@ -18,8 +18,10 @@ impl PutStoredQueryInput {
         self.stored_query.as_ref()
     }
     /// <p>A list of <code>Tags</code> object.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl PutStoredQueryInput {
@@ -40,6 +42,7 @@ impl PutStoredQueryInputBuilder {
     /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
     /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
     /// </note>
+    /// This field is required.
     pub fn stored_query(mut self, input: crate::types::StoredQuery) -> Self {
         self.stored_query = ::std::option::Option::Some(input);
         self

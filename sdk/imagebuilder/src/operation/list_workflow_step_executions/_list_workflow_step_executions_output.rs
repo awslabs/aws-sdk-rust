@@ -25,8 +25,10 @@ impl ListWorkflowStepExecutionsOutput {
         self.request_id.as_deref()
     }
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::WorkflowStepMetadata]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::WorkflowStepMetadata] {
+        self.steps.as_deref().unwrap_or_default()
     }
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {

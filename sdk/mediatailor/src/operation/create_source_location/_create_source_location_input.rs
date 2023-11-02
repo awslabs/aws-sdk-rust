@@ -12,7 +12,7 @@ pub struct CreateSourceLocationInput {
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name associated with the source location.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -30,12 +30,15 @@ impl CreateSourceLocationInput {
         self.http_configuration.as_ref()
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(&self) -> ::std::option::Option<&[crate::types::SegmentDeliveryConfiguration]> {
-        self.segment_delivery_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_delivery_configurations.is_none()`.
+    pub fn segment_delivery_configurations(&self) -> &[crate::types::SegmentDeliveryConfiguration] {
+        self.segment_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name associated with the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -93,6 +96,7 @@ impl CreateSourceLocationInputBuilder {
         &self.default_segment_delivery_configuration
     }
     /// <p>The source's HTTP package configurations.</p>
+    /// This field is required.
     pub fn http_configuration(mut self, input: crate::types::HttpConfiguration) -> Self {
         self.http_configuration = ::std::option::Option::Some(input);
         self
@@ -130,6 +134,7 @@ impl CreateSourceLocationInputBuilder {
         &self.segment_delivery_configurations
     }
     /// <p>The name associated with the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -164,6 +169,8 @@ impl CreateSourceLocationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_location_name`](crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_source_location::CreateSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
@@ -173,7 +180,12 @@ impl CreateSourceLocationInputBuilder {
             default_segment_delivery_configuration: self.default_segment_delivery_configuration,
             http_configuration: self.http_configuration,
             segment_delivery_configurations: self.segment_delivery_configurations,
-            source_location_name: self.source_location_name,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building CreateSourceLocationInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

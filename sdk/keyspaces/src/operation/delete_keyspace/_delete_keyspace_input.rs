@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyspaceInput {
     /// <p>The name of the keyspace to be deleted.</p>
-    pub keyspace_name: ::std::option::Option<::std::string::String>,
+    pub keyspace_name: ::std::string::String,
 }
 impl DeleteKeyspaceInput {
     /// <p>The name of the keyspace to be deleted.</p>
-    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
-        self.keyspace_name.as_deref()
+    pub fn keyspace_name(&self) -> &str {
+        use std::ops::Deref;
+        self.keyspace_name.deref()
     }
 }
 impl DeleteKeyspaceInput {
@@ -27,6 +28,7 @@ pub struct DeleteKeyspaceInputBuilder {
 }
 impl DeleteKeyspaceInputBuilder {
     /// <p>The name of the keyspace to be deleted.</p>
+    /// This field is required.
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.keyspace_name = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteKeyspaceInputBuilder {
         &self.keyspace_name
     }
     /// Consumes the builder and constructs a [`DeleteKeyspaceInput`](crate::operation::delete_keyspace::DeleteKeyspaceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`keyspace_name`](crate::operation::delete_keyspace::builders::DeleteKeyspaceInputBuilder::keyspace_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_keyspace::DeleteKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_keyspace::DeleteKeyspaceInput {
-            keyspace_name: self.keyspace_name,
+            keyspace_name: self.keyspace_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "keyspace_name",
+                    "keyspace_name was not specified but it is required when building DeleteKeyspaceInput",
+                )
+            })?,
         })
     }
 }

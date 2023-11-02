@@ -34,6 +34,7 @@ pub struct UpdateContinuousBackupsInputBuilder {
 }
 impl UpdateContinuousBackupsInputBuilder {
     /// <p>The name of the table.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateContinuousBackupsInputBuilder {
         &self.table_name
     }
     /// <p>Represents the settings used to enable point in time recovery.</p>
+    /// This field is required.
     pub fn point_in_time_recovery_specification(mut self, input: crate::types::PointInTimeRecoverySpecification) -> Self {
         self.point_in_time_recovery_specification = ::std::option::Option::Some(input);
         self

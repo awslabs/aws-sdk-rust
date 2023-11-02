@@ -28,6 +28,7 @@ pub struct DescribeTaskInputBuilder {
 }
 impl DescribeTaskInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    /// This field is required.
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self

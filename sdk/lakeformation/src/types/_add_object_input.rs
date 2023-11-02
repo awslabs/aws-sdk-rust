@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
-    pub uri: ::std::option::Option<::std::string::String>,
+    pub uri: ::std::string::String,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub e_tag: ::std::option::Option<::std::string::String>,
+    pub e_tag: ::std::string::String,
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub size: i64,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
@@ -16,12 +16,14 @@ pub struct AddObjectInput {
 }
 impl AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
-        self.uri.as_deref()
+    pub fn uri(&self) -> &str {
+        use std::ops::Deref;
+        self.uri.deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
-        self.e_tag.as_deref()
+    pub fn e_tag(&self) -> &str {
+        use std::ops::Deref;
+        self.e_tag.deref()
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn size(&self) -> i64 {
@@ -29,8 +31,10 @@ impl AddObjectInput {
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_values.is_none()`.
+    pub fn partition_values(&self) -> &[::std::string::String] {
+        self.partition_values.as_deref().unwrap_or_default()
     }
 }
 impl AddObjectInput {
@@ -51,6 +55,7 @@ pub struct AddObjectInputBuilder {
 }
 impl AddObjectInputBuilder {
     /// <p>The Amazon S3 location of the object.</p>
+    /// This field is required.
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +70,7 @@ impl AddObjectInputBuilder {
         &self.uri
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
+    /// This field is required.
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +85,7 @@ impl AddObjectInputBuilder {
         &self.e_tag
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
+    /// This field is required.
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -116,12 +123,25 @@ impl AddObjectInputBuilder {
         &self.partition_values
     }
     /// Consumes the builder and constructs a [`AddObjectInput`](crate::types::AddObjectInput).
-    pub fn build(self) -> crate::types::AddObjectInput {
-        crate::types::AddObjectInput {
-            uri: self.uri,
-            e_tag: self.e_tag,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uri`](crate::types::builders::AddObjectInputBuilder::uri)
+    /// - [`e_tag`](crate::types::builders::AddObjectInputBuilder::e_tag)
+    pub fn build(self) -> ::std::result::Result<crate::types::AddObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AddObjectInput {
+            uri: self.uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uri",
+                    "uri was not specified but it is required when building AddObjectInput",
+                )
+            })?,
+            e_tag: self.e_tag.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "e_tag",
+                    "e_tag was not specified but it is required when building AddObjectInput",
+                )
+            })?,
             size: self.size.unwrap_or_default(),
             partition_values: self.partition_values,
-        }
+        })
     }
 }

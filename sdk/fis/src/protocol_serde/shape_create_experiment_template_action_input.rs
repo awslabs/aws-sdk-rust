@@ -3,40 +3,40 @@ pub fn ser_create_experiment_template_action_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateExperimentTemplateActionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_id {
-        object.key("actionId").string(var_1.as_str());
+    {
+        object.key("actionId").string(input.action_id.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.parameters {
+    if let Some(var_2) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("parameters").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("parameters").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_4.finish();
+        object_3.finish();
     }
-    if let Some(var_7) = &input.targets {
+    if let Some(var_6) = &input.targets {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("targets").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_7 = object.key("targets").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_8.finish();
+        object_7.finish();
     }
-    if let Some(var_11) = &input.start_after {
-        let mut array_12 = object.key("startAfter").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.start_after {
+        let mut array_11 = object.key("startAfter").start_array();
+        for item_12 in var_10 {
             {
-                array_12.value().string(item_13.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
     Ok(())
 }

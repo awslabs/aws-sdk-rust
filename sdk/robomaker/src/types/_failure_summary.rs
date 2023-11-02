@@ -15,8 +15,10 @@ impl FailureSummary {
         self.total_failure_count
     }
     /// <p>The worlds that failed.</p>
-    pub fn failures(&self) -> ::std::option::Option<&[crate::types::WorldFailure]> {
-        self.failures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
+    pub fn failures(&self) -> &[crate::types::WorldFailure] {
+        self.failures.as_deref().unwrap_or_default()
     }
 }
 impl FailureSummary {

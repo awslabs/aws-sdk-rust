@@ -34,6 +34,7 @@ pub struct VerifyOtpMessageOutputBuilder {
 }
 impl VerifyOtpMessageOutputBuilder {
     /// <p>Verify OTP Message Response.</p>
+    /// This field is required.
     pub fn verification_response(mut self, input: crate::types::VerificationResponse) -> Self {
         self.verification_response = ::std::option::Option::Some(input);
         self

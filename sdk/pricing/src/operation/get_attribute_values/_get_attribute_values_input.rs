@@ -48,6 +48,7 @@ pub struct GetAttributeValuesInputBuilder {
 }
 impl GetAttributeValuesInputBuilder {
     /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetAttributeValuesInputBuilder {
         &self.service_code
     }
     /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self

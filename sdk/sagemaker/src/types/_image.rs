@@ -77,6 +77,7 @@ pub struct ImageBuilder {
 }
 impl ImageBuilder {
     /// <p>When the image was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -133,6 +134,7 @@ impl ImageBuilder {
         &self.failure_reason
     }
     /// <p>The ARN of the image.</p>
+    /// This field is required.
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +149,7 @@ impl ImageBuilder {
         &self.image_arn
     }
     /// <p>The name of the image.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +164,7 @@ impl ImageBuilder {
         &self.image_name
     }
     /// <p>The status of the image.</p>
+    /// This field is required.
     pub fn image_status(mut self, input: crate::types::ImageStatus) -> Self {
         self.image_status = ::std::option::Option::Some(input);
         self
@@ -175,6 +179,7 @@ impl ImageBuilder {
         &self.image_status
     }
     /// <p>When the image was last modified.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self

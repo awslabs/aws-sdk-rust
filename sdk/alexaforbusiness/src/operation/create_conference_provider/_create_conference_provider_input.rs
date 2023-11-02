@@ -44,8 +44,10 @@ impl CreateConferenceProviderInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateConferenceProviderInput {
@@ -69,6 +71,7 @@ pub struct CreateConferenceProviderInputBuilder {
 }
 impl CreateConferenceProviderInputBuilder {
     /// <p>The name of the conference provider.</p>
+    /// This field is required.
     pub fn conference_provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conference_provider_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateConferenceProviderInputBuilder {
         &self.conference_provider_name
     }
     /// <p>Represents a type within a list of predefined types.</p>
+    /// This field is required.
     pub fn conference_provider_type(mut self, input: crate::types::ConferenceProviderType) -> Self {
         self.conference_provider_type = ::std::option::Option::Some(input);
         self
@@ -125,6 +129,7 @@ impl CreateConferenceProviderInputBuilder {
         &self.pstn_dial_in
     }
     /// <p>The meeting settings for the conference provider.</p>
+    /// This field is required.
     pub fn meeting_setting(mut self, input: crate::types::MeetingSetting) -> Self {
         self.meeting_setting = ::std::option::Option::Some(input);
         self

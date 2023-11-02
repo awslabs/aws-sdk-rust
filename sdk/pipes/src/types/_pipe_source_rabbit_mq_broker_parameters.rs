@@ -7,7 +7,7 @@ pub struct PipeSourceRabbitMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
     pub credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     /// <p>The name of the destination queue to consume.</p>
-    pub queue_name: ::std::option::Option<::std::string::String>,
+    pub queue_name: ::std::string::String,
     /// <p>The name of the virtual host associated with the source broker.</p>
     pub virtual_host: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in each batch.</p>
@@ -21,8 +21,9 @@ impl PipeSourceRabbitMqBrokerParameters {
         self.credentials.as_ref()
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn queue_name(&self) -> ::std::option::Option<&str> {
-        self.queue_name.as_deref()
+    pub fn queue_name(&self) -> &str {
+        use std::ops::Deref;
+        self.queue_name.deref()
     }
     /// <p>The name of the virtual host associated with the source broker.</p>
     pub fn virtual_host(&self) -> ::std::option::Option<&str> {
@@ -67,6 +68,7 @@ pub struct PipeSourceRabbitMqBrokerParametersBuilder {
 }
 impl PipeSourceRabbitMqBrokerParametersBuilder {
     /// <p>The credentials needed to access the resource.</p>
+    /// This field is required.
     pub fn credentials(mut self, input: crate::types::MqBrokerAccessCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
@@ -81,6 +83,7 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
         &self.credentials
     }
     /// <p>The name of the destination queue to consume.</p>
+    /// This field is required.
     pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name = ::std::option::Option::Some(input.into());
         self
@@ -137,14 +140,21 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
         &self.maximum_batching_window_in_seconds
     }
     /// Consumes the builder and constructs a [`PipeSourceRabbitMqBrokerParameters`](crate::types::PipeSourceRabbitMqBrokerParameters).
-    pub fn build(self) -> crate::types::PipeSourceRabbitMqBrokerParameters {
-        crate::types::PipeSourceRabbitMqBrokerParameters {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue_name`](crate::types::builders::PipeSourceRabbitMqBrokerParametersBuilder::queue_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeSourceRabbitMqBrokerParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PipeSourceRabbitMqBrokerParameters {
             credentials: self.credentials,
-            queue_name: self.queue_name,
+            queue_name: self.queue_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "queue_name",
+                    "queue_name was not specified but it is required when building PipeSourceRabbitMqBrokerParameters",
+                )
+            })?,
             virtual_host: self.virtual_host,
             batch_size: self.batch_size,
             maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for PipeSourceRabbitMqBrokerParametersBuilder {

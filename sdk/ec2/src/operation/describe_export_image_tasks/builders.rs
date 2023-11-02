@@ -92,14 +92,14 @@ impl DescribeExportImageTasksFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput,
             crate::operation::describe_export_image_tasks::DescribeExportImageTasksError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::describe_export_image_tasks::DescribeExportImageTasksError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +112,7 @@ impl DescribeExportImageTasksFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_export_image_tasks::paginator::DescribeExportImageTasksPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_export_image_tasks::paginator::DescribeExportImageTasksPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::describe_export_image_tasks::paginator::DescribeExportImageTasksPaginator {
         crate::operation::describe_export_image_tasks::paginator::DescribeExportImageTasksPaginator::new(self.handle, self.inner)
     }

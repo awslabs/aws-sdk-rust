@@ -3,11 +3,11 @@ pub fn ser_get_component_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_component::GetComponentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.application_id {
-        object.key("ApplicationId").string(var_1.as_str());
+    {
+        object.key("ApplicationId").string(input.application_id.as_str());
     }
-    if let Some(var_2) = &input.component_id {
-        object.key("ComponentId").string(var_2.as_str());
+    {
+        object.key("ComponentId").string(input.component_id.as_str());
     }
     Ok(())
 }

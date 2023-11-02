@@ -3,20 +3,20 @@ pub fn ser_detector_model_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DetectorModelDefinition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.states {
-        let mut array_2 = object.key("states").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("states").start_array();
+        for item_2 in &input.states {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_state::ser_state(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_state::ser_state(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.initial_state_name {
-        object.key("initialStateName").string(var_5.as_str());
+    {
+        object.key("initialStateName").string(input.initial_state_name.as_str());
     }
     Ok(())
 }
@@ -56,7 +56,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::detector_model_definition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

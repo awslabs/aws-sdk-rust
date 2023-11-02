@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCoreDevice`](crate::operation::delete_core_device::builders::DeleteCoreDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_device_thing_name(impl Into<String>)`](crate::operation::delete_core_device::builders::DeleteCoreDeviceFluentBuilder::core_device_thing_name) / [`set_core_device_thing_name(Option<String>)`](crate::operation::delete_core_device::builders::DeleteCoreDeviceFluentBuilder::set_core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    ///   - [`core_device_thing_name(impl Into<String>)`](crate::operation::delete_core_device::builders::DeleteCoreDeviceFluentBuilder::core_device_thing_name) / [`set_core_device_thing_name(Option<String>)`](crate::operation::delete_core_device::builders::DeleteCoreDeviceFluentBuilder::set_core_device_thing_name):<br>required: **true**<br><p>The name of the core device. This is also the name of the IoT thing.</p><br>
     /// - On success, responds with [`DeleteCoreDeviceOutput`](crate::operation::delete_core_device::DeleteCoreDeviceOutput)
     /// - On failure, responds with [`SdkError<DeleteCoreDeviceError>`](crate::operation::delete_core_device::DeleteCoreDeviceError)
     pub fn delete_core_device(&self) -> crate::operation::delete_core_device::builders::DeleteCoreDeviceFluentBuilder {

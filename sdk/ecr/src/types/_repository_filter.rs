@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryFilter {
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
-    pub filter: ::std::option::Option<::std::string::String>,
+    pub filter: ::std::string::String,
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
-    pub filter_type: ::std::option::Option<crate::types::RepositoryFilterType>,
+    pub filter_type: crate::types::RepositoryFilterType,
 }
 impl RepositoryFilter {
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
-    pub fn filter(&self) -> ::std::option::Option<&str> {
-        self.filter.as_deref()
+    pub fn filter(&self) -> &str {
+        use std::ops::Deref;
+        self.filter.deref()
     }
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
-    pub fn filter_type(&self) -> ::std::option::Option<&crate::types::RepositoryFilterType> {
-        self.filter_type.as_ref()
+    pub fn filter_type(&self) -> &crate::types::RepositoryFilterType {
+        &self.filter_type
     }
 }
 impl RepositoryFilter {
@@ -35,6 +36,7 @@ pub struct RepositoryFilterBuilder {
 }
 impl RepositoryFilterBuilder {
     /// <p>The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified, this value is required and should be the repository name prefix to configure replication for.</p>
+    /// This field is required.
     pub fn filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl RepositoryFilterBuilder {
         &self.filter
     }
     /// <p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>
+    /// This field is required.
     pub fn filter_type(mut self, input: crate::types::RepositoryFilterType) -> Self {
         self.filter_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl RepositoryFilterBuilder {
         &self.filter_type
     }
     /// Consumes the builder and constructs a [`RepositoryFilter`](crate::types::RepositoryFilter).
-    pub fn build(self) -> crate::types::RepositoryFilter {
-        crate::types::RepositoryFilter {
-            filter: self.filter,
-            filter_type: self.filter_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter`](crate::types::builders::RepositoryFilterBuilder::filter)
+    /// - [`filter_type`](crate::types::builders::RepositoryFilterBuilder::filter_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositoryFilter {
+            filter: self.filter.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter",
+                    "filter was not specified but it is required when building RepositoryFilter",
+                )
+            })?,
+            filter_type: self.filter_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter_type",
+                    "filter_type was not specified but it is required when building RepositoryFilter",
+                )
+            })?,
+        })
     }
 }

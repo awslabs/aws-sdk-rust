@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteKey`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_name(impl Into<String>)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::key_name) / [`set_key_name(Option<String>)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::set_key_name): <p>The name of the API key to delete.</p>
+    ///   - [`key_name(impl Into<String>)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::key_name) / [`set_key_name(impl Into<String>)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::set_key_name):<br>required: **true**<br><p>The name of the API key to delete.</p><br>
     /// - On success, responds with [`DeleteKeyOutput`](crate::operation::delete_key::DeleteKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteKeyError>`](crate::operation::delete_key::DeleteKeyError)
     pub fn delete_key(&self) -> crate::operation::delete_key::builders::DeleteKeyFluentBuilder {

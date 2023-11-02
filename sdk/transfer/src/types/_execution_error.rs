@@ -17,9 +17,9 @@ pub struct ExecutionError {
     /// </note> </li>
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::ExecutionErrorType>,
+    pub r#type: crate::types::ExecutionErrorType,
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl ExecutionError {
     /// <p>Specifies the error type.</p>
@@ -35,12 +35,13 @@ impl ExecutionError {
     /// </note> </li>
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExecutionErrorType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ExecutionErrorType {
+        &self.r#type
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl ExecutionError {
@@ -71,6 +72,7 @@ impl ExecutionErrorBuilder {
     /// </note> </li>
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ExecutionErrorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -109,6 +111,7 @@ impl ExecutionErrorBuilder {
         &self.r#type
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -123,10 +126,23 @@ impl ExecutionErrorBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`ExecutionError`](crate::types::ExecutionError).
-    pub fn build(self) -> crate::types::ExecutionError {
-        crate::types::ExecutionError {
-            r#type: self.r#type,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ExecutionErrorBuilder::r#type)
+    /// - [`message`](crate::types::builders::ExecutionErrorBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExecutionError {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ExecutionError",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ExecutionError",
+                )
+            })?,
+        })
     }
 }

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateKeyAttributesV4 {
     /// <p>Set the minimum key length of the private key.</p>
-    pub minimal_key_length: ::std::option::Option<i32>,
+    pub minimal_key_length: i32,
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
-    pub key_spec: ::std::option::Option<crate::types::KeySpec>,
+    pub key_spec: crate::types::KeySpec,
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
     pub crypto_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The key usage property defines the purpose of the private key contained in the certificate. You can specify specific purposes using property flags or all by using property type ALL.</p>
@@ -17,16 +17,18 @@ pub struct PrivateKeyAttributesV4 {
 }
 impl PrivateKeyAttributesV4 {
     /// <p>Set the minimum key length of the private key.</p>
-    pub fn minimal_key_length(&self) -> ::std::option::Option<i32> {
+    pub fn minimal_key_length(&self) -> i32 {
         self.minimal_key_length
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
-    pub fn key_spec(&self) -> ::std::option::Option<&crate::types::KeySpec> {
-        self.key_spec.as_ref()
+    pub fn key_spec(&self) -> &crate::types::KeySpec {
+        &self.key_spec
     }
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    pub fn crypto_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.crypto_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crypto_providers.is_none()`.
+    pub fn crypto_providers(&self) -> &[::std::string::String] {
+        self.crypto_providers.as_deref().unwrap_or_default()
     }
     /// <p>The key usage property defines the purpose of the private key contained in the certificate. You can specify specific purposes using property flags or all by using property type ALL.</p>
     pub fn key_usage_property(&self) -> ::std::option::Option<&crate::types::KeyUsageProperty> {
@@ -56,6 +58,7 @@ pub struct PrivateKeyAttributesV4Builder {
 }
 impl PrivateKeyAttributesV4Builder {
     /// <p>Set the minimum key length of the private key.</p>
+    /// This field is required.
     pub fn minimal_key_length(mut self, input: i32) -> Self {
         self.minimal_key_length = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl PrivateKeyAttributesV4Builder {
         &self.minimal_key_length
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
+    /// This field is required.
     pub fn key_spec(mut self, input: crate::types::KeySpec) -> Self {
         self.key_spec = ::std::option::Option::Some(input);
         self
@@ -132,13 +136,26 @@ impl PrivateKeyAttributesV4Builder {
         &self.algorithm
     }
     /// Consumes the builder and constructs a [`PrivateKeyAttributesV4`](crate::types::PrivateKeyAttributesV4).
-    pub fn build(self) -> crate::types::PrivateKeyAttributesV4 {
-        crate::types::PrivateKeyAttributesV4 {
-            minimal_key_length: self.minimal_key_length,
-            key_spec: self.key_spec,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`minimal_key_length`](crate::types::builders::PrivateKeyAttributesV4Builder::minimal_key_length)
+    /// - [`key_spec`](crate::types::builders::PrivateKeyAttributesV4Builder::key_spec)
+    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyAttributesV4, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PrivateKeyAttributesV4 {
+            minimal_key_length: self.minimal_key_length.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "minimal_key_length",
+                    "minimal_key_length was not specified but it is required when building PrivateKeyAttributesV4",
+                )
+            })?,
+            key_spec: self.key_spec.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_spec",
+                    "key_spec was not specified but it is required when building PrivateKeyAttributesV4",
+                )
+            })?,
             crypto_providers: self.crypto_providers,
             key_usage_property: self.key_usage_property,
             algorithm: self.algorithm,
-        }
+        })
     }
 }

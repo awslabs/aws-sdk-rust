@@ -3,59 +3,59 @@ pub fn ser_wcdma_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WcdmaObj,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.mcc {
+    {
         object.key("Mcc").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.mcc).into()),
+        );
+    }
+    {
+        object.key("Mnc").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.mnc).into()),
+        );
+    }
+    if let Some(var_1) = &input.lac {
+        object.key("Lac").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.mnc {
-        object.key("Mnc").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.lac {
-        object.key("Lac").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
-    }
-    if let Some(var_4) = &input.utran_cid {
+    {
         object.key("UtranCid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.utran_cid).into()),
+        );
+    }
+    if let Some(var_2) = &input.wcdma_local_id {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("WcdmaLocalId").start_object();
+        crate::protocol_serde::shape_wcdma_local_id::ser_wcdma_local_id(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.rscp {
+        object.key("Rscp").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.wcdma_local_id {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("WcdmaLocalId").start_object();
-        crate::protocol_serde::shape_wcdma_local_id::ser_wcdma_local_id(&mut object_6, var_5)?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.rscp {
-        object.key("Rscp").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
-        );
-    }
-    if let Some(var_8) = &input.path_loss {
+    if let Some(var_5) = &input.path_loss {
         object.key("PathLoss").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_9) = &input.wcdma_nmr {
-        let mut array_10 = object.key("WcdmaNmr").start_array();
-        for item_11 in var_9 {
+    if let Some(var_6) = &input.wcdma_nmr {
+        let mut array_7 = object.key("WcdmaNmr").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_wcdma_nmr_obj::ser_wcdma_nmr_obj(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_wcdma_nmr_obj::ser_wcdma_nmr_obj(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_10.finish();
+        array_7.finish();
     }
     Ok(())
 }

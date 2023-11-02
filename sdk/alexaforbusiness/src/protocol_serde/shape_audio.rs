@@ -3,11 +3,11 @@ pub fn ser_audio(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Audio,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.locale {
-        object.key("Locale").string(var_1.as_str());
+    {
+        object.key("Locale").string(input.locale.as_str());
     }
-    if let Some(var_2) = &input.location {
-        object.key("Location").string(var_2.as_str());
+    {
+        object.key("Location").string(input.location.as_str());
     }
     Ok(())
 }

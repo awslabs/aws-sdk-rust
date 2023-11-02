@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePolicyOutput {
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
-    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::ValidatePolicyFinding>>,
+    pub findings: ::std::vec::Vec<crate::types::ValidatePolicyFinding>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ValidatePolicyOutput {
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
-    pub fn findings(&self) -> ::std::option::Option<&[crate::types::ValidatePolicyFinding]> {
-        self.findings.as_deref()
+    pub fn findings(&self) -> &[crate::types::ValidatePolicyFinding] {
+        use std::ops::Deref;
+        self.findings.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ValidatePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidatePolicyOutput`](crate::operation::validate_policy::ValidatePolicyOutput).
-    pub fn build(self) -> crate::operation::validate_policy::ValidatePolicyOutput {
-        crate::operation::validate_policy::ValidatePolicyOutput {
-            findings: self.findings,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`findings`](crate::operation::validate_policy::builders::ValidatePolicyOutputBuilder::findings)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::validate_policy::ValidatePolicyOutput {
+            findings: self.findings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "findings",
+                    "findings was not specified but it is required when building ValidatePolicyOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -8,8 +8,10 @@ pub struct BatchGetReportsInput {
 }
 impl BatchGetReportsInput {
     /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
-    pub fn report_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.report_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_arns.is_none()`.
+    pub fn report_arns(&self) -> &[::std::string::String] {
+        self.report_arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetReportsInput {

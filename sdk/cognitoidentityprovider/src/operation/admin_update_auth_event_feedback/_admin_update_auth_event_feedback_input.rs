@@ -58,6 +58,7 @@ pub struct AdminUpdateAuthEventFeedbackInputBuilder {
 }
 impl AdminUpdateAuthEventFeedbackInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +73,7 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user pool username.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +88,7 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
         &self.username
     }
     /// <p>The authentication event ID.</p>
+    /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +103,7 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
         &self.event_id
     }
     /// <p>The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.</p>
+    /// This field is required.
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
         self.feedback_value = ::std::option::Option::Some(input);
         self

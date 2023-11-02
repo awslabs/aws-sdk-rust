@@ -36,8 +36,8 @@ pub fn de_list_channel_memberships_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ForbiddenException" => crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError::ForbiddenException({
@@ -52,8 +52,8 @@ pub fn de_list_channel_memberships_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceFailureException" => crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError::ServiceFailureException({
@@ -68,8 +68,8 @@ pub fn de_list_channel_memberships_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError::ServiceUnavailableException({
@@ -84,8 +84,8 @@ pub fn de_list_channel_memberships_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ThrottledClientException" => crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError::ThrottledClientException({
@@ -100,8 +100,8 @@ pub fn de_list_channel_memberships_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "UnauthorizedClientException" => crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError::UnauthorizedClientException({
@@ -116,8 +116,8 @@ pub fn de_list_channel_memberships_for_app_instance_user_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError::generic(generic)

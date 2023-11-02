@@ -40,8 +40,10 @@ impl CreateDetectorModelInput {
         self.role_arn.as_deref()
     }
     /// <p>Metadata that can be used to manage the detector model.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(&self) -> ::std::option::Option<&crate::types::EvaluationMethod> {
@@ -69,6 +71,7 @@ pub struct CreateDetectorModelInputBuilder {
 }
 impl CreateDetectorModelInputBuilder {
     /// <p>The name of the detector model.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl CreateDetectorModelInputBuilder {
         &self.detector_model_name
     }
     /// <p>Information that defines how the detectors operate.</p>
+    /// This field is required.
     pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.detector_model_definition = ::std::option::Option::Some(input);
         self
@@ -125,6 +129,7 @@ impl CreateDetectorModelInputBuilder {
         &self.key
     }
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

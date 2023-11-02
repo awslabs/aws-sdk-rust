@@ -22,8 +22,10 @@ impl CreateSiteToSiteVpnAttachmentInput {
         self.vpn_connection_arn.as_deref()
     }
     /// <p>The tags associated with the request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct CreateSiteToSiteVpnAttachmentInputBuilder {
 }
 impl CreateSiteToSiteVpnAttachmentInputBuilder {
     /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
+    /// This field is required.
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateSiteToSiteVpnAttachmentInputBuilder {
         &self.core_network_id
     }
     /// <p>The ARN identifying the VPN attachment.</p>
+    /// This field is required.
     pub fn vpn_connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_connection_arn = ::std::option::Option::Some(input.into());
         self

@@ -6,17 +6,18 @@ pub fn ser_sns_action(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TopicArn");
-    if let Some(var_2) = &input.topic_arn {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.topic_arn);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Encoding");
-    if let Some(var_4) = &input.encoding {
-        scope_3.string(var_4.as_str());
+    let mut scope_2 = writer.prefix("Encoding");
+    if let Some(var_3) = &input.encoding {
+        scope_2.string(var_3.as_str());
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_sns_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SnsAction, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_sns_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#SNSAction$TopicArn */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -34,11 +35,11 @@ pub fn de_sns_action(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_5);
+                builder = builder.set_topic_arn(var_4);
             }
             ,
             s if s.matches("Encoding") /* Encoding com.amazonaws.ses#SNSAction$Encoding */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         Result::<crate::types::SnsActionEncoding, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SnsActionEncoding::from(
@@ -48,11 +49,13 @@ pub fn de_sns_action(
                         ?
                     )
                 ;
-                builder = builder.set_encoding(var_6);
+                builder = builder.set_encoding(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::sns_action_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

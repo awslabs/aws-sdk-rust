@@ -51,6 +51,7 @@ pub struct AuthorizeClusterSecurityGroupIngressInputBuilder {
 }
 impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     /// <p>The name of the security group to which the ingress rule is added.</p>
+    /// This field is required.
     pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_security_group_name = ::std::option::Option::Some(input.into());
         self

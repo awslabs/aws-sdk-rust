@@ -30,6 +30,7 @@ pub struct SpellCorrectionConfigurationBuilder {
 }
 impl SpellCorrectionConfigurationBuilder {
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
+    /// This field is required.
     pub fn include_query_spell_check_suggestions(mut self, input: bool) -> Self {
         self.include_query_spell_check_suggestions = ::std::option::Option::Some(input);
         self

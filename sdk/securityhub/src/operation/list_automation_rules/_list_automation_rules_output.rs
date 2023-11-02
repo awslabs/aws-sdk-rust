@@ -11,8 +11,10 @@ pub struct ListAutomationRulesOutput {
 }
 impl ListAutomationRulesOutput {
     /// <p> Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>. </p>
-    pub fn automation_rules_metadata(&self) -> ::std::option::Option<&[crate::types::AutomationRulesMetadata]> {
-        self.automation_rules_metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automation_rules_metadata.is_none()`.
+    pub fn automation_rules_metadata(&self) -> &[crate::types::AutomationRulesMetadata] {
+        self.automation_rules_metadata.as_deref().unwrap_or_default()
     }
     /// <p> A pagination token for the response. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

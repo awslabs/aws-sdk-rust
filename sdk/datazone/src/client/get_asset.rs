@@ -3,26 +3,26 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAsset`](crate::operation::get_asset::builders::GetAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_identifier): <p>The ID of the Amazon DataZone asset.</p>
-    ///   - [`revision(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::revision) / [`set_revision(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_revision): <p>The revision of the Amazon DataZone asset.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain to which the asset belongs.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone asset.</p><br>
+    ///   - [`revision(impl Into<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::revision) / [`set_revision(Option<String>)`](crate::operation::get_asset::builders::GetAssetFluentBuilder::set_revision):<br>required: **false**<br><p>The revision of the Amazon DataZone asset.</p><br>
     /// - On success, responds with [`GetAssetOutput`](crate::operation::get_asset::GetAssetOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_asset::GetAssetOutput::id): <p>The ID of the asset.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_asset::GetAssetOutput::name): <p>The name of the asset.</p>
-    ///   - [`type_identifier(Option<String>)`](crate::operation::get_asset::GetAssetOutput::type_identifier): <p>The ID of the asset type.</p>
-    ///   - [`type_revision(Option<String>)`](crate::operation::get_asset::GetAssetOutput::type_revision): <p>The revision of the asset type.</p>
+    ///   - [`id(String)`](crate::operation::get_asset::GetAssetOutput::id): <p>The ID of the asset.</p>
+    ///   - [`name(String)`](crate::operation::get_asset::GetAssetOutput::name): <p>The name of the asset.</p>
+    ///   - [`type_identifier(String)`](crate::operation::get_asset::GetAssetOutput::type_identifier): <p>The ID of the asset type.</p>
+    ///   - [`type_revision(String)`](crate::operation::get_asset::GetAssetOutput::type_revision): <p>The revision of the asset type.</p>
     ///   - [`external_identifier(Option<String>)`](crate::operation::get_asset::GetAssetOutput::external_identifier): <p></p>
-    ///   - [`revision(Option<String>)`](crate::operation::get_asset::GetAssetOutput::revision): <p>The revision of the asset.</p>
+    ///   - [`revision(String)`](crate::operation::get_asset::GetAssetOutput::revision): <p>The revision of the asset.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_asset::GetAssetOutput::description): <p>The description of the Amazon DataZone asset.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_asset::GetAssetOutput::created_at): <p>The timestamp of when the asset was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::get_asset::GetAssetOutput::created_by): <p>The Amazon DataZone user who created the asset.</p>
     ///   - [`first_revision_created_at(Option<DateTime>)`](crate::operation::get_asset::GetAssetOutput::first_revision_created_at): <p>The timestamp of when the first revision of the asset was created.</p>
     ///   - [`first_revision_created_by(Option<String>)`](crate::operation::get_asset::GetAssetOutput::first_revision_created_by): <p>The Amazon DataZone user who created the first revision of the asset.</p>
     ///   - [`glossary_terms(Option<Vec<String>>)`](crate::operation::get_asset::GetAssetOutput::glossary_terms): <p>The business glossary terms attached to the asset.</p>
-    ///   - [`owning_project_id(Option<String>)`](crate::operation::get_asset::GetAssetOutput::owning_project_id): <p>The ID of the project that owns the asset.</p>
-    ///   - [`domain_id(Option<String>)`](crate::operation::get_asset::GetAssetOutput::domain_id): <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
+    ///   - [`owning_project_id(String)`](crate::operation::get_asset::GetAssetOutput::owning_project_id): <p>The ID of the project that owns the asset.</p>
+    ///   - [`domain_id(String)`](crate::operation::get_asset::GetAssetOutput::domain_id): <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
     ///   - [`listing(Option<AssetListingDetails>)`](crate::operation::get_asset::GetAssetOutput::listing): <p></p>
-    ///   - [`forms_output(Option<Vec<FormOutput>>)`](crate::operation::get_asset::GetAssetOutput::forms_output): <p>The metadata forms attached to the asset.</p>
+    ///   - [`forms_output(Vec<FormOutput>)`](crate::operation::get_asset::GetAssetOutput::forms_output): <p>The metadata forms attached to the asset.</p>
     ///   - [`read_only_forms_output(Option<Vec<FormOutput>>)`](crate::operation::get_asset::GetAssetOutput::read_only_forms_output): <p>The read-only metadata forms attached to the asset.</p>
     /// - On failure, responds with [`SdkError<GetAssetError>`](crate::operation::get_asset::GetAssetError)
     pub fn get_asset(&self) -> crate::operation::get_asset::builders::GetAssetFluentBuilder {

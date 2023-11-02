@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tagging {
     /// <p>A collection for a set of tags</p>
-    pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_set: ::std::vec::Vec<crate::types::Tag>,
 }
 impl Tagging {
     /// <p>A collection for a set of tags</p>
-    pub fn tag_set(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_set.as_deref()
+    pub fn tag_set(&self) -> &[crate::types::Tag] {
+        use std::ops::Deref;
+        self.tag_set.deref()
     }
 }
 impl Tagging {
@@ -48,7 +49,16 @@ impl TaggingBuilder {
         &self.tag_set
     }
     /// Consumes the builder and constructs a [`Tagging`](crate::types::Tagging).
-    pub fn build(self) -> crate::types::Tagging {
-        crate::types::Tagging { tag_set: self.tag_set }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_set`](crate::types::builders::TaggingBuilder::tag_set)
+    pub fn build(self) -> ::std::result::Result<crate::types::Tagging, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Tagging {
+            tag_set: self.tag_set.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tag_set",
+                    "tag_set was not specified but it is required when building Tagging",
+                )
+            })?,
+        })
     }
 }

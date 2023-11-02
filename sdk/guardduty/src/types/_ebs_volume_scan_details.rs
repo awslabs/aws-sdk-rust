@@ -37,8 +37,10 @@ impl EbsVolumeScanDetails {
         self.trigger_finding_id.as_deref()
     }
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[::std::string::String] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>Contains a complete view providing malware scan result details.</p>
     pub fn scan_detections(&self) -> ::std::option::Option<&crate::types::ScanDetections> {

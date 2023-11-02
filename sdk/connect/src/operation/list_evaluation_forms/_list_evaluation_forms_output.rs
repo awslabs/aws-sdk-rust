@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEvaluationFormsOutput {
     /// <p>Provides details about a list of evaluation forms belonging to an instance.</p>
-    pub evaluation_form_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>>,
+    pub evaluation_form_summary_list: ::std::vec::Vec<crate::types::EvaluationFormSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEvaluationFormsOutput {
     /// <p>Provides details about a list of evaluation forms belonging to an instance.</p>
-    pub fn evaluation_form_summary_list(&self) -> ::std::option::Option<&[crate::types::EvaluationFormSummary]> {
-        self.evaluation_form_summary_list.as_deref()
+    pub fn evaluation_form_summary_list(&self) -> &[crate::types::EvaluationFormSummary] {
+        use std::ops::Deref;
+        self.evaluation_form_summary_list.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListEvaluationFormsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEvaluationFormsOutput`](crate::operation::list_evaluation_forms::ListEvaluationFormsOutput).
-    pub fn build(self) -> crate::operation::list_evaluation_forms::ListEvaluationFormsOutput {
-        crate::operation::list_evaluation_forms::ListEvaluationFormsOutput {
-            evaluation_form_summary_list: self.evaluation_form_summary_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`evaluation_form_summary_list`](crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder::evaluation_form_summary_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_evaluation_forms::ListEvaluationFormsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_evaluation_forms::ListEvaluationFormsOutput {
+            evaluation_form_summary_list: self.evaluation_form_summary_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "evaluation_form_summary_list",
+                    "evaluation_form_summary_list was not specified but it is required when building ListEvaluationFormsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

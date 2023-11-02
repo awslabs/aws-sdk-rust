@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionEvent {
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub network: ::std::option::Option<crate::types::QueryNetwork>,
+    pub network: crate::types::QueryNetwork,
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub transaction_hash: ::std::option::Option<::std::string::String>,
+    pub transaction_hash: ::std::string::String,
     /// <p>The type of transaction event.</p>
-    pub event_type: ::std::option::Option<crate::types::QueryTransactionEventType>,
+    pub event_type: crate::types::QueryTransactionEventType,
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
     pub from: ::std::option::Option<::std::string::String>,
     /// <p>The wallet address receiving the transaction. It can either be a public key or a contract.</p>
@@ -27,16 +27,17 @@ pub struct TransactionEvent {
 }
 impl TransactionEvent {
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
-        self.network.as_ref()
+    pub fn network(&self) -> &crate::types::QueryNetwork {
+        &self.network
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
-    pub fn transaction_hash(&self) -> ::std::option::Option<&str> {
-        self.transaction_hash.as_deref()
+    pub fn transaction_hash(&self) -> &str {
+        use std::ops::Deref;
+        self.transaction_hash.deref()
     }
     /// <p>The type of transaction event.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::QueryTransactionEventType> {
-        self.event_type.as_ref()
+    pub fn event_type(&self) -> &crate::types::QueryTransactionEventType {
+        &self.event_type
     }
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
     pub fn from(&self) -> ::std::option::Option<&str> {
@@ -91,6 +92,7 @@ pub struct TransactionEventBuilder {
 }
 impl TransactionEventBuilder {
     /// <p>The blockchain network where the transaction occurred.</p>
+    /// This field is required.
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl TransactionEventBuilder {
         &self.network
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    /// This field is required.
     pub fn transaction_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transaction_hash = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +122,7 @@ impl TransactionEventBuilder {
         &self.transaction_hash
     }
     /// <p>The type of transaction event.</p>
+    /// This field is required.
     pub fn event_type(mut self, input: crate::types::QueryTransactionEventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
         self
@@ -231,11 +235,30 @@ impl TransactionEventBuilder {
         &self.vout_index
     }
     /// Consumes the builder and constructs a [`TransactionEvent`](crate::types::TransactionEvent).
-    pub fn build(self) -> crate::types::TransactionEvent {
-        crate::types::TransactionEvent {
-            network: self.network,
-            transaction_hash: self.transaction_hash,
-            event_type: self.event_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network`](crate::types::builders::TransactionEventBuilder::network)
+    /// - [`transaction_hash`](crate::types::builders::TransactionEventBuilder::transaction_hash)
+    /// - [`event_type`](crate::types::builders::TransactionEventBuilder::event_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TransactionEvent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TransactionEvent {
+            network: self.network.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network",
+                    "network was not specified but it is required when building TransactionEvent",
+                )
+            })?,
+            transaction_hash: self.transaction_hash.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transaction_hash",
+                    "transaction_hash was not specified but it is required when building TransactionEvent",
+                )
+            })?,
+            event_type: self.event_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "event_type",
+                    "event_type was not specified but it is required when building TransactionEvent",
+                )
+            })?,
             from: self.from,
             to: self.to,
             value: self.value,
@@ -243,6 +266,6 @@ impl TransactionEventBuilder {
             token_id: self.token_id,
             transaction_id: self.transaction_id,
             vout_index: self.vout_index,
-        }
+        })
     }
 }

@@ -3,8 +3,8 @@ pub fn ser_start_clock_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_clock::StartClockInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.simulation {
-        object.key("Simulation").string(var_1.as_str());
+    {
+        object.key("Simulation").string(input.simulation.as_str());
     }
     Ok(())
 }

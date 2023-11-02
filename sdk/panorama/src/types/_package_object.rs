@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageObject {
     /// <p>The object's name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The object's package version.</p>
-    pub package_version: ::std::option::Option<::std::string::String>,
+    pub package_version: ::std::string::String,
     /// <p>The object's patch version.</p>
-    pub patch_version: ::std::option::Option<::std::string::String>,
+    pub patch_version: ::std::string::String,
 }
 impl PackageObject {
     /// <p>The object's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The object's package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
-        self.package_version.as_deref()
+    pub fn package_version(&self) -> &str {
+        use std::ops::Deref;
+        self.package_version.deref()
     }
     /// <p>The object's patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
-        self.patch_version.as_deref()
+    pub fn patch_version(&self) -> &str {
+        use std::ops::Deref;
+        self.patch_version.deref()
     }
 }
 impl PackageObject {
@@ -42,6 +45,7 @@ pub struct PackageObjectBuilder {
 }
 impl PackageObjectBuilder {
     /// <p>The object's name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl PackageObjectBuilder {
         &self.name
     }
     /// <p>The object's package version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl PackageObjectBuilder {
         &self.package_version
     }
     /// <p>The object's patch version.</p>
+    /// This field is required.
     pub fn patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_version = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl PackageObjectBuilder {
         &self.patch_version
     }
     /// Consumes the builder and constructs a [`PackageObject`](crate::types::PackageObject).
-    pub fn build(self) -> crate::types::PackageObject {
-        crate::types::PackageObject {
-            name: self.name,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::PackageObjectBuilder::name)
+    /// - [`package_version`](crate::types::builders::PackageObjectBuilder::package_version)
+    /// - [`patch_version`](crate::types::builders::PackageObjectBuilder::patch_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageObject, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PackageObject {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building PackageObject",
+                )
+            })?,
+            package_version: self.package_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_version",
+                    "package_version was not specified but it is required when building PackageObject",
+                )
+            })?,
+            patch_version: self.patch_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "patch_version",
+                    "patch_version was not specified but it is required when building PackageObject",
+                )
+            })?,
+        })
     }
 }

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryAlias {
     /// <p>The name of the registry alias.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The status of the registry alias.</p>
-    pub status: ::std::option::Option<crate::types::RegistryAliasStatus>,
+    pub status: crate::types::RegistryAliasStatus,
     /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
@@ -17,12 +17,13 @@ pub struct RegistryAlias {
 }
 impl RegistryAlias {
     /// <p>The name of the registry alias.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The status of the registry alias.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RegistryAliasStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::RegistryAliasStatus {
+        &self.status
     }
     /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
@@ -53,6 +54,7 @@ pub struct RegistryAliasBuilder {
 }
 impl RegistryAliasBuilder {
     /// <p>The name of the registry alias.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +69,7 @@ impl RegistryAliasBuilder {
         &self.name
     }
     /// <p>The status of the registry alias.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RegistryAliasStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -83,6 +86,7 @@ impl RegistryAliasBuilder {
     /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p> <note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
+    /// This field is required.
     pub fn primary_registry_alias(mut self, input: bool) -> Self {
         self.primary_registry_alias = ::std::option::Option::Some(input);
         self
@@ -101,6 +105,7 @@ impl RegistryAliasBuilder {
         &self.primary_registry_alias
     }
     /// <p>Indicates whether the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
+    /// This field is required.
     pub fn default_registry_alias(mut self, input: bool) -> Self {
         self.default_registry_alias = ::std::option::Option::Some(input);
         self
@@ -115,12 +120,25 @@ impl RegistryAliasBuilder {
         &self.default_registry_alias
     }
     /// Consumes the builder and constructs a [`RegistryAlias`](crate::types::RegistryAlias).
-    pub fn build(self) -> crate::types::RegistryAlias {
-        crate::types::RegistryAlias {
-            name: self.name,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RegistryAliasBuilder::name)
+    /// - [`status`](crate::types::builders::RegistryAliasBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegistryAlias, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegistryAlias {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RegistryAlias",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building RegistryAlias",
+                )
+            })?,
             primary_registry_alias: self.primary_registry_alias.unwrap_or_default(),
             default_registry_alias: self.default_registry_alias.unwrap_or_default(),
-        }
+        })
     }
 }

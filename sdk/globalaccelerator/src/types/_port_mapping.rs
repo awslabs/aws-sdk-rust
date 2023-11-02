@@ -35,8 +35,10 @@ impl PortMapping {
         self.destination_socket_address.as_ref()
     }
     /// <p>The protocols supported by the endpoint group.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::CustomRoutingProtocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::CustomRoutingProtocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
     pub fn destination_traffic_state(&self) -> ::std::option::Option<&crate::types::CustomRoutingDestinationTrafficState> {

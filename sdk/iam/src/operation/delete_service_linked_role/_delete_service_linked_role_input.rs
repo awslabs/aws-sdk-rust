@@ -27,6 +27,7 @@ pub struct DeleteServiceLinkedRoleInputBuilder {
 }
 impl DeleteServiceLinkedRoleInputBuilder {
     /// <p>The name of the service-linked role to be deleted.</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self

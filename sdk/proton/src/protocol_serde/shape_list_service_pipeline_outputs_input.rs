@@ -3,14 +3,14 @@ pub fn ser_list_service_pipeline_outputs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.service_name {
-        object.key("serviceName").string(var_1.as_str());
+    {
+        object.key("serviceName").string(input.service_name.as_str());
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_1) = &input.next_token {
+        object.key("nextToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.deployment_id {
-        object.key("deploymentId").string(var_3.as_str());
+    if let Some(var_2) = &input.deployment_id {
+        object.key("deploymentId").string(var_2.as_str());
     }
     Ok(())
 }

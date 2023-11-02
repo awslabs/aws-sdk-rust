@@ -3,29 +3,29 @@ pub fn ser_join_instruction(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JoinInstruction,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.left_operand {
-        object.key("LeftOperand").string(var_1.as_str());
+    {
+        object.key("LeftOperand").string(input.left_operand.as_str());
     }
-    if let Some(var_2) = &input.right_operand {
-        object.key("RightOperand").string(var_2.as_str());
+    {
+        object.key("RightOperand").string(input.right_operand.as_str());
     }
-    if let Some(var_3) = &input.left_join_key_properties {
+    if let Some(var_1) = &input.left_join_key_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("LeftJoinKeyProperties").start_object();
+        let mut object_2 = object.key("LeftJoinKeyProperties").start_object();
+        crate::protocol_serde::shape_join_key_properties::ser_join_key_properties(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.right_join_key_properties {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("RightJoinKeyProperties").start_object();
         crate::protocol_serde::shape_join_key_properties::ser_join_key_properties(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.right_join_key_properties {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("RightJoinKeyProperties").start_object();
-        crate::protocol_serde::shape_join_key_properties::ser_join_key_properties(&mut object_6, var_5)?;
-        object_6.finish();
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("Type").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.on_clause {
-        object.key("OnClause").string(var_8.as_str());
+    {
+        object.key("OnClause").string(input.on_clause.as_str());
     }
     Ok(())
 }
@@ -91,7 +91,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::join_instruction_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

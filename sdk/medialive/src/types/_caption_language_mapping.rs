@@ -42,6 +42,7 @@ pub struct CaptionLanguageMappingBuilder {
 }
 impl CaptionLanguageMappingBuilder {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
+    /// This field is required.
     pub fn caption_channel(mut self, input: i32) -> Self {
         self.caption_channel = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl CaptionLanguageMappingBuilder {
         &self.caption_channel
     }
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
+    /// This field is required.
     pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CaptionLanguageMappingBuilder {
         &self.language_code
     }
     /// Textual description of language
+    /// This field is required.
     pub fn language_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language_description = ::std::option::Option::Some(input.into());
         self

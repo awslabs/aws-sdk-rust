@@ -59,8 +59,10 @@ impl CreateDevEndpointOutput {
         self.status.as_deref()
     }
     /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {

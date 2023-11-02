@@ -20,8 +20,10 @@ impl GetServersInput {
         self.max_results
     }
     /// <p>The server addresses.</p>
-    pub fn vm_server_address_list(&self) -> ::std::option::Option<&[crate::types::VmServerAddress]> {
-        self.vm_server_address_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vm_server_address_list.is_none()`.
+    pub fn vm_server_address_list(&self) -> &[crate::types::VmServerAddress] {
+        self.vm_server_address_list.as_deref().unwrap_or_default()
     }
 }
 impl GetServersInput {

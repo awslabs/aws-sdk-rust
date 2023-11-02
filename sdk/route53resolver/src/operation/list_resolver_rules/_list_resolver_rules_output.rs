@@ -21,8 +21,10 @@ impl ListResolverRulesOutput {
         self.max_results
     }
     /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-    pub fn resolver_rules(&self) -> ::std::option::Option<&[crate::types::ResolverRule]> {
-        self.resolver_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_rules.is_none()`.
+    pub fn resolver_rules(&self) -> &[crate::types::ResolverRule] {
+        self.resolver_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResolverRulesOutput {

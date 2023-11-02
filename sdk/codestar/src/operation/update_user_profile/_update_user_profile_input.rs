@@ -58,6 +58,7 @@ pub struct UpdateUserProfileInputBuilder {
 }
 impl UpdateUserProfileInputBuilder {
     /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self

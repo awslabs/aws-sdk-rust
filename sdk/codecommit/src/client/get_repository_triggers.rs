@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRepositoryTriggers`](crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`repository_name(impl Into<String>)`](crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder::set_repository_name): <p>The name of the repository for which the trigger is configured.</p>
+    ///   - [`repository_name(impl Into<String>)`](crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_repository_triggers::builders::GetRepositoryTriggersFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository for which the trigger is configured.</p><br>
     /// - On success, responds with [`GetRepositoryTriggersOutput`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput) with field(s):
     ///   - [`configuration_id(Option<String>)`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput::configuration_id): <p>The system-generated unique ID for the trigger.</p>
     ///   - [`triggers(Option<Vec<RepositoryTrigger>>)`](crate::operation::get_repository_triggers::GetRepositoryTriggersOutput::triggers): <p>The JSON block of configuration information for each trigger.</p>

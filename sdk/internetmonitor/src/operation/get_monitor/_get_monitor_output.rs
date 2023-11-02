@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitorOutput {
     /// <p>The name of the monitor.</p>
-    pub monitor_name: ::std::option::Option<::std::string::String>,
+    pub monitor_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub monitor_arn: ::std::option::Option<::std::string::String>,
+    pub monitor_arn: ::std::string::String,
     /// <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources: ::std::vec::Vec<::std::string::String>,
     /// <p>The status of the monitor.</p>
-    pub status: ::std::option::Option<crate::types::MonitorConfigState>,
+    pub status: crate::types::MonitorConfigState,
     /// <p>The time when the monitor was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The last time that the monitor was modified.</p>
-    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub modified_at: ::aws_smithy_types::DateTime,
     /// <p>The health of the data processing for the monitor.</p>
     pub processing_status: ::std::option::Option<crate::types::MonitorProcessingStatusCode>,
     /// <p>Additional information about the health of the data processing for the monitor.</p>
@@ -36,28 +36,31 @@ pub struct GetMonitorOutput {
 }
 impl GetMonitorOutput {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
-        self.monitor_name.as_deref()
+    pub fn monitor_name(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
-        self.monitor_arn.as_deref()
+    pub fn monitor_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_arn.deref()
     }
     /// <p>The resources monitored by the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
-    pub fn resources(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.resources.as_deref()
+    pub fn resources(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.resources.deref()
     }
     /// <p>The status of the monitor.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MonitorConfigState> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::MonitorConfigState {
+        &self.status
     }
     /// <p>The time when the monitor was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The last time that the monitor was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.modified_at.as_ref()
+    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.modified_at
     }
     /// <p>The health of the data processing for the monitor.</p>
     pub fn processing_status(&self) -> ::std::option::Option<&crate::types::MonitorProcessingStatusCode> {
@@ -124,6 +127,7 @@ pub struct GetMonitorOutputBuilder {
 }
 impl GetMonitorOutputBuilder {
     /// <p>The name of the monitor.</p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +142,7 @@ impl GetMonitorOutputBuilder {
         &self.monitor_name
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
+    /// This field is required.
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +177,7 @@ impl GetMonitorOutputBuilder {
         &self.resources
     }
     /// <p>The status of the monitor.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -186,6 +192,7 @@ impl GetMonitorOutputBuilder {
         &self.status
     }
     /// <p>The time when the monitor was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -200,6 +207,7 @@ impl GetMonitorOutputBuilder {
         &self.created_at
     }
     /// <p>The last time that the monitor was modified.</p>
+    /// This field is required.
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
         self
@@ -336,14 +344,51 @@ impl GetMonitorOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput).
-    pub fn build(self) -> crate::operation::get_monitor::GetMonitorOutput {
-        crate::operation::get_monitor::GetMonitorOutput {
-            monitor_name: self.monitor_name,
-            monitor_arn: self.monitor_arn,
-            resources: self.resources,
-            status: self.status,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitor_name`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::monitor_name)
+    /// - [`monitor_arn`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::monitor_arn)
+    /// - [`resources`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::resources)
+    /// - [`status`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::status)
+    /// - [`created_at`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::created_at)
+    /// - [`modified_at`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::modified_at)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorOutput {
+            monitor_name: self.monitor_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitor_name",
+                    "monitor_name was not specified but it is required when building GetMonitorOutput",
+                )
+            })?,
+            monitor_arn: self.monitor_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitor_arn",
+                    "monitor_arn was not specified but it is required when building GetMonitorOutput",
+                )
+            })?,
+            resources: self.resources.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resources",
+                    "resources was not specified but it is required when building GetMonitorOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetMonitorOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetMonitorOutput",
+                )
+            })?,
+            modified_at: self.modified_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "modified_at",
+                    "modified_at was not specified but it is required when building GetMonitorOutput",
+                )
+            })?,
             processing_status: self.processing_status,
             processing_status_info: self.processing_status_info,
             tags: self.tags,
@@ -352,6 +397,6 @@ impl GetMonitorOutputBuilder {
             traffic_percentage_to_monitor: self.traffic_percentage_to_monitor.unwrap_or_default(),
             health_events_config: self.health_events_config,
             _request_id: self._request_id,
-        }
+        })
     }
 }

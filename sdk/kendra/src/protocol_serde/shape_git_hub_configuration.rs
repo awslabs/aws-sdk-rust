@@ -18,182 +18,182 @@ pub fn ser_git_hub_configuration(
     if let Some(var_5) = &input.r#type {
         object.key("Type").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.secret_arn {
-        object.key("SecretArn").string(var_6.as_str());
+    {
+        object.key("SecretArn").string(input.secret_arn.as_str());
     }
     if input.use_change_log {
         object.key("UseChangeLog").boolean(input.use_change_log);
     }
-    if let Some(var_7) = &input.git_hub_document_crawl_properties {
+    if let Some(var_6) = &input.git_hub_document_crawl_properties {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("GitHubDocumentCrawlProperties").start_object();
-        crate::protocol_serde::shape_git_hub_document_crawl_properties::ser_git_hub_document_crawl_properties(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("GitHubDocumentCrawlProperties").start_object();
+        crate::protocol_serde::shape_git_hub_document_crawl_properties::ser_git_hub_document_crawl_properties(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.repository_filter {
-        let mut array_10 = object.key("RepositoryFilter").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.repository_filter {
+        let mut array_9 = object.key("RepositoryFilter").start_array();
+        for item_10 in var_8 {
             {
-                array_10.value().string(item_11.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_12) = &input.inclusion_folder_name_patterns {
-        let mut array_13 = object.key("InclusionFolderNamePatterns").start_array();
-        for item_14 in var_12 {
+    if let Some(var_11) = &input.inclusion_folder_name_patterns {
+        let mut array_12 = object.key("InclusionFolderNamePatterns").start_array();
+        for item_13 in var_11 {
             {
-                array_13.value().string(item_14.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_13.finish();
+        array_12.finish();
     }
-    if let Some(var_15) = &input.inclusion_file_type_patterns {
-        let mut array_16 = object.key("InclusionFileTypePatterns").start_array();
-        for item_17 in var_15 {
+    if let Some(var_14) = &input.inclusion_file_type_patterns {
+        let mut array_15 = object.key("InclusionFileTypePatterns").start_array();
+        for item_16 in var_14 {
             {
-                array_16.value().string(item_17.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_16.finish();
+        array_15.finish();
     }
-    if let Some(var_18) = &input.inclusion_file_name_patterns {
-        let mut array_19 = object.key("InclusionFileNamePatterns").start_array();
-        for item_20 in var_18 {
+    if let Some(var_17) = &input.inclusion_file_name_patterns {
+        let mut array_18 = object.key("InclusionFileNamePatterns").start_array();
+        for item_19 in var_17 {
             {
-                array_19.value().string(item_20.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_19.finish();
+        array_18.finish();
     }
-    if let Some(var_21) = &input.exclusion_folder_name_patterns {
-        let mut array_22 = object.key("ExclusionFolderNamePatterns").start_array();
-        for item_23 in var_21 {
+    if let Some(var_20) = &input.exclusion_folder_name_patterns {
+        let mut array_21 = object.key("ExclusionFolderNamePatterns").start_array();
+        for item_22 in var_20 {
             {
-                array_22.value().string(item_23.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_22.finish();
+        array_21.finish();
     }
-    if let Some(var_24) = &input.exclusion_file_type_patterns {
-        let mut array_25 = object.key("ExclusionFileTypePatterns").start_array();
-        for item_26 in var_24 {
+    if let Some(var_23) = &input.exclusion_file_type_patterns {
+        let mut array_24 = object.key("ExclusionFileTypePatterns").start_array();
+        for item_25 in var_23 {
             {
-                array_25.value().string(item_26.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_25.finish();
+        array_24.finish();
     }
-    if let Some(var_27) = &input.exclusion_file_name_patterns {
-        let mut array_28 = object.key("ExclusionFileNamePatterns").start_array();
-        for item_29 in var_27 {
+    if let Some(var_26) = &input.exclusion_file_name_patterns {
+        let mut array_27 = object.key("ExclusionFileNamePatterns").start_array();
+        for item_28 in var_26 {
             {
-                array_28.value().string(item_29.as_str());
+                array_27.value().string(item_28.as_str());
             }
         }
-        array_28.finish();
+        array_27.finish();
     }
-    if let Some(var_30) = &input.vpc_configuration {
+    if let Some(var_29) = &input.vpc_configuration {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("VpcConfiguration").start_object();
-        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_31, var_30)?;
-        object_31.finish();
+        let mut object_30 = object.key("VpcConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_vpc_configuration::ser_data_source_vpc_configuration(&mut object_30, var_29)?;
+        object_30.finish();
     }
-    if let Some(var_32) = &input.git_hub_repository_configuration_field_mappings {
-        let mut array_33 = object.key("GitHubRepositoryConfigurationFieldMappings").start_array();
-        for item_34 in var_32 {
+    if let Some(var_31) = &input.git_hub_repository_configuration_field_mappings {
+        let mut array_32 = object.key("GitHubRepositoryConfigurationFieldMappings").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_35 = array_33.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_35, item_34)?;
-                object_35.finish();
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        array_33.finish();
+        array_32.finish();
     }
-    if let Some(var_36) = &input.git_hub_commit_configuration_field_mappings {
-        let mut array_37 = object.key("GitHubCommitConfigurationFieldMappings").start_array();
-        for item_38 in var_36 {
+    if let Some(var_35) = &input.git_hub_commit_configuration_field_mappings {
+        let mut array_36 = object.key("GitHubCommitConfigurationFieldMappings").start_array();
+        for item_37 in var_35 {
             {
                 #[allow(unused_mut)]
-                let mut object_39 = array_37.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_39, item_38)?;
-                object_39.finish();
+                let mut object_38 = array_36.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_38, item_37)?;
+                object_38.finish();
             }
         }
-        array_37.finish();
+        array_36.finish();
     }
-    if let Some(var_40) = &input.git_hub_issue_document_configuration_field_mappings {
-        let mut array_41 = object.key("GitHubIssueDocumentConfigurationFieldMappings").start_array();
-        for item_42 in var_40 {
+    if let Some(var_39) = &input.git_hub_issue_document_configuration_field_mappings {
+        let mut array_40 = object.key("GitHubIssueDocumentConfigurationFieldMappings").start_array();
+        for item_41 in var_39 {
             {
                 #[allow(unused_mut)]
-                let mut object_43 = array_41.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_43, item_42)?;
-                object_43.finish();
+                let mut object_42 = array_40.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_42, item_41)?;
+                object_42.finish();
             }
         }
-        array_41.finish();
+        array_40.finish();
     }
-    if let Some(var_44) = &input.git_hub_issue_comment_configuration_field_mappings {
-        let mut array_45 = object.key("GitHubIssueCommentConfigurationFieldMappings").start_array();
-        for item_46 in var_44 {
+    if let Some(var_43) = &input.git_hub_issue_comment_configuration_field_mappings {
+        let mut array_44 = object.key("GitHubIssueCommentConfigurationFieldMappings").start_array();
+        for item_45 in var_43 {
             {
                 #[allow(unused_mut)]
-                let mut object_47 = array_45.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_47, item_46)?;
-                object_47.finish();
+                let mut object_46 = array_44.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_46, item_45)?;
+                object_46.finish();
             }
         }
-        array_45.finish();
+        array_44.finish();
     }
-    if let Some(var_48) = &input.git_hub_issue_attachment_configuration_field_mappings {
-        let mut array_49 = object.key("GitHubIssueAttachmentConfigurationFieldMappings").start_array();
-        for item_50 in var_48 {
+    if let Some(var_47) = &input.git_hub_issue_attachment_configuration_field_mappings {
+        let mut array_48 = object.key("GitHubIssueAttachmentConfigurationFieldMappings").start_array();
+        for item_49 in var_47 {
             {
                 #[allow(unused_mut)]
-                let mut object_51 = array_49.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_51, item_50)?;
-                object_51.finish();
+                let mut object_50 = array_48.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_50, item_49)?;
+                object_50.finish();
             }
         }
-        array_49.finish();
+        array_48.finish();
     }
-    if let Some(var_52) = &input.git_hub_pull_request_comment_configuration_field_mappings {
-        let mut array_53 = object.key("GitHubPullRequestCommentConfigurationFieldMappings").start_array();
-        for item_54 in var_52 {
+    if let Some(var_51) = &input.git_hub_pull_request_comment_configuration_field_mappings {
+        let mut array_52 = object.key("GitHubPullRequestCommentConfigurationFieldMappings").start_array();
+        for item_53 in var_51 {
             {
                 #[allow(unused_mut)]
-                let mut object_55 = array_53.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_55, item_54)?;
-                object_55.finish();
+                let mut object_54 = array_52.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_54, item_53)?;
+                object_54.finish();
             }
         }
-        array_53.finish();
+        array_52.finish();
     }
-    if let Some(var_56) = &input.git_hub_pull_request_document_configuration_field_mappings {
-        let mut array_57 = object.key("GitHubPullRequestDocumentConfigurationFieldMappings").start_array();
-        for item_58 in var_56 {
+    if let Some(var_55) = &input.git_hub_pull_request_document_configuration_field_mappings {
+        let mut array_56 = object.key("GitHubPullRequestDocumentConfigurationFieldMappings").start_array();
+        for item_57 in var_55 {
             {
                 #[allow(unused_mut)]
-                let mut object_59 = array_57.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_59, item_58)?;
-                object_59.finish();
+                let mut object_58 = array_56.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_58, item_57)?;
+                object_58.finish();
             }
         }
-        array_57.finish();
+        array_56.finish();
     }
-    if let Some(var_60) = &input.git_hub_pull_request_document_attachment_configuration_field_mappings {
-        let mut array_61 = object.key("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings").start_array();
-        for item_62 in var_60 {
+    if let Some(var_59) = &input.git_hub_pull_request_document_attachment_configuration_field_mappings {
+        let mut array_60 = object.key("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings").start_array();
+        for item_61 in var_59 {
             {
                 #[allow(unused_mut)]
-                let mut object_63 = array_61.value().start_object();
-                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_63, item_62)?;
-                object_63.finish();
+                let mut object_62 = array_60.value().start_object();
+                crate::protocol_serde::shape_data_source_to_index_field_mapping::ser_data_source_to_index_field_mapping(&mut object_62, item_61)?;
+                object_62.finish();
             }
         }
-        array_61.finish();
+        array_60.finish();
     }
     Ok(())
 }
@@ -336,7 +336,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::git_hub_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

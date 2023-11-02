@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProactiveJoin {
     #[allow(missing_docs)] // documentation missing in model
-    pub enabled_by_motion: ::std::option::Option<bool>,
+    pub enabled_by_motion: bool,
 }
 impl CreateProactiveJoin {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn enabled_by_motion(&self) -> ::std::option::Option<bool> {
+    pub fn enabled_by_motion(&self) -> bool {
         self.enabled_by_motion
     }
 }
@@ -27,6 +27,7 @@ pub struct CreateProactiveJoinBuilder {
 }
 impl CreateProactiveJoinBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn enabled_by_motion(mut self, input: bool) -> Self {
         self.enabled_by_motion = ::std::option::Option::Some(input);
         self
@@ -41,9 +42,16 @@ impl CreateProactiveJoinBuilder {
         &self.enabled_by_motion
     }
     /// Consumes the builder and constructs a [`CreateProactiveJoin`](crate::types::CreateProactiveJoin).
-    pub fn build(self) -> crate::types::CreateProactiveJoin {
-        crate::types::CreateProactiveJoin {
-            enabled_by_motion: self.enabled_by_motion,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`enabled_by_motion`](crate::types::builders::CreateProactiveJoinBuilder::enabled_by_motion)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateProactiveJoin, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateProactiveJoin {
+            enabled_by_motion: self.enabled_by_motion.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled_by_motion",
+                    "enabled_by_motion was not specified but it is required when building CreateProactiveJoin",
+                )
+            })?,
+        })
     }
 }

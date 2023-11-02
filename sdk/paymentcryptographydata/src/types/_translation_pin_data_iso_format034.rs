@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TranslationPinDataIsoFormat034 {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub primary_account_number: ::std::option::Option<::std::string::String>,
+    pub primary_account_number: ::std::string::String,
 }
 impl TranslationPinDataIsoFormat034 {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn primary_account_number(&self) -> ::std::option::Option<&str> {
-        self.primary_account_number.as_deref()
+    pub fn primary_account_number(&self) -> &str {
+        use std::ops::Deref;
+        self.primary_account_number.deref()
     }
 }
 impl ::std::fmt::Debug for TranslationPinDataIsoFormat034 {
@@ -35,6 +36,7 @@ pub struct TranslationPinDataIsoFormat034Builder {
 }
 impl TranslationPinDataIsoFormat034Builder {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
+    /// This field is required.
     pub fn primary_account_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_account_number = ::std::option::Option::Some(input.into());
         self
@@ -49,10 +51,17 @@ impl TranslationPinDataIsoFormat034Builder {
         &self.primary_account_number
     }
     /// Consumes the builder and constructs a [`TranslationPinDataIsoFormat034`](crate::types::TranslationPinDataIsoFormat034).
-    pub fn build(self) -> crate::types::TranslationPinDataIsoFormat034 {
-        crate::types::TranslationPinDataIsoFormat034 {
-            primary_account_number: self.primary_account_number,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`primary_account_number`](crate::types::builders::TranslationPinDataIsoFormat034Builder::primary_account_number)
+    pub fn build(self) -> ::std::result::Result<crate::types::TranslationPinDataIsoFormat034, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TranslationPinDataIsoFormat034 {
+            primary_account_number: self.primary_account_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "primary_account_number",
+                    "primary_account_number was not specified but it is required when building TranslationPinDataIsoFormat034",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for TranslationPinDataIsoFormat034Builder {

@@ -41,6 +41,7 @@ pub struct UpdateSiteAddressInputBuilder {
 }
 impl UpdateSiteAddressInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateSiteAddressInputBuilder {
         &self.site_id
     }
     /// <p> The type of the address. </p>
+    /// This field is required.
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.address_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UpdateSiteAddressInputBuilder {
         &self.address_type
     }
     /// <p> The address for the site. </p>
+    /// This field is required.
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.address = ::std::option::Option::Some(input);
         self

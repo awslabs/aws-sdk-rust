@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleFluentBuilder::send) it.
     /// - On success, responds with [`DescribeCrossAccountAccessRoleOutput`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput) with field(s):
-    ///   - [`role_arn(Option<String>)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::role_arn): <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
-    ///   - [`valid(Option<bool>)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::valid): <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
-    ///   - [`registered_at(Option<DateTime>)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::registered_at): <p>The date when the cross-account access role was registered.</p>
+    ///   - [`role_arn(String)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::role_arn): <p>The ARN that specifies the IAM role that Amazon Inspector uses to access your AWS account.</p>
+    ///   - [`valid(bool)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::valid): <p>A Boolean value that specifies whether the IAM role has the necessary policies attached to enable Amazon Inspector to access your AWS account.</p>
+    ///   - [`registered_at(DateTime)`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput::registered_at): <p>The date when the cross-account access role was registered.</p>
     /// - On failure, responds with [`SdkError<DescribeCrossAccountAccessRoleError>`](crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError)
     pub fn describe_cross_account_access_role(
         &self,

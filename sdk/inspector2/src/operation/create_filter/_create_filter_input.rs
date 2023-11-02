@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
-    pub action: ::std::option::Option<crate::types::FilterAction>,
+    pub action: crate::types::FilterAction,
     /// <p>A description of the filter.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A list of tags for the filter.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The reason for creating the filter.</p>
@@ -18,8 +18,8 @@ pub struct CreateFilterInput {
 }
 impl CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::FilterAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::FilterAction {
+        &self.action
     }
     /// <p>A description of the filter.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -30,8 +30,9 @@ impl CreateFilterInput {
         self.filter_criteria.as_ref()
     }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A list of tags for the filter.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -62,6 +63,7 @@ pub struct CreateFilterInputBuilder {
 }
 impl CreateFilterInputBuilder {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -90,6 +92,7 @@ impl CreateFilterInputBuilder {
         &self.description
     }
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
+    /// This field is required.
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
         self
@@ -104,6 +107,7 @@ impl CreateFilterInputBuilder {
         &self.filter_criteria
     }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -152,12 +156,25 @@ impl CreateFilterInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action`](crate::operation::create_filter::builders::CreateFilterInputBuilder::action)
+    /// - [`name`](crate::operation::create_filter::builders::CreateFilterInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_filter::CreateFilterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_filter::CreateFilterInput {
-            action: self.action,
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building CreateFilterInput",
+                )
+            })?,
             description: self.description,
             filter_criteria: self.filter_criteria,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateFilterInput",
+                )
+            })?,
             tags: self.tags,
             reason: self.reason,
         })

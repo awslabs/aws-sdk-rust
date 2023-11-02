@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetInput {
     /// <p>The name to use for the new configuration set.</p>
-    pub configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub configuration_set_name: ::std::string::String,
     /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
@@ -12,12 +12,15 @@ pub struct CreateConfigurationSetInput {
 }
 impl CreateConfigurationSetInput {
     /// <p>The name to use for the new configuration set.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
-        self.configuration_set_name.as_deref()
+    pub fn configuration_set_name(&self) -> &str {
+        use std::ops::Deref;
+        self.configuration_set_name.deref()
     }
     /// <p>An array of key and value pair tags that's associated with the new configuration set. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +44,7 @@ pub struct CreateConfigurationSetInputBuilder {
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>The name to use for the new configuration set.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -89,12 +93,19 @@ impl CreateConfigurationSetInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`configuration_set_name`](crate::operation::create_configuration_set::builders::CreateConfigurationSetInputBuilder::configuration_set_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
-            configuration_set_name: self.configuration_set_name,
+            configuration_set_name: self.configuration_set_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "configuration_set_name",
+                    "configuration_set_name was not specified but it is required when building CreateConfigurationSetInput",
+                )
+            })?,
             tags: self.tags,
             client_token: self.client_token,
         })

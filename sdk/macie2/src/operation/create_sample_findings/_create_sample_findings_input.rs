@@ -8,8 +8,10 @@ pub struct CreateSampleFindingsInput {
 }
 impl CreateSampleFindingsInput {
     /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
-    pub fn finding_types(&self) -> ::std::option::Option<&[crate::types::FindingType]> {
-        self.finding_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_types.is_none()`.
+    pub fn finding_types(&self) -> &[crate::types::FindingType] {
+        self.finding_types.as_deref().unwrap_or_default()
     }
 }
 impl CreateSampleFindingsInput {

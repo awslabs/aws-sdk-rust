@@ -5,36 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSyncConfig {
     /// <p>The name of the service that the service instance is added to.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
-    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub repository_provider: crate::types::RepositoryProvider,
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
-    pub branch: ::std::option::Option<::std::string::String>,
+    pub branch: ::std::string::String,
     /// <p>The file path to the service sync configuration file.</p>
-    pub file_path: ::std::option::Option<::std::string::String>,
+    pub file_path: ::std::string::String,
 }
 impl ServiceSyncConfig {
     /// <p>The name of the service that the service instance is added to.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.repository_provider.as_ref()
+    pub fn repository_provider(&self) -> &crate::types::RepositoryProvider {
+        &self.repository_provider
     }
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
-        self.branch.as_deref()
+    pub fn branch(&self) -> &str {
+        use std::ops::Deref;
+        self.branch.deref()
     }
     /// <p>The file path to the service sync configuration file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
-        self.file_path.as_deref()
+    pub fn file_path(&self) -> &str {
+        use std::ops::Deref;
+        self.file_path.deref()
     }
 }
 impl ServiceSyncConfig {
@@ -56,6 +60,7 @@ pub struct ServiceSyncConfigBuilder {
 }
 impl ServiceSyncConfigBuilder {
     /// <p>The name of the service that the service instance is added to.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl ServiceSyncConfigBuilder {
         &self.service_name
     }
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -84,6 +90,7 @@ impl ServiceSyncConfigBuilder {
         &self.repository_provider
     }
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl ServiceSyncConfigBuilder {
         &self.repository_name
     }
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +120,7 @@ impl ServiceSyncConfigBuilder {
         &self.branch
     }
     /// <p>The file path to the service sync configuration file.</p>
+    /// This field is required.
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +135,44 @@ impl ServiceSyncConfigBuilder {
         &self.file_path
     }
     /// Consumes the builder and constructs a [`ServiceSyncConfig`](crate::types::ServiceSyncConfig).
-    pub fn build(self) -> crate::types::ServiceSyncConfig {
-        crate::types::ServiceSyncConfig {
-            service_name: self.service_name,
-            repository_provider: self.repository_provider,
-            repository_name: self.repository_name,
-            branch: self.branch,
-            file_path: self.file_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_name`](crate::types::builders::ServiceSyncConfigBuilder::service_name)
+    /// - [`repository_provider`](crate::types::builders::ServiceSyncConfigBuilder::repository_provider)
+    /// - [`repository_name`](crate::types::builders::ServiceSyncConfigBuilder::repository_name)
+    /// - [`branch`](crate::types::builders::ServiceSyncConfigBuilder::branch)
+    /// - [`file_path`](crate::types::builders::ServiceSyncConfigBuilder::file_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSyncConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceSyncConfig {
+            service_name: self.service_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_name",
+                    "service_name was not specified but it is required when building ServiceSyncConfig",
+                )
+            })?,
+            repository_provider: self.repository_provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_provider",
+                    "repository_provider was not specified but it is required when building ServiceSyncConfig",
+                )
+            })?,
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building ServiceSyncConfig",
+                )
+            })?,
+            branch: self.branch.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "branch",
+                    "branch was not specified but it is required when building ServiceSyncConfig",
+                )
+            })?,
+            file_path: self.file_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "file_path",
+                    "file_path was not specified but it is required when building ServiceSyncConfig",
+                )
+            })?,
+        })
     }
 }

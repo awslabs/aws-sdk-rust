@@ -5,23 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
     /// <p>The container for the exception message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The container for the <code>serviceCode</code>.</p>
-    pub service_code: ::std::option::Option<::std::string::String>,
+    pub service_code: ::std::string::String,
     /// <p>The container for the <code>quotaCode</code>.</p>
-    pub quota_code: ::std::option::Option<::std::string::String>,
+    pub quota_code: ::std::string::String,
     /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
     /// <p>The container for the <code>serviceCode</code>.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
-        self.service_code.as_deref()
+    pub fn service_code(&self) -> &str {
+        use std::ops::Deref;
+        self.service_code.deref()
     }
     /// <p>The container for the <code>quotaCode</code>.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
-        self.quota_code.as_deref()
+    pub fn quota_code(&self) -> &str {
+        use std::ops::Deref;
+        self.quota_code.deref()
     }
     /// <p>The container of the <code>retryAfterSeconds</code> value.</p>
     pub fn retry_after_seconds(&self) -> ::std::option::Option<i32> {
@@ -34,17 +36,15 @@ impl ThrottlingException {
         ::aws_smithy_types::retry::ErrorKind::ThrottlingError
     }
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ThrottlingException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -80,6 +80,7 @@ pub struct ThrottlingExceptionBuilder {
 }
 impl ThrottlingExceptionBuilder {
     /// <p>The container for the exception message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl ThrottlingExceptionBuilder {
         &self.message
     }
     /// <p>The container for the <code>serviceCode</code>.</p>
+    /// This field is required.
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +110,7 @@ impl ThrottlingExceptionBuilder {
         &self.service_code
     }
     /// <p>The container for the <code>quotaCode</code>.</p>
+    /// This field is required.
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
         self
@@ -147,13 +150,32 @@ impl ThrottlingExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ThrottlingException`](crate::types::error::ThrottlingException).
-    pub fn build(self) -> crate::types::error::ThrottlingException {
-        crate::types::error::ThrottlingException {
-            message: self.message,
-            service_code: self.service_code,
-            quota_code: self.quota_code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::ThrottlingExceptionBuilder::message)
+    /// - [`service_code`](crate::types::error::builders::ThrottlingExceptionBuilder::service_code)
+    /// - [`quota_code`](crate::types::error::builders::ThrottlingExceptionBuilder::quota_code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ThrottlingException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::ThrottlingException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ThrottlingException",
+                )
+            })?,
+            service_code: self.service_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_code",
+                    "service_code was not specified but it is required when building ThrottlingException",
+                )
+            })?,
+            quota_code: self.quota_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quota_code",
+                    "quota_code was not specified but it is required when building ThrottlingException",
+                )
+            })?,
             retry_after_seconds: self.retry_after_seconds,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

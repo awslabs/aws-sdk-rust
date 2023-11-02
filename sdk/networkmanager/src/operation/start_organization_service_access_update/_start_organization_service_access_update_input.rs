@@ -27,6 +27,7 @@ pub struct StartOrganizationServiceAccessUpdateInputBuilder {
 }
 impl StartOrganizationServiceAccessUpdateInputBuilder {
     /// <p>The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.</p>
+    /// This field is required.
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self

@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateComponentInput {
     /// <p>The unique ID for the Amplify app.</p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The unique ID for the component.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The unique client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the updated component.</p>
@@ -16,16 +16,19 @@ pub struct UpdateComponentInput {
 }
 impl UpdateComponentInput {
     /// <p>The unique ID for the Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The unique ID for the component.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The unique client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +58,7 @@ pub struct UpdateComponentInputBuilder {
 }
 impl UpdateComponentInputBuilder {
     /// <p>The unique ID for the Amplify app.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +73,7 @@ impl UpdateComponentInputBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl UpdateComponentInputBuilder {
         &self.environment_name
     }
     /// <p>The unique ID for the component.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl UpdateComponentInputBuilder {
         &self.client_token
     }
     /// <p>The configuration of the updated component.</p>
+    /// This field is required.
     pub fn updated_component(mut self, input: crate::types::UpdateComponentData) -> Self {
         self.updated_component = ::std::option::Option::Some(input);
         self
@@ -125,13 +132,32 @@ impl UpdateComponentInputBuilder {
         &self.updated_component
     }
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_id`](crate::operation::update_component::builders::UpdateComponentInputBuilder::app_id)
+    /// - [`environment_name`](crate::operation::update_component::builders::UpdateComponentInputBuilder::environment_name)
+    /// - [`id`](crate::operation::update_component::builders::UpdateComponentInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_component::UpdateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_component::UpdateComponentInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building UpdateComponentInput",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building UpdateComponentInput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateComponentInput",
+                )
+            })?,
             client_token: self.client_token,
             updated_component: self.updated_component,
         })

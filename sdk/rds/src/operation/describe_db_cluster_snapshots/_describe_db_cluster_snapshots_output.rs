@@ -16,8 +16,10 @@ impl DescribeDbClusterSnapshotsOutput {
         self.marker.as_deref()
     }
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
-    pub fn db_cluster_snapshots(&self) -> ::std::option::Option<&[crate::types::DbClusterSnapshot]> {
-        self.db_cluster_snapshots.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_snapshots.is_none()`.
+    pub fn db_cluster_snapshots(&self) -> &[crate::types::DbClusterSnapshot] {
+        self.db_cluster_snapshots.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDbClusterSnapshotsOutput {

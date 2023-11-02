@@ -8,7 +8,7 @@ pub struct SearchInput {
     /// <p>The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.</p> <note>
     /// <p>The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for <code>QueryString</code> to refine the results.</p>
     /// </note>
-    pub query_string: ::std::option::Option<::std::string::String>,
+    pub query_string: ::std::string::String,
     /// <p>The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p> <note>
     /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// </note>
@@ -24,8 +24,9 @@ impl SearchInput {
     /// <p>The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.</p> <note>
     /// <p>The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for <code>QueryString</code> to refine the results.</p>
     /// </note>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
-        self.query_string.as_deref()
+    pub fn query_string(&self) -> &str {
+        use std::ops::Deref;
+        self.query_string.deref()
     }
     /// <p>The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p> <note>
     /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -74,6 +75,7 @@ impl SearchInputBuilder {
     /// <p>The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.</p> <note>
     /// <p>The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for <code>QueryString</code> to refine the results.</p>
     /// </note>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -144,9 +146,16 @@ impl SearchInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`query_string`](crate::operation::search::builders::SearchInputBuilder::query_string)
     pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search::SearchInput {
-            query_string: self.query_string,
+            query_string: self.query_string.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "query_string",
+                    "query_string was not specified but it is required when building SearchInput",
+                )
+            })?,
             max_results: self.max_results,
             view_arn: self.view_arn,
             next_token: self.next_token,

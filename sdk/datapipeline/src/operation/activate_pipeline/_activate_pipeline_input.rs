@@ -17,8 +17,10 @@ impl ActivatePipelineInput {
         self.pipeline_id.as_deref()
     }
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-    pub fn parameter_values(&self) -> ::std::option::Option<&[crate::types::ParameterValue]> {
-        self.parameter_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_values.is_none()`.
+    pub fn parameter_values(&self) -> &[crate::types::ParameterValue] {
+        self.parameter_values.as_deref().unwrap_or_default()
     }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -42,6 +44,7 @@ pub struct ActivatePipelineInputBuilder {
 }
 impl ActivatePipelineInputBuilder {
     /// <p>The ID of the pipeline.</p>
+    /// This field is required.
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
         self

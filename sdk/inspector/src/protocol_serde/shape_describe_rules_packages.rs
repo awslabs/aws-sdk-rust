@@ -28,11 +28,10 @@ pub fn de_describe_rules_packages_http_error(
                 output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_rules_packages::DescribeRulesPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_rules_packages::DescribeRulesPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidInputException" => crate::operation::describe_rules_packages::DescribeRulesPackagesError::InvalidInputException({
@@ -43,11 +42,10 @@ pub fn de_describe_rules_packages_http_error(
                 output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
                     .map_err(crate::operation::describe_rules_packages::DescribeRulesPackagesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_input_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_rules_packages::DescribeRulesPackagesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::describe_rules_packages::DescribeRulesPackagesError::generic(generic),
@@ -69,7 +67,9 @@ pub fn de_describe_rules_packages_http_response(
         output = crate::protocol_serde::shape_describe_rules_packages::de_describe_rules_packages(_response_body, output)
             .map_err(crate::operation::describe_rules_packages::DescribeRulesPackagesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::describe_rules_packages_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::describe_rules_packages::DescribeRulesPackagesError::unhandled)?
     })
 }
 

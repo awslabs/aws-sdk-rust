@@ -78,6 +78,7 @@ pub struct UpdatePackageVersionInputBuilder {
 }
 impl UpdatePackageVersionInputBuilder {
     /// <p>The name of the associated software package.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl UpdatePackageVersionInputBuilder {
         &self.package_name
     }
     /// <p>The name of the target package version.</p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self

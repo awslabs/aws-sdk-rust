@@ -11,12 +11,16 @@ pub struct BatchAssociateAssessmentReportEvidenceOutput {
 }
 impl BatchAssociateAssessmentReportEvidenceOutput {
     /// <p> The list of evidence identifiers. </p>
-    pub fn evidence_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.evidence_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_ids.is_none()`.
+    pub fn evidence_ids(&self) -> &[::std::string::String] {
+        self.evidence_ids.as_deref().unwrap_or_default()
     }
     /// <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::AssessmentReportEvidenceError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::AssessmentReportEvidenceError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchAssociateAssessmentReportEvidenceOutput {

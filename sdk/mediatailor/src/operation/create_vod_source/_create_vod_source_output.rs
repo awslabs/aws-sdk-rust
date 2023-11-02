@@ -29,8 +29,10 @@ impl CreateVodSourceOutput {
         self.creation_time.as_ref()
     }
     /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
-    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_package_configurations.is_none()`.
+    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
+        self.http_package_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The time the VOD source was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

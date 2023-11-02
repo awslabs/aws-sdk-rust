@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryItemAttribute {
     /// <p>Name of the inventory item attribute.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The data type of the inventory item attribute. </p>
-    pub data_type: ::std::option::Option<crate::types::InventoryAttributeDataType>,
+    pub data_type: crate::types::InventoryAttributeDataType,
 }
 impl InventoryItemAttribute {
     /// <p>Name of the inventory item attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The data type of the inventory item attribute. </p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::InventoryAttributeDataType> {
-        self.data_type.as_ref()
+    pub fn data_type(&self) -> &crate::types::InventoryAttributeDataType {
+        &self.data_type
     }
 }
 impl InventoryItemAttribute {
@@ -35,6 +36,7 @@ pub struct InventoryItemAttributeBuilder {
 }
 impl InventoryItemAttributeBuilder {
     /// <p>Name of the inventory item attribute.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl InventoryItemAttributeBuilder {
         &self.name
     }
     /// <p>The data type of the inventory item attribute. </p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::InventoryAttributeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl InventoryItemAttributeBuilder {
         &self.data_type
     }
     /// Consumes the builder and constructs a [`InventoryItemAttribute`](crate::types::InventoryItemAttribute).
-    pub fn build(self) -> crate::types::InventoryItemAttribute {
-        crate::types::InventoryItemAttribute {
-            name: self.name,
-            data_type: self.data_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::InventoryItemAttributeBuilder::name)
+    /// - [`data_type`](crate::types::builders::InventoryItemAttributeBuilder::data_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryItemAttribute, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InventoryItemAttribute {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building InventoryItemAttribute",
+                )
+            })?,
+            data_type: self.data_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_type",
+                    "data_type was not specified but it is required when building InventoryItemAttribute",
+                )
+            })?,
+        })
     }
 }

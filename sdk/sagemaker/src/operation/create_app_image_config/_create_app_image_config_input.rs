@@ -16,8 +16,10 @@ impl CreateAppImageConfigInput {
         self.app_image_config_name.as_deref()
     }
     /// <p>A list of tags to apply to the AppImageConfig.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
     pub fn kernel_gateway_image_config(&self) -> ::std::option::Option<&crate::types::KernelGatewayImageConfig> {
@@ -41,6 +43,7 @@ pub struct CreateAppImageConfigInputBuilder {
 }
 impl CreateAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
+    /// This field is required.
     pub fn app_image_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_image_config_name = ::std::option::Option::Some(input.into());
         self

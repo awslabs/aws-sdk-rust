@@ -43,8 +43,10 @@ impl ScheduleRunConfiguration {
         self.location.as_ref()
     }
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
-    pub fn vpce_configuration_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpce_configuration_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpce_configuration_arns.is_none()`.
+    pub fn vpce_configuration_arns(&self) -> &[::std::string::String] {
+        self.vpce_configuration_arns.as_deref().unwrap_or_default()
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn customer_artifact_paths(&self) -> ::std::option::Option<&crate::types::CustomerArtifactPaths> {
@@ -55,8 +57,10 @@ impl ScheduleRunConfiguration {
         self.radios.as_ref()
     }
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
-    pub fn auxiliary_apps(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.auxiliary_apps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auxiliary_apps.is_none()`.
+    pub fn auxiliary_apps(&self) -> &[::std::string::String] {
+        self.auxiliary_apps.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>

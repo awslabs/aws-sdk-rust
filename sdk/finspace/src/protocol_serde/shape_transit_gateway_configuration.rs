@@ -43,7 +43,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::transit_gateway_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -55,23 +59,23 @@ pub fn ser_transit_gateway_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TransitGatewayConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.transit_gateway_id {
-        object.key("transitGatewayID").string(var_1.as_str());
+    {
+        object.key("transitGatewayID").string(input.transit_gateway_id.as_str());
     }
-    if let Some(var_2) = &input.routable_cidr_space {
-        object.key("routableCIDRSpace").string(var_2.as_str());
+    {
+        object.key("routableCIDRSpace").string(input.routable_cidr_space.as_str());
     }
-    if let Some(var_3) = &input.attachment_network_acl_configuration {
-        let mut array_4 = object.key("attachmentNetworkAclConfiguration").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.attachment_network_acl_configuration {
+        let mut array_2 = object.key("attachmentNetworkAclConfiguration").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_network_acl_entry::ser_network_acl_entry(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_network_acl_entry::ser_network_acl_entry(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
     Ok(())
 }

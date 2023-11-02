@@ -132,8 +132,10 @@ impl RecordingGroup {
     /// <p> <b>Region Availability</b> </p>
     /// <p>Before specifying a resource type for Config to track, check <a href="https://docs.aws.amazon.com/config/latest/developerguide/what-is-resource-config-coverage.html">Resource Coverage by Region Availability</a> to see if the resource type is supported in the Amazon Web Services Region where you set up Config. If a resource type is supported by Config in at least one Region, you can enable the recording of that resource type in all Regions supported by Config, even if the specified resource type is not supported in the Amazon Web Services Region where you set up Config.</p>
     /// </note>
-    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceType]> {
-        self.resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
+    pub fn resource_types(&self) -> &[crate::types::ResourceType] {
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>An object that specifies how Config excludes resource types from being recorded by the configuration recorder.</p>
     /// <p>To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p>

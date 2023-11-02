@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutSchemaFromJson`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_arn(impl Into<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::set_schema_arn): <p>The ARN of the schema to update.</p>
-    ///   - [`document(impl Into<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::document) / [`set_document(Option<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::set_document): <p>The replacement JSON schema.</p>
+    ///   - [`schema_arn(impl Into<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::set_schema_arn):<br>required: **true**<br><p>The ARN of the schema to update.</p><br>
+    ///   - [`document(impl Into<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::document) / [`set_document(Option<String>)`](crate::operation::put_schema_from_json::builders::PutSchemaFromJsonFluentBuilder::set_document):<br>required: **true**<br><p>The replacement JSON schema.</p><br>
     /// - On success, responds with [`PutSchemaFromJsonOutput`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput::arn): <p>The ARN of the schema to update.</p>
     /// - On failure, responds with [`SdkError<PutSchemaFromJsonError>`](crate::operation::put_schema_from_json::PutSchemaFromJsonError)

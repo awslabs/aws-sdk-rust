@@ -15,8 +15,10 @@ impl CollapsedResultDetail {
         self.document_attribute.as_ref()
     }
     /// <p>A list of results in the collapsed group.</p>
-    pub fn expanded_results(&self) -> ::std::option::Option<&[crate::types::ExpandedResultItem]> {
-        self.expanded_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expanded_results.is_none()`.
+    pub fn expanded_results(&self) -> &[crate::types::ExpandedResultItem] {
+        self.expanded_results.as_deref().unwrap_or_default()
     }
 }
 impl CollapsedResultDetail {
@@ -35,6 +37,7 @@ pub struct CollapsedResultDetailBuilder {
 }
 impl CollapsedResultDetailBuilder {
     /// <p>The value of the document attribute that results are collapsed on.</p>
+    /// This field is required.
     pub fn document_attribute(mut self, input: crate::types::DocumentAttribute) -> Self {
         self.document_attribute = ::std::option::Option::Some(input);
         self

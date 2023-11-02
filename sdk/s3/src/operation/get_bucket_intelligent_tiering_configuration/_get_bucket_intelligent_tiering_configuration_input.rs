@@ -35,6 +35,7 @@ pub struct GetBucketIntelligentTieringConfigurationInputBuilder {
 }
 impl GetBucketIntelligentTieringConfigurationInputBuilder {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetBucketIntelligentTieringConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

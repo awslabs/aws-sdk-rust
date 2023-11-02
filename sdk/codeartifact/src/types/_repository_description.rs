@@ -49,12 +49,16 @@ impl RepositoryDescription {
         self.description.as_deref()
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn upstreams(&self) -> ::std::option::Option<&[crate::types::UpstreamRepositoryInfo]> {
-        self.upstreams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upstreams.is_none()`.
+    pub fn upstreams(&self) -> &[crate::types::UpstreamRepositoryInfo] {
+        self.upstreams.as_deref().unwrap_or_default()
     }
     /// <p> An array of external connections associated with the repository. </p>
-    pub fn external_connections(&self) -> ::std::option::Option<&[crate::types::RepositoryExternalConnectionInfo]> {
-        self.external_connections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_connections.is_none()`.
+    pub fn external_connections(&self) -> &[crate::types::RepositoryExternalConnectionInfo] {
+        self.external_connections.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that represents the date and time the repository was created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PosixProfile {
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
-    pub uid: ::std::option::Option<i64>,
+    pub uid: i64,
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
-    pub gid: ::std::option::Option<i64>,
+    pub gid: i64,
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
     pub secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl PosixProfile {
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
-    pub fn uid(&self) -> ::std::option::Option<i64> {
+    pub fn uid(&self) -> i64 {
         self.uid
     }
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
-    pub fn gid(&self) -> ::std::option::Option<i64> {
+    pub fn gid(&self) -> i64 {
         self.gid
     }
     /// <p>The secondary POSIX group IDs used for all EFS operations by this user.</p>
-    pub fn secondary_gids(&self) -> ::std::option::Option<&[i64]> {
-        self.secondary_gids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_gids.is_none()`.
+    pub fn secondary_gids(&self) -> &[i64] {
+        self.secondary_gids.as_deref().unwrap_or_default()
     }
 }
 impl PosixProfile {
@@ -42,6 +44,7 @@ pub struct PosixProfileBuilder {
 }
 impl PosixProfileBuilder {
     /// <p>The POSIX user ID used for all EFS operations by this user.</p>
+    /// This field is required.
     pub fn uid(mut self, input: i64) -> Self {
         self.uid = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl PosixProfileBuilder {
         &self.uid
     }
     /// <p>The POSIX group ID used for all EFS operations by this user.</p>
+    /// This field is required.
     pub fn gid(mut self, input: i64) -> Self {
         self.gid = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl PosixProfileBuilder {
         &self.secondary_gids
     }
     /// Consumes the builder and constructs a [`PosixProfile`](crate::types::PosixProfile).
-    pub fn build(self) -> crate::types::PosixProfile {
-        crate::types::PosixProfile {
-            uid: self.uid,
-            gid: self.gid,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`uid`](crate::types::builders::PosixProfileBuilder::uid)
+    /// - [`gid`](crate::types::builders::PosixProfileBuilder::gid)
+    pub fn build(self) -> ::std::result::Result<crate::types::PosixProfile, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PosixProfile {
+            uid: self.uid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "uid",
+                    "uid was not specified but it is required when building PosixProfile",
+                )
+            })?,
+            gid: self.gid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gid",
+                    "gid was not specified but it is required when building PosixProfile",
+                )
+            })?,
             secondary_gids: self.secondary_gids,
-        }
+        })
     }
 }

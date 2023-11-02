@@ -25,8 +25,10 @@ impl ActionType {
         self.settings.as_ref()
     }
     /// <p>The configuration properties for the action type.</p>
-    pub fn action_configuration_properties(&self) -> ::std::option::Option<&[crate::types::ActionConfigurationProperty]> {
-        self.action_configuration_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_configuration_properties.is_none()`.
+    pub fn action_configuration_properties(&self) -> &[crate::types::ActionConfigurationProperty] {
+        self.action_configuration_properties.as_deref().unwrap_or_default()
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
     pub fn input_artifact_details(&self) -> ::std::option::Option<&crate::types::ArtifactDetails> {
@@ -56,6 +58,7 @@ pub struct ActionTypeBuilder {
 }
 impl ActionTypeBuilder {
     /// <p>Represents information about an action type.</p>
+    /// This field is required.
     pub fn id(mut self, input: crate::types::ActionTypeId) -> Self {
         self.id = ::std::option::Option::Some(input);
         self
@@ -107,6 +110,7 @@ impl ActionTypeBuilder {
         &self.action_configuration_properties
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
+    /// This field is required.
     pub fn input_artifact_details(mut self, input: crate::types::ArtifactDetails) -> Self {
         self.input_artifact_details = ::std::option::Option::Some(input);
         self
@@ -121,6 +125,7 @@ impl ActionTypeBuilder {
         &self.input_artifact_details
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
+    /// This field is required.
     pub fn output_artifact_details(mut self, input: crate::types::ArtifactDetails) -> Self {
         self.output_artifact_details = ::std::option::Option::Some(input);
         self

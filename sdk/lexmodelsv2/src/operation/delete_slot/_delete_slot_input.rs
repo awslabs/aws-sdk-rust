@@ -55,6 +55,7 @@ pub struct DeleteSlotInputBuilder {
 }
 impl DeleteSlotInputBuilder {
     /// <p>The identifier of the slot to delete. </p>
+    /// This field is required.
     pub fn slot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeleteSlotInputBuilder {
         &self.slot_id
     }
     /// <p>The identifier of the bot associated with the slot to delete.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +85,7 @@ impl DeleteSlotInputBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot associated with the slot to delete.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl DeleteSlotInputBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +115,7 @@ impl DeleteSlotInputBuilder {
         &self.locale_id
     }
     /// <p>The identifier of the intent associated with the slot.</p>
+    /// This field is required.
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_id = ::std::option::Option::Some(input.into());
         self

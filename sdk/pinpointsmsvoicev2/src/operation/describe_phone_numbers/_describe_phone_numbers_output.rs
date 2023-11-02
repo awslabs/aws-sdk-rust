@@ -11,8 +11,10 @@ pub struct DescribePhoneNumbersOutput {
 }
 impl DescribePhoneNumbersOutput {
     /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::PhoneNumberInformation]> {
-        self.phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
+    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumberInformation] {
+        self.phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

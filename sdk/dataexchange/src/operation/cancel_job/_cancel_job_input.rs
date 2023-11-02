@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The unique identifier for a job.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
 }
 impl CancelJobInput {
     /// <p>The unique identifier for a job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
 }
 impl CancelJobInput {
@@ -27,6 +28,7 @@ pub struct CancelJobInputBuilder {
 }
 impl CancelJobInputBuilder {
     /// <p>The unique identifier for a job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl CancelJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::operation::cancel_job::builders::CancelJobInputBuilder::job_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobInput { job_id: self.job_id })
+        ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobInput {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building CancelJobInput",
+                )
+            })?,
+        })
     }
 }

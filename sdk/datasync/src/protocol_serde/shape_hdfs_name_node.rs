@@ -3,13 +3,13 @@ pub fn ser_hdfs_name_node(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HdfsNameNode,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hostname {
-        object.key("Hostname").string(var_1.as_str());
+    {
+        object.key("Hostname").string(input.hostname.as_str());
     }
-    if let Some(var_2) = &input.port {
+    {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.port).into()),
         );
     }
     Ok(())
@@ -54,7 +54,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::hdfs_name_node_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

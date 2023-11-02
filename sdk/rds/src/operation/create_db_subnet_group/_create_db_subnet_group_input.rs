@@ -37,12 +37,16 @@ impl CreateDbSubnetGroupInput {
         self.db_subnet_group_description.as_deref()
     }
     /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>Tags to assign to the DB subnet group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDbSubnetGroupInput {
@@ -70,6 +74,7 @@ impl CreateDbSubnetGroupInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    /// This field is required.
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +103,7 @@ impl CreateDbSubnetGroupInputBuilder {
         &self.db_subnet_group_name
     }
     /// <p>The description for the DB subnet group.</p>
+    /// This field is required.
     pub fn db_subnet_group_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_description = ::std::option::Option::Some(input.into());
         self

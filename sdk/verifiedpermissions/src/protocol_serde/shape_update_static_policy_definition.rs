@@ -6,8 +6,8 @@ pub fn ser_update_static_policy_definition(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.statement {
-        object.key("statement").string(var_2.as_str());
+    {
+        object.key("statement").string(input.statement.as_str());
     }
     Ok(())
 }

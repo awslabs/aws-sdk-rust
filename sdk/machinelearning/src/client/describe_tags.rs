@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTags`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_resource_id): <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
-    ///   - [`resource_type(TaggableResourceType)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::resource_type) / [`set_resource_type(Option<TaggableResourceType>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_resource_type): <p>The type of the ML object.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The ID of the ML object. For example, <code>exampleModelId</code>. </p><br>
+    ///   - [`resource_type(TaggableResourceType)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::resource_type) / [`set_resource_type(Option<TaggableResourceType>)`](crate::operation::describe_tags::builders::DescribeTagsFluentBuilder::set_resource_type):<br>required: **true**<br><p>The type of the ML object.</p><br>
     /// - On success, responds with [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput) with field(s):
     ///   - [`resource_id(Option<String>)`](crate::operation::describe_tags::DescribeTagsOutput::resource_id): <p>The ID of the tagged ML object.</p>
     ///   - [`resource_type(Option<TaggableResourceType>)`](crate::operation::describe_tags::DescribeTagsOutput::resource_type): <p>The type of the tagged ML object.</p>

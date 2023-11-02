@@ -52,6 +52,7 @@ pub struct DeleteChannelMembershipInputBuilder {
 }
 impl DeleteChannelMembershipInputBuilder {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
+    /// This field is required.
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl DeleteChannelMembershipInputBuilder {
         &self.channel_arn
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
+    /// This field is required.
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +82,7 @@ impl DeleteChannelMembershipInputBuilder {
         &self.member_arn
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self

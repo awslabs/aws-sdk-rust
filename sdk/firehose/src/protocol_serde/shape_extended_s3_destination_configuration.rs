@@ -3,65 +3,65 @@ pub fn ser_extended_s3_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExtendedS3DestinationConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("RoleARN").string(var_1.as_str());
+    {
+        object.key("RoleARN").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.bucket_arn {
-        object.key("BucketARN").string(var_2.as_str());
+    {
+        object.key("BucketARN").string(input.bucket_arn.as_str());
     }
-    if let Some(var_3) = &input.prefix {
-        object.key("Prefix").string(var_3.as_str());
+    if let Some(var_1) = &input.prefix {
+        object.key("Prefix").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.error_output_prefix {
-        object.key("ErrorOutputPrefix").string(var_4.as_str());
+    if let Some(var_2) = &input.error_output_prefix {
+        object.key("ErrorOutputPrefix").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.buffering_hints {
+    if let Some(var_3) = &input.buffering_hints {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("BufferingHints").start_object();
-        crate::protocol_serde::shape_buffering_hints::ser_buffering_hints(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("BufferingHints").start_object();
+        crate::protocol_serde::shape_buffering_hints::ser_buffering_hints(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_7) = &input.compression_format {
-        object.key("CompressionFormat").string(var_7.as_str());
+    if let Some(var_5) = &input.compression_format {
+        object.key("CompressionFormat").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.encryption_configuration {
+    if let Some(var_6) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_9, var_8)?;
+        let mut object_7 = object.key("EncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("CloudWatchLoggingOptions").start_object();
+        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.cloud_watch_logging_options {
+    if let Some(var_10) = &input.processing_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("CloudWatchLoggingOptions").start_object();
-        crate::protocol_serde::shape_cloud_watch_logging_options::ser_cloud_watch_logging_options(&mut object_11, var_10)?;
+        let mut object_11 = object.key("ProcessingConfiguration").start_object();
+        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.processing_configuration {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("ProcessingConfiguration").start_object();
-        crate::protocol_serde::shape_processing_configuration::ser_processing_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+    if let Some(var_12) = &input.s3_backup_mode {
+        object.key("S3BackupMode").string(var_12.as_str());
     }
-    if let Some(var_14) = &input.s3_backup_mode {
-        object.key("S3BackupMode").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.s3_backup_configuration {
+    if let Some(var_13) = &input.s3_backup_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("S3BackupConfiguration").start_object();
-        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_16, var_15)?;
+        let mut object_14 = object.key("S3BackupConfiguration").start_object();
+        crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.data_format_conversion_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("DataFormatConversionConfiguration").start_object();
+        crate::protocol_serde::shape_data_format_conversion_configuration::ser_data_format_conversion_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.data_format_conversion_configuration {
+    if let Some(var_17) = &input.dynamic_partitioning_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("DataFormatConversionConfiguration").start_object();
-        crate::protocol_serde::shape_data_format_conversion_configuration::ser_data_format_conversion_configuration(&mut object_18, var_17)?;
+        let mut object_18 = object.key("DynamicPartitioningConfiguration").start_object();
+        crate::protocol_serde::shape_dynamic_partitioning_configuration::ser_dynamic_partitioning_configuration(&mut object_18, var_17)?;
         object_18.finish();
-    }
-    if let Some(var_19) = &input.dynamic_partitioning_configuration {
-        #[allow(unused_mut)]
-        let mut object_20 = object.key("DynamicPartitioningConfiguration").start_object();
-        crate::protocol_serde::shape_dynamic_partitioning_configuration::ser_dynamic_partitioning_configuration(&mut object_20, var_19)?;
-        object_20.finish();
     }
     Ok(())
 }

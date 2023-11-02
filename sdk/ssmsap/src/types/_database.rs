@@ -37,8 +37,10 @@ impl Database {
         self.component_id.as_deref()
     }
     /// <p>The credentials of the database.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&[crate::types::ApplicationCredential]> {
-        self.credentials.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials.is_none()`.
+    pub fn credentials(&self) -> &[crate::types::ApplicationCredential] {
+        self.credentials.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the SAP HANA database.</p>
     pub fn database_id(&self) -> ::std::option::Option<&str> {

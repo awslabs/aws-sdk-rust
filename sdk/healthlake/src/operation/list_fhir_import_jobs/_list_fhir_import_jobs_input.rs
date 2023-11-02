@@ -69,6 +69,7 @@ pub struct ListFhirImportJobsInputBuilder {
 }
 impl ListFhirImportJobsInputBuilder {
     /// <p> This parameter limits the response to the import job with the specified data store ID. </p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self

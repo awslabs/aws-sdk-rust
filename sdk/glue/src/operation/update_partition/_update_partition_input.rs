@@ -29,8 +29,10 @@ impl UpdatePartitionInput {
         self.table_name.as_deref()
     }
     /// <p>List of partition key values that define the partition to update.</p>
-    pub fn partition_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_value_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_value_list.is_none()`.
+    pub fn partition_value_list(&self) -> &[::std::string::String] {
+        self.partition_value_list.as_deref().unwrap_or_default()
     }
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
@@ -71,6 +73,7 @@ impl UpdatePartitionInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +88,7 @@ impl UpdatePartitionInputBuilder {
         &self.database_name
     }
     /// <p>The name of the table in which the partition to be updated is located.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -120,6 +124,7 @@ impl UpdatePartitionInputBuilder {
     }
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
+    /// This field is required.
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
         self.partition_input = ::std::option::Option::Some(input);
         self

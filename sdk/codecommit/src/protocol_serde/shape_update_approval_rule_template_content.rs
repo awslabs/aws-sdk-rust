@@ -32,8 +32,8 @@ pub fn de_update_approval_rule_template_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ApprovalRuleTemplateDoesNotExistException" => crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateDoesNotExistException({
@@ -48,8 +48,8 @@ pub fn de_update_approval_rule_template_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ApprovalRuleTemplateNameRequiredException" => crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateNameRequiredException({
@@ -64,8 +64,8 @@ pub fn de_update_approval_rule_template_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleTemplateContentException" => crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::InvalidApprovalRuleTemplateContentException({
@@ -80,8 +80,8 @@ pub fn de_update_approval_rule_template_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidApprovalRuleTemplateNameException" => crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::InvalidApprovalRuleTemplateNameException({
@@ -96,8 +96,8 @@ pub fn de_update_approval_rule_template_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidRuleContentSha256Exception" => crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::InvalidRuleContentSha256Exception({
@@ -112,8 +112,8 @@ pub fn de_update_approval_rule_template_content_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::generic(generic)
@@ -135,7 +135,7 @@ pub fn de_update_approval_rule_template_content_http_response(
         output = crate::protocol_serde::shape_update_approval_rule_template_content::de_update_approval_rule_template_content(_response_body, output)
             .map_err(crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_approval_rule_template_content_output_correct_errors(output).build()
     })
 }
 

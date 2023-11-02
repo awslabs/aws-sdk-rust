@@ -34,6 +34,7 @@ pub struct ListImportsInputBuilder {
 }
 impl ListImportsInputBuilder {
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
+    /// This field is required.
     pub fn export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_name = ::std::option::Option::Some(input.into());
         self

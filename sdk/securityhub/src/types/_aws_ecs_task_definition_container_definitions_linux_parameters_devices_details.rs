@@ -21,8 +21,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
         self.host_path.as_deref()
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[::std::string::String] {
+        self.permissions.as_deref().unwrap_or_default()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {

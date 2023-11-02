@@ -5,10 +5,7 @@ pub use crate::operation::create_local_gateway_route_table_virtual_interface_gro
 
 impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
     /// Sends a request with this input using the given client.
-                    pub async fn send_with(
-                        self,
-                        client: &crate::Client
-                    ) -> ::std::result::Result<
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
                         crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
                         ::aws_smithy_http::result::SdkError<
                             crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
@@ -30,23 +27,23 @@ pub struct CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBui
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-                    crate::client::customize::internal::CustomizableSend<
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+                    crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+                > for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
                         crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
                         crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
-                    > for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder
-                {
-                    fn send(
-                        self,
-                        config_override: crate::config::Builder,
-                    ) -> crate::client::customize::internal::BoxFuture<
-                        crate::client::customize::internal::SendResult<
-                            crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
-                            crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
-                        >,
-                    > {
-                        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-                    }
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
                 }
+            }
 impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
     /// Creates a new `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
@@ -71,28 +68,28 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
     pub async fn send(self) -> ::std::result::Result<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>{
         let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation::operation_runtime_plugins(
-                                    self.handle.runtime_plugins.clone(),
-                                    &self.handle.conf,
-                                    self.config_override,
-                                );
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
         crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation::orchestrate(&runtime_plugins, input).await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent.
     // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-                            pub async fn customize(
-                                self,
-                            ) -> ::std::result::Result<
-                                crate::client::customize::orchestrator::CustomizableOperation<
-                                    crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
-                                    crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
-                                    Self,
-                                >,
-                                ::aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError>,
-                            >
-                            {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+                    pub async fn customize(
+                        self,
+                    ) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<
+                            crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
+                            crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
+                            Self,
+                        >,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError>,
+                    >
+                    {
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

@@ -34,6 +34,7 @@ pub struct DeleteTlsInspectionConfigurationOutputBuilder {
 }
 impl DeleteTlsInspectionConfigurationOutputBuilder {
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    /// This field is required.
     pub fn tls_inspection_configuration_response(mut self, input: crate::types::TlsInspectionConfigurationResponse) -> Self {
         self.tls_inspection_configuration_response = ::std::option::Option::Some(input);
         self

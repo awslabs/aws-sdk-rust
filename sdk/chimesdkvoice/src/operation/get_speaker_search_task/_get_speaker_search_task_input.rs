@@ -34,6 +34,7 @@ pub struct GetSpeakerSearchTaskInputBuilder {
 }
 impl GetSpeakerSearchTaskInputBuilder {
     /// <p>The Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetSpeakerSearchTaskInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The ID of the speaker search task.</p>
+    /// This field is required.
     pub fn speaker_search_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker_search_task_id = ::std::option::Option::Some(input.into());
         self

@@ -3,20 +3,20 @@ pub fn ser_request_inspection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestInspection,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.payload_type {
-        object.key("PayloadType").string(var_1.as_str());
+    {
+        object.key("PayloadType").string(input.payload_type.as_str());
     }
-    if let Some(var_2) = &input.username_field {
+    if let Some(var_1) = &input.username_field {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("UsernameField").start_object();
-        crate::protocol_serde::shape_username_field::ser_username_field(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("UsernameField").start_object();
+        crate::protocol_serde::shape_username_field::ser_username_field(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.password_field {
+    if let Some(var_3) = &input.password_field {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("PasswordField").start_object();
-        crate::protocol_serde::shape_password_field::ser_password_field(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("PasswordField").start_object();
+        crate::protocol_serde::shape_password_field::ser_password_field(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -59,7 +59,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::request_inspection_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

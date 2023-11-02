@@ -55,8 +55,10 @@ impl Icd10CmAttribute {
         self.text.as_deref()
     }
     /// <p>The contextual information for the attribute. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
-    pub fn traits(&self) -> ::std::option::Option<&[crate::types::Icd10CmTrait]> {
-        self.traits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traits.is_none()`.
+    pub fn traits(&self) -> &[crate::types::Icd10CmTrait] {
+        self.traits.as_deref().unwrap_or_default()
     }
     /// <p>The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.</p>
     pub fn category(&self) -> ::std::option::Option<&crate::types::Icd10CmEntityType> {

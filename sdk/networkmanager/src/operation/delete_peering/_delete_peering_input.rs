@@ -27,6 +27,7 @@ pub struct DeletePeeringInputBuilder {
 }
 impl DeletePeeringInputBuilder {
     /// <p>The ID of the peering connection to delete.</p>
+    /// This field is required.
     pub fn peering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peering_id = ::std::option::Option::Some(input.into());
         self

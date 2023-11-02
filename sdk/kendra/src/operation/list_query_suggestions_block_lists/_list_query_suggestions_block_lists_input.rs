@@ -44,6 +44,7 @@ pub struct ListQuerySuggestionsBlockListsInputBuilder {
 impl ListQuerySuggestionsBlockListsInputBuilder {
     /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

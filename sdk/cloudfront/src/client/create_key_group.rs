@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateKeyGroup`](crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_group_config(KeyGroupConfig)`](crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder::key_group_config) / [`set_key_group_config(Option<KeyGroupConfig>)`](crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder::set_key_group_config): <p>A key group configuration.</p>
+    ///   - [`key_group_config(KeyGroupConfig)`](crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder::key_group_config) / [`set_key_group_config(Option<KeyGroupConfig>)`](crate::operation::create_key_group::builders::CreateKeyGroupFluentBuilder::set_key_group_config):<br>required: **true**<br><p>A key group configuration.</p><br>
     /// - On success, responds with [`CreateKeyGroupOutput`](crate::operation::create_key_group::CreateKeyGroupOutput) with field(s):
     ///   - [`key_group(Option<KeyGroup>)`](crate::operation::create_key_group::CreateKeyGroupOutput::key_group): <p>The key group that was just created.</p>
     ///   - [`location(Option<String>)`](crate::operation::create_key_group::CreateKeyGroupOutput::location): <p>The URL of the key group.</p>

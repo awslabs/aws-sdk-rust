@@ -27,6 +27,7 @@ pub struct AddNotificationChannelInputBuilder {
 }
 impl AddNotificationChannelInputBuilder {
     /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    /// This field is required.
     pub fn config(mut self, input: crate::types::NotificationChannelConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
         self

@@ -13,16 +13,22 @@ pub struct JobResource {
 }
 impl JobResource {
     /// <p>An array of <code>S3Resource</code> objects.</p>
-    pub fn s3_resources(&self) -> ::std::option::Option<&[crate::types::S3Resource]> {
-        self.s3_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_resources.is_none()`.
+    pub fn s3_resources(&self) -> &[crate::types::S3Resource] {
+        self.s3_resources.as_deref().unwrap_or_default()
     }
     /// <p>The Python-language Lambda functions for this job.</p>
-    pub fn lambda_resources(&self) -> ::std::option::Option<&[crate::types::LambdaResource]> {
-        self.lambda_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_resources.is_none()`.
+    pub fn lambda_resources(&self) -> &[crate::types::LambdaResource] {
+        self.lambda_resources.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
-    pub fn ec2_ami_resources(&self) -> ::std::option::Option<&[crate::types::Ec2AmiResource]> {
-        self.ec2_ami_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_ami_resources.is_none()`.
+    pub fn ec2_ami_resources(&self) -> &[crate::types::Ec2AmiResource] {
+        self.ec2_ami_resources.as_deref().unwrap_or_default()
     }
 }
 impl JobResource {

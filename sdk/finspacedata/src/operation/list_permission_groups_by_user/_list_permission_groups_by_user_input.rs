@@ -41,6 +41,7 @@ pub struct ListPermissionGroupsByUserInputBuilder {
 }
 impl ListPermissionGroupsByUserInputBuilder {
     /// <p>The unique identifier for the user.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListPermissionGroupsByUserInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of results per page.</p>
+    /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self

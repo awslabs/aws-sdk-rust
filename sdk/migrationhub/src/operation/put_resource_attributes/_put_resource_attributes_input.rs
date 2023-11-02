@@ -36,8 +36,10 @@ impl PutResourceAttributesInput {
     /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
     /// </ul>
     /// </important>
-    pub fn resource_attribute_list(&self) -> ::std::option::Option<&[crate::types::ResourceAttribute]> {
-        self.resource_attribute_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_attribute_list.is_none()`.
+    pub fn resource_attribute_list(&self) -> &[crate::types::ResourceAttribute] {
+        self.resource_attribute_list.as_deref().unwrap_or_default()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -62,6 +64,7 @@ pub struct PutResourceAttributesInputBuilder {
 }
 impl PutResourceAttributesInputBuilder {
     /// <p>The name of the ProgressUpdateStream. </p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl PutResourceAttributesInputBuilder {
         &self.progress_update_stream
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self

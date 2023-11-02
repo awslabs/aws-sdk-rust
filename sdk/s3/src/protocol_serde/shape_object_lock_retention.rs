@@ -17,6 +17,7 @@ pub fn ser_object_lock_retention(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_object_lock_retention(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ObjectLockRetention, ::aws_smithy_xml::decode::XmlDecodeError> {

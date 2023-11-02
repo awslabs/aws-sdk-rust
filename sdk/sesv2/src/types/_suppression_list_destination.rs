@@ -9,7 +9,7 @@ pub struct SuppressionListDestination {
     /// <li> <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the suppression list.</p> </li>
     /// </ul>
-    pub suppression_list_import_action: ::std::option::Option<crate::types::SuppressionListImportAction>,
+    pub suppression_list_import_action: crate::types::SuppressionListImportAction,
 }
 impl SuppressionListDestination {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
@@ -17,8 +17,8 @@ impl SuppressionListDestination {
     /// <li> <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the suppression list.</p> </li>
     /// </ul>
-    pub fn suppression_list_import_action(&self) -> ::std::option::Option<&crate::types::SuppressionListImportAction> {
-        self.suppression_list_import_action.as_ref()
+    pub fn suppression_list_import_action(&self) -> &crate::types::SuppressionListImportAction {
+        &self.suppression_list_import_action
     }
 }
 impl SuppressionListDestination {
@@ -40,6 +40,7 @@ impl SuppressionListDestinationBuilder {
     /// <li> <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the suppression list.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn suppression_list_import_action(mut self, input: crate::types::SuppressionListImportAction) -> Self {
         self.suppression_list_import_action = ::std::option::Option::Some(input);
         self
@@ -62,9 +63,16 @@ impl SuppressionListDestinationBuilder {
         &self.suppression_list_import_action
     }
     /// Consumes the builder and constructs a [`SuppressionListDestination`](crate::types::SuppressionListDestination).
-    pub fn build(self) -> crate::types::SuppressionListDestination {
-        crate::types::SuppressionListDestination {
-            suppression_list_import_action: self.suppression_list_import_action,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`suppression_list_import_action`](crate::types::builders::SuppressionListDestinationBuilder::suppression_list_import_action)
+    pub fn build(self) -> ::std::result::Result<crate::types::SuppressionListDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SuppressionListDestination {
+            suppression_list_import_action: self.suppression_list_import_action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "suppression_list_import_action",
+                    "suppression_list_import_action was not specified but it is required when building SuppressionListDestination",
+                )
+            })?,
+        })
     }
 }

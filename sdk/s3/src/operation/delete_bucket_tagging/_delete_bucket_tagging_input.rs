@@ -34,6 +34,7 @@ pub struct DeleteBucketTaggingInputBuilder {
 }
 impl DeleteBucketTaggingInputBuilder {
     /// <p>The bucket that has the tag set to be removed.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

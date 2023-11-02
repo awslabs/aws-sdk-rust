@@ -46,6 +46,7 @@ pub struct PutResourcePolicyInputBuilder {
 }
 impl PutResourcePolicyInputBuilder {
     /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl PutResourcePolicyInputBuilder {
     /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
     /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self

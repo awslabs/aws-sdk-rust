@@ -10,7 +10,7 @@
 pub struct WebAcl {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub web_acl_id: ::std::option::Option<::std::string::String>,
+    pub web_acl_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
@@ -18,15 +18,16 @@ pub struct WebAcl {
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
     pub default_action: ::std::option::Option<crate::types::WafAction>,
     /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>>,
+    pub rules: ::std::vec::Vec<crate::types::ActivatedRule>,
     /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
 }
 impl WebAcl {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
-        self.web_acl_id.as_deref()
+    pub fn web_acl_id(&self) -> &str {
+        use std::ops::Deref;
+        self.web_acl_id.deref()
     }
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,8 +42,9 @@ impl WebAcl {
         self.default_action.as_ref()
     }
     /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ActivatedRule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::ActivatedRule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
     /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
     pub fn web_acl_arn(&self) -> ::std::option::Option<&str> {
@@ -70,6 +72,7 @@ pub struct WebAclBuilder {
 impl WebAclBuilder {
     /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +117,7 @@ impl WebAclBuilder {
         &self.metric_name
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
+    /// This field is required.
     pub fn default_action(mut self, input: crate::types::WafAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
         self
@@ -162,14 +166,27 @@ impl WebAclBuilder {
         &self.web_acl_arn
     }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
-    pub fn build(self) -> crate::types::WebAcl {
-        crate::types::WebAcl {
-            web_acl_id: self.web_acl_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`web_acl_id`](crate::types::builders::WebAclBuilder::web_acl_id)
+    /// - [`rules`](crate::types::builders::WebAclBuilder::rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::WebAcl, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WebAcl {
+            web_acl_id: self.web_acl_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "web_acl_id",
+                    "web_acl_id was not specified but it is required when building WebAcl",
+                )
+            })?,
             name: self.name,
             metric_name: self.metric_name,
             default_action: self.default_action,
-            rules: self.rules,
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building WebAcl",
+                )
+            })?,
             web_acl_arn: self.web_acl_arn,
-        }
+        })
     }
 }

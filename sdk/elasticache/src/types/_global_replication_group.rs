@@ -64,16 +64,20 @@ impl GlobalReplicationGroup {
         self.engine_version.as_deref()
     }
     /// <p>The replication groups that comprise the Global datastore.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::GlobalReplicationGroupMember]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[crate::types::GlobalReplicationGroupMember] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>A flag that indicates whether the Global datastore is cluster enabled.</p>
     pub fn cluster_enabled(&self) -> ::std::option::Option<bool> {
         self.cluster_enabled
     }
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
-    pub fn global_node_groups(&self) -> ::std::option::Option<&[crate::types::GlobalNodeGroup]> {
-        self.global_node_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_node_groups.is_none()`.
+    pub fn global_node_groups(&self) -> &[crate::types::GlobalNodeGroup] {
+        self.global_node_groups.as_deref().unwrap_or_default()
     }
     /// <p>A flag that enables using an <code>AuthToken</code> (password) when issuing Redis commands.</p>
     /// <p>Default: <code>false</code> </p>

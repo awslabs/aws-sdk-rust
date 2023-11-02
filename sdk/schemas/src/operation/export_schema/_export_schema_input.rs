@@ -48,6 +48,7 @@ pub struct ExportSchemaInputBuilder {
 }
 impl ExportSchemaInputBuilder {
     /// <p>The name of the registry.</p>
+    /// This field is required.
     pub fn registry_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ExportSchemaInputBuilder {
         &self.registry_name
     }
     /// <p>The name of the schema.</p>
+    /// This field is required.
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl ExportSchemaInputBuilder {
         &self.schema_version
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self

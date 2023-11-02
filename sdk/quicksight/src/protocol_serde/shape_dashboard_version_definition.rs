@@ -3,83 +3,83 @@ pub fn ser_dashboard_version_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashboardVersionDefinition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data_set_identifier_declarations {
-        let mut array_2 = object.key("DataSetIdentifierDeclarations").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("DataSetIdentifierDeclarations").start_array();
+        for item_2 in &input.data_set_identifier_declarations {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_data_set_identifier_declaration::ser_data_set_identifier_declaration(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_data_set_identifier_declaration::ser_data_set_identifier_declaration(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_5) = &input.sheets {
-        let mut array_6 = object.key("Sheets").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.sheets {
+        let mut array_5 = object.key("Sheets").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_sheet_definition::ser_sheet_definition(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_sheet_definition::ser_sheet_definition(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.calculated_fields {
-        let mut array_10 = object.key("CalculatedFields").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.calculated_fields {
+        let mut array_9 = object.key("CalculatedFields").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_calculated_field::ser_calculated_field(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_calculated_field::ser_calculated_field(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.parameter_declarations {
-        let mut array_14 = object.key("ParameterDeclarations").start_array();
-        for item_15 in var_13 {
+    if let Some(var_12) = &input.parameter_declarations {
+        let mut array_13 = object.key("ParameterDeclarations").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_14.finish();
+        array_13.finish();
     }
-    if let Some(var_17) = &input.filter_groups {
-        let mut array_18 = object.key("FilterGroups").start_array();
-        for item_19 in var_17 {
+    if let Some(var_16) = &input.filter_groups {
+        let mut array_17 = object.key("FilterGroups").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_filter_group::ser_filter_group(&mut object_20, item_19)?;
-                object_20.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_filter_group::ser_filter_group(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_18.finish();
+        array_17.finish();
     }
-    if let Some(var_21) = &input.column_configurations {
-        let mut array_22 = object.key("ColumnConfigurations").start_array();
-        for item_23 in var_21 {
+    if let Some(var_20) = &input.column_configurations {
+        let mut array_21 = object.key("ColumnConfigurations").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_24, item_23)?;
-                object_24.finish();
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_23, item_22)?;
+                object_23.finish();
             }
         }
-        array_22.finish();
+        array_21.finish();
     }
-    if let Some(var_25) = &input.analysis_defaults {
+    if let Some(var_24) = &input.analysis_defaults {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("AnalysisDefaults").start_object();
-        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_25 = object.key("AnalysisDefaults").start_object();
+        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_25, var_24)?;
+        object_25.finish();
     }
     Ok(())
 }
@@ -136,7 +136,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::dashboard_version_definition_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

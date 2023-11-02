@@ -27,6 +27,7 @@ pub struct CancelAuditTaskInputBuilder {
 }
 impl CancelAuditTaskInputBuilder {
     /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self

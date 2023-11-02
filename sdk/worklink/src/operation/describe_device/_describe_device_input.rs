@@ -34,6 +34,7 @@ pub struct DescribeDeviceInputBuilder {
 }
 impl DescribeDeviceInputBuilder {
     /// <p>The ARN of the fleet.</p>
+    /// This field is required.
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeDeviceInputBuilder {
         &self.fleet_arn
     }
     /// <p>A unique identifier for a registered user's device.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self

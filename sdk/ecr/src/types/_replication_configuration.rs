@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfiguration {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>,
+    pub rules: ::std::vec::Vec<crate::types::ReplicationRule>,
 }
 impl ReplicationConfiguration {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ReplicationRule]> {
-        self.rules.as_deref()
+    pub fn rules(&self) -> &[crate::types::ReplicationRule] {
+        use std::ops::Deref;
+        self.rules.deref()
     }
 }
 impl ReplicationConfiguration {
@@ -48,7 +49,16 @@ impl ReplicationConfigurationBuilder {
         &self.rules
     }
     /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
-    pub fn build(self) -> crate::types::ReplicationConfiguration {
-        crate::types::ReplicationConfiguration { rules: self.rules }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rules`](crate::types::builders::ReplicationConfigurationBuilder::rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicationConfiguration {
+            rules: self.rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rules",
+                    "rules was not specified but it is required when building ReplicationConfiguration",
+                )
+            })?,
+        })
     }
 }

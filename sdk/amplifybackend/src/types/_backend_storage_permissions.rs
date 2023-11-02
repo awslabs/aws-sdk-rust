@@ -11,12 +11,16 @@ pub struct BackendStoragePermissions {
 }
 impl BackendStoragePermissions {
     /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn authenticated(&self) -> ::std::option::Option<&[crate::types::AuthenticatedElement]> {
-        self.authenticated.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authenticated.is_none()`.
+    pub fn authenticated(&self) -> &[crate::types::AuthenticatedElement] {
+        self.authenticated.as_deref().unwrap_or_default()
     }
     /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-    pub fn un_authenticated(&self) -> ::std::option::Option<&[crate::types::UnAuthenticatedElement]> {
-        self.un_authenticated.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.un_authenticated.is_none()`.
+    pub fn un_authenticated(&self) -> &[crate::types::UnAuthenticatedElement] {
+        self.un_authenticated.as_deref().unwrap_or_default()
     }
 }
 impl BackendStoragePermissions {

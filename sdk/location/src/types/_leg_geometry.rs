@@ -17,8 +17,10 @@ impl LegGeometry {
     /// <ul>
     /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
     /// </ul>
-    pub fn line_string(&self) -> ::std::option::Option<&[::std::vec::Vec<f64>]> {
-        self.line_string.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_string.is_none()`.
+    pub fn line_string(&self) -> &[::std::vec::Vec<f64>] {
+        self.line_string.as_deref().unwrap_or_default()
     }
 }
 impl LegGeometry {

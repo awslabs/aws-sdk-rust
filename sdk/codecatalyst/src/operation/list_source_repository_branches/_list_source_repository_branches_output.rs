@@ -6,7 +6,7 @@ pub struct ListSourceRepositoryBranchesOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the source branches.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>,
+    pub items: ::std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>,
     _request_id: Option<String>,
 }
 impl ListSourceRepositoryBranchesOutput {
@@ -15,8 +15,9 @@ impl ListSourceRepositoryBranchesOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the source branches.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ListSourceRepositoryBranchesItem]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::ListSourceRepositoryBranchesItem] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSourceRepositoryBranchesOutput {
@@ -84,11 +85,23 @@ impl ListSourceRepositoryBranchesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSourceRepositoryBranchesOutput`](crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput).
-    pub fn build(self) -> crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput {
-        crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput {
             next_token: self.next_token,
-            items: self.items,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListSourceRepositoryBranchesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

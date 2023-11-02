@@ -18,10 +18,10 @@ pub fn ser_create_experiment_template_log_configuration_input(
         )?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.log_schema_version {
+    {
         object.key("logSchemaVersion").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((input.log_schema_version).into()),
         );
     }
     Ok(())

@@ -3,11 +3,11 @@ pub fn ser_sort_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SortDefinition,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.key {
-        object.key("Key").string(var_1.as_str());
+    {
+        object.key("Key").string(input.key.as_str());
     }
-    if let Some(var_2) = &input.sort_order {
-        object.key("SortOrder").string(var_2.as_str());
+    if let Some(var_1) = &input.sort_order {
+        object.key("SortOrder").string(var_1.as_str());
     }
     Ok(())
 }

@@ -18,8 +18,10 @@ impl ListServiceVersionsInput {
         self.service_name.as_ref()
     }
     /// <p>A list of names and versions of dependant services of the requested service.</p>
-    pub fn dependent_services(&self) -> ::std::option::Option<&[crate::types::DependentService]> {
-        self.dependent_services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependent_services.is_none()`.
+    pub fn dependent_services(&self) -> &[crate::types::DependentService] {
+        self.dependent_services.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of <code>ListServiceVersions</code> objects to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct ListServiceVersionsInputBuilder {
 }
 impl ListServiceVersionsInputBuilder {
     /// <p>The name of the service for which you're requesting supported versions.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
         self

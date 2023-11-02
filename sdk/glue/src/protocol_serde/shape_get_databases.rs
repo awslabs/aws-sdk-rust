@@ -93,7 +93,9 @@ pub fn de_get_databases_http_response(
         output = crate::protocol_serde::shape_get_databases::de_get_databases(_response_body, output)
             .map_err(crate::operation::get_databases::GetDatabasesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_databases_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_databases::GetDatabasesError::unhandled)?
     })
 }
 

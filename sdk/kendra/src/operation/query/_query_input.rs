@@ -55,12 +55,16 @@ impl QueryInput {
         self.attribute_filter.as_ref()
     }
     /// <p>An array of documents fields/attributes for faceted search. Amazon Kendra returns a count for each field key specified. This helps your users narrow their search.</p>
-    pub fn facets(&self) -> ::std::option::Option<&[crate::types::Facet]> {
-        self.facets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.facets.is_none()`.
+    pub fn facets(&self) -> &[crate::types::Facet] {
+        self.facets.as_deref().unwrap_or_default()
     }
     /// <p>An array of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document attributes are included in the response.</p>
-    pub fn requested_document_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requested_document_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_document_attributes.is_none()`.
+    pub fn requested_document_attributes(&self) -> &[::std::string::String] {
+        self.requested_document_attributes.as_deref().unwrap_or_default()
     }
     /// <p>Sets the type of query result or response. Only results for the specified type are returned.</p>
     pub fn query_result_type_filter(&self) -> ::std::option::Option<&crate::types::QueryResultType> {
@@ -69,8 +73,10 @@ impl QueryInput {
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn document_relevance_override_configurations(&self) -> ::std::option::Option<&[crate::types::DocumentRelevanceConfiguration]> {
-        self.document_relevance_override_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_relevance_override_configurations.is_none()`.
+    pub fn document_relevance_override_configurations(&self) -> &[crate::types::DocumentRelevanceConfiguration] {
+        self.document_relevance_override_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn page_number(&self) -> ::std::option::Option<i32> {
@@ -88,8 +94,10 @@ impl QueryInput {
     /// <p>Provides configuration information to determine how the results of a query are sorted.</p>
     /// <p>You can set upto 3 fields that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. The sort field quota can be increased.</p>
     /// <p>If you don't provide a sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result. In the case of ties in sorting the results, the results are sorted by relevance. </p>
-    pub fn sorting_configurations(&self) -> ::std::option::Option<&[crate::types::SortingConfiguration]> {
-        self.sorting_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sorting_configurations.is_none()`.
+    pub fn sorting_configurations(&self) -> &[crate::types::SortingConfiguration] {
+        self.sorting_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The user context token or user and group information.</p>
     pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
@@ -137,6 +145,7 @@ pub struct QueryInputBuilder {
 }
 impl QueryInputBuilder {
     /// <p>The identifier of the index for the search.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

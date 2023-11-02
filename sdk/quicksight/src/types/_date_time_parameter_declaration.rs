@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeParameterDeclaration {
     /// <p>The name of the parameter that is being declared.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub default_values: ::std::option::Option<crate::types::DateTimeDefaultValues>,
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
@@ -17,8 +17,9 @@ pub struct DateTimeParameterDeclaration {
 }
 impl DateTimeParameterDeclaration {
     /// <p>The name of the parameter that is being declared.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn default_values(&self) -> ::std::option::Option<&crate::types::DateTimeDefaultValues> {
@@ -33,8 +34,10 @@ impl DateTimeParameterDeclaration {
         self.value_when_unset.as_ref()
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn mapped_data_set_parameters(&self) -> ::std::option::Option<&[crate::types::MappedDataSetParameter]> {
-        self.mapped_data_set_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mapped_data_set_parameters.is_none()`.
+    pub fn mapped_data_set_parameters(&self) -> &[crate::types::MappedDataSetParameter] {
+        self.mapped_data_set_parameters.as_deref().unwrap_or_default()
     }
 }
 impl DateTimeParameterDeclaration {
@@ -56,6 +59,7 @@ pub struct DateTimeParameterDeclarationBuilder {
 }
 impl DateTimeParameterDeclarationBuilder {
     /// <p>The name of the parameter that is being declared.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +136,20 @@ impl DateTimeParameterDeclarationBuilder {
         &self.mapped_data_set_parameters
     }
     /// Consumes the builder and constructs a [`DateTimeParameterDeclaration`](crate::types::DateTimeParameterDeclaration).
-    pub fn build(self) -> crate::types::DateTimeParameterDeclaration {
-        crate::types::DateTimeParameterDeclaration {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DateTimeParameterDeclarationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DateTimeParameterDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DateTimeParameterDeclaration {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DateTimeParameterDeclaration",
+                )
+            })?,
             default_values: self.default_values,
             time_granularity: self.time_granularity,
             value_when_unset: self.value_when_unset,
             mapped_data_set_parameters: self.mapped_data_set_parameters,
-        }
+        })
     }
 }

@@ -56,6 +56,7 @@ pub struct GetAggregateConformancePackComplianceSummaryInputBuilder {
 }
 impl GetAggregateConformancePackComplianceSummaryInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
+    /// This field is required.
     pub fn configuration_aggregator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_aggregator_name = ::std::option::Option::Some(input.into());
         self

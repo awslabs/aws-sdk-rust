@@ -78,8 +78,10 @@ impl LightsailDistribution {
         self.resource_type.as_ref()
     }
     /// <p>The alternate domain names of the distribution.</p>
-    pub fn alternative_domain_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alternative_domain_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternative_domain_names.is_none()`.
+    pub fn alternative_domain_names(&self) -> &[::std::string::String] {
+        self.alternative_domain_names.as_deref().unwrap_or_default()
     }
     /// <p>The status of the distribution.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -119,8 +121,10 @@ impl LightsailDistribution {
         self.cache_behavior_settings.as_ref()
     }
     /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
-    pub fn cache_behaviors(&self) -> ::std::option::Option<&[crate::types::CacheBehaviorPerPath]> {
-        self.cache_behaviors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_behaviors.is_none()`.
+    pub fn cache_behaviors(&self) -> &[crate::types::CacheBehaviorPerPath] {
+        self.cache_behaviors.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the bundle that is currently applied to your distribution, specified using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
     /// <p>Use the <code>UpdateDistributionBundle</code> action to change your distribution's bundle.</p>
@@ -133,8 +137,10 @@ impl LightsailDistribution {
         self.ip_address_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl LightsailDistribution {

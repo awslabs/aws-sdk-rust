@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeInNanos {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
-    pub time_in_seconds: ::std::option::Option<i64>,
+    pub time_in_seconds: i64,
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub offset_in_nanos: ::std::option::Option<i32>,
 }
 impl TimeInNanos {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
-    pub fn time_in_seconds(&self) -> ::std::option::Option<i64> {
+    pub fn time_in_seconds(&self) -> i64 {
         self.time_in_seconds
     }
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
@@ -35,6 +35,7 @@ pub struct TimeInNanosBuilder {
 }
 impl TimeInNanosBuilder {
     /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
+    /// This field is required.
     pub fn time_in_seconds(mut self, input: i64) -> Self {
         self.time_in_seconds = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl TimeInNanosBuilder {
         &self.offset_in_nanos
     }
     /// Consumes the builder and constructs a [`TimeInNanos`](crate::types::TimeInNanos).
-    pub fn build(self) -> crate::types::TimeInNanos {
-        crate::types::TimeInNanos {
-            time_in_seconds: self.time_in_seconds,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`time_in_seconds`](crate::types::builders::TimeInNanosBuilder::time_in_seconds)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeInNanos, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimeInNanos {
+            time_in_seconds: self.time_in_seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_in_seconds",
+                    "time_in_seconds was not specified but it is required when building TimeInNanos",
+                )
+            })?,
             offset_in_nanos: self.offset_in_nanos,
-        }
+        })
     }
 }

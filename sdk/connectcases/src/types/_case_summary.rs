@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaseSummary {
     /// <p>A unique identifier of the case.</p>
-    pub case_id: ::std::option::Option<::std::string::String>,
+    pub case_id: ::std::string::String,
     /// <p>A unique identifier of a template.</p>
-    pub template_id: ::std::option::Option<::std::string::String>,
+    pub template_id: ::std::string::String,
 }
 impl CaseSummary {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
-        self.case_id.as_deref()
+    pub fn case_id(&self) -> &str {
+        use std::ops::Deref;
+        self.case_id.deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
-        self.template_id.as_deref()
+    pub fn template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.template_id.deref()
     }
 }
 impl CaseSummary {
@@ -35,6 +37,7 @@ pub struct CaseSummaryBuilder {
 }
 impl CaseSummaryBuilder {
     /// <p>A unique identifier of the case.</p>
+    /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl CaseSummaryBuilder {
         &self.case_id
     }
     /// <p>A unique identifier of a template.</p>
+    /// This field is required.
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl CaseSummaryBuilder {
         &self.template_id
     }
     /// Consumes the builder and constructs a [`CaseSummary`](crate::types::CaseSummary).
-    pub fn build(self) -> crate::types::CaseSummary {
-        crate::types::CaseSummary {
-            case_id: self.case_id,
-            template_id: self.template_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`case_id`](crate::types::builders::CaseSummaryBuilder::case_id)
+    /// - [`template_id`](crate::types::builders::CaseSummaryBuilder::template_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CaseSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CaseSummary {
+            case_id: self.case_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "case_id",
+                    "case_id was not specified but it is required when building CaseSummary",
+                )
+            })?,
+            template_id: self.template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_id",
+                    "template_id was not specified but it is required when building CaseSummary",
+                )
+            })?,
+        })
     }
 }

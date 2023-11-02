@@ -9,12 +9,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafOverrideAction {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
-    pub r#type: ::std::option::Option<crate::types::WafOverrideActionType>,
+    pub r#type: crate::types::WafOverrideActionType,
 }
 impl WafOverrideAction {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WafOverrideActionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::WafOverrideActionType {
+        &self.r#type
     }
 }
 impl WafOverrideAction {
@@ -32,6 +32,7 @@ pub struct WafOverrideActionBuilder {
 }
 impl WafOverrideActionBuilder {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::WafOverrideActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -46,7 +47,16 @@ impl WafOverrideActionBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`WafOverrideAction`](crate::types::WafOverrideAction).
-    pub fn build(self) -> crate::types::WafOverrideAction {
-        crate::types::WafOverrideAction { r#type: self.r#type }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::WafOverrideActionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::WafOverrideAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WafOverrideAction {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building WafOverrideAction",
+                )
+            })?,
+        })
     }
 }

@@ -54,6 +54,7 @@ pub struct GetBlockInputBuilder {
 }
 impl GetBlockInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetBlockInputBuilder {
     }
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
+    /// This field is required.
     pub fn block_address(mut self, input: crate::types::ValueHolder) -> Self {
         self.block_address = ::std::option::Option::Some(input);
         self

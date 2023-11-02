@@ -19,12 +19,16 @@ impl ProfileConfiguration {
         self.dataset_statistics_configuration.as_ref()
     }
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. </p>
-    pub fn profile_columns(&self) -> ::std::option::Option<&[crate::types::ColumnSelector]> {
-        self.profile_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_columns.is_none()`.
+    pub fn profile_columns(&self) -> &[crate::types::ColumnSelector] {
+        self.profile_columns.as_deref().unwrap_or_default()
     }
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. </p>
-    pub fn column_statistics_configurations(&self) -> ::std::option::Option<&[crate::types::ColumnStatisticsConfiguration]> {
-        self.column_statistics_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_statistics_configurations.is_none()`.
+    pub fn column_statistics_configurations(&self) -> &[crate::types::ColumnStatisticsConfiguration] {
+        self.column_statistics_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
     pub fn entity_detector_configuration(&self) -> ::std::option::Option<&crate::types::EntityDetectorConfiguration> {

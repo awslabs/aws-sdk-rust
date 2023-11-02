@@ -10,8 +10,10 @@ pub struct GetContactMethodsInput {
 impl GetContactMethodsInput {
     /// <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>
     /// <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::ContactProtocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::ContactProtocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
 }
 impl GetContactMethodsInput {

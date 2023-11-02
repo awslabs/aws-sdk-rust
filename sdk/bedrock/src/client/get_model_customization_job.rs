@@ -3,21 +3,21 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModelCustomizationJob`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_identifier(impl Into<String>)`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobFluentBuilder::job_identifier) / [`set_job_identifier(Option<String>)`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobFluentBuilder::set_job_identifier): <p>Identifier for the customization job.</p>
+    ///   - [`job_identifier(impl Into<String>)`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobFluentBuilder::job_identifier) / [`set_job_identifier(Option<String>)`](crate::operation::get_model_customization_job::builders::GetModelCustomizationJobFluentBuilder::set_job_identifier):<br>required: **true**<br><p>Identifier for the customization job.</p><br>
     /// - On success, responds with [`GetModelCustomizationJobOutput`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput) with field(s):
-    ///   - [`job_arn(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::job_arn): <p>The ARN of the customization job.</p>
-    ///   - [`job_name(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::job_name): <p>The name of the customization job.</p>
-    ///   - [`output_model_name(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::output_model_name): <p>The name of the output model.</p>
+    ///   - [`job_arn(String)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::job_arn): <p>The ARN of the customization job.</p>
+    ///   - [`job_name(String)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::job_name): <p>The name of the customization job.</p>
+    ///   - [`output_model_name(String)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::output_model_name): <p>The name of the output model.</p>
     ///   - [`output_model_arn(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::output_model_arn): <p>The ARN of the output model.</p>
     ///   - [`client_request_token(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::client_request_token): <p>The token that you specified in the CreateCustomizationJob request.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::role_arn): <p>The ARN of the IAM role.</p>
+    ///   - [`role_arn(String)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::role_arn): <p>The ARN of the IAM role.</p>
     ///   - [`status(Option<ModelCustomizationJobStatus>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::status): <p>The status of the job. A successful job transitions from in-progress to completed when the output model is ready to use. If the job failed, the failure message contains information about why the job failed.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::failure_message): <p>Information about why the job failed.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::creation_time): <p>Time that the resource was created.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::creation_time): <p>Time that the resource was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::last_modified_time): <p>Time that the resource was last modified.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::end_time): <p>Time that the resource transitioned to terminal state.</p>
-    ///   - [`base_model_arn(Option<String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::base_model_arn): <p>ARN of the base model.</p>
-    ///   - [`hyper_parameters(Option<HashMap<String, String>>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::hyper_parameters): <p>The hyperparameter values for the job.</p>
+    ///   - [`base_model_arn(String)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::base_model_arn): <p>ARN of the base model.</p>
+    ///   - [`hyper_parameters(HashMap<String, String>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::hyper_parameters): <p>The hyperparameter values for the job.</p>
     ///   - [`training_data_config(Option<TrainingDataConfig>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::training_data_config): <p>S3 Location of the training data.</p>
     ///   - [`validation_data_config(Option<ValidationDataConfig>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::validation_data_config): <p>Array of up to 10 validators.</p>
     ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::operation::get_model_customization_job::GetModelCustomizationJobOutput::output_data_config): <p>Output data configuration </p>

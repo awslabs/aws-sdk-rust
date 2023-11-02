@@ -11,8 +11,10 @@ pub struct ListCustomPluginsOutput {
 }
 impl ListCustomPluginsOutput {
     /// <p>An array of custom plugin descriptions.</p>
-    pub fn custom_plugins(&self) -> ::std::option::Option<&[crate::types::CustomPluginSummary]> {
-        self.custom_plugins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_plugins.is_none()`.
+    pub fn custom_plugins(&self) -> &[crate::types::CustomPluginSummary] {
+        self.custom_plugins.as_deref().unwrap_or_default()
     }
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

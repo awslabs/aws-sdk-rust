@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DicomImportJobSummary {
     /// <p>The import job identifier.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
+    pub job_id: ::std::string::String,
     /// <p>The import job name.</p>
-    pub job_name: ::std::option::Option<::std::string::String>,
+    pub job_name: ::std::string::String,
     /// <p>The filters for listing import jobs based on status.</p>
-    pub job_status: ::std::option::Option<crate::types::JobStatus>,
+    pub job_status: crate::types::JobStatus,
     /// <p>The data store identifier.</p>
-    pub datastore_id: ::std::option::Option<::std::string::String>,
+    pub datastore_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) that grants permissions to access medical imaging resources.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when an import job ended.</p>
@@ -23,20 +23,23 @@ pub struct DicomImportJobSummary {
 }
 impl DicomImportJobSummary {
     /// <p>The import job identifier.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
+    pub fn job_id(&self) -> &str {
+        use std::ops::Deref;
+        self.job_id.deref()
     }
     /// <p>The import job name.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
-        self.job_name.as_deref()
+    pub fn job_name(&self) -> &str {
+        use std::ops::Deref;
+        self.job_name.deref()
     }
     /// <p>The filters for listing import jobs based on status.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
-        self.job_status.as_ref()
+    pub fn job_status(&self) -> &crate::types::JobStatus {
+        &self.job_status
     }
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
-        self.datastore_id.as_deref()
+    pub fn datastore_id(&self) -> &str {
+        use std::ops::Deref;
+        self.datastore_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) that grants permissions to access medical imaging resources.</p>
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
@@ -77,6 +80,7 @@ pub struct DicomImportJobSummaryBuilder {
 }
 impl DicomImportJobSummaryBuilder {
     /// <p>The import job identifier.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +95,7 @@ impl DicomImportJobSummaryBuilder {
         &self.job_id
     }
     /// <p>The import job name.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +110,7 @@ impl DicomImportJobSummaryBuilder {
         &self.job_name
     }
     /// <p>The filters for listing import jobs based on status.</p>
+    /// This field is required.
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl DicomImportJobSummaryBuilder {
         &self.job_status
     }
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -189,16 +196,41 @@ impl DicomImportJobSummaryBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`DicomImportJobSummary`](crate::types::DicomImportJobSummary).
-    pub fn build(self) -> crate::types::DicomImportJobSummary {
-        crate::types::DicomImportJobSummary {
-            job_id: self.job_id,
-            job_name: self.job_name,
-            job_status: self.job_status,
-            datastore_id: self.datastore_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`job_id`](crate::types::builders::DicomImportJobSummaryBuilder::job_id)
+    /// - [`job_name`](crate::types::builders::DicomImportJobSummaryBuilder::job_name)
+    /// - [`job_status`](crate::types::builders::DicomImportJobSummaryBuilder::job_status)
+    /// - [`datastore_id`](crate::types::builders::DicomImportJobSummaryBuilder::datastore_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DicomImportJobSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DicomImportJobSummary {
+            job_id: self.job_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_id",
+                    "job_id was not specified but it is required when building DicomImportJobSummary",
+                )
+            })?,
+            job_name: self.job_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_name",
+                    "job_name was not specified but it is required when building DicomImportJobSummary",
+                )
+            })?,
+            job_status: self.job_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "job_status",
+                    "job_status was not specified but it is required when building DicomImportJobSummary",
+                )
+            })?,
+            datastore_id: self.datastore_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_id",
+                    "datastore_id was not specified but it is required when building DicomImportJobSummary",
+                )
+            })?,
             data_access_role_arn: self.data_access_role_arn,
             ended_at: self.ended_at,
             submitted_at: self.submitted_at,
             message: self.message,
-        }
+        })
     }
 }

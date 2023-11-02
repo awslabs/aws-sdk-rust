@@ -15,8 +15,10 @@ impl ListCertificatesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    pub fn certificates_info(&self) -> ::std::option::Option<&[crate::types::CertificateInfo]> {
-        self.certificates_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates_info.is_none()`.
+    pub fn certificates_info(&self) -> &[crate::types::CertificateInfo] {
+        self.certificates_info.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCertificatesOutput {

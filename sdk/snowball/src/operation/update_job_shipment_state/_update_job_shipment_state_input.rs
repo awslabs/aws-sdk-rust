@@ -38,6 +38,7 @@ pub struct UpdateJobShipmentStateInputBuilder {
 }
 impl UpdateJobShipmentStateInputBuilder {
     /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl UpdateJobShipmentStateInputBuilder {
     /// <p>The state of a device when it is being shipped. </p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
     /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
+    /// This field is required.
     pub fn shipment_state(mut self, input: crate::types::ShipmentState) -> Self {
         self.shipment_state = ::std::option::Option::Some(input);
         self

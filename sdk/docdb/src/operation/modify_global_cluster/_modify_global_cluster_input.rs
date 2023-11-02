@@ -62,6 +62,7 @@ impl ModifyGlobalClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self

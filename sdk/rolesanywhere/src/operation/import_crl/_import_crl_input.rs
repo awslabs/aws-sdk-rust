@@ -4,36 +4,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportCrlInput {
     /// <p>The name of the certificate revocation list (CRL).</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
-    pub crl_data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub crl_data: ::aws_smithy_types::Blob,
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
-    pub trust_anchor_arn: ::std::option::Option<::std::string::String>,
+    pub trust_anchor_arn: ::std::string::String,
 }
 impl ImportCrlInput {
     /// <p>The name of the certificate revocation list (CRL).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
-    pub fn crl_data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
-        self.crl_data.as_ref()
+    pub fn crl_data(&self) -> &::aws_smithy_types::Blob {
+        &self.crl_data
     }
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
-    pub fn trust_anchor_arn(&self) -> ::std::option::Option<&str> {
-        self.trust_anchor_arn.as_deref()
+    pub fn trust_anchor_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.trust_anchor_arn.deref()
     }
 }
 impl ImportCrlInput {
@@ -55,6 +59,7 @@ pub struct ImportCrlInputBuilder {
 }
 impl ImportCrlInputBuilder {
     /// <p>The name of the certificate revocation list (CRL).</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl ImportCrlInputBuilder {
         &self.name
     }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
+    /// This field is required.
     pub fn crl_data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.crl_data = ::std::option::Option::Some(input);
         self
@@ -117,6 +123,7 @@ impl ImportCrlInputBuilder {
         &self.tags
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
+    /// This field is required.
     pub fn trust_anchor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_arn = ::std::option::Option::Some(input.into());
         self
@@ -131,13 +138,32 @@ impl ImportCrlInputBuilder {
         &self.trust_anchor_arn
     }
     /// Consumes the builder and constructs a [`ImportCrlInput`](crate::operation::import_crl::ImportCrlInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::import_crl::builders::ImportCrlInputBuilder::name)
+    /// - [`crl_data`](crate::operation::import_crl::builders::ImportCrlInputBuilder::crl_data)
+    /// - [`trust_anchor_arn`](crate::operation::import_crl::builders::ImportCrlInputBuilder::trust_anchor_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::import_crl::ImportCrlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_crl::ImportCrlInput {
-            name: self.name,
-            crl_data: self.crl_data,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ImportCrlInput",
+                )
+            })?,
+            crl_data: self.crl_data.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "crl_data",
+                    "crl_data was not specified but it is required when building ImportCrlInput",
+                )
+            })?,
             enabled: self.enabled,
             tags: self.tags,
-            trust_anchor_arn: self.trust_anchor_arn,
+            trust_anchor_arn: self.trust_anchor_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "trust_anchor_arn",
+                    "trust_anchor_arn was not specified but it is required when building ImportCrlInput",
+                )
+            })?,
         })
     }
 }

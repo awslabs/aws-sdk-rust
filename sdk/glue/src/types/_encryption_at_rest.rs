@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    pub catalog_encryption_mode: ::std::option::Option<crate::types::CatalogEncryptionMode>,
+    pub catalog_encryption_mode: crate::types::CatalogEncryptionMode,
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
     pub sse_aws_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    pub fn catalog_encryption_mode(&self) -> ::std::option::Option<&crate::types::CatalogEncryptionMode> {
-        self.catalog_encryption_mode.as_ref()
+    pub fn catalog_encryption_mode(&self) -> &crate::types::CatalogEncryptionMode {
+        &self.catalog_encryption_mode
     }
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
     pub fn sse_aws_kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +35,7 @@ pub struct EncryptionAtRestBuilder {
 }
 impl EncryptionAtRestBuilder {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
+    /// This field is required.
     pub fn catalog_encryption_mode(mut self, input: crate::types::CatalogEncryptionMode) -> Self {
         self.catalog_encryption_mode = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl EncryptionAtRestBuilder {
         &self.sse_aws_kms_key_id
     }
     /// Consumes the builder and constructs a [`EncryptionAtRest`](crate::types::EncryptionAtRest).
-    pub fn build(self) -> crate::types::EncryptionAtRest {
-        crate::types::EncryptionAtRest {
-            catalog_encryption_mode: self.catalog_encryption_mode,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`catalog_encryption_mode`](crate::types::builders::EncryptionAtRestBuilder::catalog_encryption_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionAtRest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EncryptionAtRest {
+            catalog_encryption_mode: self.catalog_encryption_mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "catalog_encryption_mode",
+                    "catalog_encryption_mode was not specified but it is required when building EncryptionAtRest",
+                )
+            })?,
             sse_aws_kms_key_id: self.sse_aws_kms_key_id,
-        }
+        })
     }
 }

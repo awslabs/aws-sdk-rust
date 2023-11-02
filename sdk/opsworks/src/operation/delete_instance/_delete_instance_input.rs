@@ -41,6 +41,7 @@ pub struct DeleteInstanceInputBuilder {
 }
 impl DeleteInstanceInputBuilder {
     /// <p>The instance ID.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

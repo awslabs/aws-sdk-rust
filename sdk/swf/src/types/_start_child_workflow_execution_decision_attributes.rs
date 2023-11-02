@@ -22,7 +22,7 @@ pub struct StartChildWorkflowExecutionDecisionAttributes {
     pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p> The <code>workflowId</code> of the workflow execution.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
     pub control: ::std::option::Option<::std::string::String>,
     /// <p>The input to be provided to the workflow execution.</p>
@@ -67,8 +67,9 @@ impl StartChildWorkflowExecutionDecisionAttributes {
     }
     /// <p> The <code>workflowId</code> of the workflow execution.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
     pub fn control(&self) -> ::std::option::Option<&str> {
@@ -117,8 +118,10 @@ impl StartChildWorkflowExecutionDecisionAttributes {
         self.child_policy.as_ref()
     }
     /// <p>The list of tags to associate with the child workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[::std::string::String] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>The IAM role attached to the child workflow execution.</p>
     pub fn lambda_role(&self) -> ::std::option::Option<&str> {
@@ -150,6 +153,7 @@ pub struct StartChildWorkflowExecutionDecisionAttributesBuilder {
 }
 impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     /// <p> The type of the workflow execution to be started.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -165,6 +169,7 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p> The <code>workflowId</code> of the workflow execution.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -367,10 +372,19 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         &self.lambda_role
     }
     /// Consumes the builder and constructs a [`StartChildWorkflowExecutionDecisionAttributes`](crate::types::StartChildWorkflowExecutionDecisionAttributes).
-    pub fn build(self) -> crate::types::StartChildWorkflowExecutionDecisionAttributes {
-        crate::types::StartChildWorkflowExecutionDecisionAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::types::builders::StartChildWorkflowExecutionDecisionAttributesBuilder::workflow_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::StartChildWorkflowExecutionDecisionAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartChildWorkflowExecutionDecisionAttributes {
             workflow_type: self.workflow_type,
-            workflow_id: self.workflow_id,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building StartChildWorkflowExecutionDecisionAttributes",
+                )
+            })?,
             control: self.control,
             input: self.input,
             execution_start_to_close_timeout: self.execution_start_to_close_timeout,
@@ -380,6 +394,6 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
             child_policy: self.child_policy,
             tag_list: self.tag_list,
             lambda_role: self.lambda_role,
-        }
+        })
     }
 }

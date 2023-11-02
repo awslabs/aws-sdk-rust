@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIndex`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to delete.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::delete_index::builders::DeleteIndexFluentBuilder::set_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to delete.</p><br>
     /// - On success, responds with [`DeleteIndexOutput`](crate::operation::delete_index::DeleteIndexOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_index::DeleteIndexOutput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you successfully started the deletion process.</p> <note>   <p>This operation is asynchronous. To check its status, call the <code>GetIndex</code> operation.</p>  </note>
     ///   - [`state(Option<IndexState>)`](crate::operation::delete_index::DeleteIndexOutput::state): <p>Indicates the current state of the index. </p>

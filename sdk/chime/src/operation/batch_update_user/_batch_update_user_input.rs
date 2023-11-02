@@ -14,8 +14,10 @@ impl BatchUpdateUserInput {
         self.account_id.as_deref()
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn update_user_request_items(&self) -> ::std::option::Option<&[crate::types::UpdateUserRequestItem]> {
-        self.update_user_request_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_user_request_items.is_none()`.
+    pub fn update_user_request_items(&self) -> &[crate::types::UpdateUserRequestItem] {
+        self.update_user_request_items.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateUserInput {
@@ -34,6 +36,7 @@ pub struct BatchUpdateUserInputBuilder {
 }
 impl BatchUpdateUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

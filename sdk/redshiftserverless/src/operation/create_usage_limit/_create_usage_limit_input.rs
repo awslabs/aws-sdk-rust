@@ -55,6 +55,7 @@ pub struct CreateUsageLimitInputBuilder {
 }
 impl CreateUsageLimitInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl CreateUsageLimitInputBuilder {
         &self.resource_arn
     }
     /// <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
+    /// This field is required.
     pub fn usage_type(mut self, input: crate::types::UsageLimitUsageType) -> Self {
         self.usage_type = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl CreateUsageLimitInputBuilder {
         &self.usage_type
     }
     /// <p>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.</p>
+    /// This field is required.
     pub fn amount(mut self, input: i64) -> Self {
         self.amount = ::std::option::Option::Some(input);
         self

@@ -50,12 +50,16 @@ impl DbProxyEndpoint {
         self.vpc_id.as_deref()
     }
     /// <p>Provides a list of VPC security groups that the DB proxy endpoint belongs to.</p>
-    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
+    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
+        self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The EC2 subnet IDs for the DB proxy endpoint.</p>
-    pub fn vpc_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vpc_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
+    pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
+        self.vpc_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {

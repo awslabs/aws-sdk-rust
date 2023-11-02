@@ -61,8 +61,10 @@ impl PredictorMonitorEvaluation {
         self.monitor_data_source.as_ref()
     }
     /// <p>A list of metrics Forecast calculated when monitoring a predictor. You can compare the value for each metric in the list to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
-    pub fn metric_results(&self) -> ::std::option::Option<&[crate::types::MetricResult]> {
-        self.metric_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_results.is_none()`.
+    pub fn metric_results(&self) -> &[crate::types::MetricResult] {
+        self.metric_results.as_deref().unwrap_or_default()
     }
     /// <p>The number of items considered during the evaluation.</p>
     pub fn num_items_evaluated(&self) -> ::std::option::Option<i64> {

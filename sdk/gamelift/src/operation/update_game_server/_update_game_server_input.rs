@@ -55,6 +55,7 @@ pub struct UpdateGameServerInputBuilder {
 }
 impl UpdateGameServerInputBuilder {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
+    /// This field is required.
     pub fn game_server_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_group_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl UpdateGameServerInputBuilder {
         &self.game_server_group_name
     }
     /// <p>A custom string that uniquely identifies the game server to update.</p>
+    /// This field is required.
     pub fn game_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_server_id = ::std::option::Option::Some(input.into());
         self

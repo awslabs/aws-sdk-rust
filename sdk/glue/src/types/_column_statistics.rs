@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnStatistics {
     /// <p>Name of column which statistics belong to.</p>
-    pub column_name: ::std::option::Option<::std::string::String>,
+    pub column_name: ::std::string::String,
     /// <p>The data type of the column.</p>
-    pub column_type: ::std::option::Option<::std::string::String>,
+    pub column_type: ::std::string::String,
     /// <p>The timestamp of when column statistics were generated.</p>
-    pub analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub analyzed_time: ::aws_smithy_types::DateTime,
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
     pub statistics_data: ::std::option::Option<crate::types::ColumnStatisticsData>,
 }
 impl ColumnStatistics {
     /// <p>Name of column which statistics belong to.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
-        self.column_name.as_deref()
+    pub fn column_name(&self) -> &str {
+        use std::ops::Deref;
+        self.column_name.deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn column_type(&self) -> ::std::option::Option<&str> {
-        self.column_type.as_deref()
+    pub fn column_type(&self) -> &str {
+        use std::ops::Deref;
+        self.column_type.deref()
     }
     /// <p>The timestamp of when column statistics were generated.</p>
-    pub fn analyzed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.analyzed_time.as_ref()
+    pub fn analyzed_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.analyzed_time
     }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
     pub fn statistics_data(&self) -> ::std::option::Option<&crate::types::ColumnStatisticsData> {
@@ -49,6 +51,7 @@ pub struct ColumnStatisticsBuilder {
 }
 impl ColumnStatisticsBuilder {
     /// <p>Name of column which statistics belong to.</p>
+    /// This field is required.
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl ColumnStatisticsBuilder {
         &self.column_name
     }
     /// <p>The data type of the column.</p>
+    /// This field is required.
     pub fn column_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_type = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl ColumnStatisticsBuilder {
         &self.column_type
     }
     /// <p>The timestamp of when column statistics were generated.</p>
+    /// This field is required.
     pub fn analyzed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.analyzed_time = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,7 @@ impl ColumnStatisticsBuilder {
         &self.analyzed_time
     }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
+    /// This field is required.
     pub fn statistics_data(mut self, input: crate::types::ColumnStatisticsData) -> Self {
         self.statistics_data = ::std::option::Option::Some(input);
         self
@@ -105,12 +111,31 @@ impl ColumnStatisticsBuilder {
         &self.statistics_data
     }
     /// Consumes the builder and constructs a [`ColumnStatistics`](crate::types::ColumnStatistics).
-    pub fn build(self) -> crate::types::ColumnStatistics {
-        crate::types::ColumnStatistics {
-            column_name: self.column_name,
-            column_type: self.column_type,
-            analyzed_time: self.analyzed_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_name`](crate::types::builders::ColumnStatisticsBuilder::column_name)
+    /// - [`column_type`](crate::types::builders::ColumnStatisticsBuilder::column_type)
+    /// - [`analyzed_time`](crate::types::builders::ColumnStatisticsBuilder::analyzed_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnStatistics, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ColumnStatistics {
+            column_name: self.column_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_name",
+                    "column_name was not specified but it is required when building ColumnStatistics",
+                )
+            })?,
+            column_type: self.column_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_type",
+                    "column_type was not specified but it is required when building ColumnStatistics",
+                )
+            })?,
+            analyzed_time: self.analyzed_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzed_time",
+                    "analyzed_time was not specified but it is required when building ColumnStatistics",
+                )
+            })?,
             statistics_data: self.statistics_data,
-        }
+        })
     }
 }

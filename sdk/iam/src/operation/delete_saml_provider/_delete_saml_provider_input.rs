@@ -27,6 +27,7 @@ pub struct DeleteSamlProviderInputBuilder {
 }
 impl DeleteSamlProviderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    /// This field is required.
     pub fn saml_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self

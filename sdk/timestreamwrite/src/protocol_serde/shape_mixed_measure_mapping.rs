@@ -12,20 +12,20 @@ pub fn ser_mixed_measure_mapping(
     if let Some(var_3) = &input.target_measure_name {
         object.key("TargetMeasureName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.measure_value_type {
-        object.key("MeasureValueType").string(var_4.as_str());
+    {
+        object.key("MeasureValueType").string(input.measure_value_type.as_str());
     }
-    if let Some(var_5) = &input.multi_measure_attribute_mappings {
-        let mut array_6 = object.key("MultiMeasureAttributeMappings").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.multi_measure_attribute_mappings {
+        let mut array_5 = object.key("MultiMeasureAttributeMappings").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_multi_measure_attribute_mapping::ser_multi_measure_attribute_mapping(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_multi_measure_attribute_mapping::ser_multi_measure_attribute_mapping(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
     Ok(())
 }
@@ -88,7 +88,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::mixed_measure_mapping_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

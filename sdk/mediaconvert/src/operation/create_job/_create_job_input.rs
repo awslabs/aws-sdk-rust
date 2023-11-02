@@ -44,8 +44,10 @@ impl CreateJobInput {
         self.client_request_token.as_deref()
     }
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-    pub fn hop_destinations(&self) -> ::std::option::Option<&[crate::types::HopDestination]> {
-        self.hop_destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hop_destinations.is_none()`.
+    pub fn hop_destinations(&self) -> &[crate::types::HopDestination] {
+        self.hop_destinations.as_deref().unwrap_or_default()
     }
     /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
     pub fn job_template(&self) -> ::std::option::Option<&str> {
@@ -215,6 +217,7 @@ impl CreateJobInputBuilder {
         &self.queue
     }
     /// Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -229,6 +232,7 @@ impl CreateJobInputBuilder {
         &self.role
     }
     /// JobSettings contains all the transcode settings for a job.
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::JobSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self

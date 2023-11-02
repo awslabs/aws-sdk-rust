@@ -22,8 +22,10 @@ pub struct RenewalSummary {
 }
 impl RenewalSummary {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn domain_validation_records(&self) -> ::std::option::Option<&[crate::types::DomainValidationRecord]> {
-        self.domain_validation_records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_records.is_none()`.
+    pub fn domain_validation_records(&self) -> &[crate::types::DomainValidationRecord] {
+        self.domain_validation_records.as_deref().unwrap_or_default()
     }
     /// <p>The renewal status of the certificate.</p>
     /// <p>The following renewal status are possible:</p>

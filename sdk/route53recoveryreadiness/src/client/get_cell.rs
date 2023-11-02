@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCell`](crate::operation::get_cell::builders::GetCellFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::operation::get_cell::builders::GetCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::get_cell::builders::GetCellFluentBuilder::set_cell_name): <p>The name of the cell.</p>
+    ///   - [`cell_name(impl Into<String>)`](crate::operation::get_cell::builders::GetCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::get_cell::builders::GetCellFluentBuilder::set_cell_name):<br>required: **true**<br><p>The name of the cell.</p><br>
     /// - On success, responds with [`GetCellOutput`](crate::operation::get_cell::GetCellOutput) with field(s):
     ///   - [`cell_arn(Option<String>)`](crate::operation::get_cell::GetCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
     ///   - [`cell_name(Option<String>)`](crate::operation::get_cell::GetCellOutput::cell_name): <p>The name of the cell.</p>

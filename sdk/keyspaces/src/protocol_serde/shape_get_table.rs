@@ -111,7 +111,9 @@ pub fn de_get_table_http_response(
         output = crate::protocol_serde::shape_get_table::de_get_table(_response_body, output)
             .map_err(crate::operation::get_table::GetTableError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_table_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_table::GetTableError::unhandled)?
     })
 }
 

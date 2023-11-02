@@ -35,6 +35,7 @@ pub struct AppBlockBuilderAppBlockAssociationBuilder {
 }
 impl AppBlockBuilderAppBlockAssociationBuilder {
     /// <p>The ARN of the app block.</p>
+    /// This field is required.
     pub fn app_block_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AppBlockBuilderAppBlockAssociationBuilder {
         &self.app_block_arn
     }
     /// <p>The name of the app block builder.</p>
+    /// This field is required.
     pub fn app_block_builder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_block_builder_name = ::std::option::Option::Some(input.into());
         self

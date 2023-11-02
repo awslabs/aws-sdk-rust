@@ -34,6 +34,7 @@ pub struct GetBlueprintRunInputBuilder {
 }
 impl GetBlueprintRunInputBuilder {
     /// <p>The name of the blueprint.</p>
+    /// This field is required.
     pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetBlueprintRunInputBuilder {
         &self.blueprint_name
     }
     /// <p>The run ID for the blueprint run you want to retrieve.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self

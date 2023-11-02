@@ -21,8 +21,10 @@ impl BatchImportFindingsOutput {
         self.success_count
     }
     /// <p>The list of findings that failed to import.</p>
-    pub fn failed_findings(&self) -> ::std::option::Option<&[crate::types::ImportFindingsError]> {
-        self.failed_findings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_findings.is_none()`.
+    pub fn failed_findings(&self) -> &[crate::types::ImportFindingsError] {
+        self.failed_findings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchImportFindingsOutput {
@@ -48,6 +50,7 @@ pub struct BatchImportFindingsOutputBuilder {
 }
 impl BatchImportFindingsOutputBuilder {
     /// <p>The number of findings that failed to import.</p>
+    /// This field is required.
     pub fn failed_count(mut self, input: i32) -> Self {
         self.failed_count = ::std::option::Option::Some(input);
         self
@@ -62,6 +65,7 @@ impl BatchImportFindingsOutputBuilder {
         &self.failed_count
     }
     /// <p>The number of findings that were successfully imported.</p>
+    /// This field is required.
     pub fn success_count(mut self, input: i32) -> Self {
         self.success_count = ::std::option::Option::Some(input);
         self

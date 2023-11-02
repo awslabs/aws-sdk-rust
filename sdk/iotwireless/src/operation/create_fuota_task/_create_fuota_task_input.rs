@@ -52,8 +52,10 @@ impl CreateFuotaTaskInput {
         self.firmware_update_role.as_deref()
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn redundancy_percent(&self) -> ::std::option::Option<i32> {
@@ -150,6 +152,7 @@ impl CreateFuotaTaskInputBuilder {
         &self.lo_ra_wan
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
+    /// This field is required.
     pub fn firmware_update_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firmware_update_image = ::std::option::Option::Some(input.into());
         self
@@ -164,6 +167,7 @@ impl CreateFuotaTaskInputBuilder {
         &self.firmware_update_image
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
+    /// This field is required.
     pub fn firmware_update_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.firmware_update_role = ::std::option::Option::Some(input.into());
         self

@@ -15,23 +15,23 @@ pub fn ser_list_timeline_events_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.incident_record_arn {
-        object.key("incidentRecordArn").string(var_5.as_str());
+    {
+        object.key("incidentRecordArn").string(input.incident_record_arn.as_str());
     }
-    if let Some(var_6) = &input.max_results {
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_7) = &input.next_token {
-        object.key("nextToken").string(var_7.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.sort_by {
-        object.key("sortBy").string(var_8.as_str());
+    if let Some(var_7) = &input.sort_by {
+        object.key("sortBy").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.sort_order {
-        object.key("sortOrder").string(var_9.as_str());
+    if let Some(var_8) = &input.sort_order {
+        object.key("sortOrder").string(var_8.as_str());
     }
     Ok(())
 }

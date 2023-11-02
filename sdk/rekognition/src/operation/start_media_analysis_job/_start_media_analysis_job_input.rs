@@ -90,6 +90,7 @@ impl StartMediaAnalysisJobInputBuilder {
         &self.job_name
     }
     /// <p>Configuration options for the media analysis job to be created.</p>
+    /// This field is required.
     pub fn operations_config(mut self, input: crate::types::MediaAnalysisOperationsConfig) -> Self {
         self.operations_config = ::std::option::Option::Some(input);
         self
@@ -104,6 +105,7 @@ impl StartMediaAnalysisJobInputBuilder {
         &self.operations_config
     }
     /// <p>Input data to be analyzed by the job.</p>
+    /// This field is required.
     pub fn input(mut self, input: crate::types::MediaAnalysisInput) -> Self {
         self.input = ::std::option::Option::Some(input);
         self
@@ -118,6 +120,7 @@ impl StartMediaAnalysisJobInputBuilder {
         &self.input
     }
     /// <p>The Amazon S3 bucket location to store the results.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::MediaAnalysisOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

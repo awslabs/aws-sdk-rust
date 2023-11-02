@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConfiguredTable`](crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::set_configured_table_identifier): <p>The unique ID for the configured table to delete.</p>
+    ///   - [`configured_table_identifier(impl Into<String>)`](crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::configured_table_identifier) / [`set_configured_table_identifier(impl Into<String>)`](crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder::set_configured_table_identifier):<br>required: **true**<br><p>The unique ID for the configured table to delete.</p><br>
     /// - On success, responds with [`DeleteConfiguredTableOutput`](crate::operation::delete_configured_table::DeleteConfiguredTableOutput)
     /// - On failure, responds with [`SdkError<DeleteConfiguredTableError>`](crate::operation::delete_configured_table::DeleteConfiguredTableError)
     pub fn delete_configured_table(&self) -> crate::operation::delete_configured_table::builders::DeleteConfiguredTableFluentBuilder {

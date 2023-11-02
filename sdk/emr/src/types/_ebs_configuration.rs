@@ -11,8 +11,10 @@ pub struct EbsConfiguration {
 }
 impl EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
-    pub fn ebs_block_device_configs(&self) -> ::std::option::Option<&[crate::types::EbsBlockDeviceConfig]> {
-        self.ebs_block_device_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ebs_block_device_configs.is_none()`.
+    pub fn ebs_block_device_configs(&self) -> &[crate::types::EbsBlockDeviceConfig] {
+        self.ebs_block_device_configs.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {

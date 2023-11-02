@@ -12,8 +12,10 @@ pub struct DescribeGlobalNetworksInput {
 }
 impl DescribeGlobalNetworksInput {
     /// <p>The IDs of one or more global networks. The maximum is 10.</p>
-    pub fn global_network_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.global_network_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_network_ids.is_none()`.
+    pub fn global_network_ids(&self) -> &[::std::string::String] {
+        self.global_network_ids.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

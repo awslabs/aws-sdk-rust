@@ -90,6 +90,7 @@ impl ListInferenceExecutionsInputBuilder {
         &self.max_results
     }
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
+    /// This field is required.
     pub fn inference_scheduler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_scheduler_name = ::std::option::Option::Some(input.into());
         self

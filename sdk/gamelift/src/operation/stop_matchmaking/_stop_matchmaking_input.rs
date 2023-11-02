@@ -27,6 +27,7 @@ pub struct StopMatchmakingInputBuilder {
 }
 impl StopMatchmakingInputBuilder {
     /// <p>A unique identifier for a matchmaking ticket.</p>
+    /// This field is required.
     pub fn ticket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ticket_id = ::std::option::Option::Some(input.into());
         self

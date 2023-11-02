@@ -6,22 +6,23 @@ pub fn ser_source_build_information(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SourceType");
-    if let Some(var_2) = &input.source_type {
-        scope_1.string(var_2.as_str());
+    {
+        scope_1.string(input.source_type.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("SourceRepository");
-    if let Some(var_4) = &input.source_repository {
-        scope_3.string(var_4.as_str());
+    let mut scope_2 = writer.prefix("SourceRepository");
+    {
+        scope_2.string(input.source_repository.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("SourceLocation");
-    if let Some(var_6) = &input.source_location {
-        scope_5.string(var_6);
+    let mut scope_3 = writer.prefix("SourceLocation");
+    {
+        scope_3.string(&input.source_location);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_source_build_information(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SourceBuildInformation, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,7 +31,7 @@ pub fn de_source_build_information(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SourceType") /* SourceType com.amazonaws.elasticbeanstalk#SourceBuildInformation$SourceType */ =>  {
-                let var_7 =
+                let var_4 =
                     Some(
                         Result::<crate::types::SourceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SourceType::from(
@@ -40,11 +41,11 @@ pub fn de_source_build_information(
                         ?
                     )
                 ;
-                builder = builder.set_source_type(var_7);
+                builder = builder.set_source_type(var_4);
             }
             ,
             s if s.matches("SourceRepository") /* SourceRepository com.amazonaws.elasticbeanstalk#SourceBuildInformation$SourceRepository */ =>  {
-                let var_8 =
+                let var_5 =
                     Some(
                         Result::<crate::types::SourceRepository, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SourceRepository::from(
@@ -54,11 +55,11 @@ pub fn de_source_build_information(
                         ?
                     )
                 ;
-                builder = builder.set_source_repository(var_8);
+                builder = builder.set_source_repository(var_5);
             }
             ,
             s if s.matches("SourceLocation") /* SourceLocation com.amazonaws.elasticbeanstalk#SourceBuildInformation$SourceLocation */ =>  {
-                let var_9 =
+                let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -67,11 +68,13 @@ pub fn de_source_build_information(
                         ?
                     )
                 ;
-                builder = builder.set_source_location(var_9);
+                builder = builder.set_source_location(var_6);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::source_build_information_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

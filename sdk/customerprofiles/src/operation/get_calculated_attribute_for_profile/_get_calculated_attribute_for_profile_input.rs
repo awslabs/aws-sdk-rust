@@ -41,6 +41,7 @@ pub struct GetCalculatedAttributeForProfileInputBuilder {
 }
 impl GetCalculatedAttributeForProfileInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetCalculatedAttributeForProfileInputBuilder {
         &self.domain_name
     }
     /// <p>The unique identifier of a customer profile.</p>
+    /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl GetCalculatedAttributeForProfileInputBuilder {
         &self.profile_id
     }
     /// <p>The unique name of the calculated attribute.</p>
+    /// This field is required.
     pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self

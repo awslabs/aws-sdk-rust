@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAnomalyDetector`](crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The ARN of the detector to delete.</p>
+    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder::set_anomaly_detector_arn):<br>required: **true**<br><p>The ARN of the detector to delete.</p><br>
     /// - On success, responds with [`DeleteAnomalyDetectorOutput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorOutput)
     /// - On failure, responds with [`SdkError<DeleteAnomalyDetectorError>`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError)
     pub fn delete_anomaly_detector(&self) -> crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorFluentBuilder {

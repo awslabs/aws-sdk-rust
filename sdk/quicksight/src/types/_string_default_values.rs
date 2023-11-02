@@ -15,8 +15,10 @@ impl StringDefaultValues {
         self.dynamic_value.as_ref()
     }
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-    pub fn static_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.static_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_values.is_none()`.
+    pub fn static_values(&self) -> &[::std::string::String] {
+        self.static_values.as_deref().unwrap_or_default()
     }
 }
 impl StringDefaultValues {

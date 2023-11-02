@@ -23,8 +23,10 @@ impl ListClustersInput {
         self.created_before.as_ref()
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub fn cluster_states(&self) -> ::std::option::Option<&[crate::types::ClusterState]> {
-        self.cluster_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_states.is_none()`.
+    pub fn cluster_states(&self) -> &[crate::types::ClusterState] {
+        self.cluster_states.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

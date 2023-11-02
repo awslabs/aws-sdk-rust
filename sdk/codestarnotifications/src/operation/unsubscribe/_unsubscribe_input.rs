@@ -42,6 +42,7 @@ pub struct UnsubscribeInputBuilder {
 }
 impl UnsubscribeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UnsubscribeInputBuilder {
         &self.arn
     }
     /// <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
+    /// This field is required.
     pub fn target_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_address = ::std::option::Option::Some(input.into());
         self

@@ -48,6 +48,7 @@ pub struct AssociateDeviceWithPlacementInputBuilder {
 }
 impl AssociateDeviceWithPlacementInputBuilder {
     /// <p>The name of the project containing the placement in which to associate the device.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateDeviceWithPlacementInputBuilder {
         &self.project_name
     }
     /// <p>The name of the placement in which to associate the device.</p>
+    /// This field is required.
     pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AssociateDeviceWithPlacementInputBuilder {
         &self.placement_name
     }
     /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl AssociateDeviceWithPlacementInputBuilder {
         &self.device_id
     }
     /// <p>The device template name to associate with the device ID.</p>
+    /// This field is required.
     pub fn device_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_template_name = ::std::option::Option::Some(input.into());
         self

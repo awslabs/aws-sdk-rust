@@ -22,7 +22,7 @@ impl ResumeContactRecordingInputBuilder {
 }
 /// Fluent builder constructing a request to `ResumeContactRecording`.
 ///
-/// <p>When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording the call or screen.</p>
+/// <p>When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording whatever recording is selected in the flow configuration: call, screen, or both. If only call recording or only screen recording is enabled, then it would resume.</p>
 /// <p>Voice and screen recordings are supported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResumeContactRecordingFluentBuilder {
@@ -93,14 +93,14 @@ impl ResumeContactRecordingFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::resume_contact_recording::ResumeContactRecordingOutput,
             crate::operation::resume_contact_recording::ResumeContactRecordingError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::resume_contact_recording::ResumeContactRecordingError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

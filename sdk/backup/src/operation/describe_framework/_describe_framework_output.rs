@@ -42,8 +42,10 @@ impl DescribeFrameworkOutput {
         self.framework_description.as_deref()
     }
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
-    pub fn framework_controls(&self) -> ::std::option::Option<&[crate::types::FrameworkControl]> {
-        self.framework_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.framework_controls.is_none()`.
+    pub fn framework_controls(&self) -> &[crate::types::FrameworkControl] {
+        self.framework_controls.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

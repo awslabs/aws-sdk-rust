@@ -34,6 +34,7 @@ pub struct DeleteScheduledActionInputBuilder {
 }
 impl DeleteScheduledActionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteScheduledActionInputBuilder {
         &self.auto_scaling_group_name
     }
     /// <p>The name of the action to delete.</p>
+    /// This field is required.
     pub fn scheduled_action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self

@@ -15,8 +15,10 @@ impl GlobalTable {
         self.global_table_name.as_deref()
     }
     /// <p>The Regions where the global table has replicas.</p>
-    pub fn replication_group(&self) -> ::std::option::Option<&[crate::types::Replica]> {
-        self.replication_group.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_group.is_none()`.
+    pub fn replication_group(&self) -> &[crate::types::Replica] {
+        self.replication_group.as_deref().unwrap_or_default()
     }
 }
 impl GlobalTable {

@@ -59,6 +59,7 @@ pub struct CreateEndpointInputBuilder {
 }
 impl CreateEndpointInputBuilder {
     /// <p>The ID of the Outposts. </p>
+    /// This field is required.
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +74,7 @@ impl CreateEndpointInputBuilder {
         &self.outpost_id
     }
     /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
+    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -87,6 +89,7 @@ impl CreateEndpointInputBuilder {
         &self.subnet_id
     }
     /// <p>The ID of the security group to use with the endpoint.</p>
+    /// This field is required.
     pub fn security_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_group_id = ::std::option::Option::Some(input.into());
         self

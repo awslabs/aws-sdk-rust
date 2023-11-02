@@ -9,8 +9,10 @@ pub struct Warnings {
 }
 impl Warnings {
     /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
-    pub fn unrecognized_resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.unrecognized_resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unrecognized_resource_types.is_none()`.
+    pub fn unrecognized_resource_types(&self) -> &[::std::string::String] {
+        self.unrecognized_resource_types.as_deref().unwrap_or_default()
     }
 }
 impl Warnings {

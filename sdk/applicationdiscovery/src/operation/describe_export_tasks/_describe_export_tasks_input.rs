@@ -17,15 +17,19 @@ pub struct DescribeExportTasksInput {
 }
 impl DescribeExportTasksInput {
     /// <p>One or more unique identifiers used to query the status of an export request.</p>
-    pub fn export_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.export_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_ids.is_none()`.
+    pub fn export_ids(&self) -> &[::std::string::String] {
+        self.export_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more filters.</p>
     /// <ul>
     /// <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ExportFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ExportFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

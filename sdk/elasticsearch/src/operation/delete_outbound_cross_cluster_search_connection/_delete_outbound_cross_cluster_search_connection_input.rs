@@ -29,6 +29,7 @@ pub struct DeleteOutboundCrossClusterSearchConnectionInputBuilder {
 }
 impl DeleteOutboundCrossClusterSearchConnectionInputBuilder {
     /// <p>The id of the outbound connection that you want to permanently delete.</p>
+    /// This field is required.
     pub fn cross_cluster_search_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_cluster_search_connection_id = ::std::option::Option::Some(input.into());
         self

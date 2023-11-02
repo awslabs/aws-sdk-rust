@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The status of the CloudFront function.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Contains configuration information about a CloudFront function.</p>
@@ -15,8 +15,9 @@ pub struct FunctionSummary {
 }
 impl FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The status of the CloudFront function.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct FunctionSummaryBuilder {
 }
 impl FunctionSummaryBuilder {
     /// <p>The name of the CloudFront function.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl FunctionSummaryBuilder {
         &self.status
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
+    /// This field is required.
     pub fn function_config(mut self, input: crate::types::FunctionConfig) -> Self {
         self.function_config = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl FunctionSummaryBuilder {
         &self.function_config
     }
     /// <p>Contains metadata about a CloudFront function.</p>
+    /// This field is required.
     pub fn function_metadata(mut self, input: crate::types::FunctionMetadata) -> Self {
         self.function_metadata = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,19 @@ impl FunctionSummaryBuilder {
         &self.function_metadata
     }
     /// Consumes the builder and constructs a [`FunctionSummary`](crate::types::FunctionSummary).
-    pub fn build(self) -> crate::types::FunctionSummary {
-        crate::types::FunctionSummary {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::FunctionSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FunctionSummary {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building FunctionSummary",
+                )
+            })?,
             status: self.status,
             function_config: self.function_config,
             function_metadata: self.function_metadata,
-        }
+        })
     }
 }

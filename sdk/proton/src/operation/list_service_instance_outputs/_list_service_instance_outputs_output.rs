@@ -6,7 +6,7 @@ pub struct ListServiceInstanceOutputsOutput {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub outputs: ::std::vec::Vec<crate::types::Output>,
     _request_id: Option<String>,
 }
 impl ListServiceInstanceOutputsOutput {
@@ -15,8 +15,9 @@ impl ListServiceInstanceOutputsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        use std::ops::Deref;
+        self.outputs.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServiceInstanceOutputsOutput {
@@ -84,11 +85,23 @@ impl ListServiceInstanceOutputsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput).
-    pub fn build(self) -> crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput {
-        crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`outputs`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsOutputBuilder::outputs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput {
             next_token: self.next_token,
-            outputs: self.outputs,
+            outputs: self.outputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "outputs",
+                    "outputs was not specified but it is required when building ListServiceInstanceOutputsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -43,6 +43,7 @@ pub struct AdminEnableUserInputBuilder {
 }
 impl AdminEnableUserInputBuilder {
     /// <p>The user pool ID for the user pool where you want to enable the user.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl AdminEnableUserInputBuilder {
         &self.user_pool_id
     }
     /// <p>The user name of the user you want to enable.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self

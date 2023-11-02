@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDeviceDefinition`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_definition_id(impl Into<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::device_definition_id) / [`set_device_definition_id(Option<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::set_device_definition_id): The ID of the device definition.
-    ///   - [`name(impl Into<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::set_name): The name of the definition.
+    ///   - [`device_definition_id(impl Into<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::device_definition_id) / [`set_device_definition_id(Option<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::set_device_definition_id):<br>required: **true**<br>The ID of the device definition.<br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder::set_name):<br>required: **false**<br>The name of the definition.<br>
     /// - On success, responds with [`UpdateDeviceDefinitionOutput`](crate::operation::update_device_definition::UpdateDeviceDefinitionOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceDefinitionError>`](crate::operation::update_device_definition::UpdateDeviceDefinitionError)
     pub fn update_device_definition(&self) -> crate::operation::update_device_definition::builders::UpdateDeviceDefinitionFluentBuilder {

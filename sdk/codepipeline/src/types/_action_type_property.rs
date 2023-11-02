@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeProperty {
     /// <p>The property name that is displayed to users.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Whether the configuration property is an optional value.</p>
     pub optional: bool,
     /// <p>Whether the configuration property is a key.</p>
@@ -19,8 +19,9 @@ pub struct ActionTypeProperty {
 }
 impl ActionTypeProperty {
     /// <p>The property name that is displayed to users.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Whether the configuration property is an optional value.</p>
     pub fn optional(&self) -> bool {
@@ -63,6 +64,7 @@ pub struct ActionTypePropertyBuilder {
 }
 impl ActionTypePropertyBuilder {
     /// <p>The property name that is displayed to users.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl ActionTypePropertyBuilder {
         &self.name
     }
     /// <p>Whether the configuration property is an optional value.</p>
+    /// This field is required.
     pub fn optional(mut self, input: bool) -> Self {
         self.optional = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl ActionTypePropertyBuilder {
         &self.optional
     }
     /// <p>Whether the configuration property is a key.</p>
+    /// This field is required.
     pub fn key(mut self, input: bool) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -105,6 +109,7 @@ impl ActionTypePropertyBuilder {
         &self.key
     }
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
+    /// This field is required.
     pub fn no_echo(mut self, input: bool) -> Self {
         self.no_echo = ::std::option::Option::Some(input);
         self
@@ -147,14 +152,21 @@ impl ActionTypePropertyBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`ActionTypeProperty`](crate::types::ActionTypeProperty).
-    pub fn build(self) -> crate::types::ActionTypeProperty {
-        crate::types::ActionTypeProperty {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ActionTypePropertyBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeProperty, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionTypeProperty {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ActionTypeProperty",
+                )
+            })?,
             optional: self.optional.unwrap_or_default(),
             key: self.key.unwrap_or_default(),
             no_echo: self.no_echo.unwrap_or_default(),
             queryable: self.queryable.unwrap_or_default(),
             description: self.description,
-        }
+        })
     }
 }

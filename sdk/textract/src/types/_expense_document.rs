@@ -19,16 +19,22 @@ impl ExpenseDocument {
         self.expense_index
     }
     /// <p>Any information found outside of a table by Amazon Textract.</p>
-    pub fn summary_fields(&self) -> ::std::option::Option<&[crate::types::ExpenseField]> {
-        self.summary_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summary_fields.is_none()`.
+    pub fn summary_fields(&self) -> &[crate::types::ExpenseField] {
+        self.summary_fields.as_deref().unwrap_or_default()
     }
     /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
-    pub fn line_item_groups(&self) -> ::std::option::Option<&[crate::types::LineItemGroup]> {
-        self.line_item_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_item_groups.is_none()`.
+    pub fn line_item_groups(&self) -> &[crate::types::LineItemGroup] {
+        self.line_item_groups.as_deref().unwrap_or_default()
     }
     /// <p>This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level recognition of text.</p>
-    pub fn blocks(&self) -> ::std::option::Option<&[crate::types::Block]> {
-        self.blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
+    pub fn blocks(&self) -> &[crate::types::Block] {
+        self.blocks.as_deref().unwrap_or_default()
     }
 }
 impl ExpenseDocument {

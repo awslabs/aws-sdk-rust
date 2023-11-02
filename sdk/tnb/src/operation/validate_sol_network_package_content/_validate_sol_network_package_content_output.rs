@@ -4,45 +4,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentOutput {
     /// <p>Network package ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Network package ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Network service descriptor ID.</p>
-    pub nsd_id: ::std::option::Option<::std::string::String>,
+    pub nsd_id: ::std::string::String,
     /// <p>Network service descriptor name.</p>
-    pub nsd_name: ::std::option::Option<::std::string::String>,
+    pub nsd_name: ::std::string::String,
     /// <p>Network service descriptor version.</p>
-    pub nsd_version: ::std::option::Option<::std::string::String>,
+    pub nsd_version: ::std::string::String,
     /// <p>Function package IDs.</p>
-    pub vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vnf_pkg_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Network package metadata.</p>
     pub metadata: ::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata>,
     _request_id: Option<String>,
 }
 impl ValidateSolNetworkPackageContentOutput {
     /// <p>Network package ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Network package ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Network service descriptor ID.</p>
-    pub fn nsd_id(&self) -> ::std::option::Option<&str> {
-        self.nsd_id.as_deref()
+    pub fn nsd_id(&self) -> &str {
+        use std::ops::Deref;
+        self.nsd_id.deref()
     }
     /// <p>Network service descriptor name.</p>
-    pub fn nsd_name(&self) -> ::std::option::Option<&str> {
-        self.nsd_name.as_deref()
+    pub fn nsd_name(&self) -> &str {
+        use std::ops::Deref;
+        self.nsd_name.deref()
     }
     /// <p>Network service descriptor version.</p>
-    pub fn nsd_version(&self) -> ::std::option::Option<&str> {
-        self.nsd_version.as_deref()
+    pub fn nsd_version(&self) -> &str {
+        use std::ops::Deref;
+        self.nsd_version.deref()
     }
     /// <p>Function package IDs.</p>
-    pub fn vnf_pkg_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.vnf_pkg_ids.as_deref()
+    pub fn vnf_pkg_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.vnf_pkg_ids.deref()
     }
     /// <p>Network package metadata.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::ValidateSolNetworkPackageContentMetadata> {
@@ -76,6 +82,7 @@ pub struct ValidateSolNetworkPackageContentOutputBuilder {
 }
 impl ValidateSolNetworkPackageContentOutputBuilder {
     /// <p>Network package ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +97,7 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         &self.id
     }
     /// <p>Network package ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +112,7 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         &self.arn
     }
     /// <p>Network service descriptor ID.</p>
+    /// This field is required.
     pub fn nsd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +127,7 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         &self.nsd_id
     }
     /// <p>Network service descriptor name.</p>
+    /// This field is required.
     pub fn nsd_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +142,7 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         &self.nsd_name
     }
     /// <p>Network service descriptor version.</p>
+    /// This field is required.
     pub fn nsd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_version = ::std::option::Option::Some(input.into());
         self
@@ -166,6 +177,7 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         &self.vnf_pkg_ids
     }
     /// <p>Network package metadata.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::ValidateSolNetworkPackageContentMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -189,16 +201,60 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ValidateSolNetworkPackageContentOutput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput).
-    pub fn build(self) -> crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput {
-        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput {
-            id: self.id,
-            arn: self.arn,
-            nsd_id: self.nsd_id,
-            nsd_name: self.nsd_name,
-            nsd_version: self.nsd_version,
-            vnf_pkg_ids: self.vnf_pkg_ids,
-            metadata: self.metadata,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::id)
+    /// - [`arn`](crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::arn)
+    /// - [`nsd_id`](crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::nsd_id)
+    /// - [`nsd_name`](crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::nsd_name)
+    /// - [`nsd_version`](crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::nsd_version)
+    /// - [`vnf_pkg_ids`](crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentOutputBuilder::vnf_pkg_ids)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentOutput {
+                id: self.id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "id was not specified but it is required when building ValidateSolNetworkPackageContentOutput",
+                    )
+                })?,
+                arn: self.arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "arn",
+                        "arn was not specified but it is required when building ValidateSolNetworkPackageContentOutput",
+                    )
+                })?,
+                nsd_id: self.nsd_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "nsd_id",
+                        "nsd_id was not specified but it is required when building ValidateSolNetworkPackageContentOutput",
+                    )
+                })?,
+                nsd_name: self.nsd_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "nsd_name",
+                        "nsd_name was not specified but it is required when building ValidateSolNetworkPackageContentOutput",
+                    )
+                })?,
+                nsd_version: self.nsd_version.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "nsd_version",
+                        "nsd_version was not specified but it is required when building ValidateSolNetworkPackageContentOutput",
+                    )
+                })?,
+                vnf_pkg_ids: self.vnf_pkg_ids.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vnf_pkg_ids",
+                        "vnf_pkg_ids was not specified but it is required when building ValidateSolNetworkPackageContentOutput",
+                    )
+                })?,
+                metadata: self.metadata,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

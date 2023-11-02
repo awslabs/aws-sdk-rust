@@ -5,44 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveSource {
     /// <p>The ARN for the live source.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The timestamp that indicates when the live source was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations for the live source.</p>
-    pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub http_package_configurations: ::std::vec::Vec<crate::types::HttpPackageConfiguration>,
     /// <p>The timestamp that indicates when the live source was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name that's used to refer to a live source.</p>
-    pub live_source_name: ::std::option::Option<::std::string::String>,
+    pub live_source_name: ::std::string::String,
     /// <p>The name of the source location.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LiveSource {
     /// <p>The ARN for the live source.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The timestamp that indicates when the live source was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations for the live source.</p>
-    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
+        use std::ops::Deref;
+        self.http_package_configurations.deref()
     }
     /// <p>The timestamp that indicates when the live source was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name that's used to refer to a live source.</p>
-    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
-        self.live_source_name.as_deref()
+    pub fn live_source_name(&self) -> &str {
+        use std::ops::Deref;
+        self.live_source_name.deref()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
     /// <p>The tags assigned to the live source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,6 +74,7 @@ pub struct LiveSourceBuilder {
 }
 impl LiveSourceBuilder {
     /// <p>The ARN for the live source.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +137,7 @@ impl LiveSourceBuilder {
         &self.last_modified_time
     }
     /// <p>The name that's used to refer to a live source.</p>
+    /// This field is required.
     pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +152,7 @@ impl LiveSourceBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -180,15 +187,40 @@ impl LiveSourceBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`LiveSource`](crate::types::LiveSource).
-    pub fn build(self) -> crate::types::LiveSource {
-        crate::types::LiveSource {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::LiveSourceBuilder::arn)
+    /// - [`http_package_configurations`](crate::types::builders::LiveSourceBuilder::http_package_configurations)
+    /// - [`live_source_name`](crate::types::builders::LiveSourceBuilder::live_source_name)
+    /// - [`source_location_name`](crate::types::builders::LiveSourceBuilder::source_location_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::LiveSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LiveSource {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building LiveSource",
+                )
+            })?,
             creation_time: self.creation_time,
-            http_package_configurations: self.http_package_configurations,
+            http_package_configurations: self.http_package_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "http_package_configurations",
+                    "http_package_configurations was not specified but it is required when building LiveSource",
+                )
+            })?,
             last_modified_time: self.last_modified_time,
-            live_source_name: self.live_source_name,
-            source_location_name: self.source_location_name,
+            live_source_name: self.live_source_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "live_source_name",
+                    "live_source_name was not specified but it is required when building LiveSource",
+                )
+            })?,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building LiveSource",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

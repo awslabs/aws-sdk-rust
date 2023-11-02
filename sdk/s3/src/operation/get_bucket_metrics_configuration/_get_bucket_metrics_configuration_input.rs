@@ -41,6 +41,7 @@ pub struct GetBucketMetricsConfigurationInputBuilder {
 }
 impl GetBucketMetricsConfigurationInputBuilder {
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl GetBucketMetricsConfigurationInputBuilder {
         &self.bucket
     }
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

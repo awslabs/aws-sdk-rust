@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFleet`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet(impl Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`fleet(impl Into<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::fleet) / [`set_fleet(Option<String>)`](crate::operation::delete_fleet::builders::DeleteFleetFluentBuilder::set_fleet):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the fleet.</p><br>
     /// - On success, responds with [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput)
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::operation::delete_fleet::DeleteFleetError)
     #[deprecated(

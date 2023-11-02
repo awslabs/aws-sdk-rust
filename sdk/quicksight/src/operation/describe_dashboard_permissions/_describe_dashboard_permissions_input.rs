@@ -34,6 +34,7 @@ pub struct DescribeDashboardPermissionsInputBuilder {
 }
 impl DescribeDashboardPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeDashboardPermissionsInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self

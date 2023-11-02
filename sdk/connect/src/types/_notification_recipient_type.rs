@@ -15,8 +15,10 @@ impl NotificationRecipientType {
         self.user_tags.as_ref()
     }
     /// <p>A list of user IDs.</p>
-    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
+    pub fn user_ids(&self) -> &[::std::string::String] {
+        self.user_ids.as_deref().unwrap_or_default()
     }
 }
 impl NotificationRecipientType {

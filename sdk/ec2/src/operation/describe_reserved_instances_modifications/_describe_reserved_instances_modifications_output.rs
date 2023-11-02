@@ -16,8 +16,10 @@ impl DescribeReservedInstancesModificationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The Reserved Instance modification information.</p>
-    pub fn reserved_instances_modifications(&self) -> ::std::option::Option<&[crate::types::ReservedInstancesModification]> {
-        self.reserved_instances_modifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_modifications.is_none()`.
+    pub fn reserved_instances_modifications(&self) -> &[crate::types::ReservedInstancesModification] {
+        self.reserved_instances_modifications.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeReservedInstancesModificationsOutput {

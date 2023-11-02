@@ -11,8 +11,10 @@ pub struct ListAttributeGroupsOutput {
 }
 impl ListAttributeGroupsOutput {
     /// <p>This list of attribute groups.</p>
-    pub fn attribute_groups(&self) -> ::std::option::Option<&[crate::types::AttributeGroupSummary]> {
-        self.attribute_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_groups.is_none()`.
+    pub fn attribute_groups(&self) -> &[crate::types::AttributeGroupSummary] {
+        self.attribute_groups.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

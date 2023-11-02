@@ -15,8 +15,10 @@ impl RegionsInfo {
         self.primary_region.as_deref()
     }
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    pub fn additional_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.additional_regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_regions.is_none()`.
+    pub fn additional_regions(&self) -> &[::std::string::String] {
+        self.additional_regions.as_deref().unwrap_or_default()
     }
 }
 impl RegionsInfo {

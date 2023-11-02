@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExternalId {
     /// <p>The issuer for an external identifier.</p>
-    pub issuer: ::std::option::Option<::std::string::String>,
+    pub issuer: ::std::string::String,
     /// <p>The identifier issued to this resource by an external identity provider.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl ExternalId {
     /// <p>The issuer for an external identifier.</p>
-    pub fn issuer(&self) -> ::std::option::Option<&str> {
-        self.issuer.as_deref()
+    pub fn issuer(&self) -> &str {
+        use std::ops::Deref;
+        self.issuer.deref()
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ::std::fmt::Debug for ExternalId {
@@ -43,6 +45,7 @@ pub struct ExternalIdBuilder {
 }
 impl ExternalIdBuilder {
     /// <p>The issuer for an external identifier.</p>
+    /// This field is required.
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl ExternalIdBuilder {
         &self.issuer
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl ExternalIdBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ExternalId`](crate::types::ExternalId).
-    pub fn build(self) -> crate::types::ExternalId {
-        crate::types::ExternalId {
-            issuer: self.issuer,
-            id: self.id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`issuer`](crate::types::builders::ExternalIdBuilder::issuer)
+    /// - [`id`](crate::types::builders::ExternalIdBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ExternalId, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ExternalId {
+            issuer: self.issuer.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "issuer",
+                    "issuer was not specified but it is required when building ExternalId",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ExternalId",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for ExternalIdBuilder {

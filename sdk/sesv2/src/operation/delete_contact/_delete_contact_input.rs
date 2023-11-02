@@ -34,6 +34,7 @@ pub struct DeleteContactInputBuilder {
 }
 impl DeleteContactInputBuilder {
     /// <p>The name of the contact list from which the contact should be removed.</p>
+    /// This field is required.
     pub fn contact_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_list_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteContactInputBuilder {
         &self.contact_list_name
     }
     /// <p>The contact's email address.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self

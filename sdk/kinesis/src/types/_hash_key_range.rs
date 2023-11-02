@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
-    pub starting_hash_key: ::std::option::Option<::std::string::String>,
+    pub starting_hash_key: ::std::string::String,
     /// <p>The ending hash key of the hash key range.</p>
-    pub ending_hash_key: ::std::option::Option<::std::string::String>,
+    pub ending_hash_key: ::std::string::String,
 }
 impl HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
-    pub fn starting_hash_key(&self) -> ::std::option::Option<&str> {
-        self.starting_hash_key.as_deref()
+    pub fn starting_hash_key(&self) -> &str {
+        use std::ops::Deref;
+        self.starting_hash_key.deref()
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn ending_hash_key(&self) -> ::std::option::Option<&str> {
-        self.ending_hash_key.as_deref()
+    pub fn ending_hash_key(&self) -> &str {
+        use std::ops::Deref;
+        self.ending_hash_key.deref()
     }
 }
 impl HashKeyRange {
@@ -35,6 +37,7 @@ pub struct HashKeyRangeBuilder {
 }
 impl HashKeyRangeBuilder {
     /// <p>The starting hash key of the hash key range.</p>
+    /// This field is required.
     pub fn starting_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_hash_key = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl HashKeyRangeBuilder {
         &self.starting_hash_key
     }
     /// <p>The ending hash key of the hash key range.</p>
+    /// This field is required.
     pub fn ending_hash_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ending_hash_key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl HashKeyRangeBuilder {
         &self.ending_hash_key
     }
     /// Consumes the builder and constructs a [`HashKeyRange`](crate::types::HashKeyRange).
-    pub fn build(self) -> crate::types::HashKeyRange {
-        crate::types::HashKeyRange {
-            starting_hash_key: self.starting_hash_key,
-            ending_hash_key: self.ending_hash_key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`starting_hash_key`](crate::types::builders::HashKeyRangeBuilder::starting_hash_key)
+    /// - [`ending_hash_key`](crate::types::builders::HashKeyRangeBuilder::ending_hash_key)
+    pub fn build(self) -> ::std::result::Result<crate::types::HashKeyRange, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HashKeyRange {
+            starting_hash_key: self.starting_hash_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "starting_hash_key",
+                    "starting_hash_key was not specified but it is required when building HashKeyRange",
+                )
+            })?,
+            ending_hash_key: self.ending_hash_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ending_hash_key",
+                    "ending_hash_key was not specified but it is required when building HashKeyRange",
+                )
+            })?,
+        })
     }
 }

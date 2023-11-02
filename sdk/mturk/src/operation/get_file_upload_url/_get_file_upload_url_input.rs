@@ -34,6 +34,7 @@ pub struct GetFileUploadUrlInputBuilder {
 }
 impl GetFileUploadUrlInputBuilder {
     /// <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
+    /// This field is required.
     pub fn assignment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assignment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetFileUploadUrlInputBuilder {
         &self.assignment_id
     }
     /// <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
+    /// This field is required.
     pub fn question_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_identifier = ::std::option::Option::Some(input.into());
         self

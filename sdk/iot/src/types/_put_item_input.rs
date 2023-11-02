@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutItemInput {
     /// <p>The table where the message data will be written.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
 }
 impl PutItemInput {
     /// <p>The table where the message data will be written.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
 }
 impl PutItemInput {
@@ -28,6 +29,7 @@ pub struct PutItemInputBuilder {
 }
 impl PutItemInputBuilder {
     /// <p>The table where the message data will be written.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl PutItemInputBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`PutItemInput`](crate::types::PutItemInput).
-    pub fn build(self) -> crate::types::PutItemInput {
-        crate::types::PutItemInput { table_name: self.table_name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`table_name`](crate::types::builders::PutItemInputBuilder::table_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::PutItemInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PutItemInput {
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building PutItemInput",
+                )
+            })?,
+        })
     }
 }

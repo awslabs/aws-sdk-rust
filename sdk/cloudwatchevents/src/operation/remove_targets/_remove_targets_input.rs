@@ -22,8 +22,10 @@ impl RemoveTargetsInput {
         self.event_bus_name.as_deref()
     }
     /// <p>The IDs of the targets to remove from the rule.</p>
-    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
+    pub fn ids(&self) -> &[::std::string::String] {
+        self.ids.as_deref().unwrap_or_default()
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
@@ -48,6 +50,7 @@ pub struct RemoveTargetsInputBuilder {
 }
 impl RemoveTargetsInputBuilder {
     /// <p>The name of the rule.</p>
+    /// This field is required.
     pub fn rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule = ::std::option::Option::Some(input.into());
         self

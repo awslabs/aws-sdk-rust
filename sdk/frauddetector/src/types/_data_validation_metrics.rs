@@ -11,12 +11,16 @@ pub struct DataValidationMetrics {
 }
 impl DataValidationMetrics {
     /// <p>The file-specific model training data validation messages.</p>
-    pub fn file_level_messages(&self) -> ::std::option::Option<&[crate::types::FileValidationMessage]> {
-        self.file_level_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_level_messages.is_none()`.
+    pub fn file_level_messages(&self) -> &[crate::types::FileValidationMessage] {
+        self.file_level_messages.as_deref().unwrap_or_default()
     }
     /// <p>The field-specific model training validation messages.</p>
-    pub fn field_level_messages(&self) -> ::std::option::Option<&[crate::types::FieldValidationMessage]> {
-        self.field_level_messages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_level_messages.is_none()`.
+    pub fn field_level_messages(&self) -> &[crate::types::FieldValidationMessage] {
+        self.field_level_messages.as_deref().unwrap_or_default()
     }
 }
 impl DataValidationMetrics {

@@ -34,6 +34,7 @@ pub struct GetAnomalyGroupInputBuilder {
 }
 impl GetAnomalyGroupInputBuilder {
     /// <p>The ID of the anomaly group.</p>
+    /// This field is required.
     pub fn anomaly_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAnomalyGroupInputBuilder {
         &self.anomaly_group_id
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self

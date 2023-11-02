@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectKinesisSource {
     /// <p>The name of the data source.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub window_size: ::std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
@@ -17,8 +17,9 @@ pub struct DirectKinesisSource {
 }
 impl DirectKinesisSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn window_size(&self) -> ::std::option::Option<i32> {
@@ -56,6 +57,7 @@ pub struct DirectKinesisSourceBuilder {
 }
 impl DirectKinesisSourceBuilder {
     /// <p>The name of the data source.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +128,20 @@ impl DirectKinesisSourceBuilder {
         &self.data_preview_options
     }
     /// Consumes the builder and constructs a [`DirectKinesisSource`](crate::types::DirectKinesisSource).
-    pub fn build(self) -> crate::types::DirectKinesisSource {
-        crate::types::DirectKinesisSource {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::DirectKinesisSourceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DirectKinesisSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DirectKinesisSource {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DirectKinesisSource",
+                )
+            })?,
             window_size: self.window_size,
             detect_schema: self.detect_schema,
             streaming_options: self.streaming_options,
             data_preview_options: self.data_preview_options,
-        }
+        })
     }
 }

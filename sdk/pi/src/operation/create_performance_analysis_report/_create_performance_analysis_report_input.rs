@@ -34,8 +34,10 @@ impl CreatePerformanceAnalysisReportInput {
         self.end_time.as_ref()
     }
     /// <p>The metadata assigned to the analysis report consisting of a key-value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreatePerformanceAnalysisReportInput {
@@ -57,6 +59,7 @@ pub struct CreatePerformanceAnalysisReportInputBuilder {
 }
 impl CreatePerformanceAnalysisReportInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -72,6 +75,7 @@ impl CreatePerformanceAnalysisReportInputBuilder {
     }
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-ADECBTYHKTSAUMUZQYPDS2GW4A</code>.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
@@ -88,6 +92,7 @@ impl CreatePerformanceAnalysisReportInputBuilder {
         &self.identifier
     }
     /// <p>The start time defined for the analysis report.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -102,6 +107,7 @@ impl CreatePerformanceAnalysisReportInputBuilder {
         &self.start_time
     }
     /// <p>The end time defined for the analysis report.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

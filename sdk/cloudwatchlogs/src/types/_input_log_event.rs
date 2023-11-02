@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub timestamp: ::std::option::Option<i64>,
+    pub timestamp: i64,
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<i64> {
+    pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl InputLogEvent {
@@ -35,6 +36,7 @@ pub struct InputLogEventBuilder {
 }
 impl InputLogEventBuilder {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: i64) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl InputLogEventBuilder {
         &self.timestamp
     }
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl InputLogEventBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`InputLogEvent`](crate::types::InputLogEvent).
-    pub fn build(self) -> crate::types::InputLogEvent {
-        crate::types::InputLogEvent {
-            timestamp: self.timestamp,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestamp`](crate::types::builders::InputLogEventBuilder::timestamp)
+    /// - [`message`](crate::types::builders::InputLogEventBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputLogEvent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputLogEvent {
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building InputLogEvent",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building InputLogEvent",
+                )
+            })?,
+        })
     }
 }

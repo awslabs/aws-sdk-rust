@@ -5,11 +5,11 @@ pub fn ser_server_side_encryption_configuration(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.rules {
-        for list_item_2 in var_1 {
+    {
+        for list_item_1 in &input.rules {
             {
                 let inner_writer = scope.start_el("Rule");
-                crate::protocol_serde::shape_server_side_encryption_rule::ser_server_side_encryption_rule(list_item_2, inner_writer)?
+                crate::protocol_serde::shape_server_side_encryption_rule::ser_server_side_encryption_rule(list_item_1, inner_writer)?
             }
         }
     }
@@ -17,6 +17,7 @@ pub fn ser_server_side_encryption_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_server_side_encryption_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ServerSideEncryptionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,24 +26,26 @@ pub fn de_server_side_encryption_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Rule") /* Rules com.amazonaws.s3#ServerSideEncryptionConfiguration$Rules */ =>  {
-                let var_3 =
+                let var_2 =
                     Some(
                         Result::<::std::vec::Vec<crate::types::ServerSideEncryptionRule>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_4 = builder.rules.take().unwrap_or_default();
-                            list_4.push(
+                            let mut list_3 = builder.rules.take().unwrap_or_default();
+                            list_3.push(
                                 crate::protocol_serde::shape_server_side_encryption_rule::de_server_side_encryption_rule(&mut tag)
                                 ?
                             );
-                            list_4
+                            list_3
                         })
                         ?
                     )
                 ;
-                builder = builder.set_rules(var_3);
+                builder = builder.set_rules(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::server_side_encryption_configuration_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

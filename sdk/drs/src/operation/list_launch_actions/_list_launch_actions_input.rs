@@ -48,6 +48,7 @@ pub struct ListLaunchActionsInputBuilder {
 }
 impl ListLaunchActionsInputBuilder {
     /// <p>Launch configuration template Id or Source Server Id</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

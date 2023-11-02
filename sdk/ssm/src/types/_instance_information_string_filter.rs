@@ -14,9 +14,9 @@ pub struct InstanceInformationStringFilter {
     /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
     /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
     /// </ul>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The filter values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl InstanceInformationStringFilter {
     /// <p>The filter key name to describe your managed nodes.</p>
@@ -29,12 +29,14 @@ impl InstanceInformationStringFilter {
     /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
     /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl InstanceInformationStringFilter {
@@ -62,6 +64,7 @@ impl InstanceInformationStringFilterBuilder {
     /// <li> <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing</p> </li>
     /// <li> <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -114,10 +117,23 @@ impl InstanceInformationStringFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`InstanceInformationStringFilter`](crate::types::InstanceInformationStringFilter).
-    pub fn build(self) -> crate::types::InstanceInformationStringFilter {
-        crate::types::InstanceInformationStringFilter {
-            key: self.key,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::InstanceInformationStringFilterBuilder::key)
+    /// - [`values`](crate::types::builders::InstanceInformationStringFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceInformationStringFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceInformationStringFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building InstanceInformationStringFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building InstanceInformationStringFilter",
+                )
+            })?,
+        })
     }
 }

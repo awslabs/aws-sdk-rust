@@ -34,6 +34,7 @@ pub struct CancelComponentDeploymentOutputBuilder {
 }
 impl CancelComponentDeploymentOutputBuilder {
     /// <p>The detailed data of the component with the deployment that is being canceled.</p>
+    /// This field is required.
     pub fn component(mut self, input: crate::types::Component) -> Self {
         self.component = ::std::option::Option::Some(input);
         self

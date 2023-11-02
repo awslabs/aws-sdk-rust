@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    pub calculator_name: ::std::option::Option<::std::string::String>,
+    pub calculator_name: ::std::string::String,
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
     /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
@@ -12,7 +12,7 @@ pub struct CalculateRouteInput {
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub departure_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub departure_position: ::std::vec::Vec<f64>,
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
     /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
@@ -20,7 +20,7 @@ pub struct CalculateRouteInput {
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub destination_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub destination_position: ::std::vec::Vec<f64>,
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
     /// <ul>
     /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
@@ -72,8 +72,9 @@ pub struct CalculateRouteInput {
 }
 impl CalculateRouteInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
-        self.calculator_name.as_deref()
+    pub fn calculator_name(&self) -> &str {
+        use std::ops::Deref;
+        self.calculator_name.deref()
     }
     /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
@@ -82,8 +83,9 @@ impl CalculateRouteInput {
     /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn departure_position(&self) -> ::std::option::Option<&[f64]> {
-        self.departure_position.as_deref()
+    pub fn departure_position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.departure_position.deref()
     }
     /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
@@ -92,8 +94,9 @@ impl CalculateRouteInput {
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn destination_position(&self) -> ::std::option::Option<&[f64]> {
-        self.destination_position.as_deref()
+    pub fn destination_position(&self) -> &[f64] {
+        use std::ops::Deref;
+        self.destination_position.deref()
     }
     /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
     /// <ul>
@@ -104,8 +107,10 @@ impl CalculateRouteInput {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn waypoint_positions(&self) -> ::std::option::Option<&[::std::vec::Vec<f64>]> {
-        self.waypoint_positions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.waypoint_positions.is_none()`.
+    pub fn waypoint_positions(&self) -> &[::std::vec::Vec<f64>] {
+        self.waypoint_positions.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>
     /// <p> <code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>
@@ -206,6 +211,7 @@ pub struct CalculateRouteInputBuilder {
 }
 impl CalculateRouteInputBuilder {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
+    /// This field is required.
     pub fn calculator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculator_name = ::std::option::Option::Some(input.into());
         self
@@ -518,13 +524,32 @@ impl CalculateRouteInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`CalculateRouteInput`](crate::operation::calculate_route::CalculateRouteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`calculator_name`](crate::operation::calculate_route::builders::CalculateRouteInputBuilder::calculator_name)
+    /// - [`departure_position`](crate::operation::calculate_route::builders::CalculateRouteInputBuilder::departure_position)
+    /// - [`destination_position`](crate::operation::calculate_route::builders::CalculateRouteInputBuilder::destination_position)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::calculate_route::CalculateRouteInput {
-            calculator_name: self.calculator_name,
-            departure_position: self.departure_position,
-            destination_position: self.destination_position,
+            calculator_name: self.calculator_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "calculator_name",
+                    "calculator_name was not specified but it is required when building CalculateRouteInput",
+                )
+            })?,
+            departure_position: self.departure_position.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "departure_position",
+                    "departure_position was not specified but it is required when building CalculateRouteInput",
+                )
+            })?,
+            destination_position: self.destination_position.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_position",
+                    "destination_position was not specified but it is required when building CalculateRouteInput",
+                )
+            })?,
             waypoint_positions: self.waypoint_positions,
             travel_mode: self.travel_mode,
             departure_time: self.departure_time,

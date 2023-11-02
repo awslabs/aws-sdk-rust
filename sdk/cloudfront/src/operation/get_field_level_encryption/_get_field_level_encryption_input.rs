@@ -27,6 +27,7 @@ pub struct GetFieldLevelEncryptionInputBuilder {
 }
 impl GetFieldLevelEncryptionInputBuilder {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

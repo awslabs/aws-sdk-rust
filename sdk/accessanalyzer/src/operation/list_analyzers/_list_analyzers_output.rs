@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnalyzersOutput {
     /// <p>The analyzers retrieved.</p>
-    pub analyzers: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzerSummary>>,
+    pub analyzers: ::std::vec::Vec<crate::types::AnalyzerSummary>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAnalyzersOutput {
     /// <p>The analyzers retrieved.</p>
-    pub fn analyzers(&self) -> ::std::option::Option<&[crate::types::AnalyzerSummary]> {
-        self.analyzers.as_deref()
+    pub fn analyzers(&self) -> &[crate::types::AnalyzerSummary] {
+        use std::ops::Deref;
+        self.analyzers.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListAnalyzersOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput).
-    pub fn build(self) -> crate::operation::list_analyzers::ListAnalyzersOutput {
-        crate::operation::list_analyzers::ListAnalyzersOutput {
-            analyzers: self.analyzers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analyzers`](crate::operation::list_analyzers::builders::ListAnalyzersOutputBuilder::analyzers)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_analyzers::ListAnalyzersOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_analyzers::ListAnalyzersOutput {
+            analyzers: self.analyzers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analyzers",
+                    "analyzers was not specified but it is required when building ListAnalyzersOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

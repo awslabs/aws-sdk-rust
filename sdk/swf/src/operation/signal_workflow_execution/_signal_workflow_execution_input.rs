@@ -55,6 +55,7 @@ pub struct SignalWorkflowExecutionInputBuilder {
 }
 impl SignalWorkflowExecutionInputBuilder {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl SignalWorkflowExecutionInputBuilder {
         &self.domain
     }
     /// <p>The workflowId of the workflow execution to signal.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl SignalWorkflowExecutionInputBuilder {
         &self.run_id
     }
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
+    /// This field is required.
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_name = ::std::option::Option::Some(input.into());
         self

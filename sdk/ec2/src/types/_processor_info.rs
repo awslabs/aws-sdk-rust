@@ -13,16 +13,20 @@ pub struct ProcessorInfo {
 }
 impl ProcessorInfo {
     /// <p>The architectures supported by the instance type.</p>
-    pub fn supported_architectures(&self) -> ::std::option::Option<&[crate::types::ArchitectureType]> {
-        self.supported_architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_architectures.is_none()`.
+    pub fn supported_architectures(&self) -> &[crate::types::ArchitectureType] {
+        self.supported_architectures.as_deref().unwrap_or_default()
     }
     /// <p>The speed of the processor, in GHz.</p>
     pub fn sustained_clock_speed_in_ghz(&self) -> ::std::option::Option<f64> {
         self.sustained_clock_speed_in_ghz
     }
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
-    pub fn supported_features(&self) -> ::std::option::Option<&[crate::types::SupportedAdditionalProcessorFeature]> {
-        self.supported_features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_features.is_none()`.
+    pub fn supported_features(&self) -> &[crate::types::SupportedAdditionalProcessorFeature] {
+        self.supported_features.as_deref().unwrap_or_default()
     }
 }
 impl ProcessorInfo {

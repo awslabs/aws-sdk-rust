@@ -27,6 +27,7 @@ pub struct AssociateServiceRoleToAccountInputBuilder {
 }
 impl AssociateServiceRoleToAccountInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

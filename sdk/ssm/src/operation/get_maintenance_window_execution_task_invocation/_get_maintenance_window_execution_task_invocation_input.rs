@@ -43,6 +43,7 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
 }
 impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
     /// <p>The ID of the maintenance window execution for which the task is a part.</p>
+    /// This field is required.
     pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
         &self.window_execution_id
     }
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +73,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
         &self.task_id
     }
     /// <p>The invocation ID to retrieve.</p>
+    /// This field is required.
     pub fn invocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invocation_id = ::std::option::Option::Some(input.into());
         self

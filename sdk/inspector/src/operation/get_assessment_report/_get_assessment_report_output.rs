@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentReportOutput {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
-    pub status: ::std::option::Option<crate::types::ReportStatus>,
+    pub status: crate::types::ReportStatus,
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAssessmentReportOutput {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReportStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::ReportStatus {
+        &self.status
     }
     /// <p>Specifies the URL where you can find the generated assessment report. This parameter is only returned if the report is successfully generated.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
@@ -41,6 +41,7 @@ pub struct GetAssessmentReportOutputBuilder {
 }
 impl GetAssessmentReportOutputBuilder {
     /// <p>Specifies the status of the request to generate an assessment report. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::ReportStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -78,11 +79,21 @@ impl GetAssessmentReportOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetAssessmentReportOutput`](crate::operation::get_assessment_report::GetAssessmentReportOutput).
-    pub fn build(self) -> crate::operation::get_assessment_report::GetAssessmentReportOutput {
-        crate::operation::get_assessment_report::GetAssessmentReportOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_assessment_report::GetAssessmentReportOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetAssessmentReportOutput",
+                )
+            })?,
             url: self.url,
             _request_id: self._request_id,
-        }
+        })
     }
 }

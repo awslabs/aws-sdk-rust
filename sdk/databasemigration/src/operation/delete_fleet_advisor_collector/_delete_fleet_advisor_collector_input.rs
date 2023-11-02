@@ -27,6 +27,7 @@ pub struct DeleteFleetAdvisorCollectorInputBuilder {
 }
 impl DeleteFleetAdvisorCollectorInputBuilder {
     /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
+    /// This field is required.
     pub fn collector_referenced_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collector_referenced_id = ::std::option::Option::Some(input.into());
         self

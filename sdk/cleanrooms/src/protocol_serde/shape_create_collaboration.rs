@@ -61,11 +61,10 @@ pub fn de_create_collaboration_http_error(
                 )
                 .map_err(crate::operation::create_collaboration::CreateCollaborationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_collaboration::CreateCollaborationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_collaboration::CreateCollaborationError::ThrottlingException({
@@ -117,7 +116,7 @@ pub fn de_create_collaboration_http_response(
         output = crate::protocol_serde::shape_create_collaboration::de_create_collaboration(_response_body, output)
             .map_err(crate::operation::create_collaboration::CreateCollaborationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_collaboration_output_correct_errors(output).build()
     })
 }
 

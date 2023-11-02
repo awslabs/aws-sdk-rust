@@ -4,19 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDataQualityResultOutput {
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>>,
+    pub results: ::std::vec::Vec<crate::types::DataQualityResult>,
     /// <p>A list of result IDs for which results were not found.</p>
     pub results_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetDataQualityResultOutput {
     /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::DataQualityResult]> {
-        self.results.as_deref()
+    pub fn results(&self) -> &[crate::types::DataQualityResult] {
+        use std::ops::Deref;
+        self.results.deref()
     }
     /// <p>A list of result IDs for which results were not found.</p>
-    pub fn results_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.results_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_not_found.is_none()`.
+    pub fn results_not_found(&self) -> &[::std::string::String] {
+        self.results_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetDataQualityResultOutput {
@@ -90,11 +93,23 @@ impl BatchGetDataQualityResultOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`BatchGetDataQualityResultOutput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput).
-    pub fn build(self) -> crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
-        crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
-            results: self.results,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`results`](crate::operation::batch_get_data_quality_result::builders::BatchGetDataQualityResultOutputBuilder::results)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
+            results: self.results.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "results",
+                    "results was not specified but it is required when building BatchGetDataQualityResultOutput",
+                )
+            })?,
             results_not_found: self.results_not_found,
             _request_id: self._request_id,
-        }
+        })
     }
 }

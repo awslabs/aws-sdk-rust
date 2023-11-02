@@ -59,6 +59,7 @@ pub struct PutAccountSettingInputBuilder {
 }
 impl PutAccountSettingInputBuilder {
     /// <p>The Amazon ECS resource name for which to modify the account setting. If you specify <code>serviceLongArnFormat</code>, the ARN for your Amazon ECS services is affected. If you specify <code>taskLongArnFormat</code>, the ARN and resource ID for your Amazon ECS tasks is affected. If you specify <code>containerInstanceLongArnFormat</code>, the ARN and resource ID for your Amazon ECS container instances is affected. If you specify <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If you specify <code>containerInsights</code>, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If you specify <code>fargateFIPSMode</code>, Fargate FIPS 140 compliance is affected. If you specify <code>tagResourceAuthorization</code>, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>. If you specify <code>fargateTaskRetirementWaitPeriod</code>, the wait time to retire a Fargate task is affected.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::SettingName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -79,6 +80,7 @@ impl PutAccountSettingInputBuilder {
     /// <li> <p> <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.</p> </li>
     /// <li> <p> <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

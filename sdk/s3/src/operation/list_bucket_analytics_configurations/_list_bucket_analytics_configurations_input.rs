@@ -41,6 +41,7 @@ pub struct ListBucketAnalyticsConfigurationsInputBuilder {
 }
 impl ListBucketAnalyticsConfigurationsInputBuilder {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

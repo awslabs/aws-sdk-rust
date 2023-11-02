@@ -22,8 +22,10 @@ impl CreateCustomRoutingEndpointGroupInput {
         self.endpoint_group_region.as_deref()
     }
     /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
-    pub fn destination_configurations(&self) -> ::std::option::Option<&[crate::types::CustomRoutingDestinationConfiguration]> {
-        self.destination_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_configurations.is_none()`.
+    pub fn destination_configurations(&self) -> &[crate::types::CustomRoutingDestinationConfiguration] {
+        self.destination_configurations.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct CreateCustomRoutingEndpointGroupInputBuilder {
 }
 impl CreateCustomRoutingEndpointGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
+    /// This field is required.
     pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listener_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
         &self.listener_arn
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    /// This field is required.
     pub fn endpoint_group_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_region = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +103,7 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
         &self.destination_configurations
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    /// This field is required.
     pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idempotency_token = ::std::option::Option::Some(input.into());
         self

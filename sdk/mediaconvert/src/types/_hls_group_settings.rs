@@ -71,12 +71,16 @@ pub struct HlsGroupSettings {
 }
 impl HlsGroupSettings {
     /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
-    pub fn ad_markers(&self) -> ::std::option::Option<&[crate::types::HlsAdMarkers]> {
-        self.ad_markers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_markers.is_none()`.
+    pub fn ad_markers(&self) -> &[crate::types::HlsAdMarkers] {
+        self.ad_markers.as_deref().unwrap_or_default()
     }
     /// By default, the service creates one top-level .m3u8 HLS manifest for each HLS output group in your job. This default manifest references every output in the output group. To create additional top-level manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn additional_manifests(&self) -> ::std::option::Option<&[crate::types::HlsAdditionalManifest]> {
-        self.additional_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_manifests.is_none()`.
+    pub fn additional_manifests(&self) -> &[crate::types::HlsAdditionalManifest] {
+        self.additional_manifests.as_deref().unwrap_or_default()
     }
     /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your audio segments.
     pub fn audio_only_header(&self) -> ::std::option::Option<&crate::types::HlsAudioOnlyHeader> {
@@ -87,8 +91,10 @@ impl HlsGroupSettings {
         self.base_url.as_deref()
     }
     /// Language to be used on Caption outputs
-    pub fn caption_language_mappings(&self) -> ::std::option::Option<&[crate::types::HlsCaptionLanguageMapping]> {
-        self.caption_language_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_language_mappings.is_none()`.
+    pub fn caption_language_mappings(&self) -> &[crate::types::HlsCaptionLanguageMapping] {
+        self.caption_language_mappings.as_deref().unwrap_or_default()
     }
     /// Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
     pub fn caption_language_setting(&self) -> ::std::option::Option<&crate::types::HlsCaptionLanguageSetting> {

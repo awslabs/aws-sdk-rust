@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportCertificateOutput {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub certificate_id: ::std::option::Option<::std::string::String>,
+    pub certificate_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ImportCertificateOutput {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
-        self.certificate_id.as_deref()
+    pub fn certificate_id(&self) -> &str {
+        use std::ops::Deref;
+        self.certificate_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ImportCertificateOutput {
@@ -34,6 +35,7 @@ pub struct ImportCertificateOutputBuilder {
 }
 impl ImportCertificateOutputBuilder {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl ImportCertificateOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
-    pub fn build(self) -> crate::operation::import_certificate::ImportCertificateOutput {
-        crate::operation::import_certificate::ImportCertificateOutput {
-            certificate_id: self.certificate_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_id`](crate::operation::import_certificate::builders::ImportCertificateOutputBuilder::certificate_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateOutput {
+            certificate_id: self.certificate_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate_id",
+                    "certificate_id was not specified but it is required when building ImportCertificateOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

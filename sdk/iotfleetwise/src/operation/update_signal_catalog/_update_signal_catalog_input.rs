@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSignalCatalogInput {
     /// <p> The name of the signal catalog to update. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> A brief description of the signal catalog to update.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about nodes to add to the signal catalog. </p>
@@ -16,24 +16,31 @@ pub struct UpdateSignalCatalogInput {
 }
 impl UpdateSignalCatalogInput {
     /// <p> The name of the signal catalog to update. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> A brief description of the signal catalog to update.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of information about nodes to add to the signal catalog. </p>
-    pub fn nodes_to_add(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_add.is_none()`.
+    pub fn nodes_to_add(&self) -> &[crate::types::Node] {
+        self.nodes_to_add.as_deref().unwrap_or_default()
     }
     /// <p> A list of information about nodes to update in the signal catalog. </p>
-    pub fn nodes_to_update(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes_to_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_update.is_none()`.
+    pub fn nodes_to_update(&self) -> &[crate::types::Node] {
+        self.nodes_to_update.as_deref().unwrap_or_default()
     }
     /// <p> A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog. </p>
-    pub fn nodes_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.nodes_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_remove.is_none()`.
+    pub fn nodes_to_remove(&self) -> &[::std::string::String] {
+        self.nodes_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSignalCatalogInput {
@@ -55,6 +62,7 @@ pub struct UpdateSignalCatalogInputBuilder {
 }
 impl UpdateSignalCatalogInputBuilder {
     /// <p> The name of the signal catalog to update. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -143,12 +151,19 @@ impl UpdateSignalCatalogInputBuilder {
         &self.nodes_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_signal_catalog::UpdateSignalCatalogInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateSignalCatalogInput",
+                )
+            })?,
             description: self.description,
             nodes_to_add: self.nodes_to_add,
             nodes_to_update: self.nodes_to_update,

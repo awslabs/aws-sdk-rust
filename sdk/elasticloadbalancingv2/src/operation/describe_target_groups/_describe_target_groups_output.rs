@@ -11,8 +11,10 @@ pub struct DescribeTargetGroupsOutput {
 }
 impl DescribeTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
-    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::TargetGroup]> {
-        self.target_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
+    pub fn target_groups(&self) -> &[crate::types::TargetGroup] {
+        self.target_groups.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

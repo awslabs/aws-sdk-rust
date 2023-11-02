@@ -7,9 +7,9 @@ pub struct SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
     pub sub_domain_setting: ::std::option::Option<crate::types::SubDomainSetting>,
     /// <p> The verified status of the subdomain </p>
-    pub verified: ::std::option::Option<bool>,
+    pub verified: bool,
     /// <p> The DNS record for the subdomain. </p>
-    pub dns_record: ::std::option::Option<::std::string::String>,
+    pub dns_record: ::std::string::String,
 }
 impl SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
@@ -17,12 +17,13 @@ impl SubDomain {
         self.sub_domain_setting.as_ref()
     }
     /// <p> The verified status of the subdomain </p>
-    pub fn verified(&self) -> ::std::option::Option<bool> {
+    pub fn verified(&self) -> bool {
         self.verified
     }
     /// <p> The DNS record for the subdomain. </p>
-    pub fn dns_record(&self) -> ::std::option::Option<&str> {
-        self.dns_record.as_deref()
+    pub fn dns_record(&self) -> &str {
+        use std::ops::Deref;
+        self.dns_record.deref()
     }
 }
 impl SubDomain {
@@ -42,6 +43,7 @@ pub struct SubDomainBuilder {
 }
 impl SubDomainBuilder {
     /// <p> Describes the settings for the subdomain. </p>
+    /// This field is required.
     pub fn sub_domain_setting(mut self, input: crate::types::SubDomainSetting) -> Self {
         self.sub_domain_setting = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl SubDomainBuilder {
         &self.sub_domain_setting
     }
     /// <p> The verified status of the subdomain </p>
+    /// This field is required.
     pub fn verified(mut self, input: bool) -> Self {
         self.verified = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl SubDomainBuilder {
         &self.verified
     }
     /// <p> The DNS record for the subdomain. </p>
+    /// This field is required.
     pub fn dns_record(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_record = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl SubDomainBuilder {
         &self.dns_record
     }
     /// Consumes the builder and constructs a [`SubDomain`](crate::types::SubDomain).
-    pub fn build(self) -> crate::types::SubDomain {
-        crate::types::SubDomain {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`verified`](crate::types::builders::SubDomainBuilder::verified)
+    /// - [`dns_record`](crate::types::builders::SubDomainBuilder::dns_record)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubDomain, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubDomain {
             sub_domain_setting: self.sub_domain_setting,
-            verified: self.verified,
-            dns_record: self.dns_record,
-        }
+            verified: self.verified.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "verified",
+                    "verified was not specified but it is required when building SubDomain",
+                )
+            })?,
+            dns_record: self.dns_record.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dns_record",
+                    "dns_record was not specified but it is required when building SubDomain",
+                )
+            })?,
+        })
     }
 }

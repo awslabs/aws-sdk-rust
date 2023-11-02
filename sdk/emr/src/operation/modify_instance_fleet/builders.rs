@@ -23,7 +23,7 @@ impl ModifyInstanceFleetInputBuilder {
 /// Fluent builder constructing a request to `ModifyInstanceFleet`.
 ///
 /// <p>Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstanceFleetFluentBuilder {
@@ -94,14 +94,14 @@ impl ModifyInstanceFleetFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::modify_instance_fleet::ModifyInstanceFleetOutput,
             crate::operation::modify_instance_fleet::ModifyInstanceFleetError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_fleet::ModifyInstanceFleetError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

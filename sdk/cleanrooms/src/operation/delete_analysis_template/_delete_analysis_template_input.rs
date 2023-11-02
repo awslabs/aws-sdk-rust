@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnalysisTemplateInput {
     /// <p>The identifier for a membership resource.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
     /// <p>The identifier for the analysis template resource.</p>
-    pub analysis_template_identifier: ::std::option::Option<::std::string::String>,
+    pub analysis_template_identifier: ::std::string::String,
 }
 impl DeleteAnalysisTemplateInput {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
     /// <p>The identifier for the analysis template resource.</p>
-    pub fn analysis_template_identifier(&self) -> ::std::option::Option<&str> {
-        self.analysis_template_identifier.as_deref()
+    pub fn analysis_template_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.analysis_template_identifier.deref()
     }
 }
 impl DeleteAnalysisTemplateInput {
@@ -34,6 +36,7 @@ pub struct DeleteAnalysisTemplateInputBuilder {
 }
 impl DeleteAnalysisTemplateInputBuilder {
     /// <p>The identifier for a membership resource.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl DeleteAnalysisTemplateInputBuilder {
         &self.membership_identifier
     }
     /// <p>The identifier for the analysis template resource.</p>
+    /// This field is required.
     pub fn analysis_template_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_template_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,13 +66,26 @@ impl DeleteAnalysisTemplateInputBuilder {
         &self.analysis_template_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAnalysisTemplateInput`](crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`membership_identifier`](crate::operation::delete_analysis_template::builders::DeleteAnalysisTemplateInputBuilder::membership_identifier)
+    /// - [`analysis_template_identifier`](crate::operation::delete_analysis_template::builders::DeleteAnalysisTemplateInputBuilder::analysis_template_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput {
-            membership_identifier: self.membership_identifier,
-            analysis_template_identifier: self.analysis_template_identifier,
+            membership_identifier: self.membership_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_identifier",
+                    "membership_identifier was not specified but it is required when building DeleteAnalysisTemplateInput",
+                )
+            })?,
+            analysis_template_identifier: self.analysis_template_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "analysis_template_identifier",
+                    "analysis_template_identifier was not specified but it is required when building DeleteAnalysisTemplateInput",
+                )
+            })?,
         })
     }
 }

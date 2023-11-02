@@ -59,6 +59,7 @@ pub struct QueryWhatIfForecastInputBuilder {
 }
 impl QueryWhatIfForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
+    /// This field is required.
     pub fn what_if_forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_arn = ::std::option::Option::Some(input.into());
         self

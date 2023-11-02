@@ -44,6 +44,7 @@ pub struct UpdateFirewallConfigInputBuilder {
 }
 impl UpdateFirewallConfigInputBuilder {
     /// <p>The ID of the VPC that the configuration is for.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateFirewallConfigInputBuilder {
     /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
+    /// This field is required.
     pub fn firewall_fail_open(mut self, input: crate::types::FirewallFailOpenStatus) -> Self {
         self.firewall_fail_open = ::std::option::Option::Some(input);
         self

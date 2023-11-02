@@ -27,6 +27,7 @@ pub struct DeleteMlTransformInputBuilder {
 }
 impl DeleteMlTransformInputBuilder {
     /// <p>The unique identifier of the transform to delete.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self

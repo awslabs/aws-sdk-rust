@@ -29,8 +29,10 @@ impl Output {
         self.format.as_ref()
     }
     /// <p>The names of one or more partition columns for the output of the job.</p>
-    pub fn partition_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.partition_columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_columns.is_none()`.
+    pub fn partition_columns(&self) -> &[::std::string::String] {
+        self.partition_columns.as_deref().unwrap_or_default()
     }
     /// <p>The location in Amazon S3 where the job writes its output.</p>
     pub fn location(&self) -> ::std::option::Option<&crate::types::S3Location> {
@@ -118,6 +120,7 @@ impl OutputBuilder {
         &self.partition_columns
     }
     /// <p>The location in Amazon S3 where the job writes its output.</p>
+    /// This field is required.
     pub fn location(mut self, input: crate::types::S3Location) -> Self {
         self.location = ::std::option::Option::Some(input);
         self

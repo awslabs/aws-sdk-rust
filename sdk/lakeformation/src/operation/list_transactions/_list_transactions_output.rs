@@ -11,8 +11,10 @@ pub struct ListTransactionsOutput {
 }
 impl ListTransactionsOutput {
     /// <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
-    pub fn transactions(&self) -> ::std::option::Option<&[crate::types::TransactionDescription]> {
-        self.transactions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transactions.is_none()`.
+    pub fn transactions(&self) -> &[crate::types::TransactionDescription] {
+        self.transactions.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token indicating whether additional data is available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

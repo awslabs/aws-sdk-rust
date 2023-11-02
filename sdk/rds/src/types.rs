@@ -211,6 +211,12 @@ pub use crate::types::_option_group_option_setting::OptionGroupOptionSetting;
 
 pub use crate::types::_minimum_engine_version_per_allowed_value::MinimumEngineVersionPerAllowedValue;
 
+pub use crate::types::_integration::Integration;
+
+pub use crate::types::_integration_error::IntegrationError;
+
+pub use crate::types::_integration_status::IntegrationStatus;
+
 pub use crate::types::_export_task::ExportTask;
 
 pub use crate::types::_event::Event;
@@ -386,6 +392,12 @@ mod _global_cluster_member;
 mod _global_cluster_member_synchronization_status;
 
 mod _iam_auth_mode;
+
+mod _integration;
+
+mod _integration_error;
+
+mod _integration_status;
 
 mod _ip_range;
 

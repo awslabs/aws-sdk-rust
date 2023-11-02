@@ -9,8 +9,10 @@ pub struct BatchScheduleActionCreateResult {
 }
 impl BatchScheduleActionCreateResult {
     /// List of actions that have been created in the schedule.
-    pub fn schedule_actions(&self) -> ::std::option::Option<&[crate::types::ScheduleAction]> {
-        self.schedule_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_actions.is_none()`.
+    pub fn schedule_actions(&self) -> &[crate::types::ScheduleAction] {
+        self.schedule_actions.as_deref().unwrap_or_default()
     }
 }
 impl BatchScheduleActionCreateResult {

@@ -34,8 +34,10 @@ impl CreateUserInput {
         self.engine.as_deref()
     }
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
-    pub fn passwords(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.passwords.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.passwords.is_none()`.
+    pub fn passwords(&self) -> &[::std::string::String] {
+        self.passwords.as_deref().unwrap_or_default()
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(&self) -> ::std::option::Option<&str> {
@@ -46,8 +48,10 @@ impl CreateUserInput {
         self.no_password_required
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies how to authenticate the user.</p>
     pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
@@ -76,6 +80,7 @@ pub struct CreateUserInputBuilder {
 }
 impl CreateUserInputBuilder {
     /// <p>The ID of the user.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +95,7 @@ impl CreateUserInputBuilder {
         &self.user_id
     }
     /// <p>The username of the user.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl CreateUserInputBuilder {
         &self.user_name
     }
     /// <p>The current supported value is Redis. </p>
+    /// This field is required.
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +145,7 @@ impl CreateUserInputBuilder {
         &self.passwords
     }
     /// <p>Access permissions string used for this user.</p>
+    /// This field is required.
     pub fn access_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_string = ::std::option::Option::Some(input.into());
         self

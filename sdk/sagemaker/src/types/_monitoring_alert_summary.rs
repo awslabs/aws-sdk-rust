@@ -70,6 +70,7 @@ pub struct MonitoringAlertSummaryBuilder {
 }
 impl MonitoringAlertSummaryBuilder {
     /// <p>The name of a monitoring alert.</p>
+    /// This field is required.
     pub fn monitoring_alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitoring_alert_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl MonitoringAlertSummaryBuilder {
         &self.monitoring_alert_name
     }
     /// <p>A timestamp that indicates when a monitor alert was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -98,6 +100,7 @@ impl MonitoringAlertSummaryBuilder {
         &self.creation_time
     }
     /// <p>A timestamp that indicates when a monitor alert was last updated.</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +115,7 @@ impl MonitoringAlertSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The current status of an alert.</p>
+    /// This field is required.
     pub fn alert_status(mut self, input: crate::types::MonitoringAlertStatus) -> Self {
         self.alert_status = ::std::option::Option::Some(input);
         self
@@ -126,6 +130,7 @@ impl MonitoringAlertSummaryBuilder {
         &self.alert_status
     }
     /// <p>Within <code>EvaluationPeriod</code>, how many execution failures will raise an alert.</p>
+    /// This field is required.
     pub fn datapoints_to_alert(mut self, input: i32) -> Self {
         self.datapoints_to_alert = ::std::option::Option::Some(input);
         self
@@ -140,6 +145,7 @@ impl MonitoringAlertSummaryBuilder {
         &self.datapoints_to_alert
     }
     /// <p>The number of most recent monitoring executions to consider when evaluating alert status.</p>
+    /// This field is required.
     pub fn evaluation_period(mut self, input: i32) -> Self {
         self.evaluation_period = ::std::option::Option::Some(input);
         self
@@ -154,6 +160,7 @@ impl MonitoringAlertSummaryBuilder {
         &self.evaluation_period
     }
     /// <p>A list of alert actions taken in response to an alert going into <code>InAlert</code> status.</p>
+    /// This field is required.
     pub fn actions(mut self, input: crate::types::MonitoringAlertActions) -> Self {
         self.actions = ::std::option::Option::Some(input);
         self

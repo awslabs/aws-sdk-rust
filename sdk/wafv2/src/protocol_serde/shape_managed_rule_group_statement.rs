@@ -3,56 +3,56 @@ pub fn ser_managed_rule_group_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManagedRuleGroupStatement,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vendor_name {
-        object.key("VendorName").string(var_1.as_str());
+    {
+        object.key("VendorName").string(input.vendor_name.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("Name").string(var_2.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_3) = &input.version {
-        object.key("Version").string(var_3.as_str());
+    if let Some(var_1) = &input.version {
+        object.key("Version").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.excluded_rules {
-        let mut array_5 = object.key("ExcludedRules").start_array();
-        for item_6 in var_4 {
+    if let Some(var_2) = &input.excluded_rules {
+        let mut array_3 = object.key("ExcludedRules").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_excluded_rule::ser_excluded_rule(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_excluded_rule::ser_excluded_rule(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_5.finish();
+        array_3.finish();
     }
-    if let Some(var_8) = &input.scope_down_statement {
+    if let Some(var_6) = &input.scope_down_statement {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("ScopeDownStatement").start_object();
-        crate::protocol_serde::shape_statement::ser_statement(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_7 = object.key("ScopeDownStatement").start_object();
+        crate::protocol_serde::shape_statement::ser_statement(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_10) = &input.managed_rule_group_configs {
-        let mut array_11 = object.key("ManagedRuleGroupConfigs").start_array();
-        for item_12 in var_10 {
+    if let Some(var_8) = &input.managed_rule_group_configs {
+        let mut array_9 = object.key("ManagedRuleGroupConfigs").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_managed_rule_group_config::ser_managed_rule_group_config(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_managed_rule_group_config::ser_managed_rule_group_config(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_11.finish();
+        array_9.finish();
     }
-    if let Some(var_14) = &input.rule_action_overrides {
-        let mut array_15 = object.key("RuleActionOverrides").start_array();
-        for item_16 in var_14 {
+    if let Some(var_12) = &input.rule_action_overrides {
+        let mut array_13 = object.key("RuleActionOverrides").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_rule_action_override::ser_rule_action_override(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_rule_action_override::ser_rule_action_override(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_15.finish();
+        array_13.finish();
     }
     Ok(())
 }
@@ -118,7 +118,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::managed_rule_group_statement_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -14,8 +14,10 @@ impl PutResourceSetInput {
         self.resource_set.as_ref()
     }
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl PutResourceSetInput {
@@ -34,6 +36,7 @@ pub struct PutResourceSetInputBuilder {
 }
 impl PutResourceSetInputBuilder {
     /// <p>Details about the resource set to be created or updated.&gt;</p>
+    /// This field is required.
     pub fn resource_set(mut self, input: crate::types::ResourceSet) -> Self {
         self.resource_set = ::std::option::Option::Some(input);
         self

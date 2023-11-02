@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepInput {
     /// <p>The name of the step.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ID of the step group.</p>
-    pub step_group_id: ::std::option::Option<::std::string::String>,
+    pub step_group_id: ::std::string::String,
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub step_action_type: ::std::option::Option<crate::types::StepActionType>,
+    pub step_action_type: crate::types::StepActionType,
     /// <p>The description of the step.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The custom script to run tests on source or target environments.</p>
@@ -26,20 +26,23 @@ pub struct CreateWorkflowStepInput {
 }
 impl CreateWorkflowStepInput {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
-        self.step_group_id.as_deref()
+    pub fn step_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.step_group_id.deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> ::std::option::Option<&crate::types::StepActionType> {
-        self.step_action_type.as_ref()
+    pub fn step_action_type(&self) -> &crate::types::StepActionType {
+        &self.step_action_type
     }
     /// <p>The description of the step.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -50,20 +53,28 @@ impl CreateWorkflowStepInput {
         self.workflow_step_automation_configuration.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_target(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.step_target.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_target.is_none()`.
+    pub fn step_target(&self) -> &[::std::string::String] {
+        self.step_target.as_deref().unwrap_or_default()
     }
     /// <p>The key value pairs added for the expected output.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::WorkflowStepOutput]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::WorkflowStepOutput] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.previous.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
+    pub fn previous(&self) -> &[::std::string::String] {
+        self.previous.as_deref().unwrap_or_default()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.next.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[::std::string::String] {
+        self.next.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkflowStepInput {
@@ -90,6 +101,7 @@ pub struct CreateWorkflowStepInputBuilder {
 }
 impl CreateWorkflowStepInputBuilder {
     /// <p>The name of the step.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +116,7 @@ impl CreateWorkflowStepInputBuilder {
         &self.name
     }
     /// <p>The ID of the step group.</p>
+    /// This field is required.
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +131,7 @@ impl CreateWorkflowStepInputBuilder {
         &self.step_group_id
     }
     /// <p>The ID of the migration workflow.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +146,7 @@ impl CreateWorkflowStepInputBuilder {
         &self.workflow_id
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
+    /// This field is required.
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
         self.step_action_type = ::std::option::Option::Some(input);
         self
@@ -257,14 +272,39 @@ impl CreateWorkflowStepInputBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`CreateWorkflowStepInput`](crate::operation::create_workflow_step::CreateWorkflowStepInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::name)
+    /// - [`step_group_id`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::step_group_id)
+    /// - [`workflow_id`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::workflow_id)
+    /// - [`step_action_type`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::step_action_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_workflow_step::CreateWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow_step::CreateWorkflowStepInput {
-            name: self.name,
-            step_group_id: self.step_group_id,
-            workflow_id: self.workflow_id,
-            step_action_type: self.step_action_type,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateWorkflowStepInput",
+                )
+            })?,
+            step_group_id: self.step_group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "step_group_id",
+                    "step_group_id was not specified but it is required when building CreateWorkflowStepInput",
+                )
+            })?,
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building CreateWorkflowStepInput",
+                )
+            })?,
+            step_action_type: self.step_action_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "step_action_type",
+                    "step_action_type was not specified but it is required when building CreateWorkflowStepInput",
+                )
+            })?,
             description: self.description,
             workflow_step_automation_configuration: self.workflow_step_automation_configuration,
             step_target: self.step_target,

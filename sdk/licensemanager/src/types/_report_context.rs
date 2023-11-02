@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub license_configuration_arns: ::std::vec::Vec<::std::string::String>,
 }
 impl ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn license_configuration_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.license_configuration_arns.as_deref()
+    pub fn license_configuration_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.license_configuration_arns.deref()
     }
 }
 impl ReportContext {
@@ -48,9 +49,16 @@ impl ReportContextBuilder {
         &self.license_configuration_arns
     }
     /// Consumes the builder and constructs a [`ReportContext`](crate::types::ReportContext).
-    pub fn build(self) -> crate::types::ReportContext {
-        crate::types::ReportContext {
-            license_configuration_arns: self.license_configuration_arns,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`license_configuration_arns`](crate::types::builders::ReportContextBuilder::license_configuration_arns)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportContext, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReportContext {
+            license_configuration_arns: self.license_configuration_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "license_configuration_arns",
+                    "license_configuration_arns was not specified but it is required when building ReportContext",
+                )
+            })?,
+        })
     }
 }

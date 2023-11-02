@@ -11,12 +11,16 @@ pub struct BatchGetCodeSnippetOutput {
 }
 impl BatchGetCodeSnippetOutput {
     /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
-    pub fn code_snippet_results(&self) -> ::std::option::Option<&[crate::types::CodeSnippetResult]> {
-        self.code_snippet_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_snippet_results.is_none()`.
+    pub fn code_snippet_results(&self) -> &[crate::types::CodeSnippetResult] {
+        self.code_snippet_results.as_deref().unwrap_or_default()
     }
     /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::CodeSnippetError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::CodeSnippetError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetCodeSnippetOutput {

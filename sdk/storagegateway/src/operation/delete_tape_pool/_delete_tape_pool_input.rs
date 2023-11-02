@@ -27,6 +27,7 @@ pub struct DeleteTapePoolInputBuilder {
 }
 impl DeleteTapePoolInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
+    /// This field is required.
     pub fn pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_arn = ::std::option::Option::Some(input.into());
         self

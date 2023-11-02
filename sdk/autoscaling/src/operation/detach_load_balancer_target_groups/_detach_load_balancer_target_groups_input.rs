@@ -14,8 +14,10 @@ impl DetachLoadBalancerTargetGroupsInput {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn target_group_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_group_ar_ns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_ar_ns.is_none()`.
+    pub fn target_group_ar_ns(&self) -> &[::std::string::String] {
+        self.target_group_ar_ns.as_deref().unwrap_or_default()
     }
 }
 impl DetachLoadBalancerTargetGroupsInput {
@@ -34,6 +36,7 @@ pub struct DetachLoadBalancerTargetGroupsInputBuilder {
 }
 impl DetachLoadBalancerTargetGroupsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
+    /// This field is required.
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self

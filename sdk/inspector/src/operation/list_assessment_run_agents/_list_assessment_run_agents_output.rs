@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentRunAgentsOutput {
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
-    pub assessment_run_agents: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunAgent>>,
+    pub assessment_run_agents: ::std::vec::Vec<crate::types::AssessmentRunAgent>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssessmentRunAgentsOutput {
     /// <p>A list of ARNs that specifies the agents returned by the action.</p>
-    pub fn assessment_run_agents(&self) -> ::std::option::Option<&[crate::types::AssessmentRunAgent]> {
-        self.assessment_run_agents.as_deref()
+    pub fn assessment_run_agents(&self) -> &[crate::types::AssessmentRunAgent] {
+        use std::ops::Deref;
+        self.assessment_run_agents.deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListAssessmentRunAgentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentRunAgentsOutput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput).
-    pub fn build(self) -> crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput {
-        crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput {
-            assessment_run_agents: self.assessment_run_agents,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_run_agents`](crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsOutputBuilder::assessment_run_agents)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput {
+            assessment_run_agents: self.assessment_run_agents.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assessment_run_agents",
+                    "assessment_run_agents was not specified but it is required when building ListAssessmentRunAgentsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

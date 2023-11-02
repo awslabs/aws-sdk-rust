@@ -34,6 +34,7 @@ pub struct PutAppInstanceRetentionSettingsInputBuilder {
 }
 impl PutAppInstanceRetentionSettingsInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutAppInstanceRetentionSettingsInputBuilder {
         &self.app_instance_arn
     }
     /// <p>The time in days to retain data. Data type: number.</p>
+    /// This field is required.
     pub fn app_instance_retention_settings(mut self, input: crate::types::AppInstanceRetentionSettings) -> Self {
         self.app_instance_retention_settings = ::std::option::Option::Some(input);
         self

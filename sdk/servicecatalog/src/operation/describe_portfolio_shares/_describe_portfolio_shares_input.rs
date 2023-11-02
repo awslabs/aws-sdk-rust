@@ -56,6 +56,7 @@ pub struct DescribePortfolioSharesInputBuilder {
 }
 impl DescribePortfolioSharesInputBuilder {
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
+    /// This field is required.
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
         self
@@ -74,6 +75,7 @@ impl DescribePortfolioSharesInputBuilder {
     /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
     /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DescribePortfolioShareType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

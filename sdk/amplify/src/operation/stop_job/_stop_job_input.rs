@@ -42,6 +42,7 @@ pub struct StopJobInputBuilder {
 }
 impl StopJobInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl StopJobInputBuilder {
         &self.app_id
     }
     /// <p> The name for the branch, for the job. </p>
+    /// This field is required.
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl StopJobInputBuilder {
         &self.branch_name
     }
     /// <p> The unique id for the job. </p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

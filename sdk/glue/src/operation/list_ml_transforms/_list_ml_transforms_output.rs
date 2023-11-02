@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMlTransformsOutput {
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    pub transform_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub transform_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMlTransformsOutput {
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    pub fn transform_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.transform_ids.as_deref()
+    pub fn transform_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.transform_ids.deref()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListMlTransformsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMlTransformsOutput`](crate::operation::list_ml_transforms::ListMlTransformsOutput).
-    pub fn build(self) -> crate::operation::list_ml_transforms::ListMlTransformsOutput {
-        crate::operation::list_ml_transforms::ListMlTransformsOutput {
-            transform_ids: self.transform_ids,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transform_ids`](crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder::transform_ids)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_ml_transforms::ListMlTransformsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_ml_transforms::ListMlTransformsOutput {
+            transform_ids: self.transform_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transform_ids",
+                    "transform_ids was not specified but it is required when building ListMlTransformsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

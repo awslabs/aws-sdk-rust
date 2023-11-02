@@ -34,6 +34,7 @@ pub struct TagInputBuilder {
 }
 impl TagInputBuilder {
     /// <p>The ARN of the resource group to which to add tags.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

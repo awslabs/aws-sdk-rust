@@ -21,12 +21,16 @@ impl ModifyOptionGroupInput {
         self.option_group_name.as_deref()
     }
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    pub fn options_to_include(&self) -> ::std::option::Option<&[crate::types::OptionConfiguration]> {
-        self.options_to_include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_include.is_none()`.
+    pub fn options_to_include(&self) -> &[crate::types::OptionConfiguration] {
+        self.options_to_include.as_deref().unwrap_or_default()
     }
     /// <p>Options in this list are removed from the option group.</p>
-    pub fn options_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.options_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_remove.is_none()`.
+    pub fn options_to_remove(&self) -> &[::std::string::String] {
+        self.options_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
@@ -52,6 +56,7 @@ pub struct ModifyOptionGroupInputBuilder {
 impl ModifyOptionGroupInputBuilder {
     /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+    /// This field is required.
     pub fn option_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_group_name = ::std::option::Option::Some(input.into());
         self

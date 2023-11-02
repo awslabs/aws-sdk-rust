@@ -15,8 +15,10 @@ impl ValidationError {
         self.id.as_deref()
     }
     /// <p>A description of the validation error.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[::std::string::String] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ValidationError {

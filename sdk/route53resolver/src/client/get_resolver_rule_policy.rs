@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResolverRulePolicy`](crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder::set_arn): <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyFluentBuilder::set_arn):<br>required: **true**<br><p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p><br>
     /// - On success, responds with [`GetResolverRulePolicyOutput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput) with field(s):
     ///   - [`resolver_rule_policy(Option<String>)`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput::resolver_rule_policy): <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
     /// - On failure, responds with [`SdkError<GetResolverRulePolicyError>`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError)

@@ -40,6 +40,7 @@ pub struct PutContactInformationInputBuilder {
 }
 impl PutContactInformationInputBuilder {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn contact_information(mut self, input: crate::types::ContactInformation) -> Self {
         self.contact_information = ::std::option::Option::Some(input);
         self

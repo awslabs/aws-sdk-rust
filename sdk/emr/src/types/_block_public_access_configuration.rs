@@ -23,16 +23,20 @@ impl BlockPublicAccessConfiguration {
     }
     /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
     /// <p>By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
-    pub fn permitted_public_security_group_rule_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.permitted_public_security_group_rule_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permitted_public_security_group_rule_ranges.is_none()`.
+    pub fn permitted_public_security_group_rule_ranges(&self) -> &[crate::types::PortRange] {
+        self.permitted_public_security_group_rule_ranges.as_deref().unwrap_or_default()
     }
     /// <p>The classification within a configuration.</p>
     pub fn classification(&self) -> ::std::option::Option<&str> {
         self.classification.as_deref()
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>A set of properties specified within a configuration classification.</p>
     pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -58,6 +62,7 @@ pub struct BlockPublicAccessConfigurationBuilder {
 }
 impl BlockPublicAccessConfigurationBuilder {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
+    /// This field is required.
     pub fn block_public_security_group_rules(mut self, input: bool) -> Self {
         self.block_public_security_group_rules = ::std::option::Option::Some(input);
         self

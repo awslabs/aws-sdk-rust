@@ -45,8 +45,10 @@ impl CreateDistributionInput {
         self.cache_behavior_settings.as_ref()
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn cache_behaviors(&self) -> ::std::option::Option<&[crate::types::CacheBehaviorPerPath]> {
-        self.cache_behaviors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_behaviors.is_none()`.
+    pub fn cache_behaviors(&self) -> &[crate::types::CacheBehaviorPerPath] {
+        self.cache_behaviors.as_deref().unwrap_or_default()
     }
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
@@ -62,8 +64,10 @@ impl CreateDistributionInput {
     }
     /// <p>The tag keys and optional values to add to the distribution during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDistributionInput {
@@ -88,6 +92,7 @@ pub struct CreateDistributionInputBuilder {
 }
 impl CreateDistributionInputBuilder {
     /// <p>The name for the distribution.</p>
+    /// This field is required.
     pub fn distribution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_name = ::std::option::Option::Some(input.into());
         self
@@ -103,6 +108,7 @@ impl CreateDistributionInputBuilder {
     }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
+    /// This field is required.
     pub fn origin(mut self, input: crate::types::InputOrigin) -> Self {
         self.origin = ::std::option::Option::Some(input);
         self
@@ -119,6 +125,7 @@ impl CreateDistributionInputBuilder {
         &self.origin
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
+    /// This field is required.
     pub fn default_cache_behavior(mut self, input: crate::types::CacheBehavior) -> Self {
         self.default_cache_behavior = ::std::option::Option::Some(input);
         self
@@ -169,6 +176,7 @@ impl CreateDistributionInputBuilder {
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self

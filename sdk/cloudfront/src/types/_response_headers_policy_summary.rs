@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub r#type: ::std::option::Option<crate::types::ResponseHeadersPolicyType>,
+    pub r#type: crate::types::ResponseHeadersPolicyType,
     /// <p>The response headers policy.</p>
     pub response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
 }
 impl ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ResponseHeadersPolicyType {
+        &self.r#type
     }
     /// <p>The response headers policy.</p>
     pub fn response_headers_policy(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
@@ -35,6 +35,7 @@ pub struct ResponseHeadersPolicySummaryBuilder {
 }
 impl ResponseHeadersPolicySummaryBuilder {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ResponseHeadersPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl ResponseHeadersPolicySummaryBuilder {
         &self.r#type
     }
     /// <p>The response headers policy.</p>
+    /// This field is required.
     pub fn response_headers_policy(mut self, input: crate::types::ResponseHeadersPolicy) -> Self {
         self.response_headers_policy = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,17 @@ impl ResponseHeadersPolicySummaryBuilder {
         &self.response_headers_policy
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicySummary`](crate::types::ResponseHeadersPolicySummary).
-    pub fn build(self) -> crate::types::ResponseHeadersPolicySummary {
-        crate::types::ResponseHeadersPolicySummary {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ResponseHeadersPolicySummaryBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicySummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicySummary {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ResponseHeadersPolicySummary",
+                )
+            })?,
             response_headers_policy: self.response_headers_policy,
-        }
+        })
     }
 }

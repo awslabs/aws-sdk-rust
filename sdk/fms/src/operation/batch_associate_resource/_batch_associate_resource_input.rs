@@ -14,8 +14,10 @@ impl BatchAssociateResourceInput {
         self.resource_set_identifier.as_deref()
     }
     /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
-    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[::std::string::String] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl BatchAssociateResourceInput {
@@ -34,6 +36,7 @@ pub struct BatchAssociateResourceInputBuilder {
 }
 impl BatchAssociateResourceInputBuilder {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    /// This field is required.
     pub fn resource_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_identifier = ::std::option::Option::Some(input.into());
         self

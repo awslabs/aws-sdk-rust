@@ -85,12 +85,16 @@ impl Application {
         self.icon_s3_location.as_ref()
     }
     /// <p>The platforms on which the application can run.</p>
-    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::PlatformType]> {
-        self.platforms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
+    pub fn platforms(&self) -> &[crate::types::PlatformType] {
+        self.platforms.as_deref().unwrap_or_default()
     }
     /// <p>The instance families for the application.</p>
-    pub fn instance_families(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_families.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_families.is_none()`.
+    pub fn instance_families(&self) -> &[::std::string::String] {
+        self.instance_families.as_deref().unwrap_or_default()
     }
     /// <p>The time at which the application was created within the app block.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

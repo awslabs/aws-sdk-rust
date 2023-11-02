@@ -3,14 +3,14 @@ pub fn ser_transform_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TransformParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.transform_type {
-        object.key("TransformType").string(var_1.as_str());
+    {
+        object.key("TransformType").string(input.transform_type.as_str());
     }
-    if let Some(var_2) = &input.find_matches_parameters {
+    if let Some(var_1) = &input.find_matches_parameters {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("FindMatchesParameters").start_object();
-        crate::protocol_serde::shape_find_matches_parameters::ser_find_matches_parameters(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("FindMatchesParameters").start_object();
+        crate::protocol_serde::shape_find_matches_parameters::ser_find_matches_parameters(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::transform_parameters_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

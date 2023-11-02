@@ -8,8 +8,10 @@ pub struct BatchUpdateAutomationRulesInput {
 }
 impl BatchUpdateAutomationRulesInput {
     /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
-    pub fn update_automation_rules_request_items(&self) -> ::std::option::Option<&[crate::types::UpdateAutomationRulesRequestItem]> {
-        self.update_automation_rules_request_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_automation_rules_request_items.is_none()`.
+    pub fn update_automation_rules_request_items(&self) -> &[crate::types::UpdateAutomationRulesRequestItem] {
+        self.update_automation_rules_request_items.as_deref().unwrap_or_default()
     }
 }
 impl BatchUpdateAutomationRulesInput {

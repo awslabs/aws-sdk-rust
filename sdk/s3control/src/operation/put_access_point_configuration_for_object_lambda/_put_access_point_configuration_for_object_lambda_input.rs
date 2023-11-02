@@ -43,6 +43,7 @@ pub struct PutAccessPointConfigurationForObjectLambdaInputBuilder {
 }
 impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
         &self.account_id
     }
     /// <p>The name of the Object Lambda Access Point.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +73,7 @@ impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
         &self.name
     }
     /// <p>Object Lambda Access Point configuration document.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::ObjectLambdaConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

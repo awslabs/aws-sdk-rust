@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to update.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
@@ -16,8 +16,9 @@ pub struct UpdateEnvironmentAccountConnectionInput {
 }
 impl UpdateEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with the environment account connection to update.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -52,6 +53,7 @@ pub struct UpdateEnvironmentAccountConnectionInputBuilder {
 }
 impl UpdateEnvironmentAccountConnectionInputBuilder {
     /// <p>The ID of the environment account connection to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -114,6 +116,8 @@ impl UpdateEnvironmentAccountConnectionInputBuilder {
         &self.codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentAccountConnectionInput`](crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -122,7 +126,12 @@ impl UpdateEnvironmentAccountConnectionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionInput {
-                id: self.id,
+                id: self.id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "id was not specified but it is required when building UpdateEnvironmentAccountConnectionInput",
+                    )
+                })?,
                 role_arn: self.role_arn,
                 component_role_arn: self.component_role_arn,
                 codebuild_role_arn: self.codebuild_role_arn,

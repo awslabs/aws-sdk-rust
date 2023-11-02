@@ -951,6 +951,8 @@ pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequ
 
 pub use crate::types::_architecture_type::ArchitectureType;
 
+pub use crate::types::_security_group_for_vpc::SecurityGroupForVpc;
+
 pub use crate::types::_target_reservation_value::TargetReservationValue;
 
 pub use crate::types::_target_configuration::TargetConfiguration;
@@ -3558,6 +3560,8 @@ mod _scheduled_instances_private_ip_address_config;
 mod _scope;
 
 mod _security_group;
+
+mod _security_group_for_vpc;
 
 mod _security_group_identifier;
 

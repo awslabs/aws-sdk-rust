@@ -27,6 +27,7 @@ pub struct DeleteAssessmentTargetInputBuilder {
 }
 impl DeleteAssessmentTargetInputBuilder {
     /// <p>The ARN that specifies the assessment target that you want to delete.</p>
+    /// This field is required.
     pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assessment_target_arn = ::std::option::Option::Some(input.into());
         self

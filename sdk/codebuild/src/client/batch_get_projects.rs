@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetProjects`](crate::operation::batch_get_projects::builders::BatchGetProjectsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_projects::builders::BatchGetProjectsFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_projects::builders::BatchGetProjectsFluentBuilder::set_names): <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
+    ///   - [`names(impl Into<String>)`](crate::operation::batch_get_projects::builders::BatchGetProjectsFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_projects::builders::BatchGetProjectsFluentBuilder::set_names):<br>required: **true**<br><p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p><br>
     /// - On success, responds with [`BatchGetProjectsOutput`](crate::operation::batch_get_projects::BatchGetProjectsOutput) with field(s):
     ///   - [`projects(Option<Vec<Project>>)`](crate::operation::batch_get_projects::BatchGetProjectsOutput::projects): <p>Information about the requested build projects.</p>
     ///   - [`projects_not_found(Option<Vec<String>>)`](crate::operation::batch_get_projects::BatchGetProjectsOutput::projects_not_found): <p>The names of build projects for which information could not be found.</p>

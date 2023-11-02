@@ -14,8 +14,10 @@ impl ModifyDbClusterParameterGroupInput {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
-        self.parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::Parameter] {
+        self.parameters.as_deref().unwrap_or_default()
     }
 }
 impl ModifyDbClusterParameterGroupInput {
@@ -34,6 +36,7 @@ pub struct ModifyDbClusterParameterGroupInputBuilder {
 }
 impl ModifyDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group to modify.</p>
+    /// This field is required.
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self

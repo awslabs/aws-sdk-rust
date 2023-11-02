@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskSubmittedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>The action of the resource called by a task state.</p>
-    pub resource: ::std::option::Option<::std::string::String>,
+    pub resource: ::std::string::String,
     /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
@@ -15,12 +15,14 @@ pub struct TaskSubmittedEventDetails {
 }
 impl TaskSubmittedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
-        self.resource.as_deref()
+    pub fn resource(&self) -> &str {
+        use std::ops::Deref;
+        self.resource.deref()
     }
     /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn output(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct TaskSubmittedEventDetailsBuilder {
 }
 impl TaskSubmittedEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl TaskSubmittedEventDetailsBuilder {
         &self.resource_type
     }
     /// <p>The action of the resource called by a task state.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +119,26 @@ impl TaskSubmittedEventDetailsBuilder {
         &self.output_details
     }
     /// Consumes the builder and constructs a [`TaskSubmittedEventDetails`](crate::types::TaskSubmittedEventDetails).
-    pub fn build(self) -> crate::types::TaskSubmittedEventDetails {
-        crate::types::TaskSubmittedEventDetails {
-            resource_type: self.resource_type,
-            resource: self.resource,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::TaskSubmittedEventDetailsBuilder::resource_type)
+    /// - [`resource`](crate::types::builders::TaskSubmittedEventDetailsBuilder::resource)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskSubmittedEventDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskSubmittedEventDetails {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building TaskSubmittedEventDetails",
+                )
+            })?,
+            resource: self.resource.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource",
+                    "resource was not specified but it is required when building TaskSubmittedEventDetails",
+                )
+            })?,
             output: self.output,
             output_details: self.output_details,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for TaskSubmittedEventDetailsBuilder {

@@ -35,6 +35,7 @@ pub struct DeleteJobOutputBuilder {
 }
 impl DeleteJobOutputBuilder {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    /// This field is required.
     pub fn job_summary(mut self, input: crate::types::JobSummary) -> Self {
         self.job_summary = ::std::option::Option::Some(input);
         self

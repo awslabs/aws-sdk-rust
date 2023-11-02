@@ -34,8 +34,10 @@ impl BatchGetDeploymentTargetsInput {
     /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
     /// <li> <p> For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
     /// </ul>
-    pub fn target_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ids.is_none()`.
+    pub fn target_ids(&self) -> &[::std::string::String] {
+        self.target_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDeploymentTargetsInput {

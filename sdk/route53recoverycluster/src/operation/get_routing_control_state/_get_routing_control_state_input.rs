@@ -27,6 +27,7 @@ pub struct GetRoutingControlStateInputBuilder {
 }
 impl GetRoutingControlStateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self

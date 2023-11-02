@@ -35,6 +35,7 @@ pub struct LabelingJobOutputBuilder {
 }
 impl LabelingJobOutputBuilder {
     /// <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
+    /// This field is required.
     pub fn output_dataset_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_dataset_s3_uri = ::std::option::Option::Some(input.into());
         self

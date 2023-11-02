@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayRouteInput {
     /// <p>The name to use for the gateway route.</p>
-    pub gateway_route_name: ::std::option::Option<::std::string::String>,
+    pub gateway_route_name: ::std::string::String,
     /// <p>The name of the service mesh to create the gateway route in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub virtual_gateway_name: ::std::string::String,
     /// <p>The gateway route specification to apply.</p>
     pub spec: ::std::option::Option<crate::types::GatewayRouteSpec>,
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
@@ -20,24 +20,29 @@ pub struct CreateGatewayRouteInput {
 }
 impl CreateGatewayRouteInput {
     /// <p>The name to use for the gateway route.</p>
-    pub fn gateway_route_name(&self) -> ::std::option::Option<&str> {
-        self.gateway_route_name.as_deref()
+    pub fn gateway_route_name(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_route_name.deref()
     }
     /// <p>The name of the service mesh to create the gateway route in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_gateway_name.as_deref()
+    pub fn virtual_gateway_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_gateway_name.deref()
     }
     /// <p>The gateway route specification to apply.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::GatewayRouteSpec> {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagRef]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagRef] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +74,7 @@ pub struct CreateGatewayRouteInputBuilder {
 }
 impl CreateGatewayRouteInputBuilder {
     /// <p>The name to use for the gateway route.</p>
+    /// This field is required.
     pub fn gateway_route_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,7 @@ impl CreateGatewayRouteInputBuilder {
         &self.gateway_route_name
     }
     /// <p>The name of the service mesh to create the gateway route in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +104,7 @@ impl CreateGatewayRouteInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +119,7 @@ impl CreateGatewayRouteInputBuilder {
         &self.virtual_gateway_name
     }
     /// <p>The gateway route specification to apply.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::GatewayRouteSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -173,13 +182,32 @@ impl CreateGatewayRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_route_name`](crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder::gateway_route_name)
+    /// - [`mesh_name`](crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder::mesh_name)
+    /// - [`virtual_gateway_name`](crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder::virtual_gateway_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_gateway_route::CreateGatewayRouteInput {
-            gateway_route_name: self.gateway_route_name,
-            mesh_name: self.mesh_name,
-            virtual_gateway_name: self.virtual_gateway_name,
+            gateway_route_name: self.gateway_route_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_route_name",
+                    "gateway_route_name was not specified but it is required when building CreateGatewayRouteInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building CreateGatewayRouteInput",
+                )
+            })?,
+            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_gateway_name",
+                    "virtual_gateway_name was not specified but it is required when building CreateGatewayRouteInput",
+                )
+            })?,
             spec: self.spec,
             tags: self.tags,
             client_token: self.client_token,

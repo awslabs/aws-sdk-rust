@@ -4,49 +4,51 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReportDefinitionOutput {
     /// <p>ID of the report retrieved.</p>
-    pub report_id: ::std::option::Option<::std::string::String>,
+    pub report_id: ::std::string::String,
     /// <p>Description of the report.</p>
-    pub report_description: ::std::option::Option<::std::string::String>,
+    pub report_description: ::std::string::String,
     /// <p>Cadence used to generate the report.</p>
-    pub report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
+    pub report_frequency: crate::types::ReportFrequency,
     /// <p>Format of the generated report.</p>
-    pub format: ::std::option::Option<crate::types::Format>,
+    pub format: crate::types::Format,
     /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
     pub destination_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl GetReportDefinitionOutput {
     /// <p>ID of the report retrieved.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
-        self.report_id.as_deref()
+    pub fn report_id(&self) -> &str {
+        use std::ops::Deref;
+        self.report_id.deref()
     }
     /// <p>Description of the report.</p>
-    pub fn report_description(&self) -> ::std::option::Option<&str> {
-        self.report_description.as_deref()
+    pub fn report_description(&self) -> &str {
+        use std::ops::Deref;
+        self.report_description.deref()
     }
     /// <p>Cadence used to generate the report.</p>
-    pub fn report_frequency(&self) -> ::std::option::Option<&crate::types::ReportFrequency> {
-        self.report_frequency.as_ref()
+    pub fn report_frequency(&self) -> &crate::types::ReportFrequency {
+        &self.report_frequency
     }
     /// <p>Format of the generated report.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::Format {
+        &self.format
     }
     /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
     pub fn destination_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.destination_s3_location.as_ref()
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated.as_ref()
+    pub fn last_updated(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated
     }
 }
 impl ::aws_http::request_id::RequestId for GetReportDefinitionOutput {
@@ -76,6 +78,7 @@ pub struct GetReportDefinitionOutputBuilder {
 }
 impl GetReportDefinitionOutputBuilder {
     /// <p>ID of the report retrieved.</p>
+    /// This field is required.
     pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetReportDefinitionOutputBuilder {
         &self.report_id
     }
     /// <p>Description of the report.</p>
+    /// This field is required.
     pub fn report_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_description = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl GetReportDefinitionOutputBuilder {
         &self.report_description
     }
     /// <p>Cadence used to generate the report.</p>
+    /// This field is required.
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
         self.report_frequency = ::std::option::Option::Some(input);
         self
@@ -118,6 +123,7 @@ impl GetReportDefinitionOutputBuilder {
         &self.report_frequency
     }
     /// <p>Format of the generated report.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -132,6 +138,7 @@ impl GetReportDefinitionOutputBuilder {
         &self.format
     }
     /// <p>Amazon Simple Storage Service (Amazon S3) location where the report is uploaded.</p>
+    /// This field is required.
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.destination_s3_location = ::std::option::Option::Some(input);
         self
@@ -146,6 +153,7 @@ impl GetReportDefinitionOutputBuilder {
         &self.destination_s3_location
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -160,6 +168,7 @@ impl GetReportDefinitionOutputBuilder {
         &self.created_at
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
+    /// This field is required.
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
         self
@@ -183,16 +192,56 @@ impl GetReportDefinitionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetReportDefinitionOutput`](crate::operation::get_report_definition::GetReportDefinitionOutput).
-    pub fn build(self) -> crate::operation::get_report_definition::GetReportDefinitionOutput {
-        crate::operation::get_report_definition::GetReportDefinitionOutput {
-            report_id: self.report_id,
-            report_description: self.report_description,
-            report_frequency: self.report_frequency,
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`report_id`](crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::report_id)
+    /// - [`report_description`](crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::report_description)
+    /// - [`report_frequency`](crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::report_frequency)
+    /// - [`format`](crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::format)
+    /// - [`created_at`](crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::created_at)
+    /// - [`last_updated`](crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::last_updated)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_report_definition::GetReportDefinitionOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_report_definition::GetReportDefinitionOutput {
+            report_id: self.report_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "report_id",
+                    "report_id was not specified but it is required when building GetReportDefinitionOutput",
+                )
+            })?,
+            report_description: self.report_description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "report_description",
+                    "report_description was not specified but it is required when building GetReportDefinitionOutput",
+                )
+            })?,
+            report_frequency: self.report_frequency.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "report_frequency",
+                    "report_frequency was not specified but it is required when building GetReportDefinitionOutput",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building GetReportDefinitionOutput",
+                )
+            })?,
             destination_s3_location: self.destination_s3_location,
-            created_at: self.created_at,
-            last_updated: self.last_updated,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building GetReportDefinitionOutput",
+                )
+            })?,
+            last_updated: self.last_updated.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated",
+                    "last_updated was not specified but it is required when building GetReportDefinitionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

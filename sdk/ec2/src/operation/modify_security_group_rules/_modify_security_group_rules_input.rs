@@ -16,8 +16,10 @@ impl ModifySecurityGroupRulesInput {
         self.group_id.as_deref()
     }
     /// <p>Information about the security group properties to update.</p>
-    pub fn security_group_rules(&self) -> ::std::option::Option<&[crate::types::SecurityGroupRuleUpdate]> {
-        self.security_group_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_rules.is_none()`.
+    pub fn security_group_rules(&self) -> &[crate::types::SecurityGroupRuleUpdate] {
+        self.security_group_rules.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -41,6 +43,7 @@ pub struct ModifySecurityGroupRulesInputBuilder {
 }
 impl ModifySecurityGroupRulesInputBuilder {
     /// <p>The ID of the security group.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self

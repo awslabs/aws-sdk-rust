@@ -95,8 +95,10 @@ impl InputDeviceSummary {
         self.availability_zone.as_deref()
     }
     /// An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is MEDIALIVE_INPUT.
-    pub fn medialive_input_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.medialive_input_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.medialive_input_arns.is_none()`.
+    pub fn medialive_input_arns(&self) -> &[::std::string::String] {
+        self.medialive_input_arns.as_deref().unwrap_or_default()
     }
     /// The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
     pub fn output_type(&self) -> ::std::option::Option<&crate::types::InputDeviceOutputType> {

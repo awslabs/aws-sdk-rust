@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub unvalidated_json: ::std::option::Option<::std::string::String>,
+    pub unvalidated_json: ::std::string::String,
 }
 impl DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn unvalidated_json(&self) -> ::std::option::Option<&str> {
-        self.unvalidated_json.as_deref()
+    pub fn unvalidated_json(&self) -> &str {
+        use std::ops::Deref;
+        self.unvalidated_json.deref()
     }
 }
 impl DemodulationConfig {
@@ -28,6 +29,7 @@ pub struct DemodulationConfigBuilder {
 }
 impl DemodulationConfigBuilder {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
+    /// This field is required.
     pub fn unvalidated_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unvalidated_json = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl DemodulationConfigBuilder {
         &self.unvalidated_json
     }
     /// Consumes the builder and constructs a [`DemodulationConfig`](crate::types::DemodulationConfig).
-    pub fn build(self) -> crate::types::DemodulationConfig {
-        crate::types::DemodulationConfig {
-            unvalidated_json: self.unvalidated_json,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`unvalidated_json`](crate::types::builders::DemodulationConfigBuilder::unvalidated_json)
+    pub fn build(self) -> ::std::result::Result<crate::types::DemodulationConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DemodulationConfig {
+            unvalidated_json: self.unvalidated_json.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "unvalidated_json",
+                    "unvalidated_json was not specified but it is required when building DemodulationConfig",
+                )
+            })?,
+        })
     }
 }

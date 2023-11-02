@@ -5,30 +5,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomSql {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub data_source_arn: ::std::option::Option<::std::string::String>,
+    pub data_source_arn: ::std::string::String,
     /// <p>A display name for the SQL query result.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The SQL query.</p>
-    pub sql_query: ::std::option::Option<::std::string::String>,
+    pub sql_query: ::std::string::String,
     /// <p>The column schema from the SQL query result set.</p>
     pub columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
 }
 impl CustomSql {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> ::std::option::Option<&str> {
-        self.data_source_arn.as_deref()
+    pub fn data_source_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.data_source_arn.deref()
     }
     /// <p>A display name for the SQL query result.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The SQL query.</p>
-    pub fn sql_query(&self) -> ::std::option::Option<&str> {
-        self.sql_query.as_deref()
+    pub fn sql_query(&self) -> &str {
+        use std::ops::Deref;
+        self.sql_query.deref()
     }
     /// <p>The column schema from the SQL query result set.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[crate::types::InputColumn]> {
-        self.columns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
+    pub fn columns(&self) -> &[crate::types::InputColumn] {
+        self.columns.as_deref().unwrap_or_default()
     }
 }
 impl CustomSql {
@@ -49,6 +54,7 @@ pub struct CustomSqlBuilder {
 }
 impl CustomSqlBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    /// This field is required.
     pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +69,7 @@ impl CustomSqlBuilder {
         &self.data_source_arn
     }
     /// <p>A display name for the SQL query result.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +84,7 @@ impl CustomSqlBuilder {
         &self.name
     }
     /// <p>The SQL query.</p>
+    /// This field is required.
     pub fn sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_query = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +119,31 @@ impl CustomSqlBuilder {
         &self.columns
     }
     /// Consumes the builder and constructs a [`CustomSql`](crate::types::CustomSql).
-    pub fn build(self) -> crate::types::CustomSql {
-        crate::types::CustomSql {
-            data_source_arn: self.data_source_arn,
-            name: self.name,
-            sql_query: self.sql_query,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_source_arn`](crate::types::builders::CustomSqlBuilder::data_source_arn)
+    /// - [`name`](crate::types::builders::CustomSqlBuilder::name)
+    /// - [`sql_query`](crate::types::builders::CustomSqlBuilder::sql_query)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomSql, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomSql {
+            data_source_arn: self.data_source_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_source_arn",
+                    "data_source_arn was not specified but it is required when building CustomSql",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CustomSql",
+                )
+            })?,
+            sql_query: self.sql_query.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sql_query",
+                    "sql_query was not specified but it is required when building CustomSql",
+                )
+            })?,
             columns: self.columns,
-        }
+        })
     }
 }

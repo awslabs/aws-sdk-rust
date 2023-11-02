@@ -15,8 +15,10 @@ impl UtteranceList {
         self.bot_version.as_deref()
     }
     /// <p>One or more <code>UtteranceData</code> objects that contain information about the utterances that have been made to a bot. The maximum number of object is 100.</p>
-    pub fn utterances(&self) -> ::std::option::Option<&[crate::types::UtteranceData]> {
-        self.utterances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utterances.is_none()`.
+    pub fn utterances(&self) -> &[crate::types::UtteranceData] {
+        self.utterances.as_deref().unwrap_or_default()
     }
 }
 impl UtteranceList {

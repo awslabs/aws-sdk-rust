@@ -28,6 +28,7 @@ pub struct VerifyDomainDkimInputBuilder {
 }
 impl VerifyDomainDkimInputBuilder {
     /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self

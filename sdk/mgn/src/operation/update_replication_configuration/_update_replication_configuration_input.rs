@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Update replication configuration name request.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration Staging Area subnet request.</p>
@@ -40,8 +40,9 @@ pub struct UpdateReplicationConfigurationInput {
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Update replication configuration name request.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -56,8 +57,10 @@ impl UpdateReplicationConfigurationInput {
         self.associate_default_security_group
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn replication_servers_security_groups_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_servers_security_groups_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_i_ds.is_none()`.
+    pub fn replication_servers_security_groups_i_ds(&self) -> &[::std::string::String] {
+        self.replication_servers_security_groups_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
     pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
@@ -72,8 +75,10 @@ impl UpdateReplicationConfigurationInput {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Update replication configuration replicated disks request.</p>
-    pub fn replicated_disks(&self) -> ::std::option::Option<&[crate::types::ReplicationConfigurationReplicatedDisk]> {
-        self.replicated_disks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
+    pub fn replicated_disks(&self) -> &[crate::types::ReplicationConfigurationReplicatedDisk] {
+        self.replicated_disks.as_deref().unwrap_or_default()
     }
     /// <p>Update replication configuration EBS encryption request.</p>
     pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
@@ -162,6 +167,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration Source Server ID request.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -431,6 +437,8 @@ impl UpdateReplicationConfigurationInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::update_replication_configuration::builders::UpdateReplicationConfigurationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -438,7 +446,12 @@ impl UpdateReplicationConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building UpdateReplicationConfigurationInput",
+                )
+            })?,
             name: self.name,
             staging_area_subnet_id: self.staging_area_subnet_id,
             associate_default_security_group: self.associate_default_security_group,

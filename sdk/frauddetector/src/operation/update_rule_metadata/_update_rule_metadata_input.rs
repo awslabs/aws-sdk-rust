@@ -34,6 +34,7 @@ pub struct UpdateRuleMetadataInputBuilder {
 }
 impl UpdateRuleMetadataInputBuilder {
     /// <p>The rule to update.</p>
+    /// This field is required.
     pub fn rule(mut self, input: crate::types::Rule) -> Self {
         self.rule = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl UpdateRuleMetadataInputBuilder {
         &self.rule
     }
     /// <p>The rule description.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

@@ -56,6 +56,7 @@ pub struct PutJobSuccessResultInputBuilder {
 }
 impl PutJobSuccessResultInputBuilder {
     /// <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

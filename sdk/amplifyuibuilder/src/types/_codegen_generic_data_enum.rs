@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodegenGenericDataEnum {
     /// <p>The list of enum values in the generic data schema.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl CodegenGenericDataEnum {
     /// <p>The list of enum values in the generic data schema.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl CodegenGenericDataEnum {
@@ -48,7 +49,16 @@ impl CodegenGenericDataEnumBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`CodegenGenericDataEnum`](crate::types::CodegenGenericDataEnum).
-    pub fn build(self) -> crate::types::CodegenGenericDataEnum {
-        crate::types::CodegenGenericDataEnum { values: self.values }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`values`](crate::types::builders::CodegenGenericDataEnumBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataEnum, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodegenGenericDataEnum {
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building CodegenGenericDataEnum",
+                )
+            })?,
+        })
     }
 }

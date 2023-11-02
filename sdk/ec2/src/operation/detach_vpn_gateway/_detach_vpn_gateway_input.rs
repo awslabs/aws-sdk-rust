@@ -42,6 +42,7 @@ pub struct DetachVpnGatewayInputBuilder {
 }
 impl DetachVpnGatewayInputBuilder {
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DetachVpnGatewayInputBuilder {
         &self.vpc_id
     }
     /// <p>The ID of the virtual private gateway.</p>
+    /// This field is required.
     pub fn vpn_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpn_gateway_id = ::std::option::Option::Some(input.into());
         self

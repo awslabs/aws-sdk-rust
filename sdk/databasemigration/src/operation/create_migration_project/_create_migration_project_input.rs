@@ -26,12 +26,16 @@ impl CreateMigrationProjectInput {
         self.migration_project_name.as_deref()
     }
     /// <p>Information about the source data provider, including the name, ARN, and Secrets Manager parameters.</p>
-    pub fn source_data_provider_descriptors(&self) -> ::std::option::Option<&[crate::types::DataProviderDescriptorDefinition]> {
-        self.source_data_provider_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_data_provider_descriptors.is_none()`.
+    pub fn source_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptorDefinition] {
+        self.source_data_provider_descriptors.as_deref().unwrap_or_default()
     }
     /// <p>Information about the target data provider, including the name, ARN, and Amazon Web Services Secrets Manager parameters.</p>
-    pub fn target_data_provider_descriptors(&self) -> ::std::option::Option<&[crate::types::DataProviderDescriptorDefinition]> {
-        self.target_data_provider_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_data_provider_descriptors.is_none()`.
+    pub fn target_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptorDefinition] {
+        self.target_data_provider_descriptors.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the associated instance profile. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
     pub fn instance_profile_identifier(&self) -> ::std::option::Option<&str> {
@@ -46,8 +50,10 @@ impl CreateMigrationProjectInput {
         self.description.as_deref()
     }
     /// <p>One or more tags to be assigned to the migration project.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The schema conversion application attributes, including the Amazon S3 bucket name and Amazon S3 role ARN.</p>
     pub fn schema_conversion_application_attributes(&self) -> ::std::option::Option<&crate::types::ScApplicationAttributes> {
@@ -136,6 +142,7 @@ impl CreateMigrationProjectInputBuilder {
         &self.target_data_provider_descriptors
     }
     /// <p>The identifier of the associated instance profile. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn instance_profile_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_identifier = ::std::option::Option::Some(input.into());
         self

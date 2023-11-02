@@ -27,6 +27,7 @@ pub struct DescribeEndpointGroupInputBuilder {
 }
 impl DescribeEndpointGroupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    /// This field is required.
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self

@@ -15,8 +15,10 @@ impl DescribeScheduledActionsOutput {
         self.marker.as_deref()
     }
     /// <p>List of retrieved scheduled actions. </p>
-    pub fn scheduled_actions(&self) -> ::std::option::Option<&[crate::types::ScheduledAction]> {
-        self.scheduled_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_actions.is_none()`.
+    pub fn scheduled_actions(&self) -> &[crate::types::ScheduledAction] {
+        self.scheduled_actions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeScheduledActionsOutput {

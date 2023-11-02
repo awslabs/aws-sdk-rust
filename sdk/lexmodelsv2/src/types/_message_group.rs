@@ -15,8 +15,10 @@ impl MessageGroup {
         self.message.as_ref()
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub fn variations(&self) -> ::std::option::Option<&[crate::types::Message]> {
-        self.variations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variations.is_none()`.
+    pub fn variations(&self) -> &[crate::types::Message] {
+        self.variations.as_deref().unwrap_or_default()
     }
 }
 impl MessageGroup {
@@ -35,6 +37,7 @@ pub struct MessageGroupBuilder {
 }
 impl MessageGroupBuilder {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
+    /// This field is required.
     pub fn message(mut self, input: crate::types::Message) -> Self {
         self.message = ::std::option::Option::Some(input);
         self

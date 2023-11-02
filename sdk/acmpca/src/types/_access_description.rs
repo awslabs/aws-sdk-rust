@@ -35,6 +35,7 @@ pub struct AccessDescriptionBuilder {
 }
 impl AccessDescriptionBuilder {
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
+    /// This field is required.
     pub fn access_method(mut self, input: crate::types::AccessMethod) -> Self {
         self.access_method = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AccessDescriptionBuilder {
         &self.access_method
     }
     /// <p>The location of <code>AccessDescription</code> information.</p>
+    /// This field is required.
     pub fn access_location(mut self, input: crate::types::GeneralName) -> Self {
         self.access_location = ::std::option::Option::Some(input);
         self

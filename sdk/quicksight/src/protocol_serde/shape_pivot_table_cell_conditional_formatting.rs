@@ -3,35 +3,35 @@ pub fn ser_pivot_table_cell_conditional_formatting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableCellConditionalFormatting,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.field_id {
-        object.key("FieldId").string(var_1.as_str());
+    {
+        object.key("FieldId").string(input.field_id.as_str());
     }
-    if let Some(var_2) = &input.text_format {
+    if let Some(var_1) = &input.text_format {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("TextFormat").start_object();
-        crate::protocol_serde::shape_text_conditional_format::ser_text_conditional_format(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("TextFormat").start_object();
+        crate::protocol_serde::shape_text_conditional_format::ser_text_conditional_format(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.scope {
+    if let Some(var_3) = &input.scope {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Scope").start_object();
-        crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::ser_pivot_table_conditional_formatting_scope(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("Scope").start_object();
+        crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::ser_pivot_table_conditional_formatting_scope(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.scopes {
-        let mut array_7 = object.key("Scopes").start_array();
-        for item_8 in var_6 {
+    if let Some(var_5) = &input.scopes {
+        let mut array_6 = object.key("Scopes").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
+                let mut object_8 = array_6.value().start_object();
                 crate::protocol_serde::shape_pivot_table_conditional_formatting_scope::ser_pivot_table_conditional_formatting_scope(
-                    &mut object_9,
-                    item_8,
+                    &mut object_8,
+                    item_7,
                 )?;
-                object_9.finish();
+                object_8.finish();
             }
         }
-        array_7.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -84,7 +84,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::pivot_table_cell_conditional_formatting_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

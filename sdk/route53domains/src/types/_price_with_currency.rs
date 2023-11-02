@@ -7,7 +7,7 @@ pub struct PriceWithCurrency {
     /// <p>The price of a domain, in a specific currency.</p>
     pub price: f64,
     /// <p>The currency specifier.</p>
-    pub currency: ::std::option::Option<::std::string::String>,
+    pub currency: ::std::string::String,
 }
 impl PriceWithCurrency {
     /// <p>The price of a domain, in a specific currency.</p>
@@ -15,8 +15,9 @@ impl PriceWithCurrency {
         self.price
     }
     /// <p>The currency specifier.</p>
-    pub fn currency(&self) -> ::std::option::Option<&str> {
-        self.currency.as_deref()
+    pub fn currency(&self) -> &str {
+        use std::ops::Deref;
+        self.currency.deref()
     }
 }
 impl PriceWithCurrency {
@@ -35,6 +36,7 @@ pub struct PriceWithCurrencyBuilder {
 }
 impl PriceWithCurrencyBuilder {
     /// <p>The price of a domain, in a specific currency.</p>
+    /// This field is required.
     pub fn price(mut self, input: f64) -> Self {
         self.price = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl PriceWithCurrencyBuilder {
         &self.price
     }
     /// <p>The currency specifier.</p>
+    /// This field is required.
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,17 @@ impl PriceWithCurrencyBuilder {
         &self.currency
     }
     /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::types::PriceWithCurrency).
-    pub fn build(self) -> crate::types::PriceWithCurrency {
-        crate::types::PriceWithCurrency {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`currency`](crate::types::builders::PriceWithCurrencyBuilder::currency)
+    pub fn build(self) -> ::std::result::Result<crate::types::PriceWithCurrency, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PriceWithCurrency {
             price: self.price.unwrap_or_default(),
-            currency: self.currency,
-        }
+            currency: self.currency.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "currency",
+                    "currency was not specified but it is required when building PriceWithCurrency",
+                )
+            })?,
+        })
     }
 }

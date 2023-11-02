@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTopicsDetectionJob`](crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder::set_job_id): <p>The identifier assigned by the user to the detection job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_topics_detection_job::builders::DescribeTopicsDetectionJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The identifier assigned by the user to the detection job.</p><br>
     /// - On success, responds with [`DescribeTopicsDetectionJobOutput`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput) with field(s):
     ///   - [`topics_detection_job_properties(Option<TopicsDetectionJobProperties>)`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput::topics_detection_job_properties): <p>The list of properties for the requested job.</p>
     /// - On failure, responds with [`SdkError<DescribeTopicsDetectionJobError>`](crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobError)

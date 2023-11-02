@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
-    pub gateway_arn: ::std::option::Option<::std::string::String>,
+    pub gateway_arn: ::std::string::String,
     /// <p>The hour of the day to start maintenance on a gateway.</p>
-    pub hour_of_day: ::std::option::Option<i32>,
+    pub hour_of_day: i32,
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
-    pub minute_of_hour: ::std::option::Option<i32>,
+    pub minute_of_hour: i32,
     /// <p>The day of the week to start maintenance on a gateway.</p>
     pub day_of_week: ::std::option::Option<i32>,
     /// <p>The day of the month start maintenance on a gateway.</p>
@@ -17,15 +17,16 @@ pub struct PutMaintenanceStartTimeInput {
 }
 impl PutMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
-        self.gateway_arn.as_deref()
+    pub fn gateway_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.gateway_arn.deref()
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
-    pub fn hour_of_day(&self) -> ::std::option::Option<i32> {
+    pub fn hour_of_day(&self) -> i32 {
         self.hour_of_day
     }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
-    pub fn minute_of_hour(&self) -> ::std::option::Option<i32> {
+    pub fn minute_of_hour(&self) -> i32 {
         self.minute_of_hour
     }
     /// <p>The day of the week to start maintenance on a gateway.</p>
@@ -57,6 +58,7 @@ pub struct PutMaintenanceStartTimeInputBuilder {
 }
 impl PutMaintenanceStartTimeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +73,7 @@ impl PutMaintenanceStartTimeInputBuilder {
         &self.gateway_arn
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
+    /// This field is required.
     pub fn hour_of_day(mut self, input: i32) -> Self {
         self.hour_of_day = ::std::option::Option::Some(input);
         self
@@ -85,6 +88,7 @@ impl PutMaintenanceStartTimeInputBuilder {
         &self.hour_of_day
     }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
+    /// This field is required.
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.minute_of_hour = ::std::option::Option::Some(input);
         self
@@ -130,6 +134,10 @@ impl PutMaintenanceStartTimeInputBuilder {
         &self.day_of_month
     }
     /// Consumes the builder and constructs a [`PutMaintenanceStartTimeInput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_arn`](crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder::gateway_arn)
+    /// - [`hour_of_day`](crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder::hour_of_day)
+    /// - [`minute_of_hour`](crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder::minute_of_hour)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -137,9 +145,24 @@ impl PutMaintenanceStartTimeInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput {
-            gateway_arn: self.gateway_arn,
-            hour_of_day: self.hour_of_day,
-            minute_of_hour: self.minute_of_hour,
+            gateway_arn: self.gateway_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_arn",
+                    "gateway_arn was not specified but it is required when building PutMaintenanceStartTimeInput",
+                )
+            })?,
+            hour_of_day: self.hour_of_day.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hour_of_day",
+                    "hour_of_day was not specified but it is required when building PutMaintenanceStartTimeInput",
+                )
+            })?,
+            minute_of_hour: self.minute_of_hour.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "minute_of_hour",
+                    "minute_of_hour was not specified but it is required when building PutMaintenanceStartTimeInput",
+                )
+            })?,
             day_of_week: self.day_of_week,
             day_of_month: self.day_of_month,
         })

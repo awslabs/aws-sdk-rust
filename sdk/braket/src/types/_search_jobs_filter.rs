@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchJobsFilter {
     /// <p>The name to use for the jobs filter.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The values to use for the jobs filter.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>An operator to use for the jobs filter.</p>
-    pub operator: ::std::option::Option<crate::types::SearchJobsFilterOperator>,
+    pub operator: crate::types::SearchJobsFilterOperator,
 }
 impl SearchJobsFilter {
     /// <p>The name to use for the jobs filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The values to use for the jobs filter.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>An operator to use for the jobs filter.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::SearchJobsFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::SearchJobsFilterOperator {
+        &self.operator
     }
 }
 impl SearchJobsFilter {
@@ -42,6 +44,7 @@ pub struct SearchJobsFilterBuilder {
 }
 impl SearchJobsFilterBuilder {
     /// <p>The name to use for the jobs filter.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl SearchJobsFilterBuilder {
         &self.values
     }
     /// <p>An operator to use for the jobs filter.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::SearchJobsFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,30 @@ impl SearchJobsFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`SearchJobsFilter`](crate::types::SearchJobsFilter).
-    pub fn build(self) -> crate::types::SearchJobsFilter {
-        crate::types::SearchJobsFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SearchJobsFilterBuilder::name)
+    /// - [`values`](crate::types::builders::SearchJobsFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::SearchJobsFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchJobsFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchJobsFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SearchJobsFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building SearchJobsFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building SearchJobsFilter",
+                )
+            })?,
+        })
     }
 }

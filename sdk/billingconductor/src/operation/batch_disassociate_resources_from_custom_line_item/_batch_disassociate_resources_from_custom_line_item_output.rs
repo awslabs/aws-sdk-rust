@@ -11,12 +11,16 @@ pub struct BatchDisassociateResourcesFromCustomLineItemOutput {
 }
 impl BatchDisassociateResourcesFromCustomLineItemOutput {
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-    pub fn successfully_disassociated_resources(&self) -> ::std::option::Option<&[crate::types::DisassociateResourceResponseElement]> {
-        self.successfully_disassociated_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successfully_disassociated_resources.is_none()`.
+    pub fn successfully_disassociated_resources(&self) -> &[crate::types::DisassociateResourceResponseElement] {
+        self.successfully_disassociated_resources.as_deref().unwrap_or_default()
     }
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-    pub fn failed_disassociated_resources(&self) -> ::std::option::Option<&[crate::types::DisassociateResourceResponseElement]> {
-        self.failed_disassociated_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_disassociated_resources.is_none()`.
+    pub fn failed_disassociated_resources(&self) -> &[crate::types::DisassociateResourceResponseElement] {
+        self.failed_disassociated_resources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDisassociateResourcesFromCustomLineItemOutput {

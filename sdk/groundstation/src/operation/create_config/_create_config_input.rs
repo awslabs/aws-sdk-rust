@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigInput {
     /// <p>Name of a <code>Config</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Parameters of a <code>Config</code>.</p>
     pub config_data: ::std::option::Option<crate::types::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
@@ -13,8 +13,9 @@ pub struct CreateConfigInput {
 }
 impl CreateConfigInput {
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn config_data(&self) -> ::std::option::Option<&crate::types::ConfigTypeData> {
@@ -42,6 +43,7 @@ pub struct CreateConfigInputBuilder {
 }
 impl CreateConfigInputBuilder {
     /// <p>Name of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl CreateConfigInputBuilder {
         &self.name
     }
     /// <p>Parameters of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
         self.config_data = ::std::option::Option::Some(input);
         self
@@ -90,9 +93,16 @@ impl CreateConfigInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfigInput`](crate::operation::create_config::CreateConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_config::builders::CreateConfigInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_config::CreateConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_config::CreateConfigInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateConfigInput",
+                )
+            })?,
             config_data: self.config_data,
             tags: self.tags,
         })

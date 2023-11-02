@@ -12,8 +12,10 @@ pub struct UnprocessableEntityException {
 }
 impl UnprocessableEntityException {
     /// A collection of validation error responses.
-    pub fn validation_errors(&self) -> ::std::option::Option<&[crate::types::ValidationError]> {
-        self.validation_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_errors.is_none()`.
+    pub fn validation_errors(&self) -> &[crate::types::ValidationError] {
+        self.validation_errors.as_deref().unwrap_or_default()
     }
 }
 impl UnprocessableEntityException {

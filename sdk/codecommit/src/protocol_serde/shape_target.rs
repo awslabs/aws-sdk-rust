@@ -3,14 +3,14 @@ pub fn ser_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Target,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.repository_name {
-        object.key("repositoryName").string(var_1.as_str());
+    {
+        object.key("repositoryName").string(input.repository_name.as_str());
     }
-    if let Some(var_2) = &input.source_reference {
-        object.key("sourceReference").string(var_2.as_str());
+    {
+        object.key("sourceReference").string(input.source_reference.as_str());
     }
-    if let Some(var_3) = &input.destination_reference {
-        object.key("destinationReference").string(var_3.as_str());
+    if let Some(var_1) = &input.destination_reference {
+        object.key("destinationReference").string(var_1.as_str());
     }
     Ok(())
 }

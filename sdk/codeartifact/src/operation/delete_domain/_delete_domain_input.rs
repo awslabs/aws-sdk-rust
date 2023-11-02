@@ -34,6 +34,7 @@ pub struct DeleteDomainInputBuilder {
 }
 impl DeleteDomainInputBuilder {
     /// <p> The name of the domain to delete. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self

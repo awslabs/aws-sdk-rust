@@ -11,8 +11,10 @@ pub struct ListStackInstancesOutput {
 }
 impl ListStackInstancesOutput {
     /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about the specified stack instances.</p>
-    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::StackInstanceSummary]> {
-        self.summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
+    pub fn summaries(&self) -> &[crate::types::StackInstanceSummary] {
+        self.summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListStackInstances</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

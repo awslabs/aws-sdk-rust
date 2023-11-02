@@ -7,12 +7,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleQueryArgument {
     /// <p>The name of the query argument to inspect.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl SingleQueryArgument {
     /// <p>The name of the query argument to inspect.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl SingleQueryArgument {
@@ -30,6 +31,7 @@ pub struct SingleQueryArgumentBuilder {
 }
 impl SingleQueryArgumentBuilder {
     /// <p>The name of the query argument to inspect.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -44,7 +46,16 @@ impl SingleQueryArgumentBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`SingleQueryArgument`](crate::types::SingleQueryArgument).
-    pub fn build(self) -> crate::types::SingleQueryArgument {
-        crate::types::SingleQueryArgument { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::SingleQueryArgumentBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::SingleQueryArgument, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SingleQueryArgument {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SingleQueryArgument",
+                )
+            })?,
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeArchive`](crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`archive_name(impl Into<String>)`](crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder::archive_name) / [`set_archive_name(Option<String>)`](crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder::set_archive_name): <p>The name of the archive to retrieve.</p>
+    ///   - [`archive_name(impl Into<String>)`](crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder::archive_name) / [`set_archive_name(Option<String>)`](crate::operation::describe_archive::builders::DescribeArchiveFluentBuilder::set_archive_name):<br>required: **true**<br><p>The name of the archive to retrieve.</p><br>
     /// - On success, responds with [`DescribeArchiveOutput`](crate::operation::describe_archive::DescribeArchiveOutput) with field(s):
     ///   - [`archive_arn(Option<String>)`](crate::operation::describe_archive::DescribeArchiveOutput::archive_arn): <p>The ARN of the archive.</p>
     ///   - [`archive_name(Option<String>)`](crate::operation::describe_archive::DescribeArchiveOutput::archive_name): <p>The name of the archive.</p>

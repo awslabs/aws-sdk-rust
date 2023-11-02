@@ -11,8 +11,10 @@ pub struct ListMediaInsightsPipelineConfigurationsOutput {
 }
 impl ListMediaInsightsPipelineConfigurationsOutput {
     /// <p>The requested list of media insights pipeline configurations.</p>
-    pub fn media_insights_pipeline_configurations(&self) -> ::std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationSummary]> {
-        self.media_insights_pipeline_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_insights_pipeline_configurations.is_none()`.
+    pub fn media_insights_pipeline_configurations(&self) -> &[crate::types::MediaInsightsPipelineConfigurationSummary] {
+        self.media_insights_pipeline_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The token used to return the next page of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

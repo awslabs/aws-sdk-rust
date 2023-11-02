@@ -73,21 +73,27 @@ impl CreateJobTemplateInput {
         self.timeout_config.as_ref()
     }
     /// <p>Metadata that can be used to manage the job template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
     pub fn job_executions_retry_config(&self) -> ::std::option::Option<&crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
-    pub fn maintenance_windows(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindow]> {
-        self.maintenance_windows.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_windows.is_none()`.
+    pub fn maintenance_windows(&self) -> &[crate::types::MaintenanceWindow] {
+        self.maintenance_windows.as_deref().unwrap_or_default()
     }
     /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
     /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
-    pub fn destination_package_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_package_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_package_versions.is_none()`.
+    pub fn destination_package_versions(&self) -> &[::std::string::String] {
+        self.destination_package_versions.as_deref().unwrap_or_default()
     }
 }
 impl CreateJobTemplateInput {
@@ -117,6 +123,7 @@ pub struct CreateJobTemplateInputBuilder {
 }
 impl CreateJobTemplateInputBuilder {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
+    /// This field is required.
     pub fn job_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_template_id = ::std::option::Option::Some(input.into());
         self
@@ -179,6 +186,7 @@ impl CreateJobTemplateInputBuilder {
         &self.document
     }
     /// <p>A description of the job document.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

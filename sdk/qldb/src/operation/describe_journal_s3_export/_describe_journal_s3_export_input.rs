@@ -34,6 +34,7 @@ pub struct DescribeJournalS3ExportInputBuilder {
 }
 impl DescribeJournalS3ExportInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeJournalS3ExportInputBuilder {
         &self.name
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
+    /// This field is required.
     pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_id = ::std::option::Option::Some(input.into());
         self

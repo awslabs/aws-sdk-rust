@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateUserAccessLoggingSettingsOutput {
     /// <p>The ARN of the web portal.</p>
-    pub portal_arn: ::std::option::Option<::std::string::String>,
+    pub portal_arn: ::std::string::String,
     /// <p>The ARN of the user access logging settings.</p>
-    pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
+    pub user_access_logging_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl AssociateUserAccessLoggingSettingsOutput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
-        self.portal_arn.as_deref()
+    pub fn portal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_arn.deref()
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.user_access_logging_settings_arn.as_deref()
+    pub fn user_access_logging_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_access_logging_settings_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for AssociateUserAccessLoggingSettingsOutput {
@@ -41,6 +43,7 @@ pub struct AssociateUserAccessLoggingSettingsOutputBuilder {
 }
 impl AssociateUserAccessLoggingSettingsOutputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl AssociateUserAccessLoggingSettingsOutputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the user access logging settings.</p>
+    /// This field is required.
     pub fn user_access_logging_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_access_logging_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,29 @@ impl AssociateUserAccessLoggingSettingsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AssociateUserAccessLoggingSettingsOutput`](crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput).
-    pub fn build(self) -> crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput {
-        crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput {
-            portal_arn: self.portal_arn,
-            user_access_logging_settings_arn: self.user_access_logging_settings_arn,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`portal_arn`](crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsOutputBuilder::portal_arn)
+    /// - [`user_access_logging_settings_arn`](crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsOutputBuilder::user_access_logging_settings_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput {
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateUserAccessLoggingSettingsOutput")
+                    )?
+                ,
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("user_access_logging_settings_arn", "user_access_logging_settings_arn was not specified but it is required when building AssociateUserAccessLoggingSettingsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }

@@ -40,8 +40,10 @@ impl UpdateConfigurationProfileInput {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn validators(&self) -> ::std::option::Option<&[crate::types::Validator]> {
-        self.validators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validators.is_none()`.
+    pub fn validators(&self) -> &[crate::types::Validator] {
+        self.validators.as_deref().unwrap_or_default()
     }
     /// <p>The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
@@ -69,6 +71,7 @@ pub struct UpdateConfigurationProfileInputBuilder {
 }
 impl UpdateConfigurationProfileInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,7 @@ impl UpdateConfigurationProfileInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the configuration profile.</p>
+    /// This field is required.
     pub fn configuration_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_profile_id = ::std::option::Option::Some(input.into());
         self

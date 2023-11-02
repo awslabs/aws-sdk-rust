@@ -18,8 +18,10 @@ impl AddWorkingStorageInput {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn disk_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.disk_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_ids.is_none()`.
+    pub fn disk_ids(&self) -> &[::std::string::String] {
+        self.disk_ids.as_deref().unwrap_or_default()
     }
 }
 impl AddWorkingStorageInput {
@@ -38,6 +40,7 @@ pub struct AddWorkingStorageInputBuilder {
 }
 impl AddWorkingStorageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self

@@ -3,26 +3,26 @@ pub fn ser_evaluation_form_section(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormSection,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.title {
-        object.key("Title").string(var_1.as_str());
+    {
+        object.key("Title").string(input.title.as_str());
     }
-    if let Some(var_2) = &input.ref_id {
-        object.key("RefId").string(var_2.as_str());
+    {
+        object.key("RefId").string(input.ref_id.as_str());
     }
-    if let Some(var_3) = &input.instructions {
-        object.key("Instructions").string(var_3.as_str());
+    if let Some(var_1) = &input.instructions {
+        object.key("Instructions").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.items {
-        let mut array_5 = object.key("Items").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_2 = object.key("Items").start_array();
+        for item_3 in &input.items {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_5.finish();
+        array_2.finish();
     }
     if input.weight != 0.0 {
         object.key("Weight").number(
@@ -88,7 +88,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::evaluation_form_section_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

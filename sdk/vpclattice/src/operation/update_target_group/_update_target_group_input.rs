@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub target_group_identifier: ::std::option::Option<::std::string::String>,
+    pub target_group_identifier: ::std::string::String,
     /// <p>The health check configuration.</p>
     pub health_check: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl UpdateTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
-        self.target_group_identifier.as_deref()
+    pub fn target_group_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.target_group_identifier.deref()
     }
     /// <p>The health check configuration.</p>
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
@@ -34,6 +35,7 @@ pub struct UpdateTargetGroupInputBuilder {
 }
 impl UpdateTargetGroupInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    /// This field is required.
     pub fn target_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +50,7 @@ impl UpdateTargetGroupInputBuilder {
         &self.target_group_identifier
     }
     /// <p>The health check configuration.</p>
+    /// This field is required.
     pub fn health_check(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check = ::std::option::Option::Some(input);
         self
@@ -62,11 +65,18 @@ impl UpdateTargetGroupInputBuilder {
         &self.health_check
     }
     /// Consumes the builder and constructs a [`UpdateTargetGroupInput`](crate::operation::update_target_group::UpdateTargetGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_group_identifier`](crate::operation::update_target_group::builders::UpdateTargetGroupInputBuilder::target_group_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_target_group::UpdateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_target_group::UpdateTargetGroupInput {
-            target_group_identifier: self.target_group_identifier,
+            target_group_identifier: self.target_group_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_group_identifier",
+                    "target_group_identifier was not specified but it is required when building UpdateTargetGroupInput",
+                )
+            })?,
             health_check: self.health_check,
         })
     }

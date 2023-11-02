@@ -5,26 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterDateTimePickerControl {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub parameter_control_id: ::std::option::Option<::std::string::String>,
+    pub parameter_control_id: ::std::string::String,
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub title: ::std::option::Option<::std::string::String>,
+    pub title: ::std::string::String,
     /// <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub source_parameter_name: ::std::option::Option<::std::string::String>,
+    pub source_parameter_name: ::std::string::String,
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
 }
 impl ParameterDateTimePickerControl {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn parameter_control_id(&self) -> ::std::option::Option<&str> {
-        self.parameter_control_id.as_deref()
+    pub fn parameter_control_id(&self) -> &str {
+        use std::ops::Deref;
+        self.parameter_control_id.deref()
     }
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
-        self.title.as_deref()
+    pub fn title(&self) -> &str {
+        use std::ops::Deref;
+        self.title.deref()
     }
     /// <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn source_parameter_name(&self) -> ::std::option::Option<&str> {
-        self.source_parameter_name.as_deref()
+    pub fn source_parameter_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_parameter_name.deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(&self) -> ::std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
@@ -49,6 +52,7 @@ pub struct ParameterDateTimePickerControlBuilder {
 }
 impl ParameterDateTimePickerControlBuilder {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
+    /// This field is required.
     pub fn parameter_control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_control_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl ParameterDateTimePickerControlBuilder {
         &self.parameter_control_id
     }
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
+    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +82,7 @@ impl ParameterDateTimePickerControlBuilder {
         &self.title
     }
     /// <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
+    /// This field is required.
     pub fn source_parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +111,31 @@ impl ParameterDateTimePickerControlBuilder {
         &self.display_options
     }
     /// Consumes the builder and constructs a [`ParameterDateTimePickerControl`](crate::types::ParameterDateTimePickerControl).
-    pub fn build(self) -> crate::types::ParameterDateTimePickerControl {
-        crate::types::ParameterDateTimePickerControl {
-            parameter_control_id: self.parameter_control_id,
-            title: self.title,
-            source_parameter_name: self.source_parameter_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`parameter_control_id`](crate::types::builders::ParameterDateTimePickerControlBuilder::parameter_control_id)
+    /// - [`title`](crate::types::builders::ParameterDateTimePickerControlBuilder::title)
+    /// - [`source_parameter_name`](crate::types::builders::ParameterDateTimePickerControlBuilder::source_parameter_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterDateTimePickerControl, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParameterDateTimePickerControl {
+            parameter_control_id: self.parameter_control_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameter_control_id",
+                    "parameter_control_id was not specified but it is required when building ParameterDateTimePickerControl",
+                )
+            })?,
+            title: self.title.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "title",
+                    "title was not specified but it is required when building ParameterDateTimePickerControl",
+                )
+            })?,
+            source_parameter_name: self.source_parameter_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_parameter_name",
+                    "source_parameter_name was not specified but it is required when building ParameterDateTimePickerControl",
+                )
+            })?,
             display_options: self.display_options,
-        }
+        })
     }
 }

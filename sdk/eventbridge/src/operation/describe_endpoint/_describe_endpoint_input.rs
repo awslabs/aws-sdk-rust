@@ -34,6 +34,7 @@ pub struct DescribeEndpointInputBuilder {
 }
 impl DescribeEndpointInputBuilder {
     /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

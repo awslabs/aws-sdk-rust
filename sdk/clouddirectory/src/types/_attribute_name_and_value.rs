@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
     /// <p>The value for the typed link.</p>
     pub value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
     /// <p>The value for the typed link.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
@@ -35,6 +36,7 @@ pub struct AttributeNameAndValueBuilder {
 }
 impl AttributeNameAndValueBuilder {
     /// <p>The attribute name of the typed link.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl AttributeNameAndValueBuilder {
         &self.attribute_name
     }
     /// <p>The value for the typed link.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::TypedAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl AttributeNameAndValueBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AttributeNameAndValue`](crate::types::AttributeNameAndValue).
-    pub fn build(self) -> crate::types::AttributeNameAndValue {
-        crate::types::AttributeNameAndValue {
-            attribute_name: self.attribute_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::AttributeNameAndValueBuilder::attribute_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeNameAndValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttributeNameAndValue {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building AttributeNameAndValue",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

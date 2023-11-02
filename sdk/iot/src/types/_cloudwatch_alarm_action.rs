@@ -5,30 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchAlarmAction {
     /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     /// <p>The CloudWatch alarm name.</p>
-    pub alarm_name: ::std::option::Option<::std::string::String>,
+    pub alarm_name: ::std::string::String,
     /// <p>The reason for the alarm change.</p>
-    pub state_reason: ::std::option::Option<::std::string::String>,
+    pub state_reason: ::std::string::String,
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
-    pub state_value: ::std::option::Option<::std::string::String>,
+    pub state_value: ::std::string::String,
 }
 impl CloudwatchAlarmAction {
     /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
     /// <p>The CloudWatch alarm name.</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
-        self.alarm_name.as_deref()
+    pub fn alarm_name(&self) -> &str {
+        use std::ops::Deref;
+        self.alarm_name.deref()
     }
     /// <p>The reason for the alarm change.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
-        self.state_reason.as_deref()
+    pub fn state_reason(&self) -> &str {
+        use std::ops::Deref;
+        self.state_reason.deref()
     }
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
-    pub fn state_value(&self) -> ::std::option::Option<&str> {
-        self.state_value.as_deref()
+    pub fn state_value(&self) -> &str {
+        use std::ops::Deref;
+        self.state_value.deref()
     }
 }
 impl CloudwatchAlarmAction {
@@ -49,6 +53,7 @@ pub struct CloudwatchAlarmActionBuilder {
 }
 impl CloudwatchAlarmActionBuilder {
     /// <p>The IAM role that allows access to the CloudWatch alarm.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +68,7 @@ impl CloudwatchAlarmActionBuilder {
         &self.role_arn
     }
     /// <p>The CloudWatch alarm name.</p>
+    /// This field is required.
     pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +83,7 @@ impl CloudwatchAlarmActionBuilder {
         &self.alarm_name
     }
     /// <p>The reason for the alarm change.</p>
+    /// This field is required.
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +98,7 @@ impl CloudwatchAlarmActionBuilder {
         &self.state_reason
     }
     /// <p>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</p>
+    /// This field is required.
     pub fn state_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_value = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +113,37 @@ impl CloudwatchAlarmActionBuilder {
         &self.state_value
     }
     /// Consumes the builder and constructs a [`CloudwatchAlarmAction`](crate::types::CloudwatchAlarmAction).
-    pub fn build(self) -> crate::types::CloudwatchAlarmAction {
-        crate::types::CloudwatchAlarmAction {
-            role_arn: self.role_arn,
-            alarm_name: self.alarm_name,
-            state_reason: self.state_reason,
-            state_value: self.state_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::CloudwatchAlarmActionBuilder::role_arn)
+    /// - [`alarm_name`](crate::types::builders::CloudwatchAlarmActionBuilder::alarm_name)
+    /// - [`state_reason`](crate::types::builders::CloudwatchAlarmActionBuilder::state_reason)
+    /// - [`state_value`](crate::types::builders::CloudwatchAlarmActionBuilder::state_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchAlarmAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudwatchAlarmAction {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building CloudwatchAlarmAction",
+                )
+            })?,
+            alarm_name: self.alarm_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "alarm_name",
+                    "alarm_name was not specified but it is required when building CloudwatchAlarmAction",
+                )
+            })?,
+            state_reason: self.state_reason.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_reason",
+                    "state_reason was not specified but it is required when building CloudwatchAlarmAction",
+                )
+            })?,
+            state_value: self.state_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "state_value",
+                    "state_value was not specified but it is required when building CloudwatchAlarmAction",
+                )
+            })?,
+        })
     }
 }

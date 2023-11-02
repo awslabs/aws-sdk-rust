@@ -15,8 +15,10 @@ impl S3AccessControlList {
         self.owner.as_ref()
     }
     /// <p></p>
-    pub fn grants(&self) -> ::std::option::Option<&[crate::types::S3Grant]> {
-        self.grants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grants.is_none()`.
+    pub fn grants(&self) -> &[crate::types::S3Grant] {
+        self.grants.as_deref().unwrap_or_default()
     }
 }
 impl S3AccessControlList {
@@ -35,6 +37,7 @@ pub struct S3AccessControlListBuilder {
 }
 impl S3AccessControlListBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn owner(mut self, input: crate::types::S3ObjectOwner) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self

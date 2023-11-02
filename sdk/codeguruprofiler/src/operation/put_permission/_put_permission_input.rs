@@ -5,26 +5,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub action_group: ::std::option::Option<crate::types::ActionGroup>,
+    pub action_group: crate::types::ActionGroup,
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub principals: ::std::vec::Vec<::std::string::String>,
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn action_group(&self) -> ::std::option::Option<&crate::types::ActionGroup> {
-        self.action_group.as_ref()
+    pub fn action_group(&self) -> &crate::types::ActionGroup {
+        &self.action_group
     }
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.principals.as_deref()
+    pub fn principals(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.principals.deref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct PutPermissionInputBuilder {
 }
 impl PutPermissionInputBuilder {
     /// <p>The name of the profiling group to grant access to.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl PutPermissionInputBuilder {
         &self.profiling_group_name
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    /// This field is required.
     pub fn action_group(mut self, input: crate::types::ActionGroup) -> Self {
         self.action_group = ::std::option::Option::Some(input);
         self
@@ -111,13 +115,32 @@ impl PutPermissionInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::put_permission::builders::PutPermissionInputBuilder::profiling_group_name)
+    /// - [`action_group`](crate::operation::put_permission::builders::PutPermissionInputBuilder::action_group)
+    /// - [`principals`](crate::operation::put_permission::builders::PutPermissionInputBuilder::principals)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionInput {
-            profiling_group_name: self.profiling_group_name,
-            action_group: self.action_group,
-            principals: self.principals,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building PutPermissionInput",
+                )
+            })?,
+            action_group: self.action_group.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_group",
+                    "action_group was not specified but it is required when building PutPermissionInput",
+                )
+            })?,
+            principals: self.principals.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "principals",
+                    "principals was not specified but it is required when building PutPermissionInput",
+                )
+            })?,
             revision_id: self.revision_id,
         })
     }

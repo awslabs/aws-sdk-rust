@@ -35,6 +35,7 @@ pub fn ser_double_array_options(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_double_array_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::DoubleArrayOptions, ::aws_smithy_xml::decode::XmlDecodeError> {

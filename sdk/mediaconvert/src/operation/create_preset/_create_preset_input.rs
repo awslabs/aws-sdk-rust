@@ -83,6 +83,7 @@ impl CreatePresetInputBuilder {
         &self.description
     }
     /// The name of the preset you are creating.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +98,7 @@ impl CreatePresetInputBuilder {
         &self.name
     }
     /// Settings for preset
+    /// This field is required.
     pub fn settings(mut self, input: crate::types::PresetSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
         self

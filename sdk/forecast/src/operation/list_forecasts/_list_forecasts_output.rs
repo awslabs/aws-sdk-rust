@@ -11,8 +11,10 @@ pub struct ListForecastsOutput {
 }
 impl ListForecastsOutput {
     /// <p>An array of objects that summarize each forecast's properties.</p>
-    pub fn forecasts(&self) -> ::std::option::Option<&[crate::types::ForecastSummary]> {
-        self.forecasts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecasts.is_none()`.
+    pub fn forecasts(&self) -> &[crate::types::ForecastSummary] {
+        self.forecasts.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

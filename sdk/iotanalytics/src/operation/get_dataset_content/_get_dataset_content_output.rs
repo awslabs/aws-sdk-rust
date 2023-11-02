@@ -13,8 +13,10 @@ pub struct GetDatasetContentOutput {
 }
 impl GetDatasetContentOutput {
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::DatasetEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::DatasetEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
     /// <p>The time when the request was made.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

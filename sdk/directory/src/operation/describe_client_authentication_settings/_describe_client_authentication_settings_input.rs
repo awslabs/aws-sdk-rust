@@ -48,6 +48,7 @@ pub struct DescribeClientAuthenticationSettingsInputBuilder {
 }
 impl DescribeClientAuthenticationSettingsInputBuilder {
     /// <p>The identifier of the directory for which to retrieve information.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

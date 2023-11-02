@@ -28,6 +28,7 @@ pub struct MultiplexOutputSettingsBuilder {
 }
 impl MultiplexOutputSettingsBuilder {
     /// Destination is a Multiplex.
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

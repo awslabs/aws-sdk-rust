@@ -34,6 +34,7 @@ pub struct GetEventStreamInputBuilder {
 }
 impl GetEventStreamInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetEventStreamInputBuilder {
         &self.domain_name
     }
     /// <p>The name of the event stream provided during create operations.</p>
+    /// This field is required.
     pub fn event_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_stream_name = ::std::option::Option::Some(input.into());
         self

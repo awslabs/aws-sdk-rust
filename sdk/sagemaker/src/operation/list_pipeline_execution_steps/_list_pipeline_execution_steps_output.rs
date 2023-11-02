@@ -11,8 +11,10 @@ pub struct ListPipelineExecutionStepsOutput {
 }
 impl ListPipelineExecutionStepsOutput {
     /// <p>A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code> consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an object with properties for each job that contains relevant information about the job created by the step.</p>
-    pub fn pipeline_execution_steps(&self) -> ::std::option::Option<&[crate::types::PipelineExecutionStep]> {
-        self.pipeline_execution_steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_execution_steps.is_none()`.
+    pub fn pipeline_execution_steps(&self) -> &[crate::types::PipelineExecutionStep] {
+        self.pipeline_execution_steps.as_deref().unwrap_or_default()
     }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

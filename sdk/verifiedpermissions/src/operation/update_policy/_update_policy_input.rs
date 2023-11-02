@@ -65,6 +65,7 @@ pub struct UpdatePolicyInputBuilder {
 }
 impl UpdatePolicyInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
+    /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl UpdatePolicyInputBuilder {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl UpdatePolicyInputBuilder {
     /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
     /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::UpdatePolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

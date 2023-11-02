@@ -7,7 +7,7 @@ pub struct ApplicationPolicies {
     /// <p>Marks the application policy extension as critical.</p>
     pub critical: ::std::option::Option<bool>,
     /// <p>Application policies describe what the certificate can be used for.</p>
-    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicy>>,
+    pub policies: ::std::vec::Vec<crate::types::ApplicationPolicy>,
 }
 impl ApplicationPolicies {
     /// <p>Marks the application policy extension as critical.</p>
@@ -15,8 +15,9 @@ impl ApplicationPolicies {
         self.critical
     }
     /// <p>Application policies describe what the certificate can be used for.</p>
-    pub fn policies(&self) -> ::std::option::Option<&[crate::types::ApplicationPolicy]> {
-        self.policies.as_deref()
+    pub fn policies(&self) -> &[crate::types::ApplicationPolicy] {
+        use std::ops::Deref;
+        self.policies.deref()
     }
 }
 impl ApplicationPolicies {
@@ -69,10 +70,17 @@ impl ApplicationPoliciesBuilder {
         &self.policies
     }
     /// Consumes the builder and constructs a [`ApplicationPolicies`](crate::types::ApplicationPolicies).
-    pub fn build(self) -> crate::types::ApplicationPolicies {
-        crate::types::ApplicationPolicies {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policies`](crate::types::builders::ApplicationPoliciesBuilder::policies)
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationPolicies, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ApplicationPolicies {
             critical: self.critical,
-            policies: self.policies,
-        }
+            policies: self.policies.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policies",
+                    "policies was not specified but it is required when building ApplicationPolicies",
+                )
+            })?,
+        })
     }
 }

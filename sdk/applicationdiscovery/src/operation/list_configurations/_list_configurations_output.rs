@@ -11,8 +11,10 @@ pub struct ListConfigurationsOutput {
 }
 impl ListConfigurationsOutput {
     /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[::std::collections::HashMap<::std::string::String, ::std::string::String>]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

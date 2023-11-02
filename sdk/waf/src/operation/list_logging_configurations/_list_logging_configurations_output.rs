@@ -11,8 +11,10 @@ pub struct ListLoggingConfigurationsOutput {
 }
 impl ListLoggingConfigurationsOutput {
     /// <p>An array of <code>LoggingConfiguration</code> objects.</p>
-    pub fn logging_configurations(&self) -> ::std::option::Option<&[crate::types::LoggingConfiguration]> {
-        self.logging_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logging_configurations.is_none()`.
+    pub fn logging_configurations(&self) -> &[crate::types::LoggingConfiguration] {
+        self.logging_configurations.as_deref().unwrap_or_default()
     }
     /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

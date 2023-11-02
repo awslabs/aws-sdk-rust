@@ -73,8 +73,10 @@ impl TimeSeriesForecastingJobConfig {
         self.forecast_horizon
     }
     /// <p>The quantiles used to train the model for forecasts at a specified quantile. You can specify quantiles from <code>0.01</code> (p1) to <code>0.99</code> (p99), by increments of 0.01 or higher. Up to five forecast quantiles can be specified. When <code>ForecastQuantiles</code> is not provided, the AutoML job uses the quantiles p10, p50, and p90 as default.</p>
-    pub fn forecast_quantiles(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.forecast_quantiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_quantiles.is_none()`.
+    pub fn forecast_quantiles(&self) -> &[::std::string::String] {
+        self.forecast_quantiles.as_deref().unwrap_or_default()
     }
     /// <p>The transformations modifying specific attributes of the time-series, such as filling strategies for missing values.</p>
     pub fn transformations(&self) -> ::std::option::Option<&crate::types::TimeSeriesTransformations> {
@@ -85,8 +87,10 @@ impl TimeSeriesForecastingJobConfig {
         self.time_series_config.as_ref()
     }
     /// <p>The collection of holiday featurization attributes used to incorporate national holiday information into your forecasting model.</p>
-    pub fn holiday_config(&self) -> ::std::option::Option<&[crate::types::HolidayConfigAttributes]> {
-        self.holiday_config.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.holiday_config.is_none()`.
+    pub fn holiday_config(&self) -> &[crate::types::HolidayConfigAttributes] {
+        self.holiday_config.as_deref().unwrap_or_default()
     }
 }
 impl TimeSeriesForecastingJobConfig {
@@ -170,6 +174,7 @@ impl TimeSeriesForecastingJobConfigBuilder {
     /// <li> <p>Month - 1-11</p> </li>
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn forecast_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_frequency = ::std::option::Option::Some(input.into());
         self
@@ -204,6 +209,7 @@ impl TimeSeriesForecastingJobConfigBuilder {
         &self.forecast_frequency
     }
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length. The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the time-steps in the dataset.</p>
+    /// This field is required.
     pub fn forecast_horizon(mut self, input: i32) -> Self {
         self.forecast_horizon = ::std::option::Option::Some(input);
         self
@@ -252,6 +258,7 @@ impl TimeSeriesForecastingJobConfigBuilder {
         &self.transformations
     }
     /// <p>The collection of components that defines the time-series.</p>
+    /// This field is required.
     pub fn time_series_config(mut self, input: crate::types::TimeSeriesConfig) -> Self {
         self.time_series_config = ::std::option::Option::Some(input);
         self

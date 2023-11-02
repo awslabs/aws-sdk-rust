@@ -25,8 +25,10 @@ impl GetInstancesHealthStatusInput {
     /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
-    pub fn instances(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[::std::string::String] {
+        self.instances.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -56,6 +58,7 @@ pub struct GetInstancesHealthStatusInputBuilder {
 }
 impl GetInstancesHealthStatusInputBuilder {
     /// <p>The ID of the service that the instance is associated with.</p>
+    /// This field is required.
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
         self

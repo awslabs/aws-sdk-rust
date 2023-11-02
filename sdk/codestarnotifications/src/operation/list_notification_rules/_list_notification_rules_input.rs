@@ -16,8 +16,10 @@ impl ListNotificationRulesInput {
     /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ListNotificationRulesFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ListNotificationRulesFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

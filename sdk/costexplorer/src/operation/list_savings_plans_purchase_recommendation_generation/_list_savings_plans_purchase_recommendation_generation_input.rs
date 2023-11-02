@@ -18,8 +18,10 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInput {
         self.generation_status.as_ref()
     }
     /// <p>The IDs for each specific recommendation.</p>
-    pub fn recommendation_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.recommendation_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_ids.is_none()`.
+    pub fn recommendation_ids(&self) -> &[::std::string::String] {
+        self.recommendation_ids.as_deref().unwrap_or_default()
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
     pub fn page_size(&self) -> ::std::option::Option<i32> {

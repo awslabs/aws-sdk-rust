@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyOutput {
     /// <p>The ID of the resource policy.</p>
-    pub policy_id: ::std::option::Option<::std::string::String>,
+    pub policy_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl PutResourcePolicyOutput {
     /// <p>The ID of the resource policy.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
-        self.policy_id.as_deref()
+    pub fn policy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for PutResourcePolicyOutput {
@@ -34,6 +35,7 @@ pub struct PutResourcePolicyOutputBuilder {
 }
 impl PutResourcePolicyOutputBuilder {
     /// <p>The ID of the resource policy.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl PutResourcePolicyOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::operation::put_resource_policy::PutResourcePolicyOutput).
-    pub fn build(self) -> crate::operation::put_resource_policy::PutResourcePolicyOutput {
-        crate::operation::put_resource_policy::PutResourcePolicyOutput {
-            policy_id: self.policy_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_id`](crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder::policy_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyOutput {
+            policy_id: self.policy_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_id",
+                    "policy_id was not specified but it is required when building PutResourcePolicyOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

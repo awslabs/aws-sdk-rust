@@ -8,8 +8,10 @@ pub struct PutEventsInput {
 }
 impl PutEventsInput {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PutEventsRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::PutEventsRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl PutEventsInput {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateCell`](crate::operation::update_cell::builders::UpdateCellFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::set_cell_name): <p>The name of the cell.</p>
-    ///   - [`cells(impl Into<String>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::cells) / [`set_cells(Option<Vec<String>>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::set_cells): <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
+    ///   - [`cell_name(impl Into<String>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::set_cell_name):<br>required: **true**<br><p>The name of the cell.</p><br>
+    ///   - [`cells(impl Into<String>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::cells) / [`set_cells(Option<Vec<String>>)`](crate::operation::update_cell::builders::UpdateCellFluentBuilder::set_cells):<br>required: **true**<br><p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p><br>
     /// - On success, responds with [`UpdateCellOutput`](crate::operation::update_cell::UpdateCellOutput) with field(s):
     ///   - [`cell_arn(Option<String>)`](crate::operation::update_cell::UpdateCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
     ///   - [`cell_name(Option<String>)`](crate::operation::update_cell::UpdateCellOutput::cell_name): <p>The name of the cell.</p>

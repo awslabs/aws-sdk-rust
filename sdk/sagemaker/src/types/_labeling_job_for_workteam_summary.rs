@@ -77,6 +77,7 @@ impl LabelingJobForWorkteamSummaryBuilder {
         &self.labeling_job_name
     }
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
+    /// This field is required.
     pub fn job_reference_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_reference_code = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl LabelingJobForWorkteamSummaryBuilder {
         &self.job_reference_code
     }
     /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
+    /// This field is required.
     pub fn work_requester_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_requester_account_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl LabelingJobForWorkteamSummaryBuilder {
         &self.work_requester_account_id
     }
     /// <p>The date and time that the labeling job was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

@@ -19,28 +19,40 @@ pub struct RuleGroupSourceStatelessRuleMatchAttributes {
 }
 impl RuleGroupSourceStatelessRuleMatchAttributes {
     /// <p>A list of port ranges to specify the destination ports to inspect for.</p>
-    pub fn destination_ports(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts]> {
-        self.destination_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
+    pub fn destination_ports(&self) -> &[crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts] {
+        self.destination_ports.as_deref().unwrap_or_default()
     }
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>The protocols to inspect for.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[i32]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[i32] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>A list of port ranges to specify the source ports to inspect for.</p>
-    pub fn source_ports(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts]> {
-        self.source_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ports.is_none()`.
+    pub fn source_ports(&self) -> &[crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts] {
+        self.source_ports.as_deref().unwrap_or_default()
     }
     /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation.</p>
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// <p>The TCP flags and masks to inspect for.</p>
-    pub fn tcp_flags(&self) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags]> {
-        self.tcp_flags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tcp_flags.is_none()`.
+    pub fn tcp_flags(&self) -> &[crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags] {
+        self.tcp_flags.as_deref().unwrap_or_default()
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributes {

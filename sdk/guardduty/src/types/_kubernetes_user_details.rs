@@ -23,12 +23,16 @@ impl KubernetesUserDetails {
         self.uid.as_deref()
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are assigned to that role.</p>
-    pub fn session_name(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.session_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.session_name.is_none()`.
+    pub fn session_name(&self) -> &[::std::string::String] {
+        self.session_name.as_deref().unwrap_or_default()
     }
 }
 impl KubernetesUserDetails {

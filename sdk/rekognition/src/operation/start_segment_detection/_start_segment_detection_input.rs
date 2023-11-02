@@ -38,8 +38,10 @@ impl StartSegmentDetectionInput {
         self.filters.as_ref()
     }
     /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
-    pub fn segment_types(&self) -> ::std::option::Option<&[crate::types::SegmentType]> {
-        self.segment_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_types.is_none()`.
+    pub fn segment_types(&self) -> &[crate::types::SegmentType] {
+        self.segment_types.as_deref().unwrap_or_default()
     }
 }
 impl StartSegmentDetectionInput {
@@ -62,6 +64,7 @@ pub struct StartSegmentDetectionInputBuilder {
 }
 impl StartSegmentDetectionInputBuilder {
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self

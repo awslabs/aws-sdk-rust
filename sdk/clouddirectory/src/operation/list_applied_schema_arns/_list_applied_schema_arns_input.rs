@@ -48,6 +48,7 @@ pub struct ListAppliedSchemaArnsInputBuilder {
 }
 impl ListAppliedSchemaArnsInputBuilder {
     /// <p>The ARN of the directory you are listing.</p>
+    /// This field is required.
     pub fn directory_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_arn = ::std::option::Option::Some(input.into());
         self

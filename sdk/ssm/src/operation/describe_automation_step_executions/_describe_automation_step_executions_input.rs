@@ -20,8 +20,10 @@ impl DescribeAutomationStepExecutionsInput {
         self.automation_execution_id.as_deref()
     }
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::StepExecutionFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::StepExecutionFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct DescribeAutomationStepExecutionsInputBuilder {
 }
 impl DescribeAutomationStepExecutionsInputBuilder {
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
+    /// This field is required.
     pub fn automation_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.automation_execution_id = ::std::option::Option::Some(input.into());
         self

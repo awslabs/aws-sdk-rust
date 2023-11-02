@@ -27,6 +27,7 @@ pub struct CancelDataQualityRuleRecommendationRunInputBuilder {
 }
 impl CancelDataQualityRuleRecommendationRunInputBuilder {
     /// <p>The unique run identifier associated with this run.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self

@@ -9,7 +9,7 @@ pub struct TrafficConfig {
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
     pub single_header_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>,
     /// <p>The type of traffic configuration.</p>
-    pub r#type: ::std::option::Option<crate::types::ContinuousDeploymentPolicyType>,
+    pub r#type: crate::types::ContinuousDeploymentPolicyType,
 }
 impl TrafficConfig {
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
@@ -21,8 +21,8 @@ impl TrafficConfig {
         self.single_header_config.as_ref()
     }
     /// <p>The type of traffic configuration.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ContinuousDeploymentPolicyType {
+        &self.r#type
     }
 }
 impl TrafficConfig {
@@ -70,6 +70,7 @@ impl TrafficConfigBuilder {
         &self.single_header_config
     }
     /// <p>The type of traffic configuration.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContinuousDeploymentPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl TrafficConfigBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`TrafficConfig`](crate::types::TrafficConfig).
-    pub fn build(self) -> crate::types::TrafficConfig {
-        crate::types::TrafficConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::TrafficConfigBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrafficConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrafficConfig {
             single_weight_config: self.single_weight_config,
             single_header_config: self.single_header_config,
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building TrafficConfig",
+                )
+            })?,
+        })
     }
 }

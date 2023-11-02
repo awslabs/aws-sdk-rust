@@ -9,8 +9,10 @@ pub struct PlacementGroupInfo {
 }
 impl PlacementGroupInfo {
     /// <p>The supported placement group types.</p>
-    pub fn supported_strategies(&self) -> ::std::option::Option<&[crate::types::PlacementGroupStrategy]> {
-        self.supported_strategies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_strategies.is_none()`.
+    pub fn supported_strategies(&self) -> &[crate::types::PlacementGroupStrategy] {
+        self.supported_strategies.as_deref().unwrap_or_default()
     }
 }
 impl PlacementGroupInfo {

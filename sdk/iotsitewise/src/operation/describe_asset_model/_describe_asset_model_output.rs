@@ -4,67 +4,75 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetModelOutput {
     /// <p>The ID of the asset model.</p>
-    pub asset_model_id: ::std::option::Option<::std::string::String>,
+    pub asset_model_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    pub asset_model_arn: ::std::option::Option<::std::string::String>,
+    pub asset_model_arn: ::std::string::String,
     /// <p>The name of the asset model.</p>
-    pub asset_model_name: ::std::option::Option<::std::string::String>,
+    pub asset_model_name: ::std::string::String,
     /// <p>The asset model's description.</p>
-    pub asset_model_description: ::std::option::Option<::std::string::String>,
+    pub asset_model_description: ::std::string::String,
     /// <p>The list of asset properties for the asset model.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
-    pub asset_model_properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
+    pub asset_model_properties: ::std::vec::Vec<crate::types::AssetModelProperty>,
     /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
-    pub asset_model_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>>,
+    pub asset_model_hierarchies: ::std::vec::Vec<crate::types::AssetModelHierarchy>,
     /// <p>The list of composite asset models for the asset model.</p>
     pub asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    pub asset_model_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub asset_model_creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    pub asset_model_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub asset_model_last_update_date: ::aws_smithy_types::DateTime,
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
 }
 impl DescribeAssetModelOutput {
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
-        self.asset_model_id.as_deref()
+    pub fn asset_model_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_model_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
-    pub fn asset_model_arn(&self) -> ::std::option::Option<&str> {
-        self.asset_model_arn.as_deref()
+    pub fn asset_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_model_arn.deref()
     }
     /// <p>The name of the asset model.</p>
-    pub fn asset_model_name(&self) -> ::std::option::Option<&str> {
-        self.asset_model_name.as_deref()
+    pub fn asset_model_name(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_model_name.deref()
     }
     /// <p>The asset model's description.</p>
-    pub fn asset_model_description(&self) -> ::std::option::Option<&str> {
-        self.asset_model_description.as_deref()
+    pub fn asset_model_description(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_model_description.deref()
     }
     /// <p>The list of asset properties for the asset model.</p>
     /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
-    pub fn asset_model_properties(&self) -> ::std::option::Option<&[crate::types::AssetModelProperty]> {
-        self.asset_model_properties.as_deref()
+    pub fn asset_model_properties(&self) -> &[crate::types::AssetModelProperty] {
+        use std::ops::Deref;
+        self.asset_model_properties.deref()
     }
     /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
-    pub fn asset_model_hierarchies(&self) -> ::std::option::Option<&[crate::types::AssetModelHierarchy]> {
-        self.asset_model_hierarchies.as_deref()
+    pub fn asset_model_hierarchies(&self) -> &[crate::types::AssetModelHierarchy] {
+        use std::ops::Deref;
+        self.asset_model_hierarchies.deref()
     }
     /// <p>The list of composite asset models for the asset model.</p>
-    pub fn asset_model_composite_models(&self) -> ::std::option::Option<&[crate::types::AssetModelCompositeModel]> {
-        self.asset_model_composite_models.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_models.is_none()`.
+    pub fn asset_model_composite_models(&self) -> &[crate::types::AssetModelCompositeModel] {
+        self.asset_model_composite_models.as_deref().unwrap_or_default()
     }
     /// <p>The date the asset model was created, in Unix epoch time.</p>
-    pub fn asset_model_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.asset_model_creation_date.as_ref()
+    pub fn asset_model_creation_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.asset_model_creation_date
     }
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
-    pub fn asset_model_last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.asset_model_last_update_date.as_ref()
+    pub fn asset_model_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.asset_model_last_update_date
     }
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub fn asset_model_status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
@@ -101,6 +109,7 @@ pub struct DescribeAssetModelOutputBuilder {
 }
 impl DescribeAssetModelOutputBuilder {
     /// <p>The ID of the asset model.</p>
+    /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +125,7 @@ impl DescribeAssetModelOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
+    /// This field is required.
     pub fn asset_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +142,7 @@ impl DescribeAssetModelOutputBuilder {
         &self.asset_model_arn
     }
     /// <p>The name of the asset model.</p>
+    /// This field is required.
     pub fn asset_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +157,7 @@ impl DescribeAssetModelOutputBuilder {
         &self.asset_model_name
     }
     /// <p>The asset model's description.</p>
+    /// This field is required.
     pub fn asset_model_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_description = ::std::option::Option::Some(input.into());
         self
@@ -223,6 +235,7 @@ impl DescribeAssetModelOutputBuilder {
         &self.asset_model_composite_models
     }
     /// <p>The date the asset model was created, in Unix epoch time.</p>
+    /// This field is required.
     pub fn asset_model_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.asset_model_creation_date = ::std::option::Option::Some(input);
         self
@@ -237,6 +250,7 @@ impl DescribeAssetModelOutputBuilder {
         &self.asset_model_creation_date
     }
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
+    /// This field is required.
     pub fn asset_model_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.asset_model_last_update_date = ::std::option::Option::Some(input);
         self
@@ -251,6 +265,7 @@ impl DescribeAssetModelOutputBuilder {
         &self.asset_model_last_update_date
     }
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
+    /// This field is required.
     pub fn asset_model_status(mut self, input: crate::types::AssetModelStatus) -> Self {
         self.asset_model_status = ::std::option::Option::Some(input);
         self
@@ -274,19 +289,71 @@ impl DescribeAssetModelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAssetModelOutput`](crate::operation::describe_asset_model::DescribeAssetModelOutput).
-    pub fn build(self) -> crate::operation::describe_asset_model::DescribeAssetModelOutput {
-        crate::operation::describe_asset_model::DescribeAssetModelOutput {
-            asset_model_id: self.asset_model_id,
-            asset_model_arn: self.asset_model_arn,
-            asset_model_name: self.asset_model_name,
-            asset_model_description: self.asset_model_description,
-            asset_model_properties: self.asset_model_properties,
-            asset_model_hierarchies: self.asset_model_hierarchies,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`asset_model_id`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_id)
+    /// - [`asset_model_arn`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_arn)
+    /// - [`asset_model_name`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_name)
+    /// - [`asset_model_description`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_description)
+    /// - [`asset_model_properties`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_properties)
+    /// - [`asset_model_hierarchies`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_hierarchies)
+    /// - [`asset_model_creation_date`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_creation_date)
+    /// - [`asset_model_last_update_date`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_last_update_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_asset_model::DescribeAssetModelOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_asset_model::DescribeAssetModelOutput {
+            asset_model_id: self.asset_model_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_id",
+                    "asset_model_id was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
+            asset_model_arn: self.asset_model_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_arn",
+                    "asset_model_arn was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
+            asset_model_name: self.asset_model_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_name",
+                    "asset_model_name was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
+            asset_model_description: self.asset_model_description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_description",
+                    "asset_model_description was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
+            asset_model_properties: self.asset_model_properties.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_properties",
+                    "asset_model_properties was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
+            asset_model_hierarchies: self.asset_model_hierarchies.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_hierarchies",
+                    "asset_model_hierarchies was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
             asset_model_composite_models: self.asset_model_composite_models,
-            asset_model_creation_date: self.asset_model_creation_date,
-            asset_model_last_update_date: self.asset_model_last_update_date,
+            asset_model_creation_date: self.asset_model_creation_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_creation_date",
+                    "asset_model_creation_date was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
+            asset_model_last_update_date: self.asset_model_last_update_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "asset_model_last_update_date",
+                    "asset_model_last_update_date was not specified but it is required when building DescribeAssetModelOutput",
+                )
+            })?,
             asset_model_status: self.asset_model_status,
             _request_id: self._request_id,
-        }
+        })
     }
 }

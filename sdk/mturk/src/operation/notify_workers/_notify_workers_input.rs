@@ -20,8 +20,10 @@ impl NotifyWorkersInput {
         self.message_text.as_deref()
     }
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    pub fn worker_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.worker_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worker_ids.is_none()`.
+    pub fn worker_ids(&self) -> &[::std::string::String] {
+        self.worker_ids.as_deref().unwrap_or_default()
     }
 }
 impl NotifyWorkersInput {
@@ -41,6 +43,7 @@ pub struct NotifyWorkersInputBuilder {
 }
 impl NotifyWorkersInputBuilder {
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
+    /// This field is required.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl NotifyWorkersInputBuilder {
         &self.subject
     }
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
+    /// This field is required.
     pub fn message_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_text = ::std::option::Option::Some(input.into());
         self

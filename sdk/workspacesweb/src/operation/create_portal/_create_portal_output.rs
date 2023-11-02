@@ -4,19 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePortalOutput {
     /// <p>The ARN of the web portal.</p>
-    pub portal_arn: ::std::option::Option<::std::string::String>,
+    pub portal_arn: ::std::string::String,
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
-    pub portal_endpoint: ::std::option::Option<::std::string::String>,
+    pub portal_endpoint: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreatePortalOutput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
-        self.portal_arn.as_deref()
+    pub fn portal_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_arn.deref()
     }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
-    pub fn portal_endpoint(&self) -> ::std::option::Option<&str> {
-        self.portal_endpoint.as_deref()
+    pub fn portal_endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.portal_endpoint.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreatePortalOutput {
@@ -41,6 +43,7 @@ pub struct CreatePortalOutputBuilder {
 }
 impl CreatePortalOutputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CreatePortalOutputBuilder {
         &self.portal_arn
     }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
+    /// This field is required.
     pub fn portal_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_endpoint = ::std::option::Option::Some(input.into());
         self
@@ -78,11 +82,26 @@ impl CreatePortalOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreatePortalOutput`](crate::operation::create_portal::CreatePortalOutput).
-    pub fn build(self) -> crate::operation::create_portal::CreatePortalOutput {
-        crate::operation::create_portal::CreatePortalOutput {
-            portal_arn: self.portal_arn,
-            portal_endpoint: self.portal_endpoint,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`portal_arn`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::portal_arn)
+    /// - [`portal_endpoint`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::portal_endpoint)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalOutput {
+            portal_arn: self.portal_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "portal_arn",
+                    "portal_arn was not specified but it is required when building CreatePortalOutput",
+                )
+            })?,
+            portal_endpoint: self.portal_endpoint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "portal_endpoint",
+                    "portal_endpoint was not specified but it is required when building CreatePortalOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

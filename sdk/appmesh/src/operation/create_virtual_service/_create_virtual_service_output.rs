@@ -34,6 +34,7 @@ pub struct CreateVirtualServiceOutputBuilder {
 }
 impl CreateVirtualServiceOutputBuilder {
     /// <p>The full description of your virtual service following the create call.</p>
+    /// This field is required.
     pub fn virtual_service(mut self, input: crate::types::VirtualServiceData) -> Self {
         self.virtual_service = ::std::option::Option::Some(input);
         self

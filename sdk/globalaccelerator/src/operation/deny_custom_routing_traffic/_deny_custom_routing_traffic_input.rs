@@ -27,12 +27,16 @@ impl DenyCustomRoutingTrafficInput {
         self.endpoint_id.as_deref()
     }
     /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
-    pub fn destination_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.destination_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_addresses.is_none()`.
+    pub fn destination_addresses(&self) -> &[::std::string::String] {
+        self.destination_addresses.as_deref().unwrap_or_default()
     }
     /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
-    pub fn destination_ports(&self) -> ::std::option::Option<&[i32]> {
-        self.destination_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
+    pub fn destination_ports(&self) -> &[i32] {
+        self.destination_ports.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
     /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
@@ -61,6 +65,7 @@ pub struct DenyCustomRoutingTrafficInputBuilder {
 }
 impl DenyCustomRoutingTrafficInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    /// This field is required.
     pub fn endpoint_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +80,7 @@ impl DenyCustomRoutingTrafficInputBuilder {
         &self.endpoint_group_arn
     }
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
+    /// This field is required.
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
         self

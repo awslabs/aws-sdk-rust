@@ -49,6 +49,7 @@ pub struct CreateMultiplexProgramInputBuilder {
 }
 impl CreateMultiplexProgramInputBuilder {
     /// ID of the multiplex where the program is to be created.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreateMultiplexProgramInputBuilder {
         &self.multiplex_id
     }
     /// The settings for this multiplex program.
+    /// This field is required.
     pub fn multiplex_program_settings(mut self, input: crate::types::MultiplexProgramSettings) -> Self {
         self.multiplex_program_settings = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl CreateMultiplexProgramInputBuilder {
         &self.multiplex_program_settings
     }
     /// Name of multiplex program.
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +94,7 @@ impl CreateMultiplexProgramInputBuilder {
         &self.program_name
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self

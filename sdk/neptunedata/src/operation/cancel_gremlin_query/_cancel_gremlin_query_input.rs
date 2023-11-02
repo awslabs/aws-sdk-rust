@@ -27,6 +27,7 @@ pub struct CancelGremlinQueryInputBuilder {
 }
 impl CancelGremlinQueryInputBuilder {
     /// <p>The unique identifier that identifies the query to be canceled.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self

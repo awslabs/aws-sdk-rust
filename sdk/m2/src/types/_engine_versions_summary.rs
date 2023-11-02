@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
-    pub engine_type: ::std::option::Option<::std::string::String>,
+    pub engine_type: ::std::string::String,
     /// <p>The version of the engine type used by the application.</p>
-    pub engine_version: ::std::option::Option<::std::string::String>,
+    pub engine_version: ::std::string::String,
 }
 impl EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&str> {
-        self.engine_type.as_deref()
+    pub fn engine_type(&self) -> &str {
+        use std::ops::Deref;
+        self.engine_type.deref()
     }
     /// <p>The version of the engine type used by the application.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
-        self.engine_version.as_deref()
+    pub fn engine_version(&self) -> &str {
+        use std::ops::Deref;
+        self.engine_version.deref()
     }
 }
 impl EngineVersionsSummary {
@@ -35,6 +37,7 @@ pub struct EngineVersionsSummaryBuilder {
 }
 impl EngineVersionsSummaryBuilder {
     /// <p>The type of target platform for the application.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_type = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl EngineVersionsSummaryBuilder {
         &self.engine_type
     }
     /// <p>The version of the engine type used by the application.</p>
+    /// This field is required.
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl EngineVersionsSummaryBuilder {
         &self.engine_version
     }
     /// Consumes the builder and constructs a [`EngineVersionsSummary`](crate::types::EngineVersionsSummary).
-    pub fn build(self) -> crate::types::EngineVersionsSummary {
-        crate::types::EngineVersionsSummary {
-            engine_type: self.engine_type,
-            engine_version: self.engine_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`engine_type`](crate::types::builders::EngineVersionsSummaryBuilder::engine_type)
+    /// - [`engine_version`](crate::types::builders::EngineVersionsSummaryBuilder::engine_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::EngineVersionsSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EngineVersionsSummary {
+            engine_type: self.engine_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engine_type",
+                    "engine_type was not specified but it is required when building EngineVersionsSummary",
+                )
+            })?,
+            engine_version: self.engine_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engine_version",
+                    "engine_version was not specified but it is required when building EngineVersionsSummary",
+                )
+            })?,
+        })
     }
 }

@@ -28,6 +28,7 @@ pub struct GetRepositoryInputBuilder {
 }
 impl GetRepositoryInputBuilder {
     /// <p>The name of the repository to get information about.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

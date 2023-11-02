@@ -54,8 +54,10 @@ impl UpdateTrialComponentInput {
         self.parameters.as_ref()
     }
     /// <p>The hyperparameters to remove from the component.</p>
-    pub fn parameters_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.parameters_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters_to_remove.is_none()`.
+    pub fn parameters_to_remove(&self) -> &[::std::string::String] {
+        self.parameters_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
     pub fn input_artifacts(
@@ -64,8 +66,10 @@ impl UpdateTrialComponentInput {
         self.input_artifacts.as_ref()
     }
     /// <p>The input artifacts to remove from the component.</p>
-    pub fn input_artifacts_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.input_artifacts_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_artifacts_to_remove.is_none()`.
+    pub fn input_artifacts_to_remove(&self) -> &[::std::string::String] {
+        self.input_artifacts_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
     pub fn output_artifacts(
@@ -74,8 +78,10 @@ impl UpdateTrialComponentInput {
         self.output_artifacts.as_ref()
     }
     /// <p>The output artifacts to remove from the component.</p>
-    pub fn output_artifacts_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.output_artifacts_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_artifacts_to_remove.is_none()`.
+    pub fn output_artifacts_to_remove(&self) -> &[::std::string::String] {
+        self.output_artifacts_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTrialComponentInput {
@@ -103,6 +109,7 @@ pub struct UpdateTrialComponentInputBuilder {
 }
 impl UpdateTrialComponentInputBuilder {
     /// <p>The name of the component to update.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self

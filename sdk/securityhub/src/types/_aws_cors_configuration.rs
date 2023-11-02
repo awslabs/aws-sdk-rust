@@ -19,28 +19,36 @@ pub struct AwsCorsConfiguration {
 }
 impl AwsCorsConfiguration {
     /// <p>The allowed origins for CORS requests.</p>
-    pub fn allow_origins(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_origins.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_origins.is_none()`.
+    pub fn allow_origins(&self) -> &[::std::string::String] {
+        self.allow_origins.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the CORS request includes credentials.</p>
     pub fn allow_credentials(&self) -> ::std::option::Option<bool> {
         self.allow_credentials
     }
     /// <p>The exposed headers for CORS requests.</p>
-    pub fn expose_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.expose_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expose_headers.is_none()`.
+    pub fn expose_headers(&self) -> &[::std::string::String] {
+        self.expose_headers.as_deref().unwrap_or_default()
     }
     /// <p>The number of seconds for which the browser caches preflight request results.</p>
     pub fn max_age(&self) -> ::std::option::Option<i32> {
         self.max_age
     }
     /// <p>The allowed methods for CORS requests.</p>
-    pub fn allow_methods(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_methods.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_methods.is_none()`.
+    pub fn allow_methods(&self) -> &[::std::string::String] {
+        self.allow_methods.as_deref().unwrap_or_default()
     }
     /// <p>The allowed headers for CORS requests.</p>
-    pub fn allow_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_headers.is_none()`.
+    pub fn allow_headers(&self) -> &[::std::string::String] {
+        self.allow_headers.as_deref().unwrap_or_default()
     }
 }
 impl AwsCorsConfiguration {

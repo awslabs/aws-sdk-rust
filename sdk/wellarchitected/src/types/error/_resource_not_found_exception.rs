@@ -69,6 +69,7 @@ pub struct ResourceNotFoundExceptionBuilder {
 }
 impl ResourceNotFoundExceptionBuilder {
     /// <p>Description of the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ResourceNotFoundExceptionBuilder {
         &self.message
     }
     /// <p>Identifier of the resource affected.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl ResourceNotFoundExceptionBuilder {
         &self.resource_id
     }
     /// <p>Type of the resource affected.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self

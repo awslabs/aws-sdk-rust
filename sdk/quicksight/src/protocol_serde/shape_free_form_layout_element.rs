@@ -3,65 +3,65 @@ pub fn ser_free_form_layout_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FreeFormLayoutElement,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.element_id {
-        object.key("ElementId").string(var_1.as_str());
+    {
+        object.key("ElementId").string(input.element_id.as_str());
     }
-    if let Some(var_2) = &input.element_type {
-        object.key("ElementType").string(var_2.as_str());
+    {
+        object.key("ElementType").string(input.element_type.as_str());
     }
-    if let Some(var_3) = &input.x_axis_location {
-        object.key("XAxisLocation").string(var_3.as_str());
+    {
+        object.key("XAxisLocation").string(input.x_axis_location.as_str());
     }
-    if let Some(var_4) = &input.y_axis_location {
-        object.key("YAxisLocation").string(var_4.as_str());
+    {
+        object.key("YAxisLocation").string(input.y_axis_location.as_str());
     }
-    if let Some(var_5) = &input.width {
-        object.key("Width").string(var_5.as_str());
+    {
+        object.key("Width").string(input.width.as_str());
     }
-    if let Some(var_6) = &input.height {
-        object.key("Height").string(var_6.as_str());
+    {
+        object.key("Height").string(input.height.as_str());
     }
-    if let Some(var_7) = &input.visibility {
-        object.key("Visibility").string(var_7.as_str());
+    if let Some(var_1) = &input.visibility {
+        object.key("Visibility").string(var_1.as_str());
     }
-    if let Some(var_8) = &input.rendering_rules {
-        let mut array_9 = object.key("RenderingRules").start_array();
-        for item_10 in var_8 {
+    if let Some(var_2) = &input.rendering_rules {
+        let mut array_3 = object.key("RenderingRules").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_sheet_element_rendering_rule::ser_sheet_element_rendering_rule(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_sheet_element_rendering_rule::ser_sheet_element_rendering_rule(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_9.finish();
+        array_3.finish();
     }
-    if let Some(var_12) = &input.border_style {
+    if let Some(var_6) = &input.border_style {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("BorderStyle").start_object();
-        crate::protocol_serde::shape_free_form_layout_element_border_style::ser_free_form_layout_element_border_style(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_7 = object.key("BorderStyle").start_object();
+        crate::protocol_serde::shape_free_form_layout_element_border_style::ser_free_form_layout_element_border_style(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_14) = &input.selected_border_style {
+    if let Some(var_8) = &input.selected_border_style {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("SelectedBorderStyle").start_object();
-        crate::protocol_serde::shape_free_form_layout_element_border_style::ser_free_form_layout_element_border_style(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_9 = object.key("SelectedBorderStyle").start_object();
+        crate::protocol_serde::shape_free_form_layout_element_border_style::ser_free_form_layout_element_border_style(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_16) = &input.background_style {
+    if let Some(var_10) = &input.background_style {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("BackgroundStyle").start_object();
+        let mut object_11 = object.key("BackgroundStyle").start_object();
         crate::protocol_serde::shape_free_form_layout_element_background_style::ser_free_form_layout_element_background_style(
-            &mut object_17,
-            var_16,
+            &mut object_11,
+            var_10,
         )?;
-        object_17.finish();
+        object_11.finish();
     }
-    if let Some(var_18) = &input.loading_animation {
+    if let Some(var_12) = &input.loading_animation {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("LoadingAnimation").start_object();
-        crate::protocol_serde::shape_loading_animation::ser_loading_animation(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_13 = object.key("LoadingAnimation").start_object();
+        crate::protocol_serde::shape_loading_animation::ser_loading_animation(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }
@@ -165,7 +165,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::free_form_layout_element_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -55,8 +55,10 @@ impl UserSearchSummary {
         self.routing_profile_id.as_deref()
     }
     /// <p>The identifiers of the user's security profiles.</p>
-    pub fn security_profile_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_profile_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_profile_ids.is_none()`.
+    pub fn security_profile_ids(&self) -> &[::std::string::String] {
+        self.security_profile_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

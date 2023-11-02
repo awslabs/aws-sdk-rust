@@ -25,8 +25,10 @@ impl GetDeploymentStatusOutput {
         self.deployment_type.as_ref()
     }
     /// Error details
-    pub fn error_details(&self) -> ::std::option::Option<&[crate::types::ErrorDetail]> {
-        self.error_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetail] {
+        self.error_details.as_deref().unwrap_or_default()
     }
     /// Error message
     pub fn error_message(&self) -> ::std::option::Option<&str> {

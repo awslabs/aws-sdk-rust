@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalyticsSessionGroupBySpecification {
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
-    pub name: ::std::option::Option<crate::types::AnalyticsSessionField>,
+    pub name: crate::types::AnalyticsSessionField,
 }
 impl AnalyticsSessionGroupBySpecification {
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsSessionField> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AnalyticsSessionField {
+        &self.name
     }
 }
 impl AnalyticsSessionGroupBySpecification {
@@ -28,6 +28,7 @@ pub struct AnalyticsSessionGroupBySpecificationBuilder {
 }
 impl AnalyticsSessionGroupBySpecificationBuilder {
     /// <p>Specifies whether to group the session by their end state or their locale.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsSessionField) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AnalyticsSessionGroupBySpecificationBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AnalyticsSessionGroupBySpecification`](crate::types::AnalyticsSessionGroupBySpecification).
-    pub fn build(self) -> crate::types::AnalyticsSessionGroupBySpecification {
-        crate::types::AnalyticsSessionGroupBySpecification { name: self.name }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AnalyticsSessionGroupBySpecificationBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsSessionGroupBySpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AnalyticsSessionGroupBySpecification {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AnalyticsSessionGroupBySpecification",
+                )
+            })?,
+        })
     }
 }

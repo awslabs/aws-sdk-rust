@@ -58,12 +58,16 @@ impl DescribeInstanceConnectEndpointsInput {
     /// <li> <p> <code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>One or more EC2 Instance Connect Endpoint IDs.</p>
-    pub fn instance_connect_endpoint_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_connect_endpoint_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_connect_endpoint_ids.is_none()`.
+    pub fn instance_connect_endpoint_ids(&self) -> &[::std::string::String] {
+        self.instance_connect_endpoint_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeInstanceConnectEndpointsInput {

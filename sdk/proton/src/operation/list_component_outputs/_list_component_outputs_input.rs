@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentOutputsInput {
     /// <p>The name of the component whose outputs you want.</p>
-    pub component_name: ::std::option::Option<::std::string::String>,
+    pub component_name: ::std::string::String,
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment whose outputs you want.</p>
@@ -12,8 +12,9 @@ pub struct ListComponentOutputsInput {
 }
 impl ListComponentOutputsInput {
     /// <p>The name of the component whose outputs you want.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
-        self.component_name.as_deref()
+    pub fn component_name(&self) -> &str {
+        use std::ops::Deref;
+        self.component_name.deref()
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct ListComponentOutputsInputBuilder {
 }
 impl ListComponentOutputsInputBuilder {
     /// <p>The name of the component whose outputs you want.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -83,12 +85,19 @@ impl ListComponentOutputsInputBuilder {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_name`](crate::operation::list_component_outputs::builders::ListComponentOutputsInputBuilder::component_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_component_outputs::ListComponentOutputsInput {
-            component_name: self.component_name,
+            component_name: self.component_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "component_name",
+                    "component_name was not specified but it is required when building ListComponentOutputsInput",
+                )
+            })?,
             next_token: self.next_token,
             deployment_id: self.deployment_id,
         })

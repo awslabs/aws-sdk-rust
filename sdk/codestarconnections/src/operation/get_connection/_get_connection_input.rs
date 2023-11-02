@@ -27,6 +27,7 @@ pub struct GetConnectionInputBuilder {
 }
 impl GetConnectionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of a connection.</p>
+    /// This field is required.
     pub fn connection_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_arn = ::std::option::Option::Some(input.into());
         self

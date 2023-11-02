@@ -5,36 +5,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Registry {
     /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
-    pub registry_id: ::std::option::Option<::std::string::String>,
+    pub registry_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
-    pub registry_arn: ::std::option::Option<::std::string::String>,
+    pub registry_arn: ::std::string::String,
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
-    pub registry_uri: ::std::option::Option<::std::string::String>,
+    pub registry_uri: ::std::string::String,
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
-    pub verified: ::std::option::Option<bool>,
+    pub verified: bool,
     /// <p>An array of objects that represents the aliases for a public registry.</p>
-    pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::RegistryAlias>>,
+    pub aliases: ::std::vec::Vec<crate::types::RegistryAlias>,
 }
 impl Registry {
     /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
-        self.registry_id.as_deref()
+    pub fn registry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.registry_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
-    pub fn registry_arn(&self) -> ::std::option::Option<&str> {
-        self.registry_arn.as_deref()
+    pub fn registry_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.registry_arn.deref()
     }
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
-    pub fn registry_uri(&self) -> ::std::option::Option<&str> {
-        self.registry_uri.as_deref()
+    pub fn registry_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.registry_uri.deref()
     }
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
-    pub fn verified(&self) -> ::std::option::Option<bool> {
+    pub fn verified(&self) -> bool {
         self.verified
     }
     /// <p>An array of objects that represents the aliases for a public registry.</p>
-    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::RegistryAlias]> {
-        self.aliases.as_deref()
+    pub fn aliases(&self) -> &[crate::types::RegistryAlias] {
+        use std::ops::Deref;
+        self.aliases.deref()
     }
 }
 impl Registry {
@@ -56,6 +60,7 @@ pub struct RegistryBuilder {
 }
 impl RegistryBuilder {
     /// <p>The Amazon Web Services account ID that's associated with the registry. If you do not specify a registry, the default public registry is assumed.</p>
+    /// This field is required.
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl RegistryBuilder {
         &self.registry_id
     }
     /// <p>The Amazon Resource Name (ARN) of the public registry.</p>
+    /// This field is required.
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,7 @@ impl RegistryBuilder {
         &self.registry_arn
     }
     /// <p>The URI of a public registry. The URI contains a universal prefix and the registry alias.</p>
+    /// This field is required.
     pub fn registry_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_uri = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +105,7 @@ impl RegistryBuilder {
         &self.registry_uri
     }
     /// <p>Indicates whether the account is a verified Amazon Web Services Marketplace vendor. If an account is verified, each public repository receives a verified account badge on the Amazon ECR Public Gallery.</p>
+    /// This field is required.
     pub fn verified(mut self, input: bool) -> Self {
         self.verified = ::std::option::Option::Some(input);
         self
@@ -132,13 +140,44 @@ impl RegistryBuilder {
         &self.aliases
     }
     /// Consumes the builder and constructs a [`Registry`](crate::types::Registry).
-    pub fn build(self) -> crate::types::Registry {
-        crate::types::Registry {
-            registry_id: self.registry_id,
-            registry_arn: self.registry_arn,
-            registry_uri: self.registry_uri,
-            verified: self.verified,
-            aliases: self.aliases,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`registry_id`](crate::types::builders::RegistryBuilder::registry_id)
+    /// - [`registry_arn`](crate::types::builders::RegistryBuilder::registry_arn)
+    /// - [`registry_uri`](crate::types::builders::RegistryBuilder::registry_uri)
+    /// - [`verified`](crate::types::builders::RegistryBuilder::verified)
+    /// - [`aliases`](crate::types::builders::RegistryBuilder::aliases)
+    pub fn build(self) -> ::std::result::Result<crate::types::Registry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Registry {
+            registry_id: self.registry_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "registry_id",
+                    "registry_id was not specified but it is required when building Registry",
+                )
+            })?,
+            registry_arn: self.registry_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "registry_arn",
+                    "registry_arn was not specified but it is required when building Registry",
+                )
+            })?,
+            registry_uri: self.registry_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "registry_uri",
+                    "registry_uri was not specified but it is required when building Registry",
+                )
+            })?,
+            verified: self.verified.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "verified",
+                    "verified was not specified but it is required when building Registry",
+                )
+            })?,
+            aliases: self.aliases.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aliases",
+                    "aliases was not specified but it is required when building Registry",
+                )
+            })?,
+        })
     }
 }

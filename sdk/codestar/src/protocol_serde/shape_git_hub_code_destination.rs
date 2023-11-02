@@ -3,17 +3,17 @@ pub fn ser_git_hub_code_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitHubCodeDestination,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("type").string(var_3.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_4) = &input.owner {
-        object.key("owner").string(var_4.as_str());
+    {
+        object.key("owner").string(input.owner.as_str());
     }
     {
         object.key("privateRepository").boolean(input.private_repository);
@@ -21,8 +21,8 @@ pub fn ser_git_hub_code_destination(
     {
         object.key("issuesEnabled").boolean(input.issues_enabled);
     }
-    if let Some(var_5) = &input.token {
-        object.key("token").string(var_5.as_str());
+    {
+        object.key("token").string(input.token.as_str());
     }
     Ok(())
 }

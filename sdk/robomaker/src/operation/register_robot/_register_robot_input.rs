@@ -37,6 +37,7 @@ pub struct RegisterRobotInputBuilder {
 }
 impl RegisterRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// This field is required.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl RegisterRobotInputBuilder {
         &self.fleet
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// This field is required.
     pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.robot = ::std::option::Option::Some(input.into());
         self

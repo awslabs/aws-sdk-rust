@@ -54,7 +54,7 @@ pub fn de_list_candidates_for_auto_ml_job_http_response(
         output = crate::protocol_serde::shape_list_candidates_for_auto_ml_job::de_list_candidates_for_auto_ml_job(_response_body, output)
             .map_err(crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_candidates_for_auto_ml_job_output_correct_errors(output).build()
     })
 }
 

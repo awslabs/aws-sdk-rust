@@ -34,6 +34,7 @@ pub struct UpdateOrganizationConfigurationOutputBuilder {
 }
 impl UpdateOrganizationConfigurationOutputBuilder {
     /// <p>The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.</p>
+    /// This field is required.
     pub fn auto_enable(mut self, input: crate::types::AutoEnable) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
         self

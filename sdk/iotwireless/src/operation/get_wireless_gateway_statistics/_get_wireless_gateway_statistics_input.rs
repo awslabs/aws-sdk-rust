@@ -27,6 +27,7 @@ pub struct GetWirelessGatewayStatisticsInputBuilder {
 }
 impl GetWirelessGatewayStatisticsInputBuilder {
     /// <p>The ID of the wireless gateway for which to get the data.</p>
+    /// This field is required.
     pub fn wireless_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wireless_gateway_id = ::std::option::Option::Some(input.into());
         self

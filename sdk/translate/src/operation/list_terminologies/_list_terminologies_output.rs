@@ -11,8 +11,10 @@ pub struct ListTerminologiesOutput {
 }
 impl ListTerminologiesOutput {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
-    pub fn terminology_properties_list(&self) -> ::std::option::Option<&[crate::types::TerminologyProperties]> {
-        self.terminology_properties_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terminology_properties_list.is_none()`.
+    pub fn terminology_properties_list(&self) -> &[crate::types::TerminologyProperties] {
+        self.terminology_properties_list.as_deref().unwrap_or_default()
     }
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

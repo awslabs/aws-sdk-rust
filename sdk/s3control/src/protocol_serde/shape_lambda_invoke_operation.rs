@@ -13,6 +13,7 @@ pub fn ser_lambda_invoke_operation(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lambda_invoke_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LambdaInvokeOperation, ::aws_smithy_xml::decode::XmlDecodeError> {

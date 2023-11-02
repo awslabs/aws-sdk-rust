@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationTemplateInput {
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-    pub replication_configuration_template_id: ::std::option::Option<::std::string::String>,
+    pub replication_configuration_template_id: ::std::string::String,
 }
 impl DeleteReplicationConfigurationTemplateInput {
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
-    pub fn replication_configuration_template_id(&self) -> ::std::option::Option<&str> {
-        self.replication_configuration_template_id.as_deref()
+    pub fn replication_configuration_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.replication_configuration_template_id.deref()
     }
 }
 impl DeleteReplicationConfigurationTemplateInput {
@@ -27,6 +28,7 @@ pub struct DeleteReplicationConfigurationTemplateInputBuilder {
 }
 impl DeleteReplicationConfigurationTemplateInputBuilder {
     /// <p>The ID of the Replication Configuration Template to be deleted.</p>
+    /// This field is required.
     pub fn replication_configuration_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_configuration_template_id = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl DeleteReplicationConfigurationTemplateInputBuilder {
         &self.replication_configuration_template_id
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationTemplateInput`](crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`replication_configuration_template_id`](crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateInputBuilder::replication_configuration_template_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,8 +53,12 @@ impl DeleteReplicationConfigurationTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput {
-                replication_configuration_template_id: self.replication_configuration_template_id,
-            },
+                replication_configuration_template_id: self.replication_configuration_template_id
+                    .ok_or_else(||
+                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_configuration_template_id", "replication_configuration_template_id was not specified but it is required when building DeleteReplicationConfigurationTemplateInput")
+                    )?
+                ,
+            }
         )
     }
 }

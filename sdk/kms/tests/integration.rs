@@ -5,9 +5,9 @@
 
 use aws_sdk_kms as kms;
 use aws_sdk_kms::operation::RequestId;
-use aws_smithy_client::test_connection::TestConnection;
-use aws_smithy_client::SdkError;
 use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::result::SdkError;
+use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
 use http::header::AUTHORIZATION;
 use http::Uri;
 use kms::config::{Config, Credentials, Region};
@@ -20,16 +20,16 @@ use std::time::{Duration, UNIX_EPOCH};
 /// Validate that for CN regions we set the URI correctly
 #[tokio::test]
 async fn generate_random_cn() {
-    let conn = TestConnection::new(vec![(
+    let http_client= StaticReplayClient::new(vec![ReplayEvent::new(
         http::Request::builder()
             .uri(Uri::from_static("https://kms.cn-north-1.amazonaws.com.cn/"))
             .body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
         http::Response::builder()
             .status(http::StatusCode::from_u16(200).unwrap())
-            .body(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#).unwrap())
+            .body(SdkBody::from(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#)).unwrap())
     ]);
     let conf = Config::builder()
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .region(Region::new("cn-north-1"))
         .credentials_provider(Credentials::for_tests())
         .build();
@@ -41,13 +41,13 @@ async fn generate_random_cn() {
         .await
         .expect("success");
 
-    assert_eq!(conn.requests().len(), 1);
-    conn.assert_requests_match(&[]);
+    assert_eq!(http_client.actual_requests().count(), 1);
+    http_client.assert_requests_match(&[]);
 }
 
 #[tokio::test]
 async fn generate_random() {
-    let conn = TestConnection::new(vec![(
+    let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
         http::Request::builder()
             .header("content-type", "application/x-amz-json-1.1")
             .header("x-amz-target", "TrentService.GenerateRandom")
@@ -61,12 +61,12 @@ async fn generate_random() {
             .body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
         http::Response::builder()
             .status(http::StatusCode::from_u16(200).unwrap())
-            .body(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#).unwrap())
+            .body(SdkBody::from(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#)).unwrap())
     ]);
     let conf = Config::builder()
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .region(Region::new("us-east-1"))
-        .credentials_provider(Credentials::for_tests())
+        .credentials_provider(Credentials::for_tests_with_session_token())
         .build();
     let client = kms::Client::from_conf(conf);
     let resp = client
@@ -94,20 +94,20 @@ async fn generate_random() {
             .sum::<u32>(),
         8562
     );
-    conn.assert_requests_match(&[]);
+    http_client.assert_requests_match(&[]);
 }
 
 #[tokio::test]
 async fn generate_random_malformed_response() {
-    let conn = TestConnection::new(vec![(
+    let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
         http::Request::builder().body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
         http::Response::builder()
             .status(http::StatusCode::from_u16(200).unwrap())
             // last `}` replaced with a space, invalid JSON
-            .body(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA==" "#).unwrap())
+            .body(SdkBody::from(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA==" "#)).unwrap())
     ]);
     let conf = Config::builder()
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
         .build();
@@ -122,7 +122,7 @@ async fn generate_random_malformed_response() {
 
 #[tokio::test]
 async fn generate_random_keystore_not_found() {
-    let conn = TestConnection::new(vec![(
+    let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
         http::Request::builder()
             .header("content-type", "application/x-amz-json-1.1")
             .header("x-amz-target", "TrentService.GenerateRandom")
@@ -143,12 +143,12 @@ async fn generate_random_keystore_not_found() {
             .header("date", "Fri, 05 Mar 2021 15:01:40 GMT")
             .header("content-type", "application/x-amz-json-1.1")
             .header("content-length", "44")
-            .body(r#"{"__type":"CustomKeyStoreNotFoundException"}"#).unwrap())
+            .body(SdkBody::from(r#"{"__type":"CustomKeyStoreNotFoundException"}"#)).unwrap())
     ]);
     let conf = Config::builder()
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .region(Region::new("us-east-1"))
-        .credentials_provider(Credentials::for_tests())
+        .credentials_provider(Credentials::for_tests_with_session_token())
         .build();
     let client = kms::Client::from_conf(conf);
 
@@ -174,5 +174,5 @@ async fn generate_random_keystore_not_found() {
         inner.request_id(),
         Some("bfe81a0a-9a08-4e71-9910-cdb5ab6ea3b6")
     );
-    conn.assert_requests_match(&[AUTHORIZATION]);
+    http_client.assert_requests_match(&[AUTHORIZATION]);
 }

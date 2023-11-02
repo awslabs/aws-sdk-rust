@@ -9,7 +9,7 @@ pub struct DataViewDestinationTypeParams {
     /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
     /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
     /// </ul>
-    pub destination_type: ::std::option::Option<::std::string::String>,
+    pub destination_type: ::std::string::String,
     /// <p>Dataview export file format.</p>
     /// <ul>
     /// <li> <p> <code>PARQUET</code> – Parquet export file format.</p> </li>
@@ -27,8 +27,9 @@ impl DataViewDestinationTypeParams {
     /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
     /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
     /// </ul>
-    pub fn destination_type(&self) -> ::std::option::Option<&str> {
-        self.destination_type.as_deref()
+    pub fn destination_type(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_type.deref()
     }
     /// <p>Dataview export file format.</p>
     /// <ul>
@@ -69,6 +70,7 @@ impl DataViewDestinationTypeParamsBuilder {
     /// <li> <p> <code>GLUE_TABLE</code> – Glue table destination type.</p> </li>
     /// <li> <p> <code>S3</code> – S3 destination type.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn destination_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_type = ::std::option::Option::Some(input.into());
         self
@@ -152,11 +154,18 @@ impl DataViewDestinationTypeParamsBuilder {
         &self.s3_destination_export_file_format_options
     }
     /// Consumes the builder and constructs a [`DataViewDestinationTypeParams`](crate::types::DataViewDestinationTypeParams).
-    pub fn build(self) -> crate::types::DataViewDestinationTypeParams {
-        crate::types::DataViewDestinationTypeParams {
-            destination_type: self.destination_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination_type`](crate::types::builders::DataViewDestinationTypeParamsBuilder::destination_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DataViewDestinationTypeParams, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DataViewDestinationTypeParams {
+            destination_type: self.destination_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_type",
+                    "destination_type was not specified but it is required when building DataViewDestinationTypeParams",
+                )
+            })?,
             s3_destination_export_file_format: self.s3_destination_export_file_format,
             s3_destination_export_file_format_options: self.s3_destination_export_file_format_options,
-        }
+        })
     }
 }

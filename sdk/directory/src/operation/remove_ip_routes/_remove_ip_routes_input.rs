@@ -14,8 +14,10 @@ impl RemoveIpRoutesInput {
         self.directory_id.as_deref()
     }
     /// <p>IP address blocks that you want to remove.</p>
-    pub fn cidr_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidr_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_ips.is_none()`.
+    pub fn cidr_ips(&self) -> &[::std::string::String] {
+        self.cidr_ips.as_deref().unwrap_or_default()
     }
 }
 impl RemoveIpRoutesInput {
@@ -34,6 +36,7 @@ pub struct RemoveIpRoutesInputBuilder {
 }
 impl RemoveIpRoutesInputBuilder {
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

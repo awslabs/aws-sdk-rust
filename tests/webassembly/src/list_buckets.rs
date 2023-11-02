@@ -11,7 +11,7 @@ pub async fn s3_list_buckets() {
     let shared_config = get_default_config().await;
     let client = Client::new(&shared_config);
     let result = client.list_buckets().send().await.unwrap();
-    assert_eq!(result.buckets().unwrap().len(), 2)
+    assert_eq!(result.buckets().len(), 2)
 }
 
 #[tokio::test]

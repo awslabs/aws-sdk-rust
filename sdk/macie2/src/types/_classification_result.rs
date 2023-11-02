@@ -33,8 +33,10 @@ impl ClassificationResult {
         self.mime_type.as_deref()
     }
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    pub fn sensitive_data(&self) -> ::std::option::Option<&[crate::types::SensitiveDataItem]> {
-        self.sensitive_data.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sensitive_data.is_none()`.
+    pub fn sensitive_data(&self) -> &[crate::types::SensitiveDataItem] {
+        self.sensitive_data.as_deref().unwrap_or_default()
     }
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
     pub fn size_classified(&self) -> ::std::option::Option<i64> {

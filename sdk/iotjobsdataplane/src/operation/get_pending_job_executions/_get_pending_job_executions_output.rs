@@ -11,12 +11,16 @@ pub struct GetPendingJobExecutionsOutput {
 }
 impl GetPendingJobExecutionsOutput {
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    pub fn in_progress_jobs(&self) -> ::std::option::Option<&[crate::types::JobExecutionSummary]> {
-        self.in_progress_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_progress_jobs.is_none()`.
+    pub fn in_progress_jobs(&self) -> &[crate::types::JobExecutionSummary] {
+        self.in_progress_jobs.as_deref().unwrap_or_default()
     }
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    pub fn queued_jobs(&self) -> ::std::option::Option<&[crate::types::JobExecutionSummary]> {
-        self.queued_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queued_jobs.is_none()`.
+    pub fn queued_jobs(&self) -> &[crate::types::JobExecutionSummary] {
+        self.queued_jobs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetPendingJobExecutionsOutput {

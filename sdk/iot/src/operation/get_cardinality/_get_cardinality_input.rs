@@ -62,6 +62,7 @@ impl GetCardinalityInputBuilder {
         &self.index_name
     }
     /// <p>The search query string.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self

@@ -77,20 +77,26 @@ impl Container {
         self.reason.as_deref()
     }
     /// <p>The network bindings associated with the container.</p>
-    pub fn network_bindings(&self) -> ::std::option::Option<&[crate::types::NetworkBinding]> {
-        self.network_bindings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_bindings.is_none()`.
+    pub fn network_bindings(&self) -> &[crate::types::NetworkBinding] {
+        self.network_bindings.as_deref().unwrap_or_default()
     }
     /// <p>The network interfaces associated with the container.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The health status of the container. If health checks aren't configured for this container in its task definition, then it reports the health status as <code>UNKNOWN</code>.</p>
     pub fn health_status(&self) -> ::std::option::Option<&crate::types::HealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
-    pub fn managed_agents(&self) -> ::std::option::Option<&[crate::types::ManagedAgent]> {
-        self.managed_agents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_agents.is_none()`.
+    pub fn managed_agents(&self) -> &[crate::types::ManagedAgent] {
+        self.managed_agents.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU units set for the container. The value is <code>0</code> if no value was specified in the container definition when the task definition was registered.</p>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
@@ -105,8 +111,10 @@ impl Container {
         self.memory_reservation.as_deref()
     }
     /// <p>The IDs of each GPU assigned to the container.</p>
-    pub fn gpu_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.gpu_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gpu_ids.is_none()`.
+    pub fn gpu_ids(&self) -> &[::std::string::String] {
+        self.gpu_ids.as_deref().unwrap_or_default()
     }
 }
 impl Container {

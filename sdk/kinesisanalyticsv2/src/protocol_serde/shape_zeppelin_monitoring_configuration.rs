@@ -3,8 +3,8 @@ pub fn ser_zeppelin_monitoring_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ZeppelinMonitoringConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.log_level {
-        object.key("LogLevel").string(var_1.as_str());
+    {
+        object.key("LogLevel").string(input.log_level.as_str());
     }
     Ok(())
 }

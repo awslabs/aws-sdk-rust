@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    pub destination_phone_number: ::std::option::Option<::std::string::String>,
+    pub destination_phone_number: ::std::string::String,
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
     pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The body of the text message.</p>
@@ -29,8 +29,9 @@ pub struct SendTextMessageInput {
 }
 impl SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn destination_phone_number(&self) -> ::std::option::Option<&str> {
-        self.destination_phone_number.as_deref()
+    pub fn destination_phone_number(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_phone_number.deref()
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
     pub fn origination_identity(&self) -> ::std::option::Option<&str> {
@@ -101,6 +102,7 @@ pub struct SendTextMessageInputBuilder {
 }
 impl SendTextMessageInputBuilder {
     /// <p>The destination phone number in E.164 format.</p>
+    /// This field is required.
     pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_phone_number = ::std::option::Option::Some(input.into());
         self
@@ -276,11 +278,18 @@ impl SendTextMessageInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`SendTextMessageInput`](crate::operation::send_text_message::SendTextMessageInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination_phone_number`](crate::operation::send_text_message::builders::SendTextMessageInputBuilder::destination_phone_number)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::send_text_message::SendTextMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_text_message::SendTextMessageInput {
-            destination_phone_number: self.destination_phone_number,
+            destination_phone_number: self.destination_phone_number.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_phone_number",
+                    "destination_phone_number was not specified but it is required when building SendTextMessageInput",
+                )
+            })?,
             origination_identity: self.origination_identity,
             message_body: self.message_body,
             message_type: self.message_type,

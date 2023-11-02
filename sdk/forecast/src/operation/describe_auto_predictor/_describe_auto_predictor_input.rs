@@ -27,6 +27,7 @@ pub struct DescribeAutoPredictorInputBuilder {
 }
 impl DescribeAutoPredictorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    /// This field is required.
     pub fn predictor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predictor_arn = ::std::option::Option::Some(input.into());
         self

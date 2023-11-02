@@ -11,8 +11,10 @@ pub struct ListFlywheelsOutput {
 }
 impl ListFlywheelsOutput {
     /// <p>A list of flywheel properties retrieved by the service in response to the request. </p>
-    pub fn flywheel_summary_list(&self) -> ::std::option::Option<&[crate::types::FlywheelSummary]> {
-        self.flywheel_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flywheel_summary_list.is_none()`.
+    pub fn flywheel_summary_list(&self) -> &[crate::types::FlywheelSummary] {
+        self.flywheel_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct ListForecastExportJobsOutput {
 }
 impl ListForecastExportJobsOutput {
     /// <p>An array of objects that summarize each export job's properties.</p>
-    pub fn forecast_export_jobs(&self) -> ::std::option::Option<&[crate::types::ForecastExportJobSummary]> {
-        self.forecast_export_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_export_jobs.is_none()`.
+    pub fn forecast_export_jobs(&self) -> &[crate::types::ForecastExportJobSummary] {
+        self.forecast_export_jobs.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

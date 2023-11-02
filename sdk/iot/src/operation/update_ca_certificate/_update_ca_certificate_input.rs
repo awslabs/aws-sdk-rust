@@ -58,6 +58,7 @@ pub struct UpdateCaCertificateInputBuilder {
 }
 impl UpdateCaCertificateInputBuilder {
     /// <p>The CA certificate identifier.</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self

@@ -3,35 +3,35 @@ pub fn ser_project_artifacts(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectArtifacts,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.location {
-        object.key("location").string(var_2.as_str());
+    if let Some(var_1) = &input.location {
+        object.key("location").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.path {
-        object.key("path").string(var_3.as_str());
+    if let Some(var_2) = &input.path {
+        object.key("path").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.namespace_type {
-        object.key("namespaceType").string(var_4.as_str());
+    if let Some(var_3) = &input.namespace_type {
+        object.key("namespaceType").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.packaging {
-        object.key("packaging").string(var_6.as_str());
+    if let Some(var_5) = &input.packaging {
+        object.key("packaging").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.override_artifact_name {
-        object.key("overrideArtifactName").boolean(*var_7);
+    if let Some(var_6) = &input.override_artifact_name {
+        object.key("overrideArtifactName").boolean(*var_6);
     }
-    if let Some(var_8) = &input.encryption_disabled {
-        object.key("encryptionDisabled").boolean(*var_8);
+    if let Some(var_7) = &input.encryption_disabled {
+        object.key("encryptionDisabled").boolean(*var_7);
     }
-    if let Some(var_9) = &input.artifact_identifier {
-        object.key("artifactIdentifier").string(var_9.as_str());
+    if let Some(var_8) = &input.artifact_identifier {
+        object.key("artifactIdentifier").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.bucket_owner_access {
-        object.key("bucketOwnerAccess").string(var_10.as_str());
+    if let Some(var_9) = &input.bucket_owner_access {
+        object.key("bucketOwnerAccess").string(var_9.as_str());
     }
     Ok(())
 }
@@ -123,7 +123,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::project_artifacts_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

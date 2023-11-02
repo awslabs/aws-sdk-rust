@@ -34,6 +34,7 @@ pub struct GetInAppTemplateOutputBuilder {
 }
 impl GetInAppTemplateOutputBuilder {
     /// <p>In-App Template Response.</p>
+    /// This field is required.
     pub fn in_app_template_response(mut self, input: crate::types::InAppTemplateResponse) -> Self {
         self.in_app_template_response = ::std::option::Option::Some(input);
         self

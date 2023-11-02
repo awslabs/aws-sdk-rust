@@ -4,20 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccessPolicyInput {
     /// <p>The type of policy.</p>
-    pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
+    pub r#type: crate::types::AccessPolicyType,
     /// <p>The name of the policy to delete.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccessPolicyInput {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::AccessPolicyType {
+        &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -41,6 +42,7 @@ pub struct DeleteAccessPolicyInputBuilder {
 }
 impl DeleteAccessPolicyInputBuilder {
     /// <p>The type of policy.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::AccessPolicyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -55,6 +57,7 @@ impl DeleteAccessPolicyInputBuilder {
         &self.r#type
     }
     /// <p>The name of the policy to delete.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,12 +86,25 @@ impl DeleteAccessPolicyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder::r#type)
+    /// - [`name`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_access_policy::DeleteAccessPolicyInput {
-            r#type: self.r#type,
-            name: self.name,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DeleteAccessPolicyInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DeleteAccessPolicyInput",
+                )
+            })?,
             client_token: self.client_token,
         })
     }

@@ -48,6 +48,7 @@ pub struct UpdateTaskSetInputBuilder {
 }
 impl UpdateTaskSetInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateTaskSetInputBuilder {
         &self.cluster
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
+    /// This field is required.
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateTaskSetInputBuilder {
         &self.service
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
+    /// This field is required.
     pub fn task_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_set = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateTaskSetInputBuilder {
         &self.task_set
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
+    /// This field is required.
     pub fn scale(mut self, input: crate::types::Scale) -> Self {
         self.scale = ::std::option::Option::Some(input);
         self

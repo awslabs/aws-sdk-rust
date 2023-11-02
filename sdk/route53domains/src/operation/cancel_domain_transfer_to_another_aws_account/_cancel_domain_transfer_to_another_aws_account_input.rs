@@ -29,6 +29,7 @@ pub struct CancelDomainTransferToAnotherAwsAccountInputBuilder {
 }
 impl CancelDomainTransferToAnotherAwsAccountInputBuilder {
     /// <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

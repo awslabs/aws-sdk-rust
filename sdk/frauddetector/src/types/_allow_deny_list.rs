@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowDenyList {
     /// <p> The name of the list. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The description of the list. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The variable type of the list. </p>
@@ -19,8 +19,9 @@ pub struct AllowDenyList {
 }
 impl AllowDenyList {
     /// <p> The name of the list. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The description of the list. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -63,6 +64,7 @@ pub struct AllowDenyListBuilder {
 }
 impl AllowDenyListBuilder {
     /// <p> The name of the list. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +149,21 @@ impl AllowDenyListBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`AllowDenyList`](crate::types::AllowDenyList).
-    pub fn build(self) -> crate::types::AllowDenyList {
-        crate::types::AllowDenyList {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AllowDenyListBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AllowDenyList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AllowDenyList {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AllowDenyList",
+                )
+            })?,
             description: self.description,
             variable_type: self.variable_type,
             created_time: self.created_time,
             updated_time: self.updated_time,
             arn: self.arn,
-        }
+        })
     }
 }

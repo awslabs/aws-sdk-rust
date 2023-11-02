@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimerDefinition {
     /// <p>The name of the timer.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
-    pub seconds: ::std::option::Option<i32>,
+    pub seconds: i32,
 }
 impl TimerDefinition {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
-    pub fn seconds(&self) -> ::std::option::Option<i32> {
+    pub fn seconds(&self) -> i32 {
         self.seconds
     }
 }
@@ -35,6 +36,7 @@ pub struct TimerDefinitionBuilder {
 }
 impl TimerDefinitionBuilder {
     /// <p>The name of the timer.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl TimerDefinitionBuilder {
         &self.name
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
+    /// This field is required.
     pub fn seconds(mut self, input: i32) -> Self {
         self.seconds = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl TimerDefinitionBuilder {
         &self.seconds
     }
     /// Consumes the builder and constructs a [`TimerDefinition`](crate::types::TimerDefinition).
-    pub fn build(self) -> crate::types::TimerDefinition {
-        crate::types::TimerDefinition {
-            name: self.name,
-            seconds: self.seconds,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::TimerDefinitionBuilder::name)
+    /// - [`seconds`](crate::types::builders::TimerDefinitionBuilder::seconds)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimerDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimerDefinition {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building TimerDefinition",
+                )
+            })?,
+            seconds: self.seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "seconds",
+                    "seconds was not specified but it is required when building TimerDefinition",
+                )
+            })?,
+        })
     }
 }

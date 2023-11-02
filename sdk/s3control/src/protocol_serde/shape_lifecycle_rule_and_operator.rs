@@ -30,6 +30,7 @@ pub fn ser_lifecycle_rule_and_operator(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_lifecycle_rule_and_operator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::LifecycleRuleAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {

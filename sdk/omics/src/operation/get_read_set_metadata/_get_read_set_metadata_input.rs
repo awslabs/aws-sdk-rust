@@ -34,6 +34,7 @@ pub struct GetReadSetMetadataInputBuilder {
 }
 impl GetReadSetMetadataInputBuilder {
     /// <p>The read set's ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetReadSetMetadataInputBuilder {
         &self.id
     }
     /// <p>The read set's sequence store ID.</p>
+    /// This field is required.
     pub fn sequence_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sequence_store_id = ::std::option::Option::Some(input.into());
         self

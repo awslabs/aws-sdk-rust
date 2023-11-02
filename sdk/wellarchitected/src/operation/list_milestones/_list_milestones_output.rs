@@ -18,8 +18,10 @@ impl ListMilestonesOutput {
         self.workload_id.as_deref()
     }
     /// <p>A list of milestone summaries.</p>
-    pub fn milestone_summaries(&self) -> ::std::option::Option<&[crate::types::MilestoneSummary]> {
-        self.milestone_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.milestone_summaries.is_none()`.
+    pub fn milestone_summaries(&self) -> &[crate::types::MilestoneSummary] {
+        self.milestone_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

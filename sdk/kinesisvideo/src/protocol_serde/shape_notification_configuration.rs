@@ -36,7 +36,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::notification_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -48,14 +52,14 @@ pub fn ser_notification_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("Status").string(var_1.as_str());
+    {
+        object.key("Status").string(input.status.as_str());
     }
-    if let Some(var_2) = &input.destination_config {
+    if let Some(var_1) = &input.destination_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DestinationConfig").start_object();
-        crate::protocol_serde::shape_notification_destination_config::ser_notification_destination_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("DestinationConfig").start_object();
+        crate::protocol_serde::shape_notification_destination_config::ser_notification_destination_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

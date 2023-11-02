@@ -16,84 +16,84 @@ pub fn ser_create_environment_input(
     if let Some(var_5) = &input.airflow_version {
         object.key("AirflowVersion").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.dag_s3_path {
-        object.key("DagS3Path").string(var_6.as_str());
+    {
+        object.key("DagS3Path").string(input.dag_s3_path.as_str());
     }
-    if let Some(var_7) = &input.environment_class {
-        object.key("EnvironmentClass").string(var_7.as_str());
+    if let Some(var_6) = &input.environment_class {
+        object.key("EnvironmentClass").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_8.as_str());
+    {
+        object.key("ExecutionRoleArn").string(input.execution_role_arn.as_str());
     }
-    if let Some(var_9) = &input.kms_key {
-        object.key("KmsKey").string(var_9.as_str());
+    if let Some(var_7) = &input.kms_key {
+        object.key("KmsKey").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.logging_configuration {
+    if let Some(var_8) = &input.logging_configuration {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("LoggingConfiguration").start_object();
-        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_9 = object.key("LoggingConfiguration").start_object();
+        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_12) = &input.max_workers {
+    if let Some(var_10) = &input.max_workers {
         object.key("MaxWorkers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_13) = &input.min_workers {
+    if let Some(var_11) = &input.min_workers {
         object.key("MinWorkers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_14) = &input.network_configuration {
+    if let Some(var_12) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("NetworkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_13 = object.key("NetworkConfiguration").start_object();
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_16) = &input.plugins_s3_object_version {
-        object.key("PluginsS3ObjectVersion").string(var_16.as_str());
+    if let Some(var_14) = &input.plugins_s3_object_version {
+        object.key("PluginsS3ObjectVersion").string(var_14.as_str());
     }
-    if let Some(var_17) = &input.plugins_s3_path {
-        object.key("PluginsS3Path").string(var_17.as_str());
+    if let Some(var_15) = &input.plugins_s3_path {
+        object.key("PluginsS3Path").string(var_15.as_str());
     }
-    if let Some(var_18) = &input.requirements_s3_object_version {
-        object.key("RequirementsS3ObjectVersion").string(var_18.as_str());
+    if let Some(var_16) = &input.requirements_s3_object_version {
+        object.key("RequirementsS3ObjectVersion").string(var_16.as_str());
     }
-    if let Some(var_19) = &input.requirements_s3_path {
-        object.key("RequirementsS3Path").string(var_19.as_str());
+    if let Some(var_17) = &input.requirements_s3_path {
+        object.key("RequirementsS3Path").string(var_17.as_str());
     }
-    if let Some(var_20) = &input.schedulers {
+    if let Some(var_18) = &input.schedulers {
         object.key("Schedulers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_21) = &input.source_bucket_arn {
-        object.key("SourceBucketArn").string(var_21.as_str());
+    {
+        object.key("SourceBucketArn").string(input.source_bucket_arn.as_str());
     }
-    if let Some(var_22) = &input.startup_script_s3_object_version {
-        object.key("StartupScriptS3ObjectVersion").string(var_22.as_str());
+    if let Some(var_19) = &input.startup_script_s3_object_version {
+        object.key("StartupScriptS3ObjectVersion").string(var_19.as_str());
     }
-    if let Some(var_23) = &input.startup_script_s3_path {
-        object.key("StartupScriptS3Path").string(var_23.as_str());
+    if let Some(var_20) = &input.startup_script_s3_path {
+        object.key("StartupScriptS3Path").string(var_20.as_str());
     }
-    if let Some(var_24) = &input.tags {
+    if let Some(var_21) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("Tags").start_object();
-        for (key_26, value_27) in var_24 {
+        let mut object_22 = object.key("Tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_25.key(key_26.as_str()).string(value_27.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_25.finish();
+        object_22.finish();
     }
-    if let Some(var_28) = &input.webserver_access_mode {
-        object.key("WebserverAccessMode").string(var_28.as_str());
+    if let Some(var_25) = &input.webserver_access_mode {
+        object.key("WebserverAccessMode").string(var_25.as_str());
     }
-    if let Some(var_29) = &input.weekly_maintenance_window_start {
-        object.key("WeeklyMaintenanceWindowStart").string(var_29.as_str());
+    if let Some(var_26) = &input.weekly_maintenance_window_start {
+        object.key("WeeklyMaintenanceWindowStart").string(var_26.as_str());
     }
     Ok(())
 }

@@ -26,8 +26,10 @@ impl ListVolumesOutput {
         self.marker.as_deref()
     }
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    pub fn volume_infos(&self) -> ::std::option::Option<&[crate::types::VolumeInfo]> {
-        self.volume_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_infos.is_none()`.
+    pub fn volume_infos(&self) -> &[crate::types::VolumeInfo] {
+        self.volume_infos.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVolumesOutput {

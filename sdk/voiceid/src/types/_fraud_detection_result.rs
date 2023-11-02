@@ -41,8 +41,10 @@ impl FraudDetectionResult {
         self.decision.as_ref()
     }
     /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
-    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::FraudDetectionReason]> {
-        self.reasons.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
+    pub fn reasons(&self) -> &[crate::types::FraudDetectionReason] {
+        self.reasons.as_deref().unwrap_or_default()
     }
     /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
     pub fn risk_details(&self) -> ::std::option::Option<&crate::types::FraudRiskDetails> {

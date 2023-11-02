@@ -11,12 +11,16 @@ pub struct EnableFastSnapshotRestoresOutput {
 }
 impl EnableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
-    pub fn successful(&self) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreSuccessItem]> {
-        self.successful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful.is_none()`.
+    pub fn successful(&self) -> &[crate::types::EnableFastSnapshotRestoreSuccessItem] {
+        self.successful.as_deref().unwrap_or_default()
     }
     /// <p>Information about the snapshots for which fast snapshot restores could not be enabled.</p>
-    pub fn unsuccessful(&self) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreErrorItem]> {
-        self.unsuccessful.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful.is_none()`.
+    pub fn unsuccessful(&self) -> &[crate::types::EnableFastSnapshotRestoreErrorItem] {
+        self.unsuccessful.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for EnableFastSnapshotRestoresOutput {

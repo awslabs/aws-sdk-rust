@@ -4,24 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionInput {
     /// <p>The tracker resource retrieving the device position.</p>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
     /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
-    pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub device_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl BatchGetDevicePositionInput {
     /// <p>The tracker resource retrieving the device position.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
     /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
-    pub fn device_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.device_ids.as_deref()
+    pub fn device_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.device_ids.deref()
     }
 }
 impl BatchGetDevicePositionInput {
@@ -40,6 +42,7 @@ pub struct BatchGetDevicePositionInputBuilder {
 }
 impl BatchGetDevicePositionInputBuilder {
     /// <p>The tracker resource retrieving the device position.</p>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +86,9 @@ impl BatchGetDevicePositionInputBuilder {
         &self.device_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDevicePositionInput`](crate::operation::batch_get_device_position::BatchGetDevicePositionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder::tracker_name)
+    /// - [`device_ids`](crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder::device_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -90,8 +96,18 @@ impl BatchGetDevicePositionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_device_position::BatchGetDevicePositionInput {
-            tracker_name: self.tracker_name,
-            device_ids: self.device_ids,
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building BatchGetDevicePositionInput",
+                )
+            })?,
+            device_ids: self.device_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_ids",
+                    "device_ids was not specified but it is required when building BatchGetDevicePositionInput",
+                )
+            })?,
         })
     }
 }

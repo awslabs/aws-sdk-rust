@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVpcEndpoints`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_endpoint_ids(impl Into<String>)`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder::vpc_endpoint_ids) / [`set_vpc_endpoint_ids(Option<Vec<String>>)`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder::set_vpc_endpoint_ids): <p>The unique identifiers of the endpoints to get information about.</p>
+    ///   - [`vpc_endpoint_ids(impl Into<String>)`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder::vpc_endpoint_ids) / [`set_vpc_endpoint_ids(Option<Vec<String>>)`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder::set_vpc_endpoint_ids):<br>required: **true**<br><p>The unique identifiers of the endpoints to get information about.</p><br>
     /// - On success, responds with [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput) with field(s):
-    ///   - [`vpc_endpoints(Option<Vec<VpcEndpoint>>)`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput::vpc_endpoints): <p>Information about each requested VPC endpoint.</p>
-    ///   - [`vpc_endpoint_errors(Option<Vec<VpcEndpointError>>)`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput::vpc_endpoint_errors): <p>Any errors associated with the request.</p>
+    ///   - [`vpc_endpoints(Vec<VpcEndpoint>)`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput::vpc_endpoints): <p>Information about each requested VPC endpoint.</p>
+    ///   - [`vpc_endpoint_errors(Vec<VpcEndpointError>)`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput::vpc_endpoint_errors): <p>Any errors associated with the request.</p>
     /// - On failure, responds with [`SdkError<DescribeVpcEndpointsError>`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsError)
     pub fn describe_vpc_endpoints(&self) -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder {
         crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsFluentBuilder::new(self.handle.clone())

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
+    pub access_log_subscription_identifier: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub destination_arn: ::std::option::Option<::std::string::String>,
+    pub destination_arn: ::std::string::String,
 }
 impl UpdateAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(&self) -> ::std::option::Option<&str> {
-        self.access_log_subscription_identifier.as_deref()
+    pub fn access_log_subscription_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.access_log_subscription_identifier.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
-        self.destination_arn.as_deref()
+    pub fn destination_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_arn.deref()
     }
 }
 impl UpdateAccessLogSubscriptionInput {
@@ -34,6 +36,7 @@ pub struct UpdateAccessLogSubscriptionInputBuilder {
 }
 impl UpdateAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    /// This field is required.
     pub fn access_log_subscription_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_log_subscription_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl UpdateAccessLogSubscriptionInputBuilder {
         &self.access_log_subscription_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +66,9 @@ impl UpdateAccessLogSubscriptionInputBuilder {
         &self.destination_arn
     }
     /// Consumes the builder and constructs a [`UpdateAccessLogSubscriptionInput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`access_log_subscription_identifier`](crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder::access_log_subscription_identifier)
+    /// - [`destination_arn`](crate::operation::update_access_log_subscription::builders::UpdateAccessLogSubscriptionInputBuilder::destination_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -69,8 +76,18 @@ impl UpdateAccessLogSubscriptionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput {
-            access_log_subscription_identifier: self.access_log_subscription_identifier,
-            destination_arn: self.destination_arn,
+            access_log_subscription_identifier: self.access_log_subscription_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "access_log_subscription_identifier",
+                    "access_log_subscription_identifier was not specified but it is required when building UpdateAccessLogSubscriptionInput",
+                )
+            })?,
+            destination_arn: self.destination_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_arn",
+                    "destination_arn was not specified but it is required when building UpdateAccessLogSubscriptionInput",
+                )
+            })?,
         })
     }
 }

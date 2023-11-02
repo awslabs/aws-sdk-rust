@@ -46,6 +46,7 @@ pub fn ser_instances_distribution(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instances_distribution(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::InstancesDistribution, ::aws_smithy_xml::decode::XmlDecodeError> {

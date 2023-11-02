@@ -38,8 +38,10 @@ impl DescribeClientVpnAuthorizationRulesInput {
     /// <li> <p> <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p> </li>
     /// <li> <p> <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -65,6 +67,7 @@ pub struct DescribeClientVpnAuthorizationRulesInputBuilder {
 }
 impl DescribeClientVpnAuthorizationRulesInputBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self

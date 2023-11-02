@@ -34,6 +34,7 @@ pub struct DescribeApplicationInputBuilder {
 }
 impl DescribeApplicationInputBuilder {
     /// <p>The name of the application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

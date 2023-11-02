@@ -5,25 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcAssociationAuthorizationsOutput {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
-    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub hosted_zone_id: ::std::string::String,
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
-    pub vp_cs: ::std::option::Option<::std::vec::Vec<crate::types::Vpc>>,
+    pub vp_cs: ::std::vec::Vec<crate::types::Vpc>,
     _request_id: Option<String>,
 }
 impl ListVpcAssociationAuthorizationsOutput {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
-        self.hosted_zone_id.as_deref()
+    pub fn hosted_zone_id(&self) -> &str {
+        use std::ops::Deref;
+        self.hosted_zone_id.deref()
     }
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
-    pub fn vp_cs(&self) -> ::std::option::Option<&[crate::types::Vpc]> {
-        self.vp_cs.as_deref()
+    pub fn vp_cs(&self) -> &[crate::types::Vpc] {
+        use std::ops::Deref;
+        self.vp_cs.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVpcAssociationAuthorizationsOutput {
@@ -49,6 +51,7 @@ pub struct ListVpcAssociationAuthorizationsOutputBuilder {
 }
 impl ListVpcAssociationAuthorizationsOutputBuilder {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
@@ -106,12 +109,32 @@ impl ListVpcAssociationAuthorizationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListVpcAssociationAuthorizationsOutput`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput).
-    pub fn build(self) -> crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput {
-        crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput {
-            hosted_zone_id: self.hosted_zone_id,
-            next_token: self.next_token,
-            vp_cs: self.vp_cs,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hosted_zone_id`](crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsOutputBuilder::hosted_zone_id)
+    /// - [`vp_cs`](crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsOutputBuilder::vp_cs)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput {
+                hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "hosted_zone_id",
+                        "hosted_zone_id was not specified but it is required when building ListVpcAssociationAuthorizationsOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                vp_cs: self.vp_cs.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vp_cs",
+                        "vp_cs was not specified but it is required when building ListVpcAssociationAuthorizationsOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

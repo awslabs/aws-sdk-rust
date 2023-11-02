@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentLaunchConfig {
     /// <p>The package name.</p>
-    pub package_name: ::std::option::Option<::std::string::String>,
+    pub package_name: ::std::string::String,
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     pub pre_launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The launch file name.</p>
-    pub launch_file: ::std::option::Option<::std::string::String>,
+    pub launch_file: ::std::string::String,
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub post_launch_file: ::std::option::Option<::std::string::String>,
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
@@ -17,16 +17,18 @@ pub struct DeploymentLaunchConfig {
 }
 impl DeploymentLaunchConfig {
     /// <p>The package name.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
-        self.package_name.as_deref()
+    pub fn package_name(&self) -> &str {
+        use std::ops::Deref;
+        self.package_name.deref()
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     pub fn pre_launch_file(&self) -> ::std::option::Option<&str> {
         self.pre_launch_file.as_deref()
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(&self) -> ::std::option::Option<&str> {
-        self.launch_file.as_deref()
+    pub fn launch_file(&self) -> &str {
+        use std::ops::Deref;
+        self.launch_file.deref()
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub fn post_launch_file(&self) -> ::std::option::Option<&str> {
@@ -56,6 +58,7 @@ pub struct DeploymentLaunchConfigBuilder {
 }
 impl DeploymentLaunchConfigBuilder {
     /// <p>The package name.</p>
+    /// This field is required.
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl DeploymentLaunchConfigBuilder {
         &self.pre_launch_file
     }
     /// <p>The launch file name.</p>
+    /// This field is required.
     pub fn launch_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_file = ::std::option::Option::Some(input.into());
         self
@@ -139,13 +143,26 @@ impl DeploymentLaunchConfigBuilder {
         &self.environment_variables
     }
     /// Consumes the builder and constructs a [`DeploymentLaunchConfig`](crate::types::DeploymentLaunchConfig).
-    pub fn build(self) -> crate::types::DeploymentLaunchConfig {
-        crate::types::DeploymentLaunchConfig {
-            package_name: self.package_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_name`](crate::types::builders::DeploymentLaunchConfigBuilder::package_name)
+    /// - [`launch_file`](crate::types::builders::DeploymentLaunchConfigBuilder::launch_file)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentLaunchConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeploymentLaunchConfig {
+            package_name: self.package_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_name",
+                    "package_name was not specified but it is required when building DeploymentLaunchConfig",
+                )
+            })?,
             pre_launch_file: self.pre_launch_file,
-            launch_file: self.launch_file,
+            launch_file: self.launch_file.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "launch_file",
+                    "launch_file was not specified but it is required when building DeploymentLaunchConfig",
+                )
+            })?,
             post_launch_file: self.post_launch_file,
             environment_variables: self.environment_variables,
-        }
+        })
     }
 }

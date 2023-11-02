@@ -47,16 +47,20 @@ impl ScheduledInstancesNetworkInterface {
         self.device_index
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[::std::string::String] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
     pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_address_count
     }
     /// <p>The specific IPv6 addresses from the subnet range.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[crate::types::ScheduledInstancesIpv6Address]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[crate::types::ScheduledInstancesIpv6Address] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
@@ -67,8 +71,10 @@ impl ScheduledInstancesNetworkInterface {
         self.private_ip_address.as_deref()
     }
     /// <p>The private IPv4 addresses.</p>
-    pub fn private_ip_address_configs(&self) -> ::std::option::Option<&[crate::types::ScheduledInstancesPrivateIpAddressConfig]> {
-        self.private_ip_address_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_address_configs.is_none()`.
+    pub fn private_ip_address_configs(&self) -> &[crate::types::ScheduledInstancesPrivateIpAddressConfig] {
+        self.private_ip_address_configs.as_deref().unwrap_or_default()
     }
     /// <p>The number of secondary private IPv4 addresses.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {

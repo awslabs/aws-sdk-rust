@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recipe {
     /// <p>The name of the Glue Studio node.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the recipe node, identified by id.</p>
-    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inputs: ::std::vec::Vec<::std::string::String>,
     /// <p>A reference to the DataBrew recipe used by the node.</p>
     pub recipe_reference: ::std::option::Option<crate::types::RecipeReference>,
 }
 impl Recipe {
     /// <p>The name of the Glue Studio node.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The nodes that are inputs to the recipe node, identified by id.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inputs.as_deref()
+    pub fn inputs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.inputs.deref()
     }
     /// <p>A reference to the DataBrew recipe used by the node.</p>
     pub fn recipe_reference(&self) -> ::std::option::Option<&crate::types::RecipeReference> {
@@ -42,6 +44,7 @@ pub struct RecipeBuilder {
 }
 impl RecipeBuilder {
     /// <p>The name of the Glue Studio node.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl RecipeBuilder {
         &self.inputs
     }
     /// <p>A reference to the DataBrew recipe used by the node.</p>
+    /// This field is required.
     pub fn recipe_reference(mut self, input: crate::types::RecipeReference) -> Self {
         self.recipe_reference = ::std::option::Option::Some(input);
         self
@@ -90,11 +94,24 @@ impl RecipeBuilder {
         &self.recipe_reference
     }
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).
-    pub fn build(self) -> crate::types::Recipe {
-        crate::types::Recipe {
-            name: self.name,
-            inputs: self.inputs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RecipeBuilder::name)
+    /// - [`inputs`](crate::types::builders::RecipeBuilder::inputs)
+    pub fn build(self) -> ::std::result::Result<crate::types::Recipe, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Recipe {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Recipe",
+                )
+            })?,
+            inputs: self.inputs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "inputs",
+                    "inputs was not specified but it is required when building Recipe",
+                )
+            })?,
             recipe_reference: self.recipe_reference,
-        }
+        })
     }
 }

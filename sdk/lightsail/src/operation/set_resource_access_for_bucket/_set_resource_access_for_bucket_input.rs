@@ -51,6 +51,7 @@ pub struct SetResourceAccessForBucketInputBuilder {
 }
 impl SetResourceAccessForBucketInputBuilder {
     /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
+    /// This field is required.
     pub fn resource_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl SetResourceAccessForBucketInputBuilder {
         &self.resource_name
     }
     /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl SetResourceAccessForBucketInputBuilder {
     /// <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>
     /// <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn access(mut self, input: crate::types::ResourceBucketAccess) -> Self {
         self.access = ::std::option::Option::Some(input);
         self

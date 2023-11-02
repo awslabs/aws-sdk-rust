@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The request was denied due to an invalid request error.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The request was denied due to an invalid request error.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
 }
 impl ValidationExceptionField {
     /// <p>The request was denied due to an invalid request error.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The request was denied due to an invalid request error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
 }
 impl ValidationExceptionField {
@@ -35,6 +37,7 @@ pub struct ValidationExceptionFieldBuilder {
 }
 impl ValidationExceptionFieldBuilder {
     /// <p>The request was denied due to an invalid request error.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl ValidationExceptionFieldBuilder {
         &self.path
     }
     /// <p>The request was denied due to an invalid request error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl ValidationExceptionFieldBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::types::ValidationExceptionField).
-    pub fn build(self) -> crate::types::ValidationExceptionField {
-        crate::types::ValidationExceptionField {
-            path: self.path,
-            message: self.message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::ValidationExceptionFieldBuilder::path)
+    /// - [`message`](crate::types::builders::ValidationExceptionFieldBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationExceptionField, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValidationExceptionField {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building ValidationExceptionField",
+                )
+            })?,
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building ValidationExceptionField",
+                )
+            })?,
+        })
     }
 }

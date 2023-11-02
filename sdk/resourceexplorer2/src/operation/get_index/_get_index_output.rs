@@ -38,13 +38,17 @@ impl GetIndexOutput {
     }
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub fn replicating_from(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replicating_from.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicating_from.is_none()`.
+    pub fn replicating_from(&self) -> &[::std::string::String] {
+        self.replicating_from.as_deref().unwrap_or_default()
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value. </p>
-    pub fn replicating_to(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replicating_to.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicating_to.is_none()`.
+    pub fn replicating_to(&self) -> &[::std::string::String] {
+        self.replicating_to.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the index was originally created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

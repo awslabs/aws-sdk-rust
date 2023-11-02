@@ -35,8 +35,10 @@ impl CreateDeviceFleetInput {
         self.output_config.as_ref()
     }
     /// <p>Creates tags for the specified fleet.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
@@ -64,6 +66,7 @@ pub struct CreateDeviceFleetInputBuilder {
 }
 impl CreateDeviceFleetInputBuilder {
     /// <p>The name of the fleet that the device belongs to.</p>
+    /// This field is required.
     pub fn device_fleet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +109,7 @@ impl CreateDeviceFleetInputBuilder {
         &self.description
     }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

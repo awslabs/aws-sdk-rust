@@ -39,12 +39,16 @@ impl GetMetricStreamOutput {
         self.name.as_deref()
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-    pub fn include_filters(&self) -> ::std::option::Option<&[crate::types::MetricStreamFilter]> {
-        self.include_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_filters.is_none()`.
+    pub fn include_filters(&self) -> &[crate::types::MetricStreamFilter] {
+        self.include_filters.as_deref().unwrap_or_default()
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    pub fn exclude_filters(&self) -> ::std::option::Option<&[crate::types::MetricStreamFilter]> {
-        self.exclude_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_filters.is_none()`.
+    pub fn exclude_filters(&self) -> &[crate::types::MetricStreamFilter] {
+        self.exclude_filters.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
     pub fn firehose_arn(&self) -> ::std::option::Option<&str> {
@@ -71,8 +75,10 @@ impl GetMetricStreamOutput {
         self.output_format.as_ref()
     }
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. </p>
-    pub fn statistics_configurations(&self) -> ::std::option::Option<&[crate::types::MetricStreamStatisticsConfiguration]> {
-        self.statistics_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics_configurations.is_none()`.
+    pub fn statistics_configurations(&self) -> &[crate::types::MetricStreamStatisticsConfiguration] {
+        self.statistics_configurations.as_deref().unwrap_or_default()
     }
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     pub fn include_linked_accounts_metrics(&self) -> ::std::option::Option<bool> {

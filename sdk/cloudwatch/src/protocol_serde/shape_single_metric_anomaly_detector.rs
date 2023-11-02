@@ -33,6 +33,7 @@ pub fn ser_single_metric_anomaly_detector(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_single_metric_anomaly_detector(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::SingleMetricAnomalyDetector, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -28,6 +28,7 @@ pub struct AuditLogDestinationConfigurationBuilder {
 }
 impl AuditLogDestinationConfigurationBuilder {
     /// <p>Contains information about an audit log destination.</p>
+    /// This field is required.
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
         self

@@ -123,6 +123,7 @@ pub struct GetCostForecastInputBuilder {
 }
 impl GetCostForecastInputBuilder {
     /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
+    /// This field is required.
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.time_period = ::std::option::Option::Some(input);
         self
@@ -145,6 +146,7 @@ impl GetCostForecastInputBuilder {
     /// <li> <p>NET_UNBLENDED_COST</p> </li>
     /// <li> <p>UNBLENDED_COST</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
@@ -176,6 +178,7 @@ impl GetCostForecastInputBuilder {
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    /// This field is required.
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
         self.granularity = ::std::option::Option::Some(input);
         self

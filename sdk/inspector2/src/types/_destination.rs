@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
-    pub bucket_name: ::std::option::Option<::std::string::String>,
+    pub bucket_name: ::std::string::String,
     /// <p>The prefix that the findings will be written under.</p>
     pub key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
-    pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub kms_key_arn: ::std::string::String,
 }
 impl Destination {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
-        self.bucket_name.as_deref()
+    pub fn bucket_name(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket_name.deref()
     }
     /// <p>The prefix that the findings will be written under.</p>
     pub fn key_prefix(&self) -> ::std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
-        self.kms_key_arn.as_deref()
+    pub fn kms_key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.kms_key_arn.deref()
     }
 }
 impl Destination {
@@ -42,6 +44,7 @@ pub struct DestinationBuilder {
 }
 impl DestinationBuilder {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl DestinationBuilder {
         &self.key_prefix
     }
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
+    /// This field is required.
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl DestinationBuilder {
         &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
-    pub fn build(self) -> crate::types::Destination {
-        crate::types::Destination {
-            bucket_name: self.bucket_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket_name`](crate::types::builders::DestinationBuilder::bucket_name)
+    /// - [`kms_key_arn`](crate::types::builders::DestinationBuilder::kms_key_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Destination {
+            bucket_name: self.bucket_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket_name",
+                    "bucket_name was not specified but it is required when building Destination",
+                )
+            })?,
             key_prefix: self.key_prefix,
-            kms_key_arn: self.kms_key_arn,
-        }
+            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "kms_key_arn",
+                    "kms_key_arn was not specified but it is required when building Destination",
+                )
+            })?,
+        })
     }
 }

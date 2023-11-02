@@ -27,6 +27,7 @@ pub struct GetWirelessDeviceImportTaskInputBuilder {
 }
 impl GetWirelessDeviceImportTaskInputBuilder {
     /// <p>The identifier of the import task for which information is requested.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

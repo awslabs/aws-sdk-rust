@@ -5,18 +5,19 @@ pub fn ser_response_headers_policy_referrer_policy(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.r#override {
+    {
         let mut inner_writer = scope.start_el("Override").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.r#override).encode());
     }
-    if let Some(var_2) = &input.referrer_policy {
+    {
         let mut inner_writer = scope.start_el("ReferrerPolicy").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.referrer_policy.as_str());
     }
     scope.finish();
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_referrer_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ResponseHeadersPolicyReferrerPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,7 +26,7 @@ pub fn de_response_headers_policy_referrer_policy(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Override") /* Override com.amazonaws.cloudfront#ResponseHeadersPolicyReferrerPolicy$Override */ =>  {
-                let var_3 =
+                let var_1 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,11 +37,11 @@ pub fn de_response_headers_policy_referrer_policy(
                         ?
                     )
                 ;
-                builder = builder.set_override(var_3);
+                builder = builder.set_override(var_1);
             }
             ,
             s if s.matches("ReferrerPolicy") /* ReferrerPolicy com.amazonaws.cloudfront#ResponseHeadersPolicyReferrerPolicy$ReferrerPolicy */ =>  {
-                let var_4 =
+                let var_2 =
                     Some(
                         Result::<crate::types::ReferrerPolicyList, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ReferrerPolicyList::from(
@@ -50,11 +51,13 @@ pub fn de_response_headers_policy_referrer_policy(
                         ?
                     )
                 ;
-                builder = builder.set_referrer_policy(var_4);
+                builder = builder.set_referrer_policy(var_2);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::response_headers_policy_referrer_policy_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

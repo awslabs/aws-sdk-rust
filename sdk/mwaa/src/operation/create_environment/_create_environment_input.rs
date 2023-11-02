@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
-    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub execution_role_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
-    pub source_bucket_arn: ::std::option::Option<::std::string::String>,
+    pub source_bucket_arn: ::std::string::String,
     /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
-    pub dag_s3_path: ::std::option::Option<::std::string::String>,
+    pub dag_s3_path: ::std::string::String,
     /// <p>The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
@@ -59,20 +59,24 @@ pub struct CreateEnvironmentInput {
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_role_arn.as_deref()
+    pub fn execution_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
-    pub fn source_bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.source_bucket_arn.as_deref()
+    pub fn source_bucket_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.source_bucket_arn.deref()
     }
     /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
-    pub fn dag_s3_path(&self) -> ::std::option::Option<&str> {
-        self.dag_s3_path.as_deref()
+    pub fn dag_s3_path(&self) -> &str {
+        use std::ops::Deref;
+        self.dag_s3_path.deref()
     }
     /// <p>The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
@@ -219,6 +223,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -233,6 +238,7 @@ impl CreateEnvironmentInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -247,6 +253,7 @@ impl CreateEnvironmentInputBuilder {
         &self.execution_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    /// This field is required.
     pub fn source_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_bucket_arn = ::std::option::Option::Some(input.into());
         self
@@ -261,6 +268,7 @@ impl CreateEnvironmentInputBuilder {
         &self.source_bucket_arn
     }
     /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    /// This field is required.
     pub fn dag_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dag_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -275,6 +283,7 @@ impl CreateEnvironmentInputBuilder {
         &self.dag_s3_path
     }
     /// <p>The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    /// This field is required.
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
         self
@@ -572,14 +581,39 @@ impl CreateEnvironmentInputBuilder {
         &self.schedulers
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::name)
+    /// - [`execution_role_arn`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::execution_role_arn)
+    /// - [`source_bucket_arn`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::source_bucket_arn)
+    /// - [`dag_s3_path`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::dag_s3_path)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            name: self.name,
-            execution_role_arn: self.execution_role_arn,
-            source_bucket_arn: self.source_bucket_arn,
-            dag_s3_path: self.dag_s3_path,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateEnvironmentInput",
+                )
+            })?,
+            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_role_arn",
+                    "execution_role_arn was not specified but it is required when building CreateEnvironmentInput",
+                )
+            })?,
+            source_bucket_arn: self.source_bucket_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_bucket_arn",
+                    "source_bucket_arn was not specified but it is required when building CreateEnvironmentInput",
+                )
+            })?,
+            dag_s3_path: self.dag_s3_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dag_s3_path",
+                    "dag_s3_path was not specified but it is required when building CreateEnvironmentInput",
+                )
+            })?,
             network_configuration: self.network_configuration,
             plugins_s3_path: self.plugins_s3_path,
             plugins_s3_object_version: self.plugins_s3_object_version,

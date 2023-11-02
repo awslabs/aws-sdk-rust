@@ -15,8 +15,10 @@ pub struct DescribeClustersInput {
 }
 impl DescribeClustersInput {
     /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[::std::string::String] {
+        self.clusters.as_deref().unwrap_or_default()
     }
     /// <p>Determines whether to include additional information about the clusters in the response. If this field is omitted, this information isn't included.</p>
     /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster are included, for example the capacity providers.</p>
@@ -24,8 +26,10 @@ impl DescribeClustersInput {
     /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is included.</p>
     /// <p>If <code>STATISTICS</code> is specified, the task and service count is included, separated by launch type.</p>
     /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.</p>
-    pub fn include(&self) -> ::std::option::Option<&[crate::types::ClusterField]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[crate::types::ClusterField] {
+        self.include.as_deref().unwrap_or_default()
     }
 }
 impl DescribeClustersInput {

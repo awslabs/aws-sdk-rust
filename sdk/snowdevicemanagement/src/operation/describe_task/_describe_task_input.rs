@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskInput {
     /// <p>The ID of the task to be described.</p>
-    pub task_id: ::std::option::Option<::std::string::String>,
+    pub task_id: ::std::string::String,
 }
 impl DescribeTaskInput {
     /// <p>The ID of the task to be described.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
-        self.task_id.as_deref()
+    pub fn task_id(&self) -> &str {
+        use std::ops::Deref;
+        self.task_id.deref()
     }
 }
 impl DescribeTaskInput {
@@ -27,6 +28,7 @@ pub struct DescribeTaskInputBuilder {
 }
 impl DescribeTaskInputBuilder {
     /// <p>The ID of the task to be described.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl DescribeTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`task_id`](crate::operation::describe_task::builders::DescribeTaskInputBuilder::task_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_task::DescribeTaskInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_task::DescribeTaskInput { task_id: self.task_id })
+        ::std::result::Result::Ok(crate::operation::describe_task::DescribeTaskInput {
+            task_id: self.task_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "task_id",
+                    "task_id was not specified but it is required when building DescribeTaskInput",
+                )
+            })?,
+        })
     }
 }

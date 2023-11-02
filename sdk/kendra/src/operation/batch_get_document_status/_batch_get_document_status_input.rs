@@ -14,8 +14,10 @@ impl BatchGetDocumentStatusInput {
         self.index_id.as_deref()
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub fn document_info_list(&self) -> ::std::option::Option<&[crate::types::DocumentInfo]> {
-        self.document_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_info_list.is_none()`.
+    pub fn document_info_list(&self) -> &[crate::types::DocumentInfo] {
+        self.document_info_list.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetDocumentStatusInput {
@@ -34,6 +36,7 @@ pub struct BatchGetDocumentStatusInputBuilder {
 }
 impl BatchGetDocumentStatusInputBuilder {
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

@@ -94,8 +94,10 @@ impl RegisterTaskWithMaintenanceWindowInput {
     /// ,
     /// <window-target-id-2></window-target-id-2>
     /// </window-target-id-1></code> </p>
-    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[crate::types::Target] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the task to run.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
@@ -232,6 +234,7 @@ pub struct RegisterTaskWithMaintenanceWindowInputBuilder {
 }
 impl RegisterTaskWithMaintenanceWindowInputBuilder {
     /// <p>The ID of the maintenance window the task should be added to.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self
@@ -308,6 +311,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
         &self.targets
     }
     /// <p>The ARN of the task to run.</p>
+    /// This field is required.
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self
@@ -351,6 +355,7 @@ impl RegisterTaskWithMaintenanceWindowInputBuilder {
         &self.service_role_arn
     }
     /// <p>The type of task being registered.</p>
+    /// This field is required.
     pub fn task_type(mut self, input: crate::types::MaintenanceWindowTaskType) -> Self {
         self.task_type = ::std::option::Option::Some(input);
         self

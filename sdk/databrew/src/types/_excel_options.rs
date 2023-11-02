@@ -13,12 +13,16 @@ pub struct ExcelOptions {
 }
 impl ExcelOptions {
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-    pub fn sheet_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.sheet_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheet_names.is_none()`.
+    pub fn sheet_names(&self) -> &[::std::string::String] {
+        self.sheet_names.as_deref().unwrap_or_default()
     }
     /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
-    pub fn sheet_indexes(&self) -> ::std::option::Option<&[i32]> {
-        self.sheet_indexes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheet_indexes.is_none()`.
+    pub fn sheet_indexes(&self) -> &[i32] {
+        self.sheet_indexes.as_deref().unwrap_or_default()
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
     pub fn header_row(&self) -> ::std::option::Option<bool> {

@@ -13,12 +13,16 @@ pub struct QueryLineageOutput {
 }
 impl QueryLineageOutput {
     /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
-    pub fn vertices(&self) -> ::std::option::Option<&[crate::types::Vertex]> {
-        self.vertices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vertices.is_none()`.
+    pub fn vertices(&self) -> &[crate::types::Vertex] {
+        self.vertices.as_deref().unwrap_or_default()
     }
     /// <p>A list of edges that connect vertices in the response.</p>
-    pub fn edges(&self) -> ::std::option::Option<&[crate::types::Edge]> {
-        self.edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edges.is_none()`.
+    pub fn edges(&self) -> &[crate::types::Edge] {
+        self.edges.as_deref().unwrap_or_default()
     }
     /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

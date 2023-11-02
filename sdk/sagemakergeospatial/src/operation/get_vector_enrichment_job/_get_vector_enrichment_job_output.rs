@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The type of the Vector Enrichment job being initiated.</p>
-    pub r#type: ::std::option::Option<crate::types::VectorEnrichmentJobType>,
+    pub r#type: crate::types::VectorEnrichmentJobType,
     /// <p>The name of the Vector Enrichment job.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The creation time.</p>
-    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
-    pub duration_in_seconds: ::std::option::Option<i32>,
+    pub duration_in_seconds: i32,
     /// <p>The status of the initiated Vector Enrichment job.</p>
-    pub status: ::std::option::Option<crate::types::VectorEnrichmentJobStatus>,
+    pub status: crate::types::VectorEnrichmentJobStatus,
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Input configuration information for the Vector Enrichment job.</p>
@@ -22,7 +22,7 @@ pub struct GetVectorEnrichmentJobOutput {
     /// <p>An object containing information about the job configuration.</p>
     pub job_config: ::std::option::Option<crate::types::VectorEnrichmentJobConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub execution_role_arn: ::std::string::String,
     /// <p>Details about the errors generated during the Vector Enrichment job.</p>
     pub error_details: ::std::option::Option<crate::types::VectorEnrichmentJobErrorDetails>,
     /// <p>The export status of the Vector Enrichment job being initiated.</p>
@@ -35,28 +35,30 @@ pub struct GetVectorEnrichmentJobOutput {
 }
 impl GetVectorEnrichmentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The type of the Vector Enrichment job being initiated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::VectorEnrichmentJobType {
+        &self.r#type
     }
     /// <p>The name of the Vector Enrichment job.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_time.as_ref()
+    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_time
     }
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
-    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_seconds(&self) -> i32 {
         self.duration_in_seconds
     }
     /// <p>The status of the initiated Vector Enrichment job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::VectorEnrichmentJobStatus {
+        &self.status
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -71,8 +73,9 @@ impl GetVectorEnrichmentJobOutput {
         self.job_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
-        self.execution_role_arn.as_deref()
+    pub fn execution_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.execution_role_arn.deref()
     }
     /// <p>Details about the errors generated during the Vector Enrichment job.</p>
     pub fn error_details(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobErrorDetails> {
@@ -125,6 +128,7 @@ pub struct GetVectorEnrichmentJobOutputBuilder {
 }
 impl GetVectorEnrichmentJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +143,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.arn
     }
     /// <p>The type of the Vector Enrichment job being initiated.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::VectorEnrichmentJobType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -153,6 +158,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.r#type
     }
     /// <p>The name of the Vector Enrichment job.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +173,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.name
     }
     /// <p>The creation time.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -181,6 +188,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.creation_time
     }
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
+    /// This field is required.
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
         self
@@ -195,6 +203,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.duration_in_seconds
     }
     /// <p>The status of the initiated Vector Enrichment job.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VectorEnrichmentJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -223,6 +232,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.kms_key_id
     }
     /// <p>Input configuration information for the Vector Enrichment job.</p>
+    /// This field is required.
     pub fn input_config(mut self, input: crate::types::VectorEnrichmentJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
         self
@@ -237,6 +247,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.input_config
     }
     /// <p>An object containing information about the job configuration.</p>
+    /// This field is required.
     pub fn job_config(mut self, input: crate::types::VectorEnrichmentJobConfig) -> Self {
         self.job_config = ::std::option::Option::Some(input);
         self
@@ -251,6 +262,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
         &self.job_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -336,23 +348,71 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetVectorEnrichmentJobOutput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput).
-    pub fn build(self) -> crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput {
-        crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput {
-            arn: self.arn,
-            r#type: self.r#type,
-            name: self.name,
-            creation_time: self.creation_time,
-            duration_in_seconds: self.duration_in_seconds,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::arn)
+    /// - [`r#type`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::r#type)
+    /// - [`name`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::name)
+    /// - [`creation_time`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::creation_time)
+    /// - [`duration_in_seconds`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::duration_in_seconds)
+    /// - [`status`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::status)
+    /// - [`execution_role_arn`](crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder::execution_role_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetVectorEnrichmentJobOutput",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building GetVectorEnrichmentJobOutput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GetVectorEnrichmentJobOutput",
+                )
+            })?,
+            creation_time: self.creation_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_time",
+                    "creation_time was not specified but it is required when building GetVectorEnrichmentJobOutput",
+                )
+            })?,
+            duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "duration_in_seconds",
+                    "duration_in_seconds was not specified but it is required when building GetVectorEnrichmentJobOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetVectorEnrichmentJobOutput",
+                )
+            })?,
             kms_key_id: self.kms_key_id,
             input_config: self.input_config,
             job_config: self.job_config,
-            execution_role_arn: self.execution_role_arn,
+            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "execution_role_arn",
+                    "execution_role_arn was not specified but it is required when building GetVectorEnrichmentJobOutput",
+                )
+            })?,
             error_details: self.error_details,
             export_status: self.export_status,
             export_error_details: self.export_error_details,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

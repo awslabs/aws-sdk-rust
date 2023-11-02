@@ -37,8 +37,10 @@ impl GetImpersonationRoleOutput {
         self.description.as_deref()
     }
     /// <p>The list of rules for the given impersonation role.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ImpersonationRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::ImpersonationRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
     /// <p>The date when the impersonation role was created.</p>
     pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

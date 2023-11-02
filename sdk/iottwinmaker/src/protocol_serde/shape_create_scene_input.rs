@@ -12,34 +12,34 @@ pub fn ser_create_scene_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.content_location {
-        object.key("contentLocation").string(var_4.as_str());
+    {
+        object.key("contentLocation").string(input.content_location.as_str());
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.scene_id {
-        object.key("sceneId").string(var_6.as_str());
+    {
+        object.key("sceneId").string(input.scene_id.as_str());
     }
-    if let Some(var_7) = &input.scene_metadata {
+    if let Some(var_5) = &input.scene_metadata {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("sceneMetadata").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_6 = object.key("sceneMetadata").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_8.finish();
+        object_6.finish();
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_12.finish();
+        object_10.finish();
     }
     Ok(())
 }

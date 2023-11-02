@@ -3,14 +3,14 @@ pub fn ser_virtual_gateway_file_access_log(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayFileAccessLog,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.path {
-        object.key("path").string(var_1.as_str());
+    {
+        object.key("path").string(input.path.as_str());
     }
-    if let Some(var_2) = &input.format {
+    if let Some(var_1) = &input.format {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("format").start_object();
-        crate::protocol_serde::shape_logging_format::ser_logging_format(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("format").start_object();
+        crate::protocol_serde::shape_logging_format::ser_logging_format(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }
@@ -50,7 +50,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::virtual_gateway_file_access_log_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

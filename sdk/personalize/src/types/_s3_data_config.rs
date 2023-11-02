@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to encrypt or decrypt the input and output files.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct S3DataConfigBuilder {
 }
 impl S3DataConfigBuilder {
     /// <p>The file path of the Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl S3DataConfigBuilder {
         &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`S3DataConfig`](crate::types::S3DataConfig).
-    pub fn build(self) -> crate::types::S3DataConfig {
-        crate::types::S3DataConfig {
-            path: self.path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::S3DataConfigBuilder::path)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DataConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DataConfig {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building S3DataConfig",
+                )
+            })?,
             kms_key_arn: self.kms_key_arn,
-        }
+        })
     }
 }

@@ -55,16 +55,22 @@ impl GetTemplateStepGroupOutput {
         self.last_modified_time.as_ref()
     }
     /// <p>List of AWS services utilized in a migration workflow.</p>
-    pub fn tools(&self) -> ::std::option::Option<&[crate::types::Tool]> {
-        self.tools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
+    pub fn tools(&self) -> &[crate::types::Tool] {
+        self.tools.as_deref().unwrap_or_default()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.previous.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
+    pub fn previous(&self) -> &[::std::string::String] {
+        self.previous.as_deref().unwrap_or_default()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.next.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
+    pub fn next(&self) -> &[::std::string::String] {
+        self.next.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetTemplateStepGroupOutput {

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionSummary {
     /// <p>The action type.</p>
-    pub action_type: ::std::option::Option<crate::types::ActionType>,
+    pub action_type: crate::types::ActionType,
 }
 impl ActionSummary {
     /// <p>The action type.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionType> {
-        self.action_type.as_ref()
+    pub fn action_type(&self) -> &crate::types::ActionType {
+        &self.action_type
     }
 }
 impl ActionSummary {
@@ -28,6 +28,7 @@ pub struct ActionSummaryBuilder {
 }
 impl ActionSummaryBuilder {
     /// <p>The action type.</p>
+    /// This field is required.
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl ActionSummaryBuilder {
         &self.action_type
     }
     /// Consumes the builder and constructs a [`ActionSummary`](crate::types::ActionSummary).
-    pub fn build(self) -> crate::types::ActionSummary {
-        crate::types::ActionSummary {
-            action_type: self.action_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`action_type`](crate::types::builders::ActionSummaryBuilder::action_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ActionSummary {
+            action_type: self.action_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action_type",
+                    "action_type was not specified but it is required when building ActionSummary",
+                )
+            })?,
+        })
     }
 }

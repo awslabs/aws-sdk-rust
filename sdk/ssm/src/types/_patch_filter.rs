@@ -9,21 +9,22 @@
 pub struct PatchFilter {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
-    pub key: ::std::option::Option<crate::types::PatchFilterKey>,
+    pub key: crate::types::PatchFilterKey,
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl PatchFilter {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::PatchFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::PatchFilterKey {
+        &self.key
     }
     /// <p>The value for the filter key.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid values for each key based on operating system type.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl PatchFilter {
@@ -43,6 +44,7 @@ pub struct PatchFilterBuilder {
 impl PatchFilterBuilder {
     /// <p>The key for the filter.</p>
     /// <p>Run the <code>DescribePatchProperties</code> command to view lists of valid keys for each operating system type.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::PatchFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -82,10 +84,23 @@ impl PatchFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`PatchFilter`](crate::types::PatchFilter).
-    pub fn build(self) -> crate::types::PatchFilter {
-        crate::types::PatchFilter {
-            key: self.key,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::PatchFilterBuilder::key)
+    /// - [`values`](crate::types::builders::PatchFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::PatchFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PatchFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building PatchFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building PatchFilter",
+                )
+            })?,
+        })
     }
 }

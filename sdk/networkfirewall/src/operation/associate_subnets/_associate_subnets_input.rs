@@ -34,8 +34,10 @@ impl AssociateSubnetsInput {
         self.firewall_name.as_deref()
     }
     /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
-    pub fn subnet_mappings(&self) -> ::std::option::Option<&[crate::types::SubnetMapping]> {
-        self.subnet_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_mappings.is_none()`.
+    pub fn subnet_mappings(&self) -> &[crate::types::SubnetMapping] {
+        self.subnet_mappings.as_deref().unwrap_or_default()
     }
 }
 impl AssociateSubnetsInput {

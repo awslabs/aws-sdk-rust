@@ -32,8 +32,10 @@ impl UpdateAssessmentFrameworkInput {
         self.compliance_type.as_deref()
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(&self) -> ::std::option::Option<&[crate::types::UpdateAssessmentFrameworkControlSet]> {
-        self.control_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sets.is_none()`.
+    pub fn control_sets(&self) -> &[crate::types::UpdateAssessmentFrameworkControlSet] {
+        self.control_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateAssessmentFrameworkInput {
@@ -66,6 +68,7 @@ pub struct UpdateAssessmentFrameworkInputBuilder {
 }
 impl UpdateAssessmentFrameworkInputBuilder {
     /// <p> The unique identifier for the framework. </p>
+    /// This field is required.
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl UpdateAssessmentFrameworkInputBuilder {
         &self.framework_id
     }
     /// <p> The name of the framework to be updated. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

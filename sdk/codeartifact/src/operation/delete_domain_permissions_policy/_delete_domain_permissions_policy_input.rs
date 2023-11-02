@@ -41,6 +41,7 @@ pub struct DeleteDomainPermissionsPolicyInputBuilder {
 }
 impl DeleteDomainPermissionsPolicyInputBuilder {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self

@@ -17,8 +17,10 @@ impl GetRecommendationPreferencesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe recommendation preferences.</p>
-    pub fn recommendation_preferences_details(&self) -> ::std::option::Option<&[crate::types::RecommendationPreferencesDetail]> {
-        self.recommendation_preferences_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_preferences_details.is_none()`.
+    pub fn recommendation_preferences_details(&self) -> &[crate::types::RecommendationPreferencesDetail] {
+        self.recommendation_preferences_details.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetRecommendationPreferencesOutput {

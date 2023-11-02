@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAlgorithm`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`algorithm_arn(impl Into<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::algorithm_arn) / [`set_algorithm_arn(Option<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::set_algorithm_arn): <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
+    ///   - [`algorithm_arn(impl Into<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::algorithm_arn) / [`set_algorithm_arn(Option<String>)`](crate::operation::describe_algorithm::builders::DescribeAlgorithmFluentBuilder::set_algorithm_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the algorithm to describe.</p><br>
     /// - On success, responds with [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput) with field(s):
     ///   - [`algorithm(Option<Algorithm>)`](crate::operation::describe_algorithm::DescribeAlgorithmOutput::algorithm): <p>A listing of the properties of the algorithm.</p>
     /// - On failure, responds with [`SdkError<DescribeAlgorithmError>`](crate::operation::describe_algorithm::DescribeAlgorithmError)

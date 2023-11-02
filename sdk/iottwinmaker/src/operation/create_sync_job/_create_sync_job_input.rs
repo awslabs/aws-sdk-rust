@@ -4,30 +4,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSyncJobInput {
     /// <p>The workspace ID.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
-    pub sync_source: ::std::option::Option<::std::string::String>,
+    pub sync_source: ::std::string::String,
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
-    pub sync_role: ::std::option::Option<::std::string::String>,
+    pub sync_role: ::std::string::String,
     /// <p>The SyncJob tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSyncJobInput {
     /// <p>The workspace ID.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
-    pub fn sync_source(&self) -> ::std::option::Option<&str> {
-        self.sync_source.as_deref()
+    pub fn sync_source(&self) -> &str {
+        use std::ops::Deref;
+        self.sync_source.deref()
     }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
-    pub fn sync_role(&self) -> ::std::option::Option<&str> {
-        self.sync_role.as_deref()
+    pub fn sync_role(&self) -> &str {
+        use std::ops::Deref;
+        self.sync_role.deref()
     }
     /// <p>The SyncJob tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -52,6 +55,7 @@ pub struct CreateSyncJobInputBuilder {
 }
 impl CreateSyncJobInputBuilder {
     /// <p>The workspace ID.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -68,6 +72,7 @@ impl CreateSyncJobInputBuilder {
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
+    /// This field is required.
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +91,7 @@ impl CreateSyncJobInputBuilder {
         &self.sync_source
     }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
+    /// This field is required.
     pub fn sync_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_role = ::std::option::Option::Some(input.into());
         self
@@ -120,13 +126,32 @@ impl CreateSyncJobInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSyncJobInput`](crate::operation::create_sync_job::CreateSyncJobInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::create_sync_job::builders::CreateSyncJobInputBuilder::workspace_id)
+    /// - [`sync_source`](crate::operation::create_sync_job::builders::CreateSyncJobInputBuilder::sync_source)
+    /// - [`sync_role`](crate::operation::create_sync_job::builders::CreateSyncJobInputBuilder::sync_role)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sync_job::CreateSyncJobInput {
-            workspace_id: self.workspace_id,
-            sync_source: self.sync_source,
-            sync_role: self.sync_role,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building CreateSyncJobInput",
+                )
+            })?,
+            sync_source: self.sync_source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sync_source",
+                    "sync_source was not specified but it is required when building CreateSyncJobInput",
+                )
+            })?,
+            sync_role: self.sync_role.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sync_role",
+                    "sync_role was not specified but it is required when building CreateSyncJobInput",
+                )
+            })?,
             tags: self.tags,
         })
     }

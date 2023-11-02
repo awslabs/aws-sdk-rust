@@ -4,18 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
-    pub quantum_task_arn: ::std::option::Option<::std::string::String>,
+    pub quantum_task_arn: ::std::string::String,
     /// <p>A list of attributes to return information for.</p>
     pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
 impl GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
-    pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
-        self.quantum_task_arn.as_deref()
+    pub fn quantum_task_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.quantum_task_arn.deref()
     }
     /// <p>A list of attributes to return information for.</p>
-    pub fn additional_attribute_names(&self) -> ::std::option::Option<&[crate::types::QuantumTaskAdditionalAttributeName]> {
-        self.additional_attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attribute_names.is_none()`.
+    pub fn additional_attribute_names(&self) -> &[crate::types::QuantumTaskAdditionalAttributeName] {
+        self.additional_attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl GetQuantumTaskInput {
@@ -34,6 +37,7 @@ pub struct GetQuantumTaskInputBuilder {
 }
 impl GetQuantumTaskInputBuilder {
     /// <p>the ARN of the task to retrieve.</p>
+    /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,18 @@ impl GetQuantumTaskInputBuilder {
         &self.additional_attribute_names
     }
     /// Consumes the builder and constructs a [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`quantum_task_arn`](crate::operation::get_quantum_task::builders::GetQuantumTaskInputBuilder::quantum_task_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_quantum_task::GetQuantumTaskInput {
-            quantum_task_arn: self.quantum_task_arn,
+            quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "quantum_task_arn",
+                    "quantum_task_arn was not specified but it is required when building GetQuantumTaskInput",
+                )
+            })?,
             additional_attribute_names: self.additional_attribute_names,
         })
     }

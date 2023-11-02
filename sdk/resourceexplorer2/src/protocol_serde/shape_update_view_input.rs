@@ -21,8 +21,8 @@ pub fn ser_update_view_input(
         }
         array_4.finish();
     }
-    if let Some(var_7) = &input.view_arn {
-        object.key("ViewArn").string(var_7.as_str());
+    {
+        object.key("ViewArn").string(input.view_arn.as_str());
     }
     Ok(())
 }

@@ -69,6 +69,7 @@ impl ListAssociatedRoute53HealthChecksInputBuilder {
         &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    /// This field is required.
     pub fn routing_control_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.routing_control_arn = ::std::option::Option::Some(input.into());
         self

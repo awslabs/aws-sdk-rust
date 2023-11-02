@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartProtectedQueryInput {
     /// <p>The type of the protected query to be started.</p>
-    pub r#type: ::std::option::Option<crate::types::ProtectedQueryType>,
+    pub r#type: crate::types::ProtectedQueryType,
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
     /// <p>The protected SQL query parameters.</p>
     pub sql_parameters: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     /// <p>The details needed to write the query results.</p>
@@ -14,12 +14,13 @@ pub struct StartProtectedQueryInput {
 }
 impl StartProtectedQueryInput {
     /// <p>The type of the protected query to be started.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProtectedQueryType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ProtectedQueryType {
+        &self.r#type
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
     /// <p>The protected SQL query parameters.</p>
     pub fn sql_parameters(&self) -> ::std::option::Option<&crate::types::ProtectedQuerySqlParameters> {
@@ -58,6 +59,7 @@ pub struct StartProtectedQueryInputBuilder {
 }
 impl StartProtectedQueryInputBuilder {
     /// <p>The type of the protected query to be started.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ProtectedQueryType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -72,6 +74,7 @@ impl StartProtectedQueryInputBuilder {
         &self.r#type
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +89,7 @@ impl StartProtectedQueryInputBuilder {
         &self.membership_identifier
     }
     /// <p>The protected SQL query parameters.</p>
+    /// This field is required.
     pub fn sql_parameters(mut self, input: crate::types::ProtectedQuerySqlParameters) -> Self {
         self.sql_parameters = ::std::option::Option::Some(input);
         self
@@ -114,13 +118,26 @@ impl StartProtectedQueryInputBuilder {
         &self.result_configuration
     }
     /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::operation::start_protected_query::builders::StartProtectedQueryInputBuilder::r#type)
+    /// - [`membership_identifier`](crate::operation::start_protected_query::builders::StartProtectedQueryInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_protected_query::StartProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_protected_query::StartProtectedQueryInput {
-            r#type: self.r#type,
-            membership_identifier: self.membership_identifier,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building StartProtectedQueryInput",
+                )
+            })?,
+            membership_identifier: self.membership_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_identifier",
+                    "membership_identifier was not specified but it is required when building StartProtectedQueryInput",
+                )
+            })?,
             sql_parameters: self.sql_parameters,
             result_configuration: self.result_configuration,
         })

@@ -3,17 +3,17 @@ pub fn ser_log_settings_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogSettingsRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.log_type {
-        object.key("logType").string(var_1.as_str());
+    {
+        object.key("logType").string(input.log_type.as_str());
     }
-    if let Some(var_2) = &input.destination {
-        object.key("destination").string(var_2.as_str());
+    {
+        object.key("destination").string(input.destination.as_str());
     }
-    if let Some(var_3) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_3.as_str());
+    if let Some(var_1) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.resource_arn {
-        object.key("resourceArn").string(var_4.as_str());
+    {
+        object.key("resourceArn").string(input.resource_arn.as_str());
     }
     Ok(())
 }

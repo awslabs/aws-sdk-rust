@@ -5,31 +5,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordPatch {
     /// An operation, either replace or remove.
-    pub op: ::std::option::Option<crate::types::Operation>,
+    pub op: crate::types::Operation,
     /// The key associated with the record patch.
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// The value associated with the record patch.
     pub value: ::std::option::Option<::std::string::String>,
     /// Last known server sync count for this record. Set to 0 if unknown.
-    pub sync_count: ::std::option::Option<i64>,
+    pub sync_count: i64,
     /// The last modified date of the client device.
     pub device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RecordPatch {
     /// An operation, either replace or remove.
-    pub fn op(&self) -> ::std::option::Option<&crate::types::Operation> {
-        self.op.as_ref()
+    pub fn op(&self) -> &crate::types::Operation {
+        &self.op
     }
     /// The key associated with the record patch.
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// The value associated with the record patch.
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
-    pub fn sync_count(&self) -> ::std::option::Option<i64> {
+    pub fn sync_count(&self) -> i64 {
         self.sync_count
     }
     /// The last modified date of the client device.
@@ -56,6 +57,7 @@ pub struct RecordPatchBuilder {
 }
 impl RecordPatchBuilder {
     /// An operation, either replace or remove.
+    /// This field is required.
     pub fn op(mut self, input: crate::types::Operation) -> Self {
         self.op = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl RecordPatchBuilder {
         &self.op
     }
     /// The key associated with the record patch.
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl RecordPatchBuilder {
         &self.value
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
+    /// This field is required.
     pub fn sync_count(mut self, input: i64) -> Self {
         self.sync_count = ::std::option::Option::Some(input);
         self
@@ -126,13 +130,32 @@ impl RecordPatchBuilder {
         &self.device_last_modified_date
     }
     /// Consumes the builder and constructs a [`RecordPatch`](crate::types::RecordPatch).
-    pub fn build(self) -> crate::types::RecordPatch {
-        crate::types::RecordPatch {
-            op: self.op,
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`op`](crate::types::builders::RecordPatchBuilder::op)
+    /// - [`key`](crate::types::builders::RecordPatchBuilder::key)
+    /// - [`sync_count`](crate::types::builders::RecordPatchBuilder::sync_count)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecordPatch, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecordPatch {
+            op: self.op.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "op",
+                    "op was not specified but it is required when building RecordPatch",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building RecordPatch",
+                )
+            })?,
             value: self.value,
-            sync_count: self.sync_count,
+            sync_count: self.sync_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sync_count",
+                    "sync_count was not specified but it is required when building RecordPatch",
+                )
+            })?,
             device_last_modified_date: self.device_last_modified_date,
-        }
+        })
     }
 }

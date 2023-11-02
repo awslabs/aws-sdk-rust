@@ -37,8 +37,10 @@ impl PublishLayerVersionInput {
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn compatible_runtimes(&self) -> ::std::option::Option<&[crate::types::Runtime]> {
-        self.compatible_runtimes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_runtimes.is_none()`.
+    pub fn compatible_runtimes(&self) -> &[crate::types::Runtime] {
+        self.compatible_runtimes.as_deref().unwrap_or_default()
     }
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
@@ -50,8 +52,10 @@ impl PublishLayerVersionInput {
         self.license_info.as_deref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(&self) -> ::std::option::Option<&[crate::types::Architecture]> {
-        self.compatible_architectures.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_architectures.is_none()`.
+    pub fn compatible_architectures(&self) -> &[crate::types::Architecture] {
+        self.compatible_architectures.as_deref().unwrap_or_default()
     }
 }
 impl PublishLayerVersionInput {
@@ -74,6 +78,7 @@ pub struct PublishLayerVersionInputBuilder {
 }
 impl PublishLayerVersionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    /// This field is required.
     pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +107,7 @@ impl PublishLayerVersionInputBuilder {
         &self.description
     }
     /// <p>The function layer archive.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::LayerVersionContentInput) -> Self {
         self.content = ::std::option::Option::Some(input);
         self

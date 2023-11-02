@@ -30,12 +30,16 @@ impl ModifyMigrationProjectInput {
         self.migration_project_name.as_deref()
     }
     /// <p>Information about the source data provider, including the name, ARN, and Amazon Web Services Secrets Manager parameters.</p>
-    pub fn source_data_provider_descriptors(&self) -> ::std::option::Option<&[crate::types::DataProviderDescriptorDefinition]> {
-        self.source_data_provider_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_data_provider_descriptors.is_none()`.
+    pub fn source_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptorDefinition] {
+        self.source_data_provider_descriptors.as_deref().unwrap_or_default()
     }
     /// <p>Information about the target data provider, including the name, ARN, and Amazon Web Services Secrets Manager parameters.</p>
-    pub fn target_data_provider_descriptors(&self) -> ::std::option::Option<&[crate::types::DataProviderDescriptorDefinition]> {
-        self.target_data_provider_descriptors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_data_provider_descriptors.is_none()`.
+    pub fn target_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptorDefinition] {
+        self.target_data_provider_descriptors.as_deref().unwrap_or_default()
     }
     /// <p>The name or Amazon Resource Name (ARN) for the instance profile.</p>
     pub fn instance_profile_identifier(&self) -> ::std::option::Option<&str> {
@@ -76,6 +80,7 @@ pub struct ModifyMigrationProjectInputBuilder {
 }
 impl ModifyMigrationProjectInputBuilder {
     /// <p>The identifier of the migration project. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self

@@ -34,8 +34,10 @@ impl CreateVpcLinkOutput {
         self.description.as_deref()
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub fn target_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_arns.is_none()`.
+    pub fn target_arns(&self) -> &[::std::string::String] {
+        self.target_arns.as_deref().unwrap_or_default()
     }
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VpcLinkStatus> {

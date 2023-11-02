@@ -6,7 +6,7 @@ pub struct ListRepositorySyncDefinitionsOutput {
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of repository sync definitions.</p>
-    pub sync_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncDefinition>>,
+    pub sync_definitions: ::std::vec::Vec<crate::types::RepositorySyncDefinition>,
     _request_id: Option<String>,
 }
 impl ListRepositorySyncDefinitionsOutput {
@@ -15,8 +15,9 @@ impl ListRepositorySyncDefinitionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of repository sync definitions.</p>
-    pub fn sync_definitions(&self) -> ::std::option::Option<&[crate::types::RepositorySyncDefinition]> {
-        self.sync_definitions.as_deref()
+    pub fn sync_definitions(&self) -> &[crate::types::RepositorySyncDefinition] {
+        use std::ops::Deref;
+        self.sync_definitions.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRepositorySyncDefinitionsOutput {
@@ -84,11 +85,23 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRepositorySyncDefinitionsOutput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput).
-    pub fn build(self) -> crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
-        crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`sync_definitions`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsOutputBuilder::sync_definitions)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
             next_token: self.next_token,
-            sync_definitions: self.sync_definitions,
+            sync_definitions: self.sync_definitions.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sync_definitions",
+                    "sync_definitions was not specified but it is required when building ListRepositorySyncDefinitionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantDetails {
     /// <p>Display name of the participant.</p>
-    pub display_name: ::std::option::Option<::std::string::String>,
+    pub display_name: ::std::string::String,
 }
 impl ParticipantDetails {
     /// <p>Display name of the participant.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
-        self.display_name.as_deref()
+    pub fn display_name(&self) -> &str {
+        use std::ops::Deref;
+        self.display_name.deref()
     }
 }
 impl ParticipantDetails {
@@ -28,6 +29,7 @@ pub struct ParticipantDetailsBuilder {
 }
 impl ParticipantDetailsBuilder {
     /// <p>Display name of the participant.</p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ParticipantDetailsBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`ParticipantDetails`](crate::types::ParticipantDetails).
-    pub fn build(self) -> crate::types::ParticipantDetails {
-        crate::types::ParticipantDetails {
-            display_name: self.display_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`display_name`](crate::types::builders::ParticipantDetailsBuilder::display_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipantDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ParticipantDetails {
+            display_name: self.display_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "display_name",
+                    "display_name was not specified but it is required when building ParticipantDetails",
+                )
+            })?,
+        })
     }
 }

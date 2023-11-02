@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub name: ::std::option::Option<crate::types::AccountLimitName>,
+    pub name: crate::types::AccountLimitName,
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub used: i64,
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
@@ -13,8 +13,8 @@ pub struct AccountLimit {
 }
 impl AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AccountLimitName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AccountLimitName {
+        &self.name
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub fn used(&self) -> i64 {
@@ -42,6 +42,7 @@ pub struct AccountLimitBuilder {
 }
 impl AccountLimitBuilder {
     /// <p>The name of the attribute to apply the account limit to.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AccountLimitName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl AccountLimitBuilder {
         &self.name
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
+    /// This field is required.
     pub fn used(mut self, input: i64) -> Self {
         self.used = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl AccountLimitBuilder {
         &self.used
     }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
+    /// This field is required.
     pub fn max(mut self, input: i64) -> Self {
         self.max = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl AccountLimitBuilder {
         &self.max
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
-    pub fn build(self) -> crate::types::AccountLimit {
-        crate::types::AccountLimit {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AccountLimitBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountLimit, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccountLimit {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AccountLimit",
+                )
+            })?,
             used: self.used.unwrap_or_default(),
             max: self.max.unwrap_or_default(),
-        }
+        })
     }
 }

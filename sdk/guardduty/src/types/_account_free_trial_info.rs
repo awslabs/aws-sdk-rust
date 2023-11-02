@@ -23,8 +23,10 @@ impl AccountFreeTrialInfo {
         self.data_sources.as_ref()
     }
     /// <p>A list of features enabled for the GuardDuty account.</p>
-    pub fn features(&self) -> ::std::option::Option<&[crate::types::FreeTrialFeatureConfigurationResult]> {
-        self.features.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
+    pub fn features(&self) -> &[crate::types::FreeTrialFeatureConfigurationResult] {
+        self.features.as_deref().unwrap_or_default()
     }
 }
 impl AccountFreeTrialInfo {

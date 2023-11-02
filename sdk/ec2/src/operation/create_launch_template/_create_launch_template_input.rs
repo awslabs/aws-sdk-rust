@@ -44,8 +44,10 @@ impl CreateLaunchTemplateInput {
     /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
     /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
     /// </note>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
 }
 impl CreateLaunchTemplateInput {
@@ -99,6 +101,7 @@ impl CreateLaunchTemplateInputBuilder {
         &self.client_token
     }
     /// <p>A name for the launch template.</p>
+    /// This field is required.
     pub fn launch_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_template_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +130,7 @@ impl CreateLaunchTemplateInputBuilder {
         &self.version_description
     }
     /// <p>The information for the launch template.</p>
+    /// This field is required.
     pub fn launch_template_data(mut self, input: crate::types::RequestLaunchTemplateData) -> Self {
         self.launch_template_data = ::std::option::Option::Some(input);
         self

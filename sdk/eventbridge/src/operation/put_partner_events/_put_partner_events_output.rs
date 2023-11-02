@@ -15,8 +15,10 @@ impl PutPartnerEventsOutput {
         self.failed_entry_count
     }
     /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::PutPartnerEventsResultEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::PutPartnerEventsResultEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutPartnerEventsOutput {

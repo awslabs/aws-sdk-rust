@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLiveSourceInput {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub http_package_configurations: ::std::vec::Vec<crate::types::HttpPackageConfiguration>,
     /// <p>The name of the live source.</p>
-    pub live_source_name: ::std::option::Option<::std::string::String>,
+    pub live_source_name: ::std::string::String,
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub source_location_name: ::std::option::Option<::std::string::String>,
+    pub source_location_name: ::std::string::String,
 }
 impl UpdateLiveSourceInput {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
-    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
+        use std::ops::Deref;
+        self.http_package_configurations.deref()
     }
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
-        self.live_source_name.as_deref()
+    pub fn live_source_name(&self) -> &str {
+        use std::ops::Deref;
+        self.live_source_name.deref()
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
-        self.source_location_name.as_deref()
+    pub fn source_location_name(&self) -> &str {
+        use std::ops::Deref;
+        self.source_location_name.deref()
     }
 }
 impl UpdateLiveSourceInput {
@@ -61,6 +64,7 @@ impl UpdateLiveSourceInputBuilder {
         &self.http_package_configurations
     }
     /// <p>The name of the live source.</p>
+    /// This field is required.
     pub fn live_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.live_source_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +79,7 @@ impl UpdateLiveSourceInputBuilder {
         &self.live_source_name
     }
     /// <p>The name of the source location associated with this Live Source.</p>
+    /// This field is required.
     pub fn source_location_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_location_name = ::std::option::Option::Some(input.into());
         self
@@ -89,13 +94,32 @@ impl UpdateLiveSourceInputBuilder {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`UpdateLiveSourceInput`](crate::operation::update_live_source::UpdateLiveSourceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`http_package_configurations`](crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder::http_package_configurations)
+    /// - [`live_source_name`](crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder::live_source_name)
+    /// - [`source_location_name`](crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_live_source::UpdateLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_live_source::UpdateLiveSourceInput {
-            http_package_configurations: self.http_package_configurations,
-            live_source_name: self.live_source_name,
-            source_location_name: self.source_location_name,
+            http_package_configurations: self.http_package_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "http_package_configurations",
+                    "http_package_configurations was not specified but it is required when building UpdateLiveSourceInput",
+                )
+            })?,
+            live_source_name: self.live_source_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "live_source_name",
+                    "live_source_name was not specified but it is required when building UpdateLiveSourceInput",
+                )
+            })?,
+            source_location_name: self.source_location_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_location_name",
+                    "source_location_name was not specified but it is required when building UpdateLiveSourceInput",
+                )
+            })?,
         })
     }
 }

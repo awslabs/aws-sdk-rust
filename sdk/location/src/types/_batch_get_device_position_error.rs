@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
-    pub device_id: ::std::option::Option<::std::string::String>,
+    pub device_id: ::std::string::String,
     /// <p>Contains details related to the error code.</p>
     pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
-        self.device_id.as_deref()
+    pub fn device_id(&self) -> &str {
+        use std::ops::Deref;
+        self.device_id.deref()
     }
     /// <p>Contains details related to the error code.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::BatchItemError> {
@@ -35,6 +36,7 @@ pub struct BatchGetDevicePositionErrorBuilder {
 }
 impl BatchGetDevicePositionErrorBuilder {
     /// <p>The ID of the device that didn't return a position.</p>
+    /// This field is required.
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl BatchGetDevicePositionErrorBuilder {
         &self.device_id
     }
     /// <p>Contains details related to the error code.</p>
+    /// This field is required.
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl BatchGetDevicePositionErrorBuilder {
         &self.error
     }
     /// Consumes the builder and constructs a [`BatchGetDevicePositionError`](crate::types::BatchGetDevicePositionError).
-    pub fn build(self) -> crate::types::BatchGetDevicePositionError {
-        crate::types::BatchGetDevicePositionError {
-            device_id: self.device_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_id`](crate::types::builders::BatchGetDevicePositionErrorBuilder::device_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetDevicePositionError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetDevicePositionError {
+            device_id: self.device_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_id",
+                    "device_id was not specified but it is required when building BatchGetDevicePositionError",
+                )
+            })?,
             error: self.error,
-        }
+        })
     }
 }

@@ -63,6 +63,7 @@ pub struct CreateDeploymentConfigInputBuilder {
 }
 impl CreateDeploymentConfigInputBuilder {
     /// <p>The name of the deployment configuration to create.</p>
+    /// This field is required.
     pub fn deployment_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_config_name = ::std::option::Option::Some(input.into());
         self

@@ -3,107 +3,107 @@ pub fn ser_decision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Decision,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.decision_type {
-        object.key("decisionType").string(var_1.as_str());
+    {
+        object.key("decisionType").string(input.decision_type.as_str());
     }
-    if let Some(var_2) = &input.schedule_activity_task_decision_attributes {
+    if let Some(var_1) = &input.schedule_activity_task_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("scheduleActivityTaskDecisionAttributes").start_object();
+        let mut object_2 = object.key("scheduleActivityTaskDecisionAttributes").start_object();
         crate::protocol_serde::shape_schedule_activity_task_decision_attributes::ser_schedule_activity_task_decision_attributes(
-            &mut object_3,
-            var_2,
+            &mut object_2,
+            var_1,
         )?;
-        object_3.finish();
+        object_2.finish();
     }
-    if let Some(var_4) = &input.request_cancel_activity_task_decision_attributes {
+    if let Some(var_3) = &input.request_cancel_activity_task_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("requestCancelActivityTaskDecisionAttributes").start_object();
+        let mut object_4 = object.key("requestCancelActivityTaskDecisionAttributes").start_object();
         crate::protocol_serde::shape_request_cancel_activity_task_decision_attributes::ser_request_cancel_activity_task_decision_attributes(
-            &mut object_5,
-            var_4,
+            &mut object_4,
+            var_3,
         )?;
-        object_5.finish();
+        object_4.finish();
     }
-    if let Some(var_6) = &input.complete_workflow_execution_decision_attributes {
+    if let Some(var_5) = &input.complete_workflow_execution_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("completeWorkflowExecutionDecisionAttributes").start_object();
+        let mut object_6 = object.key("completeWorkflowExecutionDecisionAttributes").start_object();
         crate::protocol_serde::shape_complete_workflow_execution_decision_attributes::ser_complete_workflow_execution_decision_attributes(
-            &mut object_7,
-            var_6,
+            &mut object_6,
+            var_5,
         )?;
-        object_7.finish();
+        object_6.finish();
     }
-    if let Some(var_8) = &input.fail_workflow_execution_decision_attributes {
+    if let Some(var_7) = &input.fail_workflow_execution_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("failWorkflowExecutionDecisionAttributes").start_object();
+        let mut object_8 = object.key("failWorkflowExecutionDecisionAttributes").start_object();
         crate::protocol_serde::shape_fail_workflow_execution_decision_attributes::ser_fail_workflow_execution_decision_attributes(
-            &mut object_9,
-            var_8,
+            &mut object_8,
+            var_7,
         )?;
-        object_9.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.cancel_workflow_execution_decision_attributes {
+    if let Some(var_9) = &input.cancel_workflow_execution_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("cancelWorkflowExecutionDecisionAttributes").start_object();
+        let mut object_10 = object.key("cancelWorkflowExecutionDecisionAttributes").start_object();
         crate::protocol_serde::shape_cancel_workflow_execution_decision_attributes::ser_cancel_workflow_execution_decision_attributes(
-            &mut object_11,
-            var_10,
+            &mut object_10,
+            var_9,
         )?;
-        object_11.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.continue_as_new_workflow_execution_decision_attributes {
+    if let Some(var_11) = &input.continue_as_new_workflow_execution_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("continueAsNewWorkflowExecutionDecisionAttributes").start_object();
-        crate::protocol_serde::shape_continue_as_new_workflow_execution_decision_attributes::ser_continue_as_new_workflow_execution_decision_attributes(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_12 = object.key("continueAsNewWorkflowExecutionDecisionAttributes").start_object();
+        crate::protocol_serde::shape_continue_as_new_workflow_execution_decision_attributes::ser_continue_as_new_workflow_execution_decision_attributes(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_14) = &input.record_marker_decision_attributes {
+    if let Some(var_13) = &input.record_marker_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("recordMarkerDecisionAttributes").start_object();
-        crate::protocol_serde::shape_record_marker_decision_attributes::ser_record_marker_decision_attributes(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_14 = object.key("recordMarkerDecisionAttributes").start_object();
+        crate::protocol_serde::shape_record_marker_decision_attributes::ser_record_marker_decision_attributes(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_16) = &input.start_timer_decision_attributes {
+    if let Some(var_15) = &input.start_timer_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("startTimerDecisionAttributes").start_object();
-        crate::protocol_serde::shape_start_timer_decision_attributes::ser_start_timer_decision_attributes(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_16 = object.key("startTimerDecisionAttributes").start_object();
+        crate::protocol_serde::shape_start_timer_decision_attributes::ser_start_timer_decision_attributes(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_18) = &input.cancel_timer_decision_attributes {
+    if let Some(var_17) = &input.cancel_timer_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("cancelTimerDecisionAttributes").start_object();
-        crate::protocol_serde::shape_cancel_timer_decision_attributes::ser_cancel_timer_decision_attributes(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_18 = object.key("cancelTimerDecisionAttributes").start_object();
+        crate::protocol_serde::shape_cancel_timer_decision_attributes::ser_cancel_timer_decision_attributes(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_20) = &input.signal_external_workflow_execution_decision_attributes {
+    if let Some(var_19) = &input.signal_external_workflow_execution_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("signalExternalWorkflowExecutionDecisionAttributes").start_object();
-        crate::protocol_serde::shape_signal_external_workflow_execution_decision_attributes::ser_signal_external_workflow_execution_decision_attributes(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_20 = object.key("signalExternalWorkflowExecutionDecisionAttributes").start_object();
+        crate::protocol_serde::shape_signal_external_workflow_execution_decision_attributes::ser_signal_external_workflow_execution_decision_attributes(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_22) = &input.request_cancel_external_workflow_execution_decision_attributes {
+    if let Some(var_21) = &input.request_cancel_external_workflow_execution_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("requestCancelExternalWorkflowExecutionDecisionAttributes").start_object();
-        crate::protocol_serde::shape_request_cancel_external_workflow_execution_decision_attributes::ser_request_cancel_external_workflow_execution_decision_attributes(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_22 = object.key("requestCancelExternalWorkflowExecutionDecisionAttributes").start_object();
+        crate::protocol_serde::shape_request_cancel_external_workflow_execution_decision_attributes::ser_request_cancel_external_workflow_execution_decision_attributes(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_24) = &input.start_child_workflow_execution_decision_attributes {
+    if let Some(var_23) = &input.start_child_workflow_execution_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("startChildWorkflowExecutionDecisionAttributes").start_object();
+        let mut object_24 = object.key("startChildWorkflowExecutionDecisionAttributes").start_object();
         crate::protocol_serde::shape_start_child_workflow_execution_decision_attributes::ser_start_child_workflow_execution_decision_attributes(
-            &mut object_25,
-            var_24,
+            &mut object_24,
+            var_23,
         )?;
-        object_25.finish();
+        object_24.finish();
     }
-    if let Some(var_26) = &input.schedule_lambda_function_decision_attributes {
+    if let Some(var_25) = &input.schedule_lambda_function_decision_attributes {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("scheduleLambdaFunctionDecisionAttributes").start_object();
+        let mut object_26 = object.key("scheduleLambdaFunctionDecisionAttributes").start_object();
         crate::protocol_serde::shape_schedule_lambda_function_decision_attributes::ser_schedule_lambda_function_decision_attributes(
-            &mut object_27,
-            var_26,
+            &mut object_26,
+            var_25,
         )?;
-        object_27.finish();
+        object_26.finish();
     }
     Ok(())
 }

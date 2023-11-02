@@ -25,7 +25,7 @@ pub struct IntentSummary {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub dialog_action_type: ::std::option::Option<crate::types::DialogActionType>,
+    pub dialog_action_type: crate::types::DialogActionType,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
     /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
@@ -66,8 +66,8 @@ impl IntentSummary {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn dialog_action_type(&self) -> ::std::option::Option<&crate::types::DialogActionType> {
-        self.dialog_action_type.as_ref()
+    pub fn dialog_action_type(&self) -> &crate::types::DialogActionType {
+        &self.dialog_action_type
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
@@ -203,6 +203,7 @@ impl IntentSummaryBuilder {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn dialog_action_type(mut self, input: crate::types::DialogActionType) -> Self {
         self.dialog_action_type = ::std::option::Option::Some(input);
         self
@@ -272,16 +273,23 @@ impl IntentSummaryBuilder {
         &self.slot_to_elicit
     }
     /// Consumes the builder and constructs a [`IntentSummary`](crate::types::IntentSummary).
-    pub fn build(self) -> crate::types::IntentSummary {
-        crate::types::IntentSummary {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dialog_action_type`](crate::types::builders::IntentSummaryBuilder::dialog_action_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IntentSummary {
             intent_name: self.intent_name,
             checkpoint_label: self.checkpoint_label,
             slots: self.slots,
             confirmation_status: self.confirmation_status,
-            dialog_action_type: self.dialog_action_type,
+            dialog_action_type: self.dialog_action_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dialog_action_type",
+                    "dialog_action_type was not specified but it is required when building IntentSummary",
+                )
+            })?,
             fulfillment_state: self.fulfillment_state,
             slot_to_elicit: self.slot_to_elicit,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for IntentSummaryBuilder {

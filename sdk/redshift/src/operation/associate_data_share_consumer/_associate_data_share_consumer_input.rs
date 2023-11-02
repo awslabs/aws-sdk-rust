@@ -48,6 +48,7 @@ pub struct AssociateDataShareConsumerInputBuilder {
 }
 impl AssociateDataShareConsumerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self

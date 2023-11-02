@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareTarget {
     /// <p>Identifier of the directory consumer account.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
-    pub r#type: ::std::option::Option<crate::types::TargetType>,
+    pub r#type: crate::types::TargetType,
 }
 impl ShareTarget {
     /// <p>Identifier of the directory consumer account.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::TargetType {
+        &self.r#type
     }
 }
 impl ShareTarget {
@@ -35,6 +36,7 @@ pub struct ShareTargetBuilder {
 }
 impl ShareTargetBuilder {
     /// <p>Identifier of the directory consumer account.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ShareTargetBuilder {
         &self.id
     }
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::TargetType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ShareTargetBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ShareTarget`](crate::types::ShareTarget).
-    pub fn build(self) -> crate::types::ShareTarget {
-        crate::types::ShareTarget {
-            id: self.id,
-            r#type: self.r#type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::ShareTargetBuilder::id)
+    /// - [`r#type`](crate::types::builders::ShareTargetBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ShareTarget, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ShareTarget {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ShareTarget",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ShareTarget",
+                )
+            })?,
+        })
     }
 }

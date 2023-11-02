@@ -3,14 +3,14 @@ pub fn ser_cookie_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CookieSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.domain {
-        object.key("domain").string(var_1.as_str());
+    {
+        object.key("domain").string(input.domain.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.path {
-        object.key("path").string(var_3.as_str());
+    if let Some(var_2) = &input.path {
+        object.key("path").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::cookie_specification_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

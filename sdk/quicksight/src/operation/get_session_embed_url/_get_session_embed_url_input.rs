@@ -76,6 +76,7 @@ pub struct GetSessionEmbedUrlInputBuilder {
 }
 impl GetSessionEmbedUrlInputBuilder {
     /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self

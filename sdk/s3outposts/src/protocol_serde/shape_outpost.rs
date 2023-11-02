@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "S3OutpostArn" => {
+                            builder = builder.set_s3_outpost_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "OutpostId" => {
                             builder = builder.set_outpost_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

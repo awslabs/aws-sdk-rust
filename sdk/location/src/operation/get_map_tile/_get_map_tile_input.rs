@@ -4,32 +4,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMapTileInput {
     /// <p>The map resource to retrieve the map tiles from.</p>
-    pub map_name: ::std::option::Option<::std::string::String>,
+    pub map_name: ::std::string::String,
     /// <p>The zoom value for the map tile.</p>
-    pub z: ::std::option::Option<::std::string::String>,
+    pub z: ::std::string::String,
     /// <p>The X axis value for the map tile.</p>
-    pub x: ::std::option::Option<::std::string::String>,
+    pub x: ::std::string::String,
     /// <p>The Y axis value for the map tile. </p>
-    pub y: ::std::option::Option<::std::string::String>,
+    pub y: ::std::string::String,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetMapTileInput {
     /// <p>The map resource to retrieve the map tiles from.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
-        self.map_name.as_deref()
+    pub fn map_name(&self) -> &str {
+        use std::ops::Deref;
+        self.map_name.deref()
     }
     /// <p>The zoom value for the map tile.</p>
-    pub fn z(&self) -> ::std::option::Option<&str> {
-        self.z.as_deref()
+    pub fn z(&self) -> &str {
+        use std::ops::Deref;
+        self.z.deref()
     }
     /// <p>The X axis value for the map tile.</p>
-    pub fn x(&self) -> ::std::option::Option<&str> {
-        self.x.as_deref()
+    pub fn x(&self) -> &str {
+        use std::ops::Deref;
+        self.x.deref()
     }
     /// <p>The Y axis value for the map tile. </p>
-    pub fn y(&self) -> ::std::option::Option<&str> {
-        self.y.as_deref()
+    pub fn y(&self) -> &str {
+        use std::ops::Deref;
+        self.y.deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -66,6 +70,7 @@ pub struct GetMapTileInputBuilder {
 }
 impl GetMapTileInputBuilder {
     /// <p>The map resource to retrieve the map tiles from.</p>
+    /// This field is required.
     pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +85,7 @@ impl GetMapTileInputBuilder {
         &self.map_name
     }
     /// <p>The zoom value for the map tile.</p>
+    /// This field is required.
     pub fn z(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.z = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +100,7 @@ impl GetMapTileInputBuilder {
         &self.z
     }
     /// <p>The X axis value for the map tile.</p>
+    /// This field is required.
     pub fn x(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +115,7 @@ impl GetMapTileInputBuilder {
         &self.x
     }
     /// <p>The Y axis value for the map tile. </p>
+    /// This field is required.
     pub fn y(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.y = ::std::option::Option::Some(input.into());
         self
@@ -136,12 +144,37 @@ impl GetMapTileInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapTileInput`](crate::operation::get_map_tile::GetMapTileInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`map_name`](crate::operation::get_map_tile::builders::GetMapTileInputBuilder::map_name)
+    /// - [`z`](crate::operation::get_map_tile::builders::GetMapTileInputBuilder::z)
+    /// - [`x`](crate::operation::get_map_tile::builders::GetMapTileInputBuilder::x)
+    /// - [`y`](crate::operation::get_map_tile::builders::GetMapTileInputBuilder::y)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_map_tile::GetMapTileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_tile::GetMapTileInput {
-            map_name: self.map_name,
-            z: self.z,
-            x: self.x,
-            y: self.y,
+            map_name: self.map_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "map_name",
+                    "map_name was not specified but it is required when building GetMapTileInput",
+                )
+            })?,
+            z: self.z.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "z",
+                    "z was not specified but it is required when building GetMapTileInput",
+                )
+            })?,
+            x: self.x.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "x",
+                    "x was not specified but it is required when building GetMapTileInput",
+                )
+            })?,
+            y: self.y.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "y",
+                    "y was not specified but it is required when building GetMapTileInput",
+                )
+            })?,
             key: self.key,
         })
     }

@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
-    pub duration_in_minutes: ::std::option::Option<i32>,
+    pub duration_in_minutes: i32,
     /// <p>Whether instant booking is enabled or not.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
 }
 impl CreateInstantBooking {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
-    pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
+    pub fn duration_in_minutes(&self) -> i32 {
         self.duration_in_minutes
     }
     /// <p>Whether instant booking is enabled or not.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
@@ -35,6 +35,7 @@ pub struct CreateInstantBookingBuilder {
 }
 impl CreateInstantBookingBuilder {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
+    /// This field is required.
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl CreateInstantBookingBuilder {
         &self.duration_in_minutes
     }
     /// <p>Whether instant booking is enabled or not.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl CreateInstantBookingBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`CreateInstantBooking`](crate::types::CreateInstantBooking).
-    pub fn build(self) -> crate::types::CreateInstantBooking {
-        crate::types::CreateInstantBooking {
-            duration_in_minutes: self.duration_in_minutes,
-            enabled: self.enabled,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`duration_in_minutes`](crate::types::builders::CreateInstantBookingBuilder::duration_in_minutes)
+    /// - [`enabled`](crate::types::builders::CreateInstantBookingBuilder::enabled)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateInstantBooking, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateInstantBooking {
+            duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "duration_in_minutes",
+                    "duration_in_minutes was not specified but it is required when building CreateInstantBooking",
+                )
+            })?,
+            enabled: self.enabled.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "enabled",
+                    "enabled was not specified but it is required when building CreateInstantBooking",
+                )
+            })?,
+        })
     }
 }

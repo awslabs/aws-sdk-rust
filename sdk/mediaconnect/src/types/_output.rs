@@ -65,8 +65,10 @@ impl Output {
         self.media_live_input_arn.as_deref()
     }
     /// The configuration for each media stream that is associated with the output.
-    pub fn media_stream_output_configurations(&self) -> ::std::option::Option<&[crate::types::MediaStreamOutputConfiguration]> {
-        self.media_stream_output_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_stream_output_configurations.is_none()`.
+    pub fn media_stream_output_configurations(&self) -> &[crate::types::MediaStreamOutputConfiguration] {
+        self.media_stream_output_configurations.as_deref().unwrap_or_default()
     }
     /// The name of the output. This value must be unique within the current flow.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -93,8 +95,10 @@ impl Output {
         self.bridge_arn.as_deref()
     }
     /// The bridge output ports currently in use.
-    pub fn bridge_ports(&self) -> ::std::option::Option<&[i32]> {
-        self.bridge_ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bridge_ports.is_none()`.
+    pub fn bridge_ports(&self) -> &[i32] {
+        self.bridge_ports.as_deref().unwrap_or_default()
     }
 }
 impl Output {
@@ -247,6 +251,7 @@ impl OutputBuilder {
         &self.media_stream_output_configurations
     }
     /// The name of the output. This value must be unique within the current flow.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -261,6 +266,7 @@ impl OutputBuilder {
         &self.name
     }
     /// The ARN of the output.
+    /// This field is required.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_arn = ::std::option::Option::Some(input.into());
         self

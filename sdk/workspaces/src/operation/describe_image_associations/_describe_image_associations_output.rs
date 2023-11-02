@@ -9,8 +9,10 @@ pub struct DescribeImageAssociationsOutput {
 }
 impl DescribeImageAssociationsOutput {
     /// <p>List of information about the specified associations.</p>
-    pub fn associations(&self) -> ::std::option::Option<&[crate::types::ImageResourceAssociation]> {
-        self.associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::ImageResourceAssociation] {
+        self.associations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeImageAssociationsOutput {

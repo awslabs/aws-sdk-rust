@@ -15,8 +15,10 @@ impl DeregisterInstancesFromLoadBalancerInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the instances.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
 }
 impl DeregisterInstancesFromLoadBalancerInput {
@@ -35,6 +37,7 @@ pub struct DeregisterInstancesFromLoadBalancerInputBuilder {
 }
 impl DeregisterInstancesFromLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self

@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteGeofenceInput {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    pub collection_name: ::std::option::Option<::std::string::String>,
+    pub collection_name: ::std::string::String,
     /// <p>The batch of geofences to be deleted.</p>
-    pub geofence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub geofence_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl BatchDeleteGeofenceInput {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
-        self.collection_name.as_deref()
+    pub fn collection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.collection_name.deref()
     }
     /// <p>The batch of geofences to be deleted.</p>
-    pub fn geofence_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.geofence_ids.as_deref()
+    pub fn geofence_ids(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.geofence_ids.deref()
     }
 }
 impl BatchDeleteGeofenceInput {
@@ -34,6 +36,7 @@ pub struct BatchDeleteGeofenceInputBuilder {
 }
 impl BatchDeleteGeofenceInputBuilder {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -68,13 +71,26 @@ impl BatchDeleteGeofenceInputBuilder {
         &self.geofence_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceInput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collection_name`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder::collection_name)
+    /// - [`geofence_ids`](crate::operation::batch_delete_geofence::builders::BatchDeleteGeofenceInputBuilder::geofence_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput {
-            collection_name: self.collection_name,
-            geofence_ids: self.geofence_ids,
+            collection_name: self.collection_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collection_name",
+                    "collection_name was not specified but it is required when building BatchDeleteGeofenceInput",
+                )
+            })?,
+            geofence_ids: self.geofence_ids.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "geofence_ids",
+                    "geofence_ids was not specified but it is required when building BatchDeleteGeofenceInput",
+                )
+            })?,
         })
     }
 }

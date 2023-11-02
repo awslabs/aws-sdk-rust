@@ -41,6 +41,7 @@ pub struct ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
 }
 impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
     /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

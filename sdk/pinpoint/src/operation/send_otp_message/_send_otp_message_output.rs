@@ -34,6 +34,7 @@ pub struct SendOtpMessageOutputBuilder {
 }
 impl SendOtpMessageOutputBuilder {
     /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+    /// This field is required.
     pub fn message_response(mut self, input: crate::types::MessageResponse) -> Self {
         self.message_response = ::std::option::Option::Some(input);
         self

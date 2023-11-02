@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FormOutput {
     /// <p>The name of the metadata form.</p>
-    pub form_name: ::std::option::Option<::std::string::String>,
+    pub form_name: ::std::string::String,
     /// <p>The name of the metadata form type.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the metadata form type.</p>
@@ -15,8 +15,9 @@ pub struct FormOutput {
 }
 impl FormOutput {
     /// <p>The name of the metadata form.</p>
-    pub fn form_name(&self) -> ::std::option::Option<&str> {
-        self.form_name.as_deref()
+    pub fn form_name(&self) -> &str {
+        use std::ops::Deref;
+        self.form_name.deref()
     }
     /// <p>The name of the metadata form type.</p>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
@@ -59,6 +60,7 @@ pub struct FormOutputBuilder {
 }
 impl FormOutputBuilder {
     /// <p>The name of the metadata form.</p>
+    /// This field is required.
     pub fn form_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.form_name = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +117,20 @@ impl FormOutputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`FormOutput`](crate::types::FormOutput).
-    pub fn build(self) -> crate::types::FormOutput {
-        crate::types::FormOutput {
-            form_name: self.form_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`form_name`](crate::types::builders::FormOutputBuilder::form_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::FormOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FormOutput {
+            form_name: self.form_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "form_name",
+                    "form_name was not specified but it is required when building FormOutput",
+                )
+            })?,
             type_name: self.type_name,
             type_revision: self.type_revision,
             content: self.content,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for FormOutputBuilder {

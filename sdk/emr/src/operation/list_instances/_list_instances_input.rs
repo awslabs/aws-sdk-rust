@@ -29,8 +29,10 @@ impl ListInstancesInput {
         self.instance_group_id.as_deref()
     }
     /// <p>The type of instance group for which to list the instances.</p>
-    pub fn instance_group_types(&self) -> ::std::option::Option<&[crate::types::InstanceGroupType]> {
-        self.instance_group_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_group_types.is_none()`.
+    pub fn instance_group_types(&self) -> &[crate::types::InstanceGroupType] {
+        self.instance_group_types.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of the instance fleet.</p>
     pub fn instance_fleet_id(&self) -> ::std::option::Option<&str> {
@@ -41,8 +43,10 @@ impl ListInstancesInput {
         self.instance_fleet_type.as_ref()
     }
     /// <p>A list of instance states that will filter the instances returned with this request.</p>
-    pub fn instance_states(&self) -> ::std::option::Option<&[crate::types::InstanceState]> {
-        self.instance_states.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_states.is_none()`.
+    pub fn instance_states(&self) -> &[crate::types::InstanceState] {
+        self.instance_states.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
@@ -70,6 +74,7 @@ pub struct ListInstancesInputBuilder {
 }
 impl ListInstancesInputBuilder {
     /// <p>The identifier of the cluster for which to list the instances.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

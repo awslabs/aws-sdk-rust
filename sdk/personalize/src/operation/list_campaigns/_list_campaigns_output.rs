@@ -11,8 +11,10 @@ pub struct ListCampaignsOutput {
 }
 impl ListCampaignsOutput {
     /// <p>A list of the campaigns.</p>
-    pub fn campaigns(&self) -> ::std::option::Option<&[crate::types::CampaignSummary]> {
-        self.campaigns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.campaigns.is_none()`.
+    pub fn campaigns(&self) -> &[crate::types::CampaignSummary] {
+        self.campaigns.as_deref().unwrap_or_default()
     }
     /// <p>A token for getting the next set of campaigns (if they exist).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

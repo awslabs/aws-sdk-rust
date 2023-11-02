@@ -3,11 +3,11 @@ pub fn ser_sorting_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SortingConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.document_attribute_key {
-        object.key("DocumentAttributeKey").string(var_1.as_str());
+    {
+        object.key("DocumentAttributeKey").string(input.document_attribute_key.as_str());
     }
-    if let Some(var_2) = &input.sort_order {
-        object.key("SortOrder").string(var_2.as_str());
+    {
+        object.key("SortOrder").string(input.sort_order.as_str());
     }
     Ok(())
 }

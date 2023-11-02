@@ -9,8 +9,10 @@ pub struct DescribeInterconnectsOutput {
 }
 impl DescribeInterconnectsOutput {
     /// <p>The interconnects.</p>
-    pub fn interconnects(&self) -> ::std::option::Option<&[crate::types::Interconnect]> {
-        self.interconnects.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interconnects.is_none()`.
+    pub fn interconnects(&self) -> &[crate::types::Interconnect] {
+        self.interconnects.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeInterconnectsOutput {

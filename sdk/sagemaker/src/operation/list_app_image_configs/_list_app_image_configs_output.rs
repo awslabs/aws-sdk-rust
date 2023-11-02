@@ -15,8 +15,10 @@ impl ListAppImageConfigsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of AppImageConfigs and their properties.</p>
-    pub fn app_image_configs(&self) -> ::std::option::Option<&[crate::types::AppImageConfigDetails]> {
-        self.app_image_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_image_configs.is_none()`.
+    pub fn app_image_configs(&self) -> &[crate::types::AppImageConfigDetails] {
+        self.app_image_configs.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListAppImageConfigsOutput {

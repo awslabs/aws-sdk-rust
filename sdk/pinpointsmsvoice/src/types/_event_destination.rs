@@ -31,8 +31,10 @@ impl EventDestination {
         self.kinesis_firehose_destination.as_ref()
     }
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub fn matching_event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
-        self.matching_event_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matching_event_types.is_none()`.
+    pub fn matching_event_types(&self) -> &[crate::types::EventType] {
+        self.matching_event_types.as_deref().unwrap_or_default()
     }
     /// A name that identifies the event destination configuration.
     pub fn name(&self) -> ::std::option::Option<&str> {

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContactList`](crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_list_name(impl Into<String>)`](crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::set_contact_list_name): <p>The name of the contact list.</p>
+    ///   - [`contact_list_name(impl Into<String>)`](crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder::set_contact_list_name):<br>required: **true**<br><p>The name of the contact list.</p><br>
     /// - On success, responds with [`DeleteContactListOutput`](crate::operation::delete_contact_list::DeleteContactListOutput)
     /// - On failure, responds with [`SdkError<DeleteContactListError>`](crate::operation::delete_contact_list::DeleteContactListError)
     pub fn delete_contact_list(&self) -> crate::operation::delete_contact_list::builders::DeleteContactListFluentBuilder {

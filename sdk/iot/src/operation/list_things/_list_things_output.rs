@@ -12,8 +12,10 @@ pub struct ListThingsOutput {
 }
 impl ListThingsOutput {
     /// <p>The things.</p>
-    pub fn things(&self) -> ::std::option::Option<&[crate::types::ThingAttribute]> {
-        self.things.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.things.is_none()`.
+    pub fn things(&self) -> &[crate::types::ThingAttribute] {
+        self.things.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

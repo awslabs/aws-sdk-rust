@@ -18,8 +18,10 @@ impl PutRegistryScanningConfigurationInput {
         self.scan_type.as_ref()
     }
     /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::RegistryScanningRule]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::RegistryScanningRule] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl PutRegistryScanningConfigurationInput {

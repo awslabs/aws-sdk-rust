@@ -57,8 +57,10 @@ impl DocumentIdentifier {
         self.version_name.as_deref()
     }
     /// <p>The operating system platform. </p>
-    pub fn platform_types(&self) -> ::std::option::Option<&[crate::types::PlatformType]> {
-        self.platform_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_types.is_none()`.
+    pub fn platform_types(&self) -> &[crate::types::PlatformType] {
+        self.platform_types.as_deref().unwrap_or_default()
     }
     /// <p>The document version.</p>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
@@ -81,12 +83,16 @@ impl DocumentIdentifier {
         self.target_type.as_deref()
     }
     /// <p>The tags, or metadata, that have been applied to the document.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn requires(&self) -> ::std::option::Option<&[crate::types::DocumentRequires]> {
-        self.requires.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires.is_none()`.
+    pub fn requires(&self) -> &[crate::types::DocumentRequires] {
+        self.requires.as_deref().unwrap_or_default()
     }
     /// <p>The current status of a document review.</p>
     pub fn review_status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {

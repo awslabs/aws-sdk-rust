@@ -51,6 +51,7 @@ pub struct RemoveAttributesInputBuilder {
 }
 impl RemoveAttributesInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl RemoveAttributesInputBuilder {
     /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
     /// </ul>
+    /// This field is required.
     pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_type = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +96,7 @@ impl RemoveAttributesInputBuilder {
         &self.attribute_type
     }
     /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
+    /// This field is required.
     pub fn update_attributes_request(mut self, input: crate::types::UpdateAttributesRequest) -> Self {
         self.update_attributes_request = ::std::option::Option::Some(input);
         self

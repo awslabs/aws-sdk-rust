@@ -51,8 +51,10 @@ impl SynthesizeSpeechInput {
         self.language_code.as_ref()
     }
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
-    pub fn lexicon_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lexicon_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lexicon_names.is_none()`.
+    pub fn lexicon_names(&self) -> &[::std::string::String] {
+        self.lexicon_names.as_deref().unwrap_or_default()
     }
     /// <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
@@ -66,8 +68,10 @@ impl SynthesizeSpeechInput {
         self.sample_rate.as_deref()
     }
     /// <p>The type of speech marks returned for the input text.</p>
-    pub fn speech_mark_types(&self) -> ::std::option::Option<&[crate::types::SpeechMarkType]> {
-        self.speech_mark_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.speech_mark_types.is_none()`.
+    pub fn speech_mark_types(&self) -> &[crate::types::SpeechMarkType] {
+        self.speech_mark_types.as_deref().unwrap_or_default()
     }
     /// <p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>
     pub fn text(&self) -> ::std::option::Option<&str> {
@@ -178,6 +182,7 @@ impl SynthesizeSpeechInputBuilder {
     }
     /// <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
+    /// This field is required.
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
@@ -234,6 +239,7 @@ impl SynthesizeSpeechInputBuilder {
         &self.speech_mark_types
     }
     /// <p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -262,6 +268,7 @@ impl SynthesizeSpeechInputBuilder {
         &self.text_type
     }
     /// <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
+    /// This field is required.
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.voice_id = ::std::option::Option::Some(input);
         self

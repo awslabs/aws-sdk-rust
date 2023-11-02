@@ -3,27 +3,27 @@ pub fn ser_segment_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SegmentOverride,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.segment {
-        object.key("segment").string(var_1.as_str());
+    {
+        object.key("segment").string(input.segment.as_str());
     }
-    if let Some(var_2) = &input.evaluation_order {
+    {
         object.key("evaluationOrder").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((input.evaluation_order).into()),
         );
     }
-    if let Some(var_3) = &input.weights {
+    {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("weights").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_1 = object.key("weights").start_object();
+        for (key_2, value_3) in &input.weights {
             {
-                object_4.key(key_5.as_str()).number(
+                object_1.key(key_2.as_str()).number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*value_6).into()),
+                    ::aws_smithy_types::Number::NegInt((*value_3).into()),
                 );
             }
         }
-        object_4.finish();
+        object_1.finish();
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::segment_override_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -13,16 +13,20 @@ pub struct ListApplicationsRequestFilters {
 }
 impl ListApplicationsRequestFilters {
     /// <p>Filter applications list by application ID.</p>
-    pub fn application_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.application_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_i_ds.is_none()`.
+    pub fn application_i_ds(&self) -> &[::std::string::String] {
+        self.application_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>Filter applications list by archival status.</p>
     pub fn is_archived(&self) -> ::std::option::Option<bool> {
         self.is_archived
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn wave_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.wave_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wave_i_ds.is_none()`.
+    pub fn wave_i_ds(&self) -> &[::std::string::String] {
+        self.wave_i_ds.as_deref().unwrap_or_default()
     }
 }
 impl ListApplicationsRequestFilters {

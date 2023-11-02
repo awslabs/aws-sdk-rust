@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectParticipantInput {
     /// <p>ARN of the stage to which the participant is attached.</p>
-    pub stage_arn: ::std::option::Option<::std::string::String>,
+    pub stage_arn: ::std::string::String,
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub participant_id: ::std::option::Option<::std::string::String>,
+    pub participant_id: ::std::string::String,
     /// <p>Description of why this participant is being disconnected.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectParticipantInput {
     /// <p>ARN of the stage to which the participant is attached.</p>
-    pub fn stage_arn(&self) -> ::std::option::Option<&str> {
-        self.stage_arn.as_deref()
+    pub fn stage_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.stage_arn.deref()
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
-        self.participant_id.as_deref()
+    pub fn participant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.participant_id.deref()
     }
     /// <p>Description of why this participant is being disconnected.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
@@ -41,6 +43,7 @@ pub struct DisconnectParticipantInputBuilder {
 }
 impl DisconnectParticipantInputBuilder {
     /// <p>ARN of the stage to which the participant is attached.</p>
+    /// This field is required.
     pub fn stage_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DisconnectParticipantInputBuilder {
         &self.stage_arn
     }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    /// This field is required.
     pub fn participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_id = ::std::option::Option::Some(input.into());
         self
@@ -83,13 +87,26 @@ impl DisconnectParticipantInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stage_arn`](crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder::stage_arn)
+    /// - [`participant_id`](crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder::participant_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disconnect_participant::DisconnectParticipantInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disconnect_participant::DisconnectParticipantInput {
-            stage_arn: self.stage_arn,
-            participant_id: self.participant_id,
+            stage_arn: self.stage_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "stage_arn",
+                    "stage_arn was not specified but it is required when building DisconnectParticipantInput",
+                )
+            })?,
+            participant_id: self.participant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "participant_id",
+                    "participant_id was not specified but it is required when building DisconnectParticipantInput",
+                )
+            })?,
             reason: self.reason,
         })
     }

@@ -13,16 +13,20 @@ pub struct GetSamplingTargetsOutput {
 }
 impl GetSamplingTargetsOutput {
     /// <p>Updated rules that the service should use to sample requests.</p>
-    pub fn sampling_target_documents(&self) -> ::std::option::Option<&[crate::types::SamplingTargetDocument]> {
-        self.sampling_target_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sampling_target_documents.is_none()`.
+    pub fn sampling_target_documents(&self) -> &[crate::types::SamplingTargetDocument] {
+        self.sampling_target_documents.as_deref().unwrap_or_default()
     }
     /// <p>The last time a user changed the sampling rule configuration. If the sampling rule configuration changed since the service last retrieved it, the service should call <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a> to get the latest version.</p>
     pub fn last_rule_modification(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_rule_modification.as_ref()
     }
     /// <p>Information about <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a> that X-Ray could not process.</p>
-    pub fn unprocessed_statistics(&self) -> ::std::option::Option<&[crate::types::UnprocessedStatistics]> {
-        self.unprocessed_statistics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_statistics.is_none()`.
+    pub fn unprocessed_statistics(&self) -> &[crate::types::UnprocessedStatistics] {
+        self.unprocessed_statistics.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetSamplingTargetsOutput {

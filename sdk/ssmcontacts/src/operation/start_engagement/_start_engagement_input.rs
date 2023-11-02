@@ -76,6 +76,7 @@ pub struct StartEngagementInputBuilder {
 }
 impl StartEngagementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact being engaged.</p>
+    /// This field is required.
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl StartEngagementInputBuilder {
         &self.contact_id
     }
     /// <p>The user that started the engagement.</p>
+    /// This field is required.
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl StartEngagementInputBuilder {
         &self.sender
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// This field is required.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl StartEngagementInputBuilder {
         &self.subject
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self

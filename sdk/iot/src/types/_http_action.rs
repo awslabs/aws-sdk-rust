@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpAction {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
-    pub url: ::std::option::Option<::std::string::String>,
+    pub url: ::std::string::String,
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
     pub confirmation_url: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP headers to send with the message data.</p>
@@ -15,16 +15,19 @@ pub struct HttpAction {
 }
 impl HttpAction {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
+    pub fn url(&self) -> &str {
+        use std::ops::Deref;
+        self.url.deref()
     }
     /// <p>The URL to which IoT sends a confirmation message. The value of the confirmation URL must be a prefix of the endpoint URL. If you do not specify a confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use substitution templates in the confirmationUrl, you must create and enable topic rule destinations that match each possible value of the substitution template before traffic is allowed to your endpoint URL.</p>
     pub fn confirmation_url(&self) -> ::std::option::Option<&str> {
         self.confirmation_url.as_deref()
     }
     /// <p>The HTTP headers to send with the message data.</p>
-    pub fn headers(&self) -> ::std::option::Option<&[crate::types::HttpActionHeader]> {
-        self.headers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::HttpActionHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
     pub fn auth(&self) -> ::std::option::Option<&crate::types::HttpAuthorization> {
@@ -49,6 +52,7 @@ pub struct HttpActionBuilder {
 }
 impl HttpActionBuilder {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
+    /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +115,19 @@ impl HttpActionBuilder {
         &self.auth
     }
     /// Consumes the builder and constructs a [`HttpAction`](crate::types::HttpAction).
-    pub fn build(self) -> crate::types::HttpAction {
-        crate::types::HttpAction {
-            url: self.url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`url`](crate::types::builders::HttpActionBuilder::url)
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::HttpAction {
+            url: self.url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "url",
+                    "url was not specified but it is required when building HttpAction",
+                )
+            })?,
             confirmation_url: self.confirmation_url,
             headers: self.headers,
             auth: self.auth,
-        }
+        })
     }
 }

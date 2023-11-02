@@ -67,8 +67,10 @@ impl Framework {
         self.control_sources.as_deref()
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(&self) -> ::std::option::Option<&[crate::types::ControlSet]> {
-        self.control_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sets.is_none()`.
+    pub fn control_sets(&self) -> &[crate::types::ControlSet] {
+        self.control_sets.as_deref().unwrap_or_default()
     }
     /// <p> The time when the framework was created. </p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

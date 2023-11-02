@@ -174,6 +174,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p> <important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
+    /// This field is required.
     pub fn custom_key_store_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_key_store_name = ::std::option::Option::Some(input.into());
         self

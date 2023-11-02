@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The quality of the aggregated data.</p>
     pub quality: ::std::option::Option<crate::types::Quality>,
     /// <p>The value of the aggregates.</p>
@@ -13,8 +13,8 @@ pub struct AggregatedValue {
 }
 impl AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.timestamp.as_ref()
+    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.timestamp
     }
     /// <p>The quality of the aggregated data.</p>
     pub fn quality(&self) -> ::std::option::Option<&crate::types::Quality> {
@@ -42,6 +42,7 @@ pub struct AggregatedValueBuilder {
 }
 impl AggregatedValueBuilder {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
+    /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl AggregatedValueBuilder {
         &self.quality
     }
     /// <p>The value of the aggregates.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::Aggregates) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,18 @@ impl AggregatedValueBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AggregatedValue`](crate::types::AggregatedValue).
-    pub fn build(self) -> crate::types::AggregatedValue {
-        crate::types::AggregatedValue {
-            timestamp: self.timestamp,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`timestamp`](crate::types::builders::AggregatedValueBuilder::timestamp)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregatedValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregatedValue {
+            timestamp: self.timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "timestamp",
+                    "timestamp was not specified but it is required when building AggregatedValue",
+                )
+            })?,
             quality: self.quality,
             value: self.value,
-        }
+        })
     }
 }

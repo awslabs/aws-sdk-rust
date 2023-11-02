@@ -27,6 +27,7 @@ pub struct DeleteDetectorInputBuilder {
 }
 impl DeleteDetectorInputBuilder {
     /// <p>The ID of the detector to delete.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self

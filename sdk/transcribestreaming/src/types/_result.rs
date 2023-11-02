@@ -43,8 +43,10 @@ impl Result {
         self.is_partial
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn alternatives(&self) -> ::std::option::Option<&[crate::types::Alternative]> {
-        self.alternatives.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alternatives.is_none()`.
+    pub fn alternatives(&self) -> &[crate::types::Alternative] {
+        self.alternatives.as_deref().unwrap_or_default()
     }
     /// <p>Indicates which audio channel is associated with the <code>Result</code>.</p>
     pub fn channel_id(&self) -> ::std::option::Option<&str> {
@@ -56,8 +58,10 @@ impl Result {
     }
     /// <p>The language code of the dominant language identified in your stream.</p>
     /// <p>If you enabled channel identification and each channel of your audio contains a different language, you may have more than one result.</p>
-    pub fn language_identification(&self) -> ::std::option::Option<&[crate::types::LanguageWithScore]> {
-        self.language_identification.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_identification.is_none()`.
+    pub fn language_identification(&self) -> &[crate::types::LanguageWithScore] {
+        self.language_identification.as_deref().unwrap_or_default()
     }
 }
 impl Result {

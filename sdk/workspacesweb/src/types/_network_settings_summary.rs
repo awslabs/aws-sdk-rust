@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkSettingsSummary {
     /// <p>The ARN of the network settings.</p>
-    pub network_settings_arn: ::std::option::Option<::std::string::String>,
+    pub network_settings_arn: ::std::string::String,
     /// <p>The VPC ID of the network settings.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkSettingsSummary {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.network_settings_arn.as_deref()
+    pub fn network_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_settings_arn.deref()
     }
     /// <p>The VPC ID of the network settings.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct NetworkSettingsSummaryBuilder {
 }
 impl NetworkSettingsSummaryBuilder {
     /// <p>The ARN of the network settings.</p>
+    /// This field is required.
     pub fn network_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl NetworkSettingsSummaryBuilder {
         &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkSettingsSummary`](crate::types::NetworkSettingsSummary).
-    pub fn build(self) -> crate::types::NetworkSettingsSummary {
-        crate::types::NetworkSettingsSummary {
-            network_settings_arn: self.network_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_settings_arn`](crate::types::builders::NetworkSettingsSummaryBuilder::network_settings_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkSettingsSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::NetworkSettingsSummary {
+            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_settings_arn",
+                    "network_settings_arn was not specified but it is required when building NetworkSettingsSummary",
+                )
+            })?,
             vpc_id: self.vpc_id,
-        }
+        })
     }
 }

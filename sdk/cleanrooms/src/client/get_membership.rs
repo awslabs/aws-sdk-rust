@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMembership`](crate::operation::get_membership::builders::GetMembershipFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::operation::get_membership::builders::GetMembershipFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::get_membership::builders::GetMembershipFluentBuilder::set_membership_identifier): <p>The identifier for a membership resource.</p>
+    ///   - [`membership_identifier(impl Into<String>)`](crate::operation::get_membership::builders::GetMembershipFluentBuilder::membership_identifier) / [`set_membership_identifier(impl Into<String>)`](crate::operation::get_membership::builders::GetMembershipFluentBuilder::set_membership_identifier):<br>required: **true**<br><p>The identifier for a membership resource.</p><br>
     /// - On success, responds with [`GetMembershipOutput`](crate::operation::get_membership::GetMembershipOutput) with field(s):
     ///   - [`membership(Option<Membership>)`](crate::operation::get_membership::GetMembershipOutput::membership): <p>The membership retrieved for the provided identifier.</p>
     /// - On failure, responds with [`SdkError<GetMembershipError>`](crate::operation::get_membership::GetMembershipError)

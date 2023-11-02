@@ -6,7 +6,7 @@ pub struct ListEventLogsOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about each event retrieved in the list.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::EventLogEntry>>,
+    pub items: ::std::vec::Vec<crate::types::EventLogEntry>,
     _request_id: Option<String>,
 }
 impl ListEventLogsOutput {
@@ -15,8 +15,9 @@ impl ListEventLogsOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about each event retrieved in the list.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::EventLogEntry]> {
-        self.items.as_deref()
+    pub fn items(&self) -> &[crate::types::EventLogEntry] {
+        use std::ops::Deref;
+        self.items.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEventLogsOutput {
@@ -84,11 +85,20 @@ impl ListEventLogsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEventLogsOutput`](crate::operation::list_event_logs::ListEventLogsOutput).
-    pub fn build(self) -> crate::operation::list_event_logs::ListEventLogsOutput {
-        crate::operation::list_event_logs::ListEventLogsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`items`](crate::operation::list_event_logs::builders::ListEventLogsOutputBuilder::items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_event_logs::ListEventLogsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_event_logs::ListEventLogsOutput {
             next_token: self.next_token,
-            items: self.items,
+            items: self.items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "items",
+                    "items was not specified but it is required when building ListEventLogsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

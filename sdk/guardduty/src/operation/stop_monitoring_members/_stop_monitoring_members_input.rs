@@ -14,8 +14,10 @@ impl StopMonitoringMembersInput {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
-    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl StopMonitoringMembersInput {
@@ -34,6 +36,7 @@ pub struct StopMonitoringMembersInputBuilder {
 }
 impl StopMonitoringMembersInputBuilder {
     /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self

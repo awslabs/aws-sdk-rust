@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerProvider {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    pub r#type: ::std::option::Option<crate::types::ContainerProviderType>,
+    pub r#type: crate::types::ContainerProviderType,
     /// <p>The ID of the container cluster.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The information about the container cluster.</p>
     pub info: ::std::option::Option<crate::types::ContainerInfo>,
 }
 impl ContainerProvider {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContainerProviderType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::ContainerProviderType {
+        &self.r#type
     }
     /// <p>The ID of the container cluster.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The information about the container cluster.</p>
     pub fn info(&self) -> ::std::option::Option<&crate::types::ContainerInfo> {
@@ -42,6 +43,7 @@ pub struct ContainerProviderBuilder {
 }
 impl ContainerProviderBuilder {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContainerProviderType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl ContainerProviderBuilder {
         &self.r#type
     }
     /// <p>The ID of the container cluster.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl ContainerProviderBuilder {
         &self.info
     }
     /// Consumes the builder and constructs a [`ContainerProvider`](crate::types::ContainerProvider).
-    pub fn build(self) -> crate::types::ContainerProvider {
-        crate::types::ContainerProvider {
-            r#type: self.r#type,
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::ContainerProviderBuilder::r#type)
+    /// - [`id`](crate::types::builders::ContainerProviderBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContainerProvider, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContainerProvider {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building ContainerProvider",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building ContainerProvider",
+                )
+            })?,
             info: self.info,
-        }
+        })
     }
 }

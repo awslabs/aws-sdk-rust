@@ -28,6 +28,7 @@ pub struct DescribeClusterInputBuilder {
 }
 impl DescribeClusterInputBuilder {
     /// <p>The identifier of the cluster to describe.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

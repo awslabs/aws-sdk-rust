@@ -6,7 +6,7 @@ pub struct ListEnvironmentsOutput {
     /// <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment detail data summaries.</p>
-    pub environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentSummary>>,
+    pub environments: ::std::vec::Vec<crate::types::EnvironmentSummary>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentsOutput {
@@ -15,8 +15,9 @@ impl ListEnvironmentsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of environment detail data summaries.</p>
-    pub fn environments(&self) -> ::std::option::Option<&[crate::types::EnvironmentSummary]> {
-        self.environments.as_deref()
+    pub fn environments(&self) -> &[crate::types::EnvironmentSummary] {
+        use std::ops::Deref;
+        self.environments.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEnvironmentsOutput {
@@ -84,11 +85,20 @@ impl ListEnvironmentsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn build(self) -> crate::operation::list_environments::ListEnvironmentsOutput {
-        crate::operation::list_environments::ListEnvironmentsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environments`](crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::environments)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsOutput {
             next_token: self.next_token,
-            environments: self.environments,
+            environments: self.environments.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environments",
+                    "environments was not specified but it is required when building ListEnvironmentsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

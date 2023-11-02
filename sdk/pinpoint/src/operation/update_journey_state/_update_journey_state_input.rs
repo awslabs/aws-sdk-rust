@@ -41,6 +41,7 @@ pub struct UpdateJourneyStateInputBuilder {
 }
 impl UpdateJourneyStateInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateJourneyStateInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the journey.</p>
+    /// This field is required.
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateJourneyStateInputBuilder {
         &self.journey_id
     }
     /// <p>Changes the status of a journey.</p>
+    /// This field is required.
     pub fn journey_state_request(mut self, input: crate::types::JourneyStateRequest) -> Self {
         self.journey_state_request = ::std::option::Option::Some(input);
         self

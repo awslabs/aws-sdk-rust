@@ -49,6 +49,7 @@ pub struct ColumnTooltipItemBuilder {
 }
 impl ColumnTooltipItemBuilder {
     /// <p>The target column of the tooltip item.</p>
+    /// This field is required.
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
         self

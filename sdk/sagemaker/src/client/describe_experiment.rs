@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExperiment`](crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`experiment_name(impl Into<String>)`](crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder::experiment_name) / [`set_experiment_name(Option<String>)`](crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder::set_experiment_name): <p>The name of the experiment to describe.</p>
+    ///   - [`experiment_name(impl Into<String>)`](crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder::experiment_name) / [`set_experiment_name(Option<String>)`](crate::operation::describe_experiment::builders::DescribeExperimentFluentBuilder::set_experiment_name):<br>required: **true**<br><p>The name of the experiment to describe.</p><br>
     /// - On success, responds with [`DescribeExperimentOutput`](crate::operation::describe_experiment::DescribeExperimentOutput) with field(s):
     ///   - [`experiment_name(Option<String>)`](crate::operation::describe_experiment::DescribeExperimentOutput::experiment_name): <p>The name of the experiment.</p>
     ///   - [`experiment_arn(Option<String>)`](crate::operation::describe_experiment::DescribeExperimentOutput::experiment_arn): <p>The Amazon Resource Name (ARN) of the experiment.</p>

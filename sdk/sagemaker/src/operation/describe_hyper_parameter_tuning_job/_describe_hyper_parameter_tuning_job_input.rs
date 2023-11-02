@@ -27,6 +27,7 @@ pub struct DescribeHyperParameterTuningJobInputBuilder {
 }
 impl DescribeHyperParameterTuningJobInputBuilder {
     /// <p>The name of the tuning job.</p>
+    /// This field is required.
     pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self

@@ -9,8 +9,10 @@ pub struct ScheduledSplitsLaunchDefinition {
 }
 impl ScheduledSplitsLaunchDefinition {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::ScheduledSplit]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::ScheduledSplit] {
+        self.steps.as_deref().unwrap_or_default()
     }
 }
 impl ScheduledSplitsLaunchDefinition {

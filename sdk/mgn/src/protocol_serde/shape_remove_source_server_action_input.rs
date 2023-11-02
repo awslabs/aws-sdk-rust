@@ -6,11 +6,11 @@ pub fn ser_remove_source_server_action_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.action_id {
-        object.key("actionID").string(var_2.as_str());
+    {
+        object.key("actionID").string(input.action_id.as_str());
     }
-    if let Some(var_3) = &input.source_server_id {
-        object.key("sourceServerID").string(var_3.as_str());
+    {
+        object.key("sourceServerID").string(input.source_server_id.as_str());
     }
     Ok(())
 }

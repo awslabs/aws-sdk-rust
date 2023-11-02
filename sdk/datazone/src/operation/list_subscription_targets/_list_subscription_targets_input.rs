@@ -62,6 +62,7 @@ pub struct ListSubscriptionTargetsInputBuilder {
 }
 impl ListSubscriptionTargetsInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain where you want to list subscription targets.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl ListSubscriptionTargetsInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the environment where you want to list subscription targets.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self

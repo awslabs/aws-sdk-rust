@@ -28,12 +28,16 @@ pub struct ModifyTransitGatewayOptions {
 }
 impl ModifyTransitGatewayOptions {
     /// <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
-    pub fn add_transit_gateway_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_transit_gateway_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_transit_gateway_cidr_blocks.is_none()`.
+    pub fn add_transit_gateway_cidr_blocks(&self) -> &[::std::string::String] {
+        self.add_transit_gateway_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>Removes CIDR blocks for the transit gateway.</p>
-    pub fn remove_transit_gateway_cidr_blocks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_transit_gateway_cidr_blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_transit_gateway_cidr_blocks.is_none()`.
+    pub fn remove_transit_gateway_cidr_blocks(&self) -> &[::std::string::String] {
+        self.remove_transit_gateway_cidr_blocks.as_deref().unwrap_or_default()
     }
     /// <p>Enable or disable Equal Cost Multipath Protocol support.</p>
     pub fn vpn_ecmp_support(&self) -> ::std::option::Option<&crate::types::VpnEcmpSupportValue> {

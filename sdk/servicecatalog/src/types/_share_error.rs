@@ -13,8 +13,10 @@ pub struct ShareError {
 }
 impl ShareError {
     /// <p>List of accounts impacted by the error.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>Information about the error.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {

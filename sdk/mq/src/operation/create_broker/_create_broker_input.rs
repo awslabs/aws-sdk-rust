@@ -115,8 +115,10 @@ impl CreateBrokerInput {
         self.publicly_accessible
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The broker's storage type.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::BrokerStorageType> {
@@ -125,16 +127,20 @@ impl CreateBrokerInput {
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>Create tags when creating the broker.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    pub fn users(&self) -> ::std::option::Option<&[crate::types::User]> {
-        self.users.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
+    pub fn users(&self) -> &[crate::types::User] {
+        self.users.as_deref().unwrap_or_default()
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
     pub fn data_replication_mode(&self) -> ::std::option::Option<&crate::types::DataReplicationMode> {
@@ -194,6 +200,7 @@ impl CreateBrokerInputBuilder {
         &self.authentication_strategy
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
+    /// This field is required.
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
@@ -210,6 +217,7 @@ impl CreateBrokerInputBuilder {
     /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p> <important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
     /// </important>
+    /// This field is required.
     pub fn broker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.broker_name = ::std::option::Option::Some(input.into());
         self
@@ -262,6 +270,7 @@ impl CreateBrokerInputBuilder {
         &self.creator_request_id
     }
     /// <p>Required. The broker's deployment mode.</p>
+    /// This field is required.
     pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
         self.deployment_mode = ::std::option::Option::Some(input);
         self
@@ -290,6 +299,7 @@ impl CreateBrokerInputBuilder {
         &self.encryption_options
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -304,6 +314,7 @@ impl CreateBrokerInputBuilder {
         &self.engine_type
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    /// This field is required.
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
@@ -318,6 +329,7 @@ impl CreateBrokerInputBuilder {
         &self.engine_version
     }
     /// <p>Required. The broker's instance type.</p>
+    /// This field is required.
     pub fn host_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_instance_type = ::std::option::Option::Some(input.into());
         self
@@ -374,6 +386,7 @@ impl CreateBrokerInputBuilder {
         &self.maintenance_window_start_time
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
+    /// This field is required.
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
         self

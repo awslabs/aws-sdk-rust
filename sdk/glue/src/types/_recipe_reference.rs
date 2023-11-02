@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeReference {
     /// <p>The ARN of the DataBrew recipe.</p>
-    pub recipe_arn: ::std::option::Option<::std::string::String>,
+    pub recipe_arn: ::std::string::String,
     /// <p>The RecipeVersion of the DataBrew recipe.</p>
-    pub recipe_version: ::std::option::Option<::std::string::String>,
+    pub recipe_version: ::std::string::String,
 }
 impl RecipeReference {
     /// <p>The ARN of the DataBrew recipe.</p>
-    pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
-        self.recipe_arn.as_deref()
+    pub fn recipe_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.recipe_arn.deref()
     }
     /// <p>The RecipeVersion of the DataBrew recipe.</p>
-    pub fn recipe_version(&self) -> ::std::option::Option<&str> {
-        self.recipe_version.as_deref()
+    pub fn recipe_version(&self) -> &str {
+        use std::ops::Deref;
+        self.recipe_version.deref()
     }
 }
 impl RecipeReference {
@@ -35,6 +37,7 @@ pub struct RecipeReferenceBuilder {
 }
 impl RecipeReferenceBuilder {
     /// <p>The ARN of the DataBrew recipe.</p>
+    /// This field is required.
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl RecipeReferenceBuilder {
         &self.recipe_arn
     }
     /// <p>The RecipeVersion of the DataBrew recipe.</p>
+    /// This field is required.
     pub fn recipe_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl RecipeReferenceBuilder {
         &self.recipe_version
     }
     /// Consumes the builder and constructs a [`RecipeReference`](crate::types::RecipeReference).
-    pub fn build(self) -> crate::types::RecipeReference {
-        crate::types::RecipeReference {
-            recipe_arn: self.recipe_arn,
-            recipe_version: self.recipe_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recipe_arn`](crate::types::builders::RecipeReferenceBuilder::recipe_arn)
+    /// - [`recipe_version`](crate::types::builders::RecipeReferenceBuilder::recipe_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecipeReference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecipeReference {
+            recipe_arn: self.recipe_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recipe_arn",
+                    "recipe_arn was not specified but it is required when building RecipeReference",
+                )
+            })?,
+            recipe_version: self.recipe_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recipe_version",
+                    "recipe_version was not specified but it is required when building RecipeReference",
+                )
+            })?,
+        })
     }
 }

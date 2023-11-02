@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateLinkedPolicyDefinitionItem {
     /// <p>The unique identifier of the policy template used to create this policy.</p>
-    pub policy_template_id: ::std::option::Option<::std::string::String>,
+    pub policy_template_id: ::std::string::String,
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub principal: ::std::option::Option<crate::types::EntityIdentifier>,
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
@@ -14,8 +14,9 @@ pub struct TemplateLinkedPolicyDefinitionItem {
 }
 impl TemplateLinkedPolicyDefinitionItem {
     /// <p>The unique identifier of the policy template used to create this policy.</p>
-    pub fn policy_template_id(&self) -> ::std::option::Option<&str> {
-        self.policy_template_id.as_deref()
+    pub fn policy_template_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_template_id.deref()
     }
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub fn principal(&self) -> ::std::option::Option<&crate::types::EntityIdentifier> {
@@ -43,6 +44,7 @@ pub struct TemplateLinkedPolicyDefinitionItemBuilder {
 }
 impl TemplateLinkedPolicyDefinitionItemBuilder {
     /// <p>The unique identifier of the policy template used to create this policy.</p>
+    /// This field is required.
     pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_template_id = ::std::option::Option::Some(input.into());
         self
@@ -85,11 +87,18 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
         &self.resource
     }
     /// Consumes the builder and constructs a [`TemplateLinkedPolicyDefinitionItem`](crate::types::TemplateLinkedPolicyDefinitionItem).
-    pub fn build(self) -> crate::types::TemplateLinkedPolicyDefinitionItem {
-        crate::types::TemplateLinkedPolicyDefinitionItem {
-            policy_template_id: self.policy_template_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_template_id`](crate::types::builders::TemplateLinkedPolicyDefinitionItemBuilder::policy_template_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateLinkedPolicyDefinitionItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateLinkedPolicyDefinitionItem {
+            policy_template_id: self.policy_template_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_template_id",
+                    "policy_template_id was not specified but it is required when building TemplateLinkedPolicyDefinitionItem",
+                )
+            })?,
             principal: self.principal,
             resource: self.resource,
-        }
+        })
     }
 }

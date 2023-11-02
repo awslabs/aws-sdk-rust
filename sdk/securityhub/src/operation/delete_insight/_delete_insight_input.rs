@@ -27,6 +27,7 @@ pub struct DeleteInsightInputBuilder {
 }
 impl DeleteInsightInputBuilder {
     /// <p>The ARN of the insight to delete.</p>
+    /// This field is required.
     pub fn insight_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.insight_arn = ::std::option::Option::Some(input.into());
         self

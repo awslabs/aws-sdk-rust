@@ -12,8 +12,10 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>A list of Elastic DocumentDB cluster.</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[crate::types::ClusterInList]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[crate::types::ClusterInList] {
+        self.clusters.as_deref().unwrap_or_default()
     }
     /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
     /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>

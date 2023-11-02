@@ -3,16 +3,16 @@ pub fn ser_predictive_dialer_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredictiveDialerConfig,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bandwidth_allocation {
+    {
         object.key("bandwidthAllocation").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_1).into()),
+            ::aws_smithy_types::Number::Float((input.bandwidth_allocation).into()),
         );
     }
-    if let Some(var_2) = &input.dialing_capacity {
+    if let Some(var_1) = &input.dialing_capacity {
         object.key("dialingCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_2).into()),
+            ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
     Ok(())
@@ -53,7 +53,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::predictive_dialer_config_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

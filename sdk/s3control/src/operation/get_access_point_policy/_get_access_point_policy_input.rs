@@ -58,6 +58,7 @@ pub struct GetAccessPointPolicyInputBuilder {
 }
 impl GetAccessPointPolicyInputBuilder {
     /// <p>The account ID for the account that owns the specified access point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +85,7 @@ impl GetAccessPointPolicyInputBuilder {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -12,8 +12,10 @@ pub struct ListConfigurationSetsOutput {
 }
 impl ListConfigurationSetsOutput {
     /// <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
-    pub fn configuration_sets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.configuration_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_sets.is_none()`.
+    pub fn configuration_sets(&self) -> &[::std::string::String] {
+        self.configuration_sets.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

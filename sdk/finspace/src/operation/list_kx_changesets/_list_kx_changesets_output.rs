@@ -11,8 +11,10 @@ pub struct ListKxChangesetsOutput {
 }
 impl ListKxChangesetsOutput {
     /// <p>A list of changesets for a database.</p>
-    pub fn kx_changesets(&self) -> ::std::option::Option<&[crate::types::KxChangesetListEntry]> {
-        self.kx_changesets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kx_changesets.is_none()`.
+    pub fn kx_changesets(&self) -> &[crate::types::KxChangesetListEntry] {
+        self.kx_changesets.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

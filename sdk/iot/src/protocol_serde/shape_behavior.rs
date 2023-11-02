@@ -3,26 +3,26 @@ pub fn ser_behavior(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Behavior,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.metric {
-        object.key("metric").string(var_2.as_str());
+    if let Some(var_1) = &input.metric {
+        object.key("metric").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.metric_dimension {
+    if let Some(var_2) = &input.metric_dimension {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("metricDimension").start_object();
-        crate::protocol_serde::shape_metric_dimension::ser_metric_dimension(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("metricDimension").start_object();
+        crate::protocol_serde::shape_metric_dimension::ser_metric_dimension(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.criteria {
+    if let Some(var_4) = &input.criteria {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("criteria").start_object();
-        crate::protocol_serde::shape_behavior_criteria::ser_behavior_criteria(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("criteria").start_object();
+        crate::protocol_serde::shape_behavior_criteria::ser_behavior_criteria(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.suppress_alerts {
-        object.key("suppressAlerts").boolean(*var_7);
+    if let Some(var_6) = &input.suppress_alerts {
+        object.key("suppressAlerts").boolean(*var_6);
     }
     Ok(())
 }
@@ -75,7 +75,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::behavior_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

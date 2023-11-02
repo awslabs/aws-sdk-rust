@@ -7,9 +7,9 @@ pub struct QueueConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
-    pub queue_arn: ::std::option::Option<::std::string::String>,
+    pub queue_arn: ::std::string::String,
     /// <p>A collection of bucket events for which to send notifications</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::vec::Vec<crate::types::Event>,
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: ::std::option::Option<crate::types::NotificationConfigurationFilter>,
 }
@@ -19,12 +19,14 @@ impl QueueConfiguration {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
-    pub fn queue_arn(&self) -> ::std::option::Option<&str> {
-        self.queue_arn.as_deref()
+    pub fn queue_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.queue_arn.deref()
     }
     /// <p>A collection of bucket events for which to send notifications</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::Event] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::NotificationConfigurationFilter> {
@@ -63,6 +65,7 @@ impl QueueConfigurationBuilder {
         &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
+    /// This field is required.
     pub fn queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,12 +114,25 @@ impl QueueConfigurationBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`QueueConfiguration`](crate::types::QueueConfiguration).
-    pub fn build(self) -> crate::types::QueueConfiguration {
-        crate::types::QueueConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue_arn`](crate::types::builders::QueueConfigurationBuilder::queue_arn)
+    /// - [`events`](crate::types::builders::QueueConfigurationBuilder::events)
+    pub fn build(self) -> ::std::result::Result<crate::types::QueueConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::QueueConfiguration {
             id: self.id,
-            queue_arn: self.queue_arn,
-            events: self.events,
+            queue_arn: self.queue_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "queue_arn",
+                    "queue_arn was not specified but it is required when building QueueConfiguration",
+                )
+            })?,
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building QueueConfiguration",
+                )
+            })?,
             filter: self.filter,
-        }
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DescribeProblemObservationsInputBuilder {
 }
 impl DescribeProblemObservationsInputBuilder {
     /// <p>The ID of the problem.</p>
+    /// This field is required.
     pub fn problem_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.problem_id = ::std::option::Option::Some(input.into());
         self

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleRule {
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
-    pub input_property: ::std::option::Option<::std::string::String>,
+    pub input_property: ::std::string::String,
     /// <p>The comparison operator.</p>
-    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: crate::types::ComparisonOperator,
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
-    pub threshold: ::std::option::Option<::std::string::String>,
+    pub threshold: ::std::string::String,
 }
 impl SimpleRule {
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
-    pub fn input_property(&self) -> ::std::option::Option<&str> {
-        self.input_property.as_deref()
+    pub fn input_property(&self) -> &str {
+        use std::ops::Deref;
+        self.input_property.deref()
     }
     /// <p>The comparison operator.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
-        self.comparison_operator.as_ref()
+    pub fn comparison_operator(&self) -> &crate::types::ComparisonOperator {
+        &self.comparison_operator
     }
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
-    pub fn threshold(&self) -> ::std::option::Option<&str> {
-        self.threshold.as_deref()
+    pub fn threshold(&self) -> &str {
+        use std::ops::Deref;
+        self.threshold.deref()
     }
 }
 impl SimpleRule {
@@ -42,6 +44,7 @@ pub struct SimpleRuleBuilder {
 }
 impl SimpleRuleBuilder {
     /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
+    /// This field is required.
     pub fn input_property(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_property = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl SimpleRuleBuilder {
         &self.input_property
     }
     /// <p>The comparison operator.</p>
+    /// This field is required.
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl SimpleRuleBuilder {
         &self.comparison_operator
     }
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
+    /// This field is required.
     pub fn threshold(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threshold = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl SimpleRuleBuilder {
         &self.threshold
     }
     /// Consumes the builder and constructs a [`SimpleRule`](crate::types::SimpleRule).
-    pub fn build(self) -> crate::types::SimpleRule {
-        crate::types::SimpleRule {
-            input_property: self.input_property,
-            comparison_operator: self.comparison_operator,
-            threshold: self.threshold,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_property`](crate::types::builders::SimpleRuleBuilder::input_property)
+    /// - [`comparison_operator`](crate::types::builders::SimpleRuleBuilder::comparison_operator)
+    /// - [`threshold`](crate::types::builders::SimpleRuleBuilder::threshold)
+    pub fn build(self) -> ::std::result::Result<crate::types::SimpleRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SimpleRule {
+            input_property: self.input_property.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "input_property",
+                    "input_property was not specified but it is required when building SimpleRule",
+                )
+            })?,
+            comparison_operator: self.comparison_operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "comparison_operator",
+                    "comparison_operator was not specified but it is required when building SimpleRule",
+                )
+            })?,
+            threshold: self.threshold.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "threshold",
+                    "threshold was not specified but it is required when building SimpleRule",
+                )
+            })?,
+        })
     }
 }

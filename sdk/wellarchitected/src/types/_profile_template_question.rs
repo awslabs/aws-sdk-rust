@@ -31,8 +31,10 @@ impl ProfileTemplateQuestion {
         self.question_description.as_deref()
     }
     /// <p>The question choices.</p>
-    pub fn question_choices(&self) -> ::std::option::Option<&[crate::types::ProfileTemplateChoice]> {
-        self.question_choices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.question_choices.is_none()`.
+    pub fn question_choices(&self) -> &[crate::types::ProfileTemplateChoice] {
+        self.question_choices.as_deref().unwrap_or_default()
     }
     /// <p>The minimum number of choices selected.</p>
     pub fn min_selected_choices(&self) -> ::std::option::Option<i32> {

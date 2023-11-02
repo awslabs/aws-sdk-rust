@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartObjectOutput {
     /// Upload Id for a given upload.
-    pub upload_id: ::std::option::Option<::std::string::String>,
+    pub upload_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartObjectOutput {
     /// Upload Id for a given upload.
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
-        self.upload_id.as_deref()
+    pub fn upload_id(&self) -> &str {
+        use std::ops::Deref;
+        self.upload_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for StartObjectOutput {
@@ -34,6 +35,7 @@ pub struct StartObjectOutputBuilder {
 }
 impl StartObjectOutputBuilder {
     /// Upload Id for a given upload.
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,17 @@ impl StartObjectOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartObjectOutput`](crate::operation::start_object::StartObjectOutput).
-    pub fn build(self) -> crate::operation::start_object::StartObjectOutput {
-        crate::operation::start_object::StartObjectOutput {
-            upload_id: self.upload_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`upload_id`](crate::operation::start_object::builders::StartObjectOutputBuilder::upload_id)
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::start_object::StartObjectOutput {
+            upload_id: self.upload_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upload_id",
+                    "upload_id was not specified but it is required when building StartObjectOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

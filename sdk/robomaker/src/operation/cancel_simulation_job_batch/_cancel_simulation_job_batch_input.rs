@@ -27,6 +27,7 @@ pub struct CancelSimulationJobBatchInputBuilder {
 }
 impl CancelSimulationJobBatchInputBuilder {
     /// <p>The id of the batch to cancel.</p>
+    /// This field is required.
     pub fn batch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch = ::std::option::Option::Some(input.into());
         self

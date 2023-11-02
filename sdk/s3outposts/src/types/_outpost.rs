@@ -6,6 +6,8 @@
 pub struct Outpost {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).</p>
+    pub s3_outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the unique identifier for the outpost.</p>
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
@@ -17,6 +19,10 @@ impl Outpost {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
+    }
+    /// <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).</p>
+    pub fn s3_outpost_arn(&self) -> ::std::option::Option<&str> {
+        self.s3_outpost_arn.as_deref()
     }
     /// <p>Specifies the unique identifier for the outpost.</p>
     pub fn outpost_id(&self) -> ::std::option::Option<&str> {
@@ -43,6 +49,7 @@ impl Outpost {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutpostBuilder {
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_in_bytes: ::std::option::Option<i64>,
@@ -61,6 +68,20 @@ impl OutpostBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.outpost_arn
+    }
+    /// <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).</p>
+    pub fn s3_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_outpost_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).</p>
+    pub fn set_s3_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_outpost_arn = input;
+        self
+    }
+    /// <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager (RAM).</p>
+    pub fn get_s3_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_outpost_arn
     }
     /// <p>Specifies the unique identifier for the outpost.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +129,7 @@ impl OutpostBuilder {
     pub fn build(self) -> crate::types::Outpost {
         crate::types::Outpost {
             outpost_arn: self.outpost_arn,
+            s3_outpost_arn: self.s3_outpost_arn,
             outpost_id: self.outpost_id,
             owner_id: self.owner_id,
             capacity_in_bytes: self.capacity_in_bytes.unwrap_or_default(),

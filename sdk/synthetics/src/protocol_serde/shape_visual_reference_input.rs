@@ -15,8 +15,8 @@ pub fn ser_visual_reference_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.base_canary_run_id {
-        object.key("BaseCanaryRunId").string(var_5.as_str());
+    {
+        object.key("BaseCanaryRunId").string(input.base_canary_run_id.as_str());
     }
     Ok(())
 }

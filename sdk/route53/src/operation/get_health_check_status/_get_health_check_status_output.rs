@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckStatusOutput {
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
-    pub health_check_observations: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
+    pub health_check_observations: ::std::vec::Vec<crate::types::HealthCheckObservation>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckStatusOutput {
     /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
-    pub fn health_check_observations(&self) -> ::std::option::Option<&[crate::types::HealthCheckObservation]> {
-        self.health_check_observations.as_deref()
+    pub fn health_check_observations(&self) -> &[crate::types::HealthCheckObservation] {
+        use std::ops::Deref;
+        self.health_check_observations.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for GetHealthCheckStatusOutput {
@@ -64,10 +65,20 @@ impl GetHealthCheckStatusOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetHealthCheckStatusOutput`](crate::operation::get_health_check_status::GetHealthCheckStatusOutput).
-    pub fn build(self) -> crate::operation::get_health_check_status::GetHealthCheckStatusOutput {
-        crate::operation::get_health_check_status::GetHealthCheckStatusOutput {
-            health_check_observations: self.health_check_observations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`health_check_observations`](crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder::health_check_observations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_health_check_status::GetHealthCheckStatusOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_health_check_status::GetHealthCheckStatusOutput {
+            health_check_observations: self.health_check_observations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "health_check_observations",
+                    "health_check_observations was not specified but it is required when building GetHealthCheckStatusOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

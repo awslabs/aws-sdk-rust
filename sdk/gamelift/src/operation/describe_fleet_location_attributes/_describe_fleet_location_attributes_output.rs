@@ -29,8 +29,10 @@ impl DescribeFleetLocationAttributesOutput {
         self.fleet_arn.as_deref()
     }
     /// <p> Location-specific information on the requested fleet's remote locations.</p>
-    pub fn location_attributes(&self) -> ::std::option::Option<&[crate::types::LocationAttributes]> {
-        self.location_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.location_attributes.is_none()`.
+    pub fn location_attributes(&self) -> &[crate::types::LocationAttributes] {
+        self.location_attributes.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

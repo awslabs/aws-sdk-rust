@@ -34,6 +34,7 @@ pub struct DeleteAccessPolicyInputBuilder {
 }
 impl DeleteAccessPolicyInputBuilder {
     /// <p>The ID of the access policy to be deleted.</p>
+    /// This field is required.
     pub fn access_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_policy_id = ::std::option::Option::Some(input.into());
         self

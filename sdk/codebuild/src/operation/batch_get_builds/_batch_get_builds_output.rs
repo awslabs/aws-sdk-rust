@@ -11,12 +11,16 @@ pub struct BatchGetBuildsOutput {
 }
 impl BatchGetBuildsOutput {
     /// <p>Information about the requested builds.</p>
-    pub fn builds(&self) -> ::std::option::Option<&[crate::types::Build]> {
-        self.builds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.builds.is_none()`.
+    pub fn builds(&self) -> &[crate::types::Build] {
+        self.builds.as_deref().unwrap_or_default()
     }
     /// <p>The IDs of builds for which information could not be found.</p>
-    pub fn builds_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.builds_not_found.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.builds_not_found.is_none()`.
+    pub fn builds_not_found(&self) -> &[::std::string::String] {
+        self.builds_not_found.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetBuildsOutput {

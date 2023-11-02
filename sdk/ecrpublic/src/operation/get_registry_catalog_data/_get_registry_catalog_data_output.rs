@@ -34,6 +34,7 @@ pub struct GetRegistryCatalogDataOutputBuilder {
 }
 impl GetRegistryCatalogDataOutputBuilder {
     /// <p>The catalog metadata for the public registry.</p>
+    /// This field is required.
     pub fn registry_catalog_data(mut self, input: crate::types::RegistryCatalogData) -> Self {
         self.registry_catalog_data = ::std::option::Option::Some(input);
         self

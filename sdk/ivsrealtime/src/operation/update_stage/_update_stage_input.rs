@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStageInput {
     /// <p>ARN of the stage to be updated.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Name of the stage to be updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStageInput {
     /// <p>ARN of the stage to be updated.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Name of the stage to be updated.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct UpdateStageInputBuilder {
 }
 impl UpdateStageInputBuilder {
     /// <p>ARN of the stage to be updated.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -62,9 +64,16 @@ impl UpdateStageInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_stage::builders::UpdateStageInputBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
-            arn: self.arn,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateStageInput",
+                )
+            })?,
             name: self.name,
         })
     }

@@ -7,7 +7,7 @@ pub struct StreamConfigurationSessionStorage {
     /// <p>The configuration for the upload storage root of the streaming session.</p>
     pub root: ::std::option::Option<crate::types::StreamingSessionStorageRoot>,
     /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
-    pub mode: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>>,
+    pub mode: ::std::vec::Vec<crate::types::StreamingSessionStorageMode>,
 }
 impl StreamConfigurationSessionStorage {
     /// <p>The configuration for the upload storage root of the streaming session.</p>
@@ -15,8 +15,9 @@ impl StreamConfigurationSessionStorage {
         self.root.as_ref()
     }
     /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
-    pub fn mode(&self) -> ::std::option::Option<&[crate::types::StreamingSessionStorageMode]> {
-        self.mode.as_deref()
+    pub fn mode(&self) -> &[crate::types::StreamingSessionStorageMode] {
+        use std::ops::Deref;
+        self.mode.deref()
     }
 }
 impl StreamConfigurationSessionStorage {
@@ -69,10 +70,17 @@ impl StreamConfigurationSessionStorageBuilder {
         &self.mode
     }
     /// Consumes the builder and constructs a [`StreamConfigurationSessionStorage`](crate::types::StreamConfigurationSessionStorage).
-    pub fn build(self) -> crate::types::StreamConfigurationSessionStorage {
-        crate::types::StreamConfigurationSessionStorage {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mode`](crate::types::builders::StreamConfigurationSessionStorageBuilder::mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamConfigurationSessionStorage, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StreamConfigurationSessionStorage {
             root: self.root,
-            mode: self.mode,
-        }
+            mode: self.mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mode",
+                    "mode was not specified but it is required when building StreamConfigurationSessionStorage",
+                )
+            })?,
+        })
     }
 }

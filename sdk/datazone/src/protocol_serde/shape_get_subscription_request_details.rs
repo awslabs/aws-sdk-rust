@@ -28,11 +28,10 @@ pub fn de_get_subscription_request_details_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => {
@@ -44,11 +43,10 @@ pub fn de_get_subscription_request_details_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::internal_server_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -62,11 +60,10 @@ pub fn de_get_subscription_request_details_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -78,11 +75,10 @@ pub fn de_get_subscription_request_details_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::ValidationException({
@@ -93,11 +89,10 @@ pub fn de_get_subscription_request_details_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::UnauthorizedException({
@@ -108,11 +103,10 @@ pub fn de_get_subscription_request_details_http_error(
                 output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unauthorized_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::generic(generic),
@@ -134,7 +128,9 @@ pub fn de_get_subscription_request_details_http_response(
         output = crate::protocol_serde::shape_get_subscription_request_details::de_get_subscription_request_details(_response_body, output)
             .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_subscription_request_details_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsError::unhandled)?
     })
 }
 

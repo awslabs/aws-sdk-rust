@@ -29,8 +29,10 @@ impl ProductionVariantSummary {
         self.variant_name.as_deref()
     }
     /// <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.</p>
-    pub fn deployed_images(&self) -> ::std::option::Option<&[crate::types::DeployedImage]> {
-        self.deployed_images.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployed_images.is_none()`.
+    pub fn deployed_images(&self) -> &[crate::types::DeployedImage] {
+        self.deployed_images.as_deref().unwrap_or_default()
     }
     /// <p>The weight associated with the variant.</p>
     pub fn current_weight(&self) -> ::std::option::Option<f32> {
@@ -49,8 +51,10 @@ impl ProductionVariantSummary {
         self.desired_instance_count
     }
     /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
-    pub fn variant_status(&self) -> ::std::option::Option<&[crate::types::ProductionVariantStatus]> {
-        self.variant_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variant_status.is_none()`.
+    pub fn variant_status(&self) -> &[crate::types::ProductionVariantStatus] {
+        self.variant_status.as_deref().unwrap_or_default()
     }
     /// <p>The serverless configuration for the endpoint.</p>
     pub fn current_serverless_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
@@ -84,6 +88,7 @@ pub struct ProductionVariantSummaryBuilder {
 }
 impl ProductionVariantSummaryBuilder {
     /// <p>The name of the variant.</p>
+    /// This field is required.
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
         self

@@ -9,8 +9,10 @@ pub struct LogConfigurationForChannel {
 }
 impl LogConfigurationForChannel {
     /// <p>The log types.</p>
-    pub fn log_types(&self) -> ::std::option::Option<&[crate::types::LogType]> {
-        self.log_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types.is_none()`.
+    pub fn log_types(&self) -> &[crate::types::LogType] {
+        self.log_types.as_deref().unwrap_or_default()
     }
 }
 impl LogConfigurationForChannel {

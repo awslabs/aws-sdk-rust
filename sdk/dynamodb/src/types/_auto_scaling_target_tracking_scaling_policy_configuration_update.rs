@@ -11,7 +11,7 @@ pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out activity can start. While the cooldown period is in effect, the capacity that has been added by the previous scale out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out. You should continuously (but not excessively) scale out.</p>
     pub scale_out_cooldown: ::std::option::Option<i32>,
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
-    pub target_value: ::std::option::Option<f64>,
+    pub target_value: f64,
 }
 impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is false.</p>
@@ -27,7 +27,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
         self.scale_out_cooldown
     }
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
-    pub fn target_value(&self) -> ::std::option::Option<f64> {
+    pub fn target_value(&self) -> f64 {
         self.target_value
     }
 }
@@ -91,6 +91,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
         &self.scale_out_cooldown
     }
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+    /// This field is required.
     pub fn target_value(mut self, input: f64) -> Self {
         self.target_value = ::std::option::Option::Some(input);
         self
@@ -105,12 +106,22 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
         &self.target_value
     }
     /// Consumes the builder and constructs a [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
-    pub fn build(self) -> crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
-        crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`target_value`](crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder::target_value)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
             disable_scale_in: self.disable_scale_in,
             scale_in_cooldown: self.scale_in_cooldown,
             scale_out_cooldown: self.scale_out_cooldown,
-            target_value: self.target_value,
-        }
+            target_value: self.target_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_value",
+                    "target_value was not specified but it is required when building AutoScalingTargetTrackingScalingPolicyConfigurationUpdate",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct GetResourceEvaluationSummaryInputBuilder {
 }
 impl GetResourceEvaluationSummaryInputBuilder {
     /// <p>The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.</p>
+    /// This field is required.
     pub fn resource_evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_evaluation_id = ::std::option::Option::Some(input.into());
         self

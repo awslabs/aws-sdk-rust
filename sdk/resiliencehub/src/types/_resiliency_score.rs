@@ -7,7 +7,7 @@ pub struct ResiliencyScore {
     /// <p>The outage score for a valid key.</p>
     pub score: f64,
     /// <p>The disruption score for a valid key.</p>
-    pub disruption_score: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, f64>>,
+    pub disruption_score: ::std::collections::HashMap<crate::types::DisruptionType, f64>,
 }
 impl ResiliencyScore {
     /// <p>The outage score for a valid key.</p>
@@ -15,8 +15,8 @@ impl ResiliencyScore {
         self.score
     }
     /// <p>The disruption score for a valid key.</p>
-    pub fn disruption_score(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, f64>> {
-        self.disruption_score.as_ref()
+    pub fn disruption_score(&self) -> &::std::collections::HashMap<crate::types::DisruptionType, f64> {
+        &self.disruption_score
     }
 }
 impl ResiliencyScore {
@@ -35,6 +35,7 @@ pub struct ResiliencyScoreBuilder {
 }
 impl ResiliencyScoreBuilder {
     /// <p>The outage score for a valid key.</p>
+    /// This field is required.
     pub fn score(mut self, input: f64) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
@@ -69,10 +70,17 @@ impl ResiliencyScoreBuilder {
         &self.disruption_score
     }
     /// Consumes the builder and constructs a [`ResiliencyScore`](crate::types::ResiliencyScore).
-    pub fn build(self) -> crate::types::ResiliencyScore {
-        crate::types::ResiliencyScore {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`disruption_score`](crate::types::builders::ResiliencyScoreBuilder::disruption_score)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResiliencyScore, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResiliencyScore {
             score: self.score.unwrap_or_default(),
-            disruption_score: self.disruption_score,
-        }
+            disruption_score: self.disruption_score.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "disruption_score",
+                    "disruption_score was not specified but it is required when building ResiliencyScore",
+                )
+            })?,
+        })
     }
 }

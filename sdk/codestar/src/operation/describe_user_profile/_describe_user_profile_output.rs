@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub user_arn: ::std::option::Option<::std::string::String>,
+    pub user_arn: ::std::string::String,
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address for the user. Optional.</p>
@@ -12,15 +12,16 @@ pub struct DescribeUserProfileOutput {
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
     pub ssh_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
-    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_timestamp: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
-    pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_modified_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl DescribeUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
-        self.user_arn.as_deref()
+    pub fn user_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_arn.deref()
     }
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -35,12 +36,12 @@ impl DescribeUserProfileOutput {
         self.ssh_public_key.as_deref()
     }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_timestamp.as_ref()
+    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_timestamp
     }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_modified_timestamp.as_ref()
+    pub fn last_modified_timestamp(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_modified_timestamp
     }
 }
 impl ::std::fmt::Debug for DescribeUserProfileOutput {
@@ -82,6 +83,7 @@ pub struct DescribeUserProfileOutputBuilder {
 }
 impl DescribeUserProfileOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// This field is required.
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +140,7 @@ impl DescribeUserProfileOutputBuilder {
         &self.ssh_public_key
     }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
+    /// This field is required.
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
         self
@@ -152,6 +155,7 @@ impl DescribeUserProfileOutputBuilder {
         &self.created_timestamp
     }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
+    /// This field is required.
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
         self
@@ -175,16 +179,38 @@ impl DescribeUserProfileOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
-    pub fn build(self) -> crate::operation::describe_user_profile::DescribeUserProfileOutput {
-        crate::operation::describe_user_profile::DescribeUserProfileOutput {
-            user_arn: self.user_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_arn`](crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::user_arn)
+    /// - [`created_timestamp`](crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::created_timestamp)
+    /// - [`last_modified_timestamp`](crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::last_modified_timestamp)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileOutput {
+            user_arn: self.user_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_arn",
+                    "user_arn was not specified but it is required when building DescribeUserProfileOutput",
+                )
+            })?,
             display_name: self.display_name,
             email_address: self.email_address,
             ssh_public_key: self.ssh_public_key,
-            created_timestamp: self.created_timestamp,
-            last_modified_timestamp: self.last_modified_timestamp,
+            created_timestamp: self.created_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_timestamp",
+                    "created_timestamp was not specified but it is required when building DescribeUserProfileOutput",
+                )
+            })?,
+            last_modified_timestamp: self.last_modified_timestamp.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_modified_timestamp",
+                    "last_modified_timestamp was not specified but it is required when building DescribeUserProfileOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DescribeUserProfileOutputBuilder {

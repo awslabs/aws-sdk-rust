@@ -41,6 +41,7 @@ pub struct UpdateResourceDataSyncInputBuilder {
 }
 impl UpdateResourceDataSyncInputBuilder {
     /// <p>The name of the resource data sync you want to update.</p>
+    /// This field is required.
     pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateResourceDataSyncInputBuilder {
         &self.sync_name
     }
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
+    /// This field is required.
     pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_type = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateResourceDataSyncInputBuilder {
         &self.sync_type
     }
     /// <p>Specify information about the data sources to synchronize.</p>
+    /// This field is required.
     pub fn sync_source(mut self, input: crate::types::ResourceDataSyncSource) -> Self {
         self.sync_source = ::std::option::Option::Some(input);
         self

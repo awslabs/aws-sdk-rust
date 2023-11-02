@@ -59,12 +59,16 @@ impl OtaUpdateInfo {
         self.description.as_deref()
     }
     /// <p>The targets of the OTA update.</p>
-    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.targets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
+    pub fn targets(&self) -> &[::std::string::String] {
+        self.targets.as_deref().unwrap_or_default()
     }
     /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::Protocol]> {
-        self.protocols.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
     /// <p>Configuration for the rollout of OTA updates.</p>
     pub fn aws_job_executions_rollout_config(&self) -> ::std::option::Option<&crate::types::AwsJobExecutionsRolloutConfig> {
@@ -79,8 +83,10 @@ impl OtaUpdateInfo {
         self.target_selection.as_ref()
     }
     /// <p>A list of files associated with the OTA update.</p>
-    pub fn ota_update_files(&self) -> ::std::option::Option<&[crate::types::OtaUpdateFile]> {
-        self.ota_update_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ota_update_files.is_none()`.
+    pub fn ota_update_files(&self) -> &[crate::types::OtaUpdateFile] {
+        self.ota_update_files.as_deref().unwrap_or_default()
     }
     /// <p>The status of the OTA update.</p>
     pub fn ota_update_status(&self) -> ::std::option::Option<&crate::types::OtaUpdateStatus> {

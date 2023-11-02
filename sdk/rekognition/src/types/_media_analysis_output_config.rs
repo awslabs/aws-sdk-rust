@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaAnalysisOutputConfig {
     /// <p>Specifies the Amazon S3 bucket to contain the output of the media analysis job.</p>
-    pub s3_bucket: ::std::option::Option<::std::string::String>,
+    pub s3_bucket: ::std::string::String,
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for storage.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl MediaAnalysisOutputConfig {
     /// <p>Specifies the Amazon S3 bucket to contain the output of the media analysis job.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket.as_deref()
+    pub fn s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket.deref()
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for storage.</p>
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct MediaAnalysisOutputConfigBuilder {
 }
 impl MediaAnalysisOutputConfigBuilder {
     /// <p>Specifies the Amazon S3 bucket to contain the output of the media analysis job.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl MediaAnalysisOutputConfigBuilder {
         &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`MediaAnalysisOutputConfig`](crate::types::MediaAnalysisOutputConfig).
-    pub fn build(self) -> crate::types::MediaAnalysisOutputConfig {
-        crate::types::MediaAnalysisOutputConfig {
-            s3_bucket: self.s3_bucket,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_bucket`](crate::types::builders::MediaAnalysisOutputConfigBuilder::s3_bucket)
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaAnalysisOutputConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MediaAnalysisOutputConfig {
+            s3_bucket: self.s3_bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_bucket",
+                    "s3_bucket was not specified but it is required when building MediaAnalysisOutputConfig",
+                )
+            })?,
             s3_key_prefix: self.s3_key_prefix,
-        }
+        })
     }
 }

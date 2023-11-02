@@ -32,8 +32,10 @@ impl CreateSamplingRuleInput {
     /// <li> <p>Tag keys and values are case sensitive.</p> </li>
     /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSamplingRuleInput {
@@ -52,6 +54,7 @@ pub struct CreateSamplingRuleInputBuilder {
 }
 impl CreateSamplingRuleInputBuilder {
     /// <p>The rule definition.</p>
+    /// This field is required.
     pub fn sampling_rule(mut self, input: crate::types::SamplingRule) -> Self {
         self.sampling_rule = ::std::option::Option::Some(input);
         self

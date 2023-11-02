@@ -18,6 +18,7 @@ pub fn ser_query_string_condition_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_query_string_condition_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::QueryStringConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

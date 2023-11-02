@@ -3,22 +3,22 @@ pub fn ser_dimension_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DimensionGroup,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.group {
-        object.key("Group").string(var_1.as_str());
+    {
+        object.key("Group").string(input.group.as_str());
     }
-    if let Some(var_2) = &input.dimensions {
-        let mut array_3 = object.key("Dimensions").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.dimensions {
+        let mut array_2 = object.key("Dimensions").start_array();
+        for item_3 in var_1 {
             {
-                array_3.value().string(item_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.limit {
+    if let Some(var_4) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

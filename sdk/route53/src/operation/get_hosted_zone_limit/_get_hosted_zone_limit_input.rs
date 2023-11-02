@@ -47,6 +47,7 @@ impl GetHostedZoneLimitInputBuilder {
     /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
     /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::HostedZoneLimitType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl GetHostedZoneLimitInputBuilder {
         &self.r#type
     }
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
+    /// This field is required.
     pub fn hosted_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self

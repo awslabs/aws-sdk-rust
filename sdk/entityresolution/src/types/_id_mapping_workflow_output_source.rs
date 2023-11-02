@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdMappingWorkflowOutputSource {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub output_s3_path: ::std::option::Option<::std::string::String>,
+    pub output_s3_path: ::std::string::String,
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub kms_arn: ::std::option::Option<::std::string::String>,
 }
 impl IdMappingWorkflowOutputSource {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub fn output_s3_path(&self) -> ::std::option::Option<&str> {
-        self.output_s3_path.as_deref()
+    pub fn output_s3_path(&self) -> &str {
+        use std::ops::Deref;
+        self.output_s3_path.deref()
     }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub fn kms_arn(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct IdMappingWorkflowOutputSourceBuilder {
 }
 impl IdMappingWorkflowOutputSourceBuilder {
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
+    /// This field is required.
     pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl IdMappingWorkflowOutputSourceBuilder {
         &self.kms_arn
     }
     /// Consumes the builder and constructs a [`IdMappingWorkflowOutputSource`](crate::types::IdMappingWorkflowOutputSource).
-    pub fn build(self) -> crate::types::IdMappingWorkflowOutputSource {
-        crate::types::IdMappingWorkflowOutputSource {
-            output_s3_path: self.output_s3_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`output_s3_path`](crate::types::builders::IdMappingWorkflowOutputSourceBuilder::output_s3_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowOutputSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdMappingWorkflowOutputSource {
+            output_s3_path: self.output_s3_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_s3_path",
+                    "output_s3_path was not specified but it is required when building IdMappingWorkflowOutputSource",
+                )
+            })?,
             kms_arn: self.kms_arn,
-        }
+        })
     }
 }

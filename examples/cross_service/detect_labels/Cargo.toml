@@ -8,9 +8,9 @@ publish = false
 [dependencies]
 kamadak-exif = "0.5.4"
 aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "0.34.0", path = "../../../sdk/dynamodb" }
-aws-sdk-rekognition= { version = "0.34.0", path = "../../../sdk/rekognition" }
-aws-sdk-s3= { version = "0.34.0", path = "../../../sdk/s3" }
+aws-sdk-dynamodb= { version = "0.35.0", path = "../../../sdk/dynamodb" }
+aws-sdk-rekognition= { version = "0.35.0", path = "../../../sdk/rekognition" }
+aws-sdk-s3= { version = "0.35.0", path = "../../../sdk/s3" }
 aws-types= { version = "0.56.1", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]

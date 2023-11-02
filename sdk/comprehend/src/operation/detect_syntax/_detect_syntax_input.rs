@@ -42,6 +42,7 @@ pub struct DetectSyntaxInputBuilder {
 }
 impl DetectSyntaxInputBuilder {
     /// <p>A UTF-8 string. The maximum string size is 5 KB.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DetectSyntaxInputBuilder {
         &self.text
     }
     /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::SyntaxLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self

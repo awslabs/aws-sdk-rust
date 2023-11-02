@@ -11,8 +11,10 @@ pub struct ListActionExecutionsOutput {
 }
 impl ListActionExecutionsOutput {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    pub fn action_execution_details(&self) -> ::std::option::Option<&[crate::types::ActionExecutionDetail]> {
-        self.action_execution_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_execution_details.is_none()`.
+    pub fn action_execution_details(&self) -> &[crate::types::ActionExecutionDetail] {
+        self.action_execution_details.as_deref().unwrap_or_default()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

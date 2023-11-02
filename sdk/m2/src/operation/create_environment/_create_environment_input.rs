@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of instance for the runtime environment.</p>
-    pub instance_type: ::std::option::Option<::std::string::String>,
+    pub instance_type: ::std::string::String,
     /// <p>The description of the runtime environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The engine type for the runtime environment.</p>
-    pub engine_type: ::std::option::Option<crate::types::EngineType>,
+    pub engine_type: crate::types::EngineType,
     /// <p>The version of the engine type for the runtime environment.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
@@ -34,36 +34,44 @@ pub struct CreateEnvironmentInput {
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of instance for the runtime environment.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
-        self.instance_type.as_deref()
+    pub fn instance_type(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_type.deref()
     }
     /// <p>The description of the runtime environment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The engine type for the runtime environment.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
-        self.engine_type.as_ref()
+    pub fn engine_type(&self) -> &crate::types::EngineType {
+        &self.engine_type
     }
     /// <p>The version of the engine type for the runtime environment.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Optional. The storage configurations for this runtime environment.</p>
-    pub fn storage_configurations(&self) -> ::std::option::Option<&[crate::types::StorageConfiguration]> {
-        self.storage_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_configurations.is_none()`.
+    pub fn storage_configurations(&self) -> &[crate::types::StorageConfiguration] {
+        self.storage_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
     pub fn publicly_accessible(&self) -> bool {
@@ -118,6 +126,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +141,7 @@ impl CreateEnvironmentInputBuilder {
         &self.name
     }
     /// <p>The type of instance for the runtime environment.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +170,7 @@ impl CreateEnvironmentInputBuilder {
         &self.description
     }
     /// <p>The engine type for the runtime environment.</p>
+    /// This field is required.
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
         self
@@ -338,14 +349,33 @@ impl CreateEnvironmentInputBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::name)
+    /// - [`instance_type`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::instance_type)
+    /// - [`engine_type`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::engine_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            name: self.name,
-            instance_type: self.instance_type,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateEnvironmentInput",
+                )
+            })?,
+            instance_type: self.instance_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_type",
+                    "instance_type was not specified but it is required when building CreateEnvironmentInput",
+                )
+            })?,
             description: self.description,
-            engine_type: self.engine_type,
+            engine_type: self.engine_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engine_type",
+                    "engine_type was not specified but it is required when building CreateEnvironmentInput",
+                )
+            })?,
             engine_version: self.engine_version,
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,

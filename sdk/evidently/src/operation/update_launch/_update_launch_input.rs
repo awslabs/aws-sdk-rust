@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The name of the launch that is to be updated.</p>
-    pub launch: ::std::option::Option<::std::string::String>,
+    pub launch: ::std::string::String,
     /// <p>An optional description for the launch.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
@@ -20,24 +20,30 @@ pub struct UpdateLaunchInput {
 }
 impl UpdateLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The name of the launch that is to be updated.</p>
-    pub fn launch(&self) -> ::std::option::Option<&str> {
-        self.launch.as_deref()
+    pub fn launch(&self) -> &str {
+        use std::ops::Deref;
+        self.launch.deref()
     }
     /// <p>An optional description for the launch.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::LaunchGroupConfig]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::LaunchGroupConfig] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
-    pub fn metric_monitors(&self) -> ::std::option::Option<&[crate::types::MetricMonitorConfig]> {
-        self.metric_monitors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_monitors.is_none()`.
+    pub fn metric_monitors(&self) -> &[crate::types::MetricMonitorConfig] {
+        self.metric_monitors.as_deref().unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
@@ -69,6 +75,7 @@ pub struct UpdateLaunchInputBuilder {
 }
 impl UpdateLaunchInputBuilder {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +90,7 @@ impl UpdateLaunchInputBuilder {
         &self.project
     }
     /// <p>The name of the launch that is to be updated.</p>
+    /// This field is required.
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
         self
@@ -179,10 +187,23 @@ impl UpdateLaunchInputBuilder {
         &self.scheduled_splits_config
     }
     /// Consumes the builder and constructs a [`UpdateLaunchInput`](crate::operation::update_launch::UpdateLaunchInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::update_launch::builders::UpdateLaunchInputBuilder::project)
+    /// - [`launch`](crate::operation::update_launch::builders::UpdateLaunchInputBuilder::launch)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_launch::UpdateLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_launch::UpdateLaunchInput {
-            project: self.project,
-            launch: self.launch,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building UpdateLaunchInput",
+                )
+            })?,
+            launch: self.launch.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "launch",
+                    "launch was not specified but it is required when building UpdateLaunchInput",
+                )
+            })?,
             description: self.description,
             groups: self.groups,
             metric_monitors: self.metric_monitors,

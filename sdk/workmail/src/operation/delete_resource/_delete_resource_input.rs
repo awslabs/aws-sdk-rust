@@ -44,6 +44,7 @@ pub struct DeleteResourceInputBuilder {
 }
 impl DeleteResourceInputBuilder {
     /// <p>The identifier associated with the organization from which the resource is deleted.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl DeleteResourceInputBuilder {
     /// <li> <p>Resource ID: r-0123456789a0123456789b0123456789</p> </li>
     /// <li> <p>Resource name: resource</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

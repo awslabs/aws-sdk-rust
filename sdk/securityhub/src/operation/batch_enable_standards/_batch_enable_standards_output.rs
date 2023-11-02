@@ -9,8 +9,10 @@ pub struct BatchEnableStandardsOutput {
 }
 impl BatchEnableStandardsOutput {
     /// <p>The details of the standards subscriptions that were enabled.</p>
-    pub fn standards_subscriptions(&self) -> ::std::option::Option<&[crate::types::StandardsSubscription]> {
-        self.standards_subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_subscriptions.is_none()`.
+    pub fn standards_subscriptions(&self) -> &[crate::types::StandardsSubscription] {
+        self.standards_subscriptions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchEnableStandardsOutput {

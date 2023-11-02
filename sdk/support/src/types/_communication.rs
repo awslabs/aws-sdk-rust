@@ -37,8 +37,10 @@ impl Communication {
         self.time_created.as_deref()
     }
     /// <p>Information about the attachments to the case communication.</p>
-    pub fn attachment_set(&self) -> ::std::option::Option<&[crate::types::AttachmentDetails]> {
-        self.attachment_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_set.is_none()`.
+    pub fn attachment_set(&self) -> &[crate::types::AttachmentDetails] {
+        self.attachment_set.as_deref().unwrap_or_default()
     }
 }
 impl Communication {

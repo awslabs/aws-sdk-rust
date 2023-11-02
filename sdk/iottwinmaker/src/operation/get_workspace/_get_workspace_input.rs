@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkspaceInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
 }
 impl GetWorkspaceInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl GetWorkspaceInput {
@@ -27,6 +28,7 @@ pub struct GetWorkspaceInputBuilder {
 }
 impl GetWorkspaceInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,16 @@ impl GetWorkspaceInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`GetWorkspaceInput`](crate::operation::get_workspace::GetWorkspaceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::get_workspace::builders::GetWorkspaceInputBuilder::workspace_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_workspace::GetWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workspace::GetWorkspaceInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building GetWorkspaceInput",
+                )
+            })?,
         })
     }
 }

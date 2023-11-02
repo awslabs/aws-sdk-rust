@@ -11,8 +11,10 @@ pub struct ListAppInstanceUserEndpointsOutput {
 }
 impl ListAppInstanceUserEndpointsOutput {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn app_instance_user_endpoints(&self) -> ::std::option::Option<&[crate::types::AppInstanceUserEndpointSummary]> {
-        self.app_instance_user_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_instance_user_endpoints.is_none()`.
+    pub fn app_instance_user_endpoints(&self) -> &[crate::types::AppInstanceUserEndpointSummary] {
+        self.app_instance_user_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

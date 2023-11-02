@@ -16,8 +16,10 @@ impl DescribeScheduledInstancesOutput {
         self.next_token.as_deref()
     }
     /// <p>Information about the Scheduled Instances.</p>
-    pub fn scheduled_instance_set(&self) -> ::std::option::Option<&[crate::types::ScheduledInstance]> {
-        self.scheduled_instance_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_instance_set.is_none()`.
+    pub fn scheduled_instance_set(&self) -> &[crate::types::ScheduledInstance] {
+        self.scheduled_instance_set.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeScheduledInstancesOutput {

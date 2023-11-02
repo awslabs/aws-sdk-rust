@@ -171,16 +171,22 @@ impl StartSimulationJobBatchOutput {
         self.failure_reason.as_deref()
     }
     /// <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
-    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedCreateSimulationJobRequest]> {
-        self.failed_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
+    pub fn failed_requests(&self) -> &[crate::types::FailedCreateSimulationJobRequest] {
+        self.failed_requests.as_deref().unwrap_or_default()
     }
     /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
-    pub fn pending_requests(&self) -> ::std::option::Option<&[crate::types::SimulationJobRequest]> {
-        self.pending_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_requests.is_none()`.
+    pub fn pending_requests(&self) -> &[crate::types::SimulationJobRequest] {
+        self.pending_requests.as_deref().unwrap_or_default()
     }
     /// <p>A list of created simulation job request summaries.</p>
-    pub fn created_requests(&self) -> ::std::option::Option<&[crate::types::SimulationJobSummary]> {
-        self.created_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.created_requests.is_none()`.
+    pub fn created_requests(&self) -> &[crate::types::SimulationJobSummary] {
+        self.created_requests.as_deref().unwrap_or_default()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

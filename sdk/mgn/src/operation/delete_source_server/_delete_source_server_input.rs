@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSourceServerInput {
     /// <p>Request to delete Source Server from service by Server ID.</p>
-    pub source_server_id: ::std::option::Option<::std::string::String>,
+    pub source_server_id: ::std::string::String,
     /// <p>Request to delete Source Server from service by Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSourceServerInput {
     /// <p>Request to delete Source Server from service by Server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
-        self.source_server_id.as_deref()
+    pub fn source_server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.source_server_id.deref()
     }
     /// <p>Request to delete Source Server from service by Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct DeleteSourceServerInputBuilder {
 }
 impl DeleteSourceServerInputBuilder {
     /// <p>Request to delete Source Server from service by Server ID.</p>
+    /// This field is required.
     pub fn source_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_server_id = ::std::option::Option::Some(input.into());
         self
@@ -62,11 +64,18 @@ impl DeleteSourceServerInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteSourceServerInput`](crate::operation::delete_source_server::DeleteSourceServerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source_server_id`](crate::operation::delete_source_server::builders::DeleteSourceServerInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_source_server::DeleteSourceServerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_source_server::DeleteSourceServerInput {
-            source_server_id: self.source_server_id,
+            source_server_id: self.source_server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source_server_id",
+                    "source_server_id was not specified but it is required when building DeleteSourceServerInput",
+                )
+            })?,
             account_id: self.account_id,
         })
     }

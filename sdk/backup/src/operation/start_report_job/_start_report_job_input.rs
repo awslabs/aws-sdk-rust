@@ -34,6 +34,7 @@ pub struct StartReportJobInputBuilder {
 }
 impl StartReportJobInputBuilder {
     /// <p>The unique name of a report plan.</p>
+    /// This field is required.
     pub fn report_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_plan_name = ::std::option::Option::Some(input.into());
         self

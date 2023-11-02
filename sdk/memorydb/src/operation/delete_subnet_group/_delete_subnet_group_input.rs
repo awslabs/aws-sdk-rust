@@ -27,6 +27,7 @@ pub struct DeleteSubnetGroupInputBuilder {
 }
 impl DeleteSubnetGroupInputBuilder {
     /// <p>The name of the subnet group to delete</p>
+    /// This field is required.
     pub fn subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_group_name = ::std::option::Option::Some(input.into());
         self

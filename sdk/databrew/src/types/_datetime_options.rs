@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatetimeOptions {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
-    pub format: ::std::option::Option<::std::string::String>,
+    pub format: ::std::string::String,
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
     pub timezone_offset: ::std::option::Option<::std::string::String>,
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
@@ -13,8 +13,9 @@ pub struct DatetimeOptions {
 }
 impl DatetimeOptions {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
-        self.format.as_deref()
+    pub fn format(&self) -> &str {
+        use std::ops::Deref;
+        self.format.deref()
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
     pub fn timezone_offset(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct DatetimeOptionsBuilder {
 }
 impl DatetimeOptionsBuilder {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
+    /// This field is required.
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl DatetimeOptionsBuilder {
         &self.locale_code
     }
     /// Consumes the builder and constructs a [`DatetimeOptions`](crate::types::DatetimeOptions).
-    pub fn build(self) -> crate::types::DatetimeOptions {
-        crate::types::DatetimeOptions {
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::DatetimeOptionsBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::DatetimeOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DatetimeOptions {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building DatetimeOptions",
+                )
+            })?,
             timezone_offset: self.timezone_offset,
             locale_code: self.locale_code,
-        }
+        })
     }
 }

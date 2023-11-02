@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaximumAllowedResources {
     /// <p>The maximum allowed CPU for an application.</p>
-    pub cpu: ::std::option::Option<::std::string::String>,
+    pub cpu: ::std::string::String,
     /// <p>The maximum allowed resources for an application.</p>
-    pub memory: ::std::option::Option<::std::string::String>,
+    pub memory: ::std::string::String,
     /// <p>The maximum allowed disk for an application.</p>
     pub disk: ::std::option::Option<::std::string::String>,
 }
 impl MaximumAllowedResources {
     /// <p>The maximum allowed CPU for an application.</p>
-    pub fn cpu(&self) -> ::std::option::Option<&str> {
-        self.cpu.as_deref()
+    pub fn cpu(&self) -> &str {
+        use std::ops::Deref;
+        self.cpu.deref()
     }
     /// <p>The maximum allowed resources for an application.</p>
-    pub fn memory(&self) -> ::std::option::Option<&str> {
-        self.memory.as_deref()
+    pub fn memory(&self) -> &str {
+        use std::ops::Deref;
+        self.memory.deref()
     }
     /// <p>The maximum allowed disk for an application.</p>
     pub fn disk(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct MaximumAllowedResourcesBuilder {
 }
 impl MaximumAllowedResourcesBuilder {
     /// <p>The maximum allowed CPU for an application.</p>
+    /// This field is required.
     pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl MaximumAllowedResourcesBuilder {
         &self.cpu
     }
     /// <p>The maximum allowed resources for an application.</p>
+    /// This field is required.
     pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl MaximumAllowedResourcesBuilder {
         &self.disk
     }
     /// Consumes the builder and constructs a [`MaximumAllowedResources`](crate::types::MaximumAllowedResources).
-    pub fn build(self) -> crate::types::MaximumAllowedResources {
-        crate::types::MaximumAllowedResources {
-            cpu: self.cpu,
-            memory: self.memory,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cpu`](crate::types::builders::MaximumAllowedResourcesBuilder::cpu)
+    /// - [`memory`](crate::types::builders::MaximumAllowedResourcesBuilder::memory)
+    pub fn build(self) -> ::std::result::Result<crate::types::MaximumAllowedResources, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MaximumAllowedResources {
+            cpu: self.cpu.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cpu",
+                    "cpu was not specified but it is required when building MaximumAllowedResources",
+                )
+            })?,
+            memory: self.memory.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "memory",
+                    "memory was not specified but it is required when building MaximumAllowedResources",
+                )
+            })?,
             disk: self.disk,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct DisassociateDeviceFromPlacementInputBuilder {
 }
 impl DisassociateDeviceFromPlacementInputBuilder {
     /// <p>The name of the project that contains the placement.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateDeviceFromPlacementInputBuilder {
         &self.project_name
     }
     /// <p>The name of the placement that the device should be removed from.</p>
+    /// This field is required.
     pub fn placement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.placement_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl DisassociateDeviceFromPlacementInputBuilder {
         &self.placement_name
     }
     /// <p>The device ID that should be removed from the placement.</p>
+    /// This field is required.
     pub fn device_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_template_name = ::std::option::Option::Some(input.into());
         self

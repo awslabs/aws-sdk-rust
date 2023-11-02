@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMedicalTranscriptionJob`](crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`medical_transcription_job_name(impl Into<String>)`](crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder::medical_transcription_job_name) / [`set_medical_transcription_job_name(Option<String>)`](crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder::set_medical_transcription_job_name): <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
+    ///   - [`medical_transcription_job_name(impl Into<String>)`](crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder::medical_transcription_job_name) / [`set_medical_transcription_job_name(Option<String>)`](crate::operation::delete_medical_transcription_job::builders::DeleteMedicalTranscriptionJobFluentBuilder::set_medical_transcription_job_name):<br>required: **true**<br><p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p><br>
     /// - On success, responds with [`DeleteMedicalTranscriptionJobOutput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobOutput)
     /// - On failure, responds with [`SdkError<DeleteMedicalTranscriptionJobError>`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError)
     pub fn delete_medical_transcription_job(

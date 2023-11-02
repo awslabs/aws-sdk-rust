@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSceneOutput {
     /// <p>The ARN of the scene.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date and time when the scene was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl CreateSceneOutput {
     /// <p>The ARN of the scene.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date and time when the scene was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
 }
 impl ::aws_http::request_id::RequestId for CreateSceneOutput {
@@ -41,6 +42,7 @@ pub struct CreateSceneOutputBuilder {
 }
 impl CreateSceneOutputBuilder {
     /// <p>The ARN of the scene.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +57,7 @@ impl CreateSceneOutputBuilder {
         &self.arn
     }
     /// <p>The date and time when the scene was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -78,11 +81,24 @@ impl CreateSceneOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateSceneOutput`](crate::operation::create_scene::CreateSceneOutput).
-    pub fn build(self) -> crate::operation::create_scene::CreateSceneOutput {
-        crate::operation::create_scene::CreateSceneOutput {
-            arn: self.arn,
-            creation_date_time: self.creation_date_time,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::create_scene::builders::CreateSceneOutputBuilder::arn)
+    /// - [`creation_date_time`](crate::operation::create_scene::builders::CreateSceneOutputBuilder::creation_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_scene::CreateSceneOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateSceneOutput",
+                )
+            })?,
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building CreateSceneOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

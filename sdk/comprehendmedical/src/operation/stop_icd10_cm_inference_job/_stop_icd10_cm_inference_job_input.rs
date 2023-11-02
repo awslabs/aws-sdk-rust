@@ -27,6 +27,7 @@ pub struct StopIcd10CmInferenceJobInputBuilder {
 }
 impl StopIcd10CmInferenceJobInputBuilder {
     /// <p>The identifier of the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

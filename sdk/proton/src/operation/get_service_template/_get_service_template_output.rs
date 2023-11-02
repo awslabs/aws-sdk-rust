@@ -34,6 +34,7 @@ pub struct GetServiceTemplateOutputBuilder {
 }
 impl GetServiceTemplateOutputBuilder {
     /// <p>The detailed data of the requested service template.</p>
+    /// This field is required.
     pub fn service_template(mut self, input: crate::types::ServiceTemplate) -> Self {
         self.service_template = ::std::option::Option::Some(input);
         self

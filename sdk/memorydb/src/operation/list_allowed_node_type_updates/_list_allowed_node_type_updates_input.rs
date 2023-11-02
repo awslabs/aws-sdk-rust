@@ -27,6 +27,7 @@ pub struct ListAllowedNodeTypeUpdatesInputBuilder {
 }
 impl ListAllowedNodeTypeUpdatesInputBuilder {
     /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self

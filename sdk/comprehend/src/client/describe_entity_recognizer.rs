@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEntityRecognizer`](crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`entity_recognizer_arn(impl Into<String>)`](crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder::set_entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    ///   - [`entity_recognizer_arn(impl Into<String>)`](crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::describe_entity_recognizer::builders::DescribeEntityRecognizerFluentBuilder::set_entity_recognizer_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p><br>
     /// - On success, responds with [`DescribeEntityRecognizerOutput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput) with field(s):
     ///   - [`entity_recognizer_properties(Option<EntityRecognizerProperties>)`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput::entity_recognizer_properties): <p>Describes information associated with an entity recognizer.</p>
     /// - On failure, responds with [`SdkError<DescribeEntityRecognizerError>`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError)

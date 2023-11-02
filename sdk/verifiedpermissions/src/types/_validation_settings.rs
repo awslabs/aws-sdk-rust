@@ -13,7 +13,7 @@ pub struct ValidationSettings {
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against. </p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
-    pub mode: ::std::option::Option<crate::types::ValidationMode>,
+    pub mode: crate::types::ValidationMode,
 }
 impl ValidationSettings {
     /// <p>The validation mode currently configured for this policy store. The valid values are:</p>
@@ -24,8 +24,8 @@ impl ValidationSettings {
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against. </p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ValidationMode> {
-        self.mode.as_ref()
+    pub fn mode(&self) -> &crate::types::ValidationMode {
+        &self.mode
     }
 }
 impl ValidationSettings {
@@ -50,6 +50,7 @@ impl ValidationSettingsBuilder {
     /// <p>If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified Permissions rejects all static policies and policy templates because there is no schema to validate against. </p>
     /// <p>To submit a static policy or policy template without a schema, you must turn off validation.</p>
     /// </important>
+    /// This field is required.
     pub fn mode(mut self, input: crate::types::ValidationMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
@@ -78,7 +79,16 @@ impl ValidationSettingsBuilder {
         &self.mode
     }
     /// Consumes the builder and constructs a [`ValidationSettings`](crate::types::ValidationSettings).
-    pub fn build(self) -> crate::types::ValidationSettings {
-        crate::types::ValidationSettings { mode: self.mode }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mode`](crate::types::builders::ValidationSettingsBuilder::mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ValidationSettings {
+            mode: self.mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mode",
+                    "mode was not specified but it is required when building ValidationSettings",
+                )
+            })?,
+        })
     }
 }

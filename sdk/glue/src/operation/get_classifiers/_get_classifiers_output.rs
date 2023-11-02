@@ -11,8 +11,10 @@ pub struct GetClassifiersOutput {
 }
 impl GetClassifiersOutput {
     /// <p>The requested list of classifier objects.</p>
-    pub fn classifiers(&self) -> ::std::option::Option<&[crate::types::Classifier]> {
-        self.classifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifiers.is_none()`.
+    pub fn classifiers(&self) -> &[crate::types::Classifier] {
+        self.classifiers.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

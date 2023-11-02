@@ -13,8 +13,10 @@ pub struct AmiAggregation {
 }
 impl AmiAggregation {
     /// <p>The IDs of AMIs to aggregate findings for.</p>
-    pub fn amis(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.amis.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.amis.is_none()`.
+    pub fn amis(&self) -> &[crate::types::StringFilter] {
+        self.amis.as_deref().unwrap_or_default()
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {

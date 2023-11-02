@@ -3,14 +3,14 @@ pub fn ser_reserved_instance_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReservedInstanceOptions,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.purchasing_option {
-        object.key("purchasingOption").string(var_1.as_str());
+    {
+        object.key("purchasingOption").string(input.purchasing_option.as_str());
     }
-    if let Some(var_2) = &input.offering_class {
-        object.key("offeringClass").string(var_2.as_str());
+    {
+        object.key("offeringClass").string(input.offering_class.as_str());
     }
-    if let Some(var_3) = &input.term_length {
-        object.key("termLength").string(var_3.as_str());
+    {
+        object.key("termLength").string(input.term_length.as_str());
     }
     Ok(())
 }

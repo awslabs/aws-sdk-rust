@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataIngestionJob`](crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder::set_job_id): <p>The job ID of the data ingestion job. </p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job ID of the data ingestion job. </p><br>
     /// - On success, responds with [`DescribeDataIngestionJobOutput`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput::job_id): <p>Indicates the job ID of the data ingestion job. </p>
     ///   - [`dataset_arn(Option<String>)`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job. </p>

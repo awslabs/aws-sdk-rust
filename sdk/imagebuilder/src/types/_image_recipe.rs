@@ -63,16 +63,20 @@ impl ImageRecipe {
         self.version.as_deref()
     }
     /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn components(&self) -> ::std::option::Option<&[crate::types::ComponentConfiguration]> {
-        self.components.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
+    pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
+        self.components.as_deref().unwrap_or_default()
     }
     /// <p>The base image of the image recipe.</p>
     pub fn parent_image(&self) -> ::std::option::Option<&str> {
         self.parent_image.as_deref()
     }
     /// <p>The block device mappings to apply when creating images from this recipe.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The date on which this image recipe was created.</p>
     pub fn date_created(&self) -> ::std::option::Option<&str> {

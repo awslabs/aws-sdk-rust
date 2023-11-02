@@ -26,12 +26,16 @@ impl QueryOutput {
         self.query_id.as_deref()
     }
     /// <p>The results of the search.</p>
-    pub fn result_items(&self) -> ::std::option::Option<&[crate::types::QueryResultItem]> {
-        self.result_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_items.is_none()`.
+    pub fn result_items(&self) -> &[crate::types::QueryResultItem] {
+        self.result_items.as_deref().unwrap_or_default()
     }
     /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
-    pub fn facet_results(&self) -> ::std::option::Option<&[crate::types::FacetResult]> {
-        self.facet_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.facet_results.is_none()`.
+    pub fn facet_results(&self) -> &[crate::types::FacetResult] {
+        self.facet_results.as_deref().unwrap_or_default()
     }
     /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     pub fn total_number_of_results(&self) -> ::std::option::Option<i32> {
@@ -39,16 +43,22 @@ impl QueryOutput {
     }
     /// <p>A list of warning codes and their messages on problems with your query.</p>
     /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::Warning]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::Warning] {
+        self.warnings.as_deref().unwrap_or_default()
     }
     /// <p>A list of information related to suggested spell corrections for a query.</p>
-    pub fn spell_corrected_queries(&self) -> ::std::option::Option<&[crate::types::SpellCorrectedQuery]> {
-        self.spell_corrected_queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.spell_corrected_queries.is_none()`.
+    pub fn spell_corrected_queries(&self) -> &[crate::types::SpellCorrectedQuery] {
+        self.spell_corrected_queries.as_deref().unwrap_or_default()
     }
     /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
-    pub fn featured_results_items(&self) -> ::std::option::Option<&[crate::types::FeaturedResultsItem]> {
-        self.featured_results_items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_results_items.is_none()`.
+    pub fn featured_results_items(&self) -> &[crate::types::FeaturedResultsItem] {
+        self.featured_results_items.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for QueryOutput {

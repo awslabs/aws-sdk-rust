@@ -3,23 +3,23 @@ pub fn ser_header(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Header,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.protocol {
-        object.key("Protocol").string(var_1.as_str());
+    {
+        object.key("Protocol").string(input.protocol.as_str());
     }
-    if let Some(var_2) = &input.source {
-        object.key("Source").string(var_2.as_str());
+    {
+        object.key("Source").string(input.source.as_str());
     }
-    if let Some(var_3) = &input.source_port {
-        object.key("SourcePort").string(var_3.as_str());
+    {
+        object.key("SourcePort").string(input.source_port.as_str());
     }
-    if let Some(var_4) = &input.direction {
-        object.key("Direction").string(var_4.as_str());
+    {
+        object.key("Direction").string(input.direction.as_str());
     }
-    if let Some(var_5) = &input.destination {
-        object.key("Destination").string(var_5.as_str());
+    {
+        object.key("Destination").string(input.destination.as_str());
     }
-    if let Some(var_6) = &input.destination_port {
-        object.key("DestinationPort").string(var_6.as_str());
+    {
+        object.key("DestinationPort").string(input.destination_port.as_str());
     }
     Ok(())
 }
@@ -91,7 +91,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::header_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

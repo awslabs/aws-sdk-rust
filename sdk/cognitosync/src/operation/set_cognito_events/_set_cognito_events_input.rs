@@ -35,6 +35,7 @@ pub struct SetCognitoEventsInputBuilder {
 }
 impl SetCognitoEventsInputBuilder {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
+    /// This field is required.
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_pool_id = ::std::option::Option::Some(input.into());
         self

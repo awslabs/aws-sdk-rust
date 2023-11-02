@@ -19,8 +19,10 @@ impl VirtualGatewayClientPolicyTls {
         self.enforce
     }
     /// <p>One or more ports that the policy is enforced for.</p>
-    pub fn ports(&self) -> ::std::option::Option<&[i32]> {
-        self.ports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ports.is_none()`.
+    pub fn ports(&self) -> &[i32] {
+        self.ports.as_deref().unwrap_or_default()
     }
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
     pub fn certificate(&self) -> ::std::option::Option<&crate::types::VirtualGatewayClientTlsCertificate> {
@@ -97,6 +99,7 @@ impl VirtualGatewayClientPolicyTlsBuilder {
         &self.certificate
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
+    /// This field is required.
     pub fn validation(mut self, input: crate::types::VirtualGatewayTlsValidationContext) -> Self {
         self.validation = ::std::option::Option::Some(input);
         self

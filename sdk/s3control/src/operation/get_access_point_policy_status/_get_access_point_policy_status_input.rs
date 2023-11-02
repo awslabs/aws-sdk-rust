@@ -34,6 +34,7 @@ pub struct GetAccessPointPolicyStatusInputBuilder {
 }
 impl GetAccessPointPolicyStatusInputBuilder {
     /// <p>The account ID for the account that owns the specified access point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetAccessPointPolicyStatusInputBuilder {
         &self.account_id
     }
     /// <p>The name of the access point whose policy status you want to retrieve.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

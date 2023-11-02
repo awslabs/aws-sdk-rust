@@ -35,6 +35,7 @@ pub struct AttachPrincipalPolicyInputBuilder {
 }
 impl AttachPrincipalPolicyInputBuilder {
     /// <p>The policy name.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AttachPrincipalPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// This field is required.
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
         self

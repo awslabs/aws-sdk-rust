@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
-    pub environment_id: ::std::option::Option<::std::string::String>,
+    pub environment_id: ::std::string::String,
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub desired_capacity: ::std::option::Option<i32>,
     /// <p>The instance type for the runtime environment to update.</p>
@@ -18,8 +18,9 @@ pub struct UpdateEnvironmentInput {
 }
 impl UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
-        self.environment_id.as_deref()
+    pub fn environment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_id.deref()
     }
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
@@ -62,6 +63,7 @@ pub struct UpdateEnvironmentInputBuilder {
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
@@ -146,11 +148,18 @@ impl UpdateEnvironmentInputBuilder {
         &self.apply_during_maintenance_window
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_id`](crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::environment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            environment_id: self.environment_id,
+            environment_id: self.environment_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_id",
+                    "environment_id was not specified but it is required when building UpdateEnvironmentInput",
+                )
+            })?,
             desired_capacity: self.desired_capacity,
             instance_type: self.instance_type,
             engine_version: self.engine_version,

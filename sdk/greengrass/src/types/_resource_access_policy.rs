@@ -49,6 +49,7 @@ impl ResourceAccessPolicyBuilder {
         &self.permission
     }
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

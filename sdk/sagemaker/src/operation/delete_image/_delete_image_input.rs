@@ -27,6 +27,7 @@ pub struct DeleteImageInputBuilder {
 }
 impl DeleteImageInputBuilder {
     /// <p>The name of the image to delete.</p>
+    /// This field is required.
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
         self

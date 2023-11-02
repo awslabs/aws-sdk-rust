@@ -36,6 +36,7 @@ pub struct DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
 }
 impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
+    /// This field is required.
     pub fn approval_rule_template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_template_name = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +51,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
         &self.approval_rule_template_name
     }
     /// <p>The name of the repository you want to disassociate from the template.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

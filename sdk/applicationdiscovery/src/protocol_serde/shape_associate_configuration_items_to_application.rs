@@ -36,8 +36,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "HomeRegionNotSetException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::HomeRegionNotSetException({
@@ -52,8 +52,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::InvalidParameterException({
@@ -68,8 +68,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::InvalidParameterValueException({
@@ -84,8 +84,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServerInternalErrorException" => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::ServerInternalErrorException({
@@ -100,8 +100,8 @@ pub fn de_associate_configuration_items_to_application_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError::generic(generic)

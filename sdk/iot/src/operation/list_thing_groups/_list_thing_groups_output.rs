@@ -11,8 +11,10 @@ pub struct ListThingGroupsOutput {
 }
 impl ListThingGroupsOutput {
     /// <p>The thing groups.</p>
-    pub fn thing_groups(&self) -> ::std::option::Option<&[crate::types::GroupNameAndArn]> {
-        self.thing_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.thing_groups.is_none()`.
+    pub fn thing_groups(&self) -> &[crate::types::GroupNameAndArn] {
+        self.thing_groups.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

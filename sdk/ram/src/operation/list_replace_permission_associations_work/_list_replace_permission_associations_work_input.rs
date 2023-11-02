@@ -14,8 +14,10 @@ pub struct ListReplacePermissionAssociationsWorkInput {
 }
 impl ListReplacePermissionAssociationsWorkInput {
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation. </p>
-    pub fn work_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.work_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.work_ids.is_none()`.
+    pub fn work_ids(&self) -> &[::std::string::String] {
+        self.work_ids.as_deref().unwrap_or_default()
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWorkStatus> {

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
-    pub geofence_id: ::std::option::Option<::std::string::String>,
+    pub geofence_id: ::std::string::String,
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
@@ -15,11 +15,11 @@ pub struct GetGeofenceOutput {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_time: ::aws_smithy_types::DateTime,
     /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
     pub geofence_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -27,8 +27,9 @@ pub struct GetGeofenceOutput {
 }
 impl GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
-    pub fn geofence_id(&self) -> ::std::option::Option<&str> {
-        self.geofence_id.as_deref()
+    pub fn geofence_id(&self) -> &str {
+        use std::ops::Deref;
+        self.geofence_id.deref()
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::GeofenceGeometry> {
@@ -42,16 +43,17 @@ impl GetGeofenceOutput {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_time.as_ref()
+    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_time
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_time.as_ref()
+    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_time
     }
     /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -98,6 +100,7 @@ pub struct GetGeofenceOutputBuilder {
 }
 impl GetGeofenceOutputBuilder {
     /// <p>The geofence identifier.</p>
+    /// This field is required.
     pub fn geofence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geofence_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl GetGeofenceOutputBuilder {
         &self.geofence_id
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    /// This field is required.
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl GetGeofenceOutputBuilder {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +166,7 @@ impl GetGeofenceOutputBuilder {
         &self.status
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// This field is required.
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
@@ -175,6 +181,7 @@ impl GetGeofenceOutputBuilder {
         &self.create_time
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    /// This field is required.
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
@@ -228,16 +235,41 @@ impl GetGeofenceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetGeofenceOutput`](crate::operation::get_geofence::GetGeofenceOutput).
-    pub fn build(self) -> crate::operation::get_geofence::GetGeofenceOutput {
-        crate::operation::get_geofence::GetGeofenceOutput {
-            geofence_id: self.geofence_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`geofence_id`](crate::operation::get_geofence::builders::GetGeofenceOutputBuilder::geofence_id)
+    /// - [`status`](crate::operation::get_geofence::builders::GetGeofenceOutputBuilder::status)
+    /// - [`create_time`](crate::operation::get_geofence::builders::GetGeofenceOutputBuilder::create_time)
+    /// - [`update_time`](crate::operation::get_geofence::builders::GetGeofenceOutputBuilder::update_time)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_geofence::GetGeofenceOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_geofence::GetGeofenceOutput {
+            geofence_id: self.geofence_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "geofence_id",
+                    "geofence_id was not specified but it is required when building GetGeofenceOutput",
+                )
+            })?,
             geometry: self.geometry,
-            status: self.status,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetGeofenceOutput",
+                )
+            })?,
+            create_time: self.create_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_time",
+                    "create_time was not specified but it is required when building GetGeofenceOutput",
+                )
+            })?,
+            update_time: self.update_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_time",
+                    "update_time was not specified but it is required when building GetGeofenceOutput",
+                )
+            })?,
             geofence_properties: self.geofence_properties,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetGeofenceOutputBuilder {

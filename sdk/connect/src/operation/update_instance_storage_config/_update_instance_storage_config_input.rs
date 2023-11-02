@@ -48,6 +48,7 @@ pub struct UpdateInstanceStorageConfigInputBuilder {
 }
 impl UpdateInstanceStorageConfigInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateInstanceStorageConfigInputBuilder {
         &self.instance_id
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    /// This field is required.
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl UpdateInstanceStorageConfigInputBuilder {
         &self.association_id
     }
     /// <p>A valid resource type.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::InstanceStorageResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -90,6 +93,7 @@ impl UpdateInstanceStorageConfigInputBuilder {
         &self.resource_type
     }
     /// <p>The storage configuration for the instance.</p>
+    /// This field is required.
     pub fn storage_config(mut self, input: crate::types::InstanceStorageConfig) -> Self {
         self.storage_config = ::std::option::Option::Some(input);
         self

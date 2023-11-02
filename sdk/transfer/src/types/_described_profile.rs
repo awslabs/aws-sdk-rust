@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedProfile {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
@@ -19,8 +19,9 @@ pub struct DescribedProfile {
 }
 impl DescribedProfile {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
@@ -35,12 +36,16 @@ impl DescribedProfile {
         self.as2_id.as_deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_ids.is_none()`.
+    pub fn certificate_ids(&self) -> &[::std::string::String] {
+        self.certificate_ids.as_deref().unwrap_or_default()
     }
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl DescribedProfile {
@@ -63,6 +68,7 @@ pub struct DescribedProfileBuilder {
 }
 impl DescribedProfileBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -159,14 +165,21 @@ impl DescribedProfileBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedProfile`](crate::types::DescribedProfile).
-    pub fn build(self) -> crate::types::DescribedProfile {
-        crate::types::DescribedProfile {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::DescribedProfileBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedProfile, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DescribedProfile {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building DescribedProfile",
+                )
+            })?,
             profile_id: self.profile_id,
             profile_type: self.profile_type,
             as2_id: self.as2_id,
             certificate_ids: self.certificate_ids,
             tags: self.tags,
-        }
+        })
     }
 }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputParallelismUpdate {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
-    pub count_update: ::std::option::Option<i32>,
+    pub count_update: i32,
 }
 impl InputParallelismUpdate {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
-    pub fn count_update(&self) -> ::std::option::Option<i32> {
+    pub fn count_update(&self) -> i32 {
         self.count_update
     }
 }
@@ -28,6 +28,7 @@ pub struct InputParallelismUpdateBuilder {
 }
 impl InputParallelismUpdateBuilder {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
+    /// This field is required.
     pub fn count_update(mut self, input: i32) -> Self {
         self.count_update = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl InputParallelismUpdateBuilder {
         &self.count_update
     }
     /// Consumes the builder and constructs a [`InputParallelismUpdate`](crate::types::InputParallelismUpdate).
-    pub fn build(self) -> crate::types::InputParallelismUpdate {
-        crate::types::InputParallelismUpdate {
-            count_update: self.count_update,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`count_update`](crate::types::builders::InputParallelismUpdateBuilder::count_update)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputParallelismUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputParallelismUpdate {
+            count_update: self.count_update.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "count_update",
+                    "count_update was not specified but it is required when building InputParallelismUpdate",
+                )
+            })?,
+        })
     }
 }

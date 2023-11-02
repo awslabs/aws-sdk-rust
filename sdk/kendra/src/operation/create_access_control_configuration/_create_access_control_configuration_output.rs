@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessControlConfigurationOutput {
     /// <p>The identifier of the access control configuration for your documents in an index.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateAccessControlConfigurationOutput {
     /// <p>The identifier of the access control configuration for your documents in an index.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateAccessControlConfigurationOutput {
@@ -34,6 +35,7 @@ pub struct CreateAccessControlConfigurationOutputBuilder {
 }
 impl CreateAccessControlConfigurationOutputBuilder {
     /// <p>The identifier of the access control configuration for your documents in an index.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,24 @@ impl CreateAccessControlConfigurationOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateAccessControlConfigurationOutput`](crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput).
-    pub fn build(self) -> crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput {
-        crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput {
-            id: self.id,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_access_control_configuration::builders::CreateAccessControlConfigurationOutputBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput {
+                id: self.id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "id was not specified but it is required when building CreateAccessControlConfigurationOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

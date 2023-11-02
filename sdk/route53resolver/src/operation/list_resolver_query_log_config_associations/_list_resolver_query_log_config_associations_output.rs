@@ -27,8 +27,10 @@ impl ListResolverQueryLogConfigAssociationsOutput {
         self.total_filtered_count
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_config_associations(&self) -> ::std::option::Option<&[crate::types::ResolverQueryLogConfigAssociation]> {
-        self.resolver_query_log_config_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_query_log_config_associations.is_none()`.
+    pub fn resolver_query_log_config_associations(&self) -> &[crate::types::ResolverQueryLogConfigAssociation] {
+        self.resolver_query_log_config_associations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResolverQueryLogConfigAssociationsOutput {

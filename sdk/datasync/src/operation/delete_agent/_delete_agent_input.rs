@@ -28,6 +28,7 @@ pub struct DeleteAgentInputBuilder {
 }
 impl DeleteAgentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn agent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_arn = ::std::option::Option::Some(input.into());
         self

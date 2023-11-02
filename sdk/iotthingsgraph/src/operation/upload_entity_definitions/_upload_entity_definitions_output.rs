@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsOutput {
     /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
-    pub upload_id: ::std::option::Option<::std::string::String>,
+    pub upload_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UploadEntityDefinitionsOutput {
     /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
-        self.upload_id.as_deref()
+    pub fn upload_id(&self) -> &str {
+        use std::ops::Deref;
+        self.upload_id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UploadEntityDefinitionsOutput {
@@ -34,6 +35,7 @@ pub struct UploadEntityDefinitionsOutputBuilder {
 }
 impl UploadEntityDefinitionsOutputBuilder {
     /// <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
+    /// This field is required.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,22 @@ impl UploadEntityDefinitionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UploadEntityDefinitionsOutput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput).
-    pub fn build(self) -> crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput {
-        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput {
-            upload_id: self.upload_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`upload_id`](crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsOutputBuilder::upload_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput {
+            upload_id: self.upload_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "upload_id",
+                    "upload_id was not specified but it is required when building UploadEntityDefinitionsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

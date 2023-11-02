@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMissionProfile`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`mission_profile_id(impl Into<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::mission_profile_id) / [`set_mission_profile_id(Option<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::set_mission_profile_id): <p>UUID of a mission profile.</p>
+    ///   - [`mission_profile_id(impl Into<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::mission_profile_id) / [`set_mission_profile_id(impl Into<String>)`](crate::operation::get_mission_profile::builders::GetMissionProfileFluentBuilder::set_mission_profile_id):<br>required: **true**<br><p>UUID of a mission profile.</p><br>
     /// - On success, responds with [`GetMissionProfileOutput`](crate::operation::get_mission_profile::GetMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     ///   - [`mission_profile_arn(Option<String>)`](crate::operation::get_mission_profile::GetMissionProfileOutput::mission_profile_arn): <p>ARN of a mission profile.</p>

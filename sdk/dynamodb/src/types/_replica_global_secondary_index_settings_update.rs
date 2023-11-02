@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub provisioned_read_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
@@ -13,8 +13,9 @@ pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
 }
 impl ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn provisioned_read_capacity_units(&self) -> ::std::option::Option<i64> {
@@ -42,6 +43,7 @@ pub struct ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
 }
 impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -87,11 +89,20 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
         &self.provisioned_read_capacity_auto_scaling_settings_update
     }
     /// Consumes the builder and constructs a [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate).
-    pub fn build(self) -> crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate {
-        crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate {
-            index_name: self.index_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::types::builders::ReplicaGlobalSecondaryIndexSettingsUpdateBuilder::index_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate {
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndexSettingsUpdate",
+                )
+            })?,
             provisioned_read_capacity_units: self.provisioned_read_capacity_units,
             provisioned_read_capacity_auto_scaling_settings_update: self.provisioned_read_capacity_auto_scaling_settings_update,
-        }
+        })
     }
 }

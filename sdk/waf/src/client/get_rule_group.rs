@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRuleGroup`](crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_group_id(impl Into<String>)`](crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::rule_group_id) / [`set_rule_group_id(Option<String>)`](crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::set_rule_group_id): <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    ///   - [`rule_group_id(impl Into<String>)`](crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::rule_group_id) / [`set_rule_group_id(Option<String>)`](crate::operation::get_rule_group::builders::GetRuleGroupFluentBuilder::set_rule_group_id):<br>required: **true**<br><p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p><br>
     /// - On success, responds with [`GetRuleGroupOutput`](crate::operation::get_rule_group::GetRuleGroupOutput) with field(s):
     ///   - [`rule_group(Option<RuleGroup>)`](crate::operation::get_rule_group::GetRuleGroupOutput::rule_group): <p>Information about the <code>RuleGroup</code> that you specified in the <code>GetRuleGroup</code> request. </p>
     /// - On failure, responds with [`SdkError<GetRuleGroupError>`](crate::operation::get_rule_group::GetRuleGroupError)

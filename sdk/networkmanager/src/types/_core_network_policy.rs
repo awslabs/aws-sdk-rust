@@ -47,8 +47,10 @@ impl CoreNetworkPolicy {
         self.change_set_state.as_ref()
     }
     /// <p>Describes any errors in a core network policy.</p>
-    pub fn policy_errors(&self) -> ::std::option::Option<&[crate::types::CoreNetworkPolicyError]> {
-        self.policy_errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_errors.is_none()`.
+    pub fn policy_errors(&self) -> &[crate::types::CoreNetworkPolicyError] {
+        self.policy_errors.as_deref().unwrap_or_default()
     }
     /// <p>Describes a core network policy.</p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {

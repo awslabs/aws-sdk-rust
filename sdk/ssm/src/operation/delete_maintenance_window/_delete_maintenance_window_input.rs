@@ -27,6 +27,7 @@ pub struct DeleteMaintenanceWindowInputBuilder {
 }
 impl DeleteMaintenanceWindowInputBuilder {
     /// <p>The ID of the maintenance window to delete.</p>
+    /// This field is required.
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_id = ::std::option::Option::Some(input.into());
         self

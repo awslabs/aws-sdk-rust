@@ -34,6 +34,7 @@ pub struct CancelEnvironmentDeploymentOutputBuilder {
 }
 impl CancelEnvironmentDeploymentOutputBuilder {
     /// <p>The environment summary data that's returned by Proton.</p>
+    /// This field is required.
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.environment = ::std::option::Option::Some(input);
         self

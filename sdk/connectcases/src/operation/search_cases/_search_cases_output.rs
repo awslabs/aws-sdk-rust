@@ -6,7 +6,7 @@ pub struct SearchCasesOutput {
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
-    pub cases: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>>,
+    pub cases: ::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>,
     _request_id: Option<String>,
 }
 impl SearchCasesOutput {
@@ -15,8 +15,9 @@ impl SearchCasesOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure. </p>
-    pub fn cases(&self) -> ::std::option::Option<&[::std::option::Option<crate::types::SearchCasesResponseItem>]> {
-        self.cases.as_deref()
+    pub fn cases(&self) -> &[::std::option::Option<crate::types::SearchCasesResponseItem>] {
+        use std::ops::Deref;
+        self.cases.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for SearchCasesOutput {
@@ -84,11 +85,18 @@ impl SearchCasesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchCasesOutput`](crate::operation::search_cases::SearchCasesOutput).
-    pub fn build(self) -> crate::operation::search_cases::SearchCasesOutput {
-        crate::operation::search_cases::SearchCasesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cases`](crate::operation::search_cases::builders::SearchCasesOutputBuilder::cases)
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_cases::SearchCasesOutput {
             next_token: self.next_token,
-            cases: self.cases,
+            cases: self.cases.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cases",
+                    "cases was not specified but it is required when building SearchCasesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

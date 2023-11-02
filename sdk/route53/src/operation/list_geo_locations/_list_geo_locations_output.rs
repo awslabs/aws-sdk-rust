@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeoLocationsOutput {
     /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
-    pub geo_location_details_list: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationDetails>>,
+    pub geo_location_details_list: ::std::vec::Vec<crate::types::GeoLocationDetails>,
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
@@ -15,13 +15,14 @@ pub struct ListGeoLocationsOutput {
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     pub next_subdivision_code: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     _request_id: Option<String>,
 }
 impl ListGeoLocationsOutput {
     /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
-    pub fn geo_location_details_list(&self) -> ::std::option::Option<&[crate::types::GeoLocationDetails]> {
-        self.geo_location_details_list.as_deref()
+    pub fn geo_location_details_list(&self) -> &[crate::types::GeoLocationDetails] {
+        use std::ops::Deref;
+        self.geo_location_details_list.deref()
     }
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
     pub fn is_truncated(&self) -> bool {
@@ -40,7 +41,7 @@ impl ListGeoLocationsOutput {
         self.next_subdivision_code.as_deref()
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
 }
@@ -90,6 +91,7 @@ impl ListGeoLocationsOutputBuilder {
         &self.geo_location_details_list
     }
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
+    /// This field is required.
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
         self
@@ -146,6 +148,7 @@ impl ListGeoLocationsOutputBuilder {
         &self.next_subdivision_code
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -169,15 +172,30 @@ impl ListGeoLocationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGeoLocationsOutput`](crate::operation::list_geo_locations::ListGeoLocationsOutput).
-    pub fn build(self) -> crate::operation::list_geo_locations::ListGeoLocationsOutput {
-        crate::operation::list_geo_locations::ListGeoLocationsOutput {
-            geo_location_details_list: self.geo_location_details_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`geo_location_details_list`](crate::operation::list_geo_locations::builders::ListGeoLocationsOutputBuilder::geo_location_details_list)
+    /// - [`max_items`](crate::operation::list_geo_locations::builders::ListGeoLocationsOutputBuilder::max_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_geo_locations::ListGeoLocationsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_geo_locations::ListGeoLocationsOutput {
+            geo_location_details_list: self.geo_location_details_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "geo_location_details_list",
+                    "geo_location_details_list was not specified but it is required when building ListGeoLocationsOutput",
+                )
+            })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             next_continent_code: self.next_continent_code,
             next_country_code: self.next_country_code,
             next_subdivision_code: self.next_subdivision_code,
-            max_items: self.max_items,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building ListGeoLocationsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -73,7 +73,7 @@ pub fn de_start_inference_experiment_http_response(
         output = crate::protocol_serde::shape_start_inference_experiment::de_start_inference_experiment(_response_body, output)
             .map_err(crate::operation::start_inference_experiment::StartInferenceExperimentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_inference_experiment_output_correct_errors(output).build()
     })
 }
 

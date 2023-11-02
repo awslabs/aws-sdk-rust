@@ -14,8 +14,10 @@ pub struct SearchSystemInstancesInput {
 impl SearchSystemInstancesInput {
     /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SystemInstanceFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SystemInstanceFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

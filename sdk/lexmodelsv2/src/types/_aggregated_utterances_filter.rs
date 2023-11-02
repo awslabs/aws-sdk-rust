@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesFilter {
     /// <p>The name of the field to filter the utterance list.</p>
-    pub name: ::std::option::Option<crate::types::AggregatedUtterancesFilterName>,
+    pub name: crate::types::AggregatedUtterancesFilterName,
     /// <p>The value to use for filtering the list of bots.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub operator: ::std::option::Option<crate::types::AggregatedUtterancesFilterOperator>,
+    pub operator: crate::types::AggregatedUtterancesFilterOperator,
 }
 impl AggregatedUtterancesFilter {
     /// <p>The name of the field to filter the utterance list.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AggregatedUtterancesFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::AggregatedUtterancesFilterName {
+        &self.name
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::AggregatedUtterancesFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::AggregatedUtterancesFilterOperator {
+        &self.operator
     }
 }
 impl AggregatedUtterancesFilter {
@@ -42,6 +43,7 @@ pub struct AggregatedUtterancesFilterBuilder {
 }
 impl AggregatedUtterancesFilterBuilder {
     /// <p>The name of the field to filter the utterance list.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::AggregatedUtterancesFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl AggregatedUtterancesFilterBuilder {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::AggregatedUtterancesFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl AggregatedUtterancesFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`AggregatedUtterancesFilter`](crate::types::AggregatedUtterancesFilter).
-    pub fn build(self) -> crate::types::AggregatedUtterancesFilter {
-        crate::types::AggregatedUtterancesFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AggregatedUtterancesFilterBuilder::name)
+    /// - [`values`](crate::types::builders::AggregatedUtterancesFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::AggregatedUtterancesFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregatedUtterancesFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregatedUtterancesFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AggregatedUtterancesFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building AggregatedUtterancesFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building AggregatedUtterancesFilter",
+                )
+            })?,
+        })
     }
 }

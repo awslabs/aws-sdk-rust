@@ -6,7 +6,7 @@ pub struct ListMembershipsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of memberships returned from the ListMemberships operation.</p>
-    pub membership_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>>,
+    pub membership_summaries: ::std::vec::Vec<crate::types::MembershipSummary>,
     _request_id: Option<String>,
 }
 impl ListMembershipsOutput {
@@ -15,8 +15,9 @@ impl ListMembershipsOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of memberships returned from the ListMemberships operation.</p>
-    pub fn membership_summaries(&self) -> ::std::option::Option<&[crate::types::MembershipSummary]> {
-        self.membership_summaries.as_deref()
+    pub fn membership_summaries(&self) -> &[crate::types::MembershipSummary] {
+        use std::ops::Deref;
+        self.membership_summaries.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListMembershipsOutput {
@@ -84,11 +85,20 @@ impl ListMembershipsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMembershipsOutput`](crate::operation::list_memberships::ListMembershipsOutput).
-    pub fn build(self) -> crate::operation::list_memberships::ListMembershipsOutput {
-        crate::operation::list_memberships::ListMembershipsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`membership_summaries`](crate::operation::list_memberships::builders::ListMembershipsOutputBuilder::membership_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_memberships::ListMembershipsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_memberships::ListMembershipsOutput {
             next_token: self.next_token,
-            membership_summaries: self.membership_summaries,
+            membership_summaries: self.membership_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_summaries",
+                    "membership_summaries was not specified but it is required when building ListMembershipsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

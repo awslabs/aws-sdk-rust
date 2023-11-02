@@ -32,8 +32,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "FieldLevelEncryptionProfileAlreadyExists" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::FieldLevelEncryptionProfileAlreadyExists({
@@ -48,8 +48,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "FieldLevelEncryptionProfileSizeExceeded" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::FieldLevelEncryptionProfileSizeExceeded({
@@ -64,8 +64,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "IllegalUpdate" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::IllegalUpdate({
@@ -80,8 +80,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InconsistentQuantities" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::InconsistentQuantities({
@@ -96,8 +96,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgument" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::InvalidArgument({
@@ -112,8 +112,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidIfMatchVersion" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::InvalidIfMatchVersion({
@@ -128,8 +128,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchFieldLevelEncryptionProfile" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::NoSuchFieldLevelEncryptionProfile({
@@ -144,8 +144,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchPublicKey" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::NoSuchPublicKey({
@@ -160,8 +160,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "PreconditionFailed" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::PreconditionFailed({
@@ -176,8 +176,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyFieldLevelEncryptionEncryptionEntities" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::TooManyFieldLevelEncryptionEncryptionEntities({
@@ -192,8 +192,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyFieldLevelEncryptionFieldPatterns" => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::TooManyFieldLevelEncryptionFieldPatterns({
@@ -208,8 +208,8 @@ pub fn de_update_field_level_encryption_profile_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError::generic(generic)

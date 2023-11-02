@@ -65,7 +65,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::test_set_import_resource_specification_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -77,39 +81,39 @@ pub fn ser_test_set_import_resource_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestSetImportResourceSpecification,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.test_set_name {
-        object.key("testSetName").string(var_1.as_str());
+    {
+        object.key("testSetName").string(input.test_set_name.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("roleArn").string(var_3.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_4) = &input.storage_location {
+    if let Some(var_2) = &input.storage_location {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("storageLocation").start_object();
-        crate::protocol_serde::shape_test_set_storage_location::ser_test_set_storage_location(&mut object_5, var_4)?;
+        let mut object_3 = object.key("storageLocation").start_object();
+        crate::protocol_serde::shape_test_set_storage_location::ser_test_set_storage_location(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.import_input_location {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("importInputLocation").start_object();
+        crate::protocol_serde::shape_test_set_import_input_location::ser_test_set_import_input_location(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.import_input_location {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("importInputLocation").start_object();
-        crate::protocol_serde::shape_test_set_import_input_location::ser_test_set_import_input_location(&mut object_7, var_6)?;
-        object_7.finish();
+    {
+        object.key("modality").string(input.modality.as_str());
     }
-    if let Some(var_8) = &input.modality {
-        object.key("modality").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.test_set_tags {
+    if let Some(var_6) = &input.test_set_tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("testSetTags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_7 = object.key("testSetTags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_10.finish();
+        object_7.finish();
     }
     Ok(())
 }

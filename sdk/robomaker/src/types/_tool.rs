@@ -7,9 +7,9 @@ pub struct Tool {
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>. </p>
     pub stream_ui: ::std::option::Option<bool>,
     /// <p>The name of the tool.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
-    pub command: ::std::option::Option<::std::string::String>,
+    pub command: ::std::string::String,
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub stream_output_to_cloud_watch: ::std::option::Option<bool>,
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>. </p>
@@ -21,12 +21,14 @@ impl Tool {
         self.stream_ui
     }
     /// <p>The name of the tool.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
-    pub fn command(&self) -> ::std::option::Option<&str> {
-        self.command.as_deref()
+    pub fn command(&self) -> &str {
+        use std::ops::Deref;
+        self.command.deref()
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>. </p>
     pub fn stream_output_to_cloud_watch(&self) -> ::std::option::Option<bool> {
@@ -70,6 +72,7 @@ impl ToolBuilder {
         &self.stream_ui
     }
     /// <p>The name of the tool.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl ToolBuilder {
         &self.name
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
+    /// This field is required.
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.command = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +130,23 @@ impl ToolBuilder {
         &self.exit_behavior
     }
     /// Consumes the builder and constructs a [`Tool`](crate::types::Tool).
-    pub fn build(self) -> crate::types::Tool {
-        crate::types::Tool {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ToolBuilder::name)
+    /// - [`command`](crate::types::builders::ToolBuilder::command)
+    pub fn build(self) -> ::std::result::Result<crate::types::Tool, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Tool {
             stream_ui: self.stream_ui,
-            name: self.name,
-            command: self.command,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Tool")
+            })?,
+            command: self.command.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "command",
+                    "command was not specified but it is required when building Tool",
+                )
+            })?,
             stream_output_to_cloud_watch: self.stream_output_to_cloud_watch,
             exit_behavior: self.exit_behavior,
-        }
+        })
     }
 }

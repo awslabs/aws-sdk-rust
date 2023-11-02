@@ -939,6 +939,8 @@ pub use crate::types::_model_digests::ModelDigestsBuilder;
 
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributesBuilder;
 
+pub use crate::types::_text_generation_resolved_attributes::TextGenerationResolvedAttributesBuilder;
+
 pub use crate::types::_tabular_resolved_attributes::TabularResolvedAttributesBuilder;
 
 pub use crate::types::_auto_ml_job_completion_criteria::AutoMlJobCompletionCriteriaBuilder;
@@ -954,6 +956,8 @@ pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
 pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
 
 pub use crate::types::_model_deploy_config::ModelDeployConfigBuilder;
+
+pub use crate::types::_text_generation_job_config::TextGenerationJobConfigBuilder;
 
 pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfigBuilder;
 

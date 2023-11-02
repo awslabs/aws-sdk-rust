@@ -27,8 +27,10 @@ impl GetDefaultRetentionPolicyOutput {
         self.description.as_deref()
     }
     /// <p>The retention policy folder configurations.</p>
-    pub fn folder_configurations(&self) -> ::std::option::Option<&[crate::types::FolderConfiguration]> {
-        self.folder_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.folder_configurations.is_none()`.
+    pub fn folder_configurations(&self) -> &[crate::types::FolderConfiguration] {
+        self.folder_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetDefaultRetentionPolicyOutput {

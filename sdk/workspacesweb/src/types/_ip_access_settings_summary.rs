@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IpAccessSettingsSummary {
     /// <p>The ARN of IP access settings.</p>
-    pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
+    pub ip_access_settings_arn: ::std::string::String,
     /// <p>The display name of the IP access settings.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IP access settings.</p>
@@ -15,8 +15,9 @@ pub struct IpAccessSettingsSummary {
 }
 impl IpAccessSettingsSummary {
     /// <p>The ARN of IP access settings.</p>
-    pub fn ip_access_settings_arn(&self) -> ::std::option::Option<&str> {
-        self.ip_access_settings_arn.as_deref()
+    pub fn ip_access_settings_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.ip_access_settings_arn.deref()
     }
     /// <p>The display name of the IP access settings.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -59,6 +60,7 @@ pub struct IpAccessSettingsSummaryBuilder {
 }
 impl IpAccessSettingsSummaryBuilder {
     /// <p>The ARN of IP access settings.</p>
+    /// This field is required.
     pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self
@@ -115,13 +117,20 @@ impl IpAccessSettingsSummaryBuilder {
         &self.creation_date
     }
     /// Consumes the builder and constructs a [`IpAccessSettingsSummary`](crate::types::IpAccessSettingsSummary).
-    pub fn build(self) -> crate::types::IpAccessSettingsSummary {
-        crate::types::IpAccessSettingsSummary {
-            ip_access_settings_arn: self.ip_access_settings_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ip_access_settings_arn`](crate::types::builders::IpAccessSettingsSummaryBuilder::ip_access_settings_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpAccessSettingsSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpAccessSettingsSummary {
+            ip_access_settings_arn: self.ip_access_settings_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ip_access_settings_arn",
+                    "ip_access_settings_arn was not specified but it is required when building IpAccessSettingsSummary",
+                )
+            })?,
             display_name: self.display_name,
             description: self.description,
             creation_date: self.creation_date,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for IpAccessSettingsSummaryBuilder {

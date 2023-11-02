@@ -27,6 +27,7 @@ pub struct GetCapacityAssignmentConfigurationInputBuilder {
 }
 impl GetCapacityAssignmentConfigurationInputBuilder {
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
+    /// This field is required.
     pub fn capacity_reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_reservation_name = ::std::option::Option::Some(input.into());
         self

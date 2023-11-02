@@ -6,7 +6,7 @@ pub struct ListSolFunctionPackagesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub function_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>>,
+    pub function_packages: ::std::vec::Vec<crate::types::ListSolFunctionPackageInfo>,
     _request_id: Option<String>,
 }
 impl ListSolFunctionPackagesOutput {
@@ -15,8 +15,9 @@ impl ListSolFunctionPackagesOutput {
         self.next_token.as_deref()
     }
     /// <p>Function packages. A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn function_packages(&self) -> ::std::option::Option<&[crate::types::ListSolFunctionPackageInfo]> {
-        self.function_packages.as_deref()
+    pub fn function_packages(&self) -> &[crate::types::ListSolFunctionPackageInfo] {
+        use std::ops::Deref;
+        self.function_packages.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSolFunctionPackagesOutput {
@@ -84,11 +85,23 @@ impl ListSolFunctionPackagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSolFunctionPackagesOutput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput).
-    pub fn build(self) -> crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
-        crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`function_packages`](crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesOutputBuilder::function_packages)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput {
             next_token: self.next_token,
-            function_packages: self.function_packages,
+            function_packages: self.function_packages.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "function_packages",
+                    "function_packages was not specified but it is required when building ListSolFunctionPackagesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

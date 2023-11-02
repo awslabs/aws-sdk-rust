@@ -17,6 +17,7 @@ pub fn ser_application_version_lifecycle_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_application_version_lifecycle_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ApplicationVersionLifecycleConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

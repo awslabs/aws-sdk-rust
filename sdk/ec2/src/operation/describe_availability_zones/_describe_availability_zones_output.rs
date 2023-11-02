@@ -9,8 +9,10 @@ pub struct DescribeAvailabilityZonesOutput {
 }
 impl DescribeAvailabilityZonesOutput {
     /// <p>Information about the Availability Zones, Local Zones, and Wavelength Zones.</p>
-    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
-        self.availability_zones.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAvailabilityZonesOutput {

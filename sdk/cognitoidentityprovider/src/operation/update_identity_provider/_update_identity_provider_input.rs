@@ -32,8 +32,10 @@ impl UpdateIdentityProviderInput {
         self.attribute_mapping.as_ref()
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.idp_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.idp_identifiers.is_none()`.
+    pub fn idp_identifiers(&self) -> &[::std::string::String] {
+        self.idp_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl UpdateIdentityProviderInput {
@@ -55,6 +57,7 @@ pub struct UpdateIdentityProviderInputBuilder {
 }
 impl UpdateIdentityProviderInputBuilder {
     /// <p>The user pool ID.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl UpdateIdentityProviderInputBuilder {
         &self.user_pool_id
     }
     /// <p>The IdP name.</p>
+    /// This field is required.
     pub fn provider_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_name = ::std::option::Option::Some(input.into());
         self

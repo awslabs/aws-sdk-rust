@@ -28,6 +28,7 @@ pub struct VerifyEmailAddressInputBuilder {
 }
 impl VerifyEmailAddressInputBuilder {
     /// <p>The email address to be verified.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self

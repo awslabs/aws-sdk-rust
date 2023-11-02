@@ -9,7 +9,7 @@ pub struct DelegationSet {
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub name_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub name_servers: ::std::vec::Vec<::std::string::String>,
 }
 impl DelegationSet {
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
@@ -21,8 +21,9 @@ impl DelegationSet {
         self.caller_reference.as_deref()
     }
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn name_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.name_servers.as_deref()
+    pub fn name_servers(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.name_servers.deref()
     }
 }
 impl DelegationSet {
@@ -90,11 +91,18 @@ impl DelegationSetBuilder {
         &self.name_servers
     }
     /// Consumes the builder and constructs a [`DelegationSet`](crate::types::DelegationSet).
-    pub fn build(self) -> crate::types::DelegationSet {
-        crate::types::DelegationSet {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name_servers`](crate::types::builders::DelegationSetBuilder::name_servers)
+    pub fn build(self) -> ::std::result::Result<crate::types::DelegationSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DelegationSet {
             id: self.id,
             caller_reference: self.caller_reference,
-            name_servers: self.name_servers,
-        }
+            name_servers: self.name_servers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name_servers",
+                    "name_servers was not specified but it is required when building DelegationSet",
+                )
+            })?,
+        })
     }
 }

@@ -55,6 +55,7 @@ pub struct ListDocumentMetadataHistoryInputBuilder {
 }
 impl ListDocumentMetadataHistoryInputBuilder {
     /// <p>The name of the change template.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListDocumentMetadataHistoryInputBuilder {
         &self.document_version
     }
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::DocumentMetadataEnum) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self

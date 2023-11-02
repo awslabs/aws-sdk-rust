@@ -35,6 +35,7 @@ pub struct S3WordsListBuilder {
 }
 impl S3WordsListBuilder {
     /// <p>The full name of the S3 bucket that contains the object.</p>
+    /// This field is required.
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl S3WordsListBuilder {
         &self.bucket_name
     }
     /// <p>The full name (key) of the object.</p>
+    /// This field is required.
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
         self

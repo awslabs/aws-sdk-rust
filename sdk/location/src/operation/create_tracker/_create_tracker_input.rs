@@ -10,7 +10,7 @@ pub struct CreateTrackerInput {
     /// <li> <p>Must be a unique tracker resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
-    pub tracker_name: ::std::option::Option<::std::string::String>,
+    pub tracker_name: ::std::string::String,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -61,8 +61,9 @@ impl CreateTrackerInput {
     /// <li> <p>Must be a unique tracker resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
-        self.tracker_name.as_deref()
+    pub fn tracker_name(&self) -> &str {
+        use std::ops::Deref;
+        self.tracker_name.deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -151,6 +152,7 @@ impl CreateTrackerInputBuilder {
     /// <li> <p>Must be a unique tracker resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn tracker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracker_name = ::std::option::Option::Some(input.into());
         self
@@ -370,11 +372,18 @@ impl CreateTrackerInputBuilder {
         &self.kms_key_enable_geospatial_queries
     }
     /// Consumes the builder and constructs a [`CreateTrackerInput`](crate::operation::create_tracker::CreateTrackerInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tracker_name`](crate::operation::create_tracker::builders::CreateTrackerInputBuilder::tracker_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tracker::CreateTrackerInput {
-            tracker_name: self.tracker_name,
+            tracker_name: self.tracker_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tracker_name",
+                    "tracker_name was not specified but it is required when building CreateTrackerInput",
+                )
+            })?,
             pricing_plan: self.pricing_plan,
             kms_key_id: self.kms_key_id,
             pricing_plan_data_source: self.pricing_plan_data_source,

@@ -3,17 +3,19 @@ pub fn ser_dynamic_card_verification_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamicCardVerificationCode,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.unpredictable_number {
-        object.key("UnpredictableNumber").string(var_1.as_str());
+    {
+        object.key("UnpredictableNumber").string(input.unpredictable_number.as_str());
     }
-    if let Some(var_2) = &input.pan_sequence_number {
-        object.key("PanSequenceNumber").string(var_2.as_str());
+    {
+        object.key("PanSequenceNumber").string(input.pan_sequence_number.as_str());
     }
-    if let Some(var_3) = &input.application_transaction_counter {
-        object.key("ApplicationTransactionCounter").string(var_3.as_str());
+    {
+        object
+            .key("ApplicationTransactionCounter")
+            .string(input.application_transaction_counter.as_str());
     }
-    if let Some(var_4) = &input.track_data {
-        object.key("TrackData").string(var_4.as_str());
+    {
+        object.key("TrackData").string(input.track_data.as_str());
     }
     Ok(())
 }

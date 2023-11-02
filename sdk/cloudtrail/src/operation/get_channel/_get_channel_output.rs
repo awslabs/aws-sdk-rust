@@ -35,8 +35,10 @@ impl GetChannelOutput {
         self.source_config.as_ref()
     }
     /// <p>The destinations for the channel. For channels created for integrations, the destinations are the event data stores that log events arriving through the channel. For service-linked channels, the destination is the Amazon Web Services service that created the service-linked channel to receive events.</p>
-    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::Destination]> {
-        self.destinations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
+    pub fn destinations(&self) -> &[crate::types::Destination] {
+        self.destinations.as_deref().unwrap_or_default()
     }
     /// <p>A table showing information about the most recent successful and failed attempts to ingest events.</p>
     pub fn ingestion_status(&self) -> ::std::option::Option<&crate::types::IngestionStatus> {

@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRoutingDestinationConfiguration {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
-    pub from_port: ::std::option::Option<i32>,
+    pub from_port: i32,
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
-    pub to_port: ::std::option::Option<i32>,
+    pub to_port: i32,
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingProtocol>>,
+    pub protocols: ::std::vec::Vec<crate::types::CustomRoutingProtocol>,
 }
 impl CustomRoutingDestinationConfiguration {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
-    pub fn from_port(&self) -> ::std::option::Option<i32> {
+    pub fn from_port(&self) -> i32 {
         self.from_port
     }
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
-    pub fn to_port(&self) -> ::std::option::Option<i32> {
+    pub fn to_port(&self) -> i32 {
         self.to_port
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn protocols(&self) -> ::std::option::Option<&[crate::types::CustomRoutingProtocol]> {
-        self.protocols.as_deref()
+    pub fn protocols(&self) -> &[crate::types::CustomRoutingProtocol] {
+        use std::ops::Deref;
+        self.protocols.deref()
     }
 }
 impl CustomRoutingDestinationConfiguration {
@@ -42,6 +43,7 @@ pub struct CustomRoutingDestinationConfigurationBuilder {
 }
 impl CustomRoutingDestinationConfigurationBuilder {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    /// This field is required.
     pub fn from_port(mut self, input: i32) -> Self {
         self.from_port = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl CustomRoutingDestinationConfigurationBuilder {
         &self.from_port
     }
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
+    /// This field is required.
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,32 @@ impl CustomRoutingDestinationConfigurationBuilder {
         &self.protocols
     }
     /// Consumes the builder and constructs a [`CustomRoutingDestinationConfiguration`](crate::types::CustomRoutingDestinationConfiguration).
-    pub fn build(self) -> crate::types::CustomRoutingDestinationConfiguration {
-        crate::types::CustomRoutingDestinationConfiguration {
-            from_port: self.from_port,
-            to_port: self.to_port,
-            protocols: self.protocols,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`from_port`](crate::types::builders::CustomRoutingDestinationConfigurationBuilder::from_port)
+    /// - [`to_port`](crate::types::builders::CustomRoutingDestinationConfigurationBuilder::to_port)
+    /// - [`protocols`](crate::types::builders::CustomRoutingDestinationConfigurationBuilder::protocols)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CustomRoutingDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomRoutingDestinationConfiguration {
+            from_port: self.from_port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "from_port",
+                    "from_port was not specified but it is required when building CustomRoutingDestinationConfiguration",
+                )
+            })?,
+            to_port: self.to_port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "to_port",
+                    "to_port was not specified but it is required when building CustomRoutingDestinationConfiguration",
+                )
+            })?,
+            protocols: self.protocols.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protocols",
+                    "protocols was not specified but it is required when building CustomRoutingDestinationConfiguration",
+                )
+            })?,
+        })
     }
 }

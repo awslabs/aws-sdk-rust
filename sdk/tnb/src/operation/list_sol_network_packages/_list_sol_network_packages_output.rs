@@ -6,7 +6,7 @@ pub struct ListSolNetworkPackagesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub network_packages: ::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
+    pub network_packages: ::std::vec::Vec<crate::types::ListSolNetworkPackageInfo>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkPackagesOutput {
@@ -15,8 +15,9 @@ impl ListSolNetworkPackagesOutput {
         self.next_token.as_deref()
     }
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub fn network_packages(&self) -> ::std::option::Option<&[crate::types::ListSolNetworkPackageInfo]> {
-        self.network_packages.as_deref()
+    pub fn network_packages(&self) -> &[crate::types::ListSolNetworkPackageInfo] {
+        use std::ops::Deref;
+        self.network_packages.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListSolNetworkPackagesOutput {
@@ -84,11 +85,23 @@ impl ListSolNetworkPackagesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListSolNetworkPackagesOutput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput).
-    pub fn build(self) -> crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
-        crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_packages`](crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder::network_packages)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
             next_token: self.next_token,
-            network_packages: self.network_packages,
+            network_packages: self.network_packages.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_packages",
+                    "network_packages was not specified but it is required when building ListSolNetworkPackagesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

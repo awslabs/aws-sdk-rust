@@ -70,6 +70,7 @@ pub struct CreateLogicallyAirGappedBackupVaultInputBuilder {
 }
 impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     /// <p>This is the name of the vault that is being created.</p>
+    /// This field is required.
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_vault_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +127,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     }
     /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// This field is required.
     pub fn min_retention_days(mut self, input: i64) -> Self {
         self.min_retention_days = ::std::option::Option::Some(input);
         self
@@ -143,6 +145,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     }
     /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
+    /// This field is required.
     pub fn max_retention_days(mut self, input: i64) -> Self {
         self.max_retention_days = ::std::option::Option::Some(input);
         self

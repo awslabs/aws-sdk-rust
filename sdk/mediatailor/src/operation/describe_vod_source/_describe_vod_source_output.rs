@@ -23,8 +23,10 @@ pub struct DescribeVodSourceOutput {
 }
 impl DescribeVodSourceOutput {
     /// <p>The ad break opportunities within the VOD source.</p>
-    pub fn ad_break_opportunities(&self) -> ::std::option::Option<&[crate::types::AdBreakOpportunity]> {
-        self.ad_break_opportunities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_break_opportunities.is_none()`.
+    pub fn ad_break_opportunities(&self) -> &[crate::types::AdBreakOpportunity] {
+        self.ad_break_opportunities.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the VOD source.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -35,8 +37,10 @@ impl DescribeVodSourceOutput {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations.</p>
-    pub fn http_package_configurations(&self) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
-        self.http_package_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_package_configurations.is_none()`.
+    pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
+        self.http_package_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The last modified time of the VOD source.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {

@@ -41,6 +41,7 @@ pub struct ListVpcConnectionsInputBuilder {
 }
 impl ListVpcConnectionsInputBuilder {
     /// <p>The Amazon Web Services account ID of the account that contains the VPC connections that you want to list.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self

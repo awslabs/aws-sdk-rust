@@ -28,6 +28,7 @@ pub struct DeleteReplicationSubnetGroupInputBuilder {
 }
 impl DeleteReplicationSubnetGroupInputBuilder {
     /// <p>The subnet group name of the replication instance.</p>
+    /// This field is required.
     pub fn replication_subnet_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_subnet_group_identifier = ::std::option::Option::Some(input.into());
         self

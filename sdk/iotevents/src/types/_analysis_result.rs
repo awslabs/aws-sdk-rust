@@ -57,8 +57,10 @@ impl AnalysisResult {
         self.message.as_deref()
     }
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
-    pub fn locations(&self) -> ::std::option::Option<&[crate::types::AnalysisResultLocation]> {
-        self.locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
+    pub fn locations(&self) -> &[crate::types::AnalysisResultLocation] {
+        self.locations.as_deref().unwrap_or_default()
     }
 }
 impl AnalysisResult {

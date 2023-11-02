@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDialRequestBatchInput {
     /// Identifier representing a Campaign
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// A list of dial requests.
-    pub dial_requests: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
+    pub dial_requests: ::std::vec::Vec<crate::types::DialRequest>,
 }
 impl PutDialRequestBatchInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// A list of dial requests.
-    pub fn dial_requests(&self) -> ::std::option::Option<&[crate::types::DialRequest]> {
-        self.dial_requests.as_deref()
+    pub fn dial_requests(&self) -> &[crate::types::DialRequest] {
+        use std::ops::Deref;
+        self.dial_requests.deref()
     }
 }
 impl PutDialRequestBatchInput {
@@ -35,6 +37,7 @@ pub struct PutDialRequestBatchInputBuilder {
 }
 impl PutDialRequestBatchInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -69,13 +72,26 @@ impl PutDialRequestBatchInputBuilder {
         &self.dial_requests
     }
     /// Consumes the builder and constructs a [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder::id)
+    /// - [`dial_requests`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchInputBuilder::dial_requests)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_dial_request_batch::PutDialRequestBatchInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_dial_request_batch::PutDialRequestBatchInput {
-            id: self.id,
-            dial_requests: self.dial_requests,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building PutDialRequestBatchInput",
+                )
+            })?,
+            dial_requests: self.dial_requests.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dial_requests",
+                    "dial_requests was not specified but it is required when building PutDialRequestBatchInput",
+                )
+            })?,
         })
     }
 }

@@ -28,6 +28,7 @@ pub struct PluginBuilder {
 }
 impl PluginBuilder {
     /// <p>Details about a custom plugin.</p>
+    /// This field is required.
     pub fn custom_plugin(mut self, input: crate::types::CustomPlugin) -> Self {
         self.custom_plugin = ::std::option::Option::Some(input);
         self

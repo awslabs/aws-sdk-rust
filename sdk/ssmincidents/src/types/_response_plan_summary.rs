@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponsePlanSummary {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name of the response plan. This can't include spaces.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl ResponsePlanSummary {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -42,6 +44,7 @@ pub struct ResponsePlanSummaryBuilder {
 }
 impl ResponsePlanSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ResponsePlanSummaryBuilder {
         &self.arn
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl ResponsePlanSummaryBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`ResponsePlanSummary`](crate::types::ResponsePlanSummary).
-    pub fn build(self) -> crate::types::ResponsePlanSummary {
-        crate::types::ResponsePlanSummary {
-            arn: self.arn,
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::ResponsePlanSummaryBuilder::arn)
+    /// - [`name`](crate::types::builders::ResponsePlanSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponsePlanSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResponsePlanSummary {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building ResponsePlanSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ResponsePlanSummary",
+                )
+            })?,
             display_name: self.display_name,
-        }
+        })
     }
 }

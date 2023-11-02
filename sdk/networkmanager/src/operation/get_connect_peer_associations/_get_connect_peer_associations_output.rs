@@ -11,8 +11,10 @@ pub struct GetConnectPeerAssociationsOutput {
 }
 impl GetConnectPeerAssociationsOutput {
     /// <p>Displays a list of Connect peer associations.</p>
-    pub fn connect_peer_associations(&self) -> ::std::option::Option<&[crate::types::ConnectPeerAssociation]> {
-        self.connect_peer_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connect_peer_associations.is_none()`.
+    pub fn connect_peer_associations(&self) -> &[crate::types::ConnectPeerAssociation] {
+        self.connect_peer_associations.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

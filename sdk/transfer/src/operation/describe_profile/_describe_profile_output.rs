@@ -34,6 +34,7 @@ pub struct DescribeProfileOutputBuilder {
 }
 impl DescribeProfileOutputBuilder {
     /// <p>The details of the specified profile, returned as an object.</p>
+    /// This field is required.
     pub fn profile(mut self, input: crate::types::DescribedProfile) -> Self {
         self.profile = ::std::option::Option::Some(input);
         self

@@ -76,6 +76,7 @@ impl PutImageInputBuilder {
         &self.registry_id
     }
     /// <p>The name of the repository in which to put the image.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl PutImageInputBuilder {
         &self.repository_name
     }
     /// <p>The image manifest corresponding to the image to be uploaded.</p>
+    /// This field is required.
     pub fn image_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_manifest = ::std::option::Option::Some(input.into());
         self

@@ -90,6 +90,7 @@ impl ListHumanLoopsInputBuilder {
         &self.creation_time_before
     }
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+    /// This field is required.
     pub fn flow_definition_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self

@@ -9,17 +9,17 @@ pub struct BandwidthRateLimitInterval {
     /// </note>
     pub average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
-    pub start_hour_of_day: ::std::option::Option<i32>,
+    pub start_hour_of_day: i32,
     /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
-    pub end_hour_of_day: ::std::option::Option<i32>,
+    pub end_hour_of_day: i32,
     /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
-    pub start_minute_of_hour: ::std::option::Option<i32>,
+    pub start_minute_of_hour: i32,
     /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
-    pub end_minute_of_hour: ::std::option::Option<i32>,
+    pub end_minute_of_hour: i32,
     /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
-    pub days_of_week: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub days_of_week: ::std::vec::Vec<i32>,
 }
 impl BandwidthRateLimitInterval {
     /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
@@ -29,26 +29,27 @@ impl BandwidthRateLimitInterval {
         self.average_upload_rate_limit_in_bits_per_sec
     }
     /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
-    pub fn start_hour_of_day(&self) -> ::std::option::Option<i32> {
+    pub fn start_hour_of_day(&self) -> i32 {
         self.start_hour_of_day
     }
     /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
-    pub fn end_hour_of_day(&self) -> ::std::option::Option<i32> {
+    pub fn end_hour_of_day(&self) -> i32 {
         self.end_hour_of_day
     }
     /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
-    pub fn start_minute_of_hour(&self) -> ::std::option::Option<i32> {
+    pub fn start_minute_of_hour(&self) -> i32 {
         self.start_minute_of_hour
     }
     /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
-    pub fn end_minute_of_hour(&self) -> ::std::option::Option<i32> {
+    pub fn end_minute_of_hour(&self) -> i32 {
         self.end_minute_of_hour
     }
     /// <p>The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday.</p>
-    pub fn days_of_week(&self) -> ::std::option::Option<&[i32]> {
-        self.days_of_week.as_deref()
+    pub fn days_of_week(&self) -> &[i32] {
+        use std::ops::Deref;
+        self.days_of_week.deref()
     }
 }
 impl BandwidthRateLimitInterval {
@@ -91,6 +92,7 @@ impl BandwidthRateLimitIntervalBuilder {
         &self.average_upload_rate_limit_in_bits_per_sec
     }
     /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
+    /// This field is required.
     pub fn start_hour_of_day(mut self, input: i32) -> Self {
         self.start_hour_of_day = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl BandwidthRateLimitIntervalBuilder {
         &self.start_hour_of_day
     }
     /// <p>The hour of the day to end the bandwidth rate limit interval.</p>
+    /// This field is required.
     pub fn end_hour_of_day(mut self, input: i32) -> Self {
         self.end_hour_of_day = ::std::option::Option::Some(input);
         self
@@ -119,6 +122,7 @@ impl BandwidthRateLimitIntervalBuilder {
         &self.end_hour_of_day
     }
     /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
+    /// This field is required.
     pub fn start_minute_of_hour(mut self, input: i32) -> Self {
         self.start_minute_of_hour = ::std::option::Option::Some(input);
         self
@@ -135,6 +139,7 @@ impl BandwidthRateLimitIntervalBuilder {
     /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
+    /// This field is required.
     pub fn end_minute_of_hour(mut self, input: i32) -> Self {
         self.end_minute_of_hour = ::std::option::Option::Some(input);
         self
@@ -173,14 +178,45 @@ impl BandwidthRateLimitIntervalBuilder {
         &self.days_of_week
     }
     /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::types::BandwidthRateLimitInterval).
-    pub fn build(self) -> crate::types::BandwidthRateLimitInterval {
-        crate::types::BandwidthRateLimitInterval {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_hour_of_day`](crate::types::builders::BandwidthRateLimitIntervalBuilder::start_hour_of_day)
+    /// - [`end_hour_of_day`](crate::types::builders::BandwidthRateLimitIntervalBuilder::end_hour_of_day)
+    /// - [`start_minute_of_hour`](crate::types::builders::BandwidthRateLimitIntervalBuilder::start_minute_of_hour)
+    /// - [`end_minute_of_hour`](crate::types::builders::BandwidthRateLimitIntervalBuilder::end_minute_of_hour)
+    /// - [`days_of_week`](crate::types::builders::BandwidthRateLimitIntervalBuilder::days_of_week)
+    pub fn build(self) -> ::std::result::Result<crate::types::BandwidthRateLimitInterval, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BandwidthRateLimitInterval {
             average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec,
-            start_hour_of_day: self.start_hour_of_day,
-            end_hour_of_day: self.end_hour_of_day,
-            start_minute_of_hour: self.start_minute_of_hour,
-            end_minute_of_hour: self.end_minute_of_hour,
-            days_of_week: self.days_of_week,
-        }
+            start_hour_of_day: self.start_hour_of_day.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_hour_of_day",
+                    "start_hour_of_day was not specified but it is required when building BandwidthRateLimitInterval",
+                )
+            })?,
+            end_hour_of_day: self.end_hour_of_day.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_hour_of_day",
+                    "end_hour_of_day was not specified but it is required when building BandwidthRateLimitInterval",
+                )
+            })?,
+            start_minute_of_hour: self.start_minute_of_hour.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_minute_of_hour",
+                    "start_minute_of_hour was not specified but it is required when building BandwidthRateLimitInterval",
+                )
+            })?,
+            end_minute_of_hour: self.end_minute_of_hour.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_minute_of_hour",
+                    "end_minute_of_hour was not specified but it is required when building BandwidthRateLimitInterval",
+                )
+            })?,
+            days_of_week: self.days_of_week.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "days_of_week",
+                    "days_of_week was not specified but it is required when building BandwidthRateLimitInterval",
+                )
+            })?,
+        })
     }
 }

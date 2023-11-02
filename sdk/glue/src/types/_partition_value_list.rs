@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionValueList {
     /// <p>The list of values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl PartitionValueList {
     /// <p>The list of values.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl PartitionValueList {
@@ -48,7 +49,16 @@ impl PartitionValueListBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`PartitionValueList`](crate::types::PartitionValueList).
-    pub fn build(self) -> crate::types::PartitionValueList {
-        crate::types::PartitionValueList { values: self.values }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`values`](crate::types::builders::PartitionValueListBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::PartitionValueList, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PartitionValueList {
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building PartitionValueList",
+                )
+            })?,
+        })
     }
 }

@@ -34,6 +34,7 @@ pub struct DeleteEnvironmentInputBuilder {
 }
 impl DeleteEnvironmentInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the environment is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEnvironmentInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the environment that is to be deleted.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

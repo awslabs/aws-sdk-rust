@@ -33,8 +33,10 @@ impl DescribeConfigurationOutput {
         self.description.as_deref()
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.kafka_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_versions.is_none()`.
+    pub fn kafka_versions(&self) -> &[::std::string::String] {
+        self.kafka_versions.as_deref().unwrap_or_default()
     }
     /// <p>Latest revision of the configuration.</p>
     pub fn latest_revision(&self) -> ::std::option::Option<&crate::types::ConfigurationRevision> {

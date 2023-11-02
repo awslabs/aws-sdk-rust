@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLicense`](crate::operation::get_license::builders::GetLicenseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`license_arn(impl Into<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::license_arn) / [`set_license_arn(Option<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
-    ///   - [`version(impl Into<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::set_version): <p>License version.</p>
+    ///   - [`license_arn(impl Into<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::license_arn) / [`set_license_arn(Option<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::set_license_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the license.</p><br>
+    ///   - [`version(impl Into<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_license::builders::GetLicenseFluentBuilder::set_version):<br>required: **false**<br><p>License version.</p><br>
     /// - On success, responds with [`GetLicenseOutput`](crate::operation::get_license::GetLicenseOutput) with field(s):
     ///   - [`license(Option<License>)`](crate::operation::get_license::GetLicenseOutput::license): <p>License details.</p>
     /// - On failure, responds with [`SdkError<GetLicenseError>`](crate::operation::get_license::GetLicenseError)

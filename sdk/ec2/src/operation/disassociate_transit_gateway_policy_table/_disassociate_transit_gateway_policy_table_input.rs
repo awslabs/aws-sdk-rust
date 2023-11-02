@@ -41,6 +41,7 @@ pub struct DisassociateTransitGatewayPolicyTableInputBuilder {
 }
 impl DisassociateTransitGatewayPolicyTableInputBuilder {
     /// <p>The ID of the disassociated policy table.</p>
+    /// This field is required.
     pub fn transit_gateway_policy_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DisassociateTransitGatewayPolicyTableInputBuilder {
         &self.transit_gateway_policy_table_id
     }
     /// <p>The ID of the transit gateway attachment to disassociate from the policy table.</p>
+    /// This field is required.
     pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self

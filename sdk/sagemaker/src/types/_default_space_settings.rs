@@ -19,8 +19,10 @@ impl DefaultSpaceSettings {
         self.execution_role.as_deref()
     }
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The JupyterServer app settings.</p>
     pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {

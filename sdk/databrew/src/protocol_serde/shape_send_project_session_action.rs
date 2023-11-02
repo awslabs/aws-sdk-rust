@@ -88,7 +88,9 @@ pub fn de_send_project_session_action_http_response(
         output = crate::protocol_serde::shape_send_project_session_action::de_send_project_session_action(_response_body, output)
             .map_err(crate::operation::send_project_session_action::SendProjectSessionActionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::send_project_session_action_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::send_project_session_action::SendProjectSessionActionError::unhandled)?
     })
 }
 

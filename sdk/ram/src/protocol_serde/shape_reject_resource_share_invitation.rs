@@ -33,11 +33,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                         )
                         .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::idempotent_parameter_mismatch_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -53,11 +52,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                     )
                     .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_client_token_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -69,11 +67,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                 output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output)
                     .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::malformed_arn_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "OperationNotPermittedException" => {
@@ -88,11 +85,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                     )
                     .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::operation_not_permitted_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -104,11 +100,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                     let mut output = crate::types::error::builders::ResourceShareInvitationAlreadyAcceptedExceptionBuilder::default();
                     output = crate::protocol_serde::shape_resource_share_invitation_already_accepted_exception::de_resource_share_invitation_already_accepted_exception_json_err(_response_body, output).map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_share_invitation_already_accepted_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -120,11 +115,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                     let mut output = crate::types::error::builders::ResourceShareInvitationAlreadyRejectedExceptionBuilder::default();
                     output = crate::protocol_serde::shape_resource_share_invitation_already_rejected_exception::de_resource_share_invitation_already_rejected_exception_json_err(_response_body, output).map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_share_invitation_already_rejected_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -136,11 +130,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                     let mut output = crate::types::error::builders::ResourceShareInvitationArnNotFoundExceptionBuilder::default();
                     output = crate::protocol_serde::shape_resource_share_invitation_arn_not_found_exception::de_resource_share_invitation_arn_not_found_exception_json_err(_response_body, output).map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_share_invitation_arn_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -152,11 +145,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                     let mut output = crate::types::error::builders::ResourceShareInvitationExpiredExceptionBuilder::default();
                     output = crate::protocol_serde::shape_resource_share_invitation_expired_exception::de_resource_share_invitation_expired_exception_json_err(_response_body, output).map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_share_invitation_expired_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -169,11 +161,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                     output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                         .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::server_internal_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -187,11 +178,10 @@ pub fn de_reject_resource_share_invitation_http_error(
                         crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                             .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_unavailable_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

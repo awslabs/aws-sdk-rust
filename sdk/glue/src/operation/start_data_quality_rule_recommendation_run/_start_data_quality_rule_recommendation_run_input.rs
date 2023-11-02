@@ -62,6 +62,7 @@ pub struct StartDataQualityRuleRecommendationRunInputBuilder {
 }
 impl StartDataQualityRuleRecommendationRunInputBuilder {
     /// <p>The data source (Glue table) associated with this run.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
         &self.data_source
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self

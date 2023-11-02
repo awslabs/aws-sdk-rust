@@ -41,6 +41,7 @@ pub struct ListDeviceDefinitionVersionsInputBuilder {
 }
 impl ListDeviceDefinitionVersionsInputBuilder {
     /// The ID of the device definition.
+    /// This field is required.
     pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_definition_id = ::std::option::Option::Some(input.into());
         self

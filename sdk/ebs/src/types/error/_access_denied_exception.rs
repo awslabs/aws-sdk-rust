@@ -7,13 +7,13 @@ pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the exception.</p>
-    pub reason: ::std::option::Option<crate::types::AccessDeniedExceptionReason>,
+    pub reason: crate::types::AccessDeniedExceptionReason,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessDeniedException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::AccessDeniedExceptionReason> {
-        self.reason.as_ref()
+    pub fn reason(&self) -> &crate::types::AccessDeniedExceptionReason {
+        &self.reason
     }
 }
 impl AccessDeniedException {
@@ -76,6 +76,7 @@ impl AccessDeniedExceptionBuilder {
         &self.message
     }
     /// <p>The reason for the exception.</p>
+    /// This field is required.
     pub fn reason(mut self, input: crate::types::AccessDeniedExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
@@ -101,11 +102,18 @@ impl AccessDeniedExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AccessDeniedException`](crate::types::error::AccessDeniedException).
-    pub fn build(self) -> crate::types::error::AccessDeniedException {
-        crate::types::error::AccessDeniedException {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reason`](crate::types::error::builders::AccessDeniedExceptionBuilder::reason)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::AccessDeniedException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::AccessDeniedException {
             message: self.message,
-            reason: self.reason,
+            reason: self.reason.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reason",
+                    "reason was not specified but it is required when building AccessDeniedException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

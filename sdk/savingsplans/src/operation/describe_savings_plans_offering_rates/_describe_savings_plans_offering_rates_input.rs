@@ -26,36 +26,52 @@ pub struct DescribeSavingsPlansOfferingRatesInput {
 }
 impl DescribeSavingsPlansOfferingRatesInput {
     /// <p>The IDs of the offerings.</p>
-    pub fn savings_plan_offering_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.savings_plan_offering_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_offering_ids.is_none()`.
+    pub fn savings_plan_offering_ids(&self) -> &[::std::string::String] {
+        self.savings_plan_offering_ids.as_deref().unwrap_or_default()
     }
     /// <p>The payment options.</p>
-    pub fn savings_plan_payment_options(&self) -> ::std::option::Option<&[crate::types::SavingsPlanPaymentOption]> {
-        self.savings_plan_payment_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_payment_options.is_none()`.
+    pub fn savings_plan_payment_options(&self) -> &[crate::types::SavingsPlanPaymentOption] {
+        self.savings_plan_payment_options.as_deref().unwrap_or_default()
     }
     /// <p>The plan types.</p>
-    pub fn savings_plan_types(&self) -> ::std::option::Option<&[crate::types::SavingsPlanType]> {
-        self.savings_plan_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.savings_plan_types.is_none()`.
+    pub fn savings_plan_types(&self) -> &[crate::types::SavingsPlanType] {
+        self.savings_plan_types.as_deref().unwrap_or_default()
     }
     /// <p>The AWS products.</p>
-    pub fn products(&self) -> ::std::option::Option<&[crate::types::SavingsPlanProductType]> {
-        self.products.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.products.is_none()`.
+    pub fn products(&self) -> &[crate::types::SavingsPlanProductType] {
+        self.products.as_deref().unwrap_or_default()
     }
     /// <p>The services.</p>
-    pub fn service_codes(&self) -> ::std::option::Option<&[crate::types::SavingsPlanRateServiceCode]> {
-        self.service_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_codes.is_none()`.
+    pub fn service_codes(&self) -> &[crate::types::SavingsPlanRateServiceCode] {
+        self.service_codes.as_deref().unwrap_or_default()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.usage_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_types.is_none()`.
+    pub fn usage_types(&self) -> &[::std::string::String] {
+        self.usage_types.as_deref().unwrap_or_default()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operations(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.operations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
+    pub fn operations(&self) -> &[::std::string::String] {
+        self.operations.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::SavingsPlanOfferingRateFilterElement]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::SavingsPlanOfferingRateFilterElement] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -14,7 +14,7 @@ pub struct StateExitedEventDetails {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
@@ -31,8 +31,9 @@ impl StateExitedEventDetails {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn output(&self) -> ::std::option::Option<&str> {
@@ -78,6 +79,7 @@ impl StateExitedEventDetailsBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -138,12 +140,19 @@ impl StateExitedEventDetailsBuilder {
         &self.output_details
     }
     /// Consumes the builder and constructs a [`StateExitedEventDetails`](crate::types::StateExitedEventDetails).
-    pub fn build(self) -> crate::types::StateExitedEventDetails {
-        crate::types::StateExitedEventDetails {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::StateExitedEventDetailsBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::StateExitedEventDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StateExitedEventDetails {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building StateExitedEventDetails",
+                )
+            })?,
             output: self.output,
             output_details: self.output_details,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for StateExitedEventDetailsBuilder {

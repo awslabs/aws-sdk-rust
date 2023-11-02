@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchImageSetsOutput {
     /// <p>The model containing the image set results.</p>
-    pub image_sets_metadata_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImageSetsMetadataSummary>>,
+    pub image_sets_metadata_summaries: ::std::vec::Vec<crate::types::ImageSetsMetadataSummary>,
     /// <p>The token for pagination results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchImageSetsOutput {
     /// <p>The model containing the image set results.</p>
-    pub fn image_sets_metadata_summaries(&self) -> ::std::option::Option<&[crate::types::ImageSetsMetadataSummary]> {
-        self.image_sets_metadata_summaries.as_deref()
+    pub fn image_sets_metadata_summaries(&self) -> &[crate::types::ImageSetsMetadataSummary] {
+        use std::ops::Deref;
+        self.image_sets_metadata_summaries.deref()
     }
     /// <p>The token for pagination results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,20 @@ impl SearchImageSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchImageSetsOutput`](crate::operation::search_image_sets::SearchImageSetsOutput).
-    pub fn build(self) -> crate::operation::search_image_sets::SearchImageSetsOutput {
-        crate::operation::search_image_sets::SearchImageSetsOutput {
-            image_sets_metadata_summaries: self.image_sets_metadata_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`image_sets_metadata_summaries`](crate::operation::search_image_sets::builders::SearchImageSetsOutputBuilder::image_sets_metadata_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_image_sets::SearchImageSetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::search_image_sets::SearchImageSetsOutput {
+            image_sets_metadata_summaries: self.image_sets_metadata_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "image_sets_metadata_summaries",
+                    "image_sets_metadata_summaries was not specified but it is required when building SearchImageSetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

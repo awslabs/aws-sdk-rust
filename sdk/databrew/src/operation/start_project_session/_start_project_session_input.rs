@@ -34,6 +34,7 @@ pub struct StartProjectSessionInputBuilder {
 }
 impl StartProjectSessionInputBuilder {
     /// <p>The name of the project to act upon.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

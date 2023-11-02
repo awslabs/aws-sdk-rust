@@ -7,15 +7,16 @@ pub struct VerifyDomainDkimOutput {
     /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
     /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer Guide</a>.</p>
-    pub dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dkim_tokens: ::std::vec::Vec<::std::string::String>,
     _request_id: Option<String>,
 }
 impl VerifyDomainDkimOutput {
     /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
     /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
     /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer Guide</a>.</p>
-    pub fn dkim_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dkim_tokens.as_deref()
+    pub fn dkim_tokens(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.dkim_tokens.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for VerifyDomainDkimOutput {
@@ -74,10 +75,19 @@ impl VerifyDomainDkimOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`VerifyDomainDkimOutput`](crate::operation::verify_domain_dkim::VerifyDomainDkimOutput).
-    pub fn build(self) -> crate::operation::verify_domain_dkim::VerifyDomainDkimOutput {
-        crate::operation::verify_domain_dkim::VerifyDomainDkimOutput {
-            dkim_tokens: self.dkim_tokens,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dkim_tokens`](crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder::dkim_tokens)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::verify_domain_dkim::VerifyDomainDkimOutput {
+            dkim_tokens: self.dkim_tokens.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dkim_tokens",
+                    "dkim_tokens was not specified but it is required when building VerifyDomainDkimOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

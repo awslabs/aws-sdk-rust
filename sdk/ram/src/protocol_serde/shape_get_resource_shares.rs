@@ -26,11 +26,10 @@ pub fn de_get_resource_shares_http_error(
                 output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_next_token_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidParameterException" => crate::operation::get_resource_shares::GetResourceSharesError::InvalidParameterException({
@@ -41,11 +40,10 @@ pub fn de_get_resource_shares_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "MalformedArnException" => crate::operation::get_resource_shares::GetResourceSharesError::MalformedArnException({
@@ -56,11 +54,10 @@ pub fn de_get_resource_shares_http_error(
                 output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::malformed_arn_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServerInternalException" => crate::operation::get_resource_shares::GetResourceSharesError::ServerInternalException({
@@ -71,11 +68,10 @@ pub fn de_get_resource_shares_http_error(
                 output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::server_internal_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::get_resource_shares::GetResourceSharesError::ServiceUnavailableException({
@@ -87,11 +83,10 @@ pub fn de_get_resource_shares_http_error(
                     crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
                         .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::service_unavailable_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "UnknownResourceException" => crate::operation::get_resource_shares::GetResourceSharesError::UnknownResourceException({
@@ -102,11 +97,10 @@ pub fn de_get_resource_shares_http_error(
                 output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::unknown_resource_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_resource_shares::GetResourceSharesError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::get_resource_shares::GetResourceSharesError::generic(generic),

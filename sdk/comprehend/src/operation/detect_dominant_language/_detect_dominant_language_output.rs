@@ -11,8 +11,10 @@ pub struct DetectDominantLanguageOutput {
 impl DetectDominantLanguageOutput {
     /// <p>Array of languages that Amazon Comprehend detected in the input text. The array is sorted in descending order of the score (the dominant language is always the first element in the array).</p>
     /// <p>For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-    pub fn languages(&self) -> ::std::option::Option<&[crate::types::DominantLanguage]> {
-        self.languages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.languages.is_none()`.
+    pub fn languages(&self) -> &[crate::types::DominantLanguage] {
+        self.languages.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for DetectDominantLanguageOutput {

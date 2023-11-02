@@ -58,8 +58,10 @@ impl CreateDataRepositoryAssociationInput {
         self.client_request_token.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDataRepositoryAssociationInput {
@@ -84,6 +86,7 @@ pub struct CreateDataRepositoryAssociationInputBuilder {
 }
 impl CreateDataRepositoryAssociationInputBuilder {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
@@ -121,6 +124,7 @@ impl CreateDataRepositoryAssociationInputBuilder {
         &self.file_system_path
     }
     /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    /// This field is required.
     pub fn data_repository_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_repository_path = ::std::option::Option::Some(input.into());
         self

@@ -9,8 +9,10 @@ pub struct TimedMetadataInsertion {
 }
 impl TimedMetadataInsertion {
     /// Id3Insertions contains the array of Id3Insertion instances.
-    pub fn id3_insertions(&self) -> ::std::option::Option<&[crate::types::Id3Insertion]> {
-        self.id3_insertions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.id3_insertions.is_none()`.
+    pub fn id3_insertions(&self) -> &[crate::types::Id3Insertion] {
+        self.id3_insertions.as_deref().unwrap_or_default()
     }
 }
 impl TimedMetadataInsertion {

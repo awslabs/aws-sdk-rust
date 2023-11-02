@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGroup`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_name(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_name): <p>The name of the group.</p>
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_group_name):<br>required: **true**<br><p>The name of the group.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::delete_group::builders::DeleteGroupFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID for the user pool.</p><br>
     /// - On success, responds with [`DeleteGroupOutput`](crate::operation::delete_group::DeleteGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::operation::delete_group::DeleteGroupError)
     pub fn delete_group(&self) -> crate::operation::delete_group::builders::DeleteGroupFluentBuilder {

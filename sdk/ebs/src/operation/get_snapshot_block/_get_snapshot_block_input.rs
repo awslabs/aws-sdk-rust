@@ -47,6 +47,7 @@ impl GetSnapshotBlockInputBuilder {
     /// <p>The ID of the snapshot containing the block from which to get data.</p> <important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl GetSnapshotBlockInputBuilder {
         &self.snapshot_id
     }
     /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
+    /// This field is required.
     pub fn block_index(mut self, input: i32) -> Self {
         self.block_index = ::std::option::Option::Some(input);
         self
@@ -79,6 +81,7 @@ impl GetSnapshotBlockInputBuilder {
         &self.block_index
     }
     /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+    /// This field is required.
     pub fn block_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.block_token = ::std::option::Option::Some(input.into());
         self

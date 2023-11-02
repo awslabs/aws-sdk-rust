@@ -99,7 +99,9 @@ pub fn de_start_query_planning_http_response(
         output = crate::protocol_serde::shape_start_query_planning::de_start_query_planning(_response_body, output)
             .map_err(crate::operation::start_query_planning::StartQueryPlanningError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_query_planning_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::start_query_planning::StartQueryPlanningError::unhandled)?
     })
 }
 

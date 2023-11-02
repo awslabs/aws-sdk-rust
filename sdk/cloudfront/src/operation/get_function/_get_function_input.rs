@@ -34,6 +34,7 @@ pub struct GetFunctionInputBuilder {
 }
 impl GetFunctionInputBuilder {
     /// <p>The name of the function whose code you are getting.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

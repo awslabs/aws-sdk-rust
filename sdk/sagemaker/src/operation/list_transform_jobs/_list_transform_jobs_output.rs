@@ -11,8 +11,10 @@ pub struct ListTransformJobsOutput {
 }
 impl ListTransformJobsOutput {
     /// <p>An array of <code>TransformJobSummary</code> objects.</p>
-    pub fn transform_job_summaries(&self) -> ::std::option::Option<&[crate::types::TransformJobSummary]> {
-        self.transform_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transform_job_summaries.is_none()`.
+    pub fn transform_job_summaries(&self) -> &[crate::types::TransformJobSummary] {
+        self.transform_job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

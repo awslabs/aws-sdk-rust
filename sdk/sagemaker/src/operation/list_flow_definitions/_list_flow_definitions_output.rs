@@ -11,8 +11,10 @@ pub struct ListFlowDefinitionsOutput {
 }
 impl ListFlowDefinitionsOutput {
     /// <p>An array of objects describing the flow definitions.</p>
-    pub fn flow_definition_summaries(&self) -> ::std::option::Option<&[crate::types::FlowDefinitionSummary]> {
-        self.flow_definition_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flow_definition_summaries.is_none()`.
+    pub fn flow_definition_summaries(&self) -> &[crate::types::FlowDefinitionSummary] {
+        self.flow_definition_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A token to resume pagination.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

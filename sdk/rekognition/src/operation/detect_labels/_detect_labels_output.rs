@@ -17,8 +17,10 @@ pub struct DetectLabelsOutput {
 }
 impl DetectLabelsOutput {
     /// <p>An array of labels for the real-world objects detected. </p>
-    pub fn labels(&self) -> ::std::option::Option<&[crate::types::Label]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[crate::types::Label] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>

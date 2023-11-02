@@ -18,8 +18,10 @@ impl ListJobsInput {
         self.account_id.as_deref()
     }
     /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
-    pub fn job_statuses(&self) -> ::std::option::Option<&[crate::types::JobStatus]> {
-        self.job_statuses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_statuses.is_none()`.
+    pub fn job_statuses(&self) -> &[crate::types::JobStatus] {
+        self.job_statuses.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct ListJobsInputBuilder {
 }
 impl ListJobsInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self

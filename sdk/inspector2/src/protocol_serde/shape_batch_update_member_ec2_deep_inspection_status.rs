@@ -35,11 +35,10 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                         crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::access_denied_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -56,11 +55,8 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                                                 .map_err(|_|crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                         let output = output.meta(generic);
-                        output.build()
+                        crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled)?
                     };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
                     tmp
                 },
             )
@@ -79,11 +75,10 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                                                 .map_err(|_|crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::throttling_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -97,11 +92,10 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(
                         crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
                     )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::validation_exception_correct_errors(output).build().map_err(
+                        crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
-    pub batch_size: ::std::option::Option<i32>,
+    pub batch_size: i32,
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub batch_window: ::std::option::Option<i32>,
 }
 impl EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
-    pub fn batch_size(&self) -> ::std::option::Option<i32> {
+    pub fn batch_size(&self) -> i32 {
         self.batch_size
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
@@ -35,6 +35,7 @@ pub struct EventBatchingConditionBuilder {
 }
 impl EventBatchingConditionBuilder {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
+    /// This field is required.
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = ::std::option::Option::Some(input);
         self
@@ -63,10 +64,17 @@ impl EventBatchingConditionBuilder {
         &self.batch_window
     }
     /// Consumes the builder and constructs a [`EventBatchingCondition`](crate::types::EventBatchingCondition).
-    pub fn build(self) -> crate::types::EventBatchingCondition {
-        crate::types::EventBatchingCondition {
-            batch_size: self.batch_size,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`batch_size`](crate::types::builders::EventBatchingConditionBuilder::batch_size)
+    pub fn build(self) -> ::std::result::Result<crate::types::EventBatchingCondition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EventBatchingCondition {
+            batch_size: self.batch_size.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "batch_size",
+                    "batch_size was not specified but it is required when building EventBatchingCondition",
+                )
+            })?,
             batch_window: self.batch_window,
-        }
+        })
     }
 }

@@ -91,172 +91,256 @@ pub struct FilterCriteria {
 }
 impl FilterCriteria {
     /// <p>Details on the finding ARNs used to filter findings.</p>
-    pub fn finding_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.finding_arn.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arn.is_none()`.
+    pub fn finding_arn(&self) -> &[crate::types::StringFilter] {
+        self.finding_arn.as_deref().unwrap_or_default()
     }
     /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.aws_account_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_id.is_none()`.
+    pub fn aws_account_id(&self) -> &[crate::types::StringFilter] {
+        self.aws_account_id.as_deref().unwrap_or_default()
     }
     /// <p>Details on the finding types used to filter findings.</p>
-    pub fn finding_type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.finding_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_type.is_none()`.
+    pub fn finding_type(&self) -> &[crate::types::StringFilter] {
+        self.finding_type.as_deref().unwrap_or_default()
     }
     /// <p>Details on the severity used to filter findings.</p>
-    pub fn severity(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.severity.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severity.is_none()`.
+    pub fn severity(&self) -> &[crate::types::StringFilter] {
+        self.severity.as_deref().unwrap_or_default()
     }
     /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
-    pub fn first_observed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.first_observed_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.first_observed_at.is_none()`.
+    pub fn first_observed_at(&self) -> &[crate::types::DateFilter] {
+        self.first_observed_at.as_deref().unwrap_or_default()
     }
     /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
-    pub fn last_observed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.last_observed_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_observed_at.is_none()`.
+    pub fn last_observed_at(&self) -> &[crate::types::DateFilter] {
+        self.last_observed_at.as_deref().unwrap_or_default()
     }
     /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.updated_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updated_at.is_none()`.
+    pub fn updated_at(&self) -> &[crate::types::DateFilter] {
+        self.updated_at.as_deref().unwrap_or_default()
     }
     /// <p>Details on the finding status types used to filter findings.</p>
-    pub fn finding_status(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.finding_status.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_status.is_none()`.
+    pub fn finding_status(&self) -> &[crate::types::StringFilter] {
+        self.finding_status.as_deref().unwrap_or_default()
     }
     /// <p>Details on the finding title used to filter findings.</p>
-    pub fn title(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.title.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.title.is_none()`.
+    pub fn title(&self) -> &[crate::types::StringFilter] {
+        self.title.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Inspector score to filter on.</p>
-    pub fn inspector_score(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
-        self.inspector_score.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inspector_score.is_none()`.
+    pub fn inspector_score(&self) -> &[crate::types::NumberFilter] {
+        self.inspector_score.as_deref().unwrap_or_default()
     }
     /// <p>Details on the resource types used to filter findings.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
+    pub fn resource_type(&self) -> &[crate::types::StringFilter] {
+        self.resource_type.as_deref().unwrap_or_default()
     }
     /// <p>Details on the resource IDs used to filter findings.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_id.is_none()`.
+    pub fn resource_id(&self) -> &[crate::types::StringFilter] {
+        self.resource_id.as_deref().unwrap_or_default()
     }
     /// <p>Details on the resource tags used to filter findings.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
-        self.resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
+    pub fn resource_tags(&self) -> &[crate::types::MapFilter] {
+        self.resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
-    pub fn ec2_instance_image_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ec2_instance_image_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_image_id.is_none()`.
+    pub fn ec2_instance_image_id(&self) -> &[crate::types::StringFilter] {
+        self.ec2_instance_image_id.as_deref().unwrap_or_default()
     }
     /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
-    pub fn ec2_instance_vpc_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ec2_instance_vpc_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_vpc_id.is_none()`.
+    pub fn ec2_instance_vpc_id(&self) -> &[crate::types::StringFilter] {
+        self.ec2_instance_vpc_id.as_deref().unwrap_or_default()
     }
     /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
-    pub fn ec2_instance_subnet_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ec2_instance_subnet_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_subnet_id.is_none()`.
+    pub fn ec2_instance_subnet_id(&self) -> &[crate::types::StringFilter] {
+        self.ec2_instance_subnet_id.as_deref().unwrap_or_default()
     }
     /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
-    pub fn ecr_image_pushed_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.ecr_image_pushed_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_pushed_at.is_none()`.
+    pub fn ecr_image_pushed_at(&self) -> &[crate::types::DateFilter] {
+        self.ecr_image_pushed_at.as_deref().unwrap_or_default()
     }
     /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
-    pub fn ecr_image_architecture(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ecr_image_architecture.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_architecture.is_none()`.
+    pub fn ecr_image_architecture(&self) -> &[crate::types::StringFilter] {
+        self.ecr_image_architecture.as_deref().unwrap_or_default()
     }
     /// <p>Details on the Amazon ECR registry used to filter findings.</p>
-    pub fn ecr_image_registry(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ecr_image_registry.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_registry.is_none()`.
+    pub fn ecr_image_registry(&self) -> &[crate::types::StringFilter] {
+        self.ecr_image_registry.as_deref().unwrap_or_default()
     }
     /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
-    pub fn ecr_image_repository_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ecr_image_repository_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_repository_name.is_none()`.
+    pub fn ecr_image_repository_name(&self) -> &[crate::types::StringFilter] {
+        self.ecr_image_repository_name.as_deref().unwrap_or_default()
     }
     /// <p>The tags attached to the Amazon ECR container image.</p>
-    pub fn ecr_image_tags(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ecr_image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_tags.is_none()`.
+    pub fn ecr_image_tags(&self) -> &[crate::types::StringFilter] {
+        self.ecr_image_tags.as_deref().unwrap_or_default()
     }
     /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
-    pub fn ecr_image_hash(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.ecr_image_hash.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ecr_image_hash.is_none()`.
+    pub fn ecr_image_hash(&self) -> &[crate::types::StringFilter] {
+        self.ecr_image_hash.as_deref().unwrap_or_default()
     }
     /// <p>Details on the port ranges used to filter findings.</p>
-    pub fn port_range(&self) -> ::std::option::Option<&[crate::types::PortRangeFilter]> {
-        self.port_range.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_range.is_none()`.
+    pub fn port_range(&self) -> &[crate::types::PortRangeFilter] {
+        self.port_range.as_deref().unwrap_or_default()
     }
     /// <p>Details on network protocol used to filter findings.</p>
-    pub fn network_protocol(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.network_protocol.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_protocol.is_none()`.
+    pub fn network_protocol(&self) -> &[crate::types::StringFilter] {
+        self.network_protocol.as_deref().unwrap_or_default()
     }
     /// <p>Details of the component IDs used to filter findings.</p>
-    pub fn component_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.component_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_id.is_none()`.
+    pub fn component_id(&self) -> &[crate::types::StringFilter] {
+        self.component_id.as_deref().unwrap_or_default()
     }
     /// <p>Details of the component types used to filter findings.</p>
-    pub fn component_type(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.component_type.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_type.is_none()`.
+    pub fn component_type(&self) -> &[crate::types::StringFilter] {
+        self.component_type.as_deref().unwrap_or_default()
     }
     /// <p>Details on the vulnerability ID used to filter findings.</p>
-    pub fn vulnerability_id(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.vulnerability_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerability_id.is_none()`.
+    pub fn vulnerability_id(&self) -> &[crate::types::StringFilter] {
+        self.vulnerability_id.as_deref().unwrap_or_default()
     }
     /// <p>Details on the vulnerability type used to filter findings.</p>
-    pub fn vulnerability_source(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.vulnerability_source.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerability_source.is_none()`.
+    pub fn vulnerability_source(&self) -> &[crate::types::StringFilter] {
+        self.vulnerability_source.as_deref().unwrap_or_default()
     }
     /// <p>Details on the vendor severity used to filter findings.</p>
-    pub fn vendor_severity(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.vendor_severity.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vendor_severity.is_none()`.
+    pub fn vendor_severity(&self) -> &[crate::types::StringFilter] {
+        self.vendor_severity.as_deref().unwrap_or_default()
     }
     /// <p>Details on the vulnerable packages used to filter findings.</p>
-    pub fn vulnerable_packages(&self) -> ::std::option::Option<&[crate::types::PackageFilter]> {
-        self.vulnerable_packages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vulnerable_packages.is_none()`.
+    pub fn vulnerable_packages(&self) -> &[crate::types::PackageFilter] {
+        self.vulnerable_packages.as_deref().unwrap_or_default()
     }
     /// <p>Details on the related vulnerabilities used to filter findings.</p>
-    pub fn related_vulnerabilities(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.related_vulnerabilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_vulnerabilities.is_none()`.
+    pub fn related_vulnerabilities(&self) -> &[crate::types::StringFilter] {
+        self.related_vulnerabilities.as_deref().unwrap_or_default()
     }
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
-    pub fn fix_available(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.fix_available.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fix_available.is_none()`.
+    pub fn fix_available(&self) -> &[crate::types::StringFilter] {
+        self.fix_available.as_deref().unwrap_or_default()
     }
     /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
-    pub fn lambda_function_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.lambda_function_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
+    pub fn lambda_function_name(&self) -> &[crate::types::StringFilter] {
+        self.lambda_function_name.as_deref().unwrap_or_default()
     }
     /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
-    pub fn lambda_function_layers(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.lambda_function_layers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_layers.is_none()`.
+    pub fn lambda_function_layers(&self) -> &[crate::types::StringFilter] {
+        self.lambda_function_layers.as_deref().unwrap_or_default()
     }
     /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
-    pub fn lambda_function_runtime(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.lambda_function_runtime.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_runtime.is_none()`.
+    pub fn lambda_function_runtime(&self) -> &[crate::types::StringFilter] {
+        self.lambda_function_runtime.as_deref().unwrap_or_default()
     }
     /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
-    pub fn lambda_function_last_modified_at(&self) -> ::std::option::Option<&[crate::types::DateFilter]> {
-        self.lambda_function_last_modified_at.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_last_modified_at.is_none()`.
+    pub fn lambda_function_last_modified_at(&self) -> &[crate::types::DateFilter] {
+        self.lambda_function_last_modified_at.as_deref().unwrap_or_default()
     }
     /// <p>Filters the list of AWS Lambda functions by execution role.</p>
-    pub fn lambda_function_execution_role_arn(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.lambda_function_execution_role_arn.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_execution_role_arn.is_none()`.
+    pub fn lambda_function_execution_role_arn(&self) -> &[crate::types::StringFilter] {
+        self.lambda_function_execution_role_arn.as_deref().unwrap_or_default()
     }
     /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
-    pub fn exploit_available(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.exploit_available.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exploit_available.is_none()`.
+    pub fn exploit_available(&self) -> &[crate::types::StringFilter] {
+        self.exploit_available.as_deref().unwrap_or_default()
     }
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
-    pub fn code_vulnerability_detector_name(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.code_vulnerability_detector_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_vulnerability_detector_name.is_none()`.
+    pub fn code_vulnerability_detector_name(&self) -> &[crate::types::StringFilter] {
+        self.code_vulnerability_detector_name.as_deref().unwrap_or_default()
     }
     /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
-    pub fn code_vulnerability_detector_tags(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.code_vulnerability_detector_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_vulnerability_detector_tags.is_none()`.
+    pub fn code_vulnerability_detector_tags(&self) -> &[crate::types::StringFilter] {
+        self.code_vulnerability_detector_tags.as_deref().unwrap_or_default()
     }
     /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
-    pub fn code_vulnerability_file_path(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.code_vulnerability_file_path.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_vulnerability_file_path.is_none()`.
+    pub fn code_vulnerability_file_path(&self) -> &[crate::types::StringFilter] {
+        self.code_vulnerability_file_path.as_deref().unwrap_or_default()
     }
     /// <p>The EPSS score used to filter findings.</p>
-    pub fn epss_score(&self) -> ::std::option::Option<&[crate::types::NumberFilter]> {
-        self.epss_score.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.epss_score.is_none()`.
+    pub fn epss_score(&self) -> &[crate::types::NumberFilter] {
+        self.epss_score.as_deref().unwrap_or_default()
     }
 }
 impl FilterCriteria {

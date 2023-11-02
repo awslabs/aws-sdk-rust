@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
 }
 impl WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
 }
 impl WorkflowExecutionFilter {
@@ -28,6 +29,7 @@ pub struct WorkflowExecutionFilterBuilder {
 }
 impl WorkflowExecutionFilterBuilder {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl WorkflowExecutionFilterBuilder {
         &self.workflow_id
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionFilter`](crate::types::WorkflowExecutionFilter).
-    pub fn build(self) -> crate::types::WorkflowExecutionFilter {
-        crate::types::WorkflowExecutionFilter {
-            workflow_id: self.workflow_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::types::builders::WorkflowExecutionFilterBuilder::workflow_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionFilter {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building WorkflowExecutionFilter",
+                )
+            })?,
+        })
     }
 }

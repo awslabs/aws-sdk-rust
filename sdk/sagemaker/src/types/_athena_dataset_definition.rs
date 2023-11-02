@@ -77,6 +77,7 @@ pub struct AthenaDatasetDefinitionBuilder {
 }
 impl AthenaDatasetDefinitionBuilder {
     /// <p>The name of the data catalog used in Athena query execution.</p>
+    /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +92,7 @@ impl AthenaDatasetDefinitionBuilder {
         &self.catalog
     }
     /// <p>The name of the database used in the Athena query execution.</p>
+    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +107,7 @@ impl AthenaDatasetDefinitionBuilder {
         &self.database
     }
     /// <p>The SQL query statements, to be executed.</p>
+    /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +136,7 @@ impl AthenaDatasetDefinitionBuilder {
         &self.work_group
     }
     /// <p>The location in Amazon S3 where Athena query results are stored.</p>
+    /// This field is required.
     pub fn output_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -161,6 +165,7 @@ impl AthenaDatasetDefinitionBuilder {
         &self.kms_key_id
     }
     /// <p>The data storage format for Athena query results.</p>
+    /// This field is required.
     pub fn output_format(mut self, input: crate::types::AthenaResultFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self

@@ -38,8 +38,10 @@ impl ImageDetail {
         self.image_digest.as_deref()
     }
     /// <p>The list of tags that's associated with this image.</p>
-    pub fn image_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.image_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
+    pub fn image_tags(&self) -> &[::std::string::String] {
+        self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>

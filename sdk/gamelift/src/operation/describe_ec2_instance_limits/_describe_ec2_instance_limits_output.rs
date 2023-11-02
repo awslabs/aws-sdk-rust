@@ -9,8 +9,10 @@ pub struct DescribeEc2InstanceLimitsOutput {
 }
 impl DescribeEc2InstanceLimitsOutput {
     /// <p>The maximum number of instances for the specified instance type.</p>
-    pub fn ec2_instance_limits(&self) -> ::std::option::Option<&[crate::types::Ec2InstanceLimit]> {
-        self.ec2_instance_limits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_instance_limits.is_none()`.
+    pub fn ec2_instance_limits(&self) -> &[crate::types::Ec2InstanceLimit] {
+        self.ec2_instance_limits.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEc2InstanceLimitsOutput {

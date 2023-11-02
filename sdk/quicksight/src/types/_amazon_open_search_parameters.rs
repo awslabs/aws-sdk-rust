@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonOpenSearchParameters {
     /// <p>The OpenSearch domain.</p>
-    pub domain: ::std::option::Option<::std::string::String>,
+    pub domain: ::std::string::String,
 }
 impl AmazonOpenSearchParameters {
     /// <p>The OpenSearch domain.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
-        self.domain.as_deref()
+    pub fn domain(&self) -> &str {
+        use std::ops::Deref;
+        self.domain.deref()
     }
 }
 impl AmazonOpenSearchParameters {
@@ -28,6 +29,7 @@ pub struct AmazonOpenSearchParametersBuilder {
 }
 impl AmazonOpenSearchParametersBuilder {
     /// <p>The OpenSearch domain.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl AmazonOpenSearchParametersBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`AmazonOpenSearchParameters`](crate::types::AmazonOpenSearchParameters).
-    pub fn build(self) -> crate::types::AmazonOpenSearchParameters {
-        crate::types::AmazonOpenSearchParameters { domain: self.domain }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain`](crate::types::builders::AmazonOpenSearchParametersBuilder::domain)
+    pub fn build(self) -> ::std::result::Result<crate::types::AmazonOpenSearchParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AmazonOpenSearchParameters {
+            domain: self.domain.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain",
+                    "domain was not specified but it is required when building AmazonOpenSearchParameters",
+                )
+            })?,
+        })
     }
 }

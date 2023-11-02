@@ -7,11 +7,11 @@ pub struct RuleGroupResponse {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
-    pub rule_group_arn: ::std::option::Option<::std::string::String>,
+    pub rule_group_arn: ::std::string::String,
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub rule_group_name: ::std::option::Option<::std::string::String>,
+    pub rule_group_name: ::std::string::String,
     /// <p>The unique identifier for the rule group. </p>
-    pub rule_group_id: ::std::option::Option<::std::string::String>,
+    pub rule_group_id: ::std::string::String,
     /// <p>A description of the rule group. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
@@ -40,16 +40,19 @@ impl RuleGroupResponse {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
-    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
-        self.rule_group_arn.as_deref()
+    pub fn rule_group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_group_arn.deref()
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
-        self.rule_group_name.as_deref()
+    pub fn rule_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_group_name.deref()
     }
     /// <p>The unique identifier for the rule group. </p>
-    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
-        self.rule_group_id.as_deref()
+    pub fn rule_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.rule_group_id.deref()
     }
     /// <p>A description of the rule group. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -69,8 +72,10 @@ impl RuleGroupResponse {
         self.rule_group_status.as_ref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The number of capacity units currently consumed by the rule group rules. </p>
     pub fn consumed_capacity(&self) -> ::std::option::Option<i32> {
@@ -127,6 +132,7 @@ impl RuleGroupResponseBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
+    /// This field is required.
     pub fn rule_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -145,6 +151,7 @@ impl RuleGroupResponseBuilder {
         &self.rule_group_arn
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// This field is required.
     pub fn rule_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_name = ::std::option::Option::Some(input.into());
         self
@@ -159,6 +166,7 @@ impl RuleGroupResponseBuilder {
         &self.rule_group_name
     }
     /// <p>The unique identifier for the rule group. </p>
+    /// This field is required.
     pub fn rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_group_id = ::std::option::Option::Some(input.into());
         self
@@ -336,11 +344,30 @@ impl RuleGroupResponseBuilder {
         &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`RuleGroupResponse`](crate::types::RuleGroupResponse).
-    pub fn build(self) -> crate::types::RuleGroupResponse {
-        crate::types::RuleGroupResponse {
-            rule_group_arn: self.rule_group_arn,
-            rule_group_name: self.rule_group_name,
-            rule_group_id: self.rule_group_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`rule_group_arn`](crate::types::builders::RuleGroupResponseBuilder::rule_group_arn)
+    /// - [`rule_group_name`](crate::types::builders::RuleGroupResponseBuilder::rule_group_name)
+    /// - [`rule_group_id`](crate::types::builders::RuleGroupResponseBuilder::rule_group_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupResponse, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RuleGroupResponse {
+            rule_group_arn: self.rule_group_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_group_arn",
+                    "rule_group_arn was not specified but it is required when building RuleGroupResponse",
+                )
+            })?,
+            rule_group_name: self.rule_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_group_name",
+                    "rule_group_name was not specified but it is required when building RuleGroupResponse",
+                )
+            })?,
+            rule_group_id: self.rule_group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "rule_group_id",
+                    "rule_group_id was not specified but it is required when building RuleGroupResponse",
+                )
+            })?,
             description: self.description,
             r#type: self.r#type,
             capacity: self.capacity,
@@ -352,6 +379,6 @@ impl RuleGroupResponseBuilder {
             source_metadata: self.source_metadata,
             sns_topic: self.sns_topic,
             last_modified_time: self.last_modified_time,
-        }
+        })
     }
 }

@@ -34,8 +34,10 @@ impl CreateSubscriptionGrantInput {
         self.granted_entity.as_ref()
     }
     /// <p>The names of the assets for which the subscription grant is created.</p>
-    pub fn asset_target_names(&self) -> ::std::option::Option<&[crate::types::AssetTargetNameMap]> {
-        self.asset_target_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_target_names.is_none()`.
+    pub fn asset_target_names(&self) -> &[crate::types::AssetTargetNameMap] {
+        self.asset_target_names.as_deref().unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ pub struct CreateSubscriptionGrantInputBuilder {
 }
 impl CreateSubscriptionGrantInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the subscription grant is created.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl CreateSubscriptionGrantInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the environment in which the subscription grant is created.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl CreateSubscriptionGrantInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the subscription target for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn subscription_target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_target_identifier = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl CreateSubscriptionGrantInputBuilder {
         &self.subscription_target_identifier
     }
     /// <p>The entity to which the subscription is to be granted.</p>
+    /// This field is required.
     pub fn granted_entity(mut self, input: crate::types::GrantedEntityInput) -> Self {
         self.granted_entity = ::std::option::Option::Some(input);
         self

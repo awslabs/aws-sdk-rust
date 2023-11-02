@@ -49,6 +49,7 @@ pub struct UpdateNotificationInputBuilder {
 }
 impl UpdateNotificationInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl UpdateNotificationInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget whose notification you want to update.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl UpdateNotificationInputBuilder {
         &self.budget_name
     }
     /// <p>The previous notification that is associated with a budget.</p>
+    /// This field is required.
     pub fn old_notification(mut self, input: crate::types::Notification) -> Self {
         self.old_notification = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl UpdateNotificationInputBuilder {
         &self.old_notification
     }
     /// <p>The updated notification to be associated with a budget.</p>
+    /// This field is required.
     pub fn new_notification(mut self, input: crate::types::Notification) -> Self {
         self.new_notification = ::std::option::Option::Some(input);
         self

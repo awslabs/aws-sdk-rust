@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisionedModelThroughputOutput {
     /// <p>The ARN for this provisioned throughput.</p>
-    pub provisioned_model_arn: ::std::option::Option<::std::string::String>,
+    pub provisioned_model_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateProvisionedModelThroughputOutput {
     /// <p>The ARN for this provisioned throughput.</p>
-    pub fn provisioned_model_arn(&self) -> ::std::option::Option<&str> {
-        self.provisioned_model_arn.as_deref()
+    pub fn provisioned_model_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.provisioned_model_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateProvisionedModelThroughputOutput {
@@ -34,6 +35,7 @@ pub struct CreateProvisionedModelThroughputOutputBuilder {
 }
 impl CreateProvisionedModelThroughputOutputBuilder {
     /// <p>The ARN for this provisioned throughput.</p>
+    /// This field is required.
     pub fn provisioned_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioned_model_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,24 @@ impl CreateProvisionedModelThroughputOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateProvisionedModelThroughputOutput`](crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputOutput).
-    pub fn build(self) -> crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputOutput {
-        crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputOutput {
-            provisioned_model_arn: self.provisioned_model_arn,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`provisioned_model_arn`](crate::operation::create_provisioned_model_throughput::builders::CreateProvisionedModelThroughputOutputBuilder::provisioned_model_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputOutput {
+                provisioned_model_arn: self.provisioned_model_arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "provisioned_model_arn",
+                        "provisioned_model_arn was not specified but it is required when building CreateProvisionedModelThroughputOutput",
+                    )
+                })?,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

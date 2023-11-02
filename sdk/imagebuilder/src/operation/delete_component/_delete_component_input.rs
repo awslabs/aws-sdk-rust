@@ -27,6 +27,7 @@ pub struct DeleteComponentInputBuilder {
 }
 impl DeleteComponentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
+    /// This field is required.
     pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_build_version_arn = ::std::option::Option::Some(input.into());
         self

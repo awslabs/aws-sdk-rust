@@ -41,6 +41,7 @@ pub struct UpdateServerEngineAttributesInputBuilder {
 }
 impl UpdateServerEngineAttributesInputBuilder {
     /// <p>The name of the server to update. </p>
+    /// This field is required.
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateServerEngineAttributesInputBuilder {
         &self.server_name
     }
     /// <p>The name of the engine attribute to update. </p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self

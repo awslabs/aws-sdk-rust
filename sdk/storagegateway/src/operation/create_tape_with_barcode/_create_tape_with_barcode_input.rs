@@ -65,8 +65,10 @@ impl CreateTapeWithBarcodeInput {
     /// <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateTapeWithBarcodeInput {
@@ -91,6 +93,7 @@ pub struct CreateTapeWithBarcodeInputBuilder {
 }
 impl CreateTapeWithBarcodeInputBuilder {
     /// <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +110,7 @@ impl CreateTapeWithBarcodeInputBuilder {
     /// <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
     /// <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>
     /// </note>
+    /// This field is required.
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
         self.tape_size_in_bytes = ::std::option::Option::Some(input);
         self
@@ -127,6 +131,7 @@ impl CreateTapeWithBarcodeInputBuilder {
     /// <p>The barcode that you want to assign to the tape.</p> <note>
     /// <p>Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.</p>
     /// </note>
+    /// This field is required.
     pub fn tape_barcode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_barcode = ::std::option::Option::Some(input.into());
         self

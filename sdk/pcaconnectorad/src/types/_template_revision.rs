@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateRevision {
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
-    pub major_revision: ::std::option::Option<i32>,
+    pub major_revision: i32,
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
-    pub minor_revision: ::std::option::Option<i32>,
+    pub minor_revision: i32,
 }
 impl TemplateRevision {
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
-    pub fn major_revision(&self) -> ::std::option::Option<i32> {
+    pub fn major_revision(&self) -> i32 {
         self.major_revision
     }
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
-    pub fn minor_revision(&self) -> ::std::option::Option<i32> {
+    pub fn minor_revision(&self) -> i32 {
         self.minor_revision
     }
 }
@@ -35,6 +35,7 @@ pub struct TemplateRevisionBuilder {
 }
 impl TemplateRevisionBuilder {
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
+    /// This field is required.
     pub fn major_revision(mut self, input: i32) -> Self {
         self.major_revision = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl TemplateRevisionBuilder {
         &self.major_revision
     }
     /// <p>The revision version of the template. Re-enrolling all certificate holders will increment the major revision.</p>
+    /// This field is required.
     pub fn minor_revision(mut self, input: i32) -> Self {
         self.minor_revision = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl TemplateRevisionBuilder {
         &self.minor_revision
     }
     /// Consumes the builder and constructs a [`TemplateRevision`](crate::types::TemplateRevision).
-    pub fn build(self) -> crate::types::TemplateRevision {
-        crate::types::TemplateRevision {
-            major_revision: self.major_revision,
-            minor_revision: self.minor_revision,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`major_revision`](crate::types::builders::TemplateRevisionBuilder::major_revision)
+    /// - [`minor_revision`](crate::types::builders::TemplateRevisionBuilder::minor_revision)
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateRevision, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TemplateRevision {
+            major_revision: self.major_revision.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "major_revision",
+                    "major_revision was not specified but it is required when building TemplateRevision",
+                )
+            })?,
+            minor_revision: self.minor_revision.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "minor_revision",
+                    "minor_revision was not specified but it is required when building TemplateRevision",
+                )
+            })?,
+        })
     }
 }

@@ -28,6 +28,7 @@ pub struct DescribeLocationSmbInputBuilder {
 }
 impl DescribeLocationSmbInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
+    /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self

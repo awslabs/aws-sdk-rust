@@ -69,6 +69,7 @@ impl ListWorkflowStepExecutionsInputBuilder {
         &self.next_token
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
+    /// This field is required.
     pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self

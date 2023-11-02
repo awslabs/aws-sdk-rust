@@ -34,6 +34,7 @@ pub struct AssociateDelegationSignerToDomainInputBuilder {
 }
 impl AssociateDelegationSignerToDomainInputBuilder {
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateDelegationSignerToDomainInputBuilder {
         &self.domain_name
     }
     /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+    /// This field is required.
     pub fn signing_attributes(mut self, input: crate::types::DnssecSigningAttributes) -> Self {
         self.signing_attributes = ::std::option::Option::Some(input);
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fully_qualified_name: ::std::option::Option<::std::string::String>,
+    pub fully_qualified_name: ::std::string::String,
     /// <p>A brief description of the branch.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
@@ -15,8 +15,9 @@ pub struct Branch {
 }
 impl Branch {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
-    pub fn fully_qualified_name(&self) -> ::std::option::Option<&str> {
-        self.fully_qualified_name.as_deref()
+    pub fn fully_qualified_name(&self) -> &str {
+        use std::ops::Deref;
+        self.fully_qualified_name.deref()
     }
     /// <p>A brief description of the branch.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -49,6 +50,7 @@ pub struct BranchBuilder {
 }
 impl BranchBuilder {
     /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
+    /// This field is required.
     pub fn fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fully_qualified_name = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +107,19 @@ impl BranchBuilder {
         &self.comment
     }
     /// Consumes the builder and constructs a [`Branch`](crate::types::Branch).
-    pub fn build(self) -> crate::types::Branch {
-        crate::types::Branch {
-            fully_qualified_name: self.fully_qualified_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`fully_qualified_name`](crate::types::builders::BranchBuilder::fully_qualified_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Branch, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Branch {
+            fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fully_qualified_name",
+                    "fully_qualified_name was not specified but it is required when building Branch",
+                )
+            })?,
             description: self.description,
             deprecation_message: self.deprecation_message,
             comment: self.comment,
-        }
+        })
     }
 }

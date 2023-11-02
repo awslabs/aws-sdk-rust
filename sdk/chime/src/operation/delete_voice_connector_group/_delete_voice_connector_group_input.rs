@@ -27,6 +27,7 @@ pub struct DeleteVoiceConnectorGroupInputBuilder {
 }
 impl DeleteVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    /// This field is required.
     pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self

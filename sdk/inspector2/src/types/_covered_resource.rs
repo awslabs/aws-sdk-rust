@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoveredResource {
     /// <p>The type of the covered resource.</p>
-    pub resource_type: ::std::option::Option<crate::types::CoverageResourceType>,
+    pub resource_type: crate::types::CoverageResourceType,
     /// <p>The ID of the covered resource.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The Amazon Inspector scan type covering the resource.</p>
-    pub scan_type: ::std::option::Option<crate::types::ScanType>,
+    pub scan_type: crate::types::ScanType,
     /// <p>The status of the scan covering the resource.</p>
     pub scan_status: ::std::option::Option<crate::types::ScanStatus>,
     /// <p>An object that contains details about the metadata.</p>
@@ -21,20 +21,22 @@ pub struct CoveredResource {
 }
 impl CoveredResource {
     /// <p>The type of the covered resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::CoverageResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::CoverageResourceType {
+        &self.resource_type
     }
     /// <p>The ID of the covered resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
-        self.scan_type.as_ref()
+    pub fn scan_type(&self) -> &crate::types::ScanType {
+        &self.scan_type
     }
     /// <p>The status of the scan covering the resource.</p>
     pub fn scan_status(&self) -> ::std::option::Option<&crate::types::ScanStatus> {
@@ -70,6 +72,7 @@ pub struct CoveredResourceBuilder {
 }
 impl CoveredResourceBuilder {
     /// <p>The type of the covered resource.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::CoverageResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -84,6 +87,7 @@ impl CoveredResourceBuilder {
         &self.resource_type
     }
     /// <p>The ID of the covered resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl CoveredResourceBuilder {
         &self.resource_id
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +117,7 @@ impl CoveredResourceBuilder {
         &self.account_id
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
+    /// This field is required.
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
         self.scan_type = ::std::option::Option::Some(input);
         self
@@ -168,15 +174,40 @@ impl CoveredResourceBuilder {
         &self.last_scanned_at
     }
     /// Consumes the builder and constructs a [`CoveredResource`](crate::types::CoveredResource).
-    pub fn build(self) -> crate::types::CoveredResource {
-        crate::types::CoveredResource {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            account_id: self.account_id,
-            scan_type: self.scan_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::CoveredResourceBuilder::resource_type)
+    /// - [`resource_id`](crate::types::builders::CoveredResourceBuilder::resource_id)
+    /// - [`account_id`](crate::types::builders::CoveredResourceBuilder::account_id)
+    /// - [`scan_type`](crate::types::builders::CoveredResourceBuilder::scan_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CoveredResource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CoveredResource {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building CoveredResource",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building CoveredResource",
+                )
+            })?,
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building CoveredResource",
+                )
+            })?,
+            scan_type: self.scan_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scan_type",
+                    "scan_type was not specified but it is required when building CoveredResource",
+                )
+            })?,
             scan_status: self.scan_status,
             resource_metadata: self.resource_metadata,
             last_scanned_at: self.last_scanned_at,
-        }
+        })
     }
 }

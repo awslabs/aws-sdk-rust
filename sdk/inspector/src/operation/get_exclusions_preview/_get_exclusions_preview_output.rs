@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExclusionsPreviewOutput {
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
-    pub preview_status: ::std::option::Option<crate::types::PreviewStatus>,
+    pub preview_status: crate::types::PreviewStatus,
     /// <p>Information about the exclusions included in the preview.</p>
     pub exclusion_previews: ::std::option::Option<::std::vec::Vec<crate::types::ExclusionPreview>>,
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -13,12 +13,14 @@ pub struct GetExclusionsPreviewOutput {
 }
 impl GetExclusionsPreviewOutput {
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
-    pub fn preview_status(&self) -> ::std::option::Option<&crate::types::PreviewStatus> {
-        self.preview_status.as_ref()
+    pub fn preview_status(&self) -> &crate::types::PreviewStatus {
+        &self.preview_status
     }
     /// <p>Information about the exclusions included in the preview.</p>
-    pub fn exclusion_previews(&self) -> ::std::option::Option<&[crate::types::ExclusionPreview]> {
-        self.exclusion_previews.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_previews.is_none()`.
+    pub fn exclusion_previews(&self) -> &[crate::types::ExclusionPreview] {
+        self.exclusion_previews.as_deref().unwrap_or_default()
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +50,7 @@ pub struct GetExclusionsPreviewOutputBuilder {
 }
 impl GetExclusionsPreviewOutputBuilder {
     /// <p>Specifies the status of the request to generate an exclusions preview.</p>
+    /// This field is required.
     pub fn preview_status(mut self, input: crate::types::PreviewStatus) -> Self {
         self.preview_status = ::std::option::Option::Some(input);
         self
@@ -105,12 +108,22 @@ impl GetExclusionsPreviewOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetExclusionsPreviewOutput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput).
-    pub fn build(self) -> crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput {
-        crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput {
-            preview_status: self.preview_status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`preview_status`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder::preview_status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput {
+            preview_status: self.preview_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "preview_status",
+                    "preview_status was not specified but it is required when building GetExclusionsPreviewOutput",
+                )
+            })?,
             exclusion_previews: self.exclusion_previews,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

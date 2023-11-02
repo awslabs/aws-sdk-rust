@@ -11,8 +11,10 @@ pub struct ListAvailableResourceMetricsOutput {
 }
 impl ListAvailableResourceMetricsOutput {
     /// <p>An array of metrics available to query. Each array element contains the full name, description, and unit of the metric. </p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::ResponseResourceMetric]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::ResponseResourceMetric] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

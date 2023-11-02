@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEdgePackagingJob`](crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`edge_packaging_job_name(impl Into<String>)`](crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder::edge_packaging_job_name) / [`set_edge_packaging_job_name(Option<String>)`](crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder::set_edge_packaging_job_name): <p>The name of the edge packaging job.</p>
+    ///   - [`edge_packaging_job_name(impl Into<String>)`](crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder::edge_packaging_job_name) / [`set_edge_packaging_job_name(Option<String>)`](crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobFluentBuilder::set_edge_packaging_job_name):<br>required: **true**<br><p>The name of the edge packaging job.</p><br>
     /// - On success, responds with [`DescribeEdgePackagingJobOutput`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput) with field(s):
     ///   - [`edge_packaging_job_arn(Option<String>)`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput::edge_packaging_job_arn): <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
     ///   - [`edge_packaging_job_name(Option<String>)`](crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput::edge_packaging_job_name): <p>The name of the edge packaging job.</p>

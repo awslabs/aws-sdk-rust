@@ -11,12 +11,16 @@ pub struct AclPendingChanges {
 }
 impl AclPendingChanges {
     /// <p>A list of user names being removed from the ACL</p>
-    pub fn user_names_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_names_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names_to_remove.is_none()`.
+    pub fn user_names_to_remove(&self) -> &[::std::string::String] {
+        self.user_names_to_remove.as_deref().unwrap_or_default()
     }
     /// <p>A list of users being added to the ACL</p>
-    pub fn user_names_to_add(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_names_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_names_to_add.is_none()`.
+    pub fn user_names_to_add(&self) -> &[::std::string::String] {
+        self.user_names_to_add.as_deref().unwrap_or_default()
     }
 }
 impl AclPendingChanges {

@@ -69,6 +69,7 @@ pub struct CreateAlertInputBuilder {
 }
 impl CreateAlertInputBuilder {
     /// <p>The name of the alert.</p>
+    /// This field is required.
     pub fn alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl CreateAlertInputBuilder {
         &self.alert_description
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
+    /// This field is required.
     pub fn anomaly_detector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.anomaly_detector_arn = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +127,7 @@ impl CreateAlertInputBuilder {
         &self.anomaly_detector_arn
     }
     /// <p>Action that will be triggered when there is an alert.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

@@ -13,12 +13,16 @@ pub struct SkewedInfo {
 }
 impl SkewedInfo {
     /// <p>A list of names of columns that contain skewed values.</p>
-    pub fn skewed_column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.skewed_column_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.skewed_column_names.is_none()`.
+    pub fn skewed_column_names(&self) -> &[::std::string::String] {
+        self.skewed_column_names.as_deref().unwrap_or_default()
     }
     /// <p>A list of values that appear so frequently as to be considered skewed.</p>
-    pub fn skewed_column_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.skewed_column_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.skewed_column_values.is_none()`.
+    pub fn skewed_column_values(&self) -> &[::std::string::String] {
+        self.skewed_column_values.as_deref().unwrap_or_default()
     }
     /// <p>A mapping of skewed values to the columns that contain them.</p>
     pub fn skewed_column_value_location_maps(

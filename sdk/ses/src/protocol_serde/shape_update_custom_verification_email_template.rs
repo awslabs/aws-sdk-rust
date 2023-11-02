@@ -34,8 +34,8 @@ pub fn de_update_custom_verification_email_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "CustomVerificationEmailTemplateDoesNotExist" => crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateError::CustomVerificationEmailTemplateDoesNotExistException({
@@ -50,8 +50,8 @@ pub fn de_update_custom_verification_email_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "FromEmailAddressNotVerified" => crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateError::FromEmailAddressNotVerifiedException({
@@ -66,8 +66,8 @@ pub fn de_update_custom_verification_email_template_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_custom_verification_email_template::UpdateCustomVerificationEmailTemplateError::generic(generic)

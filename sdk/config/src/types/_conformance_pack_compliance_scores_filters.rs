@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackComplianceScoresFilters {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
-    pub conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub conformance_pack_names: ::std::vec::Vec<::std::string::String>,
 }
 impl ConformancePackComplianceScoresFilters {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
-    pub fn conformance_pack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.conformance_pack_names.as_deref()
+    pub fn conformance_pack_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.conformance_pack_names.deref()
     }
 }
 impl ConformancePackComplianceScoresFilters {
@@ -48,9 +49,18 @@ impl ConformancePackComplianceScoresFiltersBuilder {
         &self.conformance_pack_names
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceScoresFilters`](crate::types::ConformancePackComplianceScoresFilters).
-    pub fn build(self) -> crate::types::ConformancePackComplianceScoresFilters {
-        crate::types::ConformancePackComplianceScoresFilters {
-            conformance_pack_names: self.conformance_pack_names,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`conformance_pack_names`](crate::types::builders::ConformancePackComplianceScoresFiltersBuilder::conformance_pack_names)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ConformancePackComplianceScoresFilters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConformancePackComplianceScoresFilters {
+            conformance_pack_names: self.conformance_pack_names.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conformance_pack_names",
+                    "conformance_pack_names was not specified but it is required when building ConformancePackComplianceScoresFilters",
+                )
+            })?,
+        })
     }
 }

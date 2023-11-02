@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFeatureInput {
     /// <p>The name or ARN of the project that contains the feature.</p>
-    pub project: ::std::option::Option<::std::string::String>,
+    pub project: ::std::string::String,
     /// <p>The name of the feature that you want to retrieve information for.</p>
-    pub feature: ::std::option::Option<::std::string::String>,
+    pub feature: ::std::string::String,
 }
 impl GetFeatureInput {
     /// <p>The name or ARN of the project that contains the feature.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
-        self.project.as_deref()
+    pub fn project(&self) -> &str {
+        use std::ops::Deref;
+        self.project.deref()
     }
     /// <p>The name of the feature that you want to retrieve information for.</p>
-    pub fn feature(&self) -> ::std::option::Option<&str> {
-        self.feature.as_deref()
+    pub fn feature(&self) -> &str {
+        use std::ops::Deref;
+        self.feature.deref()
     }
 }
 impl GetFeatureInput {
@@ -34,6 +36,7 @@ pub struct GetFeatureInputBuilder {
 }
 impl GetFeatureInputBuilder {
     /// <p>The name or ARN of the project that contains the feature.</p>
+    /// This field is required.
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetFeatureInputBuilder {
         &self.project
     }
     /// <p>The name of the feature that you want to retrieve information for.</p>
+    /// This field is required.
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
         self
@@ -62,10 +66,23 @@ impl GetFeatureInputBuilder {
         &self.feature
     }
     /// Consumes the builder and constructs a [`GetFeatureInput`](crate::operation::get_feature::GetFeatureInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`project`](crate::operation::get_feature::builders::GetFeatureInputBuilder::project)
+    /// - [`feature`](crate::operation::get_feature::builders::GetFeatureInputBuilder::feature)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_feature::GetFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_feature::GetFeatureInput {
-            project: self.project,
-            feature: self.feature,
+            project: self.project.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project",
+                    "project was not specified but it is required when building GetFeatureInput",
+                )
+            })?,
+            feature: self.feature.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "feature",
+                    "feature was not specified but it is required when building GetFeatureInput",
+                )
+            })?,
         })
     }
 }

@@ -44,8 +44,10 @@ impl CreateDatasetInput {
         self.dataset_type.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateDatasetInput {
@@ -67,6 +69,7 @@ pub struct CreateDatasetInputBuilder {
 }
 impl CreateDatasetInputBuilder {
     /// <p>The name for the dataset.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +84,7 @@ impl CreateDatasetInputBuilder {
         &self.name
     }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
+    /// This field is required.
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +99,7 @@ impl CreateDatasetInputBuilder {
         &self.schema_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -115,6 +120,7 @@ impl CreateDatasetInputBuilder {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
         self

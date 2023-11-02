@@ -90,6 +90,7 @@ pub struct CreateCalculatedAttributeDefinitionInputBuilder {
 }
 impl CreateCalculatedAttributeDefinitionInputBuilder {
     /// <p>The unique name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         &self.domain_name
     }
     /// <p>The unique name of the calculated attribute.</p>
+    /// This field is required.
     pub fn calculated_attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +148,7 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         &self.description
     }
     /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
+    /// This field is required.
     pub fn attribute_details(mut self, input: crate::types::AttributeDetails) -> Self {
         self.attribute_details = ::std::option::Option::Some(input);
         self
@@ -174,6 +177,7 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         &self.conditions
     }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
+    /// This field is required.
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
         self

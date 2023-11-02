@@ -6,7 +6,7 @@ pub struct ListEnvironmentTemplatesOutput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of environment templates with detail data.</p>
-    pub templates: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
+    pub templates: ::std::vec::Vec<crate::types::EnvironmentTemplateSummary>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentTemplatesOutput {
@@ -15,8 +15,9 @@ impl ListEnvironmentTemplatesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of environment templates with detail data.</p>
-    pub fn templates(&self) -> ::std::option::Option<&[crate::types::EnvironmentTemplateSummary]> {
-        self.templates.as_deref()
+    pub fn templates(&self) -> &[crate::types::EnvironmentTemplateSummary] {
+        use std::ops::Deref;
+        self.templates.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListEnvironmentTemplatesOutput {
@@ -84,11 +85,23 @@ impl ListEnvironmentTemplatesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
-        crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`templates`](crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder::templates)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
             next_token: self.next_token,
-            templates: self.templates,
+            templates: self.templates.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "templates",
+                    "templates was not specified but it is required when building ListEnvironmentTemplatesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl SimulationAppEndpointInfo {
         self.address.as_deref()
     }
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-    pub fn ingress_port_mappings(&self) -> ::std::option::Option<&[crate::types::SimulationAppPortMapping]> {
-        self.ingress_port_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ingress_port_mappings.is_none()`.
+    pub fn ingress_port_mappings(&self) -> &[crate::types::SimulationAppPortMapping] {
+        self.ingress_port_mappings.as_deref().unwrap_or_default()
     }
 }
 impl SimulationAppEndpointInfo {

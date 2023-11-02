@@ -27,6 +27,7 @@ pub struct GetQueryResultsInputBuilder {
 }
 impl GetQueryResultsInputBuilder {
     /// <p>The ID number of the query.</p>
+    /// This field is required.
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self

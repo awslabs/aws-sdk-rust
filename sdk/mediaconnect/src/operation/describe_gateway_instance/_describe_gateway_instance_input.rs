@@ -27,6 +27,7 @@ pub struct DescribeGatewayInstanceInputBuilder {
 }
 impl DescribeGatewayInstanceInputBuilder {
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// This field is required.
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self

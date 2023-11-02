@@ -9,8 +9,10 @@ pub struct DescribeEntityAggregatesOutput {
 }
 impl DescribeEntityAggregatesOutput {
     /// <p>The number of entities that are affected by each of the specified events.</p>
-    pub fn entity_aggregates(&self) -> ::std::option::Option<&[crate::types::EntityAggregate]> {
-        self.entity_aggregates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_aggregates.is_none()`.
+    pub fn entity_aggregates(&self) -> &[crate::types::EntityAggregate] {
+        self.entity_aggregates.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeEntityAggregatesOutput {

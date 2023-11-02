@@ -34,6 +34,7 @@ pub struct VerifySmsSandboxPhoneNumberInputBuilder {
 }
 impl VerifySmsSandboxPhoneNumberInputBuilder {
     /// <p>The destination phone number to verify.</p>
+    /// This field is required.
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl VerifySmsSandboxPhoneNumberInputBuilder {
         &self.phone_number
     }
     /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+    /// This field is required.
     pub fn one_time_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.one_time_password = ::std::option::Option::Some(input.into());
         self

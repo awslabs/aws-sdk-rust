@@ -3,11 +3,11 @@ pub fn ser_s3_bucket(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3Bucket,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.bucket_name {
-        object.key("bucketName").string(var_1.as_str());
+    {
+        object.key("bucketName").string(input.bucket_name.as_str());
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("prefix").string(var_2.as_str());
+    if let Some(var_1) = &input.prefix {
+        object.key("prefix").string(var_1.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::s3_bucket_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

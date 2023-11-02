@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAssessmentRunsOutput {
     /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
-    pub assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub assessment_run_arns: ::std::vec::Vec<::std::string::String>,
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAssessmentRunsOutput {
     /// <p>A list of ARNs that specifies the assessment runs that are returned by the action.</p>
-    pub fn assessment_run_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.assessment_run_arns.as_deref()
+    pub fn assessment_run_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.assessment_run_arns.deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListAssessmentRunsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAssessmentRunsOutput`](crate::operation::list_assessment_runs::ListAssessmentRunsOutput).
-    pub fn build(self) -> crate::operation::list_assessment_runs::ListAssessmentRunsOutput {
-        crate::operation::list_assessment_runs::ListAssessmentRunsOutput {
-            assessment_run_arns: self.assessment_run_arns,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assessment_run_arns`](crate::operation::list_assessment_runs::builders::ListAssessmentRunsOutputBuilder::assessment_run_arns)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_assessment_runs::ListAssessmentRunsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_assessment_runs::ListAssessmentRunsOutput {
+            assessment_run_arns: self.assessment_run_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assessment_run_arns",
+                    "assessment_run_arns was not specified but it is required when building ListAssessmentRunsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

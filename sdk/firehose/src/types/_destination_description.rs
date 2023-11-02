@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationDescription {
     /// <p>The ID of the destination.</p>
-    pub destination_id: ::std::option::Option<::std::string::String>,
+    pub destination_id: ::std::string::String,
     /// <p>[Deprecated] The destination in Amazon S3.</p>
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The destination in Amazon S3.</p>
@@ -25,8 +25,9 @@ pub struct DestinationDescription {
 }
 impl DestinationDescription {
     /// <p>The ID of the destination.</p>
-    pub fn destination_id(&self) -> ::std::option::Option<&str> {
-        self.destination_id.as_deref()
+    pub fn destination_id(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_id.deref()
     }
     /// <p>[Deprecated] The destination in Amazon S3.</p>
     pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
@@ -89,6 +90,7 @@ pub struct DestinationDescriptionBuilder {
 }
 impl DestinationDescriptionBuilder {
     /// <p>The ID of the destination.</p>
+    /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
@@ -234,9 +236,16 @@ impl DestinationDescriptionBuilder {
         &self.amazon_open_search_serverless_destination_description
     }
     /// Consumes the builder and constructs a [`DestinationDescription`](crate::types::DestinationDescription).
-    pub fn build(self) -> crate::types::DestinationDescription {
-        crate::types::DestinationDescription {
-            destination_id: self.destination_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`destination_id`](crate::types::builders::DestinationDescriptionBuilder::destination_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationDescription, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DestinationDescription {
+            destination_id: self.destination_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_id",
+                    "destination_id was not specified but it is required when building DestinationDescription",
+                )
+            })?,
             s3_destination_description: self.s3_destination_description,
             extended_s3_destination_description: self.extended_s3_destination_description,
             redshift_destination_description: self.redshift_destination_description,
@@ -245,6 +254,6 @@ impl DestinationDescriptionBuilder {
             splunk_destination_description: self.splunk_destination_description,
             http_endpoint_destination_description: self.http_endpoint_destination_description,
             amazon_open_search_serverless_destination_description: self.amazon_open_search_serverless_destination_description,
-        }
+        })
     }
 }

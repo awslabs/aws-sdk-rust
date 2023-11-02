@@ -6,7 +6,7 @@
 pub struct ReportSetting {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-    pub report_template: ::std::option::Option<::std::string::String>,
+    pub report_template: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
     pub framework_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of frameworks a report covers.</p>
@@ -21,28 +21,37 @@ pub struct ReportSetting {
 impl ReportSetting {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
-    pub fn report_template(&self) -> ::std::option::Option<&str> {
-        self.report_template.as_deref()
+    pub fn report_template(&self) -> &str {
+        use std::ops::Deref;
+        self.report_template.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
-    pub fn framework_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.framework_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.framework_arns.is_none()`.
+    pub fn framework_arns(&self) -> &[::std::string::String] {
+        self.framework_arns.as_deref().unwrap_or_default()
     }
     /// <p>The number of frameworks a report covers.</p>
     pub fn number_of_frameworks(&self) -> i32 {
         self.number_of_frameworks
     }
     /// <p>These are the accounts to be included in the report.</p>
-    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
+    pub fn accounts(&self) -> &[::std::string::String] {
+        self.accounts.as_deref().unwrap_or_default()
     }
     /// <p>These are the Organizational Units to be included in the report.</p>
-    pub fn organization_units(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.organization_units.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_units.is_none()`.
+    pub fn organization_units(&self) -> &[::std::string::String] {
+        self.organization_units.as_deref().unwrap_or_default()
     }
     /// <p>These are the Regions to be included in the report.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
     }
 }
 impl ReportSetting {
@@ -66,6 +75,7 @@ pub struct ReportSettingBuilder {
 impl ReportSettingBuilder {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// This field is required.
     pub fn report_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_template = ::std::option::Option::Some(input.into());
         self
@@ -176,14 +186,21 @@ impl ReportSettingBuilder {
         &self.regions
     }
     /// Consumes the builder and constructs a [`ReportSetting`](crate::types::ReportSetting).
-    pub fn build(self) -> crate::types::ReportSetting {
-        crate::types::ReportSetting {
-            report_template: self.report_template,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`report_template`](crate::types::builders::ReportSettingBuilder::report_template)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportSetting, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReportSetting {
+            report_template: self.report_template.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "report_template",
+                    "report_template was not specified but it is required when building ReportSetting",
+                )
+            })?,
             framework_arns: self.framework_arns,
             number_of_frameworks: self.number_of_frameworks.unwrap_or_default(),
             accounts: self.accounts,
             organization_units: self.organization_units,
             regions: self.regions,
-        }
+        })
     }
 }

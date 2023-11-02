@@ -39,8 +39,10 @@ impl CreateReplaceRootVolumeTaskInput {
         self.dry_run
     }
     /// <p>The tags to apply to the root volume replacement task.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the AMI to use to restore the root volume. The specified AMI must have the same product code, billing information, architecture type, and virtualization type as that of the instance.</p>
     /// <p>If you want to restore the replacement volume from a specific snapshot, or if you want to restore it to its launch state, omit this parameter.</p>
@@ -73,6 +75,7 @@ pub struct CreateReplaceRootVolumeTaskInputBuilder {
 }
 impl CreateReplaceRootVolumeTaskInputBuilder {
     /// <p>The ID of the instance for which to replace the root volume.</p>
+    /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self

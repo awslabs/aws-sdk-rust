@@ -36,8 +36,10 @@ impl Event {
     }
     /// <p>A list of the event categories.</p>
     /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>

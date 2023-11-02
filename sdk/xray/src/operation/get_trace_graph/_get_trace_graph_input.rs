@@ -10,8 +10,10 @@ pub struct GetTraceGraphInput {
 }
 impl GetTraceGraphInput {
     /// <p>Trace IDs of requests for which to generate a service graph.</p>
-    pub fn trace_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.trace_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trace_ids.is_none()`.
+    pub fn trace_ids(&self) -> &[::std::string::String] {
+        self.trace_ids.as_deref().unwrap_or_default()
     }
     /// <p>Pagination token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

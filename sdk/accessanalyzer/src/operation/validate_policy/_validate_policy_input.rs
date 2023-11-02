@@ -10,10 +10,10 @@ pub struct ValidatePolicyInput {
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    pub policy_document: ::std::option::Option<::std::string::String>,
+    pub policy_document: ::std::string::String,
     /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
-    pub policy_type: ::std::option::Option<crate::types::PolicyType>,
+    pub policy_type: crate::types::PolicyType,
     /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
     /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
     pub validate_policy_resource_type: ::std::option::Option<crate::types::ValidatePolicyResourceType>,
@@ -32,13 +32,14 @@ impl ValidatePolicyInput {
         self.next_token.as_deref()
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
-        self.policy_document.as_deref()
+    pub fn policy_document(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_document.deref()
     }
     /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
-        self.policy_type.as_ref()
+    pub fn policy_type(&self) -> &crate::types::PolicyType {
+        &self.policy_type
     }
     /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
     /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
@@ -108,6 +109,7 @@ impl ValidatePolicyInputBuilder {
         &self.next_token
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
+    /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
@@ -123,6 +125,7 @@ impl ValidatePolicyInputBuilder {
     }
     /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
+    /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
@@ -156,6 +159,9 @@ impl ValidatePolicyInputBuilder {
         &self.validate_policy_resource_type
     }
     /// Consumes the builder and constructs a [`ValidatePolicyInput`](crate::operation::validate_policy::ValidatePolicyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_document`](crate::operation::validate_policy::builders::ValidatePolicyInputBuilder::policy_document)
+    /// - [`policy_type`](crate::operation::validate_policy::builders::ValidatePolicyInputBuilder::policy_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
@@ -163,8 +169,18 @@ impl ValidatePolicyInputBuilder {
             locale: self.locale,
             max_results: self.max_results,
             next_token: self.next_token,
-            policy_document: self.policy_document,
-            policy_type: self.policy_type,
+            policy_document: self.policy_document.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_document",
+                    "policy_document was not specified but it is required when building ValidatePolicyInput",
+                )
+            })?,
+            policy_type: self.policy_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_type",
+                    "policy_type was not specified but it is required when building ValidatePolicyInput",
+                )
+            })?,
             validate_policy_resource_type: self.validate_policy_resource_type,
         })
     }

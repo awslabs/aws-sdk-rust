@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
 }
 impl RejectEnvironmentAccountConnectionInput {
     /// <p>The ID of the environment account connection to reject.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl RejectEnvironmentAccountConnectionInput {
@@ -27,6 +28,7 @@ pub struct RejectEnvironmentAccountConnectionInputBuilder {
 }
 impl RejectEnvironmentAccountConnectionInputBuilder {
     /// <p>The ID of the environment account connection to reject.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -41,12 +43,23 @@ impl RejectEnvironmentAccountConnectionInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`RejectEnvironmentAccountConnectionInput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput { id: self.id })
+        ::std::result::Result::Ok(
+            crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput {
+                id: self.id.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "id was not specified but it is required when building RejectEnvironmentAccountConnectionInput",
+                    )
+                })?,
+            },
+        )
     }
 }

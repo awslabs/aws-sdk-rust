@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationData {
     /// <p>The identifier of the recommendation.</p>
-    pub recommendation_id: ::std::option::Option<::std::string::String>,
+    pub recommendation_id: ::std::string::String,
     /// <p>The recommended document.</p>
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>The relevance score of the recommendation.</p>
@@ -17,8 +17,9 @@ pub struct RecommendationData {
 }
 impl RecommendationData {
     /// <p>The identifier of the recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
-        self.recommendation_id.as_deref()
+    pub fn recommendation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.recommendation_id.deref()
     }
     /// <p>The recommended document.</p>
     pub fn document(&self) -> ::std::option::Option<&crate::types::Document> {
@@ -56,6 +57,7 @@ pub struct RecommendationDataBuilder {
 }
 impl RecommendationDataBuilder {
     /// <p>The identifier of the recommendation.</p>
+    /// This field is required.
     pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommendation_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl RecommendationDataBuilder {
         &self.recommendation_id
     }
     /// <p>The recommended document.</p>
+    /// This field is required.
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.document = ::std::option::Option::Some(input);
         self
@@ -126,13 +129,20 @@ impl RecommendationDataBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`RecommendationData`](crate::types::RecommendationData).
-    pub fn build(self) -> crate::types::RecommendationData {
-        crate::types::RecommendationData {
-            recommendation_id: self.recommendation_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`recommendation_id`](crate::types::builders::RecommendationDataBuilder::recommendation_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RecommendationData {
+            recommendation_id: self.recommendation_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "recommendation_id",
+                    "recommendation_id was not specified but it is required when building RecommendationData",
+                )
+            })?,
             document: self.document,
             relevance_score: self.relevance_score.unwrap_or_default(),
             relevance_level: self.relevance_level,
             r#type: self.r#type,
-        }
+        })
     }
 }

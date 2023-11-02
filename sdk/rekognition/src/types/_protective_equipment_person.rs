@@ -15,8 +15,10 @@ pub struct ProtectiveEquipmentPerson {
 }
 impl ProtectiveEquipmentPerson {
     /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
-    pub fn body_parts(&self) -> ::std::option::Option<&[crate::types::ProtectiveEquipmentBodyPart]> {
-        self.body_parts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.body_parts.is_none()`.
+    pub fn body_parts(&self) -> &[crate::types::ProtectiveEquipmentBodyPart] {
+        self.body_parts.as_deref().unwrap_or_default()
     }
     /// <p>A bounding box around the detected person.</p>
     pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {

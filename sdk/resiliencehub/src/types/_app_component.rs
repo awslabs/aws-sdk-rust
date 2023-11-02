@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppComponent {
     /// <p>Name of the Application Component.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of Application Component.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
     /// <p>Identifier of the Application Component.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
@@ -19,12 +19,14 @@ pub struct AppComponent {
 }
 impl AppComponent {
     /// <p>Name of the Application Component.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of Application Component.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
     /// <p>Identifier of the Application Component.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -59,6 +61,7 @@ pub struct AppComponentBuilder {
 }
 impl AppComponentBuilder {
     /// <p>Name of the Application Component.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -73,6 +76,7 @@ impl AppComponentBuilder {
         &self.name
     }
     /// <p>The type of Application Component.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -138,12 +142,25 @@ impl AppComponentBuilder {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`AppComponent`](crate::types::AppComponent).
-    pub fn build(self) -> crate::types::AppComponent {
-        crate::types::AppComponent {
-            name: self.name,
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AppComponentBuilder::name)
+    /// - [`r#type`](crate::types::builders::AppComponentBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AppComponent, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AppComponent {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AppComponent",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building AppComponent",
+                )
+            })?,
             id: self.id,
             additional_info: self.additional_info,
-        }
+        })
     }
 }

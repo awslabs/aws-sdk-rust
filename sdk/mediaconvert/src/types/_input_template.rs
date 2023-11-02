@@ -99,8 +99,10 @@ impl InputTemplate {
         self.image_inserter.as_ref()
     }
     /// Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
-    pub fn input_clippings(&self) -> ::std::option::Option<&[crate::types::InputClipping]> {
-        self.input_clippings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_clippings.is_none()`.
+    pub fn input_clippings(&self) -> &[crate::types::InputClipping] {
+        self.input_clippings.as_deref().unwrap_or_default()
     }
     /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
     pub fn input_scan_type(&self) -> ::std::option::Option<&crate::types::InputScanType> {
@@ -127,8 +129,10 @@ impl InputTemplate {
         self.timecode_start.as_deref()
     }
     /// Contains an array of video overlays.
-    pub fn video_overlays(&self) -> ::std::option::Option<&[crate::types::VideoOverlay]> {
-        self.video_overlays.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.video_overlays.is_none()`.
+    pub fn video_overlays(&self) -> &[crate::types::VideoOverlay] {
+        self.video_overlays.as_deref().unwrap_or_default()
     }
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub fn video_selector(&self) -> ::std::option::Option<&crate::types::VideoSelector> {

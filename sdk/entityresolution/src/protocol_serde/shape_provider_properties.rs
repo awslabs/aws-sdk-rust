@@ -39,7 +39,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::provider_properties_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -51,17 +53,17 @@ pub fn ser_provider_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProviderProperties,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.provider_service_arn {
-        object.key("providerServiceArn").string(var_1.as_str());
+    {
+        object.key("providerServiceArn").string(input.provider_service_arn.as_str());
     }
-    if let Some(var_2) = &input.provider_configuration {
-        object.key("providerConfiguration").document(var_2);
+    if let Some(var_1) = &input.provider_configuration {
+        object.key("providerConfiguration").document(var_1);
     }
-    if let Some(var_3) = &input.intermediate_source_configuration {
+    if let Some(var_2) = &input.intermediate_source_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("intermediateSourceConfiguration").start_object();
-        crate::protocol_serde::shape_intermediate_source_configuration::ser_intermediate_source_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("intermediateSourceConfiguration").start_object();
+        crate::protocol_serde::shape_intermediate_source_configuration::ser_intermediate_source_configuration(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

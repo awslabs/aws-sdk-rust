@@ -35,8 +35,10 @@ impl AwsCertificateManagerCertificateDomainValidationOption {
         self.validation_domain.as_deref()
     }
     /// <p>A list of email addresses that Certificate Manager uses to send domain validation emails.</p>
-    pub fn validation_emails(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.validation_emails.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_emails.is_none()`.
+    pub fn validation_emails(&self) -> &[::std::string::String] {
+        self.validation_emails.as_deref().unwrap_or_default()
     }
     /// <p>The method used to validate the domain name.</p>
     pub fn validation_method(&self) -> ::std::option::Option<&str> {

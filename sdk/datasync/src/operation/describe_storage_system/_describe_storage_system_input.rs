@@ -27,6 +27,7 @@ pub struct DescribeStorageSystemInputBuilder {
 }
 impl DescribeStorageSystemInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
+    /// This field is required.
     pub fn storage_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_system_arn = ::std::option::Option::Some(input.into());
         self

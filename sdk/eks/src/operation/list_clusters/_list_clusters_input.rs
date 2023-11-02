@@ -24,8 +24,10 @@ impl ListClustersInput {
         self.next_token.as_deref()
     }
     /// <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
-    pub fn include(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.include.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include.is_none()`.
+    pub fn include(&self) -> &[::std::string::String] {
+        self.include.as_deref().unwrap_or_default()
     }
 }
 impl ListClustersInput {

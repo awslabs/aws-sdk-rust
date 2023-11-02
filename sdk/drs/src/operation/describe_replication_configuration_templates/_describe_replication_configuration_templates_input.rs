@@ -12,8 +12,10 @@ pub struct DescribeReplicationConfigurationTemplatesInput {
 }
 impl DescribeReplicationConfigurationTemplatesInput {
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    pub fn replication_configuration_template_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.replication_configuration_template_i_ds.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_configuration_template_i_ds.is_none()`.
+    pub fn replication_configuration_template_i_ds(&self) -> &[::std::string::String] {
+        self.replication_configuration_template_i_ds.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
     pub fn max_results(&self) -> i32 {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed data stores.</p>
-    pub datastore_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::DatastoreProperties>>,
+    pub datastore_properties_list: ::std::vec::Vec<crate::types::DatastoreProperties>,
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed data stores.</p>
-    pub fn datastore_properties_list(&self) -> ::std::option::Option<&[crate::types::DatastoreProperties]> {
-        self.datastore_properties_list.as_deref()
+    pub fn datastore_properties_list(&self) -> &[crate::types::DatastoreProperties] {
+        use std::ops::Deref;
+        self.datastore_properties_list.deref()
     }
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListFhirDatastoresOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListFhirDatastoresOutput`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput).
-    pub fn build(self) -> crate::operation::list_fhir_datastores::ListFhirDatastoresOutput {
-        crate::operation::list_fhir_datastores::ListFhirDatastoresOutput {
-            datastore_properties_list: self.datastore_properties_list,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`datastore_properties_list`](crate::operation::list_fhir_datastores::builders::ListFhirDatastoresOutputBuilder::datastore_properties_list)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_fhir_datastores::ListFhirDatastoresOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_fhir_datastores::ListFhirDatastoresOutput {
+            datastore_properties_list: self.datastore_properties_list.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "datastore_properties_list",
+                    "datastore_properties_list was not specified but it is required when building ListFhirDatastoresOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

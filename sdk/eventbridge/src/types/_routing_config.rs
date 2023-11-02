@@ -28,6 +28,7 @@ pub struct RoutingConfigBuilder {
 }
 impl RoutingConfigBuilder {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
+    /// This field is required.
     pub fn failover_config(mut self, input: crate::types::FailoverConfig) -> Self {
         self.failover_config = ::std::option::Option::Some(input);
         self

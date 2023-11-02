@@ -7,7 +7,7 @@ pub struct AssetBundleExportJobDataSourceOverrideProperties {
     /// <p>The ARN of the specific <code>DataSource</code> resource whose override properties are configured in this structure.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DataSource</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDataSourcePropertyToOverride>>,
+    pub properties: ::std::vec::Vec<crate::types::AssetBundleExportJobDataSourcePropertyToOverride>,
 }
 impl AssetBundleExportJobDataSourceOverrideProperties {
     /// <p>The ARN of the specific <code>DataSource</code> resource whose override properties are configured in this structure.</p>
@@ -15,8 +15,9 @@ impl AssetBundleExportJobDataSourceOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>DataSource</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobDataSourcePropertyToOverride]> {
-        self.properties.as_deref()
+    pub fn properties(&self) -> &[crate::types::AssetBundleExportJobDataSourcePropertyToOverride] {
+        use std::ops::Deref;
+        self.properties.deref()
     }
 }
 impl AssetBundleExportJobDataSourceOverrideProperties {
@@ -72,10 +73,19 @@ impl AssetBundleExportJobDataSourceOverridePropertiesBuilder {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobDataSourceOverrideProperties`](crate::types::AssetBundleExportJobDataSourceOverrideProperties).
-    pub fn build(self) -> crate::types::AssetBundleExportJobDataSourceOverrideProperties {
-        crate::types::AssetBundleExportJobDataSourceOverrideProperties {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`properties`](crate::types::builders::AssetBundleExportJobDataSourceOverridePropertiesBuilder::properties)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleExportJobDataSourceOverrideProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleExportJobDataSourceOverrideProperties {
             arn: self.arn,
-            properties: self.properties,
-        }
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building AssetBundleExportJobDataSourceOverrideProperties",
+                )
+            })?,
+        })
     }
 }

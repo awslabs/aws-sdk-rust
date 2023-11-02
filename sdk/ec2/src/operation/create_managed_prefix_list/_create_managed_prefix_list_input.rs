@@ -32,16 +32,20 @@ impl CreateManagedPrefixListInput {
         self.prefix_list_name.as_deref()
     }
     /// <p>One or more entries for the prefix list.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::AddPrefixListEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::AddPrefixListEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of entries for the prefix list.</p>
     pub fn max_entries(&self) -> ::std::option::Option<i32> {
         self.max_entries
     }
     /// <p>The tags to apply to the prefix list during creation.</p>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::TagSpecification]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
@@ -90,6 +94,7 @@ impl CreateManagedPrefixListInputBuilder {
     }
     /// <p>A name for the prefix list.</p>
     /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
+    /// This field is required.
     pub fn prefix_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix_list_name = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +131,7 @@ impl CreateManagedPrefixListInputBuilder {
         &self.entries
     }
     /// <p>The maximum number of entries for the prefix list.</p>
+    /// This field is required.
     pub fn max_entries(mut self, input: i32) -> Self {
         self.max_entries = ::std::option::Option::Some(input);
         self
@@ -161,6 +167,7 @@ impl CreateManagedPrefixListInputBuilder {
     }
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
+    /// This field is required.
     pub fn address_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_family = ::std::option::Option::Some(input.into());
         self

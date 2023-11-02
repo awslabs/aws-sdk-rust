@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPlacementsOutput {
     /// <p>An object listing the requested placements.</p>
-    pub placements: ::std::option::Option<::std::vec::Vec<crate::types::PlacementSummary>>,
+    pub placements: ::std::vec::Vec<crate::types::PlacementSummary>,
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPlacementsOutput {
     /// <p>An object listing the requested placements.</p>
-    pub fn placements(&self) -> ::std::option::Option<&[crate::types::PlacementSummary]> {
-        self.placements.as_deref()
+    pub fn placements(&self) -> &[crate::types::PlacementSummary] {
+        use std::ops::Deref;
+        self.placements.deref()
     }
     /// <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListPlacementsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListPlacementsOutput`](crate::operation::list_placements::ListPlacementsOutput).
-    pub fn build(self) -> crate::operation::list_placements::ListPlacementsOutput {
-        crate::operation::list_placements::ListPlacementsOutput {
-            placements: self.placements,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`placements`](crate::operation::list_placements::builders::ListPlacementsOutputBuilder::placements)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_placements::ListPlacementsOutput {
+            placements: self.placements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "placements",
+                    "placements was not specified but it is required when building ListPlacementsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

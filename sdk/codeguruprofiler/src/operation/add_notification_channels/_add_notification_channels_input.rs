@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelsInput {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub channels: ::std::vec::Vec<crate::types::Channel>,
 }
 impl AddNotificationChannelsInput {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p>One or 2 channels to report to when anomalies are detected.</p>
-    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
-        self.channels.as_deref()
+    pub fn channels(&self) -> &[crate::types::Channel] {
+        use std::ops::Deref;
+        self.channels.deref()
     }
 }
 impl AddNotificationChannelsInput {
@@ -35,6 +37,7 @@ pub struct AddNotificationChannelsInputBuilder {
 }
 impl AddNotificationChannelsInputBuilder {
     /// <p>The name of the profiling group that we are setting up notifications for.</p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,9 @@ impl AddNotificationChannelsInputBuilder {
         &self.channels
     }
     /// Consumes the builder and constructs a [`AddNotificationChannelsInput`](crate::operation::add_notification_channels::AddNotificationChannelsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder::profiling_group_name)
+    /// - [`channels`](crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder::channels)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,8 +82,18 @@ impl AddNotificationChannelsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_notification_channels::AddNotificationChannelsInput {
-            profiling_group_name: self.profiling_group_name,
-            channels: self.channels,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building AddNotificationChannelsInput",
+                )
+            })?,
+            channels: self.channels.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channels",
+                    "channels was not specified but it is required when building AddNotificationChannelsInput",
+                )
+            })?,
         })
     }
 }

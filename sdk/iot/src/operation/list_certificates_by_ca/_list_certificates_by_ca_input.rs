@@ -49,6 +49,7 @@ pub struct ListCertificatesByCaInputBuilder {
 }
 impl ListCertificatesByCaInputBuilder {
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
+    /// This field is required.
     pub fn ca_certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ca_certificate_id = ::std::option::Option::Some(input.into());
         self

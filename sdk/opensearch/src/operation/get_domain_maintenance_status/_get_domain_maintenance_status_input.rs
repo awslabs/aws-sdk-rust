@@ -6,7 +6,7 @@
 pub struct GetDomainMaintenanceStatusInput {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
     pub maintenance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainMaintenanceStatusInput {
@@ -14,7 +14,7 @@ impl GetDomainMaintenanceStatusInput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
     pub fn maintenance_id(&self) -> ::std::option::Option<&str> {
         self.maintenance_id.as_deref()
     }
@@ -35,6 +35,7 @@ pub struct GetDomainMaintenanceStatusInputBuilder {
 }
 impl GetDomainMaintenanceStatusInputBuilder {
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,17 +49,18 @@ impl GetDomainMaintenanceStatusInputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
+    /// This field is required.
     pub fn maintenance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.maintenance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
     pub fn set_maintenance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maintenance_id = input;
         self
     }
-    /// <p>The request id of the maintenance action.</p>
+    /// <p>The request ID of the maintenance action.</p>
     pub fn get_maintenance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_id
     }

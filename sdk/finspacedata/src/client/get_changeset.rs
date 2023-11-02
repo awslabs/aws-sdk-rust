@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetChangeset`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_id(impl Into<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::set_dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    ///   - [`changeset_id(impl Into<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::changeset_id) / [`set_changeset_id(Option<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::set_changeset_id): <p>The unique identifier of the Changeset for which to get data.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::set_dataset_id):<br>required: **true**<br><p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p><br>
+    ///   - [`changeset_id(impl Into<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::changeset_id) / [`set_changeset_id(Option<String>)`](crate::operation::get_changeset::builders::GetChangesetFluentBuilder::set_changeset_id):<br>required: **true**<br><p>The unique identifier of the Changeset for which to get data.</p><br>
     /// - On success, responds with [`GetChangesetOutput`](crate::operation::get_changeset::GetChangesetOutput) with field(s):
     ///   - [`changeset_id(Option<String>)`](crate::operation::get_changeset::GetChangesetOutput::changeset_id): <p>The unique identifier for a Changeset.</p>
     ///   - [`changeset_arn(Option<String>)`](crate::operation::get_changeset::GetChangesetOutput::changeset_arn): <p>The ARN identifier of the Changeset.</p>

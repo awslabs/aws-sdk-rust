@@ -34,6 +34,7 @@ pub struct CreateActionTargetOutputBuilder {
 }
 impl CreateActionTargetOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the custom action target.</p>
+    /// This field is required.
     pub fn action_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_target_arn = ::std::option::Option::Some(input.into());
         self

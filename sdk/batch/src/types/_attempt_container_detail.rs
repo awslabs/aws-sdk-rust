@@ -39,8 +39,10 @@ impl AttemptContainerDetail {
         self.log_stream_name.as_deref()
     }
     /// <p>The network interfaces that are associated with the job attempt.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
 }
 impl AttemptContainerDetail {

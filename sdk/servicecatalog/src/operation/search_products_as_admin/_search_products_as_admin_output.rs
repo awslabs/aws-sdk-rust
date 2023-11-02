@@ -11,8 +11,10 @@ pub struct SearchProductsAsAdminOutput {
 }
 impl SearchProductsAsAdminOutput {
     /// <p>Information about the product views.</p>
-    pub fn product_view_details(&self) -> ::std::option::Option<&[crate::types::ProductViewDetail]> {
-        self.product_view_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_view_details.is_none()`.
+    pub fn product_view_details(&self) -> &[crate::types::ProductViewDetail] {
+        self.product_view_details.as_deref().unwrap_or_default()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

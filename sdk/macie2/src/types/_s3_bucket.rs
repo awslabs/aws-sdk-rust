@@ -63,8 +63,10 @@ impl S3Bucket {
         self.public_access.as_ref()
     }
     /// <p>The tags that are associated with the bucket.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::KeyValuePair]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::KeyValuePair] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl S3Bucket {

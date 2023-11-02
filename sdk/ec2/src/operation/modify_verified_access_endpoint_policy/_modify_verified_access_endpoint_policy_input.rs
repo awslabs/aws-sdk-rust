@@ -62,6 +62,7 @@ pub struct ModifyVerifiedAccessEndpointPolicyInputBuilder {
 }
 impl ModifyVerifiedAccessEndpointPolicyInputBuilder {
     /// <p>The ID of the Verified Access endpoint.</p>
+    /// This field is required.
     pub fn verified_access_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.verified_access_endpoint_id = ::std::option::Option::Some(input.into());
         self

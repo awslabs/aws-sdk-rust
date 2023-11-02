@@ -20,8 +20,10 @@ impl ModifyInstanceCreditSpecificationInput {
         self.client_token.as_deref()
     }
     /// <p>Information about the credit option for CPU usage.</p>
-    pub fn instance_credit_specifications(&self) -> ::std::option::Option<&[crate::types::InstanceCreditSpecificationRequest]> {
-        self.instance_credit_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_credit_specifications.is_none()`.
+    pub fn instance_credit_specifications(&self) -> &[crate::types::InstanceCreditSpecificationRequest] {
+        self.instance_credit_specifications.as_deref().unwrap_or_default()
     }
 }
 impl ModifyInstanceCreditSpecificationInput {

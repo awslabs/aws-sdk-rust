@@ -41,6 +41,7 @@ pub struct ListApplicationVersionsInputBuilder {
 }
 impl ListApplicationVersionsInputBuilder {
     /// <p>The name of the application for which you want to list all versions.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

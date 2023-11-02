@@ -27,6 +27,7 @@ pub struct DescribeTopicsDetectionJobInputBuilder {
 }
 impl DescribeTopicsDetectionJobInputBuilder {
     /// <p>The identifier assigned by the user to the detection job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

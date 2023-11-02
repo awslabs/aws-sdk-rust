@@ -41,6 +41,7 @@ pub struct DeleteModelVersionInputBuilder {
 }
 impl DeleteModelVersionInputBuilder {
     /// <p>The model ID of the model version to delete.</p>
+    /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl DeleteModelVersionInputBuilder {
         &self.model_id
     }
     /// <p>The model type of the model version to delete.</p>
+    /// This field is required.
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl DeleteModelVersionInputBuilder {
         &self.model_type
     }
     /// <p>The model version number of the model version to delete.</p>
+    /// This field is required.
     pub fn model_version_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_version_number = ::std::option::Option::Some(input.into());
         self

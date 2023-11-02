@@ -11,8 +11,10 @@ pub struct ListDataIntegrationsOutput {
 }
 impl ListDataIntegrationsOutput {
     /// <p>The DataIntegrations associated with this account.</p>
-    pub fn data_integrations(&self) -> ::std::option::Option<&[crate::types::DataIntegrationSummary]> {
-        self.data_integrations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_integrations.is_none()`.
+    pub fn data_integrations(&self) -> &[crate::types::DataIntegrationSummary] {
+        self.data_integrations.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

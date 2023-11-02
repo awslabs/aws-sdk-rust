@@ -35,6 +35,7 @@ pub struct GetThirdPartyJobDetailsInputBuilder {
 }
 impl GetThirdPartyJobDetailsInputBuilder {
     /// <p>The unique system-generated ID used for identifying the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl GetThirdPartyJobDetailsInputBuilder {
         &self.job_id
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOption {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
-    pub log_stream_arn: ::std::option::Option<::std::string::String>,
+    pub log_stream_arn: ::std::string::String,
 }
 impl CloudWatchLoggingOption {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.log_stream_arn.as_deref()
+    pub fn log_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.log_stream_arn.deref()
     }
 }
 impl CloudWatchLoggingOption {
@@ -28,6 +29,7 @@ pub struct CloudWatchLoggingOptionBuilder {
 }
 impl CloudWatchLoggingOptionBuilder {
     /// <p>The ARN of the CloudWatch log to receive application messages.</p>
+    /// This field is required.
     pub fn log_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl CloudWatchLoggingOptionBuilder {
         &self.log_stream_arn
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOption`](crate::types::CloudWatchLoggingOption).
-    pub fn build(self) -> crate::types::CloudWatchLoggingOption {
-        crate::types::CloudWatchLoggingOption {
-            log_stream_arn: self.log_stream_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`log_stream_arn`](crate::types::builders::CloudWatchLoggingOptionBuilder::log_stream_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLoggingOption, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchLoggingOption {
+            log_stream_arn: self.log_stream_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_stream_arn",
+                    "log_stream_arn was not specified but it is required when building CloudWatchLoggingOption",
+                )
+            })?,
+        })
     }
 }

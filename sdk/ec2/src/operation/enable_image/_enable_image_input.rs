@@ -34,6 +34,7 @@ pub struct EnableImageInputBuilder {
 }
 impl EnableImageInputBuilder {
     /// <p>The ID of the AMI.</p>
+    /// This field is required.
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self

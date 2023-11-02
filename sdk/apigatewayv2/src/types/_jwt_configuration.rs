@@ -15,8 +15,10 @@ pub struct JwtConfiguration {
 }
 impl JwtConfiguration {
     /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
-    pub fn audience(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.audience.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audience.is_none()`.
+    pub fn audience(&self) -> &[::std::string::String] {
+        self.audience.as_deref().unwrap_or_default()
     }
     /// <p>The base domain of the identity provider that issues JSON Web Tokens. For example, an Amazon Cognito user pool has the following format: https://cognito-idp.<replaceable>
     /// {region}

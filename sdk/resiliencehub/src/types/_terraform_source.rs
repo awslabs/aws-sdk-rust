@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerraformSource {
     /// <p> The URL of the Terraform s3 state file you need to import. </p>
-    pub s3_state_file_url: ::std::option::Option<::std::string::String>,
+    pub s3_state_file_url: ::std::string::String,
 }
 impl TerraformSource {
     /// <p> The URL of the Terraform s3 state file you need to import. </p>
-    pub fn s3_state_file_url(&self) -> ::std::option::Option<&str> {
-        self.s3_state_file_url.as_deref()
+    pub fn s3_state_file_url(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_state_file_url.deref()
     }
 }
 impl TerraformSource {
@@ -28,6 +29,7 @@ pub struct TerraformSourceBuilder {
 }
 impl TerraformSourceBuilder {
     /// <p> The URL of the Terraform s3 state file you need to import. </p>
+    /// This field is required.
     pub fn s3_state_file_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_state_file_url = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl TerraformSourceBuilder {
         &self.s3_state_file_url
     }
     /// Consumes the builder and constructs a [`TerraformSource`](crate::types::TerraformSource).
-    pub fn build(self) -> crate::types::TerraformSource {
-        crate::types::TerraformSource {
-            s3_state_file_url: self.s3_state_file_url,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`s3_state_file_url`](crate::types::builders::TerraformSourceBuilder::s3_state_file_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::TerraformSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TerraformSource {
+            s3_state_file_url: self.s3_state_file_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_state_file_url",
+                    "s3_state_file_url was not specified but it is required when building TerraformSource",
+                )
+            })?,
+        })
     }
 }

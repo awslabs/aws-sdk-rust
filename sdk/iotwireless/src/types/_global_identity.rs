@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalIdentity {
     /// <p>Location area code of the global identity.</p>
-    pub lac: ::std::option::Option<i32>,
+    pub lac: i32,
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-    pub geran_cid: ::std::option::Option<i32>,
+    pub geran_cid: i32,
 }
 impl GlobalIdentity {
     /// <p>Location area code of the global identity.</p>
-    pub fn lac(&self) -> ::std::option::Option<i32> {
+    pub fn lac(&self) -> i32 {
         self.lac
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-    pub fn geran_cid(&self) -> ::std::option::Option<i32> {
+    pub fn geran_cid(&self) -> i32 {
         self.geran_cid
     }
 }
@@ -35,6 +35,7 @@ pub struct GlobalIdentityBuilder {
 }
 impl GlobalIdentityBuilder {
     /// <p>Location area code of the global identity.</p>
+    /// This field is required.
     pub fn lac(mut self, input: i32) -> Self {
         self.lac = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl GlobalIdentityBuilder {
         &self.lac
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
+    /// This field is required.
     pub fn geran_cid(mut self, input: i32) -> Self {
         self.geran_cid = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl GlobalIdentityBuilder {
         &self.geran_cid
     }
     /// Consumes the builder and constructs a [`GlobalIdentity`](crate::types::GlobalIdentity).
-    pub fn build(self) -> crate::types::GlobalIdentity {
-        crate::types::GlobalIdentity {
-            lac: self.lac,
-            geran_cid: self.geran_cid,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lac`](crate::types::builders::GlobalIdentityBuilder::lac)
+    /// - [`geran_cid`](crate::types::builders::GlobalIdentityBuilder::geran_cid)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlobalIdentity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlobalIdentity {
+            lac: self.lac.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lac",
+                    "lac was not specified but it is required when building GlobalIdentity",
+                )
+            })?,
+            geran_cid: self.geran_cid.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "geran_cid",
+                    "geran_cid was not specified but it is required when building GlobalIdentity",
+                )
+            })?,
+        })
     }
 }

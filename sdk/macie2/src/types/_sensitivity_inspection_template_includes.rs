@@ -14,17 +14,23 @@ pub struct SensitivityInspectionTemplateIncludes {
 }
 impl SensitivityInspectionTemplateIncludes {
     /// <p>An array of unique identifiers, one for each allow list to include.</p>
-    pub fn allow_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allow_list_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_list_ids.is_none()`.
+    pub fn allow_list_ids(&self) -> &[::std::string::String] {
+        self.allow_list_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of unique identifiers, one for each custom data identifier to include.</p>
-    pub fn custom_data_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.custom_data_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_data_identifier_ids.is_none()`.
+    pub fn custom_data_identifier_ids(&self) -> &[::std::string::String] {
+        self.custom_data_identifier_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of unique identifiers, one for each managed data identifier to include.</p>
     /// <p>Amazon Macie uses these managed data identifiers in addition to managed data identifiers that are subsequently released and recommended for automated sensitive data discovery. To retrieve a list of valid values for the managed data identifiers that are currently available, use the ListManagedDataIdentifiers operation.</p> <para />
-    pub fn managed_data_identifier_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.managed_data_identifier_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_data_identifier_ids.is_none()`.
+    pub fn managed_data_identifier_ids(&self) -> &[::std::string::String] {
+        self.managed_data_identifier_ids.as_deref().unwrap_or_default()
     }
 }
 impl SensitivityInspectionTemplateIncludes {

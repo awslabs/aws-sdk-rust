@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub suggester_name: ::std::option::Option<::std::string::String>,
+    pub suggester_name: ::std::string::String,
     /// <p>Options for a search suggester.</p>
     pub document_suggester_options: ::std::option::Option<crate::types::DocumentSuggesterOptions>,
 }
 impl Suggester {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn suggester_name(&self) -> ::std::option::Option<&str> {
-        self.suggester_name.as_deref()
+    pub fn suggester_name(&self) -> &str {
+        use std::ops::Deref;
+        self.suggester_name.deref()
     }
     /// <p>Options for a search suggester.</p>
     pub fn document_suggester_options(&self) -> ::std::option::Option<&crate::types::DocumentSuggesterOptions> {
@@ -35,6 +36,7 @@ pub struct SuggesterBuilder {
 }
 impl SuggesterBuilder {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    /// This field is required.
     pub fn suggester_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suggester_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SuggesterBuilder {
         &self.suggester_name
     }
     /// <p>Options for a search suggester.</p>
+    /// This field is required.
     pub fn document_suggester_options(mut self, input: crate::types::DocumentSuggesterOptions) -> Self {
         self.document_suggester_options = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,17 @@ impl SuggesterBuilder {
         &self.document_suggester_options
     }
     /// Consumes the builder and constructs a [`Suggester`](crate::types::Suggester).
-    pub fn build(self) -> crate::types::Suggester {
-        crate::types::Suggester {
-            suggester_name: self.suggester_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`suggester_name`](crate::types::builders::SuggesterBuilder::suggester_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Suggester, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Suggester {
+            suggester_name: self.suggester_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "suggester_name",
+                    "suggester_name was not specified but it is required when building Suggester",
+                )
+            })?,
             document_suggester_options: self.document_suggester_options,
-        }
+        })
     }
 }

@@ -15,8 +15,10 @@ impl DescribeSubnetGroupsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of subnet groups. Each element in the array represents a single subnet group.</p>
-    pub fn subnet_groups(&self) -> ::std::option::Option<&[crate::types::SubnetGroup]> {
-        self.subnet_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_groups.is_none()`.
+    pub fn subnet_groups(&self) -> &[crate::types::SubnetGroup] {
+        self.subnet_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeSubnetGroupsOutput {

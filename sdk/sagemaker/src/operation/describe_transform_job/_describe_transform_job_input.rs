@@ -27,6 +27,7 @@ pub struct DescribeTransformJobInputBuilder {
 }
 impl DescribeTransformJobInputBuilder {
     /// <p>The name of the transform job that you want to view details of.</p>
+    /// This field is required.
     pub fn transform_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_name = ::std::option::Option::Some(input.into());
         self

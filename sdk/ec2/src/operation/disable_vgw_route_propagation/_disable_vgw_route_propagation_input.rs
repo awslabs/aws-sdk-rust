@@ -42,6 +42,7 @@ pub struct DisableVgwRoutePropagationInputBuilder {
 }
 impl DisableVgwRoutePropagationInputBuilder {
     /// <p>The ID of the virtual private gateway.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DisableVgwRoutePropagationInputBuilder {
         &self.gateway_id
     }
     /// <p>The ID of the route table.</p>
+    /// This field is required.
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
         self

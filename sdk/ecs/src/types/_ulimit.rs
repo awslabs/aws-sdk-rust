@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    pub name: ::std::option::Option<crate::types::UlimitName>,
+    pub name: crate::types::UlimitName,
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub soft_limit: i32,
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
@@ -15,8 +15,8 @@ pub struct Ulimit {
 }
 impl Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::UlimitName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::UlimitName {
+        &self.name
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn soft_limit(&self) -> i32 {
@@ -44,6 +44,7 @@ pub struct UlimitBuilder {
 }
 impl UlimitBuilder {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::UlimitName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -58,6 +59,7 @@ impl UlimitBuilder {
         &self.name
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    /// This field is required.
     pub fn soft_limit(mut self, input: i32) -> Self {
         self.soft_limit = ::std::option::Option::Some(input);
         self
@@ -72,6 +74,7 @@ impl UlimitBuilder {
         &self.soft_limit
     }
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    /// This field is required.
     pub fn hard_limit(mut self, input: i32) -> Self {
         self.hard_limit = ::std::option::Option::Some(input);
         self
@@ -86,11 +89,18 @@ impl UlimitBuilder {
         &self.hard_limit
     }
     /// Consumes the builder and constructs a [`Ulimit`](crate::types::Ulimit).
-    pub fn build(self) -> crate::types::Ulimit {
-        crate::types::Ulimit {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::UlimitBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::Ulimit, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Ulimit {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Ulimit",
+                )
+            })?,
             soft_limit: self.soft_limit.unwrap_or_default(),
             hard_limit: self.hard_limit.unwrap_or_default(),
-        }
+        })
     }
 }

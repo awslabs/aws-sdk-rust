@@ -41,6 +41,7 @@ pub struct RemoveRoleFromDbInstanceInputBuilder {
 }
 impl RemoveRoleFromDbInstanceInputBuilder {
     /// <p>The name of the DB instance to disassociate the IAM role from.</p>
+    /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl RemoveRoleFromDbInstanceInputBuilder {
         &self.db_instance_identifier
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance, for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl RemoveRoleFromDbInstanceInputBuilder {
         &self.role_arn
     }
     /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self

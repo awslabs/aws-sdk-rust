@@ -42,6 +42,7 @@ pub struct GatingRuleUpdateBuilder {
 }
 impl GatingRuleUpdateBuilder {
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl GatingRuleUpdateBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
+    /// This field is required.
     pub fn safety_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.safety_rule_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl GatingRuleUpdateBuilder {
         &self.safety_rule_arn
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    /// This field is required.
     pub fn wait_period_ms(mut self, input: i32) -> Self {
         self.wait_period_ms = ::std::option::Option::Some(input);
         self

@@ -9,14 +9,14 @@ pub fn ser_model_input_configuration(
     if let Some(var_2) = &input.format {
         object.key("format").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.use_event_variables {
-        object.key("useEventVariables").boolean(*var_3);
+    {
+        object.key("useEventVariables").boolean(input.use_event_variables);
     }
-    if let Some(var_4) = &input.json_input_template {
-        object.key("jsonInputTemplate").string(var_4.as_str());
+    if let Some(var_3) = &input.json_input_template {
+        object.key("jsonInputTemplate").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.csv_input_template {
-        object.key("csvInputTemplate").string(var_5.as_str());
+    if let Some(var_4) = &input.csv_input_template {
+        object.key("csvInputTemplate").string(var_4.as_str());
     }
     Ok(())
 }
@@ -77,7 +77,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::model_input_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

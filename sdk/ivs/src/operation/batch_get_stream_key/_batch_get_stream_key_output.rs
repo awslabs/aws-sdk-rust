@@ -11,12 +11,16 @@ pub struct BatchGetStreamKeyOutput {
 }
 impl BatchGetStreamKeyOutput {
     /// <p></p>
-    pub fn stream_keys(&self) -> ::std::option::Option<&[crate::types::StreamKey]> {
-        self.stream_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stream_keys.is_none()`.
+    pub fn stream_keys(&self) -> &[crate::types::StreamKey] {
+        self.stream_keys.as_deref().unwrap_or_default()
     }
     /// <p></p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::BatchError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetStreamKeyOutput {

@@ -34,6 +34,7 @@ pub struct DeleteUserProfileInputBuilder {
 }
 impl DeleteUserProfileInputBuilder {
     /// <p>The domain ID.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteUserProfileInputBuilder {
         &self.domain_id
     }
     /// <p>The user profile name.</p>
+    /// This field is required.
     pub fn user_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_profile_name = ::std::option::Option::Some(input.into());
         self

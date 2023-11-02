@@ -48,6 +48,7 @@ pub struct UpdateAdapterInputBuilder {
 }
 impl UpdateAdapterInputBuilder {
     /// <p>A string containing a unique ID for the adapter that will be updated.</p>
+    /// This field is required.
     pub fn adapter_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.adapter_id = ::std::option::Option::Some(input.into());
         self

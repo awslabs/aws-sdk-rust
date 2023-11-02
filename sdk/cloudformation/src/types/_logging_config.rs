@@ -35,6 +35,7 @@ pub struct LoggingConfigBuilder {
 }
 impl LoggingConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role that CloudFormation should assume when sending log entries to CloudWatch Logs.</p>
+    /// This field is required.
     pub fn log_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl LoggingConfigBuilder {
         &self.log_role_arn
     }
     /// <p>The Amazon CloudWatch Logs group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self

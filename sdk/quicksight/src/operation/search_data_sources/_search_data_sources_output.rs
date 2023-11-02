@@ -15,8 +15,10 @@ pub struct SearchDataSourcesOutput {
 }
 impl SearchDataSourcesOutput {
     /// <p>A <code>DataSourceSummaries</code> object that returns a summary of a data source.</p>
-    pub fn data_source_summaries(&self) -> ::std::option::Option<&[crate::types::DataSourceSummary]> {
-        self.data_source_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_source_summaries.is_none()`.
+    pub fn data_source_summaries(&self) -> &[crate::types::DataSourceSummary] {
+        self.data_source_summaries.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

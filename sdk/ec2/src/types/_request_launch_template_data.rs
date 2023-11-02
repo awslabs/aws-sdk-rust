@@ -131,12 +131,16 @@ impl RequestLaunchTemplateData {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The block device mapping.</p>
-    pub fn block_device_mappings(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateBlockDeviceMappingRequest]> {
-        self.block_device_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::LaunchTemplateBlockDeviceMappingRequest] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest]> {
-        self.network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
+    pub fn network_interfaces(&self) -> &[crate::types::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest] {
+        self.network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which will resolve to an AMI ID on launch.</p>
     /// <p>Valid formats:</p>
@@ -204,27 +208,37 @@ impl RequestLaunchTemplateData {
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p> <note>
     /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
     /// </note>
-    pub fn tag_specifications(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateTagSpecificationRequest]> {
-        self.tag_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::LaunchTemplateTagSpecificationRequest] {
+        self.tag_specifications.as_deref().unwrap_or_default()
     }
     /// <p>An elastic GPU to associate with the instance.</p>
-    pub fn elastic_gpu_specifications(&self) -> ::std::option::Option<&[crate::types::ElasticGpuSpecification]> {
-        self.elastic_gpu_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specifications.is_none()`.
+    pub fn elastic_gpu_specifications(&self) -> &[crate::types::ElasticGpuSpecification] {
+        self.elastic_gpu_specifications.as_deref().unwrap_or_default()
     }
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p> <note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn elastic_inference_accelerators(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateElasticInferenceAccelerator]> {
-        self.elastic_inference_accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_inference_accelerators.is_none()`.
+    pub fn elastic_inference_accelerators(&self) -> &[crate::types::LaunchTemplateElasticInferenceAccelerator] {
+        self.elastic_inference_accelerators.as_deref().unwrap_or_default()
     }
     /// <p>One or more security group IDs. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same request.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot specify both a security group ID and security name in the same request.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[::std::string::String] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The market (purchasing) option for the instances.</p>
     pub fn instance_market_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMarketOptionsRequest> {
@@ -243,8 +257,10 @@ impl RequestLaunchTemplateData {
         self.capacity_reservation_specification.as_ref()
     }
     /// <p>The license configurations.</p>
-    pub fn license_specifications(&self) -> ::std::option::Option<&[crate::types::LaunchTemplateLicenseConfigurationRequest]> {
-        self.license_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_specifications.is_none()`.
+    pub fn license_specifications(&self) -> &[crate::types::LaunchTemplateLicenseConfigurationRequest] {
+        self.license_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn hibernation_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateHibernationOptionsRequest> {

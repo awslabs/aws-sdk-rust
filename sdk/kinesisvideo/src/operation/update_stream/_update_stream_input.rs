@@ -94,6 +94,7 @@ impl UpdateStreamInputBuilder {
         &self.stream_arn
     }
     /// <p>The version of the stream whose metadata you want to update.</p>
+    /// This field is required.
     pub fn current_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_version = ::std::option::Option::Some(input.into());
         self

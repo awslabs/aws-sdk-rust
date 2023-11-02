@@ -48,6 +48,7 @@ pub struct DeleteClientVpnRouteInputBuilder {
 }
 impl DeleteClientVpnRouteInputBuilder {
     /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
+    /// This field is required.
     pub fn client_vpn_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DeleteClientVpnRouteInputBuilder {
         &self.target_vpc_subnet_id
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
+    /// This field is required.
     pub fn destination_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_cidr_block = ::std::option::Option::Some(input.into());
         self

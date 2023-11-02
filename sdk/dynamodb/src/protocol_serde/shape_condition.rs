@@ -15,8 +15,8 @@ pub fn ser_condition(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.comparison_operator {
-        object.key("ComparisonOperator").string(var_5.as_str());
+    {
+        object.key("ComparisonOperator").string(input.comparison_operator.as_str());
     }
     Ok(())
 }

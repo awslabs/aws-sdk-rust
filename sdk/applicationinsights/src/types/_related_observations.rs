@@ -9,8 +9,10 @@ pub struct RelatedObservations {
 }
 impl RelatedObservations {
     /// <p>The list of observations related to the problem.</p>
-    pub fn observation_list(&self) -> ::std::option::Option<&[crate::types::Observation]> {
-        self.observation_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.observation_list.is_none()`.
+    pub fn observation_list(&self) -> &[crate::types::Observation] {
+        self.observation_list.as_deref().unwrap_or_default()
     }
 }
 impl RelatedObservations {

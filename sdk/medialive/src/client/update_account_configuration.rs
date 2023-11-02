@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateAccountConfiguration`](crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_configuration(AccountConfiguration)`](crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder::account_configuration) / [`set_account_configuration(Option<AccountConfiguration>)`](crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder::set_account_configuration): Placeholder documentation for AccountConfiguration
+    ///   - [`account_configuration(AccountConfiguration)`](crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder::account_configuration) / [`set_account_configuration(Option<AccountConfiguration>)`](crate::operation::update_account_configuration::builders::UpdateAccountConfigurationFluentBuilder::set_account_configuration):<br>required: **false**<br>Placeholder documentation for AccountConfiguration<br>
     /// - On success, responds with [`UpdateAccountConfigurationOutput`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput) with field(s):
     ///   - [`account_configuration(Option<AccountConfiguration>)`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput::account_configuration): Placeholder documentation for AccountConfiguration
     /// - On failure, responds with [`SdkError<UpdateAccountConfigurationError>`](crate::operation::update_account_configuration::UpdateAccountConfigurationError)

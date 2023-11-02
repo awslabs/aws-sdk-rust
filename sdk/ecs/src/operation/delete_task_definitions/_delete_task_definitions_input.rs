@@ -10,8 +10,10 @@ pub struct DeleteTaskDefinitionsInput {
 impl DeleteTaskDefinitionsInput {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task definition to delete. You must specify a <code>revision</code>.</p>
     /// <p>You can specify up to 10 task definitions as a comma separated list.</p>
-    pub fn task_definitions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.task_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_definitions.is_none()`.
+    pub fn task_definitions(&self) -> &[::std::string::String] {
+        self.task_definitions.as_deref().unwrap_or_default()
     }
 }
 impl DeleteTaskDefinitionsInput {

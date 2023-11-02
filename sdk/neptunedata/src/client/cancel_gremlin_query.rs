@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelGremlinQuery`](crate::operation::cancel_gremlin_query::builders::CancelGremlinQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_id(impl Into<String>)`](crate::operation::cancel_gremlin_query::builders::CancelGremlinQueryFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::cancel_gremlin_query::builders::CancelGremlinQueryFluentBuilder::set_query_id): <p>The unique identifier that identifies the query to be canceled.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::operation::cancel_gremlin_query::builders::CancelGremlinQueryFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::cancel_gremlin_query::builders::CancelGremlinQueryFluentBuilder::set_query_id):<br>required: **true**<br><p>The unique identifier that identifies the query to be canceled.</p><br>
     /// - On success, responds with [`CancelGremlinQueryOutput`](crate::operation::cancel_gremlin_query::CancelGremlinQueryOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::cancel_gremlin_query::CancelGremlinQueryOutput::status): <p>The status of the cancelation</p>
     /// - On failure, responds with [`SdkError<CancelGremlinQueryError>`](crate::operation::cancel_gremlin_query::CancelGremlinQueryError)

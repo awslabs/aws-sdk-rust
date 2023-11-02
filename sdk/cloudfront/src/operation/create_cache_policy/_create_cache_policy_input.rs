@@ -27,6 +27,7 @@ pub struct CreateCachePolicyInputBuilder {
 }
 impl CreateCachePolicyInputBuilder {
     /// <p>A cache policy configuration.</p>
+    /// This field is required.
     pub fn cache_policy_config(mut self, input: crate::types::CachePolicyConfig) -> Self {
         self.cache_policy_config = ::std::option::Option::Some(input);
         self

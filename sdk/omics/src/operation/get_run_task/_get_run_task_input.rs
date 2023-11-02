@@ -34,6 +34,7 @@ pub struct GetRunTaskInputBuilder {
 }
 impl GetRunTaskInputBuilder {
     /// <p>The workflow run ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetRunTaskInputBuilder {
         &self.id
     }
     /// <p>The task's ID.</p>
+    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self

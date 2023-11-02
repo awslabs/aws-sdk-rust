@@ -15,8 +15,10 @@ pub struct InternetGateway {
 }
 impl InternetGateway {
     /// <p>Any VPCs attached to the internet gateway.</p>
-    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::InternetGatewayAttachment]> {
-        self.attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::InternetGatewayAttachment] {
+        self.attachments.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the internet gateway.</p>
     pub fn internet_gateway_id(&self) -> ::std::option::Option<&str> {
@@ -27,8 +29,10 @@ impl InternetGateway {
         self.owner_id.as_deref()
     }
     /// <p>Any tags assigned to the internet gateway.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl InternetGateway {

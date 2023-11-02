@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
-    pub custom_authentication_type: ::std::option::Option<::std::string::String>,
+    pub custom_authentication_type: ::std::string::String,
     /// <p>A map that holds custom authentication credentials.</p>
     pub credentials_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
-    pub fn custom_authentication_type(&self) -> ::std::option::Option<&str> {
-        self.custom_authentication_type.as_deref()
+    pub fn custom_authentication_type(&self) -> &str {
+        use std::ops::Deref;
+        self.custom_authentication_type.deref()
     }
     /// <p>A map that holds custom authentication credentials.</p>
     pub fn credentials_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -35,6 +36,7 @@ pub struct CustomAuthCredentialsBuilder {
 }
 impl CustomAuthCredentialsBuilder {
     /// <p>The custom authentication type that the connector uses.</p>
+    /// This field is required.
     pub fn custom_authentication_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_authentication_type = ::std::option::Option::Some(input.into());
         self
@@ -76,10 +78,17 @@ impl CustomAuthCredentialsBuilder {
         &self.credentials_map
     }
     /// Consumes the builder and constructs a [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
-    pub fn build(self) -> crate::types::CustomAuthCredentials {
-        crate::types::CustomAuthCredentials {
-            custom_authentication_type: self.custom_authentication_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`custom_authentication_type`](crate::types::builders::CustomAuthCredentialsBuilder::custom_authentication_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomAuthCredentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomAuthCredentials {
+            custom_authentication_type: self.custom_authentication_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "custom_authentication_type",
+                    "custom_authentication_type was not specified but it is required when building CustomAuthCredentials",
+                )
+            })?,
             credentials_map: self.credentials_map,
-        }
+        })
     }
 }

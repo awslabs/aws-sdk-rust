@@ -17,12 +17,16 @@ impl NotificationAction {
         self.action.as_ref()
     }
     /// <p>Contains the configuration information of SMS notifications.</p>
-    pub fn sms_configurations(&self) -> ::std::option::Option<&[crate::types::SmsConfiguration]> {
-        self.sms_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sms_configurations.is_none()`.
+    pub fn sms_configurations(&self) -> &[crate::types::SmsConfiguration] {
+        self.sms_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Contains the configuration information of email notifications.</p>
-    pub fn email_configurations(&self) -> ::std::option::Option<&[crate::types::EmailConfiguration]> {
-        self.email_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_configurations.is_none()`.
+    pub fn email_configurations(&self) -> &[crate::types::EmailConfiguration] {
+        self.email_configurations.as_deref().unwrap_or_default()
     }
 }
 impl NotificationAction {
@@ -42,6 +46,7 @@ pub struct NotificationActionBuilder {
 }
 impl NotificationActionBuilder {
     /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::NotificationTargetActions) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

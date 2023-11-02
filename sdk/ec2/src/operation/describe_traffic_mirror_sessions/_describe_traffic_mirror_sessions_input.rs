@@ -27,8 +27,10 @@ pub struct DescribeTrafficMirrorSessionsInput {
 }
 impl DescribeTrafficMirrorSessionsInput {
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.traffic_mirror_session_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traffic_mirror_session_ids.is_none()`.
+    pub fn traffic_mirror_session_ids(&self) -> &[::std::string::String] {
+        self.traffic_mirror_session_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -46,8 +48,10 @@ impl DescribeTrafficMirrorSessionsInput {
     /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// <li> <p> <code>virtual-network-id</code>: The virtual network ID of the Traffic Mirror session.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

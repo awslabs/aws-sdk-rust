@@ -14,8 +14,10 @@ impl CancelCapacityReservationFleetsInput {
         self.dry_run
     }
     /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
-    pub fn capacity_reservation_fleet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capacity_reservation_fleet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_reservation_fleet_ids.is_none()`.
+    pub fn capacity_reservation_fleet_ids(&self) -> &[::std::string::String] {
+        self.capacity_reservation_fleet_ids.as_deref().unwrap_or_default()
     }
 }
 impl CancelCapacityReservationFleetsInput {

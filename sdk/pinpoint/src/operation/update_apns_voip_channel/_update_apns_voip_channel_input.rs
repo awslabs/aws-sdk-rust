@@ -34,6 +34,7 @@ pub struct UpdateApnsVoipChannelInputBuilder {
 }
 impl UpdateApnsVoipChannelInputBuilder {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    /// This field is required.
     pub fn apns_voip_channel_request(mut self, input: crate::types::ApnsVoipChannelRequest) -> Self {
         self.apns_voip_channel_request = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl UpdateApnsVoipChannelInputBuilder {
         &self.apns_voip_channel_request
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

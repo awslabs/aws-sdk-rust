@@ -27,6 +27,7 @@ pub struct DescribeStudioLifecycleConfigInputBuilder {
 }
 impl DescribeStudioLifecycleConfigInputBuilder {
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    /// This field is required.
     pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self

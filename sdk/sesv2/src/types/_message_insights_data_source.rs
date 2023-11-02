@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageInsightsDataSource {
     /// <p>Represents the start date for the export interval as a timestamp. The start date is inclusive.</p>
-    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_date: ::aws_smithy_types::DateTime,
     /// <p>Represents the end date for the export interval as a timestamp. The end date is inclusive.</p>
-    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_date: ::aws_smithy_types::DateTime,
     /// <p>Filters for results to be included in the export file.</p>
     pub include: ::std::option::Option<crate::types::MessageInsightsFilters>,
     /// <p>Filters for results to be excluded from the export file.</p>
@@ -17,12 +17,12 @@ pub struct MessageInsightsDataSource {
 }
 impl MessageInsightsDataSource {
     /// <p>Represents the start date for the export interval as a timestamp. The start date is inclusive.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_date.as_ref()
+    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.start_date
     }
     /// <p>Represents the end date for the export interval as a timestamp. The end date is inclusive.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_date.as_ref()
+    pub fn end_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.end_date
     }
     /// <p>Filters for results to be included in the export file.</p>
     pub fn include(&self) -> ::std::option::Option<&crate::types::MessageInsightsFilters> {
@@ -56,6 +56,7 @@ pub struct MessageInsightsDataSourceBuilder {
 }
 impl MessageInsightsDataSourceBuilder {
     /// <p>Represents the start date for the export interval as a timestamp. The start date is inclusive.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl MessageInsightsDataSourceBuilder {
         &self.start_date
     }
     /// <p>Represents the end date for the export interval as a timestamp. The end date is inclusive.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self
@@ -126,13 +128,26 @@ impl MessageInsightsDataSourceBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`MessageInsightsDataSource`](crate::types::MessageInsightsDataSource).
-    pub fn build(self) -> crate::types::MessageInsightsDataSource {
-        crate::types::MessageInsightsDataSource {
-            start_date: self.start_date,
-            end_date: self.end_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_date`](crate::types::builders::MessageInsightsDataSourceBuilder::start_date)
+    /// - [`end_date`](crate::types::builders::MessageInsightsDataSourceBuilder::end_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageInsightsDataSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MessageInsightsDataSource {
+            start_date: self.start_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_date",
+                    "start_date was not specified but it is required when building MessageInsightsDataSource",
+                )
+            })?,
+            end_date: self.end_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_date",
+                    "end_date was not specified but it is required when building MessageInsightsDataSource",
+                )
+            })?,
             include: self.include,
             exclude: self.exclude,
             max_results: self.max_results,
-        }
+        })
     }
 }

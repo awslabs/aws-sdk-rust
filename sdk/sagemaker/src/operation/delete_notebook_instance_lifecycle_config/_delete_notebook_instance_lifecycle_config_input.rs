@@ -27,6 +27,7 @@ pub struct DeleteNotebookInstanceLifecycleConfigInputBuilder {
 }
 impl DeleteNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The name of the lifecycle configuration to delete.</p>
+    /// This field is required.
     pub fn notebook_instance_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notebook_instance_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self

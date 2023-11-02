@@ -13,8 +13,10 @@ pub struct ListStreamConsumersOutput {
 }
 impl ListStreamConsumersOutput {
     /// <p>An array of JSON objects. Each object represents one registered consumer.</p>
-    pub fn consumers(&self) -> ::std::option::Option<&[crate::types::Consumer]> {
-        self.consumers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumers.is_none()`.
+    pub fn consumers(&self) -> &[crate::types::Consumer] {
+        self.consumers.as_deref().unwrap_or_default()
     }
     /// <p>When the number of consumers that are registered with the data stream is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of registered consumers, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListStreamConsumers</code> to list the next set of registered consumers. For more information about the use of this pagination token when calling the <code>ListStreamConsumers</code> operation, see <code>ListStreamConsumersInput$NextToken</code>.</p> <important>
     /// <p>Tokens expire after 300 seconds. When you obtain a value for <code>NextToken</code> in the response to a call to <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you specify an expired token in a call to <code>ListStreamConsumers</code>, you get <code>ExpiredNextTokenException</code>.</p>

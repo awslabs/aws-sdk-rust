@@ -27,6 +27,7 @@ pub struct DescribeModelCardExportJobInputBuilder {
 }
 impl DescribeModelCardExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+    /// This field is required.
     pub fn model_card_export_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_export_job_arn = ::std::option::Option::Some(input.into());
         self

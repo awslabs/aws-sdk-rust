@@ -175,6 +175,7 @@ impl PresigningConfigBuilder {
 pub struct PresignedRequest(http::Request<()>);
 
 impl PresignedRequest {
+    #[allow(dead_code)]
     pub(crate) fn new(inner: http::Request<()>) -> Self {
         Self(inner)
     }

@@ -3,14 +3,14 @@ pub fn ser_notify_email_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotifyEmailType,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.subject {
-        object.key("Subject").string(var_1.as_str());
+    {
+        object.key("Subject").string(input.subject.as_str());
     }
-    if let Some(var_2) = &input.html_body {
-        object.key("HtmlBody").string(var_2.as_str());
+    if let Some(var_1) = &input.html_body {
+        object.key("HtmlBody").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.text_body {
-        object.key("TextBody").string(var_3.as_str());
+    if let Some(var_2) = &input.text_body {
+        object.key("TextBody").string(var_2.as_str());
     }
     Ok(())
 }
@@ -61,7 +61,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::notify_email_type_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

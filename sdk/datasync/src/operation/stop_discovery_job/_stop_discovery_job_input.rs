@@ -27,6 +27,7 @@ pub struct StopDiscoveryJobInputBuilder {
 }
 impl StopDiscoveryJobInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
+    /// This field is required.
     pub fn discovery_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.discovery_job_arn = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct CreateWorkerBlockInputBuilder {
 }
 impl CreateWorkerBlockInputBuilder {
     /// <p>The ID of the Worker to block.</p>
+    /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateWorkerBlockInputBuilder {
         &self.worker_id
     }
     /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
+    /// This field is required.
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
         self

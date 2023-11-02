@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
-    pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub stop_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
 impl StopExecutionOutput {
     /// <p>The date the execution is stopped.</p>
-    pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.stop_date.as_ref()
+    pub fn stop_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.stop_date
     }
 }
 impl ::aws_http::request_id::RequestId for StopExecutionOutput {
@@ -34,6 +34,7 @@ pub struct StopExecutionOutputBuilder {
 }
 impl StopExecutionOutputBuilder {
     /// <p>The date the execution is stopped.</p>
+    /// This field is required.
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_date = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,19 @@ impl StopExecutionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StopExecutionOutput`](crate::operation::stop_execution::StopExecutionOutput).
-    pub fn build(self) -> crate::operation::stop_execution::StopExecutionOutput {
-        crate::operation::stop_execution::StopExecutionOutput {
-            stop_date: self.stop_date,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`stop_date`](crate::operation::stop_execution::builders::StopExecutionOutputBuilder::stop_date)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_execution::StopExecutionOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::stop_execution::StopExecutionOutput {
+            stop_date: self.stop_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "stop_date",
+                    "stop_date was not specified but it is required when building StopExecutionOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

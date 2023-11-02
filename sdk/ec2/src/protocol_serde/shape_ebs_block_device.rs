@@ -61,6 +61,7 @@ pub fn ser_ebs_block_device(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ebs_block_device(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::EbsBlockDevice, ::aws_smithy_xml::decode::XmlDecodeError> {

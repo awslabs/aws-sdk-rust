@@ -3,15 +3,15 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplicationVersion`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::set_application_id): <p>The unique identifier of the application.</p>
-    ///   - [`application_version(i32)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::application_version) / [`set_application_version(Option<i32>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::set_application_version): <p>The specific version of the application.</p>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::application_id) / [`set_application_id(impl Into<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application.</p><br>
+    ///   - [`application_version(i32)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::application_version) / [`set_application_version(i32)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::set_application_version):<br>required: **true**<br><p>The specific version of the application.</p><br>
     /// - On success, responds with [`GetApplicationVersionOutput`](crate::operation::get_application_version::GetApplicationVersionOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::operation::get_application_version::GetApplicationVersionOutput::name): <p>The name of the application version.</p>
-    ///   - [`application_version(Option<i32>)`](crate::operation::get_application_version::GetApplicationVersionOutput::application_version): <p>The specific version of the application.</p>
+    ///   - [`name(String)`](crate::operation::get_application_version::GetApplicationVersionOutput::name): <p>The name of the application version.</p>
+    ///   - [`application_version(i32)`](crate::operation::get_application_version::GetApplicationVersionOutput::application_version): <p>The specific version of the application.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_application_version::GetApplicationVersionOutput::description): <p>The application description.</p>
-    ///   - [`definition_content(Option<String>)`](crate::operation::get_application_version::GetApplicationVersionOutput::definition_content): <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
-    ///   - [`status(Option<ApplicationVersionLifecycle>)`](crate::operation::get_application_version::GetApplicationVersionOutput::status): <p>The status of the application version.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_application_version::GetApplicationVersionOutput::creation_time): <p>The timestamp when the application version was created.</p>
+    ///   - [`definition_content(String)`](crate::operation::get_application_version::GetApplicationVersionOutput::definition_content): <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
+    ///   - [`status(ApplicationVersionLifecycle)`](crate::operation::get_application_version::GetApplicationVersionOutput::status): <p>The status of the application version.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_application_version::GetApplicationVersionOutput::creation_time): <p>The timestamp when the application version was created.</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_application_version::GetApplicationVersionOutput::status_reason): <p>The reason for the reported status.</p>
     /// - On failure, responds with [`SdkError<GetApplicationVersionError>`](crate::operation::get_application_version::GetApplicationVersionError)
     pub fn get_application_version(&self) -> crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder {

@@ -11,8 +11,10 @@ pub struct GetEvidenceByEvidenceFolderOutput {
 }
 impl GetEvidenceByEvidenceFolderOutput {
     /// <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
-    pub fn evidence(&self) -> ::std::option::Option<&[crate::types::Evidence]> {
-        self.evidence.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence.is_none()`.
+    pub fn evidence(&self) -> &[crate::types::Evidence] {
+        self.evidence.as_deref().unwrap_or_default()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

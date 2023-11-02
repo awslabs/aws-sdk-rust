@@ -6,11 +6,11 @@ pub struct UpdateRevisionInput {
     /// <p>An optional comment about the revision.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a data set.</p>
-    pub data_set_id: ::std::option::Option<::std::string::String>,
+    pub data_set_id: ::std::string::String,
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     pub finalized: bool,
     /// <p>The unique identifier for a revision.</p>
-    pub revision_id: ::std::option::Option<::std::string::String>,
+    pub revision_id: ::std::string::String,
 }
 impl UpdateRevisionInput {
     /// <p>An optional comment about the revision.</p>
@@ -18,16 +18,18 @@ impl UpdateRevisionInput {
         self.comment.as_deref()
     }
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
-        self.data_set_id.as_deref()
+    pub fn data_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_set_id.deref()
     }
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     pub fn finalized(&self) -> bool {
         self.finalized
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
-        self.revision_id.as_deref()
+    pub fn revision_id(&self) -> &str {
+        use std::ops::Deref;
+        self.revision_id.deref()
     }
 }
 impl UpdateRevisionInput {
@@ -62,6 +64,7 @@ impl UpdateRevisionInputBuilder {
         &self.comment
     }
     /// <p>The unique identifier for a data set.</p>
+    /// This field is required.
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl UpdateRevisionInputBuilder {
         &self.finalized
     }
     /// <p>The unique identifier for a revision.</p>
+    /// This field is required.
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
@@ -104,14 +108,27 @@ impl UpdateRevisionInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`UpdateRevisionInput`](crate::operation::update_revision::UpdateRevisionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_set_id`](crate::operation::update_revision::builders::UpdateRevisionInputBuilder::data_set_id)
+    /// - [`revision_id`](crate::operation::update_revision::builders::UpdateRevisionInputBuilder::revision_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_revision::UpdateRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_revision::UpdateRevisionInput {
             comment: self.comment,
-            data_set_id: self.data_set_id,
+            data_set_id: self.data_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_set_id",
+                    "data_set_id was not specified but it is required when building UpdateRevisionInput",
+                )
+            })?,
             finalized: self.finalized.unwrap_or_default(),
-            revision_id: self.revision_id,
+            revision_id: self.revision_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "revision_id",
+                    "revision_id was not specified but it is required when building UpdateRevisionInput",
+                )
+            })?,
         })
     }
 }

@@ -15,8 +15,10 @@ impl RemoteAccessConfig {
         self.ec2_ssh_key.as_deref()
     }
     /// <p>The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn source_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.source_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_security_groups.is_none()`.
+    pub fn source_security_groups(&self) -> &[::std::string::String] {
+        self.source_security_groups.as_deref().unwrap_or_default()
     }
 }
 impl RemoteAccessConfig {

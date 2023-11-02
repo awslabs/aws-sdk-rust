@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DetachTypedLink`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_arn(impl Into<String>)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::set_directory_arn): <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
-    ///   - [`typed_link_specifier(TypedLinkSpecifier)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::typed_link_specifier) / [`set_typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::set_typed_link_specifier): <p>Used to accept a typed link specifier as input.</p>
+    ///   - [`directory_arn(impl Into<String>)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p><br>
+    ///   - [`typed_link_specifier(TypedLinkSpecifier)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::typed_link_specifier) / [`set_typed_link_specifier(Option<TypedLinkSpecifier>)`](crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder::set_typed_link_specifier):<br>required: **true**<br><p>Used to accept a typed link specifier as input.</p><br>
     /// - On success, responds with [`DetachTypedLinkOutput`](crate::operation::detach_typed_link::DetachTypedLinkOutput)
     /// - On failure, responds with [`SdkError<DetachTypedLinkError>`](crate::operation::detach_typed_link::DetachTypedLinkError)
     pub fn detach_typed_link(&self) -> crate::operation::detach_typed_link::builders::DetachTypedLinkFluentBuilder {

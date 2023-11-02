@@ -49,8 +49,10 @@ pub struct DashIsoGroupSettings {
 }
 impl DashIsoGroupSettings {
     /// By default, the service creates one .mpd DASH manifest for each DASH ISO output group in your job. This default manifest references every output in the output group. To create additional DASH manifests that reference a subset of the outputs in the output group, specify a list of them here.
-    pub fn additional_manifests(&self) -> ::std::option::Option<&[crate::types::DashAdditionalManifest]> {
-        self.additional_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_manifests.is_none()`.
+    pub fn additional_manifests(&self) -> &[crate::types::DashAdditionalManifest] {
+        self.additional_manifests.as_deref().unwrap_or_default()
     }
     /// Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration, to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
     pub fn audio_channel_config_scheme_id_uri(&self) -> ::std::option::Option<&crate::types::DashIsoGroupAudioChannelConfigSchemeIdUri> {

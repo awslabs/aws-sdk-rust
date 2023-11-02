@@ -41,6 +41,7 @@ pub struct UpdateTemplateActiveVersionInputBuilder {
 }
 impl UpdateTemplateActiveVersionInputBuilder {
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
+    /// This field is required.
     pub fn template_active_version_request(mut self, input: crate::types::TemplateActiveVersionRequest) -> Self {
         self.template_active_version_request = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl UpdateTemplateActiveVersionInputBuilder {
         &self.template_active_version_request
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl UpdateTemplateActiveVersionInputBuilder {
         &self.template_name
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    /// This field is required.
     pub fn template_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_type = ::std::option::Option::Some(input.into());
         self

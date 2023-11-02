@@ -34,6 +34,7 @@ pub struct CreateSlotTypeVersionInputBuilder {
 }
 impl CreateSlotTypeVersionInputBuilder {
     /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

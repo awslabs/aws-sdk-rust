@@ -27,6 +27,7 @@ pub struct GetManagedScalingPolicyInputBuilder {
 }
 impl GetManagedScalingPolicyInputBuilder {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

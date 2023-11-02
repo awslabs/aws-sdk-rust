@@ -27,6 +27,7 @@ pub struct PutConferencePreferenceInputBuilder {
 }
 impl PutConferencePreferenceInputBuilder {
     /// <p>The conference preference of a specific conference provider.</p>
+    /// This field is required.
     pub fn conference_preference(mut self, input: crate::types::ConferencePreference) -> Self {
         self.conference_preference = ::std::option::Option::Some(input);
         self

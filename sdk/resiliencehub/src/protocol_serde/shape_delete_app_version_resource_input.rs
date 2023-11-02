@@ -3,29 +3,29 @@ pub fn ser_delete_app_version_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.aws_account_id {
-        object.key("awsAccountId").string(var_2.as_str());
+    if let Some(var_1) = &input.aws_account_id {
+        object.key("awsAccountId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.aws_region {
-        object.key("awsRegion").string(var_3.as_str());
+    if let Some(var_2) = &input.aws_region {
+        object.key("awsRegion").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.logical_resource_id {
+    if let Some(var_4) = &input.logical_resource_id {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("logicalResourceId").start_object();
-        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("logicalResourceId").start_object();
+        crate::protocol_serde::shape_logical_resource_id::ser_logical_resource_id(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.physical_resource_id {
-        object.key("physicalResourceId").string(var_7.as_str());
+    if let Some(var_6) = &input.physical_resource_id {
+        object.key("physicalResourceId").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.resource_name {
-        object.key("resourceName").string(var_8.as_str());
+    if let Some(var_7) = &input.resource_name {
+        object.key("resourceName").string(var_7.as_str());
     }
     Ok(())
 }

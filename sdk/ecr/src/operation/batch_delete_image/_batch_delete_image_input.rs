@@ -21,8 +21,10 @@ impl BatchDeleteImageInput {
         self.repository_name.as_deref()
     }
     /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    pub fn image_ids(&self) -> ::std::option::Option<&[crate::types::ImageIdentifier]> {
-        self.image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
+    pub fn image_ids(&self) -> &[crate::types::ImageIdentifier] {
+        self.image_ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchDeleteImageInput {
@@ -56,6 +58,7 @@ impl BatchDeleteImageInputBuilder {
         &self.registry_id
     }
     /// <p>The repository that contains the image to delete.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self

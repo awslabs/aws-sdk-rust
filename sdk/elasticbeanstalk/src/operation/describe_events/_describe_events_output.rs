@@ -12,8 +12,10 @@ pub struct DescribeEventsOutput {
 }
 impl DescribeEventsOutput {
     /// <p> A list of <code>EventDescription</code>. </p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::EventDescription]> {
-        self.events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
+    pub fn events(&self) -> &[crate::types::EventDescription] {
+        self.events.as_deref().unwrap_or_default()
     }
     /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

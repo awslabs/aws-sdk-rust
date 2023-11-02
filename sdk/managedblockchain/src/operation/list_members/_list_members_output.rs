@@ -11,8 +11,10 @@ pub struct ListMembersOutput {
 }
 impl ListMembersOutput {
     /// <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
-    pub fn members(&self) -> ::std::option::Option<&[crate::types::MemberSummary]> {
-        self.members.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
+    pub fn members(&self) -> &[crate::types::MemberSummary] {
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

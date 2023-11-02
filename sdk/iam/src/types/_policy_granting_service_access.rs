@@ -6,9 +6,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyGrantingServiceAccess {
     /// <p>The policy name.</p>
-    pub policy_name: ::std::option::Option<::std::string::String>,
+    pub policy_name: ::std::string::String,
     /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
-    pub policy_type: ::std::option::Option<crate::types::PolicyType>,
+    pub policy_type: crate::types::PolicyType,
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
@@ -21,12 +21,13 @@ pub struct PolicyGrantingServiceAccess {
 }
 impl PolicyGrantingServiceAccess {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
-        self.policy_name.as_deref()
+    pub fn policy_name(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_name.deref()
     }
     /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
-        self.policy_type.as_ref()
+    pub fn policy_type(&self) -> &crate::types::PolicyType {
+        &self.policy_type
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
@@ -63,6 +64,7 @@ pub struct PolicyGrantingServiceAccessBuilder {
 }
 impl PolicyGrantingServiceAccessBuilder {
     /// <p>The policy name.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl PolicyGrantingServiceAccessBuilder {
         &self.policy_name
     }
     /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+    /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
@@ -142,13 +145,26 @@ impl PolicyGrantingServiceAccessBuilder {
         &self.entity_name
     }
     /// Consumes the builder and constructs a [`PolicyGrantingServiceAccess`](crate::types::PolicyGrantingServiceAccess).
-    pub fn build(self) -> crate::types::PolicyGrantingServiceAccess {
-        crate::types::PolicyGrantingServiceAccess {
-            policy_name: self.policy_name,
-            policy_type: self.policy_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_name`](crate::types::builders::PolicyGrantingServiceAccessBuilder::policy_name)
+    /// - [`policy_type`](crate::types::builders::PolicyGrantingServiceAccessBuilder::policy_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyGrantingServiceAccess, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::PolicyGrantingServiceAccess {
+            policy_name: self.policy_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_name",
+                    "policy_name was not specified but it is required when building PolicyGrantingServiceAccess",
+                )
+            })?,
+            policy_type: self.policy_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_type",
+                    "policy_type was not specified but it is required when building PolicyGrantingServiceAccess",
+                )
+            })?,
             policy_arn: self.policy_arn,
             entity_type: self.entity_type,
             entity_name: self.entity_name,
-        }
+        })
     }
 }

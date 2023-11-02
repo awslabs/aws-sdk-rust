@@ -41,6 +41,7 @@ pub struct ListSkillsStoreSkillsByCategoryInputBuilder {
 }
 impl ListSkillsStoreSkillsByCategoryInputBuilder {
     /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
+    /// This field is required.
     pub fn category_id(mut self, input: i64) -> Self {
         self.category_id = ::std::option::Option::Some(input);
         self

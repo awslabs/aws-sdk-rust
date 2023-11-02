@@ -28,6 +28,7 @@ pub struct RejectInboundConnectionInputBuilder {
 }
 impl RejectInboundConnectionInputBuilder {
     /// <p>The unique identifier of the inbound connection to reject.</p>
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self

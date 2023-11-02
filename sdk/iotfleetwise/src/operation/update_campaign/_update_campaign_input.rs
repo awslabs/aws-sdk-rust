@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignInput {
     /// <p> The name of the campaign to update. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the campaign.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of vehicle attributes to associate with a signal. </p>
@@ -17,12 +17,13 @@ pub struct UpdateCampaignInput {
     /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
-    pub action: ::std::option::Option<crate::types::UpdateCampaignAction>,
+    pub action: crate::types::UpdateCampaignAction,
 }
 impl UpdateCampaignInput {
     /// <p> The name of the campaign to update. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the campaign.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -30,8 +31,10 @@ impl UpdateCampaignInput {
     }
     /// <p> A list of vehicle attributes to associate with a signal. </p>
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.data_extra_dimensions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_extra_dimensions.is_none()`.
+    pub fn data_extra_dimensions(&self) -> &[::std::string::String] {
+        self.data_extra_dimensions.as_deref().unwrap_or_default()
     }
     /// <p> Specifies how to update a campaign. The action can be one of the following:</p>
     /// <ul>
@@ -40,8 +43,8 @@ impl UpdateCampaignInput {
     /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::UpdateCampaignAction> {
-        self.action.as_ref()
+    pub fn action(&self) -> &crate::types::UpdateCampaignAction {
+        &self.action
     }
 }
 impl UpdateCampaignInput {
@@ -62,6 +65,7 @@ pub struct UpdateCampaignInputBuilder {
 }
 impl UpdateCampaignInputBuilder {
     /// <p> The name of the campaign to update. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +123,7 @@ impl UpdateCampaignInputBuilder {
     /// <li> <p> <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign is redeployed to all vehicles and the vehicles will resume sending data.</p> </li>
     /// <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::UpdateCampaignAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
@@ -145,14 +150,27 @@ impl UpdateCampaignInputBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::update_campaign::builders::UpdateCampaignInputBuilder::name)
+    /// - [`action`](crate::operation::update_campaign::builders::UpdateCampaignInputBuilder::action)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_campaign::UpdateCampaignInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateCampaignInput",
+                )
+            })?,
             description: self.description,
             data_extra_dimensions: self.data_extra_dimensions,
-            action: self.action,
+            action: self.action.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "action",
+                    "action was not specified but it is required when building UpdateCampaignInput",
+                )
+            })?,
         })
     }
 }

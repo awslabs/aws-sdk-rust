@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataSetsOutput {
     /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
-    pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>>,
+    pub data_sets: ::std::vec::Vec<crate::types::DataSetSummary>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDataSetsOutput {
     /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
-    pub fn data_sets(&self) -> ::std::option::Option<&[crate::types::DataSetSummary]> {
-        self.data_sets.as_deref()
+    pub fn data_sets(&self) -> &[crate::types::DataSetSummary] {
+        use std::ops::Deref;
+        self.data_sets.deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListDataSetsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput).
-    pub fn build(self) -> crate::operation::list_data_sets::ListDataSetsOutput {
-        crate::operation::list_data_sets::ListDataSetsOutput {
-            data_sets: self.data_sets,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_sets`](crate::operation::list_data_sets::builders::ListDataSetsOutputBuilder::data_sets)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_data_sets::ListDataSetsOutput {
+            data_sets: self.data_sets.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_sets",
+                    "data_sets was not specified but it is required when building ListDataSetsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

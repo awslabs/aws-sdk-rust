@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProtectedQueryInput {
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub membership_identifier: ::std::option::Option<::std::string::String>,
+    pub membership_identifier: ::std::string::String,
     /// <p>The identifier for a protected query instance.</p>
-    pub protected_query_identifier: ::std::option::Option<::std::string::String>,
+    pub protected_query_identifier: ::std::string::String,
 }
 impl GetProtectedQueryInput {
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
-        self.membership_identifier.as_deref()
+    pub fn membership_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_identifier.deref()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(&self) -> ::std::option::Option<&str> {
-        self.protected_query_identifier.as_deref()
+    pub fn protected_query_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.protected_query_identifier.deref()
     }
 }
 impl GetProtectedQueryInput {
@@ -34,6 +36,7 @@ pub struct GetProtectedQueryInputBuilder {
 }
 impl GetProtectedQueryInputBuilder {
     /// <p>The identifier for a membership in a protected query instance.</p>
+    /// This field is required.
     pub fn membership_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +51,7 @@ impl GetProtectedQueryInputBuilder {
         &self.membership_identifier
     }
     /// <p>The identifier for a protected query instance.</p>
+    /// This field is required.
     pub fn protected_query_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protected_query_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,12 +66,25 @@ impl GetProtectedQueryInputBuilder {
         &self.protected_query_identifier
     }
     /// Consumes the builder and constructs a [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`membership_identifier`](crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder::membership_identifier)
+    /// - [`protected_query_identifier`](crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder::protected_query_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_protected_query::GetProtectedQueryInput {
-            membership_identifier: self.membership_identifier,
-            protected_query_identifier: self.protected_query_identifier,
+            membership_identifier: self.membership_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "membership_identifier",
+                    "membership_identifier was not specified but it is required when building GetProtectedQueryInput",
+                )
+            })?,
+            protected_query_identifier: self.protected_query_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "protected_query_identifier",
+                    "protected_query_identifier was not specified but it is required when building GetProtectedQueryInput",
+                )
+            })?,
         })
     }
 }

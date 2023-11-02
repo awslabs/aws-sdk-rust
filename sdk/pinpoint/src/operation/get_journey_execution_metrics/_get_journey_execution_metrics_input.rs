@@ -48,6 +48,7 @@ pub struct GetJourneyExecutionMetricsInputBuilder {
 }
 impl GetJourneyExecutionMetricsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl GetJourneyExecutionMetricsInputBuilder {
         &self.application_id
     }
     /// <p>The unique identifier for the journey.</p>
+    /// This field is required.
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.journey_id = ::std::option::Option::Some(input.into());
         self

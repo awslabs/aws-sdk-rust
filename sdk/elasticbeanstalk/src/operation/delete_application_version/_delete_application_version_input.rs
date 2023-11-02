@@ -42,6 +42,7 @@ pub struct DeleteApplicationVersionInputBuilder {
 }
 impl DeleteApplicationVersionInputBuilder {
     /// <p>The name of the application to which the version belongs.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteApplicationVersionInputBuilder {
         &self.application_name
     }
     /// <p>The label of the version to delete.</p>
+    /// This field is required.
     pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self

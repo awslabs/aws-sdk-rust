@@ -35,6 +35,7 @@ pub struct GetAnalyzerOutputBuilder {
 }
 impl GetAnalyzerOutputBuilder {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
+    /// This field is required.
     pub fn analyzer(mut self, input: crate::types::AnalyzerSummary) -> Self {
         self.analyzer = ::std::option::Option::Some(input);
         self

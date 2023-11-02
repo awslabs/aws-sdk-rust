@@ -30,8 +30,10 @@ impl ConflictException {
         self.resource_type.as_deref()
     }
     /// <p>Conflict Exception specific errors.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::ErrorDetails]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::ErrorDetails] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ConflictException {

@@ -1433,6 +1433,8 @@ pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributes;
 
 pub use crate::types::_auto_ml_problem_type_resolved_attributes::AutoMlProblemTypeResolvedAttributes;
 
+pub use crate::types::_text_generation_resolved_attributes::TextGenerationResolvedAttributes;
+
 pub use crate::types::_tabular_resolved_attributes::TabularResolvedAttributes;
 
 pub use crate::types::_problem_type::ProblemType;
@@ -1452,6 +1454,8 @@ pub use crate::types::_model_deploy_result::ModelDeployResult;
 pub use crate::types::_model_deploy_config::ModelDeployConfig;
 
 pub use crate::types::_auto_ml_problem_type_config::AutoMlProblemTypeConfig;
+
+pub use crate::types::_text_generation_job_config::TextGenerationJobConfig;
 
 pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfig;
 
@@ -2934,6 +2938,10 @@ mod _tensor_board_app_settings;
 mod _tensor_board_output_config;
 
 mod _text_classification_job_config;
+
+mod _text_generation_job_config;
+
+mod _text_generation_resolved_attributes;
 
 mod _time_series_config;
 

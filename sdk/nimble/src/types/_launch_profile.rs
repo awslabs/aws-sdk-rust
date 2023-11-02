@@ -58,16 +58,20 @@ impl LaunchProfile {
         self.description.as_deref()
     }
     /// <p>Unique identifiers for a collection of EC2 subnets.</p>
-    pub fn ec2_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ec2_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_subnet_ids.is_none()`.
+    pub fn ec2_subnet_ids(&self) -> &[::std::string::String] {
+        self.ec2_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn launch_profile_protocol_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.launch_profile_protocol_versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_profile_protocol_versions.is_none()`.
+    pub fn launch_profile_protocol_versions(&self) -> &[::std::string::String] {
+        self.launch_profile_protocol_versions.as_deref().unwrap_or_default()
     }
     /// <p>A friendly name for the launch profile.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -90,8 +94,10 @@ impl LaunchProfile {
         self.stream_configuration.as_ref()
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn studio_component_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.studio_component_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.studio_component_ids.is_none()`.
+    pub fn studio_component_ids(&self) -> &[::std::string::String] {
+        self.studio_component_ids.as_deref().unwrap_or_default()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -106,8 +112,10 @@ impl LaunchProfile {
         self.updated_by.as_deref()
     }
     /// <p>The list of the latest validation results.</p>
-    pub fn validation_results(&self) -> ::std::option::Option<&[crate::types::ValidationResult]> {
-        self.validation_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_results.is_none()`.
+    pub fn validation_results(&self) -> &[crate::types::ValidationResult] {
+        self.validation_results.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for LaunchProfile {

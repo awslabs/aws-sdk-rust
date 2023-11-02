@@ -27,6 +27,7 @@ pub struct DeleteAppBundleInputBuilder {
 }
 impl DeleteAppBundleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self

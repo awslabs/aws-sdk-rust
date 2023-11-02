@@ -17,8 +17,10 @@ impl DescribeImagePermissionsOutput {
         self.name.as_deref()
     }
     /// <p>The permissions for a private image that you own. </p>
-    pub fn shared_image_permissions_list(&self) -> ::std::option::Option<&[crate::types::SharedImagePermissions]> {
-        self.shared_image_permissions_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_image_permissions_list.is_none()`.
+    pub fn shared_image_permissions_list(&self) -> &[crate::types::SharedImagePermissions] {
+        self.shared_image_permissions_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

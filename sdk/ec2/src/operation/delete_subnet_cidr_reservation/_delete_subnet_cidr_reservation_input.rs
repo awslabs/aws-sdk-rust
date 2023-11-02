@@ -34,6 +34,7 @@ pub struct DeleteSubnetCidrReservationInputBuilder {
 }
 impl DeleteSubnetCidrReservationInputBuilder {
     /// <p>The ID of the subnet CIDR reservation.</p>
+    /// This field is required.
     pub fn subnet_cidr_reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_cidr_reservation_id = ::std::option::Option::Some(input.into());
         self

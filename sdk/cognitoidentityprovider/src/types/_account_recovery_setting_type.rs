@@ -9,8 +9,10 @@ pub struct AccountRecoverySettingType {
 }
 impl AccountRecoverySettingType {
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
-    pub fn recovery_mechanisms(&self) -> ::std::option::Option<&[crate::types::RecoveryOptionType]> {
-        self.recovery_mechanisms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_mechanisms.is_none()`.
+    pub fn recovery_mechanisms(&self) -> &[crate::types::RecoveryOptionType] {
+        self.recovery_mechanisms.as_deref().unwrap_or_default()
     }
 }
 impl AccountRecoverySettingType {

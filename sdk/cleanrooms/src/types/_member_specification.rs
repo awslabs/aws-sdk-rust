@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberSpecification {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>The abilities granted to the collaboration member.</p>
-    pub member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>The member's display name.</p>
-    pub display_name: ::std::option::Option<::std::string::String>,
+    pub display_name: ::std::string::String,
 }
 impl MemberSpecification {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn member_abilities(&self) -> ::std::option::Option<&[crate::types::MemberAbility]> {
-        self.member_abilities.as_deref()
+    pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
+        use std::ops::Deref;
+        self.member_abilities.deref()
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
-        self.display_name.as_deref()
+    pub fn display_name(&self) -> &str {
+        use std::ops::Deref;
+        self.display_name.deref()
     }
 }
 impl MemberSpecification {
@@ -42,6 +45,7 @@ pub struct MemberSpecificationBuilder {
 }
 impl MemberSpecificationBuilder {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +80,7 @@ impl MemberSpecificationBuilder {
         &self.member_abilities
     }
     /// <p>The member's display name.</p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +95,30 @@ impl MemberSpecificationBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`MemberSpecification`](crate::types::MemberSpecification).
-    pub fn build(self) -> crate::types::MemberSpecification {
-        crate::types::MemberSpecification {
-            account_id: self.account_id,
-            member_abilities: self.member_abilities,
-            display_name: self.display_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::MemberSpecificationBuilder::account_id)
+    /// - [`member_abilities`](crate::types::builders::MemberSpecificationBuilder::member_abilities)
+    /// - [`display_name`](crate::types::builders::MemberSpecificationBuilder::display_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MemberSpecification {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building MemberSpecification",
+                )
+            })?,
+            member_abilities: self.member_abilities.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "member_abilities",
+                    "member_abilities was not specified but it is required when building MemberSpecification",
+                )
+            })?,
+            display_name: self.display_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "display_name",
+                    "display_name was not specified but it is required when building MemberSpecification",
+                )
+            })?,
+        })
     }
 }

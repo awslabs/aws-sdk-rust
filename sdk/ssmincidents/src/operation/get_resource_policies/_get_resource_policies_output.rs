@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcePoliciesOutput {
     /// <p>Details about the resource policy attached to the response plan.</p>
-    pub resource_policies: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePolicy>>,
+    pub resource_policies: ::std::vec::Vec<crate::types::ResourcePolicy>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourcePoliciesOutput {
     /// <p>Details about the resource policy attached to the response plan.</p>
-    pub fn resource_policies(&self) -> ::std::option::Option<&[crate::types::ResourcePolicy]> {
-        self.resource_policies.as_deref()
+    pub fn resource_policies(&self) -> &[crate::types::ResourcePolicy] {
+        use std::ops::Deref;
+        self.resource_policies.deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl GetResourcePoliciesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetResourcePoliciesOutput`](crate::operation::get_resource_policies::GetResourcePoliciesOutput).
-    pub fn build(self) -> crate::operation::get_resource_policies::GetResourcePoliciesOutput {
-        crate::operation::get_resource_policies::GetResourcePoliciesOutput {
-            resource_policies: self.resource_policies,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_policies`](crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::resource_policies)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_resource_policies::GetResourcePoliciesOutput {
+            resource_policies: self.resource_policies.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_policies",
+                    "resource_policies was not specified but it is required when building GetResourcePoliciesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

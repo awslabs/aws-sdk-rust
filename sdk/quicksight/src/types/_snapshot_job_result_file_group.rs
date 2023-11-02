@@ -11,12 +11,16 @@ pub struct SnapshotJobResultFileGroup {
 }
 impl SnapshotJobResultFileGroup {
     /// <p> A list of <code>SnapshotFile</code> objects.</p>
-    pub fn files(&self) -> ::std::option::Option<&[crate::types::SnapshotFile]> {
-        self.files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
+    pub fn files(&self) -> &[crate::types::SnapshotFile] {
+        self.files.as_deref().unwrap_or_default()
     }
     /// <p> A list of <code>SnapshotJobS3Result</code> objects.</p>
-    pub fn s3_results(&self) -> ::std::option::Option<&[crate::types::SnapshotJobS3Result]> {
-        self.s3_results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_results.is_none()`.
+    pub fn s3_results(&self) -> &[crate::types::SnapshotJobS3Result] {
+        self.s3_results.as_deref().unwrap_or_default()
     }
 }
 impl SnapshotJobResultFileGroup {

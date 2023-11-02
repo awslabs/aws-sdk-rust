@@ -48,6 +48,7 @@ pub struct ListEntitledApplicationsInputBuilder {
 }
 impl ListEntitledApplicationsInputBuilder {
     /// <p>The name of the stack with which the entitlement is associated.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListEntitledApplicationsInputBuilder {
         &self.stack_name
     }
     /// <p>The name of the entitlement.</p>
+    /// This field is required.
     pub fn entitlement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_name = ::std::option::Option::Some(input.into());
         self

@@ -84,8 +84,10 @@ impl UpdateNfsFileShareInput {
         self.object_acl.as_ref()
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn client_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.client_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_list.is_none()`.
+    pub fn client_list(&self) -> &[::std::string::String] {
+        self.client_list.as_deref().unwrap_or_default()
     }
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
@@ -168,6 +170,7 @@ pub struct UpdateNfsFileShareInputBuilder {
 }
 impl UpdateNfsFileShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
+    /// This field is required.
     pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_arn = ::std::option::Option::Some(input.into());
         self

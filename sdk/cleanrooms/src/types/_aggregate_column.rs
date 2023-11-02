@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateColumn {
     /// <p>Column names in configured table of aggregate columns.</p>
-    pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub column_names: ::std::vec::Vec<::std::string::String>,
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
-    pub function: ::std::option::Option<crate::types::AggregateFunctionName>,
+    pub function: crate::types::AggregateFunctionName,
 }
 impl AggregateColumn {
     /// <p>Column names in configured table of aggregate columns.</p>
-    pub fn column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.column_names.as_deref()
+    pub fn column_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.column_names.deref()
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
-    pub fn function(&self) -> ::std::option::Option<&crate::types::AggregateFunctionName> {
-        self.function.as_ref()
+    pub fn function(&self) -> &crate::types::AggregateFunctionName {
+        &self.function
     }
 }
 impl AggregateColumn {
@@ -55,6 +56,7 @@ impl AggregateColumnBuilder {
         &self.column_names
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
+    /// This field is required.
     pub fn function(mut self, input: crate::types::AggregateFunctionName) -> Self {
         self.function = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl AggregateColumnBuilder {
         &self.function
     }
     /// Consumes the builder and constructs a [`AggregateColumn`](crate::types::AggregateColumn).
-    pub fn build(self) -> crate::types::AggregateColumn {
-        crate::types::AggregateColumn {
-            column_names: self.column_names,
-            function: self.function,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`column_names`](crate::types::builders::AggregateColumnBuilder::column_names)
+    /// - [`function`](crate::types::builders::AggregateColumnBuilder::function)
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregateColumn, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AggregateColumn {
+            column_names: self.column_names.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "column_names",
+                    "column_names was not specified but it is required when building AggregateColumn",
+                )
+            })?,
+            function: self.function.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "function",
+                    "function was not specified but it is required when building AggregateColumn",
+                )
+            })?,
+        })
     }
 }

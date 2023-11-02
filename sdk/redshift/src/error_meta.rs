@@ -59,6 +59,8 @@ pub enum Error {
     ClusterSubnetGroupQuotaExceededFault(crate::types::error::ClusterSubnetGroupQuotaExceededFault),
     /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetQuotaExceededFault(crate::types::error::ClusterSubnetQuotaExceededFault),
+    /// <p>There is a conflict while updating the resource policy.</p>
+    ConflictPolicyUpdateFault(crate::types::error::ConflictPolicyUpdateFault),
     /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
     CopyToRegionDisabledFault(crate::types::error::CopyToRegionDisabledFault),
     /// <p>An error occurred when an attempt was made to change the custom domain association.</p>
@@ -105,6 +107,8 @@ pub enum Error {
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
     /// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
     InsufficientS3BucketPolicyFault(crate::types::error::InsufficientS3BucketPolicyFault),
+    /// <p>The integration can't be found.</p>
+    IntegrationNotFoundFault(crate::types::error::IntegrationNotFoundFault),
     /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
     InvalidAuthenticationProfileRequestFault(crate::types::error::InvalidAuthenticationProfileRequestFault),
     /// <p>The status of the authorization is not valid.</p>
@@ -137,6 +141,8 @@ pub enum Error {
     InvalidHsmConfigurationStateFault(crate::types::error::InvalidHsmConfigurationStateFault),
     /// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
     InvalidNamespaceFault(crate::types::error::InvalidNamespaceFault),
+    /// <p>The resource policy isn't valid.</p>
+    InvalidPolicyFault(crate::types::error::InvalidPolicyFault),
     /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
     InvalidReservedNodeStateFault(crate::types::error::InvalidReservedNodeStateFault),
     /// <p>The restore is invalid.</p>
@@ -166,6 +172,8 @@ pub enum Error {
     InvalidUsageLimitFault(crate::types::error::InvalidUsageLimitFault),
     /// <p>The cluster subnet group does not cover all Availability Zones.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
+    /// <p>There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack mode, associate an IPv6 CIDR block with each subnet in your VPC.</p>
+    Ipv6CidrBlockNotFoundFault(crate::types::error::Ipv6CidrBlockNotFoundFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
@@ -294,6 +302,7 @@ impl ::std::fmt::Display for Error {
             Error::ClusterSubnetGroupNotFoundFault(inner) => inner.fmt(f),
             Error::ClusterSubnetGroupQuotaExceededFault(inner) => inner.fmt(f),
             Error::ClusterSubnetQuotaExceededFault(inner) => inner.fmt(f),
+            Error::ConflictPolicyUpdateFault(inner) => inner.fmt(f),
             Error::CopyToRegionDisabledFault(inner) => inner.fmt(f),
             Error::CustomCnameAssociationFault(inner) => inner.fmt(f),
             Error::CustomDomainAssociationNotFoundFault(inner) => inner.fmt(f),
@@ -317,6 +326,7 @@ impl ::std::fmt::Display for Error {
             Error::IncompatibleOrderableOptions(inner) => inner.fmt(f),
             Error::InsufficientClusterCapacityFault(inner) => inner.fmt(f),
             Error::InsufficientS3BucketPolicyFault(inner) => inner.fmt(f),
+            Error::IntegrationNotFoundFault(inner) => inner.fmt(f),
             Error::InvalidAuthenticationProfileRequestFault(inner) => inner.fmt(f),
             Error::InvalidAuthorizationStateFault(inner) => inner.fmt(f),
             Error::InvalidClusterParameterGroupStateFault(inner) => inner.fmt(f),
@@ -333,6 +343,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidHsmClientCertificateStateFault(inner) => inner.fmt(f),
             Error::InvalidHsmConfigurationStateFault(inner) => inner.fmt(f),
             Error::InvalidNamespaceFault(inner) => inner.fmt(f),
+            Error::InvalidPolicyFault(inner) => inner.fmt(f),
             Error::InvalidReservedNodeStateFault(inner) => inner.fmt(f),
             Error::InvalidRestoreFault(inner) => inner.fmt(f),
             Error::InvalidRetentionPeriodFault(inner) => inner.fmt(f),
@@ -347,6 +358,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidTagFault(inner) => inner.fmt(f),
             Error::InvalidUsageLimitFault(inner) => inner.fmt(f),
             Error::InvalidVpcNetworkStateFault(inner) => inner.fmt(f),
+            Error::Ipv6CidrBlockNotFoundFault(inner) => inner.fmt(f),
             Error::LimitExceededFault(inner) => inner.fmt(f),
             Error::NumberOfNodesPerClusterLimitExceededFault(inner) => inner.fmt(f),
             Error::NumberOfNodesQuotaExceededFault(inner) => inner.fmt(f),
@@ -842,6 +854,7 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             crate::operation::create_cluster::CreateClusterError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
             crate::operation::create_cluster::CreateClusterError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
             crate::operation::create_cluster::CreateClusterError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::create_cluster::CreateClusterError::Ipv6CidrBlockNotFoundFault(inner) => Error::Ipv6CidrBlockNotFoundFault(inner),
             crate::operation::create_cluster::CreateClusterError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
             crate::operation::create_cluster::CreateClusterError::NumberOfNodesPerClusterLimitExceededFault(inner) => {
                 Error::NumberOfNodesPerClusterLimitExceededFault(inner)
@@ -1771,6 +1784,33 @@ impl From<crate::operation::delete_partner::DeletePartnerError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::delete_resource_policy::DeleteResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2554,6 +2594,38 @@ impl From<crate::operation::describe_hsm_configurations::DescribeHsmConfiguratio
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError> for Error {
+    fn from(err: crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError) -> Self {
+        match err {
+            crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError::IntegrationNotFoundFault(inner) => {
+                Error::IntegrationNotFoundFault(inner)
+            }
+            crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError::InvalidNamespaceFault(inner) => {
+                Error::InvalidNamespaceFault(inner)
+            }
+            crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_logging_status::DescribeLoggingStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3298,6 +3370,34 @@ impl From<crate::operation::get_reserved_node_exchange_offerings::GetReservedNod
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_resource_policy::GetResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_resource_policy::GetResourcePolicyError::InvalidPolicyFault(inner) => Error::InvalidPolicyFault(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::get_resource_policy::GetResourcePolicyError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3407,6 +3507,7 @@ impl From<crate::operation::modify_cluster::ModifyClusterError> for Error {
             crate::operation::modify_cluster::ModifyClusterError::InvalidClusterTrackFault(inner) => Error::InvalidClusterTrackFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::InvalidElasticIpFault(inner) => Error::InvalidElasticIpFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::InvalidRetentionPeriodFault(inner) => Error::InvalidRetentionPeriodFault(inner),
+            crate::operation::modify_cluster::ModifyClusterError::Ipv6CidrBlockNotFoundFault(inner) => Error::Ipv6CidrBlockNotFoundFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
             crate::operation::modify_cluster::ModifyClusterError::NumberOfNodesPerClusterLimitExceededFault(inner) => {
                 Error::NumberOfNodesPerClusterLimitExceededFault(inner)
@@ -3962,6 +4063,37 @@ impl From<crate::operation::purchase_reserved_node_offering::PurchaseReservedNod
         }
     }
 }
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                ::aws_smithy_types::error::Unhandled::builder()
+                    .meta(::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_resource_policy::PutResourcePolicyError::ConflictPolicyUpdateFault(inner) => {
+                Error::ConflictPolicyUpdateFault(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::InvalidPolicyFault(inner) => Error::InvalidPolicyFault(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::reboot_cluster::RebootClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4169,6 +4301,9 @@ impl From<crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSna
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidTagFault(inner) => Error::InvalidTagFault(inner),
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::InvalidVpcNetworkStateFault(inner) => {
                 Error::InvalidVpcNetworkStateFault(inner)
+            }
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::Ipv6CidrBlockNotFoundFault(inner) => {
+                Error::Ipv6CidrBlockNotFoundFault(inner)
             }
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::LimitExceededFault(inner) => {
                 Error::LimitExceededFault(inner)
@@ -4475,6 +4610,7 @@ impl ::std::error::Error for Error {
             Error::ClusterSubnetGroupNotFoundFault(inner) => inner.source(),
             Error::ClusterSubnetGroupQuotaExceededFault(inner) => inner.source(),
             Error::ClusterSubnetQuotaExceededFault(inner) => inner.source(),
+            Error::ConflictPolicyUpdateFault(inner) => inner.source(),
             Error::CopyToRegionDisabledFault(inner) => inner.source(),
             Error::CustomCnameAssociationFault(inner) => inner.source(),
             Error::CustomDomainAssociationNotFoundFault(inner) => inner.source(),
@@ -4498,6 +4634,7 @@ impl ::std::error::Error for Error {
             Error::IncompatibleOrderableOptions(inner) => inner.source(),
             Error::InsufficientClusterCapacityFault(inner) => inner.source(),
             Error::InsufficientS3BucketPolicyFault(inner) => inner.source(),
+            Error::IntegrationNotFoundFault(inner) => inner.source(),
             Error::InvalidAuthenticationProfileRequestFault(inner) => inner.source(),
             Error::InvalidAuthorizationStateFault(inner) => inner.source(),
             Error::InvalidClusterParameterGroupStateFault(inner) => inner.source(),
@@ -4514,6 +4651,7 @@ impl ::std::error::Error for Error {
             Error::InvalidHsmClientCertificateStateFault(inner) => inner.source(),
             Error::InvalidHsmConfigurationStateFault(inner) => inner.source(),
             Error::InvalidNamespaceFault(inner) => inner.source(),
+            Error::InvalidPolicyFault(inner) => inner.source(),
             Error::InvalidReservedNodeStateFault(inner) => inner.source(),
             Error::InvalidRestoreFault(inner) => inner.source(),
             Error::InvalidRetentionPeriodFault(inner) => inner.source(),
@@ -4528,6 +4666,7 @@ impl ::std::error::Error for Error {
             Error::InvalidTagFault(inner) => inner.source(),
             Error::InvalidUsageLimitFault(inner) => inner.source(),
             Error::InvalidVpcNetworkStateFault(inner) => inner.source(),
+            Error::Ipv6CidrBlockNotFoundFault(inner) => inner.source(),
             Error::LimitExceededFault(inner) => inner.source(),
             Error::NumberOfNodesPerClusterLimitExceededFault(inner) => inner.source(),
             Error::NumberOfNodesQuotaExceededFault(inner) => inner.source(),
@@ -4610,6 +4749,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::ClusterSubnetGroupNotFoundFault(e) => e.request_id(),
             Self::ClusterSubnetGroupQuotaExceededFault(e) => e.request_id(),
             Self::ClusterSubnetQuotaExceededFault(e) => e.request_id(),
+            Self::ConflictPolicyUpdateFault(e) => e.request_id(),
             Self::CopyToRegionDisabledFault(e) => e.request_id(),
             Self::CustomCnameAssociationFault(e) => e.request_id(),
             Self::CustomDomainAssociationNotFoundFault(e) => e.request_id(),
@@ -4633,6 +4773,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::IncompatibleOrderableOptions(e) => e.request_id(),
             Self::InsufficientClusterCapacityFault(e) => e.request_id(),
             Self::InsufficientS3BucketPolicyFault(e) => e.request_id(),
+            Self::IntegrationNotFoundFault(e) => e.request_id(),
             Self::InvalidAuthenticationProfileRequestFault(e) => e.request_id(),
             Self::InvalidAuthorizationStateFault(e) => e.request_id(),
             Self::InvalidClusterParameterGroupStateFault(e) => e.request_id(),
@@ -4649,6 +4790,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InvalidHsmClientCertificateStateFault(e) => e.request_id(),
             Self::InvalidHsmConfigurationStateFault(e) => e.request_id(),
             Self::InvalidNamespaceFault(e) => e.request_id(),
+            Self::InvalidPolicyFault(e) => e.request_id(),
             Self::InvalidReservedNodeStateFault(e) => e.request_id(),
             Self::InvalidRestoreFault(e) => e.request_id(),
             Self::InvalidRetentionPeriodFault(e) => e.request_id(),
@@ -4663,6 +4805,7 @@ impl ::aws_http::request_id::RequestId for Error {
             Self::InvalidTagFault(e) => e.request_id(),
             Self::InvalidUsageLimitFault(e) => e.request_id(),
             Self::InvalidVpcNetworkStateFault(e) => e.request_id(),
+            Self::Ipv6CidrBlockNotFoundFault(e) => e.request_id(),
             Self::LimitExceededFault(e) => e.request_id(),
             Self::NumberOfNodesPerClusterLimitExceededFault(e) => e.request_id(),
             Self::NumberOfNodesQuotaExceededFault(e) => e.request_id(),

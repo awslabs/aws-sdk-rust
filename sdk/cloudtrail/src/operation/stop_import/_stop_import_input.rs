@@ -27,6 +27,7 @@ pub struct StopImportInputBuilder {
 }
 impl StopImportInputBuilder {
     /// <p> The ID of the import. </p>
+    /// This field is required.
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
         self

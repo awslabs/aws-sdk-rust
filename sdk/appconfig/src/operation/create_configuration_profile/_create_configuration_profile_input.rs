@@ -88,8 +88,10 @@ impl CreateConfigurationProfileInput {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn validators(&self) -> ::std::option::Option<&[crate::types::Validator]> {
-        self.validators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validators.is_none()`.
+    pub fn validators(&self) -> &[crate::types::Validator] {
+        self.validators.as_deref().unwrap_or_default()
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -129,6 +131,7 @@ pub struct CreateConfigurationProfileInputBuilder {
 }
 impl CreateConfigurationProfileInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -143,6 +146,7 @@ impl CreateConfigurationProfileInputBuilder {
         &self.application_id
     }
     /// <p>A name for the configuration profile.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +194,7 @@ impl CreateConfigurationProfileInputBuilder {
     /// <li> <p>For an SSM document, specify either the document name in the format <code>ssm-document://
     /// <document name></document></code> or the Amazon Resource Name (ARN).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
         self

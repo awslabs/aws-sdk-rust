@@ -55,6 +55,7 @@ pub struct DescribePatchPropertiesInputBuilder {
 }
 impl DescribePatchPropertiesInputBuilder {
     /// <p>The operating system type for which to list patches.</p>
+    /// This field is required.
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl DescribePatchPropertiesInputBuilder {
         &self.operating_system
     }
     /// <p>The patch property for which you want to view patch details. </p>
+    /// This field is required.
     pub fn property(mut self, input: crate::types::PatchProperty) -> Self {
         self.property = ::std::option::Option::Some(input);
         self

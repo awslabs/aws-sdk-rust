@@ -9,20 +9,20 @@ pub fn ser_start_app_input(
     if let Some(var_2) = &input.description {
         object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.domain {
-        object.key("Domain").string(var_3.as_str());
+    {
+        object.key("Domain").string(input.domain.as_str());
     }
-    if let Some(var_4) = &input.launch_overrides {
+    if let Some(var_3) = &input.launch_overrides {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("LaunchOverrides").start_object();
-        crate::protocol_serde::shape_launch_overrides::ser_launch_overrides(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("LaunchOverrides").start_object();
+        crate::protocol_serde::shape_launch_overrides::ser_launch_overrides(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("Name").string(var_6.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_7) = &input.simulation {
-        object.key("Simulation").string(var_7.as_str());
+    {
+        object.key("Simulation").string(input.simulation.as_str());
     }
     Ok(())
 }

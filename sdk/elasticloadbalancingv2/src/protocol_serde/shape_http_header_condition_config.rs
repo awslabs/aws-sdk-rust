@@ -23,6 +23,7 @@ pub fn ser_http_header_condition_config(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_http_header_condition_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::HttpHeaderConditionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {

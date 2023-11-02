@@ -8,8 +8,10 @@ pub struct BatchAssociateUserStackInput {
 }
 impl BatchAssociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn user_stack_associations(&self) -> ::std::option::Option<&[crate::types::UserStackAssociation]> {
-        self.user_stack_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_stack_associations.is_none()`.
+    pub fn user_stack_associations(&self) -> &[crate::types::UserStackAssociation] {
+        self.user_stack_associations.as_deref().unwrap_or_default()
     }
 }
 impl BatchAssociateUserStackInput {

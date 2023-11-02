@@ -27,6 +27,7 @@ pub struct DescribeBackupInputBuilder {
 }
 impl DescribeBackupInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
+    /// This field is required.
     pub fn backup_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_arn = ::std::option::Option::Some(input.into());
         self

@@ -76,6 +76,7 @@ pub struct ListTestGridSessionsInputBuilder {
 }
 impl ListTestGridSessionsInputBuilder {
     /// <p>ARN of a <code>TestGridProject</code>.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self

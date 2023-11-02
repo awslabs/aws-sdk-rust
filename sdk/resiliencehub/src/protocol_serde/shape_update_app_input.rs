@@ -3,38 +3,38 @@ pub fn ser_update_app_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_app::UpdateAppInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app_arn {
-        object.key("appArn").string(var_1.as_str());
+    {
+        object.key("appArn").string(input.app_arn.as_str());
     }
-    if let Some(var_2) = &input.assessment_schedule {
-        object.key("assessmentSchedule").string(var_2.as_str());
+    if let Some(var_1) = &input.assessment_schedule {
+        object.key("assessmentSchedule").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.clear_resiliency_policy_arn {
-        object.key("clearResiliencyPolicyArn").boolean(*var_3);
+    if let Some(var_2) = &input.clear_resiliency_policy_arn {
+        object.key("clearResiliencyPolicyArn").boolean(*var_2);
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.event_subscriptions {
-        let mut array_6 = object.key("eventSubscriptions").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.event_subscriptions {
+        let mut array_5 = object.key("eventSubscriptions").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_event_subscription::ser_event_subscription(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_event_subscription::ser_event_subscription(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_6.finish();
+        array_5.finish();
     }
-    if let Some(var_9) = &input.permission_model {
+    if let Some(var_8) = &input.permission_model {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("permissionModel").start_object();
-        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("permissionModel").start_object();
+        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_11) = &input.policy_arn {
-        object.key("policyArn").string(var_11.as_str());
+    if let Some(var_10) = &input.policy_arn {
+        object.key("policyArn").string(var_10.as_str());
     }
     Ok(())
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProfile`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_profile_id): <p>The unique identifier of a customer profile.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`profile_id(impl Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_profile_id):<br>required: **true**<br><p>The unique identifier of a customer profile.</p><br>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_profile::builders::DeleteProfileFluentBuilder::set_domain_name):<br>required: **true**<br><p>The unique name of the domain.</p><br>
     /// - On success, responds with [`DeleteProfileOutput`](crate::operation::delete_profile::DeleteProfileOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::delete_profile::DeleteProfileOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::operation::delete_profile::DeleteProfileError)

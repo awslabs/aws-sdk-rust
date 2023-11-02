@@ -43,8 +43,10 @@ impl CreateJobPlaylist {
     /// </ul>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name. If you include a file extension in Output Key, the file name will have two extensions.</p>
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
-    pub fn output_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.output_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_keys.is_none()`.
+    pub fn output_keys(&self) -> &[::std::string::String] {
+        self.output_keys.as_deref().unwrap_or_default()
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub fn hls_content_protection(&self) -> ::std::option::Option<&crate::types::HlsContentProtection> {

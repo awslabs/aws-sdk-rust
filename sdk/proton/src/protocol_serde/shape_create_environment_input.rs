@@ -3,53 +3,53 @@ pub fn ser_create_environment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_environment::CreateEnvironmentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.template_name {
-        object.key("templateName").string(var_2.as_str());
+    {
+        object.key("templateName").string(input.template_name.as_str());
     }
-    if let Some(var_3) = &input.template_major_version {
-        object.key("templateMajorVersion").string(var_3.as_str());
+    {
+        object.key("templateMajorVersion").string(input.template_major_version.as_str());
     }
-    if let Some(var_4) = &input.template_minor_version {
-        object.key("templateMinorVersion").string(var_4.as_str());
+    if let Some(var_1) = &input.template_minor_version {
+        object.key("templateMinorVersion").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_6) = &input.spec {
-        object.key("spec").string(var_6.as_str());
+    {
+        object.key("spec").string(input.spec.as_str());
     }
-    if let Some(var_7) = &input.proton_service_role_arn {
-        object.key("protonServiceRoleArn").string(var_7.as_str());
+    if let Some(var_3) = &input.proton_service_role_arn {
+        object.key("protonServiceRoleArn").string(var_3.as_str());
     }
-    if let Some(var_8) = &input.environment_account_connection_id {
-        object.key("environmentAccountConnectionId").string(var_8.as_str());
+    if let Some(var_4) = &input.environment_account_connection_id {
+        object.key("environmentAccountConnectionId").string(var_4.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_10.finish();
+        array_6.finish();
     }
-    if let Some(var_13) = &input.provisioning_repository {
+    if let Some(var_9) = &input.provisioning_repository {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("provisioningRepository").start_object();
-        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_10 = object.key("provisioningRepository").start_object();
+        crate::protocol_serde::shape_repository_branch_input::ser_repository_branch_input(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_15) = &input.component_role_arn {
-        object.key("componentRoleArn").string(var_15.as_str());
+    if let Some(var_11) = &input.component_role_arn {
+        object.key("componentRoleArn").string(var_11.as_str());
     }
-    if let Some(var_16) = &input.codebuild_role_arn {
-        object.key("codebuildRoleArn").string(var_16.as_str());
+    if let Some(var_12) = &input.codebuild_role_arn {
+        object.key("codebuildRoleArn").string(var_12.as_str());
     }
     Ok(())
 }

@@ -43,6 +43,7 @@ pub struct ListDashboardsInputBuilder {
 }
 impl ListDashboardsInputBuilder {
     /// <p>The ID of the project.</p>
+    /// This field is required.
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
         self

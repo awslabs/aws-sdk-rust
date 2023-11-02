@@ -32,11 +32,10 @@ pub fn de_update_resource_collection_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ConflictException" => crate::operation::update_resource_collection::UpdateResourceCollectionError::ConflictException({
@@ -47,11 +46,10 @@ pub fn de_update_resource_collection_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::update_resource_collection::UpdateResourceCollectionError::InternalServerException({
@@ -69,11 +67,10 @@ pub fn de_update_resource_collection_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_resource_collection::UpdateResourceCollectionError::ThrottlingException({
@@ -91,11 +88,10 @@ pub fn de_update_resource_collection_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::update_resource_collection::UpdateResourceCollectionError::ValidationException({
@@ -106,11 +102,10 @@ pub fn de_update_resource_collection_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_resource_collection::UpdateResourceCollectionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::update_resource_collection::UpdateResourceCollectionError::generic(generic),

@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDashboardOverrideParameters {
     /// <p>The ID of the dashboard that you want to apply overrides to.</p>
-    pub dashboard_id: ::std::option::Option<::std::string::String>,
+    pub dashboard_id: ::std::string::String,
     /// <p>A new name for the dashboard.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobDashboardOverrideParameters {
     /// <p>The ID of the dashboard that you want to apply overrides to.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
-        self.dashboard_id.as_deref()
+    pub fn dashboard_id(&self) -> &str {
+        use std::ops::Deref;
+        self.dashboard_id.deref()
     }
     /// <p>A new name for the dashboard.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AssetBundleImportJobDashboardOverrideParametersBuilder {
 }
 impl AssetBundleImportJobDashboardOverrideParametersBuilder {
     /// <p>The ID of the dashboard that you want to apply overrides to.</p>
+    /// This field is required.
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl AssetBundleImportJobDashboardOverrideParametersBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDashboardOverrideParameters`](crate::types::AssetBundleImportJobDashboardOverrideParameters).
-    pub fn build(self) -> crate::types::AssetBundleImportJobDashboardOverrideParameters {
-        crate::types::AssetBundleImportJobDashboardOverrideParameters {
-            dashboard_id: self.dashboard_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dashboard_id`](crate::types::builders::AssetBundleImportJobDashboardOverrideParametersBuilder::dashboard_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDashboardOverrideParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDashboardOverrideParameters {
+            dashboard_id: self.dashboard_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dashboard_id",
+                    "dashboard_id was not specified but it is required when building AssetBundleImportJobDashboardOverrideParameters",
+                )
+            })?,
             name: self.name,
-        }
+        })
     }
 }

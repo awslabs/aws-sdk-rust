@@ -11,12 +11,16 @@ pub struct BatchGetStandardsControlAssociationsOutput {
 }
 impl BatchGetStandardsControlAssociationsOutput {
     /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
-    pub fn standards_control_association_details(&self) -> ::std::option::Option<&[crate::types::StandardsControlAssociationDetail]> {
-        self.standards_control_association_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_details.is_none()`.
+    pub fn standards_control_association_details(&self) -> &[crate::types::StandardsControlAssociationDetail] {
+        self.standards_control_association_details.as_deref().unwrap_or_default()
     }
     /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
-    pub fn unprocessed_associations(&self) -> ::std::option::Option<&[crate::types::UnprocessedStandardsControlAssociation]> {
-        self.unprocessed_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_associations.is_none()`.
+    pub fn unprocessed_associations(&self) -> &[crate::types::UnprocessedStandardsControlAssociation] {
+        self.unprocessed_associations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetStandardsControlAssociationsOutput {

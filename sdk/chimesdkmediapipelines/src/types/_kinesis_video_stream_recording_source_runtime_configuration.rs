@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamRecordingSourceRuntimeConfiguration {
     /// <p>The stream or streams to be recorded.</p>
-    pub streams: ::std::option::Option<::std::vec::Vec<crate::types::RecordingStreamConfiguration>>,
+    pub streams: ::std::vec::Vec<crate::types::RecordingStreamConfiguration>,
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
     pub fragment_selector: ::std::option::Option<crate::types::FragmentSelector>,
 }
 impl KinesisVideoStreamRecordingSourceRuntimeConfiguration {
     /// <p>The stream or streams to be recorded.</p>
-    pub fn streams(&self) -> ::std::option::Option<&[crate::types::RecordingStreamConfiguration]> {
-        self.streams.as_deref()
+    pub fn streams(&self) -> &[crate::types::RecordingStreamConfiguration] {
+        use std::ops::Deref;
+        self.streams.deref()
     }
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
     pub fn fragment_selector(&self) -> ::std::option::Option<&crate::types::FragmentSelector> {
@@ -55,6 +56,7 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
         &self.streams
     }
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
+    /// This field is required.
     pub fn fragment_selector(mut self, input: crate::types::FragmentSelector) -> Self {
         self.fragment_selector = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,20 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
         &self.fragment_selector
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamRecordingSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration).
-    pub fn build(self) -> crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration {
-        crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration {
-            streams: self.streams,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`streams`](crate::types::builders::KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder::streams)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration {
+            streams: self.streams.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "streams",
+                    "streams was not specified but it is required when building KinesisVideoStreamRecordingSourceRuntimeConfiguration",
+                )
+            })?,
             fragment_selector: self.fragment_selector,
-        }
+        })
     }
 }

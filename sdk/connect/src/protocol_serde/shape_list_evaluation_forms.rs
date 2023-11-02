@@ -99,7 +99,9 @@ pub fn de_list_evaluation_forms_http_response(
         output = crate::protocol_serde::shape_list_evaluation_forms::de_list_evaluation_forms(_response_body, output)
             .map_err(crate::operation::list_evaluation_forms::ListEvaluationFormsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_evaluation_forms_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_evaluation_forms::ListEvaluationFormsError::unhandled)?
     })
 }
 

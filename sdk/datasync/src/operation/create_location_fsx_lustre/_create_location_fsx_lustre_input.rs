@@ -18,16 +18,20 @@ impl CreateLocationFsxLustreInput {
         self.fsx_filesystem_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
-    pub fn security_group_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
+    pub fn security_group_arns(&self) -> &[::std::string::String] {
+        self.security_group_arns.as_deref().unwrap_or_default()
     }
     /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagListEntry]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagListEntry] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateLocationFsxLustreInput {
@@ -48,6 +52,7 @@ pub struct CreateLocationFsxLustreInputBuilder {
 }
 impl CreateLocationFsxLustreInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
+    /// This field is required.
     pub fn fsx_filesystem_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fsx_filesystem_arn = ::std::option::Option::Some(input.into());
         self

@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskScheduledEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub resource_type: ::std::option::Option<::std::string::String>,
+    pub resource_type: ::std::string::String,
     /// <p>The action of the resource called by a task state.</p>
-    pub resource: ::std::option::Option<::std::string::String>,
+    pub resource: ::std::string::String,
     /// <p>The region of the scheduled task</p>
-    pub region: ::std::option::Option<::std::string::String>,
+    pub region: ::std::string::String,
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub parameters: ::std::option::Option<::std::string::String>,
+    pub parameters: ::std::string::String,
     /// <p>The maximum allowed duration of the task.</p>
     pub timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
@@ -21,20 +21,24 @@ pub struct TaskScheduledEventDetails {
 }
 impl TaskScheduledEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
-        self.resource_type.as_deref()
+    pub fn resource_type(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_type.deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
-        self.resource.as_deref()
+    pub fn resource(&self) -> &str {
+        use std::ops::Deref;
+        self.resource.deref()
     }
     /// <p>The region of the scheduled task</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
+    pub fn region(&self) -> &str {
+        use std::ops::Deref;
+        self.region.deref()
     }
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
-        self.parameters.as_deref()
+    pub fn parameters(&self) -> &str {
+        use std::ops::Deref;
+        self.parameters.deref()
     }
     /// <p>The maximum allowed duration of the task.</p>
     pub fn timeout_in_seconds(&self) -> ::std::option::Option<i64> {
@@ -83,6 +87,7 @@ pub struct TaskScheduledEventDetailsBuilder {
 }
 impl TaskScheduledEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl TaskScheduledEventDetailsBuilder {
         &self.resource_type
     }
     /// <p>The action of the resource called by a task state.</p>
+    /// This field is required.
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl TaskScheduledEventDetailsBuilder {
         &self.resource
     }
     /// <p>The region of the scheduled task</p>
+    /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl TaskScheduledEventDetailsBuilder {
         &self.region
     }
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    /// This field is required.
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameters = ::std::option::Option::Some(input.into());
         self
@@ -181,16 +189,41 @@ impl TaskScheduledEventDetailsBuilder {
         &self.task_credentials
     }
     /// Consumes the builder and constructs a [`TaskScheduledEventDetails`](crate::types::TaskScheduledEventDetails).
-    pub fn build(self) -> crate::types::TaskScheduledEventDetails {
-        crate::types::TaskScheduledEventDetails {
-            resource_type: self.resource_type,
-            resource: self.resource,
-            region: self.region,
-            parameters: self.parameters,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::TaskScheduledEventDetailsBuilder::resource_type)
+    /// - [`resource`](crate::types::builders::TaskScheduledEventDetailsBuilder::resource)
+    /// - [`region`](crate::types::builders::TaskScheduledEventDetailsBuilder::region)
+    /// - [`parameters`](crate::types::builders::TaskScheduledEventDetailsBuilder::parameters)
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskScheduledEventDetails, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TaskScheduledEventDetails {
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building TaskScheduledEventDetails",
+                )
+            })?,
+            resource: self.resource.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource",
+                    "resource was not specified but it is required when building TaskScheduledEventDetails",
+                )
+            })?,
+            region: self.region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region",
+                    "region was not specified but it is required when building TaskScheduledEventDetails",
+                )
+            })?,
+            parameters: self.parameters.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "parameters",
+                    "parameters was not specified but it is required when building TaskScheduledEventDetails",
+                )
+            })?,
             timeout_in_seconds: self.timeout_in_seconds,
             heartbeat_in_seconds: self.heartbeat_in_seconds,
             task_credentials: self.task_credentials,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for TaskScheduledEventDetailsBuilder {

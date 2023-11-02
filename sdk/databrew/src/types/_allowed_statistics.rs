@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedStatistics {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub statistics: ::std::vec::Vec<::std::string::String>,
 }
 impl AllowedStatistics {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.statistics.as_deref()
+    pub fn statistics(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.statistics.deref()
     }
 }
 impl AllowedStatistics {
@@ -48,7 +49,16 @@ impl AllowedStatisticsBuilder {
         &self.statistics
     }
     /// Consumes the builder and constructs a [`AllowedStatistics`](crate::types::AllowedStatistics).
-    pub fn build(self) -> crate::types::AllowedStatistics {
-        crate::types::AllowedStatistics { statistics: self.statistics }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`statistics`](crate::types::builders::AllowedStatisticsBuilder::statistics)
+    pub fn build(self) -> ::std::result::Result<crate::types::AllowedStatistics, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AllowedStatistics {
+            statistics: self.statistics.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "statistics",
+                    "statistics was not specified but it is required when building AllowedStatistics",
+                )
+            })?,
+        })
     }
 }

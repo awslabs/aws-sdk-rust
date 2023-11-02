@@ -21,8 +21,10 @@ impl SlotValueOverride {
         self.value.as_ref()
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::SlotValueOverride]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::SlotValueOverride] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl SlotValueOverride {

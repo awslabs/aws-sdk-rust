@@ -23,8 +23,10 @@ impl GetMaintenanceWindowExecutionOutput {
         self.window_execution_id.as_deref()
     }
     /// <p>The ID of the task executions from the maintenance window execution.</p>
-    pub fn task_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.task_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_ids.is_none()`.
+    pub fn task_ids(&self) -> &[::std::string::String] {
+        self.task_ids.as_deref().unwrap_or_default()
     }
     /// <p>The status of the maintenance window execution.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowExecutionStatus> {

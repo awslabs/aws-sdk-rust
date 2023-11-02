@@ -34,6 +34,7 @@ pub struct DescribePublishingDestinationInputBuilder {
 }
 impl DescribePublishingDestinationInputBuilder {
     /// <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
+    /// This field is required.
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribePublishingDestinationInputBuilder {
         &self.detector_id
     }
     /// <p>The ID of the publishing destination to retrieve.</p>
+    /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self

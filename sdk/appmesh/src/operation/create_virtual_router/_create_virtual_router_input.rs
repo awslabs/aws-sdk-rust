@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVirtualRouterInput {
     /// <p>The name to use for the virtual router.</p>
-    pub virtual_router_name: ::std::option::Option<::std::string::String>,
+    pub virtual_router_name: ::std::string::String,
     /// <p>The name of the service mesh to create the virtual router in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The virtual router specification to apply.</p>
     pub spec: ::std::option::Option<crate::types::VirtualRouterSpec>,
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
@@ -18,20 +18,24 @@ pub struct CreateVirtualRouterInput {
 }
 impl CreateVirtualRouterInput {
     /// <p>The name to use for the virtual router.</p>
-    pub fn virtual_router_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_router_name.as_deref()
+    pub fn virtual_router_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_router_name.deref()
     }
     /// <p>The name of the service mesh to create the virtual router in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The virtual router specification to apply.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::VirtualRouterSpec> {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagRef]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::TagRef] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +66,7 @@ pub struct CreateVirtualRouterInputBuilder {
 }
 impl CreateVirtualRouterInputBuilder {
     /// <p>The name to use for the virtual router.</p>
+    /// This field is required.
     pub fn virtual_router_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_router_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +81,7 @@ impl CreateVirtualRouterInputBuilder {
         &self.virtual_router_name
     }
     /// <p>The name of the service mesh to create the virtual router in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +96,7 @@ impl CreateVirtualRouterInputBuilder {
         &self.mesh_name
     }
     /// <p>The virtual router specification to apply.</p>
+    /// This field is required.
     pub fn spec(mut self, input: crate::types::VirtualRouterSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
         self
@@ -152,13 +159,26 @@ impl CreateVirtualRouterInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`CreateVirtualRouterInput`](crate::operation::create_virtual_router::CreateVirtualRouterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`virtual_router_name`](crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder::virtual_router_name)
+    /// - [`mesh_name`](crate::operation::create_virtual_router::builders::CreateVirtualRouterInputBuilder::mesh_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_virtual_router::CreateVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_virtual_router::CreateVirtualRouterInput {
-            virtual_router_name: self.virtual_router_name,
-            mesh_name: self.mesh_name,
+            virtual_router_name: self.virtual_router_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_router_name",
+                    "virtual_router_name was not specified but it is required when building CreateVirtualRouterInput",
+                )
+            })?,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building CreateVirtualRouterInput",
+                )
+            })?,
             spec: self.spec,
             tags: self.tags,
             client_token: self.client_token,

@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConformancePackComplianceSummary {
     /// <p>The name of the conformance pack name.</p>
-    pub conformance_pack_name: ::std::option::Option<::std::string::String>,
+    pub conformance_pack_name: ::std::string::String,
     /// <p>The status of the conformance pack.</p>
-    pub conformance_pack_compliance_status: ::std::option::Option<crate::types::ConformancePackComplianceType>,
+    pub conformance_pack_compliance_status: crate::types::ConformancePackComplianceType,
 }
 impl ConformancePackComplianceSummary {
     /// <p>The name of the conformance pack name.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
-        self.conformance_pack_name.as_deref()
+    pub fn conformance_pack_name(&self) -> &str {
+        use std::ops::Deref;
+        self.conformance_pack_name.deref()
     }
     /// <p>The status of the conformance pack.</p>
-    pub fn conformance_pack_compliance_status(&self) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
-        self.conformance_pack_compliance_status.as_ref()
+    pub fn conformance_pack_compliance_status(&self) -> &crate::types::ConformancePackComplianceType {
+        &self.conformance_pack_compliance_status
     }
 }
 impl ConformancePackComplianceSummary {
@@ -35,6 +36,7 @@ pub struct ConformancePackComplianceSummaryBuilder {
 }
 impl ConformancePackComplianceSummaryBuilder {
     /// <p>The name of the conformance pack name.</p>
+    /// This field is required.
     pub fn conformance_pack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conformance_pack_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl ConformancePackComplianceSummaryBuilder {
         &self.conformance_pack_name
     }
     /// <p>The status of the conformance pack.</p>
+    /// This field is required.
     pub fn conformance_pack_compliance_status(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
         self.conformance_pack_compliance_status = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl ConformancePackComplianceSummaryBuilder {
         &self.conformance_pack_compliance_status
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceSummary`](crate::types::ConformancePackComplianceSummary).
-    pub fn build(self) -> crate::types::ConformancePackComplianceSummary {
-        crate::types::ConformancePackComplianceSummary {
-            conformance_pack_name: self.conformance_pack_name,
-            conformance_pack_compliance_status: self.conformance_pack_compliance_status,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`conformance_pack_name`](crate::types::builders::ConformancePackComplianceSummaryBuilder::conformance_pack_name)
+    /// - [`conformance_pack_compliance_status`](crate::types::builders::ConformancePackComplianceSummaryBuilder::conformance_pack_compliance_status)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackComplianceSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConformancePackComplianceSummary {
+            conformance_pack_name: self.conformance_pack_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conformance_pack_name",
+                    "conformance_pack_name was not specified but it is required when building ConformancePackComplianceSummary",
+                )
+            })?,
+            conformance_pack_compliance_status: self.conformance_pack_compliance_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conformance_pack_compliance_status",
+                    "conformance_pack_compliance_status was not specified but it is required when building ConformancePackComplianceSummary",
+                )
+            })?,
+        })
     }
 }

@@ -104,7 +104,7 @@ pub fn de_delete_vpc_ingress_connection_http_response(
         output = crate::protocol_serde::shape_delete_vpc_ingress_connection::de_delete_vpc_ingress_connection(_response_body, output)
             .map_err(crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::delete_vpc_ingress_connection_output_correct_errors(output).build()
     })
 }
 

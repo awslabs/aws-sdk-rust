@@ -32,8 +32,10 @@ impl GetCoipPoolUsageInput {
     /// <li> <p> <code>coip-address-usage.aws-service</code> - The Amazon Web Services service that is using the customer-owned IP address.</p> </li>
     /// <li> <p> <code>coip-address-usage.co-ip</code> - The customer-owned IP address.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -67,6 +69,7 @@ pub struct GetCoipPoolUsageInputBuilder {
 }
 impl GetCoipPoolUsageInputBuilder {
     /// <p>The ID of the address pool.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self

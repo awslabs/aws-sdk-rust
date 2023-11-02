@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureAgentInput {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub profiling_group_name: ::std::string::String,
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
     pub fleet_instance_id: ::std::option::Option<::std::string::String>,
     /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
@@ -24,8 +24,9 @@ pub struct ConfigureAgentInput {
 }
 impl ConfigureAgentInput {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
-        self.profiling_group_name.as_deref()
+    pub fn profiling_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.profiling_group_name.deref()
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
     pub fn fleet_instance_id(&self) -> ::std::option::Option<&str> {
@@ -64,6 +65,7 @@ pub struct ConfigureAgentInputBuilder {
 }
 impl ConfigureAgentInputBuilder {
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
+    /// This field is required.
     pub fn profiling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
@@ -148,11 +150,18 @@ impl ConfigureAgentInputBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`ConfigureAgentInput`](crate::operation::configure_agent::ConfigureAgentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`profiling_group_name`](crate::operation::configure_agent::builders::ConfigureAgentInputBuilder::profiling_group_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::configure_agent::ConfigureAgentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::configure_agent::ConfigureAgentInput {
-            profiling_group_name: self.profiling_group_name,
+            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "profiling_group_name",
+                    "profiling_group_name was not specified but it is required when building ConfigureAgentInput",
+                )
+            })?,
             fleet_instance_id: self.fleet_instance_id,
             metadata: self.metadata,
         })

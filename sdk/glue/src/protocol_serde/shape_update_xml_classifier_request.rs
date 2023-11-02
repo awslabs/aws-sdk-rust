@@ -3,14 +3,14 @@ pub fn ser_update_xml_classifier_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateXmlClassifierRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.classification {
-        object.key("Classification").string(var_2.as_str());
+    if let Some(var_1) = &input.classification {
+        object.key("Classification").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.row_tag {
-        object.key("RowTag").string(var_3.as_str());
+    if let Some(var_2) = &input.row_tag {
+        object.key("RowTag").string(var_2.as_str());
     }
     Ok(())
 }

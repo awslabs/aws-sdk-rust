@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseDestination {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
-    pub iam_role_arn: ::std::option::Option<::std::string::String>,
+    pub iam_role_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
-    pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
+    pub delivery_stream_arn: ::std::string::String,
 }
 impl KinesisFirehoseDestination {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
-        self.iam_role_arn.as_deref()
+    pub fn iam_role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.iam_role_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
-    pub fn delivery_stream_arn(&self) -> ::std::option::Option<&str> {
-        self.delivery_stream_arn.as_deref()
+    pub fn delivery_stream_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.delivery_stream_arn.deref()
     }
 }
 impl KinesisFirehoseDestination {
@@ -35,6 +37,7 @@ pub struct KinesisFirehoseDestinationBuilder {
 }
 impl KinesisFirehoseDestinationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
+    /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl KinesisFirehoseDestinationBuilder {
         &self.iam_role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
+    /// This field is required.
     pub fn delivery_stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl KinesisFirehoseDestinationBuilder {
         &self.delivery_stream_arn
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::types::KinesisFirehoseDestination).
-    pub fn build(self) -> crate::types::KinesisFirehoseDestination {
-        crate::types::KinesisFirehoseDestination {
-            iam_role_arn: self.iam_role_arn,
-            delivery_stream_arn: self.delivery_stream_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`iam_role_arn`](crate::types::builders::KinesisFirehoseDestinationBuilder::iam_role_arn)
+    /// - [`delivery_stream_arn`](crate::types::builders::KinesisFirehoseDestinationBuilder::delivery_stream_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseDestination, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KinesisFirehoseDestination {
+            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "iam_role_arn",
+                    "iam_role_arn was not specified but it is required when building KinesisFirehoseDestination",
+                )
+            })?,
+            delivery_stream_arn: self.delivery_stream_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "delivery_stream_arn",
+                    "delivery_stream_arn was not specified but it is required when building KinesisFirehoseDestination",
+                )
+            })?,
+        })
     }
 }

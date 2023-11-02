@@ -8,8 +8,10 @@ pub struct DeleteAlarmsInput {
 }
 impl DeleteAlarmsInput {
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    pub fn alarm_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.alarm_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_names.is_none()`.
+    pub fn alarm_names(&self) -> &[::std::string::String] {
+        self.alarm_names.as_deref().unwrap_or_default()
     }
 }
 impl DeleteAlarmsInput {

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentPropertyUpdates {
     /// <p>Describes updates to the execution property groups.</p>
-    pub property_groups: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
+    pub property_groups: ::std::vec::Vec<crate::types::PropertyGroup>,
 }
 impl EnvironmentPropertyUpdates {
     /// <p>Describes updates to the execution property groups.</p>
-    pub fn property_groups(&self) -> ::std::option::Option<&[crate::types::PropertyGroup]> {
-        self.property_groups.as_deref()
+    pub fn property_groups(&self) -> &[crate::types::PropertyGroup] {
+        use std::ops::Deref;
+        self.property_groups.deref()
     }
 }
 impl EnvironmentPropertyUpdates {
@@ -48,9 +49,16 @@ impl EnvironmentPropertyUpdatesBuilder {
         &self.property_groups
     }
     /// Consumes the builder and constructs a [`EnvironmentPropertyUpdates`](crate::types::EnvironmentPropertyUpdates).
-    pub fn build(self) -> crate::types::EnvironmentPropertyUpdates {
-        crate::types::EnvironmentPropertyUpdates {
-            property_groups: self.property_groups,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`property_groups`](crate::types::builders::EnvironmentPropertyUpdatesBuilder::property_groups)
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentPropertyUpdates, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::EnvironmentPropertyUpdates {
+            property_groups: self.property_groups.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "property_groups",
+                    "property_groups was not specified but it is required when building EnvironmentPropertyUpdates",
+                )
+            })?,
+        })
     }
 }

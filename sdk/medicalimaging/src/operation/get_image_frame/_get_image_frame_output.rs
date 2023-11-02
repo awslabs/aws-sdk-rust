@@ -41,6 +41,7 @@ pub struct GetImageFrameOutputBuilder {
 }
 impl GetImageFrameOutputBuilder {
     /// <p>The blob containing the aggregated image frame information.</p>
+    /// This field is required.
     pub fn image_frame_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.image_frame_blob = ::std::option::Option::Some(input);
         self

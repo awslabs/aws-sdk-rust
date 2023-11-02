@@ -27,6 +27,7 @@ pub struct DeleteExplainabilityInputBuilder {
 }
 impl DeleteExplainabilityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
+    /// This field is required.
     pub fn explainability_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explainability_arn = ::std::option::Option::Some(input.into());
         self

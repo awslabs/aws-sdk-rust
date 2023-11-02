@@ -34,6 +34,7 @@ pub struct ModifyClusterInputBuilder {
 }
 impl ModifyClusterInputBuilder {
     /// <p>A policy that defines how the service retains backups.</p>
+    /// This field is required.
     pub fn backup_retention_policy(mut self, input: crate::types::BackupRetentionPolicy) -> Self {
         self.backup_retention_policy = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl ModifyClusterInputBuilder {
         &self.backup_retention_policy
     }
     /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self

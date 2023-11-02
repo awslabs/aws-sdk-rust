@@ -17,8 +17,10 @@ impl DetectDocumentTextOutput {
         self.document_metadata.as_ref()
     }
     /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
-    pub fn blocks(&self) -> ::std::option::Option<&[crate::types::Block]> {
-        self.blocks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blocks.is_none()`.
+    pub fn blocks(&self) -> &[crate::types::Block] {
+        self.blocks.as_deref().unwrap_or_default()
     }
     /// <p></p>
     pub fn detect_document_text_model_version(&self) -> ::std::option::Option<&str> {

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialAccountInfo {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub account_id: ::std::option::Option<::std::string::String>,
+    pub account_id: ::std::string::String,
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
-    pub free_trial_info: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfo>>,
+    pub free_trial_info: ::std::vec::Vec<crate::types::FreeTrialInfo>,
 }
 impl FreeTrialAccountInfo {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
-        self.account_id.as_deref()
+    pub fn account_id(&self) -> &str {
+        use std::ops::Deref;
+        self.account_id.deref()
     }
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
-    pub fn free_trial_info(&self) -> ::std::option::Option<&[crate::types::FreeTrialInfo]> {
-        self.free_trial_info.as_deref()
+    pub fn free_trial_info(&self) -> &[crate::types::FreeTrialInfo] {
+        use std::ops::Deref;
+        self.free_trial_info.deref()
     }
 }
 impl FreeTrialAccountInfo {
@@ -35,6 +37,7 @@ pub struct FreeTrialAccountInfoBuilder {
 }
 impl FreeTrialAccountInfoBuilder {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -69,10 +72,23 @@ impl FreeTrialAccountInfoBuilder {
         &self.free_trial_info
     }
     /// Consumes the builder and constructs a [`FreeTrialAccountInfo`](crate::types::FreeTrialAccountInfo).
-    pub fn build(self) -> crate::types::FreeTrialAccountInfo {
-        crate::types::FreeTrialAccountInfo {
-            account_id: self.account_id,
-            free_trial_info: self.free_trial_info,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`account_id`](crate::types::builders::FreeTrialAccountInfoBuilder::account_id)
+    /// - [`free_trial_info`](crate::types::builders::FreeTrialAccountInfoBuilder::free_trial_info)
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialAccountInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FreeTrialAccountInfo {
+            account_id: self.account_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "account_id",
+                    "account_id was not specified but it is required when building FreeTrialAccountInfo",
+                )
+            })?,
+            free_trial_info: self.free_trial_info.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "free_trial_info",
+                    "free_trial_info was not specified but it is required when building FreeTrialAccountInfo",
+                )
+            })?,
+        })
     }
 }

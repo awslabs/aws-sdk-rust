@@ -28,6 +28,7 @@ pub struct GetDedicatedIpInputBuilder {
 }
 impl GetDedicatedIpInputBuilder {
     /// <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip = ::std::option::Option::Some(input.into());
         self

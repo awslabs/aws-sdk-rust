@@ -15,8 +15,10 @@ impl UpdateTagsForDomainInput {
         self.domain_name.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    pub fn tags_to_update(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_to_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_to_update.is_none()`.
+    pub fn tags_to_update(&self) -> &[crate::types::Tag] {
+        self.tags_to_update.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTagsForDomainInput {
@@ -35,6 +37,7 @@ pub struct UpdateTagsForDomainInputBuilder {
 }
 impl UpdateTagsForDomainInputBuilder {
     /// <p>The domain for which you want to add or update tags.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

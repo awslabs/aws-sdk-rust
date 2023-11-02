@@ -18,8 +18,10 @@ impl CreateConnectionAliasInput {
         self.connection_string.as_deref()
     }
     /// <p>The tags to associate with the connection alias.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateConnectionAliasInput {
@@ -40,6 +42,7 @@ impl CreateConnectionAliasInputBuilder {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
+    /// This field is required.
     pub fn connection_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_string = ::std::option::Option::Some(input.into());
         self

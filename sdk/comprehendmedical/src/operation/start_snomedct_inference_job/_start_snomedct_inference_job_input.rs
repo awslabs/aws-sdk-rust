@@ -69,6 +69,7 @@ pub struct StartSnomedctInferenceJobInputBuilder {
 }
 impl StartSnomedctInferenceJobInputBuilder {
     /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    /// This field is required.
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
         self
@@ -83,6 +84,7 @@ impl StartSnomedctInferenceJobInputBuilder {
         &self.input_data_config
     }
     /// <p>The output properties for a detection job.</p>
+    /// This field is required.
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl StartSnomedctInferenceJobInputBuilder {
         &self.output_data_config
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +156,7 @@ impl StartSnomedctInferenceJobInputBuilder {
         &self.kms_key
     }
     /// <p> The language of the input documents. All documents must be in the same language. </p>
+    /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self

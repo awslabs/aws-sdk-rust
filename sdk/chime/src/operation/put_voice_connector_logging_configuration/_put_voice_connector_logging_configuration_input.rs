@@ -34,6 +34,7 @@ pub struct PutVoiceConnectorLoggingConfigurationInputBuilder {
 }
 impl PutVoiceConnectorLoggingConfigurationInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
+    /// This field is required.
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
         &self.voice_connector_id
     }
     /// <p>The logging configuration details to add.</p>
+    /// This field is required.
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self

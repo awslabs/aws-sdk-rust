@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
-    pub monitor_name: ::std::option::Option<::std::string::String>,
+    pub monitor_name: ::std::string::String,
     /// <p>The time when a health event started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
@@ -18,8 +18,9 @@ pub struct ListHealthEventsInput {
 }
 impl ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
-        self.monitor_name.as_deref()
+    pub fn monitor_name(&self) -> &str {
+        use std::ops::Deref;
+        self.monitor_name.deref()
     }
     /// <p>The time when a health event started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -62,6 +63,7 @@ pub struct ListHealthEventsInputBuilder {
 }
 impl ListHealthEventsInputBuilder {
     /// <p>The name of the monitor.</p>
+    /// This field is required.
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
         self
@@ -146,11 +148,18 @@ impl ListHealthEventsInputBuilder {
         &self.event_status
     }
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitor_name`](crate::operation::list_health_events::builders::ListHealthEventsInputBuilder::monitor_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsInput {
-            monitor_name: self.monitor_name,
+            monitor_name: self.monitor_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitor_name",
+                    "monitor_name was not specified but it is required when building ListHealthEventsInput",
+                )
+            })?,
             start_time: self.start_time,
             end_time: self.end_time,
             next_token: self.next_token,

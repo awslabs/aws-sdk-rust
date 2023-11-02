@@ -60,12 +60,16 @@ impl ModifyIpamPoolInput {
         self.clear_allocation_default_netmask_length
     }
     /// <p>Add tag allocation rules to a pool. For more information about allocation rules, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-    pub fn add_allocation_resource_tags(&self) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
-        self.add_allocation_resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_allocation_resource_tags.is_none()`.
+    pub fn add_allocation_resource_tags(&self) -> &[crate::types::RequestIpamResourceTag] {
+        self.add_allocation_resource_tags.as_deref().unwrap_or_default()
     }
     /// <p>Remove tag allocation rules from a pool.</p>
-    pub fn remove_allocation_resource_tags(&self) -> ::std::option::Option<&[crate::types::RequestIpamResourceTag]> {
-        self.remove_allocation_resource_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_allocation_resource_tags.is_none()`.
+    pub fn remove_allocation_resource_tags(&self) -> &[crate::types::RequestIpamResourceTag] {
+        self.remove_allocation_resource_tags.as_deref().unwrap_or_default()
     }
 }
 impl ModifyIpamPoolInput {
@@ -106,6 +110,7 @@ impl ModifyIpamPoolInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM pool you want to modify.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self

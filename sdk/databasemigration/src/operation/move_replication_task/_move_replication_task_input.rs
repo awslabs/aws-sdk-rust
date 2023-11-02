@@ -35,6 +35,7 @@ pub struct MoveReplicationTaskInputBuilder {
 }
 impl MoveReplicationTaskInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
+    /// This field is required.
     pub fn replication_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl MoveReplicationTaskInputBuilder {
         &self.replication_task_arn
     }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
+    /// This field is required.
     pub fn target_replication_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_replication_instance_arn = ::std::option::Option::Some(input.into());
         self

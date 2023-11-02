@@ -3,46 +3,46 @@ pub fn ser_ssm_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmAutomation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+    {
+        object.key("roleArn").string(input.role_arn.as_str());
     }
-    if let Some(var_2) = &input.document_name {
-        object.key("documentName").string(var_2.as_str());
+    {
+        object.key("documentName").string(input.document_name.as_str());
     }
-    if let Some(var_3) = &input.document_version {
-        object.key("documentVersion").string(var_3.as_str());
+    if let Some(var_1) = &input.document_version {
+        object.key("documentVersion").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.target_account {
-        object.key("targetAccount").string(var_4.as_str());
+    if let Some(var_2) = &input.target_account {
+        object.key("targetAccount").string(var_2.as_str());
     }
-    if let Some(var_5) = &input.parameters {
+    if let Some(var_3) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("parameters").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_4 = object.key("parameters").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                let mut array_9 = object_6.key(key_7.as_str()).start_array();
-                for item_10 in value_8 {
+                let mut array_7 = object_4.key(key_5.as_str()).start_array();
+                for item_8 in value_6 {
                     {
-                        array_9.value().string(item_10.as_str());
+                        array_7.value().string(item_8.as_str());
                     }
                 }
-                array_9.finish();
+                array_7.finish();
             }
         }
-        object_6.finish();
+        object_4.finish();
     }
-    if let Some(var_11) = &input.dynamic_parameters {
+    if let Some(var_9) = &input.dynamic_parameters {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("dynamicParameters").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_10 = object.key("dynamicParameters").start_object();
+        for (key_11, value_12) in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = object_12.key(key_13.as_str()).start_object();
-                crate::protocol_serde::shape_dynamic_ssm_parameter_value::ser_dynamic_ssm_parameter_value(&mut object_15, value_14)?;
-                object_15.finish();
+                let mut object_13 = object_10.key(key_11.as_str()).start_object();
+                crate::protocol_serde::shape_dynamic_ssm_parameter_value::ser_dynamic_ssm_parameter_value(&mut object_13, value_12)?;
+                object_13.finish();
             }
         }
-        object_12.finish();
+        object_10.finish();
     }
     Ok(())
 }
@@ -107,7 +107,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ssm_automation_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

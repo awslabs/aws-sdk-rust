@@ -35,6 +35,7 @@ pub struct UpdateVpcEndpointInputBuilder {
 }
 impl UpdateVpcEndpointInputBuilder {
     /// <p>Unique identifier of the VPC endpoint to be updated.</p>
+    /// This field is required.
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateVpcEndpointInputBuilder {
         &self.vpc_endpoint_id
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
+    /// This field is required.
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
         self.vpc_options = ::std::option::Option::Some(input);
         self

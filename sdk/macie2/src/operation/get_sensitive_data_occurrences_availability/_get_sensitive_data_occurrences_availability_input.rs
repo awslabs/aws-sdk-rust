@@ -27,6 +27,7 @@ pub struct GetSensitiveDataOccurrencesAvailabilityInputBuilder {
 }
 impl GetSensitiveDataOccurrencesAvailabilityInputBuilder {
     /// <p>The unique identifier for the finding.</p>
+    /// This field is required.
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
         self

@@ -99,6 +99,7 @@ pub struct CreateProjectVersionInputBuilder {
 }
 impl CreateProjectVersionInputBuilder {
     /// <p>The ARN of the Amazon Rekognition project that will manage the project version you want to train.</p>
+    /// This field is required.
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_arn = ::std::option::Option::Some(input.into());
         self
@@ -113,6 +114,7 @@ impl CreateProjectVersionInputBuilder {
         &self.project_arn
     }
     /// <p>A name for the version of the project version. This value must be unique.</p>
+    /// This field is required.
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +129,7 @@ impl CreateProjectVersionInputBuilder {
         &self.version_name
     }
     /// <p>The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on the bucket. </p>
+    /// This field is required.
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
         self

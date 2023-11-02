@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppBundle {
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
     pub customer_managed_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppBundle {
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
     pub fn customer_managed_key_arn(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AppBundleBuilder {
 }
 impl AppBundleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AppBundleBuilder {
         &self.customer_managed_key_arn
     }
     /// Consumes the builder and constructs a [`AppBundle`](crate::types::AppBundle).
-    pub fn build(self) -> crate::types::AppBundle {
-        crate::types::AppBundle {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::AppBundleBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::AppBundle, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AppBundle {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building AppBundle",
+                )
+            })?,
             customer_managed_key_arn: self.customer_managed_key_arn,
-        }
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ListIdentityResolutionJobsOutput {
 }
 impl ListIdentityResolutionJobsOutput {
     /// <p>A list of Identity Resolution Jobs.</p>
-    pub fn identity_resolution_jobs_list(&self) -> ::std::option::Option<&[crate::types::IdentityResolutionJob]> {
-        self.identity_resolution_jobs_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_resolution_jobs_list.is_none()`.
+    pub fn identity_resolution_jobs_list(&self) -> &[crate::types::IdentityResolutionJob] {
+        self.identity_resolution_jobs_list.as_deref().unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

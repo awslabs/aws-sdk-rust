@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddRegionAction {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
-    pub region_name: ::std::option::Option<::std::string::String>,
+    pub region_name: ::std::string::String,
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub sse_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AddRegionAction {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
-        self.region_name.as_deref()
+    pub fn region_name(&self) -> &str {
+        use std::ops::Deref;
+        self.region_name.deref()
     }
     /// <p>The KMS key ID to use to encrypt your replication set.</p>
     pub fn sse_kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AddRegionActionBuilder {
 }
 impl AddRegionActionBuilder {
     /// <p>The Amazon Web Services Region name to add to the replication set.</p>
+    /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl AddRegionActionBuilder {
         &self.sse_kms_key_id
     }
     /// Consumes the builder and constructs a [`AddRegionAction`](crate::types::AddRegionAction).
-    pub fn build(self) -> crate::types::AddRegionAction {
-        crate::types::AddRegionAction {
-            region_name: self.region_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`region_name`](crate::types::builders::AddRegionActionBuilder::region_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AddRegionAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AddRegionAction {
+            region_name: self.region_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "region_name",
+                    "region_name was not specified but it is required when building AddRegionAction",
+                )
+            })?,
             sse_kms_key_id: self.sse_kms_key_id,
-        }
+        })
     }
 }

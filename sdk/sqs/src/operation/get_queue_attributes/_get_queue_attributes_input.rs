@@ -149,8 +149,10 @@ impl GetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[crate::types::QueueAttributeName]> {
-        self.attribute_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
+    pub fn attribute_names(&self) -> &[crate::types::QueueAttributeName] {
+        self.attribute_names.as_deref().unwrap_or_default()
     }
 }
 impl GetQueueAttributesInput {
@@ -170,6 +172,7 @@ pub struct GetQueueAttributesInputBuilder {
 impl GetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self

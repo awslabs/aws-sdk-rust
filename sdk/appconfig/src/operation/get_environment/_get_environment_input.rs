@@ -34,6 +34,7 @@ pub struct GetEnvironmentInputBuilder {
 }
 impl GetEnvironmentInputBuilder {
     /// <p>The ID of the application that includes the environment you want to get.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>The ID of the environment that you want to get.</p>
+    /// This field is required.
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self

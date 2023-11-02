@@ -18,10 +18,10 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetails {
         self.container_name.as_deref()
     }
     /// <p>The set of network configuration parameters to provide to the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
-    pub fn proxy_configuration_properties(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails]> {
-        self.proxy_configuration_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.proxy_configuration_properties.is_none()`.
+    pub fn proxy_configuration_properties(&self) -> &[crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails] {
+        self.proxy_configuration_properties.as_deref().unwrap_or_default()
     }
     /// <p>The proxy type.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {

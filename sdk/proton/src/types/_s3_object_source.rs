@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ObjectSource {
     /// <p>The name of the S3 bucket that contains a template bundle.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The path to the S3 bucket that contains a template bundle.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
 }
 impl S3ObjectSource {
     /// <p>The name of the S3 bucket that contains a template bundle.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The path to the S3 bucket that contains a template bundle.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
 }
 impl S3ObjectSource {
@@ -35,6 +37,7 @@ pub struct S3ObjectSourceBuilder {
 }
 impl S3ObjectSourceBuilder {
     /// <p>The name of the S3 bucket that contains a template bundle.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl S3ObjectSourceBuilder {
         &self.bucket
     }
     /// <p>The path to the S3 bucket that contains a template bundle.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl S3ObjectSourceBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`S3ObjectSource`](crate::types::S3ObjectSource).
-    pub fn build(self) -> crate::types::S3ObjectSource {
-        crate::types::S3ObjectSource {
-            bucket: self.bucket,
-            key: self.key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::S3ObjectSourceBuilder::bucket)
+    /// - [`key`](crate::types::builders::S3ObjectSourceBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ObjectSource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3ObjectSource {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building S3ObjectSource",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3ObjectSource",
+                )
+            })?,
+        })
     }
 }

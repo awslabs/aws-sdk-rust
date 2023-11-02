@@ -37,16 +37,20 @@ impl EcsTarget {
         self.last_updated_at.as_ref()
     }
     /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
-    pub fn lifecycle_events(&self) -> ::std::option::Option<&[crate::types::LifecycleEvent]> {
-        self.lifecycle_events.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_events.is_none()`.
+    pub fn lifecycle_events(&self) -> &[crate::types::LifecycleEvent] {
+        self.lifecycle_events.as_deref().unwrap_or_default()
     }
     /// <p> The status an Amazon ECS deployment's target ECS application. </p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TargetStatus> {
         self.status.as_ref()
     }
     /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
-    pub fn task_sets_info(&self) -> ::std::option::Option<&[crate::types::EcsTaskSet]> {
-        self.task_sets_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_sets_info.is_none()`.
+    pub fn task_sets_info(&self) -> &[crate::types::EcsTaskSet] {
+        self.task_sets_info.as_deref().unwrap_or_default()
     }
 }
 impl EcsTarget {

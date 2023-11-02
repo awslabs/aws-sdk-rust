@@ -42,6 +42,7 @@ pub struct DeleteTapeInputBuilder {
 }
 impl DeleteTapeInputBuilder {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DeleteTapeInputBuilder {
         &self.gateway_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
+    /// This field is required.
     pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_arn = ::std::option::Option::Some(input.into());
         self

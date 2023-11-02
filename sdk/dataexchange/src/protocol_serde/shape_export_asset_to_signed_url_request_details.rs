@@ -3,14 +3,14 @@ pub fn ser_export_asset_to_signed_url_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportAssetToSignedUrlRequestDetails,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.asset_id {
-        object.key("AssetId").string(var_1.as_str());
+    {
+        object.key("AssetId").string(input.asset_id.as_str());
     }
-    if let Some(var_2) = &input.data_set_id {
-        object.key("DataSetId").string(var_2.as_str());
+    {
+        object.key("DataSetId").string(input.data_set_id.as_str());
     }
-    if let Some(var_3) = &input.revision_id {
-        object.key("RevisionId").string(var_3.as_str());
+    {
+        object.key("RevisionId").string(input.revision_id.as_str());
     }
     Ok(())
 }

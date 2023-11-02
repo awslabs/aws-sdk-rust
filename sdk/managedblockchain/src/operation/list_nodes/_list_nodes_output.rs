@@ -11,8 +11,10 @@ pub struct ListNodesOutput {
 }
 impl ListNodesOutput {
     /// <p>An array of <code>NodeSummary</code> objects that contain configuration properties for each node.</p>
-    pub fn nodes(&self) -> ::std::option::Option<&[crate::types::NodeSummary]> {
-        self.nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
+    pub fn nodes(&self) -> &[crate::types::NodeSummary] {
+        self.nodes.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

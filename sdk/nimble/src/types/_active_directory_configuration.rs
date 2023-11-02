@@ -13,8 +13,10 @@ pub struct ActiveDirectoryConfiguration {
 }
 impl ActiveDirectoryConfiguration {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
-    pub fn computer_attributes(&self) -> ::std::option::Option<&[crate::types::ActiveDirectoryComputerAttribute]> {
-        self.computer_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.computer_attributes.is_none()`.
+    pub fn computer_attributes(&self) -> &[crate::types::ActiveDirectoryComputerAttribute] {
+        self.computer_attributes.as_deref().unwrap_or_default()
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {

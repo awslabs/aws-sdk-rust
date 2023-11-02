@@ -215,6 +215,7 @@ impl PublishInputBuilder {
     /// <li> <p>Duplicate keys are not allowed.</p> </li>
     /// <li> <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

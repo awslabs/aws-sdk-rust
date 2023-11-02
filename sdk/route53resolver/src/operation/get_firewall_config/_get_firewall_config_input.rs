@@ -27,6 +27,7 @@ pub struct GetFirewallConfigInputBuilder {
 }
 impl GetFirewallConfigInputBuilder {
     /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

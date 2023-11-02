@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDashboard`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dashboard_id(impl Into<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::set_dashboard_id): <p>The ID of the dashboard to delete.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::set_client_token): <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    ///   - [`dashboard_id(impl Into<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::dashboard_id) / [`set_dashboard_id(Option<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::set_dashboard_id):<br>required: **true**<br><p>The ID of the dashboard to delete.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p><br>
     /// - On success, responds with [`DeleteDashboardOutput`](crate::operation::delete_dashboard::DeleteDashboardOutput)
     /// - On failure, responds with [`SdkError<DeleteDashboardError>`](crate::operation::delete_dashboard::DeleteDashboardError)
     pub fn delete_dashboard(&self) -> crate::operation::delete_dashboard::builders::DeleteDashboardFluentBuilder {

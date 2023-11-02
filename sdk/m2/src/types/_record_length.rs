@@ -35,6 +35,7 @@ pub struct RecordLengthBuilder {
 }
 impl RecordLengthBuilder {
     /// <p>The minimum record length of a record.</p>
+    /// This field is required.
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl RecordLengthBuilder {
         &self.min
     }
     /// <p>The maximum record length. In case of fixed, both minimum and maximum are the same.</p>
+    /// This field is required.
     pub fn max(mut self, input: i32) -> Self {
         self.max = ::std::option::Option::Some(input);
         self

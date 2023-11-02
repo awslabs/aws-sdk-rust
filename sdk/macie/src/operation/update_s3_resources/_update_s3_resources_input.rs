@@ -14,8 +14,10 @@ impl UpdateS3ResourcesInput {
         self.member_account_id.as_deref()
     }
     /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
-    pub fn s3_resources_update(&self) -> ::std::option::Option<&[crate::types::S3ResourceClassificationUpdate]> {
-        self.s3_resources_update.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_resources_update.is_none()`.
+    pub fn s3_resources_update(&self) -> &[crate::types::S3ResourceClassificationUpdate] {
+        self.s3_resources_update.as_deref().unwrap_or_default()
     }
 }
 impl UpdateS3ResourcesInput {

@@ -27,6 +27,7 @@ pub struct DeleteMatchmakingRuleSetInputBuilder {
 }
 impl DeleteMatchmakingRuleSetInputBuilder {
     /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

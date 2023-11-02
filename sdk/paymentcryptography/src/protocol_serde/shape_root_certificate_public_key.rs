@@ -9,8 +9,8 @@ pub fn ser_root_certificate_public_key(
         crate::protocol_serde::shape_key_attributes::ser_key_attributes(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.public_key_certificate {
-        object.key("PublicKeyCertificate").string(var_3.as_str());
+    {
+        object.key("PublicKeyCertificate").string(input.public_key_certificate.as_str());
     }
     Ok(())
 }

@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicCalculatedField {
     /// <p>The calculated field name.</p>
-    pub calculated_field_name: ::std::option::Option<::std::string::String>,
+    pub calculated_field_name: ::std::string::String,
     /// <p>The calculated field description.</p>
     pub calculated_field_description: ::std::option::Option<::std::string::String>,
     /// <p>The calculated field expression.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>The other names or aliases for the calculated field.</p>
     pub calculated_field_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A boolean value that indicates if a calculated field is included in the topic.</p>
@@ -41,20 +41,24 @@ pub struct TopicCalculatedField {
 }
 impl TopicCalculatedField {
     /// <p>The calculated field name.</p>
-    pub fn calculated_field_name(&self) -> ::std::option::Option<&str> {
-        self.calculated_field_name.as_deref()
+    pub fn calculated_field_name(&self) -> &str {
+        use std::ops::Deref;
+        self.calculated_field_name.deref()
     }
     /// <p>The calculated field description.</p>
     pub fn calculated_field_description(&self) -> ::std::option::Option<&str> {
         self.calculated_field_description.as_deref()
     }
     /// <p>The calculated field expression.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>The other names or aliases for the calculated field.</p>
-    pub fn calculated_field_synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.calculated_field_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calculated_field_synonyms.is_none()`.
+    pub fn calculated_field_synonyms(&self) -> &[::std::string::String] {
+        self.calculated_field_synonyms.as_deref().unwrap_or_default()
     }
     /// <p>A boolean value that indicates if a calculated field is included in the topic.</p>
     pub fn is_included_in_topic(&self) -> bool {
@@ -89,20 +93,26 @@ impl TopicCalculatedField {
         self.semantic_type.as_ref()
     }
     /// <p>The list of aggregation types that are allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
-        self.allowed_aggregations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_aggregations.is_none()`.
+    pub fn allowed_aggregations(&self) -> &[crate::types::AuthorSpecifiedAggregation] {
+        self.allowed_aggregations.as_deref().unwrap_or_default()
     }
     /// <p>The list of aggregation types that are not allowed for the calculated field. Valid values for this structure are <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and <code>PERCENTILE</code>.</p>
-    pub fn not_allowed_aggregations(&self) -> ::std::option::Option<&[crate::types::AuthorSpecifiedAggregation]> {
-        self.not_allowed_aggregations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_allowed_aggregations.is_none()`.
+    pub fn not_allowed_aggregations(&self) -> &[crate::types::AuthorSpecifiedAggregation] {
+        self.not_allowed_aggregations.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean value that indicates whether to never aggregate calculated field in filters.</p>
     pub fn never_aggregate_in_filter(&self) -> bool {
         self.never_aggregate_in_filter
     }
     /// <p>The other names or aliases for the calculated field cell value.</p>
-    pub fn cell_value_synonyms(&self) -> ::std::option::Option<&[crate::types::CellValueSynonym]> {
-        self.cell_value_synonyms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cell_value_synonyms.is_none()`.
+    pub fn cell_value_synonyms(&self) -> &[crate::types::CellValueSynonym] {
+        self.cell_value_synonyms.as_deref().unwrap_or_default()
     }
     /// <p>The non additive for the table style target.</p>
     pub fn non_additive(&self) -> ::std::option::Option<bool> {
@@ -163,6 +173,7 @@ pub struct TopicCalculatedFieldBuilder {
 }
 impl TopicCalculatedFieldBuilder {
     /// <p>The calculated field name.</p>
+    /// This field is required.
     pub fn calculated_field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calculated_field_name = ::std::option::Option::Some(input.into());
         self
@@ -191,6 +202,7 @@ impl TopicCalculatedFieldBuilder {
         &self.calculated_field_description
     }
     /// <p>The calculated field expression.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -425,11 +437,24 @@ impl TopicCalculatedFieldBuilder {
         &self.non_additive
     }
     /// Consumes the builder and constructs a [`TopicCalculatedField`](crate::types::TopicCalculatedField).
-    pub fn build(self) -> crate::types::TopicCalculatedField {
-        crate::types::TopicCalculatedField {
-            calculated_field_name: self.calculated_field_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`calculated_field_name`](crate::types::builders::TopicCalculatedFieldBuilder::calculated_field_name)
+    /// - [`expression`](crate::types::builders::TopicCalculatedFieldBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicCalculatedField, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TopicCalculatedField {
+            calculated_field_name: self.calculated_field_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "calculated_field_name",
+                    "calculated_field_name was not specified but it is required when building TopicCalculatedField",
+                )
+            })?,
             calculated_field_description: self.calculated_field_description,
-            expression: self.expression,
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building TopicCalculatedField",
+                )
+            })?,
             calculated_field_synonyms: self.calculated_field_synonyms,
             is_included_in_topic: self.is_included_in_topic.unwrap_or_default(),
             disable_indexing: self.disable_indexing,
@@ -444,7 +469,7 @@ impl TopicCalculatedFieldBuilder {
             never_aggregate_in_filter: self.never_aggregate_in_filter.unwrap_or_default(),
             cell_value_synonyms: self.cell_value_synonyms,
             non_additive: self.non_additive,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for TopicCalculatedFieldBuilder {

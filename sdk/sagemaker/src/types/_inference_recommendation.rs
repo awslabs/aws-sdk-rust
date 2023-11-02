@@ -63,6 +63,7 @@ pub struct InferenceRecommendationBuilder {
 }
 impl InferenceRecommendationBuilder {
     /// <p>The metrics used to decide what recommendation to make.</p>
+    /// This field is required.
     pub fn metrics(mut self, input: crate::types::RecommendationMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl InferenceRecommendationBuilder {
         &self.metrics
     }
     /// <p>Defines the endpoint configuration parameters.</p>
+    /// This field is required.
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointOutputConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
@@ -91,6 +93,7 @@ impl InferenceRecommendationBuilder {
         &self.endpoint_configuration
     }
     /// <p>Defines the model configuration.</p>
+    /// This field is required.
     pub fn model_configuration(mut self, input: crate::types::ModelConfiguration) -> Self {
         self.model_configuration = ::std::option::Option::Some(input);
         self

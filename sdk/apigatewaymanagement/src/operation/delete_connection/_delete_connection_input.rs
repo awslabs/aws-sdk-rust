@@ -27,6 +27,7 @@ pub struct DeleteConnectionInputBuilder {
 }
 impl DeleteConnectionInputBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connection_id = ::std::option::Option::Some(input.into());
         self

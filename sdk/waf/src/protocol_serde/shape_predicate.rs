@@ -3,14 +3,14 @@ pub fn ser_predicate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Predicate,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.negated {
-        object.key("Negated").boolean(*var_1);
+    {
+        object.key("Negated").boolean(input.negated);
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("Type").string(var_2.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_3) = &input.data_id {
-        object.key("DataId").string(var_3.as_str());
+    {
+        object.key("DataId").string(input.data_id.as_str());
     }
     Ok(())
 }
@@ -57,7 +57,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::predicate_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

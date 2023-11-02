@@ -105,6 +105,7 @@ pub struct LabelingJobSummaryBuilder {
 }
 impl LabelingJobSummaryBuilder {
     /// <p>The name of the labeling job.</p>
+    /// This field is required.
     pub fn labeling_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +120,7 @@ impl LabelingJobSummaryBuilder {
         &self.labeling_job_name
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
+    /// This field is required.
     pub fn labeling_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +135,7 @@ impl LabelingJobSummaryBuilder {
         &self.labeling_job_arn
     }
     /// <p>The date and time that the job was created (timestamp).</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -147,6 +150,7 @@ impl LabelingJobSummaryBuilder {
         &self.creation_time
     }
     /// <p>The date and time that the job was last modified (timestamp).</p>
+    /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
@@ -161,6 +165,7 @@ impl LabelingJobSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>The current status of the labeling job. </p>
+    /// This field is required.
     pub fn labeling_job_status(mut self, input: crate::types::LabelingJobStatus) -> Self {
         self.labeling_job_status = ::std::option::Option::Some(input);
         self
@@ -175,6 +180,7 @@ impl LabelingJobSummaryBuilder {
         &self.labeling_job_status
     }
     /// <p>Counts showing the progress of the labeling job.</p>
+    /// This field is required.
     pub fn label_counters(mut self, input: crate::types::LabelCounters) -> Self {
         self.label_counters = ::std::option::Option::Some(input);
         self
@@ -189,6 +195,7 @@ impl LabelingJobSummaryBuilder {
         &self.label_counters
     }
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
+    /// This field is required.
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
         self
@@ -203,6 +210,7 @@ impl LabelingJobSummaryBuilder {
         &self.workteam_arn
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
+    /// This field is required.
     pub fn pre_human_task_lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self

@@ -17,8 +17,10 @@ impl ListSubChannelsOutput {
         self.channel_arn.as_deref()
     }
     /// <p>The information about each sub-channel.</p>
-    pub fn sub_channels(&self) -> ::std::option::Option<&[crate::types::SubChannelSummary]> {
-        self.sub_channels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_channels.is_none()`.
+    pub fn sub_channels(&self) -> &[crate::types::SubChannelSummary] {
+        self.sub_channels.as_deref().unwrap_or_default()
     }
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

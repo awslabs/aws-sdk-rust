@@ -28,6 +28,7 @@ pub struct UnsubscribeInputBuilder {
 }
 impl UnsubscribeInputBuilder {
     /// <p>The ARN of the subscription to be deleted.</p>
+    /// This field is required.
     pub fn subscription_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_arn = ::std::option::Option::Some(input.into());
         self

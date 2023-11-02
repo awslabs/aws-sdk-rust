@@ -9,14 +9,14 @@ pub fn ser_json_body(
         crate::protocol_serde::shape_json_match_pattern::ser_json_match_pattern(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.match_scope {
-        object.key("MatchScope").string(var_3.as_str());
+    {
+        object.key("MatchScope").string(input.match_scope.as_str());
     }
-    if let Some(var_4) = &input.invalid_fallback_behavior {
-        object.key("InvalidFallbackBehavior").string(var_4.as_str());
+    if let Some(var_3) = &input.invalid_fallback_behavior {
+        object.key("InvalidFallbackBehavior").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.oversize_handling {
-        object.key("OversizeHandling").string(var_5.as_str());
+    if let Some(var_4) = &input.oversize_handling {
+        object.key("OversizeHandling").string(var_4.as_str());
     }
     Ok(())
 }
@@ -70,7 +70,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::json_body_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

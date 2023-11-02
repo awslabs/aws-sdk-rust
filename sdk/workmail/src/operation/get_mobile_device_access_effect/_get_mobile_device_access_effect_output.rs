@@ -15,8 +15,10 @@ impl GetMobileDeviceAccessEffectOutput {
         self.effect.as_ref()
     }
     /// <p>A list of the rules which matched the simulated user input and produced the effect.</p>
-    pub fn matched_rules(&self) -> ::std::option::Option<&[crate::types::MobileDeviceAccessMatchedRule]> {
-        self.matched_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_rules.is_none()`.
+    pub fn matched_rules(&self) -> &[crate::types::MobileDeviceAccessMatchedRule] {
+        self.matched_rules.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetMobileDeviceAccessEffectOutput {

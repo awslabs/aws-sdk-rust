@@ -3,11 +3,11 @@ pub fn ser_table_to_reload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableToReload,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.schema_name {
-        object.key("SchemaName").string(var_1.as_str());
+    {
+        object.key("SchemaName").string(input.schema_name.as_str());
     }
-    if let Some(var_2) = &input.table_name {
-        object.key("TableName").string(var_2.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
     Ok(())
 }

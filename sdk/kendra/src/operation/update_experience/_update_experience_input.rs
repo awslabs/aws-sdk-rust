@@ -62,6 +62,7 @@ pub struct UpdateExperienceInputBuilder {
 }
 impl UpdateExperienceInputBuilder {
     /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl UpdateExperienceInputBuilder {
         &self.name
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

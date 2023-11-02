@@ -18,8 +18,10 @@ impl SearchChannelsInput {
         self.chime_bearer.as_deref()
     }
     /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
-    pub fn fields(&self) -> ::std::option::Option<&[crate::types::SearchField]> {
-        self.fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
+    pub fn fields(&self) -> &[crate::types::SearchField] {
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of channels that you want returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

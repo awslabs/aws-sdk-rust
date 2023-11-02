@@ -54,8 +54,10 @@ impl RevokeEndpointAccessOutput {
         self.allowed_all_vp_cs
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.allowed_vp_cs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_vp_cs.is_none()`.
+    pub fn allowed_vp_cs(&self) -> &[::std::string::String] {
+        self.allowed_vp_cs.as_deref().unwrap_or_default()
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn endpoint_count(&self) -> ::std::option::Option<i32> {

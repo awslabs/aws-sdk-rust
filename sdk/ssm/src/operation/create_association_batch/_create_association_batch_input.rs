@@ -8,8 +8,10 @@ pub struct CreateAssociationBatchInput {
 }
 impl CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
-    pub fn entries(&self) -> ::std::option::Option<&[crate::types::CreateAssociationBatchRequestEntry]> {
-        self.entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
+    pub fn entries(&self) -> &[crate::types::CreateAssociationBatchRequestEntry] {
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl CreateAssociationBatchInput {

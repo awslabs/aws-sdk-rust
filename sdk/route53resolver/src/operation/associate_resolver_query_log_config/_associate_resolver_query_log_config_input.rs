@@ -38,6 +38,7 @@ pub struct AssociateResolverQueryLogConfigInputBuilder {
 }
 impl AssociateResolverQueryLogConfigInputBuilder {
     /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
+    /// This field is required.
     pub fn resolver_query_log_config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_query_log_config_id = ::std::option::Option::Some(input.into());
         self
@@ -54,6 +55,7 @@ impl AssociateResolverQueryLogConfigInputBuilder {
     /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p> <note>
     /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

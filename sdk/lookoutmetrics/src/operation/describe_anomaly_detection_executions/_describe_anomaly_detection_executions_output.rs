@@ -11,8 +11,10 @@ pub struct DescribeAnomalyDetectionExecutionsOutput {
 }
 impl DescribeAnomalyDetectionExecutionsOutput {
     /// <p>A list of detection jobs.</p>
-    pub fn execution_list(&self) -> ::std::option::Option<&[crate::types::ExecutionStatus]> {
-        self.execution_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_list.is_none()`.
+    pub fn execution_list(&self) -> &[crate::types::ExecutionStatus] {
+        self.execution_list.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -17,8 +17,10 @@ impl DescribeReplicationInstanceTaskLogsOutput {
         self.replication_instance_arn.as_deref()
     }
     /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
-    pub fn replication_instance_task_logs(&self) -> ::std::option::Option<&[crate::types::ReplicationInstanceTaskLog]> {
-        self.replication_instance_task_logs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_instance_task_logs.is_none()`.
+    pub fn replication_instance_task_logs(&self) -> &[crate::types::ReplicationInstanceTaskLog] {
+        self.replication_instance_task_logs.as_deref().unwrap_or_default()
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

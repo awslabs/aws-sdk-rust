@@ -37,6 +37,7 @@ pub struct UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
 }
 impl UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
     /// <p>The name of the configuration set to update.</p>
+    /// This field is required.
     pub fn configuration_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
@@ -51,6 +52,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInputBuilder {
         &self.configuration_set_name
     }
     /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self

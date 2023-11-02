@@ -55,6 +55,7 @@ pub struct StartContentModerationInputBuilder {
 }
 impl StartContentModerationInputBuilder {
     /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::Video) -> Self {
         self.video = ::std::option::Option::Some(input);
         self

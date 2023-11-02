@@ -30,8 +30,10 @@ impl CreateUpdatedWorkspaceImageInput {
     /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
     /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateUpdatedWorkspaceImageInput {
@@ -52,6 +54,7 @@ pub struct CreateUpdatedWorkspaceImageInputBuilder {
 }
 impl CreateUpdatedWorkspaceImageInputBuilder {
     /// <p>The name of the new updated WorkSpace image.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +69,7 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
         &self.name
     }
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +84,7 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
         &self.description
     }
     /// <p>The identifier of the source WorkSpace image.</p>
+    /// This field is required.
     pub fn source_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_id = ::std::option::Option::Some(input.into());
         self

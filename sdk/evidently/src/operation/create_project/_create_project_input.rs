@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name for the project.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>An optional description of the project.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
@@ -22,8 +22,9 @@ pub struct CreateProjectInput {
 }
 impl CreateProjectInput {
     /// <p>The name for the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>An optional description of the project.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -67,6 +68,7 @@ pub struct CreateProjectInputBuilder {
 }
 impl CreateProjectInputBuilder {
     /// <p>The name for the project.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -161,11 +163,18 @@ impl CreateProjectInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_project::builders::CreateProjectInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateProjectInput",
+                )
+            })?,
             description: self.description,
             data_delivery: self.data_delivery,
             app_config_resource: self.app_config_resource,

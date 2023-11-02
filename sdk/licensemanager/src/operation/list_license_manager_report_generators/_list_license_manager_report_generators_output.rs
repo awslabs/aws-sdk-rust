@@ -11,8 +11,10 @@ pub struct ListLicenseManagerReportGeneratorsOutput {
 }
 impl ListLicenseManagerReportGeneratorsOutput {
     /// <p>A report generator that creates periodic reports about your license configurations.</p>
-    pub fn report_generators(&self) -> ::std::option::Option<&[crate::types::ReportGenerator]> {
-        self.report_generators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_generators.is_none()`.
+    pub fn report_generators(&self) -> &[crate::types::ReportGenerator] {
+        self.report_generators.as_deref().unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

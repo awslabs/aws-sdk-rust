@@ -14,8 +14,10 @@ impl GetTaskProtectionInput {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[::std::string::String] {
+        self.tasks.as_deref().unwrap_or_default()
     }
 }
 impl GetTaskProtectionInput {
@@ -34,6 +36,7 @@ pub struct GetTaskProtectionInputBuilder {
 }
 impl GetTaskProtectionInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
         self

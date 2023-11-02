@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerManagedPolicyReference {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
 impl CustomerManagedPolicyReference {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
     pub fn path(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct CustomerManagedPolicyReferenceBuilder {
 }
 impl CustomerManagedPolicyReferenceBuilder {
     /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl CustomerManagedPolicyReferenceBuilder {
         &self.path
     }
     /// Consumes the builder and constructs a [`CustomerManagedPolicyReference`](crate::types::CustomerManagedPolicyReference).
-    pub fn build(self) -> crate::types::CustomerManagedPolicyReference {
-        crate::types::CustomerManagedPolicyReference {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CustomerManagedPolicyReferenceBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomerManagedPolicyReference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomerManagedPolicyReference {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CustomerManagedPolicyReference",
+                )
+            })?,
             path: self.path,
-        }
+        })
     }
 }

@@ -163,7 +163,7 @@ pub fn de_start_studio_sso_configuration_repair_http_response(
         output = crate::protocol_serde::shape_start_studio_sso_configuration_repair::de_start_studio_sso_configuration_repair(_response_body, output)
             .map_err(crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::start_studio_sso_configuration_repair_output_correct_errors(output).build()
     })
 }
 

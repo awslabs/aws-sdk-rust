@@ -26,8 +26,10 @@ pub struct DescribeNetworkInsightsAnalysesInput {
 }
 impl DescribeNetworkInsightsAnalysesInput {
     /// <p>The ID of the network insights analyses. You must specify either analysis IDs or a path ID.</p>
-    pub fn network_insights_analysis_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_insights_analysis_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_insights_analysis_ids.is_none()`.
+    pub fn network_insights_analysis_ids(&self) -> &[::std::string::String] {
+        self.network_insights_analysis_ids.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the path. You must specify either a path ID or analysis IDs.</p>
     pub fn network_insights_path_id(&self) -> ::std::option::Option<&str> {
@@ -46,8 +48,10 @@ impl DescribeNetworkInsightsAnalysesInput {
     /// <li> <p>path-found - A Boolean value that indicates whether a feasible path is found.</p> </li>
     /// <li> <p>status - The status of the analysis (running | succeeded | failed).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

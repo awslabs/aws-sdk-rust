@@ -27,6 +27,7 @@ pub struct ImportApplicationUsageInputBuilder {
 }
 impl ImportApplicationUsageInputBuilder {
     /// <p>Amazon S3 location to import application usage data from.</p>
+    /// This field is required.
     pub fn source_s3_location(mut self, input: crate::types::SourceS3Location) -> Self {
         self.source_s3_location = ::std::option::Option::Some(input);
         self

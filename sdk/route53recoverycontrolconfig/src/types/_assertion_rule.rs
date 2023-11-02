@@ -23,8 +23,10 @@ pub struct AssertionRule {
 }
 impl AssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
-    pub fn asserted_controls(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.asserted_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asserted_controls.is_none()`.
+    pub fn asserted_controls(&self) -> &[::std::string::String] {
+        self.asserted_controls.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
@@ -97,6 +99,7 @@ impl AssertionRuleBuilder {
         &self.asserted_controls
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// This field is required.
     pub fn control_panel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl AssertionRuleBuilder {
         &self.control_panel_arn
     }
     /// <p>Name of the assertion rule. You can use any non-white space character in the name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +129,7 @@ impl AssertionRuleBuilder {
         &self.name
     }
     /// <p>The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many routing control states must be ON as the result of a transaction. For example, if you have three assertion routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.</p>
+    /// This field is required.
     pub fn rule_config(mut self, input: crate::types::RuleConfig) -> Self {
         self.rule_config = ::std::option::Option::Some(input);
         self
@@ -139,6 +144,7 @@ impl AssertionRuleBuilder {
         &self.rule_config
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
+    /// This field is required.
     pub fn safety_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.safety_rule_arn = ::std::option::Option::Some(input.into());
         self
@@ -153,6 +159,7 @@ impl AssertionRuleBuilder {
         &self.safety_rule_arn
     }
     /// <p>The deployment status of an assertion rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -167,6 +174,7 @@ impl AssertionRuleBuilder {
         &self.status
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
+    /// This field is required.
     pub fn wait_period_ms(mut self, input: i32) -> Self {
         self.wait_period_ms = ::std::option::Option::Some(input);
         self

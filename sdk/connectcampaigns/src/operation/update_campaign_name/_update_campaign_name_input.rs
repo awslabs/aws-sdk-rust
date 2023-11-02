@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignNameInput {
     /// Identifier representing a Campaign
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// The name of an Amazon Connect Campaign name.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl UpdateCampaignNameInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// The name of an Amazon Connect Campaign name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl UpdateCampaignNameInput {
@@ -35,6 +37,7 @@ pub struct UpdateCampaignNameInputBuilder {
 }
 impl UpdateCampaignNameInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl UpdateCampaignNameInputBuilder {
         &self.id
     }
     /// The name of an Amazon Connect Campaign name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -63,12 +67,25 @@ impl UpdateCampaignNameInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateCampaignNameInput`](crate::operation::update_campaign_name::UpdateCampaignNameInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_campaign_name::builders::UpdateCampaignNameInputBuilder::id)
+    /// - [`name`](crate::operation::update_campaign_name::builders::UpdateCampaignNameInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_campaign_name::UpdateCampaignNameInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_campaign_name::UpdateCampaignNameInput {
-            id: self.id,
-            name: self.name,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateCampaignNameInput",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building UpdateCampaignNameInput",
+                )
+            })?,
         })
     }
 }

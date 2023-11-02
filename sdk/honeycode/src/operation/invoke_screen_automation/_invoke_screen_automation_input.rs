@@ -84,6 +84,7 @@ pub struct InvokeScreenAutomationInputBuilder {
 }
 impl InvokeScreenAutomationInputBuilder {
     /// <p>The ID of the workbook that contains the screen automation.</p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl InvokeScreenAutomationInputBuilder {
         &self.workbook_id
     }
     /// <p>The ID of the app that contains the screen automation.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +114,7 @@ impl InvokeScreenAutomationInputBuilder {
         &self.app_id
     }
     /// <p>The ID of the screen that contains the screen automation.</p>
+    /// This field is required.
     pub fn screen_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +129,7 @@ impl InvokeScreenAutomationInputBuilder {
         &self.screen_id
     }
     /// <p>The ID of the automation action to be performed.</p>
+    /// This field is required.
     pub fn screen_automation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_automation_id = ::std::option::Option::Some(input.into());
         self

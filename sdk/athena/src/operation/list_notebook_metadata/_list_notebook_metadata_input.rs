@@ -90,6 +90,7 @@ impl ListNotebookMetadataInputBuilder {
         &self.max_results
     }
     /// <p>The name of the Spark enabled workgroup to retrieve notebook metadata for.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConfig`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`config_id(impl Into<String>)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::config_id) / [`set_config_id(Option<String>)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::set_config_id): <p>UUID of a <code>Config</code>.</p>
-    ///   - [`config_type(ConfigCapabilityType)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::config_type) / [`set_config_type(Option<ConfigCapabilityType>)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::set_config_type): <p>Type of a <code>Config</code>.</p>
+    ///   - [`config_id(impl Into<String>)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::config_id) / [`set_config_id(impl Into<String>)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::set_config_id):<br>required: **true**<br><p>UUID of a <code>Config</code>.</p><br>
+    ///   - [`config_type(ConfigCapabilityType)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::config_type) / [`set_config_type(ConfigCapabilityType)`](crate::operation::delete_config::builders::DeleteConfigFluentBuilder::set_config_type):<br>required: **true**<br><p>Type of a <code>Config</code>.</p><br>
     /// - On success, responds with [`DeleteConfigOutput`](crate::operation::delete_config::DeleteConfigOutput) with field(s):
     ///   - [`config_id(Option<String>)`](crate::operation::delete_config::DeleteConfigOutput::config_id): <p>UUID of a <code>Config</code>.</p>
     ///   - [`config_type(Option<ConfigCapabilityType>)`](crate::operation::delete_config::DeleteConfigOutput::config_type): <p>Type of a <code>Config</code>.</p>

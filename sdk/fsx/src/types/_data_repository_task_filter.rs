@@ -23,8 +23,10 @@ impl DataRepositoryTaskFilter {
         self.name.as_ref()
     }
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl DataRepositoryTaskFilter {

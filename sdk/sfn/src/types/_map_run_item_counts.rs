@@ -77,6 +77,7 @@ pub struct MapRunItemCountsBuilder {
 }
 impl MapRunItemCountsBuilder {
     /// <p>The total number of items to process in child workflow executions that haven't started running yet.</p>
+    /// This field is required.
     pub fn pending(mut self, input: i64) -> Self {
         self.pending = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl MapRunItemCountsBuilder {
         &self.pending
     }
     /// <p>The total number of items being processed in child workflow executions that are currently in-progress.</p>
+    /// This field is required.
     pub fn running(mut self, input: i64) -> Self {
         self.running = ::std::option::Option::Some(input);
         self
@@ -105,6 +107,7 @@ impl MapRunItemCountsBuilder {
         &self.running
     }
     /// <p>The total number of items processed in child workflow executions that have completed successfully.</p>
+    /// This field is required.
     pub fn succeeded(mut self, input: i64) -> Self {
         self.succeeded = ::std::option::Option::Some(input);
         self
@@ -119,6 +122,7 @@ impl MapRunItemCountsBuilder {
         &self.succeeded
     }
     /// <p>The total number of items processed in child workflow executions that have failed.</p>
+    /// This field is required.
     pub fn failed(mut self, input: i64) -> Self {
         self.failed = ::std::option::Option::Some(input);
         self
@@ -133,6 +137,7 @@ impl MapRunItemCountsBuilder {
         &self.failed
     }
     /// <p>The total number of items processed in child workflow executions that have timed out.</p>
+    /// This field is required.
     pub fn timed_out(mut self, input: i64) -> Self {
         self.timed_out = ::std::option::Option::Some(input);
         self
@@ -147,6 +152,7 @@ impl MapRunItemCountsBuilder {
         &self.timed_out
     }
     /// <p>The total number of items processed in child workflow executions that were either stopped by the user or by Step Functions, because the Map Run failed.</p>
+    /// This field is required.
     pub fn aborted(mut self, input: i64) -> Self {
         self.aborted = ::std::option::Option::Some(input);
         self
@@ -161,6 +167,7 @@ impl MapRunItemCountsBuilder {
         &self.aborted
     }
     /// <p>The total number of items processed in all the child workflow executions started by a Map Run.</p>
+    /// This field is required.
     pub fn total(mut self, input: i64) -> Self {
         self.total = ::std::option::Option::Some(input);
         self
@@ -175,6 +182,7 @@ impl MapRunItemCountsBuilder {
         &self.total
     }
     /// <p>Returns the count of items whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// This field is required.
     pub fn results_written(mut self, input: i64) -> Self {
         self.results_written = ::std::option::Option::Some(input);
         self

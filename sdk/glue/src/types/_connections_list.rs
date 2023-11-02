@@ -9,8 +9,10 @@ pub struct ConnectionsList {
 }
 impl ConnectionsList {
     /// <p>A list of connections used by the job.</p>
-    pub fn connections(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connections.is_none()`.
+    pub fn connections(&self) -> &[::std::string::String] {
+        self.connections.as_deref().unwrap_or_default()
     }
 }
 impl ConnectionsList {

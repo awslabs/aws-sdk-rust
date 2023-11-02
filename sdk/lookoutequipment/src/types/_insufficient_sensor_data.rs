@@ -35,6 +35,7 @@ pub struct InsufficientSensorDataBuilder {
 }
 impl InsufficientSensorDataBuilder {
     /// <p> Parameter that describes the total number of sensors that have data completely missing for it. </p>
+    /// This field is required.
     pub fn missing_complete_sensor_data(mut self, input: crate::types::MissingCompleteSensorData) -> Self {
         self.missing_complete_sensor_data = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl InsufficientSensorDataBuilder {
         &self.missing_complete_sensor_data
     }
     /// <p> Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall. </p>
+    /// This field is required.
     pub fn sensors_with_short_date_range(mut self, input: crate::types::SensorsWithShortDateRange) -> Self {
         self.sensors_with_short_date_range = ::std::option::Option::Some(input);
         self

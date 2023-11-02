@@ -30,8 +30,10 @@ impl GetIpamDiscoveredResourceCidrsInput {
         self.resource_region.as_deref()
     }
     /// <p>Filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -76,6 +78,7 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
         &self.dry_run
     }
     /// <p>A resource discovery ID.</p>
+    /// This field is required.
     pub fn ipam_resource_discovery_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_resource_discovery_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
         &self.ipam_resource_discovery_id
     }
     /// <p>A resource Region.</p>
+    /// This field is required.
     pub fn resource_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_region = ::std::option::Option::Some(input.into());
         self

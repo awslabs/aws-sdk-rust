@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainSummary {
     /// <p>The unique identifier of the domain.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
-    pub domain_arn: ::std::option::Option<::std::string::String>,
+    pub domain_arn: ::std::string::String,
     /// <p>The name of the domain.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl DomainSummary {
     /// <p>The unique identifier of the domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
-    pub fn domain_arn(&self) -> ::std::option::Option<&str> {
-        self.domain_arn.as_deref()
+    pub fn domain_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_arn.deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl DomainSummary {
@@ -42,6 +45,7 @@ pub struct DomainSummaryBuilder {
 }
 impl DomainSummaryBuilder {
     /// <p>The unique identifier of the domain.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl DomainSummaryBuilder {
         &self.domain_id
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
+    /// This field is required.
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl DomainSummaryBuilder {
         &self.domain_arn
     }
     /// <p>The name of the domain.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl DomainSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
-    pub fn build(self) -> crate::types::DomainSummary {
-        crate::types::DomainSummary {
-            domain_id: self.domain_id,
-            domain_arn: self.domain_arn,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::types::builders::DomainSummaryBuilder::domain_id)
+    /// - [`domain_arn`](crate::types::builders::DomainSummaryBuilder::domain_arn)
+    /// - [`name`](crate::types::builders::DomainSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DomainSummary {
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DomainSummary",
+                )
+            })?,
+            domain_arn: self.domain_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_arn",
+                    "domain_arn was not specified but it is required when building DomainSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building DomainSummary",
+                )
+            })?,
+        })
     }
 }

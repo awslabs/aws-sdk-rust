@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAuthorizer`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`authorizer_id(impl Into<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::set_authorizer_id): <p>The authorizer identifier.</p>
+    ///   - [`api_id(impl Into<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::set_api_id):<br>required: **true**<br><p>The API identifier.</p><br>
+    ///   - [`authorizer_id(impl Into<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::authorizer_id) / [`set_authorizer_id(Option<String>)`](crate::operation::get_authorizer::builders::GetAuthorizerFluentBuilder::set_authorizer_id):<br>required: **true**<br><p>The authorizer identifier.</p><br>
     /// - On success, responds with [`GetAuthorizerOutput`](crate::operation::get_authorizer::GetAuthorizerOutput) with field(s):
     ///   - [`authorizer_credentials_arn(Option<String>)`](crate::operation::get_authorizer::GetAuthorizerOutput::authorizer_credentials_arn): <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
     ///   - [`authorizer_id(Option<String>)`](crate::operation::get_authorizer::GetAuthorizerOutput::authorizer_id): <p>The authorizer identifier.</p>

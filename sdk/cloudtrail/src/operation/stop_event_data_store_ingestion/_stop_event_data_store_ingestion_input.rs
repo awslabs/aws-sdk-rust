@@ -27,6 +27,7 @@ pub struct StopEventDataStoreIngestionInputBuilder {
 }
 impl StopEventDataStoreIngestionInputBuilder {
     /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p>
+    /// This field is required.
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self

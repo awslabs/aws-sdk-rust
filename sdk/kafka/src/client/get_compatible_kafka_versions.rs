@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCompatibleKafkaVersions`](crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster check.</p>
+    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsFluentBuilder::set_cluster_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the cluster check.</p><br>
     /// - On success, responds with [`GetCompatibleKafkaVersionsOutput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput) with field(s):
     ///   - [`compatible_kafka_versions(Option<Vec<CompatibleKafkaVersion>>)`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput::compatible_kafka_versions): <p>A list of CompatibleKafkaVersion objects.</p>
     /// - On failure, responds with [`SdkError<GetCompatibleKafkaVersionsError>`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError)

@@ -48,6 +48,7 @@ pub struct DeletePartnerInputBuilder {
 }
 impl DeletePartnerInputBuilder {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeletePartnerInputBuilder {
         &self.account_id
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl DeletePartnerInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The name of the database that receives data from the partner.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl DeletePartnerInputBuilder {
         &self.database_name
     }
     /// <p>The name of the partner that is authorized to send data.</p>
+    /// This field is required.
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_name = ::std::option::Option::Some(input.into());
         self

@@ -30,6 +30,7 @@ pub struct DescribeModelPackageInputBuilder {
 impl DescribeModelPackageInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    /// This field is required.
     pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self

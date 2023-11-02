@@ -20,8 +20,10 @@ impl UpdateProfileInput {
         self.profile_description.as_deref()
     }
     /// <p>Profile questions.</p>
-    pub fn profile_questions(&self) -> ::std::option::Option<&[crate::types::ProfileQuestionUpdate]> {
-        self.profile_questions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_questions.is_none()`.
+    pub fn profile_questions(&self) -> &[crate::types::ProfileQuestionUpdate] {
+        self.profile_questions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateProfileInput {
@@ -41,6 +43,7 @@ pub struct UpdateProfileInputBuilder {
 }
 impl UpdateProfileInputBuilder {
     /// <p>The profile ARN.</p>
+    /// This field is required.
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
         self

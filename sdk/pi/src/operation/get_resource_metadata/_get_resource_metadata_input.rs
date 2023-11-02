@@ -34,6 +34,7 @@ pub struct GetResourceMetadataInputBuilder {
 }
 impl GetResourceMetadataInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    /// This field is required.
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl GetResourceMetadataInputBuilder {
         &self.service_type
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

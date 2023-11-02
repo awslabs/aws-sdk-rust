@@ -90,6 +90,7 @@ impl GetIpamAddressHistoryInputBuilder {
         &self.dry_run
     }
     /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range. If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +105,7 @@ impl GetIpamAddressHistoryInputBuilder {
         &self.cidr
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
+    /// This field is required.
     pub fn ipam_scope_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_scope_id = ::std::option::Option::Some(input.into());
         self

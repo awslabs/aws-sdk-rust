@@ -11,12 +11,16 @@ pub struct GetColumnStatisticsForTableOutput {
 }
 impl GetColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatistics.</p>
-    pub fn column_statistics_list(&self) -> ::std::option::Option<&[crate::types::ColumnStatistics]> {
-        self.column_statistics_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_statistics_list.is_none()`.
+    pub fn column_statistics_list(&self) -> &[crate::types::ColumnStatistics] {
+        self.column_statistics_list.as_deref().unwrap_or_default()
     }
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::ColumnError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::ColumnError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetColumnStatisticsForTableOutput {

@@ -27,8 +27,10 @@ impl GetAppLaunchConfigurationOutput {
         self.auto_launch
     }
     /// <p>The launch configurations for server groups in this application.</p>
-    pub fn server_group_launch_configurations(&self) -> ::std::option::Option<&[crate::types::ServerGroupLaunchConfiguration]> {
-        self.server_group_launch_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.server_group_launch_configurations.is_none()`.
+    pub fn server_group_launch_configurations(&self) -> &[crate::types::ServerGroupLaunchConfiguration] {
+        self.server_group_launch_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetAppLaunchConfigurationOutput {

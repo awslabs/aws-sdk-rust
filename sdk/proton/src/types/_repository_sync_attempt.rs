@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
-    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub started_at: ::aws_smithy_types::DateTime,
     /// <p>The sync attempt status.</p>
-    pub status: ::std::option::Option<crate::types::RepositorySyncStatus>,
+    pub status: crate::types::RepositorySyncStatus,
     /// <p>Detail data for sync attempt events.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>,
+    pub events: ::std::vec::Vec<crate::types::RepositorySyncEvent>,
 }
 impl RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.started_at.as_ref()
+    pub fn started_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.started_at
     }
     /// <p>The sync attempt status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RepositorySyncStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::RepositorySyncStatus {
+        &self.status
     }
     /// <p>Detail data for sync attempt events.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::RepositorySyncEvent]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::RepositorySyncEvent] {
+        use std::ops::Deref;
+        self.events.deref()
     }
 }
 impl RepositorySyncAttempt {
@@ -42,6 +43,7 @@ pub struct RepositorySyncAttemptBuilder {
 }
 impl RepositorySyncAttemptBuilder {
     /// <p>The time when the sync attempt started.</p>
+    /// This field is required.
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl RepositorySyncAttemptBuilder {
         &self.started_at
     }
     /// <p>The sync attempt status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RepositorySyncStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl RepositorySyncAttemptBuilder {
         &self.events
     }
     /// Consumes the builder and constructs a [`RepositorySyncAttempt`](crate::types::RepositorySyncAttempt).
-    pub fn build(self) -> crate::types::RepositorySyncAttempt {
-        crate::types::RepositorySyncAttempt {
-            started_at: self.started_at,
-            status: self.status,
-            events: self.events,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`started_at`](crate::types::builders::RepositorySyncAttemptBuilder::started_at)
+    /// - [`status`](crate::types::builders::RepositorySyncAttemptBuilder::status)
+    /// - [`events`](crate::types::builders::RepositorySyncAttemptBuilder::events)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncAttempt, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositorySyncAttempt {
+            started_at: self.started_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "started_at",
+                    "started_at was not specified but it is required when building RepositorySyncAttempt",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building RepositorySyncAttempt",
+                )
+            })?,
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building RepositorySyncAttempt",
+                )
+            })?,
+        })
     }
 }

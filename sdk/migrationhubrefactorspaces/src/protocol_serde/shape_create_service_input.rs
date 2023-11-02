@@ -9,36 +9,36 @@ pub fn ser_create_service_input(
     if let Some(var_2) = &input.description {
         object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.endpoint_type {
-        object.key("EndpointType").string(var_3.as_str());
+    {
+        object.key("EndpointType").string(input.endpoint_type.as_str());
     }
-    if let Some(var_4) = &input.lambda_endpoint {
+    if let Some(var_3) = &input.lambda_endpoint {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("LambdaEndpoint").start_object();
-        crate::protocol_serde::shape_lambda_endpoint_input::ser_lambda_endpoint_input(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("LambdaEndpoint").start_object();
+        crate::protocol_serde::shape_lambda_endpoint_input::ser_lambda_endpoint_input(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("Name").string(var_6.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_6 = object.key("Tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_8.finish();
+        object_6.finish();
     }
-    if let Some(var_11) = &input.url_endpoint {
+    if let Some(var_9) = &input.url_endpoint {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("UrlEndpoint").start_object();
-        crate::protocol_serde::shape_url_endpoint_input::ser_url_endpoint_input(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_10 = object.key("UrlEndpoint").start_object();
+        crate::protocol_serde::shape_url_endpoint_input::ser_url_endpoint_input(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_13) = &input.vpc_id {
-        object.key("VpcId").string(var_13.as_str());
+    if let Some(var_11) = &input.vpc_id {
+        object.key("VpcId").string(var_11.as_str());
     }
     Ok(())
 }

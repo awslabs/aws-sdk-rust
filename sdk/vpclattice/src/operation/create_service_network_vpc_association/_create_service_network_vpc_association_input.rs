@@ -6,9 +6,9 @@ pub struct CreateServiceNetworkVpcAssociationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
-    pub service_network_identifier: ::std::option::Option<::std::string::String>,
+    pub service_network_identifier: ::std::string::String,
     /// <p>The ID of the VPC.</p>
-    pub vpc_identifier: ::std::option::Option<::std::string::String>,
+    pub vpc_identifier: ::std::string::String,
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags for the association.</p>
@@ -20,16 +20,20 @@ impl CreateServiceNetworkVpcAssociationInput {
         self.client_token.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
-    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
-        self.service_network_identifier.as_deref()
+    pub fn service_network_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.service_network_identifier.deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_identifier(&self) -> ::std::option::Option<&str> {
-        self.vpc_identifier.as_deref()
+    pub fn vpc_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.vpc_identifier.deref()
     }
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags for the association.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -69,6 +73,7 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         &self.client_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
+    /// This field is required.
     pub fn service_network_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_network_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         &self.service_network_identifier
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_identifier = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +143,9 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkVpcAssociationInput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_network_identifier`](crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationInputBuilder::service_network_identifier)
+    /// - [`vpc_identifier`](crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationInputBuilder::vpc_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -146,8 +155,18 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput {
                 client_token: self.client_token,
-                service_network_identifier: self.service_network_identifier,
-                vpc_identifier: self.vpc_identifier,
+                service_network_identifier: self.service_network_identifier.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_network_identifier",
+                        "service_network_identifier was not specified but it is required when building CreateServiceNetworkVpcAssociationInput",
+                    )
+                })?,
+                vpc_identifier: self.vpc_identifier.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "vpc_identifier",
+                        "vpc_identifier was not specified but it is required when building CreateServiceNetworkVpcAssociationInput",
+                    )
+                })?,
                 security_group_ids: self.security_group_ids,
                 tags: self.tags,
             },

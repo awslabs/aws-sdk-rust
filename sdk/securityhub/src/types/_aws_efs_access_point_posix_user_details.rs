@@ -17,8 +17,10 @@ impl AwsEfsAccessPointPosixUserDetails {
         self.gid.as_deref()
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
-    pub fn secondary_gids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.secondary_gids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_gids.is_none()`.
+    pub fn secondary_gids(&self) -> &[::std::string::String] {
+        self.secondary_gids.as_deref().unwrap_or_default()
     }
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>
     pub fn uid(&self) -> ::std::option::Option<&str> {

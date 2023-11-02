@@ -11,8 +11,10 @@ pub struct ListIpSetsOutput {
 }
 impl ListIpSetsOutput {
     /// <p>The IDs of the IPSet resources.</p>
-    pub fn ip_set_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ip_set_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_set_ids.is_none()`.
+    pub fn ip_set_ids(&self) -> &[::std::string::String] {
+        self.ip_set_ids.as_deref().unwrap_or_default()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

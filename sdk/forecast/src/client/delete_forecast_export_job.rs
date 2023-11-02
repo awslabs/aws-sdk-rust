@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteForecastExportJob`](crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`forecast_export_job_arn(impl Into<String>)`](crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder::forecast_export_job_arn) / [`set_forecast_export_job_arn(Option<String>)`](crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder::set_forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
+    ///   - [`forecast_export_job_arn(impl Into<String>)`](crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder::forecast_export_job_arn) / [`set_forecast_export_job_arn(Option<String>)`](crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder::set_forecast_export_job_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p><br>
     /// - On success, responds with [`DeleteForecastExportJobOutput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput)
     /// - On failure, responds with [`SdkError<DeleteForecastExportJobError>`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobError)
     pub fn delete_forecast_export_job(&self) -> crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobFluentBuilder {

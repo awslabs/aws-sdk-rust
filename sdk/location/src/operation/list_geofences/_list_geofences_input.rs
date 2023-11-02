@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeofencesInput {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    pub collection_name: ::std::option::Option<::std::string::String>,
+    pub collection_name: ::std::string::String,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -14,8 +14,9 @@ pub struct ListGeofencesInput {
 }
 impl ListGeofencesInput {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
-        self.collection_name.as_deref()
+    pub fn collection_name(&self) -> &str {
+        use std::ops::Deref;
+        self.collection_name.deref()
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
@@ -45,6 +46,7 @@ pub struct ListGeofencesInputBuilder {
 }
 impl ListGeofencesInputBuilder {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
+    /// This field is required.
     pub fn collection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_name = ::std::option::Option::Some(input.into());
         self
@@ -93,11 +95,18 @@ impl ListGeofencesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListGeofencesInput`](crate::operation::list_geofences::ListGeofencesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collection_name`](crate::operation::list_geofences::builders::ListGeofencesInputBuilder::collection_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geofences::ListGeofencesInput {
-            collection_name: self.collection_name,
+            collection_name: self.collection_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collection_name",
+                    "collection_name was not specified but it is required when building ListGeofencesInput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
         })

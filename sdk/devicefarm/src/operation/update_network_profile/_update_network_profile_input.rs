@@ -104,6 +104,7 @@ pub struct UpdateNetworkProfileInputBuilder {
 }
 impl UpdateNetworkProfileInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

@@ -48,6 +48,7 @@ pub struct UpdateAliasInputBuilder {
 }
 impl UpdateAliasInputBuilder {
     /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self

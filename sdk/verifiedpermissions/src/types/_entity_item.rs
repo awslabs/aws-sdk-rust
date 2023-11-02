@@ -23,8 +23,10 @@ impl EntityItem {
         self.attributes.as_ref()
     }
     /// <p>The parents in the hierarchy that contains the entity.</p>
-    pub fn parents(&self) -> ::std::option::Option<&[crate::types::EntityIdentifier]> {
-        self.parents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parents.is_none()`.
+    pub fn parents(&self) -> &[crate::types::EntityIdentifier] {
+        self.parents.as_deref().unwrap_or_default()
     }
 }
 impl EntityItem {
@@ -44,6 +46,7 @@ pub struct EntityItemBuilder {
 }
 impl EntityItemBuilder {
     /// <p>The identifier of the entity.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.identifier = ::std::option::Option::Some(input);
         self

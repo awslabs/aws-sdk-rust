@@ -15,8 +15,10 @@ impl DeploymentRecommendation {
         self.recommendation_status.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
-    pub fn real_time_inference_recommendations(&self) -> ::std::option::Option<&[crate::types::RealTimeInferenceRecommendation]> {
-        self.real_time_inference_recommendations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.real_time_inference_recommendations.is_none()`.
+    pub fn real_time_inference_recommendations(&self) -> &[crate::types::RealTimeInferenceRecommendation] {
+        self.real_time_inference_recommendations.as_deref().unwrap_or_default()
     }
 }
 impl DeploymentRecommendation {
@@ -35,6 +37,7 @@ pub struct DeploymentRecommendationBuilder {
 }
 impl DeploymentRecommendationBuilder {
     /// <p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>
+    /// This field is required.
     pub fn recommendation_status(mut self, input: crate::types::RecommendationStatus) -> Self {
         self.recommendation_status = ::std::option::Option::Some(input);
         self

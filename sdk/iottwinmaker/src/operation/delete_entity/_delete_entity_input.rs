@@ -4,20 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEntityInput {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ID of the entity to delete.</p>
-    pub entity_id: ::std::option::Option<::std::string::String>,
+    pub entity_id: ::std::string::String,
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
     pub is_recursive: ::std::option::Option<bool>,
 }
 impl DeleteEntityInput {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ID of the entity to delete.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
-        self.entity_id.as_deref()
+    pub fn entity_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entity_id.deref()
     }
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
     pub fn is_recursive(&self) -> ::std::option::Option<bool> {
@@ -41,6 +43,7 @@ pub struct DeleteEntityInputBuilder {
 }
 impl DeleteEntityInputBuilder {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl DeleteEntityInputBuilder {
         &self.workspace_id
     }
     /// <p>The ID of the entity to delete.</p>
+    /// This field is required.
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
         self
@@ -83,10 +87,23 @@ impl DeleteEntityInputBuilder {
         &self.is_recursive
     }
     /// Consumes the builder and constructs a [`DeleteEntityInput`](crate::operation::delete_entity::DeleteEntityInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::delete_entity::builders::DeleteEntityInputBuilder::workspace_id)
+    /// - [`entity_id`](crate::operation::delete_entity::builders::DeleteEntityInputBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_entity::DeleteEntityInput {
-            workspace_id: self.workspace_id,
-            entity_id: self.entity_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building DeleteEntityInput",
+                )
+            })?,
+            entity_id: self.entity_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entity_id",
+                    "entity_id was not specified but it is required when building DeleteEntityInput",
+                )
+            })?,
             is_recursive: self.is_recursive,
         })
     }

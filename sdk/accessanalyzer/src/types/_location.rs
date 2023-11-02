@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub path: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>,
+    pub path: ::std::vec::Vec<crate::types::PathElement>,
     /// <p>A span in a policy.</p>
     pub span: ::std::option::Option<crate::types::Span>,
 }
 impl Location {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn path(&self) -> ::std::option::Option<&[crate::types::PathElement]> {
-        self.path.as_deref()
+    pub fn path(&self) -> &[crate::types::PathElement] {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>A span in a policy.</p>
     pub fn span(&self) -> ::std::option::Option<&crate::types::Span> {
@@ -55,6 +56,7 @@ impl LocationBuilder {
         &self.path
     }
     /// <p>A span in a policy.</p>
+    /// This field is required.
     pub fn span(mut self, input: crate::types::Span) -> Self {
         self.span = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl LocationBuilder {
         &self.span
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
-    pub fn build(self) -> crate::types::Location {
-        crate::types::Location {
-            path: self.path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::LocationBuilder::path)
+    pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Location {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building Location",
+                )
+            })?,
             span: self.span,
-        }
+        })
     }
 }

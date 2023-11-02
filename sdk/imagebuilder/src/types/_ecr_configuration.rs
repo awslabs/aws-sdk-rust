@@ -15,8 +15,10 @@ impl EcrConfiguration {
         self.repository_name.as_deref()
     }
     /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
-    pub fn container_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.container_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_tags.is_none()`.
+    pub fn container_tags(&self) -> &[::std::string::String] {
+        self.container_tags.as_deref().unwrap_or_default()
     }
 }
 impl EcrConfiguration {

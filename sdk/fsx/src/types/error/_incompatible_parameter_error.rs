@@ -62,6 +62,7 @@ pub struct IncompatibleParameterErrorBuilder {
 }
 impl IncompatibleParameterErrorBuilder {
     /// <p>A parameter that is incompatible with the earlier request.</p>
+    /// This field is required.
     pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter = ::std::option::Option::Some(input.into());
         self

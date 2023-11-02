@@ -28,6 +28,7 @@ pub struct VirtualNodeTcpConnectionPoolBuilder {
 }
 impl VirtualNodeTcpConnectionPoolBuilder {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
+    /// This field is required.
     pub fn max_connections(mut self, input: i32) -> Self {
         self.max_connections = ::std::option::Option::Some(input);
         self

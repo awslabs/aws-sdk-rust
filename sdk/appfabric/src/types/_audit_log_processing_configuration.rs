@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditLogProcessingConfiguration {
     /// <p>The event schema in which the audit logs need to be formatted.</p>
-    pub schema: ::std::option::Option<crate::types::Schema>,
+    pub schema: crate::types::Schema,
     /// <p>The format in which the audit logs need to be formatted.</p>
-    pub format: ::std::option::Option<crate::types::Format>,
+    pub format: crate::types::Format,
 }
 impl AuditLogProcessingConfiguration {
     /// <p>The event schema in which the audit logs need to be formatted.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
-        self.schema.as_ref()
+    pub fn schema(&self) -> &crate::types::Schema {
+        &self.schema
     }
     /// <p>The format in which the audit logs need to be formatted.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::Format {
+        &self.format
     }
 }
 impl AuditLogProcessingConfiguration {
@@ -35,6 +35,7 @@ pub struct AuditLogProcessingConfigurationBuilder {
 }
 impl AuditLogProcessingConfigurationBuilder {
     /// <p>The event schema in which the audit logs need to be formatted.</p>
+    /// This field is required.
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl AuditLogProcessingConfigurationBuilder {
         &self.schema
     }
     /// <p>The format in which the audit logs need to be formatted.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl AuditLogProcessingConfigurationBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`AuditLogProcessingConfiguration`](crate::types::AuditLogProcessingConfiguration).
-    pub fn build(self) -> crate::types::AuditLogProcessingConfiguration {
-        crate::types::AuditLogProcessingConfiguration {
-            schema: self.schema,
-            format: self.format,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`schema`](crate::types::builders::AuditLogProcessingConfigurationBuilder::schema)
+    /// - [`format`](crate::types::builders::AuditLogProcessingConfigurationBuilder::format)
+    pub fn build(self) -> ::std::result::Result<crate::types::AuditLogProcessingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AuditLogProcessingConfiguration {
+            schema: self.schema.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "schema",
+                    "schema was not specified but it is required when building AuditLogProcessingConfiguration",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building AuditLogProcessingConfiguration",
+                )
+            })?,
+        })
     }
 }

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableLfTagPolicy {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
+    pub expression: ::std::vec::Vec<crate::types::LfTag>,
 }
 impl TableLfTagPolicy {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &[crate::types::LfTag] {
+        use std::ops::Deref;
+        self.expression.deref()
     }
 }
 impl TableLfTagPolicy {
@@ -48,7 +49,16 @@ impl TableLfTagPolicyBuilder {
         &self.expression
     }
     /// Consumes the builder and constructs a [`TableLfTagPolicy`](crate::types::TableLfTagPolicy).
-    pub fn build(self) -> crate::types::TableLfTagPolicy {
-        crate::types::TableLfTagPolicy { expression: self.expression }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::TableLfTagPolicyBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableLfTagPolicy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableLfTagPolicy {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building TableLfTagPolicy",
+                )
+            })?,
+        })
     }
 }

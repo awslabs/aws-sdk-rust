@@ -53,12 +53,16 @@ impl SubjectDetail {
         self.updated_at.as_ref()
     }
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&[crate::types::CredentialSummary]> {
-        self.credentials.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials.is_none()`.
+    pub fn credentials(&self) -> &[crate::types::CredentialSummary] {
+        self.credentials.as_deref().unwrap_or_default()
     }
     /// <p>The specified instance properties associated with the request.</p>
-    pub fn instance_properties(&self) -> ::std::option::Option<&[crate::types::InstanceProperty]> {
-        self.instance_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_properties.is_none()`.
+    pub fn instance_properties(&self) -> &[crate::types::InstanceProperty] {
+        self.instance_properties.as_deref().unwrap_or_default()
     }
 }
 impl SubjectDetail {

@@ -15,8 +15,10 @@ impl ListTrustAnchorsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of trust anchors.</p>
-    pub fn trust_anchors(&self) -> ::std::option::Option<&[crate::types::TrustAnchorDetail]> {
-        self.trust_anchors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_anchors.is_none()`.
+    pub fn trust_anchors(&self) -> &[crate::types::TrustAnchorDetail] {
+        self.trust_anchors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTrustAnchorsOutput {

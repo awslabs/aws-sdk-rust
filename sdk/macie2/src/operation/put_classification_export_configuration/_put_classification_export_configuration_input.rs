@@ -27,6 +27,7 @@ pub struct PutClassificationExportConfigurationInputBuilder {
 }
 impl PutClassificationExportConfigurationInputBuilder {
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::ClassificationExportConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

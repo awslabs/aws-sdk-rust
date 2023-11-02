@@ -34,6 +34,7 @@ pub struct RestoreSnapshotFromRecycleBinInputBuilder {
 }
 impl RestoreSnapshotFromRecycleBinInputBuilder {
     /// <p>The ID of the snapshot to restore.</p>
+    /// This field is required.
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self

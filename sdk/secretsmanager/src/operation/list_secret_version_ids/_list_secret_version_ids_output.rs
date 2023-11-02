@@ -15,8 +15,10 @@ pub struct ListSecretVersionIdsOutput {
 }
 impl ListSecretVersionIdsOutput {
     /// <p>A list of the versions of the secret.</p>
-    pub fn versions(&self) -> ::std::option::Option<&[crate::types::SecretVersionsListEntry]> {
-        self.versions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
+    pub fn versions(&self) -> &[crate::types::SecretVersionsListEntry] {
+        self.versions.as_deref().unwrap_or_default()
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecretVersionIds</code> again with this value. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

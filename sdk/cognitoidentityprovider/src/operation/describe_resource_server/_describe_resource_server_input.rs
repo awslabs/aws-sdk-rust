@@ -34,6 +34,7 @@ pub struct DescribeResourceServerInputBuilder {
 }
 impl DescribeResourceServerInputBuilder {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeResourceServerInputBuilder {
         &self.user_pool_id
     }
     /// <p>The identifier for the resource server</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

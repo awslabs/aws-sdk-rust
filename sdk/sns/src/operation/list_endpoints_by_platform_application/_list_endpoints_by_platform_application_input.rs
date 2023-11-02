@@ -35,6 +35,7 @@ pub struct ListEndpointsByPlatformApplicationInputBuilder {
 }
 impl ListEndpointsByPlatformApplicationInputBuilder {
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    /// This field is required.
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_application_arn = ::std::option::Option::Some(input.into());
         self

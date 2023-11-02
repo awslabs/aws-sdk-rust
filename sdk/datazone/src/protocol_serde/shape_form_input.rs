@@ -3,17 +3,17 @@ pub fn ser_form_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.form_name {
-        object.key("formName").string(var_1.as_str());
+    {
+        object.key("formName").string(input.form_name.as_str());
     }
-    if let Some(var_2) = &input.type_identifier {
-        object.key("typeIdentifier").string(var_2.as_str());
+    if let Some(var_1) = &input.type_identifier {
+        object.key("typeIdentifier").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.type_revision {
-        object.key("typeRevision").string(var_3.as_str());
+    if let Some(var_2) = &input.type_revision {
+        object.key("typeRevision").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.content {
-        object.key("content").string(var_4.as_str());
+    if let Some(var_3) = &input.content {
+        object.key("content").string(var_3.as_str());
     }
     Ok(())
 }

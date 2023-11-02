@@ -85,6 +85,8 @@ pub use crate::types::_snapshot_options_status::SnapshotOptionsStatusBuilder;
 
 pub use crate::types::_snapshot_options::SnapshotOptionsBuilder;
 
+pub use crate::types::_ip_address_type_status::IpAddressTypeStatusBuilder;
+
 pub use crate::types::_access_policies_status::AccessPoliciesStatusBuilder;
 
 pub use crate::types::_ebs_options_status::EbsOptionsStatusBuilder;

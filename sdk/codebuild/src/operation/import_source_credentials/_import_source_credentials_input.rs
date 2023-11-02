@@ -80,6 +80,7 @@ impl ImportSourceCredentialsInputBuilder {
         &self.username
     }
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    /// This field is required.
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl ImportSourceCredentialsInputBuilder {
         &self.token
     }
     /// <p> The source provider used for this project. </p>
+    /// This field is required.
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
         self.server_type = ::std::option::Option::Some(input);
         self
@@ -108,6 +110,7 @@ impl ImportSourceCredentialsInputBuilder {
         &self.server_type
     }
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self

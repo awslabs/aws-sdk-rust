@@ -42,6 +42,7 @@ pub struct DestinationBuilder {
 }
 impl DestinationBuilder {
     /// <p>The unique ID of the publishing destination.</p>
+    /// This field is required.
     pub fn destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl DestinationBuilder {
         &self.destination_id
     }
     /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.</p>
+    /// This field is required.
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl DestinationBuilder {
         &self.destination_type
     }
     /// <p>The status of the publishing destination.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::PublishingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

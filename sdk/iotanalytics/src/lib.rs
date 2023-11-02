@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.56.1"
-//! aws-sdk-iotanalytics = "0.34.0"
+//! aws-sdk-iotanalytics = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -196,6 +196,8 @@ mod lens;
 mod endpoint_lib;
 
 mod json_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

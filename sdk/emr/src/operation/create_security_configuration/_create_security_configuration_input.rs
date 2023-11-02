@@ -34,6 +34,7 @@ pub struct CreateSecurityConfigurationInputBuilder {
 }
 impl CreateSecurityConfigurationInputBuilder {
     /// <p>The name of the security configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateSecurityConfigurationInputBuilder {
         &self.name
     }
     /// <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    /// This field is required.
     pub fn security_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.security_configuration = ::std::option::Option::Some(input.into());
         self

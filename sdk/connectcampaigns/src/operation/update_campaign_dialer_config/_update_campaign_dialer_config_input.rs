@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfigInput {
     /// Identifier representing a Campaign
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// The possible types of dialer config parameters
     pub dialer_config: ::std::option::Option<crate::types::DialerConfig>,
 }
 impl UpdateCampaignDialerConfigInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// The possible types of dialer config parameters
     pub fn dialer_config(&self) -> ::std::option::Option<&crate::types::DialerConfig> {
@@ -35,6 +36,7 @@ pub struct UpdateCampaignDialerConfigInputBuilder {
 }
 impl UpdateCampaignDialerConfigInputBuilder {
     /// Identifier representing a Campaign
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl UpdateCampaignDialerConfigInputBuilder {
         &self.id
     }
     /// The possible types of dialer config parameters
+    /// This field is required.
     pub fn dialer_config(mut self, input: crate::types::DialerConfig) -> Self {
         self.dialer_config = ::std::option::Option::Some(input);
         self
@@ -63,6 +66,8 @@ impl UpdateCampaignDialerConfigInputBuilder {
         &self.dialer_config
     }
     /// Consumes the builder and constructs a [`UpdateCampaignDialerConfigInput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -70,7 +75,12 @@ impl UpdateCampaignDialerConfigInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput {
-            id: self.id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateCampaignDialerConfigInput",
+                )
+            })?,
             dialer_config: self.dialer_config,
         })
     }

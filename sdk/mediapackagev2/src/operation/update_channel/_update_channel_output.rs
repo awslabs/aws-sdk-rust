@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelOutput {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub channel_group_name: ::std::option::Option<::std::string::String>,
+    pub channel_group_name: ::std::string::String,
     /// <p>The date and time the channel was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the channel was modified.</p>
-    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub modified_at: ::aws_smithy_types::DateTime,
     /// <p>The description for your channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of ingest endpoints.</p>
@@ -23,32 +23,37 @@ pub struct UpdateChannelOutput {
 }
 impl UpdateChannelOutput {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
-        self.channel_group_name.as_deref()
+    pub fn channel_group_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_group_name.deref()
     }
     /// <p>The date and time the channel was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The date and time the channel was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.modified_at.as_ref()
+    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.modified_at
     }
     /// <p>The description for your channel.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The list of ingest endpoints.</p>
-    pub fn ingest_endpoints(&self) -> ::std::option::Option<&[crate::types::IngestEndpoint]> {
-        self.ingest_endpoints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ingest_endpoints.is_none()`.
+    pub fn ingest_endpoints(&self) -> &[crate::types::IngestEndpoint] {
+        self.ingest_endpoints.as_deref().unwrap_or_default()
     }
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -83,6 +88,7 @@ pub struct UpdateChannelOutputBuilder {
 }
 impl UpdateChannelOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +103,7 @@ impl UpdateChannelOutputBuilder {
         &self.arn
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +118,7 @@ impl UpdateChannelOutputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +133,7 @@ impl UpdateChannelOutputBuilder {
         &self.channel_group_name
     }
     /// <p>The date and time the channel was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -139,6 +148,7 @@ impl UpdateChannelOutputBuilder {
         &self.created_at
     }
     /// <p>The date and time the channel was modified.</p>
+    /// This field is required.
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
         self
@@ -216,17 +226,50 @@ impl UpdateChannelOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
-    pub fn build(self) -> crate::operation::update_channel::UpdateChannelOutput {
-        crate::operation::update_channel::UpdateChannelOutput {
-            arn: self.arn,
-            channel_name: self.channel_name,
-            channel_group_name: self.channel_group_name,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::update_channel::builders::UpdateChannelOutputBuilder::arn)
+    /// - [`channel_name`](crate::operation::update_channel::builders::UpdateChannelOutputBuilder::channel_name)
+    /// - [`channel_group_name`](crate::operation::update_channel::builders::UpdateChannelOutputBuilder::channel_group_name)
+    /// - [`created_at`](crate::operation::update_channel::builders::UpdateChannelOutputBuilder::created_at)
+    /// - [`modified_at`](crate::operation::update_channel::builders::UpdateChannelOutputBuilder::modified_at)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelOutput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building UpdateChannelOutput",
+                )
+            })?,
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building UpdateChannelOutput",
+                )
+            })?,
+            channel_group_name: self.channel_group_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_group_name",
+                    "channel_group_name was not specified but it is required when building UpdateChannelOutput",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building UpdateChannelOutput",
+                )
+            })?,
+            modified_at: self.modified_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "modified_at",
+                    "modified_at was not specified but it is required when building UpdateChannelOutput",
+                )
+            })?,
             description: self.description,
             ingest_endpoints: self.ingest_endpoints,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

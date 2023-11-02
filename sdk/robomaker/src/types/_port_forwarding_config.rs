@@ -9,8 +9,10 @@ pub struct PortForwardingConfig {
 }
 impl PortForwardingConfig {
     /// <p>The port mappings for the configuration.</p>
-    pub fn port_mappings(&self) -> ::std::option::Option<&[crate::types::PortMapping]> {
-        self.port_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_mappings.is_none()`.
+    pub fn port_mappings(&self) -> &[crate::types::PortMapping] {
+        self.port_mappings.as_deref().unwrap_or_default()
     }
 }
 impl PortForwardingConfig {

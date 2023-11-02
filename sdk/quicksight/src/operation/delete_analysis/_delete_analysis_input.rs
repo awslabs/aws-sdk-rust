@@ -48,6 +48,7 @@ pub struct DeleteAnalysisInputBuilder {
 }
 impl DeleteAnalysisInputBuilder {
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl DeleteAnalysisInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the analysis that you're deleting.</p>
+    /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self

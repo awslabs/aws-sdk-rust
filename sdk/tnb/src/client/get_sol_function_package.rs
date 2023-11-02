@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolFunctionPackage`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vnf_pkg_id(impl Into<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::vnf_pkg_id) / [`set_vnf_pkg_id(Option<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::set_vnf_pkg_id): <p>ID of the function package.</p>
+    ///   - [`vnf_pkg_id(impl Into<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::vnf_pkg_id) / [`set_vnf_pkg_id(Option<String>)`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageFluentBuilder::set_vnf_pkg_id):<br>required: **true**<br><p>ID of the function package.</p><br>
     /// - On success, responds with [`GetSolFunctionPackageOutput`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::id): <p>Function package ID.</p>
-    ///   - [`arn(Option<String>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::arn): <p>Function package ARN.</p>
-    ///   - [`onboarding_state(Option<OnboardingState>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::onboarding_state): <p>Function package onboarding state.</p>
-    ///   - [`operational_state(Option<OperationalState>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::operational_state): <p>Function package operational state.</p>
-    ///   - [`usage_state(Option<UsageState>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::usage_state): <p>Function package usage state.</p>
+    ///   - [`id(String)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::id): <p>Function package ID.</p>
+    ///   - [`arn(String)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::arn): <p>Function package ARN.</p>
+    ///   - [`onboarding_state(OnboardingState)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::onboarding_state): <p>Function package onboarding state.</p>
+    ///   - [`operational_state(OperationalState)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::operational_state): <p>Function package operational state.</p>
+    ///   - [`usage_state(UsageState)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::usage_state): <p>Function package usage state.</p>
     ///   - [`vnfd_id(Option<String>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::vnfd_id): <p>Function package descriptor ID.</p>
     ///   - [`vnf_provider(Option<String>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::vnf_provider): <p>Network function provider.</p>
     ///   - [`vnf_product_name(Option<String>)`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput::vnf_product_name): <p>Network function product name.</p>

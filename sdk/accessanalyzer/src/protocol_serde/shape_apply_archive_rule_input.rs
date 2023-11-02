@@ -3,14 +3,14 @@ pub fn ser_apply_archive_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::apply_archive_rule::ApplyArchiveRuleInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.analyzer_arn {
-        object.key("analyzerArn").string(var_1.as_str());
+    {
+        object.key("analyzerArn").string(input.analyzer_arn.as_str());
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("clientToken").string(var_2.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.rule_name {
-        object.key("ruleName").string(var_3.as_str());
+    {
+        object.key("ruleName").string(input.rule_name.as_str());
     }
     Ok(())
 }

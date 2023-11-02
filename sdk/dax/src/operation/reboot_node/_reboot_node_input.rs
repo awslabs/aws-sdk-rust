@@ -34,6 +34,7 @@ pub struct RebootNodeInputBuilder {
 }
 impl RebootNodeInputBuilder {
     /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RebootNodeInputBuilder {
         &self.cluster_name
     }
     /// <p>The system-assigned ID of the node to be rebooted.</p>
+    /// This field is required.
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
         self

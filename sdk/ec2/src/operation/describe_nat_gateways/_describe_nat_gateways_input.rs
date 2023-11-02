@@ -48,16 +48,20 @@ impl DescribeNatGatewaysInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
-    pub fn filter(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter.is_none()`.
+    pub fn filter(&self) -> &[crate::types::Filter] {
+        self.filter.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The IDs of the NAT gateways.</p>
-    pub fn nat_gateway_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.nat_gateway_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_ids.is_none()`.
+    pub fn nat_gateway_ids(&self) -> &[::std::string::String] {
+        self.nat_gateway_ids.as_deref().unwrap_or_default()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

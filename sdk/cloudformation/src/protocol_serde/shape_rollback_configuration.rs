@@ -26,6 +26,7 @@ pub fn ser_rollback_configuration(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_rollback_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::RollbackConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {

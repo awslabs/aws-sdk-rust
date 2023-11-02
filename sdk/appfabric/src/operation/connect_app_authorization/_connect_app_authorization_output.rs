@@ -34,6 +34,7 @@ pub struct ConnectAppAuthorizationOutputBuilder {
 }
 impl ConnectAppAuthorizationOutputBuilder {
     /// <p>Contains a summary of the app authorization.</p>
+    /// This field is required.
     pub fn app_authorization_summary(mut self, input: crate::types::AppAuthorizationSummary) -> Self {
         self.app_authorization_summary = ::std::option::Option::Some(input);
         self

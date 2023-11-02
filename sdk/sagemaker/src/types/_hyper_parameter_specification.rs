@@ -70,6 +70,7 @@ pub struct HyperParameterSpecificationBuilder {
 }
 impl HyperParameterSpecificationBuilder {
     /// <p>The name of this hyperparameter. The name must be unique.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +99,7 @@ impl HyperParameterSpecificationBuilder {
         &self.description
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self

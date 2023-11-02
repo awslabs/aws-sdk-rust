@@ -48,6 +48,7 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    /// This field is required.
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
         &self.instance_arn
     }
     /// <p>The ARN of the <code>PermissionSet</code>. </p>
+    /// This field is required.
     pub fn permission_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.permission_set_arn = ::std::option::Option::Some(input.into());
         self

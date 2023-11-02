@@ -15,8 +15,10 @@ impl Details {
         self.import_asset_from_signed_url_job_error_details.as_ref()
     }
     /// <p>Details about the job error.</p>
-    pub fn import_assets_from_s3_job_error_details(&self) -> ::std::option::Option<&[crate::types::AssetSourceEntry]> {
-        self.import_assets_from_s3_job_error_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_assets_from_s3_job_error_details.is_none()`.
+    pub fn import_assets_from_s3_job_error_details(&self) -> &[crate::types::AssetSourceEntry] {
+        self.import_assets_from_s3_job_error_details.as_deref().unwrap_or_default()
     }
 }
 impl Details {

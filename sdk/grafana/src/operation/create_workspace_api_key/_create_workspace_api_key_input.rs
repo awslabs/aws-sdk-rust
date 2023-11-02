@@ -4,32 +4,35 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceApiKeyInput {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>Specifies the permission level of the key.</p>
     /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
-    pub key_role: ::std::option::Option<::std::string::String>,
+    pub key_role: ::std::string::String,
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
-    pub seconds_to_live: ::std::option::Option<i32>,
+    pub seconds_to_live: i32,
     /// <p>The ID of the workspace to create an API key.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
 }
 impl CreateWorkspaceApiKeyInput {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>Specifies the permission level of the key.</p>
     /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
-    pub fn key_role(&self) -> ::std::option::Option<&str> {
-        self.key_role.as_deref()
+    pub fn key_role(&self) -> &str {
+        use std::ops::Deref;
+        self.key_role.deref()
     }
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
-    pub fn seconds_to_live(&self) -> ::std::option::Option<i32> {
+    pub fn seconds_to_live(&self) -> i32 {
         self.seconds_to_live
     }
     /// <p>The ID of the workspace to create an API key.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
 }
 impl CreateWorkspaceApiKeyInput {
@@ -50,6 +53,7 @@ pub struct CreateWorkspaceApiKeyInputBuilder {
 }
 impl CreateWorkspaceApiKeyInputBuilder {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +69,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
     }
     /// <p>Specifies the permission level of the key.</p>
     /// <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
+    /// This field is required.
     pub fn key_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_role = ::std::option::Option::Some(input.into());
         self
@@ -81,6 +86,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
         &self.key_role
     }
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
+    /// This field is required.
     pub fn seconds_to_live(mut self, input: i32) -> Self {
         self.seconds_to_live = ::std::option::Option::Some(input);
         self
@@ -95,6 +101,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
         &self.seconds_to_live
     }
     /// <p>The ID of the workspace to create an API key.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -109,15 +116,40 @@ impl CreateWorkspaceApiKeyInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder::key_name)
+    /// - [`key_role`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder::key_role)
+    /// - [`seconds_to_live`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder::seconds_to_live)
+    /// - [`workspace_id`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput {
-            key_name: self.key_name,
-            key_role: self.key_role,
-            seconds_to_live: self.seconds_to_live,
-            workspace_id: self.workspace_id,
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building CreateWorkspaceApiKeyInput",
+                )
+            })?,
+            key_role: self.key_role.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_role",
+                    "key_role was not specified but it is required when building CreateWorkspaceApiKeyInput",
+                )
+            })?,
+            seconds_to_live: self.seconds_to_live.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "seconds_to_live",
+                    "seconds_to_live was not specified but it is required when building CreateWorkspaceApiKeyInput",
+                )
+            })?,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building CreateWorkspaceApiKeyInput",
+                )
+            })?,
         })
     }
 }

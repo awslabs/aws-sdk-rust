@@ -12,8 +12,10 @@ pub struct ListTaskExecutionsOutput {
 }
 impl ListTaskExecutionsOutput {
     /// <p>A list of executed tasks.</p>
-    pub fn task_executions(&self) -> ::std::option::Option<&[crate::types::TaskExecutionListEntry]> {
-        self.task_executions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_executions.is_none()`.
+    pub fn task_executions(&self) -> &[crate::types::TaskExecutionListEntry] {
+        self.task_executions.as_deref().unwrap_or_default()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

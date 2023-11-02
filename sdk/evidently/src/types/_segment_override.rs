@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentOverride {
     /// <p>The ARN of the segment to use.</p>
-    pub segment: ::std::option::Option<::std::string::String>,
+    pub segment: ::std::string::String,
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
-    pub evaluation_order: ::std::option::Option<i64>,
+    pub evaluation_order: i64,
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub weights: ::std::collections::HashMap<::std::string::String, i64>,
 }
 impl SegmentOverride {
     /// <p>The ARN of the segment to use.</p>
-    pub fn segment(&self) -> ::std::option::Option<&str> {
-        self.segment.as_deref()
+    pub fn segment(&self) -> &str {
+        use std::ops::Deref;
+        self.segment.deref()
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
-    pub fn evaluation_order(&self) -> ::std::option::Option<i64> {
+    pub fn evaluation_order(&self) -> i64 {
         self.evaluation_order
     }
     /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
-    pub fn weights(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
-        self.weights.as_ref()
+    pub fn weights(&self) -> &::std::collections::HashMap<::std::string::String, i64> {
+        &self.weights
     }
 }
 impl SegmentOverride {
@@ -42,6 +43,7 @@ pub struct SegmentOverrideBuilder {
 }
 impl SegmentOverrideBuilder {
     /// <p>The ARN of the segment to use.</p>
+    /// This field is required.
     pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl SegmentOverrideBuilder {
         &self.segment
     }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+    /// This field is required.
     pub fn evaluation_order(mut self, input: i64) -> Self {
         self.evaluation_order = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl SegmentOverrideBuilder {
         &self.weights
     }
     /// Consumes the builder and constructs a [`SegmentOverride`](crate::types::SegmentOverride).
-    pub fn build(self) -> crate::types::SegmentOverride {
-        crate::types::SegmentOverride {
-            segment: self.segment,
-            evaluation_order: self.evaluation_order,
-            weights: self.weights,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`segment`](crate::types::builders::SegmentOverrideBuilder::segment)
+    /// - [`evaluation_order`](crate::types::builders::SegmentOverrideBuilder::evaluation_order)
+    /// - [`weights`](crate::types::builders::SegmentOverrideBuilder::weights)
+    pub fn build(self) -> ::std::result::Result<crate::types::SegmentOverride, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SegmentOverride {
+            segment: self.segment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "segment",
+                    "segment was not specified but it is required when building SegmentOverride",
+                )
+            })?,
+            evaluation_order: self.evaluation_order.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "evaluation_order",
+                    "evaluation_order was not specified but it is required when building SegmentOverride",
+                )
+            })?,
+            weights: self.weights.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "weights",
+                    "weights was not specified but it is required when building SegmentOverride",
+                )
+            })?,
+        })
     }
 }

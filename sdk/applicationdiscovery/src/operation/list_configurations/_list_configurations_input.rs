@@ -24,8 +24,10 @@ impl ListConfigurationsInput {
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -36,8 +38,10 @@ impl ListConfigurationsInput {
         self.next_token.as_deref()
     }
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&[crate::types::OrderByElement]> {
-        self.order_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.order_by.is_none()`.
+    pub fn order_by(&self) -> &[crate::types::OrderByElement] {
+        self.order_by.as_deref().unwrap_or_default()
     }
 }
 impl ListConfigurationsInput {
@@ -59,6 +63,7 @@ pub struct ListConfigurationsInputBuilder {
 }
 impl ListConfigurationsInputBuilder {
     /// <p>A valid configuration identified by Application Discovery Service. </p>
+    /// This field is required.
     pub fn configuration_type(mut self, input: crate::types::ConfigurationItemType) -> Self {
         self.configuration_type = ::std::option::Option::Some(input);
         self

@@ -10,8 +10,10 @@ pub struct BatchGetPreparedStatementInput {
 }
 impl BatchGetPreparedStatementInput {
     /// <p>A list of prepared statement names to return.</p>
-    pub fn prepared_statement_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.prepared_statement_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prepared_statement_names.is_none()`.
+    pub fn prepared_statement_names(&self) -> &[::std::string::String] {
+        self.prepared_statement_names.as_deref().unwrap_or_default()
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
     pub fn work_group(&self) -> ::std::option::Option<&str> {
@@ -54,6 +56,7 @@ impl BatchGetPreparedStatementInputBuilder {
         &self.prepared_statement_names
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
+    /// This field is required.
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
         self

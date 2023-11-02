@@ -62,6 +62,7 @@ pub struct CreateListingChangeSetInputBuilder {
 }
 impl CreateListingChangeSetInputBuilder {
     /// <p></p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl CreateListingChangeSetInputBuilder {
         &self.domain_identifier
     }
     /// <p></p>
+    /// This field is required.
     pub fn entity_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_identifier = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl CreateListingChangeSetInputBuilder {
         &self.entity_identifier
     }
     /// <p></p>
+    /// This field is required.
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.entity_type = ::std::option::Option::Some(input);
         self
@@ -118,6 +121,7 @@ impl CreateListingChangeSetInputBuilder {
         &self.entity_revision
     }
     /// <p></p>
+    /// This field is required.
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self

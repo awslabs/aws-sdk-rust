@@ -42,6 +42,7 @@ pub struct GetDomainStatisticsReportInputBuilder {
 }
 impl GetDomainStatisticsReportInputBuilder {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl GetDomainStatisticsReportInputBuilder {
         &self.domain
     }
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
+    /// This field is required.
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl GetDomainStatisticsReportInputBuilder {
         &self.start_date
     }
     /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
+    /// This field is required.
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
         self

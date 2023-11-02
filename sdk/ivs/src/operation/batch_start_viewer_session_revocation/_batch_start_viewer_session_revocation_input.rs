@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStartViewerSessionRevocationInput {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub viewer_sessions: ::std::option::Option<::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>>,
+    pub viewer_sessions: ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
 }
 impl BatchStartViewerSessionRevocationInput {
     /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
-    pub fn viewer_sessions(&self) -> ::std::option::Option<&[crate::types::BatchStartViewerSessionRevocationViewerSession]> {
-        self.viewer_sessions.as_deref()
+    pub fn viewer_sessions(&self) -> &[crate::types::BatchStartViewerSessionRevocationViewerSession] {
+        use std::ops::Deref;
+        self.viewer_sessions.deref()
     }
 }
 impl BatchStartViewerSessionRevocationInput {
@@ -50,6 +51,8 @@ impl BatchStartViewerSessionRevocationInputBuilder {
         &self.viewer_sessions
     }
     /// Consumes the builder and constructs a [`BatchStartViewerSessionRevocationInput`](crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`viewer_sessions`](crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder::viewer_sessions)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -58,7 +61,12 @@ impl BatchStartViewerSessionRevocationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput {
-                viewer_sessions: self.viewer_sessions,
+                viewer_sessions: self.viewer_sessions.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "viewer_sessions",
+                        "viewer_sessions was not specified but it is required when building BatchStartViewerSessionRevocationInput",
+                    )
+                })?,
             },
         )
     }

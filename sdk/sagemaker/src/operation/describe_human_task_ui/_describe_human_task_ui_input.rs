@@ -27,6 +27,7 @@ pub struct DescribeHumanTaskUiInputBuilder {
 }
 impl DescribeHumanTaskUiInputBuilder {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
+    /// This field is required.
     pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self

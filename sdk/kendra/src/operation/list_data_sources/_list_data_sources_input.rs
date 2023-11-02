@@ -41,6 +41,7 @@ pub struct ListDataSourcesInputBuilder {
 }
 impl ListDataSourcesInputBuilder {
     /// <p>The identifier of the index used with one or more data source connectors.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

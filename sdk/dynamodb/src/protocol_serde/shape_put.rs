@@ -3,50 +3,50 @@ pub fn ser_put(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Put,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.item {
+    {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Item").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_1 = object.key("Item").start_object();
+        for (key_2, value_3) in &input.item {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = object_2.key(key_3.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_5, value_4)?;
-                object_5.finish();
+                let mut object_4 = object_1.key(key_2.as_str()).start_object();
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_4, value_3)?;
+                object_4.finish();
             }
         }
-        object_2.finish();
+        object_1.finish();
     }
-    if let Some(var_6) = &input.table_name {
-        object.key("TableName").string(var_6.as_str());
+    {
+        object.key("TableName").string(input.table_name.as_str());
     }
-    if let Some(var_7) = &input.condition_expression {
-        object.key("ConditionExpression").string(var_7.as_str());
+    if let Some(var_5) = &input.condition_expression {
+        object.key("ConditionExpression").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.expression_attribute_names {
+    if let Some(var_6) = &input.expression_attribute_names {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("ExpressionAttributeNames").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_7 = object.key("ExpressionAttributeNames").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_9.finish();
+        object_7.finish();
     }
-    if let Some(var_12) = &input.expression_attribute_values {
+    if let Some(var_10) = &input.expression_attribute_values {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("ExpressionAttributeValues").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_11 = object.key("ExpressionAttributeValues").start_object();
+        for (key_12, value_13) in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_16, value_15)?;
-                object_16.finish();
+                let mut object_14 = object_11.key(key_12.as_str()).start_object();
+                crate::protocol_serde::shape_attribute_value::ser_attribute_value(&mut object_14, value_13)?;
+                object_14.finish();
             }
         }
-        object_13.finish();
+        object_11.finish();
     }
-    if let Some(var_17) = &input.return_values_on_condition_check_failure {
-        object.key("ReturnValuesOnConditionCheckFailure").string(var_17.as_str());
+    if let Some(var_15) = &input.return_values_on_condition_check_failure {
+        object.key("ReturnValuesOnConditionCheckFailure").string(var_15.as_str());
     }
     Ok(())
 }

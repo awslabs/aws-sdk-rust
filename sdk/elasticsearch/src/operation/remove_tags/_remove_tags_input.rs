@@ -15,8 +15,10 @@ impl RemoveTagsInput {
         self.arn.as_deref()
     }
     /// <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl RemoveTagsInput {
@@ -35,6 +37,7 @@ pub struct RemoveTagsInputBuilder {
 }
 impl RemoveTagsInputBuilder {
     /// <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self

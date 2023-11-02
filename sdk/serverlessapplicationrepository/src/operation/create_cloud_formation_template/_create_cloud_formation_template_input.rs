@@ -36,6 +36,7 @@ pub struct CreateCloudFormationTemplateInputBuilder {
 }
 impl CreateCloudFormationTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self

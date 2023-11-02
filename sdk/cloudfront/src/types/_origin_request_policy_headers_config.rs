@@ -12,7 +12,7 @@ pub struct OriginRequestPolicyHeadersConfig {
     /// <li> <p> <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p> </li>
     /// <li> <p> <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p> </li>
     /// </ul>
-    pub header_behavior: ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
+    pub header_behavior: crate::types::OriginRequestPolicyHeaderBehavior,
     /// <p>Contains a list of HTTP header names.</p>
     pub headers: ::std::option::Option<crate::types::Headers>,
 }
@@ -25,8 +25,8 @@ impl OriginRequestPolicyHeadersConfig {
     /// <li> <p> <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p> </li>
     /// <li> <p> <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p> </li>
     /// </ul>
-    pub fn header_behavior(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyHeaderBehavior> {
-        self.header_behavior.as_ref()
+    pub fn header_behavior(&self) -> &crate::types::OriginRequestPolicyHeaderBehavior {
+        &self.header_behavior
     }
     /// <p>Contains a list of HTTP header names.</p>
     pub fn headers(&self) -> ::std::option::Option<&crate::types::Headers> {
@@ -56,6 +56,7 @@ impl OriginRequestPolicyHeadersConfigBuilder {
     /// <li> <p> <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the origin. The additional headers are added by CloudFront.</p> </li>
     /// <li> <p> <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn header_behavior(mut self, input: crate::types::OriginRequestPolicyHeaderBehavior) -> Self {
         self.header_behavior = ::std::option::Option::Some(input);
         self
@@ -98,10 +99,17 @@ impl OriginRequestPolicyHeadersConfigBuilder {
         &self.headers
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicyHeadersConfig`](crate::types::OriginRequestPolicyHeadersConfig).
-    pub fn build(self) -> crate::types::OriginRequestPolicyHeadersConfig {
-        crate::types::OriginRequestPolicyHeadersConfig {
-            header_behavior: self.header_behavior,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`header_behavior`](crate::types::builders::OriginRequestPolicyHeadersConfigBuilder::header_behavior)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicyHeadersConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginRequestPolicyHeadersConfig {
+            header_behavior: self.header_behavior.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "header_behavior",
+                    "header_behavior was not specified but it is required when building OriginRequestPolicyHeadersConfig",
+                )
+            })?,
             headers: self.headers,
-        }
+        })
     }
 }

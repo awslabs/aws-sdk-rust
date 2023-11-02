@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminGetDevice`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_key(impl Into<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::set_device_key): <p>The device key.</p>
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
-    ///   - [`username(impl Into<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::set_username): <p>The user name.</p>
+    ///   - [`device_key(impl Into<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::set_device_key):<br>required: **true**<br><p>The device key.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID.</p><br>
+    ///   - [`username(impl Into<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_get_device::builders::AdminGetDeviceFluentBuilder::set_username):<br>required: **true**<br><p>The user name.</p><br>
     /// - On success, responds with [`AdminGetDeviceOutput`](crate::operation::admin_get_device::AdminGetDeviceOutput) with field(s):
     ///   - [`device(Option<DeviceType>)`](crate::operation::admin_get_device::AdminGetDeviceOutput::device): <p>The device.</p>
     /// - On failure, responds with [`SdkError<AdminGetDeviceError>`](crate::operation::admin_get_device::AdminGetDeviceError)

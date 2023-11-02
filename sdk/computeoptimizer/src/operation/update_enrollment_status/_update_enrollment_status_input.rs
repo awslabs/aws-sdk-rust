@@ -55,6 +55,7 @@ impl UpdateEnrollmentStatusInputBuilder {
     /// </ul> <note>
     /// <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>
     /// </note>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

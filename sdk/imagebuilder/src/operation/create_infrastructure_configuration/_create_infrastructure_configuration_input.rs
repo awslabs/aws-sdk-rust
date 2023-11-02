@@ -44,16 +44,20 @@ impl CreateInfrastructureConfigurationInput {
         self.description.as_deref()
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[::std::string::String] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -122,6 +126,7 @@ pub struct CreateInfrastructureConfigurationInputBuilder {
 }
 impl CreateInfrastructureConfigurationInputBuilder {
     /// <p>The name of the infrastructure configuration.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -170,6 +175,7 @@ impl CreateInfrastructureConfigurationInputBuilder {
         &self.instance_types
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    /// This field is required.
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -337,6 +343,7 @@ impl CreateInfrastructureConfigurationInputBuilder {
         &self.tags
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

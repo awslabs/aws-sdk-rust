@@ -34,6 +34,7 @@ pub struct DescribeProtectionGroupOutputBuilder {
 }
 impl DescribeProtectionGroupOutputBuilder {
     /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// This field is required.
     pub fn protection_group(mut self, input: crate::types::ProtectionGroup) -> Self {
         self.protection_group = ::std::option::Option::Some(input);
         self

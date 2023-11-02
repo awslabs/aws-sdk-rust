@@ -24,20 +24,20 @@ pub fn ser_batch_execute_statement_input(
         }
         array_3.finish();
     }
-    if let Some(var_8) = &input.resource_arn {
-        object.key("resourceArn").string(var_8.as_str());
+    {
+        object.key("resourceArn").string(input.resource_arn.as_str());
     }
-    if let Some(var_9) = &input.schema {
-        object.key("schema").string(var_9.as_str());
+    if let Some(var_8) = &input.schema {
+        object.key("schema").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.secret_arn {
-        object.key("secretArn").string(var_10.as_str());
+    {
+        object.key("secretArn").string(input.secret_arn.as_str());
     }
-    if let Some(var_11) = &input.sql {
-        object.key("sql").string(var_11.as_str());
+    {
+        object.key("sql").string(input.sql.as_str());
     }
-    if let Some(var_12) = &input.transaction_id {
-        object.key("transactionId").string(var_12.as_str());
+    if let Some(var_9) = &input.transaction_id {
+        object.key("transactionId").string(var_9.as_str());
     }
     Ok(())
 }

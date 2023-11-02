@@ -41,6 +41,7 @@ pub struct DescribeEdgeDeploymentPlanInputBuilder {
 }
 impl DescribeEdgeDeploymentPlanInputBuilder {
     /// <p>The name of the deployment plan to describe.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self

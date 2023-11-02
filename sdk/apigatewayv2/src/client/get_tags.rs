@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTags`](crate::operation::get_tags::builders::GetTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_resource_arn): <p>The resource ARN for the tag.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_tags::builders::GetTagsFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The resource ARN for the tag.</p><br>
     /// - On success, responds with [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_tags::GetTagsOutput::tags): <p>Represents a collection of tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<GetTagsError>`](crate::operation::get_tags::GetTagsError)

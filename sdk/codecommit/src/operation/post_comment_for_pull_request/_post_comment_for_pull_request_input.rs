@@ -69,6 +69,7 @@ pub struct PostCommentForPullRequestInputBuilder {
 }
 impl PostCommentForPullRequestInputBuilder {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl PostCommentForPullRequestInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name of the repository where you want to post a comment on a pull request.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +99,7 @@ impl PostCommentForPullRequestInputBuilder {
         &self.repository_name
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    /// This field is required.
     pub fn before_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +114,7 @@ impl PostCommentForPullRequestInputBuilder {
         &self.before_commit_id
     }
     /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
+    /// This field is required.
     pub fn after_commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_commit_id = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +143,7 @@ impl PostCommentForPullRequestInputBuilder {
         &self.location
     }
     /// <p>The content of your comment on the change.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoSpatialColumnGroup {
     /// <p>A display name for the hierarchy.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Country code.</p>
     pub country_code: ::std::option::Option<crate::types::GeoSpatialCountryCode>,
     /// <p>Columns in this hierarchy.</p>
-    pub columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub columns: ::std::vec::Vec<::std::string::String>,
 }
 impl GeoSpatialColumnGroup {
     /// <p>A display name for the hierarchy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Country code.</p>
     pub fn country_code(&self) -> ::std::option::Option<&crate::types::GeoSpatialCountryCode> {
         self.country_code.as_ref()
     }
     /// <p>Columns in this hierarchy.</p>
-    pub fn columns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.columns.as_deref()
+    pub fn columns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.columns.deref()
     }
 }
 impl GeoSpatialColumnGroup {
@@ -42,6 +44,7 @@ pub struct GeoSpatialColumnGroupBuilder {
 }
 impl GeoSpatialColumnGroupBuilder {
     /// <p>A display name for the hierarchy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +93,24 @@ impl GeoSpatialColumnGroupBuilder {
         &self.columns
     }
     /// Consumes the builder and constructs a [`GeoSpatialColumnGroup`](crate::types::GeoSpatialColumnGroup).
-    pub fn build(self) -> crate::types::GeoSpatialColumnGroup {
-        crate::types::GeoSpatialColumnGroup {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::GeoSpatialColumnGroupBuilder::name)
+    /// - [`columns`](crate::types::builders::GeoSpatialColumnGroupBuilder::columns)
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoSpatialColumnGroup, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GeoSpatialColumnGroup {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building GeoSpatialColumnGroup",
+                )
+            })?,
             country_code: self.country_code,
-            columns: self.columns,
-        }
+            columns: self.columns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "columns",
+                    "columns was not specified but it is required when building GeoSpatialColumnGroup",
+                )
+            })?,
+        })
     }
 }

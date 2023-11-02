@@ -45,8 +45,10 @@ impl DomainMembership {
         self.auth_secret_arn.as_deref()
     }
     /// <p>The IPv4 DNS IP addresses of the primary and secondary Active Directory domain controllers.</p>
-    pub fn dns_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
+    pub fn dns_ips(&self) -> &[::std::string::String] {
+        self.dns_ips.as_deref().unwrap_or_default()
     }
 }
 impl DomainMembership {

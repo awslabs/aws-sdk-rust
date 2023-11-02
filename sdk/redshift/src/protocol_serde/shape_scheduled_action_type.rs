@@ -22,6 +22,7 @@ pub fn ser_scheduled_action_type(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_scheduled_action_type(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ScheduledActionType, ::aws_smithy_xml::decode::XmlDecodeError> {

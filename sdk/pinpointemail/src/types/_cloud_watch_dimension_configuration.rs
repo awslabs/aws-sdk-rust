@@ -9,15 +9,15 @@ pub struct CloudWatchDimensionConfiguration {
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    pub dimension_name: ::std::option::Option<::std::string::String>,
+    pub dimension_name: ::std::string::String,
     /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
-    pub dimension_value_source: ::std::option::Option<crate::types::DimensionValueSource>,
+    pub dimension_value_source: crate::types::DimensionValueSource,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    pub default_dimension_value: ::std::option::Option<::std::string::String>,
+    pub default_dimension_value: ::std::string::String,
 }
 impl CloudWatchDimensionConfiguration {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p>
@@ -25,20 +25,22 @@ impl CloudWatchDimensionConfiguration {
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    pub fn dimension_name(&self) -> ::std::option::Option<&str> {
-        self.dimension_name.as_deref()
+    pub fn dimension_name(&self) -> &str {
+        use std::ops::Deref;
+        self.dimension_name.deref()
     }
     /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
-    pub fn dimension_value_source(&self) -> ::std::option::Option<&crate::types::DimensionValueSource> {
-        self.dimension_value_source.as_ref()
+    pub fn dimension_value_source(&self) -> &crate::types::DimensionValueSource {
+        &self.dimension_value_source
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
-    pub fn default_dimension_value(&self) -> ::std::option::Option<&str> {
-        self.default_dimension_value.as_deref()
+    pub fn default_dimension_value(&self) -> &str {
+        use std::ops::Deref;
+        self.default_dimension_value.deref()
     }
 }
 impl CloudWatchDimensionConfiguration {
@@ -62,6 +64,7 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +87,7 @@ impl CloudWatchDimensionConfigurationBuilder {
         &self.dimension_name
     }
     /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
+    /// This field is required.
     pub fn dimension_value_source(mut self, input: crate::types::DimensionValueSource) -> Self {
         self.dimension_value_source = ::std::option::Option::Some(input);
         self
@@ -102,6 +106,7 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>It can contain no more than 256 characters.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn default_dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_dimension_value = ::std::option::Option::Some(input.into());
         self
@@ -124,11 +129,30 @@ impl CloudWatchDimensionConfigurationBuilder {
         &self.default_dimension_value
     }
     /// Consumes the builder and constructs a [`CloudWatchDimensionConfiguration`](crate::types::CloudWatchDimensionConfiguration).
-    pub fn build(self) -> crate::types::CloudWatchDimensionConfiguration {
-        crate::types::CloudWatchDimensionConfiguration {
-            dimension_name: self.dimension_name,
-            dimension_value_source: self.dimension_value_source,
-            default_dimension_value: self.default_dimension_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dimension_name`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::dimension_name)
+    /// - [`dimension_value_source`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::dimension_value_source)
+    /// - [`default_dimension_value`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::default_dimension_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDimensionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CloudWatchDimensionConfiguration {
+            dimension_name: self.dimension_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_name",
+                    "dimension_name was not specified but it is required when building CloudWatchDimensionConfiguration",
+                )
+            })?,
+            dimension_value_source: self.dimension_value_source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_value_source",
+                    "dimension_value_source was not specified but it is required when building CloudWatchDimensionConfiguration",
+                )
+            })?,
+            default_dimension_value: self.default_dimension_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "default_dimension_value",
+                    "default_dimension_value was not specified but it is required when building CloudWatchDimensionConfiguration",
+                )
+            })?,
+        })
     }
 }

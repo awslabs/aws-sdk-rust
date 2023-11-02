@@ -11,8 +11,10 @@ pub struct DescribeEventAggregatesOutput {
 }
 impl DescribeEventAggregatesOutput {
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
-    pub fn event_aggregates(&self) -> ::std::option::Option<&[crate::types::EventAggregate]> {
-        self.event_aggregates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_aggregates.is_none()`.
+    pub fn event_aggregates(&self) -> &[crate::types::EventAggregate] {
+        self.event_aggregates.as_deref().unwrap_or_default()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

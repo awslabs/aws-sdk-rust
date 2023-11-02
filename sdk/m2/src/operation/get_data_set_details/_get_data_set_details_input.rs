@@ -34,6 +34,7 @@ pub struct GetDataSetDetailsInputBuilder {
 }
 impl GetDataSetDetailsInputBuilder {
     /// <p>The unique identifier of the application that this data set is associated with.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDataSetDetailsInputBuilder {
         &self.application_id
     }
     /// <p>The name of the data set.</p>
+    /// This field is required.
     pub fn data_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_name = ::std::option::Option::Some(input.into());
         self

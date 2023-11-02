@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataSpec {
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
-    pub data_location_s3: ::std::option::Option<::std::string::String>,
+    pub data_location_s3: ::std::string::String,
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
     /// <ul>
@@ -33,8 +33,9 @@ pub struct S3DataSpec {
 }
 impl S3DataSpec {
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
-    pub fn data_location_s3(&self) -> ::std::option::Option<&str> {
-        self.data_location_s3.as_deref()
+    pub fn data_location_s3(&self) -> &str {
+        use std::ops::Deref;
+        self.data_location_s3.deref()
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
@@ -85,6 +86,7 @@ pub struct S3DataSpecBuilder {
 }
 impl S3DataSpecBuilder {
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
+    /// This field is required.
     pub fn data_location_s3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_location_s3 = ::std::option::Option::Some(input.into());
         self
@@ -195,12 +197,19 @@ impl S3DataSpecBuilder {
         &self.data_schema_location_s3
     }
     /// Consumes the builder and constructs a [`S3DataSpec`](crate::types::S3DataSpec).
-    pub fn build(self) -> crate::types::S3DataSpec {
-        crate::types::S3DataSpec {
-            data_location_s3: self.data_location_s3,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_location_s3`](crate::types::builders::S3DataSpecBuilder::data_location_s3)
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DataSpec, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::S3DataSpec {
+            data_location_s3: self.data_location_s3.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_location_s3",
+                    "data_location_s3 was not specified but it is required when building S3DataSpec",
+                )
+            })?,
             data_rearrangement: self.data_rearrangement,
             data_schema: self.data_schema,
             data_schema_location_s3: self.data_schema_location_s3,
-        }
+        })
     }
 }

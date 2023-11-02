@@ -12,7 +12,7 @@ pub struct UpdateFilterInput {
     /// <p>The name of the filter.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
-    pub filter_arn: ::std::option::Option<::std::string::String>,
+    pub filter_arn: ::std::string::String,
     /// <p>The reason the filter was updated.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
@@ -34,8 +34,9 @@ impl UpdateFilterInput {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
-    pub fn filter_arn(&self) -> ::std::option::Option<&str> {
-        self.filter_arn.as_deref()
+    pub fn filter_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.filter_arn.deref()
     }
     /// <p>The reason the filter was updated.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
@@ -118,6 +119,7 @@ impl UpdateFilterInputBuilder {
         &self.name
     }
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
+    /// This field is required.
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_arn = ::std::option::Option::Some(input.into());
         self
@@ -146,13 +148,20 @@ impl UpdateFilterInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`filter_arn`](crate::operation::update_filter::builders::UpdateFilterInputBuilder::filter_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_filter::UpdateFilterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_filter::UpdateFilterInput {
             action: self.action,
             description: self.description,
             filter_criteria: self.filter_criteria,
             name: self.name,
-            filter_arn: self.filter_arn,
+            filter_arn: self.filter_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "filter_arn",
+                    "filter_arn was not specified but it is required when building UpdateFilterInput",
+                )
+            })?,
             reason: self.reason,
         })
     }

@@ -11,8 +11,10 @@ pub struct CreateBackendAuthPasswordPolicyConfig {
 }
 impl CreateBackendAuthPasswordPolicyConfig {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-    pub fn additional_constraints(&self) -> ::std::option::Option<&[crate::types::AdditionalConstraintsElement]> {
-        self.additional_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_constraints.is_none()`.
+    pub fn additional_constraints(&self) -> &[crate::types::AdditionalConstraintsElement] {
+        self.additional_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
     pub fn minimum_length(&self) -> ::std::option::Option<f64> {
@@ -55,6 +57,7 @@ impl CreateBackendAuthPasswordPolicyConfigBuilder {
         &self.additional_constraints
     }
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
+    /// This field is required.
     pub fn minimum_length(mut self, input: f64) -> Self {
         self.minimum_length = ::std::option::Option::Some(input);
         self

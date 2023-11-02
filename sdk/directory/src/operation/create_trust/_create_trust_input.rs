@@ -42,8 +42,10 @@ impl CreateTrustInput {
         self.trust_type.as_ref()
     }
     /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
-    pub fn conditional_forwarder_ip_addrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.conditional_forwarder_ip_addrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditional_forwarder_ip_addrs.is_none()`.
+    pub fn conditional_forwarder_ip_addrs(&self) -> &[::std::string::String] {
+        self.conditional_forwarder_ip_addrs.as_deref().unwrap_or_default()
     }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub fn selective_auth(&self) -> ::std::option::Option<&crate::types::SelectiveAuth> {
@@ -84,6 +86,7 @@ pub struct CreateTrustInputBuilder {
 }
 impl CreateTrustInputBuilder {
     /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl CreateTrustInputBuilder {
         &self.directory_id
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
+    /// This field is required.
     pub fn remote_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl CreateTrustInputBuilder {
         &self.remote_domain_name
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    /// This field is required.
     pub fn trust_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_password = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +131,7 @@ impl CreateTrustInputBuilder {
         &self.trust_password
     }
     /// <p>The direction of the trust relationship.</p>
+    /// This field is required.
     pub fn trust_direction(mut self, input: crate::types::TrustDirection) -> Self {
         self.trust_direction = ::std::option::Option::Some(input);
         self

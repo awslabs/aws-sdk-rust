@@ -14,8 +14,10 @@ impl BatchCreateAttendeeInput {
         self.meeting_id.as_deref()
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn attendees(&self) -> ::std::option::Option<&[crate::types::CreateAttendeeRequestItem]> {
-        self.attendees.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendees.is_none()`.
+    pub fn attendees(&self) -> &[crate::types::CreateAttendeeRequestItem] {
+        self.attendees.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateAttendeeInput {
@@ -34,6 +36,7 @@ pub struct BatchCreateAttendeeInputBuilder {
 }
 impl BatchCreateAttendeeInputBuilder {
     /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self

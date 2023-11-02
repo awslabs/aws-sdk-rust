@@ -27,6 +27,7 @@ pub struct GetDataQualityResultInputBuilder {
 }
 impl GetDataQualityResultInputBuilder {
     /// <p>A unique result ID for the data quality result.</p>
+    /// This field is required.
     pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_id = ::std::option::Option::Some(input.into());
         self

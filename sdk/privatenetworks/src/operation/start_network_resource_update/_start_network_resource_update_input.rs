@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNetworkResourceUpdateInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub network_resource_arn: ::std::option::Option<::std::string::String>,
+    pub network_resource_arn: ::std::string::String,
     /// <p>The update type.</p>
     /// <ul>
     /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
     /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
-    pub update_type: ::std::option::Option<crate::types::UpdateType>,
+    pub update_type: crate::types::UpdateType,
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
     pub shipping_address: ::std::option::Option<crate::types::Address>,
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
@@ -29,8 +29,9 @@ pub struct StartNetworkResourceUpdateInput {
 }
 impl StartNetworkResourceUpdateInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(&self) -> ::std::option::Option<&str> {
-        self.network_resource_arn.as_deref()
+    pub fn network_resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_resource_arn.deref()
     }
     /// <p>The update type.</p>
     /// <ul>
@@ -38,8 +39,8 @@ impl StartNetworkResourceUpdateInput {
     /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
-    pub fn update_type(&self) -> ::std::option::Option<&crate::types::UpdateType> {
-        self.update_type.as_ref()
+    pub fn update_type(&self) -> &crate::types::UpdateType {
+        &self.update_type
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
     pub fn shipping_address(&self) -> ::std::option::Option<&crate::types::Address> {
@@ -81,6 +82,7 @@ pub struct StartNetworkResourceUpdateInputBuilder {
 }
 impl StartNetworkResourceUpdateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
+    /// This field is required.
     pub fn network_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +102,7 @@ impl StartNetworkResourceUpdateInputBuilder {
     /// <li> <p> <code>RETURN</code> - Submits a request to return a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// <li> <p> <code>COMMITMENT</code> - Submits a request to change or renew the commitment period. If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration"> <code>commitmentConfiguration</code> </a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = ::std::option::Option::Some(input);
         self
@@ -190,6 +193,9 @@ impl StartNetworkResourceUpdateInputBuilder {
         &self.commitment_configuration
     }
     /// Consumes the builder and constructs a [`StartNetworkResourceUpdateInput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_resource_arn`](crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder::network_resource_arn)
+    /// - [`update_type`](crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder::update_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -197,8 +203,18 @@ impl StartNetworkResourceUpdateInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput {
-            network_resource_arn: self.network_resource_arn,
-            update_type: self.update_type,
+            network_resource_arn: self.network_resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_resource_arn",
+                    "network_resource_arn was not specified but it is required when building StartNetworkResourceUpdateInput",
+                )
+            })?,
+            update_type: self.update_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_type",
+                    "update_type was not specified but it is required when building StartNetworkResourceUpdateInput",
+                )
+            })?,
             shipping_address: self.shipping_address,
             return_reason: self.return_reason,
             commitment_configuration: self.commitment_configuration,

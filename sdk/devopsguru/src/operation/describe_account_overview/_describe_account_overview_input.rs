@@ -34,6 +34,7 @@ pub struct DescribeAccountOverviewInputBuilder {
 }
 impl DescribeAccountOverviewInputBuilder {
     /// <p> The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day. </p>
+    /// This field is required.
     pub fn from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_time = ::std::option::Option::Some(input);
         self

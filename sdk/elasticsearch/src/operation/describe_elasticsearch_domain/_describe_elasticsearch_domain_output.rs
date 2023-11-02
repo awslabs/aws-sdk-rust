@@ -35,6 +35,7 @@ pub struct DescribeElasticsearchDomainOutputBuilder {
 }
 impl DescribeElasticsearchDomainOutputBuilder {
     /// <p>The current status of the Elasticsearch domain.</p>
+    /// This field is required.
     pub fn domain_status(mut self, input: crate::types::ElasticsearchDomainStatus) -> Self {
         self.domain_status = ::std::option::Option::Some(input);
         self

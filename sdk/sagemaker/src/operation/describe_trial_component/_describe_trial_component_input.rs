@@ -27,6 +27,7 @@ pub struct DescribeTrialComponentInputBuilder {
 }
 impl DescribeTrialComponentInputBuilder {
     /// <p>The name of the trial component to describe.</p>
+    /// This field is required.
     pub fn trial_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_component_name = ::std::option::Option::Some(input.into());
         self

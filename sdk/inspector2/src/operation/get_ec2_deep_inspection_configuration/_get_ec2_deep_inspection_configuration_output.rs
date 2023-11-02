@@ -15,12 +15,16 @@ pub struct GetEc2DeepInspectionConfigurationOutput {
 }
 impl GetEc2DeepInspectionConfigurationOutput {
     /// <p>The Amazon Inspector deep inspection custom paths for your account.</p>
-    pub fn package_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.package_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_paths.is_none()`.
+    pub fn package_paths(&self) -> &[::std::string::String] {
+        self.package_paths.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Inspector deep inspection custom paths for your organization.</p>
-    pub fn org_package_paths(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.org_package_paths.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.org_package_paths.is_none()`.
+    pub fn org_package_paths(&self) -> &[::std::string::String] {
+        self.org_package_paths.as_deref().unwrap_or_default()
     }
     /// <p>The activation status of Amazon Inspector deep inspection in your account.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Ec2DeepInspectionStatus> {

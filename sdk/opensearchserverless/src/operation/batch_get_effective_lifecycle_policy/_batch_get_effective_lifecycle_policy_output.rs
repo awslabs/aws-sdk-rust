@@ -11,12 +11,16 @@ pub struct BatchGetEffectiveLifecyclePolicyOutput {
 }
 impl BatchGetEffectiveLifecyclePolicyOutput {
     /// <p>A list of lifecycle policies applied to the OpenSearch Serverless indexes.</p>
-    pub fn effective_lifecycle_policy_details(&self) -> ::std::option::Option<&[crate::types::EffectiveLifecyclePolicyDetail]> {
-        self.effective_lifecycle_policy_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.effective_lifecycle_policy_details.is_none()`.
+    pub fn effective_lifecycle_policy_details(&self) -> &[crate::types::EffectiveLifecyclePolicyDetail] {
+        self.effective_lifecycle_policy_details.as_deref().unwrap_or_default()
     }
     /// <p>A list of resources for which retrieval failed.</p>
-    pub fn effective_lifecycle_policy_error_details(&self) -> ::std::option::Option<&[crate::types::EffectiveLifecyclePolicyErrorDetail]> {
-        self.effective_lifecycle_policy_error_details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.effective_lifecycle_policy_error_details.is_none()`.
+    pub fn effective_lifecycle_policy_error_details(&self) -> &[crate::types::EffectiveLifecyclePolicyErrorDetail] {
+        self.effective_lifecycle_policy_error_details.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchGetEffectiveLifecyclePolicyOutput {

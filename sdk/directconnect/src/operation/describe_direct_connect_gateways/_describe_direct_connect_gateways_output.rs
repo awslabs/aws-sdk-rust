@@ -11,8 +11,10 @@ pub struct DescribeDirectConnectGatewaysOutput {
 }
 impl DescribeDirectConnectGatewaysOutput {
     /// <p>The Direct Connect gateways.</p>
-    pub fn direct_connect_gateways(&self) -> ::std::option::Option<&[crate::types::DirectConnectGateway]> {
-        self.direct_connect_gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.direct_connect_gateways.is_none()`.
+    pub fn direct_connect_gateways(&self) -> &[crate::types::DirectConnectGateway] {
+        self.direct_connect_gateways.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

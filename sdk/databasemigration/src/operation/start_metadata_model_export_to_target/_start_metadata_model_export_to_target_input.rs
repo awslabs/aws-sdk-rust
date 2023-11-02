@@ -41,6 +41,7 @@ pub struct StartMetadataModelExportToTargetInputBuilder {
 }
 impl StartMetadataModelExportToTargetInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl StartMetadataModelExportToTargetInputBuilder {
         &self.migration_project_identifier
     }
     /// <p>A value that specifies the database objects to export.</p>
+    /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self

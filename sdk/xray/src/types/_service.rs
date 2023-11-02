@@ -47,8 +47,10 @@ impl Service {
         self.name.as_deref()
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>Indicates that the service was the first service to process a request.</p>
     pub fn root(&self) -> ::std::option::Option<bool> {
@@ -81,20 +83,26 @@ impl Service {
         self.end_time.as_ref()
     }
     /// <p>Connections to downstream services.</p>
-    pub fn edges(&self) -> ::std::option::Option<&[crate::types::Edge]> {
-        self.edges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edges.is_none()`.
+    pub fn edges(&self) -> &[crate::types::Edge] {
+        self.edges.as_deref().unwrap_or_default()
     }
     /// <p>Aggregated statistics for the service.</p>
     pub fn summary_statistics(&self) -> ::std::option::Option<&crate::types::ServiceStatistics> {
         self.summary_statistics.as_ref()
     }
     /// <p>A histogram that maps the spread of service durations.</p>
-    pub fn duration_histogram(&self) -> ::std::option::Option<&[crate::types::HistogramEntry]> {
-        self.duration_histogram.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.duration_histogram.is_none()`.
+    pub fn duration_histogram(&self) -> &[crate::types::HistogramEntry] {
+        self.duration_histogram.as_deref().unwrap_or_default()
     }
     /// <p>A histogram that maps the spread of service response times.</p>
-    pub fn response_time_histogram(&self) -> ::std::option::Option<&[crate::types::HistogramEntry]> {
-        self.response_time_histogram.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.response_time_histogram.is_none()`.
+    pub fn response_time_histogram(&self) -> &[crate::types::HistogramEntry] {
+        self.response_time_histogram.as_deref().unwrap_or_default()
     }
 }
 impl Service {

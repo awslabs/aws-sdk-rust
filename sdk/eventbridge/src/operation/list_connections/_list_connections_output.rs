@@ -11,8 +11,10 @@ pub struct ListConnectionsOutput {
 }
 impl ListConnectionsOutput {
     /// <p>An array of connections objects that include details about the connections.</p>
-    pub fn connections(&self) -> ::std::option::Option<&[crate::types::Connection]> {
-        self.connections.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connections.is_none()`.
+    pub fn connections(&self) -> &[crate::types::Connection] {
+        self.connections.as_deref().unwrap_or_default()
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -34,6 +34,7 @@ pub struct DisassociateResourceInputBuilder {
 }
 impl DisassociateResourceInputBuilder {
     /// <p>Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DisassociateResourceInputBuilder {
         &self.group_identifier
     }
     /// <p>The ARN of the canary that you want to remove from the specified group.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

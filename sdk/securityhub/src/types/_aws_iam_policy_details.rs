@@ -68,8 +68,10 @@ impl AwsIamPolicyDetails {
         self.policy_name.as_deref()
     }
     /// <p>List of versions of the policy.</p>
-    pub fn policy_version_list(&self) -> ::std::option::Option<&[crate::types::AwsIamPolicyVersion]> {
-        self.policy_version_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_version_list.is_none()`.
+    pub fn policy_version_list(&self) -> &[crate::types::AwsIamPolicyVersion] {
+        self.policy_version_list.as_deref().unwrap_or_default()
     }
     /// <p>When the policy was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>

@@ -51,8 +51,10 @@ impl Cell {
         self.formatted_value.as_deref()
     }
     /// <p> A list of formatted values of the cell. This field is only returned when the cell is ROWSET format (aka multi-select or multi-record picklist). Values in the list are always represented as strings. The formattedValue field will be empty if this field is returned. </p>
-    pub fn formatted_values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.formatted_values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.formatted_values.is_none()`.
+    pub fn formatted_values(&self) -> &[::std::string::String] {
+        self.formatted_values.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Cell {

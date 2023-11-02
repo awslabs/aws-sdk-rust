@@ -15,6 +15,13 @@ impl DimensionUnit {
         &["Feet", "Meters"]
     }
 }
+impl ::std::str::FromStr for DimensionUnit {
+    type Err = ::std::convert::Infallible;
+
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DimensionUnit::from(s))
+    }
+}
 impl<T> ::std::convert::From<T> for DimensionUnit
 where
     T: ::std::convert::AsRef<str>,

@@ -45,8 +45,10 @@ impl TableConfiguration {
         self.paginated_report_options.as_ref()
     }
     /// <p>A collection of inline visualizations to display within a chart.</p>
-    pub fn table_inline_visualizations(&self) -> ::std::option::Option<&[crate::types::TableInlineVisualization]> {
-        self.table_inline_visualizations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_inline_visualizations.is_none()`.
+    pub fn table_inline_visualizations(&self) -> &[crate::types::TableInlineVisualization] {
+        self.table_inline_visualizations.as_deref().unwrap_or_default()
     }
 }
 impl TableConfiguration {

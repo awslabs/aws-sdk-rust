@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetSourceEntry {
     /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
-    pub bucket: ::std::option::Option<::std::string::String>,
+    pub bucket: ::std::string::String,
     /// <p>The name of the object in Amazon S3 for the asset.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
 }
 impl AssetSourceEntry {
     /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
-        self.bucket.as_deref()
+    pub fn bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.bucket.deref()
     }
     /// <p>The name of the object in Amazon S3 for the asset.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
 }
 impl AssetSourceEntry {
@@ -35,6 +37,7 @@ pub struct AssetSourceEntryBuilder {
 }
 impl AssetSourceEntryBuilder {
     /// <p>The Amazon S3 bucket that's part of the source of the asset.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl AssetSourceEntryBuilder {
         &self.bucket
     }
     /// <p>The name of the object in Amazon S3 for the asset.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl AssetSourceEntryBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`AssetSourceEntry`](crate::types::AssetSourceEntry).
-    pub fn build(self) -> crate::types::AssetSourceEntry {
-        crate::types::AssetSourceEntry {
-            bucket: self.bucket,
-            key: self.key,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bucket`](crate::types::builders::AssetSourceEntryBuilder::bucket)
+    /// - [`key`](crate::types::builders::AssetSourceEntryBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetSourceEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetSourceEntry {
+            bucket: self.bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bucket",
+                    "bucket was not specified but it is required when building AssetSourceEntry",
+                )
+            })?,
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building AssetSourceEntry",
+                )
+            })?,
+        })
     }
 }

@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
+    pub collaboration_identifier: ::std::string::String,
 }
 impl GetCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
-        self.collaboration_identifier.as_deref()
+    pub fn collaboration_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.collaboration_identifier.deref()
     }
 }
 impl GetCollaborationInput {
@@ -27,6 +28,7 @@ pub struct GetCollaborationInputBuilder {
 }
 impl GetCollaborationInputBuilder {
     /// <p>The identifier for the collaboration.</p>
+    /// This field is required.
     pub fn collaboration_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaboration_identifier = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl GetCollaborationInputBuilder {
         &self.collaboration_identifier
     }
     /// Consumes the builder and constructs a [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`collaboration_identifier`](crate::operation::get_collaboration::builders::GetCollaborationInputBuilder::collaboration_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_collaboration::GetCollaborationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_collaboration::GetCollaborationInput {
-            collaboration_identifier: self.collaboration_identifier,
+            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "collaboration_identifier",
+                    "collaboration_identifier was not specified but it is required when building GetCollaborationInput",
+                )
+            })?,
         })
     }
 }

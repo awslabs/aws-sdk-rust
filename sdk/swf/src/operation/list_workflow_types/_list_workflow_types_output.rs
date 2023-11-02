@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowTypesOutput {
     /// <p>The list of workflow type information.</p>
-    pub type_infos: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowTypeInfo>>,
+    pub type_infos: ::std::vec::Vec<crate::types::WorkflowTypeInfo>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -13,8 +13,9 @@ pub struct ListWorkflowTypesOutput {
 }
 impl ListWorkflowTypesOutput {
     /// <p>The list of workflow type information.</p>
-    pub fn type_infos(&self) -> ::std::option::Option<&[crate::types::WorkflowTypeInfo]> {
-        self.type_infos.as_deref()
+    pub fn type_infos(&self) -> &[crate::types::WorkflowTypeInfo] {
+        use std::ops::Deref;
+        self.type_infos.deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -90,11 +91,20 @@ impl ListWorkflowTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkflowTypesOutput`](crate::operation::list_workflow_types::ListWorkflowTypesOutput).
-    pub fn build(self) -> crate::operation::list_workflow_types::ListWorkflowTypesOutput {
-        crate::operation::list_workflow_types::ListWorkflowTypesOutput {
-            type_infos: self.type_infos,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`type_infos`](crate::operation::list_workflow_types::builders::ListWorkflowTypesOutputBuilder::type_infos)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_workflow_types::ListWorkflowTypesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workflow_types::ListWorkflowTypesOutput {
+            type_infos: self.type_infos.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "type_infos",
+                    "type_infos was not specified but it is required when building ListWorkflowTypesOutput",
+                )
+            })?,
             next_page_token: self.next_page_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

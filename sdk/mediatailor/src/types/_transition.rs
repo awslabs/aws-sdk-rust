@@ -7,7 +7,7 @@ pub struct Transition {
     /// <p>The duration of the live program in seconds.</p>
     pub duration_millis: i64,
     /// <p>The position where this program will be inserted relative to the <code>RelativePosition</code>.</p>
-    pub relative_position: ::std::option::Option<crate::types::RelativePosition>,
+    pub relative_position: crate::types::RelativePosition,
     /// <p>The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.</p>
     pub relative_program: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
@@ -18,7 +18,7 @@ pub struct Transition {
     /// <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p>
     /// <p>If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear channel.</p>
     /// <p> <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you specify via <code>RelativePosition</code>.</p>
-    pub r#type: ::std::option::Option<::std::string::String>,
+    pub r#type: ::std::string::String,
 }
 impl Transition {
     /// <p>The duration of the live program in seconds.</p>
@@ -26,8 +26,8 @@ impl Transition {
         self.duration_millis
     }
     /// <p>The position where this program will be inserted relative to the <code>RelativePosition</code>.</p>
-    pub fn relative_position(&self) -> ::std::option::Option<&crate::types::RelativePosition> {
-        self.relative_position.as_ref()
+    pub fn relative_position(&self) -> &crate::types::RelativePosition {
+        &self.relative_position
     }
     /// <p>The name of the program that this program will be inserted next to, as defined by <code>RelativePosition</code>.</p>
     pub fn relative_program(&self) -> ::std::option::Option<&str> {
@@ -43,8 +43,9 @@ impl Transition {
     /// <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p>
     /// <p>If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear channel.</p>
     /// <p> <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you specify via <code>RelativePosition</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
-        self.r#type.as_deref()
+    pub fn r#type(&self) -> &str {
+        use std::ops::Deref;
+        self.r#type.deref()
     }
 }
 impl Transition {
@@ -80,6 +81,7 @@ impl TransitionBuilder {
         &self.duration_millis
     }
     /// <p>The position where this program will be inserted relative to the <code>RelativePosition</code>.</p>
+    /// This field is required.
     pub fn relative_position(mut self, input: crate::types::RelativePosition) -> Self {
         self.relative_position = ::std::option::Option::Some(input);
         self
@@ -127,6 +129,7 @@ impl TransitionBuilder {
     /// <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p>
     /// <p>If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you configured for your linear channel.</p>
     /// <p> <code>RELATIVE</code> - The program is inserted into the schedule either before or after a program that you specify via <code>RelativePosition</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
@@ -151,13 +154,26 @@ impl TransitionBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`Transition`](crate::types::Transition).
-    pub fn build(self) -> crate::types::Transition {
-        crate::types::Transition {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`relative_position`](crate::types::builders::TransitionBuilder::relative_position)
+    /// - [`r#type`](crate::types::builders::TransitionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Transition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Transition {
             duration_millis: self.duration_millis.unwrap_or_default(),
-            relative_position: self.relative_position,
+            relative_position: self.relative_position.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "relative_position",
+                    "relative_position was not specified but it is required when building Transition",
+                )
+            })?,
             relative_program: self.relative_program,
             scheduled_start_time_millis: self.scheduled_start_time_millis.unwrap_or_default(),
-            r#type: self.r#type,
-        }
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Transition",
+                )
+            })?,
+        })
     }
 }

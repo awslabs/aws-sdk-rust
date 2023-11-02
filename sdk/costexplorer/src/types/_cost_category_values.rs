@@ -19,12 +19,16 @@ impl CostCategoryValues {
         self.key.as_deref()
     }
     /// <p>The specific value of the Cost Category.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. </p>
-    pub fn match_options(&self) -> ::std::option::Option<&[crate::types::MatchOption]> {
-        self.match_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_options.is_none()`.
+    pub fn match_options(&self) -> &[crate::types::MatchOption] {
+        self.match_options.as_deref().unwrap_or_default()
     }
 }
 impl CostCategoryValues {

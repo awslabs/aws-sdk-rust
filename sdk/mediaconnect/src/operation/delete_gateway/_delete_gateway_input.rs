@@ -27,6 +27,7 @@ pub struct DeleteGatewayInputBuilder {
 }
 impl DeleteGatewayInputBuilder {
     /// The ARN of the gateway that you want to delete.
+    /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self

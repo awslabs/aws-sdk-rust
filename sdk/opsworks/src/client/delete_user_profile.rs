@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUserProfile`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`iam_user_arn(impl Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_iam_user_arn): <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    ///   - [`iam_user_arn(impl Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_iam_user_arn):<br>required: **true**<br><p>The user's IAM ARN. This can also be a federated user's ARN.</p><br>
     /// - On success, responds with [`DeleteUserProfileOutput`](crate::operation::delete_user_profile::DeleteUserProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::operation::delete_user_profile::DeleteUserProfileError)
     pub fn delete_user_profile(&self) -> crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder {

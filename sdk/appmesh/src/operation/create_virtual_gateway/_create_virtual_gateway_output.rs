@@ -34,6 +34,7 @@ pub struct CreateVirtualGatewayOutputBuilder {
 }
 impl CreateVirtualGatewayOutputBuilder {
     /// <p>The full description of your virtual gateway following the create call.</p>
+    /// This field is required.
     pub fn virtual_gateway(mut self, input: crate::types::VirtualGatewayData) -> Self {
         self.virtual_gateway = ::std::option::Option::Some(input);
         self

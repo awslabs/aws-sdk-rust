@@ -47,8 +47,10 @@ impl NetworkInterface {
         self.private_ip_address.as_deref()
     }
     /// <p>A list of the private IP addresses associated with the network interface. Includes the privateDnsName and privateIpAddress.</p>
-    pub fn private_ip_addresses(&self) -> ::std::option::Option<&[crate::types::PrivateIp]> {
-        self.private_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
+    pub fn private_ip_addresses(&self) -> &[crate::types::PrivateIp] {
+        self.private_ip_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The name of a public DNS associated with the network interface.</p>
     pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
@@ -59,12 +61,16 @@ impl NetworkInterface {
         self.public_ip.as_deref()
     }
     /// <p>The IP addresses associated with the network interface.</p>
-    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.ipv6_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>A list of the security groups associated with the network interface. Includes the groupId and groupName.</p>
-    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroup]> {
-        self.security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::SecurityGroup] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl NetworkInterface {

@@ -85,8 +85,10 @@ impl ConnectorDetail {
         self.connector_provisioning_type.as_ref()
     }
     /// <p>The connection mode that the connector supports.</p>
-    pub fn connector_modes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.connector_modes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_modes.is_none()`.
+    pub fn connector_modes(&self) -> &[::std::string::String] {
+        self.connector_modes.as_deref().unwrap_or_default()
     }
     /// <p>The data transfer types that the connector supports.</p>
     /// <dl>
@@ -103,8 +105,10 @@ impl ConnectorDetail {
     /// <p>Files or binary data.</p>
     /// </dd>
     /// </dl>
-    pub fn supported_data_transfer_types(&self) -> ::std::option::Option<&[crate::types::SupportedDataTransferType]> {
-        self.supported_data_transfer_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_data_transfer_types.is_none()`.
+    pub fn supported_data_transfer_types(&self) -> &[crate::types::SupportedDataTransferType] {
+        self.supported_data_transfer_types.as_deref().unwrap_or_default()
     }
 }
 impl ConnectorDetail {

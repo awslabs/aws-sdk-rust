@@ -10,12 +10,16 @@ pub struct DescribeEntityAggregatesForOrganizationInput {
 }
 impl DescribeEntityAggregatesForOrganizationInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
-    pub fn event_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_arns.is_none()`.
+    pub fn event_arns(&self) -> &[::std::string::String] {
+        self.event_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aws_account_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
+    pub fn aws_account_ids(&self) -> &[::std::string::String] {
+        self.aws_account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeEntityAggregatesForOrganizationInput {

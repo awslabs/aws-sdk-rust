@@ -28,8 +28,10 @@ impl CreateWebhookInput {
     }
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
-    pub fn filter_groups(&self) -> ::std::option::Option<&[::std::vec::Vec<crate::types::WebhookFilter>]> {
-        self.filter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_groups.is_none()`.
+    pub fn filter_groups(&self) -> &[::std::vec::Vec<crate::types::WebhookFilter>] {
+        self.filter_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::WebhookBuildType> {
@@ -54,6 +56,7 @@ pub struct CreateWebhookInputBuilder {
 }
 impl CreateWebhookInputBuilder {
     /// <p>The name of the CodeBuild project.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self

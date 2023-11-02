@@ -5,36 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConversationLevelTestResultItem {
     /// <p>The conversation Id of the test result evaluation item.</p>
-    pub conversation_id: ::std::option::Option<::std::string::String>,
+    pub conversation_id: ::std::string::String,
     /// <p>The end-to-end success or failure of the test result evaluation item.</p>
-    pub end_to_end_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
+    pub end_to_end_result: crate::types::TestResultMatchStatus,
     /// <p>The speech transcription success or failure of the test result evaluation item.</p>
     pub speech_transcription_result: ::std::option::Option<crate::types::TestResultMatchStatus>,
     /// <p>The intent classification of the test result evaluation item.</p>
-    pub intent_classification_results: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelIntentClassificationResultItem>>,
+    pub intent_classification_results: ::std::vec::Vec<crate::types::ConversationLevelIntentClassificationResultItem>,
     /// <p>The slot success or failure of the test result evaluation item.</p>
-    pub slot_resolution_results: ::std::option::Option<::std::vec::Vec<crate::types::ConversationLevelSlotResolutionResultItem>>,
+    pub slot_resolution_results: ::std::vec::Vec<crate::types::ConversationLevelSlotResolutionResultItem>,
 }
 impl ConversationLevelTestResultItem {
     /// <p>The conversation Id of the test result evaluation item.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
-        self.conversation_id.as_deref()
+    pub fn conversation_id(&self) -> &str {
+        use std::ops::Deref;
+        self.conversation_id.deref()
     }
     /// <p>The end-to-end success or failure of the test result evaluation item.</p>
-    pub fn end_to_end_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
-        self.end_to_end_result.as_ref()
+    pub fn end_to_end_result(&self) -> &crate::types::TestResultMatchStatus {
+        &self.end_to_end_result
     }
     /// <p>The speech transcription success or failure of the test result evaluation item.</p>
     pub fn speech_transcription_result(&self) -> ::std::option::Option<&crate::types::TestResultMatchStatus> {
         self.speech_transcription_result.as_ref()
     }
     /// <p>The intent classification of the test result evaluation item.</p>
-    pub fn intent_classification_results(&self) -> ::std::option::Option<&[crate::types::ConversationLevelIntentClassificationResultItem]> {
-        self.intent_classification_results.as_deref()
+    pub fn intent_classification_results(&self) -> &[crate::types::ConversationLevelIntentClassificationResultItem] {
+        use std::ops::Deref;
+        self.intent_classification_results.deref()
     }
     /// <p>The slot success or failure of the test result evaluation item.</p>
-    pub fn slot_resolution_results(&self) -> ::std::option::Option<&[crate::types::ConversationLevelSlotResolutionResultItem]> {
-        self.slot_resolution_results.as_deref()
+    pub fn slot_resolution_results(&self) -> &[crate::types::ConversationLevelSlotResolutionResultItem] {
+        use std::ops::Deref;
+        self.slot_resolution_results.deref()
     }
 }
 impl ConversationLevelTestResultItem {
@@ -56,6 +59,7 @@ pub struct ConversationLevelTestResultItemBuilder {
 }
 impl ConversationLevelTestResultItemBuilder {
     /// <p>The conversation Id of the test result evaluation item.</p>
+    /// This field is required.
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl ConversationLevelTestResultItemBuilder {
         &self.conversation_id
     }
     /// <p>The end-to-end success or failure of the test result evaluation item.</p>
+    /// This field is required.
     pub fn end_to_end_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.end_to_end_result = ::std::option::Option::Some(input);
         self
@@ -146,13 +151,38 @@ impl ConversationLevelTestResultItemBuilder {
         &self.slot_resolution_results
     }
     /// Consumes the builder and constructs a [`ConversationLevelTestResultItem`](crate::types::ConversationLevelTestResultItem).
-    pub fn build(self) -> crate::types::ConversationLevelTestResultItem {
-        crate::types::ConversationLevelTestResultItem {
-            conversation_id: self.conversation_id,
-            end_to_end_result: self.end_to_end_result,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`conversation_id`](crate::types::builders::ConversationLevelTestResultItemBuilder::conversation_id)
+    /// - [`end_to_end_result`](crate::types::builders::ConversationLevelTestResultItemBuilder::end_to_end_result)
+    /// - [`intent_classification_results`](crate::types::builders::ConversationLevelTestResultItemBuilder::intent_classification_results)
+    /// - [`slot_resolution_results`](crate::types::builders::ConversationLevelTestResultItemBuilder::slot_resolution_results)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelTestResultItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConversationLevelTestResultItem {
+            conversation_id: self.conversation_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "conversation_id",
+                    "conversation_id was not specified but it is required when building ConversationLevelTestResultItem",
+                )
+            })?,
+            end_to_end_result: self.end_to_end_result.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "end_to_end_result",
+                    "end_to_end_result was not specified but it is required when building ConversationLevelTestResultItem",
+                )
+            })?,
             speech_transcription_result: self.speech_transcription_result,
-            intent_classification_results: self.intent_classification_results,
-            slot_resolution_results: self.slot_resolution_results,
-        }
+            intent_classification_results: self.intent_classification_results.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "intent_classification_results",
+                    "intent_classification_results was not specified but it is required when building ConversationLevelTestResultItem",
+                )
+            })?,
+            slot_resolution_results: self.slot_resolution_results.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "slot_resolution_results",
+                    "slot_resolution_results was not specified but it is required when building ConversationLevelTestResultItem",
+                )
+            })?,
+        })
     }
 }

@@ -28,8 +28,10 @@ impl RecommendationFeedback {
         self.recommendation_id.as_deref()
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.</p>
-    pub fn reactions(&self) -> ::std::option::Option<&[crate::types::Reaction]> {
-        self.reactions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reactions.is_none()`.
+    pub fn reactions(&self) -> &[crate::types::Reaction] {
+        self.reactions.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the user that made the API call.</p>
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>

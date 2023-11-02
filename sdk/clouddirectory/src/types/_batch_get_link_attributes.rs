@@ -7,7 +7,7 @@ pub struct BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attribute_names: ::std::vec::Vec<::std::string::String>,
 }
 impl BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -15,8 +15,9 @@ impl BatchGetLinkAttributes {
         self.typed_link_specifier.as_ref()
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.attribute_names.as_deref()
+    pub fn attribute_names(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.attribute_names.deref()
     }
 }
 impl BatchGetLinkAttributes {
@@ -35,6 +36,7 @@ pub struct BatchGetLinkAttributesBuilder {
 }
 impl BatchGetLinkAttributesBuilder {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
+    /// This field is required.
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.typed_link_specifier = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,17 @@ impl BatchGetLinkAttributesBuilder {
         &self.attribute_names
     }
     /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::types::BatchGetLinkAttributes).
-    pub fn build(self) -> crate::types::BatchGetLinkAttributes {
-        crate::types::BatchGetLinkAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_names`](crate::types::builders::BatchGetLinkAttributesBuilder::attribute_names)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetLinkAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetLinkAttributes {
             typed_link_specifier: self.typed_link_specifier,
-            attribute_names: self.attribute_names,
-        }
+            attribute_names: self.attribute_names.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_names",
+                    "attribute_names was not specified but it is required when building BatchGetLinkAttributes",
+                )
+            })?,
+        })
     }
 }

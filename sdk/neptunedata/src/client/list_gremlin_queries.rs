@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListGremlinQueries`](crate::operation::list_gremlin_queries::builders::ListGremlinQueriesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`include_waiting(bool)`](crate::operation::list_gremlin_queries::builders::ListGremlinQueriesFluentBuilder::include_waiting) / [`set_include_waiting(Option<bool>)`](crate::operation::list_gremlin_queries::builders::ListGremlinQueriesFluentBuilder::set_include_waiting): <p>If set to <code>TRUE</code>, the list returned includes waiting queries. The default is <code>FALSE</code>;</p>
+    ///   - [`include_waiting(bool)`](crate::operation::list_gremlin_queries::builders::ListGremlinQueriesFluentBuilder::include_waiting) / [`set_include_waiting(Option<bool>)`](crate::operation::list_gremlin_queries::builders::ListGremlinQueriesFluentBuilder::set_include_waiting):<br>required: **false**<br><p>If set to <code>TRUE</code>, the list returned includes waiting queries. The default is <code>FALSE</code>;</p><br>
     /// - On success, responds with [`ListGremlinQueriesOutput`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput) with field(s):
     ///   - [`accepted_query_count(Option<i32>)`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput::accepted_query_count): <p>The number of queries that have been accepted but not yet completed, including queries in the queue.</p>
     ///   - [`running_query_count(Option<i32>)`](crate::operation::list_gremlin_queries::ListGremlinQueriesOutput::running_query_count): <p>The number of Gremlin queries currently running.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteJobQueue`](crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_queue(impl Into<String>)`](crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::job_queue) / [`set_job_queue(Option<String>)`](crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::set_job_queue): <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
+    ///   - [`job_queue(impl Into<String>)`](crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::job_queue) / [`set_job_queue(Option<String>)`](crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder::set_job_queue):<br>required: **true**<br><p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p><br>
     /// - On success, responds with [`DeleteJobQueueOutput`](crate::operation::delete_job_queue::DeleteJobQueueOutput)
     /// - On failure, responds with [`SdkError<DeleteJobQueueError>`](crate::operation::delete_job_queue::DeleteJobQueueError)
     pub fn delete_job_queue(&self) -> crate::operation::delete_job_queue::builders::DeleteJobQueueFluentBuilder {

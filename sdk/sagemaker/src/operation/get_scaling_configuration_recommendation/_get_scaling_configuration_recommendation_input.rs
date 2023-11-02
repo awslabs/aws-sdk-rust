@@ -59,6 +59,7 @@ pub struct GetScalingConfigurationRecommendationInputBuilder {
 }
 impl GetScalingConfigurationRecommendationInputBuilder {
     /// <p>The name of a previously completed Inference Recommender job.</p>
+    /// This field is required.
     pub fn inference_recommendations_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inference_recommendations_job_name = ::std::option::Option::Some(input.into());
         self

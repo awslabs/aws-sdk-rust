@@ -39,8 +39,10 @@ impl UpdateConfigurationOutput {
         self.name.as_deref()
     }
     /// <p>The list of the first 20 warnings about the configuration elements or attributes that were sanitized.</p>
-    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::SanitizationWarning]> {
-        self.warnings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
+    pub fn warnings(&self) -> &[crate::types::SanitizationWarning] {
+        self.warnings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateConfigurationOutput {

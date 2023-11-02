@@ -5,36 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorResourceDetail {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
-    pub status: ::std::option::Option<::std::string::String>,
+    pub status: ::std::string::String,
     /// <p>The Amazon Web Services Region in which the identified resource is located.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the identified resource.</p>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>Specifies whether the Amazon Web Services resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
     pub is_suppressed: bool,
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    pub metadata: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
+    pub metadata: ::std::vec::Vec<::std::option::Option<::std::string::String>>,
 }
 impl TrustedAdvisorResourceDetail {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
-        self.status.as_deref()
+    pub fn status(&self) -> &str {
+        use std::ops::Deref;
+        self.status.deref()
     }
     /// <p>The Amazon Web Services Region in which the identified resource is located.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The unique identifier for the identified resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>Specifies whether the Amazon Web Services resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
     pub fn is_suppressed(&self) -> bool {
         self.is_suppressed
     }
     /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
-        self.metadata.as_deref()
+    pub fn metadata(&self) -> &[::std::option::Option<::std::string::String>] {
+        use std::ops::Deref;
+        self.metadata.deref()
     }
 }
 impl TrustedAdvisorResourceDetail {
@@ -56,6 +59,7 @@ pub struct TrustedAdvisorResourceDetailBuilder {
 }
 impl TrustedAdvisorResourceDetailBuilder {
     /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl TrustedAdvisorResourceDetailBuilder {
         &self.region
     }
     /// <p>The unique identifier for the identified resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +137,32 @@ impl TrustedAdvisorResourceDetailBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorResourceDetail`](crate::types::TrustedAdvisorResourceDetail).
-    pub fn build(self) -> crate::types::TrustedAdvisorResourceDetail {
-        crate::types::TrustedAdvisorResourceDetail {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::TrustedAdvisorResourceDetailBuilder::status)
+    /// - [`resource_id`](crate::types::builders::TrustedAdvisorResourceDetailBuilder::resource_id)
+    /// - [`metadata`](crate::types::builders::TrustedAdvisorResourceDetailBuilder::metadata)
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorResourceDetail, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TrustedAdvisorResourceDetail {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building TrustedAdvisorResourceDetail",
+                )
+            })?,
             region: self.region,
-            resource_id: self.resource_id,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building TrustedAdvisorResourceDetail",
+                )
+            })?,
             is_suppressed: self.is_suppressed.unwrap_or_default(),
-            metadata: self.metadata,
-        }
+            metadata: self.metadata.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metadata",
+                    "metadata was not specified but it is required when building TrustedAdvisorResourceDetail",
+                )
+            })?,
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct AssociateEnclaveCertificateIamRoleInputBuilder {
 }
 impl AssociateEnclaveCertificateIamRoleInputBuilder {
     /// <p>The ARN of the ACM certificate with which to associate the IAM role.</p>
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl AssociateEnclaveCertificateIamRoleInputBuilder {
         &self.certificate_arn
     }
     /// <p>The ARN of the IAM role to associate with the ACM certificate. You can associate up to 16 IAM roles with an ACM certificate.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

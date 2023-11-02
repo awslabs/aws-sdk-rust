@@ -11,8 +11,10 @@ pub struct DescribeCarrierGatewaysOutput {
 }
 impl DescribeCarrierGatewaysOutput {
     /// <p>Information about the carrier gateway.</p>
-    pub fn carrier_gateways(&self) -> ::std::option::Option<&[crate::types::CarrierGateway]> {
-        self.carrier_gateways.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.carrier_gateways.is_none()`.
+    pub fn carrier_gateways(&self) -> &[crate::types::CarrierGateway] {
+        self.carrier_gateways.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

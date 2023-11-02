@@ -27,6 +27,7 @@ pub struct DeleteLexiconInputBuilder {
 }
 impl DeleteLexiconInputBuilder {
     /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

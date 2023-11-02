@@ -92,14 +92,14 @@ impl ListApplicationsFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::list_applications::ListApplicationsOutput,
             crate::operation::list_applications::ListApplicationsError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::list_applications::ListApplicationsError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +112,7 @@ impl ListApplicationsFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_applications::paginator::ListApplicationsPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::list_applications::paginator::ListApplicationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_applications::paginator::ListApplicationsPaginator {
         crate::operation::list_applications::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
     }
@@ -143,5 +143,23 @@ impl ListApplicationsFluentBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// Appends an item to `Filters`.
+    ///
+    /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+    ///
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn filters(mut self, input: crate::types::Filter) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
+    /// <p>The filter of name, value, and operator.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

@@ -49,6 +49,7 @@ pub struct CreateSubscriberInputBuilder {
 }
 impl CreateSubscriberInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CreateSubscriberInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl CreateSubscriberInputBuilder {
         &self.budget_name
     }
     /// <p>The notification that you want to create a subscriber for.</p>
+    /// This field is required.
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl CreateSubscriberInputBuilder {
         &self.notification
     }
     /// <p>The subscriber that you want to associate with a budget notification.</p>
+    /// This field is required.
     pub fn subscriber(mut self, input: crate::types::Subscriber) -> Self {
         self.subscriber = ::std::option::Option::Some(input);
         self

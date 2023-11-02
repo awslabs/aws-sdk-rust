@@ -34,6 +34,7 @@ pub struct RestoreClusterFromSnapshotOutputBuilder {
 }
 impl RestoreClusterFromSnapshotOutputBuilder {
     /// <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
+    /// This field is required.
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self

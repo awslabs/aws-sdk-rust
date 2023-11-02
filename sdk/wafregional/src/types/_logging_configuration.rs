@@ -9,24 +9,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_destination_configs: ::std::vec::Vec<::std::string::String>,
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
     pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
 }
 impl LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn log_destination_configs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.log_destination_configs.as_deref()
+    pub fn log_destination_configs(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.log_destination_configs.deref()
     }
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
-    pub fn redacted_fields(&self) -> ::std::option::Option<&[crate::types::FieldToMatch]> {
-        self.redacted_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redacted_fields.is_none()`.
+    pub fn redacted_fields(&self) -> &[crate::types::FieldToMatch] {
+        self.redacted_fields.as_deref().unwrap_or_default()
     }
 }
 impl LoggingConfiguration {
@@ -46,6 +50,7 @@ pub struct LoggingConfigurationBuilder {
 }
 impl LoggingConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -100,11 +105,24 @@ impl LoggingConfigurationBuilder {
         &self.redacted_fields
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
-    pub fn build(self) -> crate::types::LoggingConfiguration {
-        crate::types::LoggingConfiguration {
-            resource_arn: self.resource_arn,
-            log_destination_configs: self.log_destination_configs,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::types::builders::LoggingConfigurationBuilder::resource_arn)
+    /// - [`log_destination_configs`](crate::types::builders::LoggingConfigurationBuilder::log_destination_configs)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingConfiguration {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building LoggingConfiguration",
+                )
+            })?,
+            log_destination_configs: self.log_destination_configs.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "log_destination_configs",
+                    "log_destination_configs was not specified but it is required when building LoggingConfiguration",
+                )
+            })?,
             redacted_fields: self.redacted_fields,
-        }
+        })
     }
 }

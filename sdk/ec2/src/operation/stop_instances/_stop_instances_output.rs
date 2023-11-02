@@ -9,8 +9,10 @@ pub struct StopInstancesOutput {
 }
 impl StopInstancesOutput {
     /// <p>Information about the stopped instances.</p>
-    pub fn stopping_instances(&self) -> ::std::option::Option<&[crate::types::InstanceStateChange]> {
-        self.stopping_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stopping_instances.is_none()`.
+    pub fn stopping_instances(&self) -> &[crate::types::InstanceStateChange] {
+        self.stopping_instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for StopInstancesOutput {

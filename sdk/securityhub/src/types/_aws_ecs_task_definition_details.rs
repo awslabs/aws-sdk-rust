@@ -56,8 +56,10 @@ pub struct AwsEcsTaskDefinitionDetails {
 }
 impl AwsEcsTaskDefinitionDetails {
     /// <p>The container definitions that describe the containers that make up the task.</p>
-    pub fn container_definitions(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails]> {
-        self.container_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_definitions.is_none()`.
+    pub fn container_definitions(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails] {
+        self.container_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
@@ -79,8 +81,10 @@ impl AwsEcsTaskDefinitionDetails {
         self.family.as_deref()
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
-    pub fn inference_accelerators(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails]> {
-        self.inference_accelerators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerators.is_none()`.
+    pub fn inference_accelerators(&self) -> &[crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails] {
+        self.inference_accelerators.as_deref().unwrap_or_default()
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
@@ -111,24 +115,30 @@ impl AwsEcsTaskDefinitionDetails {
         self.pid_mode.as_deref()
     }
     /// <p>The placement constraint objects to use for tasks.</p>
-    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails]> {
-        self.placement_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
+    pub fn placement_constraints(&self) -> &[crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails] {
+        self.placement_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The configuration details for the App Mesh proxy.</p>
     pub fn proxy_configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails> {
         self.proxy_configuration.as_ref()
     }
     /// <p>The task launch types that the task definition was validated against.</p>
-    pub fn requires_compatibilities(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.requires_compatibilities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requires_compatibilities.is_none()`.
+    pub fn requires_compatibilities(&self) -> &[::std::string::String] {
+        self.requires_compatibilities.as_deref().unwrap_or_default()
     }
     /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
     pub fn task_role_arn(&self) -> ::std::option::Option<&str> {
         self.task_role_arn.as_deref()
     }
     /// <p>The data volume definitions for the task.</p>
-    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionVolumesDetails]> {
-        self.volumes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::AwsEcsTaskDefinitionVolumesDetails] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p> The status of the task definition. </p>
     pub fn status(&self) -> ::std::option::Option<&str> {

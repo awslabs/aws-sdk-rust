@@ -34,6 +34,7 @@ pub struct GetMetricPolicyOutputBuilder {
 }
 impl GetMetricPolicyOutputBuilder {
     /// <p>The metric policy that is associated with the specific container.</p>
+    /// This field is required.
     pub fn metric_policy(mut self, input: crate::types::MetricPolicy) -> Self {
         self.metric_policy = ::std::option::Option::Some(input);
         self

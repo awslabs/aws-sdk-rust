@@ -34,6 +34,7 @@ pub struct DeleteFieldLevelEncryptionConfigInputBuilder {
 }
 impl DeleteFieldLevelEncryptionConfigInputBuilder {
     /// <p>The ID of the configuration you want to delete from CloudFront.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

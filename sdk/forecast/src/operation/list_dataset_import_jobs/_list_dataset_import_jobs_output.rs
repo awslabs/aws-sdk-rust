@@ -11,8 +11,10 @@ pub struct ListDatasetImportJobsOutput {
 }
 impl ListDatasetImportJobsOutput {
     /// <p>An array of objects that summarize each dataset import job's properties.</p>
-    pub fn dataset_import_jobs(&self) -> ::std::option::Option<&[crate::types::DatasetImportJobSummary]> {
-        self.dataset_import_jobs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_import_jobs.is_none()`.
+    pub fn dataset_import_jobs(&self) -> &[crate::types::DatasetImportJobSummary] {
+        self.dataset_import_jobs.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

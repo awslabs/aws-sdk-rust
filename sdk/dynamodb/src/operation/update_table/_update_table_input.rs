@@ -42,8 +42,10 @@ pub struct UpdateTableInput {
 }
 impl UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
-    pub fn attribute_definitions(&self) -> ::std::option::Option<&[crate::types::AttributeDefinition]> {
-        self.attribute_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_definitions.is_none()`.
+    pub fn attribute_definitions(&self) -> &[crate::types::AttributeDefinition] {
+        self.attribute_definitions.as_deref().unwrap_or_default()
     }
     /// <p>The name of the table to be updated.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
@@ -69,8 +71,10 @@ impl UpdateTableInput {
     /// </ul>
     /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
-    pub fn global_secondary_index_updates(&self) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndexUpdate]> {
-        self.global_secondary_index_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_index_updates.is_none()`.
+    pub fn global_secondary_index_updates(&self) -> &[crate::types::GlobalSecondaryIndexUpdate] {
+        self.global_secondary_index_updates.as_deref().unwrap_or_default()
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
     /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
@@ -85,8 +89,10 @@ impl UpdateTableInput {
     /// <p>A list of replica update actions (create, delete, or update) for the table.</p> <note>
     /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
     /// </note>
-    pub fn replica_updates(&self) -> ::std::option::Option<&[crate::types::ReplicationGroupUpdate]> {
-        self.replica_updates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_updates.is_none()`.
+    pub fn replica_updates(&self) -> &[crate::types::ReplicationGroupUpdate] {
+        self.replica_updates.as_deref().unwrap_or_default()
     }
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn table_class(&self) -> ::std::option::Option<&crate::types::TableClass> {
@@ -141,6 +147,7 @@ impl UpdateTableInputBuilder {
         &self.attribute_definitions
     }
     /// <p>The name of the table to be updated.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

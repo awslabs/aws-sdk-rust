@@ -25,8 +25,10 @@ impl DescribeReservedInstancesListingsInput {
     /// <li> <p> <code>status</code> - The status of the Reserved Instance listing (<code>pending</code> | <code>active</code> | <code>cancelled</code> | <code>closed</code>).</p> </li>
     /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>One or more Reserved Instance IDs.</p>
     pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {

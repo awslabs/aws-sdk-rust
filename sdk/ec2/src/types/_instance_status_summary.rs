@@ -11,8 +11,10 @@ pub struct InstanceStatusSummary {
 }
 impl InstanceStatusSummary {
     /// <p>The system instance health or application instance health.</p>
-    pub fn details(&self) -> ::std::option::Option<&[crate::types::InstanceStatusDetails]> {
-        self.details.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
+    pub fn details(&self) -> &[crate::types::InstanceStatusDetails] {
+        self.details.as_deref().unwrap_or_default()
     }
     /// <p>The status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::SummaryStatus> {

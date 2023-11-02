@@ -80,6 +80,7 @@ impl UpdateGroupQueryInputBuilder {
     /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
     /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.resource_query = ::std::option::Option::Some(input);
         self

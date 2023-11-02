@@ -3,17 +3,17 @@ pub fn ser_put_permission_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_permission::PutPermissionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.principals {
-        let mut array_2 = object.key("principals").start_array();
-        for item_3 in var_1 {
+    {
+        let mut array_1 = object.key("principals").start_array();
+        for item_2 in &input.principals {
             {
-                array_2.value().string(item_3.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_2.finish();
+        array_1.finish();
     }
-    if let Some(var_4) = &input.revision_id {
-        object.key("revisionId").string(var_4.as_str());
+    if let Some(var_3) = &input.revision_id {
+        object.key("revisionId").string(var_3.as_str());
     }
     Ok(())
 }

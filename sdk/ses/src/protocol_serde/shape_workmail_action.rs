@@ -11,12 +11,13 @@ pub fn ser_workmail_action(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("OrganizationArn");
-    if let Some(var_4) = &input.organization_arn {
-        scope_3.string(var_4);
+    {
+        scope_3.string(&input.organization_arn);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_workmail_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::WorkmailAction, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -25,6 +26,19 @@ pub fn de_workmail_action(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#WorkmailAction$TopicArn */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_topic_arn(var_4);
+            }
+            ,
+            s if s.matches("OrganizationArn") /* OrganizationArn com.amazonaws.ses#WorkmailAction$OrganizationArn */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -34,24 +48,13 @@ pub fn de_workmail_action(
                         ?
                     )
                 ;
-                builder = builder.set_topic_arn(var_5);
-            }
-            ,
-            s if s.matches("OrganizationArn") /* OrganizationArn com.amazonaws.ses#WorkmailAction$OrganizationArn */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_organization_arn(var_6);
+                builder = builder.set_organization_arn(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::workmail_action_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

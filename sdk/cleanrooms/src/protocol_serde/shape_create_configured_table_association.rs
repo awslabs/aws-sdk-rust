@@ -79,11 +79,10 @@ pub fn de_create_configured_table_association_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -99,11 +98,10 @@ pub fn de_create_configured_table_association_http_error(
                     )
                     .map_err(crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -156,7 +154,7 @@ pub fn de_create_configured_table_association_http_response(
         output = crate::protocol_serde::shape_create_configured_table_association::de_create_configured_table_association(_response_body, output)
             .map_err(crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::create_configured_table_association_output_correct_errors(output).build()
     })
 }
 

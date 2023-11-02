@@ -48,6 +48,7 @@ pub struct AssociateIdentityProviderConfigInputBuilder {
 }
 impl AssociateIdentityProviderConfigInputBuilder {
     /// <p>The name of the cluster to associate the configuration to.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateIdentityProviderConfigInputBuilder {
         &self.cluster_name
     }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
+    /// This field is required.
     pub fn oidc(mut self, input: crate::types::OidcIdentityProviderConfigRequest) -> Self {
         self.oidc = ::std::option::Option::Some(input);
         self

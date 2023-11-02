@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Secondary {
     /// <p>Defines the secondary Region.</p>
-    pub route: ::std::option::Option<::std::string::String>,
+    pub route: ::std::string::String,
 }
 impl Secondary {
     /// <p>Defines the secondary Region.</p>
-    pub fn route(&self) -> ::std::option::Option<&str> {
-        self.route.as_deref()
+    pub fn route(&self) -> &str {
+        use std::ops::Deref;
+        self.route.deref()
     }
 }
 impl Secondary {
@@ -28,6 +29,7 @@ pub struct SecondaryBuilder {
 }
 impl SecondaryBuilder {
     /// <p>Defines the secondary Region.</p>
+    /// This field is required.
     pub fn route(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl SecondaryBuilder {
         &self.route
     }
     /// Consumes the builder and constructs a [`Secondary`](crate::types::Secondary).
-    pub fn build(self) -> crate::types::Secondary {
-        crate::types::Secondary { route: self.route }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`route`](crate::types::builders::SecondaryBuilder::route)
+    pub fn build(self) -> ::std::result::Result<crate::types::Secondary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Secondary {
+            route: self.route.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "route",
+                    "route was not specified but it is required when building Secondary",
+                )
+            })?,
+        })
     }
 }

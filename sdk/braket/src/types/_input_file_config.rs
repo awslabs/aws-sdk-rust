@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputFileConfig {
     /// <p>A named input source that an Amazon Braket job can consume.</p>
-    pub channel_name: ::std::option::Option<::std::string::String>,
+    pub channel_name: ::std::string::String,
     /// <p>The MIME type of the data.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The location of the channel data.</p>
@@ -13,8 +13,9 @@ pub struct InputFileConfig {
 }
 impl InputFileConfig {
     /// <p>A named input source that an Amazon Braket job can consume.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
-        self.channel_name.as_deref()
+    pub fn channel_name(&self) -> &str {
+        use std::ops::Deref;
+        self.channel_name.deref()
     }
     /// <p>The MIME type of the data.</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct InputFileConfigBuilder {
 }
 impl InputFileConfigBuilder {
     /// <p>A named input source that an Amazon Braket job can consume.</p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl InputFileConfigBuilder {
         &self.content_type
     }
     /// <p>The location of the channel data.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,18 @@ impl InputFileConfigBuilder {
         &self.data_source
     }
     /// Consumes the builder and constructs a [`InputFileConfig`](crate::types::InputFileConfig).
-    pub fn build(self) -> crate::types::InputFileConfig {
-        crate::types::InputFileConfig {
-            channel_name: self.channel_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`channel_name`](crate::types::builders::InputFileConfigBuilder::channel_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputFileConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputFileConfig {
+            channel_name: self.channel_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "channel_name",
+                    "channel_name was not specified but it is required when building InputFileConfig",
+                )
+            })?,
             content_type: self.content_type,
             data_source: self.data_source,
-        }
+        })
     }
 }

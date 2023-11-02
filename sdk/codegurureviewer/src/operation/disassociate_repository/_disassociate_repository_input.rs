@@ -27,6 +27,7 @@ pub struct DisassociateRepositoryInputBuilder {
 }
 impl DisassociateRepositoryInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
+    /// This field is required.
     pub fn association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.association_arn = ::std::option::Option::Some(input.into());
         self

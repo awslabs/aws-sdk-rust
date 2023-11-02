@@ -56,6 +56,7 @@ pub struct ModelMetadataSummaryBuilder {
 }
 impl ModelMetadataSummaryBuilder {
     /// <p>The machine learning domain of the model.</p>
+    /// This field is required.
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl ModelMetadataSummaryBuilder {
         &self.domain
     }
     /// <p>The machine learning framework of the model.</p>
+    /// This field is required.
     pub fn framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl ModelMetadataSummaryBuilder {
         &self.framework
     }
     /// <p>The machine learning task of the model.</p>
+    /// This field is required.
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +101,7 @@ impl ModelMetadataSummaryBuilder {
         &self.task
     }
     /// <p>The name of the model.</p>
+    /// This field is required.
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +116,7 @@ impl ModelMetadataSummaryBuilder {
         &self.model
     }
     /// <p>The framework version of the model.</p>
+    /// This field is required.
     pub fn framework_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_version = ::std::option::Option::Some(input.into());
         self

@@ -66,8 +66,10 @@ impl Evidence {
         self.evidence_by_type.as_deref()
     }
     /// <p> The list of resources that are assessed to generate the evidence. </p>
-    pub fn resources_included(&self) -> ::std::option::Option<&[crate::types::Resource]> {
-        self.resources_included.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_included.is_none()`.
+    pub fn resources_included(&self) -> &[crate::types::Resource] {
+        self.resources_included.as_deref().unwrap_or_default()
     }
     /// <p> The names and values that are used by the evidence event. This includes an attribute name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or <code>false</code>). </p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

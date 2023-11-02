@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReturnShippingLabel`](crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder::set_job_id): <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelFluentBuilder::set_job_id):<br>required: **true**<br><p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p><br>
     /// - On success, responds with [`DescribeReturnShippingLabelOutput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput) with field(s):
     ///   - [`status(Option<ShippingLabelStatus>)`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput::status): <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     ///   - [`expiration_date(Option<DateTime>)`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput::expiration_date): <p>The expiration date of the current return shipping label.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKey`](crate::operation::get_key::builders::GetKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_identifier(impl Into<String>)`](crate::operation::get_key::builders::GetKeyFluentBuilder::key_identifier) / [`set_key_identifier(Option<String>)`](crate::operation::get_key::builders::GetKeyFluentBuilder::set_key_identifier): <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p>
+    ///   - [`key_identifier(impl Into<String>)`](crate::operation::get_key::builders::GetKeyFluentBuilder::key_identifier) / [`set_key_identifier(Option<String>)`](crate::operation::get_key::builders::GetKeyFluentBuilder::set_key_identifier):<br>required: **true**<br><p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p><br>
     /// - On success, responds with [`GetKeyOutput`](crate::operation::get_key::GetKeyOutput) with field(s):
     ///   - [`key(Option<Key>)`](crate::operation::get_key::GetKeyOutput::key): <p>The key material, including the immutable and mutable data for the key.</p>
     /// - On failure, responds with [`SdkError<GetKeyError>`](crate::operation::get_key::GetKeyError)

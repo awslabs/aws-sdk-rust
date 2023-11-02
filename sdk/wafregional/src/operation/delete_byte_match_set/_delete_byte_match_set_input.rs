@@ -34,6 +34,7 @@ pub struct DeleteByteMatchSetInputBuilder {
 }
 impl DeleteByteMatchSetInputBuilder {
     /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// This field is required.
     pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteByteMatchSetInputBuilder {
         &self.byte_match_set_id
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    /// This field is required.
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
         self

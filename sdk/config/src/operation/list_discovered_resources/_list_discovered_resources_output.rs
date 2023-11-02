@@ -12,8 +12,10 @@ pub struct ListDiscoveredResourcesOutput {
 }
 impl ListDiscoveredResourcesOutput {
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
-    pub fn resource_identifiers(&self) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
-        self.resource_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
+    pub fn resource_identifiers(&self) -> &[crate::types::ResourceIdentifier] {
+        self.resource_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

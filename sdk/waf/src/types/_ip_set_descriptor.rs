@@ -9,7 +9,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetDescriptor {
     /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::IpSetDescriptorType>,
+    pub r#type: crate::types::IpSetDescriptorType,
     /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
     /// <ul>
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
@@ -21,12 +21,12 @@ pub struct IpSetDescriptor {
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl IpSetDescriptor {
     /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IpSetDescriptorType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::IpSetDescriptorType {
+        &self.r#type
     }
     /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
     /// <ul>
@@ -39,8 +39,9 @@ impl IpSetDescriptor {
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl IpSetDescriptor {
@@ -59,6 +60,7 @@ pub struct IpSetDescriptorBuilder {
 }
 impl IpSetDescriptorBuilder {
     /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::IpSetDescriptorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl IpSetDescriptorBuilder {
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
     /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -117,10 +120,23 @@ impl IpSetDescriptorBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`IpSetDescriptor`](crate::types::IpSetDescriptor).
-    pub fn build(self) -> crate::types::IpSetDescriptor {
-        crate::types::IpSetDescriptor {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::IpSetDescriptorBuilder::r#type)
+    /// - [`value`](crate::types::builders::IpSetDescriptorBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSetDescriptor, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpSetDescriptor {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building IpSetDescriptor",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building IpSetDescriptor",
+                )
+            })?,
+        })
     }
 }

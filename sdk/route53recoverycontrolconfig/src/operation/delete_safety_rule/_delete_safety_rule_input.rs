@@ -27,6 +27,7 @@ pub struct DeleteSafetyRuleInputBuilder {
 }
 impl DeleteSafetyRuleInputBuilder {
     /// <p>The ARN of the safety rule.</p>
+    /// This field is required.
     pub fn safety_rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.safety_rule_arn = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct StopEngagementInputBuilder {
 }
 impl StopEngagementInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    /// This field is required.
     pub fn engagement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_id = ::std::option::Option::Some(input.into());
         self

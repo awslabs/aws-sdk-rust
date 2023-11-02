@@ -34,6 +34,7 @@ pub struct DeleteEnvironmentBlueprintConfigurationInputBuilder {
 }
 impl DeleteEnvironmentBlueprintConfigurationInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the blueprint configuration is deleted.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteEnvironmentBlueprintConfigurationInputBuilder {
         &self.domain_identifier
     }
     /// <p>The ID of the blueprint the configuration of which is deleted.</p>
+    /// This field is required.
     pub fn environment_blueprint_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_blueprint_identifier = ::std::option::Option::Some(input.into());
         self

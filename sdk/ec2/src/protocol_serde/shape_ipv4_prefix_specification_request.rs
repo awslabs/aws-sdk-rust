@@ -12,6 +12,7 @@ pub fn ser_ipv4_prefix_specification_request(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ipv4_prefix_specification_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::Ipv4PrefixSpecificationRequest, ::aws_smithy_xml::decode::XmlDecodeError> {

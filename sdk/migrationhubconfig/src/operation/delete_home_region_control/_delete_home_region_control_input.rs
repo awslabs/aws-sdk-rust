@@ -27,6 +27,7 @@ pub struct DeleteHomeRegionControlInputBuilder {
 }
 impl DeleteHomeRegionControlInputBuilder {
     /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
+    /// This field is required.
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
         self

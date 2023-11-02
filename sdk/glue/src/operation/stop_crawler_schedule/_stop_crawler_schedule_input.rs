@@ -27,6 +27,7 @@ pub struct StopCrawlerScheduleInputBuilder {
 }
 impl StopCrawlerScheduleInputBuilder {
     /// <p>Name of the crawler whose schedule state to set.</p>
+    /// This field is required.
     pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crawler_name = ::std::option::Option::Some(input.into());
         self

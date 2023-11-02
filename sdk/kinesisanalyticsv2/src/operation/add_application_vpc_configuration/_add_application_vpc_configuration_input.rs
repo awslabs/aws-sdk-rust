@@ -48,6 +48,7 @@ pub struct AddApplicationVpcConfigurationInputBuilder {
 }
 impl AddApplicationVpcConfigurationInputBuilder {
     /// <p>The name of an existing application.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl AddApplicationVpcConfigurationInputBuilder {
         &self.current_application_version_id
     }
     /// <p>Description of the VPC to add to the application.</p>
+    /// This field is required.
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
         self

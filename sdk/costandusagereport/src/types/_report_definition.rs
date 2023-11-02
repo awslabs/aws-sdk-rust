@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportDefinition {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
-    pub report_name: ::std::option::Option<::std::string::String>,
+    pub report_name: ::std::string::String,
     /// <p>The length of time covered by the report. </p>
-    pub time_unit: ::std::option::Option<crate::types::TimeUnit>,
+    pub time_unit: crate::types::TimeUnit,
     /// <p>The format that AWS saves the report in.</p>
-    pub format: ::std::option::Option<crate::types::ReportFormat>,
+    pub format: crate::types::ReportFormat,
     /// <p>The compression format that AWS uses for the report.</p>
-    pub compression: ::std::option::Option<crate::types::CompressionFormat>,
+    pub compression: crate::types::CompressionFormat,
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-    pub additional_schema_elements: ::std::option::Option<::std::vec::Vec<crate::types::SchemaElement>>,
+    pub additional_schema_elements: ::std::vec::Vec<crate::types::SchemaElement>,
     /// <p>The S3 bucket where AWS delivers the report.</p>
-    pub s3_bucket: ::std::option::Option<::std::string::String>,
+    pub s3_bucket: ::std::string::String,
     /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
-    pub s3_prefix: ::std::option::Option<::std::string::String>,
+    pub s3_prefix: ::std::string::String,
     /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
-    pub s3_region: ::std::option::Option<crate::types::AwsRegion>,
+    pub s3_region: crate::types::AwsRegion,
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
     pub additional_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalArtifact>>,
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
@@ -31,40 +31,46 @@ pub struct ReportDefinition {
 }
 impl ReportDefinition {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
-    pub fn report_name(&self) -> ::std::option::Option<&str> {
-        self.report_name.as_deref()
+    pub fn report_name(&self) -> &str {
+        use std::ops::Deref;
+        self.report_name.deref()
     }
     /// <p>The length of time covered by the report. </p>
-    pub fn time_unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
-        self.time_unit.as_ref()
+    pub fn time_unit(&self) -> &crate::types::TimeUnit {
+        &self.time_unit
     }
     /// <p>The format that AWS saves the report in.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::ReportFormat> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::ReportFormat {
+        &self.format
     }
     /// <p>The compression format that AWS uses for the report.</p>
-    pub fn compression(&self) -> ::std::option::Option<&crate::types::CompressionFormat> {
-        self.compression.as_ref()
+    pub fn compression(&self) -> &crate::types::CompressionFormat {
+        &self.compression
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-    pub fn additional_schema_elements(&self) -> ::std::option::Option<&[crate::types::SchemaElement]> {
-        self.additional_schema_elements.as_deref()
+    pub fn additional_schema_elements(&self) -> &[crate::types::SchemaElement] {
+        use std::ops::Deref;
+        self.additional_schema_elements.deref()
     }
     /// <p>The S3 bucket where AWS delivers the report.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
-        self.s3_bucket.as_deref()
+    pub fn s3_bucket(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_bucket.deref()
     }
     /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
-    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
-        self.s3_prefix.as_deref()
+    pub fn s3_prefix(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_prefix.deref()
     }
     /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
-    pub fn s3_region(&self) -> ::std::option::Option<&crate::types::AwsRegion> {
-        self.s3_region.as_ref()
+    pub fn s3_region(&self) -> &crate::types::AwsRegion {
+        &self.s3_region
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub fn additional_artifacts(&self) -> ::std::option::Option<&[crate::types::AdditionalArtifact]> {
-        self.additional_artifacts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_artifacts.is_none()`.
+    pub fn additional_artifacts(&self) -> &[crate::types::AdditionalArtifact] {
+        self.additional_artifacts.as_deref().unwrap_or_default()
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
     pub fn refresh_closed_reports(&self) -> ::std::option::Option<bool> {
@@ -105,6 +111,7 @@ pub struct ReportDefinitionBuilder {
 }
 impl ReportDefinitionBuilder {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    /// This field is required.
     pub fn report_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.report_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +126,7 @@ impl ReportDefinitionBuilder {
         &self.report_name
     }
     /// <p>The length of time covered by the report. </p>
+    /// This field is required.
     pub fn time_unit(mut self, input: crate::types::TimeUnit) -> Self {
         self.time_unit = ::std::option::Option::Some(input);
         self
@@ -133,6 +141,7 @@ impl ReportDefinitionBuilder {
         &self.time_unit
     }
     /// <p>The format that AWS saves the report in.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::ReportFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -147,6 +156,7 @@ impl ReportDefinitionBuilder {
         &self.format
     }
     /// <p>The compression format that AWS uses for the report.</p>
+    /// This field is required.
     pub fn compression(mut self, input: crate::types::CompressionFormat) -> Self {
         self.compression = ::std::option::Option::Some(input);
         self
@@ -181,6 +191,7 @@ impl ReportDefinitionBuilder {
         &self.additional_schema_elements
     }
     /// <p>The S3 bucket where AWS delivers the report.</p>
+    /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
@@ -195,6 +206,7 @@ impl ReportDefinitionBuilder {
         &self.s3_bucket
     }
     /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
+    /// This field is required.
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_prefix = ::std::option::Option::Some(input.into());
         self
@@ -209,6 +221,7 @@ impl ReportDefinitionBuilder {
         &self.s3_prefix
     }
     /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
+    /// This field is required.
     pub fn s3_region(mut self, input: crate::types::AwsRegion) -> Self {
         self.s3_region = ::std::option::Option::Some(input);
         self
@@ -285,20 +298,69 @@ impl ReportDefinitionBuilder {
         &self.billing_view_arn
     }
     /// Consumes the builder and constructs a [`ReportDefinition`](crate::types::ReportDefinition).
-    pub fn build(self) -> crate::types::ReportDefinition {
-        crate::types::ReportDefinition {
-            report_name: self.report_name,
-            time_unit: self.time_unit,
-            format: self.format,
-            compression: self.compression,
-            additional_schema_elements: self.additional_schema_elements,
-            s3_bucket: self.s3_bucket,
-            s3_prefix: self.s3_prefix,
-            s3_region: self.s3_region,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`report_name`](crate::types::builders::ReportDefinitionBuilder::report_name)
+    /// - [`time_unit`](crate::types::builders::ReportDefinitionBuilder::time_unit)
+    /// - [`format`](crate::types::builders::ReportDefinitionBuilder::format)
+    /// - [`compression`](crate::types::builders::ReportDefinitionBuilder::compression)
+    /// - [`additional_schema_elements`](crate::types::builders::ReportDefinitionBuilder::additional_schema_elements)
+    /// - [`s3_bucket`](crate::types::builders::ReportDefinitionBuilder::s3_bucket)
+    /// - [`s3_prefix`](crate::types::builders::ReportDefinitionBuilder::s3_prefix)
+    /// - [`s3_region`](crate::types::builders::ReportDefinitionBuilder::s3_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportDefinition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ReportDefinition {
+            report_name: self.report_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "report_name",
+                    "report_name was not specified but it is required when building ReportDefinition",
+                )
+            })?,
+            time_unit: self.time_unit.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_unit",
+                    "time_unit was not specified but it is required when building ReportDefinition",
+                )
+            })?,
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building ReportDefinition",
+                )
+            })?,
+            compression: self.compression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "compression",
+                    "compression was not specified but it is required when building ReportDefinition",
+                )
+            })?,
+            additional_schema_elements: self.additional_schema_elements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "additional_schema_elements",
+                    "additional_schema_elements was not specified but it is required when building ReportDefinition",
+                )
+            })?,
+            s3_bucket: self.s3_bucket.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_bucket",
+                    "s3_bucket was not specified but it is required when building ReportDefinition",
+                )
+            })?,
+            s3_prefix: self.s3_prefix.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_prefix",
+                    "s3_prefix was not specified but it is required when building ReportDefinition",
+                )
+            })?,
+            s3_region: self.s3_region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_region",
+                    "s3_region was not specified but it is required when building ReportDefinition",
+                )
+            })?,
             additional_artifacts: self.additional_artifacts,
             refresh_closed_reports: self.refresh_closed_reports,
             report_versioning: self.report_versioning,
             billing_view_arn: self.billing_view_arn,
-        }
+        })
     }
 }

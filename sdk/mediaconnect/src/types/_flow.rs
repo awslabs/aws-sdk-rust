@@ -47,24 +47,30 @@ impl Flow {
         self.egress_ip.as_deref()
     }
     /// The entitlements in this flow.
-    pub fn entitlements(&self) -> ::std::option::Option<&[crate::types::Entitlement]> {
-        self.entitlements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
+    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
+        self.entitlements.as_deref().unwrap_or_default()
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
-    pub fn media_streams(&self) -> ::std::option::Option<&[crate::types::MediaStream]> {
-        self.media_streams.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_streams.is_none()`.
+    pub fn media_streams(&self) -> &[crate::types::MediaStream] {
+        self.media_streams.as_deref().unwrap_or_default()
     }
     /// The name of the flow.
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The outputs in this flow.
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// The settings for the source of the flow.
     pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
@@ -75,16 +81,20 @@ impl Flow {
         self.source_failover_config.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sources(&self) -> ::std::option::Option<&[crate::types::Source]> {
-        self.sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
+    pub fn sources(&self) -> &[crate::types::Source] {
+        self.sources.as_deref().unwrap_or_default()
     }
     /// The current status of the flow.
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// The VPC Interfaces for this flow.
-    pub fn vpc_interfaces(&self) -> ::std::option::Option<&[crate::types::VpcInterface]> {
-        self.vpc_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_interfaces.is_none()`.
+    pub fn vpc_interfaces(&self) -> &[crate::types::VpcInterface] {
+        self.vpc_interfaces.as_deref().unwrap_or_default()
     }
     /// The maintenance setting of a flow
     pub fn maintenance(&self) -> ::std::option::Option<&crate::types::Maintenance> {
@@ -119,6 +129,7 @@ pub struct FlowBuilder {
 }
 impl FlowBuilder {
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
+    /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
@@ -181,6 +192,7 @@ impl FlowBuilder {
         &self.entitlements
     }
     /// The Amazon Resource Name (ARN) of the flow.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -215,6 +227,7 @@ impl FlowBuilder {
         &self.media_streams
     }
     /// The name of the flow.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -249,6 +262,7 @@ impl FlowBuilder {
         &self.outputs
     }
     /// The settings for the source of the flow.
+    /// This field is required.
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -296,6 +310,7 @@ impl FlowBuilder {
         &self.sources
     }
     /// The current status of the flow.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

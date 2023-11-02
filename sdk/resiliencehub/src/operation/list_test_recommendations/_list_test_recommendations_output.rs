@@ -6,7 +6,7 @@ pub struct ListTestRecommendationsOutput {
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub test_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>>,
+    pub test_recommendations: ::std::vec::Vec<crate::types::TestRecommendation>,
     _request_id: Option<String>,
 }
 impl ListTestRecommendationsOutput {
@@ -15,8 +15,9 @@ impl ListTestRecommendationsOutput {
         self.next_token.as_deref()
     }
     /// <p>The test recommendations for the Resilience Hub application.</p>
-    pub fn test_recommendations(&self) -> ::std::option::Option<&[crate::types::TestRecommendation]> {
-        self.test_recommendations.as_deref()
+    pub fn test_recommendations(&self) -> &[crate::types::TestRecommendation] {
+        use std::ops::Deref;
+        self.test_recommendations.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListTestRecommendationsOutput {
@@ -84,11 +85,23 @@ impl ListTestRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTestRecommendationsOutput`](crate::operation::list_test_recommendations::ListTestRecommendationsOutput).
-    pub fn build(self) -> crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
-        crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`test_recommendations`](crate::operation::list_test_recommendations::builders::ListTestRecommendationsOutputBuilder::test_recommendations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_test_recommendations::ListTestRecommendationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
             next_token: self.next_token,
-            test_recommendations: self.test_recommendations,
+            test_recommendations: self.test_recommendations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "test_recommendations",
+                    "test_recommendations was not specified but it is required when building ListTestRecommendationsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

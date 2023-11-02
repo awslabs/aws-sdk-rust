@@ -11,8 +11,10 @@ pub struct ListSimulationsOutput {
 }
 impl ListSimulationsOutput {
     /// <p>The list of simulations.</p>
-    pub fn simulations(&self) -> ::std::option::Option<&[crate::types::SimulationMetadata]> {
-        self.simulations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.simulations.is_none()`.
+    pub fn simulations(&self) -> &[crate::types::SimulationMetadata] {
+        self.simulations.as_deref().unwrap_or_default()
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

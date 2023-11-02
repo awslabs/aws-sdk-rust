@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub name: ::std::option::Option<crate::types::ImportFilterName>,
+    pub name: crate::types::ImportFilterName,
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
-    pub operator: ::std::option::Option<crate::types::ImportFilterOperator>,
+    pub operator: crate::types::ImportFilterOperator,
 }
 impl ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ImportFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ImportFilterName {
+        &self.name
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::ImportFilterOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::ImportFilterOperator {
+        &self.operator
     }
 }
 impl ImportFilter {
@@ -42,6 +43,7 @@ pub struct ImportFilterBuilder {
 }
 impl ImportFilterBuilder {
     /// <p>The name of the field to use for filtering.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ImportFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -76,6 +78,7 @@ impl ImportFilterBuilder {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::ImportFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -90,11 +93,30 @@ impl ImportFilterBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`ImportFilter`](crate::types::ImportFilter).
-    pub fn build(self) -> crate::types::ImportFilter {
-        crate::types::ImportFilter {
-            name: self.name,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ImportFilterBuilder::name)
+    /// - [`values`](crate::types::builders::ImportFilterBuilder::values)
+    /// - [`operator`](crate::types::builders::ImportFilterBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ImportFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ImportFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building ImportFilter",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building ImportFilter",
+                )
+            })?,
+        })
     }
 }

@@ -11,8 +11,10 @@ pub struct ListProtocolsListsOutput {
 }
 impl ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
-    pub fn protocols_lists(&self) -> ::std::option::Option<&[crate::types::ProtocolsListDataSummary]> {
-        self.protocols_lists.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols_lists.is_none()`.
+    pub fn protocols_lists(&self) -> &[crate::types::ProtocolsListDataSummary] {
+        self.protocols_lists.as_deref().unwrap_or_default()
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

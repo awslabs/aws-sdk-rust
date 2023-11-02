@@ -34,6 +34,7 @@ pub struct EnableOrganizationAdminAccountInputBuilder {
 }
 impl EnableOrganizationAdminAccountInputBuilder {
     /// <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
+    /// This field is required.
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self

@@ -11,7 +11,7 @@ pub struct ListPrefetchSchedulesInput {
     /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub playback_configuration_name: ::std::option::Option<::std::string::String>,
+    pub playback_configuration_name: ::std::string::String,
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
@@ -28,8 +28,9 @@ impl ListPrefetchSchedulesInput {
         self.next_token.as_deref()
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
-        self.playback_configuration_name.as_deref()
+    pub fn playback_configuration_name(&self) -> &str {
+        use std::ops::Deref;
+        self.playback_configuration_name.deref()
     }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub fn stream_id(&self) -> ::std::option::Option<&str> {
@@ -91,6 +92,7 @@ impl ListPrefetchSchedulesInputBuilder {
         &self.next_token
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
+    /// This field is required.
     pub fn playback_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_configuration_name = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +121,8 @@ impl ListPrefetchSchedulesInputBuilder {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`playback_configuration_name`](crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder::playback_configuration_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, ::aws_smithy_http::operation::error::BuildError>
@@ -126,7 +130,12 @@ impl ListPrefetchSchedulesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput {
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,
-            playback_configuration_name: self.playback_configuration_name,
+            playback_configuration_name: self.playback_configuration_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "playback_configuration_name",
+                    "playback_configuration_name was not specified but it is required when building ListPrefetchSchedulesInput",
+                )
+            })?,
             stream_id: self.stream_id,
         })
     }

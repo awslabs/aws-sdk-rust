@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Limits {
     #[allow(missing_docs)] // documentation missing in model
-    pub maximum_replication_count: ::std::option::Option<i32>,
+    pub maximum_replication_count: i32,
     #[allow(missing_docs)] // documentation missing in model
-    pub maximum_partition_count: ::std::option::Option<i32>,
+    pub maximum_partition_count: i32,
 }
 impl Limits {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn maximum_replication_count(&self) -> ::std::option::Option<i32> {
+    pub fn maximum_replication_count(&self) -> i32 {
         self.maximum_replication_count
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn maximum_partition_count(&self) -> ::std::option::Option<i32> {
+    pub fn maximum_partition_count(&self) -> i32 {
         self.maximum_partition_count
     }
 }
@@ -34,6 +34,7 @@ pub struct LimitsBuilder {
 }
 impl LimitsBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn maximum_replication_count(mut self, input: i32) -> Self {
         self.maximum_replication_count = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl LimitsBuilder {
         &self.maximum_replication_count
     }
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn maximum_partition_count(mut self, input: i32) -> Self {
         self.maximum_partition_count = ::std::option::Option::Some(input);
         self
@@ -62,10 +64,23 @@ impl LimitsBuilder {
         &self.maximum_partition_count
     }
     /// Consumes the builder and constructs a [`Limits`](crate::types::Limits).
-    pub fn build(self) -> crate::types::Limits {
-        crate::types::Limits {
-            maximum_replication_count: self.maximum_replication_count,
-            maximum_partition_count: self.maximum_partition_count,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`maximum_replication_count`](crate::types::builders::LimitsBuilder::maximum_replication_count)
+    /// - [`maximum_partition_count`](crate::types::builders::LimitsBuilder::maximum_partition_count)
+    pub fn build(self) -> ::std::result::Result<crate::types::Limits, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Limits {
+            maximum_replication_count: self.maximum_replication_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "maximum_replication_count",
+                    "maximum_replication_count was not specified but it is required when building Limits",
+                )
+            })?,
+            maximum_partition_count: self.maximum_partition_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "maximum_partition_count",
+                    "maximum_partition_count was not specified but it is required when building Limits",
+                )
+            })?,
+        })
     }
 }

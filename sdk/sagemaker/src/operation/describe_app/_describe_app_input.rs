@@ -55,6 +55,7 @@ pub struct DescribeAppInputBuilder {
 }
 impl DescribeAppInputBuilder {
     /// <p>The domain ID.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl DescribeAppInputBuilder {
         &self.user_profile_name
     }
     /// <p>The type of app.</p>
+    /// This field is required.
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
         self
@@ -97,6 +99,7 @@ impl DescribeAppInputBuilder {
         &self.app_type
     }
     /// <p>The name of the app.</p>
+    /// This field is required.
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_name = ::std::option::Option::Some(input.into());
         self

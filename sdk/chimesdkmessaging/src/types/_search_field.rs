@@ -5,28 +5,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchField {
     /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
-    pub key: ::std::option::Option<crate::types::SearchFieldKey>,
+    pub key: crate::types::SearchFieldKey,
     /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
-    pub operator: ::std::option::Option<crate::types::SearchFieldOperator>,
+    pub operator: crate::types::SearchFieldOperator,
 }
 impl SearchField {
     /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::SearchFieldKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::SearchFieldKey {
+        &self.key
     }
     /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
     /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
     /// </note>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::SearchFieldOperator> {
-        self.operator.as_ref()
+    pub fn operator(&self) -> &crate::types::SearchFieldOperator {
+        &self.operator
     }
 }
 impl SearchField {
@@ -46,6 +47,7 @@ pub struct SearchFieldBuilder {
 }
 impl SearchFieldBuilder {
     /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::SearchFieldKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -86,6 +88,7 @@ impl SearchFieldBuilder {
         &self.values
     }
     /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
+    /// This field is required.
     pub fn operator(mut self, input: crate::types::SearchFieldOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
@@ -100,11 +103,30 @@ impl SearchFieldBuilder {
         &self.operator
     }
     /// Consumes the builder and constructs a [`SearchField`](crate::types::SearchField).
-    pub fn build(self) -> crate::types::SearchField {
-        crate::types::SearchField {
-            key: self.key,
-            values: self.values,
-            operator: self.operator,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::SearchFieldBuilder::key)
+    /// - [`values`](crate::types::builders::SearchFieldBuilder::values)
+    /// - [`operator`](crate::types::builders::SearchFieldBuilder::operator)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchField, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchField {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building SearchField",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building SearchField",
+                )
+            })?,
+            operator: self.operator.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "operator",
+                    "operator was not specified but it is required when building SearchField",
+                )
+            })?,
+        })
     }
 }

@@ -3,60 +3,60 @@ pub fn ser_remediation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RemediationConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.config_rule_name {
-        object.key("ConfigRuleName").string(var_1.as_str());
+    {
+        object.key("ConfigRuleName").string(input.config_rule_name.as_str());
     }
-    if let Some(var_2) = &input.target_type {
-        object.key("TargetType").string(var_2.as_str());
+    {
+        object.key("TargetType").string(input.target_type.as_str());
     }
-    if let Some(var_3) = &input.target_id {
-        object.key("TargetId").string(var_3.as_str());
+    {
+        object.key("TargetId").string(input.target_id.as_str());
     }
-    if let Some(var_4) = &input.target_version {
-        object.key("TargetVersion").string(var_4.as_str());
+    if let Some(var_1) = &input.target_version {
+        object.key("TargetVersion").string(var_1.as_str());
     }
-    if let Some(var_5) = &input.parameters {
+    if let Some(var_2) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Parameters").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_3 = object.key("Parameters").start_object();
+        for (key_4, value_5) in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_remediation_parameter_value::ser_remediation_parameter_value(&mut object_9, value_8)?;
-                object_9.finish();
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
+                crate::protocol_serde::shape_remediation_parameter_value::ser_remediation_parameter_value(&mut object_6, value_5)?;
+                object_6.finish();
             }
         }
-        object_6.finish();
+        object_3.finish();
     }
-    if let Some(var_10) = &input.resource_type {
-        object.key("ResourceType").string(var_10.as_str());
+    if let Some(var_7) = &input.resource_type {
+        object.key("ResourceType").string(var_7.as_str());
     }
     if input.automatic {
         object.key("Automatic").boolean(input.automatic);
     }
-    if let Some(var_11) = &input.execution_controls {
+    if let Some(var_8) = &input.execution_controls {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("ExecutionControls").start_object();
-        crate::protocol_serde::shape_execution_controls::ser_execution_controls(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_9 = object.key("ExecutionControls").start_object();
+        crate::protocol_serde::shape_execution_controls::ser_execution_controls(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_13) = &input.maximum_automatic_attempts {
+    if let Some(var_10) = &input.maximum_automatic_attempts {
         object.key("MaximumAutomaticAttempts").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_14) = &input.retry_attempt_seconds {
+    if let Some(var_11) = &input.retry_attempt_seconds {
         object.key("RetryAttemptSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_15) = &input.arn {
-        object.key("Arn").string(var_15.as_str());
+    if let Some(var_12) = &input.arn {
+        object.key("Arn").string(var_12.as_str());
     }
-    if let Some(var_16) = &input.created_by_service {
-        object.key("CreatedByService").string(var_16.as_str());
+    if let Some(var_13) = &input.created_by_service {
+        object.key("CreatedByService").string(var_13.as_str());
     }
     Ok(())
 }
@@ -158,7 +158,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::remediation_configuration_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

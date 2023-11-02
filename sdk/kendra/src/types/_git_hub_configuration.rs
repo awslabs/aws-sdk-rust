@@ -14,7 +14,7 @@ pub struct GitHubConfiguration {
     /// <ul>
     /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
     /// </ul>
-    pub secret_arn: ::std::option::Option<::std::string::String>,
+    pub secret_arn: ::std::string::String,
     /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
     pub use_change_log: bool,
     /// <p>Configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
@@ -72,8 +72,9 @@ impl GitHubConfiguration {
     /// <ul>
     /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
     /// </ul>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
-        self.secret_arn.as_deref()
+    pub fn secret_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.secret_arn.deref()
     }
     /// <p> <code>TRUE</code> to use the GitHub change log to determine which documents require updating in the index. Depending on the GitHub change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in GitHub.</p>
     pub fn use_change_log(&self) -> bool {
@@ -84,72 +85,104 @@ impl GitHubConfiguration {
         self.git_hub_document_crawl_properties.as_ref()
     }
     /// <p>A list of names of the specific repositories you want to index.</p>
-    pub fn repository_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.repository_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_filter.is_none()`.
+    pub fn repository_filter(&self) -> &[::std::string::String] {
+        self.repository_filter.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to include certain folder names in your GitHub repository or repositories. Folder names that match the patterns are included in the index. Folder names that don't match the patterns are excluded from the index. If a folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
-    pub fn inclusion_folder_name_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_folder_name_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_folder_name_patterns.is_none()`.
+    pub fn inclusion_folder_name_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_folder_name_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to include certain file types in your GitHub repository or repositories. File types that match the patterns are included in the index. File types that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_file_type_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_file_type_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_file_type_patterns.is_none()`.
+    pub fn inclusion_file_type_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_file_type_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to include certain file names in your GitHub repository or repositories. File names that match the patterns are included in the index. File names that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_file_name_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_file_name_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_file_name_patterns.is_none()`.
+    pub fn inclusion_file_name_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_file_name_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain folder names in your GitHub repository or repositories. Folder names that match the patterns are excluded from the index. Folder names that don't match the patterns are included in the index. If a folder matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the folder isn't included in the index.</p>
-    pub fn exclusion_folder_name_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_folder_name_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_folder_name_patterns.is_none()`.
+    pub fn exclusion_folder_name_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_folder_name_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain file types in your GitHub repository or repositories. File types that match the patterns are excluded from the index. File types that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_file_type_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_file_type_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_file_type_patterns.is_none()`.
+    pub fn exclusion_file_type_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_file_type_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain file names in your GitHub repository or repositories. File names that match the patterns are excluded from the index. File names that don't match the patterns are included in the index. If a file matches both an exclusion and inclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_file_name_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_file_name_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_file_name_patterns.is_none()`.
+    pub fn exclusion_file_name_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_file_name_patterns.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information of an Amazon Virtual Private Cloud to connect to your GitHub. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_repository_configuration_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_repository_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_repository_configuration_field_mappings.is_none()`.
+    pub fn git_hub_repository_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_repository_configuration_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub commits to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_commit_configuration_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_commit_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_commit_configuration_field_mappings.is_none()`.
+    pub fn git_hub_commit_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_commit_configuration_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_issue_document_configuration_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_issue_document_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_issue_document_configuration_field_mappings.is_none()`.
+    pub fn git_hub_issue_document_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_issue_document_configuration_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_issue_comment_configuration_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_issue_comment_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_issue_comment_configuration_field_mappings.is_none()`.
+    pub fn git_hub_issue_comment_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_issue_comment_configuration_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub issue attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_issue_attachment_configuration_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_issue_attachment_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_issue_attachment_configuration_field_mappings.is_none()`.
+    pub fn git_hub_issue_attachment_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_issue_attachment_configuration_field_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_pull_request_comment_configuration_field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_pull_request_comment_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_pull_request_comment_configuration_field_mappings.is_none()`.
+    pub fn git_hub_pull_request_comment_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_pull_request_comment_configuration_field_mappings
+            .as_deref()
+            .unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull requests to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_pull_request_document_configuration_field_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_pull_request_document_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_pull_request_document_configuration_field_mappings.is_none()`.
+    pub fn git_hub_pull_request_document_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_pull_request_document_configuration_field_mappings
+            .as_deref()
+            .unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of GitHub pull request attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The GitHub data source field names must exist in your GitHub custom metadata.</p>
-    pub fn git_hub_pull_request_document_attachment_configuration_field_mappings(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.git_hub_pull_request_document_attachment_configuration_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.git_hub_pull_request_document_attachment_configuration_field_mappings.is_none()`.
+    pub fn git_hub_pull_request_document_attachment_configuration_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.git_hub_pull_request_document_attachment_configuration_field_mappings
+            .as_deref()
+            .unwrap_or_default()
     }
 }
 impl GitHubConfiguration {
@@ -239,6 +272,7 @@ impl GitHubConfigurationBuilder {
     /// <ul>
     /// <li> <p>personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
@@ -646,12 +680,19 @@ impl GitHubConfigurationBuilder {
         &self.git_hub_pull_request_document_attachment_configuration_field_mappings
     }
     /// Consumes the builder and constructs a [`GitHubConfiguration`](crate::types::GitHubConfiguration).
-    pub fn build(self) -> crate::types::GitHubConfiguration {
-        crate::types::GitHubConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`secret_arn`](crate::types::builders::GitHubConfigurationBuilder::secret_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::GitHubConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GitHubConfiguration {
             saa_s_configuration: self.saa_s_configuration,
             on_premise_configuration: self.on_premise_configuration,
             r#type: self.r#type,
-            secret_arn: self.secret_arn,
+            secret_arn: self.secret_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "secret_arn",
+                    "secret_arn was not specified but it is required when building GitHubConfiguration",
+                )
+            })?,
             use_change_log: self.use_change_log.unwrap_or_default(),
             git_hub_document_crawl_properties: self.git_hub_document_crawl_properties,
             repository_filter: self.repository_filter,
@@ -671,6 +712,6 @@ impl GitHubConfigurationBuilder {
             git_hub_pull_request_document_configuration_field_mappings: self.git_hub_pull_request_document_configuration_field_mappings,
             git_hub_pull_request_document_attachment_configuration_field_mappings: self
                 .git_hub_pull_request_document_attachment_configuration_field_mappings,
-        }
+        })
     }
 }

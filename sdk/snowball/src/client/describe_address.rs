@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAddress`](crate::operation::describe_address::builders::DescribeAddressFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`address_id(impl Into<String>)`](crate::operation::describe_address::builders::DescribeAddressFluentBuilder::address_id) / [`set_address_id(Option<String>)`](crate::operation::describe_address::builders::DescribeAddressFluentBuilder::set_address_id): <p>The automatically generated ID for a specific address.</p>
+    ///   - [`address_id(impl Into<String>)`](crate::operation::describe_address::builders::DescribeAddressFluentBuilder::address_id) / [`set_address_id(Option<String>)`](crate::operation::describe_address::builders::DescribeAddressFluentBuilder::set_address_id):<br>required: **true**<br><p>The automatically generated ID for a specific address.</p><br>
     /// - On success, responds with [`DescribeAddressOutput`](crate::operation::describe_address::DescribeAddressOutput) with field(s):
     ///   - [`address(Option<Address>)`](crate::operation::describe_address::DescribeAddressOutput::address): <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
     /// - On failure, responds with [`SdkError<DescribeAddressError>`](crate::operation::describe_address::DescribeAddressError)

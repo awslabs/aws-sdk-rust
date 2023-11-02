@@ -28,6 +28,7 @@ pub struct DescribeReservationInputBuilder {
 }
 impl DescribeReservationInputBuilder {
     /// Unique reservation ID, e.g. '1234567'
+    /// This field is required.
     pub fn reservation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reservation_id = ::std::option::Option::Some(input.into());
         self

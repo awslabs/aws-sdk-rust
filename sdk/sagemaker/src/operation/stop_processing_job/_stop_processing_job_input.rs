@@ -27,6 +27,7 @@ pub struct StopProcessingJobInputBuilder {
 }
 impl StopProcessingJobInputBuilder {
     /// <p>The name of the processing job to stop.</p>
+    /// This field is required.
     pub fn processing_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processing_job_name = ::std::option::Option::Some(input.into());
         self

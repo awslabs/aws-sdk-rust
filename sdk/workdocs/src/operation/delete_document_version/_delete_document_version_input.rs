@@ -72,6 +72,7 @@ impl DeleteDocumentVersionInputBuilder {
         &self.authentication_token
     }
     /// <p>The ID of the document associated with the version being deleted.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +87,7 @@ impl DeleteDocumentVersionInputBuilder {
         &self.document_id
     }
     /// <p>The ID of the version being deleted.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +102,7 @@ impl DeleteDocumentVersionInputBuilder {
         &self.version_id
     }
     /// <p>Deletes all versions of a document prior to the current version.</p>
+    /// This field is required.
     pub fn delete_prior_versions(mut self, input: bool) -> Self {
         self.delete_prior_versions = ::std::option::Option::Some(input);
         self

@@ -144,7 +144,9 @@ pub fn de_list_unsupported_app_version_resources_http_response(
             crate::protocol_serde::shape_list_unsupported_app_version_resources::de_list_unsupported_app_version_resources(_response_body, output)
                 .map_err(crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_unsupported_app_version_resources_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError::unhandled)?
     })
 }
 

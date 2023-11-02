@@ -41,6 +41,7 @@ pub struct PostCommentReplyInputBuilder {
 }
 impl PostCommentReplyInputBuilder {
     /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    /// This field is required.
     pub fn in_reply_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.in_reply_to = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl PostCommentReplyInputBuilder {
         &self.client_request_token
     }
     /// <p>The contents of your reply to a comment.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self

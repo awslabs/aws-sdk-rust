@@ -7,7 +7,7 @@ pub struct WorkerConfiguration {
     /// <p>The revision of the worker configuration.</p>
     pub revision: i64,
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub worker_configuration_arn: ::std::string::String,
 }
 impl WorkerConfiguration {
     /// <p>The revision of the worker configuration.</p>
@@ -15,8 +15,9 @@ impl WorkerConfiguration {
         self.revision
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
-    pub fn worker_configuration_arn(&self) -> ::std::option::Option<&str> {
-        self.worker_configuration_arn.as_deref()
+    pub fn worker_configuration_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.worker_configuration_arn.deref()
     }
 }
 impl WorkerConfiguration {
@@ -35,6 +36,7 @@ pub struct WorkerConfigurationBuilder {
 }
 impl WorkerConfigurationBuilder {
     /// <p>The revision of the worker configuration.</p>
+    /// This field is required.
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl WorkerConfigurationBuilder {
         &self.revision
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
+    /// This field is required.
     pub fn worker_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_configuration_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,17 @@ impl WorkerConfigurationBuilder {
         &self.worker_configuration_arn
     }
     /// Consumes the builder and constructs a [`WorkerConfiguration`](crate::types::WorkerConfiguration).
-    pub fn build(self) -> crate::types::WorkerConfiguration {
-        crate::types::WorkerConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`worker_configuration_arn`](crate::types::builders::WorkerConfigurationBuilder::worker_configuration_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkerConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkerConfiguration {
             revision: self.revision.unwrap_or_default(),
-            worker_configuration_arn: self.worker_configuration_arn,
-        }
+            worker_configuration_arn: self.worker_configuration_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "worker_configuration_arn",
+                    "worker_configuration_arn was not specified but it is required when building WorkerConfiguration",
+                )
+            })?,
+        })
     }
 }

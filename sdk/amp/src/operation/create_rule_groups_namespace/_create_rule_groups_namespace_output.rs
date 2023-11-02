@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// The status of rule groups namespace.
     pub status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     /// The tags of this rule groups namespace.
@@ -16,12 +16,14 @@ pub struct CreateRuleGroupsNamespaceOutput {
 }
 impl CreateRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// The status of rule groups namespace.
     pub fn status(&self) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceStatus> {
@@ -56,6 +58,7 @@ pub struct CreateRuleGroupsNamespaceOutputBuilder {
 }
 impl CreateRuleGroupsNamespaceOutputBuilder {
     /// The rule groups namespace name.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl CreateRuleGroupsNamespaceOutputBuilder {
         &self.name
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +88,7 @@ impl CreateRuleGroupsNamespaceOutputBuilder {
         &self.arn
     }
     /// The status of rule groups namespace.
+    /// This field is required.
     pub fn status(mut self, input: crate::types::RuleGroupsNamespaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -127,13 +132,31 @@ impl CreateRuleGroupsNamespaceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateRuleGroupsNamespaceOutput`](crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput).
-    pub fn build(self) -> crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput {
-        crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput {
-            name: self.name,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceOutputBuilder::name)
+    /// - [`arn`](crate::operation::create_rule_groups_namespace::builders::CreateRuleGroupsNamespaceOutputBuilder::arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateRuleGroupsNamespaceOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building CreateRuleGroupsNamespaceOutput",
+                )
+            })?,
             status: self.status,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }

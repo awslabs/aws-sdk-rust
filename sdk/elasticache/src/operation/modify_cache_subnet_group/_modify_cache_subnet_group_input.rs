@@ -25,8 +25,10 @@ impl ModifyCacheSubnetGroupInput {
         self.cache_subnet_group_description.as_deref()
     }
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
 }
 impl ModifyCacheSubnetGroupInput {
@@ -48,6 +50,7 @@ impl ModifyCacheSubnetGroupInputBuilder {
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code> </p>
+    /// This field is required.
     pub fn cache_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_subnet_group_name = ::std::option::Option::Some(input.into());
         self

@@ -38,8 +38,8 @@ pub fn de_describe_organization_conformance_pack_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidNextTokenException" => crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::InvalidNextTokenException({
@@ -54,8 +54,8 @@ pub fn de_describe_organization_conformance_pack_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NoSuchOrganizationConformancePackException" => crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::NoSuchOrganizationConformancePackException({
@@ -70,8 +70,8 @@ pub fn de_describe_organization_conformance_pack_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "OrganizationAccessDeniedException" => crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::OrganizationAccessDeniedException({
@@ -86,8 +86,8 @@ pub fn de_describe_organization_conformance_pack_statuses_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::generic(generic)

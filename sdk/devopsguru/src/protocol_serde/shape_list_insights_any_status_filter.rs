@@ -3,14 +3,14 @@ pub fn ser_list_insights_any_status_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListInsightsAnyStatusFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    {
+        object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.start_time_range {
+    if let Some(var_1) = &input.start_time_range {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("StartTimeRange").start_object();
-        crate::protocol_serde::shape_start_time_range::ser_start_time_range(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("StartTimeRange").start_object();
+        crate::protocol_serde::shape_start_time_range::ser_start_time_range(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

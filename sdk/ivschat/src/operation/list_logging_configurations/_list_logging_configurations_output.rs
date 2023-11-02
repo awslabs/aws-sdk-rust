@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLoggingConfigurationsOutput {
     /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub logging_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LoggingConfigurationSummary>>,
+    pub logging_configurations: ::std::vec::Vec<crate::types::LoggingConfigurationSummary>,
     /// <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLoggingConfigurationsOutput {
     /// <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn logging_configurations(&self) -> ::std::option::Option<&[crate::types::LoggingConfigurationSummary]> {
-        self.logging_configurations.as_deref()
+    pub fn logging_configurations(&self) -> &[crate::types::LoggingConfigurationSummary] {
+        use std::ops::Deref;
+        self.logging_configurations.deref()
     }
     /// <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,23 @@ impl ListLoggingConfigurationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListLoggingConfigurationsOutput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
-        crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
-            logging_configurations: self.logging_configurations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`logging_configurations`](crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsOutputBuilder::logging_configurations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput {
+            logging_configurations: self.logging_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "logging_configurations",
+                    "logging_configurations was not specified but it is required when building ListLoggingConfigurationsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

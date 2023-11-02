@@ -26,17 +26,23 @@ impl ConfluenceSpaceConfiguration {
         self.crawl_archived_spaces
     }
     /// <p>A list of space keys for Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are indexed. Spaces that aren't in the list aren't indexed. A space in the list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a space is in both the <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is excluded.</p>
-    pub fn include_spaces(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.include_spaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_spaces.is_none()`.
+    pub fn include_spaces(&self) -> &[::std::string::String] {
+        self.include_spaces.as_deref().unwrap_or_default()
     }
     /// <p>A list of space keys of Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are not indexed. If a space is in both the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the space is excluded.</p>
-    pub fn exclude_spaces(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclude_spaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_spaces.is_none()`.
+    pub fn exclude_spaces(&self) -> &[::std::string::String] {
+        self.exclude_spaces.as_deref().unwrap_or_default()
     }
     /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn space_field_mappings(&self) -> ::std::option::Option<&[crate::types::ConfluenceSpaceToIndexFieldMapping]> {
-        self.space_field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.space_field_mappings.is_none()`.
+    pub fn space_field_mappings(&self) -> &[crate::types::ConfluenceSpaceToIndexFieldMapping] {
+        self.space_field_mappings.as_deref().unwrap_or_default()
     }
 }
 impl ConfluenceSpaceConfiguration {

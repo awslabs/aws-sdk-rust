@@ -34,6 +34,7 @@ pub struct AddInstanceFleetInputBuilder {
 }
 impl AddInstanceFleetInputBuilder {
     /// <p>The unique identifier of the cluster.</p>
+    /// This field is required.
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AddInstanceFleetInputBuilder {
         &self.cluster_id
     }
     /// <p>Specifies the configuration of the instance fleet.</p>
+    /// This field is required.
     pub fn instance_fleet(mut self, input: crate::types::InstanceFleetConfig) -> Self {
         self.instance_fleet = ::std::option::Option::Some(input);
         self

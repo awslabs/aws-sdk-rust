@@ -13,11 +13,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
-    pub workflow_id: ::std::option::Option<::std::string::String>,
+    pub workflow_id: ::std::string::String,
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
-    pub signal_name: ::std::option::Option<::std::string::String>,
+    pub signal_name: ::std::string::String,
     /// <p> The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
@@ -25,16 +25,18 @@ pub struct SignalExternalWorkflowExecutionDecisionAttributes {
 }
 impl SignalExternalWorkflowExecutionDecisionAttributes {
     /// <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
-        self.workflow_id.as_deref()
+    pub fn workflow_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_id.deref()
     }
     /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
     pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p> The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
-    pub fn signal_name(&self) -> ::std::option::Option<&str> {
-        self.signal_name.as_deref()
+    pub fn signal_name(&self) -> &str {
+        use std::ops::Deref;
+        self.signal_name.deref()
     }
     /// <p> The input data to be provided with the signal. The target workflow execution uses the signal name and input data to process the signal.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
@@ -64,6 +66,7 @@ pub struct SignalExternalWorkflowExecutionDecisionAttributesBuilder {
 }
 impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
     /// <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
+    /// This field is required.
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +95,7 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
         &self.run_id
     }
     /// <p> The name of the signal.The target workflow execution uses the signal name and input to process the signal.</p>
+    /// This field is required.
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_name = ::std::option::Option::Some(input.into());
         self
@@ -134,13 +138,28 @@ impl SignalExternalWorkflowExecutionDecisionAttributesBuilder {
         &self.control
     }
     /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::types::SignalExternalWorkflowExecutionDecisionAttributes).
-    pub fn build(self) -> crate::types::SignalExternalWorkflowExecutionDecisionAttributes {
-        crate::types::SignalExternalWorkflowExecutionDecisionAttributes {
-            workflow_id: self.workflow_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_id`](crate::types::builders::SignalExternalWorkflowExecutionDecisionAttributesBuilder::workflow_id)
+    /// - [`signal_name`](crate::types::builders::SignalExternalWorkflowExecutionDecisionAttributesBuilder::signal_name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::SignalExternalWorkflowExecutionDecisionAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SignalExternalWorkflowExecutionDecisionAttributes {
+            workflow_id: self.workflow_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_id",
+                    "workflow_id was not specified but it is required when building SignalExternalWorkflowExecutionDecisionAttributes",
+                )
+            })?,
             run_id: self.run_id,
-            signal_name: self.signal_name,
+            signal_name: self.signal_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "signal_name",
+                    "signal_name was not specified but it is required when building SignalExternalWorkflowExecutionDecisionAttributes",
+                )
+            })?,
             input: self.input,
             control: self.control,
-        }
+        })
     }
 }

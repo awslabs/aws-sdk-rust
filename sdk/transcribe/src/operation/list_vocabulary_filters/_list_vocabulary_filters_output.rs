@@ -15,8 +15,10 @@ impl ListVocabularyFiltersOutput {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    pub fn vocabulary_filters(&self) -> ::std::option::Option<&[crate::types::VocabularyFilterInfo]> {
-        self.vocabulary_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vocabulary_filters.is_none()`.
+    pub fn vocabulary_filters(&self) -> &[crate::types::VocabularyFilterInfo] {
+        self.vocabulary_filters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListVocabularyFiltersOutput {

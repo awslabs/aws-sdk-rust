@@ -28,6 +28,7 @@ pub struct StopReplicationInputBuilder {
 }
 impl StopReplicationInputBuilder {
     /// <p>The Amazon Resource Name of the replication to stop.</p>
+    /// This field is required.
     pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_config_arn = ::std::option::Option::Some(input.into());
         self

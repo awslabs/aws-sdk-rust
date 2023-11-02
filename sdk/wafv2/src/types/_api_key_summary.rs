@@ -16,8 +16,10 @@ pub struct ApiKeySummary {
 }
 impl ApiKeySummary {
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn token_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.token_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.token_domains.is_none()`.
+    pub fn token_domains(&self) -> &[::std::string::String] {
+        self.token_domains.as_deref().unwrap_or_default()
     }
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
     pub fn api_key(&self) -> ::std::option::Option<&str> {

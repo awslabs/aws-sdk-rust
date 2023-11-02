@@ -35,6 +35,7 @@ pub struct UpdateReadinessCheckInputBuilder {
 }
 impl UpdateReadinessCheckInputBuilder {
     /// <p>Name of a readiness check.</p>
+    /// This field is required.
     pub fn readiness_check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateReadinessCheckInputBuilder {
         &self.readiness_check_name
     }
     /// <p>The name of the resource set to be checked.</p>
+    /// This field is required.
     pub fn resource_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_set_name = ::std::option::Option::Some(input.into());
         self

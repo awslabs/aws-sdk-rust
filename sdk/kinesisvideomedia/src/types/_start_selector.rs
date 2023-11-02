@@ -19,7 +19,7 @@ pub struct StartSelector {
     /// </ul> <note>
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
-    pub start_selector_type: ::std::option::Option<crate::types::StartSelectorType>,
+    pub start_selector_type: crate::types::StartSelectorType,
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
     pub after_fragment_number: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with the chunk containing the fragment that has the specified timestamp.</p>
@@ -38,8 +38,8 @@ impl StartSelector {
     /// </ul> <note>
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
-    pub fn start_selector_type(&self) -> ::std::option::Option<&crate::types::StartSelectorType> {
-        self.start_selector_type.as_ref()
+    pub fn start_selector_type(&self) -> &crate::types::StartSelectorType {
+        &self.start_selector_type
     }
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
     pub fn after_fragment_number(&self) -> ::std::option::Option<&str> {
@@ -81,6 +81,7 @@ impl StartSelectorBuilder {
     /// </ul> <note>
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn start_selector_type(mut self, input: crate::types::StartSelectorType) -> Self {
         self.start_selector_type = ::std::option::Option::Some(input);
         self
@@ -155,12 +156,19 @@ impl StartSelectorBuilder {
         &self.continuation_token
     }
     /// Consumes the builder and constructs a [`StartSelector`](crate::types::StartSelector).
-    pub fn build(self) -> crate::types::StartSelector {
-        crate::types::StartSelector {
-            start_selector_type: self.start_selector_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`start_selector_type`](crate::types::builders::StartSelectorBuilder::start_selector_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::StartSelector, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartSelector {
+            start_selector_type: self.start_selector_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "start_selector_type",
+                    "start_selector_type was not specified but it is required when building StartSelector",
+                )
+            })?,
             after_fragment_number: self.after_fragment_number,
             start_timestamp: self.start_timestamp,
             continuation_token: self.continuation_token,
-        }
+        })
     }
 }

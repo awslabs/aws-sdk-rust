@@ -48,6 +48,7 @@ pub struct SearchFacesInputBuilder {
 }
 impl SearchFacesInputBuilder {
     /// <p>ID of the collection the face belongs to.</p>
+    /// This field is required.
     pub fn collection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collection_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl SearchFacesInputBuilder {
         &self.collection_id
     }
     /// <p>ID of a face to find matches for in the collection.</p>
+    /// This field is required.
     pub fn face_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.face_id = ::std::option::Option::Some(input.into());
         self

@@ -37,8 +37,10 @@ impl DescribeScheduledInstanceAvailabilityInput {
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn first_slot_start_time_range(&self) -> ::std::option::Option<&crate::types::SlotDateTimeRangeRequest> {
@@ -136,6 +138,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
         &self.filters
     }
     /// <p>The time period for the first schedule to start.</p>
+    /// This field is required.
     pub fn first_slot_start_time_range(mut self, input: crate::types::SlotDateTimeRangeRequest) -> Self {
         self.first_slot_start_time_range = ::std::option::Option::Some(input);
         self
@@ -206,6 +209,7 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
         &self.next_token
     }
     /// <p>The schedule recurrence.</p>
+    /// This field is required.
     pub fn recurrence(mut self, input: crate::types::ScheduledInstanceRecurrenceRequest) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
         self

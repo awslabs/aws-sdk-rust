@@ -41,6 +41,7 @@ pub struct ListAccountsForParentInputBuilder {
 }
 impl ListAccountsForParentInputBuilder {
     /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
+    /// This field is required.
     pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_id = ::std::option::Option::Some(input.into());
         self

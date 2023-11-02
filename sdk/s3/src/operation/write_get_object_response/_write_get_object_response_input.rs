@@ -397,6 +397,7 @@ pub struct WriteGetObjectResponseInputBuilder {
 }
 impl WriteGetObjectResponseInputBuilder {
     /// <p>Route prefix to the HTTP URL generated.</p>
+    /// This field is required.
     pub fn request_route(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_route = ::std::option::Option::Some(input.into());
         self
@@ -411,6 +412,7 @@ impl WriteGetObjectResponseInputBuilder {
         &self.request_route
     }
     /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
+    /// This field is required.
     pub fn request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token = ::std::option::Option::Some(input.into());
         self

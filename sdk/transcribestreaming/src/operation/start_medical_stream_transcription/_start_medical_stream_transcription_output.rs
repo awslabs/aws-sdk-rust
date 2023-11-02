@@ -343,6 +343,8 @@ impl StartMedicalStreamTranscriptionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionOutput`](crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transcript_result_stream`](crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionOutputBuilder::transcript_result_stream)
     pub fn build(
         self,
     ) -> ::std::result::Result<

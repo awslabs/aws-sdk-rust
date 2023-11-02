@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEarthObservationJob`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Earth Observation job.</p><br>
     /// - On success, responds with [`GetEarthObservationJobOutput`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::name): <p>The name of the Earth Observation job.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::creation_time): <p>The creation time of the initiated Earth Observation job.</p>
-    ///   - [`duration_in_seconds(Option<i32>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::duration_in_seconds): <p>The duration of Earth Observation job, in seconds.</p>
-    ///   - [`status(Option<EarthObservationJobStatus>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::status): <p>The status of a previously initiated Earth Observation job.</p>
+    ///   - [`arn(String)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
+    ///   - [`name(String)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::name): <p>The name of the Earth Observation job.</p>
+    ///   - [`creation_time(DateTime)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::creation_time): <p>The creation time of the initiated Earth Observation job.</p>
+    ///   - [`duration_in_seconds(i32)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::duration_in_seconds): <p>The duration of Earth Observation job, in seconds.</p>
+    ///   - [`status(EarthObservationJobStatus)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::status): <p>The status of a previously initiated Earth Observation job.</p>
     ///   - [`kms_key_id(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::kms_key_id): <p>The Key Management Service key ID for server-side encryption.</p>
     ///   - [`input_config(Option<InputConfigOutput>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::input_config): <p>Input data for the Earth Observation job.</p>
     ///   - [`job_config(Option<JobConfigInput>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::job_config): <p>An object containing information about the job configuration.</p>

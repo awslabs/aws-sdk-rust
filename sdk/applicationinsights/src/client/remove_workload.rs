@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveWorkload`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_group_name(impl Into<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::set_resource_group_name): <p>The name of the resource group.</p>
-    ///   - [`component_name(impl Into<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::set_component_name): <p>The name of the component.</p>
-    ///   - [`workload_id(impl Into<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::set_workload_id): <p>The ID of the workload.</p>
+    ///   - [`resource_group_name(impl Into<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::set_resource_group_name):<br>required: **true**<br><p>The name of the resource group.</p><br>
+    ///   - [`component_name(impl Into<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::set_component_name):<br>required: **true**<br><p>The name of the component.</p><br>
+    ///   - [`workload_id(impl Into<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder::set_workload_id):<br>required: **true**<br><p>The ID of the workload.</p><br>
     /// - On success, responds with [`RemoveWorkloadOutput`](crate::operation::remove_workload::RemoveWorkloadOutput)
     /// - On failure, responds with [`SdkError<RemoveWorkloadError>`](crate::operation::remove_workload::RemoveWorkloadError)
     pub fn remove_workload(&self) -> crate::operation::remove_workload::builders::RemoveWorkloadFluentBuilder {

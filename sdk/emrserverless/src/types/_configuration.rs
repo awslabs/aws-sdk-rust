@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Configuration {
     /// <p>The classification within a configuration.</p>
-    pub classification: ::std::option::Option<::std::string::String>,
+    pub classification: ::std::string::String,
     /// <p>A set of properties specified within a configuration classification.</p>
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
@@ -13,16 +13,19 @@ pub struct Configuration {
 }
 impl Configuration {
     /// <p>The classification within a configuration.</p>
-    pub fn classification(&self) -> ::std::option::Option<&str> {
-        self.classification.as_deref()
+    pub fn classification(&self) -> &str {
+        use std::ops::Deref;
+        self.classification.deref()
     }
     /// <p>A set of properties specified within a configuration classification.</p>
     pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for Configuration {
@@ -51,6 +54,7 @@ pub struct ConfigurationBuilder {
 }
 impl ConfigurationBuilder {
     /// <p>The classification within a configuration.</p>
+    /// This field is required.
     pub fn classification(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.classification = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +109,19 @@ impl ConfigurationBuilder {
         &self.configurations
     }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
-    pub fn build(self) -> crate::types::Configuration {
-        crate::types::Configuration {
-            classification: self.classification,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`classification`](crate::types::builders::ConfigurationBuilder::classification)
+    pub fn build(self) -> ::std::result::Result<crate::types::Configuration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Configuration {
+            classification: self.classification.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "classification",
+                    "classification was not specified but it is required when building Configuration",
+                )
+            })?,
             properties: self.properties,
             configurations: self.configurations,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for ConfigurationBuilder {

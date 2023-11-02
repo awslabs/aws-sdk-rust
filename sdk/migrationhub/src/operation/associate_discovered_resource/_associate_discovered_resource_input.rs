@@ -48,6 +48,7 @@ pub struct AssociateDiscoveredResourceInputBuilder {
 }
 impl AssociateDiscoveredResourceInputBuilder {
     /// <p>The name of the ProgressUpdateStream.</p>
+    /// This field is required.
     pub fn progress_update_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress_update_stream = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl AssociateDiscoveredResourceInputBuilder {
         &self.progress_update_stream
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// This field is required.
     pub fn migration_task_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_task_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +78,7 @@ impl AssociateDiscoveredResourceInputBuilder {
         &self.migration_task_name
     }
     /// <p>Object representing a Resource.</p>
+    /// This field is required.
     pub fn discovered_resource(mut self, input: crate::types::DiscoveredResource) -> Self {
         self.discovered_resource = ::std::option::Option::Some(input);
         self

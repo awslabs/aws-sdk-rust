@@ -15,16 +15,22 @@ pub struct NotificationConfiguration {
 }
 impl NotificationConfiguration {
     /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
-    pub fn topic_configurations(&self) -> ::std::option::Option<&[crate::types::TopicConfiguration]> {
-        self.topic_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_configurations.is_none()`.
+    pub fn topic_configurations(&self) -> &[crate::types::TopicConfiguration] {
+        self.topic_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
-    pub fn queue_configurations(&self) -> ::std::option::Option<&[crate::types::QueueConfiguration]> {
-        self.queue_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_configurations.is_none()`.
+    pub fn queue_configurations(&self) -> &[crate::types::QueueConfiguration] {
+        self.queue_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
-    pub fn lambda_function_configurations(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionConfiguration]> {
-        self.lambda_function_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_configurations.is_none()`.
+    pub fn lambda_function_configurations(&self) -> &[crate::types::LambdaFunctionConfiguration] {
+        self.lambda_function_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
     pub fn event_bridge_configuration(&self) -> ::std::option::Option<&crate::types::EventBridgeConfiguration> {

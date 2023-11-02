@@ -28,6 +28,7 @@ pub struct DescribeBundleInputBuilder {
 }
 impl DescribeBundleInputBuilder {
     /// <p> Unique bundle identifier. </p>
+    /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self

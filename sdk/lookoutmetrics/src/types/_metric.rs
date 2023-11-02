@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metric {
     /// <p>The name of the metric.</p>
-    pub metric_name: ::std::option::Option<::std::string::String>,
+    pub metric_name: ::std::string::String,
     /// <p>The function with which the metric is calculated.</p>
-    pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
+    pub aggregation_function: crate::types::AggregationFunction,
     /// <p>The namespace for the metric.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl Metric {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
-        self.metric_name.as_deref()
+    pub fn metric_name(&self) -> &str {
+        use std::ops::Deref;
+        self.metric_name.deref()
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
-        self.aggregation_function.as_ref()
+    pub fn aggregation_function(&self) -> &crate::types::AggregationFunction {
+        &self.aggregation_function
     }
     /// <p>The namespace for the metric.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct MetricBuilder {
 }
 impl MetricBuilder {
     /// <p>The name of the metric.</p>
+    /// This field is required.
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl MetricBuilder {
         &self.metric_name
     }
     /// <p>The function with which the metric is calculated.</p>
+    /// This field is required.
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
         self.aggregation_function = ::std::option::Option::Some(input);
         self
@@ -84,11 +87,24 @@ impl MetricBuilder {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
-    pub fn build(self) -> crate::types::Metric {
-        crate::types::Metric {
-            metric_name: self.metric_name,
-            aggregation_function: self.aggregation_function,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`metric_name`](crate::types::builders::MetricBuilder::metric_name)
+    /// - [`aggregation_function`](crate::types::builders::MetricBuilder::aggregation_function)
+    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Metric {
+            metric_name: self.metric_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "metric_name",
+                    "metric_name was not specified but it is required when building Metric",
+                )
+            })?,
+            aggregation_function: self.aggregation_function.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aggregation_function",
+                    "aggregation_function was not specified but it is required when building Metric",
+                )
+            })?,
             namespace: self.namespace,
-        }
+        })
     }
 }

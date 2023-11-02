@@ -6,25 +6,26 @@ pub fn ser_max_age_rule(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
-    if let Some(var_2) = &input.enabled {
-        scope_1.boolean(*var_2);
+    {
+        scope_1.boolean(input.enabled);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("MaxAgeInDays");
-    if let Some(var_4) = &input.max_age_in_days {
-        scope_3.number(
+    let mut scope_2 = writer.prefix("MaxAgeInDays");
+    if let Some(var_3) = &input.max_age_in_days {
+        scope_2.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("DeleteSourceFromS3");
-    if let Some(var_6) = &input.delete_source_from_s3 {
-        scope_5.boolean(*var_6);
+    let mut scope_4 = writer.prefix("DeleteSourceFromS3");
+    if let Some(var_5) = &input.delete_source_from_s3 {
+        scope_4.boolean(*var_5);
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_max_age_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::MaxAgeRule, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -33,7 +34,7 @@ pub fn de_max_age_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.elasticbeanstalk#MaxAgeRule$Enabled */ =>  {
-                let var_7 =
+                let var_6 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -44,11 +45,11 @@ pub fn de_max_age_rule(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_7);
+                builder = builder.set_enabled(var_6);
             }
             ,
             s if s.matches("MaxAgeInDays") /* MaxAgeInDays com.amazonaws.elasticbeanstalk#MaxAgeRule$MaxAgeInDays */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -59,11 +60,11 @@ pub fn de_max_age_rule(
                         ?
                     )
                 ;
-                builder = builder.set_max_age_in_days(var_8);
+                builder = builder.set_max_age_in_days(var_7);
             }
             ,
             s if s.matches("DeleteSourceFromS3") /* DeleteSourceFromS3 com.amazonaws.elasticbeanstalk#MaxAgeRule$DeleteSourceFromS3 */ =>  {
-                let var_9 =
+                let var_8 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -74,11 +75,13 @@ pub fn de_max_age_rule(
                         ?
                     )
                 ;
-                builder = builder.set_delete_source_from_s3(var_9);
+                builder = builder.set_delete_source_from_s3(var_8);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::max_age_rule_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

@@ -61,8 +61,10 @@ impl GetLicenseConfigurationOutput {
         self.license_counting_type.as_ref()
     }
     /// <p>License rules.</p>
-    pub fn license_rules(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.license_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_rules.is_none()`.
+    pub fn license_rules(&self) -> &[::std::string::String] {
+        self.license_rules.as_deref().unwrap_or_default()
     }
     /// <p>Number of available licenses.</p>
     pub fn license_count(&self) -> ::std::option::Option<i64> {
@@ -85,20 +87,28 @@ impl GetLicenseConfigurationOutput {
         self.owner_account_id.as_deref()
     }
     /// <p>Summaries of the licenses consumed by resources.</p>
-    pub fn consumed_license_summary_list(&self) -> ::std::option::Option<&[crate::types::ConsumedLicenseSummary]> {
-        self.consumed_license_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_license_summary_list.is_none()`.
+    pub fn consumed_license_summary_list(&self) -> &[crate::types::ConsumedLicenseSummary] {
+        self.consumed_license_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>Summaries of the managed resources.</p>
-    pub fn managed_resource_summary_list(&self) -> ::std::option::Option<&[crate::types::ManagedResourceSummary]> {
-        self.managed_resource_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_resource_summary_list.is_none()`.
+    pub fn managed_resource_summary_list(&self) -> &[crate::types::ManagedResourceSummary] {
+        self.managed_resource_summary_list.as_deref().unwrap_or_default()
     }
     /// <p>Tags for the license configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Product information.</p>
-    pub fn product_information_list(&self) -> ::std::option::Option<&[crate::types::ProductInformation]> {
-        self.product_information_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_information_list.is_none()`.
+    pub fn product_information_list(&self) -> &[crate::types::ProductInformation] {
+        self.product_information_list.as_deref().unwrap_or_default()
     }
     /// <p>Automated discovery information.</p>
     pub fn automated_discovery_information(&self) -> ::std::option::Option<&crate::types::AutomatedDiscoveryInformation> {

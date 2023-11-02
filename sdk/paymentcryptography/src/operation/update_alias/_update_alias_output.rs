@@ -34,6 +34,7 @@ pub struct UpdateAliasOutputBuilder {
 }
 impl UpdateAliasOutputBuilder {
     /// <p>The alias name.</p>
+    /// This field is required.
     pub fn alias(mut self, input: crate::types::Alias) -> Self {
         self.alias = ::std::option::Option::Some(input);
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateEventAction`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`action(Action)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::action) / [`set_action(Option<Action>)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::set_action): <p>What occurs after a certain event.</p>
-    ///   - [`event(Event)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::event) / [`set_event(Option<Event>)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::set_event): <p>What occurs to start an action.</p>
+    ///   - [`action(Action)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::action) / [`set_action(Option<Action>)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::set_action):<br>required: **true**<br><p>What occurs after a certain event.</p><br>
+    ///   - [`event(Event)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::event) / [`set_event(Option<Event>)`](crate::operation::create_event_action::builders::CreateEventActionFluentBuilder::set_event):<br>required: **true**<br><p>What occurs to start an action.</p><br>
     /// - On success, responds with [`CreateEventActionOutput`](crate::operation::create_event_action::CreateEventActionOutput) with field(s):
     ///   - [`action(Option<Action>)`](crate::operation::create_event_action::CreateEventActionOutput::action): <p>What occurs after a certain event.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_event_action::CreateEventActionOutput::arn): <p>The ARN for the event action.</p>

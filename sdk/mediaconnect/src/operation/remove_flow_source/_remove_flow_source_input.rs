@@ -34,6 +34,7 @@ pub struct RemoveFlowSourceInputBuilder {
 }
 impl RemoveFlowSourceInputBuilder {
     /// The flow that you want to remove a source from.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RemoveFlowSourceInputBuilder {
         &self.flow_arn
     }
     /// The ARN of the source that you want to remove.
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self

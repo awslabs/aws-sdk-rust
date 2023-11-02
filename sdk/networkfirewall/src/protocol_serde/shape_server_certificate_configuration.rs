@@ -27,6 +27,18 @@ pub fn ser_server_certificate_configuration(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.certificate_authority_arn {
+        object.key("CertificateAuthorityArn").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.check_certificate_revocation_status {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("CheckCertificateRevocationStatus").start_object();
+        crate::protocol_serde::shape_check_certificate_revocation_status_actions::ser_check_certificate_revocation_status_actions(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -53,6 +65,18 @@ where
                             builder = builder.set_scopes(crate::protocol_serde::shape_server_certificate_scopes::de_server_certificate_scopes(
                                 tokens,
                             )?);
+                        }
+                        "CertificateAuthorityArn" => {
+                            builder = builder.set_certificate_authority_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "CheckCertificateRevocationStatus" => {
+                            builder = builder.set_check_certificate_revocation_status(
+                                    crate::protocol_serde::shape_check_certificate_revocation_status_actions::de_check_certificate_revocation_status_actions(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -7,7 +7,7 @@ pub struct RowLevelPermissionTagConfiguration {
     /// <p>The status of row-level security tags. If enabled, the status is <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.</p>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
-    pub tag_rules: ::std::option::Option<::std::vec::Vec<crate::types::RowLevelPermissionTagRule>>,
+    pub tag_rules: ::std::vec::Vec<crate::types::RowLevelPermissionTagRule>,
     /// <p>A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to it to apply Row-level security (RLS) to the dataset.</p>
     pub tag_rule_configurations: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
@@ -17,12 +17,15 @@ impl RowLevelPermissionTagConfiguration {
         self.status.as_ref()
     }
     /// <p>A set of rules associated with row-level security, such as the tag names and columns that they are assigned to.</p>
-    pub fn tag_rules(&self) -> ::std::option::Option<&[crate::types::RowLevelPermissionTagRule]> {
-        self.tag_rules.as_deref()
+    pub fn tag_rules(&self) -> &[crate::types::RowLevelPermissionTagRule] {
+        use std::ops::Deref;
+        self.tag_rules.deref()
     }
     /// <p>A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to it to apply Row-level security (RLS) to the dataset.</p>
-    pub fn tag_rule_configurations(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
-        self.tag_rule_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_rule_configurations.is_none()`.
+    pub fn tag_rule_configurations(&self) -> &[::std::vec::Vec<::std::string::String>] {
+        self.tag_rule_configurations.as_deref().unwrap_or_default()
     }
 }
 impl RowLevelPermissionTagConfiguration {
@@ -96,11 +99,18 @@ impl RowLevelPermissionTagConfigurationBuilder {
         &self.tag_rule_configurations
     }
     /// Consumes the builder and constructs a [`RowLevelPermissionTagConfiguration`](crate::types::RowLevelPermissionTagConfiguration).
-    pub fn build(self) -> crate::types::RowLevelPermissionTagConfiguration {
-        crate::types::RowLevelPermissionTagConfiguration {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_rules`](crate::types::builders::RowLevelPermissionTagConfigurationBuilder::tag_rules)
+    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionTagConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RowLevelPermissionTagConfiguration {
             status: self.status,
-            tag_rules: self.tag_rules,
+            tag_rules: self.tag_rules.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tag_rules",
+                    "tag_rules was not specified but it is required when building RowLevelPermissionTagConfiguration",
+                )
+            })?,
             tag_rule_configurations: self.tag_rule_configurations,
-        }
+        })
     }
 }

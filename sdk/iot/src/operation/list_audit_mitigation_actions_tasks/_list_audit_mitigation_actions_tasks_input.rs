@@ -139,6 +139,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
         &self.next_token
     }
     /// <p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -153,6 +154,7 @@ impl ListAuditMitigationActionsTasksInputBuilder {
         &self.start_time
     }
     /// <p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

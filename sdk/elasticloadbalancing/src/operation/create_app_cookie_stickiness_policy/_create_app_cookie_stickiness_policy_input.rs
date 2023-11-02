@@ -42,6 +42,7 @@ pub struct CreateAppCookieStickinessPolicyInputBuilder {
 }
 impl CreateAppCookieStickinessPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
         &self.policy_name
     }
     /// <p>The name of the application cookie used for stickiness.</p>
+    /// This field is required.
     pub fn cookie_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cookie_name = ::std::option::Option::Some(input.into());
         self

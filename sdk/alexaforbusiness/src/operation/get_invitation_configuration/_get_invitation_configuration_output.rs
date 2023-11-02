@@ -21,8 +21,10 @@ impl GetInvitationConfigurationOutput {
         self.contact_email.as_deref()
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn private_skill_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.private_skill_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_skill_ids.is_none()`.
+    pub fn private_skill_ids(&self) -> &[::std::string::String] {
+        self.private_skill_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for GetInvitationConfigurationOutput {

@@ -76,6 +76,7 @@ impl CreatePackageOutputBuilder {
         &self.arn
     }
     /// <p>The package's storage location.</p>
+    /// This field is required.
     pub fn storage_location(mut self, input: crate::types::StorageLocation) -> Self {
         self.storage_location = ::std::option::Option::Some(input);
         self

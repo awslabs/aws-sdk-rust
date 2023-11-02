@@ -5,27 +5,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreconditionsFailedException {
     /// <p>A detailed message describing the problem.</p>
-    pub detailed_message: ::std::option::Option<::std::string::String>,
+    pub detailed_message: ::std::string::String,
     /// <p>The ID of the request in question.</p>
-    pub request_id: ::std::option::Option<::std::string::String>,
+    pub request_id: ::std::string::String,
     /// <p>The HTTP status code returned with the exception.</p>
-    pub code: ::std::option::Option<::std::string::String>,
+    pub code: ::std::string::String,
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl PreconditionsFailedException {
     /// <p>A detailed message describing the problem.</p>
-    pub fn detailed_message(&self) -> ::std::option::Option<&str> {
-        self.detailed_message.as_deref()
+    pub fn detailed_message(&self) -> &str {
+        use std::ops::Deref;
+        self.detailed_message.deref()
     }
     /// <p>The ID of the request in question.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
-        self.request_id.as_deref()
+    pub fn request_id(&self) -> &str {
+        use std::ops::Deref;
+        self.request_id.deref()
     }
     /// <p>The HTTP status code returned with the exception.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
-        self.code.as_deref()
+    pub fn code(&self) -> &str {
+        use std::ops::Deref;
+        self.code.deref()
     }
 }
 impl PreconditionsFailedException {
@@ -76,6 +79,7 @@ pub struct PreconditionsFailedExceptionBuilder {
 }
 impl PreconditionsFailedExceptionBuilder {
     /// <p>A detailed message describing the problem.</p>
+    /// This field is required.
     pub fn detailed_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detailed_message = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +94,7 @@ impl PreconditionsFailedExceptionBuilder {
         &self.detailed_message
     }
     /// <p>The ID of the request in question.</p>
+    /// This field is required.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +109,7 @@ impl PreconditionsFailedExceptionBuilder {
         &self.request_id
     }
     /// <p>The HTTP status code returned with the exception.</p>
+    /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -143,13 +149,32 @@ impl PreconditionsFailedExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`PreconditionsFailedException`](crate::types::error::PreconditionsFailedException).
-    pub fn build(self) -> crate::types::error::PreconditionsFailedException {
-        crate::types::error::PreconditionsFailedException {
-            detailed_message: self.detailed_message,
-            request_id: self.request_id,
-            code: self.code,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`detailed_message`](crate::types::error::builders::PreconditionsFailedExceptionBuilder::detailed_message)
+    /// - [`request_id`](crate::types::error::builders::PreconditionsFailedExceptionBuilder::request_id)
+    /// - [`code`](crate::types::error::builders::PreconditionsFailedExceptionBuilder::code)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::PreconditionsFailedException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::PreconditionsFailedException {
+            detailed_message: self.detailed_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "detailed_message",
+                    "detailed_message was not specified but it is required when building PreconditionsFailedException",
+                )
+            })?,
+            request_id: self.request_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "request_id",
+                    "request_id was not specified but it is required when building PreconditionsFailedException",
+                )
+            })?,
+            code: self.code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code",
+                    "code was not specified but it is required when building PreconditionsFailedException",
+                )
+            })?,
             message: self.message,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

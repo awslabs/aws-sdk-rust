@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub opt_out_list_name: ::std::option::Option<::std::string::String>,
+    pub opt_out_list_name: ::std::string::String,
 }
 impl DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
-        self.opt_out_list_name.as_deref()
+    pub fn opt_out_list_name(&self) -> &str {
+        use std::ops::Deref;
+        self.opt_out_list_name.deref()
     }
 }
 impl DeleteOptOutListInput {
@@ -27,6 +28,7 @@ pub struct DeleteOptOutListInputBuilder {
 }
 impl DeleteOptOutListInputBuilder {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
+    /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
@@ -41,11 +43,18 @@ impl DeleteOptOutListInputBuilder {
         &self.opt_out_list_name
     }
     /// Consumes the builder and constructs a [`DeleteOptOutListInput`](crate::operation::delete_opt_out_list::DeleteOptOutListInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`opt_out_list_name`](crate::operation::delete_opt_out_list::builders::DeleteOptOutListInputBuilder::opt_out_list_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_opt_out_list::DeleteOptOutListInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_opt_out_list::DeleteOptOutListInput {
-            opt_out_list_name: self.opt_out_list_name,
+            opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "opt_out_list_name",
+                    "opt_out_list_name was not specified but it is required when building DeleteOptOutListInput",
+                )
+            })?,
         })
     }
 }

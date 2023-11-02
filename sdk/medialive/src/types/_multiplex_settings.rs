@@ -63,6 +63,7 @@ impl MultiplexSettingsBuilder {
         &self.maximum_video_buffer_delay_milliseconds
     }
     /// Transport stream bit rate.
+    /// This field is required.
     pub fn transport_stream_bitrate(mut self, input: i32) -> Self {
         self.transport_stream_bitrate = ::std::option::Option::Some(input);
         self
@@ -77,6 +78,7 @@ impl MultiplexSettingsBuilder {
         &self.transport_stream_bitrate
     }
     /// Transport stream ID.
+    /// This field is required.
     pub fn transport_stream_id(mut self, input: i32) -> Self {
         self.transport_stream_id = ::std::option::Option::Some(input);
         self

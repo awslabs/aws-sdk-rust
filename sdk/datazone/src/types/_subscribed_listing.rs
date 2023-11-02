@@ -5,44 +5,48 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SubscribedListing {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p>The name of the published asset for which the subscription grant is created.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The description of the published asset for which the subscription grant is created.</p>
-    pub description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::string::String,
     /// <p>The published asset for which the subscription grant is created.</p>
     pub item: ::std::option::Option<crate::types::SubscribedListingItem>,
     /// <p>The identifier of the project of the published asset for which the subscription grant is created.</p>
-    pub owner_project_id: ::std::option::Option<::std::string::String>,
+    pub owner_project_id: ::std::string::String,
     /// <p>The name of the project that owns the published asset for which the subscription grant is created.</p>
     pub owner_project_name: ::std::option::Option<::std::string::String>,
 }
 impl SubscribedListing {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
     pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
     /// <p>The name of the published asset for which the subscription grant is created.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The description of the published asset for which the subscription grant is created.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
+    pub fn description(&self) -> &str {
+        use std::ops::Deref;
+        self.description.deref()
     }
     /// <p>The published asset for which the subscription grant is created.</p>
     pub fn item(&self) -> ::std::option::Option<&crate::types::SubscribedListingItem> {
         self.item.as_ref()
     }
     /// <p>The identifier of the project of the published asset for which the subscription grant is created.</p>
-    pub fn owner_project_id(&self) -> ::std::option::Option<&str> {
-        self.owner_project_id.as_deref()
+    pub fn owner_project_id(&self) -> &str {
+        use std::ops::Deref;
+        self.owner_project_id.deref()
     }
     /// <p>The name of the project that owns the published asset for which the subscription grant is created.</p>
     pub fn owner_project_name(&self) -> ::std::option::Option<&str> {
@@ -83,6 +87,7 @@ pub struct SubscribedListingBuilder {
 }
 impl SubscribedListingBuilder {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +116,7 @@ impl SubscribedListingBuilder {
         &self.revision
     }
     /// <p>The name of the published asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +131,7 @@ impl SubscribedListingBuilder {
         &self.name
     }
     /// <p>The description of the published asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -139,6 +146,7 @@ impl SubscribedListingBuilder {
         &self.description
     }
     /// <p>The published asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn item(mut self, input: crate::types::SubscribedListingItem) -> Self {
         self.item = ::std::option::Option::Some(input);
         self
@@ -153,6 +161,7 @@ impl SubscribedListingBuilder {
         &self.item
     }
     /// <p>The identifier of the project of the published asset for which the subscription grant is created.</p>
+    /// This field is required.
     pub fn owner_project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_project_id = ::std::option::Option::Some(input.into());
         self
@@ -181,16 +190,41 @@ impl SubscribedListingBuilder {
         &self.owner_project_name
     }
     /// Consumes the builder and constructs a [`SubscribedListing`](crate::types::SubscribedListing).
-    pub fn build(self) -> crate::types::SubscribedListing {
-        crate::types::SubscribedListing {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::SubscribedListingBuilder::id)
+    /// - [`name`](crate::types::builders::SubscribedListingBuilder::name)
+    /// - [`description`](crate::types::builders::SubscribedListingBuilder::description)
+    /// - [`owner_project_id`](crate::types::builders::SubscribedListingBuilder::owner_project_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListing, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SubscribedListing {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building SubscribedListing",
+                )
+            })?,
             revision: self.revision,
-            name: self.name,
-            description: self.description,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building SubscribedListing",
+                )
+            })?,
+            description: self.description.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "description",
+                    "description was not specified but it is required when building SubscribedListing",
+                )
+            })?,
             item: self.item,
-            owner_project_id: self.owner_project_id,
+            owner_project_id: self.owner_project_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "owner_project_id",
+                    "owner_project_id was not specified but it is required when building SubscribedListing",
+                )
+            })?,
             owner_project_name: self.owner_project_name,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for SubscribedListingBuilder {

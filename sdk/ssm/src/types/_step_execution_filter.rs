@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepExecutionFilter {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
-    pub key: ::std::option::Option<crate::types::StepExecutionFilterKey>,
+    pub key: crate::types::StepExecutionFilterKey,
     /// <p>The values of the filter key.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl StepExecutionFilter {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::StepExecutionFilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::StepExecutionFilterKey {
+        &self.key
     }
     /// <p>The values of the filter key.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl StepExecutionFilter {
@@ -35,6 +36,7 @@ pub struct StepExecutionFilterBuilder {
 }
 impl StepExecutionFilterBuilder {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::StepExecutionFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl StepExecutionFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`StepExecutionFilter`](crate::types::StepExecutionFilter).
-    pub fn build(self) -> crate::types::StepExecutionFilter {
-        crate::types::StepExecutionFilter {
-            key: self.key,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::StepExecutionFilterBuilder::key)
+    /// - [`values`](crate::types::builders::StepExecutionFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::StepExecutionFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StepExecutionFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building StepExecutionFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building StepExecutionFilter",
+                )
+            })?,
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct GetJobTemplateInputBuilder {
 }
 impl GetJobTemplateInputBuilder {
     /// The name of the job template.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

@@ -41,6 +41,7 @@ pub struct DescribePrincipalMappingInputBuilder {
 }
 impl DescribePrincipalMappingInputBuilder {
     /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DescribePrincipalMappingInputBuilder {
         &self.data_source_id
     }
     /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self

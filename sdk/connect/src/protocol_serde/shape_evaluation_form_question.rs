@@ -3,26 +3,26 @@ pub fn ser_evaluation_form_question(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormQuestion,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.title {
-        object.key("Title").string(var_1.as_str());
+    {
+        object.key("Title").string(input.title.as_str());
     }
-    if let Some(var_2) = &input.instructions {
-        object.key("Instructions").string(var_2.as_str());
+    if let Some(var_1) = &input.instructions {
+        object.key("Instructions").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.ref_id {
-        object.key("RefId").string(var_3.as_str());
+    {
+        object.key("RefId").string(input.ref_id.as_str());
     }
     if input.not_applicable_enabled {
         object.key("NotApplicableEnabled").boolean(input.not_applicable_enabled);
     }
-    if let Some(var_4) = &input.question_type {
-        object.key("QuestionType").string(var_4.as_str());
+    {
+        object.key("QuestionType").string(input.question_type.as_str());
     }
-    if let Some(var_5) = &input.question_type_properties {
+    if let Some(var_2) = &input.question_type_properties {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("QuestionTypeProperties").start_object();
-        crate::protocol_serde::shape_evaluation_form_question_type_properties::ser_evaluation_form_question_type_properties(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_3 = object.key("QuestionTypeProperties").start_object();
+        crate::protocol_serde::shape_evaluation_form_question_type_properties::ser_evaluation_form_question_type_properties(&mut object_3, var_2)?;
+        object_3.finish();
     }
     if input.weight != 0.0 {
         object.key("Weight").number(
@@ -100,7 +100,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::evaluation_form_question_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

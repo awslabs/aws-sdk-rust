@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Comment {
     /// <p>The ID of the comment.</p>
-    pub comment_id: ::std::option::Option<::std::string::String>,
+    pub comment_id: ::std::string::String,
     /// <p>The ID of the parent comment.</p>
     pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the root comment in the thread.</p>
@@ -25,8 +25,9 @@ pub struct Comment {
 }
 impl Comment {
     /// <p>The ID of the comment.</p>
-    pub fn comment_id(&self) -> ::std::option::Option<&str> {
-        self.comment_id.as_deref()
+    pub fn comment_id(&self) -> &str {
+        use std::ops::Deref;
+        self.comment_id.deref()
     }
     /// <p>The ID of the parent comment.</p>
     pub fn parent_id(&self) -> ::std::option::Option<&str> {
@@ -99,6 +100,7 @@ pub struct CommentBuilder {
 }
 impl CommentBuilder {
     /// <p>The ID of the comment.</p>
+    /// This field is required.
     pub fn comment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment_id = ::std::option::Option::Some(input.into());
         self
@@ -225,9 +227,16 @@ impl CommentBuilder {
         &self.recipient_id
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
-    pub fn build(self) -> crate::types::Comment {
-        crate::types::Comment {
-            comment_id: self.comment_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`comment_id`](crate::types::builders::CommentBuilder::comment_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Comment, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Comment {
+            comment_id: self.comment_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "comment_id",
+                    "comment_id was not specified but it is required when building Comment",
+                )
+            })?,
             parent_id: self.parent_id,
             thread_id: self.thread_id,
             text: self.text,
@@ -236,7 +245,7 @@ impl CommentBuilder {
             status: self.status,
             visibility: self.visibility,
             recipient_id: self.recipient_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for CommentBuilder {

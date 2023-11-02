@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchRasterDataCollectionOutput {
     /// <p>Approximate number of results in the response.</p>
-    pub approximate_result_count: ::std::option::Option<i32>,
+    pub approximate_result_count: i32,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
@@ -13,7 +13,7 @@ pub struct SearchRasterDataCollectionOutput {
 }
 impl SearchRasterDataCollectionOutput {
     /// <p>Approximate number of results in the response.</p>
-    pub fn approximate_result_count(&self) -> ::std::option::Option<i32> {
+    pub fn approximate_result_count(&self) -> i32 {
         self.approximate_result_count
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
@@ -21,8 +21,10 @@ impl SearchRasterDataCollectionOutput {
         self.next_token.as_deref()
     }
     /// <p>List of items matching the Raster DataCollectionQuery.</p>
-    pub fn items(&self) -> ::std::option::Option<&[crate::types::ItemSource]> {
-        self.items.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
+    pub fn items(&self) -> &[crate::types::ItemSource] {
+        self.items.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for SearchRasterDataCollectionOutput {
@@ -58,6 +60,7 @@ pub struct SearchRasterDataCollectionOutputBuilder {
 }
 impl SearchRasterDataCollectionOutputBuilder {
     /// <p>Approximate number of results in the response.</p>
+    /// This field is required.
     pub fn approximate_result_count(mut self, input: i32) -> Self {
         self.approximate_result_count = ::std::option::Option::Some(input);
         self
@@ -115,13 +118,25 @@ impl SearchRasterDataCollectionOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`SearchRasterDataCollectionOutput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput).
-    pub fn build(self) -> crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
-        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
-            approximate_result_count: self.approximate_result_count,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`approximate_result_count`](crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionOutputBuilder::approximate_result_count)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput {
+            approximate_result_count: self.approximate_result_count.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "approximate_result_count",
+                    "approximate_result_count was not specified but it is required when building SearchRasterDataCollectionOutput",
+                )
+            })?,
             next_token: self.next_token,
             items: self.items,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for SearchRasterDataCollectionOutputBuilder {

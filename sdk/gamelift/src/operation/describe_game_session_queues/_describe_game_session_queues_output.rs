@@ -11,8 +11,10 @@ pub struct DescribeGameSessionQueuesOutput {
 }
 impl DescribeGameSessionQueuesOutput {
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    pub fn game_session_queues(&self) -> ::std::option::Option<&[crate::types::GameSessionQueue]> {
-        self.game_session_queues.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_session_queues.is_none()`.
+    pub fn game_session_queues(&self) -> &[crate::types::GameSessionQueue] {
+        self.game_session_queues.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -35,6 +35,7 @@ pub struct StreamingDistributionConfigWithTagsBuilder {
 }
 impl StreamingDistributionConfigWithTagsBuilder {
     /// <p>A streaming distribution Configuration.</p>
+    /// This field is required.
     pub fn streaming_distribution_config(mut self, input: crate::types::StreamingDistributionConfig) -> Self {
         self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl StreamingDistributionConfigWithTagsBuilder {
         &self.streaming_distribution_config
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    /// This field is required.
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
         self.tags = ::std::option::Option::Some(input);
         self

@@ -9,8 +9,10 @@ pub struct ModifyTargetGroupOutput {
 }
 impl ModifyTargetGroupOutput {
     /// <p>Information about the modified target group.</p>
-    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::TargetGroup]> {
-        self.target_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
+    pub fn target_groups(&self) -> &[crate::types::TargetGroup] {
+        self.target_groups.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ModifyTargetGroupOutput {

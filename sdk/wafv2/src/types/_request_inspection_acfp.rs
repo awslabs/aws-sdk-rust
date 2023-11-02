@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestInspectionAcfp {
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
-    pub payload_type: ::std::option::Option<crate::types::PayloadType>,
+    pub payload_type: crate::types::PayloadType,
     /// <p>The name of the field in the request payload that contains your customer's username. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
@@ -48,8 +48,8 @@ pub struct RequestInspectionAcfp {
 }
 impl RequestInspectionAcfp {
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
-    pub fn payload_type(&self) -> ::std::option::Option<&crate::types::PayloadType> {
-        self.payload_type.as_ref()
+    pub fn payload_type(&self) -> &crate::types::PayloadType {
+        &self.payload_type
     }
     /// <p>The name of the field in the request payload that contains your customer's username. </p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
@@ -85,8 +85,10 @@ impl RequestInspectionAcfp {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryphoneline1": "THE_PHONE1", "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</code>, the phone number field identifiers are <code>/form/primaryphoneline1</code>, <code>/form/primaryphoneline2</code>, and <code>/form/primaryphoneline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>. </p> </li>
     /// </ul>
-    pub fn phone_number_fields(&self) -> ::std::option::Option<&[crate::types::PhoneNumberField]> {
-        self.phone_number_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_fields.is_none()`.
+    pub fn phone_number_fields(&self) -> &[crate::types::PhoneNumberField] {
+        self.phone_number_fields.as_deref().unwrap_or_default()
     }
     /// <p>The names of the fields in the request payload that contain your customer's primary physical address. </p>
     /// <p>Order the address fields in the array exactly as they are ordered in the request payload. </p>
@@ -95,8 +97,10 @@ impl RequestInspectionAcfp {
     /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1", "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>, the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>, and <code>/form/primaryaddressline3</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>. </p> </li>
     /// </ul>
-    pub fn address_fields(&self) -> ::std::option::Option<&[crate::types::AddressField]> {
-        self.address_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address_fields.is_none()`.
+    pub fn address_fields(&self) -> &[crate::types::AddressField] {
+        self.address_fields.as_deref().unwrap_or_default()
     }
 }
 impl RequestInspectionAcfp {
@@ -119,6 +123,7 @@ pub struct RequestInspectionAcfpBuilder {
 }
 impl RequestInspectionAcfpBuilder {
     /// <p>The payload type for your account creation endpoint, either JSON or form encoded.</p>
+    /// This field is required.
     pub fn payload_type(mut self, input: crate::types::PayloadType) -> Self {
         self.payload_type = ::std::option::Option::Some(input);
         self
@@ -296,14 +301,21 @@ impl RequestInspectionAcfpBuilder {
         &self.address_fields
     }
     /// Consumes the builder and constructs a [`RequestInspectionAcfp`](crate::types::RequestInspectionAcfp).
-    pub fn build(self) -> crate::types::RequestInspectionAcfp {
-        crate::types::RequestInspectionAcfp {
-            payload_type: self.payload_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`payload_type`](crate::types::builders::RequestInspectionAcfpBuilder::payload_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestInspectionAcfp, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RequestInspectionAcfp {
+            payload_type: self.payload_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "payload_type",
+                    "payload_type was not specified but it is required when building RequestInspectionAcfp",
+                )
+            })?,
             username_field: self.username_field,
             password_field: self.password_field,
             email_field: self.email_field,
             phone_number_fields: self.phone_number_fields,
             address_fields: self.address_fields,
-        }
+        })
     }
 }

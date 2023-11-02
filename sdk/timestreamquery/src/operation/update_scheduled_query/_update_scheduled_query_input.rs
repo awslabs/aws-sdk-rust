@@ -34,6 +34,7 @@ pub struct UpdateScheduledQueryInputBuilder {
 }
 impl UpdateScheduledQueryInputBuilder {
     /// <p>ARN of the scheuled query.</p>
+    /// This field is required.
     pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl UpdateScheduledQueryInputBuilder {
         &self.scheduled_query_arn
     }
     /// <p>State of the scheduled query. </p>
+    /// This field is required.
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self

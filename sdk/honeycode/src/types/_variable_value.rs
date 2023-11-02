@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VariableValue {
     /// <p>Raw value of the variable.</p>
-    pub raw_value: ::std::option::Option<::std::string::String>,
+    pub raw_value: ::std::string::String,
 }
 impl VariableValue {
     /// <p>Raw value of the variable.</p>
-    pub fn raw_value(&self) -> ::std::option::Option<&str> {
-        self.raw_value.as_deref()
+    pub fn raw_value(&self) -> &str {
+        use std::ops::Deref;
+        self.raw_value.deref()
     }
 }
 impl ::std::fmt::Debug for VariableValue {
@@ -35,6 +36,7 @@ pub struct VariableValueBuilder {
 }
 impl VariableValueBuilder {
     /// <p>Raw value of the variable.</p>
+    /// This field is required.
     pub fn raw_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_value = ::std::option::Option::Some(input.into());
         self
@@ -49,8 +51,17 @@ impl VariableValueBuilder {
         &self.raw_value
     }
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
-    pub fn build(self) -> crate::types::VariableValue {
-        crate::types::VariableValue { raw_value: self.raw_value }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`raw_value`](crate::types::builders::VariableValueBuilder::raw_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::VariableValue, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VariableValue {
+            raw_value: self.raw_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "raw_value",
+                    "raw_value was not specified but it is required when building VariableValue",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for VariableValueBuilder {

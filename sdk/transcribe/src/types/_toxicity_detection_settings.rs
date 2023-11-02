@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ToxicityDetectionSettings {
     /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub toxicity_categories: ::std::option::Option<::std::vec::Vec<crate::types::ToxicityCategory>>,
+    pub toxicity_categories: ::std::vec::Vec<crate::types::ToxicityCategory>,
 }
 impl ToxicityDetectionSettings {
     /// <p> If you include <code>ToxicityDetection</code> in your transcription request, you must also include <code>ToxicityCategories</code>. The only accepted value for this parameter is <code>ALL</code>.</p>
-    pub fn toxicity_categories(&self) -> ::std::option::Option<&[crate::types::ToxicityCategory]> {
-        self.toxicity_categories.as_deref()
+    pub fn toxicity_categories(&self) -> &[crate::types::ToxicityCategory] {
+        use std::ops::Deref;
+        self.toxicity_categories.deref()
     }
 }
 impl ToxicityDetectionSettings {
@@ -48,9 +49,16 @@ impl ToxicityDetectionSettingsBuilder {
         &self.toxicity_categories
     }
     /// Consumes the builder and constructs a [`ToxicityDetectionSettings`](crate::types::ToxicityDetectionSettings).
-    pub fn build(self) -> crate::types::ToxicityDetectionSettings {
-        crate::types::ToxicityDetectionSettings {
-            toxicity_categories: self.toxicity_categories,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`toxicity_categories`](crate::types::builders::ToxicityDetectionSettingsBuilder::toxicity_categories)
+    pub fn build(self) -> ::std::result::Result<crate::types::ToxicityDetectionSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ToxicityDetectionSettings {
+            toxicity_categories: self.toxicity_categories.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "toxicity_categories",
+                    "toxicity_categories was not specified but it is required when building ToxicityDetectionSettings",
+                )
+            })?,
+        })
     }
 }

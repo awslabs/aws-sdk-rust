@@ -19,6 +19,7 @@ pub fn ser_target_grant(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_target_grant(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::TargetGrant, ::aws_smithy_xml::decode::XmlDecodeError> {

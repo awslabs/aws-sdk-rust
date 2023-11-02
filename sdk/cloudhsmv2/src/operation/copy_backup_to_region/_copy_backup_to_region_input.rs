@@ -20,8 +20,10 @@ impl CopyBackupToRegionInput {
         self.backup_id.as_deref()
     }
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl CopyBackupToRegionInput {
@@ -41,6 +43,7 @@ pub struct CopyBackupToRegionInputBuilder {
 }
 impl CopyBackupToRegionInputBuilder {
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+    /// This field is required.
     pub fn destination_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_region = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl CopyBackupToRegionInputBuilder {
         &self.destination_region
     }
     /// <p>The ID of the backup that will be copied to the destination region. </p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self

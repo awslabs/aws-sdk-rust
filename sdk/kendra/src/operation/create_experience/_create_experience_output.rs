@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperienceOutput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateExperienceOutput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateExperienceOutput {
@@ -34,6 +35,7 @@ pub struct CreateExperienceOutputBuilder {
 }
 impl CreateExperienceOutputBuilder {
     /// <p>The identifier of your Amazon Kendra experience.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateExperienceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateExperienceOutput`](crate::operation::create_experience::CreateExperienceOutput).
-    pub fn build(self) -> crate::operation::create_experience::CreateExperienceOutput {
-        crate::operation::create_experience::CreateExperienceOutput {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::create_experience::builders::CreateExperienceOutputBuilder::id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_experience::CreateExperienceOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building CreateExperienceOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

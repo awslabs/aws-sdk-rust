@@ -20,8 +20,10 @@ impl UntagAttendeeInput {
         self.attendee_id.as_deref()
     }
     /// <p>The tag keys.</p>
-    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
+    pub fn tag_keys(&self) -> &[::std::string::String] {
+        self.tag_keys.as_deref().unwrap_or_default()
     }
 }
 impl UntagAttendeeInput {
@@ -41,6 +43,7 @@ pub struct UntagAttendeeInputBuilder {
 }
 impl UntagAttendeeInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
+    /// This field is required.
     pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meeting_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +58,7 @@ impl UntagAttendeeInputBuilder {
         &self.meeting_id
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
+    /// This field is required.
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
         self

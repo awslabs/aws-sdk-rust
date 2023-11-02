@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTransactionEventsOutput {
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>>,
+    pub events: ::std::vec::Vec<crate::types::TransactionEvent>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTransactionEventsOutput {
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::TransactionEvent]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::TransactionEvent] {
+        use std::ops::Deref;
+        self.events.deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListTransactionEventsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListTransactionEventsOutput`](crate::operation::list_transaction_events::ListTransactionEventsOutput).
-    pub fn build(self) -> crate::operation::list_transaction_events::ListTransactionEventsOutput {
-        crate::operation::list_transaction_events::ListTransactionEventsOutput {
-            events: self.events,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`events`](crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder::events)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsOutput {
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building ListTransactionEventsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

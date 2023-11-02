@@ -57,8 +57,10 @@ pub struct AwsEcsServiceDetails {
 }
 impl AwsEcsServiceDetails {
     /// <p>The capacity provider strategy that the service uses.</p>
-    pub fn capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::AwsEcsServiceCapacityProviderStrategyDetails]> {
-        self.capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
+    pub fn capacity_provider_strategy(&self) -> &[crate::types::AwsEcsServiceCapacityProviderStrategyDetails] {
+        self.capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the cluster that hosts the service.</p>
     pub fn cluster(&self) -> ::std::option::Option<&str> {
@@ -94,8 +96,10 @@ impl AwsEcsServiceDetails {
         self.launch_type.as_deref()
     }
     /// <p>Information about the load balancers that the service uses.</p>
-    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::AwsEcsServiceLoadBalancersDetails]> {
-        self.load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
+    pub fn load_balancers(&self) -> &[crate::types::AwsEcsServiceLoadBalancersDetails] {
+        self.load_balancers.as_deref().unwrap_or_default()
     }
     /// <p>The name of the service.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -106,12 +110,16 @@ impl AwsEcsServiceDetails {
         self.network_configuration.as_ref()
     }
     /// <p>The placement constraints for the tasks in the service.</p>
-    pub fn placement_constraints(&self) -> ::std::option::Option<&[crate::types::AwsEcsServicePlacementConstraintsDetails]> {
-        self.placement_constraints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
+    pub fn placement_constraints(&self) -> &[crate::types::AwsEcsServicePlacementConstraintsDetails] {
+        self.placement_constraints.as_deref().unwrap_or_default()
     }
     /// <p>Information about how tasks for the service are placed.</p>
-    pub fn placement_strategies(&self) -> ::std::option::Option<&[crate::types::AwsEcsServicePlacementStrategiesDetails]> {
-        self.placement_strategies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_strategies.is_none()`.
+    pub fn placement_strategies(&self) -> &[crate::types::AwsEcsServicePlacementStrategiesDetails] {
+        self.placement_strategies.as_deref().unwrap_or_default()
     }
     /// <p>The platform version on which to run the service. Only specified for tasks that are hosted on Fargate. If a platform version is not specified, the <code>LATEST</code> platform version is used by default.</p>
     pub fn platform_version(&self) -> ::std::option::Option<&str> {
@@ -143,8 +151,10 @@ impl AwsEcsServiceDetails {
         self.service_name.as_deref()
     }
     /// <p>Information about the service discovery registries to assign to the service.</p>
-    pub fn service_registries(&self) -> ::std::option::Option<&[crate::types::AwsEcsServiceServiceRegistriesDetails]> {
-        self.service_registries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_registries.is_none()`.
+    pub fn service_registries(&self) -> &[crate::types::AwsEcsServiceServiceRegistriesDetails] {
+        self.service_registries.as_deref().unwrap_or_default()
     }
     /// <p>The task definition to use for tasks in the service.</p>
     pub fn task_definition(&self) -> ::std::option::Option<&str> {

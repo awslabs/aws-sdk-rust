@@ -41,6 +41,7 @@ pub struct ListIpRoutesInputBuilder {
 }
 impl ListIpRoutesInputBuilder {
     /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

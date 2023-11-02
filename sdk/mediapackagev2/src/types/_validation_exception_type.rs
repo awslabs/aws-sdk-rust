@@ -19,10 +19,13 @@
 ///     ValidationExceptionType::EncryptionContractUnencrypted => { /* ... */ },
 ///     ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => { /* ... */ },
 ///     ValidationExceptionType::EncryptionMethodContainerTypeMismatch => { /* ... */ },
+///     ValidationExceptionType::EndTimeEarlierThanStartTime => { /* ... */ },
+///     ValidationExceptionType::InvalidManifestFilter => { /* ... */ },
 ///     ValidationExceptionType::InvalidPaginationMaxResults => { /* ... */ },
 ///     ValidationExceptionType::InvalidPaginationToken => { /* ... */ },
 ///     ValidationExceptionType::InvalidPolicy => { /* ... */ },
 ///     ValidationExceptionType::InvalidRoleArn => { /* ... */ },
+///     ValidationExceptionType::InvalidTimeDelaySeconds => { /* ... */ },
 ///     ValidationExceptionType::ManifestNameCollision => { /* ... */ },
 ///     ValidationExceptionType::MemberDoesNotMatchPattern => { /* ... */ },
 ///     ValidationExceptionType::MemberInvalid => { /* ... */ },
@@ -88,6 +91,10 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     EncryptionMethodContainerTypeMismatch,
     #[allow(missing_docs)] // documentation missing in model
+    EndTimeEarlierThanStartTime,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidManifestFilter,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPaginationMaxResults,
     #[allow(missing_docs)] // documentation missing in model
     InvalidPaginationToken,
@@ -95,6 +102,8 @@ pub enum ValidationExceptionType {
     InvalidPolicy,
     #[allow(missing_docs)] // documentation missing in model
     InvalidRoleArn,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidTimeDelaySeconds,
     #[allow(missing_docs)] // documentation missing in model
     ManifestNameCollision,
     #[allow(missing_docs)] // documentation missing in model
@@ -156,10 +165,13 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
                 ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible
             }
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH" => ValidationExceptionType::EncryptionMethodContainerTypeMismatch,
+            "END_TIME_EARLIER_THAN_START_TIME" => ValidationExceptionType::EndTimeEarlierThanStartTime,
+            "INVALID_MANIFEST_FILTER" => ValidationExceptionType::InvalidManifestFilter,
             "INVALID_PAGINATION_MAX_RESULTS" => ValidationExceptionType::InvalidPaginationMaxResults,
             "INVALID_PAGINATION_TOKEN" => ValidationExceptionType::InvalidPaginationToken,
             "INVALID_POLICY" => ValidationExceptionType::InvalidPolicy,
             "INVALID_ROLE_ARN" => ValidationExceptionType::InvalidRoleArn,
+            "INVALID_TIME_DELAY_SECONDS" => ValidationExceptionType::InvalidTimeDelaySeconds,
             "MANIFEST_NAME_COLLISION" => ValidationExceptionType::ManifestNameCollision,
             "MEMBER_DOES_NOT_MATCH_PATTERN" => ValidationExceptionType::MemberDoesNotMatchPattern,
             "MEMBER_INVALID" => ValidationExceptionType::MemberInvalid,
@@ -207,10 +219,13 @@ impl ValidationExceptionType {
                 "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE"
             }
             ValidationExceptionType::EncryptionMethodContainerTypeMismatch => "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
+            ValidationExceptionType::EndTimeEarlierThanStartTime => "END_TIME_EARLIER_THAN_START_TIME",
+            ValidationExceptionType::InvalidManifestFilter => "INVALID_MANIFEST_FILTER",
             ValidationExceptionType::InvalidPaginationMaxResults => "INVALID_PAGINATION_MAX_RESULTS",
             ValidationExceptionType::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
             ValidationExceptionType::InvalidPolicy => "INVALID_POLICY",
             ValidationExceptionType::InvalidRoleArn => "INVALID_ROLE_ARN",
+            ValidationExceptionType::InvalidTimeDelaySeconds => "INVALID_TIME_DELAY_SECONDS",
             ValidationExceptionType::ManifestNameCollision => "MANIFEST_NAME_COLLISION",
             ValidationExceptionType::MemberDoesNotMatchPattern => "MEMBER_DOES_NOT_MATCH_PATTERN",
             ValidationExceptionType::MemberInvalid => "MEMBER_INVALID",
@@ -247,10 +262,13 @@ impl ValidationExceptionType {
             "ENCRYPTION_CONTRACT_UNENCRYPTED",
             "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE",
             "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH",
+            "END_TIME_EARLIER_THAN_START_TIME",
+            "INVALID_MANIFEST_FILTER",
             "INVALID_PAGINATION_MAX_RESULTS",
             "INVALID_PAGINATION_TOKEN",
             "INVALID_POLICY",
             "INVALID_ROLE_ARN",
+            "INVALID_TIME_DELAY_SECONDS",
             "MANIFEST_NAME_COLLISION",
             "MEMBER_DOES_NOT_MATCH_PATTERN",
             "MEMBER_INVALID",

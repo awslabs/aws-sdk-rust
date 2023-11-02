@@ -3,14 +3,14 @@ pub fn ser_create_instant_booking(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateInstantBooking,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.duration_in_minutes {
+    {
         object.key("DurationInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((input.duration_in_minutes).into()),
         );
     }
-    if let Some(var_2) = &input.enabled {
-        object.key("Enabled").boolean(*var_2);
+    {
+        object.key("Enabled").boolean(input.enabled);
     }
     Ok(())
 }

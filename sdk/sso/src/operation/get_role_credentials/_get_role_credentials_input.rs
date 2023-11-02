@@ -50,6 +50,7 @@ pub struct GetRoleCredentialsInputBuilder {
 }
 impl GetRoleCredentialsInputBuilder {
     /// <p>The friendly name of the role that is assigned to the user.</p>
+    /// This field is required.
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl GetRoleCredentialsInputBuilder {
         &self.role_name
     }
     /// <p>The identifier for the AWS account that is assigned to the user.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl GetRoleCredentialsInputBuilder {
         &self.account_id
     }
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
+    /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self

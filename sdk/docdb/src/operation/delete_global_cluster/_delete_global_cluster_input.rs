@@ -28,6 +28,7 @@ pub struct DeleteGlobalClusterInputBuilder {
 }
 impl DeleteGlobalClusterInputBuilder {
     /// <p>The cluster identifier of the global cluster being deleted.</p>
+    /// This field is required.
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
         self

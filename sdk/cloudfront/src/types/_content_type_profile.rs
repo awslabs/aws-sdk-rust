@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentTypeProfile {
     /// <p>The format for a field-level encryption content type-profile mapping.</p>
-    pub format: ::std::option::Option<crate::types::Format>,
+    pub format: crate::types::Format,
     /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
-    pub content_type: ::std::option::Option<::std::string::String>,
+    pub content_type: ::std::string::String,
 }
 impl ContentTypeProfile {
     /// <p>The format for a field-level encryption content type-profile mapping.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
-        self.format.as_ref()
+    pub fn format(&self) -> &crate::types::Format {
+        &self.format
     }
     /// <p>The profile ID for a field-level encryption content type-profile mapping.</p>
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
     }
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
-        self.content_type.as_deref()
+    pub fn content_type(&self) -> &str {
+        use std::ops::Deref;
+        self.content_type.deref()
     }
 }
 impl ContentTypeProfile {
@@ -42,6 +43,7 @@ pub struct ContentTypeProfileBuilder {
 }
 impl ContentTypeProfileBuilder {
     /// <p>The format for a field-level encryption content type-profile mapping.</p>
+    /// This field is required.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
@@ -70,6 +72,7 @@ impl ContentTypeProfileBuilder {
         &self.profile_id
     }
     /// <p>The content type for a field-level encryption content type-profile mapping.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl ContentTypeProfileBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`ContentTypeProfile`](crate::types::ContentTypeProfile).
-    pub fn build(self) -> crate::types::ContentTypeProfile {
-        crate::types::ContentTypeProfile {
-            format: self.format,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`format`](crate::types::builders::ContentTypeProfileBuilder::format)
+    /// - [`content_type`](crate::types::builders::ContentTypeProfileBuilder::content_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::ContentTypeProfile, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ContentTypeProfile {
+            format: self.format.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "format",
+                    "format was not specified but it is required when building ContentTypeProfile",
+                )
+            })?,
             profile_id: self.profile_id,
-            content_type: self.content_type,
-        }
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building ContentTypeProfile",
+                )
+            })?,
+        })
     }
 }

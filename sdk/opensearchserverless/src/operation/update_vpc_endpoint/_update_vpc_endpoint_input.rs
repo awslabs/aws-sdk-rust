@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcEndpointInput {
     /// <p>The unique identifier of the interface endpoint to update.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The ID of one or more subnets to add to the endpoint.</p>
     pub add_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
@@ -18,24 +18,33 @@ pub struct UpdateVpcEndpointInput {
 }
 impl UpdateVpcEndpointInput {
     /// <p>The unique identifier of the interface endpoint to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The ID of one or more subnets to add to the endpoint.</p>
-    pub fn add_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_subnet_ids.is_none()`.
+    pub fn add_subnet_ids(&self) -> &[::std::string::String] {
+        self.add_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
-    pub fn remove_subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_subnet_ids.is_none()`.
+    pub fn remove_subnet_ids(&self) -> &[::std::string::String] {
+        self.remove_subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn add_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_security_group_ids.is_none()`.
+    pub fn add_security_group_ids(&self) -> &[::std::string::String] {
+        self.add_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifiers of the security groups to remove from the endpoint.</p>
-    pub fn remove_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_security_group_ids.is_none()`.
+    pub fn remove_security_group_ids(&self) -> &[::std::string::String] {
+        self.remove_security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -62,6 +71,7 @@ pub struct UpdateVpcEndpointInputBuilder {
 }
 impl UpdateVpcEndpointInputBuilder {
     /// <p>The unique identifier of the interface endpoint to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -170,11 +180,18 @@ impl UpdateVpcEndpointInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateVpcEndpointInput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput {
-            id: self.id,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building UpdateVpcEndpointInput",
+                )
+            })?,
             add_subnet_ids: self.add_subnet_ids,
             remove_subnet_ids: self.remove_subnet_ids,
             add_security_group_ids: self.add_security_group_ids,

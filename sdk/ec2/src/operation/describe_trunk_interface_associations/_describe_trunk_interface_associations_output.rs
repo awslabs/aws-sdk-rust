@@ -11,8 +11,10 @@ pub struct DescribeTrunkInterfaceAssociationsOutput {
 }
 impl DescribeTrunkInterfaceAssociationsOutput {
     /// <p>Information about the trunk associations.</p>
-    pub fn interface_associations(&self) -> ::std::option::Option<&[crate::types::TrunkInterfaceAssociation]> {
-        self.interface_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interface_associations.is_none()`.
+    pub fn interface_associations(&self) -> &[crate::types::TrunkInterfaceAssociation] {
+        self.interface_associations.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

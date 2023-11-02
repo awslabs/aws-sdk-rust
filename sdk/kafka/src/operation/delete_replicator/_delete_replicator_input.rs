@@ -48,6 +48,7 @@ impl DeleteReplicatorInputBuilder {
         &self.current_version
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be deleted.</p>
+    /// This field is required.
     pub fn replicator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replicator_arn = ::std::option::Option::Some(input.into());
         self

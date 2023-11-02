@@ -28,6 +28,7 @@ pub struct DescribeTaskExecutionInputBuilder {
 }
 impl DescribeTaskExecutionInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.</p>
+    /// This field is required.
     pub fn task_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_execution_arn = ::std::option::Option::Some(input.into());
         self

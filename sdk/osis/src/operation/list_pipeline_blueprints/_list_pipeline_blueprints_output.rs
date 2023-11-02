@@ -9,8 +9,10 @@ pub struct ListPipelineBlueprintsOutput {
 }
 impl ListPipelineBlueprintsOutput {
     /// <p>A list of available blueprints for Data Prepper.</p>
-    pub fn blueprints(&self) -> ::std::option::Option<&[crate::types::PipelineBlueprintSummary]> {
-        self.blueprints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprints.is_none()`.
+    pub fn blueprints(&self) -> &[crate::types::PipelineBlueprintSummary] {
+        self.blueprints.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListPipelineBlueprintsOutput {

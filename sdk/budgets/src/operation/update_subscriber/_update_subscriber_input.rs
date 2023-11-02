@@ -56,6 +56,7 @@ pub struct UpdateSubscriberInputBuilder {
 }
 impl UpdateSubscriberInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl UpdateSubscriberInputBuilder {
         &self.account_id
     }
     /// <p>The name of the budget whose subscriber you want to update.</p>
+    /// This field is required.
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +86,7 @@ impl UpdateSubscriberInputBuilder {
         &self.budget_name
     }
     /// <p>The notification whose subscriber you want to update.</p>
+    /// This field is required.
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
         self.notification = ::std::option::Option::Some(input);
         self
@@ -98,6 +101,7 @@ impl UpdateSubscriberInputBuilder {
         &self.notification
     }
     /// <p>The previous subscriber that is associated with a budget notification.</p>
+    /// This field is required.
     pub fn old_subscriber(mut self, input: crate::types::Subscriber) -> Self {
         self.old_subscriber = ::std::option::Option::Some(input);
         self
@@ -112,6 +116,7 @@ impl UpdateSubscriberInputBuilder {
         &self.old_subscriber
     }
     /// <p>The updated subscriber that is associated with a budget notification.</p>
+    /// This field is required.
     pub fn new_subscriber(mut self, input: crate::types::Subscriber) -> Self {
         self.new_subscriber = ::std::option::Option::Some(input);
         self

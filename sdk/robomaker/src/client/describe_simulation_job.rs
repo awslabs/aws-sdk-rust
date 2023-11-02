@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSimulationJob`](crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job(impl Into<String>)`](crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder::set_job): <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
+    ///   - [`job(impl Into<String>)`](crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::describe_simulation_job::builders::DescribeSimulationJobFluentBuilder::set_job):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the simulation job to be described.</p><br>
     /// - On success, responds with [`DescribeSimulationJobOutput`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_simulation_job::DescribeSimulationJobOutput::name): <p>The name of the simulation job.</p>

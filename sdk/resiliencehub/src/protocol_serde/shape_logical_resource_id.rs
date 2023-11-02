@@ -3,20 +3,20 @@ pub fn ser_logical_resource_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogicalResourceId,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.identifier {
-        object.key("identifier").string(var_1.as_str());
+    {
+        object.key("identifier").string(input.identifier.as_str());
     }
-    if let Some(var_2) = &input.logical_stack_name {
-        object.key("logicalStackName").string(var_2.as_str());
+    if let Some(var_1) = &input.logical_stack_name {
+        object.key("logicalStackName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.resource_group_name {
-        object.key("resourceGroupName").string(var_3.as_str());
+    if let Some(var_2) = &input.resource_group_name {
+        object.key("resourceGroupName").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.terraform_source_name {
-        object.key("terraformSourceName").string(var_4.as_str());
+    if let Some(var_3) = &input.terraform_source_name {
+        object.key("terraformSourceName").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.eks_source_name {
-        object.key("eksSourceName").string(var_5.as_str());
+    if let Some(var_4) = &input.eks_source_name {
+        object.key("eksSourceName").string(var_4.as_str());
     }
     Ok(())
 }
@@ -81,7 +81,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::logical_resource_id_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

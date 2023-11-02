@@ -41,6 +41,7 @@ pub struct DescribeVpcAttributeInputBuilder {
 }
 impl DescribeVpcAttributeInputBuilder {
     /// <p>The VPC attribute.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::VpcAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DescribeVpcAttributeInputBuilder {
         &self.attribute
     }
     /// <p>The ID of the VPC.</p>
+    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self

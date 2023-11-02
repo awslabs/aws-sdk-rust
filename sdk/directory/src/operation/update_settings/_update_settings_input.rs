@@ -14,8 +14,10 @@ impl UpdateSettingsInput {
         self.directory_id.as_deref()
     }
     /// <p>The list of <code>Setting</code> objects.</p>
-    pub fn settings(&self) -> ::std::option::Option<&[crate::types::Setting]> {
-        self.settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
+    pub fn settings(&self) -> &[crate::types::Setting] {
+        self.settings.as_deref().unwrap_or_default()
     }
 }
 impl UpdateSettingsInput {
@@ -34,6 +36,7 @@ pub struct UpdateSettingsInputBuilder {
 }
 impl UpdateSettingsInputBuilder {
     /// <p>The identifier of the directory for which to update settings.</p>
+    /// This field is required.
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self

@@ -30,8 +30,10 @@ impl UpdateSettingsInput {
         self.default_assessment_reports_destination.as_ref()
     }
     /// <p> A list of the default audit owners. </p>
-    pub fn default_process_owners(&self) -> ::std::option::Option<&[crate::types::Role]> {
-        self.default_process_owners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_process_owners.is_none()`.
+    pub fn default_process_owners(&self) -> &[crate::types::Role] {
+        self.default_process_owners.as_deref().unwrap_or_default()
     }
     /// <p> The KMS key details. </p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {

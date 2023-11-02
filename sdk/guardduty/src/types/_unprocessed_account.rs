@@ -35,6 +35,7 @@ pub struct UnprocessedAccountBuilder {
 }
 impl UnprocessedAccountBuilder {
     /// <p>The Amazon Web Services account ID.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UnprocessedAccountBuilder {
         &self.account_id
     }
     /// <p>A reason why the account hasn't been processed.</p>
+    /// This field is required.
     pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result = ::std::option::Option::Some(input.into());
         self

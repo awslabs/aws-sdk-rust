@@ -3,20 +3,20 @@ pub fn ser_import_decoder_manifest_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_decoder_manifest::ImportDecoderManifestInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    {
+        object.key("name").string(input.name.as_str());
     }
-    if let Some(var_2) = &input.network_file_definitions {
-        let mut array_3 = object.key("networkFileDefinitions").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_1 = object.key("networkFileDefinitions").start_array();
+        for item_2 in &input.network_file_definitions {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_network_file_definition::ser_network_file_definition(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_3 = array_1.value().start_object();
+                crate::protocol_serde::shape_network_file_definition::ser_network_file_definition(&mut object_3, item_2)?;
+                object_3.finish();
             }
         }
-        array_3.finish();
+        array_1.finish();
     }
     Ok(())
 }

@@ -109,6 +109,7 @@ pub struct UpdateMlTransformInputBuilder {
 }
 impl UpdateMlTransformInputBuilder {
     /// <p>A unique identifier that was generated when the transform was created.</p>
+    /// This field is required.
     pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_id = ::std::option::Option::Some(input.into());
         self

@@ -21,8 +21,10 @@ impl CloudRemovalConfigInput {
         self.interpolation_value.as_deref()
     }
     /// <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
-    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.target_bands.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_bands.is_none()`.
+    pub fn target_bands(&self) -> &[::std::string::String] {
+        self.target_bands.as_deref().unwrap_or_default()
     }
 }
 impl CloudRemovalConfigInput {

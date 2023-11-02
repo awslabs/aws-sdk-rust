@@ -33,8 +33,10 @@ impl ListImportsInput {
         self.sort_by.as_ref()
     }
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ImportFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::ImportFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

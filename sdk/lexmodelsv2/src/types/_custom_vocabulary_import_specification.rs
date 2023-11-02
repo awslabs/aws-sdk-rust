@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomVocabularyImportSpecification {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
-    pub bot_id: ::std::option::Option<::std::string::String>,
+    pub bot_id: ::std::string::String,
     /// <p>The version of the bot to import the custom vocabulary to.</p>
-    pub bot_version: ::std::option::Option<::std::string::String>,
+    pub bot_version: ::std::string::String,
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
-    pub locale_id: ::std::option::Option<::std::string::String>,
+    pub locale_id: ::std::string::String,
 }
 impl CustomVocabularyImportSpecification {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
-        self.bot_id.as_deref()
+    pub fn bot_id(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_id.deref()
     }
     /// <p>The version of the bot to import the custom vocabulary to.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
-        self.bot_version.as_deref()
+    pub fn bot_version(&self) -> &str {
+        use std::ops::Deref;
+        self.bot_version.deref()
     }
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
-        self.locale_id.as_deref()
+    pub fn locale_id(&self) -> &str {
+        use std::ops::Deref;
+        self.locale_id.deref()
     }
 }
 impl CustomVocabularyImportSpecification {
@@ -42,6 +45,7 @@ pub struct CustomVocabularyImportSpecificationBuilder {
 }
 impl CustomVocabularyImportSpecificationBuilder {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl CustomVocabularyImportSpecificationBuilder {
         &self.bot_id
     }
     /// <p>The version of the bot to import the custom vocabulary to.</p>
+    /// This field is required.
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl CustomVocabularyImportSpecificationBuilder {
         &self.bot_version
     }
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
+    /// This field is required.
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl CustomVocabularyImportSpecificationBuilder {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`CustomVocabularyImportSpecification`](crate::types::CustomVocabularyImportSpecification).
-    pub fn build(self) -> crate::types::CustomVocabularyImportSpecification {
-        crate::types::CustomVocabularyImportSpecification {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`bot_id`](crate::types::builders::CustomVocabularyImportSpecificationBuilder::bot_id)
+    /// - [`bot_version`](crate::types::builders::CustomVocabularyImportSpecificationBuilder::bot_version)
+    /// - [`locale_id`](crate::types::builders::CustomVocabularyImportSpecificationBuilder::locale_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomVocabularyImportSpecification, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomVocabularyImportSpecification {
+            bot_id: self.bot_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bot_id",
+                    "bot_id was not specified but it is required when building CustomVocabularyImportSpecification",
+                )
+            })?,
+            bot_version: self.bot_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "bot_version",
+                    "bot_version was not specified but it is required when building CustomVocabularyImportSpecification",
+                )
+            })?,
+            locale_id: self.locale_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "locale_id",
+                    "locale_id was not specified but it is required when building CustomVocabularyImportSpecification",
+                )
+            })?,
+        })
     }
 }

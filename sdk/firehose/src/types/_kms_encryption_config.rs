@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub awskms_key_arn: ::std::option::Option<::std::string::String>,
+    pub awskms_key_arn: ::std::string::String,
 }
 impl KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn awskms_key_arn(&self) -> ::std::option::Option<&str> {
-        self.awskms_key_arn.as_deref()
+    pub fn awskms_key_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.awskms_key_arn.deref()
     }
 }
 impl KmsEncryptionConfig {
@@ -28,6 +29,7 @@ pub struct KmsEncryptionConfigBuilder {
 }
 impl KmsEncryptionConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// This field is required.
     pub fn awskms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.awskms_key_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl KmsEncryptionConfigBuilder {
         &self.awskms_key_arn
     }
     /// Consumes the builder and constructs a [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
-    pub fn build(self) -> crate::types::KmsEncryptionConfig {
-        crate::types::KmsEncryptionConfig {
-            awskms_key_arn: self.awskms_key_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`awskms_key_arn`](crate::types::builders::KmsEncryptionConfigBuilder::awskms_key_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::KmsEncryptionConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::KmsEncryptionConfig {
+            awskms_key_arn: self.awskms_key_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "awskms_key_arn",
+                    "awskms_key_arn was not specified but it is required when building KmsEncryptionConfig",
+                )
+            })?,
+        })
     }
 }

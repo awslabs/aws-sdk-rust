@@ -34,6 +34,7 @@ pub struct DeleteNotificationSubscriptionInputBuilder {
 }
 impl DeleteNotificationSubscriptionInputBuilder {
     /// <p>The ID of the subscription.</p>
+    /// This field is required.
     pub fn subscription_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteNotificationSubscriptionInputBuilder {
         &self.subscription_id
     }
     /// <p>The ID of the organization.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self

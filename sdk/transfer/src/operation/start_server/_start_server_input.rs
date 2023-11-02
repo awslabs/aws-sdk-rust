@@ -27,6 +27,7 @@ pub struct StartServerInputBuilder {
 }
 impl StartServerInputBuilder {
     /// <p>A system-assigned unique identifier for a server that you start.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self

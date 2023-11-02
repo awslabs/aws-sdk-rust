@@ -5,30 +5,33 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryBranch {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The repository provider.</p>
-    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: crate::types::RepositoryProvider,
     /// <p>The repository name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The repository branch.</p>
-    pub branch: ::std::option::Option<::std::string::String>,
+    pub branch: ::std::string::String,
 }
 impl RepositoryBranch {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.provider.as_ref()
+    pub fn provider(&self) -> &crate::types::RepositoryProvider {
+        &self.provider
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
-        self.branch.as_deref()
+    pub fn branch(&self) -> &str {
+        use std::ops::Deref;
+        self.branch.deref()
     }
 }
 impl RepositoryBranch {
@@ -49,6 +52,7 @@ pub struct RepositoryBranchBuilder {
 }
 impl RepositoryBranchBuilder {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +67,7 @@ impl RepositoryBranchBuilder {
         &self.arn
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
@@ -77,6 +82,7 @@ impl RepositoryBranchBuilder {
         &self.provider
     }
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +97,7 @@ impl RepositoryBranchBuilder {
         &self.name
     }
     /// <p>The repository branch.</p>
+    /// This field is required.
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +112,37 @@ impl RepositoryBranchBuilder {
         &self.branch
     }
     /// Consumes the builder and constructs a [`RepositoryBranch`](crate::types::RepositoryBranch).
-    pub fn build(self) -> crate::types::RepositoryBranch {
-        crate::types::RepositoryBranch {
-            arn: self.arn,
-            provider: self.provider,
-            name: self.name,
-            branch: self.branch,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RepositoryBranchBuilder::arn)
+    /// - [`provider`](crate::types::builders::RepositoryBranchBuilder::provider)
+    /// - [`name`](crate::types::builders::RepositoryBranchBuilder::name)
+    /// - [`branch`](crate::types::builders::RepositoryBranchBuilder::branch)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryBranch, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositoryBranch {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RepositoryBranch",
+                )
+            })?,
+            provider: self.provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provider",
+                    "provider was not specified but it is required when building RepositoryBranch",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RepositoryBranch",
+                )
+            })?,
+            branch: self.branch.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "branch",
+                    "branch was not specified but it is required when building RepositoryBranch",
+                )
+            })?,
+        })
     }
 }

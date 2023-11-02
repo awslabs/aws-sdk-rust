@@ -17,8 +17,10 @@ impl SearchFacesOutput {
         self.searched_face_id.as_deref()
     }
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
-    pub fn face_matches(&self) -> ::std::option::Option<&[crate::types::FaceMatch]> {
-        self.face_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_matches.is_none()`.
+    pub fn face_matches(&self) -> &[crate::types::FaceMatch] {
+        self.face_matches.as_deref().unwrap_or_default()
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     pub fn face_model_version(&self) -> ::std::option::Option<&str> {

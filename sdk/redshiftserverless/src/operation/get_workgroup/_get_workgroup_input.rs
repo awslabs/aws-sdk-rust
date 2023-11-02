@@ -27,6 +27,7 @@ pub struct GetWorkgroupInputBuilder {
 }
 impl GetWorkgroupInputBuilder {
     /// <p>The name of the workgroup to return information for.</p>
+    /// This field is required.
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
         self

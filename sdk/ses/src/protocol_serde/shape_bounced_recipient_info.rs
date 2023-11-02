@@ -6,23 +6,23 @@ pub fn ser_bounced_recipient_info(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Recipient");
-    if let Some(var_2) = &input.recipient {
-        scope_1.string(var_2);
+    {
+        scope_1.string(&input.recipient);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("RecipientArn");
-    if let Some(var_4) = &input.recipient_arn {
-        scope_3.string(var_4);
+    let mut scope_2 = writer.prefix("RecipientArn");
+    if let Some(var_3) = &input.recipient_arn {
+        scope_2.string(var_3);
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("BounceType");
-    if let Some(var_6) = &input.bounce_type {
-        scope_5.string(var_6.as_str());
+    let mut scope_4 = writer.prefix("BounceType");
+    if let Some(var_5) = &input.bounce_type {
+        scope_4.string(var_5.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("RecipientDsnFields");
-    if let Some(var_8) = &input.recipient_dsn_fields {
-        crate::protocol_serde::shape_recipient_dsn_fields::ser_recipient_dsn_fields(scope_7, var_8)?;
+    let mut scope_6 = writer.prefix("RecipientDsnFields");
+    if let Some(var_7) = &input.recipient_dsn_fields {
+        crate::protocol_serde::shape_recipient_dsn_fields::ser_recipient_dsn_fields(scope_6, var_7)?;
     }
     Ok(())
 }

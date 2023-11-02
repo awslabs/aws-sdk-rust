@@ -11,8 +11,10 @@ pub struct GetVpnConnectionDeviceTypesOutput {
 }
 impl GetVpnConnectionDeviceTypesOutput {
     /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
-    pub fn vpn_connection_device_types(&self) -> ::std::option::Option<&[crate::types::VpnConnectionDeviceType]> {
-        self.vpn_connection_device_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpn_connection_device_types.is_none()`.
+    pub fn vpn_connection_device_types(&self) -> &[crate::types::VpnConnectionDeviceType] {
+        self.vpn_connection_device_types.as_deref().unwrap_or_default()
     }
     /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

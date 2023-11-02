@@ -37,8 +37,10 @@ impl HandshakeResource {
         self.r#type.as_ref()
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    pub fn resources(&self) -> ::std::option::Option<&[crate::types::HandshakeResource]> {
-        self.resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    pub fn resources(&self) -> &[crate::types::HandshakeResource] {
+        self.resources.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for HandshakeResource {

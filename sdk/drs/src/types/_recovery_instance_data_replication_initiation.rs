@@ -15,8 +15,10 @@ impl RecoveryInstanceDataReplicationInitiation {
         self.start_date_time.as_deref()
     }
     /// <p>The steps of the current attempt to initiate data replication.</p>
-    pub fn steps(&self) -> ::std::option::Option<&[crate::types::RecoveryInstanceDataReplicationInitiationStep]> {
-        self.steps.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
+    pub fn steps(&self) -> &[crate::types::RecoveryInstanceDataReplicationInitiationStep] {
+        self.steps.as_deref().unwrap_or_default()
     }
 }
 impl RecoveryInstanceDataReplicationInitiation {

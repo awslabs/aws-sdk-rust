@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsGroundStationAgentEndpoint {
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The egress address of AgentEndpoint.</p>
     pub egress_address: ::std::option::Option<crate::types::ConnectionDetails>,
     /// <p>The ingress address of AgentEndpoint.</p>
@@ -17,8 +17,9 @@ pub struct AwsGroundStationAgentEndpoint {
 }
 impl AwsGroundStationAgentEndpoint {
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The egress address of AgentEndpoint.</p>
     pub fn egress_address(&self) -> ::std::option::Option<&crate::types::ConnectionDetails> {
@@ -56,6 +57,7 @@ pub struct AwsGroundStationAgentEndpointBuilder {
 }
 impl AwsGroundStationAgentEndpointBuilder {
     /// <p>Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl AwsGroundStationAgentEndpointBuilder {
         &self.name
     }
     /// <p>The egress address of AgentEndpoint.</p>
+    /// This field is required.
     pub fn egress_address(mut self, input: crate::types::ConnectionDetails) -> Self {
         self.egress_address = ::std::option::Option::Some(input);
         self
@@ -84,6 +87,7 @@ impl AwsGroundStationAgentEndpointBuilder {
         &self.egress_address
     }
     /// <p>The ingress address of AgentEndpoint.</p>
+    /// This field is required.
     pub fn ingress_address(mut self, input: crate::types::RangedConnectionDetails) -> Self {
         self.ingress_address = ::std::option::Option::Some(input);
         self
@@ -126,13 +130,20 @@ impl AwsGroundStationAgentEndpointBuilder {
         &self.audit_results
     }
     /// Consumes the builder and constructs a [`AwsGroundStationAgentEndpoint`](crate::types::AwsGroundStationAgentEndpoint).
-    pub fn build(self) -> crate::types::AwsGroundStationAgentEndpoint {
-        crate::types::AwsGroundStationAgentEndpoint {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::AwsGroundStationAgentEndpointBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsGroundStationAgentEndpoint, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsGroundStationAgentEndpoint {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building AwsGroundStationAgentEndpoint",
+                )
+            })?,
             egress_address: self.egress_address,
             ingress_address: self.ingress_address,
             agent_status: self.agent_status,
             audit_results: self.audit_results,
-        }
+        })
     }
 }

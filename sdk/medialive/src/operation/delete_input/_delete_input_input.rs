@@ -28,6 +28,7 @@ pub struct DeleteInputInputBuilder {
 }
 impl DeleteInputInputBuilder {
     /// Unique ID of the input
+    /// This field is required.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
         self

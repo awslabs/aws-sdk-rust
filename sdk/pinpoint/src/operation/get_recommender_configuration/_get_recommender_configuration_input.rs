@@ -27,6 +27,7 @@ pub struct GetRecommenderConfigurationInputBuilder {
 }
 impl GetRecommenderConfigurationInputBuilder {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    /// This field is required.
     pub fn recommender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recommender_id = ::std::option::Option::Some(input.into());
         self

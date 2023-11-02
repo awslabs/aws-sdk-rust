@@ -82,6 +82,7 @@ pub struct UpdateContainerServiceInputBuilder {
 }
 impl UpdateContainerServiceInputBuilder {
     /// <p>The name of the container service to update.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self

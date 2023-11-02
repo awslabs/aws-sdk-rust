@@ -11,8 +11,10 @@ pub struct ListLongTermPricingOutput {
 }
 impl ListLongTermPricingOutput {
     /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
-    pub fn long_term_pricing_entries(&self) -> ::std::option::Option<&[crate::types::LongTermPricingListEntry]> {
-        self.long_term_pricing_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.long_term_pricing_entries.is_none()`.
+    pub fn long_term_pricing_entries(&self) -> &[crate::types::LongTermPricingListEntry] {
+        self.long_term_pricing_entries.as_deref().unwrap_or_default()
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

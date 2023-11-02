@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub database_arn_update: ::std::option::Option<::std::string::String>,
+    pub database_arn_update: ::std::string::String,
 }
 impl GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn_update(&self) -> ::std::option::Option<&str> {
-        self.database_arn_update.as_deref()
+    pub fn database_arn_update(&self) -> &str {
+        use std::ops::Deref;
+        self.database_arn_update.deref()
     }
 }
 impl GlueDataCatalogConfigurationUpdate {
@@ -28,6 +29,7 @@ pub struct GlueDataCatalogConfigurationUpdateBuilder {
 }
 impl GlueDataCatalogConfigurationUpdateBuilder {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
+    /// This field is required.
     pub fn database_arn_update(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_arn_update = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl GlueDataCatalogConfigurationUpdateBuilder {
         &self.database_arn_update
     }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfigurationUpdate`](crate::types::GlueDataCatalogConfigurationUpdate).
-    pub fn build(self) -> crate::types::GlueDataCatalogConfigurationUpdate {
-        crate::types::GlueDataCatalogConfigurationUpdate {
-            database_arn_update: self.database_arn_update,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_arn_update`](crate::types::builders::GlueDataCatalogConfigurationUpdateBuilder::database_arn_update)
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::GlueDataCatalogConfigurationUpdate {
+            database_arn_update: self.database_arn_update.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_arn_update",
+                    "database_arn_update was not specified but it is required when building GlueDataCatalogConfigurationUpdate",
+                )
+            })?,
+        })
     }
 }

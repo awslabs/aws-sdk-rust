@@ -44,6 +44,7 @@ pub struct RenewDomainInputBuilder {
 }
 impl RenewDomainInputBuilder {
     /// <p>The name of the domain that you want to renew.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl RenewDomainInputBuilder {
         &self.duration_in_years
     }
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
+    /// This field is required.
     pub fn current_expiry_year(mut self, input: i32) -> Self {
         self.current_expiry_year = ::std::option::Option::Some(input);
         self

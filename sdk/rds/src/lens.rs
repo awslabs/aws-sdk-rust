@@ -273,6 +273,16 @@ pub(crate) fn reflens_describe_global_clusters_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_integrations_output_marker(
+    input: &crate::operation::describe_integrations::DescribeIntegrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_option_group_options_output_marker(
     input: &crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -621,6 +631,16 @@ pub(crate) fn lens_describe_global_clusters_output_global_clusters(
     input: crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>> {
     let input = match input.global_clusters {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_integrations_output_integrations(
+    input: crate::operation::describe_integrations::DescribeIntegrationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    let input = match input.integrations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

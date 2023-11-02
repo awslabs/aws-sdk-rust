@@ -26,8 +26,10 @@ impl CreateFilterInput {
         self.filter_expression.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateFilterInput {
@@ -58,6 +60,7 @@ pub struct CreateFilterInputBuilder {
 }
 impl CreateFilterInputBuilder {
     /// <p>The name of the filter to create.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,6 +75,7 @@ impl CreateFilterInputBuilder {
         &self.name
     }
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
+    /// This field is required.
     pub fn dataset_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
@@ -86,6 +90,7 @@ impl CreateFilterInputBuilder {
         &self.dataset_group_arn
     }
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
+    /// This field is required.
     pub fn filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_expression = ::std::option::Option::Some(input.into());
         self

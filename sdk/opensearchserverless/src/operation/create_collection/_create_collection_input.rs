@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCollectionInput {
     /// <p>Name of the collection.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of collection.</p>
     pub r#type: ::std::option::Option<crate::types::CollectionType>,
     /// <p>Description of the collection.</p>
@@ -16,8 +16,9 @@ pub struct CreateCollectionInput {
 }
 impl CreateCollectionInput {
     /// <p>Name of the collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of collection.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CollectionType> {
@@ -28,8 +29,10 @@ impl CreateCollectionInput {
         self.description.as_deref()
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +58,7 @@ pub struct CreateCollectionInputBuilder {
 }
 impl CreateCollectionInputBuilder {
     /// <p>Name of the collection.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -131,11 +135,18 @@ impl CreateCollectionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_collection::builders::CreateCollectionInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_collection::CreateCollectionInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateCollectionInput",
+                )
+            })?,
             r#type: self.r#type,
             description: self.description,
             tags: self.tags,

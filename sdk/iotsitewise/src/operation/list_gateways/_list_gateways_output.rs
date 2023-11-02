@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewaysOutput {
     /// <p>A list that summarizes each gateway.</p>
-    pub gateway_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>>,
+    pub gateway_summaries: ::std::vec::Vec<crate::types::GatewaySummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListGatewaysOutput {
     /// <p>A list that summarizes each gateway.</p>
-    pub fn gateway_summaries(&self) -> ::std::option::Option<&[crate::types::GatewaySummary]> {
-        self.gateway_summaries.as_deref()
+    pub fn gateway_summaries(&self) -> &[crate::types::GatewaySummary] {
+        use std::ops::Deref;
+        self.gateway_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListGatewaysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListGatewaysOutput`](crate::operation::list_gateways::ListGatewaysOutput).
-    pub fn build(self) -> crate::operation::list_gateways::ListGatewaysOutput {
-        crate::operation::list_gateways::ListGatewaysOutput {
-            gateway_summaries: self.gateway_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`gateway_summaries`](crate::operation::list_gateways::builders::ListGatewaysOutputBuilder::gateway_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_gateways::ListGatewaysOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_gateways::ListGatewaysOutput {
+            gateway_summaries: self.gateway_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "gateway_summaries",
+                    "gateway_summaries was not specified but it is required when building ListGatewaysOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

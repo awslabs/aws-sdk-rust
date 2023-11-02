@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFormData {
     /// <p>The name of the form.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of data source to use to create the form.</p>
     pub data_type: ::std::option::Option<crate::types::FormDataTypeConfig>,
     /// <p>Specifies whether to perform a create or update action on the form.</p>
-    pub form_action_type: ::std::option::Option<crate::types::FormActionType>,
+    pub form_action_type: crate::types::FormActionType,
     /// <p>The configuration information for the form's fields.</p>
-    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>>,
+    pub fields: ::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>,
     /// <p>The configuration for the form's style.</p>
     pub style: ::std::option::Option<crate::types::FormStyle>,
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    pub sectional_elements: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>>,
+    pub sectional_elements: ::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>,
     /// <p>The schema version of the form.</p>
-    pub schema_version: ::std::option::Option<::std::string::String>,
+    pub schema_version: ::std::string::String,
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
     pub cta: ::std::option::Option<crate::types::FormCta>,
     /// <p>One or more key-value pairs to use when tagging the form data.</p>
@@ -27,32 +27,34 @@ pub struct CreateFormData {
 }
 impl CreateFormData {
     /// <p>The name of the form.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of data source to use to create the form.</p>
     pub fn data_type(&self) -> ::std::option::Option<&crate::types::FormDataTypeConfig> {
         self.data_type.as_ref()
     }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
-    pub fn form_action_type(&self) -> ::std::option::Option<&crate::types::FormActionType> {
-        self.form_action_type.as_ref()
+    pub fn form_action_type(&self) -> &crate::types::FormActionType {
+        &self.form_action_type
     }
     /// <p>The configuration information for the form's fields.</p>
-    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FieldConfig>> {
-        self.fields.as_ref()
+    pub fn fields(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FieldConfig> {
+        &self.fields
     }
     /// <p>The configuration for the form's style.</p>
     pub fn style(&self) -> ::std::option::Option<&crate::types::FormStyle> {
         self.style.as_ref()
     }
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    pub fn sectional_elements(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SectionalElement>> {
-        self.sectional_elements.as_ref()
+    pub fn sectional_elements(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::SectionalElement> {
+        &self.sectional_elements
     }
     /// <p>The schema version of the form.</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
-        self.schema_version.as_deref()
+    pub fn schema_version(&self) -> &str {
+        use std::ops::Deref;
+        self.schema_version.deref()
     }
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
     pub fn cta(&self) -> ::std::option::Option<&crate::types::FormCta> {
@@ -91,6 +93,7 @@ pub struct CreateFormDataBuilder {
 }
 impl CreateFormDataBuilder {
     /// <p>The name of the form.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl CreateFormDataBuilder {
         &self.name
     }
     /// <p>The type of data source to use to create the form.</p>
+    /// This field is required.
     pub fn data_type(mut self, input: crate::types::FormDataTypeConfig) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl CreateFormDataBuilder {
         &self.data_type
     }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
+    /// This field is required.
     pub fn form_action_type(mut self, input: crate::types::FormActionType) -> Self {
         self.form_action_type = ::std::option::Option::Some(input);
         self
@@ -153,6 +158,7 @@ impl CreateFormDataBuilder {
         &self.fields
     }
     /// <p>The configuration for the form's style.</p>
+    /// This field is required.
     pub fn style(mut self, input: crate::types::FormStyle) -> Self {
         self.style = ::std::option::Option::Some(input);
         self
@@ -192,6 +198,7 @@ impl CreateFormDataBuilder {
         &self.sectional_elements
     }
     /// <p>The schema version of the form.</p>
+    /// This field is required.
     pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
@@ -254,18 +261,49 @@ impl CreateFormDataBuilder {
         &self.label_decorator
     }
     /// Consumes the builder and constructs a [`CreateFormData`](crate::types::CreateFormData).
-    pub fn build(self) -> crate::types::CreateFormData {
-        crate::types::CreateFormData {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::CreateFormDataBuilder::name)
+    /// - [`form_action_type`](crate::types::builders::CreateFormDataBuilder::form_action_type)
+    /// - [`fields`](crate::types::builders::CreateFormDataBuilder::fields)
+    /// - [`sectional_elements`](crate::types::builders::CreateFormDataBuilder::sectional_elements)
+    /// - [`schema_version`](crate::types::builders::CreateFormDataBuilder::schema_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateFormData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CreateFormData {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateFormData",
+                )
+            })?,
             data_type: self.data_type,
-            form_action_type: self.form_action_type,
-            fields: self.fields,
+            form_action_type: self.form_action_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "form_action_type",
+                    "form_action_type was not specified but it is required when building CreateFormData",
+                )
+            })?,
+            fields: self.fields.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fields",
+                    "fields was not specified but it is required when building CreateFormData",
+                )
+            })?,
             style: self.style,
-            sectional_elements: self.sectional_elements,
-            schema_version: self.schema_version,
+            sectional_elements: self.sectional_elements.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sectional_elements",
+                    "sectional_elements was not specified but it is required when building CreateFormData",
+                )
+            })?,
+            schema_version: self.schema_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "schema_version",
+                    "schema_version was not specified but it is required when building CreateFormData",
+                )
+            })?,
             cta: self.cta,
             tags: self.tags,
             label_decorator: self.label_decorator,
-        }
+        })
     }
 }

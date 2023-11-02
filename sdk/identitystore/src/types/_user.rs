@@ -7,7 +7,7 @@ pub struct User {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a user in the identity store.</p>
-    pub user_id: ::std::option::Option<::std::string::String>,
+    pub user_id: ::std::string::String,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
     pub external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     /// <p>An object containing the name of the user.</p>
@@ -35,7 +35,7 @@ pub struct User {
     /// <p>A string containing the time zone of the user.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::option::Option<::std::string::String>,
+    pub identity_store_id: ::std::string::String,
 }
 impl User {
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
@@ -43,12 +43,15 @@ impl User {
         self.user_name.as_deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
-        self.user_id.as_deref()
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
     }
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    pub fn external_ids(&self) -> ::std::option::Option<&[crate::types::ExternalId]> {
-        self.external_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_ids.is_none()`.
+    pub fn external_ids(&self) -> &[crate::types::ExternalId] {
+        self.external_ids.as_deref().unwrap_or_default()
     }
     /// <p>An object containing the name of the user.</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::Name> {
@@ -67,16 +70,22 @@ impl User {
         self.profile_url.as_deref()
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn emails(&self) -> ::std::option::Option<&[crate::types::Email]> {
-        self.emails.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emails.is_none()`.
+    pub fn emails(&self) -> &[crate::types::Email] {
+        self.emails.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn addresses(&self) -> ::std::option::Option<&[crate::types::Address]> {
-        self.addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
+    pub fn addresses(&self) -> &[crate::types::Address] {
+        self.addresses.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::PhoneNumber]> {
-        self.phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_numbers.is_none()`.
+    pub fn phone_numbers(&self) -> &[crate::types::PhoneNumber] {
+        self.phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn user_type(&self) -> ::std::option::Option<&str> {
@@ -99,8 +108,9 @@ impl User {
         self.timezone.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
-        self.identity_store_id.as_deref()
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
     }
 }
 impl ::std::fmt::Debug for User {
@@ -169,6 +179,7 @@ impl UserBuilder {
         &self.user_name
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
@@ -389,6 +400,7 @@ impl UserBuilder {
         &self.timezone
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
@@ -403,10 +415,18 @@ impl UserBuilder {
         &self.identity_store_id
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
-    pub fn build(self) -> crate::types::User {
-        crate::types::User {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`user_id`](crate::types::builders::UserBuilder::user_id)
+    /// - [`identity_store_id`](crate::types::builders::UserBuilder::identity_store_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::User {
             user_name: self.user_name,
-            user_id: self.user_id,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building User",
+                )
+            })?,
             external_ids: self.external_ids,
             name: self.name,
             display_name: self.display_name,
@@ -420,8 +440,13 @@ impl UserBuilder {
             preferred_language: self.preferred_language,
             locale: self.locale,
             timezone: self.timezone,
-            identity_store_id: self.identity_store_id,
-        }
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building User",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for UserBuilder {

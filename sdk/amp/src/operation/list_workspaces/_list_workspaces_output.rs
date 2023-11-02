@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
-    pub workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
+    pub workspaces: ::std::vec::Vec<crate::types::WorkspaceSummary>,
     /// Pagination token to use when requesting the next page in this list.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
-    pub fn workspaces(&self) -> ::std::option::Option<&[crate::types::WorkspaceSummary]> {
-        self.workspaces.as_deref()
+    pub fn workspaces(&self) -> &[crate::types::WorkspaceSummary] {
+        use std::ops::Deref;
+        self.workspaces.deref()
     }
     /// Pagination token to use when requesting the next page in this list.
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,11 +86,20 @@ impl ListWorkspacesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
-    pub fn build(self) -> crate::operation::list_workspaces::ListWorkspacesOutput {
-        crate::operation::list_workspaces::ListWorkspacesOutput {
-            workspaces: self.workspaces,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspaces`](crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder::workspaces)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_workspaces::ListWorkspacesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_workspaces::ListWorkspacesOutput {
+            workspaces: self.workspaces.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspaces",
+                    "workspaces was not specified but it is required when building ListWorkspacesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStudio`](crate::operation::delete_studio::builders::DeleteStudioFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
+    ///   - [`studio_id(impl Into<String>)`](crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::delete_studio::builders::DeleteStudioFluentBuilder::set_studio_id):<br>required: **true**<br><p>The ID of the Amazon EMR Studio.</p><br>
     /// - On success, responds with [`DeleteStudioOutput`](crate::operation::delete_studio::DeleteStudioOutput)
     /// - On failure, responds with [`SdkError<DeleteStudioError>`](crate::operation::delete_studio::DeleteStudioError)
     pub fn delete_studio(&self) -> crate::operation::delete_studio::builders::DeleteStudioFluentBuilder {

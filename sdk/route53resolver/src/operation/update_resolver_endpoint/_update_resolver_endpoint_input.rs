@@ -28,8 +28,10 @@ impl UpdateResolverEndpointInput {
         self.resolver_endpoint_type.as_ref()
     }
     /// <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet. </p>
-    pub fn update_ip_addresses(&self) -> ::std::option::Option<&[crate::types::UpdateIpAddress]> {
-        self.update_ip_addresses.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_ip_addresses.is_none()`.
+    pub fn update_ip_addresses(&self) -> &[crate::types::UpdateIpAddress] {
+        self.update_ip_addresses.as_deref().unwrap_or_default()
     }
 }
 impl UpdateResolverEndpointInput {
@@ -50,6 +52,7 @@ pub struct UpdateResolverEndpointInputBuilder {
 }
 impl UpdateResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
+    /// This field is required.
     pub fn resolver_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_endpoint_id = ::std::option::Option::Some(input.into());
         self

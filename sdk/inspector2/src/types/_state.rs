@@ -5,24 +5,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct State {
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub status: ::std::option::Option<crate::types::Status>,
+    pub status: crate::types::Status,
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub error_code: crate::types::ErrorCode,
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl State {
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::Status {
+        &self.status
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
-        self.error_code.as_ref()
+    pub fn error_code(&self) -> &crate::types::ErrorCode {
+        &self.error_code
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl State {
@@ -42,6 +43,7 @@ pub struct StateBuilder {
 }
 impl StateBuilder {
     /// <p>The status of Amazon Inspector for the account.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl StateBuilder {
         &self.status
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl StateBuilder {
         &self.error_code
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,30 @@ impl StateBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`State`](crate::types::State).
-    pub fn build(self) -> crate::types::State {
-        crate::types::State {
-            status: self.status,
-            error_code: self.error_code,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::StateBuilder::status)
+    /// - [`error_code`](crate::types::builders::StateBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::StateBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::State {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building State",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building State",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building State",
+                )
+            })?,
+        })
     }
 }

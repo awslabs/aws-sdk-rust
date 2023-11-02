@@ -41,6 +41,7 @@ pub struct UpdateApplicationInputBuilder {
 }
 impl UpdateApplicationInputBuilder {
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl UpdateApplicationInputBuilder {
         &self.application_name
     }
     /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    /// This field is required.
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
         self
@@ -69,6 +71,7 @@ impl UpdateApplicationInputBuilder {
         &self.current_application_version_id
     }
     /// <p>Describes application updates.</p>
+    /// This field is required.
     pub fn application_update(mut self, input: crate::types::ApplicationUpdate) -> Self {
         self.application_update = ::std::option::Option::Some(input);
         self

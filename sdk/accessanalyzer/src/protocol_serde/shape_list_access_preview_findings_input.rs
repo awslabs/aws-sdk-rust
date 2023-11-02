@@ -3,30 +3,30 @@ pub fn ser_list_access_preview_findings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.analyzer_arn {
-        object.key("analyzerArn").string(var_1.as_str());
+    {
+        object.key("analyzerArn").string(input.analyzer_arn.as_str());
     }
-    if let Some(var_2) = &input.filter {
+    if let Some(var_1) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("filter").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_2 = object.key("filter").start_object();
+        for (key_3, value_4) in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = object_3.key(key_4.as_str()).start_object();
-                crate::protocol_serde::shape_criterion::ser_criterion(&mut object_6, value_5)?;
-                object_6.finish();
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_criterion::ser_criterion(&mut object_5, value_4)?;
+                object_5.finish();
             }
         }
-        object_3.finish();
+        object_2.finish();
     }
-    if let Some(var_7) = &input.max_results {
+    if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("nextToken").string(var_8.as_str());
+    if let Some(var_7) = &input.next_token {
+        object.key("nextToken").string(var_7.as_str());
     }
     Ok(())
 }

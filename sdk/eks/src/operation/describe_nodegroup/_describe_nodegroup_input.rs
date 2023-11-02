@@ -34,6 +34,7 @@ pub struct DescribeNodegroupInputBuilder {
 }
 impl DescribeNodegroupInputBuilder {
     /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DescribeNodegroupInputBuilder {
         &self.cluster_name
     }
     /// <p>The name of the node group to describe.</p>
+    /// This field is required.
     pub fn nodegroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nodegroup_name = ::std::option::Option::Some(input.into());
         self

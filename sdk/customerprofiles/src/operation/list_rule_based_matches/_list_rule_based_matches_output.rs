@@ -11,8 +11,10 @@ pub struct ListRuleBasedMatchesOutput {
 }
 impl ListRuleBasedMatchesOutput {
     /// <p>The list of <code>MatchIds</code> for the given domain.</p>
-    pub fn match_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.match_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_ids.is_none()`.
+    pub fn match_ids(&self) -> &[::std::string::String] {
+        self.match_ids.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token from the previous <code>ListRuleBasedMatches</code> API call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

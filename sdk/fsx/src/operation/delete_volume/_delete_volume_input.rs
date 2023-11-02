@@ -62,6 +62,7 @@ impl DeleteVolumeInputBuilder {
         &self.client_request_token
     }
     /// <p>The ID of the volume that you are deleting.</p>
+    /// This field is required.
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
         self

@@ -6,9 +6,9 @@ pub struct ListHostKeysOutput {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the server identifier that contains the listed host keys.</p>
-    pub server_id: ::std::option::Option<::std::string::String>,
+    pub server_id: ::std::string::String,
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub host_keys: ::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>>,
+    pub host_keys: ::std::vec::Vec<crate::types::ListedHostKey>,
     _request_id: Option<String>,
 }
 impl ListHostKeysOutput {
@@ -17,12 +17,14 @@ impl ListHostKeysOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns the server identifier that contains the listed host keys.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
-        self.server_id.as_deref()
+    pub fn server_id(&self) -> &str {
+        use std::ops::Deref;
+        self.server_id.deref()
     }
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub fn host_keys(&self) -> ::std::option::Option<&[crate::types::ListedHostKey]> {
-        self.host_keys.as_deref()
+    pub fn host_keys(&self) -> &[crate::types::ListedHostKey] {
+        use std::ops::Deref;
+        self.host_keys.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListHostKeysOutput {
@@ -62,6 +64,7 @@ impl ListHostKeysOutputBuilder {
         &self.next_token
     }
     /// <p>Returns the server identifier that contains the listed host keys.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,27 @@ impl ListHostKeysOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHostKeysOutput`](crate::operation::list_host_keys::ListHostKeysOutput).
-    pub fn build(self) -> crate::operation::list_host_keys::ListHostKeysOutput {
-        crate::operation::list_host_keys::ListHostKeysOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`server_id`](crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder::server_id)
+    /// - [`host_keys`](crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder::host_keys)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_host_keys::ListHostKeysOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_host_keys::ListHostKeysOutput {
             next_token: self.next_token,
-            server_id: self.server_id,
-            host_keys: self.host_keys,
+            server_id: self.server_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "server_id",
+                    "server_id was not specified but it is required when building ListHostKeysOutput",
+                )
+            })?,
+            host_keys: self.host_keys.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host_keys",
+                    "host_keys was not specified but it is required when building ListHostKeysOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -41,6 +41,7 @@ pub struct CopyImageSetInputBuilder {
 }
 impl CopyImageSetInputBuilder {
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CopyImageSetInputBuilder {
         &self.datastore_id
     }
     /// <p>The source image set identifier.</p>
+    /// This field is required.
     pub fn source_image_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image_set_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CopyImageSetInputBuilder {
         &self.source_image_set_id
     }
     /// <p>Copy image set information.</p>
+    /// This field is required.
     pub fn copy_image_set_information(mut self, input: crate::types::CopyImageSetInformation) -> Self {
         self.copy_image_set_information = ::std::option::Option::Some(input);
         self

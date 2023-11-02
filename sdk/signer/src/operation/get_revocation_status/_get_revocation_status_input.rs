@@ -34,8 +34,10 @@ impl GetRevocationStatusInput {
     }
     /// <p>A list of composite signed hashes that identify certificates.</p>
     /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
-    pub fn certificate_hashes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_hashes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_hashes.is_none()`.
+    pub fn certificate_hashes(&self) -> &[::std::string::String] {
+        self.certificate_hashes.as_deref().unwrap_or_default()
     }
 }
 impl GetRevocationStatusInput {
@@ -57,6 +59,7 @@ pub struct GetRevocationStatusInputBuilder {
 }
 impl GetRevocationStatusInputBuilder {
     /// <p>The timestamp of the signature that validates the profile or job.</p>
+    /// This field is required.
     pub fn signature_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.signature_timestamp = ::std::option::Option::Some(input);
         self
@@ -71,6 +74,7 @@ impl GetRevocationStatusInputBuilder {
         &self.signature_timestamp
     }
     /// <p>The ID of a signing platform. </p>
+    /// This field is required.
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +89,7 @@ impl GetRevocationStatusInputBuilder {
         &self.platform_id
     }
     /// <p>The version of a signing profile.</p>
+    /// This field is required.
     pub fn profile_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_version_arn = ::std::option::Option::Some(input.into());
         self
@@ -99,6 +104,7 @@ impl GetRevocationStatusInputBuilder {
         &self.profile_version_arn
     }
     /// <p>The ARN of a signing job.</p>
+    /// This field is required.
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
         self

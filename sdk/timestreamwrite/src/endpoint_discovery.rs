@@ -6,9 +6,9 @@
 
 //! Maintain a cache of discovered endpoints
 
+use aws_smithy_async::future::BoxFuture;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::SharedTimeSource;
-use aws_smithy_client::erase::boxclone::BoxFuture;
 use aws_smithy_http::endpoint::{ResolveEndpoint, ResolveEndpointError};
 use aws_smithy_types::endpoint::Endpoint;
 use std::fmt::{Debug, Formatter};

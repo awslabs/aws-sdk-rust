@@ -23,13 +23,17 @@ impl AddPermissionInput {
         self.label.as_deref()
     }
     /// <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.aws_account_id.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_id.is_none()`.
+    pub fn aws_account_id(&self) -> &[::std::string::String] {
+        self.aws_account_id.as_deref().unwrap_or_default()
     }
     /// <p>The action you want to allow for the specified principal(s).</p>
     /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.action_name.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_name.is_none()`.
+    pub fn action_name(&self) -> &[::std::string::String] {
+        self.action_name.as_deref().unwrap_or_default()
     }
 }
 impl AddPermissionInput {
@@ -50,6 +54,7 @@ pub struct AddPermissionInputBuilder {
 }
 impl AddPermissionInputBuilder {
     /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    /// This field is required.
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +69,7 @@ impl AddPermissionInputBuilder {
         &self.topic_arn
     }
     /// <p>A unique identifier for the new policy statement.</p>
+    /// This field is required.
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
         self

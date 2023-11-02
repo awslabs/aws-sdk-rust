@@ -49,6 +49,7 @@ impl UpdateFlowTemplateInputBuilder {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl UpdateFlowTemplateInputBuilder {
         &self.id
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
+    /// This field is required.
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

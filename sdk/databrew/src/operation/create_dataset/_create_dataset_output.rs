@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetOutput {
     /// <p>The name of the dataset that you created.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateDatasetOutput {
     /// <p>The name of the dataset that you created.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for CreateDatasetOutput {
@@ -34,6 +35,7 @@ pub struct CreateDatasetOutputBuilder {
 }
 impl CreateDatasetOutputBuilder {
     /// <p>The name of the dataset that you created.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,19 @@ impl CreateDatasetOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput).
-    pub fn build(self) -> crate::operation::create_dataset::CreateDatasetOutput {
-        crate::operation::create_dataset::CreateDatasetOutput {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_dataset::builders::CreateDatasetOutputBuilder::name)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetOutput {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateDatasetOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

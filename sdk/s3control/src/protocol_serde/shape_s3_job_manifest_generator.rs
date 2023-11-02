@@ -9,17 +9,17 @@ pub fn ser_s3_job_manifest_generator(
         let mut inner_writer = scope.start_el("ExpectedBucketOwner").finish();
         inner_writer.data(var_1.as_str());
     }
-    if let Some(var_2) = &input.source_bucket {
+    {
         let mut inner_writer = scope.start_el("SourceBucket").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.source_bucket.as_str());
     }
-    if let Some(var_3) = &input.manifest_output_location {
+    if let Some(var_2) = &input.manifest_output_location {
         let inner_writer = scope.start_el("ManifestOutputLocation");
-        crate::protocol_serde::shape_s3_manifest_output_location::ser_s3_manifest_output_location(var_3, inner_writer)?
+        crate::protocol_serde::shape_s3_manifest_output_location::ser_s3_manifest_output_location(var_2, inner_writer)?
     }
-    if let Some(var_4) = &input.filter {
+    if let Some(var_3) = &input.filter {
         let inner_writer = scope.start_el("Filter");
-        crate::protocol_serde::shape_job_manifest_generator_filter::ser_job_manifest_generator_filter(var_4, inner_writer)?
+        crate::protocol_serde::shape_job_manifest_generator_filter::ser_job_manifest_generator_filter(var_3, inner_writer)?
     }
     {
         let mut inner_writer = scope.start_el("EnableManifestOutput").finish();
@@ -29,6 +29,7 @@ pub fn ser_s3_job_manifest_generator(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_s3_job_manifest_generator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::S3JobManifestGenerator, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -37,6 +38,19 @@ pub fn de_s3_job_manifest_generator(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExpectedBucketOwner") /* ExpectedBucketOwner com.amazonaws.s3control#S3JobManifestGenerator$ExpectedBucketOwner */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_expected_bucket_owner(var_4);
+            }
+            ,
+            s if s.matches("SourceBucket") /* SourceBucket com.amazonaws.s3control#S3JobManifestGenerator$SourceBucket */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -46,44 +60,31 @@ pub fn de_s3_job_manifest_generator(
                         ?
                     )
                 ;
-                builder = builder.set_expected_bucket_owner(var_5);
-            }
-            ,
-            s if s.matches("SourceBucket") /* SourceBucket com.amazonaws.s3control#S3JobManifestGenerator$SourceBucket */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_source_bucket(var_6);
+                builder = builder.set_source_bucket(var_5);
             }
             ,
             s if s.matches("ManifestOutputLocation") /* ManifestOutputLocation com.amazonaws.s3control#S3JobManifestGenerator$ManifestOutputLocation */ =>  {
-                let var_7 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_s3_manifest_output_location::de_s3_manifest_output_location(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_manifest_output_location(var_7);
+                builder = builder.set_manifest_output_location(var_6);
             }
             ,
             s if s.matches("Filter") /* Filter com.amazonaws.s3control#S3JobManifestGenerator$Filter */ =>  {
-                let var_8 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_job_manifest_generator_filter::de_job_manifest_generator_filter(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_filter(var_8);
+                builder = builder.set_filter(var_7);
             }
             ,
             s if s.matches("EnableManifestOutput") /* EnableManifestOutput com.amazonaws.s3control#S3JobManifestGenerator$EnableManifestOutput */ =>  {
-                let var_9 =
+                let var_8 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -94,11 +95,13 @@ pub fn de_s3_job_manifest_generator(
                         ?
                     )
                 ;
-                builder = builder.set_enable_manifest_output(var_9);
+                builder = builder.set_enable_manifest_output(var_8);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::s3_job_manifest_generator_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

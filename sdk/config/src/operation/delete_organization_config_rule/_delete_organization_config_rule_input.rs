@@ -27,6 +27,7 @@ pub struct DeleteOrganizationConfigRuleInputBuilder {
 }
 impl DeleteOrganizationConfigRuleInputBuilder {
     /// <p>The name of organization Config rule that you want to delete.</p>
+    /// This field is required.
     pub fn organization_config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_config_rule_name = ::std::option::Option::Some(input.into());
         self

@@ -35,8 +35,10 @@ impl DbSubnetGroup {
         self.subnet_group_status.as_deref()
     }
     /// <p>Detailed information about one or more subnets within a subnet group.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[crate::types::Subnet] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
     pub fn db_subnet_group_arn(&self) -> ::std::option::Option<&str> {

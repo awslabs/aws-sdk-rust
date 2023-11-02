@@ -76,6 +76,7 @@ impl ProvisionIpamPoolCidrInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
+    /// This field is required.
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
         self

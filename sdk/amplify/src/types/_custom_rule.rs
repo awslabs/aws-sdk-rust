@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRule {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
-    pub source: ::std::option::Option<::std::string::String>,
+    pub source: ::std::string::String,
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
-    pub target: ::std::option::Option<::std::string::String>,
+    pub target: ::std::string::String,
     /// <p> The status code for a URL rewrite or redirect rule. </p>
     /// <dl>
     /// <dt>
@@ -47,12 +47,14 @@ pub struct CustomRule {
 }
 impl CustomRule {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
-        self.source.as_deref()
+    pub fn source(&self) -> &str {
+        use std::ops::Deref;
+        self.source.deref()
     }
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
-        self.target.as_deref()
+    pub fn target(&self) -> &str {
+        use std::ops::Deref;
+        self.target.deref()
     }
     /// <p> The status code for a URL rewrite or redirect rule. </p>
     /// <dl>
@@ -113,6 +115,7 @@ pub struct CustomRuleBuilder {
 }
 impl CustomRuleBuilder {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
+    /// This field is required.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +130,7 @@ impl CustomRuleBuilder {
         &self.source
     }
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
@@ -265,12 +269,25 @@ impl CustomRuleBuilder {
         &self.condition
     }
     /// Consumes the builder and constructs a [`CustomRule`](crate::types::CustomRule).
-    pub fn build(self) -> crate::types::CustomRule {
-        crate::types::CustomRule {
-            source: self.source,
-            target: self.target,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`source`](crate::types::builders::CustomRuleBuilder::source)
+    /// - [`target`](crate::types::builders::CustomRuleBuilder::target)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomRule {
+            source: self.source.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "source",
+                    "source was not specified but it is required when building CustomRule",
+                )
+            })?,
+            target: self.target.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target",
+                    "target was not specified but it is required when building CustomRule",
+                )
+            })?,
             status: self.status,
             condition: self.condition,
-        }
+        })
     }
 }

@@ -27,6 +27,7 @@ pub struct DescribeAssetInputBuilder {
 }
 impl DescribeAssetInputBuilder {
     /// The ID of an MediaPackage VOD Asset resource.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

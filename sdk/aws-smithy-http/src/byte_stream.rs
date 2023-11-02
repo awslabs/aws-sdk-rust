@@ -48,7 +48,8 @@
 //!
 //! ### Stream a ByteStream into a file
 //! The previous example is recommended in cases where loading the entire file into memory first is desirable. For extremely large
-//! files, you may wish to stream the data directly to the file system, chunk by chunk. This is posible using the `futures::Stream` implementation.
+//! files, you may wish to stream the data directly to the file system, chunk by chunk.
+//! This is possible using the [`.next()`](crate::byte_stream::ByteStream::next) method.
 //!
 //! ```no_run
 //! use bytes::{Buf, Bytes};
@@ -128,6 +129,7 @@ use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
 use http_body::Body;
 use pin_project_lite::pin_project;
+use std::future::poll_fn;
 use std::io::IoSlice;
 use std::pin::Pin;
 use std::task::{Context, Poll};
@@ -166,9 +168,7 @@ pin_project! {
     ///        println!("first chunk: {:?}", data.chunk());
     ///     }
     ///     ```
-    /// 2. Via [`impl Stream`](futures_core::Stream):
-    ///
-    ///     _Note: An import of `StreamExt` is required to use `.try_next()`._
+    /// 2. Via [`.next()`](crate::byte_stream::ByteStream::next) or [`.try_next()`](crate::byte_stream::ByteStream::try_next):
     ///
     ///     For use-cases where holding the entire ByteStream in memory is unnecessary, use the
     ///     `Stream` implementation:
@@ -183,7 +183,6 @@ pin_project! {
     ///     # }
     ///     use aws_smithy_http::byte_stream::{ByteStream, AggregatedBytes, error::Error};
     ///     use aws_smithy_http::body::SdkBody;
-    ///     use tokio_stream::StreamExt;
     ///
     ///     async fn example() -> Result<(), Error> {
     ///        let mut stream = ByteStream::from(vec![1, 2, 3, 4, 5, 99]);
@@ -276,12 +275,43 @@ impl ByteStream {
         }
     }
 
-    /// Consumes the ByteStream, returning the wrapped SdkBody
+    /// Consume the `ByteStream`, returning the wrapped SdkBody.
     // Backwards compatibility note: Because SdkBody has a dyn variant,
     // we will always be able to implement this method, even if we stop using
     // SdkBody as the internal representation
     pub fn into_inner(self) -> SdkBody {
         self.inner.body
+    }
+
+    /// Return the next item in the `ByteStream`.
+    ///
+    /// There is also a sibling method [`try_next`](ByteStream::try_next), which returns a `Result<Option<Bytes>, Error>`
+    /// instead of an `Option<Result<Bytes, Error>>`.
+    pub async fn next(&mut self) -> Option<Result<Bytes, Error>> {
+        Some(self.inner.next().await?.map_err(Error::streaming))
+    }
+
+    /// Attempt to pull out the next value of this stream, returning `None` if the stream is
+    /// exhausted.
+    pub fn poll_next(
+        self: Pin<&mut Self>,
+        cx: &mut Context<'_>,
+    ) -> Poll<Option<Result<Bytes, Error>>> {
+        self.project().inner.poll_next(cx).map_err(Error::streaming)
+    }
+
+    /// Consume and return the next item in the `ByteStream` or return an error if an error is
+    /// encountered.
+    ///
+    /// Similar to the [`next`](ByteStream::next) method, but this returns a `Result<Option<Bytes>, Error>` rather than
+    /// an `Option<Result<Bytes, Error>>`, making for easy use with the `?` operator.
+    pub async fn try_next(&mut self) -> Result<Option<Bytes>, Error> {
+        self.next().await.transpose()
+    }
+
+    /// Return the bounds on the remaining length of the `ByteStream`.
+    pub fn size_hint(&self) -> (u64, Option<u64>) {
+        self.inner.size_hint()
     }
 
     /// Read all the data from this `ByteStream` into memory
@@ -393,7 +423,9 @@ impl ByteStream {
     /// # }
     /// ```
     pub fn into_async_read(self) -> impl tokio::io::AsyncRead {
-        tokio_util::io::StreamReader::new(self)
+        tokio_util::io::StreamReader::new(
+            crate::futures_stream_adapter::FuturesStreamCompatByteStream::new(self),
+        )
     }
 
     /// Given a function to modify an [`SdkBody`], run it on the `SdkBody` inside this `Bytestream`.
@@ -439,18 +471,6 @@ impl From<Vec<u8>> for ByteStream {
 impl From<hyper::Body> for ByteStream {
     fn from(input: hyper::Body) -> Self {
         ByteStream::new(SdkBody::from(input))
-    }
-}
-
-impl futures_core::stream::Stream for ByteStream {
-    type Item = Result<Bytes, Error>;
-
-    fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        self.project().inner.poll_next(cx).map_err(Error::streaming)
-    }
-
-    fn size_hint(&self) -> (usize, Option<usize>) {
-        self.inner.size_hint()
     }
 }
 
@@ -524,6 +544,25 @@ impl<B> Inner<B> {
         Self { body }
     }
 
+    async fn next(&mut self) -> Option<Result<Bytes, B::Error>>
+    where
+        Self: Unpin,
+        B: http_body::Body<Data = Bytes>,
+    {
+        let mut me = Pin::new(self);
+        poll_fn(|cx| me.as_mut().poll_next(cx)).await
+    }
+
+    fn poll_next(
+        self: Pin<&mut Self>,
+        cx: &mut Context<'_>,
+    ) -> Poll<Option<Result<Bytes, B::Error>>>
+    where
+        B: http_body::Body<Data = Bytes>,
+    {
+        self.project().body.poll_data(cx)
+    }
+
     async fn collect(self) -> Result<AggregatedBytes, B::Error>
     where
         B: http_body::Body<Data = Bytes>,
@@ -536,34 +575,13 @@ impl<B> Inner<B> {
         }
         Ok(AggregatedBytes(output))
     }
-}
 
-const SIZE_HINT_32_BIT_PANIC_MESSAGE: &str = r#"
-You're running a 32-bit system and this stream's length is too large to be represented with a usize.
-Please limit stream length to less than 4.294Gb or run this program on a 64-bit computer architecture.
-"#;
-
-impl<B> futures_core::stream::Stream for Inner<B>
-where
-    B: http_body::Body<Data = Bytes>,
-{
-    type Item = Result<Bytes, B::Error>;
-
-    fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        self.project().body.poll_data(cx)
-    }
-
-    fn size_hint(&self) -> (usize, Option<usize>) {
+    fn size_hint(&self) -> (u64, Option<u64>)
+    where
+        B: http_body::Body<Data = Bytes>,
+    {
         let size_hint = http_body::Body::size_hint(&self.body);
-        let lower = size_hint.lower().try_into();
-        let upper = size_hint.upper().map(|u| u.try_into()).transpose();
-
-        match (lower, upper) {
-            (Ok(lower), Ok(upper)) => (lower, upper),
-            (Err(_), _) | (_, Err(_)) => {
-                panic!("{}", SIZE_HINT_32_BIT_PANIC_MESSAGE)
-            }
-        }
+        (size_hint.lower(), size_hint.upper())
     }
 }
 

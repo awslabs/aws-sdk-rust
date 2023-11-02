@@ -4,18 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DeleteFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The identifier of the fraudster you want to delete.</p>
-    pub fraudster_id: ::std::option::Option<::std::string::String>,
+    pub fraudster_id: ::std::string::String,
 }
 impl DeleteFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The identifier of the fraudster you want to delete.</p>
-    pub fn fraudster_id(&self) -> ::std::option::Option<&str> {
-        self.fraudster_id.as_deref()
+    pub fn fraudster_id(&self) -> &str {
+        use std::ops::Deref;
+        self.fraudster_id.deref()
     }
 }
 impl ::std::fmt::Debug for DeleteFraudsterInput {
@@ -42,6 +44,7 @@ pub struct DeleteFraudsterInputBuilder {
 }
 impl DeleteFraudsterInputBuilder {
     /// <p>The identifier of the domain that contains the fraudster.</p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl DeleteFraudsterInputBuilder {
         &self.domain_id
     }
     /// <p>The identifier of the fraudster you want to delete.</p>
+    /// This field is required.
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fraudster_id = ::std::option::Option::Some(input.into());
         self
@@ -70,12 +74,25 @@ impl DeleteFraudsterInputBuilder {
         &self.fraudster_id
     }
     /// Consumes the builder and constructs a [`DeleteFraudsterInput`](crate::operation::delete_fraudster::DeleteFraudsterInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::delete_fraudster::builders::DeleteFraudsterInputBuilder::domain_id)
+    /// - [`fraudster_id`](crate::operation::delete_fraudster::builders::DeleteFraudsterInputBuilder::fraudster_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_fraudster::DeleteFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fraudster::DeleteFraudsterInput {
-            domain_id: self.domain_id,
-            fraudster_id: self.fraudster_id,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building DeleteFraudsterInput",
+                )
+            })?,
+            fraudster_id: self.fraudster_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "fraudster_id",
+                    "fraudster_id was not specified but it is required when building DeleteFraudsterInput",
+                )
+            })?,
         })
     }
 }

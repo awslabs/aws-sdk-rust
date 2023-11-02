@@ -34,6 +34,7 @@ pub struct PutImagePolicyInputBuilder {
 }
 impl PutImagePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
+    /// This field is required.
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutImagePolicyInputBuilder {
         &self.image_arn
     }
     /// <p>The policy to apply.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

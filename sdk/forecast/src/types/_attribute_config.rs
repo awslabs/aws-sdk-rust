@@ -10,7 +10,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeConfig {
     /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
-    pub attribute_name: ::std::option::Option<::std::string::String>,
+    pub attribute_name: ::std::string::String,
     /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
     /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
     /// <ul>
@@ -26,12 +26,13 @@ pub struct AttributeConfig {
     /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
-    pub transformations: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub transformations: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
 }
 impl AttributeConfig {
     /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
-        self.attribute_name.as_deref()
+    pub fn attribute_name(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_name.deref()
     }
     /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
     /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Default values are bolded.</p>
@@ -48,8 +49,8 @@ impl AttributeConfig {
     /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
-    pub fn transformations(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.transformations.as_ref()
+    pub fn transformations(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+        &self.transformations
     }
 }
 impl AttributeConfig {
@@ -68,6 +69,7 @@ pub struct AttributeConfigBuilder {
 }
 impl AttributeConfigBuilder {
     /// <p>The name of the attribute as specified in the schema. Amazon Forecast supports the target field of the target time series and the related time series datasets. For example, for the RETAIL domain, the target is <code>demand</code>.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
@@ -151,10 +153,23 @@ impl AttributeConfigBuilder {
         &self.transformations
     }
     /// Consumes the builder and constructs a [`AttributeConfig`](crate::types::AttributeConfig).
-    pub fn build(self) -> crate::types::AttributeConfig {
-        crate::types::AttributeConfig {
-            attribute_name: self.attribute_name,
-            transformations: self.transformations,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_name`](crate::types::builders::AttributeConfigBuilder::attribute_name)
+    /// - [`transformations`](crate::types::builders::AttributeConfigBuilder::transformations)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttributeConfig {
+            attribute_name: self.attribute_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_name",
+                    "attribute_name was not specified but it is required when building AttributeConfig",
+                )
+            })?,
+            transformations: self.transformations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transformations",
+                    "transformations was not specified but it is required when building AttributeConfig",
+                )
+            })?,
+        })
     }
 }

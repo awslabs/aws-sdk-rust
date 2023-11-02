@@ -42,6 +42,7 @@ pub struct HumanTaskUiSummaryBuilder {
 }
 impl HumanTaskUiSummaryBuilder {
     /// <p>The name of the human task user interface.</p>
+    /// This field is required.
     pub fn human_task_ui_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_name = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl HumanTaskUiSummaryBuilder {
         &self.human_task_ui_name
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+    /// This field is required.
     pub fn human_task_ui_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl HumanTaskUiSummaryBuilder {
         &self.human_task_ui_arn
     }
     /// <p>A timestamp when SageMaker created the human task user interface.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self

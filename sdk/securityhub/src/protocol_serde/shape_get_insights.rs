@@ -108,7 +108,7 @@ pub fn de_get_insights_http_response(
         output = crate::protocol_serde::shape_get_insights::de_get_insights(_response_body, output)
             .map_err(crate::operation::get_insights::GetInsightsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_insights_output_correct_errors(output).build()
     })
 }
 

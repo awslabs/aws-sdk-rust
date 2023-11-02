@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ID of the entity.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -12,7 +12,7 @@ pub struct GetPropertyValueHistoryInput {
     /// <p>The ID of the component type.</p>
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub selected_properties: ::std::vec::Vec<::std::string::String>,
     /// <p>A list of objects that filter the property value history request.</p>
     pub property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     /// <p>The date and time of the earliest property value to return.</p>
@@ -39,8 +39,9 @@ pub struct GetPropertyValueHistoryInput {
 }
 impl GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(&self) -> ::std::option::Option<&str> {
@@ -55,12 +56,15 @@ impl GetPropertyValueHistoryInput {
         self.component_type_id.as_deref()
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn selected_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_properties.as_deref()
+    pub fn selected_properties(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.selected_properties.deref()
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn property_filters(&self) -> ::std::option::Option<&[crate::types::PropertyFilter]> {
-        self.property_filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_filters.is_none()`.
+    pub fn property_filters(&self) -> &[crate::types::PropertyFilter] {
+        self.property_filters.as_deref().unwrap_or_default()
     }
     /// <p>The date and time of the earliest property value to return.</p>
     #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
@@ -128,6 +132,7 @@ pub struct GetPropertyValueHistoryInputBuilder {
 }
 impl GetPropertyValueHistoryInputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -351,6 +356,9 @@ impl GetPropertyValueHistoryInputBuilder {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`GetPropertyValueHistoryInput`](crate::operation::get_property_value_history::GetPropertyValueHistoryInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder::workspace_id)
+    /// - [`selected_properties`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder::selected_properties)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -358,11 +366,21 @@ impl GetPropertyValueHistoryInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_property_value_history::GetPropertyValueHistoryInput {
-            workspace_id: self.workspace_id,
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building GetPropertyValueHistoryInput",
+                )
+            })?,
             entity_id: self.entity_id,
             component_name: self.component_name,
             component_type_id: self.component_type_id,
-            selected_properties: self.selected_properties,
+            selected_properties: self.selected_properties.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "selected_properties",
+                    "selected_properties was not specified but it is required when building GetPropertyValueHistoryInput",
+                )
+            })?,
             property_filters: self.property_filters,
             start_date_time: self.start_date_time,
             end_date_time: self.end_date_time,

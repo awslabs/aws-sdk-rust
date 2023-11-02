@@ -28,6 +28,7 @@ pub struct PackageVersionInputConfigBuilder {
 }
 impl PackageVersionInputConfigBuilder {
     /// <p>A location in Amazon S3.</p>
+    /// This field is required.
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.s3_location = ::std::option::Option::Some(input);
         self

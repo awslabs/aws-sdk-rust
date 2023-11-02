@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContainerRecipe`](crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_recipe_arn(impl Into<String>)`](crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder::container_recipe_arn) / [`set_container_recipe_arn(Option<String>)`](crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder::set_container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
+    ///   - [`container_recipe_arn(impl Into<String>)`](crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder::container_recipe_arn) / [`set_container_recipe_arn(Option<String>)`](crate::operation::delete_container_recipe::builders::DeleteContainerRecipeFluentBuilder::set_container_recipe_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the container recipe to delete.</p><br>
     /// - On success, responds with [`DeleteContainerRecipeOutput`](crate::operation::delete_container_recipe::DeleteContainerRecipeOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::delete_container_recipe::DeleteContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`container_recipe_arn(Option<String>)`](crate::operation::delete_container_recipe::DeleteContainerRecipeOutput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>

@@ -23,8 +23,10 @@ impl CreateReservedInstancesListingInput {
         self.instance_count
     }
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
-    pub fn price_schedules(&self) -> ::std::option::Option<&[crate::types::PriceScheduleSpecification]> {
-        self.price_schedules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.price_schedules.is_none()`.
+    pub fn price_schedules(&self) -> &[crate::types::PriceScheduleSpecification] {
+        self.price_schedules.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
     pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +51,7 @@ pub struct CreateReservedInstancesListingInputBuilder {
 }
 impl CreateReservedInstancesListingInputBuilder {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +66,7 @@ impl CreateReservedInstancesListingInputBuilder {
         &self.client_token
     }
     /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -97,6 +101,7 @@ impl CreateReservedInstancesListingInputBuilder {
         &self.price_schedules
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
+    /// This field is required.
     pub fn reserved_instances_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub certificate_authority_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_authority_arns: ::std::vec::Vec<::std::string::String>,
 }
 impl TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn certificate_authority_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.certificate_authority_arns.as_deref()
+    pub fn certificate_authority_arns(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.certificate_authority_arns.deref()
     }
 }
 impl TlsValidationContextAcmTrust {
@@ -48,9 +49,16 @@ impl TlsValidationContextAcmTrustBuilder {
         &self.certificate_authority_arns
     }
     /// Consumes the builder and constructs a [`TlsValidationContextAcmTrust`](crate::types::TlsValidationContextAcmTrust).
-    pub fn build(self) -> crate::types::TlsValidationContextAcmTrust {
-        crate::types::TlsValidationContextAcmTrust {
-            certificate_authority_arns: self.certificate_authority_arns,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`certificate_authority_arns`](crate::types::builders::TlsValidationContextAcmTrustBuilder::certificate_authority_arns)
+    pub fn build(self) -> ::std::result::Result<crate::types::TlsValidationContextAcmTrust, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TlsValidationContextAcmTrust {
+            certificate_authority_arns: self.certificate_authority_arns.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "certificate_authority_arns",
+                    "certificate_authority_arns was not specified but it is required when building TlsValidationContextAcmTrust",
+                )
+            })?,
+        })
     }
 }

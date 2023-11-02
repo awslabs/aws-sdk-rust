@@ -58,6 +58,7 @@ pub struct SetUiCustomizationInputBuilder {
 }
 impl SetUiCustomizationInputBuilder {
     /// <p>The user pool ID for the user pool.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self

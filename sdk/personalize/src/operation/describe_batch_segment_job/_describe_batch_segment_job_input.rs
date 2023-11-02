@@ -27,6 +27,7 @@ pub struct DescribeBatchSegmentJobInputBuilder {
 }
 impl DescribeBatchSegmentJobInputBuilder {
     /// <p>The ARN of the batch segment job to describe.</p>
+    /// This field is required.
     pub fn batch_segment_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.batch_segment_job_arn = ::std::option::Option::Some(input.into());
         self

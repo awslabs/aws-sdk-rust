@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelServicePipelineDeploymentInput {
     /// <p>The name of the service with the service pipeline deployment to cancel.</p>
-    pub service_name: ::std::option::Option<::std::string::String>,
+    pub service_name: ::std::string::String,
 }
 impl CancelServicePipelineDeploymentInput {
     /// <p>The name of the service with the service pipeline deployment to cancel.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
-        self.service_name.as_deref()
+    pub fn service_name(&self) -> &str {
+        use std::ops::Deref;
+        self.service_name.deref()
     }
 }
 impl CancelServicePipelineDeploymentInput {
@@ -27,6 +28,7 @@ pub struct CancelServicePipelineDeploymentInputBuilder {
 }
 impl CancelServicePipelineDeploymentInputBuilder {
     /// <p>The name of the service with the service pipeline deployment to cancel.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
         self
@@ -41,6 +43,8 @@ impl CancelServicePipelineDeploymentInputBuilder {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`CancelServicePipelineDeploymentInput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_name`](crate::operation::cancel_service_pipeline_deployment::builders::CancelServicePipelineDeploymentInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +53,12 @@ impl CancelServicePipelineDeploymentInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentInput {
-                service_name: self.service_name,
+                service_name: self.service_name.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_name",
+                        "service_name was not specified but it is required when building CancelServicePipelineDeploymentInput",
+                    )
+                })?,
             },
         )
     }

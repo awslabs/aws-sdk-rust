@@ -307,8 +307,8 @@ pub fn validate_body<T: AsRef<[u8]>>(
 ) -> Result<(), ProtocolTestFailure> {
     let body_str = std::str::from_utf8(actual_body.as_ref());
     match (media_type, body_str) {
-        (MediaType::Json, Ok(actual_body)) => try_json_eq(actual_body, expected_body),
-        (MediaType::Xml, Ok(actual_body)) => try_xml_equivalent(actual_body, expected_body),
+        (MediaType::Json, Ok(actual_body)) => try_json_eq(expected_body, actual_body),
+        (MediaType::Xml, Ok(actual_body)) => try_xml_equivalent(expected_body, actual_body),
         (MediaType::Json, Err(_)) => Err(ProtocolTestFailure::InvalidBodyFormat {
             expected: "json".to_owned(),
             found: "input was not valid UTF-8".to_owned(),
@@ -318,7 +318,7 @@ pub fn validate_body<T: AsRef<[u8]>>(
             found: "input was not valid UTF-8".to_owned(),
         }),
         (MediaType::UrlEncodedForm, Ok(actual_body)) => {
-            try_url_encoded_form_equivalent(actual_body, expected_body)
+            try_url_encoded_form_equivalent(expected_body, actual_body)
         }
         (MediaType::UrlEncodedForm, Err(_)) => Err(ProtocolTestFailure::InvalidBodyFormat {
             expected: "x-www-form-urlencoded".to_owned(),
@@ -327,7 +327,7 @@ pub fn validate_body<T: AsRef<[u8]>>(
         (MediaType::Other(media_type), Ok(actual_body)) => {
             if actual_body != expected_body {
                 Err(ProtocolTestFailure::BodyDidNotMatch {
-                    comparison: pretty_comparison(actual_body, expected_body),
+                    comparison: pretty_comparison(expected_body, actual_body),
                     hint: format!("media type: {}", media_type),
                 })
             } else {
@@ -358,25 +358,25 @@ impl Debug for PrettyString {
     }
 }
 
-fn pretty_comparison(left: &str, right: &str) -> PrettyString {
+fn pretty_comparison(expected: &str, actual: &str) -> PrettyString {
     PrettyString(format!(
         "{}",
-        Comparison::new(&PrettyStr(left), &PrettyStr(right))
+        Comparison::new(&PrettyStr(expected), &PrettyStr(actual))
     ))
 }
 
-fn try_json_eq(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> {
+fn try_json_eq(expected: &str, actual: &str) -> Result<(), ProtocolTestFailure> {
+    let expected_json: serde_json::Value =
+        serde_json::from_str(expected).expect("expected value must be valid JSON");
     let actual_json: serde_json::Value =
         serde_json::from_str(actual).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
             expected: "json".to_owned(),
             found: e.to_string() + actual,
         })?;
-    let expected_json: serde_json::Value =
-        serde_json::from_str(expected).expect("expected value must be valid JSON");
     match assert_json_eq_no_panic(&actual_json, &expected_json) {
         Ok(()) => Ok(()),
         Err(message) => Err(ProtocolTestFailure::BodyDidNotMatch {
-            comparison: pretty_comparison(actual, expected),
+            comparison: pretty_comparison(expected, actual),
             hint: message,
         }),
     }

@@ -34,6 +34,7 @@ pub struct GetMobileSdkReleaseInputBuilder {
 }
 impl GetMobileSdkReleaseInputBuilder {
     /// <p>The device platform.</p>
+    /// This field is required.
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl GetMobileSdkReleaseInputBuilder {
         &self.platform
     }
     /// <p>The release version. For the latest available version, specify <code>LATEST</code>.</p>
+    /// This field is required.
     pub fn release_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_version = ::std::option::Option::Some(input.into());
         self

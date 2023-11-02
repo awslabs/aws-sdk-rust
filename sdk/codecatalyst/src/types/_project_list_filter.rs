@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
-    pub key: ::std::option::Option<crate::types::FilterKey>,
+    pub key: crate::types::FilterKey,
     /// <p>The values of the key.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
     /// <p>The operator used to compare the fields.</p>
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::FilterKey> {
-        self.key.as_ref()
+    pub fn key(&self) -> &crate::types::FilterKey {
+        &self.key
     }
     /// <p>The values of the key.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
@@ -42,6 +43,7 @@ pub struct ProjectListFilterBuilder {
 }
 impl ProjectListFilterBuilder {
     /// <p>A key that can be used to sort results.</p>
+    /// This field is required.
     pub fn key(mut self, input: crate::types::FilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,24 @@ impl ProjectListFilterBuilder {
         &self.comparison_operator
     }
     /// Consumes the builder and constructs a [`ProjectListFilter`](crate::types::ProjectListFilter).
-    pub fn build(self) -> crate::types::ProjectListFilter {
-        crate::types::ProjectListFilter {
-            key: self.key,
-            values: self.values,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::ProjectListFilterBuilder::key)
+    /// - [`values`](crate::types::builders::ProjectListFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectListFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProjectListFilter {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building ProjectListFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building ProjectListFilter",
+                )
+            })?,
             comparison_operator: self.comparison_operator,
-        }
+        })
     }
 }

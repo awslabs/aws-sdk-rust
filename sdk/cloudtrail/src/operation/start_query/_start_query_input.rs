@@ -26,8 +26,10 @@ impl StartQueryInput {
         self.query_alias.as_deref()
     }
     /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
-    pub fn query_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_parameters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_parameters.is_none()`.
+    pub fn query_parameters(&self) -> &[::std::string::String] {
+        self.query_parameters.as_deref().unwrap_or_default()
     }
 }
 impl StartQueryInput {

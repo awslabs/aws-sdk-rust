@@ -22,8 +22,10 @@ impl DescribeAccountPoliciesInput {
     }
     /// <p>If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.</p>
     /// <p>If you omit this parameter, only the policy in the current account is returned.</p>
-    pub fn account_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.account_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_identifiers.is_none()`.
+    pub fn account_identifiers(&self) -> &[::std::string::String] {
+        self.account_identifiers.as_deref().unwrap_or_default()
     }
 }
 impl DescribeAccountPoliciesInput {
@@ -43,6 +45,7 @@ pub struct DescribeAccountPoliciesInputBuilder {
 }
 impl DescribeAccountPoliciesInputBuilder {
     /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self

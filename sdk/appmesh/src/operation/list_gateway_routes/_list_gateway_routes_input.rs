@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewayRoutesInput {
     /// <p>The name of the service mesh to list gateway routes in.</p>
-    pub mesh_name: ::std::option::Option<::std::string::String>,
+    pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual gateway to list gateway routes in.</p>
-    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub virtual_gateway_name: ::std::string::String,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -16,12 +16,14 @@ pub struct ListGatewayRoutesInput {
 }
 impl ListGatewayRoutesInput {
     /// <p>The name of the service mesh to list gateway routes in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
-        self.mesh_name.as_deref()
+    pub fn mesh_name(&self) -> &str {
+        use std::ops::Deref;
+        self.mesh_name.deref()
     }
     /// <p>The name of the virtual gateway to list gateway routes in.</p>
-    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
-        self.virtual_gateway_name.as_deref()
+    pub fn virtual_gateway_name(&self) -> &str {
+        use std::ops::Deref;
+        self.virtual_gateway_name.deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct ListGatewayRoutesInputBuilder {
 }
 impl ListGatewayRoutesInputBuilder {
     /// <p>The name of the service mesh to list gateway routes in.</p>
+    /// This field is required.
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mesh_name = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl ListGatewayRoutesInputBuilder {
         &self.mesh_name
     }
     /// <p>The name of the virtual gateway to list gateway routes in.</p>
+    /// This field is required.
     pub fn virtual_gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
@@ -125,12 +129,25 @@ impl ListGatewayRoutesInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`ListGatewayRoutesInput`](crate::operation::list_gateway_routes::ListGatewayRoutesInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mesh_name`](crate::operation::list_gateway_routes::builders::ListGatewayRoutesInputBuilder::mesh_name)
+    /// - [`virtual_gateway_name`](crate::operation::list_gateway_routes::builders::ListGatewayRoutesInputBuilder::virtual_gateway_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_gateway_routes::ListGatewayRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_gateway_routes::ListGatewayRoutesInput {
-            mesh_name: self.mesh_name,
-            virtual_gateway_name: self.virtual_gateway_name,
+            mesh_name: self.mesh_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mesh_name",
+                    "mesh_name was not specified but it is required when building ListGatewayRoutesInput",
+                )
+            })?,
+            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "virtual_gateway_name",
+                    "virtual_gateway_name was not specified but it is required when building ListGatewayRoutesInput",
+                )
+            })?,
             next_token: self.next_token,
             limit: self.limit,
             mesh_owner: self.mesh_owner,

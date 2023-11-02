@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDataShareAsset {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl RedshiftDataShareAsset {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl RedshiftDataShareAsset {
@@ -28,6 +29,7 @@ pub struct RedshiftDataShareAssetBuilder {
 }
 impl RedshiftDataShareAssetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl RedshiftDataShareAssetBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`RedshiftDataShareAsset`](crate::types::RedshiftDataShareAsset).
-    pub fn build(self) -> crate::types::RedshiftDataShareAsset {
-        crate::types::RedshiftDataShareAsset { arn: self.arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::RedshiftDataShareAssetBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareAsset, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RedshiftDataShareAsset {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building RedshiftDataShareAsset",
+                )
+            })?,
+        })
     }
 }

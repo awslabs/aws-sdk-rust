@@ -43,6 +43,7 @@ pub struct UpdateRoleAliasInputBuilder {
 }
 impl UpdateRoleAliasInputBuilder {
     /// <p>The role alias to update.</p>
+    /// This field is required.
     pub fn role_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_alias = ::std::option::Option::Some(input.into());
         self

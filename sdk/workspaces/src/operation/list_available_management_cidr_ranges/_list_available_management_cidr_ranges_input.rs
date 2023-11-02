@@ -41,6 +41,7 @@ pub struct ListAvailableManagementCidrRangesInputBuilder {
 }
 impl ListAvailableManagementCidrRangesInputBuilder {
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    /// This field is required.
     pub fn management_cidr_range_constraint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.management_cidr_range_constraint = ::std::option::Option::Some(input.into());
         self

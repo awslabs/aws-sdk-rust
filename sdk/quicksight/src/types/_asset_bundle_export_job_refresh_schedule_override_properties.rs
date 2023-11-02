@@ -7,7 +7,7 @@ pub struct AssetBundleExportJobRefreshScheduleOverrideProperties {
     /// <p>The ARN of the specific <code>RefreshSchedule</code> resource whose override properties are configured in this structure.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>>,
+    pub properties: ::std::vec::Vec<crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride>,
 }
 impl AssetBundleExportJobRefreshScheduleOverrideProperties {
     /// <p>The ARN of the specific <code>RefreshSchedule</code> resource whose override properties are configured in this structure.</p>
@@ -15,8 +15,9 @@ impl AssetBundleExportJobRefreshScheduleOverrideProperties {
         self.arn.as_deref()
     }
     /// <p>A list of <code>RefreshSchedule</code> resource properties to generate variables for in the returned CloudFormation template.</p>
-    pub fn properties(&self) -> ::std::option::Option<&[crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride]> {
-        self.properties.as_deref()
+    pub fn properties(&self) -> &[crate::types::AssetBundleExportJobRefreshSchedulePropertyToOverride] {
+        use std::ops::Deref;
+        self.properties.deref()
     }
 }
 impl AssetBundleExportJobRefreshScheduleOverrideProperties {
@@ -72,10 +73,20 @@ impl AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder {
         &self.properties
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobRefreshScheduleOverrideProperties`](crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties).
-    pub fn build(self) -> crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties {
-        crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`properties`](crate::types::builders::AssetBundleExportJobRefreshScheduleOverridePropertiesBuilder::properties)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties {
             arn: self.arn,
-            properties: self.properties,
-        }
+            properties: self.properties.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "properties",
+                    "properties was not specified but it is required when building AssetBundleExportJobRefreshScheduleOverrideProperties",
+                )
+            })?,
+        })
     }
 }

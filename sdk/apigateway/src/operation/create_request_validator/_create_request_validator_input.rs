@@ -49,6 +49,7 @@ pub struct CreateRequestValidatorInputBuilder {
 }
 impl CreateRequestValidatorInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self

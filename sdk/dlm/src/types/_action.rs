@@ -15,8 +15,10 @@ impl Action {
         self.name.as_deref()
     }
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    pub fn cross_region_copy(&self) -> ::std::option::Option<&[crate::types::CrossRegionCopyAction]> {
-        self.cross_region_copy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_region_copy.is_none()`.
+    pub fn cross_region_copy(&self) -> &[crate::types::CrossRegionCopyAction] {
+        self.cross_region_copy.as_deref().unwrap_or_default()
     }
 }
 impl Action {
@@ -35,6 +37,7 @@ pub struct ActionBuilder {
 }
 impl ActionBuilder {
     /// <p>A descriptive name for the action.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

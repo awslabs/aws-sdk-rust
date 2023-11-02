@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWaveInput {
     /// <p>Wave name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>Wave description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Wave tags.</p>
@@ -14,8 +14,9 @@ pub struct CreateWaveInput {
 }
 impl CreateWaveInput {
     /// <p>Wave name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>Wave description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -58,6 +59,7 @@ pub struct CreateWaveInputBuilder {
 }
 impl CreateWaveInputBuilder {
     /// <p>Wave name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -120,9 +122,16 @@ impl CreateWaveInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`CreateWaveInput`](crate::operation::create_wave::CreateWaveInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_wave::builders::CreateWaveInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_wave::CreateWaveInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_wave::CreateWaveInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateWaveInput",
+                )
+            })?,
             description: self.description,
             tags: self.tags,
             account_id: self.account_id,

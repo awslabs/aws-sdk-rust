@@ -41,6 +41,7 @@ pub struct DescribeOrganizationOverviewOutputBuilder {
 }
 impl DescribeOrganizationOverviewOutputBuilder {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn reactive_insights(mut self, input: i32) -> Self {
         self.reactive_insights = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl DescribeOrganizationOverviewOutputBuilder {
         &self.reactive_insights
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn proactive_insights(mut self, input: i32) -> Self {
         self.proactive_insights = ::std::option::Option::Some(input);
         self

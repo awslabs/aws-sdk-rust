@@ -53,12 +53,16 @@ impl UpdateFileSystemOntapConfiguration {
         self.throughput_capacity
     }
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn add_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.add_route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_route_table_ids.is_none()`.
+    pub fn add_route_table_ids(&self) -> &[::std::string::String] {
+        self.add_route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    pub fn remove_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.remove_route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_route_table_ids.is_none()`.
+    pub fn remove_route_table_ids(&self) -> &[::std::string::String] {
+        self.remove_route_table_ids.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {

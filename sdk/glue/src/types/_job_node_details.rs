@@ -9,8 +9,10 @@ pub struct JobNodeDetails {
 }
 impl JobNodeDetails {
     /// <p>The information for the job runs represented by the job node.</p>
-    pub fn job_runs(&self) -> ::std::option::Option<&[crate::types::JobRun]> {
-        self.job_runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_runs.is_none()`.
+    pub fn job_runs(&self) -> &[crate::types::JobRun] {
+        self.job_runs.as_deref().unwrap_or_default()
     }
 }
 impl JobNodeDetails {

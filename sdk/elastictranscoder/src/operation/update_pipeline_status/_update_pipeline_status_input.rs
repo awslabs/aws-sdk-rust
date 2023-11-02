@@ -43,6 +43,7 @@ pub struct UpdatePipelineStatusInputBuilder {
 }
 impl UpdatePipelineStatusInputBuilder {
     /// <p>The identifier of the pipeline to update.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -61,6 +62,7 @@ impl UpdatePipelineStatusInputBuilder {
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
     /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self

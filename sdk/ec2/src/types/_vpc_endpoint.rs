@@ -69,16 +69,22 @@ impl VpcEndpoint {
         self.policy_document.as_deref()
     }
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
-    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.route_table_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_table_ids.is_none()`.
+    pub fn route_table_ids(&self) -> &[::std::string::String] {
+        self.route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface endpoint) The subnets for the endpoint.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
-    pub fn groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
-        self.groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::SecurityGroupIdentifier] {
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
@@ -97,20 +103,26 @@ impl VpcEndpoint {
         self.requester_managed
     }
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
-    pub fn network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.network_interface_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
+    pub fn network_interface_ids(&self) -> &[::std::string::String] {
+        self.network_interface_ids.as_deref().unwrap_or_default()
     }
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
-    pub fn dns_entries(&self) -> ::std::option::Option<&[crate::types::DnsEntry]> {
-        self.dns_entries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_entries.is_none()`.
+    pub fn dns_entries(&self) -> &[crate::types::DnsEntry] {
+        self.dns_entries.as_deref().unwrap_or_default()
     }
     /// <p>The date and time that the endpoint was created.</p>
     pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The tags assigned to the endpoint.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
     pub fn owner_id(&self) -> ::std::option::Option<&str> {

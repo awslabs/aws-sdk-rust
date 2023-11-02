@@ -53,6 +53,7 @@ pub struct AddAssociationInputBuilder {
 }
 impl AddAssociationInputBuilder {
     /// <p>The ARN of the source.</p>
+    /// This field is required.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +68,7 @@ impl AddAssociationInputBuilder {
         &self.source_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self

@@ -41,6 +41,7 @@ pub struct CreateCustomDomainAssociationInputBuilder {
 }
 impl CreateCustomDomainAssociationInputBuilder {
     /// <p>The custom domain name for a custom domain association.</p>
+    /// This field is required.
     pub fn custom_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_name = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateCustomDomainAssociationInputBuilder {
         &self.custom_domain_name
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
+    /// This field is required.
     pub fn custom_domain_certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_domain_certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl CreateCustomDomainAssociationInputBuilder {
         &self.custom_domain_certificate_arn
     }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self

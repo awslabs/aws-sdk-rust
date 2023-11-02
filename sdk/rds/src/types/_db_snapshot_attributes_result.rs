@@ -16,8 +16,10 @@ impl DbSnapshotAttributesResult {
         self.db_snapshot_identifier.as_deref()
     }
     /// <p>The list of attributes and values for the manual DB snapshot.</p>
-    pub fn db_snapshot_attributes(&self) -> ::std::option::Option<&[crate::types::DbSnapshotAttribute]> {
-        self.db_snapshot_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_snapshot_attributes.is_none()`.
+    pub fn db_snapshot_attributes(&self) -> &[crate::types::DbSnapshotAttribute] {
+        self.db_snapshot_attributes.as_deref().unwrap_or_default()
     }
 }
 impl DbSnapshotAttributesResult {

@@ -49,8 +49,10 @@ impl FindMatchesMetrics {
         self.confusion_matrix.as_ref()
     }
     /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
-    pub fn column_importances(&self) -> ::std::option::Option<&[crate::types::ColumnImportance]> {
-        self.column_importances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_importances.is_none()`.
+    pub fn column_importances(&self) -> &[crate::types::ColumnImportance] {
+        self.column_importances.as_deref().unwrap_or_default()
     }
 }
 impl FindMatchesMetrics {

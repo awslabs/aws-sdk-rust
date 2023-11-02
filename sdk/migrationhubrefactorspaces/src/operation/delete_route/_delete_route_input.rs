@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRouteInput {
     /// <p>The ID of the environment to delete the route from.</p>
-    pub environment_identifier: ::std::option::Option<::std::string::String>,
+    pub environment_identifier: ::std::string::String,
     /// <p>The ID of the application to delete the route from.</p>
-    pub application_identifier: ::std::option::Option<::std::string::String>,
+    pub application_identifier: ::std::string::String,
     /// <p>The ID of the route to delete.</p>
-    pub route_identifier: ::std::option::Option<::std::string::String>,
+    pub route_identifier: ::std::string::String,
 }
 impl DeleteRouteInput {
     /// <p>The ID of the environment to delete the route from.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
-        self.environment_identifier.as_deref()
+    pub fn environment_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_identifier.deref()
     }
     /// <p>The ID of the application to delete the route from.</p>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
-        self.application_identifier.as_deref()
+    pub fn application_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.application_identifier.deref()
     }
     /// <p>The ID of the route to delete.</p>
-    pub fn route_identifier(&self) -> ::std::option::Option<&str> {
-        self.route_identifier.as_deref()
+    pub fn route_identifier(&self) -> &str {
+        use std::ops::Deref;
+        self.route_identifier.deref()
     }
 }
 impl DeleteRouteInput {
@@ -41,6 +44,7 @@ pub struct DeleteRouteInputBuilder {
 }
 impl DeleteRouteInputBuilder {
     /// <p>The ID of the environment to delete the route from.</p>
+    /// This field is required.
     pub fn environment_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_identifier = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl DeleteRouteInputBuilder {
         &self.environment_identifier
     }
     /// <p>The ID of the application to delete the route from.</p>
+    /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +74,7 @@ impl DeleteRouteInputBuilder {
         &self.application_identifier
     }
     /// <p>The ID of the route to delete.</p>
+    /// This field is required.
     pub fn route_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_identifier = ::std::option::Option::Some(input.into());
         self
@@ -83,11 +89,30 @@ impl DeleteRouteInputBuilder {
         &self.route_identifier
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`environment_identifier`](crate::operation::delete_route::builders::DeleteRouteInputBuilder::environment_identifier)
+    /// - [`application_identifier`](crate::operation::delete_route::builders::DeleteRouteInputBuilder::application_identifier)
+    /// - [`route_identifier`](crate::operation::delete_route::builders::DeleteRouteInputBuilder::route_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
-            route_identifier: self.route_identifier,
+            environment_identifier: self.environment_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_identifier",
+                    "environment_identifier was not specified but it is required when building DeleteRouteInput",
+                )
+            })?,
+            application_identifier: self.application_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_identifier",
+                    "application_identifier was not specified but it is required when building DeleteRouteInput",
+                )
+            })?,
+            route_identifier: self.route_identifier.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "route_identifier",
+                    "route_identifier was not specified but it is required when building DeleteRouteInput",
+                )
+            })?,
         })
     }
 }

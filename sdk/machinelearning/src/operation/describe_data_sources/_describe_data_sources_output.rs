@@ -12,8 +12,10 @@ pub struct DescribeDataSourcesOutput {
 }
 impl DescribeDataSourcesOutput {
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-    pub fn results(&self) -> ::std::option::Option<&[crate::types::DataSource]> {
-        self.results.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
+    pub fn results(&self) -> &[crate::types::DataSource] {
+        self.results.as_deref().unwrap_or_default()
     }
     /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

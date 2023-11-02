@@ -194,6 +194,7 @@ impl CreateOntapVolumeConfigurationBuilder {
         &self.security_style
     }
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
+    /// This field is required.
     pub fn size_in_megabytes(mut self, input: i32) -> Self {
         self.size_in_megabytes = ::std::option::Option::Some(input);
         self
@@ -222,6 +223,7 @@ impl CreateOntapVolumeConfigurationBuilder {
         &self.storage_efficiency_enabled
     }
     /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
+    /// This field is required.
     pub fn storage_virtual_machine_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_virtual_machine_id = ::std::option::Option::Some(input.into());
         self

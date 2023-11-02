@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnnotationStoreOutput {
     /// <p>The store's status.</p>
-    pub status: ::std::option::Option<crate::types::StoreStatus>,
+    pub status: crate::types::StoreStatus,
     _request_id: Option<String>,
 }
 impl DeleteAnnotationStoreOutput {
     /// <p>The store's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StoreStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::StoreStatus {
+        &self.status
     }
 }
 impl ::aws_http::request_id::RequestId for DeleteAnnotationStoreOutput {
@@ -34,6 +34,7 @@ pub struct DeleteAnnotationStoreOutputBuilder {
 }
 impl DeleteAnnotationStoreOutputBuilder {
     /// <p>The store's status.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -57,10 +58,20 @@ impl DeleteAnnotationStoreOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreOutput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput).
-    pub fn build(self) -> crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput {
-        crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput {
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder::status)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building DeleteAnnotationStoreOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

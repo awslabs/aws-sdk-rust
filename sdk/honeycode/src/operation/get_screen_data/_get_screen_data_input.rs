@@ -78,6 +78,7 @@ pub struct GetScreenDataInputBuilder {
 }
 impl GetScreenDataInputBuilder {
     /// <p>The ID of the workbook that contains the screen.</p>
+    /// This field is required.
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workbook_id = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +93,7 @@ impl GetScreenDataInputBuilder {
         &self.workbook_id
     }
     /// <p>The ID of the app that contains the screen.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -106,6 +108,7 @@ impl GetScreenDataInputBuilder {
         &self.app_id
     }
     /// <p>The ID of the screen.</p>
+    /// This field is required.
     pub fn screen_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_id = ::std::option::Option::Some(input.into());
         self

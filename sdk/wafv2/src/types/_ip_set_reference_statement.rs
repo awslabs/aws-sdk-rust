@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
@@ -14,8 +14,9 @@ pub struct IpSetReferenceStatement {
 }
 impl IpSetReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -40,6 +41,7 @@ pub struct IpSetReferenceStatementBuilder {
 }
 impl IpSetReferenceStatementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the <code>IPSet</code> that this statement references.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -74,10 +76,17 @@ impl IpSetReferenceStatementBuilder {
         &self.ip_set_forwarded_ip_config
     }
     /// Consumes the builder and constructs a [`IpSetReferenceStatement`](crate::types::IpSetReferenceStatement).
-    pub fn build(self) -> crate::types::IpSetReferenceStatement {
-        crate::types::IpSetReferenceStatement {
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::IpSetReferenceStatementBuilder::arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSetReferenceStatement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IpSetReferenceStatement {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building IpSetReferenceStatement",
+                )
+            })?,
             ip_set_forwarded_ip_config: self.ip_set_forwarded_ip_config,
-        }
+        })
     }
 }

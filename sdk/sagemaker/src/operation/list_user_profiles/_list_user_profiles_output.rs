@@ -11,8 +11,10 @@ pub struct ListUserProfilesOutput {
 }
 impl ListUserProfilesOutput {
     /// <p>The list of user profiles.</p>
-    pub fn user_profiles(&self) -> ::std::option::Option<&[crate::types::UserProfileDetails]> {
-        self.user_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_profiles.is_none()`.
+    pub fn user_profiles(&self) -> &[crate::types::UserProfileDetails] {
+        self.user_profiles.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

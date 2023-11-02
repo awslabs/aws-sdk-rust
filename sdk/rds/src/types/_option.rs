@@ -49,16 +49,22 @@ impl Option {
         self.option_version.as_deref()
     }
     /// <p>The option settings for this option.</p>
-    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::OptionSetting]> {
-        self.option_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
+    pub fn option_settings(&self) -> &[crate::types::OptionSetting] {
+        self.option_settings.as_deref().unwrap_or_default()
     }
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
-    pub fn db_security_group_memberships(&self) -> ::std::option::Option<&[crate::types::DbSecurityGroupMembership]> {
-        self.db_security_group_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_group_memberships.is_none()`.
+    pub fn db_security_group_memberships(&self) -> &[crate::types::DbSecurityGroupMembership] {
+        self.db_security_group_memberships.as_deref().unwrap_or_default()
     }
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
-    pub fn vpc_security_group_memberships(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_group_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_memberships.is_none()`.
+    pub fn vpc_security_group_memberships(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_group_memberships.as_deref().unwrap_or_default()
     }
 }
 impl Option {

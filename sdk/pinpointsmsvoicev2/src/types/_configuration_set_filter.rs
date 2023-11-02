@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationSetFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub name: ::std::option::Option<crate::types::ConfigurationSetFilterName>,
+    pub name: crate::types::ConfigurationSetFilterName,
     /// <p>An array values to filter for.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl ConfigurationSetFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ConfigurationSetFilterName> {
-        self.name.as_ref()
+    pub fn name(&self) -> &crate::types::ConfigurationSetFilterName {
+        &self.name
     }
     /// <p>An array values to filter for.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.values.deref()
     }
 }
 impl ConfigurationSetFilter {
@@ -35,6 +36,7 @@ pub struct ConfigurationSetFilterBuilder {
 }
 impl ConfigurationSetFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
+    /// This field is required.
     pub fn name(mut self, input: crate::types::ConfigurationSetFilterName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
@@ -69,10 +71,23 @@ impl ConfigurationSetFilterBuilder {
         &self.values
     }
     /// Consumes the builder and constructs a [`ConfigurationSetFilter`](crate::types::ConfigurationSetFilter).
-    pub fn build(self) -> crate::types::ConfigurationSetFilter {
-        crate::types::ConfigurationSetFilter {
-            name: self.name,
-            values: self.values,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ConfigurationSetFilterBuilder::name)
+    /// - [`values`](crate::types::builders::ConfigurationSetFilterBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationSetFilter, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConfigurationSetFilter {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ConfigurationSetFilter",
+                )
+            })?,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building ConfigurationSetFilter",
+                )
+            })?,
+        })
     }
 }

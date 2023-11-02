@@ -15,8 +15,10 @@ impl RdsLoginAttemptAction {
         self.remote_ip_details.as_ref()
     }
     /// <p>Indicates the login attributes used in the login attempt.</p>
-    pub fn login_attributes(&self) -> ::std::option::Option<&[crate::types::LoginAttribute]> {
-        self.login_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.login_attributes.is_none()`.
+    pub fn login_attributes(&self) -> &[crate::types::LoginAttribute] {
+        self.login_attributes.as_deref().unwrap_or_default()
     }
 }
 impl RdsLoginAttemptAction {

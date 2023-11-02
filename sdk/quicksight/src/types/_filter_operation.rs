@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    pub condition_expression: ::std::option::Option<::std::string::String>,
+    pub condition_expression: ::std::string::String,
 }
 impl FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    pub fn condition_expression(&self) -> ::std::option::Option<&str> {
-        self.condition_expression.as_deref()
+    pub fn condition_expression(&self) -> &str {
+        use std::ops::Deref;
+        self.condition_expression.deref()
     }
 }
 impl ::std::fmt::Debug for FilterOperation {
@@ -35,6 +36,7 @@ pub struct FilterOperationBuilder {
 }
 impl FilterOperationBuilder {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
+    /// This field is required.
     pub fn condition_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition_expression = ::std::option::Option::Some(input.into());
         self
@@ -49,10 +51,17 @@ impl FilterOperationBuilder {
         &self.condition_expression
     }
     /// Consumes the builder and constructs a [`FilterOperation`](crate::types::FilterOperation).
-    pub fn build(self) -> crate::types::FilterOperation {
-        crate::types::FilterOperation {
-            condition_expression: self.condition_expression,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`condition_expression`](crate::types::builders::FilterOperationBuilder::condition_expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterOperation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FilterOperation {
+            condition_expression: self.condition_expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition_expression",
+                    "condition_expression was not specified but it is required when building FilterOperation",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for FilterOperationBuilder {

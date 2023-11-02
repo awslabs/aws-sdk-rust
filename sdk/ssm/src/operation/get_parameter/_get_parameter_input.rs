@@ -37,6 +37,7 @@ pub struct GetParameterInputBuilder {
 impl GetParameterInputBuilder {
     /// <p>The name of the parameter you want to query.</p>
     /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

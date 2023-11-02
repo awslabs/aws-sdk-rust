@@ -28,6 +28,7 @@ pub struct HumanLoopRequestSourceBuilder {
 }
 impl HumanLoopRequestSourceBuilder {
     /// <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. The default field settings and JSON parsing rules are different based on the integration source. Valid values:</p>
+    /// This field is required.
     pub fn aws_managed_human_loop_request_source(mut self, input: crate::types::AwsManagedHumanLoopRequestSource) -> Self {
         self.aws_managed_human_loop_request_source = ::std::option::Option::Some(input);
         self

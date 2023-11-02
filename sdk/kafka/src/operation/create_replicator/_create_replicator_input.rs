@@ -23,12 +23,16 @@ impl CreateReplicatorInput {
         self.description.as_deref()
     }
     /// <p>Kafka Clusters to use in setting up sources / targets for replication.</p>
-    pub fn kafka_clusters(&self) -> ::std::option::Option<&[crate::types::KafkaCluster]> {
-        self.kafka_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_clusters.is_none()`.
+    pub fn kafka_clusters(&self) -> &[crate::types::KafkaCluster] {
+        self.kafka_clusters.as_deref().unwrap_or_default()
     }
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    pub fn replication_info_list(&self) -> ::std::option::Option<&[crate::types::ReplicationInfo]> {
-        self.replication_info_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_info_list.is_none()`.
+    pub fn replication_info_list(&self) -> &[crate::types::ReplicationInfo] {
+        self.replication_info_list.as_deref().unwrap_or_default()
     }
     /// <p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>
     pub fn replicator_name(&self) -> ::std::option::Option<&str> {
@@ -117,6 +121,7 @@ impl CreateReplicatorInputBuilder {
         &self.replication_info_list
     }
     /// <p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>
+    /// This field is required.
     pub fn replicator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replicator_name = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +136,7 @@ impl CreateReplicatorInputBuilder {
         &self.replicator_name
     }
     /// <p>The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
+    /// This field is required.
     pub fn service_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_execution_role_arn = ::std::option::Option::Some(input.into());
         self

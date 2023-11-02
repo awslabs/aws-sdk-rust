@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
-    pub record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
+    pub record_format_type: crate::types::RecordFormatType,
 }
 impl DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
-    pub fn record_format_type(&self) -> ::std::option::Option<&crate::types::RecordFormatType> {
-        self.record_format_type.as_ref()
+    pub fn record_format_type(&self) -> &crate::types::RecordFormatType {
+        &self.record_format_type
     }
 }
 impl DestinationSchema {
@@ -28,6 +28,7 @@ pub struct DestinationSchemaBuilder {
 }
 impl DestinationSchemaBuilder {
     /// <p>Specifies the format of the records on the output stream.</p>
+    /// This field is required.
     pub fn record_format_type(mut self, input: crate::types::RecordFormatType) -> Self {
         self.record_format_type = ::std::option::Option::Some(input);
         self
@@ -42,9 +43,16 @@ impl DestinationSchemaBuilder {
         &self.record_format_type
     }
     /// Consumes the builder and constructs a [`DestinationSchema`](crate::types::DestinationSchema).
-    pub fn build(self) -> crate::types::DestinationSchema {
-        crate::types::DestinationSchema {
-            record_format_type: self.record_format_type,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`record_format_type`](crate::types::builders::DestinationSchemaBuilder::record_format_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationSchema, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DestinationSchema {
+            record_format_type: self.record_format_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "record_format_type",
+                    "record_format_type was not specified but it is required when building DestinationSchema",
+                )
+            })?,
+        })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopNotebookExecution`](crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notebook_execution_id(impl Into<String>)`](crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::notebook_execution_id) / [`set_notebook_execution_id(Option<String>)`](crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::set_notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
+    ///   - [`notebook_execution_id(impl Into<String>)`](crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::notebook_execution_id) / [`set_notebook_execution_id(Option<String>)`](crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder::set_notebook_execution_id):<br>required: **true**<br><p>The unique identifier of the notebook execution.</p><br>
     /// - On success, responds with [`StopNotebookExecutionOutput`](crate::operation::stop_notebook_execution::StopNotebookExecutionOutput)
     /// - On failure, responds with [`SdkError<StopNotebookExecutionError>`](crate::operation::stop_notebook_execution::StopNotebookExecutionError)
     pub fn stop_notebook_execution(&self) -> crate::operation::stop_notebook_execution::builders::StopNotebookExecutionFluentBuilder {

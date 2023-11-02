@@ -5,26 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityMailFromDomainAttributes {
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
-    pub mail_from_domain: ::std::option::Option<::std::string::String>,
+    pub mail_from_domain: ::std::string::String,
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
-    pub mail_from_domain_status: ::std::option::Option<crate::types::CustomMailFromStatus>,
+    pub mail_from_domain_status: crate::types::CustomMailFromStatus,
     /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
-    pub behavior_on_mx_failure: ::std::option::Option<crate::types::BehaviorOnMxFailure>,
+    pub behavior_on_mx_failure: crate::types::BehaviorOnMxFailure,
 }
 impl IdentityMailFromDomainAttributes {
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
-    pub fn mail_from_domain(&self) -> ::std::option::Option<&str> {
-        self.mail_from_domain.as_deref()
+    pub fn mail_from_domain(&self) -> &str {
+        use std::ops::Deref;
+        self.mail_from_domain.deref()
     }
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
-    pub fn mail_from_domain_status(&self) -> ::std::option::Option<&crate::types::CustomMailFromStatus> {
-        self.mail_from_domain_status.as_ref()
+    pub fn mail_from_domain_status(&self) -> &crate::types::CustomMailFromStatus {
+        &self.mail_from_domain_status
     }
     /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
-    pub fn behavior_on_mx_failure(&self) -> ::std::option::Option<&crate::types::BehaviorOnMxFailure> {
-        self.behavior_on_mx_failure.as_ref()
+    pub fn behavior_on_mx_failure(&self) -> &crate::types::BehaviorOnMxFailure {
+        &self.behavior_on_mx_failure
     }
 }
 impl IdentityMailFromDomainAttributes {
@@ -44,6 +45,7 @@ pub struct IdentityMailFromDomainAttributesBuilder {
 }
 impl IdentityMailFromDomainAttributesBuilder {
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
+    /// This field is required.
     pub fn mail_from_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mail_from_domain = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +60,7 @@ impl IdentityMailFromDomainAttributesBuilder {
         &self.mail_from_domain
     }
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
+    /// This field is required.
     pub fn mail_from_domain_status(mut self, input: crate::types::CustomMailFromStatus) -> Self {
         self.mail_from_domain_status = ::std::option::Option::Some(input);
         self
@@ -73,6 +76,7 @@ impl IdentityMailFromDomainAttributesBuilder {
     }
     /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
+    /// This field is required.
     pub fn behavior_on_mx_failure(mut self, input: crate::types::BehaviorOnMxFailure) -> Self {
         self.behavior_on_mx_failure = ::std::option::Option::Some(input);
         self
@@ -89,11 +93,30 @@ impl IdentityMailFromDomainAttributesBuilder {
         &self.behavior_on_mx_failure
     }
     /// Consumes the builder and constructs a [`IdentityMailFromDomainAttributes`](crate::types::IdentityMailFromDomainAttributes).
-    pub fn build(self) -> crate::types::IdentityMailFromDomainAttributes {
-        crate::types::IdentityMailFromDomainAttributes {
-            mail_from_domain: self.mail_from_domain,
-            mail_from_domain_status: self.mail_from_domain_status,
-            behavior_on_mx_failure: self.behavior_on_mx_failure,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`mail_from_domain`](crate::types::builders::IdentityMailFromDomainAttributesBuilder::mail_from_domain)
+    /// - [`mail_from_domain_status`](crate::types::builders::IdentityMailFromDomainAttributesBuilder::mail_from_domain_status)
+    /// - [`behavior_on_mx_failure`](crate::types::builders::IdentityMailFromDomainAttributesBuilder::behavior_on_mx_failure)
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityMailFromDomainAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::IdentityMailFromDomainAttributes {
+            mail_from_domain: self.mail_from_domain.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mail_from_domain",
+                    "mail_from_domain was not specified but it is required when building IdentityMailFromDomainAttributes",
+                )
+            })?,
+            mail_from_domain_status: self.mail_from_domain_status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "mail_from_domain_status",
+                    "mail_from_domain_status was not specified but it is required when building IdentityMailFromDomainAttributes",
+                )
+            })?,
+            behavior_on_mx_failure: self.behavior_on_mx_failure.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "behavior_on_mx_failure",
+                    "behavior_on_mx_failure was not specified but it is required when building IdentityMailFromDomainAttributes",
+                )
+            })?,
+        })
     }
 }

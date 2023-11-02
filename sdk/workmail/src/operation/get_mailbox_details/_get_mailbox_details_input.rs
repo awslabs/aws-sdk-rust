@@ -46,6 +46,7 @@ pub struct GetMailboxDetailsInputBuilder {
 }
 impl GetMailboxDetailsInputBuilder {
     /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -66,6 +67,7 @@ impl GetMailboxDetailsInputBuilder {
     /// <li> <p>Email address: user@domain.tld</p> </li>
     /// <li> <p>User name: user</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self

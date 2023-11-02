@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
-    pub origin_id: ::std::option::Option<::std::string::String>,
+    pub origin_id: ::std::string::String,
 }
 impl OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
-    pub fn origin_id(&self) -> ::std::option::Option<&str> {
-        self.origin_id.as_deref()
+    pub fn origin_id(&self) -> &str {
+        use std::ops::Deref;
+        self.origin_id.deref()
     }
 }
 impl OriginGroupMember {
@@ -28,6 +29,7 @@ pub struct OriginGroupMemberBuilder {
 }
 impl OriginGroupMemberBuilder {
     /// <p>The ID for an origin in an origin group.</p>
+    /// This field is required.
     pub fn origin_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_id = ::std::option::Option::Some(input.into());
         self
@@ -42,7 +44,16 @@ impl OriginGroupMemberBuilder {
         &self.origin_id
     }
     /// Consumes the builder and constructs a [`OriginGroupMember`](crate::types::OriginGroupMember).
-    pub fn build(self) -> crate::types::OriginGroupMember {
-        crate::types::OriginGroupMember { origin_id: self.origin_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`origin_id`](crate::types::builders::OriginGroupMemberBuilder::origin_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginGroupMember, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginGroupMember {
+            origin_id: self.origin_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "origin_id",
+                    "origin_id was not specified but it is required when building OriginGroupMember",
+                )
+            })?,
+        })
     }
 }

@@ -13,8 +13,10 @@ pub struct PrefixList {
 }
 impl PrefixList {
     /// <p>The IP address range of the Amazon Web Service.</p>
-    pub fn cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
+    pub fn cidrs(&self) -> &[::std::string::String] {
+        self.cidrs.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the prefix.</p>
     pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {

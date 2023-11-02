@@ -8,8 +8,10 @@ pub struct ValidateSecurityProfileBehaviorsInput {
 }
 impl ValidateSecurityProfileBehaviorsInput {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn behaviors(&self) -> ::std::option::Option<&[crate::types::Behavior]> {
-        self.behaviors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.behaviors.is_none()`.
+    pub fn behaviors(&self) -> &[crate::types::Behavior] {
+        self.behaviors.as_deref().unwrap_or_default()
     }
 }
 impl ValidateSecurityProfileBehaviorsInput {

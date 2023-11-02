@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommentReactionsOutput {
     /// <p>An array of reactions to the specified comment.</p>
-    pub reactions_for_comment: ::std::option::Option<::std::vec::Vec<crate::types::ReactionForComment>>,
+    pub reactions_for_comment: ::std::vec::Vec<crate::types::ReactionForComment>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCommentReactionsOutput {
     /// <p>An array of reactions to the specified comment.</p>
-    pub fn reactions_for_comment(&self) -> ::std::option::Option<&[crate::types::ReactionForComment]> {
-        self.reactions_for_comment.as_deref()
+    pub fn reactions_for_comment(&self) -> &[crate::types::ReactionForComment] {
+        use std::ops::Deref;
+        self.reactions_for_comment.deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl GetCommentReactionsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetCommentReactionsOutput`](crate::operation::get_comment_reactions::GetCommentReactionsOutput).
-    pub fn build(self) -> crate::operation::get_comment_reactions::GetCommentReactionsOutput {
-        crate::operation::get_comment_reactions::GetCommentReactionsOutput {
-            reactions_for_comment: self.reactions_for_comment,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`reactions_for_comment`](crate::operation::get_comment_reactions::builders::GetCommentReactionsOutputBuilder::reactions_for_comment)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::get_comment_reactions::GetCommentReactionsOutput {
+            reactions_for_comment: self.reactions_for_comment.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "reactions_for_comment",
+                    "reactions_for_comment was not specified but it is required when building GetCommentReactionsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

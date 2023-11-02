@@ -62,6 +62,7 @@ impl SubmitJobOutputBuilder {
         &self.job_arn
     }
     /// <p>The name of the job.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl SubmitJobOutputBuilder {
         &self.job_name
     }
     /// <p>The unique identifier for the job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

@@ -62,6 +62,7 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the flow log.</p>
+    /// This field is required.
     pub fn flow_log_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_log_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
         &self.flow_log_id
     }
     /// <p>To store the CloudFormation template in Amazon S3, specify the location in Amazon S3.</p>
+    /// This field is required.
     pub fn config_delivery_s3_destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_delivery_s3_destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
         &self.config_delivery_s3_destination_arn
     }
     /// <p>Information about the service integration.</p>
+    /// This field is required.
     pub fn integrate_services(mut self, input: crate::types::IntegrateServices) -> Self {
         self.integrate_services = ::std::option::Option::Some(input);
         self

@@ -3,17 +3,17 @@ pub fn ser_pstn_dial_in(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PstnDialIn,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.country_code {
-        object.key("CountryCode").string(var_1.as_str());
+    {
+        object.key("CountryCode").string(input.country_code.as_str());
     }
-    if let Some(var_2) = &input.phone_number {
-        object.key("PhoneNumber").string(var_2.as_str());
+    {
+        object.key("PhoneNumber").string(input.phone_number.as_str());
     }
-    if let Some(var_3) = &input.one_click_id_delay {
-        object.key("OneClickIdDelay").string(var_3.as_str());
+    {
+        object.key("OneClickIdDelay").string(input.one_click_id_delay.as_str());
     }
-    if let Some(var_4) = &input.one_click_pin_delay {
-        object.key("OneClickPinDelay").string(var_4.as_str());
+    {
+        object.key("OneClickPinDelay").string(input.one_click_pin_delay.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::pstn_dial_in_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

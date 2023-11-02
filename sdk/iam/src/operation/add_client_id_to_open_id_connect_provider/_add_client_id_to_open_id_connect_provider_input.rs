@@ -34,6 +34,7 @@ pub struct AddClientIdToOpenIdConnectProviderInputBuilder {
 }
 impl AddClientIdToOpenIdConnectProviderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
+    /// This field is required.
     pub fn open_id_connect_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.open_id_connect_provider_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
         &self.open_id_connect_provider_arn
     }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
+    /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self

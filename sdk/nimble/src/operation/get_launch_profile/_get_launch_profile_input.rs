@@ -34,6 +34,7 @@ pub struct GetLaunchProfileInputBuilder {
 }
 impl GetLaunchProfileInputBuilder {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    /// This field is required.
     pub fn launch_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetLaunchProfileInputBuilder {
         &self.launch_profile_id
     }
     /// <p>The studio ID. </p>
+    /// This field is required.
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
         self

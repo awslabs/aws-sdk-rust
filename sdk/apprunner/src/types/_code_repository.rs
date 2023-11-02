@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeRepository {
     /// <p>The location of the repository that contains the source code.</p>
-    pub repository_url: ::std::option::Option<::std::string::String>,
+    pub repository_url: ::std::string::String,
     /// <p>The version that should be used within the source code repository.</p>
     pub source_code_version: ::std::option::Option<crate::types::SourceCodeVersion>,
     /// <p>Configuration for building and running the service from a source code repository.</p> <note>
@@ -17,8 +17,9 @@ pub struct CodeRepository {
 }
 impl CodeRepository {
     /// <p>The location of the repository that contains the source code.</p>
-    pub fn repository_url(&self) -> ::std::option::Option<&str> {
-        self.repository_url.as_deref()
+    pub fn repository_url(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_url.deref()
     }
     /// <p>The version that should be used within the source code repository.</p>
     pub fn source_code_version(&self) -> ::std::option::Option<&crate::types::SourceCodeVersion> {
@@ -53,6 +54,7 @@ pub struct CodeRepositoryBuilder {
 }
 impl CodeRepositoryBuilder {
     /// <p>The location of the repository that contains the source code.</p>
+    /// This field is required.
     pub fn repository_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_url = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +69,7 @@ impl CodeRepositoryBuilder {
         &self.repository_url
     }
     /// <p>The version that should be used within the source code repository.</p>
+    /// This field is required.
     pub fn source_code_version(mut self, input: crate::types::SourceCodeVersion) -> Self {
         self.source_code_version = ::std::option::Option::Some(input);
         self
@@ -115,12 +118,19 @@ impl CodeRepositoryBuilder {
         &self.source_directory
     }
     /// Consumes the builder and constructs a [`CodeRepository`](crate::types::CodeRepository).
-    pub fn build(self) -> crate::types::CodeRepository {
-        crate::types::CodeRepository {
-            repository_url: self.repository_url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repository_url`](crate::types::builders::CodeRepositoryBuilder::repository_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeRepository, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CodeRepository {
+            repository_url: self.repository_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_url",
+                    "repository_url was not specified but it is required when building CodeRepository",
+                )
+            })?,
             source_code_version: self.source_code_version,
             code_configuration: self.code_configuration,
             source_directory: self.source_directory,
-        }
+        })
     }
 }

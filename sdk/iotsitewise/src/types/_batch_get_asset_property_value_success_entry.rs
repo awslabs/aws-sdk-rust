@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub entry_id: ::std::option::Option<::std::string::String>,
+    pub entry_id: ::std::string::String,
     /// <p>Contains asset property value information.</p>
     pub asset_property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
 }
 impl BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
-        self.entry_id.as_deref()
+    pub fn entry_id(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_id.deref()
     }
     /// <p>Contains asset property value information.</p>
     pub fn asset_property_value(&self) -> ::std::option::Option<&crate::types::AssetPropertyValue> {
@@ -35,6 +36,7 @@ pub struct BatchGetAssetPropertyValueSuccessEntryBuilder {
 }
 impl BatchGetAssetPropertyValueSuccessEntryBuilder {
     /// <p>The ID of the entry.</p>
+    /// This field is required.
     pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl BatchGetAssetPropertyValueSuccessEntryBuilder {
         &self.asset_property_value
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSuccessEntry`](crate::types::BatchGetAssetPropertyValueSuccessEntry).
-    pub fn build(self) -> crate::types::BatchGetAssetPropertyValueSuccessEntry {
-        crate::types::BatchGetAssetPropertyValueSuccessEntry {
-            entry_id: self.entry_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueSuccessEntryBuilder::entry_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueSuccessEntry, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueSuccessEntry {
+            entry_id: self.entry_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entry_id",
+                    "entry_id was not specified but it is required when building BatchGetAssetPropertyValueSuccessEntry",
+                )
+            })?,
             asset_property_value: self.asset_property_value,
-        }
+        })
     }
 }

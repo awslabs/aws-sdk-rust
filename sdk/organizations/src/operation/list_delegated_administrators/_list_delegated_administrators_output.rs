@@ -11,8 +11,10 @@ pub struct ListDelegatedAdministratorsOutput {
 }
 impl ListDelegatedAdministratorsOutput {
     /// <p>The list of delegated administrators in your organization.</p>
-    pub fn delegated_administrators(&self) -> ::std::option::Option<&[crate::types::DelegatedAdministrator]> {
-        self.delegated_administrators.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delegated_administrators.is_none()`.
+    pub fn delegated_administrators(&self) -> &[crate::types::DelegatedAdministrator] {
+        self.delegated_administrators.as_deref().unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

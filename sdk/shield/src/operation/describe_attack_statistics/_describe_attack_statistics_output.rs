@@ -6,7 +6,7 @@ pub struct DescribeAttackStatisticsOutput {
     /// <p>The time range of the attack.</p>
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>The data that describes the attacks detected during the time period.</p>
-    pub data_items: ::std::option::Option<::std::vec::Vec<crate::types::AttackStatisticsDataItem>>,
+    pub data_items: ::std::vec::Vec<crate::types::AttackStatisticsDataItem>,
     _request_id: Option<String>,
 }
 impl DescribeAttackStatisticsOutput {
@@ -15,8 +15,9 @@ impl DescribeAttackStatisticsOutput {
         self.time_range.as_ref()
     }
     /// <p>The data that describes the attacks detected during the time period.</p>
-    pub fn data_items(&self) -> ::std::option::Option<&[crate::types::AttackStatisticsDataItem]> {
-        self.data_items.as_deref()
+    pub fn data_items(&self) -> &[crate::types::AttackStatisticsDataItem] {
+        use std::ops::Deref;
+        self.data_items.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeAttackStatisticsOutput {
@@ -41,6 +42,7 @@ pub struct DescribeAttackStatisticsOutputBuilder {
 }
 impl DescribeAttackStatisticsOutputBuilder {
     /// <p>The time range of the attack.</p>
+    /// This field is required.
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
         self
@@ -84,11 +86,23 @@ impl DescribeAttackStatisticsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeAttackStatisticsOutput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput).
-    pub fn build(self) -> crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput {
-        crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`data_items`](crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsOutputBuilder::data_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput {
             time_range: self.time_range,
-            data_items: self.data_items,
+            data_items: self.data_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_items",
+                    "data_items was not specified but it is required when building DescribeAttackStatisticsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

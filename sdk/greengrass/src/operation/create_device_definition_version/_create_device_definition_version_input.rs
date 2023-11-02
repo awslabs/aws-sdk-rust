@@ -20,8 +20,10 @@ impl CreateDeviceDefinitionVersionInput {
         self.device_definition_id.as_deref()
     }
     /// A list of devices in the definition version.
-    pub fn devices(&self) -> ::std::option::Option<&[crate::types::Device]> {
-        self.devices.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
+    pub fn devices(&self) -> &[crate::types::Device] {
+        self.devices.as_deref().unwrap_or_default()
     }
 }
 impl CreateDeviceDefinitionVersionInput {
@@ -55,6 +57,7 @@ impl CreateDeviceDefinitionVersionInputBuilder {
         &self.amzn_client_token
     }
     /// The ID of the device definition.
+    /// This field is required.
     pub fn device_definition_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_definition_id = ::std::option::Option::Some(input.into());
         self

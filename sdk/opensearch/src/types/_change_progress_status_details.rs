@@ -33,20 +33,26 @@ impl ChangeProgressStatusDetails {
         self.status.as_ref()
     }
     /// <p>The list of properties in the domain configuration change that are still pending.</p>
-    pub fn pending_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.pending_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_properties.is_none()`.
+    pub fn pending_properties(&self) -> &[::std::string::String] {
+        self.pending_properties.as_deref().unwrap_or_default()
     }
     /// <p>The list of properties in the domain configuration change that have completed.</p>
-    pub fn completed_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.completed_properties.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.completed_properties.is_none()`.
+    pub fn completed_properties(&self) -> &[::std::string::String] {
+        self.completed_properties.as_deref().unwrap_or_default()
     }
     /// <p>The total number of stages required for the configuration change.</p>
     pub fn total_number_of_stages(&self) -> i32 {
         self.total_number_of_stages
     }
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
-    pub fn change_progress_stages(&self) -> ::std::option::Option<&[crate::types::ChangeProgressStage]> {
-        self.change_progress_stages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_progress_stages.is_none()`.
+    pub fn change_progress_stages(&self) -> &[crate::types::ChangeProgressStage] {
+        self.change_progress_stages.as_deref().unwrap_or_default()
     }
 }
 impl ChangeProgressStatusDetails {

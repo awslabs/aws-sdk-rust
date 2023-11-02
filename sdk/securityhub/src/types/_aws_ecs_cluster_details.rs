@@ -35,20 +35,26 @@ impl AwsEcsClusterDetails {
         self.active_services_count
     }
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
-    pub fn capacity_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.capacity_providers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_providers.is_none()`.
+    pub fn capacity_providers(&self) -> &[::std::string::String] {
+        self.capacity_providers.as_deref().unwrap_or_default()
     }
     /// <p>The setting to use to create the cluster. Specifically used to configure whether to enable CloudWatch Container Insights for the cluster.</p>
-    pub fn cluster_settings(&self) -> ::std::option::Option<&[crate::types::AwsEcsClusterClusterSettingsDetails]> {
-        self.cluster_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_settings.is_none()`.
+    pub fn cluster_settings(&self) -> &[crate::types::AwsEcsClusterClusterSettingsDetails] {
+        self.cluster_settings.as_deref().unwrap_or_default()
     }
     /// <p>The run command configuration for the cluster.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AwsEcsClusterConfigurationDetails> {
         self.configuration.as_ref()
     }
     /// <p>The default capacity provider strategy for the cluster. The default capacity provider strategy is used when services or tasks are run without a specified launch type or capacity provider strategy.</p>
-    pub fn default_capacity_provider_strategy(&self) -> ::std::option::Option<&[crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails]> {
-        self.default_capacity_provider_strategy.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_capacity_provider_strategy.is_none()`.
+    pub fn default_capacity_provider_strategy(&self) -> &[crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails] {
+        self.default_capacity_provider_strategy.as_deref().unwrap_or_default()
     }
     /// <p>A name that you use to identify your cluster. </p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {

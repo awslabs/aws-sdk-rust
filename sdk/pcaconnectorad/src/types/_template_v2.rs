@@ -27,8 +27,10 @@ impl TemplateV2 {
         self.certificate_validity.as_ref()
     }
     /// <p>List of templates in Active Directory that are superseded by this template.</p>
-    pub fn superseded_templates(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.superseded_templates.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.superseded_templates.is_none()`.
+    pub fn superseded_templates(&self) -> &[::std::string::String] {
+        self.superseded_templates.as_deref().unwrap_or_default()
     }
     /// <p>Private key attributes allow you to specify the minimal key length, key spec, and cryptographic providers for the private key of a certificate for v2 templates. V2 templates allow you to use Legacy Cryptographic Service Providers.</p>
     pub fn private_key_attributes(&self) -> ::std::option::Option<&crate::types::PrivateKeyAttributesV2> {
@@ -77,6 +79,7 @@ pub struct TemplateV2Builder {
 }
 impl TemplateV2Builder {
     /// <p>Certificate validity describes the validity and renewal periods of a certificate.</p>
+    /// This field is required.
     pub fn certificate_validity(mut self, input: crate::types::CertificateValidity) -> Self {
         self.certificate_validity = ::std::option::Option::Some(input);
         self
@@ -111,6 +114,7 @@ impl TemplateV2Builder {
         &self.superseded_templates
     }
     /// <p>Private key attributes allow you to specify the minimal key length, key spec, and cryptographic providers for the private key of a certificate for v2 templates. V2 templates allow you to use Legacy Cryptographic Service Providers.</p>
+    /// This field is required.
     pub fn private_key_attributes(mut self, input: crate::types::PrivateKeyAttributesV2) -> Self {
         self.private_key_attributes = ::std::option::Option::Some(input);
         self
@@ -125,6 +129,7 @@ impl TemplateV2Builder {
         &self.private_key_attributes
     }
     /// <p>Private key flags for v2 templates specify the client compatibility, if the private key can be exported, and if user input is required when using a private key. </p>
+    /// This field is required.
     pub fn private_key_flags(mut self, input: crate::types::PrivateKeyFlagsV2) -> Self {
         self.private_key_flags = ::std::option::Option::Some(input);
         self
@@ -139,6 +144,7 @@ impl TemplateV2Builder {
         &self.private_key_flags
     }
     /// <p>Enrollment flags describe the enrollment settings for certificates such as using the existing private key and deleting expired or revoked certificates.</p>
+    /// This field is required.
     pub fn enrollment_flags(mut self, input: crate::types::EnrollmentFlagsV2) -> Self {
         self.enrollment_flags = ::std::option::Option::Some(input);
         self
@@ -153,6 +159,7 @@ impl TemplateV2Builder {
         &self.enrollment_flags
     }
     /// <p>Subject name flags describe the subject name and subject alternate name that is included in a certificate.</p>
+    /// This field is required.
     pub fn subject_name_flags(mut self, input: crate::types::SubjectNameFlagsV2) -> Self {
         self.subject_name_flags = ::std::option::Option::Some(input);
         self
@@ -167,6 +174,7 @@ impl TemplateV2Builder {
         &self.subject_name_flags
     }
     /// <p>General flags describe whether the template is used for computers or users and if the template can be used with autoenrollment.</p>
+    /// This field is required.
     pub fn general_flags(mut self, input: crate::types::GeneralFlagsV2) -> Self {
         self.general_flags = ::std::option::Option::Some(input);
         self
@@ -181,6 +189,7 @@ impl TemplateV2Builder {
         &self.general_flags
     }
     /// <p>Extensions describe the key usage extensions and application policies for a template.</p>
+    /// This field is required.
     pub fn extensions(mut self, input: crate::types::ExtensionsV2) -> Self {
         self.extensions = ::std::option::Option::Some(input);
         self

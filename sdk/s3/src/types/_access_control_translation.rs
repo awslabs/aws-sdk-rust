@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlTranslation {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
-    pub owner: ::std::option::Option<crate::types::OwnerOverride>,
+    pub owner: crate::types::OwnerOverride,
 }
 impl AccessControlTranslation {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::OwnerOverride> {
-        self.owner.as_ref()
+    pub fn owner(&self) -> &crate::types::OwnerOverride {
+        &self.owner
     }
 }
 impl AccessControlTranslation {
@@ -28,6 +28,7 @@ pub struct AccessControlTranslationBuilder {
 }
 impl AccessControlTranslationBuilder {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+    /// This field is required.
     pub fn owner(mut self, input: crate::types::OwnerOverride) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl AccessControlTranslationBuilder {
         &self.owner
     }
     /// Consumes the builder and constructs a [`AccessControlTranslation`](crate::types::AccessControlTranslation).
-    pub fn build(self) -> crate::types::AccessControlTranslation {
-        crate::types::AccessControlTranslation { owner: self.owner }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`owner`](crate::types::builders::AccessControlTranslationBuilder::owner)
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessControlTranslation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AccessControlTranslation {
+            owner: self.owner.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "owner",
+                    "owner was not specified but it is required when building AccessControlTranslation",
+                )
+            })?,
+        })
     }
 }

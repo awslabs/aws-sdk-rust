@@ -9,69 +9,69 @@ pub fn ser_create_connector_input(
         crate::protocol_serde::shape_capacity::ser_capacity(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.connector_configuration {
+    {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("connectorConfiguration").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_3 = object.key("connectorConfiguration").start_object();
+        for (key_4, value_5) in &input.connector_configuration {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_4.finish();
+        object_3.finish();
     }
-    if let Some(var_7) = &input.connector_description {
-        object.key("connectorDescription").string(var_7.as_str());
+    if let Some(var_6) = &input.connector_description {
+        object.key("connectorDescription").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.connector_name {
-        object.key("connectorName").string(var_8.as_str());
+    {
+        object.key("connectorName").string(input.connector_name.as_str());
     }
-    if let Some(var_9) = &input.kafka_cluster {
+    if let Some(var_7) = &input.kafka_cluster {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("kafkaCluster").start_object();
-        crate::protocol_serde::shape_kafka_cluster::ser_kafka_cluster(&mut object_10, var_9)?;
+        let mut object_8 = object.key("kafkaCluster").start_object();
+        crate::protocol_serde::shape_kafka_cluster::ser_kafka_cluster(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.kafka_cluster_client_authentication {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("kafkaClusterClientAuthentication").start_object();
+        crate::protocol_serde::shape_kafka_cluster_client_authentication::ser_kafka_cluster_client_authentication(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.kafka_cluster_client_authentication {
+    if let Some(var_11) = &input.kafka_cluster_encryption_in_transit {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("kafkaClusterClientAuthentication").start_object();
-        crate::protocol_serde::shape_kafka_cluster_client_authentication::ser_kafka_cluster_client_authentication(&mut object_12, var_11)?;
+        let mut object_12 = object.key("kafkaClusterEncryptionInTransit").start_object();
+        crate::protocol_serde::shape_kafka_cluster_encryption_in_transit::ser_kafka_cluster_encryption_in_transit(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.kafka_cluster_encryption_in_transit {
+    {
+        object.key("kafkaConnectVersion").string(input.kafka_connect_version.as_str());
+    }
+    if let Some(var_13) = &input.log_delivery {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("kafkaClusterEncryptionInTransit").start_object();
-        crate::protocol_serde::shape_kafka_cluster_encryption_in_transit::ser_kafka_cluster_encryption_in_transit(&mut object_14, var_13)?;
+        let mut object_14 = object.key("logDelivery").start_object();
+        crate::protocol_serde::shape_log_delivery::ser_log_delivery(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.kafka_connect_version {
-        object.key("kafkaConnectVersion").string(var_15.as_str());
-    }
-    if let Some(var_16) = &input.log_delivery {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("logDelivery").start_object();
-        crate::protocol_serde::shape_log_delivery::ser_log_delivery(&mut object_17, var_16)?;
-        object_17.finish();
-    }
-    if let Some(var_18) = &input.plugins {
-        let mut array_19 = object.key("plugins").start_array();
-        for item_20 in var_18 {
+    {
+        let mut array_15 = object.key("plugins").start_array();
+        for item_16 in &input.plugins {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_plugin::ser_plugin(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_plugin::ser_plugin(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_19.finish();
+        array_15.finish();
     }
-    if let Some(var_22) = &input.service_execution_role_arn {
-        object.key("serviceExecutionRoleArn").string(var_22.as_str());
+    {
+        object.key("serviceExecutionRoleArn").string(input.service_execution_role_arn.as_str());
     }
-    if let Some(var_23) = &input.worker_configuration {
+    if let Some(var_18) = &input.worker_configuration {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("workerConfiguration").start_object();
-        crate::protocol_serde::shape_worker_configuration::ser_worker_configuration(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_19 = object.key("workerConfiguration").start_object();
+        crate::protocol_serde::shape_worker_configuration::ser_worker_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

@@ -14,8 +14,10 @@ impl UpdateCellInput {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[::std::string::String] {
+        self.cells.as_deref().unwrap_or_default()
     }
 }
 impl UpdateCellInput {
@@ -34,6 +36,7 @@ pub struct UpdateCellInputBuilder {
 }
 impl UpdateCellInputBuilder {
     /// <p>The name of the cell.</p>
+    /// This field is required.
     pub fn cell_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_name = ::std::option::Option::Some(input.into());
         self

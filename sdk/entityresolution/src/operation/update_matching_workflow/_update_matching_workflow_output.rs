@@ -4,37 +4,40 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMatchingWorkflowOutput {
     /// <p>The name of the workflow.</p>
-    pub workflow_name: ::std::option::Option<::std::string::String>,
+    pub workflow_name: ::std::string::String,
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::InputSource>>,
+    pub input_source_config: ::std::vec::Vec<crate::types::InputSource>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::OutputSource>>,
+    pub output_source_config: ::std::vec::Vec<crate::types::OutputSource>,
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub resolution_techniques: ::std::option::Option<crate::types::ResolutionTechniques>,
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub incremental_run_config: ::std::option::Option<crate::types::IncrementalRunConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateMatchingWorkflowOutput {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
-        self.workflow_name.as_deref()
+    pub fn workflow_name(&self) -> &str {
+        use std::ops::Deref;
+        self.workflow_name.deref()
     }
     /// <p>A description of the workflow.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn input_source_config(&self) -> ::std::option::Option<&[crate::types::InputSource]> {
-        self.input_source_config.as_deref()
+    pub fn input_source_config(&self) -> &[crate::types::InputSource] {
+        use std::ops::Deref;
+        self.input_source_config.deref()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
-    pub fn output_source_config(&self) -> ::std::option::Option<&[crate::types::OutputSource]> {
-        self.output_source_config.as_deref()
+    pub fn output_source_config(&self) -> &[crate::types::OutputSource] {
+        use std::ops::Deref;
+        self.output_source_config.deref()
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub fn resolution_techniques(&self) -> ::std::option::Option<&crate::types::ResolutionTechniques> {
@@ -45,8 +48,9 @@ impl UpdateMatchingWorkflowOutput {
         self.incremental_run_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateMatchingWorkflowOutput {
@@ -76,6 +80,7 @@ pub struct UpdateMatchingWorkflowOutputBuilder {
 }
 impl UpdateMatchingWorkflowOutputBuilder {
     /// <p>The name of the workflow.</p>
+    /// This field is required.
     pub fn workflow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_name = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +149,7 @@ impl UpdateMatchingWorkflowOutputBuilder {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    /// This field is required.
     pub fn resolution_techniques(mut self, input: crate::types::ResolutionTechniques) -> Self {
         self.resolution_techniques = ::std::option::Option::Some(input);
         self
@@ -172,6 +178,7 @@ impl UpdateMatchingWorkflowOutputBuilder {
         &self.incremental_run_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -195,16 +202,46 @@ impl UpdateMatchingWorkflowOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateMatchingWorkflowOutput`](crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput).
-    pub fn build(self) -> crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput {
-        crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput {
-            workflow_name: self.workflow_name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workflow_name`](crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowOutputBuilder::workflow_name)
+    /// - [`input_source_config`](crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowOutputBuilder::input_source_config)
+    /// - [`output_source_config`](crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowOutputBuilder::output_source_config)
+    /// - [`role_arn`](crate::operation::update_matching_workflow::builders::UpdateMatchingWorkflowOutputBuilder::role_arn)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput {
+            workflow_name: self.workflow_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workflow_name",
+                    "workflow_name was not specified but it is required when building UpdateMatchingWorkflowOutput",
+                )
+            })?,
             description: self.description,
-            input_source_config: self.input_source_config,
-            output_source_config: self.output_source_config,
+            input_source_config: self.input_source_config.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "input_source_config",
+                    "input_source_config was not specified but it is required when building UpdateMatchingWorkflowOutput",
+                )
+            })?,
+            output_source_config: self.output_source_config.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "output_source_config",
+                    "output_source_config was not specified but it is required when building UpdateMatchingWorkflowOutput",
+                )
+            })?,
             resolution_techniques: self.resolution_techniques,
             incremental_run_config: self.incremental_run_config,
-            role_arn: self.role_arn,
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building UpdateMatchingWorkflowOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

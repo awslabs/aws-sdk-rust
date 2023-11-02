@@ -15,8 +15,10 @@ impl ListRegionsOutput {
         self.next_token.as_deref()
     }
     /// <p>This is a list of Regions for a given account, or if the filtered parameter was used, a list of Regions that match the filter criteria set in the <code>filter</code> parameter.</p>
-    pub fn regions(&self) -> ::std::option::Option<&[crate::types::Region]> {
-        self.regions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[crate::types::Region] {
+        self.regions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRegionsOutput {

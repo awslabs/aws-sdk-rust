@@ -11,8 +11,10 @@ pub struct ListApplicationInstanceNodeInstancesOutput {
 }
 impl ListApplicationInstanceNodeInstancesOutput {
     /// <p>A list of node instances.</p>
-    pub fn node_instances(&self) -> ::std::option::Option<&[crate::types::NodeInstance]> {
-        self.node_instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_instances.is_none()`.
+    pub fn node_instances(&self) -> &[crate::types::NodeInstance] {
+        self.node_instances.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

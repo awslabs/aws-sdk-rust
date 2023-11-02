@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetComponentPolicy`](crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`component_arn(impl Into<String>)`](crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder::component_arn) / [`set_component_arn(Option<String>)`](crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder::set_component_arn): <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
+    ///   - [`component_arn(impl Into<String>)`](crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder::component_arn) / [`set_component_arn(Option<String>)`](crate::operation::get_component_policy::builders::GetComponentPolicyFluentBuilder::set_component_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p><br>
     /// - On success, responds with [`GetComponentPolicyOutput`](crate::operation::get_component_policy::GetComponentPolicyOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_component_policy::GetComponentPolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_component_policy::GetComponentPolicyOutput::policy): <p>The component policy.</p>

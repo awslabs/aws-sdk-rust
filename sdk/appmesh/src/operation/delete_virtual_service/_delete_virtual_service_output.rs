@@ -34,6 +34,7 @@ pub struct DeleteVirtualServiceOutputBuilder {
 }
 impl DeleteVirtualServiceOutputBuilder {
     /// <p>The virtual service that was deleted.</p>
+    /// This field is required.
     pub fn virtual_service(mut self, input: crate::types::VirtualServiceData) -> Self {
         self.virtual_service = ::std::option::Option::Some(input);
         self

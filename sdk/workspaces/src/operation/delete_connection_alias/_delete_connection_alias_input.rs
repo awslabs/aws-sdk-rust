@@ -27,6 +27,7 @@ pub struct DeleteConnectionAliasInputBuilder {
 }
 impl DeleteConnectionAliasInputBuilder {
     /// <p>The identifier of the connection alias to delete.</p>
+    /// This field is required.
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
         self

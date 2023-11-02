@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFleetAdvisorDatabases`](crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`database_ids(impl Into<String>)`](crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder::database_ids) / [`set_database_ids(Option<Vec<String>>)`](crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder::set_database_ids): <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    ///   - [`database_ids(impl Into<String>)`](crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder::database_ids) / [`set_database_ids(Option<Vec<String>>)`](crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesFluentBuilder::set_database_ids):<br>required: **true**<br><p>The IDs of the Fleet Advisor collector databases to delete.</p><br>
     /// - On success, responds with [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput) with field(s):
     ///   - [`database_ids(Option<Vec<String>>)`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput::database_ids): <p>The IDs of the databases that the operation deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFleetAdvisorDatabasesError>`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesError)

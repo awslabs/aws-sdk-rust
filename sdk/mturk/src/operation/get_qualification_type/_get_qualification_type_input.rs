@@ -27,6 +27,7 @@ pub struct GetQualificationTypeInputBuilder {
 }
 impl GetQualificationTypeInputBuilder {
     /// <p>The ID of the QualificationType.</p>
+    /// This field is required.
     pub fn qualification_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualification_type_id = ::std::option::Option::Some(input.into());
         self

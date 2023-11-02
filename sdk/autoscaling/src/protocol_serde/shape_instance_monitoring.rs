@@ -12,6 +12,7 @@ pub fn ser_instance_monitoring(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_instance_monitoring(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::InstanceMonitoring, ::aws_smithy_xml::decode::XmlDecodeError> {

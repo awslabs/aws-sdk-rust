@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoAdjustData {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
-    pub auto_adjust_type: ::std::option::Option<crate::types::AutoAdjustType>,
+    pub auto_adjust_type: crate::types::AutoAdjustType,
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
     pub historical_options: ::std::option::Option<crate::types::HistoricalOptions>,
     /// <p>The last time that your budget was auto-adjusted.</p>
@@ -13,8 +13,8 @@ pub struct AutoAdjustData {
 }
 impl AutoAdjustData {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
-    pub fn auto_adjust_type(&self) -> ::std::option::Option<&crate::types::AutoAdjustType> {
-        self.auto_adjust_type.as_ref()
+    pub fn auto_adjust_type(&self) -> &crate::types::AutoAdjustType {
+        &self.auto_adjust_type
     }
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
     pub fn historical_options(&self) -> ::std::option::Option<&crate::types::HistoricalOptions> {
@@ -42,6 +42,7 @@ pub struct AutoAdjustDataBuilder {
 }
 impl AutoAdjustDataBuilder {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
+    /// This field is required.
     pub fn auto_adjust_type(mut self, input: crate::types::AutoAdjustType) -> Self {
         self.auto_adjust_type = ::std::option::Option::Some(input);
         self
@@ -84,11 +85,18 @@ impl AutoAdjustDataBuilder {
         &self.last_auto_adjust_time
     }
     /// Consumes the builder and constructs a [`AutoAdjustData`](crate::types::AutoAdjustData).
-    pub fn build(self) -> crate::types::AutoAdjustData {
-        crate::types::AutoAdjustData {
-            auto_adjust_type: self.auto_adjust_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`auto_adjust_type`](crate::types::builders::AutoAdjustDataBuilder::auto_adjust_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoAdjustData, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AutoAdjustData {
+            auto_adjust_type: self.auto_adjust_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "auto_adjust_type",
+                    "auto_adjust_type was not specified but it is required when building AutoAdjustData",
+                )
+            })?,
             historical_options: self.historical_options,
             last_auto_adjust_time: self.last_auto_adjust_time,
-        }
+        })
     }
 }

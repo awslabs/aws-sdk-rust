@@ -3,8 +3,8 @@ pub fn ser_get_hypervisor_property_mappings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.hypervisor_arn {
-        object.key("HypervisorArn").string(var_1.as_str());
+    {
+        object.key("HypervisorArn").string(input.hypervisor_arn.as_str());
     }
     Ok(())
 }

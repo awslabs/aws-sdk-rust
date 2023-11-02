@@ -49,6 +49,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionInputBuilder {
 }
 impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     /// <p>The application name.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         &self.current_application_version_id
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
+    /// This field is required.
     pub fn cloud_watch_logging_option_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_logging_option_id = ::std::option::Option::Some(input.into());
         self

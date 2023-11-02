@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingDetailsError {
     /// <p>The finding ARN that returned an error.</p>
-    pub finding_arn: ::std::option::Option<::std::string::String>,
+    pub finding_arn: ::std::string::String,
     /// <p>The error code.</p>
-    pub error_code: ::std::option::Option<crate::types::FindingDetailsErrorCode>,
+    pub error_code: crate::types::FindingDetailsErrorCode,
     /// <p>The error message.</p>
-    pub error_message: ::std::option::Option<::std::string::String>,
+    pub error_message: ::std::string::String,
 }
 impl FindingDetailsError {
     /// <p>The finding ARN that returned an error.</p>
-    pub fn finding_arn(&self) -> ::std::option::Option<&str> {
-        self.finding_arn.as_deref()
+    pub fn finding_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.finding_arn.deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::FindingDetailsErrorCode> {
-        self.error_code.as_ref()
+    pub fn error_code(&self) -> &crate::types::FindingDetailsErrorCode {
+        &self.error_code
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
-        self.error_message.as_deref()
+    pub fn error_message(&self) -> &str {
+        use std::ops::Deref;
+        self.error_message.deref()
     }
 }
 impl FindingDetailsError {
@@ -42,6 +44,7 @@ pub struct FindingDetailsErrorBuilder {
 }
 impl FindingDetailsErrorBuilder {
     /// <p>The finding ARN that returned an error.</p>
+    /// This field is required.
     pub fn finding_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_arn = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl FindingDetailsErrorBuilder {
         &self.finding_arn
     }
     /// <p>The error code.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: crate::types::FindingDetailsErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
@@ -70,6 +74,7 @@ impl FindingDetailsErrorBuilder {
         &self.error_code
     }
     /// <p>The error message.</p>
+    /// This field is required.
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl FindingDetailsErrorBuilder {
         &self.error_message
     }
     /// Consumes the builder and constructs a [`FindingDetailsError`](crate::types::FindingDetailsError).
-    pub fn build(self) -> crate::types::FindingDetailsError {
-        crate::types::FindingDetailsError {
-            finding_arn: self.finding_arn,
-            error_code: self.error_code,
-            error_message: self.error_message,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`finding_arn`](crate::types::builders::FindingDetailsErrorBuilder::finding_arn)
+    /// - [`error_code`](crate::types::builders::FindingDetailsErrorBuilder::error_code)
+    /// - [`error_message`](crate::types::builders::FindingDetailsErrorBuilder::error_message)
+    pub fn build(self) -> ::std::result::Result<crate::types::FindingDetailsError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FindingDetailsError {
+            finding_arn: self.finding_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "finding_arn",
+                    "finding_arn was not specified but it is required when building FindingDetailsError",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building FindingDetailsError",
+                )
+            })?,
+            error_message: self.error_message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_message",
+                    "error_message was not specified but it is required when building FindingDetailsError",
+                )
+            })?,
+        })
     }
 }

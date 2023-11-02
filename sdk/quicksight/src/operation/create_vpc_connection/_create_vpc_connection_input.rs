@@ -34,24 +34,32 @@ impl CreateVpcConnectionInput {
         self.name.as_deref()
     }
     /// <p>A list of subnet IDs for the VPC connection.</p>
-    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnet_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of security group IDs for the VPC connection.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of IP addresses of DNS resolver endpoints for the VPC connection.</p>
-    pub fn dns_resolvers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_resolvers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_resolvers.is_none()`.
+    pub fn dns_resolvers(&self) -> &[::std::string::String] {
+        self.dns_resolvers.as_deref().unwrap_or_default()
     }
     /// <p>The IAM role to associate with the VPC connection.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>A map of the key-value pairs for the resource tag or tags assigned to the VPC connection.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateVpcConnectionInput {
@@ -76,6 +84,7 @@ pub struct CreateVpcConnectionInputBuilder {
 }
 impl CreateVpcConnectionInputBuilder {
     /// <p>The Amazon Web Services account ID of the account where you want to create a new VPC connection.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +99,7 @@ impl CreateVpcConnectionInputBuilder {
         &self.aws_account_id
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// This field is required.
     pub fn vpc_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_connection_id = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +114,7 @@ impl CreateVpcConnectionInputBuilder {
         &self.vpc_connection_id
     }
     /// <p>The display name for the VPC connection.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +189,7 @@ impl CreateVpcConnectionInputBuilder {
         &self.dns_resolvers
     }
     /// <p>The IAM role to associate with the VPC connection.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

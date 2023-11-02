@@ -6,18 +6,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchDataSourceConfig {
     /// <p>The endpoint.</p>
-    pub endpoint: ::std::option::Option<::std::string::String>,
+    pub endpoint: ::std::string::String,
     /// <p>The Amazon Web Services Region.</p>
-    pub aws_region: ::std::option::Option<::std::string::String>,
+    pub aws_region: ::std::string::String,
 }
 impl ElasticsearchDataSourceConfig {
     /// <p>The endpoint.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
-        self.endpoint.as_deref()
+    pub fn endpoint(&self) -> &str {
+        use std::ops::Deref;
+        self.endpoint.deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
-        self.aws_region.as_deref()
+    pub fn aws_region(&self) -> &str {
+        use std::ops::Deref;
+        self.aws_region.deref()
     }
 }
 impl ElasticsearchDataSourceConfig {
@@ -36,6 +38,7 @@ pub struct ElasticsearchDataSourceConfigBuilder {
 }
 impl ElasticsearchDataSourceConfigBuilder {
     /// <p>The endpoint.</p>
+    /// This field is required.
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +53,7 @@ impl ElasticsearchDataSourceConfigBuilder {
         &self.endpoint
     }
     /// <p>The Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
         self
@@ -64,10 +68,23 @@ impl ElasticsearchDataSourceConfigBuilder {
         &self.aws_region
     }
     /// Consumes the builder and constructs a [`ElasticsearchDataSourceConfig`](crate::types::ElasticsearchDataSourceConfig).
-    pub fn build(self) -> crate::types::ElasticsearchDataSourceConfig {
-        crate::types::ElasticsearchDataSourceConfig {
-            endpoint: self.endpoint,
-            aws_region: self.aws_region,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`endpoint`](crate::types::builders::ElasticsearchDataSourceConfigBuilder::endpoint)
+    /// - [`aws_region`](crate::types::builders::ElasticsearchDataSourceConfigBuilder::aws_region)
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchDataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ElasticsearchDataSourceConfig {
+            endpoint: self.endpoint.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "endpoint",
+                    "endpoint was not specified but it is required when building ElasticsearchDataSourceConfig",
+                )
+            })?,
+            aws_region: self.aws_region.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "aws_region",
+                    "aws_region was not specified but it is required when building ElasticsearchDataSourceConfig",
+                )
+            })?,
+        })
     }
 }

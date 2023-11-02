@@ -9,7 +9,7 @@ pub struct CustomLogSourceCrawlerConfiguration {
     /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
     /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
     /// </ul>
-    pub role_arn: ::std::option::Option<::std::string::String>,
+    pub role_arn: ::std::string::String,
 }
 impl CustomLogSourceCrawlerConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
@@ -17,8 +17,9 @@ impl CustomLogSourceCrawlerConfiguration {
     /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
     /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
     /// </ul>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
-        self.role_arn.as_deref()
+    pub fn role_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.role_arn.deref()
     }
 }
 impl CustomLogSourceCrawlerConfiguration {
@@ -40,6 +41,7 @@ impl CustomLogSourceCrawlerConfigurationBuilder {
     /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
     /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,7 +64,16 @@ impl CustomLogSourceCrawlerConfigurationBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CustomLogSourceCrawlerConfiguration`](crate::types::CustomLogSourceCrawlerConfiguration).
-    pub fn build(self) -> crate::types::CustomLogSourceCrawlerConfiguration {
-        crate::types::CustomLogSourceCrawlerConfiguration { role_arn: self.role_arn }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`role_arn`](crate::types::builders::CustomLogSourceCrawlerConfigurationBuilder::role_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomLogSourceCrawlerConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CustomLogSourceCrawlerConfiguration {
+            role_arn: self.role_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "role_arn",
+                    "role_arn was not specified but it is required when building CustomLogSourceCrawlerConfiguration",
+                )
+            })?,
+        })
     }
 }

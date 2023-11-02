@@ -15,8 +15,10 @@ impl ListManagedRuleSetsOutput {
         self.next_marker.as_deref()
     }
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
-    pub fn managed_rule_sets(&self) -> ::std::option::Option<&[crate::types::ManagedRuleSetSummary]> {
-        self.managed_rule_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rule_sets.is_none()`.
+    pub fn managed_rule_sets(&self) -> &[crate::types::ManagedRuleSetSummary] {
+        self.managed_rule_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListManagedRuleSetsOutput {

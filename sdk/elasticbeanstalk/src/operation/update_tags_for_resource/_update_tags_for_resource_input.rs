@@ -21,13 +21,17 @@ impl UpdateTagsForResourceInput {
     }
     /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn tags_to_add(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags_to_add.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_to_add.is_none()`.
+    pub fn tags_to_add(&self) -> &[crate::types::Tag] {
+        self.tags_to_add.as_deref().unwrap_or_default()
     }
     /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
     /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
-    pub fn tags_to_remove(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tags_to_remove.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_to_remove.is_none()`.
+    pub fn tags_to_remove(&self) -> &[::std::string::String] {
+        self.tags_to_remove.as_deref().unwrap_or_default()
     }
 }
 impl UpdateTagsForResourceInput {
@@ -48,6 +52,7 @@ pub struct UpdateTagsForResourceInputBuilder {
 impl UpdateTagsForResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
     /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

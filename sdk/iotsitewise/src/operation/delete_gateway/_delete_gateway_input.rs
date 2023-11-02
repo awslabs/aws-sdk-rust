@@ -27,6 +27,7 @@ pub struct DeleteGatewayInputBuilder {
 }
 impl DeleteGatewayInputBuilder {
     /// <p>The ID of the gateway to delete.</p>
+    /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self

@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaCodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub lambda_arn: ::std::option::Option<::std::string::String>,
+    pub lambda_arn: ::std::string::String,
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
-    pub code_hook_interface_version: ::std::option::Option<::std::string::String>,
+    pub code_hook_interface_version: ::std::string::String,
 }
 impl LambdaCodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
-        self.lambda_arn.as_deref()
+    pub fn lambda_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.lambda_arn.deref()
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
-    pub fn code_hook_interface_version(&self) -> ::std::option::Option<&str> {
-        self.code_hook_interface_version.as_deref()
+    pub fn code_hook_interface_version(&self) -> &str {
+        use std::ops::Deref;
+        self.code_hook_interface_version.deref()
     }
 }
 impl LambdaCodeHook {
@@ -35,6 +37,7 @@ pub struct LambdaCodeHookBuilder {
 }
 impl LambdaCodeHookBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+    /// This field is required.
     pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl LambdaCodeHookBuilder {
         &self.lambda_arn
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
+    /// This field is required.
     pub fn code_hook_interface_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_hook_interface_version = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl LambdaCodeHookBuilder {
         &self.code_hook_interface_version
     }
     /// Consumes the builder and constructs a [`LambdaCodeHook`](crate::types::LambdaCodeHook).
-    pub fn build(self) -> crate::types::LambdaCodeHook {
-        crate::types::LambdaCodeHook {
-            lambda_arn: self.lambda_arn,
-            code_hook_interface_version: self.code_hook_interface_version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`lambda_arn`](crate::types::builders::LambdaCodeHookBuilder::lambda_arn)
+    /// - [`code_hook_interface_version`](crate::types::builders::LambdaCodeHookBuilder::code_hook_interface_version)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaCodeHook, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaCodeHook {
+            lambda_arn: self.lambda_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "lambda_arn",
+                    "lambda_arn was not specified but it is required when building LambdaCodeHook",
+                )
+            })?,
+            code_hook_interface_version: self.code_hook_interface_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "code_hook_interface_version",
+                    "code_hook_interface_version was not specified but it is required when building LambdaCodeHook",
+                )
+            })?,
+        })
     }
 }

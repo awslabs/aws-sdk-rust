@@ -42,6 +42,7 @@ pub struct UpdateWorkloadShareInputBuilder {
 }
 impl UpdateWorkloadShareInputBuilder {
     /// <p>The ID associated with the share.</p>
+    /// This field is required.
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl UpdateWorkloadShareInputBuilder {
         &self.share_id
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl UpdateWorkloadShareInputBuilder {
         &self.workload_id
     }
     /// <p>Permission granted on a share request.</p>
+    /// This field is required.
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = ::std::option::Option::Some(input);
         self

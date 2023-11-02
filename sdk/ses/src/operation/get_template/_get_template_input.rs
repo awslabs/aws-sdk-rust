@@ -27,6 +27,7 @@ pub struct GetTemplateInputBuilder {
 }
 impl GetTemplateInputBuilder {
     /// <p>The name of the template to retrieve.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

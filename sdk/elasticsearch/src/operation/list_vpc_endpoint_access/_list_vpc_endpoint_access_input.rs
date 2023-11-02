@@ -35,6 +35,7 @@ pub struct ListVpcEndpointAccessInputBuilder {
 }
 impl ListVpcEndpointAccessInputBuilder {
     /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self

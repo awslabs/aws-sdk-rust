@@ -20,8 +20,10 @@ impl GetContextKeysForCustomPolicyInput {
     /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
     /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
     /// </ul>
-    pub fn policy_input_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_input_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_input_list.is_none()`.
+    pub fn policy_input_list(&self) -> &[::std::string::String] {
+        self.policy_input_list.as_deref().unwrap_or_default()
     }
 }
 impl GetContextKeysForCustomPolicyInput {

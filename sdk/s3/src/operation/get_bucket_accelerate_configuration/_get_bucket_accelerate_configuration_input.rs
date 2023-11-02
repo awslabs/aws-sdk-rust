@@ -41,6 +41,7 @@ pub struct GetBucketAccelerateConfigurationInputBuilder {
 }
 impl GetBucketAccelerateConfigurationInputBuilder {
     /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
+    /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self

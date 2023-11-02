@@ -11,8 +11,10 @@ pub struct GetUnfilteredPartitionsMetadataOutput {
 }
 impl GetUnfilteredPartitionsMetadataOutput {
     /// <p>A list of requested partitions.</p>
-    pub fn unfiltered_partitions(&self) -> ::std::option::Option<&[crate::types::UnfilteredPartition]> {
-        self.unfiltered_partitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unfiltered_partitions.is_none()`.
+    pub fn unfiltered_partitions(&self) -> &[crate::types::UnfilteredPartition] {
+        self.unfiltered_partitions.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list of partitions does not include the last one.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

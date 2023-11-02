@@ -35,11 +35,10 @@ pub fn de_delete_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::InternalServerException({
@@ -57,11 +56,10 @@ pub fn de_delete_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InvalidStateException" => crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::InvalidStateException({
@@ -79,11 +77,10 @@ pub fn de_delete_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::invalid_state_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => {
@@ -103,11 +100,10 @@ pub fn de_delete_instance_onboarding_job_http_error(
                         })?,
                     );
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -126,11 +122,10 @@ pub fn de_delete_instance_onboarding_job_http_error(
                     })?,
                 );
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError::generic(generic),

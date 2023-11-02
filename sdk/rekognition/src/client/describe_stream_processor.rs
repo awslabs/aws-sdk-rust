@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStreamProcessor`](crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder::set_name): <p>Name of the stream processor for which you want information.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_stream_processor::builders::DescribeStreamProcessorFluentBuilder::set_name):<br>required: **true**<br><p>Name of the stream processor for which you want information.</p><br>
     /// - On success, responds with [`DescribeStreamProcessorOutput`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput::name): <p>Name of the stream processor. </p>
     ///   - [`stream_processor_arn(Option<String>)`](crate::operation::describe_stream_processor::DescribeStreamProcessorOutput::stream_processor_arn): <p>ARN of the stream processor.</p>

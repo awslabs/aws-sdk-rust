@@ -9,8 +9,10 @@ pub struct BatchDeleteTableVersionOutput {
 }
 impl BatchDeleteTableVersionOutput {
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    pub fn errors(&self) -> ::std::option::Option<&[crate::types::TableVersionError]> {
-        self.errors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::TableVersionError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchDeleteTableVersionOutput {

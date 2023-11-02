@@ -11,8 +11,10 @@ pub struct ListDatasetLabelsOutput {
 }
 impl ListDatasetLabelsOutput {
     /// <p> A list of the labels in the dataset. </p>
-    pub fn dataset_label_descriptions(&self) -> ::std::option::Option<&[crate::types::DatasetLabelDescription]> {
-        self.dataset_label_descriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_label_descriptions.is_none()`.
+    pub fn dataset_label_descriptions(&self) -> &[crate::types::DatasetLabelDescription] {
+        self.dataset_label_descriptions.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

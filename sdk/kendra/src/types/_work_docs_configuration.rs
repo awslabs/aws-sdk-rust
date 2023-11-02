@@ -7,7 +7,7 @@
 pub struct WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
-    pub organization_id: ::std::option::Option<::std::string::String>,
+    pub organization_id: ::std::string::String,
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
     /// <p>The default is set to <code>FALSE</code>.</p>
     pub crawl_comments: bool,
@@ -23,8 +23,9 @@ pub struct WorkDocsConfiguration {
 impl WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
-        self.organization_id.as_deref()
+    pub fn organization_id(&self) -> &str {
+        use std::ops::Deref;
+        self.organization_id.deref()
     }
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
     /// <p>The default is set to <code>FALSE</code>.</p>
@@ -36,16 +37,22 @@ impl WorkDocsConfiguration {
         self.use_change_log
     }
     /// <p>A list of regular expression patterns to include certain files in your Amazon WorkDocs site repository. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.inclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
+    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
+        self.inclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.exclusion_patterns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
+    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
+        self.exclusion_patterns.as_deref().unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon WorkDocs data source field names must exist in your Amazon WorkDocs custom metadata.</p>
-    pub fn field_mappings(&self) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
-        self.field_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
+    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref().unwrap_or_default()
     }
 }
 impl WorkDocsConfiguration {
@@ -69,6 +76,7 @@ pub struct WorkDocsConfigurationBuilder {
 impl WorkDocsConfigurationBuilder {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -176,14 +184,21 @@ impl WorkDocsConfigurationBuilder {
         &self.field_mappings
     }
     /// Consumes the builder and constructs a [`WorkDocsConfiguration`](crate::types::WorkDocsConfiguration).
-    pub fn build(self) -> crate::types::WorkDocsConfiguration {
-        crate::types::WorkDocsConfiguration {
-            organization_id: self.organization_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`organization_id`](crate::types::builders::WorkDocsConfigurationBuilder::organization_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkDocsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkDocsConfiguration {
+            organization_id: self.organization_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "organization_id",
+                    "organization_id was not specified but it is required when building WorkDocsConfiguration",
+                )
+            })?,
             crawl_comments: self.crawl_comments.unwrap_or_default(),
             use_change_log: self.use_change_log.unwrap_or_default(),
             inclusion_patterns: self.inclusion_patterns,
             exclusion_patterns: self.exclusion_patterns,
             field_mappings: self.field_mappings,
-        }
+        })
     }
 }

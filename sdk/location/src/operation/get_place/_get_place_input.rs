@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetPlaceInput {
     /// <p>The name of the place index resource that you want to use for the search.</p>
-    pub index_name: ::std::option::Option<::std::string::String>,
+    pub index_name: ::std::string::String,
     /// <p>The identifier of the place to find.</p>
-    pub place_id: ::std::option::Option<::std::string::String>,
+    pub place_id: ::std::string::String,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
@@ -18,12 +18,14 @@ pub struct GetPlaceInput {
 }
 impl GetPlaceInput {
     /// <p>The name of the place index resource that you want to use for the search.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
-        self.index_name.as_deref()
+    pub fn index_name(&self) -> &str {
+        use std::ops::Deref;
+        self.index_name.deref()
     }
     /// <p>The identifier of the place to find.</p>
-    pub fn place_id(&self) -> ::std::option::Option<&str> {
-        self.place_id.as_deref()
+    pub fn place_id(&self) -> &str {
+        use std::ops::Deref;
+        self.place_id.deref()
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -66,6 +68,7 @@ pub struct GetPlaceInputBuilder {
 }
 impl GetPlaceInputBuilder {
     /// <p>The name of the place index resource that you want to use for the search.</p>
+    /// This field is required.
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +83,7 @@ impl GetPlaceInputBuilder {
         &self.index_name
     }
     /// <p>The identifier of the place to find.</p>
+    /// This field is required.
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.place_id = ::std::option::Option::Some(input.into());
         self
@@ -134,10 +138,23 @@ impl GetPlaceInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetPlaceInput`](crate::operation::get_place::GetPlaceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`index_name`](crate::operation::get_place::builders::GetPlaceInputBuilder::index_name)
+    /// - [`place_id`](crate::operation::get_place::builders::GetPlaceInputBuilder::place_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_place::GetPlaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_place::GetPlaceInput {
-            index_name: self.index_name,
-            place_id: self.place_id,
+            index_name: self.index_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "index_name",
+                    "index_name was not specified but it is required when building GetPlaceInput",
+                )
+            })?,
+            place_id: self.place_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "place_id",
+                    "place_id was not specified but it is required when building GetPlaceInput",
+                )
+            })?,
             language: self.language,
             key: self.key,
         })

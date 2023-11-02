@@ -135,24 +135,32 @@ impl InstanceRecommendation {
     /// </ul> <note>
     /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about EBS volume metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html">Amazon CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </note>
-    pub fn finding_reason_codes(&self) -> ::std::option::Option<&[crate::types::InstanceRecommendationFindingReasonCode]> {
-        self.finding_reason_codes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
+    pub fn finding_reason_codes(&self) -> &[crate::types::InstanceRecommendationFindingReasonCode] {
+        self.finding_reason_codes.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that describe the utilization metrics of the instance.</p>
-    pub fn utilization_metrics(&self) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
-        self.utilization_metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utilization_metrics.is_none()`.
+    pub fn utilization_metrics(&self) -> &[crate::types::UtilizationMetric] {
+        self.utilization_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
     pub fn look_back_period_in_days(&self) -> f64 {
         self.look_back_period_in_days
     }
     /// <p>An array of objects that describe the recommendation options for the instance.</p>
-    pub fn recommendation_options(&self) -> ::std::option::Option<&[crate::types::InstanceRecommendationOption]> {
-        self.recommendation_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_options.is_none()`.
+    pub fn recommendation_options(&self) -> &[crate::types::InstanceRecommendationOption] {
+        self.recommendation_options.as_deref().unwrap_or_default()
     }
     /// <p>An array of objects that describe the source resource of the recommendation.</p>
-    pub fn recommendation_sources(&self) -> ::std::option::Option<&[crate::types::RecommendationSource]> {
-        self.recommendation_sources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_sources.is_none()`.
+    pub fn recommendation_sources(&self) -> &[crate::types::RecommendationSource] {
+        self.recommendation_sources.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
     pub fn last_refresh_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -179,16 +187,20 @@ impl InstanceRecommendation {
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
     /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
-    pub fn inferred_workload_types(&self) -> ::std::option::Option<&[crate::types::InferredWorkloadType]> {
-        self.inferred_workload_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_types.is_none()`.
+    pub fn inferred_workload_types(&self) -> &[crate::types::InferredWorkloadType] {
+        self.inferred_workload_types.as_deref().unwrap_or_default()
     }
     /// <p> The state of the instance when the recommendation was generated. </p>
     pub fn instance_state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
         self.instance_state.as_ref()
     }
     /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
     pub fn external_metric_status(&self) -> ::std::option::Option<&crate::types::ExternalMetricStatus> {

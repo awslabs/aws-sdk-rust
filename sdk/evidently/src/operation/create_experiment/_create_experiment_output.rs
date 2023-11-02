@@ -34,6 +34,7 @@ pub struct CreateExperimentOutputBuilder {
 }
 impl CreateExperimentOutputBuilder {
     /// <p>A structure containing the configuration details of the experiment that you created.</p>
+    /// This field is required.
     pub fn experiment(mut self, input: crate::types::Experiment) -> Self {
         self.experiment = ::std::option::Option::Some(input);
         self

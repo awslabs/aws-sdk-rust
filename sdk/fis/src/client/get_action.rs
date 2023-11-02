@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAction`](crate::operation::get_action::builders::GetActionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_action::builders::GetActionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_action::builders::GetActionFluentBuilder::set_id): <p>The ID of the action.</p>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_action::builders::GetActionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_action::builders::GetActionFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the action.</p><br>
     /// - On success, responds with [`GetActionOutput`](crate::operation::get_action::GetActionOutput) with field(s):
     ///   - [`action(Option<Action>)`](crate::operation::get_action::GetActionOutput::action): <p>Information about the action.</p>
     /// - On failure, responds with [`SdkError<GetActionError>`](crate::operation::get_action::GetActionError)

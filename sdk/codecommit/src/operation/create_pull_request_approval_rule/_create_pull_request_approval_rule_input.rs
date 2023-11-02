@@ -63,6 +63,7 @@ pub struct CreatePullRequestApprovalRuleInputBuilder {
 }
 impl CreatePullRequestApprovalRuleInputBuilder {
     /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
+    /// This field is required.
     pub fn pull_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pull_request_id = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
         &self.pull_request_id
     }
     /// <p>The name for the approval rule.</p>
+    /// This field is required.
     pub fn approval_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +104,7 @@ impl CreatePullRequestApprovalRuleInputBuilder {
     /// </ul>
     /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
+    /// This field is required.
     pub fn approval_rule_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.approval_rule_content = ::std::option::Option::Some(input.into());
         self

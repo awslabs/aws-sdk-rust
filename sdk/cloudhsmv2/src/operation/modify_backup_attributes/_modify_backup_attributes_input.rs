@@ -34,6 +34,7 @@ pub struct ModifyBackupAttributesInputBuilder {
 }
 impl ModifyBackupAttributesInputBuilder {
     /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    /// This field is required.
     pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyBackupAttributesInputBuilder {
         &self.backup_id
     }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    /// This field is required.
     pub fn never_expires(mut self, input: bool) -> Self {
         self.never_expires = ::std::option::Option::Some(input);
         self

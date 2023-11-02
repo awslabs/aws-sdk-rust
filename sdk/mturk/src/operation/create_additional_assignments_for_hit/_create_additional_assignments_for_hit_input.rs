@@ -41,6 +41,7 @@ pub struct CreateAdditionalAssignmentsForHitInputBuilder {
 }
 impl CreateAdditionalAssignmentsForHitInputBuilder {
     /// <p>The ID of the HIT to extend.</p>
+    /// This field is required.
     pub fn hit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hit_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
         &self.hit_id
     }
     /// <p>The number of additional assignments to request for this HIT.</p>
+    /// This field is required.
     pub fn number_of_additional_assignments(mut self, input: i32) -> Self {
         self.number_of_additional_assignments = ::std::option::Option::Some(input);
         self

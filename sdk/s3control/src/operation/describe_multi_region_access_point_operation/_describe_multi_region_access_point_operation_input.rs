@@ -35,6 +35,7 @@ pub struct DescribeMultiRegionAccessPointOperationInputBuilder {
 }
 impl DescribeMultiRegionAccessPointOperationInputBuilder {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl DescribeMultiRegionAccessPointOperationInputBuilder {
         &self.account_id
     }
     /// <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
+    /// This field is required.
     pub fn request_token_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_token_arn = ::std::option::Option::Some(input.into());
         self

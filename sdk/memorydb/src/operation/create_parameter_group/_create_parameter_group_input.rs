@@ -26,8 +26,10 @@ impl CreateParameterGroupInput {
         self.description.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateParameterGroupInput {
@@ -48,6 +50,7 @@ pub struct CreateParameterGroupInputBuilder {
 }
 impl CreateParameterGroupInputBuilder {
     /// <p>The name of the parameter group.</p>
+    /// This field is required.
     pub fn parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +65,7 @@ impl CreateParameterGroupInputBuilder {
         &self.parameter_group_name
     }
     /// <p>The name of the parameter group family that the parameter group can be used with.</p>
+    /// This field is required.
     pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.family = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct GetSipRuleInputBuilder {
 }
 impl GetSipRuleInputBuilder {
     /// <p>The SIP rule ID.</p>
+    /// This field is required.
     pub fn sip_rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sip_rule_id = ::std::option::Option::Some(input.into());
         self

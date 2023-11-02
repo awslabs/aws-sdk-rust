@@ -11,8 +11,10 @@ pub struct GetMlTaskRunsOutput {
 }
 impl GetMlTaskRunsOutput {
     /// <p>A list of task runs that are associated with the transform.</p>
-    pub fn task_runs(&self) -> ::std::option::Option<&[crate::types::TaskRun]> {
-        self.task_runs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_runs.is_none()`.
+    pub fn task_runs(&self) -> &[crate::types::TaskRun] {
+        self.task_runs.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

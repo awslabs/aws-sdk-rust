@@ -46,6 +46,7 @@ pub struct ProductionVariantServerlessConfigBuilder {
 }
 impl ProductionVariantServerlessConfigBuilder {
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
+    /// This field is required.
     pub fn memory_size_in_mb(mut self, input: i32) -> Self {
         self.memory_size_in_mb = ::std::option::Option::Some(input);
         self
@@ -60,6 +61,7 @@ impl ProductionVariantServerlessConfigBuilder {
         &self.memory_size_in_mb
     }
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
+    /// This field is required.
     pub fn max_concurrency(mut self, input: i32) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input);
         self

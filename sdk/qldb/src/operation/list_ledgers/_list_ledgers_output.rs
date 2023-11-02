@@ -15,8 +15,10 @@ pub struct ListLedgersOutput {
 }
 impl ListLedgersOutput {
     /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn ledgers(&self) -> ::std::option::Option<&[crate::types::LedgerSummary]> {
-        self.ledgers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ledgers.is_none()`.
+    pub fn ledgers(&self) -> &[crate::types::LedgerSummary] {
+        self.ledgers.as_deref().unwrap_or_default()
     }
     /// <p>A pagination token, indicating whether there are more results available:</p>
     /// <ul>

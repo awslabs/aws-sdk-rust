@@ -30,6 +30,7 @@ pub fn ser_access_log(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_access_log(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::AccessLog, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -96,5 +97,5 @@ pub fn de_access_log(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::access_log_correct_errors(builder).build())
 }

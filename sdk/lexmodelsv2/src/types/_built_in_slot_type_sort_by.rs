@@ -5,18 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub attribute: ::std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>,
+    pub attribute: crate::types::BuiltInSlotTypeSortAttribute,
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub order: ::std::option::Option<crate::types::SortOrder>,
+    pub order: crate::types::SortOrder,
 }
 impl BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&crate::types::BuiltInSlotTypeSortAttribute> {
-        self.attribute.as_ref()
+    pub fn attribute(&self) -> &crate::types::BuiltInSlotTypeSortAttribute {
+        &self.attribute
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
-        self.order.as_ref()
+    pub fn order(&self) -> &crate::types::SortOrder {
+        &self.order
     }
 }
 impl BuiltInSlotTypeSortBy {
@@ -35,6 +35,7 @@ pub struct BuiltInSlotTypeSortByBuilder {
 }
 impl BuiltInSlotTypeSortByBuilder {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::BuiltInSlotTypeSortAttribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl BuiltInSlotTypeSortByBuilder {
         &self.attribute
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
+    /// This field is required.
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
         self
@@ -63,10 +65,23 @@ impl BuiltInSlotTypeSortByBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`BuiltInSlotTypeSortBy`](crate::types::BuiltInSlotTypeSortBy).
-    pub fn build(self) -> crate::types::BuiltInSlotTypeSortBy {
-        crate::types::BuiltInSlotTypeSortBy {
-            attribute: self.attribute,
-            order: self.order,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute`](crate::types::builders::BuiltInSlotTypeSortByBuilder::attribute)
+    /// - [`order`](crate::types::builders::BuiltInSlotTypeSortByBuilder::order)
+    pub fn build(self) -> ::std::result::Result<crate::types::BuiltInSlotTypeSortBy, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BuiltInSlotTypeSortBy {
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building BuiltInSlotTypeSortBy",
+                )
+            })?,
+            order: self.order.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "order",
+                    "order was not specified but it is required when building BuiltInSlotTypeSortBy",
+                )
+            })?,
+        })
     }
 }

@@ -19,8 +19,10 @@ impl CachingConfig {
     }
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-    pub fn caching_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.caching_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caching_keys.is_none()`.
+    pub fn caching_keys(&self) -> &[::std::string::String] {
+        self.caching_keys.as_deref().unwrap_or_default()
     }
 }
 impl CachingConfig {
@@ -40,6 +42,7 @@ pub struct CachingConfigBuilder {
 impl CachingConfigBuilder {
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
+    /// This field is required.
     pub fn ttl(mut self, input: i64) -> Self {
         self.ttl = ::std::option::Option::Some(input);
         self

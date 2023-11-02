@@ -15,8 +15,10 @@ impl ListResourceSetsOutput {
         self.next_token.as_deref()
     }
     /// <p>A list of resource sets associated with the account.</p>
-    pub fn resource_sets(&self) -> ::std::option::Option<&[crate::types::ResourceSetOutput]> {
-        self.resource_sets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_sets.is_none()`.
+    pub fn resource_sets(&self) -> &[crate::types::ResourceSetOutput] {
+        self.resource_sets.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListResourceSetsOutput {

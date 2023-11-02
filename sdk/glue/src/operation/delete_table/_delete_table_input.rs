@@ -62,6 +62,7 @@ impl DeleteTableInputBuilder {
         &self.catalog_id
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +77,7 @@ impl DeleteTableInputBuilder {
         &self.database_name
     }
     /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

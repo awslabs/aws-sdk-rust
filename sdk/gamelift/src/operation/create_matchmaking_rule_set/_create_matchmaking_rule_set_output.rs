@@ -34,6 +34,7 @@ pub struct CreateMatchmakingRuleSetOutputBuilder {
 }
 impl CreateMatchmakingRuleSetOutputBuilder {
     /// <p>The newly created matchmaking rule set.</p>
+    /// This field is required.
     pub fn rule_set(mut self, input: crate::types::MatchmakingRuleSet) -> Self {
         self.rule_set = ::std::option::Option::Some(input);
         self

@@ -40,6 +40,7 @@ pub struct DeleteClusterSnapshotMessageBuilder {
 impl DeleteClusterSnapshotMessageBuilder {
     /// <p>The unique identifier of the manual snapshot to be deleted.</p>
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
+    /// This field is required.
     pub fn snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self

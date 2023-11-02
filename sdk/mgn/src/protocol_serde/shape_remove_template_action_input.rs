@@ -3,11 +3,13 @@ pub fn ser_remove_template_action_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::remove_template_action::RemoveTemplateActionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_id {
-        object.key("actionID").string(var_1.as_str());
+    {
+        object.key("actionID").string(input.action_id.as_str());
     }
-    if let Some(var_2) = &input.launch_configuration_template_id {
-        object.key("launchConfigurationTemplateID").string(var_2.as_str());
+    {
+        object
+            .key("launchConfigurationTemplateID")
+            .string(input.launch_configuration_template_id.as_str());
     }
     Ok(())
 }

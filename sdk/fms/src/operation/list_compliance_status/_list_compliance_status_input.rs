@@ -41,6 +41,7 @@ pub struct ListComplianceStatusInputBuilder {
 }
 impl ListComplianceStatusInputBuilder {
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self

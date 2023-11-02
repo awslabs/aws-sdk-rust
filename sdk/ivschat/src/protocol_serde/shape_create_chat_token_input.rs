@@ -22,8 +22,8 @@ pub fn ser_create_chat_token_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.room_identifier {
-        object.key("roomIdentifier").string(var_8.as_str());
+    {
+        object.key("roomIdentifier").string(input.room_identifier.as_str());
     }
     if input.session_duration_in_minutes != 0 {
         object.key("sessionDurationInMinutes").number(
@@ -31,8 +31,8 @@ pub fn ser_create_chat_token_input(
             ::aws_smithy_types::Number::NegInt((input.session_duration_in_minutes).into()),
         );
     }
-    if let Some(var_9) = &input.user_id {
-        object.key("userId").string(var_9.as_str());
+    {
+        object.key("userId").string(input.user_id.as_str());
     }
     Ok(())
 }

@@ -13,8 +13,10 @@ pub struct DescribeBrokerInstanceOptionsOutput {
 }
 impl DescribeBrokerInstanceOptionsOutput {
     /// <p>List of available broker instance options.</p>
-    pub fn broker_instance_options(&self) -> ::std::option::Option<&[crate::types::BrokerInstanceOption]> {
-        self.broker_instance_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.broker_instance_options.is_none()`.
+    pub fn broker_instance_options(&self) -> &[crate::types::BrokerInstanceOption] {
+        self.broker_instance_options.as_deref().unwrap_or_default()
     }
     /// <p>Required. The maximum number of instance options that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {

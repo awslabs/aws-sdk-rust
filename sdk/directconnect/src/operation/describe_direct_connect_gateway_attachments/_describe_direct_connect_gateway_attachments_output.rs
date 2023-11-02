@@ -11,8 +11,10 @@ pub struct DescribeDirectConnectGatewayAttachmentsOutput {
 }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
     /// <p>The attachments.</p>
-    pub fn direct_connect_gateway_attachments(&self) -> ::std::option::Option<&[crate::types::DirectConnectGatewayAttachment]> {
-        self.direct_connect_gateway_attachments.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.direct_connect_gateway_attachments.is_none()`.
+    pub fn direct_connect_gateway_attachments(&self) -> &[crate::types::DirectConnectGatewayAttachment] {
+        self.direct_connect_gateway_attachments.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

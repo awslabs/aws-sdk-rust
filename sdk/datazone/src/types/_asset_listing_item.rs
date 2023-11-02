@@ -73,8 +73,10 @@ impl AssetListingItem {
         self.listing_updated_by.as_deref()
     }
     /// <p>Glossary terms attached to the inventory asset.</p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[crate::types::DetailedGlossaryTerm]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the project that owns the inventory asset.</p>
     pub fn owning_project_id(&self) -> ::std::option::Option<&str> {

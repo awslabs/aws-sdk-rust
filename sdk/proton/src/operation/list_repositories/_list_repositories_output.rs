@@ -6,7 +6,7 @@ pub struct ListRepositoriesOutput {
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of repository links.</p>
-    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySummary>>,
+    pub repositories: ::std::vec::Vec<crate::types::RepositorySummary>,
     _request_id: Option<String>,
 }
 impl ListRepositoriesOutput {
@@ -15,8 +15,9 @@ impl ListRepositoriesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of repository links.</p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::RepositorySummary]> {
-        self.repositories.as_deref()
+    pub fn repositories(&self) -> &[crate::types::RepositorySummary] {
+        use std::ops::Deref;
+        self.repositories.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListRepositoriesOutput {
@@ -84,11 +85,20 @@ impl ListRepositoriesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
-    pub fn build(self) -> crate::operation::list_repositories::ListRepositoriesOutput {
-        crate::operation::list_repositories::ListRepositoriesOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repositories`](crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder::repositories)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_repositories::ListRepositoriesOutput {
             next_token: self.next_token,
-            repositories: self.repositories,
+            repositories: self.repositories.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repositories",
+                    "repositories was not specified but it is required when building ListRepositoriesOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

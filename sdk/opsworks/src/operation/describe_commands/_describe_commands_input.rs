@@ -20,8 +20,10 @@ impl DescribeCommandsInput {
         self.instance_id.as_deref()
     }
     /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
-    pub fn command_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_ids.is_none()`.
+    pub fn command_ids(&self) -> &[::std::string::String] {
+        self.command_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeCommandsInput {

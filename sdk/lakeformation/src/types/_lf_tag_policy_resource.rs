@@ -7,9 +7,9 @@ pub struct LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub resource_type: crate::types::ResourceType,
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-    pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
+    pub expression: ::std::vec::Vec<crate::types::LfTag>,
 }
 impl LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
@@ -17,12 +17,13 @@ impl LfTagPolicyResource {
         self.catalog_id.as_deref()
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.resource_type.as_ref()
+    pub fn resource_type(&self) -> &crate::types::ResourceType {
+        &self.resource_type
     }
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &[crate::types::LfTag] {
+        use std::ops::Deref;
+        self.expression.deref()
     }
 }
 impl LfTagPolicyResource {
@@ -56,6 +57,7 @@ impl LfTagPolicyResourceBuilder {
         &self.catalog_id
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
+    /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
@@ -90,11 +92,24 @@ impl LfTagPolicyResourceBuilder {
         &self.expression
     }
     /// Consumes the builder and constructs a [`LfTagPolicyResource`](crate::types::LfTagPolicyResource).
-    pub fn build(self) -> crate::types::LfTagPolicyResource {
-        crate::types::LfTagPolicyResource {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_type`](crate::types::builders::LfTagPolicyResourceBuilder::resource_type)
+    /// - [`expression`](crate::types::builders::LfTagPolicyResourceBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::LfTagPolicyResource, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LfTagPolicyResource {
             catalog_id: self.catalog_id,
-            resource_type: self.resource_type,
-            expression: self.expression,
-        }
+            resource_type: self.resource_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_type",
+                    "resource_type was not specified but it is required when building LfTagPolicyResource",
+                )
+            })?,
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building LfTagPolicyResource",
+                )
+            })?,
+        })
     }
 }

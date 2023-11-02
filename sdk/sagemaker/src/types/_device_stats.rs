@@ -35,6 +35,7 @@ pub struct DeviceStatsBuilder {
 }
 impl DeviceStatsBuilder {
     /// <p>The number of devices connected with a heartbeat.</p>
+    /// This field is required.
     pub fn connected_device_count(mut self, input: i64) -> Self {
         self.connected_device_count = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl DeviceStatsBuilder {
         &self.connected_device_count
     }
     /// <p>The number of registered devices.</p>
+    /// This field is required.
     pub fn registered_device_count(mut self, input: i64) -> Self {
         self.registered_device_count = ::std::option::Option::Some(input);
         self

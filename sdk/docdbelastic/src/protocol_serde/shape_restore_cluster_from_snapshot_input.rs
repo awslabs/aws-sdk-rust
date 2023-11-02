@@ -3,39 +3,39 @@ pub fn ser_restore_cluster_from_snapshot_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.cluster_name {
-        object.key("clusterName").string(var_1.as_str());
+    {
+        object.key("clusterName").string(input.cluster_name.as_str());
     }
-    if let Some(var_2) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_2.as_str());
+    if let Some(var_1) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.subnet_ids {
-        let mut array_4 = object.key("subnetIds").start_array();
-        for item_5 in var_3 {
+    if let Some(var_2) = &input.subnet_ids {
+        let mut array_3 = object.key("subnetIds").start_array();
+        for item_4 in var_2 {
             {
-                array_4.value().string(item_5.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_4.finish();
+        array_3.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_7.finish();
+        object_6.finish();
     }
-    if let Some(var_10) = &input.vpc_security_group_ids {
-        let mut array_11 = object.key("vpcSecurityGroupIds").start_array();
-        for item_12 in var_10 {
+    if let Some(var_9) = &input.vpc_security_group_ids {
+        let mut array_10 = object.key("vpcSecurityGroupIds").start_array();
+        for item_11 in var_9 {
             {
-                array_11.value().string(item_12.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_11.finish();
+        array_10.finish();
     }
     Ok(())
 }

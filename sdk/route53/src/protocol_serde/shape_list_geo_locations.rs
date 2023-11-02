@@ -48,7 +48,9 @@ pub fn de_list_geo_locations_http_response(
         output = crate::protocol_serde::shape_list_geo_locations::de_list_geo_locations(_response_body, output)
             .map_err(crate::operation::list_geo_locations::ListGeoLocationsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::list_geo_locations_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::list_geo_locations::ListGeoLocationsError::unhandled)?
     })
 }
 

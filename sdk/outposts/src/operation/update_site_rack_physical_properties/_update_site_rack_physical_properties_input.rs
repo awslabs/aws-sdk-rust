@@ -162,6 +162,7 @@ pub struct UpdateSiteRackPhysicalPropertiesInputBuilder {
 }
 impl UpdateSiteRackPhysicalPropertiesInputBuilder {
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// This field is required.
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
         self

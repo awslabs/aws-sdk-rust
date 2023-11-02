@@ -55,12 +55,16 @@ pub struct Expression {
 }
 impl Expression {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    pub fn or(&self) -> ::std::option::Option<&[crate::types::Expression]> {
-        self.or.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.or.is_none()`.
+    pub fn or(&self) -> &[crate::types::Expression] {
+        self.or.as_deref().unwrap_or_default()
     }
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    pub fn and(&self) -> ::std::option::Option<&[crate::types::Expression]> {
-        self.and.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and.is_none()`.
+    pub fn and(&self) -> &[crate::types::Expression] {
+        self.and.as_deref().unwrap_or_default()
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
     pub fn not(&self) -> ::std::option::Option<&crate::types::Expression> {

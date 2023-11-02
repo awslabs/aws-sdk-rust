@@ -3,17 +3,17 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMap`](crate::operation::describe_map::builders::DescribeMapFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::set_map_name): <p>The name of the map resource.</p>
+    ///   - [`map_name(impl Into<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::map_name) / [`set_map_name(impl Into<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::set_map_name):<br>required: **true**<br><p>The name of the map resource.</p><br>
     /// - On success, responds with [`DescribeMapOutput`](crate::operation::describe_map::DescribeMapOutput) with field(s):
-    ///   - [`map_name(Option<String>)`](crate::operation::describe_map::DescribeMapOutput::map_name): <p>The map style selected from an available provider.</p>
-    ///   - [`map_arn(Option<String>)`](crate::operation::describe_map::DescribeMapOutput::map_arn): <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>  </ul>
+    ///   - [`map_name(String)`](crate::operation::describe_map::DescribeMapOutput::map_name): <p>The map style selected from an available provider.</p>
+    ///   - [`map_arn(String)`](crate::operation::describe_map::DescribeMapOutput::map_arn): <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>  </ul>
     ///   - [`pricing_plan(Option<PricingPlan>)`](crate::operation::describe_map::DescribeMapOutput::pricing_plan): <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    ///   - [`data_source(Option<String>)`](crate::operation::describe_map::DescribeMapOutput::data_source): <p>Specifies the data provider for the associated map tiles.</p>
+    ///   - [`data_source(String)`](crate::operation::describe_map::DescribeMapOutput::data_source): <p>Specifies the data provider for the associated map tiles.</p>
     ///   - [`configuration(Option<MapConfiguration>)`](crate::operation::describe_map::DescribeMapOutput::configuration): <p>Specifies the map tile style selected from a partner data provider.</p>
-    ///   - [`description(Option<String>)`](crate::operation::describe_map::DescribeMapOutput::description): <p>The optional description for the map resource.</p>
+    ///   - [`description(String)`](crate::operation::describe_map::DescribeMapOutput::description): <p>The optional description for the map resource.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_map::DescribeMapOutput::tags): <p>Tags associated with the map resource.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::operation::describe_map::DescribeMapOutput::create_time): <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::operation::describe_map::DescribeMapOutput::update_time): <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    ///   - [`create_time(DateTime)`](crate::operation::describe_map::DescribeMapOutput::create_time): <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    ///   - [`update_time(DateTime)`](crate::operation::describe_map::DescribeMapOutput::update_time): <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeMapError>`](crate::operation::describe_map::DescribeMapError)
     pub fn describe_map(&self) -> crate::operation::describe_map::builders::DescribeMapFluentBuilder {
         crate::operation::describe_map::builders::DescribeMapFluentBuilder::new(self.handle.clone())

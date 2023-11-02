@@ -49,6 +49,7 @@ pub struct GetSdkInputBuilder {
 }
 impl GetSdkInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
+    /// This field is required.
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rest_api_id = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl GetSdkInputBuilder {
         &self.rest_api_id
     }
     /// <p>The name of the Stage that the SDK will use.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +79,7 @@ impl GetSdkInputBuilder {
         &self.stage_name
     }
     /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
+    /// This field is required.
     pub fn sdk_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sdk_type = ::std::option::Option::Some(input.into());
         self

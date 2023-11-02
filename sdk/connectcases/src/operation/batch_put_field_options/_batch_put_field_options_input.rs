@@ -4,24 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::option::Option<::std::string::String>,
+    pub domain_id: ::std::string::String,
     /// <p>The unique identifier of a field.</p>
-    pub field_id: ::std::option::Option<::std::string::String>,
+    pub field_id: ::std::string::String,
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
+    pub options: ::std::vec::Vec<crate::types::FieldOption>,
 }
 impl BatchPutFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
-        self.domain_id.as_deref()
+    pub fn domain_id(&self) -> &str {
+        use std::ops::Deref;
+        self.domain_id.deref()
     }
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
-        self.field_id.as_deref()
+    pub fn field_id(&self) -> &str {
+        use std::ops::Deref;
+        self.field_id.deref()
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn options(&self) -> ::std::option::Option<&[crate::types::FieldOption]> {
-        self.options.as_deref()
+    pub fn options(&self) -> &[crate::types::FieldOption] {
+        use std::ops::Deref;
+        self.options.deref()
     }
 }
 impl BatchPutFieldOptionsInput {
@@ -41,6 +44,7 @@ pub struct BatchPutFieldOptionsInputBuilder {
 }
 impl BatchPutFieldOptionsInputBuilder {
     /// <p>The unique identifier of the Cases domain. </p>
+    /// This field is required.
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +59,7 @@ impl BatchPutFieldOptionsInputBuilder {
         &self.domain_id
     }
     /// <p>The unique identifier of a field.</p>
+    /// This field is required.
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
@@ -89,14 +94,33 @@ impl BatchPutFieldOptionsInputBuilder {
         &self.options
     }
     /// Consumes the builder and constructs a [`BatchPutFieldOptionsInput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`domain_id`](crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder::domain_id)
+    /// - [`field_id`](crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder::field_id)
+    /// - [`options`](crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder::options)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_put_field_options::BatchPutFieldOptionsInput {
-            domain_id: self.domain_id,
-            field_id: self.field_id,
-            options: self.options,
+            domain_id: self.domain_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "domain_id",
+                    "domain_id was not specified but it is required when building BatchPutFieldOptionsInput",
+                )
+            })?,
+            field_id: self.field_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field_id",
+                    "field_id was not specified but it is required when building BatchPutFieldOptionsInput",
+                )
+            })?,
+            options: self.options.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "options",
+                    "options was not specified but it is required when building BatchPutFieldOptionsInput",
+                )
+            })?,
         })
     }
 }

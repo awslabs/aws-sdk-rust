@@ -72,6 +72,7 @@ pub fn ser_ip_permission(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_ip_permission(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::IpPermission, ::aws_smithy_xml::decode::XmlDecodeError> {

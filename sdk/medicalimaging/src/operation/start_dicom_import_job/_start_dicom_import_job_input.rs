@@ -76,6 +76,7 @@ impl StartDicomImportJobInputBuilder {
         &self.job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permission to access medical imaging resources.</p>
+    /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +91,7 @@ impl StartDicomImportJobInputBuilder {
         &self.data_access_role_arn
     }
     /// <p>A unique identifier for API idempotency.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +106,7 @@ impl StartDicomImportJobInputBuilder {
         &self.client_token
     }
     /// <p>The data store identifier.</p>
+    /// This field is required.
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl StartDicomImportJobInputBuilder {
         &self.datastore_id
     }
     /// <p>The input prefix path for the S3 bucket that contains the DICOM files to be imported.</p>
+    /// This field is required.
     pub fn input_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +136,7 @@ impl StartDicomImportJobInputBuilder {
         &self.input_s3_uri
     }
     /// <p>The output prefix of the S3 bucket to upload the results of the DICOM import job.</p>
+    /// This field is required.
     pub fn output_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_s3_uri = ::std::option::Option::Some(input.into());
         self

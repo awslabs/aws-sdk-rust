@@ -25,12 +25,16 @@ impl CompareFacesOutput {
         self.source_image_face.as_ref()
     }
     /// <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
-    pub fn face_matches(&self) -> ::std::option::Option<&[crate::types::CompareFacesMatch]> {
-        self.face_matches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_matches.is_none()`.
+    pub fn face_matches(&self) -> &[crate::types::CompareFacesMatch] {
+        self.face_matches.as_deref().unwrap_or_default()
     }
     /// <p>An array of faces in the target image that did not match the source image face.</p>
-    pub fn unmatched_faces(&self) -> ::std::option::Option<&[crate::types::ComparedFace]> {
-        self.unmatched_faces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unmatched_faces.is_none()`.
+    pub fn unmatched_faces(&self) -> &[crate::types::ComparedFace] {
+        self.unmatched_faces.as_deref().unwrap_or_default()
     }
     /// <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>

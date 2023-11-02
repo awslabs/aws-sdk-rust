@@ -48,6 +48,7 @@ impl DeregisterGatewayInstanceInputBuilder {
         &self.force
     }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
+    /// This field is required.
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self

@@ -155,8 +155,10 @@ impl DescribeModelPackageOutput {
         self.sample_payload_url.as_deref()
     }
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications(&self) -> ::std::option::Option<&[crate::types::AdditionalInferenceSpecificationDefinition]> {
-        self.additional_inference_specifications.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_inference_specifications.is_none()`.
+    pub fn additional_inference_specifications(&self) -> &[crate::types::AdditionalInferenceSpecificationDefinition] {
+        self.additional_inference_specifications.as_deref().unwrap_or_default()
     }
     /// <p>Indicates if you want to skip model validation.</p>
     pub fn skip_model_validation(&self) -> ::std::option::Option<&crate::types::SkipModelValidation> {
@@ -209,6 +211,7 @@ pub struct DescribeModelPackageOutputBuilder {
 }
 impl DescribeModelPackageOutputBuilder {
     /// <p>The name of the model package being described.</p>
+    /// This field is required.
     pub fn model_package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_name = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +254,7 @@ impl DescribeModelPackageOutputBuilder {
         &self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    /// This field is required.
     pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_arn = ::std::option::Option::Some(input.into());
         self
@@ -279,6 +283,7 @@ impl DescribeModelPackageOutputBuilder {
         &self.model_package_description
     }
     /// <p>A timestamp specifying when the model package was created.</p>
+    /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
@@ -335,6 +340,7 @@ impl DescribeModelPackageOutputBuilder {
         &self.validation_specification
     }
     /// <p>The current status of the model package.</p>
+    /// This field is required.
     pub fn model_package_status(mut self, input: crate::types::ModelPackageStatus) -> Self {
         self.model_package_status = ::std::option::Option::Some(input);
         self
@@ -349,6 +355,7 @@ impl DescribeModelPackageOutputBuilder {
         &self.model_package_status
     }
     /// <p>Details about the current status of the model package.</p>
+    /// This field is required.
     pub fn model_package_status_details(mut self, input: crate::types::ModelPackageStatusDetails) -> Self {
         self.model_package_status_details = ::std::option::Option::Some(input);
         self

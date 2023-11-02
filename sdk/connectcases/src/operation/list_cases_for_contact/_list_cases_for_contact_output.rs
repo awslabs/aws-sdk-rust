@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCasesForContactOutput {
     /// <p>A list of Case summary information.</p>
-    pub cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseSummary>>,
+    pub cases: ::std::vec::Vec<crate::types::CaseSummary>,
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCasesForContactOutput {
     /// <p>A list of Case summary information.</p>
-    pub fn cases(&self) -> ::std::option::Option<&[crate::types::CaseSummary]> {
-        self.cases.as_deref()
+    pub fn cases(&self) -> &[crate::types::CaseSummary] {
+        use std::ops::Deref;
+        self.cases.deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,21 @@ impl ListCasesForContactOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListCasesForContactOutput`](crate::operation::list_cases_for_contact::ListCasesForContactOutput).
-    pub fn build(self) -> crate::operation::list_cases_for_contact::ListCasesForContactOutput {
-        crate::operation::list_cases_for_contact::ListCasesForContactOutput {
-            cases: self.cases,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`cases`](crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder::cases)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_cases_for_contact::ListCasesForContactOutput {
+            cases: self.cases.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "cases",
+                    "cases was not specified but it is required when building ListCasesForContactOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

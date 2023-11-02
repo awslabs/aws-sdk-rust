@@ -265,7 +265,9 @@ pub fn de_get_file_http_response(
         output = crate::protocol_serde::shape_get_file::de_get_file(_response_body, output)
             .map_err(crate::operation::get_file::GetFileError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::get_file_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::get_file::GetFileError::unhandled)?
     })
 }
 

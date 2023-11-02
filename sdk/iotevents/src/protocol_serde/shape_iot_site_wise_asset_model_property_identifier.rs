@@ -3,11 +3,11 @@ pub fn ser_iot_site_wise_asset_model_property_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseAssetModelPropertyIdentifier,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.asset_model_id {
-        object.key("assetModelId").string(var_1.as_str());
+    {
+        object.key("assetModelId").string(input.asset_model_id.as_str());
     }
-    if let Some(var_2) = &input.property_id {
-        object.key("propertyId").string(var_2.as_str());
+    {
+        object.key("propertyId").string(input.property_id.as_str());
     }
     Ok(())
 }

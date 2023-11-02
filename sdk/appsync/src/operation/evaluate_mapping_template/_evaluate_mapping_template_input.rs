@@ -34,6 +34,7 @@ pub struct EvaluateMappingTemplateInputBuilder {
 }
 impl EvaluateMappingTemplateInputBuilder {
     /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+    /// This field is required.
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl EvaluateMappingTemplateInputBuilder {
         &self.template
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    /// This field is required.
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context = ::std::option::Option::Some(input.into());
         self

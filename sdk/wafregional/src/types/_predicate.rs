@@ -10,25 +10,26 @@
 pub struct Predicate {
     /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
     /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
-    pub negated: ::std::option::Option<bool>,
+    pub negated: bool,
     /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::PredicateType>,
+    pub r#type: crate::types::PredicateType,
     /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
-    pub data_id: ::std::option::Option<::std::string::String>,
+    pub data_id: ::std::string::String,
 }
 impl Predicate {
     /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
     /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
-    pub fn negated(&self) -> ::std::option::Option<bool> {
+    pub fn negated(&self) -> bool {
         self.negated
     }
     /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PredicateType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::PredicateType {
+        &self.r#type
     }
     /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
-    pub fn data_id(&self) -> ::std::option::Option<&str> {
-        self.data_id.as_deref()
+    pub fn data_id(&self) -> &str {
+        use std::ops::Deref;
+        self.data_id.deref()
     }
 }
 impl Predicate {
@@ -49,6 +50,7 @@ pub struct PredicateBuilder {
 impl PredicateBuilder {
     /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
     /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
+    /// This field is required.
     pub fn negated(mut self, input: bool) -> Self {
         self.negated = ::std::option::Option::Some(input);
         self
@@ -65,6 +67,7 @@ impl PredicateBuilder {
         &self.negated
     }
     /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::PredicateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -79,6 +82,7 @@ impl PredicateBuilder {
         &self.r#type
     }
     /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
+    /// This field is required.
     pub fn data_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_id = ::std::option::Option::Some(input.into());
         self
@@ -93,11 +97,30 @@ impl PredicateBuilder {
         &self.data_id
     }
     /// Consumes the builder and constructs a [`Predicate`](crate::types::Predicate).
-    pub fn build(self) -> crate::types::Predicate {
-        crate::types::Predicate {
-            negated: self.negated,
-            r#type: self.r#type,
-            data_id: self.data_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`negated`](crate::types::builders::PredicateBuilder::negated)
+    /// - [`r#type`](crate::types::builders::PredicateBuilder::r#type)
+    /// - [`data_id`](crate::types::builders::PredicateBuilder::data_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::Predicate, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Predicate {
+            negated: self.negated.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "negated",
+                    "negated was not specified but it is required when building Predicate",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building Predicate",
+                )
+            })?,
+            data_id: self.data_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "data_id",
+                    "data_id was not specified but it is required when building Predicate",
+                )
+            })?,
+        })
     }
 }

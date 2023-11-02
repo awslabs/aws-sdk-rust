@@ -6,18 +6,19 @@ pub fn ser_cloud_watch_destination(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DimensionConfigurations");
-    if let Some(var_2) = &input.dimension_configurations {
-        let mut list_4 = scope_1.start_list(false, None);
-        for item_3 in var_2 {
+    {
+        let mut list_3 = scope_1.start_list(false, None);
+        for item_2 in &input.dimension_configurations {
             #[allow(unused_mut)]
-            let mut entry_5 = list_4.entry();
-            crate::protocol_serde::shape_cloud_watch_dimension_configuration::ser_cloud_watch_dimension_configuration(entry_5, item_3)?;
+            let mut entry_4 = list_3.entry();
+            crate::protocol_serde::shape_cloud_watch_dimension_configuration::ser_cloud_watch_dimension_configuration(entry_4, item_2)?;
         }
-        list_4.finish();
+        list_3.finish();
     }
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_cloud_watch_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CloudWatchDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -26,17 +27,19 @@ pub fn de_cloud_watch_destination(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DimensionConfigurations") /* DimensionConfigurations com.amazonaws.ses#CloudWatchDestination$DimensionConfigurations */ =>  {
-                let var_6 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_cloud_watch_dimension_configurations::de_cloud_watch_dimension_configurations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_dimension_configurations(var_6);
+                builder = builder.set_dimension_configurations(var_5);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::cloud_watch_destination_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

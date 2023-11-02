@@ -13,8 +13,10 @@ pub struct PutRecordsInput {
 }
 impl PutRecordsInput {
     /// <p>The records associated with the request.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::PutRecordsRequestEntry]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::PutRecordsRequestEntry] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p>The stream name associated with the request.</p>
     pub fn stream_name(&self) -> ::std::option::Option<&str> {

@@ -27,6 +27,7 @@ pub struct DeleteProtectionInputBuilder {
 }
 impl DeleteProtectionInputBuilder {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
+    /// This field is required.
     pub fn protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protection_id = ::std::option::Option::Some(input.into());
         self

@@ -42,6 +42,7 @@ pub struct ListDataViewsInputBuilder {
 }
 impl ListDataViewsInputBuilder {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
+    /// This field is required.
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
         self

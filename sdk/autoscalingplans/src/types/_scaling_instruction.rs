@@ -9,7 +9,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingInstruction {
     /// <p>The namespace of the AWS service.</p>
-    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: crate::types::ServiceNamespace,
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li> <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li>
@@ -19,7 +19,7 @@ pub struct ScalingInstruction {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub resource_id: ::std::option::Option<::std::string::String>,
+    pub resource_id: ::std::string::String,
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
     /// <li> <p> <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p> </li>
@@ -31,13 +31,13 @@ pub struct ScalingInstruction {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
+    pub scalable_dimension: crate::types::ScalableDimension,
     /// <p>The minimum capacity of the resource. </p>
-    pub min_capacity: ::std::option::Option<i32>,
+    pub min_capacity: i32,
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
-    pub max_capacity: ::std::option::Option<i32>,
+    pub max_capacity: i32,
     /// <p>The target tracking configurations (up to 10). Each of these structures must specify a unique scaling metric and a target value for the metric. </p>
-    pub target_tracking_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
+    pub target_tracking_configurations: ::std::vec::Vec<crate::types::TargetTrackingConfiguration>,
     /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     pub predefined_load_metric_specification: ::std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
     /// <p>The customized load metric to use for predictive scaling. This parameter or a <b>PredefinedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
@@ -72,8 +72,8 @@ pub struct ScalingInstruction {
 }
 impl ScalingInstruction {
     /// <p>The namespace of the AWS service.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
-        self.service_namespace.as_ref()
+    pub fn service_namespace(&self) -> &crate::types::ServiceNamespace {
+        &self.service_namespace
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -84,8 +84,9 @@ impl ScalingInstruction {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
-        self.resource_id.as_deref()
+    pub fn resource_id(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_id.deref()
     }
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
@@ -98,20 +99,21 @@ impl ScalingInstruction {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
-        self.scalable_dimension.as_ref()
+    pub fn scalable_dimension(&self) -> &crate::types::ScalableDimension {
+        &self.scalable_dimension
     }
     /// <p>The minimum capacity of the resource. </p>
-    pub fn min_capacity(&self) -> ::std::option::Option<i32> {
+    pub fn min_capacity(&self) -> i32 {
         self.min_capacity
     }
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
-    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
+    pub fn max_capacity(&self) -> i32 {
         self.max_capacity
     }
     /// <p>The target tracking configurations (up to 10). Each of these structures must specify a unique scaling metric and a target value for the metric. </p>
-    pub fn target_tracking_configurations(&self) -> ::std::option::Option<&[crate::types::TargetTrackingConfiguration]> {
-        self.target_tracking_configurations.as_deref()
+    pub fn target_tracking_configurations(&self) -> &[crate::types::TargetTrackingConfiguration] {
+        use std::ops::Deref;
+        self.target_tracking_configurations.deref()
     }
     /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     pub fn predefined_load_metric_specification(&self) -> ::std::option::Option<&crate::types::PredefinedLoadMetricSpecification> {
@@ -189,6 +191,7 @@ pub struct ScalingInstructionBuilder {
 }
 impl ScalingInstructionBuilder {
     /// <p>The namespace of the AWS service.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.service_namespace = ::std::option::Option::Some(input);
         self
@@ -211,6 +214,7 @@ impl ScalingInstructionBuilder {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -251,6 +255,7 @@ impl ScalingInstructionBuilder {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
         self.scalable_dimension = ::std::option::Option::Some(input);
         self
@@ -285,6 +290,7 @@ impl ScalingInstructionBuilder {
         &self.scalable_dimension
     }
     /// <p>The minimum capacity of the resource. </p>
+    /// This field is required.
     pub fn min_capacity(mut self, input: i32) -> Self {
         self.min_capacity = ::std::option::Option::Some(input);
         self
@@ -299,6 +305,7 @@ impl ScalingInstructionBuilder {
         &self.min_capacity
     }
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
+    /// This field is required.
     pub fn max_capacity(mut self, input: i32) -> Self {
         self.max_capacity = ::std::option::Option::Some(input);
         self
@@ -496,14 +503,51 @@ impl ScalingInstructionBuilder {
         &self.disable_dynamic_scaling
     }
     /// Consumes the builder and constructs a [`ScalingInstruction`](crate::types::ScalingInstruction).
-    pub fn build(self) -> crate::types::ScalingInstruction {
-        crate::types::ScalingInstruction {
-            service_namespace: self.service_namespace,
-            resource_id: self.resource_id,
-            scalable_dimension: self.scalable_dimension,
-            min_capacity: self.min_capacity,
-            max_capacity: self.max_capacity,
-            target_tracking_configurations: self.target_tracking_configurations,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_namespace`](crate::types::builders::ScalingInstructionBuilder::service_namespace)
+    /// - [`resource_id`](crate::types::builders::ScalingInstructionBuilder::resource_id)
+    /// - [`scalable_dimension`](crate::types::builders::ScalingInstructionBuilder::scalable_dimension)
+    /// - [`min_capacity`](crate::types::builders::ScalingInstructionBuilder::min_capacity)
+    /// - [`max_capacity`](crate::types::builders::ScalingInstructionBuilder::max_capacity)
+    /// - [`target_tracking_configurations`](crate::types::builders::ScalingInstructionBuilder::target_tracking_configurations)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalingInstruction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScalingInstruction {
+            service_namespace: self.service_namespace.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_namespace",
+                    "service_namespace was not specified but it is required when building ScalingInstruction",
+                )
+            })?,
+            resource_id: self.resource_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_id",
+                    "resource_id was not specified but it is required when building ScalingInstruction",
+                )
+            })?,
+            scalable_dimension: self.scalable_dimension.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "scalable_dimension",
+                    "scalable_dimension was not specified but it is required when building ScalingInstruction",
+                )
+            })?,
+            min_capacity: self.min_capacity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "min_capacity",
+                    "min_capacity was not specified but it is required when building ScalingInstruction",
+                )
+            })?,
+            max_capacity: self.max_capacity.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_capacity",
+                    "max_capacity was not specified but it is required when building ScalingInstruction",
+                )
+            })?,
+            target_tracking_configurations: self.target_tracking_configurations.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_tracking_configurations",
+                    "target_tracking_configurations was not specified but it is required when building ScalingInstruction",
+                )
+            })?,
             predefined_load_metric_specification: self.predefined_load_metric_specification,
             customized_load_metric_specification: self.customized_load_metric_specification,
             scheduled_action_buffer_time: self.scheduled_action_buffer_time,
@@ -512,6 +556,6 @@ impl ScalingInstructionBuilder {
             predictive_scaling_mode: self.predictive_scaling_mode,
             scaling_policy_update_behavior: self.scaling_policy_update_behavior,
             disable_dynamic_scaling: self.disable_dynamic_scaling,
-        }
+        })
     }
 }

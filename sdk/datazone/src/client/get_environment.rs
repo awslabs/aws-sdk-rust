@@ -3,21 +3,21 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_domain_identifier): <p>The ID of the Amazon DataZone domain where the environment exists.</p>
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_identifier): <p>The ID of the Amazon DataZone environment.</p>
+    ///   - [`domain_identifier(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone domain where the environment exists.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the Amazon DataZone environment.</p><br>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
-    ///   - [`project_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::project_id): <p>The ID of the Amazon DataZone project in which this environment is created.</p>
+    ///   - [`project_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::project_id): <p>The ID of the Amazon DataZone project in which this environment is created.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::id): <p>The ID of the environment.</p>
-    ///   - [`domain_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::domain_id): <p>The ID of the Amazon DataZone domain where the environment exists.</p>
-    ///   - [`created_by(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::created_by): <p>The Amazon DataZone user who created the environment.</p>
+    ///   - [`domain_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::domain_id): <p>The ID of the Amazon DataZone domain where the environment exists.</p>
+    ///   - [`created_by(String)`](crate::operation::get_environment::GetEnvironmentOutput::created_by): <p>The Amazon DataZone user who created the environment.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_environment::GetEnvironmentOutput::created_at): <p>The timestamp of when the environment was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_environment::GetEnvironmentOutput::updated_at): <p>The timestamp of when this environment was updated.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the environment.</p>
+    ///   - [`name(String)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the environment.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::description): <p>The description of the environment.</p>
-    ///   - [`environment_profile_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_profile_id): <p>The ID of the environment profile with which the environment is created.</p>
+    ///   - [`environment_profile_id(String)`](crate::operation::get_environment::GetEnvironmentOutput::environment_profile_id): <p>The ID of the environment profile with which the environment is created.</p>
     ///   - [`aws_account_id(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::aws_account_id): <p>The ID of the Amazon Web Services account where the environment exists.</p>
     ///   - [`aws_account_region(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::aws_account_region): <p>The Amazon Web Services region where the environment exists.</p>
-    ///   - [`provider(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::provider): <p>The provider of this Amazon DataZone environment.</p>
+    ///   - [`provider(String)`](crate::operation::get_environment::GetEnvironmentOutput::provider): <p>The provider of this Amazon DataZone environment.</p>
     ///   - [`provisioned_resources(Option<Vec<Resource>>)`](crate::operation::get_environment::GetEnvironmentOutput::provisioned_resources): <p>The provisioned resources of this Amazon DataZone environment.</p>
     ///   - [`status(Option<EnvironmentStatus>)`](crate::operation::get_environment::GetEnvironmentOutput::status): <p>The status of this Amazon DataZone environment.</p>
     ///   - [`environment_actions(Option<Vec<ConfigurableEnvironmentAction>>)`](crate::operation::get_environment::GetEnvironmentOutput::environment_actions): <p>The actions of the environment.</p>

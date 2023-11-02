@@ -46,6 +46,7 @@ impl RegisterSchemaVersionInputBuilder {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = ::std::option::Option::Some(input);
         self
@@ -68,6 +69,7 @@ impl RegisterSchemaVersionInputBuilder {
         &self.schema_id
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
+    /// This field is required.
     pub fn schema_definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_definition = ::std::option::Option::Some(input.into());
         self

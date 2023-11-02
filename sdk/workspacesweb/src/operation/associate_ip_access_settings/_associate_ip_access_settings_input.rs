@@ -34,6 +34,7 @@ pub struct AssociateIpAccessSettingsInputBuilder {
 }
 impl AssociateIpAccessSettingsInputBuilder {
     /// <p>The ARN of the web portal.</p>
+    /// This field is required.
     pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl AssociateIpAccessSettingsInputBuilder {
         &self.portal_arn
     }
     /// <p>The ARN of the IP access settings.</p>
+    /// This field is required.
     pub fn ip_access_settings_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_access_settings_arn = ::std::option::Option::Some(input.into());
         self

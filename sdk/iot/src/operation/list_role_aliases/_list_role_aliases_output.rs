@@ -11,8 +11,10 @@ pub struct ListRoleAliasesOutput {
 }
 impl ListRoleAliasesOutput {
     /// <p>The role aliases.</p>
-    pub fn role_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.role_aliases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_aliases.is_none()`.
+    pub fn role_aliases(&self) -> &[::std::string::String] {
+        self.role_aliases.as_deref().unwrap_or_default()
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn next_marker(&self) -> ::std::option::Option<&str> {

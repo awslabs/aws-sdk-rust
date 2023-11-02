@@ -52,7 +52,7 @@ pub struct InputTransformer {
     /// </instance>
     /// </instance></code> </p>
     /// <p> <code>}</code> </p>
-    pub input_template: ::std::option::Option<::std::string::String>,
+    pub input_template: ::std::string::String,
 }
 impl InputTransformer {
     /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
@@ -105,8 +105,9 @@ impl InputTransformer {
     /// </instance>
     /// </instance></code> </p>
     /// <p> <code>}</code> </p>
-    pub fn input_template(&self) -> ::std::option::Option<&str> {
-        self.input_template.as_deref()
+    pub fn input_template(&self) -> &str {
+        use std::ops::Deref;
+        self.input_template.deref()
     }
 }
 impl InputTransformer {
@@ -201,6 +202,7 @@ impl InputTransformerBuilder {
     /// </instance>
     /// </instance></code> </p>
     /// <p> <code>}</code> </p>
+    /// This field is required.
     pub fn input_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_template = ::std::option::Option::Some(input.into());
         self
@@ -301,10 +303,17 @@ impl InputTransformerBuilder {
         &self.input_template
     }
     /// Consumes the builder and constructs a [`InputTransformer`](crate::types::InputTransformer).
-    pub fn build(self) -> crate::types::InputTransformer {
-        crate::types::InputTransformer {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`input_template`](crate::types::builders::InputTransformerBuilder::input_template)
+    pub fn build(self) -> ::std::result::Result<crate::types::InputTransformer, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InputTransformer {
             input_paths_map: self.input_paths_map,
-            input_template: self.input_template,
-        }
+            input_template: self.input_template.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "input_template",
+                    "input_template was not specified but it is required when building InputTransformer",
+                )
+            })?,
+        })
     }
 }

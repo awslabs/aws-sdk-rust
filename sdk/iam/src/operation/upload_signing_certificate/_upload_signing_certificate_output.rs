@@ -35,6 +35,7 @@ pub struct UploadSigningCertificateOutputBuilder {
 }
 impl UploadSigningCertificateOutputBuilder {
     /// <p>Information about the certificate.</p>
+    /// This field is required.
     pub fn certificate(mut self, input: crate::types::SigningCertificate) -> Self {
         self.certificate = ::std::option::Option::Some(input);
         self

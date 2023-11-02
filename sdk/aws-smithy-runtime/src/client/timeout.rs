@@ -5,7 +5,7 @@
 
 use aws_smithy_async::future::timeout::Timeout;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
-use aws_smithy_client::SdkError;
+use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;

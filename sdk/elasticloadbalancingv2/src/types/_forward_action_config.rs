@@ -11,8 +11,10 @@ pub struct ForwardActionConfig {
 }
 impl ForwardActionConfig {
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
-    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::TargetGroupTuple]> {
-        self.target_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
+    pub fn target_groups(&self) -> &[crate::types::TargetGroupTuple] {
+        self.target_groups.as_deref().unwrap_or_default()
     }
     /// <p>The target group stickiness for the rule.</p>
     pub fn target_group_stickiness_config(&self) -> ::std::option::Option<&crate::types::TargetGroupStickinessConfig> {

@@ -123,6 +123,7 @@ impl JobSummaryBuilder {
         &self.job_arn
     }
     /// <p>The job ID.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
@@ -137,6 +138,7 @@ impl JobSummaryBuilder {
         &self.job_id
     }
     /// <p>The job name.</p>
+    /// This field is required.
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
         self

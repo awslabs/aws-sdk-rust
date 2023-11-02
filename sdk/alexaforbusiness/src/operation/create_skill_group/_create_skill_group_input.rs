@@ -26,8 +26,10 @@ impl CreateSkillGroupInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the skill group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSkillGroupInput {
@@ -48,6 +50,7 @@ pub struct CreateSkillGroupInputBuilder {
 }
 impl CreateSkillGroupInputBuilder {
     /// <p>The name for the skill group.</p>
+    /// This field is required.
     pub fn skill_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_group_name = ::std::option::Option::Some(input.into());
         self

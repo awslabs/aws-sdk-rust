@@ -11,8 +11,10 @@ pub struct ListKxDatabasesOutput {
 }
 impl ListKxDatabasesOutput {
     /// <p>A list of databases in the kdb environment.</p>
-    pub fn kx_databases(&self) -> ::std::option::Option<&[crate::types::KxDatabaseListEntry]> {
-        self.kx_databases.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kx_databases.is_none()`.
+    pub fn kx_databases(&self) -> &[crate::types::KxDatabaseListEntry] {
+        self.kx_databases.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

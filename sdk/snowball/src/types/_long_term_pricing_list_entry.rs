@@ -63,8 +63,10 @@ impl LongTermPricingListEntry {
         self.snowball_type.as_ref()
     }
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
-    pub fn job_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_ids.is_none()`.
+    pub fn job_ids(&self) -> &[::std::string::String] {
+        self.job_ids.as_deref().unwrap_or_default()
     }
 }
 impl LongTermPricingListEntry {

@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
-    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
+    pub entities: ::std::vec::Vec<crate::types::ThemeSummary>,
     /// <p>The pagination token that's returned if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::ThemeSummary]> {
-        self.entities.as_deref()
+    pub fn entities(&self) -> &[crate::types::ThemeSummary] {
+        use std::ops::Deref;
+        self.entities.deref()
     }
     /// <p>The pagination token that's returned if more results are available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,18 @@ impl ListThemesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
-    pub fn build(self) -> crate::operation::list_themes::ListThemesOutput {
-        crate::operation::list_themes::ListThemesOutput {
-            entities: self.entities,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entities`](crate::operation::list_themes::builders::ListThemesOutputBuilder::entities)
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_themes::ListThemesOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_themes::ListThemesOutput {
+            entities: self.entities.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entities",
+                    "entities was not specified but it is required when building ListThemesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

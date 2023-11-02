@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub config_id: ::std::option::Option<::std::string::String>,
+    pub config_id: ::std::string::String,
     /// <p>Type of a <code>Config</code>.</p>
-    pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
+    pub config_type: crate::types::ConfigCapabilityType,
 }
 impl GetConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> ::std::option::Option<&str> {
-        self.config_id.as_deref()
+    pub fn config_id(&self) -> &str {
+        use std::ops::Deref;
+        self.config_id.deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
-        self.config_type.as_ref()
+    pub fn config_type(&self) -> &crate::types::ConfigCapabilityType {
+        &self.config_type
     }
 }
 impl GetConfigInput {
@@ -35,6 +36,7 @@ pub struct GetConfigInputBuilder {
 }
 impl GetConfigInputBuilder {
     /// <p>UUID of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl GetConfigInputBuilder {
         &self.config_id
     }
     /// <p>Type of a <code>Config</code>.</p>
+    /// This field is required.
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
         self.config_type = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl GetConfigInputBuilder {
         &self.config_type
     }
     /// Consumes the builder and constructs a [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`config_id`](crate::operation::get_config::builders::GetConfigInputBuilder::config_id)
+    /// - [`config_type`](crate::operation::get_config::builders::GetConfigInputBuilder::config_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_config::GetConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_config::GetConfigInput {
-            config_id: self.config_id,
-            config_type: self.config_type,
+            config_id: self.config_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "config_id",
+                    "config_id was not specified but it is required when building GetConfigInput",
+                )
+            })?,
+            config_type: self.config_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "config_type",
+                    "config_type was not specified but it is required when building GetConfigInput",
+                )
+            })?,
         })
     }
 }

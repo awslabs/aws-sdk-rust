@@ -27,6 +27,7 @@ pub struct GetCanaryInputBuilder {
 }
 impl GetCanaryInputBuilder {
     /// <p>The name of the canary that you want details for.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

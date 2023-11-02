@@ -641,6 +641,8 @@ pub use crate::types::_spot_placement_score::SpotPlacementScoreBuilder;
 
 pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequestBuilder;
 
+pub use crate::types::_security_group_for_vpc::SecurityGroupForVpcBuilder;
+
 pub use crate::types::_target_reservation_value::TargetReservationValueBuilder;
 
 pub use crate::types::_target_configuration::TargetConfigurationBuilder;

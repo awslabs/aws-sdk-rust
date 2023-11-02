@@ -6,7 +6,7 @@ pub struct ListConnectorsOutput {
     /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::ListedConnector>>,
+    pub connectors: ::std::vec::Vec<crate::types::ListedConnector>,
     _request_id: Option<String>,
 }
 impl ListConnectorsOutput {
@@ -15,8 +15,9 @@ impl ListConnectorsOutput {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of a connector.</p>
-    pub fn connectors(&self) -> ::std::option::Option<&[crate::types::ListedConnector]> {
-        self.connectors.as_deref()
+    pub fn connectors(&self) -> &[crate::types::ListedConnector] {
+        use std::ops::Deref;
+        self.connectors.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ListConnectorsOutput {
@@ -84,11 +85,20 @@ impl ListConnectorsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput).
-    pub fn build(self) -> crate::operation::list_connectors::ListConnectorsOutput {
-        crate::operation::list_connectors::ListConnectorsOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`connectors`](crate::operation::list_connectors::builders::ListConnectorsOutputBuilder::connectors)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_connectors::ListConnectorsOutput {
             next_token: self.next_token,
-            connectors: self.connectors,
+            connectors: self.connectors.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "connectors",
+                    "connectors was not specified but it is required when building ListConnectorsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

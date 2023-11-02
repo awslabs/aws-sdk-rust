@@ -27,6 +27,7 @@ pub struct DeleteEventTrackerInputBuilder {
 }
 impl DeleteEventTrackerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
+    /// This field is required.
     pub fn event_tracker_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_tracker_arn = ::std::option::Option::Some(input.into());
         self

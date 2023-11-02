@@ -104,6 +104,7 @@ pub struct CreateQualificationTypeInputBuilder {
 }
 impl CreateQualificationTypeInputBuilder {
     /// <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +133,7 @@ impl CreateQualificationTypeInputBuilder {
         &self.keywords
     }
     /// <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
+    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -147,6 +149,7 @@ impl CreateQualificationTypeInputBuilder {
     }
     /// <p>The initial status of the Qualification type.</p>
     /// <p>Constraints: Valid values are: Active | Inactive</p>
+    /// This field is required.
     pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
         self.qualification_type_status = ::std::option::Option::Some(input);
         self

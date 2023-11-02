@@ -11,8 +11,10 @@ pub struct ListEventActionsOutput {
 }
 impl ListEventActionsOutput {
     /// <p>The event action objects listed by the request.</p>
-    pub fn event_actions(&self) -> ::std::option::Option<&[crate::types::EventActionEntry]> {
-        self.event_actions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_actions.is_none()`.
+    pub fn event_actions(&self) -> &[crate::types::EventActionEntry] {
+        self.event_actions.as_deref().unwrap_or_default()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

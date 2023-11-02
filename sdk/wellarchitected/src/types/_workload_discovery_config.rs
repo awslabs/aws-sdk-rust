@@ -17,8 +17,10 @@ impl WorkloadDiscoveryConfig {
     }
     /// <p>The mode to use for identifying resources associated with the workload.</p>
     /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
-    pub fn workload_resource_definition(&self) -> ::std::option::Option<&[crate::types::DefinitionType]> {
-        self.workload_resource_definition.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workload_resource_definition.is_none()`.
+    pub fn workload_resource_definition(&self) -> &[crate::types::DefinitionType] {
+        self.workload_resource_definition.as_deref().unwrap_or_default()
     }
 }
 impl WorkloadDiscoveryConfig {

@@ -9,7 +9,7 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_sdk_dynamodb::error::SdkError;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
-use aws_smithy_client::never::NeverConnector;
+use aws_smithy_runtime::client::http::test_util::NeverClient;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::region::Region;
@@ -25,10 +25,10 @@ impl AsyncSleep for InstantSleep {
 
 #[tokio::test]
 async fn api_call_timeout_retries() {
-    let conn = NeverConnector::new();
+    let http_client = NeverClient::new();
     let conf = SdkConfig::builder()
         .region(Region::new("us-east-2"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .timeout_config(
             TimeoutConfig::builder()
@@ -45,7 +45,7 @@ async fn api_call_timeout_retries() {
         .await
         .expect_err("call should fail");
     assert_eq!(
-        conn.num_calls(),
+        http_client.num_calls(),
         3,
         "client level timeouts should be retried"
     );
@@ -58,10 +58,10 @@ async fn api_call_timeout_retries() {
 
 #[tokio::test]
 async fn no_retries_on_operation_timeout() {
-    let conn = NeverConnector::new();
+    let http_client = NeverClient::new();
     let conf = SdkConfig::builder()
         .region(Region::new("us-east-2"))
-        .http_connector(conn.clone())
+        .http_client(http_client.clone())
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .timeout_config(
             TimeoutConfig::builder()
@@ -78,7 +78,7 @@ async fn no_retries_on_operation_timeout() {
         .await
         .expect_err("call should fail");
     assert_eq!(
-        conn.num_calls(),
+        http_client.num_calls(),
         1,
         "operation level timeouts should not be retried"
     );

@@ -34,8 +34,8 @@ pub fn ser_create_tracker_input(
         }
         object_9.finish();
     }
-    if let Some(var_12) = &input.tracker_name {
-        object.key("TrackerName").string(var_12.as_str());
+    {
+        object.key("TrackerName").string(input.tracker_name.as_str());
     }
     Ok(())
 }

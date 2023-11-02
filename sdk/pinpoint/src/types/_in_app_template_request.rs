@@ -20,8 +20,10 @@ pub struct InAppTemplateRequest {
 }
 impl InAppTemplateRequest {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn content(&self) -> ::std::option::Option<&[crate::types::InAppMessageContent]> {
-        self.content.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
+    pub fn content(&self) -> &[crate::types::InAppMessageContent] {
+        self.content.as_deref().unwrap_or_default()
     }
     /// <p>Custom config to be sent to client.</p>
     pub fn custom_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {

@@ -44,6 +44,7 @@ pub struct DeleteStackSetInputBuilder {
 }
 impl DeleteStackSetInputBuilder {
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this value by running <code>ListStackSets</code>.</p>
+    /// This field is required.
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_set_name = ::std::option::Option::Some(input.into());
         self

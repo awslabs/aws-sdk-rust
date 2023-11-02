@@ -8,8 +8,10 @@ pub struct DescribeTimeBasedAutoScalingInput {
 }
 impl DescribeTimeBasedAutoScalingInput {
     /// <p>An array of instance IDs.</p>
-    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.instance_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
+    pub fn instance_ids(&self) -> &[::std::string::String] {
+        self.instance_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeTimeBasedAutoScalingInput {

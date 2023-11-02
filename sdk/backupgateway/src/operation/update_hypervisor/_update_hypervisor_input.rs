@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-    pub hypervisor_arn: ::std::option::Option<::std::string::String>,
+    pub hypervisor_arn: ::std::string::String,
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub host: ::std::option::Option<::std::string::String>,
     /// <p>The updated username for the hypervisor.</p>
@@ -18,8 +18,9 @@ pub struct UpdateHypervisorInput {
 }
 impl UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
-        self.hypervisor_arn.as_deref()
+    pub fn hypervisor_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.hypervisor_arn.deref()
     }
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(&self) -> ::std::option::Option<&str> {
@@ -74,6 +75,7 @@ pub struct UpdateHypervisorInputBuilder {
 }
 impl UpdateHypervisorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+    /// This field is required.
     pub fn hypervisor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor_arn = ::std::option::Option::Some(input.into());
         self
@@ -158,11 +160,18 @@ impl UpdateHypervisorInputBuilder {
         &self.log_group_arn
     }
     /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hypervisor_arn`](crate::operation::update_hypervisor::builders::UpdateHypervisorInputBuilder::hypervisor_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_hypervisor::UpdateHypervisorInput {
-            hypervisor_arn: self.hypervisor_arn,
+            hypervisor_arn: self.hypervisor_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hypervisor_arn",
+                    "hypervisor_arn was not specified but it is required when building UpdateHypervisorInput",
+                )
+            })?,
             host: self.host,
             username: self.username,
             password: self.password,

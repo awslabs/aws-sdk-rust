@@ -75,8 +75,10 @@ impl UpdateOriginEndpointInput {
         self.time_delay_seconds
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn whitelist(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.whitelist.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.whitelist.is_none()`.
+    pub fn whitelist(&self) -> &[::std::string::String] {
+        self.whitelist.as_deref().unwrap_or_default()
     }
 }
 impl UpdateOriginEndpointInput {
@@ -175,6 +177,7 @@ impl UpdateOriginEndpointInputBuilder {
         &self.hls_package
     }
     /// The ID of the OriginEndpoint to update.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

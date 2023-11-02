@@ -5,19 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Theme {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
-    pub app_id: ::std::option::Option<::std::string::String>,
+    pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub environment_name: ::std::option::Option<::std::string::String>,
+    pub environment_name: ::std::string::String,
     /// <p>The ID for the theme.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The name of the theme.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The time that the theme was created.</p>
-    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time that the theme was modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of key-value pairs that defines the properties of the theme.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
+    pub values: ::std::vec::Vec<crate::types::ThemeValues>,
     /// <p>Describes the properties that can be overriden to customize a theme.</p>
     pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
@@ -25,36 +25,43 @@ pub struct Theme {
 }
 impl Theme {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
-        self.app_id.as_deref()
+    pub fn app_id(&self) -> &str {
+        use std::ops::Deref;
+        self.app_id.deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
-        self.environment_name.as_deref()
+    pub fn environment_name(&self) -> &str {
+        use std::ops::Deref;
+        self.environment_name.deref()
     }
     /// <p>The ID for the theme.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The time that the theme was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.created_at.as_ref()
+    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+        &self.created_at
     }
     /// <p>The time that the theme was modified.</p>
     pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>A list of key-value pairs that defines the properties of the theme.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
-        self.values.as_deref()
+    pub fn values(&self) -> &[crate::types::ThemeValues] {
+        use std::ops::Deref;
+        self.values.deref()
     }
     /// <p>Describes the properties that can be overriden to customize a theme.</p>
-    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
-        self.overrides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.overrides.is_none()`.
+    pub fn overrides(&self) -> &[crate::types::ThemeValues] {
+        self.overrides.as_deref().unwrap_or_default()
     }
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -84,6 +91,7 @@ pub struct ThemeBuilder {
 }
 impl ThemeBuilder {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
+    /// This field is required.
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +106,7 @@ impl ThemeBuilder {
         &self.app_id
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    /// This field is required.
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +121,7 @@ impl ThemeBuilder {
         &self.environment_name
     }
     /// <p>The ID for the theme.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -126,6 +136,7 @@ impl ThemeBuilder {
         &self.id
     }
     /// <p>The name of the theme.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +151,7 @@ impl ThemeBuilder {
         &self.name
     }
     /// <p>The time that the theme was created.</p>
+    /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
@@ -228,17 +240,51 @@ impl ThemeBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Theme`](crate::types::Theme).
-    pub fn build(self) -> crate::types::Theme {
-        crate::types::Theme {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            name: self.name,
-            created_at: self.created_at,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`app_id`](crate::types::builders::ThemeBuilder::app_id)
+    /// - [`environment_name`](crate::types::builders::ThemeBuilder::environment_name)
+    /// - [`id`](crate::types::builders::ThemeBuilder::id)
+    /// - [`name`](crate::types::builders::ThemeBuilder::name)
+    /// - [`created_at`](crate::types::builders::ThemeBuilder::created_at)
+    /// - [`values`](crate::types::builders::ThemeBuilder::values)
+    pub fn build(self) -> ::std::result::Result<crate::types::Theme, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Theme {
+            app_id: self.app_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "app_id",
+                    "app_id was not specified but it is required when building Theme",
+                )
+            })?,
+            environment_name: self.environment_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "environment_name",
+                    "environment_name was not specified but it is required when building Theme",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Theme")
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Theme",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building Theme",
+                )
+            })?,
             modified_at: self.modified_at,
-            values: self.values,
+            values: self.values.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "values",
+                    "values was not specified but it is required when building Theme",
+                )
+            })?,
             overrides: self.overrides,
             tags: self.tags,
-        }
+        })
     }
 }

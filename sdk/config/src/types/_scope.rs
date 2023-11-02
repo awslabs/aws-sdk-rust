@@ -15,8 +15,10 @@ pub struct Scope {
 }
 impl Scope {
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
-    pub fn compliance_resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.compliance_resource_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compliance_resource_types.is_none()`.
+    pub fn compliance_resource_types(&self) -> &[::std::string::String] {
+        self.compliance_resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The tag key that is applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule.</p>
     pub fn tag_key(&self) -> ::std::option::Option<&str> {

@@ -28,8 +28,10 @@ impl CreateEnvironmentInput {
         self.description.as_deref()
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn monitors(&self) -> ::std::option::Option<&[crate::types::Monitor]> {
-        self.monitors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitors.is_none()`.
+    pub fn monitors(&self) -> &[crate::types::Monitor] {
+        self.monitors.as_deref().unwrap_or_default()
     }
     /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -55,6 +57,7 @@ pub struct CreateEnvironmentInputBuilder {
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +72,7 @@ impl CreateEnvironmentInputBuilder {
         &self.application_id
     }
     /// <p>A name for the environment.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

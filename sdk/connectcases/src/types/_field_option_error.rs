@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldOptionError {
     /// <p>Error message from creating or updating field option.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>Error code from creating or updating field option.</p>
-    pub error_code: ::std::option::Option<::std::string::String>,
+    pub error_code: ::std::string::String,
     /// <p>The field option value that caused the error.</p>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl FieldOptionError {
     /// <p>Error message from creating or updating field option.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>Error code from creating or updating field option.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
-        self.error_code.as_deref()
+    pub fn error_code(&self) -> &str {
+        use std::ops::Deref;
+        self.error_code.deref()
     }
     /// <p>The field option value that caused the error.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl FieldOptionError {
@@ -42,6 +45,7 @@ pub struct FieldOptionErrorBuilder {
 }
 impl FieldOptionErrorBuilder {
     /// <p>Error message from creating or updating field option.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl FieldOptionErrorBuilder {
         &self.message
     }
     /// <p>Error code from creating or updating field option.</p>
+    /// This field is required.
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl FieldOptionErrorBuilder {
         &self.error_code
     }
     /// <p>The field option value that caused the error.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl FieldOptionErrorBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`FieldOptionError`](crate::types::FieldOptionError).
-    pub fn build(self) -> crate::types::FieldOptionError {
-        crate::types::FieldOptionError {
-            message: self.message,
-            error_code: self.error_code,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::builders::FieldOptionErrorBuilder::message)
+    /// - [`error_code`](crate::types::builders::FieldOptionErrorBuilder::error_code)
+    /// - [`value`](crate::types::builders::FieldOptionErrorBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldOptionError, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FieldOptionError {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building FieldOptionError",
+                )
+            })?,
+            error_code: self.error_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "error_code",
+                    "error_code was not specified but it is required when building FieldOptionError",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building FieldOptionError",
+                )
+            })?,
+        })
     }
 }

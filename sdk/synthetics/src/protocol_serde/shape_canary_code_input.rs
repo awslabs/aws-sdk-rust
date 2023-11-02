@@ -15,8 +15,8 @@ pub fn ser_canary_code_input(
     if let Some(var_4) = &input.zip_file {
         object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_4));
     }
-    if let Some(var_5) = &input.handler {
-        object.key("Handler").string(var_5.as_str());
+    {
+        object.key("Handler").string(input.handler.as_str());
     }
     Ok(())
 }

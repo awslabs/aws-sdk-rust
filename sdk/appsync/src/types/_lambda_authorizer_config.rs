@@ -9,7 +9,7 @@ pub struct LambdaAuthorizerConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
-    pub authorizer_uri: ::std::option::Option<::std::string::String>,
+    pub authorizer_uri: ::std::string::String,
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
     pub identity_validation_expression: ::std::option::Option<::std::string::String>,
 }
@@ -21,8 +21,9 @@ impl LambdaAuthorizerConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
-    pub fn authorizer_uri(&self) -> ::std::option::Option<&str> {
-        self.authorizer_uri.as_deref()
+    pub fn authorizer_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.authorizer_uri.deref()
     }
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
     pub fn identity_validation_expression(&self) -> ::std::option::Option<&str> {
@@ -62,6 +63,7 @@ impl LambdaAuthorizerConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
+    /// This field is required.
     pub fn authorizer_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authorizer_uri = ::std::option::Option::Some(input.into());
         self
@@ -94,11 +96,18 @@ impl LambdaAuthorizerConfigBuilder {
         &self.identity_validation_expression
     }
     /// Consumes the builder and constructs a [`LambdaAuthorizerConfig`](crate::types::LambdaAuthorizerConfig).
-    pub fn build(self) -> crate::types::LambdaAuthorizerConfig {
-        crate::types::LambdaAuthorizerConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`authorizer_uri`](crate::types::builders::LambdaAuthorizerConfigBuilder::authorizer_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaAuthorizerConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LambdaAuthorizerConfig {
             authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds.unwrap_or_default(),
-            authorizer_uri: self.authorizer_uri,
+            authorizer_uri: self.authorizer_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "authorizer_uri",
+                    "authorizer_uri was not specified but it is required when building LambdaAuthorizerConfig",
+                )
+            })?,
             identity_validation_expression: self.identity_validation_expression,
-        }
+        })
     }
 }

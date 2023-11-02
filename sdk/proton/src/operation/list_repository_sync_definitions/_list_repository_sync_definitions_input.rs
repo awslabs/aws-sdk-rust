@@ -4,26 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsInput {
     /// <p>The repository name.</p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
     /// <p>The repository provider.</p>
-    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub repository_provider: crate::types::RepositoryProvider,
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
-    pub sync_type: ::std::option::Option<crate::types::SyncType>,
+    pub sync_type: crate::types::SyncType,
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListRepositorySyncDefinitionsInput {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
-        self.repository_provider.as_ref()
+    pub fn repository_provider(&self) -> &crate::types::RepositoryProvider {
+        &self.repository_provider
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncType> {
-        self.sync_type.as_ref()
+    pub fn sync_type(&self) -> &crate::types::SyncType {
+        &self.sync_type
     }
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -48,6 +49,7 @@ pub struct ListRepositorySyncDefinitionsInputBuilder {
 }
 impl ListRepositorySyncDefinitionsInputBuilder {
     /// <p>The repository name.</p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +64,7 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         &self.repository_name
     }
     /// <p>The repository provider.</p>
+    /// This field is required.
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         &self.repository_provider
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
+    /// This field is required.
     pub fn sync_type(mut self, input: crate::types::SyncType) -> Self {
         self.sync_type = ::std::option::Option::Some(input);
         self
@@ -104,6 +108,10 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repository_name`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder::repository_name)
+    /// - [`repository_provider`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder::repository_provider)
+    /// - [`sync_type`](crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder::sync_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -111,9 +119,24 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput {
-            repository_name: self.repository_name,
-            repository_provider: self.repository_provider,
-            sync_type: self.sync_type,
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building ListRepositorySyncDefinitionsInput",
+                )
+            })?,
+            repository_provider: self.repository_provider.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_provider",
+                    "repository_provider was not specified but it is required when building ListRepositorySyncDefinitionsInput",
+                )
+            })?,
+            sync_type: self.sync_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sync_type",
+                    "sync_type was not specified but it is required when building ListRepositorySyncDefinitionsInput",
+                )
+            })?,
             next_token: self.next_token,
         })
     }

@@ -57,6 +57,7 @@ pub struct UpdateLoadBalancerAttributeInputBuilder {
 }
 impl UpdateLoadBalancerAttributeInputBuilder {
     /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
@@ -71,6 +72,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
         &self.load_balancer_name
     }
     /// <p>The name of the attribute you want to update.</p>
+    /// This field is required.
     pub fn attribute_name(mut self, input: crate::types::LoadBalancerAttributeName) -> Self {
         self.attribute_name = ::std::option::Option::Some(input);
         self
@@ -93,6 +95,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
     /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.</p> </li>
     /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the name of the TLS policy.</p> <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self

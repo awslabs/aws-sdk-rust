@@ -55,6 +55,7 @@ pub struct ListRotationShiftsInputBuilder {
 }
 impl ListRotationShiftsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +84,7 @@ impl ListRotationShiftsInputBuilder {
         &self.start_time
     }
     /// <p>The date and time for the end of the time range to list shifts for.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

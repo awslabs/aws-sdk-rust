@@ -12,8 +12,10 @@ pub struct ListDedicatedIpPoolsOutput {
 }
 impl ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    pub fn dedicated_ip_pools(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dedicated_ip_pools.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dedicated_ip_pools.is_none()`.
+    pub fn dedicated_ip_pools(&self) -> &[::std::string::String] {
+        self.dedicated_ip_pools.as_deref().unwrap_or_default()
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

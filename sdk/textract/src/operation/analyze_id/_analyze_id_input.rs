@@ -8,8 +8,10 @@ pub struct AnalyzeIdInput {
 }
 impl AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
-    pub fn document_pages(&self) -> ::std::option::Option<&[crate::types::Document]> {
-        self.document_pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_pages.is_none()`.
+    pub fn document_pages(&self) -> &[crate::types::Document] {
+        self.document_pages.as_deref().unwrap_or_default()
     }
 }
 impl AnalyzeIdInput {

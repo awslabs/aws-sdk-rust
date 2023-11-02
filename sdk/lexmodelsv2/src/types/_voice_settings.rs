@@ -5,15 +5,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
-    pub voice_id: ::std::option::Option<::std::string::String>,
+    pub voice_id: ::std::string::String,
     /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
     pub engine: ::std::option::Option<crate::types::VoiceEngine>,
 }
 impl VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
-    pub fn voice_id(&self) -> ::std::option::Option<&str> {
-        self.voice_id.as_deref()
+    pub fn voice_id(&self) -> &str {
+        use std::ops::Deref;
+        self.voice_id.deref()
     }
     /// <p>Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction with the user. For more information, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html#polly-SynthesizeSpeech-request-Engine"> <code>engine</code> parameter of the <code>SynthesizeSpeech</code> operation</a> in the <i>Amazon Polly developer guide</i>.</p>
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
@@ -37,6 +38,7 @@ pub struct VoiceSettingsBuilder {
 }
 impl VoiceSettingsBuilder {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
+    /// This field is required.
     pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_id = ::std::option::Option::Some(input.into());
         self
@@ -68,10 +70,17 @@ impl VoiceSettingsBuilder {
         &self.engine
     }
     /// Consumes the builder and constructs a [`VoiceSettings`](crate::types::VoiceSettings).
-    pub fn build(self) -> crate::types::VoiceSettings {
-        crate::types::VoiceSettings {
-            voice_id: self.voice_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`voice_id`](crate::types::builders::VoiceSettingsBuilder::voice_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::VoiceSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VoiceSettings {
+            voice_id: self.voice_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "voice_id",
+                    "voice_id was not specified but it is required when building VoiceSettings",
+                )
+            })?,
             engine: self.engine,
-        }
+        })
     }
 }

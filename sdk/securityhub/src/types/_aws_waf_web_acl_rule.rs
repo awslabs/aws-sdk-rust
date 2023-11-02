@@ -28,8 +28,10 @@ impl AwsWafWebAclRule {
         self.action.as_ref()
     }
     /// <p>Rules to exclude from a rule group.</p>
-    pub fn excluded_rules(&self) -> ::std::option::Option<&[crate::types::WafExcludedRule]> {
-        self.excluded_rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_rules.is_none()`.
+    pub fn excluded_rules(&self) -> &[crate::types::WafExcludedRule] {
+        self.excluded_rules.as_deref().unwrap_or_default()
     }
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>

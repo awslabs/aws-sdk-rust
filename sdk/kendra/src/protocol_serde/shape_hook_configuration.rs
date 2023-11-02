@@ -9,11 +9,11 @@ pub fn ser_hook_configuration(
         crate::protocol_serde::shape_document_attribute_condition::ser_document_attribute_condition(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.lambda_arn {
-        object.key("LambdaArn").string(var_3.as_str());
+    {
+        object.key("LambdaArn").string(input.lambda_arn.as_str());
     }
-    if let Some(var_4) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_4.as_str());
+    {
+        object.key("S3Bucket").string(input.s3_bucket.as_str());
     }
     Ok(())
 }
@@ -62,7 +62,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::hook_configuration_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

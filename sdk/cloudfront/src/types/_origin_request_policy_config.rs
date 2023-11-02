@@ -14,7 +14,7 @@ pub struct OriginRequestPolicyConfig {
     /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128 characters.</p>
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A unique name to identify the origin request policy.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
     pub headers_config: ::std::option::Option<crate::types::OriginRequestPolicyHeadersConfig>,
     /// <p>The cookies from viewer requests to include in origin requests.</p>
@@ -28,8 +28,9 @@ impl OriginRequestPolicyConfig {
         self.comment.as_deref()
     }
     /// <p>A unique name to identify the origin request policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
     pub fn headers_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyHeadersConfig> {
@@ -77,6 +78,7 @@ impl OriginRequestPolicyConfigBuilder {
         &self.comment
     }
     /// <p>A unique name to identify the origin request policy.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl OriginRequestPolicyConfigBuilder {
         &self.name
     }
     /// <p>The HTTP headers to include in origin requests. These can include headers from viewer requests and additional headers added by CloudFront.</p>
+    /// This field is required.
     pub fn headers_config(mut self, input: crate::types::OriginRequestPolicyHeadersConfig) -> Self {
         self.headers_config = ::std::option::Option::Some(input);
         self
@@ -105,6 +108,7 @@ impl OriginRequestPolicyConfigBuilder {
         &self.headers_config
     }
     /// <p>The cookies from viewer requests to include in origin requests.</p>
+    /// This field is required.
     pub fn cookies_config(mut self, input: crate::types::OriginRequestPolicyCookiesConfig) -> Self {
         self.cookies_config = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl OriginRequestPolicyConfigBuilder {
         &self.cookies_config
     }
     /// <p>The URL query strings from viewer requests to include in origin requests.</p>
+    /// This field is required.
     pub fn query_strings_config(mut self, input: crate::types::OriginRequestPolicyQueryStringsConfig) -> Self {
         self.query_strings_config = ::std::option::Option::Some(input);
         self
@@ -133,13 +138,20 @@ impl OriginRequestPolicyConfigBuilder {
         &self.query_strings_config
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicyConfig`](crate::types::OriginRequestPolicyConfig).
-    pub fn build(self) -> crate::types::OriginRequestPolicyConfig {
-        crate::types::OriginRequestPolicyConfig {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::OriginRequestPolicyConfigBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicyConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OriginRequestPolicyConfig {
             comment: self.comment,
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building OriginRequestPolicyConfig",
+                )
+            })?,
             headers_config: self.headers_config,
             cookies_config: self.cookies_config,
             query_strings_config: self.query_strings_config,
-        }
+        })
     }
 }

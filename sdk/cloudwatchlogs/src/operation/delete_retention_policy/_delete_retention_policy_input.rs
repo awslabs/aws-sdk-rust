@@ -27,6 +27,7 @@ pub struct DeleteRetentionPolicyInputBuilder {
 }
 impl DeleteRetentionPolicyInputBuilder {
     /// <p>The name of the log group.</p>
+    /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self

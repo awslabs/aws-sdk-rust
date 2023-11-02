@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub engagement_arn: ::std::option::Option<::std::string::String>,
+    pub engagement_arn: ::std::string::String,
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
-    pub contact_arn: ::std::option::Option<::std::string::String>,
+    pub contact_arn: ::std::string::String,
     /// <p>The user that started the engagement.</p>
-    pub sender: ::std::option::Option<::std::string::String>,
+    pub sender: ::std::string::String,
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub incident_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the engagement began.</p>
@@ -19,16 +19,19 @@ pub struct Engagement {
 }
 impl Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_arn(&self) -> ::std::option::Option<&str> {
-        self.engagement_arn.as_deref()
+    pub fn engagement_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.engagement_arn.deref()
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
-        self.contact_arn.as_deref()
+    pub fn contact_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.contact_arn.deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> ::std::option::Option<&str> {
-        self.sender.as_deref()
+    pub fn sender(&self) -> &str {
+        use std::ops::Deref;
+        self.sender.deref()
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub fn incident_id(&self) -> ::std::option::Option<&str> {
@@ -63,6 +66,7 @@ pub struct EngagementBuilder {
 }
 impl EngagementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    /// This field is required.
     pub fn engagement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engagement_arn = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +81,7 @@ impl EngagementBuilder {
         &self.engagement_arn
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
+    /// This field is required.
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +96,7 @@ impl EngagementBuilder {
         &self.contact_arn
     }
     /// <p>The user that started the engagement.</p>
+    /// This field is required.
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender = ::std::option::Option::Some(input.into());
         self
@@ -147,14 +153,33 @@ impl EngagementBuilder {
         &self.stop_time
     }
     /// Consumes the builder and constructs a [`Engagement`](crate::types::Engagement).
-    pub fn build(self) -> crate::types::Engagement {
-        crate::types::Engagement {
-            engagement_arn: self.engagement_arn,
-            contact_arn: self.contact_arn,
-            sender: self.sender,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`engagement_arn`](crate::types::builders::EngagementBuilder::engagement_arn)
+    /// - [`contact_arn`](crate::types::builders::EngagementBuilder::contact_arn)
+    /// - [`sender`](crate::types::builders::EngagementBuilder::sender)
+    pub fn build(self) -> ::std::result::Result<crate::types::Engagement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Engagement {
+            engagement_arn: self.engagement_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "engagement_arn",
+                    "engagement_arn was not specified but it is required when building Engagement",
+                )
+            })?,
+            contact_arn: self.contact_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "contact_arn",
+                    "contact_arn was not specified but it is required when building Engagement",
+                )
+            })?,
+            sender: self.sender.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sender",
+                    "sender was not specified but it is required when building Engagement",
+                )
+            })?,
             incident_id: self.incident_id,
             start_time: self.start_time,
             stop_time: self.stop_time,
-        }
+        })
     }
 }

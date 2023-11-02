@@ -135,7 +135,7 @@ pub fn de_update_user_access_logging_settings_http_response(
         output = crate::protocol_serde::shape_update_user_access_logging_settings::de_update_user_access_logging_settings(_response_body, output)
             .map_err(crate::operation::update_user_access_logging_settings::UpdateUserAccessLoggingSettingsError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::update_user_access_logging_settings_output_correct_errors(output).build()
     })
 }
 

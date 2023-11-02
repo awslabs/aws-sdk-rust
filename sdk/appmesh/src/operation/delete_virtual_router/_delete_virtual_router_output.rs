@@ -34,6 +34,7 @@ pub struct DeleteVirtualRouterOutputBuilder {
 }
 impl DeleteVirtualRouterOutputBuilder {
     /// <p>The virtual router that was deleted.</p>
+    /// This field is required.
     pub fn virtual_router(mut self, input: crate::types::VirtualRouterData) -> Self {
         self.virtual_router = ::std::option::Option::Some(input);
         self

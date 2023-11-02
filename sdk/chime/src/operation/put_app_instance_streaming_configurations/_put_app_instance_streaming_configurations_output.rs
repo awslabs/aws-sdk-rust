@@ -9,8 +9,10 @@ pub struct PutAppInstanceStreamingConfigurationsOutput {
 }
 impl PutAppInstanceStreamingConfigurationsOutput {
     /// <p>The streaming configurations of an <code>AppInstance</code>.</p>
-    pub fn app_instance_streaming_configurations(&self) -> ::std::option::Option<&[crate::types::AppInstanceStreamingConfiguration]> {
-        self.app_instance_streaming_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_instance_streaming_configurations.is_none()`.
+    pub fn app_instance_streaming_configurations(&self) -> &[crate::types::AppInstanceStreamingConfiguration] {
+        self.app_instance_streaming_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutAppInstanceStreamingConfigurationsOutput {

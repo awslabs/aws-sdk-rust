@@ -4,20 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHostedZonesByVpcOutput {
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
-    pub hosted_zone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HostedZoneSummary>>,
+    pub hosted_zone_summaries: ::std::vec::Vec<crate::types::HostedZoneSummary>,
     /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
-    pub max_items: ::std::option::Option<i32>,
+    pub max_items: i32,
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListHostedZonesByVpcOutput {
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
-    pub fn hosted_zone_summaries(&self) -> ::std::option::Option<&[crate::types::HostedZoneSummary]> {
-        self.hosted_zone_summaries.as_deref()
+    pub fn hosted_zone_summaries(&self) -> &[crate::types::HostedZoneSummary] {
+        use std::ops::Deref;
+        self.hosted_zone_summaries.deref()
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
-    pub fn max_items(&self) -> ::std::option::Option<i32> {
+    pub fn max_items(&self) -> i32 {
         self.max_items
     }
     /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
@@ -68,6 +69,7 @@ impl ListHostedZonesByVpcOutputBuilder {
         &self.hosted_zone_summaries
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
+    /// This field is required.
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,28 @@ impl ListHostedZonesByVpcOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListHostedZonesByVpcOutput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput).
-    pub fn build(self) -> crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput {
-        crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput {
-            hosted_zone_summaries: self.hosted_zone_summaries,
-            max_items: self.max_items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`hosted_zone_summaries`](crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder::hosted_zone_summaries)
+    /// - [`max_items`](crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder::max_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput {
+            hosted_zone_summaries: self.hosted_zone_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "hosted_zone_summaries",
+                    "hosted_zone_summaries was not specified but it is required when building ListHostedZonesByVpcOutput",
+                )
+            })?,
+            max_items: self.max_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "max_items",
+                    "max_items was not specified but it is required when building ListHostedZonesByVpcOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

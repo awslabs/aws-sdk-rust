@@ -6,17 +6,17 @@ pub fn ser_application_policies(
     if let Some(var_1) = &input.critical {
         object.key("Critical").boolean(*var_1);
     }
-    if let Some(var_2) = &input.policies {
-        let mut array_3 = object.key("Policies").start_array();
-        for item_4 in var_2 {
+    {
+        let mut array_2 = object.key("Policies").start_array();
+        for item_3 in &input.policies {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_application_policy::ser_application_policy(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_application_policy::ser_application_policy(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -52,7 +52,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::application_policies_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

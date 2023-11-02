@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppComponentRecommendationsOutput {
     /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
-    pub component_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ComponentRecommendation>>,
+    pub component_recommendations: ::std::vec::Vec<crate::types::ComponentRecommendation>,
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAppComponentRecommendationsOutput {
     /// <p>The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the names of the Application Components, configuration recommendations, and recommendation statuses.</p>
-    pub fn component_recommendations(&self) -> ::std::option::Option<&[crate::types::ComponentRecommendation]> {
-        self.component_recommendations.as_deref()
+    pub fn component_recommendations(&self) -> &[crate::types::ComponentRecommendation] {
+        use std::ops::Deref;
+        self.component_recommendations.deref()
     }
     /// <p>Token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,25 @@ impl ListAppComponentRecommendationsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListAppComponentRecommendationsOutput`](crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput).
-    pub fn build(self) -> crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput {
-        crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput {
-            component_recommendations: self.component_recommendations,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`component_recommendations`](crate::operation::list_app_component_recommendations::builders::ListAppComponentRecommendationsOutputBuilder::component_recommendations)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(
+            crate::operation::list_app_component_recommendations::ListAppComponentRecommendationsOutput {
+                component_recommendations: self.component_recommendations.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "component_recommendations",
+                        "component_recommendations was not specified but it is required when building ListAppComponentRecommendationsOutput",
+                    )
+                })?,
+                next_token: self.next_token,
+                _request_id: self._request_id,
+            },
+        )
     }
 }

@@ -27,6 +27,7 @@ pub struct DescribeWhatIfForecastInputBuilder {
 }
 impl DescribeWhatIfForecastInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+    /// This field is required.
     pub fn what_if_forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.what_if_forecast_arn = ::std::option::Option::Some(input.into());
         self

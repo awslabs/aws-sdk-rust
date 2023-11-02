@@ -56,6 +56,7 @@ pub struct DeleteJobInputBuilder {
 impl DeleteJobInputBuilder {
     /// <p>The ID of the job to be deleted.</p>
     /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
+    /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self

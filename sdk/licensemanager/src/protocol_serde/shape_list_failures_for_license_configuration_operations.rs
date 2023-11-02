@@ -38,8 +38,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AuthorizationException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::AuthorizationException({
@@ -54,8 +54,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidParameterValueException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::InvalidParameterValueException({
@@ -70,8 +70,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "RateLimitExceededException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::RateLimitExceededException({
@@ -86,8 +86,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "ServerInternalException" => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::ServerInternalException({
@@ -102,8 +102,8 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError::generic(generic)

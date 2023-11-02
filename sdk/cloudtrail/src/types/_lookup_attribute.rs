@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LookupAttribute {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
-    pub attribute_key: ::std::option::Option<crate::types::LookupAttributeKey>,
+    pub attribute_key: crate::types::LookupAttributeKey,
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    pub attribute_value: ::std::option::Option<::std::string::String>,
+    pub attribute_value: ::std::string::String,
 }
 impl LookupAttribute {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
-    pub fn attribute_key(&self) -> ::std::option::Option<&crate::types::LookupAttributeKey> {
-        self.attribute_key.as_ref()
+    pub fn attribute_key(&self) -> &crate::types::LookupAttributeKey {
+        &self.attribute_key
     }
     /// <p>Specifies a value for the specified AttributeKey.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
-        self.attribute_value.as_deref()
+    pub fn attribute_value(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute_value.deref()
     }
 }
 impl LookupAttribute {
@@ -35,6 +36,7 @@ pub struct LookupAttributeBuilder {
 }
 impl LookupAttributeBuilder {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
+    /// This field is required.
     pub fn attribute_key(mut self, input: crate::types::LookupAttributeKey) -> Self {
         self.attribute_key = ::std::option::Option::Some(input);
         self
@@ -49,6 +51,7 @@ impl LookupAttributeBuilder {
         &self.attribute_key
     }
     /// <p>Specifies a value for the specified AttributeKey.</p>
+    /// This field is required.
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +66,23 @@ impl LookupAttributeBuilder {
         &self.attribute_value
     }
     /// Consumes the builder and constructs a [`LookupAttribute`](crate::types::LookupAttribute).
-    pub fn build(self) -> crate::types::LookupAttribute {
-        crate::types::LookupAttribute {
-            attribute_key: self.attribute_key,
-            attribute_value: self.attribute_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute_key`](crate::types::builders::LookupAttributeBuilder::attribute_key)
+    /// - [`attribute_value`](crate::types::builders::LookupAttributeBuilder::attribute_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::LookupAttribute, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LookupAttribute {
+            attribute_key: self.attribute_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_key",
+                    "attribute_key was not specified but it is required when building LookupAttribute",
+                )
+            })?,
+            attribute_value: self.attribute_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute_value",
+                    "attribute_value was not specified but it is required when building LookupAttribute",
+                )
+            })?,
+        })
     }
 }

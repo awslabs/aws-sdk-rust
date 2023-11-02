@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceInput {
     /// <p>The ARN of the device to retrieve.</p>
-    pub device_arn: ::std::option::Option<::std::string::String>,
+    pub device_arn: ::std::string::String,
 }
 impl GetDeviceInput {
     /// <p>The ARN of the device to retrieve.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
-        self.device_arn.as_deref()
+    pub fn device_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.device_arn.deref()
     }
 }
 impl GetDeviceInput {
@@ -27,6 +28,7 @@ pub struct GetDeviceInputBuilder {
 }
 impl GetDeviceInputBuilder {
     /// <p>The ARN of the device to retrieve.</p>
+    /// This field is required.
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
         self
@@ -41,7 +43,16 @@ impl GetDeviceInputBuilder {
         &self.device_arn
     }
     /// Consumes the builder and constructs a [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`device_arn`](crate::operation::get_device::builders::GetDeviceInputBuilder::device_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_device::GetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_device::GetDeviceInput { device_arn: self.device_arn })
+        ::std::result::Result::Ok(crate::operation::get_device::GetDeviceInput {
+            device_arn: self.device_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "device_arn",
+                    "device_arn was not specified but it is required when building GetDeviceInput",
+                )
+            })?,
+        })
     }
 }

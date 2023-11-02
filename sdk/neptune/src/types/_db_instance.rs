@@ -159,16 +159,22 @@ impl DbInstance {
         self.backup_retention_period
     }
     /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
-    pub fn db_security_groups(&self) -> ::std::option::Option<&[crate::types::DbSecurityGroupMembership]> {
-        self.db_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
+    pub fn db_security_groups(&self) -> &[crate::types::DbSecurityGroupMembership] {
+        self.db_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
-    pub fn vpc_security_groups(&self) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
-        self.vpc_security_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
+    pub fn vpc_security_groups(&self) -> &[crate::types::VpcSecurityGroupMembership] {
+        self.vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
-    pub fn db_parameter_groups(&self) -> ::std::option::Option<&[crate::types::DbParameterGroupStatus]> {
-        self.db_parameter_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_parameter_groups.is_none()`.
+    pub fn db_parameter_groups(&self) -> &[crate::types::DbParameterGroupStatus] {
+        self.db_parameter_groups.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
@@ -207,12 +213,16 @@ impl DbInstance {
         self.read_replica_source_db_instance_identifier.as_deref()
     }
     /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
-    pub fn read_replica_db_instance_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.read_replica_db_instance_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_db_instance_identifiers.is_none()`.
+    pub fn read_replica_db_instance_identifiers(&self) -> &[::std::string::String] {
+        self.read_replica_db_instance_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
-    pub fn read_replica_db_cluster_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.read_replica_db_cluster_identifiers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_db_cluster_identifiers.is_none()`.
+    pub fn read_replica_db_cluster_identifiers(&self) -> &[::std::string::String] {
+        self.read_replica_db_cluster_identifiers.as_deref().unwrap_or_default()
     }
     /// <p>License model information for this DB instance.</p>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
@@ -223,8 +233,10 @@ impl DbInstance {
         self.iops
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn option_group_memberships(&self) -> ::std::option::Option<&[crate::types::OptionGroupMembership]> {
-        self.option_group_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_group_memberships.is_none()`.
+    pub fn option_group_memberships(&self) -> &[crate::types::OptionGroupMembership] {
+        self.option_group_memberships.as_deref().unwrap_or_default()
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn character_set_name(&self) -> ::std::option::Option<&str> {
@@ -240,8 +252,10 @@ impl DbInstance {
         self.publicly_accessible
     }
     /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
-    pub fn status_infos(&self) -> ::std::option::Option<&[crate::types::DbInstanceStatusInfo]> {
-        self.status_infos.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_infos.is_none()`.
+    pub fn status_infos(&self) -> &[crate::types::DbInstanceStatusInfo] {
+        self.status_infos.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the storage type associated with DB instance.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
@@ -276,8 +290,10 @@ impl DbInstance {
         self.ca_certificate_identifier.as_deref()
     }
     /// <p>Not supported</p>
-    pub fn domain_memberships(&self) -> ::std::option::Option<&[crate::types::DomainMembership]> {
-        self.domain_memberships.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_memberships.is_none()`.
+    pub fn domain_memberships(&self) -> &[crate::types::DomainMembership] {
+        self.domain_memberships.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
@@ -320,8 +336,10 @@ impl DbInstance {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
-    pub fn enabled_cloudwatch_logs_exports(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.enabled_cloudwatch_logs_exports.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
+    pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
+        self.enabled_cloudwatch_logs_exports.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {

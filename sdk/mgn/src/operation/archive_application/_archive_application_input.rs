@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveApplicationInput {
     /// <p>Application ID.</p>
-    pub application_id: ::std::option::Option<::std::string::String>,
+    pub application_id: ::std::string::String,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl ArchiveApplicationInput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
-        self.application_id.as_deref()
+    pub fn application_id(&self) -> &str {
+        use std::ops::Deref;
+        self.application_id.deref()
     }
     /// <p>Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -34,6 +35,7 @@ pub struct ArchiveApplicationInputBuilder {
 }
 impl ArchiveApplicationInputBuilder {
     /// <p>Application ID.</p>
+    /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
@@ -62,11 +64,18 @@ impl ArchiveApplicationInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ArchiveApplicationInput`](crate::operation::archive_application::ArchiveApplicationInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`application_id`](crate::operation::archive_application::builders::ArchiveApplicationInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::archive_application::ArchiveApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::archive_application::ArchiveApplicationInput {
-            application_id: self.application_id,
+            application_id: self.application_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "application_id",
+                    "application_id was not specified but it is required when building ArchiveApplicationInput",
+                )
+            })?,
             account_id: self.account_id,
         })
     }

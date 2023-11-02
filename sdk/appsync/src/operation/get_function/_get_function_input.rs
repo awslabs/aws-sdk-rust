@@ -34,6 +34,7 @@ pub struct GetFunctionInputBuilder {
 }
 impl GetFunctionInputBuilder {
     /// <p>The GraphQL API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetFunctionInputBuilder {
         &self.api_id
     }
     /// <p>The <code>Function</code> ID.</p>
+    /// This field is required.
     pub fn function_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_id = ::std::option::Option::Some(input.into());
         self

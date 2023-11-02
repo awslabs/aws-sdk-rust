@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MavenReference {
     /// <p>The group ID of the Maven reference.</p>
-    pub group_id: ::std::option::Option<::std::string::String>,
+    pub group_id: ::std::string::String,
     /// <p>The artifact ID of the Maven reference.</p>
-    pub artifact_id: ::std::option::Option<::std::string::String>,
+    pub artifact_id: ::std::string::String,
     /// <p>The version of the Maven reference.</p>
-    pub version: ::std::option::Option<::std::string::String>,
+    pub version: ::std::string::String,
 }
 impl MavenReference {
     /// <p>The group ID of the Maven reference.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
-        self.group_id.as_deref()
+    pub fn group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.group_id.deref()
     }
     /// <p>The artifact ID of the Maven reference.</p>
-    pub fn artifact_id(&self) -> ::std::option::Option<&str> {
-        self.artifact_id.as_deref()
+    pub fn artifact_id(&self) -> &str {
+        use std::ops::Deref;
+        self.artifact_id.deref()
     }
     /// <p>The version of the Maven reference.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
-        self.version.as_deref()
+    pub fn version(&self) -> &str {
+        use std::ops::Deref;
+        self.version.deref()
     }
 }
 impl MavenReference {
@@ -42,6 +45,7 @@ pub struct MavenReferenceBuilder {
 }
 impl MavenReferenceBuilder {
     /// <p>The group ID of the Maven reference.</p>
+    /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl MavenReferenceBuilder {
         &self.group_id
     }
     /// <p>The artifact ID of the Maven reference.</p>
+    /// This field is required.
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl MavenReferenceBuilder {
         &self.artifact_id
     }
     /// <p>The version of the Maven reference.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl MavenReferenceBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`MavenReference`](crate::types::MavenReference).
-    pub fn build(self) -> crate::types::MavenReference {
-        crate::types::MavenReference {
-            group_id: self.group_id,
-            artifact_id: self.artifact_id,
-            version: self.version,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`group_id`](crate::types::builders::MavenReferenceBuilder::group_id)
+    /// - [`artifact_id`](crate::types::builders::MavenReferenceBuilder::artifact_id)
+    /// - [`version`](crate::types::builders::MavenReferenceBuilder::version)
+    pub fn build(self) -> ::std::result::Result<crate::types::MavenReference, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MavenReference {
+            group_id: self.group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "group_id",
+                    "group_id was not specified but it is required when building MavenReference",
+                )
+            })?,
+            artifact_id: self.artifact_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "artifact_id",
+                    "artifact_id was not specified but it is required when building MavenReference",
+                )
+            })?,
+            version: self.version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "version",
+                    "version was not specified but it is required when building MavenReference",
+                )
+            })?,
+        })
     }
 }

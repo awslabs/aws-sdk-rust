@@ -55,6 +55,7 @@ impl GetRoomSkillParameterInputBuilder {
         &self.room_arn
     }
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
+    /// This field is required.
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl GetRoomSkillParameterInputBuilder {
         &self.skill_id
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
+    /// This field is required.
     pub fn parameter_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_key = ::std::option::Option::Some(input.into());
         self

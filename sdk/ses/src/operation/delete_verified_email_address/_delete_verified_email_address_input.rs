@@ -28,6 +28,7 @@ pub struct DeleteVerifiedEmailAddressInputBuilder {
 }
 impl DeleteVerifiedEmailAddressInputBuilder {
     /// <p>An email address to be removed from the list of verified addresses.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self

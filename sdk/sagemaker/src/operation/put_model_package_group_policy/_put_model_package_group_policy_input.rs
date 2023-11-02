@@ -34,6 +34,7 @@ pub struct PutModelPackageGroupPolicyInputBuilder {
 }
 impl PutModelPackageGroupPolicyInputBuilder {
     /// <p>The name of the model group to add a resource policy to.</p>
+    /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutModelPackageGroupPolicyInputBuilder {
         &self.model_package_group_name
     }
     /// <p>The resource policy for the model group.</p>
+    /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self

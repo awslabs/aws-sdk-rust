@@ -62,6 +62,7 @@ pub struct GetRevisionInputBuilder {
 }
 impl GetRevisionInputBuilder {
     /// <p>The name of the ledger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl GetRevisionInputBuilder {
     }
     /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
+    /// This field is required.
     pub fn block_address(mut self, input: crate::types::ValueHolder) -> Self {
         self.block_address = ::std::option::Option::Some(input);
         self
@@ -93,6 +95,7 @@ impl GetRevisionInputBuilder {
         &self.block_address
     }
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
+    /// This field is required.
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
         self

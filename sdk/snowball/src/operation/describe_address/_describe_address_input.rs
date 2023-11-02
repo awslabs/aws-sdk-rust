@@ -27,6 +27,7 @@ pub struct DescribeAddressInputBuilder {
 }
 impl DescribeAddressInputBuilder {
     /// <p>The automatically generated ID for a specific address.</p>
+    /// This field is required.
     pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address_id = ::std::option::Option::Some(input.into());
         self

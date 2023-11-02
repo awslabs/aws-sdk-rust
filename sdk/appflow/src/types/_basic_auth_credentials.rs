@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BasicAuthCredentials {
     /// <p> The username to use to connect to a resource. </p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p> The password to use to connect to a resource.</p>
-    pub password: ::std::option::Option<::std::string::String>,
+    pub password: ::std::string::String,
 }
 impl BasicAuthCredentials {
     /// <p> The username to use to connect to a resource. </p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p> The password to use to connect to a resource.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
-        self.password.as_deref()
+    pub fn password(&self) -> &str {
+        use std::ops::Deref;
+        self.password.deref()
     }
 }
 impl ::std::fmt::Debug for BasicAuthCredentials {
@@ -43,6 +45,7 @@ pub struct BasicAuthCredentialsBuilder {
 }
 impl BasicAuthCredentialsBuilder {
     /// <p> The username to use to connect to a resource. </p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +60,7 @@ impl BasicAuthCredentialsBuilder {
         &self.username
     }
     /// <p> The password to use to connect to a resource.</p>
+    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -71,11 +75,24 @@ impl BasicAuthCredentialsBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`BasicAuthCredentials`](crate::types::BasicAuthCredentials).
-    pub fn build(self) -> crate::types::BasicAuthCredentials {
-        crate::types::BasicAuthCredentials {
-            username: self.username,
-            password: self.password,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::types::builders::BasicAuthCredentialsBuilder::username)
+    /// - [`password`](crate::types::builders::BasicAuthCredentialsBuilder::password)
+    pub fn build(self) -> ::std::result::Result<crate::types::BasicAuthCredentials, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BasicAuthCredentials {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building BasicAuthCredentials",
+                )
+            })?,
+            password: self.password.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "password",
+                    "password was not specified but it is required when building BasicAuthCredentials",
+                )
+            })?,
+        })
     }
 }
 impl ::std::fmt::Debug for BasicAuthCredentialsBuilder {

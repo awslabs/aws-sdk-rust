@@ -11,8 +11,10 @@ pub struct ListProjectPoliciesOutput {
 }
 impl ListProjectPoliciesOutput {
     /// <p>A list of project policies attached to the project.</p>
-    pub fn project_policies(&self) -> ::std::option::Option<&[crate::types::ProjectPolicy]> {
-        self.project_policies.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_policies.is_none()`.
+    pub fn project_policies(&self) -> &[crate::types::ProjectPolicy] {
+        self.project_policies.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of project policies.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

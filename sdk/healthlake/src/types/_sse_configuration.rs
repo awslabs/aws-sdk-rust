@@ -28,6 +28,7 @@ pub struct SseConfigurationBuilder {
 }
 impl SseConfigurationBuilder {
     /// <p> The KMS encryption configuration used to provide details for data encryption. </p>
+    /// This field is required.
     pub fn kms_encryption_config(mut self, input: crate::types::KmsEncryptionConfig) -> Self {
         self.kms_encryption_config = ::std::option::Option::Some(input);
         self

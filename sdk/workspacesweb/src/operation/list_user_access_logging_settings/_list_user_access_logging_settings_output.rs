@@ -11,8 +11,10 @@ pub struct ListUserAccessLoggingSettingsOutput {
 }
 impl ListUserAccessLoggingSettingsOutput {
     /// <p>The user access logging settings.</p>
-    pub fn user_access_logging_settings(&self) -> ::std::option::Option<&[crate::types::UserAccessLoggingSettingsSummary]> {
-        self.user_access_logging_settings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_access_logging_settings.is_none()`.
+    pub fn user_access_logging_settings(&self) -> &[crate::types::UserAccessLoggingSettingsSummary] {
+        self.user_access_logging_settings.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

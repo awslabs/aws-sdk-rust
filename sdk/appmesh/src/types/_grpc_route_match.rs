@@ -23,8 +23,10 @@ impl GrpcRouteMatch {
         self.method_name.as_deref()
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&[crate::types::GrpcRouteMetadata]> {
-        self.metadata.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata.is_none()`.
+    pub fn metadata(&self) -> &[crate::types::GrpcRouteMetadata] {
+        self.metadata.as_deref().unwrap_or_default()
     }
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {

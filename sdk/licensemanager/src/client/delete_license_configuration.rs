@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLicenseConfiguration`](crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`license_configuration_arn(impl Into<String>)`](crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder::set_license_configuration_arn): <p>ID of the license configuration.</p>
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder::set_license_configuration_arn):<br>required: **true**<br><p>ID of the license configuration.</p><br>
     /// - On success, responds with [`DeleteLicenseConfigurationOutput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteLicenseConfigurationError>`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationError)
     pub fn delete_license_configuration(&self) -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationFluentBuilder {

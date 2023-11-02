@@ -11,8 +11,10 @@ pub struct ListAutoMlJobsOutput {
 }
 impl ListAutoMlJobsOutput {
     /// <p>Returns a summary list of jobs.</p>
-    pub fn auto_ml_job_summaries(&self) -> ::std::option::Option<&[crate::types::AutoMlJobSummary]> {
-        self.auto_ml_job_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_ml_job_summaries.is_none()`.
+    pub fn auto_ml_job_summaries(&self) -> &[crate::types::AutoMlJobSummary] {
+        self.auto_ml_job_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

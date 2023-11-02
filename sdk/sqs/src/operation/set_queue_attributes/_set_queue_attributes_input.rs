@@ -162,6 +162,7 @@ pub struct SetQueueAttributesInputBuilder {
 impl SetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self

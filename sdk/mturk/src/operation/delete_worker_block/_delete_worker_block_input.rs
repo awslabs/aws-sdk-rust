@@ -34,6 +34,7 @@ pub struct DeleteWorkerBlockInputBuilder {
 }
 impl DeleteWorkerBlockInputBuilder {
     /// <p>The ID of the Worker to unblock.</p>
+    /// This field is required.
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
         self

@@ -5,24 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
-    pub condition_type: ::std::option::Option<crate::types::ConditionType>,
+    pub condition_type: crate::types::ConditionType,
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    pub condition_key: ::std::option::Option<::std::string::String>,
+    pub condition_key: ::std::string::String,
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    pub condition_value: ::std::option::Option<::std::string::String>,
+    pub condition_value: ::std::string::String,
 }
 impl Condition {
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
-    pub fn condition_type(&self) -> ::std::option::Option<&crate::types::ConditionType> {
-        self.condition_type.as_ref()
+    pub fn condition_type(&self) -> &crate::types::ConditionType {
+        &self.condition_type
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    pub fn condition_key(&self) -> ::std::option::Option<&str> {
-        self.condition_key.as_deref()
+    pub fn condition_key(&self) -> &str {
+        use std::ops::Deref;
+        self.condition_key.deref()
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    pub fn condition_value(&self) -> ::std::option::Option<&str> {
-        self.condition_value.as_deref()
+    pub fn condition_value(&self) -> &str {
+        use std::ops::Deref;
+        self.condition_value.deref()
     }
 }
 impl Condition {
@@ -42,6 +44,7 @@ pub struct ConditionBuilder {
 }
 impl ConditionBuilder {
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
+    /// This field is required.
     pub fn condition_type(mut self, input: crate::types::ConditionType) -> Self {
         self.condition_type = ::std::option::Option::Some(input);
         self
@@ -56,6 +59,7 @@ impl ConditionBuilder {
         &self.condition_type
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
+    /// This field is required.
     pub fn condition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition_key = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +74,7 @@ impl ConditionBuilder {
         &self.condition_key
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
+    /// This field is required.
     pub fn condition_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition_value = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +89,30 @@ impl ConditionBuilder {
         &self.condition_value
     }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
-    pub fn build(self) -> crate::types::Condition {
-        crate::types::Condition {
-            condition_type: self.condition_type,
-            condition_key: self.condition_key,
-            condition_value: self.condition_value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`condition_type`](crate::types::builders::ConditionBuilder::condition_type)
+    /// - [`condition_key`](crate::types::builders::ConditionBuilder::condition_key)
+    /// - [`condition_value`](crate::types::builders::ConditionBuilder::condition_value)
+    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Condition {
+            condition_type: self.condition_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition_type",
+                    "condition_type was not specified but it is required when building Condition",
+                )
+            })?,
+            condition_key: self.condition_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition_key",
+                    "condition_key was not specified but it is required when building Condition",
+                )
+            })?,
+            condition_value: self.condition_value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "condition_value",
+                    "condition_value was not specified but it is required when building Condition",
+                )
+            })?,
+        })
     }
 }

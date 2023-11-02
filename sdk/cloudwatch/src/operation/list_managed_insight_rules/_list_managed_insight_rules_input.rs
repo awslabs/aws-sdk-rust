@@ -41,6 +41,7 @@ pub struct ListManagedInsightRulesInputBuilder {
 }
 impl ListManagedInsightRulesInputBuilder {
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self

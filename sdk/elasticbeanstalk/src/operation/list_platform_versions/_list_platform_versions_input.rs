@@ -13,8 +13,10 @@ pub struct ListPlatformVersionsInput {
 }
 impl ListPlatformVersionsInput {
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::PlatformFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::PlatformFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of platform version values returned in one call.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {

@@ -11,8 +11,10 @@ pub struct ListAssessmentControlInsightsByControlDomainOutput {
 }
 impl ListAssessmentControlInsightsByControlDomainOutput {
     /// <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
-    pub fn control_insights_by_assessment(&self) -> ::std::option::Option<&[crate::types::ControlInsightsMetadataByAssessmentItem]> {
-        self.control_insights_by_assessment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_insights_by_assessment.is_none()`.
+    pub fn control_insights_by_assessment(&self) -> &[crate::types::ControlInsightsMetadataByAssessmentItem] {
+        self.control_insights_by_assessment.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

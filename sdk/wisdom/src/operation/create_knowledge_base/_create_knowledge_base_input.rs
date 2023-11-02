@@ -6,14 +6,16 @@ pub struct CreateKnowledgeBaseInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the knowledge base.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub knowledge_base_type: ::std::option::Option<crate::types::KnowledgeBaseType>,
+    pub knowledge_base_type: crate::types::KnowledgeBaseType,
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
     pub rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -26,12 +28,13 @@ impl CreateKnowledgeBaseInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the knowledge base.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub fn knowledge_base_type(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseType> {
-        self.knowledge_base_type.as_ref()
+    pub fn knowledge_base_type(&self) -> &crate::types::KnowledgeBaseType {
+        &self.knowledge_base_type
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
@@ -41,7 +44,9 @@ impl CreateKnowledgeBaseInput {
     pub fn rendering_configuration(&self) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
@@ -90,6 +95,7 @@ impl CreateKnowledgeBaseInputBuilder {
         &self.client_token
     }
     /// <p>The name of the knowledge base.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +110,7 @@ impl CreateKnowledgeBaseInputBuilder {
         &self.name
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
+    /// This field is required.
     pub fn knowledge_base_type(mut self, input: crate::types::KnowledgeBaseType) -> Self {
         self.knowledge_base_type = ::std::option::Option::Some(input);
         self
@@ -145,17 +152,23 @@ impl CreateKnowledgeBaseInputBuilder {
     pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
         &self.rendering_configuration
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
         self.server_side_encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
         self.server_side_encryption_configuration = input;
         self
     }
-    /// <p>The KMS key used for encryption.</p>
+    /// <p>The configuration information for the customer managed key used for encryption. </p>
+    /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code> and <code>kms:DescribeKey</code> permissions to the IAM identity using the key to invoke Wisdom.</p>
+    /// <p>For more information about setting up a customer managed key for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for your instance</a>.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
         &self.server_side_encryption_configuration
     }
@@ -194,14 +207,27 @@ impl CreateKnowledgeBaseInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKnowledgeBaseInput`](crate::operation::create_knowledge_base::CreateKnowledgeBaseInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder::name)
+    /// - [`knowledge_base_type`](crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder::knowledge_base_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_knowledge_base::CreateKnowledgeBaseInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
             client_token: self.client_token,
-            name: self.name,
-            knowledge_base_type: self.knowledge_base_type,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateKnowledgeBaseInput",
+                )
+            })?,
+            knowledge_base_type: self.knowledge_base_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "knowledge_base_type",
+                    "knowledge_base_type was not specified but it is required when building CreateKnowledgeBaseInput",
+                )
+            })?,
             source_configuration: self.source_configuration,
             rendering_configuration: self.rendering_configuration,
             server_side_encryption_configuration: self.server_side_encryption_configuration,

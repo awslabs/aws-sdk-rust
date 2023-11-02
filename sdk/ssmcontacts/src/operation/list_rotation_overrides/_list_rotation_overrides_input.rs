@@ -55,6 +55,7 @@ pub struct ListRotationOverridesInputBuilder {
 }
 impl ListRotationOverridesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve information about.</p>
+    /// This field is required.
     pub fn rotation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl ListRotationOverridesInputBuilder {
         &self.rotation_id
     }
     /// <p>The date and time for the beginning of a time range for listing overrides.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl ListRotationOverridesInputBuilder {
         &self.start_time
     }
     /// <p>The date and time for the end of a time range for listing overrides.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

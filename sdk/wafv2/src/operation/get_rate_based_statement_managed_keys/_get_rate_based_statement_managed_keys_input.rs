@@ -70,6 +70,7 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
     /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
         self
@@ -94,6 +95,7 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         &self.scope
     }
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    /// This field is required.
     pub fn web_acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_name = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +110,7 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         &self.web_acl_name
     }
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    /// This field is required.
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +139,7 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         &self.rule_group_rule_name
     }
     /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
+    /// This field is required.
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
         self

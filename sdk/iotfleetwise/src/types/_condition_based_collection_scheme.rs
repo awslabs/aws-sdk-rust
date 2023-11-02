@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
-    pub expression: ::std::option::Option<::std::string::String>,
+    pub expression: ::std::string::String,
     /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
@@ -17,8 +17,9 @@ pub struct ConditionBasedCollectionScheme {
 }
 impl ConditionBasedCollectionScheme {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
-        self.expression.as_deref()
+    pub fn expression(&self) -> &str {
+        use std::ops::Deref;
+        self.expression.deref()
     }
     /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
@@ -53,6 +54,7 @@ pub struct ConditionBasedCollectionSchemeBuilder {
 }
 impl ConditionBasedCollectionSchemeBuilder {
     /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+    /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
@@ -115,12 +117,19 @@ impl ConditionBasedCollectionSchemeBuilder {
         &self.condition_language_version
     }
     /// Consumes the builder and constructs a [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
-    pub fn build(self) -> crate::types::ConditionBasedCollectionScheme {
-        crate::types::ConditionBasedCollectionScheme {
-            expression: self.expression,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`expression`](crate::types::builders::ConditionBasedCollectionSchemeBuilder::expression)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionBasedCollectionScheme, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConditionBasedCollectionScheme {
+            expression: self.expression.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "expression",
+                    "expression was not specified but it is required when building ConditionBasedCollectionScheme",
+                )
+            })?,
             minimum_trigger_interval_ms: self.minimum_trigger_interval_ms,
             trigger_mode: self.trigger_mode,
             condition_language_version: self.condition_language_version,
-        }
+        })
     }
 }

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentTypesOutput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>A list of objects that contain information about the component types.</p>
-    pub component_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ComponentTypeSummary>>,
+    pub component_type_summaries: ::std::vec::Vec<crate::types::ComponentTypeSummary>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of results to display.</p>
@@ -15,12 +15,14 @@ pub struct ListComponentTypesOutput {
 }
 impl ListComponentTypesOutput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn component_type_summaries(&self) -> ::std::option::Option<&[crate::types::ComponentTypeSummary]> {
-        self.component_type_summaries.as_deref()
+    pub fn component_type_summaries(&self) -> &[crate::types::ComponentTypeSummary] {
+        use std::ops::Deref;
+        self.component_type_summaries.deref()
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,7 @@ pub struct ListComponentTypesOutputBuilder {
 }
 impl ListComponentTypesOutputBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -126,13 +129,29 @@ impl ListComponentTypesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
-    pub fn build(self) -> crate::operation::list_component_types::ListComponentTypesOutput {
-        crate::operation::list_component_types::ListComponentTypesOutput {
-            workspace_id: self.workspace_id,
-            component_type_summaries: self.component_type_summaries,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder::workspace_id)
+    /// - [`component_type_summaries`](crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder::component_type_summaries)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesOutput, ::aws_smithy_http::operation::error::BuildError>
+    {
+        ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesOutput {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building ListComponentTypesOutput",
+                )
+            })?,
+            component_type_summaries: self.component_type_summaries.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "component_type_summaries",
+                    "component_type_summaries was not specified but it is required when building ListComponentTypesOutput",
+                )
+            })?,
             next_token: self.next_token,
             max_results: self.max_results,
             _request_id: self._request_id,
-        }
+        })
     }
 }

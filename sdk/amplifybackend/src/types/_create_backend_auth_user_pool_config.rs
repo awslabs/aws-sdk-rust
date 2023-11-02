@@ -39,8 +39,10 @@ impl CreateBackendAuthUserPoolConfig {
         self.password_policy.as_ref()
     }
     /// <p>The required attributes to sign up new users in the user pool.</p>
-    pub fn required_sign_up_attributes(&self) -> ::std::option::Option<&[crate::types::RequiredSignUpAttributesElement]> {
-        self.required_sign_up_attributes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_sign_up_attributes.is_none()`.
+    pub fn required_sign_up_attributes(&self) -> &[crate::types::RequiredSignUpAttributesElement] {
+        self.required_sign_up_attributes.as_deref().unwrap_or_default()
     }
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn sign_in_method(&self) -> ::std::option::Option<&crate::types::SignInMethod> {
@@ -156,6 +158,7 @@ impl CreateBackendAuthUserPoolConfigBuilder {
         &self.required_sign_up_attributes
     }
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
+    /// This field is required.
     pub fn sign_in_method(mut self, input: crate::types::SignInMethod) -> Self {
         self.sign_in_method = ::std::option::Option::Some(input);
         self
@@ -170,6 +173,7 @@ impl CreateBackendAuthUserPoolConfigBuilder {
         &self.sign_in_method
     }
     /// <p>The Amazon Cognito user pool name.</p>
+    /// This field is required.
     pub fn user_pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_name = ::std::option::Option::Some(input.into());
         self

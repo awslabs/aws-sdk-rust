@@ -160,12 +160,16 @@ impl CreatePublicVirtualInterfaceOutput {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
-    pub fn route_filter_prefixes(&self) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
-        self.route_filter_prefixes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.route_filter_prefixes.is_none()`.
+    pub fn route_filter_prefixes(&self) -> &[crate::types::RouteFilterPrefix] {
+        self.route_filter_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The BGP peers configured on this virtual interface.</p>
-    pub fn bgp_peers(&self) -> ::std::option::Option<&[crate::types::BgpPeer]> {
-        self.bgp_peers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bgp_peers.is_none()`.
+    pub fn bgp_peers(&self) -> &[crate::types::BgpPeer] {
+        self.bgp_peers.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services Region where the virtual interface is located.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
@@ -180,8 +184,10 @@ impl CreatePublicVirtualInterfaceOutput {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The tags associated with the virtual interface.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether SiteLink is enabled.</p>
     pub fn site_link_enabled(&self) -> ::std::option::Option<bool> {

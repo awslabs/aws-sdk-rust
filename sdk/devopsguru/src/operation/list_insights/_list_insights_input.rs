@@ -41,6 +41,7 @@ pub struct ListInsightsInputBuilder {
 }
 impl ListInsightsInputBuilder {
     /// <p> A filter used to filter the returned insights by their status. You can specify one status filter. </p>
+    /// This field is required.
     pub fn status_filter(mut self, input: crate::types::ListInsightsStatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
         self

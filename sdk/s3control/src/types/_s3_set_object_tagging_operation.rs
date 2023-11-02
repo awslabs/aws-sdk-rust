@@ -9,8 +9,10 @@ pub struct S3SetObjectTaggingOperation {
 }
 impl S3SetObjectTaggingOperation {
     /// <p></p>
-    pub fn tag_set(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
-        self.tag_set.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_set.is_none()`.
+    pub fn tag_set(&self) -> &[crate::types::S3Tag] {
+        self.tag_set.as_deref().unwrap_or_default()
     }
 }
 impl S3SetObjectTaggingOperation {

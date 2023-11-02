@@ -32,12 +32,16 @@ impl CreateFargateProfileInput {
         self.pod_execution_role_arn.as_deref()
     }
     /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
-    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.subnets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
+    pub fn subnets(&self) -> &[::std::string::String] {
+        self.subnets.as_deref().unwrap_or_default()
     }
     /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
-    pub fn selectors(&self) -> ::std::option::Option<&[crate::types::FargateProfileSelector]> {
-        self.selectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selectors.is_none()`.
+    pub fn selectors(&self) -> &[crate::types::FargateProfileSelector] {
+        self.selectors.as_deref().unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
@@ -69,6 +73,7 @@ pub struct CreateFargateProfileInputBuilder {
 }
 impl CreateFargateProfileInputBuilder {
     /// <p>The name of the Fargate profile.</p>
+    /// This field is required.
     pub fn fargate_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fargate_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +88,7 @@ impl CreateFargateProfileInputBuilder {
         &self.fargate_profile_name
     }
     /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +103,7 @@ impl CreateFargateProfileInputBuilder {
         &self.cluster_name
     }
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// This field is required.
     pub fn pod_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pod_execution_role_arn = ::std::option::Option::Some(input.into());
         self

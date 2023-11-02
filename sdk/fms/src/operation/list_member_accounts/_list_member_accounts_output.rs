@@ -11,8 +11,10 @@ pub struct ListMemberAccountsOutput {
 }
 impl ListMemberAccountsOutput {
     /// <p>An array of account IDs.</p>
-    pub fn member_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.member_accounts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_accounts.is_none()`.
+    pub fn member_accounts(&self) -> &[::std::string::String] {
+        self.member_accounts.as_deref().unwrap_or_default()
     }
     /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

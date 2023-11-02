@@ -15,8 +15,10 @@ impl RevokeSecurityGroupEgressOutput {
         self.r#return
     }
     /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
-    pub fn unknown_ip_permissions(&self) -> ::std::option::Option<&[crate::types::IpPermission]> {
-        self.unknown_ip_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unknown_ip_permissions.is_none()`.
+    pub fn unknown_ip_permissions(&self) -> &[crate::types::IpPermission] {
+        self.unknown_ip_permissions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for RevokeSecurityGroupEgressOutput {

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSpace`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_name): <p>The name of the space.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_description): <p>The description of the space.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the space.</p><br>
+    ///   - [`description(impl Into<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_space::builders::UpdateSpaceFluentBuilder::set_description):<br>required: **false**<br><p>The description of the space.</p><br>
     /// - On success, responds with [`UpdateSpaceOutput`](crate::operation::update_space::UpdateSpaceOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_space::UpdateSpaceOutput::name): <p>The name of the space.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::update_space::UpdateSpaceOutput::display_name): <p>The friendly name of the space displayed to users in Amazon CodeCatalyst.</p>

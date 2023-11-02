@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationConfiguration {
     /// <p>The name of the Config rule.</p>
-    pub config_rule_name: ::std::option::Option<::std::string::String>,
+    pub config_rule_name: ::std::string::String,
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
-    pub target_type: ::std::option::Option<crate::types::RemediationTargetType>,
+    pub target_type: crate::types::RemediationTargetType,
     /// <p>Target ID is the name of the SSM document.</p>
-    pub target_id: ::std::option::Option<::std::string::String>,
+    pub target_id: ::std::string::String,
     /// <p>Version of the target. For example, version of the SSM document.</p> <note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
     /// </note>
@@ -35,16 +35,18 @@ pub struct RemediationConfiguration {
 }
 impl RemediationConfiguration {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
-        self.config_rule_name.as_deref()
+    pub fn config_rule_name(&self) -> &str {
+        use std::ops::Deref;
+        self.config_rule_name.deref()
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&crate::types::RemediationTargetType> {
-        self.target_type.as_ref()
+    pub fn target_type(&self) -> &crate::types::RemediationTargetType {
+        &self.target_type
     }
     /// <p>Target ID is the name of the SSM document.</p>
-    pub fn target_id(&self) -> ::std::option::Option<&str> {
-        self.target_id.as_deref()
+    pub fn target_id(&self) -> &str {
+        use std::ops::Deref;
+        self.target_id.deref()
     }
     /// <p>Version of the target. For example, version of the SSM document.</p> <note>
     /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
@@ -113,6 +115,7 @@ pub struct RemediationConfigurationBuilder {
 }
 impl RemediationConfigurationBuilder {
     /// <p>The name of the Config rule.</p>
+    /// This field is required.
     pub fn config_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_rule_name = ::std::option::Option::Some(input.into());
         self
@@ -127,6 +130,7 @@ impl RemediationConfigurationBuilder {
         &self.config_rule_name
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
+    /// This field is required.
     pub fn target_type(mut self, input: crate::types::RemediationTargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
@@ -141,6 +145,7 @@ impl RemediationConfigurationBuilder {
         &self.target_type
     }
     /// <p>Target ID is the name of the SSM document.</p>
+    /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self
@@ -304,11 +309,30 @@ impl RemediationConfigurationBuilder {
         &self.created_by_service
     }
     /// Consumes the builder and constructs a [`RemediationConfiguration`](crate::types::RemediationConfiguration).
-    pub fn build(self) -> crate::types::RemediationConfiguration {
-        crate::types::RemediationConfiguration {
-            config_rule_name: self.config_rule_name,
-            target_type: self.target_type,
-            target_id: self.target_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`config_rule_name`](crate::types::builders::RemediationConfigurationBuilder::config_rule_name)
+    /// - [`target_type`](crate::types::builders::RemediationConfigurationBuilder::target_type)
+    /// - [`target_id`](crate::types::builders::RemediationConfigurationBuilder::target_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RemediationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RemediationConfiguration {
+            config_rule_name: self.config_rule_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "config_rule_name",
+                    "config_rule_name was not specified but it is required when building RemediationConfiguration",
+                )
+            })?,
+            target_type: self.target_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_type",
+                    "target_type was not specified but it is required when building RemediationConfiguration",
+                )
+            })?,
+            target_id: self.target_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "target_id",
+                    "target_id was not specified but it is required when building RemediationConfiguration",
+                )
+            })?,
             target_version: self.target_version,
             parameters: self.parameters,
             resource_type: self.resource_type,
@@ -318,6 +342,6 @@ impl RemediationConfigurationBuilder {
             retry_attempt_seconds: self.retry_attempt_seconds,
             arn: self.arn,
             created_by_service: self.created_by_service,
-        }
+        })
     }
 }

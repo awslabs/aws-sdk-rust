@@ -90,6 +90,7 @@ pub struct ListModelCardExportJobsInputBuilder {
 }
 impl ListModelCardExportJobsInputBuilder {
     /// <p>List export jobs for the model card with the specified name.</p>
+    /// This field is required.
     pub fn model_card_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_card_name = ::std::option::Option::Some(input.into());
         self

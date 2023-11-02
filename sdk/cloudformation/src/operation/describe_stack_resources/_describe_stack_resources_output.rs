@@ -10,8 +10,10 @@ pub struct DescribeStackResourcesOutput {
 }
 impl DescribeStackResourcesOutput {
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub fn stack_resources(&self) -> ::std::option::Option<&[crate::types::StackResource]> {
-        self.stack_resources.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_resources.is_none()`.
+    pub fn stack_resources(&self) -> &[crate::types::StackResource] {
+        self.stack_resources.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeStackResourcesOutput {

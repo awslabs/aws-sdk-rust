@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
-    pub status: ::std::option::Option<crate::types::VirtualRouterStatusCode>,
+    pub status: crate::types::VirtualRouterStatusCode,
 }
 impl VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualRouterStatusCode> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::VirtualRouterStatusCode {
+        &self.status
     }
 }
 impl VirtualRouterStatus {
@@ -28,6 +28,7 @@ pub struct VirtualRouterStatusBuilder {
 }
 impl VirtualRouterStatusBuilder {
     /// <p>The current status of the virtual router.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::VirtualRouterStatusCode) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl VirtualRouterStatusBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`VirtualRouterStatus`](crate::types::VirtualRouterStatus).
-    pub fn build(self) -> crate::types::VirtualRouterStatus {
-        crate::types::VirtualRouterStatus { status: self.status }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`status`](crate::types::builders::VirtualRouterStatusBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualRouterStatus, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualRouterStatus {
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building VirtualRouterStatus",
+                )
+            })?,
+        })
     }
 }

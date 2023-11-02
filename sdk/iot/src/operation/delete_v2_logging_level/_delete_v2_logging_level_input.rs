@@ -34,6 +34,7 @@ pub struct DeleteV2LoggingLevelInputBuilder {
 }
 impl DeleteV2LoggingLevelInputBuilder {
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// This field is required.
     pub fn target_type(mut self, input: crate::types::LogTargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl DeleteV2LoggingLevelInputBuilder {
         &self.target_type
     }
     /// <p>The name of the resource for which you are configuring logging.</p>
+    /// This field is required.
     pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_name = ::std::option::Option::Some(input.into());
         self

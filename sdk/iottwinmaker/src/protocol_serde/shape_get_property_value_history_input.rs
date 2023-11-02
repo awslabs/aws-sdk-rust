@@ -50,22 +50,22 @@ pub fn ser_get_property_value_history_input(
         }
         array_12.finish();
     }
-    if let Some(var_15) = &input.selected_properties {
-        let mut array_16 = object.key("selectedProperties").start_array();
-        for item_17 in var_15 {
+    {
+        let mut array_15 = object.key("selectedProperties").start_array();
+        for item_16 in &input.selected_properties {
             {
-                array_16.value().string(item_17.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_16.finish();
+        array_15.finish();
     }
-    if let Some(var_18) = &input.start_date_time {
+    if let Some(var_17) = &input.start_date_time {
         object
             .key("startDateTime")
-            .date_time(var_18, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_17, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_19) = &input.start_time {
-        object.key("startTime").string(var_19.as_str());
+    if let Some(var_18) = &input.start_time {
+        object.key("startTime").string(var_18.as_str());
     }
     Ok(())
 }

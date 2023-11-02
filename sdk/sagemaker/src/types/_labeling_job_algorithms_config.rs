@@ -60,6 +60,7 @@ impl LabelingJobAlgorithmsConfigBuilder {
     /// <li> <p> <i>Object detection</i> </p> <p> <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code> </p> </li>
     /// <li> <p> <i>Semantic Segmentation</i> </p> <p> <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn labeling_job_algorithm_specification_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.labeling_job_algorithm_specification_arn = ::std::option::Option::Some(input.into());
         self

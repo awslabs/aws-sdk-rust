@@ -11,8 +11,10 @@ pub struct ListJobsOutput {
 }
 impl ListJobsOutput {
     /// <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
-    pub fn job_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.job_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
+    pub fn job_names(&self) -> &[::std::string::String] {
+        self.job_names.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

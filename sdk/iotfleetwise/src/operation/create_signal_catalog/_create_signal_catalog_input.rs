@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSignalCatalogInput {
     /// <p> The name of the signal catalog to create. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A brief description of the signal catalog.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
@@ -14,20 +14,25 @@ pub struct CreateSignalCatalogInput {
 }
 impl CreateSignalCatalogInput {
     /// <p> The name of the signal catalog to create. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A brief description of the signal catalog.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
-    pub fn nodes(&self) -> ::std::option::Option<&[crate::types::Node]> {
-        self.nodes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
+    pub fn nodes(&self) -> &[crate::types::Node] {
+        self.nodes.as_deref().unwrap_or_default()
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateSignalCatalogInput {
@@ -48,6 +53,7 @@ pub struct CreateSignalCatalogInputBuilder {
 }
 impl CreateSignalCatalogInputBuilder {
     /// <p> The name of the signal catalog to create. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -116,12 +122,19 @@ impl CreateSignalCatalogInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSignalCatalogInput`](crate::operation::create_signal_catalog::CreateSignalCatalogInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_signal_catalog::CreateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_signal_catalog::CreateSignalCatalogInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateSignalCatalogInput",
+                )
+            })?,
             description: self.description,
             nodes: self.nodes,
             tags: self.tags,

@@ -30,8 +30,10 @@ impl ModifyEventSubscriptionInput {
         self.source_type.as_deref()
     }
     /// <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
-    pub fn event_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_categories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[::std::string::String] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
     /// <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -57,6 +59,7 @@ pub struct ModifyEventSubscriptionInputBuilder {
 }
 impl ModifyEventSubscriptionInputBuilder {
     /// <p>The name of the event notification subscription.</p>
+    /// This field is required.
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_name = ::std::option::Option::Some(input.into());
         self

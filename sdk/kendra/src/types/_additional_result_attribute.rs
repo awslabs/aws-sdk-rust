@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalResultAttribute {
     /// <p>The key that identifies the attribute.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The data type of the <code>Value</code> property.</p>
-    pub value_type: ::std::option::Option<crate::types::AdditionalResultAttributeValueType>,
+    pub value_type: crate::types::AdditionalResultAttributeValueType,
     /// <p>An object that contains the attribute value.</p>
     pub value: ::std::option::Option<crate::types::AdditionalResultAttributeValue>,
 }
 impl AdditionalResultAttribute {
     /// <p>The key that identifies the attribute.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The data type of the <code>Value</code> property.</p>
-    pub fn value_type(&self) -> ::std::option::Option<&crate::types::AdditionalResultAttributeValueType> {
-        self.value_type.as_ref()
+    pub fn value_type(&self) -> &crate::types::AdditionalResultAttributeValueType {
+        &self.value_type
     }
     /// <p>An object that contains the attribute value.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::AdditionalResultAttributeValue> {
@@ -42,6 +43,7 @@ pub struct AdditionalResultAttributeBuilder {
 }
 impl AdditionalResultAttributeBuilder {
     /// <p>The key that identifies the attribute.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +58,7 @@ impl AdditionalResultAttributeBuilder {
         &self.key
     }
     /// <p>The data type of the <code>Value</code> property.</p>
+    /// This field is required.
     pub fn value_type(mut self, input: crate::types::AdditionalResultAttributeValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
         self
@@ -70,6 +73,7 @@ impl AdditionalResultAttributeBuilder {
         &self.value_type
     }
     /// <p>An object that contains the attribute value.</p>
+    /// This field is required.
     pub fn value(mut self, input: crate::types::AdditionalResultAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
@@ -84,11 +88,24 @@ impl AdditionalResultAttributeBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`AdditionalResultAttribute`](crate::types::AdditionalResultAttribute).
-    pub fn build(self) -> crate::types::AdditionalResultAttribute {
-        crate::types::AdditionalResultAttribute {
-            key: self.key,
-            value_type: self.value_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::AdditionalResultAttributeBuilder::key)
+    /// - [`value_type`](crate::types::builders::AdditionalResultAttributeBuilder::value_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::AdditionalResultAttribute, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AdditionalResultAttribute {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building AdditionalResultAttribute",
+                )
+            })?,
+            value_type: self.value_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value_type",
+                    "value_type was not specified but it is required when building AdditionalResultAttribute",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

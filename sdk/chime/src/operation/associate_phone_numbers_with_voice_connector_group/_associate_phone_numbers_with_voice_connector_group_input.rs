@@ -16,8 +16,10 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
         self.voice_connector_group_id.as_deref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.e164_phone_numbers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.e164_phone_numbers.is_none()`.
+    pub fn e164_phone_numbers(&self) -> &[::std::string::String] {
+        self.e164_phone_numbers.as_deref().unwrap_or_default()
     }
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn force_associate(&self) -> ::std::option::Option<bool> {
@@ -43,6 +45,7 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
+    /// This field is required.
     pub fn voice_connector_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_connector_group_id = ::std::option::Option::Some(input.into());
         self

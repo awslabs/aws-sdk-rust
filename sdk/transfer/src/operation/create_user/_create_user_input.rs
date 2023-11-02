@@ -33,9 +33,7 @@ pub struct CreateUserInput {
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -68,8 +66,10 @@ impl CreateUserInput {
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when they log in.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
-    pub fn home_directory_mappings(&self) -> ::std::option::Option<&[crate::types::HomeDirectoryMapEntry]> {
-        self.home_directory_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.home_directory_mappings.is_none()`.
+    pub fn home_directory_mappings(&self) -> &[crate::types::HomeDirectoryMapEntry] {
+        self.home_directory_mappings.as_deref().unwrap_or_default()
     }
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
@@ -93,9 +93,7 @@ impl CreateUserInput {
         self.server_id.as_deref()
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -106,8 +104,10 @@ impl CreateUserInput {
         self.ssh_public_key_body.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
@@ -259,6 +259,7 @@ impl CreateUserInputBuilder {
         &self.posix_profile
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -273,6 +274,7 @@ impl CreateUserInputBuilder {
         &self.role
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
+    /// This field is required.
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
         self
@@ -287,9 +289,7 @@ impl CreateUserInputBuilder {
         &self.server_id
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -301,9 +301,7 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -315,9 +313,7 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p>
-    /// <p>The three standard SSH public key format elements are <code>
-    /// <key type></key></code>, <code></code>, and an optional <code>
-    /// <comment></comment></code>, with spaces between each element.</p>
+    /// <p>The three standard SSH public key format elements are <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with spaces between each element.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     /// <ul>
     /// <li> <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li>
@@ -348,6 +344,7 @@ impl CreateUserInputBuilder {
         &self.tags
     }
     /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
+    /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self

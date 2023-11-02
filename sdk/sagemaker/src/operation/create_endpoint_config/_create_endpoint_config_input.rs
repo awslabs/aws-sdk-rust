@@ -38,16 +38,20 @@ impl CreateEndpointConfigInput {
         self.endpoint_config_name.as_deref()
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
-    pub fn production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariant]> {
-        self.production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.production_variants.is_none()`.
+    pub fn production_variants(&self) -> &[crate::types::ProductionVariant] {
+        self.production_variants.as_deref().unwrap_or_default()
     }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::DataCaptureConfig> {
         self.data_capture_config.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -74,8 +78,10 @@ impl CreateEndpointConfigInput {
         self.explainer_config.as_ref()
     }
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
-    pub fn shadow_production_variants(&self) -> ::std::option::Option<&[crate::types::ProductionVariant]> {
-        self.shadow_production_variants.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shadow_production_variants.is_none()`.
+    pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariant] {
+        self.shadow_production_variants.as_deref().unwrap_or_default()
     }
 }
 impl CreateEndpointConfigInput {
@@ -100,6 +106,7 @@ pub struct CreateEndpointConfigInputBuilder {
 }
 impl CreateEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request. </p>
+    /// This field is required.
     pub fn endpoint_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self

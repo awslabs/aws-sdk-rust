@@ -17,7 +17,7 @@ pub struct InstanceGroupConfig {
     /// <p>Target number of instances for the instance group.</p>
     pub instance_count: ::std::option::Option<i32>,
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
@@ -54,11 +54,13 @@ impl InstanceGroupConfig {
         self.instance_count
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
-        self.configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
     pub fn ebs_configuration(&self) -> ::std::option::Option<&crate::types::EbsConfiguration> {
@@ -125,6 +127,7 @@ impl InstanceGroupConfigBuilder {
         &self.market
     }
     /// <p>The role of the instance group in the cluster.</p>
+    /// This field is required.
     pub fn instance_role(mut self, input: crate::types::InstanceRoleType) -> Self {
         self.instance_role = ::std::option::Option::Some(input);
         self
@@ -153,6 +156,7 @@ impl InstanceGroupConfigBuilder {
         &self.bid_price
     }
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
+    /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
@@ -167,6 +171,7 @@ impl InstanceGroupConfigBuilder {
         &self.instance_type
     }
     /// <p>Target number of instances for the instance group.</p>
+    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -185,7 +190,7 @@ impl InstanceGroupConfigBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
@@ -195,7 +200,7 @@ impl InstanceGroupConfigBuilder {
         self
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
@@ -203,7 +208,7 @@ impl InstanceGroupConfigBuilder {
         self
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or later.</p>
+    /// <p>Amazon EMR releases 4.x or higher.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {

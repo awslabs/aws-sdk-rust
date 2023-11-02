@@ -48,6 +48,7 @@ pub struct UpdateApiKeyInputBuilder {
 }
 impl UpdateApiKeyInputBuilder {
     /// <p>The ID for the GraphQL API.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl UpdateApiKeyInputBuilder {
         &self.api_id
     }
     /// <p>The API key ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

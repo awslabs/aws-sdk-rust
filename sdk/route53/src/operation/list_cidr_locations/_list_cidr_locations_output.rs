@@ -17,8 +17,10 @@ impl ListCidrLocationsOutput {
         self.next_token.as_deref()
     }
     /// <p>A complex type that contains information about the list of CIDR locations.</p>
-    pub fn cidr_locations(&self) -> ::std::option::Option<&[crate::types::LocationSummary]> {
-        self.cidr_locations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_locations.is_none()`.
+    pub fn cidr_locations(&self) -> &[crate::types::LocationSummary] {
+        self.cidr_locations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListCidrLocationsOutput {

@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
-    pub ledger_name: ::std::option::Option<::std::string::String>,
+    pub ledger_name: ::std::string::String,
 }
 impl StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
-    pub fn ledger_name(&self) -> ::std::option::Option<&str> {
-        self.ledger_name.as_deref()
+    pub fn ledger_name(&self) -> &str {
+        use std::ops::Deref;
+        self.ledger_name.deref()
     }
 }
 impl StartSessionRequest {
@@ -28,6 +29,7 @@ pub struct StartSessionRequestBuilder {
 }
 impl StartSessionRequestBuilder {
     /// <p>The name of the ledger to start a new session against.</p>
+    /// This field is required.
     pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ledger_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl StartSessionRequestBuilder {
         &self.ledger_name
     }
     /// Consumes the builder and constructs a [`StartSessionRequest`](crate::types::StartSessionRequest).
-    pub fn build(self) -> crate::types::StartSessionRequest {
-        crate::types::StartSessionRequest {
-            ledger_name: self.ledger_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`ledger_name`](crate::types::builders::StartSessionRequestBuilder::ledger_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::StartSessionRequest, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StartSessionRequest {
+            ledger_name: self.ledger_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ledger_name",
+                    "ledger_name was not specified but it is required when building StartSessionRequest",
+                )
+            })?,
+        })
     }
 }

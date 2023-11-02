@@ -58,6 +58,7 @@ impl GetServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn setting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.setting_id = ::std::option::Option::Some(input.into());
         self

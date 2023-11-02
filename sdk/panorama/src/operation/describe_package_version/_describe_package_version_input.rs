@@ -6,9 +6,9 @@ pub struct DescribePackageVersionInput {
     /// <p>The version's owner account.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The version's ID.</p>
-    pub package_id: ::std::option::Option<::std::string::String>,
+    pub package_id: ::std::string::String,
     /// <p>The version's version.</p>
-    pub package_version: ::std::option::Option<::std::string::String>,
+    pub package_version: ::std::string::String,
     /// <p>The version's patch version.</p>
     pub patch_version: ::std::option::Option<::std::string::String>,
 }
@@ -18,12 +18,14 @@ impl DescribePackageVersionInput {
         self.owner_account.as_deref()
     }
     /// <p>The version's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
-        self.package_id.as_deref()
+    pub fn package_id(&self) -> &str {
+        use std::ops::Deref;
+        self.package_id.deref()
     }
     /// <p>The version's version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
-        self.package_version.as_deref()
+    pub fn package_version(&self) -> &str {
+        use std::ops::Deref;
+        self.package_version.deref()
     }
     /// <p>The version's patch version.</p>
     pub fn patch_version(&self) -> ::std::option::Option<&str> {
@@ -62,6 +64,7 @@ impl DescribePackageVersionInputBuilder {
         &self.owner_account
     }
     /// <p>The version's ID.</p>
+    /// This field is required.
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
         self
@@ -76,6 +79,7 @@ impl DescribePackageVersionInputBuilder {
         &self.package_id
     }
     /// <p>The version's version.</p>
+    /// This field is required.
     pub fn package_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_version = ::std::option::Option::Some(input.into());
         self
@@ -104,14 +108,27 @@ impl DescribePackageVersionInputBuilder {
         &self.patch_version
     }
     /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`package_id`](crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder::package_id)
+    /// - [`package_version`](crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder::package_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_package_version::DescribePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_package_version::DescribePackageVersionInput {
             owner_account: self.owner_account,
-            package_id: self.package_id,
-            package_version: self.package_version,
+            package_id: self.package_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_id",
+                    "package_id was not specified but it is required when building DescribePackageVersionInput",
+                )
+            })?,
+            package_version: self.package_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "package_version",
+                    "package_version was not specified but it is required when building DescribePackageVersionInput",
+                )
+            })?,
             patch_version: self.patch_version,
         })
     }

@@ -16,8 +16,10 @@ pub struct ListIdentityPoolUsageOutput {
 }
 impl ListIdentityPoolUsageOutput {
     /// Usage information for the identity pools.
-    pub fn identity_pool_usages(&self) -> ::std::option::Option<&[crate::types::IdentityPoolUsage]> {
-        self.identity_pool_usages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_pool_usages.is_none()`.
+    pub fn identity_pool_usages(&self) -> &[crate::types::IdentityPoolUsage] {
+        self.identity_pool_usages.as_deref().unwrap_or_default()
     }
     /// The maximum number of results to be returned.
     pub fn max_results(&self) -> i32 {

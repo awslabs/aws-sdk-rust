@@ -5,22 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlreadyStreamedException {
     /// The message associated with the AlreadyStreamedException exception.
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AlreadyStreamedException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        &self.message
     }
 }
 impl ::std::fmt::Display for AlreadyStreamedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "AlreadyStreamedException")?;
-        if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
-                ::std::write!(f, ": {}", inner_1)?;
-            }
+        {
+            ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
     }
@@ -53,6 +51,7 @@ pub struct AlreadyStreamedExceptionBuilder {
 }
 impl AlreadyStreamedExceptionBuilder {
     /// The message associated with the AlreadyStreamedException exception.
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -78,10 +77,17 @@ impl AlreadyStreamedExceptionBuilder {
         self
     }
     /// Consumes the builder and constructs a [`AlreadyStreamedException`](crate::types::error::AlreadyStreamedException).
-    pub fn build(self) -> crate::types::error::AlreadyStreamedException {
-        crate::types::error::AlreadyStreamedException {
-            message: self.message,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`message`](crate::types::error::builders::AlreadyStreamedExceptionBuilder::message)
+    pub fn build(self) -> ::std::result::Result<crate::types::error::AlreadyStreamedException, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::error::AlreadyStreamedException {
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building AlreadyStreamedException",
+                )
+            })?,
             meta: self.meta.unwrap_or_default(),
-        }
+        })
     }
 }

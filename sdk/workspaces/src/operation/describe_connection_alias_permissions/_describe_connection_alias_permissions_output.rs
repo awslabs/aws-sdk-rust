@@ -17,8 +17,10 @@ impl DescribeConnectionAliasPermissionsOutput {
         self.alias_id.as_deref()
     }
     /// <p>The permissions associated with a connection alias.</p>
-    pub fn connection_alias_permissions(&self) -> ::std::option::Option<&[crate::types::ConnectionAliasPermission]> {
-        self.connection_alias_permissions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connection_alias_permissions.is_none()`.
+    pub fn connection_alias_permissions(&self) -> &[crate::types::ConnectionAliasPermission] {
+        self.connection_alias_permissions.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

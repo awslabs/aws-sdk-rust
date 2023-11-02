@@ -21,6 +21,7 @@ test-util = ["aws-smithy-types/test-util"]
 [dependencies]
 bytes = "1"
 http = "0.2.3"
+pin-project-lite = "0.2"
 tracing = "0.1"
 
 [dependencies.aws-smithy-async]
@@ -42,3 +43,6 @@ features = ["sync"]
 [dependencies.zeroize]
 version = "1"
 optional = true
+[dev-dependencies.tokio]
+version = "1.25"
+features = ["rt", "macros"]

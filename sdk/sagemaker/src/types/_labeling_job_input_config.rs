@@ -35,6 +35,7 @@ pub struct LabelingJobInputConfigBuilder {
 }
 impl LabelingJobInputConfigBuilder {
     /// <p>The location of the input data.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::LabelingJobDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self

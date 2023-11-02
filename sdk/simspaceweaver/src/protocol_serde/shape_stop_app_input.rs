@@ -3,14 +3,14 @@ pub fn ser_stop_app_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_app::StopAppInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.app {
-        object.key("App").string(var_1.as_str());
+    {
+        object.key("App").string(input.app.as_str());
     }
-    if let Some(var_2) = &input.domain {
-        object.key("Domain").string(var_2.as_str());
+    {
+        object.key("Domain").string(input.domain.as_str());
     }
-    if let Some(var_3) = &input.simulation {
-        object.key("Simulation").string(var_3.as_str());
+    {
+        object.key("Simulation").string(input.simulation.as_str());
     }
     Ok(())
 }

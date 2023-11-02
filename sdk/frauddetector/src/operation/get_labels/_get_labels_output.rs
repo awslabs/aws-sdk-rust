@@ -11,8 +11,10 @@ pub struct GetLabelsOutput {
 }
 impl GetLabelsOutput {
     /// <p>An array of labels.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[crate::types::Label]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[crate::types::Label] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The next page token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -12,14 +12,14 @@ pub fn ser_vpc(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.subnets {
-        let mut array_5 = object.key("subnets").start_array();
-        for item_6 in var_4 {
+    {
+        let mut array_4 = object.key("subnets").start_array();
+        for item_5 in &input.subnets {
             {
-                array_5.value().string(item_6.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
     Ok(())
 }

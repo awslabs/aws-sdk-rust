@@ -5,20 +5,20 @@ pub fn ser_cidr_collection_change(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.location_name {
+    {
         let mut inner_writer = scope.start_el("LocationName").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.location_name.as_str());
     }
-    if let Some(var_2) = &input.action {
+    {
         let mut inner_writer = scope.start_el("Action").finish();
-        inner_writer.data(var_2.as_str());
+        inner_writer.data(input.action.as_str());
     }
-    if let Some(var_3) = &input.cidr_list {
+    {
         let mut inner_writer = scope.start_el("CidrList").finish();
-        for list_item_4 in var_3 {
+        for list_item_1 in &input.cidr_list {
             {
                 let mut inner_writer = inner_writer.start_el("Cidr").finish();
-                inner_writer.data(list_item_4.as_str());
+                inner_writer.data(list_item_1.as_str());
             }
         }
     }

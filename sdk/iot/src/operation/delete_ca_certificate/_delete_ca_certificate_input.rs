@@ -28,6 +28,7 @@ pub struct DeleteCaCertificateInputBuilder {
 }
 impl DeleteCaCertificateInputBuilder {
     /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
+    /// This field is required.
     pub fn certificate_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_id = ::std::option::Option::Some(input.into());
         self

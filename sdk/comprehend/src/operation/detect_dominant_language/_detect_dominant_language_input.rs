@@ -34,6 +34,7 @@ pub struct DetectDominantLanguageInputBuilder {
 }
 impl DetectDominantLanguageInputBuilder {
     /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
+    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self

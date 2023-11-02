@@ -8,13 +8,14 @@
 pub struct DeterminingPolicyItem {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-    pub policy_id: ::std::option::Option<::std::string::String>,
+    pub policy_id: ::std::string::String,
 }
 impl DeterminingPolicyItem {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
-        self.policy_id.as_deref()
+    pub fn policy_id(&self) -> &str {
+        use std::ops::Deref;
+        self.policy_id.deref()
     }
 }
 impl DeterminingPolicyItem {
@@ -33,6 +34,7 @@ pub struct DeterminingPolicyItemBuilder {
 impl DeterminingPolicyItemBuilder {
     /// <p>The Id of a policy that determined to an authorization decision.</p>
     /// <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
+    /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
@@ -49,7 +51,16 @@ impl DeterminingPolicyItemBuilder {
         &self.policy_id
     }
     /// Consumes the builder and constructs a [`DeterminingPolicyItem`](crate::types::DeterminingPolicyItem).
-    pub fn build(self) -> crate::types::DeterminingPolicyItem {
-        crate::types::DeterminingPolicyItem { policy_id: self.policy_id }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`policy_id`](crate::types::builders::DeterminingPolicyItemBuilder::policy_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::DeterminingPolicyItem, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DeterminingPolicyItem {
+            policy_id: self.policy_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "policy_id",
+                    "policy_id was not specified but it is required when building DeterminingPolicyItem",
+                )
+            })?,
+        })
     }
 }

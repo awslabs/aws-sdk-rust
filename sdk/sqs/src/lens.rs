@@ -22,10 +22,7 @@ pub(crate) fn reflens_list_queues_output_next_token(
 pub(crate) fn lens_list_dead_letter_source_queues_output_queue_urls(
     input: crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
-    let input = match input.queue_urls {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
+    let input = input.queue_urls;
     ::std::option::Option::Some(input)
 }
 

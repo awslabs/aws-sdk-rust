@@ -63,6 +63,7 @@ pub struct UpdateThingInputBuilder {
 impl UpdateThingInputBuilder {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+    /// This field is required.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
         self

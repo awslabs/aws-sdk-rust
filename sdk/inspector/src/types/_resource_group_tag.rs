@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceGroupTag {
     /// <p>A tag key.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>The value assigned to a tag key.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceGroupTag {
     /// <p>A tag key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>The value assigned to a tag key.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct ResourceGroupTagBuilder {
 }
 impl ResourceGroupTagBuilder {
     /// <p>A tag key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl ResourceGroupTagBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`ResourceGroupTag`](crate::types::ResourceGroupTag).
-    pub fn build(self) -> crate::types::ResourceGroupTag {
-        crate::types::ResourceGroupTag {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::ResourceGroupTagBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceGroupTag, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ResourceGroupTag {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building ResourceGroupTag",
+                )
+            })?,
             value: self.value,
-        }
+        })
     }
 }

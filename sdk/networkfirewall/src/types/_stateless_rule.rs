@@ -9,7 +9,7 @@ pub struct StatelessRule {
     /// <p>Indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a rule group starting with the lowest priority setting. You must ensure that the priority settings are unique for the rule group. </p>
     /// <p>Each stateless rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object, and each <code>StatelessRulesAndCustomActions</code> contains exactly one <code>StatelessRules</code> object. To ensure unique priority settings for your rule groups, set unique priorities for the stateless rules that you define inside any single <code>StatelessRules</code> object.</p>
     /// <p>You can change the priority settings of your rules at any time. To make it easier to insert rules later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
-    pub priority: ::std::option::Option<i32>,
+    pub priority: i32,
 }
 impl StatelessRule {
     /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. </p>
@@ -19,7 +19,7 @@ impl StatelessRule {
     /// <p>Indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a rule group starting with the lowest priority setting. You must ensure that the priority settings are unique for the rule group. </p>
     /// <p>Each stateless rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object, and each <code>StatelessRulesAndCustomActions</code> contains exactly one <code>StatelessRules</code> object. To ensure unique priority settings for your rule groups, set unique priorities for the stateless rules that you define inside any single <code>StatelessRules</code> object.</p>
     /// <p>You can change the priority settings of your rules at any time. To make it easier to insert rules later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
-    pub fn priority(&self) -> ::std::option::Option<i32> {
+    pub fn priority(&self) -> i32 {
         self.priority
     }
 }
@@ -39,6 +39,7 @@ pub struct StatelessRuleBuilder {
 }
 impl StatelessRuleBuilder {
     /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. </p>
+    /// This field is required.
     pub fn rule_definition(mut self, input: crate::types::RuleDefinition) -> Self {
         self.rule_definition = ::std::option::Option::Some(input);
         self
@@ -55,6 +56,7 @@ impl StatelessRuleBuilder {
     /// <p>Indicates the order in which to run this rule relative to all of the rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a rule group starting with the lowest priority setting. You must ensure that the priority settings are unique for the rule group. </p>
     /// <p>Each stateless rule group uses exactly one <code>StatelessRulesAndCustomActions</code> object, and each <code>StatelessRulesAndCustomActions</code> contains exactly one <code>StatelessRules</code> object. To ensure unique priority settings for your rule groups, set unique priorities for the stateless rules that you define inside any single <code>StatelessRules</code> object.</p>
     /// <p>You can change the priority settings of your rules at any time. To make it easier to insert rules later, number them so there's a wide range in between, for example use 100, 200, and so on. </p>
+    /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
@@ -73,10 +75,17 @@ impl StatelessRuleBuilder {
         &self.priority
     }
     /// Consumes the builder and constructs a [`StatelessRule`](crate::types::StatelessRule).
-    pub fn build(self) -> crate::types::StatelessRule {
-        crate::types::StatelessRule {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`priority`](crate::types::builders::StatelessRuleBuilder::priority)
+    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRule, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::StatelessRule {
             rule_definition: self.rule_definition,
-            priority: self.priority,
-        }
+            priority: self.priority.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "priority",
+                    "priority was not specified but it is required when building StatelessRule",
+                )
+            })?,
+        })
     }
 }

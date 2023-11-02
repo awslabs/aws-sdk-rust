@@ -11,8 +11,10 @@ pub struct GetMigrationsOutput {
 }
 impl GetMigrationsOutput {
     /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
-    pub fn migration_summaries(&self) -> ::std::option::Option<&[crate::types::MigrationSummary]> {
-        self.migration_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.migration_summaries.is_none()`.
+    pub fn migration_summaries(&self) -> &[crate::types::MigrationSummary] {
+        self.migration_summaries.as_deref().unwrap_or_default()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

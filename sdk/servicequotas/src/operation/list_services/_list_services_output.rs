@@ -15,8 +15,10 @@ impl ListServicesOutput {
         self.next_token.as_deref()
     }
     /// <p>The list of the Amazon Web Service names and service codes.</p>
-    pub fn services(&self) -> ::std::option::Option<&[crate::types::ServiceInfo]> {
-        self.services.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
+    pub fn services(&self) -> &[crate::types::ServiceInfo] {
+        self.services.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for ListServicesOutput {

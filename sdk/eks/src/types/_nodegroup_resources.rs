@@ -11,8 +11,10 @@ pub struct NodegroupResources {
 }
 impl NodegroupResources {
     /// <p>The Auto Scaling groups associated with the node group.</p>
-    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[crate::types::AutoScalingGroup]> {
-        self.auto_scaling_groups.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
+    pub fn auto_scaling_groups(&self) -> &[crate::types::AutoScalingGroup] {
+        self.auto_scaling_groups.as_deref().unwrap_or_default()
     }
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
     pub fn remote_access_security_group(&self) -> ::std::option::Option<&str> {

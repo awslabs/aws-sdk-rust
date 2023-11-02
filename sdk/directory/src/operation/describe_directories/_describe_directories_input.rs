@@ -15,8 +15,10 @@ pub struct DescribeDirectoriesInput {
 impl DescribeDirectoriesInput {
     /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn directory_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.directory_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_ids.is_none()`.
+    pub fn directory_ids(&self) -> &[::std::string::String] {
+        self.directory_ids.as_deref().unwrap_or_default()
     }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

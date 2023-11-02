@@ -42,6 +42,7 @@ pub struct SendCustomVerificationEmailInputBuilder {
 }
 impl SendCustomVerificationEmailInputBuilder {
     /// <p>The email address to verify.</p>
+    /// This field is required.
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email_address = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl SendCustomVerificationEmailInputBuilder {
         &self.email_address
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self

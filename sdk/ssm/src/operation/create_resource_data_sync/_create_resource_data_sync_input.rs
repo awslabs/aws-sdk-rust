@@ -48,6 +48,7 @@ pub struct CreateResourceDataSyncInputBuilder {
 }
 impl CreateResourceDataSyncInputBuilder {
     /// <p>A name for the configuration.</p>
+    /// This field is required.
     pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_name = ::std::option::Option::Some(input.into());
         self

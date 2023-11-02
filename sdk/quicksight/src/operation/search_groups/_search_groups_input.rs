@@ -32,8 +32,10 @@ impl SearchGroupsInput {
         self.namespace.as_deref()
     }
     /// <p>The structure for the search filters that you want to apply to your search.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::GroupSearchFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::GroupSearchFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl SearchGroupsInput {
@@ -55,6 +57,7 @@ pub struct SearchGroupsInputBuilder {
 }
 impl SearchGroupsInputBuilder {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +100,7 @@ impl SearchGroupsInputBuilder {
         &self.max_results
     }
     /// <p>The namespace that you want to search.</p>
+    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self

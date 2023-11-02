@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
-    pub level: ::std::option::Option<crate::types::LoggingLevel>,
+    pub level: crate::types::LoggingLevel,
 }
 impl LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
-    pub fn level(&self) -> ::std::option::Option<&crate::types::LoggingLevel> {
-        self.level.as_ref()
+    pub fn level(&self) -> &crate::types::LoggingLevel {
+        &self.level
     }
 }
 impl LoggingOptions {
@@ -28,6 +28,7 @@ pub struct LoggingOptionsBuilder {
 }
 impl LoggingOptionsBuilder {
     /// <p>The IoT SiteWise logging verbosity level.</p>
+    /// This field is required.
     pub fn level(mut self, input: crate::types::LoggingLevel) -> Self {
         self.level = ::std::option::Option::Some(input);
         self
@@ -42,7 +43,16 @@ impl LoggingOptionsBuilder {
         &self.level
     }
     /// Consumes the builder and constructs a [`LoggingOptions`](crate::types::LoggingOptions).
-    pub fn build(self) -> crate::types::LoggingOptions {
-        crate::types::LoggingOptions { level: self.level }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`level`](crate::types::builders::LoggingOptionsBuilder::level)
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingOptions, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::LoggingOptions {
+            level: self.level.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "level",
+                    "level was not specified but it is required when building LoggingOptions",
+                )
+            })?,
+        })
     }
 }

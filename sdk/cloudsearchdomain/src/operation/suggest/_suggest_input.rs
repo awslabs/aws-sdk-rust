@@ -42,6 +42,7 @@ pub struct SuggestInputBuilder {
 }
 impl SuggestInputBuilder {
     /// <p>Specifies the string for which you want to get suggestions.</p>
+    /// This field is required.
     pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +57,7 @@ impl SuggestInputBuilder {
         &self.query
     }
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
+    /// This field is required.
     pub fn suggester(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suggester = ::std::option::Option::Some(input.into());
         self

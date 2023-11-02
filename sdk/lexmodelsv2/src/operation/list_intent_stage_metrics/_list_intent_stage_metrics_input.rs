@@ -41,24 +41,32 @@ impl ListIntentStageMetricsInput {
         self.end_date_time.as_ref()
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageMetric]> {
-        self.metrics.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::AnalyticsIntentStageMetric] {
+        self.metrics.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn bin_by(&self) -> ::std::option::Option<&[crate::types::AnalyticsBinBySpecification]> {
-        self.bin_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bin_by.is_none()`.
+    pub fn bin_by(&self) -> &[crate::types::AnalyticsBinBySpecification] {
+        self.bin_by.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
     /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
     /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
     /// </ul>
-    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageGroupBySpecification]> {
-        self.group_by.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
+    pub fn group_by(&self) -> &[crate::types::AnalyticsIntentStageGroupBySpecification] {
+        self.group_by.as_deref().unwrap_or_default()
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::AnalyticsIntentStageFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::AnalyticsIntentStageFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -93,6 +101,7 @@ pub struct ListIntentStageMetricsInputBuilder {
 }
 impl ListIntentStageMetricsInputBuilder {
     /// <p>The identifier for the bot for which you want to retrieve intent stage metrics.</p>
+    /// This field is required.
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
         self
@@ -107,6 +116,7 @@ impl ListIntentStageMetricsInputBuilder {
         &self.bot_id
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent stage metrics.</p>
+    /// This field is required.
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
         self
@@ -121,6 +131,7 @@ impl ListIntentStageMetricsInputBuilder {
         &self.start_date_time
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent stage metrics.</p>
+    /// This field is required.
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
         self

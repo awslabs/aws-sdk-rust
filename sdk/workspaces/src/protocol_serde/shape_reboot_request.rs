@@ -3,8 +3,8 @@ pub fn ser_reboot_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RebootRequest,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.workspace_id {
-        object.key("WorkspaceId").string(var_1.as_str());
+    {
+        object.key("WorkspaceId").string(input.workspace_id.as_str());
     }
     Ok(())
 }

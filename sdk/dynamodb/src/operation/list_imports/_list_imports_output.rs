@@ -11,8 +11,10 @@ pub struct ListImportsOutput {
 }
 impl ListImportsOutput {
     /// <p> A list of <code>ImportSummary</code> objects. </p>
-    pub fn import_summary_list(&self) -> ::std::option::Option<&[crate::types::ImportSummary]> {
-        self.import_summary_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_summary_list.is_none()`.
+    pub fn import_summary_list(&self) -> &[crate::types::ImportSummary] {
+        self.import_summary_list.as_deref().unwrap_or_default()
     }
     /// <p> If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListImports</code> again, with <code>NextToken</code> set to this value. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct GetIpamPoolCidrsOutput {
 }
 impl GetIpamPoolCidrsOutput {
     /// <p>Information about the CIDRs provisioned to an IPAM pool.</p>
-    pub fn ipam_pool_cidrs(&self) -> ::std::option::Option<&[crate::types::IpamPoolCidr]> {
-        self.ipam_pool_cidrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_pool_cidrs.is_none()`.
+    pub fn ipam_pool_cidrs(&self) -> &[crate::types::IpamPoolCidr] {
+        self.ipam_pool_cidrs.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

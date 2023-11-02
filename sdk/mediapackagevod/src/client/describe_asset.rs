@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAsset`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_id): The ID of an MediaPackage VOD Asset resource.
+    ///   - [`id(impl Into<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_asset::builders::DescribeAssetFluentBuilder::set_id):<br>required: **true**<br>The ID of an MediaPackage VOD Asset resource.<br>
     /// - On success, responds with [`DescribeAssetOutput`](crate::operation::describe_asset::DescribeAssetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::arn): The ARN of the Asset.
     ///   - [`created_at(Option<String>)`](crate::operation::describe_asset::DescribeAssetOutput::created_at): The time the Asset was initially submitted for Ingest.

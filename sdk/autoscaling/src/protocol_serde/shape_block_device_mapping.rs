@@ -27,6 +27,7 @@ pub fn ser_block_device_mapping(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_block_device_mapping(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::BlockDeviceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -88,5 +89,5 @@ pub fn de_block_device_mapping(
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::block_device_mapping_correct_errors(builder).build())
 }

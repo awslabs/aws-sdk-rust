@@ -48,6 +48,7 @@ impl DeleteUserInputBuilder {
         &self.user_arn
     }
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
+    /// This field is required.
     pub fn enrollment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enrollment_id = ::std::option::Option::Some(input.into());
         self

@@ -27,6 +27,7 @@ pub struct CreateCrossAccountAuthorizationInputBuilder {
 }
 impl CreateCrossAccountAuthorizationInputBuilder {
     /// <p>The cross-account authorization.</p>
+    /// This field is required.
     pub fn cross_account_authorization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cross_account_authorization = ::std::option::Option::Some(input.into());
         self

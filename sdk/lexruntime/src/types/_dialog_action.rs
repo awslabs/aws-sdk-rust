@@ -12,7 +12,7 @@ pub struct DialogAction {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub r#type: ::std::option::Option<crate::types::DialogActionType>,
+    pub r#type: crate::types::DialogActionType,
     /// <p>The name of the intent.</p>
     pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Map of the slots that have been gathered and their values. </p>
@@ -45,8 +45,8 @@ impl DialogAction {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DialogActionType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::DialogActionType {
+        &self.r#type
     }
     /// <p>The name of the intent.</p>
     pub fn intent_name(&self) -> ::std::option::Option<&str> {
@@ -124,6 +124,7 @@ impl DialogActionBuilder {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -272,16 +273,23 @@ impl DialogActionBuilder {
         &self.message_format
     }
     /// Consumes the builder and constructs a [`DialogAction`](crate::types::DialogAction).
-    pub fn build(self) -> crate::types::DialogAction {
-        crate::types::DialogAction {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::DialogActionBuilder::r#type)
+    pub fn build(self) -> ::std::result::Result<crate::types::DialogAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::DialogAction {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building DialogAction",
+                )
+            })?,
             intent_name: self.intent_name,
             slots: self.slots,
             slot_to_elicit: self.slot_to_elicit,
             fulfillment_state: self.fulfillment_state,
             message: self.message,
             message_format: self.message_format,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for DialogActionBuilder {

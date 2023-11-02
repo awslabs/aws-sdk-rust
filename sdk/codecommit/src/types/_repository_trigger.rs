@@ -7,9 +7,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryTrigger {
     /// <p>The name of the trigger.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-    pub destination_arn: ::std::option::Option<::std::string::String>,
+    pub destination_arn: ::std::string::String,
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     pub custom_data: ::std::option::Option<::std::string::String>,
     /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
@@ -19,16 +19,18 @@ pub struct RepositoryTrigger {
     /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
+    pub events: ::std::vec::Vec<crate::types::RepositoryTriggerEventEnum>,
 }
 impl RepositoryTrigger {
     /// <p>The name of the trigger.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
-        self.destination_arn.as_deref()
+    pub fn destination_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.destination_arn.deref()
     }
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     pub fn custom_data(&self) -> ::std::option::Option<&str> {
@@ -37,14 +39,17 @@ impl RepositoryTrigger {
     /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
     /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
-    pub fn branches(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.branches.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.branches.is_none()`.
+    pub fn branches(&self) -> &[::std::string::String] {
+        self.branches.as_deref().unwrap_or_default()
     }
     /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
-    pub fn events(&self) -> ::std::option::Option<&[crate::types::RepositoryTriggerEventEnum]> {
-        self.events.as_deref()
+    pub fn events(&self) -> &[crate::types::RepositoryTriggerEventEnum] {
+        use std::ops::Deref;
+        self.events.deref()
     }
 }
 impl RepositoryTrigger {
@@ -66,6 +71,7 @@ pub struct RepositoryTriggerBuilder {
 }
 impl RepositoryTriggerBuilder {
     /// <p>The name of the trigger.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -80,6 +86,7 @@ impl RepositoryTriggerBuilder {
         &self.name
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
+    /// This field is required.
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_arn = ::std::option::Option::Some(input.into());
         self
@@ -160,13 +167,32 @@ impl RepositoryTriggerBuilder {
         &self.events
     }
     /// Consumes the builder and constructs a [`RepositoryTrigger`](crate::types::RepositoryTrigger).
-    pub fn build(self) -> crate::types::RepositoryTrigger {
-        crate::types::RepositoryTrigger {
-            name: self.name,
-            destination_arn: self.destination_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::RepositoryTriggerBuilder::name)
+    /// - [`destination_arn`](crate::types::builders::RepositoryTriggerBuilder::destination_arn)
+    /// - [`events`](crate::types::builders::RepositoryTriggerBuilder::events)
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryTrigger, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RepositoryTrigger {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building RepositoryTrigger",
+                )
+            })?,
+            destination_arn: self.destination_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "destination_arn",
+                    "destination_arn was not specified but it is required when building RepositoryTrigger",
+                )
+            })?,
             custom_data: self.custom_data,
             branches: self.branches,
-            events: self.events,
-        }
+            events: self.events.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "events",
+                    "events was not specified but it is required when building RepositoryTrigger",
+                )
+            })?,
+        })
     }
 }

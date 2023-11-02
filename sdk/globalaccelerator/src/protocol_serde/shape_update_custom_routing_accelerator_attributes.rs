@@ -36,8 +36,8 @@ pub fn de_update_custom_routing_accelerator_attributes_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "AccessDeniedException" => crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::AccessDeniedException({
@@ -52,8 +52,8 @@ pub fn de_update_custom_routing_accelerator_attributes_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InternalServiceErrorException" => crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::InternalServiceErrorException({
@@ -68,8 +68,8 @@ pub fn de_update_custom_routing_accelerator_attributes_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "InvalidArgumentException" => crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::InvalidArgumentException({
@@ -84,8 +84,8 @@ pub fn de_update_custom_routing_accelerator_attributes_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError::generic(generic)

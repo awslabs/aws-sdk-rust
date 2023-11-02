@@ -8,7 +8,7 @@ pub struct SearchSessionsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::option::Option<::std::string::String>,
+    pub assistant_id: ::std::string::String,
     /// <p>The search expression to filter results.</p>
     pub search_expression: ::std::option::Option<crate::types::SearchExpression>,
 }
@@ -22,8 +22,9 @@ impl SearchSessionsInput {
         self.max_results
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
-        self.assistant_id.as_deref()
+    pub fn assistant_id(&self) -> &str {
+        use std::ops::Deref;
+        self.assistant_id.deref()
     }
     /// <p>The search expression to filter results.</p>
     pub fn search_expression(&self) -> ::std::option::Option<&crate::types::SearchExpression> {
@@ -76,6 +77,7 @@ impl SearchSessionsInputBuilder {
         &self.max_results
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// This field is required.
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl SearchSessionsInputBuilder {
         &self.assistant_id
     }
     /// <p>The search expression to filter results.</p>
+    /// This field is required.
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
         self.search_expression = ::std::option::Option::Some(input);
         self
@@ -104,13 +107,20 @@ impl SearchSessionsInputBuilder {
         &self.search_expression
     }
     /// Consumes the builder and constructs a [`SearchSessionsInput`](crate::operation::search_sessions::SearchSessionsInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`assistant_id`](crate::operation::search_sessions::builders::SearchSessionsInputBuilder::assistant_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_sessions::SearchSessionsInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            assistant_id: self.assistant_id,
+            assistant_id: self.assistant_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "assistant_id",
+                    "assistant_id was not specified but it is required when building SearchSessionsInput",
+                )
+            })?,
             search_expression: self.search_expression,
         })
     }

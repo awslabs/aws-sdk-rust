@@ -6,12 +6,12 @@
 pub struct AwsManagedRulesAcfpRuleSet {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
     /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
-    pub creation_path: ::std::option::Option<::std::string::String>,
+    pub creation_path: ::std::string::String,
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
-    pub registration_page_path: ::std::option::Option<::std::string::String>,
+    pub registration_page_path: ::std::string::String,
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
     pub request_inspection: ::std::option::Option<crate::types::RequestInspectionAcfp>,
     /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates. </p> <note>
@@ -25,15 +25,17 @@ pub struct AwsManagedRulesAcfpRuleSet {
 impl AwsManagedRulesAcfpRuleSet {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
     /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
-    pub fn creation_path(&self) -> ::std::option::Option<&str> {
-        self.creation_path.as_deref()
+    pub fn creation_path(&self) -> &str {
+        use std::ops::Deref;
+        self.creation_path.deref()
     }
     /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users. </p> <note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
-    pub fn registration_page_path(&self) -> ::std::option::Option<&str> {
-        self.registration_page_path.as_deref()
+    pub fn registration_page_path(&self) -> &str {
+        use std::ops::Deref;
+        self.registration_page_path.deref()
     }
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
     pub fn request_inspection(&self) -> ::std::option::Option<&crate::types::RequestInspectionAcfp> {
@@ -71,6 +73,7 @@ pub struct AwsManagedRulesAcfpRuleSetBuilder {
 impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
     /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>. </p>
+    /// This field is required.
     pub fn creation_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_path = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +93,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>. </p>
+    /// This field is required.
     pub fn registration_page_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registration_page_path = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +114,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         &self.registration_page_path
     }
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts. </p>
+    /// This field is required.
     pub fn request_inspection(mut self, input: crate::types::RequestInspectionAcfp) -> Self {
         self.request_inspection = ::std::option::Option::Some(input);
         self
@@ -161,13 +166,26 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         &self.enable_regex_in_path
     }
     /// Consumes the builder and constructs a [`AwsManagedRulesAcfpRuleSet`](crate::types::AwsManagedRulesAcfpRuleSet).
-    pub fn build(self) -> crate::types::AwsManagedRulesAcfpRuleSet {
-        crate::types::AwsManagedRulesAcfpRuleSet {
-            creation_path: self.creation_path,
-            registration_page_path: self.registration_page_path,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`creation_path`](crate::types::builders::AwsManagedRulesAcfpRuleSetBuilder::creation_path)
+    /// - [`registration_page_path`](crate::types::builders::AwsManagedRulesAcfpRuleSetBuilder::registration_page_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesAcfpRuleSet, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AwsManagedRulesAcfpRuleSet {
+            creation_path: self.creation_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_path",
+                    "creation_path was not specified but it is required when building AwsManagedRulesAcfpRuleSet",
+                )
+            })?,
+            registration_page_path: self.registration_page_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "registration_page_path",
+                    "registration_page_path was not specified but it is required when building AwsManagedRulesAcfpRuleSet",
+                )
+            })?,
             request_inspection: self.request_inspection,
             response_inspection: self.response_inspection,
             enable_regex_in_path: self.enable_regex_in_path.unwrap_or_default(),
-        }
+        })
     }
 }

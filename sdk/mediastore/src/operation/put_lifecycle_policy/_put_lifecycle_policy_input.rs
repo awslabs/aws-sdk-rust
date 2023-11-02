@@ -34,6 +34,7 @@ pub struct PutLifecyclePolicyInputBuilder {
 }
 impl PutLifecyclePolicyInputBuilder {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutLifecyclePolicyInputBuilder {
         &self.container_name
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
+    /// This field is required.
     pub fn lifecycle_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy = ::std::option::Option::Some(input.into());
         self

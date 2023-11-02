@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobThemeOverrideParameters {
     /// <p>The ID of the theme to apply overrides to.</p>
-    pub theme_id: ::std::option::Option<::std::string::String>,
+    pub theme_id: ::std::string::String,
     /// <p>A new name for the theme.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl AssetBundleImportJobThemeOverrideParameters {
     /// <p>The ID of the theme to apply overrides to.</p>
-    pub fn theme_id(&self) -> ::std::option::Option<&str> {
-        self.theme_id.as_deref()
+    pub fn theme_id(&self) -> &str {
+        use std::ops::Deref;
+        self.theme_id.deref()
     }
     /// <p>A new name for the theme.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +36,7 @@ pub struct AssetBundleImportJobThemeOverrideParametersBuilder {
 }
 impl AssetBundleImportJobThemeOverrideParametersBuilder {
     /// <p>The ID of the theme to apply overrides to.</p>
+    /// This field is required.
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,19 @@ impl AssetBundleImportJobThemeOverrideParametersBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobThemeOverrideParameters`](crate::types::AssetBundleImportJobThemeOverrideParameters).
-    pub fn build(self) -> crate::types::AssetBundleImportJobThemeOverrideParameters {
-        crate::types::AssetBundleImportJobThemeOverrideParameters {
-            theme_id: self.theme_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`theme_id`](crate::types::builders::AssetBundleImportJobThemeOverrideParametersBuilder::theme_id)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobThemeOverrideParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetBundleImportJobThemeOverrideParameters {
+            theme_id: self.theme_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "theme_id",
+                    "theme_id was not specified but it is required when building AssetBundleImportJobThemeOverrideParameters",
+                )
+            })?,
             name: self.name,
-        }
+        })
     }
 }

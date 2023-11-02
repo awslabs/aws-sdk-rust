@@ -3,8 +3,8 @@ pub fn ser_kx_deployment_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KxDeploymentConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.deployment_strategy {
-        object.key("deploymentStrategy").string(var_1.as_str());
+    {
+        object.key("deploymentStrategy").string(input.deployment_strategy.as_str());
     }
     Ok(())
 }

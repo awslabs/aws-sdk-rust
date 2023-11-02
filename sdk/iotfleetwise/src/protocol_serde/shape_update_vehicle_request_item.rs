@@ -3,27 +3,27 @@ pub fn ser_update_vehicle_request_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateVehicleRequestItem,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.vehicle_name {
-        object.key("vehicleName").string(var_1.as_str());
+    {
+        object.key("vehicleName").string(input.vehicle_name.as_str());
     }
-    if let Some(var_2) = &input.model_manifest_arn {
-        object.key("modelManifestArn").string(var_2.as_str());
+    if let Some(var_1) = &input.model_manifest_arn {
+        object.key("modelManifestArn").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.decoder_manifest_arn {
-        object.key("decoderManifestArn").string(var_3.as_str());
+    if let Some(var_2) = &input.decoder_manifest_arn {
+        object.key("decoderManifestArn").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.attributes {
+    if let Some(var_3) = &input.attributes {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("attributes").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_4 = object.key("attributes").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_5.finish();
+        object_4.finish();
     }
-    if let Some(var_8) = &input.attribute_update_mode {
-        object.key("attributeUpdateMode").string(var_8.as_str());
+    if let Some(var_7) = &input.attribute_update_mode {
+        object.key("attributeUpdateMode").string(var_7.as_str());
     }
     Ok(())
 }

@@ -27,6 +27,7 @@ pub struct DeleteFileSystemPolicyInputBuilder {
 }
 impl DeleteFileSystemPolicyInputBuilder {
     /// <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
+    /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self

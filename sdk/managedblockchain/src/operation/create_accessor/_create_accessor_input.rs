@@ -49,6 +49,7 @@ pub struct CreateAccessorInputBuilder {
 }
 impl CreateAccessorInputBuilder {
     /// <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +66,7 @@ impl CreateAccessorInputBuilder {
     /// <p>The type of accessor.</p> <note>
     /// <p>Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
+    /// This field is required.
     pub fn accessor_type(mut self, input: crate::types::AccessorType) -> Self {
         self.accessor_type = ::std::option::Option::Some(input);
         self

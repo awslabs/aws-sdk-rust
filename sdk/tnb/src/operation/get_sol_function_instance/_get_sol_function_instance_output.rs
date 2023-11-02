@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetSolFunctionInstanceOutput {
     /// <p>Network function instance ID.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>Network function instance ARN.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>Network instance ID.</p>
-    pub ns_instance_id: ::std::option::Option<::std::string::String>,
+    pub ns_instance_id: ::std::string::String,
     /// <p>Function package ID.</p>
-    pub vnf_pkg_id: ::std::option::Option<::std::string::String>,
+    pub vnf_pkg_id: ::std::string::String,
     /// <p>Function package descriptor ID.</p>
-    pub vnfd_id: ::std::option::Option<::std::string::String>,
+    pub vnfd_id: ::std::string::String,
     /// <p>Network function provider.</p>
     pub vnf_provider: ::std::option::Option<::std::string::String>,
     /// <p>Network function product name.</p>
@@ -20,7 +20,7 @@ pub struct GetSolFunctionInstanceOutput {
     /// <p>Function package descriptor version.</p>
     pub vnfd_version: ::std::option::Option<::std::string::String>,
     /// <p>Network function instantiation state.</p>
-    pub instantiation_state: ::std::option::Option<crate::types::VnfInstantiationState>,
+    pub instantiation_state: crate::types::VnfInstantiationState,
     /// <p>Information about the network function.</p>
     /// <p>A network function instance is a function in a function package .</p>
     pub instantiated_vnf_info: ::std::option::Option<crate::types::GetSolVnfInfo>,
@@ -33,24 +33,29 @@ pub struct GetSolFunctionInstanceOutput {
 }
 impl GetSolFunctionInstanceOutput {
     /// <p>Network function instance ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>Network function instance ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(&self) -> ::std::option::Option<&str> {
-        self.ns_instance_id.as_deref()
+    pub fn ns_instance_id(&self) -> &str {
+        use std::ops::Deref;
+        self.ns_instance_id.deref()
     }
     /// <p>Function package ID.</p>
-    pub fn vnf_pkg_id(&self) -> ::std::option::Option<&str> {
-        self.vnf_pkg_id.as_deref()
+    pub fn vnf_pkg_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vnf_pkg_id.deref()
     }
     /// <p>Function package descriptor ID.</p>
-    pub fn vnfd_id(&self) -> ::std::option::Option<&str> {
-        self.vnfd_id.as_deref()
+    pub fn vnfd_id(&self) -> &str {
+        use std::ops::Deref;
+        self.vnfd_id.deref()
     }
     /// <p>Network function provider.</p>
     pub fn vnf_provider(&self) -> ::std::option::Option<&str> {
@@ -65,8 +70,8 @@ impl GetSolFunctionInstanceOutput {
         self.vnfd_version.as_deref()
     }
     /// <p>Network function instantiation state.</p>
-    pub fn instantiation_state(&self) -> ::std::option::Option<&crate::types::VnfInstantiationState> {
-        self.instantiation_state.as_ref()
+    pub fn instantiation_state(&self) -> &crate::types::VnfInstantiationState {
+        &self.instantiation_state
     }
     /// <p>Information about the network function.</p>
     /// <p>A network function instance is a function in a function package .</p>
@@ -134,6 +139,7 @@ pub struct GetSolFunctionInstanceOutputBuilder {
 }
 impl GetSolFunctionInstanceOutputBuilder {
     /// <p>Network function instance ID.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -148,6 +154,7 @@ impl GetSolFunctionInstanceOutputBuilder {
         &self.id
     }
     /// <p>Network function instance ARN.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -162,6 +169,7 @@ impl GetSolFunctionInstanceOutputBuilder {
         &self.arn
     }
     /// <p>Network instance ID.</p>
+    /// This field is required.
     pub fn ns_instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_instance_id = ::std::option::Option::Some(input.into());
         self
@@ -176,6 +184,7 @@ impl GetSolFunctionInstanceOutputBuilder {
         &self.ns_instance_id
     }
     /// <p>Function package ID.</p>
+    /// This field is required.
     pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_pkg_id = ::std::option::Option::Some(input.into());
         self
@@ -190,6 +199,7 @@ impl GetSolFunctionInstanceOutputBuilder {
         &self.vnf_pkg_id
     }
     /// <p>Function package descriptor ID.</p>
+    /// This field is required.
     pub fn vnfd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_id = ::std::option::Option::Some(input.into());
         self
@@ -246,6 +256,7 @@ impl GetSolFunctionInstanceOutputBuilder {
         &self.vnfd_version
     }
     /// <p>Network function instantiation state.</p>
+    /// This field is required.
     pub fn instantiation_state(mut self, input: crate::types::VnfInstantiationState) -> Self {
         self.instantiation_state = ::std::option::Option::Some(input);
         self
@@ -278,6 +289,7 @@ impl GetSolFunctionInstanceOutputBuilder {
     }
     /// <p>The metadata of a network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
+    /// This field is required.
     pub fn metadata(mut self, input: crate::types::GetSolFunctionInstanceMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
         self
@@ -323,22 +335,64 @@ impl GetSolFunctionInstanceOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetSolFunctionInstanceOutput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput).
-    pub fn build(self) -> crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
-        crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
-            id: self.id,
-            arn: self.arn,
-            ns_instance_id: self.ns_instance_id,
-            vnf_pkg_id: self.vnf_pkg_id,
-            vnfd_id: self.vnfd_id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::id)
+    /// - [`arn`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::arn)
+    /// - [`ns_instance_id`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::ns_instance_id)
+    /// - [`vnf_pkg_id`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::vnf_pkg_id)
+    /// - [`vnfd_id`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::vnfd_id)
+    /// - [`instantiation_state`](crate::operation::get_sol_function_instance::builders::GetSolFunctionInstanceOutputBuilder::instantiation_state)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetSolFunctionInstanceOutput",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetSolFunctionInstanceOutput",
+                )
+            })?,
+            ns_instance_id: self.ns_instance_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "ns_instance_id",
+                    "ns_instance_id was not specified but it is required when building GetSolFunctionInstanceOutput",
+                )
+            })?,
+            vnf_pkg_id: self.vnf_pkg_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vnf_pkg_id",
+                    "vnf_pkg_id was not specified but it is required when building GetSolFunctionInstanceOutput",
+                )
+            })?,
+            vnfd_id: self.vnfd_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "vnfd_id",
+                    "vnfd_id was not specified but it is required when building GetSolFunctionInstanceOutput",
+                )
+            })?,
             vnf_provider: self.vnf_provider,
             vnf_product_name: self.vnf_product_name,
             vnfd_version: self.vnfd_version,
-            instantiation_state: self.instantiation_state,
+            instantiation_state: self.instantiation_state.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instantiation_state",
+                    "instantiation_state was not specified but it is required when building GetSolFunctionInstanceOutput",
+                )
+            })?,
             instantiated_vnf_info: self.instantiated_vnf_info,
             metadata: self.metadata,
             tags: self.tags,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetSolFunctionInstanceOutputBuilder {

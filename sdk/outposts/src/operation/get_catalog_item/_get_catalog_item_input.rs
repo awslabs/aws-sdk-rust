@@ -27,6 +27,7 @@ pub struct GetCatalogItemInputBuilder {
 }
 impl GetCatalogItemInputBuilder {
     /// <p>The ID of the catalog item.</p>
+    /// This field is required.
     pub fn catalog_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_item_id = ::std::option::Option::Some(input.into());
         self

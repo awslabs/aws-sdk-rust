@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaInsightsPipelineConfigurationElement {
     /// <p>The element type.</p>
-    pub r#type: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
+    pub r#type: crate::types::MediaInsightsPipelineConfigurationElementType,
     /// <p>The analytics configuration settings for transcribing audio in a media insights pipeline configuration element.</p>
     pub amazon_transcribe_call_analytics_processor_configuration:
         ::std::option::Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
@@ -28,8 +28,8 @@ pub struct MediaInsightsPipelineConfigurationElement {
 }
 impl MediaInsightsPipelineConfigurationElement {
     /// <p>The element type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MediaInsightsPipelineConfigurationElementType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::MediaInsightsPipelineConfigurationElementType {
+        &self.r#type
     }
     /// <p>The analytics configuration settings for transcribing audio in a media insights pipeline configuration element.</p>
     pub fn amazon_transcribe_call_analytics_processor_configuration(
@@ -95,6 +95,7 @@ pub struct MediaInsightsPipelineConfigurationElementBuilder {
 }
 impl MediaInsightsPipelineConfigurationElementBuilder {
     /// <p>The element type.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::MediaInsightsPipelineConfigurationElementType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -252,9 +253,18 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         &self.voice_enhancement_sink_configuration
     }
     /// Consumes the builder and constructs a [`MediaInsightsPipelineConfigurationElement`](crate::types::MediaInsightsPipelineConfigurationElement).
-    pub fn build(self) -> crate::types::MediaInsightsPipelineConfigurationElement {
-        crate::types::MediaInsightsPipelineConfigurationElement {
-            r#type: self.r#type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::MediaInsightsPipelineConfigurationElementBuilder::r#type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::MediaInsightsPipelineConfigurationElement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::MediaInsightsPipelineConfigurationElement {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building MediaInsightsPipelineConfigurationElement",
+                )
+            })?,
             amazon_transcribe_call_analytics_processor_configuration: self.amazon_transcribe_call_analytics_processor_configuration,
             amazon_transcribe_processor_configuration: self.amazon_transcribe_processor_configuration,
             kinesis_data_stream_sink_configuration: self.kinesis_data_stream_sink_configuration,
@@ -264,6 +274,6 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
             sqs_queue_sink_configuration: self.sqs_queue_sink_configuration,
             sns_topic_sink_configuration: self.sns_topic_sink_configuration,
             voice_enhancement_sink_configuration: self.voice_enhancement_sink_configuration,
-        }
+        })
     }
 }

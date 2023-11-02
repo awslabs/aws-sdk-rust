@@ -65,6 +65,7 @@ pub struct UpdateInstanceMetadataOptionsInputBuilder {
 }
 impl UpdateInstanceMetadataOptionsInputBuilder {
     /// <p>The name of the instance for which to update metadata parameters.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

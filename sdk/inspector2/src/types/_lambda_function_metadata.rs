@@ -19,8 +19,10 @@ impl LambdaFunctionMetadata {
         self.function_tags.as_ref()
     }
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
-    pub fn layers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.layers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layers.is_none()`.
+    pub fn layers(&self) -> &[::std::string::String] {
+        self.layers.as_deref().unwrap_or_default()
     }
     /// <p>The name of a function.</p>
     pub fn function_name(&self) -> ::std::option::Option<&str> {

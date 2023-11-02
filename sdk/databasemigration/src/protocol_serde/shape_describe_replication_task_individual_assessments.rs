@@ -38,8 +38,8 @@ pub fn de_describe_replication_task_individual_assessments_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsError::generic(generic)

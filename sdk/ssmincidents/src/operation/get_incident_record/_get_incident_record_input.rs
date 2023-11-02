@@ -4,12 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIncidentRecordInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
 }
 impl GetIncidentRecordInput {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
 }
 impl GetIncidentRecordInput {
@@ -27,6 +28,7 @@ pub struct GetIncidentRecordInputBuilder {
 }
 impl GetIncidentRecordInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -41,9 +43,18 @@ impl GetIncidentRecordInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetIncidentRecordInput`](crate::operation::get_incident_record::GetIncidentRecordInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::operation::get_incident_record::builders::GetIncidentRecordInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_incident_record::GetIncidentRecordInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_incident_record::GetIncidentRecordInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::get_incident_record::GetIncidentRecordInput {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building GetIncidentRecordInput",
+                )
+            })?,
+        })
     }
 }

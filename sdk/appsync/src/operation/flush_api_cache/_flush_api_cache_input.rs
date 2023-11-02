@@ -28,6 +28,7 @@ pub struct FlushApiCacheInputBuilder {
 }
 impl FlushApiCacheInputBuilder {
     /// <p>The API ID.</p>
+    /// This field is required.
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
         self

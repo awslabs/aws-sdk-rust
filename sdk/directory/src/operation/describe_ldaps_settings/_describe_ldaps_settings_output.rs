@@ -11,8 +11,10 @@ pub struct DescribeLdapsSettingsOutput {
 }
 impl DescribeLdapsSettingsOutput {
     /// <p>Information about LDAP security for the specified directory, including status of enablement, state last updated date time, and the reason for the state.</p>
-    pub fn ldaps_settings_info(&self) -> ::std::option::Option<&[crate::types::LdapsSettingInfo]> {
-        self.ldaps_settings_info.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ldaps_settings_info.is_none()`.
+    pub fn ldaps_settings_info(&self) -> &[crate::types::LdapsSettingInfo] {
+        self.ldaps_settings_info.as_deref().unwrap_or_default()
     }
     /// <p>The next token used to retrieve the LDAPS settings if the number of setting types exceeds page limit and there is another page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

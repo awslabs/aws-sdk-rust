@@ -78,7 +78,7 @@ pub fn de_import_hub_content_http_response(
         output = crate::protocol_serde::shape_import_hub_content::de_import_hub_content(_response_body, output)
             .map_err(crate::operation::import_hub_content::ImportHubContentError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::import_hub_content_output_correct_errors(output).build()
     })
 }
 

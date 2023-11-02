@@ -27,6 +27,7 @@ pub struct DescribeTimeToLiveInputBuilder {
 }
 impl DescribeTimeToLiveInputBuilder {
     /// <p>The name of the table to be described.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self

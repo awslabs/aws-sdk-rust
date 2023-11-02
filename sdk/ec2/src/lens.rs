@@ -1239,6 +1239,16 @@ pub(crate) fn reflens_get_network_insights_access_scope_analysis_findings_output
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_security_groups_for_vpc_output_next_token(
+    input: &crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_spot_placement_scores_output_next_token(
     input: &crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2593,6 +2603,16 @@ pub(crate) fn lens_get_network_insights_access_scope_analysis_findings_output_an
     input: crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessScopeAnalysisFinding>> {
     let input = match input.analysis_findings {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_security_groups_for_vpc_output_security_group_for_vpcs(
+    input: crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupForVpc>> {
+    let input = match input.security_group_for_vpcs {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

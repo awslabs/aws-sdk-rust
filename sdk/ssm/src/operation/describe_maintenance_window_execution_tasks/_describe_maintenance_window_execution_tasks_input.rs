@@ -18,8 +18,10 @@ impl DescribeMaintenanceWindowExecutionTasksInput {
         self.window_execution_id.as_deref()
     }
     /// <p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowFilter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::MaintenanceWindowFilter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -48,6 +50,7 @@ pub struct DescribeMaintenanceWindowExecutionTasksInputBuilder {
 }
 impl DescribeMaintenanceWindowExecutionTasksInputBuilder {
     /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
+    /// This field is required.
     pub fn window_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.window_execution_id = ::std::option::Option::Some(input.into());
         self

@@ -3,11 +3,11 @@ pub fn ser_image_file(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageFile,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.data {
-        object.key("data").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+    {
+        object.key("data").string_unchecked(&::aws_smithy_types::base64::encode(&input.data));
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }

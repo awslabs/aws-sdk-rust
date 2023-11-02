@@ -47,13 +47,13 @@ where
 }
 
 pub fn ser_vector_enrichment_job_data_source_config_input(
-    object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VectorEnrichmentJobDataSourceConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::types::VectorEnrichmentJobDataSourceConfigInput::S3Data(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_3.key("S3Data").start_object();
+            let mut object_1 = object_2.key("S3Data").start_object();
             crate::protocol_serde::shape_vector_enrichment_job_s3_data::ser_vector_enrichment_job_s3_data(&mut object_1, inner)?;
             object_1.finish();
         }

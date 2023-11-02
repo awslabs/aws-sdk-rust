@@ -114,8 +114,10 @@ impl CreateDeploymentJobOutput {
         self.status.as_ref()
     }
     /// <p>The deployment application configuration.</p>
-    pub fn deployment_application_configs(&self) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
-        self.deployment_application_configs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_application_configs.is_none()`.
+    pub fn deployment_application_configs(&self) -> &[crate::types::DeploymentApplicationConfig] {
+        self.deployment_application_configs.as_deref().unwrap_or_default()
     }
     /// <p>The failure reason of the deployment job if it failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {

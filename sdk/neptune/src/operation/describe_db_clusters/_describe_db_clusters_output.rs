@@ -15,8 +15,10 @@ impl DescribeDbClustersOutput {
         self.marker.as_deref()
     }
     /// <p>Contains a list of DB clusters for the user.</p>
-    pub fn db_clusters(&self) -> ::std::option::Option<&[crate::types::DbCluster]> {
-        self.db_clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_clusters.is_none()`.
+    pub fn db_clusters(&self) -> &[crate::types::DbCluster] {
+        self.db_clusters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeDbClustersOutput {

@@ -11,8 +11,10 @@ pub struct ListTunnelsOutput {
 }
 impl ListTunnelsOutput {
     /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
-    pub fn tunnel_summaries(&self) -> ::std::option::Option<&[crate::types::TunnelSummary]> {
-        self.tunnel_summaries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tunnel_summaries.is_none()`.
+    pub fn tunnel_summaries(&self) -> &[crate::types::TunnelSummary] {
+        self.tunnel_summaries.as_deref().unwrap_or_default()
     }
     /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

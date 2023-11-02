@@ -34,6 +34,7 @@ pub struct CreateTransformJobOutputBuilder {
 }
 impl CreateTransformJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the transform job.</p>
+    /// This field is required.
     pub fn transform_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transform_job_arn = ::std::option::Option::Some(input.into());
         self

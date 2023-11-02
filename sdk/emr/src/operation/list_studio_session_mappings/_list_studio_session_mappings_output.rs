@@ -11,8 +11,10 @@ pub struct ListStudioSessionMappingsOutput {
 }
 impl ListStudioSessionMappingsOutput {
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    pub fn session_mappings(&self) -> ::std::option::Option<&[crate::types::SessionMappingSummary]> {
-        self.session_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.session_mappings.is_none()`.
+    pub fn session_mappings(&self) -> &[crate::types::SessionMappingSummary] {
+        self.session_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {

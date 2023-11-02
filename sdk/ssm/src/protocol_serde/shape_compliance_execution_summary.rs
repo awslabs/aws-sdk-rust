@@ -3,16 +3,16 @@ pub fn ser_compliance_execution_summary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComplianceExecutionSummary,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.execution_time {
+    {
         object
             .key("ExecutionTime")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(&input.execution_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.execution_id {
-        object.key("ExecutionId").string(var_2.as_str());
+    if let Some(var_1) = &input.execution_id {
+        object.key("ExecutionId").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.execution_type {
-        object.key("ExecutionType").string(var_3.as_str());
+    if let Some(var_2) = &input.execution_type {
+        object.key("ExecutionType").string(var_2.as_str());
     }
     Ok(())
 }
@@ -62,7 +62,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::compliance_execution_summary_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

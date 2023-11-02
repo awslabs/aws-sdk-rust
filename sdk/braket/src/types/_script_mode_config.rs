@@ -5,20 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptModeConfig {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
-    pub entry_point: ::std::option::Option<::std::string::String>,
+    pub entry_point: ::std::string::String,
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
-    pub s3_uri: ::std::option::Option<::std::string::String>,
+    pub s3_uri: ::std::string::String,
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     pub compression_type: ::std::option::Option<crate::types::CompressionType>,
 }
 impl ScriptModeConfig {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
-    pub fn entry_point(&self) -> ::std::option::Option<&str> {
-        self.entry_point.as_deref()
+    pub fn entry_point(&self) -> &str {
+        use std::ops::Deref;
+        self.entry_point.deref()
     }
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
-        self.s3_uri.as_deref()
+    pub fn s3_uri(&self) -> &str {
+        use std::ops::Deref;
+        self.s3_uri.deref()
     }
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
@@ -42,6 +44,7 @@ pub struct ScriptModeConfigBuilder {
 }
 impl ScriptModeConfigBuilder {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
+    /// This field is required.
     pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entry_point = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +59,7 @@ impl ScriptModeConfigBuilder {
         &self.entry_point
     }
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
+    /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +88,24 @@ impl ScriptModeConfigBuilder {
         &self.compression_type
     }
     /// Consumes the builder and constructs a [`ScriptModeConfig`](crate::types::ScriptModeConfig).
-    pub fn build(self) -> crate::types::ScriptModeConfig {
-        crate::types::ScriptModeConfig {
-            entry_point: self.entry_point,
-            s3_uri: self.s3_uri,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`entry_point`](crate::types::builders::ScriptModeConfigBuilder::entry_point)
+    /// - [`s3_uri`](crate::types::builders::ScriptModeConfigBuilder::s3_uri)
+    pub fn build(self) -> ::std::result::Result<crate::types::ScriptModeConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ScriptModeConfig {
+            entry_point: self.entry_point.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "entry_point",
+                    "entry_point was not specified but it is required when building ScriptModeConfig",
+                )
+            })?,
+            s3_uri: self.s3_uri.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "s3_uri",
+                    "s3_uri was not specified but it is required when building ScriptModeConfig",
+                )
+            })?,
             compression_type: self.compression_type,
-        }
+        })
     }
 }

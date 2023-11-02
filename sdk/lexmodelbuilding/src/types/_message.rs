@@ -5,20 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The content type of the message string.</p>
-    pub content_type: ::std::option::Option<crate::types::ContentType>,
+    pub content_type: crate::types::ContentType,
     /// <p>The text of the message.</p>
-    pub content: ::std::option::Option<::std::string::String>,
+    pub content: ::std::string::String,
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub group_number: ::std::option::Option<i32>,
 }
 impl Message {
     /// <p>The content type of the message string.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
-        self.content_type.as_ref()
+    pub fn content_type(&self) -> &crate::types::ContentType {
+        &self.content_type
     }
     /// <p>The text of the message.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
-        self.content.as_deref()
+    pub fn content(&self) -> &str {
+        use std::ops::Deref;
+        self.content.deref()
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn group_number(&self) -> ::std::option::Option<i32> {
@@ -42,6 +43,7 @@ pub struct MessageBuilder {
 }
 impl MessageBuilder {
     /// <p>The content type of the message string.</p>
+    /// This field is required.
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
@@ -56,6 +58,7 @@ impl MessageBuilder {
         &self.content_type
     }
     /// <p>The text of the message.</p>
+    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +87,24 @@ impl MessageBuilder {
         &self.group_number
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
-    pub fn build(self) -> crate::types::Message {
-        crate::types::Message {
-            content_type: self.content_type,
-            content: self.content,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`content_type`](crate::types::builders::MessageBuilder::content_type)
+    /// - [`content`](crate::types::builders::MessageBuilder::content)
+    pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Message {
+            content_type: self.content_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content_type",
+                    "content_type was not specified but it is required when building Message",
+                )
+            })?,
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building Message",
+                )
+            })?,
             group_number: self.group_number,
-        }
+        })
     }
 }

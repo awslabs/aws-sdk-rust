@@ -28,6 +28,7 @@ pub struct DeployAsApplicationConfigurationBuilder {
 }
 impl DeployAsApplicationConfigurationBuilder {
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
+    /// This field is required.
     pub fn s3_content_location(mut self, input: crate::types::S3ContentBaseLocation) -> Self {
         self.s3_content_location = ::std::option::Option::Some(input);
         self

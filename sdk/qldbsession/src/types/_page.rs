@@ -11,8 +11,10 @@ pub struct Page {
 }
 impl Page {
     /// <p>A structure that contains values in multiple encoding formats.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::ValueHolder]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::ValueHolder] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The token of the next page.</p>
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {

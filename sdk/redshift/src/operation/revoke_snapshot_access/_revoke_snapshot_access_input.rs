@@ -91,6 +91,7 @@ impl RevokeSnapshotAccessInputBuilder {
         &self.snapshot_cluster_identifier
     }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
+    /// This field is required.
     pub fn account_with_restore_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_with_restore_access = ::std::option::Option::Some(input.into());
         self

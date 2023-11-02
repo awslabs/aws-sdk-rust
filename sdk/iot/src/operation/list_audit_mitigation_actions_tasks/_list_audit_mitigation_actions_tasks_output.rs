@@ -11,8 +11,10 @@ pub struct ListAuditMitigationActionsTasksOutput {
 }
 impl ListAuditMitigationActionsTasksOutput {
     /// <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
-    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::AuditMitigationActionsTaskMetadata]> {
-        self.tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
+    pub fn tasks(&self) -> &[crate::types::AuditMitigationActionsTaskMetadata] {
+        self.tasks.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

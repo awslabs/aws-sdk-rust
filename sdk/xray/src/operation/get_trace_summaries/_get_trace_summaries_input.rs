@@ -69,6 +69,7 @@ pub struct GetTraceSummariesInputBuilder {
 }
 impl GetTraceSummariesInputBuilder {
     /// <p>The start of the time frame for which to retrieve traces.</p>
+    /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
@@ -83,6 +84,7 @@ impl GetTraceSummariesInputBuilder {
         &self.start_time
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
+    /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self

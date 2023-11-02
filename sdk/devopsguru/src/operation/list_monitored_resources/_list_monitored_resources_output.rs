@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMonitoredResourcesOutput {
     /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
-    pub monitored_resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::MonitoredResourceIdentifier>>,
+    pub monitored_resource_identifiers: ::std::vec::Vec<crate::types::MonitoredResourceIdentifier>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListMonitoredResourcesOutput {
     /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
-    pub fn monitored_resource_identifiers(&self) -> ::std::option::Option<&[crate::types::MonitoredResourceIdentifier]> {
-        self.monitored_resource_identifiers.as_deref()
+    pub fn monitored_resource_identifiers(&self) -> &[crate::types::MonitoredResourceIdentifier] {
+        use std::ops::Deref;
+        self.monitored_resource_identifiers.deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,11 +88,23 @@ impl ListMonitoredResourcesOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListMonitoredResourcesOutput`](crate::operation::list_monitored_resources::ListMonitoredResourcesOutput).
-    pub fn build(self) -> crate::operation::list_monitored_resources::ListMonitoredResourcesOutput {
-        crate::operation::list_monitored_resources::ListMonitoredResourcesOutput {
-            monitored_resource_identifiers: self.monitored_resource_identifiers,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`monitored_resource_identifiers`](crate::operation::list_monitored_resources::builders::ListMonitoredResourcesOutputBuilder::monitored_resource_identifiers)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::list_monitored_resources::ListMonitoredResourcesOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::list_monitored_resources::ListMonitoredResourcesOutput {
+            monitored_resource_identifiers: self.monitored_resource_identifiers.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "monitored_resource_identifiers",
+                    "monitored_resource_identifiers was not specified but it is required when building ListMonitoredResourcesOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

@@ -88,6 +88,9 @@ pub mod untag_resource;
 /// Types for the `UpdateEnvironment` operation.
 pub mod update_environment;
 
+/// Types for the `UpdateKxClusterCodeConfiguration` operation.
+pub mod update_kx_cluster_code_configuration;
+
 /// Types for the `UpdateKxClusterDatabases` operation.
 pub mod update_kx_cluster_databases;
 

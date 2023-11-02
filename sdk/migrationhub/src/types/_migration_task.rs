@@ -33,8 +33,10 @@ impl MigrationTask {
         self.update_date_time.as_ref()
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    pub fn resource_attribute_list(&self) -> ::std::option::Option<&[crate::types::ResourceAttribute]> {
-        self.resource_attribute_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_attribute_list.is_none()`.
+    pub fn resource_attribute_list(&self) -> &[crate::types::ResourceAttribute] {
+        self.resource_attribute_list.as_deref().unwrap_or_default()
     }
 }
 impl MigrationTask {

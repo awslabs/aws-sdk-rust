@@ -83,8 +83,10 @@ impl CreateFeatureGroupInput {
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    pub fn feature_definitions(&self) -> ::std::option::Option<&[crate::types::FeatureDefinition]> {
-        self.feature_definitions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_definitions.is_none()`.
+    pub fn feature_definitions(&self) -> &[crate::types::FeatureDefinition] {
+        self.feature_definitions.as_deref().unwrap_or_default()
     }
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
@@ -112,8 +114,10 @@ impl CreateFeatureGroupInput {
         self.description.as_deref()
     }
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateFeatureGroupInput {
@@ -143,6 +147,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_group_name = ::std::option::Option::Some(input.into());
         self
@@ -171,6 +176,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
     /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
     /// </ul>
+    /// This field is required.
     pub fn record_identifier_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_identifier_feature_name = ::std::option::Option::Some(input.into());
         self
@@ -203,6 +209,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>
     /// <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn event_time_feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_time_feature_name = ::std::option::Option::Some(input.into());
         self

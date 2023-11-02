@@ -27,6 +27,7 @@ pub struct GetWorkflowExecutionInputBuilder {
 }
 impl GetWorkflowExecutionInputBuilder {
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
+    /// This field is required.
     pub fn workflow_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self

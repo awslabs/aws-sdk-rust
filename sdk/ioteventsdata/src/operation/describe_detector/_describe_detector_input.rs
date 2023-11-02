@@ -34,6 +34,7 @@ pub struct DescribeDetectorInputBuilder {
 }
 impl DescribeDetectorInputBuilder {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
+    /// This field is required.
     pub fn detector_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_model_name = ::std::option::Option::Some(input.into());
         self

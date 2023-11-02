@@ -35,6 +35,7 @@ pub struct ValidationExceptionFieldBuilder {
 }
 impl ValidationExceptionFieldBuilder {
     /// <p>The field name for which validation failed.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl ValidationExceptionFieldBuilder {
         &self.name
     }
     /// <p>Description of the error.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateTrust`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trust_id(impl Into<String>)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::trust_id) / [`set_trust_id(Option<String>)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::set_trust_id): <p>Identifier of the trust relationship.</p>
-    ///   - [`selective_auth(SelectiveAuth)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::selective_auth) / [`set_selective_auth(Option<SelectiveAuth>)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::set_selective_auth): <p>Updates selective authentication for the trust.</p>
+    ///   - [`trust_id(impl Into<String>)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::trust_id) / [`set_trust_id(Option<String>)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::set_trust_id):<br>required: **true**<br><p>Identifier of the trust relationship.</p><br>
+    ///   - [`selective_auth(SelectiveAuth)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::selective_auth) / [`set_selective_auth(Option<SelectiveAuth>)`](crate::operation::update_trust::builders::UpdateTrustFluentBuilder::set_selective_auth):<br>required: **false**<br><p>Updates selective authentication for the trust.</p><br>
     /// - On success, responds with [`UpdateTrustOutput`](crate::operation::update_trust::UpdateTrustOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::update_trust::UpdateTrustOutput::request_id): <p>The Amazon Web Services request identifier.</p>
     ///   - [`trust_id(Option<String>)`](crate::operation::update_trust::UpdateTrustOutput::trust_id): <p>Identifier of the trust relationship.</p>

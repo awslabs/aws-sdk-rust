@@ -34,6 +34,7 @@ pub struct StartCostEstimationInputBuilder {
 }
 impl StartCostEstimationInputBuilder {
     /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
+    /// This field is required.
     pub fn resource_collection(mut self, input: crate::types::CostEstimationResourceCollectionFilter) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
         self

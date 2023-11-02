@@ -27,6 +27,7 @@ pub struct DeleteCodeRepositoryInputBuilder {
 }
 impl DeleteCodeRepositoryInputBuilder {
     /// <p>The name of the Git repository to delete.</p>
+    /// This field is required.
     pub fn code_repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_repository_name = ::std::option::Option::Some(input.into());
         self

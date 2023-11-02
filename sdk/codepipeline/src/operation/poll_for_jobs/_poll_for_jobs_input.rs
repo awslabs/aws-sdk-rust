@@ -42,6 +42,7 @@ pub struct PollForJobsInputBuilder {
 }
 impl PollForJobsInputBuilder {
     /// <p>Represents information about an action type.</p>
+    /// This field is required.
     pub fn action_type_id(mut self, input: crate::types::ActionTypeId) -> Self {
         self.action_type_id = ::std::option::Option::Some(input);
         self

@@ -5,17 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SparkParameters {
     /// <p>Host.</p>
-    pub host: ::std::option::Option<::std::string::String>,
+    pub host: ::std::string::String,
     /// <p>Port.</p>
-    pub port: ::std::option::Option<i32>,
+    pub port: i32,
 }
 impl SparkParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
-        self.host.as_deref()
+    pub fn host(&self) -> &str {
+        use std::ops::Deref;
+        self.host.deref()
     }
     /// <p>Port.</p>
-    pub fn port(&self) -> ::std::option::Option<i32> {
+    pub fn port(&self) -> i32 {
         self.port
     }
 }
@@ -35,6 +36,7 @@ pub struct SparkParametersBuilder {
 }
 impl SparkParametersBuilder {
     /// <p>Host.</p>
+    /// This field is required.
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SparkParametersBuilder {
         &self.host
     }
     /// <p>Port.</p>
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl SparkParametersBuilder {
         &self.port
     }
     /// Consumes the builder and constructs a [`SparkParameters`](crate::types::SparkParameters).
-    pub fn build(self) -> crate::types::SparkParameters {
-        crate::types::SparkParameters {
-            host: self.host,
-            port: self.port,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`host`](crate::types::builders::SparkParametersBuilder::host)
+    /// - [`port`](crate::types::builders::SparkParametersBuilder::port)
+    pub fn build(self) -> ::std::result::Result<crate::types::SparkParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SparkParameters {
+            host: self.host.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "host",
+                    "host was not specified but it is required when building SparkParameters",
+                )
+            })?,
+            port: self.port.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "port",
+                    "port was not specified but it is required when building SparkParameters",
+                )
+            })?,
+        })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Encryption {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    pub encryption_type: ::std::option::Option<crate::types::ServerSideEncryption>,
+    pub encryption_type: crate::types::ServerSideEncryption,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric encryption customer managed key to use for encryption of job results. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
@@ -13,8 +13,8 @@ pub struct Encryption {
 }
 impl Encryption {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
-        self.encryption_type.as_ref()
+    pub fn encryption_type(&self) -> &crate::types::ServerSideEncryption {
+        &self.encryption_type
     }
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric encryption customer managed key to use for encryption of job results. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -51,6 +51,7 @@ pub struct EncryptionBuilder {
 }
 impl EncryptionBuilder {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
+    /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
@@ -93,12 +94,19 @@ impl EncryptionBuilder {
         &self.kms_context
     }
     /// Consumes the builder and constructs a [`Encryption`](crate::types::Encryption).
-    pub fn build(self) -> crate::types::Encryption {
-        crate::types::Encryption {
-            encryption_type: self.encryption_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`encryption_type`](crate::types::builders::EncryptionBuilder::encryption_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::Encryption, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Encryption {
+            encryption_type: self.encryption_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "encryption_type",
+                    "encryption_type was not specified but it is required when building Encryption",
+                )
+            })?,
             kms_key_id: self.kms_key_id,
             kms_context: self.kms_context,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for EncryptionBuilder {

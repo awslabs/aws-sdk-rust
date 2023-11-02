@@ -56,6 +56,7 @@ impl ResourceLimitsBuilder {
         &self.max_number_of_training_jobs
     }
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
+    /// This field is required.
     pub fn max_parallel_training_jobs(mut self, input: i32) -> Self {
         self.max_parallel_training_jobs = ::std::option::Option::Some(input);
         self

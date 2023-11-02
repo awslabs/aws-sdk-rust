@@ -13,16 +13,22 @@ pub struct PieChartAggregatedFieldWells {
 }
 impl PieChartAggregatedFieldWells {
     /// <p>The category (group/color) field wells of a pie chart.</p>
-    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.category.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category.is_none()`.
+    pub fn category(&self) -> &[crate::types::DimensionField] {
+        self.category.as_deref().unwrap_or_default()
     }
     /// <p>The value field wells of a pie chart. Values are aggregated based on categories.</p>
-    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[crate::types::MeasureField] {
+        self.values.as_deref().unwrap_or_default()
     }
     /// <p>The small multiples field well of a pie chart.</p>
-    pub fn small_multiples(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
-        self.small_multiples.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.small_multiples.is_none()`.
+    pub fn small_multiples(&self) -> &[crate::types::DimensionField] {
+        self.small_multiples.as_deref().unwrap_or_default()
     }
 }
 impl PieChartAggregatedFieldWells {

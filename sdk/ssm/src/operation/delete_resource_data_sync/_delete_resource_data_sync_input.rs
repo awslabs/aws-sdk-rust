@@ -34,6 +34,7 @@ pub struct DeleteResourceDataSyncInputBuilder {
 }
 impl DeleteResourceDataSyncInputBuilder {
     /// <p>The name of the configuration to delete.</p>
+    /// This field is required.
     pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_name = ::std::option::Option::Some(input.into());
         self

@@ -23,6 +23,7 @@ pub fn ser_baseline_ebs_bandwidth_mbps(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_baseline_ebs_bandwidth_mbps(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::BaselineEbsBandwidthMbps, ::aws_smithy_xml::decode::XmlDecodeError> {

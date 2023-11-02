@@ -5,16 +5,16 @@ pub fn ser_job_manifest_spec(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.format {
+    {
         let mut inner_writer = scope.start_el("Format").finish();
-        inner_writer.data(var_1.as_str());
+        inner_writer.data(input.format.as_str());
     }
-    if let Some(var_2) = &input.fields {
+    if let Some(var_1) = &input.fields {
         let mut inner_writer = scope.start_el("Fields").finish();
-        for list_item_3 in var_2 {
+        for list_item_2 in var_1 {
             {
                 let mut inner_writer = inner_writer.start_el("member").finish();
-                inner_writer.data(list_item_3.as_str());
+                inner_writer.data(list_item_2.as_str());
             }
         }
     }
@@ -22,6 +22,7 @@ pub fn ser_job_manifest_spec(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_job_manifest_spec(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::JobManifestSpec, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -30,7 +31,7 @@ pub fn de_job_manifest_spec(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Format") /* Format com.amazonaws.s3control#JobManifestSpec$Format */ =>  {
-                let var_4 =
+                let var_3 =
                     Some(
                         Result::<crate::types::JobManifestFormat, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::JobManifestFormat::from(
@@ -40,21 +41,23 @@ pub fn de_job_manifest_spec(
                         ?
                     )
                 ;
-                builder = builder.set_format(var_4);
+                builder = builder.set_format(var_3);
             }
             ,
             s if s.matches("Fields") /* Fields com.amazonaws.s3control#JobManifestSpec$Fields */ =>  {
-                let var_5 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_job_manifest_field_list::de_job_manifest_field_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_fields(var_5);
+                builder = builder.set_fields(var_4);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::job_manifest_spec_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

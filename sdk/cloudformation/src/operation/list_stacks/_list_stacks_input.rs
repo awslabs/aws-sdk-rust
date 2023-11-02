@@ -15,8 +15,10 @@ impl ListStacksInput {
         self.next_token.as_deref()
     }
     /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only stacks with the specified status codes. For a complete list of stack status codes, see the <code>StackStatus</code> parameter of the <code>Stack</code> data type.</p>
-    pub fn stack_status_filter(&self) -> ::std::option::Option<&[crate::types::StackStatus]> {
-        self.stack_status_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stack_status_filter.is_none()`.
+    pub fn stack_status_filter(&self) -> &[crate::types::StackStatus] {
+        self.stack_status_filter.as_deref().unwrap_or_default()
     }
 }
 impl ListStacksInput {

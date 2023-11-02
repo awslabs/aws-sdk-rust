@@ -76,6 +76,7 @@ pub struct ThrottlingExceptionBuilder {
 }
 impl ThrottlingExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self

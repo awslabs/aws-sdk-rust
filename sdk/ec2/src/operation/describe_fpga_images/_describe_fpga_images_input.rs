@@ -41,12 +41,16 @@ impl DescribeFpgaImagesInput {
         self.dry_run
     }
     /// <p>The AFI IDs.</p>
-    pub fn fpga_image_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.fpga_image_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fpga_image_ids.is_none()`.
+    pub fn fpga_image_ids(&self) -> &[::std::string::String] {
+        self.fpga_image_ids.as_deref().unwrap_or_default()
     }
     /// <p>Filters the AFI by owner. Specify an Amazon Web Services account ID, <code>self</code> (owner is the sender of the request), or an Amazon Web Services owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code>).</p>
-    pub fn owners(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.owners.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
+    pub fn owners(&self) -> &[::std::string::String] {
+        self.owners.as_deref().unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -68,8 +72,10 @@ impl DescribeFpgaImagesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>update-time</code> - The time of the most recent update.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
-        self.filters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
+    pub fn filters(&self) -> &[crate::types::Filter] {
+        self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

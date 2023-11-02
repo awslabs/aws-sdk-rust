@@ -56,8 +56,10 @@ impl CreateChannelInput {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the creation request.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
@@ -68,12 +70,16 @@ impl CreateChannelInput {
         self.channel_id.as_deref()
     }
     /// <p>The ARNs of the channel members in the request.</p>
-    pub fn member_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.member_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_arns.is_none()`.
+    pub fn member_arns(&self) -> &[::std::string::String] {
+        self.member_arns.as_deref().unwrap_or_default()
     }
     /// <p>The ARNs of the channel moderators in the request.</p>
-    pub fn moderator_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.moderator_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.moderator_arns.is_none()`.
+    pub fn moderator_arns(&self) -> &[::std::string::String] {
+        self.moderator_arns.as_deref().unwrap_or_default()
     }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
     pub fn elastic_channel_configuration(&self) -> ::std::option::Option<&crate::types::ElasticChannelConfiguration> {
@@ -130,6 +136,7 @@ pub struct CreateChannelInputBuilder {
 }
 impl CreateChannelInputBuilder {
     /// <p>The ARN of the channel request.</p>
+    /// This field is required.
     pub fn app_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_instance_arn = ::std::option::Option::Some(input.into());
         self
@@ -144,6 +151,7 @@ impl CreateChannelInputBuilder {
         &self.app_instance_arn
     }
     /// <p>The name of the channel.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -200,6 +208,7 @@ impl CreateChannelInputBuilder {
         &self.metadata
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    /// This field is required.
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
@@ -234,6 +243,7 @@ impl CreateChannelInputBuilder {
         &self.tags
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    /// This field is required.
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
         self

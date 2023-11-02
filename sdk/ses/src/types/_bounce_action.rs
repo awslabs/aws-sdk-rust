@@ -9,13 +9,13 @@ pub struct BounceAction {
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
-    pub smtp_reply_code: ::std::option::Option<::std::string::String>,
+    pub smtp_reply_code: ::std::string::String,
     /// <p>The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>Human-readable text to include in the bounce message.</p>
-    pub message: ::std::option::Option<::std::string::String>,
+    pub message: ::std::string::String,
     /// <p>The email address of the sender of the bounced email. This is the address from which the bounce message is sent.</p>
-    pub sender: ::std::option::Option<::std::string::String>,
+    pub sender: ::std::string::String,
 }
 impl BounceAction {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. You can find the ARN of a topic by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> operation in Amazon SNS.</p>
@@ -24,20 +24,23 @@ impl BounceAction {
         self.topic_arn.as_deref()
     }
     /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
-    pub fn smtp_reply_code(&self) -> ::std::option::Option<&str> {
-        self.smtp_reply_code.as_deref()
+    pub fn smtp_reply_code(&self) -> &str {
+        use std::ops::Deref;
+        self.smtp_reply_code.deref()
     }
     /// <p>The SMTP enhanced status code, as defined by <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
     pub fn status_code(&self) -> ::std::option::Option<&str> {
         self.status_code.as_deref()
     }
     /// <p>Human-readable text to include in the bounce message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
+    pub fn message(&self) -> &str {
+        use std::ops::Deref;
+        self.message.deref()
     }
     /// <p>The email address of the sender of the bounced email. This is the address from which the bounce message is sent.</p>
-    pub fn sender(&self) -> ::std::option::Option<&str> {
-        self.sender.as_deref()
+    pub fn sender(&self) -> &str {
+        use std::ops::Deref;
+        self.sender.deref()
     }
 }
 impl BounceAction {
@@ -76,6 +79,7 @@ impl BounceActionBuilder {
         &self.topic_arn
     }
     /// <p>The SMTP reply code, as defined by <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+    /// This field is required.
     pub fn smtp_reply_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.smtp_reply_code = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +108,7 @@ impl BounceActionBuilder {
         &self.status_code
     }
     /// <p>Human-readable text to include in the bounce message.</p>
+    /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +123,7 @@ impl BounceActionBuilder {
         &self.message
     }
     /// <p>The email address of the sender of the bounced email. This is the address from which the bounce message is sent.</p>
+    /// This field is required.
     pub fn sender(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender = ::std::option::Option::Some(input.into());
         self
@@ -132,13 +138,32 @@ impl BounceActionBuilder {
         &self.sender
     }
     /// Consumes the builder and constructs a [`BounceAction`](crate::types::BounceAction).
-    pub fn build(self) -> crate::types::BounceAction {
-        crate::types::BounceAction {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`smtp_reply_code`](crate::types::builders::BounceActionBuilder::smtp_reply_code)
+    /// - [`message`](crate::types::builders::BounceActionBuilder::message)
+    /// - [`sender`](crate::types::builders::BounceActionBuilder::sender)
+    pub fn build(self) -> ::std::result::Result<crate::types::BounceAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BounceAction {
             topic_arn: self.topic_arn,
-            smtp_reply_code: self.smtp_reply_code,
+            smtp_reply_code: self.smtp_reply_code.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "smtp_reply_code",
+                    "smtp_reply_code was not specified but it is required when building BounceAction",
+                )
+            })?,
             status_code: self.status_code,
-            message: self.message,
-            sender: self.sender,
-        }
+            message: self.message.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "message",
+                    "message was not specified but it is required when building BounceAction",
+                )
+            })?,
+            sender: self.sender.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "sender",
+                    "sender was not specified but it is required when building BounceAction",
+                )
+            })?,
+        })
     }
 }

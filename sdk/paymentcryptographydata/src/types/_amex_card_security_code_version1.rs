@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmexCardSecurityCodeVersion1 {
     /// <p>The expiry date of a payment card.</p>
-    pub card_expiry_date: ::std::option::Option<::std::string::String>,
+    pub card_expiry_date: ::std::string::String,
 }
 impl AmexCardSecurityCodeVersion1 {
     /// <p>The expiry date of a payment card.</p>
-    pub fn card_expiry_date(&self) -> ::std::option::Option<&str> {
-        self.card_expiry_date.as_deref()
+    pub fn card_expiry_date(&self) -> &str {
+        use std::ops::Deref;
+        self.card_expiry_date.deref()
     }
 }
 impl AmexCardSecurityCodeVersion1 {
@@ -28,6 +29,7 @@ pub struct AmexCardSecurityCodeVersion1Builder {
 }
 impl AmexCardSecurityCodeVersion1Builder {
     /// <p>The expiry date of a payment card.</p>
+    /// This field is required.
     pub fn card_expiry_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.card_expiry_date = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl AmexCardSecurityCodeVersion1Builder {
         &self.card_expiry_date
     }
     /// Consumes the builder and constructs a [`AmexCardSecurityCodeVersion1`](crate::types::AmexCardSecurityCodeVersion1).
-    pub fn build(self) -> crate::types::AmexCardSecurityCodeVersion1 {
-        crate::types::AmexCardSecurityCodeVersion1 {
-            card_expiry_date: self.card_expiry_date,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`card_expiry_date`](crate::types::builders::AmexCardSecurityCodeVersion1Builder::card_expiry_date)
+    pub fn build(self) -> ::std::result::Result<crate::types::AmexCardSecurityCodeVersion1, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AmexCardSecurityCodeVersion1 {
+            card_expiry_date: self.card_expiry_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "card_expiry_date",
+                    "card_expiry_date was not specified but it is required when building AmexCardSecurityCodeVersion1",
+                )
+            })?,
+        })
     }
 }

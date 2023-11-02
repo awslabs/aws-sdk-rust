@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl UpdateTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for UpdateTableOutput {
@@ -34,6 +35,7 @@ pub struct UpdateTableOutputBuilder {
 }
 impl UpdateTableOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -57,10 +59,17 @@ impl UpdateTableOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::operation::update_table::UpdateTableOutput).
-    pub fn build(self) -> crate::operation::update_table::UpdateTableOutput {
-        crate::operation::update_table::UpdateTableOutput {
-            resource_arn: self.resource_arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::operation::update_table::builders::UpdateTableOutputBuilder::resource_arn)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_table::UpdateTableOutput {
+            resource_arn: self.resource_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_arn",
+                    "resource_arn was not specified but it is required when building UpdateTableOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

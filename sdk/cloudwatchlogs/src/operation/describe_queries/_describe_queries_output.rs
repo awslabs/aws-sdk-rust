@@ -11,8 +11,10 @@ pub struct DescribeQueriesOutput {
 }
 impl DescribeQueriesOutput {
     /// <p>The list of queries that match the request.</p>
-    pub fn queries(&self) -> ::std::option::Option<&[crate::types::QueryInfo]> {
-        self.queries.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queries.is_none()`.
+    pub fn queries(&self) -> &[crate::types::QueryInfo] {
+        self.queries.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

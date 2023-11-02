@@ -28,6 +28,7 @@ pub struct LockConfigurationBuilder {
 }
 impl LockConfigurationBuilder {
     /// <p>Information about the retention rule unlock delay.</p>
+    /// This field is required.
     pub fn unlock_delay(mut self, input: crate::types::UnlockDelay) -> Self {
         self.unlock_delay = ::std::option::Option::Some(input);
         self

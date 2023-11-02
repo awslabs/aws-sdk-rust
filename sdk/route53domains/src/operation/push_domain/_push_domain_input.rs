@@ -34,6 +34,7 @@ pub struct PushDomainInputBuilder {
 }
 impl PushDomainInputBuilder {
     /// <p> Name of the domain. </p>
+    /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PushDomainInputBuilder {
         &self.domain_name
     }
     /// <p> New IPS tag for the domain. </p>
+    /// This field is required.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self

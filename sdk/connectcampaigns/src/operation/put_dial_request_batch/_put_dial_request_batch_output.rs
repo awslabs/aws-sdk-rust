@@ -12,12 +12,16 @@ pub struct PutDialRequestBatchOutput {
 }
 impl PutDialRequestBatchOutput {
     /// A list of successful requests identified by the unique client token.
-    pub fn successful_requests(&self) -> ::std::option::Option<&[crate::types::SuccessfulRequest]> {
-        self.successful_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_requests.is_none()`.
+    pub fn successful_requests(&self) -> &[crate::types::SuccessfulRequest] {
+        self.successful_requests.as_deref().unwrap_or_default()
     }
     /// A list of failed requests.
-    pub fn failed_requests(&self) -> ::std::option::Option<&[crate::types::FailedRequest]> {
-        self.failed_requests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
+    pub fn failed_requests(&self) -> &[crate::types::FailedRequest] {
+        self.failed_requests.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for PutDialRequestBatchOutput {

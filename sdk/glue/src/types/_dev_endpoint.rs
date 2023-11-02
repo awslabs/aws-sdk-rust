@@ -86,8 +86,10 @@ impl DevEndpoint {
         self.role_arn.as_deref()
     }
     /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
-    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.security_group_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
+    pub fn security_group_ids(&self) -> &[::std::string::String] {
+        self.security_group_ids.as_deref().unwrap_or_default()
     }
     /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
@@ -182,8 +184,10 @@ impl DevEndpoint {
     /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
     /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
-    pub fn public_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.public_keys.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.public_keys.is_none()`.
+    pub fn public_keys(&self) -> &[::std::string::String] {
+        self.public_keys.as_deref().unwrap_or_default()
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
     pub fn security_configuration(&self) -> ::std::option::Option<&str> {

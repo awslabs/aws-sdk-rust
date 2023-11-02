@@ -17,6 +17,7 @@ pub fn ser_tag(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Tag::builder();
@@ -51,5 +52,5 @@ pub fn de_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<c
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::tag_correct_errors(builder).build())
 }

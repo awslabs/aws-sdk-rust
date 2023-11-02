@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAddressBook`](crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`address_book_arn(impl Into<String>)`](crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::set_address_book_arn): <p>The ARN of the address book to delete.</p>
+    ///   - [`address_book_arn(impl Into<String>)`](crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::operation::delete_address_book::builders::DeleteAddressBookFluentBuilder::set_address_book_arn):<br>required: **true**<br><p>The ARN of the address book to delete.</p><br>
     /// - On success, responds with [`DeleteAddressBookOutput`](crate::operation::delete_address_book::DeleteAddressBookOutput)
     /// - On failure, responds with [`SdkError<DeleteAddressBookError>`](crate::operation::delete_address_book::DeleteAddressBookError)
     #[deprecated(note = "Alexa For Business is no longer supported")]

@@ -9,8 +9,10 @@ pub struct DescribeBundleTasksOutput {
 }
 impl DescribeBundleTasksOutput {
     /// <p>Information about the bundle tasks.</p>
-    pub fn bundle_tasks(&self) -> ::std::option::Option<&[crate::types::BundleTask]> {
-        self.bundle_tasks.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_tasks.is_none()`.
+    pub fn bundle_tasks(&self) -> &[crate::types::BundleTask] {
+        self.bundle_tasks.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeBundleTasksOutput {

@@ -82,6 +82,7 @@ pub struct CreateStudioInputBuilder {
 }
 impl CreateStudioInputBuilder {
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
+    /// This field is required.
     pub fn admin_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_role_arn = ::std::option::Option::Some(input.into());
         self
@@ -110,6 +111,7 @@ impl CreateStudioInputBuilder {
         &self.client_token
     }
     /// <p>A friendly name for the studio.</p>
+    /// This field is required.
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +140,7 @@ impl CreateStudioInputBuilder {
         &self.studio_encryption_configuration
     }
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+    /// This field is required.
     pub fn studio_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_name = ::std::option::Option::Some(input.into());
         self
@@ -172,6 +175,7 @@ impl CreateStudioInputBuilder {
         &self.tags
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
+    /// This field is required.
     pub fn user_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_role_arn = ::std::option::Option::Some(input.into());
         self

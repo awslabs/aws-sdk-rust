@@ -4,19 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResourceGroupsOutput {
     /// <p>Information about a resource group.</p>
-    pub resource_groups: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroup>>,
+    pub resource_groups: ::std::vec::Vec<crate::types::ResourceGroup>,
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
-    pub failed_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>>,
+    pub failed_items: ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
     _request_id: Option<String>,
 }
 impl DescribeResourceGroupsOutput {
     /// <p>Information about a resource group.</p>
-    pub fn resource_groups(&self) -> ::std::option::Option<&[crate::types::ResourceGroup]> {
-        self.resource_groups.as_deref()
+    pub fn resource_groups(&self) -> &[crate::types::ResourceGroup] {
+        use std::ops::Deref;
+        self.resource_groups.deref()
     }
     /// <p>Resource group details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>> {
-        self.failed_items.as_ref()
+    pub fn failed_items(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails> {
+        &self.failed_items
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeResourceGroupsOutput {
@@ -93,11 +94,29 @@ impl DescribeResourceGroupsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeResourceGroupsOutput`](crate::operation::describe_resource_groups::DescribeResourceGroupsOutput).
-    pub fn build(self) -> crate::operation::describe_resource_groups::DescribeResourceGroupsOutput {
-        crate::operation::describe_resource_groups::DescribeResourceGroupsOutput {
-            resource_groups: self.resource_groups,
-            failed_items: self.failed_items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_groups`](crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder::resource_groups)
+    /// - [`failed_items`](crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder::failed_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_groups::DescribeResourceGroupsOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_resource_groups::DescribeResourceGroupsOutput {
+            resource_groups: self.resource_groups.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_groups",
+                    "resource_groups was not specified but it is required when building DescribeResourceGroupsOutput",
+                )
+            })?,
+            failed_items: self.failed_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failed_items",
+                    "failed_items was not specified but it is required when building DescribeResourceGroupsOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

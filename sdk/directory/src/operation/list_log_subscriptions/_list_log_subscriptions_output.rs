@@ -11,8 +11,10 @@ pub struct ListLogSubscriptionsOutput {
 }
 impl ListLogSubscriptionsOutput {
     /// <p>A list of active <code>LogSubscription</code> objects for calling the Amazon Web Services account.</p>
-    pub fn log_subscriptions(&self) -> ::std::option::Option<&[crate::types::LogSubscription]> {
-        self.log_subscriptions.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_subscriptions.is_none()`.
+    pub fn log_subscriptions(&self) -> &[crate::types::LogSubscription] {
+        self.log_subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of items to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

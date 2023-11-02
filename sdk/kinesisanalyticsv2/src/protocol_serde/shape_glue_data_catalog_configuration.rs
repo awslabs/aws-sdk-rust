@@ -3,8 +3,8 @@ pub fn ser_glue_data_catalog_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlueDataCatalogConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.database_arn {
-        object.key("DatabaseARN").string(var_1.as_str());
+    {
+        object.key("DatabaseARN").string(input.database_arn.as_str());
     }
     Ok(())
 }

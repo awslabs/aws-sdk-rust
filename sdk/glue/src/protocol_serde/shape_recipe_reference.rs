@@ -3,11 +3,11 @@ pub fn ser_recipe_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecipeReference,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.recipe_arn {
-        object.key("RecipeArn").string(var_1.as_str());
+    {
+        object.key("RecipeArn").string(input.recipe_arn.as_str());
     }
-    if let Some(var_2) = &input.recipe_version {
-        object.key("RecipeVersion").string(var_2.as_str());
+    {
+        object.key("RecipeVersion").string(input.recipe_version.as_str());
     }
     Ok(())
 }
@@ -51,7 +51,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::recipe_reference_correct_errors(builder).build().map_err(
+                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
+            )?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

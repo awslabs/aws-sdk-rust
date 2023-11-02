@@ -35,8 +35,10 @@ impl BatchPutDocumentInput {
     /// <li> <p>5 MB extracted text for any file</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    pub fn documents(&self) -> ::std::option::Option<&[crate::types::Document]> {
-        self.documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.documents.is_none()`.
+    pub fn documents(&self) -> &[crate::types::Document] {
+        self.documents.as_deref().unwrap_or_default()
     }
     /// <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
@@ -62,6 +64,7 @@ pub struct BatchPutDocumentInputBuilder {
 }
 impl BatchPutDocumentInputBuilder {
     /// <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
+    /// This field is required.
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
         self

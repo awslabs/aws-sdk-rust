@@ -14,8 +14,10 @@ impl AddTagsToResourceInput {
         self.resource_id.as_deref()
     }
     /// <p>The tags to be assigned to the directory.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl AddTagsToResourceInput {
@@ -34,6 +36,7 @@ pub struct AddTagsToResourceInputBuilder {
 }
 impl AddTagsToResourceInputBuilder {
     /// <p>Identifier (ID) for the directory to which to add the tag.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self

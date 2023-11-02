@@ -99,8 +99,10 @@ impl DirectoryDescription {
         self.description.as_deref()
     }
     /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
-    pub fn dns_ip_addrs(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_ip_addrs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
+    pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
+        self.dns_ip_addrs.as_deref().unwrap_or_default()
     }
     /// <p>The current stage of the directory.</p>
     pub fn stage(&self) -> ::std::option::Option<&crate::types::DirectoryStage> {

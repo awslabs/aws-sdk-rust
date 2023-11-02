@@ -8,8 +8,10 @@ pub struct CreateWorkspacesInput {
 }
 impl CreateWorkspacesInput {
     /// <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
-    pub fn workspaces(&self) -> ::std::option::Option<&[crate::types::WorkspaceRequest]> {
-        self.workspaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspaces.is_none()`.
+    pub fn workspaces(&self) -> &[crate::types::WorkspaceRequest] {
+        self.workspaces.as_deref().unwrap_or_default()
     }
 }
 impl CreateWorkspacesInput {

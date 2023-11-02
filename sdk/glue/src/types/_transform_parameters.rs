@@ -6,15 +6,15 @@
 pub struct TransformParameters {
     /// <p>The type of machine learning transform.</p>
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
-    pub transform_type: ::std::option::Option<crate::types::TransformType>,
+    pub transform_type: crate::types::TransformType,
     /// <p>The parameters for the find matches algorithm.</p>
     pub find_matches_parameters: ::std::option::Option<crate::types::FindMatchesParameters>,
 }
 impl TransformParameters {
     /// <p>The type of machine learning transform.</p>
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
-    pub fn transform_type(&self) -> ::std::option::Option<&crate::types::TransformType> {
-        self.transform_type.as_ref()
+    pub fn transform_type(&self) -> &crate::types::TransformType {
+        &self.transform_type
     }
     /// <p>The parameters for the find matches algorithm.</p>
     pub fn find_matches_parameters(&self) -> ::std::option::Option<&crate::types::FindMatchesParameters> {
@@ -38,6 +38,7 @@ pub struct TransformParametersBuilder {
 impl TransformParametersBuilder {
     /// <p>The type of machine learning transform.</p>
     /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
+    /// This field is required.
     pub fn transform_type(mut self, input: crate::types::TransformType) -> Self {
         self.transform_type = ::std::option::Option::Some(input);
         self
@@ -68,10 +69,17 @@ impl TransformParametersBuilder {
         &self.find_matches_parameters
     }
     /// Consumes the builder and constructs a [`TransformParameters`](crate::types::TransformParameters).
-    pub fn build(self) -> crate::types::TransformParameters {
-        crate::types::TransformParameters {
-            transform_type: self.transform_type,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`transform_type`](crate::types::builders::TransformParametersBuilder::transform_type)
+    pub fn build(self) -> ::std::result::Result<crate::types::TransformParameters, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TransformParameters {
+            transform_type: self.transform_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "transform_type",
+                    "transform_type was not specified but it is required when building TransformParameters",
+                )
+            })?,
             find_matches_parameters: self.find_matches_parameters,
-        }
+        })
     }
 }

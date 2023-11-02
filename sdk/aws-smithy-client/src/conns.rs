@@ -142,7 +142,6 @@ mod tests {
         use super::*;
 
         #[tokio::test]
-        #[ignore]
         async fn test_rustls_connector_can_make_http_requests() {
             let conn = Adapter::builder().build(https());
             let conn = DynConnector::new(conn);
@@ -152,7 +151,6 @@ mod tests {
         }
 
         #[tokio::test]
-        #[ignore]
         async fn test_rustls_connector_can_make_https_requests() {
             let conn = Adapter::builder().build(https());
             let conn = DynConnector::new(conn);
@@ -185,7 +183,6 @@ mod custom_tls_tests {
     }
 
     #[tokio::test]
-    #[ignore]
     async fn test_native_tls_connector_can_make_http_requests() {
         let conn = Adapter::builder().build(native_tls());
         let conn = DynConnector::new(conn);
@@ -195,7 +192,6 @@ mod custom_tls_tests {
     }
 
     #[tokio::test]
-    #[ignore]
     async fn test_native_tls_connector_can_make_https_requests() {
         let conn = Adapter::builder().build(native_tls());
         let conn = DynConnector::new(conn);

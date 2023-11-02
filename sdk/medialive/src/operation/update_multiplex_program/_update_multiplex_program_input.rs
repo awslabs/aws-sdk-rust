@@ -42,6 +42,7 @@ pub struct UpdateMultiplexProgramInputBuilder {
 }
 impl UpdateMultiplexProgramInputBuilder {
     /// The ID of the multiplex of the program to update.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +71,7 @@ impl UpdateMultiplexProgramInputBuilder {
         &self.multiplex_program_settings
     }
     /// The name of the program to update.
+    /// This field is required.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
         self

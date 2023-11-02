@@ -14,7 +14,7 @@ pub struct CanaryCodeInput {
     /// <p>For large canary scripts, we recommend that you use an S3 location instead of inputting it directly with this parameter.</p>
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
-    pub handler: ::std::option::Option<::std::string::String>,
+    pub handler: ::std::string::String,
 }
 impl CanaryCodeInput {
     /// <p>If your canary script is located in S3, specify the bucket name here. Do not include <code>s3://</code> as the start of the bucket name.</p>
@@ -35,8 +35,9 @@ impl CanaryCodeInput {
         self.zip_file.as_ref()
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
-    pub fn handler(&self) -> ::std::option::Option<&str> {
-        self.handler.as_deref()
+    pub fn handler(&self) -> &str {
+        use std::ops::Deref;
+        self.handler.deref()
     }
 }
 impl CanaryCodeInput {
@@ -117,6 +118,7 @@ impl CanaryCodeInputBuilder {
         &self.zip_file
     }
     /// <p>The entry point to use for the source code when running the canary. For canaries that use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code> runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>, <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
+    /// This field is required.
     pub fn handler(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.handler = ::std::option::Option::Some(input.into());
         self
@@ -131,13 +133,20 @@ impl CanaryCodeInputBuilder {
         &self.handler
     }
     /// Consumes the builder and constructs a [`CanaryCodeInput`](crate::types::CanaryCodeInput).
-    pub fn build(self) -> crate::types::CanaryCodeInput {
-        crate::types::CanaryCodeInput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`handler`](crate::types::builders::CanaryCodeInputBuilder::handler)
+    pub fn build(self) -> ::std::result::Result<crate::types::CanaryCodeInput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CanaryCodeInput {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_version: self.s3_version,
             zip_file: self.zip_file,
-            handler: self.handler,
-        }
+            handler: self.handler.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "handler",
+                    "handler was not specified but it is required when building CanaryCodeInput",
+                )
+            })?,
+        })
     }
 }

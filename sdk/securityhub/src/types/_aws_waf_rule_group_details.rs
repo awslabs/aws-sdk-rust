@@ -27,8 +27,10 @@ impl AwsWafRuleGroupDetails {
         self.rule_group_id.as_deref()
     }
     /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count. </p>
-    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsWafRuleGroupRulesDetails]> {
-        self.rules.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::AwsWafRuleGroupRulesDetails] {
+        self.rules.as_deref().unwrap_or_default()
     }
 }
 impl AwsWafRuleGroupDetails {

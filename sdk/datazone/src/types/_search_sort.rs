@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSort {
     /// <p>The attribute detail of the way to sort search results.</p>
-    pub attribute: ::std::option::Option<::std::string::String>,
+    pub attribute: ::std::string::String,
     /// <p>The order detail of the wya to sort search results.</p>
     pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SearchSort {
     /// <p>The attribute detail of the way to sort search results.</p>
-    pub fn attribute(&self) -> ::std::option::Option<&str> {
-        self.attribute.as_deref()
+    pub fn attribute(&self) -> &str {
+        use std::ops::Deref;
+        self.attribute.deref()
     }
     /// <p>The order detail of the wya to sort search results.</p>
     pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
@@ -35,6 +36,7 @@ pub struct SearchSortBuilder {
 }
 impl SearchSortBuilder {
     /// <p>The attribute detail of the way to sort search results.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl SearchSortBuilder {
         &self.order
     }
     /// Consumes the builder and constructs a [`SearchSort`](crate::types::SearchSort).
-    pub fn build(self) -> crate::types::SearchSort {
-        crate::types::SearchSort {
-            attribute: self.attribute,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`attribute`](crate::types::builders::SearchSortBuilder::attribute)
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchSort, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SearchSort {
+            attribute: self.attribute.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "attribute",
+                    "attribute was not specified but it is required when building SearchSort",
+                )
+            })?,
             order: self.order,
-        }
+        })
     }
 }

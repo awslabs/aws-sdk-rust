@@ -11,8 +11,10 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>A list of all of the clusters for your account in the specified Region.</p>
-    pub fn clusters(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.clusters.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
+    pub fn clusters(&self) -> &[::std::string::String] {
+        self.clusters.as_deref().unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

@@ -11,8 +11,10 @@ pub struct GetPartitionIndexesOutput {
 }
 impl GetPartitionIndexesOutput {
     /// <p>A list of index descriptors.</p>
-    pub fn partition_index_descriptor_list(&self) -> ::std::option::Option<&[crate::types::PartitionIndexDescriptor]> {
-        self.partition_index_descriptor_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_index_descriptor_list.is_none()`.
+    pub fn partition_index_descriptor_list(&self) -> &[crate::types::PartitionIndexDescriptor] {
+        self.partition_index_descriptor_list.as_deref().unwrap_or_default()
     }
     /// <p>A continuation token, present if the current list segment is not the last.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

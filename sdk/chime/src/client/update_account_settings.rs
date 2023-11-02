@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateAccountSettings`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`account_settings(AccountSettings)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::account_settings) / [`set_account_settings(Option<AccountSettings>)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::set_account_settings): <p>The Amazon Chime account settings to update.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
+    ///   - [`account_settings(AccountSettings)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::account_settings) / [`set_account_settings(Option<AccountSettings>)`](crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder::set_account_settings):<br>required: **true**<br><p>The Amazon Chime account settings to update.</p><br>
     /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::operation::update_account_settings::UpdateAccountSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::operation::update_account_settings::UpdateAccountSettingsError)
     pub fn update_account_settings(&self) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsFluentBuilder {

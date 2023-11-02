@@ -15,8 +15,10 @@ impl AlgorithmValidationSpecification {
         self.validation_role.as_deref()
     }
     /// <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which specifies a training job and batch transform job that SageMaker runs to validate your algorithm.</p>
-    pub fn validation_profiles(&self) -> ::std::option::Option<&[crate::types::AlgorithmValidationProfile]> {
-        self.validation_profiles.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_profiles.is_none()`.
+    pub fn validation_profiles(&self) -> &[crate::types::AlgorithmValidationProfile] {
+        self.validation_profiles.as_deref().unwrap_or_default()
     }
 }
 impl AlgorithmValidationSpecification {
@@ -35,6 +37,7 @@ pub struct AlgorithmValidationSpecificationBuilder {
 }
 impl AlgorithmValidationSpecificationBuilder {
     /// <p>The IAM roles that SageMaker uses to run the training jobs.</p>
+    /// This field is required.
     pub fn validation_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.validation_role = ::std::option::Option::Some(input.into());
         self

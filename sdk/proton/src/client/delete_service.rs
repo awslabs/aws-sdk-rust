@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteService`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_name): <p>The name of the service to delete.</p>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::delete_service::builders::DeleteServiceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the service to delete.</p><br>
     /// - On success, responds with [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::delete_service::DeleteServiceOutput::service): <p>The detailed data of the service being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::operation::delete_service::DeleteServiceError)

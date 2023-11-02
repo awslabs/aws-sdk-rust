@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMatchingJob`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_name(impl Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_workflow_name): <p>The name of the workflow.</p>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_job_id): <p>The ID of the job.</p>
+    ///   - [`workflow_name(impl Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::workflow_name) / [`set_workflow_name(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_workflow_name):<br>required: **true**<br><p>The name of the workflow.</p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_matching_job::builders::GetMatchingJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The ID of the job.</p><br>
     /// - On success, responds with [`GetMatchingJobOutput`](crate::operation::get_matching_job::GetMatchingJobOutput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::operation::get_matching_job::GetMatchingJobOutput::job_id): <p>The ID of the job.</p>
-    ///   - [`status(Option<JobStatus>)`](crate::operation::get_matching_job::GetMatchingJobOutput::status): <p>The current status of the job.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::operation::get_matching_job::GetMatchingJobOutput::start_time): <p>The time at which the job was started.</p>
+    ///   - [`job_id(String)`](crate::operation::get_matching_job::GetMatchingJobOutput::job_id): <p>The ID of the job.</p>
+    ///   - [`status(JobStatus)`](crate::operation::get_matching_job::GetMatchingJobOutput::status): <p>The current status of the job.</p>
+    ///   - [`start_time(DateTime)`](crate::operation::get_matching_job::GetMatchingJobOutput::start_time): <p>The time at which the job was started.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::get_matching_job::GetMatchingJobOutput::end_time): <p>The time at which the job has finished.</p>
     ///   - [`metrics(Option<JobMetrics>)`](crate::operation::get_matching_job::GetMatchingJobOutput::metrics): <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
     ///   - [`error_details(Option<ErrorDetails>)`](crate::operation::get_matching_job::GetMatchingJobOutput::error_details): <p>An object containing an error message, if there was an error.</p>

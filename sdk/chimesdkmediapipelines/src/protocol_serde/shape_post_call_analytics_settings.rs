@@ -3,17 +3,17 @@ pub fn ser_post_call_analytics_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PostCallAnalyticsSettings,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.output_location {
-        object.key("OutputLocation").string(var_1.as_str());
+    {
+        object.key("OutputLocation").string(input.output_location.as_str());
     }
-    if let Some(var_2) = &input.data_access_role_arn {
-        object.key("DataAccessRoleArn").string(var_2.as_str());
+    {
+        object.key("DataAccessRoleArn").string(input.data_access_role_arn.as_str());
     }
-    if let Some(var_3) = &input.content_redaction_output {
-        object.key("ContentRedactionOutput").string(var_3.as_str());
+    if let Some(var_1) = &input.content_redaction_output {
+        object.key("ContentRedactionOutput").string(var_1.as_str());
     }
-    if let Some(var_4) = &input.output_encryption_kms_key_id {
-        object.key("OutputEncryptionKMSKeyId").string(var_4.as_str());
+    if let Some(var_2) = &input.output_encryption_kms_key_id {
+        object.key("OutputEncryptionKMSKeyId").string(var_2.as_str());
     }
     Ok(())
 }
@@ -71,7 +71,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::post_call_analytics_settings_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

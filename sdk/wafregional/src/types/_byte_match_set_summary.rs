@@ -10,19 +10,21 @@
 pub struct ByteMatchSetSummary {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub byte_match_set_id: ::std::option::Option<::std::string::String>,
+    pub byte_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
 }
 impl ByteMatchSetSummary {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> ::std::option::Option<&str> {
-        self.byte_match_set_id.as_deref()
+    pub fn byte_match_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.byte_match_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
 }
 impl ByteMatchSetSummary {
@@ -42,6 +44,7 @@ pub struct ByteMatchSetSummaryBuilder {
 impl ByteMatchSetSummaryBuilder {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    /// This field is required.
     pub fn byte_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.byte_match_set_id = ::std::option::Option::Some(input.into());
         self
@@ -58,6 +61,7 @@ impl ByteMatchSetSummaryBuilder {
         &self.byte_match_set_id
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -72,10 +76,23 @@ impl ByteMatchSetSummaryBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`ByteMatchSetSummary`](crate::types::ByteMatchSetSummary).
-    pub fn build(self) -> crate::types::ByteMatchSetSummary {
-        crate::types::ByteMatchSetSummary {
-            byte_match_set_id: self.byte_match_set_id,
-            name: self.name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`byte_match_set_id`](crate::types::builders::ByteMatchSetSummaryBuilder::byte_match_set_id)
+    /// - [`name`](crate::types::builders::ByteMatchSetSummaryBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ByteMatchSetSummary {
+            byte_match_set_id: self.byte_match_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "byte_match_set_id",
+                    "byte_match_set_id was not specified but it is required when building ByteMatchSetSummary",
+                )
+            })?,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ByteMatchSetSummary",
+                )
+            })?,
+        })
     }
 }

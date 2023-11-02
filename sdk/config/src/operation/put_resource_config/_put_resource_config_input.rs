@@ -76,6 +76,7 @@ impl PutResourceConfigInputBuilder {
     /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>
     /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
     /// </note>
+    /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
@@ -94,6 +95,7 @@ impl PutResourceConfigInputBuilder {
         &self.resource_type
     }
     /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
+    /// This field is required.
     pub fn schema_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version_id = ::std::option::Option::Some(input.into());
         self
@@ -108,6 +110,7 @@ impl PutResourceConfigInputBuilder {
         &self.schema_version_id
     }
     /// <p>Unique identifier of the resource.</p>
+    /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
         self
@@ -138,6 +141,7 @@ impl PutResourceConfigInputBuilder {
     /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>
     /// <p>The configuration JSON must not exceed 64 KB.</p>
     /// </note>
+    /// This field is required.
     pub fn configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration = ::std::option::Option::Some(input.into());
         self

@@ -14,8 +14,10 @@ impl DisassociateProfilesInput {
         self.workload_id.as_deref()
     }
     /// <p>The list of profile ARNs to disassociate from the workload.</p>
-    pub fn profile_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.profile_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_arns.is_none()`.
+    pub fn profile_arns(&self) -> &[::std::string::String] {
+        self.profile_arns.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateProfilesInput {
@@ -34,6 +36,7 @@ pub struct DisassociateProfilesInputBuilder {
 }
 impl DisassociateProfilesInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// This field is required.
     pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workload_id = ::std::option::Option::Some(input.into());
         self

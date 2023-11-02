@@ -27,6 +27,7 @@ pub struct DescribeConversionConfigurationInputBuilder {
 }
 impl DescribeConversionConfigurationInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) for the schema conversion project to describe.</p>
+    /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self

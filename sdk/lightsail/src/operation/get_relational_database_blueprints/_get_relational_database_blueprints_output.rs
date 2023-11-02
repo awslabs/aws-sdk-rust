@@ -13,8 +13,10 @@ pub struct GetRelationalDatabaseBlueprintsOutput {
 }
 impl GetRelationalDatabaseBlueprintsOutput {
     /// <p>An object describing the result of your get relational database blueprints request.</p>
-    pub fn blueprints(&self) -> ::std::option::Option<&[crate::types::RelationalDatabaseBlueprint]> {
-        self.blueprints.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprints.is_none()`.
+    pub fn blueprints(&self) -> &[crate::types::RelationalDatabaseBlueprint] {
+        self.blueprints.as_deref().unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>

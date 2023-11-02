@@ -73,8 +73,10 @@ impl DescribeGatewayInformationOutput {
         self.gateway_state.as_deref()
     }
     /// <p>A <code>NetworkInterface</code> array that contains descriptions of the gateway network interfaces.</p>
-    pub fn gateway_network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
-        self.gateway_network_interfaces.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_network_interfaces.is_none()`.
+    pub fn gateway_network_interfaces(&self) -> &[crate::types::NetworkInterface] {
+        self.gateway_network_interfaces.as_deref().unwrap_or_default()
     }
     /// <p>The type of the gateway.</p>
     pub fn gateway_type(&self) -> ::std::option::Option<&str> {
@@ -97,8 +99,10 @@ impl DescribeGatewayInformationOutput {
         self.ec2_instance_region.as_deref()
     }
     /// <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.</p>
     pub fn vpc_endpoint(&self) -> ::std::option::Option<&str> {
@@ -130,8 +134,10 @@ impl DescribeGatewayInformationOutput {
         self.gateway_capacity.as_ref()
     }
     /// <p>A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.</p>
-    pub fn supported_gateway_capacities(&self) -> ::std::option::Option<&[crate::types::GatewayCapacity]> {
-        self.supported_gateway_capacities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_gateway_capacities.is_none()`.
+    pub fn supported_gateway_capacities(&self) -> &[crate::types::GatewayCapacity] {
+        self.supported_gateway_capacities.as_deref().unwrap_or_default()
     }
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     pub fn host_environment_id(&self) -> ::std::option::Option<&str> {

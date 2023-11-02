@@ -5,18 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortProperty {
     /// <p>The field to perform the sort on.</p>
-    pub field: ::std::option::Option<::std::string::String>,
+    pub field: ::std::string::String,
     /// <p>The direction of the sort, either ascending or descending.</p>
-    pub direction: ::std::option::Option<crate::types::SortDirection>,
+    pub direction: crate::types::SortDirection,
 }
 impl SortProperty {
     /// <p>The field to perform the sort on.</p>
-    pub fn field(&self) -> ::std::option::Option<&str> {
-        self.field.as_deref()
+    pub fn field(&self) -> &str {
+        use std::ops::Deref;
+        self.field.deref()
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
-    pub fn direction(&self) -> ::std::option::Option<&crate::types::SortDirection> {
-        self.direction.as_ref()
+    pub fn direction(&self) -> &crate::types::SortDirection {
+        &self.direction
     }
 }
 impl SortProperty {
@@ -35,6 +36,7 @@ pub struct SortPropertyBuilder {
 }
 impl SortPropertyBuilder {
     /// <p>The field to perform the sort on.</p>
+    /// This field is required.
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +51,7 @@ impl SortPropertyBuilder {
         &self.field
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
+    /// This field is required.
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
         self.direction = ::std::option::Option::Some(input);
         self
@@ -63,10 +66,23 @@ impl SortPropertyBuilder {
         &self.direction
     }
     /// Consumes the builder and constructs a [`SortProperty`](crate::types::SortProperty).
-    pub fn build(self) -> crate::types::SortProperty {
-        crate::types::SortProperty {
-            field: self.field,
-            direction: self.direction,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`field`](crate::types::builders::SortPropertyBuilder::field)
+    /// - [`direction`](crate::types::builders::SortPropertyBuilder::direction)
+    pub fn build(self) -> ::std::result::Result<crate::types::SortProperty, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SortProperty {
+            field: self.field.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "field",
+                    "field was not specified but it is required when building SortProperty",
+                )
+            })?,
+            direction: self.direction.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "direction",
+                    "direction was not specified but it is required when building SortProperty",
+                )
+            })?,
+        })
     }
 }

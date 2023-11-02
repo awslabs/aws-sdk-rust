@@ -23,20 +23,20 @@ pub fn ser_create_multi_region_access_point_input(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_3) = &input.name {
+    {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_3.as_str());
+        inner_writer.data(input.name.as_str());
     }
-    if let Some(var_4) = &input.public_access_block {
+    if let Some(var_3) = &input.public_access_block {
         let inner_writer = scope.start_el("PublicAccessBlock");
-        crate::protocol_serde::shape_public_access_block_configuration::ser_public_access_block_configuration(var_4, inner_writer)?
+        crate::protocol_serde::shape_public_access_block_configuration::ser_public_access_block_configuration(var_3, inner_writer)?
     }
-    if let Some(var_5) = &input.regions {
+    {
         let mut inner_writer = scope.start_el("Regions").finish();
-        for list_item_6 in var_5 {
+        for list_item_4 in &input.regions {
             {
                 let inner_writer = inner_writer.start_el("Region");
-                crate::protocol_serde::shape_region::ser_region(list_item_6, inner_writer)?
+                crate::protocol_serde::shape_region::ser_region(list_item_4, inner_writer)?
             }
         }
     }
@@ -44,6 +44,7 @@ pub fn ser_create_multi_region_access_point_input(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_create_multi_region_access_point_input(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_xml::decode::XmlDecodeError> {
@@ -52,7 +53,7 @@ pub fn de_create_multi_region_access_point_input(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#CreateMultiRegionAccessPointInput$Name */ =>  {
-                let var_7 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -61,31 +62,33 @@ pub fn de_create_multi_region_access_point_input(
                         ?
                     )
                 ;
-                builder = builder.set_name(var_7);
+                builder = builder.set_name(var_5);
             }
             ,
             s if s.matches("PublicAccessBlock") /* PublicAccessBlock com.amazonaws.s3control#CreateMultiRegionAccessPointInput$PublicAccessBlock */ =>  {
-                let var_8 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_public_access_block_configuration::de_public_access_block_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_public_access_block(var_8);
+                builder = builder.set_public_access_block(var_6);
             }
             ,
             s if s.matches("Regions") /* Regions com.amazonaws.s3control#CreateMultiRegionAccessPointInput$Regions */ =>  {
-                let var_9 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_region_creation_list::de_region_creation_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_regions(var_9);
+                builder = builder.set_regions(var_7);
             }
             ,
             _ => {}
         }
     }
-    Ok(builder.build())
+    Ok(crate::serde_util::create_multi_region_access_point_input_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }

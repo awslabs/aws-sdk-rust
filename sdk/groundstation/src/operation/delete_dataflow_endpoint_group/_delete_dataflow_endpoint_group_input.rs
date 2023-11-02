@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
+    pub dataflow_endpoint_group_id: ::std::string::String,
 }
 impl DeleteDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<&str> {
-        self.dataflow_endpoint_group_id.as_deref()
+    pub fn dataflow_endpoint_group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.dataflow_endpoint_group_id.deref()
     }
 }
 impl DeleteDataflowEndpointGroupInput {
@@ -28,6 +29,7 @@ pub struct DeleteDataflowEndpointGroupInputBuilder {
 }
 impl DeleteDataflowEndpointGroupInputBuilder {
     /// <p>UUID of a dataflow endpoint group.</p>
+    /// This field is required.
     pub fn dataflow_endpoint_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_endpoint_group_id = ::std::option::Option::Some(input.into());
         self
@@ -42,6 +44,8 @@ impl DeleteDataflowEndpointGroupInputBuilder {
         &self.dataflow_endpoint_group_id
     }
     /// Consumes the builder and constructs a [`DeleteDataflowEndpointGroupInput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`dataflow_endpoint_group_id`](crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupInputBuilder::dataflow_endpoint_group_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -49,7 +53,12 @@ impl DeleteDataflowEndpointGroupInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput {
-            dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
+            dataflow_endpoint_group_id: self.dataflow_endpoint_group_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dataflow_endpoint_group_id",
+                    "dataflow_endpoint_group_id was not specified but it is required when building DeleteDataflowEndpointGroupInput",
+                )
+            })?,
         })
     }
 }

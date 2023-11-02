@@ -42,6 +42,7 @@ pub struct GetRecordsInputBuilder {
 }
 impl GetRecordsInputBuilder {
     /// <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
+    /// This field is required.
     pub fn shard_iterator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_iterator = ::std::option::Option::Some(input.into());
         self

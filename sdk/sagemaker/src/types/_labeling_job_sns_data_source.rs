@@ -28,6 +28,7 @@ pub struct LabelingJobSnsDataSourceBuilder {
 }
 impl LabelingJobSnsDataSourceBuilder {
     /// <p>The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to send new data objects to a streaming labeling job.</p>
+    /// This field is required.
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self

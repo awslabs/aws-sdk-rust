@@ -56,6 +56,7 @@ impl CreateBackendStorageResourceConfigBuilder {
         &self.bucket_name
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
+    /// This field is required.
     pub fn permissions(mut self, input: crate::types::BackendStoragePermissions) -> Self {
         self.permissions = ::std::option::Option::Some(input);
         self
@@ -70,6 +71,7 @@ impl CreateBackendStorageResourceConfigBuilder {
         &self.permissions
     }
     /// <p>The name of the storage service.</p>
+    /// This field is required.
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
         self

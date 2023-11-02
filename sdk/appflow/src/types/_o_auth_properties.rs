@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuthProperties {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
-    pub token_url: ::std::option::Option<::std::string::String>,
+    pub token_url: ::std::string::String,
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
-    pub auth_code_url: ::std::option::Option<::std::string::String>,
+    pub auth_code_url: ::std::string::String,
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
-    pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub o_auth_scopes: ::std::vec::Vec<::std::string::String>,
 }
 impl OAuthProperties {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
-    pub fn token_url(&self) -> ::std::option::Option<&str> {
-        self.token_url.as_deref()
+    pub fn token_url(&self) -> &str {
+        use std::ops::Deref;
+        self.token_url.deref()
     }
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
-    pub fn auth_code_url(&self) -> ::std::option::Option<&str> {
-        self.auth_code_url.as_deref()
+    pub fn auth_code_url(&self) -> &str {
+        use std::ops::Deref;
+        self.auth_code_url.deref()
     }
     /// <p> The OAuth scopes required for OAuth type authentication. </p>
-    pub fn o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.o_auth_scopes.as_deref()
+    pub fn o_auth_scopes(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.o_auth_scopes.deref()
     }
 }
 impl OAuthProperties {
@@ -42,6 +45,7 @@ pub struct OAuthPropertiesBuilder {
 }
 impl OAuthPropertiesBuilder {
     /// <p> The token url required to fetch access/refresh tokens using authorization code and also to refresh expired access token using refresh token.</p>
+    /// This field is required.
     pub fn token_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token_url = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl OAuthPropertiesBuilder {
         &self.token_url
     }
     /// <p> The authorization code url required to redirect to SAP Login Page to fetch authorization code for OAuth type authentication. </p>
+    /// This field is required.
     pub fn auth_code_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_code_url = ::std::option::Option::Some(input.into());
         self
@@ -90,11 +95,30 @@ impl OAuthPropertiesBuilder {
         &self.o_auth_scopes
     }
     /// Consumes the builder and constructs a [`OAuthProperties`](crate::types::OAuthProperties).
-    pub fn build(self) -> crate::types::OAuthProperties {
-        crate::types::OAuthProperties {
-            token_url: self.token_url,
-            auth_code_url: self.auth_code_url,
-            o_auth_scopes: self.o_auth_scopes,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`token_url`](crate::types::builders::OAuthPropertiesBuilder::token_url)
+    /// - [`auth_code_url`](crate::types::builders::OAuthPropertiesBuilder::auth_code_url)
+    /// - [`o_auth_scopes`](crate::types::builders::OAuthPropertiesBuilder::o_auth_scopes)
+    pub fn build(self) -> ::std::result::Result<crate::types::OAuthProperties, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::OAuthProperties {
+            token_url: self.token_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "token_url",
+                    "token_url was not specified but it is required when building OAuthProperties",
+                )
+            })?,
+            auth_code_url: self.auth_code_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "auth_code_url",
+                    "auth_code_url was not specified but it is required when building OAuthProperties",
+                )
+            })?,
+            o_auth_scopes: self.o_auth_scopes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "o_auth_scopes",
+                    "o_auth_scopes was not specified but it is required when building OAuthProperties",
+                )
+            })?,
+        })
     }
 }

@@ -42,6 +42,7 @@ pub struct WeeklyStartTimeBuilder {
 }
 impl WeeklyStartTimeBuilder {
     /// <p>Required. The day of the week.</p>
+    /// This field is required.
     pub fn day_of_week(mut self, input: crate::types::DayOfWeek) -> Self {
         self.day_of_week = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl WeeklyStartTimeBuilder {
         &self.day_of_week
     }
     /// <p>Required. The time, in 24-hour format.</p>
+    /// This field is required.
     pub fn time_of_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_of_day = ::std::option::Option::Some(input.into());
         self

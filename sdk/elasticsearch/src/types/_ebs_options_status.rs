@@ -35,6 +35,7 @@ pub struct EbsOptionsStatusBuilder {
 }
 impl EbsOptionsStatusBuilder {
     /// <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn options(mut self, input: crate::types::EbsOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
@@ -49,6 +50,7 @@ impl EbsOptionsStatusBuilder {
         &self.options
     }
     /// <p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self

@@ -27,6 +27,7 @@ pub struct StopBulkDeploymentInputBuilder {
 }
 impl StopBulkDeploymentInputBuilder {
     /// The ID of the bulk deployment.
+    /// This field is required.
     pub fn bulk_deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self

@@ -34,6 +34,7 @@ pub struct GetComputeAuthTokenInputBuilder {
 }
 impl GetComputeAuthTokenInputBuilder {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
+    /// This field is required.
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetComputeAuthTokenInputBuilder {
         &self.fleet_id
     }
     /// <p>The name of the compute resource you are requesting the authentication token for.</p>
+    /// This field is required.
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_name = ::std::option::Option::Some(input.into());
         self

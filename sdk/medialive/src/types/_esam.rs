@@ -63,6 +63,7 @@ pub struct EsamBuilder {
 }
 impl EsamBuilder {
     /// Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS.
+    /// This field is required.
     pub fn acquisition_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acquisition_point_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +106,7 @@ impl EsamBuilder {
         &self.password_param
     }
     /// The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read.
+    /// This field is required.
     pub fn pois_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pois_endpoint = ::std::option::Option::Some(input.into());
         self

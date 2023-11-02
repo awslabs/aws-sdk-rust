@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
-    pub tag_key: ::std::option::Option<::std::string::String>,
+    pub tag_key: ::std::string::String,
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
+    pub r#type: crate::types::CostAllocationTagType,
     /// <p>The status of a cost allocation tag. </p>
-    pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
+    pub status: crate::types::CostAllocationTagStatus,
     /// <p>The last date that the tag was either activated or deactivated.</p>
     pub last_updated_date: ::std::option::Option<::std::string::String>,
     /// <p>The last month that the tag was used on an Amazon Web Services resource.</p>
@@ -17,16 +17,17 @@ pub struct CostAllocationTag {
 }
 impl CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
-        self.tag_key.as_deref()
+    pub fn tag_key(&self) -> &str {
+        use std::ops::Deref;
+        self.tag_key.deref()
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CostAllocationTagType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::CostAllocationTagType {
+        &self.r#type
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CostAllocationTagStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::CostAllocationTagStatus {
+        &self.status
     }
     /// <p>The last date that the tag was either activated or deactivated.</p>
     pub fn last_updated_date(&self) -> ::std::option::Option<&str> {
@@ -56,6 +57,7 @@ pub struct CostAllocationTagBuilder {
 }
 impl CostAllocationTagBuilder {
     /// <p>The key for the cost allocation tag. </p>
+    /// This field is required.
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +72,7 @@ impl CostAllocationTagBuilder {
         &self.tag_key
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -84,6 +87,7 @@ impl CostAllocationTagBuilder {
         &self.r#type
     }
     /// <p>The status of a cost allocation tag. </p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -126,13 +130,32 @@ impl CostAllocationTagBuilder {
         &self.last_used_date
     }
     /// Consumes the builder and constructs a [`CostAllocationTag`](crate::types::CostAllocationTag).
-    pub fn build(self) -> crate::types::CostAllocationTag {
-        crate::types::CostAllocationTag {
-            tag_key: self.tag_key,
-            r#type: self.r#type,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`tag_key`](crate::types::builders::CostAllocationTagBuilder::tag_key)
+    /// - [`r#type`](crate::types::builders::CostAllocationTagBuilder::r#type)
+    /// - [`status`](crate::types::builders::CostAllocationTagBuilder::status)
+    pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTag, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::CostAllocationTag {
+            tag_key: self.tag_key.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "tag_key",
+                    "tag_key was not specified but it is required when building CostAllocationTag",
+                )
+            })?,
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building CostAllocationTag",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building CostAllocationTag",
+                )
+            })?,
             last_updated_date: self.last_updated_date,
             last_used_date: self.last_used_date,
-        }
+        })
     }
 }

@@ -4,27 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
+    pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::option::Option<::std::string::String>,
+    pub project_name: ::std::string::String,
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub last_updated_time: ::aws_smithy_types::DateTime,
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
-    pub creator_id: ::std::option::Option<::std::string::String>,
+    pub creator_id: ::std::string::String,
     /// <p>The current status of the Dev Environment.</p>
-    pub status: ::std::option::Option<crate::types::DevEnvironmentStatus>,
+    pub status: crate::types::DevEnvironmentStatus,
     /// <p>The reason for the status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
-    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
+    pub repositories: ::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>,
     /// <p>The user-specified alias for the Dev Environment. </p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::Ide>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub instance_type: crate::types::InstanceType,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub inactivity_timeout_minutes: i32,
     /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
@@ -33,48 +33,55 @@ pub struct GetDevEnvironmentOutput {
 }
 impl GetDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
+    pub fn space_name(&self) -> &str {
+        use std::ops::Deref;
+        self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
-        self.project_name.as_deref()
+    pub fn project_name(&self) -> &str {
+        use std::ops::Deref;
+        self.project_name.deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.last_updated_time.as_ref()
+    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.last_updated_time
     }
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
-    pub fn creator_id(&self) -> ::std::option::Option<&str> {
-        self.creator_id.as_deref()
+    pub fn creator_id(&self) -> &str {
+        use std::ops::Deref;
+        self.creator_id.deref()
     }
     /// <p>The current status of the Dev Environment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DevEnvironmentStatus> {
-        self.status.as_ref()
+    pub fn status(&self) -> &crate::types::DevEnvironmentStatus {
+        &self.status
     }
     /// <p>The reason for the status.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
-    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::DevEnvironmentRepositorySummary]> {
-        self.repositories.as_deref()
+    pub fn repositories(&self) -> &[crate::types::DevEnvironmentRepositorySummary] {
+        use std::ops::Deref;
+        self.repositories.deref()
     }
     /// <p>The user-specified alias for the Dev Environment. </p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
-    pub fn ides(&self) -> ::std::option::Option<&[crate::types::Ide]> {
-        self.ides.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ides.is_none()`.
+    pub fn ides(&self) -> &[crate::types::Ide] {
+        self.ides.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
-        self.instance_type.as_ref()
+    pub fn instance_type(&self) -> &crate::types::InstanceType {
+        &self.instance_type
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
     pub fn inactivity_timeout_minutes(&self) -> i32 {
@@ -118,6 +125,7 @@ pub struct GetDevEnvironmentOutputBuilder {
 }
 impl GetDevEnvironmentOutputBuilder {
     /// <p>The name of the space.</p>
+    /// This field is required.
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
         self
@@ -132,6 +140,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.space_name
     }
     /// <p>The name of the project in the space.</p>
+    /// This field is required.
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
         self
@@ -146,6 +155,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.project_name
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -160,6 +170,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.id
     }
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    /// This field is required.
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -174,6 +185,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.last_updated_time
     }
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
+    /// This field is required.
     pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_id = ::std::option::Option::Some(input.into());
         self
@@ -188,6 +200,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.creator_id
     }
     /// <p>The current status of the Dev Environment.</p>
+    /// This field is required.
     pub fn status(mut self, input: crate::types::DevEnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
@@ -270,6 +283,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.ides
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
+    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self
@@ -284,6 +298,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.instance_type
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
+    /// This field is required.
     pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
         self.inactivity_timeout_minutes = ::std::option::Option::Some(input);
         self
@@ -298,6 +313,7 @@ impl GetDevEnvironmentOutputBuilder {
         &self.inactivity_timeout_minutes
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
+    /// This field is required.
     pub fn persistent_storage(mut self, input: crate::types::PersistentStorage) -> Self {
         self.persistent_storage = ::std::option::Option::Some(input);
         self
@@ -321,22 +337,73 @@ impl GetDevEnvironmentOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetDevEnvironmentOutput`](crate::operation::get_dev_environment::GetDevEnvironmentOutput).
-    pub fn build(self) -> crate::operation::get_dev_environment::GetDevEnvironmentOutput {
-        crate::operation::get_dev_environment::GetDevEnvironmentOutput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            id: self.id,
-            last_updated_time: self.last_updated_time,
-            creator_id: self.creator_id,
-            status: self.status,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`space_name`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::space_name)
+    /// - [`project_name`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::project_name)
+    /// - [`id`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::id)
+    /// - [`last_updated_time`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::last_updated_time)
+    /// - [`creator_id`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::creator_id)
+    /// - [`status`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::status)
+    /// - [`repositories`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::repositories)
+    /// - [`instance_type`](crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder::instance_type)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_dev_environment::GetDevEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_dev_environment::GetDevEnvironmentOutput {
+            space_name: self.space_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "space_name",
+                    "space_name was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
+            project_name: self.project_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "project_name",
+                    "project_name was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
+            last_updated_time: self.last_updated_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "last_updated_time",
+                    "last_updated_time was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
+            creator_id: self.creator_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creator_id",
+                    "creator_id was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
+            status: self.status.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "status",
+                    "status was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
             status_reason: self.status_reason,
-            repositories: self.repositories,
+            repositories: self.repositories.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repositories",
+                    "repositories was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
             alias: self.alias,
             ides: self.ides,
-            instance_type: self.instance_type,
+            instance_type: self.instance_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_type",
+                    "instance_type was not specified but it is required when building GetDevEnvironmentOutput",
+                )
+            })?,
             inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
             persistent_storage: self.persistent_storage,
             _request_id: self._request_id,
-        }
+        })
     }
 }

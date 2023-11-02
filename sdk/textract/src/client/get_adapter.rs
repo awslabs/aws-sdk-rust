@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAdapter`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`adapter_id(impl Into<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::adapter_id) / [`set_adapter_id(Option<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::set_adapter_id): <p>A string containing a unique ID for the adapter.</p>
+    ///   - [`adapter_id(impl Into<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::adapter_id) / [`set_adapter_id(Option<String>)`](crate::operation::get_adapter::builders::GetAdapterFluentBuilder::set_adapter_id):<br>required: **true**<br><p>A string containing a unique ID for the adapter.</p><br>
     /// - On success, responds with [`GetAdapterOutput`](crate::operation::get_adapter::GetAdapterOutput) with field(s):
     ///   - [`adapter_id(Option<String>)`](crate::operation::get_adapter::GetAdapterOutput::adapter_id): <p>A string identifying the adapter that information has been retrieved for.</p>
     ///   - [`adapter_name(Option<String>)`](crate::operation::get_adapter::GetAdapterOutput::adapter_name): <p>The name of the requested adapter.</p>

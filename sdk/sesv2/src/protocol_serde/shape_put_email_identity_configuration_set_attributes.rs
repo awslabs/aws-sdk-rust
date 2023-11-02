@@ -38,8 +38,8 @@ pub fn de_put_email_identity_configuration_set_attributes_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "NotFoundException" => crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError::NotFoundException({
@@ -54,8 +54,8 @@ pub fn de_put_email_identity_configuration_set_attributes_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError::TooManyRequestsException({
@@ -70,8 +70,8 @@ pub fn de_put_email_identity_configuration_set_attributes_http_error(
                 }
             ;
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                                                            tmp.message = _error_message;
+                                                        }
             tmp
         }),
         _ => crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError::generic(generic)

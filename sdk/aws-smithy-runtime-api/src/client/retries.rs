@@ -98,6 +98,8 @@ impl RetryStrategy for SharedRetryStrategy {
     }
 }
 
+impl_shared_conversions!(convert SharedRetryStrategy from RetryStrategy using SharedRetryStrategy::new);
+
 /// Classification result from [`ClassifyRetry`].
 #[non_exhaustive]
 #[derive(Clone, Eq, PartialEq, Debug)]
@@ -231,6 +233,7 @@ mod test_util {
 
 use crate::box_error::BoxError;
 use crate::client::runtime_components::RuntimeComponents;
+use crate::impl_shared_conversions;
 use std::sync::Arc;
 #[cfg(feature = "test-util")]
 pub use test_util::AlwaysRetry;

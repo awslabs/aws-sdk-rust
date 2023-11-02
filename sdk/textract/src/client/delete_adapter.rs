@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAdapter`](crate::operation::delete_adapter::builders::DeleteAdapterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`adapter_id(impl Into<String>)`](crate::operation::delete_adapter::builders::DeleteAdapterFluentBuilder::adapter_id) / [`set_adapter_id(Option<String>)`](crate::operation::delete_adapter::builders::DeleteAdapterFluentBuilder::set_adapter_id): <p>A string containing a unique ID for the adapter to be deleted.</p>
+    ///   - [`adapter_id(impl Into<String>)`](crate::operation::delete_adapter::builders::DeleteAdapterFluentBuilder::adapter_id) / [`set_adapter_id(Option<String>)`](crate::operation::delete_adapter::builders::DeleteAdapterFluentBuilder::set_adapter_id):<br>required: **true**<br><p>A string containing a unique ID for the adapter to be deleted.</p><br>
     /// - On success, responds with [`DeleteAdapterOutput`](crate::operation::delete_adapter::DeleteAdapterOutput)
     /// - On failure, responds with [`SdkError<DeleteAdapterError>`](crate::operation::delete_adapter::DeleteAdapterError)
     pub fn delete_adapter(&self) -> crate::operation::delete_adapter::builders::DeleteAdapterFluentBuilder {

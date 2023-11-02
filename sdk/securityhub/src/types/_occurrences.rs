@@ -17,24 +17,34 @@ pub struct Occurrences {
 }
 impl Occurrences {
     /// <p>Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
-    pub fn line_ranges(&self) -> ::std::option::Option<&[crate::types::Range]> {
-        self.line_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_ranges.is_none()`.
+    pub fn line_ranges(&self) -> &[crate::types::Range] {
+        self.line_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Occurrences of sensitive data detected in a binary text file.</p>
-    pub fn offset_ranges(&self) -> ::std::option::Option<&[crate::types::Range]> {
-        self.offset_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offset_ranges.is_none()`.
+    pub fn offset_ranges(&self) -> &[crate::types::Range] {
+        self.offset_ranges.as_deref().unwrap_or_default()
     }
     /// <p>Occurrences of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
-    pub fn pages(&self) -> ::std::option::Option<&[crate::types::Page]> {
-        self.pages.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pages.is_none()`.
+    pub fn pages(&self) -> &[crate::types::Page] {
+        self.pages.as_deref().unwrap_or_default()
     }
     /// <p>Occurrences of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
-    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
-        self.records.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
+    pub fn records(&self) -> &[crate::types::Record] {
+        self.records.as_deref().unwrap_or_default()
     }
     /// <p>Occurrences of sensitive data detected in Microsoft Excel workbooks, comma-separated value (CSV) files, or tab-separated value (TSV) files.</p>
-    pub fn cells(&self) -> ::std::option::Option<&[crate::types::Cell]> {
-        self.cells.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
+    pub fn cells(&self) -> &[crate::types::Cell] {
+        self.cells.as_deref().unwrap_or_default()
     }
 }
 impl Occurrences {

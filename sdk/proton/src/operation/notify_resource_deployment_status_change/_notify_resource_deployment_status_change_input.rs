@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotifyResourceDeploymentStatusChangeInput {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-    pub resource_arn: ::std::option::Option<::std::string::String>,
+    pub resource_arn: ::std::string::String,
     /// <p>The status of your provisioned resource.</p>
     pub status: ::std::option::Option<crate::types::ResourceDeploymentStatus>,
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
@@ -16,16 +16,19 @@ pub struct NotifyResourceDeploymentStatusChangeInput {
 }
 impl NotifyResourceDeploymentStatusChangeInput {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
-        self.resource_arn.as_deref()
+    pub fn resource_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.resource_arn.deref()
     }
     /// <p>The status of your provisioned resource.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceDeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::Output]> {
-        self.outputs.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
+    pub fn outputs(&self) -> &[crate::types::Output] {
+        self.outputs.as_deref().unwrap_or_default()
     }
     /// <p>The deployment ID for your provisioned resource.</p>
     pub fn deployment_id(&self) -> ::std::option::Option<&str> {
@@ -66,6 +69,7 @@ pub struct NotifyResourceDeploymentStatusChangeInputBuilder {
 }
 impl NotifyResourceDeploymentStatusChangeInputBuilder {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
+    /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
@@ -142,6 +146,8 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         &self.status_message
     }
     /// Consumes the builder and constructs a [`NotifyResourceDeploymentStatusChangeInput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_arn`](crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -150,7 +156,12 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput {
-                resource_arn: self.resource_arn,
+                resource_arn: self.resource_arn.ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "resource_arn",
+                        "resource_arn was not specified but it is required when building NotifyResourceDeploymentStatusChangeInput",
+                    )
+                })?,
                 status: self.status,
                 outputs: self.outputs,
                 deployment_id: self.deployment_id,

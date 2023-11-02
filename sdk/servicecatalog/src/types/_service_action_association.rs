@@ -5,24 +5,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub service_action_id: ::std::option::Option<::std::string::String>,
+    pub service_action_id: ::std::string::String,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub product_id: ::std::option::Option<::std::string::String>,
+    pub product_id: ::std::string::String,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
+    pub provisioning_artifact_id: ::std::string::String,
 }
 impl ServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(&self) -> ::std::option::Option<&str> {
-        self.service_action_id.as_deref()
+    pub fn service_action_id(&self) -> &str {
+        use std::ops::Deref;
+        self.service_action_id.deref()
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
-        self.product_id.as_deref()
+    pub fn product_id(&self) -> &str {
+        use std::ops::Deref;
+        self.product_id.deref()
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
-        self.provisioning_artifact_id.as_deref()
+    pub fn provisioning_artifact_id(&self) -> &str {
+        use std::ops::Deref;
+        self.provisioning_artifact_id.deref()
     }
 }
 impl ServiceActionAssociation {
@@ -42,6 +45,7 @@ pub struct ServiceActionAssociationBuilder {
 }
 impl ServiceActionAssociationBuilder {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    /// This field is required.
     pub fn service_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_action_id = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,7 @@ impl ServiceActionAssociationBuilder {
         &self.service_action_id
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +75,7 @@ impl ServiceActionAssociationBuilder {
         &self.product_id
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    /// This field is required.
     pub fn provisioning_artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +90,30 @@ impl ServiceActionAssociationBuilder {
         &self.provisioning_artifact_id
     }
     /// Consumes the builder and constructs a [`ServiceActionAssociation`](crate::types::ServiceActionAssociation).
-    pub fn build(self) -> crate::types::ServiceActionAssociation {
-        crate::types::ServiceActionAssociation {
-            service_action_id: self.service_action_id,
-            product_id: self.product_id,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`service_action_id`](crate::types::builders::ServiceActionAssociationBuilder::service_action_id)
+    /// - [`product_id`](crate::types::builders::ServiceActionAssociationBuilder::product_id)
+    /// - [`provisioning_artifact_id`](crate::types::builders::ServiceActionAssociationBuilder::provisioning_artifact_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceActionAssociation, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ServiceActionAssociation {
+            service_action_id: self.service_action_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "service_action_id",
+                    "service_action_id was not specified but it is required when building ServiceActionAssociation",
+                )
+            })?,
+            product_id: self.product_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "product_id",
+                    "product_id was not specified but it is required when building ServiceActionAssociation",
+                )
+            })?,
+            provisioning_artifact_id: self.provisioning_artifact_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "provisioning_artifact_id",
+                    "provisioning_artifact_id was not specified but it is required when building ServiceActionAssociation",
+                )
+            })?,
+        })
     }
 }

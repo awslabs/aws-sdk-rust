@@ -43,6 +43,7 @@ pub struct ConnectAppAuthorizationInputBuilder {
 }
 impl ConnectAppAuthorizationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.</p>
+    /// This field is required.
     pub fn app_bundle_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_bundle_identifier = ::std::option::Option::Some(input.into());
         self
@@ -57,6 +58,7 @@ impl ConnectAppAuthorizationInputBuilder {
         &self.app_bundle_identifier
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
+    /// This field is required.
     pub fn app_authorization_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_authorization_identifier = ::std::option::Option::Some(input.into());
         self

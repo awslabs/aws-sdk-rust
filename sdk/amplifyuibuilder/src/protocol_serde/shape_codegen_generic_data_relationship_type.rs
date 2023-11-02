@@ -3,44 +3,44 @@ pub fn ser_codegen_generic_data_relationship_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenGenericDataRelationshipType,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.r#type {
-        object.key("type").string(var_1.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
-    if let Some(var_2) = &input.related_model_name {
-        object.key("relatedModelName").string(var_2.as_str());
+    {
+        object.key("relatedModelName").string(input.related_model_name.as_str());
     }
-    if let Some(var_3) = &input.related_model_fields {
-        let mut array_4 = object.key("relatedModelFields").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.related_model_fields {
+        let mut array_2 = object.key("relatedModelFields").start_array();
+        for item_3 in var_1 {
             {
-                array_4.value().string(item_5.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.can_unlink_associated_model {
-        object.key("canUnlinkAssociatedModel").boolean(*var_6);
+    if let Some(var_4) = &input.can_unlink_associated_model {
+        object.key("canUnlinkAssociatedModel").boolean(*var_4);
     }
-    if let Some(var_7) = &input.related_join_field_name {
-        object.key("relatedJoinFieldName").string(var_7.as_str());
+    if let Some(var_5) = &input.related_join_field_name {
+        object.key("relatedJoinFieldName").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.related_join_table_name {
-        object.key("relatedJoinTableName").string(var_8.as_str());
+    if let Some(var_6) = &input.related_join_table_name {
+        object.key("relatedJoinTableName").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.belongs_to_field_on_related_model {
-        object.key("belongsToFieldOnRelatedModel").string(var_9.as_str());
+    if let Some(var_7) = &input.belongs_to_field_on_related_model {
+        object.key("belongsToFieldOnRelatedModel").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.associated_fields {
-        let mut array_11 = object.key("associatedFields").start_array();
-        for item_12 in var_10 {
+    if let Some(var_8) = &input.associated_fields {
+        let mut array_9 = object.key("associatedFields").start_array();
+        for item_10 in var_8 {
             {
-                array_11.value().string(item_12.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_11.finish();
+        array_9.finish();
     }
-    if let Some(var_13) = &input.is_has_many_index {
-        object.key("isHasManyIndex").boolean(*var_13);
+    if let Some(var_11) = &input.is_has_many_index {
+        object.key("isHasManyIndex").boolean(*var_11);
     }
     Ok(())
 }
@@ -121,7 +121,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::codegen_generic_data_relationship_type_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

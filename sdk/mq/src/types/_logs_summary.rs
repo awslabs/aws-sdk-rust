@@ -84,6 +84,7 @@ impl LogsSummaryBuilder {
         &self.audit_log_group
     }
     /// <p>Enables general logging.</p>
+    /// This field is required.
     pub fn general(mut self, input: bool) -> Self {
         self.general = ::std::option::Option::Some(input);
         self
@@ -98,6 +99,7 @@ impl LogsSummaryBuilder {
         &self.general
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
+    /// This field is required.
     pub fn general_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.general_log_group = ::std::option::Option::Some(input.into());
         self

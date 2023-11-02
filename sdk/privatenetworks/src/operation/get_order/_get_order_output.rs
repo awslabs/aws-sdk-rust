@@ -50,6 +50,7 @@ pub struct GetOrderOutputBuilder {
 }
 impl GetOrderOutputBuilder {
     /// <p>Information about the order.</p>
+    /// This field is required.
     pub fn order(mut self, input: crate::types::Order) -> Self {
         self.order = ::std::option::Option::Some(input);
         self

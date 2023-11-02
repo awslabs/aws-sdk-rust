@@ -11,12 +11,16 @@ pub struct NetworkPathComponentDetails {
 }
 impl NetworkPathComponentDetails {
     /// <p>The IP addresses of the destination.</p>
-    pub fn address(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.address.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address.is_none()`.
+    pub fn address(&self) -> &[::std::string::String] {
+        self.address.as_deref().unwrap_or_default()
     }
     /// <p>A list of port ranges for the destination.</p>
-    pub fn port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
-        self.port_ranges.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
+    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
+        self.port_ranges.as_deref().unwrap_or_default()
     }
 }
 impl NetworkPathComponentDetails {

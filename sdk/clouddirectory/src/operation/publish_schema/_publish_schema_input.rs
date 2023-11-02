@@ -48,6 +48,7 @@ pub struct PublishSchemaInputBuilder {
 }
 impl PublishSchemaInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
+    /// This field is required.
     pub fn development_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.development_schema_arn = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl PublishSchemaInputBuilder {
         &self.development_schema_arn
     }
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self

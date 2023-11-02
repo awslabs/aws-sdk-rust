@@ -61,6 +61,7 @@ pub struct GetShardIteratorInputBuilder {
 }
 impl GetShardIteratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
+    /// This field is required.
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
         self
@@ -75,6 +76,7 @@ impl GetShardIteratorInputBuilder {
         &self.stream_arn
     }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
+    /// This field is required.
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
         self
@@ -95,6 +97,7 @@ impl GetShardIteratorInputBuilder {
     /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
     /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn shard_iterator_type(mut self, input: crate::types::ShardIteratorType) -> Self {
         self.shard_iterator_type = ::std::option::Option::Some(input);
         self

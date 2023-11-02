@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
-    pub repository_name: ::std::option::Option<::std::string::String>,
+    pub repository_name: ::std::string::String,
 }
 impl UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
-        self.repository_name.as_deref()
+    pub fn repository_name(&self) -> &str {
+        use std::ops::Deref;
+        self.repository_name.deref()
     }
 }
 impl UpstreamRepository {
@@ -28,6 +29,7 @@ pub struct UpstreamRepositoryBuilder {
 }
 impl UpstreamRepositoryBuilder {
     /// <p> The name of an upstream repository. </p>
+    /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl UpstreamRepositoryBuilder {
         &self.repository_name
     }
     /// Consumes the builder and constructs a [`UpstreamRepository`](crate::types::UpstreamRepository).
-    pub fn build(self) -> crate::types::UpstreamRepository {
-        crate::types::UpstreamRepository {
-            repository_name: self.repository_name,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`repository_name`](crate::types::builders::UpstreamRepositoryBuilder::repository_name)
+    pub fn build(self) -> ::std::result::Result<crate::types::UpstreamRepository, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::UpstreamRepository {
+            repository_name: self.repository_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "repository_name",
+                    "repository_name was not specified but it is required when building UpstreamRepository",
+                )
+            })?,
+        })
     }
 }

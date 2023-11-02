@@ -69,6 +69,7 @@ impl GetDataEndpointInputBuilder {
         &self.stream_arn
     }
     /// <p>The name of the API action for which to get an endpoint.</p>
+    /// This field is required.
     pub fn api_name(mut self, input: crate::types::ApiName) -> Self {
         self.api_name = ::std::option::Option::Some(input);
         self

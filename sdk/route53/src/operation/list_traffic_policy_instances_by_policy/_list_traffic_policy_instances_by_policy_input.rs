@@ -75,6 +75,7 @@ pub struct ListTrafficPolicyInstancesByPolicyInputBuilder {
 }
 impl ListTrafficPolicyInstancesByPolicyInputBuilder {
     /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
+    /// This field is required.
     pub fn traffic_policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_policy_id = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +90,7 @@ impl ListTrafficPolicyInstancesByPolicyInputBuilder {
         &self.traffic_policy_id
     }
     /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
+    /// This field is required.
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
         self.traffic_policy_version = ::std::option::Option::Some(input);
         self

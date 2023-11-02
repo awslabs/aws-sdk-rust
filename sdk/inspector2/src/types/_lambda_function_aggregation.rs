@@ -19,20 +19,28 @@ pub struct LambdaFunctionAggregation {
 }
 impl LambdaFunctionAggregation {
     /// <p>The resource IDs to include in the aggregation results.</p>
-    pub fn resource_ids(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.resource_ids.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
+    pub fn resource_ids(&self) -> &[crate::types::StringFilter] {
+        self.resource_ids.as_deref().unwrap_or_default()
     }
     /// <p>The AWS Lambda function names to include in the aggregation results.</p>
-    pub fn function_names(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.function_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_names.is_none()`.
+    pub fn function_names(&self) -> &[crate::types::StringFilter] {
+        self.function_names.as_deref().unwrap_or_default()
     }
     /// <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
-    pub fn runtimes(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
-        self.runtimes.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtimes.is_none()`.
+    pub fn runtimes(&self) -> &[crate::types::StringFilter] {
+        self.runtimes.as_deref().unwrap_or_default()
     }
     /// <p>The tags to include in the aggregation results.</p>
-    pub fn function_tags(&self) -> ::std::option::Option<&[crate::types::MapFilter]> {
-        self.function_tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_tags.is_none()`.
+    pub fn function_tags(&self) -> &[crate::types::MapFilter] {
+        self.function_tags.as_deref().unwrap_or_default()
     }
     /// <p>The order to use for sorting the results.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {

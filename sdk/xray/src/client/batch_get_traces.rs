@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trace_ids(impl Into<String>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::trace_ids) / [`set_trace_ids(Option<Vec<String>>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::set_trace_ids): <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::set_next_token): <p>Pagination token.</p>
+    ///   - [`trace_ids(impl Into<String>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::trace_ids) / [`set_trace_ids(Option<Vec<String>>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::set_trace_ids):<br>required: **true**<br><p>Specify the trace IDs of requests for which to retrieve segments.</p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::batch_get_traces::builders::BatchGetTracesFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
     /// - On success, responds with [`BatchGetTracesOutput`](crate::operation::batch_get_traces::BatchGetTracesOutput) with field(s):
     ///   - [`traces(Option<Vec<Trace>>)`](crate::operation::batch_get_traces::BatchGetTracesOutput::traces): <p>Full traces for the specified requests.</p>
     ///   - [`unprocessed_trace_ids(Option<Vec<String>>)`](crate::operation::batch_get_traces::BatchGetTracesOutput::unprocessed_trace_ids): <p>Trace IDs of requests that haven't been processed.</p>

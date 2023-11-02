@@ -43,14 +43,18 @@ impl FeaturedResultsSet {
     }
     /// <p>The list of queries for featuring results.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub fn query_texts(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.query_texts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_texts.is_none()`.
+    pub fn query_texts(&self) -> &[::std::string::String] {
+        self.query_texts.as_deref().unwrap_or_default()
     }
     /// <p>The list of document IDs for the documents you want to feature at the top of the search results page. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
     /// <p>You can add up to four featured documents. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub fn featured_documents(&self) -> ::std::option::Option<&[crate::types::FeaturedDocument]> {
-        self.featured_documents.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_documents.is_none()`.
+    pub fn featured_documents(&self) -> &[crate::types::FeaturedDocument] {
+        self.featured_documents.as_deref().unwrap_or_default()
     }
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
     pub fn last_updated_timestamp(&self) -> ::std::option::Option<i64> {

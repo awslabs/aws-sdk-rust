@@ -42,6 +42,7 @@ pub struct ListUserPoolClientsInputBuilder {
 }
 impl ListUserPoolClientsInputBuilder {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
+    /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self

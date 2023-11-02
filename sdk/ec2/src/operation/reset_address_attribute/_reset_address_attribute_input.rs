@@ -41,6 +41,7 @@ pub struct ResetAddressAttributeInputBuilder {
 }
 impl ResetAddressAttributeInputBuilder {
     /// <p>[EC2-VPC] The allocation ID.</p>
+    /// This field is required.
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl ResetAddressAttributeInputBuilder {
         &self.allocation_id
     }
     /// <p>The attribute of the IP address.</p>
+    /// This field is required.
     pub fn attribute(mut self, input: crate::types::AddressAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self

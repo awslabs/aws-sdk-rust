@@ -48,6 +48,7 @@ pub struct UpdateCampaignInputBuilder {
 }
 impl UpdateCampaignInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    /// This field is required.
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
         self

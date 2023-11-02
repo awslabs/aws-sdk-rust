@@ -34,6 +34,7 @@ pub struct ModifyWorkspacePropertiesInputBuilder {
 }
 impl ModifyWorkspacePropertiesInputBuilder {
     /// <p>The identifier of the WorkSpace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl ModifyWorkspacePropertiesInputBuilder {
         &self.workspace_id
     }
     /// <p>The properties of the WorkSpace.</p>
+    /// This field is required.
     pub fn workspace_properties(mut self, input: crate::types::WorkspaceProperties) -> Self {
         self.workspace_properties = ::std::option::Option::Some(input);
         self

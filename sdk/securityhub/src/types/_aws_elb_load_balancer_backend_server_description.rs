@@ -15,8 +15,10 @@ impl AwsElbLoadBalancerBackendServerDescription {
         self.instance_port
     }
     /// <p>The names of the policies that are enabled for the EC2 instance.</p>
-    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.policy_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
+    pub fn policy_names(&self) -> &[::std::string::String] {
+        self.policy_names.as_deref().unwrap_or_default()
     }
 }
 impl AwsElbLoadBalancerBackendServerDescription {

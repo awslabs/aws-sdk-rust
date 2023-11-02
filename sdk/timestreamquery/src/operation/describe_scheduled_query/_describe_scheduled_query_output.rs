@@ -34,6 +34,7 @@ pub struct DescribeScheduledQueryOutputBuilder {
 }
 impl DescribeScheduledQueryOutputBuilder {
     /// <p>The scheduled query.</p>
+    /// This field is required.
     pub fn scheduled_query(mut self, input: crate::types::ScheduledQueryDescription) -> Self {
         self.scheduled_query = ::std::option::Option::Some(input);
         self

@@ -21,12 +21,16 @@ impl JupyterServerAppSettings {
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p> <note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
-    pub fn lifecycle_config_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.lifecycle_config_arns.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_config_arns.is_none()`.
+    pub fn lifecycle_config_arns(&self) -> &[::std::string::String] {
+        self.lifecycle_config_arns.as_deref().unwrap_or_default()
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
-    pub fn code_repositories(&self) -> ::std::option::Option<&[crate::types::CodeRepository]> {
-        self.code_repositories.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repositories.is_none()`.
+    pub fn code_repositories(&self) -> &[crate::types::CodeRepository] {
+        self.code_repositories.as_deref().unwrap_or_default()
     }
 }
 impl JupyterServerAppSettings {

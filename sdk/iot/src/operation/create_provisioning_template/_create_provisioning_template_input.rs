@@ -54,8 +54,10 @@ impl CreateProvisioningTemplateInput {
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
@@ -84,6 +86,7 @@ pub struct CreateProvisioningTemplateInputBuilder {
 }
 impl CreateProvisioningTemplateInputBuilder {
     /// <p>The name of the provisioning template.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -112,6 +115,7 @@ impl CreateProvisioningTemplateInputBuilder {
         &self.description
     }
     /// <p>The JSON formatted contents of the provisioning template.</p>
+    /// This field is required.
     pub fn template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_body = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +144,7 @@ impl CreateProvisioningTemplateInputBuilder {
         &self.enabled
     }
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
+    /// This field is required.
     pub fn provisioning_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provisioning_role_arn = ::std::option::Option::Some(input.into());
         self

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorEntity {
     /// <p> The name of the connector entity. </p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p> The label applied to the connector entity. </p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
@@ -13,8 +13,9 @@ pub struct ConnectorEntity {
 }
 impl ConnectorEntity {
     /// <p> The name of the connector entity. </p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p> The label applied to the connector entity. </p>
     pub fn label(&self) -> ::std::option::Option<&str> {
@@ -42,6 +43,7 @@ pub struct ConnectorEntityBuilder {
 }
 impl ConnectorEntityBuilder {
     /// <p> The name of the connector entity. </p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl ConnectorEntityBuilder {
         &self.has_nested_entities
     }
     /// Consumes the builder and constructs a [`ConnectorEntity`](crate::types::ConnectorEntity).
-    pub fn build(self) -> crate::types::ConnectorEntity {
-        crate::types::ConnectorEntity {
-            name: self.name,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::types::builders::ConnectorEntityBuilder::name)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectorEntity, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConnectorEntity {
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building ConnectorEntity",
+                )
+            })?,
             label: self.label,
             has_nested_entities: self.has_nested_entities.unwrap_or_default(),
-        }
+        })
     }
 }

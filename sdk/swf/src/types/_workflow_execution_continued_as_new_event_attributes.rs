@@ -9,7 +9,7 @@ pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub decision_task_completed_event_id: i64,
     /// <p>The <code>runId</code> of the new workflow execution.</p>
-    pub new_execution_run_id: ::std::option::Option<::std::string::String>,
+    pub new_execution_run_id: ::std::string::String,
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ pub struct WorkflowExecutionContinuedAsNewEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
+    pub child_policy: crate::types::ChildPolicy,
     /// <p>The list of tags associated with the new workflow execution.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The workflow type of this execution.</p>
@@ -45,8 +45,9 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
         self.decision_task_completed_event_id
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
-    pub fn new_execution_run_id(&self) -> ::std::option::Option<&str> {
-        self.new_execution_run_id.as_deref()
+    pub fn new_execution_run_id(&self) -> &str {
+        use std::ops::Deref;
+        self.new_execution_run_id.deref()
     }
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -73,12 +74,14 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
-        self.child_policy.as_ref()
+    pub fn child_policy(&self) -> &crate::types::ChildPolicy {
+        &self.child_policy
     }
     /// <p>The list of tags associated with the new workflow execution.</p>
-    pub fn tag_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.tag_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[::std::string::String] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
     /// <p>The workflow type of this execution.</p>
     pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
@@ -128,6 +131,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         &self.input
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    /// This field is required.
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
         self
@@ -142,6 +146,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         &self.decision_task_completed_event_id
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
+    /// This field is required.
     pub fn new_execution_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_execution_run_id = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +178,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         &self.execution_start_to_close_timeout
     }
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
+    /// This field is required.
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
         self
@@ -224,6 +230,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
         self.child_policy = ::std::option::Option::Some(input);
         self
@@ -270,6 +277,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         &self.tag_list
     }
     /// <p>The workflow type of this execution.</p>
+    /// This field is required.
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
         self
@@ -298,19 +306,34 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         &self.lambda_role
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::types::WorkflowExecutionContinuedAsNewEventAttributes).
-    pub fn build(self) -> crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
-        crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`new_execution_run_id`](crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder::new_execution_run_id)
+    /// - [`child_policy`](crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder::child_policy)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionContinuedAsNewEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
             input: self.input,
             decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-            new_execution_run_id: self.new_execution_run_id,
+            new_execution_run_id: self.new_execution_run_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "new_execution_run_id",
+                    "new_execution_run_id was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes",
+                )
+            })?,
             execution_start_to_close_timeout: self.execution_start_to_close_timeout,
             task_list: self.task_list,
             task_priority: self.task_priority,
             task_start_to_close_timeout: self.task_start_to_close_timeout,
-            child_policy: self.child_policy,
+            child_policy: self.child_policy.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "child_policy",
+                    "child_policy was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes",
+                )
+            })?,
             tag_list: self.tag_list,
             workflow_type: self.workflow_type,
             lambda_role: self.lambda_role,
-        }
+        })
     }
 }

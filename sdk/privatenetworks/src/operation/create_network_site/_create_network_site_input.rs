@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateNetworkSiteInput {
     /// <p>The name of the site. You can't change the name after you create the site.</p>
-    pub network_site_name: ::std::option::Option<::std::string::String>,
+    pub network_site_name: ::std::string::String,
     /// <p>The description of the site.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub network_arn: ::std::option::Option<::std::string::String>,
+    pub network_arn: ::std::string::String,
     /// <p>Information about the pending plan for this site.</p>
     pub pending_plan: ::std::option::Option<crate::types::SitePlan>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -22,16 +22,18 @@ pub struct CreateNetworkSiteInput {
 }
 impl CreateNetworkSiteInput {
     /// <p>The name of the site. You can't change the name after you create the site.</p>
-    pub fn network_site_name(&self) -> ::std::option::Option<&str> {
-        self.network_site_name.as_deref()
+    pub fn network_site_name(&self) -> &str {
+        use std::ops::Deref;
+        self.network_site_name.deref()
     }
     /// <p>The description of the site.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> ::std::option::Option<&str> {
-        self.network_arn.as_deref()
+    pub fn network_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.network_arn.deref()
     }
     /// <p>Information about the pending plan for this site.</p>
     pub fn pending_plan(&self) -> ::std::option::Option<&crate::types::SitePlan> {
@@ -90,6 +92,7 @@ pub struct CreateNetworkSiteInputBuilder {
 }
 impl CreateNetworkSiteInputBuilder {
     /// <p>The name of the site. You can't change the name after you create the site.</p>
+    /// This field is required.
     pub fn network_site_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_site_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl CreateNetworkSiteInputBuilder {
         &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    /// This field is required.
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
         self
@@ -208,13 +212,26 @@ impl CreateNetworkSiteInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNetworkSiteInput`](crate::operation::create_network_site::CreateNetworkSiteInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`network_site_name`](crate::operation::create_network_site::builders::CreateNetworkSiteInputBuilder::network_site_name)
+    /// - [`network_arn`](crate::operation::create_network_site::builders::CreateNetworkSiteInputBuilder::network_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_network_site::CreateNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_network_site::CreateNetworkSiteInput {
-            network_site_name: self.network_site_name,
+            network_site_name: self.network_site_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_site_name",
+                    "network_site_name was not specified but it is required when building CreateNetworkSiteInput",
+                )
+            })?,
             description: self.description,
-            network_arn: self.network_arn,
+            network_arn: self.network_arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "network_arn",
+                    "network_arn was not specified but it is required when building CreateNetworkSiteInput",
+                )
+            })?,
             pending_plan: self.pending_plan,
             client_token: self.client_token,
             availability_zone: self.availability_zone,

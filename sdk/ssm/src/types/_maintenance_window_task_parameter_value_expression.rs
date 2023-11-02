@@ -9,8 +9,10 @@ pub struct MaintenanceWindowTaskParameterValueExpression {
 }
 impl MaintenanceWindowTaskParameterValueExpression {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
-    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.values.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
+    pub fn values(&self) -> &[::std::string::String] {
+        self.values.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for MaintenanceWindowTaskParameterValueExpression {

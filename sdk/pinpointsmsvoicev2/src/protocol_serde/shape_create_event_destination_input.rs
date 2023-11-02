@@ -3,41 +3,41 @@ pub fn ser_create_event_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_event_destination::CreateEventDestinationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1.as_str());
+    {
+        object.key("ConfigurationSetName").string(input.configuration_set_name.as_str());
     }
-    if let Some(var_2) = &input.event_destination_name {
-        object.key("EventDestinationName").string(var_2.as_str());
+    {
+        object.key("EventDestinationName").string(input.event_destination_name.as_str());
     }
-    if let Some(var_3) = &input.matching_event_types {
-        let mut array_4 = object.key("MatchingEventTypes").start_array();
-        for item_5 in var_3 {
+    {
+        let mut array_1 = object.key("MatchingEventTypes").start_array();
+        for item_2 in &input.matching_event_types {
             {
-                array_4.value().string(item_5.as_str());
+                array_1.value().string(item_2.as_str());
             }
         }
-        array_4.finish();
+        array_1.finish();
     }
-    if let Some(var_6) = &input.cloud_watch_logs_destination {
+    if let Some(var_3) = &input.cloud_watch_logs_destination {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("CloudWatchLogsDestination").start_object();
-        crate::protocol_serde::shape_cloud_watch_logs_destination::ser_cloud_watch_logs_destination(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_4 = object.key("CloudWatchLogsDestination").start_object();
+        crate::protocol_serde::shape_cloud_watch_logs_destination::ser_cloud_watch_logs_destination(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_8) = &input.kinesis_firehose_destination {
+    if let Some(var_5) = &input.kinesis_firehose_destination {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("KinesisFirehoseDestination").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_6 = object.key("KinesisFirehoseDestination").start_object();
+        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_10) = &input.sns_destination {
+    if let Some(var_7) = &input.sns_destination {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("SnsDestination").start_object();
-        crate::protocol_serde::shape_sns_destination::ser_sns_destination(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_8 = object.key("SnsDestination").start_object();
+        crate::protocol_serde::shape_sns_destination::ser_sns_destination(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_12) = &input.client_token {
-        object.key("ClientToken").string(var_12.as_str());
+    if let Some(var_9) = &input.client_token {
+        object.key("ClientToken").string(var_9.as_str());
     }
     Ok(())
 }

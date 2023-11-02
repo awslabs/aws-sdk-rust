@@ -27,6 +27,7 @@ pub struct CreateTopicRuleDestinationInputBuilder {
 }
 impl CreateTopicRuleDestinationInputBuilder {
     /// <p>The topic rule destination configuration.</p>
+    /// This field is required.
     pub fn destination_configuration(mut self, input: crate::types::TopicRuleDestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self

@@ -34,6 +34,7 @@ pub struct PutComponentPolicyInputBuilder {
 }
 impl PutComponentPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
+    /// This field is required.
     pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl PutComponentPolicyInputBuilder {
         &self.component_arn
     }
     /// <p>The policy to apply.</p>
+    /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self

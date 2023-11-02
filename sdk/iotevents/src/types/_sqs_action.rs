@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsAction {
     /// <p>The URL of the SQS queue where the data is written.</p>
-    pub queue_url: ::std::option::Option<::std::string::String>,
+    pub queue_url: ::std::string::String,
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
     pub use_base64: ::std::option::Option<bool>,
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
@@ -13,8 +13,9 @@ pub struct SqsAction {
 }
 impl SqsAction {
     /// <p>The URL of the SQS queue where the data is written.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
-        self.queue_url.as_deref()
+    pub fn queue_url(&self) -> &str {
+        use std::ops::Deref;
+        self.queue_url.deref()
     }
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
     pub fn use_base64(&self) -> ::std::option::Option<bool> {
@@ -42,6 +43,7 @@ pub struct SqsActionBuilder {
 }
 impl SqsActionBuilder {
     /// <p>The URL of the SQS queue where the data is written.</p>
+    /// This field is required.
     pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_url = ::std::option::Option::Some(input.into());
         self
@@ -84,11 +86,18 @@ impl SqsActionBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`SqsAction`](crate::types::SqsAction).
-    pub fn build(self) -> crate::types::SqsAction {
-        crate::types::SqsAction {
-            queue_url: self.queue_url,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue_url`](crate::types::builders::SqsActionBuilder::queue_url)
+    pub fn build(self) -> ::std::result::Result<crate::types::SqsAction, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::SqsAction {
+            queue_url: self.queue_url.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "queue_url",
+                    "queue_url was not specified but it is required when building SqsAction",
+                )
+            })?,
             use_base64: self.use_base64,
             payload: self.payload,
-        }
+        })
     }
 }

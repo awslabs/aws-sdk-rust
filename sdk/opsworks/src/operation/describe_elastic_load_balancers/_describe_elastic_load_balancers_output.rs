@@ -10,8 +10,10 @@ pub struct DescribeElasticLoadBalancersOutput {
 }
 impl DescribeElasticLoadBalancersOutput {
     /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
-    pub fn elastic_load_balancers(&self) -> ::std::option::Option<&[crate::types::ElasticLoadBalancer]> {
-        self.elastic_load_balancers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_load_balancers.is_none()`.
+    pub fn elastic_load_balancers(&self) -> &[crate::types::ElasticLoadBalancer] {
+        self.elastic_load_balancers.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeElasticLoadBalancersOutput {

@@ -55,6 +55,7 @@ impl CreateDatabaseInputBuilder {
         &self.catalog_id
     }
     /// <p>The metadata for the database.</p>
+    /// This field is required.
     pub fn database_input(mut self, input: crate::types::DatabaseInput) -> Self {
         self.database_input = ::std::option::Option::Some(input);
         self

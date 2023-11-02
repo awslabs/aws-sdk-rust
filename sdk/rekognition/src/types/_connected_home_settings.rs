@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectedHomeSettings {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::vec::Vec<::std::string::String>,
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub min_confidence: ::std::option::Option<f32>,
 }
 impl ConnectedHomeSettings {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    pub fn labels(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.labels.deref()
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn min_confidence(&self) -> ::std::option::Option<f32> {
@@ -69,10 +70,17 @@ impl ConnectedHomeSettingsBuilder {
         &self.min_confidence
     }
     /// Consumes the builder and constructs a [`ConnectedHomeSettings`](crate::types::ConnectedHomeSettings).
-    pub fn build(self) -> crate::types::ConnectedHomeSettings {
-        crate::types::ConnectedHomeSettings {
-            labels: self.labels,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`labels`](crate::types::builders::ConnectedHomeSettingsBuilder::labels)
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectedHomeSettings, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ConnectedHomeSettings {
+            labels: self.labels.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "labels",
+                    "labels was not specified but it is required when building ConnectedHomeSettings",
+                )
+            })?,
             min_confidence: self.min_confidence,
-        }
+        })
     }
 }

@@ -15,8 +15,8 @@ pub fn ser_start_protected_query_input(
         crate::protocol_serde::shape_protected_query_sql_parameters::ser_protected_query_sql_parameters(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("type").string(var_5.as_str());
+    {
+        object.key("type").string(input.r#type.as_str());
     }
     Ok(())
 }

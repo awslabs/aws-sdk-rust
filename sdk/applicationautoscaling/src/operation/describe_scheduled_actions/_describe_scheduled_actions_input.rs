@@ -61,8 +61,10 @@ pub struct DescribeScheduledActionsInput {
 }
 impl DescribeScheduledActionsInput {
     /// <p>The names of the scheduled actions to describe.</p>
-    pub fn scheduled_action_names(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.scheduled_action_names.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_action_names.is_none()`.
+    pub fn scheduled_action_names(&self) -> &[::std::string::String] {
+        self.scheduled_action_names.as_deref().unwrap_or_default()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
@@ -168,6 +170,7 @@ impl DescribeScheduledActionsInputBuilder {
         &self.scheduled_action_names
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
+    /// This field is required.
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.service_namespace = ::std::option::Option::Some(input);
         self

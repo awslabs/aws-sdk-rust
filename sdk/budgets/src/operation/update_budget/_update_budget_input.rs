@@ -35,6 +35,7 @@ pub struct UpdateBudgetInputBuilder {
 }
 impl UpdateBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
+    /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl UpdateBudgetInputBuilder {
         &self.account_id
     }
     /// <p>The budget that you want to update your budget to.</p>
+    /// This field is required.
     pub fn new_budget(mut self, input: crate::types::Budget) -> Self {
         self.new_budget = ::std::option::Option::Some(input);
         self

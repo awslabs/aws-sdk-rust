@@ -34,6 +34,7 @@ pub struct RegisterAgentInputBuilder {
 }
 impl RegisterAgentInputBuilder {
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
+    /// This field is required.
     pub fn discovery_data(mut self, input: crate::types::DiscoveryData) -> Self {
         self.discovery_data = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl RegisterAgentInputBuilder {
         &self.discovery_data
     }
     /// <p>Detailed information about the agent being registered.</p>
+    /// This field is required.
     pub fn agent_details(mut self, input: crate::types::AgentDetails) -> Self {
         self.agent_details = ::std::option::Option::Some(input);
         self

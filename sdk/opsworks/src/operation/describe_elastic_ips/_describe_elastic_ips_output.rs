@@ -10,8 +10,10 @@ pub struct DescribeElasticIpsOutput {
 }
 impl DescribeElasticIpsOutput {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    pub fn elastic_ips(&self) -> ::std::option::Option<&[crate::types::ElasticIp]> {
-        self.elastic_ips.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_ips.is_none()`.
+    pub fn elastic_ips(&self) -> &[crate::types::ElasticIp] {
+        self.elastic_ips.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DescribeElasticIpsOutput {

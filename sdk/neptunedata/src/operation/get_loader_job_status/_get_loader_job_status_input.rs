@@ -57,6 +57,7 @@ pub struct GetLoaderJobStatusInputBuilder {
 }
 impl GetLoaderJobStatusInputBuilder {
     /// <p>The load ID of the load job to get the status of.</p>
+    /// This field is required.
     pub fn load_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_id = ::std::option::Option::Some(input.into());
         self

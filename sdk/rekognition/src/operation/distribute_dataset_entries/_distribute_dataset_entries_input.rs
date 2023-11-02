@@ -8,8 +8,10 @@ pub struct DistributeDatasetEntriesInput {
 }
 impl DistributeDatasetEntriesInput {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    pub fn datasets(&self) -> ::std::option::Option<&[crate::types::DistributeDataset]> {
-        self.datasets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
+    pub fn datasets(&self) -> &[crate::types::DistributeDataset] {
+        self.datasets.as_deref().unwrap_or_default()
     }
 }
 impl DistributeDatasetEntriesInput {

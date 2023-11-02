@@ -83,6 +83,7 @@ impl ListStageDevicesInputBuilder {
         &self.max_results
     }
     /// <p>The name of the edge deployment plan.</p>
+    /// This field is required.
     pub fn edge_deployment_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_deployment_plan_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +112,7 @@ impl ListStageDevicesInputBuilder {
         &self.exclude_devices_deployed_in_other_stage
     }
     /// <p>The name of the stage in the deployment.</p>
+    /// This field is required.
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
         self

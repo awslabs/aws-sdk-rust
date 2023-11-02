@@ -41,8 +41,10 @@ impl AssetListing {
         self.forms.as_deref()
     }
     /// <p>The glossary terms attached to an asset published in an Amazon DataZone catalog. </p>
-    pub fn glossary_terms(&self) -> ::std::option::Option<&[crate::types::DetailedGlossaryTerm]> {
-        self.glossary_terms.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
+    pub fn glossary_terms(&self) -> &[crate::types::DetailedGlossaryTerm] {
+        self.glossary_terms.as_deref().unwrap_or_default()
     }
     /// <p>The identifier of the project where an asset published in an Amazon DataZone catalog exists. </p>
     pub fn owning_project_id(&self) -> ::std::option::Option<&str> {

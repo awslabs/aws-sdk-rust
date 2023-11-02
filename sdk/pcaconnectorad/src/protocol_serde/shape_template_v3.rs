@@ -48,14 +48,14 @@ pub fn ser_template_v3(
         crate::protocol_serde::shape_general_flags_v3::ser_general_flags_v3(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.hash_algorithm {
-        object.key("HashAlgorithm").string(var_16.as_str());
+    {
+        object.key("HashAlgorithm").string(input.hash_algorithm.as_str());
     }
-    if let Some(var_17) = &input.extensions {
+    if let Some(var_16) = &input.extensions {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("Extensions").start_object();
-        crate::protocol_serde::shape_extensions_v3::ser_extensions_v3(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_17 = object.key("Extensions").start_object();
+        crate::protocol_serde::shape_extensions_v3::ser_extensions_v3(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }
@@ -122,7 +122,9 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::template_v3_correct_errors(builder).build().map_err(|err| {
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
+            })?))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

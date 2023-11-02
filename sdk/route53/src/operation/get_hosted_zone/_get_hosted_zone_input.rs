@@ -28,6 +28,7 @@ pub struct GetHostedZoneInputBuilder {
 }
 impl GetHostedZoneInputBuilder {
     /// <p>The ID of the hosted zone that you want to get information about.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

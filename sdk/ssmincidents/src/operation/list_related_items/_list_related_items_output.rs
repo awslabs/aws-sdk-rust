@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRelatedItemsOutput {
     /// <p>Details about each related item.</p>
-    pub related_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>>,
+    pub related_items: ::std::vec::Vec<crate::types::RelatedItem>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRelatedItemsOutput {
     /// <p>Details about each related item.</p>
-    pub fn related_items(&self) -> ::std::option::Option<&[crate::types::RelatedItem]> {
-        self.related_items.as_deref()
+    pub fn related_items(&self) -> &[crate::types::RelatedItem] {
+        use std::ops::Deref;
+        self.related_items.deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,11 +85,20 @@ impl ListRelatedItemsOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ListRelatedItemsOutput`](crate::operation::list_related_items::ListRelatedItemsOutput).
-    pub fn build(self) -> crate::operation::list_related_items::ListRelatedItemsOutput {
-        crate::operation::list_related_items::ListRelatedItemsOutput {
-            related_items: self.related_items,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`related_items`](crate::operation::list_related_items::builders::ListRelatedItemsOutputBuilder::related_items)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_related_items::ListRelatedItemsOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::list_related_items::ListRelatedItemsOutput {
+            related_items: self.related_items.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "related_items",
+                    "related_items was not specified but it is required when building ListRelatedItemsOutput",
+                )
+            })?,
             next_token: self.next_token,
             _request_id: self._request_id,
-        }
+        })
     }
 }

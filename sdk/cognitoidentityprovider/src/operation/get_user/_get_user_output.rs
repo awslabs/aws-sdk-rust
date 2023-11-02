@@ -5,10 +5,10 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserOutput {
     /// <p>The username of the user that you requested.</p>
-    pub username: ::std::option::Option<::std::string::String>,
+    pub username: ::std::string::String,
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub user_attributes: ::std::vec::Vec<crate::types::AttributeType>,
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
@@ -19,25 +19,31 @@ pub struct GetUserOutput {
 }
 impl GetUserOutput {
     /// <p>The username of the user that you requested.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
-        self.username.as_deref()
+    pub fn username(&self) -> &str {
+        use std::ops::Deref;
+        self.username.deref()
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
-    pub fn user_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
-        self.user_attributes.as_deref()
+    pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
+        use std::ops::Deref;
+        self.user_attributes.deref()
     }
     /// <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    pub fn mfa_options(&self) -> ::std::option::Option<&[crate::types::MfaOptionType]> {
-        self.mfa_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
+    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
+        self.mfa_options.as_deref().unwrap_or_default()
     }
     /// <p>The user's preferred MFA setting.</p>
     pub fn preferred_mfa_setting(&self) -> ::std::option::Option<&str> {
         self.preferred_mfa_setting.as_deref()
     }
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub fn user_mfa_setting_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.user_mfa_setting_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_mfa_setting_list.is_none()`.
+    pub fn user_mfa_setting_list(&self) -> &[::std::string::String] {
+        self.user_mfa_setting_list.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for GetUserOutput {
@@ -77,6 +83,7 @@ pub struct GetUserOutputBuilder {
 }
 impl GetUserOutputBuilder {
     /// <p>The username of the user that you requested.</p>
+    /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
@@ -177,15 +184,28 @@ impl GetUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`GetUserOutput`](crate::operation::get_user::GetUserOutput).
-    pub fn build(self) -> crate::operation::get_user::GetUserOutput {
-        crate::operation::get_user::GetUserOutput {
-            username: self.username,
-            user_attributes: self.user_attributes,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`username`](crate::operation::get_user::builders::GetUserOutputBuilder::username)
+    /// - [`user_attributes`](crate::operation::get_user::builders::GetUserOutputBuilder::user_attributes)
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserOutput, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::operation::get_user::GetUserOutput {
+            username: self.username.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "username",
+                    "username was not specified but it is required when building GetUserOutput",
+                )
+            })?,
+            user_attributes: self.user_attributes.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "user_attributes",
+                    "user_attributes was not specified but it is required when building GetUserOutput",
+                )
+            })?,
             mfa_options: self.mfa_options,
             preferred_mfa_setting: self.preferred_mfa_setting,
             user_mfa_setting_list: self.user_mfa_setting_list,
             _request_id: self._request_id,
-        }
+        })
     }
 }
 impl ::std::fmt::Debug for GetUserOutputBuilder {

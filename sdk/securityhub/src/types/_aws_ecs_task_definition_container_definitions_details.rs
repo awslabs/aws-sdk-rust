@@ -95,56 +95,74 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The command that is passed to the container.</p>
-    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.command.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
+    pub fn command(&self) -> &[::std::string::String] {
+        self.command.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU units reserved for the container.</p>
     pub fn cpu(&self) -> ::std::option::Option<i32> {
         self.cpu
     }
     /// <p>The dependencies that are defined for container startup and shutdown.</p>
-    pub fn depends_on(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails]> {
-        self.depends_on.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on.is_none()`.
+    pub fn depends_on(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails] {
+        self.depends_on.as_deref().unwrap_or_default()
     }
     /// <p>Whether to disable networking within the container.</p>
     pub fn disable_networking(&self) -> ::std::option::Option<bool> {
         self.disable_networking
     }
     /// <p>A list of DNS search domains that are presented to the container.</p>
-    pub fn dns_search_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_search_domains.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_search_domains.is_none()`.
+    pub fn dns_search_domains(&self) -> &[::std::string::String] {
+        self.dns_search_domains.as_deref().unwrap_or_default()
     }
     /// <p>A list of DNS servers that are presented to the container.</p>
-    pub fn dns_servers(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.dns_servers.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_servers.is_none()`.
+    pub fn dns_servers(&self) -> &[::std::string::String] {
+        self.dns_servers.as_deref().unwrap_or_default()
     }
     /// <p>A key-value map of labels to add to the container.</p>
     pub fn docker_labels(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.docker_labels.as_ref()
     }
     /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.</p>
-    pub fn docker_security_options(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.docker_security_options.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.docker_security_options.is_none()`.
+    pub fn docker_security_options(&self) -> &[::std::string::String] {
+        self.docker_security_options.as_deref().unwrap_or_default()
     }
     /// <p>The entry point that is passed to the container.</p>
-    pub fn entry_point(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entry_point.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entry_point.is_none()`.
+    pub fn entry_point(&self) -> &[::std::string::String] {
+        self.entry_point.as_deref().unwrap_or_default()
     }
     /// <p>The environment variables to pass to a container.</p>
-    pub fn environment(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails]> {
-        self.environment.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment.is_none()`.
+    pub fn environment(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails] {
+        self.environment.as_deref().unwrap_or_default()
     }
     /// <p>A list of files containing the environment variables to pass to a container.</p>
-    pub fn environment_files(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails]> {
-        self.environment_files.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_files.is_none()`.
+    pub fn environment_files(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails] {
+        self.environment_files.as_deref().unwrap_or_default()
     }
     /// <p>Whether the container is essential. All tasks must have at least one essential container.</p>
     pub fn essential(&self) -> ::std::option::Option<bool> {
         self.essential
     }
     /// <p>A list of hostnames and IP address mappings to append to the <b>/etc/hosts</b> file on the container.</p>
-    pub fn extra_hosts(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails]> {
-        self.extra_hosts.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extra_hosts.is_none()`.
+    pub fn extra_hosts(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails] {
+        self.extra_hosts.as_deref().unwrap_or_default()
     }
     /// <p>The FireLens configuration for the container. Specifies and configures a log router for container logs.</p>
     pub fn firelens_configuration(
@@ -169,8 +187,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.interactive
     }
     /// <p>A list of links for the container in the form <code> <i>container_name</i>:<i>alias</i> </code>. Allows containers to communicate with each other without the need for port mappings.</p>
-    pub fn links(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.links.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.links.is_none()`.
+    pub fn links(&self) -> &[::std::string::String] {
+        self.links.as_deref().unwrap_or_default()
     }
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
     pub fn linux_parameters(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails> {
@@ -189,16 +209,20 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.memory_reservation
     }
     /// <p>The mount points for the data volumes in the container.</p>
-    pub fn mount_points(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails]> {
-        self.mount_points.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_points.is_none()`.
+    pub fn mount_points(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails] {
+        self.mount_points.as_deref().unwrap_or_default()
     }
     /// <p>The name of the container.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The list of port mappings for the container.</p>
-    pub fn port_mappings(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails]> {
-        self.port_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_mappings.is_none()`.
+    pub fn port_mappings(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails] {
+        self.port_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Whether the container is given elevated privileges on the host container instance. The elevated privileges are similar to the root user.</p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {
@@ -219,14 +243,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.repository_credentials.as_ref()
     }
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(
-        &self,
-    ) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails]> {
-        self.resource_requirements.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
+    pub fn resource_requirements(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails] {
+        self.resource_requirements.as_deref().unwrap_or_default()
     }
     /// <p>The secrets to pass to the container.</p>
-    pub fn secrets(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails]> {
-        self.secrets.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secrets.is_none()`.
+    pub fn secrets(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails] {
+        self.secrets.as_deref().unwrap_or_default()
     }
     /// <p>The number of seconds to wait before giving up on resolving dependencies for a container. </p>
     pub fn start_timeout(&self) -> ::std::option::Option<i32> {
@@ -237,12 +263,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.stop_timeout
     }
     /// <p>A list of namespaced kernel parameters to set in the container.</p>
-    pub fn system_controls(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails]> {
-        self.system_controls.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_controls.is_none()`.
+    pub fn system_controls(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails] {
+        self.system_controls.as_deref().unwrap_or_default()
     }
     /// <p>A list of ulimits to set in the container. </p>
-    pub fn ulimits(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails]> {
-        self.ulimits.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ulimits.is_none()`.
+    pub fn ulimits(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails] {
+        self.ulimits.as_deref().unwrap_or_default()
     }
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
@@ -258,8 +288,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.user.as_deref()
     }
     /// <p>Data volumes to mount from another container.</p>
-    pub fn volumes_from(&self) -> ::std::option::Option<&[crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails]> {
-        self.volumes_from.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes_from.is_none()`.
+    pub fn volumes_from(&self) -> &[crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails] {
+        self.volumes_from.as_deref().unwrap_or_default()
     }
     /// <p>The working directory in which to run commands inside the container.</p>
     pub fn working_directory(&self) -> ::std::option::Option<&str> {

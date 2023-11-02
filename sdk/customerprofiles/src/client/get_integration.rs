@@ -3,14 +3,14 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIntegration`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`uri(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::uri) / [`set_uri(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_domain_name):<br>required: **true**<br><p>The unique name of the domain.</p><br>
+    ///   - [`uri(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::uri) / [`set_uri(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_uri):<br>required: **true**<br><p>The URI of the S3 bucket or any other type of data source.</p><br>
     /// - On success, responds with [`GetIntegrationOutput`](crate::operation::get_integration::GetIntegrationOutput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::domain_name): <p>The unique name of the domain.</p>
-    ///   - [`uri(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    ///   - [`domain_name(String)`](crate::operation::get_integration::GetIntegrationOutput::domain_name): <p>The unique name of the domain.</p>
+    ///   - [`uri(String)`](crate::operation::get_integration::GetIntegrationOutput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>
     ///   - [`object_type_name(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::object_type_name): <p>The name of the profile object type.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_integration::GetIntegrationOutput::created_at): <p>The timestamp of when the domain was created.</p>
-    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_integration::GetIntegrationOutput::last_updated_at): <p>The timestamp of when the domain was most recently edited.</p>
+    ///   - [`created_at(DateTime)`](crate::operation::get_integration::GetIntegrationOutput::created_at): <p>The timestamp of when the domain was created.</p>
+    ///   - [`last_updated_at(DateTime)`](crate::operation::get_integration::GetIntegrationOutput::last_updated_at): <p>The timestamp of when the domain was most recently edited.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_integration::GetIntegrationOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
     ///   - [`object_type_names(Option<HashMap<String, String>>)`](crate::operation::get_integration::GetIntegrationOutput::object_type_names): <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
     ///   - [`workflow_id(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::workflow_id): <p>Unique identifier for the workflow.</p>

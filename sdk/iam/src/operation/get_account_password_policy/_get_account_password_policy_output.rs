@@ -35,6 +35,7 @@ pub struct GetAccountPasswordPolicyOutputBuilder {
 }
 impl GetAccountPasswordPolicyOutputBuilder {
     /// <p>A structure that contains details about the account's password policy.</p>
+    /// This field is required.
     pub fn password_policy(mut self, input: crate::types::PasswordPolicy) -> Self {
         self.password_policy = ::std::option::Option::Some(input);
         self

@@ -11,8 +11,10 @@ pub struct DescribeMaintenanceWindowExecutionTasksOutput {
 }
 impl DescribeMaintenanceWindowExecutionTasksOutput {
     /// <p>Information about the task executions.</p>
-    pub fn window_execution_task_identities(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindowExecutionTaskIdentity]> {
-        self.window_execution_task_identities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.window_execution_task_identities.is_none()`.
+    pub fn window_execution_task_identities(&self) -> &[crate::types::MaintenanceWindowExecutionTaskIdentity] {
+        self.window_execution_task_identities.as_deref().unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

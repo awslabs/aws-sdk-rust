@@ -50,6 +50,7 @@ pub struct DescribeComponentConfigurationRecommendationInputBuilder {
 }
 impl DescribeComponentConfigurationRecommendationInputBuilder {
     /// <p>The name of the resource group.</p>
+    /// This field is required.
     pub fn resource_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_group_name = ::std::option::Option::Some(input.into());
         self
@@ -64,6 +65,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
         &self.resource_group_name
     }
     /// <p>The name of the component.</p>
+    /// This field is required.
     pub fn component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_name = ::std::option::Option::Some(input.into());
         self
@@ -78,6 +80,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
         &self.component_name
     }
     /// <p>The tier of the application component.</p>
+    /// This field is required.
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
         self.tier = ::std::option::Option::Some(input);
         self

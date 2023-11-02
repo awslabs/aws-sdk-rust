@@ -48,6 +48,7 @@ pub struct ListAssetRevisionsInputBuilder {
 }
 impl ListAssetRevisionsInputBuilder {
     /// <p>The identifier of the domain.</p>
+    /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_identifier = ::std::option::Option::Some(input.into());
         self
@@ -62,6 +63,7 @@ impl ListAssetRevisionsInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the asset.</p>
+    /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self

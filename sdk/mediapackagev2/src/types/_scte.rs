@@ -9,8 +9,10 @@ pub struct Scte {
 }
 impl Scte {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
-    pub fn scte_filter(&self) -> ::std::option::Option<&[crate::types::ScteFilter]> {
-        self.scte_filter.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scte_filter.is_none()`.
+    pub fn scte_filter(&self) -> &[crate::types::ScteFilter] {
+        self.scte_filter.as_deref().unwrap_or_default()
     }
 }
 impl Scte {

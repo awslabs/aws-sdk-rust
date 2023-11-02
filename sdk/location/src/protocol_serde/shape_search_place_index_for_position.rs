@@ -28,11 +28,10 @@ pub fn de_search_place_index_for_position_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::access_denied_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "InternalServerException" => crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::InternalServerException({
@@ -43,11 +42,10 @@ pub fn de_search_place_index_for_position_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ResourceNotFoundException" => {
@@ -60,11 +58,10 @@ pub fn de_search_place_index_for_position_http_error(
                         crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }
@@ -76,11 +73,10 @@ pub fn de_search_place_index_for_position_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         "ValidationException" => crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::ValidationException({
@@ -91,11 +87,10 @@ pub fn de_search_place_index_for_position_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?;
                 let output = output.meta(generic);
-                output.build()
+                crate::serde_util::validation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?
             };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
             tmp
         }),
         _ => crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::generic(generic),
@@ -117,7 +112,9 @@ pub fn de_search_place_index_for_position_http_response(
         output = crate::protocol_serde::shape_search_place_index_for_position::de_search_place_index_for_position(_response_body, output)
             .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?;
         output._set_request_id(::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
+        crate::serde_util::search_place_index_for_position_output_correct_errors(output)
+            .build()
+            .map_err(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionError::unhandled)?
     })
 }
 

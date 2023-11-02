@@ -28,6 +28,7 @@ pub struct DeleteMultiplexInputBuilder {
 }
 impl DeleteMultiplexInputBuilder {
     /// The ID of the multiplex.
+    /// This field is required.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
         self

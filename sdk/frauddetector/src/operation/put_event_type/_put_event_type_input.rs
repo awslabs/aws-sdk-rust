@@ -30,24 +30,32 @@ impl PutEventTypeInput {
         self.description.as_deref()
     }
     /// <p>The event type variables.</p>
-    pub fn event_variables(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.event_variables.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_variables.is_none()`.
+    pub fn event_variables(&self) -> &[::std::string::String] {
+        self.event_variables.as_deref().unwrap_or_default()
     }
     /// <p>The event type labels.</p>
-    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.labels.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
+    pub fn labels(&self) -> &[::std::string::String] {
+        self.labels.as_deref().unwrap_or_default()
     }
     /// <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
-    pub fn entity_types(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.entity_types.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_types.is_none()`.
+    pub fn entity_types(&self) -> &[::std::string::String] {
+        self.entity_types.as_deref().unwrap_or_default()
     }
     /// <p>Specifies if ingestion is enabled or disabled.</p>
     pub fn event_ingestion(&self) -> ::std::option::Option<&crate::types::EventIngestion> {
         self.event_ingestion.as_ref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.</p>
     pub fn event_orchestration(&self) -> ::std::option::Option<&crate::types::EventOrchestration> {
@@ -76,6 +84,7 @@ pub struct PutEventTypeInputBuilder {
 }
 impl PutEventTypeInputBuilder {
     /// <p>The name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self

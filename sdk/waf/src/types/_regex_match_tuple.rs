@@ -53,10 +53,10 @@ pub struct RegexMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
+    pub text_transformation: crate::types::TextTransformation,
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub regex_pattern_set_id: ::std::option::Option<::std::string::String>,
+    pub regex_pattern_set_id: ::std::string::String,
 }
 impl RegexMatchTuple {
     /// <p>Specifies where in a web request to look for the <code>RegexPatternSet</code>.</p>
@@ -101,13 +101,14 @@ impl RegexMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> ::std::option::Option<&crate::types::TextTransformation> {
-        self.text_transformation.as_ref()
+    pub fn text_transformation(&self) -> &crate::types::TextTransformation {
+        &self.text_transformation
     }
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(&self) -> ::std::option::Option<&str> {
-        self.regex_pattern_set_id.as_deref()
+    pub fn regex_pattern_set_id(&self) -> &str {
+        use std::ops::Deref;
+        self.regex_pattern_set_id.deref()
     }
 }
 impl RegexMatchTuple {
@@ -127,6 +128,7 @@ pub struct RegexMatchTupleBuilder {
 }
 impl RegexMatchTupleBuilder {
     /// <p>Specifies where in a web request to look for the <code>RegexPatternSet</code>.</p>
+    /// This field is required.
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
         self.field_to_match = ::std::option::Option::Some(input);
         self
@@ -178,6 +180,7 @@ impl RegexMatchTupleBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p> <b>NONE</b> </p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
+    /// This field is required.
     pub fn text_transformation(mut self, input: crate::types::TextTransformation) -> Self {
         self.text_transformation = ::std::option::Option::Some(input);
         self
@@ -267,6 +270,7 @@ impl RegexMatchTupleBuilder {
     }
     /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    /// This field is required.
     pub fn regex_pattern_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_pattern_set_id = ::std::option::Option::Some(input.into());
         self
@@ -283,11 +287,24 @@ impl RegexMatchTupleBuilder {
         &self.regex_pattern_set_id
     }
     /// Consumes the builder and constructs a [`RegexMatchTuple`](crate::types::RegexMatchTuple).
-    pub fn build(self) -> crate::types::RegexMatchTuple {
-        crate::types::RegexMatchTuple {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`text_transformation`](crate::types::builders::RegexMatchTupleBuilder::text_transformation)
+    /// - [`regex_pattern_set_id`](crate::types::builders::RegexMatchTupleBuilder::regex_pattern_set_id)
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexMatchTuple, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::RegexMatchTuple {
             field_to_match: self.field_to_match,
-            text_transformation: self.text_transformation,
-            regex_pattern_set_id: self.regex_pattern_set_id,
-        }
+            text_transformation: self.text_transformation.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "text_transformation",
+                    "text_transformation was not specified but it is required when building RegexMatchTuple",
+                )
+            })?,
+            regex_pattern_set_id: self.regex_pattern_set_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "regex_pattern_set_id",
+                    "regex_pattern_set_id was not specified but it is required when building RegexMatchTuple",
+                )
+            })?,
+        })
     }
 }

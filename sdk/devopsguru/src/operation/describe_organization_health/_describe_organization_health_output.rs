@@ -10,7 +10,7 @@ pub struct DescribeOrganizationHealthOutput {
     /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
     pub metrics_analyzed: i32,
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
-    pub resource_hours: ::std::option::Option<i64>,
+    pub resource_hours: i64,
     _request_id: Option<String>,
 }
 impl DescribeOrganizationHealthOutput {
@@ -27,7 +27,7 @@ impl DescribeOrganizationHealthOutput {
         self.metrics_analyzed
     }
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
-    pub fn resource_hours(&self) -> ::std::option::Option<i64> {
+    pub fn resource_hours(&self) -> i64 {
         self.resource_hours
     }
 }
@@ -55,6 +55,7 @@ pub struct DescribeOrganizationHealthOutputBuilder {
 }
 impl DescribeOrganizationHealthOutputBuilder {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn open_reactive_insights(mut self, input: i32) -> Self {
         self.open_reactive_insights = ::std::option::Option::Some(input);
         self
@@ -69,6 +70,7 @@ impl DescribeOrganizationHealthOutputBuilder {
         &self.open_reactive_insights
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
+    /// This field is required.
     pub fn open_proactive_insights(mut self, input: i32) -> Self {
         self.open_proactive_insights = ::std::option::Option::Some(input);
         self
@@ -83,6 +85,7 @@ impl DescribeOrganizationHealthOutputBuilder {
         &self.open_proactive_insights
     }
     /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
+    /// This field is required.
     pub fn metrics_analyzed(mut self, input: i32) -> Self {
         self.metrics_analyzed = ::std::option::Option::Some(input);
         self
@@ -97,6 +100,7 @@ impl DescribeOrganizationHealthOutputBuilder {
         &self.metrics_analyzed
     }
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
+    /// This field is required.
     pub fn resource_hours(mut self, input: i64) -> Self {
         self.resource_hours = ::std::option::Option::Some(input);
         self
@@ -120,13 +124,25 @@ impl DescribeOrganizationHealthOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationHealthOutput`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput).
-    pub fn build(self) -> crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
-        crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`resource_hours`](crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder::resource_hours)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_health::DescribeOrganizationHealthOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
             open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
             open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
             metrics_analyzed: self.metrics_analyzed.unwrap_or_default(),
-            resource_hours: self.resource_hours,
+            resource_hours: self.resource_hours.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "resource_hours",
+                    "resource_hours was not specified but it is required when building DescribeOrganizationHealthOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

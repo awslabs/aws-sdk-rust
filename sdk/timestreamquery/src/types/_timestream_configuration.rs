@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamConfiguration {
     /// <p>Name of Timestream database to which the query result will be written.</p>
-    pub database_name: ::std::option::Option<::std::string::String>,
+    pub database_name: ::std::string::String,
     /// <p>Name of Timestream table that the query result will be written to. The table should be within the same database that is provided in Timestream configuration.</p>
-    pub table_name: ::std::option::Option<::std::string::String>,
+    pub table_name: ::std::string::String,
     /// <p>Column from query result that should be used as the time column in destination table. Column type for this should be TIMESTAMP.</p>
-    pub time_column: ::std::option::Option<::std::string::String>,
+    pub time_column: ::std::string::String,
     /// <p> This is to allow mapping column(s) from the query result to the dimension in the destination table. </p>
-    pub dimension_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DimensionMapping>>,
+    pub dimension_mappings: ::std::vec::Vec<crate::types::DimensionMapping>,
     /// <p>Multi-measure mappings.</p>
     pub multi_measure_mappings: ::std::option::Option<crate::types::MultiMeasureMappings>,
     /// <p>Specifies how to map measures to multi-measure records.</p>
@@ -21,28 +21,34 @@ pub struct TimestreamConfiguration {
 }
 impl TimestreamConfiguration {
     /// <p>Name of Timestream database to which the query result will be written.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
-        self.database_name.as_deref()
+    pub fn database_name(&self) -> &str {
+        use std::ops::Deref;
+        self.database_name.deref()
     }
     /// <p>Name of Timestream table that the query result will be written to. The table should be within the same database that is provided in Timestream configuration.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
-        self.table_name.as_deref()
+    pub fn table_name(&self) -> &str {
+        use std::ops::Deref;
+        self.table_name.deref()
     }
     /// <p>Column from query result that should be used as the time column in destination table. Column type for this should be TIMESTAMP.</p>
-    pub fn time_column(&self) -> ::std::option::Option<&str> {
-        self.time_column.as_deref()
+    pub fn time_column(&self) -> &str {
+        use std::ops::Deref;
+        self.time_column.deref()
     }
     /// <p> This is to allow mapping column(s) from the query result to the dimension in the destination table. </p>
-    pub fn dimension_mappings(&self) -> ::std::option::Option<&[crate::types::DimensionMapping]> {
-        self.dimension_mappings.as_deref()
+    pub fn dimension_mappings(&self) -> &[crate::types::DimensionMapping] {
+        use std::ops::Deref;
+        self.dimension_mappings.deref()
     }
     /// <p>Multi-measure mappings.</p>
     pub fn multi_measure_mappings(&self) -> ::std::option::Option<&crate::types::MultiMeasureMappings> {
         self.multi_measure_mappings.as_ref()
     }
     /// <p>Specifies how to map measures to multi-measure records.</p>
-    pub fn mixed_measure_mappings(&self) -> ::std::option::Option<&[crate::types::MixedMeasureMapping]> {
-        self.mixed_measure_mappings.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mixed_measure_mappings.is_none()`.
+    pub fn mixed_measure_mappings(&self) -> &[crate::types::MixedMeasureMapping] {
+        self.mixed_measure_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Name of the measure column.</p>
     pub fn measure_name_column(&self) -> ::std::option::Option<&str> {
@@ -70,6 +76,7 @@ pub struct TimestreamConfigurationBuilder {
 }
 impl TimestreamConfigurationBuilder {
     /// <p>Name of Timestream database to which the query result will be written.</p>
+    /// This field is required.
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +91,7 @@ impl TimestreamConfigurationBuilder {
         &self.database_name
     }
     /// <p>Name of Timestream table that the query result will be written to. The table should be within the same database that is provided in Timestream configuration.</p>
+    /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +106,7 @@ impl TimestreamConfigurationBuilder {
         &self.table_name
     }
     /// <p>Column from query result that should be used as the time column in destination table. Column type for this should be TIMESTAMP.</p>
+    /// This field is required.
     pub fn time_column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_column = ::std::option::Option::Some(input.into());
         self
@@ -180,15 +189,40 @@ impl TimestreamConfigurationBuilder {
         &self.measure_name_column
     }
     /// Consumes the builder and constructs a [`TimestreamConfiguration`](crate::types::TimestreamConfiguration).
-    pub fn build(self) -> crate::types::TimestreamConfiguration {
-        crate::types::TimestreamConfiguration {
-            database_name: self.database_name,
-            table_name: self.table_name,
-            time_column: self.time_column,
-            dimension_mappings: self.dimension_mappings,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`database_name`](crate::types::builders::TimestreamConfigurationBuilder::database_name)
+    /// - [`table_name`](crate::types::builders::TimestreamConfigurationBuilder::table_name)
+    /// - [`time_column`](crate::types::builders::TimestreamConfigurationBuilder::time_column)
+    /// - [`dimension_mappings`](crate::types::builders::TimestreamConfigurationBuilder::dimension_mappings)
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TimestreamConfiguration {
+            database_name: self.database_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "database_name",
+                    "database_name was not specified but it is required when building TimestreamConfiguration",
+                )
+            })?,
+            table_name: self.table_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "table_name",
+                    "table_name was not specified but it is required when building TimestreamConfiguration",
+                )
+            })?,
+            time_column: self.time_column.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "time_column",
+                    "time_column was not specified but it is required when building TimestreamConfiguration",
+                )
+            })?,
+            dimension_mappings: self.dimension_mappings.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "dimension_mappings",
+                    "dimension_mappings was not specified but it is required when building TimestreamConfiguration",
+                )
+            })?,
             multi_measure_mappings: self.multi_measure_mappings,
             mixed_measure_mappings: self.mixed_measure_mappings,
             measure_name_column: self.measure_name_column,
-        }
+        })
     }
 }

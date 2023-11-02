@@ -15,8 +15,10 @@ pub struct DhcpOptions {
 }
 impl DhcpOptions {
     /// <p>The DHCP options in the set.</p>
-    pub fn dhcp_configurations(&self) -> ::std::option::Option<&[crate::types::DhcpConfiguration]> {
-        self.dhcp_configurations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dhcp_configurations.is_none()`.
+    pub fn dhcp_configurations(&self) -> &[crate::types::DhcpConfiguration] {
+        self.dhcp_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the set of DHCP options.</p>
     pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {
@@ -27,8 +29,10 @@ impl DhcpOptions {
         self.owner_id.as_deref()
     }
     /// <p>Any tags assigned to the DHCP options set.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl DhcpOptions {

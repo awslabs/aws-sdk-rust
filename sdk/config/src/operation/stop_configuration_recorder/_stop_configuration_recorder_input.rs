@@ -28,6 +28,7 @@ pub struct StopConfigurationRecorderInputBuilder {
 }
 impl StopConfigurationRecorderInputBuilder {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    /// This field is required.
     pub fn configuration_recorder_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_recorder_name = ::std::option::Option::Some(input.into());
         self

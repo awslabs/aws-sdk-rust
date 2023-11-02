@@ -10,7 +10,7 @@ pub struct ThingIndexingConfiguration {
     /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
     /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
     /// </ul>
-    pub thing_indexing_mode: ::std::option::Option<crate::types::ThingIndexingMode>,
+    pub thing_indexing_mode: crate::types::ThingIndexingMode,
     /// <p>Thing connectivity indexing mode. Valid values are: </p>
     /// <ul>
     /// <li> <p>STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, <i>thingIndexMode</i> must not be set to OFF.</p> </li>
@@ -45,8 +45,8 @@ impl ThingIndexingConfiguration {
     /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
     /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
     /// </ul>
-    pub fn thing_indexing_mode(&self) -> ::std::option::Option<&crate::types::ThingIndexingMode> {
-        self.thing_indexing_mode.as_ref()
+    pub fn thing_indexing_mode(&self) -> &crate::types::ThingIndexingMode {
+        &self.thing_indexing_mode
     }
     /// <p>Thing connectivity indexing mode. Valid values are: </p>
     /// <ul>
@@ -75,12 +75,16 @@ impl ThingIndexingConfiguration {
         self.named_shadow_indexing_mode.as_ref()
     }
     /// <p>Contains fields that are indexed and whose types are already known by the Fleet Indexing service.</p>
-    pub fn managed_fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
-        self.managed_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_fields.is_none()`.
+    pub fn managed_fields(&self) -> &[crate::types::Field] {
+        self.managed_fields.as_deref().unwrap_or_default()
     }
     /// <p>Contains custom field names and their data type.</p>
-    pub fn custom_fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
-        self.custom_fields.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_fields.is_none()`.
+    pub fn custom_fields(&self) -> &[crate::types::Field] {
+        self.custom_fields.as_deref().unwrap_or_default()
     }
     /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::IndexingFilter> {
@@ -113,6 +117,7 @@ impl ThingIndexingConfigurationBuilder {
     /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.</p> </li>
     /// <li> <p>OFF - Thing indexing is disabled.</p> </li>
     /// </ul>
+    /// This field is required.
     pub fn thing_indexing_mode(mut self, input: crate::types::ThingIndexingMode) -> Self {
         self.thing_indexing_mode = ::std::option::Option::Some(input);
         self
@@ -275,15 +280,22 @@ impl ThingIndexingConfigurationBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ThingIndexingConfiguration`](crate::types::ThingIndexingConfiguration).
-    pub fn build(self) -> crate::types::ThingIndexingConfiguration {
-        crate::types::ThingIndexingConfiguration {
-            thing_indexing_mode: self.thing_indexing_mode,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`thing_indexing_mode`](crate::types::builders::ThingIndexingConfigurationBuilder::thing_indexing_mode)
+    pub fn build(self) -> ::std::result::Result<crate::types::ThingIndexingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::ThingIndexingConfiguration {
+            thing_indexing_mode: self.thing_indexing_mode.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "thing_indexing_mode",
+                    "thing_indexing_mode was not specified but it is required when building ThingIndexingConfiguration",
+                )
+            })?,
             thing_connectivity_indexing_mode: self.thing_connectivity_indexing_mode,
             device_defender_indexing_mode: self.device_defender_indexing_mode,
             named_shadow_indexing_mode: self.named_shadow_indexing_mode,
             managed_fields: self.managed_fields,
             custom_fields: self.custom_fields,
             filter: self.filter,
-        }
+        })
     }
 }

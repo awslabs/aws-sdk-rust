@@ -55,6 +55,7 @@ impl DeprovisionPublicIpv4PoolCidrInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the pool that you want to deprovision the CIDR from.</p>
+    /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +70,7 @@ impl DeprovisionPublicIpv4PoolCidrInputBuilder {
         &self.pool_id
     }
     /// <p>The CIDR you want to deprovision from the pool. Enter the CIDR you want to deprovision with a netmask of <code>/32</code>. You must rerun this command for each IP address in the CIDR range. If your CIDR is a <code>/24</code>, you will have to run this command to deprovision each of the 256 IP addresses in the <code>/24</code> CIDR.</p>
+    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self

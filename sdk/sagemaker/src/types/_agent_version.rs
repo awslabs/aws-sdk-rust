@@ -35,6 +35,7 @@ pub struct AgentVersionBuilder {
 }
 impl AgentVersionBuilder {
     /// <p>Version of the agent.</p>
+    /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +50,7 @@ impl AgentVersionBuilder {
         &self.version
     }
     /// <p>The number of Edge Manager agents.</p>
+    /// This field is required.
     pub fn agent_count(mut self, input: i64) -> Self {
         self.agent_count = ::std::option::Option::Some(input);
         self

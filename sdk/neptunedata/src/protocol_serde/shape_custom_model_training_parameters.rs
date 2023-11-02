@@ -3,14 +3,14 @@ pub fn ser_custom_model_training_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomModelTrainingParameters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_s3_directory_path {
-        object.key("sourceS3DirectoryPath").string(var_1.as_str());
+    {
+        object.key("sourceS3DirectoryPath").string(input.source_s3_directory_path.as_str());
     }
-    if let Some(var_2) = &input.training_entry_point_script {
-        object.key("trainingEntryPointScript").string(var_2.as_str());
+    if let Some(var_1) = &input.training_entry_point_script {
+        object.key("trainingEntryPointScript").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.transform_entry_point_script {
-        object.key("transformEntryPointScript").string(var_3.as_str());
+    if let Some(var_2) = &input.transform_entry_point_script {
+        object.key("transformEntryPointScript").string(var_2.as_str());
     }
     Ok(())
 }

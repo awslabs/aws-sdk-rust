@@ -10,8 +10,10 @@ pub struct DeregisterInstancesFromLoadBalancerOutput {
 }
 impl DeregisterInstancesFromLoadBalancerOutput {
     /// <p>The remaining instances registered with the load balancer.</p>
-    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
-        self.instances.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
+    pub fn instances(&self) -> &[crate::types::Instance] {
+        self.instances.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for DeregisterInstancesFromLoadBalancerOutput {

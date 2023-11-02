@@ -3,8 +3,8 @@ pub fn ser_total_impact_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TotalImpactFilter,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.numeric_operator {
-        object.key("NumericOperator").string(var_1.as_str());
+    {
+        object.key("NumericOperator").string(input.numeric_operator.as_str());
     }
     {
         object.key("StartValue").number(

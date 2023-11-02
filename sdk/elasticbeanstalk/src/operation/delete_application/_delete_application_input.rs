@@ -35,6 +35,7 @@ pub struct DeleteApplicationInputBuilder {
 }
 impl DeleteApplicationInputBuilder {
     /// <p>The name of the application to delete.</p>
+    /// This field is required.
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self

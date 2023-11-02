@@ -33,8 +33,10 @@ impl AttackSummary {
         self.end_time.as_ref()
     }
     /// <p>The list of attacks for a specified time period.</p>
-    pub fn attack_vectors(&self) -> ::std::option::Option<&[crate::types::AttackVectorDescription]> {
-        self.attack_vectors.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_vectors.is_none()`.
+    pub fn attack_vectors(&self) -> &[crate::types::AttackVectorDescription] {
+        self.attack_vectors.as_deref().unwrap_or_default()
     }
 }
 impl AttackSummary {

@@ -7,7 +7,7 @@ pub struct TableDataImportJobMetadata {
     /// <p>Details about the submitter of the import request.</p>
     pub submitter: ::std::option::Option<crate::types::ImportJobSubmitter>,
     /// <p>The timestamp when the job was submitted for import.</p>
-    pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub submit_time: ::aws_smithy_types::DateTime,
     /// <p>The options that was specified at the time of submitting the import request.</p>
     pub import_options: ::std::option::Option<crate::types::ImportOptions>,
     /// <p>The source of the data that was submitted for import.</p>
@@ -19,8 +19,8 @@ impl TableDataImportJobMetadata {
         self.submitter.as_ref()
     }
     /// <p>The timestamp when the job was submitted for import.</p>
-    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.submit_time.as_ref()
+    pub fn submit_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.submit_time
     }
     /// <p>The options that was specified at the time of submitting the import request.</p>
     pub fn import_options(&self) -> ::std::option::Option<&crate::types::ImportOptions> {
@@ -49,6 +49,7 @@ pub struct TableDataImportJobMetadataBuilder {
 }
 impl TableDataImportJobMetadataBuilder {
     /// <p>Details about the submitter of the import request.</p>
+    /// This field is required.
     pub fn submitter(mut self, input: crate::types::ImportJobSubmitter) -> Self {
         self.submitter = ::std::option::Option::Some(input);
         self
@@ -63,6 +64,7 @@ impl TableDataImportJobMetadataBuilder {
         &self.submitter
     }
     /// <p>The timestamp when the job was submitted for import.</p>
+    /// This field is required.
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time = ::std::option::Option::Some(input);
         self
@@ -77,6 +79,7 @@ impl TableDataImportJobMetadataBuilder {
         &self.submit_time
     }
     /// <p>The options that was specified at the time of submitting the import request.</p>
+    /// This field is required.
     pub fn import_options(mut self, input: crate::types::ImportOptions) -> Self {
         self.import_options = ::std::option::Option::Some(input);
         self
@@ -91,6 +94,7 @@ impl TableDataImportJobMetadataBuilder {
         &self.import_options
     }
     /// <p>The source of the data that was submitted for import.</p>
+    /// This field is required.
     pub fn data_source(mut self, input: crate::types::ImportDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self
@@ -105,12 +109,19 @@ impl TableDataImportJobMetadataBuilder {
         &self.data_source
     }
     /// Consumes the builder and constructs a [`TableDataImportJobMetadata`](crate::types::TableDataImportJobMetadata).
-    pub fn build(self) -> crate::types::TableDataImportJobMetadata {
-        crate::types::TableDataImportJobMetadata {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`submit_time`](crate::types::builders::TableDataImportJobMetadataBuilder::submit_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::TableDataImportJobMetadata, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::TableDataImportJobMetadata {
             submitter: self.submitter,
-            submit_time: self.submit_time,
+            submit_time: self.submit_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "submit_time",
+                    "submit_time was not specified but it is required when building TableDataImportJobMetadata",
+                )
+            })?,
             import_options: self.import_options,
             data_source: self.data_source,
-        }
+        })
     }
 }

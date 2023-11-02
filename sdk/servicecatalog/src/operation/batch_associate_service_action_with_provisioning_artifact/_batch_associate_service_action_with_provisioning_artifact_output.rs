@@ -9,8 +9,10 @@ pub struct BatchAssociateServiceActionWithProvisioningArtifactOutput {
 }
 impl BatchAssociateServiceActionWithProvisioningArtifactOutput {
     /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    pub fn failed_service_action_associations(&self) -> ::std::option::Option<&[crate::types::FailedServiceActionAssociation]> {
-        self.failed_service_action_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_service_action_associations.is_none()`.
+    pub fn failed_service_action_associations(&self) -> &[crate::types::FailedServiceActionAssociation] {
+        self.failed_service_action_associations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_http::request_id::RequestId for BatchAssociateServiceActionWithProvisioningArtifactOutput {

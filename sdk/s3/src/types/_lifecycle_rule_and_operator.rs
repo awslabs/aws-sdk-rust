@@ -19,8 +19,10 @@ impl LifecycleRuleAndOperator {
         self.prefix.as_deref()
     }
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Minimum object size to which the rule applies.</p>
     pub fn object_size_greater_than(&self) -> i64 {

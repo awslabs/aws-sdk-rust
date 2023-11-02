@@ -39,9 +39,15 @@ impl Config {
             runtime_plugins: self.runtime_plugins.clone(),
         }
     }
-    /// Return the [`SharedHttpConnector`](::aws_smithy_runtime_api::client::connectors::SharedHttpConnector) to use when making requests, if any.
-    pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::connectors::SharedHttpConnector> {
-        self.runtime_components.http_connector()
+    /// Deprecated. Don't use.
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::http::SharedHttpClient> {
+        self.runtime_components.http_client()
+    }
+
+    /// Return the [`SharedHttpClient`](::aws_smithy_runtime_api::client::http::SharedHttpClient) to use when making requests, if any.
+    pub fn http_client(&self) -> Option<::aws_smithy_runtime_api::client::http::SharedHttpClient> {
+        self.runtime_components.http_client()
     }
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(&self) -> ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver {
@@ -70,7 +76,6 @@ impl Config {
     pub fn retry_partition(&self) -> ::std::option::Option<&::aws_smithy_runtime::client::retries::RetryPartition> {
         self.config.load::<::aws_smithy_runtime::client::retries::RetryPartition>()
     }
-
     /// Returns interceptors currently registered by the user.
     pub fn interceptors(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor> + '_ {
         self.runtime_components.interceptors()
@@ -99,8 +104,8 @@ impl Config {
     /// The signature version 4 service signing name to use in the credential scope when signing requests.
     ///
     /// The signing service may be overridden by the `Endpoint`, or by specifying a custom
-    /// [`SigningService`](aws_types::SigningService) during operation construction
-    pub fn signing_service(&self) -> &'static str {
+    /// [`SigningName`](aws_types::SigningName) during operation construction
+    pub fn signing_name(&self) -> &'static str {
         "datapipeline"
     }
     /// Returns the AWS region, if it was provided.
@@ -133,7 +138,19 @@ impl Builder {
     pub fn new() -> Self {
         Self::default()
     }
-    /// Sets the HTTP connector to use when making requests.
+    /// Deprecated. Don't use.
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn http_connector(self, http_client: impl ::aws_smithy_runtime_api::client::http::HttpClient + 'static) -> Self {
+        self.http_client(http_client)
+    }
+
+    /// Deprecated. Don't use.
+    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
+    pub fn set_http_connector(&mut self, http_client: Option<::aws_smithy_runtime_api::client::http::SharedHttpClient>) -> &mut Self {
+        self.set_http_client(http_client)
+    }
+
+    /// Sets the HTTP client to use when making requests.
     ///
     /// # Examples
     /// ```no_run
@@ -142,10 +159,8 @@ impl Builder {
     /// # #[test]
     /// # fn example() {
     /// use std::time::Duration;
-    /// use aws_smithy_client::{Client, hyper_ext};
-    /// use aws_smithy_client::erase::DynConnector;
-    /// use aws_smithy_client::http_connector::ConnectorSettings;
     /// use aws_sdk_datapipeline::config::Config;
+    /// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
     ///
     /// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
     ///     .with_webpki_roots()
@@ -153,23 +168,25 @@ impl Builder {
     ///     .enable_http1()
     ///     .enable_http2()
     ///     .build();
-    /// let smithy_connector = hyper_ext::Adapter::builder()
-    ///     // Optionally set things like timeouts as well
-    ///     .connector_settings(
-    ///         ConnectorSettings::builder()
-    ///             .connect_timeout(Duration::from_secs(5))
-    ///             .build()
-    ///     )
-    ///     .build(https_connector);
+    /// let hyper_client = HyperClientBuilder::new().build(https_connector);
+    ///
+    /// // This connector can then be given to a generated service Config
+    /// let config = my_service_client::Config::builder()
+    ///     .endpoint_url("https://example.com")
+    ///     .http_client(hyper_client)
+    ///     .build();
+    /// let client = my_service_client::Client::from_conf(config);
     /// # }
     /// # }
     /// ```
-    pub fn http_connector(mut self, http_connector: impl Into<::aws_smithy_client::http_connector::HttpConnector>) -> Self {
-        self.set_http_connector(::std::option::Option::Some(http_connector));
+    pub fn http_client(mut self, http_client: impl ::aws_smithy_runtime_api::client::http::HttpClient + 'static) -> Self {
+        self.set_http_client(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(
+            http_client,
+        )));
         self
     }
 
-    /// Sets the HTTP connector to use when making requests.
+    /// Sets the HTTP client to use when making requests.
     ///
     /// # Examples
     /// ```no_run
@@ -178,36 +195,28 @@ impl Builder {
     /// # #[test]
     /// # fn example() {
     /// use std::time::Duration;
-    /// use aws_smithy_client::hyper_ext;
-    /// use aws_smithy_client::http_connector::ConnectorSettings;
     /// use aws_sdk_datapipeline::config::{Builder, Config};
+    /// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
     ///
-    /// fn override_http_connector(builder: &mut Builder) {
+    /// fn override_http_client(builder: &mut Builder) {
     ///     let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
     ///         .with_webpki_roots()
     ///         .https_only()
     ///         .enable_http1()
     ///         .enable_http2()
     ///         .build();
-    ///     let smithy_connector = hyper_ext::Adapter::builder()
-    ///         // Optionally set things like timeouts as well
-    ///         .connector_settings(
-    ///             ConnectorSettings::builder()
-    ///                 .connect_timeout(Duration::from_secs(5))
-    ///                 .build()
-    ///         )
-    ///         .build(https_connector);
-    ///     builder.set_http_connector(Some(smithy_connector));
+    ///     let hyper_client = HyperClientBuilder::new().build(https_connector);
+    ///     builder.set_http_client(Some(hyper_client));
     /// }
     ///
     /// let mut builder = aws_sdk_datapipeline::Config::builder();
-    /// override_http_connector(&mut builder);
+    /// override_http_client(&mut builder);
     /// let config = builder.build();
     /// # }
     /// # }
     /// ```
-    pub fn set_http_connector(&mut self, http_connector: Option<impl Into<::aws_smithy_client::http_connector::HttpConnector>>) -> &mut Self {
-        http_connector.map(|c| self.config.store_put(c.into()));
+    pub fn set_http_client(&mut self, http_client: Option<::aws_smithy_runtime_api::client::http::SharedHttpClient>) -> &mut Self {
+        self.runtime_components.set_http_client(http_client);
         self
     }
     /// Sets the endpoint resolver to use when making requests.
@@ -321,8 +330,8 @@ impl Builder {
     /// let sleep_impl = SharedAsyncSleep::new(ForeverSleep);
     /// let config = Config::builder().sleep_impl(sleep_impl).build();
     /// ```
-    pub fn sleep_impl(mut self, sleep_impl: ::aws_smithy_async::rt::sleep::SharedAsyncSleep) -> Self {
-        self.set_sleep_impl(Some(sleep_impl));
+    pub fn sleep_impl(mut self, sleep_impl: impl ::aws_smithy_async::rt::sleep::AsyncSleep + 'static) -> Self {
+        self.set_sleep_impl(Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(sleep_impl)));
         self
     }
 
@@ -417,7 +426,6 @@ impl Builder {
         retry_partition.map(|r| self.config.store_put(r));
         self
     }
-
     /// Add an [`Interceptor`](::aws_smithy_runtime_api::client::interceptors::Interceptor) that runs at specific stages of the request execution pipeline.
     ///
     /// Interceptors targeted at a certain stage are executed according to the pre-defined priority.
@@ -528,8 +536,10 @@ impl Builder {
         self
     }
     /// Sets the time source used for this service
-    pub fn time_source(mut self, time_source: impl ::std::convert::Into<::aws_smithy_async::time::SharedTimeSource>) -> Self {
-        self.set_time_source(::std::option::Option::Some(time_source.into()));
+    pub fn time_source(mut self, time_source: impl ::aws_smithy_async::time::TimeSource + 'static) -> Self {
+        self.set_time_source(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::into_shared(
+            time_source,
+        )));
         self
     }
     /// Sets the time source used for this service
@@ -691,7 +701,6 @@ impl Builder {
     pub fn build(mut self) -> Config {
         let mut layer = self.config;
         let mut resolver = ::aws_smithy_runtime::client::config_override::Resolver::initial(&mut layer, &mut self.runtime_components);
-        crate::config::set_connector(&mut resolver);
         crate::config::set_endpoint_resolver(&mut resolver);
         if layer.load::<::aws_smithy_types::retry::RetryConfig>().is_none() {
             layer.store_put(::aws_smithy_types::retry::RetryConfig::disabled());
@@ -749,7 +758,7 @@ impl Builder {
                 .set_time_source(::std::option::Option::Some(::std::default::Default::default()));
         }
         layer.store_put(crate::meta::API_METADATA.clone());
-        layer.store_put(::aws_types::SigningService::from_static("datapipeline"));
+        layer.store_put(::aws_types::SigningName::from_static("datapipeline"));
         layer
             .load::<::aws_types::region::Region>()
             .cloned()
@@ -759,7 +768,7 @@ impl Builder {
                 let sleep = self.runtime_components.sleep_impl();
                 || match sleep {
                     Some(sleep) => ::aws_credential_types::cache::CredentialsCache::lazy_builder()
-                        .sleep(sleep)
+                        .sleep_impl(sleep)
                         .into_credentials_cache(),
                     None => ::aws_credential_types::cache::CredentialsCache::lazy(),
                 }
@@ -787,34 +796,20 @@ impl ServiceRuntimePlugin {
     pub fn new(_service_config: crate::config::Config) -> Self {
         let config = { None };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_smithy_runtime::client::connectors::connection_poisoning::ConnectionPoisoningInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::request_info::RequestInfoInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::user_agent::UserAgentInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::invocation_id::InvocationIdInterceptor::new(),
-        ) as _);
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new(),
-        ) as _);
+        runtime_components.push_interceptor(::aws_smithy_runtime::client::http::connection_poisoning::ConnectionPoisoningInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
+        runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
         if let Some(credentials_cache) = _service_config.credentials_cache() {
-            runtime_components.push_identity_resolver(
-                ::aws_runtime::auth::sigv4::SCHEME_ID,
-                ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(
-                    ::aws_runtime::identity::credentials::CredentialsIdentityResolver::new(credentials_cache),
-                ),
+            let shared_identity_resolver = ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(
+                ::aws_runtime::identity::credentials::CredentialsIdentityResolver::new(credentials_cache),
             );
+            runtime_components.push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, shared_identity_resolver);
         }
         Self { config, runtime_components }
     }
@@ -825,7 +820,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Service
         self.config.clone()
     }
 
-    fn runtime_components(&self) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+    fn runtime_components(
+        &self,
+        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
+    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Borrowed(&self.runtime_components)
     }
 }
@@ -861,7 +859,6 @@ impl ConfigOverrideRuntimePlugin {
         let mut resolver =
             ::aws_smithy_runtime::client::config_override::Resolver::overrid(initial_config, initial_components, &mut layer, &mut components);
 
-        crate::config::set_connector(&mut resolver);
         crate::config::set_endpoint_resolver(&mut resolver);
         resolver
             .config_mut()
@@ -908,7 +905,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ConfigO
         Some(self.config.clone())
     }
 
-    fn runtime_components(&self) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+    fn runtime_components(
+        &self,
+        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
+    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         ::std::borrow::Cow::Borrowed(&self.components)
     }
 }
@@ -936,7 +936,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_timeout_config(input.timeout_config().cloned());
         builder.set_sleep_impl(input.sleep_impl());
 
-        builder.set_http_connector(input.http_connector().cloned());
+        builder.set_http_client(input.http_client());
         builder.set_time_source(input.time_source());
         builder.set_app_name(input.app_name().cloned());
 
@@ -958,6 +958,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
     let mut configured_plugins = ::std::vec::Vec::new();
     ::std::mem::swap(&mut config.runtime_plugins, &mut configured_plugins);
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
+        .with_client_plugin(::aws_smithy_runtime::client::http::default_http_client_plugin())
         .with_client_plugin(
             ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()
                 .with_config(config.config.clone())
@@ -969,40 +970,6 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
         plugins = plugins.with_client_plugin(plugin);
     }
     plugins
-}
-
-fn set_connector(resolver: &mut ::aws_smithy_runtime::client::config_override::Resolver<'_>) {
-    // Initial configuration needs to set a default if no connector is given, so it
-    // should always get into the condition below.
-    //
-    // Override configuration should set the connector if the override config
-    // contains a connector, sleep impl, or a timeout config since these are all
-    // incorporated into the final connector.
-    let must_set_connector = resolver.is_initial()
-        || resolver.is_latest_set::<::aws_smithy_client::http_connector::HttpConnector>()
-        || resolver.latest_sleep_impl().is_some()
-        || resolver.is_latest_set::<::aws_smithy_types::timeout::TimeoutConfig>();
-    if must_set_connector {
-        let sleep_impl = resolver.sleep_impl();
-        let timeout_config = resolver
-            .resolve_config::<::aws_smithy_types::timeout::TimeoutConfig>()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::timeout::TimeoutConfig::disabled);
-        let connector_settings = ::aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(&timeout_config);
-        let http_connector = resolver.resolve_config::<::aws_smithy_client::http_connector::HttpConnector>();
-
-        // TODO(enableNewSmithyRuntimeCleanup): Replace the tower-based DynConnector and remove DynConnectorAdapter when deleting the middleware implementation
-        let connector = http_connector
-            .and_then(|c| c.connector(&connector_settings, sleep_impl.clone()))
-            .or_else(|| crate::config::default_connector(&connector_settings, sleep_impl))
-            .map(|c| {
-                ::aws_smithy_runtime_api::client::connectors::SharedHttpConnector::new(
-                    ::aws_smithy_runtime::client::connectors::adapter::DynConnectorAdapter::new(c),
-                )
-            });
-
-        resolver.runtime_components_mut().set_http_connector(connector);
-    }
 }
 
 fn set_endpoint_resolver(resolver: &mut ::aws_smithy_runtime::client::config_override::Resolver<'_>) {
@@ -1041,19 +1008,3 @@ pub mod retry;
 
 /// Timeout configuration.
 pub mod timeout;
-
-#[cfg(feature = "rustls")]
-fn default_connector(
-    connector_settings: &::aws_smithy_client::http_connector::ConnectorSettings,
-    sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
-) -> ::std::option::Option<::aws_smithy_client::erase::DynConnector> {
-    ::aws_smithy_client::conns::default_connector(connector_settings, sleep_impl)
-}
-
-#[cfg(not(feature = "rustls"))]
-fn default_connector(
-    _connector_settings: &::aws_smithy_client::http_connector::ConnectorSettings,
-    _sleep_impl: ::std::option::Option<::aws_smithy_async::rt::sleep::SharedAsyncSleep>,
-) -> ::std::option::Option<::aws_smithy_client::erase::DynConnector> {
-    ::std::option::Option::None
-}

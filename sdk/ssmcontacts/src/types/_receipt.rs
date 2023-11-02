@@ -7,11 +7,11 @@ pub struct Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
     pub contact_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
-    pub receipt_type: ::std::option::Option<crate::types::ReceiptType>,
+    pub receipt_type: crate::types::ReceiptType,
     /// <p>Information provided during the page acknowledgement.</p>
     pub receipt_info: ::std::option::Option<::std::string::String>,
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
-    pub receipt_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub receipt_time: ::aws_smithy_types::DateTime,
 }
 impl Receipt {
     /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
@@ -19,16 +19,16 @@ impl Receipt {
         self.contact_channel_arn.as_deref()
     }
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
-    pub fn receipt_type(&self) -> ::std::option::Option<&crate::types::ReceiptType> {
-        self.receipt_type.as_ref()
+    pub fn receipt_type(&self) -> &crate::types::ReceiptType {
+        &self.receipt_type
     }
     /// <p>Information provided during the page acknowledgement.</p>
     pub fn receipt_info(&self) -> ::std::option::Option<&str> {
         self.receipt_info.as_deref()
     }
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
-    pub fn receipt_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.receipt_time.as_ref()
+    pub fn receipt_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.receipt_time
     }
 }
 impl Receipt {
@@ -63,6 +63,7 @@ impl ReceiptBuilder {
         &self.contact_channel_arn
     }
     /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and <code>READ</code>.</p>
+    /// This field is required.
     pub fn receipt_type(mut self, input: crate::types::ReceiptType) -> Self {
         self.receipt_type = ::std::option::Option::Some(input);
         self
@@ -91,6 +92,7 @@ impl ReceiptBuilder {
         &self.receipt_info
     }
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.</p>
+    /// This field is required.
     pub fn receipt_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.receipt_time = ::std::option::Option::Some(input);
         self
@@ -105,12 +107,25 @@ impl ReceiptBuilder {
         &self.receipt_time
     }
     /// Consumes the builder and constructs a [`Receipt`](crate::types::Receipt).
-    pub fn build(self) -> crate::types::Receipt {
-        crate::types::Receipt {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`receipt_type`](crate::types::builders::ReceiptBuilder::receipt_type)
+    /// - [`receipt_time`](crate::types::builders::ReceiptBuilder::receipt_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::Receipt, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::Receipt {
             contact_channel_arn: self.contact_channel_arn,
-            receipt_type: self.receipt_type,
+            receipt_type: self.receipt_type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "receipt_type",
+                    "receipt_type was not specified but it is required when building Receipt",
+                )
+            })?,
             receipt_info: self.receipt_info,
-            receipt_time: self.receipt_time,
-        }
+            receipt_time: self.receipt_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "receipt_time",
+                    "receipt_time was not specified but it is required when building Receipt",
+                )
+            })?,
+        })
     }
 }

@@ -15,8 +15,10 @@ impl BatchDetectEntitiesItemResult {
         self.index
     }
     /// <p>One or more <code>Entity</code> objects, one for each entity detected in the document.</p>
-    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
-        self.entities.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entities.is_none()`.
+    pub fn entities(&self) -> &[crate::types::Entity] {
+        self.entities.as_deref().unwrap_or_default()
     }
 }
 impl BatchDetectEntitiesItemResult {

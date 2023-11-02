@@ -16,6 +16,7 @@ pub fn ser_generated_manifest_encryption(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_generated_manifest_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::GeneratedManifestEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {

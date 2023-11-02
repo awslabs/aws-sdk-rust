@@ -62,6 +62,7 @@ impl DeleteNetworkAclEntryInputBuilder {
         &self.dry_run
     }
     /// <p>Indicates whether the rule is an egress rule.</p>
+    /// This field is required.
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = ::std::option::Option::Some(input);
         self
@@ -76,6 +77,7 @@ impl DeleteNetworkAclEntryInputBuilder {
         &self.egress
     }
     /// <p>The ID of the network ACL.</p>
+    /// This field is required.
     pub fn network_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_acl_id = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +92,7 @@ impl DeleteNetworkAclEntryInputBuilder {
         &self.network_acl_id
     }
     /// <p>The rule number of the entry to delete.</p>
+    /// This field is required.
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
         self

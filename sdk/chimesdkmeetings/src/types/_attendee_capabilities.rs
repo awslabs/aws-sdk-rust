@@ -13,24 +13,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttendeeCapabilities {
     /// <p>The audio capability assigned to an attendee.</p>
-    pub audio: ::std::option::Option<crate::types::MediaCapabilities>,
+    pub audio: crate::types::MediaCapabilities,
     /// <p>The video capability assigned to an attendee.</p>
-    pub video: ::std::option::Option<crate::types::MediaCapabilities>,
+    pub video: crate::types::MediaCapabilities,
     /// <p>The content capability assigned to an attendee.</p>
-    pub content: ::std::option::Option<crate::types::MediaCapabilities>,
+    pub content: crate::types::MediaCapabilities,
 }
 impl AttendeeCapabilities {
     /// <p>The audio capability assigned to an attendee.</p>
-    pub fn audio(&self) -> ::std::option::Option<&crate::types::MediaCapabilities> {
-        self.audio.as_ref()
+    pub fn audio(&self) -> &crate::types::MediaCapabilities {
+        &self.audio
     }
     /// <p>The video capability assigned to an attendee.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::MediaCapabilities> {
-        self.video.as_ref()
+    pub fn video(&self) -> &crate::types::MediaCapabilities {
+        &self.video
     }
     /// <p>The content capability assigned to an attendee.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::MediaCapabilities> {
-        self.content.as_ref()
+    pub fn content(&self) -> &crate::types::MediaCapabilities {
+        &self.content
     }
 }
 impl AttendeeCapabilities {
@@ -50,6 +50,7 @@ pub struct AttendeeCapabilitiesBuilder {
 }
 impl AttendeeCapabilitiesBuilder {
     /// <p>The audio capability assigned to an attendee.</p>
+    /// This field is required.
     pub fn audio(mut self, input: crate::types::MediaCapabilities) -> Self {
         self.audio = ::std::option::Option::Some(input);
         self
@@ -64,6 +65,7 @@ impl AttendeeCapabilitiesBuilder {
         &self.audio
     }
     /// <p>The video capability assigned to an attendee.</p>
+    /// This field is required.
     pub fn video(mut self, input: crate::types::MediaCapabilities) -> Self {
         self.video = ::std::option::Option::Some(input);
         self
@@ -78,6 +80,7 @@ impl AttendeeCapabilitiesBuilder {
         &self.video
     }
     /// <p>The content capability assigned to an attendee.</p>
+    /// This field is required.
     pub fn content(mut self, input: crate::types::MediaCapabilities) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -92,11 +95,30 @@ impl AttendeeCapabilitiesBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`AttendeeCapabilities`](crate::types::AttendeeCapabilities).
-    pub fn build(self) -> crate::types::AttendeeCapabilities {
-        crate::types::AttendeeCapabilities {
-            audio: self.audio,
-            video: self.video,
-            content: self.content,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`audio`](crate::types::builders::AttendeeCapabilitiesBuilder::audio)
+    /// - [`video`](crate::types::builders::AttendeeCapabilitiesBuilder::video)
+    /// - [`content`](crate::types::builders::AttendeeCapabilitiesBuilder::content)
+    pub fn build(self) -> ::std::result::Result<crate::types::AttendeeCapabilities, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::AttendeeCapabilities {
+            audio: self.audio.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "audio",
+                    "audio was not specified but it is required when building AttendeeCapabilities",
+                )
+            })?,
+            video: self.video.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "video",
+                    "video was not specified but it is required when building AttendeeCapabilities",
+                )
+            })?,
+            content: self.content.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "content",
+                    "content was not specified but it is required when building AttendeeCapabilities",
+                )
+            })?,
+        })
     }
 }

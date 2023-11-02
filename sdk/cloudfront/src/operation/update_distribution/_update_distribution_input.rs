@@ -42,6 +42,7 @@ pub struct UpdateDistributionInputBuilder {
 }
 impl UpdateDistributionInputBuilder {
     /// <p>The distribution's configuration information.</p>
+    /// This field is required.
     pub fn distribution_config(mut self, input: crate::types::DistributionConfig) -> Self {
         self.distribution_config = ::std::option::Option::Some(input);
         self
@@ -56,6 +57,7 @@ impl UpdateDistributionInputBuilder {
         &self.distribution_config
     }
     /// <p>The distribution's id.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self

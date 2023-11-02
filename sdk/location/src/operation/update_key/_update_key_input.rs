@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateKeyInput {
     /// <p>The name of the API key resource to update.</p>
-    pub key_name: ::std::option::Option<::std::string::String>,
+    pub key_name: ::std::string::String,
     /// <p>Updates the description for the API key resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -21,8 +21,9 @@ pub struct UpdateKeyInput {
 }
 impl UpdateKeyInput {
     /// <p>The name of the API key resource to update.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
-        self.key_name.as_deref()
+    pub fn key_name(&self) -> &str {
+        use std::ops::Deref;
+        self.key_name.deref()
     }
     /// <p>Updates the description for the API key resource.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -68,6 +69,7 @@ pub struct UpdateKeyInputBuilder {
 }
 impl UpdateKeyInputBuilder {
     /// <p>The name of the API key resource to update.</p>
+    /// This field is required.
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
         self
@@ -161,9 +163,16 @@ impl UpdateKeyInputBuilder {
         &self.restrictions
     }
     /// Consumes the builder and constructs a [`UpdateKeyInput`](crate::operation::update_key::UpdateKeyInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key_name`](crate::operation::update_key::builders::UpdateKeyInputBuilder::key_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_key::UpdateKeyInput {
-            key_name: self.key_name,
+            key_name: self.key_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "key_name",
+                    "key_name was not specified but it is required when building UpdateKeyInput",
+                )
+            })?,
             description: self.description,
             expire_time: self.expire_time,
             no_expiry: self.no_expiry,

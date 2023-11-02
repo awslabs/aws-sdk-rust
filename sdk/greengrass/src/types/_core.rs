@@ -49,6 +49,7 @@ pub struct CoreBuilder {
 }
 impl CoreBuilder {
     /// The ARN of the certificate associated with the core.
+    /// This field is required.
     pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_arn = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +64,7 @@ impl CoreBuilder {
         &self.certificate_arn
     }
     /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl CoreBuilder {
         &self.sync_shadow
     }
     /// The ARN of the thing which is the core.
+    /// This field is required.
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
         self

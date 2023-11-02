@@ -3,24 +3,24 @@ pub fn ser_create_data_set_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_data_set::CreateDataSetInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.asset_type {
-        object.key("AssetType").string(var_1.as_str());
+    {
+        object.key("AssetType").string(input.asset_type.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    {
+        object.key("Description").string(input.description.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3.as_str());
+    {
+        object.key("Name").string(input.name.as_str());
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_1) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_2 = object.key("Tags").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        object_5.finish();
+        object_2.finish();
     }
     Ok(())
 }

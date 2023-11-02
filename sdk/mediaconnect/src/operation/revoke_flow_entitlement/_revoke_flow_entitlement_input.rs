@@ -34,6 +34,7 @@ pub struct RevokeFlowEntitlementInputBuilder {
 }
 impl RevokeFlowEntitlementInputBuilder {
     /// The ARN of the entitlement that you want to revoke.
+    /// This field is required.
     pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl RevokeFlowEntitlementInputBuilder {
         &self.entitlement_arn
     }
     /// The flow that you want to revoke an entitlement from.
+    /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self

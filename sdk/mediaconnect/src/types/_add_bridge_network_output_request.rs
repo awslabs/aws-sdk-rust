@@ -63,6 +63,7 @@ pub struct AddBridgeNetworkOutputRequestBuilder {
 }
 impl AddBridgeNetworkOutputRequestBuilder {
     /// The network output IP Address.
+    /// This field is required.
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
@@ -77,6 +78,7 @@ impl AddBridgeNetworkOutputRequestBuilder {
         &self.ip_address
     }
     /// The network output name. This name is used to reference the output and must be unique among outputs in this bridge.
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +93,7 @@ impl AddBridgeNetworkOutputRequestBuilder {
         &self.name
     }
     /// The network output's gateway network name.
+    /// This field is required.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +108,7 @@ impl AddBridgeNetworkOutputRequestBuilder {
         &self.network_name
     }
     /// The network output port.
+    /// This field is required.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
@@ -119,6 +123,7 @@ impl AddBridgeNetworkOutputRequestBuilder {
         &self.port
     }
     /// The network output protocol.
+    /// This field is required.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
@@ -133,6 +138,7 @@ impl AddBridgeNetworkOutputRequestBuilder {
         &self.protocol
     }
     /// The network output TTL.
+    /// This field is required.
     pub fn ttl(mut self, input: i32) -> Self {
         self.ttl = ::std::option::Option::Some(input);
         self

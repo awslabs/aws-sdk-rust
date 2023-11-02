@@ -12,48 +12,55 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceProfile {
     /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub path: ::std::option::Option<::std::string::String>,
+    pub path: ::std::string::String,
     /// <p>The name identifying the instance profile.</p>
-    pub instance_profile_name: ::std::option::Option<::std::string::String>,
+    pub instance_profile_name: ::std::string::String,
     /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub instance_profile_id: ::std::option::Option<::std::string::String>,
+    pub instance_profile_id: ::std::string::String,
     /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The date when the instance profile was created.</p>
-    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub create_date: ::aws_smithy_types::DateTime,
     /// <p>The role associated with the instance profile.</p>
-    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
+    pub roles: ::std::vec::Vec<crate::types::Role>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceProfile {
     /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
-        self.path.as_deref()
+    pub fn path(&self) -> &str {
+        use std::ops::Deref;
+        self.path.deref()
     }
     /// <p>The name identifying the instance profile.</p>
-    pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
-        self.instance_profile_name.as_deref()
+    pub fn instance_profile_name(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_profile_name.deref()
     }
     /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn instance_profile_id(&self) -> ::std::option::Option<&str> {
-        self.instance_profile_id.as_deref()
+    pub fn instance_profile_id(&self) -> &str {
+        use std::ops::Deref;
+        self.instance_profile_id.deref()
     }
     /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The date when the instance profile was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.create_date.as_ref()
+    pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
+        &self.create_date
     }
     /// <p>The role associated with the instance profile.</p>
-    pub fn roles(&self) -> ::std::option::Option<&[crate::types::Role]> {
-        self.roles.as_deref()
+    pub fn roles(&self) -> &[crate::types::Role] {
+        use std::ops::Deref;
+        self.roles.deref()
     }
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl InstanceProfile {
@@ -77,6 +84,7 @@ pub struct InstanceProfileBuilder {
 }
 impl InstanceProfileBuilder {
     /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
@@ -91,6 +99,7 @@ impl InstanceProfileBuilder {
         &self.path
     }
     /// <p>The name identifying the instance profile.</p>
+    /// This field is required.
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_name = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +114,7 @@ impl InstanceProfileBuilder {
         &self.instance_profile_name
     }
     /// <p> The stable and unique string identifying the instance profile. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn instance_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_profile_id = ::std::option::Option::Some(input.into());
         self
@@ -119,6 +129,7 @@ impl InstanceProfileBuilder {
         &self.instance_profile_id
     }
     /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -133,6 +144,7 @@ impl InstanceProfileBuilder {
         &self.arn
     }
     /// <p>The date when the instance profile was created.</p>
+    /// This field is required.
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
         self
@@ -187,15 +199,52 @@ impl InstanceProfileBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`InstanceProfile`](crate::types::InstanceProfile).
-    pub fn build(self) -> crate::types::InstanceProfile {
-        crate::types::InstanceProfile {
-            path: self.path,
-            instance_profile_name: self.instance_profile_name,
-            instance_profile_id: self.instance_profile_id,
-            arn: self.arn,
-            create_date: self.create_date,
-            roles: self.roles,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`path`](crate::types::builders::InstanceProfileBuilder::path)
+    /// - [`instance_profile_name`](crate::types::builders::InstanceProfileBuilder::instance_profile_name)
+    /// - [`instance_profile_id`](crate::types::builders::InstanceProfileBuilder::instance_profile_id)
+    /// - [`arn`](crate::types::builders::InstanceProfileBuilder::arn)
+    /// - [`create_date`](crate::types::builders::InstanceProfileBuilder::create_date)
+    /// - [`roles`](crate::types::builders::InstanceProfileBuilder::roles)
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceProfile, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::InstanceProfile {
+            path: self.path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building InstanceProfile",
+                )
+            })?,
+            instance_profile_name: self.instance_profile_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_profile_name",
+                    "instance_profile_name was not specified but it is required when building InstanceProfile",
+                )
+            })?,
+            instance_profile_id: self.instance_profile_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "instance_profile_id",
+                    "instance_profile_id was not specified but it is required when building InstanceProfile",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building InstanceProfile",
+                )
+            })?,
+            create_date: self.create_date.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "create_date",
+                    "create_date was not specified but it is required when building InstanceProfile",
+                )
+            })?,
+            roles: self.roles.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "roles",
+                    "roles was not specified but it is required when building InstanceProfile",
+                )
+            })?,
             tags: self.tags,
-        }
+        })
     }
 }

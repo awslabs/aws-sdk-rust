@@ -17,8 +17,10 @@ impl SuiteRunConfiguration {
         self.primary_device.as_ref()
     }
     /// <p>Sets test case list.</p>
-    pub fn selected_test_list(&self) -> ::std::option::Option<&[::std::string::String]> {
-        self.selected_test_list.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_test_list.is_none()`.
+    pub fn selected_test_list(&self) -> &[::std::string::String] {
+        self.selected_test_list.as_deref().unwrap_or_default()
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn parallel_run(&self) -> ::std::option::Option<bool> {
@@ -42,6 +44,7 @@ pub struct SuiteRunConfigurationBuilder {
 }
 impl SuiteRunConfigurationBuilder {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
+    /// This field is required.
     pub fn primary_device(mut self, input: crate::types::DeviceUnderTest) -> Self {
         self.primary_device = ::std::option::Option::Some(input);
         self

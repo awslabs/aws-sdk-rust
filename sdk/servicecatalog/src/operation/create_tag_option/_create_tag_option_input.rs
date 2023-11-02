@@ -34,6 +34,7 @@ pub struct CreateTagOptionInputBuilder {
 }
 impl CreateTagOptionInputBuilder {
     /// <p>The TagOption key.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl CreateTagOptionInputBuilder {
         &self.key
     }
     /// <p>The TagOption value.</p>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self

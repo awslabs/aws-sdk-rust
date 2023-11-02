@@ -34,6 +34,7 @@ pub struct StopWorkflowRunInputBuilder {
 }
 impl StopWorkflowRunInputBuilder {
     /// <p>The name of the workflow to stop.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl StopWorkflowRunInputBuilder {
         &self.name
     }
     /// <p>The ID of the workflow run to stop.</p>
+    /// This field is required.
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
         self

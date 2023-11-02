@@ -62,6 +62,7 @@ impl CreateDatastoreInputBuilder {
         &self.datastore_name
     }
     /// <p>A unique identifier for API idempotency.</p>
+    /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self

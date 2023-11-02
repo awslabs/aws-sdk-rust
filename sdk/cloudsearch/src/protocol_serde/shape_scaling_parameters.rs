@@ -28,6 +28,7 @@ pub fn ser_scaling_parameters(
     Ok(())
 }
 
+#[allow(clippy::needless_question_mark)]
 pub fn de_scaling_parameters(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<crate::types::ScalingParameters, ::aws_smithy_xml::decode::XmlDecodeError> {

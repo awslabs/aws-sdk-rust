@@ -3,17 +3,17 @@ pub fn ser_override_dataset_parameter_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OverrideDatasetParameterOperation,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.parameter_name {
-        object.key("ParameterName").string(var_1.as_str());
+    {
+        object.key("ParameterName").string(input.parameter_name.as_str());
     }
-    if let Some(var_2) = &input.new_parameter_name {
-        object.key("NewParameterName").string(var_2.as_str());
+    if let Some(var_1) = &input.new_parameter_name {
+        object.key("NewParameterName").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.new_default_values {
+    if let Some(var_2) = &input.new_default_values {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("NewDefaultValues").start_object();
-        crate::protocol_serde::shape_new_default_values::ser_new_default_values(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("NewDefaultValues").start_object();
+        crate::protocol_serde::shape_new_default_values::ser_new_default_values(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -60,7 +60,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::override_dataset_parameter_operation_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

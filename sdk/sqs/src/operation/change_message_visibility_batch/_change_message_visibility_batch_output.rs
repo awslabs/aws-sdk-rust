@@ -5,19 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchOutput {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
-    pub successful: ::std::option::Option<::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>>,
+    pub successful: ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+    pub failed: ::std::vec::Vec<crate::types::BatchResultErrorEntry>,
     _request_id: Option<String>,
 }
 impl ChangeMessageVisibilityBatchOutput {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
-    pub fn successful(&self) -> ::std::option::Option<&[crate::types::ChangeMessageVisibilityBatchResultEntry]> {
-        self.successful.as_deref()
+    pub fn successful(&self) -> &[crate::types::ChangeMessageVisibilityBatchResultEntry] {
+        use std::ops::Deref;
+        self.successful.deref()
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    pub fn failed(&self) -> ::std::option::Option<&[crate::types::BatchResultErrorEntry]> {
-        self.failed.as_deref()
+    pub fn failed(&self) -> &[crate::types::BatchResultErrorEntry] {
+        use std::ops::Deref;
+        self.failed.deref()
     }
 }
 impl ::aws_http::request_id::RequestId for ChangeMessageVisibilityBatchOutput {
@@ -91,11 +93,29 @@ impl ChangeMessageVisibilityBatchOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchOutput`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput).
-    pub fn build(self) -> crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput {
-        crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput {
-            successful: self.successful,
-            failed: self.failed,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`successful`](crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchOutputBuilder::successful)
+    /// - [`failed`](crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchOutputBuilder::failed)
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<
+        crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput,
+        ::aws_smithy_http::operation::error::BuildError,
+    > {
+        ::std::result::Result::Ok(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput {
+            successful: self.successful.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "successful",
+                    "successful was not specified but it is required when building ChangeMessageVisibilityBatchOutput",
+                )
+            })?,
+            failed: self.failed.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "failed",
+                    "failed was not specified but it is required when building ChangeMessageVisibilityBatchOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

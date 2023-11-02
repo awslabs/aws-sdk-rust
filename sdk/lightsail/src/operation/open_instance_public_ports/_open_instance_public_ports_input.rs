@@ -34,6 +34,7 @@ pub struct OpenInstancePublicPortsInputBuilder {
 }
 impl OpenInstancePublicPortsInputBuilder {
     /// <p>An object to describe the ports to open for the specified instance.</p>
+    /// This field is required.
     pub fn port_info(mut self, input: crate::types::PortInfo) -> Self {
         self.port_info = ::std::option::Option::Some(input);
         self
@@ -48,6 +49,7 @@ impl OpenInstancePublicPortsInputBuilder {
         &self.port_info
     }
     /// <p>The name of the instance for which to open ports.</p>
+    /// This field is required.
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self

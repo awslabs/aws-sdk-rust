@@ -5,36 +5,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceSummary {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::option::Option<::std::string::String>,
+    pub workspace_id: ::std::string::String,
     /// <p>The ARN of the workspace.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The description of the workspace.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the workspace was created.</p>
-    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the workspace was last updated.</p>
-    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub update_date_time: ::aws_smithy_types::DateTime,
 }
 impl WorkspaceSummary {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
-        self.workspace_id.as_deref()
+    pub fn workspace_id(&self) -> &str {
+        use std::ops::Deref;
+        self.workspace_id.deref()
     }
     /// <p>The ARN of the workspace.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The description of the workspace.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time when the workspace was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.creation_date_time.as_ref()
+    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.creation_date_time
     }
     /// <p>The date and time when the workspace was last updated.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.update_date_time.as_ref()
+    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+        &self.update_date_time
     }
 }
 impl WorkspaceSummary {
@@ -56,6 +58,7 @@ pub struct WorkspaceSummaryBuilder {
 }
 impl WorkspaceSummaryBuilder {
     /// <p>The ID of the workspace.</p>
+    /// This field is required.
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
         self
@@ -70,6 +73,7 @@ impl WorkspaceSummaryBuilder {
         &self.workspace_id
     }
     /// <p>The ARN of the workspace.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -98,6 +102,7 @@ impl WorkspaceSummaryBuilder {
         &self.description
     }
     /// <p>The date and time when the workspace was created.</p>
+    /// This field is required.
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
         self
@@ -112,6 +117,7 @@ impl WorkspaceSummaryBuilder {
         &self.creation_date_time
     }
     /// <p>The date and time when the workspace was last updated.</p>
+    /// This field is required.
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
         self
@@ -126,13 +132,38 @@ impl WorkspaceSummaryBuilder {
         &self.update_date_time
     }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).
-    pub fn build(self) -> crate::types::WorkspaceSummary {
-        crate::types::WorkspaceSummary {
-            workspace_id: self.workspace_id,
-            arn: self.arn,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`workspace_id`](crate::types::builders::WorkspaceSummaryBuilder::workspace_id)
+    /// - [`arn`](crate::types::builders::WorkspaceSummaryBuilder::arn)
+    /// - [`creation_date_time`](crate::types::builders::WorkspaceSummaryBuilder::creation_date_time)
+    /// - [`update_date_time`](crate::types::builders::WorkspaceSummaryBuilder::update_date_time)
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::WorkspaceSummary {
+            workspace_id: self.workspace_id.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "workspace_id",
+                    "workspace_id was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
             description: self.description,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
-        }
+            creation_date_time: self.creation_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "creation_date_time",
+                    "creation_date_time was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
+            update_date_time: self.update_date_time.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "update_date_time",
+                    "update_date_time was not specified but it is required when building WorkspaceSummary",
+                )
+            })?,
+        })
     }
 }

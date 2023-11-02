@@ -11,8 +11,10 @@ pub struct GetCustomerGatewayAssociationsOutput {
 }
 impl GetCustomerGatewayAssociationsOutput {
     /// <p>The customer gateway associations.</p>
-    pub fn customer_gateway_associations(&self) -> ::std::option::Option<&[crate::types::CustomerGatewayAssociation]> {
-        self.customer_gateway_associations.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_gateway_associations.is_none()`.
+    pub fn customer_gateway_associations(&self) -> &[crate::types::CustomerGatewayAssociation] {
+        self.customer_gateway_associations.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {

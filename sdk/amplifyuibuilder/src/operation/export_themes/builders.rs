@@ -92,14 +92,14 @@ impl ExportThemesFluentBuilder {
     pub async fn customize(
         self,
     ) -> ::std::result::Result<
-        crate::client::customize::orchestrator::CustomizableOperation<
+        crate::client::customize::CustomizableOperation<
             crate::operation::export_themes::ExportThemesOutput,
             crate::operation::export_themes::ExportThemesError,
             Self,
         >,
         ::aws_smithy_http::result::SdkError<crate::operation::export_themes::ExportThemesError>,
     > {
-        ::std::result::Result::Ok(crate::client::customize::orchestrator::CustomizableOperation::new(self))
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));
@@ -112,7 +112,7 @@ impl ExportThemesFluentBuilder {
     }
     /// Create a paginator for this request
     ///
-    /// Paginators are used by calling [`send().await`](crate::operation::export_themes::paginator::ExportThemesPaginator::send) which returns a `Stream`.
+    /// Paginators are used by calling [`send().await`](crate::operation::export_themes::paginator::ExportThemesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::export_themes::paginator::ExportThemesPaginator {
         crate::operation::export_themes::paginator::ExportThemesPaginator::new(self.handle, self.inner)
     }

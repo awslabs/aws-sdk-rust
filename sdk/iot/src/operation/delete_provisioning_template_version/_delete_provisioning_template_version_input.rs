@@ -34,6 +34,7 @@ pub struct DeleteProvisioningTemplateVersionInputBuilder {
 }
 impl DeleteProvisioningTemplateVersionInputBuilder {
     /// <p>The name of the provisioning template version to delete.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl DeleteProvisioningTemplateVersionInputBuilder {
         &self.template_name
     }
     /// <p>The provisioning template version ID to delete.</p>
+    /// This field is required.
     pub fn version_id(mut self, input: i32) -> Self {
         self.version_id = ::std::option::Option::Some(input);
         self

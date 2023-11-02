@@ -31,6 +31,7 @@ pub struct DescribeResizeInputBuilder {
 impl DescribeResizeInputBuilder {
     /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
     /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
+    /// This field is required.
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_identifier = ::std::option::Option::Some(input.into());
         self

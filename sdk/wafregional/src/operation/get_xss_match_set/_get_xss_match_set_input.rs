@@ -28,6 +28,7 @@ pub struct GetXssMatchSetInputBuilder {
 }
 impl GetXssMatchSetInputBuilder {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    /// This field is required.
     pub fn xss_match_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.xss_match_set_id = ::std::option::Option::Some(input.into());
         self

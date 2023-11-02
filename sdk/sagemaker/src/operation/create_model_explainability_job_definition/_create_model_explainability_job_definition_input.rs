@@ -62,8 +62,10 @@ impl CreateModelExplainabilityJobDefinitionInput {
         self.stopping_condition.as_ref()
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"> Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateModelExplainabilityJobDefinitionInput {
@@ -90,6 +92,7 @@ pub struct CreateModelExplainabilityJobDefinitionInputBuilder {
 }
 impl CreateModelExplainabilityJobDefinitionInputBuilder {
     /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    /// This field is required.
     pub fn job_definition_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_definition_name = ::std::option::Option::Some(input.into());
         self
@@ -118,6 +121,7 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         &self.model_explainability_baseline_config
     }
     /// <p>Configures the model explainability job to run a specified Docker container image.</p>
+    /// This field is required.
     pub fn model_explainability_app_specification(mut self, input: crate::types::ModelExplainabilityAppSpecification) -> Self {
         self.model_explainability_app_specification = ::std::option::Option::Some(input);
         self
@@ -135,6 +139,7 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         &self.model_explainability_app_specification
     }
     /// <p>Inputs for the model explainability job.</p>
+    /// This field is required.
     pub fn model_explainability_job_input(mut self, input: crate::types::ModelExplainabilityJobInput) -> Self {
         self.model_explainability_job_input = ::std::option::Option::Some(input);
         self
@@ -149,6 +154,7 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         &self.model_explainability_job_input
     }
     /// <p>The output configuration for monitoring jobs.</p>
+    /// This field is required.
     pub fn model_explainability_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.model_explainability_job_output_config = ::std::option::Option::Some(input);
         self
@@ -163,6 +169,7 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         &self.model_explainability_job_output_config
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
+    /// This field is required.
     pub fn job_resources(mut self, input: crate::types::MonitoringResources) -> Self {
         self.job_resources = ::std::option::Option::Some(input);
         self
@@ -191,6 +198,7 @@ impl CreateModelExplainabilityJobDefinitionInputBuilder {
         &self.network_config
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

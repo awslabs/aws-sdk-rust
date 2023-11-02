@@ -5,18 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
-    pub arn: ::std::option::Option<::std::string::String>,
+    pub arn: ::std::string::String,
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub local_mount_path: ::std::option::Option<::std::string::String>,
+    pub local_mount_path: ::std::string::String,
 }
 impl FileSystemConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
-        self.arn.as_deref()
+    pub fn arn(&self) -> &str {
+        use std::ops::Deref;
+        self.arn.deref()
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    pub fn local_mount_path(&self) -> ::std::option::Option<&str> {
-        self.local_mount_path.as_deref()
+    pub fn local_mount_path(&self) -> &str {
+        use std::ops::Deref;
+        self.local_mount_path.deref()
     }
 }
 impl FileSystemConfig {
@@ -35,6 +37,7 @@ pub struct FileSystemConfigBuilder {
 }
 impl FileSystemConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
+    /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +52,7 @@ impl FileSystemConfigBuilder {
         &self.arn
     }
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
+    /// This field is required.
     pub fn local_mount_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_mount_path = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +67,23 @@ impl FileSystemConfigBuilder {
         &self.local_mount_path
     }
     /// Consumes the builder and constructs a [`FileSystemConfig`](crate::types::FileSystemConfig).
-    pub fn build(self) -> crate::types::FileSystemConfig {
-        crate::types::FileSystemConfig {
-            arn: self.arn,
-            local_mount_path: self.local_mount_path,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`arn`](crate::types::builders::FileSystemConfigBuilder::arn)
+    /// - [`local_mount_path`](crate::types::builders::FileSystemConfigBuilder::local_mount_path)
+    pub fn build(self) -> ::std::result::Result<crate::types::FileSystemConfig, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::FileSystemConfig {
+            arn: self.arn.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building FileSystemConfig",
+                )
+            })?,
+            local_mount_path: self.local_mount_path.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "local_mount_path",
+                    "local_mount_path was not specified but it is required when building FileSystemConfig",
+                )
+            })?,
+        })
     }
 }

@@ -28,6 +28,7 @@ pub struct RetryStrategyBuilder {
 }
 impl RetryStrategyBuilder {
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
+    /// This field is required.
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
         self.maximum_retry_attempts = ::std::option::Option::Some(input);
         self

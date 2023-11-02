@@ -79,11 +79,10 @@ pub fn de_list_resolver_query_log_config_associations_http_error(
                                 crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::unhandled,
                             )?;
                     let output = output.meta(generic);
-                    output.build()
+                    crate::serde_util::invalid_parameter_exception_correct_errors(output).build().map_err(
+                        crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError::unhandled,
+                    )?
                 };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
                 tmp
             })
         }

@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuantumTaskQueueInfo {
     /// <p>The name of the queue. </p>
-    pub queue: ::std::option::Option<crate::types::QueueName>,
+    pub queue: crate::types::QueueName,
     /// <p>Current position of the task in the quantum tasks queue.</p>
-    pub position: ::std::option::Option<::std::string::String>,
+    pub position: ::std::string::String,
     /// <p>Optional. Specifies the priority of the queue. Quantum tasks in a priority queue are processed before the tasks in a normal queue.</p>
     pub queue_priority: ::std::option::Option<crate::types::QueuePriority>,
     /// <p>Optional. Provides more information about the queue position. For example, if the task is complete and no longer in the queue, the message field contains that information.</p>
@@ -15,12 +15,13 @@ pub struct QuantumTaskQueueInfo {
 }
 impl QuantumTaskQueueInfo {
     /// <p>The name of the queue. </p>
-    pub fn queue(&self) -> ::std::option::Option<&crate::types::QueueName> {
-        self.queue.as_ref()
+    pub fn queue(&self) -> &crate::types::QueueName {
+        &self.queue
     }
     /// <p>Current position of the task in the quantum tasks queue.</p>
-    pub fn position(&self) -> ::std::option::Option<&str> {
-        self.position.as_deref()
+    pub fn position(&self) -> &str {
+        use std::ops::Deref;
+        self.position.deref()
     }
     /// <p>Optional. Specifies the priority of the queue. Quantum tasks in a priority queue are processed before the tasks in a normal queue.</p>
     pub fn queue_priority(&self) -> ::std::option::Option<&crate::types::QueuePriority> {
@@ -49,6 +50,7 @@ pub struct QuantumTaskQueueInfoBuilder {
 }
 impl QuantumTaskQueueInfoBuilder {
     /// <p>The name of the queue. </p>
+    /// This field is required.
     pub fn queue(mut self, input: crate::types::QueueName) -> Self {
         self.queue = ::std::option::Option::Some(input);
         self
@@ -63,6 +65,7 @@ impl QuantumTaskQueueInfoBuilder {
         &self.queue
     }
     /// <p>Current position of the task in the quantum tasks queue.</p>
+    /// This field is required.
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
         self
@@ -105,12 +108,25 @@ impl QuantumTaskQueueInfoBuilder {
         &self.message
     }
     /// Consumes the builder and constructs a [`QuantumTaskQueueInfo`](crate::types::QuantumTaskQueueInfo).
-    pub fn build(self) -> crate::types::QuantumTaskQueueInfo {
-        crate::types::QuantumTaskQueueInfo {
-            queue: self.queue,
-            position: self.position,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`queue`](crate::types::builders::QuantumTaskQueueInfoBuilder::queue)
+    /// - [`position`](crate::types::builders::QuantumTaskQueueInfoBuilder::position)
+    pub fn build(self) -> ::std::result::Result<crate::types::QuantumTaskQueueInfo, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::QuantumTaskQueueInfo {
+            queue: self.queue.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "queue",
+                    "queue was not specified but it is required when building QuantumTaskQueueInfo",
+                )
+            })?,
+            position: self.position.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "position",
+                    "position was not specified but it is required when building QuantumTaskQueueInfo",
+                )
+            })?,
             queue_priority: self.queue_priority,
             message: self.message,
-        }
+        })
     }
 }

@@ -35,6 +35,7 @@ pub struct ListChangeSetsInputBuilder {
 }
 impl ListChangeSetsInputBuilder {
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
+    /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self

@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceInput {
     /// <p>The service name.</p>
-    pub name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::string::String,
     /// <p>A description of the Proton service.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template that's used to create the service.</p>
-    pub template_name: ::std::option::Option<::std::string::String>,
+    pub template_name: ::std::string::String,
     /// <p>The major version of the service template that was used to create the service.</p>
-    pub template_major_version: ::std::option::Option<::std::string::String>,
+    pub template_major_version: ::std::string::String,
     /// <p>The minor version of the service template that was used to create the service.</p>
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
-    pub spec: ::std::option::Option<::std::string::String>,
+    pub spec: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub repository_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
@@ -27,28 +27,32 @@ pub struct CreateServiceInput {
 }
 impl CreateServiceInput {
     /// <p>The service name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
-        self.name.as_deref()
+    pub fn name(&self) -> &str {
+        use std::ops::Deref;
+        self.name.deref()
     }
     /// <p>A description of the Proton service.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the service template that's used to create the service.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
-        self.template_name.as_deref()
+    pub fn template_name(&self) -> &str {
+        use std::ops::Deref;
+        self.template_name.deref()
     }
     /// <p>The major version of the service template that was used to create the service.</p>
-    pub fn template_major_version(&self) -> ::std::option::Option<&str> {
-        self.template_major_version.as_deref()
+    pub fn template_major_version(&self) -> &str {
+        use std::ops::Deref;
+        self.template_major_version.deref()
     }
     /// <p>The minor version of the service template that was used to create the service.</p>
     pub fn template_minor_version(&self) -> ::std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
-        self.spec.as_deref()
+    pub fn spec(&self) -> &str {
+        use std::ops::Deref;
+        self.spec.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_connection_arn(&self) -> ::std::option::Option<&str> {
@@ -64,8 +68,10 @@ impl CreateServiceInput {
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
-        self.tags.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateServiceInput {
@@ -108,6 +114,7 @@ pub struct CreateServiceInputBuilder {
 }
 impl CreateServiceInputBuilder {
     /// <p>The service name.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -136,6 +143,7 @@ impl CreateServiceInputBuilder {
         &self.description
     }
     /// <p>The name of the service template that's used to create the service.</p>
+    /// This field is required.
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
@@ -150,6 +158,7 @@ impl CreateServiceInputBuilder {
         &self.template_name
     }
     /// <p>The major version of the service template that was used to create the service.</p>
+    /// This field is required.
     pub fn template_major_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_major_version = ::std::option::Option::Some(input.into());
         self
@@ -178,6 +187,7 @@ impl CreateServiceInputBuilder {
         &self.template_minor_version
     }
     /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. <i>Don’t</i> include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    /// This field is required.
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
         self
@@ -257,16 +267,41 @@ impl CreateServiceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
+    /// This method will fail if any of the following fields are not set:
+    /// - [`name`](crate::operation::create_service::builders::CreateServiceInputBuilder::name)
+    /// - [`template_name`](crate::operation::create_service::builders::CreateServiceInputBuilder::template_name)
+    /// - [`template_major_version`](crate::operation::create_service::builders::CreateServiceInputBuilder::template_major_version)
+    /// - [`spec`](crate::operation::create_service::builders::CreateServiceInputBuilder::spec)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
-            name: self.name,
+            name: self.name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building CreateServiceInput",
+                )
+            })?,
             description: self.description,
-            template_name: self.template_name,
-            template_major_version: self.template_major_version,
+            template_name: self.template_name.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_name",
+                    "template_name was not specified but it is required when building CreateServiceInput",
+                )
+            })?,
+            template_major_version: self.template_major_version.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "template_major_version",
+                    "template_major_version was not specified but it is required when building CreateServiceInput",
+                )
+            })?,
             template_minor_version: self.template_minor_version,
-            spec: self.spec,
+            spec: self.spec.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "spec",
+                    "spec was not specified but it is required when building CreateServiceInput",
+                )
+            })?,
             repository_connection_arn: self.repository_connection_arn,
             repository_id: self.repository_id,
             branch_name: self.branch_name,

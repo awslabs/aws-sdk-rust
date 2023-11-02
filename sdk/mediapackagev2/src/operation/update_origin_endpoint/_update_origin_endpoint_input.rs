@@ -52,12 +52,16 @@ impl UpdateOriginEndpointInput {
         self.startover_window_seconds
     }
     /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
-    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::CreateHlsManifestConfiguration]> {
-        self.hls_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_manifests.is_none()`.
+    pub fn hls_manifests(&self) -> &[crate::types::CreateHlsManifestConfiguration] {
+        self.hls_manifests.as_deref().unwrap_or_default()
     }
     /// <p>A low-latency HLS manifest configuration.</p>
-    pub fn low_latency_hls_manifests(&self) -> ::std::option::Option<&[crate::types::CreateLowLatencyHlsManifestConfiguration]> {
-        self.low_latency_hls_manifests.as_deref()
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.low_latency_hls_manifests.is_none()`.
+    pub fn low_latency_hls_manifests(&self) -> &[crate::types::CreateLowLatencyHlsManifestConfiguration] {
+        self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
 }
 impl UpdateOriginEndpointInput {
@@ -83,6 +87,7 @@ pub struct UpdateOriginEndpointInputBuilder {
 }
 impl UpdateOriginEndpointInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    /// This field is required.
     pub fn channel_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_group_name = ::std::option::Option::Some(input.into());
         self
@@ -97,6 +102,7 @@ impl UpdateOriginEndpointInputBuilder {
         &self.channel_group_name
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    /// This field is required.
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
         self
@@ -111,6 +117,7 @@ impl UpdateOriginEndpointInputBuilder {
         &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
+    /// This field is required.
     pub fn origin_endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin_endpoint_name = ::std::option::Option::Some(input.into());
         self
@@ -125,6 +132,7 @@ impl UpdateOriginEndpointInputBuilder {
         &self.origin_endpoint_name
     }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
+    /// This field is required.
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.container_type = ::std::option::Option::Some(input);
         self

@@ -41,6 +41,7 @@ pub struct PutEmailMonitoringConfigurationInputBuilder {
 }
 impl PutEmailMonitoringConfigurationInputBuilder {
     /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+    /// This field is required.
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_id = ::std::option::Option::Some(input.into());
         self
@@ -55,6 +56,7 @@ impl PutEmailMonitoringConfigurationInputBuilder {
         &self.organization_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +71,7 @@ impl PutEmailMonitoringConfigurationInputBuilder {
         &self.role_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    /// This field is required.
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_arn = ::std::option::Option::Some(input.into());
         self

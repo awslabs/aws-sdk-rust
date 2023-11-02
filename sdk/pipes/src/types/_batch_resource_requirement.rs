@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub r#type: ::std::option::Option<crate::types::BatchResourceRequirementType>,
+    pub r#type: crate::types::BatchResourceRequirementType,
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
     /// <dt>
@@ -164,12 +164,12 @@ pub struct BatchResourceRequirement {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub value: ::std::option::Option<::std::string::String>,
+    pub value: ::std::string::String,
 }
 impl BatchResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BatchResourceRequirementType> {
-        self.r#type.as_ref()
+    pub fn r#type(&self) -> &crate::types::BatchResourceRequirementType {
+        &self.r#type
     }
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
@@ -329,8 +329,9 @@ impl BatchResourceRequirement {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn value(&self) -> ::std::option::Option<&str> {
-        self.value.as_deref()
+    pub fn value(&self) -> &str {
+        use std::ops::Deref;
+        self.value.deref()
     }
 }
 impl BatchResourceRequirement {
@@ -349,6 +350,7 @@ pub struct BatchResourceRequirementBuilder {
 }
 impl BatchResourceRequirementBuilder {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
+    /// This field is required.
     pub fn r#type(mut self, input: crate::types::BatchResourceRequirementType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
@@ -520,6 +522,7 @@ impl BatchResourceRequirementBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
+    /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -848,10 +851,23 @@ impl BatchResourceRequirementBuilder {
         &self.value
     }
     /// Consumes the builder and constructs a [`BatchResourceRequirement`](crate::types::BatchResourceRequirement).
-    pub fn build(self) -> crate::types::BatchResourceRequirement {
-        crate::types::BatchResourceRequirement {
-            r#type: self.r#type,
-            value: self.value,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`r#type`](crate::types::builders::BatchResourceRequirementBuilder::r#type)
+    /// - [`value`](crate::types::builders::BatchResourceRequirementBuilder::value)
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchResourceRequirement, ::aws_smithy_http::operation::error::BuildError> {
+        ::std::result::Result::Ok(crate::types::BatchResourceRequirement {
+            r#type: self.r#type.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "r#type",
+                    "r#type was not specified but it is required when building BatchResourceRequirement",
+                )
+            })?,
+            value: self.value.ok_or_else(|| {
+                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    "value",
+                    "value was not specified but it is required when building BatchResourceRequirement",
+                )
+            })?,
+        })
     }
 }

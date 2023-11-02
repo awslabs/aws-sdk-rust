@@ -27,6 +27,7 @@ pub struct DeleteCorsPolicyInputBuilder {
 }
 impl DeleteCorsPolicyInputBuilder {
     /// <p>The name of the container to remove the policy from.</p>
+    /// This field is required.
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self

@@ -59,6 +59,7 @@ pub struct TargetCapacitySpecificationRequestBuilder {
 }
 impl TargetCapacitySpecificationRequestBuilder {
     /// <p>The number of units to request, filled using <code>DefaultTargetCapacityType</code>.</p>
+    /// This field is required.
     pub fn total_target_capacity(mut self, input: i32) -> Self {
         self.total_target_capacity = ::std::option::Option::Some(input);
         self
